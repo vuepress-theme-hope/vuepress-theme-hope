@@ -1,0 +1,30 @@
+// 主题颜色支持
+@require './nightMode'
+@require './colorMixin'
+// 主题内置图标
+@import '//at.alicdn.com/t/font_1446717_6p7ljpiyipv.css'
+
+body
+  min-height 100vh
+
+.iconfont
+  font-weight normal
+
+/* ************* 滚动条 ************* */
+::-webkit-scrollbar
+  width 5px
+  height 5px
+
+::-webkit-scrollbar-track-piece
+  background-color rgba(0, 0, 0, 0.2)
+  -webkit-border-radius 6px
+
+::-webkit-scrollbar-thumb:vertical
+  height 5px
+  background-color rgba(125, 125, 125, 0.7)
+  -webkit-border-radius 6px
+
+::-webkit-scrollbar-thumb:horizontal
+  width 5px
+  background-color rgba(125, 125, 125, 0.7)
+  -webkit-border-radius 6px

@@ -1,0 +1,128 @@
+$night-bgcolor = #000
+$night-fontcolor = #9e9e9e
+$night-bordercolor = #9e9e9e
+$night-activecolor = #fff
+
+bgcolor()
+  background-color $night-bgcolor
+
+fontcolor()
+  color $night-fontcolor
+
+bordercolor()
+  border-color $night-bordercolor !important
+
+.theme-night
+  bgcolor()
+  fontcolor()
+  bordercolor()
+
+  // 导航栏
+  .navbar
+    bgcolor()
+    box-shadow 0 1px 6px 0 rgba(223, 222, 219, 0.28)
+    border-bottom 1px solid $night-bordercolor
+
+    .site-name, .links
+      bgcolor()
+      fontcolor()
+
+  // 导航栏下拉菜单
+  @media (min-width: $MQMobile)
+    .dropdown-wrapper .nav-dropdown
+      bgcolor()
+      box-shadow 0 1px 6px 0 rgba(223, 222, 219, 0.28)
+      border 1px solid $night-bordercolor
+
+  // 侧边栏
+  .sidebar
+    bgcolor()
+    bordercolor()
+
+  .sidebar-heading
+    color darken($night-fontcolor, 50%)
+
+  // 侧边栏链接
+  a.sidebar-link
+    fontcolor()
+
+  @media (min-width: $MQMobile)
+    .nav-links a
+      &:hover, &.router-link-active
+        color $accentColor
+
+  // 主页
+  .home
+    .hero .description
+      fontcolor()
+
+    .feature
+      h2, p
+        fontcolor()
+
+  // 提示框
+  .custom-block
+    &.tip, &.warning, &.danger
+      background-color lighten($night-bgcolor, 15%)
+
+      a
+        color $accentColor
+
+    &.warning
+      color darken(#ffe564, 50%)
+
+      .custom-block-title
+        color darken(#ffe564, 40%)
+
+    &.danger
+      color darken(red, 30%)
+
+      .custom-block-title
+        color darken(red, 20%)
+
+  // 搜索框夜间模式
+  .search-box
+    input
+      background-color #000 !important
+
+      &:focus
+        border-color #9e9e9e
+
+    .suggestions
+      background-color #000
+
+    .suggestion.focused
+      background-color #0c0b0a
+
+  // 主题选择
+  .color-picker
+    .color-picker-menu
+      bgcolor()
+      bordercolor()
+
+    &::before
+      border-color transparent transparent $night-bordercolor
+
+  // 页面信息
+  .page
+    .page-info
+      fontcolor()
+
+    // valine 评论按钮
+    .valine-wrapper
+      #valine
+        *
+          color #aaa
+
+        code, pre
+          background-color #282c34
+
+        blockquote
+          color #999
+
+        .vbtn
+          bgcolor()
+
+        .vlist .vcard .vhead .vsys
+          background #121212
+          color #4c4e4e
