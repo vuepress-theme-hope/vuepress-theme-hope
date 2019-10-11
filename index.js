@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-08 20:56:12
+ * @LastEditTime: 2019-10-11 20:44:23
  * @Description: 主题配置
  */
 const path = require('path');
@@ -26,6 +26,13 @@ module.exports = (options, ctx) => ({
 
   /** 继承默认主题 */
   extend: '@vuepress/theme-default',
+
+  /** 添加脚注、上下角标功能 */
+  extendMarkdown: md => {
+    md.use(require('markdown-it-footnote'));
+    md.use(require('markdown-it-sub'));
+    md.use(require('markdown-it-sup'));
+  },
 
   /** 插件选项 */
   plugins: [
