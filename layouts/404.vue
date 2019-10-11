@@ -12,10 +12,10 @@
 const msgs = {
   'zh-CN': ['这里什么也没有', '我们是怎么来到这儿的？', '这 是 四 零 四 !', '看起来你访问了一个失效的链接'],
   'en-US': [
-    "There's nothing here.",
+    'There\'s nothing here.',
     'How did we get here?',
-    "That's a Four-Oh-Four.",
-    "Looks like we've got some broken links."
+    'That\'s a Four-Oh-Four.',
+    'Looks like we\'ve got some broken links.'
   ]
 };
 const linkTexts = {

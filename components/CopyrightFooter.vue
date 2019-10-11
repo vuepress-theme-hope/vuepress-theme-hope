@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:49
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 08:46:26
+ * @LastEditTime: 2019-10-12 00:07:14
  * @Description: 页脚
  *
  * 添加自定义页脚的预设文字
@@ -16,10 +16,13 @@ export default {
     footer() {
       const footer = this.$page.frontmatter.footer;
 
-      if (typeof footer === 'object') return `<a href="${footer.link}">${footer.text}</a>`;
-      if (typeof footer === 'string') return footer;
-      if (this.$page.frontmatter.footer === true || this.$themeConfig.footer.displayDefault)
-        return this.$themeConfig.footer.text;
+      return typeof footer === 'object'
+        ? `<a href="${footer.link}">${footer.text}</a>`
+        : typeof footer === 'string'
+        ? footer
+        : this.$page.frontmatter.footer === true || this.$themeConfig.footer.displayDefault
+        ? this.$themeConfig.footer.text
+        : '';
     }
   }
 };

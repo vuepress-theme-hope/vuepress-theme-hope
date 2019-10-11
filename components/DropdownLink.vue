@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-08 13:48:48
+ * @LastEditTime: 2019-10-12 00:07:34
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -50,20 +50,16 @@ import DropdownTransition from '@parent-theme/components/DropdownTransition.vue'
 export default {
   components: { NavLink, DropdownTransition },
 
-  data: () => ({
-    open: false
-  }),
+  data: () => ({ open: false }),
 
-  props: {
-    item: { required: true }
-  },
+  props: { item: { required: true } },
 
   methods: {
     toggle() {
       this.open = !this.open;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

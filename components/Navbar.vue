@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 08:46:39
+ * @LastEditTime: 2019-10-12 00:09:19
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -35,9 +35,7 @@
       <Theme />
       <ScreenFull />
       <AlgoliaSearchBox :options="algolia" v-if="isAlgoliaSearch" />
-      <SearchBox
-        v-else-if="$themeConfig.search !== false && $page.frontmatter.search !== false"
-      />
+      <SearchBox v-else-if="$themeConfig.search !== false && $page.frontmatter.search !== false" />
       <NavLinks class="can-hide" />
     </div>
   </header>
@@ -51,15 +49,21 @@ import NavLinks from '@theme/components/NavLinks.vue';
 import ScreenFull from '@theme/components/ScreenFull.vue';
 import Theme from '@theme/components/Theme';
 
+const css = (el, property) => {
+  // NOTE: Known bug, will return 'auto' if style value is 'auto'
+  const win = el.ownerDocument.defaultView;
+
+  // `null` means not to return pseudo styles
+  return win.getComputedStyle(el, null)[property];
+};
+
 export default {
   components: { SidebarButton, NavLinks, ScreenFull, SearchBox, AlgoliaSearchBox, Theme },
 
-  data: () => ({
-    linksWrapMaxWidth: null
-  }),
+  data: () => ({ linksWrapMaxWidth: null }),
 
   mounted() {
-    const MOBILE_DESKTOP_BREAKPOINT = 719; // refer to config.styl
+    const MOBILE_DESKTOP_BREAKPOINT = 719; // Refer to config.styl
     const NAVBAR_VERTICAL_PADDING = parseInt(css(this.$el, 'paddingLeft')) + parseInt(css(this.$el, 'paddingRight'));
     const handleLinksWrapWidth = () => {
       if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) this.linksWrapMaxWidth = null;
@@ -84,14 +88,6 @@ export default {
     }
   }
 };
-
-function css(el, property) {
-  // NOTE: Known bug, will return 'auto' if style value is 'auto'
-  const win = el.ownerDocument.defaultView;
-
-  // null means not to return pseudo styles
-  return win.getComputedStyle(el, null)[property];
-}
 </script>
 
 <style lang="stylus">

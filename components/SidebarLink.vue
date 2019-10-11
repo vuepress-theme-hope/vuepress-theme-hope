@@ -2,13 +2,71 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:14:48
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 08:44:56
+ * @LastEditTime: 2019-10-12 00:20:17
  * @Description: 侧边栏链接
- * 
+ *
  * 添加了图标支持
 -->
 <script>
 import { isActive, hashRE, groupHeaders } from '@parent-theme/util';
+
+const renderIcon = (h, icon) => {
+  if (icon[1])
+    return h('i', {
+      class: ['iconfont', `${icon[0]}${icon[1]}`],
+      style: 'margin-right:0.2em;'
+    });
+
+  return null;
+};
+
+const renderLink = (h, to, text, icon, active) =>
+  h(
+    'router-link',
+    {
+      props: {
+        to,
+        activeClass: '',
+        exactActiveClass: ''
+      },
+      class: {
+        active,
+        'sidebar-link': true
+      }
+    },
+    [renderIcon(h, icon), text]
+  );
+
+const renderChildren = (h, children, path, route, maxDepth, depth = 1) => {
+  if (!children || depth > maxDepth) return null;
+
+  return h(
+    'ul',
+    { class: 'sidebar-sub-headers' },
+    children.map(c => {
+      const active = isActive(route, `${path}#${c.slug}`);
+
+      return h('li', { class: 'sidebar-sub-header' }, [
+        renderLink(h, `${path}#${c.slug}`, c.title, [], active),
+        renderChildren(h, c.children, path, route, maxDepth, depth + 1)
+      ]);
+    })
+  );
+};
+
+const renderExternal = (h, to, text) =>
+  h(
+    'a',
+    {
+      attrs: {
+        href: to,
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      },
+      class: { 'sidebar-link': true }
+    },
+    [text, h('OutboundLink')]
+  );
 
 export default {
   functional: true,
@@ -18,18 +76,22 @@ export default {
   render(
     h,
     {
-      parent: { $page, $site, $route, $themeConfig, $themeLocaleConfig },
+      parent: { $page, $route, $themeConfig, $themeLocaleConfig },
       props: { item, sidebarDepth }
     }
   ) {
-    // use custom active class matching logic
-    // due to edge case of paths ending with / + hash
+    /*
+     * Use custom active class matching logic
+     * Due to edge case of paths ending with / + hash
+     */
     const selfActive = isActive($route, item.path);
-    // for sidebar: auto pages, a hash link should be active if one of its child
-    // matches
+    /*
+     * For sidebar: auto pages, a hash link should be active if one of its child
+     * matches
+     */
     const active =
       item.type === 'auto'
-        ? selfActive || item.children.some(c => isActive($route, item.basePath + '#' + c.slug))
+        ? selfActive || item.children.some(c => isActive($route, `${item.basePath}#${c.slug}`))
         : selfActive;
 
     const link =
@@ -58,70 +120,11 @@ export default {
       const children = groupHeaders(item.headers);
 
       return [link, renderChildren(h, children, item.path, $route, maxDepth)];
-    } else return link;
+    }
+
+    return link;
   }
 };
-
-function renderIcon(h, icon) {
-  if (icon[1])
-    return h('i', {
-      class: ['iconfont', `${icon[0]}${icon[1]}`],
-      style: 'margin-right:0.2em;'
-    });
-
-  return null;
-}
-
-function renderLink(h, to, text, icon, active) {
-  return h(
-    'router-link',
-    {
-      props: {
-        to,
-        activeClass: '',
-        exactActiveClass: ''
-      },
-      class: {
-        active,
-        'sidebar-link': true
-      }
-    },
-    [renderIcon(h, icon), text]
-  );
-}
-
-function renderChildren(h, children, path, route, maxDepth, depth = 1) {
-  if (!children || depth > maxDepth) return null;
-  return h(
-    'ul',
-    { class: 'sidebar-sub-headers' },
-    children.map(c => {
-      const active = isActive(route, path + '#' + c.slug);
-
-      return h('li', { class: 'sidebar-sub-header' }, [
-        renderLink(h, path + '#' + c.slug, c.title, [], active),
-        renderChildren(h, c.children, path, route, maxDepth, depth + 1)
-      ]);
-    })
-  );
-}
-
-function renderExternal(h, to, text) {
-  return h(
-    'a',
-    {
-      attrs: {
-        href: to,
-        target: '_blank',
-        rel: 'noopener noreferrer'
-      },
-      class: {
-        'sidebar-link': true
-      }
-    },
-    [text, h('OutboundLink')]
-  );
-}
 </script>
 
 <style lang="stylus">

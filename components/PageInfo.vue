@@ -11,7 +11,12 @@
     <div class="page-info" v-if="author||visitor">
       <i class="iconfont vuepress-myfill" v-if="author" />
       <span v-if="author" v-text="author" />
-      <span :data-flag-title="$page.title" :id="visitorID" class="leancloud_visitors" v-if="visitor">
+      <span
+        :data-flag-title="$page.title"
+        :id="visitorID"
+        class="leancloud_visitors"
+        v-if="visitor"
+      >
         <i :class="`vuepress-${numberIcon}`" class="iconfont" />
         <span :style="numStyle" class="leancloud-visitors-count" />
       </span>

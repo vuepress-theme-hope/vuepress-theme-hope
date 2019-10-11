@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 08:47:02
+ * @LastEditTime: 2019-10-12 00:28:04
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
@@ -57,14 +57,14 @@ export default {
             let link;
 
             // Stay on the current page
-            if (locale.lang === this.$lang) {
-              link = currentLink;
-            } else {
+            if (locale.lang === this.$lang) link = currentLink;
+            else {
               // Try to stay on the same page
               link = currentLink.replace(this.$localeConfig.path, path);
-              // fallback to homepage
+              // Fallback to homepage
               if (!routes.some(route => route.path === link)) link = path;
             }
+
             return { text, link };
           })
         };
@@ -76,30 +76,32 @@ export default {
     },
 
     userLinks() {
-      return (this.nav || []).map(link => {
-        return Object.assign(resolveNavLinkItem(link), {
-          items: (link.items || []).map(resolveNavLinkItem)
-        });
-      });
+      return (this.nav || []).map(link =>
+        Object.assign(
+          resolveNavLinkItem(link),
+          { items: (link.items || []).map(resolveNavLinkItem) }
+        ));
     },
 
     repoLink() {
       const { repo } = this.$themeConfig;
 
-      if (repo) return /^https?:/.test(repo) ? repo : `https://github.com/${repo}`;
+      if (repo) return (/^https?:/u).test(repo) ? repo : `https://github.com/${repo}`;
+
+      return '';
     },
 
     repoLabel() {
-      if (!this.repoLink) return;
+      if (!this.repoLink) return '';
       if (this.$themeConfig.repoLabel) return this.$themeConfig.repoLabel;
 
-      const repoHost = this.repoLink.match(/^https?:\/\/[^/]+/)[0];
+      const repoHost = this.repoLink.match(/^https?:\/\/[^/]+/u)[0];
       const platforms = ['GitHub', 'GitLab', 'Bitbucket'];
 
       for (let i = 0; i < platforms.length; i++) {
         const platform = platforms[i];
 
-        if (new RegExp(platform, 'i').test(repoHost)) return platform;
+        if (new RegExp(platform, 'iu').test(repoHost)) return platform;
       }
 
       return 'Source';

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:10:01
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 08:47:28
+ * @LastEditTime: 2019-10-12 00:16:23
  * @Description: 侧边栏分组链接
  *
  * 添加了图标支持
@@ -70,7 +70,7 @@ export default {
   },
   methods: { isActive },
 
-  // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
+  // Ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate() {
     this.$options.components.SidebarLinks = require('@parent-theme/components/SidebarLinks.vue').default;
   }
