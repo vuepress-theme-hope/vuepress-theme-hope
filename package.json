@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://mrhope.site/code/vue/vuepress/theme/hope.html",
+  "homepage": "https://vuepress-theme.mrhope.site",
   "dependencies": {
     "@vuepress/plugin-medium-zoom": "^1.1.0",
     "@vuepress/plugin-pwa": "^1.1.0",
