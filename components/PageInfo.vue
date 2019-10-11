@@ -2,16 +2,16 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 21:49:01
+ * @LastEditTime: 2019-10-11 17:21:32
  * @Description: 页面信息
 -->
 <template>
   <div class="page-title">
     <h1>{{$page.title}}</h1>
-    <div class="page-info">
+    <div class="page-info" v-if="author||visitor">
       <i class="iconfont vuepress-myfill" v-if="author" />
       <span v-if="author" v-text="author" />
-      <span :data-flag-title="$page.title" :id="visitorID" class="leancloud_visitors" v-if>
+      <span :data-flag-title="$page.title" :id="visitorID" class="leancloud_visitors" v-if="visitor">
         <i :class="`vuepress-${numberIcon}`" class="iconfont" />
         <span :style="numStyle" class="leancloud-visitors-count" />
       </span>

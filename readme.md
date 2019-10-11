@@ -4,7 +4,7 @@
 
 ## 文档地址
 
-[点击前往](https://mrhope.site/code/vue/vuepress/theme/hope.html)
+[点击前往](https://vuepress-theme.mrhope.site/)
 
 ## English Docs
 
