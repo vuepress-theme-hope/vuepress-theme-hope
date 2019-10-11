@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-11 17:21:32
+ * @LastEditTime: 2019-10-11 19:03:41
  * @Description: 页面信息
 -->
 <template>
@@ -43,8 +43,8 @@ export default {
     },
     visitor() {
       if (!this.$themeConfig.valine) return false;
-      const globalConfig = this.$themeConfig.valine.visitor !== false;
-      const globalEnable = this.$page.frontmatter;
+      const globalEnable = this.$themeConfig.valine.visitor !== false;
+      const pageConfig = this.$page.frontmatter;
 
       return (globalEnable && pageConfig !== false) || (!globalEnable && pageConfig === true);
     },
