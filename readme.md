@@ -1,4 +1,4 @@
-# vuepress-theme-mrhope
+# vuepress-theme-hope
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg)](https://www.npmjs.com/package/vuepress-theme-hope)
 [![License](https://img.shields.io/npm/l/vuepress.svg)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)

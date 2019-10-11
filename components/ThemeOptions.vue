@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 08:45:42
+ * @LastEditTime: 2019-10-12 00:21:28
  * @Description: 主题颜色选择
 -->
 <template>
@@ -67,7 +67,7 @@ export default {
     const classes = document.body.classList;
 
     this.darkTheme = nightmode === 'true';
-    if (nightmode === 'true') classes.add(`theme-night`);
+    if (nightmode === 'true') classes.add('theme-night');
     if (theme) this.setTheme(theme);
   },
 
@@ -75,15 +75,16 @@ export default {
     /** 切换夜间模式 */
     toggleDarkTheme() {
       const classes = document.body.classList;
+
       if (this.darkTheme) {
         const oldColor = [...classes];
 
         classes.value = '';
-        classes.add(`theme-night`);
+        classes.add('theme-night');
         oldColor.forEach(item => {
           classes.add(item);
         });
-      } else classes.remove(`theme-night`);
+      } else classes.remove('theme-night');
 
       localStorage.setItem('nightmode', this.darkTheme);
     },

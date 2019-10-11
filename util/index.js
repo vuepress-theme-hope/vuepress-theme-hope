@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/
 export const endingSlashRE = /\/$/

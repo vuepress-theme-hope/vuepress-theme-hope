@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 23:58:46
+ * @LastEditTime: 2019-10-12 00:26:38
  * @Description: 评论插件
 -->
 <template>
@@ -45,6 +45,7 @@ export default {
 
       if (valineConfig) {
         const Valine = require('valine');
+        const valine = new Valine();
         const AV = require('leancloud-storage');
 
         if (typeof window !== 'undefined') {
@@ -52,10 +53,10 @@ export default {
           window.AV = AV;
         }
 
-        new Valine({
+        valine.init({
           el: '#valine',
-          appId: valineConfig.appId, // your appId
-          appKey: valineConfig.appKey, // your appKey
+          appId: valineConfig.appId, // Your appId
+          appKey: valineConfig.appKey, // Your appKey
           placeholder: valineConfig.placeholder || '请留言',
           meta: valineConfig.meta || ['nick', 'mail', 'link'],
           notify: valineConfig.notify !== false,

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-09 20:04:03
+ * @LastEditTime: 2019-10-12 00:20:41
  * @Description: 主题颜色
 -->
 <template>
@@ -29,9 +29,7 @@ export default {
 
   components: { ThemeOptions },
 
-  data: () => ({
-    showMenu: false
-  }),
+  data: () => ({ showMenu: false }),
 
   computed: {
     enable() {

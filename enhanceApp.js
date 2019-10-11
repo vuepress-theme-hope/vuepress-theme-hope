@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:15:31
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-11 23:23:31
+ * @LastEditTime: 2019-10-12 00:37:52
  * @Description: Vuepress增强配置
  */
 const resolveSideBar = require('./lib/resolve-sideBar');
@@ -67,7 +68,7 @@ export default ({
     editLinks: true, // 默认是 false, 设置为 true 来启用
 
     /** 编辑此页链接提示文字 */
-    editLinkText: '在 GitHub 上编辑此页', // 默认为 "Edit this page"
+    editLinkText: '在 GitHub 上编辑此页' // 默认为 "Edit this page"
   };
 
   // 处理侧边栏
@@ -76,7 +77,7 @@ export default ({
       themeConfig.sidebar = resolveSideBar(themeConfig.sidebar);
     else
       Object.keys(themeConfig.sidebar).forEach(property => {
-        themeConfig.sidebar[property] = resolveSideBar(themeConfig.sidebar[property])
+        themeConfig.sidebar[property] = resolveSideBar(themeConfig.sidebar[property]);
       });
 
   assign(themeConfigDefault, themeConfig);

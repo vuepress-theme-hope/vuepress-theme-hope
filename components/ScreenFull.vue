@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:03:02
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-09 19:28:02
+ * @LastEditTime: 2019-10-12 00:16:15
  * @Description: 全屏组件
 -->
 <template>
@@ -31,7 +31,6 @@ export default {
     click() {
       if (screenfull.isEnabled) screenfull.toggle();
       // TODO: 待完善
-      // else this.$message({ message: 'you browser can not work', type: 'warning' });
     },
     change() {
       this.isFullscreen = screenfull.isFullscreen;

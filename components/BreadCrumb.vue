@@ -2,13 +2,17 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-10 09:49:32
+ * @LastEditTime: 2019-10-12 00:05:24
  * @Description: 路径导航
 -->
 <template>
   <nav :class="['breadcrumb',{disable:!enable}]">
     <ul v-if="enable">
-      <li :class="{'is-active': config.length -1 === index}" v-for="(item,index) in config">
+      <li
+        :class="{'is-active': config.length -1 === index}"
+        :key="item.url"
+        v-for="(item,index) in config"
+      >
         <a @click="$router.push(item.url)">
           <template v-if="item.icon && $themeConfig.breadcrumbIcon !== false">
             <i :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
@@ -38,7 +42,7 @@ export default {
   },
 
   methods: {
-    getBreadCrumbConfig(route, checked) {
+    getBreadCrumbConfig(route) {
       /** 页面对象 */
       const pages = this.$site.pages;
       /** 路径项 */
@@ -50,10 +54,10 @@ export default {
       // 生成链接
       routePaths.forEach((element, index) => {
         if (index !== routePaths.length - 1) {
-          link = link + element + '/';
+          link += `${element}/`;
           links.push(link);
         } else if (element !== '') {
-          link = link + element;
+          link += element;
           links.push(link);
         }
       });
