@@ -3,7 +3,7 @@
 ![作者：Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge&link=https://mrhope.site)
 ![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge&link=https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)
 
-![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=appveyorlogo=npm&link=https://www.npmjs.com/package/vuepress-theme-hope)
+![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm&link=https://www.npmjs.com/package/vuepress-theme-hope)
 ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm&link=https://www.npmjs.com/package/vuepress-theme-hope)
 
 一个轻量的 vuepress 主题 / A light vuepress theme
