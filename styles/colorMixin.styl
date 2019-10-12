@@ -33,9 +33,14 @@ color-mode($themecolor, $colorName)
       fontcolor()
 
     // 下拉列表
-    .dropdown-wrapper .nav-dropdown .dropdown-item a
-      &.router-link-active, &:hover
-        fontcolor()
+    .dropdown-wrapper
+      .dropdown-title
+        .title:hover
+          fontcolor()
+
+      .nav-dropdown .dropdown-item a
+        &.router-link-active, &:hover
+          fontcolor()
 
       &.router-link-active::after
         border-left 5px solid $themecolor
