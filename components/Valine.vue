@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:26:38
+ * @LastEditTime: 2019-10-12 13:17:09
  * @Description: 评论插件
 -->
 <template>
@@ -57,7 +57,7 @@ export default {
           el: '#valine',
           appId: valineConfig.appId, // Your appId
           appKey: valineConfig.appKey, // Your appKey
-          placeholder: valineConfig.placeholder || '请留言',
+          placeholder: valineConfig.placeholder || (this.$lang === 'zh-CN' ? '请留言' : 'Write a comment here'),
           meta: valineConfig.meta || ['nick', 'mail', 'link'],
           notify: valineConfig.notify !== false,
           verify: valineConfig.verify || false,
