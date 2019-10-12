@@ -1,7 +1,7 @@
 # vuepress-theme-hope
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg)](https://www.npmjs.com/package/vuepress-theme-hope)
-[![License](https://img.shields.io/npm/l/vuepress.svg)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)
+[![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)
 
 一个轻量的 vuepress 主题
 

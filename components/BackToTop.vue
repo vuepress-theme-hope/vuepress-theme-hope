@@ -9,7 +9,7 @@
   <transition name="fade">
     <svg
       @click="scrollToTop"
-      class="go-to-top"
+      class="back-to-top"
       v-if="show"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang='stylus'>
-.go-to-top
+.back-to-top
   cursor pointer
   position fixed
   bottom 5rem
@@ -84,7 +84,7 @@ export default {
   overflow hidden
   z-index 1
 
-.go-to-top:hover
+.back-to-top:hover
   color lighten($accentColor, 30%)
 
 .fade-enter-active, .fade-leave-active

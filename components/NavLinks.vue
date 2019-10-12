@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:28:04
+ * @LastEditTime: 2019-10-12 10:57:39
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
@@ -51,6 +51,7 @@ export default {
         const themeLocales = this.$themeConfig.locales || {};
         const languageDropdown = {
           text: this.$themeLocaleConfig.selectText || 'Languages',
+          ariaLabel: this.$themeLocaleConfig.ariaLabel || 'Select language',
           items: Object.keys(locales).map(path => {
             const locale = locales[path];
             const text = (themeLocales[path] && themeLocales[path].label) || locale.lang;

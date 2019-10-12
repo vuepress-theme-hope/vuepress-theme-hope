@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:39:04
+ * @LastEditTime: 2019-10-12 10:43:00
  * @Description: 主题配置
  */
 const path = require('path');
@@ -132,9 +132,6 @@ module.exports = (options, ctx) => ({
     ],
 
     /** Markdown 文件支持 TeX 语法 */
-    ['vuepress-plugin-mathjax'],
-
-    /** 使用平滑滚动 */
-    ['vuepress-plugin-smooth-scroll']
+    ['vuepress-plugin-mathjax']
   ]
 });

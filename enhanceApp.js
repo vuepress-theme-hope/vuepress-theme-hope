@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:15:31
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:37:52
+ * @LastEditTime: 2019-10-12 10:43:34
  * @Description: Vuepress增强配置
  */
 const resolveSideBar = require('./lib/resolve-sideBar');
@@ -22,6 +22,9 @@ export default ({
 
     /** 侧边栏标题显示深度，0-2 */
     sidebarDepth: 2,
+
+    /** 开启平滑滚动 */
+    smoothScroll: true,
 
     /** 图标 FontClass 前缀 */
     iconPrefix: 'icon-',
