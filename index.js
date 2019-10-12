@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 22:54:15
+ * @LastEditTime: 2019-10-12 23:39:01
  * @Description: 主题配置
  */
 const path = require('path');
@@ -160,8 +160,6 @@ module.exports = (options, ctx) => ({
         options: {
           /** 缩放后图片的外间距 */
           margin: 16,
-          /** 缩放背景 */
-          background: '#fff',
           /** 关闭缩放需要滚动的像素数 */
           scrollOffset: 40
         }
