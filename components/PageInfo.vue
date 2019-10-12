@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-11 19:03:41
+ * @LastEditTime: 2019-10-12 16:33:35
  * @Description: 页面信息
 -->
 <template>
@@ -36,7 +36,11 @@ export default {
     getCount() {
       const count = document.querySelector('.leancloud_visitors .leancloud-visitors-count').textContent;
 
-      this.numberIcon = count && count > 100 ? 'hotfill' : 'eyefill';
+      if (count) this.numberIcon = count && count > 100 ? 'hotfill' : 'eyefill';
+      else
+        setTimeout(() => {
+          this.getCount();
+        }, 500);
     }
   },
 
@@ -65,7 +69,7 @@ export default {
       if (to.path !== from.path)
         setTimeout(() => {
           this.getCount();
-        }, 1000);
+        }, 500);
     }
   },
 
