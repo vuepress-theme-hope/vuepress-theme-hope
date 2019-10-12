@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 22:35:36
+ * @LastEditTime: 2019-10-12 22:54:15
  * @Description: 主题配置
  */
 const path = require('path');
@@ -90,7 +90,7 @@ module.exports = (options, ctx) => ({
     ],
 
     /** 自定义居右容器 */
-    ['container', { type: 'right', defaultTitle: '', marker: '~' },],
+    ['container', { type: 'right', defaultTitle: '', marker: '~' }],
     /** 自定义居中容器 */
     ['container', { type: 'center', defaultTitle: '', marker: '~' }],
 
@@ -98,7 +98,8 @@ module.exports = (options, ctx) => ({
     [
       'copyright', {
         authorName: options.author,
-        minLength: 100
+        minLength: 100,
+        clipboardComponent: path.resolve(__dirname, 'components/Clipboard.vue')
       }
     ],
 

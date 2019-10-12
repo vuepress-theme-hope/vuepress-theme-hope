@@ -3,10 +3,6 @@
   "version": "0.0.9-alpha3",
   "description": "a light vuepress theme",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
-    "test1": "mocha-webpack --require test/setup.js test/**/*.spec.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
