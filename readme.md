@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg)](https://www.npmjs.com/package/vuepress-theme-hope)
 [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)
 
-一个轻量的 vuepress 主题
+一个轻量的 vuepress 主题 / A light vuepress theme
 
 ## 文档地址
 
@@ -20,7 +20,7 @@
 
 ## English Docs
 
-A light vuepress theme.
+[Offical Docs](https://vuepress-theme.mrhope.site/en/)
 
 ### Theme Highlights
 
@@ -30,5 +30,3 @@ The theme extends Vupress's default theme and largely maintains the Vuepress def
 - Theme color, night mode and full screen button
 - Add readings, comments and icons, footer support for all pages
 - Added new path navigation
-
-[Offical Docs](https://vuepress-theme.mrhope.site/en/)
