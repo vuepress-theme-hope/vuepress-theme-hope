@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 10:43:00
+ * @LastEditTime: 2019-10-12 12:20:59
  * @Description: 主题配置
  */
 const path = require('path');
@@ -28,11 +28,24 @@ module.exports = (options, ctx) => ({
   /** 继承默认主题 */
   extend: '@vuepress/theme-default',
 
-  /** 添加脚注、上下角标功能 */
-  extendMarkdown: md => {
-    md.use(require('markdown-it-footnote'));
-    md.use(require('markdown-it-sub'));
-    md.use(require('markdown-it-sup'));
+  /** Markdown 增强 */
+  chainMarkdown(config) {
+    const markdownOption = options.markdown || {};
+
+    // 增加上角标
+    if (markdownOption.sup !== false)
+      config.plugin('sup').use(require('markdown-it-sup'));
+    // 增加下角标
+    if (markdownOption.sub !== false)
+      config.plugin('sub').use(require('markdown-it-sub'));
+
+    // 增加脚注
+    if (markdownOption.footnote !== false)
+      config.plugin('footnote').use(require('markdown-it-footnote'));
+
+    // 添加行号
+    if (markdownOption.lineNumbers !== false)
+      config.plugin('line-numbers').use(require('@vuepress/markdown/lib/lineNumbers'));
   },
 
   /** 插件选项 */
@@ -132,6 +145,6 @@ module.exports = (options, ctx) => ({
     ],
 
     /** Markdown 文件支持 TeX 语法 */
-    ['vuepress-plugin-mathjax']
+    ['vuepress-plugin-mathjax', (options.markdown || {}).mathjax !== false]
   ]
 });
