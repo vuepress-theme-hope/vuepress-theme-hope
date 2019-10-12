@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 12:20:59
+ * @LastEditTime: 2019-10-12 22:35:36
  * @Description: 主题配置
  */
 const path = require('path');
@@ -56,6 +56,10 @@ module.exports = (options, ctx) => ({
     /** 进度条插件，已由theme-default激活 */
     // '@vuepress/nprogress'
 
+    // FIXME:目前启用导航栏会报错，原因正在寻找中
+    /** 使 VuePress 站点支持简洁链接 */
+    // ['clean-urls', { normalSuffix: '/' }],
+
     /** 自定义容器配置 */
     [
       'container', {
@@ -84,6 +88,25 @@ module.exports = (options, ctx) => ({
         }
       }
     ],
+
+    /** 自定义居右容器 */
+    ['container', { type: 'right', defaultTitle: '', marker: '~' },],
+    /** 自定义居中容器 */
+    ['container', { type: 'center', defaultTitle: '', marker: '~' }],
+
+    /** 复制操作处理 */
+    [
+      'copyright', {
+        authorName: options.author,
+        minLength: 100
+      }
+    ],
+
+    /** 支持流程图 */
+    ['flowchart'],
+
+    /** 平滑滚动 */
+    ['smooth-scroll', options.smoothScroll !== false],
 
     /** 更新时间插件 */
     [
