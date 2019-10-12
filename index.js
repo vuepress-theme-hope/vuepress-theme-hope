@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 23:39:01
+ * @LastEditTime: 2019-10-13 00:02:57
  * @Description: 主题配置
  */
 const path = require('path');
@@ -103,9 +103,6 @@ module.exports = (options, ctx) => ({
       }
     ],
 
-    /** 支持流程图 */
-    ['flowchart'],
-
     /** 平滑滚动 */
     ['smooth-scroll', options.smoothScroll !== false],
 
@@ -166,7 +163,10 @@ module.exports = (options, ctx) => ({
       }
     ],
 
+    /** Markdown 文件支持流程图 */
+    ['flowchart', (options.markdown || {}).flowchart !== false],
+
     /** Markdown 文件支持 TeX 语法 */
-    ['vuepress-plugin-mathjax', (options.markdown || {}).mathjax !== false]
+    ['mathjax', (options.markdown || {}).mathjax !== false]
   ]
 });
