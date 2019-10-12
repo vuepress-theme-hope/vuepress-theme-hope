@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:15:31
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 10:43:34
+ * @LastEditTime: 2019-10-12 17:18:42
  * @Description: Vuepress增强配置
  */
 const resolveSideBar = require('./lib/resolve-sideBar');
@@ -82,6 +82,20 @@ export default ({
       Object.keys(themeConfig.sidebar).forEach(property => {
         themeConfig.sidebar[property] = resolveSideBar(themeConfig.sidebar[property]);
       });
+
+  // 处理其它语言的侧边栏
+  if (themeConfig.locales)
+    Object.keys(themeConfig.locales).forEach(locate => {
+      const locateSidebar = themeConfig.locales[locate].sidebar;
+
+      if (locateSidebar)
+        if (Array.isArray(locateSidebar))
+          themeConfig.locales[locate].sidebar = resolveSideBar(locateSidebar);
+        else
+          Object.keys(locateSidebar).forEach(property => {
+            locateSidebar[property] = resolveSideBar(locateSidebar[property]);
+          });
+    });
 
   assign(themeConfigDefault, themeConfig);
 };
