@@ -9,3 +9,11 @@
 // medium-zoom 插件背景
 .medium-zoom--opened .medium-zoom-overlay
   background-color #fff
+
+// 脚注链接跳转修正
+.footnotes .footnotes-list .footnote-item
+  margin-top (- $navbarHeight)
+  padding-top ($navbarHeight + 0.5rem)
+
+  p
+    margin-bottom 0
