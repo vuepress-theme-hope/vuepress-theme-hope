@@ -27,7 +27,7 @@
 
 <script>
 import BackToTop from '@theme/components/BackToTop.vue';
-import Home from '@parent-theme/components/Home.vue';
+import Home from '@theme/components/Home.vue';
 import Navbar from '@theme/components/Navbar.vue';
 import Page from '@theme/components/Page.vue';
 import Sidebar from '@parent-theme/components/Sidebar.vue';
@@ -46,8 +46,8 @@ export default {
       if (frontmatter.navbar === false || themeConfig.navbar === false) return false;
 
       return (
-        this.$title || themeConfig.logo || themeConfig.repo
-        || themeConfig.nav || this.$themeLocaleConfig.nav
+        this.$title || themeConfig.logo || themeConfig.repo ||
+        themeConfig.nav || this.$themeLocaleConfig.nav
       );
     },
 
@@ -89,7 +89,7 @@ export default {
       this.$emit('toggle-sidebar', this.isSidebarOpen);
     },
 
-    // side swipe
+    // Side swipe
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
@@ -106,5 +106,5 @@ export default {
         else this.toggleSidebar(false);
     }
   }
-}
+};
 </script>
