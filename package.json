@@ -1,8 +1,12 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "0.0.10-alpha3",
+  "version": "0.0.10",
   "description": "a light vuepress theme",
   "main": "index.js",
+  "scripts": {
+    "publish": "npm publish .",
+    "publish-alpha": "npm publish . --tag=alpha"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
