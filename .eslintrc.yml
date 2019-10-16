@@ -10,8 +10,8 @@ env:
 
 # 所使用的规则配置
 extends:
-  - "plugin:vue/essential"
-  - "eslint:recommended"
+  - 'plugin:vue/essential'
+  - 'eslint:recommended'
 
 # 自定义的额外规则
 rules:
@@ -41,7 +41,7 @@ rules:
   callback-return: error
   camelcase: error
   capitalized-comments: error
-  class-methods-use-this: "off"
+  class-methods-use-this: 'off'
   comma-dangle:
     - error
     - never
@@ -73,25 +73,24 @@ rules:
   func-style: error
   function-paren-newline: error
   generator-star-spacing: error
-  global-require: "off"
+  global-require: 'off'
   guard-for-in: warn
   handle-callback-err: error
   id-blacklist: error
-  id-length: "off"
+  id-length: 'off'
   id-match: error
-  # 防止因为自动换行造成的报错
   implicit-arrow-linebreak:
-    - "off"
+    - 'off'
     - beside
-  indent: "off"
-  init-declarations: "off"
+  indent: 'off'
+  init-declarations: 'off'
   jsx-quotes: error
   key-spacing: error
   keyword-spacing: error
-  line-comment-position: "off"
-  linebreak-style: "off"
-  lines-around-comment: "off"
-  lines-between-class-members: "off"
+  line-comment-position: 'off'
+  linebreak-style: 'off'
+  lines-around-comment: 'off'
+  lines-between-class-members: 'off'
   max-classes-per-file: error
   max-depth: error
   max-len:
@@ -103,13 +102,13 @@ rules:
       tabWidth: 2
       ignoreTemplateLiterals: true
       ignoreRegExpLiterals: true
-  max-lines: "off"
-  max-lines-per-function: "off"
+  max-lines: 'off'
+  max-lines-per-function: 'off'
   max-nested-callbacks: error
   max-params:
     - error
     - max: 5
-  max-statements: "off"
+  max-statements: 'off'
   max-statements-per-line: error
   multiline-comment-style: warn
   multiline-ternary:
@@ -124,11 +123,10 @@ rules:
   no-bitwise: error
   no-buffer-constructor: error
   no-caller: error
-  # 简化代码，忽略迷惑的箭头函数提示
-  no-confusing-arrow: "off"
-  no-console: "off"
+  no-confusing-arrow: 'off'
+  no-console: 'off'
   no-continue: error
-  no-debugger: "off"
+  no-debugger: 'off'
   no-div-regex: error
   no-duplicate-imports: error
   no-else-return: error
@@ -138,12 +136,12 @@ rules:
   no-extend-native: error
   no-extra-bind: error
   no-extra-label: error
-  no-extra-parens: "off"
+  no-extra-parens: 'off'
   no-floating-decimal: error
   no-global-assign: error
   no-implicit-globals: error
   no-implied-eval: error
-  no-inline-comments: "off"
+  no-inline-comments: 'off'
   no-invalid-this: error
   no-iterator: error
   no-label-var: error
@@ -151,30 +149,30 @@ rules:
   no-lone-blocks: error
   no-lonely-if: error
   no-loop-func: error
-  no-magic-numbers: "off"
+  no-magic-numbers: 'off'
   no-misleading-character-class: error
   no-mixed-operators:
     - error
     - groups:
-        - - "&"
-          - "|"
+        - - '&'
+          - '|'
           - ^
-          - "~"
-          - "<<"
-          - ">>"
-          - ">>>"
-        - - "&&"
-          - "||"
+          - '~'
+          - '<<'
+          - '>>'
+          - '>>>'
+        - - '&&'
+          - '||'
   no-mixed-requires: error
-  no-multi-assign: "off"
+  no-multi-assign: 'off'
   no-multi-spaces:
     - error
     - ignoreEOLComments: true
   no-multi-str: error
   no-multiple-empty-lines: error
-  no-useless-escape: "off"
+  no-useless-escape: 'off'
   no-negated-condition: error
-  no-nested-ternary: "off"
+  no-nested-ternary: 'off'
   no-new: error
   no-new-func: error
   no-new-object: error
@@ -185,8 +183,8 @@ rules:
     - error
     - props: false
   no-path-concat: error
-  no-plusplus: "off"
-  no-process-env: "off"
+  no-plusplus: 'off'
+  no-process-env: 'off'
   no-process-exit: error
   no-proto: error
   no-prototype-builtins: error
@@ -201,20 +199,20 @@ rules:
   no-return-await: error
   no-script-url: error
   no-self-compare: error
-  no-sequences: "off"
+  no-sequences: 'off'
   no-shadow:
     - error
     - hoist: all
   no-shadow-restricted-names: error
-  no-sync: "off"
+  no-sync: 'off'
   no-tabs: error
   no-template-curly-in-string: error
-  no-ternary: "off"
+  no-ternary: 'off'
   no-throw-literal: error
   no-trailing-spaces: error
   no-undef-init: error
-  no-undefined: "off"
-  no-underscore-dangle: "off"
+  no-undefined: 'off'
+  no-underscore-dangle: 'off'
   no-unmodified-loop-condition: error
   no-unneeded-ternary: error
   no-unused-expressions: error
@@ -251,8 +249,8 @@ rules:
         multiline: true
       ObjectPattern:
         multiline: true
-  object-curly-spacing: "off"
-  object-property-newline: "off"
+  object-curly-spacing: 'off'
+  object-property-newline: 'off'
   object-shorthand: error
   one-var:
     - error
@@ -265,14 +263,14 @@ rules:
     - error
     - after
     - overrides:
-        "?": before
-        ":": before
-  padded-blocks: "off"
+        '?': before
+        ':': before
+  padded-blocks: 'off'
   padding-line-between-statements:
     - error
     - blankLine: always
       prev: directive
-      next: "*"
+      next: '*'
     - blankLine: any
       prev: directive
       next: directive
@@ -281,7 +279,7 @@ rules:
         - const
         - let
         - var
-      next: "*"
+      next: '*'
     - blankLine: any
       prev:
         - const
@@ -292,12 +290,12 @@ rules:
         - let
         - var
     - blankLine: always
-      prev: "*"
+      prev: '*'
       next: return
   prefer-arrow-callback: error
   prefer-const: error
   prefer-destructuring:
-    - "off"
+    - 'off'
     - object: true
       array: false
   prefer-numeric-literals: error
@@ -306,7 +304,7 @@ rules:
   prefer-rest-params: error
   prefer-spread: error
   prefer-template: error
-  quote-props: "off"
+  quote-props: 'off'
   quotes:
     - warn
     - single
@@ -320,11 +318,11 @@ rules:
   semi: error
   semi-spacing: error
   semi-style: error
-  sort-imports: "off"
-  sort-keys: "off"
-  sort-vars: "off"
+  sort-imports: 'off'
+  sort-keys: 'off'
+  sort-vars: 'off'
   space-before-blocks: error
-  space-before-function-paren: "off"
+  space-before-function-paren: 'off'
   space-in-parens:
     - error
     - never

@@ -44,7 +44,7 @@ bordercolor()
     bordercolor()
 
   .sidebar-heading
-    color darken($night-fontcolor, 50%)
+    color $night-fontcolor
 
   // 侧边栏链接
   a.sidebar-link
@@ -136,6 +136,10 @@ bordercolor()
 
   // medium-zoom 插件背景
   &.medium-zoom--opened .medium-zoom-overlay
+    background-color #000
+
+  // flowchart 适配
+  .vuepress-flowchart.loading
     background-color #000
 
   // pwa
