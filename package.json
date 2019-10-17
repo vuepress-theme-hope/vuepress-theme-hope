@@ -4,8 +4,10 @@
   "description": "a light vuepress theme",
   "main": "index.js",
   "scripts": {
-    "publish": "npm publish .",
-    "publish-alpha": "npm publish . --tag=alpha"
+    "copy": "node ./tests/lib/copyTheme.js",
+    "serve-demo": "vuepress dev tests/demo",
+    "clean-serve-demo": "vuepress dev tests/demo --no-cache",
+    "build-demo": "npx vuepress build tests/demo"
   },
   "repository": {
     "type": "git",

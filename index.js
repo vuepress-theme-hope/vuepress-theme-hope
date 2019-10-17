@@ -2,10 +2,10 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-13 15:34:12
+ * @LastEditTime: 2019-10-17 20:33:40
  * @Description: 主题配置
  */
-const path = require('path');
+const { resolve } = require('path');
 
 // Theme API.
 module.exports = (options, ctx) => ({
@@ -19,9 +19,8 @@ module.exports = (options, ctx) => ({
     );
 
     return {
-      '@AlgoliaSearchBox': isAlgoliaSearch
-        ? path.resolve(__dirname, 'components/AlgoliaSearchBox.vue')
-        : path.resolve(__dirname, 'noopModule.js')
+      '@AlgoliaSearchBox':
+        `@vuepress/theme-default/${isAlgoliaSearch ? 'components/AlgoliaSearchBox.vue' : 'noopModule.js'}`
     };
   },
 
@@ -47,6 +46,9 @@ module.exports = (options, ctx) => ({
     if (markdownOption.lineNumbers !== false)
       config.plugin('line-numbers').use(require('@vuepress/markdown/lib/lineNumbers'));
   },
+
+  /** App 增强文件位置 */
+  enhanceAppFiles: resolve(__dirname, 'lib/enhanceApp.js'),
 
   /** 插件选项 */
   plugins: [
@@ -99,7 +101,7 @@ module.exports = (options, ctx) => ({
       'copyright', {
         authorName: options.author,
         minLength: 100,
-        clipboardComponent: path.resolve(__dirname, 'components/Clipboard.vue')
+        clipboardComponent: resolve(__dirname, 'components/Clipboard.vue')
       }
     ],
 
