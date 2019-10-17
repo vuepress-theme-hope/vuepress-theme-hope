@@ -12,6 +12,6 @@ deploy:
   skip-cleanup: true
   local_dir: tests/demo-dist
   github-token: $Github_Token
-  repo: Mister-Hope/blog-beta
+  repo: Mister-Hope/theme-demo
   keep-history: true
   committer_from_gh: true
