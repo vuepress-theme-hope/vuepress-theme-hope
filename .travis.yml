@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - lts/*
+install:
+  - npm ci
+script:
+  - npm run copy
+  - npm run build-demo
+before_deploy: echo theme-demo.mrhope.site >> tests/demo-dist/CNAME
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: tests/demo-dist
+  github-token: $Github_Token
+  repo: Mister-Hope/blog-beta
+  keep-history: true
+  committer_from_gh: true
