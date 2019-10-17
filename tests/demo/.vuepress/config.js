@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-17 20:37:49
+ * @LastEditTime: 2019-10-17 21:23:36
  * @Description: Vuepress配置
  */
 
@@ -42,7 +42,7 @@ module.exports = {
   ],
 
   /** 构建文件输出目录 */
-  dest: './test/dist',
+  dest: './tests/demo-dist',
 
   /** 多语言配置选项
    * 
