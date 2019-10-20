@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-18 11:40:17
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 10:55:51
+ * @LastEditTime: 2019-10-20 13:17:18
  * @Description: 导航栏链接按钮
  *
  * 在官方的基础上添加了图标支持
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { isExternal, isMailto, isTel, ensureExt } from '@parent-theme/util';
+import { ensureExt, isExternal, isMailto, isTel } from '@parent-theme/util';
 
 export default {
   props: { item: { required: true } },

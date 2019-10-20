@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 10:51:24
+ * @LastEditTime: 2019-10-20 13:16:27
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -55,8 +55,8 @@
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink.vue';
 import DropdownTransition from '@parent-theme/components/DropdownTransition.vue';
+import NavLink from '@theme/components/NavLink.vue';
 import last from 'lodash/last';
 
 export default {

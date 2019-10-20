@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 10:57:39
+ * @LastEditTime: 2019-10-20 13:18:17
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
@@ -31,8 +31,8 @@
 
 <script>
 import DropdownLink from '@theme/components/DropdownLink.vue';
-import { resolveNavLinkItem } from '@parent-theme/util';
 import NavLink from '@theme/components/NavLink.vue';
+import { resolveNavLinkItem } from '@parent-theme/util';
 
 export default {
   components: { NavLink, DropdownLink },
@@ -47,7 +47,7 @@ export default {
 
       if (locales && Object.keys(locales).length > 1) {
         const currentLink = this.$page.path;
-        const routes = this.$router.options.routes;
+        const { routes } = this.$router.options;
         const themeLocales = this.$themeConfig.locales || {};
         const languageDropdown = {
           text: this.$themeLocaleConfig.selectText || 'Languages',
@@ -96,11 +96,11 @@ export default {
       if (!this.repoLink) return '';
       if (this.$themeConfig.repoLabel) return this.$themeConfig.repoLabel;
 
-      const repoHost = this.repoLink.match(/^https?:\/\/[^/]+/u)[0];
+      const [repoHost] = this.repoLink.match(/^https?:\/\/[^/]+/u);
       const platforms = ['GitHub', 'GitLab', 'Bitbucket'];
 
-      for (let i = 0; i < platforms.length; i++) {
-        const platform = platforms[i];
+      for (let index = 0; index < platforms.length; index++) {
+        const platform = platforms[index];
 
         if (new RegExp(platform, 'iu').test(repoHost)) return platform;
       }

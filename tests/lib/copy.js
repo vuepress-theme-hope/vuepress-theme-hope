@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-17 12:17:46
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-17 20:09:21
+ * @LastEditTime: 2019-10-20 13:33:00
  * @Description: 复制文件
  */
 
@@ -53,7 +53,6 @@ const copyDir = (srcDir, targetDir) => {
   const files = fs.readdirSync(srcDir, { withFileTypes: true });
 
   files.forEach(file => {
-
     if (file.isFile())
       copyFile(`${srcDir}/${file.name}`, `${targetDir}/${file.name}`);
     else if (file.isDirectory())
@@ -68,10 +67,8 @@ const copyDir = (srcDir, targetDir) => {
  * @param {string} target 目标
  */
 const copy = (src, target) => {
-  if (fs.statSync(src).isDirectory())
-    copyDir(src, target);
-  else if (fs.statSync(src).isFile())
-    copyFile(src, target);
+  if (fs.statSync(src).isDirectory()) copyDir(src, target);
+  else if (fs.statSync(src).isFile()) copyFile(src, target);
 };
 
 module.exports = copy;

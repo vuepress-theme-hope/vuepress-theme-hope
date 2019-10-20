@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:21:28
+ * @LastEditTime: 2019-10-20 13:25:31
  * @Description: 主题颜色选择
 -->
 <template>
@@ -102,7 +102,7 @@ export default {
         return;
       }
 
-      classes.remove(...themes.filter(t => t !== `theme-${theme}`));
+      classes.remove(...themes.filter(themeclass => themeclass !== `theme-${theme}`));
 
       if (moveClass) {
         classes.add(`theme-${theme}`);

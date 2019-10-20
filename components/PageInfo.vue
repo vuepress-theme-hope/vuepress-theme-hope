@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 16:33:35
+ * @LastEditTime: 2019-10-20 13:21:09
  * @Description: 页面信息
 -->
 <template>
@@ -46,7 +46,7 @@ export default {
 
   computed: {
     author() {
-      const author = this.$page.frontmatter.author;
+      const { author } = this.$page.frontmatter;
 
       return author || author === false ? '' : this.$themeConfig.author || '';
     },
@@ -58,7 +58,7 @@ export default {
       return (globalEnable && pageConfig !== false) || (!globalEnable && pageConfig === true);
     },
     visitorID() {
-      const base = this.$site.base;
+      const { base } = this.$site;
 
       return base.slice(0, base.length - 1) + this.$page.path;
     }

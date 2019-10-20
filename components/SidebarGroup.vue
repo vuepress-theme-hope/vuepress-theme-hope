@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:10:01
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:16:23
+ * @LastEditTime: 2019-10-20 13:21:26
  * @Description: 侧边栏分组链接
  *
  * 添加了图标支持
@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import { isActive } from '@parent-theme/util';
 import DropdownTransition from '@parent-theme/components/DropdownTransition.vue';
+import { isActive } from '@parent-theme/util';
 
 export default {
   name: 'SidebarGroup',
@@ -63,7 +63,7 @@ export default {
   computed: {
     icon() {
       const themeConfig = this.$themeConfig;
-      const icon = this.item.icon;
+      const { icon } = this.item;
 
       return themeConfig.sidebarIcon !== false && icon ? `${themeConfig.iconPrefix}${icon}` : '';
     }

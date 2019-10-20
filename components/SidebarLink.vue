@@ -2,13 +2,13 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:14:48
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:20:17
+ * @LastEditTime: 2019-10-20 13:24:50
  * @Description: 侧边栏链接
  *
  * 添加了图标支持
 -->
 <script>
-import { isActive, hashRE, groupHeaders } from '@parent-theme/util';
+import { groupHeaders, hashRE, isActive } from '@parent-theme/util';
 
 const renderIcon = (h, icon) => {
   if (icon[1])
@@ -43,12 +43,12 @@ const renderChildren = (h, children, path, route, maxDepth, depth = 1) => {
   return h(
     'ul',
     { class: 'sidebar-sub-headers' },
-    children.map(c => {
-      const active = isActive(route, `${path}#${c.slug}`);
+    children.map(child => {
+      const active = isActive(route, `${path}#${child.slug}`);
 
       return h('li', { class: 'sidebar-sub-header' }, [
-        renderLink(h, `${path}#${c.slug}`, c.title, [], active),
-        renderChildren(h, c.children, path, route, maxDepth, depth + 1)
+        renderLink(h, `${path}#${child.slug}`, child.title, [], active),
+        renderChildren(h, child.children, path, route, maxDepth, depth + 1)
       ]);
     })
   );
@@ -91,19 +91,19 @@ export default {
      */
     const active =
       item.type === 'auto'
-        ? selfActive || item.children.some(c => isActive($route, `${item.basePath}#${c.slug}`))
+        ? selfActive || item.children.some(child => isActive($route, `${item.basePath}#${child.slug}`))
         : selfActive;
 
     const link =
       item.type === 'external'
         ? renderExternal(h, item.path, item.title || item.path)
         : renderLink(
-            h,
-            item.path,
-            item.title || item.path,
-            $themeConfig.sidebarIcon === false ? [] : [$themeConfig.iconPrefix, item.frontmatter.icon],
-            active
-          );
+          h,
+          item.path,
+          item.title || item.path,
+          $themeConfig.sidebarIcon === false ? [] : [$themeConfig.iconPrefix, item.frontmatter.icon],
+          active
+        );
 
     const maxDepth = [
       $page.frontmatter.sidebarDepth,

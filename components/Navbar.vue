@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:09:19
+ * @LastEditTime: 2019-10-20 13:17:01
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -43,10 +43,10 @@
 
 <script>
 import AlgoliaSearchBox from '@AlgoliaSearchBox';
-import SearchBox from '@SearchBox';
-import SidebarButton from '@parent-theme/components/SidebarButton.vue';
 import NavLinks from '@theme/components/NavLinks.vue';
 import ScreenFull from '@theme/components/ScreenFull.vue';
+import SearchBox from '@SearchBox';
+import SidebarButton from '@parent-theme/components/SidebarButton.vue';
 import Theme from '@theme/components/Theme';
 
 const css = (el, property) => {
@@ -63,7 +63,8 @@ export default {
   data: () => ({ linksWrapMaxWidth: null }),
 
   mounted() {
-    const MOBILE_DESKTOP_BREAKPOINT = 719; // Refer to config.styl
+    // Refer to config.styl
+    const MOBILE_DESKTOP_BREAKPOINT = 719;
     const NAVBAR_VERTICAL_PADDING = parseInt(css(this.$el, 'paddingLeft')) + parseInt(css(this.$el, 'paddingRight'));
     const handleLinksWrapWidth = () => {
       if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) this.linksWrapMaxWidth = null;

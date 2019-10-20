@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-17 19:57:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-17 22:27:10
+ * @LastEditTime: 2019-10-20 13:33:21
  * @Description: 复制主题
  */
 
@@ -19,7 +20,16 @@ try {
 fs.mkdirSync('./tests/demo/.vuepress/theme');
 
 // 复制需要的文件到相应文件夹
-['components', 'global-components', 'layouts', 'lib', 'styles', 'util', 'index.js', 'package.json'].forEach(x => {
+[
+  'components',
+  'global-components',
+  'layouts',
+  'lib',
+  'styles',
+  'util',
+  'index.js',
+  'package.json'
+].forEach(x => {
   copy(`./${x}`, `./tests/demo/.vuepress/theme/${x}`);
 });
 

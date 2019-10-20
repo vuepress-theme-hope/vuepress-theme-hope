@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:05:24
+ * @LastEditTime: 2019-10-20 13:15:34
  * @Description: 路径导航
 -->
 <template>
@@ -42,9 +42,7 @@ export default {
   },
 
   methods: {
-    getBreadCrumbConfig(route) {
-      /** 页面对象 */
-      const pages = this.$site.pages;
+    getLinks(route) {
       /** 路径项 */
       const routePaths = route.fullPath.split('#')[0].split('/');
       /** 链接 */
@@ -62,13 +60,21 @@ export default {
         }
       });
 
+      return links;
+    },
+    getBreadCrumbConfig(route) {
+      /** 页面对象 */
+      const { pages } = this.$site;
       /** 路径导航配置 */
       const breadcrumbConfig = [];
 
+      /** 页面路径 */
+      const links = this.getLinks(route);
+
       // 生成路径导航配置
       for (let index = 1; index < links.length; index++)
-        for (let i = 0; i < pages.length; i++) {
-          const element = pages[i];
+        for (let index2 = 0; index2 < pages.length; index2++) {
+          const element = pages[index2];
 
           if (element.path === links[index]) {
             breadcrumbConfig.push({

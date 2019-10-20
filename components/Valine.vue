@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 16:30:13
+ * @LastEditTime: 2019-10-20 13:25:54
  * @Description: 评论插件
 -->
 <template>
@@ -22,7 +22,7 @@ export default {
     },
     /** 是否启用 Valine */
     valineEnable() {
-      const valineConfig = this.valineConfig;
+      const { valineConfig } = this;
 
       return valineConfig && valineConfig.appId && valineConfig.appKey;
     },
@@ -47,7 +47,7 @@ export default {
   methods: {
     /** 启用 Valine */
     valine(path) {
-      const valineConfig = this.valineConfig;
+      const { valineConfig } = this;
       const valine = new (require('valine'))();
 
       valine.init({

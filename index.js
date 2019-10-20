@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-17 20:33:40
+ * @LastEditTime: 2019-10-20 13:05:50
  * @Description: 主题配置
  */
 const { resolve } = require('path');
@@ -171,6 +171,14 @@ module.exports = (options, ctx) => ({
     ['flowchart', (options.markdown || {}).flowchart !== false],
 
     /** Markdown 文件支持 TeX 语法 */
-    ['mathjax', (options.markdown || {}).mathjax !== false]
+    ['mathjax', (options.markdown || {}).mathjax !== false],
+
+    /** Chunk命名 */
+    [
+      'named-chunks', {
+        pageChunkName: page => `page-${page.title}`,
+        layoutChunkName: layout => `layout-${layout.componentName}`
+      }
+    ]
   ]
 });
