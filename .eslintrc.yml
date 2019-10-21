@@ -8,10 +8,9 @@ env:
   es6: true
   node: true
 
-# 所使用的规则配置
 extends:
-  - "plugin:vue/essential"
-  - "eslint:all"
+  - plugin:vue/essential
+  - eslint:all
   - plugin:prettier/recommended
 
 plugins:
@@ -20,7 +19,6 @@ plugins:
 parserOptions:
   "ecmaVersion": 2018
 
-# 自定义的额外规则
 rules:
   prettier/prettier: error
 
@@ -122,6 +120,9 @@ rules:
   padded-blocks:
     - error
     - never
+
+  prefer-named-capture-group:
+    - off
 
   quotes:
     - error

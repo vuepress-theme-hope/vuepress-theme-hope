@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-17 20:39:17
+ * @LastEditTime: 2019-10-21 13:40:22
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -49,5 +49,11 @@ module.exports = {
   editLinks: false,
 
   /** 自定义仓库链接文字 */
-  repoLabel: 'Github'
+  repoLabel: 'Github',
+
+  /** 分享设置 */
+  share: {
+    content: ['qq', 'twitter', 'weibo'],
+    fallbackImage: '/logo.png'
+  }
 };

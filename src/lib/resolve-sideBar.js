@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:32:19
+ * @LastEditTime: 2019-10-21 00:47:04
  * @Description: 侧边栏处理
  */
 
@@ -33,4 +33,4 @@ const resolveSideBar = (sidebarConfig, prefix = '') =>
     return undefined;
   });
 
-module.exports = resolveSideBar;
+export default resolveSideBar;

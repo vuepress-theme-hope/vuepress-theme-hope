@@ -20,13 +20,10 @@
       <slot name="page-top" slot="top" />
       <slot name="page-bottom" slot="bottom" />
     </Page>
-
-    <BackToTop />
   </div>
 </template>
 
 <script>
-import BackToTop from '@theme/components/BackToTop.vue';
 import Home from '@theme/components/Home.vue';
 import Navbar from '@theme/components/Navbar.vue';
 import Page from '@theme/components/Page.vue';
@@ -34,7 +31,7 @@ import Sidebar from '@parent-theme/components/Sidebar.vue';
 import { resolveSidebarItems } from '@theme/util';
 
 export default {
-  components: { BackToTop, Home, Page, Sidebar, Navbar },
+  components: { Home, Page, Sidebar, Navbar },
 
   data: () => ({ isSidebarOpen: false }),
 
