@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:25:31
+ * @LastEditTime: 2019-10-23 00:12:52
  * @Description: 主题颜色选择
 -->
 <template>
@@ -91,9 +91,8 @@ export default {
 
     /** 设置主题 */
     setTheme(theme, moveClass = true) {
-      const colorThemes = this.theme.color;
       const classes = document.body.classList;
-      const themes = colorThemes.map(colorTheme => `theme-${colorTheme}`);
+      const themes = this.theme.color.map(colorTheme => `theme-${colorTheme}`);
 
       if (!theme) {
         if (moveClass) localStorage.removeItem('theme');

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-14 20:54:25
+ * @LastEditTime: 2019-10-23 00:02:32
  * @Description: 侧边栏配置
  */
 
@@ -14,11 +14,12 @@ module.exports = {
         icon: 'creative',
         children: [
           '',
+          'install',
           {
-            title: '安装 / 使用',
-            icon: 'install',
-            prefix: 'more/',
-            children: ['use', 'install']
+            title: '增强功能',
+            icon: 'extension',
+            prefix: 'enhance/',
+            children: ['markdown']
           }
         ]
       }

@@ -1,34 +1,24 @@
-# 阻止eslint读取父目录或总配置文件的规则
 root: true
 
-# 代码环境
 env:
-  browser: true
-  commonjs: true
-  es6: true
   node: true
+  es6: true
 
 extends:
-  - plugin:vue/essential
-  - eslint:all
+  - "plugin:vue/essential"
+  - "eslint:all"
   - plugin:prettier/recommended
+  - "@vue/prettier"
 
 plugins:
   - prettier
 
-parserOptions:
-  "ecmaVersion": 2018
-
 rules:
-  prettier/prettier: error
-
-  # 自定义
+  no-console: "off"
+  no-debugger: "off"
   arrow-parens:
     - error
     - as-needed
-
-  # 'brace-style': ['error', '1tbs', { allowSingleLine: true }]
-
   comma-dangle:
     - error
     - never
@@ -74,6 +64,10 @@ rules:
   line-comment-position:
     - off
 
+  max-statements:
+    - warn
+    - 25
+
   nonblock-statement-body-position:
     - error
     - any
@@ -98,20 +92,8 @@ rules:
   no-ternary:
     - off
 
-  object-curly-newline:
-    - error
-    - ExportDeclaration:
-        multiline: true
-        minProperties: 3
-      ImportDeclaration:
-        multiline: true
-        minProperties: 5
-      ObjectExpression:
-        multiline: true
-      ObjectPattern:
-        multiline: true
-
-  object-curly-spacing: "off"
+  object-curly-spacing: 
+    - off
 
   one-var:
     - error

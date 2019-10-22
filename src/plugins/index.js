@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-22 23:19:58
+ * @LastEditTime: 2019-10-23 00:24:18
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -132,12 +132,6 @@ module.exports = options => [
     }
   ],
 
-  /** Markdown 文件支持流程图 */
-  ['flowchart', (options.markdown || {}).flowchart !== false],
-
-  /** Markdown 文件支持 TeX 语法 */
-  ['mathjax', (options.markdown || {}).mathjax !== false],
-
   /** Chunk命名 */
   [
     'named-chunks',
@@ -151,5 +145,8 @@ module.exports = options => [
   ['@mr-hope/back-to-top', options.backtotop !== false],
 
   /** 分享插件 */
-  ['@mr-hope/share', options.share]
+  ['@mr-hope/share', options.share],
+
+  /** Markdown 增强插件 */
+  ['@mr-hope/md-enhance', options.markdown]
 ];
