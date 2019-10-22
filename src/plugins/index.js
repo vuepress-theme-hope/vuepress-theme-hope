@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-21 14:11:59
+ * @LastEditTime: 2019-10-22 23:19:58
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -148,8 +148,8 @@ module.exports = options => [
   ],
 
   /** 返回顶部插件 */
-  ['hope-backtotop', options.backtotop !== false],
+  ['@mr-hope/back-to-top', options.backtotop !== false],
 
   /** 分享插件 */
-  ['hope-share', options.share]
+  ['@mr-hope/share', options.share]
 ];

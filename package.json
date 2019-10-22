@@ -34,8 +34,9 @@
     "vuepress-plugin-clean-urls": "^1.0.3",
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-flowchart": "^1.4.3",
-    "vuepress-plugin-hope-backtotop": "0.0.2",
-    "vuepress-plugin-hope-share": "0.0.3",
+    "@mr-hope/vuepress-plugin-back-to-top": "0.0.1-alpha1",
+    "@mr-hope/vuepress-plugin-share": "0.0.1-alpha2",
+    "@mr-hope/vuepress-shared-utils": "0.0.1-alpha1",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-named-chunks": "^1.0.2"
   },
