@@ -35,7 +35,7 @@
     "vuepress-plugin-copyright": "^1.0.2",
     "@mr-hope/vuepress-plugin-md-enhance": "0.0.1-alpha1",
     "@mr-hope/vuepress-plugin-back-to-top": "0.0.1-alpha1",
-    "@mr-hope/vuepress-plugin-share": "0.0.1-alpha2",
+    "@mr-hope/vuepress-plugin-share": "0.0.1-alpha3",
     "@mr-hope/vuepress-shared-utils": "0.0.1-alpha1",
     "vuepress-plugin-named-chunks": "^1.0.2"
   },
