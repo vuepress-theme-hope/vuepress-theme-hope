@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-shared-utils",
-  "version": "0.0.1-alpha3",
+  "version": "0.0.1-alpha.0",
   "description": "shared utils",
   "main": "index.js",
   "scripts": {

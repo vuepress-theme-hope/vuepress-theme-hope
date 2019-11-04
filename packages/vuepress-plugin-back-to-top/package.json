@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-back-to-top",
-  "version": "0.0.1-alpha2",
+  "version": "0.0.1-alpha.0",
   "description": "back-to-top plugin",
   "main": "index.js",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "0.0.16-alpha5",
+  "version": "0.0.1-alpha.0",
   "description": "a light vuepress theme",
   "main": "src/index.js",
   "scripts": {
