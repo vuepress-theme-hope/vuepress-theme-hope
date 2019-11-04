@@ -1,0 +1,28 @@
+{
+  "name": "@mr-hope/vuepress-shared-utils",
+  "version": "0.0.1-alpha3",
+  "description": "shared utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/*.js && npm run test:typescript",
+    "test:typescript": "tsc --noEmit tests/typescript.ts && ts-node tests/typescript.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git"
+  },
+  "keywords": [
+    "vuepress"
+  ],
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/vuepress-shared-utils#readme",
+  "devDependencies": {
+    "tape": "^4.11.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}

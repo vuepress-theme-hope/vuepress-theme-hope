@@ -1,0 +1,21 @@
+{
+  "name": "@mr-hope/vuepress-plugin-back-to-top",
+  "version": "0.0.1-alpha2",
+  "description": "back-to-top plugin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Mister-Hope/vuepress-theme-hope.git"
+  },
+  "keywords": [
+    "backtotop",
+    "vuepress",
+    "plugin"
+  ],
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/vuepress-plugin-back-to-top/#readme"
+}

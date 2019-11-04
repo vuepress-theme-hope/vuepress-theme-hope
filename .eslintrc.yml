@@ -1,0 +1,121 @@
+root: true
+
+env:
+  node: true
+  es6: true
+
+extends:
+  - "plugin:vue/essential"
+  - "eslint:all"
+  - plugin:prettier/recommended
+  - "@vue/prettier"
+
+plugins:
+  - prettier
+
+rules:
+  no-console: "off"
+  no-debugger: "off"
+  arrow-parens:
+    - error
+    - as-needed
+  comma-dangle:
+    - error
+    - never
+
+  complexity:
+    - warn
+    - max: 25
+
+  capitalized-comments:
+    - off
+
+  curly:
+    - error
+    - multi
+
+  global-require:
+    - off
+
+  id-length:
+    - error
+    - min: 2
+      exceptions:
+        - e
+        - h
+        - i
+        - x
+        - y
+
+  implicit-arrow-linebreak:
+    - off
+
+  indent:
+    - error
+    - 2
+
+  init-declarations:
+    - off
+
+  function-call-argument-newline:
+    - error
+    - consistent
+
+  line-comment-position:
+    - off
+
+  max-statements:
+    - warn
+    - 25
+
+  nonblock-statement-body-position:
+    - error
+    - any
+
+  no-inline-comments:
+    - off
+
+  no-magic-numbers:
+    - off
+
+  no-nested-ternary:
+    - off
+
+  no-param-reassign:
+    - error
+    - props: false
+
+  no-plusplus:
+    - error
+    - allowForLoopAfterthoughts: true
+
+  no-ternary:
+    - off
+
+  object-curly-spacing:
+    - off
+
+  one-var:
+    - error
+    - never
+
+  padded-blocks:
+    - error
+    - never
+
+  prefer-named-capture-group:
+    - off
+
+  quotes:
+    - error
+    - single
+
+  radix:
+    - error
+    - as-needed
+
+  sort-keys:
+    - off
+
+  strict:
+    - off

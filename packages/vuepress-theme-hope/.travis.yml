@@ -1,0 +1,56 @@
+language: node_js
+node_js:
+  - lts/*
+install:
+  - npm ci
+jobs:
+  include:
+    # 测试并部署 DEMO
+    - stage: demo
+      name: "Test and Deploy Demo"
+      script:
+        - npm run copy-demo
+        - npm run build-demo
+      before_deploy: echo theme-demo.mrhope.site >> tests/demo-dist/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: tests/demo-dist
+        github-token: $Github_Token
+        repo: Mister-Hope/theme-demo
+        on:
+          all_branches: true
+
+    # 测试文档
+    - stage: test-docs
+      name: "Test Offical Docs"
+      script: 
+        - npm run copy-docs
+        - npm run build-docs
+      before_deploy: echo vuepress-theme-beta.mrhope.site >> dist/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: dist
+        github-token: $Github_Token
+        repo: Mister-Hope/vuepress-theme-hope-docs-beta
+
+    # 部署文档
+    - stage: deploy-docs
+      name: "Deploy Offical Docs"
+      script: 
+        - npm run copy-docs
+        - npm run build-docs
+      before_deploy: echo vuepress-theme.mrhope.site >> dist/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: dist
+        github-token: $Github_Token
+
+stages:
+  - name: demo
+  - name: test-docs
+    if: branch != master
+  - name: deploy-docs
+    if: branch = master
