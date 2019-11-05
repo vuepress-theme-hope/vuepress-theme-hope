@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-12 00:20:41
+ * @LastEditTime: 2019-11-05 23:55:10
  * @Description: 主题颜色
 -->
 <template>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import ClickOutside from '../lib/click-outside';
+import ClickOutside from './click-outside';
 import ThemeOptions from './ThemeOptions.vue';
 
 export default {

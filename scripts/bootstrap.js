@@ -2,22 +2,21 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 13:10:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 18:24:37
+ * @LastEditTime: 2019-11-05 23:53:33
  * @Description: Bootstrap package
  */
 
 const fs = require('fs');
 const path = require('path');
 /** 主题当前版本 */
-const baseVersion = require('../packages/vuepress-theme-hope/package.json')
-  .version;
+const baseVersion = require('../packages/theme/package.json').version;
 
 const packagesDir = path.resolve(__dirname, '../packages/');
 const files = fs.readdirSync(packagesDir);
 
 // eslint-disable-next-line max-lines-per-function
 files.forEach(pkgName => {
-  if (pkgName.charAt(0) === '.' || pkgName === 'vuepress-theme-hope') return;
+  if (pkgName.charAt(0) === '.' || pkgName === 'theme') return;
 
   const desc = `${pkgName} plugin for vuepress-theme-hope`;
   const pkgPath = path.join(packagesDir, pkgName, 'package.json');

@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 12:56:07
+ * @LastEditTime: 2019-11-06 00:07:29
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -120,5 +120,8 @@ module.exports = options => [
   // ['@mr-hope/share', options.share],
 
   /** Markdown 增强插件 */
-  ['@mr-hope/md-enhance', options.markdown]
+  ['@mr-hope/md-enhance', options.markdown],
+
+  /** 主题色插件 */
+  ['@mr-hope/theme-color']
 ];

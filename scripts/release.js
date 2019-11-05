@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 14:31:16
+ * @LastEditTime: 2019-11-05 23:53:19
  * @Description: release
  */
 
@@ -17,7 +17,6 @@ const getVersion = answers => answers.customVersion || versions[answers.bump];
 const isPreRelease = version => Boolean(semver.prerelease(version));
 
 const getNpmTags = version => {
-  console.log(version);
   if (isPreRelease(version)) return ['next', 'alpha', 'beta', 'latest'];
 
   return ['latest', 'beta', 'alpha', 'next'];
