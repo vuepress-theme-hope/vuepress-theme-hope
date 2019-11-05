@@ -8,9 +8,9 @@
     "url": "git+ssh://git@github.com:Mister-Hope/vuepress-theme-hope.git"
   },
   "keywords": [
-    "backtotop",
-    "vuepress",
-    "plugin"
+    "vuepress-plugin",
+    "back-to-top",
+    "mr-hope"
   ],
   "author": "Mr.Hope",
   "license": "MIT",

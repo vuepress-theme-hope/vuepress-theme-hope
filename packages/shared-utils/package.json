@@ -11,7 +11,8 @@
     "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git"
   },
   "keywords": [
-    "vuepress"
+    "vuepress",
+    "mr-hope"
   ],
   "author": "Mr.Hope",
   "license": "MIT",

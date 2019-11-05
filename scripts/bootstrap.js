@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 13:10:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 13:32:49
+ * @LastEditTime: 2019-11-05 18:24:37
  * @Description: Bootstrap package
  */
 
@@ -36,7 +36,7 @@ files.forEach(pkgName => {
         type: 'git',
         url: 'git+https://github.com/Mister-Hope/vuepress-theme-hope.git'
       },
-      keywords: ['vuepress-plugin', pkgName],
+      keywords: ['vuepress-plugin', pkgName, 'mr-hope'],
       author: 'Mr.Hope',
       license: 'MIT',
       bugs: {
