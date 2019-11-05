@@ -1,3 +1,16 @@
+# [](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.2...v) (2019-11-05)
+
+
+
+## [0.0.1-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2019-11-05)
+
+
+### Features
+
+* **vuepress-theme-hope:** split theme-color into a sperate plugin ([24c123d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/24c123d48871406737acf0bf3fd0f1cc5c7c53dd))
+
+
+
 # [](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.1...v) (2019-11-05)
 
 ## [0.0.1-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.0...v0.0.1-alpha.1) (2019-11-05)
