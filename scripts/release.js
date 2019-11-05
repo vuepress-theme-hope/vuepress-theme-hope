@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 13:10:47
+ * @LastEditTime: 2019-11-05 14:29:34
  * @Description: release
  */
 
@@ -18,9 +18,9 @@ const isPreRelease = version => Boolean(semver.prerelease(version));
 
 const getNpmTags = version => {
   console.log(version);
-  if (isPreRelease(version)) return ['next', 'latest'];
+  if (isPreRelease(version)) return ['next', 'alpha', 'beta', 'latest'];
 
-  return ['latest', 'next'];
+  return ['latest', 'beta', 'alpha', 'next'];
 };
 
 // eslint-disable-next-line max-lines-per-function
@@ -80,7 +80,7 @@ const release = async () => {
     'publish',
     version,
     '--force-publish',
-    '--npm-tag',
+    '--dist-tag',
     npmTag
   ];
 
