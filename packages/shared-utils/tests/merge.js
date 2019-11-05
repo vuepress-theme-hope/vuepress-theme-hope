@@ -246,7 +246,19 @@ test('should work on another simple array', tape => {
   const target = ['a1', 'a2', 'c1', 'f1', 'p1'];
   const src = ['t1', 's1', 'c2', 'r1', 'p2', 'p3'];
 
-  const expected = ['a1', 'a2', 'c1', 'f1', 'p1', 't1', 's1', 'c2', 'r1', 'p2', 'p3'];
+  const expected = [
+    'a1',
+    'a2',
+    'c1',
+    'f1',
+    'p1',
+    't1',
+    's1',
+    'c2',
+    'r1',
+    'p2',
+    'p3'
+  ];
   tape.deepEqual(target, ['a1', 'a2', 'c1', 'f1', 'p1']);
   tape.deepEqual(merge(target, src), expected);
   tape.ok(Array.isArray(merge(target, src)));
@@ -305,7 +317,10 @@ test('should work on array of objects', tape => {
 
   tape.deepEqual(merge(target, src), expected);
   tape.ok(Array.isArray(merge(target, src)), 'result should be an array');
-  tape.ok(Array.isArray(merge(target, src)[0].key1), 'subkey should be an array too');
+  tape.ok(
+    Array.isArray(merge(target, src)[0].key1),
+    'subkey should be an array too'
+  );
 
   tape.end();
 });
@@ -324,7 +339,10 @@ test('should work on array of objects with clone option', tape => {
   const merged = merge(target, src, { clone: true });
   tape.deepEqual(merged, expected);
   tape.ok(Array.isArray(merge(target, src)), 'result should be an array');
-  tape.ok(Array.isArray(merge(target, src)[0].key1), 'subkey should be an array too');
+  tape.ok(
+    Array.isArray(merge(target, src)[0].key1),
+    'subkey should be an array too'
+  );
   tape.notEqual(merged[0].key1, src[0].key1);
   tape.notEqual(merged[0].key1, target[0].key1);
   tape.notEqual(merged[0].key2, src[0].key2);
@@ -344,7 +362,8 @@ test('should treat regular expressions like primitive values', tape => {
 });
 
 test(
-  'should treat regular expressions like primitive values and should not' + ' clone even with clone option',
+  'should treat regular expressions like primitive values and should not' +
+    ' clone even with clone option',
   tape => {
     const target = { key1: /abc/ };
     const src = { key1: /efg/ };
@@ -483,7 +502,8 @@ test('should handle custom merge functions', tape => {
     const keys = new Set(Object.keys(target).concat(Object.keys(source)));
     const destination = {};
     keys.forEach(key => {
-      if (key in target && key in source) destination[key] = `${target[key]}-${source[key]}`;
+      if (key in target && key in source)
+        destination[key] = `${target[key]}-${source[key]}`;
       else if (key in target) destination[key] = target[key];
       else destination[key] = source[key];
     });
@@ -600,7 +620,10 @@ test('copy symbol keys in target that do not exist on the target', tape => {
   const res = merge(target, src);
 
   tape.equal(res[mySymbol], 'value1');
-  tape.deepEqual(Object.getOwnPropertySymbols(res), Object.getOwnPropertySymbols(src));
+  tape.deepEqual(
+    Object.getOwnPropertySymbols(res),
+    Object.getOwnPropertySymbols(src)
+  );
   tape.end();
 });
 

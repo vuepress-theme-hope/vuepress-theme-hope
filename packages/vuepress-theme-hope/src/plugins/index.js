@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-31 22:01:08
+ * @LastEditTime: 2019-11-05 12:56:07
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -106,7 +106,7 @@ module.exports = options => [
     'named-chunks',
     {
       pageChunkName: page =>
-        /^(?!\.)[^\\\/:\*\?"<>\|]{1,255}$/u.test(page.title)
+        /^(?!\.)[^\\/:*?"<>|]{1,255}$/u.test(page.title)
           ? `page-${page.title}`
           : `page-${page.key.slice(1)}`,
       layoutChunkName: layout => `layout-${layout.componentName}`

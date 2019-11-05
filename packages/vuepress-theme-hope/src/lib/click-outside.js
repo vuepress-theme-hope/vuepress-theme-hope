@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 00:19:15
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:33:52
+ * @LastEditTime: 2019-11-05 12:53:12
  * @Description: 判断是否点击在组件外部
  */
 
@@ -40,7 +40,7 @@ const isServer = vNode =>
   typeof vNode.componentInstance !== 'undefined' &&
   vNode.componentInstance.$isServer;
 
-exports = module.exports = {
+module.exports = {
   bind(el, binding, vNode) {
     if (!validate(binding)) return;
 
@@ -56,11 +56,11 @@ exports = module.exports = {
       if (el.contains(e.target) || isPopup(vNode.context.popupItem, elements))
         return;
 
-      el.__vueClickOutside__.callback(e);
+      el.$vueClickOutside.callback(e);
     };
 
     // Add Event Listeners
-    el.__vueClickOutside__ = {
+    el.$vueClickOutside = {
       handler,
       callback: binding.value
     };
@@ -68,13 +68,13 @@ exports = module.exports = {
   },
 
   update(el, binding) {
-    if (validate(binding)) el.__vueClickOutside__.callback = binding.value;
+    if (validate(binding)) el.$vueClickOutside.callback = binding.value;
   },
 
   unbind(el, binding, vNode) {
     // Remove Event Listeners
     if (!isServer(vNode))
-      document.removeEventListener('click', el.__vueClickOutside__.handler);
-    delete el.__vueClickOutside__;
+      document.removeEventListener('click', el.$vueClickOutside.handler);
+    delete el.$vueClickOutside;
   }
 };

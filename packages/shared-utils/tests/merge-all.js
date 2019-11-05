@@ -36,7 +36,12 @@ test('invoke merge on every item in array should result with all props', tape =>
   const thirdObject = { third: 123 };
   const fourthObject = { fourth: 'some string' };
 
-  const mergedObject = merge.all([firstObject, secondObject, thirdObject, fourthObject]);
+  const mergedObject = merge.all([
+    firstObject,
+    secondObject,
+    thirdObject,
+    fourthObject
+  ]);
 
   tape.ok(mergedObject.first === true);
   tape.ok(mergedObject.second === false);
@@ -50,7 +55,9 @@ test('invoke merge on every item in array with clone should clone all elements',
   const secondObject = { b: { e: true } };
   const thirdObject = { c: { f: 'string' } };
 
-  const mergedWithClone = merge.all([firstObject, secondObject, thirdObject], { clone: true });
+  const mergedWithClone = merge.all([firstObject, secondObject, thirdObject], {
+    clone: true
+  });
 
   tape.notEqual(mergedWithClone.a, firstObject.a);
   tape.notEqual(mergedWithClone.b, secondObject.b);
@@ -64,7 +71,10 @@ test('invoke merge on every item in array clone=false should not clone all eleme
   const secondObject = { b: { e: true } };
   const thirdObject = { c: { f: 'string' } };
 
-  const mergedWithoutClone = merge.all([firstObject, secondObject, thirdObject], { clone: false });
+  const mergedWithoutClone = merge.all(
+    [firstObject, secondObject, thirdObject],
+    { clone: false }
+  );
 
   tape.equal(mergedWithoutClone.a, firstObject.a);
   tape.equal(mergedWithoutClone.b, secondObject.b);
@@ -78,7 +88,11 @@ test('invoke merge on every item in array without clone should clone all element
   const secondObject = { b: { e: true } };
   const thirdObject = { c: { f: 'string' } };
 
-  const mergedWithoutClone = merge.all([firstObject, secondObject, thirdObject]);
+  const mergedWithoutClone = merge.all([
+    firstObject,
+    secondObject,
+    thirdObject
+  ]);
 
   tape.notEqual(mergedWithoutClone.a, firstObject.a);
   tape.notEqual(mergedWithoutClone.b, secondObject.b);

@@ -1,8 +1,7 @@
 node_modules/
+packages/vuepress-plugin-shared-utils/node_modules/
 packages/vuepress-theme-hope/dist/
 packages/vuepress-theme-hope/docs/.vuepress/theme/
 packages/vuepress-theme-hope/node_modules/
 packages/vuepress-theme-hope/tests/demo/.vuepress/theme/
 packages/vuepress-theme-hope/tests/demo-dist/
-packages/vuepress-plugin-md-enhance/node_modules/
-packages/vuepress-plugin-shared-utils/node_modules/

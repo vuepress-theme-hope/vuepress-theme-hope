@@ -3,19 +3,28 @@ node_js:
   - lts/*
 install:
   - npm ci
+  - npm run lerna:bootstrap
 jobs:
   include:
+    # 测试 shared-utils
+    - stage: test-shared-utils
+      name: "Test shared utils"
+      script:
+        - cd packages/shared-utils
+        - npm run test
+
     # 测试并部署 DEMO
     - stage: demo
       name: "Test and Deploy Demo"
       script:
+        - cd packages/vuepress-theme-hope
         - npm run copy-demo
         - npm run build-demo
       before_deploy: echo theme-demo.mrhope.site >> tests/demo-dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: tests/demo-dist
+        local_dir: packages/vuepress-theme-hope/tests/demo-dist
         github-token: $Github_Token
         repo: Mister-Hope/theme-demo
         on:
@@ -25,30 +34,35 @@ jobs:
     - stage: test-docs
       name: "Test Offical Docs"
       script: 
+        - cd packages/vuepress-theme-hope
         - npm run copy-docs
         - npm run build-docs
       before_deploy: echo vuepress-theme-beta.mrhope.site >> dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: dist
+        local_dir: packages/vuepress-theme-hope/dist
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-theme-hope-docs-beta
+        on:
+          all_branches: true
 
     # 部署文档
     - stage: deploy-docs
       name: "Deploy Offical Docs"
       script: 
+        - cd packages/vuepress-theme-hope
         - npm run copy-docs
         - npm run build-docs
       before_deploy: echo vuepress-theme.mrhope.site >> dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: dist
+        local_dir: packages/vuepress-theme-hope/dist
         github-token: $Github_Token
 
 stages:
+  - name: test-shared-utils
   - name: demo
   - name: test-docs
     if: branch != master

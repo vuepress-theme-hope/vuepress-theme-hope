@@ -3,12 +3,12 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-17 19:57:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-04 22:12:45
+ * @LastEditTime: 2019-11-05 12:34:51
  * @Description: 复制主题到 Demo
  */
 
 const fs = require('fs');
-const copy = require('../../lib/copy');
+const copy = require('../../scripts/copy');
 
 // 删除并重新创建 theme 文件夹
 try {

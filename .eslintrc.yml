@@ -89,8 +89,17 @@ rules:
     - error
     - allowForLoopAfterthoughts: true
 
+  no-sync:
+    - off
+
   no-ternary:
     - off
+
+  no-undefined:
+    - off
+
+  no-warning-comments:
+    - warn
 
   object-curly-spacing:
     - off

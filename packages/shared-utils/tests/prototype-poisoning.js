@@ -6,8 +6,14 @@ test('merging objects with own __proto__', tape => {
   const user = {};
   const malicious = JSON.parse('{ "__proto__": { "admin": true } }');
   const mergedObject = merge(user, malicious);
-  tape.notOk(mergedObject.__proto__.admin, 'non-plain properties should not be merged');
-  tape.notOk(mergedObject.admin, 'the destination should have an unmodified prototype');
+  tape.notOk(
+    mergedObject.__proto__.admin,
+    'non-plain properties should not be merged'
+  );
+  tape.notOk(
+    mergedObject.admin,
+    'the destination should have an unmodified prototype'
+  );
   tape.end();
 });
 
@@ -34,9 +40,21 @@ test('merging objects with plain and non-plain properties', tape => {
     mergedObject.parentKey,
     'inherited properties of target should be removed, not merged or ignored'
   );
-  tape.equal('bar', mergedObject.plainKey, 'enumerable own properties of target should be merged');
-  tape.equal('baz', mergedObject.newKey, 'properties not yet on target should be merged');
-  tape.equal('qux', mergedObject[plainSymbolKey], 'enumerable own symbol properties of target should be merged');
+  tape.equal(
+    'bar',
+    mergedObject.plainKey,
+    'enumerable own properties of target should be merged'
+  );
+  tape.equal(
+    'baz',
+    mergedObject.newKey,
+    'properties not yet on target should be merged'
+  );
+  tape.equal(
+    'qux',
+    mergedObject[plainSymbolKey],
+    'enumerable own symbol properties of target should be merged'
+  );
   tape.end();
 });
 
@@ -45,14 +63,21 @@ test('merging strings works with a custom string merge', tape => {
   const target = { name: 'Alexander' };
   const source = { name: 'Hamilton' };
   const customMerge = (key, options) => {
-    if (key === 'name') return (target, source, options) => `${target[0]}. ${source.substring(0, 3)}`;
+    if (key === 'name')
+      return (target, source, options) =>
+        `${target[0]}. ${source.substring(0, 3)}`;
 
     return merge;
   };
 
-  const mergeable = target => isMergeableObject(target) || (typeof target === 'string' && target.length > 1);
+  const mergeable = target =>
+    isMergeableObject(target) ||
+    (typeof target === 'string' && target.length > 1);
 
-  tape.equal('A. Ham', merge(target, source, { customMerge, isMergeableObject: mergeable }).name);
+  tape.equal(
+    'A. Ham',
+    merge(target, source, { customMerge, isMergeableObject: mergeable }).name
+  );
   tape.end();
 });
 

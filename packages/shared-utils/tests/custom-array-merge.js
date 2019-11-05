@@ -41,8 +41,13 @@ test('cloner function is available for merge functions to use', tape => {
   let customMergeWasCalled = false;
   const cloneMerge = (target, source, options) => {
     customMergeWasCalled = true;
-    tape.ok(options.cloneUnlessOtherwiseSpecified, 'cloner function is available');
-    return target.concat(source).map(element => options.cloneUnlessOtherwiseSpecified(element, options));
+    tape.ok(
+      options.cloneUnlessOtherwiseSpecified,
+      'cloner function is available'
+    );
+    return target
+      .concat(source)
+      .map(element => options.cloneUnlessOtherwiseSpecified(element, options));
   };
 
   const src = {

@@ -1,8 +1,10 @@
+/* eslint-disable indent */
+/* eslint-disable no-use-before-define */
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-20 19:02:12
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-25 13:53:54
+ * @LastEditTime: 2019-11-05 14:01:51
  * @Description: This file is edited from 'deep-merge'
  */
 
@@ -16,7 +18,11 @@ const isReactElement = value => value.$$typeof === REACT_ELEMENT_TYPE;
 const isSpecial = value => {
   const stringValue = Object.prototype.toString.call(value);
 
-  return stringValue === '[object RegExp]' || stringValue === '[object Date]' || isReactElement(value);
+  return (
+    stringValue === '[object RegExp]' ||
+    stringValue === '[object Date]' ||
+    isReactElement(value)
+  );
 };
 
 /** 是否可以合并 */
@@ -27,10 +33,13 @@ const emptyTarget = value => (Array.isArray(value) ? [] : {});
 
 /** 克隆 */
 const clone = (value, options) =>
-  options.clone !== false && options.isMergeableObject(value) ? deepmerge(emptyTarget(value), value, options) : value;
+  options.clone !== false && options.isMergeableObject(value)
+    ? deepmerge(emptyTarget(value), value, options)
+    : value;
 
 /** 默认函数合并函数 */
-const arrayMerge = (target, source, options) => target.concat(source).map(element => clone(element, options));
+const arrayMerge = (target, source, options) =>
+  target.concat(source).map(element => clone(element, options));
 
 const getMergeFunction = (key, options) => {
   if (!options.customMerge) return deepmerge;
@@ -42,11 +51,15 @@ const getMergeFunction = (key, options) => {
 /** 获得 Symbol Key */
 const getEnumerableOwnPropertySymbols = target =>
   Object.getOwnPropertySymbols
-    ? Object.getOwnPropertySymbols(target).filter(symbol => target.propertyIsEnumerable(symbol))
+    ? Object.getOwnPropertySymbols(target).filter(symbol =>
+        // eslint-disable-next-line no-prototype-builtins
+        target.propertyIsEnumerable(symbol)
+      )
     : [];
 
 /** 获得 Keys */
-const getKeys = target => Object.keys(target).concat(getEnumerableOwnPropertySymbols(target));
+const getKeys = target =>
+  Object.keys(target).concat(getEnumerableOwnPropertySymbols(target));
 
 const propertyIsOnObject = (object, property) => {
   try {
@@ -59,9 +72,11 @@ const propertyIsOnObject = (object, property) => {
 // Protects from prototype poisoning and unexpected merging up the prototype chain.
 const propertyIsUnsafe = (target, key) =>
   propertyIsOnObject(target, key) && // Properties are safe to merge if they don't exist in the target yet,
-  !// unsafe if they exist up the prototype chain,
-  // and also unsafe if they're nonenumerable.
-  (Object.hasOwnProperty.call(target, key) && Object.propertyIsEnumerable.call(target, key));
+  // unsafe if they exist up the prototype chain, and also unsafe if they're nonenumerable.
+  !(
+    Object.hasOwnProperty.call(target, key) &&
+    Object.propertyIsEnumerable.call(target, key)
+  );
 
 /** 合并对象 */
 const mergeObject = (target, source, options) => {
@@ -75,9 +90,16 @@ const mergeObject = (target, source, options) => {
 
   getKeys(source).forEach(key => {
     if (propertyIsUnsafe(target, key)) return;
-
-    if (!options.isMergeableObject(source[key]) || !target[key]) finalObject[key] = clone(source[key], options);
-    else finalObject[key] = getMergeFunction(key, options)(target[key], source[key], options);
+    if (
+      propertyIsOnObject(target, key) &&
+      options.isMergeableObject(source[key])
+    )
+      finalObject[key] = getMergeFunction(key, options)(
+        target[key],
+        source[key],
+        options
+      );
+    else finalObject[key] = clone(source[key], options);
   });
 
   return finalObject;
@@ -98,14 +120,16 @@ const deepmerge = (target, source, options) => {
 
   if (!sourceAndTargetTypesMatch) return clone(source, finalOptions);
 
-  if (sourceIsArray) return finalOptions.arrayMerge(target, source, finalOptions);
+  if (sourceIsArray)
+    return finalOptions.arrayMerge(target, source, finalOptions);
 
   return mergeObject(target, source, finalOptions);
 };
 
 /** 全部合并 */
 deepmerge.all = (array, options) => {
-  if (!Array.isArray(array)) throw new Error('First argument should be an array');
+  if (!Array.isArray(array))
+    throw new Error('First argument should be an array');
 
   return array.reduce((prev, next) => deepmerge(prev, next, options), {});
 };
