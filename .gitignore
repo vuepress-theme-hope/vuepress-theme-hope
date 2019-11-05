@@ -1,6 +1,6 @@
+dist/
 node_modules/
 packages/share/dist/
-packages/vuepress-theme-hope/dist/
-packages/vuepress-theme-hope/docs/.vuepress/theme/
-packages/vuepress-theme-hope/tests/demo/.vuepress/theme/
-packages/vuepress-theme-hope/tests/demo-dist/
+packages/theme/docs/.vuepress/theme/
+packages/theme/tests/demo/.vuepress/theme/
+packages/theme/tests/demo-dist/

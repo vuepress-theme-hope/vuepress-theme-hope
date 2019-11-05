@@ -39,5 +39,8 @@
     "vuepress-plugin-clean-urls": "^1.0.3",
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-named-chunks": "^1.0.2"
+  },
+  "devDependencies": {
+    "vuepress": "^1.2.0"
   }
 }
