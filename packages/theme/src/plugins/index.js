@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 00:07:29
+ * @LastEditTime: 2019-11-06 00:38:05
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -121,6 +121,9 @@ module.exports = options => [
 
   /** Markdown 增强插件 */
   ['@mr-hope/md-enhance', options.markdown],
+
+  /** 全屏插件 */
+  ['@mr-hope/screen-full'],
 
   /** 主题色插件 */
   ['@mr-hope/theme-color']
