@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 14:29:34
+ * @LastEditTime: 2019-11-05 14:31:16
  * @Description: release
  */
 
@@ -90,7 +90,7 @@ const release = async () => {
     stdio: 'inherit'
   });
 
-  await execa('yarn', ['changelog']);
+  await execa('npm', ['run', 'changelog']);
   await execa('git', ['add', '-A'], { stdio: 'inherit' });
   await execa('git', ['commit', '-m', `chore: ${version} changelog`], {
     stdio: 'inherit'
