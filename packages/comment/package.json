@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-comment",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "Comment plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "scripts": {
@@ -27,15 +27,15 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/comment#readme",
   "dependencies": {
-    "leancloud-storage": "^3.13.2",
-    "valine": "^1.3.6",
-    "vssue": "^1.2.0",
-    "@vssue/vuepress-plugin-vssue": "^1.2.0",
+    "@vssue/api-bitbucket-v2": "^1.1.1",
+    "@vssue/api-gitee-v5": "^1.1.1",
     "@vssue/api-github-v3": "^1.1.2",
     "@vssue/api-github-v4": "^1.2.0",
     "@vssue/api-gitlab-v4": "^1.1.1",
-    "@vssue/api-bitbucket-v2": "^1.1.1",
-    "@vssue/api-gitee-v5": "^1.1.1"
+    "@vssue/vuepress-plugin-vssue": "^1.2.0",
+    "leancloud-storage": "^3.13.2",
+    "valine": "^1.3.6",
+    "vssue": "^1.2.0"
   },
   "devDependencies": {
     "@vuepress/plugin-pwa": "^1.2.0",
