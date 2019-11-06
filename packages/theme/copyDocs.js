@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-17 19:57:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 12:16:23
+ * @LastEditTime: 2019-11-07 00:35:47
  * @Description: 复制主题到文档
  */
 
@@ -21,6 +21,5 @@ fs.mkdirSync('./docs/.vuepress/theme');
 
 // 复制需要的文件到相应文件夹
 copy('./src', './docs/.vuepress/theme');
-copy('./package.json', './docs/.vuepress/theme/package.json');
 
 console.log('copy finished');
