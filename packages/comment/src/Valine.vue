@@ -2,8 +2,8 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:25:54
- * @Description: 评论插件
+ * @LastEditTime: 2019-11-06 14:52:14
+ * @Description: Valine 评论插件
 -->
 <template>
   <div class="valine-wrapper" v-show="commentDisplay">
@@ -15,11 +15,9 @@
 import Vue from 'vue';
 
 export default {
+  props: { valineConfig: Object },
+
   computed: {
-    /** Valine 配置选项 */
-    valineConfig() {
-      return this.$themeConfig.valine;
-    },
     /** 是否启用 Valine */
     valineEnable() {
       const { valineConfig } = this;
@@ -91,7 +89,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@require '~@parent-theme/styles/wrapper.styl'
+@require '~@vuepress/theme-default/styles/wrapper.styl'
 
 .page
   .valine-wrapper

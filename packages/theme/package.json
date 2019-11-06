@@ -29,6 +29,7 @@
   "homepage": "https://vuepress-theme.mrhope.site",
   "dependencies": {
     "@mr-hope/vuepress-plugin-back-to-top": "^0.0.1-alpha.2",
+    "@mr-hope/vuepress-plugin-comment": "^0.0.1-alpha.2",
     "@mr-hope/vuepress-plugin-md-enhance": "0.1.0",
     "@mr-hope/vuepress-plugin-screen-full": "^0.0.1-alpha.2",
     "@mr-hope/vuepress-plugin-theme-color": "^0.0.1-alpha.2",

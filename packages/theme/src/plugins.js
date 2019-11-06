@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 00:38:05
+ * @LastEditTime: 2019-11-06 23:22:57
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -25,7 +25,7 @@ module.exports = options => [
     {
       authorName: options.author,
       minLength: 100,
-      clipboardComponent: resolve(__dirname, '../components/Clipboard.vue')
+      clipboardComponent: resolve(__dirname, 'components/Clipboard.vue')
     }
   ],
 
@@ -115,6 +115,9 @@ module.exports = options => [
 
   /** 返回顶部插件 */
   ['@mr-hope/back-to-top', options.backtotop !== false],
+
+  /** Markdown 增强插件 */
+  ['@mr-hope/comment', options.comment],
 
   /** 分享插件 */
   // ['@mr-hope/share', options.share],

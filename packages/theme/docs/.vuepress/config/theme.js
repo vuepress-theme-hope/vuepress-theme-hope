@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-27 18:23:11
+ * @LastEditTime: 2019-11-06 23:13:23
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -30,7 +30,8 @@ module.exports = {
   },
 
   /** 评论设置 */
-  valine: {
+  comment: {
+    type: 'valine',
     appId: 'ENQC8OAX6E76OUB07ODFfUHm-gzGzoHsz',
     appKey: '2JK4ezJDqxPTF7JLn5Wk6i8y'
   },
