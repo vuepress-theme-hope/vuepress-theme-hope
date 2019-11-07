@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 00:54:32
+ * @LastEditTime: 2019-11-07 20:39:52
  * @Description: release
  */
 
@@ -90,7 +90,6 @@ const release = async () => {
   });
 
   await execa('npm', ['run', 'changelog']);
-  await execa('git', ['add', '-A'], { stdio: 'inherit' });
 };
 
 release().catch(err => {

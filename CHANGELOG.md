@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.1-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.4...v0.0.1-alpha.5) (2019-11-07)
+
+### Bug Fixes
+
+* fix dependecy resolve issue ([7d2d1b3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7d2d1b3e5b8072001bc84e76528f0a5480b49729))
+
 ## [0.0.1-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.3...v0.0.1-alpha.4) (2019-11-07)
 
 ### Features
