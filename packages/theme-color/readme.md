@@ -10,6 +10,8 @@ Theme-color plugin for vuepress-theme-hope.
 npm i @mr-hope/vuepress-plugin-theme-color
 ```
 
+This plugin will provide a `<ThemeColor />` compoenent for you.
+
 ## Options
 
 - **picker**
@@ -57,6 +59,8 @@ vuepress-theme-hope 的 主题色与夜间模式 插件。
 ```bash
 npm i @mr-hope/vuepress-plugin-theme-color
 ```
+
+插件将会提供 `<ThemeColor />` 组件。
 
 ## 选项
 

@@ -1,6 +1,6 @@
 import './styles/index.styl';
-import Theme from './Theme.vue';
+import ThemeColor from './ThemeColor.vue';
 
 export default ({ Vue }) => {
-  Vue.component('Theme', Theme);
+  Vue.component('ThemeColor', ThemeColor);
 };

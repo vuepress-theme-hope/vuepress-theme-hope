@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 14:28:48
+ * @LastEditTime: 2019-11-07 20:47:43
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -32,7 +32,7 @@
       } : {}"
       class="links"
     >
-      <Theme />
+      <ThemeColor />
       <ScreenFull />
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
       <SearchBox v-else-if="$themeConfig.search !== false && $page.frontmatter.search !== false" />
