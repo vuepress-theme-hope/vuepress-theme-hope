@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 12:53:32
+ * @LastEditTime: 2019-11-07 20:52:29
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -64,7 +64,7 @@ export default {
 
   props: {
     item: {
-      type: Array,
+      type: Object,
       required: true
     }
   },
