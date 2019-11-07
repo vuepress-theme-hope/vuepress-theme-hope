@@ -1,7 +1,7 @@
 <template>
-  <div class="comments-wrapper" v-show="enable">
-    <Valine :valine-config="options" v-if="options.type==='valine'" />
-    <Vssue :title="$title" v-else />
+  <div v-show="enable" class="comments-wrapper">
+    <Valine v-if="options.type==='valine'" :valine-config="options" />
+    <Vssue v-else :title="$title" />
   </div>
 </template>
 
@@ -22,5 +22,5 @@ export default {
   data: () => ({
     options: COMMENT_OPTIONS
   })
-}
+};
 </script>

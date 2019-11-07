@@ -2,11 +2,11 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 14:52:14
+ * @LastEditTime: 2019-11-07 17:08:00
  * @Description: Valine 评论插件
 -->
 <template>
-  <div class="valine-wrapper" v-show="commentDisplay">
+  <div v-show="commentDisplay" class="valine-wrapper">
     <div id="valine" />
   </div>
 </template>
@@ -15,7 +15,12 @@
 import Vue from 'vue';
 
 export default {
-  props: { valineConfig: Object },
+  props: {
+    valineConfig: {
+      type: Object,
+      default: () => ({})
+    }
+  },
 
   computed: {
     /** 是否启用 Valine */
@@ -30,7 +35,10 @@ export default {
       const globalEnable = this.valineConfig.commet !== false;
       const pageConfig = this.$page.frontmatter.comment;
 
-      return (globalEnable && pageConfig !== false) || (!globalEnable && pageConfig === true);
+      return (
+        (globalEnable && pageConfig !== false) ||
+        (!globalEnable && pageConfig === true)
+      );
     },
 
     visitorDisplay() {
@@ -38,31 +46,20 @@ export default {
       const globalEnable = this.valineConfig.visitor !== false;
       const pageConfig = this.$page.frontmatter;
 
-      return (globalEnable && pageConfig !== false) || (!globalEnable && pageConfig === true);
+      return (
+        (globalEnable && pageConfig !== false) ||
+        (!globalEnable && pageConfig === true)
+      );
     }
   },
 
-  methods: {
-    /** 启用 Valine */
-    valine(path) {
-      const { valineConfig } = this;
-      const valine = new (require('valine'))();
-
-      valine.init({
-        el: '#valine',
-        appId: valineConfig.appId, // Your appId
-        appKey: valineConfig.appKey, // Your appKey
-        placeholder: valineConfig.placeholder || (this.$lang === 'zh-CN' ? '请留言' : 'Write a comment here'),
-        meta: valineConfig.meta || ['nick', 'mail', 'link'],
-        notify: valineConfig.notify !== false,
-        verify: valineConfig.verify || false,
-        avatar: valineConfig.avatar || 'retro',
-        visitor: this.visitorDisplay,
-        recordIP: valineConfig.recordIP || false,
-        path: path || window.location.pathname,
-        pageSize: valineConfig.pageSize || 10,
-        lang: this.$lang === 'zh-CN' ? 'zh-cn' : 'en'
-      });
+  watch: {
+    $route(to, from) {
+      if (to.path !== from.path)
+        // 切换页面时刷新评论
+        Vue.nextTick(() => {
+          this.valine(to.path);
+        });
     }
   },
 
@@ -76,13 +73,29 @@ export default {
     this.valine(this.$route.path);
   },
 
-  watch: {
-    $route(to, from) {
-      if (to.path !== from.path)
-        // 切换页面时刷新评论
-        Vue.nextTick(() => {
-          this.valine(to.path);
-        });
+  methods: {
+    /** 启用 Valine */
+    valine(path) {
+      const { valineConfig } = this;
+      const valine = new (require('valine'))();
+
+      valine.init({
+        el: '#valine',
+        appId: valineConfig.appId, // Your appId
+        appKey: valineConfig.appKey, // Your appKey
+        placeholder:
+          valineConfig.placeholder ||
+          (this.$lang === 'zh-CN' ? '请留言' : 'Write a comment here'),
+        meta: valineConfig.meta || ['nick', 'mail', 'link'],
+        notify: valineConfig.notify !== false,
+        verify: valineConfig.verify || false,
+        avatar: valineConfig.avatar || 'retro',
+        visitor: this.visitorDisplay,
+        recordIP: valineConfig.recordIP || false,
+        path: path || window.location.pathname,
+        pageSize: valineConfig.pageSize || 10,
+        lang: this.$lang === 'zh-CN' ? 'zh-cn' : 'en'
+      });
     }
   }
 };

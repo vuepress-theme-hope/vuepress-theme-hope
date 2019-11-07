@@ -2,51 +2,51 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:16:27
+ * @LastEditTime: 2019-11-07 12:53:32
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
 -->
 <template>
   <div :class="{ open }" class="dropdown-wrapper">
-    <button :aria-label="dropdownAriaLabel" @click="toggle" class="dropdown-title" type="button">
+    <button class="dropdown-title" type="button" :aria-label="dropdownAriaLabel" @click="toggle">
       <span class="title">
-        <i :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" v-if="item.icon" />
+        <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
         {{ item.text }}
       </span>
       <span :class="open ? 'down' : 'right'" class="arrow" />
     </button>
 
     <DropdownTransition>
-      <ul class="nav-dropdown" v-show="open">
+      <ul v-show="open" class="nav-dropdown">
         <li
+          v-for="(subItem, index) in item.items"
           :key="subItem.link || index"
           class="dropdown-item"
-          v-for="(subItem, index) in item.items"
         >
           <h4 v-if="subItem.type === 'links'">{{ subItem.text }}</h4>
 
-          <ul class="dropdown-subitem-wrapper" v-if="subItem.type === 'links'">
+          <ul v-if="subItem.type === 'links'" class="dropdown-subitem-wrapper">
             <li
+              v-for="childSubItem in subItem.items"
               :key="childSubItem.link"
               class="dropdown-subitem"
-              v-for="childSubItem in subItem.items"
             >
               <NavLink
                 :item="childSubItem"
                 @focusout="
                   isLastItemOfArray(childSubItem, subItem.items) &&
-                  isLastItemOfArray(subItem, item.items) &&
-                  toggle()
+                    isLastItemOfArray(subItem, item.items) &&
+                    toggle()
                 "
               />
             </li>
           </ul>
 
           <NavLink
+            v-else
             :item="subItem"
             @focusout="isLastItemOfArray(subItem, item.items) && toggle()"
-            v-else
           />
         </li>
       </ul>
@@ -62,13 +62,24 @@ import last from 'lodash/last';
 export default {
   components: { NavLink, DropdownTransition },
 
-  data: () => ({ open: false }),
+  props: {
+    item: {
+      type: Array,
+      required: true
+    }
+  },
 
-  props: { item: { required: true } },
+  data: () => ({ open: false }),
 
   computed: {
     dropdownAriaLabel() {
       return this.item.ariaLabel || this.item.text;
+    }
+  },
+
+  watch: {
+    $route() {
+      this.open = false;
     }
   },
 
@@ -79,12 +90,6 @@ export default {
 
     isLastItemOfArray(item, array) {
       return last(array) === item;
-    }
-  },
-
-  watch: {
-    $route() {
-      this.open = false;
     }
   }
 };

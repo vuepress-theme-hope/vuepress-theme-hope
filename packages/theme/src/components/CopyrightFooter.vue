@@ -2,13 +2,13 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:49
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:16:20
+ * @LastEditTime: 2019-11-07 14:28:29
  * @Description: 页脚
  *
  * 添加自定义页脚的预设文字
 -->
 <template>
-  <div class="footer" v-html="footer" v-if="footer" />
+  <div v-if="footer" class="footer" v-html="footer" />
 </template>
 <script>
 export default {
@@ -19,10 +19,11 @@ export default {
       return typeof footer === 'object'
         ? `<a href="${footer.link}">${footer.text}</a>`
         : typeof footer === 'string'
-          ? footer
-          : this.$page.frontmatter.footer === true || this.$themeConfig.footer.displayDefault
-            ? this.$themeConfig.footer.text
-            : '';
+        ? footer
+        : this.$page.frontmatter.footer === true ||
+          this.$themeConfig.footer.displayDefault
+        ? this.$themeConfig.footer.text
+        : '';
     }
   }
 };

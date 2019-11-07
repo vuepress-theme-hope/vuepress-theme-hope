@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-12 17:34:34
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-27 19:52:08
+ * @LastEditTime: 2019-11-07 12:50:59
  * @Description: 剪切板组件
 -->
 <template>
@@ -11,7 +11,9 @@
 
 <script>
 export default {
-  props: ['html'],
+  props: {
+    html: { type: String, default: '' }
+  },
 
   data: () => ({ location: '' }),
 

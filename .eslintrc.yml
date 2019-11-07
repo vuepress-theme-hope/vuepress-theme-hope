@@ -5,17 +5,22 @@ env:
   es6: true
 
 extends:
-  - "plugin:vue/essential"
-  - "eslint:all"
-  - plugin:prettier/recommended
-  - "@vue/prettier"
+  - eslint:all
+  - plugin:vue/recommended
+  # - plugin:prettier/recommended
+  - prettier
+  # - prettier/@typescript-eslint
+  - prettier/vue
 
 plugins:
   - prettier
+  - vue
 
 rules:
   no-console: "off"
+
   no-debugger: "off"
+
   arrow-parens:
     - error
     - as-needed
@@ -51,7 +56,7 @@ rules:
     - off
 
   indent:
-    - error
+    - off
     - 2
     - ignoredNodes:
         - ConditionalExpression
@@ -129,4 +134,16 @@ rules:
     - off
 
   strict:
+    - off
+
+  vue/html-self-closing:
+    - error
+    - html:
+        void: always
+
+  vue/max-attributes-per-line:
+    - error
+    - singleline: 5
+
+  vue/no-v-html:
     - off

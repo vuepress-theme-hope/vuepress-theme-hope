@@ -2,22 +2,22 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-31 22:43:54
+ * @LastEditTime: 2019-11-07 14:28:19
  * @Description: 路径导航
 -->
 <template>
   <nav :class="['breadcrumb',{disable:!enable}]">
     <ul v-if="enable">
       <li
-        :class="{'is-active': config.length -1 === index}"
-        :key="item.url"
         v-for="(item,index) in config"
+        :key="item.url"
+        :class="{'is-active': config.length -1 === index}"
       >
         <a @click="$router.push(item.url)">
           <template v-if="item.icon && $themeConfig.breadcrumbIcon !== false">
             <i :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
           </template>
-          <span class="title">{{item.title}}</span>
+          <span class="title">{{ item.title }}</span>
         </a>
       </li>
     </ul>
@@ -37,8 +37,22 @@ export default {
       const globalEnable = this.$themeConfig.breadcrumb !== false;
       const pageConfig = this.$page.frontmatter.breadcrumb;
 
-      return (globalEnable && pageConfig !== false) || (!globalEnable && pageConfig === true);
+      return (
+        (globalEnable && pageConfig !== false) ||
+        (!globalEnable && pageConfig === true)
+      );
     }
+  },
+
+  watch: {
+    $route(to, from) {
+      if (this.enable && to.path !== from.path)
+        this.config = this.getBreadCrumbConfig(to);
+    }
+  },
+
+  mounted() {
+    if (this.enable) this.config = this.getBreadCrumbConfig(this.$route);
   },
 
   methods: {
@@ -88,16 +102,6 @@ export default {
 
       return breadcrumbConfig;
     }
-  },
-
-  watch: {
-    $route(to, from) {
-      if (this.enable && to.path !== from.path) this.config = this.getBreadCrumbConfig(to);
-    }
-  },
-
-  mounted() {
-    if (this.enable) this.config = this.getBreadCrumbConfig(this.$route);
   }
 };
 </script>

@@ -2,32 +2,38 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-13 13:59:35
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-13 15:04:20
+ * @LastEditTime: 2019-11-07 12:55:43
  * @Description: 主页
 -->
 <template>
   <main aria-labelledby="main-title" class="home">
     <header class="hero">
-      <img :alt="data.heroAlt || 'HomeLogo'" :src="$withBase(data.heroImage)" v-if="data.heroImage" />
+      <img v-if="data.heroImage" :src="$withBase(data.heroImage)" :alt="data.heroAlt || 'HomeLogo'" />
+      <h1
+        v-if="data.heroText !== null"
+        id="main-title"
+        v-text="data.heroText || $title || 'Hello'"
+      />
 
-      <h1 id="main-title" v-if="data.heroText !== null">{{ data.heroText || $title || 'Hello' }}</h1>
+      <p
+        class="description"
+        v-text="data.tagline || $description || 'Welcome to your VuePress site'"
+      />
 
-      <p class="description">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</p>
-
-      <p class="action" v-if="data.actionText && data.actionLink">
+      <p v-if="data.actionText && data.actionLink" class="action">
         <NavLink :item="actionLink" class="action-button" />
       </p>
     </header>
 
-    <div class="features" v-if="data.features && data.features.length">
+    <div v-if="data.features && data.features.length" class="features">
       <div
-        :class="{link:feature.link}"
-        :key="index"
-        class="feature"
         v-for="(feature, index) in data.features"
+        :key="index"
+        :class="{link:feature.link}"
+        class="feature"
       >
         <h2>
-          <span @click="navigate(feature.link)" v-if="feature.link">{{ feature.title }}</span>
+          <span v-if="feature.link" @click="navigate(feature.link)">{{ feature.title }}</span>
           <span v-else>{{ feature.title }}</span>
         </h2>
         <p>{{ feature.details }}</p>
@@ -36,7 +42,7 @@
 
     <Content class="theme-default-content custom" />
 
-    <div class="footer" v-if="data.footer">{{ data.footer }}</div>
+    <div v-if="data.footer" class="footer" v-text="data.footer" />
   </main>
 </template>
 

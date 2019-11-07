@@ -2,31 +2,32 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 00:12:41
+ * @LastEditTime: 2019-11-07 17:05:49
  * @Description: 页面信息
 -->
 <template>
   <div class="page-title">
     <h1>{{$page.title}}</h1>
-    <div class="page-info" v-if="author||visitor">
+    <div v-if="author||visitor" class="page-info">
       <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
         <path
+          v-if="author"
           d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8
           57.6 201.6 147.2 249.6-121.6 48-214.4 153.6-240 288-3.2 9.6 0 19.2 6.4 25.6 3.2 9.6 12.8 12.8
           22.4 12.8h704c9.6 0 19.2-3.2 25.6-12.8 6.4-6.4 9.6-16 6.4-25.6-25.6-134.4-121.6-240-243.2-288z"
           fill="currentColor"
-          v-if="author"
         />
       </svg>
       <span v-if="author" v-text="author" />
       <span
-        :data-flag-title="$page.title"
-        :id="visitorID"
-        class="leancloud_visitors"
         v-if="visitor"
+        :id="visitorID"
+        :data-flag-title="$page.title"
+        class="leancloud_visitors"
       >
         <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
           <path
+            v-if="count<1000"
             d="M992 512.096c0-5.76-0.992-10.592-1.28-11.136-0.192-2.88-1.152-8.064-2.08-10.816-0.256-0.672-0.544-1.376-0.832-2.08-0.48-1.568-1.024-3.104-1.6-4.32C897.664 290.112 707.104 160 512 160 316.928 160 126.368
             290.016 38.24 482.592c-1.056 2.112-1.792 4.096-2.272 5.856-0.224 0.544-0.448 1.088-0.64
             1.6-1.76 5.088-1.792 8.64-1.632 7.744-0.832 3.744-1.568 11.168-1.568 11.168-0.224 2.272-0.224
@@ -37,9 +38,9 @@
             517.632 992 512.096zM512 672c-88.224 0-160-71.776-160-160s71.776-160 160-160 160 71.776 160
             160S600.224 672 512 672z"
             fill="currentColor"
-            v-if="count<1000"
           />
           <path
+            v-else
             d="M726.4 201.6c-12.8-9.6-28.8-6.4-38.4 0-9.6 9.6-16 25.6-9.6 38.4 6.4 12.8 9.6 28.8 12.8
             44.8-86.4-201.6-230.4-246.4-236.8-249.6-9.6-3.2-22.4 0-28.8 6.4-9.6 6.4-12.8 19.2-9.6 28.8
             12.8 86.4-25.6 188.8-115.2 310.4-6.4-25.6-16-51.2-32-80-9.6-9.6-22.4-16-35.2-12.8-16 3.2-25.6
@@ -48,7 +49,6 @@
             195.2-425.6 153.6 105.6 224 336 137.6 505.6 3.2 0 6.4-3.2 9.6-3.2 0 0 3.2 0 3.2-3.2 163.2-89.6
             252.8-208 259.2-345.6 16-211.2-163.2-390.4-198.4-412.8z"
             fill="currentColor"
-            v-else
           />
         </svg>
         <span :style="numStyle" class="leancloud-visitors-count" />
@@ -66,25 +66,17 @@ export default {
     count: 0
   }),
 
-  methods: {
-    // 获得评论并根据数量显示火热图标
-    getCount() {
-      const count = document.querySelector('.leancloud_visitors .leancloud-visitors-count').textContent;
-
-      if (count) this.count = count;
-      else
-        setTimeout(() => {
-          this.getCount();
-        }, 500);
-    }
-  },
-
   computed: {
     /** 是否启用 Valine */
     valineEnable() {
       const { valineConfig } = this;
 
-      return valineConfig && valineConfig.type === 'valine' && valineConfig.appId && valineConfig.appKey;
+      return (
+        valineConfig &&
+        valineConfig.type === 'valine' &&
+        valineConfig.appId &&
+        valineConfig.appKey
+      );
     },
     author() {
       const { author } = this.$page.frontmatter;
@@ -96,7 +88,10 @@ export default {
       const globalEnable = this.valineConfig.visitor !== false;
       const pageConfig = this.$page.frontmatter;
 
-      return (globalEnable && pageConfig !== false) || (!globalEnable && pageConfig === true);
+      return (
+        (globalEnable && pageConfig !== false) ||
+        (!globalEnable && pageConfig === true)
+      );
     },
     visitorID() {
       const { base } = this.$site;
@@ -119,6 +114,21 @@ export default {
       setTimeout(() => {
         this.getCount();
       }, 1500);
+  },
+
+  methods: {
+    // 获得评论并根据数量显示火热图标
+    getCount() {
+      const count = document.querySelector(
+        '.leancloud_visitors .leancloud-visitors-count'
+      ).textContent;
+
+      if (count) this.count = count;
+      else
+        setTimeout(() => {
+          this.getCount();
+        }, 500);
+    }
   }
 };
 </script>

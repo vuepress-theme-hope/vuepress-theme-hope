@@ -2,12 +2,12 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 11:42:44
+ * @LastEditTime: 2019-11-07 13:07:10
  * @Description: 主题颜色
 -->
 <template>
-  <div class="color-picker" v-click-outside="()=>{this.showMenu = false;}" v-if="enable">
-    <span @click="showMenu = !showMenu" class="color-button">
+  <div v-if="enable" v-click-outside="clickOutside" class="color-picker">
+    <span class="color-button" @click="showMenu = !showMenu">
       <svg
         :class="{ select: showMenu }"
         class="skin-icon"
@@ -36,7 +36,7 @@
       </svg>
     </span>
     <transition mode="out-in" name="menu-transition">
-      <div class="color-picker-menu" v-show="showMenu">
+      <div v-show="showMenu" class="color-picker-menu">
         <ThemeOptions />
       </div>
     </transition>
@@ -62,7 +62,15 @@ export default {
 
   computed: {
     enable() {
-      return this.options.color !== false || this.options.allowNightmode !== false;
+      return (
+        this.options.color !== false || this.options.allowNightmode !== false
+      );
+    }
+  },
+
+  methods: {
+    clickOutside() {
+      this.showMenu = false;
     }
   }
 };

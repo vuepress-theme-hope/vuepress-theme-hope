@@ -2,17 +2,17 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 18:12:20
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 17:15:03
+ * @LastEditTime: 2019-11-07 14:28:06
  * @Description: 返回顶部组件
 -->
 <template>
   <transition name="fade">
     <svg
-      @click="scrollToTop"
-      class="back-to-top"
       v-if="show"
+      class="back-to-top"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
+      @click="scrollToTop"
     >
       <path
         d="M512 0C229.517 0 0 229.517 0 512s227.752 512 512 512c282.483 0 512-227.752 512-512C1024 229.517 794.483
@@ -42,6 +42,12 @@ export default {
 
   data: () => ({ scrollTop: 0 }),
 
+  computed: {
+    show() {
+      return this.scrollTop > this.threshold;
+    }
+  },
+
   mounted() {
     this.scrollTop = this.getScrollTop();
     window.addEventListener(
@@ -54,18 +60,17 @@ export default {
 
   methods: {
     getScrollTop() {
-      return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      return (
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0
+      );
     },
 
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       this.scrollTop = 0;
-    }
-  },
-
-  computed: {
-    show() {
-      return this.scrollTop > this.threshold;
     }
   }
 };

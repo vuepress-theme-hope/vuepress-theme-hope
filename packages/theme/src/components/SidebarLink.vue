@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:14:48
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:24:50
+ * @LastEditTime: 2019-11-07 17:14:38
  * @Description: 侧边栏链接
  *
  * 添加了图标支持
@@ -20,6 +20,7 @@ const renderIcon = (h, icon) => {
   return null;
 };
 
+// eslint-disable-next-line max-params
 const renderLink = (h, to, text, icon, active) =>
   h(
     'router-link',
@@ -37,6 +38,7 @@ const renderLink = (h, to, text, icon, active) =>
     [renderIcon(h, icon), text]
   );
 
+// eslint-disable-next-line max-params
 const renderChildren = (h, children, path, route, maxDepth, depth = 1) => {
   if (!children || depth > maxDepth) return null;
 
@@ -71,8 +73,18 @@ const renderExternal = (h, to, text) =>
 export default {
   functional: true,
 
-  props: ['item', 'sidebarDepth'],
+  props: {
+    item: {
+      type: Object,
+      default: () => ({})
+    },
+    sidebarDepth: {
+      type: Number,
+      default: 0
+    }
+  },
 
+  // eslint-disable-next-line max-lines-per-function
   render(
     h,
     {
@@ -91,19 +103,24 @@ export default {
      */
     const active =
       item.type === 'auto'
-        ? selfActive || item.children.some(child => isActive($route, `${item.basePath}#${child.slug}`))
+        ? selfActive ||
+          item.children.some(child =>
+            isActive($route, `${item.basePath}#${child.slug}`)
+          )
         : selfActive;
 
     const link =
       item.type === 'external'
         ? renderExternal(h, item.path, item.title || item.path)
         : renderLink(
-          h,
-          item.path,
-          item.title || item.path,
-          $themeConfig.sidebarIcon === false ? [] : [$themeConfig.iconPrefix, item.frontmatter.icon],
-          active
-        );
+            h,
+            item.path,
+            item.title || item.path,
+            $themeConfig.sidebarIcon === false
+              ? []
+              : [$themeConfig.iconPrefix, item.frontmatter.icon],
+            active
+          );
 
     const maxDepth = [
       $page.frontmatter.sidebarDepth,
@@ -113,10 +130,19 @@ export default {
       1
     ].find(depth => depth !== undefined);
 
-    const displayAllHeaders = $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
+    const displayAllHeaders =
+      $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
 
-    if (item.type === 'auto') return [link, renderChildren(h, item.children, item.basePath, $route, maxDepth)];
-    if ((active || displayAllHeaders) && item.headers && !hashRE.test(item.path)) {
+    if (item.type === 'auto')
+      return [
+        link,
+        renderChildren(h, item.children, item.basePath, $route, maxDepth)
+      ];
+    if (
+      (active || displayAllHeaders) &&
+      item.headers &&
+      !hashRE.test(item.path)
+    ) {
       const children = groupHeaders(item.headers);
 
       return [link, renderChildren(h, children, item.path, $route, maxDepth)];

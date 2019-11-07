@@ -2,10 +2,22 @@
 export default {
   functional: true,
   props: {
-    type: { type: String, default: 'tip' },
-    text: String,
-    vertical: { type: String, default: 'top' },
-    color: String
+    type: {
+      type: String,
+      default: 'tip'
+    },
+    text: {
+      type: String,
+      default: ''
+    },
+    vertical: {
+      type: String,
+      default: 'top'
+    },
+    color: {
+      type: String,
+      default: ''
+    }
   },
   render(h, { props, slots }) {
     const options = {

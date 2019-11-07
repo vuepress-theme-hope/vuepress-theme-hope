@@ -1,24 +1,24 @@
 <template>
   <div
     :class="pageClasses"
+    class="theme-container"
     @touchend="onTouchEnd"
     @touchstart="onTouchStart"
-    class="theme-container"
   >
-    <Navbar @toggle-sidebar="toggleSidebar" v-if="shouldShowNavbar" />
+    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
-    <div @click="toggleSidebar(false)" class="sidebar-mask"></div>
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
-      <slot name="sidebar-top" slot="top" />
-      <slot name="sidebar-bottom" slot="bottom" />
+      <slot slot="top" name="sidebar-top" />
+      <slot slot="bottom" name="sidebar-bottom" />
     </Sidebar>
 
     <Home v-if="$page.frontmatter.home" />
 
-    <Page :sidebar-items="sidebarItems" v-else>
-      <slot name="page-top" slot="top" />
-      <slot name="page-bottom" slot="bottom" />
+    <Page v-else :sidebar-items="sidebarItems">
+      <slot slot="top" name="page-top" />
+      <slot slot="bottom" name="page-bottom" />
     </Page>
   </div>
 </template>
@@ -40,11 +40,15 @@ export default {
       const { themeConfig } = this.$site;
       const { frontmatter } = this.$page;
 
-      if (frontmatter.navbar === false || themeConfig.navbar === false) return false;
+      if (frontmatter.navbar === false || themeConfig.navbar === false)
+        return false;
 
       return (
-        this.$title || themeConfig.logo || themeConfig.repo ||
-        themeConfig.nav || this.$themeLocaleConfig.nav
+        this.$title ||
+        themeConfig.logo ||
+        themeConfig.repo ||
+        themeConfig.nav ||
+        this.$themeLocaleConfig.nav
       );
     },
 
@@ -52,12 +56,19 @@ export default {
       const { frontmatter } = this.$page;
 
       return (
-        !frontmatter.home && frontmatter.sidebar !== false && this.sidebarItems.length
+        !frontmatter.home &&
+        frontmatter.sidebar !== false &&
+        this.sidebarItems.length
       );
     },
 
     sidebarItems() {
-      return resolveSidebarItems(this.$page, this.$page.regularPath, this.$site, this.$localePath);
+      return resolveSidebarItems(
+        this.$page,
+        this.$page.regularPath,
+        this.$site,
+        this.$localePath
+      );
     },
 
     pageClasses() {

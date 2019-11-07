@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 00:18:49
+ * @LastEditTime: 2019-11-07 14:28:48
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -13,16 +13,16 @@
 
     <router-link :to="$localePath" class="home-link">
       <img
-        :alt="$siteTitle"
-        :src="$withBase($themeConfig.logo)"
-        class="logo"
         v-if="$themeConfig.logo"
+        class="logo"
+        :src="$withBase($themeConfig.logo)"
+        :alt="$siteTitle"
       />
       <span
+        v-if="$siteTitle"
+        ref="siteName"
         :class="{ 'can-hide': $themeConfig.logo }"
         class="site-name"
-        ref="siteName"
-        v-if="$siteTitle"
       >{{ $siteTitle }}</span>
     </router-link>
 
@@ -34,7 +34,7 @@
     >
       <Theme />
       <ScreenFull />
-      <AlgoliaSearchBox :options="algolia" v-if="isAlgoliaSearch" />
+      <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
       <SearchBox v-else-if="$themeConfig.search !== false && $page.frontmatter.search !== false" />
       <NavLinks class="can-hide" />
     </div>
@@ -60,12 +60,25 @@ export default {
 
   data: () => ({ linksWrapMaxWidth: null }),
 
+  computed: {
+    algolia() {
+      return this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || {};
+    },
+
+    isAlgoliaSearch() {
+      return this.algolia && this.algolia.apiKey && this.algolia.indexName;
+    }
+  },
+
   mounted() {
     // Refer to config.styl
     const MOBILE_DESKTOP_BREAKPOINT = 719;
-    const NAVBAR_VERTICAL_PADDING = parseInt(css(this.$el, 'paddingLeft')) + parseInt(css(this.$el, 'paddingRight'));
+    const NAVBAR_VERTICAL_PADDING =
+      parseInt(css(this.$el, 'paddingLeft')) +
+      parseInt(css(this.$el, 'paddingRight'));
     const handleLinksWrapWidth = () => {
-      if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) this.linksWrapMaxWidth = null;
+      if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT)
+        this.linksWrapMaxWidth = null;
       else
         this.linksWrapMaxWidth =
           this.$el.offsetWidth -
@@ -75,16 +88,6 @@ export default {
 
     handleLinksWrapWidth();
     window.addEventListener('resize', handleLinksWrapWidth, false);
-  },
-
-  computed: {
-    algolia() {
-      return this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || {};
-    },
-
-    isAlgoliaSearch() {
-      return this.algolia && this.algolia.apiKey && this.algolia.indexName;
-    }
   }
 };
 </script>

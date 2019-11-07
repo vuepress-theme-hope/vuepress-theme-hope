@@ -2,31 +2,31 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-18 11:40:17
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:17:18
+ * @LastEditTime: 2019-11-07 12:58:22
  * @Description: 导航栏链接按钮
  *
  * 在官方的基础上添加了图标支持
 -->
 <template>
   <router-link
+    v-if="!isExternal(link)"
+    class="nav-link"
     :exact="exact"
     :to="link"
     @focusout.native="focusoutAction"
-    class="nav-link"
-    v-if="!isExternal(link)"
   >
-    <i :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" v-if="item.icon" />
+    <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
     {{ item.text }}
   </router-link>
   <a
+    v-else
+    class="nav-link external"
     :href="link"
     :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
     :target="isMailto(link) || isTel(link) ? null : '_blank'"
     @focusout="focusoutAction"
-    class="nav-link external"
-    v-else
   >
-    <i :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" v-if="item.icon" />
+    <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
     {{ item.text }}
     <OutboundLink />
   </a>
@@ -36,7 +36,12 @@
 import { ensureExt, isExternal, isMailto, isTel } from '@parent-theme/util';
 
 export default {
-  props: { item: { required: true } },
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
 
   computed: {
     link() {

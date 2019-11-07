@@ -2,26 +2,26 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:18:17
+ * @LastEditTime: 2019-11-07 12:59:03
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
 -->
 <template>
-  <nav class="nav-links" v-if="userLinks.length || repoLink">
+  <nav v-if="userLinks.length || repoLink" class="nav-links">
     <!-- user links -->
-    <div :key="item.link" class="nav-item" v-for="item in userLinks">
-      <DropdownLink :item="item" v-if="item.type === 'links'" />
-      <NavLink :item="item" v-else />
+    <div v-for="item in userLinks" :key="item.link" class="nav-item">
+      <DropdownLink v-if="item.type === 'links'" :item="item" />
+      <NavLink v-else :item="item" />
     </div>
 
     <!-- repo link -->
     <a
-      :href="repoLink"
+      v-if="repoLink && $themeConfig.repoDisplay !== false"
       class="repo-link"
       rel="noopener noreferrer"
+      :href="repoLink"
       target="_blank"
-      v-if="repoLink && $themeConfig.repoDisplay !== false"
     >
       {{ repoLabel }}
       <OutboundLink />
@@ -54,7 +54,8 @@ export default {
           ariaLabel: this.$themeLocaleConfig.ariaLabel || 'Select language',
           items: Object.keys(locales).map(path => {
             const locale = locales[path];
-            const text = (themeLocales[path] && themeLocales[path].label) || locale.lang;
+            const text =
+              (themeLocales[path] && themeLocales[path].label) || locale.lang;
             let link;
 
             // Stay on the current page
@@ -78,16 +79,17 @@ export default {
 
     userLinks() {
       return (this.nav || []).map(link =>
-        Object.assign(
-          resolveNavLinkItem(link),
-          { items: (link.items || []).map(resolveNavLinkItem) }
-        ));
+        Object.assign(resolveNavLinkItem(link), {
+          items: (link.items || []).map(resolveNavLinkItem)
+        })
+      );
     },
 
     repoLink() {
       const { repo } = this.$themeConfig;
 
-      if (repo) return (/^https?:/u).test(repo) ? repo : `https://github.com/${repo}`;
+      if (repo)
+        return /^https?:/u.test(repo) ? repo : `https://github.com/${repo}`;
 
       return '';
     },

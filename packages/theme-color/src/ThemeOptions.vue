@@ -2,27 +2,27 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 11:57:18
+ * @LastEditTime: 2019-11-07 14:29:19
  * @Description: 主题颜色选择
 -->
 <template>
   <div class="theme-options">
-    <ul class="color-theme-options" v-if="theme.colorList && theme.colorList.length !== 0">
+    <ul v-if="theme.colorList && theme.colorList.length !== 0" class="color-theme-options">
       <li>
-        <a @click.prevent="setTheme()" class="default-theme" href="#" />
+        <a class="default-theme" href="#" @click.prevent="setTheme()" />
       </li>
-      <li :key="color" v-for="color in theme.colorList">
+      <li v-for="color in theme.colorList" :key="color">
         <a
           :class="`${color}-theme`"
           :style="{background: theme.picker[color]}"
-          @click.prevent="setTheme(color)"
           href="#"
+          @click.prevent="setTheme(color)"
         />
       </li>
     </ul>
-    <div class="dark-theme-options toggle-option" v-if="theme.allowNightmode">
-      <label for="dark-theme-toggle">{{text}}:&nbsp;</label>
-      <input @change="toggleDarkTheme" id="dark-theme-toggle" type="checkbox" v-model="darkTheme" />
+    <div v-if="theme.allowNightmode" class="dark-theme-options toggle-option">
+      <label for="dark-theme-toggle">{{ text }}:&nbsp;</label>
+      <input id="dark-theme-toggle" v-model="darkTheme" type="checkbox" @change="toggleDarkTheme" />
     </div>
   </div>
 </template>
@@ -57,7 +57,12 @@ export default {
 
   mounted() {
     this.theme = {
-      colorList: Object.keys(this.options.picker) || ['blue', 'red', 'green', 'orange'],
+      colorList: Object.keys(this.options.picker) || [
+        'blue',
+        'red',
+        'green',
+        'orange'
+      ],
       picker: this.options.picker || this.defaultPicker,
       allowNightmode: this.options.allowNightmode !== false
     };
@@ -103,7 +108,9 @@ export default {
         return;
       }
 
-      classes.remove(...themes.filter(themeclass => themeclass !== `theme-${theme}`));
+      classes.remove(
+        ...themes.filter(themeclass => themeclass !== `theme-${theme}`)
+      );
 
       if (moveClass) {
         classes.add(`theme-${theme}`);
