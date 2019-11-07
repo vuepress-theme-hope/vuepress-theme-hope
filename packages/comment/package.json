@@ -33,8 +33,8 @@
     "@vssue/api-github-v4": "^1.2.0",
     "@vssue/api-gitlab-v4": "^1.1.1",
     "@vssue/vuepress-plugin-vssue": "^1.2.0",
-    "leancloud-storage": "^3.13.2",
-    "valine": "^1.3.6",
+    "leancloud-storage": "^3.15.0",
+    "valine": "^1.3.10",
     "vssue": "^1.2.0"
   },
   "devDependencies": {
