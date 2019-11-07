@@ -2,11 +2,11 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:03:02
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 13:39:04
+ * @LastEditTime: 2019-11-07 11:29:10
  * @Description: 全屏组件
 -->
 <template>
-  <div class="fullscreen-wrapper" v-if="enable">
+  <div class="fullscreen-wrapper">
     <span @click="click" class="icon">
       <svg
         :class="isFullscreen? 'cacelFullScreen': 'fullScreen'"
@@ -55,16 +55,11 @@
 
 <script>
 import screenfull from 'screenfull';
+
 export default {
-  name: 'Screenfull',
+  name: 'ScreenFull',
 
   data: () => ({ isFullscreen: false }),
-
-  computed: {
-    enable() {
-      return !(this.$themeConfig.fullscreen === false);
-    }
-  },
 
   methods: {
     click() {
