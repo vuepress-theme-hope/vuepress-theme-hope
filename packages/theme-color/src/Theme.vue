@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 13:38:41
+ * @LastEditTime: 2019-11-07 11:42:44
  * @Description: 主题颜色
 -->
 <template>
@@ -44,23 +44,25 @@
 </template>
 
 <script>
+/* global THEME_COLOR_OPTIONS */
 import ClickOutside from './click-outside';
 import ThemeOptions from './ThemeOptions.vue';
 
 export default {
-  name: 'UserSettings',
+  name: 'ThemeColor',
 
   directives: { 'click-outside': ClickOutside },
 
   components: { ThemeOptions },
 
-  data: () => ({ showMenu: false }),
+  data: () => ({
+    showMenu: false,
+    options: THEME_COLOR_OPTIONS
+  }),
 
   computed: {
     enable() {
-      const themeConfig = this.$themeConfig;
-
-      return themeConfig.color !== false || themeConfig.allowNightmode !== false;
+      return this.options.color !== false || this.options.allowNightmode !== false;
     }
   }
 };

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-23 00:12:52
+ * @LastEditTime: 2019-11-07 11:43:14
  * @Description: 主题颜色选择
 -->
 <template>
@@ -28,10 +28,13 @@
 </template>
 
 <script>
+/* global THEME_COLOR_OPTIONS */
+
 export default {
   name: 'ThemeOptions',
 
   data: () => ({
+    options: THEME_COLOR_OPTIONS,
     theme: {},
     colors: {
       blue: '#2196f3',
@@ -53,11 +56,9 @@ export default {
   },
 
   mounted() {
-    const themeConfig = this.$themeConfig;
-
     this.theme = {
-      color: themeConfig.color || ['blue', 'red', 'green', 'orange'],
-      allowNightmode: themeConfig.allowNightmode !== false
+      color: this.options.color || ['blue', 'red', 'green', 'orange'],
+      allowNightmode: this.options.allowNightmode !== false
     };
     /** 所选主题 */
     const theme = localStorage.getItem('theme');
