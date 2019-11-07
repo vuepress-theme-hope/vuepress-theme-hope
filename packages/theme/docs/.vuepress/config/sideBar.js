@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 23:02:44
+ * @LastEditTime: 2019-11-07 23:49:00
  * @Description: 侧边栏配置
  */
 
@@ -22,7 +22,7 @@ module.exports = {
       {
         title: '新增功能',
         icon: 'skinfill',
-        children: ['comment', 'themecolor', 'component']
+        children: ['themecolor', 'fullscreen', 'comment', 'component']
       },
       {
         title: 'Markdown 增强',
@@ -43,10 +43,7 @@ module.exports = {
         icon: 'extension',
         children: [
           '',
-          'container',
           'copyright',
-          'mathjax',
-          'flowchart',
           'medium-zoom',
           'pwa'
         ]
@@ -94,7 +91,7 @@ module.exports = {
       {
         title: 'New Feature',
         icon: 'skinfill',
-        children: ['comment', 'themecolor', 'component']
+        children: ['themecolor', 'fullscreen', 'comment', 'component']
       },
       {
         title: 'Markdown Enhance',
@@ -115,10 +112,7 @@ module.exports = {
         icon: 'extension',
         children: [
           '',
-          'container',
           'copyright',
-          'mathjax',
-          'flowchart',
           'medium-zoom',
           'pwa'
         ]

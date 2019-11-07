@@ -17,41 +17,11 @@ In addition to inheriting the plugins enabled by the default theme, vuepress-the
 
 ## New or modified plugins
 
-- [**vuepress-plugin-container**](container.md) <MyBadge text="Change Default" type="warn" />: Change the default language to Chinese, added new `center` and `right` blocks
-
-  **Usage**:
-
-  ```md
-  ~~~ center
-  I am at center
-  ~~~
-
-  ~~~ right
-  I am at right
-  ~~~
-  ```
-
-  **Effert**:
-
-  ~~~ center
-  I am at center
-  ~~~
-
-  ~~~ right
-  I am at right
-  ~~~
-
-  ---
-
 - [**vuepress-plugin-copyright**](copyright.md) <MyBadge text="New" />: Handling copy operations in your VuePress site
 
   **Effert**:
 
   Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect.
-
-- [**vuepress-plugin-mathjax**](mathjax.md) <MyBadge text="New" />: Let the Markdown file in your VuePress site support TeX syntax
-
-- [**vuepress-plugin-flowchart**](flowchart.md) <MyBadge text="New" />: Let the Markdown file support flow chart in your VuePress site
 
 - [**@vuepress/plugin-pwa**](pwa.md)) <MyBadge text="New" /> <MyBadge text="Default Chinese" type="warn" />: PWA Support
 

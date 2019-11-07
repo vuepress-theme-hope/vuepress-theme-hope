@@ -14,7 +14,7 @@ features:
   details: Switch between offical style and a cool night mode theme
   link: /en/guide/themecolor.html#nightmode
 - title: Pageviews and comments
-  details: with Valine to start pageview statistics and comment support
+  details: with Valine and Vssue to start pageview statistics and comment support
   link: /en/guide/comment.html
 - title: Enhancements to the default theme
   details: Enhances a range of features based on the default theme, path navigation, footer support, author display, etc.

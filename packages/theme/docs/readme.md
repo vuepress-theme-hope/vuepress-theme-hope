@@ -14,7 +14,7 @@ features:
   details: 可以在官方主题与一套酷炫的夜间模式间自由切换
   link: /guide/themecolor.html#夜间模式
 - title: 浏览量与评论
-  details: 配合 Valine 来开启阅读量统计与评论支持
+  details: 配合 Valine 与 Vssue 来开启阅读量统计与评论支持
   link: /guide/comment.html
 - title: 默认主题的增强
   details: 在默认主题基础上增强了一系列功能，包括路径导航、页脚支持、作者显示等

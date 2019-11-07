@@ -18,42 +18,6 @@ copyright:
 
 ## 新增或修改的插件
 
-- [**vuepress-plugin-container**](container.md) <MyBadge text="默认配置修改" type="warn" />: 更改默认语言为中文，添加了新的 `center` 和 `right` 块
-
-  **用法**：
-
-  ```md
-  ~~~ center
-  我在中间
-  ~~~
-
-  ~~~ right
-  我在右边
-  ~~~
-  ```
-
-  **效果**：
-
-  ~~~ center
-  我在中间
-  ~~~
-
-  ~~~ right
-  我在右边
-  ~~~
-
-  ---
-
-- [**vuepress-plugin-copyright**](copyright.md) <MyBadge text="新增" />: 处理你的 VuePress 站点中的复制操作
-
-  **效果**：
-
-  请复制这段文字来查看效果。请复制这段文字来查看效果。请复制这段文字来查看效果。请复制这段文字来查看效果。请复制这段文字来查看效果。请复制这段文字来查看效果。请复制这段文字来查看效果。请复制这段文字来查看效果。
-
-- [**vuepress-plugin-mathjax**](mathjax.md) <MyBadge text="新增" />: 让你的 VuePress 站点中的 Markdown 文件支持 TeX 语法
-
-- [**vuepress-plugin-flowchart**](flowchart.md) <MyBadge text="新增" />: 让你的 VuePress 站点中的 Markdown 文件支持流程图
-
 - [**@vuepress/plugin-pwa**](pwa.md)) <MyBadge text="新增" /> <MyBadge text="默认中文" type="warn" />: PWA支持
 
 - [**@vuepress/medium-zoom**](medium-zoom.md) <MyBadge text="新增" />: 这个插件将会使你的图片支持点击缩放。

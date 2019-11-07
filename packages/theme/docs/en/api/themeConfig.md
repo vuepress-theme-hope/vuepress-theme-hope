@@ -27,36 +27,6 @@ Set Icon prefix
 
 NavBarItem adds `icon` fileds to support icon display.
 
-## themeColor <MyBadge text="New" />
-
-### themeColor.picker
-
-- Type: `Object`
-- Default:
-
-  ```js
-  {
-    blue: '#2196f3',
-    red: '#f26d6d',
-    green: '#3eaf7c',
-    orange: '#fb9b5f'
-  }
-  ```
-
-### themeColor.allowNightmode
-
-- Type: `Boolean`
-- Default: `true`
-
-Whether to enable nightmode function
-
-## fullscreen <MyBadge text="New" />
-
-- Type: `Boolean`
-- Default: `true`
-
-Whether to display the "fullscreen" button
-
 ## smoothScroll <MyBadge text="Change Default" type="error" />
 
 - 类型: `Boolean`
@@ -113,161 +83,93 @@ Whether to display the backToTop button
 
 Whether to display the repo link in the navigation bar
 
-## markdown
+## themeColor <MyBadge text="New" />
 
-Configure `themeConfig.markdown` in `.vuepress/config.js` to enable or disable some markdown plugins.
+Theme Color and nightmode config.
 
-::: warning
-`vuepress-theme-hope` injects some default markdown plugins. If you don't need them, you can disable them by configuring them below.
-:::
+### themeColor.picker
 
-### markdown.lineNumbers <MyBadge text="Change Default" type="error" /> <MyBadge text="V0.0.8+" />
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    blue: '#2196f3',
+    red: '#f26d6d',
+    green: '#3eaf7c',
+    orange: '#fb9b5f'
+  }
+  ```
+
+### themeColor.allowNightmode
+
+- Type: `Boolean`
+- Default: `true`
+
+Whether to enable nightmode function
+
+## fullscreen <MyBadge text="New" />
+
+- Type: `Boolean`
+- Default: `true`
+
+Whether to display the "fullscreen" button
+
+## markdown <MyBadge text="New" /
+
+Markdown Enhancement Option
+
+## markdown.enableAll
 
 - Type: `boolean`
-- Default: true
+- Default: `false`
+
+Whether to enable all the functions.
+
+### markdown.lineNumbers <MyBadge text="Change Default" type="error" />
+
+- Type: `boolean`
+- Default: `false`
 
 Whether to display the line number to the left of each code block.
 
-### markdown.sup <MyBadge text="New" /> <MyBadge text="V0.0.8+" />
+### markdown.sup >
 
 - Type: `boolean`
-- Default: true
+- Default: `false`
 
 Whether to enable the upper format support.
 
-### markdown.sub <MyBadge text="New" /> <MyBadge text="V0.0.8+" />
+### markdown.sub
 
 - Type: `boolean`
-- Default: true
+- Default: `false`
 
 Whether to enable the lower corner format support.
 
-### markdown.footnote <MyBadge text="New" /> <MyBadge text="V0.0.8+" />
+### markdown.footnote
 
 - Type: `boolean`
-- Default: true
+- Default: `false`
 
 Whether to enable footnote format support.
 
-### markdown.mathjax <MyBadge text="New" /> <MyBadge text="V0.0.8+" />
+### markdown.mathjax
 
 - Type: `boolean`
-- Default: true
+- Default: `false`
 
 Whether to enable TeX syntax support.
 
-### markdown.flowchart <MyBadge text="New" /> <MyBadge text="V0.0.9+" />
+### markdown.flowchart
 
 - Type: `boolean`
-- Default: true
+- Default: `false`
 
 Whether to enable flowchart syntax support.
 
-## valine <MyBadge text="New" />
+## comment <MyBadge text="New" />
 
-Configure `themeConfig.valine` in `.vuepress/config.js` to enable comments and traffic.
+Commnet options.
 
-::: tip
-If you do not configure it, valine will not be enabled and no error will be triggered.
-:::
-
-### valine.appId
-
-- Type: `String`
-- Required: 是
-
-Fill in the application appId in LeanCloud
-
-### valine.appKey
-
-- Type: `String`
-- Required: true
-
-Fill in the application appKey in LeanCloud
-
-### valine.commet
-
-- Type: `Boolean`
-- Default: `true`
-
-Comment Funtion
-
-### valine.visitor
-
-- Type: `Boolean`
-- Default: `true`
-
-Pageviews FUntion
-
-### More Config about valine
-
-See footnote[^configValine]
-
-[^configValine]: **Valine Configuration**
-
-    - **placeholder**
-
-      - Type: `String`
-      - Default: `'请留言'`
-
-      Comment placeholder
-
-    - **meta**
-
-      - Type: `String[]`
-      - Default: `['nick','mail','link']`
-
-      Commenter's info
-
-    - **avatar**
-
-      - Type: `String`
-      - Default: `'retro'`
-
-      Gravatar avatar display method.
-
-      ::: tip Optional Values
-
-      - ''(Empty String): Gravatar　Offical Pic
-      - mp: Mistery
-      - identicon
-      - monsterid
-      - wavatar
-      - retro
-      - robohash
-      - hide
-
-      See [Valine Avator Config](https://valine.js.org/avatar.html) for details.
-      :::
-
-    - **verify**
-
-      - Type: `Boolean`
-      - Default: `flase`
-
-      Verification code on comment submit
-
-    - notify
-
-      - Type: `Boolean`
-      - Default: `true`
-
-      Whether to send a message reply notification based on the left mailbox
-
-      ::: tip
-      When this option is set, the verification code function will be automatically turned on.
-      :::
-
-#### pageSize
-
-- Type: `Number`
-- Default: `10`
-
-Number of comment per page
-
-#### recordIP
-
-- Type: `Boolean`
-- Default: `false`
-
-Whether to record the commenter IP
+For Details, see [@mr-hope/vuepress-plugin-comment](http://comment.mrhope.site/en/api/)

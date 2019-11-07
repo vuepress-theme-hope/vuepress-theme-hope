@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 20:04:10
+ * @LastEditTime: 2019-11-08 00:14:14
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -48,6 +48,7 @@ module.exports = {
     }
   },
 
+  /** 搜索设置 */
   algolia: {
     apiKey: '4deb442097fb6a05638adf10ef86e222',
     indexName: 'mrhope_vuepress-theme'

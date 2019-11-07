@@ -21,36 +21,6 @@
 
 NavBarItem 新增 `icon` 字段来支持图标显示。
 
-## themeColor <MyBadge text="新增" />
-
-### themeColor.picker
-
-- 类型: `Object`
-- 默认值:
-
-  ```js
-  {
-    blue: '#2196f3',
-    red: '#f26d6d',
-    green: '#3eaf7c',
-    orange: '#fb9b5f'
-  }
-  ```
-
-### themeColor.allowNightmode
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否开启夜间模式支持
-
-## fullscreen <MyBadge text="新增" />
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否显示 ”全屏“ 按钮
-
 ## smoothScroll <MyBadge text="默认配置改变" type="error" />
 
 - 类型: `Boolean`
@@ -107,161 +77,91 @@ NavBarItem 新增 `icon` 字段来支持图标显示。
 
 是否在导航栏显示仓库链接
 
-## markdown
+## themeColor <MyBadge text="新增" />
 
-在`.vuepress/config.js` 中配置 `themeConfig.markdown` 即可启用或禁用一些 markdown 插件。
+主题色和夜间模式设置选项
 
-::: warning
-vuepress-theme-hope 注入了一些默认的 markdown插件，如果不需要这些插件，可以通过下方配置禁用它们。
-:::
+### themeColor.picker
 
-### markdown.lineNumbers <MyBadge text="默认配置改变" type="error" /> <MyBadge text="V0.0.8+" />
+- 类型: `Object`
+- 默认值:
+
+  ```js
+  {
+    blue: '#2196f3',
+    red: '#f26d6d',
+    green: '#3eaf7c',
+    orange: '#fb9b5f'
+  }
+  ```
+
+### themeColor.allowNightmode
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否开启夜间模式支持
+
+## fullscreen <MyBadge text="新增" />
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否显示 ”全屏“ 按钮
+
+## markdown <MyBadge text="新增" />
+
+Markdown 增强配置
+
+## enableAll
 
 - 类型: `boolean`
-- 默认值: true
+- 默认值: `false`
+
+启用全部功能。
+
+### markdown.lineNumbers <MyBadge text="默认配置改变" type="error" />
+
+- 类型: `boolean`
+- 默认值: `false`
 
 是否在每个代码块的左侧显示行号。
 
-### markdown.sup <MyBadge text="新增" /> <MyBadge text="V0.0.8+" />
+### markdown.sup
 
 - 类型: `boolean`
-- 默认值: true
+- 默认值: `false`
 
 是否启用上角标格式支持。
 
-### markdown.sub <MyBadge text="新增" /> <MyBadge text="V0.0.8+" />
+### markdown.sub
 
 - 类型: `boolean`
-- 默认值: true
+- 默认值: `false`
 
 是否启用下角标格式支持。
 
-### markdown.footnote <MyBadge text="新增" /> <MyBadge text="V0.0.8+" />
+### markdown.footnote
 
 - 类型: `boolean`
-- 默认值: true
+- 默认值: `false`
 
 是否启用脚注格式支持。
 
-### markdown.mathjax <MyBadge text="新增" /> <MyBadge text="V0.0.8+" />
+### markdown.mathjax
 
 - 类型: `boolean`
-- 默认值: true
+- 默认值: `false`
 
 是否启用 TeX 语法支持。
 
-### markdown.flowchart <MyBadge text="新增" /> <MyBadge text="V0.0.9+" />
+### markdown.flowchart
 
 - 类型: `boolean`
-- 默认值: true
+- 默认值: `false`
 
 是否启用 流程图 语法支持。
 
-## valine <MyBadge text="新增" />
+## comment <MyBadge text="新增" />
 
-在`.vuepress/config.js` 中配置 `themeConfig.valine` 即可启用评论与访问量功能。
-
-::: tip
-如果不进行配置则不会启用相应功能，不会报错。
-:::
-
-### valine.appId
-
-- 类型: `String`
-- 必填: 是
-
-填入 LeanCloud 中应用的 APP ID
-
-### valine.appKey
-
-- 类型: `String`
-- 必填: 是
-
-填入 LeanCloud 中应用的 APP Key
-
-### valine.commet
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-留言功能
-
-### valine.visitor
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-文章访问量统计功能
-
-### 更多 Valine配置项
-
-详见脚注[^configValine]
-
-[^configValine]: **Valine配置选项**
-
-    - **placeholder**
-
-      - 类型: `String`
-      - 默认值: `'请留言'`
-
-      评论框的 placeholder
-
-    - **meta**
-
-      - 类型: `String[]`
-      - 默认值: `['nick','mail','link']`
-
-    评论者相关属性
-
-    - **avatar**
-
-      - 类型: `String`
-      - 默认值: `'retro'`
-
-      Gravatar 头像展示方式。
-
-      ::: tip 可选值
-
-      - ''(空字符串): Gravatar官方图形
-      - mp: 神秘人(一个灰白头像)
-      - identicon: 抽象几何图形
-      - monsterid: 小怪物
-      - wavatar
-      - retro
-      - robohash
-      - hide
-
-      具体相关说明详见 [Valine 头像配置](https://valine.js.org/avatar.html)
-      :::
-
-    - **verify**
-
-      - 类型: `Boolean`
-      - 默认值: `flase`
-
-      评论提交验证码功能
-
-    - notify
-
-      - 类型: `Boolean`
-      - 默认值: `true`
-
-      是否依据留下的邮箱发出留言回复通知。
-
-      ::: tip
-      设置此选项后会自动开启验证码功能，即 `valine.verify` 失效。
-      :::
-
-#### pageSize
-
-- 类型: `Number`
-- 默认值: `10`
-
-评论列表分页，每页条数
-
-#### recordIP
-
-- 类型: `Boolean`
-- 默认值: `false`
-
-是否记录评论者IP
+评论设置。具体详情请见　[@mr-hope/vuepress-plugin-comment](http://comment.mrhope.site/api/)

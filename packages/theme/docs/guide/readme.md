@@ -44,7 +44,7 @@ icon: infofill
   - [图标显示](navbar.md#图标支持)
   - [主题色切换](themecolor.md#自定义主题色)
   - [夜间模式](themecolor.md#夜间模式)
-  - [全屏按钮](navbar.md#全屏按钮)
+  - [全屏按钮](fullscreen.md)
   - [外观美化](navbar.md#样式更改)
 
 - [**页面**](page.md)
