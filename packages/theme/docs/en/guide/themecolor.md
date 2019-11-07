@@ -4,7 +4,7 @@ icon: skinfill
 
 # Theme color and Night mode
 
-Vuepress-theme-hope implements the theme color and night mode functions with built-in `@mr-hope/vuepress-plugin-theme-color`.
+vuepress-theme-hope implements the theme color and night mode functions with built-in `@mr-hope/vuepress-plugin-theme-color`.
 
 `themeConfig.themeColor` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option.
 

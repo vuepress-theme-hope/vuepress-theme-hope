@@ -35,6 +35,10 @@ module.exports = {
 
 ## 全屏按钮 <MyBadge text="Beta" type="warning" />
 
+vuepress-theme-hope 通过内置 `@mr-hope/vuepress-plugin-full-screen`，实现了主题色与夜间模式功能。
+
+`.vuepress/config.js` 中的 `themeConfig.fullscreen` 会直接传递给插件作为插件选项。
+
 默认启用，可在主题配置中将 `fullscreen` 设置为 `false` 将其取消。
 
 ::: tip
@@ -45,7 +49,7 @@ module.exports = {
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    fullsreen: false // 默认启用，设置false将其关闭
+    fullscreen: false // 默认启用，设置false将其关闭
   }
 }
 ```
