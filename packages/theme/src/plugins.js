@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 11:45:28
+ * @LastEditTime: 2019-11-07 11:50:33
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -117,17 +117,17 @@ module.exports = options => [
   ['@mr-hope/back-to-top', options.backtotop !== false],
 
   /** Markdown 增强插件 */
-  ['@mr-hope/comment', options.comment],
+  ['@mr-hope/comment', options.comment || false],
 
   /** 分享插件 */
   // ['@mr-hope/share', options.share],
 
   /** Markdown 增强插件 */
-  ['@mr-hope/md-enhance', options.markdown],
+  ['@mr-hope/md-enhance', options.markdown || false],
 
   /** 全屏插件 */
   ['@mr-hope/screen-full', options.fullscreen !== false],
 
   /** 主题色插件 */
-  ['@mr-hope/theme-color', options.themeColor]
+  ['@mr-hope/theme-color', options.themeColor || false]
 ];
