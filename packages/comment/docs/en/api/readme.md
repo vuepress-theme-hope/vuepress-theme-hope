@@ -7,6 +7,13 @@
 
 Use Valine or Vssue。
 
+## author
+
+- Type: `String`
+- Required: `false`
+
+Default author for pages
+
 ## Valine config
 
 - [See here](valine.md)

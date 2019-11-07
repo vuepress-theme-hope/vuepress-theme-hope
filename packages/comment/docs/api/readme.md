@@ -7,6 +7,13 @@
 
 使用 Valine 还是 Vssue。
 
+## author
+
+- 类型: String
+- 必填: 否
+
+文章的默认作者
+
 ## Valine 配置
 
 - [点击查看](valine.md)
