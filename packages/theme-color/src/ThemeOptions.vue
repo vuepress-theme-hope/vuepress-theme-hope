@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 14:29:19
+ * @LastEditTime: 2019-11-07 19:02:46
  * @Description: 主题颜色选择
 -->
 <template>
@@ -57,12 +57,9 @@ export default {
 
   mounted() {
     this.theme = {
-      colorList: Object.keys(this.options.picker) || [
-        'blue',
-        'red',
-        'green',
-        'orange'
-      ],
+      colorList: this.options.picker
+        ? Object.keys(this.options.picker)
+        : ['blue', 'red', 'green', 'orange'],
       picker: this.options.picker || this.defaultPicker,
       allowNightmode: this.options.allowNightmode !== false
     };

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 23:13:23
+ * @LastEditTime: 2019-11-07 20:04:10
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');

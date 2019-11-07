@@ -65,7 +65,15 @@ module.exports = {
         title: 'Vuepress',
         prefix: 'vuepress/',
         icon: 'vue',
-        children: ['', 'file', 'plugin', 'theme/', 'theme/config', 'command', 'case']
+        children: [
+          '',
+          'file',
+          'plugin',
+          'theme/',
+          'theme/config',
+          'command',
+          'case'
+        ]
       }
     ],
 
@@ -129,7 +137,15 @@ module.exports = {
         title: 'Vuepress',
         prefix: 'vuepress/',
         icon: 'vue',
-        children: ['', 'file', 'plugin', 'theme/', 'theme/config', 'command', 'case']
+        children: [
+          '',
+          'file',
+          'plugin',
+          'theme/',
+          'theme/config',
+          'command',
+          'case'
+        ]
       }
     ],
 

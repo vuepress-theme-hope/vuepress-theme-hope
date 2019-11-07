@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 00:30:12
+ * @LastEditTime: 2019-11-07 20:04:41
  * @Description: Vuepress配置
  */
 
@@ -187,8 +187,8 @@ module.exports = {
       {
         type: 'valine',
         author: 'Mr.Hope',
-        appId: 'ENQC8OAX6E76OUB07ODFfUHm-gzGzoHsz',
-        appKey: '2JK4ezJDqxPTF7JLn5Wk6i8y'
+        appId: 'GG2VSnGiz09Rx18y2OUzdaHS-gzGzoHsz',
+        appKey: 'fBf2dptTBHxNqALKrzUlBXeB'
       }
     ]
   ]

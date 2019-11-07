@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.0.1-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.3...v0.0.1-alpha.4) (2019-11-07)
+
+### Features
+
+* **vuepress-theme-hope:** load plugin only when needed ([e7b4aae](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e7b4aae569ccd20379c99e49a6feddcefb84762f))
+
+### improvement
+
+* **vuepress-plugin-theme-color:** change colorPicker to picker ([e2c39a9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e2c39a91f92d06ce3e0197c7333e278723e940ae))
+
+### BREAKING CHANGES
+
+* **vuepress-plugin-theme-color:** change colorPicker to picker
+
 ## [0.0.1-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2019-11-06)
 
 ### Features
