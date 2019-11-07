@@ -21,7 +21,9 @@
 
 NavBarItem 新增 `icon` 字段来支持图标显示。
 
-## themePicker <MyBadge text="新增" />
+## themeColor <MyBadge text="新增" />
+
+### themeColor.picker
 
 - 类型: `Object`
 - 默认值:
@@ -34,6 +36,13 @@ NavBarItem 新增 `icon` 字段来支持图标显示。
     orange: '#fb9b5f'
   }
   ```
+
+### themeColor.allowNightmode
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否开启夜间模式支持
 
 ## fullscreen <MyBadge text="新增" />
 

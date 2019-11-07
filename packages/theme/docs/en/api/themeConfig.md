@@ -27,7 +27,9 @@ Set Icon prefix
 
 NavBarItem adds `icon` fileds to support icon display.
 
-## themePicker <MyBadge text="New" />
+## themeColor <MyBadge text="New" />
+
+### themeColor.picker
 
 - Type: `Object`
 - Default:
@@ -40,6 +42,13 @@ NavBarItem adds `icon` fileds to support icon display.
     orange: '#fb9b5f'
   }
   ```
+
+### themeColor.allowNightmode
+
+- Type: `Boolean`
+- Default: `true`
+
+Whether to enable nightmode function
 
 ## fullscreen <MyBadge text="New" />
 
