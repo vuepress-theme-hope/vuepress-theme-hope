@@ -5,7 +5,7 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-comment
 tagline: Comment and visitors plugin for vuepress
 actionText: Get started →
-actionLink: /guide.html
+actionLink: /en/guide/
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

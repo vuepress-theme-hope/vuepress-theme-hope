@@ -5,7 +5,7 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-comment
 tagline: 评论与阅读量插件
 actionText: 使用说明 →
-actionLink: /guide.html
+actionLink: /guide/
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
