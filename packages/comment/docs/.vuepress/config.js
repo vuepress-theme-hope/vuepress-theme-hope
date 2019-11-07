@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 20:04:41
+ * @LastEditTime: 2019-11-07 21:43:29
  * @Description: Vuepress配置
  */
 
@@ -93,12 +93,47 @@ module.exports = {
     /** 头部导航栏的配置 */
     nav: [
       { text: '主页', link: '/' },
-      { text: '指南', link: '/guide.html' },
-      { text: '配置', link: '/api.html' }
+      {
+        text: '指南',
+        items: [
+          { text: 'Valine', link: '/guide/valine.html' },
+          { text: 'Vssue', link: '/guide/vssue.html' }
+        ]
+      },
+      {
+        text: '配置',
+        items: [
+          { text: 'API', link: '/api/' },
+          { text: 'Valine', link: '/api/valine.html' },
+          { text: 'Vssue', link: '/api/vssue.html' }
+        ]
+      }
     ],
 
     /** 侧边栏配置 */
-    sidebar: ['/guide', '/api'],
+    sidebar: {
+      '/guide/': [
+        '',
+        'valine',
+        {
+          title: 'Vssue',
+          children: [
+            'vssue',
+            {
+              title: '支持平台',
+              children: [
+                'supported-platforms',
+                'github',
+                'gitlab',
+                'gitee',
+                'bitbucket'
+              ]
+            }
+          ]
+        }
+      ],
+      '/api/': ['', 'valine', 'vssue']
+    },
 
     /** 侧边栏标题显示深度，0-2 */
     sidebarDepth: 2,
@@ -135,12 +170,47 @@ module.exports = {
         /** 该语言下头部导航栏的配置 */
         nav: [
           { text: 'Home', link: '/en/' },
-          { text: 'Guide', link: '/en/guide.html' },
-          { text: 'Config', link: '/en/api.html' }
+          {
+            text: 'Guide',
+            items: [
+              { text: 'Valine', link: '/en/guide/valine.html' },
+              { text: 'Vssue', link: '/en/guide/vssue.html' }
+            ]
+          },
+          {
+            text: 'Config',
+            items: [
+              { text: 'API', link: '/en/api/' },
+              { text: 'Valine', link: '/en/api/valine.html' },
+              { text: 'Vssue', link: '/en/api/vssue.html' }
+            ]
+          }
         ],
 
         /** 该语言下侧边栏的配置 */
-        sidebar: ['/en/guide', '/en/api']
+        sidebar: {
+          '/en/guide/': [
+            '',
+            'valine',
+            {
+              title: 'Vssue',
+              children: [
+                'vssue',
+                {
+                  title: 'Supported platforms',
+                  children: [
+                    'supported-platforms',
+                    'github',
+                    'gitlab',
+                    'gitee',
+                    'bitbucket'
+                  ]
+                }
+              ]
+            }
+          ],
+          '/en/api/': ['', 'valine', 'vssue']
+        }
       }
     },
 

@@ -1,57 +1,48 @@
-# API Config
+# Valine Config
 
-## type
-
-- Options: `'valine'` or `'vssue'`
-- Required: true
-
-Use Valine or Vssue。
-
-## valine config
-
-### appId
+## appId
 
 - Type: `String`
 - Required: true
 
 Fill in the application appId in LeanCloud
 
-### appKey
+## appKey
 
 - Type: `String`
 - Required: true
 
 Fill in the application appKey in LeanCloud
 
-### commet
+## commet
 
 - Type: `Boolean`
 - Default: `true`
 
 Comment Funtion
 
-### visitor
+## visitor
 
 - Type: `Boolean`
 - Default: `true`
 
 Pageviews FUntion
 
-### pageSize
+## pageSize
 
 - Type: `Number`
 - Default: `10`
 
 Number of comment per page
 
-### recordIP
+## recordIP
 
 - Type: `Boolean`
 - Default: `false`
 
 Whether to record the commenter IP
 
-### More Config about valine
+## More Config about valine
 
 - **placeholder**
 
@@ -76,16 +67,18 @@ Whether to record the commenter IP
 
   ::: tip Optional Values
 
-  - ''(Empty String): Gravatar　Offical Pic
-  - mp: Mistery
-  - identicon
-  - monsterid
-  - wavatar
-  - retro
-  - robohash
-  - hide
+  - `''`(Empty String): Gravatar Offical Pic
+  - `mp`: Mistery
+  - `identicon`
+  - `monsterid`
+  - `wavatar`
+  - `retro`
+  - `robohash`
+  - `hide`
 
   See [Valine Avator Config](https://valine.js.org/avatar.html) for details.
+
+  You can tell users to set their [Gravatar](http://cn.gravatar.com/).
   :::
 
 - **verify**
@@ -95,7 +88,7 @@ Whether to record the commenter IP
 
   Verification code on comment submit
 
-- notify
+- **notify**
 
   - Type: `Boolean`
   - Default: `true`
