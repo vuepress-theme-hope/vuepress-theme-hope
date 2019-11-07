@@ -12,7 +12,7 @@ npm i @mr-hope/vuepress-plugin-theme-color
 
 ## Options
 
-- **colorPicker**
+- **picker**
 
   - Type: `Object`
   - Default:
@@ -58,7 +58,7 @@ npm i @mr-hope/vuepress-plugin-theme-color
 
 ## 选项
 
-- **colorPicker**
+- **picker**
 
   - 类型: `Object`
   - 默认值:

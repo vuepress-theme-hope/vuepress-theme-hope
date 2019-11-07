@@ -2,19 +2,19 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 11:43:14
+ * @LastEditTime: 2019-11-07 11:57:18
  * @Description: 主题颜色选择
 -->
 <template>
   <div class="theme-options">
-    <ul class="color-theme-options" v-if="theme.color && theme.color.length !== 0">
+    <ul class="color-theme-options" v-if="theme.colorList && theme.colorList.length !== 0">
       <li>
         <a @click.prevent="setTheme()" class="default-theme" href="#" />
       </li>
-      <li :key="color" v-for="color in theme.color">
+      <li :key="color" v-for="color in theme.colorList">
         <a
           :class="`${color}-theme`"
-          :style="{background: colors[color]}"
+          :style="{background: theme.picker[color]}"
           @click.prevent="setTheme(color)"
           href="#"
         />
@@ -36,7 +36,7 @@ export default {
   data: () => ({
     options: THEME_COLOR_OPTIONS,
     theme: {},
-    colors: {
+    defaultPicker: {
       blue: '#2196f3',
       red: '#f26d6d',
       green: '#3eaf7c',
@@ -57,7 +57,8 @@ export default {
 
   mounted() {
     this.theme = {
-      color: this.options.color || ['blue', 'red', 'green', 'orange'],
+      colorList: Object.keys(this.options.picker) || ['blue', 'red', 'green', 'orange'],
+      picker: this.options.picker || this.defaultPicker,
       allowNightmode: this.options.allowNightmode !== false
     };
     /** 所选主题 */
