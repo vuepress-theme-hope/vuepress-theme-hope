@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0-beta.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.5...v0.1.0-beta.1) (2019-11-07)
+
+### Bug Fixes
+
+* **vuepress-plugin-theme-color:** change the providing compoenent name to ThemeColor ([d579787](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d579787e84e1c82453c79011b5945aa91c41f53e))
+* **vuepress-theme-hope:** fix DropdownLink prop item type issue ([32a6d8f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/32a6d8f8abac9898ec63f1053b6b927f3fb90e47))
+
 ## [0.0.1-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.4...v0.0.1-alpha.5) (2019-11-07)
 
 ### Bug Fixes
