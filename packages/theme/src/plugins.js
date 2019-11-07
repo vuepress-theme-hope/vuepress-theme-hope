@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 20:06:28
+ * @LastEditTime: 2019-11-07 22:30:30
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -134,6 +134,6 @@ module.exports = options => {
     ['@mr-hope/screen-full', options.fullscreen !== false],
 
     /** 主题色插件 */
-    ['@mr-hope/theme-color', options.themeColor || false]
+    ['@mr-hope/theme-color', options.themeColor]
   ];
 };
