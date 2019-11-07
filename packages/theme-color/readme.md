@@ -14,7 +14,7 @@ npm i @mr-hope/vuepress-plugin-theme-color
 
 - **picker**
 
-  - Type: `Object`
+  - Type: `Object` | `false`
   - Default:
 
     ```js
@@ -25,6 +25,8 @@ npm i @mr-hope/vuepress-plugin-theme-color
       orange: '#fb9b5f'
     }
     ```
+
+You can use `false` to disable it.
 
 - **allowNightmode**
 
@@ -60,7 +62,7 @@ npm i @mr-hope/vuepress-plugin-theme-color
 
 - **picker**
 
-  - 类型: `Object`
+  - 类型: `Object` | `false`
   - 默认值:
 
     ```js
@@ -71,6 +73,8 @@ npm i @mr-hope/vuepress-plugin-theme-color
       orange: '#fb9b5f'
     }
     ```
+
+你也设置为 `false` 将其禁用。
 
 - **allowNightmode**
 
