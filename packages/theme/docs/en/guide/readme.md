@@ -22,7 +22,7 @@ The theme extends Vupress's default theme and largely maintains the Vuepress def
 ::: tip
 You should already be familiar with Vuepress's default theme, as all content related to the default theme will not be introduced.
 
-If you wish to read the Vuepress default theme configuration, please visit [Vuepress Default Theme Configuration](config.md)
+If you wish to read the Vuepress default theme configuration, please visit [Vuepress Default Theme Configuration](https://v1.vuepress.vuejs.org/theme/default-theme-config.html)
 :::
 
 ## New Features

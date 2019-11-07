@@ -22,7 +22,7 @@ icon: infofill
 ::: tip
 您应当已经熟悉 Vuepress 的默认主题，因为所有跟默认主题相关的内容都不会被介绍。
 
-如果您希望阅读 Vuepress 默认主题配置，请访问 [Vuepress 默认主题配置](config.md)
+如果您希望阅读 Vuepress 默认主题配置，请访问 [Vuepress 默认主题配置](https://v1.vuepress.vuejs.org/zh/theme/default-theme-config.html)
 :::
 
 ## 新增功能
