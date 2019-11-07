@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.1.0-beta.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.2...v0.1.0-beta.3) (2019-11-07)
+
+### Bug Fixes
+
+* **theme-color:** rename vue component ([9e24df1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9e24df1dd3c6d8e1ef2f79a37dc186a736fb879f))
+
 # [0.1.0-beta.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.1...v0.1.0-beta.2) (2019-11-07)
 
 ### Bug Fixes
