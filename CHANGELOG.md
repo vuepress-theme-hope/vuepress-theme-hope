@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.1.0-beta.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.1...v0.1.0-beta.2) (2019-11-07)
+
+### Bug Fixes
+
+* **vuepress-theme-hope:** fix theme-color not working with no configuration ([8a55d75](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8a55d75f00ed04522dad2896cefd4875236bb75b))
+
 ## [0.1.0-beta.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.0.1-alpha.5...v0.1.0-beta.1) (2019-11-07)
 
 ### Bug Fixes
