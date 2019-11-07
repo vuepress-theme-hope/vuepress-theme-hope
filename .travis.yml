@@ -13,6 +13,20 @@ jobs:
         - cd packages/shared-utils
         - npm run test
 
+    # 部署评论文档
+    - stage: comment-doc
+      name: "Deploy Comment Docs"
+      script:
+        - cd packages/comment
+        - npm run build-docs
+      before_deploy: echo comment.mrhope.site >> dist/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: packages/comment/dist
+        github-token: $Github_Token
+        repo: Mister-Hope/vuepress-plugin-comment-docs
+
     # 测试并部署 DEMO
     - stage: demo
       name: "Test and Deploy Demo"
@@ -33,7 +47,7 @@ jobs:
     # 测试文档
     - stage: test-docs
       name: "Test Offical Docs"
-      script: 
+      script:
         - cd packages/theme
         - npm run copy-docs
         - npm run build-docs
@@ -50,7 +64,7 @@ jobs:
     # 部署文档
     - stage: deploy-docs
       name: "Deploy Offical Docs"
-      script: 
+      script:
         - cd packages/theme
         - npm run copy-docs
         - npm run build-docs
@@ -64,6 +78,8 @@ jobs:
 stages:
   - name: test-shared-utils
   - name: demo
+  - name: comment-doc
+    if: branch = master
   - name: test-docs
     if: branch != master
   - name: deploy-docs
