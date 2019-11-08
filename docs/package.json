@@ -11,21 +11,8 @@
     "theme:clean-serve": "vuepress dev theme --no-cache",
     "theme:build": "vuepress build theme"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
-  },
-  "keywords": [
-    "vuepress-theme",
-    "docs",
-    "mr-hope"
-  ],
   "author": "Mr.Hope",
   "license": "MIT",
-  "homepage": "https://comment.mrhope.site",
   "devDependencies": {
     "vuepress": "^1.2.0",
     "vuepress-theme-hope": "^0.1.0-beta.4"

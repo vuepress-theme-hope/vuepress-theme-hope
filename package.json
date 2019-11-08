@@ -25,10 +25,9 @@
     "theme:clean-serve": "yarn workspace docs theme:clean-serve",
     "theme:build": "yarn workspace docs theme:build",
     "share-utils:test": "yarn workspace @mr-hope/vuepress-shared-utils test",
-    "test:copy": "yarn workspace vuepress-theme-hope test:copy",
-    "test:serve": "yarn workspace vuepress-theme-hope test:serve",
-    "test:clean-serve": "yarn workspace vuepress-theme-hope test:clean-serve",
-    "test:build": "yarn workspace vuepress-theme-hope test:build"
+    "theme-test:serve": "yarn workspace test theme-test:serve",
+    "theme-test:clean-serve": "yarn workspace test theme-test:clean-serve",
+    "theme-test:build": "yarn workspace test theme-test:build"
   },
   "devDependencies": {
     "@vue/eslint-config-prettier": "^5.0.0",

@@ -4,12 +4,12 @@ icon: markdown
 
 # Markdown 增强
 
-## 上下角标测试
+## 上下角标
 
 - 19^th^
 - H~2~O
 
-## 脚注测试
+## 角标
 
 Footnote 1 link[^first].
 
@@ -25,7 +25,7 @@ Duplicated footnote reference[^second].
 
 [^second]: Footnote text.
 
-## DIY Container 测试
+## DIY 容器
 
 ::: danger 非稳定状态
 本主题仍在制作中，API 可能会有
