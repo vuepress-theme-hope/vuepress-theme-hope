@@ -51,15 +51,6 @@ jobs:
         - cd packages/theme
         - npm run copy-docs
         - npm run build-docs
-      before_deploy: echo vuepress-theme-beta.mrhope.site >> dist/CNAME
-      deploy:
-        provider: pages
-        skip-cleanup: true
-        local_dir: packages/theme/dist
-        github-token: $Github_Token
-        repo: Mister-Hope/vuepress-theme-hope-docs-beta
-        on:
-          all_branches: true
 
     # 部署文档
     - stage: deploy-docs
