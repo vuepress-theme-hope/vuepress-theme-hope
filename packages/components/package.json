@@ -1,7 +1,7 @@
 {
-  "name": "@mr-hope/vuepress-plugin-screen-full",
+  "name": "@mr-hope/vuepress-plugin-components",
   "version": "0.1.0-beta.7",
-  "description": "screen-full plugin for vuepress-theme-hope",
+  "description": "components plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "publishConfig": {
     "access": "public"
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "vuepress-plugin",
-    "screen-full",
+    "components",
     "mr-hope"
   ],
   "author": "Mr.Hope",
@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/screen-full#readme",
-  "dependencies": {
-    "screenfull": "5.0.0"
-  }
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme"
 }

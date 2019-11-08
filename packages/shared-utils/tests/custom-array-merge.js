@@ -1,4 +1,4 @@
-const merge = require('../deepmerge');
+const merge = require('../src/deepmerge');
 const test = require('tape');
 
 test('custom merge array', tape => {
