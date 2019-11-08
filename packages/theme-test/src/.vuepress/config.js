@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 19:57:37
+ * @LastEditTime: 2019-11-08 21:14:06
  * @Description: Vuepress配置
  */
 
@@ -59,7 +59,7 @@ module.exports = {
   ],
 
   /** 构建文件输出目录 */
-  dest: './tests/demo-dist',
+  dest: './dist',
 
   /** 多语言配置选项
    *
@@ -90,6 +90,8 @@ module.exports = {
     '.vuepress/config/sideBar.js',
     '.vuepress/config/theme.js'
   ],
+
+  theme: 'hope',
 
   /** 主题配置 */
   themeConfig: require('./config/theme'),

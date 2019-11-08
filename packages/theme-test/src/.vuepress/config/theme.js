@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 20:03:47
+ * @LastEditTime: 2019-11-08 21:05:01
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -27,6 +27,10 @@ module.exports = {
   /** Markdown设置 */
   markdown: {
     enableAll: true
+  },
+
+  footer: {
+    text: '默认页脚'
   },
 
   /** 评论设置 */

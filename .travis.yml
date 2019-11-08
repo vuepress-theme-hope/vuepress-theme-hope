@@ -13,16 +13,15 @@ jobs:
         - npm run share-utils:test
 
     # 测试并部署 DEMO
-    - stage: demo
-      name: "Test and Deploy Demo"
+    - stage: test-theme
+      name: "Test and Deploy Theme-test"
       script:
-        - npm run test:copy
-        - npm run test:build
-      before_deploy: echo theme-demo.mrhope.site >> packages/theme/tests/demo-dist/CNAME
+        - npm run theme-test:build
+      before_deploy: echo theme-demo.mrhope.site >> packages/theme-test/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: packages/theme/tests/demo-dist
+        local_dir: packages/theme-test/dist
         github-token: $Github_Token
         repo: Mister-Hope/theme-demo
         on:
