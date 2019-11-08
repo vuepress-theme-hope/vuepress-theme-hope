@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 20:39:52
+ * @LastEditTime: 2019-11-08 23:01:25
  * @Description: release
  */
 
@@ -80,7 +80,9 @@ const release = async () => {
     version,
     '--force-publish',
     '--dist-tag',
-    npmTag
+    npmTag,
+    '--registry',
+    'https://registry.npmjs.org/'
   ];
 
   console.log(`lerna ${releaseArguments.join(' ')}`);
