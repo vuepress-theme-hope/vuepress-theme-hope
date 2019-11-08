@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/vuepress-shared-utils#readme",
   "devDependencies": {
-    "tape": "^4.11.0",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.7.2"
+    "tape": "4.11.0",
+    "ts-node": "8.4.1",
+    "typescript": "3.7.2"
   }
 }
