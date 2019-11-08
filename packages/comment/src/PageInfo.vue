@@ -2,16 +2,15 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 17:05:49
+ * @LastEditTime: 2019-11-08 20:51:05
  * @Description: 页面信息
 -->
 <template>
   <div class="page-title">
-    <h1>{{$page.title}}</h1>
+    <h1>{{ $page.title }}</h1>
     <div v-if="author||visitor" class="page-info">
-      <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+      <svg v-if="author" class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
         <path
-          v-if="author"
           d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8
           57.6 201.6 147.2 249.6-121.6 48-214.4 153.6-240 288-3.2 9.6 0 19.2 6.4 25.6 3.2 9.6 12.8 12.8
           22.4 12.8h704c9.6 0 19.2-3.2 25.6-12.8 6.4-6.4 9.6-16 6.4-25.6-25.6-134.4-121.6-240-243.2-288z"
@@ -27,7 +26,7 @@
       >
         <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
           <path
-            v-if="count<1000"
+            v-if="count < 1000"
             d="M992 512.096c0-5.76-0.992-10.592-1.28-11.136-0.192-2.88-1.152-8.064-2.08-10.816-0.256-0.672-0.544-1.376-0.832-2.08-0.48-1.568-1.024-3.104-1.6-4.32C897.664 290.112 707.104 160 512 160 316.928 160 126.368
             290.016 38.24 482.592c-1.056 2.112-1.792 4.096-2.272 5.856-0.224 0.544-0.448 1.088-0.64
             1.6-1.76 5.088-1.792 8.64-1.632 7.744-0.832 3.744-1.568 11.168-1.568 11.168-0.224 2.272-0.224
@@ -79,14 +78,14 @@ export default {
       );
     },
     author() {
-      const { author } = this.$page.frontmatter;
+      const { author } = this.$frontmatter;
 
-      return author || author === false ? '' : this.valineConfig.author || '';
+      return author || (author === false ? '' : this.valineConfig.author || '');
     },
     visitor() {
       if (!this.valineEnable) return false;
       const globalEnable = this.valineConfig.visitor !== false;
-      const pageConfig = this.$page.frontmatter;
+      const pageConfig = this.$frontmatter.visitor;
 
       return (
         (globalEnable && pageConfig !== false) ||

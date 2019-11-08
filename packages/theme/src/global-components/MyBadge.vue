@@ -27,7 +27,7 @@ export default {
 
     if (props.color) {
       options.class.push('diy');
-      options.style.backgroundcolor = props.color;
+      options.style.backgroundColor = props.color;
       options['data-color'] = props.color;
     }
 
