@@ -6,7 +6,7 @@
   "scripts": {
     "serve-docs": "vuepress dev docs",
     "clean-serve-docs": "vuepress dev docs --no-cache",
-    "build-docs": "npx vuepress build docs"
+    "build-docs": "vuepress build docs"
   },
   "publishConfig": {
     "access": "public"

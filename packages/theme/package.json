@@ -7,11 +7,11 @@
     "copy-demo": "node ./copyDemo.js",
     "serve-demo": "vuepress dev tests/demo",
     "clean-serve-demo": "vuepress dev tests/demo --no-cache",
-    "build-demo": "npx vuepress build tests/demo",
+    "build-demo": "vuepress build tests/demo",
     "copy-docs": "node ./copyDocs.js",
     "serve-docs": "vuepress dev docs",
     "clean-serve-docs": "vuepress dev docs --no-cache",
-    "build-docs": "npx vuepress build docs"
+    "build-docs": "vuepress build docs"
   },
   "repository": {
     "type": "git",

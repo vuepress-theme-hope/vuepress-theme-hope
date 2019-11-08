@@ -2,6 +2,8 @@ const { resolve } = require('path');
 
 module.exports = options => {
   const config = {
+    name: 'comment',
+
     define: () => ({
       COMMENT_OPTIONS: options || {}
     }),
