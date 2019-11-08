@@ -1,5 +1,20 @@
 # Changelog
 
+# [0.1.0-beta.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.4...v0.1.0-beta.7) (2019-11-08)
+
+### Bug Fixes
+
+* **theme:** fix issues ([228a89d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/228a89d6d495405981a16f7d48297d2cf46dda8b))
+
+  * fix PageInfo - author not working
+  * fix defaultfooter not working
+  * fix MyBadge - color not working
+
+### Features
+
+* add test ([a03bf3d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a03bf3d473727e4f4427429d640137ce596fc389))
+* use yarn ([be3c187](https://github.com/Mister-Hope/vuepress-theme-hope/commit/be3c187d7d32d48025cd96570be608b43b607bcd))
+
 # [0.1.0-beta.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.3...v0.1.0-beta.4) (2019-11-07)
 
 ### Bug Fixes
