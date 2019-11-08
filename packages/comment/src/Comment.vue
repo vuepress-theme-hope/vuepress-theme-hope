@@ -1,7 +1,7 @@
 <template>
   <div v-show="enable" class="comments-wrapper">
-    <Valine v-if="options.type==='valine'" :valine-config="options" />
-    <Vssue v-else :title="$title" />
+    <Valine v-if="options.type === 'valine'" :valine-config="options" />
+    <Vssue v-else-if="options.type === 'vssue'" :title="$title" />
   </div>
 </template>
 

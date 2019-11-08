@@ -4,14 +4,10 @@
   "description": "a light vuepress theme",
   "main": "src/index.js",
   "scripts": {
-    "copy-demo": "node ./copyDemo.js",
-    "serve-demo": "vuepress dev tests/demo",
-    "clean-serve-demo": "vuepress dev tests/demo --no-cache",
-    "build-demo": "vuepress build tests/demo",
-    "copy-docs": "node ./copyDocs.js",
-    "serve-docs": "vuepress dev docs",
-    "clean-serve-docs": "vuepress dev docs --no-cache",
-    "build-docs": "vuepress build docs"
+    "test:copy": "node ./copyDemo.js",
+    "test:serve": "vuepress dev tests/demo",
+    "test:clean-serve": "vuepress dev tests/demo --no-cache",
+    "test:build": "vuepress build tests/demo"
   },
   "repository": {
     "type": "git",
@@ -30,7 +26,6 @@
   "dependencies": {
     "@mr-hope/vuepress-plugin-back-to-top": "^0.1.0-beta.4",
     "@mr-hope/vuepress-plugin-comment": "^0.1.0-beta.4",
-    "@mr-hope/vuepress-plugin-md-enhance": "^0.1.1",
     "@mr-hope/vuepress-plugin-screen-full": "^0.1.0-beta.4",
     "@mr-hope/vuepress-plugin-theme-color": "^0.1.0-beta.4",
     "@vuepress/plugin-medium-zoom": "^1.2.0",
@@ -38,6 +33,7 @@
     "moment": "^2.24.0",
     "vuepress-plugin-clean-urls": "^1.0.3",
     "vuepress-plugin-copyright": "^1.0.2",
+    "vuepress-plugin-md-enhance": "^0.1.1",
     "vuepress-plugin-named-chunks": "^1.0.2"
   },
   "devDependencies": {

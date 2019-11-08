@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 21:43:29
+ * @LastEditTime: 2019-11-08 16:50:47
  * @Description: Vuepress配置
  */
 
@@ -231,26 +231,6 @@ module.exports = {
   },
 
   plugins: [
-    /** PWA 插件 */
-    [
-      '@vuepress/pwa',
-      {
-        /** 是否注册Service Worker */
-        serviceWorker: true,
-        /** 是否弹出页面更新提示 */
-        updatePopup: {
-          '/': {
-            message: '发现新内容可用',
-            buttonText: '刷新'
-          },
-          '/en/': {
-            message: 'New content is available.',
-            buttonText: 'Refresh'
-          }
-        }
-      }
-    ],
-
     /** 评论插件 */
     [
       require('../../src'),

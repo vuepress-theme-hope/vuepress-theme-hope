@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:29:51
+ * @LastEditTime: 2019-11-08 16:10:05
  * @Description: 合并对象
  */
 
@@ -23,4 +23,4 @@ const assign = (originObject, assignObject) => {
   });
 };
 
-module.exports = assign;
+export default assign;

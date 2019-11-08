@@ -1,4 +1,4 @@
-const merge = require('../');
+const merge = require('../deepmerge');
 const test = require('tape');
 
 test('throw error if first argument is not an array', tape => {

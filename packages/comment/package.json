@@ -4,9 +4,9 @@
   "description": "Comment plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "scripts": {
-    "serve-docs": "vuepress dev docs",
-    "clean-serve-docs": "vuepress dev docs --no-cache",
-    "build-docs": "vuepress build docs"
+    "test:serve": "vuepress dev tests",
+    "test:clean-serve": "vuepress dev tests --no-cache",
+    "test:build": "vuepress build tests"
   },
   "publishConfig": {
     "access": "public"
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/comment#readme",
+  "homepage": "https://comment.mrhope.site",
   "dependencies": {
     "@vssue/api-bitbucket-v2": "^1.1.1",
     "@vssue/api-gitee-v5": "^1.1.1",
@@ -38,7 +38,6 @@
     "vssue": "^1.2.0"
   },
   "devDependencies": {
-    "@vuepress/plugin-pwa": "^1.2.0",
     "vuepress": "^1.2.0"
   }
 }

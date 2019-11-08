@@ -2,8 +2,15 @@
   "name": "vuepress-theme-hope",
   "description": "a light vuepress theme",
   "private": true,
+  "workspaces": [
+    "docs/",
+    "packages/*"
+  ],
   "scripts": {
     "bootstrap": "node scripts/bootstrap.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
+    "commit": "npx git-cz",
+    "release": "node scripts/release.js",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:clean": "lerna clean",
     "packages:list": "lerna ls -l",
@@ -11,19 +18,20 @@
     "packages:changed": "lerna changed",
     "lint": "npm run lint:check --fix",
     "lint:check": "eslint --ext .js --ext .vue packages/",
-    "commit": "npx git-cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
-    "release": "node scripts/release.js"
+    "comment:serve": "yarn workspace docs comment:serve",
+    "comment:clean-serve": "yarn workspace docs comment:clean-serve",
+    "comment:build": "yarn workspace docs comment:build",
+    "theme:serve": "yarn workspace docs theme:serve",
+    "theme:clean-serve": "yarn workspace docs theme:clean-serve",
+    "theme:build": "yarn workspace docs theme:build",
+    "share-utils:test": "yarn workspace @mr-hope/vuepress-shared-utils test",
+    "test:copy": "yarn workspace vuepress-theme-hope test:copy",
+    "test:serve": "yarn workspace vuepress-theme-hope test:serve",
+    "test:clean-serve": "yarn workspace vuepress-theme-hope test:clean-serve",
+    "test:build": "yarn workspace vuepress-theme-hope test:build"
   },
   "devDependencies": {
-    "@vssue/api-bitbucket-v2": "^1.1.1",
-    "@vssue/api-gitee-v5": "^1.1.1",
-    "@vssue/api-github-v3": "^1.1.2",
-    "@vssue/api-github-v4": "^1.2.0",
-    "@vssue/api-gitlab-v4": "^1.1.1",
-    "@vssue/vuepress-plugin-vssue": "^1.2.0",
     "@vue/eslint-config-prettier": "^5.0.0",
-    "@vuepress/plugin-pwa": "^1.2.0",
     "conventional-changelog-cli": "^2.0.25",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.6.0",
@@ -31,14 +39,9 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.0",
     "husky": "^3.0.9",
-    "leancloud-storage": "^3.15.0",
-    "lerna": "^3.18.3",
+    "lerna": "^3.18.4",
     "lint-staged": "^9.4.2",
-    "prettier": "1.18.2",
-    "screenfull": "^5.0.0",
-    "valine": "^1.3.10",
-    "vssue": "^1.2.0",
-    "vuepress": "^1.2.0"
+    "prettier": "1.18.2"
   },
   "config": {
     "commitizen": {

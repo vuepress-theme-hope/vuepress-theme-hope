@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - lts/*
 install:
-  - npm ci
+  - yarn install
   - npm run lerna:bootstrap
 jobs:
   include:
@@ -10,31 +10,15 @@ jobs:
     - stage: test-shared-utils
       name: "Test shared utils"
       script:
-        - cd packages/shared-utils
-        - npm run test
-
-    # 部署评论文档
-    - stage: comment-doc
-      name: "Deploy Comment Docs"
-      script:
-        - cd packages/comment
-        - npm run build-docs
-      before_deploy: echo comment.mrhope.site >> dist/CNAME
-      deploy:
-        provider: pages
-        skip-cleanup: true
-        local_dir: packages/comment/dist
-        github-token: $Github_Token
-        repo: Mister-Hope/vuepress-plugin-comment-docs
+        - npm run share-utils:test
 
     # 测试并部署 DEMO
     - stage: demo
       name: "Test and Deploy Demo"
       script:
-        - cd packages/theme
-        - npm run copy-demo
-        - npm run build-demo
-      before_deploy: echo theme-demo.mrhope.site >> tests/demo-dist/CNAME
+        - npm run test:copy
+        - npm run test:build
+      before_deploy: echo theme-demo.mrhope.site >> packages/theme/tests/demo-dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
@@ -44,26 +28,29 @@ jobs:
         on:
           all_branches: true
 
-    # 测试文档
-    - stage: test-docs
-      name: "Test Offical Docs"
+    # 部署评论文档
+    - stage: comment-doc
+      name: "Deploy Comment Docs"
       script:
-        - cd packages/theme
-        - npm run copy-docs
-        - npm run build-docs
+        - npm run comment:build
+      before_deploy: echo comment.mrhope.site >> docs/dist/comment/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: docs/dist/comment
+        github-token: $Github_Token
+        repo: Mister-Hope/vuepress-plugin-comment-docs
 
     # 部署文档
     - stage: deploy-docs
       name: "Deploy Offical Docs"
       script:
-        - cd packages/theme
-        - npm run copy-docs
-        - npm run build-docs
-      before_deploy: echo vuepress-theme.mrhope.site >> dist/CNAME
+        - npm run theme:build
+      before_deploy: echo vuepress-theme.mrhope.site >> docs/dist/theme/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: packages/theme/dist
+        local_dir: docs/dist/theme
         github-token: $Github_Token
 
 stages:
@@ -71,7 +58,5 @@ stages:
   - name: demo
   - name: comment-doc
     if: branch = master
-  - name: test-docs
-    if: branch != master
   - name: deploy-docs
     if: branch = master

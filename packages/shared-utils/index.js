@@ -1,3 +1,3 @@
 const deepmerge = require('./deepmerge');
 
-module.exports = deepmerge;
+module.exports = { deepmerge };

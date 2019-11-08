@@ -1,4 +1,4 @@
-const merge = require('../');
+const merge = require('../deepmerge');
 const test = require('tape');
 
 test('isMergeableObject function copying object over object', tape => {
