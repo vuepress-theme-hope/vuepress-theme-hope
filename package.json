@@ -40,7 +40,7 @@
     "husky": "^3.0.9",
     "lerna": "^3.18.4",
     "lint-staged": "^9.4.2",
-    "prettier": "1.18.2"
+    "prettier": "1.19.1"
   },
   "config": {
     "commitizen": {
