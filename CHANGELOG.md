@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.1.0-beta.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.7...v0.1.0-beta.8) (2019-11-11)
+
+### Features
+
+* make components a sperate plugin ([8332020](https://github.com/Mister-Hope/vuepress-theme-hope/commit/833202063dad61f8061d9f8b2cceed043d0fb405))
+
 # [0.1.0-beta.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.4...v0.1.0-beta.7) (2019-11-08)
 
 ### Bug Fixes
