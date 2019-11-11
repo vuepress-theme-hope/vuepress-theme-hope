@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 18:12:20
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 14:28:06
+ * @LastEditTime: 2019-11-11 17:54:05
  * @Description: 返回顶部组件
 -->
 <template>
@@ -33,6 +33,8 @@
 import { debounce } from 'lodash';
 
 export default {
+  name: 'BackToTop',
+
   props: {
     threshold: {
       type: Number,

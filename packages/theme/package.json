@@ -26,6 +26,7 @@
   "dependencies": {
     "@mr-hope/vuepress-plugin-back-to-top": "^0.1.0-beta.7",
     "@mr-hope/vuepress-plugin-comment": "^0.1.0-beta.7",
+    "@mr-hope/vuepress-plugin-components": "^0.1.0-beta.7",
     "@mr-hope/vuepress-plugin-screen-full": "^0.1.0-beta.7",
     "@mr-hope/vuepress-plugin-theme-color": "^0.1.0-beta.7",
     "@vuepress/plugin-medium-zoom": "^1.2.0",

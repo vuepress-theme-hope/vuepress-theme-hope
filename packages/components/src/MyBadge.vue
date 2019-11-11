@@ -1,6 +1,9 @@
 <script>
 export default {
+  name: 'MyBadge',
+
   functional: true,
+
   props: {
     type: {
       type: String,
@@ -19,6 +22,7 @@ export default {
       default: ''
     }
   },
+
   render(h, { props, slots }) {
     const options = {
       class: ['badge', props.type],
@@ -50,7 +54,7 @@ export default {
     background-color #42b983
 
   &.error
-    background-color #DA5961 // #f66
+    background-color #DA5961
 
   &.warning, &.warn, &.yellow
     background-color darken(#ffe564, 35%)

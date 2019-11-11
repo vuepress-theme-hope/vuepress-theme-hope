@@ -10,6 +10,8 @@
 import Valine from './Valine.vue';
 
 export default {
+  name: 'Comment',
+
   components: { Valine },
 
   props: {

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 20:51:05
+ * @LastEditTime: 2019-11-11 17:54:33
  * @Description: 页面信息
 -->
 <template>
@@ -59,6 +59,8 @@
 <script>
 /* global COMMENT_OPTIONS */
 export default {
+  name: 'PageInfo',
+
   data: () => ({
     valineConfig: COMMENT_OPTIONS,
     numStyle: { color: '#999' },

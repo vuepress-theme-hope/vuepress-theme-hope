@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 16:11:19
+ * @LastEditTime: 2019-11-08 23:29:12
  * @Description: 插件配置
  */
 const { resolve } = require('path');
@@ -123,6 +123,9 @@ module.exports = options => {
 
     /** Markdown 增强插件 */
     ['@mr-hope/comment', options.comment === false ? false : options.comment],
+
+    /** 全屏插件 */
+    ['@mr-hope/components'],
 
     /** 分享插件 */
     // ['@mr-hope/share', options.share],

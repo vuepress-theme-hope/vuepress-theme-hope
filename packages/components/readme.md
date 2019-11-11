@@ -10,6 +10,12 @@ Components for vuepress-theme-hope.
 npm i @mr-hope/vuepress-plugin-components
 ```
 
+This plugin expose 3 components:
+
+- BreadCrumb
+- MyBadge
+- PageFooter
+
 ---
 
 vuepress-theme-hope 的 组件。
@@ -19,3 +25,17 @@ vuepress-theme-hope 的 组件。
 ```bash
 npm i @mr-hope/vuepress-plugin-components
 ```
+
+此插件提供 3 个组件:
+
+- BreadCrumb
+- MyBadge
+- PageFooter
+
+## BreadCrumb
+
+会读取主题配置中的以下字段
+
+- `breadcrumbIcon`: 是否显示图标(默认显示)
+- `breacurmb`: 是否启用路径导航
+- `iconPrefix`: 图标前缀，默认为 `icon-`，设置 `false` 或 `''` 取消前缀，也可设置其他值。

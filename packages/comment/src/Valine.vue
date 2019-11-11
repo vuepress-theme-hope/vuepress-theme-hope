@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 17:08:00
+ * @LastEditTime: 2019-11-11 17:54:43
  * @Description: Valine 评论插件
 -->
 <template>
@@ -15,6 +15,8 @@
 import Vue from 'vue';
 
 export default {
+  name: 'Valine',
+
   props: {
     valineConfig: {
       type: Object,

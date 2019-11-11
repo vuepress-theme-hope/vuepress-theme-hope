@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "declaration": true,
-    "esModuleInterop": true,
-    "pretty": true,
+    "module": "esnext",
+    "strict": true,
+    "importHelpers": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "pretty": true,
     "stripInternal": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -17,7 +22,6 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "alwaysStrict": true,
-    "module": "commonjs",
     "outDir": "lib"
   },
   "exclude": [

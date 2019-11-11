@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 21:05:01
+ * @LastEditTime: 2019-11-10 14:31:47
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -17,9 +17,6 @@ module.exports = {
 
   /** 侧边栏配置 */
   sidebar: sideBarConfig.zh,
-
-  /** 禁用路径导航 */
-  breadcrumb: false,
 
   /** 默认作者 */
   author: 'Mr.Hope',

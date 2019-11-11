@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 14:28:19
+ * @LastEditTime: 2019-11-11 17:53:14
  * @Description: 路径导航
 -->
 <template>
@@ -14,10 +14,11 @@
         :class="{'is-active': config.length -1 === index}"
       >
         <a @click="$router.push(item.url)">
-          <template v-if="item.icon && $themeConfig.breadcrumbIcon !== false">
-            <i :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
-          </template>
-          <span class="title">{{ item.title }}</span>
+          <div
+            v-if="item.icon && $themeConfig.breadcrumbIcon !== false"
+            :class="`iconfont ${iconPrefix}${item.icon}`"
+          />
+          <div class="title" v-text="item.title" />
         </a>
       </li>
     </ul>
@@ -33,6 +34,7 @@ export default {
   }),
 
   computed: {
+    /** 是否启用路径导航 */
     enable() {
       const globalEnable = this.$themeConfig.breadcrumb !== false;
       const pageConfig = this.$page.frontmatter.breadcrumb;
@@ -41,6 +43,16 @@ export default {
         (globalEnable && pageConfig !== false) ||
         (!globalEnable && pageConfig === true)
       );
+    },
+
+    iconPrefix() {
+      const { iconPrefix } = this.$themeConfig;
+
+      return typeof iconPrefix === 'string'
+        ? iconPrefix
+        : iconPrefix === false
+        ? ''
+        : 'icon-';
     }
   },
 
@@ -106,8 +118,8 @@ export default {
 };
 </script>
 <style lang="stylus">
-@require '~@parent-theme/styles/wrapper.styl'
-@require '~@parent-theme/styles/config.styl'
+@require '~@vuepress/theme-default/styles/wrapper.styl'
+@require '~@vuepress/theme-default/styles/config.styl'
 
 // 修正标题的上边距
 {$contentClass}:not(.custom)
@@ -128,17 +140,19 @@ h1, h2, h3, h4, h5, h6
   margin-bottom - $navbarHeight
   padding-bottom 0.2rem
 
+  .iconfont
+    font-size inherit
+
+    &:before
+      line-height 1
+      vertical-align middle
+      display inline-block
+
   @media (max-width: $MQNarrow)
     font-size 14px
 
-    .iconfont
-      font-size 14px
-
   @media (max-width: $MQMobileNarrow)
     font-size 13px
-
-    .iconfont
-      font-size 13px
 
   &.disable
     padding-bottom 1.3em
