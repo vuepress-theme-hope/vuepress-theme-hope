@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-13 11:43:44
+ * @LastEditTime: 2019-11-13 14:47:28
  * @Description: Vuepress配置
  */
 
@@ -59,7 +59,7 @@ module.exports = {
   ],
 
   /** 构建文件输出目录 */
-  dest: './dist/md-enhance',
+  dest: './dist',
 
   locales: {
     /** 英文设置 */

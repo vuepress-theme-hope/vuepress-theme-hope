@@ -1,5 +1,14 @@
 # Changelog
 
+# [0.1.0-beta.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.8...v0.1.0-beta.10) (2019-11-13)
+
+### Features
+
+* add markdown enhance plugin ([fc9a0b4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fc9a0b4db8ded429e47b8f4d1f2241ac7cef2fc0))
+* approve docs ([35f17b9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/35f17b9fd274ed2ebc62218d4588c85b54346141))
+
+# Changelog
+
 # [0.1.0-beta.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.7...v0.1.0-beta.8) (2019-11-11)
 
 ### Features

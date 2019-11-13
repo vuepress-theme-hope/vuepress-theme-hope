@@ -3,20 +3,20 @@ node_js:
   - lts/*
 install:
   - yarn install
-  - npm run lerna:bootstrap
+  - yarn run lerna:bootstrap
 jobs:
   include:
     # 测试 shared-utils
     - stage: test-shared-utils
       name: "Test shared utils"
       script:
-        - npm run share-utils:test
+        - yarn run share-utils:test
 
     # 测试并部署 DEMO
     - stage: test-theme
       name: "Test and Deploy Theme-test"
       script:
-        - npm run theme-test:build
+        - yarn run theme-test:build
       before_deploy: echo theme-demo.mrhope.site >> packages/theme-test/dist/CNAME
       deploy:
         provider: pages
@@ -31,12 +31,12 @@ jobs:
     - stage: comment-docs
       name: "Deploy Comment Docs"
       script:
-        - npm run comment-docs:build
-      before_deploy: echo comment.mrhope.site >> docs/dist/comment/CNAME
+        - yarn run comment-docs:build
+      before_deploy: echo comment.mrhope.site >> docs/comment/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: docs/dist/comment
+        local_dir: docs/comment/dist
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-comment-docs
 
@@ -44,12 +44,12 @@ jobs:
     - stage: md-enhance-docs
       name: "Deploy Markdown Enhance Docs"
       script:
-        - npm run md-enhance-docs:build
-      before_deploy: echo vuepress-md.mrhope.site >> docs/dist/comment/CNAME
+        - yarn run md-enhance-docs:build
+      before_deploy: echo vuepress-md.mrhope.site >> docs/md-enhance/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: docs/dist/md-enhance
+        local_dir: docs/md-enhance/dist
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-md-enhance-docs
 
@@ -57,12 +57,12 @@ jobs:
     - stage: deploy-docs
       name: "Deploy Offical Docs"
       script:
-        - npm run theme:build
-      before_deploy: echo vuepress-theme.mrhope.site >> docs/dist/theme/CNAME
+        - yarn run theme:build
+      before_deploy: echo vuepress-theme.mrhope.site >> docs/theme/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: docs/dist/theme
+        local_dir: docs/theme/dist
         github-token: $Github_Token
 
 stages:
