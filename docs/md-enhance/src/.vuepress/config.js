@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-11 18:43:39
+ * @LastEditTime: 2019-11-13 11:43:44
  * @Description: Vuepress配置
  */
 
@@ -61,17 +61,7 @@ module.exports = {
   /** 构建文件输出目录 */
   dest: './dist/md-enhance',
 
-  /** 多语言配置选项
-   *
-   * 键名是该语言所属的子路径
-   * 作为特例，默认语言可以使用 '/' 作为其路径。
-   */
   locales: {
-    /** 默认语言 */
-    '/': {
-      /** 设置为中文 */
-      lang: 'zh-CN'
-    },
     /** 英文设置 */
     '/en/': {
       /** 设置为英文 */
@@ -88,5 +78,8 @@ module.exports = {
   theme: 'hope',
 
   /** 主题配置 */
-  themeConfig: require('./themeConfig')
+  themeConfig: require('./themeConfig'),
+
+  /** 是否只支持常青树浏览器 */
+  evergreen: true // 设置为true后将不会兼容IE等老旧浏览器
 };

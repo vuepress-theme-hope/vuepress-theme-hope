@@ -1,7 +1,7 @@
-const { resolve } = require('path');
+const { path } = require('@vuepress/shared-utils');
 
 module.exports = {
   name: 'screen-full',
 
-  enhanceAppFiles: [resolve(__dirname, 'enhanceAppFile.js')]
+  enhanceAppFiles: path.resolve(__dirname, 'enhanceAppFile.js')
 };

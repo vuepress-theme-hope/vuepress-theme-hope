@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 19:57:14
+ * @LastEditTime: 2019-11-13 11:27:34
  * @Description: 导航栏配置
  */
 
@@ -18,6 +18,11 @@ module.exports = {
         { text: 'Markdown', link: '/basic/markdown/', icon: 'markdown' },
         { text: 'Vuepress', link: '/basic/vuepress/', icon: 'vue' }
       ]
+    },
+    {
+      text: '更新日志',
+      link:
+        'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
     }
   ],
   en: [
@@ -31,6 +36,11 @@ module.exports = {
         { text: 'Markdown', link: '/en/basic/markdown/', icon: 'markdown' },
         { text: 'Vuepress', link: '/en/basic/vuepress/', icon: 'vue' }
       ]
+    },
+    {
+      text: 'Changelog',
+      link:
+        'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
     }
   ]
 };

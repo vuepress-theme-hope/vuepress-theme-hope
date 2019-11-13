@@ -21,6 +21,9 @@ module.exports = {
     enableAll: true
   },
 
+  /** 图标前缀 */
+  iconPrefix: 'vuepress-',
+
   /** 语言设置 */
   locales: {
     /** 英文设置 */

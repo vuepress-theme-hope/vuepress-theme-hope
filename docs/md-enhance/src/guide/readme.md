@@ -1,3 +1,7 @@
+---
+icon: markdown
+---
+
 # Markdown 中的新语法
 
 通过安装并启用此插件，你可以在 Markdown 中使用更多的语法。

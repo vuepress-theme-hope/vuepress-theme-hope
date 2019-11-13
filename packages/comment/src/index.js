@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+const { path } = require('@vuepress/shared-utils');
 
 module.exports = options => {
   const config = {
@@ -8,7 +8,7 @@ module.exports = options => {
       COMMENT_OPTIONS: options || {}
     }),
 
-    enhanceAppFiles: [resolve(__dirname, 'enhanceAppFile.js')]
+    enhanceAppFiles: path.resolve(__dirname, 'enhanceAppFile.js')
   };
 
   if (options && options.type === 'vssue')

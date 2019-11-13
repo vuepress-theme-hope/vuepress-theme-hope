@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/vuepress-plugin-back-to-top/#readme"
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/vuepress-plugin-back-to-top/#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
 }

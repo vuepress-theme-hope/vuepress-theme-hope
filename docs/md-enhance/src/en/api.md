@@ -1,3 +1,7 @@
+---
+icon: api
+---
+
 # API
 
 You can pass these options to the plugin:

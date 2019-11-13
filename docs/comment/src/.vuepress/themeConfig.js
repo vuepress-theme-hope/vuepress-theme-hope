@@ -47,6 +47,14 @@ module.exports = {
     '/api/': ['', 'valine', 'vssue']
   },
 
+  /** 图标前缀 */
+  iconPrefix: 'vuepress-',
+
+  /** Markdown设置 */
+  markdown: {
+    enableAll: true
+  },
+
   /** 语言设置 */
   locales: {
     /** 英文设置 */

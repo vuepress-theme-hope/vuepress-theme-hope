@@ -1,5 +1,5 @@
+const { path } = require('@vuepress/shared-utils');
 const pluginConfig = require('./pluginConfig');
-const { resolve } = require('path');
 const LINENUMBERS = require('@vuepress/markdown/lib/lineNumbers');
 const MARKDOWN_IT_SUB = require('./markdown-it/sub');
 const MARKDOWN_IT_SUP = require('./markdown-it/sup');
@@ -7,9 +7,9 @@ const MARKDOWN_IT_FOOTNOTE = require('./markdown-it/footnote');
 const MARKDOWN_IT_FLOWCHART = require('./markdown-it/flowchart');
 
 module.exports = (option, ctx) => ({
-  name: 'markdown-enhance',
+  name: 'md-enhance',
 
-  enhanceAppFiles: [resolve(__dirname, './enhanceAppFile.js')],
+  enhanceAppFiles: path.resolve(__dirname, './enhanceAppFile.js'),
 
   /** Markdown 增强 */
   chainMarkdown(config) {

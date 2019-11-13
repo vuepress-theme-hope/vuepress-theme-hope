@@ -19,4 +19,3 @@ vuepress-theme-hope 的返回顶部插件。
 ```bash
 npm i @mr-hope/vuepress-plugin-back-to-top
 ```
-

@@ -1,3 +1,7 @@
+---
+icon: tex
+---
+
 # Tex Support
 
 Let the Markdown file in your VuePress site support the Tex syntax.

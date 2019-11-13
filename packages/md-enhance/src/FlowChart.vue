@@ -1,6 +1,6 @@
 <template>
-  <div :class="{ 'loading': loading }" class="vuepress-flowchart">
-    <Loading class="vuepress-flowchart-loading-icon" v-if="loading" />
+  <div :class="{ 'loading': loading }" class="md-flowchart">
+    <Loading class="md-flowchart-loading-icon" v-if="loading" />
   </div>
 </template>
 
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.vuepress-flowchart
+.md-flowchart
   overflow scroll
   text-align center
   font-size 0px
@@ -84,7 +84,7 @@ export default {
   rx 5px
   ry 5px
 
-.vuepress-flowchart-loading-icon
+.md-flowchart-loading-icon
   width 40px
   height 40px
   fill #3eaf7c

@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+const { path } = require('@vuepress/shared-utils');
 
 module.exports = options => ({
   name: 'theme-color',
@@ -6,5 +6,5 @@ module.exports = options => ({
   define: () => ({
     THEME_COLOR_OPTIONS: options || {}
   }),
-  enhanceAppFiles: [resolve(__dirname, 'enhanceAppFile.js')]
+  enhanceAppFiles: path.resolve(__dirname, 'enhanceAppFile.js')
 });

@@ -1,0 +1,17 @@
+{
+  "name": "theme-docs",
+  "private": true,
+  "version": "0.1.0-beta.8",
+  "description": "Docs for vuepress-theme-hope",
+  "scripts": {
+    "serve": "vuepress dev src",
+    "clean-serve": "vuepress dev src --no-cache",
+    "build": "vuepress build src"
+  },
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.2.0",
+    "vuepress-theme-hope": "^0.1.0-beta.8"
+  }
+}
