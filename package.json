@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "docs/*",
-    "packages/*"
+    "packages/*",
+    "tests/"
   ],
   "scripts": {
     "bootstrap": "node scripts/bootstrap.js",
@@ -34,9 +35,9 @@
     "theme:clean-serve": "yarn workspace theme-docs clean-serve",
     "theme:build": "yarn workspace theme-docs build",
     "share-utils:test": "yarn workspace @mr-hope/vuepress-shared-utils test",
-    "theme-test:serve": "yarn workspace test theme-test:serve",
-    "theme-test:clean-serve": "yarn workspace test theme-test:clean-serve",
-    "theme-test:build": "yarn workspace test theme-test:build"
+    "theme-test:serve": "yarn workspace test serve",
+    "theme-test:clean-serve": "yarn workspace test clean-serve",
+    "theme-test:build": "yarn workspace test build"
   },
   "devDependencies": {
     "@vue/eslint-config-prettier": "^5.0.0",

@@ -1,6 +1,0 @@
-dist/
-docs/
-node_modules/
-tests/
-copyDocs.js
-.travis.yml

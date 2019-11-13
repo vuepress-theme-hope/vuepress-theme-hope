@@ -1,3 +1,7 @@
+---
+icon: gitee
+---
+
 # Gitee Third Party Application
 
 > Vssue can also work with self-hosted Gitee Enterprise Version. Set the `baseURL` options to your Gitee URL. See [Options Reference - baseURL](../options/README.md#baseurl)

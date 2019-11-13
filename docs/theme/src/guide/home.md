@@ -1,3 +1,7 @@
+---
+icon: homefill
+---
+
 # 主页
 
 vuepress-theme-hope 改进了默认主页。

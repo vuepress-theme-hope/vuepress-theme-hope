@@ -4,9 +4,9 @@ module.exports = {
 
   /** 头部导航栏的配置 */
   nav: [
-    { text: '主页', link: '/' },
-    { text: '指南', link: '/guide/' },
-    { text: '配置', link: '/api.html' }
+    { text: '主页', icon: 'homefill', link: '/' },
+    { text: '指南', icon: 'creativefill', link: '/guide/' },
+    { text: '配置', icon: 'api', link: '/api.html' }
   ],
 
   /** 侧边栏配置 */
@@ -30,9 +30,9 @@ module.exports = {
     '/en/': {
       /** 该语言下头部导航栏的配置 */
       nav: [
-        { text: 'Home', link: '/en/' },
-        { text: 'Guide', link: '/en/guide/' },
-        { text: 'Config', link: '/en/api.html' }
+        { text: 'Home', icon: 'homefill', link: '/en/' },
+        { text: 'Guide', icon: 'creativefill', link: '/en/guide/' },
+        { text: 'Config', icon: 'api', link: '/en/api.html' }
       ],
 
       /** 该语言下侧边栏的配置 */

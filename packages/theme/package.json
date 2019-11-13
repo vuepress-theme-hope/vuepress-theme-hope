@@ -3,12 +3,6 @@
   "version": "0.1.0-beta.10",
   "description": "a light vuepress theme",
   "main": "src/index.js",
-  "scripts": {
-    "test:copy": "node ./copyDemo.js",
-    "test:serve": "vuepress dev tests/demo",
-    "test:clean-serve": "vuepress dev tests/demo --no-cache",
-    "test:build": "vuepress build tests/demo"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"

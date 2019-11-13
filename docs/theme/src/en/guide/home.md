@@ -1,3 +1,7 @@
+---
+icon: homefill
+---
+
 # Home Page
 
 vuepress-theme-hope improves the defulat home page.

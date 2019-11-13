@@ -1,3 +1,7 @@
+---
+icon: markdown
+---
+
 # New syntax in Markdown
 
 vuepress-theme-hope enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-md-enhance.mrhope.site/).

@@ -1,3 +1,7 @@
+---
+icon: valine
+---
+
 # valine 配置
 
 ## appId

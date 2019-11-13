@@ -1,3 +1,7 @@
+---
+icon: valine
+---
+
 # Valine
 
 借助 Valine，插件实现了无后端开启阅读量展示与评论功能。

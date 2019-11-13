@@ -17,11 +17,11 @@ jobs:
       name: "Test and Deploy Theme-test"
       script:
         - yarn run theme-test:build
-      before_deploy: echo theme-demo.mrhope.site >> packages/theme-test/dist/CNAME
+      before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: packages/theme-test/dist
+        local_dir: tests/dist
         github-token: $Github_Token
         repo: Mister-Hope/theme-demo
         on:

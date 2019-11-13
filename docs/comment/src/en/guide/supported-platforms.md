@@ -1,3 +1,7 @@
+---
+icon: support
+---
+
 # Supported Platforms
 
 ## GitHub

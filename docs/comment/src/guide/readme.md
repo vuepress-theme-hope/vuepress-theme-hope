@@ -1,3 +1,7 @@
+---
+icon: creativefill
+---
+
 # 指南
 
 有两个评论插件可以选择: Valine 和 Vssue。

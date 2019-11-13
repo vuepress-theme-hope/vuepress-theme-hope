@@ -1,3 +1,7 @@
+---
+icon: api
+---
+
 # API Config
 
 ## type

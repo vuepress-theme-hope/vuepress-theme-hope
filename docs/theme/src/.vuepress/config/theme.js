@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 00:14:14
+ * @LastEditTime: 2019-11-13 18:26:59
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -23,6 +23,9 @@ module.exports = {
 
   /** 默认作者 */
   author: 'Mr.Hope',
+
+  /** 图标前缀 */
+  iconPrefix: 'vuepress-',
 
   /** Markdown设置 */
   markdown: {

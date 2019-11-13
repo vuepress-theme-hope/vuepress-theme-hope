@@ -1,3 +1,7 @@
+---
+icon: support
+---
+
 # 支持的代码托管平台
 
 ## GitHub

@@ -1,3 +1,7 @@
+---
+icon: creativefill
+---
+
 # Using Vssue
 
 ## Choose a platform to use

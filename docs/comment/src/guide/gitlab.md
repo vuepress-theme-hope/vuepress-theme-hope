@@ -1,3 +1,7 @@
+---
+icon: gitlab
+---
+
 # GitLab Application
 
 > 查看 [Gitlab 官方文档](https://docs.gitlab.com/ce/integration/oauth_provider.html#adding-an-application-through-the-profile) 作为参考。

@@ -1,3 +1,7 @@
+---
+icon: full-screen
+---
+
 # 全屏按钮 <MyBadge text="Beta" type="warning" />
 
 vuepress-theme-hope 通过内置 `@mr-hope/vuepress-plugin-full-screen`，实现了主题色与夜间模式功能。

@@ -4,9 +4,9 @@
   "version": "0.1.0-beta.10",
   "description": "Tests for vuepress-theme-hope",
   "scripts": {
-    "theme-test:serve": "vuepress dev src",
-    "theme-test:clean-serve": "vuepress dev src --no-cache",
-    "theme-test:build": "vuepress build src"
+    "serve": "vuepress dev src",
+    "clean-serve": "vuepress dev src --no-cache",
+    "build": "vuepress build src"
   },
   "author": "Mr.Hope",
   "license": "MIT",

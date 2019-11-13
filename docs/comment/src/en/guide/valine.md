@@ -1,3 +1,7 @@
+---
+icon: valine
+---
+
 # Valine
 
 With Valine，this plugin provides you comment and visitors function。

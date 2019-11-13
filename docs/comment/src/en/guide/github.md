@@ -1,3 +1,7 @@
+---
+icon: github
+---
+
 # GitHub OAuth App
 
 > Vssue can also work with self-hosted GitHub Enterprise Server. Set the `baseURL` options to your Github URL. See [Options Reference - baseURL](../options/README.md#baseurl)

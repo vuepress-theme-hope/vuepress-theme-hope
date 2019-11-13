@@ -1,3 +1,7 @@
+---
+icon: flowchart
+---
+
 # flowchart <MyBadge text="V0.0.10+" />
 
 Let the Markdown file support flow chart in your VuePress site

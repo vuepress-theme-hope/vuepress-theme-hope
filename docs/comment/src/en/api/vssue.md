@@ -1,3 +1,7 @@
+---
+icon: vssue
+---
+
 # Vssue Options
 
 ## platform

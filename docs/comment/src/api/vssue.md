@@ -1,3 +1,7 @@
+---
+icon: vssue
+---
+
 # Vssue 配置
 
 ## platform

@@ -1,3 +1,7 @@
+---
+icon: bitbucket
+---
+
 # BitBucket OAuth Consumer
 
 ## Create a new OAuth Consumer

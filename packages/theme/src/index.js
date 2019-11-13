@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-13 14:12:26
+ * @LastEditTime: 2019-11-13 17:14:46
  * @Description: 主题配置
  */
 const { path } = require('@vuepress/shared-utils');
@@ -31,7 +31,7 @@ module.exports = (themeConfig, ctx) => ({
   extend: '@vuepress/theme-default',
 
   /** App 增强文件位置 */
-  enhanceAppFiles: path.resolve(__dirname, 'lib/enhanceApp.js'),
+  enhanceAppFiles: path.resolve(__dirname, 'lib/enhanceAppFile.js'),
 
   /** 插件选项 */
   plugins: pluginConfig(themeConfig)

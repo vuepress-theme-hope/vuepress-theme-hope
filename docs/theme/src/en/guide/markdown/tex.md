@@ -1,3 +1,7 @@
+---
+icon: tex
+---
+
 # Tex Support <MyBadge text="V0.0.8+" />
 
 Let the Markdown file in your VuePress site support the Tex syntax.

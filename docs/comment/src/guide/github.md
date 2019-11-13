@@ -1,3 +1,7 @@
+---
+icon: github
+---
+
 # GitHub OAuth App
 
 > Vssue 同样可以配合自己搭建的 GitHub Enterprise Server 使用。只需要将 `baseURL` 设置为你的 Github URL 即可。查看 [配置参考 - baseURL](../options/README.md#baseurl)

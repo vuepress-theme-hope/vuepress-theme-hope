@@ -1,3 +1,7 @@
+---
+icon: api
+---
+
 # API 文档
 
 ::: danger 非稳定状态

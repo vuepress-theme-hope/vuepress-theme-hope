@@ -1,3 +1,6 @@
+---
+icon: fullsrceen
+---
 
 # Fullscreen Button <MyBadge text="Beta" type="warning" />
 

@@ -1,3 +1,7 @@
+---
+icon: valine
+---
+
 # Valine Config
 
 ## appId

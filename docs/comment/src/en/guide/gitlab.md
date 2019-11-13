@@ -1,3 +1,7 @@
+---
+icon: gitlab
+---
+
 # GitLab Application
 
 > See [Gitlab official docs](https://docs.gitlab.com/ce/integration/oauth_provider.html#adding-an-application-through-the-profile) for reference.

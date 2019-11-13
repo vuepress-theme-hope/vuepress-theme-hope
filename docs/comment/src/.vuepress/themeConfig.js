@@ -4,20 +4,22 @@ module.exports = {
 
   /** 头部导航栏的配置 */
   nav: [
-    { text: '主页', link: '/' },
+    { text: '主页', icon: 'homefill', link: '/' },
     {
       text: '指南',
+      icon: 'creativefill',
       items: [
-        { text: 'Valine', link: '/guide/valine.html' },
-        { text: 'Vssue', link: '/guide/vssue.html' }
+        { text: 'Valine', icon: 'valine', link: '/guide/valine.html' },
+        { text: 'Vssue', icon: 'vssue', link: '/guide/vssue.html' }
       ]
     },
     {
       text: '配置',
+      icon: 'api',
       items: [
-        { text: 'API', link: '/api/' },
-        { text: 'Valine', link: '/api/valine.html' },
-        { text: 'Vssue', link: '/api/vssue.html' }
+        { text: 'API', icon: 'api', link: '/api/' },
+        { text: 'Valine', icon: 'valine', link: '/api/valine.html' },
+        { text: 'Vssue', icon: 'vssue', link: '/api/vssue.html' }
       ]
     }
   ],
@@ -29,10 +31,12 @@ module.exports = {
       'valine',
       {
         title: 'Vssue',
+        icon: 'vssue',
         children: [
           'vssue',
           {
             title: '支持平台',
+            icon: 'support',
             children: [
               'supported-platforms',
               'github',
@@ -61,20 +65,22 @@ module.exports = {
     '/en/': {
       /** 该语言下头部导航栏的配置 */
       nav: [
-        { text: 'Home', link: '/en/' },
+        { text: 'Home', icon: 'homefill', link: '/en/' },
         {
           text: 'Guide',
+          icon: 'creativefill',
           items: [
-            { text: 'Valine', link: '/en/guide/valine.html' },
-            { text: 'Vssue', link: '/en/guide/vssue.html' }
+            { text: 'Valine', icon: 'valine', link: '/en/guide/valine.html' },
+            { text: 'Vssue', icon: 'vssue', link: '/en/guide/vssue.html' }
           ]
         },
         {
           text: 'Config',
+          icon: 'api',
           items: [
-            { text: 'API', link: '/en/api/' },
-            { text: 'Valine', link: '/en/api/valine.html' },
-            { text: 'Vssue', link: '/en/api/vssue.html' }
+            { text: 'API', icon: 'api', link: '/en/api/' },
+            { text: 'Valine', icon: 'valine', link: '/en/api/valine.html' },
+            { text: 'Vssue', icon: 'vssue', link: '/en/api/vssue.html' }
           ]
         }
       ],
@@ -86,10 +92,12 @@ module.exports = {
           'valine',
           {
             title: 'Vssue',
+            icon: 'vssue',
             children: [
               'vssue',
               {
                 title: 'Supported platforms',
+                icon: 'support',
                 children: [
                   'supported-platforms',
                   'github',
@@ -110,5 +118,5 @@ module.exports = {
   repo: 'https://github.com/mister-hope/vuepress-theme-hope',
 
   /** 文档目录 */
-  docsDir: 'docs/comment'
+  docsDir: 'docs/comment/src'
 };

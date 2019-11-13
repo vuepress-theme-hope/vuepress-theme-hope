@@ -1,3 +1,7 @@
+---
+icon: gitee
+---
+
 # Gitee 第三方应用
 
 > Vssue 同样可以配合自己搭建的 Gitee 企业版 使用。只需要将 `baseURL` 设置为你的 Gitee URL 即可。查看 [配置参考 - baseURL](../options/README.md#baseurl)

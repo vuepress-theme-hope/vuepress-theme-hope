@@ -1,3 +1,7 @@
+---
+icon: api
+---
+
 # API Docs
 
 ::: danger W.I.P.
