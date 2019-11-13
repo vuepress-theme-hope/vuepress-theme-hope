@@ -28,10 +28,10 @@ jobs:
           all_branches: true
 
     # 部署评论文档
-    - stage: comment-doc
+    - stage: comment-docs
       name: "Deploy Comment Docs"
       script:
-        - npm run comment:build
+        - npm run comment-docs:build
       before_deploy: echo comment.mrhope.site >> docs/dist/comment/CNAME
       deploy:
         provider: pages
@@ -39,6 +39,19 @@ jobs:
         local_dir: docs/dist/comment
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-comment-docs
+
+    # 部署Markdown增强文档
+    - stage: md-enhance-docs
+      name: "Deploy Markdown Enhance Docs"
+      script:
+        - npm run md-enhance-docs:build
+      before_deploy: echo vuepress-md.mrhope.site >> docs/dist/comment/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: docs/dist/md-enhance
+        github-token: $Github_Token
+        repo: Mister-Hope/vuepress-plugin-md-enhance-docs
 
     # 部署文档
     - stage: deploy-docs
@@ -55,7 +68,9 @@ jobs:
 stages:
   - name: test-shared-utils
   - name: demo
-  - name: comment-doc
+  - name: comment-docs
+    if: branch = master
+  - name: md-enhance-docs
     if: branch = master
   - name: deploy-docs
     if: branch = master

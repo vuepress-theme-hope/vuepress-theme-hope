@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 13:10:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-05 23:53:33
+ * @LastEditTime: 2019-11-11 18:50:16
  * @Description: Bootstrap package
  */
 
@@ -27,7 +27,7 @@ files.forEach(pkgName => {
       name: `@mr-hope/vuepress-plugin-${pkgName}`,
       version: baseVersion,
       description: desc,
-      main: 'index.js',
+      main: 'src/index.js',
       publishConfig: {
         access: 'public'
       },

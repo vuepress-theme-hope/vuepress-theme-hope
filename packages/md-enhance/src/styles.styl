@@ -1,0 +1,24 @@
+// 自定义容器 居中、居右
+.custom-block
+  &.right
+    text-align right
+
+  &.center
+    text-align center
+
+// 脚注链接跳转修正
+.footnotes .footnotes-list .footnote-item
+  margin-top (- $navbarHeight)
+  padding-top ($navbarHeight + 0.5rem)
+
+  p
+    margin-bottom 0
+
+.footnote-ref
+  position relative
+  margin-top (- $navbarHeight - 0.5rem)
+  padding-top (($navbarHeight + 0.5rem))
+
+  .footnote-anchor
+    position absolute
+    top 0

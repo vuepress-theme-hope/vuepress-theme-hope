@@ -18,9 +18,18 @@
     "packages:changed": "lerna changed",
     "lint": "npm run lint:check --fix",
     "lint:check": "eslint --ext .js --ext .vue packages/",
-    "comment:serve": "yarn workspace docs comment:serve",
-    "comment:clean-serve": "yarn workspace docs comment:clean-serve",
-    "comment:build": "yarn workspace docs comment:build",
+    "comment-docs:serve": "yarn workspace docs comment:serve",
+    "comment-docs:clean-serve": "yarn workspace docs comment:clean-serve",
+    "comment-docs:build": "yarn workspace docs comment:build",
+    "comment-test:serve": "yarn workspace @mr-hope/vuepress-plugin-comment test:serve",
+    "comment-test:clean-serve": "yarn workspace @mr-hope/vuepress-plugin-comment test:clean-serve",
+    "comment-test:build": "yarn workspace @mr-hope/vuepress-plugin-comment test:build",
+    "md-enhance-docs:serve": "yarn workspace docs md-enhance:serve",
+    "md-enhance-docs:clean-serve": "yarn workspace docs md-enhance:clean-serve",
+    "md-enhance-docs:build": "yarn workspace docs md-enhance:build",
+    "md-enhance-test:serve": "yarn workspace vuepress-plugin-md-enhance test:serve",
+    "md-enhance-test:clean-serve": "yarn workspace vuepress-plugin-md-enhance test:clean-serve",
+    "md-enhance-test:build": "yarn workspace vuepress-plugin-md-enhance test:build",
     "theme:serve": "yarn workspace docs theme:serve",
     "theme:clean-serve": "yarn workspace docs theme:clean-serve",
     "theme:build": "yarn workspace docs theme:build",
@@ -31,7 +40,7 @@
   },
   "devDependencies": {
     "@vue/eslint-config-prettier": "^5.0.0",
-    "conventional-changelog-cli": "^2.0.25",
+    "conventional-changelog-cli": "^2.0.27",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
@@ -40,7 +49,7 @@
     "husky": "^3.0.9",
     "lerna": "^3.18.4",
     "lint-staged": "^9.4.2",
-    "prettier": "1.18.2"
+    "prettier": "1.19.1"
   },
   "config": {
     "commitizen": {

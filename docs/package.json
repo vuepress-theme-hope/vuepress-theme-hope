@@ -7,6 +7,9 @@
     "comment:serve": "vuepress dev comment",
     "comment:clean-serve": "vuepress dev comment --no-cache",
     "comment:build": "vuepress build comment",
+    "md-enhance:serve": "vuepress dev md-enhance",
+    "md-enhance:clean-serve": "vuepress dev md-enhance --no-cache",
+    "md-enhance:build": "vuepress build md-enhance",
     "theme:serve": "vuepress dev theme",
     "theme:clean-serve": "vuepress dev theme --no-cache",
     "theme:build": "vuepress build theme"

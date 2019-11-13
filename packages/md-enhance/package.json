@@ -1,0 +1,34 @@
+{
+  "name": "vuepress-plugin-md-enhance",
+  "version": "0.1.0-beta.8",
+  "description": "markdown enhancement for vuepress",
+  "main": "src/index.js",
+  "scripts": {
+    "test:serve": "vuepress dev tests",
+    "test:clean-serve": "vuepress dev tests --no-cache",
+    "test:build": "vuepress build tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+  },
+  "keywords": [
+    "vuepress-plugin",
+    "markdown",
+    "mr-hope"
+  ],
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://vuepress-md-enhance.mrhope.site/",
+  "dependencies": {
+    "flowchart.js": "^1.12.2",
+    "vuepress-plugin-container": "^2.1.0",
+    "vuepress-plugin-mathjax": "^1.2.8"
+  },
+  "devDependencies": {
+    "vuepress": "^1.2.0"
+  }
+}
