@@ -1,7 +1,7 @@
 {
   "name": "md-enhance-docs",
   "private": true,
-  "version": "0.1.0-beta.8",
+  "version": "0.1.0-beta.10",
   "description": "Docs for vuepress-plugin-md-enhance",
   "scripts": {
     "serve": "vuepress dev src",
@@ -12,6 +12,6 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.2.0",
-    "vuepress-theme-hope": "^0.1.0-beta.8"
+    "vuepress-theme-hope": "^0.1.0-beta.10"
   }
 }
