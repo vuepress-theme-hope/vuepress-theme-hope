@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.1.0-beta.11](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.10...v0.1.0-beta.11) (2019-11-16)
+
+### Bug Fixes
+
+* **components:** fix footer config not working ([3ea8722](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3ea8722c7a4fdaf49d01d10387667b3a8ff21c88))
+
 # [0.1.0-beta.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.8...v0.1.0-beta.10) (2019-11-13)
 
 ### Features
