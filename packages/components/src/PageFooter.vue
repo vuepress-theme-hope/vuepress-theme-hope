@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:49
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-11 18:02:08
+ * @LastEditTime: 2019-11-16 22:58:42
  * @Description: 页脚
  *
  * 添加自定义页脚的预设文字
@@ -24,7 +24,7 @@ export default {
   computed: {
     footerContent() {
       const footer = this.footer || this.$page.frontmatter.footer;
-      const { themeFooter } = this.$themeConfig;
+      const themeFooter = this.$themeConfig.footer;
 
       return typeof footer === 'object'
         ? `<a href="${footer.link}">${footer.text}</a>`
