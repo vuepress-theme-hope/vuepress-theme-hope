@@ -6732,7 +6732,7 @@ leancloud-realtime-plugin-live-query@^1.2.0:
   resolved "https://registry.yarnpkg.com/leancloud-realtime-plugin-live-query/-/leancloud-realtime-plugin-live-query-1.2.0.tgz#1e07da1b5b99e44cddbc3b052234422f278c4ab9"
   integrity sha512-eJooIH8/FyUoozr3Eeby2DpDnmX39m1bfxfxlYPuojkio+i/DLwPD+aTHnRDH6QXJcT6tNTt85RcxVR/Txg98Q==
 
-leancloud-realtime@^5.0.0-alpha.3:
+leancloud-realtime@^5.0.0-beta.0:
   version "5.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/leancloud-realtime/-/leancloud-realtime-5.0.0-beta.0.tgz#55c891c10468ee39a74876ca206725c407c019e9"
   integrity sha512-YGJt9Nti+DstJyXbZ0NUaoh0aRK3687iPbb+Mw3RltpEpO/KCy/Ljh+Ed+HWt5hnxARK8TGj+0BjIMDPHOdwWg==
@@ -6748,15 +6748,15 @@ leancloud-realtime@^5.0.0-alpha.3:
     uuid "^3.0.0"
     ws "^5.2.1"
 
-leancloud-storage@^3.15.0:
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-3.15.0.tgz#6d3b010a313189985bb69ab08c75c7ad74bd1788"
-  integrity sha512-UbR6pLA0tVYPcY7AND0pey45iFsB2PkIo8Wz0DZ9BabKyqndA1ey2LKzYpFDGNh3ODrmT3fValVn9yY4bgf9Uw==
+leancloud-storage@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-4.0.0.tgz#681716359ba2f86f382b457f36ec3c1777139edb"
+  integrity sha512-i5iRQ8ttHZy5zSN3xXARpfI/dPZPOD5+V+cCxIPXHATX4bNqA6wC+m8AiZzaOWKDrhq65N40YBsOG4Lsd8Yf6g==
   dependencies:
     debug "^3.1.0"
     es6-promise "4.2.3"
     eventemitter3 "^2.0.3"
-    leancloud-realtime "^5.0.0-alpha.3"
+    leancloud-realtime "^5.0.0-beta.0"
     leancloud-realtime-plugin-live-query "^1.2.0"
     localstorage-memory "^1.0.1"
     md5 "^2.0.0"
