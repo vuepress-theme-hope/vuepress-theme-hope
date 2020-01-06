@@ -1,0 +1,4 @@
+src/lib/defaultConfig.ts
+src/lib/resolveSideBar.ts
+test/
+resolve.ts

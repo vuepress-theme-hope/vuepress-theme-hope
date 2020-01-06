@@ -1,6 +1,5 @@
 import { PluginOptionAPI } from 'vuepress-types';
 import { resolve } from 'path';
-import { tsoptions } from '@mr-hope/vuepress-shared-utils';
 
 const pluginConfig: PluginOptionAPI = {
   name: 'back-to-top',
@@ -18,7 +17,7 @@ const pluginConfig: PluginOptionAPI = {
       .loader('ts-loader')
       .options({
         appendTsSuffixTo: [/\.vue$/u],
-        compilerOptions: tsoptions
+        compilerOptions: { declaration: false }
       });
   },
 

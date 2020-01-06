@@ -1,5 +1,5 @@
-**/node_modules
+**/node_modules/**
 **/tests/**
-**/dist
-packages/shared-utils/**/*.js
-packages/theme/src/lib/*.js
+**/dist/**
+packages/**/*.js
+!.vuepress/**

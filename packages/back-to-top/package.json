@@ -23,13 +23,11 @@
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/vuepress-plugin-back-to-top/#readme",
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.20",
+    "@types/lodash": "^4.14.149",
     "lodash": "^4.17.15",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
     "vue-property-decorator": "^8.3.0",
     "vuepress-types": "^0.6.1"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.149"
   }
 }

@@ -28,17 +28,17 @@
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "target": "es6",
+    "target": "ES6",
     "types": [
       "vuepress-types"
     ]
   },
+  "include": [
+    "packages/**/index.ts",
+    "packages/**/globals.d.ts",
+    "packages/theme/**/*.ts"
+  ],
   "exclude": [
-    "node_modules",
-    "**/enhanceAppFile.ts",
-    "**/*.spec.ts",
-    "**/click-outside.ts",
-    "presets/**",
-    "navigate.ts"
+    "packages/theme/src/lib/navigate.ts"
   ]
 }

@@ -1,7 +1,8 @@
-dist/
+**/dist/**
 packages/**/*.js
 packages/**/*.d.ts
 !packages/**/globals.d.ts
+!packages/theme/src/shims-vue.d.ts
 node_modules/
 
 *.map
