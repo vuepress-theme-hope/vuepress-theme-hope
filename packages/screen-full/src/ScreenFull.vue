@@ -1,12 +1,12 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:03:02
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-27 21:49:06
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-05 09:55:47
  * @Description: 全屏组件
 -->
 <template>
-  <div class="fullscreen-wrapper">
+  <div v-if="canFullscreen" class="fullscreen-wrapper">
     <span class="icon" @click="click">
       <svg
         :class="isFullscreen? 'cacelFullScreen': 'fullScreen'"
@@ -51,38 +51,26 @@
   </div>
 </template>
 
-<script>
-import screenfull from 'screenfull';
+<script lang='ts'>
+import * as screenfull from 'screenfull';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'ScreenFull',
+@Component
+export default class ScreenFull extends Vue {
+  private canFullscreen = false;
 
-  data: () => ({ isFullscreen: false }),
+  private isFullscreen = false;
 
-  mounted() {
-    this.init();
-  },
-
-  beforeDestroy() {
-    this.destroy();
-  },
-
-  methods: {
-    click() {
-      // TODO: 待完善
-      if (screenfull.isEnabled) screenfull.toggle();
-    },
-    change() {
-      this.isFullscreen = screenfull.isFullscreen;
-    },
-    init() {
-      if (screenfull.isEnabled) screenfull.on('change', this.change);
-    },
-    destroy() {
-      if (screenfull.isEnabled) screenfull.off('change', this.change);
-    }
+  private click() {
+    if (screenfull.isEnabled) screenfull.toggle().then(() => {
+      this.isFullscreen = (screenfull as any).isFullscreen;
+    });
   }
-};
+
+  private mounted() {
+    this.canFullscreen = screenfull.isEnabled;
+  }
+}
 </script>
 
 <style lang="stylus">

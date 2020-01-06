@@ -22,6 +22,12 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/screen-full#readme",
   "dependencies": {
-    "screenfull": "5.0.0"
+    "screenfull": "5.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "vue-property-decorator": "^8.3.0"
+  },
+  "devDependencies": {
+    "vuepress-types": "^0.6.1"
   }
 }
