@@ -1,6 +1,7 @@
 dist/
+packages/**/*.js
+packages/**/*.d.ts
+!packages/**/globals.d.ts
 node_modules/
-packages/share/dist/
-packages/theme/docs/.vuepress/theme/
-packages/theme/tests/demo/.vuepress/theme/
-packages/theme/tests/demo-dist/
+
+*.map

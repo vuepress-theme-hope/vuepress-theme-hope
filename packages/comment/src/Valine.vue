@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-23 21:13:48
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-06 09:57:52
  * @Description: Valine 评论插件
 -->
 <template>
@@ -13,7 +13,7 @@
 
 <script>
 import Vue from 'vue';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
+import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
 
 export default {
   name: 'Valine',
@@ -87,10 +87,7 @@ export default {
         appId: valineConfig.appId, // Your appId
         appKey: valineConfig.appKey, // Your appKey
         placeholder:
-          valineConfig.placeholder ||
-          i18n.config.valineHolder[this.$lang] ||
-          'Write a comment here',
-        // (this.$lang === 'zh-CN' ? '请留言' : 'Write a comment here'),
+          valineConfig.placeholder || i18n.getLocale(this.$lang).valineHolder,
         meta: valineConfig.meta || ['nick', 'mail', 'link'],
         notify: valineConfig.notify !== false,
         verify: valineConfig.verify || false,

@@ -2,8 +2,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-14 16:19:59
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-06 09:44:24
  * @Description: 主题配置
  */
 const { path } = require('@vuepress/shared-utils');
@@ -29,9 +29,6 @@ module.exports = (themeConfig, ctx) => {
 
   /** 继承默认主题 */
   config.extend = '@vuepress/theme-default';
-
-  /** App 增强文件位置 */
-  config.enhanceAppFiles = path.resolve(__dirname, 'lib/enhanceAppFile.js');
 
   /** 插件选项 */
   config.plugins = pluginConfig(themeConfig);

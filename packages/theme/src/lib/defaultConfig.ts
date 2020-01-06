@@ -1,18 +1,15 @@
 /*
  * @Author: Mr.Hope
- * @Date: 2019-07-05 00:14:26
+ * @Date: 2020-01-01 18:56:32
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 09:46:32
- * @Description: Vuepress配置
+ * @LastEditTime : 2020-01-01 22:43:02
+ * @Description: vuepress-theme-hope 的默认配置
  */
-const resolve = require('vuepress-theme-hope/resolve');
 
-module.exports = resolve({
-  /** 网站标题 */
-  title: 'vuepress-theme-hope',
-
-  /** 网站描述 */
-  description: '一个轻量的 vuepress 主题',
+export default {
+  /** 部署目录 */
+  // eslint-disable-next-line no-process-env
+  base: process.env.VuePress_BASE || '/',
 
   /** 生成网站头部的标签 */
   head: [
@@ -56,29 +53,33 @@ module.exports = resolve({
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
   ],
 
-  /** 构建文件输出目录 */
-  dest: './dist/theme',
-
-  /** 多语言配置选项
-   *
-   * 键名是该语言所属的子路径
-   * 作为特例，默认语言可以使用 '/' 作为其路径。
-   */
-  locales: {
-    '/en/': {
-      /** 网站在该语言下的标题 */
-      title: 'vuepress-theme-hope',
-      /** 网站在该语言下的描述 */
-      description: 'A light vuepress theme'
-    }
-  },
-
-  extraWatchFiles: [
-    '.vuepress/config/navBar.js',
-    '.vuepress/config/sideBar.js',
-    '.vuepress/config/theme.js'
-  ],
+  /** 使用的主题 */
+  theme: 'hope',
 
   /** 主题配置 */
-  themeConfig: require('./config/theme')
-});
+  themeConfig: {
+    /** 根目录语言 */
+    baseLang: 'zh-CN',
+
+    /** 侧边栏标题显示深度，0-2 */
+    sidebarDepth: 2,
+
+    /** 图标 FontClass 前缀 */
+    iconPrefix: 'icon-',
+
+    /** 页脚 */
+    footer: {
+      /** 页脚默认文字 */
+      text: 'MIT Licensed | Copyright © 2019-present Mr.Hope'
+    },
+
+    /** 多语言配置 */
+    locales: {},
+
+    /** 开启编辑此页链接 */
+    editLinks: true // 默认是 false, 设置为 true 来启用
+  },
+
+  /** 是否只支持常青树浏览器 */
+  evergreen: true // 设置为 true 后将不会兼容 IE 等老旧浏览器
+};

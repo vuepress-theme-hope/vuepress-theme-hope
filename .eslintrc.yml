@@ -9,12 +9,16 @@ extends:
   - plugin:vue/recommended
   # - plugin:prettier/recommended
   - prettier
-  # - prettier/@typescript-eslint
+  - prettier/@typescript-eslint
   - prettier/vue
+  - "@vue/typescript"
 
 plugins:
   - prettier
   - vue
+
+parserOptions:
+  parser: "@typescript-eslint/parser"
 
 rules:
   no-console: "off"
@@ -24,6 +28,10 @@ rules:
   arrow-parens:
     - error
     - as-needed
+
+  class-methods-use-this:
+    - off
+
   comma-dangle:
     - error
     - never
@@ -75,6 +83,9 @@ rules:
     - warn
     - 25
 
+  new-cap:
+    - off
+
   nonblock-statement-body-position:
     - error
     - any
@@ -96,6 +107,9 @@ rules:
     - error
     - allowForLoopAfterthoughts: true
 
+  no-process-env:
+    - off
+
   no-sync:
     - off
 
@@ -103,6 +117,9 @@ rules:
     - off
 
   no-undefined:
+    - off
+
+  no-unused-vars:
     - off
 
   no-warning-comments:
@@ -118,6 +135,11 @@ rules:
   padded-blocks:
     - error
     - never
+
+  prefer-destructuring:
+    - error
+    - object: true
+      array: false
 
   prefer-named-capture-group:
     - off
@@ -150,3 +172,41 @@ rules:
 
   vue/no-v-html:
     - off
+
+overrides:
+  - files:
+      - "index.js"
+
+    rules:
+      camelcase:
+        - off
+
+  - files:
+      - "*.ts"
+    extends:
+      - "plugin:@typescript-eslint/recommended"
+    parser: "vue-eslint-parser"
+    parserOptions:
+      parser: "@typescript-eslint/parser"
+
+    rules:
+      "@typescript-eslint/no-explicit-any":
+        - off
+
+  - files:
+      - "*.d.ts"
+    rules:
+      no-underscore-dangle:
+        - off
+
+  - files:
+      - "**/test/**/*.spec.js"
+      - "**/test/**/*.spec.ts"
+      - "**/test/**/*.test.js"
+      - "**/test/**/*.test.ts"
+    env:
+      mocha: true
+
+    rules:
+      id-length: "off"
+      max-lines-per-function: "off"

@@ -1,4 +1,5 @@
 **/node_modules
 **/tests/**
 **/dist
-FlowChart.vue
+packages/shared-utils/**/*.js
+packages/theme/src/lib/*.js

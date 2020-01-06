@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-23 21:28:04
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-06 09:57:06
  * @Description: 主题颜色选择
 -->
 <template>
@@ -30,7 +30,7 @@
 <script>
 /* global THEME_COLOR_OPTIONS */
 import NightmodeSwitch from './NightmodeSwitch.vue';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
+import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
 
 export default {
   name: 'ThemeOptions',
@@ -46,13 +46,12 @@ export default {
       green: '#3eaf7c',
       orange: '#fb9b5f'
     },
-    localeText: i18n.config.themeColor,
     nightmodeEnable: false
   }),
 
   computed: {
     text() {
-      return this.localeText[this.$lang] || this.localeText['en-US'];
+      return i18n.getLocale(this.$lang).themeColor;
     }
   },
 

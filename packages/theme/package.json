@@ -3,6 +3,12 @@
   "version": "0.1.0-beta.18",
   "description": "a light vuepress theme",
   "main": "src/index.js",
+  "scripts": {
+    "test": "vue-cli-service test:unit test/",
+    "test:assign": "vue-cli-service test:unit test/unit/assign.test.js",
+    "test:resolveConfig": "vue-cli-service test:unit test/resolveConfig.test.js",
+    "test:sideBarConfig": "vue-cli-service test:unit test/resolveSidebar.test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
@@ -26,12 +32,19 @@
     "@vuepress/plugin-medium-zoom": "^1.2.0",
     "@vuepress/plugin-pwa": "^1.2.0",
     "moment": "^2.24.0",
+    "ts-loader": "^6.2.1",
     "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-md-enhance": "^0.1.0-beta.18",
-    "vuepress-plugin-named-chunks": "^1.1.0"
+    "vuepress-plugin-named-chunks": "^1.1.1"
   },
   "devDependencies": {
-    "vuepress": "^1.2.0"
+    "@vue/cli-plugin-unit-mocha": "^4.1.2",
+    "@vue/cli-service": "^4.1.2",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.3.0",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.2.0",
+    "vuepress-types": "^0.6.1"
   }
 }

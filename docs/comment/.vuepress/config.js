@@ -1,15 +1,14 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-27 20:47:47
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-06 09:45:38
  * @Description: Vuepress配置
  */
 
-module.exports = {
-  /** 部署目录 */
-  base: process.env.VuePress_BASE || '/',
+const resolve = require('vuepress-theme-hope/resolve');
 
+module.exports = resolve({
   /** 网站标题 */
   title: '评论插件',
 
@@ -79,9 +78,6 @@ module.exports = {
       description: 'Comment Plugin for Vuepress'
     }
   },
-
-  theme: 'hope',
-
   /** 主题配置 */
   themeConfig: require('./themeConfig')
-};
+});

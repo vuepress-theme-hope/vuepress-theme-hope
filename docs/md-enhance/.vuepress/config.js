@@ -1,15 +1,13 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-27 20:34:12
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-06 09:46:04
  * @Description: Vuepress配置
  */
+const resolve = require('vuepress-theme-hope/resolve');
 
-module.exports = {
-  /** 部署目录 */
-  base: process.env.VuePress_BASE || '/',
-
+module.exports = resolve({
   /** 网站标题 */
   title: 'Markdown 增强',
 
@@ -64,9 +62,6 @@ module.exports = {
   locales: {
     /** 英文设置 */
     '/en/': {
-      /** 设置为英文 */
-      lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
-
       /** 网站在该语言下的标题 */
       title: 'Markdown Enhance Plugin',
 
@@ -75,12 +70,6 @@ module.exports = {
     }
   },
 
-  /** 使用的主题 */
-  theme: 'hope',
-
   /** 主题配置 */
-  themeConfig: require('./themeConfig'),
-
-  /** 是否只支持常青树浏览器 */
-  evergreen: true // 设置为true后将不会兼容IE等老旧浏览器
-};
+  themeConfig: require('./themeConfig')
+});

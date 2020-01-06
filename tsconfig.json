@@ -1,31 +1,43 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": false,
     "declaration": true,
-    "pretty": true,
-    "stripInternal": true,
+    "diagnostics": false,
+    "downlevelIteration": false,
+    "experimentalDecorators": true,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": false,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "listEmittedFiles": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "pretty": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "strict": true,
     "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "alwaysStrict": true,
-    "outDir": "lib"
+    "strictPropertyInitialization": true,
+    "target": "es6",
+    "types": [
+      "vuepress-types"
+    ]
   },
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/enhanceAppFile.ts",
+    "**/*.spec.ts",
+    "**/click-outside.ts",
+    "presets/**"
   ]
 }
