@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.1.0-beta.21](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.20...v0.1.0-beta.21) (2020-01-06)
+
 ## [0.1.0-beta.20](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.19...v0.1.0-beta.20) (2020-01-06)
 
 ### Bug Fixes

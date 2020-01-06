@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 15:14:57
+ * @LastEditTime : 2020-01-06 21:40:02
  * @Description: release
  */
 
@@ -85,7 +85,9 @@ const release = async () => {
     'https://registry.npmjs.org/'
   ];
 
-  console.log(`lerna ${releaseArguments.join(' ')}`);
+  console.log(
+    `lerna publish ${version} --force-publish --registry https://registry.npmjs.org/ --dist-tag ${npmTag}`
+  );
 
   await execa(require.resolve('lerna/cli'), releaseArguments, {
     stdio: 'inherit'
