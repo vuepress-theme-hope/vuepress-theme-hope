@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0-beta.20](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.19...v0.1.0-beta.20) (2020-01-06)
+
+### Bug Fixes
+
+* fix missing deps ([58cb878](https://github.com/Mister-Hope/vuepress-theme-hope/commit/58cb878d7f0d7df087c99e0337f2de1bf09139d0))
+* **theme:** add missing deps typescript ([47d7e29](https://github.com/Mister-Hope/vuepress-theme-hope/commit/47d7e29ea9684757a3ede320cde20a7c5fa432d5))
+
 ## [0.1.0-beta.19](https://github.com/Mister-Hope/vuepress-theme-hope/compare/41144c96da5f3632c32ef7d1a1ce1b6f731dfdda...v0.1.0-beta.19) (2020-01-06)
 
 ### Features

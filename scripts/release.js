@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 23:01:25
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-06 15:14:57
  * @Description: release
  */
 
@@ -91,7 +91,7 @@ const release = async () => {
     stdio: 'inherit'
   });
 
-  await execa('npm', ['run', 'changelog']);
+  await execa('yarn', ['run', 'changelog']);
 };
 
 release().catch(err => {
