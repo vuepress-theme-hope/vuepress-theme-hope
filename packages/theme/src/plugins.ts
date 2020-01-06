@@ -2,13 +2,15 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 23:29:12
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-05 16:43:39
  * @Description: 插件配置
  */
-const { resolve } = require('path');
+import * as moment from 'moment';
+import { PluginConfig } from 'vuepress-types';
+import { resolve } from 'path';
 
-module.exports = options => {
+const pluginConfig = (options: any): PluginConfig[] => {
   // 设置作者
   if (options.comment && options.author)
     options.comment.author = options.author;
@@ -42,9 +44,7 @@ module.exports = options => {
       '@vuepress/last-updated',
       {
         /** 转换时间戳 */
-        transformer: (timestamp, lang) => {
-          const moment = require('moment');
-
+        transformer: (timestamp: number, lang: string): string => {
           moment.locale(lang);
 
           return moment(timestamp).format('LLL');
@@ -110,18 +110,19 @@ module.exports = options => {
     [
       'named-chunks',
       {
-        pageChunkName: page =>
+        pageChunkName: (page: any): string =>
           /^(?!\.)[^\\/:*?"<>|]{1,255}$/u.test(page.title)
             ? `page-${page.title}`
             : `page-${page.key.slice(1)}`,
-        layoutChunkName: layout => `layout-${layout.componentName}`
+        layoutChunkName: (layout: any): string =>
+          `layout-${layout.componentName}`
       }
     ],
 
     /** 返回顶部插件 */
     ['@mr-hope/back-to-top', options.backtotop !== false],
 
-    /** Markdown 增强插件 */
+    /** 评论插件 */
     ['@mr-hope/comment', options.comment === false ? false : options.comment],
 
     /** 全屏插件 */
@@ -133,10 +134,12 @@ module.exports = options => {
     /** Markdown 增强插件 */
     ['md-enhance', options.markdown || false],
 
-    /** 全屏插件 */
+    // /** 全屏插件 */
     ['@mr-hope/screen-full', options.fullscreen !== false],
 
-    /** 主题色插件 */
+    // /** 主题色插件 */
     ['@mr-hope/theme-color', options.themeColor]
   ];
 };
+
+export default pluginConfig;
