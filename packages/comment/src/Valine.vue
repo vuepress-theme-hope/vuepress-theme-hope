@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 09:57:52
+ * @LastEditTime : 2020-01-05 13:45:18
  * @Description: Valine 评论插件
 -->
 <template>
@@ -11,62 +11,56 @@
   </div>
 </template>
 
-<script>
-import Vue from 'vue';
+<script lang='ts'>
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { Route } from 'vue-router';
 import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
 
-export default {
-  name: 'Valine',
+@Component
+export default class Valine extends Vue {
+  @Prop({ type: Object, default: () => ({}) })
+  private readonly valineConfig!: ValineOptions;
 
-  props: {
-    valineConfig: {
-      type: Object,
-      default: () => ({})
-    }
-  },
+  /** 是否启用 Valine */
+  private get valineEnable() {
+    const { valineConfig } = this;
 
-  computed: {
-    /** 是否启用 Valine */
-    valineEnable() {
-      const { valineConfig } = this;
+    return valineConfig && valineConfig.appId && valineConfig.appKey;
+  }
 
-      return valineConfig && valineConfig.appId && valineConfig.appKey;
-    },
-    // 是否显示评论
-    commentDisplay() {
-      if (!this.valineEnable) return false;
-      const globalEnable = this.valineConfig.commet !== false;
-      const pageConfig = this.$page.frontmatter.comment;
+  // 是否显示评论
+  private get commentDisplay() {
+    if (!this.valineEnable) return false;
+    const globalEnable = this.valineConfig.comment !== false;
+    const pageEnable = this.$page.frontmatter.comment;
 
-      return (
-        (globalEnable && pageConfig !== false) ||
-        (!globalEnable && pageConfig === true)
-      );
-    },
+    return (
+      (globalEnable && pageEnable !== false) ||
+      (!globalEnable && pageEnable === true)
+    );
+  }
 
-    visitorDisplay() {
-      if (!this.valineEnable) return false;
-      const globalEnable = this.valineConfig.visitor !== false;
-      const pageConfig = this.$page.frontmatter;
+  private get visitorDisplay() {
+    if (!this.valineEnable) return false;
+    const globalEnable = this.valineConfig.visitor !== false;
+    const pageEnable = this.$page.frontmatter.visitor;
 
-      return (
-        (globalEnable && pageConfig !== false) ||
-        (!globalEnable && pageConfig === true)
-      );
-    }
-  },
+    return (
+      (globalEnable && pageEnable !== false) ||
+      (!globalEnable && pageEnable === true)
+    );
+  }
 
-  watch: {
-    $route(to, from) {
-      if (to.path !== from.path)
-        // 切换页面时刷新评论
-        Vue.nextTick(() => {
-          this.valine(to.path);
-        });
-    }
-  },
+  @Watch('$route')
+  onRouteChange(to: Route, from: Route) {
+    if (to.path !== from.path)
+      // 切换页面时刷新评论
+      Vue.nextTick(() => {
+        this.valine(to.path);
+      });
+  }
 
-  mounted() {
+  private mounted() {
     if (this.valineEnable) {
       const AV = require('leancloud-storage');
 
@@ -74,33 +68,30 @@ export default {
     }
 
     this.valine(this.$route.path);
-  },
-
-  methods: {
-    /** 启用 Valine */
-    valine(path) {
-      const { valineConfig } = this;
-      const valine = new (require('valine'))();
-
-      valine.init({
-        el: '#valine',
-        appId: valineConfig.appId, // Your appId
-        appKey: valineConfig.appKey, // Your appKey
-        placeholder:
-          valineConfig.placeholder || i18n.getLocale(this.$lang).valineHolder,
-        meta: valineConfig.meta || ['nick', 'mail', 'link'],
-        notify: valineConfig.notify !== false,
-        verify: valineConfig.verify || false,
-        avatar: valineConfig.avatar || 'retro',
-        visitor: this.visitorDisplay,
-        recordIP: valineConfig.recordIP || false,
-        path: path || window.location.pathname,
-        pageSize: valineConfig.pageSize || 10,
-        lang: this.$lang === 'zh-CN' ? 'zh-cn' : 'en'
-      });
-    }
   }
-};
+
+  /** 启用 Valine */
+  private valine(path: string) {
+    const { valineConfig } = this;
+    const valine = new (require('valine'))();
+
+    valine.init({
+      el: '#valine',
+      appId: valineConfig.appId, // Your appId
+      appKey: valineConfig.appKey, // Your appKey
+      placeholder: valineConfig.placeholder || i18n.getLocale(this.$lang).valineHolder,
+      meta: valineConfig.meta || ['nick', 'mail', 'link'],
+      notify: valineConfig.notify !== false,
+      verify: valineConfig.verify || false,
+      avatar: valineConfig.avatar || 'retro',
+      visitor: this.visitorDisplay,
+      recordIP: valineConfig.recordIP || false,
+      path: path || window.location.pathname,
+      pageSize: valineConfig.pageSize || 10,
+      lang: this.$lang === 'zh-CN' ? 'zh-cn' : 'en'
+    });
+  }
+}
 </script>
 
 <style lang="stylus">

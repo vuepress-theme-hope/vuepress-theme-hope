@@ -5,24 +5,18 @@
   </div>
 </template>
 
-<script>
+<script lang='ts'>
 /* global COMMENT_OPTIONS */
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import Valine from './Valine.vue';
 
-export default {
-  name: 'Comment',
+@Component({ components: { Valine } })
+export default class Comment extends Vue {
+  /** 是否启用 */
+  @Prop({ type: Boolean, default: true })
+  private readonly enable!: boolean;
 
-  components: { Valine },
-
-  props: {
-    enable: {
-      type: Boolean,
-      default: true
-    }
-  },
-
-  data: () => ({
-    options: COMMENT_OPTIONS
-  })
-};
+  /** 插件配置 */
+  private options = COMMENT_OPTIONS;
+}
 </script>

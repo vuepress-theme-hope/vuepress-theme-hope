@@ -1,14 +1,14 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-22 20:08:19
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-04 13:22:38
  * @Description: 页面信息
 -->
 <template>
   <div class="page-title">
     <h1>{{ $page.title }}</h1>
-    <div v-if="author||visitor" class="page-info">
+    <div v-if="author || enableVisitor" class="page-info">
       <svg v-if="author" class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8
@@ -18,7 +18,12 @@
         />
       </svg>
       <span v-if="author" v-text="author" />
-      <svg v-if="visitor" class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        v-if="enableVisitor"
+        class="icon"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           v-if="count < 1000"
           d="M992 512.096c0-5.76-0.992-10.592-1.28-11.136-0.192-2.88-1.152-8.064-2.08-10.816-0.256-0.672-0.544-1.376-0.832-2.08-0.48-1.568-1.024-3.104-1.6-4.32C897.664 290.112 707.104 160 512 160 316.928 160 126.368
@@ -45,7 +50,7 @@
         />
       </svg>
       <span
-        v-if="visitor"
+        v-if="enableVisitor"
         :id="visitorID"
         :data-flag-title="$page.title"
         class="leancloud_visitors"
@@ -63,109 +68,107 @@
   </div>
 </template>
 
-<script>
+<script lang='ts'>
 /* global COMMENT_OPTIONS */
-export default {
-  name: 'PageInfo',
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { Route } from 'vue-router';
 
-  data: () => ({
-    valineConfig: COMMENT_OPTIONS,
-    numStyle: { color: '#999' },
-    count: 0
-  }),
+@Component
+export default class PageInfo extends Vue {
+  private valineConfig: ValineOptions = COMMENT_OPTIONS;
 
-  computed: {
-    /** 是否启用 Valine */
-    valineEnable() {
-      const { valineConfig } = this;
+  private numStyle = { color: '#999' };
 
-      return (
-        valineConfig &&
-        valineConfig.type === 'valine' &&
-        valineConfig.appId &&
-        valineConfig.appKey
-      );
-    },
+  /** 访问量 */
+  private count = 0;
 
-    /** 作者 */
-    author() {
-      const { author } = this.$frontmatter;
+  /** 是否启用 Valine */
+  private get valineEnable() {
+    const { valineConfig } = this;
 
-      return author || (author === false ? '' : this.valineConfig.author || '');
-    },
+    return Boolean(
+      valineConfig &&
+      valineConfig.type === 'valine' &&
+      valineConfig.appId &&
+      valineConfig.appKey
+    );
+  };
 
-    /** 访问量 */
-    visitor() {
-      if (!this.valineEnable) return false;
-      const globalEnable = this.valineConfig.visitor !== false;
-      const pageConfig = this.$frontmatter.visitor;
+  /** 作者 */
+  private get author() {
+    const { author } = this.$frontmatter;
 
-      return (
-        (globalEnable && pageConfig !== false) ||
-        (!globalEnable && pageConfig === true)
-      );
-    },
+    return (author as string) || (author === false ? '' : this.valineConfig.author || '');
+  }
 
-    /** 访客标识符，使用当前网页路径 */
-    visitorID() {
-      const { base } = this.$site;
+  /** 访问量 */
+  private get enableVisitor() {
+    if (!this.valineEnable) return false;
+    const globalEnable = this.valineConfig.visitor !== false;
+    const pageConfig = this.$frontmatter.visitor;
 
-      return `${base.slice(0, base.length - 1)}${this.$page.path}`;
-    },
+    return (
+      (globalEnable && pageConfig !== false) ||
+      (!globalEnable && pageConfig === true)
+    );
+  }
 
-    /** 发表时间 */
-    time() {
-      const { time } = this.$frontmatter;
+  /** 访客标识符，使用当前网页路径 */
+  private get visitorID() {
+    const { base } = this.$site;
 
-      if (time) {
-        if (time.indexOf('T') !== -1) {
-          const [date, temp] = time.split('T');
-          const [moment] = temp.split('.');
+    return base ? `${base.slice(0, base.length - 1)}${this.$page.path}` : this.$page.path;
+  }
 
-          return `${date} ${moment === '00:00:00' ? '' : moment}`;
-        }
+  /** 发表时间 */
+  private get time() {
+    const { time } = this.$frontmatter;
 
-        return time;
+    if (time) {
+      if (time.indexOf('T') !== -1) {
+        const [date, temp] = time.split('T');
+        const [moment] = temp.split('.');
+
+        return `${date} ${moment === '00:00:00' ? '' : moment}`;
       }
 
-      return '';
+      return time;
     }
-  },
 
-  watch: {
-    $route(to, from) {
-      if (to.path !== from.path && this.valineEnable)
-        setTimeout(() => {
-          this.getCount();
-        }, 500);
-    }
-  },
+    return '';
+  }
 
-  mounted() {
+  private mounted() {
     if (this.valineEnable)
       setTimeout(() => {
         this.getCount();
       }, 1500);
-  },
-
-  methods: {
-    // 获得评论并根据数量显示火热图标
-    getCount() {
-      const countElement = document.querySelector(
-        '.leancloud_visitors .leancloud-visitors-count'
-      );
-
-      if (countElement) {
-        const count = countElement.textContent;
-
-        if (count && !isNaN(Number(count))) this.count = count;
-      } else
-        setTimeout(() => {
-          this.getCount();
-        }, 500);
-    }
   }
-};
+
+  // 获得评论并根据数量显示火热图标
+  private getCount() {
+    const countElement = document.querySelector(
+      '.leancloud_visitors .leancloud-visitors-count'
+    );
+
+    if (countElement) {
+      const count = countElement.textContent;
+
+      if (count && !isNaN(Number(count))) this.count = Number(count);
+    } else
+      setTimeout(() => {
+        this.getCount();
+      }, 500);
+  }
+
+  @Watch('$route')
+  onRouteChange(to: Route, from: Route) {
+    if (to.path !== from.path && this.valineEnable)
+      setTimeout(() => {
+        this.getCount();
+      }, 500);
+  }
+}
 </script>
 
 <style lang="stylus">
