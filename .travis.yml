@@ -7,9 +7,15 @@ install:
   - yarn run tsc
 jobs:
   include:
-    # 测试并部署 DEMO
+    # 测试 主题
     - stage: test-theme
-      name: "Test and Deploy Theme-test"
+      name: "Test Them"
+      script:
+        - yarn run theme:test
+
+    # 测试并部署 DEMO
+    - stage: demo
+      name: "Test and Deploy Theme Demo Test"
       script:
         - yarn run theme-test:build
       before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
@@ -61,11 +67,9 @@ jobs:
         github-token: $Github_Token
 
 stages:
-  - name: test-shared-utils
+  # - name: test-shared-utils
+  - name: test-theme
   - name: demo
   - name: comment-docs
-    # if: branch = master
   - name: md-enhance-docs
-    # if: branch = master
   - name: deploy-docs
-    # if: branch = master
