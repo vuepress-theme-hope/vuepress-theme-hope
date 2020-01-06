@@ -1,12 +1,21 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-13 14:48:48
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-13 14:48:48
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-01 22:12:35
  * @Description: 导航
  */
 
-const navigate = (url, router, route) => {
+import VueRouter, { Route } from 'vue-router';
+
+/**
+ * 导航
+ *
+ * @param url 跳转的网址
+ * @param router 路由管理器
+ * @param route 当前页面路由
+ */
+const navigate = (url: string, router: VueRouter, route: Route): void => {
   if (url)
     if (url && url[0] === '/')
       // Inner absolute path

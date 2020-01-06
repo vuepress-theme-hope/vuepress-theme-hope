@@ -38,6 +38,7 @@
     "**/enhanceAppFile.ts",
     "**/*.spec.ts",
     "**/click-outside.ts",
-    "presets/**"
+    "presets/**",
+    "navigate.ts"
   ]
 }
