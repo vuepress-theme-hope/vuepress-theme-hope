@@ -1,15 +1,14 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 21:14:06
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-06 10:22:12
  * @Description: Vuepress配置
  */
 
-module.exports = {
-  /** 部署目录 */
-  base: process.env.VuePress_BASE || '/',
+const resolve = require('vuepress-theme-hope/resolve');
 
+module.exports = resolve({
   /** 网站标题 */
   title: 'Theme Demo',
 
@@ -67,16 +66,7 @@ module.exports = {
    * 作为特例，默认语言可以使用 '/' 作为其路径。
    */
   locales: {
-    /** 默认语言 */
-    '/': {
-      /** 设置为中文 */
-      lang: 'zh-CN'
-    },
-    /** 英文设置 */
     '/en/': {
-      /** 设置为英文 */
-      lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
-
       /** 网站在该语言下的标题 */
       title: 'Theme Demo',
 
@@ -91,11 +81,6 @@ module.exports = {
     '.vuepress/config/theme.js'
   ],
 
-  theme: 'hope',
-
   /** 主题配置 */
-  themeConfig: require('./config/theme'),
-
-  /** 是否只支持常青树浏览器 */
-  evergreen: true // 设置为true后将不会兼容IE等老旧浏览器
-};
+  themeConfig: require('./config/theme')
+});
