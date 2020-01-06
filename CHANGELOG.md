@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.0-beta.19](https://github.com/Mister-Hope/vuepress-theme-hope/compare/41144c96da5f3632c32ef7d1a1ce1b6f731dfdda...v0.1.0-beta.19) (2020-01-06)
+
+### Features
+
+* **back-to-top:** use ts ([c4f5dae](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c4f5dae2fdb27ff4b4be4f6df8d82eba99ec2ee7))
+* **comment:** use ts ([77ab17e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/77ab17ec286672a395e9c48ba40b4a102df42b4b))
+* **components:** use ts ([f7a7bb2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f7a7bb20818e9b197ea010df12a54538f3bc9608))
+* **screen-full:** use ts ([a355eee](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a355eeec7c9be489d45ef1f85ff437195579c31b))
+* **theme:** use ts ([df72614](https://github.com/Mister-Hope/vuepress-theme-hope/commit/df726146d716e8c5c0298a9c870d49d3f891eec1))
+* **theme-color:** use ts ([c5af8cb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c5af8cb367384f9ec857d406fe017194b72d6dbc))
+* add ts support for theme ([400d74e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/400d74e6a9ba1ad89b4cd1763f17fe7175d53675))
+* init from master ([41144c9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/41144c96da5f3632c32ef7d1a1ce1b6f731dfdda))
+* rebuild shared-utils ([26deb40](https://github.com/Mister-Hope/vuepress-theme-hope/commit/26deb4060186777f90f65dff8ad1e5d90eafd612))
+* add theme test ([7730b5d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7730b5deee8ca5b6cf4764588f6bbcb174cb1486))
+
 ## [0.1.0-beta.18](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.17...v0.1.0-beta.18) (2019-11-23)
 
 ### Features
