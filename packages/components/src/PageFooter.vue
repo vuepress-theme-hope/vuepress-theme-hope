@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:49
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-16 22:58:42
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-05 09:56:05
  * @Description: 页脚
  *
  * 添加自定义页脚的预设文字
@@ -10,34 +10,40 @@
 <template>
   <div v-if="footerContent" class="footer" v-html="footerContent" />
 </template>
-<script>
-export default {
-  name: 'PageFooter',
+<script lang='ts'>
+// import 'vuepress-types';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-  props: {
-    footer: {
-      type: [Object, String],
-      default: ''
-    }
-  },
+interface FooterConfig {
+  /** 页脚文字 */
+  text: string;
+  /** 页脚链接 */
+  link: string;
+}
 
-  computed: {
-    footerContent() {
-      const footer = this.footer || this.$page.frontmatter.footer;
-      const themeFooter = this.$themeConfig.footer;
+@Component
+export default class PageFooter extends Vue {
+  /** 页脚配置 */
+  @Prop({ type: [Object, String], default: '' })
+  private readonly footer!: string | FooterConfig;
 
-      return typeof footer === 'object'
-        ? `<a href="${footer.link}">${footer.text}</a>`
-        : typeof footer === 'string'
+  /** 页脚内容 */
+  private get footerContent() {
+    const footer = this.footer || this.$page.frontmatter.footer;
+    const themeFooter = this.$themeConfig.footer;
+
+    return typeof footer === 'object'
+      ? `<a href="${footer.link}">${footer.text}</a>`
+      : typeof footer === 'string'
         ? footer
         : themeFooter &&
           themeFooter.text &&
           (this.$frontmatter.footer === true || themeFooter.displayDefault)
-        ? themeFooter.text
-        : '';
-    }
+          ? (themeFooter.text as string)
+          : '';
   }
-};
+}
+
 </script>
 <style lang="stylus">
 .footer

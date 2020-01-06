@@ -1,30 +1,17 @@
-<script>
-export default {
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { ComponentOptions } from 'vue';
+
+// Functional Component Hack
+interface FunctionalComponentOptions extends ComponentOptions<Vue> {
+  functional?: boolean;
+};
+
+@Component({
   name: 'MyBadge',
-
   functional: true,
-
-  props: {
-    type: {
-      type: String,
-      default: 'tip'
-    },
-    text: {
-      type: String,
-      default: ''
-    },
-    vertical: {
-      type: String,
-      default: 'top'
-    },
-    color: {
-      type: String,
-      default: ''
-    }
-  },
-
   render(h, { props, slots }) {
-    const options = {
+    const options: Record<string, any> = {
       class: ['badge', props.type],
       style: { verticalAlign: props.vertical }
     };
@@ -36,7 +23,23 @@ export default {
     }
 
     return h('span', options, props.text || slots().default);
-  }
+  }} as FunctionalComponentOptions)
+export default class MyBadge extends Vue {
+  /** 徽章类型 */
+  @Prop({ type: String, default: 'tip' })
+  private readonly type!: string;
+
+  /** 徽章文字 */
+  @Prop({ type: String, default: '' })
+  private readonly text!: string;
+
+  /** 徽章垂直对齐方式 */
+  @Prop({ type: String, default: 'top' })
+  private readonly vertical!: string;
+
+  /** 徽章颜色 */
+  @Prop({ type: String, default: '' })
+  private readonly color!: string;
 };
 </script>
 <style lang="stylus" scoped>

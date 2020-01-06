@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-22 20:45:42
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-03 09:44:53
  * @Description: 路径导航
 -->
 <template>
@@ -23,96 +23,103 @@
     </ul>
   </nav>
 </template>
-<script>
-export default {
-  name: 'BreadCrumb',
+<script lang='ts'>
+// import 'vuepress-types';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { Route } from 'vue-router';
 
-  data: () => ({
-    /** 路径导航配置 */
-    config: []
-  }),
+interface BreadCrumbConfig {
+  /** 标题 */
+  title: string;
+  /** 图标 */
+  icon?: string;
+  /** 地址 */
+  url: string;
+}
 
-  computed: {
-    /** 是否启用路径导航 */
-    enable() {
-      const globalEnable = this.$themeConfig.breadcrumb !== false;
-      const pageConfig = this.$page.frontmatter.breadcrumb;
+@Component
+export default class BreadCrumb extends Vue {
+  /** 路径导航配置 */
+  private config: BreadCrumbConfig[] = [];
 
-      return (
-        (globalEnable && pageConfig !== false) ||
-        (!globalEnable && pageConfig === true)
-      );
-    },
+  /** 是否启用路径导航 */
+  private get enable() {
+    const globalEnable = this.$themeConfig.breadcrumb !== false;
+    const pageEnable: boolean = this.$page.frontmatter.breadcrumb;
 
-    iconPrefix() {
-      const { iconPrefix } = this.$themeConfig;
+    return (
+      (globalEnable && pageEnable !== false) ||
+      (!globalEnable && pageEnable === true)
+    );
+  }
 
-      return typeof iconPrefix === 'string'
-        ? iconPrefix
-        : iconPrefix === false
+  /** 图标前缀 */
+  private get iconPrefix() {
+    const { iconPrefix } = this.$themeConfig;
+
+    return typeof iconPrefix === 'string'
+      ? iconPrefix
+      : iconPrefix === false
         ? ''
         : 'icon-';
-    }
-  },
+  }
 
-  watch: {
-    $route(to, from) {
-      if (this.enable && to.path !== from.path)
-        this.config = this.getBreadCrumbConfig(to);
-    }
-  },
+  @Watch('$route')
+  onRouteChange(to: Route, from: Route) {
+    if (this.enable && to.path !== from.path)
+      this.config = this.getBreadCrumbConfig(to);
+  }
 
-  mounted() {
+  private mounted() {
     if (this.enable) this.config = this.getBreadCrumbConfig(this.$route);
-  },
+  }
 
-  methods: {
-    getLinks(route) {
-      /** 路径项 */
-      const routePaths = route.fullPath.split('#')[0].split('/');
-      /** 链接 */
-      const links = [];
-      let link = '';
+  private getLinks(route: Route) {    ;
+    /** 路径项 */
+    const routePaths = route.fullPath.split('#')[0].split('/');
+    /** 链接 */
+    const links: string[] = [];
+    let link = '';
 
-      // 生成链接
-      routePaths.forEach((element, index) => {
-        if (index !== routePaths.length - 1) {
-          link += `${element}/`;
-          links.push(link);
-        } else if (element !== '') {
-          link += element;
-          links.push(link);
+    // 生成链接
+    routePaths.forEach((element, index) => {
+      if (index !== routePaths.length - 1) {
+        link += `${element}/`;
+        links.push(link);
+      } else if (element !== '') {
+        link += element;
+        links.push(link);
+      }
+    });
+
+    return links;
+  }
+
+  private getBreadCrumbConfig(route: Route) {
+    /** 页面对象 */
+    const { pages } = this.$site;
+    /** 路径导航配置 */
+    const breadcrumbConfig: BreadCrumbConfig[] = [];
+
+    /** 页面路径 */
+    const links = this.getLinks(route);
+
+    // 生成路径导航配置
+    for (let index = 1; index < links.length; index++)
+      for (let index2 = 0; index2 < pages.length; index2++) {
+        const element = pages[index2];
+
+        if (element.path === links[index]) {
+          breadcrumbConfig.push({
+            title: element.title,
+            icon: element.frontmatter.icon,
+            url: element.path
+          });
+          break;
         }
-      });
+      }
 
-      return links;
-    },
-    getBreadCrumbConfig(route) {
-      /** 页面对象 */
-      const { pages } = this.$site;
-      /** 路径导航配置 */
-      const breadcrumbConfig = [];
-
-      /** 页面路径 */
-      const links = this.getLinks(route);
-
-      // 生成路径导航配置
-      for (let index = 1; index < links.length; index++)
-        for (let index2 = 0; index2 < pages.length; index2++) {
-          const element = pages[index2];
-
-          if (element.path === links[index]) {
-            breadcrumbConfig.push({
-              title: element.title,
-              icon: element.frontmatter.icon,
-              url: element.path
-            });
-            break;
-          }
-        }
-
-      return breadcrumbConfig;
-    }
+    return breadcrumbConfig;
   }
 };
 </script>
