@@ -1,14 +1,14 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-09-19 18:12:20
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-27 20:24:08
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-03 19:36:51
  * @Description: 返回顶部组件
 -->
 <template>
   <transition name="fade">
     <svg
-      v-if="show"
+      v-if="isDisplay"
       class="back-to-top"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,28 +28,26 @@
   </transition>
 </template>
 
-<script>
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import { debounce } from 'lodash';
 
-export default {
-  name: 'BackToTop',
+@Component
+export default class BackToTop extends Vue {
+  /** 显示按钮的临界值 */
+  @Prop({ type: Number, default: 300 })
+  private readonly threshold!: number;
 
-  props: {
-    threshold: {
-      type: Number,
-      default: 300
-    }
-  },
+  /** 滚动距离 */
+  private scrollTop = 0;
 
-  data: () => ({ scrollTop: 0 }),
+  /** 是否显示返回顶部按钮 */
+  private get isDisplay() {
+    return this.scrollTop > this.threshold;
+  }
 
-  computed: {
-    show() {
-      return this.scrollTop > this.threshold;
-    }
-  },
 
-  mounted() {
+  private mounted() {
     this.scrollTop = this.getScrollTop();
     window.addEventListener(
       'scroll',
@@ -57,22 +55,22 @@ export default {
         this.scrollTop = this.getScrollTop();
       }, 100)
     );
-  },
+  }
 
-  methods: {
-    getScrollTop() {
-      return (
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop ||
-        0
-      );
-    },
+  /** 获得返回顶部距离 */
+  private getScrollTop() {
+    return (
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0
+    );
+  };
 
-    scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      this.scrollTop = 0;
-    }
+  /** 滚动到顶部 */
+  private scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.scrollTop = 0;
   }
 };
 </script>
