@@ -25,9 +25,8 @@
     "screenfull": "5.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
+    "vuepress-types": "^0.6.1",
     "vue-property-decorator": "^8.3.0"
   },
-  "devDependencies": {
-    "vuepress-types": "^0.6.1"
-  }
+  "devDependencies": {}
 }

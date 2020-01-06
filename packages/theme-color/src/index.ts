@@ -1,5 +1,6 @@
 import { PluginOptionAPI } from 'vuepress-types';
 import { resolve } from 'path';
+import { tsoptions } from '@mr-hope/vuepress-shared-utils';
 
 const pluginOption = (options: ThemeColorOptions): PluginOptionAPI => ({
   name: 'theme-color',
@@ -21,7 +22,7 @@ const pluginOption = (options: ThemeColorOptions): PluginOptionAPI => ({
       .loader('ts-loader')
       .options({
         appendTsSuffixTo: [/\.vue$/u],
-        compilerOptions: { declaration: false }
+        compilerOptions: tsoptions
       });
   }
 } as PluginOptionAPI);

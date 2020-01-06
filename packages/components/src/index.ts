@@ -1,5 +1,6 @@
 import { PluginOptionAPI } from 'vuepress-types';
 import { resolve } from 'path';
+import { tsoptions } from '@mr-hope/vuepress-shared-utils';
 
 const pluginOption: PluginOptionAPI = {
   name: 'components',
@@ -17,7 +18,7 @@ const pluginOption: PluginOptionAPI = {
       .loader('ts-loader')
       .options({
         appendTsSuffixTo: [/\.vue$/u],
-        compilerOptions: { declaration: false }
+        compilerOptions: tsoptions
       });
   }
 };

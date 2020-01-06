@@ -25,10 +25,10 @@
     "lodash": "^4.17.15",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
+    "vuepress-types": "^0.6.1",
     "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.149",
-    "vuepress-types": "^0.6.1"
+    "@types/lodash": "^4.14.149"
   }
 }
