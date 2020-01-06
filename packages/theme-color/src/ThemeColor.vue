@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-27 22:05:41
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-05 09:55:17
  * @Description: 主题颜色
 -->
 <template>
@@ -42,37 +42,32 @@
   </div>
 </template>
 
-<script>
+<script lang='ts'>
 /* global THEME_COLOR_OPTIONS */
+import { Component, Vue } from 'vue-property-decorator';
 import ClickOutside from './click-outside';
 import ThemeOptions from './ThemeOptions.vue';
 
-export default {
-  name: 'ThemeColor',
-
+@Component({
   directives: { 'click-outside': ClickOutside },
 
-  components: { ThemeOptions },
+  components: { ThemeOptions }
+})
+export default class ThemeColor extends Vue {
+  private showMenu = false;
 
-  data: () => ({
-    showMenu: false,
-    options: THEME_COLOR_OPTIONS
-  }),
+  private options = THEME_COLOR_OPTIONS;
 
-  computed: {
-    enable() {
-      return (
-        this.options.color !== false || this.options.allowNightmode !== false
-      );
-    }
-  },
-
-  methods: {
-    clickOutside() {
-      this.showMenu = false;
-    }
+  private get enable() {
+    return (
+      this.options.allowThemeColor !== false || this.options.allowNightmode !== false
+    );
   }
-};
+
+  private clickOutside() {
+    this.showMenu = false;
+  }
+}
 </script>
 
 <style lang="stylus">

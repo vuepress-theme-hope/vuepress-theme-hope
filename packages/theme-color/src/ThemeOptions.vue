@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 09:57:06
+ * @LastEditTime : 2020-01-05 13:12:02
  * @Description: 主题颜色选择
 -->
 <template>
@@ -27,40 +27,49 @@
   </div>
 </template>
 
-<script>
+<script lang='ts'>
 /* global THEME_COLOR_OPTIONS */
+import { Component, Vue } from 'vue-property-decorator';
 import NightmodeSwitch from './NightmodeSwitch.vue';
 import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
 
-export default {
-  name: 'ThemeOptions',
+type ColorPicker = Record<string, string>;
 
-  components: { NightmodeSwitch },
+interface ThemeOption {
+  /** 颜色列表 */
+  colorList: string[];
+  /** 颜色选择器 */
+  picker: ColorPicker;
+  /** 是否允许夜间模式 */
+  allowNightmode: boolean;
+}
 
-  data: () => ({
-    options: THEME_COLOR_OPTIONS,
-    theme: {},
-    defaultPicker: {
-      blue: '#2196f3',
-      red: '#f26d6d',
-      green: '#3eaf7c',
-      orange: '#fb9b5f'
-    },
-    nightmodeEnable: false
-  }),
+/** 默认颜色选择器 */
+const defaultPicker: ColorPicker = {
+  blue: '#2196f3',
+  red: '#f26d6d',
+  green: '#3eaf7c',
+  orange: '#fb9b5f'
+};
 
-  computed: {
-    text() {
-      return i18n.getLocale(this.$lang).themeColor;
-    }
-  },
+@Component({ components: { NightmodeSwitch } })
+export default class ThemeOptions extends Vue {
+  private options = THEME_COLOR_OPTIONS;
 
-  mounted() {
+  private theme = {} as ThemeOption;
+
+  private nightmodeEnable = false;
+
+  private get text() {
+    return i18n.getLocale(this.$lang).themeColor;
+  }
+
+  private mounted() {
     this.theme = {
       colorList: this.options.picker
         ? Object.keys(this.options.picker)
         : ['blue', 'red', 'green', 'orange'],
-      picker: this.options.picker || this.defaultPicker,
+      picker: this.options.picker || defaultPicker,
       allowNightmode: this.options.allowNightmode !== false
     };
     /** 所选主题 */
@@ -73,55 +82,53 @@ export default {
     this.nightmodeEnable = nightmode === 'true';
     if (nightmode === 'true') classes.add('theme-night');
     if (theme) this.setTheme(theme);
-  },
+  }
 
-  methods: {
-    /** 切换夜间模式 */
-    toggleNightmode(nightmodeEnable) {
-      const classes = document.body.classList;
+  /** 切换夜间模式 */
+  private toggleNightmode(nightmodeEnable: boolean) {
+    const classes = document.body.classList;
 
-      if (nightmodeEnable) {
-        const oldColor = [...classes];
+    if (nightmodeEnable) {
+      const oldColor = [...classes as any];
 
-        classes.value = '';
-        classes.add('theme-night');
-        oldColor.forEach(item => {
-          classes.add(item);
-        });
-      } else classes.remove('theme-night');
+      classes.value = '';
+      classes.add('theme-night');
+      oldColor.forEach(item => {
+        classes.add(item);
+      });
+    } else classes.remove('theme-night');
 
-      this.nightmodeEnable = nightmodeEnable;
-      localStorage.setItem('nightmode', String(nightmodeEnable));
-    },
+    this.nightmodeEnable = nightmodeEnable;
+    localStorage.setItem('nightmode', String(nightmodeEnable));
+  }
 
-    /** 设置主题 */
-    setTheme(theme, moveClass = true) {
-      const classes = document.body.classList;
-      const themes = this.theme.colorList.map(
-        colorTheme => `theme-${colorTheme}`
-      );
+  /** 设置主题 */
+  private setTheme(theme: string, moveClass = true) {
+    const classes = document.body.classList;
+    const themes = this.theme.colorList.map(
+      colorTheme => `theme-${colorTheme}`
+    );
 
-      if (!theme) {
-        if (moveClass) localStorage.removeItem('theme');
-        classes.remove(...themes);
+    if (!theme) {
+      if (moveClass) localStorage.removeItem('theme');
+      classes.remove(...themes);
 
-        return;
-      }
+      return;
+    }
 
-      classes.remove(
-        ...themes.filter(themeclass => themeclass !== `theme-${theme}`)
-      );
+    classes.remove(
+      ...themes.filter(themeclass => themeclass !== `theme-${theme}`)
+    );
 
-      if (moveClass) {
-        classes.add(`theme-${theme}`);
-        localStorage.setItem('theme', theme);
-      } else {
-        localStorage.removeItem('theme');
-        classes.remove(`theme-${theme}`);
-      }
+    if (moveClass) {
+      classes.add(`theme-${theme}`);
+      localStorage.setItem('theme', theme);
+    } else {
+      localStorage.removeItem('theme');
+      classes.remove(`theme-${theme}`);
     }
   }
-};
+}
 </script>
 
 <style lang="stylus">

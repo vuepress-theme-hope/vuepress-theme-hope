@@ -1,6 +1,9 @@
 import './styles/index.styl';
+import { EnhanceApp } from 'vuepress-types';
 import ThemeColor from './ThemeColor.vue';
 
-export default ({ Vue }) => {
+const enhanceApp: EnhanceApp = ({ Vue }) => {
   Vue.component('ThemeColor', ThemeColor);
 };
+
+export default enhanceApp;

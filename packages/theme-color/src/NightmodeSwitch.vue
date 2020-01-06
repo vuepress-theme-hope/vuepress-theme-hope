@@ -13,27 +13,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'NightmodeSwitch',
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-  props: {
-    nightmodeEnable: { type: Boolean, required: true }
-  },
+@Component
+export default class NightmodeSwitch extends Vue {
+  @Prop({ type: Boolean, required: true })
+  private readonly nightmodeEnable!: boolean;
 
-  computed: {
-    daymodeEnable() {
-      return !this.nightmodeEnable;
-    }
-  },
-
-  methods: {
-    /** 切换夜间模式 */
-    toggleNightmode() {
-      this.$emit('nightmode-toggle', !this.nightmodeEnable);
-    }
+  private get daymodeEnable() {
+    return !this.nightmodeEnable;
   }
-};
+
+  /** 切换夜间模式 */
+  private toggleNightmode() {
+    this.$emit('nightmode-toggle', !this.nightmodeEnable);
+  }
+}
 </script>
 
 <style lang="stylus" scoped>
