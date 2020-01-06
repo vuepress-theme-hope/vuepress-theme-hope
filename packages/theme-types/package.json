@@ -1,0 +1,24 @@
+{
+  "name": "@mr-hope/vuepress-theme-types",
+  "version": "0.1.0-beta.22",
+  "description": "Types declaration for vuepress-theme-hope",
+  "types": "index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+  },
+  "keywords": [
+    "vuepress-theme",
+    "types",
+    "mr-hope"
+  ],
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/theme-types#readme"
+}
