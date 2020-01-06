@@ -1,0 +1,70 @@
+language: node_js
+node_js:
+  - lts/*
+install:
+  - yarn global add lerna
+  - yarn run lerna:bootstrap
+jobs:
+  include:
+    # 测试并部署 DEMO
+    - stage: test-theme
+      name: "Test and Deploy Theme-test"
+      script:
+        - yarn run theme-test:build
+      before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: tests/dist
+        github-token: $Github_Token
+        repo: Mister-Hope/theme-demo
+        on:
+          all_branches: true
+
+    # 部署评论文档
+    - stage: comment-docs
+      name: "Test or Deploy Comment Docs"
+      script:
+        - yarn run comment-docs:build
+      before_deploy: echo comment.mrhope.site >> docs/dist/comment/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: docs/dist/comment
+        github-token: $Github_Token
+        repo: Mister-Hope/vuepress-plugin-comment-docs
+
+    # 部署 Markdown 增强文档
+    - stage: md-enhance-docs
+      name: "Test or Deploy Markdown Enhance Docs"
+      script:
+        - yarn run md-enhance-docs:build
+      before_deploy: echo vuepress-md.mrhope.site >> docs/dist/md-enhance/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: docs/dist/md-enhance
+        github-token: $Github_Token
+        repo: Mister-Hope/vuepress-plugin-md-enhance-docs
+
+    # 部署文档
+    - stage: deploy-docs
+      name: "Test or Deploy Offical Docs"
+      script:
+        - yarn run theme:build
+      before_deploy: echo vuepress-theme.mrhope.site >> docs/dist/theme/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: docs/dist/theme
+        github-token: $Github_Token
+
+stages:
+  - name: test-shared-utils
+  - name: demo
+  - name: comment-docs
+    # if: branch = master
+  - name: md-enhance-docs
+    # if: branch = master
+  - name: deploy-docs
+    # if: branch = master

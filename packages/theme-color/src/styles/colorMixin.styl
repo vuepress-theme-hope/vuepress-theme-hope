@@ -1,0 +1,195 @@
+@require './colorConfig'
+
+color-mode($themecolor, $colorName)
+  fontcolor()
+    color $themecolor
+
+  bordercolor()
+    border-color $themecolor
+
+  .theme-{$colorName}
+    // 页面内容
+    a
+      fontcolor()
+
+    p a code
+      fontcolor()
+
+    blockquote
+      bordercolor()
+
+    @media (min-width: $MQMobile)
+      .nav-item > a:not(.external)
+        &:hover, &.router-link-active
+          border-bottom 2px solid lighten($themecolor, 8%)
+
+    // 链接
+    .nav-links a:hover, .nav-links a.router-link-active
+      fontcolor()
+
+    // 下拉列表
+    .dropdown-wrapper
+      .dropdown-title
+        .title:hover
+          fontcolor()
+
+      .nav-dropdown .dropdown-item a
+        &.router-link-active, &:hover
+          fontcolor()
+
+      &.router-link-active::after
+        border-left 5px solid $themecolor
+
+    // 侧边栏
+    .sidebar-heading.clickable
+      &.active
+        fontcolor()
+        border-left-color $themecolor
+
+      &:hover
+        fontcolor()
+
+    // 侧边栏链接
+    a.sidebar-link
+      &:hover
+        fontcolor()
+
+      &.active
+        fontcolor()
+        border-left-color $themecolor
+
+    // 主页
+    .home
+      .hero
+        .action-button
+          background-color $themecolor
+          border-bottom 1px solid darken($themecolor, 10%)
+
+          &:hover
+            background-color lighten($themecolor, 10%)
+
+      .feature.link h2:hover
+        color $themecolor
+
+      .footer
+        fontcolor()
+
+    // 搜索框
+    .search-box
+      input
+        color darken(desaturate($themecolor, 25%), 25%)
+        background #fff url('~@vuepress/plugin-search/search.svg') 0.6rem 0.5rem no-repeat
+        background-size 1rem
+
+        &:focus
+          bordercolor()
+
+      .suggestions
+        background #fff
+
+      .suggestion
+        a
+          color lighten(desaturate($themecolor, 25%), 25%)
+
+        &.focused
+          background-color #f3f4f5
+
+          a
+            color $themecolor
+
+    @media (max-width: $MQNarrow)
+      .search-box
+        input
+          border-color transparent
+
+    // algolia serach
+    .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--category-header
+      background $themecolor
+
+    // 最后编辑与更新时间
+    .page-edit
+      .edit-link a
+        color desaturate($themecolor, 25%)
+
+      .last-updated .prefix
+        color desaturate($themecolor, 25%)
+
+    // 上一篇下一篇链接
+    .page-nav .inner a
+      fontcolor()
+
+    // 路径导航
+    .breadcrumb a
+      fontcolor()
+
+    // 返回顶部按钮
+    .back-to-top
+      fontcolor()
+
+      &:hover
+        color lighten($themecolor, 30%)
+
+    // 主题选择按钮
+    .color-picker .color-button .skin-icon
+      &:hover, &.select
+        fontcolor()
+
+    // 全屏按钮
+    .fullscreen-wrapper
+      .icon
+        .fullScreen:hover, .cacelFullScreen
+          fontcolor()
+
+    // 提示框
+    .custom-block
+      &.tip, &.warning, &.danger
+        a
+          color $themecolor
+
+    .page
+      // 评论按钮
+      .valine-wrapper
+        #valine
+          a
+            color $themecolor
+
+            &:before
+              background $themecolor
+
+            &:hover
+              color $themecolor
+
+          .vwrap .vheader .vinput:focus
+            bordercolor()
+
+          .vwrap .vedit .vctrl span:hover
+            fontcolor()
+
+          .vlist .vcard .vhead .vnick
+            fontcolor()
+
+          .vbtn:active, .vbtn:hover
+            color #fff
+            background-color $themecolor
+
+    // 进度条颜色
+    #nprogress
+      .bar
+        background-color $themecolor
+
+      .peg
+        box-shadow 0 0 10px $themecolor, 0 0 5px $themecolor
+
+      .spinner-icon
+        bordercolor()
+
+    // flowchart 适配
+    .vuepress-flowchart.vuepress-flowchart-loading-icon
+      fill $themecolor
+
+    // PWA
+    .sw-update-popup
+      bordercolor()
+
+for key, value in $colorPicker
+  color-mode(value, key)

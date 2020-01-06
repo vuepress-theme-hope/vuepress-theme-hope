@@ -1,0 +1,44 @@
+{
+  "name": "@mr-hope/vuepress-plugin-comment",
+  "version": "0.1.0-beta.18",
+  "description": "Comment plugin for vuepress-theme-hope",
+  "main": "src/index.js",
+  "scripts": {
+    "test:serve": "vuepress dev tests",
+    "test:clean-serve": "vuepress dev tests --no-cache",
+    "test:build": "vuepress build tests"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+  },
+  "keywords": [
+    "vuepress-plugin",
+    "comment",
+    "mr-hope"
+  ],
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://comment.mrhope.site",
+  "dependencies": {
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.18",
+    "@vssue/api-bitbucket-v2": "^1.2.1",
+    "@vssue/api-gitee-v5": "^1.2.1",
+    "@vssue/api-github-v3": "^1.1.2",
+    "@vssue/api-github-v4": "^1.2.1",
+    "@vssue/api-gitlab-v4": "^1.2.1",
+    "@vssue/vuepress-plugin-vssue": "^1.2.2",
+    "leancloud-storage": "^4.1.0",
+    "valine": "^1.3.10",
+    "vssue": "^1.2.2"
+  },
+  "devDependencies": {
+    "vuepress": "^1.2.0"
+  }
+}
