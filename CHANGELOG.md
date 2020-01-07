@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-beta.24](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.23...v0.1.0-beta.24) (2020-01-07)
+
+### Features
+
+* **md-enhance:** use ts ([9df9a9d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9df9a9d08b107ddbcb255367653b1bc9d119dc51))
+
 ## [0.1.0-beta.23](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.22...v0.1.0-beta.23) (2020-01-06)
 
 ### Bug Fixes
