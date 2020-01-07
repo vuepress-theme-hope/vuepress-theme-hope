@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 14:38:18
+ * @LastEditTime : 2020-01-07 15:19:09
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
@@ -55,6 +55,9 @@ module.exports = resolve({
     ],
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
   ],
+
+  /** 构建文件输出目录 */
+  dest: './dist',
 
   locales: {
     /** 英文设置 */

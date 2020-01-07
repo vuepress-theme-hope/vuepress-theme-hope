@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 14:38:29
+ * @LastEditTime : 2020-01-07 15:19:18
  * @Description: Vuepress配置
  */
 
@@ -57,8 +57,8 @@ module.exports = resolve({
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
   ],
 
-  /** 根目录语言 */
-  baeLang: 'zh-CN',
+  /** 构建文件输出目录 */
+  dest: './dist',
 
   /** 多语言配置选项
    *

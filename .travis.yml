@@ -7,14 +7,9 @@ install:
   - yarn run tsc
 jobs:
   include:
-    # 测试 主题
-    - stage: test-theme
-      name: "Test Theme"
-      script:
-        - yarn run theme:test
 
     # 测试并部署 DEMO
-    - stage: demo
+    - stage: demo-deploy
       name: "Test and Deploy Theme Demo Test"
       script:
         - yarn run theme-test:build
@@ -30,7 +25,7 @@ jobs:
 
     # 部署评论文档
     - stage: comment-docs
-      name: "Test or Deploy Comment Docs"
+      name: "Build and Deploy Comment Docs"
       script:
         - yarn run comment-docs:build
       before_deploy: echo comment.mrhope.site >> docs/comment/dist/CNAME
@@ -43,7 +38,7 @@ jobs:
 
     # 部署 Markdown 增强文档
     - stage: md-enhance-docs
-      name: "Test or Deploy Markdown Enhance Docs"
+      name: "Build and Deploy Markdown Enhance Docs"
       script:
         - yarn run md-enhance-docs:build
       before_deploy: echo vuepress-md.mrhope.site >> docs/md-enhance/dist/CNAME
@@ -55,8 +50,8 @@ jobs:
         repo: Mister-Hope/vuepress-plugin-md-enhance-docs
 
     # 部署文档
-    - stage: deploy-docs
-      name: "Test or Deploy Offical Docs"
+    - stage: theme-docs
+      name: "Build and Deploy Offical Docs"
       script:
         - yarn run theme:build
       before_deploy: echo vuepress-theme.mrhope.site >> docs/theme/dist/CNAME
@@ -66,9 +61,36 @@ jobs:
         local_dir: docs/theme/dist
         github-token: $Github_Token
 
+    # 部署文档
+    - stage: test-build
+      name: "Test Building of docs"
+      script:
+        - yarn run build:all
+      before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        local_dir: tests/dist
+        github-token: $Github_Token
+        repo: Mister-Hope/theme-demo
+        on:
+          all_branches: true
+
+    # 测试 主题
+    - stage: theme-test
+      name: "Test Theme"
+      script:
+        - yarn run theme:test
+
 stages:
-  - name: test-theme
-  - name: demo
+  - name: demo-deploy
+    if: branch = master
   - name: comment-docs
+    if: branch = master
   - name: md-enhance-docs
-  - name: deploy-docs
+    if: branch = master
+  - name: theme-docs
+    if: branch = master
+  - name: test-build
+    if: branch != master
+  - name: theme-test
