@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:03:02
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-05 09:55:47
+ * @LastEditTime : 2020-01-07 15:00:27
  * @Description: 全屏组件
 -->
 <template>
@@ -68,7 +68,7 @@ export default class ScreenFull extends Vue {
   }
 
   private mounted() {
-    this.canFullscreen = screenfull.isEnabled;
+    this.canFullscreen = screenfull.isEnabled && this.$themeConfig.fullscreen !== false;
   }
 }
 </script>

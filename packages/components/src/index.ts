@@ -1,3 +1,11 @@
+/*
+ * @Author: Mr.Hope
+ * @Date: 2020-01-07 09:12:52
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-07 14:57:43
+ * @Description: 插件主入口
+ */
+
 import { PluginOptionAPI } from 'vuepress-types';
 import { resolve } from 'path';
 
@@ -19,7 +27,9 @@ const pluginOption: PluginOptionAPI = {
         appendTsSuffixTo: [/\.vue$/u],
         compilerOptions: { declaration: false }
       });
-  }
+  },
+
+  globalUIComponents: 'BackToTop'
 };
 
 module.exports = pluginOption;
