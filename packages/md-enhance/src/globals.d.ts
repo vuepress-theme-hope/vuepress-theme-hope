@@ -27,3 +27,9 @@ declare module 'flowchart.js' {
 
   export default flowchart;
 }
+
+declare module '@vuepress/markdown/lib/lineNumbers'{
+  const lineNumbers: (md: any) => any;
+
+  export = lineNumbers;
+}

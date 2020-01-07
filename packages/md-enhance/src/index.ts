@@ -1,3 +1,4 @@
+import * as lineNumbers from '@vuepress/markdown/lib/lineNumbers';
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import flowchart from './markdown-it/flowchart';
 import footnote from './markdown-it/footnote';
@@ -34,11 +35,9 @@ module.exports = (option: MarkdownOption, ctx: Context): PluginOptionAPI => {
     chainMarkdown: md => {
       const markdownOption = option || ctx.themeConfig.markdown || {};
 
-      /*
-       * 添加行号
-       * if (markdownOption.lineNumbers !== false)
-       * md.plugin('line-numbers').use(LINE_NUMBERS);
-       */
+      //  添加行号
+      if (markdownOption.lineNumbers !== false)
+        md.plugin('line-numbers').use(lineNumbers);
 
       // 增加上角标
       if (markdownOption.sup || markdownOption.enableAll)
