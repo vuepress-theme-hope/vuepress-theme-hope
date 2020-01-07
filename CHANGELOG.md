@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-beta.25](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.24...v0.1.0-beta.25) (2020-01-07)
+
+### Bug Fixes
+
+* **md-hance:** fix type missing ([6a78f50](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6a78f50391b9857e321d492ab2c0379c268626e6))
+
 ## [0.1.0-beta.24](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.23...v0.1.0-beta.24) (2020-01-07)
 
 ### Features
