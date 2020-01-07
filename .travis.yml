@@ -37,7 +37,7 @@ jobs:
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: docs/dist/comment
+        local_dir: docs/comment/dist
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-comment-docs
 
@@ -50,7 +50,7 @@ jobs:
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: docs/dist/md-enhance
+        local_dir: docs/md-enhance/dist
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-md-enhance-docs
 
@@ -63,7 +63,7 @@ jobs:
       deploy:
         provider: pages
         skip-cleanup: true
-        local_dir: docs/dist/theme
+        local_dir: docs/theme/dist
         github-token: $Github_Token
 
 stages:

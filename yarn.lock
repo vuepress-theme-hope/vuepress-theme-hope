@@ -1752,11 +1752,6 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@mr-hope/vuepress-theme-types@^0.1.0-beta.22":
-  version "0.1.0-beta.22"
-  resolved "https://registry.npm.taobao.org/@mr-hope/vuepress-theme-types/download/@mr-hope/vuepress-theme-types-0.1.0-beta.22.tgz#12e7ca701b201cac5f71b9ada89793bf2e39e31d"
-  integrity sha1-EufKcBsgHKxfcbmtqJeTvy454x0=
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -13706,16 +13701,6 @@ vuepress-plugin-mathjax@^1.2.8:
     lru-cache "^5.1.1"
     mathjax3 "3.0.0-beta.3"
     vuepress-mergeable "^1.0.2"
-
-vuepress-plugin-md-enhance@^0.1.0-beta.23:
-  version "0.1.0-beta.23"
-  resolved "https://registry.npm.taobao.org/vuepress-plugin-md-enhance/download/vuepress-plugin-md-enhance-0.1.0-beta.23.tgz#2aea2233aa40b4db7ff14dccc71c90911f736e45"
-  integrity sha1-KuoiM6pAtNt/8U3MxxyQkR9zbkU=
-  dependencies:
-    "@mr-hope/vuepress-shared-utils" "^0.1.0-beta.23"
-    flowchart.js "^1.13.0"
-    vuepress-plugin-container "^2.1.2"
-    vuepress-plugin-mathjax "^1.2.8"
 
 vuepress-plugin-named-chunks@^1.1.1:
   version "1.1.1"

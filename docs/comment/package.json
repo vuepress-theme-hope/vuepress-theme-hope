@@ -1,0 +1,17 @@
+{
+  "name": "comment-docs",
+  "private": true,
+  "version": "0.1.0-beta.26",
+  "description": "Docs for @mr-hope/vuepress-plugin-comment",
+  "scripts": {
+    "serve": "vuepress dev src",
+    "clean-serve": "vuepress dev src --no-cache",
+    "build": "vuepress build src"
+  },
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.2.0",
+    "vuepress-theme-hope": "^0.1.0-beta.26"
+  }
+}

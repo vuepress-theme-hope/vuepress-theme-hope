@@ -2,18 +2,17 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 09:45:38
+ * @LastEditTime : 2020-01-07 14:38:18
  * @Description: Vuepress配置
  */
-
 const resolve = require('vuepress-theme-hope/resolve');
 
 module.exports = resolve({
   /** 网站标题 */
-  title: '评论插件',
+  title: 'Markdown 增强',
 
   /** 网站在该语言下的描述 */
-  description: 'Vuepress 的 评论插件',
+  description: 'Vuepress 的 Markdown 增强插件',
 
   /** 生成网站头部的标签 */
   head: [
@@ -57,27 +56,17 @@ module.exports = resolve({
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
   ],
 
-  /** 构建文件输出目录 */
-  dest: './dist/comment',
-
-  /** 根目录语言 */
-  baeLang: 'zh-CN',
-
-  /** 多语言配置选项
-   *
-   * 键名是该语言所属的子路径
-   * 作为特例，默认语言可以使用 '/' 作为其路径。
-   */
   locales: {
     /** 英文设置 */
     '/en/': {
       /** 网站在该语言下的标题 */
-      title: 'Comment Plugin',
+      title: 'Markdown Enhance Plugin',
 
       /** 网站在该语言下的描述 */
-      description: 'Comment Plugin for Vuepress'
+      description: 'Markdown Enhancement for Vuepress'
     }
   },
+
   /** 主题配置 */
   themeConfig: require('./themeConfig')
 });
