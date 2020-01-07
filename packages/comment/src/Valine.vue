@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-05 13:45:18
+ * @LastEditTime : 2020-01-07 11:30:43
  * @Description: Valine 评论插件
 -->
 <template>
@@ -86,7 +86,7 @@ export default class Valine extends Vue {
       avatar: valineConfig.avatar || 'retro',
       visitor: this.visitorDisplay,
       recordIP: valineConfig.recordIP || false,
-      path: path || window.location.pathname,
+      path: path || (typeof window === 'undefined' ? '' : window.location.pathname),
       pageSize: valineConfig.pageSize || 10,
       lang: this.$lang === 'zh-CN' ? 'zh-cn' : 'en'
     });

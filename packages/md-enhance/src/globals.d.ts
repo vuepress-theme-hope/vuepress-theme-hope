@@ -18,7 +18,12 @@ interface MarkdownOption {
   enableAll?: boolean;
 }
 
-declare module 'flowchart.js'{
-  const flowchart: any;
+declare module 'flowchart.js' {
+  export interface Flowchart{
+    parse: (input: any) => any;
+  }
+
+  const flowchart: Flowchart;
+
   export default flowchart;
 }

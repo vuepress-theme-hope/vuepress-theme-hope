@@ -5,7 +5,6 @@
 </template>
 
 <script lang='ts'>
-import * as flowchart from 'flowchart.js';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Loading from './Loading.vue';
 import presets from './presets';
@@ -25,21 +24,25 @@ export default class FlowChart extends Vue {
 
   private mounted() {
     const preset = presets[this.preset];
+    const delay = () => new Promise(resolve => setTimeout(resolve, 500));
+    const { code } = this;
 
     if (!preset) {
       console.warn(`[md-enhance:flowchart] Unknown preset: ${this.preset}`);
       return;
     }
 
-    const { code } = this;
-
     this.$el.setAttribute('id', this.id);
 
-    const { parse } = flowchart as any;
-    const svg = parse(code);
-
-    svg.drawSVG(this.id, preset);
-    this.loading = false;
+    Promise.all([
+      import(/* webpackChunkName: "flowchart" */ 'flowchart.js') as any,
+      delay()
+    ]).then(([flowchart]) => {
+      const { parse } = flowchart;
+      const svg = parse(code);
+      svg.drawSVG(this.id, preset);
+      this.loading = false;
+    });
   }
 }
 </script>
