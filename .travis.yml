@@ -9,7 +9,7 @@ jobs:
   include:
     # 测试 主题
     - stage: test-theme
-      name: "Test Them"
+      name: "Test Theme"
       script:
         - yarn run theme:test
 
@@ -33,7 +33,7 @@ jobs:
       name: "Test or Deploy Comment Docs"
       script:
         - yarn run comment-docs:build
-      before_deploy: echo comment.mrhope.site >> docs/dist/comment/CNAME
+      before_deploy: echo comment.mrhope.site >> docs/comment/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
@@ -46,7 +46,7 @@ jobs:
       name: "Test or Deploy Markdown Enhance Docs"
       script:
         - yarn run md-enhance-docs:build
-      before_deploy: echo vuepress-md.mrhope.site >> docs/dist/md-enhance/CNAME
+      before_deploy: echo vuepress-md.mrhope.site >> docs/md-enhance/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
@@ -59,7 +59,7 @@ jobs:
       name: "Test or Deploy Offical Docs"
       script:
         - yarn run theme:build
-      before_deploy: echo vuepress-theme.mrhope.site >> docs/dist/theme/CNAME
+      before_deploy: echo vuepress-theme.mrhope.site >> docs/theme/dist/CNAME
       deploy:
         provider: pages
         skip-cleanup: true
@@ -67,7 +67,6 @@ jobs:
         github-token: $Github_Token
 
 stages:
-  # - name: test-shared-utils
   - name: test-theme
   - name: demo
   - name: comment-docs
