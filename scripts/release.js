@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-05 12:27:15
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 21:40:02
+ * @LastEditTime : 2020-01-07 09:23:12
  * @Description: release
  */
 
@@ -24,6 +24,8 @@ const getNpmTags = version => {
 
 // eslint-disable-next-line max-lines-per-function
 const release = async () => {
+  await execa('yarn', ['run', 'tsc']);
+
   console.log(`Current version: ${curVersion}`);
 
   const bumps = ['patch', 'minor', 'major', 'prerelease', 'premajor'];

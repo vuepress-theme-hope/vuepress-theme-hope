@@ -23,6 +23,7 @@
     "noImplicitThis": true,
     "noUnusedParameters": true,
     "pretty": true,
+    "resolveJsonModule": true,
     "removeComments": false,
     "sourceMap": false,
     "strict": true,
@@ -39,6 +40,7 @@
     "packages/theme/**/*.ts"
   ],
   "exclude": [
+    "packages/md-enhance/src/presets/*.ts",
     "packages/theme/src/lib/navigate.ts"
   ]
 }

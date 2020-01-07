@@ -1,23 +1,30 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
-const { hash } = require('@vuepress/shared-utils');
+/* eslint-disable max-params */
+/* eslint-disable camelcase */
+import hash = require('hash-sum');
 
-module.exports = (md, options = {}) => {
+const flowchart = (md: any, options: any = {}): void => {
   const openMarker = options.openMarker || '@flowstart';
   const openChar = openMarker.charCodeAt(0);
   const closeMarker = options.closeMarker || '@flowend';
   const closeChar = closeMarker.charCodeAt(0);
 
-  const render = (tokens, idx) => {
+  const render = (tokens: any, idx: any): string => {
     const token = tokens[idx];
     const key = `flowchart_${hash(idx)}`;
     const { content, info } = token;
     md.$dataBlock[key] = content;
-    return `<FlowChart id="${key}" :code="$dataBlock.${key}" preset="${info.trim() || 'vue'}"></FlowChart>`;
+    return `<FlowChart id="${key}" :code="$dataBlock.${key}" preset="${info.trim() ||
+      'vue'}"></FlowChart>`;
   };
 
-  // eslint-disable-next-line max-params
-  const uml = (state, startLine, endLine, silent) => {
+  const uml = (
+    state: any,
+    startLine: number,
+    endLine: number,
+    silent: boolean
+  ): boolean => {
     let nextLine;
     let i;
     let autoClosed = false;
@@ -31,7 +38,8 @@ module.exports = (md, options = {}) => {
     if (openChar !== state.src.charCodeAt(start)) return false;
 
     // Check out the rest of the marker string
-    for (i = 0; i < openMarker.length; ++i) if (openMarker[i] !== state.src[start + i]) return false;
+    for (i = 0; i < openMarker.length; ++i)
+      if (openMarker[i] !== state.src[start + i]) return false;
 
     const markup = state.src.slice(start, start + i);
     const params = state.src.slice(start + i, max);
@@ -108,3 +116,5 @@ module.exports = (md, options = {}) => {
 
   md.renderer.rules.flowchart = render;
 };
+
+export default flowchart;

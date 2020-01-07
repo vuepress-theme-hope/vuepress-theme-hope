@@ -2,12 +2,10 @@
 /* eslint-disable max-statements */
 // Process ^superscript^
 
-'use strict';
-
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
-const superscript = (state, silent) => {
+const superscript = (state: any, silent: boolean): boolean => {
   let found;
   let token;
   const max = state.posMax;
@@ -64,6 +62,8 @@ const superscript = (state, silent) => {
   return true;
 };
 
-module.exports = md => {
+const sup = (md: any): void => {
   md.inline.ruler.after('emphasis', 'sup', superscript);
 };
+
+export default sup;

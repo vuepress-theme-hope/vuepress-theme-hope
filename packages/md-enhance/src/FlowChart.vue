@@ -1,38 +1,29 @@
 <template>
   <div :class="{ 'loading': loading }" class="md-flowchart">
-    <Loading class="md-flowchart-loading-icon" v-if="loading" />
+    <Loading v-if="loading" class="md-flowchart-loading-icon" />
   </div>
 </template>
 
-<script>
+<script lang='ts'>
+import * as flowchart from 'flowchart.js';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import Loading from './Loading.vue';
-import presets from './presets/index';
+import presets from './presets';
 
-export default {
-  name: 'FlowChart',
+@Component({ components: { Loading } })
+export default class FlowChart extends Vue {
+  @Prop({ type: String, required: true })
+  private readonly id!: string;
 
-  components: { Loading },
+  @Prop({ type: String, required: true })
+  private readonly code!: string;
 
-  props: {
-    id: {
-      type: String,
-      required: true
-    },
-    code: {
-      type: String,
-      required: true
-    },
-    preset: {
-      type: String,
-      default: 'vue'
-    }
-  },
+  @Prop({ type: String, default: 'vue' })
+  private readonly preset!: string;
 
-  data: () => ({
-    loading: true
-  }),
+  private loading = true;
 
-  mounted() {
+  private mounted() {
     const preset = presets[this.preset];
 
     if (!preset) {
@@ -43,20 +34,14 @@ export default {
     const { code } = this;
 
     this.$el.setAttribute('id', this.id);
-    const delay = () => new Promise(resolve => setTimeout(resolve, 500));
 
-    Promise.all([
-      import(/* webpackChunkName: "flowchart" */ 'flowchart.js'),
-      delay()
-    ]).then(([flowchart]) => {
-      const { parse } = flowchart.default;
-      const svg = parse(code);
+    const { parse } = flowchart as any;
+    const svg = parse(code);
 
-      svg.drawSVG(this.id, preset);
-      this.loading = false;
-    });
+    svg.drawSVG(this.id, preset);
+    this.loading = false;
   }
-};
+}
 </script>
 
 <style lang="stylus">

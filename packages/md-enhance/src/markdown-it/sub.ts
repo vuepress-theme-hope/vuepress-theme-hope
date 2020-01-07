@@ -1,11 +1,10 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
-'use strict';
 
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
-const subscript = (state, silent) => {
+const subscript = (state: any, silent: boolean): boolean => {
   let found;
   let token;
   const max = state.posMax;
@@ -62,6 +61,8 @@ const subscript = (state, silent) => {
   return true;
 };
 
-module.exports = md => {
+const sub = (md: any): void => {
   md.inline.ruler.after('emphasis', 'sub', subscript);
 };
+
+export default sub;
