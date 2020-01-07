@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-beta.26](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.25...v0.1.0-beta.26) (2020-01-07)
+
+### Features
+
+* add theme-types ([46abbb6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/46abbb695e0729e4e77f6c2553a9d848c78a6aab))
+
 ## [0.1.0-beta.25](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.24...v0.1.0-beta.25) (2020-01-07)
 
 ### Bug Fixes
