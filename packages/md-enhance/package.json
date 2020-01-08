@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "types": "src/globals.d.ts",
   "scripts": {
-    "test:serve": "vuepress dev tests",
-    "test:clean-serve": "vuepress dev tests --no-cache",
-    "test:build": "vuepress build tests"
+    "test:serve": "vuepress dev test/demo",
+    "test:clean-serve": "vuepress dev test/demo --no-cache",
+    "test:build": "vuepress build test/demo"
   },
   "repository": {
     "type": "git",

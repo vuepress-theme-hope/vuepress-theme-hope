@@ -1,5 +1,6 @@
 import * as lineNumbers from '@vuepress/markdown/lib/lineNumbers';
 import { Context, PluginOptionAPI } from 'vuepress-types';
+import { MarkdownEnhanceOption } from './globals';
 import flowchart from './markdown-it/flowchart';
 import footnote from './markdown-it/footnote';
 import pluginConfig from './pluginConfig';
@@ -7,10 +8,8 @@ import { resolve } from 'path';
 import sub from './markdown-it/sub';
 import sup from './markdown-it/sup';
 
-// const LINE_NUMBERS = require('@vuepress/markdown/lib/lineNumbers');
-
 // eslint-disable-next-line max-lines-per-function
-module.exports = (option: MarkdownOption, ctx: Context): PluginOptionAPI => {
+export = (option: MarkdownEnhanceOption, ctx: Context): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: 'md-enhance',
 

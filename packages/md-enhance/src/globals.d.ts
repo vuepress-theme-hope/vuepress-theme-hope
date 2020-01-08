@@ -1,4 +1,4 @@
-interface MarkdownOption {
+export interface MarkdownEnhanceOption {
   /** 默认目录的语言 */
   baseLang?: string;
   /** 在每个代码块的左侧显示行号 */
