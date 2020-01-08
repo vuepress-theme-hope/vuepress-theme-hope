@@ -5,10 +5,7 @@
   "main": "src/index.js",
   "types": "src/globals.d.ts",
   "scripts": {
-    "test": "vue-cli-service test:unit test/",
-    "test:assign": "vue-cli-service test:unit test/unit/assign.test.js",
-    "test:resolveConfig": "vue-cli-service test:unit test/resolveConfig.test.js",
-    "test:sideBarConfig": "vue-cli-service test:unit test/resolveSidebar.test.js"
+    "test": "vue-cli-service test:unit test/"
   },
   "repository": {
     "type": "git",

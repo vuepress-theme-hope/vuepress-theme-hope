@@ -31,6 +31,7 @@
     "md-enhance-docs:serve": "yarn workspace md-enhance-docs serve",
     "md-enhance-docs:clean-serve": "yarn workspace md-enhance-docs clean-serve",
     "md-enhance-docs:build": "yarn workspace md-enhance-docs build",
+    "md-enhance:test": "yarn workspace vuepress-plugin-md-enhance test",
     "md-enhance-test:serve": "yarn workspace vuepress-plugin-md-enhance test:serve",
     "md-enhance-test:clean-serve": "yarn workspace vuepress-plugin-md-enhance test:clean-serve",
     "md-enhance-test:build": "yarn workspace vuepress-plugin-md-enhance test:build",
