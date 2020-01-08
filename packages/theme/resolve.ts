@@ -1,4 +1,4 @@
-import { HopeThemeConfig, HopeVuepressConfig } from './src/globals';
+import { HopeVuepressConfig, ResolvedHopeThemeConfig,ResolvedHopeVuepressConfig } from './src/globals';
 import { deepAssignReverse } from './src/lib/assign';
 import defaultConfig from './src/lib/defaultConfig';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
@@ -13,7 +13,7 @@ const { checkLang, getLocale,lang2path,path2lang} = i18n;
  * @param themeConfig
  * @param baseLang
  */
-const setThemeLocales = (themeConfig: HopeThemeConfig, baseLang: string): void => {
+const setThemeLocales = (themeConfig: ResolvedHopeThemeConfig, baseLang: string): void => {
   /** 默认语言对应的路径 */
   const baseLangPath = lang2path(baseLang);
 
@@ -42,7 +42,7 @@ const setThemeLocales = (themeConfig: HopeThemeConfig, baseLang: string): void =
  *
  * @param {object} themeConfig 主题设置
  */
-const setSideBar = (themeConfig: HopeThemeConfig): void => {
+const setSideBar = (themeConfig: ResolvedHopeThemeConfig): void => {
   // 处理侧边栏
   if (themeConfig.sidebar)
     themeConfig.sidebar = resolveSideBar(themeConfig.sidebar);
@@ -61,7 +61,7 @@ const setSideBar = (themeConfig: HopeThemeConfig): void => {
  *
  * @param {object} themeConfig 主题配置
  */
-const resolveThemeConfig = (themeConfig: HopeThemeConfig): void => {
+const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
   /** 主目录对应语言 */
   const { baseLang } = themeConfig;
 
@@ -109,14 +109,14 @@ const setLocales = (config: HopeVuepressConfig): void => {
  *
  * @param {object} config
  */
-const resolveConfig = (config: HopeVuepressConfig): HopeVuepressConfig => {
+const resolveConfig = (config: HopeVuepressConfig): ResolvedHopeVuepressConfig => {
   // 合并默认配置
   deepAssignReverse(defaultConfig, config);
 
   resolveHead(config);
 
   // 处理主题配置
-  resolveThemeConfig(config.themeConfig);
+  resolveThemeConfig(config.themeConfig as ResolvedHopeThemeConfig);
 
   // 设置配置语言
   setLocales(config);

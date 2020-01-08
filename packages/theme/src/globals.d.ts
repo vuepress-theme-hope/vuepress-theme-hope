@@ -95,7 +95,7 @@ export interface HopeFooterConfig {
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig extends VuepressThemeConfig {
   /** 根目录对应的语言 */
-  baseLang: string;
+  baseLang?: string;
   /** 导航栏链接 */
   nav?: HopeNavBarConfig;
   /** 侧边栏配置 */
@@ -111,7 +111,7 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   /** 是否在侧边栏显示图标 */
   sidebarIcon?: boolean;
   /** 多语言配置 */
-  locales: Record<string, HopeLangLocalesConfig>;
+  locales?: Record<string, HopeLangLocalesConfig>;
   /** 页脚配置 */
   footer?: HopeFooterConfig;
   /** 是否显示返回顶部按钮 */
@@ -126,6 +126,22 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   markdown?: MarkdownEnhanceOption;
   /** 评论设置 */
   comment?: CommentOptions;
+}
+
+/** 处理后的 vuepress-theme-hope 主题配置 */
+export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
+  /** 根目录对应的语言 */
+  baseLang: string;
+  /** 侧边栏深度 */
+  sidebarDepth: number;
+  /** 图标 FontClass 前缀 */
+  iconPrefix: string;
+  /** 多语言配置 */
+  locales: Record<string, HopeLangLocalesConfig>;
+  /** 页脚配置 */
+  footer: HopeFooterConfig;
+  /** 显示编辑本页链接 */
+  editLinks: boolean;
 }
 
 export interface BaseVuepressConfig {
@@ -196,10 +212,18 @@ export interface VuepressConfig
 
 /** vuepress-theme-hope 项目配置 */
 export interface HopeVuepressConfig extends VuepressConfig {
+  /** 自定义主题的配置 */
+  themeConfig: HopeThemeConfig;
+  /** 构建头部选项 */
+  headOption?: Record<string, any>;
+}
+
+/** 处理过的 vuepress-theme-hope 项目配置 */
+export interface ResolvedHopeVuepressConfig extends HopeVuepressConfig {
   /** 使用的自定义主题 */
   theme: 'hope';
   /** 自定义主题的配置 */
-  themeConfig: HopeThemeConfig;
+  themeConfig: ResolvedHopeThemeConfig;
   /** 构建头部选项 */
   headOption?: Record<string, any>;
 }
