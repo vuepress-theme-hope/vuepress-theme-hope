@@ -1,7 +1,9 @@
 import { HopeVuepressConfig } from '../globals';
 
 const resolveHead = (config: HopeVuepressConfig): void => {
-  const { head = [], headOption = {}, themeConfig } = config;
+  if (!config.head) config.head = [];
+
+  const { head, headOption = {}, themeConfig } = config;
   const metaHash: Record<string, number> = {};
   const linkHash: Record<string, number> = {};
 
