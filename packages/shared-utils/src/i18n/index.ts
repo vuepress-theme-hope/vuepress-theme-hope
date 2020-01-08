@@ -2,17 +2,20 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-23 18:48:57
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-05 13:36:08
+ * @LastEditTime : 2020-01-08 15:35:37
  * @Description: 多语言配置
  */
 import {
-  LangLocalesConfig,
+  HopeLangLocalesConfig,
+  Langs,
   config,
   lang2PathConfig,
   langs,
   localesConfig,
-  path2langConfig
+  path2langConfig,
 } from './config';
+
+export const checkLang = (lang: string): boolean => langs.includes(lang as Langs);
 
 /**
  * 获取语言对应路径
@@ -51,7 +54,7 @@ export const path2lang = (path: string): string => {
  *
  * @param lang
  */
-export const getLocale = (lang: string): LangLocalesConfig => {
+export const getLocale = (lang: string): HopeLangLocalesConfig => {
   if (localesConfig[lang]) return localesConfig[lang];
 
   console.error(
@@ -63,6 +66,7 @@ export const getLocale = (lang: string): LangLocalesConfig => {
 };
 
 const i18n = {
+  checkLang,
   config,
   langs,
   lang2path,

@@ -2,9 +2,63 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-05 14:05:52
+ * @LastEditTime : 2020-01-08 15:15:43
  * @Description: 多语言配置
  */
+
+/** 导航栏配置 */
+export interface NavBarConfigObject {
+  /** 导航栏文字 */
+  text?: string;
+  /** 辅助标签 */
+  ariaLabel?: string;
+  /** 导航栏链接 */
+  link?: string;
+  /** 导航栏下拉列表 */
+  items?: NavBarConfig[];
+}
+
+export type NavBarConfig = NavBarConfigObject[] | false;
+
+export interface HopeNavBarConfigObject extends NavBarConfigObject {
+  /** 导航栏对应项的图标 */
+  icon?: string;
+}
+
+export type HopeNavBarConfig = NavBarConfigObject[] | false;
+
+/** 侧边栏分组配置 */
+export interface SideBarConfigItemObject {
+  /** 分组的标题 */
+  title: string;
+
+  /** 当前分组的侧边栏项 */
+  children: Array<string | SideBarConfigItem>;
+}
+
+export type SideBarConfigItem = string | SideBarConfigItemObject;
+
+export type SideBarConfig =
+  | SideBarConfigItem[]
+  | Record<string, SideBarConfigItem[]>
+  | 'auto'
+  | false;
+
+export interface HopeSideBarConfigItemObject extends SideBarConfigItemObject {
+  /** 分组的图标 */
+  icon?: string;
+  /** 当前分组的路径前缀 */
+  prefix?: string;
+  [props: string]: any;
+}
+
+export type HopeSideBarConfigItem = string | HopeSideBarConfigItemObject;
+
+export type HopeSideBarConfig =
+  | HopeSideBarConfigItem[]
+  | Record<string, HopeSideBarConfigItem[]>
+  | 'auto'
+  | false;
 
 export type Langs = 'zh-CN' | 'en-US';
 
@@ -44,6 +98,10 @@ interface Error404Config {
 export interface LangLocalesConfig {
   /** 设置该语言的代码 */
   lang: string; // 将会被设置为 <html> 的 lang 属性
+  /** 导航栏链接 */
+  nav?: NavBarConfig;
+  /** 侧边栏配置 */
+  sidebar?: SideBarConfig;
   /** 多语言下拉菜单的标题 */
   selectText: string;
   /** 该语言下的更新时间文字 */
@@ -54,16 +112,22 @@ export interface LangLocalesConfig {
   ariaLabel?: string;
   /** 编辑链接文字 */
   editLinkText: string; // 默认为 "Edit this page"
+}
+
+export interface HopeLangLocalesConfig extends LangLocalesConfig {
+  /** 导航栏链接 */
+  nav?: HopeNavBarConfig;
+  /** 侧边栏配置 */
+  sidebar?: HopeSideBarConfig;
   /** Valine 占位符 */
   valineHolder: string;
-
   /** 主题色配置 */
   themeColor: ThemeColorConfig;
   /** 404错误页 */
   error404: Error404Config;
 }
 
-export type LocalesConfig = Record<string, LangLocalesConfig>;
+export type LocalesConfig = Record<string, HopeLangLocalesConfig>;
 
 /** 语言设置 */
 export const localesConfig: LocalesConfig = {
