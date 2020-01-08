@@ -13,6 +13,7 @@ icon: vssue
 - platform `gitlab` - api 包 `@vssue/api-gitlab-v4`
 - platform `bitbucket` - api 包 `@vssue/api-bitbucket-v2`
 - platform `gitee` - api 包 `@vssue/api-gitee-v5`
+- platform `gitea` - api 包 `@vssue/api-gitea-v1`
 
 ## owner
 
@@ -25,7 +26,7 @@ icon: vssue
 
 - __参考__: [repo](#repo)
 
-### repo
+## repo
 
 - __类型__: `string`
 - __详细__:
@@ -37,7 +38,7 @@ icon: vssue
 - __参考__: [owner](#owner)
 
 ::: tip
-仓库 URL 的常见模式是 `` `${baseURL}/${owner}/${repo}`  ``：
+仓库 URL 的常见模式是 `` `${baseURL}/${owner}/${repo}` ``：
 
 - Github: `https://github.com/${owner}/${repo}`
 - Gitlab: `https://gitlab.com/${owner}/${repo}`
@@ -45,7 +46,7 @@ icon: vssue
 - Gitee: `https://gitee.com/${owner}/${repo}`
 :::
 
-### clientId
+## clientId
 
 - __类型__: `string`
 - __详细__:
@@ -59,7 +60,7 @@ icon: vssue
 - __参考__:
   - [创建 OAuth App](../guide/supported-platforms.md)
 
-### clientSecret
+## clientSecret
 
 - __类型__: `string`
 - __默认值__: `undefined`
@@ -82,7 +83,7 @@ icon: vssue
   - [proxy](#proxy)
   - [创建 OAuth App](../guide/supported-platforms.md)
 
-### baseURL
+## baseURL
 
 - __类型__: `string`
 - __默认值__: `undefined` （根据不同平台变化）
@@ -105,7 +106,7 @@ icon: vssue
   - [GitHub OAuth App](../guide/github.md)
   - [GitLab Application](../guide/gitlab.md)
 
-### state
+## state
 
 - __类型__: `string`
 - __默认值__: `'Vssue'`
@@ -117,7 +118,7 @@ icon: vssue
 
   它是被设计用来避免 [CSRF](https://tools.ietf.org/html/rfc6749#section-10.12) 的，但是由于我们所有东西都在静态页面上，所以它没有太大作用。忽略这个选项，或者随便设置成什么值都行。
 
-### labels
+## labels
 
 - __类型__: `Array<string>`
 - __默认值__: `['Vssue']`
@@ -135,7 +136,7 @@ icon: vssue
 
 - __参考__: [title](#title)
 
-### prefix
+## prefix
 
 - __类型__: `string`
 - __默认值__: `'[Vssue]'`
@@ -149,7 +150,7 @@ icon: vssue
 
 - __参考__: [title](#title)
 
-### admins
+## admins
 
 - __类型__: `Array<string>`
 - __默认值__: `[]`
@@ -167,7 +168,7 @@ icon: vssue
 
 - __参考__: [owner](#owner)
 
-### perPage
+## perPage
 
 - __类型__: `number`
 - __默认值__: `10`
@@ -175,7 +176,7 @@ icon: vssue
 
   默认每页显示的评论数。
 
-### locale
+## locale
 
 - __类型__: `string`
 - __默认值__: `undefined`
@@ -199,10 +200,10 @@ icon: vssue
   欢迎贡献代码帮助 Vssue 支持更多语言。
   :::
 
-### proxy
+## proxy
 
 - __类型__: `string | ((url: string) => string)`
-- __默认值__: `` url => `https://cors-anywhere.herokuapp.com/${url}` ``
+- __默认值__: ``url => `https://cors-anywhere.herokuapp.com/${url}` ``
 - __详细__:
 
   某些平台（如 GitHub 和 Gitee）不支持 Implicit Grant，所以我们必须通过请求平台的 API 来获取 Access Token。
@@ -224,7 +225,7 @@ icon: vssue
 - __参考__:
   - [clientSecret](#clientsecret)
 
-### issueContent
+## issueContent
 
 - __类型__: `((param: { options: Vssue.Options, url: string }) => string | Promise<string>)`
 - __默认值__: `({ url }) => url`
@@ -251,7 +252,7 @@ icon: vssue
   如果对应的 Issue 已经存在，Vssue 不会更新 Issue 的内容。
   :::
 
-### autoCreateIssue
+## autoCreateIssue
 
 - __类型__: `boolean`
 - __默认值__: `false`

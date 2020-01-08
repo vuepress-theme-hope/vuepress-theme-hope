@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 15:19:30
+ * @LastEditTime : 2020-01-08 14:02:36
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
@@ -56,10 +56,13 @@ module.exports = resolve({
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
   ],
 
+  temp: './node_modules/.temp/theme',
+
   /** 构建文件输出目录 */
   dest: './dist',
 
-  /** 多语言配置选项
+  /**
+   * 多语言配置选项
    *
    * 键名是该语言所属的子路径
    * 作为特例，默认语言可以使用 '/' 作为其路径。

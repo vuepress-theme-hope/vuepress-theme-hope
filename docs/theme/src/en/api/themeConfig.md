@@ -119,7 +119,7 @@ Whether to display the "fullscreen" button
 
 Markdown Enhancement Option
 
-## markdown.enableAll
+### markdown.enableAll
 
 - Type: `boolean`
 - Default: `false`

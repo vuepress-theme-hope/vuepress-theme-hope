@@ -13,6 +13,7 @@ icon: vssue
 - platform `gitlab` - api package `@vssue/api-gitlab-v4`
 - platform `bitbucket` - api package `@vssue/api-bitbucket-v2`
 - platform `gitee` - api package `@vssue/api-gitee-v5`
+- platform `gitea` - api package `@vssue/api-gitea-v1`
 
 ## owner
 
@@ -37,7 +38,7 @@ icon: vssue
 - __Reference__: [owner](#owner)
 
 ::: tip
-The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
+The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}` ``:
 
 - Github: `https://github.com/${owner}/${repo}`
 - Gitlab: `https://gitlab.com/${owner}/${repo}`
@@ -202,7 +203,7 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
 ## proxy
 
 - __Type__: `string | ((url: string) => string)`
-- __Default__: `` url => `https://cors-anywhere.herokuapp.com/${url}` ``
+- __Default__: ``url => `https://cors-anywhere.herokuapp.com/${url}` ``
 - __Details__:
 
   Some platforms (e.g. GitHub and Gitee) do not support Implicit Grant, so we have to request the API of the platform to get the access token.

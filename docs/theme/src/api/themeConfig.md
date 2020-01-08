@@ -113,7 +113,7 @@ NavBarItem 新增 `icon` 字段来支持图标显示。
 
 Markdown 增强配置
 
-## enableAll
+### markdown.enableAll
 
 - 类型: `boolean`
 - 默认值: `false`
