@@ -1,5 +1,5 @@
 /** 主题色选项 */
-interface ThemeColorOptions {
+export interface ThemeColorOptions {
   /** 是否开启主题色 */
   allowThemeColor?: boolean;
   /** 颜色选择器 */
@@ -9,4 +9,6 @@ interface ThemeColorOptions {
 }
 
 /** 主题颜色配置选项 */
-declare const THEME_COLOR_OPTIONS: ThemeColorOptions;
+declare global {
+  const THEME_COLOR_OPTIONS: ThemeColorOptions;
+}

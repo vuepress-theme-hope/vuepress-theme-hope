@@ -72,6 +72,7 @@
 /* global COMMENT_OPTIONS */
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
+import { ValineOptions } from './globals.d.ts';
 
 @Component
 export default class PageInfo extends Vue {

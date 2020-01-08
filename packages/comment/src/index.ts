@@ -1,7 +1,8 @@
+import { CommentOptions } from './globals';
 import { PluginOptionAPI } from 'vuepress-types';
 import { resolve } from 'path';
 
-module.exports = (options: CommentOptions): PluginOptionAPI => {
+export = (options: CommentOptions): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: 'comment',
 

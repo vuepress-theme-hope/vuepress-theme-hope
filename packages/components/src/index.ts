@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-07 09:12:52
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 14:57:43
+ * @LastEditTime : 2020-01-08 09:57:01
  * @Description: 插件主入口
  */
 
@@ -32,4 +32,4 @@ const pluginOption: PluginOptionAPI = {
   globalUIComponents: 'BackToTop'
 };
 
-module.exports = pluginOption;
+export = pluginOption;

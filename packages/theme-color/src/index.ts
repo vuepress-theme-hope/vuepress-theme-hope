@@ -1,4 +1,5 @@
 import { PluginOptionAPI } from 'vuepress-types';
+import { ThemeColorOptions } from './globals';
 import { resolve } from 'path';
 
 const pluginOption = (options: ThemeColorOptions): PluginOptionAPI => ({
@@ -26,4 +27,4 @@ const pluginOption = (options: ThemeColorOptions): PluginOptionAPI => ({
   }
 } as PluginOptionAPI);
 
-module.exports = pluginOption;
+export = pluginOption;

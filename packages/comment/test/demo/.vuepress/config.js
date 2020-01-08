@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 16:50:47
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-07 17:28:13
  * @Description: Vuepress配置
  */
 
@@ -233,7 +233,7 @@ module.exports = {
   plugins: [
     /** 评论插件 */
     [
-      require('../../src'),
+      require('../../../src'),
       {
         type: 'valine',
         author: 'Mr.Hope',

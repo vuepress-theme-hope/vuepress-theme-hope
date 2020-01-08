@@ -14,6 +14,7 @@
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
+import { ValineOptions } from './globals.d.ts';
 import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
 
 @Component
@@ -64,7 +65,7 @@ export default class Valine extends Vue {
     if (this.valineEnable) {
       const AV = require('leancloud-storage');
 
-      if (typeof window !== 'undefined') window.AV = AV;
+      if (typeof window !== 'undefined') (window as any).AV = AV;
     }
 
     this.valine(this.$route.path);
