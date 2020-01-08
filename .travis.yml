@@ -80,6 +80,7 @@ jobs:
     - stage: theme-test
       name: "Test Theme"
       script:
+        - yarn run md-enhance:test
         - yarn run theme:test
 
 stages:
