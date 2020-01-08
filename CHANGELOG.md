@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0-beta.28](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.27...v0.1.0-beta.28) (2020-01-08)
+
+### Bug Fixes
+
+* **md-enhance:** type problem ([99daa11](https://github.com/Mister-Hope/vuepress-theme-hope/commit/99daa1166620e1405c63f533e9f1783aa7ef3b75))
+* **theme:** fix resolveHead error and add test file for it ([b345065](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b345065c6b9c3da3cf7be4ea1c83084f760fbaf4))
+
+### Features
+
+* **shared-utils:** add checkLang function and some interface ([a95475e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a95475e629529e55edd6b274f9f0a3c19f04f821))
+* **theme:** add resolveHead function and types && fix missing test files ([5223485](https://github.com/Mister-Hope/vuepress-theme-hope/commit/52234853385c650f8b025557bdc16e2b02de67d2))
+
 ## [0.1.0-beta.27](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.26...v0.1.0-beta.27) (2020-01-08)
 
 ### Bug Fixes
