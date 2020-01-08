@@ -2,26 +2,10 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-01 22:42:18
+ * @LastEditTime : 2020-01-08 15:14:25
  * @Description: 侧边栏处理
  */
-
-/** 侧边栏分组配置 */
-interface SideBarConfigObject {
-  /** 分组的标题 */
-  title: string;
-  /** 分组的图标 */
-  icon?: string;
-  /** 当前分组的路径前缀 */
-  prefix?: string;
-  /** 当前分组的侧边栏项 */
-  children: Array<string|SideBarConfig>;
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [props: string]: any;
-}
-
-type SideBarConfig = string | SideBarConfigObject;
+import { HopeSideBarConfig, HopeSideBarConfigItem } from '@mr-hope/vuepress-shared-utils/src/i18n/config';
 
 /**
  * 处理导航栏
@@ -31,9 +15,9 @@ type SideBarConfig = string | SideBarConfigObject;
  * @return 处理后的 sideBar 配置
  */
 const resolveSideBarItem = (
-  sidebarConfig: SideBarConfig[],
+  sidebarConfig: HopeSideBarConfigItem[],
   prefix = ''
-): SideBarConfig[] =>
+): HopeSideBarConfigItem[] =>
   sidebarConfig.map(element=> {
     if (typeof element === 'string') return `${prefix}${element}`;
     if (
@@ -52,14 +36,17 @@ const resolveSideBarItem = (
     }
 
     return undefined;
-  })as SideBarConfig[];
+  })as HopeSideBarConfigItem[];
 
 const resolveSideBar = (
-  sideBarConfig: SideBarConfigObject | SideBarConfig[]
-): SideBarConfig | SideBarConfig[] => {
+  sideBarConfig: HopeSideBarConfig
+): HopeSideBarConfig => {
+  // false 与 'auto' 无需处理
+  if(sideBarConfig === false || sideBarConfig==='auto') return sideBarConfig;
+
   if (Array.isArray(sideBarConfig)) return resolveSideBarItem(sideBarConfig);
 
-  const resolvedConfig= {} as SideBarConfigObject ;
+  const resolvedConfig= {} as Record<string,HopeSideBarConfigItem[]> ;
 
   Object.keys(sideBarConfig).forEach(property => {
     resolvedConfig[property] = resolveSideBarItem(sideBarConfig[property]);

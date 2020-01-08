@@ -2,4 +2,7 @@
 **/tests/**
 **/dist/**
 packages/**/*.js
+packages/**/*.d.ts
+!packages/**/globals.d.ts
+!packages/theme-types/index.d.ts
 !.vuepress/**

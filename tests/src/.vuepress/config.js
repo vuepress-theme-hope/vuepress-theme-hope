@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 10:22:12
+ * @LastEditTime : 2020-01-07 22:57:59
  * @Description: Vuepress配置
  */
 
@@ -56,6 +56,8 @@ module.exports = resolve({
     ],
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
   ],
+
+  temp: './node_modules/.temp/test',
 
   /** 构建文件输出目录 */
   dest: './dist',

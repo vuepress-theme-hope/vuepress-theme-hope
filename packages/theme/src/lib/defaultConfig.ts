@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-01 18:56:32
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-01 22:43:02
+ * @LastEditTime : 2020-01-08 14:32:17
  * @Description: vuepress-theme-hope 的默认配置
  */
 
@@ -10,48 +10,6 @@ export default {
   /** 部署目录 */
   // eslint-disable-next-line no-process-env
   base: process.env.VuePress_BASE || '/',
-
-  /** 生成网站头部的标签 */
-  head: [
-    // 设置网站图标
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-
-    // 设置网站作者
-    ['meta', { name: 'author', content: 'Mr.Hope' }],
-
-    // 移动端App体验
-    [
-      'meta',
-      {
-        name: 'viewport',
-        content:
-          'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover'
-      }
-    ],
-
-    // pwa相关
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#46bd87' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    [
-      'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
-    ],
-    ['link', { rel: 'apple-touch-icon', href: '/img/icon/appleIcon152.png' }],
-    [
-      'link',
-      {
-        rel: 'mask-icon',
-        href: '/icons/safari-pinned-tab.svg',
-        color: '#46bd87'
-      }
-    ],
-    [
-      'meta',
-      { name: 'msapplication-TileImage', content: '/img/icon/msIcon144.png' }
-    ],
-    ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
-  ],
 
   /** 使用的主题 */
   theme: 'hope',

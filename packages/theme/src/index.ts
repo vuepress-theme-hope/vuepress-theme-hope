@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-06 21:25:14
+ * @LastEditTime : 2020-01-08 09:57:20
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -13,7 +13,7 @@ interface ThemeOptionAPI extends PluginOptionAPI {
 }
 
 // Theme API.
-module.exports = (themeConfig: any, ctx: Context): ThemeOptionAPI => {
+export = (themeConfig: any, ctx: Context): ThemeOptionAPI => {
   const config: ThemeOptionAPI = {
     /** 继承默认主题 */
     extend: '@vuepress/theme-default',
