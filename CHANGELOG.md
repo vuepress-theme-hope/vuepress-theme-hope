@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0-beta.27](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.26...v0.1.0-beta.27) (2020-01-08)
+
+### Bug Fixes
+
+* **md-enhance:** fix lineNumber not working ([5c9ba53](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5c9ba53998038f45cb3536fbd243e3c1392b142a))
+* add missing deps ([3076692](https://github.com/Mister-Hope/vuepress-theme-hope/commit/30766929495ef1b2fcd0a7167fe9a354259b0c80))
+* fix md-enhance not working ([910e141](https://github.com/Mister-Hope/vuepress-theme-hope/commit/910e141d32202e855814dfb910df0d2554caf3e4))
+
+### Features
+
+* merge plugins ([e82f85e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e82f85e3c434e9d072cdbe6d638f9675255dd9ba))
+
 ## [0.1.0-beta.26](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.25...v0.1.0-beta.26) (2020-01-07)
 
 ### Features
