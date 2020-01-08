@@ -2,6 +2,7 @@
 packages/**/*.js
 packages/**/*.d.ts
 !packages/**/globals.d.ts
+!packages/md-enhance/src/typings.d.ts
 !packages/theme/src/shims-vue.d.ts
 !packages/theme-types/index.d.ts
 !packages/**/test/**/*.js

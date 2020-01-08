@@ -1,3 +1,5 @@
+import './typings';
+
 export interface MarkdownEnhanceOption {
   /** 默认目录的语言 */
   baseLang?: string;
@@ -16,20 +18,4 @@ export interface MarkdownEnhanceOption {
   flowchart?: boolean;
   /** 启用全部增强 */
   enableAll?: boolean;
-}
-
-declare module 'flowchart.js' {
-  export interface Flowchart{
-    parse: (input: any) => any;
-  }
-
-  const flowchart: Flowchart;
-
-  export default flowchart;
-}
-
-declare module '@vuepress/markdown/lib/lineNumbers'{
-  const lineNumbers: (md: any) => any;
-
-  export = lineNumbers;
 }
