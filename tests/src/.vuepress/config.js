@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 22:57:59
+ * @LastEditTime : 2020-01-09 11:12:02
  * @Description: Vuepress配置
  */
 
@@ -15,24 +15,12 @@ module.exports = resolve({
   /** 网站描述 */
   description: 'vuepress-theme-hope 的 demo',
 
+  headOption: {
+    icon: '/favicon.ico'
+  },
+
   /** 生成网站头部的标签 */
   head: [
-    // 设置网站图标
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-
-    // 设置网站作者
-    ['meta', { name: 'author', content: 'Mr.Hope' }],
-
-    // 移动端App体验
-    [
-      'meta',
-      {
-        name: 'viewport',
-        content:
-          'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover'
-      }
-    ],
-
     // pwa相关
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#46bd87' }],
