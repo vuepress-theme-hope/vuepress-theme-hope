@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 10:33:12
+ * @LastEditTime : 2020-01-09 10:55:04
  * @Description: 侧边栏处理
  */
 import {
@@ -21,6 +21,9 @@ const resolveNavItem = (
   navBarConfigItem: HopeNavBarConfigItem,
   prefix = ''
 ): HopeNavBarConfigItem => {
+  if (navBarConfigItem.link)
+    navBarConfigItem.link = `${prefix}${navBarConfigItem.link}`;
+
   if (Array.isArray(navBarConfigItem.items)) {
     // 处理每一项 HopeNavBarConfigItem
     navBarConfigItem.items = navBarConfigItem.items.map(item =>
