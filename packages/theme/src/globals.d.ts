@@ -210,12 +210,19 @@ export interface VuepressConfig
   evergreen?: boolean;
 }
 
+export interface HopeHeadOptionConfig {
+  /** 网站的图标 */
+  icon?: string;
+
+  [props: string]: any;
+}
+
 /** vuepress-theme-hope 项目配置 */
 export interface HopeVuepressConfig extends VuepressConfig {
   /** 自定义主题的配置 */
   themeConfig: HopeThemeConfig;
   /** 构建头部选项 */
-  headOption?: Record<string, any>;
+  headOption?: HopeHeadOptionConfig;
 }
 
 /** 处理过的 vuepress-theme-hope 项目配置 */
@@ -225,5 +232,5 @@ export interface ResolvedHopeVuepressConfig extends HopeVuepressConfig {
   /** 自定义主题的配置 */
   themeConfig: ResolvedHopeThemeConfig;
   /** 构建头部选项 */
-  headOption?: Record<string, any>;
+  headOption?: HopeHeadOptionConfig;
 }
