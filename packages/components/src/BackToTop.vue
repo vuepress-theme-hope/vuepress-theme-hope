@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 18:12:20
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 15:07:04
+ * @LastEditTime : 2020-01-09 11:05:07
  * @Description: 返回顶部组件
 -->
 <template>
@@ -41,11 +41,15 @@ export default class BackToTop extends Vue {
   /** 滚动距离 */
   private scrollTop = 0;
 
-  /** 是否显示返回顶部按钮 */
-  private get isDisplay() {
-    return this.$themeConfig.backtotop !== false && this.scrollTop > this.threshold;
+  /** 触发距离 */
+  private get trigger() {
+    return typeof this.$themeConfig.backtotop === 'number' ? this.$themeConfig.backtotop : this.threshold;
   }
 
+  /** 是否显示返回顶部按钮 */
+  private get isDisplay() {
+    return this.$themeConfig.backtotop !== false && this.scrollTop > this.trigger;
+  }
 
   private mounted() {
     this.scrollTop = this.getScrollTop();

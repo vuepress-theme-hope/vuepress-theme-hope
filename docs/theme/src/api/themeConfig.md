@@ -93,10 +93,10 @@ SideBarItem 新增
 
 ## backToTop
 
-- 类型: `Boolean`
+- 类型: `Boolean | Number`
 - 默认值: `true`
 
-是否显示返回顶部按钮
+返回顶部按钮的配置。默认的触发距离为 300px，填入数字时可改变这一触发距离。填入 `false` 会禁用返回顶部按钮。
 
 ## repoDisplay
 
