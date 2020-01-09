@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-13 11:27:34
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-08 23:15:09
  * @Description: 导航栏配置
  */
 
@@ -10,7 +10,7 @@ module.exports = {
   zh: [
     { text: '主页', link: '/', icon: 'homefill' },
     { text: '指南', link: '/guide/', icon: 'creativefill' },
-    { text: '配置', link: '/api/', icon: 'code' },
+    { text: '配置', link: '/api/', icon: 'api' },
     {
       text: '基础',
       icon: 'infofill',
@@ -28,7 +28,7 @@ module.exports = {
   en: [
     { text: 'Home', link: '/en/', icon: 'homefill' },
     { text: 'Guide', link: '/en/guide/', icon: 'creativefill' },
-    { text: 'Config', link: '/en/api/', icon: 'code' },
+    { text: 'Config', link: '/en/api/', icon: 'api' },
     {
       text: 'Basic',
       icon: 'infofill',

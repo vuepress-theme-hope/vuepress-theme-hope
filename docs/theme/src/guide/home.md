@@ -6,7 +6,7 @@ icon: homefill
 
 vuepress-theme-hope 改进了默认主页。
 
-## Frontmatter值
+## Frontmatter 值
 
 ### home
 
@@ -18,7 +18,7 @@ vuepress-theme-hope 改进了默认主页。
 
 ### heroImage
 
-主页图标(logo)地址
+主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)
 
 ### heroText
 

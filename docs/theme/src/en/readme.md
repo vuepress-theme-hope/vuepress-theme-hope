@@ -35,7 +35,13 @@ npm i -D vuepress-theme-hope
 
 ```js
 // .vuepress/config.js
-module.exports = {
-  theme: 'hope'
-};
+const resolve = require('vuepress-theme-hope/resolve');
+
+module.exports = resolve({
+  // your config here
+});
 ```
+
+::: tip Why using `resolve` function
+**vuepress-theme-hope** is extendsng from the official default theme. In order to reduce user configuration as much as possible, **vuepress-theme-hope** provides some additional configuration options that need to be processed before submitting to the official theme. In addition, **vuepress-theme-hope** will also automatically generate some configurations for you, such as automatically selecting the multi-language options in your theme configuration, generating the multi-language options in the project configuration for you, and automatically helping you complete the localization work.
+:::

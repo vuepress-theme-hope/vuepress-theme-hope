@@ -6,15 +6,15 @@ icon: skinfill
 
 vuepress-theme-hope 通过内置 `@mr-hope/vuepress-plugin-theme-color`，实现了主题色与夜间模式功能。
 
-`.vuepress/config.js` 中的 `themeConfig.themeColor` 会直接传递给插件作为插件选项。
+`themeConfig` 中的 `themeColor` 会直接传递给插件作为插件选项。
 
 ## 自定义主题色
 
-这是一个开箱即用的功能，除了你的主题色之外，还提供“蓝、红、绿、橙四种主题”。
+这是一个开箱即用的功能，除了你的主题色之外，还提供 “蓝、红、绿、橙” 四种颜色主题。
 
 ### 禁用功能
 
-你可以将主题字段的 `themeConfig.themeColor.picker` 设置为 `false` 来禁用它。
+你可以将 `themeConfig` 的 `themeColor.picker` 设置为 `false` 来禁用它。
 
 ### 自定义颜色
 
@@ -26,9 +26,10 @@ module.exports = {
   themeConfig: {
     themeColor: {
       picker: {
-        red: '#f00',
-        green: '0f0',
-        blue: '00f'
+        blue: '#2196f3',
+        red: '#f26d6d',
+        green: '#3eaf7c',
+        orange: '#fb9b5f'
       }
     }
   }
@@ -40,12 +41,13 @@ module.exports = {
 ```stylus
 // .vuepress/styles/palette.styl
 $colorPicker = {
-  colorName1: red,
-  colorName2: yellow,
-  colorName3: blue
+  red: #f26d6d,
+  blue: #2196f3,
+  green: #3eaf7c,
+  orange: #fb9b5f
 }
 ```
 
 ## 夜间模式
 
-默认开启，可以将 `themeConfig.themeColor.allowNightmode` 设置为 `false` 来禁用夜间模式。
+默认开启，可以将 `themeConfig` 中的 `themeColor.allowNightmode` 设置为 `false` 来禁用夜间模式。

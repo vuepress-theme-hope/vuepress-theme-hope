@@ -26,6 +26,10 @@ module.exports = {
 };
 ```
 
+## 自定义对其
+
+[点击查看](align.md)
+
 ## 上下角标
 
 [点击查看](sup-sub.md)

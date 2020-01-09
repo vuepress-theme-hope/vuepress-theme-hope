@@ -8,7 +8,7 @@ icon: page
 
 ### 作者
 
-可以在页面的 frontmatter 中设置 author 字段来设置作者名称。
+可以在页面的 `frontmatter` 中设置 `author` 字段来设置作者名称。
 
 ```md
 ---
@@ -18,9 +18,19 @@ author: Mr.Hope
 
 作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。可以在页面的 frontmatter 中设置 author 为 `false` 取消作者显示。
 
-### 阅读量 <MyBadge text="页面覆盖全局支持" />
+### 阅读量 <MyBadge text="页面优先" />
 
 当配置 [评论功能](comment.md) 后，该功能默认启用。全局配置项为 `valine.visitor`，页面配置项为 `visitor`。
+
+### 时间
+
+可以在页面的 `frontmatter` 中设置 `time` 字段来设置写作时间。
+
+```md
+---
+time: 2020-1-1
+---
+```
 
 ## 评论
 
@@ -73,3 +83,11 @@ footer:
 footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
 ---
 ```
+
+## 返回顶部按钮
+
+vuepress-theme-hope 添加了一个自制的返回顶部控件，默认情况下将在下滑 300px 后显示。
+
+返回顶部按钮使用了一个圆形有色图标代替了默认主题中的箭头。
+
+你可以在 `themeConfig` 将 `backToTop` 设置为 `false` 来禁用它。

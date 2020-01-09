@@ -39,11 +39,13 @@ npm i -D vuepress-theme-hope
 
 ```js
 // .vuepress/config.js
-module.exports = {
-  theme: 'hope'
-};
+const resolve = require('vuepress-theme-hope/resolve');
+
+module.exports = resolve({
+  // your config here
+});
 ```
 
-### 完全兼容
+### 其他配置
 
-引入主题后，无需进行任何配置，主题即可正常工作！
+如果主题引入后在运行中出现 Typescript 相关错误，这可能是你的项目没有正确对 Typescript 进行配置。

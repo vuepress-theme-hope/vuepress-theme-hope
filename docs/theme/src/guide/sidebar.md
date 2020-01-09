@@ -6,7 +6,7 @@ icon: sidebar
 
 ## 图标支持
 
-默认启用图标支持，将在侧边栏的链接前显示页面的图标。可以在 `themeConfig.sidebarIcon` 中禁用它。
+默认启用图标支持，将在侧边栏的链接前显示页面的图标。可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
 
 ## 分组增强
 

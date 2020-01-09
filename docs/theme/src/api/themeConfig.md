@@ -1,3 +1,7 @@
+---
+icon: api
+---
+
 # 主题配置
 
 ::: warning
@@ -10,7 +14,14 @@
 
 `.vuepress/config.js` 中的 themeConfig 字段(主题字段)新增以下配置：
 
-## iconPrefix <MyBadge text="新增" />
+## baseLang
+
+- 类型: `String`
+- 默认值: `'zh-CN'`
+
+主目录所对应的语言
+
+## iconPrefix
 
 - 类型: `String`
 - 默认值: `'icon-'`
@@ -19,65 +30,82 @@
 
 ## nav <MyBadge text="改进" type="warn" />
 
-NavBarItem 新增 `icon` 字段来支持图标显示。
+NavBarItem 新增
 
-## smoothScroll <MyBadge text="默认配置改变" type="error" />
+- `icon` 字段来支持图标显示。
+- `prefix` 字段来自动添加分组前缀
 
-- 类型: `Boolean`
-- 默认值: `true`
+## sidebar <MyBadge text="改进" type="warn" />
 
-是否启用平滑滚动功能
+SideBarItem 新增
 
-## breadcrumb <MyBadge text="新增" />
+- `icon` 字段来支持图标显示。
+- `prefix` 字段来自动添加分组前缀
 
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否全局启用路径导航
-
-## breadcrumbIcon <MyBadge text="新增" />
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否在路径导航显示图标
-
-## sidebarIcon <MyBadge text="新增" />
+## sidebarIcon
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否在侧边栏显示图标
 
-## footer.text <MyBadge text="新增" />
+## author
+
+- 类型: `String`
+- 必填: 否
+
+默认作者
+
+## smoothScroll <MyBadge text="改变默认值" type="error" />
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否启用平滑滚动功能
+
+## breadcrumb
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否全局启用路径导航
+
+## breadcrumbIcon
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否在路径导航显示图标
+
+## footer.text
 
 - 类型: `String`
 - 默认值: `'MIT Licensed | Copyright © 2019-present Mr.Hope'`
 
 页脚的默认文字
 
-## footer.displayDefault <MyBadge text="新增" />
+## footer.displayDefault
 
 - 类型: `Boolean`
 - 默认值: `false`
 
 是否显示默认页脚
 
-## backToTop <MyBadge text="V0.0.14+" />
+## backToTop
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否显示返回顶部按钮
 
-## repoDisplay <MyBadge text="新增" />
+## repoDisplay
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否在导航栏显示仓库链接
 
-## themeColor <MyBadge text="新增" />
+## themeColor
 
 主题色和夜间模式设置选项
 
@@ -102,14 +130,14 @@ NavBarItem 新增 `icon` 字段来支持图标显示。
 
 是否开启夜间模式支持
 
-## fullscreen <MyBadge text="新增" />
+## fullscreen
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否显示 ”全屏“ 按钮
 
-## markdown <MyBadge text="新增" />
+## markdown
 
 Markdown 增强配置
 
@@ -120,10 +148,10 @@ Markdown 增强配置
 
 启用全部功能。
 
-### markdown.lineNumbers <MyBadge text="默认配置改变" type="error" />
+### markdown.lineNumbers <MyBadge text="改变默认值" type="error" />
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 是否在每个代码块的左侧显示行号。
 
@@ -162,6 +190,6 @@ Markdown 增强配置
 
 是否启用 流程图 语法支持。
 
-## comment <MyBadge text="新增" />
+## comment
 
 评论设置。具体详情请见　[@mr-hope/vuepress-plugin-comment](http://comment.mrhope.site/api/)

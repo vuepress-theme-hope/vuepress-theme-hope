@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 23:49:00
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-08 23:46:27
  * @Description: 侧边栏配置
  */
 
@@ -17,7 +17,7 @@ module.exports = {
       {
         title: '外观',
         icon: 'skinfill',
-        children: ['navbar', 'sidebar', 'breadcrumb', 'page']
+        children: ['navbar', 'sidebar', 'breadcrumb', 'page', 'home']
       },
       {
         title: '新增功能',
@@ -41,12 +41,7 @@ module.exports = {
         title: '插件配置',
         prefix: 'plugin/',
         icon: 'extension',
-        children: [
-          '',
-          'copyright',
-          'medium-zoom',
-          'pwa'
-        ]
+        children: ['', 'copyright', 'medium-zoom', 'pwa']
       }
     ],
 
@@ -86,7 +81,7 @@ module.exports = {
       {
         title: 'Outlook',
         icon: 'skinfill',
-        children: ['navbar', 'sidebar', 'breadcrumb', 'page']
+        children: ['navbar', 'sidebar', 'breadcrumb', 'page', 'home']
       },
       {
         title: 'New Feature',
@@ -110,12 +105,7 @@ module.exports = {
         title: 'Plugin Config',
         prefix: 'plugin/',
         icon: 'extension',
-        children: [
-          '',
-          'copyright',
-          'medium-zoom',
-          'pwa'
-        ]
+        children: ['', 'copyright', 'medium-zoom', 'pwa']
       }
     ],
 

@@ -4,13 +4,20 @@ icon: nav
 
 # 导航栏
 
-## 前缀支持
+## 对默认主题的改进
 
-主题配置中的 NavBarItem 新增 `prefix` 字段，填入即可为子菜单添加前缀。
+::: tip todo
 
-## 图标支持
+- 前缀支持
 
-主题配置中的 NavBarItem 新增 `icon` 字段，填入对应图标的 FontClass 即可显示对应图标。
+    主题配置中的 NavBarItem 新增 `prefix` 字段，填入即可为子菜单添加前缀。
+:::
+
+- 图标支持
+
+  主题配置中的 NavBarItem 新增 `icon` 字段，填入对应图标的 FontClass 即可显示对应图标。
+
+下面是本文档的导航栏配置：
 
 ```js
 // .vuepress/config.js
@@ -36,20 +43,20 @@ module.exports = {
 }
 ```
 
-## 主题色与夜间模式按钮
+- 样式更改
+
+    全新设计的导航栏包含了底部的阴影。
+
+- repo 隐藏
+
+    可以将 `themeConfig` 中的 `repoDisplay` 设置为 `false` 来取消导航栏右侧的库链接显示。
+
+## 新功能
+
+### 主题色与夜间模式按钮
 
 具体详情请见 [主题色](themecolor.md) 章节。
 
-## 全屏按钮
+### 全屏按钮
 
 具体详情请见 [全屏按钮](fullscreen.md) 章节。
-
-## 其他增强
-
-### 样式更改
-
-全新设计的导航栏包含了底部的阴影。
-
-### repo 隐藏
-
-可以将 `.vuepress/config.js` 中的 `themeConfig.repoDisplay` 设置为 `false` 来取消导航栏右侧的库链接显示。
