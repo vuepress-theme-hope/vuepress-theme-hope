@@ -2,12 +2,12 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-08 11:10:27
+ * @LastEditTime : 2020-01-09 09:59:44
  * @Description: 插件配置
  */
 import { Context, PluginConfig } from 'vuepress-types';
 import { MarkdownEnhanceOption } from './globals';
-import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
+import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 // eslint-disable-next-line max-lines-per-function
 const pluginConfig = (

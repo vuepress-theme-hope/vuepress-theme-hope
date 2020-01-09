@@ -5,60 +5,12 @@
  * @LastEditTime : 2020-01-08 15:15:43
  * @Description: 多语言配置
  */
-
-/** 导航栏配置 */
-export interface NavBarConfigObject {
-  /** 导航栏文字 */
-  text?: string;
-  /** 辅助标签 */
-  ariaLabel?: string;
-  /** 导航栏链接 */
-  link?: string;
-  /** 导航栏下拉列表 */
-  items?: NavBarConfig[];
-}
-
-export type NavBarConfig = NavBarConfigObject[] | false;
-
-export interface HopeNavBarConfigObject extends NavBarConfigObject {
-  /** 导航栏对应项的图标 */
-  icon?: string;
-}
-
-export type HopeNavBarConfig = NavBarConfigObject[] | false;
-
-/** 侧边栏分组配置 */
-export interface SideBarConfigItemObject {
-  /** 分组的标题 */
-  title: string;
-
-  /** 当前分组的侧边栏项 */
-  children: Array<string | SideBarConfigItem>;
-}
-
-export type SideBarConfigItem = string | SideBarConfigItemObject;
-
-export type SideBarConfig =
-  | SideBarConfigItem[]
-  | Record<string, SideBarConfigItem[]>
-  | 'auto'
-  | false;
-
-export interface HopeSideBarConfigItemObject extends SideBarConfigItemObject {
-  /** 分组的图标 */
-  icon?: string;
-  /** 当前分组的路径前缀 */
-  prefix?: string;
-  [props: string]: any;
-}
-
-export type HopeSideBarConfigItem = string | HopeSideBarConfigItemObject;
-
-export type HopeSideBarConfig =
-  | HopeSideBarConfigItem[]
-  | Record<string, HopeSideBarConfigItem[]>
-  | 'auto'
-  | false;
+import {
+  HopeNavBarConfig,
+  HopeSideBarConfig,
+  NavBarConfig,
+  SideBarConfig
+} from '../types';
 
 export type Langs = 'zh-CN' | 'en-US';
 

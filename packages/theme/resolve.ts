@@ -3,6 +3,7 @@ import { deepAssignReverse } from './src/lib/assign';
 import defaultConfig from './src/lib/defaultConfig';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 import resolveHead from './src/lib/resolveHead';
+import resolveNavBar from './src/lib/resolveNavBar';
 import resolveSideBar from './src/lib/resolveSideBar';
 
 const { checkLang, getLocale,lang2path,path2lang} = i18n;
@@ -42,16 +43,20 @@ const setThemeLocales = (themeConfig: ResolvedHopeThemeConfig, baseLang: string)
  *
  * @param {object} themeConfig 主题设置
  */
-const setSideBar = (themeConfig: ResolvedHopeThemeConfig): void => {
+const setNavBarandSideBar = (themeConfig: ResolvedHopeThemeConfig): void => {
+  // 处理导航栏
+  themeConfig.nav = resolveNavBar(themeConfig.nav);
+    
   // 处理侧边栏
-  if (themeConfig.sidebar)
-    themeConfig.sidebar = resolveSideBar(themeConfig.sidebar);
+  themeConfig.sidebar = resolveSideBar(themeConfig.sidebar);
 
-  // 处理其它语言的侧边栏
+  // 处理其它语言的导航栏与侧边栏
   if (themeConfig.locales)
     Object.keys(themeConfig.locales).forEach(locate => {
+      const locateNavbar = themeConfig.locales[locate].nav;
       const locateSidebar = themeConfig.locales[locate].sidebar;
 
+      if (locateNavbar) themeConfig.locales[locate].nav = resolveNavBar(locateNavbar);
       if (locateSidebar) themeConfig.locales[locate].sidebar = resolveSideBar(locateSidebar);
     });
 };
@@ -73,7 +78,7 @@ const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
 
   setThemeLocales(themeConfig, baseLang);
 
-  setSideBar(themeConfig);
+  setNavBarandSideBar(themeConfig);
 };
 
 /**
@@ -81,14 +86,14 @@ const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
  *
  * @param {object} config vuepress配置
  */
-const setLocales = (config: HopeVuepressConfig): void => {
+const setLocales = (config: ResolvedHopeVuepressConfig): void => {
   // 确保存在 locales
   if(!config.locales) config.locales = {};
 
   /** 主目录对应语言 */
   const { baseLang } = config.themeConfig;
 
-  const { locales }=config;
+  const { locales } = config;
 
   // 设置根目录语言配置
   locales['/'] = {
@@ -113,15 +118,17 @@ const resolveConfig = (config: HopeVuepressConfig): ResolvedHopeVuepressConfig =
   // 合并默认配置
   deepAssignReverse(defaultConfig, config);
 
-  resolveHead(config);
+  const resolvedConfig = config as ResolvedHopeVuepressConfig;
+
+  resolveHead(resolvedConfig);
 
   // 处理主题配置
-  resolveThemeConfig(config.themeConfig as ResolvedHopeThemeConfig);
+  resolveThemeConfig(resolvedConfig.themeConfig);
 
   // 设置配置语言
-  setLocales(config);
+  setLocales(resolvedConfig);
 
-  return config;
+  return resolvedConfig;
 };
 
 export = resolveConfig;

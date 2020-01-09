@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-23 18:48:57
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-08 15:35:37
+ * @LastEditTime : 2020-01-09 09:57:05
  * @Description: 多语言配置
  */
 import {
@@ -12,7 +12,7 @@ import {
   lang2PathConfig,
   langs,
   localesConfig,
-  path2langConfig,
+  path2langConfig
 } from './config';
 
 export const checkLang = (lang: string): boolean => langs.includes(lang as Langs);

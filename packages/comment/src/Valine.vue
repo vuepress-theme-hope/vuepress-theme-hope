@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 11:30:43
+ * @LastEditTime : 2020-01-09 09:59:28
  * @Description: Valine 评论插件
 -->
 <template>
@@ -15,7 +15,7 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
 import { ValineOptions } from './globals.d.ts';
-import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
+import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component
 export default class Valine extends Vue {

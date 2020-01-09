@@ -1,4 +1,4 @@
-src/lib/defaultConfig.ts
-src/lib/resolveSideBar.ts
+src/lib/*.ts
+!src/lib/navigate.ts
 test/
 resolve.ts

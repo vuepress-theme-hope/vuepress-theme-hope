@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 14:58:32
+ * @LastEditTime : 2020-01-09 10:42:17
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -16,12 +16,6 @@ const pluginConfig = (options: any): PluginConfig[] => {
     options.comment.author = options.author;
 
   return [
-    /** 页面滚动时自动激活侧边栏链接的插件，已由theme-default激活 */
-    // '@vuepress/active-header-links',
-
-    /** 进度条插件，已由theme-default激活 */
-    // '@vuepress/nprogress'
-
     // FIXME: 目前启用导航栏会报错，原因正在寻找中
     /** 使 VuePress 站点支持简洁链接 */
     // ['clean-urls', { normalSuffix: '/' }],

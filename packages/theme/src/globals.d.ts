@@ -5,7 +5,7 @@ import {
   LangLocalesConfig,
   NavBarConfig,
   SideBarConfig
-} from '@mr-hope/vuepress-shared-utils/src/i18n/config';
+} from '@mr-hope/vuepress-shared-utils';
 import { CommentOptions } from '@mr-hope/vuepress-plugin-comment';
 import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance';
 import { ThemeColorOptions } from '@mr-hope/vuepress-plugin-theme-color';

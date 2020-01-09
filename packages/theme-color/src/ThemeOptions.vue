@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-05 13:12:02
+ * @LastEditTime : 2020-01-09 09:59:58
  * @Description: 主题颜色选择
 -->
 <template>
@@ -31,7 +31,7 @@
 /* global THEME_COLOR_OPTIONS */
 import { Component, Vue } from 'vue-property-decorator';
 import NightmodeSwitch from './NightmodeSwitch.vue';
-import i18n from '@mr-hope/vuepress-shared-utils/src/i18n';
+import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 type ColorPicker = Record<string, string>;
 
