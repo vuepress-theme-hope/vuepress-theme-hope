@@ -1,0 +1,16 @@
+import './typings';
+
+/** 声明全局变量 */
+export interface PWAOptions {
+  /** Service Worker 使用 Google CDN 还是使用本地 */
+  internal?: boolean;
+  /** 自定义的弹窗组件 */
+  popupComponent?: any;
+  /** workbox-build 的选项配置 */
+  generateSWConfig?: any;
+}
+
+declare global {
+  const SW_BASE_URL: string;
+  const SW_UPDATE_POPUP: any;
+}

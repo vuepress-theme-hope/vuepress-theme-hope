@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-08 15:15:43
+ * @LastEditTime : 2020-01-13 13:53:55
  * @Description: 多语言配置
  */
 import {
@@ -35,18 +35,6 @@ export const path2langConfig: Path2LangConfig = {
   '/en/': 'en-US'
 };
 
-interface ThemeColorConfig {
-  themeColor: string;
-  nightmode: string[];
-}
-
-interface Error404Config {
-  /** 错误提示语 */
-  text: string[];
-  /** 返回主页文字 */
-  link: string;
-}
-
 export interface LangLocalesConfig {
   /** 设置该语言的代码 */
   lang: string; // 将会被设置为 <html> 的 lang 属性
@@ -66,6 +54,25 @@ export interface LangLocalesConfig {
   editLinkText: string; // 默认为 "Edit this page"
 }
 
+interface ThemeColorConfig {
+  themeColor: string;
+  nightmode: string[];
+}
+
+interface Error404Config {
+  /** 错误提示语 */
+  text: string[];
+  /** 返回主页文字 */
+  link: string;
+}
+
+interface PWAConfig {
+  /** 提示消息 */
+  message: string;
+  /** 按钮文字 */
+  buttonText: string;
+}
+
 export interface HopeLangLocalesConfig extends LangLocalesConfig {
   /** 导航栏链接 */
   nav?: HopeNavBarConfig;
@@ -77,6 +84,8 @@ export interface HopeLangLocalesConfig extends LangLocalesConfig {
   themeColor: ThemeColorConfig;
   /** 404错误页 */
   error404: Error404Config;
+  /** PWA 配置 */
+  pwa: PWAConfig;
 }
 
 export type LocalesConfig = Record<string, HopeLangLocalesConfig>;
@@ -102,6 +111,10 @@ export const localesConfig: LocalesConfig = {
         '看起来你访问了一个失效的链接'
       ],
       link: '带我回家'
+    },
+    pwa: {
+      message: '发现新内容可用',
+      buttonText: '刷新'
     }
   },
 
@@ -131,6 +144,10 @@ export const localesConfig: LocalesConfig = {
         "Looks like we've got some broken links."
       ],
       link: 'Take me home'
+    },
+    pwa: {
+      message: 'New content is available.',
+      buttonText: 'Refresh'
     }
   }
 };

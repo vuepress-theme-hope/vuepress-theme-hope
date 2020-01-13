@@ -1,0 +1,36 @@
+{
+  "name": "@mr-hope/vuepress-plugin-pwa",
+  "version": "0.1.0-beta.28",
+  "description": "pwa plugin for vuepress-theme-hope",
+  "main": "src/index.js",
+  "types": "src/globals.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+  },
+  "keywords": [
+    "vuepress-plugin",
+    "pwa",
+    "mr-hope"
+  ],
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/pwa#readme",
+  "dependencies": {
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.28",
+    "@types/fs-extra": "^8.0.1",
+    "@vuepress/shared-utils": "^1.2.0",
+    "register-service-worker": "^1.6.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "vue-property-decorator": "^8.3.0",
+    "vuepress-types": "^0.6.1",
+    "workbox-build": "^4.3.1"
+  }
+}

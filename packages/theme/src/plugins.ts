@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 10:42:17
+ * @LastEditTime : 2020-01-13 17:51:49
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -42,32 +42,6 @@ const pluginConfig = (options: any): PluginConfig[] => {
           moment.locale(lang);
 
           return moment(timestamp).format('LLL');
-        }
-      }
-    ],
-
-    /** PWA 插件 */
-    [
-      '@vuepress/pwa',
-      {
-        /** 是否注册Service Worker */
-        serviceWorker: true,
-
-        /** workbox-build 的配置 */
-        generateSWConfig: {
-          importWorkboxFrom: 'local'
-        },
-
-        /** 是否弹出页面更新提示 */
-        updatePopup: {
-          '/': {
-            message: '发现新内容可用',
-            buttonText: '刷新'
-          },
-          '/en/': {
-            message: 'New content is available.',
-            buttonText: 'Refresh'
-          }
         }
       }
     ],
@@ -124,6 +98,9 @@ const pluginConfig = (options: any): PluginConfig[] => {
 
     /** Markdown 增强插件 */
     ['md-enhance', options.markdown || false],
+
+    /** PWA 插件 */
+    ['@mr-hope/pwa'],
 
     // /** 主题色插件 */
     ['@mr-hope/theme-color', options.themeColor]
