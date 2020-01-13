@@ -1,8 +1,10 @@
-**/node_modules/**
-**/tests/**
 **/dist/**
+**/node_modules/**
+
 packages/**/*.js
-packages/**/*.d.ts
+packages/**/index.d.ts
+
+!packages/**/test/*.js
 !packages/**/globals.d.ts
 !packages/theme-types/index.d.ts
 !.vuepress/**

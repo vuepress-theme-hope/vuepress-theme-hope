@@ -8,6 +8,8 @@ extends:
   - eslint:all
   - plugin:vue/recommended
   # - plugin:prettier/recommended
+  - plugin:@typescript-eslint/eslint-recommended
+  # - plugin:@typescript-eslint/recommended
   - prettier
   - prettier/@typescript-eslint
   - prettier/vue
@@ -24,6 +26,9 @@ rules:
   no-console: "off"
 
   no-debugger: "off"
+
+  no-useless-constructor:
+    - off
 
   arrow-parens:
     - error

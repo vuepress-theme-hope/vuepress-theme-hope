@@ -1,4 +1,4 @@
-import { deepAssign, deepAssignReverse } from '../src/lib/assign';
+import { deepAssign, deepAssignReverse } from '../../src/assign';
 import { expect } from 'chai';
 
 describe('deepassign', () => {

@@ -21,7 +21,7 @@
     "packages:update": "lerna exec -- ncu -u",
     "packages:check-update": "lerna exec -- ncu",
     "lint": "npm run lint:check --fix",
-    "lint:check": "eslint --ext .js --ext .vue packages/",
+    "lint:check": "eslint . --ext .js,.ts,.vue",
     "test:all": "lerna run test --parallel",
     "theme:serve": "yarn workspace theme-docs serve",
     "theme:clean-serve": "yarn workspace theme-docs clean-serve",

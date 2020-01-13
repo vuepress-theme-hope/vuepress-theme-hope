@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import resolveHead from '../src/lib/resolveHead';
 
 describe('Test icon and author generate', () => {
-  it("should generate them because they don't exist", () => {
+  it('should generate them because they do not exist', () => {
     const config = {
       theme: 'hope',
       headOption: {

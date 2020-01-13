@@ -40,7 +40,7 @@ export interface VuepressThemeConfig {
   /** 导航栏链接 */
   nav?: NavBarConfig;
   /** 侧边栏配置 */
-  sidebar: SideBarConfig;
+  sidebar?: SideBarConfig;
   /** 侧边栏深度 */
   sidebarDepth?: number;
   /** 显示所有页面的标题链接 */
@@ -99,7 +99,7 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   /** 导航栏链接 */
   nav?: HopeNavBarConfig;
   /** 侧边栏配置 */
-  sidebar: HopeSideBarConfig;
+  sidebar?: HopeSideBarConfig;
   /** 默认作者 */
   author?: string;
   /** 图标前缀 */
@@ -205,7 +205,7 @@ export interface VuepressConfig
   /** 自定义主题的配置 */
   themeConfig?: VuepressThemeConfig;
   /** 使用插件及其配置 */
-  plugins: any;
+  plugins?: any;
   /** 设置成 `true` 将会禁止 ESNext 到 ES5 的转译以及对 IE 的 polyfills，同时会带来更快的构建速度和更小的文件体积 */
   evergreen?: boolean;
 }
