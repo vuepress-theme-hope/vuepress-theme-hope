@@ -34,7 +34,7 @@
     "vue-property-decorator": "^8.3.0",
     "vuepress-plugin-container": "^2.1.2",
     "vuepress-plugin-mathjax": "^1.2.8",
-    "vuepress-types": "^0.6.1"
+    "vuepress-types": "^0.7.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-unit-mocha": "^4.1.2",
