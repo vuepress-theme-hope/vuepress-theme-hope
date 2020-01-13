@@ -2,26 +2,25 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 09:59:44
+ * @LastEditTime : 2020-01-13 17:00:12
  * @Description: 插件配置
  */
-import { Context, PluginConfig } from 'vuepress-types';
 import { MarkdownEnhanceOption } from './globals';
+import { PluginConfig } from 'vuepress-types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 // eslint-disable-next-line max-lines-per-function
 const pluginConfig = (
   option: MarkdownEnhanceOption,
-  ctx: Context
+  themeConfig: Record<string, any>
 ): PluginConfig[] => {
   /** markdown 配置 */
   const markdownOption: MarkdownEnhanceOption =
-    option || ctx.themeConfig.markdown || {};
+    option || themeConfig.markdown || {};
   /** 多语言标题配置 */
   const containerConfig = i18n.config.container;
   /** 主目录语言 */
-  const baseLang =
-    markdownOption.baseLang || ctx.themeConfig.baseLang || 'zh-CN';
+  const baseLang = markdownOption.baseLang || themeConfig.baseLang || 'zh-CN';
   /** 主目录语言对应路径 */
   const baseLangPath = i18n.lang2path(baseLang);
 

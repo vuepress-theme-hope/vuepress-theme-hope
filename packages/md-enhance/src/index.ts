@@ -9,7 +9,10 @@ import sub from './markdown-it/sub';
 import sup from './markdown-it/sup';
 
 // eslint-disable-next-line max-lines-per-function
-export = (option: MarkdownEnhanceOption, ctx: Context): PluginOptionAPI => {
+export = (
+  option: MarkdownEnhanceOption,
+  { themeConfig }: Context
+): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: 'md-enhance',
 
@@ -32,7 +35,7 @@ export = (option: MarkdownEnhanceOption, ctx: Context): PluginOptionAPI => {
 
     /** Markdown 增强 */
     chainMarkdown: md => {
-      const markdownOption = option || ctx.themeConfig.markdown || {};
+      const markdownOption = option || themeConfig.markdown || {};
 
       //  添加行号
       if (markdownOption.lineNumbers !== false)
@@ -55,7 +58,7 @@ export = (option: MarkdownEnhanceOption, ctx: Context): PluginOptionAPI => {
   };
 
   /** 插件选项 */
-  config.plugins = pluginConfig(option, ctx);
+  config.plugins = pluginConfig(option, themeConfig);
 
   return config;
 };

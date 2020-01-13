@@ -6,9 +6,10 @@ export = (options: CommentOptions): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: 'comment',
 
-    define: () => ({
-      COMMENT_OPTIONS: options || {}
-    } as Record<string, any>),
+    define: () =>
+      ({
+        COMMENT_OPTIONS: options || {}
+      } as Record<string, any>),
 
     enhanceAppFiles: resolve(__dirname, 'enhanceAppFile.ts'),
 

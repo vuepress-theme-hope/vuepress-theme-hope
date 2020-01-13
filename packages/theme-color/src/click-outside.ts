@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 00:19:15
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-03 10:42:23
+ * @LastEditTime : 2020-01-13 18:34:37
  * @Description: 判断是否点击在组件外部
  */
 import { DirectiveOptions, VNode } from 'vue';
@@ -66,7 +66,10 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
 
     if (elements && elements.length > 0) elements.unshift(e.target);
 
-    if (el.contains(e.target) || isPopup((vNode.context as any).popupItem, elements))
+    if (
+      el.contains(e.target) ||
+      isPopup((vNode.context as any).popupItem, elements)
+    )
       return;
 
     el.$vueClickOutside.callback(e);

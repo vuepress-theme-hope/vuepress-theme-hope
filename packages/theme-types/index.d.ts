@@ -14,7 +14,7 @@ declare module '*.vue' {
   export default Vue;
 }
 
-declare module '@vuepress/shared-utils/lib/logger'{
+declare module '@vuepress/shared-utils/lib/logger' {
   interface LoggerOptions {
     logLevel: number;
   }

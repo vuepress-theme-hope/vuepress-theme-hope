@@ -2,12 +2,12 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-01 22:44:11
+ * @LastEditTime : 2020-01-13 18:33:14
  * @Description: 合并对象
  */
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type IAnyObject=Record<string, any>;
+type IAnyObject = Record<string, any>;
 
 /**
  * 深度合并对象，合并到第一个
@@ -43,11 +43,11 @@ export const deepAssign = (
  *
  * @param assignObjects 需要合并的对象
  */
-export const deepAssignReverse = (...assignObjects: IAnyObject[]): void=> {
+export const deepAssignReverse = (...assignObjects: IAnyObject[]): void => {
   if (assignObjects.length === 1 || assignObjects.length === 0) return;
 
   /** 需要合并的对象 */
-  const assignObject = assignObjects.pop()as IAnyObject;
+  const assignObject = assignObjects.pop() as IAnyObject;
   /** 被合并的对象 */
   const originObject = assignObjects.pop() as IAnyObject;
 

@@ -1,3 +1,10 @@
+<!--
+ * @Author: Mr.Hope
+ * @Date: 2020-01-07 21:40:17
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-13 18:28:40
+ * @Description: 自定义徽章
+-->
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { ComponentOptions } from 'vue';

@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 17:51:49
+ * @LastEditTime : 2020-01-13 17:53:57
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -59,9 +59,6 @@ const pluginConfig = (options: any): PluginConfig[] => {
     [
       '@vuepress/medium-zoom',
       {
-        /** 图片选择器 */
-        // Selector: 'img.zoom-custom-imgs',
-
         /** 设置选项 */
         options: {
           /** 缩放后图片的外间距 */

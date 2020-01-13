@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:49
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-05 09:56:05
+ * @LastEditTime : 2020-01-13 18:27:57
  * @Description: 页脚
  *
  * 添加自定义页脚的预设文字
@@ -11,7 +11,6 @@
   <div v-if="footerContent" class="footer" v-html="footerContent" />
 </template>
 <script lang='ts'>
-// import 'vuepress-types';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 interface FooterConfig {

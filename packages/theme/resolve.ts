@@ -1,12 +1,15 @@
-import { HopeVuepressConfig, ResolvedHopeThemeConfig,ResolvedHopeVuepressConfig } from './src/globals';
-import { deepAssignReverse } from './src/lib/assign';
+import {
+  HopeVuepressConfig,
+  ResolvedHopeThemeConfig,
+  ResolvedHopeVuepressConfig
+} from './src/globals';
+import { deepAssignReverse, i18n } from '@mr-hope/vuepress-shared-utils';
 import defaultConfig from './src/lib/defaultConfig';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
 import resolveHead from './src/lib/resolveHead';
 import resolveNavBar from './src/lib/resolveNavBar';
 import resolveSideBar from './src/lib/resolveSideBar';
 
-const { checkLang, getLocale,lang2path,path2lang} = i18n;
+const { checkLang, getLocale, lang2path, path2lang } = i18n;
 
 /**
  * 处理主题配置
@@ -14,7 +17,10 @@ const { checkLang, getLocale,lang2path,path2lang} = i18n;
  * @param themeConfig
  * @param baseLang
  */
-const setThemeLocales = (themeConfig: ResolvedHopeThemeConfig, baseLang: string): void => {
+const setThemeLocales = (
+  themeConfig: ResolvedHopeThemeConfig,
+  baseLang: string
+): void => {
   /** 默认语言对应的路径 */
   const baseLangPath = lang2path(baseLang);
 
@@ -46,7 +52,7 @@ const setThemeLocales = (themeConfig: ResolvedHopeThemeConfig, baseLang: string)
 const setNavBarandSideBar = (themeConfig: ResolvedHopeThemeConfig): void => {
   // 处理导航栏
   themeConfig.nav = resolveNavBar(themeConfig.nav);
-    
+
   // 处理侧边栏
   themeConfig.sidebar = resolveSideBar(themeConfig.sidebar);
 
@@ -56,8 +62,10 @@ const setNavBarandSideBar = (themeConfig: ResolvedHopeThemeConfig): void => {
       const locateNavbar = themeConfig.locales[locate].nav;
       const locateSidebar = themeConfig.locales[locate].sidebar;
 
-      if (locateNavbar) themeConfig.locales[locate].nav = resolveNavBar(locateNavbar);
-      if (locateSidebar) themeConfig.locales[locate].sidebar = resolveSideBar(locateSidebar);
+      if (locateNavbar)
+        themeConfig.locales[locate].nav = resolveNavBar(locateNavbar);
+      if (locateSidebar)
+        themeConfig.locales[locate].sidebar = resolveSideBar(locateSidebar);
     });
 };
 
@@ -88,7 +96,7 @@ const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
  */
 const setLocales = (config: ResolvedHopeVuepressConfig): void => {
   // 确保存在 locales
-  if(!config.locales) config.locales = {};
+  if (!config.locales) config.locales = {};
 
   /** 主目录对应语言 */
   const { baseLang } = config.themeConfig;
@@ -105,7 +113,7 @@ const setLocales = (config: ResolvedHopeVuepressConfig): void => {
   Object.keys(config.themeConfig.locales).forEach(path => {
     if (path === '/') return;
 
-    locales[path] = { lang: path2lang(path), ...(locales[path] || {})};
+    locales[path] = { lang: path2lang(path), ...(locales[path] || {}) };
   });
 };
 
@@ -114,7 +122,9 @@ const setLocales = (config: ResolvedHopeVuepressConfig): void => {
  *
  * @param {object} config
  */
-const resolveConfig = (config: HopeVuepressConfig): ResolvedHopeVuepressConfig => {
+const resolveConfig = (
+  config: HopeVuepressConfig
+): ResolvedHopeVuepressConfig => {
   // 合并默认配置
   deepAssignReverse(defaultConfig, config);
 

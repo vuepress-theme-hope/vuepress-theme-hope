@@ -1,3 +1,10 @@
+<!--
+ * @Author: Mr.Hope
+ * @Date: 2020-01-07 21:40:17
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-13 18:30:56
+ * @Description: 流程图组件
+-->
 <template>
   <div :class="{ 'loading': loading }" class="md-flowchart">
     <Loading v-if="loading" class="md-flowchart-loading-icon" />

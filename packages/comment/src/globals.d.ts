@@ -72,10 +72,6 @@ export interface VssueOptions extends BaseCommentOptions {
   autoCreateIssue?: false;
 }
 
-interface Window {
-  AV: any;
-}
-
 /** vuepress-plugin-comment 配置 */
 export type CommentOptions = ValineOptions | VssueOptions;
 

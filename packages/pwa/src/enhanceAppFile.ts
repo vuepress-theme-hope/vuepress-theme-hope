@@ -2,12 +2,13 @@
 
 import { EnhanceApp } from 'vuepress-types';
 import SWUpdateEvent from './SWUpdateEvent';
+import SWUpdatePopup from './SWUpdatePopup.vue';
 import event from './event';
 import { register } from 'register-service-worker';
 
 // const enhanceApp: EnhanceApp = ({ router, isServer }) => {
 const enhanceApp: EnhanceApp = ({ Vue, router, isServer }: any) => {
-  Vue.component('SWUpdatePopup', () => import('./SWUpdatePopup.vue'));
+  Vue.component('SWUpdatePopup', SWUpdatePopup);
 
   // Register service worker
   router.onReady(() => {
@@ -30,17 +31,12 @@ const enhanceApp: EnhanceApp = ({ Vue, router, isServer }: any) => {
         },
 
         offline() {
-          console.log(
-            '[PWA]: 无网络链接，APP 以离线模式启动'
-          );
+          console.log('[PWA]: 无网络链接，APP 以离线模式启动');
           event.$emit('sw-offline');
         },
 
         error(err) {
-          console.error(
-            '[PWA]: 注册 Service Worker 出现错误:',
-            err
-          );
+          console.error('[PWA]: 注册 Service Worker 出现错误:', err);
           event.$emit('sw-error', err);
         }
       });
