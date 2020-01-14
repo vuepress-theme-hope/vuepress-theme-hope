@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 18:33:14
+ * @LastEditTime : 2020-01-14 13:19:19
  * @Description: 合并对象
  */
 
@@ -18,8 +18,8 @@ type IAnyObject = Record<string, any>;
 export const deepAssign = (
   originObject: IAnyObject,
   ...assignObjects: IAnyObject[]
-): void => {
-  if (assignObjects.length === 0) return;
+): IAnyObject => {
+  if (assignObjects.length === 0) return originObject;
 
   /** 本次合并的对象 */
   const assignObject = assignObjects.shift() as IAnyObject;
@@ -35,7 +35,7 @@ export const deepAssign = (
     else originObject[property] = assignObject[property];
   });
 
-  deepAssign(originObject, ...assignObjects);
+  return deepAssign(originObject, ...assignObjects);
 };
 
 /**
@@ -43,8 +43,11 @@ export const deepAssign = (
  *
  * @param assignObjects 需要合并的对象
  */
-export const deepAssignReverse = (...assignObjects: IAnyObject[]): void => {
-  if (assignObjects.length === 1 || assignObjects.length === 0) return;
+export const deepAssignReverse = (
+  ...assignObjects: IAnyObject[]
+): IAnyObject => {
+  if (assignObjects.length === 0) throw new Error('No param is given');
+  if (assignObjects.length === 1) return assignObjects[0];
 
   /** 需要合并的对象 */
   const assignObject = assignObjects.pop() as IAnyObject;
@@ -61,5 +64,5 @@ export const deepAssignReverse = (...assignObjects: IAnyObject[]): void => {
       deepAssignReverse(originObject[property], assignObject[property]);
   });
 
-  deepAssignReverse(...assignObjects, assignObject);
+  return deepAssignReverse(...assignObjects, assignObject);
 };

@@ -7,15 +7,13 @@ describe('Test pluginConfig generate', () => {
       enableAll: true
     };
 
-    const ctx = {
-      themeConfig: {
-        markdown: {
-          enableAll: false
-        }
+    const themeConfig = {
+      markdown: {
+        enableAll: false
       }
     };
 
-    const pluginConfig = resolveConfig(option, ctx);
+    const pluginConfig = resolveConfig(option, themeConfig);
 
     expect(pluginConfig).to.be.deep.equal([
       [
@@ -62,16 +60,14 @@ describe('Test pluginConfig generate', () => {
       enableAll: true
     };
 
-    const ctx = {
-      themeConfig: {
-        baseLang: 'en-US',
-        markdown: {
-          enableAll: false
-        }
+    const themeConfig = {
+      baseLang: 'en-US',
+      markdown: {
+        enableAll: false
       }
     };
 
-    const pluginConfig = resolveConfig(option, ctx);
+    const pluginConfig = resolveConfig(option, themeConfig);
 
     expect(pluginConfig).to.be.deep.equal([
       [

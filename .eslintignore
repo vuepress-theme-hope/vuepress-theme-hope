@@ -3,6 +3,8 @@
 
 packages/**/*.js
 packages/**/index.d.ts
+packages/theme/src/lib/*.js
+packages/theme/src/lib/*.d.ts
 
 !packages/**/test/*.js
 !packages/**/globals.d.ts

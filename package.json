@@ -40,6 +40,7 @@
     "md-enhance-test:serve": "yarn workspace vuepress-plugin-md-enhance test:serve",
     "md-enhance-test:clean-serve": "yarn workspace vuepress-plugin-md-enhance test:clean-serve",
     "md-enhance-test:build": "yarn workspace vuepress-plugin-md-enhance test:build",
+    "shared-utils:test": "yarn workspace @mr-hope/vuepress-shared-utils test",
     "theme-test:serve": "yarn workspace test serve",
     "theme-test:clean-serve": "yarn workspace test clean-serve",
     "theme-test:build": "yarn workspace test build",

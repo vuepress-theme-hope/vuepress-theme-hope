@@ -4,6 +4,9 @@
   "description": "Shared utils for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "src/index.ts",
+  "scripts": {
+    "test": "vue-cli-service test:unit test/"
+  },
   "publishConfig": {
     "access": "public"
   },
