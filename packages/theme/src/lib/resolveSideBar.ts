@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 10:31:22
+ * @LastEditTime : 2020-01-13 22:27:42
  * @Description: 侧边栏处理
  */
 import {
@@ -43,15 +43,12 @@ const resolveSideBarItem = (
   });
 
 const resolveSideBar = (
-  sideBarConfig: HopeSideBarConfig
+  sideBarConfig?: HopeSideBarConfig
 ): HopeSideBarConfig => {
-  // false 与 'auto' 无需处理
-  if (
-    sideBarConfig === false ||
-    sideBarConfig === 'auto' ||
-    typeof sideBarConfig === 'undefined'
-  )
-    return sideBarConfig;
+  // false undefined 与 'auto' 无需处理
+  if (sideBarConfig === false || typeof sideBarConfig === 'undefined')
+    return false;
+  if (sideBarConfig === 'auto') return 'auto';
 
   if (Array.isArray(sideBarConfig)) return resolveSideBarItem(sideBarConfig);
 
