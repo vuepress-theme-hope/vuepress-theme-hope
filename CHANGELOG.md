@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.1.0-beta.30](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.29...v0.1.0-beta.30) (2020-01-17)
+
+### Bug Fixes
+
+* **theme:** add missing deps pwa ([970bebb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/970bebb35fd4808f44d99032c32c4c0d2b0b9b51))
+
 # [0.1.0-beta.29](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.28...v0.1.0-beta.29) (2020-01-17)
 
 ### Bug Fixes
