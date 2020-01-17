@@ -28,9 +28,9 @@
     "@vuepress/shared-utils": "^1.2.0",
     "register-service-worker": "^1.6.2",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.7.4",
+    "typescript": "^3.7.5",
     "vue-property-decorator": "^8.3.0",
-    "vuepress-types": "^0.6.1",
+    "vuepress-types": "^0.7.0",
     "workbox-build": "^4.3.1"
   }
 }
