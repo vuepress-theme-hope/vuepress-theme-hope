@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 10:55:04
+ * @LastEditTime : 2020-01-17 22:11:10
  * @Description: 侧边栏处理
  */
 import {
@@ -21,7 +21,7 @@ const resolveNavItem = (
   navBarConfigItem: HopeNavBarConfigItem,
   prefix = ''
 ): HopeNavBarConfigItem => {
-  if (navBarConfigItem.link)
+  if (typeof navBarConfigItem.link === 'string')
     navBarConfigItem.link = `${prefix}${navBarConfigItem.link}`;
 
   if (Array.isArray(navBarConfigItem.items)) {

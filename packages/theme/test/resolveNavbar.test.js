@@ -10,6 +10,7 @@ describe('Test navbar prefix', () => {
         icon: 'infofill',
         prefix: '/basic/',
         items: [
+          { text: 'Basic', link: '' },
           { text: 'Markdown', link: 'markdown', icon: 'markdown' },
           { text: 'Vuepress', link: 'vuepress/', icon: 'vue' }
         ]
@@ -23,6 +24,7 @@ describe('Test navbar prefix', () => {
         text: '基础',
         icon: 'infofill',
         items: [
+          { text: 'Basic', link: '/basic/' },
           { text: 'Markdown', link: '/basic/markdown', icon: 'markdown' },
           { text: 'Vuepress', link: '/basic/vuepress/', icon: 'vue' }
         ]
