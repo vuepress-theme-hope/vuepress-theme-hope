@@ -1,5 +1,19 @@
 # Changelog
 
+# [0.1.0-beta.29](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.28...v0.1.0-beta.29) (2020-01-17)
+
+### Bug Fixes
+
+* fix test command ([ca95fca](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ca95fcaf7dbaa942cc80327558169d5fc773e10a))
+* **theme:** fix typescript compile issue ([cd0f865](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cd0f8658a89f6174973179a6f7082e2e9470a73a))
+* **theme:** improve types ([8de2bec](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8de2becabee761ea8b461465687d088d62fcb647))
+
+### Features
+
+* add pwa plugin ([55968aa](https://github.com/Mister-Hope/vuepress-theme-hope/commit/55968aad0d81409a12ecd8397ed5a00b2ae1117d))
+* **component:** allow user to set backtotop threshold ([d1486b1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d1486b1644e0a96965162b53d1376905716bcdc8))
+* **theme:** add resolveNavBar function ([2aecbdd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2aecbdd74a96b1573bd3237791df5dbd42fd44c5))
+
 ## [0.1.0-beta.28](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.27...v0.1.0-beta.28) (2020-01-08)
 
 ### Bug Fixes
