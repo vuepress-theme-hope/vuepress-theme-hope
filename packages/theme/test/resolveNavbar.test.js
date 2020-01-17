@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import resolveNavbar from '../src/lib/resolveNavBar';
 
-describe('Test prefix', () => {
+describe('Test navbar prefix', () => {
   it('should resolve prefix and delete them', () => {
     const navbarConfig = [
       { text: '主页', link: '/', icon: 'homefill' },

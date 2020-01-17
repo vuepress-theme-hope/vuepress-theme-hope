@@ -6,8 +6,7 @@ import SWUpdatePopup from './SWUpdatePopup.vue';
 import event from './event';
 import { register } from 'register-service-worker';
 
-// const enhanceApp: EnhanceApp = ({ router, isServer }) => {
-const enhanceApp: EnhanceApp = ({ Vue, router, isServer }: any) => {
+const enhanceApp: EnhanceApp = ({ Vue, router, isServer }) => {
   Vue.component('SWUpdatePopup', SWUpdatePopup);
 
   // Register service worker

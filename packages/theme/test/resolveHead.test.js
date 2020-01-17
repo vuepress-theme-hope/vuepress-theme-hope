@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import resolveHead from '../src/lib/resolveHead';
 
-describe('Test icon and author generate', () => {
-  it('should generate them because they do not exist', () => {
+describe('Test resolveHead function', () => {
+  it('should generate icon and author because they do not exist', () => {
     const config = {
       theme: 'hope',
       headOption: {
@@ -38,7 +38,7 @@ describe('Test icon and author generate', () => {
     });
   });
 
-  it('should not generate if them exist', () => {
+  it('should not generate icon and author if them exist', () => {
     const config = {
       theme: 'hope',
       head: [

@@ -38,7 +38,7 @@ const sideBarConfig = {
   '/': ['', '1', '2']
 };
 
-describe('Test prefix', () => {
+describe('Test sidebar prefix', () => {
   it('should resolve prefix and delete them', () => {
     const resolvedConfig = resolveSideBar(sideBarConfig);
 

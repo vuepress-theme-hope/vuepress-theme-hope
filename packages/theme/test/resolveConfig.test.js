@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import resolveConfig from '../resolve';
 
-describe('resolveThemeConfig', () => {
+describe('Test resolveTheme function', () => {
   const config = {
     /** 网站标题 */
     title: 'vuepress-theme-hope',
