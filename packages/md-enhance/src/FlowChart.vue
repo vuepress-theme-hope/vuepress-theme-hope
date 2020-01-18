@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-07 21:40:17
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 18:30:56
+ * @LastEditTime : 2020-01-18 16:35:43
  * @Description: 流程图组件
 -->
 <template>
@@ -56,29 +56,33 @@ export default class FlowChart extends Vue {
 
 <style lang="stylus">
 .md-flowchart
-  overflow scroll
+  overflow-x scroll
   text-align center
-  font-size 0px
   min-height 200px
-  display flex
-  justify-content center
-  align-items center
   transition all 1s
-  padding 10px
+  padding 10px 6px
 
-  & > svg
-    max-width 100%
+  & svg
+    width 100%
+    min-width 450px
     height auto
 
   &.loading
+    display flex
+    justify-content center
+    align-items center
     background-color #f3f6f8
+
+  @media (max-width: $MQMobileNarrow)
+    margin 0 -1.5rem
+    padding 10px 0
 
 .operation-element, .parallel-element
   rx 5px
   ry 5px
 
-.md-flowchart-loading-icon
+svg.md-flowchart-loading-icon
   width 40px
   height 40px
-  fill #3eaf7c
+  fill $accentColor
 </style>
