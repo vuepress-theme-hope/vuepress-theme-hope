@@ -1,5 +1,15 @@
 # Changelog
 
+# [0.1.0-beta.31](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.30...v0.1.0-beta.31) (2020-01-18)
+
+### Bug Fixes
+
+* **theme:** fix '' issue in navbar ([414b722](https://github.com/Mister-Hope/vuepress-theme-hope/commit/414b722f8aa07ae052bd87f624f2dfe4ffa9b0dc))
+
+### Features
+
+* add options for PWA and improve types ([25580b7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/25580b79b57b1d18d4e7f8cd5e2be1d33654909c))
+
 # [0.1.0-beta.30](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.29...v0.1.0-beta.30) (2020-01-17)
 
 ### Bug Fixes
