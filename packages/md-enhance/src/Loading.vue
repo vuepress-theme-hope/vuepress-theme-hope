@@ -1,3 +1,10 @@
+<!--
+ * @Author: Mr.Hope
+ * @Date: 2020-01-13 18:40:39
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-18 16:43:28
+ * @Description: 一个简单的加载图标
+-->
 <template>
   <svg
     style="enable-background:new 0 0 50 50;"

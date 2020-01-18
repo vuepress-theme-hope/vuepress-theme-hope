@@ -1,6 +1,6 @@
 import './typings';
 
-/** 声明全局变量 */
+/** PWA 配置 */
 export interface PWAOptions {
   /** Service Worker 使用 Google CDN 还是使用本地 */
   internal?: boolean;
@@ -10,6 +10,7 @@ export interface PWAOptions {
   generateSWConfig?: any;
 }
 
+/** 声明全局变量 */
 declare global {
   const SW_BASE_URL: string;
   const SW_UPDATE_POPUP: any;

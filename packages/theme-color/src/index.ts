@@ -1,8 +1,15 @@
+/*
+ * @Author: Mr.Hope
+ * @Date: 2020-01-13 18:40:39
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-18 18:43:52
+ * @Description:
+ */
 import { PluginOptionAPI } from 'vuepress-types';
 import { ThemeColorOptions } from './globals';
 import { resolve } from 'path';
 
-const pluginOption = (options: ThemeColorOptions): PluginOptionAPI =>
+export = (options: ThemeColorOptions): PluginOptionAPI =>
   ({
     name: 'theme-color',
 
@@ -28,5 +35,3 @@ const pluginOption = (options: ThemeColorOptions): PluginOptionAPI =>
         });
     }
   } as PluginOptionAPI);
-
-export = pluginOption;

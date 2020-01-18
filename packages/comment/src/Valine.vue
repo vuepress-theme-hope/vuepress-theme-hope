@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 09:59:28
+ * @LastEditTime : 2020-01-18 16:13:23
  * @Description: Valine 评论插件
 -->
 <template>
@@ -98,6 +98,7 @@ export default class Valine extends Vue {
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared-utils/src/styles/wrapper.styl'
 
+// add theme color for valine
 .page
   .valine-wrapper
     @extend $wrapper

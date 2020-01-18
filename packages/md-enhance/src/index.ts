@@ -13,6 +13,8 @@ export = (
   option: MarkdownEnhanceOption,
   { themeConfig }: Context
 ): PluginOptionAPI => {
+  const markdownOption = option || themeConfig.markdown || {};
+
   const config: PluginOptionAPI = {
     name: 'md-enhance',
 
@@ -35,8 +37,6 @@ export = (
 
     /** Markdown 增强 */
     chainMarkdown: md => {
-      const markdownOption = option || themeConfig.markdown || {};
-
       //  添加行号
       if (markdownOption.lineNumbers !== false)
         md.plugin('line-numbers').use(lineNumbers);

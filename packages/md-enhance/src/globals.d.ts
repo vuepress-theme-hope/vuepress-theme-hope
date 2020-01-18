@@ -1,5 +1,6 @@
 import './typings';
 
+/** md-enhance 插件配置 */
 export interface MarkdownEnhanceOption {
   /** 默认目录的语言 */
   baseLang?: string;

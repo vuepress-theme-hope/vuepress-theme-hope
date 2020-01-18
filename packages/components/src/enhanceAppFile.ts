@@ -2,8 +2,8 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-07 09:12:52
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 14:57:32
- * @Description: 增强文件
+ * @LastEditTime : 2020-01-18 16:15:28
+ * @Description: 注册所有组件
  */
 
 import BackToTop from './BackToTop.vue';

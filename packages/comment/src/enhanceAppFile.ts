@@ -2,8 +2,8 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-08 20:40:27
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 18:29:30
- * @Description: 增强文件
+ * @LastEditTime : 2020-01-18 16:15:39
+ * @Description: 注册组件
  */
 
 import Comment from './Comment.vue';

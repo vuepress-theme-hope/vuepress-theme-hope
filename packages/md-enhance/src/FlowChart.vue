@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-07 21:40:17
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 16:35:43
+ * @LastEditTime : 2020-01-18 17:18:12
  * @Description: 流程图组件
 -->
 <template>
@@ -77,12 +77,12 @@ export default class FlowChart extends Vue {
     margin 0 -1.5rem
     padding 10px 0
 
+  svg.md-flowchart-loading-icon
+    width 40px
+    height 40px
+    fill $accentColor
+
 .operation-element, .parallel-element
   rx 5px
   ry 5px
-
-svg.md-flowchart-loading-icon
-  width 40px
-  height 40px
-  fill $accentColor
 </style>

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-03 09:44:53
+ * @LastEditTime : 2020-01-18 16:15:14
  * @Description: 路径导航
 -->
 <template>
@@ -24,7 +24,6 @@
   </nav>
 </template>
 <script lang='ts'>
-// import 'vuepress-types';
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
 
@@ -74,6 +73,7 @@ export default class BreadCrumb extends Vue {
     if (this.enable) this.config = this.getBreadCrumbConfig(this.$route);
   }
 
+  /** 生成页面路径链接 */
   private getLinks(route: Route) {    ;
     /** 路径项 */
     const routePaths = route.fullPath.split('#')[0].split('/');
@@ -95,6 +95,7 @@ export default class BreadCrumb extends Vue {
     return links;
   }
 
+  /** 生成路径导航配置 */
   private getBreadCrumbConfig(route: Route) {
     /** 页面对象 */
     const { pages } = this.$site;
@@ -136,6 +137,7 @@ h1, h2, h3, h4, h5, h6
     margin-top 0.5rem - $navbarHeight !important
     padding-top $navbarHeight + 1rem !important
 
+// 路径导航样式
 .breadcrumb
   @extend $wrapper
   font-size 15px

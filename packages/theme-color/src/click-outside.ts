@@ -1,18 +1,21 @@
-/* eslint-disable no-console */
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-11 00:19:15
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 18:34:37
+ * @LastEditTime : 2020-01-18 17:55:45
  * @Description: 判断是否点击在组件外部
  */
+
+/* eslint-disable no-console */
 import { DirectiveOptions, VNode } from 'vue';
 import { DirectiveBinding } from 'vue/types/options';
 
+/** Popup HTML 事件 */
 interface PopupHtmlElements extends HTMLElement {
   $vueClickOutside: any;
 }
 
+/** Popup 指令函数 */
 type PopupDirectiveFunction = (
   el: PopupHtmlElements,
   binding: DirectiveBinding,
@@ -20,6 +23,7 @@ type PopupDirectiveFunction = (
   oldVnode: VNode
 ) => void;
 
+/** 验证函数 */
 const validate = (binding: DirectiveBinding): boolean => {
   if (typeof binding.value !== 'function') {
     console.warn(
@@ -34,6 +38,7 @@ const validate = (binding: DirectiveBinding): boolean => {
   return true;
 };
 
+/** 是否是 Popup */
 const isPopup = (popupItem: HTMLElement, elements: HTMLElement[]): boolean => {
   if (!popupItem || !elements) return false;
 
@@ -83,10 +88,12 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
   if (!isServer(vNode)) document.addEventListener('click', handler);
 };
 
+/** 更新命令 */
 export const update: PopupDirectiveFunction = (el, binding) => {
   if (validate(binding)) el.$vueClickOutside.callback = binding.value;
 };
 
+/** 解绑命令 */
 export const unbind: PopupDirectiveFunction = (el, _binding, vNode) => {
   // Remove Event Listeners
   if (!isServer(vNode))

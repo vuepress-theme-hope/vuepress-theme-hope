@@ -2,14 +2,13 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 17:00:12
+ * @LastEditTime : 2020-01-18 16:43:36
  * @Description: 插件配置
  */
 import { MarkdownEnhanceOption } from './globals';
 import { PluginConfig } from 'vuepress-types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-// eslint-disable-next-line max-lines-per-function
 const pluginConfig = (
   option: MarkdownEnhanceOption,
   themeConfig: Record<string, any>

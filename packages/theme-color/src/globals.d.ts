@@ -8,7 +8,7 @@ export interface ThemeColorOptions {
   allowNightmode?: boolean;
 }
 
-/** 主题颜色配置选项 */
+/** 声明全局变量 */
 declare global {
   const THEME_COLOR_OPTIONS: ThemeColorOptions;
 }

@@ -198,6 +198,10 @@ overrides:
       "@typescript-eslint/no-explicit-any":
         - off
 
+      "@typescript-eslint/explicit-function-return-type":
+        - warn
+        - allowTypedFunctionExpressions: true
+
   - files:
       - "*.d.ts"
     rules:
