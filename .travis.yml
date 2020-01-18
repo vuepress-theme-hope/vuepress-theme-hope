@@ -7,7 +7,6 @@ install:
   - yarn run tsc
 jobs:
   include:
-
     # 测试并部署 DEMO
     - stage: demo-deploy
       name: "Test and Deploy Theme Demo Test"
@@ -16,10 +15,10 @@ jobs:
       before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
       deploy:
         provider: pages
-        skip-cleanup: true
         local_dir: tests/dist
         github-token: $Github_Token
         repo: Mister-Hope/theme-demo
+        edge: true
         on:
           all_branches: true
 
@@ -31,10 +30,10 @@ jobs:
       before_deploy: echo comment.mrhope.site >> docs/comment/dist/CNAME
       deploy:
         provider: pages
-        skip-cleanup: true
         local_dir: docs/comment/dist
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-comment-docs
+        edge: true
 
     # 部署 Markdown 增强文档
     - stage: md-enhance-docs
@@ -44,10 +43,10 @@ jobs:
       before_deploy: echo vuepress-md.mrhope.site >> docs/md-enhance/dist/CNAME
       deploy:
         provider: pages
-        skip-cleanup: true
         local_dir: docs/md-enhance/dist
         github-token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-md-enhance-docs
+        edge: true
 
     # 部署文档
     - stage: theme-docs
@@ -57,9 +56,9 @@ jobs:
       before_deploy: echo vuepress-theme.mrhope.site >> docs/theme/dist/CNAME
       deploy:
         provider: pages
-        skip-cleanup: true
         local_dir: docs/theme/dist
         github-token: $Github_Token
+        edge: true
 
     # 部署文档
     - stage: test-build
@@ -69,10 +68,10 @@ jobs:
       before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
       deploy:
         provider: pages
-        skip-cleanup: true
         local_dir: tests/dist
         github-token: $Github_Token
         repo: Mister-Hope/theme-demo
+        edge: true
         on:
           all_branches: true
 
