@@ -1,4 +1,5 @@
 language: node_js
+os: linux
 node_js:
   - lts/*
 install:
@@ -16,7 +17,7 @@ jobs:
       deploy:
         provider: pages
         local_dir: tests/dist
-        github-token: $Github_Token
+        token: $Github_Token
         repo: Mister-Hope/theme-demo
         edge: true
         on:
@@ -31,7 +32,7 @@ jobs:
       deploy:
         provider: pages
         local_dir: docs/comment/dist
-        github-token: $Github_Token
+        token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-comment-docs
         edge: true
 
@@ -44,7 +45,7 @@ jobs:
       deploy:
         provider: pages
         local_dir: docs/md-enhance/dist
-        github-token: $Github_Token
+        token: $Github_Token
         repo: Mister-Hope/vuepress-plugin-md-enhance-docs
         edge: true
 
@@ -57,7 +58,7 @@ jobs:
       deploy:
         provider: pages
         local_dir: docs/theme/dist
-        github-token: $Github_Token
+        token: $Github_Token
         edge: true
 
     # 部署文档
@@ -69,7 +70,7 @@ jobs:
       deploy:
         provider: pages
         local_dir: tests/dist
-        github-token: $Github_Token
+        token: $Github_Token
         repo: Mister-Hope/theme-demo
         edge: true
         on:
