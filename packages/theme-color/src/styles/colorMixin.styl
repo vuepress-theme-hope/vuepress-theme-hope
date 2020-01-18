@@ -184,12 +184,17 @@ color-mode($themecolor, $colorName)
         bordercolor()
 
     // flowchart 适配
-    .vuepress-flowchart.vuepress-flowchart-loading-icon
-      fill $themecolor
+    .md-flowchart
+      &.loading
+        backgound-color #080808
+
+      svg.md-flowchart-loading-icon
+        fill $themecolor
 
     // PWA
     .sw-update-popup
-      bordercolor()
+      .refresh
+        background-color $themecolor
 
 for key, value in $colorPicker
   color-mode(value, key)

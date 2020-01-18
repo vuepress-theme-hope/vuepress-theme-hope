@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 14:09:23
+ * @LastEditTime : 2020-01-18 17:12:53
  * @Description: 多语言配置
  */
 import {
@@ -69,13 +69,8 @@ export interface HopeLangLocalesConfig extends LangLocalesConfig {
     /** 返回主页文字 */
     link: string;
   };
-  /** PWA 配置 */
-  pwa: {
-    /** 提示消息 */
-    message: string;
-    /** 按钮文字 */
-    buttonText: string;
-  };
+  /** PWA 提示消息 */
+  pwa: string;
 }
 
 /** 语言设置 */
@@ -100,10 +95,7 @@ export const localesConfig: Record<string, HopeLangLocalesConfig> = {
       ],
       link: '带我回家'
     },
-    pwa: {
-      message: '发现新内容可用',
-      buttonText: '刷新'
-    }
+    pwa: '发现新内容可用'
   },
 
   /** 英文设置 */
@@ -133,10 +125,7 @@ export const localesConfig: Record<string, HopeLangLocalesConfig> = {
       ],
       link: 'Take me home'
     },
-    pwa: {
-      message: 'New content is available.',
-      buttonText: 'Refresh'
-    }
+    pwa: 'New content is available.'
   }
 };
 
