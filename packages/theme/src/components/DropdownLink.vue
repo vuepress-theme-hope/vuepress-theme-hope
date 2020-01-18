@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-22 19:44:55
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-18 19:51:24
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -109,7 +109,7 @@ export default {
     background transparent
     border none
     font-weight 500
-    color $textColor
+    color #666
 
     &:hover
       border-color transparent
@@ -146,16 +146,16 @@ export default {
         padding 0 1.5rem 0 1.25rem
 
         &:hover
-          color $accentColor
+          color darken($accentColor, 15%)
 
         &.router-link-active
-          color $accentColor
+          color darken($accentColor, 15%)
 
           &::after
             content ''
             width 0
             height 0
-            border-left 5px solid $accentColor
+            border-left 5px solid darken($accentColor, 15%)
             border-top 3px solid transparent
             border-bottom 3px solid transparent
             position absolute
@@ -177,7 +177,7 @@ export default {
       font-size inherit
 
       &:hover
-        color $accentColor
+        color darken($accentColor, 15%)
 
     .nav-dropdown
       transition height 0.1s ease-out

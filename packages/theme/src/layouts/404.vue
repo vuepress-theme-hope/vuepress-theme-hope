@@ -11,7 +11,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-
 @Component
 export default class NotFound extends Vue {
   private title = '404';

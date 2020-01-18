@@ -21,21 +21,21 @@ color-mode($themecolor, $colorName)
     @media (min-width: $MQMobile)
       .nav-item > a:not(.external)
         &:hover, &.router-link-active
-          border-bottom 2px solid lighten($themecolor, 8%)
+          border-bottom 2px solid darken($themecolor, 15%)
 
     // 链接
     .nav-links a:hover, .nav-links a.router-link-active
-      fontcolor()
+      color darken($themecolor, 15%)
 
     // 下拉列表
     .dropdown-wrapper
       .dropdown-title
         .title:hover
-          fontcolor()
+          color darken($themecolor, 15%)
 
       .nav-dropdown .dropdown-item a
         &.router-link-active, &:hover
-          fontcolor()
+          color darken($themecolor, 15%)
 
       &.router-link-active::after
         border-left 5px solid $themecolor
