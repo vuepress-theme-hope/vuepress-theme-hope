@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 13:53:55
+ * @LastEditTime : 2020-01-18 14:09:23
  * @Description: 多语言配置
  */
 import {
@@ -16,21 +16,17 @@ export type Langs = 'zh-CN' | 'en-US';
 
 export type LangPaths = '/zh/' | '/en/';
 
-type Lang2PathConfig = Record<string, LangPaths>;
-
-type Path2LangConfig = Record<string, Langs>;
-
 /** 支持语言 */
 export const langs: Langs[] = ['zh-CN', 'en-US'];
 
 /** 语言对应路径 */
-export const lang2PathConfig: Lang2PathConfig = {
+export const lang2PathConfig: Record<string, LangPaths> = {
   'zh-CN': '/zh/',
   'en-US': '/en/'
 };
 
 /** 路径对应语言 */
-export const path2langConfig: Path2LangConfig = {
+export const path2langConfig: Record<string, Langs> = {
   '/zh/': 'zh-CN',
   '/en/': 'en-US'
 };
@@ -54,25 +50,6 @@ export interface LangLocalesConfig {
   editLinkText: string; // 默认为 "Edit this page"
 }
 
-interface ThemeColorConfig {
-  themeColor: string;
-  nightmode: string[];
-}
-
-interface Error404Config {
-  /** 错误提示语 */
-  text: string[];
-  /** 返回主页文字 */
-  link: string;
-}
-
-interface PWAConfig {
-  /** 提示消息 */
-  message: string;
-  /** 按钮文字 */
-  buttonText: string;
-}
-
 export interface HopeLangLocalesConfig extends LangLocalesConfig {
   /** 导航栏链接 */
   nav?: HopeNavBarConfig;
@@ -81,17 +58,28 @@ export interface HopeLangLocalesConfig extends LangLocalesConfig {
   /** Valine 占位符 */
   valineHolder: string;
   /** 主题色配置 */
-  themeColor: ThemeColorConfig;
+  themeColor: {
+    themeColor: string;
+    nightmode: string[];
+  };
   /** 404错误页 */
-  error404: Error404Config;
+  error404: {
+    /** 错误提示语 */
+    text: string[];
+    /** 返回主页文字 */
+    link: string;
+  };
   /** PWA 配置 */
-  pwa: PWAConfig;
+  pwa: {
+    /** 提示消息 */
+    message: string;
+    /** 按钮文字 */
+    buttonText: string;
+  };
 }
 
-export type LocalesConfig = Record<string, HopeLangLocalesConfig>;
-
 /** 语言设置 */
-export const localesConfig: LocalesConfig = {
+export const localesConfig: Record<string, HopeLangLocalesConfig> = {
   'zh-CN': {
     lang: 'zh-CN',
     selectText: '选择语言',

@@ -29,11 +29,6 @@ export interface VuepressMarkdownOption {
   extractHeaders?: string[];
 }
 
-export interface AlgoliaConfig {
-  apiKey: string;
-  indexName: string;
-}
-
 export interface VuepressThemeConfig {
   /** 导航栏 Logo，应为绝对路径 */
   logo?: string;
@@ -52,7 +47,10 @@ export interface VuepressThemeConfig {
   /** 默认搜索框显示的搜索结果数量 */
   searchMaxSuggestions?: number;
   /** Algolia 搜索配置 */
-  algolia?: AlgoliaConfig;
+  algolia?: {
+    apiKey: string;
+    indexName: string;
+  };
   /** 最后更新时间前缀 */
   lastUpdated?: string;
   /** 所有页面的 下一篇 链接 */
@@ -110,8 +108,6 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   breadcrumbIcon?: boolean;
   /** 是否在侧边栏显示图标 */
   sidebarIcon?: boolean;
-  /** 多语言配置 */
-  locales?: Record<string, HopeLangLocalesConfig>;
   /** 页脚配置 */
   footer?: HopeFooterConfig;
   /** 是否显示返回顶部按钮 */
@@ -213,8 +209,21 @@ export interface VuepressConfig
 export interface HopeHeadOptionConfig {
   /** 网站的图标 */
   icon?: string;
-
-  [props: string]: any;
+  /** PWA 设置 */
+  pwa?: {
+    /** manifest 文件的路径 */
+    manifest?: string;
+    /** 主题色 */
+    themeColor?: string;
+    /** 苹果导航栏颜色 */
+    appleStatusBarColor?: 'black' | 'white';
+    /** 苹果的图标 */
+    appleIcon?: string;
+    /** 微软磁贴图片 */
+    msTileImage?: string;
+    /** 微软磁贴颜色 */
+    msTileColor?: string;
+  };
 }
 
 /** vuepress-theme-hope 项目配置 */

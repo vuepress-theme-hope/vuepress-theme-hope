@@ -1,4 +1,4 @@
-import { HopeVuepressConfig } from '../globals';
+import { HopeHeadOptionConfig, HopeVuepressConfig } from '../globals';
 
 /** meta 键名 */
 let metaKeys: string[];
@@ -26,6 +26,42 @@ const setHeadOption = (
     head.push(['link', { rel: name, href: content }]);
 };
 
+/**
+ * 设置 PWA
+ *
+ * @param headOption 头部构建选项
+ */
+const setPWA = (headOption: HopeHeadOptionConfig): void => {
+  if (headOption.pwa) {
+    setHeadOption('link', 'manifest', headOption.pwa.manifest);
+    setHeadOption('meta', 'theme-color', headOption.pwa.themeColor);
+
+    setHeadOption('meta', 'apple-mobile-web-app-capable', 'yes');
+    setHeadOption(
+      'meta',
+      'apple-mobile-web-app-status-bar-style',
+      headOption.pwa.appleStatusBarColor
+    );
+    setHeadOption('link', 'apple-touch-icon', headOption.pwa.appleIcon);
+
+    setHeadOption(
+      'meta',
+      'msapplication-TileImage',
+      headOption.pwa.msTileImage
+    );
+    setHeadOption(
+      'meta',
+      'msapplication-TileColor',
+      headOption.pwa.msTileColor
+    );
+  }
+};
+
+/**
+ * 处理了头部选项
+ *
+ * @param config 项目配置
+ */
 const resolveHead = (config: HopeVuepressConfig): void => {
   if (!config.head) config.head = [];
 
@@ -58,10 +94,7 @@ const resolveHead = (config: HopeVuepressConfig): void => {
   );
 
   // PWA 相关
-  if (headOption.pwa) {
-    setHeadOption('link', 'manifest', headOption.pwa.manifest);
-    setHeadOption('meta', 'theme-color', headOption.pwa.themeColor);
-  }
+  setPWA(headOption);
 };
 
 export default resolveHead;

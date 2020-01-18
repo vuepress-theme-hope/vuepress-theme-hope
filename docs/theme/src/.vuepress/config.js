@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 11:09:46
+ * @LastEditTime : 2020-01-18 13:46:45
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
@@ -15,20 +15,19 @@ module.exports = resolve({
   description: '一个轻量的 vuepress 主题',
 
   headOption: {
-    icon: '/favicon.ico'
+    icon: '/favicon.ico',
+    pwa: {
+      manifest: '/manifest.json',
+      themeColor: '#46bd87',
+      appleStatusBarColor: 'black',
+      appleIcon: '/img/icon/appleIcon152.png',
+      msTileImage: '/img/icon/msIcon144.png',
+      msTileColor: '#ffffff'
+    }
   },
 
   /** 生成网站头部的标签 */
   head: [
-    // pwa相关
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#46bd87' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    [
-      'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
-    ],
-    ['link', { rel: 'apple-touch-icon', href: '/img/icon/appleIcon152.png' }],
     [
       'link',
       {
@@ -36,12 +35,7 @@ module.exports = resolve({
         href: '/icons/safari-pinned-tab.svg',
         color: '#46bd87'
       }
-    ],
-    [
-      'meta',
-      { name: 'msapplication-TileImage', content: '/img/icon/msIcon144.png' }
-    ],
-    ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
+    ]
   ],
 
   temp: './node_modules/.temp/theme',
