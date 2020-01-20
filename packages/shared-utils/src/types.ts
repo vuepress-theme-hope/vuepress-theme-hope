@@ -28,6 +28,10 @@ export interface SideBarConfigItemObject {
 
   /** 当前分组的侧边栏项 */
   children: Array<string | SideBarConfigItem>;
+  /** 可折叠，默认为 true */
+  collapsable?: boolean;
+  /** 侧边栏深度，默认为 1 */
+  sidebarDepth?: number;
 }
 
 export type SideBarConfigItem = string | SideBarConfigItemObject;
