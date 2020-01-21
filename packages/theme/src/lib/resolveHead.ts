@@ -1,4 +1,7 @@
-import { HopeHeadOptionConfig, HopeVuepressConfig } from '../globals';
+import {
+  HopeHeadOptionConfig,
+  HopeVuepressConfig
+} from '../typings/hopeConfig';
 
 /** meta 键名 */
 let metaKeys: string[];

@@ -2,11 +2,10 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-23 18:48:57
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 18:33:31
+ * @LastEditTime : 2020-01-21 23:21:56
  * @Description: 多语言配置
  */
 import {
-  HopeLangLocalesConfig,
   Langs,
   config,
   lang2PathConfig,
@@ -14,6 +13,7 @@ import {
   localesConfig,
   path2langConfig
 } from './config';
+import { HopeLangLocalesConfig } from '../../typings';
 
 export const checkLang = (lang: string): boolean =>
   langs.includes(lang as Langs);

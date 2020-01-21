@@ -12,22 +12,13 @@ export interface NavBarConfigItem {
 
 export type NavBarConfig = NavBarConfigItem[] | false;
 
-export interface HopeNavBarConfigItem extends NavBarConfigItem {
-  /** 导航栏对应项的图标 */
-  icon?: string;
-  /** 导航栏的路径前缀 */
-  prefix?: string;
-}
-
-export type HopeNavBarConfig = HopeNavBarConfigItem[] | false;
-
 /** 侧边栏分组配置 */
 export interface SideBarConfigItemObject {
   /** 分组的标题 */
   title: string;
 
   /** 当前分组的侧边栏项 */
-  children: Array<string | SideBarConfigItem>;
+  children: SideBarConfigItem[];
   /** 可折叠，默认为 true */
   collapsable?: boolean;
   /** 侧边栏深度，默认为 1 */
@@ -42,18 +33,7 @@ export type SideBarConfig =
   | 'auto'
   | false;
 
-export interface HopeSideBarConfigItemObject extends SideBarConfigItemObject {
-  /** 分组的图标 */
-  icon?: string;
-  /** 当前分组的路径前缀 */
-  prefix?: string;
-  [props: string]: any;
+export interface AlgoliaOption {
+  apiKey: string;
+  indexName: string;
 }
-
-export type HopeSideBarConfigItem = string | HopeSideBarConfigItemObject;
-
-export type HopeSideBarConfig =
-  | HopeSideBarConfigItem[]
-  | Record<string, HopeSideBarConfigItem[]>
-  | 'auto'
-  | false;
