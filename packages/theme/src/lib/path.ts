@@ -73,6 +73,14 @@ export const ensureExt = (path: string): string => {
 };
 
 /**
+ * 确保路径以斜线结尾
+ *
+ * @param path 待处理的路径
+ */
+export const ensureEndingSlash = (path: string): string =>
+  /(\.html|\/)$/u.test(path) ? path : `${path}/`;
+
+/**
  * 判断当前路由是否可以匹配指定链接
  *
  * @param route 当前路由
