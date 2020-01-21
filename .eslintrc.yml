@@ -7,11 +7,7 @@ env:
 extends:
   - eslint:all
   - plugin:vue/recommended
-  # - plugin:prettier/recommended
-  - plugin:@typescript-eslint/eslint-recommended
-  # - plugin:@typescript-eslint/recommended
   - prettier
-  - prettier/@typescript-eslint
   - prettier/vue
   - "@vue/typescript"
 
@@ -188,19 +184,26 @@ overrides:
 
   - files:
       - "*.ts"
+
     extends:
-      - "plugin:@typescript-eslint/recommended"
+      - plugin:@typescript-eslint/eslint-recommended
+      - plugin:@typescript-eslint/recommended
+      - prettier/@typescript-eslint
+
+    plugins:
+      - "@typescript-eslint"
+
     parser: "vue-eslint-parser"
+
     parserOptions:
       parser: "@typescript-eslint/parser"
 
     rules:
-      "@typescript-eslint/no-explicit-any":
-        - off
-
       "@typescript-eslint/explicit-function-return-type":
         - warn
         - allowTypedFunctionExpressions: true
+
+      "@typescript-eslint/no-explicit-any": off
 
   - files:
       - "*.d.ts"
