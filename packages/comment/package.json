@@ -41,6 +41,6 @@
     "typescript": "^3.7.5",
     "valine": "^1.3.10",
     "vssue": "^1.4.2",
-    "vuepress-types": "^0.7.0"
+    "vuepress-types": "^0.8.0"
   }
 }

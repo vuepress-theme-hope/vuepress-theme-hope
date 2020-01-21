@@ -30,6 +30,6 @@
     "typescript": "^3.7.5",
     "vue-property-decorator": "^8.3.0",
     "vue-router": "^3.1.5",
-    "vuepress-types": "^0.7.0"
+    "vuepress-types": "^0.8.0"
   }
 }
