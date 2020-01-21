@@ -1,6 +1,18 @@
 # Changelog
 
-# [0.1.0-beta.31](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.30...v0.1.0-beta.31) (2020-01-18)
+## [0.1.0-beta.32](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.31...v0.1.0-beta.32) (2020-01-21)
+
+### Bug Fixes
+
+* **types:** add missing property for Sidebar types ([1f399ce](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1f399cef0e0e32e965192e1d23c9cd25b1b5b39b))
+
+### Features
+
+* **pwa:** improve pwa style ([055492a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/055492a3a8c4690ffbfb0a0ea65328b19107cb06))
+* **theme:** add a function for path ([51fd6ce](https://github.com/Mister-Hope/vuepress-theme-hope/commit/51fd6ce451d74fb397d81db223d6a57b65763ff5))
+* **theme-ts:** convert some utils functions to ts ([eb7ffe0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/eb7ffe0bb0d4f2a53564e1ee6e0ace749f4c4257))
+
+## [0.1.0-beta.31](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.30...v0.1.0-beta.31) (2020-01-18)
 
 ### Bug Fixes
 
@@ -10,13 +22,13 @@
 
 * add options for PWA and improve types ([25580b7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/25580b79b57b1d18d4e7f8cd5e2be1d33654909c))
 
-# [0.1.0-beta.30](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.29...v0.1.0-beta.30) (2020-01-17)
+## [0.1.0-beta.30](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.29...v0.1.0-beta.30) (2020-01-17)
 
 ### Bug Fixes
 
 * **theme:** add missing deps pwa ([970bebb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/970bebb35fd4808f44d99032c32c4c0d2b0b9b51))
 
-# [0.1.0-beta.29](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.28...v0.1.0-beta.29) (2020-01-17)
+## [0.1.0-beta.29](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.28...v0.1.0-beta.29) (2020-01-17)
 
 ### Bug Fixes
 
