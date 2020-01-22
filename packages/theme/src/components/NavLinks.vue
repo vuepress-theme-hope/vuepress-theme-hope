@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 19:51:48
+ * @LastEditTime : 2020-01-22 11:29:15
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
@@ -115,10 +115,10 @@ export default {
 
   a
     line-height 1.4rem
-    color #666
+    color inherit
 
     &:hover, &.router-link-active
-      color darken($accentColor, 15%)
+      color $accentColor
 
   .nav-item
     position relative
@@ -140,10 +140,10 @@ export default {
 @media (min-width: $MQMobile)
   .nav-links a
     &:hover, &.router-link-active
-      color darken($accentColor, 15%)
+      color $textColor
 
   .nav-item > a:not(.external)
     &:hover, &.router-link-active
       margin-bottom -2px
-      border-bottom 2px solid darken($accentColor, 15%)
+      border-bottom 2px solid lighten($accentColor, 8%)
 </style>

@@ -1,7 +1,7 @@
 import {
   HopeHeadOptionConfig,
   HopeVuepressConfig
-} from '../typings/hopeConfig';
+} from '../../typings';
 
 /** meta 键名 */
 let metaKeys: string[];

@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-13 13:59:35
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-22 19:41:39
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-22 10:06:16
  * @Description: 主页
 -->
 <template>
@@ -48,7 +48,7 @@
 
 <script>
 import NavLink from '@theme/components/NavLink.vue';
-import navigate from '../lib/navigate';
+import navigate from '../util/navigate';
 
 export default {
   components: { NavLink },

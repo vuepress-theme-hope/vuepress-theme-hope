@@ -2,12 +2,12 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-21 18:40:25
+ * @LastEditTime : 2020-01-22 09:43:39
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
-import { ResolvedHopeThemeConfig } from './typings';
-import pluginConfig from './plugins';
+import { ResolvedHopeThemeConfig } from '../typings';
+import pluginConfig from './lib/plugins';
 
 interface ThemeOptionAPI extends PluginOptionAPI {
   extend?: string;

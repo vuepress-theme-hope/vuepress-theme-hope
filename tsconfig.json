@@ -37,11 +37,11 @@
   },
   "include": [
     "packages/**/index.ts",
-    "packages/**/globals.d.ts",
-    "packages/theme/**/*.ts"
+    "packages/**/typings/*.d.ts",
+    "packages/theme/lib/*.ts",
+    "packages/theme/resolve.ts"
   ],
   "exclude": [
-    "packages/md-enhance/src/presets/*.ts",
-    "packages/theme/src/lib/navigate.ts"
+    "packages/md-enhance/src/presets/*.ts"
   ]
 }

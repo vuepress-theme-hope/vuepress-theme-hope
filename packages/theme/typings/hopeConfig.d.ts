@@ -15,6 +15,16 @@ export interface HopeFooterConfig {
   displayDefault?: boolean;
 }
 
+/** 加密选项 */
+export interface EncryptOptions {
+  /** 最高权限密码 */
+  global?: string | string[];
+  /** 是否全局加密 */
+  globalEncrypt?: boolean;
+  /** 加密配置 */
+  config?: Record<string, string | string[]>;
+}
+
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig extends VuepressThemeConfig {
   /** 根目录对应的语言 */
@@ -47,6 +57,8 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   markdown?: MarkdownEnhanceOption;
   /** 评论设置 */
   comment?: CommentOptions;
+  /** 加密设置 */
+  encrypt?: EncryptOptions;
 }
 
 /** 处理后的 vuepress-theme-hope 主题配置 */

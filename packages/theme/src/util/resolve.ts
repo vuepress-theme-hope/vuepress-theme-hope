@@ -10,7 +10,7 @@ import {
   isExternal,
   normalize,
   resolvePath
-} from './path';
+} from '../lib/path';
 
 interface SidebarGroup extends SideBarConfigItemObject {
   type: 'page' | 'group' | 'auto';
