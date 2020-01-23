@@ -6,8 +6,8 @@ import {
 import { VuepressConfig, VuepressThemeConfig } from './vuepressConfig';
 import { CommentOptions } from '@mr-hope/vuepress-plugin-comment';
 import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance';
+import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
 import { ThemeColorOptions } from '@mr-hope/vuepress-plugin-theme-color';
-
 export interface HopeFooterConfig {
   /** 页脚的默认文字 */
   text?: string;
@@ -57,6 +57,8 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   markdown?: MarkdownEnhanceOption;
   /** 评论设置 */
   comment?: CommentOptions;
+  /** PWA 设置 */
+  pwa?: PWAOptions;
   /** 加密设置 */
   encrypt?: EncryptOptions;
 }

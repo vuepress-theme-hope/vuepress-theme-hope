@@ -49,8 +49,7 @@ export default class SWUpdatePopup extends Vue {
   private updateEvent: any = null;
 
   private get enabled() {
-    return true;
-    // return Boolean(this.updateEvent);
+    return Boolean(this.updateEvent);
   }
 
   private get message() {

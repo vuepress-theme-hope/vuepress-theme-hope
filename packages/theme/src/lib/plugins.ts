@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-22 10:02:05
+ * @LastEditTime : 2020-01-23 22:57:03
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -97,7 +97,7 @@ const pluginConfig = (options: any): PluginConfig[] => {
     ['md-enhance', options.markdown || false],
 
     /** PWA 插件 */
-    ['@mr-hope/pwa'],
+    ['@mr-hope/pwa', options.pwa === false ? false : options.pwa],
 
     // /** 主题色插件 */
     ['@mr-hope/theme-color', options.themeColor]
