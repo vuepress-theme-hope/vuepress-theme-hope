@@ -75,6 +75,15 @@ export interface VuepressThemeConfig {
   editLinkText?: string;
 }
 
+interface LocalesConfig {
+  /** 当前语言代码 */
+  lang?: string;
+  /** 当前语言下的标题 */
+  title?: string;
+  /** 当前语言下的描述 */
+  description?: string;
+}
+
 export interface BaseVuepressConfig {
   /** 部署站点的基础路径 */
   base?: string;
@@ -95,7 +104,7 @@ export interface BaseVuepressConfig {
   dest?: string;
   /** 提供多语言支持的语言配置 */
 
-  locales?: Record<string, any>;
+  locales?: Record<string, LocalesConfig>;
   /** 一个函数，用来控制对于哪些文件，是需要生成 `<link rel="prefetch">` 资源提示的 */
   shouldPrefetch?: Function;
   /** 此选项可以用于指定 cache 的路径，同时也可以通过设置为 `false` 来在每次构建之前删除 cache */

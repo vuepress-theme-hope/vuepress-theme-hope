@@ -8,6 +8,8 @@ import { CommentOptions } from '@mr-hope/vuepress-plugin-comment';
 import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance';
 import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
 import { ThemeColorOptions } from '@mr-hope/vuepress-plugin-theme-color';
+
+/** 页脚配置 */
 export interface HopeFooterConfig {
   /** 页脚的默认文字 */
   text?: string;
@@ -29,22 +31,26 @@ export interface EncryptOptions {
 export interface HopeThemeConfig extends VuepressThemeConfig {
   /** 根目录对应的语言 */
   baseLang?: string;
-  /** 导航栏链接 */
-  nav?: HopeNavBarConfig;
-  /** 侧边栏配置 */
-  sidebar?: HopeSideBarConfig;
   /** 默认作者 */
   author?: string;
   /** 图标前缀 */
   iconPrefix?: string;
+  /** 导航栏链接 */
+  nav?: HopeNavBarConfig;
+  /** 侧边栏配置 */
+  sidebar?: HopeSideBarConfig;
+  /** 是否在侧边栏显示图标 */
+  sidebarIcon?: boolean;
   /** 是否全局启用路径导航 */
   breadcrumb?: boolean;
   /** 是否在路径导航显示图标 */
   breadcrumbIcon?: boolean;
-  /** 是否在侧边栏显示图标 */
-  sidebarIcon?: boolean;
   /** 页脚配置 */
   footer?: HopeFooterConfig;
+  /** 多语言配置 */
+  locales?: Record<string, HopeLangLocalesConfig>;
+  /** 是否启用平滑滚动 */
+  smoothScroll?: boolean;
   /** 是否显示返回顶部按钮 */
   backToTop?: boolean;
   /** 是否在导航栏显示仓库链接 */
@@ -79,6 +85,7 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   editLinks: boolean;
 }
 
+/** 头部选项配置 */
 export interface HopeHeadOptionConfig {
   /** 网站的图标 */
   icon?: string;

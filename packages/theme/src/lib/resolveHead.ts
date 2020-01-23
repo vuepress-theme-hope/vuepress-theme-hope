@@ -61,7 +61,7 @@ const setPWA = (headOption: HopeHeadOptionConfig): void => {
 };
 
 /**
- * 处理了头部选项
+ * 处理头部选项
  *
  * @param config 项目配置
  */

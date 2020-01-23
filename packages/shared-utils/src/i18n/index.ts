@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-11-23 18:48:57
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-21 23:21:56
+ * @LastEditTime : 2020-01-23 23:32:50
  * @Description: 多语言配置
  */
 import {
@@ -13,7 +13,7 @@ import {
   localesConfig,
   path2langConfig
 } from './config';
-import { HopeLangLocalesConfig } from '../../typings';
+import { ResolvedHopeLangLocalesConfig } from '../../typings';
 
 export const checkLang = (lang: string): boolean =>
   langs.includes(lang as Langs);
@@ -55,7 +55,7 @@ export const path2lang = (path: string): string => {
  *
  * @param lang
  */
-export const getLocale = (lang: string): HopeLangLocalesConfig => {
+export const getLocale = (lang: string): ResolvedHopeLangLocalesConfig => {
   if (localesConfig[lang]) return localesConfig[lang];
 
   console.error(

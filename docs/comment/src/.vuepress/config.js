@@ -2,17 +2,14 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 14:02:08
+ * @LastEditTime : 2020-01-23 23:57:47
  * @Description: Vuepress配置
  */
 
 const resolve = require('vuepress-theme-hope/resolve');
 
 module.exports = resolve({
-  /** 网站标题 */
   title: '评论插件',
-
-  /** 网站在该语言下的描述 */
   description: 'Vuepress 的 评论插件',
 
   headOption: {
@@ -26,8 +23,6 @@ module.exports = resolve({
       msTileColor: '#ffffff'
     }
   },
-
-  /** 生成网站头部的标签 */
   head: [
     [
       'link',
@@ -40,25 +35,129 @@ module.exports = resolve({
   ],
 
   temp: './node_modules/.temp/comment',
-
-  /** 构建文件输出目录 */
   dest: './dist',
 
-  /** 多语言配置选项
-   *
-   * 键名是该语言所属的子路径
-   * 作为特例，默认语言可以使用 '/' 作为其路径。
-   */
   locales: {
-    /** 英文设置 */
     '/en/': {
-      /** 网站在该语言下的标题 */
       title: 'Comment Plugin',
-
-      /** 网站在该语言下的描述 */
       description: 'Comment Plugin for Vuepress'
     }
   },
-  /** 主题配置 */
-  themeConfig: require('./themeConfig')
+
+  themeConfig: {
+    logo: '/logo.svg',
+
+    nav: [
+      { text: '主页', icon: 'homefill', link: '/' },
+      {
+        text: '指南',
+        icon: 'creativefill',
+        items: [
+          { text: 'Valine', icon: 'valine', link: '/guide/valine.html' },
+          { text: 'Vssue', icon: 'vssue', link: '/guide/vssue.html' }
+        ]
+      },
+      {
+        text: '配置',
+        icon: 'api',
+        items: [
+          { text: 'API', icon: 'api', link: '/api/' },
+          { text: 'Valine', icon: 'valine', link: '/api/valine.html' },
+          { text: 'Vssue', icon: 'vssue', link: '/api/vssue.html' }
+        ]
+      }
+    ],
+
+    sidebar: {
+      '/guide/': [
+        '',
+        'valine',
+        {
+          title: 'Vssue',
+          icon: 'vssue',
+          children: [
+            'vssue',
+            {
+              title: '支持平台',
+              icon: 'support',
+              children: [
+                'supported-platforms',
+                'github',
+                'gitlab',
+                'gitee',
+                'bitbucket'
+              ]
+            }
+          ]
+        }
+      ],
+      '/api/': ['', 'valine', 'vssue']
+    },
+
+    iconPrefix: 'vuepress-',
+
+    markdown: {
+      enableAll: true
+    },
+
+    comment: {
+      type: 'valine',
+      appId: 'GG2VSnGiz09Rx18y2OUzdaHS-gzGzoHsz',
+      appKey: 'fBf2dptTBHxNqALKrzUlBXeB'
+    },
+
+    locales: {
+      '/en/': {
+        nav: [
+          { text: 'Home', icon: 'homefill', link: '/en/' },
+          {
+            text: 'Guide',
+            icon: 'creativefill',
+            items: [
+              { text: 'Valine', icon: 'valine', link: '/en/guide/valine.html' },
+              { text: 'Vssue', icon: 'vssue', link: '/en/guide/vssue.html' }
+            ]
+          },
+          {
+            text: 'Config',
+            icon: 'api',
+            items: [
+              { text: 'API', icon: 'api', link: '/en/api/' },
+              { text: 'Valine', icon: 'valine', link: '/en/api/valine.html' },
+              { text: 'Vssue', icon: 'vssue', link: '/en/api/vssue.html' }
+            ]
+          }
+        ],
+
+        sidebar: {
+          '/en/guide/': [
+            '',
+            'valine',
+            {
+              title: 'Vssue',
+              icon: 'vssue',
+              children: [
+                'vssue',
+                {
+                  title: 'Supported platforms',
+                  icon: 'support',
+                  children: [
+                    'supported-platforms',
+                    'github',
+                    'gitlab',
+                    'gitee',
+                    'bitbucket'
+                  ]
+                }
+              ]
+            }
+          ],
+          '/en/api/': ['', 'valine', 'vssue']
+        }
+      }
+    },
+
+    repo: 'https://github.com/mister-hope/vuepress-theme-hope',
+    docsDir: 'docs/comment'
+  }
 });

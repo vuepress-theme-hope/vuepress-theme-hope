@@ -2,16 +2,13 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 13:57:12
+ * @LastEditTime : 2020-01-24 00:01:18
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
 
 module.exports = resolve({
-  /** 网站标题 */
   title: 'Markdown 增强',
-
-  /** 网站在该语言下的描述 */
   description: 'Vuepress 的 Markdown 增强插件',
 
   headOption: {
@@ -25,8 +22,6 @@ module.exports = resolve({
       msTileColor: '#ffffff'
     }
   },
-
-  /** 生成网站头部的标签 */
   head: [
     [
       'link',
@@ -39,21 +34,60 @@ module.exports = resolve({
   ],
 
   temp: './node_modules/.temp/md-enhance',
-
-  /** 构建文件输出目录 */
   dest: './dist',
 
   locales: {
-    /** 英文设置 */
     '/en/': {
-      /** 网站在该语言下的标题 */
       title: 'Markdown Enhance Plugin',
-
-      /** 网站在该语言下的描述 */
       description: 'Markdown Enhancement for Vuepress'
     }
   },
 
-  /** 主题配置 */
-  themeConfig: require('./themeConfig')
+  themeConfig: {
+    logo: '/logo.svg',
+
+    nav: [
+      { text: '主页', icon: 'homefill', link: '/' },
+      { text: '指南', icon: 'creativefill', link: '/guide/' },
+      { text: '配置', icon: 'api', link: '/api.html' }
+    ],
+    sidebar: {
+      '/guide/': ['', 'sup-sub', 'align', 'footnote', 'flowchart', 'tex'],
+
+      '/': ['', 'guide/', 'api']
+    },
+
+    author: 'Mr.Hope',
+    iconPrefix: 'vuepress-',
+
+    /** Markdown设置 */
+    markdown: {
+      enableAll: true
+    },
+
+    locales: {
+      '/en/': {
+        nav: [
+          { text: 'Home', icon: 'homefill', link: '/en/' },
+          { text: 'Guide', icon: 'creativefill', link: '/en/guide/' },
+          { text: 'Config', icon: 'api', link: '/en/api.html' }
+        ],
+        sidebar: {
+          '/en/guide/': [
+            '',
+            'sup-sub',
+            'align',
+            'footnote',
+            'flowchart',
+            'tex'
+          ],
+
+          '/en/': ['', 'guide/', 'api']
+        }
+      }
+    },
+
+    repo: 'https://github.com/mister-hope/vuepress-theme-hope',
+    docsDir: 'docs/md-enhance'
+  }
 });

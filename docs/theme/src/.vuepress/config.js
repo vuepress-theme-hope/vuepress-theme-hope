@@ -2,16 +2,15 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 13:46:45
+ * @LastEditTime : 2020-01-24 00:08:26
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
+const navBarConfig = require('./config/navBar');
+const sideBarConfig = require('./config/sideBar');
 
 module.exports = resolve({
-  /** 网站标题 */
   title: 'vuepress-theme-hope',
-
-  /** 网站描述 */
   description: '一个轻量的 vuepress 主题',
 
   headOption: {
@@ -25,8 +24,6 @@ module.exports = resolve({
       msTileColor: '#ffffff'
     }
   },
-
-  /** 生成网站头部的标签 */
   head: [
     [
       'link',
@@ -39,31 +36,50 @@ module.exports = resolve({
   ],
 
   temp: './node_modules/.temp/theme',
-
-  /** 构建文件输出目录 */
   dest: './dist',
-
-  /**
-   * 多语言配置选项
-   *
-   * 键名是该语言所属的子路径
-   * 作为特例，默认语言可以使用 '/' 作为其路径。
-   */
-  locales: {
-    '/en/': {
-      /** 网站在该语言下的标题 */
-      title: 'vuepress-theme-hope',
-      /** 网站在该语言下的描述 */
-      description: 'A light vuepress theme'
-    }
-  },
-
   extraWatchFiles: [
     '.vuepress/config/navBar.js',
     '.vuepress/config/sideBar.js',
     '.vuepress/config/theme.js'
   ],
 
-  /** 主题配置 */
-  themeConfig: require('./config/theme')
+  locales: {
+    '/en/': {
+      title: 'vuepress-theme-hope',
+      description: 'A light vuepress theme'
+    }
+  },
+
+  themeConfig: {
+    logo: '/logo.svg',
+    nav: navBarConfig.zh,
+    sidebar: sideBarConfig.zh,
+    author: 'Mr.Hope',
+    iconPrefix: 'vuepress-',
+
+    markdown: {
+      enableAll: true
+    },
+
+    comment: {
+      type: 'valine',
+      appId: 'ENQC8OAX6E76OUB07ODFfUHm-gzGzoHsz',
+      appKey: '2JK4ezJDqxPTF7JLn5Wk6i8y'
+    },
+
+    locales: {
+      '/en/': {
+        nav: navBarConfig.en,
+        sidebar: sideBarConfig.en
+      }
+    },
+
+    algolia: {
+      apiKey: '4deb442097fb6a05638adf10ef86e222',
+      indexName: 'mrhope_vuepress-theme'
+    },
+
+    repo: 'https://github.com/mister-hope/vuepress-theme-hope',
+    docsDir: 'docs/theme'
+  }
 });

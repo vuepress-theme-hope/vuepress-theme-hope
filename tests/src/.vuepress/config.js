@@ -2,24 +2,21 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 11:12:02
+ * @LastEditTime : 2020-01-24 00:07:26
  * @Description: Vuepress配置
  */
 
 const resolve = require('vuepress-theme-hope/resolve');
+const navBarConfig = require('./config/navBar');
+const sideBarConfig = require('./config/sideBar');
 
 module.exports = resolve({
-  /** 网站标题 */
   title: 'Theme Demo',
-
-  /** 网站描述 */
   description: 'vuepress-theme-hope 的 demo',
 
   headOption: {
     icon: '/favicon.ico'
   },
-
-  /** 生成网站头部的标签 */
   head: [
     // pwa相关
     ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -46,21 +43,11 @@ module.exports = resolve({
   ],
 
   temp: './node_modules/.temp/test',
-
-  /** 构建文件输出目录 */
   dest: './dist',
 
-  /** 多语言配置选项
-   *
-   * 键名是该语言所属的子路径
-   * 作为特例，默认语言可以使用 '/' 作为其路径。
-   */
   locales: {
     '/en/': {
-      /** 网站在该语言下的标题 */
       title: 'Theme Demo',
-
-      /** 网站在该语言下的描述 */
       description: 'A demo for vuepress-theme-hope'
     }
   },
@@ -71,6 +58,47 @@ module.exports = resolve({
     '.vuepress/config/theme.js'
   ],
 
-  /** 主题配置 */
-  themeConfig: require('./config/theme')
+  themeConfig: {
+    logo: '/logo.svg',
+
+    nav: navBarConfig.zh,
+    sidebar: sideBarConfig.zh,
+
+    author: 'Mr.Hope',
+    footer: {
+      text: '默认页脚'
+    },
+
+    markdown: {
+      enableAll: true
+    },
+    comment: {
+      type: 'valine',
+      appId: 'msnseO76haIVIGvfJ10BKnpv-gzGzoHsz',
+      appKey: '9QMulKhu7EDp1va0TYXR2PrI'
+    },
+    encrypt: {
+      global: '01311031',
+      config: {
+        '/en/': ['1234', '5678'],
+        '/test/detail/': '1234',
+        '/test/footer/default': '5678'
+      }
+    },
+
+    locales: {
+      '/en/': {
+        nav: navBarConfig.en,
+        sidebar: sideBarConfig.en
+      }
+    },
+
+    repo: 'https://github.com/mister-hope/vuepress-theme-hope',
+    repoLabel: 'Github'
+    /** 分享设置 */
+    // share: {
+    //   content: ['qq', 'twitter', 'weibo'],
+    //   fallbackImage: '/logo.png'
+    // }
+  }
 });
