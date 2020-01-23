@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-23 21:04:48
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-22 09:59:05
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -46,6 +46,16 @@ module.exports = {
 
       /** 网站在该语言下的侧边栏 */
       sidebar: sideBarConfig.en
+    }
+  },
+
+  /** 加密设置 */
+  encrypt: {
+    global: '01311031',
+    config: {
+      '/en/': ['1234', '5678'],
+      '/test/detail/': '1234',
+      '/test/footer/default': '5678'
     }
   },
 

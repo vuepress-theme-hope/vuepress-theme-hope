@@ -2,11 +2,11 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 16:15:14
+ * @LastEditTime : 2020-01-22 18:47:31
  * @Description: 路径导航
 -->
 <template>
-  <nav :class="['breadcrumb',{disable:!enable}]">
+  <nav :class="['breadcrumb',{ disable: !enable }]">
     <ul v-if="enable">
       <li
         v-for="(item,index) in config"
@@ -38,9 +38,6 @@ interface BreadCrumbConfig {
 
 @Component
 export default class BreadCrumb extends Vue {
-  /** 路径导航配置 */
-  private config: BreadCrumbConfig[] = [];
-
   /** 是否启用路径导航 */
   private get enable() {
     const globalEnable = this.$themeConfig.breadcrumb !== false;
@@ -49,7 +46,7 @@ export default class BreadCrumb extends Vue {
     return (
       (globalEnable && pageEnable !== false) ||
       (!globalEnable && pageEnable === true)
-    );
+    ) && this.config.length > 1;
   }
 
   /** 图标前缀 */
@@ -63,14 +60,31 @@ export default class BreadCrumb extends Vue {
         : 'icon-';
   }
 
-  @Watch('$route')
-  onRouteChange(to: Route, from: Route) {
-    if (this.enable && to.path !== from.path)
-      this.config = this.getBreadCrumbConfig(to);
-  }
+  /** 路径导航配置 */
+  private get config(): BreadCrumbConfig[] {
+    /** 路径导航配置 */
+    const breadcrumbConfig: BreadCrumbConfig[] = [];
+    /** 页面对象 */
+    const { pages } = this.$site;
+    /** 页面路径 */
+    const links = this.getLinks(this.$route);
 
-  private mounted() {
-    if (this.enable) this.config = this.getBreadCrumbConfig(this.$route);
+    // 生成路径导航配置
+    for (let index = 1; index < links.length; index++)
+      for (let index2 = 0; index2 < pages.length; index2++) {
+        const element = pages[index2];
+
+        if (element.path === links[index]) {
+          breadcrumbConfig.push({
+            title: element.title,
+            icon: element.frontmatter.icon,
+            url: element.path
+          });
+          break;
+        }
+      }
+
+    return breadcrumbConfig;
   }
 
   /** 生成页面路径链接 */
@@ -93,34 +107,6 @@ export default class BreadCrumb extends Vue {
     });
 
     return links;
-  }
-
-  /** 生成路径导航配置 */
-  private getBreadCrumbConfig(route: Route) {
-    /** 页面对象 */
-    const { pages } = this.$site;
-    /** 路径导航配置 */
-    const breadcrumbConfig: BreadCrumbConfig[] = [];
-
-    /** 页面路径 */
-    const links = this.getLinks(route);
-
-    // 生成路径导航配置
-    for (let index = 1; index < links.length; index++)
-      for (let index2 = 0; index2 < pages.length; index2++) {
-        const element = pages[index2];
-
-        if (element.path === links[index]) {
-          breadcrumbConfig.push({
-            title: element.title,
-            icon: element.frontmatter.icon,
-            url: element.path
-          });
-          break;
-        }
-      }
-
-    return breadcrumbConfig;
   }
 };
 </script>
