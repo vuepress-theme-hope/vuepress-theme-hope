@@ -1,9 +1,9 @@
 <template>
   <transition name="sw-update-popup">
     <slot :reload="reload" :enabled="enabled" :message="message">
-      <div v-if="enabled" class="sw-update-popup">
+      <div v-if="enabled" class="sw-update-popup" @click="reload">
         <span class="text">{{ message }}</span>
-        <span class="refresh" @click="reload">
+        <span class="refresh">
           <svg
             viewBox="0 0 1024 1024"
             version="1.1"
@@ -49,11 +49,16 @@ export default class SWUpdatePopup extends Vue {
   private updateEvent: any = null;
 
   private get enabled() {
-    return Boolean(this.updateEvent);
+    return true;
+    // return Boolean(this.updateEvent);
   }
 
   private get message() {
     return i18n.getLocale(this.$lang).pwa;
+  }
+
+  private created() {
+    event.$on('sw-updated', this.onSWUpdated);
   }
 
   private onSWUpdated(updateEvent: any) {
@@ -87,9 +92,9 @@ export default class SWUpdatePopup extends Vue {
 
 .sw-update-popup
   position fixed
-  right 1em
-  bottom 1em
-  padding 12px 16px
+  right 1.5em
+  bottom 1.5em
+  padding 10px 12px
   display flex
   justify-content center
   align-items center
@@ -97,6 +102,7 @@ export default class SWUpdatePopup extends Vue {
   background #fff
   box-shadow 2px 2px 8px 4px rgba(0, 0, 0, 0.15)
   z-index 2
+  cursor pointer
 
   .text
     font-size 15px
@@ -107,7 +113,6 @@ export default class SWUpdatePopup extends Vue {
     margin-left 6px
     background-color $accentColor
     border-radius 50%
-    cursor pointer
 
     svg
       animation rotate 3s ease infinite
