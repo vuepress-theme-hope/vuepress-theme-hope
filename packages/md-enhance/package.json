@@ -3,7 +3,7 @@
   "version": "0.1.0-beta.32",
   "description": "markdown enhancement for vuepress",
   "main": "src/index.js",
-  "types": "src/globals.d.ts",
+  "types": "typings/index.d.ts",
   "scripts": {
     "test": "vue-cli-service test:unit test/",
     "test:serve": "vuepress dev test/demo",

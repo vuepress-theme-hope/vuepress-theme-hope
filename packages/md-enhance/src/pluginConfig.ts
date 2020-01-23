@@ -5,7 +5,7 @@
  * @LastEditTime : 2020-01-18 16:43:36
  * @Description: 插件配置
  */
-import { MarkdownEnhanceOption } from './globals';
+import { MarkdownEnhanceOption } from '../typings';
 import { PluginConfig } from 'vuepress-types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 

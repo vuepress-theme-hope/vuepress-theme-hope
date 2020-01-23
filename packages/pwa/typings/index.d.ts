@@ -1,4 +1,4 @@
-import './typings';
+import './declare';
 
 /** PWA 配置 */
 export interface PWAOptions {

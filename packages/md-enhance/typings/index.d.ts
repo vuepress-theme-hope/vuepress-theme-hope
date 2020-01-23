@@ -1,4 +1,4 @@
-import './typings';
+import './declare';
 
 /** md-enhance 插件配置 */
 export interface MarkdownEnhanceOption {

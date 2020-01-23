@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-theme-color.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-theme-color.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-theme-color?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-theme-color)
 
-Theme-color plugin for vuepress-theme-hope.
+Theme-color plugin for vuepress-theme-hope. You can also use it on `@vuepress/theme-default`.
 
 ## Usage
 
@@ -52,7 +52,7 @@ $colorPicker = {
 
 ---
 
-vuepress-theme-hope 的 主题色与夜间模式 插件。
+vuepress-theme-hope 的 主题色与夜间模式 插件。你也可以在默认主题上使用它。
 
 ## 使用
 

@@ -1,6 +1,6 @@
 import * as lineNumbers from '@vuepress/markdown/lib/lineNumbers';
 import { Context, PluginOptionAPI } from 'vuepress-types';
-import { MarkdownEnhanceOption } from './globals';
+import { MarkdownEnhanceOption } from '../typings';
 import flowchart from './markdown-it/flowchart';
 import footnote from './markdown-it/footnote';
 import pluginConfig from './pluginConfig';

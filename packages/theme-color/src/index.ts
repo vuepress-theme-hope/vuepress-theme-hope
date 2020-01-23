@@ -2,11 +2,11 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-13 18:40:39
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 18:43:52
+ * @LastEditTime : 2020-01-24 00:22:29
  * @Description:
  */
 import { PluginOptionAPI } from 'vuepress-types';
-import { ThemeColorOptions } from './globals';
+import { ThemeColorOptions } from '../typings';
 import { resolve } from 'path';
 
 export = (options: ThemeColorOptions): PluginOptionAPI =>

@@ -1,6 +1,8 @@
-/** 评论组件选项 */
+/** 评论组件通用选项 */
 interface BaseCommentOptions {
-  type: string;
+  /** 类型，有 `‘valine'` 和 `'vssue` 可选 */
+  type: 'valine' | 'vssue';
+  /** 默认作者 */
   author?: string;
 }
 
@@ -75,7 +77,7 @@ export interface VssueOptions extends BaseCommentOptions {
 /** vuepress-plugin-comment 配置 */
 export type CommentOptions = ValineOptions | VssueOptions;
 
-/** 评论组件配置选项 */
+/** 评论组件全局变量 */
 declare global {
   const COMMENT_OPTIONS: CommentOptions;
 }

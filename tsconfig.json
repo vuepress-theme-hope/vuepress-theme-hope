@@ -40,8 +40,5 @@
     "packages/**/typings/*.d.ts",
     "packages/theme/lib/*.ts",
     "packages/theme/resolve.ts"
-  ],
-  "exclude": [
-    "packages/md-enhance/src/presets/*.ts"
   ]
 }
