@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 16:13:23
+ * @LastEditTime : 2020-01-24 11:23:19
  * @Description: Valine 评论插件
 -->
 <template>
@@ -14,7 +14,7 @@
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
-import { ValineOptions } from './globals.d.ts';
+import { ValineOptions } from '../typings';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component
@@ -29,7 +29,7 @@ export default class Valine extends Vue {
     return valineConfig && valineConfig.appId && valineConfig.appKey;
   }
 
-  // 是否显示评论
+  /** 是否显示评论 */
   private get commentDisplay() {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.comment !== false;
@@ -120,7 +120,6 @@ export default class Valine extends Vue {
         background-color #282c34
 
       .vwrap .vheader .vinput:focus
-        // .vwrap .vheader .vinput:focus
         border-color $accentColor
 
       .vwrap .vedit .vctrl span:hover
@@ -129,9 +128,10 @@ export default class Valine extends Vue {
       .vbtn
         background-color #fff
 
-      .vbtn:active, .vbtn:hover
-        color #fff
-        background-color $accentColor
+        &:active, &:hover
+          color #fff
+          background-color $accentColor
+          border-color $accentColor
 
       .vlist .vcard .vhead .vnick
         color $accentColor

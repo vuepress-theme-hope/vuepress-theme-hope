@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 09:59:58
+ * @LastEditTime : 2020-01-24 11:17:41
  * @Description: 主题颜色选择
 -->
 <template>
@@ -31,32 +31,26 @@
 /* global THEME_COLOR_OPTIONS */
 import { Component, Vue } from 'vue-property-decorator';
 import NightmodeSwitch from './NightmodeSwitch.vue';
+import { ThemeColorOptions } from '../typings';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-type ColorPicker = Record<string, string>;
-
-interface ThemeOption {
-  /** 颜色列表 */
-  colorList: string[];
-  /** 颜色选择器 */
-  picker: ColorPicker;
-  /** 是否允许夜间模式 */
-  allowNightmode: boolean;
-}
-
 /** 默认颜色选择器 */
-const defaultPicker: ColorPicker = {
+const defaultPicker: Record<string, string> = {
   blue: '#2196f3',
   red: '#f26d6d',
   green: '#3eaf7c',
   orange: '#fb9b5f'
 };
 
+interface ThemeColorData extends ThemeColorOptions {
+  colorList: string[];
+}
+
 @Component({ components: { NightmodeSwitch } })
 export default class ThemeOptions extends Vue {
   private options = THEME_COLOR_OPTIONS;
 
-  private theme = {} as ThemeOption;
+  private theme = {} as ThemeColorData;
 
   private nightmodeEnable = false;
 

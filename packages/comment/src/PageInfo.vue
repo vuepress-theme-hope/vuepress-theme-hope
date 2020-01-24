@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-04 13:22:38
+ * @LastEditTime : 2020-01-24 11:12:38
  * @Description: 页面信息
 -->
 <template>
@@ -72,7 +72,7 @@
 /* global COMMENT_OPTIONS */
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
-import { ValineOptions } from './globals.d.ts';
+import { ValineOptions } from '../typings';
 
 @Component
 export default class PageInfo extends Vue {

@@ -10,6 +10,10 @@ comment plugin for vuepress-theme-hope.
 npm i @mr-hope/vuepress-plugin-comment
 ```
 
+## Docs
+
+See [Official Docs](https://comment.mrhope.site/en/)
+
 ---
 
 vuepress-theme-hope 的 评论 插件。
@@ -19,3 +23,7 @@ vuepress-theme-hope 的 评论 插件。
 ```bash
 npm i @mr-hope/vuepress-plugin-comment
 ```
+
+## 文档
+
+请见 [官方文档](https://comment.mrhope.site/)
