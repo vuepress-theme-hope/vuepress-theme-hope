@@ -13,7 +13,7 @@ jobs:
       name: "Test and Deploy Theme Demo Test"
       script:
         - yarn run theme-test:build
-      before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
+      before_deploy: echo vuepress-theme-demo.mrhope.site >> tests/dist/CNAME
       deploy:
         provider: pages
         local_dir: tests/dist
@@ -28,7 +28,7 @@ jobs:
       name: "Build and Deploy Comment Docs"
       script:
         - yarn run comment-docs:build
-      before_deploy: echo comment.mrhope.site >> docs/comment/dist/CNAME
+      before_deploy: echo vuepress-comment.mrhope.site >> docs/comment/dist/CNAME
       deploy:
         provider: pages
         local_dir: docs/comment/dist
@@ -41,7 +41,7 @@ jobs:
       name: "Build and Deploy Markdown Enhance Docs"
       script:
         - yarn run md-enhance-docs:build
-      before_deploy: echo vuepress-md.mrhope.site >> docs/md-enhance/dist/CNAME
+      before_deploy: echo vuepress-md-enhance.mrhope.site >> docs/md-enhance/dist/CNAME
       deploy:
         provider: pages
         local_dir: docs/md-enhance/dist

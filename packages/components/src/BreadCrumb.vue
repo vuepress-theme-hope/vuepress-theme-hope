@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-22 18:47:31
+ * @LastEditTime : 2020-01-24 12:03:48
  * @Description: 路径导航
 -->
 <template>
@@ -27,6 +27,7 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
 
+/** 路径导航配置 */
 interface BreadCrumbConfig {
   /** 标题 */
   title: string;
@@ -126,6 +127,8 @@ h1, h2, h3, h4, h5, h6
 // 路径导航样式
 .breadcrumb
   @extend $wrapper
+  position relative
+  z-index 2
   font-size 15px
   white-space nowrap
   margin-top $navbarHeight
