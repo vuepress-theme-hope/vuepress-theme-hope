@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 00:01:18
+ * @LastEditTime : 2020-01-24 12:33:10
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
@@ -60,9 +60,13 @@ module.exports = resolve({
     author: 'Mr.Hope',
     iconPrefix: 'vuepress-',
 
-    /** Markdown设置 */
     markdown: {
       enableAll: true
+    },
+    comment: {
+      type: 'valine',
+      appId: 'YwtJvkJgikEDUjCFtygBQDwu-gzGzoHsz',
+      appKey: 'BHsA7vE2TVwHAVELEpherqh4'
     },
 
     locales: {
@@ -87,7 +91,7 @@ module.exports = resolve({
       }
     },
 
-    repo: 'https://github.com/mister-hope/vuepress-theme-hope',
+    repo: 'https://github.com/mister-hope/vuepress-theme-hope/',
     docsDir: 'docs/md-enhance'
   }
 });
