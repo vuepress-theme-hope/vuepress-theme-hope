@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-23 23:57:47
+ * @LastEditTime : 2020-01-24 12:36:24
  * @Description: Vuepress配置
  */
 
@@ -94,6 +94,7 @@ module.exports = resolve({
       '/api/': ['', 'valine', 'vssue']
     },
 
+    author: 'Mr.Hope',
     iconPrefix: 'vuepress-',
 
     markdown: {
