@@ -2,21 +2,14 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 11:12:38
+ * @LastEditTime : 2020-01-27 14:43:11
  * @Description: 页面信息
 -->
 <template>
   <div class="page-title">
     <h1>{{ $page.title }}</h1>
     <div v-if="author || enableVisitor" class="page-info">
-      <svg v-if="author" class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8
-          57.6 201.6 147.2 249.6-121.6 48-214.4 153.6-240 288-3.2 9.6 0 19.2 6.4 25.6 3.2 9.6 12.8 12.8
-          22.4 12.8h704c9.6 0 19.2-3.2 25.6-12.8 6.4-6.4 9.6-16 6.4-25.6-25.6-134.4-121.6-240-243.2-288z"
-          fill="currentColor"
-        />
-      </svg>
+      <AuthorIcon v-if="author" />
       <span v-if="author" v-text="author" />
       <svg
         v-if="enableVisitor"
@@ -57,12 +50,7 @@
       >
         <span :style="numStyle" class="leancloud-visitors-count">...</span>
       </span>
-      <svg v-if="time" class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M511.99730176 70.56849042c-243.79770498 0-441.42881133 197.63290459-441.42881133 441.43420783 0 243.79770498 197.63110635 441.42881133 441.42881133 441.42881132s441.43420781-197.63110635 441.43420781-441.42881133C953.43150958 268.20589238 755.79500674 70.56849042 511.99730176 70.56849042L511.99730176 70.56849042zM662.15499453 679.66072578l-15.60531972 15.60981623c-8.62065527 8.61525878-22.59538066 8.61525878-31.21513594-2e-8L472.19658682 552.12629434c-4.95024346-4.94394786-4.33955742-14.88850576-4.33955742-24.67746827L467.85702852 247.14037461c0-12.18943565 9.8816001-22.07013662 22.07013661-22.07013662l22.07013663 0c12.18943565 0 22.07013662 9.8816001 22.07013662 22.07013662l0 273.2176582 128.08755703 128.08755704C670.77564981 657.06534599 670.77564981 671.04097051 662.15499453 679.66072578L662.15499453 679.66072578zM662.15499453 679.66072578"
-          fill="currentColor"
-        />
-      </svg>
+      <TimeIcon v-if="time" />
       <span v-if="time" v-text="time" />
     </div>
   </div>
@@ -71,10 +59,12 @@
 <script lang='ts'>
 /* global COMMENT_OPTIONS */
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import AuthorIcon from '@mr-hope/vuepress-shared-utils/components/AuthorIcon.vue';
 import { Route } from 'vue-router';
+import TimeIcon from '@mr-hope/vuepress-shared-utils/components/TimeIcon.vue';
 import { ValineOptions } from '../typings';
 
-@Component
+@Component({ components: { AuthorIcon, TimeIcon } })
 export default class PageInfo extends Vue {
   private valineConfig: ValineOptions = COMMENT_OPTIONS;
 
