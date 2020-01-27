@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.0-beta.33](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.32...v0.1.0-beta.33) (2020-01-24)
+
+### Bug Fixes
+
+* style and bug fix ([26408ea](https://github.com/Mister-Hope/vuepress-theme-hope/commit/26408eac4e39d020331713be625be4cebfba5f02))
+* **pwa:** fix pwa popup not working ([54fdf9c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/54fdf9c096557962d470bc26af0fbe255e67b87d))
+* **theme-types:** fix readme badge ([e95d3a5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e95d3a5fde4ba721b74f4b1520c6c5f49ce14a4f))
+
+### Features
+
+* **pwa:** add an pwa option in theme ([e12e813](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e12e813681a4238431f47e9964e82bc972769b4e))
+* **theme:** add encrypt function ([9b2bc2d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9b2bc2df4da4c98f5d35c027c8e54a9765e7d90a))
+
 ## [0.1.0-beta.32](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.31...v0.1.0-beta.32) (2020-01-21)
 
 ### Bug Fixes
