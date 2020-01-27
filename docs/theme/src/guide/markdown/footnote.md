@@ -1,5 +1,6 @@
 ---
 icon: footnote
+category: markdown
 ---
 
 # 脚注 <MyBadge text="V0.0.8" />
@@ -10,7 +11,7 @@ icon: footnote
 
 默认启用，你也可以在主题配置禁用它：
 
-```js
+```js {3,5,6}
 module.exports = {
   themeConfig: {
     markdown: {

@@ -1,6 +1,7 @@
 ---
 breadcrumb: true
 icon: vue
+tag: vuepress
 prev: ../markdown/demo
 ---
 

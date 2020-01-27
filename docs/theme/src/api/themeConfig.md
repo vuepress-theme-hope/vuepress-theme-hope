@@ -4,6 +4,8 @@ icon: api
 
 # 主题配置
 
+除了查看本指南，您也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/typings/hopeConfig.d.ts) 或本文档的 [配置文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js)。
+
 ::: warning
 通过注入，vuepress-theme-hope 改变了默认主题一些配置的默认值。
 
@@ -20,6 +22,13 @@ icon: api
 - 默认值: `'zh-CN'`
 
 主目录所对应的语言
+
+## author
+
+- 类型: `String`
+- 必填: 否
+
+默认作者
 
 ## iconPrefix
 
@@ -49,20 +58,6 @@ SideBarItem 新增
 
 是否在侧边栏显示图标
 
-## author
-
-- 类型: `String`
-- 必填: 否
-
-默认作者
-
-## smoothScroll <MyBadge text="改变默认值" type="error" />
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否启用平滑滚动功能
-
 ## breadcrumb
 
 - 类型: `Boolean`
@@ -77,19 +72,30 @@ SideBarItem 新增
 
 是否在路径导航显示图标
 
-## footer.text
+## footer
+
+页脚设置选项
+
+### footer.text
 
 - 类型: `String`
 - 默认值: `'MIT Licensed | Copyright © 2019-present Mr.Hope'`
 
 页脚的默认文字
 
-## footer.displayDefault
+### footer.displayDefault
 
 - 类型: `Boolean`
 - 默认值: `false`
 
 是否显示默认页脚
+
+## smoothScroll <MyBadge text="改变默认值" type="error" />
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否启用平滑滚动功能
 
 ## backToTop
 
@@ -153,43 +159,83 @@ Markdown 增强配置
 - 类型: `boolean`
 - 默认值: `true`
 
-是否在每个代码块的左侧显示行号。
+是否在每个代码块的左侧显示行号
 
 ### markdown.sup
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用上角标格式支持。
+是否启用上角标格式支持
 
 ### markdown.sub
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用下角标格式支持。
+是否启用下角标格式支持
 
 ### markdown.footnote
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用脚注格式支持。
+是否启用脚注格式支持
 
 ### markdown.mathjax
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用 TeX 语法支持。
+是否启用 TeX 语法支持
 
 ### markdown.flowchart
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用 流程图 语法支持。
+是否启用 流程图 语法支持
 
 ## comment
 
 评论设置。具体详情请见　[@mr-hope/vuepress-plugin-comment](http://comment.mrhope.site/api/)
+
+## pwa
+
+PWA 设置选项
+
+## encrypt
+
+加密设置选项
+
+### encrypt.global
+
+- 类型: `string | string[]`
+- 必填: 否
+
+最高权限密码，可以以数组的形式设置多个
+
+### encrypt.globalEncrypt
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否全局加密
+
+### encrypt.config
+
+- 类型: `Record<string, string | string[]>`
+- 必填: 否
+
+加密配置，为一个对象，键名为匹配的路径，键值为对应的函数，接受字符串或字符串数组。
+
+例子：
+
+```js
+{
+  // 这会加密整个 guide 目录，并且两个密码都是可用的
+  "/guide/": ["1234", "5678"],
+  // 这只会加密 api/page.html
+  "/api/page.html": "1234"
+}
+```

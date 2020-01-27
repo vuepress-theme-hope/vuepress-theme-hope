@@ -1,6 +1,7 @@
 ---
 title: Markdown示例
 icon: markdown
+tag: markdown
 next: ../vuepress/
 ---
 

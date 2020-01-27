@@ -1,5 +1,9 @@
 ---
 icon: breadcrumb
+tag:
+  - component
+  - layout
+category: layout
 ---
 
 # 路径导航
@@ -9,7 +13,9 @@ icon: breadcrumb
 无需任何额外配置，一个和主题色相符合的路径导航会显示在页面内容最上方，帮助阅读者理解文档结构。
 
 ::: warning
-为了保证路径导航正常运行，每一个路径下均应包含 readme.md 文件
+为了保证路径导航更好的提示，建议在每一个路径下创建 readme.md 文件。
+
+否则，路径导航将因对应层级文件夹没有主页，无法生成标题与链接，而自动忽略那一层级。
 :::
 
 ## 启用与禁用 <MyBadge text="页面优先" />
@@ -28,7 +34,7 @@ icon: breadcrumb
     
     即在全局禁用后能在特定页面内启用，全局启用时也可在特定页面内禁用。
 
-    ::: tip 例子
+    ::: details 例子
     以路径导航为例：
   
     该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 frontmatter 中设置 `breadcrumb: false` 来局部禁用它。

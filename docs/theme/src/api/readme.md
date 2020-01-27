@@ -1,5 +1,6 @@
 ---
 icon: api
+tag: api
 ---
 
 # API 文档

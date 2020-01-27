@@ -1,5 +1,6 @@
 ---
 icon: page
+category: layout
 ---
 
 # 页面
@@ -10,11 +11,15 @@ icon: page
 
 可以在页面的 `frontmatter` 中设置 `author` 字段来设置作者名称。
 
+::: details 例子
+
 ```md
 ---
 author: Mr.Hope
 ---
 ```
+
+:::
 
 作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。可以在页面的 frontmatter 中设置 author 为 `false` 取消作者显示。
 
@@ -26,11 +31,15 @@ author: Mr.Hope
 
 可以在页面的 `frontmatter` 中设置 `time` 字段来设置写作时间。
 
+::: details 例子
+
 ```md
 ---
 time: 2020-1-1
 ---
 ```
+
+:::
 
 ## 评论
 
@@ -42,11 +51,15 @@ time: 2020-1-1
 
 该图标会在 **路径导航** 和 **侧边栏** 中使用。
 
+::: details 例子
+
 ```md
 ---
 icon: Home
 ---
 ```
+
+:::
 
 ## 页脚支持
 
@@ -60,34 +73,44 @@ icon: Home
 同时，`footer` 还接受一个 object，使用 `text` 和 `link` 字段来快速设置一个页脚链接。
 :::
 
+::: details 例子
+
+启用默认的页脚文字：
+
 ```md
-> 启用默认的页脚文字：
 ---
 footer: true
 ---
+```
 
-> 自定义页脚文字
+自定义页脚文字
+
+```md
 ---
 footer: This website is served by Github Pages
 ---
+```
 
-> 快速定义页脚链接
+快速定义页脚链接
+
+```md
 ---
 footer:
   text: Mr.Hope
   link: https://github.com/Mister-Hope
 ---
+```
 
-> 自定义页脚
+自定义页脚
+
+```md
 ---
 footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
 ---
 ```
 
-## 返回顶部按钮
+:::
 
-vuepress-theme-hope 添加了一个自制的返回顶部控件，默认情况下将在下滑 300px 后显示。
+## 切换动画
 
-返回顶部按钮使用了一个圆形有色图标代替了默认主题中的箭头。
-
-你可以在 `themeConfig` 将 `backToTop` 设置为 `false` 来禁用它。
+在页面切换时，将会显示切换动画。

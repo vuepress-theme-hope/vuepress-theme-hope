@@ -10,24 +10,30 @@ features:
 - title: 主题色切换
   details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
   link: /guide/themecolor.html#自定义主题色
+
 - title: 夜间模式
-  details: 可以在官方主题与一套酷炫的夜间模式间自由切换
+  details: 可以自由切换日间模式与夜间模式
   link: /guide/themecolor.html#夜间模式
+
 - title: 浏览量与评论
   details: 配合 Valine 与 Vssue 来开启阅读量统计与评论支持
   link: /guide/comment.html
-- title: 默认主题的增强
-  details: 在默认主题基础上增强了一系列功能，包括路径导航、页脚支持、作者显示等
-- title: 图标支持
-  details: 贯穿整个主题的图标支持
+
+- title: 更多新特性
+  details: 在默认主题基础上增强了一系列功能，包括图标支持、路径导航、页脚支持、作者显示等
+
+- title: PWA 支持
+  details: 内置的 PWA 插件会让你的网站更像一个 APP。
+
+- title: TS 支持
+  details: 为你的 Vuepress 开启 Typescript 支持
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-### vuepress-theme-hope 是一个轻量主题
-
 ## 使用主题
 
-借助 Vuepress 强大的主题系统，启用主题从未如此简单。
+借助 Vuepress 强大的主题系统，启用主题十分简单。
 
 ### 安装
 
@@ -46,6 +52,14 @@ module.exports = resolve({
 });
 ```
 
-### 其他配置
+::: tip
+引入 resolve 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，给予你充分的提示。
+
+同时，resolve 函数也会在你预览或打包项目时针对你当前的配置项，为你补全一些默认配置，减少网站渲染时的计算压力。
+:::
+
+### FAQ
 
 如果主题引入后在运行中出现 Typescript 相关错误，这可能是你的项目没有正确对 Typescript 进行配置。
+
+具体详情请见 [FAQ](FAQ/readme.md)

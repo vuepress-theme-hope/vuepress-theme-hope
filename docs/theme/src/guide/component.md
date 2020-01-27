@@ -1,5 +1,6 @@
 ---
 icon: extension
+category: new function
 ---
 
 # 新增组件
@@ -20,3 +21,11 @@ icon: extension
 ``` md
 ### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
 ```
+
+## 返回顶部按钮 `<BackToTop />`
+
+vuepress-theme-hope 添加了一个自制的返回顶部控件，默认情况下将在下滑 300px 后显示。
+
+返回顶部按钮使用了一个圆形有色图标代替了默认主题中的箭头。
+
+你可以在 `themeConfig` 将 `backToTop` 设置为 `false` 来禁用它。

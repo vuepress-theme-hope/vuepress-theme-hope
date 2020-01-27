@@ -1,3 +1,9 @@
+---
+tag: 
+ - plugin
+ - api
+---
+
 # @vuepress/medium-zoom <MyBadge text="新增" />
 
 这个插件将会使你的图片支持点击缩放。

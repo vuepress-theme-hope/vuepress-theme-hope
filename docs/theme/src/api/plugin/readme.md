@@ -1,6 +1,9 @@
 ---
 copyright:
   minLength: 10
+tag: 
+ - plugin
+ - api
 ---
 
 # 插件说明

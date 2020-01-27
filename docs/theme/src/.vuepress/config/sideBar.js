@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-08 23:46:27
+ * @LastEditTime : 2020-01-27 14:15:45
  * @Description: 侧边栏配置
  */
 
@@ -15,8 +15,9 @@ module.exports = {
         children: ['', 'install']
       },
       {
-        title: '外观',
+        title: '布局',
         icon: 'skinfill',
+        prefix: 'layout/',
         children: ['navbar', 'sidebar', 'breadcrumb', 'page', 'home']
       },
       {
@@ -45,13 +46,21 @@ module.exports = {
       }
     ],
 
-    // fallback
     '/basic/': [
       {
         title: 'Markdown',
         prefix: 'markdown/',
         icon: 'markdown',
-        children: ['', 'demo', 'emoji']
+        children: [
+          '',
+          'demo',
+          {
+            title: 'Emoji',
+            prefix: 'emoji/',
+            icon: 'emoji',
+            children: ['', 'people', 'nature', 'object', 'locate', 'symbol']
+          }
+        ]
       },
       {
         title: 'Vuepress',
@@ -69,7 +78,7 @@ module.exports = {
       }
     ],
 
-    '/': ['', 'guide/', 'api/', 'basic/']
+    '/': ['', 'guide/', 'api/', 'basic/', 'FAQ/']
   },
   en: {
     '/en/guide/': [

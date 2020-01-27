@@ -1,10 +1,9 @@
 ---
 icon: align
+category: markdown
 ---
 
 # 自定义对齐
-
-## 语法
 
 通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
 
@@ -18,9 +17,8 @@ icon: align
 
 来对你的段落对齐进行自定义。
 
-## 演示
+::: details 演示
 
-::: danger 非稳定状态
 本主题仍在制作中，API 可能会有
 
 ~~~ center
@@ -32,11 +30,8 @@ icon: align
 ~~~ right
 [提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 ~~~
-
-:::
 
 ```md
-::: danger 非稳定状态
 本主题仍在制作中，API 可能会有
 
 ~~~ center
@@ -49,5 +44,6 @@ icon: align
 [提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 ~~~
 
-:::
 ```
+
+:::

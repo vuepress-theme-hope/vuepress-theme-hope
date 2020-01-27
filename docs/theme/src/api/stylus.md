@@ -1,3 +1,9 @@
+---
+tag: 
+ - api
+ - style
+---
+
 # stylus 配置
 
 `palette.styl` 新增如下变量：

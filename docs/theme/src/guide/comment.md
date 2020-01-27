@@ -6,7 +6,7 @@ icon: commentfill
 
 vuepress-theme-hope 通过内置 `@mr-hope/vuepress-plugin-comment`，实现了评论功能。
 
-```js
+```js {4-8}
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
@@ -21,6 +21,10 @@ module.exports = {
 
 有 Valine 和 Vssue 可以选择。
 
+::: tip
+如果你希望看到更详细的评论设置，可以访问 [@mr-hopevuepress-plugin-comment 插件文档](https://comment.mrhope.site)
+:::
+
 ## Valine
 
 借助 Valine，主题实现了无后端开启阅读量展示与评论功能。
@@ -32,7 +36,7 @@ module.exports = {
 应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了：
 
 ```js
-options = {
+{
   type: 'valine',
   appId: '...', // your appId
   appKey: '...' // your appKey
@@ -64,7 +68,7 @@ Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 
 ### 使用插件
 
-```js
+```js {5-15}
 // .vuepress/config.js
 
 module.exports = {

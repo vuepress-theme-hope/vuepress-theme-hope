@@ -1,11 +1,13 @@
 ---
 icon: infofill
+tag: intro
+category: instruction
 ---
 
 # 介绍
 
 ::: danger 非稳定状态
-本主题仍在制作中，不保证更新版本会出现 bug。
+本主题仍在制作中，可能会有一定数量的 bug。
 
 如果您在使用过程中遇到了 bug，可以 [提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
@@ -32,46 +34,37 @@ icon: infofill
 如果您希望阅读 Vuepress 默认主题配置，请访问 [Vuepress 默认主题配置](https://v1.vuepress.vuejs.org/zh/theme/default-theme-config.html)
 :::
 
-## 新增功能
+## 新增功能概览
 
-- **图标支持**
+- [**图标支持**](icon.md)
 
-  整个主题在多处都添加了 FontClass 格式图标的支持。
+- [**导航栏**](layout/navbar.md)
 
-  请在 `.vuepress/styles` 的 `index.styl` 中导入对应的图标css文件。例如：
-
-  ```css
-  @import '//at.alicdn.com/t/font_1426813_4mkpyb46f89.css'
-  ```
-
-  图标的前置名默认为 `icon-`，可以在主题配置[^themeConfig]中的 `iconPrefix` 字段进行更改。
-
-- [**导航栏**](navbar.md)
-
-  - [支持图标](navbar.md#对默认主题的改进)
+  - [图标支持](layout/navbar.md#对默认主题的改进)
   - [主题色切换](themecolor.md#自定义主题色)
   - [夜间模式](themecolor.md#夜间模式)
   - [全屏按钮](fullscreen.md)
 
-- [**页面**](page.md)
+- [**侧边栏**](layout/sidebar.md)
 
-  - [阅读量与作者信息展示](page.md#文章信息展示)
-  - [页面图标](page.md#图标支持)
+  - [图标支持](layout/sidebar.md#图标支持)
+  - [分组增强](layout/sidebar.md#分组增强)
+
+- [**页面**](layout/page.md)
+
+  - [阅读量与作者信息展示](layout/page.md#文章信息展示)
+  - [页面图标](layout/page.md#图标支持)
+  - [路径导航](layout/breadcrumb.md)
   - [底部评论](comment.md)
-  - [自定义页脚](page.md#页脚支持)
-  - [主页](home.md)
-
-- [**侧边栏**](sidebar.md)
-
-  - [图标显示](sidebar.md#图标支持)
-  - [分组增强](sidebar.md#分组增强)
-
-- [**路径导航**](breadcrumb.md)
-
-  添加了全新的路径导航，同时路径导航支持显示图标。
+  - [自定义页脚](layout/page.md#页脚支持)
+  - [主页](layout/home.md)
 
 - [**新增组件**](component.md)
 
+  - [返回顶部按钮 `<BackToTop />`](component.md)
+
   - [徽章 `<MyBadge />`](component.md#徽章): 在官方基础上增加了颜色支持
+
+- [**Markdown 增强**](markdown/readme.md)
 
 [^themeConfig]: 主题配置字段即 `.vuepress/config.js` 默认导出的 `themeConfig` 对象

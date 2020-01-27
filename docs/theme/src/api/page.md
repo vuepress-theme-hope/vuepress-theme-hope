@@ -1,5 +1,6 @@
 ---
 icon: api
+tag: api
 ---
 
 # 页面配置

@@ -1,5 +1,9 @@
 ---
 icon: nav
+tag: 
+  - enhance
+  - layout
+category: layout
 ---
 
 # 导航栏
@@ -14,9 +18,9 @@ icon: nav
 
   主题配置中的 NavBarItem 新增 `icon` 字段，填入对应图标的 FontClass 即可显示对应图标。
 
-下面是本文档的导航栏配置：
+::: details 本文档的导航栏配置
 
-```js
+```js {4-18}
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
@@ -34,15 +38,16 @@ module.exports = {
           { text: 'Vuepress', link: 'vuepress/', icon: 'vue' }
         ]
       }
-    ],
-
+    ]
   }
 }
 ```
 
+:::
+
 - 样式更改
 
-    全新设计的导航栏包含了底部的阴影。
+    全新设计的导航栏包含了底部的阴影。同时，搜索框的样式也有调整。
 
 - repo 隐藏
 

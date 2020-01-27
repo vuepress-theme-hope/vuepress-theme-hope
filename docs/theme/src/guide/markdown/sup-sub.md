@@ -1,5 +1,6 @@
 ---
 icon: superscript
+category: markdown
 ---
 
 # 上下角标 <MyBadge text="V0.0.8" />
@@ -8,7 +9,7 @@ icon: superscript
 
 ## 配置
 
-```js
+```js {3,5,7,8}
 module.exports = {
   themeConfig: {
     markdown: {
@@ -26,7 +27,7 @@ module.exports = {
 - 使用`^ ^`进行上角标标注。
 - 使用`~ ~`进行下角标标注。
 
-## 案例
+::: details 例子
 
 - 19^th^
 - H~2~O
@@ -35,3 +36,5 @@ module.exports = {
 - 19^th^
 - H~2~O
 ```
+
+:::

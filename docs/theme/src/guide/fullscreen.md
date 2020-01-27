@@ -1,5 +1,6 @@
 ---
 icon: full-screen
+category: new function
 ---
 
 # 全屏按钮
@@ -10,7 +11,7 @@ icon: full-screen
 如果当前浏览器不支持全屏，则全屏按钮会自动隐藏。
 :::
 
-```js
+```js {4}
 // .vuepress/config.js
 module.exports = {
   themeConfig: {

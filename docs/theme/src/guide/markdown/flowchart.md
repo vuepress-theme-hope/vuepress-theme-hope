@@ -1,5 +1,6 @@
 ---
 icon: flowchart
+category: markdown
 ---
 
 # 流程图支持 <MyBadge text="V0.0.10+" />
@@ -8,7 +9,7 @@ icon: flowchart
 
 ## 配置
 
-```js
+```js {3,5,6}
 module.exports = {
   themeConfig: {
     markdown: {
@@ -37,13 +38,13 @@ module.exports = {
 ## 演示
 
 @flowstart
-st=>start: Start|past:>http://www.google.com[blank]
-e=>end: End|future:>http://www.google.com
+st=>start: Start|past:><http://www.google.com[blank]>
+e=>end: End|future:><http://www.google.com>
 op1=>operation: My Operation|past
 op2=>operation: Stuff|current
 sub1=>subroutine: My Subroutine|invalid
 cond=>condition: Yes
-or No?|approved:>http://www.google.com
+or No?|approved:><http://www.google.com>
 c2=>condition: Good idea|rejected
 io=>inputoutput: catch something...|future
 

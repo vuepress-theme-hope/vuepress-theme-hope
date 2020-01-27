@@ -1,5 +1,6 @@
 ---
 icon: skinfill
+category: style
 ---
 
 # 主题色与夜间模式
@@ -20,7 +21,9 @@ vuepress-theme-hope 通过内置 `@mr-hope/vuepress-plugin-theme-color`，实现
 
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式来配置 `themeConfig.themeColor.picker`：
 
-```js
+::: details 例子
+
+```js {5-10}
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
@@ -36,7 +39,11 @@ module.exports = {
 }
 ```
 
+:::
+
 同时为了使 stylus 编译器正常工作，你还需要将颜色变量赋值给 `$colorPicker` 写入 `.vuepress/styles/palette.styl` 中：
+
+::: details 例子
 
 ```stylus
 // .vuepress/styles/palette.styl
@@ -48,6 +55,10 @@ $colorPicker = {
 }
 ```
 
+:::
+
 ## 夜间模式
 
 默认开启，可以将 `themeConfig` 中的 `themeColor.allowNightmode` 设置为 `false` 来禁用夜间模式。
+
+在夜间模式下，页面会使用黑色背景以保护您的眼睛。

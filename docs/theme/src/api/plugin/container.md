@@ -1,3 +1,9 @@
+---
+tag: 
+ - plugin
+ - api
+---
+
 # vuepress-plugin-container <MyBadge text="改进" />
 
 ::: warning
