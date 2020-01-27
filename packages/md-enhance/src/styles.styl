@@ -17,9 +17,30 @@
 // 页脚标注
 .footnote-ref
   position relative
-  margin-top (- $navbarHeight - 0.5rem)
+  margin-top - $navbarHeight - 0.5rem
   padding-top (($navbarHeight + 0.5rem))
 
   .footnote-anchor
     position absolute
     top 0
+
+// TODO: Remove
+&.details
+  display block
+  position relative
+  border-radius 2px
+  margin 1.6em 0
+  padding 1.6em
+  background-color #eee
+
+  h4
+    margin-top 0
+
+  figure, p
+    &:last-child
+      margin-bottom 0
+      padding-bottom 0
+
+  summary
+    outline none
+    cursor pointer

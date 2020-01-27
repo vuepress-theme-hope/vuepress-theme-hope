@@ -2,13 +2,14 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 16:43:36
+ * @LastEditTime : 2020-01-27 00:38:07
  * @Description: 插件配置
  */
 import { MarkdownEnhanceOption } from '../typings';
 import { PluginConfig } from 'vuepress-types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
+// eslint-disable-next-line max-lines-per-function
 const pluginConfig = (
   option: MarkdownEnhanceOption,
   themeConfig: Record<string, any>
@@ -41,7 +42,17 @@ const pluginConfig = (
     ['container', { type: 'tip', defaultTitle: tipTitle }],
     ['container', { type: 'warning', defaultTitle: warningTitle }],
     ['container', { type: 'danger', defaultTitle: dangerTitle }],
-
+    /** 自定义详情容器 */
+    [
+      'container',
+      {
+        type: 'details',
+        before: (info: string): string =>
+          `<details class="custom-block details"><summary>${info ||
+            'Details'}</summary>\n`,
+        after: (): string => '</details>\n'
+      }
+    ],
     /** 自定义居右容器 */
     ['container', { type: 'right', defaultTitle: '', marker: '~' }],
     /** 自定义居中容器 */

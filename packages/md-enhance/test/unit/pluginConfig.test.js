@@ -15,6 +15,8 @@ describe('Test pluginConfig generate', () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
+    pluginConfig.splice(3, 1);
+
     expect(pluginConfig).to.be.deep.equal([
       [
         'container',
@@ -68,6 +70,8 @@ describe('Test pluginConfig generate', () => {
     };
 
     const pluginConfig = resolveConfig(option, themeConfig);
+
+    pluginConfig.splice(3, 1);
 
     expect(pluginConfig).to.be.deep.equal([
       [
