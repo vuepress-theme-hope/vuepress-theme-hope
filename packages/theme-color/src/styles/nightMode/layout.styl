@@ -1,0 +1,33 @@
+@require './config'
+
+.theme-night
+  // 搜索框夜间模式
+  .search-box
+    input
+      background-color #000 !important
+
+      &:focus
+        border-color #9e9e9e
+
+    .suggestions
+      background-color #000
+
+    .suggestion.focused
+      background-color #0c0b0a
+
+  // 密码
+  .passwordCtn .inputCtn input
+    background-color #000 !important
+    color #fff !important
+
+  // 主页
+  .home
+    .hero .description
+      fontcolor()
+
+    .feature:hover
+      box-shadow 1px 1px 6px 0 rgba(223, 222, 219, 0.28)
+
+    .feature
+      h2, p
+        fontcolor()
