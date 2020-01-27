@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.33",
+    "@mr-hope/vuepress-shared-utils": "0.1.0-beta.33",
     "@types/lodash": "^4.14.149",
     "lodash": "^4.17.15",
     "screenfull": "5.0.1",

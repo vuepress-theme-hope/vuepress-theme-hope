@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:03
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-23 16:04:02
+ * @LastEditTime : 2020-01-25 23:06:00
  * @Description: 页面主体
  *
  * 为每个页面都添加了 路径导航 / 页脚 支持
@@ -106,8 +106,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@require '~@parent-theme/styles/wrapper.styl'
-
 .page
   padding-bottom 2rem
   display block

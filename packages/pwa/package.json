@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/pwa#readme",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.33",
+    "@mr-hope/vuepress-shared-utils": "0.1.0-beta.33",
     "@types/fs-extra": "^8.0.1",
     "@vuepress/shared-utils": "^1.2.0",
     "register-service-worker": "^1.6.2",
