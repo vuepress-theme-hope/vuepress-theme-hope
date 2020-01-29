@@ -33,7 +33,13 @@
     "types": [
       "@mr-hope/vuepress-theme-types",
       "vuepress-types"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@theme/*": [
+        "packages/theme/src/*"
+      ]
+    }
   },
   "include": [
     "packages/**/index.ts",
