@@ -8,7 +8,7 @@ import { resolve } from 'path';
 // eslint-disable-next-line max-lines-per-function
 export = (
   options: PWAOptions,
-  { base = '/', outDir, themeConfig }: Context
+  { base = '/', outDir }: Context
 ): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: 'pwa',
@@ -35,15 +35,6 @@ export = (
     }
   };
 
-  const { baseLang } = themeConfig;
-  const generateSWConfig = options.generateSWConfig || {};
-
-  // 使用何处的 workbox
-  if (!('importWorkboxFrom' in generateSWConfig))
-    if (typeof options.internal !== 'undefined')
-      generateSWConfig.importWorkboxFrom = options.internal ? 'local' : 'cdn';
-    else if (baseLang === 'zh-CN') generateSWConfig.importWorkboxFrom = 'local';
-
   config.generated = async (): Promise<any> => {
     const swFilePath = resolve(outDir, './service-worker.js');
 
@@ -55,7 +46,7 @@ export = (
       globPatterns: [
         '**/*.{js,css,html,png,jpg,jpeg,gif,svg,woff,woff2,eot,ttf,otf}'
       ],
-      ...generateSWConfig
+      ...(options.generateSWConfig || {})
     });
     await fs.writeFile(
       swFilePath,
