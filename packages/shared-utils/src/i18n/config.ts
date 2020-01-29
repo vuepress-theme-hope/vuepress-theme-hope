@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-23 23:32:30
+ * @LastEditTime : 2020-01-29 18:21:21
  * @Description: 多语言配置
  */
 import { ResolvedHopeLangLocalesConfig } from '../../typings';
@@ -48,7 +48,13 @@ export const localesConfig: Record<string, ResolvedHopeLangLocalesConfig> = {
       ],
       link: '带我回家'
     },
-    pwa: '发现新内容可用'
+    pwa: '发现新内容可用',
+    pagination: {
+      prev: '上一页',
+      next: '下一页',
+      navigate: '跳转到',
+      button: '前往'
+    }
   },
 
   /** 英文设置 */
@@ -78,7 +84,13 @@ export const localesConfig: Record<string, ResolvedHopeLangLocalesConfig> = {
       ],
       link: 'Take me home'
     },
-    pwa: 'New content is available.'
+    pwa: 'New content is available.',
+    pagination: {
+      prev: 'Prev',
+      next: 'Next',
+      navigate: 'Jump to',
+      button: 'Go'
+    }
   }
 };
 

@@ -75,19 +75,30 @@ export interface HopeLangLocalesConfig extends LangLocalesConfig {
   /** 主题色配置 */
   themeColor?: {
     /** 颜色提示文字 */
-    themeColor?: string;
+    themeColor: string;
     /** 夜间模式提示文字 */
-    nightmode?: string[];
+    nightmode: string[];
   };
   /** 404错误页 */
   error404?: {
     /** 错误提示语 */
-    text?: string[];
+    text: string[];
     /** 返回主页文字 */
-    link?: string;
+    link: string;
   };
   /** PWA 提示消息 */
   pwa?: string;
+  /** 分页多语言配置 */
+  pagination?: {
+    /** 上一页文字 */
+    prev: string;
+    /** 下一页文字 */
+    next: string;
+    /** 跳转文字 */
+    navigate: string;
+    /** 按钮文字 */
+    button: string;
+  };
 }
 
 /** 处理过的 vuepress-theme-hope 多语言配置 */
