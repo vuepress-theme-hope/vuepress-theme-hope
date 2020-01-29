@@ -42,7 +42,7 @@ export default class BreadCrumb extends Vue {
   /** 是否启用路径导航 */
   private get enable() {
     const globalEnable = this.$themeConfig.breadcrumb !== false;
-    const pageEnable: boolean = this.$page.frontmatter.breadcrumb;
+    const pageEnable = this.$page.frontmatter.breadcrumb;
 
     return (
       (globalEnable && pageEnable !== false) ||

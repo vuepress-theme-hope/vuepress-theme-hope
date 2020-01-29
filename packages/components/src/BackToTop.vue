@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 18:12:20
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-09 11:05:07
+ * @LastEditTime : 2020-01-29 12:16:35
  * @Description: 返回顶部组件
 -->
 <template>
@@ -48,7 +48,13 @@ export default class BackToTop extends Vue {
 
   /** 是否显示返回顶部按钮 */
   private get isDisplay() {
-    return this.$themeConfig.backtotop !== false && this.scrollTop > this.trigger;
+    const globalEnable = this.$themeConfig.backtotop !== false;
+    const pageEnable = this.$page.frontmatter.backtotop;
+
+    return (
+      (globalEnable && pageEnable !== false) ||
+      (!globalEnable && pageEnable === true)
+    ) && this.scrollTop > this.trigger;
   }
 
   private mounted() {

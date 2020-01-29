@@ -2,13 +2,13 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-27 14:43:11
+ * @LastEditTime : 2020-01-29 12:18:14
  * @Description: 页面信息
 -->
 <template>
   <div class="page-title">
     <h1>{{ $page.title }}</h1>
-    <div v-if="author || enableVisitor" class="page-info">
+    <div v-if="enable" class="page-info">
       <AuthorIcon v-if="author" />
       <span v-if="author" v-text="author" />
       <svg
@@ -127,6 +127,17 @@ export default class PageInfo extends Vue {
     }
 
     return '';
+  }
+
+  /** 是否显示 PageInfo */
+  private get enable() {
+    const pluginEnable = this.$themeConfig.pageInfo !== false;
+    const pageEnable = this.$page.frontmatter.pageInfo;
+
+    return (
+      (pluginEnable && pageEnable !== false) ||
+      (!pluginEnable && pageEnable === true)
+    ) && (this.author || this.enableVisitor || this.time);
   }
 
   private mounted() {

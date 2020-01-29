@@ -4,6 +4,8 @@ interface BaseCommentOptions {
   type: 'valine' | 'vssue';
   /** 默认作者 */
   author?: string;
+  /** 是否启用文章信息 */
+  pageInfo?: boolean;
 }
 
 /** Valine 配置 */
