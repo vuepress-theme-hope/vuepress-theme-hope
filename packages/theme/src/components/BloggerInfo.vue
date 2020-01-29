@@ -2,14 +2,14 @@
   <div class="blogger-info">
     <img v-if="bloggerAvatar" class="blogger-avatar" alt="blogger-avatar" :src="bloggerAvatar" />
     <h3 v-if="blogger" class="name" v-text="blogger " />
-    <div class="num">
+    <div class="num-wrapper">
       <div>
-        <h3>{{articleNum}}</h3>
-        <h6>文章</h6>
+        <div class="num">{{articleNum}}</div>
+        <div>文章</div>
       </div>
       <div>
-        <h3>{{$tag.list.length}}</h3>
-        <h6>标签</h6>
+        <div class="num">{{$tag.list.length}}</div>
+        <div>标签</div>
       </div>
     </div>
     <hr />
@@ -39,11 +39,11 @@ export default class BloggerInfo extends Vue {
   }
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 .blogger-info
   .blogger-avatar
     display block
-    margin 2rem auto
+    margin 2rem auto 0
     width 8rem
     height 8rem
     border-radius 50%
@@ -51,7 +51,7 @@ export default class BloggerInfo extends Vue {
   .name
     text-align center
 
-  .num
+  .num-wrapper
     display flex
     margin 0 auto 1rem
     width 80%
@@ -59,15 +59,13 @@ export default class BloggerInfo extends Vue {
     > div
       text-align center
       flex auto
+      font-size 14px
 
       &:first-child
         border-right 1px solid #333
 
-      h3
-        line-height auto
-        margin 0 0 0.6rem
-
-      h6
-        line-height auto
-        margin 0
+      .num
+        line-height 1.5
+        font-weight 600
+        font-size 20px
 </style>

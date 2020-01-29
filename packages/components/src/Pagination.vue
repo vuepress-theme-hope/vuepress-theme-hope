@@ -27,7 +27,7 @@
           @click="navigate(currentPage + 1)"
         >{{text.next}}</div>
       </div>
-      <div class="text">{{text.navigate}}:</div>
+      <div class="text">{{text.navigate}}:&nbsp;</div>
       <input v-model="input" type="text" @keypress.enter="jumpPage(input)" />
       <div class="navigateBtn" @click="jumpPage(input)">{{text.button}}</div>
     </div>
@@ -122,10 +122,10 @@ export default class Pagination extends Vue {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .pagation-wrapper
   font-weight 600
-  margin 20px auto 8px
+  margin 20px auto 12px
 
   .pagation-list
     display flex

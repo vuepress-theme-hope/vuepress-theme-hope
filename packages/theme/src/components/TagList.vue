@@ -4,14 +4,14 @@
       v-for="(tag, index) in tagList.list"
       :key="tag.path"
       class="tag"
-      :class="{ active: title == tag.name }"
+      :class="{ active: title === tag.name }"
       @click="clickTag(tag.path)"
     >
       <div class="tag-name">
         {{ tag.name }}
         <span
           class="tag-num"
-          :style="{ 'backgroundColor': color(index) }"
+          :style="{ backgroundColor: color(index) }"
         >{{tag.pages.length}}</span>
       </div>
     </li>
@@ -70,11 +70,8 @@ export default class TagList extends Vue {
     font-size 13px
     border-radius 0.25rem
     box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
+    overflow hidden
     transition all 0.5s
-
-    &:hover, &.active
-      background-color $accentColor
-      color #fff
 
     .tag-name
       display flex
@@ -85,6 +82,10 @@ export default class TagList extends Vue {
       justify-content space-between
       align-items center
       color #666
+
+      &:hover, &.active
+        background-color $accentColor
+        color #fff
 
       .tag-num
         margin-left 4px

@@ -1,5 +1,3 @@
-@require './config'
-
 .theme-night
   // 导航栏
   .navbar
@@ -24,3 +22,17 @@
   // 下拉列表
   .dropdown-wrapper .dropdown-title .title
     fontcolor()
+
+  // 搜索框
+  .search-box
+    input
+      background-color #000 !important
+
+      &:focus
+        border-color #9e9e9e
+
+    .suggestions
+      background-color #000
+
+    .suggestion.focused
+      background-color #0c0b0a

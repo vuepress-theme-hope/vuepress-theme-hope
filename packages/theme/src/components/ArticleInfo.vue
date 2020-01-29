@@ -61,7 +61,7 @@ export default class ArticleInfo extends Vue {
   display flex
   align-items center
   font-size 15px
-  color #777
+  color #888
 
   .icon
     width 16px

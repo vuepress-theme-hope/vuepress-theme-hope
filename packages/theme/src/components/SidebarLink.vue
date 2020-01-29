@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:14:48
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-21 23:37:16
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-29 22:30:42
  * @Description: 侧边栏链接
  *
  * 添加了图标支持
@@ -14,7 +14,7 @@ const renderIcon = (h, icon) => {
   if (icon[1])
     return h('i', {
       class: ['iconfont', `${icon[0]}${icon[1]}`],
-      style: 'margin-right:0.2em;'
+      style: 'margin-right: 0.2em;'
     });
 
   return null;

@@ -50,7 +50,12 @@
     </ModuleTransition>
 
     <ModuleTransition delay="0.36">
-      <Content class="home-center" custom />
+      <Content :key="$route.path" class="home-center" custom />
+    </ModuleTransition>
+
+    <!-- 页脚 -->
+    <ModuleTransition delay="0.40">
+      <PageFooter :key="$route.path" />
     </ModuleTransition>
   </div>
 </template>
@@ -191,6 +196,7 @@ export default class BlogPage extends Vue {
       top 70px
       transition all 0.3s
       margin-left 15px
+      margin-bottom 12px
       flex 0 0 300px
       height auto
       box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
@@ -217,9 +223,6 @@ export default class BlogPage extends Vue {
       h1
         margin 6rem auto 1.8rem
         font-size 2rem
-
-      h1, .description, .action
-        // margin: 1.2rem auto;
 
       .description
         font-size 1.2rem
