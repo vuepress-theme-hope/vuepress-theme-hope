@@ -5,7 +5,9 @@
     @touchend="onTouchEnd"
     @touchstart="onTouchStart"
   >
+    <!-- 密码弹窗 -->
     <Password v-if="globalEncrypt && !globalDescrypted" @enter="globalPassword = $event.value" />
+    <!-- 内容 -->
     <template v-else>
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
@@ -21,6 +23,8 @@
         @enter="setPassword"
       />
 
+      <BlogPage v-else-if="$page.frontmatter.blogpage" />
+
       <Home v-else-if="$page.frontmatter.home" />
 
       <Page v-else :sidebar-items="sidebarItems">
@@ -32,6 +36,7 @@
 </template>
 
 <script>
+import BlogPage from '@theme/components/BlogPage.vue';
 import Home from '@theme/components/Home.vue';
 import Navbar from '@theme/components/Navbar.vue';
 import Page from '@theme/components/Page.vue';
@@ -40,7 +45,7 @@ import Sidebar from '@parent-theme/components/Sidebar.vue';
 import { resolveSidebarItems } from '@theme/util';
 
 export default {
-  components: { Home, Page, Password, Sidebar, Navbar },
+  components: { BlogPage, Home, Page, Password, Sidebar, Navbar },
 
   data: () => ({
     isSidebarOpen: false,

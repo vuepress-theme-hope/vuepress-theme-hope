@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-13 13:59:35
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-22 10:06:16
+ * @LastEditTime : 2020-01-28 21:06:21
  * @Description: 主页
 -->
 <template>
@@ -42,7 +42,7 @@
 
     <Content class="theme-default-content custom" />
 
-    <div v-if="data.footer" class="footer" v-text="data.footer" />
+    <PageFooter />
   </main>
 </template>
 
@@ -140,12 +140,6 @@ export default {
 
     p
       color lighten($textColor, 25%)
-
-  .footer
-    padding 2.5rem
-    border-top 1px solid $borderColor
-    text-align center
-    color lighten($textColor, 25%)
 
 @media (max-width: $MQMobile)
   .home

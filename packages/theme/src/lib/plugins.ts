@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-23 22:57:03
+ * @LastEditTime : 2020-01-27 17:04:40
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -33,6 +33,38 @@ const pluginConfig = (options: any): PluginConfig[] => {
     /** 平滑滚动 */
     ['smooth-scroll', options.smoothScroll !== false],
 
+    /** 博客插件 */
+    [
+      '@vuepress/plugin-blog',
+      {
+        frontmatters: [
+          {
+            id: 'tag',
+            keys: ['tag', 'tags'],
+            path: '/tag/',
+            layout: 'BlogEntry',
+            scopeLayout: 'BlogEntry'
+          },
+          {
+            id: 'category',
+            keys: ['category', 'categories'],
+            path: '/category/',
+            layout: 'BlogEntry',
+            scopeLayout: 'BlogEntry'
+            /*
+             * },
+             * {
+             *   id: 'timeline',
+             *   keys: ['timeline'],
+             *   path: '/timeline/',
+             *   layout: 'TimeLines',
+             *   scopeLayout: 'TimeLine'
+             */
+          }
+        ]
+      }
+    ],
+
     /** 更新时间插件 */
     [
       '@vuepress/last-updated',
@@ -41,7 +73,9 @@ const pluginConfig = (options: any): PluginConfig[] => {
         transformer: (timestamp: number, lang: string): string => {
           moment.locale(lang);
 
-          return moment(timestamp).format('LLL');
+          return `${moment(timestamp).format('LL')} ${moment(timestamp).format(
+            'HH:mm'
+          )}`;
         }
       }
     ],
