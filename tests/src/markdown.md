@@ -1,5 +1,7 @@
 ---
 icon: markdown
+catgory: markdown
+tag: markdown
 ---
 
 # Markdown 增强
@@ -45,13 +47,13 @@ Duplicated footnote reference[^second].
 ## 流程图展示
 
 @flowstart
-st=>start: Start|past:>http://www.google.com[blank]
-e=>end: End|future:>http://www.google.com
+st=>start: Start|past:><http://www.google.com[blank]>
+e=>end: End|future:><http://www.google.com>
 op1=>operation: My Operation|past
 op2=>operation: Stuff|current
 sub1=>subroutine: My Subroutine|invalid
 cond=>condition: Yes
-or No?|approved:>http://www.google.com
+or No?|approved:><http://www.google.com>
 c2=>condition: Good idea|rejected
 io=>inputoutput: catch something...|future
 
@@ -66,5 +68,5 @@ c2(no)->op2->e
 
 Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
-$$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right) 
+$$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}$$

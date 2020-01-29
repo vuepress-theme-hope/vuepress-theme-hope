@@ -1,5 +1,6 @@
 ---
-password: 1234
+category: component
+tag: footer
 ---
 
 # 无页脚

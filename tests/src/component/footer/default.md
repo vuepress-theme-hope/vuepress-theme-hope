@@ -1,4 +1,6 @@
 ---
+category: component
+tag: footer
 footer: true
 ---
 

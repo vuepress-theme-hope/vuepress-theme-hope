@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-23 12:58:18
+ * @LastEditors  : Mr.Hope
+ * @LastEditTime : 2020-01-28 23:43:27
  * @Description: 导航栏配置
  */
 
@@ -10,13 +10,9 @@ module.exports = {
   zh: [
     { text: '主页', link: '/', icon: 'homefill' },
     {
-      text: '测试',
-      icon: 'infofill',
-      prefix: '/test/',
-      items: [
-        { text: '测试列表', link: '', icon: 'debug' },
-        { text: '页脚测试', link: 'footer/', icon: 'footer' }
-      ]
+      text: '组件',
+      icon: 'extension',
+      link: '/component/'
     },
     {
       text: '主题文档',

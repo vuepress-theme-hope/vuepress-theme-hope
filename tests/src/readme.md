@@ -1,4 +1,5 @@
 ---
+blogpage: true
 home: true
 title: vuepress-theme-hope
 heroImage: /logo.svg
@@ -14,9 +15,3 @@ features:
   details: 鼠标悬浮应该可以放大
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
-
-## 新增特性
-
-- 返回顶部按钮
-
-- 平滑滚动功能
