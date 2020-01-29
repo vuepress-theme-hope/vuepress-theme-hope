@@ -18,21 +18,19 @@ category: layout
 否则，路径导航将因对应层级文件夹没有主页，无法生成标题与链接，而自动忽略那一层级。
 :::
 
-## 启用与禁用 <MyBadge text="页面优先" />
+## 启用与禁用 <MyBadge text="支持局部配置" />
 
 该功能默认启用。可以在 `themeConfig` 将 `breadcrumb` 设置为 `false` 来禁用它。
 
-关于 **页面优先** 的更多介绍请见脚注[^applypartically]
+关于 **支持局部配置** 的更多介绍请见脚注[^applypartically]
 
 ## 图标支持
 
 默认启用图标支持，将在链接前显示页面的图标。可以在 `themeConfig` 将 `breadcrumbIcon` 设置为 `false` 来禁用它。
 
-[^applypartically]: **页面优先**
+[^applypartically]: **支持局部配置**
 
-    **页面优先** 指页面的配置将会覆盖全局的配置。
-    
-    即在全局禁用后能在特定页面内启用，全局启用时也可在特定页面内禁用。
+    **支持局部配置** 指主题允许页面的配置覆盖全局的配置。
 
     ::: details 例子
     以路径导航为例：

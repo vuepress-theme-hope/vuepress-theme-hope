@@ -1,6 +1,9 @@
 ---
 icon: full-screen
-category: new function
+category: function
+tag:
+  - fullscreen
+  - function
 ---
 
 # 全屏按钮

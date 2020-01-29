@@ -1,6 +1,9 @@
 ---
 icon: extension
-category: new function
+category: function
+tag:
+  - components
+  - function
 ---
 
 # 新增组件

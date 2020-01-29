@@ -1,4 +1,5 @@
 ---
+category: api
 tag: 
  - plugin
  - api
@@ -16,7 +17,7 @@ tag:
 
 默认配置如下：
 
-```js
+```js {4-10}
 module.exports = {
   plugins: [
     /** 复制操作处理 */

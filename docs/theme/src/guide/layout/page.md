@@ -5,46 +5,6 @@ category: layout
 
 # 页面
 
-## 文章信息展示
-
-### 作者
-
-可以在页面的 `frontmatter` 中设置 `author` 字段来设置作者名称。
-
-::: details 例子
-
-```md
----
-author: Mr.Hope
----
-```
-
-:::
-
-作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。可以在页面的 frontmatter 中设置 author 为 `false` 取消作者显示。
-
-### 阅读量 <MyBadge text="页面优先" />
-
-当配置 [评论功能](comment.md) 后，该功能默认启用。全局配置项为 `valine.visitor`，页面配置项为 `visitor`。
-
-### 时间
-
-可以在页面的 `frontmatter` 中设置 `time` 字段来设置写作时间。
-
-::: details 例子
-
-```md
----
-time: 2020-1-1
----
-```
-
-:::
-
-## 评论
-
-具体详情请见 [评论](comment.md) 章节。
-
 ## 图标支持
 
 可以在页面的 `frontmatter` 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
@@ -61,7 +21,57 @@ icon: Home
 
 :::
 
-## 页脚支持
+## 文章信息展示
+
+- **作者** <MyBadge text="支持局部配置" />
+
+  可以在页面的 `frontmatter` 中设置 `author` 字段来设置作者名称。
+
+  ::: details 例子
+
+  ```md
+  ---
+  author: Mr.Hope
+  ---
+  ```
+
+  :::
+
+  作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。可以在页面的 frontmatter 中设置 `author` 为 `false` 取消作者显示。
+
+- **阅读量** <MyBadge text="支持局部配置" />
+
+  当配置 [评论功能](../feature/comment.md) 后，该功能默认启用。全局配置项为 `valine.visitor`，页面配置项为 `visitor`，你可以将其禁用，或在全局金庸的情况下在特定页面启用。
+
+  ::: details 例子
+  
+  ```md
+  ---
+  visitor: false
+  ---
+  ```
+
+  :::
+
+- **时间**
+
+  可以在页面的 `frontmatter` 中设置 `time` 字段来设置写作时间。
+
+  ::: details 例子
+
+  ```md
+  ---
+  time: 2020-1-1
+  ---
+  ```
+
+  :::
+
+## 评论
+
+具体详情请见 [评论](../feature/comment.md) 章节。
+
+## 页脚支持 <MyBadge text="支持局部配置" />
 
 可以在页面的 `frontmatter` 中配置 `footer` 字段。
 
@@ -109,8 +119,12 @@ footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
 ---
 ```
 
+当你在主题中设置了 `footer.displayDefault` 为 true 时，你还可以局部禁用它
+
+```md
+---
+footer: false
+---
+```
+
 :::
-
-## 切换动画
-
-在页面切换时，将会显示切换动画。

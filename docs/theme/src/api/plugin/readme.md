@@ -1,4 +1,5 @@
 ---
+category: api
 copyright:
   minLength: 10
 tag: 
@@ -26,7 +27,7 @@ tag:
 
 ## 新增或修改的插件
 
-- [**@vuepress/plugin-pwa**](pwa.md) <MyBadge text="新增" />: PWA支持
+- [**@mr-hope/vuepress-plugin-pwa**](pwa.md) <MyBadge text="新增" />: PWA支持
 
 - [**@vuepress/medium-zoom**](medium-zoom.md) <MyBadge text="新增" />: 这个插件将会使你的图片支持点击缩放
 

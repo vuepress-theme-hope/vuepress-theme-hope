@@ -1,5 +1,9 @@
 ---
 icon: commentfill
+category: function
+tag:
+  - comment
+  - function
 ---
 
 # 评论功能

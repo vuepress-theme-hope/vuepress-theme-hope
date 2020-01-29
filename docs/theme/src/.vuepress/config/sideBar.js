@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-27 14:15:45
+ * @LastEditTime : 2020-01-28 15:00:09
  * @Description: 侧边栏配置
  */
 
@@ -18,11 +18,12 @@ module.exports = {
         title: '布局',
         icon: 'skinfill',
         prefix: 'layout/',
-        children: ['navbar', 'sidebar', 'breadcrumb', 'page', 'home']
+        children: ['', 'navbar', 'sidebar', 'breadcrumb', 'page', 'home']
       },
       {
         title: '新增功能',
         icon: 'skinfill',
+        prefix: 'feature/',
         children: ['themecolor', 'fullscreen', 'comment', 'component']
       },
       {

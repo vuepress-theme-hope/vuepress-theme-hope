@@ -8,16 +8,18 @@ category: layout
 
 # 侧边栏
 
-## 图标支持
+## 原有配置增强
 
-默认启用图标支持，将在侧边栏的链接前显示页面的图标。可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
+- 图标支持
 
-## 分组增强
+  默认启用图标支持，将在侧边栏的链接前显示页面的图标。可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
 
-可以在 SidebarGroupItem 中使用
+- 分组增强
 
-- `prefix`: 来添加默认的路径前缀。
-- `icon`: 添加图标
+  可以在 SidebarGroupItem 中使用
+
+  - `prefix`: 来添加默认的路径前缀。
+  - `icon`: 添加图标
 
 ::: details 本文档的侧边栏配置
 

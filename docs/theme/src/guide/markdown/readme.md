@@ -2,7 +2,7 @@
 icon: markdown
 ---
 
-# Markdown 中的新语法
+# Markdown 新语法
 
 vuepress-theme-hope 通过内置 [md-enhance](https://vuepress-md-enhance.mrhope.site/)，在 Markdown 中启用了更多的语法。
 

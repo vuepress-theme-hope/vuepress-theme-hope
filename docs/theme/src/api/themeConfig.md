@@ -1,5 +1,9 @@
 ---
 icon: api
+category: api
+tag: 
+  - api
+  - themeConfig
 ---
 
 # 主题配置

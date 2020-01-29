@@ -1,6 +1,9 @@
 ---
 icon: skinfill
-category: style
+category: function
+tag:
+  - style
+  - function
 ---
 
 # 主题色与夜间模式

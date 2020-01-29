@@ -1,5 +1,6 @@
 ---
 icon: api
+category: api
 tag: api
 ---
 
@@ -15,14 +16,14 @@ tag: api
 
 - [前往文档](themeConfig.md)
 
-## Frontmatter
+## frontmatter
 
 - [前往文档](page.md)
 
-## Style
+## style
 
 - [前往文档](stylus.md)
 
-## Plugin
+## plugin
 
 - [前往文档](plugin/readme.md)
