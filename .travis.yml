@@ -61,21 +61,6 @@ jobs:
         token: $Github_Token
         edge: true
 
-    # 部署文档
-    - stage: test-build
-      name: "Test Building of docs"
-      script:
-        - yarn run build:all
-      before_deploy: echo theme-demo.mrhope.site >> tests/dist/CNAME
-      deploy:
-        provider: pages
-        local_dir: tests/dist
-        token: $Github_Token
-        repo: Mister-Hope/theme-demo
-        edge: true
-        on:
-          all_branches: true
-
     # 测试 主题
     - stage: theme-test
       name: "Test Theme"
@@ -85,13 +70,10 @@ jobs:
 
 stages:
   - name: demo-deploy
-    if: branch = master
   - name: comment-docs
     if: branch = master
   - name: md-enhance-docs
     if: branch = master
   - name: theme-docs
     if: branch = master
-  - name: test-build
-    if: branch != master
   - name: theme-test
