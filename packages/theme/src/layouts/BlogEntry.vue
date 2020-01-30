@@ -31,6 +31,7 @@ import Navbar from '@theme/components/Navbar.vue';
 import Password from '@theme/components/Password.vue';
 import Sidebar from '@theme/components/Sidebar.vue';
 import Tag from '@theme/layouts/Tag.vue';
+import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
 @Component({ components: { Category, Password, Sidebar, Navbar, Tag } })
 export default class BlogEntry extends Vue {
@@ -42,7 +43,6 @@ export default class BlogEntry extends Vue {
 
   private get componentName() {
     const links = this.$route.path.split('/');
-    const capitalize = (word: string) => `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;
 
     if (links.length === 2 || links.length === 3 || (links.length === 4 && links[3] === ''))
       return `${capitalize(links[1])}`;

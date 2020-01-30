@@ -6,6 +6,9 @@ import i18nConfig from './i18n';
 
 export * from '../typings';
 
+export const capitalize = (word: string): string =>
+  `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;
+
 export const deepAssign = deepAssignFunction;
 export const deepAssignReverse = deepAssignReverseFunction;
 

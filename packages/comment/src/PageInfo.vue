@@ -2,56 +2,48 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-29 12:18:14
+ * @LastEditTime : 2020-01-30 11:43:35
  * @Description: 页面信息
 -->
 <template>
   <div class="page-title">
     <h1>{{ $page.title }}</h1>
     <div v-if="enable" class="page-info">
-      <AuthorIcon v-if="author" />
-      <span v-if="author" v-text="author" />
-      <svg
-        v-if="enableVisitor"
-        class="icon"
-        viewBox="0 0 1024 1024"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          v-if="count < 1000"
-          d="M992 512.096c0-5.76-0.992-10.592-1.28-11.136-0.192-2.88-1.152-8.064-2.08-10.816-0.256-0.672-0.544-1.376-0.832-2.08-0.48-1.568-1.024-3.104-1.6-4.32C897.664 290.112 707.104 160 512 160 316.928 160 126.368
-            290.016 38.24 482.592c-1.056 2.112-1.792 4.096-2.272 5.856-0.224 0.544-0.448 1.088-0.64
-            1.6-1.76 5.088-1.792 8.64-1.632 7.744-0.832 3.744-1.568 11.168-1.568 11.168-0.224 2.272-0.224
-            4.032 0.032 6.304 0 0 0.736 6.464 1.088 7.808 0.128 1.824 0.576 4.512 1.12 6.976l-0.032 0c0.448
-            2.08 1.12 4.096 1.984 6.08 0.48 1.536 0.992 2.976 1.472 4.032C126.432 733.856 316.992 864 512
-            864c195.136 0 385.696-130.048 473.216-321.696 1.376-2.496 2.24-4.832 2.848-6.912 0.256-0.608
-            0.48-1.184 0.672-1.728 1.536-4.48 1.856-8.32 1.728-8.32 0 0 0 0-0.032 0.032C991.04 522.272 992
-            517.632 992 512.096zM512 672c-88.224 0-160-71.776-160-160s71.776-160 160-160 160 71.776 160
-            160S600.224 672 512 672z"
-          fill="currentColor"
-        />
-        <path
-          v-else
-          d="M726.4 201.6c-12.8-9.6-28.8-6.4-38.4 0-9.6 9.6-16 25.6-9.6 38.4 6.4 12.8 9.6 28.8 12.8
-            44.8-86.4-201.6-230.4-246.4-236.8-249.6-9.6-3.2-22.4 0-28.8 6.4-9.6 6.4-12.8 19.2-9.6 28.8
-            12.8 86.4-25.6 188.8-115.2 310.4-6.4-25.6-16-51.2-32-80-9.6-9.6-22.4-16-35.2-12.8-16 3.2-25.6
-            12.8-25.6 28.8-3.2 48-25.6 92.8-51.2 140.8-22.4 41.6-44.8 86.4-54.4 134.4-32 150.4 99.2
-            329.6 233.6 380.8 9.6 3.2 19.2 6.4 32 9.6-25.6-19.2-41.6-51.2-48-96-25.6-195.2 185.6-246.4
-            195.2-425.6 153.6 105.6 224 336 137.6 505.6 3.2 0 6.4-3.2 9.6-3.2 0 0 3.2 0 3.2-3.2 163.2-89.6
-            252.8-208 259.2-345.6 16-211.2-163.2-390.4-198.4-412.8z"
-          fill="currentColor"
-        />
-      </svg>
-      <span
-        v-if="enableVisitor"
-        :id="visitorID"
-        :data-flag-title="$page.title"
-        class="leancloud_visitors"
-      >
-        <span :style="numStyle" class="leancloud-visitors-count">...</span>
-      </span>
-      <TimeIcon v-if="time" />
-      <span v-if="time" v-text="time" />
+      <!-- 作者 -->
+      <template v-if="author">
+        <AuthorIcon />
+        <span v-text="author" />
+      </template>
+
+      <!-- 访客 -->
+      <template v-if="enableVisitor">
+        <EyeIcon v-if="count < 1000" />
+        <FireIcon v-else />
+        <span :id="visitorID" :data-flag-title="$page.title" class="leancloud_visitors">
+          <span :style="numStyle" class="leancloud-visitors-count">...</span>
+        </span>
+      </template>
+
+      <!-- 时间 -->
+      <template v-if="time">
+        <TimeIcon />
+        <span v-text="time" />
+      </template>
+
+      <!-- 分类 -->
+      <template v-if="category">
+        <CategoryIcon />
+        <span v-text="category" />
+      </template>
+
+      <!-- 标签 -->
+      <template v-if="tag">
+        <TagIcon />
+        <span v-if="typeof tag === 'string'">{{tag}}</span>
+        <span v-else>
+          <template v-for="item in tag" v-text="item" />
+        </span>
+      </template>
     </div>
   </div>
 </template>
@@ -59,12 +51,17 @@
 <script lang='ts'>
 /* global COMMENT_OPTIONS */
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import AuthorIcon from '@mr-hope/vuepress-shared-utils/components/AuthorIcon.vue';
+import AuthorIcon from '@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue';
+import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
+import EyeIcon from '@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue';
+import FireIcon from '@mr-hope/vuepress-shared-utils/icons/FireIcon.vue';
 import { Route } from 'vue-router';
-import TimeIcon from '@mr-hope/vuepress-shared-utils/components/TimeIcon.vue';
+import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
+import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import { ValineOptions } from '../typings';
+import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
-@Component({ components: { AuthorIcon, TimeIcon } })
+@Component({ components: { AuthorIcon, CategoryIcon, EyeIcon, FireIcon, TagIcon, TimeIcon } })
 export default class PageInfo extends Vue {
   private valineConfig: ValineOptions = COMMENT_OPTIONS;
 
@@ -138,6 +135,24 @@ export default class PageInfo extends Vue {
       (pluginEnable && pageEnable !== false) ||
       (!pluginEnable && pageEnable === true)
     ) && (this.author || this.enableVisitor || this.time);
+  }
+
+  /** 分类 */
+  private get category() {
+    const { category } = this.$frontmatter;
+
+    return category ? capitalize(category) : '';
+  }
+
+  /** 标签 */
+  private get tag() {
+    const { tags, tag = tags } = this.$frontmatter;
+
+    if (typeof tag === 'string') return capitalize(tag);
+
+    if (Array.isArray(tag)) return tag.map(item => capitalize(item));
+
+    return '';
   }
 
   private mounted() {
