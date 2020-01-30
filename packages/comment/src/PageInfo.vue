@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-30 11:43:35
+ * @LastEditTime : 2020-01-30 18:30:33
  * @Description: 页面信息
 -->
 <template>
@@ -41,7 +41,7 @@
         <TagIcon />
         <span v-if="typeof tag === 'string'">{{tag}}</span>
         <span v-else>
-          <template v-for="item in tag" v-text="item" />
+          <template v-for="item in tag">{{item}}&nbsp;</template>
         </span>
       </template>
     </div>
@@ -58,7 +58,7 @@ import FireIcon from '@mr-hope/vuepress-shared-utils/icons/FireIcon.vue';
 import { Route } from 'vue-router';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
-import { ValineOptions } from '../typings';
+import { ValineOptions } from '../types';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
 @Component({ components: { AuthorIcon, CategoryIcon, EyeIcon, FireIcon, TagIcon, TimeIcon } })

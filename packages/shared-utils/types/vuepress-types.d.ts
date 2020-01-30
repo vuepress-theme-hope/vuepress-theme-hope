@@ -1,14 +1,14 @@
 /** 导航栏配置项 */
-export interface NavBarConfigItem {
+export type NavBarConfigItem = Partial<{
   /** 导航栏文字 */
-  text?: string;
+  text: string;
   /** 辅助标签 */
-  ariaLabel?: string;
+  ariaLabel: string;
   /** 导航栏链接 */
-  link?: string;
+  link: string;
   /** 导航栏下拉列表子项 */
-  items?: NavBarConfigItem[];
-}
+  items: NavBarConfigItem[];
+}>;
 
 /** 导航栏配置 */
 export type NavBarConfig = NavBarConfigItem[] | false;

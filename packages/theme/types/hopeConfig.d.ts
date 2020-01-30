@@ -5,27 +5,27 @@ import {
 } from '@mr-hope/vuepress-shared-utils';
 import { VuepressConfig, VuepressThemeConfig } from './vuepressConfig';
 import { CommentOptions } from '@mr-hope/vuepress-plugin-comment';
-import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance';
+import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance/types';
 import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
 import { ThemeColorOptions } from '@mr-hope/vuepress-plugin-theme-color';
 
 /** 页脚配置 */
-export interface HopeFooterConfig {
+export type HopeFooterConfig = Partial<{
   /** 页脚的默认文字 */
-  text?: string;
+  text: string;
   /** 是否显示默认页脚 */
-  displayDefault?: boolean;
-}
+  displayDefault: boolean;
+}>;
 
 /** 加密选项 */
-export interface EncryptOptions {
+export type EncryptOptions = Partial<{
   /** 最高权限密码 */
-  global?: string | string[];
+  global: string | string[];
   /** 是否全局加密 */
-  globalEncrypt?: boolean;
+  globalEncrypt: boolean;
   /** 加密配置 */
-  config?: Record<string, string | string[]>;
-}
+  config: Record<string, string | string[]>;
+}>;
 
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig extends VuepressThemeConfig {
@@ -86,25 +86,25 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
 }
 
 /** 头部选项配置 */
-export interface HopeHeadOptionConfig {
+export type HopeHeadOptionConfig = Partial<{
   /** 网站的图标 */
-  icon?: string;
+  icon: string;
   /** PWA 设置 */
-  pwa?: {
+  pwa: Partial<{
     /** manifest 文件的路径 */
-    manifest?: string;
+    manifest: string;
     /** 主题色 */
-    themeColor?: string;
+    themeColor: string;
     /** 苹果导航栏颜色 */
-    appleStatusBarColor?: 'black' | 'white';
+    appleStatusBarColor: 'black' | 'white';
     /** 苹果的图标 */
-    appleIcon?: string;
+    appleIcon: string;
     /** 微软磁贴图片 */
-    msTileImage?: string;
+    msTileImage: string;
     /** 微软磁贴颜色 */
-    msTileColor?: string;
-  };
-}
+    msTileColor: string;
+  }>;
+}>;
 
 /** vuepress-theme-hope 项目配置 */
 export interface HopeVuepressConfig extends VuepressConfig {

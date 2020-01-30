@@ -1,4 +1,4 @@
-import { ResolvedHopeThemeConfig } from '../../typings';
+import { ResolvedHopeThemeConfig } from '../../types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 import resolveEncrypt from './resolveEncrypt';
 import resolveNavBar from './resolveNavBar';

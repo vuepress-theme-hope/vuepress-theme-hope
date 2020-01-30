@@ -2,7 +2,7 @@
   "name": "@mr-hope/vuepress-theme-types",
   "version": "0.1.0-beta.33",
   "description": "Theme types for vuepress-theme-hope",
-  "types": "typings/index.d.js",
+  "types": "types/index.d.js",
   "publishConfig": {
     "access": "public"
   },

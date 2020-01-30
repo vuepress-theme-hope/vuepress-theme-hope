@@ -63,7 +63,7 @@
     "eslint-plugin-vue": "^6.1.2",
     "husky": "^4.2.1",
     "lerna": "^3.20.2",
-    "lint-staged": "^10.0.4",
+    "lint-staged": "^10.0.5",
     "prettier": "1.19.1",
     "typescript": "^3.7.5",
     "vue-template-compiler": "^2.6.11"

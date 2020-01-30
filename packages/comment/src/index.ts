@@ -2,10 +2,10 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-13 18:40:39
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 00:19:31
+ * @LastEditTime : 2020-01-30 17:16:53
  * @Description: 插件主入口，如果没有使用 Vssue 则不加载相关插件
  */
-import { CommentOptions } from '../typings';
+import { CommentOptions } from '../types';
 import { PluginOptionAPI } from 'vuepress-types';
 import { resolve } from 'path';
 

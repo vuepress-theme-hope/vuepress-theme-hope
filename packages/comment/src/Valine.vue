@@ -14,7 +14,7 @@
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
-import { ValineOptions } from '../typings';
+import { ValineOptions } from '../types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component

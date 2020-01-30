@@ -1,22 +1,22 @@
 import './declare';
 
 /** md-enhance 插件配置 */
-export interface MarkdownEnhanceOption {
+export type MarkdownEnhanceOption = Partial<{
   /** 默认目录的语言 */
-  baseLang?: string;
+  baseLang: string;
   /** 在每个代码块的左侧显示行号 */
-  lineNumbers?: boolean;
+  lineNumbers: boolean;
 
   /** 启用上角标格式支持 */
-  sup?: boolean;
+  sup: boolean;
   /** 启用下角标格式支持 */
-  sub?: boolean;
+  sub: boolean;
   /** 启用脚注格式支持 */
-  footnote?: boolean;
+  footnote: boolean;
   /** 启用 TeX 语法支持 */
-  mathjax?: boolean;
+  mathjax: boolean;
   /** 启用 流程图 语法支持 */
-  flowchart?: boolean;
+  flowchart: boolean;
   /** 启用全部增强 */
-  enableAll?: boolean;
-}
+  enableAll: boolean;
+}>;

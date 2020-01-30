@@ -2,7 +2,7 @@ import * as fs from 'fs-extra';
 import * as logger from '@vuepress/shared-utils/lib/logger';
 import * as wbb from 'workbox-build';
 import { Context, PluginOptionAPI } from 'vuepress-types';
-import { PWAOptions } from '../typings';
+import { PWAOptions } from '../types';
 import { resolve } from 'path';
 
 // eslint-disable-next-line max-lines-per-function

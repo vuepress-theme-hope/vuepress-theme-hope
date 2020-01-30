@@ -26,7 +26,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Category from '@theme/layouts/Category.vue';
-import { EncryptOptions } from '../../typings';
+import { EncryptOptions } from '../../types';
 import Navbar from '@theme/components/Navbar.vue';
 import Password from '@theme/components/Password.vue';
 import Sidebar from '@theme/components/Sidebar.vue';

@@ -23,7 +23,7 @@
       <TagIcon />
       <span v-if="typeof tag === 'string'">{{tag}}</span>
       <span v-else>
-        <template v-for="item in tag" v-text="item" />
+        <template v-for="item in tag">{{item}}&nbsp;</template>
       </span>
     </template>
   </div>

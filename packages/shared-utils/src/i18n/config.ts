@@ -2,10 +2,10 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-29 18:21:21
+ * @LastEditTime : 2020-01-30 17:18:58
  * @Description: 多语言配置
  */
-import { ResolvedHopeLangLocalesConfig } from '../../typings';
+import { HopeLangI18nConfig } from '../../types';
 
 export type Langs = 'zh-CN' | 'en-US';
 
@@ -27,7 +27,7 @@ export const path2langConfig: Record<string, Langs> = {
 };
 
 /** 语言设置 */
-export const localesConfig: Record<string, ResolvedHopeLangLocalesConfig> = {
+export const localesConfig: Record<string, HopeLangI18nConfig> = {
   'zh-CN': {
     lang: 'zh-CN',
     selectText: '选择语言',

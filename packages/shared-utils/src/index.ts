@@ -4,7 +4,7 @@ import {
 } from './assign';
 import i18nConfig from './i18n';
 
-export * from '../typings';
+export * from '../types';
 
 export const capitalize = (word: string): string =>
   `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;

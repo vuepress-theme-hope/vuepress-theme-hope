@@ -9,40 +9,41 @@ interface BaseCommentOptions {
 }
 
 /** Valine 配置 */
-export interface ValineOptions extends BaseCommentOptions {
-  /** appID */
-  appId?: string;
+export type ValineOptions = BaseCommentOptions &
+  Partial<{
+    /** appID */
+    appId: string;
 
-  /** appKey */
-  appKey?: string;
+    /** appKey */
+    appKey: string;
 
-  /** 是否启用评论 */
-  comment?: boolean;
+    /** 是否启用评论 */
+    comment: boolean;
 
-  /** 是否启用访问量 */
-  visitor?: boolean;
+    /** 是否启用访问量 */
+    visitor: boolean;
 
-  /** 评论占位符 */
-  placeholder?: string;
+    /** 评论占位符 */
+    placeholder: string;
 
-  /** 评论所需信息 */
-  meta?: string[];
+    /** 评论所需信息 */
+    meta: string[];
 
-  /** 是否发送邮件提醒有新通知 */
-  notify?: boolean;
+    /** 是否发送邮件提醒有新通知 */
+    notify: boolean;
 
-  /** 是否需要验证码 */
-  verify?: boolean;
+    /** 是否需要验证码 */
+    verify: boolean;
 
-  /** 头像类型 */
-  avatar?: string;
+    /** 头像类型 */
+    avatar: string;
 
-  /** 是否记录 IP */
-  recordIP?: boolean;
+    /** 是否记录 IP */
+    recordIP: boolean;
 
-  /** 每页的最大评论数 */
-  pageSize?: number;
-}
+    /** 每页的最大评论数 */
+    pageSize: number;
+  }>;
 
 /** Vssue 配置 */
 export interface VssueOptions extends BaseCommentOptions {

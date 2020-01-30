@@ -41,78 +41,33 @@ export type HopeSideBarConfig =
   | 'auto'
   | false;
 
-/** 多语言配置 */
-export interface LangLocalesConfig {
+/** 国际化配置 */
+export interface LangI18nConfig {
   /** 设置当前语言的代码 */
-  lang?: string; // 将会被设置为 <html> 的 lang 属性
-  /** 当前语言的导航栏链接 */
-  nav?: NavBarConfig;
-  /** 当前语言的侧边栏配置 */
-  sidebar?: SideBarConfig;
-  /** 多语言下拉菜单的标题 */
-  selectText?: string;
-  /** 该语言下的更新时间文字 */
-  lastUpdated?: string;
-  /** 该语言在下拉菜单中的标签 */
-  label?: string;
-  /** 辅助标签 */
-  ariaLabel?: string;
-  /** 编辑链接文字 */
-  editLinkText?: string; // 默认为 "Edit this page"
-
-  /** 当前语言的 algolia 设置 */
-  algolia?: AlgoliaOption;
-}
-
-/** vuepress-theme-hope 多语言配置 */
-export interface HopeLangLocalesConfig extends LangLocalesConfig {
-  /** 导航栏链接 */
-  nav?: HopeNavBarConfig;
-  /** 侧边栏配置 */
-  sidebar?: HopeSideBarConfig;
-  /** Valine 占位符 */
-  valineHolder?: string;
-  /** 主题色配置 */
-  themeColor?: {
-    /** 颜色提示文字 */
-    themeColor: string;
-    /** 夜间模式提示文字 */
-    nightmode: string[];
-  };
-  /** 404错误页 */
-  error404?: {
-    /** 错误提示语 */
-    text: string[];
-    /** 返回主页文字 */
-    link: string;
-  };
-  /** PWA 提示消息 */
-  pwa?: string;
-  /** 分页多语言配置 */
-  pagination?: {
-    /** 上一页文字 */
-    prev: string;
-    /** 下一页文字 */
-    next: string;
-    /** 跳转文字 */
-    navigate: string;
-    /** 按钮文字 */
-    button: string;
-  };
-}
-
-/** 处理过的 vuepress-theme-hope 多语言配置 */
-export interface ResolvedHopeLangLocalesConfig extends HopeLangLocalesConfig {
-  /** 设置当前语言的代码 */
-  lang: string; // 将会被设置为 <html> 的 lang 属性/** Valine 占位符 */
+  lang: string; // 将会被设置为 <html> 的 lang 属性
   /** 多语言下拉菜单的标题 */
   selectText: string;
   /** 该语言下的更新时间文字 */
   lastUpdated: string;
   /** 该语言在下拉菜单中的标签 */
   label: string;
+  /** 辅助标签 */
+  ariaLabel: string;
   /** 编辑链接文字 */
-  editLinkText: string;
+  editLinkText: string; // 默认为 "Edit this page"
+}
+
+/** 多语言配置 */
+export type LangLocalesConfig = Partial<LangI18nConfig> & {
+  /** 当前语言的导航栏链接 */
+  nav?: NavBarConfig;
+  /** 当前语言的侧边栏配置 */
+  sidebar?: SideBarConfig;
+  /** 当前语言的 algolia 设置 */
+  algolia?: AlgoliaOption;
+};
+
+interface HopeLangI18nConfigItem {
   /** Valine 占位符 */
   valineHolder: string;
   /** 主题色配置 */
@@ -131,4 +86,40 @@ export interface ResolvedHopeLangLocalesConfig extends HopeLangLocalesConfig {
   };
   /** PWA 提示消息 */
   pwa: string;
+  /** 分页多语言配置 */
+  pagination: {
+    /** 上一页文字 */
+    prev: string;
+    /** 下一页文字 */
+    next: string;
+    /** 跳转文字 */
+    navigate: string;
+    /** 按钮文字 */
+    button: string;
+  };
+}
+
+/** vuepress-theme-hope 国际化配置 */
+export type HopeLangI18nConfig = LangLocalesConfig & HopeLangI18nConfigItem;
+
+/** vuepress-theme-hope 多语言配置 */
+export interface HopeLangLocalesConfig
+  extends LangLocalesConfig,
+    Partial<HopeLangI18nConfigItem> {
+  /** 导航栏链接 */
+  nav?: HopeNavBarConfig;
+  /** 侧边栏配置 */
+  sidebar?: HopeSideBarConfig;
+  /** 当前语言的 algolia 设置 */
+  algolia?: AlgoliaOption;
+}
+
+/** 处理过的 vuepress-theme-hope 多语言配置 */
+export interface ResolvedHopeLangLocalesConfig extends HopeLangI18nConfig {
+  /** 导航栏链接 */
+  nav: HopeNavBarConfig;
+  /** 侧边栏配置 */
+  sidebar: HopeSideBarConfig;
+  /** 当前语言的 algolia 设置 */
+  algolia?: AlgoliaOption;
 }

@@ -3,7 +3,7 @@
   "version": "0.1.0-beta.33",
   "description": "a light vuepress theme",
   "main": "src/index.js",
-  "types": "typings/index.d.ts",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "vue-cli-service test:unit test/"
   },

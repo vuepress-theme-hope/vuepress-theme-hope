@@ -1,7 +1,7 @@
 **/dist/**
 packages/**/*.js
 packages/**/*.d.ts
-!packages/**/typings/**.d.ts
+!packages/**/types/**.d.ts
 !packages/**/globals.d.ts
 !packages/**/typings.d.ts
 !packages/pwa/src/skip-waiting.js

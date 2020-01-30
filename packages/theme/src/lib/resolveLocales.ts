@@ -1,4 +1,4 @@
-import { ResolvedHopeVuepressConfig } from '../../typings';
+import { ResolvedHopeVuepressConfig } from '../../types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 const { path2lang } = i18n;

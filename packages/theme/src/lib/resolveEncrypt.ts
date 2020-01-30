@@ -7,7 +7,7 @@
  */
 
 import * as md5 from 'md5';
-import { EncryptOptions } from '../../typings';
+import { EncryptOptions } from '../../types';
 
 /**
  * 处理密码配置

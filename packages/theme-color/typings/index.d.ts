@@ -1,12 +1,12 @@
 /** 主题色选项 */
-export interface ThemeColorOptions {
+export type ThemeColorOptions = Partial<{
   /** 是否开启主题色 */
-  allowThemeColor?: boolean;
+  allowThemeColor: boolean;
   /** 颜色选择器 */
-  picker?: Record<string,string>;
+  picker: Record<string, string>;
   /** 是否允许开启夜间模式 */
-  allowNightmode?: boolean;
-}
+  allowNightmode: boolean;
+}>;
 
 /** 声明全局变量 */
 declare global {

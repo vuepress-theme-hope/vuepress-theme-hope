@@ -1,4 +1,4 @@
-import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from './typings';
+import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from './types';
 import { deepAssignReverse } from '@mr-hope/vuepress-shared-utils';
 import defaultConfig from './src/lib/defaultConfig';
 import resolveHead from './src/lib/resolveHead';
@@ -8,7 +8,7 @@ import resolveThemeConfig from './src/lib/resolveThemeConfig';
 /**
  * 处理 vuepress 配置
  *
- * @param {object} config
+ * @param config
  */
 const resolveConfig = (
   config: HopeVuepressConfig
