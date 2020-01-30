@@ -41,9 +41,9 @@ category: instruction
 - [**导航栏**](layout/navbar.md)
 
   - [图标支持](layout/navbar.md#对默认主题的改进)
-  - [主题色切换](themecolor.md#自定义主题色)
-  - [夜间模式](themecolor.md#夜间模式)
-  - [全屏按钮](fullscreen.md)
+  - [主题色切换](feature/themecolor.md#自定义主题色)
+  - [夜间模式](feature/themecolor.md#夜间模式)
+  - [全屏按钮](feature/fullscreen.md)
 
 - [**侧边栏**](layout/sidebar.md)
 
@@ -55,15 +55,15 @@ category: instruction
   - [阅读量与作者信息展示](layout/page.md#文章信息展示)
   - [页面图标](layout/page.md#图标支持)
   - [路径导航](layout/breadcrumb.md)
-  - [底部评论](comment.md)
+  - [底部评论](feature/comment.md)
   - [自定义页脚](layout/page.md#页脚支持)
   - [主页](layout/home.md)
 
-- [**新增组件**](component.md)
+- [**新增组件**](feature/component.md)
 
-  - [返回顶部按钮 `<BackToTop />`](component.md)
+  - [返回顶部按钮 `<BackToTop />`](feature/component.md#返回顶部按钮)
 
-  - [徽章 `<MyBadge />`](component.md#徽章): 在官方基础上增加了颜色支持
+  - [徽章 `<MyBadge />`](feature/component.md#徽章): 在官方基础上增加了颜色支持
 
 - [**Markdown 增强**](markdown/readme.md)
 
