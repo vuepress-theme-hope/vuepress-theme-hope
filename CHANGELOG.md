@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.0-beta.34](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.33...v0.1.0-beta.34) (2020-01-30)
+
+### Bug Fixes
+
+* **theme:** fix [@theme](https://github.com/theme) recognize by ts ([cdbd21a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cdbd21abda9c4bb1a26555a9eb6bb804d27e255f))
+
+### Features
+
+* pin deps and improve types ([cd87e86](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cd87e8651615c49966050d3e37acaa1e1957bebc))
+* **component:** add a pagination component ([e61da6a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e61da6a0d82f4bbed9eb4a2c3b8b8e12f38ac596))
+* **components:** support page config ([2b6e52c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2b6e52cbab332f27b2058d8239a2cb2db1c8f803))
+* **md-enhance:** add a new detail block ([e1a9219](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e1a9219c66fa5e67db48fc7f0a84e808f08019a9))
+* **theme:** add @vuepress/plugin-blog and new blog page ([e9ad4a9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e9ad4a9a54c6fb7a485884488f070b079685723e))
+* **theme:** add tag and category for pageinfo ([68913d3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/68913d387b144c0cd09fe1e201715014ff0b40c4))
+* **theme-color:** improve nightmode ([c343e79](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c343e798f6d00d53eda1a525dc86ff12ce91b956))
+
 ## [0.1.0-beta.33](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.32...v0.1.0-beta.33) (2020-01-24)
 
 ### Bug Fixes
