@@ -36,6 +36,34 @@ tag:
 
 设置当前页面的写作时间
 
+## category
+
+- 类型: `string`
+- 必填: 否
+
+设置当前页面的分类
+
+## tag
+
+- 类型: `string | string[]`
+- 必填: 否
+
+设置当前页面的标签
+
+## sticky
+
+- 类型: `boolean`
+- 默认值: `false`
+
+设置当前文章是否在列表中置顶。
+
+## password
+
+- 类型: `string`
+- 必填: 否
+
+设置当前文章的密码。
+
 ## visitor
 
 - 类型: `boolean`

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-28 15:00:09
+ * @LastEditTime : 2020-01-30 19:11:31
  * @Description: 侧边栏配置
  */
 
@@ -11,26 +11,35 @@ module.exports = {
     '/guide/': [
       {
         title: '快速上手',
-        icon: 'creative',
+        icon: 'creativefill',
         children: ['', 'install']
       },
       {
         title: '布局',
-        icon: 'skinfill',
+        icon: 'layout',
         prefix: 'layout/',
         children: ['', 'navbar', 'sidebar', 'breadcrumb', 'page', 'home']
       },
       {
         title: '新增功能',
-        icon: 'skinfill',
+        icon: 'discoverfill',
         prefix: 'feature/',
-        children: ['themecolor', 'fullscreen', 'comment', 'component']
+        children: [
+          '',
+          'icon',
+          'comment',
+          'themecolor',
+          'encrypt',
+          'component',
+          'fullscreen',
+          'typescript'
+        ]
       },
       {
         title: 'Markdown 增强',
         icon: 'markdown',
         prefix: 'markdown/',
-        children: ['', 'sup-sub', 'footnote', 'tex', 'flowchart']
+        children: ['', 'align', 'sup-sub', 'footnote', 'tex', 'flowchart']
       }
     ],
 

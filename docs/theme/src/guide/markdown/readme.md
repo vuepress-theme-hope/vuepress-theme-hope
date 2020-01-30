@@ -4,7 +4,7 @@ icon: markdown
 
 # Markdown 新语法
 
-vuepress-theme-hope 通过内置 [md-enhance](https://vuepress-md-enhance.mrhope.site/)，在 Markdown 中启用了更多的语法。
+vuepress-theme-hope 通过内置 [md-enhance](https://vuepress-md-enhance.mrhope.site/)，在 Markdown 中启用了更多的语法与新功能。
 
 `.vuepress/config.js` 中的 `themeconfig.markdown` 会直接传递给插件作为插件选项。所以你也可以直接阅读 [md-enhance 文档](https://vuepress-md-enhance.mrhope.site/) 查看用法。
 

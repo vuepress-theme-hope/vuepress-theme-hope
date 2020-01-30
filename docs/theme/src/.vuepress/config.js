@@ -2,12 +2,12 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 00:08:26
+ * @LastEditTime : 2020-01-30 18:40:07
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
-const navBarConfig = require('./config/navBar');
-const sideBarConfig = require('./config/sideBar');
+const navBarConfig = require('./navBar');
+const sideBarConfig = require('./sideBar');
 
 module.exports = resolve({
   title: 'vuepress-theme-hope',
@@ -38,9 +38,8 @@ module.exports = resolve({
   temp: './node_modules/.temp/theme',
   dest: './dist',
   extraWatchFiles: [
-    '.vuepress/config/navBar.js',
-    '.vuepress/config/sideBar.js',
-    '.vuepress/config/theme.js'
+    '.vuepress/navBar.js',
+    '.vuepress/sideBar.js'
   ],
 
   locales: {
@@ -80,6 +79,7 @@ module.exports = resolve({
     },
 
     repo: 'https://github.com/mister-hope/vuepress-theme-hope',
+    repoDisplay: false,
     docsDir: 'docs/theme'
   }
 });

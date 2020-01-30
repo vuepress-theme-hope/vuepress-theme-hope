@@ -65,3 +65,5 @@ $colorPicker = {
 默认开启，可以将 `themeConfig` 中的 `themeColor.allowNightmode` 设置为 `false` 来禁用夜间模式。
 
 在夜间模式下，页面会使用黑色背景以保护您的眼睛。
+
+![夜间模式](./assets/nightmode.png)

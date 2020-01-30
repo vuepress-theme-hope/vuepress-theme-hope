@@ -21,7 +21,7 @@ icon: Home
 
 :::
 
-## 文章信息展示
+## 文章信息展示 <MyBadge text="支持局部配置" />
 
 - **作者** <MyBadge text="支持局部配置" />
 

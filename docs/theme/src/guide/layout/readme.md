@@ -1,3 +1,11 @@
+---
+icon: layout
+tag: 
+  - intro
+  - layout
+category: layout
+---
+
 # 布局
 
 vuepress-theme-hope 在默认主题布局的基础上，增加了很多布局上的改动。

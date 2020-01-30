@@ -10,7 +10,9 @@ category: layout
 
 vuepress-theme-hope 改进了默认主页。
 
-## frontmatter
+## 项目样式
+
+可以配置的 frontmatter 参数如下:
 
 ### home
 
@@ -64,3 +66,7 @@ vuepress-theme-hope 改进了默认主页。
   - link(可选): `string` 链接地址
 
 特性说明
+
+## 博客样式
+
+文档制作中...

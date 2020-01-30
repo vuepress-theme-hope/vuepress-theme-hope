@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-08 23:15:09
+ * @LastEditTime : 2020-01-30 18:34:46
  * @Description: 导航栏配置
  */
 
@@ -20,9 +20,19 @@ module.exports = {
       ]
     },
     {
-      text: '更新日志',
-      link:
-        'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
+      text: '项目',
+      icon: 'infofill',
+      items: [
+        {
+          text: '更新日志',
+          link:
+            'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
+        },
+        {
+          text: '项目地址',
+          link: 'https://github.com/mister-hope/vuepress-theme-hope'
+        }
+      ]
     }
   ],
   en: [
@@ -38,9 +48,19 @@ module.exports = {
       ]
     },
     {
-      text: 'Changelog',
-      link:
-        'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
+      text: 'Project',
+      icon: 'infofill',
+      items: [
+        {
+          text: 'Changelog',
+          link:
+            'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
+        },
+        {
+          text: 'Repo',
+          link: 'https://github.com/mister-hope/vuepress-theme-hope'
+        }
+      ]
     }
   ]
 };
