@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/shared-utils#readme",
   "devDependencies": {
-    "@vue/cli-plugin-unit-mocha": "4.1.2",
-    "@vue/cli-service": "4.1.2"
+    "@vue/cli-plugin-unit-mocha": "4.2.2",
+    "@vue/cli-service": "4.2.2"
   }
 }
