@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.0-beta.35](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.34...v0.1.0-beta.35) (2020-02-21)
+
+### Bug Fixes
+
+* **deps:** update dependency screenfull to v5.0.2 ([2539ec8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2539ec85fd9b57c8aa6b5a2ff316ff6404abe8c4))
+* **deps:** update dependency vuepress-types to ^0.9.0 ([a84e303](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a84e3032f779c7b8232d1919af451a4825d6ea2f))
+
+### Features
+
+* improve typescript support ([d6a3128](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d6a31288acdf510564b842b630e8a6e2acd37ecb))
+
 ## [0.1.0-beta.34](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.33...v0.1.0-beta.34) (2020-01-30)
 
 ### Bug Fixes
