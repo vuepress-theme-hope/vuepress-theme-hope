@@ -6,43 +6,53 @@ import { PWAOptions } from '../types';
 import { resolve } from 'path';
 
 // eslint-disable-next-line max-lines-per-function
-export = (
-  options: PWAOptions,
-  { base = '/', outDir }: Context
-): PluginOptionAPI => {
+export = (options: PWAOptions, context: Context): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: 'pwa',
 
-    define: { SW_BASE_URL: base },
+    define: { SW_BASE_URL: context.base || '/' },
 
     globalUIComponents: options.popupComponent || 'SWUpdatePopup',
 
     enhanceAppFiles: resolve(__dirname, './enhanceAppFile.ts'),
 
     /** Typescript Support */
-    chainWebpack: chainWebpackConfig => {
-      chainWebpackConfig.resolve.extensions.add('.ts');
+    chainWebpack: (chainWebpackConfig, isServer): void => {
+      if (!context.themeConfig.tsEnable) {
+        const { cacheDirectory, cacheIdentifier } = context as any;
+        const finalCacheIdentifier = `${cacheIdentifier}isServer:${isServer}`;
 
-      chainWebpackConfig.module
-        .rule('ts')
-        .test(/\.ts$/u)
-        .use('ts-loader')
-        .loader('ts-loader')
-        .options({
-          appendTsSuffixTo: [/\.vue$/u, /\.md$/u],
-          compilerOptions: { declaration: false }
-        });
+        chainWebpackConfig.resolve.extensions.add('.ts');
+
+        chainWebpackConfig.module
+          .rule('ts')
+          .test(/\.ts$/u)
+          .use('cache-loader')
+          .loader('cache-loader')
+          .options({
+            cacheDirectory,
+            cacheIdentifier: finalCacheIdentifier
+          })
+          .end()
+          .use('ts-loader')
+          .loader('ts-loader')
+          .options({
+            appendTsSuffixTo: [/\.vue$/u, /\.md$/u],
+            compilerOptions: { declaration: false }
+          })
+          .end();
+      }
     }
   };
 
   config.generated = async (): Promise<any> => {
-    const swFilePath = resolve(outDir, './service-worker.js');
+    const swFilePath = resolve(context.outDir, './service-worker.js');
 
     logger.wait('Generating service worker...');
 
     await wbb.generateSW({
       swDest: swFilePath,
-      globDirectory: outDir,
+      globDirectory: context.outDir,
       globPatterns: [
         '**/*.{js,css,html,png,jpg,jpeg,gif,svg,woff,woff2,eot,ttf,otf}'
       ],

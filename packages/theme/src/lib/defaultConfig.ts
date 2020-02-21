@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2020-01-01 18:56:32
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-08 14:32:17
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-02-21 11:31:52
  * @Description: vuepress-theme-hope 的默认配置
  */
 
@@ -35,7 +35,10 @@ export default {
     locales: {},
 
     /** 开启编辑此页链接 */
-    editLinks: true // 默认是 false, 设置为 true 来启用
+    editLinks: true,
+
+    /** 是否已开启 TS 支持 */
+    tsEnable: true
   },
 
   /** 是否只支持常青树浏览器 */

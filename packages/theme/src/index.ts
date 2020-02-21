@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-30 17:19:18
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-02-21 10:52:31
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -20,27 +20,7 @@ export = (
 ): ThemeOptionAPI => {
   const config: ThemeOptionAPI = {
     /** 继承默认主题 */
-    extend: '@vuepress/theme-default',
-
-    /**
-     * 允许下列文件支持 typescript:
-     * - .ts
-     * - .vue
-     * - .md
-     */
-    chainWebpack: chainWebpackConfig => {
-      chainWebpackConfig.resolve.extensions.add('.ts');
-
-      chainWebpackConfig.module
-        .rule('ts')
-        .test(/\.ts$/u)
-        .use('ts-loader')
-        .loader('ts-loader')
-        .options({
-          appendTsSuffixTo: [/\.vue$/u, /\.md$/u],
-          compilerOptions: { declaration: false }
-        });
-    }
+    extend: '@vuepress/theme-default'
   };
 
   const { siteConfig } = ctx;

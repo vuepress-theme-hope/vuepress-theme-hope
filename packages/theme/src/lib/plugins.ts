@@ -2,8 +2,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-27 17:04:40
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-02-21 10:53:22
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -117,6 +117,9 @@ const pluginConfig = (options: any): PluginConfig[] => {
           `layout-${layout.componentName}`
       }
     ],
+
+    /** typescript 支持 */
+    ['typescript', {}],
 
     /** 评论插件 */
     ['@mr-hope/comment', options.comment === false ? false : options.comment],

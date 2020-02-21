@@ -25,11 +25,12 @@
     "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.34",
     "@types/lodash": "^4.14.149",
     "lodash": "^4.17.15",
-    "screenfull": "5.0.2",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.5",
-    "vue-property-decorator": "^8.3.0",
+    "screenfull": "5.0.2"
+  },
+  "peerDependencies": {
+    "typescript": "^3.8.2",
     "vue-router": "^3.1.5",
+    "vuepress-plugin-typescript": "^0.2.0",
     "vuepress-types": "^0.9.0"
   }
 }
