@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-27 00:38:07
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-10 19:42:19
  * @Description: 插件配置
  */
 import { MarkdownEnhanceOption } from '../types';
@@ -54,9 +54,9 @@ const pluginConfig = (
       }
     ],
     /** 自定义居右容器 */
-    ['container', { type: 'right', defaultTitle: '', marker: '~' }],
+    ['container', { type: 'right', defaultTitle: '' }],
     /** 自定义居中容器 */
-    ['container', { type: 'center', defaultTitle: '', marker: '~' }],
+    ['container', { type: 'center', defaultTitle: '' }],
 
     /** Markdown 文件支持 TeX 语法 */
     ['mathjax', markdownOption.mathjax || markdownOption.enableAll]

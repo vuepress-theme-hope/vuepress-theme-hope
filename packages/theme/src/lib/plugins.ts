@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-02-21 10:53:22
+ * @LastEditTime: 2020-03-10 21:57:59
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -131,7 +131,7 @@ const pluginConfig = (options: any): PluginConfig[] => {
     // ['@mr-hope/share', options.share],
 
     /** Markdown 增强插件 */
-    ['md-enhance', options.markdown || false],
+    // ['md-enhance', options.markdown || false],
 
     /** PWA 插件 */
     ['@mr-hope/pwa', options.pwa === false ? false : options.pwa],

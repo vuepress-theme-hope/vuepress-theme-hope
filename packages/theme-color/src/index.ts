@@ -2,14 +2,14 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-13 18:40:39
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-02-21 11:54:49
+ * @LastEditTime: 2020-03-10 22:10:42
  * @Description:
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { ThemeColorOptions } from '../typings';
 import { resolve } from 'path';
 
-export = (options: ThemeColorOptions, context: Context): PluginOptionAPI =>
+export = (options: ThemeColorOptions): PluginOptionAPI =>
   ({
     name: 'theme-color',
 
@@ -20,31 +20,8 @@ export = (options: ThemeColorOptions, context: Context): PluginOptionAPI =>
 
     enhanceAppFiles: resolve(__dirname, 'enhanceAppFile.ts'),
 
-    /** Typescript Support */
-    chainWebpack: (chainWebpackConfig, isServer): void => {
-      if (!context.themeConfig.tsEnable) {
-        const { cacheDirectory, cacheIdentifier } = context as any;
-        const finalCacheIdentifier = `${cacheIdentifier}isServer:${isServer}`;
-
-        chainWebpackConfig.resolve.extensions.add('.ts');
-
-        chainWebpackConfig.module
-          .rule('ts')
-          .test(/\.ts$/u)
-          .use('cache-loader')
-          .loader('cache-loader')
-          .options({
-            cacheDirectory,
-            cacheIdentifier: finalCacheIdentifier
-          })
-          .end()
-          .use('ts-loader')
-          .loader('ts-loader')
-          .options({
-            appendTsSuffixTo: [/\.vue$/u, /\.md$/u],
-            compilerOptions: { declaration: false }
-          })
-          .end();
-      }
-    }
+    plugins: [
+      /** typescript 支持 */
+      ['typescript']
+    ]
   } as PluginOptionAPI);

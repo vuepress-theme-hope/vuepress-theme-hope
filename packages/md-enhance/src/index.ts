@@ -17,34 +17,6 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
 
     enhanceAppFiles: resolve(__dirname, 'enhanceAppFile.ts'),
 
-    /** Typescript Support */
-    chainWebpack: (chainWebpackConfig, isServer): void => {
-      if (!context.themeConfig.tsEnable) {
-        const { cacheDirectory, cacheIdentifier } = context as any;
-        const finalCacheIdentifier = `${cacheIdentifier}isServer:${isServer}`;
-
-        chainWebpackConfig.resolve.extensions.add('.ts');
-
-        chainWebpackConfig.module
-          .rule('ts')
-          .test(/\.ts$/u)
-          .use('cache-loader')
-          .loader('cache-loader')
-          .options({
-            cacheDirectory,
-            cacheIdentifier: finalCacheIdentifier
-          })
-          .end()
-          .use('ts-loader')
-          .loader('ts-loader')
-          .options({
-            appendTsSuffixTo: [/\.vue$/u, /\.md$/u],
-            compilerOptions: { declaration: false }
-          })
-          .end();
-      }
-    },
-
     /** Markdown 增强 */
     chainMarkdown: md => {
       //  添加行号
