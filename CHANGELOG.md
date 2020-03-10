@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0-beta.36](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.35...v0.1.0-beta.36) (2020-03-10)
+
+### Features
+
+* **md-enhance:** drop flowchart support ([9d1269c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9d1269cf9e011e25c959c8611791c81d3e305fd6))
+* update typescript support ([c8b5072](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c8b5072b4bd1449f7be5e28b593a952ce3c402c7))
+
 ## [0.1.0-beta.35](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.34...v0.1.0-beta.35) (2020-02-21)
 
 ### Bug Fixes
