@@ -29,19 +29,16 @@ Duplicated footnote reference[^second].
 
 ## DIY 容器
 
-::: danger 非稳定状态
 本主题仍在制作中，API 可能会有
 
-~~~ center
+::: center
 重大的变动。
-~~~
+:::
 
 如果您在使用过程中遇到了bug，可以
 
-~~~ right
+::: right
 [提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
-~~~
-
 :::
 
 ## 流程图展示

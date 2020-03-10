@@ -54,31 +54,21 @@ See [Official Documentation](https://vuepress.github.io/en/plugins/container/#Co
 ## Demonstration
 
 ```md
-::: tip prompt title
-I am on the left
-
-~~~ center
+::: center
 I am in the middle
-~~~
+:::
 
-~~~ right
+::: right
 I am on the right
-~~~
-
 :::
 ```
 
-::: tip prompt title
-I am on the left
-
-~~~ center
+::: center
 I am in the middle
-~~~
+:::
 
-~~~ right
+::: right
 I am on the right
-~~~
-
 :::
 
 [^i18n]: **Multi-language configuration changes**
