@@ -6,7 +6,8 @@ export type MarkdownEnhanceOption = Partial<{
   baseLang: string;
   /** 在每个代码块的左侧显示行号 */
   lineNumbers: boolean;
-
+  /** 启用自定义对齐支持 */
+  align: boolean;
   /** 启用上角标格式支持 */
   sup: boolean;
   /** 启用下角标格式支持 */

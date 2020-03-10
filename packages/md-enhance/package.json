@@ -28,7 +28,6 @@
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.35",
     "@types/hash-sum": "^1.0.0",
-    "flowchart.js": "^1.13.0",
     "vuepress-plugin-container": "^2.1.2",
     "vuepress-plugin-mathjax": "^1.2.8"
   },

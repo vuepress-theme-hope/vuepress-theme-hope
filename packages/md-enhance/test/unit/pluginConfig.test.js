@@ -15,9 +15,10 @@ describe('Test pluginConfig generate', () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(3, 1);
+    pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
+      ['typescript'],
       [
         'container',
         {
@@ -51,9 +52,9 @@ describe('Test pluginConfig generate', () => {
           }
         }
       ],
-      ['container', { type: 'right', defaultTitle: '', marker: '~' }],
-      ['container', { type: 'center', defaultTitle: '', marker: '~' }],
-      ['mathjax', true]
+      ['container', { type: 'right', defaultTitle: '' }],
+      ['container', { type: 'center', defaultTitle: '' }],
+      ['mathjax']
     ]);
   });
 
@@ -71,9 +72,10 @@ describe('Test pluginConfig generate', () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(3, 1);
+    pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
+      ['typescript'],
       [
         'container',
         {
@@ -107,9 +109,63 @@ describe('Test pluginConfig generate', () => {
           }
         }
       ],
-      ['container', { type: 'right', defaultTitle: '', marker: '~' }],
-      ['container', { type: 'center', defaultTitle: '', marker: '~' }],
-      ['mathjax', true]
+      ['container', { type: 'right', defaultTitle: '' }],
+      ['container', { type: 'center', defaultTitle: '' }],
+      ['mathjax']
+    ]);
+  });
+
+  it('should disable all', () => {
+    const option = {
+      enableAll: false
+    };
+
+    const themeConfig = {
+      baseLang: 'en-US',
+      markdown: {
+        enableAll: true
+      }
+    };
+
+    const pluginConfig = resolveConfig(option, themeConfig);
+
+    pluginConfig.splice(4, 1);
+
+    expect(pluginConfig).to.be.deep.equal([
+      ['typescript'],
+      [
+        'container',
+        {
+          type: 'tip',
+          defaultTitle: {
+            '/': 'Tips',
+            '/zh/': '提示',
+            '/en/': 'Tips'
+          }
+        }
+      ],
+      [
+        'container',
+        {
+          type: 'warning',
+          defaultTitle: {
+            '/': 'Note',
+            '/zh/': '注意',
+            '/en/': 'Note'
+          }
+        }
+      ],
+      [
+        'container',
+        {
+          type: 'danger',
+          defaultTitle: {
+            '/': 'Warning',
+            '/zh/': '警告',
+            '/en/': 'Warning'
+          }
+        }
+      ]
     ]);
   });
 });
