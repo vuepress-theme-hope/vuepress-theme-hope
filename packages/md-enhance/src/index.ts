@@ -1,6 +1,7 @@
 import * as lineNumbers from '@vuepress/markdown/lib/lineNumbers';
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { MarkdownEnhanceOption } from '../types';
+import flowchart from './markdown-it/flowchart';
 import footnote from './markdown-it/footnote';
 import pluginConfig from './pluginConfig';
 import { resolve } from 'path';
@@ -30,6 +31,9 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
       // 增加脚注
       if (markdownOption.footnote || markdownOption.enableAll)
         md.plugin('subfootnote').use(footnote);
+      // 使用流程图;
+      if (markdownOption.flowchart || markdownOption.enableAll)
+        md.plugin('flowchart').use(flowchart);
     }
   };
 

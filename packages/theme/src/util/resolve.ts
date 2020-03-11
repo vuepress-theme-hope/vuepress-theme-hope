@@ -1,5 +1,5 @@
 /* eslint-disable max-params */
-import { Page, PageComputed, PageHeader, SiteData } from 'vuepress-types';
+import { Page, PageComputed, PageHeader, SiteConfig } from 'vuepress-types';
 import {
   SideBarConfigItem,
   SideBarConfigItemObject
@@ -185,10 +185,15 @@ const resolveItem = (
 export const resolveSidebarItems = (
   page: Page,
   regularPath: string,
-  site: SiteData,
+  site: Pick<
+    SiteConfig,
+    'title' | 'description' | 'base' | 'themeConfig' | 'locales'
+  > & {
+    pages: PageComputed[];
+  },
   localePath: string
 ): any => {
-  const { themeConfig, pages } = site;
+  const { themeConfig = {}, pages } = site;
 
   const localeConfig =
     localePath && themeConfig.locales
