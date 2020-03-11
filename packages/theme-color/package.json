@@ -3,7 +3,7 @@
   "version": "0.1.0-beta.36",
   "description": "theme-color plugin for vuepress-theme-hope",
   "main": "src/index.js",
-  "types": "typings/index.d.ts",
+  "types": "types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/theme-color#readme",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.36"
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.36",
+    "vuepress-plugin-typescript": "^0.2.0"
   },
   "peerDependencies": {
-    "typescript": "^3.8.2",
-    "vuepress-plugin-typescript": "^0.2.0",
+    "typescript": "^3.8.3",
     "vuepress-types": "^0.9.0"
   }
 }

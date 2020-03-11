@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/theme-types#readme"
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/theme-types#readme",
+  "dependencies": {
+    "@mr-hope/vuepress-plugin-comment": "0.1.0-beta.36",
+    "@mr-hope/vuepress-plugin-pwa": "0.1.0-beta.36",
+    "@mr-hope/vuepress-plugin-theme-color": "0.1.0-beta.36",
+    "vuepress-types": "^0.9.0"
+  }
 }

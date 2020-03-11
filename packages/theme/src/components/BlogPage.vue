@@ -101,7 +101,7 @@ export default class BlogPage extends Vue {
     return { ...defaultBgImageStyle, ...bgImageStyle };
   }
 
-  private get heroHeight() {
+  private heroHeight() {
     return (document.querySelector('.hero') as Element).clientHeight;
   }
 
@@ -125,7 +125,7 @@ export default class BlogPage extends Vue {
   @Watch('currentPage')
   private onPageChange() {
     setTimeout(() => {
-      window.scrollTo(0, this.heroHeight);
+      window.scrollTo(0, this.heroHeight());
     }, 100);
   }
 }

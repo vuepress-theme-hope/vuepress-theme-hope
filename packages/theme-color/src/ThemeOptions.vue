@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 11:17:41
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-11 15:20:10
  * @Description: 主题颜色选择
 -->
 <template>
@@ -31,7 +31,7 @@
 /* global THEME_COLOR_OPTIONS */
 import { Component, Vue } from 'vue-property-decorator';
 import NightmodeSwitch from './NightmodeSwitch.vue';
-import { ThemeColorOptions } from '../typings';
+import { ThemeColorOptions } from '../types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 /** 默认颜色选择器 */

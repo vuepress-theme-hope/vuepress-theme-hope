@@ -87,38 +87,3 @@ export const generatePagination = (
 
   return result;
 };
-
-/*
- * export default {
- *   computed: {
- *     $recoPostsForTimeline() {
- *       let pages = this.$recoPosts;
- *       const formatPages = {};
- *       const formatPagesArr = [];
- *       pages = filterArticle(pages, true);
- *       this.pages = pages.length === 0 ? [] : pages;
- *       for (let i = 0, { length } = pages; i < length; i++) {
- *         const page = pages[i];
- *         const pageDateYear = dateFormat(page.frontmatter.date, 'year');
- *         if (formatPages[pageDateYear]) formatPages[pageDateYear].push(page);
- *         else formatPages[pageDateYear] = [page];
- *       }
- */
-
-/*
- *       for (const key in formatPages) {
- *         const data = formatPages[key];
- *         sortPostsByDate(data);
- *         formatPagesArr.unshift({
- *           year: key,
- *           data
- *         });
- *       }
- */
-
-/*
- *       return formatPagesArr;
- *     }
- *   }
- * };
- */
