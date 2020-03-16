@@ -47,8 +47,8 @@
     "build:all": "lerna run build --parallel"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "2.23.0",
-    "@typescript-eslint/parser": "2.23.0",
+    "@typescript-eslint/eslint-plugin": "2.24.0",
+    "@typescript-eslint/parser": "2.24.0",
     "@vue/cli-plugin-unit-mocha": "4.2.3",
     "@vue/cli-service": "4.2.3",
     "@vue/eslint-config-prettier": "6.0.0",
