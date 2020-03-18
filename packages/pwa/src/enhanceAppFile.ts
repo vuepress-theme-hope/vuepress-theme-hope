@@ -1,11 +1,11 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2020-01-13 18:40:39
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 17:52:24
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-18 20:42:57
  * @Description: App 增强文件
  *
- * 注册组件，并在 router 的 onReady 周期注册 Service Worker 
+ * 注册组件，并在 router 的 onReady 周期注册 Service Worker
  */
 /* global SW_BASE_URL */
 
@@ -13,14 +13,14 @@ import { EnhanceApp } from 'vuepress-types';
 import SWUpdateEvent from './SWUpdateEvent';
 import SWUpdatePopup from './SWUpdatePopup.vue';
 import event from './event';
-import { register } from 'register-service-worker';
 
-const enhanceApp: EnhanceApp = ({ Vue, router, isServer }) => {
+const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
   Vue.component('SWUpdatePopup', SWUpdatePopup);
+  if (process.env.NODE_ENV === 'production' && !isServer) {
+    const { register } = await import('register-service-worker');
 
-  // Register service worker
-  router.onReady(() => {
-    if (process.env.NODE_ENV === 'production' && !isServer)
+    // Register service worker
+    router.onReady(() => {
       register(`${SW_BASE_URL}service-worker.js`, {
         registrationOptions: {},
         ready() {
@@ -48,7 +48,8 @@ const enhanceApp: EnhanceApp = ({ Vue, router, isServer }) => {
           event.$emit('sw-error', err);
         }
       });
-  });
+    });
+  }
 };
 
 export default enhanceApp;

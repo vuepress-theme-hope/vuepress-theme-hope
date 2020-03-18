@@ -30,7 +30,7 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
         md.plugin('sub').use(sub);
       // 增加脚注
       if (markdownOption.footnote || markdownOption.enableAll)
-        md.plugin('subfootnote').use(footnote);
+        md.plugin('footnote').use(footnote);
       // 使用流程图;
       if (markdownOption.flowchart || markdownOption.enableAll)
         md.plugin('flowchart').use(flowchart);
