@@ -61,7 +61,7 @@ jobs:
         provider: pages
         local_dir: docs/theme/dist
         token: $Github_Token
-        fdqn: vuepress-theme.mrhope.site
+        fqdn: vuepress-theme.mrhope.site
         edge: true
         strategy: git
 
