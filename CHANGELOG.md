@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.0-beta.37](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.36...v0.1.0-beta.37) (2020-03-18)
+
+### Bug Fixes
+
+* **pwa:** fix window is not defined issue ([09bba24](https://github.com/Mister-Hope/vuepress-theme-hope/commit/09bba24b974098c7b7288323aa07b01d3e3383fb))
+* **theme:** fix a wrong import ([584919d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/584919dc301ad4c10b1bf82651562a905253cfc8))
+
+### Features
+
+* **md-enhance:** add flowchart ([bb6db47](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bb6db471142338cc6da3fe5801bf80645fc5271a))
+
 ## [0.1.0-beta.36](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.35...v0.1.0-beta.36) (2020-03-10)
 
 ### Features
