@@ -4,6 +4,17 @@ icon: align
 
 # Align
 
+## Configuration
+
+```js {4}
+module.exports = {
+  plugin: ['@mr-hope/md-enhance', {
+    // Enable Align
+    align: true
+  }]
+};
+```
+
 ## Syntax
 
 By injecting some options to `vuepress-plugin-container`, you can use
@@ -18,30 +29,53 @@ By injecting some options to `vuepress-plugin-container`, you can use
 
 to diy your paragraph align.
 
-## Demo
-
-THis plugin API may contain
-
-::: center
-**rapid changes**
-:::
-
-If you met a bug while using, you can
-
-::: right
-[open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
-:::
+If you need nesting, the outer `:::` needs to be increased in order.
 
 ```md
-THis plugin API may contain
+:::: right
+Right-aligned text
+
+Right-aligned text
 
 ::: center
-**rapid changes**
+Centered text
 :::
 
-If you met a bug while using, you can
+Right-aligned text
+
+::::
+```
+
+## Demo
+
+:::: danger W.I.P
+
+This theme is still in built, the API may have
+
+::: center
+Significant changes.
+:::
+
+If you encounter a bug while using, you can
 
 ::: right
 [open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
 :::
+::::
+
+```md
+:::: danger W.I.P
+
+This theme is still in built, the API may have
+
+::: center
+Significant changes.
+:::
+
+If you encounter a bug while using, you can
+
+::: right
+[open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
+:::
+::::
 ```

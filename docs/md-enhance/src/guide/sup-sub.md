@@ -8,7 +8,7 @@ icon: superscript
 
 ## 配置
 
-```js
+```js {4,6}
 module.exports = {
   plugin: ['@mr-hope/md-enhance', {
     // 启用下角标功能

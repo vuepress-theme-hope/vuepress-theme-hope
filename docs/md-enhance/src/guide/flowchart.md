@@ -10,7 +10,7 @@ icon: flowchart
 
 ## 配置
 
-```js
+```js {4}
 module.exports = {
   plugin: ['@mr-hope/md-enhance', {
     // 启用流程图

@@ -4,6 +4,17 @@ icon: align
 
 # 自定义对齐
 
+## 配置
+
+```js {4}
+module.exports = {
+  plugin: ['@mr-hope/md-enhance', {
+    // 启用自定义对其
+    align: true
+  }]
+};
+```
+
 ## 语法
 
 通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
@@ -18,21 +29,26 @@ icon: align
 
 来对你的段落对齐进行自定义。
 
-## 演示
-
-本主题仍在制作中，API 可能会有
-
-::: center
-重大的变动。
-:::
-
-如果您在使用过程中遇到了bug，可以
-
-::: right
-[提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
-:::
+如果你需要嵌套，则外面的 `:::` 需要依次增加。
 
 ```md
+:::: right
+右对齐文字
+
+右对齐文字
+
+::: center
+居中文字
+:::
+
+右对齐文字
+
+::::
+```
+
+## 演示
+
+:::: danger W.I.P
 本主题仍在制作中，API 可能会有
 
 ::: center
@@ -44,4 +60,20 @@ icon: align
 ::: right
 [提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
+::::
+
+```md
+:::: danger W.I.P
+本主题仍在制作中，API 可能会有
+
+::: center
+重大的变动。
+:::
+
+如果您在使用过程中遇到了bug，可以
+
+::: right
+[提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+:::
+::::
 ```

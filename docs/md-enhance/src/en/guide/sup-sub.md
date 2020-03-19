@@ -8,7 +8,7 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Configuration
 
-```js
+```js {4,6}
 module.exports = {
   plugin: ['@mr-hope/md-enhance', {
     // Enable Subscript

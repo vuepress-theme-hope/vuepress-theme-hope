@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2020-01-07 21:40:17
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 17:18:12
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-19 14:29:48
  * @Description: 流程图组件
 -->
 <template>
@@ -61,11 +61,6 @@ export default class FlowChart extends Vue {
   min-height 200px
   transition all 1s
   padding 10px 6px
-
-  & svg
-    width 100%
-    min-width 450px
-    height auto
 
   &.loading
     display flex

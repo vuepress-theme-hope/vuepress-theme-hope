@@ -8,7 +8,7 @@ icon: footnote
 
 ## 配置
 
-```js
+```js {4}
 module.exports = {
   plugin: ['@mr-hope/md-enhance', {
     // 启用脚注
@@ -33,7 +33,7 @@ module.exports = {
 
 行内的脚注^[Text of inline footnote] 定义.
 
-Duplicated footnote reference[^second].
+重复的页脚定义[^second].
 
 [^first]: 脚注 **可以包含特殊标记**
 
@@ -48,7 +48,7 @@ Duplicated footnote reference[^second].
 
 行内的脚注^[Text of inline footnote] 定义.
 
-Duplicated footnote reference[^second].
+重复的页脚定义[^second].
 
 [^first]: 脚注 **可以包含特殊标记**
 
