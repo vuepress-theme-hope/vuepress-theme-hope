@@ -34,7 +34,9 @@ import Tag from '@theme/layouts/Tag.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 import { globalEncryptStatus } from '@theme/util/encrypt';
 
-@Component({ components: { Category, Password, Sidebar, Navbar, Tag } })
+@Component({
+  components: { Category, Password, Sidebar, Navbar, Tag }
+})
 export default class BlogEntry extends Vue {
   private isSidebarOpen = false;
 

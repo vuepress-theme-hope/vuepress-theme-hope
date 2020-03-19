@@ -4,7 +4,7 @@
     <h3 v-if="blogger" class="name" v-text="blogger " />
     <div class="num-wrapper">
       <div>
-        <div class="num">{{articleNum}}</div>
+        <div class="num">{{$articles.length}}</div>
         <div>文章</div>
       </div>
       <div>
@@ -16,15 +16,12 @@
   </div>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
+import ArticleMixin from '@theme/util/articleMixin';
 import { PageComputed } from 'vuepress-types';
 
 @Component
-export default class BloggerInfo extends Vue {
-  @Prop(Number)
-  /** 文章数量 */
-  private readonly articleNum!: number;
-
+export default class BloggerInfo extends Mixins(ArticleMixin) {
   /** 博主 */
   private get blogger() {
     return (

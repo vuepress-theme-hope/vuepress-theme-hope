@@ -1,20 +1,18 @@
 <template>
   <main class="category-list">
-    <h1>分类</h1>
-    <TagList :tag-list="$category" :current-tag="$currentCategory" />
+    <CategoryList />
     <template v-if="display">
       <ArticleList />
-      <Pagination />
     </template>
   </main>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import ArticleList from '@theme/components/ArticleList.vue';
+import CategoryList from '@theme/components/CategoryList.vue';
 import Pagination from '@theme/components/Pagination.vue';
-import TagList from '@theme/components/TagList.vue';
 
-@Component({ components: { ArticleList, Pagination, TagList } })
+@Component({ components: { ArticleList, CategoryList, Pagination } })
 export default class Category extends Vue {
   get display() {
     const links = this.$route.path.split('/');
@@ -30,6 +28,6 @@ export default class Category extends Vue {
 .category-list
   padding $navbarHeight 2rem 0
   max-width 960px
-  margin 0px auto
+  margin 0px auto 20px auto
   display block
 </style>

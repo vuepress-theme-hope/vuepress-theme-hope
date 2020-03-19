@@ -1,5 +1,5 @@
 /* eslint-disable max-params */
-import { Page, PageComputed, PageHeader, SiteData } from 'vuepress-types';
+import { PageComputed, PageHeader, SiteData } from 'vuepress-types';
 import {
   SideBarConfigItem,
   SideBarConfigItemObject
@@ -155,9 +155,6 @@ const resolveItem = (
     return Object.assign(resolvePageforSidebar(pages, item[0], base), {
       title: item[1]
     });
-
-  if (groupDepth > 3)
-    console.error('[vuepress] detected a too deep nested sidebar group.');
 
   const children = item.children || [];
   if (children.length === 0 && item.path)

@@ -1,19 +1,14 @@
 <template>
   <ul class="tag-list-wrapper">
     <li
-      v-for="(tag, index) in tagList.list"
+      v-for="(tag, index) in $tag.list"
       :key="tag.path"
       class="tag"
-      :class="{ active: title === tag.name }"
+      :class="{ active: tag.name === ($currentTag || {}).key }"
+      :style="{ backgroundColor: color(index) }"
       @click="clickTag(tag.path)"
     >
-      <div class="tag-name">
-        {{ tag.name }}
-        <span
-          class="tag-num"
-          :style="{ backgroundColor: color(index) }"
-        >{{tag.pages.length}}</span>
-      </div>
+      <div class="tag-name">{{ tag.name }}</div>
     </li>
   </ul>
 </template>
@@ -24,15 +19,6 @@ import Pagination from '@theme/components/Pagination.vue';
 
 @Component({ components: { ArticleList, Pagination } })
 export default class TagList extends Vue {
-  /** 渲染的标签列表 */
-  @Prop(Object) private readonly tagList!: any;
-
-  @Prop(Object) private readonly currentTag!: any;
-
-  private get title() {
-    return (this.currentTag || {}).key;
-  }
-
   /** 点击标签导航 */
   private clickTag(path: string) {
     if (path !== this.$route.path) this.$router.push(path);
@@ -63,37 +49,23 @@ export default class TagList extends Vue {
 
   .tag
     vertical-align middle
-    margin 4px 8px 10px
+    margin 4px 6px 8px
     display inline-block
     cursor pointer
     border-radius $borderRadius
-    font-size 13px
-    border-radius 0.25rem
+    font-size 12px
+    border-radius 14px
     box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
     overflow hidden
     transition all 0.5s
+    padding 4px 8px
+    color #fff
 
-    .tag-name
-      display flex
-      box-sizing border-box
-      width 100%
-      height 100%
-      padding 8px 14px
-      justify-content space-between
-      align-items center
-      color #666
+    &:hover
+      position relative
+      top 0.5px
+      left 0.5px
 
-      &:hover, &.active
-        background-color $accentColor
-        color #fff
-
-      .tag-num
-        margin-left 4px
-        width 1.2rem
-        height 1.2rem
-        text-align center
-        line-height 1.2rem
-        border-radius 0.25rem
-        font-size 0.7rem
-        color #fff
+    &.active
+      font-size 14px
 </style>

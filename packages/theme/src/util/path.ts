@@ -87,7 +87,7 @@ export const ensureEndingSlash = (path: string): string =>
  * @param path 需要判断的链接
  */
 export const isActive = (route: Route, path: string): boolean => {
-  const routeHash = route.hash;
+  const routeHash = decodeURIComponent(route.hash);
   const linkHash = getHash(path);
 
   // 如果待判断的链接存在锚点，判断锚点是否相同

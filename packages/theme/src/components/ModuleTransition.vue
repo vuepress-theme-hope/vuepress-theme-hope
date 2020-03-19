@@ -1,5 +1,13 @@
 <template>
-  <transition name="module" @enter="setStyle" @after-enter="unsetStyle" @before-leave="setStyle">
+  <transition
+    name="module"
+    appear
+    @appear="setStyle"
+    @after-appear="unsetStyle"
+    @enter="setStyle"
+    @after-enter="unsetStyle"
+    @before-leave="setStyle"
+  >
     <slot />
   </transition>
 </template>

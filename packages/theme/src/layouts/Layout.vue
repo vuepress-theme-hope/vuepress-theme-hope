@@ -45,7 +45,7 @@ import Home from '@theme/components/Home.vue';
 import Navbar from '@theme/components/Navbar.vue';
 import Page from '@theme/components/Page.vue';
 import Password from '@theme/components/Password.vue';
-import Sidebar from '@parent-theme/components/Sidebar.vue';
+import Sidebar from '@theme/components/Sidebar.vue';
 import { resolveSidebarItems } from '@theme/util/resolve';
 
 @Component({ components: { BlogPage, Home, Page, Password, Sidebar, Navbar } })

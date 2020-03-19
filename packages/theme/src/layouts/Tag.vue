@@ -1,10 +1,8 @@
 <template>
   <main class="tag-list">
-    <h1>标签</h1>
-    <TagList :tag-list="$tag" :current-tag="$currentTag" />
+    <TagList />
     <template v-if="display">
       <ArticleList />
-      <Pagination />
     </template>
   </main>
 </template>
@@ -30,6 +28,6 @@ export default class Tag extends Vue {
 .tag-list
   padding $navbarHeight 2rem 0
   max-width 960px
-  margin 0px auto
+  margin 0px auto 20px auto
   display block
 </style>

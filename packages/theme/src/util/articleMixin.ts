@@ -1,11 +1,21 @@
+/*
+ * @Author: Mr.Hope
+ * @Date: 2020-03-19 21:14:45
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-19 21:59:50
+ * @Description: 文章列表 Mixin
+ */
+
+import { Component, Vue } from 'vue-property-decorator';
 import { PageComputed } from 'vuepress-types';
+import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 
 /**
  * 日期比较
  * @param pageA 比较的页面1
  * @param pageB 比较的页面2
  */
-export const compareDate = (pageA: any, pageB: any): number => {
+const compareDate = (pageA: any, pageB: any): number => {
   if (!pageA.frontmatter.date) return -1;
   if (!pageB.frontmatter.date) return 1;
 
@@ -21,7 +31,7 @@ export const compareDate = (pageA: any, pageB: any): number => {
  * @param pages 页面
  * @param isTimeline 是否是时间线
  */
-export const filterArticle = (
+const filterArticle = (
   pages: PageComputed[],
   isTimeline?: any
 ): PageComputed[] =>
@@ -46,7 +56,7 @@ export const filterArticle = (
  *
  * @param pages
  */
-export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
+const sortArticle = (pages: PageComputed[]): PageComputed[] =>
   pages.sort((prev, next) => {
     const prevSticky = prev.frontmatter.sticky;
     const nextSticky = next.frontmatter.sticky;
@@ -61,10 +71,7 @@ export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
     return compareDate(prev, next);
   });
 
-export const sortArticleByDate = (pages: PageComputed[]): PageComputed[] =>
-  pages.sort((prev, next) => compareDate(prev, next));
-
-export const generatePagination = (
+const generatePagination = (
   pages: PageComputed[],
   perPage = 10
 ): PageComputed[][] => {
@@ -84,3 +91,21 @@ export const generatePagination = (
 
   return result;
 };
+
+@Component
+export default class ArticleMixin extends Vue {
+  /** 文章列表 */
+  protected get $articles(): PageComputed[] {
+    const { pages } = this.$site;
+
+    // 先过滤再排序
+    return sortArticle(
+      filterArticle(pages.map(page => deepAssign({}, page) as PageComputed))
+    );
+  }
+
+  /** 文章分页 */
+  protected get $paginationArticles(): PageComputed[][] {
+    return generatePagination(this.$articles);
+  }
+}

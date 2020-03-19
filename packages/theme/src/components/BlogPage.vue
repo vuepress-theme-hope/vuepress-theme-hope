@@ -1,6 +1,6 @@
 <template>
   <div class="page blog">
-    <div class="hero" :style="{ ...bgImageStyle }">
+    <div v-if="$frontmatter.hero !== false" class="hero" :style="{ ...bgImageStyle }">
       <div
         class="mask"
         :style="{
@@ -30,21 +30,19 @@
       <div class="blog-page-wrapper">
         <div class="blog-list">
           <!-- 博客列表 -->
-          <ArticleList :articles="paginationArticle[currentPage - 1]" />
-          <!-- 分页 -->
-          <pagation v-model="currentPage" :total="articleList.length" />
+          <ArticleList />
         </div>
         <div class="blogger-info-wrapper">
-          <BloggerInfo :article-num="articleList.length" />
+          <BloggerInfo />
           <h4>
-            <i class="iconfont reco-category" /> 分类
+            <CategoryIcon />分类
           </h4>
-          <TagList :tag-list="$category" :current-tag="$currentCategory" />
+          <CategoryList />
           <hr />
           <h4 v-if="$tag.list.length !== 0">
-            <i class="iconfont reco-tag" /> 标签
+            <TagIcon />标签
           </h4>
-          <TagList :tag-list="$tag" :current-tag="$currentTag" />
+          <TagList />
         </div>
       </div>
     </ModuleTransition>
@@ -61,16 +59,14 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue, Watch } from 'vue-property-decorator';
-import {
-  filterArticle,
-  generatePagination,
-  sortArticle
-} from '@theme/util/articleList';
+import { Component, Mixins, Vue, Watch } from 'vue-property-decorator';
 import ArticleList from '@theme/components/ArticleList.vue';
 import BloggerInfo from '@theme/components/BloggerInfo.vue';
+import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
+import CategoryList from '@theme/components/CategoryList.vue';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import { PageComputed } from 'vuepress-types';
+import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import TagList from '@theme/components/TagList.vue';
 import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 
@@ -78,6 +74,9 @@ import { deepAssign } from '@mr-hope/vuepress-shared-utils';
   components: {
     ArticleList,
     BloggerInfo,
+    CategoryIcon,
+    CategoryList,
+    TagIcon,
     TagList,
     ModuleTransition
   }
@@ -109,21 +108,6 @@ export default class BlogPage extends Vue {
 
   private heroHeight() {
     return (document.querySelector('.hero') as Element).clientHeight;
-  }
-
-  /** 文章列表 */
-  private get articleList() {
-    const { pages } = this.$site;
-
-    // 先过滤再排序
-    return sortArticle(
-      filterArticle(pages.map(page => deepAssign({}, page) as PageComputed))
-    );
-  }
-
-  /** 文章分页 */
-  private get paginationArticle() {
-    return generatePagination(this.articleList);
   }
 
   @Watch('currentPage')
@@ -210,6 +194,11 @@ export default class BlogPage extends Vue {
 
       &:hover
         box-shadow 0 2px 12px 0 rgba(0, 0, 0, 0.2)
+
+      .icon
+        width 16px
+        height 16px
+        margin 0 6px
 
 @media (max-width: $MQMobile)
   .page.blog

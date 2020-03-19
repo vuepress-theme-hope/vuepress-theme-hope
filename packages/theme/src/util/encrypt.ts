@@ -1,3 +1,11 @@
+/*
+ * @Author: Mr.Hope
+ * @Date: 2020-03-19 20:31:54
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-19 21:13:56
+ * @Description: 加密状态生成
+ */
+
 import { EncryptOptions } from '../../types';
 
 /**

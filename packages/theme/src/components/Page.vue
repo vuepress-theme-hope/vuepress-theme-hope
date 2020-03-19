@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:03
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-25 23:06:00
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-19 22:39:38
  * @Description: 页面主体
  *
  * 为每个页面都添加了 路径导航 / 页脚 支持
@@ -62,7 +62,7 @@
 
 <script>
 import * as md5 from 'md5';
-import ModuleTransition from '@theme/components/ModuleTransition';
+import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import PageEdit from '@parent-theme/components/PageEdit.vue';
 import PageNav from '@parent-theme/components/PageNav.vue';
 import Password from '@theme/components/Password.vue';
