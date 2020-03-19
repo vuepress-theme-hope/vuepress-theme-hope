@@ -6,7 +6,7 @@
     @touchstart="onTouchStart"
   >
     <!-- 密码弹窗 -->
-    <Password v-if="globalEncrypt && !globalDescrypted" @enter="globalPassword = $event.value" />
+    <Password v-if="globalEncrypt" @enter="globalPassword = $event.value" />
     <!-- 内容 -->
     <template v-else>
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
@@ -18,10 +18,7 @@
         <slot slot="bottom" name="sidebar-bottom" />
       </Sidebar>
 
-      <Password
-        v-if="configEncrypt && !configDescrypted && !globalDescrypted"
-        @enter="setPassword"
-      />
+      <Password v-if="currentPathEncrypt && !globalEncrypt" @enter="setPassword" />
 
       <BlogPage v-else-if="$page.frontmatter.blogpage" />
 
@@ -36,6 +33,11 @@
 </template>
 
 <script>
+import {
+  globalEncryptStatus,
+  pathEncryptStatus,
+  pathHitKeys
+} from '@theme/util/encrypt';
 import BlogPage from '@theme/components/BlogPage.vue';
 import Home from '@theme/components/Home.vue';
 import Navbar from '@theme/components/Navbar.vue';
@@ -54,78 +56,23 @@ export default {
   }),
 
   computed: {
-    /** 加密选项 */
-    encryptOption() {
-      return this.$themeConfig.encrypt || {};
-    },
-
     /** 是否全局加密 */
     globalEncrypt() {
-      return Boolean(this.encryptOption.globalEncrypt);
+      return globalEncryptStatus(this.$themeConfig.encrypt);
     },
 
-    /** 是否已经解密 */
-    globalDescrypted() {
-      if (this.globalEncrypt) {
-        const { global } = this.encryptOption;
-        /** 全局密码 */
-        const globalPassword = typeof global === 'string' ? [global] : global;
-
-        /** 全局密码匹配结果 */
-        const result = globalPassword.filter(
-          password => this.globalPassword === password
-        );
-
-        return result.length !== 0;
-      }
-
-      return false;
+    /** 当前路径命中的键值 */
+    currentPathHitKeys() {
+      return pathHitKeys(this.$themeConfig.encrypt, this.$route.path);
     },
 
-    /** 配置项命中项 */
-    encryptHitItems() {
-      if (typeof this.encryptOption.config === 'object') {
-        /** 配置键名 */
-        const keys = Object.keys(this.encryptOption.config);
-
-        /** 命中键名 */
-        const hitKeys = keys.filter(key => this.$route.path.indexOf(key) === 0);
-
-        return hitKeys.sort((x, y) => y.length - x.length);
-      }
-
-      return [];
-    },
-
-    /** 由配置项判断是否加密 */
-    configEncrypt() {
-      return this.encryptHitItems.length !== 0;
-    },
-
-    /** 当前命中配置项是否已经解密 */
-    configDescrypted() {
-      if (this.configEncrypt) {
-        /** 配置项 */
-        const { config } = this.encryptOption;
-
-        /** 正确键值 */
-        const correctKeys = this.encryptHitItems.filter(key => {
-          /** 命中的密码 */
-          const hitPasswords =
-            typeof config[key] === 'string' ? [config[key]] : config[key];
-
-          /** 比较结果 */
-          const result = hitPasswords.filter(
-            password => this.passwordConfig[key] === password
-          );
-
-          return result.length !== 0;
-        });
-
-        return correctKeys.length !== 0;
-      }
-
-      return false;
+    /** 路径是否加密 */
+    currentPathEncrypt() {
+      return pathEncryptStatus(
+        this.$themeConfig.encrypt,
+        this.$route.path,
+        this.passwordConfig
+      );
     },
 
     shouldShowNavbar() {
@@ -207,17 +154,14 @@ export default {
 
     /** 设置密码 */
     setPassword(password) {
-      const { config } = this.encryptOption;
+      const { config } = this.$themeConfig.encrypt;
 
-      for (let i = 0; i < this.encryptHitItems.length; i++) {
-        /** 命中键值 */
-        const hitKey = this.encryptHitItems[i];
+      for (const hitKey of this.currentPathHitKeys) {
         /** 命中密码配置 */
         const hitPassword = config[hitKey];
         /** 命中密码列表 */
         const hitPasswordList =
           typeof hitPassword === 'string' ? [hitPassword] : hitPassword;
-
         /** 比较结果 */
         const result = hitPasswordList.filter(item => password === item);
 

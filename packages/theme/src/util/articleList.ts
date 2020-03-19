@@ -46,8 +46,8 @@ export const filterArticle = (
  *
  * @param pages
  */
-export const sortArticle = (pages: PageComputed[]): PageComputed[] => {
-  return pages.sort((prev, next) => {
+export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
+  pages.sort((prev, next) => {
     const prevSticky = prev.frontmatter.sticky;
     const nextSticky = next.frontmatter.sticky;
 
@@ -60,12 +60,9 @@ export const sortArticle = (pages: PageComputed[]): PageComputed[] => {
 
     return compareDate(prev, next);
   });
-};
 
 export const sortArticleByDate = (pages: PageComputed[]): PageComputed[] =>
-  pages.sort((prev, next) => {
-    return compareDate(prev, next);
-  });
+  pages.sort((prev, next) => compareDate(prev, next));
 
 export const generatePagination = (
   pages: PageComputed[],

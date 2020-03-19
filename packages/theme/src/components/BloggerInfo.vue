@@ -28,8 +28,11 @@ export default class BloggerInfo extends Vue {
   /** 博主 */
   private get blogger() {
     return (
-      this.$themeConfig.author || this.$page.frontmatter.blogger ||
-      this.$page.frontmatter.author || this.$site.title || ''
+      this.$themeConfig.author ||
+      this.$page.frontmatter.blogger ||
+      this.$page.frontmatter.author ||
+      this.$site.title ||
+      ''
     );
   }
 

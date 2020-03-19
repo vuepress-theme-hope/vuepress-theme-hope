@@ -62,7 +62,11 @@
 
 <script lang='ts'>
 import { Component, Vue, Watch } from 'vue-property-decorator';
-import { filterArticle, generatePagination, sortArticle } from '@theme/util/articleList';
+import {
+  filterArticle,
+  generatePagination,
+  sortArticle
+} from '@theme/util/articleList';
 import ArticleList from '@theme/components/ArticleList.vue';
 import BloggerInfo from '@theme/components/BloggerInfo.vue';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
@@ -76,7 +80,8 @@ import { deepAssign } from '@mr-hope/vuepress-shared-utils';
     BloggerInfo,
     TagList,
     ModuleTransition
-  }})
+  }
+})
 export default class BlogPage extends Vue {
   /** 当前页面 */
   private currentPage = 1;
@@ -84,7 +89,8 @@ export default class BlogPage extends Vue {
   private get heroImageStyle() {
     const defaultStyle = {
       maxHeight: '200px',
-      margin: this.$frontmatter.showTitle === false ? '6rem auto 1.5rem' : '1rem auto'
+      margin:
+        this.$frontmatter.showTitle === false ? '6rem auto 1.5rem' : '1rem auto'
     };
 
     return { ...defaultStyle, ...this.$frontmatter.heroImageStyle };
@@ -111,9 +117,7 @@ export default class BlogPage extends Vue {
 
     // 先过滤再排序
     return sortArticle(
-      filterArticle(
-        pages.map(page => deepAssign({}, page) as PageComputed)
-      )
+      filterArticle(pages.map(page => deepAssign({}, page) as PageComputed))
     );
   }
 
