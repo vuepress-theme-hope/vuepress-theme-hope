@@ -58,7 +58,10 @@ export default {
   computed: {
     /** 是否全局加密 */
     globalEncrypt() {
-      return globalEncryptStatus(this.$themeConfig.encrypt);
+      return globalEncryptStatus(
+        this.$themeConfig.encrypt,
+        this.globalPassword
+      );
     },
 
     /** 当前路径命中的键值 */

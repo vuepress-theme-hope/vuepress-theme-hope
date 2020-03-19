@@ -29,7 +29,7 @@ export default class Password extends Vue {
       this.hasTried = true;
     });
   }
-};
+}
 </script>
 <style lang="stylus">
 $mobileSidebarWidth = $sidebarWidth * 0.82

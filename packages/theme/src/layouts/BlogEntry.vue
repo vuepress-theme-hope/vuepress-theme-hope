@@ -6,7 +6,7 @@
     @touchstart="onTouchStart"
   >
     <!-- 密码弹窗 -->
-    <Password v-if="globalEncrypt && !globalDescrypted" @enter="globalPassword = $event.value" />
+    <Password v-if="globalEncrypt" @enter="globalPassword = $event.value" />
     <!-- 内容 -->
     <template v-else>
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
@@ -32,6 +32,7 @@ import Password from '@theme/components/Password.vue';
 import Sidebar from '@theme/components/Sidebar.vue';
 import Tag from '@theme/layouts/Tag.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
+import { globalEncryptStatus } from '@theme/util/encrypt';
 
 @Component({ components: { Category, Password, Sidebar, Navbar, Tag } })
 export default class BlogEntry extends Vue {
@@ -44,10 +45,16 @@ export default class BlogEntry extends Vue {
   private get componentName() {
     const links = this.$route.path.split('/');
 
-    if (links.length === 2 || links.length === 3 || (links.length === 4 && links[3] === ''))
+    if (
+      links.length === 2 ||
+      links.length === 3 ||
+      (links.length === 4 && links[3] === '')
+    )
       return `${capitalize(links[1])}`;
 
-    console.error(`[vuepress-theme-hope]: Can not resolve blog components at ${this.$route.path}`);
+    console.error(
+      `[vuepress-theme-hope]: Can not resolve blog components at ${this.$route.path}`
+    );
 
     return 'Layout';
   }
@@ -59,25 +66,7 @@ export default class BlogEntry extends Vue {
 
   /** 是否全局加密 */
   private get globalEncrypt() {
-    return Boolean(this.encryptOption.globalEncrypt);
-  }
-
-  /** 是否已经解密 */
-  private get globalDescrypted() {
-    if (this.globalEncrypt) {
-      const { global } = this.encryptOption;
-      /** 全局密码 */
-      const globalPassword = typeof global === 'string' ? [global] : global;
-
-      /** 全局密码匹配结果 */
-      const result = (globalPassword as string[]).filter(
-        password => this.globalPassword === password
-      );
-
-      return result.length !== 0;
-    }
-
-    return false;
+    return globalEncryptStatus(this.$themeConfig.encrypt, this.globalPassword);
   }
 
   private get shouldShowNavbar() {

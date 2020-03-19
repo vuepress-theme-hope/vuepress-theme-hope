@@ -19,7 +19,10 @@ export default class Category extends Vue {
   get display() {
     const links = this.$route.path.split('/');
 
-    return ((links.length === 3 && links[2] !== '') || (links.length === 4 && links[3] === ''));
+    return (
+      (links.length === 3 && links[2] !== '') ||
+      (links.length === 4 && links[3] === '')
+    );
   }
 }
 </script>
