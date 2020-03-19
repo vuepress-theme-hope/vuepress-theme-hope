@@ -1,5 +1,5 @@
 <template>
-  <div class="passwordCtn" :class=" { expand: page }">
+  <div class="passwordCtn" :class=" { expand: page || isMainPage }">
     <div class="text" :class="{ hasTried }">{{ hasTried? '请输入正确密码': '请输入密码' }}</div>
     <div class="inputCtn">
       <input v-model="password" type="password" @keypress.enter="verify" />
@@ -20,6 +20,10 @@ export default class Password extends Vue {
   private password = '';
 
   private hasTried = false;
+
+  private get isMainPage() {
+    return this.$frontmatter.home === true;
+  }
 
   private verify() {
     this.hasTried = false;

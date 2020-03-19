@@ -6,7 +6,7 @@
     @touchstart="onTouchStart"
   >
     <!-- 密码弹窗 -->
-    <Password v-if="globalEncrypt" @enter="globalPassword = $event.value" />
+    <Password v-if="globalEncrypted" @enter="globalPassword = $event.value" />
     <!-- 内容 -->
     <template v-else>
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
@@ -24,23 +24,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
 import Category from '@theme/layouts/Category.vue';
-import { EncryptOptions } from '../../types';
 import Navbar from '@theme/components/Navbar.vue';
 import Password from '@theme/components/Password.vue';
 import Sidebar from '@theme/components/Sidebar.vue';
 import Tag from '@theme/layouts/Tag.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
-import { globalEncryptStatus } from '@theme/util/encrypt';
+import globalEncryptMixin from '@theme/util/globalEncryptMixin';
 
 @Component({
   components: { Category, Password, Sidebar, Navbar, Tag }
 })
-export default class BlogEntry extends Vue {
+export default class BlogEntry extends Mixins(globalEncryptMixin) {
   private isSidebarOpen = false;
-
-  private globalPassword = '';
 
   private touchStart: Record<string, number> = {};
 
@@ -59,16 +56,6 @@ export default class BlogEntry extends Vue {
     );
 
     return 'Layout';
-  }
-
-  /** 加密选项 */
-  private get encryptOption(): EncryptOptions {
-    return this.$themeConfig.encrypt || {};
-  }
-
-  /** 是否全局加密 */
-  private get globalEncrypt() {
-    return globalEncryptStatus(this.$themeConfig.encrypt, this.globalPassword);
   }
 
   private get shouldShowNavbar() {

@@ -1,0 +1,38 @@
+/*
+ * @Author: Mr.Hope
+ * @Date: 2020-03-19 20:31:54
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 00:13:10
+ * @Description: 加密状态 Mixin
+ */
+
+import { Component, Vue } from 'vue-property-decorator';
+import { EncryptOptions } from '../../types';
+
+@Component
+export default class GlobalEncryptMixin extends Vue {
+  /** 全局密码 */
+  protected globalPassword = '';
+
+  /** 加密配置 */
+  protected get encryptOptions(): EncryptOptions {
+    return this.$themeConfig.encrypt || {};
+  }
+
+  /** 全局加密状态 */
+  protected get globalEncrypted(): boolean {
+    if (this.encryptOptions.globalEncrypt && this.encryptOptions.global) {
+      const { global } = this.encryptOptions;
+      /** 全局密码 */
+      const globalPasswords = typeof global === 'string' ? [global] : global;
+      /** 全局密码匹配结果 */
+      const result = globalPasswords.filter(
+        globalPassword => globalPassword === this.globalPassword
+      );
+
+      return result.length === 0;
+    }
+
+    return false;
+  }
+}
