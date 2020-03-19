@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "0.1.0-beta.37",
+  "version": "0.1.0-beta.38",
   "description": "markdown enhancement for vuepress",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://vuepress-md-enhance.mrhope.site/",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.37",
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.38",
     "@types/hash-sum": "^1.0.0",
     "flowchart.js": "^1.13.0",
     "vuepress-plugin-container": "^2.1.2",
