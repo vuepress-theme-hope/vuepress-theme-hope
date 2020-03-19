@@ -32,150 +32,146 @@
   </div>
 </template>
 
-<script>
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import {
   globalEncryptStatus,
   pathEncryptStatus,
   pathHitKeys
 } from '@theme/util/encrypt';
 import BlogPage from '@theme/components/BlogPage.vue';
+import { EncryptOptions } from '../../types';
 import Home from '@theme/components/Home.vue';
 import Navbar from '@theme/components/Navbar.vue';
 import Page from '@theme/components/Page.vue';
 import Password from '@theme/components/Password.vue';
 import Sidebar from '@parent-theme/components/Sidebar.vue';
-import { resolveSidebarItems } from '@theme/util';
+import { resolveSidebarItems } from '@theme/util/resolve';
 
-export default {
-  components: { BlogPage, Home, Page, Password, Sidebar, Navbar },
+@Component({ components: { BlogPage, Home, Page, Password, Sidebar, Navbar } })
+export default class Layout extends Vue {
+  private isSidebarOpen = false;
 
-  data: () => ({
-    isSidebarOpen: false,
-    globalPassword: '',
-    passwordConfig: {}
-  }),
+  private globalPassword = '';
 
-  computed: {
-    /** 是否全局加密 */
-    globalEncrypt() {
-      return globalEncryptStatus(
-        this.$themeConfig.encrypt,
-        this.globalPassword
-      );
-    },
+  private passwordConfig: Record<string, string> = {};
 
-    /** 当前路径命中的键值 */
-    currentPathHitKeys() {
-      return pathHitKeys(this.$themeConfig.encrypt, this.$route.path);
-    },
+  private touchStart: Record<string, number> = {};
 
-    /** 路径是否加密 */
-    currentPathEncrypt() {
-      return pathEncryptStatus(
-        this.$themeConfig.encrypt,
-        this.$route.path,
-        this.passwordConfig
-      );
-    },
+  /** 是否全局加密 */
+  private get globalEncrypt() {
+    return globalEncryptStatus(this.$themeConfig.encrypt, this.globalPassword);
+  }
 
-    shouldShowNavbar() {
-      const { frontmatter } = this.$page;
+  /** 当前路径命中的键值 */
+  private get currentPathHitKeys() {
+    return pathHitKeys(this.$themeConfig.encrypt, this.$route.path);
+  }
 
-      if (frontmatter.navbar === false || this.$themeConfig.navbar === false)
-        return false;
+  /** 路径是否加密 */
+  private get currentPathEncrypt() {
+    return pathEncryptStatus(
+      this.$themeConfig.encrypt,
+      this.$route.path,
+      this.passwordConfig
+    );
+  }
 
-      return (
-        this.$title ||
-        this.$themeConfig.logo ||
-        this.$themeConfig.repo ||
-        this.$themeConfig.nav ||
-        this.$themeLocaleConfig.nav
-      );
-    },
+  private get shouldShowNavbar() {
+    const { frontmatter } = this.$page;
 
-    shouldShowSidebar() {
-      const { frontmatter } = this.$page;
+    if (frontmatter.navbar === false || this.$themeConfig.navbar === false)
+      return false;
 
-      return (
-        !frontmatter.home &&
-        frontmatter.sidebar !== false &&
-        this.sidebarItems.length
-      );
-    },
+    return (
+      this.$title ||
+      this.$themeConfig.logo ||
+      this.$themeConfig.repo ||
+      this.$themeConfig.nav ||
+      this.$themeLocaleConfig.nav
+    );
+  }
 
-    sidebarItems() {
-      return resolveSidebarItems(
-        this.$page,
-        this.$page.regularPath,
-        this.$site,
-        this.$localePath
-      );
-    },
+  private get shouldShowSidebar() {
+    const { frontmatter } = this.$page;
 
-    pageClasses() {
-      const userPageClass = this.$page.frontmatter.pageClass;
+    return (
+      !frontmatter.home &&
+      frontmatter.sidebar !== false &&
+      this.sidebarItems.length
+    );
+  }
 
-      return [
-        {
-          'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
-        },
-        userPageClass
-      ];
-    }
-  },
+  private get sidebarItems() {
+    return resolveSidebarItems(
+      this.$page,
+      this.$page.regularPath,
+      this.$site,
+      this.$localePath
+    );
+  }
 
-  mounted() {
+  private get pageClasses() {
+    const userPageClass = this.$page.frontmatter.pageClass;
+
+    return [
+      {
+        'no-navbar': !this.shouldShowNavbar,
+        'sidebar-open': this.isSidebarOpen,
+        'no-sidebar': !this.shouldShowSidebar
+      },
+      userPageClass
+    ];
+  }
+
+  private mounted() {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
-  },
+  }
 
-  methods: {
-    toggleSidebar(to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen;
-      this.$emit('toggle-sidebar', this.isSidebarOpen);
-    },
+  private toggleSidebar(to: any) {
+    this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen;
+    this.$emit('toggle-sidebar', this.isSidebarOpen);
+  }
 
-    // Side swipe
-    onTouchStart(e) {
-      this.touchStart = {
-        x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
-      };
-    },
+  // Side swipe
+  private onTouchStart(e: TouchEvent) {
+    this.touchStart = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY
+    };
+  }
 
-    onTouchEnd(e) {
-      const dx = e.changedTouches[0].clientX - this.touchStart.x;
-      const dy = e.changedTouches[0].clientY - this.touchStart.y;
+  private onTouchEnd(e: TouchEvent) {
+    const dx = e.changedTouches[0].clientX - this.touchStart.x;
+    const dy = e.changedTouches[0].clientY - this.touchStart.y;
 
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40)
-        if (dx > 0 && this.touchStart.x <= 80) this.toggleSidebar(true);
-        else this.toggleSidebar(false);
-    },
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40)
+      if (dx > 0 && this.touchStart.x <= 80) this.toggleSidebar(true);
+      else this.toggleSidebar(false);
+  }
 
-    /** 设置密码 */
-    setPassword(password) {
-      const { config } = this.$themeConfig.encrypt;
+  /** 设置密码 */
+  private setPassword(password: string) {
+    const { config } = this.$themeConfig.encrypt as Required<EncryptOptions>;
 
-      for (const hitKey of this.currentPathHitKeys) {
-        /** 命中密码配置 */
-        const hitPassword = config[hitKey];
-        /** 命中密码列表 */
-        const hitPasswordList =
-          typeof hitPassword === 'string' ? [hitPassword] : hitPassword;
-        /** 比较结果 */
-        const result = hitPasswordList.filter(item => password === item);
+    for (const hitKey of this.currentPathHitKeys) {
+      /** 命中密码配置 */
+      const hitPassword = config[hitKey];
+      /** 命中密码列表 */
+      const hitPasswordList =
+        typeof hitPassword === 'string' ? [hitPassword] : hitPassword;
+      /** 比较结果 */
+      const result = hitPasswordList.filter(item => password === item);
 
-        // 出现匹配
-        if (result.length !== 0) {
-          this.$set(this.passwordConfig, hitKey, password);
+      // 出现匹配
+      if (result.length !== 0) {
+        this.$set(this.passwordConfig, hitKey, password);
 
-          break;
-        }
+        break;
       }
     }
   }
-};
+}
 </script>

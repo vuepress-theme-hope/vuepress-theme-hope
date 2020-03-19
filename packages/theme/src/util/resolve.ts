@@ -1,5 +1,5 @@
 /* eslint-disable max-params */
-import { Page, PageComputed, PageHeader, SiteConfig } from 'vuepress-types';
+import { Page, PageComputed, PageHeader, SiteData } from 'vuepress-types';
 import {
   SideBarConfigItem,
   SideBarConfigItemObject
@@ -95,7 +95,7 @@ export const groupSidebarHeaders = (
  *
  * @param page 当前页面
  */
-const resolveSidebarHeaders = (page: Page): any => {
+const resolveSidebarHeaders = (page: PageComputed): any => {
   const headers = groupSidebarHeaders(page.headers || []);
 
   return [
@@ -183,14 +183,9 @@ const resolveItem = (
  * @returns { SidebarGroup }
  */
 export const resolveSidebarItems = (
-  page: Page,
+  page: PageComputed,
   regularPath: string,
-  site: Pick<
-    SiteConfig,
-    'title' | 'description' | 'base' | 'themeConfig' | 'locales'
-  > & {
-    pages: PageComputed[];
-  },
+  site: SiteData,
   localePath: string
 ): any => {
   const { themeConfig = {}, pages } = site;
