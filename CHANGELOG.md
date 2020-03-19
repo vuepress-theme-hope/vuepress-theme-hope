@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.0-beta.38](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.37...v0.1.0-beta.38) (2020-03-19)
+
+### Features
+
+* **theme:** improve encrypt and add sticky for articleList ([ad87bb1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ad87bb1fbf94759e6b4642fab5e02945ae4872bf))
+* **theme:** make encrypt mixins ([84cbe37](https://github.com/Mister-Hope/vuepress-theme-hope/commit/84cbe37a98ba06284956d89afae59b7232982e05))
+* **theme:** make Layout.vue ts ([c112afb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c112afba3b7eaa1b16cbfefbea00360069ef2836))
+* **theme:** update component and tag page ([73b7ab7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/73b7ab71c863a78dd36136d2ce05f6ec4304d66f))
+
 ## [0.1.0-beta.37](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.36...v0.1.0-beta.37) (2020-03-18)
 
 ### Bug Fixes
