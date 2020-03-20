@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-beta.39](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.38...v0.1.0-beta.39) (2020-03-20)
+
+### Bug Fixes
+
+* **theme:** fix npmignore ([bc9935a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bc9935a9585f85ccf6ff605eaf9ec518c9d09d13))
+
 ## [0.1.0-beta.38](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.37...v0.1.0-beta.38) (2020-03-19)
 
 ### Features
