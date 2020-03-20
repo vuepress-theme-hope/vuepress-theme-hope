@@ -1,5 +1,5 @@
 src/lib/*.ts
-!src/lib/navigate.ts
 test/
 
 resolve.ts
+!util/resolve.ts

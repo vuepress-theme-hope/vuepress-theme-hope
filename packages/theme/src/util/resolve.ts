@@ -1,3 +1,11 @@
+/*
+ * @Author: Mr.Hope
+ * @Date: 2020-03-19 23:52:06
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 09:46:16
+ * @Description: Navbar and Sidebar config handler
+ */
+
 /* eslint-disable max-params */
 import { PageComputed, PageHeader, SiteData } from 'vuepress-types';
 import {
