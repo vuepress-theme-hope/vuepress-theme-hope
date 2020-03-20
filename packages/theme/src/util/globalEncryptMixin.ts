@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-19 20:31:54
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 00:13:10
+ * @LastEditTime: 2020-03-20 11:54:29
  * @Description: 加密状态 Mixin
  */
 
@@ -34,5 +34,26 @@ export default class GlobalEncryptMixin extends Vue {
     }
 
     return false;
+  }
+
+  protected mounted(): void {
+    const passwordConfig = localStorage.getItem('globalPassword');
+
+    if (passwordConfig) this.globalPassword = passwordConfig;
+  }
+
+  protected globalPasswordCheck(value: string): void {
+    const { global } = this.encryptOptions as Required<EncryptOptions>;
+    /** 全局密码 */
+    const globalPasswords = typeof global === 'string' ? [global] : global;
+    /** 全局密码匹配结果 */
+    const result = globalPasswords.filter(
+      globalPassword => globalPassword === value
+    );
+
+    if (result.length !== 0) {
+      this.globalPassword = value;
+      localStorage.setItem('globalPassword', value);
+    }
   }
 }

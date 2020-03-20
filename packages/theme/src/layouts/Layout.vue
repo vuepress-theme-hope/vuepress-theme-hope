@@ -6,7 +6,7 @@
     @touchstart="onTouchStart"
   >
     <!-- 密码弹窗 -->
-    <Password v-if="globalEncrypted" @enter="globalPassword = $event.value" />
+    <Password v-if="globalEncrypted" @enter="globalPasswordCheck" />
     <!-- 内容 -->
     <template v-else>
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
@@ -101,7 +101,7 @@ export default class Layout extends Mixins(
     ];
   }
 
-  private mounted() {
+  protected mounted() {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });

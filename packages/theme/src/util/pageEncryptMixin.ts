@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-20 00:04:03
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 00:13:55
+ * @LastEditTime: 2020-03-20 11:50:47
  * @Description: 页面加密混入
  */
 
@@ -78,9 +78,16 @@ export default class PageEncryptMixin extends Vue {
       // 出现匹配
       if (result.length !== 0) {
         this.$set(this.passwordConfig, hitKey, password);
+        localStorage.setItem('password', JSON.stringify(this.passwordConfig));
 
         break;
       }
     }
+  }
+
+  protected mounted(): void {
+    const passwordConfig = localStorage.getItem('password');
+
+    if (passwordConfig) this.passwordConfig = JSON.parse(passwordConfig);
   }
 }

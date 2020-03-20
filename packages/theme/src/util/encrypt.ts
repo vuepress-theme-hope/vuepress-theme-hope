@@ -2,35 +2,11 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-19 20:31:54
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-19 21:13:56
+ * @LastEditTime: 2020-03-20 11:39:36
  * @Description: 加密状态生成
  */
 
 import { EncryptOptions } from '../../types';
-
-/**
- * 全局加密状态
- * @param encryptOptions 加密配置
- * @param password 当前输入的密码
- */
-export const globalEncryptStatus = (
-  encryptOptions: EncryptOptions,
-  password: string
-): boolean => {
-  if (encryptOptions && encryptOptions.globalEncrypt && encryptOptions.global) {
-    const { global } = encryptOptions;
-    /** 全局密码 */
-    const globalPasswords = typeof global === 'string' ? [global] : global;
-    /** 全局密码匹配结果 */
-    const result = globalPasswords.filter(
-      globalPassword => globalPassword === password
-    );
-
-    return result.length === 0;
-  }
-
-  return false;
-};
 
 /**
  * 路径命中的键
