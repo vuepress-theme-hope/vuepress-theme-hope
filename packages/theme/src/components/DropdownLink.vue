@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 19:51:24
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 23:11:57
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -54,45 +54,37 @@
   </div>
 </template>
 
-<script>
-import DropdownTransition from '@parent-theme/components/DropdownTransition.vue';
+<script lang='ts'>
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import DropdownTransition from '@theme/components/DropdownTransition.vue';
 import NavLink from '@theme/components/NavLink.vue';
-import last from 'lodash/last';
 
-export default {
-  components: { NavLink, DropdownTransition },
+@Component({ components: { NavLink, DropdownTransition } })
+export default class DropdownLink extends Vue {
+  @Prop({ type: Object, required: true })
+  private readonly item!: any;
 
-  props: {
-    item: {
-      type: Object,
-      required: true
-    }
-  },
+  private open = false;
 
-  data: () => ({ open: false }),
-
-  computed: {
-    dropdownAriaLabel() {
-      return this.item.ariaLabel || this.item.text;
-    }
-  },
-
-  watch: {
-    $route() {
-      this.open = false;
-    }
-  },
-
-  methods: {
-    toggle() {
-      this.open = !this.open;
-    },
-
-    isLastItemOfArray(item, array) {
-      return last(array) === item;
-    }
+  private get dropdownAriaLabel() {
+    return this.item.ariaLabel || this.item.text;
   }
-};
+
+  private toggle() {
+    this.open = !this.open;
+  }
+
+  private isLastItemOfArray(item: any, array: any[]) {
+    if (Array.isArray(array)) return item === array[array.length - 1];
+
+    return false;
+  }
+
+  @Watch('$route')
+  onRouteChange() {
+    this.open = false;
+  }
+}
 </script>
 
 <style lang="stylus">

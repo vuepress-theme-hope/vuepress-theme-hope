@@ -1,4 +1,4 @@
 src/lib/*.ts
-test/**
+test/
 
-/resolve.ts
+resolve.ts

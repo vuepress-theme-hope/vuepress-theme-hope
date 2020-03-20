@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:03
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-19 22:39:38
+ * @LastEditTime: 2020-03-20 22:53:27
  * @Description: 页面主体
  *
  * 为每个页面都添加了 路径导航 / 页脚 支持
@@ -60,49 +60,43 @@
   </main>
 </template>
 
-<script>
+<script lang='ts'>
 import * as md5 from 'md5';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
-import PageEdit from '@parent-theme/components/PageEdit.vue';
-import PageNav from '@parent-theme/components/PageNav.vue';
+import PageEdit from '@theme/components/PageEdit.vue';
+import PageNav from '@theme/components/PageNav.vue';
 import Password from '@theme/components/Password.vue';
+import { SidebarItem } from '@theme/util/sidebar';
 
-export default {
-  components: { ModuleTransition, PageEdit, PageNav, Password },
-  props: {
-    sidebarItems: {
-      type: Array,
-      default: () => []
-    }
-  },
+@Component({ components: { ModuleTransition, PageEdit, PageNav, Password } })
+export default class Page extends Vue {
+  @Prop({ type: Array, default: () => [] })
+  private readonly sidebarItems!: SidebarItem[];
 
-  data: () => ({
-    /** 用户输入的密码 */
-    password: ''
-  }),
+  /** 用户输入的密码 */
+  private password = '';
 
-  computed: {
-    /** 当前页面密码 */
-    pagePassword() {
-      /** 页面当前密码 */
-      const { password } = this.$frontmatter;
-      const passwordType = typeof password;
+  /** 当前页面密码 */
+  private get pagePassword() {
+    /** 页面当前密码 */
+    const { password } = this.$frontmatter;
+    const passwordType = typeof password;
 
-      return passwordType === 'undefined'
-        ? ''
-        : passwordType === 'number'
-        ? md5(this.$frontmatter.password.toString())
-        : passwordType === ' string'
-        ? md5(this.$frontmatter.password)
-        : '';
-    },
-
-    /** 当前页面解密状态 */
-    pageDescrypted() {
-      return this.password === this.pagePassword;
-    }
+    return passwordType === 'undefined'
+      ? ''
+      : passwordType === 'number'
+      ? md5(this.$frontmatter.password.toString())
+      : passwordType === 'string'
+      ? md5(this.$frontmatter.password)
+      : '';
   }
-};
+
+  /** 当前页面解密状态 */
+  private get pageDescrypted() {
+    return this.password === this.pagePassword;
+  }
+}
 </script>
 
 <style lang="stylus">

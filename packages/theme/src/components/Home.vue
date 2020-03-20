@@ -2,32 +2,36 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-13 13:59:35
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-11 16:11:02
+ * @LastEditTime: 2020-03-20 23:37:40
  * @Description: 主页
 -->
 <template>
   <main aria-labelledby="main-title" class="home">
     <header class="hero">
-      <img v-if="data.heroImage" :src="$withBase(data.heroImage)" :alt="data.heroAlt || 'HomeLogo'" />
+      <img
+        v-if="$frontmatter.heroImage"
+        :src="$withBase($frontmatter.heroImage)"
+        :alt="$frontmatter.heroAlt || 'HomeLogo'"
+      />
       <h1
-        v-if="data.heroText !== null"
+        v-if="$frontmatter.heroText !== null"
         id="main-title"
-        v-text="data.heroText || $title || 'Hello'"
+        v-text="$frontmatter.heroText || $title || 'Hello'"
       />
 
       <p
         class="description"
-        v-text="data.tagline || $description || 'Welcome to your VuePress site'"
+        v-text="$frontmatter.tagline || $description || 'Welcome to your VuePress site'"
       />
 
-      <p v-if="data.actionText && data.actionLink" class="action">
+      <p v-if="$frontmatter.actionText && $frontmatter.actionLink" class="action">
         <NavLink :item="actionLink" class="action-button" />
       </p>
     </header>
 
-    <div v-if="data.features && data.features.length" class="features">
+    <div v-if="$frontmatter.features && $frontmatter.features.length" class="features">
       <div
-        v-for="(feature, index) in data.features"
+        v-for="(feature, index) in $frontmatter.features"
         :key="index"
         :class="{link:feature.link}"
         class="feature"
@@ -46,32 +50,24 @@
   </main>
 </template>
 
-<script>
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator';
 import NavLink from '@theme/components/NavLink.vue';
 import navigate from '@theme/util/navigate';
 
-export default {
-  components: { NavLink },
-
-  computed: {
-    data() {
-      return this.$page.frontmatter;
-    },
-
-    actionLink() {
-      return {
-        link: this.data.actionLink,
-        text: this.data.actionText
-      };
-    }
-  },
-
-  methods: {
-    navigate(link) {
-      navigate(link, this.$router, this.$route);
-    }
+@Component({ components: { NavLink } })
+export default class Home extends Vue {
+  private get actionLink() {
+    return {
+      link: this.$frontmatter.actionLink,
+      text: this.$frontmatter.actionText
+    };
   }
-};
+
+  private navigate(link: string) {
+    navigate(link, this.$router, this.$route);
+  }
+}
 </script>
 
 <style lang="stylus">

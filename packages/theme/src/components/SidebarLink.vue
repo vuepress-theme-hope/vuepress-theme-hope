@@ -1,32 +1,59 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:14:48
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-29 22:30:42
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 22:48:31
  * @Description: 侧边栏链接
  *
  * 添加了图标支持
 -->
-<script>
-import { groupHeaders, hashRE, isActive } from '@parent-theme/util';
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { ComponentOptions, CreateElement, VNode } from 'vue';
+import {
+  SidebarAutoItem,
+  SidebarExternalItem,
+  SidebarGroupItem,
+  SidebarHeader,
+  SidebarHeaderItem,
+  SidebarItem,
+  groupSidebarHeaders
+} from '@theme/util/sidebar';
+import { hashRE, isActive } from '@theme/util/path';
+import { HopeSideBarConfigItemObject } from '@mr-hope/vuepress-shared-utils';
+import { PageHeader } from 'vuepress-types';
+import { Route } from 'vue-router';
 
-const renderIcon = (h, icon) => {
-  if (icon[1])
-    return h('i', {
-      class: ['iconfont', `${icon[0]}${icon[1]}`],
-      style: 'margin-right: 0.2em;'
-    });
+/** 渲染图标 */
+const renderIcon = (h: CreateElement, icon: string) =>
+  icon
+    ? h('i', {
+        class: ['iconfont', icon],
+        style: 'margin-right: 0.2em;'
+      })
+    : null;
 
-  return null;
-};
+interface RenderLinkOption {
+  /** 图标 */
+  icon?: string;
+  /** 链接地址 */
+  link: string;
+  /** 链接文字 */
+  text: string;
+  /** 是否激活 */
+  active: boolean;
+}
 
-// eslint-disable-next-line max-params
-const renderLink = (h, to, text, icon, active) =>
+/** 渲染链接 */
+const renderLink = (
+  h: CreateElement,
+  { icon = '', text, link, active }: RenderLinkOption
+) =>
   h(
     'router-link',
     {
       props: {
-        to,
+        to: link,
         activeClass: '',
         exactActiveClass: ''
       },
@@ -38,119 +65,173 @@ const renderLink = (h, to, text, icon, active) =>
     [renderIcon(h, icon), text]
   );
 
-// eslint-disable-next-line max-params
-const renderChildren = (h, children, path, route, maxDepth, depth = 1) => {
-  if (!children || depth > maxDepth) return null;
-
-  return h(
-    'ul',
-    { class: 'sidebar-sub-headers' },
-    children.map(child => {
-      const active = isActive(route, `${path}#${child.slug}`);
-
-      return h('li', { class: 'sidebar-sub-header' }, [
-        renderLink(h, `${path}#${child.slug}`, child.title, [], active),
-        renderChildren(h, child.children, path, route, maxDepth, depth + 1)
-      ]);
-    })
-  );
-};
-
-const renderExternal = (h, to, text) =>
+/** 渲染外部链接 */
+const renderExternal = (
+  h: CreateElement,
+  { path, title = path }: SidebarExternalItem
+) =>
   h(
     'a',
     {
       attrs: {
-        href: to,
+        href: path,
         target: '_blank',
         rel: 'noopener noreferrer'
       },
       class: { 'sidebar-link': true }
     },
-    [text, h('OutboundLink')]
+    [title, h('OutboundLink')]
   );
 
-export default {
-  name: 'SidebarLink',
+interface RenderChildrenOptions {
+  /** 子项 */
+  children: SidebarHeader[] | false;
+  /** 配置项路径 */
+  path: string;
+  /** 当前路由对象 */
+  route: Route;
+  /** 当前深度 */
+  depth?: number;
+  /** 所允许的最大深度 */
+  maxDepth: number;
+}
 
+/** 渲染子项 */
+const renderChildren = (
+  h: CreateElement,
+  { children, path, route, maxDepth, depth = 1 }: RenderChildrenOptions
+): VNode | null => {
+  if (!children || depth > maxDepth) return null;
+
+  return h(
+    'ul',
+    { class: 'sidebar-sub-headers' },
+    children.map((child: SidebarHeader) => {
+      const active = isActive(route, `${path}#${child.slug}`);
+
+      return h('li', { class: 'sidebar-sub-header' }, [
+        renderLink(h, {
+          text: child.title,
+          link: `${path}#${child.slug}`,
+          active
+        }),
+        renderChildren(h, {
+          children: child.children || false,
+          path,
+          route,
+          maxDepth,
+          depth: depth + 1
+        })
+      ]);
+    })
+  );
+};
+
+// Functional Component Hack
+interface FunctionalComponentOptions extends ComponentOptions<Vue> {
+  functional?: boolean;
+}
+
+interface SidebarLinkProps {
+  item:
+    | Exclude<SidebarItem, SidebarAutoItem | SidebarGroupItem>
+    | SidebarHeaderItem;
+}
+
+@Component({
   functional: true,
-
-  props: {
-    item: {
-      type: Object,
-      default: () => ({})
-    },
-    // eslint-disable-next-line vue/require-default-prop
-    sidebarDepth: Number
-  },
-
   // eslint-disable-next-line max-lines-per-function
   render(
     h,
-    {
-      parent: { $page, $route, $themeConfig, $themeLocaleConfig },
-      props: { item, sidebarDepth }
-    }
+    { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props }
   ) {
+    /** 当前渲染项目配置 */
+    const { item } = props as SidebarLinkProps;
+
+    // 当前配置未获取成功
+    if (item.type === 'error') return null;
+
+    // 外部链接侧边栏项
+    if (item.type === 'external') return renderExternal(h, item);
+
     /*
      * Use custom active class matching logic
      * Due to edge case of paths ending with / + hash
      */
     const selfActive = isActive($route, item.path);
-    /*
-     * For sidebar: auto pages, a hash link should be active if one of its child
-     * matches
-     */
+
+    /** 当前渲染项目的激活状态 */
     const active =
-      item.type === 'auto'
+      // 如果是标题侧边栏的话，其中一个子标题匹配也需要激活
+      item.type === 'header'
         ? selfActive ||
-          item.children.some(child =>
+          (item.children || []).some(child =>
             isActive($route, `${item.basePath}#${child.slug}`)
           )
         : selfActive;
 
-    const link =
-      item.type === 'external'
-        ? renderExternal(h, item.path, item.title || item.path)
-        : renderLink(
-            h,
-            item.path,
-            item.title || item.path,
-            $themeConfig.sidebarIcon === false
-              ? []
-              : [$themeConfig.iconPrefix, item.frontmatter.icon],
-            active
-          );
+    /** 最大显示深度 */
+    const maxDepth =
+      $page.frontmatter.sidebarDepth ||
+      $themeLocaleConfig.sidebarDepth ||
+      $themeConfig.sidebarDepth ||
+      1;
 
-    const maxDepth = [
-      $page.frontmatter.sidebarDepth,
-      sidebarDepth,
-      $themeLocaleConfig.sidebarDepth,
-      $themeConfig.sidebarDepth,
-      1
-    ].find(depth => depth !== undefined);
+    // 如果是标题侧边栏
+    if (item.type === 'header')
+      return [
+        renderLink(h, {
+          text: item.title || item.path,
+          link: item.path,
+          active
+        }),
+        renderChildren(h, {
+          children: item.children || false,
+          path: item.basePath,
+          route: $route,
+          maxDepth
+        })
+      ];
 
+    /** 是否显示所有标题 */
     const displayAllHeaders =
       $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
 
-    if (item.type === 'auto')
-      return [
-        link,
-        renderChildren(h, item.children, item.basePath, $route, maxDepth)
-      ];
+    const link = renderLink(h, {
+      icon:
+        $themeConfig.sidebarIcon !== false && item.frontmatter.icon
+          ? `${$themeConfig.iconPrefix}${item.frontmatter.icon}`
+          : '',
+      text: item.title || item.path,
+      link: item.path,
+      active
+    });
+
     if (
       (active || displayAllHeaders) &&
       item.headers &&
       !hashRE.test(item.path)
     ) {
-      const children = groupHeaders(item.headers);
+      const children = groupSidebarHeaders(item.headers);
 
-      return [link, renderChildren(h, children, item.path, $route, maxDepth)];
+      return [
+        link,
+        renderChildren(h, {
+          children,
+          path: item.path,
+          route: $route,
+          maxDepth
+        })
+      ];
     }
 
     return link;
   }
-};
+} as FunctionalComponentOptions)
+export default class SidebarLink extends Vue {
+  @Prop({ type: Object, default: () => ({}) })
+  private readonly item!: HopeSideBarConfigItemObject;
+}
 </script>
 
 <style lang="stylus">

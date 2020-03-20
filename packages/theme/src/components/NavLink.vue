@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-18 11:40:17
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 12:58:22
+ * @LastEditTime: 2020-03-20 23:06:45
  * @Description: 导航栏链接按钮
  *
  * 在官方的基础上添加了图标支持
@@ -32,39 +32,36 @@
   </a>
 </template>
 
-<script>
-import { ensureExt, isExternal, isMailto, isTel } from '@parent-theme/util';
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { ensureExt, isExternal, isMailto, isTel } from '@theme/util/path';
 
-export default {
-  props: {
-    item: {
-      type: Object,
-      required: true
-    }
-  },
+@Component
+export default class NavLink extends Vue {
+  @Prop({ type: Object, required: true })
+  private readonly item!: any;
 
-  computed: {
-    link() {
-      return ensureExt(this.item.link);
-    },
-
-    exact() {
-      if (this.$site.locales)
-        return Object.keys(this.$site.locales).some(
-          rootLink => rootLink === this.link
-        );
-
-      return this.link === '/';
-    }
-  },
-
-  methods: {
-    isExternal,
-    isMailto,
-    isTel,
-    focusoutAction() {
-      this.$emit('focusout');
-    }
+  private get link() {
+    return ensureExt(this.item.link);
   }
-};
+
+  private get exact() {
+    if (this.$site.locales)
+      return Object.keys(this.$site.locales).some(
+        rootLink => rootLink === this.link
+      );
+
+    return this.link === '/';
+  }
+
+  private isExternal = isExternal;
+
+  private isMailto = isMailto;
+
+  private isTel = isTel;
+
+  private focusoutAction() {
+    this.$emit('focusout');
+  }
+}
 </script>

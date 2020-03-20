@@ -38,15 +38,12 @@ import Sidebar from '@theme/components/Sidebar.vue';
 import TagList from '@theme/components/TagList.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 import globalEncryptMixin from '@theme/util/globalEncryptMixin';
+import layoutMixin from '@theme/util/layoutMixin.ts';
 
 @Component({
   components: { ArticleList, CategoryList, Password, Sidebar, Navbar, TagList }
 })
-export default class BlogEntry extends Mixins(globalEncryptMixin) {
-  private isSidebarOpen = false;
-
-  private touchStart: Record<string, number> = {};
-
+export default class BlogEntry extends Mixins(globalEncryptMixin, layoutMixin) {
   /** 是否显示文章 */
   private get displayArticles() {
     const { path } = this.$route;
@@ -69,62 +66,6 @@ export default class BlogEntry extends Mixins(globalEncryptMixin) {
     );
 
     return 'Layout';
-  }
-
-  private get shouldShowNavbar() {
-    const { frontmatter } = this.$page;
-
-    if (frontmatter.navbar === false || this.$themeConfig.navbar === false)
-      return false;
-
-    return (
-      this.$title ||
-      this.$themeConfig.logo ||
-      this.$themeConfig.repo ||
-      this.$themeConfig.nav ||
-      this.$themeLocaleConfig.nav
-    );
-  }
-
-  private get pageClasses() {
-    const userPageClass = this.$page.frontmatter.pageClass;
-
-    return [
-      {
-        'no-navbar': !this.shouldShowNavbar,
-        'sidebar-open': this.isSidebarOpen,
-        'no-sidebar': true
-      },
-      userPageClass
-    ];
-  }
-
-  protected mounted() {
-    this.$router.afterEach(() => {
-      this.isSidebarOpen = false;
-    });
-  }
-
-  private toggleSidebar(to: string | boolean) {
-    this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen;
-    this.$emit('toggle-sidebar', this.isSidebarOpen);
-  }
-
-  // Side swipe
-  private onTouchStart(event: TouchEvent) {
-    this.touchStart = {
-      x: event.changedTouches[0].clientX,
-      y: event.changedTouches[0].clientY
-    };
-  }
-
-  private onTouchEnd(event: TouchEvent) {
-    const dx = event.changedTouches[0].clientX - this.touchStart.x;
-    const dy = event.changedTouches[0].clientY - this.touchStart.y;
-
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40)
-      if (dx > 0 && this.touchStart.x <= 80) this.toggleSidebar(true);
-      else this.toggleSidebar(false);
   }
 }
 </script>

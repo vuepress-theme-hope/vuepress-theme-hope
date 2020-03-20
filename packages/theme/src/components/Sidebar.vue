@@ -15,12 +15,13 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import BloggerInfo from '@theme/components/BloggerInfo.vue';
 import NavLinks from '@theme/components/NavLinks.vue';
+import { SidebarItem } from '@theme/util/sidebar';
 import SidebarLinks from '@theme/components/SidebarLinks.vue';
 
 @Component({ components: { BloggerInfo, SidebarLinks, NavLinks } })
 export default class Sidebar extends Vue {
   @Prop({ type: Array, required: true })
-  private readonly items!: any[];
+  private readonly items!: SidebarItem[];
 }
 </script>
 

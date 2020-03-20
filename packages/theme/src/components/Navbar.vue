@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-22 19:39:17
+ * @LastEditTime: 2020-03-20 23:03:43
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -28,7 +28,7 @@
 
     <div
       :style="linksWrapMaxWidth ? {
-        'max-width': linksWrapMaxWidth + 'px'
+        'max-width': `${linksWrapMaxWidth}px`
       } : {}"
       class="links"
     >
@@ -41,36 +41,38 @@
   </header>
 </template>
 
-<script>
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import AlgoliaSearchBox from '@AlgoliaSearchBox';
 import NavLinks from '@theme/components/NavLinks.vue';
 import SearchBox from '@SearchBox';
-import SidebarButton from '@parent-theme/components/SidebarButton.vue';
+import SidebarButton from '@theme/components/SidebarButton.vue';
 
-const css = (el, property) => {
+const css = (el: Element, property: any) => {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'
-  const win = el.ownerDocument.defaultView;
+  const window = el.ownerDocument!.defaultView;
 
   // `null` means not to return pseudo styles
-  return win.getComputedStyle(el, null)[property];
+  return window!.getComputedStyle(el, null)[property];
 };
 
-export default {
-  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
+@Component({
+  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox }
+})
+export default class Navbar extends Vue {
+  private linksWrapMaxWidth: number = 0;
 
-  data: () => ({ linksWrapMaxWidth: null }),
+  /** Algolia 配置 */
+  private get algolia() {
+    return this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || {};
+  }
 
-  computed: {
-    algolia() {
-      return this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || {};
-    },
+  /** 是否使用 Algolia 搜索 */
+  private get isAlgoliaSearch() {
+    return this.algolia && this.algolia.apiKey && this.algolia.indexName;
+  }
 
-    isAlgoliaSearch() {
-      return this.algolia && this.algolia.apiKey && this.algolia.indexName;
-    }
-  },
-
-  mounted() {
+  private mounted() {
     // Refer to config.styl
     const MOBILE_DESKTOP_BREAKPOINT = 719;
     const NAVBAR_VERTICAL_PADDING =
@@ -78,18 +80,20 @@ export default {
       parseInt(css(this.$el, 'paddingRight'));
     const handleLinksWrapWidth = () => {
       if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT)
-        this.linksWrapMaxWidth = null;
+        this.linksWrapMaxWidth = 0;
       else
         this.linksWrapMaxWidth =
-          this.$el.offsetWidth -
+          (this.$el as HTMLElement).offsetWidth -
           NAVBAR_VERTICAL_PADDING -
-          ((this.$refs.siteName && this.$refs.siteName.offsetWidth) || 0);
+          ((this.$refs.siteName &&
+            (this.$refs.siteName as HTMLElement).offsetWidth) ||
+            0);
     };
 
     handleLinksWrapWidth();
     window.addEventListener('resize', handleLinksWrapWidth, false);
   }
-};
+}
 </script>
 
 <style lang="stylus">

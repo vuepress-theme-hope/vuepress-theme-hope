@@ -113,6 +113,9 @@ export const resolvePath = (
   base: string,
   append?: boolean
 ): string => {
+  // 外部链接直接返回
+  if (isExternal(relative)) return relative;
+
   /** 待处理路径得第一个字母 */
   const firstChar = relative.charAt(0);
 

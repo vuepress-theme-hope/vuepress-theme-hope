@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:10:01
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-21 23:38:30
+ * @LastEditTime: 2020-03-20 23:39:02
  * @Description: 侧边栏分组链接
  *
  * 添加了图标支持
@@ -11,7 +11,7 @@
   <section
     :class="[
       {
-        collapsable,
+        collapsable: item.collapsable,
         'is-sub-group': depth !== 0
       },
       `depth-${depth}`
@@ -30,18 +30,18 @@
     >
       <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
       <span>{{ item.title }}</span>
-      <span v-if="collapsable" :class="open ? 'down' : 'right'" class="arrow" />
+      <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
     </router-link>
 
     <p v-else :class="{ open }" class="sidebar-heading" @click="$emit('toggle')">
       <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
       <span>{{ item.title }}</span>
-      <span v-if="collapsable" :class="open ? 'down' : 'right'" class="arrow" />
+      <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
     </p>
 
     <DropdownTransition>
       <SidebarLinks
-        v-if="open || !collapsable"
+        v-if="open || !item.collapsable"
         class="sidebar-group-items"
         :sidebar-depth="item.sidebarDepth"
         :depth="depth + 1"
@@ -51,43 +51,38 @@
   </section>
 </template>
 
-<script>
-import DropdownTransition from '@parent-theme/components/DropdownTransition.vue';
-import { isActive } from '@parent-theme/util';
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { SidebarAutoItem, SidebarGroupItem } from '@theme/util/sidebar';
+import DropdownTransition from '@theme/components/DropdownTransition.vue';
+import { isActive } from '@theme/util/path';
 
-export default {
-  name: 'SidebarGroup',
-  components: { DropdownTransition },
+@Component({ components: { DropdownTransition } })
+export default class SidebarGroup extends Vue {
+  @Prop({ type: Object, default: () => ({}) })
+  private readonly item!: SidebarAutoItem | SidebarGroupItem;
 
-  props: {
-    item: {
-      type: Object,
-      default: () => ({})
-    },
-    open: Boolean,
-    collapsable: Boolean,
-    // eslint-disable-next-line vue/require-default-prop
-    depth: Number
-  },
+  @Prop(Boolean)
+  private readonly open!: boolean;
 
-  computed: {
-    icon() {
-      const themeConfig = this.$themeConfig;
-      const { icon } = this.item;
+  @Prop(Number)
+  private readonly depth!: number;
 
-      return themeConfig.sidebarIcon !== false && icon
-        ? `${themeConfig.iconPrefix}${icon}`
-        : '';
-    }
-  },
+  private isActive = isActive;
 
-  // Ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
-  beforeCreate() {
-    this.$options.components.SidebarLinks = require('@parent-theme/components/SidebarLinks.vue').default;
-  },
+  private get icon() {
+    const themeConfig = this.$themeConfig;
+    const { icon } = this.item;
 
-  methods: { isActive }
-};
+    return themeConfig.sidebarIcon !== false && icon
+      ? `${themeConfig.iconPrefix}${icon}`
+      : '';
+  }
+
+  private beforeCreate() {
+    this.$options.components!.SidebarLinks = require('@theme/components/SidebarLinks.vue').default;
+  }
+}
 </script>
 
 <style lang="stylus">
