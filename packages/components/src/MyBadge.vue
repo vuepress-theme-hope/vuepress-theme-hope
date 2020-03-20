@@ -12,7 +12,7 @@ import { ComponentOptions } from 'vue';
 // Functional Component Hack
 interface FunctionalComponentOptions extends ComponentOptions<Vue> {
   functional?: boolean;
-};
+}
 
 @Component({
   name: 'MyBadge',
@@ -30,7 +30,8 @@ interface FunctionalComponentOptions extends ComponentOptions<Vue> {
     }
 
     return h('span', options, props.text || slots().default);
-  }} as FunctionalComponentOptions)
+  }
+} as FunctionalComponentOptions)
 export default class MyBadge extends Vue {
   /** 徽章类型 */
   @Prop({ type: String, default: 'tip' })
@@ -47,7 +48,7 @@ export default class MyBadge extends Vue {
   /** 徽章颜色 */
   @Prop({ type: String, default: '' })
   private readonly color!: string;
-};
+}
 </script>
 <style lang="stylus" scoped>
 .badge

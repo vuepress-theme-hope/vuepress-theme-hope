@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-30 17:18:58
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 13:26:15
  * @Description: 多语言配置
  */
 import { HopeLangI18nConfig } from '../../types';
@@ -54,7 +54,8 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       next: '下一页',
       navigate: '跳转到',
       button: '前往'
-    }
+    },
+    allText: '全部'
   },
 
   /** 英文设置 */
@@ -90,7 +91,8 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       next: 'Next',
       navigate: 'Jump to',
       button: 'Go'
-    }
+    },
+    allText: 'All'
   }
 };
 

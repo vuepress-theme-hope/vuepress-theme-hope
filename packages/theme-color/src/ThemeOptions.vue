@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-11 15:20:10
+ * @LastEditTime: 2020-03-20 14:36:29
  * @Description: 主题颜色选择
 -->
 <template>
@@ -83,7 +83,7 @@ export default class ThemeOptions extends Vue {
     const classes = document.body.classList;
 
     if (nightmodeEnable) {
-      const oldColor = [...classes as any];
+      const oldColor = [...(classes as any)];
 
       classes.value = '';
       classes.add('theme-night');

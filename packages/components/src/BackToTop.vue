@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-09-19 18:12:20
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-29 12:16:35
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 14:35:00
  * @Description: 返回顶部组件
 -->
 <template>
@@ -43,7 +43,9 @@ export default class BackToTop extends Vue {
 
   /** 触发距离 */
   private get trigger() {
-    return typeof this.$themeConfig.backtotop === 'number' ? this.$themeConfig.backtotop : this.threshold;
+    return typeof this.$themeConfig.backtotop === 'number'
+      ? this.$themeConfig.backtotop
+      : this.threshold;
   }
 
   /** 是否显示返回顶部按钮 */
@@ -52,9 +54,10 @@ export default class BackToTop extends Vue {
     const pageEnable = this.$page.frontmatter.backtotop;
 
     return (
-      (globalEnable && pageEnable !== false) ||
-      (!globalEnable && pageEnable === true)
-    ) && this.scrollTop > this.trigger;
+      ((globalEnable && pageEnable !== false) ||
+        (!globalEnable && pageEnable === true)) &&
+      this.scrollTop > this.trigger
+    );
   }
 
   private mounted() {
@@ -75,14 +78,14 @@ export default class BackToTop extends Vue {
       document.body.scrollTop ||
       0
     );
-  };
+  }
 
   /** 滚动到顶部 */
   private scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.scrollTop = 0;
   }
-};
+}
 </script>
 
 <style lang='stylus'>

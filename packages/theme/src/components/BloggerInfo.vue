@@ -16,7 +16,7 @@
   </div>
 </template>
 <script lang="ts">
-import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Vue } from 'vue-property-decorator';
 import ArticleMixin from '@theme/util/articleMixin';
 import { PageComputed } from 'vuepress-types';
 

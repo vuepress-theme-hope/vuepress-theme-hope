@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2020-01-13 18:40:39
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-18 16:43:28
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 14:36:07
  * @Description: 一个简单的加载图标
 -->
 <template>
@@ -73,5 +73,5 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Loading extends Vue { }
+export default class Loading extends Vue {}
 </script>

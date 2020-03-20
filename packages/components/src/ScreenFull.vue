@@ -62,13 +62,15 @@ export default class ScreenFull extends Vue {
   private isFullscreen = false;
 
   private click() {
-    if (screenfull.isEnabled) screenfull.toggle().then(() => {
-      this.isFullscreen = (screenfull as any).isFullscreen;
-    });
+    if (screenfull.isEnabled)
+      screenfull.toggle().then(() => {
+        this.isFullscreen = (screenfull as any).isFullscreen;
+      });
   }
 
   private mounted() {
-    this.canFullscreen = screenfull.isEnabled && this.$themeConfig.fullscreen !== false;
+    this.canFullscreen =
+      screenfull.isEnabled && this.$themeConfig.fullscreen !== false;
   }
 }
 </script>

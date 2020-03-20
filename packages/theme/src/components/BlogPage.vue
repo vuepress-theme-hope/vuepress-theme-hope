@@ -82,9 +82,6 @@ import { deepAssign } from '@mr-hope/vuepress-shared-utils';
   }
 })
 export default class BlogPage extends Vue {
-  /** 当前页面 */
-  private currentPage = 1;
-
   private get heroImageStyle() {
     const defaultStyle = {
       maxHeight: '200px',
@@ -108,13 +105,6 @@ export default class BlogPage extends Vue {
 
   private heroHeight() {
     return (document.querySelector('.hero') as Element).clientHeight;
-  }
-
-  @Watch('currentPage')
-  private onPageChange() {
-    setTimeout(() => {
-      window.scrollTo(0, this.heroHeight());
-    }, 100);
   }
 }
 </script>

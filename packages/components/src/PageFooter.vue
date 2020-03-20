@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:49
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 18:27:57
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 14:35:08
  * @Description: 页脚
  *
  * 添加自定义页脚的预设文字
@@ -34,15 +34,14 @@ export default class PageFooter extends Vue {
     return typeof footer === 'object'
       ? `<a href="${footer.link}">${footer.text}</a>`
       : typeof footer === 'string'
-        ? footer
-        : themeFooter &&
-          themeFooter.text &&
-          (this.$frontmatter.footer === true || themeFooter.displayDefault)
-          ? (themeFooter.text as string)
-          : '';
+      ? footer
+      : themeFooter &&
+        themeFooter.text &&
+        (this.$frontmatter.footer === true || themeFooter.displayDefault)
+      ? (themeFooter.text as string)
+      : '';
   }
 }
-
 </script>
 <style lang="stylus">
 .footer

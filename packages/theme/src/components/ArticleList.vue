@@ -23,8 +23,26 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   /** 当前页面 */
   private currentPage = 1;
 
-  private get articles() {
-    return this.$pagination ? this.$pagination.pages : this.$articles;
+  /** 文章列表 */
+  private articles: PageComputed[] = [];
+
+  /** 更新文章列表 */
+  private getArticleList() {
+    try {
+      return this.$pagination ? this.$pagination.pages : this.$articles;
+    } catch (err) {
+      return this.$articles;
+    }
+  }
+
+  private mounted() {
+    this.articles = this.getArticleList();
+  }
+
+  /** 在路径发生改变时更新文章列表 */
+  @Watch('$route')
+  private onRouteUpdate() {
+    this.articles = this.getArticleList();
   }
 
   /** 在页面变化的时候滚动到列表顶部 */

@@ -18,28 +18,41 @@
         <slot slot="bottom" name="sidebar-bottom" />
       </Sidebar>
 
-      <component :is="componentName" />
+      <main class="blog-list">
+        <component :is="`${componentName}List`" />
+        <template v-if="displayArticles">
+          <ArticleList />
+        </template>
+      </main>
     </template>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
-import Category from '@theme/layouts/Category.vue';
+import ArticleList from '@theme/components/ArticleList.vue';
+import CategoryList from '@theme/components/CategoryList.vue';
 import Navbar from '@theme/components/Navbar.vue';
 import Password from '@theme/components/Password.vue';
 import Sidebar from '@theme/components/Sidebar.vue';
-import Tag from '@theme/layouts/Tag.vue';
+import TagList from '@theme/components/TagList.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 import globalEncryptMixin from '@theme/util/globalEncryptMixin';
 
 @Component({
-  components: { Category, Password, Sidebar, Navbar, Tag }
+  components: { ArticleList, CategoryList, Password, Sidebar, Navbar, TagList }
 })
 export default class BlogEntry extends Mixins(globalEncryptMixin) {
   private isSidebarOpen = false;
 
   private touchStart: Record<string, number> = {};
+
+  /** 是否显示文章 */
+  private get displayArticles() {
+    const { path } = this.$route;
+
+    return path !== '/category/' && path !== '/category';
+  }
 
   private get componentName() {
     const links = this.$route.path.split('/');
@@ -121,6 +134,12 @@ export default class BlogEntry extends Mixins(globalEncryptMixin) {
   max-width 740px
   margin 0 auto
   padding 4.6rem 2.5rem 0
+
+.blog-list
+  padding $navbarHeight 2rem 0
+  max-width 960px
+  margin 0px auto 20px auto
+  display block
 
 @media (max-width: $MQMobile)
   .tags-wrapper

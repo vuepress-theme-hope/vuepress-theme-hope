@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 11:23:19
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 14:34:43
  * @Description: Valine 评论插件
 -->
 <template>
@@ -80,14 +80,16 @@ export default class Valine extends Vue {
       el: '#valine',
       appId: valineConfig.appId, // Your appId
       appKey: valineConfig.appKey, // Your appKey
-      placeholder: valineConfig.placeholder || i18n.getLocale(this.$lang).valineHolder,
+      placeholder:
+        valineConfig.placeholder || i18n.getLocale(this.$lang).valineHolder,
       meta: valineConfig.meta || ['nick', 'mail', 'link'],
       notify: valineConfig.notify !== false,
       verify: valineConfig.verify || false,
       avatar: valineConfig.avatar || 'retro',
       visitor: this.visitorDisplay,
       recordIP: valineConfig.recordIP || false,
-      path: path || (typeof window === 'undefined' ? '' : window.location.pathname),
+      path:
+        path || (typeof window === 'undefined' ? '' : window.location.pathname),
       pageSize: valineConfig.pageSize || 10,
       lang: this.$lang === 'zh-CN' ? 'zh-cn' : 'en'
     });

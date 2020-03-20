@@ -45,9 +45,10 @@ export default class BreadCrumb extends Vue {
     const pageEnable = this.$page.frontmatter.breadcrumb;
 
     return (
-      (globalEnable && pageEnable !== false) ||
-      (!globalEnable && pageEnable === true)
-    ) && this.config.length > 1;
+      ((globalEnable && pageEnable !== false) ||
+        (!globalEnable && pageEnable === true)) &&
+      this.config.length > 1
+    );
   }
 
   /** 图标前缀 */
@@ -57,8 +58,8 @@ export default class BreadCrumb extends Vue {
     return typeof iconPrefix === 'string'
       ? iconPrefix
       : iconPrefix === false
-        ? ''
-        : 'icon-';
+      ? ''
+      : 'icon-';
   }
 
   /** 路径导航配置 */
@@ -89,7 +90,7 @@ export default class BreadCrumb extends Vue {
   }
 
   /** 生成页面路径链接 */
-  private getLinks(route: Route) {    ;
+  private getLinks(route: Route) {
     /** 路径项 */
     const routePaths = route.fullPath.split('#')[0].split('/');
     /** 链接 */
@@ -109,7 +110,7 @@ export default class BreadCrumb extends Vue {
 
     return links;
   }
-};
+}
 </script>
 <style lang="stylus">
 @require '~@vuepress/theme-default/styles/wrapper.styl'

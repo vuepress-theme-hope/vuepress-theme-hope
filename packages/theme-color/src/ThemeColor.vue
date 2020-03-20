@@ -60,7 +60,8 @@ export default class ThemeColor extends Vue {
 
   private get enable() {
     return (
-      this.options.allowThemeColor !== false || this.options.allowNightmode !== false
+      this.options.allowThemeColor !== false ||
+      this.options.allowNightmode !== false
     );
   }
 

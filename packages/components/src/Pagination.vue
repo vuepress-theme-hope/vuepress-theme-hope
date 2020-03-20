@@ -95,8 +95,7 @@ export default class Pagination extends Vue {
       }
 
     // 生成页码索引
-    for (let i = min; i <= max; i++)
-      arr.push(i);
+    for (let i = min; i <= max; i++) arr.push(i);
 
     return arr;
   }
@@ -114,8 +113,7 @@ export default class Pagination extends Vue {
   private jumpPage(index: string) {
     const pageNum = parseInt(index);
 
-    if (pageNum <= this.totalPages && pageNum > 0)
-      this.navigate(pageNum);
+    if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
     // eslint-disable-next-line no-alert
     else alert(`请输入大于0，并且小于${this.totalPages}的页码！`);
   }

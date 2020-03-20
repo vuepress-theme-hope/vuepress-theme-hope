@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-30 18:30:33
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-20 14:33:57
  * @Description: 页面信息
 -->
 <template>
@@ -39,10 +39,7 @@
       <!-- 标签 -->
       <template v-if="tag">
         <TagIcon />
-        <span v-if="typeof tag === 'string'">{{tag}}</span>
-        <span v-else>
-          <template v-for="item in tag">{{item}}&nbsp;</template>
-        </span>
+        <Tags :tags="typeof tag === 'string'? [tag]: tag" />
       </template>
     </div>
   </div>
@@ -57,11 +54,22 @@ import EyeIcon from '@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue';
 import FireIcon from '@mr-hope/vuepress-shared-utils/icons/FireIcon.vue';
 import { Route } from 'vue-router';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
+import Tags from './Tags.vue';
 import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import { ValineOptions } from '../types';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
-@Component({ components: { AuthorIcon, CategoryIcon, EyeIcon, FireIcon, TagIcon, TimeIcon } })
+@Component({
+  components: {
+    AuthorIcon,
+    CategoryIcon,
+    EyeIcon,
+    FireIcon,
+    TagIcon,
+    Tags,
+    TimeIcon
+  }
+})
 export default class PageInfo extends Vue {
   private valineConfig: ValineOptions = COMMENT_OPTIONS;
 
@@ -76,17 +84,20 @@ export default class PageInfo extends Vue {
 
     return Boolean(
       valineConfig &&
-      valineConfig.type === 'valine' &&
-      valineConfig.appId &&
-      valineConfig.appKey
+        valineConfig.type === 'valine' &&
+        valineConfig.appId &&
+        valineConfig.appKey
     );
-  };
+  }
 
   /** 作者 */
   private get author() {
     const { author } = this.$frontmatter;
 
-    return (author as string) || (author === false ? '' : this.valineConfig.author || '');
+    return (
+      (author as string) ||
+      (author === false ? '' : this.valineConfig.author || '')
+    );
   }
 
   /** 访问量 */
@@ -105,7 +116,9 @@ export default class PageInfo extends Vue {
   private get visitorID() {
     const { base } = this.$site;
 
-    return base ? `${base.slice(0, base.length - 1)}${this.$page.path}` : this.$page.path;
+    return base
+      ? `${base.slice(0, base.length - 1)}${this.$page.path}`
+      : this.$page.path;
   }
 
   /** 发表时间 */
@@ -132,9 +145,10 @@ export default class PageInfo extends Vue {
     const pageEnable = this.$page.frontmatter.pageInfo;
 
     return (
-      (pluginEnable && pageEnable !== false) ||
-      (!pluginEnable && pageEnable === true)
-    ) && (this.author || this.enableVisitor || this.time);
+      ((pluginEnable && pageEnable !== false) ||
+        (!pluginEnable && pageEnable === true)) &&
+      (this.author || this.enableVisitor || this.time)
+    );
   }
 
   /** 分类 */
@@ -195,6 +209,8 @@ export default class PageInfo extends Vue {
   .page-title
     @extend $wrapper
     padding-bottom 0
+    position relative
+    z-index 1
 
   .page-title + .theme-default-content:not(.custom)
     padding-top 0

@@ -18,12 +18,11 @@
   </ul>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import ArticleList from '@theme/components/ArticleList.vue';
-import Pagination from '@theme/components/Pagination.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
-@Component({ components: { ArticleList, Pagination } })
+@Component({ components: { ArticleList } })
 export default class CategoryList extends Vue {
   /** 大写首字母 */
   private capitalize = (name: string) => capitalize(name);

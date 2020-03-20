@@ -97,6 +97,8 @@ interface HopeLangI18nConfigItem {
     /** 按钮文字 */
     button: string;
   };
+  /** 全部文字 */
+  allText: string;
 }
 
 /** vuepress-theme-hope 国际化配置 */

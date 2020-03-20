@@ -1,10 +1,10 @@
 <template>
   <ul class="tag-list-wrapper">
     <li
-      v-for="(tag, index) in $tag.list"
+      v-for="(tag, index) in tagList"
       :key="tag.path"
       class="tag"
-      :class="{ active: tag.name === ($currentTag || {}).key }"
+      :class="{ active: isActive(tag.name) }"
       :style="{ backgroundColor: color(index) }"
       @click="clickTag(tag.path)"
     >
@@ -13,12 +13,27 @@
   </ul>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import ArticleList from '@theme/components/ArticleList.vue';
-import Pagination from '@theme/components/Pagination.vue';
+import { Component, Vue } from 'vue-property-decorator';
+import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-@Component({ components: { ArticleList, Pagination } })
+@Component
 export default class TagList extends Vue {
+  /** 标签列表 */
+  private get tagList() {
+    return [
+      { name: i18n.getLocale(this.$lang).allText || 'All', path: '/tag/' },
+      ...this.$tag.list
+    ];
+  }
+
+  /** 是否激活 */
+  private isActive(name: string) {
+    return (
+      name ===
+      (this.$currentTag?.key || i18n.getLocale(this.$lang).allText || 'All')
+    );
+  }
+
   /** 点击标签导航 */
   private clickTag(path: string) {
     if (path !== this.$route.path) this.$router.push(path);
@@ -48,24 +63,23 @@ export default class TagList extends Vue {
   padding-left 0
 
   .tag
-    vertical-align middle
-    margin 4px 6px 8px
     display inline-block
+    position relative
+    vertical-align middle
+    margin 4px 6px
     cursor pointer
-    border-radius $borderRadius
     font-size 12px
     border-radius 14px
     box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
     overflow hidden
     transition all 0.5s
-    padding 4px 8px
+    padding 3px 8px
     color #fff
 
     &:hover
-      position relative
       top 0.5px
       left 0.5px
 
     &.active
-      font-size 14px
+      padding 4px 10px
 </style>
