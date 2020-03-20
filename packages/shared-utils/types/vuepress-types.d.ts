@@ -1,14 +1,14 @@
 /** 导航栏配置项 */
-export type NavBarConfigItem = Partial<{
+export type NavBarConfigItem = {
   /** 导航栏文字 */
   text: string;
   /** 辅助标签 */
-  ariaLabel: string;
+  ariaLabel?: string;
   /** 导航栏链接 */
   link: string;
   /** 导航栏下拉列表子项 */
-  items: NavBarConfigItem[];
-}>;
+  items?: NavBarConfigItem[];
+};
 
 /** 导航栏配置 */
 export type NavBarConfig = NavBarConfigItem[] | false;
@@ -27,7 +27,7 @@ export interface SideBarConfigItemObject {
 }
 
 /** 侧边栏配置项 */
-export type SideBarConfigItem = string | SideBarConfigItemObject;
+export type SideBarConfigItem = string | string[] | SideBarConfigItemObject;
 
 /** 侧边栏配置 */
 export type SideBarConfig =

@@ -86,7 +86,7 @@ export default class PageEdit extends Vue {
 </script>
 
 <style lang="stylus">
-@require '~@parent-theme/styles/wrapper.styl'
+@require '~@theme/styles/wrapper.styl'
 
 .page-edit
   @extend $wrapper

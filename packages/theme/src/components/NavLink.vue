@@ -35,11 +35,12 @@
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { ensureExt, isExternal, isMailto, isTel } from '@theme/util/path';
+import { NavBarConfigItem } from '@theme/util/navbar';
 
 @Component
 export default class NavLink extends Vue {
   @Prop({ type: Object, required: true })
-  private readonly item!: any;
+  private readonly item!: NavBarConfigItem;
 
   private get link() {
     return ensureExt(this.item.link);

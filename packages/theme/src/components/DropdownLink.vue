@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:11:57
+ * @LastEditTime: 2020-03-21 00:26:05
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -57,12 +57,13 @@
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import DropdownTransition from '@theme/components/DropdownTransition.vue';
+import { NavBarConfigItem } from '@theme/util/navbar';
 import NavLink from '@theme/components/NavLink.vue';
 
 @Component({ components: { NavLink, DropdownTransition } })
 export default class DropdownLink extends Vue {
   @Prop({ type: Object, required: true })
-  private readonly item!: any;
+  private readonly item!: NavBarConfigItem;
 
   private open = false;
 
@@ -74,7 +75,7 @@ export default class DropdownLink extends Vue {
     this.open = !this.open;
   }
 
-  private isLastItemOfArray(item: any, array: any[]) {
+  private isLastItemOfArray(item: NavBarConfigItem, array: NavBarConfigItem[]) {
     if (Array.isArray(array)) return item === array[array.length - 1];
 
     return false;

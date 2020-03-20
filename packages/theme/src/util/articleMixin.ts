@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-19 21:14:45
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-19 21:59:50
+ * @LastEditTime: 2020-03-21 00:37:00
  * @Description: 文章列表 Mixin
  */
 
@@ -15,7 +15,7 @@ import { deepAssign } from '@mr-hope/vuepress-shared-utils';
  * @param pageA 比较的页面1
  * @param pageB 比较的页面2
  */
-const compareDate = (pageA: any, pageB: any): number => {
+const compareDate = (pageA: PageComputed, pageB: PageComputed): number => {
   if (!pageA.frontmatter.date) return -1;
   if (!pageB.frontmatter.date) return 1;
 
@@ -33,7 +33,7 @@ const compareDate = (pageA: any, pageB: any): number => {
  */
 const filterArticle = (
   pages: PageComputed[],
-  isTimeline?: any
+  isTimeline?: boolean
 ): PageComputed[] =>
   pages.filter(page => {
     const {

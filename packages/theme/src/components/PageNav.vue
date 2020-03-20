@@ -45,7 +45,7 @@ import {
 import { Route } from 'vue-router';
 import { resolvePath } from '@theme/util/path';
 
-const getSidebarItems = (items: SidebarItem[], result: any[]) => {
+const getSidebarItems = (items: SidebarItem[], result: SidebarItem[]) => {
   for (const item of items)
     if (item.type === 'group')
       getSidebarItems((item as SidebarGroupItem).children || [], result);
@@ -122,7 +122,7 @@ export default class PageNav extends Vue {
 </script>
 
 <style lang="stylus">
-@require '~@parent-theme/styles/wrapper.styl'
+@require '~@theme/styles/wrapper.styl'
 
 .page-nav
   @extend $wrapper

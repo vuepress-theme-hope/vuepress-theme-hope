@@ -62,7 +62,7 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   /** Markdown 增强设置 */
   markdown?: MarkdownEnhanceOption;
   /** 评论设置 */
-  comment?: CommentOptions;
+  comment?: CommentOptions | false;
   /** PWA 设置 */
   pwa?: PWAOptions;
   /** 加密设置 */

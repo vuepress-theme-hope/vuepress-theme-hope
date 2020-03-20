@@ -1,8 +1,6 @@
 import { ResolvedHopeThemeConfig } from '../../types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 import resolveEncrypt from './resolveEncrypt';
-import resolveNavBar from './resolveNavBar';
-import resolveSideBar from './resolveSideBar';
 
 const { checkLang, getLocale, lang2path, path2lang } = i18n;
 
@@ -40,31 +38,6 @@ const setThemeLocales = (
 };
 
 /**
- * 设置侧边栏
- *
- * @param themeConfig 主题设置
- */
-const setNavBarandSideBar = (themeConfig: ResolvedHopeThemeConfig): void => {
-  // 处理导航栏
-  themeConfig.nav = resolveNavBar(themeConfig.nav);
-
-  // 处理侧边栏
-  themeConfig.sidebar = resolveSideBar(themeConfig.sidebar);
-
-  // 处理其它语言的导航栏与侧边栏
-  if (themeConfig.locales)
-    Object.keys(themeConfig.locales).forEach(locate => {
-      const locateNavbar = themeConfig.locales[locate].nav;
-      const locateSidebar = themeConfig.locales[locate].sidebar;
-
-      if (locateNavbar)
-        themeConfig.locales[locate].nav = resolveNavBar(locateNavbar);
-      if (locateSidebar)
-        themeConfig.locales[locate].sidebar = resolveSideBar(locateSidebar);
-    });
-};
-
-/**
  * 处理主题配置
  *
  * @param themeConfig 主题配置
@@ -80,8 +53,6 @@ const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
     );
 
   setThemeLocales(themeConfig, baseLang);
-
-  setNavBarandSideBar(themeConfig);
 
   if (themeConfig.encrypt) resolveEncrypt(themeConfig.encrypt);
 };

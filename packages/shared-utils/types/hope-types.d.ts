@@ -32,7 +32,10 @@ export interface HopeSideBarConfigItemObject extends SideBarConfigItemObject {
 }
 
 /** vuepress-theme-hope 侧边栏配置项 */
-export type HopeSideBarConfigItem = string | HopeSideBarConfigItemObject;
+export type HopeSideBarConfigItem =
+  | string
+  | string[]
+  | HopeSideBarConfigItemObject;
 
 /** vuepress-theme-hope 侧边栏配置 */
 export type HopeSideBarConfig =

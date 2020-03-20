@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-20 00:04:03
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 11:50:47
+ * @LastEditTime: 2020-03-21 00:37:41
  * @Description: 页面加密混入
  */
 
@@ -11,8 +11,6 @@ import { EncryptOptions } from '../../types';
 
 @Component
 export default class PageEncryptMixin extends Vue {
-  public $route: any;
-
   protected passwordConfig: Record<string, string> = {};
 
   /** 加密配置 */

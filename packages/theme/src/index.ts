@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-02-21 10:52:31
+ * @LastEditTime: 2020-03-21 00:45:31
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -18,10 +18,7 @@ export = (
   themeConfig: ResolvedHopeThemeConfig,
   ctx: Context
 ): ThemeOptionAPI => {
-  const config: ThemeOptionAPI = {
-    /** 继承默认主题 */
-    extend: '@vuepress/theme-default'
-  };
+  const config: ThemeOptionAPI = {};
 
   const { siteConfig } = ctx;
   // Resolve algolia

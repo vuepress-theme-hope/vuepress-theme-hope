@@ -2,11 +2,20 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-19 23:52:06
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 21:41:12
+ * @LastEditTime: 2020-03-21 00:21:03
  * @Description: Navbar config handler
  */
 
-export const resolveNavLinkItem = (navbarLink: any, beforeprefix = ''): any => {
+import { HopeNavBarConfigItem } from '@mr-hope/vuepress-shared-utils';
+
+export interface NavBarConfigItem extends HopeNavBarConfigItem {
+  type: 'link' | 'links';
+}
+
+export const resolveNavLinkItem = (
+  navbarLink: NavBarConfigItem,
+  beforeprefix = ''
+): NavBarConfigItem => {
   const prefix = beforeprefix + (navbarLink.prefix || '');
 
   const navbarItem = { ...navbarLink };

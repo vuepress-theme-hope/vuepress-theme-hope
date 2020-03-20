@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-20 17:21:55
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 22:47:02
+ * @LastEditTime: 2020-03-21 00:15:08
  * @Description: 侧边栏处理
  */
 
@@ -117,13 +117,10 @@ const resolveMatchingConfig = (
 export interface SidebarExternalItem {
   /** 标题 */
   title?: string;
-
   /** 图标 */
   icon?: string;
-
   /** 类型 */
   type: 'external';
-
   /** 链接路径 */
   path: string;
 }
@@ -131,10 +128,8 @@ export interface SidebarExternalItem {
 /** 页面侧边栏项 */
 export interface SidebarPageItem extends PageComputed {
   type: 'page';
-
   /** 图标 */
   icon?: string;
-
   /** 路径 */
   path: string;
 }
@@ -144,7 +139,6 @@ export interface SidebarGroupItem {
   type: 'group';
   /** 分组的标题 */
   title: string;
-
   /** 可折叠，默认为 true */
   collapsable: boolean;
   /** 侧边栏深度，默认为 1 */
@@ -204,6 +198,9 @@ export type SidebarItem =
   | SidebarGroupItem
   | SidebarPageItem;
 
+const resolve = (prefix: string, path: string, base: string): string =>
+  resolvePath(`${prefix}${path}`, base);
+
 /**
  * 处理侧边栏项
  *
@@ -211,33 +208,40 @@ export type SidebarItem =
  * @param pages 项目包含的页面配置
  * @param base 路径基
  */
+// eslint-disable-next-line max-lines-per-function
 const resolveItem = (
   sidebarConfigItem: HopeSideBarConfigItem,
   pages: PageComputed[],
-  base: string
+  base: string,
+  prefix = ''
+  // eslint-disable-next-line max-params
 ): SidebarItem => {
   // 返回页面链接以及内部的标题链接
   if (typeof sidebarConfigItem === 'string')
-    return resolvePageforSidebar(pages, resolvePath(sidebarConfigItem, base));
+    return resolvePageforSidebar(
+      pages,
+      resolve(prefix, sidebarConfigItem, base)
+    );
 
   // 自定义标题，格式为 ['路径', '自定义标题']
   if (Array.isArray(sidebarConfigItem))
     // 需要覆盖标题
     return Object.assign(
-      resolvePageforSidebar(pages, resolvePath(sidebarConfigItem[0], base)),
+      resolvePageforSidebar(pages, resolve(prefix, sidebarConfigItem[0], base)),
       {
         title: sidebarConfigItem[1]
       }
     );
-
-  // 为对象
 
   // 对象不存在子项
   const children = sidebarConfigItem.children || [];
   if (children.length === 0 && sidebarConfigItem.path)
     // 覆盖标题
     return Object.assign(
-      resolvePageforSidebar(pages, resolvePath(sidebarConfigItem.path, base)),
+      resolvePageforSidebar(
+        pages,
+        resolve(prefix, sidebarConfigItem.path, base)
+      ),
       {
         title: sidebarConfigItem.title
       }
@@ -247,7 +251,14 @@ const resolveItem = (
   return {
     ...sidebarConfigItem,
     type: 'group',
-    children: children.map(child => resolveItem(child, pages, base)),
+    children: children.map(child =>
+      resolveItem(
+        child,
+        pages,
+        base,
+        `${prefix}${sidebarConfigItem.prefix || ''}`
+      )
+    ),
     collapsable: sidebarConfigItem.collapsable !== false
   };
 };

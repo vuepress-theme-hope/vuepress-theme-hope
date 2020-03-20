@@ -3,14 +3,15 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-10 22:48:39
+ * @LastEditTime: 2020-03-21 00:35:13
  * @Description: 插件配置
  */
 import * as moment from 'moment';
 import { PluginConfig } from 'vuepress-types';
+import { ResolvedHopeThemeConfig } from '../../types';
 import { resolve } from 'path';
 
-const pluginConfig = (options: any): PluginConfig[] => {
+const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
   // 设置作者
   if (options.comment && options.author)
     options.comment.author = options.author;
