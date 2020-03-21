@@ -4,9 +4,7 @@ icon: tex
 
 # Tex Support
 
-Let the Markdown file in your VuePress site support the Tex syntax.
-
-This feature is brought by [vuepress-plugin-mathjax](https://github.com/vuepress/vuepress-plugin-mathjax).
+Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ## Configuration
 
@@ -14,7 +12,7 @@ This feature is brought by [vuepress-plugin-mathjax](https://github.com/vuepress
 module.exports = {
   plugin: ['@mr-hope/md-enhance', {
     // Enable Tex Support
-    mathjax: true
+    tex: true
   }]
 };
 ```
@@ -79,36 +77,48 @@ $$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right
 - Multiple points:
   - `\iint`: $\iint$
   - `\iiint`: $\iiint$
-  - `\iiiint`: $\iiiint$
+  - `\liiiint`: $\liiiint$ (Use `\iiiint` for block as normal)
   - `\idotsint` $\idotsint$
 
 ::: tip
-Large operators such as continuous addition, multiplication, limits, and integrals can use `\limits` and `\nolimits` to force explicitly specify whether or not to compress these superscripts
+Large operators such as continuous addition, multiplication, limits, and integrals can use `\limits` and `\nolimits` to force explicitly specify whether or not to compress these superscripts.
+
+`\iiiint`($\liiiint$) is support by hack, so for inline display you should use `\liiiint`.
+
+`\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` are not supported currently.
 :::
 
 #### Case
 
 $\sqrt{x}$, $\frac{1}{2}$.
 
-$\sum_{i=1}^n i\quad \prod_{i=1}^n$
+$\sum_{i=1}^n i\; \prod_{i=1}^n$
 
-$\sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n$
+$\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
 
-$\iint\quad \iiint\quad \iiiint\quad \idotsint$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+
+$$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 ```md
 $\sqrt{x}$, $\frac{1}{2}$.
 
-$\sum_{i=1}^n i\quad \prod_{i=1}^n$
+$\sum_{i=1}^n i\; \prod_{i=1}^n$
 
-$\sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n$
+$\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
 
-$\iint\quad \iiint\quad \iiiint\quad \idotsint$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+
+$$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 ```
 
 ### symbol
 
--English letters can be entered directly
+- English letters can be entered directly
 
   $a \quad b \quad c \quad x \quad y \quad z \quad A \quad B \quad C$
 
@@ -142,12 +152,12 @@ $\iint\quad \iiint\quad \iiiint\quad \idotsint$
 
 Einstein 's $E=mc^2$.
 
-$$2^{10} > 1000$$
+$2^{10} > 1000$
 
 ```md
 Einstein 's $E=mc^2$.
 
-$$2^{10} > 1000$$
+$2^{10} > 1000$
 ```
 
 ### Delimiters (parentheses, etc.)
@@ -204,6 +214,161 @@ $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 ```
 
-::: warning
-Because Mathjax3 does not support environments like `\begin{..} ... \end{..}`, matrices, piecewise functions, alignments, formula groups, and other features will not be supported.
-:::
+### Matrix
+
+`pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix` and other environments can add various separators on both sides of the matrix.
+
+$$
+\begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \quad
+\begin{Vmatrix} a&b\\c&d \end{Vmatrix}
+$$
+
+```md
+$$
+\begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \quad
+\begin{Vmatrix} a&b\\c&d \end{Vmatrix}
+$$
+```
+
+Using the `smallmatrix` environment, you can generate small matrices of inline formulas.
+
+A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+
+```md
+A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+```
+
+### Multi-line formula
+
+- **newline**
+
+    Use `\\` or `\newline` to wrap
+
+    $$
+    x = a+b+c+{} \\
+    d+e+f+g
+    $$
+
+    $$
+    x = a+b+c+ \newline
+    d+e+f+g
+    $$
+
+    ```md
+    $$
+    x = a+b+c+ \\
+    d+e+f+g
+    $$
+
+    $$
+    x = a+b+c+ \newline
+    d+e+f+g
+    $$
+    ```
+
+    ::: tip
+    Note that because $\KaTeX$ supports auto word wrapping, if you specify a line feed manually, a warning is output in the console.
+    :::
+
+- **Alignment**
+
+    You can use the `aligned` environment to achieve alignment, and`&`to identify fixed anchor points
+
+    $$
+    \begin{aligned}
+    x ={}& a+b+c+{} \\
+    &d+e+f+g
+    \end{aligned}
+    $$
+
+    $$
+    \begin{alignedat}{2}
+       10&x+ &3&y = 2 \\
+       3&x+&13&y = 4
+    \end{alignedat}
+    $$
+
+    ```md
+    $$
+    \begin{aligned}
+    x ={}& a+b+c+{} \\
+    &d+e+f+g
+    \end{aligned}
+    $$
+
+    $$
+    \begin{alignedat}{2}
+       10&x+ &3&y = 2 \\
+       3&x+&13&y = 4
+    \end{alignedat}
+    $$
+    ```
+
+### Formula group
+
+Formula groups that do not require alignment can use the `gather` environment.
+
+$$
+\begin{gathered}
+a = b+c+d \\
+x = y+z
+\end{gathered}
+$$
+
+```md
+$$
+\begin{gathered}
+a = b+c+d \\
+x = y+z
+\end{gathered}
+$$
+```
+
+### Numbering
+
+$$
+\tag{1} x+y^{2x}
+$$
+
+$$
+\tag*{1} x+y^{2x}
+$$
+
+```md
+$\tag{1} x+y^{2x}$
+
+$\tag*{1} x+y^{2x}$
+```
+
+### Segmented functions
+
+Use `case` environment
+
+$$
+y= \begin{cases}
+-x,\quad x\leq 0 \\
+x,\quad x>0
+\end{cases}
+$$
+
+```md
+$$
+y= \begin{cases}
+-x,\quad x\leq 0 \\
+x,\quad x>0
+\end{cases}
+$$
+```
+
+## More
+
+For more symbols, pleasae check out
+
+- [$\KaTeX$ Support Features](https://katex.org/docs/supported.html)
+- [$\KaTeX$ Support List](https://katex.org/docs/support_table.html)

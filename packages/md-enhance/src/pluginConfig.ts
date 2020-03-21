@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-10 23:35:39
+ * @LastEditTime: 2020-03-21 15:16:12
  * @Description: 插件配置
  */
 import { MarkdownEnhanceOption } from '../types';
@@ -62,7 +62,7 @@ const pluginConfig = (
     ]
   ];
 
-  // 支持 TeX 语法
+  // 支持自定义对齐
   if (markdownOption.align || markdownOption.enableAll)
     config.push(
       /** 自定义居右容器 */
@@ -70,10 +70,6 @@ const pluginConfig = (
       /** 自定义居中容器 */
       ['container', { type: 'center', defaultTitle: '' }]
     );
-
-  // 支持 TeX 语法
-  if (markdownOption.mathjax || markdownOption.enableAll)
-    config.push(['mathjax']);
 
   return config;
 };

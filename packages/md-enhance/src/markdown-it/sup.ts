@@ -2,10 +2,13 @@
 /* eslint-disable max-statements */
 // Process ^superscript^
 
+import MarkdownIt from 'markdown-it';
+import StateInline from 'markdown-it/lib/rules_inline/state_inline';
+
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
-const superscript = (state: any, silent: boolean): boolean => {
+const superscript = (state: StateInline, silent?: boolean): boolean => {
   let found;
   let token;
   const max = state.posMax;
@@ -62,7 +65,7 @@ const superscript = (state: any, silent: boolean): boolean => {
   return true;
 };
 
-const sup = (md: any): void => {
+const sup = (md: MarkdownIt): void => {
   md.inline.ruler.after('emphasis', 'sup', superscript);
 };
 

@@ -41,12 +41,12 @@ icon: api
 
 是否启用脚注格式支持。
 
-## mathjax
+## tex
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用 TeX 语法支持。
+是否启用 $\TeX$ 语法支持。
 
 ## flowchart
 

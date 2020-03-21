@@ -3,6 +3,7 @@ import { Context, PluginOptionAPI } from 'vuepress-types';
 import { MarkdownEnhanceOption } from '../types';
 import flowchart from './markdown-it/flowchart';
 import footnote from './markdown-it/footnote';
+import katex from './markdown-it/katex';
 import pluginConfig from './pluginConfig';
 import { resolve } from 'path';
 import sub from './markdown-it/sub';
@@ -34,6 +35,18 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
       // 使用流程图;
       if (markdownOption.flowchart || markdownOption.enableAll)
         md.plugin('flowchart').use(flowchart);
+      // 使用 tex;
+      if (markdownOption.tex || markdownOption.enableAll)
+        md.plugin('katex').use(katex, [
+          {
+            macros: {
+              // 支持更多积分符号
+              '\\liiiint': '\\int\\!\\!\\!\\iiint',
+              '\\iiiint': '\\int\\!\\!\\!\\!\\iiint',
+              '\\idotsint': '\\int\\!\\cdots\\!\\int'
+            }
+          }
+        ]);
     }
   };
 

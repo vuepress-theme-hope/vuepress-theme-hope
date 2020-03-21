@@ -6,11 +6,16 @@
 /* eslint-disable max-params */
 /* eslint-disable @typescript-eslint/camelcase */
 
-'use strict';
+import MarkdownIt from 'markdown-it';
+import Renderer from 'markdown-it/lib/renderer';
+import StateBlock from 'markdown-it/lib/rules_block/state_block';
+import StateCore from 'markdown-it/lib/rules_core/state_core';
+import StateInline from 'markdown-it/lib/rules_inline/state_inline';
+import Token from 'markdown-it/lib/token';
 
 const renderFootnoteAnchorName = (
-  tokens: any[],
-  idx: any,
+  tokens: Token[],
+  idx: number,
   _options: any,
   env: any
 ): string => {
@@ -22,7 +27,7 @@ const renderFootnoteAnchorName = (
   return prefix + num;
 };
 
-const renderFootnoteCaption = (tokens: any, idx: any): string => {
+const renderFootnoteCaption = (tokens: Token[], idx: number): string => {
   let num = Number(tokens[idx].meta.id + 1).toString();
 
   if (tokens[idx].meta.subId > 0) num += `:${tokens[idx].meta.subId}`;
@@ -31,11 +36,11 @@ const renderFootnoteCaption = (tokens: any, idx: any): string => {
 };
 
 const renderFootnoteRef = (
-  tokens: any,
-  idx: any,
+  tokens: Token[],
+  idx: number,
   options: any,
   env: any,
-  slf: any
+  slf: Renderer
 ): string => {
   const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
   const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
@@ -47,8 +52,8 @@ const renderFootnoteRef = (
 };
 
 const renderFootnoteBlockOpen = (
-  _tokens: any,
-  _idx: any,
+  _tokens: Token[],
+  _idx: number,
   options: any
 ): string => {
   return `${
@@ -61,11 +66,11 @@ const renderFootnoteBlockOpen = (
 const renderFootnoteBlockClose = (): string => '</ol>\n</section>\n';
 
 const renderFootnoteOpen = (
-  tokens: any,
-  idx: any,
+  tokens: Token[],
+  idx: number,
   options: any,
   env: any,
-  slf: any
+  slf: Renderer
 ): string => {
   let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
 
@@ -77,11 +82,11 @@ const renderFootnoteOpen = (
 const renderFootnoteClose = (): string => '</li>\n';
 
 const renderFootnoteAnchor = (
-  tokens: any,
-  idx: any,
+  tokens: Token[],
+  idx: number,
   options: any,
   env: any,
-  slf: any
+  slf: Renderer
 ): string => {
   let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
 
@@ -91,7 +96,7 @@ const renderFootnoteAnchor = (
   return ` <a href="#fnref${id}" class="footnote-backref">\u21a9\uFE0E</a>`;
 };
 
-const footnote = (md: any): void => {
+const footnote = (md: MarkdownIt): void => {
   const { parseLinkLabel } = md.helpers;
   const { isSpace } = md.utils;
 
@@ -108,7 +113,7 @@ const footnote = (md: any): void => {
 
   // Process footnote block definition
   const footnoteDef = (
-    state: any,
+    state: StateBlock,
     startLine: number,
     endLine: number,
     silent: boolean
@@ -183,12 +188,12 @@ const footnote = (md: any): void => {
 
     state.bMarks[startLine] = posAfterColon;
     state.blkIndent += 4;
-    state.parentType = 'footnote';
+    state.parentType = 'footnote' as any;
 
     if (state.sCount[startLine] < state.blkIndent)
       state.sCount[startLine] += state.blkIndent;
 
-    state.md.block.tokenize(state, startLine, endLine, true);
+    (state.md.block as any).tokenize(state, startLine, endLine, true);
 
     state.parentType = oldParentType;
     state.blkIndent -= 4;
@@ -204,7 +209,7 @@ const footnote = (md: any): void => {
   };
 
   // Process inline footnotes (^[...])
-  const footnoteInline = (state: any, silent: boolean): boolean => {
+  const footnoteInline = (state: StateInline, silent?: boolean): boolean => {
     let footnoteId;
     let token;
     let tokens: any[];
@@ -254,7 +259,7 @@ const footnote = (md: any): void => {
   };
 
   // Process footnote references ([^...])
-  const footnoteRef = (state: any, silent: boolean): boolean => {
+  const footnoteRef = (state: StateInline, silent?: boolean): boolean => {
     let pos;
     let footnoteId;
     let footnoteSubId;
@@ -307,7 +312,7 @@ const footnote = (md: any): void => {
   };
 
   // Glue footnote tokens to end of token stream
-  const footnoteTail = (state: any): void => {
+  const footnoteTail = (state: StateCore): void => {
     let lastParagraph;
     let token;
     let tokens;
@@ -385,7 +390,7 @@ const footnote = (md: any): void => {
   };
 
   // eslint-disable-next-line object-curly-newline
-  md.block.ruler.before('reference', 'footnote_def', footnoteDef, {
+  md.block.ruler.before('reference', 'footnote_def', footnoteDef as any, {
     // eslint-disable-next-line object-curly-newline
     alt: ['paragraph', 'reference']
   });

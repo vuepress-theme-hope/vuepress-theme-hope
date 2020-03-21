@@ -41,12 +41,12 @@ Whether to enable the lower corner format support.
 
 Whether to enable footnote format support.
 
-## mathjax
+## tex
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable TeX syntax support.
+Whether to enable $\TeX$ syntax support.
 
 ## flowchart
 

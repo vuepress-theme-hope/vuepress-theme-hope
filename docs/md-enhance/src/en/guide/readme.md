@@ -18,4 +18,4 @@ If you don't need them and want to reduce your site size, you can remove them fr
 
 - [Flowchart](flowchart.md)
 
-- [Tex Syntax](tex.md)
+- [$\TeX$ Syntax](tex.md)

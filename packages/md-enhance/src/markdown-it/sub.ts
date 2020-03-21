@@ -1,10 +1,13 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
 
+import MarkdownIt from 'markdown-it';
+import StateInline from 'markdown-it/lib/rules_inline/state_inline';
+
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
-const subscript = (state: any, silent: boolean): boolean => {
+const subscript = (state: StateInline, silent?: boolean): boolean => {
   let found;
   let token;
   const max = state.posMax;
@@ -61,7 +64,7 @@ const subscript = (state: any, silent: boolean): boolean => {
   return true;
 };
 
-const sub = (md: any): void => {
+const sub = (md: MarkdownIt): void => {
   md.inline.ruler.after('emphasis', 'sub', subscript);
 };
 

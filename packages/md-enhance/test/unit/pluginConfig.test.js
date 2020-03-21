@@ -54,7 +54,6 @@ describe('Test pluginConfig generate', () => {
       ],
       ['container', { type: 'right', defaultTitle: '' }],
       ['container', { type: 'center', defaultTitle: '' }],
-      ['mathjax']
     ]);
   });
 
@@ -110,8 +109,7 @@ describe('Test pluginConfig generate', () => {
         }
       ],
       ['container', { type: 'right', defaultTitle: '' }],
-      ['container', { type: 'center', defaultTitle: '' }],
-      ['mathjax']
+      ['container', { type: 'center', defaultTitle: '' }]
     ]);
   });
 

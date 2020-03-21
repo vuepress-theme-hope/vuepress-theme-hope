@@ -4,17 +4,15 @@ icon: tex
 
 # Tex 语法支持
 
-让你的 VuePress 站点中的 Markdown 文件支持 Tex 语法。
-
-本功能借助插件 [vuepress-plugin-mathjax](https://github.com/vuepress/vuepress-plugin-mathjax) 实现。
+让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。
 
 ## 配置
 
 ```js {4}
 module.exports = {
   plugin: ['@mr-hope/md-enhance', {
-    // 启用 Tex 支持
-    mathjax: true
+    // 启用 TeX 支持
+    tex: true
   }]
 };
 ```
@@ -75,31 +73,43 @@ $$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right
 - 多重积分:
   - `\iint`: $\iint$
   - `\iiint`: $\iiint$
-  - `\iiiint`: $\iiiint$
+  - `\liiiint`: $\liiiint$ (块级公式正常使用 `\iiiint`)
   - `\idotsint` $\idotsint$
 
 ::: tip
-连加、连乘、极限、积分等大型运算符可以用 `\limits` 和 `\nolimits` 来强制显式地指定是否压缩这些上下标
+连加、连乘、极限、积分等大型运算符可以用 `\limits` 和 `\nolimits` 来强制显式地指定是否压缩这些上下标。
+
+`\iiiint`($\liiiint$) 是使用 hack实现的，由于间距问题对于行公式需要使用 `\liiiint` 命令。
+
+`\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` 目前不被支持。
 :::
 
 #### 案例
 
 $\sqrt{x}$, $\frac{1}{2}$.
 
-$\sum_{i=1}^n i\quad \prod_{i=1}^n$
+$\sum_{i=1}^n i\; \prod_{i=1}^n$
 
-$\sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n$
+$\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
 
-$\iint\quad \iiint\quad \iiiint\quad \idotsint$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+
+$$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 ```md
 $\sqrt{x}$, $\frac{1}{2}$.
 
-$\sum_{i=1}^n i\quad \prod_{i=1}^n$
+$\sum_{i=1}^n i\; \prod_{i=1}^n$
 
-$\sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n$
+$\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
 
-$\iint\quad \iiint\quad \iiiint\quad \idotsint$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+
+$$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 ```
 
 ### 符号
@@ -138,12 +148,12 @@ $\iint\quad \iiint\quad \iiiint\quad \idotsint$
 
 Einstein 's $E=mc^2$.
 
-$$2^{10} > 1000$$
+$2^{10} > 1000$
 
 ```md
 Einstein 's $E=mc^2$.
 
-$$2^{10} > 1000$$
+$2^{10} > 1000$
 ```
 
 ### 定界符（括号等）
@@ -200,6 +210,161 @@ $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 ```
 
-::: warning
-由于 Mathjax3 并不支持 `\begin{..} ... \end{..}` 这样的环境，所以矩阵、分段函数、对齐、公式组等特性将不被支持。
-:::
+### 矩阵
+
+`pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix` 等环境可以在矩阵两边加上各种分隔符。
+
+$$
+\begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \quad
+\begin{Vmatrix} a&b\\c&d \end{Vmatrix}
+$$
+
+```md
+$$
+\begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \quad
+\begin{Vmatrix} a&b\\c&d \end{Vmatrix}
+$$
+```
+
+使用 `smallmatrix` 环境，可以生成行内公式的小矩阵。
+
+A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+
+```md
+A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+```
+
+### 多行公式
+
+- **换行**
+
+    使用 `\\` 或 `\newline` 进行换行
+
+    $$
+    x = a+b+c+{} \\
+    d+e+f+g
+    $$
+
+    $$
+    x = a+b+c+ \newline
+    d+e+f+g
+    $$
+
+    ```md
+    $$
+    x = a+b+c+ \\
+    d+e+f+g
+    $$
+
+    $$
+    x = a+b+c+ \newline
+    d+e+f+g
+    $$
+    ```
+
+    ::: tip
+    请注意，由于 $\KaTeX$ 支持自动换行，所以如果您手动指定换行会在控制台输出一个警告。
+    :::
+
+- **对齐**
+
+    可以使用 `aligned` 环境来实现对齐，使用 `&` 标识固定锚点
+
+    $$
+    \begin{aligned}
+    x ={}& a+b+c+{} \\
+    &d+e+f+g
+    \end{aligned}
+    $$
+
+    $$
+    \begin{alignedat}{2}
+       10&x+ &3&y = 2 \\
+       3&x+&13&y = 4
+    \end{alignedat}
+    $$
+
+    ```md
+    $$
+    \begin{aligned}
+    x ={}& a+b+c+{} \\
+    &d+e+f+g
+    \end{aligned}
+    $$
+
+    $$
+    \begin{alignedat}{2}
+       10&x+ &3&y = 2 \\
+       3&x+&13&y = 4
+    \end{alignedat}
+    $$
+    ```
+
+### 公式组
+
+无需对齐的公式组可以使用 `gather` 环境。
+
+$$
+\begin{gathered}
+a = b+c+d \\
+x = y+z
+\end{gathered}
+$$
+
+```md
+$$
+\begin{gathered}
+a = b+c+d \\
+x = y+z
+\end{gathered}
+$$
+```
+
+### 编号
+
+$$
+\tag{1} x+y^{2x}
+$$
+
+$$
+\tag*{1} x+y^{2x}
+$$
+
+```md
+$\tag{1} x+y^{2x}$
+
+$\tag*{1} x+y^{2x}$
+```
+
+### 分段函数
+
+使用 `case` 环境
+
+$$
+y= \begin{cases}
+-x,\quad x\leq 0 \\
+x,\quad x>0
+\end{cases}
+$$
+
+```md
+$$
+y= \begin{cases}
+-x,\quad x\leq 0 \\
+x,\quad x>0
+\end{cases}
+$$
+```
+
+## 更多
+
+有关更多符号，请查看
+
+- [$\KaTeX$ 支持功能](https://katex.org/docs/supported.html)
+- [$\KaTeX$ 支持列表](https://katex.org/docs/support_table.html)

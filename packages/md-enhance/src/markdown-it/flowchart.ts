@@ -3,24 +3,17 @@
 /* eslint-disable max-params */
 /* eslint-disable camelcase */
 import hash = require('hash-sum');
+import MarkdownIt from 'markdown-it';
+import StateBlock from 'markdown-it/lib/rules_block/state_block';
 
-const flowchart = (md: any, options: any = {}): void => {
-  const openMarker = options.openMarker || '@flowstart';
-  const openChar = openMarker.charCodeAt(0);
-  const closeMarker = options.closeMarker || '@flowend';
-  const closeChar = closeMarker.charCodeAt(0);
-
-  const render = (tokens: any, idx: any): string => {
-    const token = tokens[idx];
-    const key = `flowchart_${hash(idx)}`;
-    const { content, info } = token;
-    md.$dataBlock[key] = content;
-    return `<FlowChart id="${key}" :code="$dataBlock.${key}" preset="${info.trim() ||
-      'vue'}"></FlowChart>`;
-  };
+const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
+  const OPEN_MARKER = '@flowstart';
+  const openChar = OPEN_MARKER.charCodeAt(0);
+  const CLOSEMARKER = '@flowend';
+  const closeChar = CLOSEMARKER.charCodeAt(0);
 
   const uml = (
-    state: any,
+    state: StateBlock,
     startLine: number,
     endLine: number,
     silent: boolean
@@ -38,8 +31,8 @@ const flowchart = (md: any, options: any = {}): void => {
     if (openChar !== state.src.charCodeAt(start)) return false;
 
     // Check out the rest of the marker string
-    for (i = 0; i < openMarker.length; ++i)
-      if (openMarker[i] !== state.src[start + i]) return false;
+    for (i = 0; i < OPEN_MARKER.length; ++i)
+      if (OPEN_MARKER[i] !== state.src[start + i]) return false;
 
     const markup = state.src.slice(start, start + i);
     const params = state.src.slice(start + i, max);
@@ -75,8 +68,8 @@ const flowchart = (md: any, options: any = {}): void => {
       ) {
         let closeMarkerMatched = true;
 
-        for (i = 0; i < closeMarker.length; ++i)
-          if (closeMarker[i] !== state.src[start + i]) {
+        for (i = 0; i < CLOSEMARKER.length; ++i)
+          if (CLOSEMARKER[i] !== state.src[start + i]) {
             closeMarkerMatched = false;
             break;
           }
@@ -110,11 +103,18 @@ const flowchart = (md: any, options: any = {}): void => {
     return true;
   };
 
-  md.block.ruler.before('fence', 'flowchart', uml, {
+  md.block.ruler.before('fence', 'flowchart', uml as any, {
     alt: ['paragraph', 'reference', 'blockquote', 'list']
   });
 
-  md.renderer.rules.flowchart = render;
+  md.renderer.rules.flowchart = (tokens, idx): string => {
+    const token = tokens[idx];
+    const key = `flowchart_${hash(idx)}`;
+    const { content, info } = token;
+    md.$dataBlock[key] = content;
+    return `<FlowChart id="${key}" :code="$dataBlock.${key}" preset="${info.trim() ||
+      'vue'}"></FlowChart>`;
+  };
 };
 
 export default flowchart;
