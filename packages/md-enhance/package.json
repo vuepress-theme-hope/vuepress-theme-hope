@@ -39,8 +39,8 @@
     "vuepress-types": "^0.9.0"
   },
   "devDependencies": {
-    "@types/katex": "^0.11.0",
-    "@types/markdown-it": "^0.0.9",
+    "@types/katex": "0.11.0",
+    "@types/markdown-it": "0.0.9",
     "@vue/cli-plugin-unit-mocha": "4.2.3",
     "@vue/cli-service": "4.2.3"
   }
