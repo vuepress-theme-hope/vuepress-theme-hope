@@ -1,0 +1,28 @@
+navbar($themeColor)
+  .navbar
+    @media (min-width: $MQMobile)
+      .nav-item > a:not(.external)
+        &:hover, &.router-link-active
+          border-bottom 2px solid darken($themeColor, 15%)
+
+      .nav-links a
+        &:hover, &.router-link-active
+          color darken($themeColor, 15%)
+
+  .sidebar
+    .nav-links a
+      &:hover, &.router-link-active
+        color darken($themeColor, 15%)
+
+  // 下拉列表
+  .dropdown-wrapper
+    .dropdown-title
+      .title:hover
+        color darken($themeColor, 15%)
+
+    .nav-dropdown .dropdown-item a
+      &.router-link-active, &:hover
+        color darken($themeColor, 15%)
+
+      &.router-link-active::after
+        border-left 5px solid $themeColor

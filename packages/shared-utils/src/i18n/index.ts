@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-11-23 18:48:57
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-30 17:14:47
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-21 23:16:52
  * @Description: 多语言配置
  */
 import {
@@ -66,12 +66,17 @@ export const getLocale = (lang: string): HopeLangI18nConfig => {
   return localesConfig['en-US'];
 };
 
+/** 获得默认多语言配置 */
+export const getDefaultLocale = (): HopeLangI18nConfig =>
+  localesConfig['en-US'];
+
 const i18n = {
   checkLang,
   config,
   langs,
   lang2path,
   path2lang,
+  getDefaultLocale,
   getLocale
 };
 

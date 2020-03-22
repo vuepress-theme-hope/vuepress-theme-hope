@@ -1,0 +1,65 @@
+.theme-dark
+  // 导航栏
+  .navbar
+    bgcolor()
+    bordercolor()
+    box-shadow 0 2px 8px #0f0e0d
+
+    .site-name, .links
+      bgcolor()
+      fontcolor()
+
+    // 更新导航栏颜色
+    .nav-item > a, a.repo-link
+      fontcolor()
+
+      &:hover, &.router-link-active
+        border-bottom 2px solid darken($accentColor, 10%)
+
+      &.router-link-active
+        color darken($accentColor, 10%)
+
+    // .nav-links a
+    // fontcolor()
+
+    // .nav-item > a:not(.external)
+    // fontcolor()
+
+    // 导航栏下拉菜单
+    @media (min-width: $MQMobile)
+      .dropdown-wrapper .nav-dropdown
+        bgcolor()
+        box-shadow 2px 2px 10px #0f0e0d
+        border 1px solid $nightBordercolor !important
+
+    // 下拉列表
+    .dropdown-wrapper .dropdown-title .title
+      fontcolor()
+
+  // 搜索框
+  .search-box
+    input
+      fontcolor()
+      background-color $nightBgcolor !important
+
+      @media (min-width: $MQNarrow)
+        bordercolor()
+        background-color lighten($nightBgcolor, 10%) !important
+
+      &:focus
+        background-color lighten($nightBgcolor, 10%) !important
+        border-color $accentColor
+
+    .suggestions
+      background-color #000
+      bordercolor()
+
+    .suggestion
+      a
+        color darken($nightFontcolor, 35%)
+
+      &.focused
+        background-color #0c0b0a
+
+        a
+          color $accentColor

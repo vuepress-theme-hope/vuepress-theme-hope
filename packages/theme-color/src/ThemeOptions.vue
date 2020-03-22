@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 14:36:29
+ * @LastEditTime: 2020-03-22 11:10:54
  * @Description: 主题颜色选择
 -->
 <template>
@@ -16,13 +16,13 @@
         <a :style="{background: theme.picker[color]}" href="#" @click.prevent="setTheme(color)" />
       </li>
     </ul>
-    <div v-if="theme.allowNightmode" class="nightmode-toggle">
+    <div v-if="theme.allowDarkmode" class="darkmode-toggle">
       <label
         class="desc"
-        for="nightmode-toggle"
-        v-text="nightmodeEnable?text.nightmode[1]:text.nightmode[0]"
+        for="darkmode-toggle"
+        v-text="isDarkmode? text.darkmode[1]: text.darkmode[0]"
       />
-      <NightmodeSwitch :nightmode-enable="nightmodeEnable" @nightmode-toggle="toggleNightmode" />
+      <DarkmodeSwitch :darkmode-enable="isDarkmode" @darkmode-toggle="toggleDarkmode" />
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@
 <script lang='ts'>
 /* global THEME_COLOR_OPTIONS */
 import { Component, Vue } from 'vue-property-decorator';
-import NightmodeSwitch from './NightmodeSwitch.vue';
+import DarkmodeSwitch from './DarkmodeSwitch.vue';
 import { ThemeColorOptions } from '../types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
@@ -46,16 +46,16 @@ interface ThemeColorData extends ThemeColorOptions {
   colorList: string[];
 }
 
-@Component({ components: { NightmodeSwitch } })
+@Component({ components: { DarkmodeSwitch } })
 export default class ThemeOptions extends Vue {
   private options = THEME_COLOR_OPTIONS;
 
   private theme = {} as ThemeColorData;
 
-  private nightmodeEnable = false;
+  private isDarkmode = false;
 
   private get text() {
-    return i18n.getLocale(this.$lang).themeColor;
+    return this.$themeLocaleConfig.themeColor || i18n.getDefaultLocale().themeColor;
   }
 
   private mounted() {
@@ -64,36 +64,43 @@ export default class ThemeOptions extends Vue {
         ? Object.keys(this.options.picker)
         : ['blue', 'red', 'green', 'orange'],
       picker: this.options.picker || defaultPicker,
-      allowNightmode: this.options.allowNightmode !== false
+      allowDarkmode: this.options.allowDarkmode !== false
     };
     /** 所选主题 */
     const theme = localStorage.getItem('theme');
     /** 夜间模式 */
-    const nightmode = localStorage.getItem('nightmode');
+    const darkmode = localStorage.getItem('darkmode');
     /** 获得类列表 */
     const classes = document.body.classList;
 
-    this.nightmodeEnable = nightmode === 'true';
-    if (nightmode === 'true') classes.add('theme-night');
+    this.isDarkmode = darkmode === 'true';
+
+    if (darkmode === 'true') classes.add('theme-dark');
+    else classes.add('theme-light');
+
     if (theme) this.setTheme(theme);
   }
 
   /** 切换夜间模式 */
-  private toggleNightmode(nightmodeEnable: boolean) {
+  private toggleDarkmode(isDarkmode: boolean) {
     const classes = document.body.classList;
 
-    if (nightmodeEnable) {
-      const oldColor = [...(classes as any)];
+    const changeClass = (
+      domClass: DOMTokenList,
+      insert: string[],
+      remove: string[]
+    ): void => {
+      domClass.remove(...remove);
+      const oldClasses = [...(domClass as any)];
+      domClass.value = '';
+      domClass.add(...insert, ...oldClasses);
+    };
 
-      classes.value = '';
-      classes.add('theme-night');
-      oldColor.forEach(item => {
-        classes.add(item);
-      });
-    } else classes.remove('theme-night');
+    if (isDarkmode) changeClass(classes, ['theme-dark'], ['theme-light']);
+    else changeClass(classes, ['theme-light'], ['theme-dark']);
 
-    this.nightmodeEnable = nightmodeEnable;
-    localStorage.setItem('nightmode', String(nightmodeEnable));
+    this.isDarkmode = isDarkmode;
+    localStorage.setItem('darkmode', String(isDarkmode));
   }
 
   /** 设置主题 */
@@ -146,7 +153,7 @@ export default class ThemeOptions extends Vue {
       &.default-theme
         background-color $accentColor
 
-.nightmode-toggle
+.darkmode-toggle
   display flex
   align-items center
 

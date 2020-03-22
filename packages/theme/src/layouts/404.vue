@@ -20,7 +20,8 @@ export default class NotFound extends Vue {
   private linkText = '带我回家';
 
   private mounted() {
-    const locale = i18n.getLocale(this.$lang).error404;
+    const locale =
+      this.$themeLocaleConfig.error404 || i18n.getDefaultLocale().error404;
 
     this.msgs = locale.text;
     this.linkText = locale.link;

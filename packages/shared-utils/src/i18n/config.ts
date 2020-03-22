@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 13:26:15
+ * @LastEditTime: 2020-03-21 23:05:15
  * @Description: 多语言配置
  */
 import { HopeLangI18nConfig } from '../../types';
@@ -37,7 +37,7 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
     valineHolder: '请留言',
     themeColor: {
       themeColor: '主题色',
-      nightmode: ['日间模式', '夜间模式']
+      darkmode: ['日间模式', '夜间模式']
     },
     error404: {
       text: [
@@ -70,7 +70,7 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
     valineHolder: 'Write a comment here',
     themeColor: {
       themeColor: 'Theme Color',
-      nightmode: ['Daymode', 'Nightmode']
+      darkmode: ['Daymode', 'Nightmode']
     },
     error404: {
       text: [

@@ -1,31 +1,28 @@
 <template>
   <div v-if="author || time" class="article-info">
     <!-- 作者 -->
-    <template v-if="author">
+    <span v-if="author" class="info-item">
       <AuthorIcon />
       <span v-text="author" />
-    </template>
+    </span>
 
     <!-- 时间 -->
-    <template v-if="time">
+    <span v-if="time" class="info-item">
       <TimeIcon />
       <span v-text="time" />
-    </template>
+    </span>
 
     <!-- 分类 -->
-    <template v-if="category">
+    <span v-if="category" class="info-item">
       <CategoryIcon />
       <span v-text="category" />
-    </template>
+    </span>
 
     <!-- 标签 -->
-    <template v-if="tag">
+    <span v-if="tag" class="info-item">
       <TagIcon />
-      <span v-if="typeof tag === 'string'">{{tag}}</span>
-      <span v-else>
-        <template v-for="item in tag">{{item}}&nbsp;</template>
-      </span>
-    </template>
+      <Tags :tags="typeof tag === 'string'? [tag]: tag" />
+    </span>
   </div>
 </template>
 <script lang="ts">
@@ -35,10 +32,13 @@ import AuthorIcon from '@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue';
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
 import { PageComputed } from 'vuepress-types';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
+import Tags from '@mr-hope/vuepress-plugin-comment/src/Tags.vue';
 import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
-@Component({ components: { AuthorIcon, CategoryIcon, TagIcon, TimeIcon } })
+@Component({
+  components: { AuthorIcon, CategoryIcon, TagIcon, Tags, TimeIcon }
+})
 export default class ArticleInfo extends Vue {
   @Prop(Object) private readonly article!: PageComputed;
 
@@ -96,17 +96,21 @@ export default class ArticleInfo extends Vue {
 </script>
 <style lang="stylus">
 .article-info
-  color desaturate(lighten($textColor, 25%), 25%)
   display flex
   align-items center
   font-size 15px
   color #888
+  flex-wrap wrap
+  justify-content flex-start
+  align-content stretch
 
   .icon
     width 16px
     height 16px
-    margin 0 6px 0 10px
+    margin-right 4px
 
-    &:first-child
-      margin-left 0
+  .info-item
+    display flex
+    align-items center
+    margin-right 8px
 </style>

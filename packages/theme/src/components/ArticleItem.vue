@@ -41,7 +41,7 @@ export default class ArticleItem extends Vue {
     width 100%
     overflow hidden
     border-radius 0.25rem
-    box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
+    box-shadow 0 1px 4px 0 rgba(0, 0, 0, 0.15)
     box-sizing border-box
     -webkit-transition all 0.3s
     transition all 0.3s
@@ -50,7 +50,7 @@ export default class ArticleItem extends Vue {
       margin-bottom 0
 
     &:hover
-      box-shadow 0 2px 16px 0 rgba(0, 0, 0, 0.2)
+      box-shadow 0 2px 12px 0 rgba(0, 0, 0, 0.15)
 
     .sticky-icon
       position absolute

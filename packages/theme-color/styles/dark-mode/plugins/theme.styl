@@ -1,4 +1,8 @@
-.theme-night
+.theme-dark
+  // 滚动条
+  ::-webkit-scrollbar-thumb:vertical, ::-webkit-scrollbar-thumb:horizontal
+    background-color darken($accentColor, 20%)
+
   // 密码
   .passwordCtn .inputCtn input
     background-color #000 !important
@@ -20,6 +24,9 @@
     .article
       boxshadow()
 
+      .sticky-icon .sticky-text
+        fill #000
+
   // 博主信息
   .blogger-info
     .num > div:first-child
@@ -28,8 +35,7 @@
   // 标签列表
   .tag-list-wrapper
     .tag
-      border 1px solid $night-bordercolor
-      box-shadow none
+      boxshadow()
 
       .tag-name
-        color #aaa
+        color #ddd

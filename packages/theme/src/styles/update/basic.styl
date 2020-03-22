@@ -1,0 +1,16 @@
+html
+  background-color transparent
+
+body
+  font-family Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  min-height 100vh
+
+h1, h2, h3, h4, h5, h6
+  font-weight 500
+
+  {$contentClass}:not(.custom) > &
+    &:first-child
+      margin-top -3rem
+
+h1
+  font-size 1.95rem

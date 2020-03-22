@@ -1,13 +1,13 @@
 <template>
-  <div class="toggle toggle--daynight">
+  <div class="toggle toggle--darklight">
     <input
-      id="toggle--daynight"
+      id="toggle--darklight"
       class="toggle--checkbox"
       type="checkbox"
-      :checked="daymodeEnable"
-      @click="toggleNightmode"
+      :checked="isLightmode"
+      @click="toggleDarkmode"
     />
-    <label class="toggle--btn" for="toggle--daynight">
+    <label class="toggle--btn" for="toggle--darklight">
       <span class="toggle--feature" />
     </label>
   </div>
@@ -17,17 +17,17 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class NightmodeSwitch extends Vue {
+export default class DarkmodeSwitch extends Vue {
   @Prop({ type: Boolean, required: true })
-  private readonly nightmodeEnable!: boolean;
+  private readonly darkmodeEnable!: boolean;
 
-  private get daymodeEnable() {
-    return !this.nightmodeEnable;
+  private get isLightmode() {
+    return !this.darkmodeEnable;
   }
 
-  /** 切换夜间模式 */
-  private toggleNightmode() {
-    this.$emit('nightmode-toggle', !this.nightmodeEnable);
+  /** 切换暗黑模式 */
+  private toggleDarkmode() {
+    this.$emit('darkmode-toggle', !this.darkmodeEnable);
   }
 }
 </script>
@@ -57,13 +57,13 @@ export default class NightmodeSwitch extends Vue {
   content ''
   display block
 
-.toggle--daynight .toggle--btn, .toggle--like .toggle--btn
+.toggle--darklight .toggle--btn, .toggle--like .toggle--btn
   position relative
   height 17.5px
   width 31.25px
   border-radius 17.5px
 
-.toggle--daynight .toggle--btn:before, .toggle--like .toggle--btn:before
+.toggle--darklight .toggle--btn:before, .toggle--like .toggle--btn:before
   position absolute
   top 0.5px
   left 1px
@@ -71,15 +71,15 @@ export default class NightmodeSwitch extends Vue {
   height 14px
   border-radius 50%
 
-.toggle--daynight .toggle--btn
+.toggle--darklight .toggle--btn
   border 1px solid #1c1c1c
   background-color #3c4145
 
-.toggle--daynight .toggle--btn:before
+.toggle--darklight .toggle--btn:before
   background-color #fff
   border 1.25px solid #e3e3c7
 
-.toggle--daynight .toggle--btn:after
+.toggle--darklight .toggle--btn:after
   position absolute
   top 62%
   left 9.75px
@@ -116,7 +116,7 @@ export default class NightmodeSwitch extends Vue {
     opacity 100
     transform scale(1)
 
-.toggle--daynight .toggle--feature
+.toggle--darklight .toggle--feature
   display block
   position absolute
   top 2.25px
@@ -129,7 +129,7 @@ export default class NightmodeSwitch extends Vue {
   box-shadow rgba(255, 255, 255, 0.1) 7.5px -0.75px 0 0, rgba(255, 255, 255, 0.1) 3px 2.5px 0 -0.25px, #fff 9.5px 4.5px 0 0.25px, rgba(255, 255, 255, 0.1) 8px 8.5px 0 0, #fff 5px 6px 0 0.375px, rgba(255, 255, 255, 0.1) 1.25px 9.5px 0 0.25px
   animation starry_star 5s ease-in-out infinite
 
-.toggle--daynight .toggle--feature:before
+.toggle--darklight .toggle--feature:before
   position absolute
   top -0.5px
   left -6.25px
@@ -141,16 +141,16 @@ export default class NightmodeSwitch extends Vue {
   box-shadow #e3e3c7 -7px 0 0 -0.75px, #e3e3c7 -2px 6px 0 -0.5px
   transform-origin -1.5px 130%
 
-.toggle--daynight .toggle--checkbox:checked+.toggle--btn
+.toggle--darklight .toggle--checkbox:checked+.toggle--btn
   background-color #9ee3fb
   border 1px solid #86c3d7
 
-.toggle--daynight .toggle--checkbox:checked+.toggle--btn:before
+.toggle--darklight .toggle--checkbox:checked+.toggle--btn:before
   left 13.75px
   background-color #ffdf6d
   border 1.25px solid #e1c348
 
-.toggle--daynight .toggle--checkbox:checked+.toggle--btn:after
+.toggle--darklight .toggle--checkbox:checked+.toggle--btn:after
   opacity 100
   animation-name bounceIn
   animation-duration 0.6s
@@ -158,12 +158,12 @@ export default class NightmodeSwitch extends Vue {
   animation-fill-mode backwards
   animation-timing-function ease-in-out
 
-.toggle--daynight .toggle--checkbox:checked+.toggle--btn>.toggle--feature
+.toggle--darklight .toggle--checkbox:checked+.toggle--btn>.toggle--feature
   opacity 0
   box-shadow rgba(255, 255, 255, 0.1) 7.5px -0.75px 0 -1px, rgba(255, 255, 255, 0.1) 3px 2.5px 0 -1.25px, #fff 9.5px 4.5px 0 -0.75px, rgba(255, 255, 255, 0.1) 8px 8.5px 0 -1px, #fff 5px 6px 0 -1.375px, rgba(255, 255, 255, 0.1) 1.25px 9.5px 0 -0.75px
   animation none
 
-.toggle--daynight .toggle--checkbox:checked+.toggle--btn>.toggle--feature:before
+.toggle--darklight .toggle--checkbox:checked+.toggle--btn>.toggle--feature:before
   left 6.25px
   transform rotate(70deg)
 </style>

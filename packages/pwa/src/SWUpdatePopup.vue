@@ -53,7 +53,7 @@ export default class SWUpdatePopup extends Vue {
   }
 
   private get message() {
-    return i18n.getLocale(this.$lang).pwa;
+    return this.$themeLocaleConfig.pwa || i18n.getDefaultLocale().pwa;
   }
 
   private created() {

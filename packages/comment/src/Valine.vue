@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 14:34:43
+ * @LastEditTime: 2020-03-21 23:17:11
  * @Description: Valine 评论插件
 -->
 <template>
@@ -81,7 +81,9 @@ export default class Valine extends Vue {
       appId: valineConfig.appId, // Your appId
       appKey: valineConfig.appKey, // Your appKey
       placeholder:
-        valineConfig.placeholder || i18n.getLocale(this.$lang).valineHolder,
+        valineConfig.placeholder ||
+        this.$themeLocaleConfig.valineHolder ||
+        i18n.getDefaultLocale().valineHolder,
       meta: valineConfig.meta || ['nick', 'mail', 'link'],
       notify: valineConfig.notify !== false,
       verify: valineConfig.verify || false,

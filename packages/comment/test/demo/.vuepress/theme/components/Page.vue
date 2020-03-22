@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:03
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-06 23:57:39
+ * @LastEditTime: 2020-03-21 00:43:46
  * @Description: 页面主体
  *
  * 为每个页面都添加了 路径导航 / 页脚 支持
@@ -32,8 +32,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@require '~@parent-theme/styles/wrapper.styl'
-// @require '~@vuepress/theme-default/styles/wrapper.styl'
+@require '~@theme/styles/wrapper.styl'
 
 .page
   padding-bottom 2rem

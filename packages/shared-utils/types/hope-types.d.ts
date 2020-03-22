@@ -77,8 +77,8 @@ interface HopeLangI18nConfigItem {
   themeColor: {
     /** 颜色提示文字 */
     themeColor: string;
-    /** 夜间模式提示文字 */
-    nightmode: string[];
+    /** 暗黑模式提示文字 */
+    darkmode: string[];
   };
   /** 404错误页 */
   error404: {

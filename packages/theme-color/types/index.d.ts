@@ -4,8 +4,8 @@ export type ThemeColorOptions = Partial<{
   allowThemeColor: boolean;
   /** 颜色选择器 */
   picker: Record<string, string>;
-  /** 是否允许开启夜间模式 */
-  allowNightmode: boolean;
+  /** 是否允许开启暗黑模式 */
+  allowDarkmode: boolean;
 }>;
 
 /** 声明全局变量 */

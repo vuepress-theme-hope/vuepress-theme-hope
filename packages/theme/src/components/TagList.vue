@@ -21,7 +21,10 @@ export default class TagList extends Vue {
   /** 标签列表 */
   private get tagList() {
     return [
-      { name: i18n.getLocale(this.$lang).allText || 'All', path: '/tag/' },
+      {
+        name: this.$themeLocaleConfig.allText || i18n.getDefaultLocale().allText,
+        path: '/tag/'
+      },
       ...this.$tag.list
     ];
   }
@@ -30,7 +33,9 @@ export default class TagList extends Vue {
   private isActive(name: string) {
     return (
       name ===
-      (this.$currentTag?.key || i18n.getLocale(this.$lang).allText || 'All')
+      (this.$currentTag?.key ||
+        this.$themeLocaleConfig.allText ||
+        i18n.getDefaultLocale().allText)
     );
   }
 

@@ -101,7 +101,9 @@ export default class Pagination extends Vue {
   }
 
   private get text() {
-    return i18n.getLocale(this.$lang).pagination;
+    return (
+      this.$themeLocaleConfig.pagination || i18n.getDefaultLocale().pagination
+    );
   }
 
   /** 页码跳转 */

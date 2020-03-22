@@ -1,0 +1,23 @@
+@require './basic'
+@require './code'
+@require './layout'
+
+// 主页样式更新
+.home
+  .feature
+    padding 0 1.5%
+    transition all 0.5s
+
+    &.link
+      cursor pointer
+
+    &:hover
+      transform scale(1.05)
+      box-shadow 2px 2px 10px #f0f1f2
+
+    &.link h2:hover
+      color $accentColor
+
+// medium-zoom 插件背景
+.medium-zoom--opened .medium-zoom-overlay
+  background-color #fff

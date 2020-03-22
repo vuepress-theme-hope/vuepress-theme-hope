@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 00:35:13
+ * @LastEditTime: 2020-03-21 19:57:04
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -44,14 +44,20 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
             keys: ['tag', 'tags'],
             path: '/tag/',
             layout: 'BlogEntry',
-            scopeLayout: 'BlogEntry'
+            scopeLayout: 'BlogEntry',
+            frontmatter: {
+              sidebar: false
+            }
           },
           {
             id: 'category',
             keys: ['category', 'categories'],
             path: '/category/',
             layout: 'BlogEntry',
-            scopeLayout: 'BlogEntry'
+            scopeLayout: 'BlogEntry',
+            frontmatter: {
+              sidebar: false
+            }
             /*
              * },
              * {

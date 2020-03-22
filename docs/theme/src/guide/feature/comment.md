@@ -26,7 +26,7 @@ module.exports = {
 有 Valine 和 Vssue 可以选择。
 
 ::: tip
-如果你希望看到更详细的评论设置，可以访问 [@mr-hopevuepress-plugin-comment 插件文档](https://comment.mrhope.site)
+如果你希望看到更详细的评论设置，可以访问 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-comment.mrhope.site)
 :::
 
 ## Valine
