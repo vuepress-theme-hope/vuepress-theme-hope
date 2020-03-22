@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 14:33:57
+ * @LastEditTime: 2020-03-22 15:12:25
  * @Description: 页面信息
 -->
 <template>
@@ -164,7 +164,7 @@ export default class PageInfo extends Vue {
 
     if (typeof tag === 'string') return capitalize(tag);
 
-    if (Array.isArray(tag)) return tag.map(item => capitalize(item));
+    if (Array.isArray(tag)) return tag.map((item) => capitalize(item));
 
     return '';
   }

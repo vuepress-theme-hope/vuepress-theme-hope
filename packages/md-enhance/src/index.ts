@@ -19,7 +19,7 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
     enhanceAppFiles: resolve(__dirname, 'enhanceAppFile.ts'),
 
     /** Markdown 增强 */
-    chainMarkdown: md => {
+    chainMarkdown: (md) => {
       //  添加行号
       if (markdownOption.lineNumbers !== false)
         md.plugin('line-numbers').use(lineNumbers);

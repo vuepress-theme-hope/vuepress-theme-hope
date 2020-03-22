@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-14 13:19:19
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-22 13:53:10
  * @Description: 合并对象
  */
 
@@ -24,7 +24,7 @@ export const deepAssign = (
   /** 本次合并的对象 */
   const assignObject = assignObjects.shift() as IAnyObject;
 
-  Object.keys(assignObject).forEach(property => {
+  Object.keys(assignObject).forEach((property) => {
     if (
       typeof originObject[property] === 'object' &&
       !Array.isArray(originObject[property]) &&
@@ -54,7 +54,7 @@ export const deepAssignReverse = (
   /** 被合并的对象 */
   const originObject = assignObjects.pop() as IAnyObject;
 
-  Object.keys(originObject).forEach(property => {
+  Object.keys(originObject).forEach((property) => {
     if (assignObject[property] === undefined)
       assignObject[property] = originObject[property];
     else if (

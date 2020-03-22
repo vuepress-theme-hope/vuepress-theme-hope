@@ -35,7 +35,7 @@ const filterArticle = (
   pages: PageComputed[],
   isTimeline?: boolean
 ): PageComputed[] =>
-  pages.filter(page => {
+  pages.filter((page) => {
     const {
       frontmatter: { article, blogpage, home, date },
       title
@@ -100,7 +100,7 @@ export default class ArticleMixin extends Vue {
 
     // 先过滤再排序
     return sortArticle(
-      filterArticle(pages.map(page => deepAssign({}, page) as PageComputed))
+      filterArticle(pages.map((page) => deepAssign({}, page) as PageComputed))
     );
   }
 

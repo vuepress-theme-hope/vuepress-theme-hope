@@ -154,12 +154,7 @@ const blockTex = (
       // non-empty line with negative indent should stop the list:
       break;
 
-    if (
-      state.src
-        .slice(pos, max)
-        .trim()
-        .slice(-2) === '$$'
-    ) {
+    if (state.src.slice(pos, max).trim().slice(-2) === '$$') {
       lastPos = state.src.slice(0, max).lastIndexOf('$$');
       lastLine = state.src.slice(pos, lastPos);
       found = true;

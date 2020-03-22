@@ -15,9 +15,7 @@ export const outboundRE = /^[a-z]+:/iu;
  * @param path 需要处理的路径
  */
 export const normalize = (path: string): string =>
-  decodeURI(path)
-    .replace(hashRE, '')
-    .replace(extRE, '');
+  decodeURI(path).replace(hashRE, '').replace(extRE, '');
 
 /**
  * 获取路径中的锚点

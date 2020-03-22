@@ -52,7 +52,7 @@ export default class NavLinks extends Vue {
       const languageDropdown = {
         text: this.$themeLocaleConfig.selectText || 'Languages',
         ariaLabel: this.$themeLocaleConfig.ariaLabel || 'Select language',
-        items: Object.keys(locales).map(path => {
+        items: Object.keys(locales).map((path) => {
           const locale = locales[path];
           const text =
             (themeLocales[path] && themeLocales[path].label) || locale.lang;
@@ -64,7 +64,8 @@ export default class NavLinks extends Vue {
             // Try to stay on the same page
             link = currentLink.replace(this.$localeConfig.path as string, path);
             // Fallback to homepage
-            if (!(routes || []).some(route => route.path === link)) link = path;
+            if (!(routes || []).some((route) => route.path === link))
+              link = path;
           }
 
           return { text, link };

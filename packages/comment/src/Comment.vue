@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2020-01-08 20:40:27
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-13 18:29:16
- * @Description: 评论组件
--->
 <template>
   <div v-show="enable" class="comments-wrapper">
     <Valine v-if="options.type === 'valine'" :valine-config="options" />

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-20 17:21:55
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 00:15:08
+ * @LastEditTime: 2020-03-22 15:24:04
  * @Description: 侧边栏处理
  */
 
@@ -32,17 +32,17 @@ export interface SidebarHeader extends PageHeader {
  */
 export const groupSidebarHeaders = (headers: PageHeader[]): SidebarHeader[] => {
   /** header 副本 */
-  const copyheaders = headers.map(h => ({ ...h }));
+  const copyheaders = headers.map((h) => ({ ...h }));
   let lastH2: SidebarHeader;
 
   // 将所有标题置于 h2 下方
-  copyheaders.forEach(h => {
+  copyheaders.forEach((h) => {
     if (h.level === 2) lastH2 = h;
     else if (lastH2) (lastH2.children || (lastH2.children = [])).push(h);
   });
 
   // 过滤掉非 h2 的标题
-  return headers.filter(h => h.level === 2);
+  return headers.filter((h) => h.level === 2);
 };
 
 export interface SidebarHeaderItem extends SidebarHeader {
@@ -78,7 +78,7 @@ const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
       title: page.title,
       icon: page.frontmatter.icon,
       path: '',
-      children: headers.map<SidebarHeaderItem>(header => ({
+      children: headers.map<SidebarHeaderItem>((header) => ({
         ...header,
         type: 'header',
         basePath: page.path,
@@ -251,7 +251,7 @@ const resolveItem = (
   return {
     ...sidebarConfigItem,
     type: 'group',
-    children: children.map(child =>
+    children: children.map((child) =>
       resolveItem(
         child,
         pages,
@@ -292,6 +292,6 @@ export const resolveSidebarItems = (
   const result = resolveMatchingConfig(page.regularPath, themeSidebarConfig);
 
   return result
-    ? result.config.map(item => resolveItem(item, pages, result.base))
+    ? result.config.map((item) => resolveItem(item, pages, result.base))
     : [];
 };

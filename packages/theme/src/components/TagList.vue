@@ -22,7 +22,8 @@ export default class TagList extends Vue {
   private get tagList() {
     return [
       {
-        name: this.$themeLocaleConfig.allText || i18n.getDefaultLocale().allText,
+        name:
+          this.$themeLocaleConfig.allText || i18n.getDefaultLocale().allText,
         path: '/tag/'
       },
       ...this.$tag.list

@@ -26,10 +26,6 @@ rules:
   no-useless-constructor:
     - off
 
-  arrow-parens:
-    - error
-    - as-needed
-
   class-methods-use-this:
     - off
 

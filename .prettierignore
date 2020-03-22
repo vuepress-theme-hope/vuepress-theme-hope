@@ -3,7 +3,10 @@
 
 packages/**/*.js
 packages/**/*.d.ts
+packages/theme/src/lib/*.js
 
 !packages/**/test/*.js
 !packages/**/types/*.d.ts
 !.vuepress/**
+
+*.vue

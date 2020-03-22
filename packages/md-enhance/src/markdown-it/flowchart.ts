@@ -112,8 +112,9 @@ const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
     const key = `flowchart_${hash(idx)}`;
     const { content, info } = token;
     md.$dataBlock[key] = content;
-    return `<FlowChart id="${key}" :code="$dataBlock.${key}" preset="${info.trim() ||
-      'vue'}"></FlowChart>`;
+    return `<FlowChart id="${key}" :code="$dataBlock.${key}" preset="${
+      info.trim() || 'vue'
+    }"></FlowChart>`;
   };
 };
 

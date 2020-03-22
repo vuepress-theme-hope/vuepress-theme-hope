@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-19 20:31:54
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 11:39:36
+ * @LastEditTime: 2020-03-22 13:54:10
  * @Description: 加密状态生成
  */
 
@@ -24,7 +24,7 @@ export const pathHitKeys = (
     const keys = Object.keys(encryptOptions.config);
     /** 命中键名 */
     const hitKeys = keys
-      .filter(key => path.indexOf(key) === 0)
+      .filter((key) => path.indexOf(key) === 0)
       .sort((x, y) => y.length - x.length);
 
     return hitKeys;
@@ -53,14 +53,14 @@ export const pathEncryptStatus = (
     const { config } = encryptOptions as Required<EncryptOptions>;
 
     /** 正确键值 */
-    const correctKeys = hitKeys.filter(key => {
+    const correctKeys = hitKeys.filter((key) => {
       const keyConfig = config[key];
       /** 命中的密码 */
       const hitPasswords =
         typeof keyConfig === 'string' ? [keyConfig] : keyConfig;
       /** 比较结果 */
       const result = hitPasswords.filter(
-        password => passwordConfig[key] === password
+        (password) => passwordConfig[key] === password
       );
 
       return result.length !== 0;

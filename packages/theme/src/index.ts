@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 00:45:31
+ * @LastEditTime: 2020-03-22 13:53:29
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -25,7 +25,7 @@ export = (
   const isAlgoliaSearch =
     themeConfig.algolia ||
     Object.keys((siteConfig.locales && themeConfig.locales) || {}).some(
-      base => themeConfig.locales[base].algolia
+      (base) => themeConfig.locales[base].algolia
     );
 
   config.alias = {

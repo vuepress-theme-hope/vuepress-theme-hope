@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 11:10:54
+ * @LastEditTime: 2020-03-22 15:12:52
  * @Description: 主题颜色选择
 -->
 <template>
@@ -55,7 +55,9 @@ export default class ThemeOptions extends Vue {
   private isDarkmode = false;
 
   private get text() {
-    return this.$themeLocaleConfig.themeColor || i18n.getDefaultLocale().themeColor;
+    return (
+      this.$themeLocaleConfig.themeColor || i18n.getDefaultLocale().themeColor
+    );
   }
 
   private mounted() {
@@ -107,7 +109,7 @@ export default class ThemeOptions extends Vue {
   private setTheme(theme: string, moveClass = true) {
     const classes = document.body.classList;
     const themes = this.theme.colorList.map(
-      colorTheme => `theme-${colorTheme}`
+      (colorTheme) => `theme-${colorTheme}`
     );
 
     if (!theme) {
@@ -118,7 +120,7 @@ export default class ThemeOptions extends Vue {
     }
 
     classes.remove(
-      ...themes.filter(themeclass => themeclass !== `theme-${theme}`)
+      ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
     );
 
     if (moveClass) {

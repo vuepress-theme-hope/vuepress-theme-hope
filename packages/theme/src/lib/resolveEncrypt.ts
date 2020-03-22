@@ -20,7 +20,7 @@ const resolveEncrypt = (encrypt: EncryptOptions): void => {
     if (typeof encrypt.global === 'string')
       encrypt.global = md5(encrypt.global);
     else if (Array.isArray(encrypt.global))
-      encrypt.global = encrypt.global.map(globalPassword =>
+      encrypt.global = encrypt.global.map((globalPassword) =>
         md5(globalPassword)
       );
     else
@@ -33,12 +33,12 @@ Please add "global" option your "themeConfig.encrypt" config. It can be string o
   // 处理密码配置
   const passwordConfig = encrypt.config || {};
 
-  Object.keys(passwordConfig).forEach(key => {
+  Object.keys(passwordConfig).forEach((key) => {
     const password = passwordConfig[key];
 
     if (typeof password === 'string') passwordConfig[key] = md5(password);
     else if (Array.isArray(password))
-      passwordConfig[key] = password.map(configPassword => {
+      passwordConfig[key] = password.map((configPassword) => {
         if (typeof configPassword === 'string') return md5(configPassword);
 
         throw new Error(`[vuepress-theme-hope]: You config "themeConfig.encrypt.config", but your config is invalid. 

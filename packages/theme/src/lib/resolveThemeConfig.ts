@@ -25,7 +25,7 @@ const setThemeLocales = (
   };
 
   // 处理其他语言
-  Object.keys(themeConfig.locales).forEach(path => {
+  Object.keys(themeConfig.locales).forEach((path) => {
     if (path === '/') return;
 
     const lang = path2lang(path);

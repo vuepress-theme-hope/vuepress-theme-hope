@@ -31,7 +31,7 @@ export default class FlowChart extends Vue {
 
   private mounted() {
     const preset = presets[this.preset];
-    const delay = () => new Promise(resolve => setTimeout(resolve, 500));
+    const delay = () => new Promise((resolve) => setTimeout(resolve, 500));
     const { code } = this;
 
     if (!preset) {

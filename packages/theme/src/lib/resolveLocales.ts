@@ -24,7 +24,7 @@ const resolveLocales = (config: ResolvedHopeVuepressConfig): void => {
   };
 
   // 处理其他语言
-  Object.keys(config.themeConfig.locales).forEach(path => {
+  Object.keys(config.themeConfig.locales).forEach((path) => {
     if (path === '/') return;
 
     locales[path] = { lang: path2lang(path), ...(locales[path] || {}) };

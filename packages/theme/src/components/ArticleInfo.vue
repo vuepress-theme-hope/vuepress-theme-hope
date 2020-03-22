@@ -88,7 +88,7 @@ export default class ArticleInfo extends Vue {
 
     if (typeof tag === 'string') return capitalize(tag);
 
-    if (Array.isArray(tag)) return tag.map(item => capitalize(item));
+    if (Array.isArray(tag)) return tag.map((item) => capitalize(item));
 
     return '';
   }

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-18 11:40:17
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:06:45
+ * @LastEditTime: 2020-03-22 15:13:29
  * @Description: 导航栏链接按钮
  *
  * 在官方的基础上添加了图标支持
@@ -49,7 +49,7 @@ export default class NavLink extends Vue {
   private get exact() {
     if (this.$site.locales)
       return Object.keys(this.$site.locales).some(
-        rootLink => rootLink === this.link
+        (rootLink) => rootLink === this.link
       );
 
     return this.link === '/';

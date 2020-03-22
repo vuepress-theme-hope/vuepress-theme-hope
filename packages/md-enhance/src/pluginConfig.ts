@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 15:16:12
+ * @LastEditTime: 2020-03-22 13:35:17
  * @Description: 插件配置
  */
 import { MarkdownEnhanceOption } from '../types';
@@ -55,8 +55,9 @@ const pluginConfig = (
       {
         type: 'details',
         before: (info: string): string =>
-          `<details class="custom-block details"><summary>${info ||
-            'Details'}</summary>\n`,
+          `<details class="custom-block details"><summary>${
+            info || 'Details'
+          }</summary>\n`,
         after: (): string => '</details>\n'
       }
     ]

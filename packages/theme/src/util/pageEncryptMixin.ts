@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-20 00:04:03
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 00:37:41
+ * @LastEditTime: 2020-03-22 13:53:48
  * @Description: 页面加密混入
  */
 
@@ -25,7 +25,7 @@ export default class PageEncryptMixin extends Vue {
       const keys = Object.keys(this.encryptOptions.config);
       /** 命中键名 */
       const hitKeys = keys
-        .filter(key => this.$route.path.indexOf(key) === 0)
+        .filter((key) => this.$route.path.indexOf(key) === 0)
         .sort((x, y) => y.length - x.length);
 
       return hitKeys;
@@ -41,14 +41,14 @@ export default class PageEncryptMixin extends Vue {
       const { config } = this.encryptOptions as Required<EncryptOptions>;
 
       /** 正确键值 */
-      const correctKeys = this.currentPathHitKeys.filter(key => {
+      const correctKeys = this.currentPathHitKeys.filter((key) => {
         const keyConfig = config[key];
         /** 命中的密码 */
         const hitPasswords =
           typeof keyConfig === 'string' ? [keyConfig] : keyConfig;
         /** 比较结果 */
         const result = hitPasswords.filter(
-          password => this.passwordConfig[key] === password
+          (password) => this.passwordConfig[key] === password
         );
 
         return result.length !== 0;
@@ -71,7 +71,7 @@ export default class PageEncryptMixin extends Vue {
       const hitPasswordList =
         typeof hitPassword === 'string' ? [hitPassword] : hitPassword;
       /** 比较结果 */
-      const result = hitPasswordList.filter(item => password === item);
+      const result = hitPasswordList.filter((item) => password === item);
 
       // 出现匹配
       if (result.length !== 0) {

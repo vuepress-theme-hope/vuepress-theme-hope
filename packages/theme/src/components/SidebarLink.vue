@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:14:48
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 22:48:31
+ * @LastEditTime: 2020-03-22 15:13:52
  * @Description: 侧边栏链接
  *
  * 添加了图标支持
@@ -165,7 +165,7 @@ interface SidebarLinkProps {
       // 如果是标题侧边栏的话，其中一个子标题匹配也需要激活
       item.type === 'header'
         ? selfActive ||
-          (item.children || []).some(child =>
+          (item.children || []).some((child) =>
             isActive($route, `${item.basePath}#${child.slug}`)
           )
         : selfActive;
