@@ -61,13 +61,12 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   @Watch('$route')
   private onRouteUpdate() {
     this.articleList = this.getArticleList();
+    // 将页面重置为 1
+    this.currentPage = 1;
   }
 
   @Watch('currentPage')
   private onPageChange() {
-    // 将页面重置为 1
-    this.currentPage = 1;
-
     // 滚动到列表顶部
     const distance =
       (document.querySelector('#article') as Element).getBoundingClientRect()
