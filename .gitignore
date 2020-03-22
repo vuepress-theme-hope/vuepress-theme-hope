@@ -5,6 +5,7 @@ packages/**/*.d.ts
 !packages/**/globals.d.ts
 !packages/**/typings.d.ts
 !packages/pwa/src/skip-waiting.js
+!packages/theme/src/lib/noopModule.js
 !packages/theme-types/index.d.ts
 !packages/**/test/**/*.js
 node_modules/

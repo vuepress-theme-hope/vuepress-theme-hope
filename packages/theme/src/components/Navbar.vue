@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:03:43
+ * @LastEditTime: 2020-03-23 00:42:45
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -43,6 +43,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { AlgoliaOption } from '@mr-hope/vuepress-shared-utils';
 import AlgoliaSearchBox from '@AlgoliaSearchBox';
 import NavLinks from '@theme/components/NavLinks.vue';
 import SearchBox from '@SearchBox';
@@ -63,8 +64,10 @@ export default class Navbar extends Vue {
   private linksWrapMaxWidth: number = 0;
 
   /** Algolia 配置 */
-  private get algolia() {
-    return this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || {};
+  private get algolia(): AlgoliaOption | false {
+    return (
+      this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || false
+    );
   }
 
   /** 是否使用 Algolia 搜索 */
