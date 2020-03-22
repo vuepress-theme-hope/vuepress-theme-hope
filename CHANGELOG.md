@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.0-beta.40](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.39...v0.1.0-beta.40) (2020-03-22)
+
+### Features
+
+* update theme apperance ([cf455dc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cf455dc74057d9a9d06a97ffefbd5f197cef2ea6)) ([f2e35e8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2e35e8ee49b18d86a161eeb334378292e9a3389))
+* **md-enhance:** use katex for tex support ([4d2d018](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d2d018bb32cee3c34b0f7f4368a9eb898b59328))
+* **theme:** make theme ts ([01602c0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/01602c05e5996327956445633dffd89d04ae86e5))
+* **theme:** stop extending theme-default ([e97c08c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e97c08c879ea79722fa504ad8546ee31a618af8b))
+* **theme:** update pageinfo tags ([20a1366](https://github.com/Mister-Hope/vuepress-theme-hope/commit/20a1366a79ef255628dd8acadf6a2d91d3e015d8))
+* **theme:** use localstorage to store password ([119ac8d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/119ac8d898318b0cda636481d56f12ecc97e135f))
+
 ## [0.1.0-beta.39](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.38...v0.1.0-beta.39) (2020-03-20)
 
 ### Bug Fixes
