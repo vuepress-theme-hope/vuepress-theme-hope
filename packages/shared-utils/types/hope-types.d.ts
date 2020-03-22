@@ -99,6 +99,8 @@ interface HopeLangI18nConfigItem {
     navigate: string;
     /** 按钮文字 */
     button: string;
+    /** 错误文字 */
+    errorText: string;
   };
   /** 全部文字 */
   allText: string;

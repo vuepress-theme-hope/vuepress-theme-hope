@@ -116,8 +116,11 @@ export default class Pagination extends Vue {
     const pageNum = parseInt(index);
 
     if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
-    // eslint-disable-next-line no-alert
-    else alert(`请输入大于0，并且小于${this.totalPages}的页码！`);
+    else {
+      const errorText = this.text.errorText.split('$page');
+      // eslint-disable-next-line no-alert
+      alert(`${errorText[0]}${this.totalPages + 1}${errorText[1]}`);
+    }
   }
 }
 </script>
@@ -136,32 +139,44 @@ export default class Pagination extends Vue {
 
     .btn-group
       display flex
-      justify-content center
       align-items stretch
       border 1px solid #ccc
       border-radius 4px
       overflow hidden
 
       div
+        position relative
         padding 5px 8px
-        border-left 1px solid #ccc
         font-size 14px
         color $accentColor
         cursor pointer
 
+        &::before
+          content ' '
+          position absolute
+          top 0
+          left 0
+          bottom 0
+          width 1px
+          background-color #ccc
+
         &:first-child
-          border-left none
+          &::before
+            background-color transparent
 
         &:hover, &.active
           background $accentColor
-          border-color $accentColor
           color #fff
+
+          &::before
+            background-color $accentColor
+
+        &.active + div, &:hover + div
+          &::before
+            background-color $accentColor
 
         &.active, &.ellipsis
           cursor default
-
-        &.active + div
-          border-color $accentColor
 
     div.text
       font-size 14px

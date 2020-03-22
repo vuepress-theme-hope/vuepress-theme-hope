@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-05 12:55:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 23:05:15
+ * @LastEditTime: 2020-03-23 00:11:53
  * @Description: 多语言配置
  */
 import { HopeLangI18nConfig } from '../../types';
@@ -53,7 +53,8 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       prev: '上一页',
       next: '下一页',
       navigate: '跳转到',
-      button: '前往'
+      button: '前往',
+      errorText: '请输入大于0，并且小于$page的页码！'
     },
     allText: '全部'
   },
@@ -90,7 +91,8 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       prev: 'Prev',
       next: 'Next',
       navigate: 'Jump to',
-      button: 'Go'
+      button: 'Go',
+      errorText: 'Please enter a number with is >0 and < $page !'
     },
     allText: 'All'
   }

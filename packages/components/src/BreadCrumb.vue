@@ -1,8 +1,8 @@
 <!--
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 12:03:48
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-23 00:18:48
  * @Description: 路径导航
 -->
 <template>
@@ -113,7 +113,7 @@ export default class BreadCrumb extends Vue {
 }
 </script>
 <style lang="stylus">
-@require '~@vuepress/theme-default/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared-utils/src/styles/wrapper.styl'
 
 // 修正标题的上边距
 .theme-default-content:not(.custom)
