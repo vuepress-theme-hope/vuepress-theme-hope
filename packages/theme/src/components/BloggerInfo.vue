@@ -1,7 +1,11 @@
 <template>
   <div class="blogger-info">
-    <img v-if="bloggerAvatar" class="blogger-avatar" alt="blogger-avatar" :src="bloggerAvatar" />
-    <h3 v-if="blogger" class="name" v-text="blogger " />
+    <div class="blogger-wrapper">
+      <div class="blogger" :class="{ hasIntro }" @click="intro">
+        <img v-if="bloggerAvatar" class="avatar" alt="blogger-avatar" :src="bloggerAvatar" />
+        <h3 v-if="blogger" class="name" v-text="blogger " />
+      </div>
+    </div>
     <div class="num-wrapper">
       <div @click="$router.push('/article/')">
         <div class="num">{{$articles.length}}</div>
@@ -27,7 +31,7 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
     return this.$themeConfig.blog || {};
   }
 
-  /** 博主 */
+  /** 博主名称 */
   private get blogger() {
     return (
       this.blogConfig.blogger ||
@@ -43,19 +47,36 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
   private get bloggerAvatar() {
     return this.blogConfig.avatar || this.$themeConfig.logo || '';
   }
+
+  /** 是否配置了个人介绍页地址 */
+  private get hasIntro() {
+    return Boolean(this.blogConfig.intro);
+  }
+
+  /** 跳转到个人介绍 */
+  private intro() {
+    if (this.hasIntro) this.$router.push(this.blogConfig.intro);
+  }
 }
 </script>
 <style lang="stylus">
 .blogger-info
-  .blogger-avatar
-    display block
-    margin 2rem auto 0
-    width 8rem
-    height 8rem
-    border-radius 50%
-
-  .name
+  .blogger-wrapper
     text-align center
+    padding-top 2rem
+
+    .blogger
+      display inline-block
+      padding 0 2rem
+
+      &.hasIntro
+        cursor pointer
+
+      .avatar
+        display block
+        width 8rem
+        height 8rem
+        border-radius 50%
 
   .num-wrapper
     display flex
