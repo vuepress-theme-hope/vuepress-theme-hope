@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 16:36:59
+ * @LastEditTime: 2020-03-23 00:27:14
  * @Description: 页面信息
 -->
 <template>
@@ -229,7 +229,6 @@ export default class PageInfo extends Vue {
     flex-wrap wrap
     justify-content flex-start
     align-content stretch
-    margin-bottom -1rem
 
     & > span
       display flex

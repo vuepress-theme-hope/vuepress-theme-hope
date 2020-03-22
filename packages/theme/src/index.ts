@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 20:35:20
+ * @LastEditTime: 2020-03-23 01:01:09
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -36,10 +36,19 @@ export = (
       (base) => themeConfig.locales[base].algolia
     );
 
+  const commentEnabled = themeConfig.comment !== false;
+  const noopModule = 'vuepress-theme-hope/src/lib/noopModule.js';
+
   config.alias = {
-    '@AlgoliaSearchBox': `@vuepress/theme-default/${
-      isAlgoliaSearch ? 'components/AlgoliaSearchBox.vue' : 'noopModule.js'
-    }`
+    '@AlgoliaSearchBox': isAlgoliaSearch
+      ? 'vuepress-theme-hope/src/components/AlgoliaSearchBox.vue'
+      : noopModule,
+    '@Comment': commentEnabled
+      ? '@mr-hope/vuepress-plugin-comment/src/Comment.vue'
+      : noopModule,
+    '@PageInfo': commentEnabled
+      ? '@mr-hope/vuepress-plugin-comment/src/PageInfo.vue'
+      : noopModule
   };
 
   /** 插件选项 */

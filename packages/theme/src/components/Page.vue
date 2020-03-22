@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:03
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 22:53:27
+ * @LastEditTime: 2020-03-23 01:03:38
  * @Description: 页面主体
  *
  * 为每个页面都添加了 路径导航 / 页脚 支持
@@ -17,7 +17,7 @@
     <slot name="top" />
 
     <!-- 页面信息 -->
-    <ModuleTransition delay="0.04">
+    <ModuleTransition v-if="commentEnable" delay="0.04">
       <PageInfo :key="$route.path" />
     </ModuleTransition>
 
@@ -47,7 +47,7 @@
     </ModuleTransition>
 
     <!-- 页面评论 -->
-    <ModuleTransition v-if="!pagePassword || pageDescrypted" delay="0.16">
+    <ModuleTransition v-if="(!pagePassword || pageDescrypted) && commentEnable" delay="0.16">
       <Comment :key="$route.path" />
     </ModuleTransition>
 
@@ -63,19 +63,35 @@
 <script lang='ts'>
 import * as md5 from 'md5';
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import Comment from '@Comment';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import PageEdit from '@theme/components/PageEdit.vue';
+import PageInfo from '@PageInfo';
 import PageNav from '@theme/components/PageNav.vue';
 import Password from '@theme/components/Password.vue';
 import { SidebarItem } from '@theme/util/sidebar';
 
-@Component({ components: { ModuleTransition, PageEdit, PageNav, Password } })
+@Component({
+  components: {
+    Comment,
+    ModuleTransition,
+    PageEdit,
+    PageInfo,
+    PageNav,
+    Password
+  }
+})
 export default class Page extends Vue {
   @Prop({ type: Array, default: () => [] })
   private readonly sidebarItems!: SidebarItem[];
 
   /** 用户输入的密码 */
   private password = '';
+
+  /** 是否启用评论 */
+  private commentEnable() {
+    return this.$themeConfig.comment !== false;
+  }
 
   /** 当前页面密码 */
   private get pagePassword() {
