@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 13:53:29
+ * @LastEditTime: 2020-03-22 20:35:20
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -18,7 +18,15 @@ export = (
   themeConfig: ResolvedHopeThemeConfig,
   ctx: Context
 ): ThemeOptionAPI => {
-  const config: ThemeOptionAPI = {};
+  const config: ThemeOptionAPI = {
+    /** 添加文章页面 */
+    additionalPages: [
+      {
+        path: '/article/',
+        frontmatter: { layout: 'BlogEntry' }
+      }
+    ] as any
+  };
 
   const { siteConfig } = ctx;
   // Resolve algolia

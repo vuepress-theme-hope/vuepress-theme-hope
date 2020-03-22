@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 15:12:25
+ * @LastEditTime: 2020-03-22 16:36:59
  * @Description: 页面信息
 -->
 <template>
@@ -10,37 +10,37 @@
     <h1>{{ $page.title }}</h1>
     <div v-if="enable" class="page-info">
       <!-- 作者 -->
-      <template v-if="author">
+      <span v-if="author">
         <AuthorIcon />
         <span v-text="author" />
-      </template>
+      </span>
 
       <!-- 访客 -->
-      <template v-if="enableVisitor">
+      <span v-if="enableVisitor">
         <EyeIcon v-if="count < 1000" />
         <FireIcon v-else />
         <span :id="visitorID" :data-flag-title="$page.title" class="leancloud_visitors">
           <span :style="numStyle" class="leancloud-visitors-count">...</span>
         </span>
-      </template>
+      </span>
 
       <!-- 时间 -->
-      <template v-if="time">
+      <span v-if="time">
         <TimeIcon />
         <span v-text="time" />
-      </template>
+      </span>
 
       <!-- 分类 -->
-      <template v-if="category">
+      <span v-if="category">
         <CategoryIcon />
         <span v-text="category" />
-      </template>
+      </span>
 
       <!-- 标签 -->
-      <template v-if="tag">
+      <span v-if="tag">
         <TagIcon />
         <Tags :tags="typeof tag === 'string'? [tag]: tag" />
-      </template>
+      </span>
     </div>
   </div>
 </template>
@@ -212,6 +212,11 @@ export default class PageInfo extends Vue {
     position relative
     z-index 1
 
+    h1
+      margin-top -3.1rem !important
+      padding-top 4.6rem !important
+      margin-bottom 0.5rem
+
   .page-title + .theme-default-content:not(.custom)
     padding-top 0
 
@@ -221,19 +226,22 @@ export default class PageInfo extends Vue {
     align-items center
     font-size 15px
     color #777
+    flex-wrap wrap
+    justify-content flex-start
+    align-content stretch
+    margin-bottom -1rem
+
+    & > span
+      display flex
+      align-items center
+      flex-shrink 0
+      margin-right 8px
+      line-height 2
 
     .icon
       width 16px
       height 16px
-      margin 0 6px 0 10px
-
-      &:first-child
-        margin-left 0
-
-      h1
-        margin-top -3.1rem !important
-        padding-top 4.6rem !important
-        margin-bottom 1rem
+      margin-right 4px
 
   .theme-default-content:not(.custom) h1:first-child
     display none

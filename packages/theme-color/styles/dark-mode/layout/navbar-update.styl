@@ -1,0 +1,34 @@
+.theme-dark
+  // 导航栏
+  .navbar
+    box-shadow 0 2px 8px #0f0e0d
+
+    .navlinks a
+      fontColor()
+
+    // 更新导航栏颜色
+    .nav-item > a, a.repo-link
+      fontColor()
+
+    .dropdown-wrapper .dropdown-title
+      fontColor()
+
+    // 导航栏下拉菜单
+    @media (min-width: $MQMobile)
+      .nav-links a
+        &:hover, &.router-link-active
+          fontColor()
+
+      .dropdown-wrapper
+        .nav-dropdown
+          boxShadow()
+
+    .suggestions
+      borderColor()
+
+    .suggestion
+      a
+        color darken($nightFontcolor, 35%)
+
+      &.focused a
+        color $accentColor

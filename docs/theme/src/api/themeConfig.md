@@ -133,7 +133,7 @@ SideBarItem 新增
   }
   ```
 
-### themeColor.allowNightmode
+### themeColor.allowDarkmode
 
 - 类型: `Boolean`
 - 默认值: `true`
@@ -186,7 +186,7 @@ Markdown 增强配置
 
 是否启用脚注格式支持
 
-### markdown.mathjax
+### markdown.tex
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -245,3 +245,32 @@ PWA 设置选项
 ```
 
 :::
+
+## blog
+
+博客配置
+
+### blog.blogger
+
+- 类型: `string`
+- 必填: 否
+
+博主姓名，默认为 `themeConfig.author`
+
+### blog.avator
+
+- 类型: `string`
+- 必填: 否
+
+博主头像，默认为 `themeConfig.logo`
+
+### blog.sidebarDisplay
+
+- 类型: `'mobile' | 'none' | 'always'`
+- 默认值: `'none'`
+
+是否在侧边栏展示博主信息
+
+- `mobile`: 在移动视图中显示在侧边栏中
+- `'always'`: 总是展示在侧边栏中
+- `'none'`: 永远不在侧边栏展示

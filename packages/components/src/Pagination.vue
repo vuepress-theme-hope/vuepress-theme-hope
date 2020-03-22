@@ -152,10 +152,7 @@ export default class Pagination extends Vue {
         &:first-child
           border-left none
 
-        &:not(.btn):hover
-          box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
-
-        &.btn:hover, &.active
+        &:hover, &.active
           background $accentColor
           border-color $accentColor
           color #fff

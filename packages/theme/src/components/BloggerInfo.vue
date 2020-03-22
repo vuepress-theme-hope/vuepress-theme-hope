@@ -3,11 +3,11 @@
     <img v-if="bloggerAvatar" class="blogger-avatar" alt="blogger-avatar" :src="bloggerAvatar" />
     <h3 v-if="blogger" class="name" v-text="blogger " />
     <div class="num-wrapper">
-      <div>
+      <div @click="$router.push('/article/')">
         <div class="num">{{$articles.length}}</div>
         <div>文章</div>
       </div>
-      <div>
+      <div @click="$router.push('/tag/')">
         <div class="num">{{$tag.list.length}}</div>
         <div>标签</div>
       </div>
@@ -22,9 +22,15 @@ import { PageComputed } from 'vuepress-types';
 
 @Component
 export default class BloggerInfo extends Mixins(ArticleMixin) {
+  /** 博客配置 */
+  private get blogConfig() {
+    return this.$themeConfig.blog || {};
+  }
+
   /** 博主 */
   private get blogger() {
     return (
+      this.blogConfig.blogger ||
       this.$themeConfig.author ||
       this.$page.frontmatter.blogger ||
       this.$page.frontmatter.author ||
@@ -35,7 +41,7 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
 
   /** 博主头像 */
   private get bloggerAvatar() {
-    return this.$themeConfig.bloggerAvatar || this.$themeConfig.logo || '';
+    return this.blogConfig.avatar || this.$themeConfig.logo || '';
   }
 }
 </script>
@@ -60,6 +66,10 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
       text-align center
       flex auto
       font-size 14px
+      cursor pointer
+
+      &:hover
+        color $accentColor
 
       &:first-child
         border-right 1px solid #333

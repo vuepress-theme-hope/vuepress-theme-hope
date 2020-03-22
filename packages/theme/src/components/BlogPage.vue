@@ -164,6 +164,12 @@ export default class BlogPage extends Vue {
     margin 20px auto 0
     max-width 1126px
 
+    @media (min-width: $MQMobile)
+      padding 0 1rem
+
+    @media (min-width: $MQNarrow)
+      padding 0 2rem
+
     .blog-list
       flex auto
       width 0

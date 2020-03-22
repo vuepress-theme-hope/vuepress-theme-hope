@@ -1,6 +1,6 @@
 $night-codeBgColor ?= #282c34
 
-code-bgcolor()
+codeBgColor()
   background-color $night-codeBgColor
 
 .theme-dark
@@ -84,13 +84,13 @@ code-bgcolor()
 
   {$contentClass}
     pre, pre[class*='language-']
-      code-bgcolor()
+      codeBgColor()
 
       code
         color #fff
 
   div[class*='language-']
-    code-bgcolor()
+    codeBgColor()
 
     .highlight-lines
       .highlighted
@@ -114,4 +114,4 @@ code-bgcolor()
 
       &::after
         border-right 1px solid rgba(0, 0, 0, 66%)
-        code-bgcolor()
+        codeBgColor()

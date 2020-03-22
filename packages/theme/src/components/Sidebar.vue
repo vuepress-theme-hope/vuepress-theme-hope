@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <BloggerInfo />
+    <BloggerInfo v-if="sidebarDisplay !== 'none'" :class="{ mobile: sidebarDisplay === 'mobile' }" />
 
     <NavLinks />
 
@@ -22,6 +22,14 @@ import SidebarLinks from '@theme/components/SidebarLinks.vue';
 export default class Sidebar extends Vue {
   @Prop({ type: Array, required: true })
   private readonly items!: SidebarItem[];
+
+  private get blogConfig() {
+    return this.$themeConfig.blog || {};
+  }
+
+  private get sidebarDisplay() {
+    return this.blogConfig.sidebarDisplay || 'none';
+  }
 }
 </script>
 
@@ -35,7 +43,7 @@ export default class Sidebar extends Vue {
   a
     display inline-block
 
-  .blogger-info
+  .blogger-info.mobile
     display none
 
   .nav-links
@@ -65,7 +73,7 @@ export default class Sidebar extends Vue {
 
 @media (max-width: $MQMobile)
   .sidebar
-    .blogger-info
+    .blogger-info.mobile
       display block
 
     .nav-links

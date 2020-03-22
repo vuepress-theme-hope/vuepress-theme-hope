@@ -7,7 +7,7 @@
   div[class*='language-']
     .highlight-lines
       .highlighted
-        background-color darken($codeBgColor, 20%)
+        background-color darken(saturate($codeBgColor, 10%), 5%)
 
     pre, pre[class*='language-']
       background transparent
@@ -17,13 +17,13 @@
 
     &.line-numbers-mode
       .highlight-lines .highlighted:before
-        background-color darken($codeBgColor, 20%)
+        background-color darken(saturate($codeBgColor, 10%), 5%)
 
       .line-numbers-wrapper
         color rgba(0, 0, 0, 0.3)
 
       &::after
-        border-right 1px solid darken($codeBgColor, 20%)
+        border-right 1px solid darken(saturate($codeBgColor, 20%), 10%)
 
   /**
    * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML

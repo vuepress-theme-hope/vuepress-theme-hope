@@ -11,18 +11,24 @@
   // 主页
   .home
     .feature:hover
-      box-shadow 1px 1px 6px 0 rgba(223, 222, 219, 0.28)
+      boxShadow()
 
   // 博客主页
   .page.blog
     .blog-page-wrapper
       .blogger-info-wrapper
-        boxshadow()
+        boxShadow()
+
+        &:hover
+          box-shadow 4px 4px 20px #0f0e0d
 
   // 文章列表
   .article-wrapper
     .article
-      boxshadow()
+      boxShadow()
+
+      &:hover
+        box-shadow 4px 4px 20px #0f0e0d
 
       .sticky-icon .sticky-text
         fill #000
@@ -32,10 +38,16 @@
     .num > div:first-child
       border-right 1px solid #888
 
-  // 标签列表
-  .tag-list-wrapper
-    .tag
-      boxshadow()
+  // 分类标签
+  .category-list-wrapper
+    .category
+      boxShadow()
 
-      .tag-name
-        color #ddd
+      .category-name
+        color #999
+
+        &:hover, &.active
+          color #000
+
+        .category-num
+          color #000

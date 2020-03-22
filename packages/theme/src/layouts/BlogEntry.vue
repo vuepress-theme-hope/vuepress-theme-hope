@@ -19,10 +19,9 @@
       </Sidebar>
 
       <main class="blog-list">
-        <component :is="`${componentName}List`" />
-        <template v-if="displayArticles">
-          <ArticleList />
-        </template>
+        <component :is="componentName" v-if="componentName" />
+        <h1 v-else>文章列表</h1>
+        <ArticleList v-if="displayArticles" />
       </main>
     </template>
   </div>
@@ -51,21 +50,18 @@ export default class BlogEntry extends Mixins(globalEncryptMixin, layoutMixin) {
     return path !== '/category/' && path !== '/category';
   }
 
+  /** 组件名称 */
   private get componentName() {
-    const links = this.$route.path.split('/');
+    const pathName = capitalize(this.$route.path.split('/')[1]);
 
-    if (
-      links.length === 2 ||
-      links.length === 3 ||
-      (links.length === 4 && links[3] === '')
-    )
-      return `${capitalize(links[1])}`;
+    if (['Category', 'Tag'].includes(pathName)) return `${pathName}List`;
 
-    console.error(
-      `[vuepress-theme-hope]: Can not resolve blog components at ${this.$route.path}`
-    );
+    return '';
+  }
 
-    return 'Layout';
+  /** 是否应该展示侧边栏 */
+  protected get shouldShowSidebar(): boolean {
+    return false;
   }
 }
 </script>

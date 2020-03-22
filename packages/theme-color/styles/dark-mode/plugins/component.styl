@@ -3,15 +3,31 @@
   .pagation-wrapper
     .pagation-list
       .btn-group
-        bordercolor()
+        borderColor()
 
-        div:not(.btn):hover
-          box-shadow 0 1px 6px 0 rgba(255, 255, 255, 0.2)
+        div
+          border-color #333
+
+          &:hover, &.active
+            color #000
 
       input
-        bgcolor()
-        fontcolor()
-        bordercolor()
+        bgColor()
+        fontColor()
+        borderColor()
 
       .navigateBtn
-        bordercolor()
+        borderColor()
+
+        &:hover
+          color #000
+
+  // 路径导航
+  .breadcrumb ul li.is-active a
+    fontColor()
+
+  .tags-wrapper .tag
+    background-color #080808
+
+  .back-to-top
+    bgColor()

@@ -8,7 +8,7 @@
       <ArticleItem :article="article" />
     </ModuleTransition>
     <!-- 分页 -->
-    <Pagation v-model="currentPage" :total="articles.length" />
+    <Pagation v-model="currentPage" :per-page="articlePerPage" :total="articleList.length" />
   </div>
 </template>
 <script lang="ts">
@@ -24,7 +24,25 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   private currentPage = 1;
 
   /** 文章列表 */
-  private articles: PageComputed[] = [];
+  private articleList: PageComputed[] = [];
+
+  /** 博客配置 */
+  private get blogConfig() {
+    return this.$themeConfig.blog || {};
+  }
+
+  /** 每页文章数 */
+  private get articlePerPage() {
+    return this.blogConfig.perPage || 10;
+  }
+
+  /** 当前页面的文章 */
+  private get articles() {
+    return this.articleList.slice(
+      (this.currentPage - 1) * this.articlePerPage,
+      this.currentPage * this.articlePerPage
+    );
+  }
 
   /** 更新文章列表 */
   private getArticleList() {
@@ -36,18 +54,21 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   }
 
   private mounted() {
-    this.articles = this.getArticleList();
+    this.articleList = this.getArticleList();
   }
 
   /** 在路径发生改变时更新文章列表 */
   @Watch('$route')
   private onRouteUpdate() {
-    this.articles = this.getArticleList();
+    this.articleList = this.getArticleList();
   }
 
-  /** 在页面变化的时候滚动到列表顶部 */
   @Watch('currentPage')
   private onPageChange() {
+    // 将页面重置为 1
+    this.currentPage = 1;
+
+    // 滚动到列表顶部
     const distance =
       (document.querySelector('#article') as Element).getBoundingClientRect()
         .top + window.scrollY;

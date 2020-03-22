@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-03-19 21:14:45
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 21:52:01
+ * @LastEditTime: 2020-03-22 20:24:34
  * @Description: 布局 Mixin
  */
 
@@ -33,11 +33,9 @@ export default class LayoutMixin extends Vue {
 
   /** 是否应该展示侧边栏 */
   protected get shouldShowSidebar(): boolean {
-    const { frontmatter } = this.$page;
-
     return (
-      !frontmatter.home &&
-      frontmatter.sidebar !== false &&
+      !this.$frontmatter.home &&
+      this.$frontmatter.sidebar !== false &&
       this.sidebarItems.length !== 0
     );
   }
