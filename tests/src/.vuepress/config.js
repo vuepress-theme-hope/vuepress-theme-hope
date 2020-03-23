@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 12:02:01
+ * @LastEditTime: 2020-03-23 12:27:02
  * @Description: Vuepress配置
  */
 
@@ -85,11 +85,10 @@ module.exports = resolve({
       }
     },
 
-    blog: false,
-    // blog: {
-    //   intro: '/intro.html',
-    //   sidebarDisplay: 'mobile'
-    // },
+    blog: {
+      intro: '/intro.html',
+      sidebarDisplay: 'mobile'
+    },
 
     locales: {
       '/en/': {

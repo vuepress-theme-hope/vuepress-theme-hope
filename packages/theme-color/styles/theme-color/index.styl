@@ -1,183 +1,20 @@
 @require './config'
 @require './layout/index'
+@require './plugins'
+@require './theme'
 
 theme-color($themeColor, $colorName)
-  fontcolor()
-    color $themeColor
-
-  bordercolor()
-    border-color $themeColor
-
-  bgcolor()
-    background-color $themeColor
-
   .theme-{$colorName}
-    // 页面内容
-    a
-      fontcolor()
-
-    p a code
-      fontcolor()
-
-    blockquote
-      bordercolor()
-
+    base($themeColor)
     navbar($themeColor)
     sidebar($themeColor)
-
-    // 主页
-    .home
-      .hero
-        .action-button
-          background-color $themeColor
-          border-bottom 1px solid darken($themeColor, 10%)
-
-          &:hover
-            background-color lighten($themeColor, 10%)
-
-      .feature.link h2:hover
-        fontcolor()
-
-      .footer
-        fontcolor()
-
-    // 搜索框
-    .search-box
-      input
-        color darken(desaturate($themeColor, 25%), 25%)
-        background #fff url('~@vuepress/plugin-search/search.svg') 0.6rem 0.5rem no-repeat
-        background-size 1rem
-
-        &:focus
-          bordercolor()
-
-      .suggestions
-        background #fff
-
-      .suggestion
-        a
-          color lighten(desaturate($themeColor, 25%), 25%)
-
-        &.focused
-          background-color #f3f4f5
-
-          a
-            fontcolor()
-
-    @media (max-width: $MQNarrow)
-      .search-box
-        input
-          border-color transparent
-
-    // algolia serach
-    .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--category-header
-      bgcolor()
-
-    // 最后编辑与更新时间
-    .page-edit
-      .edit-link a
-        color desaturate($themeColor, 25%)
-
-      .last-updated .prefix
-        color desaturate($themeColor, 25%)
-
-    // 上一篇下一篇链接
-    .page-nav .inner a
-      fontcolor()
-
-    // 路径导航
-    .breadcrumb a
-      fontcolor()
-
-    // 返回顶部按钮
-    .back-to-top
-      fontcolor()
-
-      &:hover
-        color lighten($themeColor, 30%)
-
-    // 文章列表
-    .article-wrapper
-      .article
-        .sticky-icon
-          fill $themeColor
-
-        .title
-          &:after
-            bgcolor()
-
-          &:hover a
-            fontcolor()
-
-          .lock-icon
-            fill $themeColor
-
-    // 主题选择按钮
-    .color-picker .color-button .skin-icon
-      &:hover, &.select
-        fontcolor()
-
-    // 全屏按钮
-    .fullscreen-wrapper
-      .icon
-        .fullScreen:hover, .cacelFullScreen
-          fontcolor()
-
-    // 提示框
-    .custom-block
-      &.tip, &.warning, &.danger
-        a
-          fontcolor()
-
-    .page
-      // 评论按钮
-      .valine-wrapper
-        #valine
-          a
-            fontcolor()
-
-            &:before
-              bgcolor()
-
-            &:hover
-              fontcolor()
-
-          .vwrap .vheader .vinput:focus
-            bordercolor()
-
-          .vwrap .vedit .vctrl span:hover
-            fontcolor()
-
-          .vlist .vcard .vhead .vnick
-            fontcolor()
-
-          .vbtn:active, .vbtn:hover
-            color #fff
-            bgcolor()
-
-    // 进度条颜色
-    #nprogress
-      .bar
-        bgcolor()
-
-      .peg
-        box-shadow 0 0 10px $themeColor, 0 0 5px $themeColor
-
-      .spinner-icon
-        bordercolor()
-
-    // flowchart 适配
-    .md-flowchart
-      &.loading
-        backgound-color #080808
-
-      svg.md-flowchart-loading-icon
-        fill $themeColor
-
-    // PWA
-    .sw-update-popup
-      .refresh
-        bgcolor()
+    home($themeColor)
+    comment($themeColor)
+    component($themeColor)
+    mdEnhance($themeColor)
+    pwa($themeColor)
+    themeColor($themeColor)
+    theme($themeColor)
 
 for key, value in $colorPicker
   theme-color(value, key)

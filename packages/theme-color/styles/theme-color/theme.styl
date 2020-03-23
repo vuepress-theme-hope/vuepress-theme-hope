@@ -1,0 +1,24 @@
+theme($themeColor)
+  // 文章列表
+  .article-wrapper
+    .article
+      .sticky-icon
+        fill $themeColor
+
+      .title
+        &:after
+          background-color $themeColor
+
+        &:hover a
+          color $themeColor
+
+        .lock-icon
+          fill $themeColor
+
+  .blogger-info
+    .num-wrapper> div:hover
+      color $themeColor
+
+  .category-list-wrapper .category .category-name
+    &:hover, &.active
+      background-color $themeColor

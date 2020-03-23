@@ -6,10 +6,11 @@
         borderColor()
 
         div
-          border-color #333
-
           &:hover, &.active
             color #000
+
+          &::before
+            background-color $nightBordercolor
 
       input
         bgColor()

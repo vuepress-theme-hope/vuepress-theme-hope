@@ -31,7 +31,7 @@
 
   @media (min-width: $MQMobile)
     .nav-links a
-      &:hover, &.router-link-active
+      &:hover
         color #666
 
     // 导航栏下拉菜单
@@ -61,6 +61,9 @@
 // 侧边栏样式更新
 .sidebar
   box-shadow 2px 0 8px #f0f1f2
+
+  a
+    color $textColor
 
 // 滚动条
 ::-webkit-scrollbar
