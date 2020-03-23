@@ -12,7 +12,7 @@ features:
   link: https://vuepress-theme.mrhope.site/en/guide/themecolor.html#custom-theme-color
 - title: Night mode
   details: Switch between offical style and a cool night mode theme
-  link: https://vuepress-theme.mrhope.site/en/guide/themecolor.html#nightmode
+  link: https://vuepress-theme.mrhope.site/en/guide/themecolor.html#darkmode
 - title: Pageviews and comments
   details: with Valine to start pageview statistics and comment support
   link: https://vuepress-theme.mrhope.site/en/guide/comment.html

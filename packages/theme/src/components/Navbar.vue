@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 00:42:45
+ * @LastEditTime: 2020-03-23 11:42:14
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -48,6 +48,7 @@ import AlgoliaSearchBox from '@AlgoliaSearchBox';
 import NavLinks from '@theme/components/NavLinks.vue';
 import SearchBox from '@SearchBox';
 import SidebarButton from '@theme/components/SidebarButton.vue';
+import ThemeColor from '@ThemeColor';
 
 const css = (el: Element, property: any) => {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'
@@ -58,7 +59,13 @@ const css = (el: Element, property: any) => {
 };
 
 @Component({
-  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox }
+  components: {
+    AlgoliaSearchBox,
+    NavLinks,
+    SearchBox,
+    SidebarButton,
+    ThemeColor
+  }
 })
 export default class Navbar extends Vue {
   private linksWrapMaxWidth: number = 0;

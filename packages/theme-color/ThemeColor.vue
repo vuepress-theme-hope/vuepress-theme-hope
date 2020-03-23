@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 23:03:16
+ * @LastEditTime: 2020-03-23 11:39:31
  * @Description: 主题颜色
 -->
 <template>
@@ -45,8 +45,8 @@
 <script lang='ts'>
 /* global THEME_COLOR_OPTIONS */
 import { Component, Vue } from 'vue-property-decorator';
-import ClickOutside from './click-outside';
-import ThemeOptions from './ThemeOptions.vue';
+import ClickOutside from './src/click-outside';
+import ThemeOptions from './src/ThemeOptions.vue';
 
 @Component({
   directives: { 'click-outside': ClickOutside },
@@ -72,6 +72,8 @@ export default class ThemeColor extends Vue {
 </script>
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-plugin-theme-color/styles/index.styl';
+
 .color-picker
   position relative
   margin-right 1em

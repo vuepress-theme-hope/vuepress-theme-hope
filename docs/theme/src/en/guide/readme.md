@@ -43,7 +43,7 @@ If you wish to read the Vuepress default theme configuration, please visit [Vuep
 
   - [Icon Support](navbar.md#icon-support)
   - [Theme Color](themecolor.md#custom-theme-color)
-  - [Night Mode](themecolor.md#nightmode)
+  - [Night Mode](themecolor.md#darkmode)
   - [Fullscreen Button](fullscreen.md)
   - [Style Enhance](navbar.md#style-change)
   - [Home Page](home.md)

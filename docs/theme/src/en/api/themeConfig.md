@@ -85,7 +85,7 @@ Whether to display the repo link in the navigation bar
 
 ## themeColor <MyBadge text="New" />
 
-Theme Color and nightmode config.
+Theme Color and Darkmode config.
 
 ### themeColor.picker
 
@@ -101,12 +101,12 @@ Theme Color and nightmode config.
   }
   ```
 
-### themeColor.allowNightmode
+### themeColor.allowDarkmode
 
 - Type: `Boolean`
 - Default: `true`
 
-Whether to enable nightmode function
+Whether to enable darkmode function
 
 ## fullscreen <MyBadge text="New" />
 

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 10:17:03
+ * @LastEditTime: 2020-03-23 11:41:16
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -37,6 +37,7 @@ export = (
     );
 
   const commentEnabled = themeConfig.comment !== false;
+  const themeColorEnabled = themeConfig.themeColor !== false;
   const noopModule = 'vuepress-theme-hope/src/lib/noopModule.js';
 
   config.alias = {
@@ -48,6 +49,9 @@ export = (
       : noopModule,
     '@PageInfo': commentEnabled
       ? '@mr-hope/vuepress-plugin-comment/PageInfo.vue'
+      : noopModule,
+    '@ThemeColor': themeColorEnabled
+      ? '@mr-hope/vuepress-plugin-theme-color/ThemeColor.vue'
       : noopModule
   };
 

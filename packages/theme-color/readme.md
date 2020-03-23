@@ -30,12 +30,12 @@ This plugin will provide a `<ThemeColor />` compoenent for you.
 
 You can use `false` to disable it.
 
-- **allowNightmode**
+- **allowDarkmode**
 
   - Type: `Boolean`
   - Default: `true`
 
-  Wether to enable nightmode
+  Wether to enable darkmode
 
 ## Note
 
