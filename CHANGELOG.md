@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0-rc.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.4...v0.1.0-rc.5) (2020-03-23)
+
+### Bug Fixes
+
+* **component:** improve Pagination display on mobile screens ([cd829fd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cd829fd5108f5e49a75b07c1fcf711b874ca2438))
+* fix router issue ([65bc0ff](https://github.com/Mister-Hope/vuepress-theme-hope/commit/65bc0ff39d85ffb7f521b79ddde6b54598a13031))
+
 ## [0.1.0-rc.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.3...v0.1.0-rc.4) (2020-03-23)
 
 ### Bug Fixes
