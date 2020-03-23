@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.0-RC1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.40...v0.1.0-RC1) (2020-03-23)
+
+### Bug Fixes
+
+* **theme:** fix pagination issue ([7e8f82b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7e8f82b1d5421fbd0fd32daf006c6bd11e1840ed))
+* **theme:** fix type error in AlgoliaSearch ([2109546](https://github.com/Mister-Hope/vuepress-theme-hope/commit/210954668708452749088f84322d8181b6068dea))
+
+### Features
+
+* **comment:** allow user to disable it in theme ([e7614fd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e7614fd5b92e19a9969742aaf175b48391f9b2b4))
+* **component:** improve diplay and add i18n ([623f17e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/623f17e8572b5dcf25812e32e8d7b04ba30fcaa8))
+* **theme:** add AlgoliaSearchBox ([cdee240](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cdee240e844986e9aa318cfe4c6fbc84810584a6))
+* **theme:** add blog.intro options ([0de76b2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0de76b29b7f4812b2ac5c10e5cb1206ca543be68))
+* **theme:** add missing plugins and make blog-plugin can be disabled ([b0f210c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b0f210c26d21c7a2d00c7080ac174b3ba4839531))
+* **theme-color:** allow user to disable it in theme ([41991eb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/41991eb0120deea4513de986b74c1b0b187bcc2a))
+* **theme-color:** fit the newest theme components ([a802b0d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a802b0d3c9bfd8382172c0da4a83b7db11fafb96))
+
 ## [0.1.0-beta.40](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.39...v0.1.0-beta.40) (2020-03-22)
 
 ### Features
