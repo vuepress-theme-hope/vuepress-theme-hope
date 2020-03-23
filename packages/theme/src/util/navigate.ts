@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-13 14:48:48
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-11 13:34:00
+ * @LastEditTime: 2020-03-23 19:49:22
  * @Description: 导航
  */
 
@@ -17,10 +17,13 @@ import VueRouter, { Route } from 'vue-router';
  */
 const navigate = (url: string, router: VueRouter, route: Route): void => {
   if (url)
-    if (url && url[0] === '/')
+    if (url && url[0] === '/') {
       // Inner absolute path
-      router.push(url);
-    else if (url.indexOf('http://') !== -1 || url.indexOf('https://') !== -1) {
+      if (route.path !== url) router.push(url);
+    } else if (
+      url.indexOf('http://') !== -1 ||
+      url.indexOf('https://') !== -1
+    ) {
       // Outter url
       if (window) window.open(url);
     } else {

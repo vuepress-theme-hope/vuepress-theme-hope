@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 12:25:06
+ * @LastEditTime: 2020-03-23 19:47:03
  * @Description: 页面信息
 -->
 <template>
@@ -198,8 +198,9 @@ export default class PageInfo extends Vue {
 
   // 跳转到分类页面
   private clickCategory() {
-    if (this.active)
-      this.$router.push(`/category/${this.$frontmatter.category}/`);
+    const path = `/category/${this.$frontmatter.category}/`;
+
+    if (this.active && this.$route.path !== path) this.$router.push(path);
   }
 
   @Watch('$route')

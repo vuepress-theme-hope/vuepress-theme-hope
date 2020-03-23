@@ -7,11 +7,11 @@
       </div>
     </div>
     <div class="num-wrapper">
-      <div @click="$router.push('/article/')">
+      <div @click="navigate('/article/', $router, route)">
         <div class="num">{{$articles.length}}</div>
         <div>文章</div>
       </div>
-      <div @click="$router.push('/tag/')">
+      <div @click="navigate('/tag/', $router, route)">
         <div class="num">{{$tag.list.length}}</div>
         <div>标签</div>
       </div>
@@ -23,9 +23,12 @@
 import { Component, Mixins, Vue } from 'vue-property-decorator';
 import ArticleMixin from '@theme/util/articleMixin';
 import { PageComputed } from 'vuepress-types';
+import navigate from '@theme/util/navigate';
 
 @Component
 export default class BloggerInfo extends Mixins(ArticleMixin) {
+  private navigate = navigate;
+
   /** 博客配置 */
   private get blogConfig() {
     return this.$themeConfig.blog || {};
@@ -55,7 +58,8 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
 
   /** 跳转到个人介绍 */
   private intro() {
-    if (this.hasIntro) this.$router.push(this.blogConfig.intro);
+    if (this.hasIntro)
+      navigate(this.blogConfig.intro, this.$router, this.$route);
   }
 }
 </script>

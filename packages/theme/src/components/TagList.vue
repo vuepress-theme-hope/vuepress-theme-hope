@@ -15,6 +15,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
+import navigate from '@theme/util/navigate';
 
 @Component
 export default class TagList extends Vue {
@@ -42,7 +43,7 @@ export default class TagList extends Vue {
 
   /** 点击标签导航 */
   private clickTag(path: string) {
-    if (path !== this.$route.path) this.$router.push(path);
+    navigate(path, this.$router, this.$route);
   }
 
   /** 标签颜色 */

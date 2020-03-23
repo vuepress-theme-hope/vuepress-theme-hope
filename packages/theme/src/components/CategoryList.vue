@@ -21,6 +21,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import ArticleList from '@theme/components/ArticleList.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
+import navigate from '@theme/util/navigate';
 
 @Component({ components: { ArticleList } })
 export default class CategoryList extends Vue {
@@ -29,7 +30,7 @@ export default class CategoryList extends Vue {
 
   /** 点击分类的导航 */
   private clickCategory(path: string) {
-    if (path !== this.$route.path) this.$router.push(path);
+    navigate(path, this.$router, this.$route);
   }
 
   /** 标签颜色 */

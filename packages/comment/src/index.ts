@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-13 18:40:39
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 18:43:50
+ * @LastEditTime: 2020-03-23 20:06:36
  * @Description: 插件主入口，如果没有使用 Vssue 则不加载相关插件
  */
 import { CommentOptions } from '../types';
@@ -14,7 +14,7 @@ export = (option: CommentOptions): PluginOptionAPI => {
 
     define: () =>
       ({
-        COMMENT_OPTIONS: option || {}
+        COMMENT_OPTIONS: option
       } as Record<string, any>),
 
     plugins: [
