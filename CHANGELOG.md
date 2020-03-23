@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-rc.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.3...v0.1.0-rc.4) (2020-03-23)
+
+### Bug Fixes
+
+* **md-enhance:** revert change ([056acb3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/056acb3e14677176a8d62cbf2c1cdb16bfbf2b2a))
+
 ## [0.1.0-RC1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.40...v0.1.0-RC1) (2020-03-23)
 
 ### Bug Fixes
