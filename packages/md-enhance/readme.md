@@ -16,7 +16,7 @@ Markdown enhancement plugin for vuepress
 ## Usage
 
 ```bash
-npm i @mr-hope/vuepress-plugin-md-enhance
+npm i vuepress-plugin-md-enhance
 ```
 
 ---
@@ -30,5 +30,5 @@ Vuepress 的 Markdown 增强插件。
 ## 使用
 
 ```bash
-npm i @mr-hope/vuepress-plugin-md-enhance
+npm i vuepress-plugin-md-enhance
 ```

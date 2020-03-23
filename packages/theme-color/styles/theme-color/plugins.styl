@@ -40,6 +40,10 @@ component($themeColor)
       background $themeColor
       border-color $themeColor
 
+  &.theme-dark .pagation-wrapper .pagation-list .btn-group div
+    &:hover, &.active
+      color #000
+
 themeColor($themeColor)
   // 主题选择按钮
   .color-picker .color-button .skin-icon

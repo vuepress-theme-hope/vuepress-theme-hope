@@ -136,6 +136,7 @@ export default class Pagination extends Vue {
     align-items center
     -webkit-touch-callout none
     user-select none
+    flex-wrap wrap
 
     .btn-group
       display flex
@@ -186,12 +187,11 @@ export default class Pagination extends Vue {
       width 55px
       height 24px
       font-size 13px
-      -webkit-border-radius 4px
-      -moz-border-radius 4px
-      border-radius 4px
-      text-align center
-      outline none
       border 1px solid #ccc
+      border-radius 4px
+      outline none
+      text-align center
+      margin 6px 0
 
     .navigateBtn
       font-size 14px

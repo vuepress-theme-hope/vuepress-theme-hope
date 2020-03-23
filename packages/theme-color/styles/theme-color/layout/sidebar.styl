@@ -8,6 +8,9 @@ sidebar($themeColor)
     &:hover
       color $themeColor
 
+  .sidebar a
+    color $textColor
+
   // 侧边栏链接
   a.sidebar-link
     &:hover
@@ -16,3 +19,13 @@ sidebar($themeColor)
     &.active
       color $themeColor
       border-left-color $themeColor
+
+  &.theme-dark
+    a.sidebar-link
+      color #9e9e9e
+
+      &:hover
+        color $themeColor
+
+      &.active
+        color $themeColor
