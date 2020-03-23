@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 00:07:26
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-23 01:11:25
  * @Description: Vuepress配置
  */
 
@@ -84,6 +84,11 @@ module.exports = resolve({
         '/test/detail/': '1234',
         '/test/footer/default': '5678'
       }
+    },
+
+    blog: {
+      intro: '/intro.html',
+      sidebarDisplay: 'mobile'
     },
 
     locales: {

@@ -37,16 +37,15 @@ export default class AlgoliaSearchBox extends Vue {
       import(
         /* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.css'
       )
-    ]).then(([{ default: docsearch }]) => {
-      docsearch({
+    ]).then(([docsearch]) => {
+      (docsearch as any)({
         ...userOptions,
         inputSelector: '#algolia-search-input',
         // #697 Make docsearch work well at i18n mode.
         algoliaOptions: {
           facetFilters: [`lang:${lang}`].concat(
             (userOptions as any).facetFilters || []
-          ),
-          ...userOptions
+          )
         },
         handleSelected: (
           _input: HTMLInputElement,
