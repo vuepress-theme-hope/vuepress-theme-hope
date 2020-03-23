@@ -20,7 +20,7 @@
 
       <Password v-if="currentPathEncrypted && !globalEncrypted" @enter="setPassword" />
 
-      <BlogPage v-else-if="$page.frontmatter.blogpage" />
+      <BlogPage v-else-if="$page.frontmatter.blogpage && blogConfig" />
 
       <Home v-else-if="$page.frontmatter.home" />
 
@@ -50,5 +50,12 @@ export default class Layout extends Mixins(
   globalEncryptMixin,
   layoutMixin,
   pageEncryptMixin
-) {}
+) {
+  /** 博客配置 */
+  private get blogConfig() {
+    return this.$themeConfig.blog === false
+      ? false
+      : this.$themeConfig.blog || {};
+  }
+}
 </script>

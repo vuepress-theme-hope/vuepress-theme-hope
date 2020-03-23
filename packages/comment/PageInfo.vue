@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 10:13:19
+ * @LastEditTime: 2020-03-23 12:25:06
  * @Description: 页面信息
 -->
 <template>
@@ -31,7 +31,7 @@
       </span>
 
       <!-- 分类 -->
-      <span v-if="category">
+      <span v-if="category" :class="{ active }" @click="clickCategory">
         <CategoryIcon />
         <span v-text="category" />
       </span>
@@ -169,6 +169,10 @@ export default class PageInfo extends Vue {
     return '';
   }
 
+  private get active() {
+    return this.$themeConfig.blog !== false;
+  }
+
   private mounted() {
     if (this.valineEnable)
       setTimeout(() => {
@@ -190,6 +194,12 @@ export default class PageInfo extends Vue {
       setTimeout(() => {
         this.getCount();
       }, 500);
+  }
+
+  // 跳转到分类页面
+  private clickCategory() {
+    if (this.active)
+      this.$router.push(`/category/${this.$frontmatter.category}/`);
   }
 
   @Watch('$route')
@@ -236,6 +246,10 @@ export default class PageInfo extends Vue {
       flex-shrink 0
       margin-right 8px
       line-height 2
+
+      &.active:hover
+        cursor pointer
+        color $accentColor
 
     .icon
       width 16px

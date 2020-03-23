@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 19:57:04
+ * @LastEditTime: 2020-03-23 12:09:25
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -21,57 +21,63 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     /** 使 VuePress 站点支持简洁链接 */
     // ['clean-urls', { normalSuffix: '/' }],
 
-    /** 复制操作处理 */
-    [
-      'copyright',
-      {
-        authorName: options.author,
-        minLength: 100,
-        clipboardComponent: resolve(__dirname, '../components/Clipboard.vue')
-      }
-    ],
+    /** 评论插件 */
+    ['@mr-hope/comment', options.comment],
 
-    /** 平滑滚动 */
-    ['smooth-scroll', options.smoothScroll !== false],
+    /** 全屏插件 */
+    ['@mr-hope/components'],
+
+    /** 分享插件 */
+    // ['@mr-hope/share', options.share],
+
+    /** PWA 插件 */
+    ['@mr-hope/pwa', options.pwa],
+
+    // /** 主题色插件 */
+    ['@mr-hope/theme-color', options.themeColor],
+
+    /** 自动激活侧边栏标题 */
+    ['@vuepress/active-header-links', options.activeHeaderLinks],
 
     /** 博客插件 */
     [
-      '@vuepress/plugin-blog',
-      {
-        frontmatters: [
-          {
-            id: 'tag',
-            keys: ['tag', 'tags'],
-            path: '/tag/',
-            layout: 'BlogEntry',
-            scopeLayout: 'BlogEntry',
-            frontmatter: {
-              sidebar: false
-            }
-          },
-          {
-            id: 'category',
-            keys: ['category', 'categories'],
-            path: '/category/',
-            layout: 'BlogEntry',
-            scopeLayout: 'BlogEntry',
-            frontmatter: {
-              sidebar: false
-            }
-            /*
-             * },
-             * {
-             *   id: 'timeline',
-             *   keys: ['timeline'],
-             *   path: '/timeline/',
-             *   layout: 'TimeLines',
-             *   scopeLayout: 'TimeLine'
-             */
+      '@vuepress/blog',
+      options.blog === false
+        ? false
+        : {
+            frontmatters: [
+              {
+                id: 'tag',
+                keys: ['tag', 'tags'],
+                path: '/tag/',
+                layout: 'BlogEntry',
+                scopeLayout: 'BlogEntry',
+                frontmatter: {
+                  sidebar: false
+                }
+              },
+              {
+                id: 'category',
+                keys: ['category', 'categories'],
+                path: '/category/',
+                layout: 'BlogEntry',
+                scopeLayout: 'BlogEntry',
+                frontmatter: {
+                  sidebar: false
+                }
+                /*
+                 * },
+                 * {
+                 *   id: 'timeline',
+                 *   keys: ['timeline'],
+                 *   path: '/timeline/',
+                 *   layout: 'TimeLines',
+                 *   scopeLayout: 'TimeLine'
+                 */
+              }
+            ]
           }
-        ]
-      }
     ],
-
     /** 更新时间插件 */
     [
       '@vuepress/last-updated',
@@ -84,15 +90,6 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
             'HH:mm'
           )}`;
         }
-      }
-    ],
-
-    /** 搜索插件 */
-    [
-      '@vuepress/search',
-      {
-        /** 搜索展示数量 */
-        searchMaxSuggestions: 10
       }
     ],
 
@@ -112,6 +109,31 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
       }
     ],
 
+    /** 进度条 */
+    '@vuepress/nprogress',
+
+    /** 搜索插件 */
+    [
+      '@vuepress/search',
+      {
+        /** 搜索展示数量 */
+        searchMaxSuggestions: 10
+      }
+    ],
+
+    /** 复制操作处理 */
+    [
+      'copyright',
+      {
+        authorName: options.author,
+        minLength: 100,
+        clipboardComponent: resolve(__dirname, '../components/Clipboard.vue')
+      }
+    ],
+
+    /** Markdown 增强插件 */
+    ['md-enhance', options.markdown || false],
+
     /** Chunk命名 */
     [
       'named-chunks',
@@ -125,26 +147,11 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
       }
     ],
 
+    /** 平滑滚动 */
+    ['smooth-scroll', options.smoothScroll !== false],
+
     /** typescript 支持 */
-    ['typescript', {}],
-
-    /** 评论插件 */
-    ['@mr-hope/comment', options.comment === false ? false : options.comment],
-
-    /** 全屏插件 */
-    ['@mr-hope/components'],
-
-    /** 分享插件 */
-    // ['@mr-hope/share', options.share],
-
-    /** Markdown 增强插件 */
-    ['md-enhance', options.markdown || false],
-
-    /** PWA 插件 */
-    ['@mr-hope/pwa', options.pwa === false ? false : options.pwa],
-
-    // /** 主题色插件 */
-    ['@mr-hope/theme-color', options.themeColor]
+    ['typescript', {}]
   ];
 };
 

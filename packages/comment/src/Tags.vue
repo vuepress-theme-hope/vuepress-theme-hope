@@ -4,6 +4,7 @@
       v-for="(tag, index) in tags"
       :key="tag"
       class="tag"
+      :class="{ active }"
       :style="{ 'border-color': color(index), 'color': color(index) }"
       @click="clickTag(tag)"
     >{{ tag }}</li>
@@ -17,9 +18,13 @@ export default class Tags extends Vue {
   @Prop({ type: Array, default: () => [] })
   private readonly tags!: string[];
 
+  private get active() {
+    return this.$themeConfig.blog !== false;
+  }
+
   /** 点击标签导航 */
   private clickTag(tagName: string) {
-    this.$router.push(`/tag/${tagName}/`);
+    if (this.active) this.$router.push(`/tag/${tagName}/`);
   }
 
   /** 标签颜色 */
@@ -49,7 +54,6 @@ export default class Tags extends Vue {
   .tag
     display inline-block
     position relative
-    cursor pointer
     margin 0 2px
     vertical-align middle
     font-size 12px
@@ -61,7 +65,8 @@ export default class Tags extends Vue {
     border-width 0.5px
     border-style solid
 
-    &:hover
+    &.active:hover
+      cursor pointer
       box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
       background-color #fff
 </style>

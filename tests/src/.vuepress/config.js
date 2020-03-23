@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 01:11:25
+ * @LastEditTime: 2020-03-23 12:02:01
  * @Description: Vuepress配置
  */
 
@@ -69,9 +69,8 @@ module.exports = resolve({
       text: '默认页脚'
     },
 
-    markdown: {
-      enableAll: true
-    },
+    markdown: true,
+
     comment: {
       type: 'valine',
       appId: 'msnseO76haIVIGvfJ10BKnpv-gzGzoHsz',
@@ -86,10 +85,11 @@ module.exports = resolve({
       }
     },
 
-    blog: {
-      intro: '/intro.html',
-      sidebarDisplay: 'mobile'
-    },
+    blog: false,
+    // blog: {
+    //   intro: '/intro.html',
+    //   sidebarDisplay: 'mobile'
+    // },
 
     locales: {
       '/en/': {

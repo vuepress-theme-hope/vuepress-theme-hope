@@ -5,7 +5,7 @@ export type NavBarConfigItem = {
   /** 辅助标签 */
   ariaLabel?: string;
   /** 导航栏链接 */
-  link: string;
+  link?: string;
   /** 导航栏下拉列表子项 */
   items?: NavBarConfigItem[];
 };

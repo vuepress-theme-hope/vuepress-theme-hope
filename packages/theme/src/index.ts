@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 11:41:16
+ * @LastEditTime: 2020-03-23 11:58:37
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -13,21 +13,10 @@ interface ThemeOptionAPI extends PluginOptionAPI {
   extend?: string;
 }
 
-// Theme API.
-export = (
+const getAlias = (
   themeConfig: ResolvedHopeThemeConfig,
   ctx: Context
-): ThemeOptionAPI => {
-  const config: ThemeOptionAPI = {
-    /** 添加文章页面 */
-    additionalPages: [
-      {
-        path: '/article/',
-        frontmatter: { layout: 'BlogEntry' }
-      }
-    ] as any
-  };
-
+): Record<string, string> => {
   const { siteConfig } = ctx;
   // Resolve algolia
   const isAlgoliaSearch =
@@ -40,7 +29,7 @@ export = (
   const themeColorEnabled = themeConfig.themeColor !== false;
   const noopModule = 'vuepress-theme-hope/src/lib/noopModule.js';
 
-  config.alias = {
+  return {
     '@AlgoliaSearchBox': isAlgoliaSearch
       ? 'vuepress-theme-hope/src/components/AlgoliaSearchBox.vue'
       : noopModule,
@@ -54,8 +43,28 @@ export = (
       ? '@mr-hope/vuepress-plugin-theme-color/ThemeColor.vue'
       : noopModule
   };
+};
 
-  /** 插件选项 */
+// Theme API.
+export = (
+  themeConfig: ResolvedHopeThemeConfig,
+  ctx: Context
+): ThemeOptionAPI => {
+  const config: ThemeOptionAPI = {};
+
+  // 添加文章页面
+  if (themeConfig.blog !== false)
+    config.additionalPages = [
+      {
+        path: '/article/',
+        frontmatter: { layout: 'BlogEntry' }
+      }
+    ] as any;
+
+  // 别名配置
+  config.alias = getAlias(themeConfig, ctx);
+
+  // 插件选项
   config.plugins = pluginConfig(themeConfig);
 
   return config;
