@@ -8,13 +8,10 @@ You can pass these options to the plugin:
 
 ## Enable all
 
-You can pass `true` directly instead of an object to enable all functions.
+- Type: `boolean`
+- Default: `false`
 
-```js {2}
-module.exports = {
-  plugin: ['md-enhance', true]
-};
-```
+Enable all features.
 
 ## lineNumbers
 

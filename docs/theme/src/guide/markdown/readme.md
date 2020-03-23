@@ -16,12 +16,14 @@ vuepress-theme-hope 通过内置 [md-enhance](https://vuepress-md-enhance.mrhope
 
 ## 一键启用
 
-你可以将 `themeconfig.markdown` 设置为 `true` 来启用 [md-enhance](https://vuepress-md-enhance.mrhope.site/) 插件的所有功能。
+你可以设置 `themeconfig.markdown.enableAll` 启用 [md-enhance](https://vuepress-md-enhance.mrhope.site/) 插件的所有功能。
 
 ```js {3-5}
 module.exports = {
   themeConfig: {
-    markdown: true
+    markdown: {
+      enableAll: true
+    }
   }
 };
 ```

@@ -105,9 +105,16 @@ SideBarItem 新增
 
 ## Markdown 增强
 
-使用 `themeConfig.markdown` 进行Markdown 增强配置。
+使用 `themeConfig.themeColor` 进行Markdown 增强配置。
 
-你可以将其设置为 `true` 来一件启用全部功能。如果您不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
+如果您不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
+
+### markdown.enableAll
+
+- 类型: `boolean`
+- 默认值: `false`
+
+启用全部功能。
 
 ### markdown.lineNumbers <MyBadge text="改变默认值" type="error" />
 

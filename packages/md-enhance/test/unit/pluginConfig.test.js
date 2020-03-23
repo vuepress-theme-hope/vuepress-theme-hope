@@ -3,10 +3,14 @@ import resolveConfig from '../../src/pluginConfig';
 
 describe('Test pluginConfig generate', () => {
   it('Should use plugin options first', () => {
-    const option =  true
+    const option = {
+      enableAll: true
+    };
 
     const themeConfig = {
-      markdown: false
+      markdown: {
+        enableAll: false
+      }
     };
 
     const pluginConfig = resolveConfig(option, themeConfig);
@@ -54,10 +58,15 @@ describe('Test pluginConfig generate', () => {
   });
 
   it('should handle baseLang option', () => {
-    const option = true
+    const option = {
+      enableAll: true
+    };
 
     const themeConfig = {
-      baseLang: 'en-US'
+      baseLang: 'en-US',
+      markdown: {
+        enableAll: false
+      }
     };
 
     const pluginConfig = resolveConfig(option, themeConfig);
@@ -101,6 +110,60 @@ describe('Test pluginConfig generate', () => {
       ],
       ['container', { type: 'right', defaultTitle: '' }],
       ['container', { type: 'center', defaultTitle: '' }]
+    ]);
+  });
+
+  it('should disable all', () => {
+    const option = {
+      enableAll: false
+    };
+
+    const themeConfig = {
+      baseLang: 'en-US',
+      markdown: {
+        enableAll: true
+      }
+    };
+
+    const pluginConfig = resolveConfig(option, themeConfig);
+
+    pluginConfig.splice(4, 1);
+
+    expect(pluginConfig).to.be.deep.equal([
+      ['typescript'],
+      [
+        'container',
+        {
+          type: 'tip',
+          defaultTitle: {
+            '/': 'Tips',
+            '/zh/': '提示',
+            '/en/': 'Tips'
+          }
+        }
+      ],
+      [
+        'container',
+        {
+          type: 'warning',
+          defaultTitle: {
+            '/': 'Note',
+            '/zh/': '注意',
+            '/en/': 'Note'
+          }
+        }
+      ],
+      [
+        'container',
+        {
+          type: 'danger',
+          defaultTitle: {
+            '/': 'Warning',
+            '/zh/': '警告',
+            '/en/': 'Warning'
+          }
+        }
+      ]
     ]);
   });
 });

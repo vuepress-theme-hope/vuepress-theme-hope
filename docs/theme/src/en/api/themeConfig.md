@@ -117,9 +117,14 @@ Whether to display the "fullscreen" button
 
 ## markdown <MyBadge text="New" /
 
-Use `themeConfig.markdown` for Markdown enhanced configuration.
+Markdown Enhancement Option
 
-You can set it to `true` to enable all features in one piece. If you don't need any Markdown enhancements, set to `false` to disable it.
+### markdown.enableAll
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable all the functions.
 
 ### markdown.lineNumbers <MyBadge text="Change Default" type="error" />
 

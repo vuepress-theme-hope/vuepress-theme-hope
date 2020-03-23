@@ -12,13 +12,17 @@ vuepress-theme-hope enables more syntax in Markdown via the built-in [md-enhance
 Don't worry about the size of your site. If you don't enable related features, the final code won't include code for these features.
 :::
 
-## EnableAll
+## Enable all
 
-You can pass `true` directly instead of an object to enable all functions.
+You can set `themeconfig.markdown.enableAll` to enable all features of the [md-enhance](https://vuepress-md-enhance.mrhope.site/) plugin.
 
-```js {2}
+```js
 module.exports = {
-  plugin: ['md-enhance', true]
+  themeConfig: {
+    markdown: {
+      enableAll: true
+    }
+  }
 };
 ```
 

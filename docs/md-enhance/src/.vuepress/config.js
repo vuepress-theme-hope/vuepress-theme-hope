@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-24 12:33:10
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-23 16:44:10
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
@@ -60,7 +60,9 @@ module.exports = resolve({
     author: 'Mr.Hope',
     iconPrefix: 'vuepress-',
 
-    markdown: true,
+    markdown: {
+      enableAll: true
+    },
     comment: {
       type: 'valine',
       appId: 'YwtJvkJgikEDUjCFtygBQDwu-gzGzoHsz',
