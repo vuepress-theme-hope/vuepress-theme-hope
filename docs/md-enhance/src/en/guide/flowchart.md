@@ -12,7 +12,7 @@ This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to su
 
 ```js {4}
 module.exports = {
-  plugin: ['@mr-hope/md-enhance', {
+  plugin: ['md-enhance', {
     // Enable flowchart
     flowchart: true
   }]

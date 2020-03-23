@@ -8,7 +8,7 @@ This feature is brought by [vuepress-plugin-mathjax](https://github.com/vuepress
 
 ```js
 module.exports = {
-  plugin: ['@mr-hope/md-enhance', {
+  plugin: ['md-enhance', {
     // Enable Tex Support
     mathjax: true
   }]

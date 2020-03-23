@@ -2,13 +2,6 @@
 
 You can pass these options to the plugin:
 
-## enableAll
-
-- Type: `boolean`
-- Default: false
-
-Enable all features.
-
 ## lineNumbers
 
 - Type: `boolean`

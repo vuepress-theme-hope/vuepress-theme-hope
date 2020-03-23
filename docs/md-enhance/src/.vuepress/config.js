@@ -60,9 +60,7 @@ module.exports = resolve({
     author: 'Mr.Hope',
     iconPrefix: 'vuepress-',
 
-    markdown: {
-      enableAll: true
-    },
+    markdown: true,
     comment: {
       type: 'valine',
       appId: 'YwtJvkJgikEDUjCFtygBQDwu-gzGzoHsz',

@@ -6,12 +6,15 @@ icon: api
 
 You can pass these options to the plugin:
 
-## enableAll
+## Enable all
 
-- Type: `boolean`
-- Default: `false`
+You can pass `true` directly instead of an object to enable all functions.
 
-Enable all features.
+```js {2}
+module.exports = {
+  plugin: ['md-enhance', true]
+};
+```
 
 ## lineNumbers
 

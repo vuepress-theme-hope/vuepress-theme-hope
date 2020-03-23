@@ -6,7 +6,7 @@
 
 ```js
 module.exports = {
-  plugin: ['@mr-hope/md-enhance', {
+  plugin: ['md-enhance', {
     // 启用下角标功能
     sub: true,
     // 启用上角标

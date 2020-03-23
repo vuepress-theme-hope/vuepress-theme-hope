@@ -10,7 +10,7 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ```js {4}
 module.exports = {
-  plugin: ['@mr-hope/md-enhance', {
+  plugin: ['md-enhance', {
     // Enable Tex Support
     tex: true
   }]

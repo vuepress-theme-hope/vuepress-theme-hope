@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 13:35:17
+ * @LastEditTime: 2020-03-23 11:33:21
  * @Description: 插件配置
  */
 import { MarkdownEnhanceOption } from '../types';
@@ -20,7 +20,10 @@ const pluginConfig = (
   /** 多语言标题配置 */
   const containerConfig = i18n.config.container;
   /** 主目录语言 */
-  const baseLang = markdownOption.baseLang || themeConfig.baseLang || 'zh-CN';
+  const baseLang =
+    markdownOption === true
+      ? themeConfig.baseLang || 'zh-CN'
+      : markdownOption.baseLang || themeConfig.baseLang || 'zh-CN';
   /** 主目录语言对应路径 */
   const baseLangPath = i18n.lang2path(baseLang);
 
@@ -64,7 +67,7 @@ const pluginConfig = (
   ];
 
   // 支持自定义对齐
-  if (markdownOption.align || markdownOption.enableAll)
+  if (markdownOption === true || markdownOption.align)
     config.push(
       /** 自定义居右容器 */
       ['container', { type: 'right', defaultTitle: '' }],

@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 18:03:50
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-03-23 11:28:53
  * @Description: Vuepress配置
  */
 
@@ -154,6 +154,6 @@ module.exports = {
 
   plugins: [
     /** Markdown 增强 */
-    [require('../../../src'), { enableAll: true }]
+    [require('../../../src'), true]
   ]
 };

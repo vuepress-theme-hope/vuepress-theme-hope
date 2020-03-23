@@ -2,13 +2,6 @@
 
 你可以传递以下选项来启用或禁用一些功能
 
-## enableAll
-
-- 类型: `boolean`
-- 默认值: false
-
-启用全部功能。
-
 ## lineNumbers
 
 - 类型: `boolean`

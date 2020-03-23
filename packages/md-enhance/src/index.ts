@@ -21,22 +21,22 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
     /** Markdown 增强 */
     chainMarkdown: (md) => {
       //  添加行号
-      if (markdownOption.lineNumbers !== false)
+      if (markdownOption === true || markdownOption.lineNumbers !== false)
         md.plugin('line-numbers').use(lineNumbers);
       // 增加上角标
-      if (markdownOption.sup || markdownOption.enableAll)
+      if (markdownOption === true || markdownOption.sup)
         md.plugin('sup').use(sup);
       // 增加下角标
-      if (markdownOption.sub || markdownOption.enableAll)
+      if (markdownOption === true || markdownOption.sub)
         md.plugin('sub').use(sub);
       // 增加脚注
-      if (markdownOption.footnote || markdownOption.enableAll)
+      if (markdownOption === true || markdownOption.footnote)
         md.plugin('footnote').use(footnote);
       // 使用流程图;
-      if (markdownOption.flowchart || markdownOption.enableAll)
+      if (markdownOption === true || markdownOption.flowchart)
         md.plugin('flowchart').use(flowchart);
       // 使用 tex;
-      if (markdownOption.tex || markdownOption.enableAll)
+      if (markdownOption === true || markdownOption.tex)
         md.plugin('katex').use(katex, [
           {
             macros: {

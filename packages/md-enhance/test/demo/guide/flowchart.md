@@ -8,7 +8,7 @@
 
 ```js
 module.exports = {
-  plugin: ['@mr-hope/md-enhance', {
+  plugin: ['md-enhance', {
     // 启用流程图
     flowchart: true
   }]

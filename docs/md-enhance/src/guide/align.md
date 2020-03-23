@@ -8,7 +8,7 @@ icon: align
 
 ```js {4}
 module.exports = {
-  plugin: ['@mr-hope/md-enhance', {
+  plugin: ['md-enhance', {
     // 启用自定义对其
     align: true
   }]

@@ -8,6 +8,14 @@ icon: markdown
 
 如果你担心你的网站大小，担心使用插件后网站文件大幅增长，那你 duck 不必。如果你不启用某个功能，相关代码则不会包含在输出文件中。
 
+你可以直接传递 `true` 来启用全部功能。
+
+```js {2}
+module.exports = {
+  plugin: ['md-enhance', true]
+};
+```
+
 ## 新增功能
 
 - [上下角标](sup-sub.md)

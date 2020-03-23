@@ -4,14 +4,15 @@ icon: api
 
 # API
 
-你可以传递以下选项来启用或禁用一些功能
+## 全部启用
 
-## enableAll
+你可以直接传递 `true` 来启用全部功能。
 
-- 类型: `boolean`
-- 默认值: `false`
-
-启用全部功能。
+```js {2}
+module.exports = {
+  plugin: ['md-enhance', true]
+};
+```
 
 ## lineNumbers
 

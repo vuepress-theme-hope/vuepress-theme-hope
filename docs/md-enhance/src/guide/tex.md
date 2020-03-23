@@ -10,7 +10,7 @@ icon: tex
 
 ```js {4}
 module.exports = {
-  plugin: ['@mr-hope/md-enhance', {
+  plugin: ['md-enhance', {
     // 启用 TeX 支持
     tex: true
   }]

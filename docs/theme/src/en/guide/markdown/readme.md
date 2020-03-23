@@ -4,7 +4,7 @@ icon: markdown
 
 # New syntax in Markdown
 
-vuepress-theme-hope enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-md-enhance.mrhope.site/).
+vuepress-theme-hope enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-md-enhance.mrhope.site/) plugin.
 
 `themeconfig.markdown` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option. So you can also read the [md-enhance documentation](https://vuepress-md-enhance.mrhope.site/) to see the usage.
 
@@ -12,32 +12,24 @@ vuepress-theme-hope enables more syntax in Markdown via the built-in [md-enhance
 Don't worry about the size of your site. If you don't enable related features, the final code won't include code for these features.
 :::
 
-## Enable all
+## EnableAll
 
-You can set `themeconfig.markdown.enableAll` to enable all features of the [md-enhance](https://vuepress-md-enhance.mrhope.site/) plugin.
+You can pass `true` directly instead of an object to enable all functions.
 
-```js
+```js {2}
 module.exports = {
-  themeConfig: {
-    markdown: {
-      enableAll: true
-    }
-  }
+  plugin: ['md-enhance', true]
 };
 ```
 
-## Superscript and Subscript
+## New Feature
 
-[See Details](sup-sub.md)
+- [Superscript and Subscript](sup-sub.md)
 
-## Footnote
+- [Align](align.md)
 
-[See Details](footnote.md)
+- [Footnote](footnote.md)
 
-## Flowchart
+- [Flowchart](flowchart.md)
 
-[See Details](flowchart.md)
-
-## Tex Syntax
-
-[See Details](tex.md)
+- [$\TeX$ Syntax](tex.md)
