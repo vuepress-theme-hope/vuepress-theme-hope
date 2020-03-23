@@ -46,6 +46,5 @@
   "devDependencies": {
     "@vue/cli-plugin-unit-mocha": "4.2.3",
     "@vue/cli-service": "4.2.3"
-  },
-  "gitHead": "1cdbc33129be145367d6f2b0d7a0bc59cc01ec3d"
+  }
 }

@@ -11,7 +11,8 @@ import sup from './markdown-it/sup';
 
 // eslint-disable-next-line max-lines-per-function
 export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
-  const markdownOption = option || context.themeConfig.markdown || {};
+  const markdownOption =
+    option === {} ? context.themeConfig.markdown || {} : {};
 
   const config: PluginOptionAPI = {
     name: 'md-enhance',
@@ -50,7 +51,7 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
   };
 
   /** 插件选项 */
-  config.plugins = pluginConfig(option, context.themeConfig);
+  config.plugins = pluginConfig(markdownOption, context.themeConfig);
 
   return config;
 };

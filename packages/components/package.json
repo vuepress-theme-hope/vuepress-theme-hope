@@ -23,8 +23,8 @@
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme",
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.4",
-    "@types/lodash": "^4.14.149",
-    "lodash": "^4.17.15",
+    "@types/lodash.debounce": "^4.0.6",
+    "lodash.debounce": "^4.0.8",
     "screenfull": "5.0.2",
     "vuepress-plugin-typescript": "^0.2.0"
   },
@@ -32,6 +32,5 @@
     "typescript": "^3.8.3",
     "vue-router": "^3.1.6",
     "vuepress-types": "^0.9.0"
-  },
-  "gitHead": "1cdbc33129be145367d6f2b0d7a0bc59cc01ec3d"
+  }
 }

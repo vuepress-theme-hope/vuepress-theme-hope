@@ -20,7 +20,6 @@
     "packages:changed": "lerna changed",
     "packages:update": "lerna exec -- ncu -u",
     "packages:check-update": "lerna exec -- ncu",
-    "prettier": "",
     "lint": "prettier --check --write packages/**/*.ts packages/**/*.js && eslint . --ext .js,.ts,.vue --fix",
     "lint:check": "prettier --check packages/**/*.ts packages/**/*.js && eslint . --ext .js,.ts,.vue",
     "test:all": "lerna run test --parallel",

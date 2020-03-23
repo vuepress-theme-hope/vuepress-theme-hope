@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 16:46:34
+ * @LastEditTime: 2020-03-23 18:46:39
  * @Description: 插件配置
  */
 import { MarkdownEnhanceOption } from '../types';
@@ -11,12 +11,9 @@ import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 // eslint-disable-next-line max-lines-per-function
 const pluginConfig = (
-  option: MarkdownEnhanceOption,
+  markdownOption: MarkdownEnhanceOption,
   themeConfig: Record<string, any>
 ): PluginConfig[] => {
-  /** markdown 配置 */
-  const markdownOption: MarkdownEnhanceOption =
-    option || themeConfig.markdown || {};
   /** 多语言标题配置 */
   const containerConfig = i18n.config.container;
   const baseLang = markdownOption.baseLang || themeConfig.baseLang || 'zh-CN';

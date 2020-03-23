@@ -2,12 +2,11 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-13 18:40:39
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 11:38:40
+ * @LastEditTime: 2020-03-23 18:47:36
  * @Description:
  */
 import { PluginOptionAPI } from 'vuepress-types';
 import { ThemeColorOptions } from '../types';
-import { resolve } from 'path';
 
 export = (options: ThemeColorOptions): PluginOptionAPI =>
   ({
@@ -15,7 +14,7 @@ export = (options: ThemeColorOptions): PluginOptionAPI =>
 
     define: () =>
       ({
-        THEME_COLOR_OPTIONS: options || {}
+        THEME_COLOR_OPTIONS: options
       } as Record<string, any>),
 
     plugins: [

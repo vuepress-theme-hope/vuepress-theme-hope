@@ -44,6 +44,5 @@
   "peerDependencies": {
     "typescript": "^3.8.3",
     "vuepress-types": "^0.9.0"
-  },
-  "gitHead": "1cdbc33129be145367d6f2b0d7a0bc59cc01ec3d"
+  }
 }
