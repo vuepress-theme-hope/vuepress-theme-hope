@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 01:01:09
+ * @LastEditTime: 2020-03-23 10:17:03
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
@@ -44,10 +44,10 @@ export = (
       ? 'vuepress-theme-hope/src/components/AlgoliaSearchBox.vue'
       : noopModule,
     '@Comment': commentEnabled
-      ? '@mr-hope/vuepress-plugin-comment/src/Comment.vue'
+      ? '@mr-hope/vuepress-plugin-comment/Comment.vue'
       : noopModule,
     '@PageInfo': commentEnabled
-      ? '@mr-hope/vuepress-plugin-comment/src/PageInfo.vue'
+      ? '@mr-hope/vuepress-plugin-comment/PageInfo.vue'
       : noopModule
   };
 

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 00:27:14
+ * @LastEditTime: 2020-03-23 10:13:19
  * @Description: 页面信息
 -->
 <template>
@@ -54,9 +54,9 @@ import EyeIcon from '@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue';
 import FireIcon from '@mr-hope/vuepress-shared-utils/icons/FireIcon.vue';
 import { Route } from 'vue-router';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
-import Tags from './Tags.vue';
+import Tags from './src/Tags.vue';
 import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
-import { ValineOptions } from '../types';
+import { ValineOptions } from './types';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
 @Component({

@@ -16,7 +16,3 @@ Progressive Web App Surpport
 弹窗默认语言将自动设置为 `themeConfig` 中配置的 `baseLang`。
 
 该功能默认启用，如果你不需要该功能或想使用其他的 pwa 插件，可以设置 `themeConfig.pwa` 为 `false` 来禁用本插件。
-
-::: tip
-考虑到中国大陆无法访问 GoogleCDN，当 `baseLang` 为 `zh-CN` 时，将会在构建时输出一份 work-box 并使用它。
-:::

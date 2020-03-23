@@ -25,99 +25,69 @@ tag:
 - 类型: `String`
 - 默认值: `'zh-CN'`
 
-主目录所对应的语言
+主目录所对应的语言。
 
-## author
+这个选项会保证主目录页面中主题文字使用正确的语言显示。你可以根据自己的需要将其改为其他语言。
+
+::: tip
+目前多语言仅适配了 **简体中文** (zh-CN) 与 **英文(美国)** (en-US)。
+
+如果您需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
+:::
+
+## 需要正确配置的选项
+
+### author
 
 - 类型: `String`
 - 必填: 否
 
-默认作者
+文章显示的默认作者
 
-## iconPrefix
-
-- 类型: `String`
-- 默认值: `'icon-'`
-
-设置图标前缀
-
-## nav <MyBadge text="改进" type="warn" />
+### nav <MyBadge text="改进" type="warn" />
 
 NavBarItem 新增
 
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
 
-## sidebar <MyBadge text="改进" type="warn" />
+### sidebar <MyBadge text="改进" type="warn" />
 
 SideBarItem 新增
 
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
 
-## sidebarIcon
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否在侧边栏显示图标
-
-## breadcrumb
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否全局启用路径导航
-
-## breadcrumbIcon
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否在路径导航显示图标
-
-## footer
+### footer
 
 页脚设置选项
 
-### footer.text
+#### footer.text
 
 - 类型: `String`
 - 默认值: `'MIT Licensed | Copyright © 2019-present Mr.Hope'`
 
-页脚的默认文字
+页脚的默认文字。
 
-### footer.displayDefault
+#### footer.displayDefault
 
 - 类型: `Boolean`
 - 默认值: `false`
 
 是否显示默认页脚
 
-## smoothScroll <MyBadge text="改变默认值" type="error" />
+## 主题色与暗黑模式
+
+使用 `themeConfig.themeColor` 进行主题色和暗黑模式设置选项配置。
+
+如果您不需要这项功能，请设置为 `false` 将其禁用。
+
+### themeColor.allowDarkmode
 
 - 类型: `Boolean`
 - 默认值: `true`
 
-是否启用平滑滚动功能
-
-## backToTop
-
-- 类型: `Boolean | Number`
-- 默认值: `true`
-
-返回顶部按钮的配置。默认的触发距离为 300px，填入数字时可改变这一触发距离。填入 `false` 会禁用返回顶部按钮。
-
-## repoDisplay
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否在导航栏显示仓库链接
-
-## themeColor
-
-主题色和夜间模式设置选项
+是否开启暗黑模式支持
 
 ### themeColor.picker
 
@@ -133,23 +103,11 @@ SideBarItem 新增
   }
   ```
 
-### themeColor.allowDarkmode
+## Markdown 增强
 
-- 类型: `Boolean`
-- 默认值: `true`
+使用 `themeConfig.themeColor` 进行Markdown 增强配置。
 
-是否开启夜间模式支持
-
-## fullscreen
-
-- 类型: `Boolean`
-- 默认值: `true`
-
-是否显示 ”全屏“ 按钮
-
-## markdown
-
-Markdown 增强配置
+如果您不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
 
 ### markdown.enableAll
 
@@ -204,6 +162,8 @@ Markdown 增强配置
 
 评论设置。具体详情请见　[@mr-hope/vuepress-plugin-comment](http://comment.mrhope.site/api/)
 
+可以直接设置为 `false` 来禁用评论功能
+
 ## pwa
 
 PWA 设置选项
@@ -248,7 +208,7 @@ PWA 设置选项
 
 ## blog
 
-博客配置
+博客配置。可以直接设置为 false 来禁用相关功能。
 
 ### blog.blogger
 
@@ -257,7 +217,7 @@ PWA 设置选项
 
 博主姓名，默认为 `themeConfig.author`
 
-### blog.avator
+### blog.avatar
 
 - 类型: `string`
 - 必填: 否
@@ -274,3 +234,68 @@ PWA 设置选项
 - `mobile`: 在移动视图中显示在侧边栏中
 - `'always'`: 总是展示在侧边栏中
 - `'none'`: 永远不在侧边栏展示
+
+### blog.intro
+
+- 类型: `string`
+- 必填: 否
+
+博主的个人介绍地址。
+
+填写后将允许点击“博主信息”中的头像或姓名进入个人介绍页。
+
+## iconPrefix
+
+- 类型: `String`
+- 默认值: `'icon-'`
+
+设置 iconfont 的图标前缀
+
+## sidebarIcon
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否在侧边栏显示图标
+
+## breadcrumb
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否全局启用路径导航
+
+## breadcrumbIcon
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否在路径导航显示图标
+
+## smoothScroll <MyBadge text="改变默认值" type="error" />
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否启用平滑滚动功能
+
+## backToTop
+
+- 类型: `Boolean | Number`
+- 默认值: `true`
+
+返回顶部按钮的配置。默认的触发距离为 300px，填入数字时可改变这一触发距离。填入 `false` 会禁用返回顶部按钮。
+
+## repoDisplay
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否在导航栏显示仓库链接
+
+## fullscreen
+
+- 类型: `Boolean`
+- 默认值: `true`
+
+是否显示 ”全屏“ 按钮
