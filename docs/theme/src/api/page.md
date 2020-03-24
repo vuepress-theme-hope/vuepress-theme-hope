@@ -17,18 +17,18 @@ tag:
 
 设置当前页面图标的 FontClass (建议填写)
 
-## author
+### author
 
 - 类型: `string | boolean`
 - 必填: 否
 
-显示当前页面的作者
+显示当前页面的作者，如果不填，则会回退到默认作者。
 
 ::: tip
 当全局默认作者启用时，可以设置 `false` 取消作者显示
 :::
 
-## time
+### time
 
 - 类型: `string`
 - 必填: 否
@@ -57,6 +57,13 @@ tag:
 
 设置当前文章是否在列表中置顶。
 
+### article
+
+- 类型: `boolean`
+- 默认: `true`
+
+是否将该文章添加至文章列表中。
+
 ## password
 
 - 类型: `string`
@@ -64,12 +71,7 @@ tag:
 
 设置当前文章的密码。
 
-## visitor
-
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (配置全局的 `comment` 为 `'valine'` 后默认为 `true`)
-
-当前页面是否显示浏览量
+## 页面显示配置
 
 ## pageInfo
 
@@ -78,12 +80,34 @@ tag:
 
 设置当前页面是否显示页面详情
 
+### visitor
+
+- 类型: `boolean`
+- 默认值: 全局中配置的值 (配置全局的 `comment` 为 `'valine'` 后默认为 `true`)
+
+当前页面是否显示浏览量
+
+::: tip
+显示浏览量功能需要你正确配置了 Valine 类型的评论配置。
+:::
+
 ## breadcrumb
 
 - 类型: `boolean`
 - 默认值: 全局中配置的值 (全局默认为 `true`)
 
 当前页面是否开启路径导航
+
+## sidebar
+
+页面的侧边栏配置选项。支持 `false` 或 `auto`。
+
+## sidebarDepth
+
+- 类型: `number`
+- 默认值: `1`
+
+该页面的侧边栏渲染深度
 
 ## comment
 

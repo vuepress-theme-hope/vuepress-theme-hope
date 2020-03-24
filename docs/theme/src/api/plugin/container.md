@@ -81,34 +81,3 @@ tag:
 用于分隔符的字符。
 
 > 参考 [markdown-it-container API](https://github.com/markdown-it/markdown-it-container#api)
-
-## 演示
-
-- **输入**
-
-  ```md
-  ::: theorem 牛顿第一定律
-  假若施加于某物体的外力为零，则该物体的运动速度不变。
-
-  ::: right
-  来自 [维基百科](https://zh.wikipedia.org/wiki/%E7%89%9B%E9%A1%BF%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B)
-  :::
-  :::
-
-  ::: tip
-  `@vuepress/theme-default` 的提示容器
-  :::
-  ```
-
-- **输出**
-
-  ::: theorem 牛顿第一定律
-  假若施加于某物体的外力为零，则该物体的运动速度不变。
-
-  ::: right
-  来自 [维基百科](https://zh.wikipedia.org/wiki/%E7%89%9B%E9%A1%BF%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B)
-  :::
-
-  ::: tip
-  `@vuepress/theme-default` 的提示容器
-  :::

@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:49
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 14:35:08
+ * @LastEditTime: 2020-03-24 11:32:16
  * @Description: 页脚
  *
  * 添加自定义页脚的预设文字
@@ -39,7 +39,7 @@ export default class PageFooter extends Vue {
         themeFooter.text &&
         (this.$frontmatter.footer === true || themeFooter.displayDefault)
       ? (themeFooter.text as string)
-      : '';
+      : `Copyright © 2020-present ${this.$themeConfig.author}`;
   }
 }
 </script>

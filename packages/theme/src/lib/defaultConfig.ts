@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2020-01-01 18:56:32
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-11 15:03:45
+ * @LastEditTime: 2020-03-24 11:40:02
  * @Description: vuepress-theme-hope 的默认配置
  */
 
@@ -26,10 +26,7 @@ export default {
     iconPrefix: 'icon-',
 
     /** 页脚 */
-    footer: {
-      /** 页脚默认文字 */
-      text: 'MIT Licensed | Copyright © 2019-present Mr.Hope'
-    },
+    footer: {},
 
     /** 多语言配置 */
     locales: {},

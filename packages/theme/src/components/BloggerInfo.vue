@@ -7,11 +7,11 @@
       </div>
     </div>
     <div class="num-wrapper">
-      <div @click="navigate('/article/', $router, route)">
+      <div @click="navigate('/article/', $router, $route)">
         <div class="num">{{$articles.length}}</div>
         <div>文章</div>
       </div>
-      <div @click="navigate('/tag/', $router, route)">
+      <div @click="navigate('/tag/', $router, $route)">
         <div class="num">{{$tag.list.length}}</div>
         <div>标签</div>
       </div>

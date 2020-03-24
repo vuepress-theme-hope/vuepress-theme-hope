@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 16:45:44
+ * @LastEditTime: 2020-03-24 11:40:59
  * @Description: Vuepress配置
  */
 
@@ -97,6 +97,9 @@ module.exports = resolve({
     author: 'Mr.Hope',
     iconPrefix: 'vuepress-',
 
+    footer: {
+      text: 'MIT Licensed | Copyright © 2019-present Mr.Hope'
+    },
     markdown: {
       enableAll: true
     },

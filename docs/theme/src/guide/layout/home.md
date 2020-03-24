@@ -69,4 +69,27 @@ vuepress-theme-hope 改进了默认主页。
 
 ## 博客样式
 
-文档制作中...
+### hero
+
+- 类型: `boolean`
+- 默认: `true`
+
+是否显示主页的图标与描述
+
+### bgImage
+
+- 类型: `string`
+
+背景图片。如果不填写，会自动应用一张默认的风景图片。
+
+### bgImageStyle
+
+- 类型: `Record<string, string>`
+
+背景图片的 CSS 样式。
+
+### heroImageStyle
+
+- 类型: `Record<string, string>`
+
+主页图标的 CSS 样式

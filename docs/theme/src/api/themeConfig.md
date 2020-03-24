@@ -20,7 +20,11 @@ tag:
 
 `.vuepress/config.js` 中的 themeConfig 字段(主题字段)新增以下配置：
 
-## baseLang
+## 基本选项
+
+这些选项需要您正确配置。
+
+### baseLang
 
 - 类型: `String`
 - 默认值: `'zh-CN'`
@@ -34,8 +38,6 @@ tag:
 
 如果您需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
 :::
-
-## 需要正确配置的选项
 
 ### author
 
@@ -58,18 +60,18 @@ SideBarItem 新增
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
 
-### footer
+## 页脚设置
 
 页脚设置选项
 
-#### footer.text
+### footer.text
 
 - 类型: `String`
-- 默认值: `'MIT Licensed | Copyright © 2019-present Mr.Hope'`
+- 默认值: `'Copyright © 2020-present <作者>'`
 
 页脚的默认文字。
 
-#### footer.displayDefault
+### footer.displayDefault
 
 - 类型: `Boolean`
 - 默认值: `false`
@@ -78,9 +80,9 @@ SideBarItem 新增
 
 ## 主题色与暗黑模式
 
-使用 `themeConfig.themeColor` 进行主题色和暗黑模式设置选项配置。
+主题色和暗黑模式设置选项配置。
 
-如果您不需要这项功能，请设置为 `false` 将其禁用。
+如果您不需要这项功能，请设置 `themeColor: false` 将其禁用。
 
 ### themeColor.allowDarkmode
 
@@ -105,9 +107,9 @@ SideBarItem 新增
 
 ## Markdown 增强
 
-使用 `themeConfig.themeColor` 进行Markdown 增强配置。
+使用 `themeConfig.markdown` 进行Markdown 增强配置。
 
-如果您不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
+如果您不需要任何 Markdown 增强，请设置为 `markdown: false` 将其禁用。
 
 ### markdown.enableAll
 
@@ -158,9 +160,9 @@ SideBarItem 新增
 
 是否启用 流程图 语法支持
 
-## comment
+## 评论设置
 
-评论设置。具体详情请见　[@mr-hope/vuepress-plugin-comment](http://comment.mrhope.site/api/)
+具体配配置请见　[@mr-hope/vuepress-plugin-comment 文档](http://comment.mrhope.site/api/)
 
 可以直接设置为 `false` 来禁用评论功能
 
@@ -168,7 +170,7 @@ SideBarItem 新增
 
 PWA 设置选项
 
-## encrypt
+## 加密设置
 
 加密设置选项
 
@@ -206,9 +208,9 @@ PWA 设置选项
 
 :::
 
-## blog
+## 博客配置
 
-博客配置。可以直接设置为 false 来禁用相关功能。
+博客配置。可以直接设置 `blog: false` 来禁用相关功能。
 
 ### blog.blogger
 
@@ -244,56 +246,60 @@ PWA 设置选项
 
 填写后将允许点击“博主信息”中的头像或姓名进入个人介绍页。
 
-## iconPrefix
+## 其他配置选项
+
+以下是主题提供的其他配置选项，一般情况下您无需改动他们，但是主题也向你提供了更多有关主题的配置项。
+
+### iconPrefix
 
 - 类型: `String`
 - 默认值: `'icon-'`
 
 设置 iconfont 的图标前缀
 
-## sidebarIcon
+### sidebarIcon
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否在侧边栏显示图标
 
-## breadcrumb
+### breadcrumb
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否全局启用路径导航
 
-## breadcrumbIcon
+### breadcrumbIcon
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否在路径导航显示图标
 
-## smoothScroll <MyBadge text="改变默认值" type="error" />
+### smoothScroll <MyBadge text="改变默认值" type="error" />
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否启用平滑滚动功能
 
-## backToTop
+### backToTop
 
 - 类型: `Boolean | Number`
 - 默认值: `true`
 
 返回顶部按钮的配置。默认的触发距离为 300px，填入数字时可改变这一触发距离。填入 `false` 会禁用返回顶部按钮。
 
-## repoDisplay
+### repoDisplay
 
 - 类型: `Boolean`
 - 默认值: `true`
 
 是否在导航栏显示仓库链接
 
-## fullscreen
+### fullscreen
 
 - 类型: `Boolean`
 - 默认值: `true`

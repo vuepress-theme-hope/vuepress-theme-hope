@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 16:44:23
+ * @LastEditTime: 2020-03-24 11:40:37
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
@@ -52,6 +52,10 @@ module.exports = resolve({
     sidebar: sideBarConfig.zh,
     author: 'Mr.Hope',
     iconPrefix: 'vuepress-',
+
+    footer: {
+      text: 'MIT Licensed | Copyright © 2019-present Mr.Hope'
+    },
 
     markdown: {
       enableAll: true
