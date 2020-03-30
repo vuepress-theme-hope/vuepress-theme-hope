@@ -12,8 +12,7 @@
 {
   "compilerOptions": {
     "types": [
-      "@mr-hope/vuepress-theme-types",
-      "vuepress-types"
+      "@mr-hope/vuepress-theme-types"
     ]
   },
   "include": [
@@ -24,7 +23,7 @@
 
 ### 提示找不到相应 types
 
-请确保将 `"@mr-hope/vuepress-theme-types"` 和 `"vuepress-types"` 加入 `compilerOptions.types` 中，因为它们不在 `@types` 目录下。
+请确保将 `"@mr-hope/vuepress-theme-types"` 加入 `compilerOptions.types` 中，因为它不在 `@types` 目录下。
 
 ### 提示项目没有包含 TS文件
 

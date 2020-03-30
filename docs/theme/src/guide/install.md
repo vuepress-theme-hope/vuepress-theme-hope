@@ -7,7 +7,7 @@ category: instruction
 
 ## 使用主题
 
-借助 Vuepress 强大的主题系统，启用主题从未如此简单。
+你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 vuepress 之旅。
 
 ### 安装
 
@@ -36,8 +36,7 @@ vuepress-theme-hope 继承于官方的默认主题，为了尽可能减轻用户
 {
   "compilerOptions": {
     "types": [
-      "@mr-hope/vuepress-theme-types",
-      "vuepress-types"
+      "@mr-hope/vuepress-theme-types"
     ]
   },
   "include": [
@@ -46,4 +45,4 @@ vuepress-theme-hope 继承于官方的默认主题，为了尽可能减轻用户
 }
 ```
 
-如果你已经有了 `tsconfig.json`, 那么只需要在 `compilerOptions.types` 中添加 vuepress 与 vuepress-theme-hope 的类型定义文件包即可。
+如果你已经有了 `tsconfig.json`, 那么只需要在 `compilerOptions.types` 中添加 vuepress-theme-hope 的类型定义文件包即可。
