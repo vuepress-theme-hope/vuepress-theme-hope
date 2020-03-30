@@ -148,7 +148,7 @@ export default class BlogPage extends Vue {
       margin 0 auto
 
     h1, .description, .action
-      color #fff
+      color var(--background-color)
 
     .description
       margin 1.8rem auto
@@ -183,13 +183,13 @@ export default class BlogPage extends Vue {
       margin-bottom 12px
       flex 0 0 300px
       height auto
-      box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
+      box-shadow 0 1px 4px 0 var(--card-shadow)
       border-radius 4px
       box-sizing border-box
       padding 0 15px
 
       &:hover
-        box-shadow 0 2px 12px 0 rgba(0, 0, 0, 0.2)
+        box-shadow 0 2px 10px 0 var(--card-shadow)
 
       .icon
         width 16px

@@ -1,0 +1,28 @@
+.theme-dark
+  // 导航栏
+  .navbar, .search-box
+    input
+      fontColor()
+      background-color $nightBgColor !important
+
+      @media (min-width: $MQNarrow)
+        borderColor()
+        background-color lighten($nightBgColor, 10%) !important
+
+      &:focus
+        background-color lighten($nightBgColor, 10%) !important
+
+    .suggestion
+      a
+        color darken($nightTextColor, 35%)
+
+      &.focused
+        background-color #0c0b0a
+
+        a
+          color var(--accent-color)
+          border-color var(--accent-color)
+
+    .suggestions
+      borderColor()
+      background-color #000

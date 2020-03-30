@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 15:12:52
+ * @LastEditTime: 2020-03-30 22:55:23
  * @Description: 主题颜色选择
 -->
 <template>
@@ -28,10 +28,10 @@
 </template>
 
 <script lang='ts'>
-/* global THEME_COLOR_OPTIONS */
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Vue } from 'vue-property-decorator';
 import DarkmodeSwitch from './DarkmodeSwitch.vue';
-import { ThemeColorOptions } from '../types';
+import { ThemeColorOptions } from '../../types';
+import darkmodeMixin from '@theme/util/darkmodeMixin';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 /** 默认颜色选择器 */
@@ -47,8 +47,10 @@ interface ThemeColorData extends ThemeColorOptions {
 }
 
 @Component({ components: { DarkmodeSwitch } })
-export default class ThemeOptions extends Vue {
-  private options = THEME_COLOR_OPTIONS;
+export default class ThemeOptions extends Mixins(darkmodeMixin) {
+  private get options() {
+    return this.$themeConfig.themeColor || {};
+  }
 
   private theme = {} as ThemeColorData;
 
@@ -60,7 +62,7 @@ export default class ThemeOptions extends Vue {
     );
   }
 
-  private mounted() {
+  protected mounted() {
     this.theme = {
       colorList: this.options.picker
         ? Object.keys(this.options.picker)
@@ -153,7 +155,7 @@ export default class ThemeOptions extends Vue {
       margin 0 2px
 
       &.default-theme
-        background-color $accentColor
+        background-color var(--accent-color)
 
 .darkmode-toggle
   display flex

@@ -8,14 +8,15 @@
 html, body
   padding 0
   margin 0
-  background-color #fff
+  background-color var(--background-color)
 
 body
-  font-family -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  font-family Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   font-size 16px
-  color $textColor
+  color var(--text-color)
+  min-height 100vh
 
 .page
   padding-left $sidebarWidth
@@ -27,9 +28,9 @@ body
   left 0
   right 0
   height $navbarHeight
-  background-color #fff
+  background-color var(--background-color)
   box-sizing border-box
-  border-bottom 1px solid $borderColor
+  border-bottom 1px solid var(--border-color)
 
 .sidebar-mask
   position fixed
@@ -42,7 +43,7 @@ body
 
 .sidebar
   font-size 16px
-  background-color #fff
+  background-color var(--background-color)
   width $sidebarWidth
   position fixed
   z-index 10
@@ -51,7 +52,7 @@ body
   left 0
   bottom 0
   box-sizing border-box
-  border-right 1px solid $borderColor
+  border-right 1px solid var(--border-color)
   overflow-y auto
 
 {$contentClass}:not(.custom)
@@ -80,12 +81,12 @@ body
 
 a
   font-weight 500
-  color $accentColor
+  color var(--accent-color)
   text-decoration none
 
 p a code
   font-weight 400
-  color $accentColor
+  color var(--accent-color)
 
 kbd
   background #eee
@@ -111,7 +112,7 @@ strong
   font-weight 600
 
 h1, h2, h3, h4, h5, h6
-  font-weight 600
+  font-weight 500
   line-height 1.25
 
   {$contentClass}:not(.custom) > &
@@ -120,7 +121,7 @@ h1, h2, h3, h4, h5, h6
     margin-bottom 0
 
     &:first-child
-      margin-top -1.5rem
+      margin-top -3rem
       margin-bottom 1rem
 
       + p, + pre, + .custom-block
@@ -130,12 +131,12 @@ h1, h2, h3, h4, h5, h6
     opacity 1
 
 h1
-  font-size 2.2rem
+  font-size 2rem
 
 h2
   font-size 1.65rem
   padding-bottom 0.3rem
-  border-bottom 1px solid $borderColor
+  border-bottom 1px solid var(--border-color)
 
 h3
   font-size 1.35rem
@@ -159,7 +160,7 @@ p, ul, ol
 
 hr
   border 0
-  border-top 1px solid $borderColor
+  border-top 1px solid var(--border-color)
 
 table
   border-collapse collapse

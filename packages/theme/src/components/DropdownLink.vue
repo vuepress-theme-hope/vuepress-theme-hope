@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 20:47:23
+ * @LastEditTime: 2020-03-30 22:49:46
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -102,7 +102,10 @@ export default class DropdownLink extends Vue {
     background transparent
     border none
     font-weight 500
-    color $textColor
+    color var(--dark-grey)
+
+    &::after
+      border-left 5px solid var(--accent-color)
 
     &:hover
       border-color transparent
@@ -119,7 +122,7 @@ export default class DropdownLink extends Vue {
 
       h4
         margin 0.45rem 0 0
-        border-top 1px solid #eee
+        border-top 1px solid var(--grey15)
         padding 0.45rem 1.5rem 0 1.25rem
 
       .dropdown-subitem-wrapper
@@ -139,16 +142,16 @@ export default class DropdownLink extends Vue {
         padding 0 1.5rem 0 1.25rem
 
         &:hover
-          color $accentColor
+          color var(--accent-color)
 
         &.router-link-active
-          color $accentColor
+          color var(--accent-color)
 
           &::after
             content ''
             width 0
             height 0
-            border-left 5px solid $accentColor
+            border-left 5px solid var(--accent-color)
             border-top 3px solid transparent
             border-bottom 3px solid transparent
             position absolute
@@ -168,9 +171,10 @@ export default class DropdownLink extends Vue {
     .dropdown-title
       font-weight 600
       font-size inherit
+      color var(--text-color)
 
       &:hover
-        color $accentColor
+        color var(--accent-color)
 
     .nav-dropdown
       transition height 0.1s ease-out
@@ -201,12 +205,16 @@ export default class DropdownLink extends Vue {
     &.open:blur
       display none
 
-    .dropdown-title .arrow
-      // make the arrow always down at desktop
-      border-left 4px solid transparent
-      border-right 4px solid transparent
-      border-top 6px solid $arrowBgColor
-      border-bottom 0
+    .dropdown-title
+      &:hover
+        var(--accent-color)
+
+      .arrow
+        // make the arrow always down at desktop
+        border-left 4px solid transparent
+        border-right 4px solid transparent
+        border-top 6px solid var(--arrow-bg-color)
+        border-bottom 0
 
     .nav-dropdown
       display none
@@ -218,12 +226,15 @@ export default class DropdownLink extends Vue {
       position absolute
       top 100%
       right 0
-      background-color #fff
+      background-color var(--background-color)
       padding 0.6rem 0
-      border 1px solid #ddd
-      border-bottom-color #ccc
+      border 1px solid var(--grey15)
       text-align left
       border-radius 0.25rem
       white-space nowrap
       margin 0
+      box-shadow 2px 2px 10px var(--box-shadow)
+
+      .dropdown-item a
+        color var(--dark-grey)
 </style>

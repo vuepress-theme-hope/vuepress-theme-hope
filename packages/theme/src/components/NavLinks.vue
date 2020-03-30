@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:35:02
+ * @LastEditTime: 2020-03-30 22:24:43
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
@@ -115,10 +115,10 @@ export default class NavLinks extends Vue {
 
   a
     line-height 1.4rem
-    color inherit
+    color var(--dark-grey)
 
-    &:hover, &.router-link-active
-      color $accentColor
+    &.router-link-active
+      color var(--accent-color)
 
   .nav-item
     position relative
@@ -130,20 +130,24 @@ export default class NavLinks extends Vue {
       margin-left 0
 
   .repo-link
+    color var(--dark-grey)
     margin-left 1.5rem
 
 @media (max-width: $MQMobile)
   .nav-links
+    a
+      &:hover, &.router-link-active
+        color var(--accent-color)
+
     .nav-item, .repo-link
       margin-left 0
 
 @media (min-width: $MQMobile)
-  .nav-links a
-    &:hover, &.router-link-active
-      color $textColor
-
-  .nav-item > a:not(.external)
+  .nav-item > a
     &:hover, &.router-link-active
       margin-bottom -2px
       border-bottom 2px solid lighten($accentColor, 8%)
+
+    &.router-link-active
+      color var(--accent-color)
 </style>

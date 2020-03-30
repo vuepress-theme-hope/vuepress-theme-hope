@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 11:42:14
+ * @LastEditTime: 2020-03-26 19:47:54
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -48,7 +48,7 @@ import AlgoliaSearchBox from '@AlgoliaSearchBox';
 import NavLinks from '@theme/components/NavLinks.vue';
 import SearchBox from '@SearchBox';
 import SidebarButton from '@theme/components/SidebarButton.vue';
-import ThemeColor from '@ThemeColor';
+import ThemeColor from '@theme/components/ThemeColor.vue';
 
 const css = (el: Element, property: any) => {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'
@@ -107,12 +107,13 @@ export default class Navbar extends Vue {
 </script>
 
 <style lang="stylus">
-$navbar-vertical-padding = 0.7rem
-$navbar-horizontal-padding = 1.5rem
+$navbar-vertical-padding ?= 0.7rem
+$navbar-horizontal-padding ?= 1.5rem
 
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
+  box-shadow 0 2px 8px var(--box-shadow-color)
 
   a, span, img
     display inline-block
@@ -126,13 +127,13 @@ $navbar-horizontal-padding = 1.5rem
   .site-name
     font-size 1.3rem
     font-weight 600
-    color $textColor
+    color var(--text-color)
     position relative
 
   .links
     padding-left 1.5rem
     box-sizing border-box
-    background-color white
+    background-color var(--background-color)
     white-space nowrap
     font-size 0.9rem
     position absolute

@@ -2,11 +2,12 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-19 11:01:50
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 11:58:37
+ * @LastEditTime: 2020-03-30 23:52:06
  * @Description: 主题配置
  */
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { ResolvedHopeThemeConfig } from '../types';
+import getColor from './lib/getColor';
 import pluginConfig from './lib/plugins';
 
 interface ThemeOptionAPI extends PluginOptionAPI {
@@ -26,7 +27,6 @@ const getAlias = (
     );
 
   const commentEnabled = themeConfig.comment !== false;
-  const themeColorEnabled = themeConfig.themeColor !== false;
   const noopModule = 'vuepress-theme-hope/src/lib/noopModule.js';
 
   return {
@@ -38,9 +38,6 @@ const getAlias = (
       : noopModule,
     '@PageInfo': commentEnabled
       ? '@mr-hope/vuepress-plugin-comment/PageInfo.vue'
-      : noopModule,
-    '@ThemeColor': themeColorEnabled
-      ? '@mr-hope/vuepress-plugin-theme-color/ThemeColor.vue'
       : noopModule
   };
 };
@@ -60,6 +57,11 @@ export = (
         frontmatter: { layout: 'BlogEntry' }
       }
     ] as any;
+
+  // 定义
+  config.define = {
+    COLOR_OPTION: getColor(ctx.sourceDir)
+  } as any;
 
   // 别名配置
   config.alias = getAlias(themeConfig, ctx);

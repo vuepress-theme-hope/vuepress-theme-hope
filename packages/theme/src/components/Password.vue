@@ -78,14 +78,15 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
     display flex
     justify-content center
     align-items center
-    border 2px solid $accentColor
+    border 2px solid var(--accent-color)
     border-radius 21px
     overflow hidden
 
     input
       margin-left 20px
       font-size 20px
-      background-color #fff !important
+      color var(--black) !important
+      background-color var(--background-color) !important
       border none
       flex 1
       line-height 2
@@ -94,9 +95,9 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
     .button
       width 60px
       height 42px
-      background-color $accentColor
+      background-color var(--accent-color)
       line-height 2
-      color #fff
+      color var(--background-color)
       font-size 20px
       cursor pointer
 

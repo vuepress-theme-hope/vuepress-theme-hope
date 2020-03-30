@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 11:39:31
+ * @LastEditTime: 2020-03-26 18:54:30
  * @Description: 主题颜色
 -->
 <template>
@@ -43,10 +43,9 @@
 </template>
 
 <script lang='ts'>
-/* global THEME_COLOR_OPTIONS */
 import { Component, Vue } from 'vue-property-decorator';
-import ClickOutside from './src/click-outside';
-import ThemeOptions from './src/ThemeOptions.vue';
+import ClickOutside from '@theme/util/click-outside';
+import ThemeOptions from '@theme/components/ThemeOptions.vue';
 
 @Component({
   directives: { 'click-outside': ClickOutside },
@@ -56,12 +55,12 @@ import ThemeOptions from './src/ThemeOptions.vue';
 export default class ThemeColor extends Vue {
   private showMenu = false;
 
-  private options = THEME_COLOR_OPTIONS;
-
   private get enable() {
+    const themeColorOption = this.$themeConfig.themeColor || {};
+
     return (
-      this.options.allowThemeColor !== false ||
-      this.options.allowDarkmode !== false
+      themeColorOption.allowThemeColor !== false ||
+      themeColorOption.allowDarkmode !== false
     );
   }
 
@@ -72,8 +71,6 @@ export default class ThemeColor extends Vue {
 </script>
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-plugin-theme-color/styles/index.styl';
-
 .color-picker
   position relative
   margin-right 1em
@@ -91,7 +88,7 @@ export default class ThemeColor extends Vue {
       fill currentcolor
 
       &:hover, &.select
-        color $accentColor
+        color var(--accent-color)
 
       &.select:hover
         color #aaa
@@ -100,14 +97,14 @@ export default class ThemeColor extends Vue {
       width 18px
 
   .color-picker-menu
-    background-color #fff
+    background-color var(--background-color)
     position absolute
     top 40px
     left 50%
     min-width 100px
     margin 0
     padding 1em
-    border 1px solid $borderColor
+    border 1px solid var(--border-color)
     border-radius 4px
     transform translateX(-50%)
     z-index 150
@@ -118,7 +115,7 @@ export default class ThemeColor extends Vue {
       top -7px
       left 50%
       border-style solid
-      border-color transparent transparent $borderColor
+      border-color transparent transparent var(--border-color)
       border-width 0 7px 7px
       transform translateX(-50%)
 

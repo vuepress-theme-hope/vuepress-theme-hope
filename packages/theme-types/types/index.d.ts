@@ -6,9 +6,9 @@
 
 /// <reference types="@mr-hope/vuepress-plugin-pwa" />
 
-/// <reference types="@mr-hope/vuepress-plugin-theme-color" />
-
 /// <reference types="vuepress-plugin-md-enhance" />
+
+/// <reference types="vuepress-theme-hope" />
 
 import './shims-vue';
 import './declare';

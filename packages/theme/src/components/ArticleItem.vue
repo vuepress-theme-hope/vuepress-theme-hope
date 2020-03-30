@@ -41,7 +41,7 @@ export default class ArticleItem extends Vue {
     width 100%
     overflow hidden
     border-radius 0.25rem
-    box-shadow 0 1px 4px 0 rgba(0, 0, 0, 0.15)
+    box-shadow 0 1px 4px 0 var(--card-shadow)
     box-sizing border-box
     -webkit-transition all 0.3s
     transition all 0.3s
@@ -50,7 +50,7 @@ export default class ArticleItem extends Vue {
       margin-bottom 0
 
     &:hover
-      box-shadow 0 2px 12px 0 rgba(0, 0, 0, 0.15)
+      box-shadow 0 2px 10px 0 var(--card-shadow)
 
     .sticky-icon
       position absolute
@@ -58,10 +58,10 @@ export default class ArticleItem extends Vue {
       right 0
       width 40px
       height 40px
-      fill $accentColor
+      fill var(--accent-color)
 
       .sticky-text
-        fill #fff
+        fill var(--background-color)
 
     .title
       position relative
@@ -76,14 +76,14 @@ export default class ArticleItem extends Vue {
         height 2px
         bottom 0
         left 0
-        background-color $accentColor
+        background-color var(--accent-color)
         visibility hidden
         -webkit-transform scaleX(0)
         transform scaleX(0)
         transition 0.3s ease-in-out
 
       &:hover a
-        color $accentColor
+        color var(--accent-color)
 
       &:hover:after
         visibility visible
@@ -95,7 +95,7 @@ export default class ArticleItem extends Vue {
         vertical-align baseline
         width 20px
         height 20px
-        fill $accentColor
+        fill var(--accent-color)
 
     .article-excerpt
       h1

@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-13 13:59:35
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:37:40
- * @Description: 主页
--->
 <template>
   <main aria-labelledby="main-title" class="home">
     <header class="hero">
@@ -101,8 +94,8 @@ export default class Home extends Vue {
     .action-button
       display inline-block
       font-size 1.2rem
-      color #fff
-      background-color $accentColor
+      color var(--background-color)
+      background-color var(--accent-color)
       padding 0.8rem 1.6rem
       border-radius 4px
       transition background-color 0.1s ease
@@ -126,6 +119,18 @@ export default class Home extends Vue {
     flex-grow 1
     flex-basis 30%
     max-width 30%
+    transition all 0.5s
+    padding 0 1.5%
+
+    &.link
+      cursor pointer
+
+    &:hover
+      transform scale(1.05)
+      box-shadow 0 2px 12px 0 var(--card-shadow-color)
+
+    &.link h2:hover
+      color var(--accent-color)
 
     h2
       font-size 1.4rem

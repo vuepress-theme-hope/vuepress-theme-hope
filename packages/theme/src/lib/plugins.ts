@@ -3,7 +3,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-20 16:48:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 18:48:33
+ * @LastEditTime: 2020-03-24 20:27:38
  * @Description: 插件配置
  */
 import * as moment from 'moment';
@@ -29,9 +29,6 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
 
     /** PWA 插件 */
     ['@mr-hope/pwa', options.pwa],
-
-    // /** 主题色插件 */
-    ['@mr-hope/theme-color', options.themeColor],
 
     /** 自动激活侧边栏标题 */
     ['@vuepress/active-header-links', options.activeHeaderLinks],

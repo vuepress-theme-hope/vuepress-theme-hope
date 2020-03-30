@@ -120,7 +120,7 @@ export default class SidebarGroup extends Vue {
       border-left none
 
 .sidebar-heading
-  color $textColor
+  color var(--text-color)
   transition color 0.15s ease
   cursor pointer
   font-size 1.1em
@@ -143,11 +143,11 @@ export default class SidebarGroup extends Vue {
   &.clickable
     &.active
       font-weight 600
-      color $accentColor
-      border-left-color $accentColor
+      color var(--accent-color)
+      border-left-color var(--accent-color)
 
     &:hover
-      color $accentColor
+      color var(--accent-color)
 
 .sidebar-group-items
   transition height 0.1s ease-out

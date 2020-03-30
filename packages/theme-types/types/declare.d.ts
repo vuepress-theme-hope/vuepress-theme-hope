@@ -61,7 +61,3 @@ declare module '@Comment' {
 declare module '@PageInfo' {
   export default vue;
 }
-
-declare module '@ThemeColor' {
-  export default vue;
-}
