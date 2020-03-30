@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "types": "src/index.ts",
   "scripts": {
-    "test": "vue-cli-service test:unit test/"
+    "test:unit": "vue-cli-service test:unit test/",
+    "test": "mocha -r ts-node/register test/unit/*.ts"
   },
   "publishConfig": {
     "access": "public"

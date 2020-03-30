@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import resolveConfig from '../../src/pluginConfig';
 
@@ -53,7 +54,7 @@ describe('Test pluginConfig generate', () => {
         }
       ],
       ['container', { type: 'right', defaultTitle: '' }],
-      ['container', { type: 'center', defaultTitle: '' }],
+      ['container', { type: 'center', defaultTitle: '' }]
     ]);
   });
 

@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test": "vue-cli-service test:unit test/"
+    "test:unit": "vue-cli-service test:unit test/",
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "repository": {
     "type": "git",
