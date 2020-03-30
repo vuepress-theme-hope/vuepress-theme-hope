@@ -28,7 +28,7 @@
     "@vuepress/shared-utils": "^1.4.0",
     "register-service-worker": "^1.7.1",
     "vuepress-plugin-typescript": "^0.2.0",
-    "workbox-build": "^5.1.1"
+    "workbox-build": "^5.1.2"
   },
   "peerDependencies": {
     "typescript": "^3.8.3",
