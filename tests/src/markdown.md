@@ -1,7 +1,7 @@
 ---
 icon: markdown
 catgory: markdown
-tag: markdown
+tags: markdown
 ---
 
 # Markdown 增强

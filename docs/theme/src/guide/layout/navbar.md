@@ -1,6 +1,6 @@
 ---
 icon: nav
-tag: 
+tags: 
   - enhance
   - layout
 category: layout

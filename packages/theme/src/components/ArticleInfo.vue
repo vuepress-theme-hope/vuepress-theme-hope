@@ -19,9 +19,9 @@
     </span>
 
     <!-- 标签 -->
-    <span v-if="tag">
+    <span v-if="tags">
       <TagIcon />
-      <Tags :tags="typeof tag === 'string'? [tag]: tag" />
+      <Tags :tags="tags" />
     </span>
   </div>
 </template>
@@ -84,14 +84,14 @@ export default class ArticleInfo extends Vue {
   }
 
   /** 标签 */
-  private get tag() {
-    const { tags, tag = tags } = this.article.frontmatter;
+  private get tags() {
+    const { tag, tags = tag } = this.article.frontmatter;
 
-    if (typeof tag === 'string') return capitalize(tag);
+    if (typeof tags === 'string') return [capitalize(tags)];
 
-    if (Array.isArray(tag)) return tag.map((item) => capitalize(item));
+    if (Array.isArray(tags)) return tags.map((item) => capitalize(item));
 
-    return '';
+    return [];
   }
 
   private navigate() {

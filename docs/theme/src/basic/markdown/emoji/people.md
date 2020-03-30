@@ -1,6 +1,6 @@
 ---
 icon: emoji
-tag: 
+tags: 
  - markdown
  - emoji
 ---

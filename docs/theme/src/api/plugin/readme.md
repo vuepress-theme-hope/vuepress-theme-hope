@@ -2,7 +2,7 @@
 category: api
 copyright:
   minLength: 10
-tag: 
+tags: 
  - plugin
  - api
 ---

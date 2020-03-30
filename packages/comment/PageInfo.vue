@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 19:47:03
+ * @LastEditTime: 2020-03-31 00:45:18
  * @Description: 页面信息
 -->
 <template>
@@ -37,9 +37,9 @@
       </span>
 
       <!-- 标签 -->
-      <span v-if="tag">
+      <span v-if="tags">
         <TagIcon />
-        <Tags :tags="typeof tag === 'string'? [tag]: tag" />
+        <Tags :tags="tags" />
       </span>
     </div>
   </div>
@@ -159,14 +159,14 @@ export default class PageInfo extends Vue {
   }
 
   /** 标签 */
-  private get tag() {
-    const { tags, tag = tags } = this.$frontmatter;
+  private get tags() {
+    const { tag, tags = tag } = this.$frontmatter;
 
-    if (typeof tag === 'string') return capitalize(tag);
+    if (typeof tags === 'string') return [capitalize(tags)];
 
-    if (Array.isArray(tag)) return tag.map((item) => capitalize(item));
+    if (Array.isArray(tags)) return tags.map((item) => capitalize(item));
 
-    return '';
+    return [];
   }
 
   private get active() {

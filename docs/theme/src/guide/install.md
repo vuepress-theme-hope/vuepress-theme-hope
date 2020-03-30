@@ -1,7 +1,7 @@
 ---
 title: 安装/使用
 icon: install
-tag: intro
+tags: intro
 category: instruction
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: api
 category: api
-tag: 
+tags: 
   - api
   - frontmatter
 ---
