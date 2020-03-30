@@ -1,9 +1,11 @@
+import { describe, it } from 'mocha';
+import { HopeVuepressConfig } from '../types';
 import { expect } from 'chai';
 import resolveHead from '../src/lib/resolveHead';
 
 describe('Test resolveHead function', () => {
   it('should generate icon, author and PWA because they do not exist', () => {
-    const config = {
+    const config: HopeVuepressConfig = {
       theme: 'hope',
       headOption: {
         icon: '/favicon.ico',

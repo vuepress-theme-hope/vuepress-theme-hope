@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import * as resolveConfig from '../resolve';
+import { describe, it } from 'mocha';
+import { HopeVuepressConfig } from '../types';
 import { expect } from 'chai';
-import resolveConfig from '../resolve';
 
 describe('Test resolveTheme function', () => {
-  const config = {
+  const config: HopeVuepressConfig = {
     /** 网站标题 */
     title: 'vuepress-theme-hope',
 
@@ -248,9 +251,9 @@ describe('Test resolveTheme function', () => {
 
   it('should resolve locates for vuepress', () => {
     expect(resolvedConfig.locales).to.have.property('/');
-    expect(resolvedConfig.locales['/']).to.have.property('lang');
+    expect(resolvedConfig!.locales!['/']).to.have.property('lang');
     expect(resolvedConfig.locales).to.have.property('/en/');
-    expect(resolvedConfig.locales['/en/']).to.have.property('lang');
+    expect(resolvedConfig!.locales!['/en/']).to.have.property('lang');
   });
 
   it('To have base option', () => {

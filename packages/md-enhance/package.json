@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test": "vue-cli-service test:unit test/",
+    "test:unit": "vue-cli-service test:unit test/",
+    "test": "mocha -r ts-node/register test/unit/*.ts",
     "test:serve": "vuepress dev test/demo",
     "test:clean-serve": "vuepress dev test/demo --no-cache",
     "test:build": "vuepress build test/demo"
