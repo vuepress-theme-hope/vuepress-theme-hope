@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 12:09:44
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 13:53:10
+ * @LastEditTime: 2020-03-26 16:42:48
  * @Description: 合并对象
  */
 
@@ -15,11 +15,15 @@ type IAnyObject = Record<string, any>;
  * @param originObject 原生对象
  * @param assignObjects 需要合并的对象
  */
-export const deepAssign = (
-  originObject: IAnyObject,
-  ...assignObjects: IAnyObject[]
-): IAnyObject => {
-  if (assignObjects.length === 0) return originObject;
+export const deepAssign = <
+  T extends IAnyObject,
+  U extends IAnyObject = T,
+  V extends IAnyObject = T
+>(
+  originObject: T,
+  ...assignObjects: U[]
+): V => {
+  if (assignObjects.length === 0) return originObject as V;
 
   /** 本次合并的对象 */
   const assignObject = assignObjects.shift() as IAnyObject;
@@ -32,7 +36,8 @@ export const deepAssign = (
       !Array.isArray(assignObject[property])
     )
       deepAssign(originObject[property], assignObject[property]);
-    else originObject[property] = assignObject[property];
+    else
+      (originObject as Record<string, any>)[property] = assignObject[property];
   });
 
   return deepAssign(originObject, ...assignObjects);
