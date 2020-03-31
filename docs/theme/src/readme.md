@@ -33,7 +33,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 ## 使用主题
 
-借助 Vuepress 强大的主题系统，启用主题十分简单。
+你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 vuepress 之旅。
 
 ### 安装
 
@@ -59,6 +59,28 @@ module.exports = resolve({
 :::
 
 ### FAQ
+
+如果你的项目没有使用 typescript，你可能还需要安装 typescript
+
+```bash
+npm i -D typescript
+```
+
+并在你的根目录创建一个 tsconfig.json 文件
+
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "types": [
+      "@mr-hope/vuepress-theme-types"
+    ]
+  },
+  "include": [
+    "src/.vuepress/enhanceApp.ts"
+  ]
+}
+```
 
 如果主题引入后在运行中出现 Typescript 相关错误，这可能是你的项目没有正确对 Typescript 进行配置。
 
