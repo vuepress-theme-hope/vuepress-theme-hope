@@ -1,12 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-09-18 11:40:17
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 11:35:27
- * @Description: 导航栏链接按钮
- *
- * 在官方的基础上添加了图标支持
--->
 <template>
   <router-link
     v-if="!isExternal(link)"

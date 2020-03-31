@@ -10,6 +10,7 @@
     <ArticleInfo :article="article" />
   </div>
 </template>
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import ArticleInfo from '@theme/components/ArticleInfo.vue';
@@ -32,6 +33,7 @@ export default class ArticleItem extends Vue {
   }
 }
 </script>
+
 <style lang="stylus">
 .article-wrapper
   .article

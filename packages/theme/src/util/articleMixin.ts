@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-03-19 21:14:45
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 00:37:00
- * @Description: 文章列表 Mixin
- */
-
 import { Component, Vue } from 'vue-property-decorator';
 import { PageComputed } from 'vuepress-types';
 import { deepAssign } from '@mr-hope/vuepress-shared-utils';

@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-07 19:04:30
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 00:18:48
- * @Description: 路径导航
--->
 <template>
   <nav :class="['breadcrumb',{ disable: !enable }]">
     <ul v-if="enable">
@@ -23,6 +16,7 @@
     </ul>
   </nav>
 </template>
+
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Route } from 'vue-router';
@@ -112,6 +106,7 @@ export default class BreadCrumb extends Vue {
   }
 }
 </script>
+
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared-utils/src/styles/wrapper.styl'
 

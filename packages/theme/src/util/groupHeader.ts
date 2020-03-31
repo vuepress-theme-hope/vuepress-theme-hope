@@ -1,5 +1,3 @@
-/** 将标题分组 */
-
 import { PageHeader } from 'vuepress-types';
 
 /** 侧边栏标题配置 */

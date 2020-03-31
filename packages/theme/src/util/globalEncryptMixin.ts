@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-03-19 20:31:54
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 11:54:29
- * @Description: 加密状态 Mixin
- */
-
 import { Component, Vue } from 'vue-property-decorator';
 import { EncryptOptions } from '../../types';
 

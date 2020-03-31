@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-03-20 00:04:03
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 13:53:48
- * @Description: 页面加密混入
- */
-
 import { Component, Vue } from 'vue-property-decorator';
 import { EncryptOptions } from '../../types';
 

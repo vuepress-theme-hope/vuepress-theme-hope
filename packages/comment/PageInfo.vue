@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-10 09:51:24
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-31 00:45:18
- * @Description: 页面信息
--->
 <template>
   <div class="page-title">
     <h1>{{ $page.title }}</h1>

@@ -1,12 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-08 17:25:18
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:35:02
- * @Description: 导航栏链接块
- *
- * 自主选择是否显示 Github 库
--->
 <template>
   <nav v-if="userLinks.length || repoLink" class="nav-links">
     <!-- user links -->

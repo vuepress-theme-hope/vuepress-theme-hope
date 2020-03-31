@@ -1,12 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-09-20 18:24:11
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 20:47:23
- * @Description: 下拉链接列表
- *
- * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
--->
 <template>
   <div :class="{ open }" class="dropdown-wrapper">
     <button class="dropdown-title" type="button" :aria-label="dropdownAriaLabel" @click="toggle">

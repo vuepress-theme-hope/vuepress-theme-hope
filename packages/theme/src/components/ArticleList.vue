@@ -11,6 +11,7 @@
     <Pagation v-model="currentPage" :per-page="articlePerPage" :total="articleList.length" />
   </div>
 </template>
+
 <script lang="ts">
 import { Component, Mixins, Vue, Watch } from 'vue-property-decorator';
 import ArticleItem from '@theme/components/ArticleItem.vue';
@@ -78,6 +79,7 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   }
 }
 </script>
+
 <style lang="stylus">
 #article
   margin-top - $navbarHeight - 0.5rem

@@ -1,10 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-10-22 23:43:27
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 18:46:39
- * @Description: 插件配置
- */
 import { MarkdownEnhanceOption } from '../types';
 import { PluginConfig } from 'vuepress-types';
 import { i18n } from '@mr-hope/vuepress-shared-utils';

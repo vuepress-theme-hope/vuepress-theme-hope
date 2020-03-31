@@ -12,6 +12,7 @@
     </li>
   </ul>
 </template>
+
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
@@ -64,6 +65,7 @@ export default class TagList extends Vue {
   }
 }
 </script>
+
 <style lang="stylus">
 .tag-list-wrapper
   list-style none

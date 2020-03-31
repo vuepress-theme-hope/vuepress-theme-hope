@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-13 13:59:35
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:37:40
- * @Description: 主页
--->
 <template>
   <main aria-labelledby="main-title" class="home">
     <header class="hero">

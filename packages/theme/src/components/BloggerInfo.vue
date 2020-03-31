@@ -19,6 +19,7 @@
     <hr />
   </div>
 </template>
+
 <script lang="ts">
 import { Component, Mixins, Vue } from 'vue-property-decorator';
 import ArticleMixin from '@theme/util/articleMixin';
@@ -63,6 +64,7 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
   }
 }
 </script>
+
 <style lang="stylus">
 .blogger-info
   .blogger-wrapper

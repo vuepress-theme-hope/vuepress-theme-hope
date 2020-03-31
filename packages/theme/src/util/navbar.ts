@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-03-19 23:52:06
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 00:21:03
- * @Description: Navbar config handler
- */
-
 import { HopeNavBarConfigItem } from '@mr-hope/vuepress-shared-utils';
 
 export interface NavBarConfigItem extends HopeNavBarConfigItem {

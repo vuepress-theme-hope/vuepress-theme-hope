@@ -1,12 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-07 00:29:40
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 11:42:14
- * @Description: 导航栏
- *
- * 添加全屏按钮，添加导航栏阴影
--->
 <template>
   <header class="navbar">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />

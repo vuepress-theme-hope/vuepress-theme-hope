@@ -1,12 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-08 11:14:48
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 15:13:52
- * @Description: 侧边栏链接
- *
- * 添加了图标支持
--->
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { ComponentOptions, CreateElement, VNode } from 'vue';

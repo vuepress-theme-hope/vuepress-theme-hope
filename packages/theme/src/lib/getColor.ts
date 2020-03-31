@@ -58,7 +58,7 @@ const patternMap: Record<string, string> = {
 // eslint-disable-next-line max-lines-per-function
 export const handleVar = (content: string): ColorOption => {
   const accentColorPattern = /\$accentColor(?:\s*)?\??=(?:\s*)?(.*)?(?:\s*)?\n/u;
-  const themeColorPattern = /\$themeColor(?:\s*)?\??=(?:\s*)?\{(\n|.*)?\}/u;
+  // const themeColorPattern = /\$themeColor(?:\s*)?\??=(?:\s*)?\{(\n|.*)?\}/u;
   const result: ColorOption = {
     light: {},
     dark: {}

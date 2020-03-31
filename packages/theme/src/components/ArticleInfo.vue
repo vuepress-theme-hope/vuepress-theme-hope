@@ -25,6 +25,7 @@
     </span>
   </div>
 </template>
+
 <script lang="ts">
 import * as moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -103,6 +104,7 @@ export default class ArticleInfo extends Vue {
   }
 }
 </script>
+
 <style lang="stylus">
 .article-info
   display flex

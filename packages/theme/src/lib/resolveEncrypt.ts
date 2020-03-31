@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-01-20 12:21:33
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-22 15:19:19
- * @Description: 处理密码加密
- */
-
 import * as md5 from 'md5';
 import { EncryptOptions } from '../../types';
 

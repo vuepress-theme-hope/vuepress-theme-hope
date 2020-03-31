@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-10-13 14:48:48
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 19:49:22
- * @Description: 导航
- */
-
 import VueRouter, { Route } from 'vue-router';
 
 /**
