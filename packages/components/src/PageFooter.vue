@@ -1,15 +1,7 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-07 19:18:49
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-24 11:32:16
- * @Description: 页脚
- *
- * 添加自定义页脚的预设文字
--->
 <template>
   <div v-if="footerContent" class="footer" v-html="footerContent" />
 </template>
+
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
@@ -43,6 +35,7 @@ export default class PageFooter extends Vue {
   }
 }
 </script>
+
 <style lang="stylus">
 .footer
   padding 1rem 2.5rem

@@ -1,6 +1,6 @@
 ---
 category: component
-tag: footer
+tags: footer
 ---
 
 # 无页脚

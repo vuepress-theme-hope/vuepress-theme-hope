@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-01-07 09:12:52
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-29 13:06:22
- * @Description: 注册所有组件
- */
-
 import BackToTop from './BackToTop.vue';
 import BreadCrumb from './BreadCrumb.vue';
 import { EnhanceApp } from 'vuepress-types';

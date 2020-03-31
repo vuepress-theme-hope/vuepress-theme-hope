@@ -1,6 +1,6 @@
 ---
 category: api
-tag: 
+tags: 
  - plugin
  - api
 ---

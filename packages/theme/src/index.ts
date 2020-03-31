@@ -1,10 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-09-19 11:01:50
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-30 23:52:06
- * @Description: 主题配置
- */
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { ResolvedHopeThemeConfig } from '../types';
 import getColor from './lib/getColor';

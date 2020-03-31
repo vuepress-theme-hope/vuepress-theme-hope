@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-09 23:40:24
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 00:18:06
- * @Description: Valine 评论插件
--->
 <template>
   <div v-show="commentDisplay" class="valine-wrapper">
     <div id="valine" />

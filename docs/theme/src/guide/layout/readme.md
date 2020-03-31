@@ -1,6 +1,6 @@
 ---
 icon: layout
-tag: 
+tags: 
   - intro
   - layout
 category: layout

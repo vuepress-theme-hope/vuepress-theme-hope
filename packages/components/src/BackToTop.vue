@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-09-19 18:12:20
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 21:35:12
- * @Description: 返回顶部组件
--->
 <template>
   <transition name="fade">
     <svg

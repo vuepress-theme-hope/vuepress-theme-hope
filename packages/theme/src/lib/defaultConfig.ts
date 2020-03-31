@@ -1,11 +1,4 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-01-01 18:56:32
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-24 11:40:02
- * @Description: vuepress-theme-hope 的默认配置
- */
-
+/** 默认配置 */
 export default {
   /** 部署目录 */
   // eslint-disable-next-line no-process-env

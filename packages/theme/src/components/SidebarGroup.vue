@@ -1,12 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-08 11:10:01
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-20 23:39:02
- * @Description: 侧边栏分组链接
- *
- * 添加了图标支持
--->
 <template>
   <section
     :class="[

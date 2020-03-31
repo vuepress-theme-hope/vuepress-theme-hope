@@ -1,6 +1,6 @@
 ---
 icon: markdown
-tag: markdown
+tags: markdown
 ---
 
 # Markdown介绍

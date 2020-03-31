@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.0-rc.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.5...v0.1.0-rc.6) (2020-03-31)
+
+### Bug Fixes
+
+* **theme:** fix BloggerInfo bugs ([9651d14](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9651d1479cee201db43fe57570445e04ccc8221a))
+
+### Features
+
+* **theme:** rename tag to tags ([5893518](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5893518a3f8c4b8b7daa658ad4180d8d2f305c61))
+
 ## [0.1.0-rc.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.4...v0.1.0-rc.5) (2020-03-23)
 
 ### Bug Fixes

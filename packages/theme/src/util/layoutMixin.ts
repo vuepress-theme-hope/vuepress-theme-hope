@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-03-19 21:14:45
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 20:24:34
- * @Description: 布局 Mixin
- */
-
 import { Component, Vue } from 'vue-property-decorator';
 import { SidebarItem, resolveSidebarItems } from './sidebar';
 

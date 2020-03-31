@@ -1,6 +1,5 @@
 /* eslint-disable max-lines */
 /* eslint-disable no-plusplus */
-/* eslint-disable camelcase */
 /* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-params */

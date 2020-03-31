@@ -1,6 +1,6 @@
 ---
 category: api
-tag: 
+tags: 
  - api
  - style
 ---

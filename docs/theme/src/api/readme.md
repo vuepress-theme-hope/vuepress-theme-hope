@@ -1,7 +1,7 @@
 ---
 icon: api
 category: api
-tag: api
+tags: api
 ---
 
 # API 文档

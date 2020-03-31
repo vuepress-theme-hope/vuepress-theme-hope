@@ -1,16 +1,8 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-03-20 17:21:55
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 15:24:04
- * @Description: 侧边栏处理
- */
-
 import {
   HopeSideBarConfig,
   HopeSideBarConfigItem
 } from '@mr-hope/vuepress-shared-utils';
-import { PageComputed, PageHeader, SiteData } from 'vuepress-types';
+import { PageComputed, SiteData } from 'vuepress-types';
 import {
   ensureEndingSlash,
   ensureExt,
@@ -18,32 +10,8 @@ import {
   normalize,
   resolvePath
 } from './path';
-
-/** 侧边栏标题配置 */
-export interface SidebarHeader extends PageHeader {
-  /** 子标题 */
-  children?: PageHeader[];
-}
-
-/**
- * 将低等级的标题置于 h2 的 children 中
- *
- * @param headers
- */
-export const groupSidebarHeaders = (headers: PageHeader[]): SidebarHeader[] => {
-  /** header 副本 */
-  const copyheaders = headers.map((h) => ({ ...h }));
-  let lastH2: SidebarHeader;
-
-  // 将所有标题置于 h2 下方
-  copyheaders.forEach((h) => {
-    if (h.level === 2) lastH2 = h;
-    else if (lastH2) (lastH2.children || (lastH2.children = [])).push(h);
-  });
-
-  // 过滤掉非 h2 的标题
-  return headers.filter((h) => h.level === 2);
-};
+import groupHeaders, { SidebarHeader } from './groupHeader';
+export { SidebarHeader } from './groupHeader';
 
 export interface SidebarHeaderItem extends SidebarHeader {
   type: 'header';
@@ -62,6 +30,8 @@ export interface SidebarAutoItem {
   collapsable: false;
   path: '';
 }
+
+export const groupSidebarHeaders = groupHeaders;
 
 /**
  * 处理侧边栏的分组的标题

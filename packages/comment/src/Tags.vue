@@ -10,6 +10,7 @@
     >{{ tag }}</li>
   </ul>
 </template>
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
@@ -45,6 +46,7 @@ export default class Tags extends Vue {
   }
 }
 </script>
+
 <style lang="stylus">
 .tags-wrapper
   list-style none

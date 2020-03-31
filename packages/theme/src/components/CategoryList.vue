@@ -17,6 +17,7 @@
     </li>
   </ul>
 </template>
+
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ArticleList from '@theme/components/ArticleList.vue';
@@ -51,6 +52,7 @@ export default class CategoryList extends Vue {
   }
 }
 </script>
+
 <style lang="stylus">
 .category-list-wrapper
   list-style none

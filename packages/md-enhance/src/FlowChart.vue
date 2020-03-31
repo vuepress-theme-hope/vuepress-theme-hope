@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2020-01-07 21:40:17
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-19 14:29:48
- * @Description: 流程图组件
--->
 <template>
   <div :class="{ 'loading': loading }" class="md-flowchart">
     <Loading v-if="loading" class="md-flowchart-loading-icon" />
@@ -13,7 +6,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Loading from './Loading.vue';
+import Loading from '@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue';
 import presets from './presets';
 
 @Component({ components: { Loading } })

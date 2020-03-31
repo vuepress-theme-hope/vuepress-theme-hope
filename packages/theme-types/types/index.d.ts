@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable spaced-comment */
 
 /// <reference types="vuepress-types" />
 

@@ -1,11 +1,4 @@
 /* eslint-disable max-lines-per-function */
-/*
- * @Author: Mr.Hope
- * @Date: 2019-10-20 16:48:11
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-24 20:27:38
- * @Description: 插件配置
- */
 import * as moment from 'moment';
 import { PluginConfig } from 'vuepress-types';
 import { ResolvedHopeThemeConfig } from '../../types';

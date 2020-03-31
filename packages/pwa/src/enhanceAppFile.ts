@@ -1,14 +1,4 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-01-13 18:40:39
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-18 20:42:57
- * @Description: App 增强文件
- *
- * 注册组件，并在 router 的 onReady 周期注册 Service Worker
- */
 /* global SW_BASE_URL */
-
 import { EnhanceApp } from 'vuepress-types';
 import SWUpdateEvent from './SWUpdateEvent';
 import SWUpdatePopup from './SWUpdatePopup.vue';

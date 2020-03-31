@@ -2,15 +2,20 @@
 
 ## 项目运行报错
 
-请确保你的项目目录下有一个合法的 tsconfig.json 文件，同时，保证你的项目包含了至少一个 TS 文件。
+请确保你的项目依赖了 typescript，且目录下有一个合法的 tsconfig.json 文件。
 
-### 提示找不到 tsconfig.json
+同时，保证你的项目至少有一个 TypeScript 文件被其 include。
+
+### error when parsing tsconfig.json
+
+这个问题通常是 ts-loader 找不到 tsconfig.json 导致的。由于主题添加了 TypeScript 支持，你需要在你的项目内创建一个合法的 tsconfig.json。
 
 一个简单的 tsconfig.json 如下：
 
 ```json
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "types": [
       "@mr-hope/vuepress-theme-types"
     ]
@@ -25,9 +30,15 @@
 
 请确保将 `"@mr-hope/vuepress-theme-types"` 加入 `compilerOptions.types` 中，因为它不在 `@types` 目录下。
 
-### 提示项目没有包含 TS文件
+### No inputs were found in config file 'tsconfig.json'
 
-你可以通过在 `.vuepress` 目录下，建立一个空的 `enhanceApp.ts` 来解决这个问题，如果你已经有 `enhanceApp.js`，你可以直接将其转换为 TS。
+这个问题一般是你的项目中没有 TypeScript 文件 (或你的 tsconfig.json 配置有误) 导致的。
+
+ts-loader 要求 tsconfig.json 的 include 和 exclude 配置项包含项目内至少一个 ts 文件。
+
+如果你的项目没有 ts 文件，为了规避这个问题，你可以在你的项目的任意地方创建一个空的 ts 文件并把它添加至 tsconfig.json 的 include 中。
+
+一个稍微好些的解决方案是通过在 `.vuepress` 目录下，建立一个空的 `enhanceApp.ts` 来解决这个问题，如果你已经有 `enhanceApp.js`，你可以直接将其转换为 TS。
 
 ## 部分页面设置失效
 

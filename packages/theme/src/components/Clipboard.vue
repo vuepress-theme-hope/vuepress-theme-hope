@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-12 17:34:34
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 11:31:04
- * @Description: 剪切板组件
--->
 <template>
   <div v-html="copyright" />
 </template>
