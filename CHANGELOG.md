@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-rc.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.6...v0.1.0-rc.7) (2020-03-31)
+
+### Bug Fixes
+
+* **theme:** fix sidebar header issue ([463056c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/463056cd1f453429bfa79a143c66210f5890692a))
+
 ## [0.1.0-rc.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.5...v0.1.0-rc.6) (2020-03-31)
 
 ### Bug Fixes
