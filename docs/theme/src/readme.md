@@ -71,13 +71,14 @@ npm i -D typescript
 ```json
 {
   "compilerOptions": {
+    "target": "es5", // 任何不等于 es3 的 target 均可
     "experimentalDecorators": true,
     "types": [
       "@mr-hope/vuepress-theme-types"
     ]
   },
   "include": [
-    "src/.vuepress/enhanceApp.ts"
+    "src/.vuepress/enhanceApp.ts" // 请将 src 替换成你的文档目录
   ]
 }
 ```
