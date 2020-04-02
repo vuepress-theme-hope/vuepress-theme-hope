@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:18:03
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 00:43:46
+ * @LastEditTime: 2020-04-02 19:33:13
  * @Description: 页面主体
  *
  * 为每个页面都添加了 路径导航 / 页脚 支持
@@ -22,17 +22,19 @@
 </template>
 
 <script>
+import Comment from '@mr-hope/vuepress-plugin-comment/Comment.vue';
 import PageEdit from '@parent-theme/components/PageEdit.vue';
+import PageInfo from '@mr-hope/vuepress-plugin-comment/PageInfo.vue';
 import PageNav from '@parent-theme/components/PageNav.vue';
 
 export default {
-  components: { PageEdit, PageNav },
+  components: { Comment, PageEdit, PageInfo, PageNav },
   props: ['sidebarItems']
 };
 </script>
 
 <style lang="stylus">
-@require '~@theme/styles/wrapper.styl'
+@require '~@parent-theme/styles/wrapper.styl'
 
 .page
   padding-bottom 2rem
