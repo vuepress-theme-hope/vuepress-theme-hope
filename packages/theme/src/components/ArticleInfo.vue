@@ -19,7 +19,7 @@
     </span>
 
     <!-- 标签 -->
-    <span v-if="tags">
+    <span v-if="tags.length !== 0">
       <TagIcon />
       <Tags :tags="tags" />
     </span>
