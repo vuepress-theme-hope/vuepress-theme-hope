@@ -38,7 +38,7 @@ module.exports = {
 
 行内的脚注^[Text of inline footnote] 定义.
 
-Duplicated footnote reference[^second].
+重复的页脚引用[^second].
 
 [^first]: 脚注 **可以包含特殊标记**
 
@@ -53,7 +53,7 @@ Duplicated footnote reference[^second].
 
 行内的脚注^[Text of inline footnote] 定义.
 
-Duplicated footnote reference[^second].
+重复的页脚引用[^second].
 
 [^first]: 脚注 **可以包含特殊标记**
 
