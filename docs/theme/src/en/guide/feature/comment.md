@@ -1,5 +1,9 @@
 ---
 icon: commentfill
+category: function
+tags:
+  - comment
+  - function
 ---
 
 # Comment Function
@@ -21,16 +25,20 @@ module.exports = {
 
 You can choose between Valine and Vssue.
 
+::: tip
+You can visit [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-comment.mrhope.site/en/) for more details
+:::
+
 ## Valine
 
 ### Get APP_ID and APP_Key
 
 [Click here](https://leancloud.cn/dashboard/login.html#/signup) to register or login in leancloud.
 
-Create new application in Leancloud, and you will get APP ID/APP Key.
+Create new application in Leancloud, and you will get APP ID / APP Key.
 
 ```js
-options = {
+{
   type: 'valine',
   appId: '...', // your appId
   appKey: '...' // your appKey
@@ -38,6 +46,8 @@ options = {
 ```
 
 Config will be listed on [Config](http://comment.mrhope.site/en/api/valine.md).
+
+Fill in the corresponding APP ID and APP Key, then Valine will be well configured.
 
 ::: tip
 For Valine config and usage, please see [Valine Docs](https://valine.js.org)。
@@ -60,7 +70,7 @@ After this step, you will get `client id` and `client secret` of your OAuth App,
 
 ### Use the plugin
 
-```js
+```js {5-15}
 // .vuepress/config.js
 
 module.exports = {
@@ -85,11 +95,12 @@ The only difference is that, you should set `platform` rather than the `api` pac
 
 `@vssue/vuepress-plugin-vssue` will auto resolve the corresponding api package according to the value of `platform`:
 
-- platform `github` - api package `@vssue/api-github-v3`
-- platform `github-v4` - api package `@vssue/api-github-v4`
-- platform `gitlab` - api package `@vssue/api-gitlab-v4`
-- platform `bitbucket` - api package `@vssue/api-bitbucket-v2`
-- platform `gitee` - api package `@vssue/api-gitee-v5`
+- platform `github` - `@vssue/api-github-v3` api package
+- platform `github-v4` - `@vssue/api-github-v4` api package
+- platform `gitlab` - `@vssue/api-gitlab-v4` api package
+- platform `bitbucket` - `@vssue/api-bitbucket-v2` api package
+- platform `gitee` - `@vssue/api-gitee-v5` api package
+- platform `gitea` - `@vssue/api-gitea-v1` api package
 :::
 
 ### Use Vssue Component
@@ -164,7 +175,7 @@ If you want to override them, just set them in your `palette.styl`:
 $vssue-theme-color = red
 ```
 
-### Do not want to use our plugin?
+### Do not want to use our plugin
 
 Vssue has tried to be SSR-friendly, so you can import Vssue directly in VuePress like other vue plugins / components without `@vssue/vuepress-plugin-vssue` (especially if you have customized the styles of Vssue).
 

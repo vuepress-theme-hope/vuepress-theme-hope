@@ -1,33 +1,18 @@
-# @vuepress/plugin-pwa <MyBadge text="New" /> <MyBadge text="Default Chinese" type="warn" />
+---
+category: api
+tags: 
+ - plugin
+ - api
+---
+
+# @vuepress/plugin-pwa <MyBadge text="New" />
 
 Progressive Web App Surpport
 
-## Default configuration instructions
+## Plugin description
 
-Enable PWA support and adjust the default language of the popup to Chinese. At the same time, the theme color and night mode adaptation are added.
+Turn on PWA support. A pop-up window will be displayed in the lower right corner when an update is obtained.
 
-The default configuration is as follows:
+The default language of the popup will automatically be set to `baseLang` configured in `themeConfig`.
 
-```js
-module.exports = {
-  plugins: [
-    [
-      '@vuepress/pwa', {
-        /** whether to register Service Worker */
-        serviceWorker: true,
-        /** whether to popup update notice */
-        updatePopup: {
-          '/': {
-            message: '发现新内容可用',
-            buttonText: '刷新'
-          },
-          '/en/': {
-            message: 'New content is available.',
-            buttonText: 'Refresh'
-          }
-        }
-      }
-    ]
-  ]
-};
-```
+This feature is enabled by default. If you do not need this feature or want to use other pwa plugins, you can set the `themeConfig.pwa` to `false` to disable the plugin.

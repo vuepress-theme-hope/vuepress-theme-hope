@@ -1,3 +1,8 @@
+---
+icon: question
+category: FAQ
+---
+
 # 常见问题
 
 ## 项目运行报错

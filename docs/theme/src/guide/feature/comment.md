@@ -1,7 +1,7 @@
 ---
 icon: commentfill
 category: function
-tag:
+tags:
   - comment
   - function
 ---

@@ -1,36 +1,52 @@
 ---
+category: api
 copyright:
   minLength: 10
+tags: 
+ - plugin
+ - api
 ---
+
 # Plugin Description
 
-In addition to inheriting the plugins enabled by the default theme, vuepress-theme-hope enables many vuepress plugins, which can be disabled in `plugins` if you don't need them.
+vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, you can disable them in plugins.
 
-## Default theme enabled plugin
+## plugins enabled
 
 - [vuepress-plugin-container](container.md): custom container
+
+- [vuepress-plugin-copyright](copyright.md): Provide additional copyright information when the content of the website is copied
+
+- [vuepress-plugin-typescript](../../guide/feature/typescript.md): Provide typescript support
+
 - vuepress-plugin-smooth-scroll: smooth scrolling
-- @vuepress/plugin-search: Search plugin
+
+- @vuepress/plugin-search: Search for plugins
+
 - @vuepress/plugin-nprogress: progress bar
-- @vuepress/plugin-active-header-links: Automatically activate the sidebar title
-- @vuepress/plugin-last-updated: Show last update time
 
-## New or modified plugins
+- @vuepress/plugin-active-header-links: automatically activate sidebar headers
 
-- [**vuepress-plugin-copyright**](copyright.md) <MyBadge text="New" />: Handling copy operations in your VuePress site
+- @vuepress/plugin-blog: Blog support
 
-  **Effert**:
+- @vuepress/plugin-last-updated: show last update time
 
-  Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect. Please copy this text to see the effect.
+- [**@vuepress/medium-zoom**](medium-zoom.md): make the website's images zoom when being clicked
 
-- [**@vuepress/plugin-pwa**](pwa.md)) <MyBadge text="New" /> <MyBadge text="Default Chinese" type="warn" />: PWA Support
-
-- [**@vuepress/medium-zoom**](medium-zoom.md) <MyBadge text="新增" />: This plugin will make your images support click zoom.
-
-  **Effert**:
+  **effect**:
 
   ![logo](/logo.svg)
 
-- @vuepress/plugin-search <MyBadge text="Change Default" type="warn" />: Search for plugins, **increase the maximum search suggestions to 10**
+- @vuepress/plugin-search: search for plugins, **increase maximum search suggestions to 10**
 
-- vuepress-plugin-smooth-scroll <MyBadge text="Change Default" type="warn" />: Smooth scrolling, **enable by default**
+- vuepress-plugin-smooth-scroll: Smooth scrolling.
+
+- [**vuepress-plugin-comment**](https://vuepress-comment.mrhope.site/en/): Comment and reading function
+
+- [**vuepress-plugin-component**](../../guide/feature/component.md): Provide some out of the box plugins
+
+- [**vuepress-plugin-md-enhance**](https://vuepress-md-enhance.mrhope.site/): Provide more Markdown syntax
+
+- [**@mr-hope/vuepress-plugin-pwa**](pwa.md): PWA support
+
+- [**@mr-hope/vuepress-plugin-theme-color**](../../guide/feature/themecolor.md): Theme color and night mode support

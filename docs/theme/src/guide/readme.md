@@ -47,10 +47,8 @@ category: instruction
 
 - [**新增组件**](feature/component.md)
 
-  - [返回顶部按钮 `<BackToTop />`](feature/component.md#返回顶部按钮)
+  - [返回顶部按钮 `<BackToTop />`](feature/component.md#返回顶部按钮-backtotop)
 
-  - [徽章 `<MyBadge />`](feature/component.md#徽章): 在官方基础上增加了颜色支持
+  - [徽章 `<MyBadge />`](feature/component.md#徽章-mybadge): 在官方基础上增加了颜色支持
 
 - [**Markdown 增强**](markdown/readme.md)
-
-[^themeConfig]: 主题配置字段即 `.vuepress/config.js` 默认导出的 `themeConfig` 对象

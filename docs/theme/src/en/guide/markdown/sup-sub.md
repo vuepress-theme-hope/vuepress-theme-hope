@@ -1,14 +1,15 @@
 ---
 icon: superscript
+category: markdown
 ---
 
-# Superscript and Subscript <MyBadge text="V0.0.8" />
+# Superscript and Subscript
 
 Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Configuration
 
-```js
+```js {3-6}
 module.exports = {
   themeConfig: {
     markdown: {
@@ -24,7 +25,7 @@ module.exports = {
 - Use `^ ^` to mark the superscript.
 - Use `~ ~` to mark the subscript.
 
-## Demo
+::: details Demo
 
 - 19^th^
 - H~2~O
@@ -33,3 +34,5 @@ module.exports = {
 - 19^th^
 - H~2~O
 ```
+
+:::

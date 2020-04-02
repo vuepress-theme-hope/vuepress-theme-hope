@@ -1,9 +1,9 @@
 ---
 icon: emoji
-tag:
+category: style
+tags:
   - icon
   - style
-category: style
 ---
 
 # 图标支持
@@ -16,4 +16,4 @@ category: style
 @import '//at.alicdn.com/t/font_1446717_giwlq66d28j.css'
 ```
 
-图标的前置名默认为 `icon-`，可以在主题配置[^themeConfig]中的 `iconPrefix` 字段进行更改。
+图标的前置名默认为 `icon-`，可以在主题配置中的 `iconPrefix` 字段进行更改。

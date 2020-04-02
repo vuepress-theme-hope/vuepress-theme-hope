@@ -15,7 +15,7 @@ tags:
 
 默认配置如下：
 
-```js
+```js  {4-13}
 module.exports = {
   plugins: [
     /** 图片缩放插件 */

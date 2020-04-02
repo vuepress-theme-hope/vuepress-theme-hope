@@ -26,7 +26,7 @@ tags:
 
 ### baseLang
 
-- 类型: `String`
+- 类型: `string`
 - 默认值: `'zh-CN'`
 
 主目录所对应的语言。
@@ -41,7 +41,7 @@ tags:
 
 ### author
 
-- 类型: `String`
+- 类型: `string`
 - 必填: 否
 
 文章显示的默认作者
@@ -66,14 +66,14 @@ SideBarItem 新增
 
 ### footer.text
 
-- 类型: `String`
+- 类型: `string`
 - 默认值: `'Copyright © 2020-present <作者>'`
 
 页脚的默认文字。
 
 ### footer.displayDefault
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `false`
 
 是否显示默认页脚
@@ -86,7 +86,7 @@ SideBarItem 新增
 
 ### themeColor.allowDarkmode
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `true`
 
 是否开启暗黑模式支持
@@ -109,7 +109,7 @@ SideBarItem 新增
 
 使用 `themeConfig.markdown` 进行Markdown 增强配置。
 
-如果您不需要任何 Markdown 增强，请设置为 `markdown: false` 将其禁用。
+如果您不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
 
 ### markdown.enableAll
 
@@ -193,7 +193,7 @@ PWA 设置选项
 - 类型: `Record<string, string | string[]>`
 - 必填: 否
 
-加密配置，为一个对象，键名为匹配的路径，键值为对应的函数，接受字符串或字符串数组。
+加密配置，为一个对象，键名为匹配的路径，键值为对应的密码，接受字符串或字符串数组。
 
 ::: details 例子
 
@@ -252,56 +252,56 @@ PWA 设置选项
 
 ### iconPrefix
 
-- 类型: `String`
+- 类型: `string`
 - 默认值: `'icon-'`
 
 设置 iconfont 的图标前缀
 
 ### sidebarIcon
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `true`
 
 是否在侧边栏显示图标
 
 ### breadcrumb
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `true`
 
 是否全局启用路径导航
 
 ### breadcrumbIcon
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `true`
 
 是否在路径导航显示图标
 
 ### smoothScroll <MyBadge text="改变默认值" type="error" />
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `true`
 
 是否启用平滑滚动功能
 
 ### backToTop
 
-- 类型: `Boolean | Number`
+- 类型: `boolean | Number`
 - 默认值: `true`
 
 返回顶部按钮的配置。默认的触发距离为 300px，填入数字时可改变这一触发距离。填入 `false` 会禁用返回顶部按钮。
 
 ### repoDisplay
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `true`
 
 是否在导航栏显示仓库链接
 
 ### fullscreen
 
-- 类型: `Boolean`
+- 类型: `boolean`
 - 默认值: `true`
 
 是否显示 ”全屏“ 按钮

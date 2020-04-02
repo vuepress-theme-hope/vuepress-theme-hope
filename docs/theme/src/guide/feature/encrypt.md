@@ -1,7 +1,7 @@
 ---
 icon: extension
 category: function
-tag:
+tags:
   - encrypt
   - function
 ---

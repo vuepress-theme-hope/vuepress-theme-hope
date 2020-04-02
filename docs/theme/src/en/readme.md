@@ -7,23 +7,37 @@ tagline: A light Vuepress theme
 actionText: Get Started →
 actionLink: /en/guide/
 features:
-- title: Custom theme color and night mode
+- title: Custom theme color
   details: Supports custom theme colors and allows users to switch between preset theme colors
-  link: /en/guide/themecolor.html#custom-theme-color
-- title: Night mode
-  details: Switch between offical style and a cool night mode theme
-  link: /en/guide/themecolor.html#darkmode
+  link: /en/guide/feature/themecolor.html#custom-theme-color
+
+- title: Dark Mode
+  details: Switch between light and dark modes freely
+  link: /en/guide/feature/themecolor.html#darkmode
+
 - title: Pageviews and comments
-  details: with Valine and Vssue to start pageview statistics and comment support
-  link: /en/guide/comment.html
-- title: Enhancements to the default theme
-  details: Enhances a range of features based on the default theme, path navigation, footer support, author display, etc.
-- title: Icon Support
-  details: Icon support through the whole theme
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+  details: Start pageview statistics and comment support with Valine and Vssue
+  link: /en/guide/feature/comment.html
+
+- title: Blog support
+  details: add dates, tags and categories to your articles and display them based on visitor filters
+  link: /en/guide/feature/blog.html
+
+- title: More new features
+  details: Enhanced a series of features based on the default theme, including icon support, path navigation, footer support, author display, etc.
+
+- title: PWA support
+  details: The built-in PWA plugin will make your website more like an APP.
+
+- title: TS support
+  details: Turn on Typescript support for your Vuepress
+
+footer: MIT Licensed | Copyright © 2019-present Mr. Hope
 ---
 
-### vuepress-theme-hope is a light vuepress theme
+## Use themes
+
+You can use [vuepress-theme-hope template](https://github.com/Mister-Hope/vuepress-theme-hope-template) directly to start your vuepress journey.
 
 ### Install
 
@@ -42,6 +56,37 @@ module.exports = resolve({
 });
 ```
 
-::: tip Why using `resolve` function
-**vuepress-theme-hope** is extendsng from the official default theme. In order to reduce user configuration as much as possible, **vuepress-theme-hope** provides some additional configuration options that need to be processed before submitting to the official theme. In addition, **vuepress-theme-hope** will also automatically generate some configurations for you, such as automatically selecting the multi-language options in your theme configuration, generating the multi-language options in the project configuration for you, and automatically helping you complete the localization work.
+::: tip
+The purpose of introducing the resolve function is to give you full hints through TS's Interface and JSDoc when you edit the configuration.
+
+At the same time, the resolve function will also complete some default configurations for your current configuration items when you preview or package the project, reducing the calculation pressure when rendering the website.
 :::
+
+### FAQ
+
+If your project does not use typescript, you may also need to install typescript:
+
+```bash
+npm i -D typescript
+```
+
+And create a `tsconfig.json` file in your root directory
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5", // Any target except 'es3'
+    "experimentalDecorators": true,
+    "types": [
+      "@mr-hope/vuepress-theme-types"
+    ]
+  },
+  "include": [
+    "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder
+  ]
+}
+```
+
+If Typescript related errors appears in the conosle, that means Typescript is not correctly configured in your project.
+
+For more details, please see [FAQ](FAQ/readme.md)

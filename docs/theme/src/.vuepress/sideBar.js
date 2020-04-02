@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-30 19:11:31
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-04-02 16:47:52
  * @Description: 侧边栏配置
  */
 
@@ -27,6 +27,7 @@ module.exports = {
         children: [
           '',
           'icon',
+          'blog',
           'comment',
           'themecolor',
           'encrypt',
@@ -52,7 +53,14 @@ module.exports = {
         title: '插件配置',
         prefix: 'plugin/',
         icon: 'extension',
-        children: ['', 'copyright', 'medium-zoom', 'pwa']
+        children: [
+          '',
+          'container',
+          'copyright',
+          'md-enhance',
+          'medium-zoom',
+          'pwa'
+        ]
       }
     ],
 
@@ -94,24 +102,36 @@ module.exports = {
     '/en/guide/': [
       {
         title: 'Get Started',
-        icon: 'creative',
+        icon: 'creativefill',
         children: ['', 'install']
       },
       {
         title: 'Outlook',
-        icon: 'skinfill',
-        children: ['navbar', 'sidebar', 'breadcrumb', 'page', 'home']
+        icon: 'layout',
+        prefix: 'layout/',
+        children: ['', 'navbar', 'sidebar', 'breadcrumb', 'page', 'home']
       },
       {
-        title: 'New Feature',
-        icon: 'skinfill',
-        children: ['themecolor', 'fullscreen', 'comment', 'component']
+        title: 'New Features',
+        icon: 'discoverfill',
+        prefix: 'feature/',
+        children: [
+          '',
+          'icon',
+          'blog',
+          'comment',
+          'themecolor',
+          'encrypt',
+          'component',
+          'fullscreen',
+          'typescript'
+        ]
       },
       {
-        title: 'Markdown Enhance',
+        title: 'Markdown enhance',
         icon: 'markdown',
         prefix: 'markdown/',
-        children: ['', 'sup-sub', 'footnote', 'tex', 'flowchart']
+        children: ['', 'align', 'sup-sub', 'footnote', 'tex', 'flowchart']
       }
     ],
 
@@ -121,14 +141,20 @@ module.exports = {
       'page',
       'stylus',
       {
-        title: 'Plugin Config',
+        title: 'Plugins',
         prefix: 'plugin/',
         icon: 'extension',
-        children: ['', 'copyright', 'medium-zoom', 'pwa']
+        children: [
+          '',
+          'container',
+          'copyright',
+          'md-enhance',
+          'medium-zoom',
+          'pwa'
+        ]
       }
     ],
 
-    // fallback
     '/en/basic/': [
       {
         title: 'Markdown',
@@ -152,6 +178,6 @@ module.exports = {
       }
     ],
 
-    '/en/': ['', 'guide/', 'api/', 'basic/']
+    '/en/': ['', 'guide/', 'api/', 'basic/', 'FAQ/']
   }
 };

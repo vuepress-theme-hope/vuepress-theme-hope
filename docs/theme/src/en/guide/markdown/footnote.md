@@ -1,14 +1,15 @@
 ---
 icon: footnote
+category: markdown
 ---
 
-# Footnote <MyBadge text="V0.0.8" />
+# Footnote
 
 Let the Markdown file in your VuePress site support footnotes.
 
 ## Configuration
 
-```js
+```js {3,5,6}
 module.exports = {
   themeConfig: {
     markdown: {

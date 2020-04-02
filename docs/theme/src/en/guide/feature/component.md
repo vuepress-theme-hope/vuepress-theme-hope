@@ -1,5 +1,9 @@
 ---
 icon: extension
+category: function
+tags:
+  - components
+  - function
 ---
 
 # New Component
@@ -20,3 +24,11 @@ You can use this component in the title to add some status to the title or link:
 ``` md
 ### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
 ```
+
+## Back to top button `<BackToTop />` <MyBadge text = "Support local configuration" />
+
+vuepress-theme-hope adds a back-to-top control which will show up by 300px by default.
+
+The back to top button uses a round colored icon instead of the arrow in the default theme.
+
+You can disable it by setting `backToTop` in `themeConfig` to `false`.

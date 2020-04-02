@@ -4,70 +4,49 @@ icon: infofill
 
 # Introduction
 
-::: danger W.I.P.
-This theme is still being built, the API may contain rapid changes.
-
-If you met a bug while using, you can open an issue [here](https://github.com/Mister-Hope/vuepress-theme-hope/issues)
-:::
-
-## Theme Highlights
-
-The theme extends Vupress's default theme and largely maintains the Vuepress default theme style. At the same time, the theme is optimized as follows:
-
-- The appearance and enhancement of the navigation bar and sidebar, as well as icon support
-- Theme color, night mode and full screen button
-- Add readings, comments and icons, footer support for all pages
-- Added new path navigation
-
 ::: tip
+If you met a bug while using, you can open an issue [here](https://github.com/Mister-Hope/vuepress-theme-hope/issues)
+
 You should already be familiar with Vuepress's default theme, as all content related to the default theme will not be introduced.
 
 If you wish to read the Vuepress default theme configuration, please visit [Vuepress Default Theme Configuration](https://v1.vuepress.vuejs.org/theme/default-theme-config.html)
 :::
 
-## New Features
+## Theme Features
 
-- **Icon Support**
+- [**navbar**](layout/navbar.md)
 
-  Support for FontClass format icons has been added to the entire theme.
+  - [Icon support](layout/navbar.md#enhancement)
+  - [Group prefix](layout/navbar.md#enhancement)
+  - [Hide repo](layout/navbar.md)
 
-  Please import the icon css file in `index.styl` of `.vuepress/styles`. E.g:
+- [**Sidebar**](layout/sidebar.md)
 
-  ```css
-  @import '//at.alicdn.com/t/font_1426813_4mkpyb46f89.css'
-  ```
+  - [Icon support](layout/sidebar.md#enhancement)
+  - [Group Enhancement](layout/sidebar.md#enhancement)
 
-  The icon's predecessor defaults to `icon-`, which can be changed in the `iconPrefix` field in the theme configuration[^themeConfig].
+- [**Page**](layout/page.md)
 
-- [**NavBar**](navbar.md)
+  - [Viewing volume and author information display](layout/page.md#page-info-display)
+  - [Page Icon](layout/page.md#icon-support)
+  - [Path Navigation](layout/breadcrumb.md)
+  - [Custom footer](layout/page.md#custom-footer)
+  - [Home](layout/home.md)
+  - [Blog homepage](layout/home.md#blog-style)
 
-  - [Icon Support](navbar.md#icon-support)
-  - [Theme Color](themecolor.md#custom-theme-color)
-  - [Night Mode](themecolor.md#darkmode)
-  - [Fullscreen Button](fullscreen.md)
-  - [Style Enhance](navbar.md#style-change)
-  - [Home Page](home.md)
+- [**New Features**](feature/readme.md)
 
-- [**Page**](page.md)
+  - [Icon support](feature/icon.md)
+  - [Theme color switch](feature/themecolor.md)
+  - [Dark Mode](feature/themecolor.md)
+  - [Full Screen Button](feature/fullscreen.md)
+  - [Article Encryption](feature/encrypt.md)
+  - [Comment](feature/comment.md)
 
-  - [Page Info Display](page.md#page-info-display)
-  - [Icon Support](page.md#icon-support)
-  - [Comment](comment.md)
-  - [Footer](page.md#footer-support)
+- [**Add Component**](feature/component.md)
 
-- [**SideBar**](sidebar.md)
+  - [Back to Top Button `<BackToTop />](feature/component.md#back-to-top-button-backtotop)
 
-  - [Icon Support](sidebar.md#icon-support)
-  - [Group Enhancement](sidebar.md#group-enhancement)
+  - [Badge `<MyBadge />`](feature/component.md#badge-mybadge): Added color support on the official basis
 
-- [**Breadcrumb**](breadcrumb.md)
-
-  A new Breadcrumb component with icon support is added.
-
-- [**Components**](component.md)
-
-  - [Badge `<MyBadge />`](component.md#badge): Added color support based on the official one
-
-[^themeConfig]: The theme configuration field
-
-    `themeConfig` object in `.vuepress/config.js`
+- [**Markdown enhancement**](markdown/readme.md)

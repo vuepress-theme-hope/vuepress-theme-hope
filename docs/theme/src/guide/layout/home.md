@@ -1,6 +1,6 @@
 ---
 icon: homefill
-tag:
+tags:
   - home
   - layout
 category: layout

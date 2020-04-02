@@ -22,7 +22,7 @@ vuepress-theme-hope 在默认主题布局的基础上，增加了很多布局上
 
 - [普通页面](page.md)
 
-- [主页](hope.md)
+- [主页](home.md)
 
 ## 其他
 

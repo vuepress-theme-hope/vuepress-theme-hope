@@ -1,3 +1,10 @@
+---
+category: api
+tags: 
+ - plugin
+ - api
+---
+
 # vuepress-plugin-copyright <MyBadge text="New" />
 
 Handling copy operations in your VuePress site
@@ -10,7 +17,7 @@ The author name is automatically generated from the author information or sitena
 
 The default configuration is:
 
-```js
+```js {4-10}
 module.exports = {
   plugins: [
     /** Copy operation processing */

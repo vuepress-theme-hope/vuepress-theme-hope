@@ -1,7 +1,7 @@
 ---
 icon: full-screen
 category: function
-tag:
+tags:
   - fullscreen
   - function
 ---

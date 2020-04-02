@@ -1,14 +1,14 @@
 ---
 icon: flowchart
+category: markdown
 ---
-
-# flowchart <MyBadge text="V0.0.10+" />
+# Flowchart
 
 Let the Markdown file support flow chart in your VuePress site
 
 ## Configuration
 
-```js
+```js {3-5}
 module.exports = {
   themeConfig: {
     markdown: {
@@ -30,7 +30,7 @@ module.exports = {
 @flowend
 ```
 
-Available presets for now:
+Available presets:
 
 - `vue` (default)
 - `ant`

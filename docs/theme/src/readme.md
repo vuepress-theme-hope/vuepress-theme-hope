@@ -9,15 +9,19 @@ actionLink: /guide/
 features:
 - title: 主题色切换
   details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
-  link: /guide/themecolor.html#自定义主题色
+  link: /guide/feature/themecolor.html#自定义主题色
 
-- title: 夜间模式
-  details: 可以自由切换日间模式与夜间模式
-  link: /guide/themecolor.html#夜间模式
+- title: 深色模式
+  details: 可以自由切换浅色模式与深色模式
+  link: /guide/feature/themecolor.html#深色模式
 
 - title: 浏览量与评论
   details: 配合 Valine 与 Vssue 来开启阅读量统计与评论支持
-  link: /guide/comment.html
+  link: /guide/feature/comment.html
+
+- title: 博客支持
+  details: 为你的文章添加日期、标签和分类并按照访客筛选条件展示它们
+  link: /guide/feature/blog.html
 
 - title: 更多新特性
   details: 在默认主题基础上增强了一系列功能，包括图标支持、路径导航、页脚支持、作者显示等
@@ -60,7 +64,7 @@ module.exports = resolve({
 
 ### FAQ
 
-如果你的项目没有使用 typescript，你可能还需要安装 typescript
+如果你的项目没有使用 typescript，你可能还需要安装 typescript:
 
 ```bash
 npm i -D typescript
