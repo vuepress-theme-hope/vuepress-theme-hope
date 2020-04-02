@@ -2,19 +2,51 @@ import { Component, Vue } from 'vue-property-decorator';
 import { PageComputed } from 'vuepress-types';
 import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 
+/** 处理日期 */
+export const getDate = (date: string): (number | undefined)[] => {
+  const pattern = /\s*(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?\s*/u;
+  const [, year, month, day, hour, minute, second] = pattern.exec(date) || [];
+
+  const getNumber = (x: string): number | undefined =>
+    typeof x === 'undefined' ? undefined : Number(x);
+
+  return [
+    getNumber(year),
+    getNumber(month),
+    getNumber(day),
+    getNumber(hour),
+    getNumber(minute),
+    getNumber(second)
+  ];
+};
+
 /**
  * 日期比较
- * @param pageA 比较的页面1
- * @param pageB 比较的页面2
+ * @param dateA 比较的日期A
+ * @param dateB 比较的日期B
  */
-const compareDate = (pageA: PageComputed, pageB: PageComputed): number => {
-  if (!pageA.frontmatter.date) return -1;
-  if (!pageB.frontmatter.date) return 1;
+export const compareDate = (
+  dataA: string | undefined,
+  dataB: string | undefined
+): number => {
+  if (!dataA) return -1;
+  if (!dataB) return 1;
 
-  return (
-    new Date(pageB.frontmatter.date).getTime() -
-    new Date(pageA.frontmatter.date).getTime()
-  );
+  const compare = (
+    x: (number | undefined)[],
+    y: (number | undefined)[],
+    index = 0
+  ): number => {
+    if (index === 5) return 0;
+    if (typeof y[0] === 'undefined') return -1;
+    if (typeof x[0] === 'undefined') return 1;
+
+    if (y[0] - x[0] === 0) return compare(x, y, index + 1);
+
+    return y[0] - x[0];
+  };
+
+  return compare(getDate(dataA), getDate(dataB));
 };
 
 /**
@@ -55,12 +87,12 @@ const sortArticle = (pages: PageComputed[]): PageComputed[] =>
 
     if (prevSticky && nextSticky)
       return prevSticky === nextSticky
-        ? compareDate(prev, next)
+        ? compareDate(prev.frontmatter.date, next.frontmatter.date)
         : prevSticky - nextSticky;
     if (prevSticky && !nextSticky) return -1;
     if (!prevSticky && nextSticky) return 1;
 
-    return compareDate(prev, next);
+    return compareDate(prev.frontmatter.date, next.frontmatter.date);
   });
 
 const generatePagination = (
