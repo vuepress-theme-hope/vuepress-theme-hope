@@ -154,26 +154,26 @@ next: ../vuepress/
 
 [根目录访问主页](/)
 
-[相对路径主页](../readme.md)
+[相对路径主页](../../readme.md)
 
 [根目录访问关于](/about)
 
-[相对路径主页](../about.md)
+[相对路径关于](../../about.md)
 
 ```md
 [根目录访问主页](/)
 
-[相对路径主页](../readme.md)
+[相对路径主页](../../readme.md)
 
 [根目录访问关于](/about)
 
-[相对路径主页](../about.md)
+[相对路径关于](../../about.md)
 ```
 
 :::tip
-Vuepress还兼容如下跳转到主页的写法：
+Vuepress 还兼容如下跳转到主页的写法：
 
-- [相对路径访问，兼容markdown编写时相互跳转](../readme.md)
+- [相对路径访问，兼容 markdown 编写时相互跳转](../readme.md)
 
 - [根目录访问主页2](/readme.md)
 
@@ -265,7 +265,7 @@ Vuepress还兼容如下跳转到主页的写法：
 
 块级代码
 
-```
+```md
 Sample text here...
 ```
 

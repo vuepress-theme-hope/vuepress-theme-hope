@@ -1,13 +1,13 @@
 {
   "name": "@mr-hope/vuepress-plugin-comment",
-  "version": "0.1.0-rc.6",
+  "version": "0.1.0-rc.7",
   "description": "Comment plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test:serve": "vuepress dev tests",
-    "test:clean-serve": "vuepress dev tests --no-cache",
-    "test:build": "vuepress build tests"
+    "test:serve": "vuepress dev test/demo",
+    "test:clean-serve": "vuepress dev test/demo --no-cache",
+    "test:build": "vuepress build test/demo"
   },
   "publishConfig": {
     "access": "public"
@@ -26,9 +26,9 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://comment.mrhope.site",
+  "homepage": "https://vuepress-comment.mrhope.site",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.6",
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.7",
     "@vssue/api-bitbucket-v2": "^1.4.0",
     "@vssue/api-gitea-v1": "^1.4.2",
     "@vssue/api-gitee-v5": "^1.4.0",

@@ -5,7 +5,7 @@ tags:
  - api
 ---
 
-# @mr-hope/vuepress-plugin-pwa <MyBadge text="新增" />  <MyBadge text="主题色适配" />  <MyBadge text="夜间模式适配" />
+# @mr-hope/vuepress-plugin-pwa <MyBadge text="新增" />
 
 Progressive Web App Surpport
 

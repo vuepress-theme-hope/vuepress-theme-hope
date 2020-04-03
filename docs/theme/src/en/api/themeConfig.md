@@ -1,10 +1,14 @@
+---
+icon: api
+category: api
+tags: 
+  - api
+  - themeConfig
+---
+
 # Theme Config
 
-::: danger W.I.P.
-This theme is still being built, the API may contain rapid changes.
-
-If you met a bug while using, you can open an issue [here](https://github.com/Mister-Hope/vuepress-theme-hope/issues)
-:::
+In addition to viewing this guide, you can also directly view the [types file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) in the source code  or [configuration file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js) of this document.
 
 ::: warning
 By injecting, vuepress-theme-hope changes the default values of some configurations of the default theme.
@@ -16,81 +20,81 @@ The changes to all configuration items are carefully listed below the documentat
 
 The following configuration has been added to the themeConfig field in `.vuepress/config.js`:
 
-## iconPrefix <MyBadge text="New" />
+## Basic options
 
-- Type: `String`
-- Default: `'icon-'`
+These options require you to configure them correctly.
 
-Set Icon prefix
+### baseLang
 
-## nav <MyBadge text="Approve" type="warn" />
+- Type: `string`
+- Default: `'zh-CN'`
 
-NavBarItem adds `icon` fileds to support icon display.
+The language of the home directory.
 
-## smoothScroll <MyBadge text="Change Default" type="error" />
+This option ensures that the subject text in the main catalog page is displayed in the correct language. You can change it to other languages according to your needs.
 
-- 类型: `Boolean`
-- 默认值: `true`
+::: tip
+Currently only **Simplified Chinese** (zh-CN) and **English (United States)** (en-US) are available for i18n.
 
-Whether to enable smooth scroll function
+If you need multi-language support for other languages, you can [submit a PR to this file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
+:::
 
-## breadcrumb <MyBadge text="New" />
+### author
 
-- Type: `Boolean`
-- Default: `true`
+- Type: `string`
+- Required: No
 
-Whether to enable breadcrumb globally
+The default author of the article
 
-## breadcrumbIcon <MyBadge text="New" />
+### nav <MyBadge text="improved" type="warn" />
 
-- Type: `Boolean`
-- Default: `true`
+NavBarItem now has
 
-Whether to display the icon in the breadcrumb component
+- `icon` field to support icon display.
+- `prefix` field to automatically add group prefix
 
-## sidebarIcon <MyBadge text="New" />
+### sidebar <MyBadge text="improved" type="warn" />
 
-- Type: `Boolean`
-- Default: `true`
+SideBarItem now has
 
-Whether to display the icon in the sidebar
+- `icon` field to support icon display.
+- `prefix` field to automatically add group prefix
 
-## footer.text <MyBadge text="New" />
+## Footer settings
 
-- Type: `String`
-- Default: `'MIT Licensed | Copyright © 2019-present Mr.Hope'`
+Footer setting options
 
-Default text for footer
+### footer.text
 
-## footer.displayDefault <MyBadge text="New" />
+- Type: `string`
+- Default: `'Copyright © 2020-present <author>'`
 
-- Type: `Boolean`
+The default text for the footer.
+
+### footer.displayDefault
+
+- Type: `boolean`
 - Default: `false`
 
-Whether to display the default footer
+Whether to show the default footer
 
-## backToTop <MyBadge text="V0.0.14+" />
+## Theme and Darkmode
 
-- Type: `Boolean`
+Theme color and darkmode setting option configuration.
+
+If you don't need this feature, set `themeColor: false` to disable it.
+
+### themeColor.allowDarkmode
+
+- Type: `boolean`
 - Default: `true`
 
-Whether to display the backToTop button
-
-## repoDisplay <MyBadge text="New" />
-
-- Type: `Boolean`
-- Default: `true`
-
-Whether to display the repo link in the navigation bar
-
-## themeColor <MyBadge text="New" />
-
-Theme Color and Darkmode config.
+Whether to enable darkmode support
 
 ### themeColor.picker
 
 - Type: `Object`
-- Default:
+- Defaults:
 
   ```js
   {
@@ -101,75 +105,203 @@ Theme Color and Darkmode config.
   }
   ```
 
-### themeColor.allowDarkmode
+## Markdown enhancement
 
-- Type: `Boolean`
-- Default: `true`
+Use `themeConfig.markdown` for Markdown enhanced configuration.
 
-Whether to enable darkmode function
-
-## fullscreen <MyBadge text="New" />
-
-- Type: `Boolean`
-- Default: `true`
-
-Whether to display the "fullscreen" button
-
-## markdown <MyBadge text="New" /
-
-Markdown Enhancement Option
+If you don't need any Markdown enhancements, set it to `false` to disable it.
 
 ### markdown.enableAll
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable all the functions.
+Enable all features.
 
-### markdown.lineNumbers <MyBadge text="Change Default" type="error" />
+### markdown.lineNumbers <MyBadge text="Default value changed" type = "error" />
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to show line numbers to the left of each code block
+
+### markdown.sup
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to display the line number to the left of each code block.
-
-### markdown.sup >
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable the upper format support.
+Whether to enable superscript format support
 
 ### markdown.sub
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable the lower corner format support.
+Whether to enable subscript format support
 
 ### markdown.footnote
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable footnote format support.
+Whether to enable footnote format support
 
-### markdown.mathjax
+### markdown.tex
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable TeX syntax support.
+Whether to enable TeX syntax support
 
 ### markdown.flowchart
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable flowchart syntax support.
+Whether to enable flowchart syntax support
 
-## comment <MyBadge text="New" />
+## Comment settings
 
-Commnet options.
+For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation](http://comment.mrhope.site/en/api/)
 
-For Details, see [@mr-hope/vuepress-plugin-comment](http://comment.mrhope.site/en/api/)
+You can set it to `false` directly to disable the comment function
+
+## pwa
+
+PWA setting options
+
+## Encryption settings
+
+Encryption setting options
+
+### encrypt.global
+
+- Type: `string | string []`
+- Required: No
+
+Highest authority password, you can set multiple by using array
+
+### encrypt.globalEncrypt
+
+- Type: `boolean`
+- Default: `false`
+
+Whether global encryption
+
+### encrypt.config
+
+- Type: `Record <string, string | string []>`
+-Required: No
+
+The encryption configuration is an object with a key name matching the path and a key value corresponding to a password that accepts a string or an array of strings.
+
+::: details Example
+
+```js
+{
+  // This will encrypt the entire guide directory and both passwords will be available
+  "/guide/": ["1234", "5678"],
+  // this will only encrypt api / page.html
+  "/api/page.html": "1234"
+}
+```
+
+:::
+
+## Blog configuration
+
+Blog configuration. You can directly set `blog: false` to disable related functions.
+
+### blog.blogger
+
+- Type: `string`
+- Required: No
+
+Blogger name, default is `themeConfig.author`
+
+### blog.avatar
+
+- Type: `string`
+- Required: No
+
+Blogger avatar, default is `themeConfig.logo`
+
+### blog.sidebarDisplay
+
+- Type: `'mobile' | 'none' | 'always'`
+- Default: `'none'`
+
+Whether to show blogger information in the sidebar
+
+- `mobile`: Show in sidebar in mobile view
+- `'always'`: Always show in the sidebar
+- `'none'`: Never show in the sidebar
+
+### blog.intro
+
+- Type: `string`
+-Required: No
+
+Personal introduction address of the blogger.
+
+After filling in, you will be allowed to click on the avatar or name in "Blogger Information" to enter the personal introduction page.
+
+## Other configuration options
+
+The following are other configuration options provided by the theme. In general, you do not need to change them, but the theme also provides you with more configuration items about the theme.
+
+### iconPrefix
+
+- Type: `string`
+- Default: `'icon-'`
+
+Set iconfont icon prefix
+
+### sidebarIcon
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to show icons in the sidebar
+
+### breadcrumb
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to enable route navigation globally
+
+### breadcrumbIcon
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to show icons in route navigation
+
+### smoothScroll <MyBadge text="Default value changed" type="error" />
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to enable smooth scrolling
+
+### backToTop
+
+- Type: `boolean | Number`
+- Default: `true`
+
+Back to top button configuration. The default trigger distance is 300px, which can be changed when you fill in the number. Filling in `false` disables the back to top button.
+
+### repoDisplay
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to display the warehouse link in the navigation bar
+
+### fullscreen
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to show the "full screen" button

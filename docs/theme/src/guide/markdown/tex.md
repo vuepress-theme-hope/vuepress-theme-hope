@@ -5,7 +5,7 @@ category: markdown
 
 # Tex 语法支持
 
-让你的 VuePress 站点中的 Markdown 文件支持 Tex 语法。
+让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。
 
 ## 配置
 
@@ -14,7 +14,7 @@ module.exports = {
   themeConfig: {
     markdown: {
       // 启用 TEX 支持
-      mathjax: true
+      tex: true
     }
   }
 };
@@ -52,4 +52,4 @@ $$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right
 
 ### 更多
 
-关于具体的 Tex 语法，请看 [Latex 入门指南 → 第八章](https://liam.page/2014/09/08/latex-introduction/)
+关于具体的 Tex 语法，请看 [Katex 教程](https://vuepress-md-enhance.mrhope.site/guide/tex.html#%E8%BF%90%E7%AE%97%E7%AC%A6)

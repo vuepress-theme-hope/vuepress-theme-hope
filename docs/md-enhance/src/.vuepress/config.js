@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-24 11:40:48
+ * @LastEditTime: 2020-04-02 19:08:10
  * @Description: Vuepress配置
  */
 const resolve = require('vuepress-theme-hope/resolve');
@@ -95,6 +95,6 @@ module.exports = resolve({
     },
 
     repo: 'https://github.com/mister-hope/vuepress-theme-hope/',
-    docsDir: 'docs/md-enhance'
+    docsDir: 'docs/md-enhance/src'
   }
 });

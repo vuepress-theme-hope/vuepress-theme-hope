@@ -1,3 +1,7 @@
+---
+icon: infofill
+---
+
 # Basic
 
 Here are some docs about Vuepress.

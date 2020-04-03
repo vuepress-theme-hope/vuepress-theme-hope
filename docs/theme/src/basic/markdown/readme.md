@@ -5,8 +5,6 @@ tags: markdown
 
 # Markdown介绍
 
-![Markdown](https://markdown.tw/images/208x128.png)
-
 ## 概述
 
 ### 目的
@@ -15,7 +13,7 @@ Markdown 的目标是实现「易读易写」。
 
 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
 
-不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 [Setext] [1]、[atx] [2]、[Textile] [3]、[reStructuredText] [4]、[Grutatext] [5] 和 [EtText] [6]，然而最大灵感来源其实是纯文字的电子邮件格式。
+不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 [Setext][1]、[atx][2]、[Textile][3]、[reStructuredText][4]、[Grutatext][5] 和 [EtText][6]，然而最大灵感来源其实是纯文字的电子邮件格式。
 
   [1]: http://docutils.sourceforge.net/mirror/setext.html
   [2]: http://www.aaronsw.com/2002/atx/
@@ -115,7 +113,7 @@ Markdown 将会把它转换为：
 
 标题能显示出文章的结构。
 
-Markdown 支持两种标题的语法，[Setext] [1] 和 [atx] [2] 形式。
+Markdown 支持两种标题的语法，[Setext][1] 和 [atx][2] 形式。
 
 Setext 形式是用底线的形式，利用 `=` （最高阶标题）和 `-` （第二阶标题），例如：
 
@@ -374,7 +372,7 @@ Markdown 会转换成：
 
 Markdown 支持两种形式的链接语法： *行内*和*参考*两种形式。
 
-不管是哪一种，链接的文字都是用 [方括号] 来标记。
+不管是哪一种，链接的文字都是用 `[方括号]` 来标记。
 
 要建立一个行内形式的链接，只要在方块括号后面马上接著括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：
 
@@ -397,10 +395,6 @@ Markdown 支持两种形式的链接语法： *行内*和*参考*两种形式。
 参考形式的链接使用另外一个方括号接在链接文字的括号后面，而在第二个方括号里面要填入用以辨识链接的标签：
 
     This is [an example][id] reference-style link.
-
-你也可以选择性地在两个方括号中间加上空白：
-
-    This is [an example] [id] reference-style link.
 
 接著，在文件的任意处，你可以把这个标签的链接内容定义出来：
 
@@ -458,8 +452,8 @@ Markdown 支持两种形式的链接语法： *行内*和*参考*两种形式。
 
 下面是一个参考式链接的范例：
 
-    I get 10 times more traffic from [Google] [1] than from
-    [Yahoo] [2] or [MSN] [3].
+    I get 10 times more traffic from [Google][1] than from
+    [Yahoo][2] or [MSN][3].
 
       [1]: http://google.com/        "Google"
       [2]: http://search.yahoo.com/  "Yahoo Search"
@@ -603,7 +597,7 @@ Markdown 使用一种和链接很相似的语法来标记图片，同样也允�
 
 ### 其他文本样式
 
-- 删除:`~~Italics~~`
+- 删除:`~~delete~~`
 - 段落 : 段落之间空一行
 - 换行符 : 一行结束时输入两个空格
 
@@ -677,7 +671,7 @@ Markdown 支持在下面这些符号前面加上反斜线来帮助插入普通�
 
 `:emoji名称:`
 
-eg:`:smile:`
+eg:`:smile:` :smile:
 
 ## Markdown效果演示
 

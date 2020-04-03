@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-24 11:40:59
+ * @LastEditTime: 2020-04-02 19:08:21
  * @Description: Vuepress配置
  */
 
@@ -161,6 +161,6 @@ module.exports = resolve({
     },
 
     repo: 'https://github.com/mister-hope/vuepress-theme-hope',
-    docsDir: 'docs/comment'
+    docsDir: 'docs/comment/src'
   }
 });

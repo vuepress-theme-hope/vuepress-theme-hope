@@ -1,10 +1,14 @@
 ---
 icon: skinfill
+category: function
+tags:
+  - style
+  - function
 ---
 
 # Theme color and Night mode
 
-vuepress-theme-hope implements the theme color and night mode functions with built-in `@mr-hope/vuepress-plugin-theme-color`.
+vuepress-theme-hope implements the theme color and darkmode functions with built-in `@mr-hope/vuepress-plugin-theme-color`.
 
 `themeConfig.themeColor` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option.
 
@@ -20,22 +24,29 @@ You can disable it by setting the theme field's `themeConfig.themeColor.picker` 
 
 You need to configure `themeConfig.themeColor.picker` in the format ``colorname1: colorvalue, colorname2: colorvalue, ... }`:
 
-```js
+::: details Example
+
+```js {5-10}
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     themeColor: {
       picker: {
-        red: '#f00',
-        green: '0f0',
-        blue: '00f'
+        blue: '#2196f3',
+        red: '#f26d6d',
+        green: '#3eaf7c',
+        orange: '#fb9b5f'
       }
     }
   }
 }
 ```
 
-Also, in order to let the stylus compiler to work, you also need to assign the color variable to `$colorPicker` and write it to `.vuepress/styles/palette.styl`:
+:::
+
+In order to let the stylus compiler to work, you also need to assign the color variable to `$colorPicker` and write it to `.vuepress/styles/palette.styl`:
+
+::: details Example
 
 ```stylus
 // .vuepress/styles/palette.styl
@@ -46,8 +57,12 @@ $colorPicker = {
 }
 ```
 
-## Nightmode
+:::
 
-Enable by default.
+## Darkmode
 
-You can disable night mode by setting `themeConfig.allowNightmode` field to `false`.
+Enable by default, you can set the `themeColor.allowDarkmode` in the `themeConfig` to `false` to disable the dark mode.
+
+In dark mode, the page uses a black background to protect your eyes.
+
+![Darkmode](./assets/darkmode.png)

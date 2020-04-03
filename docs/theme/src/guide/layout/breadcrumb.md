@@ -1,6 +1,6 @@
 ---
 icon: breadcrumb
-tag:
+tags:
   - component
   - layout
 category: layout
@@ -37,5 +37,5 @@ category: layout
   
     该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 frontmatter 中设置 `breadcrumb: false` 来局部禁用它。
   
-    当然你也可以将 `themeConfig.breadcrumb` 字符设置为 `false` 来全局禁用它，之在特定页面的 frontmatter 中设置 `breadcrumb: true` 来局部启用它。
+    当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 frontmatter 中设置 `breadcrumb: true` 来局部启用它。
     :::

@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Hope
  * @Date: 2019-07-05 00:14:26
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 17:28:13
+ * @LastEditors: Mr.Hope
+ * @LastEditTime: 2020-04-02 19:36:03
  * @Description: Vuepress配置
  */
 
@@ -212,22 +212,7 @@ module.exports = {
           '/en/api/': ['', 'valine', 'vssue']
         }
       }
-    },
-
-    /** repo地址 */
-    repo: 'https://github.com/mister-hope/vuepress-plugin-comment',
-
-    /** 文档目录 */
-    docsDir: 'docs',
-
-    /** 自定义仓库链接文字 */
-    repoLabel: 'Github',
-
-    /** 开启编辑此页链接 */
-    editLinks: true, // 默认是 false, 设置为 true 来启用
-
-    /** 编辑此页链接提示文字 */
-    editLinkText: '在 GitHub 上编辑此页' // 默认为 "Edit this page"
+    }
   },
 
   plugins: [

@@ -32,7 +32,7 @@ tags:
 
 - 类型: `string`
 - 必填: 否
-- 格式: `YYYY/MM/DD hh:mm` 或 `YYYY/MM/DD`
+- 格式: `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` 或 `YYYY/MM/DD` `YYYY-MM-DD`
 
 设置当前页面的写作时间
 
@@ -43,7 +43,7 @@ tags:
 
 设置当前页面的分类
 
-## tag
+## tags
 
 - 类型: `string | string[]`
 - 必填: 否

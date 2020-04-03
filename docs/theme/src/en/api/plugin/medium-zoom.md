@@ -1,3 +1,10 @@
+---
+category: api
+tags: 
+ - plugin
+ - api
+---
+
 # @vuepress/medium-zoom <MyBadge text="New" />
 
 This plugin will make your images support click zoom.
@@ -8,7 +15,7 @@ Turn on the function and make night mode adaptation.
 
 The default configuration is:
 
-```js
+```js {3-12}
 module.exports = {
   plugins: [
     [

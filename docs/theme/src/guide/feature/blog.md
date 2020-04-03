@@ -1,3 +1,11 @@
+---
+icon: blog
+category: function
+tags:
+  - blog
+  - function
+---
+
 # 博客相关
 
 主题通过配置 `@vuepress/plugin-blog` 启用了一些博客功能。

@@ -1,51 +1,15 @@
-# vuepress-plugin-container <MyBadge text="inherited" /> <MyBadge text="Default Chinese" />
+---
+category: api
+tags: 
+ - plugin
+ - api
+---
 
-Register a new Markdown container in your VuePress site.
+# vuepress-plugin-container <MyBadge text="improve" />
 
-## Default configuration instructions
-
-By default, the default language path is changed to Chinese [^i18n].
-
-The `center` and `right` containers have been added.
-
-The default configuration is:
-
-```js
-module.exports = {
-  plugins: [
-    /** container config */
-    [
-      'container', {
-        type: 'tip',
-        defaultTitle: {
-          '/': '提示',
-          '/en/': 'Tips'
-        }
-      }
-    ],
-    [
-      'container', {
-        type: 'warning',
-        defaultTitle: {
-          '/': '注意',
-          '/en/': 'Note'
-        }
-      }
-    ],
-    [
-      'container', {
-        type: 'danger',
-        defaultTitle: {
-          '/': '警告',
-          '/en/': 'Warning'
-        }
-      }
-    ],
-    ['container', { type: 'right', defaultTitle: '', marker: '~' }],
-    ['container', { type: 'center', defaultTitle: '', marker: '~' }]
-  ]
-};
-```
+::: warning
+Please note that this plugin is applied to alignment in markdown enhancements, so if you disable this plugin, you will not be able to use custom alignment and the prompt boxes provided by the default theme.
+:::
 
 ## Configuration Item
 
@@ -70,7 +34,3 @@ I am in the middle
 ::: right
 I am on the right
 :::
-
-[^i18n]: **Multi-language configuration changes**
-
-    This topic changes the default path in the multi-language configuration to Chinese and moves the English to the `/en/` path.

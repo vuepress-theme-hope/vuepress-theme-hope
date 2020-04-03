@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-08 20:45:09
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-30 22:55:23
- * @Description: 主题颜色选择
--->
 <template>
   <div class="theme-options">
     <ul v-if="theme.colorList && theme.colorList.length !== 0" class="themecolor-select">
@@ -58,7 +51,7 @@ export default class ThemeOptions extends Mixins(darkmodeMixin) {
 
   private get text() {
     return (
-      this.$themeLocaleConfig.themeColor || i18n.getDefaultLocale().themeColor
+      i18n.getLocale(this.$lang).themeColor || i18n.getDefaultLocale().themeColor
     );
   }
 

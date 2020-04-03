@@ -41,6 +41,7 @@ npm i -D typescript
 ```json
 {
   "compilerOptions": {
+    "target": "es5", // 任何不等于 es3 的 target 均可
     "types": [
       "@mr-hope/vuepress-theme-types"
     ]

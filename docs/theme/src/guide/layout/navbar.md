@@ -55,7 +55,7 @@ module.exports = {
 
 - repo 隐藏
 
-  可以将 `themeConfig` 中添加 `repoDisplay` 为 `false` 来取消导航栏右侧的库链接显示。
+  可以将 `themeConfig` 中设置 `repoDisplay` 为 `false` 来取消导航栏右侧的库链接显示。
 
 - 主题色与夜间模式按钮
 
