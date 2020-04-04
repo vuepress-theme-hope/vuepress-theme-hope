@@ -36,7 +36,7 @@
     "@typescript-eslint/parser": "2.26.0",
     "@types/chai": "4.2.11",
     "@types/mocha": "7.0.2",
-    "@vue/cli-plugin-unit-mocha": "4.2.3",
+    "@vue/cli-plugin-unit-mocha": "4.3.0",
     "@vue/cli-service": "4.2.3",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "5.0.2",
