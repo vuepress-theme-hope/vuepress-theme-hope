@@ -102,7 +102,8 @@ export default class Pagination extends Vue {
 
   private get text() {
     return (
-      this.$themeLocaleConfig.pagination || i18n.getDefaultLocale().pagination
+      i18n.getLocale(this.$lang).pagination ||
+      i18n.getDefaultLocale().pagination
     );
   }
 

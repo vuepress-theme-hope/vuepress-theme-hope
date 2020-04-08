@@ -6,7 +6,7 @@ node_js:
 install:
   - yarn global add lerna
   - yarn run lerna:bootstrap
-  - yarn run tsc
+  - yarn run typescript:compile
 jobs:
   include:
     # 测试并部署 DEMO

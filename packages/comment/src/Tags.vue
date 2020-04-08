@@ -26,6 +26,7 @@ export default class Tags extends Vue {
   /** 点击标签导航 */
   private clickTag(tagName: string) {
     const path = `/tag/${tagName}/`;
+    if (this.$route.path !== path) this.$router.push(path);
   }
 
   /** 标签颜色 */

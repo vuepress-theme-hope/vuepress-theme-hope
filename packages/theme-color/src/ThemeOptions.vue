@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-22 15:12:52
+ * @LastEditTime: 2020-04-02 19:44:44
  * @Description: 主题颜色选择
 -->
 <template>
@@ -56,7 +56,7 @@ export default class ThemeOptions extends Vue {
 
   private get text() {
     return (
-      this.$themeLocaleConfig.themeColor || i18n.getDefaultLocale().themeColor
+      i18n.getLocale(this.$lang).themeColor || i18n.getDefaultLocale().themeColor
     );
   }
 

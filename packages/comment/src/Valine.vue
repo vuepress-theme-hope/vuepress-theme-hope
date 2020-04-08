@@ -76,7 +76,7 @@ export default class Valine extends Vue {
       appKey: valineConfig.appKey, // Your appKey
       placeholder:
         valineConfig.placeholder ||
-        this.$themeLocaleConfig.valineHolder ||
+        i18n.getLocale(this.$lang).valineHolder ||
         i18n.getDefaultLocale().valineHolder,
       meta: valineConfig.meta || ['nick', 'mail', 'link'],
       notify: valineConfig.notify !== false,
