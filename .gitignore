@@ -12,5 +12,4 @@ packages/**/*.d.ts
 
 !packages/**/test/**/*.js
 
-yarn.lock
 *.map
