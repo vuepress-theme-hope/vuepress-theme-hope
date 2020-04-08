@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0-rc.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.7...v0.1.0-rc.8) (2020-04-08)
+
+### Bug Fixes
+
+* fix tag navigate issue ([c7b9b00](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c7b9b002bdd203c4dfd0654713a5cbbf1be111c0)), closes [#80](https://github.com/Mister-Hope/vuepress-theme-hope/issues/80)
+* **theme:** fix tag display issue ([b6e5f49](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b6e5f49ecd217c9ece4b353071484c960f2e90db))
+
 ## [0.1.0-rc.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.6...v0.1.0-rc.7) (2020-03-31)
 
 ### Bug Fixes

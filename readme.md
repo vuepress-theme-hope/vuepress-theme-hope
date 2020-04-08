@@ -1,4 +1,4 @@
-# vuepress-theme-hope ![Status](https://img.shields.io/badge/Status-W.I.P-red)
+# vuepress-theme-hope
 
 [![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
 [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)
