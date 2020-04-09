@@ -24,7 +24,7 @@
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.1.0-rc.8",
     "@mr-hope/vuepress-plugin-pwa": "^0.1.0-rc.8",
-    "@mr-hope/vuepress-plugin-theme-color": "^0.1.0-rc.8",
+    "@mr-hope/vuepress-plugin-theme-color": "0.1.0-rc.8",
     "vuepress-types": "0.9.1"
   }
 }

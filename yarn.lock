@@ -1830,6 +1830,14 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@mr-hope/vuepress-plugin-theme-color@0.1.0-rc.8", "@mr-hope/vuepress-plugin-theme-color@^0.1.0-rc.8":
+  version "0.1.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@mr-hope/vuepress-plugin-theme-color/-/vuepress-plugin-theme-color-0.1.0-rc.8.tgz#77164e37cad666d66f9a848e4647291613d1e55c"
+  integrity sha512-3D0teU/zknzJi1w+W/xcea7AtqAlfOpiHdblS5eDviaXCxb45z3z4gTP4delMAdtnwUTTwNowh13/2fq6jfpuA==
+  dependencies:
+    "@mr-hope/vuepress-shared-utils" "^0.1.0-rc.8"
+    vuepress-plugin-typescript "^0.2.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
