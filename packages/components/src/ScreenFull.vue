@@ -87,7 +87,7 @@ export default class ScreenFull extends Vue {
       fill currentcolor
 
     .fullScreen:hover, .cacelFullScreen
-      color $accentColor
+      color var(--accent-color, $accentColor)
 
     .cacelFullScreen:hover
       color #aaa

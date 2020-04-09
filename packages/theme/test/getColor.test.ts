@@ -14,13 +14,17 @@ it('Get vars from palette.styl', () => {
       '--text-color': '#2c3e50',
       '--background-color': '#fff',
       '--border-color': '#eaecef',
+      '--box-shadow-color': '#f0f1f2',
+      '--card-shadow-color': 'rgba(0, 0, 0, 0.15)',
       '--code-bg-color': '#ecf4fa',
       '--arrow-bg-color': '#ccc'
     },
     dark: {
       '--text-color': '#9e9e9e',
       '--background-color': '#1e1e1e',
-      '--border-color': '#151310',
+      '--border-color': '#302d28',
+      '--box-shadow-color': '#0f0e0d',
+      '--card-shadow-color': '#0f0e0d',
       '--code-bg-color': '#282c34',
       '--arrow-bg-color': '#333'
     }

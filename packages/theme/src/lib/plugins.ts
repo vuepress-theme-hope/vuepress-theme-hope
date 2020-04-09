@@ -23,9 +23,6 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     /** PWA 插件 */
     ['@mr-hope/pwa', options.pwa],
 
-    // /** 主题色插件 */
-    ['@mr-hope/theme-color', options.themeColor],
-
     /** 自动激活侧边栏标题 */
     ['@vuepress/active-header-links', options.activeHeaderLinks],
 

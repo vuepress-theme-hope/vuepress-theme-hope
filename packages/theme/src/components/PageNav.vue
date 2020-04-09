@@ -132,7 +132,7 @@ export default class PageNav extends Vue {
   .inner
     min-height 2rem
     margin-top 0
-    border-top 1px solid $borderColor
+    border-top 1px solid var(--border-color)
     padding-top 1rem
     overflow auto // clear float
 

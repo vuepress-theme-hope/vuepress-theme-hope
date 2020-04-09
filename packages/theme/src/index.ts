@@ -19,7 +19,6 @@ const getAlias = (
     );
 
   const commentEnabled = themeConfig.comment !== false;
-  const themeColorEnabled = themeConfig.themeColor !== false;
   const noopModule = 'vuepress-theme-hope/src/lib/noopModule.js';
 
   return {
@@ -31,9 +30,6 @@ const getAlias = (
       : noopModule,
     '@PageInfo': commentEnabled
       ? '@mr-hope/vuepress-plugin-comment/PageInfo.vue'
-      : noopModule,
-    '@ThemeColor': themeColorEnabled
-      ? '@mr-hope/vuepress-plugin-theme-color/ThemeColor.vue'
       : noopModule
   };
 };

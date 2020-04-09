@@ -1,12 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-10-09 12:09:44
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-26 16:42:48
- * @Description: 合并对象
- */
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IAnyObject = Record<string, any>;
 
 /**

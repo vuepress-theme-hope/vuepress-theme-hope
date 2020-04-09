@@ -35,6 +35,31 @@ export default class Sidebar extends Vue {
 
 <style lang="stylus">
 .sidebar
+  position fixed
+  z-index 10
+  top $navbarHeight
+  left 0
+  bottom 0
+  box-sizing border-box
+  width $sidebarWidth
+  margin 0
+  background-color var(--background-color)
+  font-size 16px
+  overflow-y auto
+
+  // narrow desktop / iPad
+  @media (max-width: $MQNarrow)
+    font-size 15px
+    width $mobileSidebarWidth
+
+  // wide mobile
+  @media (max-width: $MQMobile)
+    top 0
+    padding-top $navbarHeight
+    transform translateX(-100%)
+    transition transform 0.2s ease
+    box-shadow 2px 0 8px var(--box-shadow-color)
+
   ul
     padding 0
     margin 0
@@ -42,13 +67,14 @@ export default class Sidebar extends Vue {
 
   a
     display inline-block
+    color var(--text-color)
 
   .blogger-info.mobile
     display none
 
   .nav-links
     display none
-    border-bottom 1px solid $borderColor
+    border-bottom 1px solid var(--border-color)
     padding 0.5rem 0 0.75rem 0
 
     a

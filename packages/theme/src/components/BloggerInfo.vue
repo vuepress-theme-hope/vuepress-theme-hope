@@ -96,10 +96,10 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
       cursor pointer
 
       &:hover
-        color $accentColor
+        color var(--accent-color)
 
       &:first-child
-        border-right 1px solid #333
+        border-right 1px solid var(--grey3)
 
       .num
         line-height 1.5

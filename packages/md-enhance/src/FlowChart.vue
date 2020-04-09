@@ -59,7 +59,7 @@ export default class FlowChart extends Vue {
     display flex
     justify-content center
     align-items center
-    background-color #f3f6f8
+    background-color var(--grey15, #eee)
 
   @media (max-width: $MQMobileNarrow)
     margin 0 -1.5rem
@@ -68,7 +68,7 @@ export default class FlowChart extends Vue {
   svg.md-flowchart-loading-icon
     width 40px
     height 40px
-    fill $accentColor
+    fill var(--accent-color, $accentColor)
 
 .operation-element, .parallel-element
   rx 5px

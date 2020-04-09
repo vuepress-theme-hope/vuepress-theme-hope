@@ -98,7 +98,7 @@ export default class PageEdit extends Vue {
     display inline-block
 
     a
-      color lighten($textColor, 25%)
+      color var(--accent-color-l10)
       margin-right 0.25rem
 
   .last-updated
@@ -107,11 +107,11 @@ export default class PageEdit extends Vue {
 
     .prefix
       font-weight 500
-      color lighten($textColor, 25%)
+      color var(--text-color-l25)
 
     .time
       font-weight 400
-      color #aaa
+      color var(--light-grey)
 
 @media (max-width: $MQMobile)
   .page-edit

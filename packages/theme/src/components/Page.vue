@@ -110,4 +110,14 @@ export default class Page extends Vue {
 .page
   padding-bottom 2rem
   display block
+  padding-left $sidebarWidth
+
+  // narrow desktop / iPad
+  @media (max-width: $MQNarrow)
+    padding-left $mobileSidebarWidth
+
+    
+  // wide mobile
+  @media (max-width: $MQMobile)
+    padding-left 0
 </style>

@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6
         padding-right 0
 
       &.is-active a
-        color #7a7a7a
+        color var(--light-grey, #999)
         cursor default
         pointer-events none
 
@@ -183,6 +183,6 @@ h1, h2, h3, h4, h5, h6
           text-decoration underline
 
     li+li::before
-      color #b5b5b5
+      color var(--light-grey, #999)
       content '\0002f'
 </style>

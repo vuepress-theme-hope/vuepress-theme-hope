@@ -1,0 +1,74 @@
+// 导航栏样式更新
+.navbar
+  // 更新搜索框样式
+  .search-box input
+    border-color transparent
+    border-radius 0.25em
+
+    @media (max-width: $MQMobile)
+      left 0
+
+    @media (min-width: $MQNarrow)
+      background-color #efeef4
+
+    &:focus
+      background-color var(--background-color)
+      border-color var(--accent-color)
+
+.theme-dark
+  // 导航栏
+  .navbar, .search-box
+    input
+      color var(--text-color)
+      background-color var(--background-color) !important
+
+      @media (min-width: $MQNarrow)
+        border-color var(--border-color)
+        background-color lighten($nightBgColor, 10%) !important
+
+      &:focus
+        background-color lighten($nightBgColor, 10%) !important
+
+    .suggestion
+      a
+        color darken($nightTextColor, 35%)
+
+      &.focused
+        background-color #0c0b0a
+
+        a
+          color var(--accent-color)
+          border-color var(--accent-color)
+
+    .suggestions
+      border-color var(--border-color)
+      background-color var(--white)
+
+// for $themeColorName, $themeColor in $colorPicker
+//   .theme-{$themeColorName}
+//     // 搜索框
+//     .search-box
+//       input
+//         color darken(desaturate($themeColor, 25%), 25%)
+//         background-size 1rem
+
+//         &:focus
+//           border-color $themeColor
+
+//       .suggestions
+//         background #fff
+
+//       .suggestion
+//         a
+//           color lighten(desaturate($themeColor, 25%), 25%)
+
+//         &.focused
+//           background-color #f3f4f5
+
+//           a
+//             color $themeColor
+
+//     @media (max-width: $MQNarrow)
+//       .search-box
+//         input
+//           border-color transparent

@@ -1,0 +1,13 @@
+
+for $themeColorName, $themeColor in $colorPicker
+  .theme-{$themeColorName}
+    // 进度条颜色
+    #nprogress
+      .bar
+        background-color $themeColor
+
+      .peg
+        box-shadow 0 0 10px $themeColor, 0 0 5px $themeColor
+
+      .spinner-icon
+        border-color $themeColor

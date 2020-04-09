@@ -24,7 +24,7 @@ const defaultConfig = {
     '--arrow-bg-color': '#ccc',
     '--dark-grey': '#666',
     '--grey3': '#333',
-    '--grey15': '#eee',
+    '--grey14': '#eee',
     '--light-grey': '#999',
     '--box-shadow-color': '#f0f1f2',
     '--card-shadow-color': 'rgba(0, 0, 0, 0.15)'
@@ -38,7 +38,7 @@ const defaultConfig = {
     '--arrow-bg-color': '#666',
     '--dark-grey': '#999',
     '--grey3': '#ccc',
-    '--grey15': '#111',
+    '--grey14': '#111',
     '--light-grey': '#666',
     '--box-shadow-color': '#0f0e0d',
     '--card-shadow-color': 'rgba(255, 255, 255, 0.15)'

@@ -88,15 +88,15 @@ export default class BackToTop extends Vue {
   bottom 5rem
   right 2rem
   width 2rem
-  color $accentColor
-  background-color #fff
+  color var(--accent-color, $accentColor)
+  background-color var(--background-color, #fff)
   border-radius 50%
   overflow hidden
   z-index 1
   fill currentcolor
 
 .back-to-top:hover
-  color lighten($accentColor, 30%)
+  color var(--accent-color-l25, lighten($accentColor, 25%))
 
 .fade-enter-active, .fade-leave-active
   transition opacity 0.3s

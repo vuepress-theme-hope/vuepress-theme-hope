@@ -1,5 +1,6 @@
 import { LocaleConfig, ThemeConfig } from 'vuepress-types/types/config';
 import { PageComputed, PageFrontmatter } from 'vuepress-types/types/page';
+// import { ColorOption } from './hopeConfig';
 import { SiteData } from 'vuepress-types/types/context';
 
 declare module 'vue/types/vue' {

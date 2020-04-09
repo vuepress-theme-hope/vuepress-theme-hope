@@ -66,7 +66,7 @@ export default class CategoryList extends Vue {
     border-radius $borderRadius
     font-size 14px
     border-radius 0.25rem
-    box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
+    box-shadow 0 1px 4px 0 var(--card-shadow-color)
     overflow hidden
     transition all 0.5s
 
@@ -78,11 +78,11 @@ export default class CategoryList extends Vue {
       padding 6px 12px
       justify-content space-between
       align-items center
-      color #666
+      color var(--dark-grey)
 
       &:hover, &.active
-        background-color $accentColor
-        color #fff
+        background-color var(--accent-color)
+        color var(--white)
 
       .category-num
         margin-left 4px
@@ -92,5 +92,5 @@ export default class CategoryList extends Vue {
         line-height 1rem
         border-radius 0.5rem
         font-size 0.7rem
-        color #fff
+        color var(--white)
 </style>

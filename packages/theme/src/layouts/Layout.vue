@@ -59,3 +59,14 @@ export default class Layout extends Mixins(
   }
 }
 </script>
+
+<style lang="stylus">
+.sidebar-mask
+  position fixed
+  z-index 9
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  display none
+</style>

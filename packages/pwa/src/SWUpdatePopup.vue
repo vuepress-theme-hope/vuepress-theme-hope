@@ -98,8 +98,9 @@ export default class SWUpdatePopup extends Vue {
   justify-content center
   align-items center
   border-radius 6px
-  background #fff
-  box-shadow 2px 2px 8px 4px rgba(0, 0, 0, 0.15)
+  color var(--text-color, $textColor)
+  background var(--background-color, #fff)
+  border 1px solid var(--grey12, #bbb)
   z-index 2
   cursor pointer
 
@@ -110,7 +111,7 @@ export default class SWUpdatePopup extends Vue {
     width 24px
     height 24px
     margin-left 6px
-    background-color $accentColor
+    background-color var(--accent-color, $accentColor)
     border-radius 50%
 
     svg
@@ -118,7 +119,7 @@ export default class SWUpdatePopup extends Vue {
       width 70%
       height 70%
       margin 15%
-      fill #fff
+      fill var(--white, #fff)
 
 .sw-update-popup-enter-active, .sw-update-popup-leave-active
   transition opacity 0.3s, transform 0.3s

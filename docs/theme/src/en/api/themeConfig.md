@@ -84,10 +84,10 @@ Theme color and darkmode setting option configuration.
 
 If you don't need this feature, set `themeColor: false` to disable it.
 
-### themeColor.allowDarkmode
+### themeColor.darkmode
 
-- Type: `boolean`
-- Default: `true`
+- Type: `'auto' | 'switch' | 'disable'`
+- Default: `'auto'`
 
 Whether to enable darkmode support
 

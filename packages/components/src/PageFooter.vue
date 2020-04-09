@@ -39,7 +39,10 @@ export default class PageFooter extends Vue {
 <style lang="stylus">
 .footer
   padding 1rem 2.5rem
-  border-top 1px solid $borderColor
+  border-top 1px solid var(--border-color, $borderColor)
   text-align center
-  color lighten($textColor, 25%)
+  color var(--text-color-l25, lighten($textColor, 25%))
+
+.page .footer
+  margin-bottom -2rem
 </style>

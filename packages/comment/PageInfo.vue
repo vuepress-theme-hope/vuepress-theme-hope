@@ -225,14 +225,13 @@ export default class PageInfo extends Vue {
     padding-top 0
 
   .page-info
-    color desaturate(lighten($textColor, 25%), 25%)
     display flex
-    align-items center
-    font-size 15px
-    color #777
-    flex-wrap wrap
     justify-content flex-start
     align-content stretch
+    align-items center
+    flex-wrap wrap
+    color var(--dark-grey, #666)
+    font-size 15px
 
     & > span
       display flex
@@ -243,7 +242,7 @@ export default class PageInfo extends Vue {
 
       &.active:hover
         cursor pointer
-        color $accentColor
+        color var(--accent-color, $accentColor)
 
     .icon
       width 16px

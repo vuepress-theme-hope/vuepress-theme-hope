@@ -84,10 +84,10 @@ SideBarItem 新增
 
 如果您不需要这项功能，请设置 `themeColor: false` 将其禁用。
 
-### themeColor.allowDarkmode
+### themeColor.darkmode
 
-- 类型: `boolean`
-- 默认值: `true`
+- 类型: `'auto' | 'switch' | 'disable'`
+- 默认值: `'auto'`
 
 是否开启暗黑模式支持
 

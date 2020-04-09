@@ -110,7 +110,7 @@ export default class ArticleInfo extends Vue {
   display flex
   align-items center
   font-size 15px
-  color #888
+  color var(--dark-grey)
   flex-wrap wrap
   justify-content flex-start
   align-content stretch

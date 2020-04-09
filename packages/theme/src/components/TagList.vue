@@ -79,11 +79,11 @@ export default class TagList extends Vue {
     cursor pointer
     font-size 12px
     border-radius 14px
-    box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
+    box-shadow 0 1px 6px 0 var(--box-shadow-color)
     overflow hidden
     transition all 0.5s
     padding 3px 8px
-    color #fff
+    color var(--white)
 
     &:hover
       top 0.5px

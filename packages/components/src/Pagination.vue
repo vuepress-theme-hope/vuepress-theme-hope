@@ -142,7 +142,7 @@ export default class Pagination extends Vue {
     .btn-group
       display flex
       align-items stretch
-      border 1px solid #ccc
+      border 1px solid var(--border-color, $borderColor)
       border-radius 4px
       overflow hidden
 
@@ -150,7 +150,7 @@ export default class Pagination extends Vue {
         position relative
         padding 5px 8px
         font-size 14px
-        color $accentColor
+        color var(--accent-color, $accentColor)
         cursor pointer
 
         &::before
@@ -160,22 +160,22 @@ export default class Pagination extends Vue {
           left 0
           bottom 0
           width 1px
-          background-color #ccc
+          background-color var(--border-color, $borderColor)
 
         &:first-child
           &::before
             background-color transparent
 
         &:hover, &.active
-          background $accentColor
-          color #fff
+          background var(--accent-color, $accentColor)
+          color var(--white, #fff)
 
           &::before
-            background-color $accentColor
+            background-color var(--accent-color, $accentColor)
 
         &.active + div, &:hover + div
           &::before
-            background-color $accentColor
+            background-color var(--accent-color, $accentColor)
 
         &.active, &.ellipsis
           cursor default
@@ -188,23 +188,25 @@ export default class Pagination extends Vue {
       width 55px
       height 24px
       font-size 13px
-      border 1px solid #ccc
+      border 1px solid var(--border-color, $borderColor)
       border-radius 4px
       outline none
       text-align center
       margin 6px 0
+      color var(--black, #000)
+      background-color var(--background-color, #fff)
 
     .navigateBtn
       font-size 14px
       margin-left 5px
       padding 4px 8px
-      border 1px solid #ccc
+      border 1px solid var(--border-color, $borderColor)
       border-radius 4px
       overflow hidden
       cursor pointer
 
       &:hover
-        color #fff
-        background $accentColor
-        border-color $accentColor
+        color var(--white, #fff)
+        background var(--accent-color, $accentColor)
+        border-color var(--accent-color, $accentColor)
 </style>

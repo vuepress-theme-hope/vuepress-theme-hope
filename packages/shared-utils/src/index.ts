@@ -2,6 +2,7 @@ import {
   deepAssign as deepAssignFunction,
   deepAssignReverse as deepAssignReverseFunction
 } from './assign';
+import domFunction from './dom';
 import i18nConfig from './i18n';
 
 export * from '../types';
@@ -11,6 +12,8 @@ export const capitalize = (word: string): string =>
 
 export const deepAssign = deepAssignFunction;
 export const deepAssignReverse = deepAssignReverseFunction;
+
+export const dom = domFunction;
 
 export const i18n = i18nConfig;
 

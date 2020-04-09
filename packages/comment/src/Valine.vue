@@ -96,44 +96,58 @@ export default class Valine extends Vue {
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared-utils/src/styles/wrapper.styl'
 
-// add theme color for valine
 .page
   .valine-wrapper
     @extend $wrapper
 
     #valine
+      *
+        color var(--grey3, #333)
+
       &:empty
         padding 0
 
       a
-        color $accentColor
+        color var(--accent-color, $accentColor)
 
         &:before
-          background $accentColor
+          background var(--accent-color, $accentColor)
 
         &:hover
-          color $accentColor
+          color var(--accent-color, $accentColor)
 
       code, pre
-        background-color #282c34
+        background-color var(--code-bg-color, #ecf4fa)
+
+      blockquote
+        color var(--dark-grey, #666)
 
       .vwrap .vheader .vinput:focus
-        border-color $accentColor
+        border-color var(--accent-color, $accentColor)
 
       .vwrap .vedit .vctrl span:hover
-        color $accentColor
+        color var(--accent-color, $accentColor)
 
       .vbtn
-        background-color #fff
+        background-color var(--background-color, #fff)
 
         &:active, &:hover
-          color #fff
-          background-color $accentColor
-          border-color $accentColor
+          color var(--white, #fff)
+          background-color var(--accent-color, $accentColor)
+          border-color var(--accent-color, $accentColor)
 
       .vlist .vcard .vhead .vnick
-        color $accentColor
+        color var(--accent-color, $accentColor)
+
+      .vempty
+        color var(--light-grey, #999)
 
       .info
         display none
+
+// 夜间模式
+.theme-dark .page .valine-wrapper #valine
+  .vlist .vcard .vhead .vsys
+    background #121212
+    color #4c4e4e
 </style>

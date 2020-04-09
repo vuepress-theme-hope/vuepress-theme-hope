@@ -1,5 +1,5 @@
 import { describe, it } from 'mocha';
-import { Color } from '../src/lib/color';
+import Color from '../src/util/color';
 import { expect } from 'chai';
 
 describe('colorTest', () => {

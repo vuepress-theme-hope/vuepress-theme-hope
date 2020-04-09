@@ -52,7 +52,7 @@ export default class MyBadge extends Vue {
   line-height 18px
   border-radius 3px
   padding 0 6px
-  color white
+  color var(--white, #fff)
   background-color #42b983
 
   &.tip, &.green

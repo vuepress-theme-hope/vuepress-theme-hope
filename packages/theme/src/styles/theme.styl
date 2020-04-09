@@ -1,0 +1,74 @@
+@require './base'
+@require './code/index'
+@require './code/light'
+@require './code/dark'
+@require './markdown/index'
+@require './markdown/light'
+@require './markdown/dark'
+@require './arrow'
+@require './toc'
+
+.theme-container
+  &.sidebar-open
+    .sidebar-mask
+      display block
+
+  &.no-navbar
+    {$contentClass}:not(.custom) > h1, h2, h3, h4, h5, h6
+      margin-top 1.5rem
+      padding-top 0
+
+    .sidebar
+      top 0
+
+@media (min-width: ($MQMobile + 1px))
+  .theme-container.no-sidebar
+    .sidebar
+      display none
+
+    .page
+      padding-left 0
+
+// wide mobile
+@media (max-width: $MQMobile)
+  .theme-container
+    &.sidebar-open
+      .sidebar
+        transform translateX(0)
+
+    &.no-navbar
+      .sidebar
+        padding-top 0
+
+// narrow mobile
+@media (max-width: $MQMobileNarrow)
+  h1
+    font-size 1.9rem
+
+  {$contentClass}
+    div[class*='language-']
+      margin 0.85rem -1.5rem
+      border-radius 0
+
+// 图标
+.iconfont
+  font-weight normal
+
+// 滚动条
+::-webkit-scrollbar
+  width 6px
+  height 6px
+
+::-webkit-scrollbar-track-piece
+  background-color rgba(0, 0, 0, 0.1)
+  -webkit-border-radius 6px
+
+::-webkit-scrollbar-thumb:vertical
+  height 6px
+  background-color var(--accent-color)
+  -webkit-border-radius 6px
+
+::-webkit-scrollbar-thumb:horizontal
+  width 6px
+  background-color var(--accent-color)
+  -webkit-border-radius 6px

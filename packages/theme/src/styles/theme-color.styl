@@ -1,0 +1,13 @@
+body
+  --accent-color $accentColor
+  --accent-color-l10 lighten($accentColor, 10%)
+  --accent-color-d10 darken($accentColor, 10%)
+
+theme-color($themeColor, $colorName)
+  body.theme-{$colorName}
+    --accent-color $themeColor
+    --accent-color-l10 lighten($themeColor, 10%)
+    --accent-color-d10 darken($themeColor, 10%)
+
+for key, value in $colorPicker
+  theme-color(value, key)

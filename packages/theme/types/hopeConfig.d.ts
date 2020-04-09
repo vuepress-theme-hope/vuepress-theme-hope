@@ -7,7 +7,6 @@ import { VuepressConfig, VuepressThemeConfig } from './vuepressConfig';
 import { CommentOptions } from '@mr-hope/vuepress-plugin-comment';
 import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance/types';
 import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
-import { ThemeColorOptions } from '@mr-hope/vuepress-plugin-theme-color';
 
 /** 页脚配置 */
 export type HopeFooterConfig = Partial<{
@@ -37,6 +36,16 @@ export type BlogOptions = Partial<{
   sidebarDisplay: 'mobile' | 'none' | 'always';
   /** 博主的个人介绍地址 */
   intro: string;
+}>;
+
+/** 主题色选项 */
+export type ThemeColorOptions = Partial<{
+  /** 是否开启主题色 */
+  allowThemeColor: boolean;
+  /** 颜色选择器 */
+  picker: Record<string, string>;
+  /** 是否允许开启暗黑模式 */
+  darkmode: 'auto' | 'switch' | 'disabled';
 }>;
 
 /** vuepress-theme-hope 主题配置 */
@@ -137,3 +146,12 @@ export interface ResolvedHopeVuepressConfig extends HopeVuepressConfig {
   /** 构建头部选项 */
   headOption?: HopeHeadOptionConfig;
 }
+
+/*
+ * export interface ColorOption {
+ *   '--accent-color'?: string;
+ *   '--theme-color'?: Record<string, string>;
+ *   light: Record<string, string>;
+ *   dark: Record<string, string>;
+ * }
+ */
