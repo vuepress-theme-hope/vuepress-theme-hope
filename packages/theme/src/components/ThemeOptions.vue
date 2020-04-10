@@ -29,10 +29,11 @@ import { ThemeColorOptions } from '../../types';
 
 /** 默认颜色选择器 */
 const defaultPicker: Record<string, string> = {
-  blue: '#2196f3',
-  red: '#f26d6d',
+  red: '#e74c3c',
+  blue: '#3498db',
   green: '#3eaf7c',
-  orange: '#fb9b5f'
+  orange: '#f39c12',
+  purple: '#8e44ad'
 };
 
 interface ThemeColorData extends ThemeColorOptions {
@@ -60,7 +61,7 @@ export default class ThemeOptions extends Vue {
     this.theme = {
       colorList: this.options.picker
         ? Object.keys(this.options.picker)
-        : ['blue', 'red', 'green', 'orange'],
+        : Object.keys(defaultPicker),
       picker: this.options.picker || defaultPicker,
       darkmode: this.options.darkmode || 'auto'
     };

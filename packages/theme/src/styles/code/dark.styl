@@ -83,7 +83,7 @@
   div[class*='language-']
     .highlight-lines
       .highlighted
-        background-color darken(saturate($nightCodeBgColor, 10%), 5%)
+        background-color darken(saturate($nightCodeBgColor, 10%), 25%)
 
     pre, pre[class*='language-']
       background transparent
@@ -93,10 +93,10 @@
 
     &.line-numbers-mode
       .highlight-lines .highlighted:before
-        background-color darken(saturate($nightCodeBgColor, 10%), 5%)
+        background-color darken(saturate($nightCodeBgColor, 10%), 25%)
 
       .line-numbers-wrapper
         color rgba(255, 255, 255, 0.3)
 
       &::after
-        border-right 1px solid darken(saturate($nightCodeBgColor, 20%), 10%)
+        border-right 1px solid darken(saturate($nightCodeBgColor, 10%), 35%)

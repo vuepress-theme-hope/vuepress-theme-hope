@@ -26,7 +26,6 @@
     "@mr-hope/vuepress-plugin-comment": "^0.1.0-rc.8",
     "@mr-hope/vuepress-plugin-components": "^0.1.0-rc.8",
     "@mr-hope/vuepress-plugin-pwa": "^0.1.0-rc.8",
-    "@mr-hope/vuepress-plugin-theme-color": "^0.1.0-rc.8",
     "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.8",
     "@mr-hope/vuepress-theme-types": "^0.1.0-rc.8",
     "@types/md5": "^2.1.33",
