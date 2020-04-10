@@ -37,7 +37,7 @@
     "@vssue/api-gitlab-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "leancloud-storage": "^4.5.3",
-    "valine": "^1.3.10",
+    "valine": "^1.4.0",
     "vssue": "^1.4.3",
     "vuepress-plugin-typescript": "^0.2.0"
   },
