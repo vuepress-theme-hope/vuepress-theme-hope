@@ -6,17 +6,14 @@ icon: vue
 ## As Easy as 1, 2, 3
 
 ```bash
-# find a proper place to clone this project
-git clone git@github.com:Mister-Hope/vuepress-theme-hope.git
+# find a proper place to clone this project template
+git clone git@github.com:Mister-Hope/vuepress-theme-hope-template.git
 
 # enter the program folder
 cd vuepressTemplate
 
 # install dependency
 npm i
-
-# Switch to docs branch
-git checkout doc
 
 # start writing
 npm run serve

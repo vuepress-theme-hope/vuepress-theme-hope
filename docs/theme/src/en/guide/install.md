@@ -5,9 +5,11 @@ tags: intro
 category: instruction
 ---
 
-## Using themes
+## Use in new project
 
 You can use [vuepress-theme-hope template](https://github.com/Mister-Hope/vuepress-theme-hope-template) directly to start your vuepress journey.
+
+## Use in existing project
 
 ### Installation
 

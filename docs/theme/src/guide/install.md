@@ -5,9 +5,11 @@ tags: intro
 category: instruction
 ---
 
-## 使用主题
+## 在新项目中使用
 
-你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 vuepress 之旅。
+如果你想构建自己的博客，或者在一个新的项目中使用本主题生成你的文档，你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 vuepress 之旅。点击 “Use this template" 按钮即可。
+
+## 在旧项目中使用
 
 ### 安装
 
@@ -46,7 +48,7 @@ npm i -D typescript
       "@mr-hope/vuepress-theme-types"
     ]
   },
-  "include": [
+  "include": [ // 项目中需要至少包含一个 ts 文件 (空的文件也可)，并正确配置在 include 中
     "src/.vuepress/enhanceApp.ts" // 请将 src 替换成你的文档目录
   ]
 }
