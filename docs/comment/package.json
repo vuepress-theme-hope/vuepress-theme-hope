@@ -1,7 +1,7 @@
 {
   "name": "comment-docs",
   "private": true,
-  "version": "0.1.0-rc.8",
+  "version": "0.1.0-rc.9",
   "description": "Docs for @mr-hope/vuepress-plugin-comment",
   "scripts": {
     "serve": "vuepress dev src",
@@ -12,6 +12,6 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "1.4.0",
-    "vuepress-theme-hope": "^0.1.0-rc.8"
+    "vuepress-theme-hope": "^0.1.0-rc.9"
   }
 }
