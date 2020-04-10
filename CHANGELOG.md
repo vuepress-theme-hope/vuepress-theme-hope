@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-rc.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.8...v0.1.0-rc.9) (2020-04-10)
+
+### Features
+
+* remove theme-color plugin and rebuild theme color ([4c43673](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4c43673d83c90fd5dbfd76830502a07d2a7b124f))
+
 ## [0.1.0-rc.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.7...v0.1.0-rc.8) (2020-04-08)
 
 ### Bug Fixes
