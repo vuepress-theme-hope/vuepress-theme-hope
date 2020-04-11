@@ -2264,10 +2264,10 @@
   dependencies:
     "@types/linkify-it" "*"
 
-"@types/md5@^2.1.33":
-  version "2.1.33"
-  resolved "https://registry.npm.taobao.org/@types/md5/download/@types/md5-2.1.33.tgz#8c8dba30df4ad0e92296424f08c4898dd808e8df"
-  integrity sha1-jI26MN9K0OkilkJPCMSJjdgI6N8=
+"@types/md5@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@types/md5/-/md5-2.2.0.tgz#cd82e16b95973f94bb03dee40c5b6be4a7fb7fb4"
+  integrity sha512-JN8OVL/wiDlCWTPzplsgMPu0uE9Q6blwp68rYsfk2G8aokRUQ8XD9MEhZwihfAiQvoyE+m31m6i3GFXwYWomKQ==
   dependencies:
     "@types/node" "*"
 
