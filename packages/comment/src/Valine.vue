@@ -125,8 +125,9 @@ export default class Valine extends Vue {
       .vwrap .vheader .vinput:focus
         border-color var(--accent-color, $accentColor)
 
-      .vwrap .vedit .vctrl span:hover
-        color var(--accent-color, $accentColor)
+      .vicon
+        &:hover, &.actived
+          fill var(--accent-color, $accentColor)
 
       .vbtn
         background-color var(--background-color, #fff)
@@ -142,7 +143,7 @@ export default class Valine extends Vue {
       .vempty
         color var(--light-grey, #999)
 
-      .info
+      .vcopy
         display none
 
 // 夜间模式

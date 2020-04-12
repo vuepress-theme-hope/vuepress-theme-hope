@@ -103,7 +103,7 @@ const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
     return true;
   };
 
-  md.block.ruler.before('fence', 'flowchart', uml as any, {
+  md.block.ruler.before('fence', 'flowchart', uml, {
     alt: ['paragraph', 'reference', 'blockquote', 'list']
   });
 

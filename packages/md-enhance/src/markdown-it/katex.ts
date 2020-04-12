@@ -39,7 +39,7 @@ const isValidDelim = (
   };
 };
 
-const inlineTex = (state: StateInline, silent?: boolean): boolean | void => {
+const inlineTex = (state: StateInline, silent?: boolean): boolean => {
   let match;
   let pos;
   let res;
@@ -219,7 +219,7 @@ export default (
 
   md.inline.ruler.after('escape', 'inlineTex', inlineTex);
   // It's a workaround here because types issue
-  md.block.ruler.after('blockquote', 'blockTex', blockTex as any, {
+  md.block.ruler.after('blockquote', 'blockTex', blockTex, {
     alt: ['paragraph', 'reference', 'blockquote', 'list']
   });
 

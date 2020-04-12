@@ -41,8 +41,12 @@ const renderFootnoteRef = (
   env: any,
   slf: Renderer
 ): string => {
-  const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
-  const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
+  const id =
+    slf.rules.footnote_anchor_name &&
+    slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+  const caption =
+    slf.rules.footnote_caption &&
+    slf.rules.footnote_caption(tokens, idx, options, env, slf);
   let refid = id;
 
   if (tokens[idx].meta.subId > 0) refid += `:${tokens[idx].meta.subId}`;
@@ -71,7 +75,9 @@ const renderFootnoteOpen = (
   env: any,
   slf: Renderer
 ): string => {
-  let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+  let id =
+    slf.rules.footnote_anchor_name &&
+    slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
 
   if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`;
 
@@ -87,7 +93,9 @@ const renderFootnoteAnchor = (
   env: any,
   slf: Renderer
 ): string => {
-  let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+  let id =
+    slf.rules.footnote_anchor_name &&
+    slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
 
   if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`;
 
@@ -221,7 +229,7 @@ const footnote = (md: MarkdownIt): void => {
     if (state.src.charCodeAt(start + 1) !== 0x5b /* [ */) return false;
 
     const labelStart = start + 2;
-    const labelEnd = parseLinkLabel(state, start + 1);
+    const labelEnd = parseLinkLabel(state as any, start + 1);
 
     // parser failed to find ']', so it's not a valid note
     if (labelEnd < 0) return false;
@@ -311,7 +319,7 @@ const footnote = (md: MarkdownIt): void => {
   };
 
   // Glue footnote tokens to end of token stream
-  const footnoteTail = (state: StateCore): void => {
+  const footnoteTail = (state: StateCore): boolean => {
     let lastParagraph;
     let token;
     let tokens;
@@ -320,7 +328,7 @@ const footnote = (md: MarkdownIt): void => {
     let insideRef = false;
     const refTokens: any = {};
 
-    if (!state.env.footnotes) return;
+    if (!state.env.footnotes) return false;
 
     state.tokens = state.tokens.filter((tok: any) => {
       if (tok.type === 'footnote_reference_open') {
@@ -339,7 +347,7 @@ const footnote = (md: MarkdownIt): void => {
       return !insideRef;
     });
 
-    if (!state.env.footnotes.list) return;
+    if (!state.env.footnotes.list) return false;
     const { list } = state.env.footnotes;
 
     token = new state.Token('footnote_block_open', '', 1);
@@ -386,6 +394,8 @@ const footnote = (md: MarkdownIt): void => {
 
     token = new state.Token('footnote_block_close', '', -1);
     state.tokens.push(token);
+
+    return true;
   };
 
   // eslint-disable-next-line object-curly-newline
