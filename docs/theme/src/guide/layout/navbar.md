@@ -57,9 +57,13 @@ module.exports = {
 
   可以将 `themeConfig` 中设置 `repoDisplay` 为 `false` 来取消导航栏右侧的库链接显示。
 
-- 主题色与夜间模式按钮
+- 主题色切换按钮
 
   具体详情请见 [主题色](../feature/themecolor.md) 章节。
+
+- 深色模式切换按钮
+
+  具体详情请见 [深色模式](../feature/darkmode.md) 章节。
 
 - 全屏按钮
 

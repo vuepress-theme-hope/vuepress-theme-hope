@@ -12,7 +12,11 @@ tags:
 
 [点击查看](comment.md)
 
-## 主题色与夜间模式
+## 深色模式
+
+[点击查看](darkmode.md)
+
+## 主题色
 
 [点击查看](themecolor.md)
 

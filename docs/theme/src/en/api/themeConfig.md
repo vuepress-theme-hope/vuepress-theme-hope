@@ -78,22 +78,20 @@ The default text for the footer.
 
 Whether to show the default footer
 
-## Theme and Darkmode
-
-Theme color and darkmode setting option configuration.
-
-If you don't need this feature, set `themeColor: false` to disable it.
-
-### themeColor.darkmode
+## darkmode
 
 - Type: `'auto' | 'switch' | 'disable'`
 - Default: `'auto'`
 
 Whether to enable darkmode support
 
-### themeColor.picker
+## themeColor
 
-- Type: `Object`
+Theme color configuration.
+
+If you don't need this feature, set `themeColor: false` to disable it.
+
+- Type: `Record<string, string>`
 - Defaults:
 
   ```js

@@ -71,9 +71,13 @@ module.exports = {
 
   You can set `repoDisplay` to `false` in`themeConfig` to cancel the library link display on the right side of the navigation bar.
 
-- Theme color and night mode button
+- Theme color button
 
   For details, see the [Themecolor](../feature/themecolor.md) section.
+
+- Darkmode button
+
+  For details, see the [Darkmode](../feature/darkmode.md) section.
 
 - Full screen button
 

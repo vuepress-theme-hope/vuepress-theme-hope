@@ -138,7 +138,7 @@ export type VuepressBuildConfig = Partial<{
 export type VuepressConfig = BaseVuepressConfig &
   VuepressBuildConfig &
   Partial<{
-    /** markdown选项 */
+    /** markdown 选项 */
     markdown: VuepressMarkdownOption;
     /** 使用的自定义主题 */
     theme: string;

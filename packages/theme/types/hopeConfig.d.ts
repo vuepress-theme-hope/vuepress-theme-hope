@@ -38,34 +38,38 @@ export type BlogOptions = Partial<{
   intro: string;
 }>;
 
-/** 主题色选项 */
-export type ThemeColorOptions = Partial<{
-  /** 是否开启主题色 */
-  allowThemeColor: boolean;
-  /** 颜色选择器 */
-  picker: Record<string, string>;
-  /** 是否允许开启暗黑模式 */
-  darkmode: 'auto' | 'switch' | 'disabled';
-}>;
-
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig extends VuepressThemeConfig {
+  /** 多语言配置 */
+  locales?: Record<string, HopeLangLocalesConfig>;
   /** 根目录对应的语言 */
   baseLang?: string;
   /** 默认作者 */
   author?: string;
-  /** 图标前缀 */
-  iconPrefix?: string;
   /** 导航栏链接 */
   nav?: HopeNavBarConfig;
   /** 侧边栏配置 */
   sidebar?: HopeSideBarConfig;
-  /** 多语言配置 */
-  locales?: Record<string, HopeLangLocalesConfig>;
-  /** 加密设置 */
-  encrypt?: EncryptOptions;
   /** 页脚配置 */
   footer?: HopeFooterConfig;
+
+  /** 是否允许开启深色模式 */
+  darkmode?: 'auto' | 'switch' | 'disabled';
+  /** 主题色配置 */
+  themeColor?: Record<string, string> | false;
+  /** Markdown 增强设置 */
+  markdown?: MarkdownEnhanceOption | false;
+  /** 评论设置 */
+  comment?: CommentOptions | false;
+  /** PWA 设置 */
+  pwa?: PWAOptions | false;
+  /** 加密设置 */
+  encrypt?: EncryptOptions;
+  /** 博客设置 */
+  blog?: BlogOptions | false;
+
+  /** 图标前缀 */
+  iconPrefix?: string;
   /** 是否在侧边栏显示图标 */
   sidebarIcon?: boolean;
   /** 是否全局启用路径导航 */
@@ -78,18 +82,8 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   backToTop?: boolean;
   /** 是否在导航栏显示仓库链接 */
   repoDisplay?: boolean;
-  /** 主题色配置 */
-  themeColor?: ThemeColorOptions | false;
   /** 是否显示 ”全屏“ 按钮 */
   fullscreen?: boolean;
-  /** Markdown 增强设置 */
-  markdown?: MarkdownEnhanceOption | false;
-  /** 评论设置 */
-  comment?: CommentOptions | false;
-  /** PWA 设置 */
-  pwa?: PWAOptions | false;
-  /** 博客设置 */
-  blog?: BlogOptions | false;
 }
 
 /** 处理后的 vuepress-theme-hope 主题配置 */

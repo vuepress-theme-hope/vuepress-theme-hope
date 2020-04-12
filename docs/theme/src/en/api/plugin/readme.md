@@ -48,5 +48,3 @@ vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, y
 - [**vuepress-plugin-md-enhance**](https://vuepress-md-enhance.mrhope.site/): Provide more Markdown syntax
 
 - [**@mr-hope/vuepress-plugin-pwa**](pwa.md): PWA support
-
-- [**@mr-hope/vuepress-plugin-theme-color**](../../guide/feature/themecolor.md): Theme color and night mode support

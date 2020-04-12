@@ -25,7 +25,7 @@ export default class DarkmodeSwitch extends Vue {
     return !this.darkmodeEnable;
   }
 
-  /** 切换暗黑模式 */
+  /** 切换深色模式 */
   private toggleDarkmode() {
     this.$emit('darkmode-toggle', !this.darkmodeEnable);
   }

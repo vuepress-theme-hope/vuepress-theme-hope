@@ -78,22 +78,24 @@ SideBarItem 新增
 
 是否显示默认页脚
 
-## 主题色与暗黑模式
+## 主题色与深色模式
 
-主题色和暗黑模式设置选项配置。
+主题色和深色模式设置选项配置。
 
-如果您不需要这项功能，请设置 `themeColor: false` 将其禁用。
-
-### themeColor.darkmode
+### darkmode
 
 - 类型: `'auto' | 'switch' | 'disable'`
 - 默认值: `'auto'`
 
-是否开启暗黑模式支持
+是否开启深色模式支持
 
-### themeColor.picker
+### themeColor
 
-- 类型: `Object`
+主题色选项配置。
+
+如果您不需要这项功能，请设置 `themeColor: false` 将其禁用。
+
+- 类型: `Record<string, string>`
 - 默认值:
 
   ```js
@@ -166,7 +168,7 @@ SideBarItem 新增
 
 可以直接设置为 `false` 来禁用评论功能
 
-## pwa
+## PWA
 
 PWA 设置选项
 

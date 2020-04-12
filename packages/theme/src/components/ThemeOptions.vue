@@ -25,7 +25,6 @@ import { Component, Mixins, Vue } from 'vue-property-decorator';
 import { dom, i18n } from '@mr-hope/vuepress-shared-utils';
 import Color from '@theme/util/color';
 import DarkmodeSwitch from '@theme/components/DarkmodeSwitch.vue';
-import { ThemeColorOptions } from '../../types';
 
 /** 默认颜色选择器 */
 const defaultPicker: Record<string, string> = {
@@ -36,17 +35,16 @@ const defaultPicker: Record<string, string> = {
   purple: '#8e44ad'
 };
 
-interface ThemeColorData extends ThemeColorOptions {
+interface ThemeColor {
+  /** 颜色列表 */
   colorList: string[];
+  /** 颜色选择器 */
+  picker: Record<string, string>;
 }
 
 @Component({ components: { DarkmodeSwitch } })
 export default class ThemeOptions extends Vue {
-  private get options() {
-    return this.$themeConfig.themeColor || {};
-  }
-
-  private theme = {} as ThemeColorData;
+  private theme = {} as ThemeColor;
 
   private isDarkmode = false;
 
@@ -59,27 +57,28 @@ export default class ThemeOptions extends Vue {
 
   protected mounted() {
     this.theme = {
-      colorList: this.options.picker
-        ? Object.keys(this.options.picker)
+      colorList: this.$themeConfig.themeColor
+        ? Object.keys(this.$themeConfig.themeColor)
         : Object.keys(defaultPicker),
-      picker: this.options.picker || defaultPicker,
-      darkmode: this.options.darkmode || 'auto'
+      picker: this.$themeConfig.themeColor || defaultPicker
     };
+    /** 深色模式开启状态 */
+    const darkmode = this.$themeConfig.darkmode || 'auto';
     /** 所选主题 */
     const theme = localStorage.getItem('theme');
     /** 获得类列表 */
     const classes = document.body.classList;
 
     // 自动模式
-    if (this.theme.darkmode === 'auto') this.setAutoDarkmode();
+    if (darkmode === 'auto') this.setAutoDarkmode();
     // 切换模式
-    else if (this.theme.darkmode === 'switch') {
-      /** 夜间模式 */
-      const darkmode = Boolean(localStorage.getItem('darkmode'));
+    else if (darkmode === 'switch') {
+      /** 深色模式 */
+      const isDarkmode = Boolean(localStorage.getItem('darkmode'));
 
-      this.isDarkmode = darkmode;
+      this.isDarkmode = isDarkmode;
 
-      if (darkmode) classes.add('theme-dark');
+      if (isDarkmode) classes.add('theme-dark');
       else classes.add('theme-light');
     }
     // 被禁用
@@ -88,7 +87,7 @@ export default class ThemeOptions extends Vue {
     if (theme) this.setTheme(theme);
   }
 
-  /** 设置自动暗黑模式 */
+  /** 设置自动深色模式 */
   protected setAutoDarkmode(): void {
     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
       .matches;
@@ -110,7 +109,7 @@ export default class ThemeOptions extends Vue {
     }
   }
 
-  /** 切换夜间模式 */
+  /** 切换深色模式 */
   private toggleDarkmode(isDarkmode: boolean) {
     const classes = document.body.classList;
 

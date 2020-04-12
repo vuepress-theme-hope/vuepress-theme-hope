@@ -9,11 +9,11 @@ actionLink: /en/guide/
 features:
 - title: Custom theme color
   details: Supports custom theme colors and allows users to switch between preset theme colors
-  link: /en/guide/feature/themecolor.html#custom-theme-color
+  link: /en/guide/feature/themecolor.html
 
 - title: Dark Mode
   details: Switch between light and dark modes freely
-  link: /en/guide/feature/themecolor.html#darkmode
+  link: /en/guide/feature/darkmode.html
 
 - title: Pageviews and comments
   details: Start pageview statistics and comment support with Valine and Vssue

@@ -39,8 +39,8 @@ category: instruction
 - [**新增特性**](feature/readme.md)
 
   - [图标支持](feature/icon.md)
-  - [主题色切换](feature/themecolor.md#自定义主题色)
-  - [夜间模式](feature/themecolor.md#夜间模式)
+  - [主题色切换](feature/themecolor.md)
+  - [深色模式](feature/darkmode.md)
   - [全屏按钮](feature/fullscreen.md)
   - [文章加密](feature/encrypt.md)
   - [评论](feature/comment.md)

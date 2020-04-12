@@ -146,7 +146,7 @@ export default class Valine extends Vue {
       .vcopy
         display none
 
-// 夜间模式
+// 深色模式
 .theme-dark .page .valine-wrapper #valine
   .vlist .vcard .vhead .vsys
     background #121212

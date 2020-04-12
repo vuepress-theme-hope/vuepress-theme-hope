@@ -73,7 +73,7 @@ export default class Tags extends Vue {
       box-shadow 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2))
       background-color var(--background-color, #fff)
 
-// 夜间模式
+// 深色模式
 .theme-dark .tags-wrapper .tag
   background-color #222
 </style>
