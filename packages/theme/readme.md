@@ -1,7 +1,9 @@
 <div style="text-align: center;">
-<img width="240" src="https://vuepress-theme.mrhope.site/logo.svg"/>
-
-# vuepress-theme-hope
+  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg"/>
+  <h1>vuepress-theme-hope</h1>
+  <h4>一个轻量的 vuepress 主题✨ / A light vuepress theme✨</h4>
+  <div style="height: 40px"></div>
+</div>
 
 [![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
 [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)
@@ -14,7 +16,6 @@
 ![Issues](https://img.shields.io/github/issues-raw/mister-hope/vuepress-theme-hope?style=flat-square&logo=github)
 
 一个轻量的 vuepress 主题 / A light vuepress theme
-</div>
 
 ## 官方文档 / Official Docs
 

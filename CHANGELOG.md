@@ -338,9 +338,9 @@
 
 - **theme:** fix issues ([228a89d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/228a89d6d495405981a16f7d48297d2cf46dda8b))
 
-  * fix PageInfo - author not working
-  * fix defaultfooter not working
-  * fix MyBadge - color not working
+  - fix PageInfo - author not working
+  - fix defaultfooter not working
+  - fix MyBadge - color not working
 
 ### Features
 
