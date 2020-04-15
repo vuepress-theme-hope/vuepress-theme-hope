@@ -30,7 +30,7 @@
     "@mr-hope/vuepress-theme-types": "^0.1.0-rc.10",
     "@types/md5": "^2.2.0",
     "@vuepress/plugin-blog": "^1.9.2",
-    "@vuepress/plugin-medium-zoom": "^1.4.0",
+    "@vuepress/plugin-medium-zoom": "^1.4.1",
     "md5": "^2.2.1",
     "moment": "^2.24.0",
     "vuepress-plugin-clean-urls": "^1.1.1",
