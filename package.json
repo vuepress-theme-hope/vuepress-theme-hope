@@ -42,7 +42,7 @@
     "@vue/cli-service": "4.3.1",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "5.0.2",
-    "@vuepress/test-utils": "1.4.0",
+    "@vuepress/test-utils": "1.4.1",
     "chai": "4.2.0",
     "conventional-changelog-cli": "2.0.31",
     "cz-conventional-changelog": "3.1.0",
