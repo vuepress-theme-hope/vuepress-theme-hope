@@ -2904,10 +2904,10 @@
   resolved "https://registry.npm.taobao.org/@vuepress/plugin-search/download/@vuepress/plugin-search-1.4.0.tgz#26a02e3409e6ea6830f9fc7e6d87fc45ba46c579"
   integrity sha1-JqAuNAnm6mgw+fx+bYf8RbpGxXk=
 
-"@vuepress/shared-utils@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.npm.taobao.org/@vuepress/shared-utils/download/@vuepress/shared-utils-1.4.0.tgz#ab4bfcd5c1e3d0e5e384e0c1d0bb86470430c87e"
-  integrity sha1-q0v81cHj0OXjhODB0LuGRwQwyH4=
+"@vuepress/shared-utils@^1.4.0", "@vuepress/shared-utils@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.4.1.tgz#d09fcd742111f2efeef93b9c9b353bcd8202ae97"
+  integrity sha512-FBUHFhvR7vk6glQy/qUntBz8bVeWiNYZ2/G16EKaerKKn15xAiD7tUFCQ3L/KjtQJ8TV38GK47UEXh7UTcRwQg==
   dependencies:
     chalk "^2.3.2"
     diacritics "^1.3.0"
