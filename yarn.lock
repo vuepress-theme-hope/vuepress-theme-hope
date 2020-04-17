@@ -2784,7 +2784,7 @@
   resolved "https://registry.npm.taobao.org/@vue/web-component-wrapper/download/@vue/web-component-wrapper-1.2.0.tgz#bb0e46f1585a7e289b4ee6067dcc5a6ae62f1dd1"
   integrity sha1-uw5G8VhafiibTuYGfcxaauYvHdE=
 
-"@vuepress/core@1.4.1", "@vuepress/core@^1.4.0":
+"@vuepress/core@1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.4.1.tgz#b6f75720d9b7132b90cce46f620bcdda5d07e581"
   integrity sha512-R1oJeSiDQPw8sVo70mrP1Zn2H0nCqnAHb6DV9mpJBQ6ur4VT6qQnCpd2onKU+bZRLlEhm4G8IQNDEV+DuE7zZQ==
@@ -2903,21 +2903,6 @@
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.4.1.tgz#5842f7ef0214c8f9f3cafa6ca2f4648f8dbc03d2"
   integrity sha512-J4JyXD6M1oOU013s4ZLKMkKEGd7qEtSIsAw2nZY2mckZ7ETX49R5Pv2S5uCqLRQfUQSIGR5TEABL22q0B8uCVA==
-
-"@vuepress/shared-utils@1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.4.1.tgz#d09fcd742111f2efeef93b9c9b353bcd8202ae97"
-  integrity sha512-FBUHFhvR7vk6glQy/qUntBz8bVeWiNYZ2/G16EKaerKKn15xAiD7tUFCQ3L/KjtQJ8TV38GK47UEXh7UTcRwQg==
-  dependencies:
-    chalk "^2.3.2"
-    diacritics "^1.3.0"
-    escape-html "^1.0.3"
-    fs-extra "^7.0.1"
-    globby "^9.2.0"
-    gray-matter "^4.0.1"
-    hash-sum "^1.0.2"
-    semver "^6.0.0"
-    upath "^1.1.0"
 
 "@vuepress/shared-utils@1.4.1", "@vuepress/shared-utils@^1.4.0":
   version "1.4.1"
@@ -9336,10 +9321,10 @@ linkify-it@^2.0.0:
   dependencies:
     uc.micro "^1.0.1"
 
-lint-staged@10.1.3:
-  version "10.1.3"
-  resolved "https://registry.npm.taobao.org/lint-staged/download/lint-staged-10.1.3.tgz#da27713d3ac519da305381b4de87d5f866b1d2f1"
-  integrity sha1-2idxPTrFGdowU4G03ofV+Gax0vE=
+lint-staged@10.1.4:
+  version "10.1.4"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.1.4.tgz#c0e0930ed5568ada2a7fbd9d300318c87803a4b0"
+  integrity sha512-bFfQE6U8LASGKANl+JSN8nfL9Id6vq2YmWMgkynvmicMVQFR11OFU8lqcnI1y0fsPr3PwHa6xeMCh+SWB8TPkg==
   dependencies:
     chalk "^3.0.0"
     commander "^4.0.1"
