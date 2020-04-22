@@ -14532,10 +14532,10 @@ validate-npm-package-name@^3.0.0:
   dependencies:
     builtins "^1.0.3"
 
-valine@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.npm.taobao.org/valine/download/valine-1.4.4.tgz#b0d8d97b85c256f404ecda4be02711c0a238c25e"
-  integrity sha1-sNjZe4XCVvQE7NpL4CcRwKI4wl4=
+valine@^1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/valine/-/valine-1.4.7.tgz#2790ff62f7010ba2ae35052f8d6f0f85b5810ec5"
+  integrity sha512-rhiFm5Co+TZ+P3h9ap8gI6/NlCeCpzC+TeWRnsA3MPSHouREdkSBtfsHRZbqkzByAiN4FEg0d95PTmS4hBGJPw==
   dependencies:
     balajs "^1.0.7"
     balalaika "^1.0.1"
