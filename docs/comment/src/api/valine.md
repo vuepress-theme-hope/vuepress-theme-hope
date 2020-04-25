@@ -62,6 +62,20 @@ icon: valine
 
 评论者相关属性
 
+- **requiredFields**
+
+  - 类型: `String[]`
+  - 默认值: `['nick']`
+
+设置必填项
+
+- **enableQQ**
+
+  - 类型: `Boolean`
+  - 默认值: `true`
+
+是否启用昵称框自动获取 QQ 昵称和 QQ 头像
+
 - **avatar**
 
   - 类型: `String`
@@ -85,20 +99,16 @@ icon: valine
   你可以引导用户到 [Gravatar](http://cn.gravatar.com/) 去设置自己的头像。
   :::
 
-- **verify**
+- **emojiCDN**
 
-  - 类型: `Boolean`
-  - 默认值: `flase`
+  - 类型: `String`
+  - 必填: 否
 
-  评论提交验证码功能
+  设置表情包 CDN，请参考 [Valine 自定义表情包](https://valine.js.org/emoji.html)
 
-- **notify**
+- **emojiMaps**
 
-  - 类型: `Boolean`
-  - 默认值: `true`
+  - 类型: `Object`
+  - 默认值: `null`
 
-  是否依据留下的邮箱发出留言回复通知。
-
-  ::: tip
-  设置此选项后会自动开启验证码功能，即 `valine.verify` 失效。
-  :::
+  设置表情包映射，请参考 [Valine 自定义表情包](https://valine.js.org/emoji.html)

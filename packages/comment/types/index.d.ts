@@ -29,11 +29,8 @@ export type ValineOptions = BaseCommentOptions &
     /** 评论所需信息 */
     meta: string[];
 
-    /** 是否发送邮件提醒有新通知 */
-    notify: boolean;
-
-    /** 是否需要验证码 */
-    verify: boolean;
+    /** 必填项配置 */
+    requiredFields: string[];
 
     /** 头像类型 */
     avatar: string;
@@ -43,6 +40,15 @@ export type ValineOptions = BaseCommentOptions &
 
     /** 每页的最大评论数 */
     pageSize: number;
+
+    /** 是否启用昵称框自动获取QQ昵称和QQ头像 */
+    enableQQ: boolean;
+
+    /** 自定义表情 CDN */
+    emojiCDN: string;
+
+    /** 自定义表情包映射 */
+    emojiMaps: Record<string, string>;
   }>;
 
 /** Vssue 配置 */

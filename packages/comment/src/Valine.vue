@@ -79,15 +79,17 @@ export default class Valine extends Vue {
         i18n.getLocale(this.$lang).valineHolder ||
         i18n.getDefaultLocale().valineHolder,
       meta: valineConfig.meta || ['nick', 'mail', 'link'],
-      notify: valineConfig.notify !== false,
-      verify: valineConfig.verify || false,
+      requiredFields: valineConfig.requiredFields || ['nick'],
       avatar: valineConfig.avatar || 'retro',
       visitor: this.visitorDisplay,
       recordIP: valineConfig.recordIP || false,
       path:
         path || (typeof window === 'undefined' ? '' : window.location.pathname),
       pageSize: valineConfig.pageSize || 10,
-      lang: this.$lang === 'zh-CN' ? 'zh-cn' : 'en'
+      enableQQ: valineConfig.enableQQ || true,
+      emojiCDN: valineConfig.emojiCDN || '',
+      emojiMaps: valineConfig.emojiMaps || null,
+      lang: this.$lang === 'zh-CN' ? 'zh-CN' : 'en'
     });
   }
 }

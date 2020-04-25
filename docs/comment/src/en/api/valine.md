@@ -62,6 +62,20 @@ Whether to record the commenter IP
 
   Commenter's info
 
+- **requiredFields**
+
+  - Type: `String []`
+  - Default value: `['nick']`
+
+  Set required fields
+
+- **enableQQ**
+
+  - Type: `Boolean`
+  - Default value: `true`
+
+  Whether to enable the nickname box to automatically obtain QQ nickname and QQ avatar
+
 - **avatar**
 
   - Type: `String`
@@ -85,20 +99,16 @@ Whether to record the commenter IP
   You can tell users to set their [Gravatar](http://cn.gravatar.com/).
   :::
 
-- **verify**
+- **emojiCDN**
 
-  - Type: `Boolean`
-  - Default: `flase`
+  - Type: `String`
+  - Required: No
 
-  Verification code on comment submit
+  To set the emoji package CDN, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)
 
-- **notify**
+- **emojiMaps**
 
-  - Type: `Boolean`
-  - Default: `true`
+  - Type: `Object`
+  - Default value: `null`
 
-  Whether to send a message reply notification based on the left mailbox
-
-  ::: tip
-  When this option is set, the verification code function will be automatically turned on.
-  :::
+  To set the emoticon package mapping, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)
