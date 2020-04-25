@@ -31,7 +31,7 @@ module.exports = {
       orange: '#fb9b5f'
     }
   }
-}
+};
 ```
 
 :::

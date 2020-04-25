@@ -21,7 +21,7 @@ tags:
 
 你可以在标题中，使用这个组件来为标题或链接添加一些状态：
 
-``` md
+```md
 ### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
 ```
 

@@ -11,46 +11,46 @@ icon: file
 ├── dist → Built Output
 │
 ├── src
-│   ├── .vuepress (Optional) → Vuepress Config
-│   │   ├── components (Optional) → Components in this dir will be registered as global components
-│   │   │
-│   │   ├── theme (Optional) → Personal built Theme
-│   │   │   │
-│   │   │   ├── ... → See detail at 'Theme' part
-│   │   │   │
-│   │   │   └── Layout.vue → Website layout
-│   │   │
-│   │   ├── public (Optional) → Static resource dir
-│   │   │
-│   │   ├── styles (Optional) → Stores style related files
-│   │   │   ├── index.styl →  Automatically applied global style files
-│   │   │   └── palette.styl → override and set color constants
-│   │   │
-│   │   ├── templates (Optional, Config carefully) → Templates
-│   │   │   ├── dev.html → HTML template file for development environment
-│   │   │   └── ssr.html → Vue SSR based HTML template file in the built time
-│   │   │
-│   │   ├── config.js (Optional) → Entry file of configuration
-│   │   │
-│   │   └── enhanceApp.js (Optional) → App level enhancement
-│   │
-│   ├── readme.md → Mainpage
-│   ├── vuepress
-│   │   ├── file.md
-│   │   └── readme.md
-│   ├── markdown
-│   │   ├── emoji.md
-│   │   └── readme.md
-│   │
-│   └── en → English Folder
-│       ├── readme.md
-│       │
-│       ├── vuepress
-│       │   └── readme.md
-│       │
-│       └── markdown
-│           ├── emoji.md
-│           └── readme.md
+│ ├── .vuepress (Optional) → Vuepress Config
+│ │ ├── components (Optional) → Components in this dir will be registered as global components
+│ │ │
+│ │ ├── theme (Optional) → Personal built Theme
+│ │ │ │
+│ │ │ ├── ... → See detail at 'Theme' part
+│ │ │ │
+│ │ │ └── Layout.vue → Website layout
+│ │ │
+│ │ ├── public (Optional) → Static resource dir
+│ │ │
+│ │ ├── styles (Optional) → Stores style related files
+│ │ │ ├── index.styl → Automatically applied global style files
+│ │ │ └── palette.styl → override and set color constants
+│ │ │
+│ │ ├── templates (Optional, Config carefully) → Templates
+│ │ │ ├── dev.html → HTML template file for development environment
+│ │ │ └── ssr.html → Vue SSR based HTML template file in the built time
+│ │ │
+│ │ ├── config.js (Optional) → Entry file of configuration
+│ │ │
+│ │ └── enhanceApp.js (Optional) → App level enhancement
+│ │
+│ ├── readme.md → Mainpage
+│ ├── vuepress
+│ │ ├── file.md
+│ │ └── readme.md
+│ ├── markdown
+│ │ ├── emoji.md
+│ │ └── readme.md
+│ │
+│ └── en → English Folder
+│ ├── readme.md
+│ │
+│ ├── vuepress
+│ │ └── readme.md
+│ │
+│ └── markdown
+│ ├── emoji.md
+│ └── readme.md
 │
 ├─── readme.md → Project default description
 ├─── readme.en-US.md → Project English description
@@ -59,7 +59,6 @@ icon: file
 │
 ├── package-lock.json → The structure of the package actually installed by the project
 └── package.json → Node.js declaration file for the entire project
-
 ```
 
 ## src folder

@@ -1,6 +1,14 @@
 **/dist/**
 **/node_modules/**
 
+**/footnote.md
+**/markdown.md
+
+docs/theme/src/basic/vuepress/theme/dev.md
+docs/theme/src/en/guide/layout/breadcrumb.md
+docs/theme/src/en/guide/layout/page.md
+docs/theme/src/guide/layout/breadcrumb.md
+
 packages/**/*.js
 packages/**/*.d.ts
 

@@ -3,7 +3,7 @@ icon: markdown
 tags: markdown
 ---
 
-# Markdown介绍
+# Markdown 介绍
 
 ## 概述
 
@@ -11,20 +11,20 @@ tags: markdown
 
 Markdown 的目标是实现「易读易写」。
 
-Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
+Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
 
 不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 [Setext][1]、[atx][2]、[Textile][3]、[reStructuredText][4]、[Grutatext][5] 和 [EtText][6]，然而最大灵感来源其实是纯文字的电子邮件格式。
 
-  [1]: http://docutils.sourceforge.net/mirror/setext.html
-  [2]: http://www.aaronsw.com/2002/atx/
-  [3]: http://textism.com/tools/textile/
-  [4]: http://docutils.sourceforge.net/rst.html
-  [5]: http://www.triptico.com/software/grutatxt.html
-  [6]: http://ettext.taint.org/doc/
+[1]: http://docutils.sourceforge.net/mirror/setext.html
+[2]: http://www.aaronsw.com/2002/atx/
+[3]: http://textism.com/tools/textile/
+[4]: http://docutils.sourceforge.net/rst.html
+[5]: http://www.triptico.com/software/grutatxt.html
+[6]: http://ettext.taint.org/doc/
 
 因此 Markdown 的语法全由标点符号所组成，并经过严谨慎选，是为了让它们看起来就像所要表达的意思。像是在文字两旁加上星号，看起来就像\*强调\*。Markdown 的列表看起来，嗯，就是列表。假如你有使用过电子邮件，引言写法看起来就真的像是引用一段文字。
 
-Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。
+Markdown 具有一系列衍生版本，用于扩展 Markdown 的功能（如表格、脚注、内嵌 HTML 等等），这些功能原初的 Markdown 尚不具备，它们能让 Markdown 转换成更多的格式，例如 LaTeX，Docbook。Markdown 增强版中比较有名的有 Markdown Extra、MultiMarkdown、 Maruku 等。这些衍生版本要么基于工具，如 Pandoc；要么基于网站，如 GitHub 和 Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。
 
 ## 用途
 
@@ -40,7 +40,7 @@ Markdown 的语法简洁明了、学习容易，而且功能比纯文本更强�
 
 不在 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。
 
-只有块元素──比如 `<div>`、`<table>`、`<pre>`、`<p>` 等标签，必须在前后加上空行，以利与内容区隔。而且这些（元素）的开始与结尾标签，不可以用 tab 或是空白来缩进。Markdown 的解析器有智慧型判断，可以避免在块标签前后加上没有必要的 `<p>` 标签。
+只有块元素 ── 比如 `<div>`、`<table>`、`<pre>`、`<p>` 等标签，必须在前后加上空行，以利与内容区隔。而且这些（元素）的开始与结尾标签，不可以用 tab 或是空白来缩进。Markdown 的解析器有智慧型判断，可以避免在块标签前后加上没有必要的 `<p>` 标签。
 
 举例来说，在 Markdown 文件裡加上一段 HTML 表格：
 
@@ -70,7 +70,7 @@ Markdown 的语法简洁明了、学习容易，而且功能比纯文本更强�
 
 才能放到链接标签的 `href` 属性裡。不用说也知道这很容易忘记，这也可能是 HTML 标准检查所检查到的错误中，数量最多的。
 
-Markdown 允许你直接使用这些符号，但是你要小心跳脱字元的使用，如果你是在HTML 实体中使用 `&` 符号的话，它不会被转换，而在其它情形下，它则会被转换成 `&amp;`。所以你如果要在文件中插入一个著作权的符号，你可以这样写：
+Markdown 允许你直接使用这些符号，但是你要小心跳脱字元的使用，如果你是在 HTML 实体中使用 `&` 符号的话，它不会被转换，而在其它情形下，它则会被转换成 `&amp;`。所以你如果要在文件中插入一个著作权的符号，你可以这样写：
 
     &copy;
 
@@ -106,8 +106,8 @@ Markdown 将会把它转换为：
 
 是的，这确实需要花比较多功夫来插入 `<br />` ，但是「每个换行都转换为 `<br />`」的方法在 Markdown 中并不适合， Markdown 中 email 式的 [块引言][bq] 和多段落的 [列表][l] 在使用换行来排版的时候，不但更好用，还更好阅读。
 
-  [bq]: #blockquote
-  [l]:  #list
+[bq]: #blockquote
+[l]: #list
 
 ### 标题
 
@@ -141,7 +141,7 @@ Markdown 使用 email 形式的块引言，如果你很熟悉如何在 email 信
     > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
     > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
     > Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-    > 
+    >
     > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
     > id sem consectetuer libero luctus adipiscing.
 
@@ -165,12 +165,12 @@ Markdown 也允许你只在整个段落的第一行最前面加上 `>` ：
 引言的块内也可以使用其他的 Markdown 语法，包括标题、列表、代码块等：
 
     > ## This is a header.
-    > 
+    >
     > 1.   This is the first list item.
     > 2.   This is the second list item.
-    > 
+    >
     > Here's some example code:
-    > 
+    >
     >     return shell_exec("echo $input | $markdown_script");
 
 任何标准的文字编辑器都能简单地建立 email 样式的引言，例如 BBEdit ，你可以选取文字后然后从选单中选择*增加引言阶层*。
@@ -235,7 +235,7 @@ Markdown 支持有序列表和无序列表。
     - Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
     Suspendisse id sem consectetuer libero luctus adipiscing.
 
-如果列表项目间用空行分开， Markdown 会把项目的内容在输出时用  `<p>` 标签包起来，举例来说：
+如果列表项目间用空行分开， Markdown 会把项目的内容在输出时用 `<p>` 标签包起来，举例来说：
 
     - Bird
     - Magic
@@ -390,7 +390,7 @@ Markdown 支持两种形式的链接语法： *行内*和*参考*两种形式。
 
 如果你是要链接到同样主机的资源，你可以使用相对路径：
 
-    See my [About](/about/) page for details.   
+    See my [About](/about/) page for details.
 
 参考形式的链接使用另外一个方括号接在链接文字的括号后面，而在第二个方括号里面要填入用以辨识链接的标签：
 
@@ -583,7 +583,7 @@ Markdown 使用一种和链接很相似的语法来标记图片，同样也允�
 - 一个惊叹号 `!`
 - 接著一个方括号，里面放上图片的替代文字
 - 接著一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上
-    选择性的 'title' 文字。
+  选择性的 'title' 文字。
 
 参考式的图片语法则长得像这样：
 
@@ -656,7 +656,7 @@ Markdown 支持在下面这些符号前面加上反斜线来帮助插入普通�
 | 输出后的效果  | Markdown   | 快捷键     |
 | ------------- | ---------- | ---------- |
 | **Bold**      | `**text**` | Ctrl/⌘ + B |
-| *Emphasize*   | `*text*`   | Ctrl/⌘ + I |
+| _Emphasize_   | `*text*`   | Ctrl/⌘ + I |
 | `Inline Code` | \`code\`   | 选中后"\`" |
 
 ## 表格
@@ -673,6 +673,6 @@ Markdown 支持在下面这些符号前面加上反斜线来帮助插入普通�
 
 eg:`:smile:` :smile:
 
-## Markdown效果演示
+## Markdown 效果演示
 
 - [查看详情](demo.md)

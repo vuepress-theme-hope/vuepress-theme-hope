@@ -30,14 +30,10 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "ES6",
-    "types": [
-      "@mr-hope/vuepress-theme-types"
-    ],
+    "types": ["@mr-hope/vuepress-theme-types"],
     "baseUrl": ".",
     "paths": {
-      "@theme/*": [
-        "packages/theme/src/*"
-      ]
+      "@theme/*": ["packages/theme/src/*"]
     }
   },
   "include": [

@@ -6,8 +6,8 @@ icon: bitbucket
 
 ## 创建一个新的 OAuth Consumer
 
-- 前往 __Bitbucket settings - OAuth__
-- 点击 __Add consumer__
+- 前往 **Bitbucket settings - OAuth**
+- 点击 **Add consumer**
 
 ->![配置 OAuth App - Bitbucket 01](/img/oauth-app-bitbucket-01.png)<-
 ->![配置 OAuth App - Bitbucket 02](/img/oauth-app-bitbucket-02.png)<-
@@ -22,7 +22,7 @@ icon: bitbucket
 
 ## 获取 Client ID
 
-现在你已经创建了一个新的 OAuth Consumer，并得到了相应的  __Key__ (`Client ID`).
+现在你已经创建了一个新的 OAuth Consumer，并得到了相应的 **Key** (`Client ID`).
 
 ->![配置 OAuth App - Bitbucket 06](/img/oauth-app-bitbucket-06.png)<-
 
@@ -49,7 +49,7 @@ Vssue 已经成功运行。点击 `Login` 使用 Bitbucket 帐号登录。
 ->![配置 OAuth App - Bitbucket 09](/img/oauth-app-bitbucket-09.png)<-
 ->![配置 OAuth App - Bitbucket 10](/img/oauth-app-bitbucket-10.png)<-
 
-如果出现加载评论失败，你需要确认你的仓库是否开启了 __Issue Tracker__ 功能。
+如果出现加载评论失败，你需要确认你的仓库是否开启了 **Issue Tracker** 功能。
 
 ->![配置 OAuth App - Bitbucket 11](/img/oauth-app-bitbucket-11.png)<-
 

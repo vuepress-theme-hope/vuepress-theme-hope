@@ -8,12 +8,15 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ## Configuration
 
-```js {4}
+```js {6}
 module.exports = {
-  plugin: ['md-enhance', {
-    // Enable Tex Support
-    tex: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // Enable Tex Support
+      tex: true
+    }
+  ]
 };
 ```
 
@@ -34,12 +37,16 @@ Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 Use `$$codes$$` to indicate.
 
 ```md
-$$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}$$
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
+$$
 ```
 
-$$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}$$
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
+$$
 
 ## Tutorial
 
@@ -94,13 +101,15 @@ $\sqrt{x}$, $\frac{1}{2}$.
 
 $\sum_{i=1}^n i\; \prod_{i=1}^n$
 
-$\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
+$\sum\limits _{i=1}^n i\; \prod\limits_{i=1}^n$
 
 $\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
 
 $\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
 
-$$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
+$$
+\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2
+$$
 
 ```md
 $\sqrt{x}$, $\frac{1}{2}$.
@@ -167,7 +176,7 @@ Various parentheses are represented by commands such as `()`, `[]`, `\{\}`, `\la
 ::: tip
 Note that curly braces are usually used to enter command and environment parameters, so they must be preceded by `\` in mathematical formulas.
 
-Because the application of `|` and `\|` in LaTeX is too casual,  we recommend using `\lvert\rvert` and `\ lVert\rVert` instead.
+Because the application of `|` and `\|` in LaTeX is too casual, we recommend using `\lvert\rvert` and `\ lVert\rVert` instead.
 :::
 
 In order to adjust the size of these delimiters, we recommend using `\big`, `\Big`, `\bigg`, `\Bigg` and a series of commands to adjust the size before the above brackets.
@@ -183,19 +192,13 @@ $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 \rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert$
 
 ```md
-> ()
 $\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
-> []
 $\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr]$
-> {}
 $\Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\}$
-> <>
 $\Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
 \rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle$
-> ||
 $\Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x
 \rvert\bigr\rvert\Bigr\rvert\biggr\rvert\Biggr\rvert$
-> z||
 $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 \rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert$
 ```
@@ -248,67 +251,67 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
 - **newline**
 
-    Use `\\` or `\newline` to wrap
+  Use `\\` or `\newline` to wrap
 
-    $$
-    x = a+b+c+{} \\
-    d+e+f+g
-    $$
+  $$
+  x = a+b+c+{} \\
+  d+e+f+g
+  $$
 
-    $$
-    x = a+b+c+ \newline
-    d+e+f+g
-    $$
+  $$
+  x = a+b+c+ \newline
+  d+e+f+g
+  $$
 
-    ```md
-    $$
-    x = a+b+c+ \\
-    d+e+f+g
-    $$
+  ```md
+  $$
+  x = a+b+c+ \\
+  d+e+f+g
+  $$
 
-    $$
-    x = a+b+c+ \newline
-    d+e+f+g
-    $$
-    ```
+  $$
+  x = a+b+c+ \newline
+  d+e+f+g
+  $$
+  ```
 
-    ::: tip
-    Note that because $\KaTeX$ supports auto word wrapping, if you specify a line feed manually, a warning is output in the console.
-    :::
+  ::: tip
+  Note that because $\KaTeX$ supports auto word wrapping, if you specify a line feed manually, a warning is output in the console.
+  :::
 
 - **Alignment**
 
-    You can use the `aligned` environment to achieve alignment, and`&`to identify fixed anchor points
+  You can use the `aligned` environment to achieve alignment, and`&`to identify fixed anchor points
 
-    $$
-    \begin{aligned}
-    x ={}& a+b+c+{} \\
-    &d+e+f+g
-    \end{aligned}
-    $$
+  $$
+  \begin{aligned}
+  x ={}& a+b+c+{} \\
+  &d+e+f+g
+  \end{aligned}
+  $$
 
-    $$
-    \begin{alignedat}{2}
-       10&x+ &3&y = 2 \\
-       3&x+&13&y = 4
-    \end{alignedat}
-    $$
+  $$
+  \begin{alignedat}{2}
+     10&x+ &3&y = 2 \\
+     3&x+&13&y = 4
+  \end{alignedat}
+  $$
 
-    ```md
-    $$
-    \begin{aligned}
-    x ={}& a+b+c+{} \\
-    &d+e+f+g
-    \end{aligned}
-    $$
+  ```md
+  $$
+  \begin{aligned}
+  x ={}& a+b+c+{} \\
+  &d+e+f+g
+  \end{aligned}
+  $$
 
-    $$
-    \begin{alignedat}{2}
-       10&x+ &3&y = 2 \\
-       3&x+&13&y = 4
-    \end{alignedat}
-    $$
-    ```
+  $$
+  \begin{alignedat}{2}
+     10&x+ &3&y = 2 \\
+     3&x+&13&y = 4
+  \end{alignedat}
+  $$
+  ```
 
 ### Formula group
 

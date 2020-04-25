@@ -22,7 +22,7 @@ icon: gitlab
 
 ## Get the Client ID
 
-Then you've created a new Application, and here is your __Application ID__ (`Client ID`).
+Then you've created a new Application, and here is your **Application ID** (`Client ID`).
 
 ->![Set up OAuth App - Gitlab 04](/img/oauth-app-gitlab-04.png)<-
 

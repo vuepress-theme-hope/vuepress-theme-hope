@@ -19,8 +19,8 @@ module.exports = {
       appId: '...', // your appId
       appKey: '...' // your appKey
     }
-  }  
-}
+  }
+};
 ```
 
 You can choose between Valine and Vssue.
@@ -84,10 +84,10 @@ module.exports = {
       owner: 'OWNER_OF_REPO',
       repo: 'NAME_OF_REPO',
       clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET',
+      clientSecret: 'YOUR_CLIENT_SECRET'
     }
   }
-}
+};
 ```
 
 ::: tip
@@ -101,6 +101,7 @@ The only difference is that, you should set `platform` rather than the `api` pac
 - platform `bitbucket` - `@vssue/api-bitbucket-v2` api package
 - platform `gitee` - `@vssue/api-gitee-v5` api package
 - platform `gitea` - `@vssue/api-gitea-v1` api package
+
 :::
 
 ### Use Vssue Component

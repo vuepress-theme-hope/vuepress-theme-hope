@@ -20,5 +20,5 @@ module.exports = {
   themeConfig: {
     fullscreen: false // 默认启用，设置 false 将其关闭
   }
-}
+};
 ```

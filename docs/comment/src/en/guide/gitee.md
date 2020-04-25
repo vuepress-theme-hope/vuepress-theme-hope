@@ -5,7 +5,7 @@ icon: gitee
 # Gitee Third Party Application
 
 > Vssue can also work with self-hosted Gitee Enterprise Version. Set the `baseURL` options to your Gitee URL. See [Options Reference - baseURL](../options/README.md#baseurl)
-
+>
 > Gitee requires `clientSecret` because Gitee does not support implicit grant type
 
 ## Create a new Third Party Application

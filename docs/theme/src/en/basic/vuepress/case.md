@@ -225,4 +225,4 @@ breadcrumb: true
 - [SiteWhere Documentation](https://sitewhere.io/docs/2.0.0/) - [SiteWhere](https://sitewhere.io/en/) is the open platform for the Internet of Things. [Source](https://github.com/sitewhere/sitewhere-documentation).
 - [Pomerium](https://www.pomerium.io) - Pomerium is the [open-source](https://github.com/pomerium/pomerium) identity-aware access proxy.
 - [Wasabi Wallet](https://docs.wasabiwallet.io) – An archive of knowledge about the open-source, non-custodial and privacy-focused Bitcoin wallet for desktop.
-- [kriry开发者网络](https://dev.kriry.com/) -  kriry开发者网络 (kriry developer net).
+- [kriry 开发者网络](https://dev.kriry.com/) - kriry 开发者网络 (kriry developer net).

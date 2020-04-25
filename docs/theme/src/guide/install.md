@@ -44,11 +44,10 @@ npm i -D typescript
 {
   "compilerOptions": {
     "target": "es5", // 任何不等于 es3 的 target 均可
-    "types": [
-      "@mr-hope/vuepress-theme-types"
-    ]
+    "types": ["@mr-hope/vuepress-theme-types"]
   },
-  "include": [ // 项目中需要至少包含一个 ts 文件 (空的文件也可)，并正确配置在 include 中
+  "include": [
+    // 项目中需要至少包含一个 ts 文件 (空的文件也可)，并正确配置在 include 中
     "src/.vuepress/enhanceApp.ts" // 请将 src 替换成你的文档目录
   ]
 }

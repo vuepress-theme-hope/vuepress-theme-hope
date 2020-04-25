@@ -8,14 +8,17 @@ icon: superscript
 
 ## 配置
 
-```js {4,6}
+```js {6,8}
 module.exports = {
-  plugin: ['md-enhance', {
-    // 启用下角标功能
-    sub: true,
-    // 启用上角标
-    sup: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // 启用下角标功能
+      sub: true,
+      // 启用上角标
+      sup: true
+    }
+  ]
 };
 ```
 

@@ -6,10 +6,13 @@
 
 ```js
 module.exports = {
-  plugin: ['md-enhance', {
-    // 启用脚注
-    footnote: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // 启用脚注
+      footnote: true
+    }
+  ]
 };
 ```
 
@@ -23,9 +26,9 @@ module.exports = {
 
 ## 案例
 
-脚注1链接[^first].
+脚注 1 链接[^first].
 
-脚注2链接[^second].
+脚注 2 链接[^second].
 
 行内的脚注^[Text of inline footnote] 定义.
 
@@ -38,9 +41,9 @@ Duplicated footnote reference[^second].
 [^second]: 脚注文字。
 
 ```md
-脚注1链接[^first].
+脚注 1 链接[^first].
 
-脚注2链接[^second].
+脚注 2 链接[^second].
 
 行内的脚注^[Text of inline footnote] 定义.
 

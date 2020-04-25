@@ -1,7 +1,7 @@
 ---
 icon: api
 category: api
-tags: 
+tags:
   - api
   - themeConfig
 ---
@@ -109,7 +109,7 @@ SideBarItem 新增
 
 ## Markdown 增强
 
-使用 `themeConfig.markdown` 进行Markdown 增强配置。
+使用 `themeConfig.markdown` 进行 Markdown 增强配置。
 
 如果您不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
 

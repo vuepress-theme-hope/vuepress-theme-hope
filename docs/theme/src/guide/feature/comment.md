@@ -19,8 +19,8 @@ module.exports = {
       appId: '...', // your appId
       appKey: '...' // your appKey
     }
-  }  
-}
+  }
+};
 ```
 
 有 Valine 和 Vssue 可以选择。
@@ -33,7 +33,7 @@ module.exports = {
 
 借助 Valine，主题实现了无后端开启阅读量展示与评论功能。
 
-### 获取APP ID 和 APP Key
+### 获取 APP ID 和 APP Key
 
 请先 [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud, 进入控制台后点击左下角创建应用：
 
@@ -52,7 +52,7 @@ module.exports = {
 Valine 评论的其他配置将在 [配置](http://vuepress-comment.mrhope.site/api/valine.html) 中列出。
 
 ::: tip
-更多配置与使用，请见 [Valine官方文档](https://valine.js.org)。
+更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。
 :::
 
 ## Vssue
@@ -68,7 +68,7 @@ Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 - `owner`: 对应 repository 的拥有者帐号或者团队
 - `repo`: 用来存储评论的 repository
 - `clientId`: OAuth App 的 `client id`
-- `clientSecret`: OAuth App 的  `client secret` （只有在使用某些平台时需要）
+- `clientSecret`: OAuth App 的 `client secret` （只有在使用某些平台时需要）
 
 ### 使用插件
 
@@ -86,10 +86,10 @@ module.exports = {
       owner: 'OWNER_OF_REPO',
       repo: 'NAME_OF_REPO',
       clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET',
+      clientSecret: 'YOUR_CLIENT_SECRET'
     }
   }
-}
+};
 ```
 
 ::: tip
@@ -103,6 +103,7 @@ module.exports = {
 - platform `bitbucket` - api 包 `@vssue/api-bitbucket-v2`
 - platform `gitee` - api 包 `@vssue/api-gitee-v5`
 - platform `gitea` - api 包 `@vssue/api-gitea-v1`
+
 :::
 
 ### 使用 Vssue 组件
@@ -119,7 +120,7 @@ module.exports = {
 
 ### 自定义样式变量
 
-通过 VuePress 的 [palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)，你可以很轻松地修改Vssue 的样式变量。
+通过 VuePress 的 [palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)，你可以很轻松地修改 Vssue 的样式变量。
 
 Vssue 样式中预定义了一些 [Stylus 变量](http://stylus-lang.com/docs/variables.html)，你可以在 `vssue/src/styles/_variables.styl` 中查看它们：
 

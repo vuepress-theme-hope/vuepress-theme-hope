@@ -32,8 +32,8 @@ Icon support is enabled by default and the icon for the page will be displayed b
 
     ::: details Example
     Take path navigation as an example:
-  
+
     This feature is enabled globally by default, that is, `themeConfig.breadcrumb` is `true` by default, and you can set `breadcrumb: false` in the frontmatter of a specific page to disable it locally.
-  
+
     Of course, you can also set the `themeConfig.breadcrumb` option to `false` to disable it globally, and set `breadcrumb: true` in the frontmatter of a specific page to enable it locally.
     :::

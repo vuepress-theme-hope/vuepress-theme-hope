@@ -1,7 +1,7 @@
 ---
 icon: discoverfill
 category: function
-tags: 
+tags:
   - intro
   - function
 ---

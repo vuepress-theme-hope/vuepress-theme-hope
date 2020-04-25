@@ -1,6 +1,6 @@
 ---
 icon: sidebar
-tags: 
+tags:
   - enhance
   - layout
 category: layout

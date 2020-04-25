@@ -12,39 +12,40 @@
 
 ## owner
 
-- __Type__: `string`
-- __Details__:
+- **Type**: `string`
+- **Details**:
 
-  The owner's name of repository to store the issues and comments. Could be the name of a __user__ or an organization (__Github Organization__ / __Gitlab Group__ / __Bitbucket Team__).
+  The owner's name of repository to store the issues and comments. Could be the name of a **user** or an organization (**Github Organization** / **Gitlab Group** / **Bitbucket Team**).
 
   Together with `repo`, Vssue could locate the repository on the platform.
 
-- __Reference__: [repo](#repo)
+- **Reference**: [repo](#repo)
 
 ## repo
 
-- __Type__: `string`
-- __Details__:
+- **Type**: `string`
+- **Details**:
 
   The name of repository to store the issues and comments.
 
   Together with `owner`, Vssue could locate the repository on the platform.
 
-- __Reference__: [owner](#owner)
+- **Reference**: [owner](#owner)
 
 ::: tip
-The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
+The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}` ``:
 
 - Github: `https://github.com/${owner}/${repo}`
 - Gitlab: `https://gitlab.com/${owner}/${repo}`
 - Bitbucket: `https://bitbucket.org/${owner}/${repo}`
 - Gitee: `https://gitee.com/${owner}/${repo}`
+
 :::
 
 ## clientId
 
-- __Type__: `string`
-- __Details__:
+- **Type**: `string`
+- **Details**:
 
   The `client_id` introduced in [OAuth2 spec](https://tools.ietf.org/html/rfc6749#section-2.3.1).
 
@@ -52,14 +53,14 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
 
   Vssue will use it to get user's access token.
 
-- __Reference__:
+- **Reference**:
   - [Set up OAuth App](../guide/supported-platforms.md)
 
 ## clientSecret
 
-- __Type__: `string`
-- __Default__: `undefined`
-- __Details__:
+- **Type**: `string`
+- **Default**: `undefined`
+- **Details**:
 
   The `client_secret` introduced in [OAuth2 spec](https://tools.ietf.org/html/rfc6749#section-2.3.1).
 
@@ -73,16 +74,16 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
   However, some platforms (e.g. GitHub and Gitee) do not support it now, so `clientSecret` is required for those platforms.
   :::
 
-- __Reference__:
+- **Reference**:
   - [clientId](#clientid)
   - [proxy](#proxy)
   - [Set up OAuth App](../guide/supported-platforms.md)
 
 ## baseURL
 
-- __Type__: `string`
-- __Default__: `undefined` (according to the platform)
-- __Details__:
+- **Type**: `string`
+- **Default**: `undefined` (according to the platform)
+- **Details**:
 
   This is the base URL of your platform.
 
@@ -94,30 +95,30 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
   - `'https://gitee.com'` for Gitee
 
   ::: warning ATTENTION
-  Only when you choose to use __self-hosted__ platform should you set this option. (e.g. __GitLab Community / Enterprise Edition__ or __GitHub Enterprise Server__)
+  Only when you choose to use **self-hosted** platform should you set this option. (e.g. **GitLab Community / Enterprise Edition** or **GitHub Enterprise Server**)
   :::
 
-- __Reference__:
+- **Reference**:
   - [GitHub OAuth App](../guide/github.md)
   - [GitLab Application](../guide/gitlab.md)
 
 ## state
 
-- __Type__: `string`
-- __Default__: `'Vssue'`
-- __Details__:
+- **Type**: `string`
+- **Default**: `'Vssue'`
+- **Details**:
 
   The `state` element introduced in [OAuth2 spec](https://tools.ietf.org/html/rfc6749#section-4.1.1).
-  
+
   Vssue will send it with OAuth redirection and check if it is matched in callback.
 
   It's designed for preventing [CSRF](https://tools.ietf.org/html/rfc6749#section-10.12), but it's not so useful here as we put everything in a static page. So just ignore it or set it to anything you like.
 
 ## labels
 
-- __Type__: `string`
-- __Default__: `['Vssue']`
-- __Details__:
+- **Type**: `string`
+- **Default**: `['Vssue']`
+- **Details**:
 
   To set the labels of issues that Vssue uses.
 
@@ -129,13 +130,13 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
   Github supports emoji in labels' name, e.g. `[':heart:Vssue', ':mailbox:Comments']`.
   :::
 
-- __Reference__: [title](#title)
+- **Reference**: [title](#title)
 
 ## prefix
 
-- __Type__: `string`
-- __Default__: `'[Vssue]'`
-- __Details__:
+- **Type**: `string`
+- **Default**: `'[Vssue]'`
+- **Details**:
 
   The title prefix for issues. Used for generating the actual title of the corresponding issue.
 
@@ -143,13 +144,13 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
 
   It will be ignored if the type of `title` is `Function`.
 
-- __Reference__: [title](#title)
+- **Reference**: [title](#title)
 
 ## admins
 
-- __Type__: `Array<string>`
-- __Default__: `[]`
-- __Details__:
+- **Type**: `Array<string>`
+- **Default**: `[]`
+- **Details**:
 
   Array of username that has admin access to Vssue. The `owner` always has admin access.
 
@@ -161,21 +162,21 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
   If you want to auto create the issue when the `owner` is a organization rather than a user, you can add your username into `admins`.
   :::
 
-- __Reference__: [owner](#owner)
+- **Reference**: [owner](#owner)
 
 ## perPage
 
-- __Type__: `number`
-- __Default__: `10`
-- __Details__:
+- **Type**: `number`
+- **Default**: `10`
+- **Details**:
 
   The default value of how many comments to show per page.
 
 ## locale
 
-- __Type__: `string`
-- __Default__: `undefined`
-- __Details__:
+- **Type**: `string`
+- **Default**: `undefined`
+- **Details**:
 
   The locale language.
 
@@ -197,48 +198,49 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
 
 ## proxy
 
-- __Type__: `string | ((url: string) => string)`
-- __Default__: `` url => `https://cors-anywhere.herokuapp.com/${url}` ``
-- __Details__:
+- **Type**: `string | ((url: string) => string)`
+- **Default**: `` url => `https://cors-anywhere.herokuapp.com/${url}` ``
+- **Details**:
 
   Some platforms (e.g. GitHub and Gitee) do not support Implicit Grant, so we have to request the API of the platform to get the access token.
-  
+
   However, the access token API of the platforms do not support CORS (see [related issue of GitHub](https://github.com/isaacs/github/issues/330)). As Vssue is a pure front-end plugin, we have to use a proxy to request access token.
 
   By default, we use an open source CORS proxy service [cors-anywhere](https://github.com/Rob--W/cors-anywhere) for that.
-  
+
   If you want to use your own proxy, you need to set this option.
 
   If the platform you use does not require `clientSecret`, this option will be ignored.
 
-- __Example__:
+- **Example**:
 
   ```js
-  proxy: url => `https://your.cors.porxy?target=${url}`
+  proxy: (url) => `https://your.cors.porxy?target=${url}`;
   ```
 
-- __Reference__:
+- **Reference**:
   - [clientSecret](#clientsecret)
 
 ## issueContent
 
-- __Type__: `((param: { options: Vssue.Options, url: string }) => string | Promise<string>)`
-- __Default__: `({ url }) => url`
-- __Details__:
+- **Type**: `((param: { options: Vssue.Options, url: string }) => string | Promise<string>)`
+- **Default**: `({ url }) => url`
+- **Details**:
 
   The content of issue that auto created by Vssue.
 
   Vssue will use the return value of the function as the content.
-  
+
   The parameter includes two properties:
 
   - `options` is the options of Vssue.
   - `url` is the URL of current page, which is the default content.
 
-- __Example__:
+- **Example**:
 
   ```js
-  issueContent: ({ url }) => `This issue is auto created by Vssue to store comments of this page: ${url}`
+  issueContent: ({ url }) =>
+    `This issue is auto created by Vssue to store comments of this page: ${url}`;
   ```
 
   ::: tip
@@ -249,9 +251,9 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}`  ``:
 
 ## autoCreateIssue
 
-- __Type__: `boolean`
-- __Default__: `false`
-- __Details__:
+- **Type**: `boolean`
+- **Default**: `false`
+- **Details**:
 
   If `autoCreateIssue` is set to `true`, Vssue will try to create an issue automatically when the corresponding issue does not exist. Notice that if you have not logged-in, Vssue will redirect to the authorization page automatically.
 

@@ -15,7 +15,7 @@ const packagesDir = path.resolve(__dirname, '../packages/');
 const files = fs.readdirSync(packagesDir);
 
 // eslint-disable-next-line max-lines-per-function
-files.forEach(pkgName => {
+files.forEach((pkgName) => {
   if (pkgName.charAt(0) === '.' || pkgName === 'theme') return;
 
   const desc = `${pkgName} plugin for vuepress-theme-hope`;

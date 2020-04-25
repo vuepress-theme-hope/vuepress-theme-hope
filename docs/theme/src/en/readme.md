@@ -7,30 +7,30 @@ tagline: A light Vuepress theme
 actionText: Get Started →
 actionLink: /en/guide/
 features:
-- title: Custom theme color
-  details: Supports custom theme colors and allows users to switch between preset theme colors
-  link: /en/guide/feature/themecolor.html
+  - title: Custom theme color
+    details: Supports custom theme colors and allows users to switch between preset theme colors
+    link: /en/guide/feature/themecolor.html
 
-- title: Dark Mode
-  details: Switch between light and dark modes freely
-  link: /en/guide/feature/darkmode.html
+  - title: Dark Mode
+    details: Switch between light and dark modes freely
+    link: /en/guide/feature/darkmode.html
 
-- title: Pageviews and comments
-  details: Start pageview statistics and comment support with Valine and Vssue
-  link: /en/guide/feature/comment.html
+  - title: Pageviews and comments
+    details: Start pageview statistics and comment support with Valine and Vssue
+    link: /en/guide/feature/comment.html
 
-- title: Blog support
-  details: add dates, tags and categories to your articles and display them based on visitor filters
-  link: /en/guide/feature/blog.html
+  - title: Blog support
+    details: add dates, tags and categories to your articles and display them based on visitor filters
+    link: /en/guide/feature/blog.html
 
-- title: More new features
-  details: Enhanced a series of features based on the default theme, including icon support, path navigation, footer support, author display, etc.
+  - title: More new features
+    details: Enhanced a series of features based on the default theme, including icon support, path navigation, footer support, author display, etc.
 
-- title: PWA support
-  details: The built-in PWA plugin will make your website more like an APP.
+  - title: PWA support
+    details: The built-in PWA plugin will make your website more like an APP.
 
-- title: TS support
-  details: Turn on Typescript support for your Vuepress
+  - title: TS support
+    details: Turn on Typescript support for your Vuepress
 
 footer: MIT Licensed | Copyright © 2019-present Mr. Hope
 ---
@@ -77,9 +77,7 @@ And create a `tsconfig.json` file in your root directory
   "compilerOptions": {
     "target": "es5", // Any target except 'es3'
     "experimentalDecorators": true,
-    "types": [
-      "@mr-hope/vuepress-theme-types"
-    ]
+    "types": ["@mr-hope/vuepress-theme-types"]
   },
   "include": [
     "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder

@@ -50,7 +50,7 @@ npm run build
 
 ## Vuepress 官方文档
 
-- [Vuepress指南](https://v1.vuepress.vuejs.org/zh/guide/)
-- [Vuepress配置](https://v1.vuepress.vuejs.org/zh/config/)
-- [Vuepress插件](https://v1.vuepress.vuejs.org/zh/plugin/)
-- [Vuepress主题](https://v1.vuepress.vuejs.org/zh/theme/)
+- [Vuepress 指南](https://v1.vuepress.vuejs.org/zh/guide/)
+- [Vuepress 配置](https://v1.vuepress.vuejs.org/zh/config/)
+- [Vuepress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
+- [Vuepress 主题](https://v1.vuepress.vuejs.org/zh/theme/)

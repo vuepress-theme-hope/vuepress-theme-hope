@@ -40,9 +40,9 @@
 - 类型: `Boolean`
 - 默认值: `false`
 
-是否记录评论者IP
+是否记录评论者 IP
 
-## 更多 Valine配置项
+## 更多 Valine 配置项
 
 - **placeholder**
 
@@ -67,7 +67,7 @@
 
   ::: tip 可选值
 
-  - ''(空字符串): Gravatar官方图形
+  - ''(空字符串): Gravatar 官方图形
   - `mp`: 神秘人(一个灰白头像)
   - `identicon`: 抽象几何图形
   - `monsterid`: 小怪物

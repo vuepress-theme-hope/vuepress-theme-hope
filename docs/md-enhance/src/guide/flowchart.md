@@ -10,12 +10,15 @@ icon: flowchart
 
 ## 配置
 
-```js {4}
+```js {6}
 module.exports = {
-  plugin: ['md-enhance', {
-    // 启用流程图
-    flowchart: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // 启用流程图
+      flowchart: true
+    }
+  ]
 };
 ```
 
@@ -265,7 +268,7 @@ nodeVar2->nodeVar3
   `operationVar(<direction>)->nextNode`
 
   `inputoutputVar(<direction>)->nextNode`
-  
+
   `subroutineVar(<direction>)->nextNode`
 
 - **condition**
@@ -276,7 +279,7 @@ nodeVar2->nodeVar3
 
   ```md
   conditionalVar(yes, <direction>)->nextNode1
-  conditionalVar(no,  <direction>)->nextNode2
+  conditionalVar(no, <direction>)->nextNode2
   ```
 
 - **parallel**

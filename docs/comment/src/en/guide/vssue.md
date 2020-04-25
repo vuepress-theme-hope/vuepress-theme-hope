@@ -37,10 +37,10 @@ module.exports = {
       owner: 'OWNER_OF_REPO',
       repo: 'NAME_OF_REPO',
       clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET',
+      clientSecret: 'YOUR_CLIENT_SECRET'
     }
   }
-}
+};
 ```
 
 ::: tip
@@ -53,6 +53,7 @@ The only difference is that, you should set `platform` rather than the `api` pac
 - platform `gitlab` - api package `@vssue/api-gitlab-v4`
 - platform `bitbucket` - api package `@vssue/api-bitbucket-v2`
 - platform `gitee` - api package `@vssue/api-gitee-v5`
+
 :::
 
 ### Use Vssue Component
@@ -127,7 +128,7 @@ If you want to override them, just set them in your `palette.styl`:
 $vssue-theme-color = red
 ```
 
-## Do not want to use our plugin?
+## Do not want to use our plugin
 
 Vssue has tried to be SSR-friendly, so you can import Vssue directly in VuePress like other vue plugins / components without `@vssue/vuepress-plugin-vssue` (especially if you have customized the styles of Vssue).
 

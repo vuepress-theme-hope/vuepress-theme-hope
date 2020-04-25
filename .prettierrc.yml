@@ -35,7 +35,7 @@ arrowParens: always
 # range:
 
 # 代码的解析引擎，默认为 babel，还有 typescript css json markdown vue html yaml 等
-parser: typescript
+# parser: typescript
 
 # Markdown 超长之后是否换行
 proseWrap: preserve

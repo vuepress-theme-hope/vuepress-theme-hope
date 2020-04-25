@@ -11,7 +11,7 @@ jobs:
   include:
     # 测试并部署 DEMO
     - stage: demo-deploy
-      name: "Test and Deploy Theme Demo Test"
+      name: 'Test and Deploy Theme Demo Test'
       script:
         - yarn run theme-test:build
       deploy:
@@ -28,7 +28,7 @@ jobs:
     # 部署文档
     - stage: deploy-docs
       # 部署评论文档
-      name: "Build and Deploy Comment Docs"
+      name: 'Build and Deploy Comment Docs'
       script:
         - yarn run comment-docs:build
       deploy:
@@ -41,7 +41,7 @@ jobs:
         strategy: git
 
     # 部署 Markdown 增强文档
-    - name: "Build and Deploy Markdown Enhance Docs"
+    - name: 'Build and Deploy Markdown Enhance Docs'
       script:
         - yarn run md-enhance-docs:build
       deploy:
@@ -54,7 +54,7 @@ jobs:
         strategy: git
 
     # 部署文档
-    - name: "Build and Deploy Offical Docs"
+    - name: 'Build and Deploy Offical Docs'
       script:
         - yarn run theme:build
       deploy:
@@ -67,7 +67,7 @@ jobs:
 
     # 测试 主题
     - stage: theme-test
-      name: "Test Theme"
+      name: 'Test Theme'
       script:
         - yarn run md-enhance:test
         - yarn run theme:test

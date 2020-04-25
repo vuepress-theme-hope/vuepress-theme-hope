@@ -6,12 +6,15 @@ icon: align
 
 ## 配置
 
-```js {4}
+```js {6}
 module.exports = {
-  plugin: ['md-enhance', {
-    // 启用自定义对其
-    align: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // 启用自定义对其
+      align: true
+    }
+  ]
 };
 ```
 
@@ -55,10 +58,10 @@ module.exports = {
 重大的变动。
 :::
 
-如果您在使用过程中遇到了bug，可以
+如果您在使用过程中遇到了 bug，可以
 
 ::: right
-[提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+[提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
 ::::
 
@@ -70,10 +73,10 @@ module.exports = {
 重大的变动。
 :::
 
-如果您在使用过程中遇到了bug，可以
+如果您在使用过程中遇到了 bug，可以
 
 ::: right
-[提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+[提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
 ::::
 ```

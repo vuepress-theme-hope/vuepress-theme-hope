@@ -8,10 +8,13 @@ This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to su
 
 ```js
 module.exports = {
-  plugin: ['md-enhance', {
-    // Enable flowchart
-    flowchart: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // Enable flowchart
+      flowchart: true
+    }
+  ]
 };
 ```
 
@@ -272,7 +275,7 @@ Each node variables has optional specifiers, like direction, and some have speci
   `operationVar(<direction>)->nextNode`
 
   `inputoutputVar(<direction>)->nextNode`
-  
+
   `subroutineVar(<direction>)->nextNode`
 
 - **condition**
@@ -283,7 +286,7 @@ Each node variables has optional specifiers, like direction, and some have speci
 
   ```md
   conditionalVar(yes, <direction>)->nextNode1
-  conditionalVar(no,  <direction>)->nextNode2
+  conditionalVar(no, <direction>)->nextNode2
   ```
 
 - **parallel**

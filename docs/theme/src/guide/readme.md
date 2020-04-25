@@ -7,7 +7,7 @@ category: instruction
 # 介绍
 
 ::: tip
-如果您在使用过程中遇到了 bug，可以 [提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+如果您在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 
 同时请注意，您应当已经熟悉 Vuepress 的默认主题，因为所有跟默认主题相关的内容都不会被介绍。
 

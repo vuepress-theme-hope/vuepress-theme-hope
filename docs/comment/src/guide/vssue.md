@@ -15,7 +15,7 @@ Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 - `owner`: 对应 repository 的拥有者帐号或者团队
 - `repo`: 用来存储评论的 repository
 - `clientId`: OAuth App 的 `client id`
-- `clientSecret`: OAuth App 的  `client secret` （只有在使用某些平台时需要）
+- `clientSecret`: OAuth App 的 `client secret` （只有在使用某些平台时需要）
 
 ## Vssue 配置
 
@@ -37,10 +37,10 @@ module.exports = {
       owner: 'OWNER_OF_REPO',
       repo: 'NAME_OF_REPO',
       clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET',
+      clientSecret: 'YOUR_CLIENT_SECRET'
     }
   }
-}
+};
 ```
 
 ::: tip
@@ -53,6 +53,7 @@ module.exports = {
 - platform `gitlab` - api 包 `@vssue/api-gitlab-v4`
 - platform `bitbucket` - api 包 `@vssue/api-bitbucket-v2`
 - platform `gitee` - api 包 `@vssue/api-gitee-v5`
+
 :::
 
 ### 使用 Vssue 组件
@@ -69,7 +70,7 @@ module.exports = {
 
 ### 自定义样式变量
 
-通过 VuePress 的 [palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)，你可以很轻松地修改Vssue 的样式变量。
+通过 VuePress 的 [palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)，你可以很轻松地修改 Vssue 的样式变量。
 
 Vssue 样式中预定义了一些 [Stylus 变量](http://stylus-lang.com/docs/variables.html)，你可以在 `vssue/src/styles/_variables.styl` 中查看它们：
 

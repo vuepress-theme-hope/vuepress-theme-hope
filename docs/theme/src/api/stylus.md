@@ -1,16 +1,16 @@
 ---
 icon: api
 category: api
-tags: 
- - api
- - style
+tags:
+  - api
+  - style
 ---
 
 # stylus 配置
 
 `palette.styl` 新增如下变量：
 
-## $colorPicker
+## \$colorPicker
 
 主题选择器配置，需要与主题配置中的选择器配置相同。
 

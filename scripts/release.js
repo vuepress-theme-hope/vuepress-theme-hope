@@ -12,11 +12,11 @@ const inquirer = require('inquirer');
 const versions = {};
 const curVersion = require('../lerna.json').version;
 
-const getVersion = answers => answers.customVersion || versions[answers.bump];
+const getVersion = (answers) => answers.customVersion || versions[answers.bump];
 
-const isPreRelease = version => Boolean(semver.prerelease(version));
+const isPreRelease = (version) => Boolean(semver.prerelease(version));
 
-const getNpmTags = version => {
+const getNpmTags = (version) => {
   if (isPreRelease(version)) return ['next', 'alpha', 'beta', 'latest'];
 
   return ['latest', 'beta', 'alpha', 'next'];
@@ -30,11 +30,11 @@ const release = async () => {
 
   const bumps = ['patch', 'minor', 'major', 'prerelease', 'premajor'];
 
-  bumps.forEach(bump => {
+  bumps.forEach((bump) => {
     versions[bump] = semver.inc(curVersion, bump);
   });
 
-  const bumpChoices = bumps.map(bump => ({
+  const bumpChoices = bumps.map((bump) => ({
     name: `${bump} (${versions[bump]})`,
     value: bump
   }));
@@ -50,14 +50,14 @@ const release = async () => {
       name: 'customVersion',
       message: 'Input version:',
       type: 'input',
-      when: answers => answers.bump === 'custom'
+      when: (answers) => answers.bump === 'custom'
     },
     {
       name: 'npmTag',
       message: 'Input npm tag:',
       type: 'list',
-      default: answers => getNpmTags(getVersion(answers))[0],
-      choices: answers => getNpmTags(getVersion(answers))
+      default: (answers) => getNpmTags(getVersion(answers))[0],
+      choices: (answers) => getNpmTags(getVersion(answers))
     }
   ]);
 
@@ -96,7 +96,7 @@ const release = async () => {
   await execa('yarn', ['run', 'changelog']);
 };
 
-release().catch(err => {
+release().catch((err) => {
   console.error(err);
   // eslint-disable-next-line no-process-exit
   process.exit(1);

@@ -1,14 +1,14 @@
 ---
 icon: api
 category: api
-tags: 
+tags:
   - api
   - themeConfig
 ---
 
 # Theme Config
 
-In addition to viewing this guide, you can also directly view the [types file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) in the source code  or [configuration file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js) of this document.
+In addition to viewing this guide, you can also directly view the [types file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) in the source code or [configuration file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js) of this document.
 
 ::: warning
 By injecting, vuepress-theme-hope changes the default values of some configurations of the default theme.
@@ -189,7 +189,7 @@ Whether global encryption
 ### encrypt.config
 
 - Type: `Record <string, string | string []>`
--Required: No
+- Required: No
 
 The encryption configuration is an object with a key name matching the path and a key value corresponding to a password that accepts a string or an array of strings.
 
@@ -238,7 +238,7 @@ Whether to show blogger information in the sidebar
 ### blog.intro
 
 - Type: `string`
--Required: No
+- Required: No
 
 Personal introduction address of the blogger.
 

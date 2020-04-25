@@ -1,8 +1,8 @@
 ---
 category: api
-tags: 
- - plugin
- - api
+tags:
+  - plugin
+  - api
 ---
 
 # @vuepress/medium-zoom <MyBadge text="New" />
@@ -15,11 +15,12 @@ Turn on the function and make night mode adaptation.
 
 The default configuration is:
 
-```js {3-12}
+```js {3-13}
 module.exports = {
   plugins: [
     [
-      '@vuepress/medium-zoom', {
+      '@vuepress/medium-zoom',
+      {
         options: {
           /** pic margin after zoom */
           margin: 16,

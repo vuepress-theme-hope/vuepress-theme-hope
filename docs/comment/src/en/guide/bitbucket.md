@@ -6,8 +6,8 @@ icon: bitbucket
 
 ## Create a new OAuth Consumer
 
-- Go to __Bitbucket settings - OAuth__
-- Click __Add consumer__
+- Go to **Bitbucket settings - OAuth**
+- Click **Add consumer**
 
 ->![Set up OAuth App - Bitbucket 01](/img/oauth-app-bitbucket-01.png)<-
 ->![Set up OAuth App - Bitbucket 02](/img/oauth-app-bitbucket-02.png)<-
@@ -22,7 +22,7 @@ icon: bitbucket
 
 ## Get the Client ID
 
-Then you've created a new OAuth Consumer, and here is your __Key__ (`Client ID`).
+Then you've created a new OAuth Consumer, and here is your **Key** (`Client ID`).
 
 ->![Set up OAuth App - Bitbucket 06](/img/oauth-app-bitbucket-06.png)<-
 
@@ -49,7 +49,7 @@ Redirect to Bitbucket Authorization page. Click `Grant access` to login.
 ->![Set up OAuth App - Bitbucket 09](/img/oauth-app-bitbucket-09.png)<-
 ->![Set up OAuth App - Bitbucket 10](/img/oauth-app-bitbucket-10.png)<-
 
-Oops, failed to load comments. Your repo should enable the __Issue Tracker__ to make Vssue works.
+Oops, failed to load comments. Your repo should enable the **Issue Tracker** to make Vssue works.
 
 ->![Set up OAuth App - Bitbucket 11](/img/oauth-app-bitbucket-11.png)<-
 

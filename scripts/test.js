@@ -47,7 +47,7 @@ const test = async () => {
   console.log('child output:', stdout);
 };
 
-test().catch(err => {
+test().catch((err) => {
   console.error(err);
   // eslint-disable-next-line no-process-exit
   process.exit(1);

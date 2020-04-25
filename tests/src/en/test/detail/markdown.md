@@ -33,10 +33,10 @@ Duplicated footnote reference[^second].
 重大的变动。
 :::
 
-如果您在使用过程中遇到了bug，可以
+如果您在使用过程中遇到了 bug，可以
 
 ::: right
-[提一个issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+[提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
 
 ## 流程图展示
@@ -63,5 +63,7 @@ c2(no)->op2->e
 
 Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
-$$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}$$
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$

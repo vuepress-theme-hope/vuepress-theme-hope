@@ -20,5 +20,5 @@ module.exports = {
   themeConfig: {
     fullscreen: false // Enable by default
   }
-}
+};
 ```

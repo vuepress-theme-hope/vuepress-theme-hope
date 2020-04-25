@@ -2,9 +2,9 @@
 category: api
 copyright:
   minLength: 10
-tags: 
- - plugin
- - api
+tags:
+  - plugin
+  - api
 ---
 
 # 插件说明
@@ -47,4 +47,4 @@ vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可�
 
 - [**vuepress-plugin-md-enhance**](https://vuepress-md-enhance.mrhope.site/): 提供更多 Markdown 语法
 
-- [**@mr-hope/vuepress-plugin-pwa**](pwa.md): PWA支持
+- [**@mr-hope/vuepress-plugin-pwa**](pwa.md): PWA 支持

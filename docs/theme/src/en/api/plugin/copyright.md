@@ -1,8 +1,8 @@
 ---
 category: api
-tags: 
- - plugin
- - api
+tags:
+  - plugin
+  - api
 ---
 
 # vuepress-plugin-copyright <MyBadge text="New" />
@@ -17,12 +17,13 @@ The author name is automatically generated from the author information or sitena
 
 The default configuration is:
 
-```js {4-10}
+```js {4-11}
 module.exports = {
   plugins: [
     /** Copy operation processing */
     [
-      'copyright', {
+      'copyright',
+      {
         authorName: options.author,
         minLength: 100,
         clipboardComponent: path.resolve(__dirname, 'components/Clipboard.vue')

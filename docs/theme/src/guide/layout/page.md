@@ -44,7 +44,7 @@ icon: Home
   当配置 [评论功能](../feature/comment.md) 后，该功能默认启用。全局配置项为 `valine.visitor`，页面配置项为 `visitor`，你可以将其禁用，或在全局禁用的情况下在特定页面启用。
 
   ::: details 例子
-  
+
   ```md
   ---
   visitor: false

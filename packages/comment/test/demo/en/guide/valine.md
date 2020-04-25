@@ -13,7 +13,7 @@ options = {
   type: 'valine',
   appId: '...', // your appId
   appKey: '...' // your appKey
-}
+};
 ```
 
 Config will be listed on [Config](../api/valine.md).

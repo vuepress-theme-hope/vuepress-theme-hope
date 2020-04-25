@@ -1,8 +1,8 @@
 ---
 category: api
-tags: 
- - plugin
- - api
+tags:
+  - plugin
+  - api
 ---
 
 # @vuepress/plugin-pwa <MyBadge text="New" />

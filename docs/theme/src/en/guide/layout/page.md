@@ -44,7 +44,7 @@ icon: Home
   This feature is enabled by default when [Comment Function](../feature/comment.md) is configured. The global configuration item is `valine.visitor` and the page configuration item is to `visitor`.
 
   ::: details Example
-  
+
   ```md
   ---
   visitor: false

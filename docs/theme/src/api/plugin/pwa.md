@@ -1,8 +1,8 @@
 ---
 category: api
-tags: 
- - plugin
- - api
+tags:
+  - plugin
+  - api
 ---
 
 # @mr-hope/vuepress-plugin-pwa <MyBadge text="新增" />

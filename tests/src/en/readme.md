@@ -7,19 +7,19 @@ tagline: A light Vuepress theme
 actionText: Get Started →
 actionLink: /en/guide/
 features:
-- title: Custom theme color and night mode
-  details: Supports custom theme colors and allows users to switch between preset theme colors
-  link: https://vuepress-theme.mrhope.site/en/guide/themecolor.html#custom-theme-color
-- title: Night mode
-  details: Switch between offical style and a cool night mode theme
-  link: https://vuepress-theme.mrhope.site/en/guide/themecolor.html#darkmode
-- title: Pageviews and comments
-  details: with Valine to start pageview statistics and comment support
-  link: https://vuepress-theme.mrhope.site/en/guide/comment.html
-- title: Enhancements to the default theme
-  details: Enhances a range of features based on the default theme, path navigation, footer support, author display, etc.
-- title: Icon Support
-  details: Icon support through the whole theme
+  - title: Custom theme color and night mode
+    details: Supports custom theme colors and allows users to switch between preset theme colors
+    link: https://vuepress-theme.mrhope.site/en/guide/themecolor.html#custom-theme-color
+  - title: Night mode
+    details: Switch between offical style and a cool night mode theme
+    link: https://vuepress-theme.mrhope.site/en/guide/themecolor.html#darkmode
+  - title: Pageviews and comments
+    details: with Valine to start pageview statistics and comment support
+    link: https://vuepress-theme.mrhope.site/en/guide/comment.html
+  - title: Enhancements to the default theme
+    details: Enhances a range of features based on the default theme, path navigation, footer support, author display, etc.
+  - title: Icon Support
+    details: Icon support through the whole theme
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

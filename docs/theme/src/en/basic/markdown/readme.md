@@ -20,7 +20,7 @@ In addition, because we have a god-level editor like RStudio, we can quickly tur
 | Display       | Code       | ShortCut Key |
 | ------------- | ---------- | ------------ |
 | **Bold**      | `**text**` | Ctrl/⌘ + B   |
-| *Emphasize*   | `*text*`   | Ctrl/⌘ + I   |
+| _Emphasize_   | `*text*`   | Ctrl/⌘ + I   |
 | `Inline Code` | \`code\`   | 选中后"\`"   |
 
 ## Title

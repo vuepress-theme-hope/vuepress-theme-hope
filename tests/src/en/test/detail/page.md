@@ -2,9 +2,9 @@
 author: Ms.Hope
 comment: false
 visitor: false
-footer: 
- link: https://baidu.com
- text: 百度一下
+footer:
+  link: https://baidu.com
+  text: 百度一下
 ---
 
 # 页面配置

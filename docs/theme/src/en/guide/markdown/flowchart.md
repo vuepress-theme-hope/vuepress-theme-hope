@@ -2,6 +2,7 @@
 icon: flowchart
 category: markdown
 ---
+
 # Flowchart
 
 Let the Markdown file support flow chart in your VuePress site

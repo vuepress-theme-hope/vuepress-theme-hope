@@ -8,12 +8,15 @@ icon: tex
 
 ## 配置
 
-```js {4}
+```js {6}
 module.exports = {
-  plugin: ['md-enhance', {
-    // 启用 TeX 支持
-    tex: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // 启用 TeX 支持
+      tex: true
+    }
+  ]
 };
 ```
 
@@ -34,12 +37,16 @@ Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 使用 `$$codes$$` 来表示。
 
 ```md
-$$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}$$
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
 ```
 
-$$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}$$
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
 
 ## 教程
 
@@ -79,7 +86,7 @@ $$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right
 ::: tip
 连加、连乘、极限、积分等大型运算符可以用 `\limits` 和 `\nolimits` 来强制显式地指定是否压缩这些上下标。
 
-`\iiiint`($\liiiint$) 是使用 hack实现的，由于间距问题对于行公式需要使用 `\liiiint` 命令。
+`\iiiint`($\liiiint$) 是使用 hack 实现的，由于间距问题对于行公式需要使用 `\liiiint` 命令。
 
 `\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` 目前不被支持。
 :::
@@ -90,13 +97,15 @@ $\sqrt{x}$, $\frac{1}{2}$.
 
 $\sum_{i=1}^n i\; \prod_{i=1}^n$
 
-$\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
+$\sum\limits _{i=1}^n i\; \prod\limits_{i=1}^n$
 
 $\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
 
 $\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
 
-$$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
+$$
+\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2
+$$
 
 ```md
 $\sqrt{x}$, $\frac{1}{2}$.
@@ -179,19 +188,13 @@ $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 \rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert$
 
 ```md
-> ()
 $\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
-> []
 $\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr]$
-> {}
 $\Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\}$
-> <>
 $\Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
 \rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle$
-> ||
 $\Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x
 \rvert\bigr\rvert\Bigr\rvert\biggr\rvert\Biggr\rvert$
-> z||
 $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 \rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert$
 ```
@@ -244,67 +247,67 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
 - **换行**
 
-    使用 `\\` 或 `\newline` 进行换行
+  使用 `\\` 或 `\newline` 进行换行
 
-    $$
-    x = a+b+c+{} \\
-    d+e+f+g
-    $$
+  $$
+  x = a+b+c+{} \\
+  d+e+f+g
+  $$
 
-    $$
-    x = a+b+c+ \newline
-    d+e+f+g
-    $$
+  $$
+  x = a+b+c+ \newline
+  d+e+f+g
+  $$
 
-    ```md
-    $$
-    x = a+b+c+ \\
-    d+e+f+g
-    $$
+  ```md
+  $$
+  x = a+b+c+ \\
+  d+e+f+g
+  $$
 
-    $$
-    x = a+b+c+ \newline
-    d+e+f+g
-    $$
-    ```
+  $$
+  x = a+b+c+ \newline
+  d+e+f+g
+  $$
+  ```
 
-    ::: tip
-    请注意，由于 $\KaTeX$ 支持自动换行，所以如果您手动指定换行会在控制台输出一个警告。
-    :::
+  ::: tip
+  请注意，由于 $\KaTeX$ 支持自动换行，所以如果您手动指定换行会在控制台输出一个警告。
+  :::
 
 - **对齐**
 
-    可以使用 `aligned` 环境来实现对齐，使用 `&` 标识固定锚点
+  可以使用 `aligned` 环境来实现对齐，使用 `&` 标识固定锚点
 
-    $$
-    \begin{aligned}
-    x ={}& a+b+c+{} \\
-    &d+e+f+g
-    \end{aligned}
-    $$
+  $$
+  \begin{aligned}
+  x ={}& a+b+c+{} \\
+  &d+e+f+g
+  \end{aligned}
+  $$
 
-    $$
-    \begin{alignedat}{2}
-       10&x+ &3&y = 2 \\
-       3&x+&13&y = 4
-    \end{alignedat}
-    $$
+  $$
+  \begin{alignedat}{2}
+     10&x+ &3&y = 2 \\
+     3&x+&13&y = 4
+  \end{alignedat}
+  $$
 
-    ```md
-    $$
-    \begin{aligned}
-    x ={}& a+b+c+{} \\
-    &d+e+f+g
-    \end{aligned}
-    $$
+  ```md
+  $$
+  \begin{aligned}
+  x ={}& a+b+c+{} \\
+  &d+e+f+g
+  \end{aligned}
+  $$
 
-    $$
-    \begin{alignedat}{2}
-       10&x+ &3&y = 2 \\
-       3&x+&13&y = 4
-    \end{alignedat}
-    $$
-    ```
+  $$
+  \begin{alignedat}{2}
+     10&x+ &3&y = 2 \\
+     3&x+&13&y = 4
+  \end{alignedat}
+  $$
+  ```
 
 ### 公式组
 

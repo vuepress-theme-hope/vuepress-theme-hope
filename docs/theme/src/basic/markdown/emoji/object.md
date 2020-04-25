@@ -1,8 +1,8 @@
 ---
 icon: emoji
-tags: 
- - markdown
- - emoji
+tags:
+  - markdown
+  - emoji
 ---
 
 # 对象

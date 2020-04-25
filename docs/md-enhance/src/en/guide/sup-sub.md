@@ -8,14 +8,17 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Configuration
 
-```js {4,6}
+```js {6,8}
 module.exports = {
-  plugin: ['md-enhance', {
-    // Enable Subscript
-    sub: true,
-    // Enable  Superscript
-    sup: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // Enable Subscript
+      sub: true,
+      // Enable  Superscript
+      sup: true
+    }
+  ]
 };
 ```
 

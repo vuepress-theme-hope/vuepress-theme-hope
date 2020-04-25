@@ -8,24 +8,24 @@ icon: debug
 
 想要书写一个主题，首先在你文档根目录创建一个 `.vuepress/theme` 目录，接着创建一个 `Layout.vue` 文件：
 
-```md
+```
 .
 └─ .vuepress
-   └─ theme
-       └─ Layout.vue
+ └─ theme
+   └─ Layout.vue
 ```
 
 到这里，就像开发一个普通的 Vue 应用一样。如何组织你的主题，这完全取决于你。
 
 :::warning
-放置在theme文件夹下的文件会被自动应用为本地主题，无需对`config.js`做任何额外的配置。
+放置在 theme 文件夹下的文件会被自动应用为本地主题，无需对`config.js`做任何额外的配置。
 :::
 
 ### 获取渲染内容
 
 当前的 `.md` 文件渲染的内容，可以作为一个独特的全局组件 `<Content/>` 来使用，你可能想要它显示在页面中的某个地方。一个最简单的主题，可以是一个唯一的 `Layout.vue` 组件，并包含以下内容：
 
-``` html
+```html
 <template>
   <div class="theme-container">
     <Content />
@@ -50,18 +50,18 @@ icon: debug
 ```md
 theme
 ├── `global-components`
-│   └── xxx.vue
+│ └── xxx.vue
 ├── `components`
-│   └── xxx.vue
+│ └── xxx.vue
 ├── `layouts`
-│   ├── Layout.vue (必要的)
-│   └── 404.vue
+│ ├── Layout.vue (必要的)
+│ └── 404.vue
 ├── `styles`
-│   ├── index.styl
-│   └── palette.styl
+│ ├── index.styl
+│ └── palette.styl
 ├── `templates`
-│   ├── dev.html
-│   └── ssr.html
+│ ├── dev.html
+│ └── ssr.html
 ├── `index.js`
 ├── `enhanceApp.js`
 └── package.json
@@ -69,7 +69,7 @@ theme
 
 - `theme/global-components`: 该目录下的组件都会被自动注册为全局组件。想了解更多，请参考 [@vuepress/plugin-register-components](https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/plugin-register-components)。
 - `theme/components`: Vue 组件。
-- `theme/layouts`: 布局组件，其中  `Layout.vue` 是必需的。
+- `theme/layouts`: 布局组件，其中 `Layout.vue` 是必需的。
 - `theme/styles`: 全局的样式和调色板。
 - `theme/templates`: 修改默认的模板文件。
 - `theme/index.js`: 主题文件的入口文件。
@@ -93,12 +93,12 @@ theme
 
 假设你的主题 `layouts` 目录如下：
 
-```md
+```
 theme
 └── `layouts`
-    ├── Layout.vue
-    ├── AnotherLayout.vue
-    └── 404.vue
+  ├── Layout.vue
+  ├── AnotherLayout.vue
+  └── 404.vue
 ```
 
 然后，所有的页面将会默认使用 `Layout.vue` 作为布局组件，对于那些匹配不到的路由将会使用 `404.vue`。
@@ -109,7 +109,7 @@ theme
 ---
 layout: AnotherLayout
 ---
-````
+```
 
 ::: tip
 每个 layout 组件都可能会渲染出截然不同的页面，如果你想设置一些全局的 UI(如全局的 `<header>`)，可以考虑使用 [globalLayout](https://v1.vuepress.vuejs.org/zh/theme/option-api.html#globallayout)。
@@ -128,7 +128,7 @@ module.exports = {
       updatePopup: true
     }
   ]
-}
+};
 ```
 
 ### 网站和页面的元数据
@@ -137,7 +137,7 @@ module.exports = {
 
 这是你现在看到的这个网站的 `$site` 的值：
 
-``` json
+```json
 {
   "title": "VuePress",
   "description": "Vue 驱动的静态网站生成器",
@@ -158,12 +158,14 @@ module.exports = {
 
 下面的这个对象是你正在看的这个页面的 `$page` 的值：
 
-``` json
+```json
 {
   "lastUpdated": 1524847549000,
   "path": "/custom-themes.html",
   "title": "自定义主题",
-  "headers": [/* ... */],
+  "headers": [
+    /* ... */
+  ],
   "frontmatter": {}
 }
 ```
@@ -184,7 +186,7 @@ module.exports = {
 
 自定义主题也可以通过主题根目录下的 `enhanceApp.js` 文件来对 VuePress 应用进行拓展配置。这个文件应当 `export default` 一个钩子函数，并接受一个包含了一些应用级别属性的对象作为参数。你可以使用这个钩子来安装一些附加的 Vue 插件、注册全局组件，或者增加额外的路由钩子等：
 
-``` js
+```js
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
   options, // 附加到根实例的一些选项
@@ -192,5 +194,5 @@ export default ({
   siteData // 站点元数据
 }) => {
   // ...做一些其他的应用级别的优化
-}
+};
 ```

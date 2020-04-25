@@ -1,8 +1,9 @@
 # GitHub OAuth App
 
 > Vssue 同样可以配合自己搭建的 GitHub Enterprise Server 使用。只需要将 `baseURL` 设置为你的 Github URL 即可。查看 [配置参考 - baseURL](../options/README.md#baseurl)
-
+>
 > GitHub 需要设置 `clientSecret`，因为 [GitHub 目前还不支持 implicit grant type](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
+>
 > ![Set up OAuth App - Github 00](/img/oauth-app-github-00.png)
 
 ## 创建一个新的 OAuth App

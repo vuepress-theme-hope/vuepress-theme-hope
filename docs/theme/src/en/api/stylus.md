@@ -1,16 +1,16 @@
 ---
 icon: api
 category: api
-tags: 
- - api
- - style
+tags:
+  - api
+  - style
 ---
 
 # stylus configuration
 
 `palette.styl` adds the following variables:
 
-## $colorPicker
+## \$colorPicker
 
 theme selector configuration, which needs to be the same as the selector configuration in the theme configuration.
 

@@ -1,8 +1,8 @@
 ---
 category: api
-tags: 
- - plugin
- - api
+tags:
+  - plugin
+  - api
 ---
 
 # @vuepress/medium-zoom <MyBadge text="新增" />
@@ -15,12 +15,13 @@ tags:
 
 默认配置如下：
 
-```js  {4-13}
+```js {4-14}
 module.exports = {
   plugins: [
     /** 图片缩放插件 */
     [
-      '@vuepress/medium-zoom', {
+      '@vuepress/medium-zoom',
+      {
         /** 设置选项 */
         options: {
           /** 缩放后图片的外间距 */

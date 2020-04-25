@@ -15,7 +15,7 @@ All options listed on this page apply to the default theme only. If you are usin
 
 The default theme provides a homepage layout (used on [the homepage of this site](../../README.md)). To use it, specify `home: true` plus some other metadata in your root `README.md`'s [YAML frontmatter](https://v1.vuepress.vuejs.org/guide/markdown.md#front-matter). This is an example of how it works:
 
-``` yaml
+```yaml
 ---
 home: true
 heroImage: /hero.png
@@ -24,14 +24,15 @@ tagline: Hero subtitle
 actionText: Get Started →
 actionLink: /guide/
 features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+  - title: Simplicity First
+    details: Minimal setup with markdown-centered project structure helps you focus on writing.
+  - title: Vue-Powered
+    details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
+  - title: Performant
+    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
+
 ```
 
 Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
@@ -46,7 +47,7 @@ The Navbar may contain your page title, [Search Box](#search-box), [Navbar Links
 
 You can add links to the navbar via `themeConfig.nav`:
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
@@ -56,7 +57,7 @@ module.exports = {
       { text: 'External', link: 'https://google.com' }
     ]
   }
-}
+};
 ```
 
 These links can also be dropdown menus if you provide an array of `items` instead of a `link`:
@@ -75,7 +76,7 @@ module.exports = {
       }
     ]
   }
-}
+};
 ```
 
 You can also have sub groups inside a dropdown by having nested items:
@@ -87,51 +88,58 @@ module.exports = {
       {
         text: 'Languages',
         items: [
-          { text: 'Group1', items: [/*  */] },
-          { text: 'Group2', items: [/*  */] }
+          {
+            text: 'Group1',
+            items: [
+              /*  */
+            ]
+          },
+          {
+            text: 'Group2',
+            items: [
+              /*  */
+            ]
+          }
         ]
       }
     ]
   }
-}
+};
 ```
 
 ### Disable the Navbar
 
 To disable the navbar globally, use `themeConfig.navbar`:
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     navbar: false
   }
-}
+};
 ```
 
 You can disable the navbar for a specific page via `YAML front matter`:
 
-``` yaml
+```yaml
 ---
 navbar: false
 ---
+
 ```
 
 ## Sidebar
 
 To enable the sidebar, use `themeConfig.sidebar`. The basic configuration expects an Array of links:
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    sidebar: [
-      '/',
-      '/page-a',
-      ['/page-b', 'Explicit link text']
-    ]
+    sidebar: ['/', '/page-a', ['/page-b', 'Explicit link text']]
   }
-}
+};
 ```
 
 You can omit the `.md` extension, and paths ending with `/` are inferred as `*/README.md`. The text for the link is automatically inferred (either from the first header in the page or explicit title in `YAML front matter`). To explicitly specify the link text, use an array in form of `[link, text]`.
@@ -142,7 +150,7 @@ The sidebar automatically displays links for headers in the current active page,
 
 A page can also override this value via `YAML front matter`:
 
-``` md
+```md
 ---
 sidebarDepth: 2
 ---
@@ -152,55 +160,55 @@ sidebarDepth: 2
 
 The sidebar only displays links for headers in the current active page. You can display all header links for every page with `themeConfig.displayAllHeaders: true`:
 
-``` js
+```js
 module.exports = {
   themeConfig: {
     displayAllHeaders: true // Default: false
   }
-}
+};
 ```
 
 ### Active Header Links
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
-``` js
+```js
 module.exports = {
   themeConfig: {
-    activeHeaderLinks: false, // Default: true
+    activeHeaderLinks: false // Default: true
   }
-}
+};
 ```
 
 ::: tip
-  It’s worth mentioning that when you disable this option, the corresponding script of this functionality will not be loaded. This is a small point in our performance optimization.
+It’s worth mentioning that when you disable this option, the corresponding script of this functionality will not be loaded. This is a small point in our performance optimization.
 :::
 
 ### Sidebar Groups
 
 You can divide sidebar links into several groups by using objects:
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     sidebar: [
       {
-        title: 'Group 1',   // required
-        path: '/foo/',      // optional, which should be a absolute path.
+        title: 'Group 1', // required
+        path: '/foo/', // optional, which should be a absolute path.
         collapsable: false, // optional, defaults to true
-        sidebarDepth: 1,    // optional, defaults to 1
-        children: [
-          '/'
-        ]
+        sidebarDepth: 1, // optional, defaults to 1
+        children: ['/']
       },
       {
         title: 'Group 2',
-        children: [ /* ... */ ]
+        children: [
+          /* ... */
+        ]
       }
     ]
   }
-}
+};
 ```
 
 Sidebar groups are collapsable by default. You can force a group to be always open with `collapsable: false`.
@@ -218,48 +226,38 @@ Also Mr.Hope add icon support and a fullscreen button for the nav bar.
 To display different sidebars for different sections of content, first organize your pages into directories for each desired section:
 
 ```vue
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│  ├─ README.md
-│  ├─ one.md
-│  └─ two.md
-└─ bar/
-   ├─ README.md
-   ├─ three.md
-   └─ four.md
+. ├─ README.md ├─ contact.md ├─ about.md ├─ foo/ │  ├─ README.md │ ├─ one.md │
+└─ two.md └─ bar/ ├─ README.md ├─ three.md └─ four.md
 ```
 
 Then, update your configuration to define your sidebar for each section.
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     sidebar: {
       '/foo/': [
-        '',     /* /foo/ */
-        'one',  /* /foo/one.html */
-        'two'   /* /foo/two.html */
+        '' /* /foo/ */,
+        'one' /* /foo/one.html */,
+        'two' /* /foo/two.html */
       ],
 
       '/bar/': [
-        '',      /* /bar/ */
-        'three', /* /bar/three.html */
-        'four'   /* /bar/four.html */
+        '' /* /bar/ */,
+        'three' /* /bar/three.html */,
+        'four' /* /bar/four.html */
       ],
 
       // fallback
       '/': [
-        '',        /* / */
-        'contact', /* /contact.html */
-        'about'    /* /about.html */
+        '' /* / */,
+        'contact' /* /contact.html */,
+        'about' /* /about.html */
       ]
     }
   }
-}
+};
 ```
 
 ::: warning
@@ -272,44 +270,46 @@ VuePress checks each sidebar config from top to bottom. If the fallback configur
 
 To automatically generate a sidebar that contains only the header links for the current page, you can use `YAML front matter` on that page:
 
-``` yaml
+```yaml
 ---
 sidebar: auto
 ---
+
 ```
 
 You can also enable it in all pages by using config:
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     sidebar: 'auto'
   }
-}
+};
 ```
 
 In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.md) mode, you can also apply it to a specific locale:
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-     '/': {
-       sidebar: 'auto'
-     }
+    '/': {
+      sidebar: 'auto'
+    }
   }
-}
+};
 ```
 
 ### Disabling the Sidebar
 
 You can disable the sidebar on a specific page with `YAML front matter`:
 
-``` yaml
+```yaml
 ---
 sidebar: false
 ---
+
 ```
 
 ## Search Box
@@ -318,13 +318,13 @@ sidebar: false
 
 You can disable the built-in search box with `themeConfig.search: false`, and customize how many suggestions will be shown with `themeConfig.searchMaxSuggestions`:
 
-``` js
+```js
 module.exports = {
   themeConfig: {
     search: false,
     searchMaxSuggestions: 10
   }
-}
+};
 ```
 
 You can also disable the built-in search box for individual pages with `YAML front matter`:
@@ -333,6 +333,7 @@ You can also disable the built-in search box for individual pages with `YAML fro
 ---
 search: false
 ---
+
 ```
 
 ::: tip
@@ -343,7 +344,7 @@ Built-in Search only builds index from the title, `h2` and `h3` headers, if you 
 
 The `themeConfig.algolia` option allows you to use [Algolia DocSearch](https://community.algolia.com/docsearch/) to replace the simple built-in search. To enable it, you need to provide at least `apiKey` and `indexName`:
 
-``` js
+```js
 module.exports = {
   themeConfig: {
     algolia: {
@@ -351,7 +352,7 @@ module.exports = {
       indexName: '<INDEX_NAME>'
     }
   }
-}
+};
 ```
 
 ::: warning Note
@@ -364,30 +365,30 @@ For more options, check out [Algolia DocSearch’s documentation](https://github
 
 You can define a placeholder for the search box by adding the `searchPlaceholder` attribute:
 
-``` js
+```js
 module.exports = {
   themeConfig: {
     searchPlaceholder: 'Search...'
   }
-}
+};
 ```
 
 ## Last Updated
 
 The `themeConfig.lastUpdated` option allows you to get the UNIX timestamp(ms) of each file’s last `git` commit, and it will also display at the bottom of each page in an appropriate format:
 
-``` js
+```js
 module.exports = {
   themeConfig: {
-    lastUpdated: 'Last Updated', // string | boolean
+    lastUpdated: 'Last Updated' // string | boolean
   }
-}
+};
 ```
 
 Note that it’s `off` by default. If given a `string`, it will be displayed as a prefix (default value: `Last Updated`).
 
 ::: warning
-  Since `lastUpdated` is based on `git`, you can only use it in a `git` repository. Also, since the timestamp used comes from the git commit, it will display only after a first commit for a given page, and update only on ensuing commits of that page.
+Since `lastUpdated` is based on `git`, you can only use it in a `git` repository. Also, since the timestamp used comes from the git commit, it will display only after a first commit for a given page, and update only on ensuing commits of that page.
 :::
 
 **Also see:**
@@ -398,18 +399,19 @@ Note that it’s `off` by default. If given a `string`, it will be displayed as 
 
 Prev and next links are automatically inferred based on the sidebar order of the active page. You can also explicitly overwrite or disable them globally with [theme config](https://v1.vuepress.vuejs.org/theme/default-theme-config.html#git-repository-and-edit-links) or on specific pages using `YAML front matter`:
 
-``` yaml
+```yaml
 ---
 prev: ./some-other-page
 next: false
 ---
+
 ```
 
 ## Git repository and Edit Links
 
 Providing `themeConfig.repo` auto generates a GitHub link in the navbar and "Edit this page" links at the bottom of each page.
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
@@ -436,46 +438,47 @@ module.exports = {
     // custom text for edit link. Defaults to "Edit this page"
     editLinkText: 'Help us improve this page!'
   }
-}
+};
 ```
 
 You can overwrite the following properties on specific pages via `YAML front matter`:
 
-``` yaml
+```yaml
 ---
 editLink: false # Will overwrite 'editLinks' from themeConfig
 prev: true # Will overwrite 'prevLinks' property from themeConfig
 next: ./my-next-page # Will overwrite 'nextLinks' property from themeConfig
 ---
+
 ```
 
 ## Smooth Scrolling
 
 The `themeConfig.smoothScroll` option allows you to enable smooth scrolling.
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     smoothScroll: true
   }
-}
+};
 ```
 
 ## Custom Page Class
 
 Sometimes, you may need to add a unique class for a specific page so that you can target content on that page only in custom CSS. You can add a class to the theme container div with `pageClass` in `YAML front matter`:
 
-``` yaml
+```yaml
 ---
 pageClass: custom-page-class
 ---
+
 ```
 
 Then you can write CSS targeting that page only in `./vuepress/styles/index.styl`.
 
-``` css
-
+```css
 .theme-container.custom-page-class {
   /* page-specific rules */
 }
@@ -489,10 +492,11 @@ These styles are written in [index.styl](https://v1.vuepress.vuejs.org/config/#i
 
 By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using `YAML front matter`:
 
-``` yaml
+```yaml
 ---
 layout: SpecialLayout
 ---
+
 ```
 
 This will render `.vuepress/components/SpecialLayout.vue` for the given page.

@@ -1,7 +1,7 @@
 # GitLab Application
 
 > See [Gitlab official docs](https://docs.gitlab.com/ce/integration/oauth_provider.html#adding-an-application-through-the-profile) for reference.
-
+>
 > Vssue can also work with self-hosted GitLab. Set the `baseURL` options to your Gitlab URL. See [Options Reference - baseURL](../options/README.md#baseurl)
 
 ## Create a new Application
@@ -18,7 +18,7 @@
 
 ## Get the Client ID
 
-Then you've created a new Application, and here is your __Application ID__ (`Client ID`).
+Then you've created a new Application, and here is your **Application ID** (`Client ID`).
 
 ->![Set up OAuth App - Gitlab 04](/img/oauth-app-gitlab-04.png)<-
 

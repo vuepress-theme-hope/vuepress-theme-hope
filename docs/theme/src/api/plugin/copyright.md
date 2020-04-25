@@ -1,8 +1,8 @@
 ---
 category: api
-tags: 
- - plugin
- - api
+tags:
+  - plugin
+  - api
 ---
 
 # vuepress-plugin-copyright <MyBadge text="新增" />
@@ -17,12 +17,13 @@ tags:
 
 默认配置如下：
 
-```js {4-10}
+```js {4-11}
 module.exports = {
   plugins: [
     /** 复制操作处理 */
     [
-      'copyright', {
+      'copyright',
+      {
         authorName: options.author,
         minLength: 100,
         clipboardComponent: path.resolve(__dirname, 'components/Clipboard.vue')

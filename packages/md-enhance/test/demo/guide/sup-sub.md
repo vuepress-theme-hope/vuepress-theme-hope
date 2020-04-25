@@ -6,12 +6,15 @@
 
 ```js
 module.exports = {
-  plugin: ['md-enhance', {
-    // 启用下角标功能
-    sub: true,
-    // 启用上角标
-    sup: true
-  }]
+  plugin: [
+    'md-enhance',
+    {
+      // 启用下角标功能
+      sub: true,
+      // 启用上角标
+      sup: true
+    }
+  ]
 };
 ```
 

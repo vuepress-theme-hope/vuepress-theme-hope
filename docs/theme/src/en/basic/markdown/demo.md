@@ -76,14 +76,17 @@ In codes above, two spaces are behind `at`.
 ## Blockquotes
 
 > Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
+>
+> > ...by using additional greater-than signs right next to each other...
+> >
 > > > ...or with spaces between arrows.
 
 ```md
 > Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
+>
+> > ...by using additional greater-than signs right next to each other...
+> >
 > > > ...or with spaces between arrows.
-
 ```
 
 ## List
@@ -92,25 +95,31 @@ In codes above, two spaces are behind `at`.
 
 - Create a list by starting a line with `-`
 - Sub-lists are made by indenting 2 spaces:
+
   - Marker character change forces new list start:
+
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit  
       link break
 
       New paragraph
+
 - Very easy!
 
 ```md
 - Create a list by starting a line with `-`
 - Sub-lists are made by indenting 2 spaces:
+
   - Marker character change forces new list start:
+
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit  
       link break
 
       New paragraph
+
 - Very easy!
 ```
 
@@ -171,13 +180,13 @@ If you want to be able to jump to each other when editing the markdown using the
 
 代码：
 
-  ```md
+```md
 - [Home page-Can route when editing markdown file](../readme.md)
 
 - [Home page using absolute path 2](/readme.md)
 
 - [Visit in HTML](../index.html)
-  ```
+```
 
 :::
 
@@ -201,10 +210,10 @@ Classic:
 
 Shortcuts:
 
-8-) :) :* :( :-) :-( ;)
+8-) :) :\* :( :-) :-( ;)
 
 ```md
-8-) :) :* :( :-) :-( ;)
+8-) :) :\* :( :-) :-( ;)
 ```
 
 :::tip
@@ -265,7 +274,7 @@ Sample text here...
 
 Syntax highlighting:
 
-``` js
+```js
 var foo = function (bar) {
   return bar++;
 };

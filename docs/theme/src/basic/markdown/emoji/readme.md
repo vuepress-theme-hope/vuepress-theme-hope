@@ -1,11 +1,11 @@
 ---
 icon: emoji
-tags: 
- - markdown
- - emoji
+tags:
+  - markdown
+  - emoji
 ---
 
-# Emoji列表
+# Emoji 列表
 
 ## 人物
 

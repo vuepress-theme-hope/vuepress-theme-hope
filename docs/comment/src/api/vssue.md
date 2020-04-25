@@ -17,25 +17,25 @@ icon: vssue
 
 ## owner
 
-- __类型__: `string`
-- __详细__:
+- **类型**: `string`
+- **详细**:
 
-  用来存储 Issue 和评论的仓库的拥有者的名称。可能是一个用户，也可能是一个组织（__Github Organization__ / __Gitlab Group__ / __Bitbucket Team__）
+  用来存储 Issue 和评论的仓库的拥有者的名称。可能是一个用户，也可能是一个组织（**Github Organization** / **Gitlab Group** / **Bitbucket Team**）
 
   Vssue 将通过 `owner` 和 `repo` 在平台上定位这个仓库。
 
-- __参考__: [repo](#repo)
+- **参考**: [repo](#repo)
 
 ## repo
 
-- __类型__: `string`
-- __详细__:
+- **类型**: `string`
+- **详细**:
 
   用来存储 Issue 和评论的仓库的名称。
 
   Vssue 将通过 `owner` 和 `repo` 在平台上定位这个仓库。
 
-- __参考__: [owner](#owner)
+- **参考**: [owner](#owner)
 
 ::: tip
 仓库 URL 的常见模式是 `` `${baseURL}/${owner}/${repo}` ``：
@@ -44,12 +44,13 @@ icon: vssue
 - Gitlab: `https://gitlab.com/${owner}/${repo}`
 - Bitbucket: `https://bitbucket.org/${owner}/${repo}`
 - Gitee: `https://gitee.com/${owner}/${repo}`
+
 :::
 
 ## clientId
 
-- __类型__: `string`
-- __详细__:
+- **类型**: `string`
+- **详细**:
 
   在 [OAuth2 spec](https://tools.ietf.org/html/rfc6749#section-2.3.1) 中介绍的 `client_id`。
 
@@ -57,14 +58,14 @@ icon: vssue
 
   Vssue 将使用 `clientId` 来获取用户的 access token。
 
-- __参考__:
+- **参考**:
   - [创建 OAuth App](../guide/supported-platforms.md)
 
 ## clientSecret
 
-- __类型__: `string`
-- __默认值__: `undefined`
-- __详细__:
+- **类型**: `string`
+- **默认值**: `undefined`
+- **详细**:
 
   在 [OAuth2 spec](https://tools.ietf.org/html/rfc6749#section-2.3.1) 中介绍的 `client_secret`。
 
@@ -78,16 +79,16 @@ icon: vssue
   然而，有一些平台（如 GitHub 和 Gitee）不支持它，所以在使用这些平台时 `clientSecret` 是必须的。
   :::
 
-- __参考__:
+- **参考**:
   - [clientId](#clientid)
   - [proxy](#proxy)
   - [创建 OAuth App](../guide/supported-platforms.md)
 
 ## baseURL
 
-- __类型__: `string`
-- __默认值__: `undefined` （根据不同平台变化）
-- __详细__:
+- **类型**: `string`
+- **默认值**: `undefined` （根据不同平台变化）
+- **详细**:
 
   平台的 base URL。
 
@@ -99,30 +100,30 @@ icon: vssue
   - Gitee 是`'https://gitee.com'`
 
   ::: warning 注意
-  只有在你要使用 __自行搭建的__ 平台时才需要设置这个选项。（比如 __GitLab Community / Enterprise Edition__ 或 __GitHub Enterprise Server__）
+  只有在你要使用 **自行搭建的** 平台时才需要设置这个选项。（比如 **GitLab Community / Enterprise Edition** 或 **GitHub Enterprise Server**）
   :::
 
-- __参考__:
+- **参考**:
   - [GitHub OAuth App](../guide/github.md)
   - [GitLab Application](../guide/gitlab.md)
 
 ## state
 
-- __类型__: `string`
-- __默认值__: `'Vssue'`
-- __详细__:
+- **类型**: `string`
+- **默认值**: `'Vssue'`
+- **详细**:
 
   在 [OAuth2 spec](https://tools.ietf.org/html/rfc6749#section-4.1.1) 中介绍的 `state`。
-  
+
   Vssue 将会在重定向到平台认证界面时发送它，并在平台认证返回后检查它是否正确。
 
   它是被设计用来避免 [CSRF](https://tools.ietf.org/html/rfc6749#section-10.12) 的，但是由于我们所有东西都在静态页面上，所以它没有太大作用。忽略这个选项，或者随便设置成什么值都行。
 
 ## labels
 
-- __类型__: `Array<string>`
-- __默认值__: `['Vssue']`
-- __详细__:
+- **类型**: `Array<string>`
+- **默认值**: `['Vssue']`
+- **详细**:
 
   用来设置 Vssue 使用的 Issue 的 labels （标签）。
 
@@ -134,13 +135,13 @@ icon: vssue
   Github 支持在标签名称中加入 emoji，如 `[':heart:Vssue', ':mailbox:Comments']`。
   :::
 
-- __参考__: [title](#title)
+- **参考**: [title](#title)
 
 ## prefix
 
-- __类型__: `string`
-- __默认值__: `'[Vssue]'`
-- __详细__:
+- **类型**: `string`
+- **默认值**: `'[Vssue]'`
+- **详细**:
 
   Issue 标题的前缀。用于生成存储评论的对应 Issue 的实际标题。
 
@@ -148,13 +149,13 @@ icon: vssue
 
   如果 `title` 的类型是 `Function`，这个配置将会被忽略。
 
-- __参考__: [title](#title)
+- **参考**: [title](#title)
 
 ## admins
 
-- __类型__: `Array<string>`
-- __默认值__: `[]`
-- __详细__:
+- **类型**: `Array<string>`
+- **默认值**: `[]`
+- **详细**:
 
   拥有 admin 权限的用户数组。`owner` 始终视为拥有 admin 权限。
 
@@ -166,21 +167,21 @@ icon: vssue
   在 `owner` 是一个组织而不是用户时，可以将你的用户名添加进 `admins` 来自动创建对应 Issue。
   :::
 
-- __参考__: [owner](#owner)
+- **参考**: [owner](#owner)
 
 ## perPage
 
-- __类型__: `number`
-- __默认值__: `10`
-- __详细__:
+- **类型**: `number`
+- **默认值**: `10`
+- **详细**:
 
   默认每页显示的评论数。
 
 ## locale
 
-- __类型__: `string`
-- __默认值__: `undefined`
-- __详细__:
+- **类型**: `string`
+- **默认值**: `undefined`
+- **详细**:
 
   使用的语言。
 
@@ -202,34 +203,34 @@ icon: vssue
 
 ## proxy
 
-- __类型__: `string | ((url: string) => string)`
-- __默认值__: ``url => `https://cors-anywhere.herokuapp.com/${url}` ``
-- __详细__:
+- **类型**: `string | ((url: string) => string)`
+- **默认值**: `` url => `https://cors-anywhere.herokuapp.com/${url}` ``
+- **详细**:
 
   某些平台（如 GitHub 和 Gitee）不支持 Implicit Grant，所以我们必须通过请求平台的 API 来获取 Access Token。
 
   然而，平台的 Access Token API 不支持 CORS （详见 [GitHub 的相关 Issue](https://github.com/isaacs/github/issues/330)）。由于 Vssue 是一个纯前端插件，我们必须要通过代理来请求 Access Token。
 
   默认情况下，我们使用一个开源的 CORS 代理服务 [cors-anywhere](https://github.com/Rob--W/cors-anywhere)。
-  
+
   如果你希望使用自己的代理，就需要设置这个选项。
-  
+
   如果你使用的平台不需要设置 `clientSecret`，那么该选项会被忽略。
 
-- __示例__:
+- **示例**:
 
   ```js
-  proxy: url => `https://your.cors.porxy?target=${url}`
+  proxy: (url) => `https://your.cors.porxy?target=${url}`;
   ```
 
-- __参考__:
+- **参考**:
   - [clientSecret](#clientsecret)
 
 ## issueContent
 
-- __类型__: `((param: { options: Vssue.Options, url: string }) => string | Promise<string>)`
-- __默认值__: `({ url }) => url`
-- __详细__:
+- **类型**: `((param: { options: Vssue.Options, url: string }) => string | Promise<string>)`
+- **默认值**: `({ url }) => url`
+- **详细**:
 
   Vssue 自动创建 Issue 时使用的内容。
 
@@ -240,10 +241,11 @@ icon: vssue
   - `options` 是 Vssue 的 options。
   - `url` 是当前页面的 URL ，是 Vssue 生成 Issue 时默认使用的内容。
 
-- __示例__:
+- **示例**:
 
   ```js
-  issueContent: ({ url }) => `这个 Issue 由 Vssue 自动创建，用来存储该页面的评论：${url}`
+  issueContent: ({ url }) =>
+    `这个 Issue 由 Vssue 自动创建，用来存储该页面的评论：${url}`;
   ```
 
   ::: tip
@@ -254,9 +256,9 @@ icon: vssue
 
 ## autoCreateIssue
 
-- __类型__: `boolean`
-- __默认值__: `false`
-- __详细__:
+- **类型**: `boolean`
+- **默认值**: `false`
+- **详细**:
 
   如果 `autoCreateIssue` 设置为 `true`，在对应的 Issue 不存在时，Vssue 会自动尝试为你创建 Issue。注意，若你当前没有登录，则 Vssue 会自动跳转到平台的认证页面。
 

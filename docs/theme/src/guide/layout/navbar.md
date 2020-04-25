@@ -1,6 +1,6 @@
 ---
 icon: nav
-tags: 
+tags:
   - enhance
   - layout
 category: layout
@@ -40,7 +40,7 @@ module.exports = {
       }
     ]
   }
-}
+};
 ```
 
 :::

@@ -14,7 +14,7 @@ const path = require('path');
  *
  * @param {string} dirPath 确认存在的文件夹路径
  */
-const markDirExistSync = dirPath => {
+const markDirExistSync = (dirPath) => {
   try {
     fs.readdirSync(dirPath);
   } catch (err) {
@@ -52,7 +52,7 @@ const copyDir = (srcDir, targetDir) => {
 
   const files = fs.readdirSync(srcDir, { withFileTypes: true });
 
-  files.forEach(file => {
+  files.forEach((file) => {
     if (file.isFile())
       copyFile(`${srcDir}/${file.name}`, `${targetDir}/${file.name}`);
     else if (file.isDirectory())
