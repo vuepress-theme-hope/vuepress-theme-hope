@@ -75,7 +75,6 @@ export default class DropdownLink extends Vue {
   }
 
   private close(judge: boolean) {
-    console.log('close');
     if (!judge || (judge && this.isMobile)) this.open = false;
   }
 
