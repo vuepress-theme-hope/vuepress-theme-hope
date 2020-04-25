@@ -2,7 +2,7 @@
   <aside class="sidebar">
     <BloggerInfo v-if="sidebarDisplay !== 'none'" :class="{ mobile: sidebarDisplay === 'mobile' }" />
 
-    <NavLinks />
+    <NavLinks :in-sidebar="true" />
 
     <slot name="top" />
 

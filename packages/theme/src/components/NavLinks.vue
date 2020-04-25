@@ -2,7 +2,7 @@
   <nav v-if="userLinks.length || repoLink" class="nav-links">
     <!-- user links -->
     <div v-for="item in userLinks" :key="item.link" class="nav-item">
-      <DropdownLink v-if="item.type === 'links'" :item="item" />
+      <DropdownLink v-if="item.type === 'links'" :in-sidebar="inSidebar" :item="item" />
       <NavLink v-else :item="item" />
     </div>
 
@@ -29,6 +29,9 @@ import { resolveNavLinkItem } from '@theme/util/navbar';
 
 @Component({ components: { NavLink, DropdownLink } })
 export default class NavLinks extends Vue {
+  @Prop({ type: Boolean, default: false })
+  private readonly inSidebar!: boolean;
+
   private get userNav() {
     return this.$themeLocaleConfig.nav || this.$themeConfig.nav || [];
   }

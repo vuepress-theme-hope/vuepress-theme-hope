@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ open }" class="dropdown-wrapper">
+  <div :class="{ open }" class="dropdown-wrapper" @focusout="close(true)">
     <button class="dropdown-title" type="button" :aria-label="dropdownAriaLabel" @click="toggle">
       <span class="title">
         <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
@@ -28,7 +28,7 @@
                 @focusout="
                   isLastItemOfArray(childSubItem, subItem.items) &&
                     isLastItemOfArray(subItem, item.items) &&
-                    toggle()
+                    close()
                 "
               />
             </li>
@@ -37,7 +37,7 @@
           <NavLink
             v-else
             :item="subItem"
-            @focusout="isLastItemOfArray(subItem, item.items) && toggle()"
+            @focusout="isLastItemOfArray(subItem, item.items) && close()"
           />
         </li>
       </ul>
@@ -56,20 +56,37 @@ export default class DropdownLink extends Vue {
   @Prop({ type: Object, required: true })
   private readonly item!: NavBarConfigItem;
 
+  @Prop({ type: Boolean, default: false })
+  private readonly inSidebar!: boolean;
+
   private open = false;
+
+  /** 是否是移动设备 */
+  private isMobile = false;
 
   private get dropdownAriaLabel() {
     return this.item.ariaLabel || this.item.text;
   }
 
-  private toggle() {
-    this.open = !this.open;
+  private toggle(event: any) {
+    const isButton = event.detail === 0;
+
+    if (this.inSidebar || this.isMobile || isButton) this.open = !this.open;
+  }
+
+  private close(judge: boolean) {
+    console.log('close');
+    if (!judge || (judge && this.isMobile)) this.open = false;
   }
 
   private isLastItemOfArray(item: NavBarConfigItem, array: NavBarConfigItem[]) {
     if (Array.isArray(array)) return item === array[array.length - 1];
 
     return false;
+  }
+
+  private mounted() {
+    this.isMobile = 'ontouchstart' in document.documentElement;
   }
 
   @Watch('$route')
