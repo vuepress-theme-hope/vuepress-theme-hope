@@ -66,7 +66,7 @@ export default class Home extends Vue {
 <style lang="stylus">
 .home
   padding $navbarHeight 2rem 0
-  max-width 960px
+  max-width $homePageWidth
   margin 0px auto
   display block
 

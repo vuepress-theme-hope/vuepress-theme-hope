@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { DirectiveOptions, VNode } from 'vue';
 import { DirectiveBinding } from 'vue/types/options';
 
@@ -77,7 +76,9 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
     handler,
     callback: binding.value
   };
-  if (!isServer(vNode)) document.addEventListener('click', handler);
+  const clickHandler =
+    'ontouchstart' in document.documentElement ? 'touchstart' : 'click';
+  if (!isServer(vNode)) document.addEventListener(clickHandler, handler);
 };
 
 /** 更新命令 */
@@ -88,8 +89,10 @@ export const update: PopupDirectiveFunction = (el, binding) => {
 /** 解绑命令 */
 export const unbind: PopupDirectiveFunction = (el, _binding, vNode) => {
   // Remove Event Listeners
-  if (!isServer(vNode))
-    document.removeEventListener('click', el.$vueClickOutside.handler);
+  const clickHandler =
+    'ontouchstart' in document.documentElement ? 'touchstart' : 'click';
+  if (!isServer(vNode) && el.$vueClickOutside)
+    document.removeEventListener(clickHandler, el.$vueClickOutside.handler);
   delete el.$vueClickOutside;
 };
 

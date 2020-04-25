@@ -93,6 +93,7 @@ export default class Navbar extends Vue {
 
     handleLinksWrapWidth();
     window.addEventListener('resize', handleLinksWrapWidth, false);
+    window.onorientationchange = () => handleLinksWrapWidth;
   }
 }
 </script>

@@ -193,9 +193,6 @@ export default class DropdownLink extends Vue {
       // override the inline style.
       display block !important
 
-    &.open:blur
-      display none
-
     .dropdown-title
       &:hover
         var(--accent-color)

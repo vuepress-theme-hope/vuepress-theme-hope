@@ -21,7 +21,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Mixins, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { dom, i18n } from '@mr-hope/vuepress-shared-utils';
 import Color from '@theme/util/color';
 import DarkmodeSwitch from '@theme/components/DarkmodeSwitch.vue';
