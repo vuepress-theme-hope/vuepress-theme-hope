@@ -63,5 +63,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "hooks": {
+    "pre-commit": "yarn run test:all && lint-staged"
   }
 }
