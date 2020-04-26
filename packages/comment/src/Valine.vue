@@ -15,14 +15,14 @@ export default class Valine extends Vue {
   @Prop({ type: Object, default: () => ({}) })
   private readonly valineConfig!: ValineOptions;
 
-  /** 是否启用 Valine */
+  /** If Valine is enabled */
   private get valineEnable() {
     const { valineConfig } = this;
 
     return valineConfig && valineConfig.appId && valineConfig.appKey;
   }
 
-  /** 是否显示评论 */
+  /** Whether to display comment */
   private get commentDisplay() {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.comment !== false;
@@ -34,7 +34,7 @@ export default class Valine extends Vue {
     );
   }
 
-  /** 是否显示访问量 */
+  /** Whether to display view number */
   private get visitorDisplay() {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.visitor !== false;
@@ -49,7 +49,7 @@ export default class Valine extends Vue {
   @Watch('$route')
   onRouteChange(to: Route, from: Route) {
     if (to.path !== from.path)
-      // 切换页面时刷新评论
+      // Refresh comment when navigating to a new page
       Vue.nextTick(() => {
         this.valine(to.path);
       });
@@ -65,7 +65,7 @@ export default class Valine extends Vue {
     this.valine(this.$route.path);
   }
 
-  /** 启用 Valine */
+  // Init valine
   private valine(path: string) {
     const { valineConfig } = this;
     const valine = new (require('valine'))();
@@ -148,7 +148,7 @@ export default class Valine extends Vue {
       .vcopy
         display none
 
-// 深色模式
+// Darkmode support
 .theme-dark .page .valine-wrapper #valine
   .vlist .vcard .vhead .vsys
     background #121212

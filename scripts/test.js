@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-11-05 12:27:15
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 18:01:29
- * @Description: 开发或构建文档
- */
-
 const execa = require('execa');
 const inquirer = require('inquirer');
 

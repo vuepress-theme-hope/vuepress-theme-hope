@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-11-05 13:10:30
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-11 18:50:16
- * @Description: Bootstrap package
- */
-
 const fs = require('fs');
 const path = require('path');
 /** 主题当前版本 */

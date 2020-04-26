@@ -23,13 +23,13 @@ export default class Tags extends Vue {
     return this.$themeConfig.blog !== false;
   }
 
-  /** 点击标签导航 */
+  // Navigate when clicking tags
   private clickTag(tagName: string) {
     const path = `/tag/${tagName}/`;
     if (this.$route.path !== path) this.$router.push(path);
   }
 
-  /** 标签颜色 */
+  /** Get tag color */
   private color(index: number) {
     const colors = [
       '#e74c3c',

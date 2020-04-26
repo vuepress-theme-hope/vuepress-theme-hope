@@ -1,10 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-11-23 18:48:57
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-21 23:16:52
- * @Description: 多语言配置
- */
 import {
   Langs,
   config,

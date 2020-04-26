@@ -1,10 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2020-01-05 12:55:30
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 00:11:53
- * @Description: 多语言配置
- */
 import { HopeLangI18nConfig } from '../../types';
 
 export type Langs = 'zh-CN' | 'en-US';

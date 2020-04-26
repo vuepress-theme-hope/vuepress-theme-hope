@@ -31,7 +31,7 @@ export default class BackToTop extends Vue {
   @Prop({ type: Number, default: 300 })
   private readonly threshold!: number;
 
-  /** 滚动距离 */
+  /** Scroll distance */
   private scrollTop = 0;
 
   /** 触发距离 */
@@ -41,7 +41,7 @@ export default class BackToTop extends Vue {
       : this.threshold;
   }
 
-  /** 是否显示返回顶部按钮 */
+  /** Whether to display button */
   private get isDisplay() {
     const globalEnable = this.$themeConfig.backtotop !== false;
     const pageEnable = this.$page.frontmatter.backtotop;
@@ -63,7 +63,7 @@ export default class BackToTop extends Vue {
     );
   }
 
-  /** 获得返回顶部距离 */
+  // Get scroll distance
   private getScrollTop() {
     return (
       window.pageYOffset ||
@@ -73,7 +73,7 @@ export default class BackToTop extends Vue {
     );
   }
 
-  /** 滚动到顶部 */
+  // Scroll to top
   private scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.scrollTop = 0;

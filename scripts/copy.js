@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-10-17 12:17:46
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-20 13:33:00
- * @Description: 复制文件
- */
-
 const fs = require('fs');
 const path = require('path');
 

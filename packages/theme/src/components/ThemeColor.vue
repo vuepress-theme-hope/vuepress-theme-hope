@@ -1,10 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-08 20:45:09
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-26 18:54:30
- * @Description: 主题颜色
--->
 <template>
   <div v-if="enable" v-click-outside="clickOutside" class="color-picker">
     <span class="color-button" @click="showMenu = !showMenu">

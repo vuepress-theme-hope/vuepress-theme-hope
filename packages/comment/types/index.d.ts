@@ -41,7 +41,7 @@ export type ValineOptions = BaseCommentOptions &
     /** 每页的最大评论数 */
     pageSize: number;
 
-    /** 是否启用昵称框自动获取QQ昵称和QQ头像 */
+    /** 是否启用昵称框自动获取 QQ 昵称和 QQ 头像 */
     enableQQ: boolean;
 
     /** 自定义表情 CDN */

@@ -1,10 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-07-05 00:14:26
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-04-02 19:08:00
- * @Description: Vuepress配置
- */
 const resolve = require('vuepress-theme-hope/resolve');
 const navBarConfig = require('./navBar');
 const sideBarConfig = require('./sideBar');

@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-11-05 12:27:15
- * @LastEditors  : Mr.Hope
- * @LastEditTime : 2020-01-07 09:52:51
- * @Description: release
- */
-
 const execa = require('execa');
 const semver = require('semver');
 const inquirer = require('inquirer');

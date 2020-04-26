@@ -1,11 +1,3 @@
-/*
- * @Author: Mr.Hope
- * @Date: 2019-07-05 00:14:26
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-03-23 16:46:57
- * @Description: Vuepress配置
- */
-
 module.exports = {
   /** 部署目录 */
   base: process.env.VuePress_BASE || '/',

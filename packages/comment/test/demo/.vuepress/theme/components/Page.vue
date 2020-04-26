@@ -1,12 +1,3 @@
-<!--
- * @Author: Mr.Hope
- * @Date: 2019-10-07 19:18:03
- * @LastEditors: Mr.Hope
- * @LastEditTime: 2020-04-02 19:33:13
- * @Description: 页面主体
- *
- * 为每个页面都添加了 路径导航 / 页脚 支持
--->
 <template>
   <main class="page">
     <slot name="top" />

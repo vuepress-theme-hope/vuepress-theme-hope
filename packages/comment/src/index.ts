@@ -11,7 +11,7 @@ export = (option: CommentOptions): PluginOptionAPI => {
       } as Record<string, any>),
 
     plugins: [
-      /** typescript 支持 */
+      /** Typescript Support */
       ['typescript']
     ]
   };
