@@ -1,17 +1,44 @@
+import * as dayjs from 'dayjs';
 import { Component, Vue } from 'vue-property-decorator';
 import { PageComputed } from 'vuepress-types';
 import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 
 /** 处理日期 */
-export const getDate = (date: string): (number | undefined)[] => {
+export const getDate = (dateString: string): (number | undefined)[] => {
+  const time = dayjs(dateString);
+
+  if (time.isValid()) {
+    const year = time.year();
+    const month = time.month() + 1;
+    const date = time.date();
+    const hour = time.hour();
+    const minute = time.minute();
+    const second = time.second();
+    const millisecond = time.millisecond();
+
+    if (
+      (hour === 8 || hour === 0) &&
+      minute === 0 &&
+      second === 0 &&
+      millisecond === 0
+    )
+      return [year, month, date, undefined, undefined, undefined];
+
+    return [year, month, date, hour, minute, second];
+  }
+
   const pattern = /\s*(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?\s*/u;
-  const [, year, month, day, hour, minute, second] = pattern.exec(date) || [];
+  const [, year, month, day, hour, minute, second] =
+    pattern.exec(dateString) || [];
 
   const getNumber = (x: string): number | undefined =>
     typeof x === 'undefined' ? undefined : Number(x);
 
+  const getYear = (yearNumber: number | undefined): number | undefined =>
+    yearNumber && yearNumber < 100 ? yearNumber + 2000 : yearNumber;
+
   return [
-    getNumber(year),
+    getYear(getNumber(year)),
     getNumber(month),
     getNumber(day),
     getNumber(hour),
@@ -29,20 +56,23 @@ export const compareDate = (
   dataA: string | undefined,
   dataB: string | undefined
 ): number => {
-  if (!dataA) return -1;
-  if (!dataB) return 1;
+  if (!dataA) return 1;
+  if (!dataB) return -1;
 
   const compare = (
     x: (number | undefined)[],
-    y: (number | undefined)[],
-    index = 0
+    y: (number | undefined)[]
   ): number => {
-    if (index === 5) return 0;
+    if (x.length === 0) return 0;
     if (typeof y[0] === 'undefined') return -1;
     if (typeof x[0] === 'undefined') return 1;
 
-    if (y[0] - x[0] === 0) return compare(x, y, index + 1);
+    if (y[0] - x[0] === 0) {
+      x.shift();
+      y.shift();
 
+      return compare(x, y);
+    }
     return y[0] - x[0];
   };
 
@@ -61,7 +91,7 @@ const filterArticle = (
 ): PageComputed[] =>
   pages.filter((page) => {
     const {
-      frontmatter: { article, blogpage, home, date },
+      frontmatter: { date, article, blogpage, home, time = date },
       title
     } = page;
 
@@ -71,7 +101,7 @@ const filterArticle = (
       home !== true &&
       article !== false &&
       // 时间线处理
-      (isTimeline !== true || date !== undefined)
+      !(isTimeline === true && time === undefined)
     );
   });
 
@@ -84,15 +114,17 @@ const sortArticle = (pages: PageComputed[]): PageComputed[] =>
   pages.sort((prev, next) => {
     const prevSticky = prev.frontmatter.sticky;
     const nextSticky = next.frontmatter.sticky;
+    const prevTime = prev.frontmatter.time || prev.frontmatter.date;
+    const nextTime = next.frontmatter.time || next.frontmatter.date;
 
     if (prevSticky && nextSticky)
       return prevSticky === nextSticky
-        ? compareDate(prev.frontmatter.date, next.frontmatter.date)
+        ? compareDate(prevTime, nextTime)
         : prevSticky - nextSticky;
     if (prevSticky && !nextSticky) return -1;
     if (!prevSticky && nextSticky) return 1;
 
-    return compareDate(prev.frontmatter.date, next.frontmatter.date);
+    return compareDate(prevTime, nextTime);
   });
 
 const generatePagination = (

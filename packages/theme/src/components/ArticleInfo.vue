@@ -7,7 +7,7 @@
     </span>
 
     <!-- 时间 -->
-    <span v-if="time">
+    <span v-if="time" class="time">
       <TimeIcon />
       <span v-text="time" />
     </span>
@@ -51,14 +51,14 @@ export default class ArticleInfo extends Vue {
 
   /** 发表时间 */
   private get time() {
-    const { time } = this.article.frontmatter;
+    const { date, time = date } = this.article.frontmatter;
 
     if (time) {
       if (time.indexOf('T') !== -1) {
-        const [date, temp] = time.split('T');
+        const [dateString, temp] = time.split('T');
         const [times] = temp.split('.');
 
-        return `${date} ${times === '00:00:00' ? '' : times}`;
+        return `${dateString} ${times === '00:00:00' ? '' : times}`;
       }
 
       return time;
@@ -71,7 +71,7 @@ export default class ArticleInfo extends Vue {
 
       times.pop();
 
-      return times.join(' ');
+      return `${this.$themeLocaleConfig.lastUpdated} ${times.join(' ')}`;
     }
 
     return '';
@@ -114,6 +114,7 @@ export default class ArticleInfo extends Vue {
   flex-wrap wrap
   justify-content flex-start
   align-content stretch
+  font-size 14px
 
   .icon
     width 16px
@@ -124,6 +125,10 @@ export default class ArticleInfo extends Vue {
     display flex
     align-items center
     margin-right 8px
+
+    &.time
+      @media (max-width: $MQMobile)
+        display none
 
     &.category:hover
       cursor pointer

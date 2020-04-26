@@ -13,8 +13,24 @@ describe('ArticleMixin Test', () => {
         undefined,
         undefined
       ]);
-      expect(getDate('0018-01-01')).to.be.deep.equal([
-        18,
+      expect(getDate('2020/1/1')).to.be.deep.equal([
+        2020,
+        1,
+        1,
+        undefined,
+        undefined,
+        undefined
+      ]);
+      expect(getDate('2020-04-04T00:00:00.000Z')).to.be.deep.equal([
+        2020,
+        4,
+        4,
+        undefined,
+        undefined,
+        undefined
+      ]);
+      expect(getDate('1918-01-01')).to.be.deep.equal([
+        1918,
         1,
         1,
         undefined,
@@ -29,8 +45,8 @@ describe('ArticleMixin Test', () => {
         undefined,
         undefined
       ]);
-      expect(getDate('0018/01/01')).to.be.deep.equal([
-        18,
+      expect(getDate('1918/01/01')).to.be.deep.equal([
+        1918,
         1,
         1,
         undefined,
@@ -45,8 +61,8 @@ describe('ArticleMixin Test', () => {
         undefined,
         undefined
       ]);
-      expect(getDate(' 0018-01-01')).to.be.deep.equal([
-        18,
+      expect(getDate(' 1918-01-01')).to.be.deep.equal([
+        1918,
         1,
         1,
         undefined,
@@ -61,8 +77,16 @@ describe('ArticleMixin Test', () => {
         undefined,
         undefined
       ]);
-      expect(getDate('0018/01/01  ')).to.be.deep.equal([
-        18,
+      expect(getDate('18/01/01 ')).to.be.deep.equal([
+        2018,
+        1,
+        1,
+        undefined,
+        undefined,
+        undefined
+      ]);
+      expect(getDate('18-01-01')).to.be.deep.equal([
+        2018,
         1,
         1,
         undefined,
@@ -144,7 +168,7 @@ describe('ArticleMixin Test', () => {
         1,
         12,
         30,
-        undefined
+        0
       ]);
       expect(getDate('  2018/12/01 12:30:00  ')).to.be.deep.equal([
         2018,
@@ -163,6 +187,12 @@ describe('ArticleMixin Test', () => {
     );
     expect(
       compareDate('  2018/12/01 12:30:00  ', ' 2019/12/01  12:30:32')
+    ).to.be.greaterThan(0);
+    expect(
+      compareDate('2019-11-21T00:00:00.000Z', '2020-04-04T00:00:00.000Z')
+    ).to.be.greaterThan(0);
+    expect(
+      compareDate('2020/1/1', '2020-04-04T00:00:00.000Z')
     ).to.be.greaterThan(0);
     expect(compareDate('  2018/01/01 12:30  ', '2018/1/1  12:30')).to.be.equal(
       0
