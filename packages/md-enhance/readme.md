@@ -1,9 +1,8 @@
-<div style="text-align: center;">
-  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg"/>
-  <h1>vuepress-plugin-md-enhance</h1>
-  <h4> Markdown 增强插件🧩 / Markdown enhancement plugin🧩</h4>
-  <div style="height: 40px"></div>
-</div>
+<p style="text-align: center;margin: 0;">
+  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
+</p>
+<h1 style="text-align: center;">vuepress-plugin-md-enhance</h1>
+<h4 style="text-align: center;margin-bottom:40px;">Markdown 增强插件🧩 / Markdown enhancement plugin🧩</h4>
 
 [![Author: Mr.Hope](https://img.shields.io/badge/Author-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
 [![License](https://img.shields.io/npm/l/@mr-hope/vuepress-plugin-md-enhance.svg?style=for-the-badge)](https://github.com/Mister-Hope/vuepress-plugin-md-enhance/blob/master/LICENSE)
