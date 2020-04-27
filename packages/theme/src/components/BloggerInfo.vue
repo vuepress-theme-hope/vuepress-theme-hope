@@ -127,7 +127,7 @@ export default class BloggerInfo extends Vue {
         font-size 1.4em
 
         @media (min-width: $MQNormal)
-          font-size 2rem
+          font-size 1.6rem
 
       .avatar
         display block
@@ -135,9 +135,9 @@ export default class BloggerInfo extends Vue {
         height 8rem
         border-radius 50%
 
-        @media (min-width: $MQNormal)
-          width 12rem
-          height 12rem
+        // @media (min-width: $MQNormal)
+        //   width 12rem
+        //   height 12rem
 
   .num-wrapper
     display flex

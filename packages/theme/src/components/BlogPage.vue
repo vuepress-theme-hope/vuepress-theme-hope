@@ -222,14 +222,6 @@ export default class BlogPage extends Vue {
     @media (min-width: $MQNormal)
       padding 0 4rem 0 0
 
-    .blog-list
-      margin-left 15px
-      width 0
-      flex auto
-
-      @media (min-width: $MQNormal)
-        margin-left 30px
-
     .blogger-info-wrapper
       position -webkit-sticky
       position sticky
@@ -247,7 +239,7 @@ export default class BlogPage extends Vue {
         display none !important
 
       @media (min-width: $MQNormal)
-        flex-basis 400px
+        flex-basis 360px
 
       &:hover
         box-shadow 0 2px 10px 0 var(--card-shadow-color)
@@ -265,4 +257,15 @@ export default class BlogPage extends Vue {
           top -0.25rem
           margin 0 2px
           font-size 24px
+
+    .blog-list
+      margin-left 15px
+      max-width 780px
+      flex auto
+
+      @media (min-width: $MQNormal)
+        margin-left 30px
+
+      @media (min-width: $MQWide)
+        margin-left 45px
 </style>

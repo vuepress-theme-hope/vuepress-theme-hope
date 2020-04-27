@@ -111,16 +111,16 @@ export default class DarkmodeSwitch extends Vue {
 <style lang="stylus" scoped>
 .darkmode-switch
   display flex
-  height 24px
+  height 22px
 
   &:hover
     cursor pointer
 
   .item
-    padding 4px
-    line-height 1
+    padding 2px
     border 1px solid $accentColor
     border-left none
+    line-height 1
 
     &:first-child
       border-left 1px solid $accentColor
@@ -136,7 +136,7 @@ export default class DarkmodeSwitch extends Vue {
     .icon
       width 16px
       height 16px
-      fill $accentColor
+      color $accentColor
 
     &.active
       background-color $accentColor
@@ -145,7 +145,7 @@ export default class DarkmodeSwitch extends Vue {
         cursor default
 
       .icon
-        fill var(--white)
+        color var(--white)
 
 @keyframes starry_star
   50%
