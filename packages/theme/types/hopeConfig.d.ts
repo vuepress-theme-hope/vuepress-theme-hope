@@ -54,7 +54,7 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   footer?: HopeFooterConfig;
 
   /** 是否允许开启深色模式 */
-  darkmode?: 'auto' | 'switch' | 'disabled';
+  darkmode?: 'auto-switch' | 'auto' | 'switch' | 'disabled';
   /** 主题色配置 */
   themeColor?: Record<string, string> | false;
   /** Markdown 增强设置 */

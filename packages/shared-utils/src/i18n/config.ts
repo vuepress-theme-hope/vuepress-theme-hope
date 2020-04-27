@@ -30,7 +30,7 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
     valineHolder: '请留言',
     themeColor: {
       themeColor: '主题色',
-      darkmode: ['日间模式', '夜间模式']
+      themeMode: '主题模式'
     },
     error404: {
       text: [
@@ -65,7 +65,7 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
     valineHolder: 'Write a comment here',
     themeColor: {
       themeColor: 'Theme Color',
-      darkmode: ['Daymode', 'Nightmode']
+      themeMode: 'Theme Mode'
     },
     error404: {
       text: [

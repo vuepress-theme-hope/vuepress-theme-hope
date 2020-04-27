@@ -9,13 +9,9 @@
         <a :style="{background: theme.picker[color]}" href="#" @click.prevent="setTheme(color)" />
       </li>
     </ul>
-    <div v-if="theme.darkmode === 'switch'" class="darkmode-toggle">
-      <label
-        class="desc"
-        for="darkmode-toggle"
-        v-text="isDarkmode? text.darkmode[1]: text.darkmode[0]"
-      />
-      <DarkmodeSwitch :darkmode-enable="isDarkmode" @darkmode-toggle="toggleDarkmode" />
+    <div v-if="switchEnabled" class="darkmode-toggle">
+      <label class="desc" for="darkmode-toggle" v-text="`${text.themeMode}:`" />
+      <DarkmodeSwitch />
     </div>
   </div>
 </template>
@@ -55,69 +51,26 @@ export default class ThemeOptions extends Vue {
     );
   }
 
-  protected mounted() {
+  private get switchEnabled() {
+    return (
+      this.$themeConfig.darkmode !== 'disable' &&
+      this.$themeConfig.darkmode !== 'auto'
+    );
+  }
+
+  private mounted() {
     this.theme = {
       colorList: this.$themeConfig.themeColor
         ? Object.keys(this.$themeConfig.themeColor)
         : Object.keys(defaultPicker),
       picker: this.$themeConfig.themeColor || defaultPicker
     };
-    /** 深色模式开启状态 */
-    const darkmode = this.$themeConfig.darkmode || 'auto';
     /** 所选主题 */
     const theme = localStorage.getItem('theme');
     /** 获得类列表 */
     const classes = document.body.classList;
 
-    // 自动模式
-    if (darkmode === 'auto') this.setAutoDarkmode();
-    // 切换模式
-    else if (darkmode === 'switch') {
-      /** 深色模式 */
-      const isDarkmode = Boolean(localStorage.getItem('darkmode'));
-
-      this.isDarkmode = isDarkmode;
-
-      if (isDarkmode) classes.add('theme-dark');
-      else classes.add('theme-light');
-    }
-    // 被禁用
-    else classes.add('theme-light');
-
     if (theme) this.setTheme(theme);
-  }
-
-  /** 设置自动深色模式 */
-  protected setAutoDarkmode(): void {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
-      .matches;
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)')
-      .matches;
-
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addListener((e) => e.matches && this.toggleDarkmode(true));
-    window
-      .matchMedia('(prefers-color-scheme: light)')
-      .addListener((e) => e.matches && this.toggleDarkmode(false));
-
-    if (isDarkMode) this.toggleDarkmode(true);
-    else if (isLightMode) this.toggleDarkmode(false);
-    else {
-      const timeHour = new Date().getHours();
-      this.toggleDarkmode(timeHour < 5 || timeHour >= 20);
-    }
-  }
-
-  /** 切换深色模式 */
-  private toggleDarkmode(isDarkmode: boolean) {
-    const classes = document.body.classList;
-
-    if (isDarkmode) dom.changeClass(classes, ['theme-dark'], ['theme-light']);
-    else dom.changeClass(classes, ['theme-light'], ['theme-dark']);
-
-    this.isDarkmode = isDarkmode;
-    localStorage.setItem('darkmode', String(isDarkmode));
   }
 
   /** 设置主题 */

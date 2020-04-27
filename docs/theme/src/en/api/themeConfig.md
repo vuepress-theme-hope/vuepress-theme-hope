@@ -80,8 +80,8 @@ Whether to show the default footer
 
 ## darkmode
 
-- Type: `'auto' | 'switch' | 'disable'`
-- Default: `'auto'`
+- Type: `'auto-switch' | 'switch' | 'auto' | 'disable'`
+- Default: `'auto-switch'`
 
 Whether to enable darkmode support
 

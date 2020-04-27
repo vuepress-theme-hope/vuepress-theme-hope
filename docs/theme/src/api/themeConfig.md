@@ -84,8 +84,8 @@ SideBarItem 新增
 
 ### darkmode
 
-- 类型: `'auto' | 'switch' | 'disable'`
-- 默认值: `'auto'`
+- 类型: `'auto-switch' | 'switch' | 'auto' | 'disable'`
+- 默认值: `'auto-switch'`
 
 是否开启深色模式支持
 
