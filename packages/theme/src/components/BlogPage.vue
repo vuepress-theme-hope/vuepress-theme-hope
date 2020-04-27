@@ -4,10 +4,10 @@
       <div
         class="mask"
         :style="{
-      background: `url(${
-        $frontmatter.bgImage? $withBase($frontmatter.bgImage): require('../assets/homeImage.jpg')
-      }) center/cover no-repeat`
-      }"
+          background: `url(${
+            $frontmatter.bgImage? $withBase($frontmatter.bgImage): require('../assets/homeImage.jpg')
+          }) center/cover no-repeat`
+        }"
       />
       <ModuleTransition>
         <img
@@ -28,21 +28,23 @@
 
     <ModuleTransition :delay="0.16">
       <div class="blog-page-wrapper">
-        <div class="blog-list">
-          <!-- 博客列表 -->
-          <ArticleList />
-        </div>
         <div class="blogger-info-wrapper">
           <BloggerInfo />
           <h4>
-            <CategoryIcon />分类
+            <CategoryIcon />
+            <span class="num">{{$category.list.length}}</span>分类
           </h4>
           <CategoryList />
           <hr />
           <h4 v-if="$tag.list.length !== 0">
-            <TagIcon />标签
+            <TagIcon />
+            <span class="num">{{$tag.list.length}}</span>标签
           </h4>
           <TagList />
+        </div>
+        <div class="blog-list">
+          <!-- 博客列表 -->
+          <ArticleList />
         </div>
       </div>
     </ModuleTransition>
@@ -114,6 +116,10 @@ export default class BlogPage extends Vue {
   padding $navbarHeight 0 0
   margin 0px auto
 
+  @media (max-width: $MQMobile)
+    padding-left 1.5rem
+    padding-right 1.5rem
+
   .hero
     position relative
 
@@ -158,50 +164,7 @@ export default class BlogPage extends Vue {
     img + h1 + .description
       margin 1rem auto
 
-  .blog-page-wrapper
-    display flex
-    align-items flex-start
-    margin 20px auto 0
-    max-width 1126px
-
-    @media (min-width: $MQMobile)
-      padding 0 1rem
-
-    @media (min-width: $MQNarrow)
-      padding 0 2rem
-
-    .blog-list
-      flex auto
-      width 0
-
-    .blogger-info-wrapper
-      position -webkit-sticky
-      position sticky
-      top 70px
-      transition all 0.3s
-      margin-left 15px
-      margin-bottom 12px
-      flex 0 0 300px
-      height auto
-      box-shadow 0 1px 4px 0 var(--card-shadow-color)
-      border-radius 4px
-      box-sizing border-box
-      padding 0 15px
-
-      &:hover
-        box-shadow 0 2px 10px 0 var(--card-shadow-color)
-
-      .icon
-        width 16px
-        height 16px
-        margin 0 6px
-
-@media (max-width: $MQMobile)
-  .page.blog
-    padding-left 1.5rem
-    padding-right 1.5rem
-
-    .hero
+    @media (max-width: $MQMobile)
       margin 0 -1.5rem
       height 450px
 
@@ -220,38 +183,64 @@ export default class BlogPage extends Vue {
         font-size 1rem
         padding 0.6rem 1.2rem
 
-    .blog-page-wrapper
-      .blogger-info-wrapper
-        display none !important
-
-@media (max-width: $MQMobileNarrow)
-  .page.blog
-    padding-left 1.5rem
-    padding-right 1.5rem
-
-    .hero
-      margin 0 -1.5rem
+    @media (max-width: $MQMobileNarrow)
       height 350px
-
-      img
-        max-height 210px
-        margin 2rem auto 1.2rem
-
-      h1
-        margin 6rem auto 1.8rem
-        font-size 2rem
 
       h1, .description, .action
         margin 1.2rem auto
 
-      .description
-        font-size 1.2rem
+  .blog-page-wrapper
+    display flex
+    align-items flex-start
+    margin 20px auto 0
 
-      .action-button
-        font-size 1rem
-        padding 0.6rem 1.2rem
+    @media (min-width: $MQMobile)
+      padding 0 1rem
 
-    .blog-page-wrapper
-      .blogger-info-wrapper
+    @media (min-width: $MQNarrow)
+      padding 0 2rem
+
+    @media (min-width: $MQNormal)
+      padding 0 4rem 0 0
+
+    .blog-list
+      margin-left 15px
+      width 0
+      flex auto
+
+      @media (min-width: $MQNormal)
+        margin-left 30px
+
+    .blogger-info-wrapper
+      position -webkit-sticky
+      position sticky
+      top 70px
+      transition all 0.3s
+      margin-bottom 12px
+      flex 0 0 300px
+      height auto
+      box-shadow 0 1px 4px 0 var(--card-shadow-color)
+      border-radius 4px
+      box-sizing border-box
+      padding 0 15px
+
+      @media (max-width: $MQMobile)
         display none !important
+
+      @media (min-width: $MQNormal)
+        flex-basis 400px
+
+      &:hover
+        box-shadow 0 2px 10px 0 var(--card-shadow-color)
+
+      .icon
+        width 16px
+        height 16px
+        margin 0 6px
+
+      .num
+        position relative
+        top -0.25rem
+        margin 0 2px
+        font-size 24px
 </style>

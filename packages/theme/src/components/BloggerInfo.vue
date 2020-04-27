@@ -3,17 +3,21 @@
     <div class="blogger-wrapper">
       <div class="blogger" :class="{ hasIntro }" @click="intro">
         <img v-if="bloggerAvatar" class="avatar" alt="blogger-avatar" :src="bloggerAvatar" />
-        <h3 v-if="blogger" class="name" v-text="blogger " />
+        <div v-if="blogger" class="name" v-text="blogger " />
       </div>
     </div>
     <div class="num-wrapper">
       <div @click="navigate('/article/', $router, $route)">
-        <div class="num">{{$articles.length}}</div>
         <div>文章</div>
+        <div class="num">{{$articles.length}}</div>
+      </div>
+      <div @click="navigate('/category/', $router, $route)">
+        <div>分类</div>
+        <div class="num">{{$category.list.length}}</div>
       </div>
       <div @click="navigate('/tag/', $router, $route)">
-        <div class="num">{{$tag.list.length}}</div>
         <div>标签</div>
+        <div class="num">{{$tag.list.length}}</div>
       </div>
     </div>
     <hr />
@@ -62,7 +66,7 @@ export default class BloggerInfo extends Vue {
     return Boolean(this.blogConfig.intro);
   }
 
-    /** 文章列表 */
+  /** 文章列表 */
   private get $articles(): PageComputed[] {
     const { pages } = this.$site;
 
@@ -76,7 +80,7 @@ export default class BloggerInfo extends Vue {
   private get $paginationArticles(): PageComputed[][] {
     return generatePagination(this.$articles);
   }
-  
+
   /** 跳转到个人介绍 */
   private intro() {
     if (this.hasIntro)
@@ -98,16 +102,30 @@ export default class BloggerInfo extends Vue {
       &.hasIntro
         cursor pointer
 
+      .name
+        margin 1rem auto
+        font-size 1.4em
+
+        @media (min-width: $MQNormal)
+          font-size 2rem
+
       .avatar
         display block
         width 8rem
         height 8rem
         border-radius 50%
 
+        @media (min-width: $MQNormal)
+          width 12rem
+          height 12rem
+
   .num-wrapper
     display flex
     margin 0 auto 1rem
     width 80%
+
+    @media (min-width: $MQNormal)
+      display none
 
     > div
       text-align center
@@ -118,11 +136,9 @@ export default class BloggerInfo extends Vue {
       &:hover
         color var(--accent-color)
 
-      &:first-child
-        border-right 1px solid var(--grey3)
-
       .num
         line-height 1.5
         font-weight 600
         font-size 20px
+        margin-bottom 8px
 </style>

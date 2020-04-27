@@ -77,21 +77,21 @@ export default class AlgoliaSearchBox extends Vue {
     line-height normal
 
     .ds-dropdown-menu
-      background-color var(--background-color)
-      border 1px solid var(--light-grey)
-      border-radius 4px
-      font-size 16px
       margin 6px 0 0
       padding 4px
+      border 1px solid var(--light-grey)
+      border-radius 4px
+      background-color var(--background-color)
+      font-size 16px
       text-align left
 
       &:before
         border-color var(--light-grey)
 
       [class*=ds-dataset-]
-        background var(--background-color)
-        border none
         padding 0
+        border none
+        background var(--background-color)
 
       .ds-suggestions
         margin-top 0
@@ -104,9 +104,9 @@ export default class AlgoliaSearchBox extends Vue {
 
     .algolia-docsearch-suggestion
       padding 0
-      color var(--text-color)
-      background var(--background-color)
       border-color var(--border-color)
+      background var(--background-color)
+      color var(--text-color)
 
       .algolia-docsearch-suggestion--category-header
         padding 5px 10px
@@ -122,16 +122,16 @@ export default class AlgoliaSearchBox extends Vue {
         padding 0
 
       .algolia-docsearch-suggestion--title
-        font-weight 600
         margin-bottom 0
         color var(--text-color)
+        font-weight 600
 
       .algolia-docsearch-suggestion--subcategory-column
         vertical-align top
         padding 5px 7px 5px 5px
-        color var(--text-color)
-        background var(--background-color)
         border-color var(--border-color)
+        background var(--background-color)
+        color var(--text-color)
 
         &:after
           display none
@@ -151,16 +151,16 @@ export default class AlgoliaSearchBox extends Vue {
     .algolia-autocomplete
       .algolia-docsearch-suggestion
         .algolia-docsearch-suggestion--subcategory-column
+          display table-cell
           float none
           width 150px
           min-width 150px
-          display table-cell
 
         .algolia-docsearch-suggestion--content
-          float none
           display table-cell
-          width 100%
+          float none
           vertical-align top
+          width 100%
 
         .ds-dropdown-menu
           min-width 515px !important
@@ -179,11 +179,11 @@ export default class AlgoliaSearchBox extends Vue {
       background white !important
 
     .algolia-docsearch-suggestion--subcategory-column-text:after
-      content ' > '
-      font-size 10px
-      line-height 14.4px
       display inline-block
+      vertical-align middle
+      content ' > '
       width 5px
       margin -3px 3px 0
-      vertical-align middle
+      font-size 10px
+      line-height 14.4px
 </style>

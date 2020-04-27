@@ -60,8 +60,7 @@ module.exports = resolve({
     footer: {
       text: '默认页脚'
     },
-
-    markdown: true,
+    markdown: { enableAll: true },
 
     comment: {
       type: 'valine',
