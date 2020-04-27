@@ -399,7 +399,7 @@ const footnote = (md: MarkdownIt): void => {
   };
 
   // eslint-disable-next-line object-curly-newline
-  md.block.ruler.before('reference', 'footnote_def', footnoteDef as any, {
+  md.block.ruler.before('reference', 'footnote_def', footnoteDef, {
     // eslint-disable-next-line object-curly-newline
     alt: ['paragraph', 'reference']
   });
