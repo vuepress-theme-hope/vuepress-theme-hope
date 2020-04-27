@@ -64,16 +64,6 @@ export default class ArticleInfo extends Vue {
       return time;
     }
 
-    const { lastUpdated } = this.article;
-
-    if (lastUpdated) {
-      const times = lastUpdated.split(' ');
-
-      times.pop();
-
-      return `${this.$themeLocaleConfig.lastUpdated} ${times.join(' ')}`;
-    }
-
     return '';
   }
 
@@ -125,10 +115,6 @@ export default class ArticleInfo extends Vue {
     display flex
     align-items center
     margin-right 8px
-
-    &.time
-      @media (max-width: $MQMobile)
-        display none
 
     &.category:hover
       cursor pointer

@@ -22,9 +22,6 @@ jobs:
       - name: Build Docs
         run: yarn run theme:build
 
-      - name: Add CNAME
-        run: echo "vuepress-theme.mrhope.site" > docs/theme/dist/CNAME
-
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
@@ -47,9 +44,6 @@ jobs:
 
       - name: Build Docs
         run: yarn run comment-docs:build
-
-      - name: Add CNAME
-        run: echo "vuepress-comment.mrhope.site" > docs/comment/dist/CNAME
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -74,9 +68,6 @@ jobs:
 
       - name: Build Docs
         run: yarn run md-enhance-docs:build
-
-      - name: Add CNAME
-        run: echo "vuepress-md-enhance.mrhope.site" > docs/md-enhance/dist/CNAME
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3

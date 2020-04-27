@@ -86,6 +86,7 @@ export default class TagList extends Vue {
     color var(--white)
 
     &:hover
+      cursor pointer
       top 0.5px
       left 0.5px
 

@@ -20,9 +20,6 @@ jobs:
       - name: Build Theme demo
         run: yarn run theme-test:build
 
-      - name: Add CNAME
-        run: echo "vuepress-theme-demo.mrhope.site" > tests/dist/CNAME
-
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
