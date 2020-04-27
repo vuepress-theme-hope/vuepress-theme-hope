@@ -3,7 +3,7 @@
     <ModuleTransition
       v-for="(article, index) in articles"
       :key="article.path"
-      :delay="String(index * 0.04)"
+      :delay="index * 0.04"
     >
       <ArticleItem :article="article" />
     </ModuleTransition>
@@ -13,14 +13,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import {
+  filterArticle,
+  generatePagination,
+  sortArticle
+} from '@theme/util/article';
 import ArticleItem from '@theme/components/ArticleItem.vue';
-import ArticleMixin from '@theme/util/articleMixin';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import { PageComputed } from 'vuepress-types';
+import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 
 @Component({ components: { ArticleItem, ModuleTransition } })
-export default class ArticleList extends Mixins(ArticleMixin) {
+export default class ArticleList extends Vue {
   /** 当前页面 */
   private currentPage = 1;
 
@@ -30,6 +35,21 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   /** 博客配置 */
   private get blogConfig() {
     return this.$themeConfig.blog || {};
+  }
+
+  /** 文章列表 */
+  private get $articles(): PageComputed[] {
+    const { pages } = this.$site;
+
+    // 先过滤再排序
+    return sortArticle(
+      filterArticle(pages.map((page) => deepAssign({}, page) as PageComputed))
+    );
+  }
+
+  /** 文章分页 */
+  private get $paginationArticles(): PageComputed[][] {
+    return generatePagination(this.$articles);
   }
 
   /** 每页文章数 */

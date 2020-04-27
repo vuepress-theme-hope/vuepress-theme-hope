@@ -102,6 +102,8 @@ interface HopeLangI18nConfigItem {
     /** 错误文字 */
     errorText: string;
   };
+  /** 时间轴文字 */
+  timeline: string;
   /** 全部文字 */
   allText: string;
 }
@@ -119,6 +121,8 @@ export interface HopeLangLocalesConfig
   sidebar?: HopeSideBarConfig;
   /** 当前语言的 algolia 设置 */
   algolia?: AlgoliaOption;
+  /** 时间轴文字 */
+  timeline?: string;
 }
 
 /** 处理过的 vuepress-theme-hope 多语言配置 */

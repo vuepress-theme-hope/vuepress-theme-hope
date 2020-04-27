@@ -21,13 +21,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins, Vue } from 'vue-property-decorator';
-import ArticleMixin from '@theme/util/articleMixin';
+import { Component, Vue } from 'vue-property-decorator';
+import {
+  filterArticle,
+  generatePagination,
+  sortArticle
+} from '@theme/util/article';
 import { PageComputed } from 'vuepress-types';
+import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 import navigate from '@theme/util/navigate';
 
 @Component
-export default class BloggerInfo extends Mixins(ArticleMixin) {
+export default class BloggerInfo extends Vue {
   private navigate = navigate;
 
   /** 博客配置 */
@@ -57,6 +62,21 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
     return Boolean(this.blogConfig.intro);
   }
 
+    /** 文章列表 */
+  private get $articles(): PageComputed[] {
+    const { pages } = this.$site;
+
+    // 先过滤再排序
+    return sortArticle(
+      filterArticle(pages.map((page) => deepAssign({}, page) as PageComputed))
+    );
+  }
+
+  /** 文章分页 */
+  private get $paginationArticles(): PageComputed[][] {
+    return generatePagination(this.$articles);
+  }
+  
   /** 跳转到个人介绍 */
   private intro() {
     if (this.hasIntro)

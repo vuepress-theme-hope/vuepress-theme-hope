@@ -82,6 +82,8 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   backToTop?: boolean;
   /** 是否在导航栏显示仓库链接 */
   repoDisplay?: boolean;
+  /** 时间轴自定义文字 */
+  timeline?: string;
   /** 是否显示 ”全屏“ 按钮 */
   fullscreen?: boolean;
 }

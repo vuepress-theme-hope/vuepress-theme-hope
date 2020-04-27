@@ -47,6 +47,10 @@ export = (
       {
         path: '/article/',
         frontmatter: { layout: 'BlogEntry' }
+      },
+      {
+        path: '/timeline/',
+        frontmatter: { layout: 'Timeline' }
       }
     ] as any;
 

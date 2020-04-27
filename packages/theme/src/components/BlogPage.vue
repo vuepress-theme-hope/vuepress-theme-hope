@@ -17,16 +17,16 @@
           alt="hero"
         />
       </ModuleTransition>
-      <ModuleTransition delay="0.04">
+      <ModuleTransition :delay="0.04">
         <h1 v-if="$frontmatter.showTitle !== false">{{ $frontmatter.heroText || $title || 'Hope' }}</h1>
       </ModuleTransition>
 
-      <ModuleTransition delay="0.08">
+      <ModuleTransition :delay="0.08">
         <p v-if="$description" class="description" v-text="$description" />
       </ModuleTransition>
     </div>
 
-    <ModuleTransition delay="0.16">
+    <ModuleTransition :delay="0.16">
       <div class="blog-page-wrapper">
         <div class="blog-list">
           <!-- 博客列表 -->
@@ -47,19 +47,19 @@
       </div>
     </ModuleTransition>
 
-    <ModuleTransition delay="0.36">
+    <ModuleTransition :delay="0.36">
       <Content :key="$route.path" class="home-center" custom />
     </ModuleTransition>
 
     <!-- 页脚 -->
-    <ModuleTransition delay="0.40">
+    <ModuleTransition :delay="0.40">
       <PageFooter :key="$route.path" />
     </ModuleTransition>
   </div>
 </template>
 
 <script lang='ts'>
-import { Component, Mixins, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import ArticleList from '@theme/components/ArticleList.vue';
 import BloggerInfo from '@theme/components/BloggerInfo.vue';
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';

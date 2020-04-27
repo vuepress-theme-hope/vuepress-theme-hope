@@ -8,12 +8,12 @@
     <slot name="top" />
 
     <!-- 页面信息 -->
-    <ModuleTransition v-if="commentEnable" delay="0.04">
+    <ModuleTransition v-if="commentEnable" :delay="0.04">
       <PageInfo :key="$route.path" />
     </ModuleTransition>
 
     <!-- 页面密码 -->
-    <ModuleTransition delay="0.08">
+    <ModuleTransition :delay="0.08">
       <Password
         v-if="pagePassword && !pageDescrypted"
         :key="$route.path"
@@ -23,27 +23,27 @@
     </ModuleTransition>
 
     <!-- 页面内容 -->
-    <ModuleTransition v-show="!pagePassword || pageDescrypted" delay="0.08">
+    <ModuleTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
       <Content :key="$route.path" class="theme-default-content" />
     </ModuleTransition>
 
     <!-- 编辑链接 -->
-    <ModuleTransition v-if="!pagePassword || pageDescrypted" delay="0.12">
+    <ModuleTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
       <PageEdit :key="$route.path" />
     </ModuleTransition>
 
     <!-- 页面导航 -->
-    <ModuleTransition v-if="!pagePassword || pageDescrypted" delay="0.14">
+    <ModuleTransition v-if="!pagePassword || pageDescrypted" :delay="0.14">
       <PageNav :key="$route.path" v-bind="{ sidebarItems }" />
     </ModuleTransition>
 
     <!-- 页面评论 -->
-    <ModuleTransition v-if="(!pagePassword || pageDescrypted) && commentEnable" delay="0.16">
+    <ModuleTransition v-if="(!pagePassword || pageDescrypted) && commentEnable" :delay="0.16">
       <Comment :key="$route.path" />
     </ModuleTransition>
 
     <!-- 页脚 -->
-    <ModuleTransition delay="0.20">
+    <ModuleTransition :delay="0.20">
       <PageFooter :key="$route.path" />
     </ModuleTransition>
 

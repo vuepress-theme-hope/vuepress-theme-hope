@@ -49,6 +49,7 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       button: '前往',
       errorText: '请输入大于0，并且小于$page的页码！'
     },
+    timeline: '昨日不在',
     allText: '全部'
   },
 
@@ -87,6 +88,7 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       button: 'Go',
       errorText: 'Please enter a number with is >0 and < $page !'
     },
+    timeline: 'Yesterday Once More!',
     allText: 'All'
   }
 };

@@ -1,4 +1,4 @@
-.theme-light
+body
   --text-color $textColor
   --background-color $bgColor
   --border-color $borderColor
@@ -18,7 +18,27 @@
   --grey12 #bbb
   --grey14 #eee
 
-.theme-dark
+body.theme-light
+  --text-color $textColor
+  --background-color $bgColor
+  --border-color $borderColor
+  --code-bg-color $codeBgColor
+  --arrow-bg-color $arrowBgColor
+  --box-shadow-color $boxShadowColor
+  --card-shadow-color $cardShadowColor
+  --text-color-l10 lighten($textColor, 10%)
+  --text-color-l20 lighten($textColor, 20%)
+  --text-color-l25 lighten($textColor, 25%)
+  --text-color-l40 lighten($textColor, 40%)
+  --black #000
+  --dark-grey #666
+  --light-grey #999
+  --white #fff
+  --grey3 #333
+  --grey12 #bbb
+  --grey14 #eee
+
+body.theme-dark
   --text-color $nightTextColor
   --background-color $nightBgColor
   --border-color $nightBorderColor

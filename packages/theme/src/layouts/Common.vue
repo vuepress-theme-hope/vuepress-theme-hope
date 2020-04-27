@@ -1,0 +1,135 @@
+<template>
+  <div
+    :class="pageClasses"
+    class="theme-container"
+    @touchend="onTouchEnd"
+    @touchstart="onTouchStart"
+  >
+    <!-- 密码弹窗 -->
+    <Password v-if="globalEncrypted" @enter="globalPasswordCheck" />
+    <!-- 内容 -->
+    <template v-else>
+      <Navbar v-if="showNavbar" @toggle-sidebar="toggleSidebar" />
+
+      <div class="sidebar-mask" @click="toggleSidebar(false)" />
+
+      <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
+        <slot slot="top" name="sidebar-top" />
+        <slot slot="bottom" name="sidebar-bottom" />
+      </Sidebar>
+
+      <slot :sidebar-items="sidebarItems" />
+    </template>
+  </div>
+</template>
+
+<script lang='ts'>
+import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
+import { SidebarItem, resolveSidebarItems } from '@theme/util/sidebar';
+import Navbar from '@theme/components/Navbar.vue';
+import Password from '@theme/components/Password.vue';
+import Sidebar from '@theme/components/Sidebar.vue';
+import globalEncryptMixin from '@theme/util/globalEncryptMixin';
+
+@Component({ components: { Password, Sidebar, Navbar } })
+export default class Common extends Mixins(globalEncryptMixin) {
+  @Prop({ type: Boolean, default: true })
+  private readonly navbar!: boolean;
+
+  @Prop({ type: Boolean, default: true })
+  private readonly sidebar!: boolean;
+
+  private isSidebarOpen = false;
+
+  private touchStart: Record<string, number> = {};
+
+  /** 是否应该展示导航栏 */
+  private get showNavbar(): boolean {
+    if (this.navbar === false) return false;
+
+    const { frontmatter } = this.$page;
+
+    if (frontmatter.navbar === false || this.$themeConfig.navbar === false)
+      return false;
+
+    return Boolean(
+      this.$title ||
+        this.$themeConfig.logo ||
+        this.$themeConfig.repo ||
+        this.$themeConfig.nav ||
+        this.$themeLocaleConfig.nav
+    );
+  }
+
+  /** 是否应该展示侧边栏 */
+  private get showSidebar(): boolean {
+    if (this.sidebar === false) return false;
+
+    return (
+      !this.$frontmatter.home &&
+      this.$frontmatter.sidebar !== false &&
+      this.sidebarItems.length !== 0
+    );
+  }
+
+  /** 侧边栏内容 */
+  private get sidebarItems(): SidebarItem[] {
+    if (this.sidebar === false) return [];
+
+    return resolveSidebarItems(this.$page, this.$site, this.$localePath);
+  }
+
+  /** 页面 Class */
+  private get pageClasses(): any {
+    const userPageClass = this.$page.frontmatter.pageClass;
+
+    return [
+      {
+        'no-navbar': !this.showNavbar,
+        'sidebar-open': this.isSidebarOpen,
+        'no-sidebar': !this.showSidebar
+      },
+      userPageClass
+    ];
+  }
+
+  protected mounted(): void {
+    this.$router.afterEach(() => {
+      this.isSidebarOpen = false;
+    });
+  }
+
+  private toggleSidebar(to: any): void {
+    this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen;
+    this.$emit('toggle-sidebar', this.isSidebarOpen);
+  }
+
+  // Side swipe
+  private onTouchStart(e: TouchEvent): void {
+    this.touchStart = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY
+    };
+  }
+
+  private onTouchEnd(e: TouchEvent): void {
+    const dx = e.changedTouches[0].clientX - this.touchStart.x;
+    const dy = e.changedTouches[0].clientY - this.touchStart.y;
+
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40)
+      if (dx > 0 && this.touchStart.x <= 80) this.toggleSidebar(true);
+      else this.toggleSidebar(false);
+  }
+}
+</script>
+
+<style lang="stylus">
+.sidebar-mask
+  position fixed
+  z-index 9
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  display none
+</style>

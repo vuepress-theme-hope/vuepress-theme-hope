@@ -13,7 +13,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { endingSlashRE, outboundRE } from '@theme/util/path';
 
 @Component

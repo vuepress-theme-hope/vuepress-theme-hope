@@ -1,4 +1,4 @@
-import { compareDate, getDate } from '../src/util/articleMixin';
+import { compareDate, getDate } from '../src/util/article';
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 

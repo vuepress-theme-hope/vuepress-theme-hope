@@ -17,11 +17,11 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class ModuleTransition extends Vue {
-  @Prop({ type: String, default: '0' })
-  private readonly delay!: string;
+  @Prop({ type: Number, default: 0 })
+  private readonly delay!: number;
 
-  @Prop({ type: String, default: '.25' })
-  private readonly duration!: string;
+  @Prop({ type: Number, default: 0.25 })
+  private readonly duration!: number;
 
   private setStyle(items: HTMLElement) {
     items.style.transition = `all ${this.duration}s ease-in-out ${this.delay}s`;
