@@ -49,8 +49,14 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       button: '前往',
       errorText: '请输入大于0，并且小于$page的页码！'
     },
-    timeline: '昨日不在',
-    allText: '全部'
+    blog: {
+      article: '文章',
+      tag: '标签',
+      category: '分类',
+      timeline: '时间轴',
+      timelineText: '昨日不在',
+      allText: '全部'
+    }
   },
 
   /** 英文设置 */
@@ -88,8 +94,14 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       button: 'Go',
       errorText: 'Please enter a number with is >0 and < $page !'
     },
-    timeline: 'Yesterday Once More!',
-    allText: 'All'
+    blog: {
+      article: 'Articles',
+      tag: 'Tags',
+      category: 'Category',
+      timeline: 'Timeline',
+      timelineText: 'Yesterday Once More!',
+      allText: 'All'
+    }
   }
 };
 

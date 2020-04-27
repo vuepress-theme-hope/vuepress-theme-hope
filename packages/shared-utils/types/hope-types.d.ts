@@ -102,10 +102,21 @@ interface HopeLangI18nConfigItem {
     /** 错误文字 */
     errorText: string;
   };
-  /** 时间轴文字 */
-  timeline: string;
-  /** 全部文字 */
-  allText: string;
+  /** 博客设置 */
+  blog: {
+    /** 文章文字 */
+    article: string;
+    /** 标签文字 */
+    tag: string;
+    /** 分类文字 */
+    category: string;
+    /** 时间轴文字 */
+    timeline: string;
+    /** 时间轴显示文字 */
+    timelineText: string;
+    /** 全部文字 */
+    allText: string;
+  };
 }
 
 /** vuepress-theme-hope 国际化配置 */

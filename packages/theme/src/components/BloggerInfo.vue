@@ -8,15 +8,15 @@
     </div>
     <div class="num-wrapper">
       <div @click="navigate('/article/', $router, $route)">
-        <div>文章</div>
+        <div>{{article}}</div>
         <div class="num">{{$articles.length}}</div>
       </div>
       <div @click="navigate('/category/', $router, $route)">
-        <div>分类</div>
+        <div>{{category}}</div>
         <div class="num">{{$category.list.length}}</div>
       </div>
       <div @click="navigate('/tag/', $router, $route)">
-        <div>标签</div>
+        <div>{{tag}}</div>
         <div class="num">{{$tag.list.length}}</div>
       </div>
     </div>
@@ -26,13 +26,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { deepAssign, i18n } from '@mr-hope/vuepress-shared-utils';
 import {
   filterArticle,
   generatePagination,
   sortArticle
 } from '@theme/util/article';
 import { PageComputed } from 'vuepress-types';
-import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 import navigate from '@theme/util/navigate';
 
 @Component
@@ -79,6 +79,24 @@ export default class BloggerInfo extends Vue {
   /** 文章分页 */
   private get $paginationArticles(): PageComputed[][] {
     return generatePagination(this.$articles);
+  }
+
+  private get article() {
+    return (
+      this.$themeLocaleConfig.blog.article ||
+      i18n.getDefaultLocale().blog.article
+    );
+  }
+
+  private get category() {
+    return (
+      this.$themeLocaleConfig.blog.category ||
+      i18n.getDefaultLocale().blog.category
+    );
+  }
+
+  private get tag() {
+    return this.$themeLocaleConfig.blog.tag || i18n.getDefaultLocale().blog.tag;
   }
 
   /** 跳转到个人介绍 */

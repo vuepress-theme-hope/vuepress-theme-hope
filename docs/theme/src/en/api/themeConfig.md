@@ -83,7 +83,12 @@ Whether to show the default footer
 - Type: `'auto-switch' | 'switch' | 'auto' | 'disable'`
 - Default: `'auto-switch'`
 
-Whether to enable darkmode support
+Dark mode support options:
+
+- `'auto-switch'`: "off | automatic | on" three-stage switch
+- `'switch'`: "Close | Open" toggle switch
+- `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
+- `'disable'`: disable dark mode
 
 ## themeColor
 
@@ -243,6 +248,13 @@ Whether to show blogger information in the sidebar
 Personal introduction address of the blogger.
 
 After filling in, you will be allowed to click on the avatar or name in "Blogger Information" to enter the personal introduction page.
+
+### blog.timeline
+
+- Type: `string`
+- Default: `'Yesterday once more'`
+
+Text on the top of timeline page.
 
 ## Other configuration options
 

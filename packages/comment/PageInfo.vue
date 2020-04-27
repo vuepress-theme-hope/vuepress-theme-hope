@@ -42,25 +42,25 @@
 /* global COMMENT_OPTIONS */
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import AuthorIcon from '@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue';
+import CalendarIcon from '@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue';
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
 import EyeIcon from '@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue';
 import FireIcon from '@mr-hope/vuepress-shared-utils/icons/FireIcon.vue';
 import { Route } from 'vue-router';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import Tags from './src/Tags.vue';
-import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import { ValineOptions } from './types';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 
 @Component({
   components: {
     AuthorIcon,
+    CalendarIcon,
     CategoryIcon,
     EyeIcon,
     FireIcon,
     TagIcon,
-    Tags,
-    TimeIcon
+    Tags
   }
 })
 export default class PageInfo extends Vue {

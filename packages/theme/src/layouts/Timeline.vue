@@ -43,9 +43,9 @@ export default class Timeline extends Vue {
   /** 提示文字 */
   private get hint() {
     return (
-      this.$themeConfig.timeline ||
-      this.$themeLocaleConfig.timeline ||
-      i18n.getDefaultLocale().timeline
+      this.$themeConfig.blog.timeline ||
+      this.$themeLocaleConfig.blog.timelineText ||
+      i18n.getDefaultLocale().blog.timelineText
     );
   }
 
@@ -106,7 +106,15 @@ export default class Timeline extends Vue {
       height 100%
       background var(--border-color)
 
-    .desc, .year
+    .desc
+      position relative
+      color var(--text-color)
+      font-size 18px
+
+      @media (min-width: $MQNormal)
+        font-size 20px
+
+    .year
       position relative
       color var(--text-color)
       font-size 16px

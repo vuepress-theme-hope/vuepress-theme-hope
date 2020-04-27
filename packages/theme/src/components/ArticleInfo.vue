@@ -8,7 +8,7 @@
 
     <!-- 时间 -->
     <span v-if="time" class="time">
-      <TimeIcon />
+      <CalendarIcon />
       <span v-text="time" />
     </span>
 
@@ -30,16 +30,16 @@
 import * as moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import AuthorIcon from '@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue';
+import CalendarIcon from '@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue';
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
 import { PageComputed } from 'vuepress-types';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import Tags from '@mr-hope/vuepress-plugin-comment/src/Tags.vue';
-import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 import navigate from '@theme/util/navigate';
 
 @Component({
-  components: { AuthorIcon, CategoryIcon, TagIcon, Tags, TimeIcon }
+  components: { AuthorIcon, CalendarIcon, CategoryIcon, TagIcon, Tags }
 })
 export default class ArticleInfo extends Vue {
   @Prop(Object) private readonly article!: PageComputed;

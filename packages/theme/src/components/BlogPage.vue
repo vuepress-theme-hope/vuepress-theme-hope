@@ -30,17 +30,23 @@
       <div class="blog-page-wrapper">
         <div class="blogger-info-wrapper">
           <BloggerInfo />
-          <h4>
+          <h4 v-if="$category.list.length !== 0" class="title" @click="$router.push('/category/')">
             <CategoryIcon />
-            <span class="num">{{$category.list.length}}</span>分类
+            <span class="num">{{$category.list.length}}</span>
+            {{category}}
           </h4>
           <CategoryList />
           <hr />
-          <h4 v-if="$tag.list.length !== 0">
+          <h4 v-if="$tag.list.length !== 0" class="title" @click="$router.push('/tag/')">
             <TagIcon />
-            <span class="num">{{$tag.list.length}}</span>标签
+            <span class="num">{{$tag.list.length}}</span>
+            {{tag}}
           </h4>
           <TagList />
+          <hr />
+          <h4 class="title" @click="$router.push('/timeline/')">
+            <TimeIcon />时间轴
+          </h4>
         </div>
         <div class="blog-list">
           <!-- 博客列表 -->
@@ -62,6 +68,7 @@
 
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
+import { deepAssign, i18n } from '@mr-hope/vuepress-shared-utils';
 import ArticleList from '@theme/components/ArticleList.vue';
 import BloggerInfo from '@theme/components/BloggerInfo.vue';
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
@@ -70,7 +77,7 @@ import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import { PageComputed } from 'vuepress-types';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import TagList from '@theme/components/TagList.vue';
-import { deepAssign } from '@mr-hope/vuepress-shared-utils';
+import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 
 @Component({
   components: {
@@ -78,9 +85,10 @@ import { deepAssign } from '@mr-hope/vuepress-shared-utils';
     BloggerInfo,
     CategoryIcon,
     CategoryList,
+    ModuleTransition,
     TagIcon,
     TagList,
-    ModuleTransition
+    TimeIcon
   }
 })
 export default class BlogPage extends Vue {
@@ -103,6 +111,17 @@ export default class BlogPage extends Vue {
     const { bgImageStyle = {} } = this.$frontmatter;
 
     return { ...defaultBgImageStyle, ...bgImageStyle };
+  }
+
+  private get category() {
+    return (
+      this.$themeLocaleConfig.blog.category ||
+      i18n.getDefaultLocale().blog.category
+    );
+  }
+
+  private get tag() {
+    return this.$themeLocaleConfig.blog.tag || i18n.getDefaultLocale().blog.tag;
   }
 
   private heroHeight() {
@@ -233,14 +252,17 @@ export default class BlogPage extends Vue {
       &:hover
         box-shadow 0 2px 10px 0 var(--card-shadow-color)
 
-      .icon
-        width 16px
-        height 16px
-        margin 0 6px
+      .title
+        cursor pointer
 
-      .num
-        position relative
-        top -0.25rem
-        margin 0 2px
-        font-size 24px
+        .icon
+          width 16px
+          height 16px
+          margin 0 6px
+
+        .num
+          position relative
+          top -0.25rem
+          margin 0 2px
+          font-size 24px
 </style>
