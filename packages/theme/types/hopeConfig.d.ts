@@ -26,6 +26,33 @@ export type EncryptOptions = Partial<{
   config: Record<string, string | string[]>;
 }>;
 
+/** 合法的媒体 */
+type BlogMedia =
+  | 'Baidu'
+  | 'Dingding'
+  | 'Dribbble'
+  | 'Evernote'
+  | 'Facebook'
+  | 'Flipboard'
+  | 'Github'
+  | 'Gmail'
+  | 'Instagram'
+  | 'Line'
+  | 'Linkedin'
+  | 'Pinterest'
+  | 'Pocket'
+  | 'QQ'
+  | 'Qzone'
+  | 'Rss'
+  | 'Steam'
+  | 'Taobao'
+  | 'Twitter'
+  | 'Wechat'
+  | 'Weibo'
+  | 'Whatsapp'
+  | 'Youtube'
+  | 'Zhihu';
+
 /** 博客选项 */
 export type BlogOptions = Partial<{
   /** 博主名称 */
@@ -36,6 +63,10 @@ export type BlogOptions = Partial<{
   sidebarDisplay: 'mobile' | 'none' | 'always';
   /** 博主的个人介绍地址 */
   intro: string;
+  /** 自定义链接 */
+  links: Partial<Record<BlogMedia, string>>;
+  /** 时间轴自定义文字 */
+  timeline: string;
 }>;
 
 /** vuepress-theme-hope 主题配置 */

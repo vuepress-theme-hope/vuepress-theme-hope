@@ -78,7 +78,12 @@ module.exports = resolve({
 
     blog: {
       intro: '/intro.html',
-      sidebarDisplay: 'mobile'
+      sidebarDisplay: 'mobile',
+      links: {
+        Zhihu: 'https://zhihu.com',
+        Baidu: 'https://baidu.com',
+        Github: 'https://github.com'
+      }
     },
 
     locales: {

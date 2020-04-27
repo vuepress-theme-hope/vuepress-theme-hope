@@ -20,6 +20,7 @@
         <div class="num">{{$tag.list.length}}</div>
       </div>
     </div>
+    <BloggerLinks />
     <hr />
   </div>
 </template>
@@ -32,10 +33,11 @@ import {
   generatePagination,
   sortArticle
 } from '@theme/util/article';
+import BloggerLinks from '@theme/components/BloggerLinks.vue';
 import { PageComputed } from 'vuepress-types';
 import navigate from '@theme/util/navigate';
 
-@Component
+@Component({ components: { BloggerLinks } })
 export default class BloggerInfo extends Vue {
   private navigate = navigate;
 
