@@ -14,7 +14,7 @@ jobs:
 
       - name: Install Deps
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn run typescript:compile
 
       - name: Build Theme demo

@@ -16,7 +16,7 @@ jobs:
 
       - name: install
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn run typescript:compile
 
       - name: Build Docs
@@ -42,7 +42,7 @@ jobs:
 
       - name: install
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn run typescript:compile
 
       - name: Build Docs
@@ -69,7 +69,7 @@ jobs:
 
       - name: install
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn run typescript:compile
 
       - name: Build Docs
