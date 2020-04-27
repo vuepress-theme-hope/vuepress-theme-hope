@@ -22,7 +22,8 @@ A simple tsconfig.json is as follows:
   "compilerOptions": {
     "target": "ES6", /// Any target which is not less than 'ES5'
     "experimentalDecorators": true, // Typescript files for '.vue' needs this option
-    "types": [ // type definition files of vuepress and this theme
+    // type definition files of vuepress and this theme
+    "types": [
       "@mr-hope/vuepress-theme-types",
       "vuepress-types"
     ]

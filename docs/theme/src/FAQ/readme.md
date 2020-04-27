@@ -22,7 +22,8 @@ category: FAQ
   "compilerOptions": {
     "target": "ES6", // 任何不低于 ES6 的 target 均可
     "experimentalDecorators": true, // Vue 的 Typescript 写法需要开启此选项
-    "types": [ // vuepress 与本主题的类型定义文件
+    // vuepress 与本主题的类型定义文件
+    "types": [
       "@mr-hope/vuepress-theme-types",
       "vuepress-types"
     ]

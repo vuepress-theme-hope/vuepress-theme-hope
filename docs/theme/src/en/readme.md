@@ -77,7 +77,8 @@ And create a `tsconfig.json` file in your root directory
   "compilerOptions": {
     "target": "ES6", /// Any target which is not less than 'ES5'
     "experimentalDecorators": true, // Typescript files for '.vue' needs this option
-    "types": [ // type definition files of vuepress and this theme
+    // type definition files of vuepress and this theme
+    "types": [
       "@mr-hope/vuepress-theme-types",
       "vuepress-types"
     ]
