@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.0-rc.12](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.11...v0.1.0-rc.12) (2020-04-27)
+
+### Bug Fixes
+
+- **comment:** fix valine style in darkmode ([7459eab](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7459eab6f90f8958e3263f3b71868bca03993527))
+- **theme:** fix timeline error ([b392f59](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b392f59a4de4d8e3161f4a04debaf65ae6bef9d4))
+
+### Features
+
+- **theme:** add media links ([952fc5b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/952fc5b36c5419fc922d13ecf9b2953d5789d1b2))
+- **theme:** update appearance and docs ([6e43b30](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6e43b303670899edde8e1c290f93098e80f6b659))
+- **theme:** update blog page style ([53b74cb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/53b74cb44a77c091aca53ef6b89ebefebbfd8a6e))
+- **theme:** update darkmode switch ([76284fd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/76284fd58113ddc08a4dae05202701b6e71b76c3))
+- **theme:** update style ([27e2093](https://github.com/Mister-Hope/vuepress-theme-hope/commit/27e2093f69dc5c79c43a39a50120536f39f70bdf))
+
 ## [0.1.0-rc.11](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.10...v0.1.0-rc.11) (2020-04-27)
 
 ### Bug Fixes
