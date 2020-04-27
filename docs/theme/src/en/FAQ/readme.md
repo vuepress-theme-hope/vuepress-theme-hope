@@ -20,9 +20,12 @@ A simple tsconfig.json is as follows:
 ```json
 {
   "compilerOptions": {
-    "target": "es5", // Any target except 'es3'
-    "experimentalDecorators": true,
-    "types": ["@mr-hope/vuepress-theme-types"]
+    "target": "ES6", /// Any target which is not less than 'ES5'
+    "experimentalDecorators": true, // Typescript files for '.vue' needs this option
+    "types": [ // type definition files of vuepress and this theme
+      "@mr-hope/vuepress-theme-types",
+      "vuepress-types"
+    ]
   },
   "include": [
     "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder

@@ -89,7 +89,7 @@ module.exports = {
       }
     ],
 
-    '/': ['', 'guide/', 'api/', 'basic/', 'FAQ/']
+    '/': ['', 'guide/', 'api/', 'basic/', 'FAQ/', 'demo/']
   },
   en: {
     '/en/guide/': [
@@ -172,6 +172,6 @@ module.exports = {
       }
     ],
 
-    '/en/': ['', 'guide/', 'api/', 'basic/', 'FAQ/']
+    '/en/': ['', 'guide/', 'api/', 'basic/', 'FAQ/', 'demo/']
   }
 };

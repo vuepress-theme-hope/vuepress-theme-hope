@@ -3,6 +3,7 @@ module.exports = {
     { text: '主页', link: '/', icon: 'homefill' },
     { text: '指南', link: '/guide/', icon: 'creativefill' },
     { text: '配置', link: '/api/', icon: 'api' },
+    { text: '常见问题', link: '/FAQ/', icon: 'question' },
     {
       text: '基础',
       icon: 'infofill',
@@ -23,6 +24,10 @@ module.exports = {
         {
           text: '项目地址',
           link: 'https://github.com/mister-hope/vuepress-theme-hope'
+        },
+        {
+          text: '项目案例',
+          link: '/demo/'
         }
       ]
     }
@@ -31,6 +36,7 @@ module.exports = {
     { text: 'Home', link: '/en/', icon: 'homefill' },
     { text: 'Guide', link: '/en/guide/', icon: 'creativefill' },
     { text: 'Config', link: '/en/api/', icon: 'api' },
+    { text: 'FAQ', link: '/FAQ/', icon: 'question' },
     {
       text: 'Basic',
       icon: 'infofill',
@@ -51,6 +57,10 @@ module.exports = {
         {
           text: 'Repo',
           link: 'https://github.com/mister-hope/vuepress-theme-hope'
+        },
+        {
+          text: 'Demo',
+          link: '/en/demo/'
         }
       ]
     }
