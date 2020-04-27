@@ -1,7 +1,7 @@
 {
   "name": "test",
   "private": true,
-  "version": "0.1.0-rc.10",
+  "version": "0.1.0-rc.11",
   "description": "Tests for vuepress-theme-hope",
   "scripts": {
     "serve": "vuepress dev src",
@@ -12,6 +12,6 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.4.1",
-    "vuepress-theme-hope": "^0.1.0-rc.10"
+    "vuepress-theme-hope": "^0.1.0-rc.11"
   }
 }
