@@ -1,0 +1,32 @@
+name: Deploy theme demo
+
+on:
+  - push
+
+jobs:
+  theme-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Install Deps
+        run: |
+          yarn install
+          yarn run typescript:compile
+
+      - name: Build Theme demo
+        run: yarn run theme-test:build
+
+      - name: Add CNAME
+        run: echo "vuepress-theme-demo.mrhope.site" > tests/dist/CNAME
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: tests/dist
+          REPOSITORY_NAME: Mister-Hope/theme-demo

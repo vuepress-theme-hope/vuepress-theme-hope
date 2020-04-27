@@ -1,0 +1,22 @@
+name: Test theme
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  test-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Install Deps
+        run: |
+          yarn install
+          yarn run typescript:compile
+
+      - name: Test Theme
+        run: yarn run theme:test

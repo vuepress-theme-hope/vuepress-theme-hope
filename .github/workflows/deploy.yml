@@ -1,0 +1,87 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy-theme-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: install
+        run: |
+          yarn install
+          yarn run typescript:compile
+
+      - name: Build Docs
+        run: yarn run theme:build
+
+      - name: Add CNAME
+        run: echo "vuepress-theme.mrhope.site" > docs/theme/dist/CNAME
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/theme/dist
+
+  deploy-comment-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: install
+        run: |
+          yarn install
+          yarn run typescript:compile
+
+      - name: Build Docs
+        run: yarn run comment-docs:build
+
+      - name: Add CNAME
+        run: echo "vuepress-comment.mrhope.site" > docs/comment/dist/CNAME
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/comment/dist
+          REPOSITORY_NAME: Mister-Hope/vuepress-plugin-comment-docs
+
+  deploy-markdown-enhance-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: install
+        run: |
+          yarn install
+          yarn run typescript:compile
+
+      - name: Build Docs
+        run: yarn run md-enhance-docs:build
+
+      - name: Add CNAME
+        run: echo "vuepress-md-enhance.mrhope.site" > docs/md-enhance/dist/CNAME
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/md-enhance/dist
+          REPOSITORY_NAME: Mister-Hope/vuepress-plugin-md-enhance-docs
