@@ -43,7 +43,7 @@ export default class Timeline extends Vue {
   /** 提示文字 */
   private get hint() {
     return (
-      this.$themeConfig.blog.timeline ||
+      (this.$themeConfig.blog && this.$themeConfig.blog.timeline) ||
       this.$themeLocaleConfig.blog.timelineText ||
       i18n.getDefaultLocale().blog.timelineText
     );
