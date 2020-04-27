@@ -102,34 +102,59 @@ export default class Valine extends Vue {
   .valine-wrapper
     @extend $wrapper
 
-    #valine
+    .v[data-class=v]
       *
         color var(--grey3, #333)
 
       &:empty
         padding 0
 
+      hr
+        color var(--grey14, #eee)
+
       a
         color var(--accent-color, $accentColor)
-
-        &:before
-          background var(--accent-color, $accentColor)
 
         &:hover
           color var(--accent-color, $accentColor)
 
-      code, pre
+      pre, code
+        color var(--dark-grey, #666)
         background-color var(--code-bg-color, #ecf4fa)
 
       blockquote
         color var(--dark-grey, #666)
 
-      .vwrap .vheader .vinput:focus
-        border-color var(--accent-color, $accentColor)
+      .vwrap
+        border-color var(--grey14, #eee)
 
-      .vicon
-        &:hover, &.actived
-          fill var(--accent-color, $accentColor)
+        .vedit
+          .vemojis, .vpreview
+            box-shadow 0px 0 1px var(--grey14, #eee)
+
+        .vheader.vinput
+          border-color var(--grey14, #eee)
+
+          &:focus
+            border-color var(--accent-color, $accentColor)
+
+        .vcontrol.col
+          color var(--grey12, #bbb)
+
+        .vmark
+          .valert
+            .vtext
+              color var(--background-color, #fff)
+
+            .vcode
+              background-color var(--grey14, #eee)
+
+              &:focus
+                background-color var(--background-color, #fff)
+                border-color var(--accent-color, $accentColor)
+
+      .power
+        color var(--light-grey, #999)
 
       .vbtn
         background-color var(--background-color, #fff)
@@ -139,13 +164,44 @@ export default class Valine extends Vue {
           background-color var(--accent-color, $accentColor)
           border-color var(--accent-color, $accentColor)
 
-      .vlist .vcard .vhead .vnick
-        color var(--accent-color, $accentColor)
-
       .vempty
         color var(--light-grey, #999)
 
-      .vcopy
+      .vlist
+        .vcard
+          .vimg
+            border-color var(--grey14, #eee)
+
+          .vhead
+            .vnick
+              color var(--accent-color, $accentColor)
+
+              &:hover
+                color var(--accent-color, $accentColor)
+
+            .vsys
+              background-color var(--grey14, #eee)
+              color var(--grey12, #bbb)
+
+          .vh
+            border-color var(--grey14, #eee)
+
+            .vtime
+              color var(--grey12, #bbb)
+
+            .vmeta .vat
+              color var(--accent-color, $accentColor)
+
+          .vcontent
+            color var(--grey4, #444)
+
+            &.expand:after
+              color var(--grey, #888)
+
+          .vquote
+            color var(--dark-grey, #666)
+
+      .vpower
         display none
 
 // Darkmode support
