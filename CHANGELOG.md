@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.0-rc.11](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.10...v0.1.0-rc.11) (2020-04-27)
+
+### Bug Fixes
+
+- fix Article sorting problem ([6c7d4c2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6c7d4c20fd37dabb6f4ed6e09d38909c7a00dbd7))
+- **theme:** fix navbar dropdown issue ([61f8a42](https://github.com/Mister-Hope/vuepress-theme-hope/commit/61f8a420bc8eabf8de699aa3c78b53b565128315))
+- fix some issues ([420812a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/420812aef6d6e534c61a60b93830f53023ae33a0))
+
+### Features
+
+- **comment:** add latest Valine feature ([add9698](https://github.com/Mister-Hope/vuepress-theme-hope/commit/add96985a9faf3a30ebc38da11365f07dd138491))
+- **theme:** rebuild layout and add timeline ([02fc183](https://github.com/Mister-Hope/vuepress-theme-hope/commit/02fc1831197f869f9d3e6a0c45163777a0d9408f))
+- use prettier to lint markdown files ([8cc53c5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8cc53c5a1ac386729803b64395e48be3d68abaf0))
+
 ## [0.1.0-rc.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.9...v0.1.0-rc.10) (2020-04-12)
 
 ### Bug Fixes
