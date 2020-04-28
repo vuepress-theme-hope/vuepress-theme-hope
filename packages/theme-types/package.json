@@ -23,8 +23,8 @@
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/theme-types#readme",
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.1.0-rc.12",
+    "@mr-hope/vuepress-plugin-md-enhance": "^0.1.0-rc.12",
     "@mr-hope/vuepress-plugin-pwa": "^0.1.0-rc.12",
-    "@mr-hope/vuepress-plugin-theme-color": "0.1.0-rc.8",
     "vuepress-types": "0.9.1"
   }
 }
