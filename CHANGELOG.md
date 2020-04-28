@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.0-rc.13](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.12...v0.1.0-rc.13) (2020-04-28)
+
+### Bug Fixes
+
+- **theme:** fix BlogLinks ([4c176d2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4c176d25274af1841141c261a3efc0d9544b193d))
+- **theme:** fix mailto: link issue ([265695d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/265695d37fd0d6d9988c422a36ad5d33ad232393))
+- **types:** fix deps ([0f79d48](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0f79d4824995cec5f2316cd0f5b7e784c1b5b461))
+
+### Features
+
+- **comment:** improve appearance of Valine ([5e22d67](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5e22d67408270fb5ef288a990e61159f7e1d35de))
+- **theme:** rebuild Blog function ([4996063](https://github.com/Mister-Hope/vuepress-theme-hope/commit/49960633bd7d1c15a3659d1601dcb26ca33a6209))
+- **theme:** update 404 page ([d9e0f0e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d9e0f0e78cec3f6c3daac1767af09ddbb76cdb55))
+- **theme:** update appearance ([4f85d2f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4f85d2f216868849d5c96a6a70769e4f50b5e6bb))
+- **theme:** update footer and update appearance ([0b8c49e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0b8c49e84939c99e0cadfa664bbc8696463c85d3))
+
 ## [0.1.0-rc.12](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.11...v0.1.0-rc.12) (2020-04-27)
 
 ### Bug Fixes
