@@ -57,6 +57,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import Comment from '@Comment';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import PageEdit from '@theme/components/PageEdit.vue';
+import PageFooter from '@theme/components/PageFooter.vue';
 import PageInfo from '@PageInfo';
 import PageNav from '@theme/components/PageNav.vue';
 import Password from '@theme/components/Password.vue';
@@ -67,6 +68,7 @@ import { SidebarItem } from '@theme/util/sidebar';
     Comment,
     ModuleTransition,
     PageEdit,
+    PageFooter,
     PageInfo,
     PageNav,
     Password
@@ -111,12 +113,12 @@ export default class Page extends Vue {
   padding-bottom 2rem
   display block
   padding-left $sidebarWidth
+  background-color var(--background-color)
 
   // narrow desktop / iPad
   @media (max-width: $MQNarrow)
     padding-left $mobileSidebarWidth
 
-    
   // wide mobile
   @media (max-width: $MQMobile)
     padding-left 0

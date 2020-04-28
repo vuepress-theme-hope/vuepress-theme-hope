@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <BloggerInfo v-if="sidebarDisplay !== 'none'" :class="{ mobile: sidebarDisplay === 'mobile' }" />
-
+    <hr />
     <NavLinks :in-sidebar="true" />
 
     <slot name="top" />
@@ -46,6 +46,7 @@ export default class Sidebar extends Vue {
   background-color var(--background-color)
   font-size 16px
   overflow-y auto
+  box-shadow 2px 0 8px var(--card-shadow-color)
 
   // narrow desktop / iPad
   @media (max-width: $MQNarrow)
@@ -58,7 +59,7 @@ export default class Sidebar extends Vue {
     padding-top $navbarHeight
     transform translateX(-100%)
     transition transform 0.2s ease
-    box-shadow 2px 0 8px var(--box-shadow-color)
+    box-shadow none
 
   ul
     padding 0
@@ -70,6 +71,9 @@ export default class Sidebar extends Vue {
     color var(--text-color)
 
   .blogger-info.mobile
+    display none
+
+  .blogger-info.mobile + hr
     display none
 
   .nav-links
@@ -98,9 +102,17 @@ export default class Sidebar extends Vue {
       margin-top 0.75rem
 
 @media (max-width: $MQMobile)
+  .sidebar-open
+    .sidebar
+      box-shadow 2px 0 8px var(--card-shadow-color)
+
   .sidebar
     .blogger-info.mobile
       display block
+
+    .blogger-info.mobile + hr
+      display block
+      margin-top 16px
 
     .nav-links
       display block

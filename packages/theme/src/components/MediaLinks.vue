@@ -1,9 +1,9 @@
 <template>
-  <div class="blogger-links-wrapper">
+  <div v-if="mediaLink" class="media-links-wrapper">
     <div
       v-for="link in links"
       :key="link.name"
-      class="blogger-link"
+      class="media-link"
       @click="navigate(link.url,$router,$route)"
     >
       <Component :is="link.icon" />
@@ -100,31 +100,44 @@ interface MediaLink {
     Zhihu
   }
 })
-export default class BloggerLinks extends Vue {
+export default class MediaLinks extends Vue {
   private navigate = navigate;
 
+  private get mediaLink(): Record<string, string> | false {
+    const { medialink } = this.$frontmatter;
+
+    return medialink === false
+      ? false
+      : typeof medialink === 'object'
+      ? medialink
+      : this.$themeConfig.blog
+      ? this.$themeConfig.blog.links || false
+      : false;
+  }
+
   private get links() {
-    const linkConfig: Record<string, string> = this.$themeConfig.blog
-      ? this.$themeConfig.blog.links || {}
-      : {};
-    const links: MediaLink[] = [];
+    if (this.mediaLink) {
+      const links: MediaLink[] = [];
 
-    for (const media in linkConfig)
-      if (medias.includes(media))
-        links.push({ icon: media, url: linkConfig[media] });
+      for (const media in this.mediaLink)
+        if (medias.includes(media))
+          links.push({ icon: media, url: this.mediaLink[media] });
 
-    return links;
+      return links;
+    }
+
+    return [];
   }
 }
 </script>
 
 <style lang="stylus">
-.blogger-links-wrapper
+.media-links-wrapper
   display flex
   justify-content center
   margin 8px auto
 
-  .blogger-link
+  .media-link
     width 28px
     height 28px
     margin 4px

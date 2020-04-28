@@ -64,19 +64,26 @@ SideBarItem 新增
 
 页脚设置选项
 
-### footer.text
+### footer.content
 
 - 类型: `string`
-- 默认值: `'Copyright © 2020-present <作者>'`
+- 必填: 否
 
-页脚的默认文字。
+页脚的默认内容，可输入 HTMLString。
 
-### footer.displayDefault
+### footer.copyright
+
+- 类型: `string`
+- 默认值: `'Copyright © <作者>'`
+
+默认的版权信息
+
+### footer.display
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否显示默认页脚
+是否默认显示页脚
 
 ## 主题色与深色模式
 

@@ -10,12 +10,11 @@ Components for vuepress-theme-hope.
 npm i @mr-hope/vuepress-plugin-components
 ```
 
-This plugin expose 5 components and 1 global component:
+This plugin expose 4 components and 1 global component:
 
 - BackToTop (Global Components)
 - BreadCrumb
 - MyBadge
-- PageFooter
 - Pagination
 - ScreenFull
 
@@ -34,10 +33,6 @@ Will read these options from `themeConfig`:
 ## MyBadge
 
 A badge which allows you to diy it's color.
-
-## PageFooter
-
-A page footer.
 
 ## Pagination
 
@@ -63,13 +58,12 @@ vuepress-theme-hope 的组件。
 npm i @mr-hope/vuepress-plugin-components
 ```
 
-此插件提供 5 个组件和一个全局组件:
+此插件提供 4 个组件和一个全局组件:
 
 - BackToTop (全局组件)
 - BreadCrumb
 - MyBadge
 - Pagination
-- PageFooter
 - ScreenFull
 
 ## BackToTop
@@ -87,10 +81,6 @@ npm i @mr-hope/vuepress-plugin-components
 ## MyBadge
 
 支持自定义颜色的徽章
-
-## PageFooter
-
-可以自定义显示内容的页脚
 
 ## Pagination
 

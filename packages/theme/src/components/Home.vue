@@ -46,9 +46,10 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 import NavLink from '@theme/components/NavLink.vue';
+import PageFooter from '@theme/components/PageFooter.vue';
 import navigate from '@theme/util/navigate';
 
-@Component({ components: { NavLink } })
+@Component({ components: { NavLink, PageFooter } })
 export default class Home extends Vue {
   private get actionLink() {
     return {

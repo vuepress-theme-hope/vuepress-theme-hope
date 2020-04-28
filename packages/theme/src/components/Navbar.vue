@@ -110,7 +110,7 @@ export default class Navbar extends Vue {
   background-color var(--background-color)
   box-sizing border-box
   line-height $navbarHeight - 1.4rem
-  box-shadow 0 2px 8px var(--box-shadow-color)
+  box-shadow 0 2px 8px var(--card-shadow-color)
 
   a, span, img
     display inline-block

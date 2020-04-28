@@ -6,22 +6,19 @@
         <div v-if="blogger" class="name" v-text="blogger " />
       </div>
     </div>
-    <div class="blog-info-wrapper">
-      <div class="num-wrapper">
-        <div @click="navigate('/article/', $router, $route)">
-          <div>{{i18n.article}}</div>
-          <div class="num">{{$articles.length}}</div>
-        </div>
-        <div @click="navigate('/category/', $router, $route)">
-          <div>{{i18n.category}}</div>
-          <div class="num">{{$category.list.length}}</div>
-        </div>
-        <div @click="navigate('/tag/', $router, $route)">
-          <div>{{i18n.tag}}</div>
-          <div class="num">{{$tag.list.length}}</div>
-        </div>
+    <div class="num-wrapper">
+      <div @click="navigate('/article/', $router, $route)">
+        <div>{{i18n.article}}</div>
+        <div class="num">{{$articles.length}}</div>
       </div>
-      <BloggerLinks />
+      <div @click="navigate('/category/', $router, $route)">
+        <div>{{i18n.category}}</div>
+        <div class="num">{{$category.list.length}}</div>
+      </div>
+      <div @click="navigate('/tag/', $router, $route)">
+        <div>{{i18n.tag}}</div>
+        <div class="num">{{$tag.list.length}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -30,11 +27,10 @@
 import { Component, Mixins, Vue } from 'vue-property-decorator';
 import { deepAssign, i18n } from '@mr-hope/vuepress-shared-utils';
 import { ArticleMixin } from '@theme/util/articleMixin';
-import BloggerLinks from '@theme/components/BloggerLinks.vue';
 import { PageComputed } from 'vuepress-types';
 import navigate from '@theme/util/navigate';
 
-@Component({ components: { BloggerLinks } })
+@Component
 export default class BloggerInfo extends Mixins(ArticleMixin) {
   private navigate = navigate;
 
@@ -106,40 +102,33 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
         height 128px
         border-radius 50%
 
-  .blog-info-wrapper
+  .num-wrapper
+    display flex
+    margin 8px auto
+    width 80%
+
     @media (min-width: $MQNormal)
-      display flex
+      width 100%
       flex-direction column
       justify-content space-evenly
 
-    .num-wrapper
-      display flex
-      margin 8px auto
-      width 80%
+    > div
+      text-align center
+      flex auto
+      font-size 14px
+      cursor pointer
 
       @media (min-width: $MQNormal)
-        flex-direction column
+        display flex
+        justify-content space-evenly
+        align-items center
 
-      > div
-        text-align center
-        flex auto
-        font-size 14px
-        cursor pointer
+      &:hover
+        color var(--accent-color)
 
-        @media (min-width: $MQNormal)
-          display flex
-          justify-content space-evenly
-
-        &:hover
-          color var(--accent-color)
-
-        .num
-          position relative
-          line-height 1.5
-          font-weight 600
-          font-size 20px
-          margin-bottom 8px
-
-          @media (min-width: $MQNormal)
-            top -8px
+      .num
+        position relative
+        line-height 1.5
+        font-weight 600
+        font-size 20px
 </style>

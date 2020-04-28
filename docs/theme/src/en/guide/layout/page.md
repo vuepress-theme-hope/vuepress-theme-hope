@@ -71,43 +71,44 @@ See the [Comment](../feature/comment.md) section for details.
 
 ## Footer Support <MyBadge text="Apply Partically Support" />
 
-The `footer` field can be configured in the `frontmatter` of the page.
+If you want to display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 
-The `footer` field accepts a string and also accepts a htmlString that will be rendered directly in the footer.
+At the same time, you can configure the `footer` field in the `frontmatter` page.
 
-::: tip Other support
-You can set `footer` to `true` to display the default footer. The default footer text is configured in the `themeConfig.footer` field.
-
-At the same time, `footer` also accepts an object, using the `text` and `link` fields to quickly set a footer link.
-:::
+The `footer` field accepts a string or htmlString. They will be rendered directly at the footer's position. You can also set `footer` to `true` to display the default footer text.
 
 ::: details Example
 
+Enable the default footer text:
+
 ```md
-> Apply Default footer text
 ---
 footer: true
 ---
+```
 
-> DIY footer text
+Customize footer text without displaying copyright information and media links:
+
+```md
 ---
 footer: This website is served by Github Pages
+copyright: false
+medialink: false
 ---
+`` `
 
-> Quickly define a footer link
----
-footer:
-  text: Mr.Hope
-  link: https://github.com/Mister-Hope
----
+Custom footer content and copyright information and media links:
 
-> Diy footer
+```md
 ---
-footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
+copyright: MIT LICENSE
+footer: <a href="https://github.com/Mister-Hope"> Mr.Hope </a>
+medialink:
+  Zhihu: https://zhihu.com
 ---
 ```
 
-When you set `footer.displayDefault` to true in the theme, you can also disable it locally
+When you set `footer.display` to true in the theme, you can also disable it locally:
 
 ```md
 ---

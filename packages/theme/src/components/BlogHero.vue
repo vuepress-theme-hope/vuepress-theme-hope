@@ -63,7 +63,7 @@ export default class BlogHero extends Vue {
   color #fff
 
   @media (min-width: $MQMobile)
-    margin-bottom 16px
+    margin 16px auto
     border-radius 8px
     overflow hidden
 

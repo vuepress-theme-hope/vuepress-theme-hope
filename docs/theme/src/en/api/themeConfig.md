@@ -64,19 +64,26 @@ SideBarItem now has
 
 Footer setting options
 
-### footer.text
+### footer.content
 
 - Type: `string`
-- Default: `'Copyright © 2020-present <author>'`
+- Required: false
 
-The default text for the footer.
+The default content for the footer, can accept HTMLString.
 
-### footer.displayDefault
+### footer.copyright
+
+- Type: `string`
+- Default: `'Copyright © <author>'`
+
+The default copyright info
+
+### footer.display
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to show the default footer
+Whether the footer is shown by default
 
 ## darkmode
 

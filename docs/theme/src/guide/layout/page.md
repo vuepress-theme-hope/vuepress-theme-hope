@@ -73,15 +73,11 @@ icon: Home
 
 ## 页脚支持 <MyBadge text="支持局部配置" />
 
-可以在页面的 `frontmatter` 中配置 `footer` 字段。
+如果希望每个页面都显示页脚，需要将 `themeConfig.footer.display` 设置为 `true`。同时，也可以使用 `themeConfig.footer.copyright` 和 `themeConfig.content` 设置默认的版权信息与页脚内容。
 
-`footer` 字段接受一段字符串，同时也接受一段 htmlString ，他们会直接渲染在页脚的位置。
+同时，可以在页面的 `frontmatter` 中配置 `footer` 字段。
 
-::: tip 其他支持
-可以将 `footer` 设置为 `true` 来显示默认的页脚。默认的页脚文字在 `themeConfig.footer` 字段配置。
-
-同时，`footer` 还接受一个 object，使用 `text` 和 `link` 字段来快速设置一个页脚链接。
-:::
+`footer` 字段接受一段字符串，同时也接受一段 htmlString ，他们会直接渲染在页脚的位置，也可以将 `footer` 设置为 `true` 来显示默认的页脚文字。
 
 ::: details 例子
 
@@ -93,33 +89,28 @@ footer: true
 ---
 ```
 
-自定义页脚文字
+自定义页脚文字，同时不显示版权信息和媒体链接
 
 ```md
 ---
 footer: This website is served by Github Pages
+copyright: false
+medialink: false
 ---
 ```
 
-快速定义页脚链接
+自定义页脚的内容和版权信息与媒体链接
 
 ```md
 ---
-footer:
-  text: Mr.Hope
-  link: https://github.com/Mister-Hope
----
-```
-
-自定义页脚
-
-```md
----
+copyright: MIT LICENSE
 footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
+medialink:
+  Zhihu: https://zhihu.com
 ---
 ```
 
-当你在主题中设置了 `footer.displayDefault` 为 true 时，你还可以局部禁用它
+当你在主题中设置了 `footer.display` 为 true 时，你还可以局部禁用它
 
 ```md
 ---

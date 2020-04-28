@@ -237,7 +237,7 @@ export default class DropdownLink extends Vue {
       border-radius 0.25rem
       white-space nowrap
       margin 0
-      box-shadow 2px 2px 10px var(--box-shadow-color)
+      box-shadow 2px 2px 10px var(--card-shadow-color)
 
       .dropdown-item a
         color var(--dark-grey)

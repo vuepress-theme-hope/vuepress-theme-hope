@@ -114,6 +114,7 @@ import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue'
 import CategoryList from '@theme/components/CategoryList.vue';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import { PageComputed } from 'vuepress-types';
+import PageFooter from '@theme/components/PageFooter.vue';
 import Password from '@theme/components/Password.vue';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import TagList from '@theme/components/TagList.vue';
@@ -129,6 +130,7 @@ import TimelineList from '@theme/components/TimelineList.vue';
     CategoryIcon,
     CategoryList,
     ModuleTransition,
+    PageFooter,
     Password,
     TagIcon,
     TagList,
@@ -166,7 +168,7 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
 
 <style lang="stylus">
 .page.blog
-  padding ($navbarHeight + 1rem) 0 0
+  padding $navbarHeight 0 0
   margin 0px auto
 
   @media (max-width: $MQMobile)
@@ -184,23 +186,22 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
     @media (min-width: $MQNarrow)
       padding 0 2rem
 
-    @media (min-width: $MQNormal)
+    @media (min-width: $MQWide)
       padding 0
 
     .blogger-info-wrapper
       position sticky
       box-sizing border-box
-      top 70px
+      top ($navbarHeight + 1rem)
       flex 0 0 300px
       height auto
       margin-bottom 12px
       transition all 0.3s
 
-      // padding 0 15px
       @media (max-width: $MQMobile)
         display none !important
 
-      @media (min-width: $MQNormal)
+      @media (min-width: $MQWide)
         flex-basis 360px
 
       .blogger-info
@@ -218,7 +219,7 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
         border-radius 8px
         box-shadow 0 2px 8px 0 var(--card-shadow-color)
 
-        @media (min-width: $MQNormal)
+        @media (min-width: $MQWide)
           border-top-left-radius 0
           border-bottom-left-radius 0
 
@@ -261,10 +262,10 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
           margin 8px auto
 
       .timeline-wrapper
-        @media (min-width: $MQWide)
+        @media (min-width: $MQNormal)
           display none
 
-        @media (min-width: $MQNormal)
+        @media (min-width: $MQWide)
           border-top-left-radius 0
           border-bottom-left-radius 0
 
@@ -274,21 +275,22 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
       @media (min-width: $MQMobile)
         margin 0 15px
 
-      @media (min-width: $MQNormal)
-        margin 0 30px
-
       .blog-list
         max-width 780px
         margin 0 auto
 
     .blog-detail-wrapper
+      position sticky
+      top ($navbarHeight + 1rem)
       flex 0 0 300px
 
-      @media (max-width: $MQWide)
+      @media (max-width: $MQNormal)
         display none
 
       .timeline-wrapper
-        @media (min-width: $MQNormal)
+        margin-top 0
+
+        @media (min-width: $MQWide)
           border-top-right-radius 0
           border-bottom-right-radius 0
 </style>
