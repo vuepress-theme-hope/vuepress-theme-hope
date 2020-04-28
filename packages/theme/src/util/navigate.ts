@@ -13,8 +13,9 @@ const navigate = (url: string, router: VueRouter, route: Route): void => {
       // Inner absolute path
       if (route.path !== url) router.push(url);
     } else if (
-      url.indexOf('http://') !== -1 ||
-      url.indexOf('https://') !== -1
+      url.indexOf('http://') === 0 ||
+      url.indexOf('https://') === 0 ||
+      url.indexOf('mailto:') === 0
     ) {
       // Outter url
       if (window) window.open(url);
