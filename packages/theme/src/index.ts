@@ -46,11 +46,11 @@ export = (
     config.additionalPages = [
       {
         path: '/article/',
-        frontmatter: { layout: 'BlogEntry' }
+        frontmatter: { layout: 'Blog' }
       },
       {
         path: '/timeline/',
-        frontmatter: { layout: 'Timeline' }
+        frontmatter: { layout: 'Blog' }
       }
     ] as any;
 

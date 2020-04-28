@@ -37,34 +37,20 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
                 id: 'tag',
                 keys: ['tag', 'tags'],
                 path: '/tag/',
-                layout: 'BlogEntry',
-                scopeLayout: 'BlogEntry',
-                frontmatter: {
-                  sidebar: false
-                }
+                layout: 'Blog',
+                scopeLayout: 'Blog'
               },
               {
                 id: 'category',
                 keys: ['category', 'categories'],
                 path: '/category/',
-                layout: 'BlogEntry',
-                scopeLayout: 'BlogEntry',
-                frontmatter: {
-                  sidebar: false
-                }
-                /*
-                 * },
-                 * {
-                 *   id: 'timeline',
-                 *   keys: ['timeline'],
-                 *   path: '/timeline/',
-                 *   layout: 'TimeLines',
-                 *   scopeLayout: 'TimeLine'
-                 */
+                layout: 'Blog',
+                scopeLayout: 'Blog'
               }
             ]
           }
     ],
+
     /** 更新时间插件 */
     [
       '@vuepress/last-updated',

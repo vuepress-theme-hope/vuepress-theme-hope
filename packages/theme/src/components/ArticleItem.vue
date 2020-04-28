@@ -42,8 +42,8 @@ export default class ArticleItem extends Vue {
     padding 16px 20px
     width 100%
     overflow hidden
-    border-radius 0.25rem
-    box-shadow 0 1px 4px 0 var(--card-shadow-color)
+    border-radius 8px
+    box-shadow 0 2px 8px 0 var(--card-shadow-color)
     box-sizing border-box
     -webkit-transition all 0.3s
     transition all 0.3s
@@ -52,7 +52,7 @@ export default class ArticleItem extends Vue {
       margin-bottom 0
 
     &:hover
-      box-shadow 0 2px 10px 0 var(--card-shadow-color)
+      box-shadow 0 4px 16px 0 var(--card-shadow-color)
 
     .sticky-icon
       position absolute

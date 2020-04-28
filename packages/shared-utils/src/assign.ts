@@ -27,6 +27,15 @@ export const deepAssign = <
       !Array.isArray(assignObject[property])
     )
       deepAssign(originObject[property], assignObject[property]);
+    else if (typeof assignObject[property] === 'object')
+      if (Array.isArray(assignObject[property]))
+        (originObject as Record<string, any>)[property] = [
+          ...assignObject[property]
+        ];
+      else
+        (originObject as Record<string, any>)[property] = {
+          ...assignObject[property]
+        };
     else
       (originObject as Record<string, any>)[property] = assignObject[property];
   });
@@ -52,10 +61,16 @@ export const deepAssignReverse = (
 
   Object.keys(originObject).forEach((property) => {
     if (assignObject[property] === undefined)
-      assignObject[property] = originObject[property];
+      if (typeof originObject[property] === 'object')
+        if (Array.isArray(originObject[property]))
+          assignObject[property] = [...originObject[property]];
+        else assignObject[property] = { ...originObject[property] };
+      else assignObject[property] = originObject[property];
     else if (
       typeof assignObject[property] === 'object' &&
-      !Array.isArray(assignObject)
+      !Array.isArray(assignObject) &&
+      typeof originObject[property] === 'object' &&
+      !Array.isArray(originObject[property])
     )
       deepAssignReverse(originObject[property], assignObject[property]);
   });

@@ -1,5 +1,5 @@
 import * as dayjs from 'dayjs';
-import { PageComputed } from 'vuepress-types';
+import { PageComputed, PageFrontmatter } from 'vuepress-types';
 
 /** 处理日期 */
 export const getDate = (dateString: string): (number | undefined)[] => {
@@ -81,15 +81,15 @@ export const compareDate = (
  * 过滤文章
  *
  * @param pages 页面
- * @param isTimeline 是否是时间线
+ * @param filterFunc 额外的过滤函数
  */
 export const filterArticle = (
   pages: PageComputed[],
-  isTimeline?: boolean
+  filterFunc?: (frontmatter: PageFrontmatter) => boolean
 ): PageComputed[] =>
   pages.filter((page) => {
     const {
-      frontmatter: { date, article, blogpage, home, time = date },
+      frontmatter: { article, blogpage, home },
       title
     } = page;
 
@@ -98,18 +98,21 @@ export const filterArticle = (
       blogpage !== true &&
       home !== true &&
       article !== false &&
-      // 时间线处理
-      !(isTimeline === true && time === undefined)
+      (!filterFunc || filterFunc(page.frontmatter))
     );
   });
 
-/**
- * 排序文章
- *
- * @param pages
- */
+/** 过滤时间轴 */
+export const filterTimelineArticle = (pages: PageComputed[]): PageComputed[] =>
+  filterArticle(pages, (frontmatter) => frontmatter.time || frontmatter.date);
+
+/** 过滤时间轴 */
+export const filterStickyArticle = (pages: PageComputed[]): PageComputed[] =>
+  filterArticle(pages, (frontmatter) => frontmatter.sticky);
+
+/** 排序文章 */
 export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
-  pages.sort((prev, next) => {
+  pages.slice(0).sort((prev, next) => {
     const prevSticky = prev.frontmatter.sticky;
     const nextSticky = next.frontmatter.sticky;
     const prevTime = prev.frontmatter.time || prev.frontmatter.date;

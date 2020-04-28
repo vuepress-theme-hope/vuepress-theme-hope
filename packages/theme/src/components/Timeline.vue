@@ -1,11 +1,11 @@
 <template>
-  <Common class="timeline-wrapper" :sidebar="false">
+  <div class="timeline-wrapper">
     <ul class="timeline-content">
       <ModuleTransition>
         <li class="desc">{{hint}}</li>
       </ModuleTransition>
       <ModuleTransition
-        v-for="(item, index) in timelineItems"
+        v-for="(item, index) in $timeline"
         :key="index"
         :delay="0.08 * (index + 1)"
       >
@@ -20,26 +20,17 @@
         </li>
       </ModuleTransition>
     </ul>
-  </Common>
+  </div>
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
-import { deepAssign, i18n } from '@mr-hope/vuepress-shared-utils';
-import { filterArticle, getDate, sortArticle } from '@theme/util/article';
-import Common from '@theme/layouts/Common.vue';
+import { Component, Mixins, Vue } from 'vue-property-decorator';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
-import { PageComputed } from 'vuepress-types';
+import { TimelineMixin } from '@theme/util/articleMixin';
+import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-interface TimelineItem {
-  year: number;
-  articles: PageComputed[];
-}
-
-const hintConfig = {};
-
-@Component({ components: { Common, ModuleTransition } })
-export default class Timeline extends Vue {
+@Component({ components: { ModuleTransition } })
+export default class Timeline extends Mixins(TimelineMixin) {
   /** 提示文字 */
   private get hint() {
     return (
@@ -47,35 +38,6 @@ export default class Timeline extends Vue {
       this.$themeLocaleConfig.blog.timelineText ||
       i18n.getDefaultLocale().blog.timelineText
     );
-  }
-
-  /** 时间轴列表 */
-  private get timelineItems(): TimelineItem[] {
-    const { pages } = this.$site;
-    const timelineItems: TimelineItem[] = [];
-
-    // 先过滤再排序
-    sortArticle(
-      filterArticle(
-        pages.map((page) => deepAssign({}, page) as PageComputed),
-        true
-      )
-    ).forEach((article) => {
-      const {
-        frontmatter: { date, time = date }
-      } = article;
-      const [year, month, day] = getDate(time);
-
-      if (year) {
-        if (!timelineItems[0] || timelineItems[0].year !== year)
-          timelineItems.unshift({ year, articles: [] });
-
-        article.frontmatter.parsedDate = `${month}-${day}`;
-        timelineItems[0].articles.push(article);
-      }
-    });
-
-    return timelineItems.reverse();
   }
 
   private navigate(url: string) {
@@ -88,7 +50,7 @@ export default class Timeline extends Vue {
 .timeline-wrapper
   max-width 740px
   margin 0 auto
-  padding 4.6rem 2.5rem 0
+  padding 40px
 
   .timeline-content
     box-sizing border-box
@@ -101,9 +63,9 @@ export default class Timeline extends Vue {
       top 14px
       left 0
       z-index -1
-      margin-left -2px
       width 4px
       height 100%
+      margin-left -2px
       background var(--border-color)
 
     .desc
@@ -125,10 +87,10 @@ export default class Timeline extends Vue {
         z-index 2
         left -20px
         top 50%
-        margin-left -4px
-        margin-top -4px
         width 8px
         height 8px
+        margin-left -4px
+        margin-top -4px
         background var(--background-color)
         border 1px solid var(--border-color)
         border-radius 50%
@@ -136,18 +98,18 @@ export default class Timeline extends Vue {
     .year
       margin 80px 0 0px
       color var(--text-color)
-      font-weight 700
       font-size 26px
+      font-weight 700
 
     .year-wrapper
       padding-left 0 !important
 
       li
+        position relative
         display flex
         padding 30px 0 10px
-        list-style none
         border-bottom 1px dashed var(--border-color)
-        position relative
+        list-style none
 
         &:hover
           .date
@@ -161,9 +123,8 @@ export default class Timeline extends Vue {
 
         .date
           width 40px
-          line-height 30px
-          color var(--text-color-sub)
           font-size 12px
+          line-height 30px
 
           &::before
             content ' '
@@ -179,9 +140,8 @@ export default class Timeline extends Vue {
             z-index 2
 
         .title
-          line-height 30px
-          color var(--text-color-sub)
           font-size 16px
+          line-height 30px
           cursor pointer
 
 @media (max-width: $MQMobile)

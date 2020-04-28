@@ -55,8 +55,10 @@ export default class CategoryList extends Vue {
 
 <style lang="stylus">
 .category-list-wrapper
+  position relative
   list-style none
   padding-left 0
+  z-index 2
 
   .category
     vertical-align middle

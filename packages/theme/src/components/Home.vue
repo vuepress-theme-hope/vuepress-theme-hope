@@ -7,7 +7,7 @@
         :alt="$frontmatter.heroAlt || 'HomeLogo'"
       />
       <h1
-        v-if="$frontmatter.heroText !== null"
+        v-if="$frontmatter.heroText !== false"
         id="main-title"
         v-text="$frontmatter.heroText || $title || 'Hello'"
       />

@@ -121,16 +121,18 @@ export default class BloggerLinks extends Vue {
 .blogger-links-wrapper
   display flex
   justify-content center
+  margin 8px auto
 
   .blogger-link
     width 28px
     height 28px
     margin 4px
-    transition width, height 0.2s
+    transform scale(1, 1)
+    transition all 0.2s
 
     &:hover
       cursor pointer
-      transform scale(1.1, 1.1)
+      transform scale(1.2, 1.2)
 
     .icon
       width 100%

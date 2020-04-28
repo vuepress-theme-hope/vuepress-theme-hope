@@ -6,39 +6,36 @@
         <div v-if="blogger" class="name" v-text="blogger " />
       </div>
     </div>
-    <div class="num-wrapper">
-      <div @click="navigate('/article/', $router, $route)">
-        <div>{{article}}</div>
-        <div class="num">{{$articles.length}}</div>
+    <div class="blog-info-wrapper">
+      <div class="num-wrapper">
+        <div @click="navigate('/article/', $router, $route)">
+          <div>{{i18n.article}}</div>
+          <div class="num">{{$articles.length}}</div>
+        </div>
+        <div @click="navigate('/category/', $router, $route)">
+          <div>{{i18n.category}}</div>
+          <div class="num">{{$category.list.length}}</div>
+        </div>
+        <div @click="navigate('/tag/', $router, $route)">
+          <div>{{i18n.tag}}</div>
+          <div class="num">{{$tag.list.length}}</div>
+        </div>
       </div>
-      <div @click="navigate('/category/', $router, $route)">
-        <div>{{category}}</div>
-        <div class="num">{{$category.list.length}}</div>
-      </div>
-      <div @click="navigate('/tag/', $router, $route)">
-        <div>{{tag}}</div>
-        <div class="num">{{$tag.list.length}}</div>
-      </div>
+      <BloggerLinks />
     </div>
-    <BloggerLinks />
-    <hr />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Vue } from 'vue-property-decorator';
 import { deepAssign, i18n } from '@mr-hope/vuepress-shared-utils';
-import {
-  filterArticle,
-  generatePagination,
-  sortArticle
-} from '@theme/util/article';
+import { ArticleMixin } from '@theme/util/articleMixin';
 import BloggerLinks from '@theme/components/BloggerLinks.vue';
 import { PageComputed } from 'vuepress-types';
 import navigate from '@theme/util/navigate';
 
 @Component({ components: { BloggerLinks } })
-export default class BloggerInfo extends Vue {
+export default class BloggerInfo extends Mixins(ArticleMixin) {
   private navigate = navigate;
 
   /** 博客配置 */
@@ -68,37 +65,8 @@ export default class BloggerInfo extends Vue {
     return Boolean(this.blogConfig.intro);
   }
 
-  /** 文章列表 */
-  private get $articles(): PageComputed[] {
-    const { pages } = this.$site;
-
-    // 先过滤再排序
-    return sortArticle(
-      filterArticle(pages.map((page) => deepAssign({}, page) as PageComputed))
-    );
-  }
-
-  /** 文章分页 */
-  private get $paginationArticles(): PageComputed[][] {
-    return generatePagination(this.$articles);
-  }
-
-  private get article() {
-    return (
-      this.$themeLocaleConfig.blog.article ||
-      i18n.getDefaultLocale().blog.article
-    );
-  }
-
-  private get category() {
-    return (
-      this.$themeLocaleConfig.blog.category ||
-      i18n.getDefaultLocale().blog.category
-    );
-  }
-
-  private get tag() {
-    return this.$themeLocaleConfig.blog.tag || i18n.getDefaultLocale().blog.tag;
+  private get i18n() {
+    return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
   }
 
   /** 跳转到个人介绍 */
@@ -111,54 +79,67 @@ export default class BloggerInfo extends Vue {
 
 <style lang="stylus">
 .blogger-info
+  @media (min-width: $MQNormal)
+    display flex
+
   .blogger-wrapper
+    padding 8px 0
     text-align center
-    padding-top 2rem
 
     .blogger
       display inline-block
-      padding 0 2rem
+      padding 0 32px
 
       &.hasIntro
         cursor pointer
 
       .name
-        margin 1rem auto
-        font-size 1.4em
+        margin 16px auto
+        font-size 22px
 
         @media (min-width: $MQNormal)
-          font-size 1.6rem
+          font-size 24px
 
       .avatar
         display block
-        width 8rem
-        height 8rem
+        width 128px
+        height 128px
         border-radius 50%
 
-        // @media (min-width: $MQNormal)
-        //   width 12rem
-        //   height 12rem
-
-  .num-wrapper
-    display flex
-    margin 0 auto 1rem
-    width 80%
-
+  .blog-info-wrapper
     @media (min-width: $MQNormal)
-      display none
+      display flex
+      flex-direction column
+      justify-content space-evenly
 
-    > div
-      text-align center
-      flex auto
-      font-size 14px
-      cursor pointer
+    .num-wrapper
+      display flex
+      margin 8px auto
+      width 80%
 
-      &:hover
-        color var(--accent-color)
+      @media (min-width: $MQNormal)
+        flex-direction column
 
-      .num
-        line-height 1.5
-        font-weight 600
-        font-size 20px
-        margin-bottom 8px
+      > div
+        text-align center
+        flex auto
+        font-size 14px
+        cursor pointer
+
+        @media (min-width: $MQNormal)
+          display flex
+          justify-content space-evenly
+
+        &:hover
+          color var(--accent-color)
+
+        .num
+          position relative
+          line-height 1.5
+          font-weight 600
+          font-size 20px
+          margin-bottom 8px
+
+          @media (min-width: $MQNormal)
+            top -8px
 </style>

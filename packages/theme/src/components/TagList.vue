@@ -25,7 +25,8 @@ export default class TagList extends Vue {
     return [
       {
         name:
-          this.$themeLocaleConfig.blog.allText || i18n.getDefaultLocale().blog.allText,
+          this.$themeLocaleConfig.blog.allText ||
+          i18n.getDefaultLocale().blog.allText,
         path: '/tag/'
       },
       ...this.$tag.list
@@ -68,8 +69,10 @@ export default class TagList extends Vue {
 
 <style lang="stylus">
 .tag-list-wrapper
+  position relative
   list-style none
   padding-left 0
+  z-index 2
 
   .tag
     display inline-block
