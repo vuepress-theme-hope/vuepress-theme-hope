@@ -126,19 +126,21 @@ export default class Valine extends Vue {
         color var(--dark-grey, #666)
 
       .vwrap
-        border-color var(--grey14, #eee)
+        border-color var(--grey12, #bbb)
 
-        .vedit
-          .vemojis, .vpreview
-            box-shadow 0px 0 1px var(--grey14, #eee)
+        .vicon.actived
+          fill var(--accent-color, $accentColor)
 
-        .vheader.vinput
-          border-color var(--grey14, #eee)
+        .vemojis, .vpreview
+            box-shadow 0px 0 1px var(--grey12, #bbb)
+
+        .vheader .vinput
+          border-color var(--grey12, #bbb)
 
           &:focus
             border-color var(--accent-color, $accentColor)
 
-        .vcontrol.col
+        .vcontrol .col
           color var(--grey12, #bbb)
 
         .vmark
@@ -147,7 +149,7 @@ export default class Valine extends Vue {
               color var(--background-color, #fff)
 
             .vcode
-              background-color var(--grey14, #eee)
+              background-color var(--grey12, #bbb)
 
               &:focus
                 background-color var(--background-color, #fff)
@@ -170,7 +172,7 @@ export default class Valine extends Vue {
       .vlist
         .vcard
           .vimg
-            border-color var(--grey14, #eee)
+            border-color var(--grey12, #bbb)
 
           .vhead
             .vnick
@@ -180,11 +182,11 @@ export default class Valine extends Vue {
                 color var(--accent-color, $accentColor)
 
             .vsys
-              background-color var(--grey14, #eee)
-              color var(--grey12, #bbb)
+              background-color var(--grey12, #bbb)
+              color var(--light-grey, #999)
 
           .vh
-            border-color var(--grey14, #eee)
+            border-color var(--grey12, #bbb)
 
             .vtime
               color var(--grey12, #bbb)
@@ -203,10 +205,4 @@ export default class Valine extends Vue {
 
       .vpower
         display none
-
-// Darkmode support
-.theme-dark .page .valine-wrapper #valine
-  .vlist .vcard .vhead .vsys
-    background #121212
-    color #4c4e4e
 </style>

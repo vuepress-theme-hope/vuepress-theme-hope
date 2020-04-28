@@ -39,7 +39,6 @@
 </template>
 
 <script lang='ts'>
-/* global SW_UPDATE_POPUP */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import event from './event';
 import { i18n } from '@mr-hope/vuepress-shared-utils';

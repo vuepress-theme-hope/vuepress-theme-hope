@@ -19,7 +19,7 @@
 
       <!-- 时间 -->
       <span v-if="time">
-        <TimeIcon />
+        <CalendarIcon />
         <span v-text="time" />
       </span>
 

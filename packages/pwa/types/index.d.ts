@@ -13,5 +13,4 @@ export type PWAOptions = Partial<{
 /** 声明全局变量 */
 declare global {
   const SW_BASE_URL: string;
-  const SW_UPDATE_POPUP: any;
 }
