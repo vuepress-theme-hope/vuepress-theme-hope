@@ -10,7 +10,15 @@ module.exports = {
         title: '布局',
         icon: 'layout',
         prefix: 'layout/',
-        children: ['', 'navbar', 'sidebar', 'breadcrumb', 'page', 'home']
+        children: [
+          '',
+          'navbar',
+          'sidebar',
+          'breadcrumb',
+          'page',
+          'home',
+          'blog'
+        ]
       },
       {
         title: '新增功能',
@@ -102,7 +110,15 @@ module.exports = {
         title: 'Outlook',
         icon: 'layout',
         prefix: 'layout/',
-        children: ['', 'navbar', 'sidebar', 'breadcrumb', 'page', 'home']
+        children: [
+          '',
+          'navbar',
+          'sidebar',
+          'breadcrumb',
+          'page',
+          'home',
+          'blog'
+        ]
       },
       {
         title: 'New Features',

@@ -10,6 +10,8 @@ category: layout
 
 vuepress-theme-hope improves the default home page.
 
+![Screenshot](./assets/home.png)
+
 ## Item style
 
 The frontmatter parameters that can be configured are as follows:
@@ -22,9 +24,10 @@ Enable homepage style when set to true
 
 ### title
 
-- Type: `string`
+- Type: `string | false`
+- Default: `'Hello'`
 
-Title, default is `'Hello'`
+Title, won't display if it is set to `false`
 
 ### heroImage
 
@@ -41,8 +44,9 @@ Home icon alt text
 ### tagline
 
 - Type: `string`
+- Default: `'Welcome to your VuePress site'`
 
-Append text, default is 'Welcome to your VuePress site'
+Append text
 
 ### actionText
 
@@ -58,37 +62,12 @@ Button link
 
 ### features
 
-- Type: `Array`
-- Structure:
-  - title: `string` title
-  - details: `string` details
-  - link (optional): `string` link address
+- Type: `Feature[]`
+
+Structure of `Feature`:
+
+- title: `string` title
+- details: `string` details
+- link (optional): `string` link address
 
 Feature description
-
-## Blog style
-
-### hero
-
-- Type: `boolean`
-- Default: `true`
-
-Whether to display the icon and description of the homepage
-
-### bgImage
-
-- Type: `string`
-
-Background picture. If not filled, a default landscape picture will be applied automatically.
-
-### bgImageStyle
-
-- Type: `Record <string, string>`
-
-CSS style for the background image.
-
-### heroImageStyle
-
-- Type: `Record <string, string>`
-
-CSS style for home icon

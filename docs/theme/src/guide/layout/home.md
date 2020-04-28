@@ -10,6 +10,8 @@ category: layout
 
 vuepress-theme-hope 改进了默认主页。
 
+![主页截图](./assets/home.png)
+
 ## 项目样式
 
 可以配置的 frontmatter 参数如下:
@@ -22,9 +24,9 @@ vuepress-theme-hope 改进了默认主页。
 
 ### title
 
-- 类型: `string`
+- 类型: `string | false`
 
-标题，默认值为 `'Hello'`
+标题，默认值为 `'Hello'`，填入 `false` 会取消显示。
 
 ### heroImage
 
@@ -36,13 +38,14 @@ vuepress-theme-hope 改进了默认主页。
 
 - 类型: `string`
 
-主页图标替代文字
+主页图标替代文字。
 
 ### tagline
 
 - 类型: `string`
+- 默认值: `'Welcome to your VuePress site'`
 
-附加文字，默认为 `'Welcome to your VuePress site'`
+附加文字描述
 
 ### actionText
 
@@ -58,38 +61,12 @@ vuepress-theme-hope 改进了默认主页。
 
 ### features
 
-- 类型：`Array`
-- 结构：
+- 类型：`Feature[]`
 
-  - title: `string` 标题
-  - details: `string` 详情
-  - link(可选): `string` 链接地址
+`Feature` 结构：
+
+- title: `string` 标题
+- details: `string` 详情
+- link(可选): `string` 链接地址
 
 特性说明
-
-## 博客样式
-
-### hero
-
-- 类型: `boolean`
-- 默认: `true`
-
-是否显示主页的图标与描述
-
-### bgImage
-
-- 类型: `string`
-
-背景图片。如果不填写，会自动应用一张默认的风景图片。
-
-### bgImageStyle
-
-- 类型: `Record<string, string>`
-
-背景图片的 CSS 样式。
-
-### heroImageStyle
-
-- 类型: `Record<string, string>`
-
-主页图标的 CSS 样式

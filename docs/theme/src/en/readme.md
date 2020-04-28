@@ -78,10 +78,7 @@ And create a `tsconfig.json` file in your root directory
     "target": "ES6", /// Any target which is not less than 'ES5'
     "experimentalDecorators": true, // Typescript files for '.vue' needs this option
     // type definition files of vuepress and this theme
-    "types": [
-      "@mr-hope/vuepress-theme-types",
-      "vuepress-types"
-    ]
+    "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
   },
   "include": [
     "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder

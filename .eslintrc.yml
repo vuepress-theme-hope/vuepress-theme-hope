@@ -142,8 +142,7 @@ rules:
     - off
 
   quotes:
-    - error
-    - single
+    - off
 
   radix:
     - error
