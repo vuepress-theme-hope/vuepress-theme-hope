@@ -9,9 +9,9 @@
 import { Component, Mixins } from 'vue-property-decorator';
 import BlogPage from '@theme/components/BlogPage.vue';
 import Common from '@theme/components/Common.vue';
+import PageEncryptMixin from '@theme/util/pageEncryptMixin';
 import Password from '@theme/components/Password.vue';
-import pageEncryptMixin from '@theme/util/pageEncryptMixin';
 
 @Component({ components: { BlogPage, Common, Password } })
-export default class Blog extends Mixins(pageEncryptMixin) {}
+export default class Blog extends Mixins(PageEncryptMixin) {}
 </script>

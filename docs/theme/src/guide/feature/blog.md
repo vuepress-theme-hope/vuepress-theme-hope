@@ -8,7 +8,7 @@ tags:
 
 # 博客相关
 
-主题通过配置 `@vuepress/plugin-blog` 启用了一些博客功能。
+主题通过配置 `@vuepress/plugin-blog` 启用了一些博客功能。当然你可以配置 `themeConfig.blog` 为 `false` 来禁用全部的博客功能。
 
 ## 分类
 
@@ -24,12 +24,20 @@ tags:
 
 `tags` 接受 `string | string[]`，也就是说一个文章可以包含多个标签。
 
-::: warning
-请勿在根目录中添加并放置对应的文件夹，否则可能造成渲染错误。
-:::
-
 ## 文章
 
 所有文章都会默认被添加到文章列表中渲染在 `/article/` 路径下。
 
 如果你不希望该列表包含一些特定的文章，只需在对应文章的 Frontmatter 中将 `article` 设置为 `false`。
+
+## 时间线
+
+所有注明了写作日期的文章都会被按照时间排序在 `/timeline/` 时间线中，
+
+如果你不希望某篇文章被包含，只需在对应文章的 Frontmatter 中将 `timeline` 设置为 `false`。
+
+::: warning
+请勿在根目录中添加并放置对应的文件夹("tag", "article", "timeline")，否则可能造成编译时文件被覆盖而造成错误。
+
+如果你的确需要一个“文章”文件夹的话，请考虑使用 "articles"。
+:::

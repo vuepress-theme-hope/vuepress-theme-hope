@@ -26,13 +26,13 @@
 <script lang='ts'>
 import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
 import { SidebarItem, resolveSidebarItems } from '@theme/util/sidebar';
+import GlobalEncryptMixin from '@theme/util/globalEncryptMixin';
 import Navbar from '@theme/components/Navbar.vue';
 import Password from '@theme/components/Password.vue';
 import Sidebar from '@theme/components/Sidebar.vue';
-import globalEncryptMixin from '@theme/util/globalEncryptMixin';
 
 @Component({ components: { Password, Sidebar, Navbar } })
-export default class Common extends Mixins(globalEncryptMixin) {
+export default class Common extends Mixins(GlobalEncryptMixin) {
   @Prop({ type: Boolean, default: true })
   private readonly navbar!: boolean;
 

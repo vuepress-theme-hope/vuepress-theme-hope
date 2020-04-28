@@ -1,12 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import { Component, Vue } from 'vue-property-decorator';
-import {
-  filterArticle,
-  filterStickyArticle,
-  filterTimelineArticle,
-  getDate,
-  sortArticle
-} from './article';
+import { filterArticle, getDate, sortArticle } from './article';
 import { PageComputed } from 'vuepress-types';
 
 export interface TimelineItem {
@@ -32,7 +26,14 @@ export class TimelineMixin extends Vue {
     const { pages } = this.$site;
 
     // 先过滤再排序
-    return sortArticle(filterTimelineArticle(pages));
+    return sortArticle(
+      filterArticle(
+        pages,
+        (frontmatter) =>
+          (frontmatter.time || frontmatter.date) &&
+          frontmatter.timeline !== false
+      )
+    );
   }
 
   /** 时间轴列表 */
@@ -66,6 +67,8 @@ export class StickyMixin extends Vue {
     const { pages } = this.$site;
 
     // 先过滤再排序
-    return sortArticle(filterStickyArticle(pages));
+    return sortArticle(
+      filterArticle(pages, (frontmatter) => frontmatter.sticky)
+    );
   }
 }

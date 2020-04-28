@@ -19,9 +19,9 @@ import BlogPage from '@theme/components/BlogPage.vue';
 import Common from '@theme/components/Common.vue';
 import Home from '@theme/components/Home.vue';
 import Page from '@theme/components/Page.vue';
+import PageEncryptMixin from '@theme/util/pageEncryptMixin';
 import Password from '@theme/components/Password.vue';
-import pageEncryptMixin from '@theme/util/pageEncryptMixin';
 
 @Component({ components: { BlogPage, Common, Home, Page, Password } })
-export default class Layout extends Mixins(pageEncryptMixin) {}
+export default class Layout extends Mixins(PageEncryptMixin) {}
 </script>

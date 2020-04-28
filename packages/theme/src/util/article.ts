@@ -102,14 +102,6 @@ export const filterArticle = (
     );
   });
 
-/** 过滤时间轴 */
-export const filterTimelineArticle = (pages: PageComputed[]): PageComputed[] =>
-  filterArticle(pages, (frontmatter) => frontmatter.time || frontmatter.date);
-
-/** 过滤时间轴 */
-export const filterStickyArticle = (pages: PageComputed[]): PageComputed[] =>
-  filterArticle(pages, (frontmatter) => frontmatter.sticky);
-
 /** 排序文章 */
 export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
   pages.slice(0).sort((prev, next) => {
