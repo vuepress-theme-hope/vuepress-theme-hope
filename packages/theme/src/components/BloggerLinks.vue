@@ -104,8 +104,9 @@ export default class BloggerLinks extends Vue {
   private navigate = navigate;
 
   private get links() {
-    const linkConfig: Record<string, string> =
-      this.$themeConfig.blog.links || {};
+    const linkConfig: Record<string, string> = this.$themeConfig.blog
+      ? this.$themeConfig.blog.links || {}
+      : {};
     const links: MediaLink[] = [];
 
     for (const media in linkConfig)
