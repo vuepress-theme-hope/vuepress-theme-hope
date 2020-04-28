@@ -173,12 +173,3 @@ export interface ResolvedHopeVuepressConfig extends HopeVuepressConfig {
   /** 构建头部选项 */
   headOption?: HopeHeadOptionConfig;
 }
-
-/*
- * export interface ColorOption {
- *   '--accent-color'?: string;
- *   '--theme-color'?: Record<string, string>;
- *   light: Record<string, string>;
- *   dark: Record<string, string>;
- * }
- */

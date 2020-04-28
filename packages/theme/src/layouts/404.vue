@@ -1,35 +1,54 @@
 <template>
-  <div class="theme-container">
-    <div class="theme-default-content">
+  <Common :sidebar="false">
+    <main class="page not-found">
       <h1>404</h1>
       <blockquote v-text="msg" />
-      <router-link to="/">{{ linkText }}</router-link>
-    </div>
-  </div>
+      <div class="action-button" @click="back">{{ i18n.back }}</div>
+      <router-link class="action-button" to="/">{{ i18n.home }}</router-link>
+    </main>
+  </Common>
 </template>
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import Common from '@theme/components/Common.vue';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-@Component
+@Component({ components: { Common } })
 export default class NotFound extends Vue {
-  private title = '404';
-
-  private msgs = [''];
-
-  private linkText = '带我回家';
-
-  private mounted() {
-    const locale =
-      this.$themeLocaleConfig.error404 || i18n.getDefaultLocale().error404;
-
-    this.msgs = locale.text;
-    this.linkText = locale.link;
+  private get i18n() {
+    return this.$themeLocaleConfig.error404 || i18n.getDefaultLocale().error404;
   }
 
   private get msg() {
-    return this.msgs[Math.floor(Math.random() * this.msgs.length)];
+    return this.i18n.hint[Math.floor(Math.random() * this.i18n.hint.length)];
+  }
+
+  private back() {
+    window.history.go(-1);
   }
 }
 </script>
+
+<style lang="stylus">
+.not-found
+  display block
+  max-width $homePageWidth
+  margin 0px auto
+  padding ($navbarHeight + 1rem) 2rem 0
+
+  .action-button
+    display inline-block
+    font-size 1rem
+    color var(--white)
+    background-color var(--accent-color)
+    margin 0 4px
+    padding 8px 16px
+    border-radius 4px
+    transition background-color 0.1s ease
+    box-sizing border-box
+    border-bottom 1px solid var(--accent-color-d10)
+
+    &:hover
+      background-color var(--accent-color-l10)
+</style>

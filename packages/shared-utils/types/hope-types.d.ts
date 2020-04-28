@@ -83,9 +83,11 @@ interface HopeLangI18nConfigItem {
   /** 404错误页 */
   error404: {
     /** 错误提示语 */
-    text: string[];
+    hint: string[];
     /** 返回主页文字 */
-    link: string;
+    home: string;
+    /** 返回上一页文字 */
+    back: string;
   };
   /** PWA 提示消息 */
   pwa: string;

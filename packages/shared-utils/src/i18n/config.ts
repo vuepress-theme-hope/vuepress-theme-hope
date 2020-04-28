@@ -33,13 +33,14 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       themeMode: '主题模式'
     },
     error404: {
-      text: [
+      hint: [
         '这里什么也没有',
         '我们是怎么来到这儿的？',
         '这 是 四 零 四 !',
         '看起来你访问了一个失效的链接'
       ],
-      link: '带我回家'
+      back: '返回上一页',
+      home: '带我回家'
     },
     pwa: '发现新内容可用',
     pagination: {
@@ -74,17 +75,14 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       themeMode: 'Theme Mode'
     },
     error404: {
-      text: [
-        // eslint-disable-next-line quotes
+      hint: [
         "There's nothing here.",
-        // eslint-disable-next-line quotes
         'How did we get here?',
-        // eslint-disable-next-line quotes
         "That's a Four-Oh-Four.",
-        // eslint-disable-next-line quotes
         "Looks like we've got some broken links."
       ],
-      link: 'Take me home'
+      back: 'Go back',
+      home: 'Take me home'
     },
     pwa: 'New content is available.',
     pagination: {
