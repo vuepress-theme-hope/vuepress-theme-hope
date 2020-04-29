@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.0-rc.14](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.13...v0.1.0-rc.14) (2020-04-29)
+
+### Features
+
+- **comment:** add readingtime ([c5553a7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c5553a7eeffc28dce39f5e5b01c28a9fc0b1e065))
+- **comment:** rebuild PageInfo ([d71211a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d71211a8033b75593cfcb9c50e791098383febed))
+- **md-enhance:** add mark tag support ([ad4257e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ad4257e3b4c5a6f774aaa367cf2bd80cd4f1f770))
+- **theme:** add blog info in mobile mode ([021dee5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/021dee5e4457ce8b23c0d2372662664323766db8))
+- **theme:** update sidebar icon ([950b170](https://github.com/Mister-Hope/vuepress-theme-hope/commit/950b170e75f64a731790de652a7a346afb27f2ad))
+- style update ([6439104](https://github.com/Mister-Hope/vuepress-theme-hope/commit/643910482e227bcf02db3ec7f0c16ee9bf8a4abe))
+
 ## [0.1.0-rc.13](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.12...v0.1.0-rc.13) (2020-04-28)
 
 ### Bug Fixes

@@ -11,7 +11,7 @@ const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
 
     // Register service worker
     router.onReady(() => {
-      register(`${SW_BASE_URL}service-worker.js`, {
+      register(`${SW_BASE_URL}assets/js/service-worker.js`, {
         registrationOptions: {},
         ready() {
           console.log('[PWA]: Service worker 已激活');
