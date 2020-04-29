@@ -4,10 +4,15 @@
       <BloggerInfo :class="{ mobile: sidebarDisplay === 'mobile' }" />
       <hr />
     </template>
+
     <slot name="top" />
+
     <NavLinks :in-sidebar="true" />
+
     <slot name="center" />
+
     <SidebarLinks :depth="0" :items="items" />
+
     <slot name="bottom" />
   </aside>
 </template>
