@@ -16,10 +16,15 @@
     "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git"
   },
   "keywords": [
+    "vuepress-theme-hope",
     "vuepress",
     "mr-hope"
   ],
-  "author": "Mr.Hope",
+  "author": {
+    "email": "zhangbowang1998@gmail.com",
+    "name": "Mr.Hope",
+    "url": "https://mrhope.site"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"

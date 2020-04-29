@@ -20,6 +20,7 @@ files.forEach((pkgName) => {
       version: baseVersion,
       description: desc,
       main: 'src/index.js',
+      types: 'types/index.d.ts',
       publishConfig: {
         access: 'public'
       },
@@ -27,13 +28,27 @@ files.forEach((pkgName) => {
         type: 'git',
         url: 'git+https://github.com/Mister-Hope/vuepress-theme-hope.git'
       },
-      keywords: ['vuepress-plugin', pkgName, 'mr-hope'],
-      author: 'Mr.Hope',
+      keywords: [
+        'vuepress-plugin',
+        'vuepress',
+        pkgName,
+        'vuepress-theme-hope',
+        'mr-hope'
+      ],
+      author: {
+        email: 'zhangbowang1998@gmail.com',
+        name: 'Mr.Hope',
+        url: 'https://mrhope.site'
+      },
       license: 'MIT',
       bugs: {
         url: 'https://github.com/Mister-Hope/vuepress-theme-hope/issues'
       },
-      homepage: `https://github.com/Mister-Hope/vuepress-theme-hope/packages/${pkgName}#readme`
+      homepage: `https://github.com/Mister-Hope/vuepress-theme-hope/packages/${pkgName}#readme`,
+      peerDependencies: {
+        typescript: '^3.8.3',
+        'vuepress-types': '^0.9.1'
+      }
     };
 
     fs.writeFileSync(pkgPath, JSON.stringify(pkgJSON, null, 2));

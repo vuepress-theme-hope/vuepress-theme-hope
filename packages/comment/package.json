@@ -1,7 +1,7 @@
 {
   "name": "@mr-hope/vuepress-plugin-comment",
   "version": "0.1.0-rc.13",
-  "description": "Comment plugin for vuepress-theme-hope",
+  "description": "A simple Comment plugin",
   "main": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {
@@ -19,9 +19,16 @@
   "keywords": [
     "vuepress-plugin",
     "comment",
+    "vuepress-theme-hope",
+    "vuepress-blog",
+    "vuepress",
     "mr-hope"
   ],
-  "author": "Mr.Hope",
+  "author": {
+    "email": "zhangbowang1998@gmail.com",
+    "name": "Mr.Hope",
+    "url": "https://mrhope.site"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
