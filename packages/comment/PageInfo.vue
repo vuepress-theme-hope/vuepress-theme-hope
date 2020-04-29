@@ -89,6 +89,9 @@ export default class PageInfo extends Vue {
       margin-right 8px
       line-height 2
 
+      @media (min-width: $MQWide)
+        margin-right 12px
+
     .icon
       width 16px
       height 16px

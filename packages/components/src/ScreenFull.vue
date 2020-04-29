@@ -71,7 +71,7 @@ export default class ScreenFull extends Vue {
 <style lang="stylus">
 .fullscreen-wrapper
   position relative
-  margin-right 1em
+  margin-left 0.5em
 
   .icon
     display flex

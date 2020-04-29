@@ -1,7 +1,9 @@
 <template>
   <aside class="sidebar">
-    <BloggerInfo v-if="sidebarDisplay !== 'none'" :class="{ mobile: sidebarDisplay === 'mobile' }" />
-    <hr />
+    <template v-if="sidebarDisplay !== 'none'">
+      <BloggerInfo :class="{ mobile: sidebarDisplay === 'mobile' }" />
+      <hr />
+    </template>
     <NavLinks :in-sidebar="true" />
 
     <slot name="top" />

@@ -90,20 +90,20 @@ export default class PageEdit extends Vue {
 
 .page-edit
   @extend $wrapper
-  padding-top 1rem
-  padding-bottom 1rem
+  padding-top 12px
+  padding-bottom 12px
   overflow auto
 
   .edit-link
     display inline-block
+    font-size 14px
 
     a
       color var(--accent-color-l10)
-      margin-right 0.25rem
 
   .last-updated
     float right
-    font-size 0.9em
+    font-size 14px
 
     .prefix
       font-weight 500
@@ -111,15 +111,15 @@ export default class PageEdit extends Vue {
 
     .time
       font-weight 400
-      color var(--light-grey)
+      color var(--dark-grey)
 
 @media (max-width: $MQMobile)
   .page-edit
     .edit-link
-      margin-bottom 0.5rem
+      margin-bottom 8px
 
     .last-updated
-      font-size 0.8em
+      font-size 13px
       float none
       text-align left
 </style>

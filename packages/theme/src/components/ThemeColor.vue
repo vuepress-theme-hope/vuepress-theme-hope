@@ -93,8 +93,8 @@ export default class ThemeColor extends Vue {
     left 50%
     min-width 100px
     margin 0
-    padding 1em
-    border 1px solid var(--border-color)
+    padding 12px 16px
+    box-shadow 2px 2px 10px var(--card-shadow-color)
     border-radius 4px
     transform translateX(-50%)
     z-index 150
@@ -105,7 +105,7 @@ export default class ThemeColor extends Vue {
       top -7px
       left 50%
       border-style solid
-      border-color transparent transparent var(--border-color)
+      border-color transparent transparent var(--background-color)
       border-width 0 7px 7px
       transform translateX(-50%)
 

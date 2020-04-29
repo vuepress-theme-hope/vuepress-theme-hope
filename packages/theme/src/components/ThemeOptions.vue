@@ -12,6 +12,7 @@
     <div v-if="switchEnabled" class="darkmode-toggle">
       <label class="desc" for="darkmode-toggle" v-text="`${text.themeMode}:`" />
       <DarkmodeSwitch />
+      <ScreenFull />
     </div>
   </div>
 </template>
@@ -98,30 +99,35 @@ export default class ThemeOptions extends Vue {
 </script>
 
 <style lang="stylus">
-.themecolor-select
-  display flex
-  justify-content space-around
+.theme-options
+  font-size 14px
 
-  label
-    padding-right 0.5em
+  .themecolor-select
+    display flex
+    justify-content space-around
 
-  li
-    &:first-child
-      margin-right 0.5em
+    label
+      padding-right 8px
 
-    a
-      width 15px
-      height 15px
-      border-radius 2px
-      margin 0 2px
+    li
+      &:first-child
+        margin-right 8px
 
-      &.default-theme
-        background-color $accentColor // must be fixed to the original accent-color
+      a
+        width 15px
+        height 15px
+        border-radius 2px
+        margin 0 2px
 
-.darkmode-toggle
-  display flex
-  align-items center
+        &.default-theme
+          background-color $accentColor // must be fixed to the original accent-color
 
-  .desc
-    padding-right 0.5em
+  .darkmode-toggle
+    display flex
+    align-items center
+    margin-top 8px
+
+    .desc
+      line-height 1.5
+      padding-right 8px
 </style>

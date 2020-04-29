@@ -2,7 +2,6 @@
   <div v-if="prev || next" class="page-nav">
     <p class="inner">
       <span v-if="prev" class="prev">
-        ←
         <a
           v-if="prev.type === 'external'"
           class="prev"
@@ -10,11 +9,15 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+          <PrevIcon />
           {{ prev.title || prev.path }}
           <OutboundLink />
         </a>
 
-        <RouterLink v-else class="prev" :to="prev.path">{{ prev.title || prev.path }}</RouterLink>
+        <RouterLink v-else class="prev" :to="prev.path">
+          <PrevIcon />
+          {{ prev.title || prev.path }}
+        </RouterLink>
       </span>
 
       <span v-if="next" class="next">
@@ -26,9 +29,12 @@
         >
           {{ next.title || next.path }}
           <OutboundLink />
+          <NextIcon />
         </a>
-
-        <RouterLink v-else :to="next.path">{{ next.title || next.path }}</RouterLink>→
+        <RouterLink v-else :to="next.path">
+          {{ next.title || next.path }}
+          <NextIcon />
+        </RouterLink>
       </span>
     </p>
   </div>
@@ -42,6 +48,8 @@ import {
   SidebarItem,
   resolvePageforSidebar
 } from '@theme/util/sidebar';
+import NextIcon from '@mr-hope/vuepress-shared-utils/icons/NextIcon.vue';
+import PrevIcon from '@mr-hope/vuepress-shared-utils/icons/PrevIcon.vue';
 import { Route } from 'vue-router';
 import { resolvePath } from '@theme/util/path';
 
@@ -94,7 +102,7 @@ const resolvePageLink = (
   return find(page, sidebarItems, linkType === 'prev' ? -1 : 1);
 };
 
-@Component
+@Component({ components: { NextIcon, PrevIcon } })
 export default class PageNav extends Vue {
   @Prop(Array)
   private readonly sidebarItems!: SidebarItem[];
@@ -126,15 +134,22 @@ export default class PageNav extends Vue {
 
 .page-nav
   @extend $wrapper
-  padding-top 1rem
+  padding-top 12px
   padding-bottom 0
 
   .inner
-    min-height 2rem
+    min-height 32px
     margin-top 0
     border-top 1px solid var(--border-color)
-    padding-top 1rem
+    padding-top 16px
     overflow auto // clear float
+
+  .prev .icon, .next .icon
+    position relative
+    top 0.125em
+    width 1em
+    height 1em
+    color var(--accent-color)
 
   .next
     float right

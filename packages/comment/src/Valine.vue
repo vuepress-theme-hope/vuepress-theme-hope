@@ -163,7 +163,10 @@ export default class Valine extends Vue {
       .vempty
         color var(--light-grey, #999)
 
-      .vlist
+      .vcount
+        font-size 18px
+
+      .vcards
         .vcard
           .vimg
             border-color var(--grey12, #bbb)
@@ -172,11 +175,22 @@ export default class Valine extends Vue {
             .vnick
               color var(--accent-color, $accentColor)
 
-              &:hover
-                color var(--accent-color, $accentColor)
+              &:after
+                content ''
+                position absolute
+                left 0
+                right 0
+                bottom 0
+                height 1.5px
+                background-color var(--accent-color)
+                transform scaleX(0)
+                transition 0.2s ease-in-out
+
+              &:hover:after
+                transform scaleX(1)
 
             .vsys
-              background-color var(--grey12, #bbb)
+              background-color var(--grey14, #eee)
               color var(--light-grey, #999)
 
           .vh
@@ -187,6 +201,9 @@ export default class Valine extends Vue {
 
             .vmeta .vat
               color var(--accent-color, $accentColor)
+
+              &:hover
+                color var(--accent-color-d10, $accentColor)
 
           .vcontent
             color var(--grey4, #444)
