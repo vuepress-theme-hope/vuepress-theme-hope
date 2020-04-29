@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-rc.15](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.14...v0.1.0-rc.15) (2020-04-29)
+
+### Bug Fixes
+
+- **pwa:** fix service worker issue ([0541e73](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0541e73796d988e8a8fdb703a1da44160da36c51))
+
 ## [0.1.0-rc.14](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.13...v0.1.0-rc.14) (2020-04-29)
 
 ### Features
