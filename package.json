@@ -16,6 +16,7 @@
     "theme-test:build": "yarn workspace test build",
     "comment-docs:serve": "yarn workspace comment-docs serve",
     "comment-docs:build": "yarn workspace comment-docs build",
+    "comment:test": "yarn workspace @mr-hope/vuepress-plugin-comment test",
     "md-enhance-docs:serve": "yarn workspace md-enhance-docs serve",
     "md-enhance-docs:build": "yarn workspace md-enhance-docs build",
     "md-enhance:test": "yarn workspace vuepress-plugin-md-enhance test",

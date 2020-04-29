@@ -6,6 +6,8 @@ interface BaseCommentOptions {
   author?: string;
   /** 是否启用文章信息 */
   pageInfo?: boolean;
+  /** 每分钟阅读数 */
+  wordPerminute?: number;
 }
 
 /** Valine 配置 */
@@ -85,6 +87,18 @@ export interface VssueOptions extends BaseCommentOptions {
 
 /** vuepress-plugin-comment 配置 */
 export type CommentOptions = ValineOptions | VssueOptions;
+
+/** 阅读时间 */
+export interface ReadingTime {
+  minutes: number;
+  words: number;
+}
+
+declare module 'vuepress-types/types/page' {
+  interface PageComputed {
+    readingTime: ReadingTime;
+  }
+}
 
 /** 评论组件全局变量 */
 declare global {

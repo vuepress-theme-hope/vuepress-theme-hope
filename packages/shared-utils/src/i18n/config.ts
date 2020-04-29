@@ -1,4 +1,4 @@
-import { HopeLangI18nConfig } from '../../types';
+import { HopeLangI18nConfig, ReadingTime } from '../../types';
 
 export type Langs = 'zh-CN' | 'en-US';
 
@@ -57,6 +57,14 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       timeline: '时间轴',
       timelineText: '昨日不在',
       allText: '全部'
+    },
+    readingTime: {
+      word: (readingTime: ReadingTime): string => `约 ${readingTime.words} 字`,
+      time: (readingTime: ReadingTime): string => {
+        const time = Math.round(readingTime.minutes);
+
+        return readingTime.minutes < 1 ? '小于 1 分钟' : `大约 ${time} 分钟`;
+      }
     }
   },
 
@@ -99,6 +107,17 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       timeline: 'Timeline',
       timelineText: 'Yesterday Once More!',
       allText: 'All'
+    },
+    readingTime: {
+      word: (readingTime: ReadingTime): string =>
+        `About ${readingTime.words} words`,
+      time: (readingTime: ReadingTime): string => {
+        const time = Math.round(readingTime.minutes);
+
+        return readingTime.minutes < 1
+          ? 'Less than 1 minute'
+          : `About ${time} min`;
+      }
     }
   }
 };

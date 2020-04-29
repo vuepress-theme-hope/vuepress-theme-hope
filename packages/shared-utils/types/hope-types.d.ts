@@ -70,6 +70,12 @@ export type LangLocalesConfig = Partial<LangI18nConfig> & {
   algolia?: AlgoliaOption;
 };
 
+/** 阅读时间 */
+interface ReadingTime {
+  minutes: number;
+  words: number;
+}
+
 interface HopeLangI18nConfigItem {
   /** Valine 占位符 */
   valineHolder: string;
@@ -118,6 +124,13 @@ interface HopeLangI18nConfigItem {
     timelineText: string;
     /** 全部文字 */
     allText: string;
+  };
+  /** 阅读时间 */
+  readingTime: {
+    /** 字数 */
+    word: (readingTime: ReadingTime) => string;
+    /** 时间 */
+    time: (readingTime: ReadingTime) => string;
   };
 }
 
