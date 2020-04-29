@@ -41,6 +41,13 @@ Whether to enable the lower corner format support.
 
 Whether to enable footnote format support.
 
+## mark
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable mark support.
+
 ## tex
 
 - Type: `boolean`

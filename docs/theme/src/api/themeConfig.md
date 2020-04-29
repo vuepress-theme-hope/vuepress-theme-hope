@@ -160,6 +160,13 @@ SideBarItem 新增
 
 是否启用脚注格式支持
 
+### markdown.mark
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用标记格式支持
+
 ### markdown.tex
 
 - 类型: `boolean`
@@ -266,6 +273,23 @@ PWA 设置选项
 - 默认值: `'昨日不在'`
 
 时间轴的顶部文字。
+
+## pageInfo
+
+- 类型: `string[] | false`
+- 默认值: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+
+文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
+
+可以填入的条目如下：
+
+- `'Author'`: 作者
+- `'Time'`: 写作日期
+- `'Category'`: 分类
+- `'Tag'`: 标签
+- `'ReadTime'`: 预计阅读时间
+- `'Word'`: 字数
+- `'Visitor'`: 访问量
 
 ## 其他配置选项
 

@@ -41,6 +41,13 @@ icon: api
 
 是否启用脚注格式支持。
 
+## mark
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用标记格式支持。
+
 ## tex
 
 - 类型: `boolean`

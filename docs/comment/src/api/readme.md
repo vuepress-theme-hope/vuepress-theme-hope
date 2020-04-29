@@ -13,10 +13,34 @@ icon: api
 
 ## author
 
-- 类型: String
+- 类型: `string`
 - 必填: 否
 
 文章的默认作者
+
+## pageInfo
+
+- 类型: `string[] | false`
+- 默认值: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+
+文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
+
+可以填入的条目如下：
+
+- `'Author'`: 作者
+- `'Time'`: 写作日期
+- `'Category'`: 分类
+- `'Tag'`: 标签
+- `'ReadTime'`: 预计阅读时间
+- `'Word'`: 字数
+- `'Visitor'`: 访问量
+
+## wordPerminute
+
+- 类型: `number`
+- 默认: `300`
+
+每分钟阅读的字数。
 
 ## Valine 配置
 

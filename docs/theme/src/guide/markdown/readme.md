@@ -42,6 +42,10 @@ module.exports = {
 
 - [点击查看](footnote.md)
 
+### 标记
+
+- [点击查看](mark.md)
+
 ### 流程图
 
 - [点击查看](flowchart.md)

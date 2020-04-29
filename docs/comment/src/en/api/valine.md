@@ -6,28 +6,28 @@ icon: valine
 
 ## appId
 
-- Type: `String`
+- Type: `string`
 - Required: true
 
 Fill in the application appId in LeanCloud
 
 ## appKey
 
-- Type: `String`
+- Type: `string`
 - Required: true
 
 Fill in the application appKey in LeanCloud
 
 ## commet
 
-- Type: `Boolean`
+- Type: `boolean`
 - Default: `true`
 
 Comment Funtion
 
 ## visitor
 
-- Type: `Boolean`
+- Type: `boolean`
 - Default: `true`
 
 Pageviews FUntion
@@ -41,7 +41,7 @@ Number of comment per page
 
 ## recordIP
 
-- Type: `Boolean`
+- Type: `boolean`
 - Default: `false`
 
 Whether to record the commenter IP
@@ -50,35 +50,35 @@ Whether to record the commenter IP
 
 - **placeholder**
 
-  - Type: `String`
+  - Type: `string`
   - Default: `'请留言'`
 
   Comment placeholder
 
 - **meta**
 
-  - Type: `String[]`
+  - Type: `string[]`
   - Default: `['nick','mail','link']`
 
   Commenter's info
 
 - **requiredFields**
 
-  - Type: `String []`
+  - Type: `string []`
   - Default value: `['nick']`
 
   Set required fields
 
 - **enableQQ**
 
-  - Type: `Boolean`
+  - Type: `boolean`
   - Default value: `true`
 
   Whether to enable the nickname box to automatically obtain QQ nickname and QQ avatar
 
 - **avatar**
 
-  - Type: `String`
+  - Type: `string`
   - Default: `'retro'`
 
   Gravatar avatar display method.
@@ -101,14 +101,14 @@ Whether to record the commenter IP
 
 - **emojiCDN**
 
-  - Type: `String`
+  - Type: `string`
   - Required: No
 
   To set the emoji package CDN, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)
 
 - **emojiMaps**
 
-  - Type: `Object`
+  - Type: `sbject`
   - Default value: `null`
 
   To set the emoticon package mapping, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)

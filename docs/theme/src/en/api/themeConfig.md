@@ -156,6 +156,13 @@ Whether to enable subscript format support
 
 Whether to enable footnote format support
 
+### markdown.mark
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable mark format support
+
 ### markdown.tex
 
 - Type: `boolean`
@@ -262,6 +269,23 @@ After filling in, you will be allowed to click on the avatar or name in "Blogger
 - Default: `'Yesterday once more'`
 
 Text on the top of timeline page.
+
+## pageInfo
+
+- Type: `string[] | false`
+- Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+
+Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
+
+The items that can be filled are as follows:
+
+- `'Author'`: Author
+- `'Time'`: Writing Date
+- `'Category'`: Category
+- `'Tag'`: Tags
+- `'ReadTime'`: Expect reading time
+- `'Word'`: Word number for the article
+- `'Visitor'`: Visitor Number
 
 ## Other configuration options
 

@@ -121,7 +121,7 @@ icon: vssue
 
 ## labels
 
-- **类型**: `Array<string>`
+- **类型**: `string[]`
 - **默认值**: `['Vssue']`
 - **详细**:
 
@@ -153,7 +153,7 @@ icon: vssue
 
 ## admins
 
-- **类型**: `Array<string>`
+- **类型**: `string[]`
 - **默认值**: `[]`
 - **详细**:
 

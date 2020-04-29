@@ -36,6 +36,8 @@ module.exports = {
 
 - [Footnote](footnote.md)
 
+- [Mark](mark.md)
+
 - [Flowchart](flowchart.md)
 
 - [$\TeX$ Syntax](tex.md)

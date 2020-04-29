@@ -41,7 +41,15 @@ module.exports = {
         title: 'Markdown 增强',
         icon: 'markdown',
         prefix: 'markdown/',
-        children: ['', 'align', 'sup-sub', 'footnote', 'tex', 'flowchart']
+        children: [
+          '',
+          'align',
+          'sup-sub',
+          'footnote',
+          'mark',
+          'tex',
+          'flowchart'
+        ]
       }
     ],
 
@@ -141,7 +149,15 @@ module.exports = {
         title: 'Markdown enhance',
         icon: 'markdown',
         prefix: 'markdown/',
-        children: ['', 'align', 'sup-sub', 'footnote', 'tex', 'flowchart']
+        children: [
+          '',
+          'align',
+          'sup-sub',
+          'footnote',
+          'mark',
+          'tex',
+          'flowchart'
+        ]
       }
     ],
 

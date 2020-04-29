@@ -45,7 +45,15 @@ module.exports = resolve({
       { text: '配置', icon: 'api', link: '/api.html' }
     ],
     sidebar: {
-      '/guide/': ['', 'sup-sub', 'align', 'footnote', 'flowchart', 'tex'],
+      '/guide/': [
+        '',
+        'sup-sub',
+        'align',
+        'footnote',
+        'mark',
+        'flowchart',
+        'tex'
+      ],
 
       '/': ['', 'guide/', 'api']
     },
@@ -78,6 +86,7 @@ module.exports = resolve({
             'sup-sub',
             'align',
             'footnote',
+            'mark',
             'flowchart',
             'tex'
           ],

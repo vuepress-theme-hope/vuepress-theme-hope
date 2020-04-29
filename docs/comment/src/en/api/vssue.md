@@ -153,7 +153,7 @@ The common pattern of repository's URL is `` `${baseURL}/${owner}/${repo}` ``:
 
 ## admins
 
-- **Type**: `Array<string>`
+- **Type**: `string[]`
 - **Default**: `[]`
 - **Details**:
 

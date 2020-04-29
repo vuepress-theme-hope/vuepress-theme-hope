@@ -16,6 +16,8 @@ icon: markdown
 
 - [脚注](footnote.md)
 
+- [标记](mark.md)
+
 - [流程图](flowchart.md)
 
 - [$\TeX$ 语法](tex.md)

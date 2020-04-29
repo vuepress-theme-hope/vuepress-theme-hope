@@ -16,6 +16,8 @@ If you don't need them and want to reduce your site size, you can remove them fr
 
 - [Footnote](footnote.md)
 
+- [Mark](mark.md)
+
 - [Flowchart](flowchart.md)
 
 - [$\TeX$ Syntax](tex.md)
