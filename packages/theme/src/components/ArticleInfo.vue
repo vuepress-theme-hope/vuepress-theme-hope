@@ -19,10 +19,7 @@
     </span>
 
     <!-- 标签 -->
-    <span v-if="tags.length !== 0">
-      <TagIcon />
-      <Tags :tags="tags" />
-    </span>
+    <TagInfo v-if="tags.length !== 0" :tags="tags" />
   </div>
 </template>
 
@@ -34,12 +31,12 @@ import CalendarIcon from '@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue'
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
 import { PageComputed } from 'vuepress-types';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
-import Tags from '@mr-hope/vuepress-plugin-comment/src/Tags.vue';
+import TagInfo from '@mr-hope/vuepress-plugin-comment/src/TagInfo.vue';
 import { capitalize } from '@mr-hope/vuepress-shared-utils';
 import navigate from '@theme/util/navigate';
 
 @Component({
-  components: { AuthorIcon, CalendarIcon, CategoryIcon, TagIcon, Tags }
+  components: { AuthorIcon, CalendarIcon, CategoryIcon, TagIcon, TagInfo }
 })
 export default class ArticleInfo extends Vue {
   @Prop(Object) private readonly article!: PageComputed;

@@ -28,10 +28,7 @@ export default class Valine extends Vue {
     const globalEnable = this.valineConfig.comment !== false;
     const pageEnable = this.$page.frontmatter.comment;
 
-    return (
-      (globalEnable && pageEnable !== false) ||
-      (!globalEnable && pageEnable === true)
-    );
+    return (globalEnable && pageEnable !== false) || pageEnable === true;
   }
 
   /** Whether to display view number */
@@ -40,10 +37,7 @@ export default class Valine extends Vue {
     const globalEnable = this.valineConfig.visitor !== false;
     const pageEnable = this.$page.frontmatter.visitor;
 
-    return (
-      (globalEnable && pageEnable !== false) ||
-      (!globalEnable && pageEnable === true)
-    );
+    return (globalEnable && pageEnable !== false) || pageEnable === true;
   }
 
   @Watch('$route')
@@ -132,7 +126,7 @@ export default class Valine extends Vue {
           fill var(--accent-color, $accentColor)
 
         .vemojis, .vpreview
-            box-shadow 0px 0 1px var(--grey12, #bbb)
+          box-shadow 0px 0 1px var(--grey12, #bbb)
 
         .vheader .vinput
           border-color var(--grey12, #bbb)

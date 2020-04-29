@@ -1,3 +1,12 @@
+export type PageInfotype =
+  | 'Author'
+  | 'Time'
+  | 'Category'
+  | 'Tag'
+  | 'ReadTime'
+  | 'Word'
+  | 'Visitor';
+
 /** 评论组件通用选项 */
 interface BaseCommentOptions {
   /** 类型，有 `‘valine'` 和 `'vssue` 可选 */
@@ -5,7 +14,7 @@ interface BaseCommentOptions {
   /** 默认作者 */
   author?: string;
   /** 是否启用文章信息 */
-  pageInfo?: boolean;
+  pageInfo?: PageInfotype[] | false;
   /** 每分钟阅读数 */
   wordPerminute?: number;
 }

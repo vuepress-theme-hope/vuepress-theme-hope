@@ -39,8 +39,7 @@ export default class BreadCrumb extends Vue {
     const pageEnable = this.$page.frontmatter.breadcrumb;
 
     return (
-      ((globalEnable && pageEnable !== false) ||
-        (!globalEnable && pageEnable === true)) &&
+      ((globalEnable && pageEnable !== false) || pageEnable === true) &&
       this.config.length > 1
     );
   }

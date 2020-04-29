@@ -1,10 +1,10 @@
+import { CommentOptions, PageInfotype } from '@mr-hope/vuepress-plugin-comment';
 import {
   HopeLangLocalesConfig,
   HopeNavBarConfig,
   HopeSideBarConfig
 } from '@mr-hope/vuepress-shared-utils';
 import { VuepressConfig, VuepressThemeConfig } from './vuepressConfig';
-import { CommentOptions } from '@mr-hope/vuepress-plugin-comment';
 import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance/types';
 import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
 
@@ -98,7 +98,8 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   encrypt?: EncryptOptions;
   /** 博客设置 */
   blog?: BlogOptions | false;
-
+  /** 页面信息 */
+  pageInfo?: PageInfotype[] | false;
   /** 图标前缀 */
   iconPrefix?: string;
   /** 是否在侧边栏显示图标 */
