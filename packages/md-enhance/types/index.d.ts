@@ -14,6 +14,8 @@ export type MarkdownEnhanceOption = Partial<{
   sub: boolean;
   /** 启用脚注格式支持 */
   footnote: boolean;
+  /** 启用标注支持 */
+  mark: boolean;
   /** 启用 TeX 语法支持 */
   tex: boolean;
   /** 启用 流程图 语法支持 */

@@ -4,6 +4,7 @@ import { MarkdownEnhanceOption } from '../types';
 import flowchart from './markdown-it/flowchart';
 import footnote from './markdown-it/footnote';
 import katex from './markdown-it/katex';
+import mark from './markdown-it/mark';
 import pluginConfig from './pluginConfig';
 import { resolve } from 'path';
 import sub from './markdown-it/sub';
@@ -32,6 +33,9 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
       // 增加脚注
       if (markdownOption.footnote || markdownOption.enableAll)
         md.plugin('footnote').use(footnote);
+      // 增加标注
+      if (markdownOption.mark || markdownOption.enableAll)
+        md.plugin('mark').use(mark);
       // 使用流程图;
       if (markdownOption.flowchart || markdownOption.enableAll)
         md.plugin('flowchart').use(flowchart);
