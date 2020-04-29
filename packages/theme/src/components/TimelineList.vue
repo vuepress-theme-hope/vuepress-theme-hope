@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-wrapper">
+  <div class="timeline-list-wrapper">
     <div class="title" @click="$router.push('/timeline/')">
       <TimeIcon />
       <span class="num">{{$timelineItems.length}}</span>
@@ -45,14 +45,16 @@ export default class BlogPage extends Mixins(TimelineMixin) {
 </script>
 
 <style lang="stylus">
-.timeline-wrapper
-  margin 16px 0
+.timeline-list-wrapper
   padding 8px 16px
-  border-radius 8px
-  box-shadow 0 2px 8px 0 var(--card-shadow-color)
 
-  &:hover
-    box-shadow 0 4px 16px 0 var(--card-shadow-color)
+  &.in-page
+    margin 16px 0
+    border-radius 8px
+    box-shadow 0 2px 8px 0 var(--card-shadow-color)
+
+    &:hover
+      box-shadow 0 4px 16px 0 var(--card-shadow-color)
 
   .title
     cursor pointer

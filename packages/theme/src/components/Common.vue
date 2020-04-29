@@ -14,8 +14,15 @@
       <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
       <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
-        <slot slot="top" name="sidebar-top" />
-        <slot slot="bottom" name="sidebar-bottom" />
+        <template #top>
+          <slot name="sidebar-top" />
+        </template>
+        <template #center>
+          <slot name="sidebar-center" />
+        </template>
+        <template #bottom>
+          <slot name="sidebar-bottom" />
+        </template>
       </Sidebar>
 
       <slot :sidebar-items="sidebarItems" />

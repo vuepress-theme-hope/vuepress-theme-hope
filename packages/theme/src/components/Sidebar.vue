@@ -4,10 +4,9 @@
       <BloggerInfo :class="{ mobile: sidebarDisplay === 'mobile' }" />
       <hr />
     </template>
-    <NavLinks :in-sidebar="true" />
-
     <slot name="top" />
-
+    <NavLinks :in-sidebar="true" />
+    <slot name="center" />
     <SidebarLinks :depth="0" :items="items" />
     <slot name="bottom" />
   </aside>
@@ -63,7 +62,7 @@ export default class Sidebar extends Vue {
     transition transform 0.2s ease
     box-shadow none
 
-  ul
+  .navlinks ul, .sidebar-links ul
     padding 0
     margin 0
     list-style-type none
