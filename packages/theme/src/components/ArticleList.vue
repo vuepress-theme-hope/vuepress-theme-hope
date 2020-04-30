@@ -88,7 +88,7 @@ export default class ArticleList extends Mixins(ArticleMixin) {
 </script>
 
 <style lang="stylus">
-#article
+.article-wrapper
   margin-top - $navbarHeight - 0.5rem
   padding-top $navbarHeight + 0.5rem
 </style>

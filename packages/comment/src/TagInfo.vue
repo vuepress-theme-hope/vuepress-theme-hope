@@ -9,7 +9,8 @@
         :class="{ active }"
         :style="{ 'border-color': color(index), 'color': color(index) }"
         @click="clickTag(tag)"
-      >{{ tag }}</li>
+        v-text="tag"
+      />
     </ul>
   </span>
 </template>

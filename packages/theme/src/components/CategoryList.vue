@@ -5,13 +5,14 @@
       :key="category.path"
       class="category"
       :class="{ active: category.name === ($currentCategory || {}).key }"
+      :style="{ backgroundColor: getColor(index).bgcolor }"
       @click="clickCategory(category.path)"
     >
       <div class="category-name">
         {{ capitalize(category.name) }}
         <span
           class="category-num"
-          :style="{ backgroundColor: color(index) }"
+          :style="{ backgroundColor: getColor(index).color }"
         >{{category.pages.length}}</span>
       </div>
     </li>
@@ -35,7 +36,7 @@ export default class CategoryList extends Vue {
   }
 
   /** 标签颜色 */
-  private color(index: number) {
+  private getColor(index: number) {
     const colors = [
       '#e74c3c',
       '#8e44ad',
@@ -46,9 +47,19 @@ export default class CategoryList extends Vue {
       '#f39c12',
       '#2ecc71'
     ];
+    const bgcolors = [
+      '#fdedeb',
+      '#f4ecf7',
+      '#e7faef',
+      '#fdf2e9',
+      '#e2fbf6',
+      '#e6ecf1',
+      '#fef5e7',
+      '#eafaf1'
+    ];
     const finalIndex = index % colors.length;
 
-    return colors[finalIndex];
+    return { color: colors[finalIndex], bgcolor: bgcolors[finalIndex] };
   }
 }
 </script>

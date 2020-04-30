@@ -2,7 +2,7 @@
   <div class="page blog">
     <div class="blog-page-wrapper">
       <ModuleTransition>
-        <BlogInfo class="in-page" />
+        <BlogInfo />
       </ModuleTransition>
 
       <div class="blog-list-wrapper">

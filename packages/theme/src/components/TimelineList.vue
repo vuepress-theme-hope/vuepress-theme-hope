@@ -6,19 +6,25 @@
       {{timeline}}
     </div>
     <hr />
-    <ul class="timeline-list">
-      <ModuleTransition v-for="(item, index) in $timeline" :key="index" :delay="0.08 * (index + 1)">
-        <li>
-          <h3 class="year">{{item.year}}</h3>
-          <ul class="year-wrapper">
-            <li v-for="(article, articleIndex) in item.articles" :key="articleIndex">
-              <span class="date">{{article.frontmatter.parsedDate}}</span>
-              <span class="timeline-title" @click="navigate(article.path)">{{article.title}}</span>
-            </li>
-          </ul>
-        </li>
-      </ModuleTransition>
-    </ul>
+    <div class="content">
+      <ul class="timeline-list">
+        <ModuleTransition
+          v-for="(item, index) in $timeline"
+          :key="index"
+          :delay="0.08 * (index + 1)"
+        >
+          <li>
+            <h3 class="year">{{item.year}}</h3>
+            <ul class="year-wrapper">
+              <li v-for="(article, articleIndex) in item.articles" :key="articleIndex">
+                <span class="date">{{article.frontmatter.parsedDate}}</span>
+                <span class="timeline-title" @click="navigate(article.path)">{{article.title}}</span>
+              </li>
+            </ul>
+          </li>
+        </ModuleTransition>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -48,13 +54,16 @@ export default class BlogPage extends Mixins(TimelineMixin) {
 .timeline-list-wrapper
   padding 8px 16px
 
-  &.in-page
+  .page &
     margin 16px 0
     border-radius 8px
     box-shadow 0 2px 8px 0 var(--card-shadow-color)
 
     &:hover
       box-shadow 0 4px 16px 0 var(--card-shadow-color)
+
+  .blog-detail-wrapper &
+    margin 0
 
   .title
     cursor pointer
@@ -72,87 +81,94 @@ export default class BlogPage extends Mixins(TimelineMixin) {
       margin 0 2px
       font-size 24px
 
-  .timeline-list
-    position relative
-    margin 0 8px
-    box-sizing border-box
-    list-style none
+  .content
+    overflow-y scroll
+    max-height 80vh
 
-    &::after
-      content ' '
-      position absolute
-      top 14px
-      left 0
-      z-index -1
-      margin-left -2px
-      width 4px
-      height 100%
-      background var(--border-color)
+    &::-webkit-scrollbar-track-piece
+      background-color transparent
 
-    .year
+    .timeline-list
       position relative
-      color var(--text-color)
-      margin 20px 0 0px
-      color var(--text-color)
-      font-size 20px
-      font-weight 700
+      margin 0 8px
+      box-sizing border-box
+      list-style none
 
-      &:before
+      &::after
         content ' '
         position absolute
-        z-index 2
-        left -20px
-        top 50%
-        margin-left -4px
-        margin-top -4px
-        width 8px
-        height 8px
-        background var(--background-color)
-        border 1px solid var(--border-color)
-        border-radius 50%
+        top 14px
+        left 0
+        z-index -1
+        margin-left -2px
+        width 4px
+        height calc(100% - 14px)
+        background var(--border-color)
 
-    .year-wrapper
-      padding-left 0 !important
-
-      li
+      .year
         position relative
-        display flex
-        padding 12px 0 4px
-        list-style none
-        border-bottom 1px dashed var(--border-color)
+        color var(--text-color)
+        margin 20px 0 0px
+        color var(--text-color)
+        font-size 20px
+        font-weight 700
 
-        &:hover
+        &:before
+          content ' '
+          position absolute
+          z-index 2
+          left -20px
+          top 50%
+          margin-left -4px
+          margin-top -4px
+          width 8px
+          height 8px
+          background var(--background-color)
+          border 1px solid var(--border-color)
+          border-radius 50%
+
+      .year-wrapper
+        padding-left 0 !important
+
+        li
+          position relative
+          display flex
+          padding 12px 0 4px
+          list-style none
+          border-bottom 1px dashed var(--border-color)
+
+          &:hover
+            .date
+              color var(--accent-color)
+
+              &::before
+                background var(--accent-color)
+
+            .title
+              color var(--accent-color)
+
           .date
-            color var(--accent-color)
+            width 36px
+            line-height 32px
+            display inline-block
+            vertical-align bottom
+            font-size 12px
 
             &::before
-              background var(--accent-color)
+              content ' '
+              position absolute
+              left -19px
+              top 24px
+              width 6px
+              height 6px
+              margin-left -4px
+              background var(--background-color)
+              border-radius 50%
+              border 1px solid var(--border-color)
+              z-index 2
 
-          .title
-            color var(--accent-color)
-
-        .date
-          width 36px
-          line-height 32px
-          display inline-block
-          vertical-align bottom
-          font-size 12px
-
-          &::before
-            content ' '
-            position absolute
-            left -19px
-            top 24px
-            width 6px
-            height 6px
-            margin-left -4px
-            background var(--background-color)
-            border-radius 50%
-            border 1px solid var(--border-color)
-            z-index 2
-
-        .timeline-title
-          line-height 32px
-          font-size 14px
-          cursor pointer
+          .timeline-title
+            line-height 32px
+            font-size 14px
+            cursor pointer
 </style>

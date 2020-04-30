@@ -6,7 +6,7 @@
 
     <!-- 文章 -->
     <ModuleTransition :delay="0.04">
-      <div class="article-wrapper">
+      <div class="sticky-article-wrapper">
         <div class="title" @click="$router.push('/article/')">
           <ArticleIcon />
           <span class="num">{{$articles.length}}</span>
@@ -99,7 +99,7 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
 
 <style lang="stylus">
 .blog-info-wrapper
-  .article-wrapper, .category-wrapper, .tag-wrapper
+  .sticky-article-wrapper, .category-wrapper, .tag-wrapper
     padding 8px 16px
 
     .title
@@ -118,13 +118,13 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
         margin 0 2px
         font-size 24px
 
-  .article-wrapper
+  .sticky-article-wrapper
     .sticky-article-list
       margin 8px auto
 
       .sticky-article
         padding 12px 8px 4px
-        border-bottom 1px dashed var(--grey12)
+        border-bottom 1px dashed var(--grey14)
 
         &:hover
           color var(--accent-color)
@@ -137,11 +137,11 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
     .tag-list-wrapper
       margin 8px auto
 
-  &.in-sidebar
+  .sidebar &
     .blogger-info
       display none
 
-  &.in-page
+  .page &
     position sticky
     box-sizing border-box
     top ($navbarHeight + 1rem)
@@ -165,7 +165,7 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
       &:hover
         box-shadow 0 4px 16px 0 var(--card-shadow-color)
 
-    .article-wrapper, .category-wrapper, .tag-wrapper
+    .sticky-article-wrapper, .category-wrapper, .tag-wrapper
       margin 16px 0
       border-radius 8px
       box-shadow 0 2px 8px 0 var(--card-shadow-color)
@@ -177,7 +177,7 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
       &:hover
         box-shadow 0 4px 16px 0 var(--card-shadow-color)
 
-    .timeline-wrapper
+    .timeline-list-wrapper
       @media (min-width: $MQNormal)
         display none
 

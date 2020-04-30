@@ -139,4 +139,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
   width 100vw
   height 100vh
   display none
+
+  .theme-container.sidebar-open &
+    display block
 </style>

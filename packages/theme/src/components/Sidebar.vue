@@ -54,18 +54,8 @@ export default class Sidebar extends Vue {
   overflow-y auto
   box-shadow 2px 0 8px var(--card-shadow-color)
 
-  // narrow desktop / iPad
-  @media (max-width: $MQNarrow)
-    font-size 15px
-    width $mobileSidebarWidth
-
-  // wide mobile
-  @media (max-width: $MQMobile)
+  .theme-container.no-navbar &
     top 0
-    padding-top $navbarHeight
-    transform translateX(-100%)
-    transition transform 0.2s ease
-    box-shadow none
 
   .nav-links ul, .sidebar-links ul
     padding 0
@@ -107,12 +97,28 @@ export default class Sidebar extends Vue {
     & > li:not(:first-child)
       margin-top 0.75rem
 
-@media (max-width: $MQMobile)
-  .sidebar-open
-    .sidebar
+  // narrow desktop / iPad
+  @media (max-width: $MQNarrow)
+    width $mobileSidebarWidth
+    font-size 15px
+
+  @media (min-width: ($MQMobile + 1px))
+    .theme-container.no-sidebar &
+      display none
+
+  // wide mobile
+  @media (max-width: $MQMobile)
+    transform translateX(-100%)
+    transition transform 0.2s ease
+    box-shadow none
+
+    .theme-container.sidebar-open &
+      transform translateX(0)
       box-shadow 2px 0 8px var(--card-shadow-color)
 
-  .sidebar
+    .theme-container.no-navbar &
+      top 0
+
     .blogger-info.mobile
       display block
 

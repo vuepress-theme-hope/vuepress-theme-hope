@@ -12,38 +12,50 @@
       <span v-text="time" />
     </span>
 
-    <!-- 分类 -->
-    <span v-if="category" class="category" @click="navigate">
-      <CategoryIcon />
-      <span v-text="category" />
-    </span>
+    <CategoryInfo v-if="article.frontmatter.category" :category="article.frontmatter.category" />
 
-    <!-- 标签 -->
     <TagInfo v-if="tags.length !== 0" :tags="tags" />
+
+    <!-- 阅读时间 -->
+    <span v-if="readtime" class="read-time-info">
+      <TimeIcon />
+      <span v-text="readtime" />
+    </span>
   </div>
 </template>
 
 <script lang="ts">
 import * as moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { capitalize, i18n } from '@mr-hope/vuepress-shared-utils';
 import AuthorIcon from '@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue';
 import CalendarIcon from '@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue';
-import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
+import CategoryInfo from '@mr-hope/vuepress-plugin-comment/src/CategoryInfo.vue';
 import { PageComputed } from 'vuepress-types';
-import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import TagInfo from '@mr-hope/vuepress-plugin-comment/src/TagInfo.vue';
-import { capitalize } from '@mr-hope/vuepress-shared-utils';
+import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import navigate from '@theme/util/navigate';
 
 @Component({
-  components: { AuthorIcon, CalendarIcon, CategoryIcon, TagIcon, TagInfo }
+  components: {
+    AuthorIcon,
+    CalendarIcon,
+    CategoryInfo,
+    TagInfo,
+    TimeIcon
+  }
 })
 export default class ArticleInfo extends Vue {
   @Prop(Object) private readonly article!: PageComputed;
 
   /** 作者 */
   private get author() {
-    return this.article.frontmatter.author || this.$themeConfig.author || '';
+    return (
+      this.article.frontmatter.author ||
+      (this.$themeConfig.author && this.article.frontmatter.author !== false
+        ? this.$themeConfig.author
+        : '')
+    );
   }
 
   /** 发表时间 */
@@ -64,13 +76,6 @@ export default class ArticleInfo extends Vue {
     return '';
   }
 
-  /** 分类 */
-  private get category() {
-    const { category } = this.article.frontmatter;
-
-    return category ? capitalize(category) : '';
-  }
-
   /** 标签 */
   private get tags() {
     const { tag, tags = tag } = this.article.frontmatter;
@@ -82,12 +87,11 @@ export default class ArticleInfo extends Vue {
     return [];
   }
 
-  private navigate() {
-    navigate(
-      `/category/${this.article.frontmatter.category}/`,
-      this.$router,
-      this.$route
-    );
+  /** 发表时间 */
+  private get readtime() {
+    const { readingTime } = this.article;
+
+    return i18n.getLocale(this.$lang).readingTime.time(readingTime);
   }
 }
 </script>

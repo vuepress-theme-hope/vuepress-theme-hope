@@ -1,7 +1,7 @@
 <template>
   <Common :sidebar="$frontmatter.blog !== true">
     <template #sidebar-bottom>
-      <BlogInfo v-if="$frontmatter.blog && $themeConfig.blog !== false" class="in-sidebar" />
+      <BlogInfo v-if="$frontmatter.blog && $themeConfig.blog !== false" />
     </template>
 
     <template #default="slotProps">

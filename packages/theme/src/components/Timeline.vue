@@ -4,11 +4,7 @@
       <ModuleTransition>
         <li class="desc">{{hint}}</li>
       </ModuleTransition>
-      <ModuleTransition
-        v-for="(item, index) in $timeline"
-        :key="index"
-        :delay="0.08 * (index + 1)"
-      >
+      <ModuleTransition v-for="(item, index) in $timeline" :key="index" :delay="0.08 * (index + 1)">
         <li>
           <h3 class="year">{{item.year}}</h3>
           <ul class="year-wrapper">
@@ -50,7 +46,7 @@ export default class Timeline extends Mixins(TimelineMixin) {
 .timeline-wrapper
   max-width 740px
   margin 0 auto
-  padding 40px
+  padding 40px 0
 
   .timeline-content
     box-sizing border-box
@@ -64,7 +60,7 @@ export default class Timeline extends Mixins(TimelineMixin) {
       left 0
       z-index -1
       width 4px
-      height 100%
+      height calc(100% - 38px)
       margin-left -2px
       background var(--border-color)
 
@@ -75,6 +71,20 @@ export default class Timeline extends Mixins(TimelineMixin) {
 
       @media (min-width: $MQNormal)
         font-size 20px
+
+      &:before
+        content ' '
+        position absolute
+        z-index 2
+        left -20px
+        top 50%
+        width 8px
+        height 8px
+        margin-left -4px
+        margin-top -4px
+        background var(--background-color)
+        border 1px solid var(--border-color)
+        border-radius 50%
 
     .year
       position relative

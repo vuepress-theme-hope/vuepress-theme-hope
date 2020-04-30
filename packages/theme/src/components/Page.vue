@@ -119,6 +119,10 @@ export default class Page extends Vue {
   @media (max-width: $MQNarrow)
     padding-left $mobileSidebarWidth
 
+  @media (min-width: ($MQMobile + 1px))
+    .theme-container.no-sidebar &
+      padding-left 0
+
   // wide mobile
   @media (max-width: $MQMobile)
     padding-left 0
