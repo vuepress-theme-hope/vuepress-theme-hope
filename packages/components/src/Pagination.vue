@@ -27,9 +27,11 @@
           @click="navigate(currentPage + 1)"
         >{{text.next}}</div>
       </div>
-      <div class="text">{{text.navigate}}:&nbsp;</div>
-      <input v-model="input" type="text" @keypress.enter="jumpPage(input)" />
-      <div class="navigateBtn" @click="jumpPage(input)">{{text.button}}</div>
+      <div class="navigate-wrapper">
+        <div class="text">{{text.navigate}}:&nbsp;</div>
+        <input v-model="input" type="text" @keypress.enter="jumpPage(input)" />
+        <div class="navigate-button" @click="jumpPage(input)">{{text.button}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -120,7 +122,7 @@ export default class Pagination extends Vue {
     else {
       const errorText = this.text.errorText.split('$page');
       // eslint-disable-next-line no-alert
-      alert(`${errorText[0]}${this.totalPages + 1}${errorText[1]}`);
+      alert(`${errorText[0]}${this.totalPages}${errorText[1]}`);
     }
   }
 }
@@ -131,9 +133,12 @@ export default class Pagination extends Vue {
   font-weight 600
   margin 20px auto 12px
 
+  @media (max-width: $MQMobileNarrow)
+    margin 20px -1rem 12px
+
   .pagation-list
     display flex
-    justify-content center
+    justify-content space-evenly
     align-items center
     -webkit-touch-callout none
     user-select none
@@ -180,33 +185,37 @@ export default class Pagination extends Vue {
         &.active, &.ellipsis
           cursor default
 
-    div.text
-      font-size 14px
-      margin-left 24px
+    .navigate-wrapper
+      display flex
+      justify-content center
+      align-items center
 
-    input
-      width 55px
-      height 24px
-      font-size 13px
-      border 1px solid var(--border-color, $borderColor)
-      border-radius 4px
-      outline none
-      text-align center
-      margin 6px 0
-      color var(--black, #000)
-      background-color var(--background-color, #fff)
+      div.text
+        font-size 14px
 
-    .navigateBtn
-      font-size 14px
-      margin-left 5px
-      padding 4px 8px
-      border 1px solid var(--border-color, $borderColor)
-      border-radius 4px
-      overflow hidden
-      cursor pointer
+      input
+        width 55px
+        height 24px
+        font-size 13px
+        border 1px solid var(--border-color, $borderColor)
+        border-radius 4px
+        outline none
+        text-align center
+        margin 6px 0
+        color var(--black, #000)
+        background-color var(--background-color, #fff)
 
-      &:hover
-        color var(--white, #fff)
-        background var(--accent-color, $accentColor)
-        border-color var(--accent-color, $accentColor)
+      .navigate-button
+        font-size 14px
+        margin-left 5px
+        padding 4px 8px
+        border 1px solid var(--border-color, $borderColor)
+        border-radius 4px
+        overflow hidden
+        cursor pointer
+
+        &:hover
+          color var(--white, #fff)
+          background var(--accent-color, $accentColor)
+          border-color var(--accent-color, $accentColor)
 </style>

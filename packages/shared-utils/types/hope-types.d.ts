@@ -114,6 +114,8 @@ interface HopeLangI18nConfigItem {
   blog: {
     /** 文章文字 */
     article: string;
+    /** 文章列表文字 */
+    articleList: string;
     /** 标签文字 */
     tag: string;
     /** 分类文字 */

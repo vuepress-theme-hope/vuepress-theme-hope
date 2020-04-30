@@ -48,10 +48,11 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       next: '下一页',
       navigate: '跳转到',
       button: '前往',
-      errorText: '请输入大于0，并且小于$page的页码！'
+      errorText: '请输入 1 到 $page 之前的页码！'
     },
     blog: {
       article: '文章',
+      articleList: '文章列表',
       tag: '标签',
       category: '分类',
       timeline: '时间轴',
@@ -98,10 +99,11 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       next: 'Next',
       navigate: 'Jump to',
       button: 'Go',
-      errorText: 'Please enter a number with is >0 and < $page !'
+      errorText: 'Please enter a number between 1 and $page !'
     },
     blog: {
       article: 'Articles',
+      articleList: 'Article List',
       tag: 'Tags',
       category: 'Category',
       timeline: 'Timeline',

@@ -10,7 +10,7 @@
           <ModuleTransition :delay="0.08">
             <component :is="componentName" v-if="componentName" />
             <BlogHero v-else-if="$frontmatter.home" />
-            <h1 v-else>文章列表</h1>
+            <h1 v-else>{{i18n.articleList}}</h1>
           </ModuleTransition>
 
           <!-- 文章列表 -->
