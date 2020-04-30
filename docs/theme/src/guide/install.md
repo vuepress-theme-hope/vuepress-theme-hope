@@ -43,8 +43,8 @@ npm i -D typescript
 ```json
 {
   "compilerOptions": {
-    "target": "es5", // 任何不等于 es3 的 target 均可
-    "types": ["@mr-hope/vuepress-theme-types"]
+    "target": "ES6", // 任何不小于 es6 的 target 均可
+    "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
   },
   "include": [
     // 项目中需要至少包含一个 ts 文件 (空的文件也可)，并正确配置在 include 中
@@ -55,4 +55,4 @@ npm i -D typescript
 
 如果你已经有了 `tsconfig.json`, 那么只需要在 `compilerOptions.types` 中添加 vuepress-theme-hope 的类型定义文件包即可。
 
-你还应该在你的项目中创建一个 ts 文件并添加至 tsconfig.json 的 include 中，你可以直接创建一个空的 enhanceApp.ts 并将其引入。
+你还应该在你的项目中创建一个 ts 文件并添加至 `tsconfig.json` 的 `include` 中，你可以直接创建一个空的 enhanceApp.ts 并将其引入。

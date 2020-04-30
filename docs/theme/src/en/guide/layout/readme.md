@@ -10,30 +10,26 @@ category: layout
 
 vuepress-theme-hope adds a lot of layout changes to the default theme layout.
 
-## Navigation Bar
+- [**Navigation Bar**](navbar.md)
 
-- [View details](navbar.md)
+- [**Sidebar**](sidebar.md)
 
-## Sidebar
+- [**Page**](page.md)
 
-- [View details](sidebar.md)
+- [**Home Page**](home.md)
 
-## Page
+- [**Blog Home Page**](blog.md)
 
-- [Normal page](page.md)
+- **Others**
 
-- [Home](home.md)
+  - **Switch** animation
 
-## Others
+  As the page switches, a gradual transition animation will be displayed. Improve document / blog texture.
 
-### Switch animation
+  - **Back to top button**
 
-As the page switches, a gradual transition animation will be displayed. Improve document / blog texture.
+  vuepress-theme-hope adds a home-made back-to-top control that will show up by 300px by default.
 
-### Back to top button
+  The back to top button uses a round colored icon instead of the arrow in the default theme.
 
-vuepress-theme-hope adds a home-made back-to-top control that will show up by 300px by default.
-
-The back to top button uses a round colored icon instead of the arrow in the default theme.
-
-You can disable it by setting `backToTop` in`themeConfig` to `false`.
+  You can disable it by setting `backToTop` in`themeConfig` to `false`.

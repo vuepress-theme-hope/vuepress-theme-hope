@@ -4,52 +4,45 @@ module.exports = {
       {
         title: '快速上手',
         icon: 'creativefill',
+        collapsable: false,
         children: ['', 'install']
-      },
-      {
-        title: '布局',
-        icon: 'layout',
-        prefix: 'layout/',
-        children: [
-          '',
-          'navbar',
-          'sidebar',
-          'breadcrumb',
-          'page',
-          'home',
-          'blog'
-        ]
       },
       {
         title: '新增功能',
         icon: 'discoverfill',
         prefix: 'feature/',
+        collapsable: false,
         children: [
           '',
-          'icon',
-          'blog',
+          'theme',
+          'page-info',
           'comment',
-          'darkmode',
-          'themecolor',
+          'blog',
           'encrypt',
+          {
+            title: 'Markdown 增强',
+            icon: 'markdown',
+            prefix: 'markdown/',
+            children: [
+              '',
+              'align',
+              'sup-sub',
+              'footnote',
+              'mark',
+              'tex',
+              'flowchart'
+            ]
+          },
           'component',
-          'fullscreen',
           'typescript'
         ]
       },
       {
-        title: 'Markdown 增强',
-        icon: 'markdown',
-        prefix: 'markdown/',
-        children: [
-          '',
-          'align',
-          'sup-sub',
-          'footnote',
-          'mark',
-          'tex',
-          'flowchart'
-        ]
+        title: '布局',
+        icon: 'layout',
+        prefix: 'layout/',
+        collapsable: false,
+        children: ['', 'navbar', 'sidebar', 'page', 'home', 'blog']
       }
     ],
 
@@ -60,16 +53,10 @@ module.exports = {
       'stylus',
       {
         title: '插件配置',
-        prefix: 'plugin/',
         icon: 'extension',
-        children: [
-          '',
-          'container',
-          'copyright',
-          'md-enhance',
-          'medium-zoom',
-          'pwa'
-        ]
+        prefix: 'plugin/',
+        collapsable: false,
+        children: ['', 'container', 'copyright', 'medium-zoom', 'pwa']
       }
     ],
 
@@ -78,13 +65,14 @@ module.exports = {
         title: 'Markdown',
         prefix: 'markdown/',
         icon: 'markdown',
+        collapsable: false,
         children: [
           '',
           'demo',
           {
             title: 'Emoji',
-            prefix: 'emoji/',
             icon: 'emoji',
+            prefix: 'emoji/',
             children: ['', 'people', 'nature', 'object', 'locate', 'symbol']
           }
         ]
@@ -93,6 +81,7 @@ module.exports = {
         title: 'Vuepress',
         prefix: 'vuepress/',
         icon: 'vue',
+        collapsable: false,
         children: [
           '',
           'file',
@@ -112,52 +101,45 @@ module.exports = {
       {
         title: 'Get Started',
         icon: 'creativefill',
+        collapsable: false,
         children: ['', 'install']
-      },
-      {
-        title: 'Outlook',
-        icon: 'layout',
-        prefix: 'layout/',
-        children: [
-          '',
-          'navbar',
-          'sidebar',
-          'breadcrumb',
-          'page',
-          'home',
-          'blog'
-        ]
       },
       {
         title: 'New Features',
         icon: 'discoverfill',
         prefix: 'feature/',
+        collapsable: false,
         children: [
           '',
-          'icon',
-          'blog',
+          'theme',
+          'page-info',
           'comment',
-          'darkmode',
-          'themecolor',
+          'blog',
           'encrypt',
+          {
+            title: 'Markdown enhance',
+            icon: 'markdown',
+            prefix: 'markdown/',
+            children: [
+              '',
+              'align',
+              'sup-sub',
+              'footnote',
+              'mark',
+              'tex',
+              'flowchart'
+            ]
+          },
           'component',
-          'fullscreen',
           'typescript'
         ]
       },
       {
-        title: 'Markdown enhance',
-        icon: 'markdown',
-        prefix: 'markdown/',
-        children: [
-          '',
-          'align',
-          'sup-sub',
-          'footnote',
-          'mark',
-          'tex',
-          'flowchart'
-        ]
+        title: 'Outlook',
+        icon: 'layout',
+        prefix: 'layout/',
+        collapsable: false,
+        children: ['', 'navbar', 'sidebar', 'page', 'home', 'blog']
       }
     ],
 
@@ -168,30 +150,26 @@ module.exports = {
       'stylus',
       {
         title: 'Plugins',
-        prefix: 'plugin/',
         icon: 'extension',
-        children: [
-          '',
-          'container',
-          'copyright',
-          'md-enhance',
-          'medium-zoom',
-          'pwa'
-        ]
+        prefix: 'plugin/',
+        collapsable: false,
+        children: ['', 'container', 'copyright', 'medium-zoom', 'pwa']
       }
     ],
 
     '/en/basic/': [
       {
         title: 'Markdown',
-        prefix: 'markdown/',
         icon: 'markdown',
+        prefix: 'markdown/',
+        collapsable: false,
         children: ['', 'demo', 'emoji']
       },
       {
         title: 'Vuepress',
-        prefix: 'vuepress/',
         icon: 'vue',
+        prefix: 'vuepress/',
+        collapsable: false,
         children: [
           '',
           'file',

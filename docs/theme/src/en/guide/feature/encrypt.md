@@ -1,5 +1,5 @@
 ---
-icon: extension
+icon: lock
 category: function
 tags:
   - encrypt
@@ -29,7 +29,7 @@ You can configure the encryption options in the `themeConfig.encrypt` field.
 }
 ```
 
-At the same time, you can easily configure the password in the frontmatter of the page
+At the same time, you can easily configure the password in the Front Matter of the page
 
 ```md
 ---

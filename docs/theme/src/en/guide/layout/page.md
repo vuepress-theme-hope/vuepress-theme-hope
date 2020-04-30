@@ -7,7 +7,7 @@ category: layout
 
 ## Icon support
 
-You can configure the icon field in the frontmatter of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
+You can configure the icon field in the `Front Matter` of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
 
 This icon is used in **Path Navigation** and **Sidebar**.
 
@@ -21,55 +21,59 @@ icon: Home
 
 :::
 
-## Page Info Display <MyBadge text="Apply Partically Support" />
+## Breadcrumb <MyBadge text="Support local configuration" />
 
-- **Author** <MyBadge text="Apply Partically Support" />
+This theme adds a new Breadcrumb support, the config key is `breadcrumb`.
 
-  The author name can be set by setting the author field in the frontmatter of the page.
+Without any additional configuration, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
-  ::: details Wxample
+The icon display of path navigation is also <MyBadge text="Support local configuration" />, the configuration item is `breadcrumbIcon`.
 
-  ```md
-  ---
-  author: Mr.Hope
-  ---
-  ```
+::: warning
+In order to ensure Breadcrumb working well, the `readme.md` file should be included in each folder.
 
-  :::
+Otherwise, the path navigation will automatically ignore that level because the component can not generate titles and links from the corresponding level folder.
+:::
 
-  The author's name can also be configured globally in `themeConfig.author`. After the global configuration, the default author will be displayed for each article. You can set the author to `false` in the frontmatter of the page to cancel the author display.
+## Page Info Display
 
-- **Pageviews** <MyBadge text="Apply Partically Support" />
+See [Page Info Section](../feature/page-info.md)
 
-  This feature is enabled by default when [Comment Function](../feature/comment.md) is configured. The global configuration item is `valine.visitor` and the page configuration item is to `visitor`.
+## Last Updated
 
-  ::: details Example
+The `themeConfig.lastUpdated` option allows you to get the UNIX timestamp(ms) of each file’s last `git` commit, and it will also display at the bottom of each page in an appropriate format:
 
-  ```md
-  ---
-  visitor: false
-  ---
-  ```
+```js
+module.exports = {
+  themeConfig: {
+    lastUpdated: 'Last Updated' // string | boolean
+  }
+};
+```
 
-  :::
+Note that it’s `off` by default. If given a `string`, it will be displayed as a prefix (default value: `Last Updated`).
 
-- **Time**
+::: warning
+Since `lastUpdated` is based on `git`, you can only use it in a `git` repository. Also, since the timestamp used comes from the git commit, it will display only after a first commit for a given page, and update only on ensuing commits of that page.
+:::
 
-  You can set `time` field in `frontmatter` to set writing time.
+## Prev / Next Links
 
-  ::: details Example
+Prev and next links are automatically inferred based on the sidebar order of the active page. You can also explicitly overwrite or disable them globally with theme config or on specific pages using `Front matter`:
 
-  ```md
-  ---
-  time: 2020-1-1
-  ---
-  ```
+```yaml
+---
+prev: ./some-other-page
+next: false
+---
+
+```
 
 ## Comment
 
-See the [Comment](../feature/comment.md) section for details.
+See the [Comment section](../feature/comment.md) for details.
 
-## Footer Support <MyBadge text="Apply Partically Support" />
+## Footer Support <MyBadge text="Support local configuration" />
 
 If you want to display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 
@@ -117,3 +121,16 @@ footer: false
 ```
 
 :::
+
+## Custom Layout for Specific Pages
+
+By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using `YAML front matter`:
+
+```yaml
+---
+layout: SpecialLayout
+---
+
+```
+
+This will render `.vuepress/components/SpecialLayout.vue` for the given page.

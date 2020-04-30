@@ -11,7 +11,7 @@ category: layout
 
 vuepress-theme-hope allows you to enable a blog-style homepage.
 
-You need to set `blog` to `true` in the frontmatter of the corresponding page to enable blog style.
+You need to set `blog` to `true` in the Front Matter of the corresponding page to enable blog style.
 
 ![Homepage screenshot](./assets/blog.png)
 
@@ -54,7 +54,7 @@ You can also configure your social media links in the format of `social media na
 
 If you are not satisfied with the prompt text on the top of the timeline page, you can use `themeConfig.blog.timeline` to customize one.
 
-## available parameters in frontmatter
+## available parameters in Front Matter
 
 ### hero
 

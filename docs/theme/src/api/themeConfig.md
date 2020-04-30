@@ -323,6 +323,13 @@ PWA 设置选项
 
 是否在路径导航显示图标
 
+### wordPerminute
+
+- 类型: `number`
+- 默认值: `300`
+
+每分钟的阅读字数
+
 ### smoothScroll <MyBadge text="改变默认值" type="error" />
 
 - 类型: `boolean`

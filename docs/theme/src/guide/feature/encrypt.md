@@ -1,5 +1,5 @@
 ---
-icon: extension
+icon: lock
 category: function
 tags:
   - encrypt
@@ -29,7 +29,7 @@ tags:
 }
 ```
 
-同时，你可以更加方便地在页面的 frontmatter 中配置密码
+同时，你可以更加方便地在页面的 Front Matter 中配置密码
 
 ```md
 ---

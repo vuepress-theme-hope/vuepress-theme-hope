@@ -8,7 +8,7 @@ tags:
 
 # 页面配置
 
-页面的 frontmatter 新增如下配置选项：
+页面的 Front Matter 新增如下配置选项：
 
 ## icon
 
@@ -30,11 +30,15 @@ tags:
 
 ### time
 
-- 类型: `string`
+- 类型: `timeString | string`
 - 必填: 否
-- 格式: `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` 或 `YYYY/MM/DD` `YYYY-MM-DD`
+- 格式: `YYYY-MM-DD` 或 `YYYY/MM/DD hh:mm:ss`
 
-设置当前页面的写作时间
+设置当前页面的写作时间。
+
+::: warning
+尽管本主题及 Mister-Hope 的其他插件会正确解析您输入的时间，如 `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD` 等，但是其他插件可能不能正确的读取他们。使用非标准格式的值可能会导致其他插件报错，
+:::
 
 ## category
 
@@ -64,6 +68,13 @@ tags:
 
 是否将该文章添加至文章列表中。
 
+### timeline
+
+- 类型: `boolean`
+- 默认: `true`
+
+是否将该文章添加至文章列表中。
+
 ## password
 
 - 类型: `string`
@@ -71,14 +82,30 @@ tags:
 
 设置当前文章的密码。
 
+::: warning
+请注意，由于密码会进行二次混淆加密，请确保密码是字符串格式。`'1234'` 和 `1234` 混淆后产生的结果是不同的。
+:::
+
 ## 页面显示配置
 
 ## pageInfo
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (全局默认为 `true`)
+- 类型: `PageInfo[] | false`
+- 默认值: 全局中配置的值 (全局默认为 `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`)
 
-设置当前页面是否显示页面详情
+`PageInfo` 可选的值和对应内容如下:
+
+| 条目         | 对应内容     | 页面 Front Matter 值    |
+| ------------ | ------------ | ----------------------- |
+| `'Author'`   | 作者         | author                  |
+| `'Time'`     | 写作日期     | time                    |
+| `'Category'` | 分类         | category                |
+| `'Tag'`      | 标签         | tags                    |
+| `'ReadTime'` | 预计阅读时间 | N/A(自动生成)           |
+| `'Word'`     | 字数         | N/A(自动生成)           |
+| `'Visitor'`  | 访问量       | visitor(仅 Valine 可用) |
+
+设置当前页面的文章信息内容
 
 ### visitor
 
@@ -98,14 +125,29 @@ tags:
 
 当前页面是否开启路径导航
 
+## breadcrumbIcon
+
+- 类型: `boolean`
+- 默认值: 全局中配置的值 (全局默认为 `true`)
+
+当前页面是否开启路径导航图标
+
+## navbar
+
+- 类型: `boolean`
+
+页面的导航栏配置，填入 `false` 会禁用导航栏
+
 ## sidebar
+
+- 类型: `false | 'auto'`
 
 页面的侧边栏配置选项。支持 `false` 或 `auto`。
 
 ## sidebarDepth
 
 - 类型: `number`
-- 默认值: `1`
+- 默认值: `2`
 
 该页面的侧边栏渲染深度
 
@@ -116,12 +158,82 @@ tags:
 
 当前页面是否开启评论功能
 
+## editLink
+
+- 类型: `boolean`
+- 默认值: 全局中配置的值
+
+是否显示编辑链接
+
+## prev
+
+- 类型: `string | false`
+
+上一篇文章链接
+
+## next
+
+- 类型: `string | false`
+
+下一篇文章链接
+
+## copyright
+
+- 类型: `string | false`
+- 默认值: 全局中配置的值
+
+设置当前页面的版权信息，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
+
 ## footer
 
-- 类型: `boolean | string | HTMLString`
-- 默认值: 全局中配置的值 (取决于全局是否设置了 **页脚的默认值** 与 **默认显示页脚**)
+- 类型: `string`
 
-设置当前页面的页脚，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
+设置当前页面的页脚内容，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
+
+## mediaLink
+
+- 类型: `MediaType[] | false`
+- 默认值: 主题中 `themeConfig.blog.links` 的值
+
+设置当前页面的页脚社交链接。
+
+::: tip 可用的社交媒体：
+
+`MediaType` 的可选值如下:
+
+- `'Baidu'`: 百度
+- `'Dingding'`: 钉钉
+- `'Dribbble'`: Dribble
+- `'Evernote'`: 印象笔记
+- `'Facebook'`: 脸书
+- `'Flipboard'`: 红板报
+- `'Github'`: ~~Gayhub~~ Github
+- `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
+- `'Instagram'`: Instagram
+- `'Line'`: Line
+- `'Linkedin'`: 领英
+- `'Pinterest'`: 拼趣
+- `'Pocket'`: Pocket
+- `'QQ'`: QQ
+- `'Qzone'`: QQ 空间
+- `'Rss'`: RSS 地址
+- `'Steam'`: Steam
+- `'Taobao'`: 淘宝
+- `'Twitter'`: Twitter
+- `'Wechat'`: 微信
+- `'Weibo'`: 微博
+- `'Whatsapp'`: Whatsapp
+- `'Youtube'`: YouTube
+- `'Zhihu'`: 知乎
+
+:::
+
+## search
+
+- 类型: `boolean`
+- 默认值: 全局中配置的值 (全局默认为 `true`)
+
+当前页面是否显示搜索框。
 
 ## backtotop
 
@@ -129,3 +241,9 @@ tags:
 - 默认值: 全局中配置的值 (全局默认为 `true`)
 
 设置当前页面是否显示返回顶部按钮
+
+## layout
+
+- 类型: `string`
+
+页面的自定义布局名称

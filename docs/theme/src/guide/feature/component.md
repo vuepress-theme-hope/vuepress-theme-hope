@@ -31,4 +31,4 @@ vuepress-theme-hope 添加了一个返回顶部控件，默认情况下将在下
 
 返回顶部按钮使用了一个圆形有色图标代替了默认主题中的箭头。
 
-你可以在 `themeConfig` 将 `backToTop` 设置为 `false` 来禁用它。
+该内容的配置项为 `backToTop`。

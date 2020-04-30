@@ -45,9 +45,9 @@ And create a `tsconfig.json` file in your root directory
 ```json
 {
   "compilerOptions": {
-    "target": "es5", // Any target except 'es3'
+    "target": "es6", // Any target not lower than 'es6'
     "experimentalDecorators": true,
-    "types": ["@mr-hope/vuepress-theme-types"]
+    "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
   },
   "include": [
     "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder

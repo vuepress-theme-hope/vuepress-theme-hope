@@ -8,34 +8,30 @@ tags:
 
 # New feature
 
-## Comment function
+- [**Dark Mode**](theme.md#dark-mode)
 
-[Click to view](comment.md)
+- [**Theme Color**](theme.md#theme-color)
 
-## Theme color and night mode
+- [**Page Information**](page-info.md)
 
-[Click to view](themecolor.md)
+- [**Comment function**](comment.md)
 
-## Encryption
+- [**Encryption function**](encrypt.md)
 
-[Click to view](encrypt.md)
+- [**Markdown enhancement**](markdown/readme.md)
 
-## Markdown enhancement
+- [**New component**](component.md)
 
-[Click to view](../markdown/readme.md)
+- **Icon support**
 
-## New components
+  FontClass format icon support has been added in multiple places throughout the theme.
 
-[Click to view](component.md)
+  Please import the corresponding icon css file in `index.styl` under `.vuepress/styles`. E.g:
 
-## Full Screen Function
+  ```css
+  @import '//at.alicdn.com/t/font_1446717_giwlq66d28j.css';
+  ```
 
-[Click to view](fullscreen.md)
+  The prefix of the icon is `icon-` by default, which can be changed in the `iconPrefix` field in the theme configuration.
 
-## Icon support
-
-[Click to view](icon.md)
-
-## Typescript support
-
-[Click to view](typescript.md)
+- [**Typescript support**](typescript.md)

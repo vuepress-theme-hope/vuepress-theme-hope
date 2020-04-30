@@ -5,15 +5,13 @@ breadcrumb: true
 
 # Default Theme Config
 
-<Bit/>
-
 ::: tip
 All options listed on this page apply to the default theme only. If you are using a custom theme, the options may be different.
 :::
 
 ## Homepage
 
-The default theme provides a homepage layout (used on [the homepage of this site](../../README.md)). To use it, specify `home: true` plus some other metadata in your root `README.md`'s [YAML frontmatter](https://v1.vuepress.vuejs.org/guide/markdown.md#front-matter). This is an example of how it works:
+The default theme provides a homepage layout (used on [the homepage of this site](../../README.md)). To use it, specify `home: true` plus some other metadata in your root `README.md`'s [Front Matter](https://v1.vuepress.vuejs.org/guide/markdown.md#front-matter). This is an example of how it works:
 
 ```yaml
 ---
@@ -41,7 +39,7 @@ To use a fully custom homepage layout, you can also use a [Custom Layout](#custo
 
 ## Navbar
 
-The Navbar may contain your page title, [Search Box](#search-box), [Navbar Links](#navbar-links), [Languages](https://v1.vuepress.vuejs.org/guide/i18n.md) and [Repository Link](#git-repo-and-edit-links), they all depend on your configuration.
+The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [Languages](https://v1.vuepress.vuejs.org/guide/i18n.md) and [Repository Link](#git-repo-and-edit-links), they all depend on your configuration.
 
 ### Navbar Links
 

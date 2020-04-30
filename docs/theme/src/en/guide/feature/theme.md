@@ -6,15 +6,30 @@ tags:
   - function
 ---
 
-# Theme color
+# Darkmode and Theme color
+
+## Darkmode
+
+In dark mode, the page uses a black background to protect your eyes.
+
+![Darkmode](./assets/darkmode.png)
+
+Dark mode support options:
+
+- `'auto-switch'`: "off | automatic | on" three-stage switch (default)
+- `'switch'`: "Close | Open" toggle switch
+- `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
+- `'disable'`: disable dark mode
+
+## Theme color
 
 This is an out-of-the-box feature that offers four themes "blue, red, green, and orange" in addition to your theme color.
 
-## Disable
+### Disable
 
 You can disable it by setting the theme field's `themeConfig.themeColor` to false.
 
-## Custom color
+### Custom color
 
 You need to configure `themeConfig.themeColor` in the format ``colorname1: colorvalue, colorname2: colorvalue, ... }`:
 
@@ -50,3 +65,20 @@ $colorPicker = {
 ```
 
 :::
+
+## Fullscreen Button
+
+Enabled by default, you can disable it by setting `fullscreen` to `false` in the theme configuration.
+
+::: tip
+If the current browser does not support full screen, the full screen button is automatically hidden.
+:::
+
+```js {4}
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    fullscreen: false // Enable by default
+  }
+};
+```

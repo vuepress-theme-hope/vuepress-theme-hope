@@ -6,18 +6,10 @@ tags: api
 
 # API 文档
 
-## themeConfig
+- [**themeConfig 配置**](themeConfig.md)
 
-- [前往文档](themeConfig.md)
+- [**Front Matter 配置**](page.md)
 
-## frontmatter
+- [**样式配置**](stylus.md)
 
-- [前往文档](page.md)
-
-## style
-
-- [前往文档](stylus.md)
-
-## plugin
-
-- [前往文档](plugin/readme.md)
+- [**插件**](plugin/readme.md)

@@ -23,7 +23,9 @@ module.exports = {
 };
 ```
 
-有 Valine 和 Vssue 可以选择。
+评论功能 <MyBadge text="支持局部配置" /> 默认全局启用，配置项为 `comment`。
+
+有两个评论插件可以选择: Valine 和 Vssue。
 
 ::: tip
 如果你希望看到更详细的评论设置，可以访问 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-comment.mrhope.site)

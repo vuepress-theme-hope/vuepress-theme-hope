@@ -23,6 +23,8 @@ module.exports = {
 };
 ```
 
+Comment function <MyBadge text = "Support local configuration" /> enabled globally by default, the configuration key is `comment`.
+
 You can choose between Valine and Vssue.
 
 ::: tip

@@ -2,7 +2,7 @@
 icon: writefill
 ---
 
-# Upper and lower corner
+# Markup
 
 Make Markdown files in your VuePress site support markup.
 
@@ -26,8 +26,8 @@ Use `== ==` to mark.
 
 ## Case
 
-Mr. Hope is ==very == handsome.
+Mr. Hope is ==very== handsome.
 
 ```md
-Mr. Hope is ==very == handsome.
+Mr. Hope is ==very== handsome.
 ```

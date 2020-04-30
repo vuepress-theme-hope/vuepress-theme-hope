@@ -319,6 +319,13 @@ Whether to enable route navigation globally
 
 Whether to show icons in route navigation
 
+### wordPerminute
+
+- Type: `number`
+- Default value: `300`
+
+Words reading per minute
+
 ### smoothScroll <MyBadge text="Default value changed" type="error" />
 
 - Type: `boolean`

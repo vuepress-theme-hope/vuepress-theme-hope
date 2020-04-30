@@ -7,13 +7,13 @@ tags:
 category: layout
 ---
 
-# 博客主页
+# 博客首页
 
-vuepress-theme-hope 允许你启用博客风格的主页。
+vuepress-theme-hope 允许你启用博客风格的首页。
 
-你需要在相应的页面的 frontmatter 中，设置 `blog` 为 `true` 来开启博客风格。
+你需要在相应的页面的 Front Matter 中，设置 `blog: true` 来开启博客风格。
 
-![主页截图](./assets/blog.png)
+![首页截图](./assets/blog.png)
 
 ## 可配置的项目
 
@@ -54,7 +54,7 @@ vuepress-theme-hope 允许你启用博客风格的主页。
 
 如果你对时间轴上面的提示文字不满意，你可以使用 `themeConfig.blog.timeline` 自定义一个。
 
-## frontmatter 可用参数
+## Front Matter 可用参数
 
 ### hero
 
@@ -79,4 +79,4 @@ vuepress-theme-hope 允许你启用博客风格的主页。
 
 - 类型: `Record<string, string>`
 
-主页图标的 CSS 样式
+首页图标的 CSS 样式

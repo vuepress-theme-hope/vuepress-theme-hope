@@ -31,4 +31,4 @@ vuepress-theme-hope adds a back-to-top control which will show up by 300px by de
 
 The back to top button uses a round colored icon instead of the arrow in the default theme.
 
-You can disable it by setting `backToTop` in `themeConfig` to `false`.
+The config key is `backToTop`.

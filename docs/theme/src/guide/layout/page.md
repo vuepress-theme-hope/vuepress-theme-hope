@@ -7,7 +7,7 @@ category: layout
 
 ## 图标支持
 
-可以在页面的 `frontmatter` 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
+可以在页面的 `Front Matter` 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
 
 该图标会在 **路径导航** 和 **侧边栏** 中使用。
 
@@ -21,51 +21,53 @@ icon: Home
 
 :::
 
-## 文章信息展示 <MyBadge text="支持局部配置" />
+## 路径导航 <MyBadge text="支持局部配置" />
 
-- **作者** <MyBadge text="支持局部配置" />
+本主题添加了开箱即用的路径导航支持，配置项为 `breadcrumb`。
 
-  可以在页面的 `frontmatter` 中设置 `author` 字段来设置作者名称。
+无需任何额外配置，一个和主题色相符合的路径导航会显示在页面内容最上方，帮助阅读者理解文档结构。
 
-  ::: details 例子
+路径导航的图标显示也<MyBadge text="支持局部配置" />，配置项为 `breadcrumbIcon`。
 
-  ```md
-  ---
-  author: Mr.Hope
-  ---
-  ```
+::: warning
+为了保证路径导航更好的提示，建议在每一个路径下创建 readme.md 文件。
 
-  :::
+否则，路径导航将因对应层级文件夹没有主页，无法生成标题与链接，而自动忽略那一层级。
+:::
 
-  作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。可以在页面的 frontmatter 中设置 `author` 为 `false` 取消作者显示。
+## 文章信息展示
 
-- **阅读量** <MyBadge text="支持局部配置" />
+详见 [文章信息](../feature/page-info.md) 章节。
 
-  当配置 [评论功能](../feature/comment.md) 后，该功能默认启用。全局配置项为 `valine.visitor`，页面配置项为 `visitor`，你可以将其禁用，或在全局禁用的情况下在特定页面启用。
+## 最后更新时间
 
-  ::: details 例子
+你可以通过 `themeConfig.lastUpdated` 选项来获取每个文件最后一次 `git` 提交的 UNIX 时间戳(ms)，同时它将以合适的日期格式显示在每一页的底部：
 
-  ```md
-  ---
-  visitor: false
-  ---
-  ```
+```js
+module.exports = {
+  themeConfig: {
+    lastUpdated: 'Last Updated' // string | boolean
+  }
+};
+```
 
-  :::
+请注意，`themeConfig.lastUpdated` 默认是关闭的，如果给定一个字符串，它将会作为前缀显示(默认值是：`Last Updated`)。
 
-- **时间**
+::: warning 使用须知
+由于 `lastUpdated` 是基于 `git` 的, 所以你只能在一个基于 `git` 的项目中启用它。此外，由于使用的时间戳来自 git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。
+:::
 
-  可以在页面的 `frontmatter` 中设置 `time` 字段来设置写作时间。
+## 上 / 下一篇链接
 
-  ::: details 例子
+上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以使用 `themeConfig` 或 `Front matter` 来明确地重写或者禁用它：
 
-  ```md
-  ---
-  time: 2020-1-1
-  ---
-  ```
+```yaml
+---
+prev: ./some-other-page
+next: false
+---
 
-  :::
+```
 
 ## 评论
 
@@ -73,9 +75,9 @@ icon: Home
 
 ## 页脚支持 <MyBadge text="支持局部配置" />
 
-如果希望每个页面都显示页脚，需要将 `themeConfig.footer.display` 设置为 `true`。同时，也可以使用 `themeConfig.footer.copyright` 和 `themeConfig.content` 设置默认的版权信息与页脚内容。
+如果希望每个页面都显示页脚，需要将 `themeConfig.footer.display` 设置为 `true`。同时，你可以使用 `themeConfig.footer.copyright` 和 `themeConfig.content` 设置默认的版权信息与页脚内容。
 
-同时，可以在页面的 `frontmatter` 中配置 `footer` 字段。
+你也可以在页面的 `Front Matter` 中配置 `footer` 字段。
 
 `footer` 字段接受一段字符串，同时也接受一段 htmlString ，他们会直接渲染在页脚的位置，也可以将 `footer` 设置为 `true` 来显示默认的页脚文字。
 
@@ -119,3 +121,16 @@ footer: false
 ```
 
 :::
+
+## 特定页面的自定义布局
+
+默认情况下，每个 `*.md` 文件将会被渲染在一个 `<div class="page">` 容器中，同时还有侧边栏、自动生成的编辑链接，以及上 / 下一篇文章的链接。如果你想要使用一个完全自定义的组件来代替当前的页面(而只保留导航栏)，你可以再次使用 `Front matter` 来指定这个组件。
+
+```yaml
+---
+layout: SpecialLayout
+---
+
+```
+
+这将会为当前的页面渲染 `.vuepress/components/SpecialLayout.vue` 布局。

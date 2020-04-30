@@ -6,18 +6,10 @@ tags: api
 
 # API Docs
 
-## themeConfig
+- [**themeConfig Config**](themeConfig.md)
 
-- [Visit](themeConfig.md)
+- [**Front Matter Config**](page.md)
 
-## Frontmatter
+- [**Style Config**](stylus.md)
 
-- [Visit](page.md)
-
-## Style
-
-- [Visit](stylus.md)
-
-## Plugin
-
-- [Visit](plugin/readme.md)
+- [**Plugin**](plugin/readme.md)

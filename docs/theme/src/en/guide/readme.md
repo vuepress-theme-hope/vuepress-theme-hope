@@ -16,37 +16,51 @@ If you wish to read the Vuepress default theme configuration, please visit [Vuep
 
 - [**navbar**](layout/navbar.md)
 
-  - [Icon support](layout/navbar.md#enhancement)
-  - [Group prefix](layout/navbar.md#enhancement)
-  - [Hide repo](layout/navbar.md)
-
 - [**Sidebar**](layout/sidebar.md)
-
-  - [Icon support](layout/sidebar.md#enhancement)
-  - [Group Enhancement](layout/sidebar.md#enhancement)
 
 - [**Page**](layout/page.md)
 
-  - [Viewing volume and author information display](layout/page.md#page-info-display)
   - [Page Icon](layout/page.md#icon-support)
-  - [Path Navigation](layout/breadcrumb.md)
-  - [Custom footer](layout/page.md#custom-footer)
-  - [Home](layout/home.md)
-  - [Blog homepage](layout/home.md#blog-style)
+  - [Article Information Display](layout/page.md#page-info-display)
+    - Author
+    - Writing time
+    - Views
+    - Expect reading time
+    - Word count
+    - Category
+    - Tag
+  - [Custom footer](layout/page.md#footer-support)
+  - [Homepage](layout/home.md)
+  - [Blog homepage](layout/blog.md)
 
 - [**New Features**](feature/readme.md)
 
   - [Icon support](feature/icon.md)
-  - [Theme color switch](feature/themecolor.md)
-  - [Dark Mode](feature/themecolor.md)
-  - [Full Screen Button](feature/fullscreen.md)
+
+  - Theme
+
+    - [Theme color](feature/theme.md#theme-color)
+    - [Dark Mode](feature/theme.md#darkmode)
+    - [Full Screen Button](feature/theme.md#fullscreen-button)
+
   - [Article Encryption](feature/encrypt.md)
+
   - [Comment](feature/comment.md)
 
-- [**Add Component**](feature/component.md)
+  - [Blog Support](feature/blog.md)
+
+    - Blogger information display
+    - Article list
+    - Category List
+    - Tag list
+    - Timeline
+
+  - [**Markdown enhancement**](markdown/readme.md)
+
+  - [Typescript support](feature/typescript.md)
+
+- [**Newly Add Component**](feature/component.md)
 
   - [Back to Top Button `<BackToTop />](feature/component.md#back-to-top-button-backtotop)
 
   - [Badge `<MyBadge />`](feature/component.md#badge-mybadge): Added color support on the official basis
-
-- [**Markdown enhancement**](markdown/readme.md)

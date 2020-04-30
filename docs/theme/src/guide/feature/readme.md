@@ -8,38 +8,30 @@ tags:
 
 # 新增特性
 
-## 评论功能
+- [**深色模式**](theme.md#深色模式)
 
-[点击查看](comment.md)
+- [**主题色**](theme.md#主题色)
 
-## 深色模式
+- [**页面信息**](page-info.md)
 
-[点击查看](darkmode.md)
+- [**评论功能**](comment.md)
 
-## 主题色
+- [**加密功能**](encrypt.md)
 
-[点击查看](themecolor.md)
+- [**Markdown 增强**](markdown/readme.md)
 
-## 加密功能
+- [**新增组件**](component.md)
 
-[点击查看](encrypt.md)
+- **图标支持**
 
-## Markdown 增强
+  整个主题在多处都添加了 FontClass 格式图标的支持。
 
-[点击查看](../markdown/readme.md)
+  请在 `.vuepress/styles` 的 `index.styl` 中导入对应的图标 css 文件。例如：
 
-## 新增组件
+  ```css
+  @import '//at.alicdn.com/t/font_1446717_giwlq66d28j.css';
+  ```
 
-[点击查看](component.md)
+  图标的前置名默认为 `icon-`，可以在主题配置中的 `iconPrefix` 字段进行更改。
 
-## 全屏功能
-
-[点击查看](fullscreen.md)
-
-## 图标支持
-
-[点击查看](icon.md)
-
-## Typescript 支持
-
-[点击查看](typescript.md)
+- [**Typescript 支持**](typescript.md)

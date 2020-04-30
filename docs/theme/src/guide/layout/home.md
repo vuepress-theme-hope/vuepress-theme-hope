@@ -6,21 +6,23 @@ tags:
 category: layout
 ---
 
-# 主页
+# 首页
 
-vuepress-theme-hope 改进了默认主页。
+vuepress-theme-hope 对首页布局进行了一些改进。
 
-![主页截图](./assets/home.png)
+如果想要使用它，请在 Front Matter 中设置 `home: true`。任何 `YAML front matter` 之后额外的内容将会以普通的 markdown 被渲染，并插入到 `features` 的后面。
 
-## 项目样式
+![首页截图](./assets/home.png)
 
-可以配置的 frontmatter 参数如下:
+## 配置选项
+
+可以配置的 Front Matter 参数如下:
 
 ### home
 
 - 类型: `boolean`
 
-设置为 `true` 时启用主页样式
+设置为 `true` 时启用首页样式
 
 ### title
 
@@ -70,3 +72,26 @@ vuepress-theme-hope 改进了默认主页。
 - link(可选): `string` 链接地址
 
 特性说明
+
+## 配置案例
+
+```yaml
+---
+home: true
+title: 博客示例
+heroImage: /logo.png
+heroText: 博客示例
+tagline: 这是一个 Vuepress 搭建的博客
+actionText: 了解更多 →
+actionLink: /vuepress/
+features:
+  - title: 简洁至上
+    details: Vue 驱动的静态网站生成器，以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+  - title: Vue 驱动
+    details: 享受 Vue + webpack 的开发体验，可以在 Markdown 中使用 Vue 组件，又可以使用 Vue 来开发自定义主题。
+  - title: 高性能
+    details: VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+---
+
+```
