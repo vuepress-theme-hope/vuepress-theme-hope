@@ -32,11 +32,10 @@ export default class PageEdit extends Vue {
 
   private get editLink() {
     /** 是否展示编辑此页链接 */
-    const showEditLink = Boolean(
-      this.$page.frontmatter.editLink === undefined
-        ? this.$themeConfig.editLinks
-        : this.$page.frontmatter.editLink
-    );
+    const showEditLink =
+      this.$page.frontmatter.editLink ||
+      (this.$themeConfig.editLinks !== false &&
+        this.$page.frontmatter.editLink !== false);
 
     const { repo, docsRepo } = this.$site.themeConfig;
 

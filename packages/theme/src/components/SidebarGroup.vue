@@ -19,13 +19,13 @@
       :to="item.path"
       @click.native="$emit('toggle')"
     >
-      <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
+      <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
       <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
     </router-link>
 
     <p v-else :class="{ open }" class="sidebar-heading" @click="$emit('toggle')">
-      <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
+      <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
       <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
     </p>
@@ -61,12 +61,11 @@ export default class SidebarGroup extends Vue {
 
   private isActive = isActive;
 
-  private get icon() {
-    const themeConfig = this.$themeConfig;
-    const { icon } = this.item;
+  private getIcon(icon: string | undefined) {
+    const { iconPrefix } = this.$themeConfig;
 
-    return themeConfig.sidebarIcon !== false && icon
-      ? `${themeConfig.iconPrefix}${icon}`
+    return this.$themeConfig.sidebarIcon !== false && icon
+      ? `${iconPrefix === '' ? '' : iconPrefix || 'icon-'}${icon}`
       : '';
   }
 

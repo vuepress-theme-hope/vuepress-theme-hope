@@ -14,10 +14,10 @@ import MediaLinks from '@theme/components/MediaLinks.vue';
 export default class PageFooter extends Vue {
   /** 显示页脚 */
   private display() {
+    const { footer } = this.$page.frontmatter;
+
     return (
-      ((this.$themeConfig.footer || {}).display &&
-        this.$frontmatter.footer !== false) ||
-      this.$frontmatter.footer
+      footer || ((this.$themeConfig.footer || {}).display && footer !== false)
     );
   }
 

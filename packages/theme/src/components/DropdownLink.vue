@@ -2,7 +2,7 @@
   <div :class="{ open }" class="dropdown-wrapper" @focusout="close(true)">
     <button class="dropdown-title" type="button" :aria-label="dropdownAriaLabel" @click="toggle">
       <span class="title">
-        <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
+        <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
         {{ item.text }}
       </span>
       <span :class="open ? 'down' : 'right'" class="arrow" />
@@ -66,6 +66,12 @@ export default class DropdownLink extends Vue {
 
   private get dropdownAriaLabel() {
     return this.item.ariaLabel || this.item.text;
+  }
+
+  private get iconPrefix() {
+    const { iconPrefix } = this.$themeConfig;
+
+    return iconPrefix === '' ? '' : iconPrefix || 'icon-';
   }
 
   private toggle(event: any) {

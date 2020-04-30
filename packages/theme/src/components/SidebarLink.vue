@@ -166,7 +166,7 @@ interface SidebarLinkProps {
       $page.frontmatter.sidebarDepth ||
       $themeLocaleConfig.sidebarDepth ||
       $themeConfig.sidebarDepth ||
-      1;
+      2;
 
     // 如果是标题侧边栏
     if (item.type === 'header')
@@ -191,7 +191,7 @@ interface SidebarLinkProps {
     const link = renderLink(h, {
       icon:
         $themeConfig.sidebarIcon !== false && item.frontmatter.icon
-          ? `${$themeConfig.iconPrefix}${item.frontmatter.icon}`
+          ? `${$themeConfig.iconPrefix === '' ? '' : $themeConfig.iconPrefix || 'icon-'}${item.frontmatter.icon}`
           : '',
       text: item.title || item.path,
       link: item.path,

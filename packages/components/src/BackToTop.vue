@@ -47,7 +47,7 @@ export default class BackToTop extends Vue {
     const pageEnable = this.$page.frontmatter.backtotop;
 
     return (
-      ((globalEnable && pageEnable !== false) || pageEnable === true) &&
+      (pageEnable || (globalEnable && pageEnable !== false)) &&
       this.scrollTop > this.trigger
     );
   }

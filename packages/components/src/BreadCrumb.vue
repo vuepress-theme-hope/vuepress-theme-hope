@@ -8,7 +8,7 @@
       >
         <a
           class="iconfont"
-          :class="item.icon && $themeConfig.breadcrumbIcon !== false? `${iconPrefix}${item.icon}`:''"
+          :class="item.icon && iconEnable? `${iconPrefix}${item.icon}`:''"
           @click="$router.push(item.url)"
           v-text="item.title"
         />
@@ -44,15 +44,22 @@ export default class BreadCrumb extends Vue {
     );
   }
 
+  /** 是否启用路径导航图标 */
+  private get iconEnable() {
+    const globalEnable = this.$themeConfig.breadcrumbIcon !== false;
+    const pageEnable = this.$page.frontmatter.breadcrumbIcon;
+
+    return (
+      this.enable &&
+      ((globalEnable && pageEnable !== false) || pageEnable === true)
+    );
+  }
+
   /** 图标前缀 */
   private get iconPrefix() {
     const { iconPrefix } = this.$themeConfig;
 
-    return typeof iconPrefix === 'string'
-      ? iconPrefix
-      : iconPrefix === false
-      ? ''
-      : 'icon-';
+    return iconPrefix === '' ? '' : iconPrefix || 'icon-';
   }
 
   /** 路径导航配置 */

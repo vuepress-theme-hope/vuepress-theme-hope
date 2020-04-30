@@ -6,7 +6,7 @@
     :to="link"
     @focusout.native="focusoutAction"
   >
-    <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
+    <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
     {{ item.text }}
   </router-link>
   <a
@@ -17,7 +17,7 @@
     :target="isMailto(link) || isTel(link) ? null : '_blank'"
     @focusout="focusoutAction"
   >
-    <i v-if="item.icon" :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`" />
+    <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
     {{ item.text }}
     <OutboundLink />
   </a>
@@ -35,6 +35,12 @@ export default class NavLink extends Vue {
 
   private get link() {
     return ensureExt(this.item.link as string);
+  }
+
+  private get iconPrefix() {
+    const { iconPrefix } = this.$themeConfig;
+
+    return iconPrefix === '' ? '' : iconPrefix || 'icon-';
   }
 
   private get exact() {

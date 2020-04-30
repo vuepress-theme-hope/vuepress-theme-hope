@@ -46,9 +46,11 @@ import { capitalize, i18n } from '@mr-hope/vuepress-shared-utils';
 import ArticleList from '@theme/components/ArticleList.vue';
 import BlogHero from '@theme/components/BlogHero.vue';
 import BlogInfo from '@theme/components/BlogInfo.vue';
+import CategoryList from '@theme/components/CategoryList.vue';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import PageFooter from '@theme/components/PageFooter.vue';
 import Password from '@theme/components/Password.vue';
+import TagList from '@theme/components/TagList.vue';
 import Timeline from '@theme/components/Timeline.vue';
 import TimelineList from '@theme/components/TimelineList.vue';
 
@@ -57,9 +59,11 @@ import TimelineList from '@theme/components/TimelineList.vue';
     ArticleList,
     BlogHero,
     BlogInfo,
+    CategoryList,
     ModuleTransition,
     PageFooter,
     Password,
+    TagList,
     Timeline,
     TimelineList
   }
@@ -77,7 +81,7 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
   private get displayArticles() {
     const { path } = this.$route;
 
-    return !path.includes('/category') && !path.includes('/timeline');
+    return !path.includes('/timeline');
   }
 
   /** 组件名称 */
