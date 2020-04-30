@@ -85,6 +85,13 @@ export default class AlgoliaSearchBox extends Vue {
       font-size 16px
       text-align left
 
+      @media (min-width: $MQMobile)
+        min-width 515px !important
+
+      @media (max-width: $MQMobile)
+        min-width calc(100vw - 4rem) !important
+        max-width calc(100vw - 4rem) !important
+
       &:before
         border-color var(--light-grey)
 
@@ -121,6 +128,9 @@ export default class AlgoliaSearchBox extends Vue {
       .algolia-docsearch-suggestion--wrapper
         padding 0
 
+        @media (max-width: $MQMobile)
+          padding 5px 7px 5px 5px !important
+
       .algolia-docsearch-suggestion--title
         margin-bottom 0
         color var(--text-color)
@@ -133,11 +143,38 @@ export default class AlgoliaSearchBox extends Vue {
         background var(--background-color)
         color var(--text-color)
 
+        @media (min-width: $MQMobile)
+          display table-cell
+          float none
+          width 150px
+          min-width 150px
+
+        @media (max-width: $MQMobile)
+          padding 0 !important
+          background white !important
+
         &:after
           display none
 
       .algolia-docsearch-suggestion--subcategory-column-text
         color #555
+
+        &:after
+          @media (max-width: $MQMobile)
+            display inline-block
+            vertical-align middle
+            content ' > '
+            width 5px
+            margin -3px 3px 0
+            font-size 10px
+            line-height 14.4px
+
+      .algolia-docsearch-suggestion--content
+        @media (min-width: $MQMobile)
+          display table-cell
+          float none
+          vertical-align top
+          width 100%
 
     .algolia-docsearch-footer
       border-color var(--border-color)
@@ -145,45 +182,4 @@ export default class AlgoliaSearchBox extends Vue {
     .ds-cursor .algolia-docsearch-suggestion--content
       background-color var(--grey3)
       color var(--text-color)
-
-@media (min-width: $MQMobile)
-  .algolia-search-wrapper
-    .algolia-autocomplete
-      .algolia-docsearch-suggestion
-        .algolia-docsearch-suggestion--subcategory-column
-          display table-cell
-          float none
-          width 150px
-          min-width 150px
-
-        .algolia-docsearch-suggestion--content
-          display table-cell
-          float none
-          vertical-align top
-          width 100%
-
-        .ds-dropdown-menu
-          min-width 515px !important
-
-@media (max-width: $MQMobile)
-  .algolia-search-wrapper
-    .ds-dropdown-menu
-      min-width calc(100vw - 4rem) !important
-      max-width calc(100vw - 4rem) !important
-
-    .algolia-docsearch-suggestion--wrapper
-      padding 5px 7px 5px 5px !important
-
-    .algolia-docsearch-suggestion--subcategory-column
-      padding 0 !important
-      background white !important
-
-    .algolia-docsearch-suggestion--subcategory-column-text:after
-      display inline-block
-      vertical-align middle
-      content ' > '
-      width 5px
-      margin -3px 3px 0
-      font-size 10px
-      line-height 14.4px
 </style>

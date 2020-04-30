@@ -226,9 +226,11 @@ export default class SidebarLink extends Vue {
 </script>
 
 <style lang="stylus">
-.sidebar .sidebar-sub-headers
-  padding-left 1rem
-  font-size 0.95em
+.sidebar 
+  .sidebar-links
+    ul.sidebar-sub-headers
+      padding-left 1rem
+      font-size 0.95em
 
 a.sidebar-link
   font-size 1em

@@ -67,7 +67,7 @@ export default class Sidebar extends Vue {
     transition transform 0.2s ease
     box-shadow none
 
-  .navlinks ul, .sidebar-links ul
+  .nav-links ul, .sidebar-links ul
     padding 0
     margin 0
     list-style-type none
