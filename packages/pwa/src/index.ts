@@ -23,7 +23,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
   };
 
   config.generated = async (): Promise<any> => {
-    const swFilePath = resolve(context.outDir, './assets/js/service-worker.js');
+    const swFilePath = resolve(context.outDir, './service-worker.js');
 
     logger.wait('Generating service worker...');
 
