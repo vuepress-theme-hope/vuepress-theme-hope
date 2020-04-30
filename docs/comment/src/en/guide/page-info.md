@@ -4,9 +4,9 @@ icon: infofill
 
 # Page information
 
-The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in `frontmatter` of a specific page.
+The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in `Front Matter` of a specific page.
 
-If you need to keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `frontmatter` of a specific page to enable it locally.
+If you need to keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.
 
 ## Parameters
 
@@ -14,7 +14,7 @@ If you need to keep it globally disabled, please set `pageInfo` to `false` in th
 
 The optional values ​​and corresponding contents of the entry are as follows:
 
-| Entry        | Corresponding content  | page frontmatter value             |
+| Entry        | Corresponding content  | page Front Matter value             |
 | ------------ | ---------------------- | ---------------------------------- |
 | `'Author'`   | author                 | author                             |
 | `'Time'`     | Writing Date           | time                               |
@@ -30,7 +30,7 @@ By default it will display "Author, Visit Number, Writing Date, Category, Tags, 
 
 - **author**
 
-You can configure `author` in the plugin options to set the default author. And you can alse configure `author` in frontmatter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
+You can configure `author` in the plugin options to set the default author. And you can alse configure `author` in Front Matter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
 
 - **time**
 

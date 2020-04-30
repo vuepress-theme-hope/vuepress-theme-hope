@@ -21,9 +21,9 @@ You need to insert the page information component (`<PageInfo />`) before the `<
 
 It is recommended to insert the comment component (`<Comment />`) after the `<PageNav />` component.
 
-`<Comment />` components are enabled globally by default. You can disable it by setting `comment: false` in `frontmatter` on a specific page.
+`<Comment />` components are enabled globally by default. You can disable it by setting `comment: false` in `Front Matter` on a specific page.
 
-If you need to keep it globally disabled, please set `comment` to `false` in the plugin options. This way you can set `comment: true` in the frontmatter of a particular page to enable it locally.
+If you need to keep it globally disabled, please set `comment` to `false` in the plugin options. This way you can set `comment: true` in the Front Matter of a particular page to enable it locally.
 
 There are two comment plugins to choose from: Valine and Vssue.
 
