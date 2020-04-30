@@ -6,7 +6,7 @@ heroText: vuepress-plugin-comment
 tagline: Comment and visitors plugin for vuepress
 actionText: Get started →
 actionLink: /en/guide/
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
 ## Install

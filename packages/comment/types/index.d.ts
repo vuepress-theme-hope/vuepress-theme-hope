@@ -13,8 +13,10 @@ interface BaseCommentOptions {
   type: 'valine' | 'vssue';
   /** 默认作者 */
   author?: string;
-  /** 是否启用文章信息 */
+  /** 是否默认启用文章信息 */
   pageInfo?: PageInfotype[] | false;
+  /** 是否默认启用评论 */
+  comment?: boolean;
   /** 每分钟阅读数 */
   wordPerminute?: number;
 }

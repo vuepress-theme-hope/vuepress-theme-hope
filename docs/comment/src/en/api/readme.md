@@ -35,6 +35,13 @@ The items that can be filled are as follows:
 - `'Word'`: Word number for the article
 - `'Visitor'`: Visitor Number
 
+## comment
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to enable comment feature by default.
+
 ## wordPerminute
 
 - Type: `number`

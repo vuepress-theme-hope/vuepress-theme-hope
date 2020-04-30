@@ -35,6 +35,13 @@ icon: api
 - `'Word'`: 字数
 - `'Visitor'`: 访问量
 
+## comment
+
+- 类型: `boolean`
+- 默认: `true`
+
+是否默认启用评论功能。
+
 ## wordPerminute
 
 - 类型: `number`

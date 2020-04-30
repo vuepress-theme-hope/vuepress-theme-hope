@@ -12,8 +12,10 @@ import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
 export type HopeFooterConfig = Partial<{
   /** 页脚的默认文字 */
   text: string;
-  /** 是否显示默认页脚 */
-  displayDefault: boolean;
+  /** 默认的版权信息 */
+  copyright: string;
+  /** 是否默认显示页脚 */
+  display: boolean;
 }>;
 
 /** 加密选项 */

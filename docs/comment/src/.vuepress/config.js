@@ -45,6 +45,7 @@ module.exports = resolve({
         text: '指南',
         icon: 'creativefill',
         items: [
+          { text: '页面信息', icon: 'infofill', link: '/guide/page-info.html' },
           { text: 'Valine', icon: 'valine', link: '/guide/valine.html' },
           { text: 'Vssue', icon: 'vssue', link: '/guide/vssue.html' }
         ]
@@ -63,6 +64,7 @@ module.exports = resolve({
     sidebar: {
       '/guide/': [
         '',
+        'page-info',
         'valine',
         {
           title: 'Vssue',
@@ -83,7 +85,8 @@ module.exports = resolve({
           ]
         }
       ],
-      '/api/': ['', 'valine', 'vssue']
+      '/api/': ['', 'valine', 'vssue'],
+      '/': ['', 'guide/', 'api/']
     },
 
     author: 'Mr.Hope',
@@ -109,6 +112,11 @@ module.exports = resolve({
             text: 'Guide',
             icon: 'creativefill',
             items: [
+              {
+                text: 'Page Info',
+                icon: 'infofill',
+                link: '/en/guide/page-info.html'
+              },
               { text: 'Valine', icon: 'valine', link: '/en/guide/valine.html' },
               { text: 'Vssue', icon: 'vssue', link: '/en/guide/vssue.html' }
             ]
@@ -127,6 +135,7 @@ module.exports = resolve({
         sidebar: {
           '/en/guide/': [
             '',
+            'page-info',
             'valine',
             {
               title: 'Vssue',
@@ -147,7 +156,8 @@ module.exports = resolve({
               ]
             }
           ],
-          '/en/api/': ['', 'valine', 'vssue']
+          '/en/api/': ['', 'valine', 'vssue'],
+          '/en/': ['', 'guide/', 'api/']
         }
       }
     },

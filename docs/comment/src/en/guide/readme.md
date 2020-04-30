@@ -13,27 +13,19 @@ There are two comment plugins to choose from: Valine and Vssue.
 
 ## `<PageInfo />`
 
-The page information component (`<PageInfo />`) is enabled by default. If you need to disable it, please set `pageInfo` to `false`.
+You need to insert the page information component (`<PageInfo />`) before the `<Content />` component.
 
-`pageInfo` accepts an array by default, the optional values and corresponding contents are as follows:
+- [View Details](page-info.md)
 
-- `'Author'`: Author
-- `'Time'`: Writing Date
-- `'Category'`: Category
-- `'Tag'`: Tags
-- `'ReadTime'`: Expect reading time
-- `'Word'`: Word number for the article
-- `'Visitor'`: Visitor Number
+## `<Comment />`
 
-By default it will display "Author, Visits, Writing Date, Categories, Tags, Estimated Reading Time"
+It is recommended to insert the comment component (`<Comment />`) after the `<PageNav />` component.
 
-The order of filling is the order in which the items are displayed.
+`<Comment />` components are enabled globally by default. You can disable it by setting `comment: false` in `frontmatter` on a specific page.
 
-You can also set `pageInfo` in the page `frontmatter` to override the global configuration.
+If you need to keep it globally disabled, please set `comment` to `false` in the plugin options. This way you can set `comment: true` in the frontmatter of a particular page to enable it locally.
 
-## Comment component
-
-You can set `comment: false` in the page frontmatter to disable comments on specific pages.
+There are two comment plugins to choose from: Valine and Vssue.
 
 ### Valine
 

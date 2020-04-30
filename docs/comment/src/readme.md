@@ -6,7 +6,7 @@ heroText: vuepress-plugin-comment
 tagline: 评论与阅读量插件
 actionText: 使用说明 →
 actionLink: /guide/
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
 ## 安装
