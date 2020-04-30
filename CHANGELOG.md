@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.0-rc.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.16...v0.1.0-rc.17) (2020-04-30)
+
+### Bug Fixes
+
+- **theme:** fix timeline display issue and improve category list ([4e01e1d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4e01e1d26b2a46bf1c92b059743452bf601b26fe))
+
+### Features
+
+- **component:** update pagination style ([92685fb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/92685fbb39de23d3da2564e616ad090006dedd1e))
+
 ## [0.1.0-rc.16](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.15...v0.1.0-rc.16) (2020-04-30)
 
 ### Bug Fixes
