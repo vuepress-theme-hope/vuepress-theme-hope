@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.0-rc.16](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.15...v0.1.0-rc.16) (2020-04-30)
+
+### Bug Fixes
+
+- bug fix ([84b03cb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/84b03cbb1b372727bd4721218eb2a8b7bd1ad36b))
+- **pwa:** move service worker to the root ([ea5341b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ea5341b2e7dd7ced64cc484d105e7969ad88d270))
+- **theme:** fix sidebar apprearance ([0a3b340](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0a3b34084193db8f348723889d5df1e1a6b39d29))
+
 ## [0.1.0-rc.15](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.14...v0.1.0-rc.15) (2020-04-29)
 
 ### Bug Fixes
