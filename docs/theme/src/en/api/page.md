@@ -88,16 +88,17 @@ Set a password for the current article.
 
 - Type: `PageInfo[] | false`
 - Default value: Globally configured value (global default is `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`)
+
 The optional values and corresponding contents of `PageInfo` are as follows:
 
-| Item         | Corresponding Content | Page Front Matter Value            |
-| ------------ | --------------------- | ---------------------------------- |
-| `'Author'`   | Author                | author                             |
-| `'Time'`     | Writing Date          | time                               |
-| `'Category'` | Category              | category                           |
-| `'Tag'`      | Tags                  | tags                               |
-| `'ReadTime'` | Expect reading time   | N / A (automatically generated)    |
-| `'Word'`     | Word count            | N / A (automatically generated)    |
+| Item         | Corresponding Content | Page Front Matter Value              |
+| ------------ | --------------------- | ------------------------------------ |
+| `'Author'`   | Author                | author                               |
+| `'Time'`     | Writing Date          | time                                 |
+| `'Category'` | Category              | category                             |
+| `'Tag'`      | Tags                  | tags                                 |
+| `'ReadTime'` | Expect reading time   | N / A (automatically generated)      |
+| `'Word'`     | Word count            | N / A (automatically generated)      |
 | `'Visitor'`  | Visit Number          | visitor (only available with Valine) |
 
 Set whether to show page details on the current page
@@ -203,30 +204,30 @@ Set the social link for the current page footer.
 
 The optional values of `MediaType` are as follows:
 
--`'Baidu'`: Baidu
--`'Dingding'`: Dingding
--`'Dribbble'`: Dribble
--`'Evernote'`: Evernote
--`'Facebook'`: Facebook
--`'Flipboard'`: Flipboard
--`'Github'`: ~~ Gayhub ~~ Github
--`'Gmail'`: Google mailbox (of course you can also fill in your own other mailbox)
--`'Instagram'`: Instagram
--`'Line'`: Line
--`'Linkedin'`: LinkedIn
--`'Pinterest'`: Pinterest
--`'Pocket'`: Pocket
--`'QQ'`: QQ
--`'Qzone'`: Qzone
--`'Rss'`: RSS address
--`'Steam'`: Steam
--`'Taobao'`: Taobao
--`'Twitter'`: Twitter
--`'Wechat'`: WeChat
--`'Weibo'`: Weibo
--`'Whatsapp'`: Whatsapp
--`'Youtube'`: YouTube
--`'Zhihu'`: Zhihu
+- `'Baidu'`: Baidu
+- `'Dingding'`: Dingding
+- `'Dribbble'`: Dribble
+- `'Evernote'`: Evernote
+- `'Facebook'`: Facebook
+- `'Flipboard'`: Flipboard
+- `'Github'`: ~~ Gayhub ~~ Github
+- `'Gmail'`: Google mailbox (of course you can also fill in your own other mailbox)
+- `'Instagram'`: Instagram
+- `'Line'`: Line
+- `'Linkedin'`: LinkedIn
+- `'Pinterest'`: Pinterest
+- `'Pocket'`: Pocket
+- `'QQ'`: QQ
+- `'Qzone'`: Qzone
+- `'Rss'`: RSS address
+- `'Steam'`: Steam
+- `'Taobao'`: Taobao
+- `'Twitter'`: Twitter
+- `'Wechat'`: WeChat
+- `'Weibo'`: Weibo
+- `'Whatsapp'`: Whatsapp
+- `'Youtube'`: YouTube
+- `'Zhihu'`: Zhihu
 
 :::
 

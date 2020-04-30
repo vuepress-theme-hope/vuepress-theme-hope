@@ -34,5 +34,5 @@ After enabling this theme, you need to ensure that your workspace contains a val
 
 ::: warning
 
-`ts-loader` requires `tsconfig.json` to hit at least one valid ts file, so the easiest way is to create or convert (if you already have `enhanceAppFiles.js`) an `enhanceAppFiles.ts` and add it in the  `include` option
+`ts-loader` requires `tsconfig.json` to hit at least one valid ts file, so the easiest way is to create or convert (if you already have `enhanceAppFiles.js`) an `enhanceAppFiles.ts` and add it in the `include` option
 :::

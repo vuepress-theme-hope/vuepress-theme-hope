@@ -99,7 +99,7 @@ footer: This website is served by Github Pages
 copyright: false
 medialink: false
 ---
-`` `
+```
 
 Custom footer content and copyright information and media links:
 

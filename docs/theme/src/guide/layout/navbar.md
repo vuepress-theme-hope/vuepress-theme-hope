@@ -116,7 +116,6 @@ module.exports = {
 ---
 navbar: false
 ---
-
 ```
 
 ### 导航栏图标
@@ -155,7 +154,6 @@ module.exports = {
 ---
 search: false
 ---
-
 ```
 
 ::: tip

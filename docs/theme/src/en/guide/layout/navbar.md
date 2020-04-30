@@ -118,7 +118,6 @@ You can disable the navbar for a specific page via `YAML front matter`:
 ---
 navbar: false
 ---
-
 ```
 
 ### Navigation bar icon
@@ -157,7 +156,6 @@ You can also disable the built-in search box for individual pages with `YAML fro
 ---
 search: false
 ---
-
 ```
 
 ::: tip
@@ -239,7 +237,6 @@ You can overwrite the following properties on specific pages via `YAML front mat
 ---
 editLink: false # Will overwrite 'editLinks' from themeConfig
 ---
-
 ```
 
 ## Theme color button

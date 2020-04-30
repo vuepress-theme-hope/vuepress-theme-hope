@@ -14,7 +14,7 @@ If you need to keep it globally disabled, please set `pageInfo` to `false` in th
 
 The optional values ​​and corresponding contents of the entry are as follows:
 
-| Entry        | Corresponding content  | page Front Matter value             |
+| Entry        | Corresponding content  | page Front Matter value            |
 | ------------ | ---------------------- | ---------------------------------- |
 | `'Author'`   | author                 | author                             |
 | `'Time'`     | Writing Date           | time                               |

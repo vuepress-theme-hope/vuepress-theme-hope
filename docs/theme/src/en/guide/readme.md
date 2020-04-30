@@ -55,7 +55,7 @@ If you wish to read the Vuepress default theme configuration, please visit [Vuep
     - Tag list
     - Timeline
 
-  - [**Markdown enhancement**](markdown/readme.md)
+  - [**Markdown enhancement**](feature/markdown/readme.md)
 
   - [Typescript support](feature/typescript.md)
 
