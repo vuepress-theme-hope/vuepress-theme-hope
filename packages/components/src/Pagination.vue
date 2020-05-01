@@ -134,7 +134,7 @@ export default class Pagination extends Vue {
   margin 20px auto 12px
 
   @media (max-width: $MQMobileNarrow)
-    margin 20px -1rem 12px
+    margin 20px -1.5rem 12px
 
   .pagation-list
     display flex
@@ -147,6 +147,7 @@ export default class Pagination extends Vue {
     .btn-group
       display flex
       align-items stretch
+      margin 0 8px
       border 1px solid var(--border-color, $borderColor)
       border-radius 4px
       overflow hidden
@@ -189,6 +190,7 @@ export default class Pagination extends Vue {
       display flex
       justify-content center
       align-items center
+      margin 0 8px
 
       div.text
         font-size 14px

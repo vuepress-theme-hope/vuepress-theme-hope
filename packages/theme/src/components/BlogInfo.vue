@@ -184,4 +184,7 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
       @media (min-width: $MQWide)
         border-top-left-radius 0
         border-bottom-left-radius 0
+
+      .content
+        max-height 40vh
 </style>
