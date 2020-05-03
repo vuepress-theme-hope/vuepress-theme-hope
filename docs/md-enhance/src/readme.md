@@ -16,6 +16,9 @@ features:
   - title: 自定义对齐支持
     details: 让你在 Markdown 中对段落进行对齐
     link: /guide/align.html
+  - title: 标记支持
+    details: 让你在 Markdown 中对词句进行标记
+    link: /guide/mark.html
   - title: 流程图支持
     details: 可以在 Markdown 中直接写出流程图
     link: /guide/flowchart.html

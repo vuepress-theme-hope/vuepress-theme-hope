@@ -16,6 +16,9 @@ features:
   - title: DIY Align
     details: Let you decide to align paragraphs in the way you like
     link: /en/guide/align.html
+  - title: Mark Support
+    details: Mark words and sentences in markdown easily
+    link: /en/guide/flowchart.html
   - title: Flowchart Support
     details: Create your flowchart in markdown easily
     link: /en/guide/flowchart.html

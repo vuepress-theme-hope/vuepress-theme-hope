@@ -28,6 +28,14 @@ module.exports = {
         {
           text: '项目案例',
           link: '/demo/'
+        },
+        {
+          text: '评论插件',
+          link: 'https://vuepress-comment.mrhope.site'
+        },
+        {
+          text: 'Markdown 增强插件',
+          link: 'https://vuepress-md-enhance.mrhope.site'
         }
       ]
     }
@@ -61,6 +69,14 @@ module.exports = {
         {
           text: 'Demo',
           link: '/en/demo/'
+        },
+        {
+          text: 'Comment Plugin',
+          link: 'https://vuepress-comment.mrhope.site/en/'
+        },
+        {
+          text: 'Markdown Enhance Plugin',
+          link: 'https://vuepress-md-enhance.mrhope.site/en/'
         }
       ]
     }
