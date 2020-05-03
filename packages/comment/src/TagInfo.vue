@@ -6,8 +6,7 @@
         v-for="(tag, index) in $tags"
         :key="tag"
         class="tag"
-        :class="{ active }"
-        :style="{ 'border-color': color(index), 'color': color(index) }"
+        :class="{ clickable, [`tag${index % 9}`]: true }"
         @click="clickTag(tag)"
         v-text="tag"
       />
@@ -38,7 +37,7 @@ export default class TagInfo extends Vue {
     return [];
   }
 
-  private get active() {
+  private get clickable() {
     return this.$themeConfig.blog !== false;
   }
 
@@ -46,23 +45,6 @@ export default class TagInfo extends Vue {
   private clickTag(tagName: string) {
     const path = `/tag/${tagName}/`;
     if (this.$route.path !== path) this.$router.push(path);
-  }
-
-  /** Get tag color */
-  private color(index: number) {
-    const colors = [
-      '#e74c3c',
-      '#8e44ad',
-      '#27ae60',
-      '#e67e22',
-      '#16a085',
-      '#2c3e50',
-      '#f39c12',
-      '#2ecc71'
-    ];
-    const finalIndex = index % colors.length;
-
-    return colors[finalIndex];
   }
 }
 </script>
@@ -87,12 +69,31 @@ export default class TagInfo extends Vue {
     border-width 0.5px
     border-style solid
 
-    &.active:hover
+    &.clickable:hover
       cursor pointer
       box-shadow 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2))
       background-color var(--background-color, #fff)
 
-// 深色模式
-.theme-dark .tags-wrapper .tag
-  background-color #222
+    .theme-dark &
+      background-color #222
+
+@require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
+
+for $color, $index in $colors
+  .tags-wrapper .tag{$index}
+    &, .theme-light &
+      color lighten($color, 10%)
+      border-color lighten($color, 10%)
+
+      &.clickable:hover
+        color $color
+        border-color $color
+
+    .theme-dark &
+      color darken($color, 10%)
+      border-color darken($color, 10%)
+
+      &.clickable:hover
+        color $color
+        border-color $color
 </style>

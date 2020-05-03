@@ -90,7 +90,7 @@ export default class Valine extends Vue {
 </script>
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared-utils/src/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared-utils/styles/wrapper.styl'
 
 .page
   .valine-wrapper

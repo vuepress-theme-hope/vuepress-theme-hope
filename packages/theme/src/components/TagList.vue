@@ -4,8 +4,7 @@
       v-for="(tag, index) in tagList"
       :key="tag.path"
       class="tag"
-      :class="{ active: isActive(tag.name) }"
-      :style="{ backgroundColor: color(index) }"
+      :class="{ active: isActive(tag.name), [`tag${index % 9}`]:true }"
       @click="clickTag(tag.path)"
     >
       <div class="tag-name">{{ tag.name }}</div>
@@ -47,40 +46,28 @@ export default class TagList extends Vue {
   private clickTag(path: string) {
     navigate(path, this.$router, this.$route);
   }
-
-  /** 标签颜色 */
-  private color(index: number) {
-    const colors = [
-      '#e74c3c',
-      '#8e44ad',
-      '#27ae60',
-      '#e67e22',
-      '#16a085',
-      '#2c3e50',
-      '#f39c12',
-      '#2ecc71'
-    ];
-    const finalIndex = index % colors.length;
-
-    return colors[finalIndex];
-  }
 }
 </script>
 
 <style lang="stylus">
 .tag-list-wrapper
   position relative
-  list-style none
-  padding-left 0
   z-index 2
+  display flex
+  flex-wrap wrap
+  justify-content space-evenly
+  padding-left 0
+  list-style none
 
   .tag
     display inline-block
     position relative
     vertical-align middle
+    min-width 28px
     margin 4px 6px
     cursor pointer
     font-size 12px
+    text-align center
     border-radius 14px
     box-shadow 0 1px 6px 0 var(--box-shadow-color)
     overflow hidden
@@ -90,9 +77,23 @@ export default class TagList extends Vue {
 
     &:hover
       cursor pointer
-      top 0.5px
-      left 0.5px
 
     &.active
-      padding 4px 10px
+      padding 3px 12px
+
+@require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
+
+for $color, $index in $colors
+  .tag-list-wrapper .tag{$index}
+    .theme-light &, &
+      background-color lighten($color, 10%)
+
+      &:hover, &.active
+        background-color darken($color, 5%)
+
+    .theme-dark &
+      background-color darken($color, 5%)
+
+      &:hover, &.active
+        background-color lighten($color, 10%)
 </style>

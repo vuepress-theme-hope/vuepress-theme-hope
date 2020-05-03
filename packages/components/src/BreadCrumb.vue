@@ -114,7 +114,7 @@ export default class BreadCrumb extends Vue {
 </script>
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared-utils/src/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared-utils/styles/wrapper.styl'
 
 // 修正标题的上边距
 .theme-default-content:not(.custom)

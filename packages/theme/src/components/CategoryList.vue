@@ -4,16 +4,12 @@
       v-for="(category, index) in $category.list"
       :key="category.path"
       class="category"
-      :class="{ active: category.name === ($currentCategory || {}).key }"
-      :style="{ backgroundColor: getColor(index).bgcolor }"
+      :class="{ active: category.path === $route.path, [`category${index % 9}`]:true }"
       @click="clickCategory(category.path)"
     >
       <div class="category-name">
         {{ capitalize(category.name) }}
-        <span
-          class="category-num"
-          :style="{ backgroundColor: getColor(index).color }"
-        >{{category.pages.length}}</span>
+        <span class="category-num">{{category.pages.length}}</span>
       </div>
     </li>
   </ul>
@@ -34,33 +30,6 @@ export default class CategoryList extends Vue {
   private clickCategory(path: string) {
     navigate(path, this.$router, this.$route);
   }
-
-  /** 标签颜色 */
-  private getColor(index: number) {
-    const colors = [
-      '#e74c3c',
-      '#8e44ad',
-      '#27ae60',
-      '#e67e22',
-      '#16a085',
-      '#2c3e50',
-      '#f39c12',
-      '#2ecc71'
-    ];
-    const bgcolors = [
-      '#fdedeb',
-      '#f4ecf7',
-      '#e7faef',
-      '#fdf2e9',
-      '#e2fbf6',
-      '#e6ecf1',
-      '#fef5e7',
-      '#eafaf1'
-    ];
-    const finalIndex = index % colors.length;
-
-    return { color: colors[finalIndex], bgcolor: bgcolors[finalIndex] };
-  }
 }
 </script>
 
@@ -72,38 +41,56 @@ export default class CategoryList extends Vue {
   z-index 2
 
   .category
+    display inline-flex
+    justify-content space-between
+    align-items center
+    box-sizing border-box
     vertical-align middle
     margin 4px 8px 10px
-    display inline-block
-    cursor pointer
-    border-radius $borderRadius
-    font-size 14px
+    padding 6px 12px
     border-radius 0.25rem
     box-shadow 0 1px 4px 0 var(--card-shadow-color)
+    color var(--dark-grey)
+    font-size 14px
+    cursor pointer
     overflow hidden
     transition all 0.5s
 
-    .category-name
-      display flex
-      box-sizing border-box
-      width 100%
-      height 100%
-      padding 6px 12px
-      justify-content space-between
-      align-items center
-      color var(--dark-grey)
+    .category-num
+      display inline-block
+      margin-left 4px
+      min-width 1rem
+      height 1rem
+      text-align center
+      line-height 1rem
+      border-radius 0.5rem
+      font-size 0.7rem
+      color var(--white)
 
-      &:hover, &.active
+@require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
+
+for $color, $index in $colors
+  .category-list-wrapper .category{$index}
+    &, .theme-light &
+      background-color lighten($color, 90%)
+
+      &:hover
+        background-color lighten($color, 75%)
+
+      &.active
+        color var(--white)
         background-color var(--accent-color)
-        color var(--white)
 
-      .category-num
-        margin-left 4px
-        width 1rem
-        height 1rem
-        text-align center
-        line-height 1rem
-        border-radius 0.5rem
-        font-size 0.7rem
+    .theme-dark &
+      background-color darken($color, 75%)
+
+      &:hover
+        background-color darken($color, 60%)
+
+      &.active
         color var(--white)
+        background-color var(--accent-color-d10)
+
+    .category-num
+      background-color $color
 </style>
