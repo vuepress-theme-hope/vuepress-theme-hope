@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-theme-types",
-  "version": "0.1.0-rc.17",
+  "version": "0.1.0-rc.18",
   "description": "Theme types for vuepress-theme-hope",
   "types": "types/index.d.js",
   "publishConfig": {
@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/theme-types#readme",
   "dependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^0.1.0-rc.17",
-    "@mr-hope/vuepress-plugin-pwa": "^0.1.0-rc.17",
-    "vuepress-plugin-md-enhance": "^0.1.0-rc.17",
+    "@mr-hope/vuepress-plugin-comment": "^0.1.0-rc.18",
+    "@mr-hope/vuepress-plugin-pwa": "^0.1.0-rc.18",
+    "vuepress-plugin-md-enhance": "^0.1.0-rc.18",
     "vuepress-types": "0.9.1"
   }
 }
