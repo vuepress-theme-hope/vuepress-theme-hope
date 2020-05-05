@@ -1,3 +1,4 @@
+/** 页面信息类型 */
 export type PageInfotype =
   | 'Author'
   | 'Time'

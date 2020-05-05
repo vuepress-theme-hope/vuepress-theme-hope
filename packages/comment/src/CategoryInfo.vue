@@ -1,5 +1,5 @@
 <template>
-  <span v-if="categoryName" class="category-info" :class="{ active }" @click="clickCategory">
+  <span v-if="categoryName" class="category-info" :class="{ active }" @click="navigate">
     <CategoryIcon />
     <span v-text="categoryName" />
   </span>
@@ -15,8 +15,7 @@ export default class CategoryInfo extends Vue {
   @Prop({ type: String, default: '' })
   private readonly category!: string;
 
-  /** 分类 */
-  private get categoryName() {
+  private get categoryName(): string {
     if (this.category) return capitalize(this.category);
 
     const { category } = this.$frontmatter;
@@ -24,12 +23,11 @@ export default class CategoryInfo extends Vue {
     return category ? capitalize(category) : '';
   }
 
-  private get active() {
+  private get active(): boolean {
     return this.$themeConfig.blog !== false;
   }
 
-  // 跳转到分类页面
-  private clickCategory() {
+  private navigate() {
     const path = `/category/${this.categoryName}/`;
 
     if (this.active && this.$route.path !== path) this.$router.push(path);

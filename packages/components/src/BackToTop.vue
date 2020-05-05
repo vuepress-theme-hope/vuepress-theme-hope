@@ -27,15 +27,13 @@ import { debounce } from 'lodash';
 
 @Component
 export default class BackToTop extends Vue {
-  /** 显示按钮的临界值 */
   @Prop({ type: Number, default: 300 })
   private readonly threshold!: number;
 
   /** Scroll distance */
   private scrollTop = 0;
 
-  /** 触发距离 */
-  private get trigger() {
+  private get thresholdDistance() {
     return typeof this.$themeConfig.backtotop === 'number'
       ? this.$themeConfig.backtotop
       : this.threshold;
@@ -48,7 +46,7 @@ export default class BackToTop extends Vue {
 
     return (
       (pageEnable || (globalEnable && pageEnable !== false)) &&
-      this.scrollTop > this.trigger
+      this.scrollTop > this.thresholdDistance
     );
   }
 

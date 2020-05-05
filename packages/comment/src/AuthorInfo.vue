@@ -15,8 +15,7 @@ import { ValineOptions } from '../types';
 export default class AuthorInfo extends Vue {
   private valineConfig: ValineOptions = COMMENT_OPTIONS;
 
-  /** 作者 */
-  private get author() {
+  private get author(): string {
     const { author } = this.$frontmatter;
 
     return (

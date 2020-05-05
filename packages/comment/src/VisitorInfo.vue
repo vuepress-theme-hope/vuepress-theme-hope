@@ -22,8 +22,7 @@ export default class VisitorInfo extends Vue {
 
   private count = 0;
 
-  /** 是否启用 Valine */
-  private get valineEnable() {
+  private get valineEnable(): boolean {
     const { valineConfig } = this;
 
     return Boolean(
@@ -34,8 +33,8 @@ export default class VisitorInfo extends Vue {
     );
   }
 
-  /** 访问量 */
-  private get enableVisitor() {
+  /** Whether enable page view display */
+  private get enableVisitor(): boolean {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.visitor !== false;
     const pageConfig = this.$frontmatter.visitor;
@@ -43,7 +42,7 @@ export default class VisitorInfo extends Vue {
     return (globalEnable && pageConfig !== false) || pageConfig === true;
   }
 
-  /** 访客标识符，使用当前网页路径 */
+  /** visitorID, use current path */
   private get visitorID() {
     const { base } = this.$site;
 
@@ -58,7 +57,7 @@ export default class VisitorInfo extends Vue {
     }, 1500);
   }
 
-  // 获得评论并根据数量显示火热图标
+  // show fire icon depending on the views number
   private getCount() {
     const countElement = document.querySelector(
       '.leancloud_visitors .leancloud-visitors-count'

@@ -1,9 +1,9 @@
 <template>
   <div class="blogger-info">
     <div class="blogger-wrapper">
-      <div class="blogger" :class="{ hasIntro }" @click="intro">
+      <div class="blogger" :class="{ hasIntro }" @click="jumpIntro">
         <img v-if="bloggerAvatar" class="avatar" alt="blogger-avatar" :src="bloggerAvatar" />
-        <div v-if="blogger" class="name" v-text="blogger " />
+        <div v-if="bloggerName" class="name" v-text="bloggerName " />
       </div>
     </div>
     <div class="num-wrapper">
@@ -25,7 +25,11 @@
 
 <script lang="ts">
 import { Component, Mixins, Vue } from 'vue-property-decorator';
-import { deepAssign, i18n } from '@mr-hope/vuepress-shared-utils';
+import {
+  HopeLangI18nConfig,
+  deepAssign,
+  i18n
+} from '@mr-hope/vuepress-shared-utils';
 import { ArticleMixin } from '@theme/util/articleMixin';
 import { PageComputed } from 'vuepress-types';
 import navigate from '@theme/util/navigate';
@@ -34,39 +38,32 @@ import navigate from '@theme/util/navigate';
 export default class BloggerInfo extends Mixins(ArticleMixin) {
   private navigate = navigate;
 
-  /** 博客配置 */
   private get blogConfig() {
     return this.$themeConfig.blog || {};
   }
 
-  /** 博主名称 */
-  private get blogger() {
+  private get bloggerName(): string {
     return (
       this.blogConfig.blogger ||
       this.$themeConfig.author ||
-      this.$page.frontmatter.blogger ||
-      this.$page.frontmatter.author ||
       this.$site.title ||
       ''
     );
   }
 
-  /** 博主头像 */
-  private get bloggerAvatar() {
+  private get bloggerAvatar(): string {
     return this.blogConfig.avatar || this.$themeConfig.logo || '';
   }
 
-  /** 是否配置了个人介绍页地址 */
-  private get hasIntro() {
+  private get hasIntro(): boolean {
     return Boolean(this.blogConfig.intro);
   }
 
-  private get i18n() {
+  private get i18n(): HopeLangI18nConfig['blog'] {
     return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
   }
 
-  /** 跳转到个人介绍 */
-  private intro() {
+  private jumpIntro() {
     if (this.hasIntro)
       navigate(this.blogConfig.intro, this.$router, this.$route);
   }

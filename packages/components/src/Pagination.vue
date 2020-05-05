@@ -7,7 +7,7 @@
           class="btn"
           unselectable="on"
           @click="navigate(currentPage - 1)"
-        >{{text.prev}}</div>
+        >{{i18n.prev}}</div>
         <div v-if="displayLeftEllipsis" @click="navigate(1)">1</div>
         <div v-if="displayLeftEllipsis" class="ellipsis">...</div>
         <div
@@ -25,12 +25,12 @@
           v-if="currentPage < totalPages"
           class="btn"
           @click="navigate(currentPage + 1)"
-        >{{text.next}}</div>
+        >{{i18n.next}}</div>
       </div>
       <div class="navigate-wrapper">
-        <div class="text">{{text.navigate}}:&nbsp;</div>
+        <div class="text">{{i18n.navigate}}:&nbsp;</div>
         <input v-model="input" type="text" @keypress.enter="jumpPage(input)" />
-        <div class="navigate-button" @click="jumpPage(input)">{{text.button}}</div>
+        <div class="navigate-button" @click="jumpPage(input)">{{i18n.button}}</div>
       </div>
     </div>
   </div>
@@ -38,30 +38,28 @@
 
 <script lang='ts'>
 import { Component, Model, Prop, Vue } from 'vue-property-decorator';
+import { Route } from 'vue-router';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component
 export default class Pagination extends Vue {
   @Prop({ type: Number, default: 10 })
-  /** 总共的项目 */
+  /** Number of total items */
   private readonly total!: number;
 
   @Prop({ type: Number, default: 10 })
-  /** 每页包含的项目 */
+  /** Items per page */
   private readonly perPage!: number;
 
   @Model('change', { type: Number })
-  /** 当前页 */
   private readonly currentPage!: number;
 
   private input = '';
 
-  /** 总共的页码数 */
   private get totalPages() {
     return Math.ceil(this.total / this.perPage);
   }
 
-  /** 是否启用插件 */
   private get enable() {
     return this.totalPages && this.totalPages !== 1;
   }
@@ -78,7 +76,7 @@ export default class Pagination extends Vue {
     return this.currentPage <= this.totalPages - 3;
   }
 
-  /** 获得页码索引 */
+  /** Page indexs */
   private get indexs() {
     let min = 1;
     let max = this.totalPages;
@@ -96,31 +94,40 @@ export default class Pagination extends Vue {
         min = this.totalPages - 4;
       }
 
-    // 生成页码索引
+    // Generate page index
     for (let i = min; i <= max; i++) arr.push(i);
 
     return arr;
   }
 
-  private get text() {
+  private get i18n() {
     return (
       i18n.getLocale(this.$lang).pagination ||
       i18n.getDefaultLocale().pagination
     );
   }
 
-  /** 页码跳转 */
-  private navigate(index: number) {
-    this.$emit('change', index);
+  private mounted() {
+    const { index } = this.$route.query;
+
+    this.navigate(index ? Number(index) : 1);
   }
 
-  /** 跳转到特定页面 */
+  /** Navigate to certain page */
+  private navigate(index: number) {
+    const path = `${this.$route.path}?index=${index}`;
+
+    this.$emit('change', index);
+    if (this.$route.fullPath !== path) this.$router.push(path);
+  }
+
+  /** Check and navigate to certain page */
   private jumpPage(index: string) {
     const pageNum = parseInt(index);
 
     if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
     else {
-      const errorText = this.text.errorText.split('$page');
+      const errorText = this.i18n.errorText.split('$page');
       // eslint-disable-next-line no-alert
       alert(`${errorText[0]}${this.totalPages}${errorText[1]}`);
     }

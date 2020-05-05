@@ -1,6 +1,6 @@
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { ResolvedHopeThemeConfig } from '../types';
-import pluginConfig from './lib/plugins';
+import getPlugin from './lib/plugins';
 
 interface ThemeOptionAPI extends PluginOptionAPI {
   extend?: string;
@@ -41,7 +41,6 @@ export = (
 ): ThemeOptionAPI => {
   const config: ThemeOptionAPI = {};
 
-  // 添加文章页面
   if (themeConfig.blog !== false)
     config.additionalPages = [
       {
@@ -52,13 +51,11 @@ export = (
         path: '/timeline/',
         frontmatter: { layout: 'Blog' }
       }
-    ] as any;
+    ];
 
-  // 别名配置
   config.alias = getAlias(themeConfig, ctx);
 
-  // 插件选项
-  config.plugins = pluginConfig(themeConfig);
+  config.plugins = getPlugin(themeConfig);
 
   return config;
 };

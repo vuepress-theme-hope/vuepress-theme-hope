@@ -12,8 +12,7 @@ import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component({ components: { TimeIcon } })
 export default class ReadTimeInfo extends Vue {
-  /** 发表时间 */
-  private get readtime() {
+  private get readtime(): string {
     const { readingTime } = this.$page;
 
     return i18n.getLocale(this.$lang).readingTime.time(readingTime);

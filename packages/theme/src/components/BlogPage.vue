@@ -133,6 +133,7 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
       position sticky
       top ($navbarHeight + 1rem)
       flex 0 0 300px
+      margin-bottom 12px
 
       @media (max-width: $MQNormal)
         display none

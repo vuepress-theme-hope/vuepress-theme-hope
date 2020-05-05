@@ -15,14 +15,12 @@ export default class Valine extends Vue {
   @Prop({ type: Object, default: () => ({}) })
   private readonly valineConfig!: ValineOptions;
 
-  /** If Valine is enabled */
   private get valineEnable() {
     const { valineConfig } = this;
 
     return valineConfig && valineConfig.appId && valineConfig.appKey;
   }
 
-  /** Whether to display comment */
   private get commentDisplay() {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.comment !== false;

@@ -12,7 +12,6 @@ import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component({ components: { WordIcon } })
 export default class ReadTimeInfo extends Vue {
-  /** 发表时间 */
   private get words() {
     const { readingTime } = this.$page;
 

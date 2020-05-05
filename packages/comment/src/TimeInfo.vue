@@ -11,7 +11,6 @@ import CalendarIcon from '@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue'
 
 @Component({ components: { CalendarIcon } })
 export default class TimeInfo extends Vue {
-  /** 发表时间 */
   private get time() {
     const { time } = this.$frontmatter;
 

@@ -18,6 +18,7 @@ import ArticleItem from '@theme/components/ArticleItem.vue';
 import { ArticleMixin } from '@theme/util/articleMixin';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import { PageComputed } from 'vuepress-types';
+import { Route } from 'vue-router';
 import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 import { generatePagination } from '@theme/util/article';
 
@@ -55,7 +56,8 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   /** 更新文章列表 */
   private getArticleList() {
     try {
-      return this.$pagination ? this.$pagination.pages : this.$articles;
+      // eslint-disable-next-line no-underscore-dangle
+      return this.$pagination ? this.$pagination._matchedPages : this.$articles;
     } catch (err) {
       return this.$articles;
     }
@@ -67,10 +69,12 @@ export default class ArticleList extends Mixins(ArticleMixin) {
 
   /** 在路径发生改变时更新文章列表 */
   @Watch('$route')
-  private onRouteUpdate() {
-    this.articleList = this.getArticleList();
-    // 将页面重置为 1
-    this.currentPage = 1;
+  private onRouteUpdate(to: Route, from: Route) {
+    if (to.$route.path !== from.$route.path) {
+      this.articleList = this.getArticleList();
+      // 将页面重置为 1
+      this.currentPage = 1;
+    }
   }
 
   @Watch('currentPage')

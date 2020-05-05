@@ -7,7 +7,7 @@
         :key="tag"
         class="tag"
         :class="{ clickable, [`tag${index % 9}`]: true }"
-        @click="clickTag(tag)"
+        @click="navigate(tag)"
         v-text="tag"
       />
     </ul>
@@ -24,7 +24,6 @@ export default class TagInfo extends Vue {
   @Prop({ type: Array, default: () => [] })
   private readonly tags!: string[];
 
-  /** 标签 */
   private get $tags() {
     if (this.tags.length !== 0) return this.tags;
 
@@ -41,8 +40,7 @@ export default class TagInfo extends Vue {
     return this.$themeConfig.blog !== false;
   }
 
-  // Navigate when clicking tags
-  private clickTag(tagName: string) {
+  private navigate(tagName: string) {
     const path = `/tag/${tagName}/`;
     if (this.$route.path !== path) this.$router.push(path);
   }

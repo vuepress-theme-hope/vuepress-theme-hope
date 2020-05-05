@@ -62,8 +62,8 @@ export default class BlogPage extends Mixins(TimelineMixin) {
     &:hover
       box-shadow 0 4px 16px 0 var(--card-shadow-color)
 
-  .blog-detail-wrapper &
-    margin 0
+  .page .blog-detail-wrapper &
+    margin-top 0
 
   .title
     cursor pointer
