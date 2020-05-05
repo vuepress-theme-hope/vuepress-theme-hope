@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0-rc.18](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.17...v0.1.0-rc.18) (2020-05-05)
+
+### Bug Fixes
+
+- **theme:** fix tag and category panination issue ([920d171](https://github.com/Mister-Hope/vuepress-theme-hope/commit/920d171d170040f10390eb409fe3e7c675115a15))
+
+### Features
+
+- improve colors ([24a7c83](https://github.com/Mister-Hope/vuepress-theme-hope/commit/24a7c83a506380e701bcacc9e751fff5816ee291))
+
+- style update ([9bc857d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9bc857d9ca02c4b49e208cccb161b91ae5888a42))
+
 ## [0.1.0-rc.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.16...v0.1.0-rc.17) (2020-04-30)
 
 ### Bug Fixes

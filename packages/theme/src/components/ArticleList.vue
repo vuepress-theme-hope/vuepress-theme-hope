@@ -3,7 +3,7 @@
     <ModuleTransition
       v-for="(article, index) in articles"
       :key="article.path"
-      :delay="index * 0.08"
+      :delay="index * 0.04"
     >
       <ArticleItem :article="article" />
     </ModuleTransition>
@@ -70,7 +70,7 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   /** 在路径发生改变时更新文章列表 */
   @Watch('$route')
   private onRouteUpdate(to: Route, from: Route) {
-    if (to.$route.path !== from.$route.path) {
+    if (to.path !== from.path) {
       this.articleList = this.getArticleList();
       // 将页面重置为 1
       this.currentPage = 1;
