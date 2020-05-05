@@ -48,7 +48,7 @@ The theme largely maintain the style of `@vuepress/theme-default`, while theme h
 - Dark mode, allows you to switch manually or apply your color configuration automatically
 - Added PWA support and full-screen buttons to enhance immersion
 - Added more grammar to Markdown to enrich documents and blog writing
-- Add visitor statistics, author and date display for all pages
+- Add pageview statistics, author and date display for all pages
 - Add article comment function
 - Added icon support in multiple places
 - Allows to customize the footer of each article

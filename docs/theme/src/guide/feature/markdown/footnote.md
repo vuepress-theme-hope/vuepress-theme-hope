@@ -1,6 +1,9 @@
 ---
 icon: footnote
 category: markdown
+tags:
+  - feature
+  - markdown
 ---
 
 # 脚注

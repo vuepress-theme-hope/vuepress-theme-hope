@@ -1,6 +1,8 @@
 ---
 icon: page
 category: layout
+tags:
+  - layout
 ---
 
 # Page

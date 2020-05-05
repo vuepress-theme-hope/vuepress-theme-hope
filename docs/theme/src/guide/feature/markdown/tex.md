@@ -1,6 +1,9 @@
 ---
 icon: tex
 category: markdown
+tags:
+  - feature
+  - markdown
 ---
 
 # Tex 语法支持

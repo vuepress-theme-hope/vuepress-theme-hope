@@ -2,7 +2,7 @@
 icon: sidebar
 category: layout
 tags:
-  - enhance
+  - sidebar
   - layout
 ---
 

@@ -1,6 +1,6 @@
 ---
 icon: infofill
-category: function
+category: feature
 tags:
   - page-info
   - function

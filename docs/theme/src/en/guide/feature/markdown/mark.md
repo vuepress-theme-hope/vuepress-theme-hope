@@ -1,5 +1,8 @@
 ---
 icon: writefill
+tags:
+  - feature
+  - markdown
 ---
 
 # Markup

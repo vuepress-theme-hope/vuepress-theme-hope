@@ -1,6 +1,6 @@
 ---
 icon: skinfill
-category: function
+category: feature
 tags:
   - style
   - function

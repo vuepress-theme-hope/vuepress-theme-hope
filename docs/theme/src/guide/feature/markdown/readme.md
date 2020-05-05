@@ -1,5 +1,8 @@
 ---
 icon: markdown
+tags:
+  - feature
+  - markdown
 ---
 
 # Markdown 新语法

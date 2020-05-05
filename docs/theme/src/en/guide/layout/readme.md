@@ -1,9 +1,9 @@
 ---
 icon: layout
+category: layout
 tags:
   - intro
   - layout
-category: layout
 ---
 
 # Layout

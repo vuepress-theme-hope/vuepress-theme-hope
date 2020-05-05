@@ -1,6 +1,6 @@
 ---
 icon: blog
-category: function
+category: feature
 tags:
   - blog
   - function

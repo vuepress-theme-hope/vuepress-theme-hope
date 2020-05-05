@@ -1,10 +1,10 @@
 ---
 icon: blog
+category: layout
 tags:
   - home
   - blog
   - layout
-category: layout
 ---
 
 # 博客首页

@@ -1,6 +1,6 @@
 ---
 icon: lock
-category: function
+category: feature
 tags:
   - encrypt
   - function

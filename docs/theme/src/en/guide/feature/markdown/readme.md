@@ -1,5 +1,8 @@
 ---
 icon: markdown
+tags:
+  - feature
+  - markdown
 ---
 
 # New syntax in Markdown

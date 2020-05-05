@@ -1,6 +1,6 @@
 ---
 icon: extension
-category: function
+category: feature
 tags:
   - components
   - function

@@ -1,8 +1,8 @@
 ---
 title: 安装/使用
 icon: install
-tags: intro
 category: instruction
+tags: intro
 ---
 
 ## 在新项目中使用

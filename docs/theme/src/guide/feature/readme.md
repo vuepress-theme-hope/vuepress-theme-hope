@@ -1,6 +1,6 @@
 ---
 icon: discoverfill
-category: function
+category: feature
 tags:
   - intro
   - function

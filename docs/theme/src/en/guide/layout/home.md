@@ -1,9 +1,9 @@
 ---
 icon: homefill
+category: layout
 tags:
   - home
   - layout
-category: layout
 ---
 
 # Home Page

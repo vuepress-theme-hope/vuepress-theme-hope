@@ -1,6 +1,6 @@
 ---
 icon: typescript
-category: function
+category: feature
 tags:
   - typescript
   - function

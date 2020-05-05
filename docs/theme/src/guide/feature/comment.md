@@ -1,6 +1,6 @@
 ---
 icon: commentfill
-category: function
+category: feature
 tags:
   - comment
   - function

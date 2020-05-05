@@ -1,6 +1,9 @@
 ---
 icon: align
 category: markdown
+tags:
+  - feature
+  - markdown
 ---
 
 # 自定义对齐

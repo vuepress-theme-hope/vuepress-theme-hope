@@ -1,17 +1,13 @@
 ---
 icon: infofill
-tags: intro
 category: instruction
+tags: intro
 ---
 
 # 介绍
 
 ::: tip
 如果您在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
-
-同时请注意，您应当已经熟悉 Vuepress 的默认主题，因为所有跟默认主题相关的内容都不会被介绍。
-
-如果您希望阅读 Vuepress 默认主题配置，请访问 [Vuepress 默认主题配置](https://v1.vuepress.vuejs.org/zh/theme/default-theme-config.html)
 :::
 
 ## 主题特点
@@ -23,7 +19,7 @@ category: instruction
 - [**页面**](layout/page.md)
 
   - [页面图标](layout/page.md#图标支持)
-  - [路径导航](layout/breadcrumb.md)
+  - [路径导航](layout/page.md#路径导航)
   - [文章信息展示](layout/page.md#文章信息展示)
     - 作者
     - 写作时间
@@ -38,13 +34,13 @@ category: instruction
 
 - [**新增特性**](feature/readme.md)
 
-  - [图标支持](feature/icon.md)
+  - [图标支持](feature/readme.md)
 
   - 主题模式
 
-    - [主题色切换](feature/themecolor.md)
-    - [深色模式](feature/darkmode.md)
-    - [全屏按钮](feature/fullscreen.md)
+    - [主题色切换](feature/theme.md#主题色)
+    - [深色模式](feature/theme.md#深色模式)
+    - [全屏按钮](feature/theme.md#全屏按钮)
 
   - [文章加密](feature/encrypt.md)
 

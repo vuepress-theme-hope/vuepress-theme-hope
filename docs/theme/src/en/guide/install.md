@@ -1,8 +1,8 @@
 ---
 title: Install / Usage
 icon: install
-tags: intro
 category: instruction
+tags: intro
 ---
 
 ## Use in new project

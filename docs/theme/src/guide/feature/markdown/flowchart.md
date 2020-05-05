@@ -1,6 +1,9 @@
 ---
 icon: flowchart
 category: markdown
+tags:
+  - feature
+  - markdown
 ---
 
 # 流程图支持

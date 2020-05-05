@@ -1,5 +1,8 @@
 ---
 icon: tex
+tags:
+  - feature
+  - markdown
 ---
 
 # Tex Support

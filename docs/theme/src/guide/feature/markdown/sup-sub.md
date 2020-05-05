@@ -1,6 +1,9 @@
 ---
 icon: superscript
 category: markdown
+tags:
+  - feature
+  - markdown
 ---
 
 # 上下角标

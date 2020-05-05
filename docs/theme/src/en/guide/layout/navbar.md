@@ -1,9 +1,9 @@
 ---
 icon: nav
-tags:
-  - enhance
-  - layout
 category: layout
+tags:
+  - navbar
+  - layout
 ---
 
 # NavBar
