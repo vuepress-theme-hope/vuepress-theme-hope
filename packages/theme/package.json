@@ -38,7 +38,7 @@
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-medium-zoom": "^1.4.1",
     "md5": "^2.2.1",
-    "moment": "^2.25.1",
+    "moment": "^2.25.3",
     "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-md-enhance": "^0.1.0-rc.17",
