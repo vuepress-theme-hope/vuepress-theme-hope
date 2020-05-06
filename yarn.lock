@@ -14735,10 +14735,10 @@ vuepress-plugin-typescript@^0.2.0:
   dependencies:
     ts-loader "^6.2.1"
 
-vuepress-types@0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/vuepress-types/-/vuepress-types-0.9.1.tgz#3ab15b0b7b9becc5568b3e10e345d09411f81777"
-  integrity sha512-TamhZm0SbqVn3RrvosowSyphGvfAgWy5AesWOYaHXg9uACRXrW1OpO3suwafaPWo0xqAveMG0+KsAEbCvfjSpQ==
+vuepress-types@0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/vuepress-types/-/vuepress-types-0.9.2.tgz#6305eafcb7b7b274c350b9f44f70be60e9da5124"
+  integrity sha512-gc3rTOd3UzSMj/Mu+XQAt1+Nn5FugwO2SeQ/r8yLHxyrSKsFXMjgQCIyXvHf61TBVB9VLs+xd//Pg51/+sMz7A==
   dependencies:
     "@types/express" "^4.17.1"
     "@types/markdown-it" "^0.0.8"
