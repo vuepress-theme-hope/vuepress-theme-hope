@@ -1,7 +1,7 @@
 <template>
   <div class="project-list">
     <div
-      v-for="(project, index) in projectConfig"
+      v-for="(project, index) in ($frontmatter.project || [])"
       :key="project.name"
       class="project"
       :class="`project${index}`"
@@ -29,10 +29,6 @@ import navigate from '@theme/util/navigate';
 
 @Component({ components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon } })
 export default class ProjectList extends Vue {
-  private get projectConfig() {
-    return this.$themeConfig.blog.project || {};
-  }
-
   private navigate(link: string) {
     navigate(link, this.$router, this.$route);
   }
