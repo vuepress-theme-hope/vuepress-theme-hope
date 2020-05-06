@@ -113,7 +113,7 @@ export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
     if (prevSticky && nextSticky)
       return prevSticky === nextSticky
         ? compareDate(prevTime, nextTime)
-        : prevSticky - nextSticky;
+        : nextSticky - prevSticky;
     if (prevSticky && !nextSticky) return -1;
     if (!prevSticky && nextSticky) return 1;
 

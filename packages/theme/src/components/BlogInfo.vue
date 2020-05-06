@@ -8,7 +8,7 @@
     <ModuleTransition :delay="0.04">
       <div class="sticky-article-wrapper">
         <div class="title" @click="$router.push('/article/')">
-          <ArticleIcon />
+          <ArticleIconFill />
           <span class="num">{{$articles.length}}</span>
           {{i18n.article}}
         </div>
@@ -65,7 +65,7 @@
 import { ArticleMixin, StickyMixin } from '@theme/util/articleMixin';
 import { Component, Mixins, Vue } from 'vue-property-decorator';
 import { capitalize, i18n } from '@mr-hope/vuepress-shared-utils';
-import ArticleIcon from '@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue';
+import ArticleIconFill from '@mr-hope/vuepress-shared-utils/icons/ArticleIconFill.vue';
 import ArticleList from '@theme/components/ArticleList.vue';
 import BloggerInfo from '@theme/components/BloggerInfo.vue';
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
@@ -78,7 +78,7 @@ import TimelineList from '@theme/components/TimelineList.vue';
 
 @Component({
   components: {
-    ArticleIcon,
+    ArticleIconFill,
     ArticleList,
     BloggerInfo,
     CategoryIcon,

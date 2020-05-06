@@ -56,10 +56,10 @@ Set the label of the current page
 
 ## sticky
 
-- Type: `boolean`
+- Type: `boolean | number`
 - Default: `false`
 
-Sets whether the current article is pinned in the list.
+Sets whether the current article is pinned in the list. When fill in with number, the ones which is greater will come first.
 
 ### article
 
@@ -87,19 +87,19 @@ Set a password for the current article.
 ## pageInfo
 
 - Type: `PageInfo[] | false`
-- Default value: Globally configured value (global default is `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`)
+- Default value: Globally configured value (global default is `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)
 
 The optional values and corresponding contents of `PageInfo` are as follows:
 
 | Item         | Corresponding Content | Page Front Matter Value              |
 | ------------ | --------------------- | ------------------------------------ |
-| `'Author'`   | Author                | author                               |
-| `'Time'`     | Writing Date          | time                                 |
-| `'Category'` | Category              | category                             |
-| `'Tag'`      | Tags                  | tags                                 |
-| `'ReadTime'` | Expect reading time   | N / A (automatically generated)      |
-| `'Word'`     | Word count            | N / A (automatically generated)      |
-| `'Visitor'`  | Visit Number          | visitor (only available with Valine) |
+| `'author'`   | Author                | author                               |
+| `'time'`     | Writing Date          | time                                 |
+| `'category'` | Category              | category                             |
+| `'tag'`      | Tags                  | tags                                 |
+| `'readTime'` | Expect reading time   | N / A (automatically generated)      |
+| `'word'`     | Word count            | N / A (automatically generated)      |
+| `'visitor'`  | Visit Number          | visitor (only available with Valine) |
 
 Set whether to show page details on the current page
 

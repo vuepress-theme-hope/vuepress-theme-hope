@@ -11,7 +11,7 @@ import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component({ components: { TimeIcon } })
-export default class ReadTimeInfo extends Vue {
+export default class ReadtimeInfo extends Vue {
   private get readtime(): string {
     const { readingTime } = this.$page;
 

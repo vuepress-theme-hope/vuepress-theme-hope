@@ -63,7 +63,8 @@ export default class TagList extends Vue {
     display inline-block
     position relative
     vertical-align middle
-    min-width 28px
+    min-width 24px
+    padding 3px 8px
     margin 4px 6px
     cursor pointer
     font-size 12px
@@ -72,7 +73,6 @@ export default class TagList extends Vue {
     box-shadow 0 1px 6px 0 var(--box-shadow-color)
     overflow hidden
     transition all 0.5s
-    padding 3px 8px
     color var(--white)
 
     &:hover

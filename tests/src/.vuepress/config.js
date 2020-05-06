@@ -83,7 +83,56 @@ module.exports = resolve({
         Zhihu: 'https://zhihu.com',
         Baidu: 'https://baidu.com',
         Github: 'https://github.com'
-      }
+      },
+      project: [
+        {
+          type: 'project',
+          name: 'vuepress-theme-hope',
+          link: 'https://github.com/mister-hope/vuepress-theme-hope',
+          cover: '/logo.png'
+        },
+        {
+          type: 'book',
+          name: 'markdown3',
+          desc: 'A display for markdown enhance.',
+          link: '/markdown.html'
+        },
+        {
+          type: 'article',
+          name: 'markdown2',
+          desc: 'A display for markdown enhance.',
+          link: '/markdown.html'
+        },
+        {
+          type: 'link',
+          name: 'markdown1',
+          desc: 'A display for markdown enhance.',
+          link: '/markdown.html'
+        },
+        {
+          type: 'project',
+          name: 'vuepress-theme-hope',
+          link: 'https://github.com/mister-hope/vuepress-theme-hope'
+        },
+        {
+          type: 'book',
+          name: 'markdown4',
+          desc: 'A display for markdown enhance.',
+          link: '/markdown.html'
+        },
+        {
+          type: 'article',
+          name: 'markdown5',
+          desc: 'A display for markdown enhance.',
+          link: '/markdown.html'
+        },
+        {
+          type: 'link',
+          name: 'markdown6',
+          desc: 'A display for markdown enhance.',
+          link: '/markdown.html'
+        }
+      ]
     },
 
     locales: {

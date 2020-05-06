@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-rc.19](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.18...v0.1.0-rc.19) (2020-05-05)
+
+### Bug Fixes
+
+- **theme:** fix articlelist issue ([37aaaef](https://github.com/Mister-Hope/vuepress-theme-hope/commit/37aaaef01fa2349c5443c6cdd1b70a3ab5a81f62))
+
 ## [0.1.0-rc.18](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.17...v0.1.0-rc.18) (2020-05-05)
 
 ### Bug Fixes

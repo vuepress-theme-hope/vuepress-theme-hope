@@ -32,13 +32,13 @@ The optional values ​​and corresponding contents of the entry are as follows
 
 | Entry        | Corresponding content  | page Front Matter value            |
 | ------------ | ---------------------- | ---------------------------------- |
-| `'Author'`   | author                 | author                             |
-| `'Time'`     | Writing Date           | time                               |
-| `'Category'` | Category               | category                           |
-| `'Tag'`      | tags                   | tags                               |
-| `'ReadTime'` | Estimated reading time | N / A (automatically generated)    |
-| `'Word'`     | Word count             | N / A (automatically generated)    |
-| `'Visitor'`  | Visits                 | visitor (only Valine is available) |
+| `'author'`   | author                 | author                             |
+| `'time'`     | Writing Date           | time                               |
+| `'category'` | Category               | category                           |
+| `'tag'`      | tags                   | tags                               |
+| `'readtime'` | Estimated reading time | N / A (automatically generated)    |
+| `'word'`     | Word count             | N / A (automatically generated)    |
+| `'visitor'`  | Visits                 | visitor (only Valine is available) |
 
 By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 

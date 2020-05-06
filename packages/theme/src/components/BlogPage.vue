@@ -13,6 +13,8 @@
             <h1 v-else>{{i18n.articleList}}</h1>
           </ModuleTransition>
 
+          <ProjectList v-if="$frontmatter.home" />
+
           <!-- 文章列表 -->
           <ModuleTransition :delay="0.24">
             <ArticleList v-if="displayArticles" :key="$route.path" />
@@ -42,7 +44,6 @@
 <script lang='ts'>
 import { ArticleMixin, StickyMixin } from '@theme/util/articleMixin';
 import { Component, Mixins, Vue } from 'vue-property-decorator';
-import { capitalize, i18n } from '@mr-hope/vuepress-shared-utils';
 import ArticleList from '@theme/components/ArticleList.vue';
 import BlogHero from '@theme/components/BlogHero.vue';
 import BlogInfo from '@theme/components/BlogInfo.vue';
@@ -50,9 +51,11 @@ import CategoryList from '@theme/components/CategoryList.vue';
 import ModuleTransition from '@theme/components/ModuleTransition.vue';
 import PageFooter from '@theme/components/PageFooter.vue';
 import Password from '@theme/components/Password.vue';
+import ProjectList from '@theme/components/ProjectList.vue';
 import TagList from '@theme/components/TagList.vue';
 import Timeline from '@theme/components/Timeline.vue';
 import TimelineList from '@theme/components/TimelineList.vue';
+import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component({
   components: {
@@ -63,6 +66,7 @@ import TimelineList from '@theme/components/TimelineList.vue';
     ModuleTransition,
     PageFooter,
     Password,
+    ProjectList,
     TagList,
     Timeline,
     TimelineList
@@ -86,10 +90,10 @@ export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
 
   /** 组件名称 */
   private get componentName() {
-    const pathName = capitalize(this.$route.path.split('/')[1]);
+    const pathName = this.$route.path.split('/')[1];
 
-    if (['Category', 'Tag'].includes(pathName)) return `${pathName}List`;
-    else if (pathName === 'Timeline') return pathName;
+    if (['category', 'tag'].includes(pathName)) return `${pathName}List`;
+    else if (pathName === 'timeline') return pathName;
 
     return '';
   }

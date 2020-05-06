@@ -80,3 +80,15 @@ The CSS style of the background image.
 - Type: `Record <string, string>`
 
 CSS style for home icon
+
+### Projects
+
+- Type: `ProjectOption[]`
+
+`ProjectOption` including this keys:
+
+- `type`: type of the project, you can choose from `'link' | 'project' | 'book' | 'article'`
+- `name`: required, project name
+- `link`: required, project link, fill in an external path or absolute path
+- `desc`: project description
+- `cover`: project cover, fill in an external path or absolute path

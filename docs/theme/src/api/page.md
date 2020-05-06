@@ -56,10 +56,10 @@ tags:
 
 ## sticky
 
-- 类型: `boolean`
+- 类型: `boolean | number`
 - 默认值: `false`
 
-设置当前文章是否在列表中置顶。
+设置当前文章是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
 
 ### article
 
@@ -91,19 +91,19 @@ tags:
 ## pageInfo
 
 - 类型: `PageInfo[] | false`
-- 默认值: 全局中配置的值 (全局默认为 `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`)
+- 默认值: 全局中配置的值 (全局默认为 `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)
 
 `PageInfo` 可选的值和对应内容如下:
 
 | 条目         | 对应内容     | 页面 Front Matter 值    |
 | ------------ | ------------ | ----------------------- |
-| `'Author'`   | 作者         | author                  |
-| `'Time'`     | 写作日期     | time                    |
-| `'Category'` | 分类         | category                |
-| `'Tag'`      | 标签         | tags                    |
-| `'ReadTime'` | 预计阅读时间 | N/A(自动生成)           |
-| `'Word'`     | 字数         | N/A(自动生成)           |
-| `'Visitor'`  | 访问量       | visitor(仅 Valine 可用) |
+| `'author'`   | 作者         | author                  |
+| `'time'`     | 写作日期     | time                    |
+| `'category'` | 分类         | category                |
+| `'tag'`      | 标签         | tags                    |
+| `'readtime'` | 预计阅读时间 | N/A(自动生成)           |
+| `'word'`     | 字数         | N/A(自动生成)           |
+| `'visitor'`  | 访问量       | visitor(仅 Valine 可用) |
 
 设置当前页面的文章信息内容
 

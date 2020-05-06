@@ -2,7 +2,7 @@
   <div class="page-title">
     <h1>{{ $page.title }}</h1>
     <div v-if="config" class="page-info">
-      <component :is="`${item}Info`" v-for="item in config" :key="$route.path + item" />
+      <component :is="`${item}-info`" v-for="item in config" :key="$route.path + item" />
     </div>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default class PageInfo extends Vue {
       ? false
       : Array.isArray(themeConfig)
       ? themeConfig
-      : ['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime'];
+      : ['author', 'visitor', 'time', 'category', 'tag', 'readTime'];
   }
 }
 </script>

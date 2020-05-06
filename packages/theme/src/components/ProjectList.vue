@@ -1,0 +1,120 @@
+<template>
+  <div class="project-list">
+    <div
+      v-for="(project, index) in projectConfig"
+      :key="project.name"
+      class="project"
+      :class="`project${index}`"
+      @click="navigate(project.link)"
+    >
+      <div
+        v-if="project.cover"
+        class="cover"
+        :style="`background: url(${$withBase(project.cover)}) center/cover no-repeat;`"
+      />
+      <component :is="`${project.type}-icon`" />
+      <div class="name">{{project.name}}</div>
+      <div class="desc">{{project.desc}}</div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import ArticleIcon from '@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue';
+import BookIcon from '@mr-hope/vuepress-shared-utils/icons/BookIcon.vue';
+import LinkIcon from '@mr-hope/vuepress-shared-utils/icons/LinkIcon.vue';
+import ProjectIcon from '@mr-hope/vuepress-shared-utils/icons/ProjectIcon.vue';
+import navigate from '@theme/util/navigate';
+
+@Component({ components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon } })
+export default class ProjectList extends Vue {
+  private get projectConfig() {
+    return this.$themeConfig.blog.project || {};
+  }
+
+  private navigate(link: string) {
+    navigate(link, this.$router, this.$route);
+  }
+}
+</script>
+
+<style lang="stylus">
+.project-list
+  position relative
+  display flex
+  justify-content flex-start
+  align-content stretch
+  align-items stretch
+  flex-wrap wrap
+  align-items center
+  font-family sans-serif
+  margin-bottom 12px
+
+  .project
+    position relative
+    width calc(33% - 40px)
+    background-color var(--grey14)
+    border-radius 8px
+    margin 6px 8px
+    padding 12px
+    transition all 0.5s
+    align-self stretch
+
+    @media (max-width: $MQMobileNarrow)
+      width calc(50% - 40px)
+
+    @media (min-width: $MQMobile)
+      width calc(50% - 40px)
+
+    @media (min-width: $MQNarrow)
+      width calc(33% - 40px)
+
+    @media (min-width: $MQWide)
+      width calc(25% - 40px)
+
+    &:hover
+      cursor pointer
+      transform scale(0.94, 0.94)
+
+    .cover
+      content ''
+      opacity 0.5
+      top 0
+      left 0
+      bottom 0
+      right 0
+      position absolute
+      z-index 1
+
+    .icon
+      position relative
+      z-index 2
+      float right
+      width 20px
+      height 20px
+
+    .name
+      position relative
+      z-index 2
+      color var(--grey3)
+      font-size 16px
+      font-weight 600px
+
+    .desc
+      position relative
+      z-index 2
+      margin 6px 0
+      color var(--light-grey)
+      font-size 13px
+
+@require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
+
+for $color, $index in $colors
+  .project-list .project{$index}
+    .theme-light &, &
+      background-color lighten($color, 90%)
+
+    .theme-dark &, &
+      background-color darken($color, 75%)
+</style>

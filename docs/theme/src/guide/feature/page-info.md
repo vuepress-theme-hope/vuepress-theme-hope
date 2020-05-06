@@ -32,13 +32,13 @@ tags:
 
 | 条目         | 对应内容     | 页面 Front Matter 值    | 主题设置的配置项 |
 | ------------ | ------------ | ----------------------- | ---------------- |
-| `'Author'`   | 作者         | author                  | author           |
-| `'Time'`     | 写作日期     | time                    | N/A              |
-| `'Category'` | 分类         | category                | N/A              |
-| `'Tag'`      | 标签         | tags                    | N/A              |
-| `'ReadTime'` | 预计阅读时间 | N/A(自动生成)           | N/A              |
-| `'Word'`     | 字数         | N/A(自动生成)           | N/A              |
-| `'Visitor'`  | 访问量       | visitor(仅 Valine 可用) | comment.visitor  |
+| `'author'`   | 作者         | author                  | author           |
+| `'time'`     | 写作日期     | time                    | N/A              |
+| `'category'` | 分类         | category                | N/A              |
+| `'tag'`      | 标签         | tags                    | N/A              |
+| `'readtime'` | 预计阅读时间 | N/A(自动生成)           | N/A              |
+| `'word'`     | 字数         | N/A(自动生成)           | N/A              |
+| `'visitor'`  | 访问量       | visitor(仅 Valine 可用) | comment.visitor  |
 
 默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
 

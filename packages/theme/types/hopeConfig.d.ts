@@ -55,6 +55,20 @@ type BlogMedia =
   | 'Youtube'
   | 'Zhihu';
 
+/** 项目配置 */
+export interface ProjectOptions {
+  /** 项目类型 */
+  type: 'article' | 'book' | 'link' | 'project';
+  /** 项目名称 */
+  name: string;
+  /** 项目描述 */
+  desc?: string;
+  /** 项目封面 */
+  cover?: string;
+  /** 项目链接 */
+  link: string;
+}
+
 /** 博客选项 */
 export type BlogOptions = Partial<{
   /** 博主名称 */
@@ -69,6 +83,8 @@ export type BlogOptions = Partial<{
   links: Partial<Record<BlogMedia, string>>;
   /** 时间轴自定义文字 */
   timeline: string;
+  /** 项目配置 */
+  project: ProjectOptions[];
 }>;
 
 /** vuepress-theme-hope 主题配置 */
