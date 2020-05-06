@@ -37,6 +37,6 @@
   "peerDependencies": {
     "typescript": "^3.8.3",
     "vue-router": "^3.1.6",
-    "vuepress-types": "^0.9.1"
+    "vuepress-types": "^0.9.2"
   }
 }

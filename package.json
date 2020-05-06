@@ -31,8 +31,8 @@
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:clean": "lerna clean",
     "package:bootstrap": "node scripts/bootstrap.js",
-    "packages:update": "lerna exec -- ncu -u",
-    "packages:check-update": "lerna exec -- ncu"
+    "packages:update": "lerna exec -- ncu -u --timeout 600000 && ncu -u --timeout 600000",
+    "packages:check-update": "lerna exec -- ncu --timeout 600000 && ncu --timeout 600000"
   },
   "devDependencies": {
     "@types/chai": "4.2.11",

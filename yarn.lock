@@ -2468,26 +2468,34 @@
     "@vssue/utils" "^1.4.0"
     axios "^0.18.1"
 
-"@vssue/api-gitea-v1@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@vssue/api-gitea-v1/-/api-gitea-v1-1.4.2.tgz#78823d7130a4ddc172df327d5711a8993bc1d299"
-  integrity sha512-zluQMBkxyFYAnDss+wzo1D4A7oUrd1i94iMYcS45pd7H1x/hZpQAVXRh79fXRW31GaC9pt3g1bsS1zOIEMnTRg==
+"@vssue/api-gitea-v1@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@vssue/api-gitea-v1/-/api-gitea-v1-1.4.4.tgz#a3f4f82646fae33be994c4b71b6ab72dafea8ac2"
+  integrity sha512-1PXx+c0omA+lx4IPlaPxEDifcc9zGTT2lU/9AO18iEsAE0dWDWIMyl+O6NpnCN2SYsqQ/AuPlqWde/j66nNXtA==
   dependencies:
     "@vssue/utils" "^1.4.0"
     axios "^0.18.1"
 
-"@vssue/api-gitee-v5@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@vssue/api-gitee-v5/-/api-gitee-v5-1.4.0.tgz#cbec72a70fcecf15eec1f99b8b4bf2d3da0a09fa"
-  integrity sha512-Ydf7iYCmDg3JUqiA11YRCbQfI3rAd5xj5b03wEh86LbeTrzzknN3pN1N+epm53lCns5WgdQoFlGtiTHMV3YXLg==
+"@vssue/api-gitee-v5@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@vssue/api-gitee-v5/-/api-gitee-v5-1.4.4.tgz#c6901180123a8584ea7e4fffec34f392d7057ef5"
+  integrity sha512-fQ4dt7H0lb770jZfga7ZkrdRv5wFXjcA+wyJekq2waS9pJvgHcJHmIHjqB4FiFsano0i9UBiP7qEXdTOyaR2Xg==
   dependencies:
     "@vssue/utils" "^1.4.0"
     axios "^0.18.1"
 
-"@vssue/api-github-v3@^1.1.2", "@vssue/api-github-v3@^1.4.3":
+"@vssue/api-github-v3@^1.1.2":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@vssue/api-github-v3/-/api-github-v3-1.4.3.tgz#c441036dd99463573d1b99c6d91eaa5e5920fabe"
   integrity sha512-auwqdvMaRrGJ8sTkDx37vT6rLwHulIQUjAtPoYYv55ebuLeSfgMl2WuBPf5i+921IiCEnplVRkRPgJcn8tGs+Q==
+  dependencies:
+    "@vssue/utils" "^1.4.0"
+    axios "^0.18.1"
+
+"@vssue/api-github-v3@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@vssue/api-github-v3/-/api-github-v3-1.4.4.tgz#e32ed6d5910bb87c327de8576c107ee7e53bb6db"
+  integrity sha512-/ZQwO+/XgHz7hnVX6zLIWA0L1fmI4LBzQoRp1J56tonH6gbDpvl/VZ8VHIcSldHnpEsjf8wYmbIEz8rJd7jG2Q==
   dependencies:
     "@vssue/utils" "^1.4.0"
     axios "^0.18.1"
@@ -2516,12 +2524,19 @@
     date-fns "^1.29.0"
     qs "^6.6.0"
 
-"@vssue/vuepress-plugin-vssue@^1.2.0", "@vssue/vuepress-plugin-vssue@^1.4.3":
+"@vssue/vuepress-plugin-vssue@^1.2.0":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@vssue/vuepress-plugin-vssue/-/vuepress-plugin-vssue-1.4.3.tgz#37bdb079b750e998591eb94b1e94374c0121c227"
   integrity sha512-ZzfmGhz0Pn0T56j4DZf+HUC6xJ4opZ2CMT9TJFg9VeU83DuqunWHbji878Mtxz5beUn0rv3FXthjJ2KWHIGC6g==
   dependencies:
     vssue "^1.4.3"
+
+"@vssue/vuepress-plugin-vssue@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@vssue/vuepress-plugin-vssue/-/vuepress-plugin-vssue-1.4.4.tgz#63b1f4a9ebdfd3bde9f28ab028047732109cc079"
+  integrity sha512-xMZbmWY6OZ7LKwQbguXn+gg/9/xXWeHjEeBdKOjkeUUBemwuyZbm9s73OLrk8hTLGeevecfBuSNnoUA98Dt/2A==
+  dependencies:
+    vssue "^1.4.4"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
@@ -14530,6 +14545,17 @@ vssue@^1.4.3:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.3.tgz#861203a95e6b60fe2af661a07d800c0d51965e13"
   integrity sha512-xGnsLahqREumXgHnZ92MzNbIfwYqz8fZUQVGTe5/b2tCWsF5pFhO51fv4FVVDvVUwF6NsT3Kzy4HTVvJK2at4A==
+  dependencies:
+    "@vssue/utils" "^1.4.0"
+    github-markdown-css "^3.0.1"
+    vue "^2.6.10"
+    vue-i18n "^8.11.2"
+    vue-property-decorator "^8.1.1"
+
+vssue@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.4.tgz#2a342698b430aaf24019ad6ceaa389cfc3df2f0d"
+  integrity sha512-f+FwS4eFurR+YISeTRfFW2+b/48MYNgerq2pk1QbtYPYI7DIZH7wSIj/S/f+wfxolsyA+45Bx86vYEtwD8xT0Q==
   dependencies:
     "@vssue/utils" "^1.4.0"
     github-markdown-css "^3.0.1"
