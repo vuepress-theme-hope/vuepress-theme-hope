@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-shared-utils",
-  "version": "0.1.0-rc.20",
+  "version": "0.1.0-rc.21",
   "description": "Shared utils for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "src/index.ts",
