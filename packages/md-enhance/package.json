@@ -4,6 +4,13 @@
   "description": "markdown enhancement for vuepress",
   "main": "src/index.js",
   "types": "types/index.d.ts",
+  "keywords": [
+    "vuepress-plugin",
+    "markdown",
+    "vuepress",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
   "scripts": {
     "test:unit": "vue-cli-service test:unit test/",
     "test": "mocha -r ts-node/register test/unit/*.ts",
@@ -13,15 +20,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/md-enhance"
   },
-  "keywords": [
-    "vuepress-plugin",
-    "markdown",
-    "vuepress",
-    "vuepress-theme-hope",
-    "mr-hope"
-  ],
   "author": {
     "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",

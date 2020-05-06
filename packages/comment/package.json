@@ -4,6 +4,14 @@
   "description": "A simple Comment plugin",
   "main": "src/index.js",
   "types": "types/index.d.ts",
+  "keywords": [
+    "vuepress-plugin",
+    "comment",
+    "vuepress-theme-hope",
+    "vuepress-blog",
+    "vuepress",
+    "mr-hope"
+  ],
   "scripts": {
     "test": "mocha -r ts-node/register test/unit/*.ts",
     "test:serve": "vuepress dev test/demo",
@@ -15,16 +23,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/comment"
   },
-  "keywords": [
-    "vuepress-plugin",
-    "comment",
-    "vuepress-theme-hope",
-    "vuepress-blog",
-    "vuepress",
-    "mr-hope"
-  ],
   "author": {
     "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",

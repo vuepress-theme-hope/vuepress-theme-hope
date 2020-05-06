@@ -8,7 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/theme-types"
   },
   "keywords": [
     "vuepress-theme",

@@ -3,13 +3,6 @@
   "version": "0.1.0-rc.21",
   "description": "components plugin for vuepress-theme-hope",
   "main": "src/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
-  },
   "keywords": [
     "vuepress-plugin",
     "components",
@@ -17,6 +10,14 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/components"
+  },
   "author": {
     "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",

@@ -4,6 +4,11 @@
   "description": "Shared utils for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "src/index.ts",
+  "keywords": [
+    "vuepress-theme-hope",
+    "vuepress",
+    "mr-hope"
+  ],
   "scripts": {
     "test:unit": "vue-cli-service test:unit test/",
     "test": "mocha -r ts-node/register test/unit/*.ts"
@@ -13,13 +18,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git"
+    "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/shared-utils"
   },
-  "keywords": [
-    "vuepress-theme-hope",
-    "vuepress",
-    "mr-hope"
-  ],
   "author": {
     "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",

@@ -4,20 +4,23 @@
   "description": "a light vuepress theme",
   "main": "src/index.js",
   "types": "types/index.d.ts",
+  "keywords": [
+    "vuepress-theme",
+    "vuepress",
+    "vuepress-blog",
+    "vuepress-theme-blog",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
   "scripts": {
     "test:unit": "vue-cli-service test:unit test/",
     "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git"
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/theme"
   },
-  "keywords": [
-    "vuepress-theme",
-    "vuepress",
-    "vuepress-theme-hope",
-    "mr-hope"
-  ],
   "author": {
     "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",

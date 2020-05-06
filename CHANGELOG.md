@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-rc.21](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.20...v0.1.0-rc.21) (2020-05-06)
+
+### Bug Fixes
+
+- **theme:** fix project config ([d46bf35](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d46bf35256167fa579f91605c71b185a86a86f08))
+
 ## [0.1.0-rc.19](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.18...v0.1.0-rc.19) (2020-05-05)
 
 ### Bug Fixes
