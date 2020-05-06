@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "0.1.0-rc.19",
+  "version": "0.1.0-rc.20",
   "description": "components plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "publishConfig": {
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.19",
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.20",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "5.0.2",

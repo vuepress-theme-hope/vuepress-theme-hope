@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "0.1.0-rc.19",
+  "version": "0.1.0-rc.20",
   "description": "a light vuepress theme",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -29,11 +29,11 @@
   },
   "homepage": "https://vuepress-theme.mrhope.site",
   "dependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^0.1.0-rc.19",
-    "@mr-hope/vuepress-plugin-components": "^0.1.0-rc.19",
-    "@mr-hope/vuepress-plugin-pwa": "^0.1.0-rc.19",
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.19",
-    "@mr-hope/vuepress-theme-types": "^0.1.0-rc.19",
+    "@mr-hope/vuepress-plugin-comment": "^0.1.0-rc.20",
+    "@mr-hope/vuepress-plugin-components": "^0.1.0-rc.20",
+    "@mr-hope/vuepress-plugin-pwa": "^0.1.0-rc.20",
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.20",
+    "@mr-hope/vuepress-theme-types": "^0.1.0-rc.20",
     "@types/md5": "^2.2.0",
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-medium-zoom": "^1.4.1",
@@ -41,7 +41,7 @@
     "moment": "^2.25.3",
     "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-copyright": "^1.0.2",
-    "vuepress-plugin-md-enhance": "^0.1.0-rc.19",
+    "vuepress-plugin-md-enhance": "^0.1.0-rc.20",
     "vuepress-plugin-named-chunks": "^1.1.2",
     "vuepress-plugin-typescript": "^0.2.0"
   },
