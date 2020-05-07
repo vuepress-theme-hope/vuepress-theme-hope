@@ -24,7 +24,7 @@
       <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
     </router-link>
 
-    <p v-else :class="{ open }" class="sidebar-heading" @click="$emit('toggle')">
+    <p v-else :class="{ clickable: item.collapsable, open }" class="sidebar-heading" @click="$emit('toggle')">
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
       <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />

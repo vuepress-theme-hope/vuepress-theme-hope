@@ -71,6 +71,10 @@ export default class Home extends Vue {
   margin 0px auto
   display block
 
+  @media (max-width: $MQMobileNarrow)
+    padding-left 1.5rem
+    padding-right 1.5rem
+
   .hero
     text-align center
 
@@ -80,17 +84,30 @@ export default class Home extends Vue {
       display block
       margin 3rem auto 1.5rem
 
+      @media (max-width: $MQMobileNarrow)
+        max-height 210px
+        margin 2rem auto 1.2rem
+
     h1
       font-size 3rem
 
+      @media (max-width: $MQMobileNarrow)
+        font-size 2rem
+
     h1, .description, .action
       margin 1.8rem auto
+
+      @media (max-width: $MQMobileNarrow)
+        margin 1.2rem auto
 
     .description
       max-width 35rem
       font-size 1.6rem
       line-height 1.3
       color var(--text-color-l40)
+
+      @media (max-width: $MQMobileNarrow)
+        font-size 1.2rem
 
     .action-button
       display inline-block
@@ -103,79 +120,52 @@ export default class Home extends Vue {
       box-sizing border-box
       border-bottom 1px solid var(--accent-color-d10)
 
+      @media (max-width: $MQMobileNarrow)
+        padding 0.6rem 1.2rem
+        font-size 1rem
+
       &:hover
         background-color var(--accent-color-l10)
 
   .features
-    border-top 1px solid $borderColor
-    padding 1.2rem 0
-    margin-top 2.5rem
     display flex
     flex-wrap wrap
+    justify-content space-between
     align-items flex-start
     align-content stretch
-    justify-content space-between
+    padding 1.2rem 0
+    margin-top 2.5rem
+    border-top 1px solid $borderColor
 
-  .feature
-    flex-grow 1
-    flex-basis 30%
-    max-width 30%
-    transition all 0.5s
-    padding 0 1.5%
-
-    &.link
-      cursor pointer
-
-    &:hover
-      transform scale(1.05)
-      box-shadow 0 2px 12px 0 var(--card-shadow-color)
-
-    &.link h2:hover
-      color var(--accent-color)
-
-    h2
-      font-size 1.4rem
-      font-weight 500
-      border-bottom none
-      padding-bottom 0
-      color var(--text-color-l10)
-
-    p
-      color var(--text-color-l25)
-
-@media (max-width: $MQMobile)
-  .home
-    .features
+    @media (max-width: $MQMobile)
       flex-direction column
+      align-items stretch
 
     .feature
-      max-width 100%
+      flex-basis calc(33% - 5rem)
+      transition all 0.5s
       padding 0 2.5rem
 
-@media (max-width: $MQMobileNarrow)
-  .home
-    padding-left 1.5rem
-    padding-right 1.5rem
+      &.link
+        cursor pointer
 
-    .hero
-      img
-        max-height 210px
-        margin 2rem auto 1.2rem
+      &:hover
+        transform scale(1.05)
+        box-shadow 0 2px 12px 0 var(--card-shadow-color)
 
-      h1
-        font-size 2rem
+      &.link h2:hover
+        color var(--accent-color)
 
-      h1, .description, .action
-        margin 1.2rem auto
-
-      .description
-        font-size 1.2rem
-
-      .action-button
-        font-size 1rem
-        padding 0.6rem 1.2rem
-
-    .feature
       h2
-        font-size 1.25rem
+        font-size 1.4rem
+        font-weight 500
+        border-bottom none
+        padding-bottom 0
+        color var(--text-color-l10)
+
+        @media (max-width: $MQMobileNarrow)
+          font-size 1.25rem
+
+      p
+        color var(--text-color-l25)
 </style>

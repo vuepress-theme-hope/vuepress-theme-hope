@@ -71,7 +71,7 @@ export default class ProjectList extends Vue {
 
     &:hover
       cursor pointer
-      transform scale(0.94, 0.94)
+      transform scale(0.98, 0.98)
 
     .cover
       content ''
@@ -111,6 +111,6 @@ for $color, $index in $colors
     .theme-light &, &
       background-color lighten($color, 90%)
 
-    .theme-dark &, &
+    .theme-dark &
       background-color darken($color, 75%)
 </style>

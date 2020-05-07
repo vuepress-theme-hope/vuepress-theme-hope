@@ -1,11 +1,28 @@
 <template>
-  <div :class="{ open }" class="dropdown-wrapper" @focusout="close(true)">
-    <button class="dropdown-title" type="button" :aria-label="dropdownAriaLabel" @click="toggle">
+  <div class="dropdown-wrapper" :class="{ open }">
+    <button
+      class="dropdown-title"
+      type="button"
+      :aria-label="dropdownAriaLabel"
+      @click="handleDropdown"
+    >
       <span class="title">
         <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
         {{ item.text }}
       </span>
-      <span :class="open ? 'down' : 'right'" class="arrow" />
+      <span class="arrow down" />
+    </button>
+    <button
+      class="mobile-dropdown-title"
+      type="button"
+      :aria-label="dropdownAriaLabel"
+      @click="setOpen(!open)"
+    >
+      <span class="title">
+        <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
+        {{ item.text }}
+      </span>
+      <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
     <DropdownTransition>
@@ -28,7 +45,7 @@
                 @focusout="
                   isLastItemOfArray(childSubItem, subItem.items) &&
                     isLastItemOfArray(subItem, item.items) &&
-                    close()
+                    setOpen(false)
                 "
               />
             </li>
@@ -37,7 +54,7 @@
           <NavLink
             v-else
             :item="subItem"
-            @focusout="isLastItemOfArray(subItem, item.items) && close()"
+            @focusout="isLastItemOfArray(subItem, item.items) && setOpen(false)"
           />
         </li>
       </ul>
@@ -56,13 +73,7 @@ export default class DropdownLink extends Vue {
   @Prop({ type: Object, required: true })
   private readonly item!: NavBarConfigItem;
 
-  @Prop({ type: Boolean, default: false })
-  private readonly inSidebar!: boolean;
-
   private open = false;
-
-  /** 是否是移动设备 */
-  private isMobile = false;
 
   private get dropdownAriaLabel() {
     return this.item.ariaLabel || this.item.text;
@@ -74,24 +85,19 @@ export default class DropdownLink extends Vue {
     return iconPrefix === '' ? '' : iconPrefix || 'icon-';
   }
 
-  private toggle(event: any) {
-    const isButton = event.detail === 0;
-
-    if (this.inSidebar || this.isMobile || isButton) this.open = !this.open;
+  private setOpen(value: boolean) {
+    this.open = value;
   }
 
-  private close(judge: boolean) {
-    if (!judge || (judge && this.isMobile)) this.open = false;
+  handleDropdown(event: any) {
+    const isTriggerByTab = event.detail === 0;
+    if (isTriggerByTab) this.setOpen(!this.open);
   }
 
   private isLastItemOfArray(item: NavBarConfigItem, array: NavBarConfigItem[]) {
     if (Array.isArray(array)) return item === array[array.length - 1];
 
     return false;
-  }
-
-  private mounted() {
-    this.isMobile = 'ontouchstart' in document.documentElement;
   }
 
   @Watch('$route')
@@ -127,6 +133,15 @@ export default class DropdownLink extends Vue {
       vertical-align middle
       margin-top -1px
       margin-left 0.4rem
+
+  .mobile-dropdown-title
+    @extend .dropdown-title
+    display none
+    font-weight 600
+
+    font-size inherit
+      &:hover
+        color var(--accent-color)
 
   .nav-dropdown
     .dropdown-item
@@ -182,6 +197,10 @@ export default class DropdownLink extends Vue {
       margin-bottom 0.5rem
 
     .dropdown-title
+      display none
+
+    .mobile-dropdown-title
+      display block
       font-weight 600
       font-size inherit
       color var(--text-color)
@@ -214,17 +233,6 @@ export default class DropdownLink extends Vue {
     &:hover .nav-dropdown, &.open .nav-dropdown
       // override the inline style.
       display block !important
-
-    .dropdown-title
-      &:hover
-        var(--accent-color)
-
-      .arrow
-        // make the arrow always down at desktop
-        border-left 4px solid transparent
-        border-right 4px solid transparent
-        border-top 6px solid var(--arrow-bg-color)
-        border-bottom 0
 
     .nav-dropdown
       display none

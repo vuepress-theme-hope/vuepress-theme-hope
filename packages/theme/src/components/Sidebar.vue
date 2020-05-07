@@ -7,7 +7,7 @@
 
     <slot name="top" />
 
-    <NavLinks :in-sidebar="true" />
+    <NavLinks />
 
     <slot name="center" />
 
