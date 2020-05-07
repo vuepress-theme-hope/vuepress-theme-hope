@@ -95,9 +95,9 @@ module.exports = {
       {
         text: '配置',
         items: [
-          { text: 'API', link: '/api/' },
-          { text: 'Valine', link: '/api/valine.html' },
-          { text: 'Vssue', link: '/api/vssue.html' }
+          { text: '配置', link: '/config/' },
+          { text: 'Valine', link: '/config/valine.html' },
+          { text: 'Vssue', link: '/config/vssue.html' }
         ]
       }
     ],
@@ -124,7 +124,7 @@ module.exports = {
           ]
         }
       ],
-      '/api/': ['', 'valine', 'vssue']
+      '/config/': ['', 'valine', 'vssue']
     },
 
     /** 侧边栏标题显示深度，0-2 */
@@ -172,9 +172,9 @@ module.exports = {
           {
             text: 'Config',
             items: [
-              { text: 'API', link: '/en/api/' },
-              { text: 'Valine', link: '/en/api/valine.html' },
-              { text: 'Vssue', link: '/en/api/vssue.html' }
+              { text: 'Config', link: '/en/config/' },
+              { text: 'Valine', link: '/en/config/valine.html' },
+              { text: 'Vssue', link: '/en/config/vssue.html' }
             ]
           }
         ],
@@ -201,7 +201,7 @@ module.exports = {
               ]
             }
           ],
-          '/en/api/': ['', 'valine', 'vssue']
+          '/en/config/': ['', 'valine', 'vssue']
         }
       }
     }

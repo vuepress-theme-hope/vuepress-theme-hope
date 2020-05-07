@@ -4,8 +4,13 @@ title: vuepress-plugin-comment
 heroImage: /logo.svg
 heroText: vuepress-plugin-comment
 tagline: Comment and visitors plugin for vuepress
-actionText: Get started →
-actionLink: /en/guide/
+action:
+  - text: Get Started 💡
+    link: /en/guide/
+
+  - text: Config 🛠
+    link: /en/config/
+
 copyright: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

@@ -1,10 +1,10 @@
 ---
-category: api
+category: config
 copyright:
   minLength: 10
 tags:
   - plugin
-  - api
+  - config
 ---
 
 # Plugin Description

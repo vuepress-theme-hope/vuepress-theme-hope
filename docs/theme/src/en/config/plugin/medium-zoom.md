@@ -1,8 +1,8 @@
 ---
-category: api
+category: config
 tags:
   - plugin
-  - api
+  - config
 ---
 
 # @vuepress/medium-zoom <MyBadge text="New" />

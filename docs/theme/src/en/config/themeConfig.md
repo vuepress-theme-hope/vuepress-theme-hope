@@ -1,8 +1,8 @@
 ---
 icon: api
-category: api
+category: config
 tags:
-  - api
+  - config
   - themeConfig
 ---
 
@@ -179,7 +179,7 @@ Whether to enable flowchart syntax support
 
 ## Comment settings
 
-For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation](http://comment.mrhope.site/en/api/)
+For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation](http://comment.mrhope.site/en/config/)
 
 You can set it to `false` directly to disable the comment function
 
@@ -218,8 +218,8 @@ The encryption configuration is an object with a key name matching the path and 
 {
   // This will encrypt the entire guide directory and both passwords will be available
   "/guide/": ["1234", "5678"],
-  // this will only encrypt api / page.html
-  "/api/page.html": "1234"
+  // this will only encrypt config/page.html
+  "/config/page.html": "1234"
 }
 ```
 

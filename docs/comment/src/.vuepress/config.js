@@ -54,9 +54,9 @@ module.exports = resolve({
         text: '配置',
         icon: 'api',
         items: [
-          { text: 'API', icon: 'api', link: '/api/' },
-          { text: 'Valine', icon: 'valine', link: '/api/valine.html' },
-          { text: 'Vssue', icon: 'vssue', link: '/api/vssue.html' }
+          { text: '配置', icon: 'api', link: '/config/' },
+          { text: 'Valine', icon: 'valine', link: '/config/valine.html' },
+          { text: 'Vssue', icon: 'vssue', link: '/config/vssue.html' }
         ]
       }
     ],
@@ -85,8 +85,8 @@ module.exports = resolve({
           ]
         }
       ],
-      '/api/': ['', 'valine', 'vssue'],
-      '/': ['', 'guide/', 'api/']
+      '/config/': ['', 'valine', 'vssue'],
+      '/': ['', 'guide/', 'config/']
     },
 
     author: 'Mr.Hope',
@@ -125,9 +125,13 @@ module.exports = resolve({
             text: 'Config',
             icon: 'api',
             items: [
-              { text: 'API', icon: 'api', link: '/en/api/' },
-              { text: 'Valine', icon: 'valine', link: '/en/api/valine.html' },
-              { text: 'Vssue', icon: 'vssue', link: '/en/api/vssue.html' }
+              { text: 'Config', icon: 'api', link: '/en/config/' },
+              {
+                text: 'Valine',
+                icon: 'valine',
+                link: '/en/config/valine.html'
+              },
+              { text: 'Vssue', icon: 'vssue', link: '/en/config/vssue.html' }
             ]
           }
         ],
@@ -156,8 +160,8 @@ module.exports = resolve({
               ]
             }
           ],
-          '/en/api/': ['', 'valine', 'vssue'],
-          '/en/': ['', 'guide/', 'api/']
+          '/en/config/': ['', 'valine', 'vssue'],
+          '/en/': ['', 'guide/', 'config/']
         }
       }
     },

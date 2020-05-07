@@ -5,8 +5,13 @@ icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: 一个轻量的 Vuepress 主题
-actionText: 使用说明 →
-actionLink: /guide/
+action:
+  - text: 快速上手 💡
+    link: /guide/
+
+  - text: 配置 🛠
+    link: /config/
+
 features:
   - title: 主题色切换
     details: 支持自定义主题色并允许用户在预设的主题颜色之间切换

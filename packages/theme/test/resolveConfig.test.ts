@@ -31,7 +31,7 @@ describe('Test resolveTheme function', () => {
       nav: [
         { text: '主页', link: '/', icon: 'homefill' },
         { text: '指南', link: '/guide/', icon: 'creativefill' },
-        { text: '配置', link: '/api/', icon: 'code' },
+        { text: '配置', link: '/config/', icon: 'code' },
         {
           text: '基础',
           icon: 'infofill',
@@ -73,7 +73,7 @@ describe('Test resolveTheme function', () => {
           }
         ],
 
-        '/api/': [
+        '/config/': [
           '',
           'themeConfig',
           'page',
@@ -110,7 +110,7 @@ describe('Test resolveTheme function', () => {
           }
         ],
 
-        '/': ['', 'guide/', 'api/', 'basic/']
+        '/': ['', 'guide/', 'config/', 'basic/']
       },
 
       /** 默认作者 */
@@ -139,7 +139,7 @@ describe('Test resolveTheme function', () => {
           nav: [
             { text: 'Home', link: '/en/', icon: 'homefill' },
             { text: 'Guide', link: '/en/guide/', icon: 'creativefill' },
-            { text: 'Config', link: '/en/api/', icon: 'code' },
+            { text: 'Config', link: '/en/config/', icon: 'code' },
             {
               text: 'Basic',
               icon: 'infofill',
@@ -185,7 +185,7 @@ describe('Test resolveTheme function', () => {
               }
             ],
 
-            '/en/api/': [
+            '/en/config/': [
               '',
               'themeConfig',
               'page',
@@ -222,7 +222,7 @@ describe('Test resolveTheme function', () => {
               }
             ],
 
-            '/en/': ['', 'guide/', 'api/', 'basic/']
+            '/en/': ['', 'guide/', 'config/', 'basic/']
           }
         }
       },

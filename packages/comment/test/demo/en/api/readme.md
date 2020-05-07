@@ -1,4 +1,4 @@
-# API Config
+# Config
 
 ## type
 

@@ -5,8 +5,13 @@ title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: A light Vuepress theme
-actionText: Get Started →
-actionLink: /en/guide/
+action:
+  - text: Get Started 💡
+    link: /en/guide/
+
+  - text: Config 🛠
+    link: /en/config/
+
 features:
   - title: Custom theme color
     details: Supports custom theme colors and allows users to switch between preset theme colors

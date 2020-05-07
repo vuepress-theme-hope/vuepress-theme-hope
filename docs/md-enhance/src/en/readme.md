@@ -4,8 +4,13 @@ title: vuepress-plugin-md-enhance
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for markdown in Vuepress
-actionText: Get Started →
-actionLink: /en/guide/
+action:
+  - text: Get Started 💡
+    link: /en/guide/
+
+  - text: Config 🛠
+    link: /en/config/
+
 features:
   - title: Superscript and subscript support
     details: Your markdown now suppport superscript and subscript

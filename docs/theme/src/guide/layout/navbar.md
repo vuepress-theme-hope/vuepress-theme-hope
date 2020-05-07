@@ -255,7 +255,7 @@ module.exports = {
       // 可在每一项中添加 icon 字段来显示图标
       { text: '主页', link: '/', icon: 'homefill' },
       { text: '指南', link: '/guide/', icon: 'creativefill' },
-      { text: '配置', link: '/api/', icon: 'code' },
+      { text: '配置', link: '/config/', icon: 'code' },
       {
         text: '基础',
         icon: 'infofill',

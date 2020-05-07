@@ -5,8 +5,9 @@ title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: 一个轻量的 Vuepress 主题
-actionText: 页面布局测试 →
-actionLink: /test/
+action:
+  text: 页面布局测试 →
+  link: /test/
 project: 
 - type: 'project'
   name: 'vuepress-theme-hope'

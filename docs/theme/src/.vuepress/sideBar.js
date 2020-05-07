@@ -46,7 +46,7 @@ module.exports = {
       }
     ],
 
-    '/api/': [
+    '/config/': [
       '',
       'themeConfig',
       'page',
@@ -94,7 +94,7 @@ module.exports = {
       }
     ],
 
-    '/': ['', 'guide/', 'api/', 'basic/', 'FAQ/', 'demo/']
+    '/': ['', 'guide/', 'config/', 'basic/', 'FAQ/', 'demo/']
   },
   en: {
     '/en/guide/': [
@@ -143,7 +143,7 @@ module.exports = {
       }
     ],
 
-    '/en/api/': [
+    '/en/config/': [
       '',
       'themeConfig',
       'page',
@@ -182,6 +182,6 @@ module.exports = {
       }
     ],
 
-    '/en/': ['', 'guide/', 'api/', 'basic/', 'FAQ/', 'demo/']
+    '/en/': ['', 'guide/', 'config/', 'basic/', 'FAQ/', 'demo/']
   }
 };

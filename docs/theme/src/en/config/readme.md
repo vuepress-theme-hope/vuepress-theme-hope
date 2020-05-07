@@ -1,10 +1,11 @@
 ---
 icon: api
-category: api
-tags: api
+category: aconfigpi
+tags: 
+  - config
 ---
 
-# API Docs
+# Config Docs
 
 - [**themeConfig Config**](themeConfig.md)
 

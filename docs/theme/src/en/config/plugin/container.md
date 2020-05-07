@@ -1,8 +1,8 @@
 ---
-category: api
+category: config
 tags:
   - plugin
-  - api
+  - config
 ---
 
 # vuepress-plugin-container <MyBadge text="improve" />

@@ -4,8 +4,13 @@ title: vuepress-plugin-md-enhance
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
 tagline: 为 Vuepress 提供更多 Markdown 增强功能
-actionText: 快速上手 →
-actionLink: /guide/
+action:
+  - text: 快速上手 💡
+    link: /guide/
+
+  - text: 配置 🛠
+    link: /config/
+
 features:
   - title: 上下角标支持
     details: 你的 Markdown 现在将支持上下角标

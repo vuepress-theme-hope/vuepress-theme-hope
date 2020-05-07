@@ -1,8 +1,8 @@
 ---
 icon: api
-category: api
+category: config
 tags:
-  - api
+  - config
   - style
 ---
 

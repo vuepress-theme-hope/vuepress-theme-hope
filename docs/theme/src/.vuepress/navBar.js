@@ -2,7 +2,7 @@ module.exports = {
   zh: [
     { text: '主页', link: '/', icon: 'homefill' },
     { text: '指南', link: '/guide/', icon: 'creativefill' },
-    { text: '配置', link: '/api/', icon: 'api' },
+    { text: '配置', link: '/config/', icon: 'api' },
     { text: '常见问题', link: '/FAQ/', icon: 'questionfill' },
     {
       text: '基础',
@@ -43,7 +43,7 @@ module.exports = {
   en: [
     { text: 'Home', link: '/en/', icon: 'homefill' },
     { text: 'Guide', link: '/en/guide/', icon: 'creativefill' },
-    { text: 'Config', link: '/en/api/', icon: 'api' },
+    { text: 'Config', link: '/en/config/', icon: 'api' },
     { text: 'FAQ', link: '/FAQ/', icon: 'questionfill' },
     {
       text: 'Basic',

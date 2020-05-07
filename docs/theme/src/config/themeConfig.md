@@ -1,8 +1,8 @@
 ---
 icon: api
-category: api
+category: config
 tags:
-  - api
+  - config
   - themeConfig
 ---
 
@@ -183,7 +183,7 @@ SideBarItem 新增
 
 ## 评论设置
 
-具体配配置请见　[@mr-hope/vuepress-plugin-comment 文档](http://comment.mrhope.site/api/)
+具体配配置请见　[@mr-hope/vuepress-plugin-comment 文档](http://comment.mrhope.site/config/)
 
 可以直接设置为 `false` 来禁用评论功能
 
@@ -222,8 +222,8 @@ PWA 设置选项
 {
   // 这会加密整个 guide 目录，并且两个密码都是可用的
   "/guide/": ["1234", "5678"],
-  // 这只会加密 api/page.html
-  "/api/page.html": "1234"
+  // 这只会加密 config/page.html
+  "/config/page.html": "1234"
 }
 ```
 

@@ -22,7 +22,7 @@ options = {
 
 将对应的 `APP ID` 和 `APP Key` 填入， Valine 即配置完成。
 
-Valine 评论的其他配置将在 [配置](../api/valine.md) 中列出。
+Valine 评论的其他配置将在 [配置](../config/valine.md) 中列出。
 
 ::: tip
 更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。

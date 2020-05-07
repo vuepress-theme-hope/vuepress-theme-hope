@@ -50,17 +50,14 @@ vuepress-theme-hope 对首页布局进行了一些改进。
 
 附加文字描述
 
-### actionText
+### action
 
-- 类型: `string`
+- 类型: `ActionConfig | ActionConfig[]`
 
-按钮文字
+`ActionConfig` 结构:
 
-### actionLink
-
-- 类型: `string`
-
-按钮链接
+- text: 按钮文字
+- link: 按钮链接
 
 ### features
 

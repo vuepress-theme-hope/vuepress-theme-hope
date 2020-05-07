@@ -42,7 +42,7 @@ module.exports = resolve({
     nav: [
       { text: '主页', icon: 'homefill', link: '/' },
       { text: '指南', icon: 'creativefill', link: '/guide/' },
-      { text: '配置', icon: 'api', link: '/api.html' }
+      { text: '配置', icon: 'api', link: '/config.html' }
     ],
     sidebar: {
       '/guide/': [
@@ -55,7 +55,7 @@ module.exports = resolve({
         'tex'
       ],
 
-      '/': ['', 'guide/', 'api']
+      '/': ['', 'guide/', 'config']
     },
 
     author: 'Mr.Hope',
@@ -78,7 +78,7 @@ module.exports = resolve({
         nav: [
           { text: 'Home', icon: 'homefill', link: '/en/' },
           { text: 'Guide', icon: 'creativefill', link: '/en/guide/' },
-          { text: 'Config', icon: 'api', link: '/en/api.html' }
+          { text: 'Config', icon: 'api', link: '/en/config.html' }
         ],
         sidebar: {
           '/en/guide/': [
@@ -91,7 +91,7 @@ module.exports = resolve({
             'tex'
           ],
 
-          '/en/': ['', 'guide/', 'api']
+          '/en/': ['', 'guide/', 'config']
         }
       }
     },

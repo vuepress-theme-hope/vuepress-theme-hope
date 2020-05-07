@@ -1,4 +1,4 @@
-# API
+# Config
 
 You can pass these options to the plugin:
 

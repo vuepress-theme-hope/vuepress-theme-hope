@@ -4,8 +4,6 @@ title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: A light Vuepress theme
-actionText: Get Started →
-actionLink: /en/guide/
 features:
   - title: Custom theme color and night mode
     details: Supports custom theme colors and allows users to switch between preset theme colors

@@ -17,8 +17,13 @@
         v-text="$frontmatter.tagline || $description || 'Welcome to your VuePress site'"
       />
 
-      <p v-if="$frontmatter.actionText && $frontmatter.actionLink" class="action">
-        <NavLink :item="actionLink" class="action-button" />
+      <p v-if="$frontmatter.action" class="action">
+        <NavLink
+          v-for="action in actionLinks"
+          :key="action.text"
+          :item="action"
+          class="action-button"
+        />
       </p>
     </header>
 
@@ -51,11 +56,10 @@ import navigate from '@theme/util/navigate';
 
 @Component({ components: { NavLink, PageFooter } })
 export default class Home extends Vue {
-  private get actionLink() {
-    return {
-      link: this.$frontmatter.actionLink,
-      text: this.$frontmatter.actionText
-    };
+  private get actionLinks() {
+    const { action } = this.$frontmatter;
+    if (Array.isArray(action)) return action;
+    return [action];
   }
 
   private navigate(link: string) {
@@ -115,6 +119,7 @@ export default class Home extends Vue {
       color var(--white)
       background-color var(--accent-color)
       padding 0.8rem 1.6rem
+      margin 0 0.8rem
       border-radius 4px
       transition background-color 0.1s ease
       box-sizing border-box

@@ -1,8 +1,8 @@
 ---
-category: api
+category: config
 tags:
   - plugin
-  - api
+  - config
 ---
 
 # vuepress-plugin-copyright <MyBadge text="新增" />

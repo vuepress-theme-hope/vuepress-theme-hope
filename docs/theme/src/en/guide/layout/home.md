@@ -50,17 +50,14 @@ Home icon alt text
 
 Append text
 
-### actionText
+### action
 
-- Type: `string`
+- Type: `ActionConfig | ActionConfig[]`
 
-Button text
+`ActionConfig` structure:
 
-### actionLink
-
-- Type: `string`
-
-Button link
+- text: Button text
+- link: Button link
 
 ### features
 

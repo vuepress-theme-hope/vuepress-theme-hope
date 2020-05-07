@@ -1,10 +1,10 @@
 ---
 icon: api
-category: api
-tags: api
+category: config
+tags: config
 ---
 
-# API 文档
+# 配置文档
 
 - [**themeConfig 配置**](themeConfig.md)
 

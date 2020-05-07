@@ -24,8 +24,8 @@ You can configure the encryption options in the `themeConfig.encrypt` field.
 {
   // This will encrypt the entire guide directory and both passwords will be available
   "/guide/": ["1234", "5678"],
-  // this will only encrypt api/page.html
-  "/api/page.html": "1234"
+  // this will only encrypt config/page.html
+  "/config/page.html": "1234"
 }
 ```
 

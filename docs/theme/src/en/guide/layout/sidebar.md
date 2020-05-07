@@ -233,7 +233,7 @@ module.exports = {
         }
       ],
 
-      '/en/api/': [
+      '/en/config/': [
         '',
         'themeConfig',
         'page',
@@ -276,7 +276,7 @@ module.exports = {
         }
       ],
 
-      '/en/': ['', 'guide/', 'api/', 'basic/', 'FAQ/']
+      '/en/': ['', 'guide/', 'config/', 'basic/', 'FAQ/']
     }
   }
 };
