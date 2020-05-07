@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-comment",
-  "version": "0.1.0-rc.21",
+  "version": "0.1.0",
   "description": "A simple Comment plugin",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -37,7 +37,7 @@
   },
   "homepage": "https://vuepress-comment.mrhope.site",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-rc.21",
+    "@mr-hope/vuepress-shared-utils": "^0.1.0",
     "@vssue/api-bitbucket-v2": "^1.4.0",
     "@vssue/api-gitea-v1": "^1.4.4",
     "@vssue/api-gitee-v5": "^1.4.4",
