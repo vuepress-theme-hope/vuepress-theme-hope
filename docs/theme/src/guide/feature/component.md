@@ -25,10 +25,8 @@ tags:
 ### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
 ```
 
-## 返回顶部按钮 `<BackToTop />` <MyBadge text="支持局部配置" />
+## 返回顶部按钮 `<BackToTop />` <MyBadge text="支持页面配置" />
 
 vuepress-theme-hope 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
-
-返回顶部按钮使用了一个圆形有色图标代替了默认主题中的箭头。
 
 该内容的配置项为 `backToTop`。

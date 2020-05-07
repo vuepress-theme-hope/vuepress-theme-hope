@@ -20,12 +20,24 @@ features:
     details: Start pageview statistics and comment support with Valine and Vssue
     link: /en/guide/feature/comment.html
 
+  - title: Article information display
+    details: Add author, writing date, reading time, word count and other information to your article
+    link: /en/guide/feature/page-info.html
+
+  - title: Markdown Enhance
+    details: Add align, sup/sub script, footnote, tex, flowchart and mark support in markdown
+    link: /en/guide/feature/markdown/
+
   - title: Blog support
-    details: add dates, tags and categories to your articles and display them based on visitor filters
+    details: Add date, tags and category to your articles, than we will generate article, tag, category and timeline list for you
+    link: /en/guide/feature/blog.html
+
+  - title: Article Encryption
+    details: Encrypt you article based on path and folders, so that only the one you want could see them
     link: /en/guide/feature/blog.html
 
   - title: More new features
-    details: Enhanced a series of features based on the default theme, including icon support, path navigation, footer support, author display, etc.
+    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
 
   - title: PWA support
     details: The built-in PWA plugin will make your website more like an APP.
@@ -33,7 +45,8 @@ features:
   - title: TS support
     details: Turn on Typescript support for your Vuepress
 
-footer: MIT Licensed | Copyright © 2019-present Mr. Hope
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: false
 ---
 
 ## Use themes
@@ -60,18 +73,18 @@ module.exports = resolve({
 ::: tip
 The purpose of introducing the resolve function is to give you full hints through TS's Interface and JSDoc when you edit the configuration.
 
-At the same time, the resolve function will also complete some default configurations for your current configuration items when you preview or package the project, reducing the calculation pressure when rendering the website.
+At the same time, the resolve function will also complete some default configurations for your current configuration which will pass directly to vuepress.
 :::
 
 ### FAQ
 
-If your project does not use typescript, you may also need to install typescript:
+If you do not have typescript package in your project, you may also need to install it:
 
 ```bash
 npm i -D typescript
 ```
 
-And create a `tsconfig.json` file in your root directory
+And then create a `tsconfig.json` file in your root directory:
 
 ```json
 {

@@ -54,9 +54,9 @@ tags: intro
     - 标签列表
     - 时间线
 
-  - [Typescript 支持](feature/typescript.md)
-
   - [**Markdown 增强**](feature/markdown/readme.md)
+
+  - [Typescript 支持](feature/typescript.md)
 
 - [**新增组件**](feature/component.md)
 

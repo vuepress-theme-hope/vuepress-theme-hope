@@ -8,7 +8,7 @@ tags:
 
 # Comment Function
 
-vuepress-theme-hope implements the comment with built-in `@mr-hope/vuepress-plugin-comment`.
+vuepress-theme-hope implements the comment feature with built-in `@mr-hope/vuepress-plugin-comment`.
 
 ```js
 // .vuepress/config.js
@@ -23,7 +23,7 @@ module.exports = {
 };
 ```
 
-Comment function <MyBadge text = "Support local configuration" /> enabled globally by default, the configuration key is `comment`.
+Comment function <MyBadge text="Support page config" /> enabled globally by default, the configuration key is `comment`.
 
 You can choose between Valine and Vssue.
 
@@ -106,18 +106,6 @@ The only difference is that, you should set `platform` rather than the `api` pac
 
 :::
 
-### Use Vssue Component
-
-`Vssue` has already been registered as a Vue component, and can be used in your VuePress markdown directly.
-
-```md
-<!-- README.md -->
-
-# Vssue Demo
-
-<Vssue title="Vssue Demo" />
-```
-
 ::: tip
 You can go to the repo [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
 :::
@@ -177,19 +165,3 @@ If you want to override them, just set them in your `palette.styl`:
 
 $vssue-theme-color = red
 ```
-
-### Do not want to use our plugin
-
-Vssue has tried to be SSR-friendly, so you can import Vssue directly in VuePress like other vue plugins / components without `@vssue/vuepress-plugin-vssue` (especially if you have customized the styles of Vssue).
-
-But we still suggest you to use `@vssue/vuepress-plugin-vssue` in VuePress, which has already helped you make `<Vssue>` component client-only to avoid some potential issues.
-
-If you do not want to use the plugin we provided, you may need to wrap `<Vssue>` component into `<ClientOnly>` component to avoid those potential issues, i.e. :
-
-```vue
-<ClientOnly>
-  <Vssue />
-</ClientOnly>
-```
-
-> See [Built-in Components - ClientOnly](https://vuepress.vuejs.org/guide/using-vue.html#clientonly) of VuePress

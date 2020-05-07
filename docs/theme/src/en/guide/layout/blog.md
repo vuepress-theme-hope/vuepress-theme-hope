@@ -17,11 +17,11 @@ You need to set `blog` to `true` in the Front Matter of the corresponding page t
 
 ## Configurable items
 
-You can freely configure the blogger's avatar and blogger's name in the upper left. Their configuration items are `themeConfig.blog.avatar` and `themeConfig.blog.name`. If you do not fill them in, they will automatically fall back to the site Logo (`themeConfig.logo`) and the site name (`themeConfig.name`).
+You can freely configure the blogger's avatar and blogger's name display in the left-top corner. Their configuration items are `themeConfig.blog.avatar` and `themeConfig.blog.name`. If you do not fill them in, they will automatically fall back to the site Logo (`themeConfig.logo`) and the site name (`themeConfig.name`).
 
-If you use `themeConfig.intro` to configure the address of the personal introduction page, click on the blogger ’s profile picture and blogger ’s name in the upper left corner, and it will automatically jump to the link you provided.
+If you use `themeConfig.intro` to configure the address of the personal introduction page, click on the blogger ’s profile picture and blogger ’s name in the left-top corner, and it will automatically jump to the link you provided.
 
-You can also configure your social media links in the format of `social media name: social media links` in the object `themeConfig.blog.links`.
+You can also configure your social media links in the format of `<social media name>: <social media links>` in the object `themeConfig.blog.links`.
 
 ::: tip Available social media:
 

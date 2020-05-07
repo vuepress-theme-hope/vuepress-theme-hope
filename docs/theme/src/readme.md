@@ -20,12 +20,25 @@ features:
     details: 配合 Valine 与 Vssue 来开启阅读量统计与评论支持
     link: /guide/feature/comment.html
 
+  - title: 文章信息展示
+    details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
+    link: /guide/feature/page-info.html
+
+  - title: Markdown 增强
+    details: 新增文字对齐、上下角标、脚注、标记、公式与流程图支持
+    link: /guide/feature/markdown/
+
   - title: 博客支持
-    details: 为你的文章添加日期、标签和分类并按照访客筛选条件展示它们
+    details: 为你的文章添加日期、标签和分类，将自动生成文章、分类、标签与时间轴列表
     link: /guide/feature/blog.html
 
+  - title: 文章加密
+    details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
+    link: /guide/feature/encrypt.html
+
   - title: 更多新特性
-    details: 在默认主题基础上增强了一系列功能，包括图标支持、路径导航、页脚支持、作者显示等
+    details: 包括博客主页、图标支持、路径导航、页脚支持、全屏按钮、返回顶部按钮等
+    link: /guide/feature/
 
   - title: PWA 支持
     details: 内置的 PWA 插件会让你的网站更像一个 APP。
@@ -34,6 +47,7 @@ features:
     details: 为你的 Vuepress 开启 Typescript 支持
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: false
 ---
 
 ## 使用主题
@@ -58,9 +72,9 @@ module.exports = resolve({
 ```
 
 ::: tip
-引入 resolve 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，给予你充分的提示。
+引入 resolve 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，很方便的给你提示。
 
-同时，resolve 函数也会在你预览或打包项目时针对你当前的配置项，为你补全一些默认配置，减少网站渲染时的计算压力。
+同时，resolve 函数也会为你补全一些直接交付给 vuepress 的默认配置。
 :::
 
 ### FAQ
@@ -71,7 +85,7 @@ module.exports = resolve({
 npm i -D typescript
 ```
 
-并在你的根目录创建一个 tsconfig.json 文件
+并在你的根目录创建一个 tsconfig.json 文件:
 
 ```json
 {

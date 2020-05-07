@@ -23,7 +23,7 @@ module.exports = {
 };
 ```
 
-评论功能 <MyBadge text="支持局部配置" /> 默认全局启用，配置项为 `comment`。
+评论功能 <MyBadge text="支持页面配置" /> 默认全局启用，配置项为 `comment`。
 
 有两个评论插件可以选择: Valine 和 Vssue。
 
@@ -107,18 +107,6 @@ module.exports = {
 - platform `gitea` - api 包 `@vssue/api-gitea-v1`
 
 :::
-
-### 使用 Vssue 组件
-
-`Vssue` 已经注册为 Vue 组件，你可以在你的 VuePress Markdown 文件中直接使用它。
-
-```md
-<!-- README.md -->
-
-# Vssue Demo
-
-<Vssue title="Vssue Demo" />
-```
 
 ### 自定义样式变量
 

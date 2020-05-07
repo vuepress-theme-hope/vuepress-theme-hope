@@ -8,7 +8,7 @@ tags:
 
 # Blog related
 
-The theme enables some blogging features by configuring `@vuepress/plugin-blog`. Of course you can configure `themeConfig.blog` to `false` to disable all blog functions.
+The theme enables some blogging features by configuring `@vuepress/plugin-blog`. Also you can set `themeConfig.blog` to `false` to disable all blog features.
 
 ## Category
 
@@ -16,11 +16,11 @@ Just add `category: <category name>` to the Front Matter of the page, and the ar
 
 ![category](./assets/category.png)
 
-Please note that only one category can be set for an article.
+Please note that only one category can be set per article.
 
 ## Tags
 
-Just add `tags: <category name>` to the Front Matter of the page, and the article will be automatically listed in the list on the `/tag/` tag page.
+Just add `tags: <tag name>` to the Front Matter of the page, and the article will be automatically listed in the list on the `/tag/` tag page.
 
 `tags` accepts `string | string []`, which means that an article can contain multiple tags.
 
@@ -28,13 +28,13 @@ Just add `tags: <category name>` to the Front Matter of the page, and the articl
 
 All articles will be added to the article list by default and rendered under path `/article/` .
 
-If you don't want the list to contain specific articles, just set `article` to`false` in the corresponding article's Front Matter.
+If you don't want specific articles to be included, just set `article` to `false` in the article's Front Matter.
 
 ## timeline
 
-All articles with a writing date will be sorted by time in the `/timeline/` timeline,
+All articles with a writing date will be sorted by time in the timeline page `/timeline/`.
 
-If you don't want an article to be included, just set `timeline` to `false` in the corresponding article's Frontmatter.
+If you don't want an article to be included, just set `timeline` to `false` in the article's Frontmatter.
 
 ::: warning
 Do not add and place the corresponding folders ("tag", "article", "timeline") in the root directory, otherwise the files may be overwritten during compilation and cause errors.

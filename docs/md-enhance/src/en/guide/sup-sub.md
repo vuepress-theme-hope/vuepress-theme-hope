@@ -2,7 +2,7 @@
 icon: superscript
 ---
 
-# Superscript and Subscript <MyBadge text="V0.0.8" />
+# Superscript and Subscript
 
 Let the Markdown file in your VuePress site support Subscript and Superscript.
 

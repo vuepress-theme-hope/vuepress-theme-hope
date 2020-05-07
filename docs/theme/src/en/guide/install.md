@@ -29,9 +29,9 @@ module.exports = resolve({
 ```
 
 ::: tip
-The purpose of introducing the resolve function is to give you full hints through TS's Interface and JSDoc when you edit the configuration.
+In order to minimize user configuration, vuepress-theme-hope provides some additional configuration options that need to be processed before being submitted to vuepress. At the same time, vuepress-theme-hope will also allow you to omit some configurations and automatically generate them for you.
 
-At the same time, the resolve function will also complete some default configurations for your current configuration items when you preview or package the project, reducing the calculation pressure when rendering the website.
+For example, automatically generate multi-language options in the project configuration for you based on the multi-language options in your theme configuration, and automatically help you complete the localization work.
 :::
 
 If your project does not use typescript, you may also need to install typescript:

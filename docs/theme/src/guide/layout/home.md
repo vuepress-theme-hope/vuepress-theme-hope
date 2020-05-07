@@ -27,8 +27,9 @@ vuepress-theme-hope 对首页布局进行了一些改进。
 ### title
 
 - 类型: `string | false`
+- 默认值: `'Hello'`
 
-标题，默认值为 `'Hello'`，填入 `false` 会取消显示。
+标题，填入 `false` 会取消显示。
 
 ### heroImage
 

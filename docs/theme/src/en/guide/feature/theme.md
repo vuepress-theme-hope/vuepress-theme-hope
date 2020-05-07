@@ -10,20 +10,20 @@ tags:
 
 ## Darkmode
 
-In dark mode, the page uses a black background to protect your eyes.
+In dark mode, the page uses a dark background to protect your eyes.
 
 ![Darkmode](./assets/darkmode.png)
 
 Dark mode support options:
 
-- `'auto-switch'`: "off | automatic | on" three-stage switch (default)
+- `'auto-switch'`: "off | automatic | on" switch (default)
 - `'switch'`: "Close | Open" toggle switch
 - `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
 - `'disable'`: disable dark mode
 
 ## Theme color
 
-This is an out-of-the-box feature that offers four themes "blue, red, green, and orange" in addition to your theme color.
+This is an out-of-the-box feature that offers five theme color "red, blue, green, orange and purple" besides your theme color.
 
 ### Disable
 
@@ -31,7 +31,7 @@ You can disable it by setting the theme field's `themeConfig.themeColor` to fals
 
 ### Custom color
 
-You need to configure `themeConfig.themeColor` in the format ``colorname1: colorvalue, colorname2: colorvalue, ... }`:
+You need to configure `themeConfig.themeColor` in the format `colorname1: colorvalue, colorname2: colorvalue, ... }`:
 
 ::: details Example
 
