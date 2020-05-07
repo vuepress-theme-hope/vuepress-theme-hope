@@ -16,10 +16,10 @@
         <div class="sticky-article-list">
           <ModuleTransition
             v-for="(article,index) in $stickArticles"
-            :key="article.url"
+            :key="article.path"
             :delay="(index + 1) * 0.08"
           >
-            <li class="sticky-article" @click="$router.push(article.url)" v-text="article.title" />
+            <li class="sticky-article" @click="$router.push(article.path)" v-text="article.title" />
           </ModuleTransition>
         </div>
       </div>
@@ -127,6 +127,7 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
         border-bottom 1px dashed var(--grey14)
 
         &:hover
+          cursor pointer
           color var(--accent-color)
 
   .category-wrapper
