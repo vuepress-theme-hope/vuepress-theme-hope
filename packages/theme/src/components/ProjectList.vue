@@ -4,7 +4,7 @@
       v-for="(project, index) in ($frontmatter.project || [])"
       :key="project.name"
       class="project"
-      :class="`project${index}`"
+      :class="`project${index % 9}`"
       @click="navigate(project.link)"
     >
       <div
