@@ -49,9 +49,9 @@ export default class ThemeColor extends Vue {
   private showMenu = false;
 
   private get enable() {
-    const { darkmode, themeColor } = this.$themeConfig || {};
+    const { darkmode, themeColor } = this.$themeConfig;
 
-    return themeColor !== false || darkmode === 'switch';
+    return !(themeColor === false && darkmode === 'disable');
   }
 
   private clickOutside() {

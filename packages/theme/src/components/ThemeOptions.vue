@@ -1,6 +1,6 @@
 <template>
   <div class="theme-options">
-    <ul v-if="theme.colorList && theme.colorList.length !== 0" class="themecolor-select">
+    <ul v-if="themeColorEnabled" class="themecolor-select">
       <label for="themecolor-select" v-text="`${text.themeColor}:`" />
       <li>
         <a class="default-theme" href="#" @click.prevent="setTheme()" />
@@ -34,14 +34,14 @@ const defaultPicker: Record<string, string> = {
 
 interface ThemeColor {
   /** 颜色列表 */
-  colorList: string[];
+  list: string[];
   /** 颜色选择器 */
   picker: Record<string, string>;
 }
 
 @Component({ components: { DarkmodeSwitch } })
 export default class ThemeOptions extends Vue {
-  private theme = {} as ThemeColor;
+  private themeColor = {} as ThemeColor;
 
   private isDarkmode = false;
 
@@ -52,6 +52,10 @@ export default class ThemeOptions extends Vue {
     );
   }
 
+  private get themeColorEnabled() {
+    return this.$themeConfig.themeColor !== false;
+  }
+
   private get switchEnabled() {
     return (
       this.$themeConfig.darkmode !== 'disable' &&
@@ -60,8 +64,8 @@ export default class ThemeOptions extends Vue {
   }
 
   private mounted() {
-    this.theme = {
-      colorList: this.$themeConfig.themeColor
+    this.themeColor = {
+      list: this.$themeConfig.themeColor
         ? Object.keys(this.$themeConfig.themeColor)
         : Object.keys(defaultPicker),
       picker: this.$themeConfig.themeColor || defaultPicker
@@ -77,7 +81,7 @@ export default class ThemeOptions extends Vue {
   /** 设置主题 */
   private setTheme(theme?: string) {
     const classes = document.body.classList;
-    const themes = this.theme.colorList.map(
+    const themes = this.themeColor.list.map(
       (colorTheme) => `theme-${colorTheme}`
     );
 
