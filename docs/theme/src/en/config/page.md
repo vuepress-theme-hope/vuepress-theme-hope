@@ -175,10 +175,12 @@ Next article link
 
 ## footer
 
-- Type: `boolean | string | HTMLString`
-- Default value: Globally configured value (depending on whether **Footer default value** and **Footer display footer** are set globally)
+- Type: `false | string | HTMLString`
+- Default value: Globally configured value (depending on whether **Footer default value** and **Footer display** are set globally)
 
-Set the footer of the current page. For more details, please see [Page → Footer Support](../guide/layout/page.md#footer-support)
+Set the footer content of the current page. If you want an empty content, set it to an empty string. If you want to disable the footer, set it to false.
+
+For more details, please see [Page → Footer Support](../guide/layout/page.md#footer-support)
 
 ## copyright
 
@@ -186,12 +188,6 @@ Set the footer of the current page. For more details, please see [Page → Foote
 - Default value: the value configured globally
 
 Set the copyright information of the current page. For more details, please see [Page → Footer Support](../guide/layout/page.md#footer)
-
-## footer
-
-- Type: `string`
-
-Set the footer content of the current page. For more details, please see [Page → Footer Support](../guide/layout/page.md#footer)
 
 ## mediaLink
 

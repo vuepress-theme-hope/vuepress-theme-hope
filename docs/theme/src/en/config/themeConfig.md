@@ -73,15 +73,15 @@ The default content for the footer, can accept HTMLString.
 
 ### footer.copyright
 
-- Type: `string`
+- Type: `string | boolean`
 - Default: `'Copyright © <author>'`
 
-The default copyright info
+The default copyright info, set it to `false` to disable it by default.
 
 ### footer.display
 
 - Type: `boolean`
-- Default: `false`
+- Default: `true`
 
 Whether the footer is shown by default
 

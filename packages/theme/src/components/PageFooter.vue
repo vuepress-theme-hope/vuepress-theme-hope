@@ -12,20 +12,24 @@ import MediaLinks from '@theme/components/MediaLinks.vue';
 
 @Component({ components: { MediaLinks } })
 export default class PageFooter extends Vue {
+  private get footerConfig() {
+    return this.$themeConfig.footer || {};
+  }
+
   /** 显示页脚 */
-  private display() {
+  private get display() {
     const { footer } = this.$page.frontmatter;
 
-    return (
-      footer || ((this.$themeConfig.footer || {}).display && footer !== false)
-    );
+    return footer === false ? false : this.footerConfig.display !== false;
   }
 
   /** 页脚内容 */
   private get footerContent() {
     const { footer } = this.$page.frontmatter;
 
-    return typeof footer === 'string' ? footer : '';
+    return typeof footer === 'string'
+      ? footer
+      : this.footerConfig.content || '';
   }
 
   /** 版权信息 */
@@ -33,8 +37,10 @@ export default class PageFooter extends Vue {
     return this.$frontmatter.copyright === false
       ? false
       : this.$frontmatter.copyright ||
-          (this.$themeConfig.footer || {}).copyright ||
-          `Copyright © 2020 ${this.$themeConfig.author}`;
+          (this.footerConfig.copyright === false
+            ? false
+            : this.footerConfig.copyright ||
+              `Copyright © 2020 ${this.$themeConfig.author}`);
   }
 }
 </script>

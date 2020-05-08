@@ -58,8 +58,11 @@ module.exports = resolve({
 
     author: 'Mr.Hope',
     footer: {
-      text: '默认页脚'
+      display: false
     },
+
+    themeColor: false,
+
     markdown: { enableAll: true },
 
     comment: {

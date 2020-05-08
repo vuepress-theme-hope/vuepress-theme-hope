@@ -73,15 +73,15 @@ SideBarItem 新增
 
 ### footer.copyright
 
-- 类型: `string`
+- 类型: `string | boolean`
 - 默认值: `'Copyright © <作者>'`
 
-默认的版权信息
+默认的版权信息，设置为 `false` 来默认禁用它。
 
 ### footer.display
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 是否默认显示页脚
 

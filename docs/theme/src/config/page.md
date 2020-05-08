@@ -177,18 +177,20 @@ tags:
 
 下一篇文章链接
 
+## footer
+
+- 类型: `boolean | string | HTMLString`
+
+设置当前页面的页脚内容，如果你想要禁用页脚，请设置为 `false`，如果你想要移除默认的页脚内容，请设置为 `''`。
+
+更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
+
 ## copyright
 
 - 类型: `string | false`
 - 默认值: 全局中配置的值
 
 设置当前页面的版权信息，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
-
-## footer
-
-- 类型: `string`
-
-设置当前页面的页脚内容，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
 
 ## mediaLink
 

@@ -74,3 +74,13 @@ $$
 ## 标记
 
 Mr.Hope ==十分帅== 。
+
+## 代码块
+
+```js
+const a = 1;
+
+const b = () => {
+  console.log('vuepress-theme-hope');
+};
+```
