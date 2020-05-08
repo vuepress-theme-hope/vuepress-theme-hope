@@ -7,15 +7,20 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { HopeLangI18nConfig, i18n } from '@mr-hope/vuepress-shared-utils';
 import WordIcon from '@mr-hope/vuepress-shared-utils/icons/WordIcon.vue';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
 
 @Component({ components: { WordIcon } })
 export default class ReadTimeInfo extends Vue {
-  private get words() {
-    const { readingTime } = this.$page;
+  private get words(): string {
+    const { readingTime } =
+      (this.$themeLocaleConfig as HopeLangI18nConfig) ||
+      i18n.getDefaultLocale();
 
-    return i18n.getLocale(this.$lang).readingTime.word(readingTime);
+    return readingTime.word.replace(
+      '$word',
+      this.$page.readingTime.words.toString()
+    );
   }
 }
 </script>

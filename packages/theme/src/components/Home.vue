@@ -44,19 +44,18 @@
 
     <MyTransition :delay="0.16">
       <div v-if="$frontmatter.features && $frontmatter.features.length" class="features">
-        <MyTransition
+        <div
           v-for="(feature, index) in $frontmatter.features"
           :key="index"
-          :delay="0.16 + 0.04 * index"
+          :class="{link:feature.link}"
+          class="feature"
         >
-          <div :class="{link:feature.link}" class="feature">
-            <h2>
-              <span v-if="feature.link" @click="navigate(feature.link)">{{ feature.title }}</span>
-              <span v-else>{{ feature.title }}</span>
-            </h2>
-            <p>{{ feature.details }}</p>
-          </div>
-        </MyTransition>
+          <h2>
+            <span v-if="feature.link" @click="navigate(feature.link)">{{ feature.title }}</span>
+            <span v-else>{{ feature.title }}</span>
+          </h2>
+          <p>{{ feature.details }}</p>
+        </div>
       </div>
     </MyTransition>
 
@@ -173,7 +172,7 @@ export default class Home extends Vue {
     display flex
     flex-wrap wrap
     justify-content space-between
-    align-items flex-start
+    align-items stretch
     align-content stretch
     padding 1.2rem 0
     margin-top 2.5rem
@@ -187,6 +186,9 @@ export default class Home extends Vue {
       flex-basis calc(33% - 5rem)
       transition all 0.5s
       padding 0 2.5rem
+
+      @media (max-width: $MQNarrow)
+        flex-basis calc(50% - 5rem)
 
       &.link
         cursor pointer

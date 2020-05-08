@@ -27,7 +27,11 @@
 <script lang="ts">
 import * as moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { capitalize, i18n } from '@mr-hope/vuepress-shared-utils';
+import {
+  HopeLangI18nConfig,
+  capitalize,
+  i18n
+} from '@mr-hope/vuepress-shared-utils';
 import AuthorIcon from '@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue';
 import CalendarIcon from '@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue';
 import CategoryInfo from '@mr-hope/vuepress-plugin-comment/src/CategoryInfo.vue';
@@ -87,11 +91,17 @@ export default class ArticleInfo extends Vue {
     return [];
   }
 
-  /** 发表时间 */
   private get readtime() {
-    const { readingTime } = this.article;
+    const { readingTime } =
+      (this.$themeLocaleConfig as HopeLangI18nConfig) ||
+      i18n.getDefaultLocale();
 
-    return i18n.getLocale(this.$lang).readingTime.time(readingTime);
+    return this.article.readingTime.minutes < 1
+      ? readingTime.minute
+      : readingTime.time.replace(
+          '$time',
+          Math.round(this.article.readingTime.minutes).toString()
+        );
   }
 }
 </script>

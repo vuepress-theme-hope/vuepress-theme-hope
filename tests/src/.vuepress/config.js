@@ -54,7 +54,15 @@ module.exports = resolve({
     footer: {
       display: false
     },
-
+    pageInfo: [
+      'Author',
+      'Category',
+      'ReadTime',
+      'Tag',
+      'Time',
+      'Word',
+      'Visitor'
+    ],
     themeColor: false,
 
     markdown: { enableAll: true },

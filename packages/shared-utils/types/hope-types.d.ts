@@ -130,9 +130,11 @@ interface HopeLangI18nConfigItem {
   /** 阅读时间 */
   readingTime: {
     /** 字数 */
-    word: (readingTime: ReadingTime) => string;
+    word: string;
+    /** 一分钟阅读 */
+    minute: string;
     /** 时间 */
-    time: (readingTime: ReadingTime) => string;
+    time: string;
   };
 }
 

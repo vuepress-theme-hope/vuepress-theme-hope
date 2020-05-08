@@ -60,12 +60,9 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       allText: '全部'
     },
     readingTime: {
-      word: (readingTime: ReadingTime): string => `约 ${readingTime.words} 字`,
-      time: (readingTime: ReadingTime): string => {
-        const time = Math.round(readingTime.minutes);
-
-        return readingTime.minutes < 1 ? '小于 1 分钟' : `大约 ${time} 分钟`;
-      }
+      word: '约 $word 字',
+      minute: '小于 1 分钟',
+      time: '大约 $time 分钟'
     }
   },
 
@@ -111,15 +108,9 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       allText: 'All'
     },
     readingTime: {
-      word: (readingTime: ReadingTime): string =>
-        `About ${readingTime.words} words`,
-      time: (readingTime: ReadingTime): string => {
-        const time = Math.round(readingTime.minutes);
-
-        return readingTime.minutes < 1
-          ? 'Less than 1 minute'
-          : `About ${time} min`;
-      }
+      word: 'About $word words',
+      minute: 'Less than 1 minute',
+      time: 'About $time min'
     }
   }
 };
