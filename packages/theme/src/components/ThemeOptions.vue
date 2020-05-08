@@ -5,8 +5,8 @@
       <li>
         <a class="default-theme" href="#" @click.prevent="setTheme()" />
       </li>
-      <li v-for="color in theme.colorList" :key="color">
-        <a :style="{background: theme.picker[color]}" href="#" @click.prevent="setTheme(color)" />
+      <li v-for="color in themeColor.list" :key="color">
+        <a :style="{background: themeColor.picker[color]}" href="#" @click.prevent="setTheme(color)" />
       </li>
     </ul>
     <div v-if="switchEnabled" class="darkmode-toggle">
