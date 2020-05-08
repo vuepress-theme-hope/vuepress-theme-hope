@@ -9,8 +9,8 @@ export default {
   'line-color': '#8DA1AC',
   'element-color': 'black',
   fill: 'white',
-  'yes-text': 'yes',
-  'no-text': 'no',
+  'yes-text': 'Yes',
+  'no-text': 'No',
   'arrow-end': 'block',
   scale: 1
 };

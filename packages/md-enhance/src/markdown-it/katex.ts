@@ -1,9 +1,9 @@
 /* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
+import * as MarkdownIt from 'markdown-it';
+import * as StateBlock from 'markdown-it/lib/rules_block/state_block';
+import * as StateInline from 'markdown-it/lib/rules_inline/state_inline';
 import * as katex from 'katex';
-import MarkdownIt from 'markdown-it';
-import StateBlock from 'markdown-it/lib/rules_block/state_block';
-import StateInline from 'markdown-it/lib/rules_inline/state_inline';
 
 /*
  * Test if potential opening or closing delimieter

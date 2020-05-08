@@ -7,6 +7,7 @@
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Loading from '@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue';
+import { debounce } from 'lodash';
 import presets from './presets';
 
 @Component({ components: { Loading } })
@@ -22,15 +23,21 @@ export default class FlowChart extends Vue {
 
   private loading = true;
 
-  private mounted() {
+  private scale = 1;
+
+  private get $preset() {
     const preset = presets[this.preset];
-    const delay = () => new Promise((resolve) => setTimeout(resolve, 500));
-    const { code } = this;
 
     if (!preset) {
       console.warn(`[md-enhance:flowchart] Unknown preset: ${this.preset}`);
-      return;
+      return presets.vue;
     }
+
+    return preset;
+  }
+
+  private mounted() {
+    const delay = () => new Promise((resolve) => setTimeout(resolve, 500));
 
     this.$el.setAttribute('id', this.id);
 
@@ -39,10 +46,32 @@ export default class FlowChart extends Vue {
       delay()
     ]).then(([flowchart]) => {
       const { parse } = flowchart;
-      const svg = parse(code);
-      svg.drawSVG(this.id, preset);
+      const svg = parse(this.code);
+      this.scale = this.getScale(window.innerWidth);
+
+      svg.drawSVG(this.id, { ...this.$preset, scale: this.scale });
       this.loading = false;
+
+      window.addEventListener('resize', this.resize);
     });
+  }
+
+  private beforeDestory() {
+    window.removeEventListener('resize', this.resize);
+  }
+
+  private getScale(width: number) {
+    return width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
+  }
+
+  private resize(svg: any) {
+    return debounce(() => {
+      const scale = this.getScale(window.innerWidth);
+      if (this.scale !== scale) {
+        this.scale = scale;
+        svg.drawSVG(this.id, { ...this.$preset, scale });
+      }
+    }, 100);
   }
 }
 </script>
@@ -51,7 +80,6 @@ export default class FlowChart extends Vue {
 .md-flowchart
   overflow-x scroll
   text-align center
-  min-height 200px
   transition all 1s
   padding 10px 6px
 
@@ -68,6 +96,7 @@ export default class FlowChart extends Vue {
   svg.md-flowchart-loading-icon
     width 40px
     height 40px
+    margin 40px auto
     fill var(--accent-color, $accentColor)
 
 .operation-element, .parallel-element

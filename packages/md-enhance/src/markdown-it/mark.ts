@@ -1,8 +1,8 @@
 /* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
 
-import MarkdownIt from 'markdown-it';
-import StateInline from 'markdown-it/lib/rules_inline/state_inline';
+import * as MarkdownIt from 'markdown-it';
+import * as StateInline from 'markdown-it/lib/rules_inline/state_inline';
 
 /*
  * Insert each marker as a separate text token, and add it to delimiter list
