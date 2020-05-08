@@ -81,7 +81,7 @@ The default copyright info, set it to `false` to disable it by default.
 ### footer.display
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
 Whether the footer is shown by default
 

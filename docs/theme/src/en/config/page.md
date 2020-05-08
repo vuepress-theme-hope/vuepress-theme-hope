@@ -175,10 +175,11 @@ Next article link
 
 ## footer
 
-- Type: `false | string | HTMLString`
-- Default value: Globally configured value (depending on whether **Footer default value** and **Footer display** are set globally)
+- Type: `boolean | string | HTMLString`
+- Default value: the value configured globally
 
-Set the footer content of the current page. If you want an empty content, set it to an empty string. If you want to disable the footer, set it to false.
+Set the footer content of the current page. If you want an empty content, set it to an empty string.
+Set it to `false` if you want to disable the footer, and set it to `true` if you want to display the default footer on a specific page.
 
 For more details, please see [Page → Footer Support](../guide/layout/page.md#footer-support)
 
@@ -189,7 +190,7 @@ For more details, please see [Page → Footer Support](../guide/layout/page.md#f
 
 Set the copyright information of the current page. For more details, please see [Page → Footer Support](../guide/layout/page.md#footer)
 
-## mediaLink
+## medialink
 
 - Type: `MediaType[] | false`
 - Default: `themeConfig.blog.links`

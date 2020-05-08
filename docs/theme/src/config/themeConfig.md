@@ -81,7 +81,7 @@ SideBarItem 新增
 ### footer.display
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 
 是否默认显示页脚
 

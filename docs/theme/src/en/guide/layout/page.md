@@ -79,9 +79,17 @@ See the [Comment section](../feature/comment.md) for details.
 
 If you want to display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 
-At the same time, you can configure the `footer` field in the `frontmatter` page.
+You can also configure the `footer`, `copyright` and  `medialink` fields in the `Front Matter` page.
 
-The `footer` field accepts a string or htmlString. They will be rendered directly at the footer's position. You can also set `footer` to `true` to display the default footer text.
+- The `footer` field can be filled with a string or Boolean value.
+
+    Setting `footer` to `true` will display the default footer content. Setting `footer` to`false` will disable the page footer.
+
+    If you fill in a string, it will be inserted into footer by `v-html`, so you can fill in HTMLString.
+
+- The `copyright` field can be filled with copyright information on this page,(also support HTMLString) which is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
+
+- The `medialink` field is the same as `themeConfig.blog.links` ([specific configuration see here](./blog.md#configurable-items)), you can configure it in a specific page to display different social media links. You can also set it to `false` to hide it.
 
 ::: details Example
 
@@ -119,6 +127,14 @@ When you set `footer.display` to true in the theme, you can also disable it loca
 ```md
 ---
 footer: false
+---
+```
+
+If you want to remove the default footer content while keeping social media and copyright information displayed, please use an empty string.
+
+```md
+---
+footer: ''
 ---
 ```
 

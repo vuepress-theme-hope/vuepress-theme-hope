@@ -7,18 +7,17 @@ module.exports = resolve({
   description: 'vuepress-theme-hope 的 demo',
 
   headOption: {
-    icon: '/favicon.ico'
+    icon: '/favicon.ico',
+    pwa: {
+      manifest: '/manifest.json',
+      themeColor: '#46bd87',
+      appleStatusBarColor: 'black',
+      appleIcon: '/img/icon/appleIcon152.png',
+      msTileImage: '/img/icon/msIcon144.png',
+      msTileColor: '#ffffff'
+    }
   },
   head: [
-    // pwa相关
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#46bd87' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    [
-      'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
-    ],
-    ['link', { rel: 'apple-touch-icon', href: '/img/icon/appleIcon152.png' }],
     [
       'link',
       {
@@ -26,12 +25,7 @@ module.exports = resolve({
         href: '/icons/safari-pinned-tab.svg',
         color: '#46bd87'
       }
-    ],
-    [
-      'meta',
-      { name: 'msapplication-TileImage', content: '/img/icon/msIcon144.png' }
-    ],
-    ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
+    ]
   ],
 
   temp: './node_modules/.temp/test',

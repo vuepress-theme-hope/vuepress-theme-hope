@@ -47,7 +47,7 @@ module.exports = resolve({
     iconPrefix: 'vuepress-',
 
     footer: {
-      content: 'MIT Licensed | Copyright © 2019-present Mr.Hope'
+      copyright: 'MIT Licensed | Copyright © 2019-present Mr.Hope'
     },
 
     markdown: {
