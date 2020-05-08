@@ -35,7 +35,13 @@ Title, won't display if it is set to `false`
 
 - Type: `string`
 
-Home icon (logo) address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
+Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
+
+### darkHeroImage
+
+- 类型: `string`
+
+Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
 
 ### heroText
 

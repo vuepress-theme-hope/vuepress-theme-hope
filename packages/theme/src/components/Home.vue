@@ -3,7 +3,14 @@
     <header class="hero">
       <img
         v-if="$frontmatter.heroImage"
+        :class="{ light: Boolean($frontmatter.darkHeroImage) }"
         :src="$withBase($frontmatter.heroImage)"
+        :alt="$frontmatter.heroAlt || 'HomeLogo'"
+      />
+      <img
+        v-if="$frontmatter.darkHeroImage"
+        class="dark"
+        :src="$withBase($frontmatter.darkHeroImage)"
         :alt="$frontmatter.heroAlt || 'HomeLogo'"
       />
       <h1
@@ -83,14 +90,28 @@ export default class Home extends Vue {
     text-align center
 
     img
+      display block
       max-width 100%
       max-height 280px
-      display block
       margin 3rem auto 1.5rem
 
       @media (max-width: $MQMobileNarrow)
         max-height 210px
         margin 2rem auto 1.2rem
+
+      .theme-light &
+        &.light
+          display block
+
+        &.dark
+          display none
+
+      .theme-dark &
+        &.light
+          display none
+
+        &.dark
+          display block
 
     h1
       font-size 3rem

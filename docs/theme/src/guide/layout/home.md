@@ -37,6 +37,12 @@ vuepress-theme-hope 对首页布局进行了一些改进。
 
 主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)
 
+### darkHeroImage
+
+- 类型: `string`
+
+深色模式下主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)，默认同 `heroImage`。
+
 ### heroText
 
 - 类型: `string`
