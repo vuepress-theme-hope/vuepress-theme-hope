@@ -2,7 +2,12 @@
   <div class="blogger-info">
     <div class="blogger-wrapper">
       <div class="blogger" :class="{ hasIntro }" @click="jumpIntro">
-        <img v-if="bloggerAvatar" class="avatar" alt="blogger-avatar" :src="bloggerAvatar" />
+        <img
+          v-if="bloggerAvatar"
+          class="avatar"
+          alt="blogger-avatar"
+          :src="$withBase(bloggerAvatar)"
+        />
         <div v-if="bloggerName" class="name" v-text="bloggerName " />
       </div>
     </div>
