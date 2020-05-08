@@ -45,8 +45,10 @@ And create a `tsconfig.json` file in your root directory
 ```json
 {
   "compilerOptions": {
-    "target": "es6", // Any target not lower than 'es6'
-    "experimentalDecorators": true,
+    "target": "ES6", // Any target not lower than 'es6'
+    "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
+    "experimentalDecorators": true, // Typescript files for '.vue' needs this option
+    "module": "commonjs", // Avoiding some issues related to vuepress-types
     "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
   },
   "include": [

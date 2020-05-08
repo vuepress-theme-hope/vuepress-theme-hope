@@ -22,7 +22,9 @@ vuepress-theme-hope 的大部分文件都是使用 Typescript 编写，所以 vu
 {
   "compilerOptions": {
     "target": "ES6", // 任何不低于 ES6 的 target 均可
+    "allowSyntheticDefaultImports": true, // 规避 vuepress-types 的类型定义问题
     "experimentalDecorators": true, // Vue 的 Typescript 写法需要开启此选项
+    "module": "commonjs", // 为了避免 vuepress-types 解析失败
     // vuepress 与本主题的类型定义文件
     "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
   },

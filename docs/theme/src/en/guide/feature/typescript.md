@@ -22,7 +22,9 @@ After enabling this theme, you need to ensure that your workspace contains a val
 {
   "compilerOptions": {
     "target": "ES6", /// Any target which is not less than 'ES5'
+    "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
     "experimentalDecorators": true, // Typescript files for '.vue' needs this option
+    "module": "commonjs", // Avoiding some issues related to vuepress-types
     // type definition files of vuepress and this theme
     "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
   },
