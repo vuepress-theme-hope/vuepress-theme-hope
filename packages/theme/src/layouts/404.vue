@@ -50,5 +50,6 @@ export default class NotFound extends Vue {
     border-bottom 1px solid var(--accent-color-d10)
 
     &:hover
+      cursor pointer
       background-color var(--accent-color-l10)
 </style>

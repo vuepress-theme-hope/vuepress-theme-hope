@@ -1,67 +1,83 @@
 <template>
   <main aria-labelledby="main-title" class="home">
     <header class="hero">
-      <img
-        v-if="$frontmatter.heroImage"
-        :class="{ light: Boolean($frontmatter.darkHeroImage) }"
-        :src="$withBase($frontmatter.heroImage)"
-        :alt="$frontmatter.heroAlt || 'HomeLogo'"
-      />
-      <img
-        v-if="$frontmatter.darkHeroImage"
-        class="dark"
-        :src="$withBase($frontmatter.darkHeroImage)"
-        :alt="$frontmatter.heroAlt || 'HomeLogo'"
-      />
-      <h1
-        v-if="$frontmatter.heroText !== false"
-        id="main-title"
-        v-text="$frontmatter.heroText || $title || 'Hello'"
-      />
-
-      <p
-        class="description"
-        v-text="$frontmatter.tagline || $description || 'Welcome to your VuePress site'"
-      />
-
-      <p v-if="$frontmatter.action" class="action">
-        <NavLink
-          v-for="action in actionLinks"
-          :key="action.text"
-          :item="action"
-          class="action-button"
+      <MyTransition>
+        <img
+          v-if="$frontmatter.heroImage"
+          key="light"
+          :class="{ light: Boolean($frontmatter.darkHeroImage) }"
+          :src="$withBase($frontmatter.heroImage)"
+          :alt="$frontmatter.heroAlt || 'HomeLogo'"
         />
-      </p>
+        <img
+          v-if="$frontmatter.darkHeroImage"
+          key="dark"
+          class="dark"
+          :src="$withBase($frontmatter.darkHeroImage)"
+          :alt="$frontmatter.heroAlt || 'HomeLogo'"
+        />
+      </MyTransition>
+      <MyTransition :delay="0.04">
+        <h1
+          v-if="$frontmatter.heroText !== false"
+          id="main-title"
+          v-text="$frontmatter.heroText || $title || 'Hello'"
+        />
+      </MyTransition>
+      <MyTransition :delay="0.08">
+        <p
+          class="description"
+          v-text="$frontmatter.tagline || $description || 'Welcome to your VuePress site'"
+        />
+      </MyTransition>
+      <MyTransition :delay="0.12">
+        <p v-if="$frontmatter.action" class="action">
+          <NavLink
+            v-for="action in actionLinks"
+            :key="action.text"
+            :item="action"
+            class="action-button"
+          />
+        </p>
+      </MyTransition>
     </header>
 
-    <div v-if="$frontmatter.features && $frontmatter.features.length" class="features">
-      <div
-        v-for="(feature, index) in $frontmatter.features"
-        :key="index"
-        :class="{link:feature.link}"
-        class="feature"
-      >
-        <h2>
-          <span v-if="feature.link" @click="navigate(feature.link)">{{ feature.title }}</span>
-          <span v-else>{{ feature.title }}</span>
-        </h2>
-        <p>{{ feature.details }}</p>
+    <MyTransition :delay="0.16">
+      <div v-if="$frontmatter.features && $frontmatter.features.length" class="features">
+        <MyTransition
+          v-for="(feature, index) in $frontmatter.features"
+          :key="index"
+          :delay="0.16 + 0.04 * index"
+        >
+          <div :class="{link:feature.link}" class="feature">
+            <h2>
+              <span v-if="feature.link" @click="navigate(feature.link)">{{ feature.title }}</span>
+              <span v-else>{{ feature.title }}</span>
+            </h2>
+            <p>{{ feature.details }}</p>
+          </div>
+        </MyTransition>
       </div>
-    </div>
+    </MyTransition>
 
-    <Content class="theme-default-content custom" />
+    <MyTransition :delay="0.24">
+      <Content class="theme-default-content custom" />
+    </MyTransition>
 
-    <PageFooter />
+    <MyTransition :delay="0.28">
+      <PageFooter />
+    </MyTransition>
   </main>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
+import MyTransition from '@theme/components/MyTransition.vue';
 import NavLink from '@theme/components/NavLink.vue';
 import PageFooter from '@theme/components/PageFooter.vue';
 import navigate from '@theme/util/navigate';
 
-@Component({ components: { NavLink, PageFooter } })
+@Component({ components: { MyTransition, NavLink, PageFooter } })
 export default class Home extends Vue {
   private get actionLinks() {
     const { action } = this.$frontmatter;

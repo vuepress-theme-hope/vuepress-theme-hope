@@ -8,7 +8,7 @@
     <hr />
     <div class="content">
       <ul class="timeline-list">
-        <ModuleTransition
+        <MyTransition
           v-for="(item, index) in $timeline"
           :key="index"
           :delay="0.08 * (index + 1)"
@@ -22,7 +22,7 @@
               </li>
             </ul>
           </li>
-        </ModuleTransition>
+        </MyTransition>
       </ul>
     </div>
   </div>
@@ -30,12 +30,12 @@
 
 <script lang='ts'>
 import { Component, Mixins, Vue } from 'vue-property-decorator';
-import ModuleTransition from '@theme/components/ModuleTransition.vue';
+import MyTransition from '@theme/components/MyTransition.vue';
 import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
 import { TimelineMixin } from '@theme/util/articleMixin';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-@Component({ components: { ModuleTransition, TimeIcon } })
+@Component({ components: { MyTransition, TimeIcon } })
 export default class BlogPage extends Mixins(TimelineMixin) {
   private get timeline() {
     return (

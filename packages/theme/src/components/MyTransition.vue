@@ -1,6 +1,6 @@
 <template>
   <transition
-    name="module"
+    name="drop"
     appear
     @appear="setStyle"
     @after-appear="unsetStyle"
@@ -16,7 +16,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class ModuleTransition extends Vue {
+export default class MyTransition extends Vue {
   @Prop({ type: Number, default: 0 })
   private readonly delay!: number;
 
@@ -37,7 +37,7 @@ export default class ModuleTransition extends Vue {
 </script>
 
 <style lang="stylus">
-.module-enter, .module-leave-to
+.drop-enter, .drop-leave-to
   opacity 0
   transform translateY(-20px)
 </style>

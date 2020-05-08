@@ -1,12 +1,12 @@
 <template>
   <div id="article" class="article-wrapper">
-    <ModuleTransition
+    <MyTransition
       v-for="(article, index) in articles"
       :key="article.path"
       :delay="index * 0.04"
     >
       <ArticleItem :article="article" />
-    </ModuleTransition>
+    </MyTransition>
     <!-- 分页 -->
     <Pagation v-model="currentPage" :per-page="articlePerPage" :total="articleList.length" />
   </div>
@@ -16,13 +16,13 @@
 import { Component, Mixins, Vue, Watch } from 'vue-property-decorator';
 import ArticleItem from '@theme/components/ArticleItem.vue';
 import { ArticleMixin } from '@theme/util/articleMixin';
-import ModuleTransition from '@theme/components/ModuleTransition.vue';
+import MyTransition from '@theme/components/MyTransition.vue';
 import { PageComputed } from 'vuepress-types';
 import { Route } from 'vue-router';
 import { deepAssign } from '@mr-hope/vuepress-shared-utils';
 import { generatePagination } from '@theme/util/article';
 
-@Component({ components: { ArticleItem, ModuleTransition } })
+@Component({ components: { ArticleItem, MyTransition } })
 export default class ArticleList extends Mixins(ArticleMixin) {
   /** 当前页面 */
   private currentPage = 1;

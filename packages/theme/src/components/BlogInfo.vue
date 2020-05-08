@@ -1,11 +1,11 @@
 <template>
   <div class="blog-info-wrapper">
-    <ModuleTransition>
+    <MyTransition>
       <BloggerInfo />
-    </ModuleTransition>
+    </MyTransition>
 
     <!-- 文章 -->
-    <ModuleTransition :delay="0.04">
+    <MyTransition :delay="0.04">
       <div class="sticky-article-wrapper">
         <div class="title" @click="$router.push('/article/')">
           <ArticleIconFill />
@@ -14,19 +14,19 @@
         </div>
         <hr />
         <div class="sticky-article-list">
-          <ModuleTransition
+          <MyTransition
             v-for="(article,index) in $stickArticles"
             :key="article.path"
             :delay="(index + 1) * 0.08"
           >
             <li class="sticky-article" @click="$router.push(article.path)" v-text="article.title" />
-          </ModuleTransition>
+          </MyTransition>
         </div>
       </div>
-    </ModuleTransition>
+    </MyTransition>
 
     <!-- 分类 -->
-    <ModuleTransition :delay="0.12">
+    <MyTransition :delay="0.12">
       <div class="category-wrapper">
         <div v-if="$category.list.length !== 0" class="title" @click="$router.push('/category/')">
           <CategoryIcon />
@@ -34,14 +34,14 @@
           {{i18n.category}}
         </div>
         <hr />
-        <ModuleTransition :delay="0.16">
+        <MyTransition :delay="0.16">
           <CategoryList />
-        </ModuleTransition>
+        </MyTransition>
       </div>
-    </ModuleTransition>
+    </MyTransition>
 
     <!-- 标签 -->
-    <ModuleTransition :delay="0.20">
+    <MyTransition :delay="0.20">
       <div class="tag-wrapper">
         <div v-if="$tag.list.length !== 0" class="title" @click="$router.push('/tag/')">
           <TagIcon />
@@ -49,15 +49,15 @@
           {{i18n.tag}}
         </div>
         <hr />
-        <ModuleTransition :delay="0.24">
+        <MyTransition :delay="0.24">
           <TagList />
-        </ModuleTransition>
+        </MyTransition>
       </div>
-    </ModuleTransition>
+    </MyTransition>
 
-    <ModuleTransition :delay="0.28">
+    <MyTransition :delay="0.28">
       <TimelineList />
-    </ModuleTransition>
+    </MyTransition>
   </div>
 </template>
 
@@ -70,7 +70,7 @@ import ArticleList from '@theme/components/ArticleList.vue';
 import BloggerInfo from '@theme/components/BloggerInfo.vue';
 import CategoryIcon from '@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue';
 import CategoryList from '@theme/components/CategoryList.vue';
-import ModuleTransition from '@theme/components/ModuleTransition.vue';
+import MyTransition from '@theme/components/MyTransition.vue';
 import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
 import TagList from '@theme/components/TagList.vue';
 import Timeline from '@theme/components/Timeline.vue';
@@ -83,7 +83,7 @@ import TimelineList from '@theme/components/TimelineList.vue';
     BloggerInfo,
     CategoryIcon,
     CategoryList,
-    ModuleTransition,
+    MyTransition,
     TagIcon,
     TagList,
     Timeline,

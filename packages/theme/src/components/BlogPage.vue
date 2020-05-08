@@ -1,43 +1,43 @@
 <template>
   <div class="page blog">
     <div class="blog-page-wrapper">
-      <ModuleTransition>
+      <MyTransition>
         <BlogInfo />
-      </ModuleTransition>
+      </MyTransition>
 
       <div class="blog-list-wrapper">
         <main class="blog-list">
-          <ModuleTransition :delay="0.08">
+          <MyTransition :delay="0.08">
             <component :is="componentName" v-if="componentName" />
             <BlogHero v-else-if="$frontmatter.home" />
             <h1 v-else>{{i18n.articleList}}</h1>
-          </ModuleTransition>
+          </MyTransition>
 
           <ProjectList v-if="$frontmatter.home" />
 
           <!-- 文章列表 -->
-          <ModuleTransition :delay="0.24">
+          <MyTransition :delay="0.24">
             <ArticleList v-if="displayArticles" :key="$route.path" />
-          </ModuleTransition>
+          </MyTransition>
         </main>
       </div>
 
       <div class="blog-detail-wrapper">
-        <ModuleTransition :delay="0.28">
+        <MyTransition :delay="0.28">
           <TimelineList />
-        </ModuleTransition>
+        </MyTransition>
       </div>
     </div>
 
     <!-- Markdown 内容 -->
-    <ModuleTransition :delay="0.28">
+    <MyTransition :delay="0.28">
       <Content :key="$route.path" class="home-center" custom />
-    </ModuleTransition>
+    </MyTransition>
 
     <!-- 页脚 -->
-    <ModuleTransition :delay="0.32">
+    <MyTransition :delay="0.32">
       <PageFooter :key="$route.path" />
-    </ModuleTransition>
+    </MyTransition>
   </div>
 </template>
 
@@ -48,7 +48,7 @@ import ArticleList from '@theme/components/ArticleList.vue';
 import BlogHero from '@theme/components/BlogHero.vue';
 import BlogInfo from '@theme/components/BlogInfo.vue';
 import CategoryList from '@theme/components/CategoryList.vue';
-import ModuleTransition from '@theme/components/ModuleTransition.vue';
+import MyTransition from '@theme/components/MyTransition.vue';
 import PageFooter from '@theme/components/PageFooter.vue';
 import Password from '@theme/components/Password.vue';
 import ProjectList from '@theme/components/ProjectList.vue';
@@ -63,7 +63,7 @@ import { i18n } from '@mr-hope/vuepress-shared-utils';
     BlogHero,
     BlogInfo,
     CategoryList,
-    ModuleTransition,
+    MyTransition,
     PageFooter,
     Password,
     ProjectList,

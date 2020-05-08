@@ -9,7 +9,7 @@
           }) center/cover no-repeat`
         }"
       />
-      <ModuleTransition :delay="0.04">
+      <MyTransition :delay="0.04">
         <img
           v-if="$frontmatter.heroImage"
           class="hero-logo"
@@ -17,23 +17,23 @@
           :src="$withBase($frontmatter.heroImage)"
           alt="hero"
         />
-      </ModuleTransition>
-      <ModuleTransition :delay="0.08">
+      </MyTransition>
+      <MyTransition :delay="0.08">
         <h1 v-if="$frontmatter.showTitle !== false">{{ $frontmatter.heroText || $title || 'Hope' }}</h1>
-      </ModuleTransition>
+      </MyTransition>
 
-      <ModuleTransition :delay="0.12">
+      <MyTransition :delay="0.12">
         <p v-if="$description" class="description" v-text="$description" />
-      </ModuleTransition>
+      </MyTransition>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import ModuleTransition from '@theme/components/ModuleTransition.vue';
+import MyTransition from '@theme/components/MyTransition.vue';
 
-@Component({ components: { ModuleTransition } })
+@Component({ components: { MyTransition } })
 export default class BlogHero extends Vue {
   private get heroImageStyle() {
     const defaultStyle = {

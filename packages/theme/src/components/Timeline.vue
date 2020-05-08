@@ -1,10 +1,10 @@
 <template>
   <div class="timeline-wrapper">
     <ul class="timeline-content">
-      <ModuleTransition>
+      <MyTransition>
         <li class="desc">{{hint}}</li>
-      </ModuleTransition>
-      <ModuleTransition v-for="(item, index) in $timeline" :key="index" :delay="0.08 * (index + 1)">
+      </MyTransition>
+      <MyTransition v-for="(item, index) in $timeline" :key="index" :delay="0.08 * (index + 1)">
         <li>
           <h3 class="year">{{item.year}}</h3>
           <ul class="year-wrapper">
@@ -14,18 +14,18 @@
             </li>
           </ul>
         </li>
-      </ModuleTransition>
+      </MyTransition>
     </ul>
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Mixins, Vue } from 'vue-property-decorator';
-import ModuleTransition from '@theme/components/ModuleTransition.vue';
+import MyTransition from '@theme/components/MyTransition.vue';
 import { TimelineMixin } from '@theme/util/articleMixin';
 import { i18n } from '@mr-hope/vuepress-shared-utils';
 
-@Component({ components: { ModuleTransition } })
+@Component({ components: { MyTransition } })
 export default class Timeline extends Mixins(TimelineMixin) {
   /** 提示文字 */
   private get hint() {
