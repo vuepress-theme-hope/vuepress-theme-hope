@@ -1,8 +1,8 @@
-<p style="text-align: center;margin: 0;">
+<p align="center">
   <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
 </p>
-<h1 style="text-align: center;">@mr-hope/vuepress-plugin-comment</h1>
-<h4 style="text-align: center;margin-bottom:40px;">Vuepress 评论插件💬 / Vuepress comment plugin💬</h4>
+<h1 align="center">@mr-hope/vuepress-plugin-comment</h1>
+<h4 align="center">Vuepress 评论插件💬 / Vuepress comment plugin💬</h4>
 
 [![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-comment.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-comment.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-comment?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-comment)
 

@@ -9,9 +9,6 @@
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm) ![Dependencies](https://img.shields.io/librariesio/release/npm/vuepress-theme-hope?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-hope)
 
-![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
 ![Issues](https://img.shields.io/github/issues-raw/mister-hope/vuepress-theme-hope?style=flat-square&logo=github)
 
 一个轻量的 vuepress 主题 / A light vuepress theme
