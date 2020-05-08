@@ -1,4 +1,29 @@
+
 # Changelog
+
+## [0.2.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0...v0.2.0) (2020-05-08)
+
+### Bug Fixes
+
+- **theme:** fix a typo in ThemeOptions ([20901c7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/20901c7fc8296811d621a6e94812ef0802ea8844))
+- **theme:** fix background-color of ProjectList ([dcb50c5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dcb50c554e39d96fa9785e1c717c5eff27b23f9a))
+- **theme:** fix footer component and docs issue ([ff1bf49](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff1bf49f80ff66563d55a2b64362002acfe271cb)), closes [#170](https://github.com/Mister-Hope/vuepress-theme-hope/issues/170)
+- **theme:** fix homepage feature and fix dropdown ([290b7e9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/290b7e94cb4464abc3915e00549034a7279cbb2b))
+- **theme:** fix sticky article list navigate ([3bf2af0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3bf2af028fdc96189b9d972b9baf35ad157d979f))
+- **theme:** fix themeColor config ([f549c57](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f549c5752b4d75f5e4951f1087974d91d4d8c1f3)), closes [#169](https://github.com/Mister-Hope/vuepress-theme-hope/issues/169)
+
+### Features
+
+- **theme:** add `darkHeroImage` for home page ([783faba](https://github.com/Mister-Hope/vuepress-theme-hope/commit/783fabafa159242f743998e513ed93783d15284b)), closes [#171](https://github.com/Mister-Hope/vuepress-theme-hope/issues/171)
+- **theme:** muti action button support ([9fd91d6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9fd91d67cd4d407b9ccd21808ae46dcad962f759))
+
+### BREAKING CHANGES
+
+- change the Front Matter keys `actionText` and `actionLink` in home page to `action`, which adds muti action button support.
+
+## [0.1.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.21...v0.1.0) (2020-05-07)
+
+- Release
 
 ## [0.1.0-rc.21](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.20...v0.1.0-rc.21) (2020-05-06)
 
