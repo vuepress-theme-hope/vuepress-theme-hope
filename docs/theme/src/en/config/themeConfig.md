@@ -46,6 +46,13 @@ If you need multi-language support for other languages, you can [submit a PR to 
 
 The default author of the article
 
+### logo
+
+- Type: `string`
+- Required: No
+
+The logo image of the navigation bar. Needs to be filled with an absolute path. If you want to display another logo in dark mode, please configure the `themeConfig.darkLogo` option.
+
 ### nav <MyBadge text="improved" type="warn" />
 
 NavBarItem now has
@@ -59,6 +66,12 @@ SideBarItem now has
 
 - `icon` field to support icon display.
 - `prefix` field to automatically add group prefix
+
+### locales
+
+-Type: `Record <string, HopeLangI18nConfigItem>`
+
+The multi-language configuration of the theme mainly needs to configure `nav` and`sidebar` of each language.
 
 ## Footer settings
 

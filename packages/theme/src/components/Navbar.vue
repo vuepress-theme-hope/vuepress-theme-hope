@@ -6,7 +6,14 @@
       <img
         v-if="$themeConfig.logo"
         class="logo"
+        :class="{ light: Boolean($themeConfig.darkLogo) }"
         :src="$withBase($themeConfig.logo)"
+        :alt="$siteTitle"
+      />
+      <img
+        v-if="$themeConfig.darkLogo"
+        class="logo dark"
+        :src="$withBase($themeConfig.darkLogo)"
         :alt="$siteTitle"
       />
       <span
@@ -119,6 +126,20 @@ export default class Navbar extends Vue {
     min-width $navbarHeight - 1.4rem
     margin-right 0.8rem
     vertical-align top
+
+    .theme-light &
+      &.light
+        display block
+
+      &.dark
+        display none
+
+    .theme-dark &
+      &.light
+        display none
+
+      &.dark
+        display block
 
   .site-name
     font-size 1.3rem

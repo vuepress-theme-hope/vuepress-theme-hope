@@ -46,6 +46,13 @@ tags:
 
 文章显示的默认作者
 
+### logo
+
+- 类型: `string`
+- 必填: 否
+
+导航栏的 logo 图片，需填入绝对路径，如果你希望在深色模式下显示另一个 logo，请配置 `themeConfig.darkLogo` 选项。
+
 ### nav <MyBadge text="改进" type="warn" />
 
 NavBarItem 新增
@@ -59,6 +66,12 @@ SideBarItem 新增
 
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
+
+### locales
+
+- 类型: `Record<string, HopeLangI18nConfigItem>`
+
+主题的多语言配置，主要需要配置各语言的 `nav` 与 `sidebar`。
 
 ## 页脚设置
 
