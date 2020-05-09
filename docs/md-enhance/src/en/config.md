@@ -1,5 +1,5 @@
 ---
-icon: api
+icon: configuration
 ---
 
 # Config

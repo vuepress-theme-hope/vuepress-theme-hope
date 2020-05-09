@@ -261,7 +261,7 @@ module.exports = {
       // add icon field to each item to display icon
       { text: 'Home', link: '/en/', icon: 'homefill' },
       { text: 'Guide', link: '/en/guide/', icon: 'creativefill' },
-      { text: 'Config', link: '/en/config/', icon: 'api' },
+      { text: 'Config', link: '/en/config/', icon: 'configuration' },
       {
         text: 'Basic',
         icon: 'infofill',

@@ -1,5 +1,5 @@
 ---
-icon: api
+icon: skinfill
 category: config
 tags:
   - config

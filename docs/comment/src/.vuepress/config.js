@@ -52,9 +52,9 @@ module.exports = resolve({
       },
       {
         text: '配置',
-        icon: 'api',
+        icon: 'configuration',
         items: [
-          { text: '配置', icon: 'api', link: '/config/' },
+          { text: '配置', icon: 'configuration', link: '/config/' },
           { text: 'Valine', icon: 'valine', link: '/config/valine.html' },
           { text: 'Vssue', icon: 'vssue', link: '/config/vssue.html' }
         ]
@@ -123,9 +123,9 @@ module.exports = resolve({
           },
           {
             text: 'Config',
-            icon: 'api',
+            icon: 'configuration',
             items: [
-              { text: 'Config', icon: 'api', link: '/en/config/' },
+              { text: 'Config', icon: 'configuration', link: '/en/config/' },
               {
                 text: 'Valine',
                 icon: 'valine',

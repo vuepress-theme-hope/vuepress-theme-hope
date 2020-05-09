@@ -42,7 +42,7 @@ module.exports = resolve({
     nav: [
       { text: '主页', icon: 'homefill', link: '/' },
       { text: '指南', icon: 'creativefill', link: '/guide/' },
-      { text: '配置', icon: 'api', link: '/config.html' }
+      { text: '配置', icon: 'configuration', link: '/config.html' }
     ],
     sidebar: {
       '/guide/': [
@@ -78,7 +78,7 @@ module.exports = resolve({
         nav: [
           { text: 'Home', icon: 'homefill', link: '/en/' },
           { text: 'Guide', icon: 'creativefill', link: '/en/guide/' },
-          { text: 'Config', icon: 'api', link: '/en/config.html' }
+          { text: 'Config', icon: 'configuration', link: '/en/config.html' }
         ],
         sidebar: {
           '/en/guide/': [

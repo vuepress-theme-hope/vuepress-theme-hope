@@ -56,7 +56,17 @@ module.exports = {
         icon: 'extension',
         prefix: 'plugin/',
         collapsable: false,
-        children: ['', 'container', 'copyright', 'medium-zoom', 'pwa']
+        children: [
+          '',
+          'last-update',
+          'pwa',
+          'reading-time',
+          'seo',
+          'sitemap',
+          'container',
+          'copyright',
+          'medium-zoom'
+        ]
       }
     ],
 
@@ -145,7 +155,17 @@ module.exports = {
         icon: 'extension',
         prefix: 'plugin/',
         collapsable: false,
-        children: ['', 'container', 'copyright', 'medium-zoom', 'pwa']
+        children: [
+          '',
+          'last-update',
+          'pwa',
+          'reading-time',
+          'seo',
+          'sitemap',
+          'container',
+          'copyright',
+          'medium-zoom'
+        ]
       }
     ],
 
