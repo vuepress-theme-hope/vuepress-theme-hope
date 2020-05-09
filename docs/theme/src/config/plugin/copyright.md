@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# vuepress-plugin-copyright <MyBadge text="新增" />
+# vuepress-plugin-copyright
 
 处理你的 VuePress 站点中的复制操作
 

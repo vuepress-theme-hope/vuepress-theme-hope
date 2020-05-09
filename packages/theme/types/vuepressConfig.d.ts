@@ -31,7 +31,7 @@ export type VuepressThemeConfig = Partial<{
   nav: NavBarConfig;
   /** 侧边栏配置 */
   sidebar: SideBarConfig;
-  /** 侧边栏深度 */
+  /** 侧边栏嵌套的标题深度 */
   sidebarDepth: number;
   /** 显示所有页面的标题链接 */
   displayAllHeaders: boolean;
@@ -58,6 +58,7 @@ export type VuepressThemeConfig = Partial<{
    * 作为特例，默认语言可以使用 '/' 作为其路径。
    */
   locales: Record<string, LangLocalesConfig>;
+
   /** 项目仓库地址 */
   repo: string;
   /** 仓库标签文字 */
@@ -65,7 +66,6 @@ export type VuepressThemeConfig = Partial<{
   /** 文档所属仓库 */
   docsRepo: string;
   /** 文档所属文件夹 */
-
   docsDir: string;
   /** 文档所属分支 */
   docsBranch: string;

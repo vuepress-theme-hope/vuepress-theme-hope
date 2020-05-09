@@ -73,7 +73,7 @@ module.exports = {
             title: 'Emoji',
             icon: 'emoji',
             prefix: 'emoji/',
-            children: ['', 'people', 'nature', 'object', 'locate', 'symbol']
+            children: ['', 'people', 'nature', 'object', 'place', 'symbol']
           }
         ]
       },
@@ -82,15 +82,7 @@ module.exports = {
         prefix: 'vuepress/',
         icon: 'vue',
         collapsable: false,
-        children: [
-          '',
-          'file',
-          'plugin',
-          'theme/',
-          'theme/config',
-          'command',
-          'case'
-        ]
+        children: ['', 'file', 'plugin', 'theme', 'command', 'case']
       }
     ],
 
@@ -163,22 +155,23 @@ module.exports = {
         icon: 'markdown',
         prefix: 'markdown/',
         collapsable: false,
-        children: ['', 'demo', 'emoji']
+        children: [
+          '',
+          'demo',
+          {
+            title: 'Emoji',
+            icon: 'emoji',
+            prefix: 'emoji/',
+            children: ['', 'people', 'nature', 'object', 'place', 'symbol']
+          }
+        ]
       },
       {
         title: 'Vuepress',
         icon: 'vue',
         prefix: 'vuepress/',
         collapsable: false,
-        children: [
-          '',
-          'file',
-          'plugin',
-          'theme/',
-          'theme/config',
-          'command',
-          'case'
-        ]
+        children: ['', 'file', 'plugin', 'theme', 'command', 'case']
       }
     ],
 

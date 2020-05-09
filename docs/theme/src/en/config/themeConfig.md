@@ -46,13 +46,6 @@ If you need multi-language support for other languages, you can [submit a PR to 
 
 The default author of the article
 
-### logo
-
-- Type: `string`
-- Required: No
-
-The logo image of the navigation bar. Needs to be filled with an absolute path. If you want to display another logo in dark mode, please configure the `themeConfig.darkLogo` option.
-
 ### nav <MyBadge text="improved" type="warn" />
 
 NavBarItem now has
@@ -72,6 +65,115 @@ SideBarItem now has
 -Type: `Record <string, HopeLangI18nConfigItem>`
 
 The multi-language configuration of the theme mainly needs to configure `nav` and`sidebar` of each language.
+
+## Default theme config
+
+The following configurations follow the configuration items in `@vuepress/theme-default`:
+
+### logo <MyBadge text="improved" type="warn" />
+
+- Type: `string`
+- Required: No
+
+The logo image of the navigation bar. Needs to be filled with an absolute path. If you want to display another logo in dark mode, please configure the `themeConfig.darkLogo` option.
+
+### sidebarDepth
+
+- Type: `number`
+- Default: `2`
+
+Nested headings depth in sidebar
+
+### displayAllHeaders
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to display header links in sidebar for all pages
+
+### activeHeaderLinks
+
+-Type: `boolean`
+-Default value: `true`
+
+Whether to automatically update hash values ​​in URLs and sidebar active headings.
+
+### search
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to enable the default search box
+
+### searchMaxSuggestions
+
+- Type: `number`
+- Default: `10`
+
+The number of search results displayed in the default search box
+
+### algolia
+
+-Type: `AlgoliaOption`
+-Required: No
+
+Algolia search configuration, you need to provide at least `apiKey` and`indexName`. For details, see [Doc Search documentation](https://github.com/algolia/docsearch#docsearch-options). You can also configure algolia for each language.
+
+### nextLinks
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to display next link of all pages
+
+### prevLinks
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to display previous link on all pages
+
+### repo
+
+- Type: `string`
+- Required: No
+
+Project repo address
+
+### repoLabel
+
+- Type: `string`
+- Required: No
+
+Repo label text, will automatically try to parse the `repo` option, try to derive `'GitHub'` `'GitLab'` `'Bitbucket'`, if it is not recognized, it will be displayed as `'Source'`
+
+### docsRepo
+
+- Type: `string`
+- Required: No
+
+The address of the docs repo. Will be the same as `repo` by default.
+
+### docsDir
+
+- Type: `string`
+- Required: No
+
+The folder which the document belongs to, the default is the root directory of the repo.
+
+### docsBranch
+
+- Type: `string`
+- Default: `'master'`
+
+Document branch
+
+### editLinks <MyBadge text = "Change default value" type = "error" />
+
+- Type: `boolean`
+- Default: `true`
+
+Show edit page link
 
 ## Footer settings
 

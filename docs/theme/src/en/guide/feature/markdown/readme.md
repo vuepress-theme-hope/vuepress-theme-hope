@@ -33,14 +33,56 @@ module.exports = {
 
 ## New Feature
 
-- [Superscript and Subscript](sup-sub.md)
+### Superscript and Subscript
 
-- [Align](align.md)
+19^th^ H~2~O
 
-- [Footnote](footnote.md)
+- [View Detail](sup-sub.md)
 
-- [Mark](mark.md)
+### Align
 
-- [Flowchart](flowchart.md)
+::: center
+I am center
+:::
 
-- [$\TeX$ Syntax](tex.md)
+::: right
+I am right align
+:::
+
+- [View Detail](align.md)
+
+### Footnote
+
+This text has footnote[^first].
+
+[^first]: This is footnote content
+
+- [View Detail](footnote.md)
+
+### Mark
+
+You can mark ==important things== .
+
+- [View Detail](mark.md)
+
+### Flowchart
+
+@flowstart
+cond=>condition: Process?
+process=>operation: Process
+e=>end: End
+
+cond(yes)->process->e
+cond(no)->e
+@flowend
+
+- [View Detail](flowchart.md)
+
+### Tex
+
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
+
+- [View Detail](tex.md)

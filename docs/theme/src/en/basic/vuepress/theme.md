@@ -53,15 +53,3 @@ module.exports = {
 ::: warning Note
 The theme whose name starts with `@vuepress/theme-` is an officially maintained theme.
 :::
-
-## Writing a theme
-
-:::danger
-This section only faces with those who know vue. If you never heard of it, you don't need to read this section.
-
-[Writing a theme](dev.md)
-:::
-
-## Excellent third-party theme
-
-- [vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/)

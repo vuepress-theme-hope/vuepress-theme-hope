@@ -55,15 +55,3 @@ module.exports = {
 ::: warning
 以 `@vuepress/theme-` 开头的主题是官方维护的主题。
 :::
-
-## 开发主题
-
-:::danger
-此部分只面向熟练掌握 Vue 相关库的人，如果您对 Vue 不熟悉，则无需阅读此章节。
-
-[点击前往](dev.md)
-:::
-
-## 优秀第三方主题
-
-- [vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/)

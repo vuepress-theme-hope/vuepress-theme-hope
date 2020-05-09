@@ -5,13 +5,11 @@ tags:
   - config
 ---
 
-# @vuepress/medium-zoom <MyBadge text="新增" />
+# @vuepress/medium-zoom
 
 这个插件将会使你的图片支持点击缩放。
 
 ## 默认配置说明
-
-开启功能并进行了深色模式适配。
 
 默认配置如下：
 

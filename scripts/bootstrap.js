@@ -26,7 +26,8 @@ files.forEach((pkgName) => {
       },
       repository: {
         type: 'git',
-        url: 'git+https://github.com/Mister-Hope/vuepress-theme-hope.git'
+        url: 'git+https://github.com/Mister-Hope/vuepress-theme-hope.git',
+        directory: `packages/${pkgName}`
       },
       keywords: [
         'vuepress-plugin',
@@ -51,7 +52,7 @@ files.forEach((pkgName) => {
       }
     };
 
-    fs.writeFileSync(pkgPath, JSON.stringify(pkgJSON, null, 2));
+    fs.writeFileSync(pkgPath, `${JSON.stringify(pkgJSON, null, 2)}\n`);
   }
 
   const readmePath = path.join(packagesDir, pkgName, 'readme.md');

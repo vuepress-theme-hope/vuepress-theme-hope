@@ -156,7 +156,7 @@ export const resolvePageforSidebar = (
       };
 
   // 未找到匹配的侧边栏
-  console.error(`侧边栏处理: 侧边栏 "${realPath}" 未找到匹配页面！`);
+  console.error(`Sidebar: "${realPath}" has no matching page`);
 
   return { type: 'error', path: realPath };
 };

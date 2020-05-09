@@ -74,7 +74,7 @@ module.exports = {
         title: 'Group 1', // required
         path: '/foo/', // optional, which should be a absolute path.
         collapsable: false, // optional, defaults to true
-        sidebarDepth: 1, // optional, defaults to 1
+        sidebarDepth: 2, // optional, defaults to 2
         children: ['/']
       },
       {

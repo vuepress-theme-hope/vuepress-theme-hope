@@ -35,24 +35,54 @@ module.exports = {
 
 ### 自定义对齐
 
+::: center
+我是居中的
+:::
+
+::: right
+我在右对齐
+:::
+
 - [点击查看](align.md)
 
 ### 上下角标
+
+19^th^ H~2~O
 
 - [点击查看](sup-sub.md)
 
 ### 脚注
 
+此文字有脚注[^first].
+
+[^first]: 这是脚注内容
+
 - [点击查看](footnote.md)
 
 ### 标记
+
+你可以标记 ==重要的内容== 。
 
 - [点击查看](mark.md)
 
 ### 流程图
 
+@flowstart
+cond=>condition: Process?
+process=>operation: Process
+e=>end: End
+
+cond(yes)->process->e
+cond(no)->e
+@flowend
+
 - [点击查看](flowchart.md)
 
 ### Tex 语法
+
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
 
 - [点击查看](tex.md)

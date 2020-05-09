@@ -25,7 +25,6 @@ export default class PageEdit extends Vue {
   private get lastUpdatedText() {
     return (
       this.$themeLocaleConfig.lastUpdated ||
-      this.$themeConfig.lastUpdated ||
       'Last Updated'
     );
   }
@@ -48,7 +47,6 @@ export default class PageEdit extends Vue {
   private get editLinkText() {
     return (
       this.$themeLocaleConfig.editLinkText ||
-      this.$site.themeConfig.editLinkText ||
       'Edit this page'
     );
   }

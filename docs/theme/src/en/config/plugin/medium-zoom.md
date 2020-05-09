@@ -11,8 +11,6 @@ This plugin will make your images support click zoom.
 
 ## Default configuration instructions
 
-Turn on the function and make night mode adaptation.
-
 The default configuration is:
 
 ```js {3-13}

@@ -46,19 +46,14 @@ tags:
 
 文章显示的默认作者
 
-### logo
-
-- 类型: `string`
-- 必填: 否
-
-导航栏的 logo 图片，需填入绝对路径，如果你希望在深色模式下显示另一个 logo，请配置 `themeConfig.darkLogo` 选项。
-
 ### nav <MyBadge text="改进" type="warn" />
 
 NavBarItem 新增
 
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
+
+具体配置，请见 [布局 → 导航栏](../guide/layout/navbar.md)
 
 ### sidebar <MyBadge text="改进" type="warn" />
 
@@ -67,11 +62,124 @@ SideBarItem 新增
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
 
+具体配置，请见 [布局 → 侧边栏](../guide/layout/sidebar.md)
+
 ### locales
 
 - 类型: `Record<string, HopeLangI18nConfigItem>`
 
 主题的多语言配置，主要需要配置各语言的 `nav` 与 `sidebar`。
+
+## 默认主题配置
+
+以下这些配置沿用了 `@vuepress/theme-default` 的配置项，您无需进行改动:
+
+### logo <MyBadge text="改进" type="warn" />
+
+- 类型: `string`
+- 必填: 否
+
+导航栏的 logo 图片，需填入绝对路径并放入 `.vuepress/public` 文件夹。
+
+如果你希望在深色模式下显示另一个 logo，请配置 `themeConfig.darkLogo` 选项。
+
+### sidebarDepth
+
+- 类型: `number`
+- 默认值: `2`
+
+侧边栏嵌套的标题深度
+
+### displayAllHeaders
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否显示所有页面的标题链接
+
+### activeHeaderLinks
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否自动更新嵌套的标题链接和 URL 中的 Hash 值
+
+### search
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否启用默认的搜索框
+
+### searchMaxSuggestions
+
+- 类型: `number`
+- 默认值: `10`
+
+默认搜索框显示的搜索结果数量
+
+### algolia
+
+- 类型: `AlgoliaOption`
+- 必填: 否
+
+Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体详见 [Doc Search 文档](https://github.com/algolia/docsearch#docsearch-options)。你也可以为每个语言配置 algolia。
+
+### nextLinks
+
+- 类型: `boolean`
+- 默认值: `true`
+
+所有页面的 下一篇 链接
+
+### prevLinks
+
+- 类型: `boolean`
+- 默认值: `true`
+
+所有页面的 上一篇 链接
+
+### repo
+
+- 类型: `string`
+- 必填: 否
+
+项目仓库地址
+
+### repoLabel
+
+- 类型: `string`
+- 必填: 否
+
+仓库标签文字，会自动解析 `repo` 选项，尝试推导出 `'GitHub'` `'GitLab'` `'Bitbucket'`，如果未能识别，显示为 `'Source'`。
+
+### docsRepo
+
+- 类型: `string`
+- 必填: 否
+
+文档所属仓库，默认同 `repo`。
+
+### docsDir
+
+- 类型: `string`
+- 必填: 否
+
+文档所属文件夹，默认为仓库根目录。
+
+### docsBranch
+
+- 类型: `string`
+- 默认值: `'master'`
+
+文档所属分支
+
+### editLinks <MyBadge text="改变默认值" type="error" />
+
+- 类型: `boolean`
+- 默认值: `true`
+
+显示编辑本页链接
 
 ## 页脚设置
 

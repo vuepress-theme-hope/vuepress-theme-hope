@@ -58,7 +58,9 @@ const pluginConfig = (
       /** 自定义居右容器 */
       ['container', { type: 'right', defaultTitle: '' }],
       /** 自定义居中容器 */
-      ['container', { type: 'center', defaultTitle: '' }]
+      ['container', { type: 'center', defaultTitle: '' }],
+      /** 自定义居左容器 */
+      ['container', { type: 'left', defaultTitle: '' }]
     );
 
   return config;

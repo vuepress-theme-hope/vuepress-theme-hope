@@ -5,10 +5,10 @@ tags:
   - config
 ---
 
-# vuepress-plugin-container <MyBadge text="改进" />
+# vuepress-plugin-container
 
 ::: warning
-请注意，markdown 增强中的自适应对齐应用了该插件，因此如果您禁用本插件，您将无法使用自定义对齐，以及默认主题所提供的提示框。
+请注意，markdown 增强中的自适应对齐应用了该插件，因此如果您禁用本插件，您将无法使用自定义对齐与提示框。
 :::
 
 ## 配置项

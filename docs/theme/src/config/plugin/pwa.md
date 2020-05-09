@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# @mr-hope/vuepress-plugin-pwa <MyBadge text="新增" />
+# @mr-hope/vuepress-plugin-pwa
 
 Progressive Web App Surpport
 
@@ -15,4 +15,16 @@ Progressive Web App Surpport
 
 弹窗默认语言将自动设置为 `themeConfig` 中配置的 `baseLang`。
 
-该功能默认启用，如果你不需要该功能或想使用其他的 pwa 插件，可以设置 `themeConfig.pwa` 为 `false` 来禁用本插件。
+在本主题中，该功能默认启用，如果你不需要该功能或想使用其他的 pwa 插件，可以设置 `themeConfig.pwa` 为 `false` 来禁用本插件。
+
+## 插件配置
+
+### popupComponent
+
+- 类型: `string`
+
+可填入自定义的弹窗组件路径。
+
+### generateSwConfig
+
+传递给 `workbox-build` 的选项，具体详情，请见 [Workbox 文档](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)

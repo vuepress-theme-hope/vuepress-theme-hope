@@ -35,3 +35,4 @@ npm run build
 - [Plugins](plugin.md)
 - [Commands](command.md)
 - [Cases](case.md)
+- [theme](theme.md)
