@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.1...v0.3.0-alpha.2) (2020-05-09)
+
+### Bug Fixes
+
+- **sitemap:** fix missing deps and use sitemapV6 ([e768a85](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e768a85ca259bee53ea2c3ffc457a29513b5b456))
+
 ## [0.3.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.2.0...v0.3.0-alpha.1) (2020-05-09)
 
 ### Bug Fixes
