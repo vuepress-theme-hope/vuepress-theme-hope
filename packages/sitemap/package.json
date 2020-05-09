@@ -29,6 +29,9 @@
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/sitemap#readme",
+  "dependencies": {
+    "sitemap": "6.1.2"
+  },
   "peerDependencies": {
     "vuepress-types": "^0.9.1"
   }

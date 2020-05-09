@@ -3,7 +3,7 @@ import { PageComputed } from 'vuepress-types';
 /** Sitemap 配置选项 */
 export interface SitemapOptions {
   /** 需要额外包含的网址 */
-  urls?: { url: string }[];
+  urls?: string[];
   /** 不被收录的页面 */
   exclude: string[];
   /** 输出的文件名 */
@@ -14,10 +14,5 @@ export interface SitemapOptions {
   hostname: string;
   /** 时间格式化器 */
   dateFormatter: ($page: PageComputed) => string;
-  cacheTime?: number;
-
   xslUrl?: any;
-  xmlNs?: any;
-
-  [props: string]: any;
 }

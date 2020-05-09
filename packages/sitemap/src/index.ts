@@ -1,4 +1,3 @@
-import * as fs from 'fs';
 import {
   Context,
   PageComputed,
@@ -6,8 +5,9 @@ import {
   SiteData
 } from 'vuepress-types';
 import { SitemapOptions } from '../types';
+import { SitemapStream } from 'sitemap';
 import chalk from 'chalk';
-import { createSitemap } from 'sitemap';
+import { createWriteStream } from 'fs';
 import { resolve } from 'path';
 
 /** 输出日志 */
@@ -115,46 +115,27 @@ const generateSiteMap = (
 ): void => {
   log('Generating sitemap...');
 
-  const {
-    urls = [],
-    cacheTime = 600,
-    hostname,
-    xslUrl,
-    xmlNs,
-    exclude = []
-  } = options;
-
-  const sitemap = createSitemap({
-    urls,
+  const { urls = [], hostname, xslUrl, exclude = [] } = options;
+  const sitemap = new SitemapStream({
     hostname: hostname || themeConfig.hostname,
-    cacheTime: cacheTime * 1000,
-    xmlNs,
     xslUrl
   });
+  const sitemapXML = resolve(outDir, options.outFile || 'sitemap.xml');
+  const writeStream = createWriteStream(sitemapXML);
+
+  sitemap.pipe(writeStream);
 
   const base = siteData.base.replace(/\/$/u, '');
   const pagesMap = generatePageMap(siteData, base, options);
 
   pagesMap.forEach((page, url) => {
-    if (!exclude.includes(url)) sitemap.add({ url: `${base}${url}`, ...page });
+    if (!exclude.includes(url))
+      sitemap.write({ url: `${base}${url}`, ...page });
   });
 
-  urls.forEach((item) => {
-    const page = pagesMap.get(item.url);
+  urls.forEach((item) => sitemap.write(item));
 
-    if (page) {
-      sitemap.del(item.url);
-      sitemap.add({ ...page, ...item });
-    } else sitemap.add(item);
-  });
-
-  log(`found ${sitemap.urls.length} locations`);
-
-  const sitemapXML = resolve(outDir, options.outFile || 'sitemap.xml');
-
-  fs.writeFileSync(sitemapXML, sitemap.toString());
-
-  log(`${sitemap.urls.length} locations have been written.`);
+  log(`Sitemap generated.`);
 };
 
 export = (options: any, context: Context): PluginOptionAPI => ({

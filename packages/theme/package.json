@@ -36,6 +36,7 @@
     "@mr-hope/vuepress-plugin-components": "^0.3.0-alpha.1",
     "@mr-hope/vuepress-plugin-last-update": "^0.3.0-alpha.1",
     "@mr-hope/vuepress-plugin-pwa": "^0.3.0-alpha.1",
+    "@mr-hope/vuepress-plugin-seo": "^0.3.0-alpha.1",
     "@mr-hope/vuepress-plugin-sitemap": "^0.3.0-alpha.1",
     "@mr-hope/vuepress-shared-utils": "^0.3.0-alpha.1",
     "@mr-hope/vuepress-theme-types": "^0.3.0-alpha.1",
