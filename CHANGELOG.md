@@ -1,5 +1,23 @@
-
 # Changelog
+
+## [0.3.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.2.0...v0.3.0-alpha.1) (2020-05-09)
+
+### Bug Fixes
+
+- **theme:** fix BloggerInfo Image got 404 with a base ([c138b05](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c138b05c2c0681d2ec55074a416997191450832e))
+
+### Features
+
+- add four plugins ([4d1b21c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d1b21c23a337af3e0de8ec322b28227d9e3a52b))
+  - add last-update plugin
+  - add reading-time plugin
+  - add seo plugin
+  - add sitemap plugin
+
+- **md-enhance:** add mobile support for flowchart ([64fd2b0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/64fd2b06f29132a58a50b1115b28a70715f5b5a5))
+- **theme:** add darkLogo option ([5661196](https://github.com/Mister-Hope/vuepress-theme-hope/commit/566119604818613ccca80bbe3eb007069f0dfad7))
+- **theme:** add transition for homepage and add BlogInfo in sidebar ([bf4a8c2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bf4a8c28512736ccb1060510f2350bb46dae9ae6))
+- **theme:** improve footer config and update docs ([38f3a24](https://github.com/Mister-Hope/vuepress-theme-hope/commit/38f3a24eb19b144150207c47e16a7c7162c19b89))
 
 ## [0.2.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0...v0.2.0) (2020-05-08)
 
