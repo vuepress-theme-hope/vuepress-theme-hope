@@ -1,4 +1,3 @@
-
 export interface LastUpdateOption {
   /** 时间转换器 */
   transformer?: (timestamp: number, lang: string) => string;

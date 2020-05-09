@@ -9,6 +9,7 @@
 ### Features
 
 - add four plugins ([4d1b21c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d1b21c23a337af3e0de8ec322b28227d9e3a52b))
+
   - add last-update plugin
   - add reading-time plugin
   - add seo plugin

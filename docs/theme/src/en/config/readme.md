@@ -1,7 +1,7 @@
 ---
 icon: configuration
 category: aconfigpi
-tags: 
+tags:
   - config
 ---
 

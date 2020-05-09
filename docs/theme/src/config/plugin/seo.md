@@ -51,8 +51,8 @@ interface PageSeoInfo {
 比如如果你返回了 `{ 'og:url': 'google.com', 'og:image': 'google.com/logo.jpg' }`，则插件会注入以下内容到 `<head>` 中:
 
 ```html
-<meta property="og:url" content="google.com">
-<meta property="og:image" content="google.com/logo.jpg">
+<meta property="og:url" content="google.com" />
+<meta property="og:image" content="google.com/logo.jpg" />
 ```
 
 #### 默认值
@@ -62,20 +62,20 @@ interface PageSeoInfo {
 |         属性名称         |                         值                         |
 | :----------------------: | :------------------------------------------------: |
 |         `og:url`         |            themeConfig.hostname + path             |
-|      `og:site_name`      |                    $site.title                     |
-|        `og:title`        |                    $page.title                     |
-|     `og:description`     |           $page.frontmatter.description            |
+|      `og:site_name`      |                    \$site.title                    |
+|        `og:title`        |                    \$page.title                    |
+|     `og:description`     |           \$page.frontmatter.description           |
 |        `og:type`         |                    `'article'`                     |
-|        `og:image`        |   themeConfig.hostname + $page.frontmatter.image   |
-|    `og:updated_time`     |               $page.lastUpdatedTime                |
+|        `og:image`        |  themeConfig.hostname + \$page.frontmatter.image   |
+|    `og:updated_time`     |               \$page.lastUpdatedTime               |
 |       `og:locale`        |               $page._computed.$lang                |
-|  `og:locale:alternate`   |        $themeConfig.locales 包含的其他语言         |
+|  `og:locale:alternate`   |        \$themeConfig.locales 包含的其他语言        |
 |      `twitter:card`      |              `'summary_large_image'`               |
-|   `twitter:image:alt`    |                    $site.title                     |
-|     `article:author`     |  $page.frontmatter.author \|\| themeConfig.author  |
+|   `twitter:image:alt`    |                    \$site.title                    |
+|     `article:author`     | \$page.frontmatter.author \|\| themeConfig.author  |
 |      `article:tag`       | $page.frontmatter.tags \|\| $page.frontmatter.tag  |
 | `article:published_time` | $page.frontmatter.time \|\| $page.frontmatter.date |
-| `article:modified_time`  |               $page.lastUpdatedTime                |
+| `article:modified_time`  |               \$page.lastUpdatedTime               |
 
 ### customMeta
 
@@ -88,11 +88,11 @@ interface PageSeoInfo {
 ```js
 (meta: Meta, info: PageSeoInfo) => {
   meta.push({ a: '1', b: '2' });
-}
+};
 ```
 
 会向当前页面的 `<head>` 注入:
 
 ```html
-<meta a="1" b="2">
+<meta a="1" b="2" />
 ```

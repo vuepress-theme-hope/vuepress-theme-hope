@@ -82,10 +82,10 @@ next: false
 你也可以在页面的 `Front Matter` 中配置 `footer`，`copyright` 与 `medialink` 字段。
 
 - `footer` 字段可以填入字符串或布尔值。
-  
-    将 `footer` 设置为 `true` 会显示默认的页脚文字。将 `footer` 设置为 `false` 会禁用该页面的页脚。
 
-    如果你填入一个字符串，它会以 `v-html` 指令的形式插入到页脚的主位置，所以你可以填入 HTMLString。
+  将 `footer` 设置为 `true` 会显示默认的页脚文字。将 `footer` 设置为 `false` 会禁用该页面的页脚。
+
+  如果你填入一个字符串，它会以 `v-html` 指令的形式插入到页脚的主位置，所以你可以填入 HTMLString。
 
 - `copyright` 字段可以填入本页面的版权信息，同样也支持 HTMLString。这当你引用了来自别处的文章且对方使用了特定许可是很有用的。你也可以填入 `false` 来隐藏特定页面的版权信息。
 

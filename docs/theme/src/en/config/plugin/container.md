@@ -39,7 +39,7 @@ Provide an object as locale config, and the default title will depend on current
 
 - type: `string | ((info: string) => string)`
 - default: `undefined`
-  
+
 String to be placed before the block.
 
 If specified as a function, an argument `info` will be passed to it. (In the example above, `info` will be `bar`.)
