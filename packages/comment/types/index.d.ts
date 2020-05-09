@@ -106,12 +106,6 @@ export interface ReadingTime {
   words: number;
 }
 
-declare module 'vuepress-types/types/page' {
-  interface PageComputed {
-    readingTime: ReadingTime;
-  }
-}
-
 /** 评论组件全局变量 */
 declare global {
   const COMMENT_OPTIONS: CommentOptions;

@@ -165,6 +165,7 @@ module.exports = resolve({
         }
       }
     },
+    hostname: 'https://vuepress-comment.mrhope.site/',
 
     repo: 'https://github.com/mister-hope/vuepress-theme-hope',
     docsDir: 'docs/comment/src'

@@ -1,0 +1,35 @@
+{
+  "name": "@mr-hope/vuepress-plugin-sitemap",
+  "version": "0.2.0",
+  "description": "sitemap plugin for vuepress-theme-hope",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/sitemap"
+  },
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "sitemap",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
+  "author": {
+    "email": "zhangbowang1998@gmail.com",
+    "name": "Mr.Hope",
+    "url": "https://mrhope.site"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/sitemap#readme",
+  "peerDependencies": {
+    "vuepress-types": "^0.9.1"
+  }
+}

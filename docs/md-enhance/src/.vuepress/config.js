@@ -95,6 +95,7 @@ module.exports = resolve({
         }
       }
     },
+    hostname: 'https://vuepress-md-enhance.mrhope.site/',
 
     repo: 'https://github.com/mister-hope/vuepress-theme-hope/',
     docsDir: 'docs/md-enhance/src'

@@ -13,6 +13,22 @@ vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, y
 
 ## plugins enabled
 
+- [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/en/): Comment and page info feature
+
+- [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): Provide some out of box plugins
+
+- [@mr-hope/vuepress-plugin-last-update](last-update.md): Last update time
+
+- [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA support
+
+- [@mr-hope/vuepress-plugin-reading-time](reading-time.md): Expect reading time and words count
+
+- [@mr-hope/vuepress-plugin-seo](seo.md): SEO Enhancement Plugin
+
+- [@mr-hope/vuepress-plugin-sitemap](sitemap.md): Sitemap Generator for your site
+
+- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/): Provide more Markdown syntax
+
 - [vuepress-plugin-container](container.md): custom container
 
 - [vuepress-plugin-copyright](copyright.md): Provide additional copyright information when the content of the website is copied
@@ -29,8 +45,6 @@ vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, y
 
 - @vuepress/plugin-blog: Blog support
 
-- @vuepress/plugin-last-updated: show last update time
-
 - [**@vuepress/medium-zoom**](medium-zoom.md): make the website's images zoom when being clicked
 
   **effect**:
@@ -40,11 +54,3 @@ vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, y
 - @vuepress/plugin-search: search for plugins, **increase maximum search suggestions to 10**
 
 - vuepress-plugin-smooth-scroll: Smooth scrolling.
-
-- [**vuepress-plugin-comment**](https://vuepress-comment.mrhope.site/en/): Comment and reading function
-
-- [**vuepress-plugin-component**](../../guide/feature/component.md): Provide some out of the box plugins
-
-- [**vuepress-plugin-md-enhance**](https://vuepress-md-enhance.mrhope.site/): Provide more Markdown syntax
-
-- [**@mr-hope/vuepress-plugin-pwa**](pwa.md): PWA support

@@ -4,7 +4,15 @@
 
 /// <reference types="@mr-hope/vuepress-plugin-comment" />
 
+/// <reference types="@mr-hope/vuepress-plugin-last-update" />
+
 /// <reference types="@mr-hope/vuepress-plugin-pwa" />
+
+/// <reference types="@mr-hope/vuepress-plugin-reading-time" />
+
+/// <reference types="@mr-hope/vuepress-plugin-seo" />
+
+/// <reference types="@mr-hope/vuepress-plugin-sitemap" />
 
 /// <reference types="vuepress-plugin-md-enhance" />
 

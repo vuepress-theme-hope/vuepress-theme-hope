@@ -34,7 +34,9 @@
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.2.0",
     "@mr-hope/vuepress-plugin-components": "^0.2.0",
+    "@mr-hope/vuepress-plugin-last-update": "^0.2.0",
     "@mr-hope/vuepress-plugin-pwa": "^0.2.0",
+    "@mr-hope/vuepress-plugin-sitemap": "^0.2.0",
     "@mr-hope/vuepress-shared-utils": "^0.2.0",
     "@mr-hope/vuepress-theme-types": "^0.2.0",
     "@types/md5": "^2.2.0",

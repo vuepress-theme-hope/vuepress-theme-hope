@@ -7,6 +7,7 @@ import {
 import { VuepressConfig, VuepressThemeConfig } from './vuepressConfig';
 import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance/types';
 import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
+import { SeoOptions } from '@mr-hope/vuepress-plugin-seo';
 
 /** 页脚配置 */
 export type HopeFooterConfig = Partial<{
@@ -89,6 +90,10 @@ export type BlogOptions = Partial<{
 
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig extends VuepressThemeConfig {
+  lastUpdated?: never;
+  editLinkText?: never;
+  /** 暗黑模式下 logo */
+  darkLogo?: string;
   /** 多语言配置 */
   locales?: Record<string, HopeLangLocalesConfig>;
   /** 根目录对应的语言 */
@@ -118,6 +123,12 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   blog?: BlogOptions | false;
   /** 页面信息 */
   pageInfo?: PageInfotype[] | false;
+  /** 站点地址 */
+  hostname?: string;
+  /** 最后更新时间转换 */
+  lastUpdatedTransformer?: (timestamp: number, lang: string) => string;
+  /** SEO */
+  seo?: SeoOptions | false;
   /** 图标前缀 */
   iconPrefix?: string;
   /** 是否在侧边栏显示图标 */

@@ -1,5 +1,4 @@
 /* eslint-disable max-lines-per-function */
-import * as moment from 'moment';
 import { PluginConfig } from 'vuepress-types';
 import { ResolvedHopeThemeConfig } from '../../types';
 import { resolve } from 'path';
@@ -20,8 +19,25 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     /** 全屏插件 */
     ['@mr-hope/components'],
 
+    /** 更新时间插件 */
+    [
+      '@mr-hope/last-update',
+      options.lastUpdated === false
+        ? false
+        : options.lastUpdatedTransformer
+        ? { transformer: options.lastUpdatedTransformer }
+        : {}
+    ],
+
     /** PWA 插件 */
     ['@mr-hope/pwa', options.pwa],
+
+    ['@mr-hope/seo', options.seo === false ? false : options.seo],
+
+    [
+      '@mr-hope/sitemap',
+      options.hostname ? { hostname: options.hostname } : false
+    ],
 
     /** 自动激活侧边栏标题 */
     ['@vuepress/active-header-links', options.activeHeaderLinks],
@@ -50,21 +66,7 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
             ]
           }
     ],
-
-    /** 更新时间插件 */
-    [
-      '@vuepress/last-updated',
-      {
-        /** 转换时间戳 */
-        transformer: (timestamp: number, lang: string): string => {
-          moment.locale(lang);
-
-          return `${moment(timestamp).format('LL')} ${moment(timestamp).format(
-            'HH:mm'
-          )}`;
-        }
-      }
-    ],
+    ['@vuepress/last-updated', false],
 
     /** 图片缩放插件 */
     [
@@ -90,7 +92,7 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
       '@vuepress/search',
       {
         /** 搜索展示数量 */
-        searchMaxSuggestions: 10
+        searchMaxSuggestions: options.searchMaxSuggestions || 10
       }
     ],
 

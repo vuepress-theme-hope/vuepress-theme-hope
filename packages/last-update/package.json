@@ -1,0 +1,41 @@
+{
+  "name": "@mr-hope/vuepress-plugin-last-update",
+  "version": "0.2.0",
+  "description": "Last update time plugin for vuepress-theme-hope",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/last-update"
+  },
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "last-update",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
+  "author": {
+    "email": "zhangbowang1998@gmail.com",
+    "name": "Mr.Hope",
+    "url": "https://mrhope.site"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/last-update#readme",
+  "dependencies": {
+    "@types/cross-spawn": "^6.0.1",
+    "cross-spawn": "^7.0.2",
+    "moment": "^2.24.0"
+  },
+  "peerDependencies": {
+    "typescript": "^3.8.3",
+    "vuepress-types": "^0.9.1"
+  }
+}

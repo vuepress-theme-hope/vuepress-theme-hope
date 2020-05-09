@@ -13,6 +13,22 @@ vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可�
 
 ## 启用的插件
 
+- [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/): 评论与文章信息功能
+
+- [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): 提供一些开箱即用的插件
+
+- [@mr-hope/vuepress-plugin-last-update](last-update.md): 最后更新时间
+
+- [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA 支持
+
+- [@mr-hope/vuepress-plugin-reading-time](reading-time.md): 阅读时间与字数统计
+
+- [@mr-hope/vuepress-plugin-seo](seo.md): SEO 增强插件
+
+- [@mr-hope/vuepress-plugin-sitemap](sitemap.md): 为你的站点生成 sitemap
+
+- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/): 提供更多 Markdown 语法
+
 - [vuepress-plugin-container](container.md): 自定义容器
 
 - [vuepress-plugin-copyright](copyright.md): 在网站内容被复制的时候提供额外的版权信息
@@ -29,8 +45,6 @@ vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可�
 
 - @vuepress/plugin-blog: 博客支持
 
-- @vuepress/plugin-last-updated: 显示上一次更新时间
-
 - [**@vuepress/medium-zoom**](medium-zoom.md): 使网站的图片支持点击缩放
 
   **效果**：
@@ -40,11 +54,3 @@ vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可�
 - @vuepress/plugin-search: 搜索插件，**将最大搜索建议增加至 10**
 
 - vuepress-plugin-smooth-scroll: 平滑滚动。
-
-- [**vuepress-plugin-comment**](https://vuepress-comment.mrhope.site/): 评论与阅读量功能
-
-- [**vuepress-plugin-component**](../../guide/feature/component.md): 提供一些开箱即用的插件
-
-- [**vuepress-plugin-md-enhance**](https://vuepress-md-enhance.mrhope.site/): 提供更多 Markdown 语法
-
-- [**@mr-hope/vuepress-plugin-pwa**](pwa.md): PWA 支持

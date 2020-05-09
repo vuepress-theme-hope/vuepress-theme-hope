@@ -70,7 +70,7 @@ module.exports = resolve({
       apiKey: '4deb442097fb6a05638adf10ef86e222',
       indexName: 'mrhope_vuepress-theme'
     },
-
+    hostname: 'https://vuepress-theme.mrhope.site/',
     repo: 'https://github.com/mister-hope/vuepress-theme-hope',
     repoDisplay: false,
     docsDir: 'docs/theme/src'

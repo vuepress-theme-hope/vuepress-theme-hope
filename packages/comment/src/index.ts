@@ -1,11 +1,7 @@
-import { Context, PluginOptionAPI } from 'vuepress-types';
 import { CommentOptions } from '../types';
-import readingTime from './reading-time';
+import { PluginOptionAPI } from 'vuepress-types';
 
-export = (
-  options: CommentOptions,
-  { themeConfig }: Context
-): PluginOptionAPI => {
+export = (options: CommentOptions): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: 'comment',
 
@@ -16,16 +12,9 @@ export = (
 
     plugins: [
       /** Typescript Support */
+      ['@mr-hope/reading-time', { wordPerminute: options.wordPerminute }],
       ['typescript']
-    ],
-
-    extendPageData($page): void {
-      ($page as any).readingTime = readingTime(
-        // eslint-disable-next-line no-underscore-dangle
-        $page._strippedContent,
-        options.wordPerminute || themeConfig.wordPerminute || 300
-      );
-    }
+    ]
   };
 
   if (options.type === 'vssue')

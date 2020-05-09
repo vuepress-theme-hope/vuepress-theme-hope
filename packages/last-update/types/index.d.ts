@@ -1,0 +1,15 @@
+
+export interface LastUpdateOption {
+  /** 时间转换器 */
+  transformer?: (timestamp: number, lang: string) => string;
+}
+
+declare module 'vuepress-types/types/page' {
+  interface PageComputed {
+    lastUpdatedTime?: number;
+  }
+
+  interface Page {
+    lastUpdatedTime?: number;
+  }
+}
