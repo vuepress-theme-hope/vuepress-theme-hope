@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-seo",
-  "version": "0.3.0-alpha.4",
+  "version": "0.3.0-alpha.5",
   "description": "seo plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "types/index.d.ts",
