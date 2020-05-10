@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.3...v0.3.0-alpha.4) (2020-05-10)
+
+### Bug Fixes
+
+- **shared-utils:** fix types issue ([b47c1fc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b47c1fcef2b292ea75793f15eca4d7159859b66a))
+
 ## [0.3.0-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.2...v0.3.0-alpha.3) (2020-05-10)
 
 ### Bug Fixes
