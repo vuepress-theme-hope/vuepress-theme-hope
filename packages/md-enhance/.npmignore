@@ -1,2 +1,6 @@
 src/*.ts
+!src/*.d.ts
+src/markdown-it/*.ts
+!src/markdown-it/*.d.ts
+
 test/

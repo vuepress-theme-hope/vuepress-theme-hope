@@ -1,4 +1,5 @@
 src/lib/*.ts
+!src/lib/*.d.ts
 src/index.ts
 test/
 
