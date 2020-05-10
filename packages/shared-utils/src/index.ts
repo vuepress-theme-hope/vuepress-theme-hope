@@ -5,8 +5,6 @@ import {
 import domFunction from './dom';
 import i18nConfig from './i18n';
 
-export * from '../types';
-
 export const capitalize = (word: string): string =>
   `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
 

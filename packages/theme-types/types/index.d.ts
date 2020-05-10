@@ -10,10 +10,6 @@
 
 /// <reference types="@mr-hope/vuepress-plugin-reading-time" />
 
-/// <reference types="@mr-hope/vuepress-plugin-seo" />
-
-/// <reference types="@mr-hope/vuepress-plugin-sitemap" />
-
 /// <reference types="vuepress-plugin-md-enhance" />
 
 /// <reference types="vuepress-theme-hope" />

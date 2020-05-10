@@ -3,7 +3,7 @@
   "version": "0.3.0-alpha.3",
   "description": "Shared utils for vuepress-theme-hope",
   "main": "src/index.js",
-  "types": "src/index.ts",
+  "types": "types/index.d.ts",
   "keywords": [
     "vuepress-theme-hope",
     "vuepress",
