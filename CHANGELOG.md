@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.2...v0.3.0-alpha.3) (2020-05-10)
+
+### Bug Fixes
+
+- fix missing d.ts in npm ([c7e0452](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c7e0452fa51ab82ac0d64935b608a8f3c5807d60))
+
 ## [0.3.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.1...v0.3.0-alpha.2) (2020-05-09)
 
 ### Bug Fixes
