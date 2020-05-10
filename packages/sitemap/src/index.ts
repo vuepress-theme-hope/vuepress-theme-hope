@@ -134,7 +134,7 @@ const generateSiteMap = (
   });
 
   urls.forEach((item) => sitemap.write(item));
-
+  sitemap.end();
   log(`Sitemap generated.`);
 };
 

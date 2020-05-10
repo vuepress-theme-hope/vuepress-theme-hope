@@ -97,7 +97,7 @@ module.exports = resolve({
         sidebar: sideBarConfig.en
       }
     },
-
+    hostname: 'https://vuepress-theme-demo.mrhope.site/',
     repo: 'https://github.com/mister-hope/vuepress-theme-hope',
     repoLabel: 'Github'
     /** 分享设置 */
