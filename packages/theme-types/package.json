@@ -33,8 +33,6 @@
     "@mr-hope/vuepress-plugin-last-update": "^0.3.0-alpha.3",
     "@mr-hope/vuepress-plugin-pwa": "^0.3.0-alpha.3",
     "@mr-hope/vuepress-plugin-reading-time": "^0.3.0-alpha.3",
-    "@mr-hope/vuepress-plugin-seo": "^0.3.0-alpha.3",
-    "@mr-hope/vuepress-plugin-sitemap": "^0.3.0-alpha.3",
     "vuepress-plugin-md-enhance": "^0.3.0-alpha.3",
     "vuepress-types": "0.9.2"
   }
