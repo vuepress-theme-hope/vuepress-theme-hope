@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.4...v0.3.0-alpha.5) (2020-05-10)
+
+### Bug Fixes
+
+- **sitemap:** fix sitemap has no ending tag ([32c471a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/32c471a9fdd552744e4f881dd14fab5762a2fa2c))
+
 ## [0.3.0-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.3...v0.3.0-alpha.4) (2020-05-10)
 
 ### Bug Fixes

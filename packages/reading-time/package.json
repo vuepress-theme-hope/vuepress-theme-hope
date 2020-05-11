@@ -4,6 +4,9 @@
   "description": "Reading time plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "types/index.d.ts",
+  "scripts": {
+    "test": "mocha"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -29,7 +32,7 @@
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/read-time#readme",
-  "peerDependencies": {
+  "devDependencies": {
     "vuepress-types": "^0.9.2"
   }
 }
