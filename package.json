@@ -57,7 +57,7 @@
     "mocha": "7.1.2",
     "prettier": "2.0.5",
     "ts-node": "8.10.1",
-    "typescript": "3.8.3",
+    "typescript": "3.9.2",
     "vue-template-compiler": "2.6.11"
   },
   "config": {
