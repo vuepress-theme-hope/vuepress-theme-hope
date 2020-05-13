@@ -128,6 +128,10 @@ const containerConfig: Record<string, Record<string, string>> = {
   danger: {
     '/zh/': '警告',
     '/en/': 'Warning'
+  },
+  detail: {
+    '/zh/': '详情',
+    '/en/': 'Detail'
   }
 };
 

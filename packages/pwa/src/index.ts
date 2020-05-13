@@ -1,5 +1,5 @@
+import * as chalk from 'chalk';
 import * as fs from 'fs-extra';
-import * as logger from '@vuepress/shared-utils/lib/logger';
 import * as wbb from 'workbox-build';
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { PWAOptions } from '../types';
@@ -23,9 +23,9 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
   };
 
   config.generated = async (): Promise<any> => {
-    const swFilePath = resolve(context.outDir, './service-worker.js');
+    console.log(chalk.cyan('wait'), 'Generating service worker...');
 
-    logger.wait('Generating service worker...');
+    const swFilePath = resolve(context.outDir, './service-worker.js');
 
     await wbb.generateSW({
       swDest: swFilePath,

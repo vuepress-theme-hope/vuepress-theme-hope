@@ -37,8 +37,8 @@
   "devDependencies": {
     "@types/chai": "4.2.11",
     "@types/mocha": "7.0.2",
-    "@typescript-eslint/eslint-plugin": "2.31.0",
-    "@typescript-eslint/parser": "2.31.0",
+    "@typescript-eslint/eslint-plugin": "2.33.0",
+    "@typescript-eslint/parser": "2.33.0",
     "@vue/cli-plugin-unit-mocha": "4.3.1",
     "@vue/cli-service": "4.3.1",
     "@vue/eslint-config-prettier": "6.0.0",
@@ -52,12 +52,12 @@
     "eslint-plugin-prettier": "3.1.3",
     "eslint-plugin-vue": "6.2.2",
     "husky": "4.2.5",
-    "lerna": "3.20.2",
+    "lerna": "3.21.0",
     "lint-staged": "10.2.2",
     "mocha": "7.1.2",
     "prettier": "2.0.5",
     "ts-node": "8.10.1",
-    "typescript": "3.8.3",
+    "typescript": "3.9.2",
     "vue-template-compiler": "2.6.11"
   },
   "config": {
