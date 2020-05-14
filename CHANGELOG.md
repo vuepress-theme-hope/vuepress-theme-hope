@@ -1,32 +1,16 @@
 # Changelog
 
-## [0.3.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.4...v0.3.0-alpha.5) (2020-05-10)
+## [0.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.5...v0.3.0) (2020-05-14)
 
 ### Bug Fixes
 
 - **sitemap:** fix sitemap has no ending tag ([32c471a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/32c471a9fdd552744e4f881dd14fab5762a2fa2c))
 
-## [0.3.0-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.3...v0.3.0-alpha.4) (2020-05-10)
-
-### Bug Fixes
-
 - **shared-utils:** fix types issue ([b47c1fc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b47c1fcef2b292ea75793f15eca4d7159859b66a))
-
-## [0.3.0-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.2...v0.3.0-alpha.3) (2020-05-10)
-
-### Bug Fixes
 
 - fix missing d.ts in npm ([c7e0452](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c7e0452fa51ab82ac0d64935b608a8f3c5807d60))
 
-## [0.3.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.1...v0.3.0-alpha.2) (2020-05-09)
-
-### Bug Fixes
-
 - **sitemap:** fix missing deps and use sitemapV6 ([e768a85](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e768a85ca259bee53ea2c3ffc457a29513b5b456))
-
-## [0.3.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.2.0...v0.3.0-alpha.1) (2020-05-09)
-
-### Bug Fixes
 
 - **theme:** fix BloggerInfo Image got 404 with a base ([c138b05](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c138b05c2c0681d2ec55074a416997191450832e))
 
