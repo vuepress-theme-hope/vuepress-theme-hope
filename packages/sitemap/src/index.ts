@@ -11,10 +11,11 @@ import { createWriteStream } from 'fs';
 import { resolve } from 'path';
 
 /** 输出日志 */
-const log = (msg: string, color = 'blue', label = 'SITEMAP'): void =>
-  console.log(
-    `\n${(chalk as any).reset.inverse.bold[color](` ${label} `)} ${msg}`
-  );
+const log = (
+  msg: string,
+  color: 'cyan' | 'red' = 'cyan',
+  label = 'SITEMAP'
+): void => console.log(`\n${chalk[color](` ${label} `)} ${msg}`);
 
 const stripLocalePrefix = (
   path: string,
@@ -82,7 +83,7 @@ const generatePageMap = (
     if (excludePage) exclude.push(page.path);
 
     // 生成上次的更新时间
-    const latmodifyTime = dateFormatter(page);
+    const lastmodifyTime = dateFormatter(page);
 
     const { normalizedPath } = stripLocalePrefix(page.path, localeKeys);
     const relatedLocales =
@@ -98,7 +99,7 @@ const generatePageMap = (
 
     pagesMap.set(page.path, {
       changefreq: frontmatterOptions.changefreq || changefreq,
-      lastmodISO: latmodifyTime,
+      lastmodISO: lastmodifyTime,
       links,
       ...others
     });
@@ -107,7 +108,6 @@ const generatePageMap = (
   return pagesMap;
 };
 
-// eslint-disable-next-line max-lines-per-function
 const generateSiteMap = (
   siteData: SiteData,
   { outDir, themeConfig }: Context,
