@@ -1,5 +1,5 @@
 declare module 'workbox-build' {
-  const wbb: any;
+  const workboxBuild: any;
 
-  export = wbb;
+  export = workboxBuild;
 }

@@ -1,5 +1,5 @@
-import * as dayjs from 'dayjs';
 import { PageComputed, PageFrontmatter } from 'vuepress-types';
+import dayjs = require('dayjs');
 
 /** 处理日期 */
 export const getDate = (dateString: string): (number | undefined)[] => {

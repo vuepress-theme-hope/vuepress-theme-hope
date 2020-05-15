@@ -1,5 +1,5 @@
-import * as md5 from 'md5';
 import { EncryptOptions } from '../../types';
+import md5 = require('md5');
 
 /**
  * 处理密码配置

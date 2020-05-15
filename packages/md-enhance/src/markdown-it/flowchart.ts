@@ -3,8 +3,8 @@
 /* eslint-disable max-params */
 /* eslint-disable camelcase */
 import hash = require('hash-sum');
-import * as MarkdownIt from 'markdown-it';
-import * as StateBlock from 'markdown-it/lib/rules_block/state_block';
+import MarkdownIt = require('markdown-it');
+import StateBlock = require('markdown-it/lib/rules_block/state_block');
 
 const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
   const OPEN_MARKER = '@flowstart';

@@ -25,7 +25,6 @@
 </template>
 
 <script lang="ts">
-import * as moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import {
   HopeLangI18nConfig,
@@ -38,6 +37,7 @@ import CategoryInfo from '@mr-hope/vuepress-plugin-comment/src/CategoryInfo.vue'
 import { PageComputed } from 'vuepress-types';
 import TagInfo from '@mr-hope/vuepress-plugin-comment/src/TagInfo.vue';
 import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
+import moment = require('moment');
 import navigate from '@theme/util/navigate';
 
 @Component({

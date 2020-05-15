@@ -5,12 +5,12 @@
 /* eslint-disable max-params */
 /* eslint-disable @typescript-eslint/camelcase */
 
-import * as MarkdownIt from 'markdown-it';
-import * as Renderer from 'markdown-it/lib/renderer';
-import * as StateBlock from 'markdown-it/lib/rules_block/state_block';
+import MarkdownIt = require('markdown-it');
+import Renderer = require('markdown-it/lib/renderer');
+import StateBlock = require('markdown-it/lib/rules_block/state_block');
 import StateCore = require('markdown-it/lib/rules_core/state_core');
-import * as StateInline from 'markdown-it/lib/rules_inline/state_inline';
-import * as Token from 'markdown-it/lib/token';
+import StateInline = require('markdown-it/lib/rules_inline/state_inline');
+import Token = require('markdown-it/lib/token');
 
 const renderFootnoteAnchorName = (
   tokens: Token[],

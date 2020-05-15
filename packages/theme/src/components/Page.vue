@@ -52,7 +52,6 @@
 </template>
 
 <script lang='ts'>
-import * as md5 from 'md5';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Comment from '@Comment';
 import MyTransition from '@theme/components/MyTransition.vue';
@@ -62,6 +61,7 @@ import PageInfo from '@PageInfo';
 import PageNav from '@theme/components/PageNav.vue';
 import Password from '@theme/components/Password.vue';
 import { SidebarItem } from '@theme/util/sidebar';
+import md5 = require('md5');
 
 @Component({
   components: {

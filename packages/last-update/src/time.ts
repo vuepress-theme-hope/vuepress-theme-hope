@@ -1,11 +1,11 @@
-import * as path from 'path';
-import * as spawn from 'cross-spawn';
+import { basename, dirname } from 'path';
+import spawn = require('cross-spawn');
 
 const getGitLastUpdatedTimeStamp = (filePath: string): number | undefined => {
   try {
     const timestamp = spawn
-      .sync('git', ['log', '-1', '--format=%at', path.basename(filePath)], {
-        cwd: path.dirname(filePath)
+      .sync('git', ['log', '-1', '--format=%at', basename(filePath)], {
+        cwd: dirname(filePath)
       })
       // .stdout.toString('utf-8')
       .stdout.toString();

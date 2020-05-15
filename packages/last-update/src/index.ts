@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
-import * as moment from 'moment';
 import { LastUpdateOption } from '../types';
 import { PluginOptionAPI } from 'vuepress-types';
 import getTime from './time';
+import moment = require('moment');
 
 const defaultTransformer = (timestamp: number, lang: string): string => {
   moment.locale(lang);

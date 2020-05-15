@@ -9,8 +9,8 @@
 </template>
 
 <script lang='ts'>
-import * as md5 from 'md5';
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import md5 = require('md5');
 
 @Component
 export default class Password extends Vue {

@@ -1,8 +1,8 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
 
-import * as MarkdownIt from 'markdown-it';
-import * as StateInline from 'markdown-it/lib/rules_inline/state_inline';
+import MarkdownIt = require('markdown-it');
+import StateInline = require('markdown-it/lib/rules_inline/state_inline');
 
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;

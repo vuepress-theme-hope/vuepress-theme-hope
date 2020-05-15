@@ -1,9 +1,9 @@
-import * as chalk from 'chalk';
-import * as fs from 'fs-extra';
-import * as wbb from 'workbox-build';
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { PWAOptions } from '../types';
 import { resolve } from 'path';
+import chalk = require('chalk');
+import fs = require('fs-extra');
+import workboxBuild = require('workbox-build');
 
 // eslint-disable-next-line max-lines-per-function
 export = (options: PWAOptions, context: Context): PluginOptionAPI => {
@@ -27,7 +27,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
     const swFilePath = resolve(context.outDir, './service-worker.js');
 
-    await wbb.generateSW({
+    await workboxBuild.generateSW({
       swDest: swFilePath,
       globDirectory: context.outDir,
       globPatterns: [

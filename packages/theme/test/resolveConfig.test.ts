@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import * as resolveConfig from '../resolve';
 import { describe, it } from 'mocha';
 import { HopeVuepressConfig } from '../types';
 import { expect } from 'chai';
+import resolveConfig = require('../resolve');
 
 describe('Test resolveTheme function', () => {
   const config: HopeVuepressConfig = {

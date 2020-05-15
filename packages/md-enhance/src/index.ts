@@ -1,8 +1,8 @@
-import * as lineNumbers from '@vuepress/markdown/lib/lineNumbers';
 import { Context, PluginOptionAPI } from 'vuepress-types';
 import { MarkdownEnhanceOption } from '../types';
 import flowchart from './markdown-it/flowchart';
 import footnote from './markdown-it/footnote';
+import lineNumbers = require('@vuepress/markdown/lib/lineNumbers');
 import katex from './markdown-it/katex';
 import mark from './markdown-it/mark';
 import pluginConfig from './pluginConfig';
