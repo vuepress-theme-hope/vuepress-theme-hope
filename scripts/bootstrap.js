@@ -47,8 +47,8 @@ files.forEach((pkgName) => {
       },
       homepage: `https://github.com/Mister-Hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       peerDependencies: {
-        typescript: '^3.8.3',
-        'vuepress-types': '^0.9.1'
+        typescript: '^3.9.2',
+        'vuepress-types': '^0.9.2'
       }
     };
 

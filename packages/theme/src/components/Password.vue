@@ -1,7 +1,7 @@
 <template>
-  <div class="passwordCtn" :class=" { expand: page || isMainPage }">
+  <div class="password" :class=" { expand: page || isMainPage }">
     <div class="text" :class="{ hasTried }">{{ hasTried? '请输入正确密码': '请输入密码' }}</div>
-    <div class="inputCtn">
+    <div class="input-wrapper">
       <input v-model="password" type="password" @keypress.enter="verify" />
       <div class="button" @click="verify">OK</div>
     </div>
@@ -37,7 +37,8 @@ export default class Password extends Vue {
 </script>
 
 <style lang="stylus">
-.passwordCtn
+.password
+  background-color var(--bg-color)
   height 90vh - $navbarHeight
   margin-top $navbarHeight
   text-align center
@@ -47,16 +48,16 @@ export default class Password extends Vue {
   justify-content center
   align-items center
 
-  &.expand
-    padding-left 0 !important
-    margin-top 0
-    height 400px
-
   @media (max-width: $MQNarrow)
     padding-left $mobileSidebarWidth
 
   @media (max-width: $MQMobile)
     padding-left 0
+
+  &.expand
+    padding-left 0 !important
+    margin-top 0
+    height 400px
 
   .text
     margin-bottom 20px
@@ -71,7 +72,7 @@ export default class Password extends Vue {
       animation-timing-function ease-out
       animation-fill-mode both
 
-  .inputCtn
+  .input-wrapper
     width 80%
     max-width 600px
     display flex
@@ -82,6 +83,7 @@ export default class Password extends Vue {
     overflow hidden
 
     input
+      width calc(100% - 60px)
       margin-left 20px
       font-size 20px
       color var(--black) !important

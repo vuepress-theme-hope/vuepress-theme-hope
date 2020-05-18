@@ -123,7 +123,7 @@ In codes above, two spaces are behind `at`.
 - Very easy!
 ```
 
-## Ordered List
+### Ordered List
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit  
