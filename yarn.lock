@@ -14736,9 +14736,9 @@ vm-browserify@^1.0.1:
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
 vssue@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.4.tgz#2a342698b430aaf24019ad6ceaa389cfc3df2f0d"
-  integrity sha512-f+FwS4eFurR+YISeTRfFW2+b/48MYNgerq2pk1QbtYPYI7DIZH7wSIj/S/f+wfxolsyA+45Bx86vYEtwD8xT0Q==
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.5.tgz#ae2e9c193ddc61338c01f216a9ae2814ff869f9a"
+  integrity sha512-/DVQDeA9e9PFhjGIcIOFaTVuuQgUNjnt5zcRSuMWo+e3+2xaeGE9nZVqMT63eutogvHqjphhM7SGHqW6H09M1Q==
   dependencies:
     "@vssue/utils" "^1.4.0"
     github-markdown-css "^3.0.1"
