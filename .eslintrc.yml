@@ -30,8 +30,7 @@ rules:
     - off
 
   comma-dangle:
-    - error
-    - "always-multiline"
+    - off
 
   complexity:
     - warn
@@ -142,7 +141,7 @@ rules:
     - off
 
   quotes:
-    - error
+    - off
 
   radix:
     - error

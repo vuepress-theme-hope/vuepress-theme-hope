@@ -32,10 +32,10 @@ export default class AlgoliaSearchBox extends Vue {
   initialize(userOptions: AlgoliaOption, lang: string) {
     Promise.all([
       import(
-        /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.js",
+        /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.js"
       ),
       import(
-        /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.css",
+        /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.css"
       ),
     ]).then(([docsearch]) => {
       (docsearch as any)({
@@ -44,13 +44,13 @@ export default class AlgoliaSearchBox extends Vue {
         // #697 Make docsearch work well at i18n mode.
         algoliaOptions: {
           facetFilters: [`lang:${lang}`].concat(
-            (userOptions as any).facetFilters || [],
+            (userOptions as any).facetFilters || []
           ),
         },
         handleSelected: (
           _input: HTMLInputElement,
           _event: Event,
-          suggestion: { url: string },
+          suggestion: { url: string }
         ) => {
           const { pathname, hash } = new URL(suggestion.url);
           const routepath = pathname.replace(this.$site.base, "/");
@@ -62,7 +62,7 @@ export default class AlgoliaSearchBox extends Vue {
 
   update(options: AlgoliaOption, lang: string) {
     this.$el.innerHTML =
-      "<input id=\"algolia-search-input\" class=\"search-query\">";
+      '<input id="algolia-search-input" class="search-query">';
     this.initialize(options, lang);
   }
 }
