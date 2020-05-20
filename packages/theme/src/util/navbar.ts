@@ -1,14 +1,14 @@
-import { HopeNavBarConfigItem } from '@mr-hope/vuepress-shared-utils';
+import { HopeNavBarConfigItem } from "@mr-hope/vuepress-shared-utils";
 
 export interface NavBarConfigItem extends HopeNavBarConfigItem {
-  type: 'link' | 'links';
+  type: "link" | "links";
 }
 
 export const resolveNavLinkItem = (
   navbarLink: NavBarConfigItem,
-  beforeprefix = ''
+  beforeprefix = "",
 ): NavBarConfigItem => {
-  const prefix = beforeprefix + (navbarLink.prefix || '');
+  const prefix = beforeprefix + (navbarLink.prefix || "");
 
   const navbarItem = { ...navbarLink };
 
@@ -20,12 +20,12 @@ export const resolveNavLinkItem = (
 
   if (navbarItem.items && navbarItem.items.length)
     Object.assign(navbarItem, {
-      type: 'links',
+      type: "links",
       items: navbarItem.items.map((item: any) =>
-        resolveNavLinkItem(item, prefix)
-      )
+        resolveNavLinkItem(item, prefix),
+      ),
     });
-  else navbarItem.type = 'link';
+  else navbarItem.type = "link";
 
   return navbarItem;
 };

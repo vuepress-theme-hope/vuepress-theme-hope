@@ -2,10 +2,10 @@ export default class SWUpdateEvent {
   registration: any;
 
   constructor(registration: any) {
-    Object.defineProperty(this, 'registration', {
+    Object.defineProperty(this, "registration", {
       value: registration,
       configurable: true,
-      writable: true
+      writable: true,
     });
   }
 
@@ -22,18 +22,18 @@ export default class SWUpdateEvent {
 
     if (!worker) return Promise.resolve();
 
-    console.log('[PWA]: 执行 worker.skipWaiting().');
+    console.log("[PWA]: 执行 worker.skipWaiting().");
 
     return new Promise((resolve, reject) => {
       const channel = new MessageChannel();
 
       channel.port1.onmessage = (event): void => {
-        console.log('[PWA]: 完成 worker.skipWaiting().');
+        console.log("[PWA]: 完成 worker.skipWaiting().");
         if (event.data.error) reject(event.data.error);
         else resolve(event.data);
       };
 
-      worker.postMessage({ type: 'skip-waiting' }, [channel.port2]);
+      worker.postMessage({ type: "skip-waiting" }, [channel.port2]);
     });
   }
 }

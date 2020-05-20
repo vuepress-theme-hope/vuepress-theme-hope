@@ -13,12 +13,12 @@ icon: flowchart
 ```js {6}
 module.exports = {
   plugin: [
-    'md-enhance',
+    "md-enhance",
     {
       // 启用流程图
-      flowchart: true
-    }
-  ]
+      flowchart: true,
+    },
+  ],
 };
 ```
 

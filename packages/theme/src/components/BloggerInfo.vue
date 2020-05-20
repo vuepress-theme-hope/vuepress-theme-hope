@@ -29,15 +29,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Vue } from "vue-property-decorator";
 import {
   HopeLangI18nConfig,
   deepAssign,
-  i18n
-} from '@mr-hope/vuepress-shared-utils';
-import { ArticleMixin } from '@theme/util/articleMixin';
-import { PageComputed } from 'vuepress-types';
-import navigate from '@theme/util/navigate';
+  i18n,
+} from "@mr-hope/vuepress-shared-utils";
+import { ArticleMixin } from "@theme/util/articleMixin";
+import { PageComputed } from "vuepress-types";
+import navigate from "@theme/util/navigate";
 
 @Component
 export default class BloggerInfo extends Mixins(ArticleMixin) {
@@ -52,19 +52,19 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
       this.blogConfig.blogger ||
       this.$themeConfig.author ||
       this.$site.title ||
-      ''
+      ""
     );
   }
 
   private get bloggerAvatar(): string {
-    return this.blogConfig.avatar || this.$themeConfig.logo || '';
+    return this.blogConfig.avatar || this.$themeConfig.logo || "";
   }
 
   private get hasIntro(): boolean {
     return Boolean(this.blogConfig.intro);
   }
 
-  private get i18n(): HopeLangI18nConfig['blog'] {
+  private get i18n(): HopeLangI18nConfig["blog"] {
     return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
   }
 

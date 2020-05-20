@@ -18,7 +18,7 @@ icon: extension
 
 ```js
 module.exports = {
-  plugins: [require('./my-plugin.js')]
+  plugins: [require("./my-plugin.js")],
 };
 ```
 
@@ -28,7 +28,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  plugins: ['vuepress-plugin-xx']
+  plugins: ["vuepress-plugin-xx"],
 };
 ```
 
@@ -36,7 +36,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  plugins: ['xxx']
+  plugins: ["xxx"],
 };
 ```
 
@@ -44,7 +44,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  plugins: ['vuepress-plugin-xxx']
+  plugins: ["vuepress-plugin-xxx"],
 };
 ```
 
@@ -52,7 +52,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  plugins: ['@org/vuepress-plugin-xxx', '@vuepress/plugin-xxx']
+  plugins: ["@org/vuepress-plugin-xxx", "@vuepress/plugin-xxx"],
 };
 ```
 
@@ -60,7 +60,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  plugins: ['@org/xxx', '@vuepress/xxx']
+  plugins: ["@org/xxx", "@vuepress/xxx"],
 };
 ```
 
@@ -80,12 +80,12 @@ module.exports = {
 module.exports = {
   plugins: [
     [
-      'vuepress-plugin-xxx',
+      "vuepress-plugin-xxx",
       {
         /* options */
-      }
-    ]
-  ]
+      },
+    ],
+  ],
 };
 ```
 
@@ -100,8 +100,8 @@ module.exports = {
   plugins: {
     xxx: {
       /* options */
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -117,8 +117,8 @@ module.exports = {
 ```js
 module.exports = {
   plugins: [
-    ['xxx', false] // disabled.
-  ]
+    ["xxx", false], // disabled.
+  ],
 };
 ```
 
@@ -127,8 +127,8 @@ module.exports = {
 ```js
 module.exports = {
   plugins: {
-    xxx: false // disabled.
-  }
+    xxx: false, // disabled.
+  },
 };
 ```
 

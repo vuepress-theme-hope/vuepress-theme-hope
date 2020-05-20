@@ -27,26 +27,26 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import AutoIcon from '@mr-hope/vuepress-shared-utils/icons/AutoIcon.vue';
-import DarkIcon from '@mr-hope/vuepress-shared-utils/icons/DarkIcon.vue';
-import LightIcon from '@mr-hope/vuepress-shared-utils/icons/LightIcon.vue';
-import { dom } from '@mr-hope/vuepress-shared-utils';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import AutoIcon from "@mr-hope/vuepress-shared-utils/icons/AutoIcon.vue";
+import DarkIcon from "@mr-hope/vuepress-shared-utils/icons/DarkIcon.vue";
+import LightIcon from "@mr-hope/vuepress-shared-utils/icons/LightIcon.vue";
+import { dom } from "@mr-hope/vuepress-shared-utils";
 
 const changeClass = (domClass: any, insert: string[], remove: string[]) => {
   domClass.remove(...remove);
   const oldClasses = [...domClass];
-  domClass.value = '';
+  domClass.value = "";
   domClass.add(...insert, ...oldClasses);
 };
 
 @Component({ components: { AutoIcon, DarkIcon, LightIcon } })
 export default class DarkmodeSwitch extends Vue {
-  private darkmode: 'auto' | 'on' | 'off' = 'auto';
+  private darkmode: "auto" | "on" | "off" = "auto";
 
   /** darkmode status */
   private get darkmodeConfig() {
-    return this.$themeConfig.darkmode || 'auto-switch';
+    return this.$themeConfig.darkmode || "auto-switch";
   }
 
   private mounted() {
@@ -54,35 +54,35 @@ export default class DarkmodeSwitch extends Vue {
     const classes = document.body.classList;
     /** 深色模式 */
     this.darkmode =
-      (localStorage.getItem('darkmode') as 'auto' | 'on' | 'off' | null) ||
-      'auto';
+      (localStorage.getItem("darkmode") as "auto" | "on" | "off" | null) ||
+      "auto";
 
-    if (this.darkmodeConfig === 'auto-switch')
-      if (this.darkmode === 'auto') this.setDarkmode('auto');
+    if (this.darkmodeConfig === "auto-switch")
+      if (this.darkmode === "auto") this.setDarkmode("auto");
       else this.setDarkmode(this.darkmode);
     // 自动模式
-    else if (this.darkmodeConfig === 'auto') this.setDarkmode('auto');
+    else if (this.darkmodeConfig === "auto") this.setDarkmode("auto");
     // 切换模式
-    else if (this.darkmodeConfig === 'switch') this.setDarkmode(this.darkmode);
+    else if (this.darkmodeConfig === "switch") this.setDarkmode(this.darkmode);
     // 被禁用
-    else this.setDarkmode('off');
+    else this.setDarkmode("off");
   }
 
   /** 设置夜间模式 */
-  setDarkmode(status: 'on' | 'off' | 'auto') {
-    if (status === 'on') this.toggleDarkmode(true);
-    else if (status === 'off') this.toggleDarkmode(false);
+  setDarkmode(status: "on" | "off" | "auto") {
+    if (status === "on") this.toggleDarkmode(true);
+    else if (status === "off") this.toggleDarkmode(false);
     else {
-      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+      const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
         .matches;
-      const isLightMode = window.matchMedia('(prefers-color-scheme: light)')
+      const isLightMode = window.matchMedia("(prefers-color-scheme: light)")
         .matches;
 
       window
-        .matchMedia('(prefers-color-scheme: dark)')
+        .matchMedia("(prefers-color-scheme: dark)")
         .addListener((e) => e.matches && this.toggleDarkmode(true));
       window
-        .matchMedia('(prefers-color-scheme: light)')
+        .matchMedia("(prefers-color-scheme: light)")
         .addListener((e) => e.matches && this.toggleDarkmode(false));
 
       if (isDarkMode) this.toggleDarkmode(true);
@@ -95,15 +95,15 @@ export default class DarkmodeSwitch extends Vue {
     }
 
     this.darkmode = status;
-    localStorage.setItem('darkmode', status);
+    localStorage.setItem("darkmode", status);
   }
 
   /** 切换深色模式 */
   private toggleDarkmode(isDarkmode: boolean) {
     const classes = document.body.classList;
 
-    if (isDarkmode) changeClass(classes, ['theme-dark'], ['theme-light']);
-    else changeClass(classes, ['theme-light'], ['theme-dark']);
+    if (isDarkmode) changeClass(classes, ["theme-dark"], ["theme-light"]);
+    else changeClass(classes, ["theme-light"], ["theme-dark"]);
   }
 }
 </script>

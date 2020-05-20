@@ -31,12 +31,12 @@
 </template>
 
 <script lang='ts'>
-import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
-import { SidebarItem, resolveSidebarItems } from '@theme/util/sidebar';
-import GlobalEncryptMixin from '@theme/util/globalEncryptMixin';
-import Navbar from '@theme/components/Navbar.vue';
-import Password from '@theme/components/Password.vue';
-import Sidebar from '@theme/components/Sidebar.vue';
+import { Component, Mixins, Prop, Vue } from "vue-property-decorator";
+import { SidebarItem, resolveSidebarItems } from "@theme/util/sidebar";
+import GlobalEncryptMixin from "@theme/util/globalEncryptMixin";
+import Navbar from "@theme/components/Navbar.vue";
+import Password from "@theme/components/Password.vue";
+import Sidebar from "@theme/components/Sidebar.vue";
 
 @Component({ components: { Password, Sidebar, Navbar } })
 export default class Common extends Mixins(GlobalEncryptMixin) {
@@ -64,7 +64,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
         this.$themeConfig.logo ||
         this.$themeConfig.repo ||
         this.$themeConfig.nav ||
-        this.$themeLocaleConfig.nav
+        this.$themeLocaleConfig.nav,
     );
   }
 
@@ -92,11 +92,11 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
 
     return [
       {
-        'no-navbar': !this.showNavbar,
-        'sidebar-open': this.isSidebarOpen,
-        'no-sidebar': !this.showSidebar
+        "no-navbar": !this.showNavbar,
+        "sidebar-open": this.isSidebarOpen,
+        "no-sidebar": !this.showSidebar,
       },
-      userPageClass
+      userPageClass,
     ];
   }
 
@@ -107,15 +107,15 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
   }
 
   private toggleSidebar(to: any): void {
-    this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen;
-    this.$emit('toggle-sidebar', this.isSidebarOpen);
+    this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+    this.$emit("toggle-sidebar", this.isSidebarOpen);
   }
 
   // Side swipe
   private onTouchStart(e: TouchEvent): void {
     this.touchStart = {
       x: e.changedTouches[0].clientX,
-      y: e.changedTouches[0].clientY
+      y: e.changedTouches[0].clientY,
     };
   }
 

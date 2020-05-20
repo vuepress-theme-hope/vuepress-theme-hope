@@ -33,7 +33,7 @@ export type SideBarConfigItem = string | string[] | SideBarConfigItemObject;
 export type SideBarConfig =
   | SideBarConfigItem[]
   | Record<string, SideBarConfigItem[]>
-  | 'auto'
+  | "auto"
   | false;
 
 /** Algolia 搜索配置 */

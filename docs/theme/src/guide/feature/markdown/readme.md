@@ -25,9 +25,9 @@ vuepress-theme-hope 通过内置 [md-enhance](https://vuepress-md-enhance.mrhope
 module.exports = {
   themeConfig: {
     markdown: {
-      enableAll: true
-    }
-  }
+      enableAll: true,
+    },
+  },
 };
 ```
 

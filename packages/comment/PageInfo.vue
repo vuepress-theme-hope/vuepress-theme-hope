@@ -9,15 +9,15 @@
 
 <script lang='ts'>
 /* global COMMENT_OPTIONS */
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { PageInfotype, ValineOptions } from './types';
-import AuthorInfo from './src/AuthorInfo.vue';
-import CategoryInfo from './src/CategoryInfo.vue';
-import ReadTimeInfo from './src/ReadTimeInfo.vue';
-import TagInfo from './src/TagInfo.vue';
-import TimeInfo from './src/TimeInfo.vue';
-import VisitorInfo from './src/VisitorInfo.vue';
-import WordInfo from './src/WordInfo.vue';
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { PageInfotype, ValineOptions } from "./types";
+import AuthorInfo from "./src/AuthorInfo.vue";
+import CategoryInfo from "./src/CategoryInfo.vue";
+import ReadTimeInfo from "./src/ReadTimeInfo.vue";
+import TagInfo from "./src/TagInfo.vue";
+import TimeInfo from "./src/TimeInfo.vue";
+import VisitorInfo from "./src/VisitorInfo.vue";
+import WordInfo from "./src/WordInfo.vue";
 
 @Component({
   components: {
@@ -27,8 +27,8 @@ import WordInfo from './src/WordInfo.vue';
     TagInfo,
     TimeInfo,
     VisitorInfo,
-    WordInfo
-  }
+    WordInfo,
+  },
 })
 export default class PageInfo extends Vue {
   private commentConfig = COMMENT_OPTIONS;
@@ -50,7 +50,7 @@ export default class PageInfo extends Vue {
       ? false
       : Array.isArray(themeConfig)
       ? themeConfig
-      : ['author', 'visitor', 'time', 'category', 'tag', 'readTime'];
+      : ["author", "visitor", "time", "category", "tag", "readTime"];
   }
 }
 </script>

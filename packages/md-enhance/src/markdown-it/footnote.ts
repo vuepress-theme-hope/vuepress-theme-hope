@@ -5,23 +5,23 @@
 /* eslint-disable max-params */
 /* eslint-disable @typescript-eslint/camelcase */
 
-import MarkdownIt = require('markdown-it');
-import Renderer = require('markdown-it/lib/renderer');
-import StateBlock = require('markdown-it/lib/rules_block/state_block');
-import StateCore = require('markdown-it/lib/rules_core/state_core');
-import StateInline = require('markdown-it/lib/rules_inline/state_inline');
-import Token = require('markdown-it/lib/token');
+import MarkdownIt = require("markdown-it");
+import Renderer = require("markdown-it/lib/renderer");
+import StateBlock = require("markdown-it/lib/rules_block/state_block");
+import StateCore = require("markdown-it/lib/rules_core/state_core");
+import StateInline = require("markdown-it/lib/rules_inline/state_inline");
+import Token = require("markdown-it/lib/token");
 
 const renderFootnoteAnchorName = (
   tokens: Token[],
   idx: number,
   _options: any,
-  env: any
+  env: any,
 ): string => {
   const num = Number(tokens[idx].meta.id + 1).toString();
-  let prefix = '';
+  let prefix = "";
 
-  if (typeof env.docId === 'string') prefix = `-${env.docId}-`;
+  if (typeof env.docId === "string") prefix = `-${env.docId}-`;
 
   return prefix + num;
 };
@@ -39,7 +39,7 @@ const renderFootnoteRef = (
   idx: number,
   options: any,
   env: any,
-  slf: Renderer
+  slf: Renderer,
 ): string => {
   const id =
     slf.rules.footnote_anchor_name &&
@@ -57,23 +57,23 @@ const renderFootnoteRef = (
 const renderFootnoteBlockOpen = (
   _tokens: Token[],
   _idx: number,
-  options: any
+  options: any,
 ): string => {
   return `${
     options.xhtmlOut
-      ? '<hr class="footnotes-sep" />\n'
-      : '<hr class="footnotes-sep">\n'
+      ? "<hr class=\"footnotes-sep\" />\n"
+      : "<hr class=\"footnotes-sep\">\n"
   }<section class="footnotes">\n<ol class="footnotes-list">\n`;
 };
 
-const renderFootnoteBlockClose = (): string => '</ol>\n</section>\n';
+const renderFootnoteBlockClose = (): string => "</ol>\n</section>\n";
 
 const renderFootnoteOpen = (
   tokens: Token[],
   idx: number,
   options: any,
   env: any,
-  slf: Renderer
+  slf: Renderer,
 ): string => {
   let id =
     slf.rules.footnote_anchor_name &&
@@ -84,14 +84,14 @@ const renderFootnoteOpen = (
   return `<li id="fn${id}" class="footnote-item">`;
 };
 
-const renderFootnoteClose = (): string => '</li>\n';
+const renderFootnoteClose = (): string => "</li>\n";
 
 const renderFootnoteAnchor = (
   tokens: Token[],
   idx: number,
   options: any,
   env: any,
-  slf: Renderer
+  slf: Renderer,
 ): string => {
   let id =
     slf.rules.footnote_anchor_name &&
@@ -123,7 +123,7 @@ const footnote = (md: MarkdownIt): void => {
     state: StateBlock,
     startLine: number,
     endLine: number,
-    silent: boolean
+    silent: boolean,
   ): boolean => {
     let pos;
     let token;
@@ -156,7 +156,7 @@ const footnote = (md: MarkdownIt): void => {
     const label = state.src.slice(start + 2, pos - 2);
     state.env.footnotes.refs[`:${label}`] = -1;
 
-    token = new state.Token('footnote_reference_open', '', 1);
+    token = new state.Token("footnote_reference_open", "", 1);
     token.meta = { label };
     token.level = state.level++;
     state.tokens.push(token);
@@ -195,7 +195,7 @@ const footnote = (md: MarkdownIt): void => {
 
     state.bMarks[startLine] = posAfterColon;
     state.blkIndent += 4;
-    state.parentType = 'footnote' as any;
+    state.parentType = "footnote" as any;
 
     if (state.sCount[startLine] < state.blkIndent)
       state.sCount[startLine] += state.blkIndent;
@@ -208,7 +208,7 @@ const footnote = (md: MarkdownIt): void => {
     state.sCount[startLine] = oldSCount;
     state.bMarks[startLine] = oldBMark;
 
-    token = new state.Token('footnote_reference_close', '', -1);
+    token = new state.Token("footnote_reference_close", "", -1);
     token.level = --state.level;
     state.tokens.push(token);
 
@@ -248,15 +248,15 @@ const footnote = (md: MarkdownIt): void => {
         state.src.slice(labelStart, labelEnd),
         state.md,
         state.env,
-        (tokens = [])
+        (tokens = []),
       );
 
-      token = state.push('footnote_ref', '', 0);
+      token = state.push("footnote_ref", "", 0);
       token.meta = { id: footnoteId };
 
       state.env.footnotes.list[footnoteId] = {
         content: state.src.slice(labelStart, labelEnd),
-        tokens
+        tokens,
       };
     }
 
@@ -294,7 +294,7 @@ const footnote = (md: MarkdownIt): void => {
     pos += 1;
 
     const label = state.src.slice(start + 2, pos - 1);
-    if (typeof state.env.footnotes.refs[`:${label}`] === 'undefined')
+    if (typeof state.env.footnotes.refs[`:${label}`] === "undefined")
       return false;
 
     if (!silent) {
@@ -309,7 +309,7 @@ const footnote = (md: MarkdownIt): void => {
       footnoteSubId = state.env.footnotes.list[footnoteId].count;
       state.env.footnotes.list[footnoteId].count += 1;
 
-      token = state.push('footnote_ref', '', 0);
+      token = state.push("footnote_ref", "", 0);
       token.meta = { id: footnoteId, subId: footnoteSubId, label };
     }
 
@@ -331,13 +331,13 @@ const footnote = (md: MarkdownIt): void => {
     if (!state.env.footnotes) return false;
 
     state.tokens = state.tokens.filter((tok: any) => {
-      if (tok.type === 'footnote_reference_open') {
+      if (tok.type === "footnote_reference_open") {
         insideRef = true;
         current = [];
         currentLabel = tok.meta.label;
         return false;
       }
-      if (tok.type === 'footnote_reference_close') {
+      if (tok.type === "footnote_reference_close") {
         insideRef = false;
         // prepend ':' to avoid conflict with Object.prototype members
         refTokens[`:${currentLabel}`] = current;
@@ -350,62 +350,62 @@ const footnote = (md: MarkdownIt): void => {
     if (!state.env.footnotes.list) return false;
     const { list } = state.env.footnotes;
 
-    token = new state.Token('footnote_block_open', '', 1);
+    token = new state.Token("footnote_block_open", "", 1);
     state.tokens.push(token);
 
     for (let i = 0, { length } = list; i < length; i++) {
-      token = new state.Token('footnote_open', '', 1);
+      token = new state.Token("footnote_open", "", 1);
       token.meta = { id: i, label: list[i].label };
       state.tokens.push(token);
 
       if (list[i].tokens) {
         tokens = [];
 
-        token = new state.Token('paragraph_open', 'p', 1);
+        token = new state.Token("paragraph_open", "p", 1);
         token.block = true;
         tokens.push(token);
 
-        token = new state.Token('inline', '', 0);
+        token = new state.Token("inline", "", 0);
         token.children = list[i].tokens;
         token.content = list[i].content;
         tokens.push(token);
 
-        token = new state.Token('paragraph_close', 'p', -1);
+        token = new state.Token("paragraph_close", "p", -1);
         token.block = true;
         tokens.push(token);
       } else if (list[i].label) tokens = refTokens[`:${list[i].label}`];
 
       state.tokens = state.tokens.concat(tokens);
-      if (state.tokens[state.tokens.length - 1].type === 'paragraph_close')
+      if (state.tokens[state.tokens.length - 1].type === "paragraph_close")
         lastParagraph = state.tokens.pop();
       else lastParagraph = null;
 
       for (let x = 0; x < (list[i].count > 0 ? list[i].count : 1); x++) {
-        token = new state.Token('footnote_anchor', '', 0);
+        token = new state.Token("footnote_anchor", "", 0);
         token.meta = { id: i, subId: x, label: list[i].label };
         state.tokens.push(token);
       }
 
       if (lastParagraph) state.tokens.push(lastParagraph);
 
-      token = new state.Token('footnote_close', '', -1);
+      token = new state.Token("footnote_close", "", -1);
       state.tokens.push(token);
     }
 
-    token = new state.Token('footnote_block_close', '', -1);
+    token = new state.Token("footnote_block_close", "", -1);
     state.tokens.push(token);
 
     return true;
   };
 
   // eslint-disable-next-line object-curly-newline
-  md.block.ruler.before('reference', 'footnote_def', footnoteDef, {
+  md.block.ruler.before("reference", "footnote_def", footnoteDef, {
     // eslint-disable-next-line object-curly-newline
-    alt: ['paragraph', 'reference']
+    alt: ["paragraph", "reference"],
   });
-  md.inline.ruler.after('image', 'footnote_inline', footnoteInline);
-  md.inline.ruler.after('footnote_inline', 'footnote_ref', footnoteRef);
-  md.core.ruler.after('inline', 'footnote_tail', footnoteTail);
+  md.inline.ruler.after("image", "footnote_inline", footnoteInline);
+  md.inline.ruler.after("footnote_inline", "footnote_ref", footnoteRef);
+  md.core.ruler.after("inline", "footnote_tail", footnoteTail);
 };
 
 export default footnote;

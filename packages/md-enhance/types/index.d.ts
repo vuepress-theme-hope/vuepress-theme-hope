@@ -1,4 +1,4 @@
-import './declare';
+import "./declare";
 
 /** md-enhance 插件配置 */
 export type MarkdownEnhanceOption = Partial<{

@@ -1,5 +1,5 @@
-import { PageComputed, PageFrontmatter } from 'vuepress-types';
-import dayjs = require('dayjs');
+import { PageComputed, PageFrontmatter } from "vuepress-types";
+import dayjs = require("dayjs");
 
 /** 处理日期 */
 export const getDate = (dateString: string): (number | undefined)[] => {
@@ -30,7 +30,7 @@ export const getDate = (dateString: string): (number | undefined)[] => {
     pattern.exec(dateString) || [];
 
   const getNumber = (x: string): number | undefined =>
-    typeof x === 'undefined' ? undefined : Number(x);
+    typeof x === "undefined" ? undefined : Number(x);
 
   const getYear = (yearNumber: number | undefined): number | undefined =>
     yearNumber && yearNumber < 100 ? yearNumber + 2000 : yearNumber;
@@ -41,7 +41,7 @@ export const getDate = (dateString: string): (number | undefined)[] => {
     getNumber(day),
     getNumber(hour),
     getNumber(minute),
-    getNumber(second)
+    getNumber(second),
   ];
 };
 
@@ -52,18 +52,18 @@ export const getDate = (dateString: string): (number | undefined)[] => {
  */
 export const compareDate = (
   dataA: string | undefined,
-  dataB: string | undefined
+  dataB: string | undefined,
 ): number => {
   if (!dataA) return 1;
   if (!dataB) return -1;
 
   const compare = (
     x: (number | undefined)[],
-    y: (number | undefined)[]
+    y: (number | undefined)[],
   ): number => {
     if (x.length === 0) return 0;
-    if (typeof y[0] === 'undefined') return -1;
-    if (typeof x[0] === 'undefined') return 1;
+    if (typeof y[0] === "undefined") return -1;
+    if (typeof x[0] === "undefined") return 1;
 
     if (y[0] - x[0] === 0) {
       x.shift();
@@ -85,16 +85,16 @@ export const compareDate = (
  */
 export const filterArticle = (
   pages: PageComputed[],
-  filterFunc?: (frontmatter: PageFrontmatter) => boolean
+  filterFunc?: (frontmatter: PageFrontmatter) => boolean,
 ): PageComputed[] =>
   pages.filter((page) => {
     const {
       frontmatter: { article, blogpage, home },
-      title
+      title,
     } = page;
 
     return (
-      typeof title !== 'undefined' &&
+      typeof title !== "undefined" &&
       blogpage !== true &&
       home !== true &&
       article !== false &&
@@ -122,7 +122,7 @@ export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
 
 export const generatePagination = (
   pages: PageComputed[],
-  perPage = 10
+  perPage = 10,
 ): PageComputed[][] => {
   const result: PageComputed[][] = [];
   let index = 0;

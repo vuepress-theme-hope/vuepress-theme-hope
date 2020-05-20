@@ -11,12 +11,12 @@ icon: tex
 ```js {6}
 module.exports = {
   plugin: [
-    'md-enhance',
+    "md-enhance",
     {
       // 启用 TeX 支持
-      tex: true
-    }
-  ]
+      tex: true,
+    },
+  ],
 };
 ```
 

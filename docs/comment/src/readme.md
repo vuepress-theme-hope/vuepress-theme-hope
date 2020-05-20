@@ -25,6 +25,6 @@ npm i -D @mr-hope/vuepress-plugin-comment
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: ['@mr-hope/comment', options]
+  plugin: ["@mr-hope/comment", options],
 };
 ```

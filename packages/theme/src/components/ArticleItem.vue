@@ -12,12 +12,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import ArticleInfo from '@theme/components/ArticleInfo.vue';
-import LockIcon from '@mr-hope/vuepress-shared-utils/icons/LockIcon.vue';
-import { PageComputed } from 'vuepress-types';
-import StickyIcon from '@mr-hope/vuepress-shared-utils/icons/StickyIcon.vue';
-import { pathHitKeys } from '@theme/util/encrypt';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import ArticleInfo from "@theme/components/ArticleInfo.vue";
+import LockIcon from "@mr-hope/vuepress-shared-utils/icons/LockIcon.vue";
+import { PageComputed } from "vuepress-types";
+import StickyIcon from "@mr-hope/vuepress-shared-utils/icons/StickyIcon.vue";
+import { pathHitKeys } from "@theme/util/encrypt";
 
 @Component({ components: { ArticleInfo, LockIcon, StickyIcon } })
 export default class ArticleItem extends Vue {

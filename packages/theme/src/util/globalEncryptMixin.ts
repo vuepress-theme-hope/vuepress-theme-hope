@@ -1,10 +1,10 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { EncryptOptions } from '../../types';
+import { Component, Vue } from "vue-property-decorator";
+import { EncryptOptions } from "../../types";
 
 @Component
 export default class GlobalEncryptMixin extends Vue {
   /** 全局密码 */
-  protected globalPassword = '';
+  protected globalPassword = "";
 
   /** 加密配置 */
   protected get encryptOptions(): EncryptOptions {
@@ -16,10 +16,10 @@ export default class GlobalEncryptMixin extends Vue {
     if (this.encryptOptions.globalEncrypt && this.encryptOptions.global) {
       const { global } = this.encryptOptions;
       /** 全局密码 */
-      const globalPasswords = typeof global === 'string' ? [global] : global;
+      const globalPasswords = typeof global === "string" ? [global] : global;
       /** 全局密码匹配结果 */
       const result = globalPasswords.filter(
-        (globalPassword) => globalPassword === this.globalPassword
+        (globalPassword) => globalPassword === this.globalPassword,
       );
 
       return result.length === 0;
@@ -29,7 +29,7 @@ export default class GlobalEncryptMixin extends Vue {
   }
 
   protected mounted(): void {
-    const passwordConfig = localStorage.getItem('globalPassword');
+    const passwordConfig = localStorage.getItem("globalPassword");
 
     if (passwordConfig) this.globalPassword = passwordConfig;
   }
@@ -37,15 +37,15 @@ export default class GlobalEncryptMixin extends Vue {
   protected globalPasswordCheck(value: string): void {
     const { global } = this.encryptOptions as Required<EncryptOptions>;
     /** 全局密码 */
-    const globalPasswords = typeof global === 'string' ? [global] : global;
+    const globalPasswords = typeof global === "string" ? [global] : global;
     /** 全局密码匹配结果 */
     const result = globalPasswords.filter(
-      (globalPassword) => globalPassword === value
+      (globalPassword) => globalPassword === value,
     );
 
     if (result.length !== 0) {
       this.globalPassword = value;
-      localStorage.setItem('globalPassword', value);
+      localStorage.setItem("globalPassword", value);
     }
   }
 }

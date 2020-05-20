@@ -1,4 +1,4 @@
-import { Route } from 'vue-router';
+import { Route } from "vue-router";
 
 /** 锚点匹配正则 */
 export const hashRE = /#.*$/u;
@@ -15,7 +15,7 @@ export const outboundRE = /^[a-z]+:/iu;
  * @param path 需要处理的路径
  */
 export const normalize = (path: string): string =>
-  decodeURI(path).replace(hashRE, '').replace(extRE, '');
+  decodeURI(path).replace(hashRE, "").replace(extRE, "");
 
 /**
  * 获取路径中的锚点
@@ -26,7 +26,7 @@ export const getHash = (path: string): string | void => {
   const match = path.match(hashRE);
   if (match) return match[0];
 
-  return '';
+  return "";
 };
 
 /**
@@ -60,7 +60,7 @@ export const ensureExt = (path: string): string => {
   if (isExternal(path)) return path;
 
   const hashMatch = path.match(hashRE);
-  const hash = hashMatch ? hashMatch[0] : '';
+  const hash = hashMatch ? hashMatch[0] : "";
   const normalized = normalize(path);
 
   // 如果链接以 `/` 结尾不处理
@@ -109,7 +109,7 @@ export const isActive = (route: Route, path: string): boolean => {
 export const resolvePath = (
   relative: string,
   base: string,
-  append?: boolean
+  append?: boolean,
 ): string => {
   // 外部链接直接返回
   if (isExternal(relative)) return relative;
@@ -118,13 +118,13 @@ export const resolvePath = (
   const firstChar = relative.charAt(0);
 
   // 绝对路径直接返回
-  if (firstChar === '/') return relative;
+  if (firstChar === "/") return relative;
 
   // 路径全部是参数字符串或锚点，直接与 base 拼接
-  if (firstChar === '?' || firstChar === '#') return base + relative;
+  if (firstChar === "?" || firstChar === "#") return base + relative;
 
   // 基础部署路径栈
-  const stack = base.split('/');
+  const stack = base.split("/");
 
   /*
    * remove trailing segment if:
@@ -134,15 +134,15 @@ export const resolvePath = (
   if (!append || !stack[stack.length - 1]) stack.pop();
 
   // resolve relative path
-  const segments = relative.replace(/^\//u, '').split('/');
+  const segments = relative.replace(/^\//u, "").split("/");
   for (let i = 0; i < segments.length; i++) {
     const segment = segments[i];
-    if (segment === '..') stack.pop();
-    else if (segment !== '.') stack.push(segment);
+    if (segment === "..") stack.pop();
+    else if (segment !== ".") stack.push(segment);
   }
 
   // ensure leading slash
-  if (stack[0] !== '') stack.unshift('');
+  if (stack[0] !== "") stack.unshift("");
 
-  return stack.join('/');
+  return stack.join("/");
 };

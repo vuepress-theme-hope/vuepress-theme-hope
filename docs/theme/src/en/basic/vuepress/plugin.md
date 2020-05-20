@@ -18,7 +18,7 @@ You can use plugins by doing some configuration at `.vuepress/config.js`:
 
 ```js
 module.exports = {
-  plugins: [require('./my-plugin.js')]
+  plugins: [require("./my-plugin.js")],
 };
 ```
 
@@ -28,7 +28,7 @@ A plugin can be published on npm in `CommonJS` format as `vuepress-plugin-xxx`. 
 
 ```js
 module.exports = {
-  plugins: ['vuepress-plugin-xx']
+  plugins: ["vuepress-plugin-xx"],
 };
 ```
 
@@ -36,7 +36,7 @@ If you prefix the plugin with `vuepress-plugin-`, you can use a shorthand to lea
 
 ```js
 module.exports = {
-  plugins: ['xxx']
+  plugins: ["xxx"],
 };
 ```
 
@@ -44,7 +44,7 @@ Same with:
 
 ```js
 module.exports = {
-  plugins: ['vuepress-plugin-xxx']
+  plugins: ["vuepress-plugin-xxx"],
 };
 ```
 
@@ -52,7 +52,7 @@ This also works with [Scoped Packages](https://docs.npmjs.com/misc/scope):
 
 ```js
 module.exports = {
-  plugins: ['@org/vuepress-plugin-xxx', '@vuepress/plugin-xxx']
+  plugins: ["@org/vuepress-plugin-xxx", "@vuepress/plugin-xxx"],
 };
 ```
 
@@ -60,7 +60,7 @@ Shorthand:
 
 ```js
 module.exports = {
-  plugins: ['@org/xxx', '@vuepress/xxx']
+  plugins: ["@org/xxx", "@vuepress/xxx"],
 };
 ```
 
@@ -80,12 +80,12 @@ Plugins can have options specified by wrapping the name and an options object in
 module.exports = {
   plugins: [
     [
-      'vuepress-plugin-xxx',
+      "vuepress-plugin-xxx",
       {
         /* options */
-      }
-    ]
-  ]
+      },
+    ],
+  ],
 };
 ```
 
@@ -100,8 +100,8 @@ module.exports = {
   plugins: {
     xxx: {
       /* options */
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -117,8 +117,8 @@ The plugin can be disabled when `false` is explicitly passed as option.
 ```js
 module.exports = {
   plugins: [
-    ['xxx', false] // disabled.
-  ]
+    ["xxx", false], // disabled.
+  ],
 };
 ```
 
@@ -127,8 +127,8 @@ module.exports = {
 ```js
 module.exports = {
   plugins: {
-    xxx: false // disabled.
-  }
+    xxx: false, // disabled.
+  },
 };
 ```
 

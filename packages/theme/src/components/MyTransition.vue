@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class MyTransition extends Vue {
@@ -25,13 +25,13 @@ export default class MyTransition extends Vue {
 
   private setStyle(items: HTMLElement) {
     items.style.transition = `all ${this.duration}s ease-in-out ${this.delay}s`;
-    items.style.transform = 'translateY(-20px)';
-    items.style.opacity = '0';
+    items.style.transform = "translateY(-20px)";
+    items.style.opacity = "0";
   }
 
   private unsetStyle(items: HTMLElement) {
-    items.style.transform = 'translateY(0)';
-    items.style.opacity = '1';
+    items.style.transform = "translateY(0)";
+    items.style.opacity = "1";
   }
 }
 </script>

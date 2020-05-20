@@ -1,4 +1,4 @@
-import { HopeHeadOptionConfig, HopeVuepressConfig } from '../../types';
+import { HopeHeadOptionConfig, HopeVuepressConfig } from "../../types";
 
 /** meta 键名 */
 let metaKeys: string[];
@@ -15,15 +15,15 @@ let head: any[];
  * @param content 内容
  */
 const setHeadOption = (
-  type: 'meta' | 'link',
+  type: "meta" | "link",
   name: string,
-  content?: string
+  content?: string,
 ): void => {
-  if (type === 'meta') {
+  if (type === "meta") {
     if (!metaKeys.includes(name) && content)
-      head.push(['meta', { name, content }]);
-  } else if (type === 'link' && !linkKeys.includes(name) && content)
-    head.push(['link', { rel: name, href: content }]);
+      head.push(["meta", { name, content }]);
+  } else if (type === "link" && !linkKeys.includes(name) && content)
+    head.push(["link", { rel: name, href: content }]);
 };
 
 /**
@@ -33,26 +33,26 @@ const setHeadOption = (
  */
 const setPWA = (headOption: HopeHeadOptionConfig): void => {
   if (headOption.pwa) {
-    setHeadOption('link', 'manifest', headOption.pwa.manifest);
-    setHeadOption('meta', 'theme-color', headOption.pwa.themeColor);
+    setHeadOption("link", "manifest", headOption.pwa.manifest);
+    setHeadOption("meta", "theme-color", headOption.pwa.themeColor);
 
-    setHeadOption('meta', 'apple-mobile-web-app-capable', 'yes');
+    setHeadOption("meta", "apple-mobile-web-app-capable", "yes");
     setHeadOption(
-      'meta',
-      'apple-mobile-web-app-status-bar-style',
-      headOption.pwa.appleStatusBarColor
+      "meta",
+      "apple-mobile-web-app-status-bar-style",
+      headOption.pwa.appleStatusBarColor,
     );
-    setHeadOption('link', 'apple-touch-icon', headOption.pwa.appleIcon);
+    setHeadOption("link", "apple-touch-icon", headOption.pwa.appleIcon);
 
     setHeadOption(
-      'meta',
-      'msapplication-TileImage',
-      headOption.pwa.msTileImage
+      "meta",
+      "msapplication-TileImage",
+      headOption.pwa.msTileImage,
     );
     setHeadOption(
-      'meta',
-      'msapplication-TileColor',
-      headOption.pwa.msTileColor
+      "meta",
+      "msapplication-TileColor",
+      headOption.pwa.msTileColor,
     );
   }
 };
@@ -73,24 +73,24 @@ const resolveHead = (config: HopeVuepressConfig): void => {
 
   // Generate Hash for Head
   head.forEach((item, index) => {
-    if (item[0] === 'meta') metaHash[item[1].name] = index;
-    else if (item[0] === 'link') linkHash[item[1].rel] = index;
+    if (item[0] === "meta") metaHash[item[1].name] = index;
+    else if (item[0] === "link") linkHash[item[1].rel] = index;
   });
 
   metaKeys = Object.keys(metaHash);
   linkKeys = Object.keys(linkHash);
 
   // 生成网站图标
-  setHeadOption('link', 'icon', headOption.icon);
+  setHeadOption("link", "icon", headOption.icon);
 
   // 生成作者
-  setHeadOption('meta', 'author', themeConfig.author);
+  setHeadOption("meta", "author", themeConfig.author);
 
   // 加强移动端体验
   setHeadOption(
-    'meta',
-    'viewport',
-    'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover'
+    "meta",
+    "viewport",
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
   );
 
   // PWA 相关

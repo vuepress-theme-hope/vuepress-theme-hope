@@ -37,9 +37,9 @@
 </template>
 
 <script lang='ts'>
-import { Component, Model, Prop, Vue } from 'vue-property-decorator';
-import { Route } from 'vue-router';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
+import { Component, Model, Prop, Vue } from "vue-property-decorator";
+import { Route } from "vue-router";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component
 export default class Pagination extends Vue {
@@ -51,10 +51,10 @@ export default class Pagination extends Vue {
   /** Items per page */
   private readonly perPage!: number;
 
-  @Model('change', { type: Number })
+  @Model("change", { type: Number })
   private readonly currentPage!: number;
 
-  private input = '';
+  private input = "";
 
   private get totalPages() {
     return Math.ceil(this.total / this.perPage);
@@ -117,7 +117,7 @@ export default class Pagination extends Vue {
   private navigate(index: number) {
     const path = `${this.$route.path}?index=${index}`;
 
-    this.$emit('change', index);
+    this.$emit("change", index);
     if (this.$route.fullPath !== path) this.$router.push(path);
   }
 
@@ -127,7 +127,7 @@ export default class Pagination extends Vue {
 
     if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
     else {
-      const errorText = this.i18n.errorText.split('$page');
+      const errorText = this.i18n.errorText.split("$page");
       // eslint-disable-next-line no-alert
       alert(`${errorText[0]}${this.totalPages}${errorText[1]}`);
     }

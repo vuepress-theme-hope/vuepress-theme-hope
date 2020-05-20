@@ -25,9 +25,9 @@ You can set `themeconfig.markdown.enableAll` to enable all features of the [md-e
 module.exports = {
   themeConfig: {
     markdown: {
-      enableAll: true
-    }
-  }
+      enableAll: true,
+    },
+  },
 };
 ```
 

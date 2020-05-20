@@ -40,12 +40,12 @@ You need to configure `themeConfig.themeColor` in the format `colorname1: colorv
 module.exports = {
   themeConfig: {
     themeColor: {
-      blue: '#2196f3',
-      red: '#f26d6d',
-      green: '#3eaf7c',
-      orange: '#fb9b5f'
-    }
-  }
+      blue: "#2196f3",
+      red: "#f26d6d",
+      green: "#3eaf7c",
+      orange: "#fb9b5f",
+    },
+  },
 };
 ```
 
@@ -78,7 +78,7 @@ If the current browser does not support full screen, the full screen button is a
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    fullscreen: false // Enable by default
-  }
+    fullscreen: false, // Enable by default
+  },
 };
 ```

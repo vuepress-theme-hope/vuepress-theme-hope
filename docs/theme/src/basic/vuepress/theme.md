@@ -14,7 +14,7 @@ icon: skinfill
 
 ```js
 module.exports = {
-  theme: 'vuepress-theme-xx'
+  theme: "vuepress-theme-xx",
 };
 ```
 
@@ -24,7 +24,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  theme: 'xxx'
+  theme: "xxx",
 };
 ```
 
@@ -32,7 +32,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  theme: 'vuepress-theme-xxx'
+  theme: "vuepress-theme-xxx",
 };
 ```
 
@@ -40,7 +40,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  theme: '@org/vuepress-theme-xxx' // 或者一个官方主题: '@vuepress/theme-xxx'
+  theme: "@org/vuepress-theme-xxx", // 或者一个官方主题: '@vuepress/theme-xxx'
 };
 ```
 
@@ -48,7 +48,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  theme: '@org/xxx' // 或者一个官方主题: '@vuepress/xxx'
+  theme: "@org/xxx", // 或者一个官方主题: '@vuepress/xxx'
 };
 ```
 

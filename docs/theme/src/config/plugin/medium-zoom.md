@@ -18,17 +18,17 @@ module.exports = {
   plugins: [
     /** 图片缩放插件 */
     [
-      '@vuepress/medium-zoom',
+      "@vuepress/medium-zoom",
       {
         /** 设置选项 */
         options: {
           /** 缩放后图片的外间距 */
           margin: 16,
           /** 关闭缩放需要滚动的像素数 */
-          scrollOffset: 40
-        }
-      }
-    ]
-  ]
+          scrollOffset: 40,
+        },
+      },
+    ],
+  ],
 };
 ```

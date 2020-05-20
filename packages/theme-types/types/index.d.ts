@@ -14,5 +14,5 @@
 
 /// <reference types="vuepress-theme-hope" />
 
-import './shims-vue';
-import './declare';
+import "./shims-vue";
+import "./declare";

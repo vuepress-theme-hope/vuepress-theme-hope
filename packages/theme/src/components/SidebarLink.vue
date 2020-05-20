@@ -1,6 +1,6 @@
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { ComponentOptions, CreateElement, VNode } from 'vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { ComponentOptions, CreateElement, VNode } from "vue";
 import {
   SidebarAutoItem,
   SidebarExternalItem,
@@ -8,19 +8,19 @@ import {
   SidebarHeader,
   SidebarHeaderItem,
   SidebarItem,
-  groupSidebarHeaders
-} from '@theme/util/sidebar';
-import { hashRE, isActive } from '@theme/util/path';
-import { HopeSideBarConfigItemObject } from '@mr-hope/vuepress-shared-utils';
-import { PageHeader } from 'vuepress-types';
-import { Route } from 'vue-router';
+  groupSidebarHeaders,
+} from "@theme/util/sidebar";
+import { hashRE, isActive } from "@theme/util/path";
+import { HopeSideBarConfigItemObject } from "@mr-hope/vuepress-shared-utils";
+import { PageHeader } from "vuepress-types";
+import { Route } from "vue-router";
 
 /** 渲染图标 */
 const renderIcon = (h: CreateElement, icon: string) =>
   icon
-    ? h('i', {
-        class: ['iconfont', icon],
-        style: 'margin-right: 0.2em;'
+    ? h("i", {
+        class: ["iconfont", icon],
+        style: "margin-right: 0.2em;",
       })
     : null;
 
@@ -38,40 +38,40 @@ interface RenderLinkOption {
 /** 渲染链接 */
 const renderLink = (
   h: CreateElement,
-  { icon = '', text, link, active }: RenderLinkOption
+  { icon = "", text, link, active }: RenderLinkOption,
 ) =>
   h(
-    'router-link',
+    "router-link",
     {
       props: {
         to: link,
-        activeClass: '',
-        exactActiveClass: ''
+        activeClass: "",
+        exactActiveClass: "",
       },
       class: {
         active,
-        'sidebar-link': true
-      }
+        "sidebar-link": true,
+      },
     },
-    [renderIcon(h, icon), text]
+    [renderIcon(h, icon), text],
   );
 
 /** 渲染外部链接 */
 const renderExternal = (
   h: CreateElement,
-  { path, title = path }: SidebarExternalItem
+  { path, title = path }: SidebarExternalItem,
 ) =>
   h(
-    'a',
+    "a",
     {
       attrs: {
         href: path,
-        target: '_blank',
-        rel: 'noopener noreferrer'
+        target: "_blank",
+        rel: "noopener noreferrer",
       },
-      class: { 'sidebar-link': true }
+      class: { "sidebar-link": true },
     },
-    [title, h('OutboundLink')]
+    [title, h("OutboundLink")],
   );
 
 interface RenderChildrenOptions {
@@ -90,31 +90,31 @@ interface RenderChildrenOptions {
 /** 渲染子项 */
 const renderChildren = (
   h: CreateElement,
-  { children, path, route, maxDepth, depth = 1 }: RenderChildrenOptions
+  { children, path, route, maxDepth, depth = 1 }: RenderChildrenOptions,
 ): VNode | null => {
   if (!children || depth > maxDepth) return null;
 
   return h(
-    'ul',
-    { class: 'sidebar-sub-headers' },
+    "ul",
+    { class: "sidebar-sub-headers" },
     children.map((child: SidebarHeader) => {
       const active = isActive(route, `${path}#${child.slug}`);
 
-      return h('li', { class: 'sidebar-sub-header' }, [
+      return h("li", { class: "sidebar-sub-header" }, [
         renderLink(h, {
           text: child.title,
           link: `${path}#${child.slug}`,
-          active
+          active,
         }),
         renderChildren(h, {
           children: child.children || false,
           path,
           route,
           maxDepth,
-          depth: depth + 1
-        })
+          depth: depth + 1,
+        }),
       ]);
-    })
+    }),
   );
 };
 
@@ -134,16 +134,16 @@ interface SidebarLinkProps {
   // eslint-disable-next-line max-lines-per-function
   render(
     h,
-    { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props }
+    { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props },
   ) {
     /** 当前渲染项目配置 */
     const { item } = props as SidebarLinkProps;
 
     // 当前配置未获取成功
-    if (item.type === 'error') return null;
+    if (item.type === "error") return null;
 
     // 外部链接侧边栏项
-    if (item.type === 'external') return renderExternal(h, item);
+    if (item.type === "external") return renderExternal(h, item);
 
     /*
      * Use custom active class matching logic
@@ -154,10 +154,10 @@ interface SidebarLinkProps {
     /** 当前渲染项目的激活状态 */
     const active =
       // 如果是标题侧边栏的话，其中一个子标题匹配也需要激活
-      item.type === 'header'
+      item.type === "header"
         ? selfActive ||
           (item.children || []).some((child) =>
-            isActive($route, `${item.basePath}#${child.slug}`)
+            isActive($route, `${item.basePath}#${child.slug}`),
           )
         : selfActive;
 
@@ -169,19 +169,19 @@ interface SidebarLinkProps {
       2;
 
     // 如果是标题侧边栏
-    if (item.type === 'header')
+    if (item.type === "header")
       return [
         renderLink(h, {
           text: item.title || item.path,
           link: item.path,
-          active
+          active,
         }),
         renderChildren(h, {
           children: item.children || false,
           path: item.basePath,
           route: $route,
-          maxDepth
-        })
+          maxDepth,
+        }),
       ];
 
     /** 是否显示所有标题 */
@@ -191,11 +191,11 @@ interface SidebarLinkProps {
     const link = renderLink(h, {
       icon:
         $themeConfig.sidebarIcon !== false && item.frontmatter.icon
-          ? `${$themeConfig.iconPrefix === '' ? '' : $themeConfig.iconPrefix || 'icon-'}${item.frontmatter.icon}`
-          : '',
+          ? `${$themeConfig.iconPrefix === "" ? "" : $themeConfig.iconPrefix || "icon-"}${item.frontmatter.icon}`
+          : "",
       text: item.title || item.path,
       link: item.path,
-      active
+      active,
     });
 
     if (
@@ -211,13 +211,13 @@ interface SidebarLinkProps {
           children,
           path: item.path,
           route: $route,
-          maxDepth
-        })
+          maxDepth,
+        }),
       ];
     }
 
     return link;
-  }
+  },
 } as FunctionalComponentOptions)
 export default class SidebarLink extends Vue {
   @Prop({ type: Object, default: () => ({}) })

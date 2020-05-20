@@ -34,6 +34,6 @@ npm i -D vuepress-theme-hope
 ```js
 // .vuepress/config.js
 module.exports = {
-  theme: 'hope'
+  theme: "hope",
 };
 ```

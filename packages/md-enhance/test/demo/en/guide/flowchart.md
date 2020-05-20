@@ -9,12 +9,12 @@ This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to su
 ```js
 module.exports = {
   plugin: [
-    'md-enhance',
+    "md-enhance",
     {
       // Enable flowchart
-      flowchart: true
-    }
-  ]
+      flowchart: true,
+    },
+  ],
 };
 ```
 

@@ -1,6 +1,6 @@
 /** 加密状态生成 */
 
-import { EncryptOptions } from '../../types';
+import { EncryptOptions } from "../../types";
 
 /**
  * 路径命中的键
@@ -11,9 +11,9 @@ import { EncryptOptions } from '../../types';
  */
 export const pathHitKeys = (
   encryptOptions: EncryptOptions | undefined,
-  path: string
+  path: string,
 ): string[] => {
-  if (encryptOptions && typeof encryptOptions.config === 'object') {
+  if (encryptOptions && typeof encryptOptions.config === "object") {
     /** 配置键名 */
     const keys = Object.keys(encryptOptions.config);
     /** 命中键名 */
@@ -37,7 +37,7 @@ export const pathHitKeys = (
 export const pathEncryptStatus = (
   encryptOptions: EncryptOptions | undefined,
   path: string,
-  passwordConfig: Record<string, string>
+  passwordConfig: Record<string, string>,
 ): boolean => {
   /** 命中键名 */
   const hitKeys = pathHitKeys(encryptOptions, path);
@@ -51,10 +51,10 @@ export const pathEncryptStatus = (
       const keyConfig = config[key];
       /** 命中的密码 */
       const hitPasswords =
-        typeof keyConfig === 'string' ? [keyConfig] : keyConfig;
+        typeof keyConfig === "string" ? [keyConfig] : keyConfig;
       /** 比较结果 */
       const result = hitPasswords.filter(
-        (password) => passwordConfig[key] === password
+        (password) => passwordConfig[key] === password,
       );
 
       return result.length !== 0;

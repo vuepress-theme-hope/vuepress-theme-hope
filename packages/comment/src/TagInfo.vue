@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import TagIcon from '@mr-hope/vuepress-shared-utils/icons/TagIcon.vue';
-import { capitalize } from '@mr-hope/vuepress-shared-utils';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
+import { capitalize } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { TagIcon } })
 export default class TagInfo extends Vue {
@@ -29,7 +29,7 @@ export default class TagInfo extends Vue {
 
     const { tag, tags = tag } = this.$frontmatter;
 
-    if (typeof tags === 'string') return [capitalize(tags)];
+    if (typeof tags === "string") return [capitalize(tags)];
 
     if (Array.isArray(tags)) return tags.map((item) => capitalize(item));
 

@@ -16,9 +16,9 @@ Let the Markdown file support flow chart in your VuePress site
 module.exports = {
   themeConfig: {
     markdown: {
-      flowchart: true
-    }
-  }
+      flowchart: true,
+    },
+  },
 };
 ```
 

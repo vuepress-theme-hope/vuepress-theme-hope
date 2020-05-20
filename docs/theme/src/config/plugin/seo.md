@@ -87,7 +87,7 @@ interface PageSeoInfo {
 
 ```js
 (meta: Meta, info: PageSeoInfo) => {
-  meta.push({ a: '1', b: '2' });
+  meta.push({ a: "1", b: "2" });
 };
 ```
 

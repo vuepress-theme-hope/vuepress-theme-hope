@@ -21,11 +21,11 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import DropdownLink from '@theme/components/DropdownLink.vue';
-import NavLink from '@theme/components/NavLink.vue';
-import { RouterOptions } from 'vue-router';
-import { resolveNavLinkItem } from '@theme/util/navbar';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import DropdownLink from "@theme/components/DropdownLink.vue";
+import NavLink from "@theme/components/NavLink.vue";
+import { RouterOptions } from "vue-router";
+import { resolveNavLinkItem } from "@theme/util/navbar";
 
 @Component({ components: { NavLink, DropdownLink } })
 export default class NavLinks extends Vue {
@@ -41,8 +41,8 @@ export default class NavLinks extends Vue {
       const { routes } = (this.$router as any).options as RouterOptions;
       const themeLocales = this.$themeConfig.locales || {};
       const languageDropdown = {
-        text: this.$themeLocaleConfig.selectText || 'Languages',
-        ariaLabel: this.$themeLocaleConfig.ariaLabel || 'Select language',
+        text: this.$themeLocaleConfig.selectText || "Languages",
+        ariaLabel: this.$themeLocaleConfig.ariaLabel || "Select language",
         items: Object.keys(locales).map((path) => {
           const locale = locales[path];
           const text =
@@ -60,7 +60,7 @@ export default class NavLinks extends Vue {
           }
 
           return { text, link };
-        })
+        }),
       };
 
       return [...this.userNav, languageDropdown];
@@ -79,23 +79,23 @@ export default class NavLinks extends Vue {
     if (repo)
       return /^https?:/u.test(repo) ? repo : `https://github.com/${repo}`;
 
-    return '';
+    return "";
   }
 
   private get repoLabel() {
-    if (!this.repoLink) return '';
+    if (!this.repoLink) return "";
     if (this.$themeConfig.repoLabel) return this.$themeConfig.repoLabel;
 
     const [repoHost] = this.repoLink.match(/^https?:\/\/[^/]+/u);
-    const platforms = ['GitHub', 'GitLab', 'Bitbucket'];
+    const platforms = ["GitHub", "GitLab", "Bitbucket"];
 
     for (let index = 0; index < platforms.length; index++) {
       const platform = platforms[index];
 
-      if (new RegExp(platform, 'iu').test(repoHost)) return platform;
+      if (new RegExp(platform, "iu").test(repoHost)) return platform;
     }
 
-    return 'Source';
+    return "Source";
   }
 }
 </script>

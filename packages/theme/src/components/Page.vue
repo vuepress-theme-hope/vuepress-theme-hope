@@ -52,16 +52,16 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import Comment from '@Comment';
-import MyTransition from '@theme/components/MyTransition.vue';
-import PageEdit from '@theme/components/PageEdit.vue';
-import PageFooter from '@theme/components/PageFooter.vue';
-import PageInfo from '@PageInfo';
-import PageNav from '@theme/components/PageNav.vue';
-import Password from '@theme/components/Password.vue';
-import { SidebarItem } from '@theme/util/sidebar';
-import md5 = require('md5');
+import { Component, Prop, Vue } from "vue-property-decorator";
+import Comment from "@Comment";
+import MyTransition from "@theme/components/MyTransition.vue";
+import PageEdit from "@theme/components/PageEdit.vue";
+import PageFooter from "@theme/components/PageFooter.vue";
+import PageInfo from "@PageInfo";
+import PageNav from "@theme/components/PageNav.vue";
+import Password from "@theme/components/Password.vue";
+import { SidebarItem } from "@theme/util/sidebar";
+import md5 = require("md5");
 
 @Component({
   components: {
@@ -71,15 +71,15 @@ import md5 = require('md5');
     PageFooter,
     PageInfo,
     PageNav,
-    Password
-  }
+    Password,
+  },
 })
 export default class Page extends Vue {
   @Prop({ type: Array, default: () => [] })
   private readonly sidebarItems!: SidebarItem[];
 
   /** 用户输入的密码 */
-  private password = '';
+  private password = "";
 
   /** 是否启用评论 */
   private commentEnable() {
@@ -92,13 +92,13 @@ export default class Page extends Vue {
     const { password } = this.$frontmatter;
     const passwordType = typeof password;
 
-    return passwordType === 'undefined'
-      ? ''
-      : passwordType === 'number'
+    return passwordType === "undefined"
+      ? ""
+      : passwordType === "number"
       ? md5(this.$frontmatter.password.toString())
-      : passwordType === 'string'
+      : passwordType === "string"
       ? md5(this.$frontmatter.password)
-      : '';
+      : "";
   }
 
   /** 当前页面解密状态 */

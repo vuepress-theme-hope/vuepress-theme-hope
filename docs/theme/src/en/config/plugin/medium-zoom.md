@@ -17,16 +17,16 @@ The default configuration is:
 module.exports = {
   plugins: [
     [
-      '@vuepress/medium-zoom',
+      "@vuepress/medium-zoom",
       {
         options: {
           /** pic margin after zoom */
           margin: 16,
           /** px to scroll before cloase */
-          scrollOffset: 40
-        }
-      }
-    ]
-  ]
+          scrollOffset: 40,
+        },
+      },
+    ],
+  ],
 };
 ```

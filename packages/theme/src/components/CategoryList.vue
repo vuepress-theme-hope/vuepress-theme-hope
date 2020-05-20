@@ -16,10 +16,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import ArticleList from '@theme/components/ArticleList.vue';
-import { capitalize } from '@mr-hope/vuepress-shared-utils';
-import navigate from '@theme/util/navigate';
+import { Component, Vue } from "vue-property-decorator";
+import ArticleList from "@theme/components/ArticleList.vue";
+import { capitalize } from "@mr-hope/vuepress-shared-utils";
+import navigate from "@theme/util/navigate";
 
 @Component({ components: { ArticleList } })
 export default class CategoryList extends Vue {

@@ -1,4 +1,4 @@
-import { PageHeader } from 'vuepress-types';
+import { PageHeader } from "vuepress-types";
 
 /** 侧边栏标题配置 */
 export interface SidebarHeader extends PageHeader {

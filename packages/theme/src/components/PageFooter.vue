@@ -7,9 +7,9 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { HopeFooterConfig } from '../../types';
-import MediaLinks from '@theme/components/MediaLinks.vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { HopeFooterConfig } from "../../types";
+import MediaLinks from "@theme/components/MediaLinks.vue";
 
 @Component({ components: { MediaLinks } })
 export default class PageFooter extends Vue {
@@ -33,9 +33,9 @@ export default class PageFooter extends Vue {
 
     return footer === false
       ? false
-      : typeof footer === 'string'
+      : typeof footer === "string"
       ? footer
-      : this.footerConfig.content || '';
+      : this.footerConfig.content || "";
   }
 
   /** 版权信息 */

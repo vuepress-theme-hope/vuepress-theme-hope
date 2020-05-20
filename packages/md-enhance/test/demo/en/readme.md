@@ -29,6 +29,6 @@ npm i -D @mr-hope/vuepress-plugin-md-enhance
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: ['md-enhance']
+  plugin: ["md-enhance"],
 };
 ```

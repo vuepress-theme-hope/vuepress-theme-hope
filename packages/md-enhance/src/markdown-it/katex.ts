@@ -1,9 +1,9 @@
 /* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
-import MarkdownIt = require('markdown-it');
-import StateBlock = require('markdown-it/lib/rules_block/state_block');
-import StateInline = require('markdown-it/lib/rules_inline/state_inline');
-import katex = require('katex');
+import MarkdownIt = require("markdown-it");
+import StateBlock = require("markdown-it/lib/rules_block/state_block");
+import StateInline = require("markdown-it/lib/rules_inline/state_inline");
+import katex = require("katex");
 
 /*
  * Test if potential opening or closing delimieter
@@ -11,7 +11,7 @@ import katex = require('katex');
  */
 const isValidDelim = (
   state: StateInline,
-  pos: number
+  pos: number,
 ): { canOpen: boolean; canClose: boolean } => {
   let canOpen = true;
   let canClose = true;
@@ -35,7 +35,7 @@ const isValidDelim = (
 
   return {
     canOpen,
-    canClose
+    canClose,
   };
 };
 
@@ -45,11 +45,11 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
   let res;
   let token;
 
-  if (state.src[state.pos] !== '$') return false;
+  if (state.src[state.pos] !== "$") return false;
 
   res = isValidDelim(state, state.pos);
   if (!res.canOpen) {
-    if (!silent) state.pending += '$';
+    if (!silent) state.pending += "$";
 
     state.pos += 1;
     return true;
@@ -63,13 +63,13 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
    */
   const start = state.pos + 1;
   match = start;
-  while ((match = state.src.indexOf('$', match)) !== -1) {
+  while ((match = state.src.indexOf("$", match)) !== -1) {
     /*
      * Found potential $, look for escapes, pos will point to
      * first non escape when complete
      */
     pos = match - 1;
-    while (state.src[pos] === '\\') pos -= 1;
+    while (state.src[pos] === "\\") pos -= 1;
 
     // Even number of escapes, potential closing delimiter found
     if ((match - pos) % 2 === 1) break;
@@ -79,7 +79,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
 
   // No closing delimter found.  Consume $ and continue.
   if (match === -1) {
-    if (!silent) state.pending += '$';
+    if (!silent) state.pending += "$";
 
     state.pos = start;
     return true;
@@ -87,7 +87,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
 
   // Check if we have empty content, ie: $$.  Do not parse.
   if (match - start === 0) {
-    if (!silent) state.pending += '$$';
+    if (!silent) state.pending += "$$";
 
     state.pos = start + 1;
     return true;
@@ -96,15 +96,15 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
   // Check for valid closing delimiter
   res = isValidDelim(state, match);
   if (!res.canClose) {
-    if (!silent) state.pending += '$';
+    if (!silent) state.pending += "$";
 
     state.pos = start;
     return true;
   }
 
   if (!silent) {
-    token = state.push('inlineTex', 'math', 0);
-    token.markup = '$';
+    token = state.push("inlineTex", "math", 0);
+    token.markup = "$";
     token.content = state.src.slice(start, match);
   }
 
@@ -116,7 +116,7 @@ const blockTex = (
   state: StateBlock,
   start: number,
   end: number,
-  silent: boolean
+  silent: boolean,
   // eslint-disable-next-line max-params
 ): boolean => {
   let firstLine;
@@ -129,14 +129,14 @@ const blockTex = (
 
   if (pos + 2 > max) return false;
 
-  if (state.src.slice(pos, pos + 2) !== '$$') return false;
+  if (state.src.slice(pos, pos + 2) !== "$$") return false;
 
   pos += 2;
   firstLine = state.src.slice(pos, max);
 
   if (silent) return true;
 
-  if (firstLine.trim().slice(-2) === '$$') {
+  if (firstLine.trim().slice(-2) === "$$") {
     // Single line expression
     firstLine = firstLine.trim().slice(0, -2);
     found = true;
@@ -154,8 +154,8 @@ const blockTex = (
       // non-empty line with negative indent should stop the list:
       break;
 
-    if (state.src.slice(pos, max).trim().slice(-2) === '$$') {
-      lastPos = state.src.slice(0, max).lastIndexOf('$$');
+    if (state.src.slice(pos, max).trim().slice(-2) === "$$") {
+      lastPos = state.src.slice(0, max).lastIndexOf("$$");
       lastLine = state.src.slice(pos, lastPos);
       found = true;
     }
@@ -163,30 +163,30 @@ const blockTex = (
 
   state.line = next + 1;
 
-  const token = state.push('blockTex', 'math', 0);
+  const token = state.push("blockTex", "math", 0);
 
   token.block = true;
   token.content =
-    (firstLine && firstLine.trim() ? `${firstLine}\n` : '') +
+    (firstLine && firstLine.trim() ? `${firstLine}\n` : "") +
     state.getLines(start + 1, next, state.tShift[start], true) +
-    (lastLine && lastLine.trim() ? lastLine : '');
+    (lastLine && lastLine.trim() ? lastLine : "");
   token.map = [start, state.line];
-  token.markup = '$$';
+  token.markup = "$$";
 
   return true;
 };
 
 const escapeHtml = (unsafeHTML: string): string =>
   unsafeHTML
-    .replace(/&/gu, '&amp;')
-    .replace(/</gu, '&lt;')
-    .replace(/>/gu, '&gt;')
-    .replace(/"/gu, '&quot;')
-    .replace(/'/gu, '&#039;');
+    .replace(/&/gu, "&amp;")
+    .replace(/</gu, "&lt;")
+    .replace(/>/gu, "&gt;")
+    .replace(/"/gu, "&quot;")
+    .replace(/'/gu, "&#039;");
 
 export default (
   md: MarkdownIt,
-  options: katex.KatexOptions = { throwOnError: false }
+  options: katex.KatexOptions = { throwOnError: false },
 ): void => {
   // set KaTeX as the renderer for markdown-it-simplemath
   const katexInline = (tex: string): string => {
@@ -198,7 +198,7 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<span class='katex-error' title='${escapeHtml(
-        error.toString()
+        error.toString(),
       )}'>${escapeHtml(tex)}</span>`;
     }
   };
@@ -212,15 +212,15 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<p class='katex-block katex-error' title='${escapeHtml(
-        error.toString()
+        error.toString(),
       )}'>${escapeHtml(tex)}</p>`;
     }
   };
 
-  md.inline.ruler.after('escape', 'inlineTex', inlineTex);
+  md.inline.ruler.after("escape", "inlineTex", inlineTex);
   // It's a workaround here because types issue
-  md.block.ruler.after('blockquote', 'blockTex', blockTex, {
-    alt: ['paragraph', 'reference', 'blockquote', 'list']
+  md.block.ruler.after("blockquote", "blockTex", blockTex, {
+    alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
   md.renderer.rules.inlineTex = (tokens, idx): string =>

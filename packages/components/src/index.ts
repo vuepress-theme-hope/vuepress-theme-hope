@@ -1,15 +1,15 @@
-import { PluginOptionAPI } from 'vuepress-types';
-import { resolve } from 'path';
+import { PluginOptionAPI } from "vuepress-types";
+import { resolve } from "path";
 
 export = {
-  name: 'components',
+  name: "components",
 
-  enhanceAppFiles: resolve(__dirname, 'enhanceAppFile.ts'),
+  enhanceAppFiles: resolve(__dirname, "enhanceAppFile.ts"),
 
   plugins: [
     /** typescript 支持 */
-    ['typescript']
+    ["typescript"],
   ],
 
-  globalUIComponents: 'BackToTop'
+  globalUIComponents: "BackToTop",
 } as PluginOptionAPI;

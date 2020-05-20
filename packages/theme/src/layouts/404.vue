@@ -10,9 +10,9 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import Common from '@theme/components/Common.vue';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import Common from "@theme/components/Common.vue";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { Common } })
 export default class NotFound extends Vue {

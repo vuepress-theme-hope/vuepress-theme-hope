@@ -29,11 +29,11 @@
 </template>
 
 <script lang='ts'>
-import { Component, Mixins, Vue } from 'vue-property-decorator';
-import MyTransition from '@theme/components/MyTransition.vue';
-import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
-import { TimelineMixin } from '@theme/util/articleMixin';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
+import { Component, Mixins, Vue } from "vue-property-decorator";
+import MyTransition from "@theme/components/MyTransition.vue";
+import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
+import { TimelineMixin } from "@theme/util/articleMixin";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { MyTransition, TimeIcon } })
 export default class BlogPage extends Mixins(TimelineMixin) {

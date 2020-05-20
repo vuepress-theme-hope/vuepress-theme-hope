@@ -13,8 +13,8 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
-import { endingSlashRE, outboundRE } from '@theme/util/path';
+import { Component, Vue } from "vue-property-decorator";
+import { endingSlashRE, outboundRE } from "@theme/util/path";
 
 @Component
 export default class PageEdit extends Vue {
@@ -25,7 +25,7 @@ export default class PageEdit extends Vue {
   private get lastUpdatedText() {
     return (
       this.$themeLocaleConfig.lastUpdated ||
-      'Last Updated'
+      "Last Updated"
     );
   }
 
@@ -47,7 +47,7 @@ export default class PageEdit extends Vue {
   private get editLinkText() {
     return (
       this.$themeLocaleConfig.editLinkText ||
-      'Edit this page'
+      "Edit this page"
     );
   }
 
@@ -55,8 +55,8 @@ export default class PageEdit extends Vue {
     const {
       repo,
       docsRepo = repo,
-      docsDir = '',
-      docsBranch = 'master'
+      docsDir = "",
+      docsBranch = "master",
     } = this.$themeConfig;
 
     const bitbucket = /bitbucket.org/u;
@@ -64,8 +64,8 @@ export default class PageEdit extends Vue {
     if (bitbucket.test(repo)) {
       const base = outboundRE.test(docsRepo) ? docsRepo : repo;
 
-      return `${base.replace(endingSlashRE, '')}/src/${docsBranch}/${
-        docsDir ? `${docsDir.replace(endingSlashRE, '')}/` : ''
+      return `${base.replace(endingSlashRE, "")}/src/${docsBranch}/${
+        docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
       }${
         this.$page.relativePath
       }?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`;
@@ -75,8 +75,8 @@ export default class PageEdit extends Vue {
       ? docsRepo
       : `https://github.com/${docsRepo}`;
 
-    return `${base.replace(endingSlashRE, '')}/edit/${docsBranch}/${
-      docsDir ? `${docsDir.replace(endingSlashRE, '')}/` : ''
+    return `${base.replace(endingSlashRE, "")}/edit/${docsBranch}/${
+      docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
     }${this.$page.relativePath}`;
   }
 }

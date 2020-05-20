@@ -1,6 +1,6 @@
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { ComponentOptions } from 'vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { ComponentOptions } from "vue";
 
 // Functional Component Hack
 interface FunctionalComponentOptions extends ComponentOptions<Vue> {
@@ -8,38 +8,38 @@ interface FunctionalComponentOptions extends ComponentOptions<Vue> {
 }
 
 @Component({
-  name: 'MyBadge',
+  name: "MyBadge",
   functional: true,
   render(h, { props, slots }) {
     const options: Record<string, any> = {
-      class: ['badge', props.type],
-      style: { verticalAlign: props.vertical }
+      class: ["badge", props.type],
+      style: { verticalAlign: props.vertical },
     };
 
     if (props.color) {
-      options.class.push('diy');
+      options.class.push("diy");
       options.style.backgroundColor = props.color;
-      options['data-color'] = props.color;
+      options["data-color"] = props.color;
     }
 
-    return h('span', options, props.text || slots().default);
-  }
+    return h("span", options, props.text || slots().default);
+  },
 } as FunctionalComponentOptions)
 export default class MyBadge extends Vue {
   /** 徽章类型 */
-  @Prop({ type: String, default: 'tip' })
+  @Prop({ type: String, default: "tip" })
   private readonly type!: string;
 
   /** 徽章文字 */
-  @Prop({ type: String, default: '' })
+  @Prop({ type: String, default: "" })
   private readonly text!: string;
 
   /** 徽章垂直对齐方式 */
-  @Prop({ type: String, default: 'top' })
+  @Prop({ type: String, default: "top" })
   private readonly vertical!: string;
 
   /** 徽章颜色 */
-  @Prop({ type: String, default: '' })
+  @Prop({ type: String, default: "" })
   private readonly color!: string;
 }
 </script>

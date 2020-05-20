@@ -7,8 +7,8 @@
 
 <script lang='ts'>
 /* global COMMENT_OPTIONS */
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import Valine from './src/Valine.vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import Valine from "./src/Valine.vue";
 
 @Component({ components: { Valine } })
 export default class Comment extends Vue {
@@ -18,7 +18,7 @@ export default class Comment extends Vue {
     return (
       this.$frontmatter.comment ||
       (this.options.comment !== false &&
-        (this.options.type === 'valine' || this.$frontmatter.comment !== false))
+        (this.options.type === "valine" || this.$frontmatter.comment !== false))
     );
   }
 }

@@ -1,5 +1,5 @@
-import { DirectiveOptions, VNode } from 'vue';
-import { DirectiveBinding } from 'vue/types/options';
+import { DirectiveOptions, VNode } from "vue";
+import { DirectiveBinding } from "vue/types/options";
 
 /** Popup HTML 事件 */
 interface PopupHtmlElements extends HTMLElement {
@@ -16,11 +16,11 @@ type PopupDirectiveFunction = (
 
 /** 验证函数 */
 const validate = (binding: DirectiveBinding): boolean => {
-  if (typeof binding.value !== 'function') {
+  if (typeof binding.value !== "function") {
     console.warn(
-      '[Vue-click-outside:] provided expression',
+      "[Vue-click-outside:] provided expression",
       binding.expression,
-      'is not a function.'
+      "is not a function.",
     );
 
     return false;
@@ -47,7 +47,7 @@ const isPopup = (popupItem: HTMLElement, elements: HTMLElement[]): boolean => {
 
 /** 是否是服务器端代码 */
 const isServer = (vNode: VNode): boolean =>
-  typeof vNode.componentInstance !== 'undefined' &&
+  typeof vNode.componentInstance !== "undefined" &&
   vNode.componentInstance.$isServer;
 
 export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
@@ -74,10 +74,10 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
   // Add Event Listeners
   el.$vueClickOutside = {
     handler,
-    callback: binding.value
+    callback: binding.value,
   };
   const clickHandler =
-    'ontouchstart' in document.documentElement ? 'touchstart' : 'click';
+    "ontouchstart" in document.documentElement ? "touchstart" : "click";
   if (!isServer(vNode)) document.addEventListener(clickHandler, handler);
 };
 
@@ -90,7 +90,7 @@ export const update: PopupDirectiveFunction = (el, binding) => {
 export const unbind: PopupDirectiveFunction = (el, _binding, vNode) => {
   // Remove Event Listeners
   const clickHandler =
-    'ontouchstart' in document.documentElement ? 'touchstart' : 'click';
+    "ontouchstart" in document.documentElement ? "touchstart" : "click";
   if (!isServer(vNode) && el.$vueClickOutside)
     document.removeEventListener(clickHandler, el.$vueClickOutside.handler);
   delete el.$vueClickOutside;
@@ -99,5 +99,5 @@ export const unbind: PopupDirectiveFunction = (el, _binding, vNode) => {
 export default {
   bind,
   update,
-  unbind
+  unbind,
 } as DirectiveOptions;

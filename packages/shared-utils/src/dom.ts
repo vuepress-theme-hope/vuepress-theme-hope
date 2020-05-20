@@ -8,14 +8,14 @@
 export const changeClass = (
   domClass: DOMTokenList,
   insert: string[],
-  remove: string[]
+  remove: string[],
 ): void => {
   domClass.remove(...remove);
   const oldClasses = [...(domClass as any)];
-  domClass.value = '';
+  domClass.value = "";
   domClass.add(...insert, ...oldClasses);
 };
 
 export default {
-  changeClass
+  changeClass,
 };

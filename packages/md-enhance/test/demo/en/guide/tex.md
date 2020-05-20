@@ -9,12 +9,12 @@ This feature is brought by [vuepress-plugin-mathjax](https://github.com/vuepress
 ```js
 module.exports = {
   plugin: [
-    'md-enhance',
+    "md-enhance",
     {
       // Enable Tex Support
-      mathjax: true
-    }
-  ]
+      mathjax: true,
+    },
+  ],
 };
 ```
 

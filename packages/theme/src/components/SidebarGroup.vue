@@ -43,10 +43,10 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { SidebarAutoItem, SidebarGroupItem } from '@theme/util/sidebar';
-import DropdownTransition from '@theme/components/DropdownTransition.vue';
-import { isActive } from '@theme/util/path';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { SidebarAutoItem, SidebarGroupItem } from "@theme/util/sidebar";
+import DropdownTransition from "@theme/components/DropdownTransition.vue";
+import { isActive } from "@theme/util/path";
 
 @Component({ components: { DropdownTransition } })
 export default class SidebarGroup extends Vue {
@@ -65,12 +65,12 @@ export default class SidebarGroup extends Vue {
     const { iconPrefix } = this.$themeConfig;
 
     return this.$themeConfig.sidebarIcon !== false && icon
-      ? `${iconPrefix === '' ? '' : iconPrefix || 'icon-'}${icon}`
-      : '';
+      ? `${iconPrefix === "" ? "" : iconPrefix || "icon-"}${icon}`
+      : "";
   }
 
   private beforeCreate() {
-    this.$options.components!.SidebarLinks = require('@theme/components/SidebarLinks.vue').default;
+    this.$options.components!.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
   }
 }
 </script>

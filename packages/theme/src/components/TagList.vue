@@ -13,9 +13,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
-import navigate from '@theme/util/navigate';
+import { Component, Vue } from "vue-property-decorator";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
+import navigate from "@theme/util/navigate";
 
 @Component
 export default class TagList extends Vue {
@@ -26,9 +26,9 @@ export default class TagList extends Vue {
         name:
           this.$themeLocaleConfig.blog.allText ||
           i18n.getDefaultLocale().blog.allText,
-        path: '/tag/'
+        path: "/tag/",
       },
-      ...this.$tag.list
+      ...this.$tag.list,
     ];
   }
 

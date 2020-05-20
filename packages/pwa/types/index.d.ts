@@ -1,4 +1,4 @@
-import './declare';
+import "./declare";
 
 /** PWA 配置 */
 export type PWAOptions = Partial<{
