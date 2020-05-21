@@ -14777,9 +14777,9 @@ vuepress-plugin-clean-urls@^1.1.1:
   integrity sha512-cEDbqme8rPbkSbjz73ONFSKIZkzC8HFRBY7UD/oa1ZC655HYhQo3JMbJgJXeCQjV/vkl7WuPB/QMNlQY20PXjw==
 
 vuepress-plugin-container@^2.0.2, vuepress-plugin-container@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-container/-/vuepress-plugin-container-2.1.3.tgz#b5873cb8d21b66bd62f7fb15ab254e55dcfeff78"
-  integrity sha512-5bTtt8PKu9edNoc2Op/sRhCynjT+xKO/VuqwH7ftjdwNZUZMl/ymga7L+5lXCWNOLYAzRHaZAyYV5tY/97cl5g==
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-container/-/vuepress-plugin-container-2.1.4.tgz#bd586587ffb303f847e4a6a2e2568171f311493b"
+  integrity sha512-l+EkeL+rC6DJch1wAZUFIkNDaz2TNOg4NQTHa3yMAsYkC+QaSRubGdN6YwOSmfjxVmM9s9D3gwBWw0O7OBhqRg==
   dependencies:
     markdown-it-container "^2.0.0"
 
