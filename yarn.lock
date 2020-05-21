@@ -14819,9 +14819,9 @@ vuepress-plugin-mailchimp@^1.4.1:
     query-string "^6.9.0"
 
 vuepress-plugin-named-chunks@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-named-chunks/-/vuepress-plugin-named-chunks-1.1.2.tgz#b44d7f6bb43a8c68939b485d56cda0860afc129c"
-  integrity sha512-9x2xj3kj9fkGY8B+nGJVVGzcH9M/gKpnsZfJy56SXSrt6cg2u9jss+8D/rphcmCuXL4huqAvN2alkgTyZZ13tA==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-named-chunks/-/vuepress-plugin-named-chunks-1.1.3.tgz#a8134dc5bfec6ebb8e405281db2d7939f4d9116f"
+  integrity sha512-6afJ9bEeaMJP/ZWGS+NkQtPCjnV2h2trpbm6wngFeCCqJf8rfazLOxYZSdApp7Ty5GcWW9GmACajajfysKG5nw==
 
 vuepress-plugin-sitemap@^2.3.1:
   version "2.3.1"
