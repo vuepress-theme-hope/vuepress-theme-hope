@@ -4090,10 +4090,10 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-cac@^6.5.5, cac@^6.5.6:
-  version "6.5.9"
-  resolved "https://registry.yarnpkg.com/cac/-/cac-6.5.9.tgz#c4fabd5e3b97e088be5df9ab588efe41067e54d8"
-  integrity sha512-raPrIuUiiwuFjumuq8oFh2PNJ/ySE92n+umpIka7JS7fv0oioc7Fx+8Xp/muUr6uocngpaOvFY89idJ63pZtYw==
+cac@^6.5.10, cac@^6.5.6:
+  version "6.5.10"
+  resolved "https://registry.yarnpkg.com/cac/-/cac-6.5.10.tgz#be1d4509af1809dca601685145cd80ea85dabe0d"
+  integrity sha512-uxyxsID5p5kYlFFnhw86A4c8K5QTLRp6JM4AY2OtCq5lnnn4DGxV8YI1Z5rlt6KUjEKpA4qM+WZQshMoJY6dQQ==
 
 cacache@^12.0.0, cacache@^12.0.2, cacache@^12.0.3:
   version "12.0.4"
@@ -14844,15 +14844,15 @@ vuepress-plugin-typescript@^0.2.0:
   dependencies:
     ts-loader "^6.2.1"
 
-vuepress-types@0.9.2, vuepress-types@^0.9.2:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/vuepress-types/-/vuepress-types-0.9.2.tgz#6305eafcb7b7b274c350b9f44f70be60e9da5124"
-  integrity sha512-gc3rTOd3UzSMj/Mu+XQAt1+Nn5FugwO2SeQ/r8yLHxyrSKsFXMjgQCIyXvHf61TBVB9VLs+xd//Pg51/+sMz7A==
+vuepress-types@0.9.3, vuepress-types@^0.9.2:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/vuepress-types/-/vuepress-types-0.9.3.tgz#046f9ad9585cd45448a8dbe75e70aed9a1f64dd6"
+  integrity sha512-2C5TlTg0+GS2AVTOupF99NeAZIc9HyqEbsTp9E3KtABF73tMNN3bmCMx/F5pKg5Ghn2DYM+x4KidgOSbUa8v0Q==
   dependencies:
     "@types/express" "^4.17.1"
     "@types/markdown-it" "^0.0.8"
     "@types/webpack-dev-server" "^3.1.7"
-    cac "^6.5.5"
+    cac "^6.5.10"
     markdown-it "^8.4.1"
     vue "^2.6.10"
     vue-loader "^15.7.1"
