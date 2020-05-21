@@ -13,14 +13,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins, Vue, Watch } from 'vue-property-decorator';
-import ArticleItem from '@theme/components/ArticleItem.vue';
-import { ArticleMixin } from '@theme/util/articleMixin';
-import MyTransition from '@theme/components/MyTransition.vue';
-import { PageComputed } from 'vuepress-types';
-import { Route } from 'vue-router';
-import { deepAssign } from '@mr-hope/vuepress-shared-utils';
-import { generatePagination } from '@theme/util/article';
+import { Component, Mixins, Vue, Watch } from "vue-property-decorator";
+import ArticleItem from "@theme/components/ArticleItem.vue";
+import { ArticleMixin } from "@theme/util/articleMixin";
+import MyTransition from "@theme/components/MyTransition.vue";
+import { PageComputed } from "vuepress-types";
+import { Route } from "vue-router";
+import { deepAssign } from "@mr-hope/vuepress-shared-utils";
+import { generatePagination } from "@theme/util/article";
 
 @Component({ components: { ArticleItem, MyTransition } })
 export default class ArticleList extends Mixins(ArticleMixin) {
@@ -49,7 +49,7 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   private get articles() {
     return this.articleList.slice(
       (this.currentPage - 1) * this.articlePerPage,
-      this.currentPage * this.articlePerPage
+      this.currentPage * this.articlePerPage,
     );
   }
 
@@ -68,7 +68,7 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   }
 
   /** 在路径发生改变时更新文章列表 */
-  @Watch('$route')
+  @Watch("$route")
   private onRouteUpdate(to: Route, from: Route) {
     if (to.path !== from.path) {
       this.articleList = this.getArticleList();
@@ -77,11 +77,11 @@ export default class ArticleList extends Mixins(ArticleMixin) {
     }
   }
 
-  @Watch('currentPage')
+  @Watch("currentPage")
   private onPageChange() {
     // 滚动到列表顶部
     const distance =
-      (document.querySelector('#article') as Element).getBoundingClientRect()
+      (document.querySelector("#article") as Element).getBoundingClientRect()
         .top + window.scrollY;
 
     setTimeout(() => {

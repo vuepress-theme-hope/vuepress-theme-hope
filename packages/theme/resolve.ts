@@ -1,9 +1,9 @@
-import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from './types';
-import { deepAssignReverse } from '@mr-hope/vuepress-shared-utils';
-import defaultConfig from './src/lib/defaultConfig';
-import resolveHead from './src/lib/resolveHead';
-import resolveLocales from './src/lib/resolveLocales';
-import resolveThemeConfig from './src/lib/resolveThemeConfig';
+import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from "./types";
+import { deepAssignReverse } from "@mr-hope/vuepress-shared-utils";
+import defaultConfig from "./src/lib/defaultConfig";
+import resolveHead from "./src/lib/resolveHead";
+import resolveLocales from "./src/lib/resolveLocales";
+import resolveThemeConfig from "./src/lib/resolveThemeConfig";
 
 /**
  * 处理 vuepress 配置
@@ -11,7 +11,7 @@ import resolveThemeConfig from './src/lib/resolveThemeConfig';
  * @param config
  */
 const resolveConfig = (
-  config: HopeVuepressConfig
+  config: HopeVuepressConfig,
 ): ResolvedHopeVuepressConfig => {
   // 合并默认配置
   deepAssignReverse(defaultConfig, config);

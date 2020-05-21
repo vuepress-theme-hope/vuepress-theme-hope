@@ -22,14 +22,14 @@ module.exports = {
   plugins: [
     /** 复制操作处理 */
     [
-      'copyright',
+      "copyright",
       {
         authorName: options.author,
         minLength: 100,
-        clipboardComponent: path.resolve(__dirname, 'components/Clipboard.vue')
-      }
-    ]
-  ]
+        clipboardComponent: path.resolve(__dirname, "components/Clipboard.vue"),
+      },
+    ],
+  ],
 };
 ```
 

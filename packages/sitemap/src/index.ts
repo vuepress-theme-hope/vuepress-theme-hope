@@ -2,24 +2,24 @@ import {
   Context,
   PageComputed,
   PluginOptionAPI,
-  SiteData
-} from 'vuepress-types';
-import { SitemapOptions } from '../types';
-import { SitemapStream } from 'sitemap';
-import chalk from 'chalk';
-import { createWriteStream } from 'fs';
-import { resolve } from 'path';
+  SiteData,
+} from "vuepress-types";
+import { SitemapOptions } from "../types";
+import { SitemapStream } from "sitemap";
+import chalk from "chalk";
+import { createWriteStream } from "fs";
+import { resolve } from "path";
 
 /** 输出日志 */
 const log = (
   msg: string,
-  color: 'cyan' | 'red' = 'cyan',
-  label = 'SITEMAP'
+  color: "cyan" | "red" = "cyan",
+  label = "SITEMAP",
 ): void => console.log(`\n${chalk[color](` ${label} `)} ${msg}`);
 
 const stripLocalePrefix = (
   path: string,
-  localePathPrefixes: string[]
+  localePathPrefixes: string[],
 ): {
   normalizedPath: string;
   localePrefix: string;
@@ -29,8 +29,8 @@ const stripLocalePrefix = (
     .shift() as string;
 
   return {
-    normalizedPath: path.replace(matchingPrefix, '/'),
-    localePrefix: matchingPrefix
+    normalizedPath: path.replace(matchingPrefix, "/"),
+    localePrefix: matchingPrefix,
   };
 };
 
@@ -38,13 +38,13 @@ const stripLocalePrefix = (
 const generatePageMap = (
   siteData: SiteData,
   base: string,
-  options: SitemapOptions
+  options: SitemapOptions,
 ): Map<string, string[]> => {
   const {
-    changefreq = 'daily',
+    changefreq = "daily",
     exclude = [],
     dateFormatter = (page: PageComputed): string =>
-      page.lastUpdatedTime ? new Date(page.lastUpdatedTime).toISOString() : '',
+      page.lastUpdatedTime ? new Date(page.lastUpdatedTime).toISOString() : "",
     ...others
   } = options;
 
@@ -56,14 +56,14 @@ const generatePageMap = (
     (map: Map<string, string[]>, page) => {
       const { normalizedPath, localePrefix } = stripLocalePrefix(
         page.path,
-        localeKeys
+        localeKeys,
       );
       const prefixesByPath = map.get(normalizedPath) || [];
       prefixesByPath.push(localePrefix);
 
       return map.set(normalizedPath, prefixesByPath);
     },
-    new Map()
+    new Map(),
   );
 
   const pagesMap = new Map();
@@ -71,13 +71,13 @@ const generatePageMap = (
   pages.forEach((page) => {
     const frontmatterOptions = page.frontmatter.sitemap || {};
     const metaRobots = (page.frontmatter.meta || []).find(
-      (meta) => meta.name === 'robots'
+      (meta) => meta.name === "robots",
     );
     const excludePage = metaRobots
-      ? (metaRobots.content || '')
+      ? (metaRobots.content || "")
           .split(/,/u)
           .map((x) => x.trim())
-          .includes('noindex')
+          .includes("noindex")
       : frontmatterOptions.exclude;
 
     if (excludePage) exclude.push(page.path);
@@ -94,14 +94,14 @@ const generatePageMap = (
     if (relatedLocales.length > 1)
       links = relatedLocales.map((localePrefix) => ({
         lang: locales[localePrefix].lang,
-        url: `${base}${normalizedPath.replace('/', localePrefix)}`
+        url: `${base}${normalizedPath.replace("/", localePrefix)}`,
       }));
 
     pagesMap.set(page.path, {
       changefreq: frontmatterOptions.changefreq || changefreq,
       lastmodISO: lastmodifyTime,
       links,
-      ...others
+      ...others,
     });
   });
 
@@ -111,21 +111,21 @@ const generatePageMap = (
 const generateSiteMap = (
   siteData: SiteData,
   { outDir, themeConfig }: Context,
-  options: SitemapOptions
+  options: SitemapOptions,
 ): void => {
-  log('Generating sitemap...');
+  log("Generating sitemap...");
 
   const { urls = [], hostname, xslUrl, exclude = [] } = options;
   const sitemap = new SitemapStream({
     hostname: hostname || themeConfig.hostname,
-    xslUrl
+    xslUrl,
   });
-  const sitemapXML = resolve(outDir, options.outFile || 'sitemap.xml');
+  const sitemapXML = resolve(outDir, options.outFile || "sitemap.xml");
   const writeStream = createWriteStream(sitemapXML);
 
   sitemap.pipe(writeStream);
 
-  const base = siteData.base.replace(/\/$/u, '');
+  const base = siteData.base.replace(/\/$/u, "");
   const pagesMap = generatePageMap(siteData, base, options);
 
   pagesMap.forEach((page, url) => {
@@ -135,21 +135,21 @@ const generateSiteMap = (
 
   urls.forEach((item) => sitemap.write(item));
   sitemap.end();
-  log(`Sitemap generated.`);
+  log("Sitemap generated.");
 };
 
 export = (options: any, context: Context): PluginOptionAPI => ({
-  name: 'sitemap',
+  name: "sitemap",
 
   generated(): void {
     const hostname = options.hostname || context.themeConfig.hostname;
     if (hostname) generateSiteMap(context.getSiteData(), context, options);
     else
       log(
-        'Not generating sitemap because required "hostname" option doesn\'t exist',
-        'red'
+        "Not generating sitemap because required \"hostname\" option doesn't exist",
+        "red",
       );
   },
 
-  plugins: ['@mr-hope/last-update']
+  plugins: ["@mr-hope/last-update"],
 });

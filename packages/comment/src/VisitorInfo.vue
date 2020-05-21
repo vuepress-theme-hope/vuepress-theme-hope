@@ -10,11 +10,11 @@
 
 <script lang="ts">
 /* global COMMENT_OPTIONS */
-import { Component, Vue, Watch } from 'vue-property-decorator';
-import EyeIcon from '@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue';
-import FireIcon from '@mr-hope/vuepress-shared-utils/icons/FireIcon.vue';
-import { Route } from 'vue-router';
-import { ValineOptions } from '../types';
+import { Component, Vue, Watch } from "vue-property-decorator";
+import EyeIcon from "@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue";
+import FireIcon from "@mr-hope/vuepress-shared-utils/icons/FireIcon.vue";
+import { Route } from "vue-router";
+import { ValineOptions } from "../types";
 
 @Component({ components: { EyeIcon, FireIcon } })
 export default class VisitorInfo extends Vue {
@@ -27,9 +27,9 @@ export default class VisitorInfo extends Vue {
 
     return Boolean(
       valineConfig &&
-        valineConfig.type === 'valine' &&
+        valineConfig.type === "valine" &&
         valineConfig.appId &&
-        valineConfig.appKey
+        valineConfig.appKey,
     );
   }
 
@@ -60,7 +60,7 @@ export default class VisitorInfo extends Vue {
   // show fire icon depending on the views number
   private getCount() {
     const countElement = document.querySelector(
-      '.leancloud_visitors .leancloud-visitors-count'
+      ".leancloud_visitors .leancloud-visitors-count",
     );
 
     if (countElement) {
@@ -73,7 +73,7 @@ export default class VisitorInfo extends Vue {
       }, 500);
   }
 
-  @Watch('$route')
+  @Watch("$route")
   onRouteChange(to: Route, from: Route) {
     if (to.path !== from.path)
       setTimeout(() => {

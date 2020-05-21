@@ -24,9 +24,9 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { ensureExt, isExternal, isMailto, isTel } from '@theme/util/path';
-import { NavBarConfigItem } from '@theme/util/navbar';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { ensureExt, isExternal, isMailto, isTel } from "@theme/util/path";
+import { NavBarConfigItem } from "@theme/util/navbar";
 
 @Component
 export default class NavLink extends Vue {
@@ -40,16 +40,16 @@ export default class NavLink extends Vue {
   private get iconPrefix() {
     const { iconPrefix } = this.$themeConfig;
 
-    return iconPrefix === '' ? '' : iconPrefix || 'icon-';
+    return iconPrefix === "" ? "" : iconPrefix || "icon-";
   }
 
   private get exact() {
     if (this.$site.locales)
       return Object.keys(this.$site.locales).some(
-        (rootLink) => rootLink === this.link
+        (rootLink) => rootLink === this.link,
       );
 
-    return this.link === '/';
+    return this.link === "/";
   }
 
   private isExternal = isExternal;
@@ -59,7 +59,7 @@ export default class NavLink extends Vue {
   private isTel = isTel;
 
   private focusoutAction() {
-    this.$emit('focusout');
+    this.$emit("focusout");
   }
 }
 </script>

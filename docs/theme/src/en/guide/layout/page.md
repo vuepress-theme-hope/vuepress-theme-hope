@@ -48,8 +48,8 @@ The `themeConfig.lastUpdated` option allows you to get the UNIX timestamp(ms) of
 ```js
 module.exports = {
   themeConfig: {
-    lastUpdated: 'Last Updated' // string | boolean
-  }
+    lastUpdated: "Last Updated", // string | boolean
+  },
 };
 ```
 
@@ -134,7 +134,7 @@ If you want to remove the default footer content while keeping social media and 
 
 ```md
 ---
-footer: ''
+footer: ""
 ---
 ```
 

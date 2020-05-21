@@ -1,17 +1,17 @@
 /** 页面信息类型 */
 export type PageInfotype =
-  | 'Author'
-  | 'Time'
-  | 'Category'
-  | 'Tag'
-  | 'ReadTime'
-  | 'Word'
-  | 'Visitor';
+  | "Author"
+  | "Time"
+  | "Category"
+  | "Tag"
+  | "ReadTime"
+  | "Word"
+  | "Visitor";
 
 /** 评论组件通用选项 */
 interface BaseCommentOptions {
   /** 类型，有 `‘valine'` 和 `'vssue` 可选 */
-  type: 'valine' | 'vssue';
+  type: "valine" | "vssue";
   /** 默认作者 */
   author?: string;
   /** 是否默认启用文章信息 */

@@ -14,7 +14,7 @@ Themes can be published on npm in raw Vue SFC format as `vuepress-theme-xxx`.
 
 ```js
 module.exports = {
-  theme: 'vuepress-theme-xx'
+  theme: "vuepress-theme-xx",
 };
 ```
 
@@ -22,7 +22,7 @@ If you prefix the theme with `vuepress-theme-`, you can use a shorthand to leave
 
 ```js
 module.exports = {
-  theme: 'xxx'
+  theme: "xxx",
 };
 ```
 
@@ -30,7 +30,7 @@ Same with:
 
 ```js
 module.exports = {
-  theme: 'vuepress-theme-xxx'
+  theme: "vuepress-theme-xxx",
 };
 ```
 
@@ -38,7 +38,7 @@ This also works with [Scoped Packages](https://docs.npmjs.com/misc/scope):
 
 ```js
 module.exports = {
-  theme: '@org/vuepress-theme-xxx' // or an official theme: '@vuepress/theme-xxx'
+  theme: "@org/vuepress-theme-xxx", // or an official theme: '@vuepress/theme-xxx'
 };
 ```
 
@@ -46,7 +46,7 @@ Shorthand:
 
 ```js
 module.exports = {
-  theme: '@org/xxx' // or an official theme: '@vuepress/xxx'
+  theme: "@org/xxx", // or an official theme: '@vuepress/xxx'
 };
 ```
 

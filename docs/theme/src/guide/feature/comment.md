@@ -15,11 +15,11 @@ vuepress-theme-hope 通过内置 `@mr-hope/vuepress-plugin-comment`，实现了�
 module.exports = {
   themeConfig: {
     comment: {
-      type: 'valine', // 使用 Valine
-      appId: '...', // your appId
-      appKey: '...' // your appKey
-    }
-  }
+      type: "valine", // 使用 Valine
+      appId: "...", // your appId
+      appKey: "...", // your appKey
+    },
+  },
 };
 ```
 
@@ -79,18 +79,18 @@ Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 
 module.exports = {
   plugins: {
-    '@mr-hope/comment': {
-      type: 'vssue',
+    "@mr-hope/comment": {
+      type: "vssue",
       // 设置 `platform` 而不是 `api`
-      platform: 'github',
+      platform: "github",
 
       // 其他的 Vssue 配置
-      owner: 'OWNER_OF_REPO',
-      repo: 'NAME_OF_REPO',
-      clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET'
-    }
-  }
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
+    },
+  },
 };
 ```
 

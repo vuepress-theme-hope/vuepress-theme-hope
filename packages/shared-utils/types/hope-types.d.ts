@@ -3,8 +3,8 @@ import {
   NavBarConfig,
   NavBarConfigItem,
   SideBarConfig,
-  SideBarConfigItemObject
-} from './vuepress-types';
+  SideBarConfigItemObject,
+} from "./vuepress-types";
 
 /** vuepress-theme-hope 导航栏配置项 */
 export interface HopeNavBarConfigItem extends NavBarConfigItem {
@@ -41,7 +41,7 @@ export type HopeSideBarConfigItem =
 export type HopeSideBarConfig =
   | HopeSideBarConfigItem[]
   | Record<string, HopeSideBarConfigItem[]>
-  | 'auto'
+  | "auto"
   | false;
 
 /** 国际化配置 */

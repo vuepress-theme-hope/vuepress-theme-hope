@@ -1,8 +1,8 @@
-import { LocaleConfig, ThemeConfig } from 'vuepress-types/types/config';
-import { PageComputed, PageFrontmatter } from 'vuepress-types/types/page';
-import { SiteData } from 'vuepress-types/types/context';
+import { LocaleConfig, ThemeConfig } from "vuepress-types/types/config";
+import { PageComputed, PageFrontmatter } from "vuepress-types/types/page";
+import { SiteData } from "vuepress-types/types/context";
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
   export interface Vue {
     $category: any;
     $tag: any;

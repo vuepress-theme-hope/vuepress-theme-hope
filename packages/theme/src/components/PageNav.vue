@@ -41,21 +41,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { PageComputed, SiteData, ThemeConfig } from 'vuepress-types';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { PageComputed, SiteData, ThemeConfig } from "vuepress-types";
 import {
   SidebarGroupItem,
   SidebarItem,
-  resolvePageforSidebar
-} from '@theme/util/sidebar';
-import NextIcon from '@mr-hope/vuepress-shared-utils/icons/NextIcon.vue';
-import PrevIcon from '@mr-hope/vuepress-shared-utils/icons/PrevIcon.vue';
-import { Route } from 'vue-router';
-import { resolvePath } from '@theme/util/path';
+  resolvePageforSidebar,
+} from "@theme/util/sidebar";
+import NextIcon from "@mr-hope/vuepress-shared-utils/icons/NextIcon.vue";
+import PrevIcon from "@mr-hope/vuepress-shared-utils/icons/PrevIcon.vue";
+import { Route } from "vue-router";
+import { resolvePath } from "@theme/util/path";
 
 const getSidebarItems = (items: SidebarItem[], result: SidebarItem[]) => {
   for (const item of items)
-    if (item.type === 'group')
+    if (item.type === "group")
       getSidebarItems((item as SidebarGroupItem).children || [], result);
     else result.push(item);
 };
@@ -68,7 +68,7 @@ const find = (page: PageComputed, items: SidebarItem[], offset: -1 | 1) => {
   for (let i = 0; i < result.length; i++) {
     const cur = result[i];
 
-    if (cur.type === 'page' && cur.path === decodeURIComponent(page.path))
+    if (cur.type === "page" && cur.path === decodeURIComponent(page.path))
       return result[i + offset];
   }
 
@@ -85,21 +85,21 @@ interface LinkOptions {
 
 /** 处理页面链接 */
 const resolvePageLink = (
-  linkType: 'prev' | 'next',
-  { themeConfig, page, route, site, sidebarItems }: LinkOptions
+  linkType: "prev" | "next",
+  { themeConfig, page, route, site, sidebarItems }: LinkOptions,
 ) => {
   const themeLinkConfig = themeConfig[`${linkType}Links`];
   const pageLinkConfig = page.frontmatter[linkType];
 
   if (themeLinkConfig === false || pageLinkConfig === false) return false;
 
-  if (typeof pageLinkConfig === 'string')
+  if (typeof pageLinkConfig === "string")
     return resolvePageforSidebar(
       site.pages,
-      resolvePath(pageLinkConfig, route.path)
+      resolvePath(pageLinkConfig, route.path),
     );
 
-  return find(page, sidebarItems, linkType === 'prev' ? -1 : 1);
+  return find(page, sidebarItems, linkType === "prev" ? -1 : 1);
 };
 
 @Component({ components: { NextIcon, PrevIcon } })
@@ -108,22 +108,22 @@ export default class PageNav extends Vue {
   private readonly sidebarItems!: SidebarItem[];
 
   private get prev() {
-    return resolvePageLink('prev', {
+    return resolvePageLink("prev", {
       sidebarItems: this.sidebarItems,
       themeConfig: this.$themeConfig,
       page: this.$page,
       route: this.$route,
-      site: this.$site
+      site: this.$site,
     });
   }
 
   private get next() {
-    return resolvePageLink('next', {
+    return resolvePageLink("next", {
       sidebarItems: this.sidebarItems,
       themeConfig: this.$themeConfig,
       page: this.$page,
       route: this.$route,
-      site: this.$site
+      site: this.$site,
     });
   }
 }

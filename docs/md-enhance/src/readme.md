@@ -46,6 +46,6 @@ npm i -D vuepress-plugin-md-enhance
 ```js {3}
 // .vuepress/config.js
 module.exports = {
-  plugin: ['md-enhance']
+  plugin: ["md-enhance"],
 };
 ```

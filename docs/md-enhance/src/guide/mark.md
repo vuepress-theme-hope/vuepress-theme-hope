@@ -11,12 +11,12 @@ icon: writefill
 ```js {6}
 module.exports = {
   plugin: [
-    'md-enhance',
+    "md-enhance",
     {
       // 开启标记
-      mark: true
-    }
-  ]
+      mark: true,
+    },
+  ],
 };
 ```
 

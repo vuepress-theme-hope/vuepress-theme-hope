@@ -5,47 +5,47 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { AlgoliaOption } from '@mr-hope/vuepress-shared-utils';
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { AlgoliaOption } from "@mr-hope/vuepress-shared-utils";
 
 @Component
 export default class AlgoliaSearchBox extends Vue {
   @Prop({ type: Object, required: true }) options!: AlgoliaOption;
 
-  private placeholder: string = '';
+  private placeholder: string = "";
 
-  @Watch('$lang')
+  @Watch("$lang")
   onLangChange(newValue: string) {
     this.update(this.options, newValue);
   }
 
-  @Watch('options')
+  @Watch("options")
   onOptionsChange(newValue: AlgoliaOption) {
     this.update(newValue, this.$lang);
   }
 
   private mounted() {
     this.initialize(this.options, this.$lang);
-    this.placeholder = this.$site.themeConfig.searchPlaceholder || '';
+    this.placeholder = this.$site.themeConfig.searchPlaceholder || "";
   }
 
   initialize(userOptions: AlgoliaOption, lang: string) {
     Promise.all([
       import(
-        /* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.js'
+        /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.js"
       ),
       import(
-        /* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.css'
-      )
+        /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.css"
+      ),
     ]).then(([docsearch]) => {
       (docsearch as any)({
         ...userOptions,
-        inputSelector: '#algolia-search-input',
+        inputSelector: "#algolia-search-input",
         // #697 Make docsearch work well at i18n mode.
         algoliaOptions: {
           facetFilters: [`lang:${lang}`].concat(
             (userOptions as any).facetFilters || []
-          )
+          ),
         },
         handleSelected: (
           _input: HTMLInputElement,
@@ -53,9 +53,9 @@ export default class AlgoliaSearchBox extends Vue {
           suggestion: { url: string }
         ) => {
           const { pathname, hash } = new URL(suggestion.url);
-          const routepath = pathname.replace(this.$site.base, '/');
+          const routepath = pathname.replace(this.$site.base, "/");
           this.$router.push(`${routepath}${hash}`);
-        }
+        },
       });
     });
   }

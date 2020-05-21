@@ -1,17 +1,17 @@
-import { describe, it } from 'mocha';
-import { expect } from 'chai';
-import resolveConfig from '../../src/pluginConfig';
+import { describe, it } from "mocha";
+import { expect } from "chai";
+import resolveConfig from "../../src/pluginConfig";
 
-describe('Test pluginConfig generate', () => {
-  it('Should use plugin options first', () => {
+describe("Test pluginConfig generate", () => {
+  it("Should use plugin options first", () => {
     const option = {
-      enableAll: true
+      enableAll: true,
     };
 
     const themeConfig = {
       markdown: {
-        enableAll: false
-      }
+        enableAll: false,
+      },
     };
 
     const pluginConfig = resolveConfig(option, themeConfig);
@@ -19,55 +19,55 @@ describe('Test pluginConfig generate', () => {
     pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
-      ['typescript'],
+      ["typescript"],
       [
-        'container',
+        "container",
         {
-          type: 'tip',
+          type: "tip",
           defaultTitle: {
-            '/': '提示',
-            '/zh/': '提示',
-            '/en/': 'Tips'
-          }
-        }
+            "/": "提示",
+            "/zh/": "提示",
+            "/en/": "Tips",
+          },
+        },
       ],
       [
-        'container',
+        "container",
         {
-          type: 'warning',
+          type: "warning",
           defaultTitle: {
-            '/': '注意',
-            '/zh/': '注意',
-            '/en/': 'Note'
-          }
-        }
+            "/": "注意",
+            "/zh/": "注意",
+            "/en/": "Note",
+          },
+        },
       ],
       [
-        'container',
+        "container",
         {
-          type: 'danger',
+          type: "danger",
           defaultTitle: {
-            '/': '警告',
-            '/zh/': '警告',
-            '/en/': 'Warning'
-          }
-        }
+            "/": "警告",
+            "/zh/": "警告",
+            "/en/": "Warning",
+          },
+        },
       ],
-      ['container', { type: 'right', defaultTitle: '' }],
-      ['container', { type: 'center', defaultTitle: '' }]
+      ["container", { type: "right", defaultTitle: "" }],
+      ["container", { type: "center", defaultTitle: "" }],
     ]);
   });
 
-  it('should handle baseLang option', () => {
+  it("should handle baseLang option", () => {
     const option = {
-      enableAll: true
+      enableAll: true,
     };
 
     const themeConfig = {
-      baseLang: 'en-US',
+      baseLang: "en-US",
       markdown: {
-        enableAll: false
-      }
+        enableAll: false,
+      },
     };
 
     const pluginConfig = resolveConfig(option, themeConfig);
@@ -75,55 +75,55 @@ describe('Test pluginConfig generate', () => {
     pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
-      ['typescript'],
+      ["typescript"],
       [
-        'container',
+        "container",
         {
-          type: 'tip',
+          type: "tip",
           defaultTitle: {
-            '/': 'Tips',
-            '/zh/': '提示',
-            '/en/': 'Tips'
-          }
-        }
+            "/": "Tips",
+            "/zh/": "提示",
+            "/en/": "Tips",
+          },
+        },
       ],
       [
-        'container',
+        "container",
         {
-          type: 'warning',
+          type: "warning",
           defaultTitle: {
-            '/': 'Note',
-            '/zh/': '注意',
-            '/en/': 'Note'
-          }
-        }
+            "/": "Note",
+            "/zh/": "注意",
+            "/en/": "Note",
+          },
+        },
       ],
       [
-        'container',
+        "container",
         {
-          type: 'danger',
+          type: "danger",
           defaultTitle: {
-            '/': 'Warning',
-            '/zh/': '警告',
-            '/en/': 'Warning'
-          }
-        }
+            "/": "Warning",
+            "/zh/": "警告",
+            "/en/": "Warning",
+          },
+        },
       ],
-      ['container', { type: 'right', defaultTitle: '' }],
-      ['container', { type: 'center', defaultTitle: '' }]
+      ["container", { type: "right", defaultTitle: "" }],
+      ["container", { type: "center", defaultTitle: "" }],
     ]);
   });
 
-  it('should disable all', () => {
+  it("should disable all", () => {
     const option = {
-      enableAll: false
+      enableAll: false,
     };
 
     const themeConfig = {
-      baseLang: 'en-US',
+      baseLang: "en-US",
       markdown: {
-        enableAll: true
-      }
+        enableAll: true,
+      },
     };
 
     const pluginConfig = resolveConfig(option, themeConfig);
@@ -131,40 +131,40 @@ describe('Test pluginConfig generate', () => {
     pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
-      ['typescript'],
+      ["typescript"],
       [
-        'container',
+        "container",
         {
-          type: 'tip',
+          type: "tip",
           defaultTitle: {
-            '/': 'Tips',
-            '/zh/': '提示',
-            '/en/': 'Tips'
-          }
-        }
+            "/": "Tips",
+            "/zh/": "提示",
+            "/en/": "Tips",
+          },
+        },
       ],
       [
-        'container',
+        "container",
         {
-          type: 'warning',
+          type: "warning",
           defaultTitle: {
-            '/': 'Note',
-            '/zh/': '注意',
-            '/en/': 'Note'
-          }
-        }
+            "/": "Note",
+            "/zh/": "注意",
+            "/en/": "Note",
+          },
+        },
       ],
       [
-        'container',
+        "container",
         {
-          type: 'danger',
+          type: "danger",
           defaultTitle: {
-            '/': 'Warning',
-            '/zh/': '警告',
-            '/en/': 'Warning'
-          }
-        }
-      ]
+            "/": "Warning",
+            "/zh/": "警告",
+            "/en/": "Warning",
+          },
+        },
+      ],
     ]);
   });
 });

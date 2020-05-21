@@ -1,5 +1,5 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { EncryptOptions } from '../../types';
+import { Component, Vue } from "vue-property-decorator";
+import { EncryptOptions } from "../../types";
 
 @Component
 export default class PageEncryptMixin extends Vue {
@@ -12,7 +12,7 @@ export default class PageEncryptMixin extends Vue {
 
   /** 当前路径命中的键值 */
   protected get currentPathHitKeys(): string[] {
-    if (this.encryptOptions && typeof this.encryptOptions.config === 'object') {
+    if (this.encryptOptions && typeof this.encryptOptions.config === "object") {
       /** 配置键名 */
       const keys = Object.keys(this.encryptOptions.config);
       /** 命中键名 */
@@ -37,10 +37,10 @@ export default class PageEncryptMixin extends Vue {
         const keyConfig = config[key];
         /** 命中的密码 */
         const hitPasswords =
-          typeof keyConfig === 'string' ? [keyConfig] : keyConfig;
+          typeof keyConfig === "string" ? [keyConfig] : keyConfig;
         /** 比较结果 */
         const result = hitPasswords.filter(
-          (password) => this.passwordConfig[key] === password
+          (password) => this.passwordConfig[key] === password,
         );
 
         return result.length !== 0;
@@ -61,14 +61,14 @@ export default class PageEncryptMixin extends Vue {
       const hitPassword = config[hitKey];
       /** 命中密码列表 */
       const hitPasswordList =
-        typeof hitPassword === 'string' ? [hitPassword] : hitPassword;
+        typeof hitPassword === "string" ? [hitPassword] : hitPassword;
       /** 比较结果 */
       const result = hitPasswordList.filter((item) => password === item);
 
       // 出现匹配
       if (result.length !== 0) {
         this.$set(this.passwordConfig, hitKey, password);
-        localStorage.setItem('password', JSON.stringify(this.passwordConfig));
+        localStorage.setItem("password", JSON.stringify(this.passwordConfig));
 
         break;
       }
@@ -76,7 +76,7 @@ export default class PageEncryptMixin extends Vue {
   }
 
   protected mounted(): void {
-    const passwordConfig = localStorage.getItem('password');
+    const passwordConfig = localStorage.getItem("password");
 
     if (passwordConfig) this.passwordConfig = JSON.parse(passwordConfig);
   }

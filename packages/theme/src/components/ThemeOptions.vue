@@ -18,18 +18,18 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
-import { dom, i18n } from '@mr-hope/vuepress-shared-utils';
-import Color from '@theme/util/color';
-import DarkmodeSwitch from '@theme/components/DarkmodeSwitch.vue';
+import { Component, Vue } from "vue-property-decorator";
+import { dom, i18n } from "@mr-hope/vuepress-shared-utils";
+import Color from "@theme/util/color";
+import DarkmodeSwitch from "@theme/components/DarkmodeSwitch.vue";
 
 /** 默认颜色选择器 */
 const defaultPicker: Record<string, string> = {
-  red: '#e74c3c',
-  blue: '#3498db',
-  green: '#3eaf7c',
-  orange: '#f39c12',
-  purple: '#8e44ad'
+  red: "#e74c3c",
+  blue: "#3498db",
+  green: "#3eaf7c",
+  orange: "#f39c12",
+  purple: "#8e44ad",
 };
 
 interface ThemeColor {
@@ -58,8 +58,8 @@ export default class ThemeOptions extends Vue {
 
   private get switchEnabled() {
     return (
-      this.$themeConfig.darkmode !== 'disable' &&
-      this.$themeConfig.darkmode !== 'auto'
+      this.$themeConfig.darkmode !== "disable" &&
+      this.$themeConfig.darkmode !== "auto"
     );
   }
 
@@ -68,10 +68,10 @@ export default class ThemeOptions extends Vue {
       list: this.$themeConfig.themeColor
         ? Object.keys(this.$themeConfig.themeColor)
         : Object.keys(defaultPicker),
-      picker: this.$themeConfig.themeColor || defaultPicker
+      picker: this.$themeConfig.themeColor || defaultPicker,
     };
     /** 所选主题 */
-    const theme = localStorage.getItem('theme');
+    const theme = localStorage.getItem("theme");
     /** 获得类列表 */
     const classes = document.body.classList;
 
@@ -82,22 +82,22 @@ export default class ThemeOptions extends Vue {
   private setTheme(theme?: string) {
     const classes = document.body.classList;
     const themes = this.themeColor.list.map(
-      (colorTheme) => `theme-${colorTheme}`
+      (colorTheme) => `theme-${colorTheme}`,
     );
 
     if (!theme) {
-      localStorage.removeItem('theme');
+      localStorage.removeItem("theme");
       classes.remove(...themes);
 
       return;
     }
 
     classes.remove(
-      ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
+      ...themes.filter((themeclass) => themeclass !== `theme-${theme}`),
     );
 
     classes.add(`theme-${theme}`);
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
   }
 }
 </script>

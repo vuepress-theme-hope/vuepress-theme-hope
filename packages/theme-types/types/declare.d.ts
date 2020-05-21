@@ -1,4 +1,4 @@
-declare module '@vuepress/shared-utils/lib/logger' {
+declare module "@vuepress/shared-utils/lib/logger" {
   interface LoggerOptions {
     logLevel: number;
   }
@@ -36,28 +36,28 @@ declare module '@vuepress/shared-utils/lib/logger' {
   export = logger;
 }
 
-declare module 'docsearch.js/dist/cdn/docsearch.min.js' {
+declare module "docsearch.js/dist/cdn/docsearch.min.js" {
   const docsearch: any;
 
   export default docsearch;
 }
 
-declare module '*.css' {}
+declare module "*.css" {}
 
-declare module '@SearchBox' {
-  import vue from 'vue';
+declare module "@SearchBox" {
+  import vue from "vue";
 
   export default vue;
 }
 
-declare module '@AlgoliaSearchBox' {
+declare module "@AlgoliaSearchBox" {
   export default vue;
 }
 
-declare module '@Comment' {
+declare module "@Comment" {
   export default vue;
 }
 
-declare module '@PageInfo' {
+declare module "@PageInfo" {
   export default vue;
 }

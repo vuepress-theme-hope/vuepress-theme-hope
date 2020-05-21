@@ -18,8 +18,8 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { Route } from 'vue-router';
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Route } from "vue-router";
 
 /** 路径导航配置 */
 interface BreadCrumbConfig {
@@ -59,7 +59,7 @@ export default class BreadCrumb extends Vue {
   private get iconPrefix() {
     const { iconPrefix } = this.$themeConfig;
 
-    return iconPrefix === '' ? '' : iconPrefix || 'icon-';
+    return iconPrefix === "" ? "" : iconPrefix || "icon-";
   }
 
   /** 路径导航配置 */
@@ -80,7 +80,7 @@ export default class BreadCrumb extends Vue {
           breadcrumbConfig.push({
             title: element.title,
             icon: element.frontmatter.icon,
-            url: element.path
+            url: element.path,
           });
           break;
         }
@@ -92,17 +92,17 @@ export default class BreadCrumb extends Vue {
   /** 生成页面路径链接 */
   private getLinks(route: Route) {
     /** 路径项 */
-    const routePaths = route.fullPath.split('#')[0].split('/');
+    const routePaths = route.fullPath.split("#")[0].split("/");
     /** 链接 */
     const links: string[] = [];
-    let link = '';
+    let link = "";
 
     // 生成链接
     routePaths.forEach((element, index) => {
       if (index !== routePaths.length - 1) {
         link += `${element}/`;
         links.push(link);
-      } else if (element !== '') {
+      } else if (element !== "") {
         link += element;
         links.push(link);
       }

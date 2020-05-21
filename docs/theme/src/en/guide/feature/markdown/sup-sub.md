@@ -17,9 +17,9 @@ module.exports = {
   themeConfig: {
     markdown: {
       sub: true,
-      sup: true
-    }
-  }
+      sup: true,
+    },
+  },
 };
 ```
 

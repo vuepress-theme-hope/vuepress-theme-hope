@@ -5,10 +5,10 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import Loading from '@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue';
-import { debounce } from 'lodash';
-import presets from './presets';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import Loading from "@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue";
+import { debounce } from "lodash";
+import presets from "./presets";
 
 @Component({ components: { Loading } })
 export default class FlowChart extends Vue {
@@ -18,7 +18,7 @@ export default class FlowChart extends Vue {
   @Prop({ type: String, required: true })
   private readonly code!: string;
 
-  @Prop({ type: String, default: 'vue' })
+  @Prop({ type: String, default: "vue" })
   private readonly preset!: string;
 
   private loading = true;
@@ -39,11 +39,11 @@ export default class FlowChart extends Vue {
   private mounted() {
     const delay = () => new Promise((resolve) => setTimeout(resolve, 500));
 
-    this.$el.setAttribute('id', this.id);
+    this.$el.setAttribute("id", this.id);
 
     Promise.all([
-      import(/* webpackChunkName: "flowchart" */ 'flowchart.js') as any,
-      delay()
+      import(/* webpackChunkName: "flowchart" */ "flowchart.js") as any,
+      delay(),
     ]).then(([flowchart]) => {
       const { parse } = flowchart;
       const svg = parse(this.code);
@@ -52,12 +52,12 @@ export default class FlowChart extends Vue {
       svg.drawSVG(this.id, { ...this.$preset, scale: this.scale });
       this.loading = false;
 
-      window.addEventListener('resize', this.resize);
+      window.addEventListener("resize", this.resize);
     });
   }
 
   private beforeDestory() {
-    window.removeEventListener('resize', this.resize);
+    window.removeEventListener("resize", this.resize);
   }
 
   private getScale(width: number) {

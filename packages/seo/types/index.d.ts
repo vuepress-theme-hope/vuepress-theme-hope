@@ -1,5 +1,5 @@
-import { Page, SiteConfig, ThemeConfig } from 'vuepress-types';
-import { SeoContent } from './seo';
+import { Page, SiteConfig, ThemeConfig } from "vuepress-types";
+import { SeoContent } from "./seo";
 
 export interface PageSeoInfo {
   /** 页面对象 */
@@ -23,7 +23,7 @@ export interface SeoOptions {
   seo?: (info: PageSeoInfo) => Partial<SeoContent>;
   /** 自定义 Meta */
   customMeta?: (
-    meta: Record<'content' | 'name' | 'charset' | 'http-equiv', string>[],
+    meta: Record<"content" | "name" | "charset" | "http-equiv", string>[],
     info: PageSeoInfo
   ) => void;
 }

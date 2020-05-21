@@ -11,7 +11,7 @@ export interface ReadingTimeOptions {
   wordPerminute?: number;
 }
 
-declare module 'vuepress-types/types/page' {
+declare module "vuepress-types/types/page" {
   interface PageComputed {
     readingTime: ReadingTime;
   }

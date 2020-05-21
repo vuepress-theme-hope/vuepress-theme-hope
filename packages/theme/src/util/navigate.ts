@@ -1,4 +1,4 @@
-import VueRouter, { Route } from 'vue-router';
+import VueRouter, { Route } from "vue-router";
 
 /**
  * 导航
@@ -9,19 +9,19 @@ import VueRouter, { Route } from 'vue-router';
  */
 const navigate = (url: string, router: VueRouter, route: Route): void => {
   if (url)
-    if (url && url[0] === '/') {
+    if (url && url[0] === "/") {
       // Inner absolute path
       if (route.path !== url) router.push(url);
     } else if (
-      url.indexOf('http://') === 0 ||
-      url.indexOf('https://') === 0 ||
-      url.indexOf('mailto:') === 0
+      url.indexOf("http://") === 0 ||
+      url.indexOf("https://") === 0 ||
+      url.indexOf("mailto:") === 0
     ) {
       // Outter url
       if (window) window.open(url);
     } else {
       // Inner relative path
-      const base = route.path.slice(0, route.path.lastIndexOf('/'));
+      const base = route.path.slice(0, route.path.lastIndexOf("/"));
 
       router.push(`${base}/${url}`);
     }

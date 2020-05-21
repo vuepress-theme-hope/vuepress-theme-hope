@@ -9,12 +9,12 @@
 ```js
 module.exports = {
   plugin: [
-    'md-enhance',
+    "md-enhance",
     {
       // 启用 Tex 支持
-      mathjax: true
-    }
-  ]
+      mathjax: true,
+    },
+  ],
 };
 ```
 

@@ -63,10 +63,10 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import DropdownTransition from '@theme/components/DropdownTransition.vue';
-import { NavBarConfigItem } from '@theme/util/navbar';
-import NavLink from '@theme/components/NavLink.vue';
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import DropdownTransition from "@theme/components/DropdownTransition.vue";
+import { NavBarConfigItem } from "@theme/util/navbar";
+import NavLink from "@theme/components/NavLink.vue";
 
 @Component({ components: { NavLink, DropdownTransition } })
 export default class DropdownLink extends Vue {
@@ -82,7 +82,7 @@ export default class DropdownLink extends Vue {
   private get iconPrefix() {
     const { iconPrefix } = this.$themeConfig;
 
-    return iconPrefix === '' ? '' : iconPrefix || 'icon-';
+    return iconPrefix === "" ? "" : iconPrefix || "icon-";
   }
 
   private setOpen(value: boolean) {
@@ -100,7 +100,7 @@ export default class DropdownLink extends Vue {
     return false;
   }
 
-  @Watch('$route')
+  @Watch("$route")
   onRouteChange() {
     this.open = false;
   }

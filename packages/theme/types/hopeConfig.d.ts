@@ -1,13 +1,13 @@
-import { CommentOptions, PageInfotype } from '@mr-hope/vuepress-plugin-comment';
+import { CommentOptions, PageInfotype } from "@mr-hope/vuepress-plugin-comment";
 import {
   HopeLangLocalesConfig,
   HopeNavBarConfig,
-  HopeSideBarConfig
-} from '@mr-hope/vuepress-shared-utils';
-import { VuepressConfig, VuepressThemeConfig } from './vuepressConfig';
-import { MarkdownEnhanceOption } from 'vuepress-plugin-md-enhance/types';
-import { PWAOptions } from '@mr-hope/vuepress-plugin-pwa';
-import { SeoOptions } from '@mr-hope/vuepress-plugin-seo';
+  HopeSideBarConfig,
+} from "@mr-hope/vuepress-shared-utils";
+import { VuepressConfig, VuepressThemeConfig } from "./vuepressConfig";
+import { MarkdownEnhanceOption } from "vuepress-plugin-md-enhance/types";
+import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
+import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 
 /** 页脚配置 */
 export type HopeFooterConfig = Partial<{
@@ -31,35 +31,35 @@ export type EncryptOptions = Partial<{
 
 /** 合法的媒体 */
 type BlogMedia =
-  | 'Baidu'
-  | 'Dingding'
-  | 'Dribbble'
-  | 'Evernote'
-  | 'Facebook'
-  | 'Flipboard'
-  | 'Github'
-  | 'Gmail'
-  | 'Instagram'
-  | 'Line'
-  | 'Linkedin'
-  | 'Pinterest'
-  | 'Pocket'
-  | 'QQ'
-  | 'Qzone'
-  | 'Rss'
-  | 'Steam'
-  | 'Taobao'
-  | 'Twitter'
-  | 'Wechat'
-  | 'Weibo'
-  | 'Whatsapp'
-  | 'Youtube'
-  | 'Zhihu';
+  | "Baidu"
+  | "Dingding"
+  | "Dribbble"
+  | "Evernote"
+  | "Facebook"
+  | "Flipboard"
+  | "Github"
+  | "Gmail"
+  | "Instagram"
+  | "Line"
+  | "Linkedin"
+  | "Pinterest"
+  | "Pocket"
+  | "QQ"
+  | "Qzone"
+  | "Rss"
+  | "Steam"
+  | "Taobao"
+  | "Twitter"
+  | "Wechat"
+  | "Weibo"
+  | "Whatsapp"
+  | "Youtube"
+  | "Zhihu";
 
 /** 项目配置 */
 export interface ProjectOptions {
   /** 项目类型 */
-  type: 'article' | 'book' | 'link' | 'project';
+  type: "article" | "book" | "link" | "project";
   /** 项目名称 */
   name: string;
   /** 项目描述 */
@@ -77,7 +77,7 @@ export type BlogOptions = Partial<{
   /** 博主头像 */
   avatar: string;
   /** 是否在侧边栏展示博主信息 */
-  sidebarDisplay: 'mobile' | 'none' | 'always';
+  sidebarDisplay: "mobile" | "none" | "always";
   /** 博主的个人介绍地址 */
   intro: string;
   /** 自定义链接 */
@@ -108,7 +108,7 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   footer?: HopeFooterConfig;
 
   /** 是否允许开启深色模式 */
-  darkmode?: 'auto-switch' | 'auto' | 'switch' | 'disabled';
+  darkmode?: "auto-switch" | "auto" | "switch" | "disabled";
   /** 主题色配置 */
   themeColor?: Record<string, string> | false;
   /** Markdown 增强设置 */
@@ -176,7 +176,7 @@ export type HopeHeadOptionConfig = Partial<{
     /** 主题色 */
     themeColor: string;
     /** 苹果导航栏颜色 */
-    appleStatusBarColor: 'black' | 'white';
+    appleStatusBarColor: "black" | "white";
     /** 苹果的图标 */
     appleIcon: string;
     /** 微软磁贴图片 */
@@ -197,7 +197,7 @@ export interface HopeVuepressConfig extends VuepressConfig {
 /** 处理过的 vuepress-theme-hope 项目配置 */
 export interface ResolvedHopeVuepressConfig extends HopeVuepressConfig {
   /** 使用的自定义主题 */
-  theme: 'hope';
+  theme: "hope";
   /** 自定义主题的配置 */
   themeConfig: ResolvedHopeThemeConfig;
   /** 构建头部选项 */

@@ -17,9 +17,9 @@ module.exports = {
   themeConfig: {
     markdown: {
       // 启用 TEX 支持
-      tex: true
-    }
-  }
+      tex: true,
+    },
+  },
 };
 ```
 

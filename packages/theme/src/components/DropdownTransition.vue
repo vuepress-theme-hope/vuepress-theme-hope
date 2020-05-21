@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class DropdownTransition extends Vue {
@@ -20,7 +20,7 @@ export default class DropdownTransition extends Vue {
   }
 
   private unsetHeight(items: HTMLElement) {
-    items.style.height = '';
+    items.style.height = "";
   }
 }
 </script>

@@ -1,4 +1,4 @@
-import { PageComputed } from 'vuepress-types';
+import { PageComputed } from "vuepress-types";
 
 /** Sitemap 配置选项 */
 export interface SitemapOptions {

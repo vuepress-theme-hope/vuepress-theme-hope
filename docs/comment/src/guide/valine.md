@@ -14,9 +14,9 @@ icon: valine
 
 ```js
 options = {
-  type: 'valine',
-  appId: '...', // your appId
-  appKey: '...' // your appKey
+  type: "valine",
+  appId: "...", // your appId
+  appKey: "...", // your appKey
 };
 ```
 

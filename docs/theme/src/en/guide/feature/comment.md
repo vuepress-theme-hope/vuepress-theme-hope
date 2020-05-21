@@ -15,11 +15,11 @@ vuepress-theme-hope implements the comment feature with built-in `@mr-hope/vuepr
 module.exports = {
   themeConfig: {
     comment: {
-      type: 'valine', // Use Valine
-      appId: '...', // your appId
-      appKey: '...' // your appKey
-    }
-  }
+      type: "valine", // Use Valine
+      appId: "...", // your appId
+      appKey: "...", // your appKey
+    },
+  },
 };
 ```
 
@@ -77,18 +77,18 @@ After this step, you will get `client id` and `client secret` of your OAuth App,
 
 module.exports = {
   plugins: {
-    '@mr-hope/comment': {
-      type: 'vssue',
+    "@mr-hope/comment": {
+      type: "vssue",
       // set `platform` rather than `api`
-      platform: 'github',
+      platform: "github",
 
       // all other options of Vssue are allowed
-      owner: 'OWNER_OF_REPO',
-      repo: 'NAME_OF_REPO',
-      clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET'
-    }
-  }
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
+    },
+  },
 };
 ```
 

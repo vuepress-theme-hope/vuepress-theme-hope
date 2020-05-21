@@ -1,9 +1,9 @@
 import {
   deepAssign as deepAssignFunction,
-  deepAssignReverse as deepAssignReverseFunction
-} from './assign';
-import domFunction from './dom';
-import i18nConfig from './i18n';
+  deepAssignReverse as deepAssignReverseFunction,
+} from "./assign";
+import domFunction from "./dom";
+import i18nConfig from "./i18n";
 
 export const capitalize = (word: string): string =>
   `${word.charAt(0).toUpperCase()}${word.slice(1)}`;

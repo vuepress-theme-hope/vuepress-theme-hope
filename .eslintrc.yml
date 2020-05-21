@@ -9,19 +9,19 @@ extends:
   - plugin:vue/recommended
   - prettier
   - prettier/vue
-  - '@vue/typescript'
+  - "@vue/typescript"
 
 plugins:
   - prettier
   - vue
 
 parserOptions:
-  parser: '@typescript-eslint/parser'
+  parser: "@typescript-eslint/parser"
 
 rules:
-  no-console: 'off'
+  no-console: "off"
 
-  no-debugger: 'off'
+  no-debugger: "off"
 
   no-useless-constructor:
     - off
@@ -30,8 +30,7 @@ rules:
     - off
 
   comma-dangle:
-    - error
-    - never
+    - off
 
   complexity:
     - warn
@@ -171,14 +170,14 @@ rules:
 
 overrides:
   - files:
-      - 'index.js'
+      - "index.js"
 
     rules:
       camelcase:
         - off
 
   - files:
-      - '*.ts'
+      - "*.ts"
 
     extends:
       - plugin:@typescript-eslint/eslint-recommended
@@ -186,34 +185,34 @@ overrides:
       - prettier/@typescript-eslint
 
     plugins:
-      - '@typescript-eslint'
+      - "@typescript-eslint"
 
-    parser: 'vue-eslint-parser'
+    parser: "vue-eslint-parser"
 
     parserOptions:
-      parser: '@typescript-eslint/parser'
+      parser: "@typescript-eslint/parser"
 
     rules:
-      '@typescript-eslint/explicit-function-return-type':
+      "@typescript-eslint/explicit-function-return-type":
         - warn
         - allowTypedFunctionExpressions: true
 
-      '@typescript-eslint/no-explicit-any': off
+      "@typescript-eslint/no-explicit-any": off
 
   - files:
-      - '*.d.ts'
+      - "*.d.ts"
     rules:
       no-underscore-dangle:
         - off
 
   - files:
-      - '**/test/**/*.spec.js'
-      - '**/test/**/*.spec.ts'
-      - '**/test/**/*.test.js'
-      - '**/test/**/*.test.ts'
+      - "**/test/**/*.spec.js"
+      - "**/test/**/*.spec.ts"
+      - "**/test/**/*.test.js"
+      - "**/test/**/*.test.ts"
     env:
       mocha: true
 
     rules:
-      id-length: 'off'
-      max-lines-per-function: 'off'
+      id-length: "off"
+      max-lines-per-function: "off"

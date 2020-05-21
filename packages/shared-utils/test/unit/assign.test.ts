@@ -1,9 +1,9 @@
-import { deepAssign, deepAssignReverse } from '../../src/assign';
-import { describe, it } from 'mocha';
-import { expect } from 'chai';
+import { deepAssign, deepAssignReverse } from "../../src/assign";
+import { describe, it } from "mocha";
+import { expect } from "chai";
 
-describe('deepassign', () => {
-  it('simple assign', () => {
+describe("deepassign", () => {
+  it("simple assign", () => {
     const object1 = { a: 1 };
     const object2 = { b: 2 };
 
@@ -11,19 +11,19 @@ describe('deepassign', () => {
 
     expect(ans1).to.be.deep.equal({ a: 1, b: 2 });
 
-    const object3 = { a: 'zhangbowang' };
-    const object4 = { '%': 'special', b: false };
+    const object3 = { a: "zhangbowang" };
+    const object4 = { "%": "special", b: false };
 
     const ans2 = deepAssign(object3, object4);
 
     expect(ans2).to.be.deep.equal({
-      a: 'zhangbowang',
-      '%': 'special',
-      b: false
+      a: "zhangbowang",
+      "%": "special",
+      b: false,
     });
   });
 
-  it('simple assign can cover value', () => {
+  it("simple assign can cover value", () => {
     const object1 = { a: 1 };
     const object2 = { a: 2 };
 
@@ -31,20 +31,20 @@ describe('deepassign', () => {
 
     expect(ans1).to.be.deep.equal({ a: 2 });
 
-    const object3 = { '%': 'zhangbowang', b: true, c: 1 };
-    const object4 = { '%': 'special', b: false, d: '2' };
+    const object3 = { "%": "zhangbowang", b: true, c: 1 };
+    const object4 = { "%": "special", b: false, d: "2" };
 
     const ans2 = deepAssign(object3, object4);
 
     expect(ans2).to.be.deep.equal({
-      '%': 'special',
+      "%": "special",
       b: false,
       c: 1,
-      d: '2'
+      d: "2",
     });
   });
 
-  it('assign array', () => {
+  it("assign array", () => {
     const object1 = { a: { a: 1 } };
     const object2 = { a: [] };
 
@@ -60,7 +60,7 @@ describe('deepassign', () => {
     expect(ans2).to.be.deep.equal({ a: { a: 1 } });
   });
 
-  it('assign object', () => {
+  it("assign object", () => {
     const object1 = { a: { a: 1, b: 2 } };
     const object2 = { a: { b: 1, c: 2 } };
 
@@ -69,7 +69,7 @@ describe('deepassign', () => {
     expect(ans).to.be.deep.equal({ a: { a: 1, b: 1, c: 2 } });
   });
 
-  it('nest assign', () => {
+  it("nest assign", () => {
     const object1 = { a: { a: 1 } };
     const object2 = { a: {} };
 
@@ -85,11 +85,11 @@ describe('deepassign', () => {
     expect(ans2).to.be.deep.equal({
       a: { a: 2, b: 2, c: 3 },
       b: [],
-      c: false
+      c: false,
     });
   });
 
-  it('assign muti object', () => {
+  it("assign muti object", () => {
     const object1 = { a: { a: 1, b: 2 } };
     const object2 = { a: { b: 1, c: 2 } };
     const object3 = { a: { b: 0 }, b: { a: 1 } };
@@ -100,8 +100,8 @@ describe('deepassign', () => {
   });
 });
 
-describe('deepassignReverse', () => {
-  it('simple assign', () => {
+describe("deepassignReverse", () => {
+  it("simple assign", () => {
     const object1 = { a: 1 };
     const object2 = { b: 2 };
 
@@ -109,19 +109,19 @@ describe('deepassignReverse', () => {
 
     expect(ans1).to.be.deep.equal({ a: 1, b: 2 });
 
-    const object3 = { a: 'zhangbowang' };
-    const object4 = { '%': 'special', b: false };
+    const object3 = { a: "zhangbowang" };
+    const object4 = { "%": "special", b: false };
 
     const ans2 = deepAssignReverse(object3, object4);
 
     expect(ans2).to.be.deep.equal({
-      a: 'zhangbowang',
-      '%': 'special',
-      b: false
+      a: "zhangbowang",
+      "%": "special",
+      b: false,
     });
   });
 
-  it('simple assign can cover value', () => {
+  it("simple assign can cover value", () => {
     const object1 = { a: 1 };
     const object2 = { a: 2 };
 
@@ -129,20 +129,20 @@ describe('deepassignReverse', () => {
 
     expect(ans1).to.be.deep.equal({ a: 2 });
 
-    const object3 = { '%': 'zhangbowang', b: true, c: 1 };
-    const object4 = { '%': 'special', b: false, d: '2' };
+    const object3 = { "%": "zhangbowang", b: true, c: 1 };
+    const object4 = { "%": "special", b: false, d: "2" };
 
     const ans2 = deepAssignReverse(object3, object4);
 
     expect(ans2).to.be.deep.equal({
-      '%': 'special',
+      "%": "special",
       b: false,
       c: 1,
-      d: '2'
+      d: "2",
     });
   });
 
-  it('assign array', () => {
+  it("assign array", () => {
     const object1 = { a: { a: 1 } };
     const object2 = { a: [] };
 
@@ -158,7 +158,7 @@ describe('deepassignReverse', () => {
     expect(ans2).to.be.deep.equal({ a: { a: 1 } });
   });
 
-  it('assign object', () => {
+  it("assign object", () => {
     const object1 = { a: { a: 1, b: 2 } };
     const object2 = { a: { b: 1, c: 2 } };
 
@@ -167,7 +167,7 @@ describe('deepassignReverse', () => {
     expect(ans1).to.be.deep.equal({ a: { a: 1, b: 1, c: 2 } });
   });
 
-  it('nest assign', () => {
+  it("nest assign", () => {
     const object1 = { a: { a: 1 } };
     const object2 = { a: {} };
 
@@ -183,11 +183,11 @@ describe('deepassignReverse', () => {
     expect(ans2).to.be.deep.equal({
       a: { a: 2, b: 2, c: 3 },
       b: [],
-      c: false
+      c: false,
     });
   });
 
-  it('assign muti object', () => {
+  it("assign muti object", () => {
     const object1 = { a: { a: 1, b: 2 } };
     const object2 = { a: { b: 1, c: 2 } };
     const object3 = { a: { b: 0 }, b: { a: 1 } };

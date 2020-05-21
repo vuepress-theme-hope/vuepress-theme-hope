@@ -28,18 +28,18 @@ This plugin uses [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@v
 
 module.exports = {
   plugins: {
-    '@mr-hope/comment': {
-      type: 'vssue',
+    "@mr-hope/comment": {
+      type: "vssue",
       // set `platform` rather than `api`
-      platform: 'github',
+      platform: "github",
 
       // all other options of Vssue are allowed
-      owner: 'OWNER_OF_REPO',
-      repo: 'NAME_OF_REPO',
-      clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET'
-    }
-  }
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
+    },
+  },
 };
 ```
 

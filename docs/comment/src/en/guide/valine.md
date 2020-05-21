@@ -14,9 +14,9 @@ Create new application in Leancloud, and you will get APP ID/APP Key.
 
 ```js
 options = {
-  type: 'valine',
-  appId: '...', // your appId
-  appKey: '...' // your appKey
+  type: "valine",
+  appId: "...", // your appId
+  appKey: "...", // your appKey
 };
 ```
 

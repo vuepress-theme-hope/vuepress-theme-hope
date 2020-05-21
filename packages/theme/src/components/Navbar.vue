@@ -39,13 +39,13 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { AlgoliaOption } from '@mr-hope/vuepress-shared-utils';
-import AlgoliaSearchBox from '@AlgoliaSearchBox';
-import NavLinks from '@theme/components/NavLinks.vue';
-import SearchBox from '@SearchBox';
-import SidebarButton from '@theme/components/SidebarButton.vue';
-import ThemeColor from '@theme/components/ThemeColor.vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { AlgoliaOption } from "@mr-hope/vuepress-shared-utils";
+import AlgoliaSearchBox from "@AlgoliaSearchBox";
+import NavLinks from "@theme/components/NavLinks.vue";
+import SearchBox from "@SearchBox";
+import SidebarButton from "@theme/components/SidebarButton.vue";
+import ThemeColor from "@theme/components/ThemeColor.vue";
 
 const css = (el: Element, property: any) => {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'
@@ -61,8 +61,8 @@ const css = (el: Element, property: any) => {
     NavLinks,
     SearchBox,
     SidebarButton,
-    ThemeColor
-  }
+    ThemeColor,
+  },
 })
 export default class Navbar extends Vue {
   private linksWrapMaxWidth: number = 0;
@@ -83,8 +83,8 @@ export default class Navbar extends Vue {
     // Refer to config.styl
     const MOBILE_DESKTOP_BREAKPOINT = 719;
     const NAVBAR_VERTICAL_PADDING =
-      parseInt(css(this.$el, 'paddingLeft')) +
-      parseInt(css(this.$el, 'paddingRight'));
+      parseInt(css(this.$el, "paddingLeft")) +
+      parseInt(css(this.$el, "paddingRight"));
     const handleLinksWrapWidth = () => {
       if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT)
         this.linksWrapMaxWidth = 0;
@@ -98,7 +98,7 @@ export default class Navbar extends Vue {
     };
 
     handleLinksWrapWidth();
-    window.addEventListener('resize', handleLinksWrapWidth, false);
+    window.addEventListener("resize", handleLinksWrapWidth, false);
     window.onorientationchange = () => handleLinksWrapWidth;
   }
 }

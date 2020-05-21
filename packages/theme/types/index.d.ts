@@ -1,4 +1,4 @@
-import './declare';
+import "./declare";
 
-export * from './hopeConfig';
-export * from './vuepressConfig';
+export * from "./hopeConfig";
+export * from "./vuepressConfig";

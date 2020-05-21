@@ -2,8 +2,8 @@
 /* eslint-disable max-statements */
 // Process ^superscript^
 
-import MarkdownIt = require('markdown-it');
-import StateInline = require('markdown-it/lib/rules_inline/state_inline');
+import MarkdownIt = require("markdown-it");
+import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
@@ -50,14 +50,14 @@ const superscript = (state: StateInline, silent?: boolean): boolean => {
   state.pos = start + 1;
 
   // Earlier we checked !silent, but this implementation does not need it
-  token = state.push('sup_open', 'sup', 1);
-  token.markup = '^';
+  token = state.push("sup_open", "sup", 1);
+  token.markup = "^";
 
-  token = state.push('text', '', 0);
-  token.content = content.replace(UNESCAPE_RE, '$1');
+  token = state.push("text", "", 0);
+  token.content = content.replace(UNESCAPE_RE, "$1");
 
-  token = state.push('sup_close', 'sup', -1);
-  token.markup = '^';
+  token = state.push("sup_close", "sup", -1);
+  token.markup = "^";
 
   state.pos = state.posMax + 1;
   state.posMax = max;
@@ -66,7 +66,7 @@ const superscript = (state: StateInline, silent?: boolean): boolean => {
 };
 
 const sup = (md: MarkdownIt): void => {
-  md.inline.ruler.after('emphasis', 'sup', superscript);
+  md.inline.ruler.after("emphasis", "sup", superscript);
 };
 
 export default sup;

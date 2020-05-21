@@ -4,9 +4,9 @@ import {
   lang2PathConfig,
   langs,
   localesConfig,
-  path2langConfig
-} from './config';
-import { HopeLangI18nConfig } from '../../types';
+  path2langConfig,
+} from "./config";
+import { HopeLangI18nConfig } from "../../types";
 
 export const checkLang = (lang: string): boolean =>
   langs.includes(lang as Langs);
@@ -21,10 +21,10 @@ export const lang2path = (lang: string): string => {
 
   console.error(
     `${lang} has no path config, and will return '/' instead.
-    You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts`
+    You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts`,
   );
 
-  return '/';
+  return "/";
 };
 
 /**
@@ -37,10 +37,10 @@ export const path2lang = (path: string): string => {
 
   console.error(
     `${path} isn't assign with a lang, and will return 'en-US' instead.
-    You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts`
+    You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts`,
   );
 
-  return 'en-US';
+  return "en-US";
 };
 
 /**
@@ -53,15 +53,15 @@ export const getLocale = (lang: string): HopeLangI18nConfig => {
 
   console.error(
     `${lang} locates config is missing, and will return 'en-US' instead.
-    You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts`
+    You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts`,
   );
 
-  return localesConfig['en-US'];
+  return localesConfig["en-US"];
 };
 
 /** 获得默认多语言配置 */
 export const getDefaultLocale = (): HopeLangI18nConfig =>
-  localesConfig['en-US'];
+  localesConfig["en-US"];
 
 const i18n = {
   checkLang,
@@ -70,7 +70,7 @@ const i18n = {
   lang2path,
   path2lang,
   getDefaultLocale,
-  getLocale
+  getLocale,
 };
 
 export default i18n;

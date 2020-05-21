@@ -14,22 +14,22 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { SidebarHeader, SidebarItem } from '@theme/util/sidebar';
-import { HopeSideBarConfigItem } from '@mr-hope/vuepress-shared-utils';
-import { PageComputed } from 'vuepress-types';
-import { Route } from 'vue-router';
-import SidebarGroup from '@theme/components/SidebarGroup.vue';
-import SidebarLink from '@theme/components/SidebarLink.vue';
-import { isActive } from '@theme/util/path';
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { SidebarHeader, SidebarItem } from "@theme/util/sidebar";
+import { HopeSideBarConfigItem } from "@mr-hope/vuepress-shared-utils";
+import { PageComputed } from "vuepress-types";
+import { Route } from "vue-router";
+import SidebarGroup from "@theme/components/SidebarGroup.vue";
+import SidebarLink from "@theme/components/SidebarLink.vue";
+import { isActive } from "@theme/util/path";
 
 /** 当前项目是否激活 */
 const descendantIsActive = (route: Route, item: SidebarItem): boolean => {
-  if (item.type === 'group')
+  if (item.type === "group")
     return item.children.some((child: any) => {
-      if (child.type === 'group') return descendantIsActive(route, child);
+      if (child.type === "group") return descendantIsActive(route, child);
 
-      return child.type === 'page' && isActive(route, child.path);
+      return child.type === "page" && isActive(route, child.path);
     });
 
   return false;
@@ -71,7 +71,7 @@ export default class SidebarLinks extends Vue {
     this.refreshIndex();
   }
 
-  @Watch('$route')
+  @Watch("$route")
   onRouteUpdate() {
     this.refreshIndex();
   }

@@ -1,10 +1,10 @@
-declare module '@vuepress/markdown/lib/lineNumbers' {
+declare module "@vuepress/markdown/lib/lineNumbers" {
   const lineNumbers: (md: any) => any;
 
   export = lineNumbers;
 }
 
-declare module 'flowchart.js' {
+declare module "flowchart.js" {
   export interface Flowchart {
     parse: (input: any) => any;
   }

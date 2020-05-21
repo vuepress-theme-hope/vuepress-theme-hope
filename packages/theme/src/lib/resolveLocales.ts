@@ -1,5 +1,5 @@
-import { ResolvedHopeVuepressConfig } from '../../types';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
+import { ResolvedHopeVuepressConfig } from "../../types";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 const { path2lang } = i18n;
 
@@ -13,19 +13,19 @@ const resolveLocales = (config: ResolvedHopeVuepressConfig): void => {
   if (!config.locales) config.locales = {};
 
   /** 主目录对应语言 */
-  const { baseLang = 'zh-CN' } = config.themeConfig;
+  const { baseLang = "zh-CN" } = config.themeConfig;
 
   const { locales } = config;
 
   // 设置根目录语言配置
-  locales['/'] = {
+  locales["/"] = {
     lang: baseLang,
-    ...(locales['/'] || {})
+    ...(locales["/"] || {}),
   };
 
   // 处理其他语言
   Object.keys(config.themeConfig.locales).forEach((path) => {
-    if (path === '/') return;
+    if (path === "/") return;
 
     locales[path] = { lang: path2lang(path), ...(locales[path] || {}) };
   });

@@ -17,9 +17,9 @@ module.exports = {
   themeConfig: {
     markdown: {
       // 启用流程图功能
-      flowchart: true
-    }
-  }
+      flowchart: true,
+    },
+  },
 };
 ```
 

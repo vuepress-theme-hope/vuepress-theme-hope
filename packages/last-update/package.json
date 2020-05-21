@@ -32,10 +32,10 @@
   "dependencies": {
     "@types/cross-spawn": "^6.0.2",
     "cross-spawn": "^7.0.2",
-    "moment": "^2.25.3"
+    "moment": "^2.26.0"
   },
   "peerDependencies": {
-    "typescript": "^3.9.2",
-    "vuepress-types": "^0.9.2"
+    "typescript": "^3.9.3",
+    "vuepress-types": "^0.9.3"
   }
 }

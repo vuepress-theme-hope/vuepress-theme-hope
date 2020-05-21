@@ -9,12 +9,12 @@ icon: align
 ```js {6}
 module.exports = {
   plugin: [
-    'md-enhance',
+    "md-enhance",
     {
       // Enable Align
-      align: true
-    }
-  ]
+      align: true,
+    },
+  ],
 };
 ```
 

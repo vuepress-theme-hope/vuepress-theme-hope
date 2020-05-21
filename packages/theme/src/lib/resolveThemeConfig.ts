@@ -1,6 +1,6 @@
-import { ResolvedHopeThemeConfig } from '../../types';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
-import resolveEncrypt from './resolveEncrypt';
+import { ResolvedHopeThemeConfig } from "../../types";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
+import resolveEncrypt from "./resolveEncrypt";
 
 const { checkLang, getLocale, lang2path, path2lang } = i18n;
 
@@ -12,27 +12,27 @@ const { checkLang, getLocale, lang2path, path2lang } = i18n;
  */
 const setThemeLocales = (
   themeConfig: ResolvedHopeThemeConfig,
-  baseLang: string
+  baseLang: string,
 ): void => {
   /** 默认语言对应的路径 */
   const baseLangPath = lang2path(baseLang);
 
   // 设置根目录语言配置
-  themeConfig.locales['/'] = {
+  themeConfig.locales["/"] = {
     ...getLocale(baseLang),
     ...(themeConfig.locales[baseLangPath] || {}),
-    ...(themeConfig.locales['/'] || {})
+    ...(themeConfig.locales["/"] || {}),
   };
 
   // 处理其他语言
   Object.keys(themeConfig.locales).forEach((path) => {
-    if (path === '/') return;
+    if (path === "/") return;
 
     const lang = path2lang(path);
 
     themeConfig.locales[path] = {
       ...getLocale(lang),
-      ...themeConfig.locales[path]
+      ...themeConfig.locales[path],
     };
   });
 };
@@ -44,12 +44,12 @@ const setThemeLocales = (
  */
 const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
   /** 主目录对应语言 */
-  const { baseLang = 'zh-CN' } = themeConfig;
+  const { baseLang = "zh-CN" } = themeConfig;
 
   // 如果主目录启用了未适配的语言，抛出错误
   if (!checkLang(baseLang))
     throw new Error(
-      'Base lang not supported. Make a PR to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts first!'
+      "Base lang not supported. Make a PR to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts first!",
     );
 
   setThemeLocales(themeConfig, baseLang);

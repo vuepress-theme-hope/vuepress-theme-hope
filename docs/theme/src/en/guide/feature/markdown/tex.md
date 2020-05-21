@@ -16,9 +16,9 @@ module.exports = {
   themeConfig: {
     markdown: {
       // Add Tex support
-      tex: true
-    }
-  }
+      tex: true,
+    },
+  },
 };
 ```
 

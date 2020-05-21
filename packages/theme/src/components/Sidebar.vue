@@ -18,11 +18,11 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import BloggerInfo from '@theme/components/BloggerInfo.vue';
-import NavLinks from '@theme/components/NavLinks.vue';
-import { SidebarItem } from '@theme/util/sidebar';
-import SidebarLinks from '@theme/components/SidebarLinks.vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import BloggerInfo from "@theme/components/BloggerInfo.vue";
+import NavLinks from "@theme/components/NavLinks.vue";
+import { SidebarItem } from "@theme/util/sidebar";
+import SidebarLinks from "@theme/components/SidebarLinks.vue";
 
 @Component({ components: { BloggerInfo, SidebarLinks, NavLinks } })
 export default class Sidebar extends Vue {
@@ -34,7 +34,7 @@ export default class Sidebar extends Vue {
   }
 
   private get sidebarDisplay() {
-    return this.blogConfig.sidebarDisplay || 'none';
+    return this.blogConfig.sidebarDisplay || "none";
   }
 }
 </script>

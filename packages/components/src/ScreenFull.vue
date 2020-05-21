@@ -45,8 +45,8 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import screenfull = require('screenfull');
+import { Component, Prop, Vue } from "vue-property-decorator";
+import screenfull = require("screenfull");
 
 @Component
 export default class ScreenFull extends Vue {

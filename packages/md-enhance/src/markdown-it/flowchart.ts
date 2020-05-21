@@ -2,21 +2,21 @@
 /* eslint-disable max-statements */
 /* eslint-disable max-params */
 /* eslint-disable camelcase */
-import hash = require('hash-sum');
-import MarkdownIt = require('markdown-it');
-import StateBlock = require('markdown-it/lib/rules_block/state_block');
+import hash = require("hash-sum");
+import MarkdownIt = require("markdown-it");
+import StateBlock = require("markdown-it/lib/rules_block/state_block");
 
 const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
-  const OPEN_MARKER = '@flowstart';
+  const OPEN_MARKER = "@flowstart";
   const openChar = OPEN_MARKER.charCodeAt(0);
-  const CLOSEMARKER = '@flowend';
+  const CLOSEMARKER = "@flowend";
   const closeChar = CLOSEMARKER.charCodeAt(0);
 
   const uml = (
     state: StateBlock,
     startLine: number,
     endLine: number,
-    silent: boolean
+    silent: boolean,
   ): boolean => {
     let nextLine;
     let i;
@@ -87,11 +87,11 @@ const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
     }
 
     const contents = state.src
-      .split('\n')
+      .split("\n")
       .slice(startLine + 1, nextLine)
-      .join('\n');
+      .join("\n");
 
-    const token = state.push('flowchart', 'fence', 0);
+    const token = state.push("flowchart", "fence", 0);
     token.block = true;
     token.info = params;
     token.content = contents;
@@ -103,8 +103,8 @@ const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
     return true;
   };
 
-  md.block.ruler.before('fence', 'flowchart', uml, {
-    alt: ['paragraph', 'reference', 'blockquote', 'list']
+  md.block.ruler.before("fence", "flowchart", uml, {
+    alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
   md.renderer.rules.flowchart = (tokens, idx): string => {
@@ -113,7 +113,7 @@ const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
     const { content, info } = token;
     md.$dataBlock[key] = content;
     return `<FlowChart id="${key}" :code="$dataBlock.${key}" preset="${
-      info.trim() || 'vue'
+      info.trim() || "vue"
     }"></FlowChart>`;
   };
 };

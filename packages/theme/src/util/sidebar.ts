@@ -1,26 +1,26 @@
 import {
   HopeSideBarConfig,
-  HopeSideBarConfigItem
-} from '@mr-hope/vuepress-shared-utils';
-import { PageComputed, SiteData } from 'vuepress-types';
+  HopeSideBarConfigItem,
+} from "@mr-hope/vuepress-shared-utils";
+import { PageComputed, SiteData } from "vuepress-types";
 import {
   ensureEndingSlash,
   ensureExt,
   isExternal,
   normalize,
-  resolvePath
-} from './path';
-import groupHeaders, { SidebarHeader } from './groupHeader';
-export { SidebarHeader } from './groupHeader';
+  resolvePath,
+} from "./path";
+import groupHeaders, { SidebarHeader } from "./groupHeader";
+export { SidebarHeader } from "./groupHeader";
 
 export interface SidebarHeaderItem extends SidebarHeader {
-  type: 'header';
+  type: "header";
   basePath: string;
   path: string;
 }
 
 export interface SidebarAutoItem {
-  type: 'group';
+  type: "group";
   /** 分组的标题 */
   title: string;
   /** 页面图标 */
@@ -28,7 +28,7 @@ export interface SidebarAutoItem {
   /** 页面内的标题 */
   children: SidebarHeaderItem[];
   collapsable: false;
-  path: '';
+  path: "";
 }
 
 export const groupSidebarHeaders = groupHeaders;
@@ -43,39 +43,39 @@ const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
 
   return [
     {
-      type: 'group',
+      type: "group",
       collapsable: false,
       title: page.title,
       icon: page.frontmatter.icon,
-      path: '',
+      path: "",
       children: headers.map<SidebarHeaderItem>((header) => ({
         ...header,
-        type: 'header',
+        type: "header",
         basePath: page.path,
         path: `${page.path}#${header.slug}`,
-        children: header.children
-      }))
-    }
+        children: header.children,
+      })),
+    },
   ];
 };
 
 /** 寻找匹配的侧边栏配置 */
 const resolveMatchingConfig = (
   regularPath: string,
-  config: HopeSideBarConfigItem[] | Record<string, HopeSideBarConfigItem[]>
+  config: HopeSideBarConfigItem[] | Record<string, HopeSideBarConfigItem[]>,
 ): { base: string; config: HopeSideBarConfigItem[] } | false => {
   // 数组意味着最简单的配置方式，直接返回
   if (Array.isArray(config))
     return {
-      base: '/',
-      config
+      base: "/",
+      config,
     };
 
   for (const base in config)
     if (ensureEndingSlash(regularPath).indexOf(encodeURI(base)) === 0)
       return {
         base,
-        config: config[base]
+        config: config[base],
       };
 
   console.warn(`${regularPath} 没有有效的侧边栏配置`);
@@ -90,14 +90,14 @@ export interface SidebarExternalItem {
   /** 图标 */
   icon?: string;
   /** 类型 */
-  type: 'external';
+  type: "external";
   /** 链接路径 */
   path: string;
 }
 
 /** 页面侧边栏项 */
 export interface SidebarPageItem extends PageComputed {
-  type: 'page';
+  type: "page";
   /** 图标 */
   icon?: string;
   /** 路径 */
@@ -106,7 +106,7 @@ export interface SidebarPageItem extends PageComputed {
 
 /** 分组侧边栏项 */
 export interface SidebarGroupItem {
-  type: 'group';
+  type: "group";
   /** 分组的标题 */
   title: string;
   /** 可折叠，默认为 true */
@@ -123,7 +123,7 @@ export interface SidebarGroupItem {
   [props: string]: any;
 }
 
-type SidebarErrorItem = { type: 'error'; path: string };
+type SidebarErrorItem = { type: "error"; path: string };
 
 /**
  * 处理侧边栏项，为其合并页面配置
@@ -133,13 +133,13 @@ type SidebarErrorItem = { type: 'error'; path: string };
  */
 export const resolvePageforSidebar = (
   pages: PageComputed[],
-  path: string
+  path: string,
 ): SidebarPageItem | SidebarExternalItem | SidebarErrorItem => {
   // 外部链接
   if (isExternal(path))
     return {
-      type: 'external',
-      path
+      type: "external",
+      path,
     };
 
   /** 处理过的真实路径 */
@@ -151,14 +151,14 @@ export const resolvePageforSidebar = (
       // 返回合并了相应页面配置的侧边栏对象
       return {
         ...page,
-        type: 'page',
-        path: ensureExt(page.path)
+        type: "page",
+        path: ensureExt(page.path),
       };
 
   // 未找到匹配的侧边栏
   console.error(`Sidebar: "${realPath}" has no matching page`);
 
-  return { type: 'error', path: realPath };
+  return { type: "error", path: realPath };
 };
 
 export type SidebarItem =
@@ -183,14 +183,14 @@ const resolveItem = (
   sidebarConfigItem: HopeSideBarConfigItem,
   pages: PageComputed[],
   base: string,
-  prefix = ''
+  prefix = "",
   // eslint-disable-next-line max-params
 ): SidebarItem => {
   // 返回页面链接以及内部的标题链接
-  if (typeof sidebarConfigItem === 'string')
+  if (typeof sidebarConfigItem === "string")
     return resolvePageforSidebar(
       pages,
-      resolve(prefix, sidebarConfigItem, base)
+      resolve(prefix, sidebarConfigItem, base),
     );
 
   // 自定义标题，格式为 ['路径', '自定义标题']
@@ -199,8 +199,8 @@ const resolveItem = (
     return Object.assign(
       resolvePageforSidebar(pages, resolve(prefix, sidebarConfigItem[0], base)),
       {
-        title: sidebarConfigItem[1]
-      }
+        title: sidebarConfigItem[1],
+      },
     );
 
   // 对象不存在子项
@@ -210,26 +210,26 @@ const resolveItem = (
     return Object.assign(
       resolvePageforSidebar(
         pages,
-        resolve(prefix, sidebarConfigItem.path, base)
+        resolve(prefix, sidebarConfigItem.path, base),
       ),
       {
-        title: sidebarConfigItem.title
-      }
+        title: sidebarConfigItem.title,
+      },
     );
 
   // 对每个子项递归处理再返回
   return {
     ...sidebarConfigItem,
-    type: 'group',
+    type: "group",
     children: children.map((child) =>
       resolveItem(
         child,
         pages,
         base,
-        `${prefix}${sidebarConfigItem.prefix || ''}`
-      )
+        `${prefix}${sidebarConfigItem.prefix || ""}`,
+      ),
     ),
-    collapsable: sidebarConfigItem.collapsable !== false
+    collapsable: sidebarConfigItem.collapsable !== false,
   };
 };
 
@@ -239,7 +239,7 @@ const resolveItem = (
 export const resolveSidebarItems = (
   page: PageComputed,
   site: SiteData,
-  localePath: string
+  localePath: string,
 ): SidebarItem[] => {
   const { themeConfig = {}, pages } = site;
   /** 本语言的配置 */
@@ -253,7 +253,7 @@ export const resolveSidebarItems = (
     localeConfig.sidebar || themeConfig.sidebar;
 
   // 自动通过当前页面的标题生成
-  if (page.frontmatter.sidebar === 'auto' || themeSidebarConfig === 'auto')
+  if (page.frontmatter.sidebar === "auto" || themeSidebarConfig === "auto")
     return resolveSidebarHeaders(page);
 
   // 侧边栏被禁用

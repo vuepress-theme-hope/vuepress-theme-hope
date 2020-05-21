@@ -9,15 +9,15 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import md5 = require('md5');
+import { Component, Prop, Vue } from "vue-property-decorator";
+import md5 = require("md5");
 
 @Component
 export default class Password extends Vue {
   @Prop({ type: Boolean, default: false })
   private readonly page!: boolean;
 
-  private password = '';
+  private password = "";
 
   private hasTried = false;
 
@@ -27,7 +27,7 @@ export default class Password extends Vue {
 
   private verify() {
     this.hasTried = false;
-    this.$emit('enter', md5(this.password));
+    this.$emit("enter", md5(this.password));
 
     Vue.nextTick().then(() => {
       this.hasTried = true;

@@ -1,109 +1,109 @@
-const resolve = require('vuepress-theme-hope/resolve');
-const navBarConfig = require('./config/navBar');
-const sideBarConfig = require('./config/sideBar');
+const resolve = require("vuepress-theme-hope/resolve");
+const navBarConfig = require("./config/navBar");
+const sideBarConfig = require("./config/sideBar");
 
 module.exports = resolve({
-  title: 'Theme Demo',
-  description: 'vuepress-theme-hope 的 demo',
+  title: "Theme Demo",
+  description: "vuepress-theme-hope 的 demo",
 
   headOption: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
     pwa: {
-      manifest: '/manifest.json',
-      themeColor: '#46bd87',
-      appleStatusBarColor: 'black',
-      appleIcon: '/img/icon/appleIcon152.png',
-      msTileImage: '/img/icon/msIcon144.png',
-      msTileColor: '#ffffff'
-    }
+      manifest: "/manifest.json",
+      themeColor: "#46bd87",
+      appleStatusBarColor: "black",
+      appleIcon: "/img/icon/appleIcon152.png",
+      msTileImage: "/img/icon/msIcon144.png",
+      msTileColor: "#ffffff",
+    },
   },
   head: [
     [
-      'link',
+      "link",
       {
-        rel: 'mask-icon',
-        href: '/icons/safari-pinned-tab.svg',
-        color: '#46bd87'
-      }
-    ]
+        rel: "mask-icon",
+        href: "/icons/safari-pinned-tab.svg",
+        color: "#46bd87",
+      },
+    ],
   ],
 
-  temp: './node_modules/.temp/test',
-  dest: './dist',
+  temp: "./node_modules/.temp/test",
+  dest: "./dist",
 
   locales: {
-    '/en/': {
-      title: 'Theme Demo',
-      description: 'A demo for vuepress-theme-hope'
-    }
+    "/en/": {
+      title: "Theme Demo",
+      description: "A demo for vuepress-theme-hope",
+    },
   },
 
   extraWatchFiles: [
-    '.vuepress/config/navBar.js',
-    '.vuepress/config/sideBar.js',
-    '.vuepress/config/theme.js'
+    ".vuepress/config/navBar.js",
+    ".vuepress/config/sideBar.js",
+    ".vuepress/config/theme.js",
   ],
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: "/logo.svg",
 
     nav: navBarConfig.zh,
     sidebar: sideBarConfig.zh,
 
-    author: 'Mr.Hope',
+    author: "Mr.Hope",
     footer: {
-      display: false
+      display: false,
     },
     pageInfo: [
-      'Author',
-      'Category',
-      'ReadTime',
-      'Tag',
-      'Time',
-      'Word',
-      'Visitor'
+      "Author",
+      "Category",
+      "ReadTime",
+      "Tag",
+      "Time",
+      "Word",
+      "Visitor",
     ],
     themeColor: false,
 
     markdown: { enableAll: true },
 
     comment: {
-      type: 'valine',
-      appId: 'msnseO76haIVIGvfJ10BKnpv-gzGzoHsz',
-      appKey: '9QMulKhu7EDp1va0TYXR2PrI'
+      type: "valine",
+      appId: "msnseO76haIVIGvfJ10BKnpv-gzGzoHsz",
+      appKey: "9QMulKhu7EDp1va0TYXR2PrI",
     },
     encrypt: {
-      global: '01311031',
+      global: "01311031",
       config: {
-        '/en/': ['1234', '5678'],
-        '/test/detail/': '1234',
-        '/test/footer/default': '5678'
-      }
+        "/en/": ["1234", "5678"],
+        "/test/detail/": "1234",
+        "/test/footer/default": "5678",
+      },
     },
 
     blog: {
-      intro: '/intro.html',
-      sidebarDisplay: 'mobile',
+      intro: "/intro.html",
+      sidebarDisplay: "mobile",
       links: {
-        Zhihu: 'https://zhihu.com',
-        Baidu: 'https://baidu.com',
-        Github: 'https://github.com'
-      }
+        Zhihu: "https://zhihu.com",
+        Baidu: "https://baidu.com",
+        Github: "https://github.com",
+      },
     },
 
     locales: {
-      '/en/': {
+      "/en/": {
         nav: navBarConfig.en,
-        sidebar: sideBarConfig.en
-      }
+        sidebar: sideBarConfig.en,
+      },
     },
-    hostname: 'https://vuepress-theme-demo.mrhope.site/',
-    repo: 'https://github.com/mister-hope/vuepress-theme-hope',
-    repoLabel: 'Github'
+    hostname: "https://vuepress-theme-demo.mrhope.site/",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    repoLabel: "Github",
     /** 分享设置 */
     // share: {
     //   content: ['qq', 'twitter', 'weibo'],
     //   fallbackImage: '/logo.png'
     // }
-  }
+  },
 });

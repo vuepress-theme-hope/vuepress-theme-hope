@@ -6,9 +6,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { HopeLangI18nConfig, i18n } from '@mr-hope/vuepress-shared-utils';
-import WordIcon from '@mr-hope/vuepress-shared-utils/icons/WordIcon.vue';
+import { Component, Vue } from "vue-property-decorator";
+import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
+import WordIcon from "@mr-hope/vuepress-shared-utils/icons/WordIcon.vue";
 
 @Component({ components: { WordIcon } })
 export default class ReadTimeInfo extends Vue {
@@ -18,8 +18,8 @@ export default class ReadTimeInfo extends Vue {
       i18n.getDefaultLocale();
 
     return readingTime.word.replace(
-      '$word',
-      this.$page.readingTime.words.toString()
+      "$word",
+      this.$page.readingTime.words.toString(),
     );
   }
 }

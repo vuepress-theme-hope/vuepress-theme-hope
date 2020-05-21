@@ -68,7 +68,7 @@ npm i -D vuepress-theme-hope
 
 ```js
 // .vuepress/config.js
-const resolve = require('vuepress-theme-hope/resolve');
+const resolve = require("vuepress-theme-hope/resolve");
 
 module.exports = resolve({
   // your config here

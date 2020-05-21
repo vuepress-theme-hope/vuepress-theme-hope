@@ -48,8 +48,8 @@ icon: Home
 ```js
 module.exports = {
   themeConfig: {
-    lastUpdated: 'Last Updated' // string | boolean
-  }
+    lastUpdated: "Last Updated", // string | boolean
+  },
 };
 ```
 
@@ -134,7 +134,7 @@ footer: false
 
 ```md
 ---
-footer: ''
+footer: ""
 ---
 ```
 

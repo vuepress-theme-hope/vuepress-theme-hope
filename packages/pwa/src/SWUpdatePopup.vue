@@ -39,9 +39,9 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import event from './event';
-import { i18n } from '@mr-hope/vuepress-shared-utils';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import event from "./event";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component
 export default class SWUpdatePopup extends Vue {
@@ -56,7 +56,7 @@ export default class SWUpdatePopup extends Vue {
   }
 
   private created() {
-    event.$on('sw-updated', this.onSWUpdated);
+    event.$on("sw-updated", this.onSWUpdated);
   }
 
   private onSWUpdated(updateEvent: any) {

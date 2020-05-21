@@ -6,9 +6,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { HopeLangI18nConfig, i18n } from '@mr-hope/vuepress-shared-utils';
-import TimeIcon from '@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue';
+import { Component, Vue } from "vue-property-decorator";
+import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
+import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
 
 @Component({ components: { TimeIcon } })
 export default class ReadtimeInfo extends Vue {
@@ -20,8 +20,8 @@ export default class ReadtimeInfo extends Vue {
     return this.$page.readingTime.minutes < 1
       ? readingTime.minute
       : readingTime.time.replace(
-          '$time',
-          Math.round(this.$page.readingTime.minutes).toString()
+          "$time",
+          Math.round(this.$page.readingTime.minutes).toString(),
         );
   }
 }

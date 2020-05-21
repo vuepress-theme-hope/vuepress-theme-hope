@@ -1,8 +1,8 @@
 /* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
 
-import MarkdownIt = require('markdown-it');
-import StateInline = require('markdown-it/lib/rules_inline/state_inline');
+import MarkdownIt = require("markdown-it");
+import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
 /*
  * Insert each marker as a separate text token, and add it to delimiter list
@@ -24,13 +24,13 @@ const tokenize = (state: StateInline, silent: boolean): boolean => {
   let token;
 
   if (length % 2) {
-    token = state.push('text', '', 0);
+    token = state.push("text", "", 0);
     token.content = char;
     length -= 1;
   }
 
   for (let i = 0; i < length; i += 2) {
-    token = state.push('text', '', 0);
+    token = state.push("text", "", 0);
     token.content = `${char}${char}`;
 
     if (scanned.can_open || scanned.can_close)
@@ -41,7 +41,7 @@ const tokenize = (state: StateInline, silent: boolean): boolean => {
         token: state.tokens.length - 1,
         end: -1,
         open: scanned.can_open,
-        close: scanned.can_close
+        close: scanned.can_close,
       });
   }
 
@@ -56,7 +56,7 @@ const tokenize = (state: StateInline, silent: boolean): boolean => {
  */
 const postProcess = (
   state: StateInline,
-  delimiters: StateInline.Delimiter[]
+  delimiters: StateInline.Delimiter[],
 ): void => {
   let x;
   let y;
@@ -73,22 +73,22 @@ const postProcess = (
       endDelim = delimiters[startDelim.end];
 
       token = state.tokens[startDelim.token];
-      token.type = 'mark_open';
-      token.tag = 'mark';
+      token.type = "mark_open";
+      token.tag = "mark";
       token.nesting = 1;
-      token.markup = '==';
-      token.content = '';
+      token.markup = "==";
+      token.content = "";
 
       token = state.tokens[endDelim.token];
-      token.type = 'mark_close';
-      token.tag = 'mark';
+      token.type = "mark_close";
+      token.tag = "mark";
       token.nesting = -1;
-      token.markup = '==';
-      token.content = '';
+      token.markup = "==";
+      token.content = "";
 
       if (
-        state.tokens[endDelim.token - 1].type === 'text' &&
-        state.tokens[endDelim.token - 1].content === '='
+        state.tokens[endDelim.token - 1].type === "text" &&
+        state.tokens[endDelim.token - 1].content === "="
       )
         loneMarkers.push(endDelim.token - 1);
     }
@@ -106,7 +106,7 @@ const postProcess = (
     x = loneMarkers.pop() as number;
     y = x + 1;
 
-    while (y < state.tokens.length && state.tokens[y].type === 'mark_close')
+    while (y < state.tokens.length && state.tokens[y].type === "mark_close")
       y += 1;
 
     y -= 1;
@@ -120,8 +120,8 @@ const postProcess = (
 };
 
 const mark = (md: MarkdownIt): void => {
-  md.inline.ruler.before('emphasis', 'mark', tokenize);
-  md.inline.ruler2.before('emphasis', 'mark', (state) => {
+  md.inline.ruler.before("emphasis", "mark", tokenize);
+  md.inline.ruler2.before("emphasis", "mark", (state) => {
     let curr;
     const tokensMeta = state.tokens_meta;
     const max = (tokensMeta || []).length;

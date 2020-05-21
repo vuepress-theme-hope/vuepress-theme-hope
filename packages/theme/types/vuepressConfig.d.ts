@@ -2,8 +2,8 @@ import {
   AlgoliaOption,
   LangLocalesConfig,
   NavBarConfig,
-  SideBarConfig
-} from '@mr-hope/vuepress-shared-utils';
+  SideBarConfig,
+} from "@mr-hope/vuepress-shared-utils";
 
 export type VuepressMarkdownOption = Partial<{
   /** 是否在每个代码块的左侧显示行号 */
