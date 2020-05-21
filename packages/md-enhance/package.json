@@ -39,7 +39,7 @@
     "flowchart.js": "^1.13.0",
     "katex": "^0.11.1",
     "vuepress-plugin-container": "^2.1.3",
-    "vuepress-plugin-typescript": "^0.2.0"
+    "vuepress-plugin-typescript": "^0.3.0"
   },
   "peerDependencies": {
     "typescript": "^3.9.3",
