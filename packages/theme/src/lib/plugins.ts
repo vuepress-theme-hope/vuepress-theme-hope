@@ -68,22 +68,6 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     ],
     ["@vuepress/last-updated", false],
 
-    /** 图片缩放插件 */
-    [
-      "@vuepress/medium-zoom",
-      {
-        /** 设置选项 */
-        options: {
-          /** 缩放后图片的外间距 */
-          margin: 16,
-          /** 背景颜色 */
-          background: "",
-          /** 关闭缩放需要滚动的像素数 */
-          scrollOffset: 40,
-        },
-      },
-    ],
-
     /** 进度条 */
     "@vuepress/nprogress",
 
@@ -121,6 +105,9 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
           `layout-${layout.componentName}`,
       },
     ],
+
+    /** Photo-swipe 插件 */
+    ["photo-swipe"],
 
     /** 平滑滚动 */
     ["smooth-scroll", options.smoothScroll !== false],

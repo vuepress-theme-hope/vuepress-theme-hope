@@ -1,0 +1,44 @@
+{
+  "name": "vuepress-plugin-photo-swipe",
+  "version": "0.3.0",
+  "description": "photo-swipe plugin for vuepress-theme-hope",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test:serve":"vuepress dev test/demo"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/photo-swipe"
+  },
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "photo-swipe",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
+  "author": {
+    "email": "zhangbowang1998@gmail.com",
+    "name": "Mr.Hope",
+    "url": "https://mrhope.site"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/photo-swipe#readme",
+  "dependencies": {
+    "@types/photoswipe": "^4.1.0",
+    "photoswipe": "^4.1.3",
+    "vuepress-plugin-typescript": "^0.3.0"
+  },
+  "peerDependencies": {
+    "typescript": "^3.9.3",
+    "vuepress-types": "^0.9.3"
+  }
+}

@@ -36,6 +36,8 @@
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.3.0",
     "@types/hash-sum": "^1.0.0",
+    "@types/katex": "0.11.0",
+    "@types/markdown-it": "10.0.1",
     "flowchart.js": "^1.13.0",
     "katex": "^0.11.1",
     "vuepress-plugin-container": "^2.1.4",
@@ -44,11 +46,5 @@
   "peerDependencies": {
     "typescript": "^3.9.3",
     "vuepress-types": "^0.9.3"
-  },
-  "devDependencies": {
-    "@types/katex": "0.11.0",
-    "@types/markdown-it": "10.0.1",
-    "@vue/cli-plugin-unit-mocha": "4.3.1",
-    "@vue/cli-service": "4.3.1"
   }
 }

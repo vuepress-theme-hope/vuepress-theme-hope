@@ -30,6 +30,7 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "ES6",
+    "lib": ["DOM"],
     "types": ["@mr-hope/vuepress-theme-types"],
     "baseUrl": ".",
     "paths": {
