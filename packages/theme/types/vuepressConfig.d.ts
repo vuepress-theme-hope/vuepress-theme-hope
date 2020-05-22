@@ -112,6 +112,8 @@ type LocalesConfig = Partial<{
   description: string;
 }>;
 
+export type HeadItem = [string, Record<string, string>];
+
 export type BaseVuepressConfig = Partial<{
   /** 部署站点的基础路径 */
   base: string;
@@ -121,7 +123,7 @@ export type BaseVuepressConfig = Partial<{
   /** 网站的描述，它将会以 `<meta>` 标签渲染到当前页面的 HTML 中 */
   description: string;
   /** 额外的需要被注入到当前页面的 HTML <head> 中的标签 */
-  head: [string, Record<string, string>][];
+  head: HeadItem[];
   /** 指定用于 dev server 的主机名 */
   host: string;
   /** 指定 dev server 的端口 */

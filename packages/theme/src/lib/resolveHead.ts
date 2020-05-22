@@ -1,11 +1,15 @@
-import { HopeHeadOptionConfig, HopeVuepressConfig } from "../../types";
+import {
+  HeadItem,
+  HopeHeadOptionConfig,
+  HopeVuepressConfig,
+} from "../../types";
 
 /** meta 键名 */
 let metaKeys: string[];
 /** link 键名 */
 let linkKeys: string[];
 /** 头部选项 */
-let head: [string, Record<string, string>][];
+let head: HeadItem[];
 
 /**
  * 设置头部选项
