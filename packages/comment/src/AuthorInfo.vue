@@ -9,18 +9,18 @@
 /* global COMMENT_OPTIONS */
 import { Component, Vue } from "vue-property-decorator";
 import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
-import { ValineOptions } from "../types";
+import { CommentOptions } from "../types";
 
 @Component({ components: { AuthorIcon } })
 export default class AuthorInfo extends Vue {
-  private valineConfig: ValineOptions = COMMENT_OPTIONS;
+  private commentOption: CommentOptions = COMMENT_OPTIONS;
 
   private get author(): string {
     const { author } = this.$frontmatter;
 
     return (
       (author as string) ||
-      (author === false ? "" : this.valineConfig.author || "")
+      (author === false ? "" : this.commentOption.author || "")
     );
   }
 }
