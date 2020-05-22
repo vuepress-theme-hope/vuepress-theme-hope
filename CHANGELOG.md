@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0...v0.4.0-alpha.1) (2020-05-22)
+
+### Bug Fixes
+
+- **theme:** fix password input issue on mobile screen ([3987001](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3987001273a883ff953f34eb7cfd02da4a02a18b))
+
+### Features
+
+   add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3c85ba86ba401c959e2f91fa924cbae66e8598e2))
+
 ## [0.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.5...v0.3.0) (2020-05-14)
 
 ### Bug Fixes
