@@ -1,11 +1,11 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "0.3.0",
+  "version": "0.4.0-alpha.1",
   "description": "photo-swipe plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test:serve":"vuepress dev test/demo"
+    "test:serve": "vuepress dev test/demo"
   },
   "publishConfig": {
     "access": "public"
