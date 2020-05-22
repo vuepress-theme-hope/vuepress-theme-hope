@@ -6,7 +6,7 @@ export default class Color {
     public red: number,
     public green: number,
     public blue: number,
-    public alpha = 1,
+    public alpha = 1
   ) {}
 
   /** 从 HEX 中生成 */
@@ -20,7 +20,7 @@ export default class Color {
         "hex",
         parseHex(color[1]) * 17,
         parseHex(color[2]) * 17,
-        parseHex(color[3]) * 17,
+        parseHex(color[3]) * 17
       );
 
     if (color.length === 5)
@@ -29,7 +29,7 @@ export default class Color {
         parseHex(color[1]) * 17,
         parseHex(color[2]) * 17,
         parseHex(color[3]) * 17,
-        parseAlpha(color[4], 15),
+        parseAlpha(color[4], 15)
       );
 
     if (color.length === 7)
@@ -37,7 +37,7 @@ export default class Color {
         "hex",
         parseHex(color.substring(1, 3)),
         parseHex(color.substring(3, 5)),
-        parseHex(color.substring(5, 7)),
+        parseHex(color.substring(5, 7))
       );
 
     return new Color(
@@ -45,7 +45,7 @@ export default class Color {
       parseHex(color.substring(1, 3)),
       parseHex(color.substring(3, 5)),
       parseHex(color.substring(5, 7)),
-      parseAlpha(color.substring(7, 9), 255),
+      parseAlpha(color.substring(7, 9), 255)
     );
   }
 
@@ -56,7 +56,7 @@ export default class Color {
     const fromRGB = (colorString: string): number =>
       colorString.includes("%")
         ? (Number(
-            colorString.trim().substring(0, colorString.trim().length - 1),
+            colorString.trim().substring(0, colorString.trim().length - 1)
           ) /
             100) *
             256 -
@@ -70,7 +70,7 @@ export default class Color {
         fromRGB(rgbaResult[1]),
         fromRGB(rgbaResult[2]),
         fromRGB(rgbaResult[3]),
-        Number(rgbaResult[4] || 1),
+        Number(rgbaResult[4] || 1)
       );
 
     const rgbResult = RGBPattern.exec(color);
@@ -79,7 +79,7 @@ export default class Color {
         "rgb",
         fromRGB(rgbResult[1]),
         fromRGB(rgbResult[2]),
-        fromRGB(rgbResult[3]),
+        fromRGB(rgbResult[3])
       );
 
     throw new Error(`Can not handle color: ${color}`);
@@ -111,7 +111,7 @@ export default class Color {
 
       if (this.red % 17 === 0 && this.green % 17 === 0 && this.blue % 17 === 0)
         return `#${toHex(this.red / 17)}${toHex(this.green / 17)}${toHex(
-          this.blue / 17,
+          this.blue / 17
         )}`;
 
       const getHex = (color: number): string =>
@@ -127,7 +127,7 @@ export default class Color {
 
   public adjust(
     item: "red" | "green" | "blue" | "alpha",
-    amount: number,
+    amount: number
   ): void {
     const result = Math.round(this[item] * amount);
 

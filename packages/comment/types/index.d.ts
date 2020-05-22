@@ -1,3 +1,5 @@
+import { Vssue } from "vssue";
+
 /** 页面信息类型 */
 export type PageInfotype =
   | "Author"
@@ -23,14 +25,13 @@ interface BaseCommentOptions {
 }
 
 /** Valine 配置 */
-export type ValineOptions = BaseCommentOptions &
-  Partial<{
-    /** appID */
-    appId: string;
+export type ValineOptions = BaseCommentOptions & {
+  /** appID */
+  appId: string;
 
-    /** appKey */
-    appKey: string;
-
+  /** appKey */
+  appKey: string;
+} & Partial<{
     /** 是否启用评论 */
     comment: boolean;
 
@@ -92,19 +93,16 @@ export interface VssueOptions extends BaseCommentOptions {
   /** 希望使用自己的代理，就需要设置这个选项 */
   proxy?: string | ((url: string) => string);
   /** Vssue 自动创建 Issue 时使用的内容 */
-  issueContent?: (param: any) => string | Promise<string>;
+  issueContent?: (param: {
+    options: Vssue.Options;
+    url: string;
+  }) => string | Promise<string>;
   /** 在对应的 Issue 不存在时，Vssue 会自动尝试为你创建 Issue */
   autoCreateIssue?: false;
 }
 
 /** vuepress-plugin-comment 配置 */
 export type CommentOptions = ValineOptions | VssueOptions;
-
-/** 阅读时间 */
-export interface ReadingTime {
-  minutes: number;
-  words: number;
-}
 
 /** 评论组件全局变量 */
 declare global {

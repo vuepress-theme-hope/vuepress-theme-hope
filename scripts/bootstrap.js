@@ -82,6 +82,6 @@ vuepress-theme-hope 的 ${pkgName} 插件。
 \`\`\`bash
 npm i @mr-hope/vuepress-plugin-${pkgName}
 \`\`\`
-`,
+`
     );
 });

@@ -5,7 +5,7 @@ let metaKeys: string[];
 /** link 键名 */
 let linkKeys: string[];
 /** 头部选项 */
-let head: any[];
+let head: [string, Record<string, string>][];
 
 /**
  * 设置头部选项
@@ -17,7 +17,7 @@ let head: any[];
 const setHeadOption = (
   type: "meta" | "link",
   name: string,
-  content?: string,
+  content?: string
 ): void => {
   if (type === "meta") {
     if (!metaKeys.includes(name) && content)
@@ -40,19 +40,19 @@ const setPWA = (headOption: HopeHeadOptionConfig): void => {
     setHeadOption(
       "meta",
       "apple-mobile-web-app-status-bar-style",
-      headOption.pwa.appleStatusBarColor,
+      headOption.pwa.appleStatusBarColor
     );
     setHeadOption("link", "apple-touch-icon", headOption.pwa.appleIcon);
 
     setHeadOption(
       "meta",
       "msapplication-TileImage",
-      headOption.pwa.msTileImage,
+      headOption.pwa.msTileImage
     );
     setHeadOption(
       "meta",
       "msapplication-TileColor",
-      headOption.pwa.msTileColor,
+      headOption.pwa.msTileColor
     );
   }
 };
@@ -90,7 +90,7 @@ const resolveHead = (config: HopeVuepressConfig): void => {
   setHeadOption(
     "meta",
     "viewport",
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
   );
 
   // PWA 相关

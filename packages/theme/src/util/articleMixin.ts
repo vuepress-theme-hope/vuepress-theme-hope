@@ -31,8 +31,8 @@ export class TimelineMixin extends Vue {
         pages,
         (frontmatter) =>
           (frontmatter.time || frontmatter.date) &&
-          frontmatter.timeline !== false,
-      ),
+          frontmatter.timeline !== false
+      )
     );
   }
 
@@ -68,7 +68,7 @@ export class StickyMixin extends Vue {
 
     // 先过滤再排序
     return sortArticle(
-      filterArticle(pages, (frontmatter) => frontmatter.sticky),
+      filterArticle(pages, (frontmatter) => frontmatter.sticky)
     );
   }
 }

@@ -8,6 +8,6 @@ packages/**/*.d.ts
 !packages/theme/src/lib/clientRootMixin.js
 !packages/theme/src/lib/noopModule.js
 
-!packages/**/test/*.js
-!packages/**/types/*.d.ts
+!packages/**/test/**/*.js
+!packages/**/types/**/*.d.ts
 !.vuepress/**

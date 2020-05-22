@@ -5,11 +5,15 @@ declare module "@vuepress/markdown/lib/lineNumbers" {
 }
 
 declare module "flowchart.js" {
-  export interface Flowchart {
-    parse: (input: any) => any;
+  interface Parse {
+    drawSVG: (id: string, options: any) => void;
+  }
+
+  interface Flowchart {
+    parse: (input: string) => Parse;
   }
 
   const flowchart: Flowchart;
 
-  export default flowchart;
+  export = flowchart;
 }

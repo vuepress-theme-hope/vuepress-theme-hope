@@ -19,7 +19,7 @@ export default class GlobalEncryptMixin extends Vue {
       const globalPasswords = typeof global === "string" ? [global] : global;
       /** 全局密码匹配结果 */
       const result = globalPasswords.filter(
-        (globalPassword) => globalPassword === this.globalPassword,
+        (globalPassword) => globalPassword === this.globalPassword
       );
 
       return result.length === 0;
@@ -40,7 +40,7 @@ export default class GlobalEncryptMixin extends Vue {
     const globalPasswords = typeof global === "string" ? [global] : global;
     /** 全局密码匹配结果 */
     const result = globalPasswords.filter(
-      (globalPassword) => globalPassword === value,
+      (globalPassword) => globalPassword === value
     );
 
     if (result.length !== 0) {

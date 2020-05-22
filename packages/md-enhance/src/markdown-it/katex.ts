@@ -11,7 +11,7 @@ import katex = require("katex");
  */
 const isValidDelim = (
   state: StateInline,
-  pos: number,
+  pos: number
 ): { canOpen: boolean; canClose: boolean } => {
   let canOpen = true;
   let canClose = true;
@@ -116,7 +116,7 @@ const blockTex = (
   state: StateBlock,
   start: number,
   end: number,
-  silent: boolean,
+  silent: boolean
   // eslint-disable-next-line max-params
 ): boolean => {
   let firstLine;
@@ -186,7 +186,7 @@ const escapeHtml = (unsafeHTML: string): string =>
 
 export default (
   md: MarkdownIt,
-  options: katex.KatexOptions = { throwOnError: false },
+  options: katex.KatexOptions = { throwOnError: false }
 ): void => {
   // set KaTeX as the renderer for markdown-it-simplemath
   const katexInline = (tex: string): string => {
@@ -198,7 +198,7 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<span class='katex-error' title='${escapeHtml(
-        error.toString(),
+        error.toString()
       )}'>${escapeHtml(tex)}</span>`;
     }
   };
@@ -212,7 +212,7 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<p class='katex-block katex-error' title='${escapeHtml(
-        error.toString(),
+        error.toString()
       )}'>${escapeHtml(tex)}</p>`;
     }
   };

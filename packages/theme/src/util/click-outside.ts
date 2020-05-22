@@ -20,7 +20,7 @@ const validate = (binding: DirectiveBinding): boolean => {
     console.warn(
       "[Vue-click-outside:] provided expression",
       binding.expression,
-      "is not a function.",
+      "is not a function."
     );
 
     return false;
@@ -38,7 +38,7 @@ const isPopup = (popupItem: HTMLElement, elements: HTMLElement[]): boolean => {
       if (popupItem.contains(elements[i])) return true;
 
       if (elements[i].contains(popupItem)) return false;
-    } catch (e) {
+    } catch (err) {
       return false;
     }
 
@@ -54,21 +54,21 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
   if (!validate(binding)) return;
 
   // Define Handler and cache it on the element
-  const handler = (e: any): void => {
+  const handler = (event: any): void => {
     if (!vNode.context) return;
 
     // Some components may have related popup item, on which we shall prevent the click outside event handler.
-    const elements = e.path || (e.composedPath && e.composedPath());
+    const elements = event.path || (event.composedPath && event.composedPath());
 
-    if (elements && elements.length > 0) elements.unshift(e.target);
+    if (elements && elements.length > 0) elements.unshift(event.target);
 
     if (
-      el.contains(e.target) ||
+      el.contains(event.target) ||
       isPopup((vNode.context as any).popupItem, elements)
     )
       return;
 
-    el.$vueClickOutside.callback(e);
+    el.$vueClickOutside.callback(event);
   };
 
   // Add Event Listeners

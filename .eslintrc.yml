@@ -15,17 +15,7 @@ plugins:
   - prettier
   - vue
 
-parserOptions:
-  parser: "@typescript-eslint/parser"
-
 rules:
-  no-console: "off"
-
-  no-debugger: "off"
-
-  no-useless-constructor:
-    - off
-
   class-methods-use-this:
     - off
 
@@ -50,11 +40,12 @@ rules:
     - error
     - min: 2
       exceptions:
-        - e
+        - a
+        - b
         - h
         - i
-        - x
-        - y
+        - j
+        - k
 
   implicit-arrow-linebreak:
     - off
@@ -62,8 +53,6 @@ rules:
   indent:
     - off
     - 2
-    - ignoredNodes:
-        - ConditionalExpression
 
   init-declarations:
     - off
@@ -85,6 +74,12 @@ rules:
   nonblock-statement-body-position:
     - error
     - any
+
+  no-console:
+    - off
+
+  no-debugger:
+    - off
 
   no-inline-comments:
     - off
@@ -116,6 +111,9 @@ rules:
     - off
 
   no-unused-vars:
+    - off
+
+  no-useless-constructor:
     - off
 
   no-warning-comments:
@@ -196,6 +194,9 @@ overrides:
       "@typescript-eslint/explicit-function-return-type":
         - warn
         - allowTypedFunctionExpressions: true
+
+      "@typescript-eslint/naming-convention":
+        - error
 
       "@typescript-eslint/no-explicit-any": off
 

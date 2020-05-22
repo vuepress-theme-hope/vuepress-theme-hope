@@ -29,8 +29,8 @@ export const getDate = (dateString: string): (number | undefined)[] => {
   const [, year, month, day, hour, minute, second] =
     pattern.exec(dateString) || [];
 
-  const getNumber = (x: string): number | undefined =>
-    typeof x === "undefined" ? undefined : Number(x);
+  const getNumber = (a: string): number | undefined =>
+    typeof a === "undefined" ? undefined : Number(a);
 
   const getYear = (yearNumber: number | undefined): number | undefined =>
     yearNumber && yearNumber < 100 ? yearNumber + 2000 : yearNumber;
@@ -52,26 +52,26 @@ export const getDate = (dateString: string): (number | undefined)[] => {
  */
 export const compareDate = (
   dataA: string | undefined,
-  dataB: string | undefined,
+  dataB: string | undefined
 ): number => {
   if (!dataA) return 1;
   if (!dataB) return -1;
 
   const compare = (
-    x: (number | undefined)[],
-    y: (number | undefined)[],
+    a: (number | undefined)[],
+    b: (number | undefined)[]
   ): number => {
-    if (x.length === 0) return 0;
-    if (typeof y[0] === "undefined") return -1;
-    if (typeof x[0] === "undefined") return 1;
+    if (a.length === 0) return 0;
+    if (typeof b[0] === "undefined") return -1;
+    if (typeof a[0] === "undefined") return 1;
 
-    if (y[0] - x[0] === 0) {
-      x.shift();
-      y.shift();
+    if (b[0] - a[0] === 0) {
+      a.shift();
+      b.shift();
 
-      return compare(x, y);
+      return compare(a, b);
     }
-    return y[0] - x[0];
+    return b[0] - a[0];
   };
 
   return compare(getDate(dataA), getDate(dataB));
@@ -85,7 +85,7 @@ export const compareDate = (
  */
 export const filterArticle = (
   pages: PageComputed[],
-  filterFunc?: (frontmatter: PageFrontmatter) => boolean,
+  filterFunc?: (frontmatter: PageFrontmatter) => boolean
 ): PageComputed[] =>
   pages.filter((page) => {
     const {
@@ -122,7 +122,7 @@ export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
 
 export const generatePagination = (
   pages: PageComputed[],
-  perPage = 10,
+  perPage = 10
 ): PageComputed[][] => {
   const result: PageComputed[][] = [];
   let index = 0;

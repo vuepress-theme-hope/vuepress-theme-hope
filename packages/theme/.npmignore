@@ -1,6 +1,6 @@
-src/lib/*.ts
-!src/lib/*.d.ts
-src/index.ts
+src/**/*.ts
+!src/**/*.d.ts
+
 test/
 
 resolve.ts

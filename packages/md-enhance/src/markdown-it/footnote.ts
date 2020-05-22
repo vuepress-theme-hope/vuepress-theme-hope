@@ -1,9 +1,10 @@
 /* eslint-disable max-lines */
-/* eslint-disable no-plusplus */
 /* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-params */
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable no-plusplus */
+/* eslint-disable camelcase */
+/* eslint-disable @typescript-eslint/naming-convention */
 
 import MarkdownIt = require("markdown-it");
 import Renderer = require("markdown-it/lib/renderer");
@@ -15,8 +16,8 @@ import Token = require("markdown-it/lib/token");
 const renderFootnoteAnchorName = (
   tokens: Token[],
   idx: number,
-  _options: any,
-  env: any,
+  _options: MarkdownIt.Options,
+  env: any
 ): string => {
   const num = Number(tokens[idx].meta.id + 1).toString();
   let prefix = "";
@@ -37,9 +38,9 @@ const renderFootnoteCaption = (tokens: Token[], idx: number): string => {
 const renderFootnoteRef = (
   tokens: Token[],
   idx: number,
-  options: any,
+  options: MarkdownIt.Options,
   env: any,
-  slf: Renderer,
+  slf: Renderer
 ): string => {
   const id =
     slf.rules.footnote_anchor_name &&
@@ -57,12 +58,12 @@ const renderFootnoteRef = (
 const renderFootnoteBlockOpen = (
   _tokens: Token[],
   _idx: number,
-  options: any,
+  options: MarkdownIt.Options
 ): string => {
   return `${
     options.xhtmlOut
-      ? "<hr class=\"footnotes-sep\" />\n"
-      : "<hr class=\"footnotes-sep\">\n"
+      ? '<hr class="footnotes-sep" />\n'
+      : '<hr class="footnotes-sep">\n'
   }<section class="footnotes">\n<ol class="footnotes-list">\n`;
 };
 
@@ -71,9 +72,9 @@ const renderFootnoteBlockClose = (): string => "</ol>\n</section>\n";
 const renderFootnoteOpen = (
   tokens: Token[],
   idx: number,
-  options: any,
+  options: MarkdownIt.Options,
   env: any,
-  slf: Renderer,
+  slf: Renderer
 ): string => {
   let id =
     slf.rules.footnote_anchor_name &&
@@ -89,9 +90,9 @@ const renderFootnoteClose = (): string => "</li>\n";
 const renderFootnoteAnchor = (
   tokens: Token[],
   idx: number,
-  options: any,
+  options: MarkdownIt.Options,
   env: any,
-  slf: Renderer,
+  slf: Renderer
 ): string => {
   let id =
     slf.rules.footnote_anchor_name &&
@@ -123,7 +124,7 @@ const footnote = (md: MarkdownIt): void => {
     state: StateBlock,
     startLine: number,
     endLine: number,
-    silent: boolean,
+    silent: boolean
   ): boolean => {
     let pos;
     let token;
@@ -200,7 +201,7 @@ const footnote = (md: MarkdownIt): void => {
     if (state.sCount[startLine] < state.blkIndent)
       state.sCount[startLine] += state.blkIndent;
 
-    (state.md.block as any).tokenize(state, startLine, endLine, true);
+    state.md.block.tokenize(state, startLine, endLine);
 
     state.parentType = oldParentType;
     state.blkIndent -= 4;
@@ -219,7 +220,7 @@ const footnote = (md: MarkdownIt): void => {
   const footnoteInline = (state: StateInline, silent?: boolean): boolean => {
     let footnoteId;
     let token;
-    let tokens: any[];
+    let tokens: Token[];
     const max = state.posMax;
     const start = state.pos;
 
@@ -229,7 +230,7 @@ const footnote = (md: MarkdownIt): void => {
     if (state.src.charCodeAt(start + 1) !== 0x5b /* [ */) return false;
 
     const labelStart = start + 2;
-    const labelEnd = parseLinkLabel(state as any, start + 1);
+    const labelEnd = parseLinkLabel(state, start + 1);
 
     // parser failed to find ']', so it's not a valid note
     if (labelEnd < 0) return false;
@@ -248,7 +249,7 @@ const footnote = (md: MarkdownIt): void => {
         state.src.slice(labelStart, labelEnd),
         state.md,
         state.env,
-        (tokens = []),
+        (tokens = [])
       );
 
       token = state.push("footnote_ref", "", 0);
@@ -322,15 +323,15 @@ const footnote = (md: MarkdownIt): void => {
   const footnoteTail = (state: StateCore): boolean => {
     let lastParagraph;
     let token;
-    let tokens;
-    let current: any[];
+    let tokens: Token[];
+    let current: Token[];
     let currentLabel: string;
     let insideRef = false;
-    const refTokens: any = {};
+    const refTokens: Record<string, Token[]> = {};
 
     if (!state.env.footnotes) return false;
 
-    state.tokens = state.tokens.filter((tok: any) => {
+    state.tokens = state.tokens.filter((tok) => {
       if (tok.type === "footnote_reference_open") {
         insideRef = true;
         current = [];
@@ -374,15 +375,16 @@ const footnote = (md: MarkdownIt): void => {
         token.block = true;
         tokens.push(token);
       } else if (list[i].label) tokens = refTokens[`:${list[i].label}`];
+      else tokens = [];
 
       state.tokens = state.tokens.concat(tokens);
       if (state.tokens[state.tokens.length - 1].type === "paragraph_close")
         lastParagraph = state.tokens.pop();
       else lastParagraph = null;
 
-      for (let x = 0; x < (list[i].count > 0 ? list[i].count : 1); x++) {
+      for (let j = 0; j < (list[i].count > 0 ? list[i].count : 1); j++) {
         token = new state.Token("footnote_anchor", "", 0);
-        token.meta = { id: i, subId: x, label: list[i].label };
+        token.meta = { id: i, subId: j, label: list[i].label };
         state.tokens.push(token);
       }
 

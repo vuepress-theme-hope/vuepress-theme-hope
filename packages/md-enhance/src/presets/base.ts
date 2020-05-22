@@ -1,5 +1,7 @@
 export default {
+  // eslint-disable-next-line id-length
   x: 0,
+  // eslint-disable-next-line id-length
   y: 0,
   "line-width": 2,
   "line-length": 50,

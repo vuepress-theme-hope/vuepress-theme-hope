@@ -12,7 +12,7 @@ const { checkLang, getLocale, lang2path, path2lang } = i18n;
  */
 const setThemeLocales = (
   themeConfig: ResolvedHopeThemeConfig,
-  baseLang: string,
+  baseLang: string
 ): void => {
   /** 默认语言对应的路径 */
   const baseLangPath = lang2path(baseLang);
@@ -49,7 +49,7 @@ const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
   // 如果主目录启用了未适配的语言，抛出错误
   if (!checkLang(baseLang))
     throw new Error(
-      "Base lang not supported. Make a PR to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts first!",
+      "Base lang not supported. Make a PR to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts first!"
     );
 
   setThemeLocales(themeConfig, baseLang);

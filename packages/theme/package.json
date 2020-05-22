@@ -40,6 +40,7 @@
     "@mr-hope/vuepress-plugin-sitemap": "^0.4.0-alpha.1",
     "@mr-hope/vuepress-shared-utils": "^0.4.0-alpha.1",
     "@mr-hope/vuepress-theme-types": "^0.4.0-alpha.1",
+    "@types/markdown-it-anchor": "^4.0.4",
     "@types/md5": "^2.2.0",
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-medium-zoom": "^1.5.0",

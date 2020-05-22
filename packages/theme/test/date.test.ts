@@ -183,19 +183,19 @@ describe("ArticleMixin Test", () => {
 
   it("compareDate()", () => {
     expect(compareDate("  2018/12/01 12:30:00  ", "12:30:32")).to.be.lessThan(
-      0,
+      0
     );
     expect(
-      compareDate("  2018/12/01 12:30:00  ", " 2019/12/01  12:30:32"),
+      compareDate("  2018/12/01 12:30:00  ", " 2019/12/01  12:30:32")
     ).to.be.greaterThan(0);
     expect(
-      compareDate("2019-11-21T00:00:00.000Z", "2020-04-04T00:00:00.000Z"),
+      compareDate("2019-11-21T00:00:00.000Z", "2020-04-04T00:00:00.000Z")
     ).to.be.greaterThan(0);
     expect(
-      compareDate("2020/1/1", "2020-04-04T00:00:00.000Z"),
+      compareDate("2020/1/1", "2020-04-04T00:00:00.000Z")
     ).to.be.greaterThan(0);
     expect(compareDate("  2018/01/01 12:30  ", "2018/1/1  12:30")).to.be.equal(
-      0,
+      0
     );
   });
 });

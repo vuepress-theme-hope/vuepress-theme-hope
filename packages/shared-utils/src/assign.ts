@@ -29,15 +29,12 @@ export const deepAssign = <
       deepAssign(originObject[property], assignObject[property]);
     else if (typeof assignObject[property] === "object")
       if (Array.isArray(assignObject[property]))
-        (originObject as Record<string, any>)[property] = [
-          ...assignObject[property],
-        ];
+        (originObject as IAnyObject)[property] = [...assignObject[property]];
       else
-        (originObject as Record<string, any>)[property] = {
+        (originObject as IAnyObject)[property] = {
           ...assignObject[property],
         };
-    else
-      (originObject as Record<string, any>)[property] = assignObject[property];
+    else (originObject as IAnyObject)[property] = assignObject[property];
   });
 
   return deepAssign(originObject, ...assignObjects);

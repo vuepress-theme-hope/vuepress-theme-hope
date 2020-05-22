@@ -8,7 +8,7 @@ const getAddMeta = (meta: Record<string, string>[]) => (
   content: string,
   attribute = ["article:", "og:"].some((type) => name.startsWith(type))
     ? "property"
-    : "name",
+    : "name"
 ): void => {
   if (content) meta.push({ [attribute]: name, content });
 };
@@ -46,7 +46,7 @@ const defaultSeo = ({
   /** 页面类型 */
   const type = ["article", "category", "tag", "timeline"].some((folder) =>
     // 博客分类页面
-    $page.regularPath.startsWith(`/${folder}`),
+    $page.regularPath.startsWith(`/${folder}`)
   )
     ? "website"
     : "article";
@@ -89,14 +89,14 @@ const defaultSeo = ({
 const appendMeta = (
   add: (name: string, content: string, attribute?: string) => void,
   content: SeoContent,
-  options: SeoOptions,
+  options: SeoOptions
 ): void => {
   // eslint-disable-next-line guard-for-in
   for (const property in content)
     switch (property) {
       case "article:tag":
         (content as any)["article:tag"].forEach((tag: string) =>
-          add("article:tag", tag),
+          add("article:tag", tag)
         );
         break;
       case "og:locale:alternate":
@@ -124,7 +124,7 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => ({
     // In Vuepress core, permalinks are built after enhancers.
     const pageClone = Object.assign(
       Object.create(Object.getPrototypeOf($page)),
-      $page,
+      $page
     );
     pageClone.buildPermalink();
 

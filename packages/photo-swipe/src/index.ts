@@ -1,12 +1,13 @@
+import { PhotoSwipeOptions } from "../types";
 import { PluginOptionAPI } from "vuepress-types";
 import { resolve } from "path";
 
-export = (options: any): PluginOptionAPI => ({
+export = (options: PhotoSwipeOptions): PluginOptionAPI => ({
   name: "photo-swipe",
 
   define: {
     IMAGE_SELECTOR: options.selector || ".theme-default-content :not(a) > img",
-    PHOTOSWIPE_OPTIONS: options.options || {},
+    PHOTOSWIPE_OPTIONS: options.option || {},
   },
 
   enhanceAppFiles: resolve(__dirname, "enhanceAppFile.ts"),

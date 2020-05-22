@@ -6,7 +6,9 @@ import hash = require("hash-sum");
 import MarkdownIt = require("markdown-it");
 import StateBlock = require("markdown-it/lib/rules_block/state_block");
 
-const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
+const flowchart = (
+  md: MarkdownIt & { $dataBlock: Record<string, string> }
+): void => {
   const OPEN_MARKER = "@flowstart";
   const openChar = OPEN_MARKER.charCodeAt(0);
   const CLOSEMARKER = "@flowend";
@@ -16,7 +18,7 @@ const flowchart = (md: MarkdownIt & { $dataBlock: any }): void => {
     state: StateBlock,
     startLine: number,
     endLine: number,
-    silent: boolean,
+    silent: boolean
   ): boolean => {
     let nextLine;
     let i;

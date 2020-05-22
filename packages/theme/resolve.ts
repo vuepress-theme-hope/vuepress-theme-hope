@@ -11,7 +11,7 @@ import resolveThemeConfig from "./src/lib/resolveThemeConfig";
  * @param config
  */
 const resolveConfig = (
-  config: HopeVuepressConfig,
+  config: HopeVuepressConfig
 ): ResolvedHopeVuepressConfig => {
   // 合并默认配置
   deepAssignReverse(defaultConfig, config);

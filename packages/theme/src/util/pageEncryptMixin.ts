@@ -18,7 +18,7 @@ export default class PageEncryptMixin extends Vue {
       /** 命中键名 */
       const hitKeys = keys
         .filter((key) => this.$route.path.indexOf(key) === 0)
-        .sort((x, y) => y.length - x.length);
+        .sort((a, b) => b.length - a.length);
 
       return hitKeys;
     }
@@ -40,7 +40,7 @@ export default class PageEncryptMixin extends Vue {
           typeof keyConfig === "string" ? [keyConfig] : keyConfig;
         /** 比较结果 */
         const result = hitPasswords.filter(
-          (password) => this.passwordConfig[key] === password,
+          (password) => this.passwordConfig[key] === password
         );
 
         return result.length !== 0;

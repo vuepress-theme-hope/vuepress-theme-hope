@@ -10,7 +10,7 @@ export const getWordNumber = (data: string): number =>
   getWords(data).reduce<number>(
     (accumulator, word) =>
       accumulator + (word.trim() === "" ? 0 : word.trim().split(/\s+/u).length),
-    0,
+    0
   ) + getChinese(data).length;
 
 const readingTime = (data: string, wordsPerMinute = 300): ReadingTime => {

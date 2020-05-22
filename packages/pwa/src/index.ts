@@ -22,7 +22,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
     ],
   };
 
-  config.generated = async (): Promise<any> => {
+  config.generated = async (): Promise<void> => {
     console.log(chalk.cyan("wait"), "Generating service worker...");
 
     const swFilePath = resolve(context.outDir, "./service-worker.js");
@@ -38,7 +38,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
     await fs.writeFile(
       swFilePath,
       await fs.readFile(resolve(__dirname, "./skip-waiting.js"), "utf8"),
-      { flag: "a" },
+      { flag: "a" }
     );
   };
 

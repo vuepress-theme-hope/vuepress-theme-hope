@@ -1,16 +1,8 @@
 export default class SWUpdateEvent {
-  registration: any;
-
-  constructor(registration: any) {
-    Object.defineProperty(this, "registration", {
-      value: registration,
-      configurable: true,
-      writable: true,
-    });
-  }
+  constructor(private registration: ServiceWorkerRegistration) {}
 
   /** Check if the new service worker exists or not. */
-  update(): void {
+  update(): Promise<void> {
     return this.registration.update();
   }
 

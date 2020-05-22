@@ -4,22 +4,50 @@ import {
   NavBarConfig,
   SideBarConfig,
 } from "@mr-hope/vuepress-shared-utils";
+import MarkdownIt = require("markdown-it");
+import MarkdownItAnchor = require("markdown-it-anchor");
+
+type MarkdownItToc = Partial<{
+  /** Headings levels to use */
+  includeLevel: number[];
+  /** The class for the container DIV */
+  containerClass: string;
+  /** A custom slugification function */
+  slugify: (slug: string) => string;
+  /** Regex pattern of the marker to be replaced with TOC */
+  markerPattern: RegExp;
+  /** Type of list (ul for unordered, ol for ordered) */
+  listType: "ul" | "ol";
+  /** A function for formatting headings */
+  format: (heading: string) => string;
+  /** If true, renders all the headers in TOC, even if the headers are in incorrect order */
+  forceFullToc: boolean;
+  /** Optional HTML string for container header */
+  containerHeaderHtml: string;
+  /** Optional HTML string for container footer */
+  containerFooterHtml: string;
+  /** A function for transforming the TOC links */
+  transformLink: (link: string) => string;
+}>;
 
 export type VuepressMarkdownOption = Partial<{
   /** 是否在每个代码块的左侧显示行号 */
   lineNumbers: boolean;
   /** 一个将标题文本转换为 slug 的函数 */
-  slugify: Function;
+  slugify: (title: string) => string;
   /** markdown-it-anchor 的选项 */
-  anchor: Record<string, any>;
+  anchor?: MarkdownItAnchor.AnchorOptions;
   /** 外部链接处理 */
   externalLinks: boolean;
-  /** markdown-it-table-of-contents 的选项 */
-  toc: Record<string, any>;
+  /**
+   * markdown-it-table-of-contents 的选项
+   * options for markdown-it-table-of-contents
+   */
+  toc: MarkdownItToc;
   /** markdown-it 插件 */
   plugins: any;
   /** 一个用于修改当前的 markdown-it 实例的默认配置，或者应用额外的插件的函数 */
-  extendMarkdown: (md: any) => void;
+  extendMarkdown: (md: MarkdownIt) => void;
   /** 提取出的标题级别 */
   extractHeaders: string[];
 }>;
@@ -93,7 +121,7 @@ export type BaseVuepressConfig = Partial<{
   /** 网站的描述，它将会以 `<meta>` 标签渲染到当前页面的 HTML 中 */
   description: string;
   /** 额外的需要被注入到当前页面的 HTML <head> 中的标签 */
-  head: any[];
+  head: [string, Record<string, string>][];
   /** 指定用于 dev server 的主机名 */
   host: string;
   /** 指定 dev server 的端口 */
@@ -106,7 +134,7 @@ export type BaseVuepressConfig = Partial<{
 
   locales: Record<string, LocalesConfig>;
   /** 一个函数，用来控制对于哪些文件，是需要生成 `<link rel="prefetch">` 资源提示的 */
-  shouldPrefetch: Function;
+  shouldPrefetch: (file: string, type: string) => boolean;
   /** 此选项可以用于指定 cache 的路径，同时也可以通过设置为 `false` 来在每次构建之前删除 cache */
   cache: boolean | string;
   /** 指定额外的需要被监听的文件 */

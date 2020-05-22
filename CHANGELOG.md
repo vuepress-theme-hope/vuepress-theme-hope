@@ -8,7 +8,7 @@
 
 ### Features
 
-   add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3c85ba86ba401c959e2f91fa924cbae66e8598e2))
+add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3c85ba86ba401c959e2f91fa924cbae66e8598e2))
 
 ## [0.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.5...v0.3.0) (2020-05-14)
 

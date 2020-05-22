@@ -19,7 +19,7 @@ export default class FlowChart extends Vue {
   private readonly code!: string;
 
   @Prop({ type: String, default: "vue" })
-  private readonly preset!: string;
+  private readonly preset!: "ant" | "vue";
 
   private loading = true;
 
@@ -42,7 +42,7 @@ export default class FlowChart extends Vue {
     this.$el.setAttribute("id", this.id);
 
     Promise.all([
-      import(/* webpackChunkName: "flowchart" */ "flowchart.js") as any,
+      import(/* webpackChunkName: "flowchart" */ "flowchart.js"),
       delay(),
     ]).then(([flowchart]) => {
       const { parse } = flowchart;

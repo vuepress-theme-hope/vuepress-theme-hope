@@ -14,12 +14,12 @@ import { resolve } from "path";
 const log = (
   msg: string,
   color: "cyan" | "red" = "cyan",
-  label = "SITEMAP",
+  label = "SITEMAP"
 ): void => console.log(`\n${chalk[color](` ${label} `)} ${msg}`);
 
 const stripLocalePrefix = (
   path: string,
-  localePathPrefixes: string[],
+  localePathPrefixes: string[]
 ): {
   normalizedPath: string;
   localePrefix: string;
@@ -38,7 +38,7 @@ const stripLocalePrefix = (
 const generatePageMap = (
   siteData: SiteData,
   base: string,
-  options: SitemapOptions,
+  options: SitemapOptions
 ): Map<string, string[]> => {
   const {
     changefreq = "daily",
@@ -56,14 +56,14 @@ const generatePageMap = (
     (map: Map<string, string[]>, page) => {
       const { normalizedPath, localePrefix } = stripLocalePrefix(
         page.path,
-        localeKeys,
+        localeKeys
       );
       const prefixesByPath = map.get(normalizedPath) || [];
       prefixesByPath.push(localePrefix);
 
       return map.set(normalizedPath, prefixesByPath);
     },
-    new Map(),
+    new Map()
   );
 
   const pagesMap = new Map();
@@ -71,12 +71,12 @@ const generatePageMap = (
   pages.forEach((page) => {
     const frontmatterOptions = page.frontmatter.sitemap || {};
     const metaRobots = (page.frontmatter.meta || []).find(
-      (meta) => meta.name === "robots",
+      (meta) => meta.name === "robots"
     );
     const excludePage = metaRobots
       ? (metaRobots.content || "")
           .split(/,/u)
-          .map((x) => x.trim())
+          .map((content) => content.trim())
           .includes("noindex")
       : frontmatterOptions.exclude;
 
@@ -89,7 +89,7 @@ const generatePageMap = (
     const relatedLocales =
       localesByNormalizedPagePath.get(normalizedPath) || [];
 
-    let links: { lang: any; url: string }[] = [];
+    let links: { lang: string; url: string }[] = [];
 
     if (relatedLocales.length > 1)
       links = relatedLocales.map((localePrefix) => ({
@@ -111,7 +111,7 @@ const generatePageMap = (
 const generateSiteMap = (
   siteData: SiteData,
   { outDir, themeConfig }: Context,
-  options: SitemapOptions,
+  options: SitemapOptions
 ): void => {
   log("Generating sitemap...");
 
@@ -138,7 +138,7 @@ const generateSiteMap = (
   log("Sitemap generated.");
 };
 
-export = (options: any, context: Context): PluginOptionAPI => ({
+export = (options: SitemapOptions, context: Context): PluginOptionAPI => ({
   name: "sitemap",
 
   generated(): void {
@@ -146,8 +146,8 @@ export = (options: any, context: Context): PluginOptionAPI => ({
     if (hostname) generateSiteMap(context.getSiteData(), context, options);
     else
       log(
-        "Not generating sitemap because required \"hostname\" option doesn't exist",
-        "red",
+        'Not generating sitemap because required "hostname" option doesn\'t exist',
+        "red"
       );
   },
 

@@ -62,7 +62,7 @@ const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
 /** 寻找匹配的侧边栏配置 */
 const resolveMatchingConfig = (
   regularPath: string,
-  config: HopeSideBarConfigItem[] | Record<string, HopeSideBarConfigItem[]>,
+  config: HopeSideBarConfigItem[] | Record<string, HopeSideBarConfigItem[]>
 ): { base: string; config: HopeSideBarConfigItem[] } | false => {
   // 数组意味着最简单的配置方式，直接返回
   if (Array.isArray(config))
@@ -133,7 +133,7 @@ type SidebarErrorItem = { type: "error"; path: string };
  */
 export const resolvePageforSidebar = (
   pages: PageComputed[],
-  path: string,
+  path: string
 ): SidebarPageItem | SidebarExternalItem | SidebarErrorItem => {
   // 外部链接
   if (isExternal(path))
@@ -183,14 +183,14 @@ const resolveItem = (
   sidebarConfigItem: HopeSideBarConfigItem,
   pages: PageComputed[],
   base: string,
-  prefix = "",
+  prefix = ""
   // eslint-disable-next-line max-params
 ): SidebarItem => {
   // 返回页面链接以及内部的标题链接
   if (typeof sidebarConfigItem === "string")
     return resolvePageforSidebar(
       pages,
-      resolve(prefix, sidebarConfigItem, base),
+      resolve(prefix, sidebarConfigItem, base)
     );
 
   // 自定义标题，格式为 ['路径', '自定义标题']
@@ -200,7 +200,7 @@ const resolveItem = (
       resolvePageforSidebar(pages, resolve(prefix, sidebarConfigItem[0], base)),
       {
         title: sidebarConfigItem[1],
-      },
+      }
     );
 
   // 对象不存在子项
@@ -210,11 +210,11 @@ const resolveItem = (
     return Object.assign(
       resolvePageforSidebar(
         pages,
-        resolve(prefix, sidebarConfigItem.path, base),
+        resolve(prefix, sidebarConfigItem.path, base)
       ),
       {
         title: sidebarConfigItem.title,
-      },
+      }
     );
 
   // 对每个子项递归处理再返回
@@ -226,8 +226,8 @@ const resolveItem = (
         child,
         pages,
         base,
-        `${prefix}${sidebarConfigItem.prefix || ""}`,
-      ),
+        `${prefix}${sidebarConfigItem.prefix || ""}`
+      )
     ),
     collapsable: sidebarConfigItem.collapsable !== false,
   };
@@ -239,7 +239,7 @@ const resolveItem = (
 export const resolveSidebarItems = (
   page: PageComputed,
   site: SiteData,
-  localePath: string,
+  localePath: string
 ): SidebarItem[] => {
   const { themeConfig = {}, pages } = site;
   /** 本语言的配置 */

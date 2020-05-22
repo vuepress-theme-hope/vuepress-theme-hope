@@ -109,7 +109,7 @@ export const isActive = (route: Route, path: string): boolean => {
 export const resolvePath = (
   relative: string,
   base: string,
-  append?: boolean,
+  append?: boolean
 ): string => {
   // 外部链接直接返回
   if (isExternal(relative)) return relative;

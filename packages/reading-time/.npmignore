@@ -1,3 +1,4 @@
-src/index.ts
-src/reading-time.ts
+src/*.ts
+!src/*.d.ts
+
 test/
