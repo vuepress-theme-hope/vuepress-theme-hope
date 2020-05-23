@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module "@vuepress/shared-utils/lib/logger" {
   interface LoggerOptions {
     logLevel: number;

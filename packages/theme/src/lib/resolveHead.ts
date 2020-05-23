@@ -1,8 +1,5 @@
-import {
-  HeadItem,
-  HopeHeadOptionConfig,
-  HopeVuepressConfig,
-} from "../../types";
+import { HopeHeadOptionConfig, HopeVuepressConfig } from "../../types";
+import { HeadItem } from "@mr-hope/vuepress-types";
 
 /** meta 键名 */
 let metaKeys: string[];

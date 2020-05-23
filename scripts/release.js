@@ -14,7 +14,6 @@ const getNpmTags = (version) => {
   return ["latest", "beta", "alpha", "next"];
 };
 
-// eslint-disable-next-line max-lines-per-function
 const release = async () => {
   await execa("yarn", ["run", "tsc"]);
 
@@ -90,6 +89,5 @@ const release = async () => {
 
 release().catch((err) => {
   console.error(err);
-  // eslint-disable-next-line no-process-exit
   process.exit(1);
 });

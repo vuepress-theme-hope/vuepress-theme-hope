@@ -93,7 +93,6 @@ export default class PhotoSwipeUI extends Vue {
       src: image.src,
       // eslint-disable-next-line id-length
       w: image.naturalWidth,
-      // eslint-disable-next-line id-length
       h: image.naturalHeight,
       title: image.alt,
     };

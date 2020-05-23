@@ -1,7 +1,4 @@
-/* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
-/* eslint-disable max-params */
-/* eslint-disable camelcase */
 import hash = require("hash-sum");
 import MarkdownIt = require("markdown-it");
 import StateBlock = require("markdown-it/lib/rules_block/state_block");

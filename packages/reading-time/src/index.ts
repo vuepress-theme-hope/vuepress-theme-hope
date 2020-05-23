@@ -1,4 +1,4 @@
-import { Context, Page, PluginOptionAPI } from "vuepress-types";
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { ReadingTimeOptions } from "../types";
 import readingTime from "./reading-time";
 
@@ -8,7 +8,7 @@ export = (
 ): PluginOptionAPI => ({
   name: "reading-time",
 
-  extendPageData($page: Page & Record<string, any>): void {
+  extendPageData($page): void {
     $page.readingTime = readingTime(
       // eslint-disable-next-line no-underscore-dangle
       $page._strippedContent,

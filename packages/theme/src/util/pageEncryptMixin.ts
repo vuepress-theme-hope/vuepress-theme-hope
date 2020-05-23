@@ -78,6 +78,10 @@ export default class PageEncryptMixin extends Vue {
   protected mounted(): void {
     const passwordConfig = localStorage.getItem("password");
 
-    if (passwordConfig) this.passwordConfig = JSON.parse(passwordConfig);
+    if (passwordConfig)
+      this.passwordConfig = JSON.parse(passwordConfig) as Record<
+        string,
+        string
+      >;
   }
 }

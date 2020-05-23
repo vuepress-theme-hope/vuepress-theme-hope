@@ -11,7 +11,7 @@ const navigate = (url: string, router: VueRouter, route: Route): void => {
   if (url)
     if (url && url.startsWith("/")) {
       // Inner absolute path
-      if (route.path !== url) router.push(url);
+      if (route.path !== url) void router.push(url);
     } else if (
       url.startsWith("http://") ||
       url.startsWith("https://") ||
@@ -23,7 +23,7 @@ const navigate = (url: string, router: VueRouter, route: Route): void => {
       // Inner relative path
       const base = route.path.slice(0, route.path.lastIndexOf("/"));
 
-      router.push(`${base}/${url}`);
+      void router.push(`${base}/${url}`);
     }
 };
 

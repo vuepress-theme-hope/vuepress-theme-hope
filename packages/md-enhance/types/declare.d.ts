@@ -1,12 +1,13 @@
 declare module "@vuepress/markdown/lib/lineNumbers" {
-  const lineNumbers: (md: any) => any;
+  import MarkdownIt = require("markdown-it");
+  const lineNumbers: (md: MarkdownIt) => void;
 
   export = lineNumbers;
 }
 
 declare module "flowchart.js" {
   interface Parse {
-    drawSVG: (id: string, options: any) => void;
+    drawSVG: (id: string, options: never) => void;
   }
 
   interface Flowchart {

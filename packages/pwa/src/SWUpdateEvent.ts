@@ -21,7 +21,8 @@ export default class SWUpdateEvent {
 
       channel.port1.onmessage = (event): void => {
         console.log("[PWA]: 完成 worker.skipWaiting().");
-        if (event.data.error) reject(event.data.error);
+        if ((event.data as { error: Error | null }).error)
+          reject((event.data as { error: Error | null }).error);
         else resolve(event.data);
       };
 

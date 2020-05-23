@@ -1,4 +1,4 @@
-import { Context, PluginOptionAPI } from "vuepress-types";
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { ResolvedHopeThemeConfig } from "../types";
 import getPlugin from "./lib/plugins";
 

@@ -17,7 +17,7 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { SidebarHeader, SidebarItem } from "@theme/util/sidebar";
 import { HopeSideBarConfigItem } from "@mr-hope/vuepress-shared-utils";
-import { PageComputed } from "vuepress-types";
+import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 import SidebarGroup from "@theme/components/SidebarGroup.vue";
 import SidebarLink from "@theme/components/SidebarLink.vue";

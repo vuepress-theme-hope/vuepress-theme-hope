@@ -5,7 +5,7 @@ env:
   es6: true
 
 extends:
-  - eslint:all
+  - eslint:recommended
   - plugin:vue/recommended
   - prettier
   - prettier/vue
@@ -16,8 +16,8 @@ plugins:
   - vue
 
 rules:
-  class-methods-use-this:
-    - off
+  # class-methods-use-this:
+  #   - off
 
   comma-dangle:
     - off
@@ -26,8 +26,8 @@ rules:
     - warn
     - max: 25
 
-  capitalized-comments:
-    - off
+  # capitalized-comments:
+  #   - off
 
   curly:
     - error
@@ -44,28 +44,28 @@ rules:
         - j
         - k
 
-  implicit-arrow-linebreak:
-    - off
+  # implicit-arrow-linebreak:
+  #   - off
 
   indent:
     - off
 
-  init-declarations:
-    - off
+  # init-declarations:
+  #   - off
 
   function-call-argument-newline:
     - error
     - consistent
 
-  line-comment-position:
-    - off
+  # line-comment-position:
+  #   - off
 
   max-statements:
     - warn
     - 25
 
-  new-cap:
-    - off
+  # new-cap:
+  #   - off
 
   nonblock-statement-body-position:
     - error
@@ -77,14 +77,14 @@ rules:
   no-debugger:
     - off
 
-  no-inline-comments:
-    - off
+  # no-inline-comments:
+  #   - off
 
-  no-magic-numbers:
-    - off
+  # no-magic-numbers:
+  #   - off
 
-  no-nested-ternary:
-    - off
+  # no-nested-ternary:
+  #   - off
 
   no-param-reassign:
     - error
@@ -138,6 +138,9 @@ rules:
     - error
     - as-needed
 
+  sort-imports:
+    - off
+
   sort-keys:
     - off
 
@@ -173,6 +176,7 @@ overrides:
     extends:
       - plugin:@typescript-eslint/eslint-recommended
       - plugin:@typescript-eslint/recommended
+      - plugin:@typescript-eslint/recommended-requiring-type-checking
       - prettier/@typescript-eslint
 
     plugins:
@@ -182,6 +186,9 @@ overrides:
 
     parserOptions:
       parser: "@typescript-eslint/parser"
+      project:
+        - "./tsconfig.json"
+        - "./test-tsconfig.json"
 
     rules:
       "@typescript-eslint/explicit-function-return-type":
@@ -207,7 +214,11 @@ overrides:
           format:
             - PascalCase
 
-      "@typescript-eslint/no-explicit-any": off
+      "@typescript-eslint/no-explicit-any":
+        - warn
+
+      "@typescript-eslint/no-unsafe-member-access":
+        - warn
 
   - files:
       - "*.d.ts"
@@ -227,9 +238,21 @@ overrides:
       - "**/test/**/*.spec.ts"
       - "**/test/**/*.test.js"
       - "**/test/**/*.test.ts"
+
     env:
       mocha: true
 
     rules:
       id-length: "off"
       max-lines-per-function: "off"
+
+  - files:
+      - "**/test/**/*.spec.ts"
+      - "**/test/**/*.test.ts"
+
+    rules:
+      "@typescript-eslint/no-explicit-any":
+        - off
+
+      "@typescript-eslint/no-unsafe-member-access":
+        - off

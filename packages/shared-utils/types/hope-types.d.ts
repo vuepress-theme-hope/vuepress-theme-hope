@@ -1,10 +1,9 @@
 import {
   AlgoliaOption,
-  NavBarConfig,
+  DefaultThemeLangI18nConfig,
   NavBarConfigItem,
-  SideBarConfig,
   SideBarConfigItemObject,
-} from "./vuepress-types";
+} from "@mr-hope/vuepress-types";
 
 /** vuepress-theme-hope 导航栏配置项 */
 export interface HopeNavBarConfigItem extends NavBarConfigItem {
@@ -28,6 +27,7 @@ export interface HopeSideBarConfigItemObject extends SideBarConfigItemObject {
   /** 当前侧边栏的子项 */
   children: HopeSideBarConfigItem[];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [props: string]: any;
 }
 
@@ -43,32 +43,6 @@ export type HopeSideBarConfig =
   | Record<string, HopeSideBarConfigItem[]>
   | "auto"
   | false;
-
-/** 国际化配置 */
-export interface LangI18nConfig {
-  /** 设置当前语言的代码 */
-  lang: string; // 将会被设置为 <html> 的 lang 属性
-  /** 多语言下拉菜单的标题 */
-  selectText: string;
-  /** 该语言下的更新时间文字 */
-  lastUpdated: string;
-  /** 该语言在下拉菜单中的标签 */
-  label: string;
-  /** 辅助标签 */
-  ariaLabel: string;
-  /** 编辑链接文字 */
-  editLinkText: string; // 默认为 "Edit this page"
-}
-
-/** 多语言配置 */
-export type LangLocalesConfig = Partial<LangI18nConfig> & {
-  /** 当前语言的导航栏链接 */
-  nav?: NavBarConfig;
-  /** 当前语言的侧边栏配置 */
-  sidebar?: SideBarConfig;
-  /** 当前语言的 algolia 设置 */
-  algolia?: AlgoliaOption;
-};
 
 /** 阅读时间 */
 interface ReadingTime {
@@ -139,11 +113,12 @@ interface HopeLangI18nConfigItem {
 }
 
 /** vuepress-theme-hope 国际化配置 */
-export type HopeLangI18nConfig = LangLocalesConfig & HopeLangI18nConfigItem;
+export type HopeLangI18nConfig = DefaultThemeLangI18nConfig &
+  HopeLangI18nConfigItem;
 
 /** vuepress-theme-hope 多语言配置 */
 export interface HopeLangLocalesConfig
-  extends LangLocalesConfig,
+  extends DefaultThemeLangI18nConfig,
     Partial<HopeLangI18nConfigItem> {
   /** 导航栏链接 */
   nav?: HopeNavBarConfig;

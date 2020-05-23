@@ -128,7 +128,7 @@ export default class Pagination extends Vue {
     if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
     else {
       const errorText = this.i18n.errorText.split("$page");
-      // eslint-disable-next-line no-alert
+
       alert(`${errorText[0]}${this.totalPages}${errorText[1]}`);
     }
   }

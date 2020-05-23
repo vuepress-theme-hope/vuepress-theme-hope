@@ -1,6 +1,5 @@
 /** 颜色 */
 export default class Color {
-  // eslint-disable-next-line max-params
   constructor(
     public type: "hex" | "rgb",
     public red: number,
@@ -51,7 +50,9 @@ export default class Color {
 
   /** 从 RGB 或 RGBA 中生成 */
   public static fromRGB(color: string): Color {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     const RGBAPattern = /rgba\((.+)?,(.+)?,(.+)?,(.+)?\)/u;
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     const RGBPattern = /rgb\((.+)?,(.+)?,(.+)?\)/u;
     const fromRGB = (colorString: string): number =>
       colorString.includes("%")

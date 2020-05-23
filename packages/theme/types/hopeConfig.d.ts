@@ -4,30 +4,30 @@ import {
   HopeNavBarConfig,
   HopeSideBarConfig,
 } from "@mr-hope/vuepress-shared-utils";
-import { VuepressConfig, VuepressThemeConfig } from "./vuepressConfig";
+import { DefaultThemeConfig, SiteConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "vuepress-plugin-md-enhance/types";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 
 /** 页脚配置 */
-export type HopeFooterConfig = Partial<{
+export interface HopeFooterConfig {
   /** 页脚的默认文字 */
-  content: string;
+  content?: string;
   /** 默认的版权信息 */
-  copyright: string;
+  copyright?: string;
   /** 是否默认显示页脚 */
-  display: boolean;
-}>;
+  display?: boolean;
+}
 
 /** 加密选项 */
-export type EncryptOptions = Partial<{
+export interface EncryptOptions {
   /** 最高权限密码 */
-  global: string | string[];
+  global?: string | string[];
   /** 是否全局加密 */
-  globalEncrypt: boolean;
+  globalEncrypt?: boolean;
   /** 加密配置 */
-  config: Record<string, string | string[]>;
-}>;
+  config?: Record<string, string | string[]>;
+}
 
 /** 合法的媒体 */
 type BlogMedia =
@@ -89,7 +89,7 @@ export type BlogOptions = Partial<{
 }>;
 
 /** vuepress-theme-hope 主题配置 */
-export interface HopeThemeConfig extends VuepressThemeConfig {
+export interface HopeThemeConfig extends DefaultThemeConfig {
   lastUpdated?: never;
   editLinkText?: never;
   /** 暗黑模式下 logo */
@@ -187,7 +187,7 @@ export type HopeHeadOptionConfig = Partial<{
 }>;
 
 /** vuepress-theme-hope 项目配置 */
-export interface HopeVuepressConfig extends VuepressConfig {
+export interface HopeVuepressConfig extends SiteConfig {
   /** 自定义主题的配置 */
   themeConfig: HopeThemeConfig;
   /** 构建头部选项 */

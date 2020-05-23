@@ -6,7 +6,6 @@ const baseVersion = require("../packages/theme/package.json").version;
 const packagesDir = path.resolve(__dirname, "../packages/");
 const files = fs.readdirSync(packagesDir);
 
-// eslint-disable-next-line max-lines-per-function
 files.forEach((pkgName) => {
   if (pkgName.charAt(0) === "." || pkgName === "theme") return;
 
@@ -47,8 +46,8 @@ files.forEach((pkgName) => {
       },
       homepage: `https://github.com/Mister-Hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       peerDependencies: {
-        typescript: "^3.9.2",
-        "vuepress-types": "^0.9.2",
+        "@mr-hope/vuepress-types": "^0.9.2",
+        typescript: "^3.9.3",
       },
     };
 

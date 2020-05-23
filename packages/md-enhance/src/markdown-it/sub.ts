@@ -1,6 +1,4 @@
-/* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
-
 import MarkdownIt = require("markdown-it");
 import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
@@ -38,7 +36,7 @@ const subscript = (state: StateInline, silent?: boolean): boolean => {
   const content = state.src.slice(start + 1, state.pos);
 
   // don't allow unescaped spaces/newlines inside
-  if (content.match(/(^|[^\\])(\\\\)*\s/u)) {
+  if (/(^|[^\\])(\\\\)*\s/u.exec(content)) {
     state.pos = start;
 
     return false;

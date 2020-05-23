@@ -1,6 +1,19 @@
-import { LocaleConfig, ThemeConfig } from "vuepress-types/types/config";
-import { PageComputed, PageFrontmatter } from "vuepress-types/types/page";
-import { SiteData } from "vuepress-types/types/context";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import {
+  I18nConfig,
+  ThemeConfig,
+  PageComputed,
+  PageFrontmatter,
+  SiteData,
+} from "@mr-hope/vuepress-types";
+import { HopeThemeConfig } from "./hopeConfig";
+
+declare module "@mr-hope/vuepress-types" {
+  interface ThemeConfig extends HopeThemeConfig {
+    // FIXME:
+    _?: undefined;
+  }
+}
 
 declare module "vue/types/vue" {
   export interface Vue {
@@ -13,13 +26,13 @@ declare module "vue/types/vue" {
     $description: string;
     $frontmatter: PageFrontmatter;
     $lang: string;
-    $localeConfig: LocaleConfig;
+    $localeConfig: { lang: string; path: string };
     $localePath: string;
     $page: PageComputed;
     $site: SiteData;
     $siteTitle: string;
     $themeConfig: ThemeConfig;
-    $themeLocaleConfig: LocaleConfig;
+    $themeLocaleConfig: I18nConfig;
     $title: string;
   }
 }

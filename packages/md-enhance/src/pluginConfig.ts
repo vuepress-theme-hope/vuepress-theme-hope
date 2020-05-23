@@ -1,8 +1,7 @@
-import { PluginConfig, ThemeConfig } from "vuepress-types";
+import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "../types";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line max-lines-per-function
 const pluginConfig = (
   markdownOption: MarkdownEnhanceOption,
   themeConfig: ThemeConfig

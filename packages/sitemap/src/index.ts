@@ -3,8 +3,14 @@ import {
   PageComputed,
   PluginOptionAPI,
   SiteData,
-} from "vuepress-types";
-import { SitemapOptions } from "../types";
+} from "@mr-hope/vuepress-types";
+import {
+  SitemapFrontmatterOption,
+  SitemapLinkOption,
+  SitemapImageOption,
+  SitemapVideoOption,
+  SitemapOptions,
+} from "../types";
 import { SitemapStream } from "sitemap";
 import chalk from "chalk";
 import { createWriteStream } from "fs";
@@ -14,7 +20,7 @@ import { resolve } from "path";
 const log = (
   msg: string,
   color: "cyan" | "red" = "cyan",
-  label = "Sitemap"
+  label = "SITEMAP"
 ): void => console.log(`\n${chalk[color](` ${label} `)} ${msg}`);
 
 const stripLocalePrefix = (
@@ -34,31 +40,38 @@ const stripLocalePrefix = (
   };
 };
 
-// eslint-disable-next-line max-lines-per-function
+interface SitemapOption {
+  lastmod: string;
+  changefreq?: string;
+  priority?: number;
+  img?: SitemapImageOption[];
+  video?: SitemapVideoOption[];
+  links?: SitemapLinkOption[];
+}
+
 const generatePageMap = (
   siteData: SiteData,
   base: string,
   options: SitemapOptions
-): Map<string, string[]> => {
+): Map<string, SitemapOption> => {
   const {
     changefreq = "daily",
     exclude = [],
     dateFormatter = (page: PageComputed): string =>
       page.lastUpdatedTime ? new Date(page.lastUpdatedTime).toISOString() : "",
-    ...others
   } = options;
 
   const { pages, locales = {} } = siteData;
 
   // Sort the locale keys in reverse order so that longer locales, such as '/en/', match before the default '/'
-  const localeKeys = Object.keys(locales).sort().reverse();
+  const localeKeys = Object.keys(locales).sort().reverse() || [];
   const localesByNormalizedPagePath = pages.reduce(
     (map: Map<string, string[]>, page) => {
       const { normalizedPath, localePrefix } = stripLocalePrefix(
         page.path,
         localeKeys
       );
-      const prefixesByPath = map.get(normalizedPath) ?? [];
+      const prefixesByPath = map.get(normalizedPath) || [];
       prefixesByPath.push(localePrefix);
 
       return map.set(normalizedPath, prefixesByPath);
@@ -66,10 +79,11 @@ const generatePageMap = (
     new Map()
   );
 
-  const pagesMap = new Map();
+  const pagesMap = new Map<string, SitemapOption>();
 
   pages.forEach((page) => {
-    const frontmatterOptions = page.frontmatter.sitemap || {};
+    const frontmatterOptions: SitemapFrontmatterOption =
+      (page.frontmatter.sitemap as SitemapFrontmatterOption) || {};
     const metaRobots = (page.frontmatter.meta || []).find(
       (meta) => meta.name === "robots"
     );
@@ -89,19 +103,19 @@ const generatePageMap = (
     const relatedLocales =
       localesByNormalizedPagePath.get(normalizedPath) || [];
 
-    let links: { lang: string; url: string }[] = [];
+    let links: SitemapLinkOption[] = [];
 
     if (relatedLocales.length > 1)
       links = relatedLocales.map((localePrefix) => ({
-        lang: locales[localePrefix].lang,
+        lang: locales[localePrefix].lang || "en",
         url: `${base}${normalizedPath.replace("/", localePrefix)}`,
       }));
 
     pagesMap.set(page.path, {
+      ...frontmatterOptions,
       changefreq: frontmatterOptions.changefreq || changefreq,
-      lastmodISO: lastmodifyTime,
+      lastmod: lastmodifyTime,
       links,
-      ...others,
     });
   });
 
@@ -115,10 +129,17 @@ const generateSiteMap = (
 ): void => {
   log("Generating sitemap...");
 
-  const { urls = [], hostname, xslUrl, exclude = [] } = options;
+  const {
+    urls = [],
+    hostname,
+    xslUrl,
+    exclude = [],
+    xmlNameSpace: xmlns,
+  } = options;
   const sitemap = new SitemapStream({
     hostname: hostname || themeConfig.hostname,
     xslUrl,
+    xmlns,
   });
   const sitemapXML = resolve(outDir, options.outFile || "sitemap.xml");
   const writeStream = createWriteStream(sitemapXML);
@@ -143,6 +164,7 @@ export = (options: SitemapOptions, context: Context): PluginOptionAPI => ({
 
   generated(): void {
     const hostname = options.hostname || context.themeConfig.hostname;
+
     if (hostname) generateSiteMap(context.getSiteData(), context, options);
     else
       log(

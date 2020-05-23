@@ -42,7 +42,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { PageComputed, SiteData, ThemeConfig } from "vuepress-types";
+import { PageComputed, SiteData, ThemeConfig } from "@mr-hope/vuepress-types";
 import {
   SidebarGroupItem,
   SidebarItem,

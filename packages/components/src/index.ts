@@ -1,4 +1,4 @@
-import { PluginOptionAPI } from "vuepress-types";
+import { PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { resolve } from "path";
 
 export = {

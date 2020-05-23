@@ -1,9 +1,28 @@
-import { PageComputed, PageFrontmatter } from "vuepress-types";
+import { PageComputed, PageFrontmatter } from "@mr-hope/vuepress-types";
 import dayjs = require("dayjs");
 
 /** 处理日期 */
-export const getDate = (dateString: string): (number | undefined)[] => {
-  const time = dayjs(dateString);
+export const getDate = (date: Date | string): (number | undefined)[] => {
+  const time = dayjs(date);
+  if (typeof date === "string") {
+    const pattern = /\s*(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?\s*/u;
+    const [, year, month, day, hour, minute, second] = pattern.exec(date) || [];
+
+    const getNumber = (a: string): number | undefined =>
+      typeof a === "undefined" ? undefined : Number(a);
+
+    const getYear = (yearNumber: number | undefined): number | undefined =>
+      yearNumber && yearNumber < 100 ? yearNumber + 2000 : yearNumber;
+
+    return [
+      getYear(getNumber(year)),
+      getNumber(month),
+      getNumber(day),
+      getNumber(hour),
+      getNumber(minute),
+      getNumber(second),
+    ];
+  }
 
   if (time.isValid()) {
     const year = time.year();
@@ -25,24 +44,7 @@ export const getDate = (dateString: string): (number | undefined)[] => {
     return [year, month, date, hour, minute, second];
   }
 
-  const pattern = /\s*(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?\s*/u;
-  const [, year, month, day, hour, minute, second] =
-    pattern.exec(dateString) || [];
-
-  const getNumber = (a: string): number | undefined =>
-    typeof a === "undefined" ? undefined : Number(a);
-
-  const getYear = (yearNumber: number | undefined): number | undefined =>
-    yearNumber && yearNumber < 100 ? yearNumber + 2000 : yearNumber;
-
-  return [
-    getYear(getNumber(year)),
-    getNumber(month),
-    getNumber(day),
-    getNumber(hour),
-    getNumber(minute),
-    getNumber(second),
-  ];
+  return [];
 };
 
 /**
@@ -51,8 +53,8 @@ export const getDate = (dateString: string): (number | undefined)[] => {
  * @param dateB 比较的日期B
  */
 export const compareDate = (
-  dataA: string | undefined,
-  dataB: string | undefined
+  dataA: string | Date | undefined,
+  dataB: string | Date | undefined
 ): number => {
   if (!dataA) return 1;
   if (!dataB) return -1;
@@ -105,15 +107,19 @@ export const filterArticle = (
 /** 排序文章 */
 export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
   pages.slice(0).sort((prev, next) => {
-    const prevSticky = prev.frontmatter.sticky;
-    const nextSticky = next.frontmatter.sticky;
-    const prevTime = prev.frontmatter.time || prev.frontmatter.date;
-    const nextTime = next.frontmatter.time || next.frontmatter.date;
+    const prevSticky = prev.frontmatter.sticky as number | boolean | undefined;
+    const nextSticky = next.frontmatter.sticky as number | boolean | undefined;
+    const prevTime =
+      (prev.frontmatter.time as string | Date | undefined) ||
+      (prev.frontmatter.date as string | Date | undefined);
+    const nextTime =
+      (next.frontmatter.time as string | Date | undefined) ||
+      (next.frontmatter.date as string | Date | undefined);
 
     if (prevSticky && nextSticky)
       return prevSticky === nextSticky
         ? compareDate(prevTime, nextTime)
-        : nextSticky - prevSticky;
+        : Number(nextSticky) - Number(prevSticky);
     if (prevSticky && !nextSticky) return -1;
     if (!prevSticky && nextSticky) return 1;
 

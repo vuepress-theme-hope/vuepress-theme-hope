@@ -36,7 +36,7 @@ import {
   i18n,
 } from "@mr-hope/vuepress-shared-utils";
 import { ArticleMixin } from "@theme/util/articleMixin";
-import { PageComputed } from "vuepress-types";
+import { PageComputed } from "@mr-hope/vuepress-types";
 import navigate from "@theme/util/navigate";
 
 @Component

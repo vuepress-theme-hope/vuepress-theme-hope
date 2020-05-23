@@ -2,7 +2,7 @@ import {
   HopeSideBarConfig,
   HopeSideBarConfigItem,
 } from "@mr-hope/vuepress-shared-utils";
-import { PageComputed, SiteData } from "vuepress-types";
+import { PageComputed, SiteData } from "@mr-hope/vuepress-types";
 import {
   ensureEndingSlash,
   ensureExt,
@@ -46,7 +46,7 @@ const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
       type: "group",
       collapsable: false,
       title: page.title,
-      icon: page.frontmatter.icon,
+      icon: page.frontmatter.icon as string | undefined,
       path: "",
       children: headers.map<SidebarHeaderItem>((header) => ({
         ...header,
@@ -120,7 +120,7 @@ export interface SidebarGroupItem {
   /** 当前侧边栏的子项 */
   children: SidebarItem[];
 
-  [props: string]: any;
+  [props: string]: unknown;
 }
 
 interface SidebarErrorItem {
@@ -181,13 +181,11 @@ const resolve = (prefix: string, path: string, base: string): string =>
  * @param pages 项目包含的页面配置
  * @param base 路径基
  */
-// eslint-disable-next-line max-lines-per-function
 const resolveItem = (
   sidebarConfigItem: HopeSideBarConfigItem,
   pages: PageComputed[],
   base: string,
   prefix = ""
-  // eslint-disable-next-line max-params
 ): SidebarItem => {
   // 返回页面链接以及内部的标题链接
   if (typeof sidebarConfigItem === "string")
@@ -244,7 +242,7 @@ export const resolveSidebarItems = (
   site: SiteData,
   localePath: string
 ): SidebarItem[] => {
-  const { themeConfig = {}, pages } = site;
+  const { themeConfig, pages } = site;
   /** 本语言的配置 */
   const localeConfig =
     localePath && themeConfig.locales
@@ -252,8 +250,9 @@ export const resolveSidebarItems = (
       : themeConfig;
 
   /** 侧边栏配置 */
-  const themeSidebarConfig: HopeSideBarConfig =
-    localeConfig.sidebar || themeConfig.sidebar;
+  const themeSidebarConfig: HopeSideBarConfig | undefined =
+    (localeConfig.sidebar as HopeSideBarConfig | undefined) ||
+    themeConfig.sidebar;
 
   // 自动通过当前页面的标题生成
   if (page.frontmatter.sidebar === "auto" || themeSidebarConfig === "auto")

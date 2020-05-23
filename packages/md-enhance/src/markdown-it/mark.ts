@@ -1,6 +1,4 @@
 /* eslint-disable max-statements */
-/* eslint-disable max-lines-per-function */
-
 import MarkdownIt = require("markdown-it");
 import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 

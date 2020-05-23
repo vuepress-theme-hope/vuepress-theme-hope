@@ -1,5 +1,4 @@
 /* eslint-disable max-statements */
-/* eslint-disable max-lines-per-function */
 import MarkdownIt = require("markdown-it");
 import StateBlock = require("markdown-it/lib/rules_block/state_block");
 import StateInline = require("markdown-it/lib/rules_inline/state_inline");
@@ -117,7 +116,6 @@ const blockTex = (
   start: number,
   end: number,
   silent: boolean
-  // eslint-disable-next-line max-params
 ): boolean => {
   let firstLine;
   let lastLine;
@@ -198,7 +196,7 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<span class='katex-error' title='${escapeHtml(
-        error.toString()
+        (error as Error).toString()
       )}'>${escapeHtml(tex)}</span>`;
     }
   };
@@ -212,7 +210,7 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<p class='katex-block katex-error' title='${escapeHtml(
-        error.toString()
+        (error as Error).toString()
       )}'>${escapeHtml(tex)}</p>`;
     }
   };

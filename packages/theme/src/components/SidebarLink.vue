@@ -12,7 +12,7 @@ import {
 } from "@theme/util/sidebar";
 import { hashRE, isActive } from "@theme/util/path";
 import { HopeSideBarConfigItemObject } from "@mr-hope/vuepress-shared-utils";
-import { PageHeader } from "vuepress-types";
+import { PageHeader } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 
 /** 渲染图标 */
@@ -131,7 +131,6 @@ interface SidebarLinkProps {
 
 @Component({
   functional: true,
-  // eslint-disable-next-line max-lines-per-function
   render(
     h,
     { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props },

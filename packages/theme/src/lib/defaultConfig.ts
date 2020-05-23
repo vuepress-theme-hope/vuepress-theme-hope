@@ -1,6 +1,5 @@
 /** 默认配置 */
 export default {
-  // eslint-disable-next-line no-process-env
   base: process.env.VuePress_BASE || "/",
 
   theme: "hope",
