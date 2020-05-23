@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.2...v0.4.0-alpha.3) (2020-05-23)
+
+### Bug Fixes
+
+- fix mising files ignore by npm ([703f0ae](https://github.com/Mister-Hope/vuepress-theme-hope/commit/703f0ae645bdaadeb0c98aff869472f7c2e6b755))
+
 ## [0.4.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.1...v0.4.0-alpha.2) (2020-05-23)
 
 ### Bug Fixes

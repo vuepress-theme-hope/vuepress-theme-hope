@@ -62,7 +62,7 @@
 </template>
 
 <script lang='ts'>
-import { ArticleMixin, StickyMixin } from "@theme/util/articleMixin";
+import { ArticleMixin, StickyMixin } from "../util/articleMixin";
 import { Component, Mixins, Vue } from "vue-property-decorator";
 import { capitalize, i18n } from "@mr-hope/vuepress-shared-utils";
 import ArticleIconFill from "@mr-hope/vuepress-shared-utils/icons/ArticleIconFill.vue";

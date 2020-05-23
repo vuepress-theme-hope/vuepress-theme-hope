@@ -47,11 +47,11 @@ import {
   SidebarGroupItem,
   SidebarItem,
   resolvePageforSidebar,
-} from "@theme/util/sidebar";
+} from "../util/sidebar";
 import NextIcon from "@mr-hope/vuepress-shared-utils/icons/NextIcon.vue";
 import PrevIcon from "@mr-hope/vuepress-shared-utils/icons/PrevIcon.vue";
 import { Route } from "vue-router";
-import { resolvePath } from "@theme/util/path";
+import { resolvePath } from "../util/path";
 
 const getSidebarItems = (items: SidebarItem[], result: SidebarItem[]) => {
   for (const item of items)

@@ -37,7 +37,7 @@
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
-import ClickOutside from "@theme/util/click-outside";
+import ClickOutside from "../util/click-outside";
 import ThemeOptions from "@theme/components/ThemeOptions.vue";
 
 @Component({

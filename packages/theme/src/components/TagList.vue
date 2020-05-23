@@ -15,7 +15,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
-import navigate from "@theme/util/navigate";
+import navigate from "../util/navigate";
 
 @Component
 export default class TagList extends Vue {

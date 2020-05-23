@@ -15,12 +15,12 @@
 <script lang="ts">
 import { Component, Mixins, Vue, Watch } from "vue-property-decorator";
 import ArticleItem from "@theme/components/ArticleItem.vue";
-import { ArticleMixin } from "@theme/util/articleMixin";
+import { ArticleMixin } from "../util/articleMixin";
 import MyTransition from "@theme/components/MyTransition.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 import { deepAssign } from "@mr-hope/vuepress-shared-utils";
-import { generatePagination } from "@theme/util/article";
+import { generatePagination } from "../util/article";
 
 @Component({ components: { ArticleItem, MyTransition } })
 export default class ArticleList extends Mixins(ArticleMixin) {

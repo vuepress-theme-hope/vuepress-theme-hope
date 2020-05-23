@@ -32,8 +32,8 @@
 
 <script lang='ts'>
 import { Component, Mixins, Prop, Vue } from "vue-property-decorator";
-import { SidebarItem, resolveSidebarItems } from "@theme/util/sidebar";
-import GlobalEncryptMixin from "@theme/util/globalEncryptMixin";
+import { SidebarItem, resolveSidebarItems } from "../util/sidebar";
+import GlobalEncryptMixin from "../util/globalEncryptMixin";
 import Navbar from "@theme/components/Navbar.vue";
 import Password from "@theme/components/Password.vue";
 import Sidebar from "@theme/components/Sidebar.vue";

@@ -37,7 +37,7 @@ import Weibo from "@mr-hope/vuepress-shared-utils/icons/media/Weibo.vue";
 import Whatsapp from "@mr-hope/vuepress-shared-utils/icons/media/Whatsapp.vue";
 import Youtube from "@mr-hope/vuepress-shared-utils/icons/media/Youtube.vue";
 import Zhihu from "@mr-hope/vuepress-shared-utils/icons/media/Zhihu.vue";
-import navigate from "@theme/util/navigate";
+import navigate from "../util/navigate";
 
 /** 合法媒体 */
 const medias = [

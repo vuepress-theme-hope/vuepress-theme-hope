@@ -60,7 +60,7 @@ import PageFooter from "@theme/components/PageFooter.vue";
 import PageInfo from "@PageInfo";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
-import { SidebarItem } from "@theme/util/sidebar";
+import { SidebarItem } from "../util/sidebar";
 import md5 = require("md5");
 
 @Component({

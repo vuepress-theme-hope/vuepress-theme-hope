@@ -15,13 +15,13 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { SidebarHeader, SidebarItem } from "@theme/util/sidebar";
+import { SidebarHeader, SidebarItem } from "../util/sidebar";
 import { HopeSideBarConfigItem } from "@mr-hope/vuepress-shared-utils";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 import SidebarGroup from "@theme/components/SidebarGroup.vue";
 import SidebarLink from "@theme/components/SidebarLink.vue";
-import { isActive } from "@theme/util/path";
+import { isActive } from "../util/path";
 
 /** 当前项目是否激活 */
 const descendantIsActive = (route: Route, item: SidebarItem): boolean => {

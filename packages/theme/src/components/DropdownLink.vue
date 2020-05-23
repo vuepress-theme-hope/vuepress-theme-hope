@@ -65,7 +65,7 @@
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import DropdownTransition from "@theme/components/DropdownTransition.vue";
-import { NavBarConfigItem } from "@theme/util/navbar";
+import { NavBarConfigItem } from "../util/navbar";
 import NavLink from "@theme/components/NavLink.vue";
 
 @Component({ components: { NavLink, DropdownTransition } })

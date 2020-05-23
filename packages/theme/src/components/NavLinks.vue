@@ -25,7 +25,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import DropdownLink from "@theme/components/DropdownLink.vue";
 import NavLink from "@theme/components/NavLink.vue";
 import { RouterOptions } from "vue-router";
-import { resolveNavLinkItem } from "@theme/util/navbar";
+import { resolveNavLinkItem } from "../util/navbar";
 
 @Component({ components: { NavLink, DropdownLink } })
 export default class NavLinks extends Vue {
