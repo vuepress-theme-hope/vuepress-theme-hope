@@ -1,7 +1,7 @@
 {
   "name": "theme-docs",
   "private": true,
-  "version": "0.4.0-alpha.3",
+  "version": "0.4.0-alpha.4",
   "description": "Docs for vuepress-theme-hope",
   "scripts": {
     "serve": "vuepress dev src",
@@ -12,6 +12,6 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "1.5.0",
-    "vuepress-theme-hope": "^0.4.0-alpha.3"
+    "vuepress-theme-hope": "^0.4.0-alpha.4"
   }
 }
