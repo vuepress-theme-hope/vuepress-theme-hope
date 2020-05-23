@@ -1,4 +1,4 @@
-import { HopeLangI18nConfig, ReadingTime } from "../../types";
+import { HopeLangI18nConfig } from "../../types";
 
 export type Langs = "zh-CN" | "en-US";
 

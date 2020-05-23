@@ -1,6 +1,11 @@
-import { Context, PluginOptionAPI, ThemeConfig } from "vuepress-types";
+import {
+  Context,
+  PluginOptionAPI,
+  ThemeConfig,
+  Page,
+} from "@mr-hope/vuepress-types";
 import { PageSeoInfo, SeoOptions } from "../types";
-import { SeoContent } from "../types/seo";
+import { SeoContent, ArticleSeoContent } from "../types/seo";
 
 /** 添加 Meta */
 const getAddMeta = (meta: Record<string, string>[]) => (
@@ -8,21 +13,20 @@ const getAddMeta = (meta: Record<string, string>[]) => (
   content: string,
   attribute = ["article:", "og:"].some((type) => name.startsWith(type))
     ? "property"
-    : "name",
+    : "name"
 ): void => {
   if (content) meta.push({ [attribute]: name, content });
 };
 
 /** 获取语言 */
-const getLocales = ({ locale = {} }: ThemeConfig = {}): string[] => {
-  const langs = [];
-  for (const path in locale)
-    if (locale[path].lang) langs.push(locale[path].lang);
+const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
+  const langs: string[] = [];
+  for (const path in locales)
+    if (locales[path].lang) langs.push(locales[path].lang as string);
 
   return langs;
 };
 
-// eslint-disable-next-line max-lines-per-function
 const defaultSeo = ({
   $page,
   $site,
@@ -35,9 +39,9 @@ const defaultSeo = ({
       author: pageAuthor,
       date,
       image,
-      time = date,
+      time = date as Date,
       tag,
-      tags = tag,
+      tags = tag as string[],
     },
     lastUpdatedTime,
   } = $page;
@@ -46,12 +50,13 @@ const defaultSeo = ({
   /** 页面类型 */
   const type = ["article", "category", "tag", "timeline"].some((folder) =>
     // 博客分类页面
-    $page.regularPath.startsWith(`/${folder}`),
+    $page.regularPath.startsWith(`/${folder}`)
   )
     ? "website"
     : "article";
   /** 作者 */
-  const author = pageAuthor === false ? "" : pageAuthor || themeAuthor || "";
+  const author =
+    pageAuthor === false ? "" : (pageAuthor as string) || themeAuthor || "";
   /** 更改时间 */
   const modifiedTime =
     typeof lastUpdatedTime === "number"
@@ -59,18 +64,20 @@ const defaultSeo = ({
       : "";
   /** 文章标签 */
   const articleTags: string[] = Array.isArray(tags)
-    ? tags
+    ? (tags as string[])
     : typeof tag === "string"
     ? [tag]
     : [];
 
   return {
     "og:url": `${hostname}${path}`,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "og:site_name": $site.title || "",
     "og:title": $page.title,
     "og:description": $page.frontmatter.description || "",
     "og:type": type,
-    "og:image": image ? `${hostname}${image}` : "",
+    "og:image": image ? `${hostname}${image as string}` : "",
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "og:updated_time": modifiedTime,
     // eslint-disable-next-line no-underscore-dangle
     "og:locale": $page._computed.$lang,
@@ -81,7 +88,9 @@ const defaultSeo = ({
 
     "article:author": author,
     "article:tag": articleTags,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "article:published_time": time ? new Date(time).toISOString() : "",
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "article:modified_time": modifiedTime,
   };
 };
@@ -89,14 +98,15 @@ const defaultSeo = ({
 const appendMeta = (
   add: (name: string, content: string, attribute?: string) => void,
   content: SeoContent,
-  options: SeoOptions,
+  options: SeoOptions
 ): void => {
   // eslint-disable-next-line guard-for-in
   for (const property in content)
     switch (property) {
       case "article:tag":
-        (content as any)["article:tag"].forEach((tag: string) =>
-          add("article:tag", tag),
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        (content as ArticleSeoContent)["article:tag"]!.forEach((tag: string) =>
+          add("article:tag", tag)
         );
         break;
       case "og:locale:alternate":
@@ -106,6 +116,7 @@ const appendMeta = (
         });
         break;
       default:
+        // eslint-disable-next-line
         add(property, (content as any)[property]);
     }
 
@@ -117,14 +128,14 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => ({
   name: "seo",
 
   extendPageData($page): void {
-    const $site = context.siteConfig;
+    const $site = context.getSiteData();
     const meta = $page.frontmatter.meta || [];
     const addMeta = getAddMeta(meta);
 
     // In Vuepress core, permalinks are built after enhancers.
     const pageClone = Object.assign(
-      Object.create(Object.getPrototypeOf($page)),
-      $page,
+      Object.create(Object.getPrototypeOf($page)) as Page,
+      $page
     );
     pageClone.buildPermalink();
 

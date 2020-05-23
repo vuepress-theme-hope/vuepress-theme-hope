@@ -17,7 +17,7 @@ import { Component, Mixins, Vue, Watch } from "vue-property-decorator";
 import ArticleItem from "@theme/components/ArticleItem.vue";
 import { ArticleMixin } from "@theme/util/articleMixin";
 import MyTransition from "@theme/components/MyTransition.vue";
-import { PageComputed } from "vuepress-types";
+import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 import { deepAssign } from "@mr-hope/vuepress-shared-utils";
 import { generatePagination } from "@theme/util/article";
@@ -56,7 +56,6 @@ export default class ArticleList extends Mixins(ArticleMixin) {
   /** 更新文章列表 */
   private getArticleList() {
     try {
-      // eslint-disable-next-line no-underscore-dangle
       return this.$pagination ? this.$pagination._matchedPages : this.$articles;
     } catch (err) {
       return this.$articles;

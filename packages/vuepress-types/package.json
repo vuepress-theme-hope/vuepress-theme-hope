@@ -1,0 +1,42 @@
+{
+  "name": "@mr-hope/vuepress-types",
+  "version": "0.4.0-alpha.1",
+  "description": "VuePress TypeScript helpers",
+  "keywords": [
+    "types",
+    "vuepress"
+  ],
+  "homepage": "https://github.com/vuepress",
+  "bugs": {
+    "url": "https://github.com/vuepress/vuepress-community/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress/vuepress-community.git"
+  },
+  "license": "MIT",
+  "author": "meteorlxy <meteor.lxy@foxmail.com>",
+  "types": "types/index.d.ts",
+  "files": [
+    "types"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .ts types"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/markdown-it": "^10.0.1",
+    "@types/markdown-it-anchor": "^4.0.4",
+    "@types/webpack-dev-server": "^3.11.0",
+    "cac": "^6.5.10",
+    "markdown-it": "^11.0.0",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.2",
+    "webpack": "^4.43.0",
+    "webpack-chain": "^6.4.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "peerDependencies": {
+    "vuepress": "^1.5.0"
+  }
+}

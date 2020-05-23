@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
 // Process ^superscript^
 
@@ -39,7 +38,7 @@ const superscript = (state: StateInline, silent?: boolean): boolean => {
   const content = state.src.slice(start + 1, state.pos);
 
   // don't allow unescaped spaces/newlines inside
-  if (content.match(/(^|[^\\])(\\\\)*\s/u)) {
+  if (/(^|[^\\])(\\\\)*\s/u.exec(content)) {
     state.pos = start;
 
     return false;

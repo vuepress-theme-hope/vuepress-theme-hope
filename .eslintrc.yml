@@ -5,7 +5,7 @@ env:
   es6: true
 
 extends:
-  - eslint:all
+  - eslint:recommended
   - plugin:vue/recommended
   - prettier
   - prettier/vue
@@ -15,20 +15,7 @@ plugins:
   - prettier
   - vue
 
-parserOptions:
-  parser: "@typescript-eslint/parser"
-
 rules:
-  no-console: "off"
-
-  no-debugger: "off"
-
-  no-useless-constructor:
-    - off
-
-  class-methods-use-this:
-    - off
-
   comma-dangle:
     - off
 
@@ -36,64 +23,35 @@ rules:
     - warn
     - max: 25
 
-  capitalized-comments:
-    - off
-
   curly:
     - error
     - multi
-
-  global-require:
-    - off
 
   id-length:
     - error
     - min: 2
       exceptions:
-        - e
+        - a
+        - b
         - h
         - i
-        - x
-        - y
-
-  implicit-arrow-linebreak:
-    - off
+        - j
+        - k
 
   indent:
-    - off
-    - 2
-    - ignoredNodes:
-        - ConditionalExpression
-
-  init-declarations:
     - off
 
   function-call-argument-newline:
     - error
     - consistent
 
-  line-comment-position:
-    - off
-
   max-statements:
     - warn
     - 25
 
-  new-cap:
-    - off
-
   nonblock-statement-body-position:
     - error
     - any
-
-  no-inline-comments:
-    - off
-
-  no-magic-numbers:
-    - off
-
-  no-nested-ternary:
-    - off
 
   no-param-reassign:
     - error
@@ -102,21 +60,6 @@ rules:
   no-plusplus:
     - error
     - allowForLoopAfterthoughts: true
-
-  no-process-env:
-    - off
-
-  no-sync:
-    - off
-
-  no-ternary:
-    - off
-
-  no-undefined:
-    - off
-
-  no-unused-vars:
-    - off
 
   no-warning-comments:
     - warn
@@ -137,21 +80,12 @@ rules:
     - object: true
       array: false
 
-  prefer-named-capture-group:
-    - off
-
   quotes:
     - off
 
   radix:
     - error
     - as-needed
-
-  sort-keys:
-    - off
-
-  strict:
-    - off
 
   vue/require-default-prop:
     - warn
@@ -182,6 +116,7 @@ overrides:
     extends:
       - plugin:@typescript-eslint/eslint-recommended
       - plugin:@typescript-eslint/recommended
+      - plugin:@typescript-eslint/recommended-requiring-type-checking
       - prettier/@typescript-eslint
 
     plugins:
@@ -191,13 +126,39 @@ overrides:
 
     parserOptions:
       parser: "@typescript-eslint/parser"
+      project:
+        - "./tsconfig.json"
+        - "./test-tsconfig.json"
 
     rules:
       "@typescript-eslint/explicit-function-return-type":
         - warn
         - allowTypedFunctionExpressions: true
 
-      "@typescript-eslint/no-explicit-any": off
+      "@typescript-eslint/naming-convention":
+        - warn
+        - selector: default
+          format:
+            - camelCase
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector: variable
+          format:
+            - camelCase
+            - UPPER_CASE
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector: typeLike
+          format:
+            - PascalCase
+
+      "@typescript-eslint/no-explicit-any":
+        - warn
+
+      "@typescript-eslint/no-unsafe-member-access":
+        - warn
 
   - files:
       - "*.d.ts"
@@ -206,13 +167,32 @@ overrides:
         - off
 
   - files:
+      - "*.vue"
+
+    rules:
+      no-unused-vars:
+        - off
+
+  - files:
       - "**/test/**/*.spec.js"
       - "**/test/**/*.spec.ts"
       - "**/test/**/*.test.js"
       - "**/test/**/*.test.ts"
+
     env:
       mocha: true
 
     rules:
       id-length: "off"
       max-lines-per-function: "off"
+
+  - files:
+      - "**/test/**/*.spec.ts"
+      - "**/test/**/*.test.ts"
+
+    rules:
+      "@typescript-eslint/no-explicit-any":
+        - off
+
+      "@typescript-eslint/no-unsafe-member-access":
+        - off

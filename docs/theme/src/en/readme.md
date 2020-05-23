@@ -99,7 +99,7 @@ And then create a `tsconfig.json` file in your root directory:
     "experimentalDecorators": true, // Typescript files for '.vue' needs this option
     "module": "commonjs", // Avoiding some issues related to vuepress-types
     // type definition files of vuepress and this theme
-    "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
+    "types": ["@mr-hope/vuepress-theme-types"]
   },
   "include": [
     "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder

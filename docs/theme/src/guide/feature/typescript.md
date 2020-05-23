@@ -26,7 +26,7 @@ vuepress-theme-hope 的大部分文件都是使用 Typescript 编写，所以 vu
     "experimentalDecorators": true, // Vue 的 Typescript 写法需要开启此选项
     "module": "commonjs", // 为了避免 vuepress-types 解析失败
     // vuepress 与本主题的类型定义文件
-    "types": ["@mr-hope/vuepress-theme-types", "vuepress-types"]
+    "types": ["@mr-hope/vuepress-theme-types"]
   },
   "include": [
     "src/.vuepress/enhanceApp.ts" // 需要至少命中一个 ts 文件

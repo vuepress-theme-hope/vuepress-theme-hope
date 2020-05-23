@@ -48,7 +48,10 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
 
   private isSidebarOpen = false;
 
-  private touchStart: Record<string, number> = {};
+  private touchStart: { clientX: number; clientY: number } = {
+    clientX: 0,
+    clientY: 0,
+  };
 
   /** 是否应该展示导航栏 */
   private get showNavbar(): boolean {
@@ -64,7 +67,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
         this.$themeConfig.logo ||
         this.$themeConfig.repo ||
         this.$themeConfig.nav ||
-        this.$themeLocaleConfig.nav,
+        this.$themeLocaleConfig.nav
     );
   }
 
@@ -112,19 +115,19 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
   }
 
   // Side swipe
-  private onTouchStart(e: TouchEvent): void {
+  private onTouchStart(event: TouchEvent): void {
     this.touchStart = {
-      x: e.changedTouches[0].clientX,
-      y: e.changedTouches[0].clientY,
+      clientX: event.changedTouches[0].clientX,
+      clientY: event.changedTouches[0].clientY,
     };
   }
 
-  private onTouchEnd(e: TouchEvent): void {
-    const dx = e.changedTouches[0].clientX - this.touchStart.x;
-    const dy = e.changedTouches[0].clientY - this.touchStart.y;
+  private onTouchEnd(event: TouchEvent): void {
+    const dx = event.changedTouches[0].clientX - this.touchStart.clientX;
+    const dy = event.changedTouches[0].clientY - this.touchStart.clientY;
 
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40)
-      if (dx > 0 && this.touchStart.x <= 80) this.toggleSidebar(true);
+      if (dx > 0 && this.touchStart.clientX <= 80) this.toggleSidebar(true);
       else this.toggleSidebar(false);
   }
 }

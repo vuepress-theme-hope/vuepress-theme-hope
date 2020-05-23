@@ -23,7 +23,7 @@ export const normalize = (path: string): string =>
  * @param path 待处理的路径
  */
 export const getHash = (path: string): string | void => {
-  const match = path.match(hashRE);
+  const match = hashRE.exec(path);
   if (match) return match[0];
 
   return "";
@@ -41,14 +41,14 @@ export const isExternal = (path: string): boolean => outboundRE.test(path);
  *
  * @param path 待判断的路径
  */
-export const isMailto = (path: string): boolean => /^mailto:/u.test(path);
+export const isMailto = (path: string): boolean => path.startsWith("mailto:");
 
 /**
  * 判断一个路径是否是电话链接
  *
  * @param path 待判断的路径
  */
-export const isTel = (path: string): boolean => /^tel:/u.test(path);
+export const isTel = (path: string): boolean => path.startsWith("tel:");
 
 /**
  * 确保路径有合理的后缀
@@ -59,12 +59,12 @@ export const ensureExt = (path: string): string => {
   // 外部链接不处理
   if (isExternal(path)) return path;
 
-  const hashMatch = path.match(hashRE);
+  const hashMatch = hashRE.exec(path);
   const hash = hashMatch ? hashMatch[0] : "";
   const normalized = normalize(path);
 
   // 如果链接以 `/` 结尾不处理
-  if (endingSlashRE.test(normalized)) return path;
+  if (normalized.endsWith("/")) return path;
 
   // 添加 `.html` 后缀
   return `${normalized}.html${hash}`;
@@ -109,7 +109,7 @@ export const isActive = (route: Route, path: string): boolean => {
 export const resolvePath = (
   relative: string,
   base: string,
-  append?: boolean,
+  append?: boolean
 ): string => {
   // 外部链接直接返回
   if (isExternal(relative)) return relative;

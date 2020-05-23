@@ -17,8 +17,8 @@ export default class PageEncryptMixin extends Vue {
       const keys = Object.keys(this.encryptOptions.config);
       /** 命中键名 */
       const hitKeys = keys
-        .filter((key) => this.$route.path.indexOf(key) === 0)
-        .sort((x, y) => y.length - x.length);
+        .filter((key) => this.$route.path.startsWith(key))
+        .sort((a, b) => b.length - a.length);
 
       return hitKeys;
     }
@@ -40,7 +40,7 @@ export default class PageEncryptMixin extends Vue {
           typeof keyConfig === "string" ? [keyConfig] : keyConfig;
         /** 比较结果 */
         const result = hitPasswords.filter(
-          (password) => this.passwordConfig[key] === password,
+          (password) => this.passwordConfig[key] === password
         );
 
         return result.length !== 0;
@@ -78,6 +78,10 @@ export default class PageEncryptMixin extends Vue {
   protected mounted(): void {
     const passwordConfig = localStorage.getItem("password");
 
-    if (passwordConfig) this.passwordConfig = JSON.parse(passwordConfig);
+    if (passwordConfig)
+      this.passwordConfig = JSON.parse(passwordConfig) as Record<
+        string,
+        string
+      >;
   }
 }

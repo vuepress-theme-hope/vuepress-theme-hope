@@ -1,11 +1,10 @@
+import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "../types";
-import { PluginConfig } from "vuepress-types";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line max-lines-per-function
 const pluginConfig = (
   markdownOption: MarkdownEnhanceOption,
-  themeConfig: Record<string, any>,
+  themeConfig: ThemeConfig
 ): PluginConfig[] => {
   /** 多语言标题配置 */
   const containerConfig = i18n.config.container;
@@ -15,7 +14,7 @@ const pluginConfig = (
 
   /** 处理标题 */
   const resolveConfig = (
-    titleConfig: Record<string, string>,
+    titleConfig: Record<string, string>
   ): Record<string, string> => {
     titleConfig["/"] = titleConfig[baseLangPath];
 
@@ -60,7 +59,7 @@ const pluginConfig = (
       /** 自定义居中容器 */
       ["container", { type: "center", defaultTitle: "" }],
       /** 自定义居左容器 */
-      ["container", { type: "left", defaultTitle: "" }],
+      ["container", { type: "left", defaultTitle: "" }]
     );
 
   return config;

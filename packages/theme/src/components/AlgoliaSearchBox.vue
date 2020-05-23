@@ -6,7 +6,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { AlgoliaOption } from "@mr-hope/vuepress-shared-utils";
+import { AlgoliaOption } from "@mr-hope/vuepress-types";
 
 @Component
 export default class AlgoliaSearchBox extends Vue {

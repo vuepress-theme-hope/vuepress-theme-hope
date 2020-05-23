@@ -36,7 +36,7 @@ import {
   i18n,
 } from "@mr-hope/vuepress-shared-utils";
 import { ArticleMixin } from "@theme/util/articleMixin";
-import { PageComputed } from "vuepress-types";
+import { PageComputed } from "@mr-hope/vuepress-types";
 import navigate from "@theme/util/navigate";
 
 @Component
@@ -49,10 +49,7 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
 
   private get bloggerName(): string {
     return (
-      this.blogConfig.blogger ||
-      this.$themeConfig.author ||
-      this.$site.title ||
-      ""
+      this.blogConfig.name || this.$themeConfig.author || this.$site.title || ""
     );
   }
 
@@ -70,7 +67,7 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
 
   private jumpIntro() {
     if (this.hasIntro)
-      navigate(this.blogConfig.intro, this.$router, this.$route);
+      navigate(this.blogConfig.intro as string, this.$router, this.$route);
   }
 }
 </script>

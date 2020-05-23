@@ -1,7 +1,6 @@
-/* eslint-disable max-classes-per-file */
 import { Component, Vue } from "vue-property-decorator";
 import { filterArticle, getDate, sortArticle } from "./article";
-import { PageComputed } from "vuepress-types";
+import { PageComputed } from "@mr-hope/vuepress-types";
 
 export interface TimelineItem {
   year: number;
@@ -31,8 +30,8 @@ export class TimelineMixin extends Vue {
         pages,
         (frontmatter) =>
           (frontmatter.time || frontmatter.date) &&
-          frontmatter.timeline !== false,
-      ),
+          frontmatter.timeline !== false
+      )
     );
   }
 
@@ -43,11 +42,11 @@ export class TimelineMixin extends Vue {
     // 先过滤再排序
     this.$timelineItems.forEach((article) => {
       const {
-        frontmatter: { date, time = date },
+        frontmatter: { date, time = date as Date },
       } = article;
       const [year, month, day] = getDate(time);
 
-      if (year) {
+      if (year && month && day) {
         if (!timelineItems[0] || timelineItems[0].year !== year)
           timelineItems.unshift({ year, articles: [] });
 
@@ -68,7 +67,7 @@ export class StickyMixin extends Vue {
 
     // 先过滤再排序
     return sortArticle(
-      filterArticle(pages, (frontmatter) => frontmatter.sticky),
+      filterArticle(pages, (frontmatter) => Boolean(frontmatter.sticky))
     );
   }
 }

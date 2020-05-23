@@ -1,14 +1,14 @@
 import { CommentOptions } from "../types";
-import { PluginOptionAPI } from "vuepress-types";
+import { PluginOptionAPI } from "@mr-hope/vuepress-types";
 
 export = (options: CommentOptions): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: "comment",
 
-    define: () =>
-      ({
-        COMMENT_OPTIONS: options,
-      } as Record<string, any>),
+    define: () => ({
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      COMMENT_OPTIONS: options,
+    }),
 
     plugins: [
       /** Typescript Support */

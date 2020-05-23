@@ -3,7 +3,7 @@ export interface LastUpdateOption {
   transformer?: (timestamp: number, lang: string) => string;
 }
 
-declare module "vuepress-types/types/page" {
+declare module "@mr-hope/vuepress-types/types/page" {
   interface PageComputed {
     lastUpdatedTime?: number;
   }

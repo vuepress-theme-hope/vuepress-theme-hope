@@ -11,7 +11,7 @@ const getGitLastUpdatedTimeStamp = (filePath: string): number | undefined => {
       .stdout.toString();
 
     return parseInt(timestamp) * 1000;
-  } catch (e) {
+  } catch (err) {
     /* do not handle for now */
     return undefined;
   }

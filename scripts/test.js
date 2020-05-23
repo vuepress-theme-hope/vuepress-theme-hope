@@ -1,7 +1,6 @@
 const execa = require("execa");
 const inquirer = require("inquirer");
 
-// eslint-disable-next-line max-lines-per-function
 const test = async () => {
   /** 插件名称 */
   const name = ["comment", "md-enhance"];
@@ -41,6 +40,5 @@ const test = async () => {
 
 test().catch((err) => {
   console.error(err);
-  // eslint-disable-next-line no-process-exit
   process.exit(1);
 });

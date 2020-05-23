@@ -86,7 +86,7 @@ export default class NavLinks extends Vue {
     if (!this.repoLink) return "";
     if (this.$themeConfig.repoLabel) return this.$themeConfig.repoLabel;
 
-    const [repoHost] = this.repoLink.match(/^https?:\/\/[^/]+/u);
+    const [repoHost] = this.repoLink.match(/^https?:\/\/[^/]+/u) || [""];
     const platforms = ["GitHub", "GitLab", "Bitbucket"];
 
     for (let index = 0; index < platforms.length; index++) {

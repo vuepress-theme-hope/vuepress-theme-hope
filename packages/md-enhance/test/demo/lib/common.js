@@ -1,10 +1,9 @@
-/* eslint-disable max-lines-per-function */
 /* eslint-disable max-statements */
 
 'use strict';
 
 // same as UNESCAPE_MD_RE plus a space
-const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,.\/:;<=>?@[\]^_`{|}~-])/gu;
+const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
 module.exports = (code, name, markup) => (state, silent) => {
   const max = state.posMax;

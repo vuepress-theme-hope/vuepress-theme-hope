@@ -1,9 +1,9 @@
-import { PageComputed, PageFrontmatter } from "vuepress-types";
+import { PageComputed, PageFrontmatter } from "@mr-hope/vuepress-types";
 import dayjs = require("dayjs");
 
 /** 处理日期 */
 export const getDate = (dateString: string): (number | undefined)[] => {
-  const time = dayjs(dateString);
+  const time = dayjs(dateString.trim());
 
   if (time.isValid()) {
     const year = time.year();
@@ -25,15 +25,18 @@ export const getDate = (dateString: string): (number | undefined)[] => {
     return [year, month, date, hour, minute, second];
   }
 
-  const pattern = /\s*(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?\s*/u;
+  const pattern = /(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?/u;
   const [, year, month, day, hour, minute, second] =
-    pattern.exec(dateString) || [];
+    pattern.exec(dateString.trim()) || [];
 
-  const getNumber = (x: string): number | undefined =>
-    typeof x === "undefined" ? undefined : Number(x);
+  const getNumber = (a: string): number | undefined =>
+    typeof a === "undefined" ? undefined : Number(a);
 
   const getYear = (yearNumber: number | undefined): number | undefined =>
     yearNumber && yearNumber < 100 ? yearNumber + 2000 : yearNumber;
+
+  const getSecond = (secondNumber: number | undefined): number | undefined =>
+    hour && minute && !second ? 0 : secondNumber;
 
   return [
     getYear(getNumber(year)),
@@ -41,7 +44,7 @@ export const getDate = (dateString: string): (number | undefined)[] => {
     getNumber(day),
     getNumber(hour),
     getNumber(minute),
-    getNumber(second),
+    getSecond(getNumber(second)),
   ];
 };
 
@@ -52,26 +55,27 @@ export const getDate = (dateString: string): (number | undefined)[] => {
  */
 export const compareDate = (
   dataA: string | undefined,
-  dataB: string | undefined,
+  dataB: string | undefined
 ): number => {
   if (!dataA) return 1;
   if (!dataB) return -1;
 
   const compare = (
-    x: (number | undefined)[],
-    y: (number | undefined)[],
+    a: (number | undefined)[],
+    b: (number | undefined)[]
   ): number => {
-    if (x.length === 0) return 0;
-    if (typeof y[0] === "undefined") return -1;
-    if (typeof x[0] === "undefined") return 1;
+    if (a.length === 0) return 0;
+    if (typeof b[0] === "undefined")
+      return typeof a[0] === "undefined" || a[0] === 0 ? 0 : -1;
+    if (typeof a[0] === "undefined") return b[0] === 0 ? 0 : 1;
 
-    if (y[0] - x[0] === 0) {
-      x.shift();
-      y.shift();
+    if (b[0] - a[0] === 0) {
+      a.shift();
+      b.shift();
 
-      return compare(x, y);
+      return compare(a, b);
     }
-    return y[0] - x[0];
+    return b[0] - a[0];
   };
 
   return compare(getDate(dataA), getDate(dataB));
@@ -85,7 +89,7 @@ export const compareDate = (
  */
 export const filterArticle = (
   pages: PageComputed[],
-  filterFunc?: (frontmatter: PageFrontmatter) => boolean,
+  filterFunc?: (frontmatter: PageFrontmatter) => boolean
 ): PageComputed[] =>
   pages.filter((page) => {
     const {
@@ -105,15 +109,19 @@ export const filterArticle = (
 /** 排序文章 */
 export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
   pages.slice(0).sort((prev, next) => {
-    const prevSticky = prev.frontmatter.sticky;
-    const nextSticky = next.frontmatter.sticky;
-    const prevTime = prev.frontmatter.time || prev.frontmatter.date;
-    const nextTime = next.frontmatter.time || next.frontmatter.date;
+    const prevSticky = prev.frontmatter.sticky as number | boolean | undefined;
+    const nextSticky = next.frontmatter.sticky as number | boolean | undefined;
+    const prevTime =
+      (prev.frontmatter.time as string | undefined) ||
+      (prev.frontmatter.date as string | undefined);
+    const nextTime =
+      (next.frontmatter.time as string | undefined) ||
+      (next.frontmatter.date as string | undefined);
 
     if (prevSticky && nextSticky)
       return prevSticky === nextSticky
         ? compareDate(prevTime, nextTime)
-        : nextSticky - prevSticky;
+        : Number(nextSticky) - Number(prevSticky);
     if (prevSticky && !nextSticky) return -1;
     if (!prevSticky && nextSticky) return 1;
 
@@ -122,7 +130,7 @@ export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
 
 export const generatePagination = (
   pages: PageComputed[],
-  perPage = 10,
+  perPage = 10
 ): PageComputed[][] => {
   const result: PageComputed[][] = [];
   let index = 0;

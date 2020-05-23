@@ -1,6 +1,4 @@
-/* eslint-disable spaced-comment */
-
-/// <reference types="vuepress-types" />
+/// <reference types="@mr-hope/vuepress-types" />
 
 /// <reference types="@mr-hope/vuepress-plugin-comment" />
 

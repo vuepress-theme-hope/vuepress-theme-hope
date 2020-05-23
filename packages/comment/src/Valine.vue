@@ -38,15 +38,6 @@ export default class Valine extends Vue {
     return (globalEnable && pageEnable !== false) || pageEnable === true;
   }
 
-  @Watch("$route")
-  onRouteChange(to: Route, from: Route) {
-    if (to.path !== from.path)
-      // Refresh comment when navigating to a new page
-      Vue.nextTick(() => {
-        this.valine(to.path);
-      });
-  }
-
   private mounted() {
     if (this.valineEnable) {
       const AV = require("leancloud-storage");
@@ -55,6 +46,15 @@ export default class Valine extends Vue {
     }
 
     this.valine(this.$route.path);
+  }
+
+  @Watch("$route")
+  onRouteChange(to: Route, from: Route) {
+    if (to.path !== from.path)
+      // Refresh comment when navigating to a new page
+      Vue.nextTick(() => {
+        this.valine(to.path);
+      });
   }
 
   // Init valine
@@ -195,7 +195,7 @@ export default class Valine extends Vue {
             border-color var(--grey12, #bbb)
 
             .vtime
-              color var(--grey12, #bbb)
+              color var(--light-grey, #999)
 
             .vmeta .vat
               color var(--accent-color, $accentColor)

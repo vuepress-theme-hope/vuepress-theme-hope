@@ -2,11 +2,12 @@ import { HopeNavBarConfigItem } from "@mr-hope/vuepress-shared-utils";
 
 export interface NavBarConfigItem extends HopeNavBarConfigItem {
   type: "link" | "links";
+  items: NavBarConfigItem[];
 }
 
 export const resolveNavLinkItem = (
   navbarLink: NavBarConfigItem,
-  beforeprefix = "",
+  beforeprefix = ""
 ): NavBarConfigItem => {
   const prefix = beforeprefix + (navbarLink.prefix || "");
 
@@ -21,9 +22,7 @@ export const resolveNavLinkItem = (
   if (navbarItem.items && navbarItem.items.length)
     Object.assign(navbarItem, {
       type: "links",
-      items: navbarItem.items.map((item: any) =>
-        resolveNavLinkItem(item, prefix),
-      ),
+      items: navbarItem.items.map((item) => resolveNavLinkItem(item, prefix)),
     });
   else navbarItem.type = "link";
 

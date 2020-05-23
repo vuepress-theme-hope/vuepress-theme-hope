@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test:serve": "vuepress dev test/demo"
+    "test:serve": "vuepress dev test/demo",
+    "test:clean-serve": "vuepress dev test/demo --no-cache"
   },
   "publishConfig": {
     "access": "public"
@@ -38,7 +39,7 @@
     "vuepress-plugin-typescript": "^0.3.0"
   },
   "peerDependencies": {
-    "typescript": "^3.9.3",
-    "vuepress-types": "^0.9.3"
+    "@mr-hope/vuepress-types": "^0.4.0-alpha.1",
+    "typescript": "^3.9.3"
   }
 }

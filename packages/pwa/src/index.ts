@@ -1,15 +1,15 @@
-import { Context, PluginOptionAPI } from "vuepress-types";
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { PWAOptions } from "../types";
 import { resolve } from "path";
 import chalk = require("chalk");
 import fs = require("fs-extra");
 import workboxBuild = require("workbox-build");
 
-// eslint-disable-next-line max-lines-per-function
 export = (options: PWAOptions, context: Context): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: "pwa",
 
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     define: { SW_BASE_URL: context.base || "/" },
 
     globalUIComponents: options.popupComponent || "SWUpdatePopup",
@@ -22,7 +22,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
     ],
   };
 
-  config.generated = async (): Promise<any> => {
+  config.generated = async (): Promise<void> => {
     console.log(chalk.cyan("wait"), "Generating service worker...");
 
     const swFilePath = resolve(context.outDir, "./service-worker.js");
@@ -38,7 +38,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
     await fs.writeFile(
       swFilePath,
       await fs.readFile(resolve(__dirname, "./skip-waiting.js"), "utf8"),
-      { flag: "a" },
+      { flag: "a" }
     );
   };
 

@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/seo#readme",
   "peerDependencies": {
-    "vuepress-types": "^0.9.3"
+    "@mr-hope/vuepress-types": "^0.4.0-alpha.1"
   }
 }

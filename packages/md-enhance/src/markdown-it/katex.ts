@@ -1,5 +1,4 @@
 /* eslint-disable max-statements */
-/* eslint-disable max-lines-per-function */
 import MarkdownIt = require("markdown-it");
 import StateBlock = require("markdown-it/lib/rules_block/state_block");
 import StateInline = require("markdown-it/lib/rules_inline/state_inline");
@@ -11,7 +10,7 @@ import katex = require("katex");
  */
 const isValidDelim = (
   state: StateInline,
-  pos: number,
+  pos: number
 ): { canOpen: boolean; canClose: boolean } => {
   let canOpen = true;
   let canClose = true;
@@ -116,8 +115,7 @@ const blockTex = (
   state: StateBlock,
   start: number,
   end: number,
-  silent: boolean,
-  // eslint-disable-next-line max-params
+  silent: boolean
 ): boolean => {
   let firstLine;
   let lastLine;
@@ -136,7 +134,7 @@ const blockTex = (
 
   if (silent) return true;
 
-  if (firstLine.trim().slice(-2) === "$$") {
+  if (firstLine.trim().endsWith("$$")) {
     // Single line expression
     firstLine = firstLine.trim().slice(0, -2);
     found = true;
@@ -154,7 +152,7 @@ const blockTex = (
       // non-empty line with negative indent should stop the list:
       break;
 
-    if (state.src.slice(pos, max).trim().slice(-2) === "$$") {
+    if (state.src.slice(pos, max).trim().endsWith("$$")) {
       lastPos = state.src.slice(0, max).lastIndexOf("$$");
       lastLine = state.src.slice(pos, lastPos);
       found = true;
@@ -186,7 +184,7 @@ const escapeHtml = (unsafeHTML: string): string =>
 
 export default (
   md: MarkdownIt,
-  options: katex.KatexOptions = { throwOnError: false },
+  options: katex.KatexOptions = { throwOnError: false }
 ): void => {
   // set KaTeX as the renderer for markdown-it-simplemath
   const katexInline = (tex: string): string => {
@@ -198,7 +196,7 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<span class='katex-error' title='${escapeHtml(
-        error.toString(),
+        (error as Error).toString()
       )}'>${escapeHtml(tex)}</span>`;
     }
   };
@@ -212,7 +210,7 @@ export default (
       if (options.throwOnError) console.warn(error);
 
       return `<p class='katex-block katex-error' title='${escapeHtml(
-        error.toString(),
+        (error as Error).toString()
       )}'>${escapeHtml(tex)}</p>`;
     }
   };

@@ -23,10 +23,7 @@ export default class PageEdit extends Vue {
   }
 
   private get lastUpdatedText() {
-    return (
-      this.$themeLocaleConfig.lastUpdated ||
-      "Last Updated"
-    );
+    return this.$themeLocaleConfig.lastUpdated || "Last Updated";
   }
 
   private get editLink() {
@@ -45,15 +42,12 @@ export default class PageEdit extends Vue {
   }
 
   private get editLinkText() {
-    return (
-      this.$themeLocaleConfig.editLinkText ||
-      "Edit this page"
-    );
+    return this.$themeLocaleConfig.editLinkText || "Edit this page";
   }
 
   private createEditLink() {
     const {
-      repo,
+      repo = "",
       docsRepo = repo,
       docsDir = "",
       docsBranch = "master",

@@ -1,4 +1,4 @@
-import { Page, SiteConfig, ThemeConfig } from "vuepress-types";
+import { Page, SiteConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { SeoContent } from "./seo";
 
 export interface PageSeoInfo {
@@ -7,7 +7,7 @@ export interface PageSeoInfo {
   /** 站点对象 */
   $site: SiteConfig;
   /** 主题配置 */
-  themeConfig: ThemeConfig;
+  themeConfig: ThemeConfig | Record<string, never>;
   /** 当前支持的语言列表 */
   locale: string[];
   /** 当前页面地址 */

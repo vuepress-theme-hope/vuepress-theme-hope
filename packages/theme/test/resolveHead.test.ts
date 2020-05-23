@@ -94,13 +94,13 @@ describe("Test resolveHead function", () => {
   });
 
   it("should not generate icon and author if them exist", () => {
-    const config = {
+    const config: HopeVuepressConfig = {
       theme: "hope",
       head: [
         ["link", { rel: "icon", href: "/icon.ico" }],
         ["meta", { name: "author", content: "Mr.Hope" }],
       ],
-      headOptions: {
+      headOption: {
         icon: "/favicon.ico",
       },
       themeConfig: {
@@ -124,7 +124,7 @@ describe("Test resolveHead function", () => {
           },
         ],
       ],
-      headOptions: {
+      headOption: {
         icon: "/favicon.ico",
       },
       themeConfig: {

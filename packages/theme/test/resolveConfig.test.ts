@@ -251,9 +251,9 @@ describe("Test resolveTheme function", () => {
 
   it("should resolve locates for vuepress", () => {
     expect(resolvedConfig.locales).to.have.property("/");
-    expect(resolvedConfig!.locales!["/"]).to.have.property("lang");
+    expect(resolvedConfig.locales!["/"]).to.have.property("lang");
     expect(resolvedConfig.locales).to.have.property("/en/");
-    expect(resolvedConfig!.locales!["/en/"]).to.have.property("lang");
+    expect(resolvedConfig.locales!["/en/"]).to.have.property("lang");
   });
 
   it("To have base option", () => {

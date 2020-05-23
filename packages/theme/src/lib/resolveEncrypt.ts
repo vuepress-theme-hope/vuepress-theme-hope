@@ -13,13 +13,13 @@ const resolveEncrypt = (encrypt: EncryptOptions): void => {
       encrypt.global = md5(encrypt.global);
     else if (Array.isArray(encrypt.global))
       encrypt.global = encrypt.global.map((globalPassword) =>
-        md5(globalPassword),
+        md5(globalPassword)
       );
     else
       throw new Error(
         `[vuepress-theme-hope]: You asked for global Encrtption but you did not specific valid global Password. 
 
-Please add "global" option your "themeConfig.encrypt" config. It can be string or string[].`,
+Please add "global" option your "themeConfig.encrypt" config. It can be string or string[].`
       );
 
   // 处理密码配置
@@ -34,14 +34,14 @@ Please add "global" option your "themeConfig.encrypt" config. It can be string o
         if (typeof configPassword === "string") return md5(configPassword);
 
         throw new Error(`[vuepress-theme-hope]: You config "themeConfig.encrypt.config", but your config is invalid. 
-
-Key ${key}'s value MUST be string or string[]. But ${configPassword} 's type is ${typeof configPassword}. Please fix it`);
+        
+Key ${key}'s value MUST be string or string[]. But it's type is ${typeof configPassword}. Please fix it`);
       });
     else
       throw new Error(
         `[vuepress-theme-hope]: You config "themeConfig.encrypt.config", but your config is invalid. 
 
-The value of key ${key} MUST be string or string[]. But not it's ${typeof password}. Please fix it`,
+The value of key ${key} MUST be string or string[]. But not it's ${typeof password}. Please fix it`
       );
   });
 };

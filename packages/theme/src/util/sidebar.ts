@@ -2,7 +2,7 @@ import {
   HopeSideBarConfig,
   HopeSideBarConfigItem,
 } from "@mr-hope/vuepress-shared-utils";
-import { PageComputed, SiteData } from "vuepress-types";
+import { PageComputed, SiteData } from "@mr-hope/vuepress-types";
 import {
   ensureEndingSlash,
   ensureExt,
@@ -46,7 +46,7 @@ const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
       type: "group",
       collapsable: false,
       title: page.title,
-      icon: page.frontmatter.icon,
+      icon: page.frontmatter.icon as string | undefined,
       path: "",
       children: headers.map<SidebarHeaderItem>((header) => ({
         ...header,
@@ -62,7 +62,7 @@ const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
 /** 寻找匹配的侧边栏配置 */
 const resolveMatchingConfig = (
   regularPath: string,
-  config: HopeSideBarConfigItem[] | Record<string, HopeSideBarConfigItem[]>,
+  config: HopeSideBarConfigItem[] | Record<string, HopeSideBarConfigItem[]>
 ): { base: string; config: HopeSideBarConfigItem[] } | false => {
   // 数组意味着最简单的配置方式，直接返回
   if (Array.isArray(config))
@@ -72,7 +72,7 @@ const resolveMatchingConfig = (
     };
 
   for (const base in config)
-    if (ensureEndingSlash(regularPath).indexOf(encodeURI(base)) === 0)
+    if (ensureEndingSlash(regularPath).startsWith(encodeURI(base)))
       return {
         base,
         config: config[base],
@@ -120,10 +120,13 @@ export interface SidebarGroupItem {
   /** 当前侧边栏的子项 */
   children: SidebarItem[];
 
-  [props: string]: any;
+  [props: string]: unknown;
 }
 
-type SidebarErrorItem = { type: "error"; path: string };
+interface SidebarErrorItem {
+  type: "error";
+  path: string;
+}
 
 /**
  * 处理侧边栏项，为其合并页面配置
@@ -133,7 +136,7 @@ type SidebarErrorItem = { type: "error"; path: string };
  */
 export const resolvePageforSidebar = (
   pages: PageComputed[],
-  path: string,
+  path: string
 ): SidebarPageItem | SidebarExternalItem | SidebarErrorItem => {
   // 外部链接
   if (isExternal(path))
@@ -178,19 +181,17 @@ const resolve = (prefix: string, path: string, base: string): string =>
  * @param pages 项目包含的页面配置
  * @param base 路径基
  */
-// eslint-disable-next-line max-lines-per-function
 const resolveItem = (
   sidebarConfigItem: HopeSideBarConfigItem,
   pages: PageComputed[],
   base: string,
-  prefix = "",
-  // eslint-disable-next-line max-params
+  prefix = ""
 ): SidebarItem => {
   // 返回页面链接以及内部的标题链接
   if (typeof sidebarConfigItem === "string")
     return resolvePageforSidebar(
       pages,
-      resolve(prefix, sidebarConfigItem, base),
+      resolve(prefix, sidebarConfigItem, base)
     );
 
   // 自定义标题，格式为 ['路径', '自定义标题']
@@ -200,7 +201,7 @@ const resolveItem = (
       resolvePageforSidebar(pages, resolve(prefix, sidebarConfigItem[0], base)),
       {
         title: sidebarConfigItem[1],
-      },
+      }
     );
 
   // 对象不存在子项
@@ -210,11 +211,11 @@ const resolveItem = (
     return Object.assign(
       resolvePageforSidebar(
         pages,
-        resolve(prefix, sidebarConfigItem.path, base),
+        resolve(prefix, sidebarConfigItem.path, base)
       ),
       {
         title: sidebarConfigItem.title,
-      },
+      }
     );
 
   // 对每个子项递归处理再返回
@@ -226,8 +227,8 @@ const resolveItem = (
         child,
         pages,
         base,
-        `${prefix}${sidebarConfigItem.prefix || ""}`,
-      ),
+        `${prefix}${sidebarConfigItem.prefix || ""}`
+      )
     ),
     collapsable: sidebarConfigItem.collapsable !== false,
   };
@@ -239,9 +240,9 @@ const resolveItem = (
 export const resolveSidebarItems = (
   page: PageComputed,
   site: SiteData,
-  localePath: string,
+  localePath: string
 ): SidebarItem[] => {
-  const { themeConfig = {}, pages } = site;
+  const { themeConfig, pages } = site;
   /** 本语言的配置 */
   const localeConfig =
     localePath && themeConfig.locales
@@ -249,8 +250,9 @@ export const resolveSidebarItems = (
       : themeConfig;
 
   /** 侧边栏配置 */
-  const themeSidebarConfig: HopeSideBarConfig =
-    localeConfig.sidebar || themeConfig.sidebar;
+  const themeSidebarConfig: HopeSideBarConfig | undefined =
+    (localeConfig.sidebar as HopeSideBarConfig | undefined) ||
+    themeConfig.sidebar;
 
   // 自动通过当前页面的标题生成
   if (page.frontmatter.sidebar === "auto" || themeSidebarConfig === "auto")

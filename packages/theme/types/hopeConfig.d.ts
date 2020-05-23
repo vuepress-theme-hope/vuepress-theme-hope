@@ -4,30 +4,30 @@ import {
   HopeNavBarConfig,
   HopeSideBarConfig,
 } from "@mr-hope/vuepress-shared-utils";
-import { VuepressConfig, VuepressThemeConfig } from "./vuepressConfig";
+import { DefaultThemeConfig, SiteConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "vuepress-plugin-md-enhance/types";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 
 /** 页脚配置 */
-export type HopeFooterConfig = Partial<{
+export interface HopeFooterConfig {
   /** 页脚的默认文字 */
-  content: string;
+  content?: string;
   /** 默认的版权信息 */
-  copyright: string;
+  copyright?: string;
   /** 是否默认显示页脚 */
-  display: boolean;
-}>;
+  display?: boolean;
+}
 
 /** 加密选项 */
-export type EncryptOptions = Partial<{
+export interface EncryptOptions {
   /** 最高权限密码 */
-  global: string | string[];
+  global?: string | string[];
   /** 是否全局加密 */
-  globalEncrypt: boolean;
+  globalEncrypt?: boolean;
   /** 加密配置 */
-  config: Record<string, string | string[]>;
-}>;
+  config?: Record<string, string | string[]>;
+}
 
 /** 合法的媒体 */
 type BlogMedia =
@@ -71,25 +71,27 @@ export interface ProjectOptions {
 }
 
 /** 博客选项 */
-export type BlogOptions = Partial<{
+export type BlogOptions = {
   /** 博主名称 */
-  name: string;
+  name?: string;
   /** 博主头像 */
-  avatar: string;
+  avatar?: string;
   /** 是否在侧边栏展示博主信息 */
-  sidebarDisplay: "mobile" | "none" | "always";
+  sidebarDisplay?: "mobile" | "none" | "always";
   /** 博主的个人介绍地址 */
-  intro: string;
+  intro?: string;
   /** 自定义链接 */
-  links: Partial<Record<BlogMedia, string>>;
+  links?: Partial<Record<BlogMedia, string>>;
   /** 时间轴自定义文字 */
-  timeline: string;
+  timeline?: string;
   /** 项目配置 */
-  project: ProjectOptions[];
-}>;
+  project?: ProjectOptions[];
+  /** 每页的项目数量 */
+  perPage?: number;
+};
 
 /** vuepress-theme-hope 主题配置 */
-export interface HopeThemeConfig extends VuepressThemeConfig {
+export interface HopeThemeConfig extends DefaultThemeConfig {
   lastUpdated?: never;
   editLinkText?: never;
   /** 暗黑模式下 logo */
@@ -108,7 +110,7 @@ export interface HopeThemeConfig extends VuepressThemeConfig {
   footer?: HopeFooterConfig;
 
   /** 是否允许开启深色模式 */
-  darkmode?: "auto-switch" | "auto" | "switch" | "disabled";
+  darkmode?: "auto-switch" | "auto" | "switch" | "disable";
   /** 主题色配置 */
   themeColor?: Record<string, string> | false;
   /** Markdown 增强设置 */
@@ -187,7 +189,7 @@ export type HopeHeadOptionConfig = Partial<{
 }>;
 
 /** vuepress-theme-hope 项目配置 */
-export interface HopeVuepressConfig extends VuepressConfig {
+export interface HopeVuepressConfig extends SiteConfig {
   /** 自定义主题的配置 */
   themeConfig: HopeThemeConfig;
   /** 构建头部选项 */

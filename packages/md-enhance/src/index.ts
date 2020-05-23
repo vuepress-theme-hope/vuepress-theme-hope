@@ -1,4 +1,4 @@
-import { Context, PluginOptionAPI } from "vuepress-types";
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "../types";
 import flowchart from "./markdown-it/flowchart";
 import footnote from "./markdown-it/footnote";
@@ -10,10 +10,11 @@ import { resolve } from "path";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
 
-// eslint-disable-next-line max-lines-per-function
 export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
   const markdownOption =
-    option === {} ? context.themeConfig.markdown || {} : option;
+    Object.keys(option).length === 0
+      ? context.themeConfig.markdown || {}
+      : option;
 
   const config: PluginOptionAPI = {
     name: "md-enhance",

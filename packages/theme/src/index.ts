@@ -1,4 +1,4 @@
-import { Context, PluginOptionAPI } from "vuepress-types";
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { ResolvedHopeThemeConfig } from "../types";
 import getPlugin from "./lib/plugins";
 
@@ -8,14 +8,14 @@ interface ThemeOptionAPI extends PluginOptionAPI {
 
 const getAlias = (
   themeConfig: ResolvedHopeThemeConfig,
-  ctx: Context,
+  ctx: Context
 ): Record<string, string> => {
   const { siteConfig } = ctx;
   // Resolve algolia
   const isAlgoliaSearch =
     themeConfig.algolia ||
     Object.keys((siteConfig.locales && themeConfig.locales) || {}).some(
-      (base) => themeConfig.locales[base].algolia,
+      (base) => themeConfig.locales[base].algolia
     );
 
   const commentEnabled = themeConfig.comment !== false;
@@ -37,7 +37,7 @@ const getAlias = (
 // Theme API.
 export = (
   themeConfig: ResolvedHopeThemeConfig,
-  ctx: Context,
+  ctx: Context
 ): ThemeOptionAPI => {
   const config: ThemeOptionAPI = {};
 

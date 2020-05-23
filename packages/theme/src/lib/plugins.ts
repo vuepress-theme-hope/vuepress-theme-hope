@@ -1,5 +1,4 @@
-/* eslint-disable max-lines-per-function */
-import { PluginConfig } from "vuepress-types";
+import { Page, PluginConfig, ResolvedComponent } from "@mr-hope/vuepress-types";
 import { ResolvedHopeThemeConfig } from "../../types";
 import { resolve } from "path";
 
@@ -97,11 +96,11 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     [
       "named-chunks",
       {
-        pageChunkName: (page: any): string =>
+        pageChunkName: (page: Page): string =>
           /^(?!\.)[^\\/:*?"<>|]{1,255}$/u.test(page.title)
             ? `page-${page.title}`
             : `page-${page.key.slice(1)}`,
-        layoutChunkName: (layout: any): string =>
+        layoutChunkName: (layout: ResolvedComponent): string =>
           `layout-${layout.componentName}`,
       },
     ],

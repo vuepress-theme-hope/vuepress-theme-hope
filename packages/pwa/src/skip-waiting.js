@@ -5,7 +5,7 @@ addEventListener("message", (event) => {
     event.waitUntil(
       self.skipWaiting().then(
         () => replyPort.postMessage({ error: null }),
-        (error) => replyPort.postMessage({ error }),
-      ),
+        (error) => replyPort.postMessage({ error })
+      )
     );
 });

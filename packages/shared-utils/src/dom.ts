@@ -8,10 +8,14 @@
 export const changeClass = (
   domClass: DOMTokenList,
   insert: string[],
-  remove: string[],
+  remove: string[]
 ): void => {
+  const oldClasses: string[] = [];
+
   domClass.remove(...remove);
-  const oldClasses = [...(domClass as any)];
+  domClass.forEach((classname) => {
+    oldClasses.push(classname);
+  });
   domClass.value = "";
   domClass.add(...insert, ...oldClasses);
 };

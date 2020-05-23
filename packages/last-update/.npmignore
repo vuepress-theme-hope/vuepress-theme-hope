@@ -1,2 +1,2 @@
-src/index.ts
-src/time.ts
+src/*.ts
+!src/*.d.ts

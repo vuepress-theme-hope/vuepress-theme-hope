@@ -1,6 +1,4 @@
 /* eslint-disable max-statements */
-/* eslint-disable max-lines-per-function */
-
 import MarkdownIt = require("markdown-it");
 import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
@@ -56,18 +54,18 @@ const tokenize = (state: StateInline, silent: boolean): boolean => {
  */
 const postProcess = (
   state: StateInline,
-  delimiters: StateInline.Delimiter[],
+  delimiters: StateInline.Delimiter[]
 ): void => {
-  let x;
-  let y;
+  let i;
+  let j;
   let startDelim;
   let endDelim;
   let token;
   const loneMarkers = [];
   const max = delimiters.length;
 
-  for (x = 0; x < max; x++) {
-    startDelim = delimiters[x];
+  for (i = 0; i < max; i++) {
+    startDelim = delimiters[i];
 
     if (startDelim.marker === 0x3d /* = */ && startDelim.end !== -1) {
       endDelim = delimiters[startDelim.end];
@@ -103,18 +101,18 @@ const postProcess = (
    *
    */
   while (loneMarkers.length) {
-    x = loneMarkers.pop() as number;
-    y = x + 1;
+    i = loneMarkers.pop() as number;
+    j = i + 1;
 
-    while (y < state.tokens.length && state.tokens[y].type === "mark_close")
-      y += 1;
+    while (j < state.tokens.length && state.tokens[j].type === "mark_close")
+      j += 1;
 
-    y -= 1;
+    j -= 1;
 
-    if (x !== y) {
-      token = state.tokens[y];
-      state.tokens[y] = state.tokens[x];
-      state.tokens[x] = token;
+    if (i !== j) {
+      token = state.tokens[j];
+      state.tokens[j] = state.tokens[i];
+      state.tokens[i] = token;
     }
   }
 };
