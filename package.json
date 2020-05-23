@@ -52,7 +52,7 @@
     "husky": "4.2.5",
     "lerna": "3.21.0",
     "lint-staged": "10.2.6",
-    "mocha": "7.1.2",
+    "mocha": "7.2.0",
     "prettier": "2.0.5",
     "ts-node": "8.10.1",
     "typescript": "3.9.3",
