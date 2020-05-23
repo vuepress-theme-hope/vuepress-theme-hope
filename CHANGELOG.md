@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.1...v0.4.0-alpha.2) (2020-05-23)
+
+### Bug Fixes
+
+- **md-enhance:** fix footnote issue ([bbdb6d3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bbdb6d3616586140d7c6dac50d1aa540ef534ad6))
+
+### Performance Improvements
+
+- use typescript-eslint V3 and compile more files ([c255473](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c255473e515cda2904e2b16fdb72bdbeebba2b05))
+
 ## [0.4.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0...v0.4.0-alpha.1) (2020-05-22)
 
 ### Bug Fixes

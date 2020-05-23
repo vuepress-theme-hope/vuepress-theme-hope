@@ -1,4 +1,5 @@
 src/*.ts
+!src/enhanceAppFile.ts
 !src/*.d.ts
 
 test/
