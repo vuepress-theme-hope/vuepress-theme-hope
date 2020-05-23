@@ -189,7 +189,7 @@ const footnote = (md: MarkdownIt): void => {
     const label = state.src.slice(start + 2, pos - 2);
     state.env.footnotes.refs[`:${label}`] = -1;
 
-    token = new state.Token("footnote_reference_open", "", 1);
+    token = new state.Token("footnoteReferenceOpen", "", 1);
     token.meta = { label };
     token.level = state.level++;
     state.tokens.push(token);
@@ -241,7 +241,7 @@ const footnote = (md: MarkdownIt): void => {
     state.sCount[startLine] = oldSCount;
     state.bMarks[startLine] = oldBMark;
 
-    token = new state.Token("footnote_reference_close", "", -1);
+    token = new state.Token("footnoteReferenceClose", "", -1);
     token.level = --state.level;
     state.tokens.push(token);
 
@@ -287,7 +287,7 @@ const footnote = (md: MarkdownIt): void => {
         (tokens = [])
       );
 
-      token = state.push("footnote_ref", "", 0);
+      token = state.push("footnoteRef", "", 0);
       token.meta = { id: footnoteId };
 
       state.env.footnotes.list[footnoteId] = {
@@ -349,7 +349,7 @@ const footnote = (md: MarkdownIt): void => {
       state.env.footnotes.list[footnoteId].count =
         (state.env.footnotes.list[footnoteId].count as number) + 1;
 
-      token = state.push("footnote_ref", "", 0);
+      token = state.push("footnoteRef", "", 0);
       token.meta = { id: footnoteId, subId: footnoteSubId, label };
     }
 
@@ -371,13 +371,13 @@ const footnote = (md: MarkdownIt): void => {
     if (!state.env.footnotes) return false;
 
     state.tokens = state.tokens.filter((stateToken) => {
-      if (stateToken.type === "footnote_reference_open") {
+      if (stateToken.type === "footnoteReferenceOpen") {
         insideRef = true;
         current = [];
         currentLabel = stateToken.meta.label;
         return false;
       }
-      if (stateToken.type === "footnote_reference_close") {
+      if (stateToken.type === "footnoteReferenceClose") {
         insideRef = false;
         // prepend ':' to avoid conflict with Object.prototype members
         refTokens[`:${currentLabel}`] = current;
@@ -390,11 +390,11 @@ const footnote = (md: MarkdownIt): void => {
     if (!state.env.footnotes.list) return false;
     const { list } = state.env.footnotes;
 
-    token = new state.Token("footnote_block_open", "", 1);
+    token = new state.Token("footnoteBlockOpen", "", 1);
     state.tokens.push(token);
 
     for (let i = 0, { length } = list; i < length; i++) {
-      token = new state.Token("footnote_open", "", 1);
+      token = new state.Token("footnoteOpen", "", 1);
       token.meta = { id: i, label: list[i].label };
       state.tokens.push(token);
 
@@ -427,29 +427,29 @@ const footnote = (md: MarkdownIt): void => {
         j < (Number(list[i].count) > 0 ? (list[i].count as number) : 1);
         j++
       ) {
-        token = new state.Token("footnote_anchor", "", 0);
+        token = new state.Token("footnoteAnchor", "", 0);
         token.meta = { id: i, subId: j, label: list[i].label };
         state.tokens.push(token);
       }
 
       if (lastParagraph) state.tokens.push(lastParagraph);
 
-      token = new state.Token("footnote_close", "", -1);
+      token = new state.Token("footnoteClose", "", -1);
       state.tokens.push(token);
     }
 
-    token = new state.Token("footnote_block_close", "", -1);
+    token = new state.Token("footnoteBlockClose", "", -1);
     state.tokens.push(token);
 
     return true;
   };
 
-  md.block.ruler.before("reference", "footnote_def", footnoteDef, {
+  md.block.ruler.before("reference", "footnoteDef", footnoteDef, {
     alt: ["paragraph", "reference"],
   });
-  md.inline.ruler.after("image", "footnote_inline", footnoteInline);
-  md.inline.ruler.after("footnote_inline", "footnote_ref", footnoteRef);
-  md.core.ruler.after("inline", "footnote_tail", footnoteTail);
+  md.inline.ruler.after("image", "footnoteInline", footnoteInline);
+  md.inline.ruler.after("footnoteInline", "footnoteRef", footnoteRef);
+  md.core.ruler.after("inline", "footnoteTail", footnoteTail);
 };
 
 export default footnote;

@@ -155,11 +155,11 @@ export default class Home extends Vue {
       color var(--white)
       background-color var(--accent-color)
       padding 0.8rem 1.6rem
-      margin 0 0.8rem
+      margin 0.6rem 0.8rem
       border-radius 4px
       transition background-color 0.1s ease
-      box-sizing border-box
       border-bottom 1px solid var(--accent-color-d10)
+      overflow hidden
 
       @media (max-width: $MQMobileNarrow)
         padding 0.6rem 1.2rem
