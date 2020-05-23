@@ -87,7 +87,7 @@ export default class Color {
 
   /** 获取颜色 */
   public static getColor(colorString: string): Color {
-    if (colorString[0] === "#") return this.fromHex(colorString);
+    if (colorString.startsWith("#")) return this.fromHex(colorString);
 
     return this.fromRGB(colorString);
   }

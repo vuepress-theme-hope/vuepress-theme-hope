@@ -1,5 +1,5 @@
 /** 导航栏配置项 */
-export type NavBarConfigItem = {
+export interface NavBarConfigItem {
   /** 导航栏文字 */
   text: string;
   /** 辅助标签 */
@@ -8,7 +8,7 @@ export type NavBarConfigItem = {
   link?: string;
   /** 导航栏下拉列表子项 */
   items?: NavBarConfigItem[];
-};
+}
 
 /** 导航栏配置 */
 export type NavBarConfig = NavBarConfigItem[] | false;

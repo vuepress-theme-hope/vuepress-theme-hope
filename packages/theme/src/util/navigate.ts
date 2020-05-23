@@ -9,13 +9,13 @@ import VueRouter, { Route } from "vue-router";
  */
 const navigate = (url: string, router: VueRouter, route: Route): void => {
   if (url)
-    if (url && url[0] === "/") {
+    if (url && url.startsWith("/")) {
       // Inner absolute path
       if (route.path !== url) router.push(url);
     } else if (
-      url.indexOf("http://") === 0 ||
-      url.indexOf("https://") === 0 ||
-      url.indexOf("mailto:") === 0
+      url.startsWith("http://") ||
+      url.startsWith("https://") ||
+      url.startsWith("mailto:")
     ) {
       // Outter url
       if (window) window.open(url);

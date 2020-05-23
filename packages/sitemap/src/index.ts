@@ -14,7 +14,7 @@ import { resolve } from "path";
 const log = (
   msg: string,
   color: "cyan" | "red" = "cyan",
-  label = "SITEMAP"
+  label = "Sitemap"
 ): void => console.log(`\n${chalk[color](` ${label} `)} ${msg}`);
 
 const stripLocalePrefix = (
@@ -51,14 +51,14 @@ const generatePageMap = (
   const { pages, locales = {} } = siteData;
 
   // Sort the locale keys in reverse order so that longer locales, such as '/en/', match before the default '/'
-  const localeKeys = Object.keys(locales).sort().reverse() || [];
+  const localeKeys = Object.keys(locales).sort().reverse();
   const localesByNormalizedPagePath = pages.reduce(
     (map: Map<string, string[]>, page) => {
       const { normalizedPath, localePrefix } = stripLocalePrefix(
         page.path,
         localeKeys
       );
-      const prefixesByPath = map.get(normalizedPath) || [];
+      const prefixesByPath = map.get(normalizedPath) ?? [];
       prefixesByPath.push(localePrefix);
 
       return map.set(normalizedPath, prefixesByPath);

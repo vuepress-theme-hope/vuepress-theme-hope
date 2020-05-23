@@ -18,7 +18,7 @@ export const pathHitKeys = (
     const keys = Object.keys(encryptOptions.config);
     /** 命中键名 */
     const hitKeys = keys
-      .filter((key) => path.indexOf(key) === 0)
+      .filter((key) => path.startsWith(key))
       .sort((a, b) => b.length - a.length);
 
     return hitKeys;

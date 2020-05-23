@@ -18,7 +18,7 @@ import { ValineOptions } from "../types";
 
 @Component({ components: { EyeIcon, FireIcon } })
 export default class VisitorInfo extends Vue {
-  private valineConfig: ValineOptions = COMMENT_OPTIONS;
+  private valineConfig = COMMENT_OPTIONS as ValineOptions;
 
   private count = 0;
 
@@ -29,7 +29,7 @@ export default class VisitorInfo extends Vue {
       valineConfig &&
         valineConfig.type === "valine" &&
         valineConfig.appId &&
-        valineConfig.appKey,
+        valineConfig.appKey
     );
   }
 
@@ -60,7 +60,7 @@ export default class VisitorInfo extends Vue {
   // show fire icon depending on the views number
   private getCount() {
     const countElement = document.querySelector(
-      ".leancloud_visitors .leancloud-visitors-count",
+      ".leancloud_visitors .leancloud-visitors-count"
     );
 
     if (countElement) {

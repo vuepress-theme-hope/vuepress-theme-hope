@@ -33,9 +33,6 @@ rules:
     - error
     - multi
 
-  global-require:
-    - off
-
   id-length:
     - error
     - min: 2
@@ -52,7 +49,6 @@ rules:
 
   indent:
     - off
-    - 2
 
   init-declarations:
     - off
@@ -108,9 +104,6 @@ rules:
     - off
 
   no-undefined:
-    - off
-
-  no-unused-vars:
     - off
 
   no-useless-constructor:
@@ -196,7 +189,23 @@ overrides:
         - allowTypedFunctionExpressions: true
 
       "@typescript-eslint/naming-convention":
-        - error
+        - warn
+        - selector: default
+          format:
+            - camelCase
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector: variable
+          format:
+            - camelCase
+            - UPPER_CASE
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector: typeLike
+          format:
+            - PascalCase
 
       "@typescript-eslint/no-explicit-any": off
 
@@ -204,6 +213,13 @@ overrides:
       - "*.d.ts"
     rules:
       no-underscore-dangle:
+        - off
+
+  - files:
+      - "*.vue"
+
+    rules:
+      no-unused-vars:
         - off
 
   - files:

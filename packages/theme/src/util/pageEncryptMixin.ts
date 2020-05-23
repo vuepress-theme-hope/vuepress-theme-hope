@@ -17,7 +17,7 @@ export default class PageEncryptMixin extends Vue {
       const keys = Object.keys(this.encryptOptions.config);
       /** 命中键名 */
       const hitKeys = keys
-        .filter((key) => this.$route.path.indexOf(key) === 0)
+        .filter((key) => this.$route.path.startsWith(key))
         .sort((a, b) => b.length - a.length);
 
       return hitKeys;

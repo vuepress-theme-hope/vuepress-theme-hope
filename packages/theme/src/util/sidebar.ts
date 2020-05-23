@@ -72,7 +72,7 @@ const resolveMatchingConfig = (
     };
 
   for (const base in config)
-    if (ensureEndingSlash(regularPath).indexOf(encodeURI(base)) === 0)
+    if (ensureEndingSlash(regularPath).startsWith(encodeURI(base)))
       return {
         base,
         config: config[base],
@@ -123,7 +123,10 @@ export interface SidebarGroupItem {
   [props: string]: any;
 }
 
-type SidebarErrorItem = { type: "error"; path: string };
+interface SidebarErrorItem {
+  type: "error";
+  path: string;
+}
 
 /**
  * 处理侧边栏项，为其合并页面配置

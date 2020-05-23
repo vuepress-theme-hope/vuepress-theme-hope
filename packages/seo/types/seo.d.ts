@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export interface BaseSeoContent {
   /**
    * 文章的标题，不包含任何品牌，例如您的网站名称。

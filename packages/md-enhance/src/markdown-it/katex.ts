@@ -136,7 +136,7 @@ const blockTex = (
 
   if (silent) return true;
 
-  if (firstLine.trim().slice(-2) === "$$") {
+  if (firstLine.trim().endsWith("$$")) {
     // Single line expression
     firstLine = firstLine.trim().slice(0, -2);
     found = true;
@@ -154,7 +154,7 @@ const blockTex = (
       // non-empty line with negative indent should stop the list:
       break;
 
-    if (state.src.slice(pos, max).trim().slice(-2) === "$$") {
+    if (state.src.slice(pos, max).trim().endsWith("$$")) {
       lastPos = state.src.slice(0, max).lastIndexOf("$$");
       lastLine = state.src.slice(pos, lastPos);
       found = true;
