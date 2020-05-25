@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.4...v0.4.0-alpha.5) (2020-05-25)
+
+### Bug Fixes
+
+- **theme:** fix types ([9b0666a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9b0666ae83cd5d5272097ccbb3094472f06d0831))
+
 ## [0.4.0-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.3...v0.4.0-alpha.4) (2020-05-23)
 
 ### Bug Fixes

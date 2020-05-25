@@ -13,7 +13,9 @@
             <h1 v-else>{{i18n.articleList}}</h1>
           </MyTransition>
 
-          <ProjectList v-if="$frontmatter.home" />
+          <MyTransition :delay="0.20">
+            <ProjectList v-if="$frontmatter.home" />
+          </MyTransition>
 
           <!-- 文章列表 -->
           <MyTransition :delay="0.24">

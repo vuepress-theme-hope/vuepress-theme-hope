@@ -1,21 +1,21 @@
 <template>
   <div class="project-list">
-    <div
+    <MyTransition
       v-for="(project, index) in ($frontmatter.project || [])"
       :key="project.name"
-      class="project"
-      :class="`project${index % 9}`"
-      @click="navigate(project.link)"
+      :delay="index * 0.04"
     >
-      <div
-        v-if="project.cover"
-        class="cover"
-        :style="`background: url(${$withBase(project.cover)}) center/cover no-repeat;`"
-      />
-      <component :is="`${project.type}-icon`" />
-      <div class="name">{{project.name}}</div>
-      <div class="desc">{{project.desc}}</div>
-    </div>
+      <div class="project" :class="`project${index % 9}`" @click="navigate(project.link)">
+        <div
+          v-if="project.cover"
+          class="cover"
+          :style="`background: url(${$withBase(project.cover)}) center/cover no-repeat;`"
+        />
+        <component :is="`${project.type}-icon`" />
+        <div class="name">{{project.name}}</div>
+        <div class="desc">{{project.desc}}</div>
+      </div>
+    </MyTransition>
   </div>
 </template>
 
@@ -24,10 +24,13 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import ArticleIcon from "@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue";
 import BookIcon from "@mr-hope/vuepress-shared-utils/icons/BookIcon.vue";
 import LinkIcon from "@mr-hope/vuepress-shared-utils/icons/LinkIcon.vue";
+import MyTransition from "@theme/components/MyTransition.vue";
 import ProjectIcon from "@mr-hope/vuepress-shared-utils/icons/ProjectIcon.vue";
 import navigate from "../util/navigate";
 
-@Component({ components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon } })
+@Component({
+  components: { ArticleIcon, BookIcon, LinkIcon, MyTransition, ProjectIcon },
+})
 export default class ProjectList extends Vue {
   private navigate(link: string) {
     navigate(link, this.$router, this.$route);
