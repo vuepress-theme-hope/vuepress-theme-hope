@@ -20,7 +20,7 @@ import { resolve } from "path";
 const log = (
   msg: string,
   color: "cyan" | "red" = "cyan",
-  label = "SITEMAP"
+  label = "Sitemap"
 ): void => console.log(`\n${chalk[color](` ${label} `)} ${msg}`);
 
 const stripLocalePrefix = (
