@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-/* global IMAGE_SELECTOR, PHOTOSWIPE_OPTIONS */
+/* global IMAGE_CONTAINER, IMAGE_SELECTOR, PHOTOSWIPE_OPTIONS */
 import { Component, Vue, Watch } from "vue-property-decorator";
 import PhotoSwipe = require("photoswipe");
 import PhotoSwipeUIDefault = require("photoswipe/dist/photoswipe-ui-default");
@@ -118,7 +118,7 @@ export default class PhotoSwipeUI extends Vue {
   private mounted() {
     const timer = setInterval(() => {
       const content = document.querySelector<HTMLElement>(
-        ".theme-default-content"
+        IMAGE_CONTAINER
       );
       if (content) {
         this.photoswipe();
@@ -131,7 +131,7 @@ export default class PhotoSwipeUI extends Vue {
   onRouteChange() {
     const timer = setInterval(() => {
       const content = document.querySelector<HTMLElement>(
-        ".theme-default-content"
+        IMAGE_CONTAINER
       );
       if (content) {
         this.photoswipe();

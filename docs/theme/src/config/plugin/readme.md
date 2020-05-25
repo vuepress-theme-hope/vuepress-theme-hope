@@ -19,6 +19,8 @@ vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可�
 
 - [@mr-hope/vuepress-plugin-last-update](last-update.md): 最后更新时间
 
+- [@mr-hope/vuepress-plugin-photo-swipe](photo-swipe.md): 使网站的图片支持点击缩放
+
 - [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA 支持
 
 - [@mr-hope/vuepress-plugin-reading-time](reading-time.md): 阅读时间与字数统计
@@ -44,12 +46,6 @@ vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可�
 - @vuepress/plugin-active-header-links: 自动激活侧边栏标题
 
 - @vuepress/plugin-blog: 博客支持
-
-- [**@vuepress/medium-zoom**](medium-zoom.md): 使网站的图片支持点击缩放
-
-  **效果**：
-
-  ![logo](/logo.svg)
 
 - @vuepress/plugin-search: 搜索插件，**将最大搜索建议增加至 10**
 

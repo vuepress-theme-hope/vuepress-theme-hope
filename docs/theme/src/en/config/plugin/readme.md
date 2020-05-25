@@ -19,6 +19,8 @@ vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, y
 
 - [@mr-hope/vuepress-plugin-last-update](last-update.md): Last update time
 
+- [@mr-hope/vuepress-plugin-photo-swipe](photo-swipe.md): Make the site's picture support click zoom
+
 - [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA support
 
 - [@mr-hope/vuepress-plugin-reading-time](reading-time.md): Expect reading time and words count
@@ -44,12 +46,6 @@ vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, y
 - @vuepress/plugin-active-header-links: automatically activate sidebar headers
 
 - @vuepress/plugin-blog: Blog support
-
-- [**@vuepress/medium-zoom**](medium-zoom.md): make the website's images zoom when being clicked
-
-  **effect**:
-
-  ![logo](/logo.svg)
 
 - @vuepress/plugin-search: search for plugins, **increase maximum search suggestions to 10**
 

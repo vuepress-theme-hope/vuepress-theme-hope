@@ -132,6 +132,7 @@ const generateSiteMap = (
   const {
     urls = [],
     hostname,
+    outFile = "sitemap.xml",
     xslUrl,
     exclude = [],
     xmlNameSpace: xmlns,
@@ -141,7 +142,7 @@ const generateSiteMap = (
     xslUrl,
     xmlns,
   });
-  const sitemapXML = resolve(outDir, options.outFile || "sitemap.xml");
+  const sitemapXML = resolve(outDir, outFile);
   const writeStream = createWriteStream(sitemapXML);
 
   sitemap.pipe(writeStream);

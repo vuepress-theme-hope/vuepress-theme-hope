@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# @mr-hope/vuepress-plugin-pwa
+# @mr-hope/pwa
 
 Progressive Web App Surpport
 

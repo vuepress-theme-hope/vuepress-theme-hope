@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# @mr-hope/vuepress-plugin-last-update
+# @mr-hope/last-update
 
 This plugin will inject a readable last update time and a last update time timestamp into the page.
 

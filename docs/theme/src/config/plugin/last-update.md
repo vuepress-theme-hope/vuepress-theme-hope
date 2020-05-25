@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# @mr-hope/vuepress-plugin-last-update
+# @mr-hope/last-update
 
 这个插件将会向 page 注入可阅读的最后更新时间与最后更新时间的时间戳。
 

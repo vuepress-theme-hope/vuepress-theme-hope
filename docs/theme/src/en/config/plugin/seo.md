@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# @mr-hope/vuepress-plugin-seo
+# @mr-hope/seo
 
 The plugin will inject `<meta>` into your webpage to enhance the SEO of your webpage.
 

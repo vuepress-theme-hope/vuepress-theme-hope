@@ -1,44 +1,30 @@
 # Changelog
 
-## [0.4.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.4...v0.4.0-alpha.5) (2020-05-25)
+## [0.4.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0...v0.4.0) (2020-05-25)
 
 ### Bug Fixes
+
+- **theme:** add transition for ProjectList ([70b968b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/70b968b992881957edee2de19e1043c5fa25c72f))
 
 - **theme:** fix types ([9b0666a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9b0666ae83cd5d5272097ccbb3094472f06d0831))
 
-## [0.4.0-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.3...v0.4.0-alpha.4) (2020-05-23)
-
-### Bug Fixes
-
 - **theme:** fix [@theme](https://github.com/theme) declaration issue ([3c9c27b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3c9c27b72a9905a2c47b91e1ff4b58f65610ef5e))
-
-## [0.4.0-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.2...v0.4.0-alpha.3) (2020-05-23)
-
-### Bug Fixes
 
 - fix mising files ignore by npm ([703f0ae](https://github.com/Mister-Hope/vuepress-theme-hope/commit/703f0ae645bdaadeb0c98aff869472f7c2e6b755))
 
-## [0.4.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0-alpha.1...v0.4.0-alpha.2) (2020-05-23)
-
-### Bug Fixes
-
 - **md-enhance:** fix footnote issue ([bbdb6d3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bbdb6d3616586140d7c6dac50d1aa540ef534ad6))
+
+- **theme:** fix password input issue on mobile screen ([3987001](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3987001273a883ff953f34eb7cfd02da4a02a18b))
 
 ### Performance Improvements
 
 - use typescript-eslint V3 and compile more files ([c255473](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c255473e515cda2904e2b16fdb72bdbeebba2b05))
 
-## [0.4.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0...v0.4.0-alpha.1) (2020-05-22)
-
-### Bug Fixes
-
-- **theme:** fix password input issue on mobile screen ([3987001](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3987001273a883ff953f34eb7cfd02da4a02a18b))
-
 ### Features
 
 add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3c85ba86ba401c959e2f91fa924cbae66e8598e2))
 
-## [0.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0-alpha.5...v0.3.0) (2020-05-14)
+## [0.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.2.0...v0.3.0) (2020-05-14)
 
 ### Bug Fixes
 

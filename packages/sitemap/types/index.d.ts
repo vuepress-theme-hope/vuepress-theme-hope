@@ -113,13 +113,15 @@ export interface SitemapFrontmatterOption {
 
 /** Sitemap 配置选项 */
 export interface SitemapOptions {
+  /** 网站域名 */
+  hostname: string;
   /** 需要额外包含的网址 */
   urls?: string[];
   /** 不被收录的页面 */
-  exclude: string[];
+  exclude?: string[];
   /** 输出的文件名 */
   outFile?: string;
-  /** 更新频率 */
+  /** 页面默认更新频率 */
   changefreq?:
     | "always"
     | "hourly"
@@ -128,10 +130,8 @@ export interface SitemapOptions {
     | "monthly"
     | "yearly"
     | "never";
-  /** 网站域名 */
-  hostname: string;
   /** 时间格式化器 */
-  dateFormatter: ($page: PageComputed) => string;
+  dateFormatter?: ($page: PageComputed) => string;
   xslUrl?: string;
   /** XML namespaces to turn on - all by default */
   xmlNameSpace?: {
