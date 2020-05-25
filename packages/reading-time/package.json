@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-reading-time",
-  "version": "0.4.0-alpha.5",
+  "version": "0.4.0",
   "description": "Reading time plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/read-time#readme",
   "devDependencies": {
-    "@mr-hope/vuepress-types": "^0.4.0-alpha.5"
+    "@mr-hope/vuepress-types": "^0.4.0"
   }
 }
