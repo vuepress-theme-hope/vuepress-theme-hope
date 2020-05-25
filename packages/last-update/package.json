@@ -31,7 +31,7 @@
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/last-update#readme",
   "dependencies": {
     "@types/cross-spawn": "^6.0.2",
-    "cross-spawn": "^7.0.2",
+    "cross-spawn": "^7.0.3",
     "moment": "^2.26.0"
   },
   "peerDependencies": {

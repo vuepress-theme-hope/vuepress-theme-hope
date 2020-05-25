@@ -45,10 +45,10 @@
     "@vssue/api-github-v3": "^1.4.4",
     "@vssue/api-github-v4": "^1.4.0",
     "@vssue/api-gitlab-v4": "^1.4.0",
-    "@vssue/vuepress-plugin-vssue": "^1.4.5",
+    "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "leancloud-storage": "^4.5.3",
     "valine": "^1.4.14",
-    "vssue": "^1.4.5",
+    "vssue": "^1.4.6",
     "vuepress-plugin-typescript": "^0.3.0"
   },
   "peerDependencies": {
