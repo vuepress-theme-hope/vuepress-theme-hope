@@ -41,3 +41,11 @@ Do not add and place the corresponding folders ("tag", "article", "timeline") in
 
 If you do need an "articles" folder, consider using "articles".
 :::
+
+## Copyright Information
+
+Sometimes, you may not want some of your articles to be copied by others, or you want others to automatically generate a piece of copyright information to the clipboard when copying.
+
+You can configure this content on the page. Setting `noCopy: true` in Front Matter will disable copying of this page, and setting `noSelect: true` will disable the selection of this page.
+
+You can also use `minLength` to set the minimum number of characters to trigger copying or append copyright information. The default is `100`.

@@ -18,7 +18,7 @@ tags:
 
 选择的范围，只有 container 元素内部的图片才会支持点击缩放。
 
-###　selector
+### selector
 
 - 类型: `string`
 - 默认值: `'.theme-default-content :not(a) > img'`

@@ -18,7 +18,7 @@ This plugin will enable your images to support click zoom.
 
 The range for selection. Only the image inside the container element will support click zoom.
 
-###　selector
+### selector
 
 - Type: `string`
 - Default: `'.theme-default-content :not(a) > img'`

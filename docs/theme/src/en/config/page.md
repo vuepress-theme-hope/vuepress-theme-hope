@@ -10,12 +10,28 @@ tags:
 
 The following configuration options have been added to the page's Front Matter:
 
-## icon
+## Page Infomation Configuration
+
+### icon
 
 - Type: `string`
 - Required: No
 
 Set the FontClass of the current page icon (recommended)
+
+### title
+
+- Type: `string | boolean`
+- Required: No
+
+Current page's title. Markdown's first h1 by default.
+
+### description
+
+- Type: `string | boolean`
+- Required: No
+
+Current page's description
 
 ### author
 
@@ -40,21 +56,21 @@ Set the writing time of the current page
 Although this theme and other plugins of Mister-Hope will correctly parse the time you enter, such as `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD`, etc. The plugin may not be able to read them correctly. Using values in non-standard formats may cause other plugins reporting errors,
 :::
 
-## category
+### category
 
 - Type: `string`
 - Required: No
 
 Set the category of the current page
 
-## tags
+### tags
 
 - Type: `string | string []`
 - Required: No
 
 Set the label of the current page
 
-## sticky
+### sticky
 
 - Type: `boolean | number`
 - Default: `false`
@@ -75,16 +91,23 @@ Whether to add the article to the article list.
 
 Whether to add the article to the timeline list.
 
-## password
+### password
 
 - Type: `string`
 - Required: No
 
 Set a password for the current article.
 
+### image
+
+- Type: `string`
+- Required: No
+
+Set current page's image，please fill in an absolute path.
+
 ## Page display configuration
 
-## pageInfo
+### pageInfo
 
 - Type: `PageInfo[] | false`
 - Default value: Globally configured value (global default is `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)
@@ -114,66 +137,66 @@ Whether the current page shows page views
 The display pageview feature requires you to configure Valine type comment configuration correctly.
 :::
 
-## breadcrumb
+### breadcrumb
 
 - Type: `boolean`
 - Default value: Globally configured value (global default is `true`)
 
 Whether path navigation is enabled on the current page
 
-## breadcrumbIcon
+### breadcrumbIcon
 
 - Type: `boolean`
 - Default value: Globally configured value (global default is `true`)
 
 Whether path navigation icon is enabled on the current page
 
-## navbar
+### navbar
 
 - Type: `boolean`
 
 The navigation bar configuration of the page, filling in `false` will disable the navigation bar
 
-## sidebar
+### sidebar
 
 - Type: `false | 'auto'`
 
 Page sidebar configuration options. Supports `false` or`auto`.
 
-## sidebarDepth
+### sidebarDepth
 
 - Type: `number`
 - Default: `2`
 
 The page's sidebar rendering depth
 
-## comment
+### comment
 
 - Type: `boolean`
 - Default value: Configured globally (defaults to `true` after configuring global`comment`)
 
 Whether to enable comments on the current page
 
-## editLink
+### editLink
 
 - Type: `boolean`
 - Default value: the value configured globally
 
 Whether to show edit link
 
-## prev
+### prev
 
 - Type: `string | false`
 
 Previous article link
 
-## next
+### next
 
 - Type: `string | false`
 
 Next article link
 
-## footer
+### footer
 
 - Type: `boolean | string | HTMLString`
 - Default value: the value configured globally
@@ -183,14 +206,7 @@ Set it to `false` if you want to disable the footer, and set it to `true` if you
 
 For more details, please see [Page → Footer Support](../guide/layout/page.md#footer-support)
 
-## copyright
-
-- Type: `string | false`
-- Default value: the value configured globally
-
-Set the copyright information of the current page. For more details, please see [Page → Footer Support](../guide/layout/page.md#footer)
-
-## medialink
+### medialink
 
 - Type: `MediaType[] | false`
 - Default: `themeConfig.blog.links`
@@ -228,14 +244,14 @@ The optional values of `MediaType` are as follows:
 
 :::
 
-## search
+### search
 
 - Type: `boolean`
 - Default value: the value configured in the global (global default is `true`)
 
 Whether the current page displays search box.
 
-## backtotop
+### backtotop
 
 - Type: `boolean`
 - Default value: Globally configured value (global default is `true`)
