@@ -222,6 +222,9 @@ const resolveItem = (
   return {
     ...sidebarConfigItem,
     type: "group",
+    path: sidebarConfigItem.path
+      ? resolve(prefix, sidebarConfigItem.path, base)
+      : "",
     children: children.map((child) =>
       resolveItem(
         child,

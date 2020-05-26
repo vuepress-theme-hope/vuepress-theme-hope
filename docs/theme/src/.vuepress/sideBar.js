@@ -82,8 +82,9 @@ module.exports = {
           {
             title: "Emoji",
             icon: "emoji",
+            path: "emoji/",
             prefix: "emoji/",
-            children: ["", "people", "nature", "object", "place", "symbol"],
+            children: ["people", "nature", "object", "place", "symbol"],
           },
         ],
       },
@@ -181,8 +182,9 @@ module.exports = {
           {
             title: "Emoji",
             icon: "emoji",
+            path: "emoji/",
             prefix: "emoji/",
-            children: ["", "people", "nature", "object", "place", "symbol"],
+            children: ["people", "nature", "object", "place", "symbol"],
           },
         ],
       },

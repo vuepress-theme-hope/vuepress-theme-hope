@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0...v0.4.1) (2020-05-26)
+
+### Performance Improvements
+
+- **theme:** improve perf when themeConfig.blog is set to `false` ([2befb9a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2befb9a3f468d2d47553f89964ecf549043e490f))
+
 ## [0.4.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.3.0...v0.4.0) (2020-05-25)
 
 ### Bug Fixes
