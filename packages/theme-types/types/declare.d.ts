@@ -44,21 +44,3 @@ declare module "docsearch.js/dist/cdn/docsearch.min.js" {
 }
 
 declare module "*.css" {}
-
-declare module "@SearchBox" {
-  import vue from "vue";
-
-  export default vue;
-}
-
-declare module "@AlgoliaSearchBox" {
-  export default vue;
-}
-
-declare module "@Comment" {
-  export default vue;
-}
-
-declare module "@PageInfo" {
-  export default vue;
-}

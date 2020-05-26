@@ -7,7 +7,7 @@
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
 import Loading from "@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue";
-import { debounce } from "lodash";
+import debounce = require("lodash.debounce");
 import presets from "./presets";
 
 @Component({ components: { Loading } })

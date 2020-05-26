@@ -272,7 +272,7 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   ```
 
   ::: tip
-  请注意，由于 $\KaTeX$ 支持自动换行，所以如果您手动指定换行会在控制台输出一个警告。
+  请注意，由于 $\KaTeX$ 支持自动换行，所以如果你手动指定换行会在控制台输出一个警告。
   :::
 
 - **对齐**

@@ -183,7 +183,7 @@ module.exports = {
 
 ### 搜索占位符
 
-您可以通过添加 `searchPlaceholder` 属性为搜索框定义一个占位符：
+你可以通过添加 `searchPlaceholder` 属性为搜索框定义一个占位符：
 
 ```js
 module.exports = {

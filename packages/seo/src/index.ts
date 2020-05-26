@@ -157,5 +157,5 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => ({
     $page.frontmatter.meta = meta;
   },
 
-  plugins: ["@mr-hope/last-update"],
+  plugins: ["@mr-hope/last-update", ["@vuepress/last-updated", false]],
 });

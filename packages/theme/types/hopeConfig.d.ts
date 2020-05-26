@@ -141,6 +141,8 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
   breadcrumbIcon?: boolean;
   /** 是否启用平滑滚动 */
   smoothScroll?: boolean;
+  /** 是否开启图片预览 */
+  photoSwipe?: boolean;
   /** 是否显示返回顶部按钮 */
   backToTop?: boolean;
   /** 是否在导航栏显示仓库链接 */

@@ -16,9 +16,11 @@ export default class Comment extends Vue {
 
   private get pluginEnable() {
     return (
-      this.$frontmatter.comment ||
-      (this.options.comment !== false &&
-        (this.options.type === "valine" || this.$frontmatter.comment !== false))
+      this.options.type !== "disable" &&
+      (this.$frontmatter.comment ||
+        (this.options.comment !== false &&
+          (this.options.type === "valine" ||
+            this.$frontmatter.comment !== false)))
     );
   }
 }

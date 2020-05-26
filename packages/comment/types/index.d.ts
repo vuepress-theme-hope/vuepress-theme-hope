@@ -12,8 +12,8 @@ export type PageInfotype =
 
 /** 评论组件通用选项 */
 interface BaseCommentOptions {
-  /** 类型，有 `‘valine'` 和 `'vssue` 可选 */
-  type: "valine" | "vssue";
+  /** 类型，有 `‘valine'` 和 `'vssue` 可选，也可设置为 `'disable'` */
+  type: "valine" | "vssue" | "disable";
   /** 默认作者 */
   author?: string;
   /** 是否默认启用文章信息 */

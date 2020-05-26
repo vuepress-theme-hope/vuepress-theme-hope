@@ -18,17 +18,30 @@ const getAlias = (
       (base) => themeConfig.locales[base].algolia
     );
 
-  const commentEnabled = themeConfig.comment !== false;
+  const blogEnabled = themeConfig.blog !== false;
+  const commentPluginEnabled = themeConfig.comment !== false;
+  const commentEnabled =
+    themeConfig.comment &&
+    themeConfig.comment.type &&
+    themeConfig.comment.type !== "disable";
+
   const noopModule = "vuepress-theme-hope/src/lib/noopModule.js";
 
   return {
     "@AlgoliaSearchBox": isAlgoliaSearch
       ? "vuepress-theme-hope/src/components/AlgoliaSearchBox.vue"
       : noopModule,
-    "@Comment": commentEnabled
-      ? "@mr-hope/vuepress-plugin-comment/Comment.vue"
+    "@BlogInfo": blogEnabled
+      ? "vuepress-theme-hope/src/components/BlogInfo.vue"
       : noopModule,
-    "@PageInfo": commentEnabled
+    "@BlogPage": blogEnabled
+      ? "vuepress-theme-hope/src/components/BlogPage.vue"
+      : noopModule,
+    "@Comment":
+      commentPluginEnabled && commentEnabled
+        ? "@mr-hope/vuepress-plugin-comment/Comment.vue"
+        : noopModule,
+    "@PageInfo": commentPluginEnabled
       ? "@mr-hope/vuepress-plugin-comment/PageInfo.vue"
       : noopModule,
   };

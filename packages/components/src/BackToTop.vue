@@ -23,7 +23,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { debounce } from "lodash";
+import debounce = require("lodash.debounce");
 
 @Component
 export default class BackToTop extends Vue {
@@ -56,7 +56,7 @@ export default class BackToTop extends Vue {
       "scroll",
       debounce(() => {
         this.scrollTop = this.getScrollTop();
-      }, 100),
+      }, 100)
     );
   }
 

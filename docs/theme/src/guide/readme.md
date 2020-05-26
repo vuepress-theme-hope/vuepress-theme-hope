@@ -7,7 +7,7 @@ tags: intro
 # 介绍
 
 ::: tip
-如果您在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
 
 ## 主题特点

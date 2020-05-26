@@ -8,7 +8,7 @@
       <ArticleItem :article="article" />
     </MyTransition>
     <!-- 分页 -->
-    <Pagation v-model="currentPage" :per-page="articlePerPage" :total="articleList.length" />
+    <Pagination v-model="currentPage" :per-page="articlePerPage" :total="articleList.length" />
   </div>
 </template>
 
@@ -17,6 +17,7 @@ import { Component, Mixins, Vue, Watch } from "vue-property-decorator";
 import ArticleItem from "@theme/components/ArticleItem.vue";
 import { ArticleMixin } from "../util/articleMixin";
 import MyTransition from "@theme/components/MyTransition.vue";
+import Pagination from '@mr-hope/vuepress-plugin-components/src/Pagination.vue';
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 import { deepAssign } from "@mr-hope/vuepress-shared-utils";

@@ -6,10 +6,10 @@ icon: configuration
 
 ## type
 
-- 可选值: `'valine'` 或 `'vssue'`
+- 类型: `'valine' | 'vssue' | 'disable'`
 - 必填: 是
 
-使用 Valine 还是 Vssue。
+使用 Valine 还是 Vssue。设置为 `'disabled'` 会禁用评论功能，仅提供页面信息功能。
 
 ## author
 

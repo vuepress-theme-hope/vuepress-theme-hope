@@ -1,5 +1,5 @@
 ---
-blog: true
+# blog: true
 home: true
 title: vuepress-theme-hope
 heroImage: /logo.svg

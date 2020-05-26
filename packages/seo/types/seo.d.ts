@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export interface BaseSeoContent {
   /**
-   * 文章的标题，不包含任何品牌，例如您的网站名称。
+   * 文章的标题，不包含任何品牌，例如你的网站名称。
    *
    * The title of your object as it should appear within the graph, e.g., "The Rock".
    */

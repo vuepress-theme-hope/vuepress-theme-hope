@@ -448,6 +448,13 @@ Words reading per minute
 
 Whether to enable smooth scrolling
 
+### photoSwipe
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to enable picture preview feature
+
 ### backToTop
 
 - Type: `boolean | Number`

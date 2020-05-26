@@ -1,6 +1,6 @@
 <template>
-  <div v-if="enable" class="pagation-wrapper">
-    <div class="pagation-list">
+  <div v-if="enable" class="pagination-wrapper">
+    <div class="pagination-list">
       <div class="btn-group">
         <div
           v-if="currentPage > 1"
@@ -136,14 +136,14 @@ export default class Pagination extends Vue {
 </script>
 
 <style lang="stylus">
-.pagation-wrapper
+.pagination-wrapper
   font-weight 600
   margin 20px auto 12px
 
   @media (max-width: $MQMobileNarrow)
     margin 20px -1.5rem 12px
 
-  .pagation-list
+  .pagination-list
     display flex
     justify-content space-evenly
     align-items center

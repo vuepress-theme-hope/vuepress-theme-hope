@@ -1,19 +1,41 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { HopeThemeConfig } from "./hopeConfig";
+declare module "@SearchBox" {
+  import vue from "vue";
 
-declare module "@mr-hope/vuepress-types" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ThemeConfig extends HopeThemeConfig {
-    /* nothing more extends */
-  }
+  export default vue;
 }
 
-declare module "vue/types/vue" {
-  export interface Vue {
-    $category: any;
-    $tag: any;
-    $currentTag: any;
-    $currentCategory: any;
-    $pagination: any;
-  }
+declare module "@AlgoliaSearchBox" {
+  // import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@BlogInfo" {
+  // import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@BlogPage" {
+  // import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@Comment" {
+  // import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@PageInfo" {
+  // import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@Pagination" {
+  // import vue from "vue";
+
+  export default vue;
 }

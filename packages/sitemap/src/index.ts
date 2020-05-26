@@ -174,5 +174,5 @@ export = (options: SitemapOptions, context: Context): PluginOptionAPI => ({
       );
   },
 
-  plugins: ["@mr-hope/last-update"],
+  plugins: ["@mr-hope/last-update", ["@vuepress/last-updated", false]],
 });

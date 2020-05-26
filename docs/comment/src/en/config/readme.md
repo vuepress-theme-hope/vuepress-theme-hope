@@ -6,10 +6,10 @@ icon: configuration
 
 ## type
 
-- Options: `'valine'` or `'vssue'`
+- Type: `'valine' | 'vssue' | 'disable'`
 - Required: true
 
-Use Valine or Vssue。
+Use Valine or Vssue. Setting to `'disable'` will only enable PageInfo feature.
 
 ## author
 

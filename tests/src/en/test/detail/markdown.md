@@ -33,7 +33,7 @@ Duplicated footnote reference[^second].
 重大的变动。
 :::
 
-如果您在使用过程中遇到了 bug，可以
+如果你在使用过程中遇到了 bug，可以
 
 ::: right
 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。

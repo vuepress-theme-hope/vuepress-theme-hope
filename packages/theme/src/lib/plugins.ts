@@ -2,10 +2,10 @@ import { Page, PluginConfig, ResolvedComponent } from "@mr-hope/vuepress-types";
 import { ResolvedHopeThemeConfig } from "../../types";
 import { resolve } from "path";
 
-const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
+const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
   // 设置作者
-  if (options.comment && options.author)
-    options.comment.author = options.author;
+  if (themeConfig.comment && themeConfig.author)
+    themeConfig.comment.author = themeConfig.author;
 
   return [
     // FIXME: 目前启用导航栏会报错，原因正在寻找中
@@ -13,7 +13,7 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     // ['clean-urls', { normalSuffix: '/' }],
 
     /** 评论插件 */
-    ["@mr-hope/comment", options.comment],
+    ["@mr-hope/comment", themeConfig.comment],
 
     /** 全屏插件 */
     ["@mr-hope/components"],
@@ -21,30 +21,30 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     /** 更新时间插件 */
     [
       "@mr-hope/last-update",
-      options.lastUpdated === false
+      themeConfig.lastUpdated === false
         ? false
-        : options.lastUpdatedTransformer
-        ? { transformer: options.lastUpdatedTransformer }
+        : themeConfig.lastUpdatedTransformer
+        ? { transformer: themeConfig.lastUpdatedTransformer }
         : {},
     ],
 
     /** PWA 插件 */
-    ["@mr-hope/pwa", options.pwa],
+    ["@mr-hope/pwa", themeConfig.pwa],
 
-    ["@mr-hope/seo", options.seo === false ? false : options.seo],
+    ["@mr-hope/seo", themeConfig.seo],
 
     [
       "@mr-hope/sitemap",
-      options.hostname ? { hostname: options.hostname } : false,
+      themeConfig.hostname ? { hostname: themeConfig.hostname } : false,
     ],
 
     /** 自动激活侧边栏标题 */
-    ["@vuepress/active-header-links", options.activeHeaderLinks],
+    ["@vuepress/active-header-links", themeConfig.activeHeaderLinks],
 
     /** 博客插件 */
     [
       "@vuepress/blog",
-      options.blog === false
+      themeConfig.blog === false
         ? false
         : {
             frontmatters: [
@@ -75,7 +75,7 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
       "@vuepress/search",
       {
         /** 搜索展示数量 */
-        searchMaxSuggestions: options.searchMaxSuggestions || 10,
+        searchMaxSuggestions: themeConfig.searchMaxSuggestions || 10,
       },
     ],
 
@@ -83,14 +83,14 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     [
       "copyright",
       {
-        authorName: options.author,
+        authorName: themeConfig.author,
         minLength: 100,
         clipboardComponent: resolve(__dirname, "../components/Clipboard.vue"),
       },
     ],
 
     /** Markdown 增强插件 */
-    ["md-enhance", options.markdown || false],
+    ["md-enhance", themeConfig.markdown || false],
 
     /** Chunk命名 */
     [
@@ -106,10 +106,10 @@ const pluginConfig = (options: ResolvedHopeThemeConfig): PluginConfig[] => {
     ],
 
     /** Photo-swipe 插件 */
-    ["photo-swipe"],
+    ["photo-swipe", themeConfig.photoSwipe],
 
     /** 平滑滚动 */
-    ["smooth-scroll", options.smoothScroll !== false],
+    ["smooth-scroll", themeConfig.smoothScroll],
 
     /** typescript 支持 */
     ["typescript", {}],

@@ -8,7 +8,7 @@ tags:
 
 # 主题配置
 
-除了查看本指南，您也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) 或本文档的 [配置文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js)。
+除了查看本指南，你也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) 或本文档的 [配置文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js)。
 
 ::: warning
 通过注入，vuepress-theme-hope 改变了默认主题一些配置的默认值。
@@ -22,7 +22,7 @@ tags:
 
 ## 基本选项
 
-这些选项需要您正确配置。
+这些选项需要你正确配置。
 
 ### baseLang
 
@@ -36,7 +36,7 @@ tags:
 ::: tip
 目前多语言仅适配了 **简体中文** (zh-CN) 与 **英文(美国)** (en-US)。
 
-如果您需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
+如果你需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
 :::
 
 ### author
@@ -72,7 +72,7 @@ SideBarItem 新增
 
 ## 默认主题配置
 
-以下这些配置沿用了 `@vuepress/theme-default` 的配置项，您无需进行改动:
+以下这些配置沿用了 `@vuepress/theme-default` 的配置项，你无需进行改动:
 
 ### logo <MyBadge text="改进" type="warn" />
 
@@ -226,7 +226,7 @@ Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体�
 
 主题色选项配置。
 
-如果您不需要这项功能，请设置 `themeColor: false` 将其禁用。
+如果你不需要这项功能，请设置 `themeColor: false` 将其禁用。
 
 - 类型: `Record<string, string>`
 - 默认值:
@@ -244,7 +244,7 @@ Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体�
 
 使用 `themeConfig.markdown` 进行 Markdown 增强配置。
 
-如果您不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
+如果你不需要任何 Markdown 增强，请设置为 `false` 将其禁用。
 
 ### markdown.enableAll
 
@@ -414,7 +414,7 @@ PWA 设置选项
 
 ## 其他配置选项
 
-以下是主题提供的其他配置选项，一般情况下您无需改动他们，但是主题也向你提供了更多有关主题的配置项。
+以下是主题提供的其他配置选项，一般情况下你无需改动他们，但是主题也向你提供了更多有关主题的配置项。
 
 ### iconPrefix
 
@@ -457,6 +457,13 @@ PWA 设置选项
 - 默认值: `true`
 
 是否启用平滑滚动功能
+
+### photoSwipe
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否启用图片预览功能
 
 ### backToTop
 

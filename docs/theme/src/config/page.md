@@ -37,7 +37,7 @@ tags:
 设置当前页面的写作时间。
 
 ::: warning
-尽管本主题及 Mister-Hope 的其他插件会正确解析您输入的时间，如 `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD` 等，但是其他插件可能不能正确的读取他们。使用非标准格式的值可能会导致其他插件报错，
+尽管本主题及 Mister-Hope 的其他插件会正确解析你输入的时间，如 `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD` 等，但是其他插件可能不能正确的读取他们。使用非标准格式的值可能会导致其他插件报错，
 :::
 
 ## category

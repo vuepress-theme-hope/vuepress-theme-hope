@@ -36,7 +36,7 @@ import { TimelineMixin } from "../util/articleMixin";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { MyTransition, TimeIcon } })
-export default class BlogPage extends Mixins(TimelineMixin) {
+export default class TimelineList extends Mixins(TimelineMixin) {
   private get timeline() {
     return (
       this.$themeLocaleConfig.blog.timeline ||
