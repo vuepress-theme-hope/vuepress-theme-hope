@@ -1,6 +1,10 @@
 import { Vssue } from "vssue";
 
-/** 页面信息类型 */
+/**
+ * 页面信息类型
+ *
+ * Type of page infomation
+ */
 export type PageInfotype =
   | "Author"
   | "Time"
@@ -25,46 +29,46 @@ interface BaseCommentOptions {
 }
 
 /** Valine 配置 */
-export type ValineOptions = BaseCommentOptions & {
+export interface ValineOptions extends BaseCommentOptions {
   /** appID */
   appId: string;
 
   /** appKey */
   appKey: string;
-} & Partial<{
-    /** 是否启用评论 */
-    comment: boolean;
 
-    /** 是否启用访问量 */
-    visitor: boolean;
+  /** 是否启用评论 */
+  comment?: boolean;
 
-    /** 评论占位符 */
-    placeholder: string;
+  /** 是否启用访问量 */
+  visitor?: boolean;
 
-    /** 评论所需信息 */
-    meta: string[];
+  /** 评论占位符 */
+  placeholder?: string;
 
-    /** 必填项配置 */
-    requiredFields: string[];
+  /** 评论所需信息 */
+  meta?: string[];
 
-    /** 头像类型 */
-    avatar: string;
+  /** 必填项配置 */
+  requiredFields?: string[];
 
-    /** 是否记录 IP */
-    recordIP: boolean;
+  /** 头像类型 */
+  avatar?: string;
 
-    /** 每页的最大评论数 */
-    pageSize: number;
+  /** 是否记录 IP */
+  recordIP?: boolean;
 
-    /** 是否启用昵称框自动获取 QQ 昵称和 QQ 头像 */
-    enableQQ: boolean;
+  /** 每页的最大评论数 */
+  pageSize?: number;
 
-    /** 自定义表情 CDN */
-    emojiCDN: string;
+  /** 是否启用昵称框自动获取 QQ 昵称和 QQ 头像 */
+  enableQQ?: boolean;
 
-    /** 自定义表情包映射 */
-    emojiMaps: Record<string, string>;
-  }>;
+  /** 自定义表情 CDN */
+  emojiCDN?: string;
+
+  /** 自定义表情包映射 */
+  emojiMaps?: Record<string, string>;
+}
 
 /** Vssue 配置 */
 export interface VssueOptions extends BaseCommentOptions {

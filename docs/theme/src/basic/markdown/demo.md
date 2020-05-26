@@ -1,8 +1,8 @@
 ---
 title: Markdown示例
 icon: markdown
-tags: markdown
-next: ../vuepress/
+tags:
+  - markdown
 ---
 
 # 一级标题

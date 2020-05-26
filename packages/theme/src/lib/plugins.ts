@@ -16,10 +16,6 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
       themeConfig.sitemap = { hostname: themeConfig.hostname };
 
   return [
-    // FIXME: 目前启用导航栏会报错，原因正在寻找中
-    /** 使 VuePress 站点支持简洁链接 */
-    // ['clean-urls', { normalSuffix: '/' }],
-
     /** 评论插件 */
     ["@mr-hope/comment", themeConfig.comment],
 
@@ -85,6 +81,9 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
         searchMaxSuggestions: themeConfig.searchMaxSuggestions || 10,
       },
     ],
+
+    /** 使 VuePress 站点支持简洁链接 */
+    ["clean-urls", { normalSuffix: "/" }],
 
     /** 复制操作处理 */
     [

@@ -45,7 +45,7 @@ import AlgoliaSearchBox from "@AlgoliaSearchBox";
 import NavLinks from "@theme/components/NavLinks.vue";
 import SearchBox from "@SearchBox";
 import SidebarButton from "@theme/components/SidebarButton.vue";
-import ThemeColor from "@theme/components/ThemeColor.vue";
+import ThemeColor from "@ThemeColor";
 
 const css = (el: Element, property: any) => {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'

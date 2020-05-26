@@ -1,5 +1,5 @@
 <template>
-  <div v-if="enable" v-click-outside="clickOutside" class="color-picker">
+  <div v-click-outside="clickOutside" class="color-picker">
     <span class="color-button" @click="showMenu = !showMenu">
       <svg
         :class="{ select: showMenu }"
@@ -47,12 +47,6 @@ import ThemeOptions from "@theme/components/ThemeOptions.vue";
 })
 export default class ThemeColor extends Vue {
   private showMenu = false;
-
-  private get enable() {
-    const { darkmode, themeColor } = this.$themeConfig;
-
-    return !(themeColor === false && darkmode === "disable");
-  }
 
   private clickOutside() {
     this.showMenu = false;

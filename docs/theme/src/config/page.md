@@ -118,7 +118,7 @@ tags:
 
 ## 页面显示配置
 
-## pageInfo
+### pageInfo
 
 - 类型: `PageInfo[] | false`
 - 默认值: 全局中配置的值 (全局默认为 `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)

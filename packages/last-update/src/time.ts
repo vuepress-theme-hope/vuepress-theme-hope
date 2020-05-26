@@ -7,7 +7,6 @@ const getGitLastUpdatedTimeStamp = (filePath: string): number | undefined => {
       .sync("git", ["log", "-1", "--format=%at", basename(filePath)], {
         cwd: dirname(filePath),
       })
-      // .stdout.toString('utf-8')
       .stdout.toString();
 
     return parseInt(timestamp) * 1000;

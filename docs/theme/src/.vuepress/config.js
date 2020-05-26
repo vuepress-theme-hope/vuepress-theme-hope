@@ -46,8 +46,11 @@ module.exports = resolve({
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
 
-    footer: {
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    locales: {
+      "/en/": {
+        nav: navBarConfig.en,
+        sidebar: sideBarConfig.en,
+      },
     },
 
     markdown: {
@@ -59,11 +62,8 @@ module.exports = resolve({
       appKey: "2JK4ezJDqxPTF7JLn5Wk6i8y",
     },
 
-    locales: {
-      "/en/": {
-        nav: navBarConfig.en,
-        sidebar: sideBarConfig.en,
-      },
+    footer: {
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
     algolia: {
