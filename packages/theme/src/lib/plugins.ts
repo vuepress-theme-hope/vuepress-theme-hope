@@ -7,6 +7,14 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
   if (themeConfig.comment && themeConfig.author)
     themeConfig.comment.author = themeConfig.author;
 
+  // 设置域名
+  if (themeConfig.hostname)
+    if (themeConfig.sitemap) {
+      if (!themeConfig.sitemap.hostname)
+        themeConfig.sitemap.hostname = themeConfig.hostname;
+    } else if (themeConfig.sitemap !== false)
+      themeConfig.sitemap = { hostname: themeConfig.hostname };
+
   return [
     // FIXME: 目前启用导航栏会报错，原因正在寻找中
     /** 使 VuePress 站点支持简洁链接 */
@@ -31,12 +39,11 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     /** PWA 插件 */
     ["@mr-hope/pwa", themeConfig.pwa],
 
+    /** SEO 增强 */
     ["@mr-hope/seo", themeConfig.seo],
 
-    [
-      "@mr-hope/sitemap",
-      themeConfig.hostname ? { hostname: themeConfig.hostname } : false,
-    ],
+    /** Sitemap 生成 */
+    ["@mr-hope/sitemap", themeConfig.sitemap],
 
     /** 自动激活侧边栏标题 */
     ["@vuepress/active-header-links", themeConfig.activeHeaderLinks],

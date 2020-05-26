@@ -298,6 +298,84 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 - `'Word'`: 字数
 - `'Visitor'`: 访问量
 
+## SEO <MyBadge text="默认启用" />
+
+> 如果您不需要这个功能，请设置为 `false`。
+
+### seo.twitterID
+
+- 类型: `string`
+- 必填: 否
+
+填入你的 twitter 用户名
+
+### seo.restrictions
+
+- 类型: `string`
+- 必填: 否
+
+内容的年龄分级，格式为 `[int]+`，如 `'13+'`
+
+### seo.seo
+
+- 类型: `(info: PageSeoInfo) => Record<string, string>`
+
+你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，详情请见 [插件配置](plugin/seo.md#seo)。
+
+### seo.customMeta
+
+- 类型: `(meta: Meta, info: PageSeoInfo) => void`
+
+你可以使用此选项来直接向 Meta 中注入内容。详情请见 [插件配置](plugin/seo.md#customMeta)。
+
+## Sitemap <MyBadge text="默认启用" />
+
+> 如果您不需要这个功能，请设置为 `false`。
+
+### sitemap.hostname
+
+- 类型: `string`
+- 必填: 是
+
+当前网站部署到的域名，请至少将其传入或设置 `themeConfig.hostname`，否则插件将无法工作。
+
+### sitemap.urls
+
+- 类型: `string[]`
+- 必填: 否
+
+需要额外包含的网址
+
+### sitemap.exclude
+
+- 类型: `string[]`
+- 必填: 否
+
+不被收录的页面
+
+### sitemap.outFile
+
+- 类型: `string`
+- 默认值: `"sitemap.xml"`
+
+输出的文件名
+
+### sitemap.changefreq
+
+- 类型: `"always"|"hourly"|"daily"|"weekly"|"monthly"|"yearly"|"never"`
+- 默认值: `"daily"`
+
+页面默认更新频率
+
+### sitemap.dateFormatter
+
+- 类型: `($page: PageComputed) => string`
+- 必填: 否
+
+时间格式化器。默认会自动生成时间戳，如果你遇到了时区问题，请设置这个选项。
+
+### sitemap
+
 ## Markdown 增强
 
 ### markdown.enableAll

@@ -8,6 +8,7 @@ import { DefaultThemeConfig, SiteConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "vuepress-plugin-md-enhance/types";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
+import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
 
 /**
  * 合法的媒体
@@ -387,6 +388,8 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
   lastUpdatedTransformer?: (timestamp: number, lang: string) => string;
   /** SEO */
   seo?: SeoOptions | false;
+  /** Sitemap */
+  sitemap?: SitemapOptions | false;
   /**
    * ts-loader 选项
    *
