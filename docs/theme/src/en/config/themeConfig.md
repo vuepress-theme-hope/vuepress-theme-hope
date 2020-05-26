@@ -175,32 +175,7 @@ Document branch
 
 Show edit page link
 
-## Footer settings
-
-Footer setting options
-
-### footer.content
-
-- Type: `string`
-- Required: false
-
-The default content for the footer, can accept HTMLString.
-
-### footer.copyright
-
-- Type: `string | boolean`
-- Default: `'Copyright © <author>'`
-
-The default copyright info, set it to `false` to disable it by default.
-
-### footer.display
-
-- Type: `boolean`
-- Default: `false`
-
-Whether the footer is shown by default
-
-## darkmode
+## darkmode <MyBadge text="Enabled by default" />
 
 - Type: `'auto-switch' | 'switch' | 'auto' | 'disable'`
 - Default: `'auto-switch'`
@@ -212,11 +187,13 @@ Dark mode support options:
 - `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
 - `'disable'`: disable dark mode
 
-## themeColor
+> If you don't need this feature, set `darkmode: "disable"` to disable it.
+
+## themeColor <MyBadge text="Enabled by default" />
 
 Theme color configuration.
 
-If you don't need this feature, set `themeColor: false` to disable it.
+> If you don't need this feature, set `themeColor: false` to disable it.
 
 - Type: `Record<string, string>`
 - Defaults:
@@ -230,18 +207,95 @@ If you don't need this feature, set `themeColor: false` to disable it.
   }
   ```
 
+## Blog configuration <MyBadge text="Enabled by default" />
+
+Blog configuration.
+
+> You can directly set `blog: false` to disable related functions.
+
+### blog.blogger
+
+- Type: `string`
+- Required: No
+
+Blogger name, default is `themeConfig.author`
+
+### blog.avatar
+
+- Type: `string`
+- Required: No
+
+Blogger avatar, default is `themeConfig.logo`
+
+### blog.sidebarDisplay
+
+- Type: `'mobile' | 'none' | 'always'`
+- Default: `'none'`
+
+Whether to show blogger information in the sidebar
+
+- `mobile`: Show in sidebar in mobile view
+- `'always'`: Always show in the sidebar
+- `'none'`: Never show in the sidebar
+
+### blog.intro
+
+- Type: `string`
+- Required: No
+
+Personal introduction address of the blogger.
+
+After filling in, you will be allowed to click on the avatar or name in "Blogger Information" to enter the personal introduction page.
+
+### blog.timeline
+
+- Type: `string`
+- Default: `'Yesterday once more'`
+
+Text on the top of timeline page.
+
+## pwa <MyBadge text="Enabled by default" />
+
+PWA setting options
+
+> If you don't need this feature, please set to false.
+
+### pwa.popupComponent
+
+- Type: `string`
+- Required: No
+
+A custom component to replace the default popup component.
+
+### pwa.gerateSWConfig
+
+workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+
+## pageInfo
+
+- Type: `string[] | false`
+- Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+
+Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
+
+The items that can be filled are as follows:
+
+- `'Author'`: Author
+- `'Time'`: Writing Date
+- `'Category'`: Category
+- `'Tag'`: Tags
+- `'ReadTime'`: Expect reading time
+- `'Word'`: Word number for the article
+- `'Visitor'`: Visitor Number
+
 ## Markdown enhancement
-
-Use `themeConfig.markdown` for Markdown enhanced configuration.
-
-If you don't need any Markdown enhancements, set it to `false` to disable it.
 
 ### markdown.enableAll
 
 - Type: `boolean`
 - Default: `false`
 
-Enable all features.
+Whether to enable all features
 
 ### markdown.lineNumbers <MyBadge text="Default value changed" type = "error" />
 
@@ -249,6 +303,13 @@ Enable all features.
 - Default: `true`
 
 Whether to show line numbers to the left of each code block
+
+### markdown.align
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable align support
 
 ### markdown.sup
 
@@ -298,13 +359,69 @@ For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation]
 
 You can set it to `false` directly to disable the comment function
 
-## pwa
+## Footer settings
 
-PWA setting options
+### footer.content
+
+- Type: `string`
+- Required: false
+
+The default content for the footer, can accept HTMLString.
+
+### footer.copyright
+
+- Type: `string | boolean`
+- Default: `'Copyright © <author>'`
+
+The default copyright info, set it to `false` to disable it by default.
+
+### footer.display
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to display footer by default
+
+## Copyright Settings
+
+### copyright.status
+
+- Type:  `"global" | "local"`
+- Required: Yes
+
+Whether to enable this feature globally.
+
+### copyright.minLength
+
+- Type: `number`
+- Default value: `100`
+
+The minimum number of characters that trigger copyright information or prohibit copying.
+
+### copyright.noCopy
+
+- Type: `boolean`
+- Default value: `false`
+
+Whether to prohibit copying
+
+### copyright.noSelect
+
+- Type: `boolean`
+- Default value: `false`
+
+Whether to prohibit selected text
 
 ## Encryption settings
 
 Encryption setting options
+
+### encrypt.status
+
+-Type: `"global" | "local"`
+-Default value: `"local"`
+
+Whether to encrypt globally
 
 ### encrypt.global
 
@@ -312,13 +429,6 @@ Encryption setting options
 - Required: No
 
 Highest authority password, you can set multiple by using array
-
-### encrypt.globalEncrypt
-
-- Type: `boolean`
-- Default: `false`
-
-Whether global encryption
 
 ### encrypt.config
 
@@ -339,68 +449,6 @@ The encryption configuration is an object with a key name matching the path and 
 ```
 
 :::
-
-## Blog configuration
-
-Blog configuration. You can directly set `blog: false` to disable related functions.
-
-### blog.blogger
-
-- Type: `string`
-- Required: No
-
-Blogger name, default is `themeConfig.author`
-
-### blog.avatar
-
-- Type: `string`
-- Required: No
-
-Blogger avatar, default is `themeConfig.logo`
-
-### blog.sidebarDisplay
-
-- Type: `'mobile' | 'none' | 'always'`
-- Default: `'none'`
-
-Whether to show blogger information in the sidebar
-
-- `mobile`: Show in sidebar in mobile view
-- `'always'`: Always show in the sidebar
-- `'none'`: Never show in the sidebar
-
-### blog.intro
-
-- Type: `string`
-- Required: No
-
-Personal introduction address of the blogger.
-
-After filling in, you will be allowed to click on the avatar or name in "Blogger Information" to enter the personal introduction page.
-
-### blog.timeline
-
-- Type: `string`
-- Default: `'Yesterday once more'`
-
-Text on the top of timeline page.
-
-## pageInfo
-
-- Type: `string[] | false`
-- Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
-
-Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
-
-The items that can be filled are as follows:
-
-- `'Author'`: Author
-- `'Time'`: Writing Date
-- `'Category'`: Category
-- `'Tag'`: Tags
-- `'ReadTime'`: Expect reading time
-- `'Word'`: Word number for the article
-- `'Visitor'`: Visitor Number
 
 ## Other configuration options
 

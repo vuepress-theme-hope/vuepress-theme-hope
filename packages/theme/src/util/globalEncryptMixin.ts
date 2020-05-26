@@ -13,7 +13,7 @@ export default class GlobalEncryptMixin extends Vue {
 
   /** 全局加密状态 */
   protected get globalEncrypted(): boolean {
-    if (this.encryptOptions.globalEncrypt && this.encryptOptions.global) {
+    if (this.encryptOptions.status === "global" && this.encryptOptions.global) {
       const { global } = this.encryptOptions;
       /** 全局密码 */
       const globalPasswords = typeof global === "string" ? [global] : global;

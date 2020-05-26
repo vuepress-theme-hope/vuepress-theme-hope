@@ -82,11 +82,17 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     /** 复制操作处理 */
     [
       "copyright",
-      {
-        authorName: themeConfig.author,
-        minLength: 100,
-        clipboardComponent: resolve(__dirname, "../components/Clipboard.vue"),
-      },
+      typeof themeConfig.copyright === "object"
+        ? {
+            minLength: 100,
+            disable: themeConfig.copyright.status === "local",
+            clipboardComponent: resolve(
+              __dirname,
+              "../components/Clipboard.vue"
+            ),
+            ...themeConfig.copyright,
+          }
+        : false,
     ],
 
     /** Markdown 增强插件 */
@@ -112,7 +118,7 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ["smooth-scroll", themeConfig.smoothScroll],
 
     /** typescript 支持 */
-    ["typescript", {}],
+    ["typescript", { tsLoaderOptions: themeConfig.tsLoader || {} }],
   ];
 };
 

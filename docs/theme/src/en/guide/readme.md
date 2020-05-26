@@ -60,3 +60,25 @@ If you met a bug while using, you can open an issue [here](https://github.com/Mi
   - [Back to Top Button `<BackToTop />`](feature/component.md#back-to-top-button-backtotop)
 
   - [Badge `<MyBadge />`](feature/component.md#badge-mybadge): Added color support on the official basis
+
+## Plugins build-in
+
+The theme also includes the following plugins, you can use them in other themes or directly.
+
+- [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/en/): Comment and page info feature
+
+- [@mr-hope/vuepress-plugin-component](feature/component.md): Provide some out of box plugins
+
+- [@mr-hope/vuepress-plugin-last-update](../config/plugin/last-update.md): Last update time
+
+- [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA support
+
+- [@mr-hope/vuepress-plugin-reading-time](../config/plugin/reading-time.md): Expect reading time and words count
+
+- [@mr-hope/vuepress-plugin-seo](../config/plugin/seo.md): SEO Enhancement Plugin
+
+- [@mr-hope/vuepress-plugin-sitemap](../config/plugin/sitemap.md): Sitemap Generator for your site
+
+- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/): Provide more Markdown syntax
+
+- [vuepress-plugin-photo-swipe](../config/plugin/photo-swipe.md): Make the site's picture support click zoom

@@ -189,6 +189,12 @@ sidebar: false
 ---
 ```
 
+## Blogger Information
+
+If you have configured blog related options, you can configure `themeConfig.blog.sidebarDisplay` to decide whether to display the blogger's name, avatar, and the number of articles and tags in the sidebar.
+
+You can set `'mobile'` to display only in mobile view, or set `always` to keep it displayed in the sidebar.
+
 ## Demo
 
 ::: details Configuration of this documentation
@@ -198,85 +204,105 @@ sidebar: false
 module.exports = {
   themeConfig: {
     sidebar: {
-      '/en/guide/': [
+      "/en/guide/": [
         {
-          title: 'Get Started',
-          icon: 'creativefill',
-          children: ['', 'install']
+          title: "Get Started",
+          icon: "creativefill",
+          collapsable: false,
+          children: ["", "install"],
         },
         {
-          title: 'Outlook',
-          icon: 'layout',
-          prefix: 'layout/',
-          children: ['', 'navbar', 'sidebar', 'breadcrumb', 'page', 'home']
-        },
-        {
-          title: 'New Features',
-          icon: 'discoverfill',
-          prefix: 'feature/',
+          title: "New Features",
+          icon: "discoverfill",
+          prefix: "feature/",
+          collapsable: false,
           children: [
-            '',
-            'icon',
-            'comment',
-            'themecolor',
-            'encrypt',
-            'component',
-            'fullscreen',
-            'typescript'
-          ]
+            "",
+            "theme",
+            "page-info",
+            "comment",
+            "blog",
+            "encrypt",
+            {
+              title: "Markdown enhance",
+              icon: "markdown",
+              prefix: "markdown/",
+              children: [
+                "",
+                "align",
+                "sup-sub",
+                "footnote",
+                "mark",
+                "tex",
+                "flowchart",
+              ],
+            },
+            "component",
+            "seoAndSitemap",
+            "typescript",
+          ],
         },
         {
-          title: 'Markdown enhance',
-          icon: 'markdown',
-          prefix: 'markdown/',
-          children: ['', 'align', 'sup-sub', 'footnote', 'tex', 'flowchart']
-        }
+          title: "Outlook",
+          icon: "layout",
+          prefix: "layout/",
+          collapsable: false,
+          children: ["", "navbar", "sidebar", "page", "home", "blog"],
+        },
       ],
 
-      '/en/config/': [
-        '',
-        'themeConfig',
-        'page',
-        'stylus',
+      "/en/config/": [
+        "",
+        "themeConfig",
+        "page",
+        "stylus",
         {
-          title: 'Plugins',
-          prefix: 'plugin/',
-          icon: 'extension',
+          title: "Plugins",
+          icon: "extension",
+          prefix: "plugin/",
+          collapsable: false,
           children: [
-            '',
-            'container',
-            'copyright',
-            'md-enhance',
-            'medium-zoom',
-            'pwa'
-          ]
-        }
+            "",
+            "last-update",
+            "photo-swipe",
+            "pwa",
+            "reading-time",
+            "seo",
+            "sitemap",
+            "container",
+            "copyright",
+          ],
+        },
       ],
 
-      '/en/basic/': [
+      "/en/basic/": [
         {
-          title: 'Markdown',
-          prefix: 'markdown/',
-          icon: 'markdown',
-          children: ['', 'demo', 'emoji']
+          title: "Markdown",
+          icon: "markdown",
+          prefix: "markdown/",
+          collapsable: false,
+          children: [
+            "",
+            "demo",
+            {
+              title: "Emoji",
+              icon: "emoji",
+              path: "emoji/",
+              prefix: "emoji/",
+              children: ["people", "nature", "object", "place", "symbol"],
+            },
+          ],
         },
         {
-          title: 'Vuepress',
-          prefix: 'vuepress/',
-          icon: 'vue',
-          children: [
-            '',
-            'file',
-            'plugin',
-            'theme/',
-            'theme/config',
-            'command',
-            'case'
-          ]
-        }
+          title: "Vuepress",
+          icon: "vue",
+          prefix: "vuepress/",
+          collapsable: false,
+          children: ["", "file", "plugin", "theme", "command", "case"],
+        },
       ],
 
-      '/en/': ['', 'guide/', 'config/', 'basic/', 'FAQ/']
+      "/en/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
     }
   }
 };

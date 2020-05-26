@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# @mr-hope/photo-swipe <MyBadge text="v0.4.0+" />
+# photo-swipe <MyBadge text="v0.4.0+" />
 
 This plugin will enable your images to support click zoom.
 

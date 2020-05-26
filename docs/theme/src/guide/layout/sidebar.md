@@ -190,85 +190,120 @@ sidebar: false
 ---
 ```
 
+## 博主信息
+
+如果你配置了博客相关选项，你可以通过配置 `themeConfig.blog.sidebarDisplay` 来决定是否在侧边栏显示博主的名字、头像以及文章与标签的数量。
+
+你可以设置 `'mobile'` 来只在移动视图显示，或者设置 `always`，来保持在侧边栏显示。
+
 ## 案例
 
 ::: details 本文档的侧边栏配置
 
-```js {4-75}
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     sidebar: {
-      '/guide/': [
+      "/guide/": [
         {
-          title: '快速上手',
-          icon: 'creative',
-          children: ['', 'install']
+          title: "快速上手",
+          icon: "creativefill",
+          collapsable: false,
+          children: ["", "install"],
         },
         {
-          title: '外观',
-          icon: 'skinfill',
-          children: ['navbar', 'sidebar', 'breadcrumb', 'page', 'home']
-        },
-        {
-          title: '新增功能',
-          icon: 'skinfill',
-          children: ['themecolor', 'fullscreen', 'comment', 'component']
-        },
-        {
-          title: 'Markdown 增强',
-          icon: 'markdown',
-          prefix: 'markdown/',
-          children: ['', 'sup-sub', 'footnote', 'tex', 'flowchart']
-        }
-      ],
-
-      '/config/': [
-        '',
-        'themeConfig',
-        'page',
-        'stylus',
-        {
-          title: '插件配置',
-          prefix: 'plugin/',
-          icon: 'extension',
-          children: ['', 'copyright', 'medium-zoom', 'pwa']
-        }
-      ],
-
-      '/basic/': [
-        {
-          title: 'Markdown',
-          prefix: 'markdown/',
-          icon: 'markdown',
+          title: "新增功能",
+          icon: "discoverfill",
+          prefix: "feature/",
+          collapsable: false,
           children: [
-            '',
-            'demo',
+            "",
+            "theme",
+            "page-info",
+            "comment",
+            "blog",
+            "encrypt",
             {
-              title: 'Emoji',
-              prefix: 'emoji/',
-              icon: 'emoji',
-              children: ['', 'people', 'nature', 'object', 'locate', 'symbol']
-            }
-          ]
+              title: "Markdown 增强",
+              icon: "markdown",
+              prefix: "markdown/",
+              children: [
+                "",
+                "align",
+                "sup-sub",
+                "footnote",
+                "mark",
+                "tex",
+                "flowchart",
+              ],
+            },
+            "component",
+            "seoAndSitemap",
+            "typescript",
+          ],
         },
         {
-          title: 'Vuepress',
-          prefix: 'vuepress/',
-          icon: 'vue',
-          children: [
-            '',
-            'file',
-            'plugin',
-            'theme/',
-            'theme/config',
-            'command',
-            'case'
-          ]
-        }
+          title: "布局",
+          icon: "layout",
+          prefix: "layout/",
+          collapsable: false,
+          children: ["", "navbar", "sidebar", "page", "home", "blog"],
+        },
       ],
 
-      '/': ['', 'guide/', 'config/', 'basic/', 'FAQ/']
+      "/config/": [
+        "",
+        "themeConfig",
+        "page",
+        "stylus",
+        {
+          title: "插件配置",
+          icon: "extension",
+          prefix: "plugin/",
+          collapsable: false,
+          children: [
+            "",
+            "last-update",
+            "photo-swipe",
+            "pwa",
+            "reading-time",
+            "seo",
+            "sitemap",
+            "container",
+            "copyright",
+          ],
+        },
+      ],
+
+      "/basic/": [
+        {
+          title: "Markdown",
+          prefix: "markdown/",
+          icon: "markdown",
+          collapsable: false,
+          children: [
+            "",
+            "demo",
+            {
+              title: "Emoji",
+              icon: "emoji",
+              path: "emoji/",
+              prefix: "emoji/",
+              children: ["people", "nature", "object", "place", "symbol"],
+            },
+          ],
+        },
+        {
+          title: "Vuepress",
+          prefix: "vuepress/",
+          icon: "vue",
+          collapsable: false,
+          children: ["", "file", "plugin", "theme", "command", "case"],
+        },
+      ],
+
+      "/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
     }
   }
 };

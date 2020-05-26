@@ -11,15 +11,13 @@ tags:
 
 vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, you can disable them in plugins.
 
-## plugins enabled
+## Plugins build-in
 
 - [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/en/): Comment and page info feature
 
 - [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): Provide some out of box plugins
 
 - [@mr-hope/vuepress-plugin-last-update](last-update.md): Last update time
-
-- [@mr-hope/vuepress-plugin-photo-swipe](photo-swipe.md): Make the site's picture support click zoom
 
 - [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA support
 
@@ -30,6 +28,10 @@ vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, y
 - [@mr-hope/vuepress-plugin-sitemap](sitemap.md): Sitemap Generator for your site
 
 - [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/): Provide more Markdown syntax
+
+- [vuepress-plugin-photo-swipe](photo-swipe.md): Make the site's picture support click zoom
+
+## Other related plugins
 
 - [vuepress-plugin-container](container.md): custom container
 

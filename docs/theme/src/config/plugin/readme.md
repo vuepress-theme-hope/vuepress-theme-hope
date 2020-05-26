@@ -11,15 +11,13 @@ tags:
 
 vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可以在 `plugins` 将其禁用。
 
-## 启用的插件
+## 内建插件
 
 - [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/): 评论与文章信息功能
 
 - [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): 提供一些开箱即用的插件
 
 - [@mr-hope/vuepress-plugin-last-update](last-update.md): 最后更新时间
-
-- [@mr-hope/vuepress-plugin-photo-swipe](photo-swipe.md): 使网站的图片支持点击缩放
 
 - [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA 支持
 
@@ -30,6 +28,10 @@ vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可�
 - [@mr-hope/vuepress-plugin-sitemap](sitemap.md): 为你的站点生成 sitemap
 
 - [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/): 提供更多 Markdown 语法
+
+- [vuepress-plugin-photo-swipe](photo-swipe.md): 使网站的图片支持点击缩放
+
+## 外部插件
 
 - [vuepress-plugin-container](container.md): 自定义容器
 

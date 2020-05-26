@@ -5,7 +5,7 @@ tags:
   - config
 ---
 
-# @mr-hope/photo-swipe <MyBadge text="v0.4.0+" />
+# photo-swipe <MyBadge text="v0.4.0+" />
 
 这个插件将会使你的图片支持点击缩放。
 
