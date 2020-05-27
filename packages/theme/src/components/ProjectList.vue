@@ -60,6 +60,9 @@ export default class ProjectList extends Vue {
     transition all 0.5s
     align-self stretch
 
+    &:hover
+      transform scale(0.98)
+
     @media (max-width: $MQMobileNarrow)
       width calc(50% - 40px)
 

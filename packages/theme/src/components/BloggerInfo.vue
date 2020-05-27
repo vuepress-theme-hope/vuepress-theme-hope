@@ -10,6 +10,7 @@
         />
         <div v-if="bloggerName" class="name" v-text="bloggerName " />
       </div>
+      <MediaLinks class="logo-media-link" />
     </div>
     <div class="num-wrapper">
       <div @click="navigate('/article/', $router, $route)">
@@ -25,6 +26,7 @@
         <div class="num">{{$tag.list.length}}</div>
       </div>
     </div>
+    <MediaLinks class="bottom-media-link" />
   </div>
 </template>
 
@@ -35,11 +37,12 @@ import {
   deepAssign,
   i18n,
 } from "@mr-hope/vuepress-shared-utils";
-import { ArticleMixin } from "../util/articleMixin";
+import { ArticleMixin } from "@theme/util/articleMixin";
+import MediaLinks from "@theme/components/MediaLinks.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
-import navigate from "../util/navigate";
+import navigate from "@theme/util/navigate";
 
-@Component
+@Component({ components: { MediaLinks } })
 export default class BloggerInfo extends Mixins(ArticleMixin) {
   private navigate = navigate;
 
@@ -77,6 +80,21 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
   @media (min-width: $MQNormal)
     display flex
 
+  .sidebar &
+    .logo-media-link
+      display none
+
+  .logo-media-link
+    @media (max-width: $MQNormal)
+      display none
+
+    @media (min-width: $MQWide)
+      display none
+
+  .bottom-media-link
+    @media (max-width: $MQWide)
+      display none
+
   .blogger-wrapper
     padding 8px 0
     text-align center
@@ -108,7 +126,7 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
 
     @media (min-width: $MQNormal)
       width 100%
-      flex-direction column
+      flex-direction column-reverse
       justify-content space-evenly
 
     > div
@@ -119,8 +137,12 @@ export default class BloggerInfo extends Mixins(ArticleMixin) {
 
       @media (min-width: $MQNormal)
         display flex
+        flex-direction row-reverse
         justify-content space-evenly
         align-items center
+
+        .num
+          margin-right 10px
 
       &:hover
         color var(--accent-color)

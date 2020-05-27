@@ -48,7 +48,7 @@ import { ArticleMixin, StickyMixin } from "../util/articleMixin";
 import { Component, Mixins, Vue } from "vue-property-decorator";
 import ArticleList from "@theme/components/ArticleList.vue";
 import BlogHero from "@theme/components/BlogHero.vue";
-import BlogInfo from "@theme/components/BlogInfo.vue";
+import BlogInfo from "@BlogInfo";
 import CategoryList from "@theme/components/CategoryList.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageFooter from "@theme/components/PageFooter.vue";

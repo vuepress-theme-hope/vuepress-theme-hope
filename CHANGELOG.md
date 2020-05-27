@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.5.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.1...v0.5.0) (2020-05-26)
+
+### Bug Fixes
+
+- **theme:** fix sidebar prefix on group ([abccff8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/abccff836afb449182071d2371b433b8884135e6))
+
+### Performance Improvements
+
+- **theme:** improve perf on theme ([93fc490](https://github.com/Mister-Hope/vuepress-theme-hope/commit/93fc4901b325fd7aad01bcfdca0867aca518bdd1))
+
+### BREAKING CHANGES
+
+All the links will end with a splash `/`, instead of `.html`
+
 ## [0.4.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.0...v0.4.1) (2020-05-26)
 
 ### Performance Improvements
