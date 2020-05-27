@@ -14,22 +14,22 @@ action:
 features:
   - title: 上下角标支持
     details: 你的 Markdown 现在将支持上下角标
-    link: /guide/sup-sub.html
+    link: /guide/sup-sub/
   - title: 脚注
     details: 你的 Markdown 现在将支持脚注
-    link: /guide/footnote.html
+    link: /guide/footnote/
   - title: 自定义对齐支持
     details: 让你在 Markdown 中对段落进行对齐
-    link: /guide/align.html
+    link: /guide/align/
   - title: 标记支持
     details: 让你在 Markdown 中对词句进行标记
-    link: /guide/mark.html
+    link: /guide/mark/
   - title: 流程图支持
     details: 可以在 Markdown 中直接写出流程图
-    link: /guide/flowchart.html
+    link: /guide/flowchart/
   - title: Tex 支持
     details: Markdown 现在也可以支持 Tex 语法以显示公式
-    link: /guide/text.html
+    link: /guide/text/
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

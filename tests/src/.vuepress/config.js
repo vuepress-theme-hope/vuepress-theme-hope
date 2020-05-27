@@ -82,7 +82,7 @@ module.exports = resolve({
     },
 
     blog: {
-      intro: "/intro.html",
+      intro: "/intro/",
       sidebarDisplay: "mobile",
       links: {
         Zhihu: "https://zhihu.com",

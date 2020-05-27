@@ -15,19 +15,19 @@ action:
 features:
   - title: Custom theme color
     details: Supports custom theme colors and allows users to switch between preset theme colors
-    link: /en/guide/feature/themecolor.html
+    link: /en/guide/feature/themecolor/
 
   - title: Dark Mode
     details: Switch between light and dark modes freely
-    link: /en/guide/feature/darkmode.html
+    link: /en/guide/feature/darkmode/
 
   - title: Pageviews and comments
     details: Start pageview statistics and comment support with Valine and Vssue
-    link: /en/guide/feature/comment.html
+    link: /en/guide/feature/comment/
 
   - title: Article information display
     details: Add author, writing date, reading time, word count and other information to your article
-    link: /en/guide/feature/page-info.html
+    link: /en/guide/feature/page-info/
 
   - title: Markdown Enhance
     details: Add align, sup/sub script, footnote, tex, flowchart and mark support in markdown
@@ -35,11 +35,11 @@ features:
 
   - title: Blog support
     details: Add date, tags and category to your articles, than we will generate article, tag, category and timeline list for you
-    link: /en/guide/feature/blog.html
+    link: /en/guide/feature/blog/
 
   - title: Article Encryption
     details: Encrypt you article based on path and folders, so that only the one you want could see them
-    link: /en/guide/feature/blog.html
+    link: /en/guide/feature/blog/
 
   - title: More new features
     details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.

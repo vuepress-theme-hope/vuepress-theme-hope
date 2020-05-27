@@ -45,9 +45,9 @@ module.exports = resolve({
         text: "指南",
         icon: "creativefill",
         items: [
-          { text: "页面信息", icon: "infofill", link: "/guide/page-info.html" },
-          { text: "Valine", icon: "valine", link: "/guide/valine.html" },
-          { text: "Vssue", icon: "vssue", link: "/guide/vssue.html" },
+          { text: "页面信息", icon: "infofill", link: "/guide/page-info/" },
+          { text: "Valine", icon: "valine", link: "/guide/valine/" },
+          { text: "Vssue", icon: "vssue", link: "/guide/vssue/" },
         ],
       },
       {
@@ -55,8 +55,8 @@ module.exports = resolve({
         icon: "configuration",
         items: [
           { text: "配置", icon: "configuration", link: "/config/" },
-          { text: "Valine", icon: "valine", link: "/config/valine.html" },
-          { text: "Vssue", icon: "vssue", link: "/config/vssue.html" },
+          { text: "Valine", icon: "valine", link: "/config/valine/" },
+          { text: "Vssue", icon: "vssue", link: "/config/vssue/" },
         ],
       },
     ],
@@ -115,10 +115,10 @@ module.exports = resolve({
               {
                 text: "Page Info",
                 icon: "infofill",
-                link: "/en/guide/page-info.html",
+                link: "/en/guide/page-info/",
               },
-              { text: "Valine", icon: "valine", link: "/en/guide/valine.html" },
-              { text: "Vssue", icon: "vssue", link: "/en/guide/vssue.html" },
+              { text: "Valine", icon: "valine", link: "/en/guide/valine/" },
+              { text: "Vssue", icon: "vssue", link: "/en/guide/vssue/" },
             ],
           },
           {
@@ -129,9 +129,9 @@ module.exports = resolve({
               {
                 text: "Valine",
                 icon: "valine",
-                link: "/en/config/valine.html",
+                link: "/en/config/valine/",
               },
-              { text: "Vssue", icon: "vssue", link: "/en/config/vssue.html" },
+              { text: "Vssue", icon: "vssue", link: "/en/config/vssue/" },
             ],
           },
         ],

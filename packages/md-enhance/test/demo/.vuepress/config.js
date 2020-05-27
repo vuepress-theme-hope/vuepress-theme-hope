@@ -63,7 +63,7 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       { text: '指南', link: '/guide/' },
-      { text: '配置', link: '/api.html' }
+      { text: '配置', link: '/api/' }
     ],
 
     /** 侧边栏配置 */
@@ -109,7 +109,7 @@ module.exports = {
         nav: [
           { text: 'Home', link: '/en/' },
           { text: 'Guide', link: '/en/guide/' },
-          { text: 'Config', link: '/en/api.html' }
+          { text: 'Config', link: '/en/api/' }
         ],
 
         /** 该语言下侧边栏的配置 */
