@@ -1,5 +1,7 @@
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { ResolvedHopeThemeConfig } from "../types";
+import { CAC } from "cac";
+import eject from "./lib/eject";
 import getPlugin from "./lib/plugins";
 
 interface ThemeOptionAPI extends PluginOptionAPI {
@@ -76,6 +78,18 @@ export = (
   config.alias = getAlias(themeConfig, ctx);
 
   config.plugins = getPlugin(themeConfig);
+
+  config.extendCli = (cli: CAC): void => {
+    cli
+      .command(
+        "eject-hope [targetDir]",
+        "copy vuepress-theme-hope into .vuepress/theme for customization."
+      )
+      .option("--debug", "eject in debug mode")
+      .action((dir = ".") => {
+        void eject(dir);
+      });
+  };
 
   return config;
 };

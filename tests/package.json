@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "vuepress dev src",
     "clean-serve": "vuepress dev src --no-cache",
-    "build": "vuepress build src"
+    "build": "vuepress build src",
+    "eject": "vuepress eject-hope src --debug"
   },
   "author": "Mr.Hope",
   "license": "MIT",
