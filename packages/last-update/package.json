@@ -30,12 +30,12 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/last-update#readme",
   "dependencies": {
+    "@mr-hope/vuepress-types": "^0.5.0",
     "@types/cross-spawn": "^6.0.2",
     "cross-spawn": "^7.0.3",
     "moment": "^2.26.0"
   },
   "peerDependencies": {
-    "@mr-hope/vuepress-types": "^0.4.0-alpha.1",
     "typescript": "^3.9.3"
   }
 }
