@@ -162,7 +162,7 @@ export default class Valine extends Vue {
         color var(--light-grey, #999)
 
       .vcount
-        font-size 18px
+        font-size 1.2em
 
       .vcards
         .vcard

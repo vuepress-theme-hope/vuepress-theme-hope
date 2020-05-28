@@ -7,6 +7,7 @@
         :key="tag"
         class="tag"
         :class="{ clickable, [`tag${index % 9}`]: true }"
+        :role="clickable? 'navigation': ''"
         @click="navigate(tag)"
         v-text="tag"
       />
@@ -58,8 +59,8 @@ export default class TagInfo extends Vue {
     position relative
     margin 0 2px
     vertical-align middle
-    font-size 12px
-    border-radius 12px
+    font-size 0.75em
+    border-radius 0.75em
     overflow hidden
     transition all 0.5s
     padding 1px 4px

@@ -1,14 +1,14 @@
 <template>
-  <div class="article">
+  <section class="article">
     <StickyIcon v-if="article.frontmatter.sticky" />
-    <router-link class="title" :to="article.path">
+    <router-link class="title" tag="header" :to="article.path">
       <LockIcon v-if="isEncrypted" />
       {{ article.title }}
     </router-link>
     <div v-if="article.excerpt" class="article-excerpt" v-html="article.excerpt" />
     <hr class="hr" />
     <ArticleInfo :article="article" />
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

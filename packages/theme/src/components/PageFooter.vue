@@ -1,9 +1,9 @@
 <template>
-  <div v-if="display" class="footer-wrapper">
+  <footer v-if="display" class="footer-wrapper">
     <MediaLinks />
     <div v-if="footerContent" class="footer" v-html="footerContent" />
     <div v-if="copyright" class="copyright" v-html="copyright" />
-  </div>
+  </footer>
 </template>
 
 <script lang='ts'>

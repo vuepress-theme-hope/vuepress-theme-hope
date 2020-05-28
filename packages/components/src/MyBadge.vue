@@ -47,11 +47,11 @@ export default class MyBadge extends Vue {
 <style lang="stylus" scoped>
 .badge
   display inline-block
-  font-size 14px
-  height 18px
-  line-height 18px
-  border-radius 3px
-  padding 0 6px
+  font-size 0.85rem
+  height 1.1em
+  line-height 1.1em
+  border-radius 0.2em
+  padding 0 0.4em
   color var(--white, #fff)
   background-color #42b983
 
@@ -68,5 +68,5 @@ export default class MyBadge extends Vue {
     background-color #C2CBD2
 
   & + &
-    margin-left 5px
+    margin-left 0.3em
 </style>

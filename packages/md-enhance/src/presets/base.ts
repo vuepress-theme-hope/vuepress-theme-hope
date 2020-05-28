@@ -4,8 +4,8 @@ export default {
   // eslint-disable-next-line id-length
   y: 0,
   "line-width": 2,
-  "line-length": 50,
-  "text-margin": 10,
+  "line-length": 40,
+  "text-margin": 8,
   "font-size": 14,
   "font-color": "#8DA1AC",
   "line-color": "#8DA1AC",

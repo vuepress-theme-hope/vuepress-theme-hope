@@ -61,7 +61,7 @@ export default class PageInfo extends Vue {
 .page
   .page-title
     @extend $wrapper
-    padding-bottom 0
+    padding-bottom 0.2rem
     position relative
     z-index 1
 
@@ -80,22 +80,22 @@ export default class PageInfo extends Vue {
     align-items center
     flex-wrap wrap
     color var(--dark-grey, #666)
-    font-size 15px
+    font-size 0.9em
 
     & > span
       display flex
       align-items center
       flex-shrink 0
-      margin-right 8px
+      margin-right 0.5em
       line-height 2
 
       @media (min-width: $MQWide)
-        margin-right 12px
+        margin-right 0.75em
 
     .icon
-      width 16px
-      height 16px
-      margin-right 4px
+      width 1em
+      height 1em
+      margin-right 0.25em
 
   .theme-default-content:not(.custom) h1:first-child
     display none

@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-info-wrapper">
+  <aside class="blog-info-wrapper">
     <MyTransition>
       <BloggerInfo />
     </MyTransition>
@@ -58,7 +58,7 @@
     <MyTransition :delay="0.28">
       <TimelineList />
     </MyTransition>
-  </div>
+  </aside>
 </template>
 
 <script lang='ts'>

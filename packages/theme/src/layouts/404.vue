@@ -42,9 +42,9 @@ export default class NotFound extends Vue {
     font-size 1rem
     color var(--white)
     background-color var(--accent-color)
-    margin 0 4px
-    padding 8px 16px
-    border-radius 4px
+    margin 0 0.25rem
+    padding 0.5rem 1rem
+    border-radius 0.25rem
     transition background-color 0.1s ease
     box-sizing border-box
     border-bottom 1px solid var(--accent-color-d10)

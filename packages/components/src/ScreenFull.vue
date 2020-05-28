@@ -1,6 +1,6 @@
 <template>
   <div v-if="canFullscreen" class="fullscreen-wrapper">
-    <span class="icon" @click="click">
+    <span class="icon" role="button" @click="click">
       <svg
         :class="isFullscreen? 'cacelFullScreen': 'fullScreen'"
         viewBox="0 0 1024 1024"

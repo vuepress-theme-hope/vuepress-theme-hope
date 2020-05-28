@@ -1,5 +1,11 @@
 <template>
-  <span v-if="categoryName" class="category-info" :class="{ active }" @click="navigate">
+  <span
+    v-if="categoryName"
+    class="category-info"
+    :class="{ active }"
+    :role="active? 'navigation':''"
+    @click="navigate"
+  >
     <CategoryIcon />
     <span v-text="categoryName" />
   </span>
