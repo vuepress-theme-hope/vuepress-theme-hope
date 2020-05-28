@@ -30,14 +30,14 @@
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme",
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.5.0",
+    "@mr-hope/vuepress-types": "^0.5.0",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "5.0.2",
-    "vue-router": "^3.2.0",
+    "vue-router": "^3.3.1",
     "vuepress-plugin-typescript": "^0.3.0"
   },
   "peerDependencies": {
-    "@mr-hope/vuepress-types": "^0.4.0-alpha.1",
     "typescript": "^3.9.3"
   }
 }

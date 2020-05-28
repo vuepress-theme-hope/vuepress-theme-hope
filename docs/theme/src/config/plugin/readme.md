@@ -9,7 +9,7 @@ tags:
 
 # 插件说明
 
-vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可以在 `plugins` 将其禁用。
+vuepress-theme-hope 启用了很多 vuepress 插件，如果你不需要，可以在 themeConfig 中将其禁用。
 
 ## 内建插件
 

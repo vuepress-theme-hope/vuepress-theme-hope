@@ -9,7 +9,7 @@ tags:
 
 # Plugin Description
 
-vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, you can disable them in plugins.
+vuepress-theme-hope has many vuepress plugins enabled. If you don't need them, you can disable them in themeConfig.
 
 ## Plugins build-in
 

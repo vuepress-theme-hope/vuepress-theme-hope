@@ -30,9 +30,7 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/sitemap#readme",
   "dependencies": {
-    "sitemap": "^6.1.4"
-  },
-  "peerDependencies": {
-    "@mr-hope/vuepress-types": "^0.4.0-alpha.1"
+    "@mr-hope/vuepress-types": "^0.5.0",
+    "sitemap": "^6.1.5"
   }
 }
