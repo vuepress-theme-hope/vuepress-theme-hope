@@ -33,9 +33,9 @@ import DarkIcon from "@mr-hope/vuepress-shared-utils/icons/DarkIcon.vue";
 import LightIcon from "@mr-hope/vuepress-shared-utils/icons/LightIcon.vue";
 import { dom } from "@mr-hope/vuepress-shared-utils";
 
-const changeClass = (domClass: any, insert: string[], remove: string[]) => {
+const changeClass = (domClass: DOMTokenList, insert: string[], remove: string[]) => {
   domClass.remove(...remove);
-  const oldClasses = [...domClass];
+  const oldClasses = Array.from(domClass);
   domClass.value = "";
   domClass.add(...insert, ...oldClasses);
 };

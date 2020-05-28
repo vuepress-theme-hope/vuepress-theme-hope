@@ -13,7 +13,7 @@
           {{i18n.article}}
         </div>
         <hr />
-        <div class="sticky-article-list">
+        <ul class="sticky-article-list">
           <MyTransition
             v-for="(article,index) in $stickArticles"
             :key="article.path"
@@ -21,7 +21,7 @@
           >
             <li class="sticky-article" @click="$router.push(article.path)" v-text="article.title" />
           </MyTransition>
-        </div>
+        </ul>
       </div>
     </MyTransition>
 

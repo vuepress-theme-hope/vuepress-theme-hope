@@ -108,10 +108,10 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     [
       "named-chunks",
       {
-        pageChunkName: (page: Page): string =>
-          /^(?!\.)[^\\/:*?"<>|]{1,255}$/u.test(page.title)
-            ? `page-${page.title}`
-            : `page-${page.key.slice(1)}`,
+        pageChunkName: (page: Page): string => {
+          const title = (page.title || "").replace(/[*?#\\/:"<>| ]/u, "");
+          return title ? `page-${title}` : `page-${page.key.slice(1)}`;
+        },
         layoutChunkName: (layout: ResolvedComponent): string =>
           `layout-${layout.componentName}`,
       },
