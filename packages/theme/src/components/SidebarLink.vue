@@ -38,7 +38,7 @@ interface RenderLinkOption {
 /** 渲染链接 */
 const renderLink = (
   h: CreateElement,
-  { icon = "", text, link, active }: RenderLinkOption,
+  { icon = "", text, link, active }: RenderLinkOption
 ) =>
   h(
     "router-link",
@@ -53,13 +53,13 @@ const renderLink = (
         "sidebar-link": true,
       },
     },
-    [renderIcon(h, icon), text],
+    [renderIcon(h, icon), text]
   );
 
 /** 渲染外部链接 */
 const renderExternal = (
   h: CreateElement,
-  { path, title = path }: SidebarExternalItem,
+  { path, title = path }: SidebarExternalItem
 ) =>
   h(
     "a",
@@ -71,7 +71,7 @@ const renderExternal = (
       },
       class: { "sidebar-link": true },
     },
-    [title, h("OutboundLink")],
+    [title, h("OutboundLink")]
   );
 
 interface RenderChildrenOptions {
@@ -90,7 +90,7 @@ interface RenderChildrenOptions {
 /** 渲染子项 */
 const renderChildren = (
   h: CreateElement,
-  { children, path, route, maxDepth, depth = 1 }: RenderChildrenOptions,
+  { children, path, route, maxDepth, depth = 1 }: RenderChildrenOptions
 ): VNode | null => {
   if (!children || depth > maxDepth) return null;
 
@@ -114,7 +114,7 @@ const renderChildren = (
           depth: depth + 1,
         }),
       ]);
-    }),
+    })
   );
 };
 
@@ -133,7 +133,7 @@ interface SidebarLinkProps {
   functional: true,
   render(
     h,
-    { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props },
+    { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props }
   ) {
     /** 当前渲染项目配置 */
     const { item } = props as SidebarLinkProps;
@@ -156,7 +156,7 @@ interface SidebarLinkProps {
       item.type === "header"
         ? selfActive ||
           (item.children || []).some((child) =>
-            isActive($route, `${item.basePath}#${child.slug}`),
+            isActive($route, `${item.basePath}#${child.slug}`)
           )
         : selfActive;
 
@@ -190,7 +190,11 @@ interface SidebarLinkProps {
     const link = renderLink(h, {
       icon:
         $themeConfig.sidebarIcon !== false && item.frontmatter.icon
-          ? `${$themeConfig.iconPrefix === "" ? "" : $themeConfig.iconPrefix || "icon-"}${item.frontmatter.icon}`
+          ? `${
+              $themeConfig.iconPrefix === ""
+                ? ""
+                : $themeConfig.iconPrefix || "icon-"
+            }${item.frontmatter.icon}`
           : "",
       text: item.title || item.path,
       link: item.path,
@@ -225,11 +229,14 @@ export default class SidebarLink extends Vue {
 </script>
 
 <style lang="stylus">
-.sidebar 
+.sidebar
   .sidebar-links
     ul.sidebar-sub-headers
       padding-left 1rem
       font-size 0.95em
+
+      @media (min-width: $MQWide)
+        display none
 
 a.sidebar-link
   font-size 1em

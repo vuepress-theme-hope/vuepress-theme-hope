@@ -40,11 +40,7 @@ export default class FlowChart extends Vue {
 
   private get resize() {
     return debounce(() => {
-      console.log("debounce");
-
       const scale = this.getScale(window.innerWidth);
-
-      console.log(scale);
 
       if (this.scale !== scale) {
         this.scale = scale;

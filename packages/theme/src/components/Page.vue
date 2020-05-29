@@ -1,5 +1,5 @@
 <template>
-  <main class="page">
+  <main class="page" :class="{ 'has-anchor': displayAnchor }">
     <!-- 路径导航 -->
     <MyTransition>
       <BreadCrumb :key="$route.path" />
@@ -29,6 +29,11 @@
 
     <!-- 编辑链接 -->
     <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
+      <Anchor v-if="displayAnchor" :key="$route.path" :header="headers" />
+    </MyTransition>
+
+    <!-- 编辑链接 -->
+    <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
       <PageEdit :key="$route.path" />
     </MyTransition>
 
@@ -53,18 +58,21 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { SidebarItem, SidebarGroupItem, SidebarHeader } from "../util/sidebar";
+import Anchor from "@theme/components/Anchor.vue";
 import Comment from "@Comment";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageEdit from "@theme/components/PageEdit.vue";
 import PageFooter from "@theme/components/PageFooter.vue";
+import { PageHeader } from "@mr-hope/vuepress-types";
 import PageInfo from "@PageInfo";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
-import { SidebarItem } from "../util/sidebar";
 import md5 = require("md5");
 
 @Component({
   components: {
+    Anchor,
     Comment,
     MyTransition,
     PageEdit,
@@ -105,6 +113,35 @@ export default class Page extends Vue {
   private get pageDescrypted() {
     return this.password === this.pagePassword;
   }
+
+  private get displayAnchor() {
+    return this.$themeConfig.anchorDisplay !== false && this.headers.length > 0;
+  }
+
+  private getHeader(items: SidebarItem[]): SidebarHeader[] {
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+
+      if (item.type === "group") {
+        const matching: PageHeader[] = this.getHeader(
+          (item as SidebarGroupItem).children
+        );
+
+        if (matching.length !== 0) return matching;
+      } else if (
+        item.type === "page" &&
+        item.headers &&
+        item.path === this.$route.path
+      )
+        return item.headers;
+    }
+
+    return [];
+  }
+
+  private get headers() {
+    return this.getHeader(this.sidebarItems);
+  }
 }
 </script>
 
@@ -126,4 +163,8 @@ export default class Page extends Vue {
   // wide mobile
   @media (max-width: $MQMobile)
     padding-left 0
+
+  @media (min-width: $MQWide)
+    &.has-anchor
+      padding-right 16rem
 </style>

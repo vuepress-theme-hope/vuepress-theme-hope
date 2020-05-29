@@ -13,13 +13,11 @@ import WordIcon from "@mr-hope/vuepress-shared-utils/icons/WordIcon.vue";
 @Component({ components: { WordIcon } })
 export default class ReadTimeInfo extends Vue {
   private get words(): string {
-    const { readingTime } =
-      (this.$themeLocaleConfig as HopeLangI18nConfig) ||
-      i18n.getDefaultLocale();
+    const { readingTime } = this.$themeLocaleConfig || i18n.getDefaultLocale();
 
     return readingTime.word.replace(
       "$word",
-      this.$page.readingTime.words.toString(),
+      this.$page.readingTime.words.toString()
     );
   }
 }
