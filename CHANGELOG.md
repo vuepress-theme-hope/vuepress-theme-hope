@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.5.0...v0.6.0) (2020-05-29)
+
+### Bug Fixes
+
+- **md-enhance:** fix flowchart appearance on mobile screen ([520b9e2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/520b9e20755b1ed1f2bdc340e7ac6e6fdd6e4147))
+- **theme:** improve page chunk name and small fix ([196974a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/196974a5353e4a89e8de44690b2cf7fe7a09c704))
+
+### Features
+
+- **theme:** add eject-hope command ([2568734](https://github.com/Mister-Hope/vuepress-theme-hope/commit/256873413694e543efe05facf27e00b22d8da02a))
+- **theme:** add header anchor for desktop (close [#75](https://github.com/Mister-Hope/vuepress-theme-hope/issues/75)) ([97b384c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/97b384c6e4923eaaef02da1cbedd4594f5cdcaf3))
+- **theme:** add medialink in blogpage logo ([7c54fcf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7c54fcf9d32a38dc29ebc1a985382586afacccb0))
+
 ## [0.5.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.4.1...v0.5.0) (2020-05-26)
 
 ### Bug Fixes
