@@ -51,7 +51,7 @@
     "eslint-plugin-vue": "6.2.2",
     "husky": "4.2.5",
     "lerna": "3.22.0",
-    "lint-staged": "10.2.6",
+    "lint-staged": "10.2.7",
     "mocha": "7.2.0",
     "prettier": "2.0.5",
     "ts-node": "8.10.2",
