@@ -37,10 +37,10 @@ import {
   deepAssign,
   i18n,
 } from "@mr-hope/vuepress-shared-utils";
-import { ArticleMixin } from "@theme/util/articleMixin";
+import { ArticleMixin } from "../util/articleMixin";
 import MediaLinks from "@theme/components/MediaLinks.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
-import navigate from "@theme/util/navigate";
+import navigate from "../util/navigate";
 
 @Component({ components: { MediaLinks } })
 export default class BloggerInfo extends Mixins(ArticleMixin) {
