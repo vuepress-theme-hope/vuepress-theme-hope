@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-theme-types",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Theme types for vuepress-theme-hope",
   "types": "types/index.d.js",
   "publishConfig": {
@@ -29,12 +29,12 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/theme-types#readme",
   "dependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^0.5.0",
-    "@mr-hope/vuepress-plugin-last-update": "^0.5.0",
-    "@mr-hope/vuepress-plugin-pwa": "^0.5.0",
-    "@mr-hope/vuepress-plugin-reading-time": "^0.5.0",
-    "@mr-hope/vuepress-types": "^0.5.0",
-    "vuepress-plugin-md-enhance": "^0.5.0",
-    "vuepress-plugin-photo-swipe": "^0.5.0"
+    "@mr-hope/vuepress-plugin-comment": "^0.6.0",
+    "@mr-hope/vuepress-plugin-last-update": "^0.6.0",
+    "@mr-hope/vuepress-plugin-pwa": "^0.6.0",
+    "@mr-hope/vuepress-plugin-reading-time": "^0.6.0",
+    "@mr-hope/vuepress-types": "^0.6.0",
+    "vuepress-plugin-md-enhance": "^0.6.0",
+    "vuepress-plugin-photo-swipe": "^0.6.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-sitemap",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "sitemap plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/sitemap#readme",
   "dependencies": {
-    "@mr-hope/vuepress-types": "^0.5.0",
+    "@mr-hope/vuepress-types": "^0.6.0",
     "sitemap": "^6.1.5"
   }
 }
