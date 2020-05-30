@@ -23,6 +23,7 @@ module.exports = {
             title: "Markdown 增强",
             icon: "markdown",
             prefix: "markdown/",
+            collapsable: false,
             children: [
               "",
               "align",
@@ -85,6 +86,7 @@ module.exports = {
             icon: "emoji",
             path: "emoji/",
             prefix: "emoji/",
+            collapsable: false,
             children: ["people", "nature", "object", "place", "symbol"],
           },
         ],
@@ -124,6 +126,7 @@ module.exports = {
             title: "Markdown enhance",
             icon: "markdown",
             prefix: "markdown/",
+            collapsable: false,
             children: [
               "",
               "align",
@@ -186,6 +189,7 @@ module.exports = {
             icon: "emoji",
             path: "emoji/",
             prefix: "emoji/",
+            collapsable: false,
             children: ["people", "nature", "object", "place", "symbol"],
           },
         ],

@@ -5,7 +5,7 @@ tags:
   - markdown
 ---
 
-# New syntax in Markdown
+# Markdown Enhance
 
 vuepress-theme-hope enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-md-enhance.mrhope.site/) plugin.
 
