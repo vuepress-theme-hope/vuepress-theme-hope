@@ -65,7 +65,6 @@ $categoryListTextSize ?= 14px
       display inline-block
       min-width 1.4em
       height 1.4em
-      padding 0 0.5em
       margin-left 0.3em
       border-radius 0.7em
       color var(--white)
