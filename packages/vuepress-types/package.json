@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-types",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "VuePress TypeScript helpers",
   "types": "types/index.d.js",
   "publishConfig": {
