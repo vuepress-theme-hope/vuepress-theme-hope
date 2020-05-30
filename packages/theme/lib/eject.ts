@@ -1,18 +1,21 @@
-import { parse, relative, resolve } from "path";
+import { relative, resolve } from "path";
 import chalk from "chalk";
 import { copy } from "fs-extra";
 
 const EXCLUDED_FILES = [
   "__tests__",
   ".npmignore",
+  "test",
+  "LICENSE",
   "package.json",
   "node_modules",
   "README.md",
+  "readme.md",
 ];
 
 export default async (dir: string): Promise<void> => {
   try {
-    const sourceDir = parse(resolve(__dirname, "../")).dir;
+    const sourceDir = resolve(__dirname, "../");
     const targetDir = resolve(resolve(dir), ".vuepress/theme");
 
     await copy(sourceDir, targetDir, {

@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import { EncryptOptions } from "../../types";
+import { EncryptOptions } from "../types";
 
 @Component
 export default class GlobalEncryptMixin extends Vue {

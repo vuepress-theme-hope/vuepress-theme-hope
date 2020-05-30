@@ -7,8 +7,7 @@ packages/**/*.d.ts
 !packages/**/types/**.d.ts
 
 !packages/pwa/src/skip-waiting.js
-!packages/theme/src/lib/clientRootMixin.js
-!packages/theme/src/lib/noopModule.js
+!packages/theme/lib/noopModule.js
 
 !packages/**/test/**/*.js
 

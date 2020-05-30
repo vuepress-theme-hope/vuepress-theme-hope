@@ -2,7 +2,7 @@
   "name": "vuepress-theme-hope",
   "version": "0.6.1",
   "description": "a light vuepress theme",
-  "main": "src/index.js",
+  "main": "index.js",
   "types": "types/index.d.ts",
   "keywords": [
     "vuepress-theme",

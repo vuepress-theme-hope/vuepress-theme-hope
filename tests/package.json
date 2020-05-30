@@ -7,7 +7,7 @@
     "serve": "vuepress dev src",
     "clean-serve": "vuepress dev src --no-cache",
     "build": "vuepress build src",
-    "eject": "vuepress eject-hope src --debug"
+    "eject": "vuepress eject-hope src"
   },
   "author": "Mr.Hope",
   "license": "MIT",

@@ -1,4 +1,4 @@
-import { EncryptOptions } from "../../types";
+import { EncryptOptions } from "../types";
 import md5 = require("md5");
 
 /**

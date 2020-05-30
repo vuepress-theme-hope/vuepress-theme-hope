@@ -1,6 +1,6 @@
 /** 加密状态生成 */
 
-import { EncryptOptions } from "../../types";
+import { EncryptOptions } from "../types";
 
 /**
  * 路径命中的键

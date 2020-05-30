@@ -34,11 +34,14 @@ export default class CategoryList extends Vue {
 </script>
 
 <style lang="stylus">
+$categoryListTextSize ?= 14px
+
 .category-list-wrapper
   position relative
   list-style none
   padding-left 0
   z-index 2
+  font-size $categoryListTextSize
 
   .category
     display inline-flex
@@ -46,26 +49,30 @@ export default class CategoryList extends Vue {
     align-items center
     box-sizing border-box
     vertical-align middle
-    margin 4px 8px 10px
-    padding 6px 12px
-    border-radius 0.25rem
+    margin 0.3em 0.6em 0.8em
+    padding 0.4em 0.8em
+    border-radius 0.25em
     box-shadow 0 1px 4px 0 var(--card-shadow-color)
     color var(--dark-grey)
-    font-size 14px
     cursor pointer
     overflow hidden
     transition all 0.5s
 
+    @media (max-width: $MQMobileNarrow)
+      font-size 0.9em
+
     .category-num
       display inline-block
-      margin-left 4px
-      min-width 1rem
-      height 1rem
-      text-align center
-      line-height 1rem
-      border-radius 0.5rem
-      font-size 0.7rem
+      min-width 1.4em
+      height 1.4em
+      padding 0 0.5em
+      margin-left 0.3em
+      border-radius 0.7em
       color var(--white)
+      font-family sans-serif
+      font-size 0.7em
+      line-height 1.4em
+      text-align center
 
 @require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
 

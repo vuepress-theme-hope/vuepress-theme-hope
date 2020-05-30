@@ -1,7 +1,7 @@
 import { describe, it } from "mocha";
 import { HopeVuepressConfig } from "../types";
 import { expect } from "chai";
-import resolveHead from "../src/lib/resolveHead";
+import resolveHead from "../lib/resolveHead";
 
 describe("Test resolveHead function", () => {
   it("should generate icon, author and PWA because they do not exist", () => {

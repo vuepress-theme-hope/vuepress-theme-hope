@@ -1,8 +1,9 @@
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { ResolvedHopeThemeConfig } from "../types";
+import { ResolvedHopeThemeConfig } from "./types";
 import { CAC } from "cac";
 import eject from "./lib/eject";
 import getPlugin from "./lib/plugins";
+import { resolve } from "path";
 
 interface ThemeOptionAPI extends PluginOptionAPI {
   extend?: string;
@@ -31,17 +32,17 @@ const getAlias = (
     themeConfig.themeColor === false && themeConfig.darkmode === "disable"
   );
 
-  const noopModule = "vuepress-theme-hope/src/lib/noopModule.js";
+  const noopModule = "vuepress-theme-hope/lib/noopModule.js";
 
   return {
     "@AlgoliaSearchBox": isAlgoliaSearch
-      ? "vuepress-theme-hope/src/components/AlgoliaSearchBox.vue"
+      ? resolve(__dirname, "./components/AlgoliaSearchBox.vue")
       : noopModule,
     "@BlogInfo": blogEnabled
-      ? "vuepress-theme-hope/src/components/BlogInfo.vue"
+      ? resolve(__dirname, "./components/BlogInfo.vue")
       : noopModule,
     "@BlogPage": blogEnabled
-      ? "vuepress-theme-hope/src/components/BlogPage.vue"
+      ? resolve(__dirname, "./components/BlogPage.vue")
       : noopModule,
     "@Comment":
       commentPluginEnabled && commentEnabled
@@ -51,7 +52,7 @@ const getAlias = (
       ? "@mr-hope/vuepress-plugin-comment/PageInfo.vue"
       : noopModule,
     "@ThemeColor": themeColorEnabled
-      ? "vuepress-theme-hope/src/components/ThemeColor.vue"
+      ? resolve(__dirname, "./components/ThemeColor.vue")
       : noopModule,
   };
 };
