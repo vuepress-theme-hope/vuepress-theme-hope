@@ -1,10 +1,22 @@
 # Changelog
 
+## [0.6.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.1...v0.6.2) (2020-05-30)
+
+### Bug Fixes
+
+- **theme:** fix eject-hope command ([bbab465](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bbab4653129ea746e3a66de89cebb209e9fe1c1a))
+- **theme:** fix MediaLink display issue and some improvement ([8c08d2c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8c08d2c508ba3e520a0756b90c21b8084fada357))
+- **theme:** fix navbar active issue and optimize anchor ([e56b839](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e56b839ce41503f089593449f547a382be0a29b7))
+
+### Features
+
+- **theme:** improve inline code in custom blocks ([a87c171](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a87c171e3bcb1af75294ac50cdac81d42fe96a99))
+
 ## [0.6.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.0...v0.6.1) (2020-05-29)
 
 ### Bug Fixes
 
-* **theme:** fixing types problems ([b27f091](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b27f0919b5e4bfd1cf6759a89a93c63f68a5276c))
+- **theme:** fixing types problems ([b27f091](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b27f0919b5e4bfd1cf6759a89a93c63f68a5276c))
 
 ## [0.6.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.5.0...v0.6.0) (2020-05-29)
 
