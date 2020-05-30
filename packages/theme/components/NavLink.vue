@@ -2,7 +2,7 @@
   <router-link
     v-if="!isExternal(link)"
     class="nav-link"
-    :exact="exact"
+    :class="{ active }"
     :to="link"
     @focusout.native="focusoutAction"
   >
@@ -43,13 +43,8 @@ export default class NavLink extends Vue {
     return iconPrefix === "" ? "" : iconPrefix || "icon-";
   }
 
-  private get exact() {
-    if (this.$site.locales)
-      return Object.keys(this.$site.locales).some(
-        (rootLink) => rootLink === this.link,
-      );
-
-    return this.link === "/";
+  private get active() {
+    return this.link === this.$route.path;
   }
 
   private isExternal = isExternal;

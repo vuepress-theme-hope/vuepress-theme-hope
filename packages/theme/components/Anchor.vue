@@ -111,22 +111,16 @@ interface SidebarLinkProps {
         2) + 1;
     const children = groupSidebarHeaders(header);
 
-    return h(
-      "aside",
-      {
-        class: {
-          "anchor-list-wrapper": true,
-        },
-      },
-      [
+    return h("aside", { attrs: { id: "anchor" } }, [
+      h("div", { class: "anchor-wrapper" }, [
         renderChildren(h, {
           children,
           path: $route.path,
           route: $route,
           maxDepth,
         }),
-      ]
-    );
+      ]),
+    ]);
   },
 } as FunctionalComponentOptions)
 export default class Anchor extends Vue {
@@ -138,7 +132,7 @@ export default class Anchor extends Vue {
 <style lang="stylus">
 $headings = 2 3 4 5 6
 
-.anchor-list-wrapper
+#anchor
   display none
   position fixed
   top ($navbarHeight + 2rem)
@@ -147,7 +141,6 @@ $headings = 2 3 4 5 6
   max-width 15rem
   max-height 80vh
   overflow-y scroll
-  padding-left 8px
 
   @media (min-width: $MQWide)
     display block
@@ -155,58 +148,62 @@ $headings = 2 3 4 5 6
   &::-webkit-scrollbar-track-piece
     background-color transparent
 
-  &::after
-    content ' '
-    position absolute
-    top 16px
-    left 4px
-    z-index -1
-    margin-left -2px
-    width 4px
-    height calc(100% - 30px)
-    background var(--border-color)
+  .anchor-wrapper
+    position relative
+    padding-left 8px
 
-  > .anchor-list
-    margin 0
+    &::after
+      content ' '
+      position absolute
+      top 16px
+      left 4px
+      bottom 14px
+      z-index -1
+      margin-left -2px
+      width 4px
+      background var(--border-color)
 
-  .anchor-list
-    padding-left 0
+    > .anchor-list
+      margin 0
 
-    .anchor
-      box-sizing border-box
-      list-style none
-      padding 0px 8px
+    .anchor-list
+      padding-left 0
 
-      .anchor-link
-        position relative
-        color var(--light-grey)
-        overflow hidden
-        text-overflow ellipsis
-        white-space nowrap
+      .anchor
+        box-sizing border-box
+        list-style none
+        padding 0px 8px
 
-        &::before
-          content ' '
-          position absolute
-          z-index 2
-          top 50%
-          margin-left -3px
-          margin-top -3px
-          width 6px
-          height 6px
-          background var(--background-color)
-          border 1px solid var(--border-color)
-          border-radius 50%
-
-        &:hover, &.active
-          color var(--accent-color)
+        .anchor-link
+          position relative
+          color var(--light-grey)
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
 
           &::before
-            background var(--accent-color)
+            content ' '
+            position absolute
+            z-index 2
+            top 50%
+            margin-left -3px
+            margin-top -3px
+            width 6px
+            height 6px
+            background var(--background-color)
+            border 1px solid var(--border-color)
+            border-radius 50%
 
-      for $heading in $headings
-        &.anchor{$heading} .anchor-link
-          font-size (16 - $heading)px
+          &:hover, &.active
+            color var(--accent-color)
 
-          &::before
-            left (-8 * $heading + 4)px
+            &::before
+              background var(--accent-color)
+
+        for $heading in $headings
+          &.anchor{$heading} .anchor-link
+            font-size (16 - $heading)px
+
+            &::before
+              left (-8 * $heading + 4)px
 </style>

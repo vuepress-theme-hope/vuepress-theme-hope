@@ -104,11 +104,11 @@ export default class NavLinks extends Vue {
 .nav-links
   display inline-block
 
-  a
+  .nav-link
     line-height 1.4rem
     color var(--dark-grey)
 
-    &.router-link-active
+    &.active
       color var(--accent-color)
 
   .nav-item
@@ -126,19 +126,19 @@ export default class NavLinks extends Vue {
 
 @media (max-width: $MQMobile)
   .nav-links
-    a
-      &:hover, &.router-link-active
+    .nav-link
+      &:hover, &.active
         color var(--accent-color)
 
     .nav-item, .repo-link
       margin-left 0
 
 @media (min-width: $MQMobile)
-  .nav-item > a
-    &:hover, &.router-link-active
+  .nav-item > .nav-link
+    &:hover, &.active
       margin-bottom -2px
       border-bottom 2px solid var(--accent-color-l10)
 
-    &.router-link-active
+    &.active
       color var(--accent-color)
 </style>

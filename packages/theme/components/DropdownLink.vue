@@ -160,7 +160,7 @@ export default class DropdownLink extends Vue {
         .dropdown-subitem
           font-size 0.9em
 
-      a
+      .nav-link
         display block
         line-height 1.7rem
         position relative
@@ -172,7 +172,7 @@ export default class DropdownLink extends Vue {
         &:hover
           color var(--accent-color)
 
-        &.router-link-active
+        &.active
           color var(--accent-color)
 
           &::after
@@ -218,7 +218,7 @@ export default class DropdownLink extends Vue {
           margin-top 0
           padding-top 0
 
-        h4, & > a
+        h4, & > .nav-link
           font-size 15px
           line-height 2rem
 
@@ -253,6 +253,6 @@ export default class DropdownLink extends Vue {
       margin 0
       box-shadow 2px 2px 10px var(--card-shadow-color)
 
-      .dropdown-item a
+      .dropdown-item .nav-link
         color var(--dark-grey)
 </style>
