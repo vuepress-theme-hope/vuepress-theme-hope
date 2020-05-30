@@ -4,6 +4,7 @@
     <div v-if="config" class="page-info">
       <component :is="`${item}-info`" v-for="item in config" :key="$route.path + item" />
     </div>
+    <hr />
   </div>
 </template>
 
@@ -58,6 +59,8 @@ export default class PageInfo extends Vue {
 <style lang="stylus">
 @require '~@vuepress/theme-default/styles/wrapper.styl'
 
+$pageInfoTextSize ?= 14px
+
 .page
   .page-title
     @extend $wrapper
@@ -80,7 +83,7 @@ export default class PageInfo extends Vue {
     align-items center
     flex-wrap wrap
     color var(--dark-grey, #666)
-    font-size 0.9em
+    font-size $pageInfoTextSize
 
     & > span
       display flex
@@ -90,7 +93,11 @@ export default class PageInfo extends Vue {
       line-height 2
 
       @media (min-width: $MQWide)
-        margin-right 0.75em
+        font-size 1.2em
+        // margin-right 0.75em
+
+      @media (max-width: $MQMobileNarrow)
+        font-size 0.8rem
 
     .icon
       width 1em

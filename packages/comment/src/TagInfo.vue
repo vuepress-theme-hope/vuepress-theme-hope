@@ -57,16 +57,16 @@ export default class TagInfo extends Vue {
   .tag
     display inline-block
     position relative
-    margin 0 2px
     vertical-align middle
-    font-size 0.75em
+    margin 0 0.2em
+    padding 0 0.2em
+    border 0.5px
+    border-style solid
     border-radius 0.75em
+    background-color #f8f8f8
+    font-size 0.75em
     overflow hidden
     transition all 0.5s
-    padding 1px 4px
-    background-color #f8f8f8
-    border-width 0.5px
-    border-style solid
 
     &.clickable:hover
       cursor pointer

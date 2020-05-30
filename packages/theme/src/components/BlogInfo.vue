@@ -139,7 +139,7 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
       margin 8px auto
 
   .sidebar &
-    .blogger-info
+    .blogger-info-wrapper
       display none
 
   .page &
@@ -157,7 +157,7 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
     @media (min-width: $MQWide)
       flex-basis 360px
 
-    .blogger-info
+    .blogger-info-wrapper
       margin-bottom 16px
       padding 8px 0
       border-radius 8px

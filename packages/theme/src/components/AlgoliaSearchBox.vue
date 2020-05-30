@@ -77,6 +77,7 @@ export default class AlgoliaSearchBox extends Vue {
     line-height normal
 
     .ds-dropdown-menu
+      min-width 515px !important
       margin 6px 0 0
       padding 4px
       border 1px solid var(--light-grey)
@@ -84,9 +85,6 @@ export default class AlgoliaSearchBox extends Vue {
       background-color var(--background-color)
       font-size 16px
       text-align left
-
-      @media (min-width: $MQMobile)
-        min-width 515px !important
 
       @media (max-width: $MQMobile)
         min-width calc(100vw - 4rem) !important

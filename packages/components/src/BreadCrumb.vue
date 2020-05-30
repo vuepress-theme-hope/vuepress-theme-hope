@@ -116,7 +116,7 @@ export default class BreadCrumb extends Vue {
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared-utils/styles/wrapper.styl'
 
-// 修正标题的上边距
+// Fix top boarder of heading1
 .theme-default-content:not(.custom)
   > *:first-child
     margin-top 0
@@ -126,7 +126,6 @@ h1, h2, h3, h4, h5, h6
     margin-top 0.5rem - $navbarHeight !important
     padding-top $navbarHeight + 1rem !important
 
-// 路径导航样式
 .breadcrumb
   @extend $wrapper
   position relative
@@ -138,6 +137,16 @@ h1, h2, h3, h4, h5, h6
   margin-bottom - $navbarHeight
   padding-bottom 0.2rem
 
+  @media (max-width: $MQNarrow)
+    font-size 14px
+
+  @media (max-width: $MQMobileNarrow)
+    font-size 12.8px
+
+  // breadcrumb is disabled
+  &.disable
+    padding-bottom 1.3em
+
   .iconfont
     font-size inherit
 
@@ -145,15 +154,6 @@ h1, h2, h3, h4, h5, h6
       line-height 1
       vertical-align middle
       display inline-block
-
-  @media (max-width: $MQNarrow)
-    font-size 14px
-
-  @media (max-width: $MQMobileNarrow)
-    font-size 12.8px
-
-  &.disable
-    padding-bottom 1.3em
 
   ul
     list-style none

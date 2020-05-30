@@ -136,7 +136,10 @@ export default class Anchor extends Vue {
 </script>
 
 <style lang="stylus">
+$headings = 2 3 4 5 6
+
 .anchor-list-wrapper
+  display none
   position fixed
   top ($navbarHeight + 2rem)
   right 0.5rem
@@ -146,8 +149,8 @@ export default class Anchor extends Vue {
   overflow-y scroll
   padding-left 8px
 
-  @media (max-width: $MQWide)
-    display none
+  @media (min-width: $MQWide)
+    display block
 
   &::-webkit-scrollbar-track-piece
     background-color transparent
@@ -200,21 +203,10 @@ export default class Anchor extends Vue {
           &::before
             background var(--accent-color)
 
-      &.anchor2 .anchor-link
-        font-size 14px
+      for $heading in $headings
+        &.anchor{$heading} .anchor-link
+          font-size (16 - $heading)px
 
-        &::before
-          left -12px
-
-      &.anchor3 .anchor-link
-        font-size 13px
-
-        &::before
-          left -20px
-
-      &.anchor4 .anchor-link
-        font-size 12px
-
-        &::before
-          left -32px
+          &::before
+            left (-8 * $heading + 4)px
 </style>

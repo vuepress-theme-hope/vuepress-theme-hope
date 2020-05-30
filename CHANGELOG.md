@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.0...v0.6.1) (2020-05-29)
+
+### Bug Fixes
+
+* **theme:** fixing types problems ([b27f091](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b27f0919b5e4bfd1cf6759a89a93c63f68a5276c))
+
 ## [0.6.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.5.0...v0.6.0) (2020-05-29)
 
 ### Bug Fixes

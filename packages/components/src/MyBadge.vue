@@ -26,19 +26,15 @@ interface FunctionalComponentOptions extends ComponentOptions<Vue> {
   },
 } as FunctionalComponentOptions)
 export default class MyBadge extends Vue {
-  /** 徽章类型 */
   @Prop({ type: String, default: "tip" })
   private readonly type!: string;
 
-  /** 徽章文字 */
   @Prop({ type: String, default: "" })
   private readonly text!: string;
 
-  /** 徽章垂直对齐方式 */
   @Prop({ type: String, default: "top" })
   private readonly vertical!: string;
 
-  /** 徽章颜色 */
   @Prop({ type: String, default: "" })
   private readonly color!: string;
 }

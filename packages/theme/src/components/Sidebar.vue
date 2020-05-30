@@ -66,10 +66,10 @@ export default class Sidebar extends Vue {
     display inline-block
     color var(--text-color)
 
-  .blogger-info.mobile
+  .blogger-info-wrapper.mobile
     display none
 
-  .blogger-info.mobile + hr
+  .blogger-info-wrapper.mobile + hr
     display none
 
   .nav-links
@@ -119,10 +119,10 @@ export default class Sidebar extends Vue {
     .theme-container.no-navbar &
       top 0
 
-    .blogger-info.mobile
+    .blogger-info-wrapper.mobile
       display block
 
-    .blogger-info.mobile + hr
+    .blogger-info-wrapper.mobile + hr
       display block
       margin-top 16px
 
