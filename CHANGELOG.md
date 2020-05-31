@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.2...v0.6.3) (2020-05-31)
+
+### Bug Fixes
+
+- **theme:** fix space in page chunk name ([7d3954d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7d3954d0739569bfa1545db54e2819836a665ced))
+- **theme:** fix style of CategoryList number ([f60e402](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f60e402f476c8f8a954be19b1fe2f0888242b001))
+
+### Features
+
+- **theme:** improve ArticleInfo appearance on mobile ([cd42bfd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cd42bfd67790cac1acc641de1e6b3bef3c7e755b))
+- **theme:** improve MyTransition animation ([d802813](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d80281309c5c3a3d240bb6ef04c864c619e1e82f))
+- **theme:** locate missing hint is changed to warn and will be popped only once during a run ([0832661](https://github.com/Mister-Hope/vuepress-theme-hope/commit/08326617876f4711473c4061e12eff331349c18d)), closes [#223](https://github.com/Mister-Hope/vuepress-theme-hope/issues/223)
+
 ## [0.6.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.1...v0.6.2) (2020-05-30)
 
 ### Bug Fixes
