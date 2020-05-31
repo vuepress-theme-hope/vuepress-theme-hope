@@ -71,7 +71,7 @@ export default class ArticleItem extends Vue {
       line-height 36px
       display inline-block
 
-      &:after
+      &::after
         content ''
         position absolute
         width 100%
@@ -84,13 +84,16 @@ export default class ArticleItem extends Vue {
         transform scaleX(0)
         transition 0.3s ease-in-out
 
-      &:hover a
-        color var(--accent-color)
+      &:hover
+        cursor pointer
 
-      &:hover:after
-        visibility visible
-        -webkit-transform scaleX(1)
-        transform scaleX(1)
+        a
+          color var(--accent-color)
+
+        &::after
+          visibility visible
+          -webkit-transform scaleX(1)
+          transform scaleX(1)
 
       .lock-icon
         display inline-block

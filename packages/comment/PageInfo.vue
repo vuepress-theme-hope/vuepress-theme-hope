@@ -93,11 +93,10 @@ $pageInfoTextSize ?= 14px
       line-height 2
 
       @media (min-width: $MQWide)
-        font-size 1.2em
-        // margin-right 0.75em
+        font-size 1.1em
 
       @media (max-width: $MQMobileNarrow)
-        font-size 0.8rem
+        font-size 0.9rem
 
     .icon
       width 1em

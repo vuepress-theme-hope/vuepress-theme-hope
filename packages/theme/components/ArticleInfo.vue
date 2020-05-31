@@ -100,33 +100,39 @@ export default class ArticleInfo extends Vue {
       ? readingTime.minute
       : readingTime.time.replace(
           "$time",
-          Math.round(this.article.readingTime.minutes).toString(),
+          Math.round(this.article.readingTime.minutes).toString()
         );
   }
 }
 </script>
 
 <style lang="stylus">
+$articleInfoTextSize ?= 14px
+
 .article-info
   display flex
-  align-items center
-  font-size 15px
-  color var(--dark-grey)
-  flex-wrap wrap
   justify-content flex-start
   align-content stretch
-  font-size 14px
-
-  .icon
-    width 16px
-    height 16px
-    margin-right 4px
+  align-items center
+  flex-wrap wrap
+  color var(--dark-grey)
+  font-size $articleInfoTextSize
 
   & > span
     display flex
     align-items center
-    margin-right 8px
+    flex-shrink 0
+    margin-right 0.5em
+    line-height 2
 
-    &.category:hover
-      cursor pointer
+    @media (min-width: $MQWide)
+      font-size 1.1em
+
+    @media (max-width: $MQMobileNarrow)
+      font-size 0.9rem
+
+  .icon
+    width 1em
+    height 1em
+    margin-right 0.25em
 </style>
