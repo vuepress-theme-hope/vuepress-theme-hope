@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-last-update",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Last update time plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/last-update#readme",
   "dependencies": {
-    "@mr-hope/vuepress-types": "^0.6.2",
+    "@mr-hope/vuepress-types": "^0.6.3",
     "@types/cross-spawn": "^6.0.2",
     "cross-spawn": "^7.0.3",
     "moment": "^2.26.0"
