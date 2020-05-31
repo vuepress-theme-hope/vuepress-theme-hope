@@ -24,7 +24,7 @@ export default class MyTransition extends Vue {
   private readonly duration!: number;
 
   private setStyle(items: HTMLElement) {
-    items.style.transition = `all ${this.duration}s ease-in-out ${this.delay}s`;
+    items.style.transition = `transform ${this.duration}s ease-in-out ${this.delay}s, opacity ${this.duration}s ease-in-out ${this.delay}s`;
     items.style.transform = "translateY(-20px)";
     items.style.opacity = "0";
   }

@@ -129,7 +129,7 @@ $articleInfoTextSize ?= 14px
       font-size 1.1em
 
     @media (max-width: $MQMobileNarrow)
-      font-size 0.9rem
+      font-size 0.86rem
 
   .icon
     width 1em

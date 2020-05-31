@@ -1,21 +1,21 @@
 <template>
   <div class="project-list">
-    <MyTransition
+    <div
       v-for="(project, index) in ($frontmatter.project || [])"
       :key="project.name"
-      :delay="index * 0.04"
+      class="project"
+      :class="`project${index % 9}`"
+      @click="navigate(project.link)"
     >
-      <div class="project" :class="`project${index % 9}`" @click="navigate(project.link)">
-        <div
-          v-if="project.cover"
-          class="cover"
-          :style="`background: url(${$withBase(project.cover)}) center/cover no-repeat;`"
-        />
-        <component :is="`${project.type}-icon`" />
-        <div class="name">{{project.name}}</div>
-        <div class="desc">{{project.desc}}</div>
-      </div>
-    </MyTransition>
+      <div
+        v-if="project.cover"
+        class="cover"
+        :style="`background: url(${$withBase(project.cover)}) center/cover no-repeat;`"
+      />
+      <component :is="`${project.type}-icon`" />
+      <div class="name">{{project.name}}</div>
+      <div class="desc">{{project.desc}}</div>
+    </div>
   </div>
 </template>
 
@@ -24,12 +24,11 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import ArticleIcon from "@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue";
 import BookIcon from "@mr-hope/vuepress-shared-utils/icons/BookIcon.vue";
 import LinkIcon from "@mr-hope/vuepress-shared-utils/icons/LinkIcon.vue";
-import MyTransition from "@theme/components/MyTransition.vue";
 import ProjectIcon from "@mr-hope/vuepress-shared-utils/icons/ProjectIcon.vue";
 import navigate from "../util/navigate";
 
 @Component({
-  components: { ArticleIcon, BookIcon, LinkIcon, MyTransition, ProjectIcon },
+  components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon },
 })
 export default class ProjectList extends Vue {
   private navigate(link: string) {
@@ -49,6 +48,8 @@ export default class ProjectList extends Vue {
   align-items center
   font-family sans-serif
   margin-bottom 12px
+  z-index 2
+  transition transform 0.5s
 
   .project
     position relative
@@ -59,9 +60,6 @@ export default class ProjectList extends Vue {
     padding 12px
     transition all 0.5s
     align-self stretch
-
-    &:hover
-      transform scale(0.98)
 
     @media (max-width: $MQMobileNarrow)
       width calc(50% - 40px)
@@ -114,9 +112,15 @@ export default class ProjectList extends Vue {
 
 for $color, $index in $colors
   .project-list .project{$index}
-    .theme-light &, &
+    &, .theme-light &
       background-color lighten($color, 90%)
+
+      &:hover
+        background-color lighten($color, 75%)
 
     .theme-dark &
       background-color darken($color, 75%)
+
+      &:hover
+        background-color darken($color, 60%)
 </style>
