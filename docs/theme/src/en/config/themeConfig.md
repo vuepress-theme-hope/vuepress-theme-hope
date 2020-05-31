@@ -462,7 +462,7 @@ Whether to display footer by default
 
 ### copyright.status
 
-- Type:  `"global" | "local"`
+- Type: `"global" | "local"`
 - Required: Yes
 
 Whether to enable this feature globally.

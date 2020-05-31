@@ -1,7 +1,7 @@
 export interface LastUpdateOption {
-  /** 
+  /**
    * 时间转换器
-   * 
+   *
    * Time transformer
    */
   transformer?: (timestamp: number, lang: string) => string;

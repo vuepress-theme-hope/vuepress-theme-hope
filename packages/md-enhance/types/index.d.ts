@@ -58,7 +58,7 @@ export type MarkdownEnhanceOption = Partial<{
   flowchart: boolean;
   /**
    * 是否启用全部增强
-   * 
+   *
    * Whether to enable all features.
    */
   enableAll: boolean;
