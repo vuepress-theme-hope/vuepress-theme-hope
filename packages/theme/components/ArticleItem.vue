@@ -87,9 +87,6 @@ export default class ArticleItem extends Vue {
       &:hover
         cursor pointer
 
-        a
-          color var(--accent-color)
-
         &::after
           visibility visible
           -webkit-transform scaleX(1)
