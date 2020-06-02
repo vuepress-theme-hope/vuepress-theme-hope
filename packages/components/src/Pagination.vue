@@ -142,10 +142,7 @@ export default class Pagination extends Vue {
 <style lang="stylus">
 .pagination-wrapper
   font-weight 600
-  margin 1.25rem auto 0.75rem
-
-  @media (max-width: $MQMobileNarrow)
-    margin 1.25rem -1.5rem 0.75rem
+  margin 1.25rem -0.5rem 0.75rem
 
   .pagination-list
     display flex
