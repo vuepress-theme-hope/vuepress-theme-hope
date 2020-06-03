@@ -149,9 +149,11 @@ export default class DropdownLink extends Vue {
       line-height 1.7rem
 
       h4
-        margin 0.45rem 0 0
+        margin 0
+        padding 0.75rem 1rem 0.25rem 0.75rem
         border-top 1px solid var(--grey14)
-        padding 0.45rem 1.5rem 0 1.25rem
+        color var(--dark-grey)
+        font-size 0.9rem
 
       .dropdown-subitem-wrapper
         padding 0
