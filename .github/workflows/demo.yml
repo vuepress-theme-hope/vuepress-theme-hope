@@ -12,12 +12,24 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: restore lerna
+        uses: actions/cache@v2
+        id: lerna-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
+
       - name: Get yarn cache directory path
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      - name: yarn-cache
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -25,9 +37,11 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
-        run: |
-          yarn install --frozen-lockfile
-          yarn run typescript:compile
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: Typescript compile
+        run: yarn run typescript:compile
 
       - name: Build Theme demo
         run: yarn run theme-test:build
