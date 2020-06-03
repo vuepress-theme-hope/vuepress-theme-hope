@@ -77,9 +77,8 @@ export default class TimelineList extends Mixins(TimelineMixin) {
 
     .num
       position relative
-      top -0.25rem
       margin 0 2px
-      font-size 24px
+      font-size 22px
 
   .content
     overflow-y scroll

@@ -114,9 +114,8 @@ export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
 
       .num
         position relative
-        top -0.25rem
         margin 0 2px
-        font-size 24px
+        font-size 22px
 
   .sticky-article-wrapper
     .sticky-article-list
