@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.6.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.3...v0.6.4) (2020-06-02)
+
+### Bug Fixes
+
+- **component:** fix Badge issue with Chinese and fix pagination padding ([bd8adb4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bd8adb449ea18d8a0d607dcb7dc0599cd7d58ac3))
+
+### Features
+
+- **theme:** improve appearance ([d08df57](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d08df57ce31455552db222b97d353c958a9a47a5))
+
 ## [0.6.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.2...v0.6.3) (2020-05-31)
 
 ### Bug Fixes
