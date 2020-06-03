@@ -12,11 +12,10 @@
     "mr-hope"
   ],
   "scripts": {
-    "test:unit": "vue-cli-service test:unit test/",
-    "test": "mocha -r ts-node/register test/unit/*.ts",
-    "test:serve": "vuepress dev test/demo",
-    "test:clean-serve": "vuepress dev test/demo --no-cache",
-    "test:build": "vuepress build test/demo"
+    "demo:serve": "vuepress dev test/demo",
+    "demo:clean-serve": "vuepress dev test/demo --no-cache",
+    "demo:build": "vuepress build test/demo",
+    "test": "mocha -r ts-node/register test/unit/*.test.ts"
   },
   "repository": {
     "type": "git",

@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -r ts-node/register test/*.test.ts"
   },
   "publishConfig": {
     "access": "public"

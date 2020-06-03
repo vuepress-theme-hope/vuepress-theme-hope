@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.4...v0.6.5) (2020-06-03)
+
+### Bug Fixes
+
+- **theme:** fix SidebarLink not display in desktop mode when `sidebar: auto` ([a98bdae](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a98bdaec16ba0b783f1222bff75814134aad17b2)), closes [#227](https://github.com/Mister-Hope/vuepress-theme-hope/issues/227)
+
+### Features
+
+- **theme:** optimize blog page number style ([9fe2c75](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9fe2c75ff6fb427ef342b57431c3cf44e756f9b5))
+- **theme:** optimize the style of dropdown title ([52f5b70](https://github.com/Mister-Hope/vuepress-theme-hope/commit/52f5b708234d46ff191158cb2797f69b292f426c))
+
 ## [0.6.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.3...v0.6.4) (2020-06-02)
 
 ### Bug Fixes

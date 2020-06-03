@@ -55,6 +55,7 @@ describe("Test pluginConfig generate", () => {
       ],
       ["container", { type: "right", defaultTitle: "" }],
       ["container", { type: "center", defaultTitle: "" }],
+      ["container", { type: "left", defaultTitle: "" }],
     ]);
   });
 
@@ -111,6 +112,7 @@ describe("Test pluginConfig generate", () => {
       ],
       ["container", { type: "right", defaultTitle: "" }],
       ["container", { type: "center", defaultTitle: "" }],
+      ["container", { type: "left", defaultTitle: "" }],
     ]);
   });
 
