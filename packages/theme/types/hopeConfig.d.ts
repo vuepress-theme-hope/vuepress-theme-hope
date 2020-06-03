@@ -127,7 +127,7 @@ export interface HopeFooterConfig {
    *
    * The default copyright info, set it to `false` to disable it by default.
    */
-  copyright?: string;
+  copyright?: string | false;
   /**
    * 是否默认显示页脚
    *

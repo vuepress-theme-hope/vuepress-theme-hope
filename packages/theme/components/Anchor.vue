@@ -39,7 +39,7 @@ const renderLink = (
         "anchor-link": true,
       },
     },
-    [text]
+    [h("div", {}, [text])]
   );
 
 interface RenderChildrenOptions {
@@ -175,11 +175,16 @@ $headings = 2 3 4 5 6
         padding 0px 8px
 
         .anchor-link
+          display inline-block
           position relative
+          max-width 100%
           color var(--light-grey)
-          overflow hidden
-          text-overflow ellipsis
-          white-space nowrap
+
+          > div
+            line-height 1
+            text-overflow ellipsis
+            white-space nowrap
+            overflow hidden
 
           &::before
             content ' '
