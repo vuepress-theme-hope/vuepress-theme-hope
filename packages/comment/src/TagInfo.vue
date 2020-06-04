@@ -1,5 +1,5 @@
 <template>
-  <span v-if="$tags.length !== 0">
+  <span v-if="$tags.length !== 0" :title="hint">
     <TagIcon />
     <ul class="tags-wrapper">
       <li
@@ -19,6 +19,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
 import { capitalize } from "@mr-hope/vuepress-shared-utils";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { TagIcon } })
 export default class TagInfo extends Vue {
@@ -44,6 +45,10 @@ export default class TagInfo extends Vue {
   private navigate(tagName: string) {
     const path = `/tag/${tagName}/`;
     if (this.$route.path !== path) this.$router.push(path);
+  }
+
+  private get hint(): string {
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).tag;
   }
 }
 </script>

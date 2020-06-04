@@ -1,5 +1,5 @@
 <template>
-  <span class="visitor-info">
+  <span class="visitor-info" :title="hint">
     <EyeIcon v-if="count < 1000" />
     <FireIcon v-else />
     <span :id="visitorID" :data-flag-title="$page.title" class="leancloud_visitors">
@@ -15,6 +15,7 @@ import EyeIcon from "@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue";
 import FireIcon from "@mr-hope/vuepress-shared-utils/icons/FireIcon.vue";
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { EyeIcon, FireIcon } })
 export default class VisitorInfo extends Vue {
@@ -49,6 +50,11 @@ export default class VisitorInfo extends Vue {
     return base
       ? `${base.slice(0, base.length - 1)}${this.$page.path}`
       : this.$page.path;
+  }
+
+  private get hint(): string {
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+      .views;
   }
 
   private mounted() {

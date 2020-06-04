@@ -1,5 +1,5 @@
 <template>
-  <span v-if="words" class="words-info">
+  <span v-if="words" class="words-info" :title="hint">
     <WordIcon />
     <span v-text="words" />
   </span>
@@ -19,6 +19,10 @@ export default class ReadTimeInfo extends Vue {
       "$word",
       this.$page.readingTime.words.toString()
     );
+  }
+
+  private get hint(): string {
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).words;
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <span v-if="readtime" class="read-time-info">
+  <span v-if="readtime" class="read-time-info" :title="hint">
     <TimeIcon />
     <span v-text="readtime" />
   </span>
@@ -21,8 +21,14 @@ export default class ReadtimeInfo extends Vue {
       ? readingTime.minute
       : readingTime.time.replace(
           "$time",
-          Math.round(this.$page.readingTime.minutes).toString(),
+          Math.round(this.$page.readingTime.minutes).toString()
         );
+  }
+
+  private get hint(): string {
+    return (
+      this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog
+    ).readingTime;
   }
 }
 </script>
