@@ -20,7 +20,6 @@
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
 import { dom, i18n } from "@mr-hope/vuepress-shared-utils";
-import Color from "../util/color";
 import DarkmodeSwitch from "@theme/components/DarkmodeSwitch.vue";
 
 /** 默认颜色选择器 */

@@ -201,7 +201,7 @@ export default class Home extends Vue {
         color var(--accent-color)
 
       h2
-        font-size 1.4rem
+        font-size 1.25rem
         font-weight 500
         border-bottom none
         padding-bottom 0
@@ -212,4 +212,5 @@ export default class Home extends Vue {
 
       p
         color var(--text-color-l25)
+        text-align justify
 </style>

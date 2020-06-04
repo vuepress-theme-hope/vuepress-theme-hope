@@ -37,8 +37,6 @@ import CategoryInfo from "@mr-hope/vuepress-plugin-comment/src/CategoryInfo.vue"
 import { PageComputed } from "@mr-hope/vuepress-types";
 import TagInfo from "@mr-hope/vuepress-plugin-comment/src/TagInfo.vue";
 import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
-import moment = require("moment");
-import navigate from "../util/navigate";
 
 @Component({
   components: {
