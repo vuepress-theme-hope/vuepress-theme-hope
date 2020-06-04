@@ -1,4 +1,4 @@
-// 自定义容器 居左、居中、居右
+// align support
 .custom-block
   &.left
     text-align left
@@ -9,7 +9,7 @@
   &.right
     text-align right
 
-// 脚注链接跳转修正
+// footnote anchor fix
 .footnotes .footnotes-list .footnote-item
   margin-top (- $navbarHeight)
   padding-top ($navbarHeight + 0.5rem)
@@ -17,7 +17,6 @@
   p
     margin-bottom 0
 
-// 页脚标注
 .footnote-ref
   position relative
   margin-top - $navbarHeight - 0.5rem
@@ -27,7 +26,7 @@
     position absolute
     top 0
 
-// katex 修正
+// katex fix
 .katex
   font-size 1.05em
 

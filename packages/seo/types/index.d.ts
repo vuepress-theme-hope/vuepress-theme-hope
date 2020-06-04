@@ -2,26 +2,22 @@ import { Page, SiteConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { SeoContent } from "./seo";
 
 export interface PageSeoInfo {
-  /** 页面对象 */
   $page: Page;
-  /** 站点对象 */
   $site: SiteConfig;
-  /** 主题配置 */
   themeConfig: ThemeConfig | Record<string, never>;
-  /** 当前支持的语言列表 */
+  /** langs which are supported */
   locale: string[];
-  /** 当前页面地址 */
+  /** Current page path */
   path: string;
 }
 
 export interface SeoOptions {
-  /** twitter 用户名 */
   twitterID: string;
-  /** 内容年龄分级 */
+  /** Content restrictions */
   restrictions?: string;
-  /** 自定义 SEO */
+  /** A function to generate seo */
   seo?: (info: PageSeoInfo) => Partial<SeoContent>;
-  /** 自定义 Meta */
+  /** a function to custom meta */
   customMeta?: (
     meta: Record<"content" | "name" | "charset" | "http-equiv", string>[],
     info: PageSeoInfo

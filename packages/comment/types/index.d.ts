@@ -14,44 +14,91 @@ export type PageInfotype =
   | "Word"
   | "Visitor";
 
-/** 评论组件通用选项 */
 interface BaseCommentOptions {
-  /** 类型，有 `‘valine'` 和 `'vssue` 可选，也可设置为 `'disable'` */
+  /**
+   * 评论服务
+   *
+   * Comment Service
+   */
   type: "valine" | "vssue" | "disable";
-  /** 默认作者 */
+  /**
+   * 默认作者
+   *
+   * Default author
+   */
   author?: string;
-  /** 是否默认启用文章信息 */
+  /**
+   * 文章信息配置
+   *
+   * Page Info display configuration
+   *
+   * @see https://vuepress-comment.mrhope.site/config/#pageinfo (zh)
+   * @see https://vuepress-comment.mrhope.site/en/config/#pageinfo (en)
+   */
   pageInfo?: PageInfotype[] | false;
-  /** 是否默认启用评论 */
+  /**
+   * 是否默认启用评论
+   *
+   * Whether enable comment by default
+   */
   comment?: boolean;
-  /** 每分钟阅读数 */
+  /**
+   * 每分钟阅读字数
+   *
+   * Reading speed of words per minute
+   */
   wordPerminute?: number;
 }
 
-/** Valine 配置 */
 export interface ValineOptions extends BaseCommentOptions {
-  /** appID */
+  /**
+   * 填入 LeanCloud 中应用的 APP ID
+   *
+   * Fill in the application appId in LeanCloud
+   */
   appId: string;
 
-  /** appKey */
+  /**
+   * 填入 LeanCloud 中应用的 APP Key
+   *
+   * Fill in the application appKey in LeanCloud
+   */
   appKey: string;
 
-  /** 是否启用评论 */
-  comment?: boolean;
-
-  /** 是否启用访问量 */
+  /**
+   * 是否启用访问量
+   *
+   * Whether enable page views count by default
+   */
   visitor?: boolean;
 
-  /** 评论占位符 */
+  /**
+   * 评论占位符
+   *
+   * Placeholder for comment input
+   */
   placeholder?: string;
 
-  /** 评论所需信息 */
+  /**
+   * 评论所需信息
+   *
+   * Commenter's info
+   */
   meta?: string[];
 
-  /** 必填项配置 */
+  /**
+   * 评论信息必填项配置
+   *
+   * Set required fields for Commenter's info
+   */
   requiredFields?: string[];
 
-  /** 头像类型 */
+  /**
+   * 头像类型
+   *
+   * Avator type
+   * @see https://valine.js.org/avatar.html
+   */
   avatar?: string;
 
   /** 是否记录 IP */
@@ -105,10 +152,8 @@ export interface VssueOptions extends BaseCommentOptions {
   autoCreateIssue?: false;
 }
 
-/** vuepress-plugin-comment 配置 */
 export type CommentOptions = ValineOptions | VssueOptions;
 
-/** 评论组件全局变量 */
 declare global {
   const COMMENT_OPTIONS: CommentOptions;
 }

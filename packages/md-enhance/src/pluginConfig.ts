@@ -6,13 +6,11 @@ const pluginConfig = (
   markdownOption: MarkdownEnhanceOption,
   themeConfig: ThemeConfig
 ): PluginConfig[] => {
-  /** 多语言标题配置 */
+  /** i18n config */
   const containerConfig = i18n.config.container;
   const baseLang = markdownOption.baseLang || themeConfig.baseLang || "zh-CN";
-  /** 主目录语言对应路径 */
   const baseLangPath = i18n.lang2path(baseLang);
 
-  /** 处理标题 */
   const resolveConfig = (
     titleConfig: Record<string, string>
   ): Record<string, string> => {
@@ -22,9 +20,8 @@ const pluginConfig = (
   };
 
   const config: PluginConfig[] = [
-    /** typescript 支持 */
+    /** typescript support */
     ["typescript"],
-    /** 自定义容器配置 */
     [
       "container",
       { type: "tip", defaultTitle: resolveConfig(containerConfig.tip) },
@@ -37,7 +34,6 @@ const pluginConfig = (
       "container",
       { type: "danger", defaultTitle: resolveConfig(containerConfig.danger) },
     ],
-    /** 自定义详情容器 */
     [
       "container",
       {
@@ -51,15 +47,11 @@ const pluginConfig = (
     ],
   ];
 
-  // 支持自定义对齐
   if (markdownOption.align || markdownOption.enableAll)
     config.push(
-      /** 自定义居右容器 */
-      ["container", { type: "right", defaultTitle: "" }],
-      /** 自定义居中容器 */
+      ["container", { type: "left", defaultTitle: "" }],
       ["container", { type: "center", defaultTitle: "" }],
-      /** 自定义居左容器 */
-      ["container", { type: "left", defaultTitle: "" }]
+      ["container", { type: "right", defaultTitle: "" }]
     );
 
   return config;

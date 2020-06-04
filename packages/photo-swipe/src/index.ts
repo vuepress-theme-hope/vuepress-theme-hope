@@ -21,7 +21,7 @@ export = ({
   enhanceAppFiles: resolve(__dirname, "enhanceAppFile.ts"),
 
   plugins: [
-    /** typescript 支持 */
+    /** typescript support */
     ["typescript"],
   ],
 

@@ -21,20 +21,15 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
 
-/** 路径导航配置 */
 interface BreadCrumbConfig {
-  /** 标题 */
   title: string;
-  /** 图标 */
   icon?: string;
-  /** 地址 */
   url: string;
 }
 
 @Component
 export default class BreadCrumb extends Vue {
-  /** 是否启用路径导航 */
-  private get enable() {
+  private get enable(): boolean {
     const globalEnable = this.$themeConfig.breadcrumb !== false;
     const pageEnable = this.$page.frontmatter.breadcrumb;
 
@@ -44,8 +39,7 @@ export default class BreadCrumb extends Vue {
     );
   }
 
-  /** 是否启用路径导航图标 */
-  private get iconEnable() {
+  private get iconEnable(): boolean {
     const globalEnable = this.$themeConfig.breadcrumbIcon !== false;
     const pageEnable = this.$page.frontmatter.breadcrumbIcon;
 
@@ -55,23 +49,18 @@ export default class BreadCrumb extends Vue {
     );
   }
 
-  /** 图标前缀 */
-  private get iconPrefix() {
+  private get iconPrefix(): string {
     const { iconPrefix } = this.$themeConfig;
 
     return iconPrefix === "" ? "" : iconPrefix || "icon-";
   }
 
-  /** 路径导航配置 */
   private get config(): BreadCrumbConfig[] {
-    /** 路径导航配置 */
     const breadcrumbConfig: BreadCrumbConfig[] = [];
-    /** 页面对象 */
     const { pages } = this.$site;
-    /** 页面路径 */
     const links = this.getLinks(this.$route);
 
-    // 生成路径导航配置
+    // generate breadcrumb config
     for (let index = 1; index < links.length; index++)
       for (let index2 = 0; index2 < pages.length; index2++) {
         const element = pages[index2];
@@ -89,15 +78,12 @@ export default class BreadCrumb extends Vue {
     return breadcrumbConfig;
   }
 
-  /** 生成页面路径链接 */
   private getLinks(route: Route) {
-    /** 路径项 */
     const routePaths = route.fullPath.split("#")[0].split("/");
-    /** 链接 */
     const links: string[] = [];
     let link = "";
 
-    // 生成链接
+    // generate links
     routePaths.forEach((element, index) => {
       if (index !== routePaths.length - 1) {
         link += `${element}/`;

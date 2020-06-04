@@ -53,9 +53,9 @@ describe("Test pluginConfig generate", () => {
           },
         },
       ],
-      ["container", { type: "right", defaultTitle: "" }],
-      ["container", { type: "center", defaultTitle: "" }],
       ["container", { type: "left", defaultTitle: "" }],
+      ["container", { type: "center", defaultTitle: "" }],
+      ["container", { type: "right", defaultTitle: "" }],
     ]);
   });
 
@@ -110,9 +110,9 @@ describe("Test pluginConfig generate", () => {
           },
         },
       ],
-      ["container", { type: "right", defaultTitle: "" }],
-      ["container", { type: "center", defaultTitle: "" }],
       ["container", { type: "left", defaultTitle: "" }],
+      ["container", { type: "center", defaultTitle: "" }],
+      ["container", { type: "right", defaultTitle: "" }],
     ]);
   });
 

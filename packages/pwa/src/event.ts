@@ -1,4 +1,4 @@
 import { Vue } from "vue-property-decorator";
 
-/** 利用 Vue 建立一个 Pub / Sub */
+// using Vue to create a pub / sub
 export default new Vue();

@@ -20,32 +20,24 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
     name: "md-enhance",
 
     enhanceAppFiles: resolve(__dirname, "enhanceAppFile.ts"),
-    /** Markdown 增强 */
     chainMarkdown: (md) => {
-      //  添加行号
       if (markdownOption.lineNumbers !== false)
         md.plugin("line-numbers").use(lineNumbers);
-      // 增加上角标
       if (markdownOption.sup || markdownOption.enableAll)
         md.plugin("sup").use(sup);
-      // 增加下角标
       if (markdownOption.sub || markdownOption.enableAll)
         md.plugin("sub").use(sub);
-      // 增加脚注
       if (markdownOption.footnote || markdownOption.enableAll)
         md.plugin("footnote").use(footnote);
-      // 增加标注
       if (markdownOption.mark || markdownOption.enableAll)
         md.plugin("mark").use(mark);
-      // 使用流程图;
       if (markdownOption.flowchart || markdownOption.enableAll)
         md.plugin("flowchart").use(flowchart);
-      // 使用 tex;
       if (markdownOption.tex || markdownOption.enableAll)
         md.plugin("katex").use(katex, [
           {
             macros: {
-              // 支持更多积分符号
+              // support more symbols
               "\\liiiint": "\\int\\!\\!\\!\\iiint",
               "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
               "\\idotsint": "\\int\\!\\cdots\\!\\int",
@@ -55,7 +47,6 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
     },
   };
 
-  /** 插件选项 */
   config.plugins = pluginConfig(markdownOption, context.themeConfig);
 
   return config;

@@ -7,7 +7,6 @@ import {
 import { PageSeoInfo, SeoOptions } from "../types";
 import { SeoContent, ArticleSeoContent } from "../types/seo";
 
-/** 添加 Meta */
 const getAddMeta = (meta: Record<string, string>[]) => (
   name: string,
   content: string,
@@ -18,7 +17,6 @@ const getAddMeta = (meta: Record<string, string>[]) => (
   if (content) meta.push({ [attribute]: name, content });
 };
 
-/** 获取语言 */
 const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
   const langs: string[] = [];
   for (const path in locales)
@@ -47,22 +45,17 @@ const defaultSeo = ({
   } = $page;
   const { author: themeAuthor, hostname = "" } = themeConfig;
 
-  /** 页面类型 */
   const type = ["article", "category", "tag", "timeline"].some((folder) =>
-    // 博客分类页面
     $page.regularPath.startsWith(`/${folder}`)
   )
     ? "website"
     : "article";
-  /** 作者 */
   const author =
     pageAuthor === false ? "" : (pageAuthor as string) || themeAuthor || "";
-  /** 更改时间 */
   const modifiedTime =
     typeof lastUpdatedTime === "number"
       ? new Date(lastUpdatedTime).toISOString()
       : "";
-  /** 文章标签 */
   const articleTags: string[] = Array.isArray(tags)
     ? (tags as string[])
     : typeof tag === "string"

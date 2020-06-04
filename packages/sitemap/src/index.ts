@@ -16,12 +16,11 @@ import chalk from "chalk";
 import { createWriteStream } from "fs";
 import { resolve } from "path";
 
-/** 输出日志 */
 const log = (
   msg: string,
   color: "cyan" | "red" = "cyan",
   label = "Sitemap"
-): void => console.log(`\n${chalk[color](` ${label} `)} ${msg}`);
+): void => console.log(`\n${chalk[color](`${label}: `)}${msg}`);
 
 const stripLocalePrefix = (
   path: string,
@@ -96,9 +95,7 @@ const generatePageMap = (
 
     if (excludePage) exclude.push(page.path);
 
-    // 生成上次的更新时间
     const lastmodifyTime = dateFormatter(page);
-
     const { normalizedPath } = stripLocalePrefix(page.path, localeKeys);
     const relatedLocales =
       localesByNormalizedPagePath.get(normalizedPath) || [];

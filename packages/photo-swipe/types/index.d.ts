@@ -10,10 +10,7 @@ export interface PhotoSwipeOptions {
 }
 
 declare global {
-  /** 图片容器 */
   const IMAGE_CONTAINER: string;
-  /** 图片选择器 */
   const IMAGE_SELECTOR: string;
-  /** photo-swipe 选项 */
   const PHOTOSWIPE_OPTIONS: PhotoSwipe.Options;
 }
