@@ -24,7 +24,12 @@
       <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
     </router-link>
 
-    <p v-else :class="{ clickable: item.collapsable, open }" class="sidebar-heading" @click="$emit('toggle')">
+    <p
+      v-else
+      :class="{ clickable: item.collapsable, open }"
+      class="sidebar-heading"
+      @click="$emit('toggle')"
+    >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
       <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
@@ -121,6 +126,7 @@ export default class SidebarGroup extends Vue {
   box-sizing border-box
   margin 0
   border-left 0.25rem solid transparent
+  user-select none
 
   &.open, &:hover
     color inherit

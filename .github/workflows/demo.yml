@@ -44,7 +44,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Theme demo
-        run: yarn run theme-test:build
+        run: yarn run demo:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3

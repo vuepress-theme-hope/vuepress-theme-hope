@@ -2,16 +2,6 @@
   "name": "@mr-hope/vuepress-plugin-last-update",
   "version": "0.6.5",
   "description": "Last update time plugin for vuepress-theme-hope",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
-    "directory": "packages/last-update"
-  },
   "keywords": [
     "vuepress-plugin",
     "vuepress",
@@ -19,16 +9,23 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
-  "author": {
-    "email": "zhangbowang1998@gmail.com",
-    "name": "Mr.Hope",
-    "url": "https://mrhope.site"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/last-update#readme",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/last-update#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/last-update"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-types": "^0.6.5",
     "@types/cross-spawn": "^6.0.2",
@@ -37,5 +34,8 @@
   },
   "peerDependencies": {
     "typescript": "^3.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

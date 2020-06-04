@@ -2,16 +2,6 @@
   "name": "@mr-hope/vuepress-plugin-sitemap",
   "version": "0.6.5",
   "description": "sitemap plugin for vuepress-theme-hope",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
-    "directory": "packages/sitemap"
-  },
   "keywords": [
     "vuepress-plugin",
     "vuepress",
@@ -19,18 +9,28 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
-  "author": {
-    "email": "zhangbowang1998@gmail.com",
-    "name": "Mr.Hope",
-    "url": "https://mrhope.site"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/sitemap#readme",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/sitemap#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/sitemap"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-types": "^0.6.5",
     "sitemap": "^6.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -2,20 +2,6 @@
   "name": "vuepress-plugin-photo-swipe",
   "version": "0.6.5",
   "description": "photo-swipe plugin for vuepress-theme-hope",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
-  "scripts": {
-    "test:serve": "vuepress dev test/demo",
-    "test:clean-serve": "vuepress dev test/demo --no-cache"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
-    "directory": "packages/photo-swipe"
-  },
   "keywords": [
     "vuepress-plugin",
     "vuepress",
@@ -23,16 +9,28 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
-  "author": {
-    "email": "zhangbowang1998@gmail.com",
-    "name": "Mr.Hope",
-    "url": "https://mrhope.site"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/photo-swipe#readme",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/photo-swipe#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/photo-swipe"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "demo:build": "vuepress build test/demo",
+    "demo:clean-serve": "vuepress dev test/demo --no-cache",
+    "demo:serve": "vuepress dev test/demo"
+  },
   "dependencies": {
     "@mr-hope/vuepress-types": "^0.6.5",
     "@types/photoswipe": "^4.1.0",
@@ -41,5 +39,8 @@
   },
   "peerDependencies": {
     "typescript": "^3.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,16 +1,16 @@
 {
   "name": "test",
-  "private": true,
   "version": "0.6.5",
+  "private": true,
   "description": "Tests for vuepress-theme-hope",
-  "scripts": {
-    "serve": "vuepress dev src",
-    "clean-serve": "vuepress dev src --no-cache",
-    "build": "vuepress build src",
-    "eject": "vuepress eject-hope src"
-  },
-  "author": "Mr.Hope",
   "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "build": "vuepress build src",
+    "clean-serve": "vuepress dev src --no-cache",
+    "eject": "vuepress eject-hope src",
+    "serve": "vuepress dev src"
+  },
   "devDependencies": {
     "vuepress": "^1.5.0",
     "vuepress-theme-hope": "^0.6.5"

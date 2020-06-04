@@ -2,8 +2,6 @@
   "name": "vuepress-theme-hope",
   "version": "0.6.5",
   "description": "a light vuepress theme",
-  "main": "index.js",
-  "types": "types/index.d.ts",
   "keywords": [
     "vuepress-theme",
     "vuepress",
@@ -12,25 +10,26 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
-  "scripts": {
-    "test:unit": "vue-cli-service test:unit test/",
-    "test": "mocha -r ts-node/register test/**/*.ts"
+  "homepage": "https://vuepress-theme.mrhope.site",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
     "directory": "packages/theme"
   },
+  "license": "MIT",
   "author": {
-    "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
-  "homepage": "https://vuepress-theme.mrhope.site",
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.6.5",
     "@mr-hope/vuepress-plugin-components": "^0.6.5",
@@ -49,6 +48,7 @@
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-md-enhance": "^0.6.5",
     "vuepress-plugin-named-chunks": "^1.1.3",
+    "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-photo-swipe": "^0.6.5",
     "vuepress-plugin-typescript": "^0.3.0"
   },

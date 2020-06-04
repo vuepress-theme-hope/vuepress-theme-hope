@@ -46,5 +46,5 @@ jobs:
 
       - name: Run full test
         run: |
-          yarn run test:all
+          yarn run test
           yarn run lint:check

@@ -2,33 +2,32 @@
   "name": "@mr-hope/vuepress-shared-utils",
   "version": "0.6.5",
   "description": "Shared utils for vuepress-theme-hope",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
   "keywords": [
     "vuepress-theme-hope",
     "vuepress",
     "mr-hope"
   ],
-  "scripts": {
-    "test:unit": "vue-cli-service test:unit test/",
-    "test": "mocha -r ts-node/register test/unit/*.ts"
-  },
-  "publishConfig": {
-    "access": "public"
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/shared-utils#readme",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git",
     "directory": "packages/shared-utils"
   },
+  "license": "MIT",
   "author": {
-    "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/unit/*.ts"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/shared-utils#readme"
+  "publishConfig": {
+    "access": "public"
+  }
 }

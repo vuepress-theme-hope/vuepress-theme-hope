@@ -2,8 +2,6 @@
   "name": "vuepress-plugin-md-enhance",
   "version": "0.6.5",
   "description": "markdown enhancement for vuepress",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
   "keywords": [
     "vuepress-plugin",
     "markdown",
@@ -11,27 +9,29 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
-  "scripts": {
-    "demo:serve": "vuepress dev test/demo",
-    "demo:clean-serve": "vuepress dev test/demo --no-cache",
-    "demo:build": "vuepress build test/demo",
-    "test": "mocha -r ts-node/register test/unit/*.test.ts"
+  "homepage": "https://vuepress-md-enhance.mrhope.site/",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
     "directory": "packages/md-enhance"
   },
+  "license": "MIT",
   "author": {
-    "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "demo:build": "vuepress build test/demo",
+    "demo:clean-serve": "vuepress dev test/demo --no-cache",
+    "demo:serve": "vuepress dev test/demo",
+    "test": "mocha -r ts-node/register test/unit/*.test.ts"
   },
-  "homepage": "https://vuepress-md-enhance.mrhope.site/",
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.6.5",
     "@mr-hope/vuepress-types": "^0.6.5",

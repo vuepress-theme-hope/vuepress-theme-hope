@@ -2,8 +2,6 @@
   "name": "@mr-hope/vuepress-plugin-pwa",
   "version": "0.6.5",
   "description": "pwa plugin for vuepress-theme-hope",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
   "keywords": [
     "vuepress-plugin",
     "pwa",
@@ -11,24 +9,23 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
-  "publishConfig": {
-    "access": "public"
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/pwa#readme",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
     "directory": "packages/pwa"
   },
+  "license": "MIT",
   "author": {
-    "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
-  },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/pwa#readme",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.6.5",
     "@mr-hope/vuepress-types": "^0.6.5",
@@ -40,5 +37,8 @@
   },
   "peerDependencies": {
     "typescript": "^3.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

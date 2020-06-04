@@ -1,15 +1,19 @@
 {
   "name": "md-enhance-docs",
-  "private": true,
   "version": "0.6.5",
+  "private": true,
   "description": "Docs for vuepress-plugin-md-enhance",
-  "scripts": {
-    "serve": "vuepress dev src",
-    "clean-serve": "vuepress dev src --no-cache",
-    "build": "vuepress build src"
-  },
-  "author": "Mr.Hope",
   "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "scripts": {
+    "build": "vuepress build src",
+    "clean-serve": "vuepress dev src --no-cache",
+    "serve": "vuepress dev src"
+  },
   "devDependencies": {
     "vuepress": "1.5.0",
     "vuepress-theme-hope": "^0.6.5"

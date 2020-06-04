@@ -2,19 +2,6 @@
   "name": "@mr-hope/vuepress-plugin-reading-time",
   "version": "0.6.5",
   "description": "Reading time plugin for vuepress-theme-hope",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
-  "scripts": {
-    "test": "mocha -r ts-node/register test/*.test.ts"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
-    "directory": "packages/reading-time"
-  },
   "keywords": [
     "vuepress-plugin",
     "vuepress",
@@ -22,17 +9,30 @@
     "vuepress-theme-hope",
     "mr-hope"
   ],
-  "author": {
-    "email": "zhangbowang1998@gmail.com",
-    "name": "Mr.Hope",
-    "url": "https://mrhope.site"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/read-time#readme",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/read-time#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/reading-time"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/*.test.ts"
+  },
   "devDependencies": {
     "@mr-hope/vuepress-types": "^0.6.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

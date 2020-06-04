@@ -2,8 +2,6 @@
   "name": "@mr-hope/vuepress-plugin-comment",
   "version": "0.6.5",
   "description": "A simple Comment plugin",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
   "keywords": [
     "vuepress-plugin",
     "comment",
@@ -12,29 +10,28 @@
     "vuepress",
     "mr-hope"
   ],
-  "scripts": {
-    "test:serve": "vuepress dev test/demo",
-    "test:clean-serve": "vuepress dev test/demo --no-cache",
-    "test:build": "vuepress build test/demo"
-  },
-  "publishConfig": {
-    "access": "public"
+  "homepage": "https://vuepress-comment.mrhope.site",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
     "directory": "packages/comment"
   },
+  "license": "MIT",
   "author": {
-    "email": "zhangbowang1998@gmail.com",
     "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "demo:build": "vuepress build test/demo",
+    "demo:clean-serve": "vuepress dev test/demo --no-cache",
+    "demo:serve": "vuepress dev test/demo"
   },
-  "homepage": "https://vuepress-comment.mrhope.site",
   "dependencies": {
     "@mr-hope/vuepress-plugin-reading-time": "^0.6.5",
     "@mr-hope/vuepress-shared-utils": "^0.6.5",
@@ -53,5 +50,8 @@
   },
   "peerDependencies": {
     "typescript": "^3.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

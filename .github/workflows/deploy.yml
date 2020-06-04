@@ -46,7 +46,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run theme:build
+        run: yarn run docs/theme:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -69,7 +69,7 @@ jobs:
           yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run comment-docs:build
+        run: yarn run docs/comment:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -93,7 +93,7 @@ jobs:
           yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run md-enhance-docs:build
+        run: yarn run docs/md-enhance:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
