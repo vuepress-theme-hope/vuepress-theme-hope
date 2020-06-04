@@ -119,6 +119,19 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
       },
     ],
 
+    /** 复制按钮插件 */
+    [
+      "one-click-copy",
+      {
+        copySelector: [
+          'div[class*="language-"] pre',
+          'div[class*="aside-code"] aside',
+        ],
+        copyMessage: "Copy successfully",
+        duration: 500,
+      },
+    ],
+
     /** Photo-swipe 插件 */
     ["photo-swipe", themeConfig.photoSwipe],
 
