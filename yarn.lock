@@ -8833,9 +8833,9 @@ leancloud-storage@^3.0.4:
     uuid "^3.3.2"
 
 leancloud-storage@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-4.6.0.tgz#3e47573f18ff33f92642632565d21f20a58f5d06"
-  integrity sha512-udRCKZ6wnMY9qB/5da31AHH6g1nPAmpY4T6cWBvrNtcMUYh/SzwoG9P+JCTY/cOTSCB6t5FUPPhWHaWYauHeNg==
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-4.6.1.tgz#48d11ab0a8a313e320f5de3f1b5d2c8983fb8491"
+  integrity sha512-eK6hgHiFMa8Nw7Y9EJoP2kmq5VKVEK6leWjm5HN3EDoaCIX/YlJVWFuwqiDeDrdqrHzW1eYSBWZMOiWOYNIgyA==
   dependencies:
     "@leancloud/adapter-types" "^3.0.0"
     "@leancloud/platform-adapters-browser" "^1.1.0"
