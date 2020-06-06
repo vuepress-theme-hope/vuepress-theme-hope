@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.6.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.5...v0.6.6) (2020-06-06)
+
+### Bug Fixes
+
+- **theme:** fix anchor ([9777dcf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9777dcf131c10f11f126878848e196694e3163c8))
+- **theme:** fix got same chunkname with same title ([bd0a18e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bd0a18e45ba80625d7775dff132ac1e1c0bc3868))
+- **theme:** fix type issue and fix Anchor display issue ([80805c9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/80805c95fccc01bcd2495ae0aef1b0f13b646e16))
+
+### Features
+
+- **comment:** add title ([02909e2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/02909e2576c28149235a728efddb903b90e195d4))
+- **theme:** add default config to change temp folder ([cc650e1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cc650e1146a0e1914cfea5baf624266a202815ae))
+- **theme:** add one-click-copy plugin ([e5ec9bb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e5ec9bbc33441f0775584d57bccf7e5160e61288))
+- **theme:** add styl label for stylus blocks ([b1335cf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b1335cfa9b22ee31217ecaf56464634925f607e7))
+
 ## [0.6.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.4...v0.6.5) (2020-06-03)
 
 ### Bug Fixes
