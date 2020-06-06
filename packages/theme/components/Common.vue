@@ -25,17 +25,23 @@
         </template>
       </Sidebar>
 
-      <slot :sidebar-items="sidebarItems" />
+      <slot :sidebar-items="sidebarItems" :headers="headers" />
     </template>
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Mixins, Prop, Vue } from "vue-property-decorator";
-import { SidebarItem, resolveSidebarItems } from "../util/sidebar";
+import {
+  SidebarItem,
+  SidebarGroupItem,
+  SidebarHeader,
+  resolveSidebarItems,
+} from "../util/sidebar";
 import GlobalEncryptMixin from "../util/globalEncryptMixin";
 import Navbar from "@theme/components/Navbar.vue";
 import Password from "@theme/components/Password.vue";
+import { PageHeader } from "@mr-hope/vuepress-types";
 import Sidebar from "@theme/components/Sidebar.vue";
 
 @Component({ components: { Password, Sidebar, Navbar } })
@@ -98,9 +104,18 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
         "no-navbar": !this.showNavbar,
         "sidebar-open": this.isSidebarOpen,
         "no-sidebar": !this.showSidebar,
+        "has-anchor": this.showAnchor,
       },
       userPageClass,
     ];
+  }
+
+  private get headers() {
+    return this.getHeader(this.sidebarItems);
+  }
+
+  private get showAnchor() {
+    return this.$themeConfig.anchorDisplay !== false && this.headers.length > 0;
   }
 
   protected mounted(): void {
@@ -129,6 +144,27 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40)
       if (dx > 0 && this.touchStart.clientX <= 80) this.toggleSidebar(true);
       else this.toggleSidebar(false);
+  }
+
+  private getHeader(items: SidebarItem[]): SidebarHeader[] {
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+
+      if (item.type === "group") {
+        const matching: PageHeader[] = this.getHeader(
+          (item as SidebarGroupItem).children
+        );
+
+        if (matching.length !== 0) return matching;
+      } else if (
+        item.type === "page" &&
+        item.headers &&
+        item.path === this.$route.path
+      )
+        return item.headers;
+    }
+
+    return [];
   }
 }
 </script>

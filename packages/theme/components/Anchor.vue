@@ -143,7 +143,8 @@ $headings = 2 3 4 5 6
   overflow-y scroll
 
   @media (min-width: $MQWide)
-    display block
+    .has-anchor &
+      display block
 
   &::-webkit-scrollbar-track-piece
     background-color transparent

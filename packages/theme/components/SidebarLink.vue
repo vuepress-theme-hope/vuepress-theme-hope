@@ -235,7 +235,7 @@ export default class SidebarLink extends Vue {
       padding-left 1rem
       font-size 0.95em
 
-      .page.has-anchor &
+      .has-anchor &
         @media (min-width: $MQWide)
           display none
 
