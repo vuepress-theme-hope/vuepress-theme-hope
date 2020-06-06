@@ -41,17 +41,9 @@ rules:
   indent:
     - off
 
-  function-call-argument-newline:
-    - error
-    - consistent
-
   max-statements:
     - warn
     - 25
-
-  nonblock-statement-body-position:
-    - error
-    - any
 
   no-param-reassign:
     - error
@@ -66,14 +58,6 @@ rules:
 
   object-curly-spacing:
     - off
-
-  one-var:
-    - error
-    - never
-
-  padded-blocks:
-    - error
-    - never
 
   prefer-destructuring:
     - error

@@ -33,7 +33,7 @@
     "moment": "^2.26.0"
   },
   "peerDependencies": {
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   },
   "publishConfig": {
     "access": "public"

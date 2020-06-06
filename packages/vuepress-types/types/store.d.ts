@@ -6,7 +6,7 @@ export declare class Store {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   $get(key: string): any;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
   $set(key: string, value: any): void;
 
   $emit: typeof Vue.prototype.$emit;
