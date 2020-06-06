@@ -11,7 +11,7 @@ module.exports = {
   plugin: [
     "md-enhance",
     {
-      // 启用自定义对其
+      // 启用自定义对齐
       align: true,
     },
   ],

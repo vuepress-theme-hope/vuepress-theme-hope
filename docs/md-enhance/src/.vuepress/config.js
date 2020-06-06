@@ -10,23 +10,13 @@ module.exports = resolve({
       manifest: "/manifest.json",
       themeColor: "#46bd87",
       appleStatusBarColor: "black",
-      appleIcon: "/img/icon/appleIcon152.png",
-      msTileImage: "/img/icon/msIcon144.png",
+      appleIcon: "/assets/icon/appleIcon152.png",
+      msTileImage: "/assets/icon/msIcon144.png",
       msTileColor: "#ffffff",
     },
   },
-  head: [
-    [
-      "link",
-      {
-        rel: "mask-icon",
-        href: "/icons/safari-pinned-tab.svg",
-        color: "#46bd87",
-      },
-    ],
-  ],
 
-  temp: "./node_modules/.temp/md-enhance",
+  temp: "./node_modules/.temp",
   dest: "./dist",
 
   locales: {

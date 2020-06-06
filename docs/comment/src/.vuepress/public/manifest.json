@@ -6,12 +6,12 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/img/icon/chrome192.png",
+      "src": "/assets/icon/chrome192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/img/icon/chrome512.png",
+      "src": "/assets/icon/chrome512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

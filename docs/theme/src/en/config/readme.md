@@ -1,6 +1,6 @@
 ---
 icon: configuration
-category: aconfigpi
+category: config
 tags:
   - config
 ---

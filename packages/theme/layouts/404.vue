@@ -35,7 +35,7 @@ export default class NotFound extends Vue {
   display block
   max-width $homePageWidth
   margin 0px auto
-  padding ($navbarHeight + 1rem) 2rem 0
+  padding ($navbarHeight + 1rem) 2rem 0 !important
 
   .action-button
     display inline-block
