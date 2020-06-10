@@ -2791,9 +2791,9 @@
     cross-spawn "^6.0.5"
 
 "@vuepress/plugin-medium-zoom@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-1.5.0.tgz#99a574f6c52570ae16be3de529bdc556d09f88fe"
-  integrity sha512-9Q1C11Ga/GL3fc+GiwaOZ+I0lWT2Ilrd1OKzJ6iJTZ5F4Ays+NzdIPBo5LeIT6/7eu08Z9XBhW0mQTa6Aq/DhQ==
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-1.5.1.tgz#a641ce2ca8aa24d2f6a6b3f8d94d787c6eb85924"
+  integrity sha512-ABbis9mMNWTnq+EEtHAeGcb0pWI8jM2FXv1bkovGSlxsOWhJkxRCQmZRVsKAAZhxI2ya4MTyVNNP+n0gmgCbdQ==
   dependencies:
     medium-zoom "^1.0.4"
 
