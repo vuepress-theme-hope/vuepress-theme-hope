@@ -41,19 +41,21 @@
     "@mr-hope/vuepress-theme-types": "^0.6.6",
     "@types/md5": "^2.2.0",
     "@vuepress/plugin-blog": "^1.9.2",
-    "@vuepress/plugin-medium-zoom": "^1.5.0",
+    "docsearch.js": "^2.6.3",
     "md5": "^2.2.1",
     "moment": "^2.26.0",
     "vuepress-plugin-clean-urls": "^1.1.1",
+    "vuepress-plugin-container": "^2.1.4",
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-md-enhance": "^0.6.6",
     "vuepress-plugin-named-chunks": "^1.1.3",
     "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-photo-swipe": "^0.6.6",
+    "vuepress-plugin-smooth-scroll": "^0.0.9",
     "vuepress-plugin-typescript": "^0.3.0"
   },
   "peerDependencies": {
     "typescript": "^3.9.5",
-    "vuepress": "^1.5.0"
+    "vuepress": "^1.5.1"
   }
 }
