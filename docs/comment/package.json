@@ -1,6 +1,6 @@
 {
   "name": "comment-docs",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "private": true,
   "description": "Docs for @mr-hope/vuepress-plugin-comment",
   "license": "MIT",
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "vuepress": "1.5.1",
-    "vuepress-theme-hope": "^0.6.6"
+    "vuepress-theme-hope": "^0.6.7"
   }
 }
