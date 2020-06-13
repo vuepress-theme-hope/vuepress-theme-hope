@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.6...v0.6.7) (2020-06-12)
+
+### Bug Fixes
+
+- **theme:** fix hightlight line display issue ([fc25fb4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fc25fb4a26ad4aa3cf683005ff36cb58cfa617e7))
+
 ## [0.6.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.5...v0.6.6) (2020-06-06)
 
 ### Bug Fixes
