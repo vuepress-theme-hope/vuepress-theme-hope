@@ -53,6 +53,7 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
+          CLEAN: true
           FOLDER: docs/theme/dist
 
   deploy-comment-docs:
@@ -102,6 +103,7 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
+          CLEAN: true
           FOLDER: docs/comment/dist
           REPOSITORY_NAME: Mister-Hope/vuepress-plugin-comment-docs
 
@@ -152,5 +154,6 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
+          CLEAN: true
           FOLDER: docs/md-enhance/dist
           REPOSITORY_NAME: Mister-Hope/vuepress-plugin-md-enhance-docs
