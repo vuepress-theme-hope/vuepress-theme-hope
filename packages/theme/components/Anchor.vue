@@ -156,9 +156,9 @@ $headings = 2 3 4 5 6
     &::after
       content ' '
       position absolute
-      top 16px
+      top 15px
       left 4px
-      bottom 14px
+      bottom 15px
       z-index -1
       margin-left -2px
       width 4px
@@ -183,7 +183,6 @@ $headings = 2 3 4 5 6
           color var(--light-grey)
 
           > div
-            // line-height 1.1
             text-overflow ellipsis
             white-space nowrap
             overflow hidden

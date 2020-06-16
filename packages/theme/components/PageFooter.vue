@@ -69,10 +69,11 @@ export default class PageFooter extends Vue {
 
   .footer
     margin 8px 16px
+    font-size 14px
 
   .copyright
     margin 6px auto
-    font-size 12px
+    font-size 13px
 
 .page .footer-wrapper
   margin-bottom -2rem

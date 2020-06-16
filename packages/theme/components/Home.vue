@@ -186,6 +186,8 @@ export default class Home extends Vue {
       flex-basis calc(33% - 5rem)
       transition all 0.5s
       padding 0 2.5rem
+      border-radius 1rem
+      overflow hidden
 
       @media (max-width: $MQNarrow)
         flex-basis calc(50% - 5rem)
