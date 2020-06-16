@@ -2912,17 +2912,17 @@
     semver "^6.0.0"
     upath "^1.1.0"
 
-"@vuepress/test-utils@1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@vuepress/test-utils/-/test-utils-1.5.1.tgz#218afb18e0d017de39312f3e8e6b7c2dc0b6c3e3"
-  integrity sha512-9pJbstOy0GogezVLZXxQ8SMs8dULjs2lWGPgWe9iWxY7hhS2x3ves9eGh1sSi3tPMgWB6j5t9KGPAjXMCDy0AQ==
+"@vuepress/test-utils@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@vuepress/test-utils/-/test-utils-1.5.2.tgz#2eb9028bf3820f9f11082ff80ca0b6b4e192b28f"
+  integrity sha512-VpeIIuGXxudk9F2M+ldqaE/lgZQOgKEt+mmAQKlCxa7apmuDt8xenZ5J6eI5gGPW/etDb3HQK5rDeWvCVKpPSA==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/preset-env" "^7.0.0"
     "@types/jest" "^24.0.9"
     "@vue/test-utils" "^1.0.0-beta.29"
-    "@vuepress/core" "1.5.1"
-    "@vuepress/shared-utils" "1.5.1"
+    "@vuepress/core" "1.5.2"
+    "@vuepress/shared-utils" "1.5.2"
     babel-jest "^24.7.1"
     execa "^1.0.0"
     jest "^24.7.1"
