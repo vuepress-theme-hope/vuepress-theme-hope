@@ -65,7 +65,7 @@ export default class PageFooter extends Vue {
       width 100%
 
   .media-links-wrapper
-    margin 0 auto
+    margin 0
 
   .footer
     margin 8px 16px

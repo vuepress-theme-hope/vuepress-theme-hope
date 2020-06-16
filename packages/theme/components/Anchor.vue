@@ -171,6 +171,7 @@ $headings = 2 3 4 5 6
       padding-left 0
 
       .anchor
+        line-height 1.5
         box-sizing border-box
         list-style none
         padding 0px 8px
@@ -182,7 +183,7 @@ $headings = 2 3 4 5 6
           color var(--light-grey)
 
           > div
-            line-height 1
+            // line-height 1.1
             text-overflow ellipsis
             white-space nowrap
             overflow hidden

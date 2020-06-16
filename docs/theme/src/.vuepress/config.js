@@ -54,6 +54,7 @@ module.exports = resolve({
     },
 
     footer: {
+      display: true,
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
