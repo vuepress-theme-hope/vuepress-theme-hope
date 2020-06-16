@@ -44,6 +44,7 @@
     "docsearch.js": "^2.6.3",
     "md5": "^2.2.1",
     "moment": "^2.26.0",
+    "vue-class-component": "^7.2.3",
     "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-container": "^2.1.4",
     "vuepress-plugin-copyright": "^1.0.2",
