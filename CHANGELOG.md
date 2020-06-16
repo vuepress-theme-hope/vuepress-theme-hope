@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.7...v0.6.8) (2020-06-16)
+
+### Bug Fixes
+
+- **theme:** fix missing vue-class-component with vue-property-decorator@8.5.0 ([f57b26a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f57b26a18fafdb880d9c615329d30386729e5a36))
+
 ## [0.6.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.6...v0.6.7) (2020-06-12)
 
 ### Bug Fixes
