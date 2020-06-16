@@ -36,7 +36,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "peerDependencies": {
-    "vuepress": "^1.5.1"
+    "vuepress": "^1.5.2"
   },
   "publishConfig": {
     "access": "public"
