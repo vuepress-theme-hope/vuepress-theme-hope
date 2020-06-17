@@ -21,7 +21,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import DropdownLink from "@theme/components/DropdownLink.vue";
 import NavLink from "@theme/components/NavLink.vue";
 import { RouterOptions } from "vue-router";

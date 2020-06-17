@@ -15,7 +15,6 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { HopeSideBarConfigItem } from "@mr-hope/vuepress-shared-utils";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 import SidebarGroup from "@theme/components/SidebarGroup.vue";
