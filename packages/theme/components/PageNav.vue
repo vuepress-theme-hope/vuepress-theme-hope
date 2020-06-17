@@ -86,7 +86,7 @@ interface LinkOptions {
 /** 处理页面链接 */
 const resolvePageLink = (
   linkType: "prev" | "next",
-  { themeConfig, page, route, site, sidebarItems }: LinkOptions,
+  { themeConfig, page, route, site, sidebarItems }: LinkOptions
 ) => {
   const themeLinkConfig = themeConfig[`${linkType}Links`];
   const pageLinkConfig = page.frontmatter[linkType];
@@ -96,7 +96,7 @@ const resolvePageLink = (
   if (typeof pageLinkConfig === "string")
     return resolvePageforSidebar(
       site.pages,
-      resolvePath(pageLinkConfig, route.path),
+      resolvePath(pageLinkConfig, route.path)
     );
 
   return find(page, sidebarItems, linkType === "prev" ? -1 : 1);

@@ -68,7 +68,6 @@ import PageInfo from "@PageInfo";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
 import { SidebarItem } from "@theme/util/sidebar";
-import { compareSync } from "bcryptjs";
 
 @Component({
   components: {

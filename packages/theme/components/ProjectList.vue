@@ -10,11 +10,13 @@
       <div
         v-if="project.cover"
         class="cover"
-        :style="`background: url(${$withBase(project.cover)}) center/cover no-repeat;`"
+        :style="`background: url(${$withBase(
+          project.cover
+        )}) center/cover no-repeat;`"
       />
       <component :is="`${project.type}-icon`" />
-      <div class="name">{{project.name}}</div>
-      <div class="desc">{{project.desc}}</div>
+      <div class="name">{{ project.name }}</div>
+      <div class="desc">{{ project.desc }}</div>
     </div>
   </div>
 </template>

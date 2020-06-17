@@ -2,8 +2,8 @@
   <div class="timeline-list-wrapper">
     <div class="title" @click="$router.push('/timeline/')">
       <TimeIcon />
-      <span class="num">{{$timelineItems.length}}</span>
-      {{timeline}}
+      <span class="num">{{ $timelineItems.length }}</span>
+      {{ timeline }}
     </div>
     <hr />
     <div class="content">
@@ -14,11 +14,16 @@
           :delay="0.08 * (index + 1)"
         >
           <li>
-            <h3 class="year">{{item.year}}</h3>
+            <h3 class="year">{{ item.year }}</h3>
             <ul class="year-wrapper">
-              <li v-for="(article, articleIndex) in item.articles" :key="articleIndex">
-                <span class="date">{{article.frontmatter.parsedDate}}</span>
-                <span class="timeline-title" @click="navigate(article.path)">{{article.title}}</span>
+              <li
+                v-for="(article, articleIndex) in item.articles"
+                :key="articleIndex"
+              >
+                <span class="date">{{ article.frontmatter.parsedDate }}</span>
+                <span class="timeline-title" @click="navigate(article.path)">{{
+                  article.title
+                }}</span>
               </li>
             </ul>
           </li>

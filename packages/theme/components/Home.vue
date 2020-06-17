@@ -27,7 +27,11 @@
       <MyTransition :delay="0.08">
         <p
           class="description"
-          v-text="$frontmatter.tagline || $description || 'Welcome to your VuePress site'"
+          v-text="
+            $frontmatter.tagline ||
+            $description ||
+            'Welcome to your VuePress site'
+          "
         />
       </MyTransition>
       <MyTransition :delay="0.12">
@@ -43,15 +47,20 @@
     </header>
 
     <MyTransition :delay="0.16">
-      <div v-if="$frontmatter.features && $frontmatter.features.length" class="features">
+      <div
+        v-if="$frontmatter.features && $frontmatter.features.length"
+        class="features"
+      >
         <div
           v-for="(feature, index) in $frontmatter.features"
           :key="index"
-          :class="{link:feature.link}"
+          :class="{ link: feature.link }"
           class="feature"
         >
           <h2>
-            <span v-if="feature.link" @click="navigate(feature.link)">{{ feature.title }}</span>
+            <span v-if="feature.link" @click="navigate(feature.link)">{{
+              feature.title
+            }}</span>
             <span v-else>{{ feature.title }}</span>
           </h2>
           <p>{{ feature.details }}</p>

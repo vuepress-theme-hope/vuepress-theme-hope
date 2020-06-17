@@ -347,6 +347,12 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * PWA configuration
    */
   pwa?: PWAOptions | false;
+  /**
+   * 是否在桌面模式显示锚点标题
+   *
+   * Whether display anchor in desktop mode
+   */
+  anchorDisplay?: boolean;
   /** 页面信息 */
   pageInfo?: PageInfotype[] | false;
   /**

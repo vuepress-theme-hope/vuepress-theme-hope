@@ -2,15 +2,24 @@
   <div class="timeline-wrapper">
     <ul class="timeline-content">
       <MyTransition>
-        <li class="desc">{{hint}}</li>
+        <li class="desc">{{ hint }}</li>
       </MyTransition>
-      <MyTransition v-for="(item, index) in $timeline" :key="index" :delay="0.08 * (index + 1)">
+      <MyTransition
+        v-for="(item, index) in $timeline"
+        :key="index"
+        :delay="0.08 * (index + 1)"
+      >
         <li>
-          <h3 class="year">{{item.year}}</h3>
+          <h3 class="year">{{ item.year }}</h3>
           <ul class="year-wrapper">
-            <li v-for="(article, articleIndex) in item.articles" :key="articleIndex">
-              <span class="date">{{article.frontmatter.parsedDate}}</span>
-              <span class="title" @click="navigate(article.path)">{{article.title}}</span>
+            <li
+              v-for="(article, articleIndex) in item.articles"
+              :key="articleIndex"
+            >
+              <span class="date">{{ article.frontmatter.parsedDate }}</span>
+              <span class="title" @click="navigate(article.path)">{{
+                article.title
+              }}</span>
             </li>
           </ul>
         </li>

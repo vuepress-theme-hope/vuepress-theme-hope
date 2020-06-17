@@ -26,9 +26,8 @@ export default class ReadtimeInfo extends Vue {
   }
 
   private get hint(): string {
-    return (
-      this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog
-    ).readingTime;
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+      .readingTime;
   }
 }
 </script>

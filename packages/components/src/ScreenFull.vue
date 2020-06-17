@@ -2,7 +2,7 @@
   <div v-if="canFullscreen" class="fullscreen-wrapper">
     <span class="icon" role="button" @click="click">
       <svg
-        :class="isFullscreen? 'cacelFullScreen': 'fullScreen'"
+        :class="isFullscreen ? 'cacelFullScreen' : 'fullScreen'"
         viewBox="0 0 1024 1024"
         xmlns="http://www.w3.org/2000/svg"
       >

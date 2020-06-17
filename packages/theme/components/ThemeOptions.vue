@@ -7,7 +7,7 @@
       </li>
       <li v-for="color in themeColor.list" :key="color">
         <a
-          :style="{background: themeColor.picker[color]}"
+          :style="{ background: themeColor.picker[color] }"
           href="#"
           @click.prevent="setTheme(color)"
         />

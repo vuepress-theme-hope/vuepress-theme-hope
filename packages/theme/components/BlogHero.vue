@@ -1,12 +1,18 @@
 <template>
   <div class="blog-hero">
-    <div v-if="$frontmatter.hero !== false" class="hero" :style="{ ...bgImageStyle }">
+    <div
+      v-if="$frontmatter.hero !== false"
+      class="hero"
+      :style="{ ...bgImageStyle }"
+    >
       <div
         class="mask"
         :style="{
           background: `url(${
-            $frontmatter.bgImage? $withBase($frontmatter.bgImage): require('../assets/homeImage.jpg')
-          }) center/cover no-repeat`
+            $frontmatter.bgImage
+              ? $withBase($frontmatter.bgImage)
+              : require('../assets/homeImage.jpg')
+          }) center/cover no-repeat`,
         }"
       />
       <MyTransition :delay="0.04">
@@ -19,7 +25,9 @@
         />
       </MyTransition>
       <MyTransition :delay="0.08">
-        <h1 v-if="$frontmatter.showTitle !== false">{{ $frontmatter.heroText || $title || 'Hope' }}</h1>
+        <h1 v-if="$frontmatter.showTitle !== false">
+          {{ $frontmatter.heroText || $title || "Hope" }}
+        </h1>
       </MyTransition>
 
       <MyTransition :delay="0.12">
@@ -39,7 +47,9 @@ export default class BlogHero extends Vue {
     const defaultStyle = {
       maxHeight: "180px",
       margin:
-        this.$frontmatter.showTitle === false ? "6rem auto 1.5rem" : "1rem auto",
+        this.$frontmatter.showTitle === false
+          ? "6rem auto 1.5rem"
+          : "1rem auto",
     };
 
     return { ...defaultStyle, ...this.$frontmatter.heroImageStyle };

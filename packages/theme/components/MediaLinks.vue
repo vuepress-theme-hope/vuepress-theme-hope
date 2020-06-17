@@ -4,7 +4,7 @@
       v-for="link in links"
       :key="link.name"
       class="media-link"
-      @click="navigate(link.url,$router,$route)"
+      @click="navigate(link.url, $router, $route)"
     >
       <Component :is="link.icon" />
     </div>

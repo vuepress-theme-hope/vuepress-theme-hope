@@ -251,7 +251,7 @@ The optional values of `MediaType` are as follows:
 
 Whether the current page displays search box.
 
-### backtotop
+### backToTop
 
 - Type: `boolean`
 - Default value: Globally configured value (global default is `true`)

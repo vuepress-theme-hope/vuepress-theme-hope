@@ -4,12 +4,15 @@
       v-for="(category, index) in $category.list"
       :key="category.path"
       class="category"
-      :class="{ active: category.path === $route.path, [`category${index % 9}`]:true }"
+      :class="{
+        active: category.path === $route.path,
+        [`category${index % 9}`]: true,
+      }"
       @click="clickCategory(category.path)"
     >
       <div class="category-name">
         {{ capitalize(category.name) }}
-        <span class="category-num">{{category.pages.length}}</span>
+        <span class="category-num">{{ category.pages.length }}</span>
       </div>
     </li>
   </ul>

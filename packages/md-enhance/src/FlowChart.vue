@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'loading': loading }" class="md-flowchart">
+  <div :class="{ loading: loading }" class="md-flowchart">
     <Loading v-if="loading" class="md-flowchart-loading-icon" />
   </div>
 </template>

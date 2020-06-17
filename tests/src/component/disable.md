@@ -1,6 +1,6 @@
 ---
 category: component
-backtotop: false
+backToTop: false
 breadcrumb: false
 pageInfo: false
 comment: false

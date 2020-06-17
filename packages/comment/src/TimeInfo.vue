@@ -30,8 +30,7 @@ export default class TimeInfo extends Vue {
   }
 
   private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
-      .time;
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).time;
   }
 }
 </script>

@@ -9,22 +9,22 @@
             alt="blogger-avatar"
             :src="$withBase(bloggerAvatar)"
           />
-          <div v-if="bloggerName" class="name" v-text="bloggerName " />
+          <div v-if="bloggerName" class="name" v-text="bloggerName" />
         </div>
         <MediaLinks class="logo-media-link" />
       </div>
       <div class="num-wrapper">
         <div @click="navigate('/article/', $router, $route)">
-          <div>{{i18n.article}}</div>
-          <div class="num">{{$articles.length}}</div>
+          <div>{{ i18n.article }}</div>
+          <div class="num">{{ $articles.length }}</div>
         </div>
         <div @click="navigate('/category/', $router, $route)">
-          <div>{{i18n.category}}</div>
-          <div class="num">{{$category.list.length}}</div>
+          <div>{{ i18n.category }}</div>
+          <div class="num">{{ $category.list.length }}</div>
         </div>
         <div @click="navigate('/tag/', $router, $route)">
-          <div>{{i18n.tag}}</div>
-          <div class="num">{{$tag.list.length}}</div>
+          <div>{{ i18n.tag }}</div>
+          <div class="num">{{ $tag.list.length }}</div>
         </div>
       </div>
     </div>

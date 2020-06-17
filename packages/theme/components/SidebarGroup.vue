@@ -3,9 +3,9 @@
     :class="[
       {
         collapsable: item.collapsable,
-        'is-sub-group': depth !== 0
+        'is-sub-group': depth !== 0,
       },
-      `depth-${depth}`
+      `depth-${depth}`,
     ]"
     class="sidebar-group"
   >
@@ -13,7 +13,7 @@
       v-if="item.path"
       :class="{
         open,
-        'active': isActive($route, item.path)
+        active: isActive($route, item.path),
       }"
       class="sidebar-heading clickable"
       :to="item.path"
@@ -21,7 +21,11 @@
     >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
-      <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
+      <span
+        v-if="item.collapsable"
+        :class="open ? 'down' : 'right'"
+        class="arrow"
+      />
     </router-link>
 
     <p
@@ -32,7 +36,11 @@
     >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
-      <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
+      <span
+        v-if="item.collapsable"
+        :class="open ? 'down' : 'right'"
+        class="arrow"
+      />
     </p>
 
     <DropdownTransition>

@@ -4,7 +4,7 @@
     class="category-info"
     :class="{ active }"
     :title="hint"
-    :role="active? 'navigation':''"
+    :role="active ? 'navigation' : ''"
     @click="navigate"
   >
     <CategoryIcon />

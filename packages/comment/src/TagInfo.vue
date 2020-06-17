@@ -7,7 +7,7 @@
         :key="tag"
         class="tag"
         :class="{ clickable, [`tag${index % 9}`]: true }"
-        :role="clickable? 'navigation': ''"
+        :role="clickable ? 'navigation' : ''"
         @click="navigate(tag)"
         v-text="tag"
       />

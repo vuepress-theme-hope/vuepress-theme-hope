@@ -21,18 +21,27 @@
         ref="siteName"
         :class="{ 'can-hide': $themeConfig.logo }"
         class="site-name"
-      >{{ $siteTitle }}</span>
+        >{{ $siteTitle }}</span
+      >
     </router-link>
 
     <div
-      :style="linksWrapMaxWidth ? {
-        'max-width': `${linksWrapMaxWidth}px`
-      } : {}"
+      :style="
+        linksWrapMaxWidth
+          ? {
+              'max-width': `${linksWrapMaxWidth}px`,
+            }
+          : {}
+      "
       class="links"
     >
       <ThemeColor />
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
-      <SearchBox v-else-if="$themeConfig.search !== false && $page.frontmatter.search !== false" />
+      <SearchBox
+        v-else-if="
+          $themeConfig.search !== false && $page.frontmatter.search !== false
+        "
+      />
       <NavLinks class="can-hide" />
     </div>
   </header>

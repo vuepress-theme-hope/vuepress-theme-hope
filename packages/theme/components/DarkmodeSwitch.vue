@@ -1,23 +1,35 @@
 <template>
   <div class="darkmode-switch">
     <template v-if="darkmodeConfig === 'auto-switch'">
-      <div class="item day" :class="{ active: darkmode === 'off' }" @click="setDarkmode('off')">
+      <div
+        class="item day"
+        :class="{ active: darkmode === 'off' }"
+        @click="setDarkmode('off')"
+      >
         <LightIcon />
       </div>
-      <div class="item auto" :class="{ active: darkmode === 'auto' }" @click="setDarkmode('auto')">
+      <div
+        class="item auto"
+        :class="{ active: darkmode === 'auto' }"
+        @click="setDarkmode('auto')"
+      >
         <AutoIcon />
       </div>
-      <div class="item night" :class="{ active: darkmode === 'on' }" @click="setDarkmode('on')">
+      <div
+        class="item night"
+        :class="{ active: darkmode === 'on' }"
+        @click="setDarkmode('on')"
+      >
         <DarkIcon />
       </div>
     </template>
-    <div v-else-if="darkmodeConfig==='switch'" class="switch">
+    <div v-else-if="darkmodeConfig === 'switch'" class="switch">
       <input
         id="switch"
         class="switch-input"
         type="checkbox"
         :checked="darkmode !== 'on'"
-        @click="setDarkmode(darkmode === 'on'?'off':'on')"
+        @click="setDarkmode(darkmode === 'on' ? 'off' : 'on')"
       />
       <label class="label" for="switch">
         <span class="label-content" />

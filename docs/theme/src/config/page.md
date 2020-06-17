@@ -260,7 +260,7 @@ tags:
 
 当前页面是否显示搜索框。
 
-### backtotop
+### backToTop
 
 - 类型: `boolean`
 - 默认值: 全局中配置的值 (全局默认为 `true`)

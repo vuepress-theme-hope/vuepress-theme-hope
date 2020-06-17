@@ -4,7 +4,7 @@
       v-for="(tag, index) in tagList"
       :key="tag.path"
       class="tag"
-      :class="{ active: isActive(tag.name), [`tag${index % 9}`]:true }"
+      :class="{ active: isActive(tag.name), [`tag${index % 9}`]: true }"
       @click="clickTag(tag.path)"
     >
       <div class="tag-name">{{ tag.name }}</div>

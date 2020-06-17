@@ -35,15 +35,15 @@ export default class BackToTop extends Vue {
   private scrollTop = 0;
 
   private get thresholdDistance() {
-    return typeof this.$themeConfig.backtotop === "number"
-      ? this.$themeConfig.backtotop
+    return typeof this.$themeConfig.backToTop === "number"
+      ? this.$themeConfig.backToTop
       : this.threshold;
   }
 
   /** Whether to display button */
   private get isDisplay() {
-    const globalEnable = this.$themeConfig.backtotop !== false;
-    const pageEnable = this.$page.frontmatter.backtotop;
+    const globalEnable = this.$themeConfig.backToTop !== false;
+    const pageEnable = this.$page.frontmatter.backToTop;
 
     return (
       (pageEnable || (globalEnable && pageEnable !== false)) &&

@@ -5,7 +5,11 @@
       <LockIcon v-if="isEncrypted" />
       {{ article.title }}
     </router-link>
-    <div v-if="article.excerpt" class="article-excerpt" v-html="article.excerpt" />
+    <div
+      v-if="article.excerpt"
+      class="article-excerpt"
+      v-html="article.excerpt"
+    />
     <hr class="hr" />
     <ArticleInfo :article="article" />
   </section>

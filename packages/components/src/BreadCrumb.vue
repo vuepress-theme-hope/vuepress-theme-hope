@@ -1,14 +1,14 @@
 <template>
-  <nav :class="['breadcrumb',{ disable: !enable }]">
+  <nav :class="['breadcrumb', { disable: !enable }]">
     <ul v-if="enable">
       <li
-        v-for="(item,index) in config"
+        v-for="(item, index) in config"
         :key="item.url"
-        :class="{'is-active': config.length -1 === index}"
+        :class="{ 'is-active': config.length - 1 === index }"
       >
         <a
           class="iconfont"
-          :class="item.icon && iconEnable? `${iconPrefix}${item.icon}`:''"
+          :class="item.icon && iconEnable ? `${iconPrefix}${item.icon}` : ''"
           @click="$router.push(item.url)"
           v-text="item.title"
         />

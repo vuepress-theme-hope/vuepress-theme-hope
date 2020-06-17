@@ -1,6 +1,8 @@
 <template>
-  <div class="password" :class=" { expand: page || isMainPage }">
-    <div class="text" :class="{ hasTried }">{{ hasTried? '请输入正确密码': '请输入密码' }}</div>
+  <div class="password" :class="{ expand: page || isMainPage }">
+    <div class="text" :class="{ hasTried }">
+      {{ hasTried ? "请输入正确密码" : "请输入密码" }}
+    </div>
     <div class="input-wrapper">
       <input v-model="password" type="password" @keypress.enter="verify" />
       <div class="button" @click="verify">OK</div>
