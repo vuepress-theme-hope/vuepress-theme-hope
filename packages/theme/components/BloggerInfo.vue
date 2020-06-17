@@ -35,9 +35,9 @@
 <script lang="ts">
 import { Component, Mixins } from "vue-property-decorator";
 import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
-import { ArticleMixin } from "../util/articleMixin";
+import { ArticleMixin } from "@theme/util/articleMixin";
 import MediaLinks from "@theme/components/MediaLinks.vue";
-import navigate from "../util/navigate";
+import navigate from "@theme/util/navigate";
 
 @Component({ components: { MediaLinks } })
 export default class BloggerInfo extends Mixins(ArticleMixin) {

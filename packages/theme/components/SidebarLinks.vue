@@ -18,9 +18,9 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 import SidebarGroup from "@theme/components/SidebarGroup.vue";
-import { SidebarItem } from "../util/sidebar";
+import { SidebarItem } from "@theme/util/sidebar";
 import SidebarLink from "@theme/components/SidebarLink.vue";
-import { isActive } from "../util/path";
+import { isActive } from "@theme/util/path";
 
 /** 当前项目是否激活 */
 const descendantIsActive = (route: Route, item: SidebarItem): boolean => {

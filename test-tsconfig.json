@@ -34,8 +34,12 @@
     "types": ["@mr-hope/vuepress-theme-types"],
     "baseUrl": ".",
     "paths": {
-      "@theme/*": ["packages/theme/src/*"]
+      "@theme/*": ["packages/theme/*"]
     }
   },
-  "include": ["packages/*/src/enhanceAppFile.ts", "packages/*/test/**/*.ts"]
+  "include": [
+    "packages/*/src/enhanceAppFile.ts",
+    "packages/*/test/**/*.ts",
+    "packages/theme/util/*.ts"
+  ]
 }

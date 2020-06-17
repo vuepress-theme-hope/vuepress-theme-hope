@@ -6,7 +6,7 @@
     @touchstart="onTouchStart"
   >
     <!-- 密码弹窗 -->
-    <Password v-if="globalEncrypted" @enter="globalPasswordCheck" />
+    <Password v-if="globalEncrypted" @password-verify="globalPasswordCheck" />
     <!-- 内容 -->
     <template v-else>
       <Navbar v-if="showNavbar" @toggle-sidebar="toggleSidebar" />
@@ -37,8 +37,8 @@ import {
   SidebarGroupItem,
   SidebarHeader,
   resolveSidebarItems,
-} from "../util/sidebar";
-import GlobalEncryptMixin from "../util/globalEncryptMixin";
+} from "@theme/util/sidebar";
+import GlobalEncryptMixin from "@theme/util/globalEncryptMixin";
 import Navbar from "@theme/components/Navbar.vue";
 import Password from "@theme/components/Password.vue";
 import { PageHeader } from "@mr-hope/vuepress-types";

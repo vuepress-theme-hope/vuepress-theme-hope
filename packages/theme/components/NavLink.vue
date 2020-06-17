@@ -25,8 +25,8 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { ensureExt, isExternal, isMailto, isTel } from "../util/path";
-import { NavBarConfigItem } from "../util/navbar";
+import { ensureExt, isExternal, isMailto, isTel } from "@theme/util/path";
+import { NavBarConfigItem } from "@theme/util/navbar";
 
 @Component
 export default class NavLink extends Vue {

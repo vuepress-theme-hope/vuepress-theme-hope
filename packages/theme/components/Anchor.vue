@@ -5,9 +5,9 @@ import {
   SidebarHeader,
   SidebarHeaderItem,
   groupSidebarHeaders,
-} from "../util/sidebar";
+} from "@theme/util/sidebar";
 import { Route } from "vue-router";
-import { isActive } from "../util/path";
+import { isActive } from "@theme/util/path";
 
 interface RenderLinkOption {
   /** 链接地址 */

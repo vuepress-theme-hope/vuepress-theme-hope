@@ -17,7 +17,7 @@ import ArticleInfo from "@theme/components/ArticleInfo.vue";
 import LockIcon from "@mr-hope/vuepress-shared-utils/icons/LockIcon.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import StickyIcon from "@mr-hope/vuepress-shared-utils/icons/StickyIcon.vue";
-import { pathHitKeys } from "../util/encrypt";
+import { pathHitKeys } from "@theme/util/encrypt";
 
 @Component({ components: { ArticleInfo, LockIcon, StickyIcon } })
 export default class ArticleItem extends Vue {

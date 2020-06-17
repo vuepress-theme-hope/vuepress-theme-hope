@@ -49,9 +49,9 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { SidebarAutoItem, SidebarGroupItem } from "../util/sidebar";
+import { SidebarAutoItem, SidebarGroupItem } from "@theme/util/sidebar";
 import DropdownTransition from "@theme/components/DropdownTransition.vue";
-import { isActive } from "../util/path";
+import { isActive } from "@theme/util/path";
 
 @Component({ components: { DropdownTransition } })
 export default class SidebarGroup extends Vue {

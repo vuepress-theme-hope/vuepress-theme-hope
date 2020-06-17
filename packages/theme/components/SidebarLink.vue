@@ -9,8 +9,8 @@ import {
   SidebarHeaderItem,
   SidebarItem,
   groupSidebarHeaders,
-} from "../util/sidebar";
-import { hashRE, isActive } from "../util/path";
+} from "@theme/util/sidebar";
+import { hashRE, isActive } from "@theme/util/path";
 import { HopeSideBarConfigItemObject } from "@mr-hope/vuepress-shared-utils";
 import { Route } from "vue-router";
 

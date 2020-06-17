@@ -11,12 +11,12 @@
 <script lang="ts">
 import { Component, Mixins, Watch } from "vue-property-decorator";
 import ArticleItem from "@theme/components/ArticleItem.vue";
-import { ArticleMixin } from "../util/articleMixin";
+import { ArticleMixin } from "@theme/util/articleMixin";
 import MyTransition from "@theme/components/MyTransition.vue";
 import Pagination from "@mr-hope/vuepress-plugin-components/src/Pagination.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
-import { generatePagination } from "../util/article";
+import { generatePagination } from "@theme/util/article";
 
 @Component({ components: { ArticleItem, MyTransition, Pagination } })
 export default class ArticleList extends Mixins(ArticleMixin) {

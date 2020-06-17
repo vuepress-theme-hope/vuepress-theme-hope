@@ -62,7 +62,7 @@
 </template>
 
 <script lang='ts'>
-import { ArticleMixin, StickyMixin } from "../util/articleMixin";
+import { ArticleMixin, StickyMixin } from "@theme/util/articleMixin";
 import { Component, Mixins } from "vue-property-decorator";
 import ArticleIconFill from "@mr-hope/vuepress-shared-utils/icons/ArticleIconFill.vue";
 import ArticleList from "@theme/components/ArticleList.vue";

@@ -1,5 +1,5 @@
 import { EncryptOptions } from "../types";
-import md5 = require("md5");
+import { hashSync } from "bcryptjs";
 
 /**
  * 处理密码配置
@@ -10,10 +10,10 @@ const resolveEncrypt = (encrypt: EncryptOptions): void => {
   // 处理全局密码
   if (encrypt.global)
     if (typeof encrypt.global === "string")
-      encrypt.global = md5(encrypt.global);
+      encrypt.global = hashSync(encrypt.global, 10);
     else if (Array.isArray(encrypt.global))
       encrypt.global = encrypt.global.map((globalPassword) =>
-        md5(globalPassword)
+        hashSync(globalPassword, 10)
       );
     else
       throw new Error(
@@ -28,10 +28,12 @@ Please add "global" option your "themeConfig.encrypt" config. It can be string o
   Object.keys(passwordConfig).forEach((key) => {
     const password = passwordConfig[key];
 
-    if (typeof password === "string") passwordConfig[key] = md5(password);
+    if (typeof password === "string")
+      passwordConfig[key] = hashSync(password, 10);
     else if (Array.isArray(password))
       passwordConfig[key] = password.map((configPassword) => {
-        if (typeof configPassword === "string") return md5(configPassword);
+        if (typeof configPassword === "string")
+          return hashSync(configPassword, 10);
 
         throw new Error(`[vuepress-theme-hope]: You config "themeConfig.encrypt.config", but your config is invalid. 
         

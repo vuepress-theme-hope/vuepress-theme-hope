@@ -18,7 +18,7 @@
         v-if="pagePassword && !pageDescrypted"
         :key="$route.path"
         :page="true"
-        @enter="password = $event"
+        @password-verify="password = $event"
       />
     </MyTransition>
 
@@ -67,8 +67,8 @@ import { PageHeader } from "@mr-hope/vuepress-types";
 import PageInfo from "@PageInfo";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
-import { SidebarItem } from "../util/sidebar";
-import md5 = require("md5");
+import { SidebarItem } from "@theme/util/sidebar";
+import { compareSync } from "bcryptjs";
 
 @Component({
   components: {
@@ -103,12 +103,10 @@ export default class Page extends Vue {
     const { password } = this.$frontmatter;
     const passwordType = typeof password;
 
-    return passwordType === "undefined"
-      ? ""
-      : passwordType === "number"
-      ? md5(this.$frontmatter.password.toString())
+    return passwordType === "number"
+      ? this.$frontmatter.password.toString()
       : passwordType === "string"
-      ? md5(this.$frontmatter.password)
+      ? this.$frontmatter.password
       : "";
   }
 

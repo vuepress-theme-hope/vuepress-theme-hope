@@ -1,5 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import { EncryptOptions } from "../types";
+import { compareSync } from "bcryptjs";
 
 @Component
 export default class GlobalEncryptMixin extends Vue {
@@ -18,8 +19,8 @@ export default class GlobalEncryptMixin extends Vue {
       /** 全局密码 */
       const globalPasswords = typeof global === "string" ? [global] : global;
       /** 全局密码匹配结果 */
-      const result = globalPasswords.filter(
-        (globalPassword) => globalPassword === this.globalPassword
+      const result = globalPasswords.filter((globalPassword) =>
+        compareSync(this.globalPassword, globalPassword)
       );
 
       return result.length === 0;
@@ -29,23 +30,23 @@ export default class GlobalEncryptMixin extends Vue {
   }
 
   protected mounted(): void {
-    const passwordConfig = localStorage.getItem("globalPassword");
+    const globalPassword = localStorage.getItem("globalPassword");
 
-    if (passwordConfig) this.globalPassword = passwordConfig;
+    if (globalPassword) this.globalPassword = globalPassword;
   }
 
-  protected globalPasswordCheck(value: string): void {
+  protected globalPasswordCheck(password: string): void {
     const { global } = this.encryptOptions as Required<EncryptOptions>;
     /** 全局密码 */
     const globalPasswords = typeof global === "string" ? [global] : global;
     /** 全局密码匹配结果 */
-    const result = globalPasswords.filter(
-      (globalPassword) => globalPassword === value
+    const result = globalPasswords.filter((globalPassword) =>
+      compareSync(password, globalPassword)
     );
 
     if (result.length !== 0) {
-      this.globalPassword = value;
-      localStorage.setItem("globalPassword", value);
+      this.globalPassword = password;
+      localStorage.setItem("globalPassword", password);
     }
   }
 }

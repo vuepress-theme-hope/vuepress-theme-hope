@@ -10,7 +10,6 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
-import md5 = require("md5");
 
 @Component
 export default class Password extends Vue {
@@ -27,7 +26,7 @@ export default class Password extends Vue {
 
   private verify() {
     this.hasTried = false;
-    this.$emit("enter", md5(this.password));
+    this.$emit("password-verify", this.password);
 
     Vue.nextTick().then(() => {
       this.hasTried = true;
@@ -92,6 +91,7 @@ export default class Password extends Vue {
       flex 1
       line-height 2
       letter-spacing 0.5em
+      outline none
 
     .button
       width 60px

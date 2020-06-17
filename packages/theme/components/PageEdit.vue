@@ -14,7 +14,7 @@
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
-import { endingSlashRE, outboundRE } from "../util/path";
+import { endingSlashRE, outboundRE } from "@theme/util/path";
 
 @Component
 export default class PageEdit extends Vue {
