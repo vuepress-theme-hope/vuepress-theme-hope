@@ -33,15 +33,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins, Vue } from "vue-property-decorator";
-import {
-  HopeLangI18nConfig,
-  deepAssign,
-  i18n,
-} from "@mr-hope/vuepress-shared-utils";
+import { Component, Mixins } from "vue-property-decorator";
+import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
 import { ArticleMixin } from "../util/articleMixin";
 import MediaLinks from "@theme/components/MediaLinks.vue";
-import { PageComputed } from "@mr-hope/vuepress-types";
 import navigate from "../util/navigate";
 
 @Component({ components: { MediaLinks } })

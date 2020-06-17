@@ -45,7 +45,7 @@
 
 <script lang='ts'>
 import { ArticleMixin, StickyMixin } from "../util/articleMixin";
-import { Component, Mixins, Vue } from "vue-property-decorator";
+import { Component, Mixins } from "vue-property-decorator";
 import ArticleList from "@theme/components/ArticleList.vue";
 import BlogHero from "@theme/components/BlogHero.vue";
 import BlogInfo from "@BlogInfo";

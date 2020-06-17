@@ -31,7 +31,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Mixins, Prop, Vue } from "vue-property-decorator";
+import { Component, Mixins, Prop } from "vue-property-decorator";
 import {
   SidebarItem,
   SidebarGroupItem,

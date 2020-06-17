@@ -20,7 +20,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Mixins, Vue } from "vue-property-decorator";
+import { Component, Mixins } from "vue-property-decorator";
 import MyTransition from "@theme/components/MyTransition.vue";
 import { TimelineMixin } from "../util/articleMixin";
 import { i18n } from "@mr-hope/vuepress-shared-utils";

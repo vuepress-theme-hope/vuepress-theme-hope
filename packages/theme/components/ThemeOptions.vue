@@ -6,7 +6,11 @@
         <a class="default-theme" href="#" @click.prevent="setTheme()" />
       </li>
       <li v-for="color in themeColor.list" :key="color">
-        <a :style="{background: themeColor.picker[color]}" href="#" @click.prevent="setTheme(color)" />
+        <a
+          :style="{background: themeColor.picker[color]}"
+          href="#"
+          @click.prevent="setTheme(color)"
+        />
       </li>
     </ul>
     <div v-if="switchEnabled" class="darkmode-toggle">
@@ -19,7 +23,7 @@
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
-import { dom, i18n } from "@mr-hope/vuepress-shared-utils";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 import DarkmodeSwitch from "@theme/components/DarkmodeSwitch.vue";
 
 /** 默认颜色选择器 */
@@ -63,25 +67,24 @@ export default class ThemeOptions extends Vue {
   }
 
   private mounted() {
+    /** 所选主题 */
+    const theme = localStorage.getItem("theme");
+
+    if (theme) this.setTheme(theme);
+
     this.themeColor = {
       list: this.$themeConfig.themeColor
         ? Object.keys(this.$themeConfig.themeColor)
         : Object.keys(defaultPicker),
       picker: this.$themeConfig.themeColor || defaultPicker,
     };
-    /** 所选主题 */
-    const theme = localStorage.getItem("theme");
-    /** 获得类列表 */
-    const classes = document.body.classList;
-
-    if (theme) this.setTheme(theme);
   }
 
   /** 设置主题 */
   private setTheme(theme?: string) {
     const classes = document.body.classList;
     const themes = this.themeColor.list.map(
-      (colorTheme) => `theme-${colorTheme}`,
+      (colorTheme) => `theme-${colorTheme}`
     );
 
     if (!theme) {
@@ -92,7 +95,7 @@ export default class ThemeOptions extends Vue {
     }
 
     classes.remove(
-      ...themes.filter((themeclass) => themeclass !== `theme-${theme}`),
+      ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
     );
 
     classes.add(`theme-${theme}`);

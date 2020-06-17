@@ -2,15 +2,12 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { ComponentOptions, CreateElement, VNode } from "vue";
 import {
-  SidebarGroupItem,
   SidebarHeader,
   SidebarHeaderItem,
   groupSidebarHeaders,
 } from "../util/sidebar";
-import { hashRE, isActive } from "../util/path";
-import { HopeSideBarConfigItemObject } from "@mr-hope/vuepress-shared-utils";
-import { PageHeader } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
+import { isActive } from "../util/path";
 
 interface RenderLinkOption {
   /** 链接地址 */

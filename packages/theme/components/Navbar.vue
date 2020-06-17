@@ -39,7 +39,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";
 import NavLinks from "@theme/components/NavLinks.vue";

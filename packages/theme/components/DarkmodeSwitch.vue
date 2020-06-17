@@ -27,18 +27,11 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import AutoIcon from "@mr-hope/vuepress-shared-utils/icons/AutoIcon.vue";
 import DarkIcon from "@mr-hope/vuepress-shared-utils/icons/DarkIcon.vue";
 import LightIcon from "@mr-hope/vuepress-shared-utils/icons/LightIcon.vue";
 import { dom } from "@mr-hope/vuepress-shared-utils";
-
-const changeClass = (domClass: DOMTokenList, insert: string[], remove: string[]) => {
-  domClass.remove(...remove);
-  const oldClasses = Array.from(domClass);
-  domClass.value = "";
-  domClass.add(...insert, ...oldClasses);
-};
 
 @Component({ components: { AutoIcon, DarkIcon, LightIcon } })
 export default class DarkmodeSwitch extends Vue {
@@ -50,8 +43,6 @@ export default class DarkmodeSwitch extends Vue {
   }
 
   private mounted() {
-    /** 获得类列表 */
-    const classes = document.body.classList;
     /** 深色模式 */
     this.darkmode =
       (localStorage.getItem("darkmode") as "auto" | "on" | "off" | null) ||
@@ -105,8 +96,8 @@ export default class DarkmodeSwitch extends Vue {
   private toggleDarkmode(isDarkmode: boolean) {
     const classes = document.body.classList;
 
-    if (isDarkmode) changeClass(classes, ["theme-dark"], ["theme-light"]);
-    else changeClass(classes, ["theme-light"], ["theme-dark"]);
+    if (isDarkmode) dom.changeClass(classes, ["theme-dark"], ["theme-light"]);
+    else dom.changeClass(classes, ["theme-light"], ["theme-dark"]);
   }
 }
 </script>

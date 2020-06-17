@@ -10,8 +10,8 @@
 
 <script lang='ts'>
 /* global COMMENT_OPTIONS */
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { PageInfotype, ValineOptions } from "./types";
+import { Component, Vue } from "vue-property-decorator";
+import { PageInfotype } from "./types";
 import AuthorInfo from "./src/AuthorInfo.vue";
 import CategoryInfo from "./src/CategoryInfo.vue";
 import ReadTimeInfo from "./src/ReadTimeInfo.vue";

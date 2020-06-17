@@ -7,7 +7,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { HopeFooterConfig } from "../types";
 import MediaLinks from "@theme/components/MediaLinks.vue";
 

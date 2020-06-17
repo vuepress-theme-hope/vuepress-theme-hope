@@ -9,7 +9,7 @@ import VueRouter, { Route } from "vue-router";
  */
 const navigate = (url: string, router: VueRouter, route: Route): void => {
   if (url)
-    if (url && url.startsWith("/")) {
+    if (url.startsWith("/")) {
       // Inner absolute path
       if (route.path !== url) void router.push(url);
     } else if (

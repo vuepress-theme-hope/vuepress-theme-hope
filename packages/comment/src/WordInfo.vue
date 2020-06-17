@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
 import WordIcon from "@mr-hope/vuepress-shared-utils/icons/WordIcon.vue";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { WordIcon } })
 export default class ReadTimeInfo extends Vue {

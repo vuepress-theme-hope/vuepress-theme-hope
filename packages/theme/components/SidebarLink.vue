@@ -12,7 +12,6 @@ import {
 } from "../util/sidebar";
 import { hashRE, isActive } from "../util/path";
 import { HopeSideBarConfigItemObject } from "@mr-hope/vuepress-shared-utils";
-import { PageHeader } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
 
 /** 渲染图标 */

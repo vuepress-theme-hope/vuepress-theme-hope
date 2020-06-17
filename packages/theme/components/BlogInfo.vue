@@ -63,8 +63,7 @@
 
 <script lang='ts'>
 import { ArticleMixin, StickyMixin } from "../util/articleMixin";
-import { Component, Mixins, Vue } from "vue-property-decorator";
-import { capitalize, i18n } from "@mr-hope/vuepress-shared-utils";
+import { Component, Mixins } from "vue-property-decorator";
 import ArticleIconFill from "@mr-hope/vuepress-shared-utils/icons/ArticleIconFill.vue";
 import ArticleList from "@theme/components/ArticleList.vue";
 import BloggerInfo from "@theme/components/BloggerInfo.vue";
@@ -75,6 +74,7 @@ import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
 import TagList from "@theme/components/TagList.vue";
 import Timeline from "@theme/components/Timeline.vue";
 import TimelineList from "@theme/components/TimelineList.vue";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({
   components: {

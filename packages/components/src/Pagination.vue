@@ -42,7 +42,6 @@
 
 <script lang='ts'>
 import { Component, Model, Prop, Vue } from "vue-property-decorator";
-import { Route } from "vue-router";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component

@@ -7,7 +7,7 @@
 
 <script lang='ts'>
 /* global COMMENT_OPTIONS */
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import Valine from "./src/Valine.vue";
 
 @Component({ components: { Valine } })

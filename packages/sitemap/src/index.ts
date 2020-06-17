@@ -63,7 +63,7 @@ const generatePageMap = (
   const { pages, locales = {} } = siteData;
 
   // Sort the locale keys in reverse order so that longer locales, such as '/en/', match before the default '/'
-  const localeKeys = Object.keys(locales).sort().reverse() || [];
+  const localeKeys = Object.keys(locales).sort().reverse();
   const localesByNormalizedPagePath = pages.reduce(
     (map: Map<string, string[]>, page) => {
       const { normalizedPath, localePrefix } = stripLocalePrefix(

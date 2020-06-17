@@ -29,7 +29,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Mixins, Vue } from "vue-property-decorator";
+import { Component, Mixins } from "vue-property-decorator";
 import MyTransition from "@theme/components/MyTransition.vue";
 import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
 import { TimelineMixin } from "../util/articleMixin";
