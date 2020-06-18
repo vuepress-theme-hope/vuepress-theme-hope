@@ -1,6 +1,12 @@
 <template>
   <div class="page-title">
-    <h1>{{ $page.title }}</h1>
+    <h1>
+      <i
+        v-if="$frontmatter.icon"
+        :class="`iconfont ${iconPrefix}${$frontmatter.icon}`"
+      />
+      {{ $page.title }}
+    </h1>
     <div v-if="config" class="page-info">
       <component
         :is="`${item}-info`"
@@ -57,6 +63,12 @@ export default class PageInfo extends Vue {
       ? themeConfig
       : ["author", "visitor", "time", "category", "tag", "readTime"];
   }
+
+  private get iconPrefix() {
+    const { iconPrefix } = this.$themeConfig;
+
+    return iconPrefix === "" ? "" : iconPrefix || "icon-";
+  }
 }
 </script>
 
@@ -76,6 +88,10 @@ $pageInfoTextSize ?= 14px
       margin-top -3.1rem !important
       padding-top 4.6rem !important
       margin-bottom 0.5rem
+
+      .iconfont
+        color var(--accent-color)
+        font-size 0.8em
 
   .page-title + .theme-default-content:not(.custom)
     padding-top 0
