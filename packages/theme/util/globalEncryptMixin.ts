@@ -35,18 +35,18 @@ export default class GlobalEncryptMixin extends Vue {
     if (globalPassword) this.globalPassword = globalPassword;
   }
 
-  protected globalPasswordCheck(password: string): void {
+  protected globalPasswordCheck(globalPassword: string): void {
     const { global } = this.encryptOptions as Required<EncryptOptions>;
     /** 全局密码 */
     const globalPasswords = typeof global === "string" ? [global] : global;
     /** 全局密码匹配结果 */
-    const result = globalPasswords.filter((globalPassword) =>
-      compareSync(password, globalPassword)
+    const result = globalPasswords.filter((password) =>
+      compareSync(globalPassword, password)
     );
 
     if (result.length !== 0) {
-      this.globalPassword = password;
-      localStorage.setItem("globalPassword", password);
+      this.globalPassword = globalPassword;
+      localStorage.setItem("globalPassword", globalPassword);
     }
   }
 }

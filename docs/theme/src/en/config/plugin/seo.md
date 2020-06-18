@@ -42,7 +42,7 @@ interface PageSeoInfo {
 }
 ```
 
-You can use this option to inject new or overwrite the default generated SEO, you need to return an object in the format of `<property>: <conent>`.
+You can use this option to inject new or overwrite the default generated SEO, you need to return an object in the format of `<property>: <content>`.
 
 For example, if you return `{ 'og:url': 'google.com', 'og:image': 'google.com/logo.jpg' }`, the plugin will inject the following into `<head>` :
 

@@ -46,7 +46,7 @@ interface PageSeoInfo {
 }
 ```
 
-你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，你需要按照 `<property>: <conent>` 的格式来返回一个对象。
+你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，你需要按照 `<property>: <content>` 的格式来返回一个对象。
 
 比如如果你返回了 `{ 'og:url': 'google.com', 'og:image': 'google.com/logo.jpg' }`，则插件会注入以下内容到 `<head>` 中:
 
