@@ -1,7 +1,9 @@
 ---
-breadcrumb: true
 title: 文件结构介绍
 icon: file
+category: basic
+tags:
+  - vuepress
 ---
 
 ## 文件结构

@@ -1,11 +1,14 @@
 ---
+title: vuepress-plugin-container
 category: config
 tags:
   - plugin
   - config
 ---
 
-# vuepress-plugin-container <MyBadge text="improve" />
+Markdown DIY container
+
+<!-- more -->
 
 ::: warning
 Please note that this plugin is applied to alignment in markdown enhancements, so if you disable this plugin, you will not be able to use custom alignment and the prompt boxes provided by the default theme.

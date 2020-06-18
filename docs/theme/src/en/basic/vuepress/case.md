@@ -1,7 +1,9 @@
 ---
 title: Vuepress Cases
 icon: discoverfill
-breadcrumb: true
+category: basic
+tags:
+  - vuepress
 ---
 
 ## Resources

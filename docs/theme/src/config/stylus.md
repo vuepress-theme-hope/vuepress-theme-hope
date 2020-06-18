@@ -1,4 +1,5 @@
 ---
+title: stylus 配置
 icon: configuration
 category: config
 tags:
@@ -6,9 +7,9 @@ tags:
   - style
 ---
 
-# stylus 配置
-
 你可以通过在 `.vuepress/styles` 中的 palette.styl 写入变量值来更改主题的样式。
+
+<!-- more -->
 
 ## 响应式布局断点
 

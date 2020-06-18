@@ -1,13 +1,12 @@
 ---
+title: "@mr-hope/plugin-pwa"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @vuepress/plugin-pwa <MyBadge text="New" />
-
-Progressive Web App Surpport
+Progressive Web App Support
 
 ## Plugin description
 

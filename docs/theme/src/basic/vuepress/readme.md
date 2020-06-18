@@ -1,11 +1,11 @@
 ---
-breadcrumb: true
+title: Vuepress
 icon: vue
-tags: vuepress
+category: basic
+tags:
+  - vuepress
 prev: ../markdown/demo
 ---
-
-# Vuepress
 
 Vuepress 是一个 Vue 驱动的静态网站生成器。它遵循：
 
@@ -20,6 +20,8 @@ Vuepress 是一个 Vue 驱动的静态网站生成器。它遵循：
 - 高性能
 
   VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。
+
+<!-- more -->
 
 ## 像数 1, 2, 3 一样容易
 

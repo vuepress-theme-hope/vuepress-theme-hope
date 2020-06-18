@@ -1,11 +1,11 @@
 ---
+title: Object
 icon: emoji
+category: basic
 tags:
   - markdown
   - emoji
 ---
-
-# Object
 
 - :bamboo: `:bamboo:`
 - :gift_heart: `:gift_heart:`

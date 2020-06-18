@@ -1,7 +1,9 @@
 ---
-breadcrumb: true
 title: 项目指令
 icon: program
+category: basic
+tags:
+  - vuepress
 ---
 
 ## 安装项目依赖

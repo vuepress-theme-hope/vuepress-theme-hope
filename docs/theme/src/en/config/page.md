@@ -1,12 +1,11 @@
 ---
+title: Page Configuration
 icon: configuration
 category: config
 tags:
   - config
   - frontmatter
 ---
-
-# Page Configuration
 
 The following configuration options have been added to the page's Front Matter:
 

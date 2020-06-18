@@ -1,10 +1,10 @@
 ---
-breadcrumb: true
 title: 主题配置
 icon: skinfill
+category: basic
+tags:
+  - vuepress
 ---
-
-## 使用主题
 
 使用一个主题和使用一个插件的方式几乎一致。
 

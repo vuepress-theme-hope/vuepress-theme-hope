@@ -1,13 +1,14 @@
 ---
+title: "@mr-hope/sitemap"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/sitemap
+Automatically generate a sitemap for your webpage when you build it.
 
-This plugin will automatically generate a sitemap for your webpage when you build it.
+<!-- more -->
 
 ## Options
 

@@ -1,13 +1,14 @@
 ---
+title: vuepress-plugin-copyright
 category: config
 tags:
   - plugin
   - config
 ---
 
-# vuepress-plugin-copyright
-
 处理你的 VuePress 站点中的复制操作
+
+<!-- more -->
 
 ## 默认配置说明
 

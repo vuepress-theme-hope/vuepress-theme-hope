@@ -1,13 +1,16 @@
 ---
+title: "@mr-hope/last-update"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/last-update
+Last update time
 
-This plugin will inject a readable last update time and a last update time timestamp into the page.
+<!-- more -->
+
+This plugin will use git to inject a readable last update time and a last update time timestamp into the page.
 
 ## Plugin description
 

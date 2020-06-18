@@ -1,11 +1,11 @@
 ---
+title: 人物
 icon: emoji
+category: basic
 tags:
   - markdown
   - emoji
 ---
-
-# 人物
 
 - :smile: `:smile:`
 - :laughing: `:laughing:`

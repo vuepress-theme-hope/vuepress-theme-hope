@@ -1,8 +1,8 @@
 ---
+title: 项目案例
 icon: discoverfill
+category: demo
 ---
-
-# 项目案例
 
 ## Mr.Hope 的个人博客
 

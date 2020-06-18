@@ -1,13 +1,14 @@
 ---
+title: "@mr-hope/pwa"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/pwa
+渐进式网页应用 (Progressive Web App) 支持。
 
-Progressive Web App Surpport
+<!-- more -->
 
 ## 插件说明
 

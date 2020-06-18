@@ -1,13 +1,14 @@
 ---
+title: "@mr-hope/sitemap"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/sitemap
+自动在你构建网页时为你生成网页的 sitemap。
 
-这个插件会自动在你构建网页时为你生成网页的 sitemap。
+<!-- more -->
 
 ## 选项
 

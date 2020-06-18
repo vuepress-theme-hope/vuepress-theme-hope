@@ -1,7 +1,9 @@
 ---
 title: Vuepress 案例
 icon: discoverfill
-breadcrumb: true
+category: basic
+tags:
+  - vuepress
 ---
 
 ## 资源

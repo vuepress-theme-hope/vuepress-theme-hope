@@ -1,12 +1,11 @@
 ---
+title: 主题配置
 icon: configuration
 category: config
 tags:
   - config
   - themeConfig
 ---
-
-# 主题配置
 
 除了查看本指南，你也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) 或本文档的 [配置文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js)。
 

@@ -1,13 +1,14 @@
 ---
+title: "@mr-hope/seo"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/seo
+Inject `<meta>` into your webpage to enhance the SEO of your webpage.
 
-The plugin will inject `<meta>` into your webpage to enhance the SEO of your webpage.
+<!-- more -->
 
 ## Plugin options
 

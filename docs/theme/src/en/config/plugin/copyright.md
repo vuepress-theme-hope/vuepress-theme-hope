@@ -1,13 +1,14 @@
 ---
+title: vuepress-plugin-copyright
 category: config
 tags:
   - plugin
   - config
 ---
 
-# vuepress-plugin-copyright <MyBadge text="New" />
-
 Handling copy operations in your VuePress site
+
+<!-- more -->
 
 ## Default configuration
 

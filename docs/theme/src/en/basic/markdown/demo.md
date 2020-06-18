@@ -1,6 +1,7 @@
 ---
 title: Markdown DEMO
 icon: markdown
+category: basic
 ---
 
 # First Heading

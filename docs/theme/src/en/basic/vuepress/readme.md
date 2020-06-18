@@ -1,6 +1,9 @@
 ---
 title: About Vuepress
 icon: vue
+category: basic
+tags:
+  - vuepress
 ---
 
 ## As Easy as 1, 2, 3

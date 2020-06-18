@@ -1,7 +1,9 @@
 ---
 title: File Structure
-breadcrumb: true
 icon: file
+category: basic
+tags:
+  - vuepress
 ---
 
 ## File Structure

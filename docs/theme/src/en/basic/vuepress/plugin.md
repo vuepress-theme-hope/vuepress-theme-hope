@@ -1,7 +1,9 @@
 ---
 title: Plugins
-breadcrumb: true
 icon: extension
+category: basic
+tags:
+  - vuepress
 ---
 
 ## Introduction
@@ -10,7 +12,7 @@ Plugins generally add global-level functionality to VuePress.
 
 The architecture of the whole plugin system is as follows:
 
-![architecture](./assets/architecture.png)
+![Plugin system architecture](./assets/architecture.png)
 
 ## Using a plugin
 

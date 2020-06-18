@@ -1,7 +1,9 @@
 ---
 title: Vuepress commands
 icon: program
-breadcrumb: true
+category: basic
+tags:
+  - vuepress
 ---
 
 ## Install Dependence

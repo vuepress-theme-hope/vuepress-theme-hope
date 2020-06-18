@@ -1,11 +1,14 @@
 ---
+title: vuepress-plugin-container
 category: config
 tags:
   - plugin
   - config
 ---
 
-# vuepress-plugin-container
+Markdown 自定义容器。
+
+<!-- more -->
 
 ::: warning
 请注意，markdown 增强中的自适应对齐应用了该插件，因此如果你禁用本插件，你将无法使用自定义对齐与提示框。

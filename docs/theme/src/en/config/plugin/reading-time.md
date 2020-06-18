@@ -1,11 +1,14 @@
 ---
+title: "@mr-hope/reading-time"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/reading-time <MyBadge text="v0.3.0+" />
+Expect eading time and word count statistics
+
+<!-- more -->
 
 This plugin will inject reading time and word count statistics into the page object.
 
@@ -19,3 +22,12 @@ interface ReadingTime {
   words: number;
 }
 ```
+
+## Options
+
+### wordPerminute
+
+- 类型: `number`
+- 默认值: `300`
+
+Reading speed (words per minute)

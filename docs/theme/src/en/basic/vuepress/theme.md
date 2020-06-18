@@ -1,7 +1,9 @@
 ---
 title: Theme Config
 icon: skinfill
-breadcrumb: true
+category: basic
+tags:
+  - vuepress
 ---
 
 ## Using a theme

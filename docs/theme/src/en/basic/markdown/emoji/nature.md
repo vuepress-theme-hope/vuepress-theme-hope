@@ -1,11 +1,11 @@
 ---
+title: Nature
 icon: emoji
+category: basic
 tags:
   - markdown
   - emoji
 ---
-
-# Nature
 
 - :sunny: `:sunny:`
 - :umbrella: `:umbrella:`

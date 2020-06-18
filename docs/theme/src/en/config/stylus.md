@@ -1,4 +1,5 @@
 ---
+title: stylus configuration
 icon: skinfill
 category: config
 tags:
@@ -6,9 +7,9 @@ tags:
   - style
 ---
 
-# stylus configuration
-
 You can use palette.styl in `.vuepress/styles` folder to change the style of this theme。
+
+<!-- more -->
 
 ## Responsive breakpoints
 

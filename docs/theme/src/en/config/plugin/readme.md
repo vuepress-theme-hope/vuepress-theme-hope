@@ -1,4 +1,5 @@
 ---
+title: Plugin Description
 category: config
 copyright:
   minLength: 10
@@ -7,11 +8,11 @@ tags:
   - config
 ---
 
-# Plugin Description
-
 vuepress-theme-hope brings you many vuepress plugins. Some plugins are automatically enabled. If you don’t need them, you can disable them in themeConfig; some plugins will only be enabled if you configure them.
 
-## Plugins build-in
+<!-- more -->
+
+## Build-in plugins
 
 - [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/en/): Comment and page info feature
 

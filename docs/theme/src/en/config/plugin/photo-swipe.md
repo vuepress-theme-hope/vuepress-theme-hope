@@ -1,13 +1,14 @@
 ---
+title: photo-swipe
 category: config
 tags:
   - plugin
   - config
 ---
 
-# photo-swipe <MyBadge text="v0.4.0+" />
+Let your images support click zoom. <MyBadge text="v0.4.0+" />
 
-This plugin will enable your images to support click zoom.
+<!-- more -->
 
 ## Options
 

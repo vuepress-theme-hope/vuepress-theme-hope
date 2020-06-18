@@ -1,8 +1,8 @@
 ---
+title: Demos
 icon: discoverfill
+category: demo
 ---
-
-# Demos
 
 ## Mr.Hope's Blog
 

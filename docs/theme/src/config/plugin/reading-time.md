@@ -1,11 +1,14 @@
 ---
+title: "@mr-hope/reading-time"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/reading-time <MyBadge text="v0.3.0+" />
+阅读时间与字数统计 <MyBadge text="v0.3.0+" />
+
+<!-- more -->
 
 这个插件将会向 page 对象注入阅读时间与字数统计。
 
@@ -19,3 +22,12 @@ interface ReadingTime {
   words: number;
 }
 ```
+
+## 选项
+
+### wordPerminute
+
+- 类型: `number`
+- 默认值: `300`
+
+每分钟阅读字数

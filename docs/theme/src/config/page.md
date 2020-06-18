@@ -1,12 +1,11 @@
 ---
+title: 页面配置
 icon: configuration
 category: config
 tags:
   - config
   - frontmatter
 ---
-
-# 页面配置
 
 页面的 Front Matter 新增如下配置选项：
 

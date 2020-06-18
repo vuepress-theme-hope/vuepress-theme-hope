@@ -1,11 +1,11 @@
 ---
+title: 对象
 icon: emoji
+category: basic
 tags:
   - markdown
   - emoji
 ---
-
-# 对象
 
 - :bamboo: `:bamboo:`
 - :gift_heart: `:gift_heart:`

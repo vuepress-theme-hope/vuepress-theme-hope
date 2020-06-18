@@ -1,11 +1,11 @@
 ---
+title: 符号
 icon: emoji
+category: basic
 tags:
   - markdown
   - emoji
 ---
-
-# 符号
 
 - :one: `:one:`
 - :two: `:two:`

@@ -1,13 +1,16 @@
 ---
+title: "@mr-hope/last-update"
 category: config
 tags:
   - plugin
   - config
 ---
 
-# @mr-hope/last-update
+最后更新日期。
 
-这个插件将会向 page 注入可阅读的最后更新时间与最后更新时间的时间戳。
+<!-- more -->
+
+这个插件将会利用 Git 的日志向 page 注入可阅读的最后更新时间文字与最后更新时间的时间戳。
 
 ## 插件说明
 

@@ -1,7 +1,9 @@
 ---
-breadcrumb: true
 title: 插件
 icon: extension
+category: basic
+tags:
+  - vuepress
 ---
 
 ## 介绍
@@ -10,7 +12,7 @@ icon: extension
 
 整个插件系统的架构如下:
 
-![architecture](./assets/architecture.png)
+![插件系统架构](./assets/architecture.png)
 
 ## 使用插件
 

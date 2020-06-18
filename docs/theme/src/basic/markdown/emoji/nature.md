@@ -1,11 +1,11 @@
 ---
+title: 自然
 icon: emoji
+category: basic
 tags:
   - markdown
   - emoji
 ---
-
-# 自然
 
 - :sunny: `:sunny:`
 - :umbrella: `:umbrella:`

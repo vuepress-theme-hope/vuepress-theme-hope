@@ -1,11 +1,11 @@
 ---
+title: 地点
 icon: emoji
+category: basic
 tags:
   - markdown
   - emoji
 ---
-
-# 地点
 
 - :house: `:house:`
 - :house_with_garden: `:house_with_garden:`
