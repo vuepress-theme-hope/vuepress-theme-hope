@@ -64,7 +64,7 @@
     "@types/chai": "4.2.11",
     "@types/mocha": "7.0.2",
     "@typescript-eslint/eslint-plugin": "3.3.0",
-    "@typescript-eslint/parser": "3.3.0",
+    "@typescript-eslint/parser": "3.5.0",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "5.0.2",
     "@vuepress/test-utils": "1.5.2",
