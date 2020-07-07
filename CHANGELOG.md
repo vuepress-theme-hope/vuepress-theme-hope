@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.6.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.8...v0.6.9) (2020-07-07)
+
+### Bug Fixes
+
+- update Home, Footer and fix anchor bar appearance ([902180a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/902180a11cbf037bc9221a53e5f3c1deb1a23bce))
+- **theme:** fix anchor words display issue ([ae4aac5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ae4aac5613b6a27f3f649c8ed6f85c96ef14e84f))
+
+### Features
+
+- **comment:** add icon for PageInfo Heading1 ([c329dc1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c329dc16a03cb293ef6d42b6e04f77e9cef97749))
+- **theme:** update password encrypt ([163bf53](https://github.com/Mister-Hope/vuepress-theme-hope/commit/163bf535da23d494e7acd090167090ce00732f2d))
+- **theme:** update types and use prettier ([915386a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/915386ab49523fbd0f906d6149849869157ccef2))
+
+### Performance Improvements
+
+- optimize images ([a09a8d0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a09a8d0e680d48770ca045c75a6ed48abe650408))
+
 ## [0.6.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.7...v0.6.8) (2020-06-16)
 
 ### Bug Fixes
