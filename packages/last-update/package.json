@@ -30,10 +30,10 @@
     "@mr-hope/vuepress-types": "^0.6.8",
     "@types/cross-spawn": "^6.0.2",
     "cross-spawn": "^7.0.3",
-    "moment": "^2.26.0"
+    "moment": "^2.27.0"
   },
   "peerDependencies": {
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.6"
   },
   "publishConfig": {
     "access": "public"

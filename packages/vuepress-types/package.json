@@ -23,16 +23,16 @@
   },
   "types": "types/index.d.js",
   "dependencies": {
-    "@types/express": "^4.17.6",
+    "@types/express": "^4.17.7",
     "@types/markdown-it": "^10.0.1",
     "@types/markdown-it-anchor": "^4.0.4",
     "@types/webpack-dev-server": "^3.11.0",
     "cac": "^6.5.10",
     "markdown-it": "^11.0.0",
     "vue": "^2.6.11",
-    "vue-loader": "^15.9.2",
+    "vue-loader": "^15.9.3",
     "webpack": "^4.43.0",
-    "webpack-chain": "^6.4.0",
+    "webpack-chain": "^6.5.0",
     "webpack-dev-server": "^3.11.0"
   },
   "peerDependencies": {

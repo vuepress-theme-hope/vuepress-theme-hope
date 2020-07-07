@@ -138,6 +138,7 @@ const renderFootnoteAnchor = (
 
 const footnote = (md: MarkdownIt): void => {
   const { parseLinkLabel } = md.helpers;
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   const { isSpace } = md.utils;
 
   md.renderer.rules.footnoteRef = renderFootnoteRef;
@@ -213,11 +214,8 @@ const footnote = (md: MarkdownIt): void => {
       ch = state.src.charCodeAt(pos);
 
       if (isSpace(ch))
-        if (ch === 0x09) {
-          offset += 4 - (offset % 4);
-        } else {
-          offset += 1;
-        }
+        if (ch === 0x09) offset += 4 - (offset % 4);
+        else offset += 1;
       else break;
 
       pos += 1;
