@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-comment",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "A simple Comment plugin",
   "keywords": [
     "vuepress-plugin",
@@ -33,9 +33,9 @@
     "demo:serve": "vuepress dev test/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-plugin-reading-time": "^0.6.9",
-    "@mr-hope/vuepress-shared-utils": "^0.6.9",
-    "@mr-hope/vuepress-types": "^0.6.9",
+    "@mr-hope/vuepress-plugin-reading-time": "^0.6.10",
+    "@mr-hope/vuepress-shared-utils": "^0.6.10",
+    "@mr-hope/vuepress-types": "^0.6.10",
     "@vssue/api-bitbucket-v2": "^1.4.0",
     "@vssue/api-gitea-v1": "^1.4.4",
     "@vssue/api-gitee-v5": "^1.4.4",

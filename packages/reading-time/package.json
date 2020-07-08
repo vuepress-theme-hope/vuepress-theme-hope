@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-reading-time",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "Reading time plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -30,7 +30,7 @@
     "test": "mocha -r ts-node/register test/*.test.ts"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-types": "^0.6.9"
+    "@mr-hope/vuepress-types": "^0.6.10"
   },
   "publishConfig": {
     "access": "public"

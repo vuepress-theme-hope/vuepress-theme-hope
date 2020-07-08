@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "photo-swipe plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -32,7 +32,7 @@
     "demo:serve": "vuepress dev test/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "^0.6.9",
+    "@mr-hope/vuepress-types": "^0.6.10",
     "@types/photoswipe": "^4.1.0",
     "photoswipe": "^4.1.3",
     "vuepress-plugin-typescript": "^0.3.0"
