@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.9...v0.6.10) (2020-07-08)
+
+### Bug Fixes
+
+- **theme:** add missing files to npm ([cd3ed09](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cd3ed09fc5757e0303c2cd028f4101fb8a77a9a7))
+
 ## [0.6.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.8...v0.6.9) (2020-07-07)
 
 ### Bug Fixes
