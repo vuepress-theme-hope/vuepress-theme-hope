@@ -6,12 +6,14 @@ export interface NavBarConfigItem extends HopeNavBarConfigItem {
 }
 
 export const resolveNavLinkItem = (
-  navbarLink: NavBarConfigItem,
+  navbarLink: HopeNavBarConfigItem,
   beforeprefix = ""
 ): NavBarConfigItem => {
   const prefix = beforeprefix + (navbarLink.prefix || "");
 
-  const navbarItem = { ...navbarLink };
+  const navbarItem: HopeNavBarConfigItem & { type?: "link" | "links" } = {
+    ...navbarLink,
+  };
 
   if (prefix) {
     if (navbarItem.link !== undefined)
@@ -26,5 +28,5 @@ export const resolveNavLinkItem = (
     });
   else navbarItem.type = "link";
 
-  return navbarItem;
+  return navbarItem as NavBarConfigItem;
 };

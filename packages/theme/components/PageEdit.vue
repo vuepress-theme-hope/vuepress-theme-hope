@@ -14,69 +14,7 @@
   </footer>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
-import { endingSlashRE, outboundRE } from "@theme/util/path";
-
-@Component
-export default class PageEdit extends Vue {
-  private get lastUpdated() {
-    return this.$page.lastUpdated;
-  }
-
-  private get lastUpdatedText() {
-    return this.$themeLocaleConfig.lastUpdated || "Last Updated";
-  }
-
-  private get editLink() {
-    /** 是否展示编辑此页链接 */
-    const showEditLink =
-      this.$page.frontmatter.editLink ||
-      (this.$themeConfig.editLinks !== false &&
-        this.$page.frontmatter.editLink !== false);
-
-    const { repo, docsRepo } = this.$site.themeConfig;
-
-    if (showEditLink && (repo || docsRepo) && this.$page.relativePath)
-      return this.createEditLink();
-
-    return false;
-  }
-
-  private get editLinkText() {
-    return this.$themeLocaleConfig.editLinkText || "Edit this page";
-  }
-
-  private createEditLink() {
-    const {
-      repo = "",
-      docsRepo = repo,
-      docsDir = "",
-      docsBranch = "master",
-    } = this.$themeConfig;
-
-    const bitbucket = /bitbucket.org/u;
-
-    if (bitbucket.test(repo)) {
-      const base = outboundRE.test(docsRepo) ? docsRepo : repo;
-
-      return `${base.replace(endingSlashRE, "")}/src/${docsBranch}/${
-        docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
-      }${
-        this.$page.relativePath
-      }?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`;
-    }
-
-    const base = outboundRE.test(docsRepo)
-      ? docsRepo
-      : `https://github.com/${docsRepo}`;
-
-    return `${base.replace(endingSlashRE, "")}/edit/${docsBranch}/${
-      docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
-    }${this.$page.relativePath}`;
-  }
-}
-</script>
+<script src="./PageEdit" />
 
 <style lang="stylus">
 @require '~@theme/styles/wrapper.styl'

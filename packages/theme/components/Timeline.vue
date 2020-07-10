@@ -28,28 +28,7 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Mixins } from "vue-property-decorator";
-import MyTransition from "@theme/components/MyTransition.vue";
-import { TimelineMixin } from "@theme/util/articleMixin";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-
-@Component({ components: { MyTransition } })
-export default class Timeline extends Mixins(TimelineMixin) {
-  /** 提示文字 */
-  private get hint() {
-    return (
-      (this.$themeConfig.blog && this.$themeConfig.blog.timeline) ||
-      this.$themeLocaleConfig.blog.timelineText ||
-      i18n.getDefaultLocale().blog.timelineText
-    );
-  }
-
-  private navigate(url: string) {
-    this.$router.push(url);
-  }
-}
-</script>
+<script src="./Timeline" />
 
 <style lang="stylus">
 .timeline-wrapper

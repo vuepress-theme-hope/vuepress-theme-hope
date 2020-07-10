@@ -123,7 +123,7 @@ export interface SidebarGroupItem {
   [props: string]: unknown;
 }
 
-interface SidebarErrorItem {
+export interface SidebarErrorItem {
   type: "error";
   path: string;
 }

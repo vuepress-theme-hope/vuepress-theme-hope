@@ -23,38 +23,4 @@
   </a>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { ensureExt, isExternal, isMailto, isTel } from "@theme/util/path";
-import { NavBarConfigItem } from "@theme/util/navbar";
-
-@Component
-export default class NavLink extends Vue {
-  @Prop({ type: Object, required: true })
-  private readonly item!: NavBarConfigItem;
-
-  private get link() {
-    return ensureExt(this.item.link as string);
-  }
-
-  private get iconPrefix() {
-    const { iconPrefix } = this.$themeConfig;
-
-    return iconPrefix === "" ? "" : iconPrefix || "icon-";
-  }
-
-  private get active() {
-    return this.link === this.$route.path;
-  }
-
-  private isExternal = isExternal;
-
-  private isMailto = isMailto;
-
-  private isTel = isTel;
-
-  private focusoutAction() {
-    this.$emit("focusout");
-  }
-}
-</script>
+<script src="./NavLink" />

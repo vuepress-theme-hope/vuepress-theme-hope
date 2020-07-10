@@ -33,27 +33,7 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Mixins } from "vue-property-decorator";
-import MyTransition from "@theme/components/MyTransition.vue";
-import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
-import { TimelineMixin } from "@theme/util/articleMixin";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-
-@Component({ components: { MyTransition, TimeIcon } })
-export default class TimelineList extends Mixins(TimelineMixin) {
-  private get timeline() {
-    return (
-      this.$themeLocaleConfig.blog.timeline ||
-      i18n.getDefaultLocale().blog.timeline
-    );
-  }
-
-  private navigate(url: string) {
-    this.$router.push(url);
-  }
-}
-</script>
+<script src="./TimelineList" />
 
 <style lang="stylus">
 .timeline-list-wrapper

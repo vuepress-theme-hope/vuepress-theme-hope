@@ -9,17 +9,21 @@
       <div class="sticky-article-wrapper">
         <div class="title" @click="$router.push('/article/')">
           <ArticleIconFill />
-          <span class="num">{{$articles.length}}</span>
-          {{i18n.article}}
+          <span class="num">{{ $articles.length }}</span>
+          {{ i18n.article }}
         </div>
         <hr />
         <ul class="sticky-article-list">
           <MyTransition
-            v-for="(article,index) in $stickArticles"
+            v-for="(article, index) in $stickArticles"
             :key="article.path"
             :delay="(index + 1) * 0.08"
           >
-            <li class="sticky-article" @click="$router.push(article.path)" v-text="article.title" />
+            <li
+              class="sticky-article"
+              @click="$router.push(article.path)"
+              v-text="article.title"
+            />
           </MyTransition>
         </ul>
       </div>
@@ -28,10 +32,14 @@
     <!-- 分类 -->
     <MyTransition :delay="0.12">
       <div class="category-wrapper">
-        <div v-if="$category.list.length !== 0" class="title" @click="$router.push('/category/')">
+        <div
+          v-if="$category.list.length !== 0"
+          class="title"
+          @click="$router.push('/category/')"
+        >
           <CategoryIcon />
-          <span class="num">{{$category.list.length}}</span>
-          {{i18n.category}}
+          <span class="num">{{ $category.list.length }}</span>
+          {{ i18n.category }}
         </div>
         <hr />
         <MyTransition :delay="0.16">
@@ -41,12 +49,16 @@
     </MyTransition>
 
     <!-- 标签 -->
-    <MyTransition :delay="0.20">
+    <MyTransition :delay="0.2">
       <div class="tag-wrapper">
-        <div v-if="$tag.list.length !== 0" class="title" @click="$router.push('/tag/')">
+        <div
+          v-if="$tag.list.length !== 0"
+          class="title"
+          @click="$router.push('/tag/')"
+        >
           <TagIcon />
-          <span class="num">{{$tag.list.length}}</span>
-          {{i18n.tag}}
+          <span class="num">{{ $tag.list.length }}</span>
+          {{ i18n.tag }}
         </div>
         <hr />
         <MyTransition :delay="0.24">
@@ -61,41 +73,7 @@
   </aside>
 </template>
 
-<script lang='ts'>
-import { ArticleMixin, StickyMixin } from "@theme/util/articleMixin";
-import { Component, Mixins } from "vue-property-decorator";
-import ArticleIconFill from "@mr-hope/vuepress-shared-utils/icons/ArticleIconFill.vue";
-import ArticleList from "@theme/components/ArticleList.vue";
-import BloggerInfo from "@theme/components/BloggerInfo.vue";
-import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
-import CategoryList from "@theme/components/CategoryList.vue";
-import MyTransition from "@theme/components/MyTransition.vue";
-import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
-import TagList from "@theme/components/TagList.vue";
-import Timeline from "@theme/components/Timeline.vue";
-import TimelineList from "@theme/components/TimelineList.vue";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-
-@Component({
-  components: {
-    ArticleIconFill,
-    ArticleList,
-    BloggerInfo,
-    CategoryIcon,
-    CategoryList,
-    MyTransition,
-    TagIcon,
-    TagList,
-    Timeline,
-    TimelineList,
-  },
-})
-export default class BlogInfo extends Mixins(ArticleMixin, StickyMixin) {
-  private get i18n() {
-    return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
-  }
-}
-</script>
+<script src="./BlogInfo" />
 
 <style lang="stylus">
 .blog-info-wrapper

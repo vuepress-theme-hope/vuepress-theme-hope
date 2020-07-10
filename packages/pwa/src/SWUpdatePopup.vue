@@ -38,7 +38,7 @@
   </transition>
 </template>
 
-<script src="./SWUpdatePopup.ts" />
+<script src="./SWUpdatePopup" />
 
 <style lang="stylus">
 @keyframes rotate

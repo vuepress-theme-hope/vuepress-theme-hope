@@ -112,7 +112,7 @@ overrides:
       parser: "@typescript-eslint/parser"
       project:
         - "./tsconfig.json"
-        - "./es-tsconfig.json"
+        - "./commonjs-tsconfig.json"
         - "./test-tsconfig.json"
 
     rules:

@@ -9,26 +9,7 @@
   </Common>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
-import Common from "@theme/components/Common.vue";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-
-@Component({ components: { Common } })
-export default class NotFound extends Vue {
-  private get i18n() {
-    return this.$themeLocaleConfig.error404 || i18n.getDefaultLocale().error404;
-  }
-
-  private get msg() {
-    return this.i18n.hint[Math.floor(Math.random() * this.i18n.hint.length)];
-  }
-
-  private back() {
-    window.history.go(-1);
-  }
-}
-</script>
+<script src="./404" />
 
 <style lang="stylus">
 .not-found

@@ -25,7 +25,7 @@ type BlogMedia =
   | "Github"
   | "Gmail"
   | "Instagram"
-  | "Line"
+  | "Lines"
   | "Linkedin"
   | "Pinterest"
   | "Pocket"
@@ -402,7 +402,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * Options which will passed to ts-loader
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  tsLoader?: Record<string, any>;
+  typescript?: boolean | Record<string, any>;
   /** 图标前缀 */
   iconPrefix?: string;
   /** 是否在侧边栏显示图标 */

@@ -15,28 +15,7 @@
   </section>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import ArticleInfo from "@theme/components/ArticleInfo.vue";
-import LockIcon from "@mr-hope/vuepress-shared-utils/icons/LockIcon.vue";
-import { PageComputed } from "@mr-hope/vuepress-types";
-import StickyIcon from "@mr-hope/vuepress-shared-utils/icons/StickyIcon.vue";
-import { pathHitKeys } from "@theme/util/encrypt";
-
-@Component({ components: { ArticleInfo, LockIcon, StickyIcon } })
-export default class ArticleItem extends Vue {
-  @Prop({ type: Object, required: true })
-  private readonly article!: PageComputed;
-
-  /** 文章是否加密 */
-  private get isEncrypted() {
-    return (
-      pathHitKeys(this.$themeConfig.encrypt, this.article.path).length !== 0 ||
-      this.article.frontmatter.password
-    );
-  }
-}
-</script>
+<script src="./ArticleItem" />
 
 <style lang="stylus">
 .article-wrapper

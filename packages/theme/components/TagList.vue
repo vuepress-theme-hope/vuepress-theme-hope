@@ -12,42 +12,7 @@
   </ul>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-import navigate from "@theme/util/navigate";
-
-@Component
-export default class TagList extends Vue {
-  /** 标签列表 */
-  private get tagList() {
-    return [
-      {
-        name:
-          this.$themeLocaleConfig.blog.allText ||
-          i18n.getDefaultLocale().blog.allText,
-        path: "/tag/",
-      },
-      ...this.$tag.list,
-    ];
-  }
-
-  /** 是否激活 */
-  private isActive(name: string) {
-    return (
-      name ===
-      (this.$currentTag?.key ||
-        this.$themeLocaleConfig.blog.allText ||
-        i18n.getDefaultLocale().blog.allText)
-    );
-  }
-
-  /** 点击标签导航 */
-  private clickTag(path: string) {
-    navigate(path, this.$router, this.$route);
-  }
-}
-</script>
+<script src="./TagList" />
 
 <style lang="stylus">
 .tag-list-wrapper

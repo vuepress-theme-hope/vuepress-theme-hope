@@ -27,7 +27,7 @@
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register test/*.test.ts"
+    "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/*.test.ts"
   },
   "devDependencies": {
     "@mr-hope/vuepress-types": "^0.6.10"

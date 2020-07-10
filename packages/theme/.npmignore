@@ -4,3 +4,5 @@
 !util/*.ts
 
 test/
+
+.mocharc.yml

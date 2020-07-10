@@ -28,7 +28,7 @@
   "main": "index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.test.ts"
+    "test": "node test/delete.js && cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/**/*.test.ts"
   },
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.6.10",
@@ -54,6 +54,9 @@
     "vuepress-plugin-photo-swipe": "^0.6.10",
     "vuepress-plugin-smooth-scroll": "^0.0.9",
     "vuepress-plugin-typescript": "^0.3.0"
+  },
+  "devDependencies": {
+    "child_process": "1.0.2"
   },
   "peerDependencies": {
     "typescript": "^3.9.6",

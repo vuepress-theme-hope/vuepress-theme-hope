@@ -18,23 +18,7 @@
   </ul>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import ArticleList from "@theme/components/ArticleList.vue";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import navigate from "@theme/util/navigate";
-
-@Component({ components: { ArticleList } })
-export default class CategoryList extends Vue {
-  /** 大写首字母 */
-  private capitalize = (name: string) => capitalize(name);
-
-  /** 点击分类的导航 */
-  private clickCategory(path: string) {
-    navigate(path, this.$router, this.$route);
-  }
-}
-</script>
+<script src="./CategoryList" />
 
 <style lang="stylus">
 $categoryListTextSize ?= 14px

@@ -43,12 +43,15 @@
     </MyTransition>
 
     <!-- 页面评论 -->
-    <MyTransition v-if="(!pagePassword || pageDescrypted) && commentEnable" :delay="0.16">
+    <MyTransition
+      v-if="(!pagePassword || pageDescrypted) && commentEnable"
+      :delay="0.16"
+    >
       <Comment :key="$route.path" />
     </MyTransition>
 
     <!-- 页脚 -->
-    <MyTransition :delay="0.20">
+    <MyTransition :delay="0.2">
       <PageFooter :key="$route.path" />
     </MyTransition>
 
@@ -56,65 +59,7 @@
   </main>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
-import Anchor from "@theme/components/Anchor.vue";
-import Comment from "@Comment";
-import MyTransition from "@theme/components/MyTransition.vue";
-import PageEdit from "@theme/components/PageEdit.vue";
-import PageFooter from "@theme/components/PageFooter.vue";
-import { PageHeader } from "@mr-hope/vuepress-types";
-import PageInfo from "@PageInfo";
-import PageNav from "@theme/components/PageNav.vue";
-import Password from "@theme/components/Password.vue";
-import { SidebarItem } from "@theme/util/sidebar";
-
-@Component({
-  components: {
-    Anchor,
-    Comment,
-    MyTransition,
-    PageEdit,
-    PageFooter,
-    PageInfo,
-    PageNav,
-    Password,
-  },
-})
-export default class Page extends Vue {
-  @Prop({ type: Array, default: () => [] })
-  private readonly sidebarItems!: SidebarItem[];
-
-  @Prop({ type: Array, default: () => [] })
-  private readonly headers!: PageHeader[];
-
-  /** 用户输入的密码 */
-  private password = "";
-
-  /** 是否启用评论 */
-  private commentEnable() {
-    return this.$themeConfig.comment !== false;
-  }
-
-  /** 当前页面密码 */
-  private get pagePassword() {
-    /** 页面当前密码 */
-    const { password } = this.$frontmatter;
-    const passwordType = typeof password;
-
-    return passwordType === "number"
-      ? this.$frontmatter.password.toString()
-      : passwordType === "string"
-      ? this.$frontmatter.password
-      : "";
-  }
-
-  /** 当前页面解密状态 */
-  private get pageDescrypted() {
-    return this.password === this.pagePassword;
-  }
-}
-</script>
+<script src="./Page" />
 
 <style lang="stylus">
 .page

@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": false,
+    "declaration": true,
+    "diagnostics": false,
+    "downlevelIteration": false,
+    "experimentalDecorators": true,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": false,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "listEmittedFiles": true,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "lib": ["DOM"],
+    "types": ["@mr-hope/vuepress-theme-types"],
+    "baseUrl": "./",
+    "paths": {
+      "@theme/*": ["packages/theme/*"]
+    }
+  }
+}

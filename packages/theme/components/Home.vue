@@ -78,26 +78,7 @@
   </main>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
-import MyTransition from "@theme/components/MyTransition.vue";
-import NavLink from "@theme/components/NavLink.vue";
-import PageFooter from "@theme/components/PageFooter.vue";
-import navigate from "@theme/util/navigate";
-
-@Component({ components: { MyTransition, NavLink, PageFooter } })
-export default class Home extends Vue {
-  private get actionLinks() {
-    const { action } = this.$frontmatter;
-    if (Array.isArray(action)) return action;
-    return [action];
-  }
-
-  private navigate(link: string) {
-    navigate(link, this.$router, this.$route);
-  }
-}
-</script>
+<script src="./Home" />
 
 <style lang="stylus">
 .home

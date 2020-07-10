@@ -139,7 +139,17 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ["smooth-scroll", themeConfig.smoothScroll],
 
     /** typescript 支持 */
-    ["typescript", { tsLoaderOptions: themeConfig.tsLoader || {} }],
+    [
+      "typescript",
+      themeConfig.typescript
+        ? {
+            tsLoaderOptions:
+              typeof themeConfig.typescript === "object"
+                ? themeConfig.typescript
+                : {},
+          }
+        : false,
+    ],
   ];
 };
 

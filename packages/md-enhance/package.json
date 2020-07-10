@@ -30,7 +30,7 @@
     "demo:build": "vuepress build test/demo",
     "demo:clean-serve": "vuepress dev test/demo --no-cache",
     "demo:serve": "vuepress dev test/demo",
-    "test": "mocha -r ts-node/register test/unit/*.test.ts"
+    "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/unit/*.test.ts"
   },
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.6.10",

@@ -43,4 +43,8 @@ declare module "docsearch.js/dist/cdn/docsearch.min.js" {
   export default docsearch;
 }
 
-declare module "*.css" {}
+declare module "*.css" {
+  const content: undefined;
+
+  export default content;
+}

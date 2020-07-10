@@ -10,32 +10,7 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
-
-@Component
-export default class Password extends Vue {
-  @Prop({ type: Boolean, default: false })
-  private readonly page!: boolean;
-
-  private password = "";
-
-  private hasTried = false;
-
-  private get isMainPage() {
-    return this.$frontmatter.home === true;
-  }
-
-  private verify() {
-    this.hasTried = false;
-    this.$emit("password-verify", this.password);
-
-    Vue.nextTick().then(() => {
-      this.hasTried = true;
-    });
-  }
-}
-</script>
+<script src="./Password" />
 
 <style lang="stylus">
 .password

@@ -9,21 +9,7 @@
   </transition>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-
-@Component
-export default class DropdownTransition extends Vue {
-  private setHeight(items: HTMLElement) {
-    // explicitly set height so that it can be transitioned
-    items.style.height = `${items.scrollHeight}px`;
-  }
-
-  private unsetHeight(items: HTMLElement) {
-    items.style.height = "";
-  }
-}
-</script>
+<script src="./DropdownTransition" />
 
 <style lang="stylus">
 .dropdown-enter, .dropdown-leave-to
