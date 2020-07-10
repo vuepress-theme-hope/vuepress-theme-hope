@@ -22,11 +22,17 @@
 
           <div class="pswp__counter" />
 
-          <button class="pswp__button pswp__button--close" title="Close (Esc)" />
+          <button
+            class="pswp__button pswp__button--close"
+            title="Close (Esc)"
+          />
 
           <button class="pswp__button pswp__button--share" title="Share" />
 
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen" />
+          <button
+            class="pswp__button pswp__button--fs"
+            title="Toggle fullscreen"
+          />
 
           <button class="pswp__button pswp__button--zoom" title="Zoom in/out" />
 
@@ -41,13 +47,21 @@
           </div>
         </div>
 
-        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div
+          class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+        >
           <div class="pswp__share-tooltip" />
         </div>
 
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)" />
+        <button
+          class="pswp__button pswp__button--arrow--left"
+          title="Previous (arrow left)"
+        />
 
-        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)" />
+        <button
+          class="pswp__button pswp__button--arrow--right"
+          title="Next (arrow right)"
+        />
 
         <div class="pswp__caption">
           <div class="pswp__caption__center" />
@@ -57,90 +71,7 @@
   </div>
 </template>
 
-<script lang="ts">
-/* global IMAGE_CONTAINER, IMAGE_SELECTOR, PHOTOSWIPE_OPTIONS */
-import { Component, Vue, Watch } from "vue-property-decorator";
-import PhotoSwipe = require("photoswipe");
-import PhotoSwipeUIDefault = require("photoswipe/dist/photoswipe-ui-default");
-
-let images: NodeListOf<HTMLImageElement>;
-
-@Component
-export default class PhotoSwipeUI extends Vue {
-  private photoswipe() {
-    const pswp = document.querySelector(".pswp") as HTMLElement;
-
-    this.getImages().then((imageConfig) => {
-      images.forEach((image, index) => {
-        image.onclick = () => {
-          const gallery = new PhotoSwipe(
-            pswp,
-            PhotoSwipeUIDefault,
-            imageConfig,
-            {
-              ...PHOTOSWIPE_OPTIONS,
-              index,
-            }
-          );
-          gallery.init();
-        };
-      });
-    });
-  }
-
-  private getImageInfo(image: HTMLImageElement) {
-    return {
-      src: image.src,
-      // eslint-disable-next-line id-length
-      w: image.naturalWidth,
-      h: image.naturalHeight,
-      title: image.alt,
-    };
-  }
-
-  private getImages() {
-    const promises: Promise<PhotoSwipe.Item>[] = [];
-    images = document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR);
-
-    images.forEach((image, index) => {
-      promises[index] = new Promise((resolve, reject) => {
-        if (image.complete) resolve(this.getImageInfo(image));
-        else {
-          image.onload = () => resolve(this.getImageInfo(image));
-          image.onerror = (err) => reject(err);
-        }
-      });
-    });
-
-    return Promise.all(promises);
-  }
-
-  private mounted() {
-    const timer = setInterval(() => {
-      const content = document.querySelector<HTMLElement>(
-        IMAGE_CONTAINER
-      );
-      if (content) {
-        this.photoswipe();
-        clearInterval(timer);
-      }
-    }, 200);
-  }
-
-  @Watch("$route")
-  onRouteChange() {
-    const timer = setInterval(() => {
-      const content = document.querySelector<HTMLElement>(
-        IMAGE_CONTAINER
-      );
-      if (content) {
-        this.photoswipe();
-        clearInterval(timer);
-      }
-    }, 200);
-  }
-}
-</script>
+<script src="./PhotoSwipeUI" />
 
 <style lang="stylus">
 @require '~photoswipe/dist/photoswipe.css'

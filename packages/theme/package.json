@@ -28,7 +28,7 @@
   "main": "index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.ts"
+    "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.6.10",

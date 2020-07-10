@@ -11,9 +11,7 @@ export = (options: CommentOptions): PluginOptionAPI => {
     }),
 
     plugins: [
-      /** Typescript Support */
       ["@mr-hope/reading-time", { wordPerminute: options.wordPerminute }],
-      ["typescript"],
     ],
   };
 

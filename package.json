@@ -32,7 +32,7 @@
     "packages:release": "node scripts/release.js",
     "packages:update": "lerna exec -- ncu -u --timeout 600000 && ncu -u --timeout 600000",
     "test": "lerna run test --parallel",
-    "typescript:compile": "tsc"
+    "typescript:compile": "tsc --project es-tsconfig.json && tsc"
   },
   "husky": {
     "hooks": {

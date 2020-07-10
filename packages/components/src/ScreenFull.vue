@@ -44,29 +44,7 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
-import screenfull = require("screenfull");
-
-@Component
-export default class ScreenFull extends Vue {
-  private canFullscreen = false;
-
-  private isFullscreen = false;
-
-  private click() {
-    if (screenfull.isEnabled)
-      screenfull.toggle().then(() => {
-        this.isFullscreen = (screenfull as any).isFullscreen;
-      });
-  }
-
-  private mounted() {
-    this.canFullscreen =
-      screenfull.isEnabled && this.$themeConfig.fullscreen !== false;
-  }
-}
-</script>
+<script src="./ScreenFull" />
 
 <style lang="stylus">
 .fullscreen-wrapper

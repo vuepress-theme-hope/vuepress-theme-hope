@@ -14,12 +14,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
     globalUIComponents: options.popupComponent || "SWUpdatePopup",
 
-    enhanceAppFiles: resolve(__dirname, "./enhanceAppFile.ts"),
-
-    plugins: [
-      /** typescript support */
-      ["typescript"],
-    ],
+    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
   };
 
   config.generated = async (): Promise<void> => {

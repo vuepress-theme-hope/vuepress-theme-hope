@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import { expect } from "chai";
-import resolveConfig from "../../src/pluginConfig";
+import resolveConfig from "../../lib/pluginConfig";
 
 describe("Test pluginConfig generate", () => {
   it("Should use plugin options first", () => {
@@ -16,10 +16,9 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(4, 1);
+    pluginConfig.splice(3, 1);
 
     expect(pluginConfig).to.be.deep.equal([
-      ["typescript"],
       [
         "container",
         {
@@ -73,10 +72,9 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(4, 1);
+    pluginConfig.splice(3, 1);
 
     expect(pluginConfig).to.be.deep.equal([
-      ["typescript"],
       [
         "container",
         {
@@ -130,10 +128,9 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(4, 1);
+    pluginConfig.splice(3, 1);
 
     expect(pluginConfig).to.be.deep.equal([
-      ["typescript"],
       [
         "container",
         {

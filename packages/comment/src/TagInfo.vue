@@ -15,43 +15,7 @@
   </span>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-
-@Component({ components: { TagIcon } })
-export default class TagInfo extends Vue {
-  @Prop({ type: Array, default: () => [] })
-  private readonly tags!: string[];
-
-  private get $tags() {
-    if (this.tags.length !== 0) return this.tags;
-
-    const { tag, tags = tag } = this.$frontmatter;
-
-    if (typeof tags === "string") return [capitalize(tags)];
-
-    if (Array.isArray(tags)) return tags.map((item) => capitalize(item));
-
-    return [];
-  }
-
-  private get clickable() {
-    return this.$themeConfig.blog !== false;
-  }
-
-  private navigate(tagName: string) {
-    const path = `/tag/${tagName}/`;
-    if (this.$route.path !== path) this.$router.push(path);
-  }
-
-  private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).tag;
-  }
-}
-</script>
+<script src="./TagInfo" />
 
 <style lang="stylus">
 .tags-wrapper

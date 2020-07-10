@@ -1,5 +1,5 @@
 import { PageComputed, PageFrontmatter } from "@mr-hope/vuepress-types";
-import dayjs = require("dayjs");
+import * as dayjs from "dayjs";
 
 /** 处理日期 */
 export const getDate = (dateString: string): (number | undefined)[] => {

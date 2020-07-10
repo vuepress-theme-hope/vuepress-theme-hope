@@ -24,7 +24,7 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-types": "^0.6.10",

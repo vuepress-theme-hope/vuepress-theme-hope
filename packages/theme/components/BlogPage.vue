@@ -49,9 +49,11 @@ import { Component, Mixins } from "vue-property-decorator";
 import ArticleList from "@theme/components/ArticleList.vue";
 import BlogHero from "@theme/components/BlogHero.vue";
 import BlogInfo from "@BlogInfo";
+import CategoryList from "@theme/components/CategoryList.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageFooter from "@theme/components/PageFooter.vue";
 import ProjectList from "@theme/components/ProjectList.vue";
+import TagList from "@theme/components/TagList.vue";
 import TimelineList from "@theme/components/TimelineList.vue";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
@@ -60,9 +62,11 @@ import { i18n } from "@mr-hope/vuepress-shared-utils";
     ArticleList,
     BlogHero,
     BlogInfo,
+    CategoryList,
     MyTransition,
     PageFooter,
     ProjectList,
+    TagList,
     TimelineList,
   },
 })

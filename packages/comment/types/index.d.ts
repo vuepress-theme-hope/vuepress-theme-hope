@@ -1,5 +1,7 @@
 import { Vssue } from "vssue";
 
+import "./declare";
+
 /**
  * 页面信息类型
  *

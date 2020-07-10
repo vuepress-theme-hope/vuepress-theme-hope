@@ -1,3 +1,2 @@
-src/*.ts
-!src/*.d.ts
-!src/enhanceAppFile.ts
+*.ts
+!*.d.ts

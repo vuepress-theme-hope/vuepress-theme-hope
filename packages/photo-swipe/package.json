@@ -24,7 +24,7 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "demo:build": "vuepress build test/demo",
@@ -34,11 +34,7 @@
   "dependencies": {
     "@mr-hope/vuepress-types": "^0.6.10",
     "@types/photoswipe": "^4.1.0",
-    "photoswipe": "^4.1.3",
-    "vuepress-plugin-typescript": "^0.3.0"
-  },
-  "peerDependencies": {
-    "typescript": "^3.9.6"
+    "photoswipe": "^4.1.3"
   },
   "publishConfig": {
     "access": "public"

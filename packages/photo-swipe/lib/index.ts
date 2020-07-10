@@ -18,12 +18,7 @@ export = ({
     PHOTOSWIPE_OPTIONS: option,
   },
 
-  enhanceAppFiles: resolve(__dirname, "enhanceAppFile.ts"),
-
-  plugins: [
-    /** typescript support */
-    ["typescript"],
-  ],
+  enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
 
   globalUIComponents: "PhotoSwipeUI",
 });

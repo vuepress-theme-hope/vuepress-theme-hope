@@ -38,41 +38,7 @@
   </transition>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
-import event from "./event";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-
-@Component
-export default class SWUpdatePopup extends Vue {
-  private updateEvent: any = null;
-
-  private get enabled() {
-    return Boolean(this.updateEvent);
-  }
-
-  private get message() {
-    return i18n.getLocale(this.$lang).pwa || i18n.getDefaultLocale().pwa;
-  }
-
-  private created() {
-    event.$on("sw-updated", this.onSWUpdated);
-  }
-
-  private onSWUpdated(updateEvent: any) {
-    this.updateEvent = updateEvent;
-  }
-
-  private reload() {
-    if (this.updateEvent) {
-      this.updateEvent.skipWaiting().then(() => {
-        location.reload(true);
-      });
-      this.updateEvent = null;
-    }
-  }
-}
-</script>
+<script src="./SWUpdatePopup.ts" />
 
 <style lang="stylus">
 @keyframes rotate

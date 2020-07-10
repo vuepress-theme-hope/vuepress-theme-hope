@@ -25,7 +25,7 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "demo:build": "vuepress build test/demo",
@@ -45,11 +45,7 @@
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "leancloud-storage": "^4.6.1",
     "valine": "^1.4.14",
-    "vssue": "^1.4.6",
-    "vuepress-plugin-typescript": "^0.3.0"
-  },
-  "peerDependencies": {
-    "typescript": "^3.9.6"
+    "vssue": "^1.4.6"
   },
   "publishConfig": {
     "access": "public"

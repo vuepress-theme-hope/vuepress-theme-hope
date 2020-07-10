@@ -24,18 +24,14 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^0.6.10",
     "@mr-hope/vuepress-types": "^0.6.10",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "5.0.2",
-    "vue-router": "^3.3.4",
-    "vuepress-plugin-typescript": "^0.3.0"
-  },
-  "peerDependencies": {
-    "typescript": "^3.9.6"
+    "vue-router": "^3.3.4"
   },
   "publishConfig": {
     "access": "public"

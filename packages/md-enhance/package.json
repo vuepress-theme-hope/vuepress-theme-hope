@@ -24,7 +24,7 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "demo:build": "vuepress build test/demo",
@@ -42,10 +42,6 @@
     "flowchart.js": "^1.13.0",
     "katex": "^0.11.1",
     "lodash.debounce": "^4.0.8",
-    "vuepress-plugin-container": "^2.1.4",
-    "vuepress-plugin-typescript": "^0.3.0"
-  },
-  "peerDependencies": {
-    "typescript": "^3.9.6"
+    "vuepress-plugin-container": "^2.1.4"
   }
 }

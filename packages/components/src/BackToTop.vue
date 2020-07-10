@@ -22,62 +22,7 @@
   </transition>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
-import debounce = require("lodash.debounce");
-
-@Component
-export default class BackToTop extends Vue {
-  @Prop({ type: Number, default: 300 })
-  private readonly threshold!: number;
-
-  /** Scroll distance */
-  private scrollTop = 0;
-
-  private get thresholdDistance() {
-    return typeof this.$themeConfig.backToTop === "number"
-      ? this.$themeConfig.backToTop
-      : this.threshold;
-  }
-
-  /** Whether to display button */
-  private get isDisplay() {
-    const globalEnable = this.$themeConfig.backToTop !== false;
-    const pageEnable = this.$page.frontmatter.backToTop;
-
-    return (
-      (pageEnable || (globalEnable && pageEnable !== false)) &&
-      this.scrollTop > this.thresholdDistance
-    );
-  }
-
-  private mounted() {
-    this.scrollTop = this.getScrollTop();
-    window.addEventListener(
-      "scroll",
-      debounce(() => {
-        this.scrollTop = this.getScrollTop();
-      }, 100)
-    );
-  }
-
-  // Get scroll distance
-  private getScrollTop() {
-    return (
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0
-    );
-  }
-
-  // Scroll to top
-  private scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    this.scrollTop = 0;
-  }
-}
-</script>
+<script src="./BackToTop" />
 
 <style lang='stylus'>
 .back-to-top

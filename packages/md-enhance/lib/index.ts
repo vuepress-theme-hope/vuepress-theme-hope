@@ -19,7 +19,7 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: "md-enhance",
 
-    enhanceAppFiles: resolve(__dirname, "enhanceAppFile.ts"),
+    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
     chainMarkdown: (md) => {
       if (markdownOption.lineNumbers !== false)
         md.plugin("line-numbers").use(lineNumbers);

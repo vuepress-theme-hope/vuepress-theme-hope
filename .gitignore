@@ -4,9 +4,9 @@
 packages/**/*.js
 packages/**/*.d.ts
 
-!packages/**/types/**.d.ts
+!packages/**/types/**/*.d.ts
 
-!packages/pwa/src/skip-waiting.js
+!packages/pwa/lib/skip-waiting.js
 !packages/theme/lib/noopModule.js
 
 !packages/**/test/**/*.js

@@ -37,10 +37,9 @@
       "@theme/*": ["packages/theme/*"]
     }
   },
-  "include": ["packages/**/*.ts"],
-  "exclude": [
-    "packages/*/src/enhanceAppFile.ts",
-    "packages/*/test/**/*.ts",
-    "packages/theme/util/*.ts"
+  "include": [
+    "packages/**/lib/**/*.ts",
+    "packages/theme/index.ts",
+    "packages/theme/resolve.ts"
   ]
 }

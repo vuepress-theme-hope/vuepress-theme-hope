@@ -4,9 +4,7 @@ import { resolve } from "path";
 export = {
   name: "components",
 
-  enhanceAppFiles: resolve(__dirname, "enhanceAppFile.ts"),
-
-  plugins: ["typescript"],
+  enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
 
   globalUIComponents: "BackToTop",
 } as PluginOptionAPI;

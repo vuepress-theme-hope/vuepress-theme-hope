@@ -20,8 +20,6 @@ const pluginConfig = (
   };
 
   const config: PluginConfig[] = [
-    /** typescript support */
-    ["typescript"],
     [
       "container",
       { type: "tip", defaultTitle: resolveConfig(containerConfig.tip) },
