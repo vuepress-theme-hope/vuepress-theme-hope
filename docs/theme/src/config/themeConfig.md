@@ -110,6 +110,13 @@ SideBarItem 新增
 
 是否启用默认的搜索框
 
+### searchPlaceholder
+
+- 类型: `string`
+- 必填: 否
+
+搜索框的占位符文字
+
 ### searchMaxSuggestions
 
 - 类型: `number`

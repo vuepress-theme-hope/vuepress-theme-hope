@@ -104,6 +104,13 @@ Whether to automatically update hash values ​​in URLs and sidebar active hea
 
 Whether to enable the default search box
 
+### searchPlaceholder
+
+- Type: `string`
+- Required: No
+
+Placeholder for the search box
+
 ### searchMaxSuggestions
 
 - Type: `number`

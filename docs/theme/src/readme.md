@@ -47,9 +47,11 @@ features:
 
   - title: PWA 支持
     details: 内置的 PWA 插件会让你的网站更像一个 APP。
+    link: /config/plugin/pwa/
 
   - title: TS 支持
     details: 为你的 Vuepress 开启 Typescript 支持
+    link: /guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
@@ -81,33 +83,3 @@ module.exports = resolve({
 
 同时，resolve 函数也会为你补全一些直接交付给 vuepress 的默认配置。
 :::
-
-### FAQ
-
-如果你的项目没有使用 typescript，你可能还需要安装 typescript:
-
-```bash
-npm i -D typescript
-```
-
-并在你的根目录创建一个 tsconfig.json 文件:
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES6", // 任何不低于 ES6 的 target 均可
-    "allowSyntheticDefaultImports": true, // 规避 vuepress-types 的类型定义问题
-    "experimentalDecorators": true, // Vue 的 Typescript 写法需要开启此选项
-    "module": "commonjs", // 为了避免 vuepress-types 解析失败
-    // vuepress 与本主题的类型定义文件
-    "types": ["@mr-hope/vuepress-theme-types"]
-  },
-  "include": [
-    "src/.vuepress/enhanceApp.ts" // 请将 src 替换成你的文档目录
-  ]
-}
-```
-
-如果主题引入后在运行中出现 Typescript 相关错误，这可能是你的项目没有正确对 Typescript 进行配置。
-
-具体详情请见 [FAQ](FAQ/readme.md)

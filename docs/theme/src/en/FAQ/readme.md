@@ -5,7 +5,13 @@ category: FAQ
 
 # Common problems
 
-## Error when running
+## Some page settings are invalid
+
+You can first review the documentation to see if the setting **does not support partial configuration**.
+
+**Support for partial configuration** means that the theme allows the configuration of the page to override the global configuration of the same name (same function), but not all functions meet this setting. For the sake of project compilation speed, some projects will not be loaded during the compilation phase after the global configuration is disabled, and they cannot be enabled locally.
+
+## Typescript problems
 
 Please make sure your project depends on typescript and there is a valid tsconfig.json file in the working directory.
 
@@ -46,9 +52,3 @@ ts-loader requires that the include and exclude configuration items of tsconfig.
 If your project does not have a ts file, to avoid this problem, you can create an empty ts file anywhere in your project and add it to the include of tsconfig.json.
 
 A better solution is to solve this problem by creating an empty `enhanceApp.ts` in the`.vuepress` directory. If you already have `enhanceApp.js`, you can directly convert it to TS.
-
-## Some page settings are invalid
-
-You can first review the documentation to see if the setting **does not support partial configuration**.
-
-**Support for partial configuration** means that the theme allows the configuration of the page to override the global configuration of the same name (same function), but not all functions meet this setting. For the sake of project compilation speed, some projects will not be loaded during the compilation phase after the global configuration is disabled, and they cannot be enabled locally.
