@@ -39,10 +39,10 @@ const getAlias = (
       ? resolve(__dirname, "./components/AlgoliaSearchBox.vue")
       : noopModule,
     "@BlogInfo": blogEnabled
-      ? resolve(__dirname, "./components/BlogInfo.vue")
+      ? resolve(__dirname, "./components/Blog/BlogInfo.vue")
       : noopModule,
     "@BlogPage": blogEnabled
-      ? resolve(__dirname, "./components/BlogPage.vue")
+      ? resolve(__dirname, "./components/Blog/BlogPage.vue")
       : noopModule,
     "@Comment":
       commentPluginEnabled && commentEnabled
@@ -52,7 +52,7 @@ const getAlias = (
       ? "@mr-hope/vuepress-plugin-comment/PageInfo.vue"
       : noopModule,
     "@ThemeColor": themeColorEnabled
-      ? resolve(__dirname, "./components/ThemeColor.vue")
+      ? resolve(__dirname, "./components/Theme/ThemeColor.vue")
       : noopModule,
   };
 };

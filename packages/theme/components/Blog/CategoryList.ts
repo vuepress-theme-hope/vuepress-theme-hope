@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import ArticleList from "@theme/components/ArticleList.vue";
+import ArticleList from "@theme/components/Blog/ArticleList.vue";
 import { capitalize } from "@mr-hope/vuepress-shared-utils";
 import navigate from "@theme/util/navigate";
 

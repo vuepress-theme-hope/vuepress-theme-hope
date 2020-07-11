@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import { HopeLangI18nConfigItem, i18n } from "@mr-hope/vuepress-shared-utils";
-import DarkmodeSwitch from "@theme/components/DarkmodeSwitch.vue";
+import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
 
 /** 默认颜色选择器 */
 const defaultPicker: Record<string, string> = {

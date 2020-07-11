@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { ArticleMixin, StickyMixin } from "@theme/util/articleMixin";
 import { Component, Mixins } from "vue-property-decorator";
-import ArticleList from "@theme/components/ArticleList.vue";
-import BlogHero from "@theme/components/BlogHero.vue";
+import ArticleList from "@theme/components/Blog/ArticleList.vue";
+import BlogHero from "@theme/components/Blog/BlogHero.vue";
 import BlogInfo from "@BlogInfo";
-import CategoryList from "@theme/components/CategoryList.vue";
+import CategoryList from "@theme/components/Blog/CategoryList.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageFooter from "@theme/components/PageFooter.vue";
-import ProjectList from "@theme/components/ProjectList.vue";
-import TagList from "@theme/components/TagList.vue";
-import TimelineList from "@theme/components/TimelineList.vue";
+import ProjectList from "@theme/components/Blog/ProjectList.vue";
+import TagList from "@theme/components/Blog/TagList.vue";
+import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { i18n, HopeLangI18nConfig } from "@mr-hope/vuepress-shared-utils";
 
 @Component({

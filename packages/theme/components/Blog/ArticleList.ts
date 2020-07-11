@@ -1,5 +1,5 @@
 import { Component, Mixins, Watch } from "vue-property-decorator";
-import ArticleItem from "@theme/components/ArticleItem.vue";
+import ArticleItem from "@theme/components/Blog/ArticleItem.vue";
 import { ArticleMixin } from "@theme/util/articleMixin";
 import MyTransition from "@theme/components/MyTransition.vue";
 import Pagination from "@mr-hope/vuepress-plugin-components/src/Pagination.vue";

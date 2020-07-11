@@ -11,7 +11,7 @@
           background: `url(${
             $frontmatter.bgImage
               ? $withBase($frontmatter.bgImage)
-              : require('../assets/homeImage.jpg')
+              : require('@theme/assets/homeImage.jpg')
           }) center/cover no-repeat`,
         }"
       />

@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
-import ArticleInfo from "@theme/components/ArticleInfo.vue";
+import ArticleInfo from "@theme/components/Blog/ArticleInfo.vue";
 import LockIcon from "@mr-hope/vuepress-shared-utils/icons/LockIcon.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import StickyIcon from "@mr-hope/vuepress-shared-utils/icons/StickyIcon.vue";

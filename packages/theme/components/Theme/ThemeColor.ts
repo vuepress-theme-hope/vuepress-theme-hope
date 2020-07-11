@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import ClickOutside from "@theme/util/click-outside";
-import ThemeOptions from "@theme/components/ThemeOptions.vue";
+import ThemeOptions from "@theme/components/Theme/ThemeOptions.vue";
 
 @Component({
   directives: { "click-outside": ClickOutside },
