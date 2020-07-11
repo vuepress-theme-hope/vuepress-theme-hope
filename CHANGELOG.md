@@ -1,8 +1,10 @@
 # Changelog
 
-## [0.7.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.10...v0.7.0-alpha.1) (2020-07-10)
+## [0.7.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.10...v0.7.0) (2020-07-11)
 
 ### Performance Improvements
+
+We are glad to announce we do not have any typescript files in runtime, which will greatly shorten the build time.
 
 - **theme:** remove runtime typescript ([296ca74](https://github.com/Mister-Hope/vuepress-theme-hope/commit/296ca74b75855b80a007ab0b4d8bf303d98a32e3))
 - remove runtime typescript for plugins ([e7e4b3a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e7e4b3a294c83d4a46a892e81c284855ddb7cc7a))
