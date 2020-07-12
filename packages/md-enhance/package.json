@@ -40,7 +40,7 @@
     "@types/lodash.debounce": "^4.0.6",
     "@types/markdown-it": "10.0.1",
     "flowchart.js": "^1.13.0",
-    "katex": "^0.11.1",
+    "katex": "^0.12.0",
     "lodash.debounce": "^4.0.8",
     "vuepress-plugin-container": "^2.1.4"
   }
