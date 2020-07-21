@@ -17,40 +17,39 @@
           :alt="$frontmatter.heroAlt || 'HomeLogo'"
         />
       </MyTransition>
-      <MyTransition :delay="0.04">
-        <h1
-          v-if="$frontmatter.heroText !== false"
-          id="main-title"
-          v-text="$frontmatter.heroText || $title || 'Hello'"
-        />
-      </MyTransition>
-      <MyTransition :delay="0.08">
-        <p
-          class="description"
-          v-text="
+      <div class="hero-info">
+        <MyTransition :delay="0.04">
+          <h1
+            v-if="$frontmatter.heroText !== false"
+            id="main-title"
+            v-text="$frontmatter.heroText || $title || 'Hello'"
+          />
+        </MyTransition>
+        <MyTransition :delay="0.08">
+          <p
+            class="description"
+            v-text="
             $frontmatter.tagline ||
             $description ||
             'Welcome to your VuePress site'
           "
-        />
-      </MyTransition>
-      <MyTransition :delay="0.12">
-        <p v-if="$frontmatter.action" class="action">
-          <NavLink
-            v-for="action in actionLinks"
-            :key="action.text"
-            :item="action"
-            class="action-button"
           />
-        </p>
-      </MyTransition>
+        </MyTransition>
+        <MyTransition :delay="0.12">
+          <p v-if="$frontmatter.action" class="action">
+            <NavLink
+              v-for="action in actionLinks"
+              :key="action.text"
+              :item="action"
+              class="action-button"
+            />
+          </p>
+        </MyTransition>
+      </div>
     </header>
 
     <MyTransition :delay="0.16">
-      <div
-        v-if="$frontmatter.features && $frontmatter.features.length"
-        class="features"
-      >
+      <div v-if="$frontmatter.features && $frontmatter.features.length" class="features">
         <div
           v-for="(feature, index) in $frontmatter.features"
           :key="index"
@@ -58,9 +57,11 @@
           class="feature"
         >
           <h2>
-            <span v-if="feature.link" @click="navigate(feature.link)">{{
+            <span v-if="feature.link" @click="navigate(feature.link)">
+              {{
               feature.title
-            }}</span>
+              }}
+            </span>
             <span v-else>{{ feature.title }}</span>
           </h2>
           <p>{{ feature.details }}</p>
@@ -94,6 +95,12 @@
   .hero
     text-align center
 
+    @media (min-width: $MQNarrow)
+      display flex
+      justify-content space-evenly
+      align-items center
+      text-align left
+
     img
       display block
       max-width 100%
@@ -103,6 +110,10 @@
       @media (max-width: $MQMobileNarrow)
         max-height 210px
         margin 2rem auto 1.2rem
+
+      @media (min-width: $MQNarrow)
+        max-height 320px
+        margin 0
 
       .theme-light &
         &.light
@@ -146,7 +157,7 @@
       background-color var(--accent-color)
       padding 0.8rem 1.6rem
       margin 0.6rem 0.8rem
-      border-radius 4px
+      border-radius 0.25rem
       transition background-color 0.1s ease
       border-bottom 1px solid var(--accent-color-d10)
       overflow hidden
@@ -175,7 +186,8 @@
     .feature
       flex-basis calc(33% - 5rem)
       transition all 0.5s
-      padding 0 2.5rem
+      padding 0 1.5rem
+      margin 0 1rem
       border-radius 1rem
       overflow hidden
 
