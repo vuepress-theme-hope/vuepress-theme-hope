@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-shared-utils",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Shared utils for vuepress-theme-hope",
   "keywords": [
     "vuepress-theme-hope",
