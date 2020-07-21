@@ -47,14 +47,14 @@ export default class ThemeOptions extends Vue {
     /** 所选主题 */
     const theme = localStorage.getItem("theme");
 
-    if (theme) this.setTheme(theme);
-
     this.themeColor = {
       list: this.$themeConfig.themeColor
         ? Object.keys(this.$themeConfig.themeColor)
         : Object.keys(defaultPicker),
       picker: this.$themeConfig.themeColor || defaultPicker,
     };
+
+    if (theme) this.setTheme(theme);
   }
 
   /** 设置主题 */
