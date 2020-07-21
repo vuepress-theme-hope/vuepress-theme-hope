@@ -30,7 +30,7 @@
     "packages:bootstrap": "node scripts/bootstrap.js",
     "packages:check-update": "lerna exec -- ncu --timeout 600000 && ncu --timeout 600000",
     "packages:release": "node scripts/release.js",
-    "packages:update": "lerna exec -- ncu -u --timeout 600000 && ncu -u --timeout 600000",
+    "packages:update": "lerna exec -- ncu -u --timeout 600000 && ncu -u --timeout 600000 && yarn install && yarn upgrade",
     "test": "lerna run test --parallel",
     "typescript:compile": "tsc && tsc --project commonjs-tsconfig.json"
   },
@@ -62,9 +62,9 @@
   },
   "devDependencies": {
     "@types/chai": "4.2.11",
-    "@types/mocha": "7.0.2",
-    "@typescript-eslint/eslint-plugin": "3.6.0",
-    "@typescript-eslint/parser": "3.6.0",
+    "@types/mocha": "8.0.0",
+    "@typescript-eslint/eslint-plugin": "3.7.0",
+    "@typescript-eslint/parser": "3.7.0",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "5.0.2",
     "@vuepress/test-utils": "1.5.2",
@@ -73,7 +73,7 @@
     "cross-env": "7.0.2",
     "cz-conventional-changelog": "3.2.0",
     "del": "5.1.0",
-    "eslint": "7.4.0",
+    "eslint": "7.5.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-vue": "6.2.2",
@@ -84,7 +84,7 @@
     "prettier": "2.0.5",
     "sort-package-json": "1.44.0",
     "ts-node": "8.10.2",
-    "typescript": "3.9.6",
+    "typescript": "3.9.7",
     "vue-template-compiler": "2.6.11"
   }
 }
