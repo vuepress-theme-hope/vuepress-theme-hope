@@ -23,7 +23,7 @@ module.exports = {
 
   plugins: [
     [
-      require('../../../src'),
+      require('../../../lib'),
       {
         type: 'valine',
         author: 'Mr.Hope',

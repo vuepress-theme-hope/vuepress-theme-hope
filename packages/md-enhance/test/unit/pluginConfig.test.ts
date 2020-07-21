@@ -16,9 +16,20 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(3, 1);
+    pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
+      [
+        "container",
+        {
+          type: "info",
+          defaultTitle: {
+            "/": "相关信息",
+            "/zh/": "相关信息",
+            "/en/": "Info",
+          },
+        },
+      ],
       [
         "container",
         {
@@ -72,9 +83,20 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(3, 1);
+    pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
+      [
+        "container",
+        {
+          type: "info",
+          defaultTitle: {
+            "/": "Info",
+            "/zh/": "相关信息",
+            "/en/": "Info",
+          },
+        },
+      ],
       [
         "container",
         {
@@ -128,9 +150,20 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(3, 1);
+    pluginConfig.splice(4, 1);
 
     expect(pluginConfig).to.be.deep.equal([
+      [
+        "container",
+        {
+          type: "info",
+          defaultTitle: {
+            "/": "Info",
+            "/zh/": "相关信息",
+            "/en/": "Info",
+          },
+        },
+      ],
       [
         "container",
         {

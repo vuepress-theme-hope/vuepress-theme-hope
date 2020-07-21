@@ -1,5 +1,111 @@
-// align support
 .custom-block
+  position relative
+
+  .custom-block-title
+    font-weight 600
+    margin-bottom -0.4rem
+
+  &.info, &.tip, &.warning, &.danger
+    max-width 80%
+    padding 0.1rem 1.5rem
+    margin 1rem 0
+    border-left-width 0.5rem
+    border-left-style solid
+    border-bottom-right-radius 0.25rem
+    border-top-right-radius 0.25rem
+
+    &::before
+      position absolute
+      top 14px
+      left -14px
+      color #fff
+      width 20px
+      height 20px
+      border-radius 100%
+      text-align center
+      line-height 20px
+      font-weight bold
+      font-family 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
+      font-size 14px
+
+  &.info
+    border-color #007bff
+    background-color #f8f8f8
+
+    .custom-block-title
+      color darken(#007bff, 20%)
+
+    &::before
+      content url('~vuepress-plugin-md-enhance/src/icon/info.svg')
+      width 25px
+      height 25px
+      left -16px
+      box-sizing border-box
+
+  &.tip
+    border-color #42b983
+    background-color #f8f8f8
+
+    .custom-block-title
+      color darken(#42b983, 20%)
+
+    &::before
+      content url('~vuepress-plugin-md-enhance/src/icon/bulb.svg')
+      width 25px
+      height 25px
+      left -16px
+
+  &.warning
+    border-color #f4cd00
+    background-color #fff7d0
+
+    .custom-block-title
+      color darken(#f4cd00, 20%)
+
+    &::before
+      content url('~vuepress-plugin-md-enhance/src/icon/danger.svg')
+      width 25px
+      height 25px
+      left -16px
+      box-sizing border-box
+
+  &.danger
+    border-color #f55
+    background-color #ffe6e6
+
+    .custom-block-title
+      color #900
+
+    &::before
+      content url('~vuepress-plugin-md-enhance/src/icon/stop.svg')
+      width 25px
+      height 25px
+      left -16px
+
+  &.details
+    display block
+    position relative
+    max-width 80%
+    border-radius 0.25rem
+    margin 1.6em 0
+    padding 1.6em
+    background-color #eee
+
+    h4
+      margin-top 0
+
+    figure, p
+      &:last-child
+        margin-bottom 0
+        padding-bottom 0
+
+    summary
+      outline none
+      cursor pointer
+
+    &[open] summary
+      margin-bottom 0.5em
+
   &.left
     text-align left
 

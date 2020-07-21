@@ -127,6 +127,10 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
 
 /** 自定义容器插件 */
 const containerConfig: Record<string, Record<string, string>> = {
+  info: {
+    "/zh/": "相关信息",
+    "/en/": "Info",
+  },
   tip: {
     "/zh/": "提示",
     "/en/": "Tips",

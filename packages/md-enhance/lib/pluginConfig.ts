@@ -22,6 +22,10 @@ const pluginConfig = (
   const config: PluginConfig[] = [
     [
       "container",
+      { type: "info", defaultTitle: resolveConfig(containerConfig.info) },
+    ],
+    [
+      "container",
       { type: "tip", defaultTitle: resolveConfig(containerConfig.tip) },
     ],
     [

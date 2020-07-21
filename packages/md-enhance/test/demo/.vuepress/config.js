@@ -146,6 +146,6 @@ module.exports = {
 
   plugins: [
     /** Markdown 增强 */
-    [require('../../../src'), { enableAll: true }]
+    [require('../../../lib'), { enableAll: true }]
   ]
 };

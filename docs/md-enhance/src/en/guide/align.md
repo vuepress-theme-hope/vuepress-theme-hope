@@ -82,3 +82,87 @@ If you encounter a bug while using, you can
 :::
 ::::
 ```
+
+## Other custom containers
+
+::: info
+Information container
+:::
+
+::: tip
+Tip container
+:::
+
+::: warning
+Warning container
+:::
+
+::: danger
+Dangerous container
+:::
+
+::: details
+Details container
+:::
+
+::: info custom title
+Information container
+:::
+
+::: tip custom title
+Tip container
+:::
+
+::: warning custom title
+Warning container
+:::
+
+::: danger custom Title
+Dangerous container
+:::
+
+::: details custom title
+Details container
+:::
+
+```md
+::: info
+Information container
+:::
+
+::: tip
+Tip container
+:::
+
+::: warning
+Warning container
+:::
+
+::: danger
+Dangerous container
+:::
+
+::: details
+Details container
+:::
+
+::: info custom title
+Information container
+:::
+
+::: tip custom title
+Tip container
+:::
+
+::: warning custom title
+Warning container
+:::
+
+::: danger custom Title
+Dangerous container
+:::
+
+::: details custom title
+Details container
+:::
+```
