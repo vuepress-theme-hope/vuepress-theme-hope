@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.0...v0.7.1) (2020-07-21)
+
+### Bug Fixes
+
+- **theme:** fix issues when changing themeColor ([a9114eb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a9114ebdae8c14245f4493b23391ce3577d2237e)), closes [#269](https://github.com/Mister-Hope/vuepress-theme-hope/issues/269)
+
+### Features
+
+- **md-enhance:** update custom block style ([ce798bb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ce798bbad6351f7d95062219494cd31312948619))
+- **theme:** update Home page ([1eac8cf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1eac8cfdbf800b66cf2729a468eda9b5d64887e0))
+
 ## [0.7.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.6.10...v0.7.0) (2020-07-11)
 
 ### Performance Improvements
