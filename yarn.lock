@@ -14036,9 +14036,9 @@ vue-property-decorator@^8.1.1:
     vue-class-component "^7.1.0"
 
 vue-router@^3.1.3, vue-router@^3.3.4:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.1.tgz#e6275bfd1bfad3c0d82766377ba5f5f74f6da549"
-  integrity sha512-vmZSBb/A1+hddeSxPBlbLRnB5l+BkyrH89ojsy+d/OkQ3rb4jqbilaAQ3dfPWWbqPwSd11AX4l/DuBhOcR93dg==
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.3.tgz#fa93768616ee338aa174f160ac965167fa572ffa"
+  integrity sha512-BADg1mjGWX18Dpmy6bOGzGNnk7B/ZA0RxuA6qedY/YJwirMfKXIDzcccmHbQI0A6k5PzMdMloc0ElHfyOoX35A==
 
 vue-server-renderer@^2.6.10:
   version "2.6.11"
