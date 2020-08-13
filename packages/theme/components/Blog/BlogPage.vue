@@ -50,7 +50,7 @@
   padding $navbarHeight 0 0
   margin 0px auto
 
-  @media (max-width: $MQMobile)
+  @media (max-width $MQMobile)
     padding-left 1.5rem
     padding-right 1.5rem
 
@@ -59,19 +59,19 @@
     align-items flex-start
     margin 0 auto
 
-    @media (min-width: $MQMobile)
+    @media (min-width $MQMobile)
       padding 0 1rem
 
-    @media (min-width: $MQNarrow)
+    @media (min-width $MQNarrow)
       padding 0 2rem
 
-    @media (min-width: $MQWide)
+    @media (min-width $MQWide)
       padding 0
 
     .blog-list-wrapper
       flex auto
 
-      @media (min-width: $MQMobile)
+      @media (min-width $MQMobile)
         margin 0 15px
 
       .blog-list
@@ -84,13 +84,13 @@
       flex 0 0 300px
       margin-bottom 12px
 
-      @media (max-width: $MQNormal)
+      @media (max-width $MQNormal)
         display none
 
       .timeline-wrapper
         margin-top 0
 
-        @media (min-width: $MQWide)
+        @media (min-width $MQWide)
           border-top-right-radius 0
           border-bottom-right-radius 0
 </style>

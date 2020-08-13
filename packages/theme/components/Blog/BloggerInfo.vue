@@ -37,16 +37,16 @@
 <style lang="stylus">
 .blogger-info-wrapper
   .blogger-info
-    @media (min-width: $MQNormal)
+    @media (min-width $MQNormal)
       display flex
 
     .logo-media-link
       display none
 
-      @media (min-width: $MQNormal)
+      @media (min-width $MQNormal)
         display flex
 
-      @media (min-width: $MQWide)
+      @media (min-width $MQWide)
         display none
 
       // do not display in sidebar
@@ -68,7 +68,7 @@
           margin 16px auto
           font-size 22px
 
-          @media (min-width: $MQNormal)
+          @media (min-width $MQNormal)
             font-size 24px
 
         .avatar
@@ -82,7 +82,7 @@
       margin 8px auto
       width 80%
 
-      @media (min-width: $MQNormal)
+      @media (min-width $MQNormal)
         width 100%
         flex-direction column-reverse
         justify-content space-evenly
@@ -93,7 +93,7 @@
         font-size 14px
         cursor pointer
 
-        @media (min-width: $MQNormal)
+        @media (min-width $MQNormal)
           display flex
           flex-direction row-reverse
           justify-content space-evenly
@@ -114,6 +114,6 @@
   .bottom-media-link
     display none
 
-    @media (min-width: $MQWide)
+    @media (min-width $MQWide)
       display flex
 </style>

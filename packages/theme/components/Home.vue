@@ -88,14 +88,14 @@
   margin 0px auto
   display block
 
-  @media (max-width: $MQMobileNarrow)
+  @media (max-width $MQMobileNarrow)
     padding-left 1.5rem
     padding-right 1.5rem
 
   .hero
     text-align center
 
-    @media (min-width: $MQNarrow)
+    @media (min-width $MQNarrow)
       display flex
       justify-content space-evenly
       align-items center
@@ -107,11 +107,11 @@
       max-height 280px
       margin 3rem auto 1.5rem
 
-      @media (max-width: $MQMobileNarrow)
+      @media (max-width $MQMobileNarrow)
         max-height 210px
         margin 2rem auto 1.2rem
 
-      @media (min-width: $MQNarrow)
+      @media (min-width $MQNarrow)
         max-height 320px
         margin 0
 
@@ -132,13 +132,13 @@
     h1
       font-size 3rem
 
-      @media (max-width: $MQMobileNarrow)
+      @media (max-width $MQMobileNarrow)
         font-size 2rem
 
     h1, .description, .action
       margin 1.8rem auto
 
-      @media (max-width: $MQMobileNarrow)
+      @media (max-width $MQMobileNarrow)
         margin 1.2rem auto
 
     .description
@@ -147,7 +147,7 @@
       line-height 1.3
       color var(--text-color-l40)
 
-      @media (max-width: $MQMobileNarrow)
+      @media (max-width $MQMobileNarrow)
         font-size 1.2rem
 
     .action-button
@@ -162,7 +162,7 @@
       border-bottom 1px solid var(--accent-color-d10)
       overflow hidden
 
-      @media (max-width: $MQMobileNarrow)
+      @media (max-width $MQMobileNarrow)
         padding 0.6rem 1.2rem
         font-size 1rem
 
@@ -179,7 +179,7 @@
     margin-top 2.5rem
     border-top 1px solid $borderColor
 
-    @media (max-width: $MQMobile)
+    @media (max-width $MQMobile)
       flex-direction column
       align-items stretch
 
@@ -191,7 +191,7 @@
       border-radius 1rem
       overflow hidden
 
-      @media (max-width: $MQNarrow)
+      @media (max-width $MQNarrow)
         flex-basis calc(50% - 5rem)
 
       &.link
@@ -211,7 +211,7 @@
         padding-bottom 0
         color var(--text-color-l10)
 
-        @media (max-width: $MQMobileNarrow)
+        @media (max-width $MQMobileNarrow)
           font-size 1.25rem
 
       p

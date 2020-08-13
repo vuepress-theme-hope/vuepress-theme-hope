@@ -78,16 +78,16 @@
       margin-top 0.75rem
 
   // narrow desktop / iPad
-  @media (max-width: $MQNarrow)
+  @media (max-width $MQNarrow)
     width $mobileSidebarWidth
     font-size 15px
 
-  @media (min-width: ($MQMobile + 1px))
+  @media (min-width ($MQMobile + 1px))
     .theme-container.no-sidebar &
       display none
 
   // wide mobile
-  @media (max-width: $MQMobile)
+  @media (max-width $MQMobile)
     transform translateX(-100%)
     transition transform 0.2s ease
     box-shadow none

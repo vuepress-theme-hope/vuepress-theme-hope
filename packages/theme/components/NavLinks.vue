@@ -46,7 +46,7 @@
     color var(--dark-grey)
     margin-left 1.5rem
 
-@media (max-width: $MQMobile)
+@media (max-width $MQMobile)
   .nav-links
     .nav-link
       &:hover, &.active
@@ -55,7 +55,7 @@
     .nav-item, .repo-link
       margin-left 0
 
-@media (min-width: $MQMobile)
+@media (min-width $MQMobile)
   .nav-item > .nav-link
     &:hover, &.active
       margin-bottom -2px

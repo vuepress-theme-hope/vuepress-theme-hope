@@ -2,11 +2,7 @@
   <span class="visitor-info" :title="hint">
     <EyeIcon v-if="count < 1000" />
     <FireIcon v-else />
-    <span
-      :id="visitorID"
-      :data-flag-title="$page.title"
-      class="leancloud_visitors"
-    >
+    <span :id="visitorID" :data-flag-title="$page.title" class="leancloud_visitors">
       <span class="leancloud-visitors-count">...</span>
     </span>
   </span>

@@ -9,11 +9,7 @@
 
       <Home v-else-if="$frontmatter.home" />
 
-      <Page
-        v-else
-        :headers="slotProps.headers"
-        :sidebar-items="slotProps.sidebarItems"
-      >
+      <Page v-else :headers="slotProps.headers" :sidebar-items="slotProps.sidebarItems">
         <slot slot="top" name="page-top" />
         <slot slot="bottom" name="page-bottom" />
       </Page>

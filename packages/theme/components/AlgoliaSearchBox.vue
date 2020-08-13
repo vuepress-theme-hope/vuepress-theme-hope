@@ -1,14 +1,6 @@
 <template>
-  <form
-    id="search-form"
-    class="algolia-search-wrapper search-box"
-    role="search"
-  >
-    <input
-      id="algolia-search-input"
-      class="search-query"
-      :placeholder="placeholder"
-    />
+  <form id="search-form" class="algolia-search-wrapper search-box" role="search">
+    <input id="algolia-search-input" class="search-query" :placeholder="placeholder" />
   </form>
 </template>
 
@@ -32,7 +24,7 @@
       font-size 16px
       text-align left
 
-      @media (max-width: $MQMobile)
+      @media (max-width $MQMobile)
         min-width calc(100vw - 4rem) !important
         max-width calc(100vw - 4rem) !important
 
@@ -72,7 +64,7 @@
       .algolia-docsearch-suggestion--wrapper
         padding 0
 
-        @media (max-width: $MQMobile)
+        @media (max-width $MQMobile)
           padding 5px 7px 5px 5px !important
 
       .algolia-docsearch-suggestion--title
@@ -87,13 +79,13 @@
         background var(--background-color)
         color var(--text-color)
 
-        @media (min-width: $MQMobile)
+        @media (min-width $MQMobile)
           display table-cell
           float none
           width 150px
           min-width 150px
 
-        @media (max-width: $MQMobile)
+        @media (max-width $MQMobile)
           padding 0 !important
           background white !important
 
@@ -104,7 +96,7 @@
         color #555
 
         &:after
-          @media (max-width: $MQMobile)
+          @media (max-width $MQMobile)
             display inline-block
             vertical-align middle
             content ' > '
@@ -114,7 +106,7 @@
             line-height 14.4px
 
       .algolia-docsearch-suggestion--content
-        @media (min-width: $MQMobile)
+        @media (min-width $MQMobile)
           display table-cell
           float none
           vertical-align top

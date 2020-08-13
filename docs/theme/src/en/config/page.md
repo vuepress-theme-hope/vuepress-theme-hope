@@ -43,6 +43,13 @@ Show the author of the current page. If you don't fill it, you will fall back to
 When the global default author is enabled, you can set `false` to cancel the author display
 :::
 
+### original
+
+- Type: `boolean`
+- Default: `false`
+
+Whether the current article is original.
+
 ### time
 
 - Type: `string`

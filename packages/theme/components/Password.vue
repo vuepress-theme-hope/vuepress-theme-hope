@@ -1,8 +1,6 @@
 <template>
   <div class="password" :class="{ expand: page || isMainPage }">
-    <div class="text" :class="{ hasTried }">
-      {{ hasTried ? "请输入正确密码" : "请输入密码" }}
-    </div>
+    <div class="text" :class="{ hasTried }">{{ hasTried ? "请输入正确密码" : "请输入密码" }}</div>
     <div class="input-wrapper">
       <input v-model="password" type="password" @keypress.enter="verify" />
       <div class="button" @click="verify">OK</div>
@@ -24,10 +22,10 @@
   justify-content center
   align-items center
 
-  @media (max-width: $MQNarrow)
+  @media (max-width $MQNarrow)
     padding-left $mobileSidebarWidth
 
-  @media (max-width: $MQMobile)
+  @media (max-width $MQMobile)
     padding-left 0
 
   &.expand

@@ -20,7 +20,7 @@
   color var(--dark-color, #666)
 
   & > div
-    @media (max-width: $MQMobileNarrow)
+    @media (max-width $MQMobileNarrow)
       width 100%
 
   .media-links-wrapper

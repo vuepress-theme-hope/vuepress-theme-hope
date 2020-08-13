@@ -1,5 +1,6 @@
 ---
 icon: infofill
+original: true
 ---
 
 # 页面信息
@@ -41,3 +42,7 @@ icon: infofill
 默认的统计方式是一分钟 300 字，你可以在插件配置中设置 `wordPerminute` 来覆盖它，该选项不支持在页面单独配置。
 
 :::
+
+## 原创标识
+
+你可以在特定页面的 frontmatter 中设置 `original` 为 `true` 来为你的文章添加原创标签。

@@ -8,7 +8,7 @@
       font-size 0.95em
 
       .has-anchor &
-        @media (min-width: $MQWide)
+        @media (min-width $MQWide)
           display none
 
 a.sidebar-link

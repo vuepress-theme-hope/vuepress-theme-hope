@@ -21,8 +21,7 @@
         ref="siteName"
         :class="{ 'can-hide': $themeConfig.logo }"
         class="site-name"
-        >{{ $siteTitle }}</span
-      >
+      >{{ $siteTitle }}</span>
     </router-link>
 
     <div
@@ -107,7 +106,7 @@
       flex 0 0 auto
       vertical-align top
 
-@media (max-width: $MQMobile)
+@media (max-width $MQMobile)
   .navbar
     padding-left 4rem
 

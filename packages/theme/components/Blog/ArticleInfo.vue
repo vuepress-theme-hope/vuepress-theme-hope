@@ -12,10 +12,7 @@
       <span v-text="time" />
     </span>
 
-    <CategoryInfo
-      v-if="article.frontmatter.category"
-      :category="article.frontmatter.category"
-    />
+    <CategoryInfo v-if="article.frontmatter.category" :category="article.frontmatter.category" />
 
     <TagInfo v-if="tags.length !== 0" :tags="tags" />
 
@@ -48,10 +45,10 @@ $articleInfoTextSize ?= 14px
     margin-right 0.5em
     line-height 2
 
-    @media (min-width: $MQWide)
+    @media (min-width $MQWide)
       font-size 1.1em
 
-    @media (max-width: $MQMobileNarrow)
+    @media (max-width $MQMobileNarrow)
       font-size 0.86rem
 
   .icon

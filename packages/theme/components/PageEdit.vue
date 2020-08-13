@@ -1,9 +1,7 @@
 <template>
   <footer class="page-edit">
     <div v-if="editLink" class="edit-link">
-      <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
-        editLinkText
-      }}</a>
+      <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
       <OutboundLink />
     </div>
 
@@ -44,7 +42,7 @@
       font-weight 400
       color var(--dark-grey)
 
-@media (max-width: $MQMobile)
+@media (max-width $MQMobile)
   .page-edit
     .edit-link
       margin-bottom 8px

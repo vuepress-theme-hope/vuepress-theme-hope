@@ -4,22 +4,17 @@
       <MyTransition>
         <li class="desc">{{ hint }}</li>
       </MyTransition>
-      <MyTransition
-        v-for="(item, index) in $timeline"
-        :key="index"
-        :delay="0.08 * (index + 1)"
-      >
+      <MyTransition v-for="(item, index) in $timeline" :key="index" :delay="0.08 * (index + 1)">
         <li>
           <h3 class="year">{{ item.year }}</h3>
           <ul class="year-wrapper">
-            <li
-              v-for="(article, articleIndex) in item.articles"
-              :key="articleIndex"
-            >
+            <li v-for="(article, articleIndex) in item.articles" :key="articleIndex">
               <span class="date">{{ article.frontmatter.parsedDate }}</span>
-              <span class="title" @click="navigate(article.path)">{{
+              <span class="title" @click="navigate(article.path)">
+                {{
                 article.title
-              }}</span>
+                }}
+              </span>
             </li>
           </ul>
         </li>
@@ -57,7 +52,7 @@
       color var(--text-color)
       font-size 18px
 
-      @media (min-width: $MQNormal)
+      @media (min-width $MQNormal)
         font-size 20px
 
       &:before
@@ -142,7 +137,7 @@
           line-height 30px
           cursor pointer
 
-@media (max-width: $MQMobile)
+@media (max-width $MQMobile)
   .timeline-wrapper
     margin 0 1.2rem
 </style>D

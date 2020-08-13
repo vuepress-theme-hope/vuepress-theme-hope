@@ -1,5 +1,6 @@
 ---
 icon: infofill
+original: true
 ---
 
 # Page information
@@ -41,3 +42,7 @@ It is recommended to fill it with a standard date format. A standard format is i
 The default statistic method is 300 words per minute. You can override it by setting `wordPerminute` in the plugin configuration. This option does not support individual configuration on the page.
 
 :::
+
+## Original logo
+
+You can set `original` to `true` in the frontmatter of a specific page to add original tags to your articles.

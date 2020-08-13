@@ -8,12 +8,8 @@
           role="navigation"
           unselectable="on"
           @click="navigate(currentPage - 1)"
-        >
-          {{ i18n.prev }}
-        </div>
-        <div v-if="displayLeftEllipsis" role="navigation" @click="navigate(1)">
-          1
-        </div>
+        >{{ i18n.prev }}</div>
+        <div v-if="displayLeftEllipsis" role="navigation" @click="navigate(1)">1</div>
         <div v-if="displayLeftEllipsis" class="ellipsis">...</div>
         <div
           v-for="num in indexs"
@@ -21,37 +17,24 @@
           :class="{ active: currentPage === num }"
           role="navigation"
           @click="navigate(num)"
-        >
-          {{ num }}
-        </div>
-        <div
-          v-if="displayRightEllipsis && currentPage < totalPages - 3"
-          class="ellipsis"
-        >
-          ...
-        </div>
+        >{{ num }}</div>
+        <div v-if="displayRightEllipsis && currentPage < totalPages - 3" class="ellipsis">...</div>
         <div
           v-if="displayRightEllipsis && currentPage < totalPages - 3"
           role="navigation"
           @click="navigate(totalPages)"
-        >
-          {{ totalPages }}
-        </div>
+        >{{ totalPages }}</div>
         <div
           v-if="currentPage < totalPages"
           class="btn"
           role="navigation"
           @click="navigate(currentPage + 1)"
-        >
-          {{ i18n.next }}
-        </div>
+        >{{ i18n.next }}</div>
       </div>
       <div class="navigate-wrapper">
         <div class="text">{{ i18n.navigate }}:&nbsp;</div>
         <input v-model="input" type="text" @keypress.enter="jumpPage(input)" />
-        <div class="navigate-button" role="navigation" @click="jumpPage(input)">
-          {{ i18n.button }}
-        </div>
+        <div class="navigate-button" role="navigation" @click="jumpPage(input)">{{ i18n.button }}</div>
       </div>
     </div>
   </div>

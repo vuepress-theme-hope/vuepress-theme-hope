@@ -150,7 +150,7 @@
         padding-top 0
         border-top 0
 
-@media (max-width: $MQMobile)
+@media (max-width $MQMobile)
   .dropdown-wrapper
     &.open .dropdown-title
       margin-bottom 0.5rem
@@ -185,7 +185,7 @@
           font-size 14px
           padding-left 1rem
 
-@media (min-width: $MQMobile)
+@media (min-width $MQMobile)
   .dropdown-wrapper
     height 1.8rem
 

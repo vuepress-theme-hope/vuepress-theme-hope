@@ -1,18 +1,12 @@
 <template>
   <div class="page-title">
     <h1>
-      <i
-        v-if="$frontmatter.icon"
-        :class="`iconfont ${iconPrefix}${$frontmatter.icon}`"
-      />
+      <i v-if="$frontmatter.icon" :class="`iconfont ${iconPrefix}${$frontmatter.icon}`" />
       {{ $page.title }}
     </h1>
     <div v-if="config" class="page-info">
-      <component
-        :is="`${item}-info`"
-        v-for="item in config"
-        :key="$route.path + item"
-      />
+      <span v-if="isOriginal" class="origin" v-text="originText" />
+      <component :is="`${item}-info`" v-for="item in config" :key="$route.path + item" />
     </div>
     <hr />
   </div>
@@ -60,11 +54,24 @@ $pageInfoTextSize ?= 14px
       margin-right 0.5em
       line-height 2
 
-      @media (min-width: $MQWide)
+      @media (min-width $MQWide)
         font-size 1.1em
 
-      @media (max-width: $MQMobileNarrow)
+      @media (max-width $MQMobileNarrow)
         font-size 0.875em
+
+      &.origin
+        display inline-block
+        position relative
+        vertical-align middle
+        margin 0 0.5em
+        padding 0 0.5em
+        border 0.5px solid var(--dark-grey)
+        border-radius 0.75em
+        background-color var(--bg-color)
+        font-size 0.75em
+        line-height 1.5
+        overflow hidden
 
     .icon
       width 1em

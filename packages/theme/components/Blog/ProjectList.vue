@@ -47,16 +47,16 @@
     transition all 0.5s
     align-self stretch
 
-    @media (max-width: $MQMobileNarrow)
+    @media (max-width $MQMobileNarrow)
       width calc(50% - 40px)
 
-    @media (min-width: $MQMobile)
+    @media (min-width $MQMobile)
       width calc(50% - 40px)
 
-    @media (min-width: $MQNarrow)
+    @media (min-width $MQNarrow)
       width calc(33% - 40px)
 
-    @media (min-width: $MQWide)
+    @media (min-width $MQWide)
       width calc(25% - 40px)
 
     &:hover

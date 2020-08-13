@@ -22,17 +22,11 @@
 
           <div class="pswp__counter" />
 
-          <button
-            class="pswp__button pswp__button--close"
-            title="Close (Esc)"
-          />
+          <button class="pswp__button pswp__button--close" title="Close (Esc)" />
 
           <button class="pswp__button pswp__button--share" title="Share" />
 
-          <button
-            class="pswp__button pswp__button--fs"
-            title="Toggle fullscreen"
-          />
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen" />
 
           <button class="pswp__button pswp__button--zoom" title="Zoom in/out" />
 
@@ -47,21 +41,13 @@
           </div>
         </div>
 
-        <div
-          class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
-        >
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
           <div class="pswp__share-tooltip" />
         </div>
 
-        <button
-          class="pswp__button pswp__button--arrow--left"
-          title="Previous (arrow left)"
-        />
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)" />
 
-        <button
-          class="pswp__button pswp__button--arrow--right"
-          title="Next (arrow right)"
-        />
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)" />
 
         <div class="pswp__caption">
           <div class="pswp__caption__center" />

@@ -19,7 +19,7 @@
     align-items center
     background-color var(--grey15, #eee)
 
-  @media (max-width: $MQMobileNarrow)
+  @media (max-width $MQMobileNarrow)
     margin 0 -1.5rem
     padding 0.6em 0
 

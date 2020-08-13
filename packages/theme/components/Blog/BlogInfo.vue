@@ -19,11 +19,7 @@
             :key="article.path"
             :delay="(index + 1) * 0.08"
           >
-            <li
-              class="sticky-article"
-              @click="$router.push(article.path)"
-              v-text="article.title"
-            />
+            <li class="sticky-article" @click="$router.push(article.path)" v-text="article.title" />
           </MyTransition>
         </ul>
       </div>
@@ -32,11 +28,7 @@
     <!-- 分类 -->
     <MyTransition :delay="0.12">
       <div class="category-wrapper">
-        <div
-          v-if="$category.list.length !== 0"
-          class="title"
-          @click="$router.push('/category/')"
-        >
+        <div v-if="$category.list.length !== 0" class="title" @click="$router.push('/category/')">
           <CategoryIcon />
           <span class="num">{{ $category.list.length }}</span>
           {{ i18n.category }}
@@ -51,11 +43,7 @@
     <!-- 标签 -->
     <MyTransition :delay="0.2">
       <div class="tag-wrapper">
-        <div
-          v-if="$tag.list.length !== 0"
-          class="title"
-          @click="$router.push('/tag/')"
-        >
+        <div v-if="$tag.list.length !== 0" class="title" @click="$router.push('/tag/')">
           <TagIcon />
           <span class="num">{{ $tag.list.length }}</span>
           {{ i18n.tag }}
@@ -128,10 +116,10 @@
     margin-bottom 12px
     transition all 0.3s
 
-    @media (max-width: $MQMobile)
+    @media (max-width $MQMobile)
       display none
 
-    @media (min-width: $MQWide)
+    @media (min-width $MQWide)
       flex-basis 360px
 
     .blogger-info-wrapper
@@ -148,7 +136,7 @@
       border-radius 8px
       box-shadow 0 2px 8px 0 var(--card-shadow-color)
 
-      @media (min-width: $MQWide)
+      @media (min-width $MQWide)
         border-top-left-radius 0
         border-bottom-left-radius 0
 
@@ -156,10 +144,10 @@
         box-shadow 0 4px 16px 0 var(--card-shadow-color)
 
     .timeline-list-wrapper
-      @media (min-width: $MQNormal)
+      @media (min-width $MQNormal)
         display none
 
-      @media (min-width: $MQWide)
+      @media (min-width $MQWide)
         border-top-left-radius 0
         border-bottom-left-radius 0
 

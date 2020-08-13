@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* global COMMENT_OPTIONS */
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { Component, Vue } from "vue-property-decorator";
 import { PageInfotype } from "./types";
 import AuthorInfo from "./src/AuthorInfo.vue";
@@ -51,5 +52,14 @@ export default class PageInfo extends Vue {
     const { iconPrefix } = this.$themeConfig;
 
     return iconPrefix === "" ? "" : iconPrefix || "icon-";
+  }
+
+  private get isOriginal(): boolean {
+    return this.$frontmatter.original === true;
+  }
+
+  private get originText(): string {
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+      .origin;
   }
 }

@@ -43,10 +43,7 @@
     </MyTransition>
 
     <!-- 页面评论 -->
-    <MyTransition
-      v-if="(!pagePassword || pageDescrypted) && commentEnable"
-      :delay="0.16"
-    >
+    <MyTransition v-if="(!pagePassword || pageDescrypted) && commentEnable" :delay="0.16">
       <Comment :key="$route.path" />
     </MyTransition>
 
@@ -69,18 +66,18 @@
   background-color var(--background-color)
 
   // narrow desktop / iPad
-  @media (max-width: $MQNarrow)
+  @media (max-width $MQNarrow)
     padding-left $mobileSidebarWidth
 
-  @media (min-width: ($MQMobile + 1px))
+  @media (min-width ($MQMobile + 1px))
     .theme-container.no-sidebar &
       padding-left 0
 
   // wide mobile
-  @media (max-width: $MQMobile)
+  @media (max-width $MQMobile)
     padding-left 0
 
-  @media (min-width: $MQWide)
+  @media (min-width $MQWide)
     .has-anchor &
       padding-right 16rem
 </style>

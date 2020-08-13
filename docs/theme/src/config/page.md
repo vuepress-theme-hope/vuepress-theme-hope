@@ -43,6 +43,13 @@ tags:
 当全局默认作者启用时，可以设置 `false` 取消作者显示
 :::
 
+### original
+
+- 类型: `boolean`
+- 默认: `false`
+
+当前文章是否为原创。
+
 ### time
 
 - 类型: `timeString | string`

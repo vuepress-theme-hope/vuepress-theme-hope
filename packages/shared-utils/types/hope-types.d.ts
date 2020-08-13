@@ -94,6 +94,8 @@ interface HopeLangI18nConfigItem {
     author: string;
     /** 写作日期 */
     time: string;
+    /** 原创文字 */
+    origin: string;
     /** 访问量 */
     views: string;
     /** 标签文字 */

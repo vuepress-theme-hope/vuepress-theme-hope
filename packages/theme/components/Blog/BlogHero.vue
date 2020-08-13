@@ -1,10 +1,6 @@
 <template>
   <div class="blog-hero">
-    <div
-      v-if="$frontmatter.hero !== false"
-      class="hero"
-      :style="{ ...bgImageStyle }"
-    >
+    <div v-if="$frontmatter.hero !== false" class="hero" :style="{ ...bgImageStyle }">
       <div
         class="mask"
         :style="{
@@ -25,9 +21,7 @@
         />
       </MyTransition>
       <MyTransition :delay="0.08">
-        <h1 v-if="$frontmatter.showTitle !== false">
-          {{ $frontmatter.heroText || $title || "Hope" }}
-        </h1>
+        <h1 v-if="$frontmatter.showTitle !== false">{{ $frontmatter.heroText || $title || "Hope" }}</h1>
       </MyTransition>
 
       <MyTransition :delay="0.12">
@@ -44,16 +38,16 @@
   position relative
   color #fff
 
-  @media (min-width: $MQMobile)
+  @media (min-width $MQMobile)
     margin 16px auto
     border-radius 8px
     overflow hidden
 
-  @media (max-width: $MQMobile)
+  @media (max-width $MQMobile)
     height 450px
     margin 0 -1.5rem 16px
 
-  @media (max-width: $MQNarrow)
+  @media (max-width $MQNarrow)
     height 350px
 
   .mask
@@ -83,13 +77,13 @@
     margin 0.5rem auto
     font-size 36px
 
-    @media (max-width: $MQNarrow)
+    @media (max-width $MQNarrow)
       font-size 30px
 
-    @media (max-width: $MQMobile)
+    @media (max-width $MQMobile)
       font-size 36px
 
-    @media (max-width: $MQMobileNarrow)
+    @media (max-width $MQMobileNarrow)
       font-size 30px
 
   .hero-logo + h1
@@ -99,12 +93,12 @@
     margin 1.2rem auto 0
     font-size 20px
 
-    @media (max-width: $MQNarrow)
+    @media (max-width $MQNarrow)
       font-size 18px
 
-    @media (max-width: $MQMobile)
+    @media (max-width $MQMobile)
       font-size 20px
 
-    @media (max-width: $MQMobileNarrow)
+    @media (max-width $MQMobileNarrow)
       font-size 18px
 </style>

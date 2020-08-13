@@ -4,10 +4,7 @@
       <BlogInfo />
     </template>
 
-    <Password
-      v-if="currentPathEncrypted && !globalEncrypted"
-      @password-verify="setPassword"
-    />
+    <Password v-if="currentPathEncrypted && !globalEncrypted" @password-verify="setPassword" />
     <BlogPage v-else />
   </Common>
 </template>

@@ -13,7 +13,7 @@ $headings = 2 3 4 5 6
   max-height 80vh
   overflow-y scroll
 
-  @media (min-width: $MQWide)
+  @media (min-width $MQWide)
     .has-anchor &
       display block
 

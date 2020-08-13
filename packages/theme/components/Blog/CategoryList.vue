@@ -45,7 +45,7 @@ $categoryListTextSize ?= 14px
     overflow hidden
     transition all 0.5s
 
-    @media (max-width: $MQMobileNarrow)
+    @media (max-width $MQMobileNarrow)
       font-size 0.9em
 
     .category-num

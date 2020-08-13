@@ -43,10 +43,10 @@ h1, h2, h3, h4, h5, h6
   margin-bottom - $navbarHeight
   padding-bottom 0.2rem
 
-  @media (max-width: $MQNarrow)
+  @media (max-width $MQNarrow)
     font-size 14px
 
-  @media (max-width: $MQMobileNarrow)
+  @media (max-width $MQMobileNarrow)
     font-size 12.8px
 
   // breadcrumb is disabled

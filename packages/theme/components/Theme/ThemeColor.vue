@@ -98,7 +98,7 @@
       margin 0
       padding 0
 
-@media (max-width: $MQMobile)
+@media (max-width $MQMobile)
   .color-picker
     .color-picker-menu
       left calc(50% - 35px)
