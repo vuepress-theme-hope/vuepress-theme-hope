@@ -44,7 +44,7 @@
     "bcryptjs": "^2.4.3",
     "docsearch.js": "^2.6.3",
     "moment": "^2.27.0",
-    "vue-class-component": "^7.2.4",
+    "vue-class-component": "^7.2.5",
     "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-container": "^2.1.4",
     "vuepress-plugin-copyright": "^1.0.2",
@@ -60,6 +60,6 @@
   },
   "peerDependencies": {
     "typescript": "^3.9.7",
-    "vuepress": "^1.5.2"
+    "vuepress": "^1.5.3"
   }
 }

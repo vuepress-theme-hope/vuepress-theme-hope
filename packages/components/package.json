@@ -31,7 +31,7 @@
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "5.0.2",
-    "vue-router": "^3.3.4"
+    "vue-router": "^3.4.3"
   },
   "publishConfig": {
     "access": "public"

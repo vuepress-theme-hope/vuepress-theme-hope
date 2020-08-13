@@ -120,15 +120,15 @@ const postProcess = (
 const mark = (md: MarkdownIt): void => {
   md.inline.ruler.before("emphasis", "mark", tokenize);
   md.inline.ruler2.before("emphasis", "mark", (state) => {
-    let curr;
-    const tokensMeta = state.tokens_meta;
-    const max = (tokensMeta || []).length;
+    const tokensMeta = state.tokens_meta || [];
 
     postProcess(state, state.delimiters);
 
-    for (curr = 0; curr < max; curr++)
-      if (tokensMeta[curr] && tokensMeta[curr].delimiters)
-        postProcess(state, tokensMeta[curr].delimiters);
+    for (let curr = 0; curr < tokensMeta.length; curr++)
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      if (tokensMeta[curr] && tokensMeta[curr]!.delimiters)
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        postProcess(state, tokensMeta[curr]!.delimiters);
 
     return true;
   });
