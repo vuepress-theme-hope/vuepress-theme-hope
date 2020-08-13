@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.1...v0.7.2) (2020-08-13)
+
+### Bug Fixes
+
+- **theme:** fix lastUpdate cannot be disabled ([bdfc468](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bdfc46810593709d0cd60c5bae75f40a2341ba27)), closes [#311](https://github.com/Mister-Hope/vuepress-theme-hope/issues/311)
+
+### Features
+
+- **comment:** add original hint ([86d4f7a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/86d4f7a1dc7ef49ed4ab12c93198132495ac732d)), closes [#285](https://github.com/Mister-Hope/vuepress-theme-hope/issues/285)
+
 ## [0.7.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.0...v0.7.1) (2020-07-21)
 
 ### Bug Fixes
