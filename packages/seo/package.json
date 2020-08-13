@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-seo",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "seo plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -27,7 +27,7 @@
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-types": "^0.7.1"
+    "@mr-hope/vuepress-types": "^0.7.2"
   },
   "publishConfig": {
     "access": "public"
