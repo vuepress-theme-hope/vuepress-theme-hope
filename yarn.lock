@@ -6685,9 +6685,9 @@ flatted@^2.0.0:
   integrity sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
 
 flowchart.js@^1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/flowchart.js/-/flowchart.js-1.13.0.tgz#fd966270bd310ddefb168d6826c792c5f345372f"
-  integrity sha512-kr+XrH9WSE40ufAec/hs8kbAvSxFx4Fgyf/mjkJwTxWea5USuQAjZt0j9cZJO4ZayWkin9OkWxH4ovLF/5KZFA==
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/flowchart.js/-/flowchart.js-1.14.0.tgz#b468501be54aa279bada8ec5da222e9eec542492"
+  integrity sha512-XpXh6v2EUWJ1FyHdwFX1aZKLRpZXZmkMNcqVAV3dbIAmWGW++Oop31SpZRA/cJ8yaFjM16GZl/tb768fG8mBmg==
   dependencies:
     raphael "2.3.0"
 
