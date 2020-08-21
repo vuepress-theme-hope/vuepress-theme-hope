@@ -29,7 +29,7 @@
     "@types/webpack-dev-server": "^3.11.0",
     "cac": "^6.6.1",
     "markdown-it": "^11.0.0",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-loader": "^15.9.3",
     "webpack": "^4.44.1",
     "webpack-chain": "^6.5.1",

@@ -5,7 +5,7 @@ type Event = TouchEvent | MouseEvent;
 
 /** Popup HTML 事件 */
 interface PopupHtmlElements extends HTMLElement {
-  $vueClickOutside: {
+  $vueClickOutside?: {
     callback: (event: Event) => void;
     handler: (event: Event) => void;
   };
@@ -78,7 +78,7 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
     )
       return;
 
-    el.$vueClickOutside.callback(event);
+    if (el.$vueClickOutside) el.$vueClickOutside.callback(event);
   };
 
   // Add Event Listeners
@@ -93,7 +93,7 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
 
 /** 更新命令 */
 export const update: PopupDirectiveFunction = (el, binding) => {
-  if (validate(binding))
+  if (validate(binding) && el.$vueClickOutside)
     el.$vueClickOutside.callback = binding.value as (event: Event) => void;
 };
 
