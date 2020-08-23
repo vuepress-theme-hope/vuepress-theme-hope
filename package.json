@@ -67,7 +67,7 @@
     "@typescript-eslint/parser": "3.9.1",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "5.0.2",
-    "@vuepress/test-utils": "1.5.3",
+    "@vuepress/test-utils": "1.5.4",
     "chai": "4.2.0",
     "conventional-changelog-cli": "2.1.0",
     "cross-env": "7.0.2",
