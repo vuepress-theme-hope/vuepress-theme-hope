@@ -79,7 +79,7 @@
     "eslint-plugin-vue": "6.2.2",
     "husky": "4.2.5",
     "lerna": "3.22.1",
-    "lint-staged": "10.2.11",
+    "lint-staged": "10.3.0",
     "mocha": "8.1.1",
     "prettier": "2.0.5",
     "sort-package-json": "1.44.0",
