@@ -23,7 +23,7 @@ const renderLink = (
   { text, link, active }: RenderLinkOption
 ): VNode =>
   h(
-    "router-link",
+    "RouterLink",
     {
       props: {
         to: link,

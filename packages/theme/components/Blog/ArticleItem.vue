@@ -1,10 +1,10 @@
 <template>
   <section class="article">
     <StickyIcon v-if="article.frontmatter.sticky" />
-    <router-link class="title" tag="header" :to="article.path">
+    <RouterLink class="title" tag="header" :to="article.path">
       <LockIcon v-if="isEncrypted" />
       {{ article.title }}
-    </router-link>
+    </RouterLink>
     <div v-if="article.excerpt" class="article-excerpt" v-html="article.excerpt" />
     <hr class="hr" />
     <ArticleInfo :article="article" />

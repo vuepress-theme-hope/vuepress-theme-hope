@@ -9,7 +9,7 @@
     ]"
     class="sidebar-group"
   >
-    <router-link
+    <RouterLink
       v-if="item.path"
       :class="{
         open,
@@ -22,7 +22,7 @@
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
       <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
-    </router-link>
+    </RouterLink>
 
     <p
       v-else
@@ -39,7 +39,6 @@
       <SidebarLinks
         v-if="open || !item.collapsable"
         class="sidebar-group-items"
-        :sidebar-depth="item.sidebarDepth"
         :depth="depth + 1"
         :items="item.children"
       />

@@ -10,6 +10,8 @@ export interface NavBarConfigItem {
   link?: string;
   /** 导航栏下拉列表子项 */
   items?: NavBarConfigItem[];
+  target?: string;
+  rel?: string | false;
 }
 
 /** 导航栏配置 */

@@ -4,7 +4,7 @@
       <h1>404</h1>
       <blockquote v-text="msg" />
       <div class="action-button" @click="back">{{ i18n.back }}</div>
-      <router-link class="action-button" to="/">{{ i18n.home }}</router-link>
+      <RouterLink class="action-button" to="/">{{ i18n.home }}</RouterLink>
     </main>
   </Common>
 </template>
