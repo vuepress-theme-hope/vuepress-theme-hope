@@ -42,6 +42,6 @@
     "flowchart.js": "^1.14.0",
     "katex": "^0.12.0",
     "lodash.debounce": "^4.0.8",
-    "vuepress-plugin-container": "^2.1.4"
+    "vuepress-plugin-container": "^2.1.5"
   }
 }
