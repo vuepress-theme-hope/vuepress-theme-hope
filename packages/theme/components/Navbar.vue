@@ -2,7 +2,7 @@
   <header class="navbar">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
-    <router-link :to="$localePath" class="home-link">
+    <RouterLink :to="$localePath" class="home-link">
       <img
         v-if="$themeConfig.logo"
         class="logo"
@@ -22,7 +22,7 @@
         :class="{ 'can-hide': $themeConfig.logo }"
         class="site-name"
       >{{ $siteTitle }}</span>
-    </router-link>
+    </RouterLink>
 
     <div
       :style="

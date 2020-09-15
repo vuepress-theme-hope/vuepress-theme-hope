@@ -44,12 +44,6 @@ export type HopeSideBarConfig =
   | "auto"
   | false;
 
-/** 阅读时间 */
-interface ReadingTime {
-  minutes: number;
-  words: number;
-}
-
 interface HopeLangI18nConfigItem {
   /** Valine 占位符 */
   valineHolder: string;
