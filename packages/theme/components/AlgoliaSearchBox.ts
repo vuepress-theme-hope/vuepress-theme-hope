@@ -52,7 +52,7 @@ export default class AlgoliaSearchBox extends Vue {
           const { pathname, hash } = new URL(suggestion.url);
           const routepath = pathname.replace(this.$site.base, "/");
 
-          void this.$router.push(`${routepath}${hash}`);
+          void this.$router.push(`${routepath}${decodeURIComponent(hash)}`);
         },
       });
     });

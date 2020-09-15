@@ -17,15 +17,42 @@ export default class NavLink extends Vue {
     return iconPrefix === "" ? "" : iconPrefix || "icon-";
   }
 
-  private get active(): boolean {
-    return this.link === this.$route.path;
+  private get exact(): boolean {
+    if (this.$site.locales)
+      return Object.keys(this.$site.locales).some(
+        (rootLink) => rootLink === this.link
+      );
+
+    return this.link === "/";
   }
 
-  private isExternal = isExternal;
+  private get isNonHttpURI(): boolean {
+    return isMailto(this.link) || isTel(this.link);
+  }
 
-  private isMailto = isMailto;
+  private get isBlankTarget(): boolean {
+    return this.target === "_blank";
+  }
 
-  private isTel = isTel;
+  private get isInternal(): boolean {
+    return !isExternal(this.link) && !this.isBlankTarget;
+  }
+
+  private get target(): string | null {
+    if (this.isNonHttpURI) return null;
+
+    if (this.item.target) return this.item.target;
+
+    return isExternal(this.link) ? "_blank" : "";
+  }
+
+  private get rel(): string | null {
+    if (this.isNonHttpURI) return null;
+    if (this.item.rel === false) return null;
+    if (this.item.rel) return this.item.rel;
+
+    return this.isBlankTarget ? "noopener noreferrer" : null;
+  }
 
   private focusoutAction(): void {
     this.$emit("focusout");

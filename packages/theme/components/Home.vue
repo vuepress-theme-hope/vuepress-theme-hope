@@ -1,5 +1,5 @@
 <template>
-  <main aria-labelledby="main-title" class="home">
+  <main :aria-labelledby="$frontmatter.heroText !== null ? 'main-title' : null" class="home">
     <header class="hero">
       <MyTransition>
         <img

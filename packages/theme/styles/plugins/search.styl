@@ -5,11 +5,14 @@
     border-color transparent
     border-radius 0.25em
 
-    @media (max-width: $MQMobile)
+    @media (max-width $MQMobile)
       left 0
 
-    @media (min-width: $MQNarrow)
+    @media (min-width $MQNarrow)
       background-color #efeef4
+
+      &:focus
+        width 15rem
 
     &:focus
       background-color var(--background-color)
@@ -22,7 +25,7 @@
       color var(--text-color)
       background-color var(--background-color) !important
 
-      @media (min-width: $MQNarrow)
+      @media (min-width $MQNarrow)
         border-color var(--border-color)
         background-color lighten($nightBgColor, 10%) !important
 

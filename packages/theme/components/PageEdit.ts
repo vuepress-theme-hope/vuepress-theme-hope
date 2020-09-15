@@ -42,15 +42,18 @@ export default class PageEdit extends Vue {
 
     const bitbucket = /bitbucket.org/u;
 
-    if (bitbucket.test(repo)) {
-      const base = outboundRE.test(docsRepo) ? docsRepo : repo;
-
-      return `${base.replace(endingSlashRE, "")}/src/${docsBranch}/${
+    if (bitbucket.test(docsRepo))
+      return `${docsRepo.replace(endingSlashRE, "")}/src/${docsBranch}/${
         docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
       }${
         this.$page.relativePath
       }?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`;
-    }
+
+    const gitlab = /gitlab.com/u;
+    if (gitlab.test(docsRepo))
+      return `${docsRepo.replace(endingSlashRE, "")}/-/edit/${docsBranch}/${
+        docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
+      }${this.$page.relativePath}`;
 
     const base = outboundRE.test(docsRepo)
       ? docsRepo

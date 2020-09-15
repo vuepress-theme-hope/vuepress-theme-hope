@@ -1,25 +1,25 @@
 <template>
-  <router-link
-    v-if="!isExternal(link)"
+  <RouterLink
+    v-if="isInternal"
     class="nav-link"
-    :class="{ active }"
     :to="link"
+    :exact="exact"
     @focusout.native="focusoutAction"
   >
     <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
     {{ item.text }}
-  </router-link>
+  </RouterLink>
   <a
     v-else
     class="nav-link external"
     :href="link"
-    :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
-    :target="isMailto(link) || isTel(link) ? null : '_blank'"
+    :target="target"
+    :rel="rel"
     @focusout="focusoutAction"
   >
     <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
     {{ item.text }}
-    <OutboundLink />
+    <OutboundLink v-if="isBlankTarget" />
   </a>
 </template>
 

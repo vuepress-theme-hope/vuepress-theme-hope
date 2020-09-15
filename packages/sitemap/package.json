@@ -28,7 +28,7 @@
   "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-types": "^0.7.2",
-    "sitemap": "^6.2.0"
+    "sitemap": "^6.3.0"
   },
   "publishConfig": {
     "access": "public"
