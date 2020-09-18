@@ -9,6 +9,7 @@ import MyTransition from "@theme/components/MyTransition.vue";
 import PageFooter from "@theme/components/PageFooter.vue";
 import ProjectList from "@theme/components/Blog/ProjectList.vue";
 import TagList from "@theme/components/Blog/TagList.vue";
+import Timeline from "@theme/components/Blog/Timeline.vue";
 import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { i18n, HopeLangI18nConfig } from "@mr-hope/vuepress-shared-utils";
 
@@ -22,6 +23,7 @@ import { i18n, HopeLangI18nConfig } from "@mr-hope/vuepress-shared-utils";
     PageFooter,
     ProjectList,
     TagList,
+    Timeline,
     TimelineList,
   },
 })

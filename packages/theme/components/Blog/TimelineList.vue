@@ -1,6 +1,6 @@
 <template>
   <div class="timeline-list-wrapper">
-    <div class="title" @click="$router.push('/timeline/')">
+    <div class="title" @click="navigate('/timeline/')">
       <TimeIcon />
       <span class="num">{{ $timelineItems.length }}</span>
       {{ timeline }}

@@ -49,6 +49,8 @@
 @media (max-width $MQMobile)
   .nav-links
     .nav-link
+      color var(--text-color)
+
       &:hover, &.active
         color var(--accent-color)
 

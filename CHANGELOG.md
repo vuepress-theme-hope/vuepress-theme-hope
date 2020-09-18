@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.2...v0.7.3) (2020-09-15)
+
+### Features
+
+- update theme and deps ([7c5f577](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7c5f577aaf4cc7f25d26336f82dfbfff41e1ce82))
+- update types ([11c1a6d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/11c1a6d9de2893cfe9f72170ac1c78c56fb4b95c))
+
 ## [0.7.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.1...v0.7.2) (2020-08-13)
 
 ### Bug Fixes
