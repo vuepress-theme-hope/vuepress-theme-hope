@@ -21,8 +21,8 @@ The plugin is based on Git and will automatically read the file's last commit ti
 ### transformer
 
 - Type: `(timestamp: number, lang: string) => string`
-- Default value: `` `${moment(timestamp).format('LL')} ${moment(timestamp).format('HH:mm')}` ``
+- Default value: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
 
-Time conversion function, by default, will use moment to automatically localize according to the current page language.
+Time conversion function, by default, will use dayjs to automatically localize according to the current page language.
 
 Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`

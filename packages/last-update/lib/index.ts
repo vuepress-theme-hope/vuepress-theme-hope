@@ -1,14 +1,24 @@
 import { LastUpdateOption } from "../types";
 import { PluginOptionAPI } from "@mr-hope/vuepress-types";
 import getTime from "./time";
-import moment = require("moment");
+import dayjs = require("dayjs");
+import localizedFormat = require("dayjs/plugin/localizedFormat");
+import "dayjs/locale/en";
+import "dayjs/locale/zh";
+import "dayjs/locale/zh-cn";
+
+dayjs.extend(localizedFormat);
+
+const getLang = (lang: string): string => {
+  const langcode = lang.toLowerCase();
+
+  return langcode === "en-us" || langcode === "en-uk" ? "en" : langcode;
+};
 
 const defaultTransformer = (timestamp: number, lang: string): string => {
-  moment.locale(lang);
+  dayjs.locale(getLang(lang));
 
-  return `${moment(timestamp).format("LL")} ${moment(timestamp).format(
-    "HH:mm"
-  )}`;
+  return `${dayjs(timestamp).format("LL")} ${dayjs(timestamp).format("HH:mm")}`;
 };
 
 export = (options: LastUpdateOption): PluginOptionAPI => ({

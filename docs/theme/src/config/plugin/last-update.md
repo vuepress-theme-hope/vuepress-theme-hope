@@ -21,8 +21,8 @@ tags:
 ### transformer
 
 - 类型: `(timestamp: number, lang: string) => string`
-- 默认值: `` `${moment(timestamp).format('LL')} ${moment(timestamp).format('HH:mm')}` ``
+- 默认值: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
 
-时间转换函数，默认情况下，会使用 moment 自动根据当前页面语言进行本地化。
+时间转换函数，默认情况下，会使用 dayjs 自动根据当前页面语言进行本地化。
 
 如: `2020年5月8日 16:05` `May 8, 2020 16:05`
