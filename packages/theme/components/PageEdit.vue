@@ -1,7 +1,9 @@
 <template>
   <footer class="page-edit">
     <div v-if="editLink" class="edit-link">
-      <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
+      <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
+        editLinkText
+      }}</a>
       <OutboundLink />
     </div>
 

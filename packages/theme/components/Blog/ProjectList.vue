@@ -1,7 +1,7 @@
 <template>
   <div class="project-list">
     <div
-      v-for="(project, index) in ($frontmatter.project || [])"
+      v-for="(project, index) in $frontmatter.project || []"
       :key="project.name"
       class="project"
       :class="`project${index % 9}`"

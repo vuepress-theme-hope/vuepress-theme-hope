@@ -1,6 +1,14 @@
 <template>
-  <form id="search-form" class="algolia-search-wrapper search-box" role="search">
-    <input id="algolia-search-input" class="search-query" :placeholder="placeholder" />
+  <form
+    id="search-form"
+    class="algolia-search-wrapper search-box"
+    role="search"
+  >
+    <input
+      id="algolia-search-input"
+      class="search-query"
+      :placeholder="placeholder"
+    />
   </form>
 </template>
 

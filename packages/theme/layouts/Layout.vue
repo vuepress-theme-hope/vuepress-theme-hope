@@ -1,7 +1,10 @@
 <template>
   <Common :sidebar="$frontmatter.blog !== true">
-    <template #sidebar-bottom>
-      <BlogInfo v-if="$frontmatter.blog && $themeConfig.blog !== false" />
+    <template
+      v-if="$frontmatter.blog && $themeConfig.blog !== false"
+      #sidebar-bottom
+    >
+      <BlogInfo />
     </template>
 
     <template #default="slotProps">
@@ -9,9 +12,18 @@
 
       <Home v-else-if="$frontmatter.home" />
 
-      <Page v-else :headers="slotProps.headers" :sidebar-items="slotProps.sidebarItems">
-        <slot slot="top" name="page-top" />
-        <slot slot="bottom" name="page-bottom" />
+      <Page
+        v-else
+        :headers="slotProps.headers"
+        :sidebar-items="slotProps.sidebarItems"
+      >
+        <template #top>
+          <slot name="page-top" />
+        </template>
+
+        <template #bottom>
+          <slot name="page-bottom" />
+        </template>
       </Page>
     </template>
   </Common>

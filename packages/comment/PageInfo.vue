@@ -1,12 +1,19 @@
 <template>
   <div class="page-title">
     <h1>
-      <i v-if="$frontmatter.icon" :class="`iconfont ${iconPrefix}${$frontmatter.icon}`" />
+      <i
+        v-if="$frontmatter.icon"
+        :class="`iconfont ${iconPrefix}${$frontmatter.icon}`"
+      />
       {{ $page.title }}
     </h1>
     <div v-if="config" class="page-info">
       <span v-if="isOriginal" class="origin" v-text="originText" />
-      <component :is="`${item}-info`" v-for="item in config" :key="$route.path + item" />
+      <component
+        :is="`${item}-info`"
+        v-for="item in config"
+        :key="$route.path + item"
+      />
     </div>
     <hr />
   </div>

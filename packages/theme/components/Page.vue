@@ -43,7 +43,10 @@
     </MyTransition>
 
     <!-- 页面评论 -->
-    <MyTransition v-if="(!pagePassword || pageDescrypted) && commentEnable" :delay="0.16">
+    <MyTransition
+      v-if="(!pagePassword || pageDescrypted) && commentEnable"
+      :delay="0.16"
+    >
       <Comment :key="$route.path" />
     </MyTransition>
 

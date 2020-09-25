@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.3...v0.7.4) (2020-09-18)
+
+### Bug Fixes
+
+- **theme:** fix timeline issue ([384ab51](https://github.com/Mister-Hope/vuepress-theme-hope/commit/384ab51840bb59067f45d68ea426451b12bfad14))
+
+### Features
+
+- use dayjs and remove moment.js ([7f904cf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7f904cf0f6aa1c0333a1e1aaae003c645a0afb5a))
+
 ## [0.7.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.2...v0.7.3) (2020-09-15)
 
 ### Features

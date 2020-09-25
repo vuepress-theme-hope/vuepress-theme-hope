@@ -1,6 +1,10 @@
 <template>
   <div class="blog-hero">
-    <div v-if="$frontmatter.hero !== false" class="hero" :style="{ ...bgImageStyle }">
+    <div
+      v-if="$frontmatter.hero !== false"
+      class="hero"
+      :style="{ ...bgImageStyle }"
+    >
       <div
         class="mask"
         :style="{
@@ -21,7 +25,9 @@
         />
       </MyTransition>
       <MyTransition :delay="0.08">
-        <h1 v-if="$frontmatter.showTitle !== false">{{ $frontmatter.heroText || $title || "Hope" }}</h1>
+        <h1 v-if="$frontmatter.showTitle !== false">
+          {{ $frontmatter.heroText || $title || "Hope" }}
+        </h1>
       </MyTransition>
 
       <MyTransition :delay="0.12">

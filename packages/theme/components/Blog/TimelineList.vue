@@ -8,16 +8,21 @@
     <hr />
     <div class="content">
       <ul class="timeline-list">
-        <MyTransition v-for="(item, index) in $timeline" :key="index" :delay="0.08 * (index + 1)">
+        <MyTransition
+          v-for="(item, index) in $timeline"
+          :key="index"
+          :delay="0.08 * (index + 1)"
+        >
           <li>
             <h3 class="year">{{ item.year }}</h3>
             <ul class="year-wrapper">
-              <li v-for="(article, articleIndex) in item.articles" :key="articleIndex">
+              <li
+                v-for="(article, articleIndex) in item.articles"
+                :key="articleIndex"
+              >
                 <span class="date">{{ article.frontmatter.parsedDate }}</span>
                 <span class="timeline-title" @click="navigate(article.path)">
-                  {{
-                  article.title
-                  }}
+                  {{ article.title }}
                 </span>
               </li>
             </ul>

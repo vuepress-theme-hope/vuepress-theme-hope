@@ -1,5 +1,8 @@
 <template>
-  <main :aria-labelledby="$frontmatter.heroText !== null ? 'main-title' : null" class="home">
+  <main
+    :aria-labelledby="$frontmatter.heroText !== null ? 'main-title' : null"
+    class="home"
+  >
     <header class="hero">
       <MyTransition>
         <img
@@ -29,10 +32,10 @@
           <p
             class="description"
             v-text="
-            $frontmatter.tagline ||
-            $description ||
-            'Welcome to your VuePress site'
-          "
+              $frontmatter.tagline ||
+              $description ||
+              'Welcome to your VuePress site'
+            "
           />
         </MyTransition>
         <MyTransition :delay="0.12">
@@ -49,7 +52,10 @@
     </header>
 
     <MyTransition :delay="0.16">
-      <div v-if="$frontmatter.features && $frontmatter.features.length" class="features">
+      <div
+        v-if="$frontmatter.features && $frontmatter.features.length"
+        class="features"
+      >
         <div
           v-for="(feature, index) in $frontmatter.features"
           :key="index"
@@ -58,9 +64,7 @@
         >
           <h2>
             <span v-if="feature.link" @click="navigate(feature.link)">
-              {{
-              feature.title
-              }}
+              {{ feature.title }}
             </span>
             <span v-else>{{ feature.title }}</span>
           </h2>

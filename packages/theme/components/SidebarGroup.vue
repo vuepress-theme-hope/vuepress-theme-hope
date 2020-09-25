@@ -21,7 +21,11 @@
     >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
-      <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
+      <span
+        v-if="item.collapsable"
+        :class="open ? 'down' : 'right'"
+        class="arrow"
+      />
     </RouterLink>
 
     <p
@@ -32,7 +36,11 @@
     >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
-      <span v-if="item.collapsable" :class="open ? 'down' : 'right'" class="arrow" />
+      <span
+        v-if="item.collapsable"
+        :class="open ? 'down' : 'right'"
+        class="arrow"
+      />
     </p>
 
     <DropdownTransition>

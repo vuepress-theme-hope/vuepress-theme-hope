@@ -21,7 +21,8 @@
         ref="siteName"
         :class="{ 'can-hide': $themeConfig.logo }"
         class="site-name"
-      >{{ $siteTitle }}</span>
+        >{{ $siteTitle }}</span
+      >
     </RouterLink>
 
     <div

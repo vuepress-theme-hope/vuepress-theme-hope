@@ -12,7 +12,10 @@
       <span v-text="time" />
     </span>
 
-    <CategoryInfo v-if="article.frontmatter.category" :category="article.frontmatter.category" />
+    <CategoryInfo
+      v-if="article.frontmatter.category"
+      :category="article.frontmatter.category"
+    />
 
     <TagInfo v-if="tags.length !== 0" :tags="tags" />
 
