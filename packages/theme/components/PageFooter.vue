@@ -1,7 +1,9 @@
 <template>
   <footer v-if="display" class="footer-wrapper">
     <MediaLinks />
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="footerContent" class="footer" v-html="footerContent" />
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="copyright" class="copyright" v-html="copyright" />
   </footer>
 </template>

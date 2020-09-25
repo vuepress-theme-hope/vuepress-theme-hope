@@ -5,115 +5,44 @@ env:
   es6: true
 
 extends:
-  - eslint:recommended
-  - plugin:vue/recommended
+  - "plugin:vue/vue3-recommended"
+  - "eslint:recommended"
   - prettier
   - prettier/vue
-  - "@vue/typescript"
 
-plugins:
-  - prettier
-  - vue
-
-rules:
-  comma-dangle:
-    - off
-
-  complexity:
-    - warn
-    - max: 25
-
-  curly:
-    - error
-    - multi
-
-  id-length:
-    - error
-    - min: 2
-      exceptions:
-        - a
-        - b
-        - h
-        - i
-        - j
-        - k
-
-  indent:
-    - off
-
-  max-statements:
-    - warn
-    - 25
-
-  no-param-reassign:
-    - error
-    - props: false
-
-  no-plusplus:
-    - error
-    - allowForLoopAfterthoughts: true
-
-  no-warning-comments:
-    - warn
-
-  object-curly-spacing:
-    - off
-
-  prefer-destructuring:
-    - error
-    - object: true
-      array: false
-
-  quotes:
-    - off
-
-  radix:
-    - error
-    - as-needed
-
-  vue/require-default-prop:
-    - warn
-
-  vue/html-self-closing:
-    - error
-    - html:
-        void: always
-
-  vue/max-attributes-per-line:
-    - error
-    - singleline: 5
-
-  vue/no-v-html:
-    - off
+ignorePatterns:
+  - "**/dist/**"
+  - "**/node_modules/**"
+  - "packages/**/*.js"
+  - "packages/**/*.d.ts"
+  - "!packages/pwa/lib/skip-waiting.js"
+  - "!packages/theme/src/lib/clientRootMixin.js"
+  - "!packages/theme/src/lib/noopModule.js"
+  - "!packages/**/test/**/*.js"
+  - "!packages/**/types/**/*.d.ts"
+  - "!.vuepress/**"
 
 overrides:
   - files:
-      - "index.js"
-
-    rules:
-      camelcase:
-        - off
-
-  - files:
-      - "*.ts"
+      - "*.vue"
 
     extends:
-      - plugin:@typescript-eslint/eslint-recommended
-      - plugin:@typescript-eslint/recommended
-      - plugin:@typescript-eslint/recommended-requiring-type-checking
+      - "plugin:@typescript-eslint/eslint-recommended"
+      - "plugin:@typescript-eslint/recommended"
       - prettier/@typescript-eslint
+      - "@vue/typescript/recommended"
+      - "@vue/prettier"
+      - "@vue/prettier/@typescript-eslint"
 
     plugins:
       - "@typescript-eslint"
 
-    parser: "vue-eslint-parser"
+    parser: vue-eslint-parser
 
     parserOptions:
+      extraFileExtensions:
+        - .vue
       parser: "@typescript-eslint/parser"
-      project:
-        - "./tsconfig.json"
-        - "./commonjs-tsconfig.json"
-        - "./test-tsconfig.json"
 
     rules:
       "@typescript-eslint/explicit-function-return-type":
@@ -128,10 +57,76 @@ overrides:
           leadingUnderscore: allow
           trailingUnderscore: allow
 
-        - selector: variable
+        - selector:
+            - variable
           format:
             - camelCase
             - UPPER_CASE
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector:
+            - property
+          format:
+            - camelCase
+            - PascalCase
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector: typeLike
+          format:
+            - PascalCase
+
+      "@typescript-eslint/no-explicit-any":
+        - warn
+        - ignoreRestArgs: true
+
+  - files:
+      - "*.ts"
+
+    extends:
+      - "plugin:@typescript-eslint/eslint-recommended"
+      - "plugin:@typescript-eslint/recommended"
+      - "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      - prettier/@typescript-eslint
+
+    plugins:
+      - "@typescript-eslint"
+
+    parser: vue-eslint-parser
+
+    parserOptions:
+      parser: "@typescript-eslint/parser"
+      project:
+        - "./tsconfig.json"
+        - "./commonjs-tsconfig.json"
+        - "./test-tsconfig.json"
+    rules:
+      "@typescript-eslint/explicit-function-return-type":
+        - warn
+        - allowTypedFunctionExpressions: true
+
+      "@typescript-eslint/naming-convention":
+        - warn
+        - selector: default
+          format:
+            - camelCase
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector:
+            - variable
+          format:
+            - camelCase
+            - UPPER_CASE
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector:
+            - property
+          format:
+            - camelCase
+            - PascalCase
           leadingUnderscore: allow
           trailingUnderscore: allow
 
@@ -153,13 +148,8 @@ overrides:
         - off
 
   - files:
-      - "*.vue"
-
-    rules:
-      no-unused-vars:
-        - off
-
-  - files:
+      - "**/tests/unit/**/*.spec.{j,t}s?(x)"
+      - "**/__tests__/*.{j,t}s?(x)"
       - "**/test/**/*.spec.js"
       - "**/test/**/*.spec.ts"
       - "**/test/**/*.test.js"
@@ -168,10 +158,6 @@ overrides:
     env:
       mocha: true
 
-    rules:
-      id-length: "off"
-      max-lines-per-function: "off"
-
   - files:
       - "**/test/**/*.spec.ts"
       - "**/test/**/*.test.ts"
@@ -179,6 +165,5 @@ overrides:
     rules:
       "@typescript-eslint/no-explicit-any":
         - off
-
       "@typescript-eslint/no-unsafe-member-access":
         - off

@@ -17,7 +17,7 @@
       }"
       class="sidebar-heading clickable"
       :to="item.path"
-      @click.native="$emit('toggle')"
+      @click="$emit('toggle')"
     >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
       <span>{{ item.title }}</span>
