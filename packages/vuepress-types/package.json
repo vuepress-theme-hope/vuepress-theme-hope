@@ -33,7 +33,7 @@
     "vue-loader": "15.9.3"
   },
   "peerDependencies": {
-    "vuepress": "^1.5.4"
+    "vuepress": "^1.6.0"
   },
   "publishConfig": {
     "access": "public"
