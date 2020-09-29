@@ -63,7 +63,7 @@
   "devDependencies": {
     "@types/chai": "4.2.12",
     "@types/mocha": "8.0.3",
-    "@typescript-eslint/eslint-plugin": "4.2.0",
+    "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.2.0",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "5.1.0",
