@@ -12,7 +12,7 @@ vuepress-theme-hope 对首页布局进行了一些改进。
 
 如果想要使用它，请在 Front Matter 中设置 `home: true`。任何 `YAML front matter` 之后额外的内容将会以普通的 markdown 被渲染，并插入到 `features` 的后面。
 
-![首页截图](./assets/home.png)
+![首页截图](./assets/home-new.png)
 
 ## 配置选项
 
@@ -86,8 +86,11 @@ title: 博客示例
 heroImage: /logo.png
 heroText: 博客示例
 tagline: 这是一个 Vuepress 搭建的博客
-actionText: 了解更多 →
-actionLink: /vuepress/
+action:
+  - text: 指南
+    link: /guide/
+  - text: 配置
+    link: /config/
 features:
   - title: 简洁至上
     details: Vue 驱动的静态网站生成器，以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
