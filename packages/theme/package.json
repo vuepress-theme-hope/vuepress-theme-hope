@@ -42,7 +42,7 @@
     "@types/bcryptjs": "2.4.2",
     "@vuepress/plugin-blog": "^1.9.2",
     "bcryptjs": "^2.4.3",
-    "dayjs": "^1.8.36",
+    "dayjs": "^1.9.1",
     "docsearch.js": "^2.6.3",
     "vue-class-component": "^7.2.6",
     "vuepress-plugin-clean-urls": "^1.1.2",

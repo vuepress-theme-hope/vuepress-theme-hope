@@ -82,19 +82,61 @@ Feature description
 ```yaml
 ---
 home: true
-heroImage: /hero.png
-heroText: Hero Title
-tagline: Hero subtitle
-actionText: Get Started →
-actionLink: /guide/
+icon: homefill
+title: vuepress-theme-hope
+heroImage: /logo.svg
+heroText: vuepress-theme-hope
+tagline: A light Vuepress theme
+action:
+  - text: Get Started 💡
+    link: /en/guide/
+
+  - text: Config 🛠
+    link: /en/config/
+
 features:
-  - title: Simplicity First
-    details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  - title: Vue-Powered
-    details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-  - title: Performant
-    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-footer: MIT Licensed | Copyright © 2018-present Evan You
+  - title: Custom theme color
+    details: Supports custom theme colors and allows users to switch between preset theme colors
+    link: /en/guide/feature/themecolor/
+
+  - title: Dark Mode
+    details: Switch between light and dark modes freely
+    link: /en/guide/feature/darkmode/
+
+  - title: Pageviews and comments
+    details: Start pageview statistics and comment support with Valine and Vssue
+    link: /en/guide/feature/comment/
+
+  - title: Article information display
+    details: Add author, writing date, reading time, word count and other information to your article
+    link: /en/guide/feature/page-info/
+
+  - title: Markdown Enhance
+    details: Add align, sup/sub script, footnote, tex, flowchart and mark support in markdown
+    link: /en/guide/feature/markdown/
+
+  - title: Blog support
+    details: Add date, tags and category to your articles, than we will generate article, tag, category and timeline list for you
+    link: /en/guide/feature/blog/
+
+  - title: Article Encryption
+    details: Encrypt you article based on path and folders, so that only the one you want could see them
+    link: /en/guide/feature/blog/
+
+  - title: More new features
+    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
+    link: /en/guide/feature/
+
+  - title: PWA support
+    details: The built-in PWA plugin will make your website more like an APP.
+    link: /en/config/plugin/pwa/
+
+  - title: TS support
+    details: Turn on Typescript support for your Vuepress
+    link: /en/guide/feature/typescript/
+
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: false
 ---
 
 ```
