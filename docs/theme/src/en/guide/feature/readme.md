@@ -38,6 +38,6 @@ tags:
   @import "//at.alicdn.com/t/font_1446717_giwlq66d28j.css";
   ```
 
-  The prefix of the icon is `icon-` by default, which can be changed in the `iconPrefix` field in the theme configuration.
+  The class added to the icon is `iconfont`, and the prefix of the icon is `icon-` by default, which can be changed in the `iconPrefix` field in the theme configuration.
 
 - [**Typescript support**](typescript.md)
