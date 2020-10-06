@@ -51,7 +51,7 @@ module.exports = {
 
 将对应的 `APP ID` 和 `APP Key` 填入， Valine 即配置完成。
 
-Valine 评论的其他配置将在 [配置](http://vuepress-comment.mrhope.site/api/valine.html) 中列出。
+Valine 评论的其他配置将在 [配置](http://vuepress-comment.mrhope.site/config/valine/) 中列出。
 
 ::: tip
 更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。
@@ -63,7 +63,7 @@ Valine 评论的其他配置将在 [配置](http://vuepress-comment.mrhope.site/
 
 Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为你的静态页面提供评论功能，你可以选择其中之一来使用。
 
-前往 [支持的代码托管平台 - 创建 OAuth App](http://comment.mrhope.site/guide/supported-platforms.html) 查看详细指引。
+前往 [支持的代码托管平台 - 创建 OAuth App](http://vuepress-comment.mrhope.site/guide/supported-platforms/) 查看详细指引。
 
 完成这一步之后，你将会配置好一个 OAuth App，并得到对应的 `client id` 和 `client secret`，它们将会用于 Vssue 的使用。
 

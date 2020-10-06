@@ -18,7 +18,7 @@
 
 ## 官方文档 / Official Docs
 
-[中文文档](https://vuepress-theme.mrhope.site/) | [English Docs](https://vuepress-theme.mrhope.site/en/)
+[中文文档](https://vuepress-theme.mrhope.site) | [English Docs](https://vuepress-theme.mrhope.site/en/)
 
 ## 主题特点
 

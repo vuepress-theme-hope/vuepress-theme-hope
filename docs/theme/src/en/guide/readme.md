@@ -79,6 +79,6 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-sitemap](../config/plugin/sitemap.md): Sitemap Generator for your site
 
-- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/): Provide more Markdown syntax
+- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/en/): Provide more Markdown syntax
 
 - [vuepress-plugin-photo-swipe](../config/plugin/photo-swipe.md): Make the site's picture support click zoom

@@ -1,6 +1,7 @@
 ---
 home: true
 title: vuepress-plugin-comment
+icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-comment
 tagline: 评论与阅读量插件

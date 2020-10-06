@@ -68,7 +68,7 @@ tags: intro
 
 本主题还包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
-- [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/): 评论与文章信息功能
+- [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site): 评论与文章信息功能
 
 - [@mr-hope/vuepress-plugin-component](feature/component.md): 提供一些开箱即用的插件
 
@@ -82,6 +82,6 @@ tags: intro
 
 - [@mr-hope/vuepress-plugin-sitemap](../config/plugin/sitemap.md): 为你的站点生成 sitemap
 
-- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/): 提供更多 Markdown 语法
+- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site): 提供更多 Markdown 语法
 
 - [vuepress-plugin-photo-swipe](../config/plugin/photo-swipe.md): 使网站的图片支持点击缩放

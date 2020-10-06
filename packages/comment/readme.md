@@ -8,7 +8,7 @@
 
 ## 文档 / Docs
 
-[官方文档](https://vuepress-comment.mrhope.site/) | [English Docs](https://vuepress-comment.mrhope.site/en/)
+[官方文档](https://vuepress-comment.mrhope.site) | [English Docs](https://vuepress-comment.mrhope.site/en/)
 
 ## 使用 / Usage
 

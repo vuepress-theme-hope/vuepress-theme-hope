@@ -60,4 +60,4 @@ $$
 
 ### 更多
 
-关于具体的 Tex 语法，请看 [Katex 教程](https://vuepress-md-enhance.mrhope.site/guide/tex.html#%E8%BF%90%E7%AE%97%E7%AC%A6)
+关于具体的 Tex 语法，请看 [Katex 教程](https://vuepress-md-enhance.mrhope.site/guide/tex/#%E8%BF%90%E7%AE%97%E7%AC%A6)

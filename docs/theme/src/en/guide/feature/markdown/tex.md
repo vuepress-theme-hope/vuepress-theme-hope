@@ -41,7 +41,7 @@ Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 Use `$$codes$$` to indicate.
 
-::: details 例子
+::: details Demo
 
 ```md
 $$
@@ -59,4 +59,4 @@ $$
 
 ### More
 
-For specific Tex syntax, see [Katex tutorial](https://vuepress-md-enhance.mrhope.site/en/guide/tex.html#tutorial)
+For specific Tex syntax, see [Katex tutorial](https://vuepress-md-enhance.mrhope.site/en/guide/tex/#tutorial)

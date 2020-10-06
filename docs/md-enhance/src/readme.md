@@ -1,6 +1,7 @@
 ---
 home: true
 title: vuepress-plugin-md-enhance
+icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
 tagline: 为 Vuepress 提供更多 Markdown 增强功能

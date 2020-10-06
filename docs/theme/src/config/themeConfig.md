@@ -449,7 +449,7 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 ## 评论设置
 
-具体配配置请见　[@mr-hope/vuepress-plugin-comment 文档](http://comment.mrhope.site/config/)
+具体配配置请见　[@mr-hope/vuepress-plugin-comment 文档](https://vuepress-comment.mrhope.site/config/)
 
 可以直接设置为 `false` 来禁用评论功能
 

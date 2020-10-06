@@ -437,7 +437,7 @@ Whether to enable flowchart syntax support
 
 ## Comment settings
 
-For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation](http://comment.mrhope.site/en/config/)
+For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation](https://vuepress-comment.mrhope.site/en/config/)
 
 You can set it to `false` directly to disable the comment function
 
