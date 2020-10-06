@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-pwa",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "pwa plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -27,8 +27,8 @@
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.7.4",
-    "@mr-hope/vuepress-types": "^0.7.4",
+    "@mr-hope/vuepress-shared-utils": "^0.7.5",
+    "@mr-hope/vuepress-types": "^0.7.5",
     "@types/fs-extra": "^9.0.1",
     "chalk": "^4.1.0",
     "register-service-worker": "^1.7.1",

@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-sitemap",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "sitemap plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -27,7 +27,7 @@
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-types": "^0.7.4",
+    "@mr-hope/vuepress-types": "^0.7.5",
     "sitemap": "^6.3.2"
   },
   "publishConfig": {
