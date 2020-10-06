@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.4...v0.7.5) (2020-10-06)
+
+### Bug Fixes
+
+- **theme:** fix fontawesome issue ([6b560e2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6b560e22169c4304a6c878fc508a97df9a51e0a8)), closes [#375](https://github.com/Mister-Hope/vuepress-theme-hope/issues/375)
+- **theme:** fix light code block style ([f857212](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f857212a66d34ef7d20b080844da9ebdbeb1c64d)), closes [#362](https://github.com/Mister-Hope/vuepress-theme-hope/issues/362)
+
+### Features
+
+- update linter ([5ff8f04](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5ff8f041bb79f11f326f4b620a24df0a59356e05))
+
 ## [0.7.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.3...v0.7.4) (2020-09-18)
 
 ### Bug Fixes
