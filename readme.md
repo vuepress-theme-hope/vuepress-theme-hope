@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 <p align="center">
   <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" />
 </p>
@@ -5,6 +6,9 @@
 <h4 align="center">一个轻量的 vuepress 主题✨ / A light vuepress theme✨</h4>
 
 [![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
+
+<!-- markdownlint-restore -->
+
 [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/LICENSE)
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm) ![Dependencies](https://img.shields.io/librariesio/release/npm/vuepress-theme-hope?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-hope)

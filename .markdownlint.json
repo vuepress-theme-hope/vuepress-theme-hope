@@ -1,7 +1,21 @@
 {
+  "default": true,
+  "MD003": {
+    "style": "atx"
+  },
+  "MD004": {
+    "style": "dash"
+  },
   "MD013": false,
-  "MD024": false,
-  "MD033": false,
-  "MD034": false,
+  "MD024": {
+    "allow_different_nesting": true
+  },
+  "MD033": {
+    "allowed_elements": ["br", "MyBadge", "Badge"]
+  },
+  "MD035": {
+    "style": "---"
+  },
+  "MD040": false,
   "MD046": false
 }

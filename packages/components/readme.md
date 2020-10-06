@@ -66,11 +66,11 @@ npm i @mr-hope/vuepress-plugin-components
 - Pagination
 - ScreenFull
 
-## BackToTop
+## `<BackToTop />`
 
 返回顶部按钮
 
-## BreadCrumb
+## `<BreadCrumb />`
 
 会读取主题配置中的以下字段
 
@@ -78,11 +78,11 @@ npm i @mr-hope/vuepress-plugin-components
 - `breacurmb`: 是否启用路径导航
 - `iconPrefix`: 图标前缀，默认为 `icon-`，设置 `false` 或 `''` 取消前缀，也可设置其他值。
 
-## MyBadge
+## `<MyBadge />`
 
 支持自定义颜色的徽章
 
-## Pagination
+## `<Pagination />`
 
 分页组件。
 
@@ -92,6 +92,6 @@ npm i @mr-hope/vuepress-plugin-components
 - total: 总项数
 - perPage: 每页包含的项目数，默认为 10
 
-## ScreenFull
+## `<ScreenFull />`
 
 全屏按钮组件

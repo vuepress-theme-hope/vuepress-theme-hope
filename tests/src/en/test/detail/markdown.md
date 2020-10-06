@@ -41,14 +41,15 @@ Duplicated footnote reference[^second].
 
 ## 流程图展示
 
+<!-- markdownlint-disable -->
 @flowstart
-st=>start: Start|past:><http://www.google.com[blank]>
-e=>end: End|future:><http://www.google.com>
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
 op2=>operation: Stuff|current
 sub1=>subroutine: My Subroutine|invalid
 cond=>condition: Yes
-or No?|approved:><http://www.google.com>
+or No?|approved:>http://www.google.com
 c2=>condition: Good idea|rejected
 io=>inputoutput: catch something...|future
 
@@ -58,6 +59,7 @@ cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
 @flowend
+<!-- markdownlint-restore -->
 
 ## 公式展示
 
