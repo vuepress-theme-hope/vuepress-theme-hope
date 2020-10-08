@@ -30,6 +30,7 @@
     "@mr-hope/vuepress-shared-utils": "^0.7.5",
     "@mr-hope/vuepress-types": "^0.7.5",
     "@types/fs-extra": "^9.0.1",
+    "@vue/composition-api": "1.0.0-beta.15",
     "chalk": "^4.1.0",
     "register-service-worker": "^1.7.1",
     "workbox-build": "^5.1.4"

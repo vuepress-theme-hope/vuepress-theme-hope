@@ -1,11 +1,15 @@
 /* global SW_BASE_URL */
-import { EnhanceApp } from "@mr-hope/vuepress-types";
+import VueCompositionAPI from "@vue/composition-api";
+import event from "./event";
+
 import SWUpdateEvent from "./SWUpdateEvent";
 import SWUpdatePopup from "./SWUpdatePopup.vue";
-import event from "./event";
+
+import { EnhanceApp } from "@mr-hope/vuepress-types";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
+  Vue.use(VueCompositionAPI);
   Vue.component("SWUpdatePopup", SWUpdatePopup);
   if (process.env.NODE_ENV === "production" && !isServer) {
     const { register } = await import("register-service-worker");
