@@ -1,39 +1,46 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { defineComponent, PropType } from "@vue/composition-api";
+import { capitalize, i18n } from "@mr-hope/vuepress-shared-utils";
+
 import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-@Component({ components: { TagIcon } })
-export default class TagInfo extends Vue {
-  @Prop({ type: Array, default: () => [] })
-  private readonly tags!: string[];
+export default defineComponent({
+  name: "TagInfo",
 
-  private get $tags(): string[] {
-    if (this.tags.length !== 0) return this.tags;
+  components: { TagIcon },
 
-    const {
-      tag,
-      tags = tag as string | string[] | undefined,
-    } = this.$frontmatter;
+  props: {
+    tags: { type: Array as PropType<string[]>, default: (): string[] => [] },
+  },
 
-    if (typeof tags === "string") return [capitalize(tags)];
+  computed: {
+    $tags(): string[] {
+      if (this.tags.length !== 0) return this.tags;
 
-    if (Array.isArray(tags)) return tags.map((item) => capitalize(item));
+      const {
+        tag,
+        tags = tag as string | string[] | undefined,
+      } = this.$frontmatter;
 
-    return [];
-  }
+      if (typeof tags === "string") return [capitalize(tags)];
 
-  private get clickable(): boolean {
-    return this.$themeConfig.blog !== false;
-  }
+      if (Array.isArray(tags)) return tags.map((item) => capitalize(item));
 
-  private navigate(tagName: string): void {
-    const path = `/tag/${tagName}/`;
-    if (this.$route.path !== path) void this.$router.push(path);
-  }
+      return [];
+    },
 
-  private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).tag;
-  }
-}
+    clickable(): boolean {
+      return this.$themeConfig.blog !== false;
+    },
+
+    hint(): string {
+      return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).tag;
+    },
+  },
+
+  methods: {
+    navigate(tagName: string): void {
+      const path = `/tag/${tagName}/`;
+      if (this.$route.path !== path) void this.$router.push(path);
+    },
+  },
+});

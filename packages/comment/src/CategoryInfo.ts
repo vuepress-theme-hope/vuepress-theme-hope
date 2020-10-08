@@ -1,34 +1,42 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { defineComponent } from "@vue/composition-api";
+import { capitalize, i18n } from "@mr-hope/vuepress-shared-utils";
+
 import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-@Component({ components: { CategoryIcon } })
-export default class CategoryInfo extends Vue {
-  @Prop({ type: String, default: "" })
-  private readonly category!: string;
+export default defineComponent({
+  name: "CategoryInfo",
 
-  private get categoryName(): string {
-    if (this.category) return capitalize(this.category);
+  components: { CategoryIcon },
 
-    const { category } = this.$frontmatter;
+  props: {
+    category: { type: String, default: "" },
+  },
 
-    return category ? capitalize(category) : "";
-  }
+  computed: {
+    categoryName(): string {
+      if (this.category) return capitalize(this.category);
 
-  private get active(): boolean {
-    return this.$themeConfig.blog !== false;
-  }
+      const { category } = this.$frontmatter;
 
-  private navigate(): void {
-    const path = `/category/${this.categoryName}/`;
+      return category ? capitalize(category) : "";
+    },
 
-    if (this.active && this.$route.path !== path) void this.$router.push(path);
-  }
+    active(): boolean {
+      return this.$themeConfig.blog !== false;
+    },
 
-  private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
-      .category;
-  }
-}
+    hint(): string {
+      return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+        .category;
+    },
+  },
+
+  methods: {
+    navigate(): void {
+      const path = `/category/${this.categoryName}/`;
+
+      if (this.active && this.$route.path !== path)
+        void this.$router.push(path);
+    },
+  },
+});
