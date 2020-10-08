@@ -1,95 +1,115 @@
-import { Component, Model, Prop, Vue } from "vue-property-decorator";
+import { computed, defineComponent, ref } from "@vue/composition-api";
 import { HopeLangI18nConfigItem, i18n } from "@mr-hope/vuepress-shared-utils";
 
-@Component
-export default class Pagination extends Vue {
-  @Prop({ type: Number, default: 10 })
-  /** Number of total items */
-  private readonly total!: number;
+export default defineComponent({
+  name: "Pagination",
 
-  @Prop({ type: Number, default: 10 })
-  /** Items per page */
-  private readonly perPage!: number;
+  // TODO: Rebuild it in Vue3
+  model: {
+    prop: "currentPage",
+    event: "change",
+  },
 
-  @Model("change", { type: Number })
-  private readonly currentPage!: number;
+  props: {
+    /** Number of total items */
+    total: { type: Number, default: 10 },
 
-  private input = "";
+    /** Items per page */
+    perPage: { type: Number, default: 10 },
 
-  private get totalPages(): number {
-    return Math.ceil(this.total / this.perPage);
-  }
+    /** Items per page */
+    currentPage: { type: Number, required: true },
+  },
 
-  private get enable(): boolean {
-    return Boolean(this.totalPages) && this.totalPages !== 1;
-  }
+  // emits: ["change"],
 
-  private get displayLeftEllipsis(): boolean {
-    if (this.totalPages <= 5) return false;
+  setup(props) {
+    const input = ref("");
 
-    return this.currentPage > 4;
-  }
+    const totalPages = ref(Math.ceil(props.total / props.perPage));
 
-  private get displayRightEllipsis(): boolean {
-    if (this.totalPages <= 5) return false;
+    const enable = Boolean(totalPages.value) && totalPages.value !== 1;
 
-    return this.currentPage <= this.totalPages - 3;
-  }
+    const displayLeftEllipsis = computed(() => {
+      if (totalPages.value <= 5) return false;
 
-  /** Page indexs */
-  private get indexs(): number[] {
-    let min = 1;
-    let max = this.totalPages;
-    const arr = [];
+      return props.currentPage > 4;
+    });
 
-    if (this.totalPages >= 7)
-      if (this.currentPage > 4 && this.currentPage < this.totalPages - 3) {
-        min = Number(this.currentPage) - 2;
-        max = Number(this.currentPage) + 2;
-      } else if (this.currentPage <= 4) {
-        min = 1;
-        max = 5;
-      } else {
-        max = this.totalPages;
-        min = this.totalPages - 4;
-      }
+    const displayRightEllipsis = computed(() => {
+      if (totalPages.value <= 5) return false;
 
-    // Generate page index
-    for (let i = min; i <= max; i++) arr.push(i);
+      return props.currentPage <= totalPages.value - 3;
+    });
 
-    return arr;
-  }
+    /** Page indexs */
+    const indexs = computed(() => {
+      let min = 1;
+      let max = totalPages.value;
+      const arr = [];
 
-  private get i18n(): HopeLangI18nConfigItem["pagination"] {
-    return (
-      i18n.getLocale(this.$lang).pagination ||
-      i18n.getDefaultLocale().pagination
-    );
-  }
+      if (totalPages.value >= 7)
+        if (props.currentPage > 4 && props.currentPage < totalPages.value - 3) {
+          min = Number(props.currentPage) - 2;
+          max = Number(props.currentPage) + 2;
+        } else if (props.currentPage <= 4) {
+          min = 1;
+          max = 5;
+        } else {
+          max = totalPages.value;
+          min = totalPages.value - 4;
+        }
 
-  private mounted(): void {
+      // Generate page index
+      for (let i = min; i <= max; i++) arr.push(i);
+
+      return arr;
+    });
+
+    return {
+      displayLeftEllipsis,
+      displayRightEllipsis,
+      enable,
+      indexs,
+      input,
+      totalPages,
+    };
+  },
+
+  computed: {
+    i18n(): HopeLangI18nConfigItem["pagination"] {
+      return (
+        i18n.getLocale(this.$lang).pagination ||
+        i18n.getDefaultLocale().pagination
+      );
+    },
+  },
+
+  mounted(): void {
     const { index } = this.$route.query;
 
     this.navigate(index ? Number(index) : 1);
-  }
+  },
 
-  /** Navigate to certain page */
-  private navigate(index: number): void {
-    const path = `${this.$route.path}?index=${index}`;
+  methods: {
+    /** Navigate to certain page */
+    navigate(index: number): void {
+      const path = `${this.$route.path}?index=${index}`;
 
-    this.$emit("change", index);
-    if (this.$route.fullPath !== path) void this.$router.push(path);
-  }
+      this.$emit("change", index);
+      if (this.$route.fullPath !== path) void this.$router.push(path);
+    },
 
-  /** Check and navigate to certain page */
-  private jumpPage(index: string): void {
-    const pageNum = parseInt(index);
+    /** Check and navigate to certain page */
+    jumpPage(index: string): void {
+      const pageNum = parseInt(index);
 
-    if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
-    else {
-      const errorText = this.i18n.errorText.split("$page");
+      if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
+      else {
+        const errorText = this.i18n.errorText.split("$page");
 
-      alert(`${errorText[0]}${this.totalPages}${errorText[1]}`);
-    }
-  }
-}
+        alert(`${errorText[0]}${this.totalPages}${errorText[1]}`);
+      }
+    },
+  },
+});

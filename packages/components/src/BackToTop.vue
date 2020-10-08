@@ -6,7 +6,7 @@
       role="button"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
-      @click="scrollToTop"
+      @click="scrollTop"
     >
       <path
         d="M512 0C229.517 0 0 229.517 0 512s227.752 512 512 512c282.483 0 512-227.752 512-512C1024 229.517 794.483

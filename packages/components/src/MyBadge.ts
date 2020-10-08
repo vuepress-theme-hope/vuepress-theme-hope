@@ -1,12 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { ComponentOptions } from "vue";
-
-// Functional Component Hack
-interface FunctionalComponentOptions extends ComponentOptions<Vue> {
-  functional?: boolean;
-}
+import { defineComponent, h } from "@vue/composition-api";
+import { VNode } from "vue";
 
 interface ElementOption {
   class: string[];
@@ -14,10 +7,19 @@ interface ElementOption {
   "data-color"?: string;
 }
 
-@Component({
+export default defineComponent({
   name: "MyBadge",
-  functional: true,
-  render(h, { props, slots }) {
+  props: {
+    type: { type: String, default: "tip" },
+
+    text: { type: String, default: "" },
+
+    vertical: { type: String, default: "top" },
+
+    color: { type: String, default: "" },
+  },
+
+  setup(props, { slots }) {
     const options: ElementOption = {
       class: ["badge", props.type],
       style: { verticalAlign: props.vertical },
@@ -25,23 +27,12 @@ interface ElementOption {
 
     if (props.color) {
       options.class.push("diy");
+      // eslint-disable-next-line vue/no-setup-props-destructure
       options.style.backgroundColor = props.color;
+      // eslint-disable-next-line vue/no-setup-props-destructure
       options["data-color"] = props.color;
     }
 
-    return h("span", options, props.text || slots().default);
+    return (): VNode => h("span", options, props.text || slots.default());
   },
-} as FunctionalComponentOptions)
-export default class MyBadge extends Vue {
-  @Prop({ type: String, default: "tip" })
-  private readonly type!: string;
-
-  @Prop({ type: String, default: "" })
-  private readonly text!: string;
-
-  @Prop({ type: String, default: "top" })
-  private readonly vertical!: string;
-
-  @Prop({ type: String, default: "" })
-  private readonly color!: string;
-}
+});
