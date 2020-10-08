@@ -1,9 +1,12 @@
 import { CommentOptions } from "../types";
 import { PluginOptionAPI } from "@mr-hope/vuepress-types";
+import { resolve } from "path";
 
 export = (options: CommentOptions): PluginOptionAPI => {
   const config: PluginOptionAPI = {
     name: "comment",
+
+    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
 
     define: () => ({
       // eslint-disable-next-line @typescript-eslint/naming-convention

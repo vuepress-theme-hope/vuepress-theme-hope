@@ -1,25 +1,32 @@
 /* global COMMENT_OPTIONS */
-import { Component, Vue } from "vue-property-decorator";
+import { defineComponent, ref } from "@vue/composition-api";
 import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
-import { CommentOptions } from "../types";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-@Component({ components: { AuthorIcon } })
-export default class AuthorInfo extends Vue {
-  private commentOption: CommentOptions = COMMENT_OPTIONS;
+export default defineComponent({
+  name: "AuthorInfo",
 
-  private get author(): string {
-    const { author } = this.$frontmatter;
+  components: { AuthorIcon },
 
-    return (
-      (author as string) ||
-      (author === false ? "" : this.commentOption.author || "")
-    );
-  }
+  setup() {
+    const commentOption = ref(COMMENT_OPTIONS);
 
-  private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
-      .author;
-  }
-}
+    return { commentOption };
+  },
+
+  computed: {
+    author(): string {
+      const { author } = this.$frontmatter;
+
+      return (
+        (author as string) ||
+        (author === false ? "" : this.commentOption.author || "")
+      );
+    },
+
+    hint(): string {
+      return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+        .author;
+    },
+  },
+});

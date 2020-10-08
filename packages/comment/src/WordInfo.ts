@@ -1,20 +1,26 @@
-import { Component, Vue } from "vue-property-decorator";
+import { defineComponent } from "@vue/composition-api";
 import WordIcon from "@mr-hope/vuepress-shared-utils/icons/WordIcon.vue";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-@Component({ components: { WordIcon } })
-export default class ReadTimeInfo extends Vue {
-  private get words(): string {
-    const { readingTime } = this.$themeLocaleConfig || i18n.getDefaultLocale();
+export default defineComponent({
+  name: "ReadTimeInfo",
 
-    return readingTime.word.replace(
-      "$word",
-      this.$page.readingTime.words.toString()
-    );
-  }
+  components: { WordIcon },
 
-  private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).words;
-  }
-}
+  computed: {
+    words(): string {
+      const { readingTime } =
+        this.$themeLocaleConfig || i18n.getDefaultLocale();
+
+      return readingTime.word.replace(
+        "$word",
+        this.$page.readingTime.words.toString()
+      );
+    },
+
+    hint(): string {
+      return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+        .words;
+    },
+  },
+});
