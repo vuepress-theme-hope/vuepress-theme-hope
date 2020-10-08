@@ -1,7 +1,13 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
-import Loading from "@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue";
-import debounce from "lodash.debounce";
+import {
+  PropType,
+  defineComponent,
+  markRaw,
+  onBeforeUnmount,
+  ref,
+} from "@vue/composition-api";
 import presets from "./presets";
+
+import Loading from "@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue";
 
 interface Parse {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -10,46 +16,56 @@ interface Parse {
 
 let svg: Parse;
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-@Component({ components: { Loading } })
-export default class FlowChart extends Vue {
-  @Prop({ type: String, required: true })
-  private readonly id!: string;
+export default defineComponent({
+  name: "FlowChart",
 
-  @Prop({ type: String, required: true })
-  private readonly code!: string;
+  components: { Loading },
 
-  @Prop({ type: String, default: "vue" })
-  private readonly preset!: "ant" | "vue";
+  props: {
+    id: { type: String, required: true },
+    code: { type: String, required: true },
+    preset: { type: String as PropType<"ant" | "vue">, default: "vue" },
+  },
 
-  private loading = true;
+  setup(props) {
+    const loading = ref(true);
+    const scale = ref(1);
 
-  private scale = 1;
+    const getScale = (width: number): number =>
+      width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private get $preset(): Record<string, any> {
-    const preset = presets[this.preset];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const getPreset = (): Record<string, any> => {
+      // TODO: Remove type cast in Vue3
+      const preset = presets[props.preset as "vue" | "ant"];
 
-    if (!preset) {
-      console.warn(`[md-enhance:flowchart] Unknown preset: ${this.preset}`);
-      return presets.vue;
-    }
-
-    return preset;
-  }
-
-  private get resize(): () => void {
-    return debounce(() => {
-      const scale = this.getScale(window.innerWidth);
-
-      if (this.scale !== scale) {
-        this.scale = scale;
-        svg.drawSVG(this.id, { ...this.$preset, scale });
+      if (!preset) {
+        console.warn(`[md-enhance:flowchart] Unknown preset: ${props.preset}`);
+        return presets.vue;
       }
-    }, 100);
-  }
 
-  private mounted(): void {
+      return preset;
+    };
+
+    const $preset = markRaw(getPreset());
+
+    const resize = (): void => {
+      const currentScale = getScale(window.innerWidth);
+
+      if (scale.value !== currentScale) {
+        scale.value = currentScale;
+        svg.drawSVG(props.id, { ...$preset, scale: currentScale });
+      }
+    };
+
+    onBeforeUnmount(() => {
+      window.removeEventListener("resize", resize);
+    });
+
+    return { loading, scale, getScale, resize, $preset };
+  },
+
+  mounted(): void {
     const delay = (): Promise<void> =>
       new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -69,13 +85,5 @@ export default class FlowChart extends Vue {
 
       window.addEventListener("resize", this.resize);
     });
-  }
-
-  private beforeDestory(): void {
-    window.removeEventListener("resize", this.resize);
-  }
-
-  private getScale(width: number): number {
-    return width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
-  }
-}
+  },
+});

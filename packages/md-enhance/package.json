@@ -37,11 +37,10 @@
     "@mr-hope/vuepress-types": "^0.7.5",
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "0.11.0",
-    "@types/lodash.debounce": "^4.0.6",
     "@types/markdown-it": "10.0.2",
+    "@vue/composition-api": "1.0.0-beta.15",
     "flowchart.js": "^1.14.1",
     "katex": "^0.12.0",
-    "lodash.debounce": "^4.0.8",
     "vuepress-plugin-container": "^2.1.5"
   }
 }
