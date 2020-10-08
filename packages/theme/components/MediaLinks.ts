@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Vue } from "vue-property-decorator";
 import Baidu from "@mr-hope/vuepress-shared-utils/icons/media/Baidu.vue";
 import Dingding from "@mr-hope/vuepress-shared-utils/icons/media/Dingding.vue";
@@ -24,7 +23,6 @@ import Weibo from "@mr-hope/vuepress-shared-utils/icons/media/Weibo.vue";
 import Whatsapp from "@mr-hope/vuepress-shared-utils/icons/media/Whatsapp.vue";
 import Youtube from "@mr-hope/vuepress-shared-utils/icons/media/Youtube.vue";
 import Zhihu from "@mr-hope/vuepress-shared-utils/icons/media/Zhihu.vue";
-import navigate from "@theme/util/navigate";
 import { BlogMedia } from "@theme/types";
 
 /** 合法媒体 */
@@ -89,8 +87,6 @@ interface MediaLink {
   },
 })
 export default class MediaLinks extends Vue {
-  private navigate = navigate;
-
   private get mediaLink(): Partial<Record<BlogMedia, string>> | false {
     const { medialink } = this.$frontmatter;
 

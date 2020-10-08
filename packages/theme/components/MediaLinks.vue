@@ -1,13 +1,14 @@
 <template>
   <div v-if="mediaLink" class="media-links-wrapper">
-    <div
+    <a
       v-for="link in links"
       :key="link.name"
       class="media-link"
-      @click="navigate(link.url, $router, $route)"
+      :href="link.url"
+      target="_blank"
     >
       <Component :is="link.icon" />
-    </div>
+    </a>
   </div>
 </template>
 
