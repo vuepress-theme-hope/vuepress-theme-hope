@@ -1,5 +1,6 @@
 import { defineComponent } from "@vue/composition-api";
 import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
+
 import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
 
 export default defineComponent({

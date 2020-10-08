@@ -1,7 +1,8 @@
 import { defineComponent, nextTick, PropType } from "@vue/composition-api";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
+
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 export default defineComponent({
   name: "Valine",

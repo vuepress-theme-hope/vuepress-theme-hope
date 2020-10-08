@@ -1,7 +1,8 @@
 /* global COMMENT_OPTIONS */
 import { defineComponent, ref } from "@vue/composition-api";
-import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
+
+import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
 
 export default defineComponent({
   name: "AuthorInfo",

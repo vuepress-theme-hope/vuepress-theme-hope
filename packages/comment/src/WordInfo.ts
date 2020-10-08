@@ -1,6 +1,7 @@
 import { defineComponent } from "@vue/composition-api";
-import WordIcon from "@mr-hope/vuepress-shared-utils/icons/WordIcon.vue";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
+
+import WordIcon from "@mr-hope/vuepress-shared-utils/icons/WordIcon.vue";
 
 export default defineComponent({
   name: "ReadTimeInfo",

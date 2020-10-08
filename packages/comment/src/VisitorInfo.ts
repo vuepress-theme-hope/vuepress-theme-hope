@@ -1,10 +1,12 @@
 /* global COMMENT_OPTIONS */
 import { defineComponent, ref } from "@vue/composition-api";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
+
 import EyeIcon from "@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue";
 import FireIcon from "@mr-hope/vuepress-shared-utils/icons/FireIcon.vue";
+
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 export default defineComponent({
   name: "VisitorInfo",

@@ -1,8 +1,8 @@
 import { defineComponent } from "@vue/composition-api";
-import CalendarIcon from "@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
+import CalendarIcon from "@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue";
+
 export default defineComponent({
   name: "TimeInfo",
 

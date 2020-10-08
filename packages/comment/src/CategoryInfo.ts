@@ -1,7 +1,7 @@
 import { defineComponent } from "@vue/composition-api";
+import { capitalize, i18n } from "@mr-hope/vuepress-shared-utils";
+
 import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 export default defineComponent({
   name: "CategoryInfo",

@@ -1,7 +1,7 @@
 import { defineComponent, PropType } from "@vue/composition-api";
+import { capitalize, i18n } from "@mr-hope/vuepress-shared-utils";
+
 import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 export default defineComponent({
   name: "TagInfo",
