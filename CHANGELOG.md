@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.8.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.5...v0.8.0) (2020-10-11)
+
+### Bug Fixes
+
+- typos in bootstrap command ([82267b6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/82267b6960588b4ba8dcebab437f69deec612509))
+
+### Features
+
+- add [add-this](https://vuepress-add-this.mrhope.site) plugin ([499525f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/499525f63c62855dd9138237bbf53f2092798221))
+- **theme:** add a few medias in Medialink ([2234873](https://github.com/Mister-Hope/vuepress-theme-hope/commit/223487332187e1df7d4bc6fd45136f6bcbe2bce6))
+- **theme:** use `<a>` for Medialinks ([4734da0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4734da079d7557fa919563b1bf71172afb610364))
+
 ## [0.7.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.7.4...v0.7.5) (2020-10-06)
 
 ### Bug Fixes
