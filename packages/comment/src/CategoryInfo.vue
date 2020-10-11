@@ -3,8 +3,9 @@
     v-if="categoryName"
     class="category-info"
     :class="{ active }"
-    :title="hint"
     :role="active ? 'navigation' : ''"
+    :aria-label="hint"
+    data-balloon-pos="down"
     @click="navigate"
   >
     <CategoryIcon />

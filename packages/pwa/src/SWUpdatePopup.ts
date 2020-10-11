@@ -1,6 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
 import event from "./event";
-import { HopeLangI18nConfigItem, i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component
 export default class SWUpdatePopup extends Vue {
@@ -10,8 +9,8 @@ export default class SWUpdatePopup extends Vue {
     return Boolean(this.updateEvent);
   }
 
-  private get message(): HopeLangI18nConfigItem["pwa"] {
-    return i18n.getLocale(this.$lang).pwa || i18n.getDefaultLocale().pwa;
+  private get message(): string {
+    return PWA_I18N[this.$localePath || "/"];
   }
 
   private created(): void {

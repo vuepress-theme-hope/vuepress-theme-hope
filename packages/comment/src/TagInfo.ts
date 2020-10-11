@@ -1,9 +1,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
 import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { TagIcon } })
 export default class TagInfo extends Vue {
   @Prop({ type: Array, default: () => [] })
@@ -34,6 +32,6 @@ export default class TagInfo extends Vue {
   }
 
   private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).tag;
+    return PAGE_INFO_I18N.tag[this.$localePath || "/"];
   }
 }

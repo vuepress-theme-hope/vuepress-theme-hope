@@ -1,16 +1,25 @@
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { PWAOptions } from "../types";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { resolve } from "path";
 import chalk = require("chalk");
 import fs = require("fs-extra");
 import workboxBuild = require("workbox-build");
 
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import { PWAOptions } from "../types";
+
 export = (options: PWAOptions, context: Context): PluginOptionAPI => {
+  const { themeConfig } = context;
+  const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
+  const baseLangPath = i18n.lang2path(baseLang);
+  const pwaConfig = i18n.config.pwa;
+
+  pwaConfig["/"] = pwaConfig[baseLangPath];
+
   const config: PluginOptionAPI = {
     name: "pwa",
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    define: { SW_BASE_URL: context.base || "/" },
+    define: { SW_BASE_URL: context.base || "/", PWA_I18N: pwaConfig },
 
     globalUIComponents: options.popupComponent || "SWUpdatePopup",
 

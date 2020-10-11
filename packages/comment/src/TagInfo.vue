@@ -1,5 +1,5 @@
 <template>
-  <span v-if="$tags.length !== 0" :title="hint">
+  <span v-if="$tags.length !== 0" :aria-label="hint" data-balloon-pos="down">
     <TagIcon />
     <ul class="tags-wrapper">
       <li

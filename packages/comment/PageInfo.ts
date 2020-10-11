@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* global COMMENT_OPTIONS */
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { Component, Vue } from "vue-property-decorator";
 import { PageInfotype } from "./types";
 import AuthorInfo from "./src/AuthorInfo.vue";
@@ -10,6 +7,8 @@ import TagInfo from "./src/TagInfo.vue";
 import TimeInfo from "./src/TimeInfo.vue";
 import VisitorInfo from "./src/VisitorInfo.vue";
 import WordInfo from "./src/WordInfo.vue";
+
+import "balloon-css";
 
 @Component({
   components: {
@@ -59,7 +58,6 @@ export default class PageInfo extends Vue {
   }
 
   private get originText(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
-      .origin;
+    return PAGE_INFO_I18N.origin[this.$localePath || "/"];
   }
 }

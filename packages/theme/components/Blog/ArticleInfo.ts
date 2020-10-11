@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { capitalize, i18n } from "@mr-hope/vuepress-shared-utils";
+import { capitalize } from "@mr-hope/vuepress-shared-utils";
 import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
 import CalendarIcon from "@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue";
 import CategoryInfo from "@mr-hope/vuepress-plugin-comment/src/CategoryInfo.vue";
@@ -62,13 +61,14 @@ export default class ArticleInfo extends Vue {
   }
 
   private get readtime(): string {
-    const { readingTime } = this.$themeLocaleConfig || i18n.getDefaultLocale();
+    const minute = READING_TIME_I18N.minute[this.$localePath || "/"];
+    const time = READING_TIME_I18N.time[this.$localePath || "/"];
 
-    return this.article.readingTime.minutes < 1
-      ? readingTime.minute
-      : readingTime.time.replace(
+    return this.$page.readingTime.minutes < 1
+      ? minute
+      : time.replace(
           "$time",
-          Math.round(this.article.readingTime.minutes).toString()
+          Math.round(this.$page.readingTime.minutes).toString()
         );
   }
 }

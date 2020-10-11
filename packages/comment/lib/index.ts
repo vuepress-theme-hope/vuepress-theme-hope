@@ -1,13 +1,31 @@
-import { CommentOptions } from "../types";
-import { PluginOptionAPI } from "@mr-hope/vuepress-types";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-export = (options: CommentOptions): PluginOptionAPI => {
+import { CommentOptions } from "../types";
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+
+export = (options: CommentOptions, context: Context): PluginOptionAPI => {
+  const { themeConfig } = context;
+  const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
+  const baseLangPath = i18n.lang2path(baseLang);
+  const pageInfoConfig = i18n.config.pageInfo;
+  const readingTimeConfig = i18n.config.readingTime;
+
+  for (const key in pageInfoConfig) {
+    pageInfoConfig[key]["/"] = pageInfoConfig[key][baseLangPath];
+  }
+
+  for (const key in readingTimeConfig) {
+    readingTimeConfig[key]["/"] = readingTimeConfig[key][baseLangPath];
+  }
+
   const config: PluginOptionAPI = {
     name: "comment",
 
     define: () => ({
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       COMMENT_OPTIONS: options,
+      PAGE_INFO_I18N: pageInfoConfig,
+      READING_TIME_I18N: readingTimeConfig,
     }),
 
     plugins: [

@@ -28,8 +28,9 @@ import { i18n, HopeLangI18nConfig } from "@mr-hope/vuepress-shared-utils";
   },
 })
 export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
-  private get i18n(): HopeLangI18nConfig["blog"] {
-    return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
+  private get articleListText(): string {
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+      .articleList;
   }
 
   private heroHeight(): number {

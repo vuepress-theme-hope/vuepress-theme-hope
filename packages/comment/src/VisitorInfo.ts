@@ -1,12 +1,9 @@
-/* global COMMENT_OPTIONS */
 import { Component, Vue, Watch } from "vue-property-decorator";
 import EyeIcon from "@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue";
 import FireIcon from "@mr-hope/vuepress-shared-utils/icons/FireIcon.vue";
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { EyeIcon, FireIcon } })
 export default class VisitorInfo extends Vue {
   private valineConfig = COMMENT_OPTIONS as ValineOptions;
@@ -43,7 +40,7 @@ export default class VisitorInfo extends Vue {
   }
 
   private get hint(): string {
-    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog).views;
+    return PAGE_INFO_I18N.views[this.$localePath || "/"];
   }
 
   private mounted(): void {

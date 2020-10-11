@@ -10,7 +10,7 @@
           <MyTransition :delay="0.08">
             <component :is="componentName" v-if="componentName" />
             <BlogHero v-else-if="$frontmatter.home" />
-            <h1 v-else>{{ i18n.articleList }}</h1>
+            <h1 v-else>{{ articleListText }}</h1>
           </MyTransition>
 
           <MyTransition :delay="0.2">

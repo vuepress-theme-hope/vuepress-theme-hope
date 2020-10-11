@@ -18,6 +18,12 @@ export type PageInfotype =
 
 interface BaseCommentOptions {
   /**
+   * 主目录所对应的语言。
+   *
+   * The language of the home directory.
+   */
+  baseLang?: string;
+  /**
    * 评论服务
    *
    * Comment Service
@@ -251,4 +257,6 @@ export type CommentOptions = ValineOptions | VssueOptions;
 
 declare global {
   const COMMENT_OPTIONS: CommentOptions;
+  const PAGE_INFO_I18N: Record<string, Record<string, string>>;
+  const READING_TIME_I18N: Record<string, Record<string, string>>;
 }

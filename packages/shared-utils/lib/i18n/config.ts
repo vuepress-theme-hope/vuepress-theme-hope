@@ -42,7 +42,6 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       back: "返回上一页",
       home: "带我回家",
     },
-    pwa: "发现新内容可用",
     pagination: {
       prev: "上一页",
       next: "下一页",
@@ -53,22 +52,11 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
     blog: {
       article: "文章",
       articleList: "文章列表",
-      author: "作者",
-      time: "写作日期",
-      origin: "原创",
-      tag: "标签",
-      views: "访问量",
       category: "分类",
-      readingTime: "阅读时间",
-      words: "字数",
+      tag: "标签",
       timeline: "时间轴",
       timelineText: "昨日不在",
       allText: "全部",
-    },
-    readingTime: {
-      word: "约 $word 字",
-      minute: "小于 1 分钟",
-      time: "大约 $time 分钟",
     },
   },
 
@@ -96,7 +84,6 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
       back: "Go back",
       home: "Take me home",
     },
-    pwa: "New content is available.",
     pagination: {
       prev: "Prev",
       next: "Next",
@@ -107,23 +94,48 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
     blog: {
       article: "Articles",
       articleList: "Article List",
-      author: "Author",
-      time: "Writing Date",
-      origin: "Original",
-      views: "Page views",
-      tag: "Tags",
       category: "Category",
-      readingTime: "Reading Time",
-      words: "Words",
+      tag: "Tags",
       timeline: "Timeline",
       timelineText: "Yesterday Once More!",
       allText: "All",
     },
-    readingTime: {
-      word: "About $word words",
-      minute: "Less than 1 minute",
-      time: "About $time min",
-    },
+  },
+};
+
+/** 页面信息 */
+const pageInfoConfig: Record<string, Record<string, string>> = {
+  author: {
+    "/zh/": "作者🖊",
+    "/en/": "Author🖊",
+  },
+  time: {
+    "/zh/": "写作日期📅",
+    "/en/": "Writing Date📅",
+  },
+  origin: {
+    "/zh/": "原创💡",
+    "/en/": "Original💡",
+  },
+  tag: {
+    "/zh/": "标签🏷",
+    "/en/": "Tags🏷",
+  },
+  views: {
+    "/zh/": "访问量🔢",
+    "/en/": "Page views🔢",
+  },
+  category: {
+    "/zh/": "分类🌈",
+    "/en/": "Category🌈",
+  },
+  readingTime: {
+    "/zh/": "阅读时间⌛",
+    "/en/": "Reading Time⌛",
+  },
+  words: {
+    "/zh/": "字数🔠",
+    "/en/": "Words🔠",
   },
 };
 
@@ -162,8 +174,31 @@ const copyCodeConfig: Record<string, Record<string, string>> = {
   },
 };
 
+const pwaConfig: Record<string, string> = {
+  "/zh/": "发现新内容可用",
+  "/en/": "New content is available.",
+};
+
+const readingTimeConfig: Record<string, Record<string, string>> = {
+  word: {
+    "/zh/": "约 $word 字",
+    "/en/": "About $word words",
+  },
+  minute: {
+    "/zh/": "小于 1 分钟",
+    "/en/": "Less than 1 minute",
+  },
+  time: {
+    "/zh/": "大约 $time 分钟",
+    "/en/": "About $time min",
+  },
+};
+
 /** 插件配置 */
 export const config = {
   container: containerConfig,
   copyCode: copyCodeConfig,
+  pageInfo: pageInfoConfig,
+  pwa: pwaConfig,
+  readingTime: readingTimeConfig,
 };

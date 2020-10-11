@@ -43,6 +43,7 @@
     "@vssue/api-github-v4": "^1.4.0",
     "@vssue/api-gitlab-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
+    "balloon-css": "^1.2.0",
     "leancloud-storage": "^4.6.1",
     "valine": "^1.4.14",
     "vssue": "^1.4.6"

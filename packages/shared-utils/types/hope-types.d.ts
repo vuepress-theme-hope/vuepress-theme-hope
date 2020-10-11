@@ -63,8 +63,6 @@ interface HopeLangI18nConfigItem {
     /** 返回上一页文字 */
     back: string;
   };
-  /** PWA 提示消息 */
-  pwa: string;
   /** 分页多语言配置 */
   pagination: {
     /** 上一页文字 */
@@ -84,37 +82,16 @@ interface HopeLangI18nConfigItem {
     article: string;
     /** 文章列表文字 */
     articleList: string;
-    /** 作者 */
-    author: string;
-    /** 写作日期 */
-    time: string;
-    /** 原创文字 */
-    origin: string;
-    /** 访问量 */
-    views: string;
-    /** 标签文字 */
-    tag: string;
     /** 分类文字 */
     category: string;
+    /** 标签文字 */
+    tag: string;
     /** 时间轴文字 */
     timeline: string;
     /** 时间轴显示文字 */
     timelineText: string;
-    /** 阅读时间 */
-    readingTime: string;
-    /** 文章字数 */
-    words: string;
     /** 全部文字 */
     allText: string;
-  };
-  /** 阅读时间 */
-  readingTime: {
-    /** 字数 */
-    word: string;
-    /** 一分钟阅读 */
-    minute: string;
-    /** 时间 */
-    time: string;
   };
 }
 
