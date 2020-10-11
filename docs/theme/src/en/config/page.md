@@ -224,12 +224,15 @@ Set the social link for the current page footer.
 The optional values of `MediaType` are as follows:
 
 - `'Baidu'`: Baidu
+- `'Bitbucket'`: Bitbucket
 - `'Dingding'`: Dingding
+- `'Discord'`: Discord
 - `'Dribbble'`: Dribble
 - `'Evernote'`: Evernote
 - `'Facebook'`: Facebook
 - `'Flipboard'`: Flipboard
 - `'Github'`: ~~ Gayhub ~~ Github
+- `'Gitlab'`: Gitlab
 - `'Gmail'`: Google mailbox (of course you can also fill in your own other mailbox)
 - `'Instagram'`: Instagram
 - `'Line'`: Line
@@ -238,9 +241,9 @@ The optional values of `MediaType` are as follows:
 - `'Pocket'`: Pocket
 - `'QQ'`: QQ
 - `'Qzone'`: Qzone
+- `'Reddit'`: Reddit
 - `'Rss'`: RSS address
 - `'Steam'`: Steam
-- `'Taobao'`: Taobao
 - `'Twitter'`: Twitter
 - `'Wechat'`: WeChat
 - `'Weibo'`: Weibo

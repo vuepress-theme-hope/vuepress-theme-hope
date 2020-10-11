@@ -26,12 +26,15 @@ You can also configure your social media links in the format of `<social media n
 ::: tip Available social media:
 
 - `'Baidu'`
+- `'Bitbucket'`
 - `'Dingding'`
+- `'Discord'`
 - `'Dribbble'`
 - `'Evernote'`
 - `'Facebook'`
 - `'Flipboard'`
 - `'Github'`
+- `'Gitlab'`
 - `'Gmail'`
 - `'Instagram'`
 - `'Line'`
@@ -40,9 +43,9 @@ You can also configure your social media links in the format of `<social media n
 - `'Pocket'`
 - `'QQ'`
 - `'Qzone'`
+- `'Reddit'`
 - `'Rss'`
 - `'Steam'`
-- `'Taobao'`
 - `'Twitter'`
 - `'Wechat'`
 - `'Weibo'`

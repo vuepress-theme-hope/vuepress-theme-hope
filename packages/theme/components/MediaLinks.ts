@@ -1,11 +1,14 @@
 import { Component, Vue } from "vue-property-decorator";
 import Baidu from "@mr-hope/vuepress-shared-utils/icons/media/Baidu.vue";
+import Bitbucket from "@mr-hope/vuepress-shared-utils/icons/media/Bitbucket.vue";
 import Dingding from "@mr-hope/vuepress-shared-utils/icons/media/Dingding.vue";
+import Discord from "@mr-hope/vuepress-shared-utils/icons/media/Discord.vue";
 import Dribbble from "@mr-hope/vuepress-shared-utils/icons/media/Dribbble.vue";
 import Evernote from "@mr-hope/vuepress-shared-utils/icons/media/Evernote.vue";
 import Facebook from "@mr-hope/vuepress-shared-utils/icons/media/Facebook.vue";
 import Flipboard from "@mr-hope/vuepress-shared-utils/icons/media/Flipboard.vue";
 import Github from "@mr-hope/vuepress-shared-utils/icons/media/Github.vue";
+import Gitlab from "@mr-hope/vuepress-shared-utils/icons/media/Gitlab.vue";
 import Gmail from "@mr-hope/vuepress-shared-utils/icons/media/Gmail.vue";
 import Instagram from "@mr-hope/vuepress-shared-utils/icons/media/Instagram.vue";
 import Lines from "@mr-hope/vuepress-shared-utils/icons/media/Lines.vue";
@@ -14,9 +17,9 @@ import Pinterest from "@mr-hope/vuepress-shared-utils/icons/media/Pinterest.vue"
 import Pocket from "@mr-hope/vuepress-shared-utils/icons/media/Pocket.vue";
 import QQ from "@mr-hope/vuepress-shared-utils/icons/media/QQ.vue";
 import Qzone from "@mr-hope/vuepress-shared-utils/icons/media/Qzone.vue";
+import Reddit from "@mr-hope/vuepress-shared-utils/icons/media/Reddit.vue";
 import Rss from "@mr-hope/vuepress-shared-utils/icons/media/Rss.vue";
 import Steam from "@mr-hope/vuepress-shared-utils/icons/media/Steam.vue";
-import Taobao from "@mr-hope/vuepress-shared-utils/icons/media/Taobao.vue";
 import Twitter from "@mr-hope/vuepress-shared-utils/icons/media/Twitter.vue";
 import Wechat from "@mr-hope/vuepress-shared-utils/icons/media/Wechat.vue";
 import Weibo from "@mr-hope/vuepress-shared-utils/icons/media/Weibo.vue";
@@ -28,12 +31,15 @@ import { BlogMedia } from "@theme/types";
 /** 合法媒体 */
 const medias: BlogMedia[] = [
   "Baidu",
+  "Bitbucket",
   "Dingding",
+  "Discord",
   "Dribbble",
   "Evernote",
   "Facebook",
   "Flipboard",
   "Github",
+  "Gitlab",
   "Gmail",
   "Instagram",
   "Lines",
@@ -42,9 +48,9 @@ const medias: BlogMedia[] = [
   "Pocket",
   "QQ",
   "Qzone",
+  "Reddit",
   "Rss",
   "Steam",
-  "Taobao",
   "Twitter",
   "Wechat",
   "Weibo",
@@ -61,12 +67,15 @@ interface MediaLink {
 @Component({
   components: {
     Baidu,
+    Bitbucket,
     Dingding,
+    Discord,
     Dribbble,
     Evernote,
     Facebook,
     Flipboard,
     Github,
+    Gitlab,
     Gmail,
     Instagram,
     Lines,
@@ -75,9 +84,9 @@ interface MediaLink {
     Pocket,
     QQ,
     Qzone,
+    Reddit,
     Rss,
     Steam,
-    Taobao,
     Twitter,
     Wechat,
     Weibo,

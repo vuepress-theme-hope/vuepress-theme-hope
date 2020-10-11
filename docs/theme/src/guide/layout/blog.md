@@ -26,12 +26,15 @@ vuepress-theme-hope 允许你启用博客风格的首页。
 ::: tip 可用的社交媒体：
 
 - `'Baidu'`: 百度
+- `'Bitbucket'`: Bitbucket
 - `'Dingding'`: 钉钉
+- `'Discord'`: Discord
 - `'Dribbble'`: Dribble
 - `'Evernote'`: 印象笔记
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
 - `'Github'`: ~~Gayhub~~ Github
+- `'Gitlab'`: Gitlab
 - `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
 - `'Instagram'`: Instagram
 - `'Line'`: Line
@@ -40,9 +43,9 @@ vuepress-theme-hope 允许你启用博客风格的首页。
 - `'Pocket'`: Pocket
 - `'QQ'`: QQ
 - `'Qzone'`: QQ 空间
+- `'Reddit'`: Reddit
 - `'Rss'`: RSS 地址
 - `'Steam'`: Steam
-- `'Taobao'`: 淘宝
 - `'Twitter'`: Twitter
 - `'Wechat'`: 微信
 - `'Weibo'`: 微博
