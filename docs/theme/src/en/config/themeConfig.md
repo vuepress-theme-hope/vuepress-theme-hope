@@ -532,6 +532,13 @@ The encryption configuration is an object with a key name matching the path and 
 
 :::
 
+## addthis
+
+- Type: `string`
+- Required: 否
+
+pubid for AddThis
+
 ## Other configuration options
 
 The following are other configuration options provided by the theme. In general, you do not need to change them, but the theme also provides you with more configuration items about the theme.

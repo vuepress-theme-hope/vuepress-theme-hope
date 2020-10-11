@@ -19,11 +19,11 @@ tags:
 
 - **Usage**:
 
-You can use this component in the title to add some status to the title or link:
+  You can use this component in the title to add some status to the title or link:
 
-```md
-### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
-```
+  ```md
+  ### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
+  ```
 
 ## Back to top button `<BackToTop />` <MyBadge text="Support page config" />
 

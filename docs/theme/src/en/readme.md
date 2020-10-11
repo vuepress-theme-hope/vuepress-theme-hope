@@ -13,14 +13,6 @@ action:
     link: /en/config/
 
 features:
-  - title: Custom theme color
-    details: Supports custom theme colors and allows users to switch between preset theme colors
-    link: /en/guide/feature/themecolor/
-
-  - title: Dark Mode
-    details: Switch between light and dark modes freely
-    link: /en/guide/feature/darkmode/
-
   - title: Pageviews and comments
     details: Start pageview statistics and comment support with Valine and Vssue
     link: /en/guide/feature/comment/
@@ -34,12 +26,24 @@ features:
     link: /en/guide/feature/markdown/
 
   - title: Blog support
-    details: Add date, tags and category to your articles, than we will generate article, tag, category and timeline list for you
+    details: Just date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
     link: /en/guide/feature/blog/
 
   - title: Article Encryption
     details: Encrypt you article based on path and folders, so that only the one you want could see them
     link: /en/guide/feature/blog/
+
+  - title: Custom theme color
+    details: Supports custom theme colors and allows users to switch between preset theme colors
+    link: /en/guide/feature/themecolor/
+
+  - title: Dark Mode
+    details: Switch between light and dark modes freely
+    link: /en/guide/feature/darkmode/
+
+  - title: Sitemap generation and SEO enhancement
+    details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
+    link: /en/guide/feature/seoAndSitemap/
 
   - title: More new features
     details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.

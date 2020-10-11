@@ -544,6 +544,13 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 :::
 
+## addthis
+
+- 类型: `string`
+- 必填: 否
+
+AddThis 的 pubid
+
 ## 其他配置选项
 
 以下是主题提供的其他配置选项，一般情况下你无需改动他们，但是主题也向你提供了更多有关主题的配置项。
