@@ -19,6 +19,8 @@
     "docs/comment:serve": "yarn workspace comment-docs serve",
     "docs/md-enhance:build": "yarn workspace md-enhance-docs build",
     "docs/md-enhance:serve": "yarn workspace md-enhance-docs serve",
+    "docs/photo-swipe:build": "yarn workspace photo-swipe-docs build",
+    "docs/photo-swipe:serve": "yarn workspace photo-swipe-docs serve",
     "docs/theme:build": "yarn workspace theme-docs build",
     "docs/theme:serve": "yarn workspace theme-docs serve",
     "lerna:bootstrap": "lerna bootstrap",
