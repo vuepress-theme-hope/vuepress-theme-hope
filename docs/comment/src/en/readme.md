@@ -12,7 +12,8 @@ action:
   - text: Config 🛠
     link: /en/config/
 
-copyright: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: false
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
 ## Install

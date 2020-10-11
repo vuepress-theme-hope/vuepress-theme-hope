@@ -55,9 +55,11 @@ module.exports = resolve({
       display: true,
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
+
     markdown: {
       enableAll: true,
     },
+
     comment: {
       type: "valine",
       appId: "YwtJvkJgikEDUjCFtygBQDwu-gzGzoHsz",
@@ -86,6 +88,7 @@ module.exports = resolve({
         },
       },
     },
+
     hostname: "https://vuepress-md-enhance.mrhope.site/",
 
     repo: "https://github.com/mister-hope/vuepress-theme-hope/",

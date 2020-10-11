@@ -16,21 +16,28 @@ features:
   - title: Superscript and subscript support
     details: Your markdown now suppport superscript and subscript
     link: /en/guide/sup-sub/
+
   - title: Footnote support
     details: Your markdown now suppport footnotes
     link: /en/guide/footnote/
+
   - title: DIY Align
     details: Let you decide to align paragraphs in the way you like
     link: /en/guide/align/
+
   - title: Mark Support
     details: Mark words and sentences in markdown easily
     link: /en/guide/flowchart/
+
   - title: Flowchart Support
     details: Create your flowchart in markdown easily
     link: /en/guide/flowchart/
+
   - title: Tex Support
     details: Markdown now have Tex Support so you can write yout formula easily
     link: /en/guide/tex/
+
+copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
