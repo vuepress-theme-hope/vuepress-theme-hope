@@ -1,0 +1,42 @@
+{
+  "name": "@mr-hope/vuepress-plugin-copy-code",
+  "version": "0.8.0",
+  "description": "copy-code plugin for vuepress-theme-hope",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "copy-code",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/copy-code#readme",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/copy-code"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "demo:build": "vuepress build test/demo",
+    "demo:clean-serve": "vuepress dev test/demo --no-cache",
+    "demo:serve": "vuepress dev test/demo"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-shared-utils": "^0.8.0",
+    "@mr-hope/vuepress-types": "^0.8.0",
+    "balloon-css": "^1.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

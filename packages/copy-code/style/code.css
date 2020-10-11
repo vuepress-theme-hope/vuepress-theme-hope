@@ -1,0 +1,26 @@
+.copy-code-button {
+  width: 16px;
+  background-color: #339af0;
+  height: 18px;
+  padding: 7px 8px;
+  color: #fff;
+  cursor: pointer;
+  border-width: 0;
+  border-radius: 50%;
+}
+
+.copy-code-button:hover {
+  background-color: #228be6;
+}
+
+.icon-copy-code {
+  width: 100%;
+  height: 100%;
+}
+
+div[class*="language-"] .copy-code-button {
+  position: absolute;
+  z-index: 1000;
+  right: -14px;
+  bottom: -14px;
+}

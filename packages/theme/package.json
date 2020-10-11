@@ -33,6 +33,7 @@
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.8.0",
     "@mr-hope/vuepress-plugin-components": "^0.8.0",
+    "@mr-hope/vuepress-plugin-copy-code": "^0.8.0",
     "@mr-hope/vuepress-plugin-last-update": "^0.8.0",
     "@mr-hope/vuepress-plugin-pwa": "^0.8.0",
     "@mr-hope/vuepress-plugin-seo": "^0.8.0",
@@ -51,7 +52,6 @@
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-md-enhance": "^0.8.0",
     "vuepress-plugin-named-chunks": "^1.1.4",
-    "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-photo-swipe": "^0.8.0",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-typescript": "^0.3.1"

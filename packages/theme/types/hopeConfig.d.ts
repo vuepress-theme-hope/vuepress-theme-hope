@@ -406,6 +406,14 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    */
   addthis?: string;
   /**
+   * 是否启用代码复制按钮
+   *
+   * Whether enable code copy feature
+   *
+   * @default true
+   */
+  copyCode?: boolean;
+  /**
    * ts-loader 选项
    *
    * Options which will passed to ts-loader
