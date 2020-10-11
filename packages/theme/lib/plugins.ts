@@ -82,6 +82,14 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
       },
     ],
 
+    /** add this 支持 */
+    [
+      "add-this",
+      typeof themeConfig.addthis === "string"
+        ? { pubid: themeConfig.addthis }
+        : false,
+    ],
+
     /** 使 VuePress 站点支持简洁链接 */
     ["clean-urls", { normalSuffix: "/" }],
 

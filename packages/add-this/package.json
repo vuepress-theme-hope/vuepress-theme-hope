@@ -1,0 +1,37 @@
+{
+  "name": "vuepress-plugin-add-this",
+  "version": "0.7.5",
+  "description": "add-this plugin for vuepress",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "add-this",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/add-this#readme",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/add-this"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "demo:build": "vuepress build test/demo",
+    "demo:clean-serve": "vuepress dev test/demo --no-cache",
+    "demo:serve": "vuepress dev test/demo"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-types": "^0.7.5"
+  }
+}

@@ -400,6 +400,12 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
   /** Sitemap */
   sitemap?: SitemapOptions | false;
   /**
+   * AddThis 的公共 ID
+   *
+   * pubid for addthis
+   */
+  addthis?: string;
+  /**
    * ts-loader 选项
    *
    * Options which will passed to ts-loader
