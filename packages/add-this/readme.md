@@ -4,6 +4,8 @@
 
 add-this plugin for vuepress.
 
+## [Offical Docs](https://vuepress-add-this.mrhope.site/en/) / [官方文档](https://vuepress-add-this.mrhope.site)
+
 ## Usage
 
 ```bash
