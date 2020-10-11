@@ -32,7 +32,7 @@
 }
 
 #message-container .message {
-  background: #fff;
+  background-color: #fff;
   margin: 10px 0;
   padding: 0 10px;
   height: 40px;
@@ -47,11 +47,12 @@
 #message-container {
   position: fixed;
   left: 0;
-  top: 100px;
+  top: 80px;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 }
 
 #message-container .message .text {
