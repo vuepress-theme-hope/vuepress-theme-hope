@@ -151,7 +151,19 @@ const containerConfig: Record<string, Record<string, string>> = {
   },
 };
 
+const copyCodeConfig: Record<string, Record<string, string>> = {
+  copy: {
+    "/zh/": "复制成功 🎉",
+    "/en/": "Copy successfully 🎉",
+  },
+  hint: {
+    "/zh/": "复制代码",
+    "/en/": "Copy the code",
+  },
+};
+
 /** 插件配置 */
 export const config = {
   container: containerConfig,
+  copyCode: copyCodeConfig,
 };
