@@ -61,13 +61,9 @@
           :key="index"
           :class="{ link: feature.link }"
           class="feature"
+          @click="feature.link ? navigate(feature.link) : ''"
         >
-          <h2>
-            <span v-if="feature.link" @click="navigate(feature.link)">
-              {{ feature.title }}
-            </span>
-            <span v-else>{{ feature.title }}</span>
-          </h2>
+          <h2>{{ feature.title }}</h2>
           <p>{{ feature.details }}</p>
         </div>
       </div>
@@ -180,14 +176,20 @@
     align-items stretch
     align-content stretch
     padding 1.2rem 0
-    margin-top 2.5rem
+    margin 0 -2rem
     border-top 1px solid $borderColor
 
     @media (max-width $MQMobile)
       flex-direction column
       align-items stretch
 
+    @media (max-width $MQMobileNarrow)
+      margin 0 -1.5rem
+
     .feature
+      display flex
+      flex-direction column
+      justify-content center
       flex-basis calc(33% - 5rem)
       transition all 0.5s
       padding 0 1.5rem
@@ -205,20 +207,18 @@
         transform scale(1.05)
         box-shadow 0 2px 12px 0 var(--card-shadow-color)
 
-      &.link h2:hover
-        color var(--accent-color)
-
       h2
         font-size 1.25rem
         font-weight 500
         border-bottom none
-        padding-bottom 0
+        margin-bottom 0
         color var(--text-color-l10)
 
         @media (max-width $MQMobileNarrow)
           font-size 1.25rem
 
       p
+        margin-top 0
         color var(--text-color-l25)
         text-align justify
 </style>
