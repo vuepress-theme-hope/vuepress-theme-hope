@@ -45,8 +45,6 @@ export type HopeSideBarConfig =
   | false;
 
 interface HopeLangI18nConfigItem {
-  /** Valine 占位符 */
-  valineHolder: string;
   /** 主题色配置 */
   themeColor: {
     /** 颜色提示文字 */
@@ -63,58 +61,22 @@ interface HopeLangI18nConfigItem {
     /** 返回上一页文字 */
     back: string;
   };
-  /** PWA 提示消息 */
-  pwa: string;
-  /** 分页多语言配置 */
-  pagination: {
-    /** 上一页文字 */
-    prev: string;
-    /** 下一页文字 */
-    next: string;
-    /** 跳转文字 */
-    navigate: string;
-    /** 按钮文字 */
-    button: string;
-    /** 错误文字 */
-    errorText: string;
-  };
   /** 博客设置 */
   blog: {
     /** 文章文字 */
     article: string;
     /** 文章列表文字 */
     articleList: string;
-    /** 作者 */
-    author: string;
-    /** 写作日期 */
-    time: string;
-    /** 原创文字 */
-    origin: string;
-    /** 访问量 */
-    views: string;
-    /** 标签文字 */
-    tag: string;
     /** 分类文字 */
     category: string;
+    /** 标签文字 */
+    tag: string;
     /** 时间轴文字 */
     timeline: string;
     /** 时间轴显示文字 */
     timelineText: string;
-    /** 阅读时间 */
-    readingTime: string;
-    /** 文章字数 */
-    words: string;
     /** 全部文字 */
     allText: string;
-  };
-  /** 阅读时间 */
-  readingTime: {
-    /** 字数 */
-    word: string;
-    /** 一分钟阅读 */
-    minute: string;
-    /** 时间 */
-    time: string;
   };
 }
 
@@ -134,6 +96,59 @@ export interface HopeLangLocalesConfig
   algolia?: AlgoliaOption;
   /** 时间轴文字 */
   timeline?: string;
+}
+
+export interface ComponentI18NConfig {
+  /** 返回顶部文字 */
+  backToTop: string;
+  /** 分页多语言配置 */
+  pagination: {
+    /** 上一页文字 */
+    prev: string;
+    /** 下一页文字 */
+    next: string;
+    /** 跳转文字 */
+    navigate: string;
+    /** 按钮文字 */
+    button: string;
+    /** 错误文字 */
+    errorText: string;
+  };
+}
+
+export interface CopyCodeI18NConfig {
+  /** 复制文字 */
+  copy: string;
+  /** 提示文字 */
+  hint: string;
+}
+
+export interface PageInfoI18nConfig {
+  /** 作者 */
+  author: string;
+  /** 写作日期 */
+  time: string;
+  /** 原创文字 */
+  origin: string;
+  /** 访问量 */
+  views: string;
+  /** 标签文字 */
+  tag: string;
+  /** 分类文字 */
+  category: string;
+  /** 阅读时间 */
+  readingTime: string;
+  /** 文章字数 */
+  words: string;
+}
+
+export interface ReadingTimeI18NCOnfig {
+  /** 字数模板 */
+  word: string;
+  /** 小于一分钟文字 */
+  minute: string;
+  /** 时间模板 */
+  time: string;
 }
 
 /** 处理过的 vuepress-theme-hope 多语言配置 */

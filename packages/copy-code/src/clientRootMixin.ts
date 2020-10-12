@@ -56,7 +56,7 @@ const codeCopyMinxin = Vue.extend({
 
         copyElement.setAttribute(
           "aria-label",
-          CODE_COPY_I18N.hint[this.$localePath || "/"]
+          CODE_COPY_I18N[this.$localePath || "/"].hint
         );
         copyElement.setAttribute("data-balloon-pos", "left");
 
@@ -87,7 +87,7 @@ const codeCopyMinxin = Vue.extend({
       textAreaElement.select();
       document.execCommand("copy");
       message.pop(
-        CODE_COPY_I18N.copy[this.$localePath || "/"],
+        CODE_COPY_I18N[this.$localePath || "/"].copy,
         CODE_COPY_OPIONS.duration
       );
 

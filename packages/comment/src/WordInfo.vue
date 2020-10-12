@@ -1,5 +1,5 @@
 <template>
-  <span v-if="words" class="words-info" :title="hint">
+  <span v-if="words" class="words-info" :aria-label="hint" data-balloon-pos="down">
     <WordIcon />
     <span v-text="words" />
   </span>

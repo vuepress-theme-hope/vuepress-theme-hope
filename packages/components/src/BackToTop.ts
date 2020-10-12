@@ -26,6 +26,10 @@ export default class BackToTop extends Vue {
     );
   }
 
+  private get hint(): string {
+    return COMPONENT_I18N[this.$localePath || "/"].backToTop;
+  }
+
   private mounted(): void {
     this.scrollTop = this.getScrollTop();
     window.addEventListener(

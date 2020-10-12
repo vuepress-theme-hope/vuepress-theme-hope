@@ -11,7 +11,7 @@ import ProjectList from "@theme/components/Blog/ProjectList.vue";
 import TagList from "@theme/components/Blog/TagList.vue";
 import Timeline from "@theme/components/Blog/Timeline.vue";
 import TimelineList from "@theme/components/Blog/TimelineList.vue";
-import { i18n, HopeLangI18nConfig } from "@mr-hope/vuepress-shared-utils";
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component({
   components: {
@@ -28,8 +28,9 @@ import { i18n, HopeLangI18nConfig } from "@mr-hope/vuepress-shared-utils";
   },
 })
 export default class BlogPage extends Mixins(ArticleMixin, StickyMixin) {
-  private get i18n(): HopeLangI18nConfig["blog"] {
-    return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
+  private get articleListText(): string {
+    return (this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog)
+      .articleList;
   }
 
   private heroHeight(): number {

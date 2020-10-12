@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <section class="article">
     <StickyIcon v-if="article.frontmatter.sticky" />
     <RouterLink class="title" tag="header" :to="article.path">

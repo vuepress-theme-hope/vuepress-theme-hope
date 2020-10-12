@@ -1,5 +1,5 @@
+import { ComponentI18NConfig } from "@mr-hope/vuepress-shared-utils";
 import { Component, Model, Prop, Vue } from "vue-property-decorator";
-import { HopeLangI18nConfigItem, i18n } from "@mr-hope/vuepress-shared-utils";
 
 @Component
 export default class Pagination extends Vue {
@@ -60,11 +60,8 @@ export default class Pagination extends Vue {
     return arr;
   }
 
-  private get i18n(): HopeLangI18nConfigItem["pagination"] {
-    return (
-      i18n.getLocale(this.$lang).pagination ||
-      i18n.getDefaultLocale().pagination
-    );
+  private get i18n(): ComponentI18NConfig["pagination"] {
+    return COMPONENT_I18N[this.$localePath || "/"].pagination;
   }
 
   private mounted(): void {

@@ -1,10 +1,27 @@
-import { PluginOptionAPI } from "@mr-hope/vuepress-types";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { resolve } from "path";
 
-export = {
-  name: "components",
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import { ComponentOptions } from "../types";
 
-  enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+export = (options: ComponentOptions, context: Context): PluginOptionAPI => {
+  const { themeConfig } = context;
+  const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
+  const baseLangPath = i18n.lang2path(baseLang);
+  const componentConfig = i18n.config.component;
 
-  globalUIComponents: "BackToTop",
-} as PluginOptionAPI;
+  componentConfig["/"] = componentConfig[baseLangPath];
+
+  return {
+    name: "components",
+
+    define: {
+      COMPONENT_I18N: componentConfig,
+    },
+
+    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+
+    globalUIComponents: "BackToTop",
+  };
+};

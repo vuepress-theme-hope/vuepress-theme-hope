@@ -1,4 +1,6 @@
-export interface CodeCopyOptions {
+import { CopyCodeI18NConfig } from "@mr-hope/vuepress-shared-utils";
+
+export interface CopyCodeOptions {
   /**
    * 主目录所对应的语言。
    *
@@ -32,6 +34,6 @@ export interface CodeCopyOptions {
 }
 
 declare global {
-  const CODE_COPY_OPIONS: Required<CodeCopyOptions>;
-  const CODE_COPY_I18N: Record<string, Record<string, string>>;
+  const CODE_COPY_OPIONS: Required<CopyCodeOptions>;
+  const CODE_COPY_I18N: Record<string, CopyCodeI18NConfig>;
 }
