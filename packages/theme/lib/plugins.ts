@@ -7,14 +7,6 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
   if (themeConfig.comment && themeConfig.author)
     themeConfig.comment.author = themeConfig.author;
 
-  // 设置域名
-  if (themeConfig.hostname)
-    if (themeConfig.sitemap) {
-      if (!themeConfig.sitemap.hostname)
-        themeConfig.sitemap.hostname = themeConfig.hostname;
-    } else if (themeConfig.sitemap !== false)
-      themeConfig.sitemap = { hostname: themeConfig.hostname };
-
   return [
     /** 评论插件 */
     ["@mr-hope/comment", themeConfig.comment],

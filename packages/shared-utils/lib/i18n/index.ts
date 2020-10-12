@@ -69,7 +69,7 @@ Note: This warning will be shown only once.`
 export const getDefaultLocale = (): HopeLangI18nConfig =>
   localesConfig["en-US"];
 
-const i18n = {
+export default {
   checkLang,
   config,
   langs,
@@ -78,5 +78,3 @@ const i18n = {
   getDefaultLocale,
   getLocale,
 };
-
-export default i18n;
