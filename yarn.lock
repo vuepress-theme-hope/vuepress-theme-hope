@@ -6801,10 +6801,10 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
   integrity sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
 
-flowchart.js@^1.14.1:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/flowchart.js/-/flowchart.js-1.14.1.tgz#aec39bf1f8b7f2f181c2872d9f190b5239ffa3b5"
-  integrity sha512-WbjQNVlHwklGHCpkOc/J7L5YaPixiguo6pghUgF/ddrEaufHGwzTO0FWTPbPNb8VNZlggVsKCITKO9Xm8xD/RQ==
+flowchart.js@^1.14.2:
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/flowchart.js/-/flowchart.js-1.14.2.tgz#d9d25cd0c1acf393897e4a8ca36262368fc4d479"
+  integrity sha512-kKQjuXjfAOdK0IGq1Q8czgQlQtEHaafSdP3gNMRRbvm9ziiC/KCLnt61HoT2e73rqPRVhfFRzB/8CR6UNM1bZw==
   dependencies:
     raphael "2.3.0"
 
@@ -14406,11 +14406,6 @@ vuepress-plugin-named-chunks@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-named-chunks/-/vuepress-plugin-named-chunks-1.1.4.tgz#c65e121a8d0bbb4201766ec06816a2aa67dae3b7"
   integrity sha512-zCRVmbf10VAf8NcrVLlm1b6eGU3vkc/iLVNvpIL3sBvtCCVaZheT2OlaV0CMPE6OjjTYbMrYXjugu4vcpiXrNQ==
-
-vuepress-plugin-one-click-copy@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-one-click-copy/-/vuepress-plugin-one-click-copy-1.0.2.tgz#9731f9d2e7b6d5160e84942b0f1b8c7500589487"
-  integrity sha512-C2uOBczBd3nhgztywS8MxkZbfknYUuw6d7vc6otF7Jv5AxGQpVtsZm7jxk0PiemXQNpAWHM/PmqlAkRb8ZCLMw==
 
 vuepress-plugin-sitemap@^2.3.1:
   version "2.3.1"
