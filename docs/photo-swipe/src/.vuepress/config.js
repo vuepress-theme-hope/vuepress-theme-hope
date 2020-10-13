@@ -64,10 +64,10 @@ module.exports = config({
         ],
       },
     },
+
+    hostname: "https://vuepress-photo-swipe.mrhope.site/",
+
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/photo-swipe/src",
   },
-
-  hostname: "https://vuepress-photo-swipe.mrhope.site/",
-
-  repo: "https://github.com/mister-hope/vuepress-theme-hope",
-  docsDir: "docs/photo-swipe/src",
 });

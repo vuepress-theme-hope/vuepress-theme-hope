@@ -1,4 +1,3 @@
-/* global IMAGE_CONTAINER, IMAGE_SELECTOR, PHOTOSWIPE_OPTIONS */
 import { Component, Vue, Watch } from "vue-property-decorator";
 import PhotoSwipe from "photoswipe";
 import PhotoSwipeUIDefault from "photoswipe/dist/photoswipe-ui-default";

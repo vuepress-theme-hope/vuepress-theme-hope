@@ -11,11 +11,11 @@ export = ({
 
   define: {
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    IMAGE_CONTAINER: container,
+    IMAGE_CONTAINER: container || ".theme-default-content",
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    IMAGE_SELECTOR: selector,
+    IMAGE_SELECTOR: selector || ".theme-default-content :not(a) > img",
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    PHOTOSWIPE_OPTIONS: option,
+    PHOTOSWIPE_OPTIONS: option || {},
   },
 
   enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),

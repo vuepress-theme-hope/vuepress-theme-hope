@@ -6,7 +6,13 @@ export interface ReadingTime {
 }
 
 export interface ReadingTimeOptions {
-  /** reading speed (words per minute) */
+  /**
+   * 每分钟阅读的字数
+   *
+   * reading speed (words per minute)
+   *
+   * @default 300
+   */
   wordPerminute?: number;
 }
 

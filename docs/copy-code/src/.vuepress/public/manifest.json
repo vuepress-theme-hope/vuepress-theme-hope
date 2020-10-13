@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-copy-code",
-  "short_name": "add-this",
+  "short_name": "copy-code",
   "description": "Copy Code plugin for Vuepress",
   "lang": "en-US",
   "orientation": "portrait-primary",

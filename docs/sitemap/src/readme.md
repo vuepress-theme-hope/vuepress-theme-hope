@@ -1,16 +1,43 @@
 ---
-title: "@mr-hope/sitemap"
-category: config
-tags:
-  - plugin
-  - config
+home: true
+title: "@mr-hope/vuepress-plugin-sitemap"
+icon: homefill
+heroImage: /logo.svg
+heroText: "@mr-hope/vuepress-plugin-sitemap"
+tagline: Automatically generate a sitemap for your website when you build it.
+copyright: false
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-Automatically generate a sitemap for your webpage when you build it.
+## How to use
 
-<!-- more -->
+### Install
 
-## Options
+```bash
+npm i -D @mr-hope/vuepress-plugin-sitemap
+```
+
+Or
+
+```bash
+yarn add -D @mr-hope/vuepress-plugin-sitemap
+```
+
+### Usage
+
+```js {3-7}
+// .vuepress/config.js
+module.exports = {
+  plugin: [
+    "@mr-hope/sitemap",
+    {
+      // your options
+    },
+  ],
+};
+```
+
+## Plugin options
 
 ### hostname
 

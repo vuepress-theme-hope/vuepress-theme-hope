@@ -1,10 +1,10 @@
 ---
 home: true
-title: vuepress-plugin-add-this
+title: "@mr-hope/vuepress-plugin-copy-code"
 icon: homefill
 heroImage: /logo.svg
-heroText: vuepress-plugin-add-this
-tagline: 为 Vuepress 提供 addthis 支持
+heroText: "@mr-hope/vuepress-plugin-copy-code"
+tagline: 为 Vuepress 提供代码块一键复制
 action:
   - text: 快速上手 💡
     link: /zh/guide/
@@ -21,18 +21,18 @@ copyright: false
 ### 安装
 
 ```bash
-npm i -D vuepress-plugin-copy-code
+npm i -D @mr-hope/vuepress-plugin-copy-code
 ```
 
 或
 
 ```bash
-yarn add -D vuepress-plugin-copy-code
+yarn add -D @mr-hope/vuepress-plugin-copy-code
 ```
 
 ### 使用
 
-```js {3-5}
+```js {3-7}
 // .vuepress/config.js
 module.exports = {
   plugin: [

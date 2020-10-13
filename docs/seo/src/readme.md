@@ -1,14 +1,41 @@
 ---
-title: "@mr-hope/seo"
-category: config
-tags:
-  - plugin
-  - config
+home: true
+title: "@mr-hope/vuepress-plugin-seo"
+icon: homefill
+heroImage: /logo.svg
+heroText: "@mr-hope/vuepress-plugin-seo"
+tagline: Inject <meta> into your webpage to enhance the SEO of your webpage.
+copyright: false
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-Inject `<meta>` into your webpage to enhance the SEO of your webpage.
+## How to use
 
-<!-- more -->
+### Install
+
+```bash
+npm i -D @mr-hope/vuepress-plugin-seo
+```
+
+Or
+
+```bash
+yarn add -D @mr-hope/vuepress-plugin-seo
+```
+
+### Usage
+
+```js {3-7}
+// .vuepress/config.js
+module.exports = {
+  plugin: [
+    "@mr-hope/seo",
+    {
+      // your options
+    },
+  ],
+};
+```
 
 ## Plugin options
 

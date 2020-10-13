@@ -118,11 +118,11 @@ tags: intro
 
 - [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA 支持
 
-- [@mr-hope/vuepress-plugin-reading-time](../config/plugin/reading-time.md): 阅读时间与字数统计
+- [@mr-hope/vuepress-plugin-reading-time](https://vuepress-reading-time.mrhope.site/zh/): 阅读时间与字数统计
 
-- [@mr-hope/vuepress-plugin-seo](../config/plugin/seo.md): SEO 增强插件
+- [@mr-hope/vuepress-plugin-seo](https://vuepress-seo.mrhope.site/zh/): SEO 增强插件
 
-- [@mr-hope/vuepress-plugin-sitemap](../config/plugin/sitemap.md): 为你的站点生成 sitemap
+- [@mr-hope/vuepress-plugin-sitemap](https://vuepress-sitemap.mrhope.site/zh/): 为你的站点生成 sitemap
 
 - [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site/zh/): 让网站支持社交分享与关注
 

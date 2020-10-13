@@ -1,16 +1,43 @@
 ---
-title: "@mr-hope/sitemap"
-category: config
-tags:
-  - plugin
-  - config
+home: true
+title: "@mr-hope/vuepress-plugin-sitemap"
+icon: homefill
+heroImage: /logo.svg
+heroText: "@mr-hope/vuepress-plugin-sitemap"
+tagline: 自动在你构建网页时为你生成网页的 sitemap。
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: false
 ---
 
-自动在你构建网页时为你生成网页的 sitemap。
+## 使用插件
 
-<!-- more -->
+### 安装
 
-## 选项
+```bash
+npm i -D @mr-hope/vuepress-plugin-sitemap
+```
+
+或
+
+```bash
+yarn add -D @mr-hope/vuepress-plugin-sitemap
+```
+
+### 使用
+
+```js {3-7}
+// .vuepress/config.js
+module.exports = {
+  plugin: [
+    "@mr-hope/sitemap",
+    {
+      // 你的选项
+    },
+  ],
+};
+```
+
+## 插件选项
 
 ### hostname
 

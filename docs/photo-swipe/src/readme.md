@@ -6,6 +6,9 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: Photo swipe plugin for vuepress
 action:
+  - text: Demo 💡
+    link: /demo/
+
   - text: Config 🛠
     link: /config/
 

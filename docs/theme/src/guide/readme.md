@@ -116,11 +116,11 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA support
 
-- [@mr-hope/vuepress-plugin-reading-time](../config/plugin/reading-time.md): Expect reading time and words count
+- [@mr-hope/vuepress-plugin-reading-time](https://vuepress-reading-time.mrhope.site): Expect reading time and words count
 
-- [@mr-hope/vuepress-plugin-seo](../config/plugin/seo.md): SEO Enhancement Plugin
+- [@mr-hope/vuepress-plugin-seo](https://vuepress-seo.mrhope.site): SEO Enhancement Plugin
 
-- [@mr-hope/vuepress-plugin-sitemap](../config/plugin/sitemap.md): Sitemap Generator for your site
+- [@mr-hope/vuepress-plugin-sitemap](https://vuepress-sitemap.mrhope.site): Sitemap Generator for your site
 
 - [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site): Provide sociel share and follow function
 

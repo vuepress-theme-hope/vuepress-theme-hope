@@ -26,13 +26,8 @@ module.exports = config({
     },
   },
 
-  /** 主题配置 */
   themeConfig: {
-    /** 网站的logo */
     logo: "/logo.svg",
-
-    author: "Mr.Hope",
-    iconPrefix: "vuepress-",
 
     nav: [
       { text: "Home", icon: "homefill", link: "/" },
@@ -47,6 +42,9 @@ module.exports = config({
         link: "/config/",
       },
     ],
+
+    author: "Mr.Hope",
+    iconPrefix: "vuepress-",
 
     footer: {
       display: true,
@@ -82,10 +80,9 @@ module.exports = config({
     },
 
     addthis: "ra-5f829c59e6c6bc9a",
+    hostname: "https://vuepress-add-this.mrhope.site/",
+
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/add-this/src",
   },
-
-  hostname: "https://vuepress-add-this.mrhope.site/",
-
-  repo: "https://github.com/mister-hope/vuepress-theme-hope",
-  docsDir: "docs/add-this/src",
 });

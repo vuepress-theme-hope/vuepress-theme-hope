@@ -1,14 +1,41 @@
 ---
-title: "@mr-hope/seo"
-category: config
-tags:
-  - plugin
-  - config
+home: true
+title: "@mr-hope/vuepress-plugin-seo"
+icon: homefill
+heroImage: /logo.svg
+heroText: "@mr-hope/vuepress-plugin-seo"
+tagline: 向你的网页注入 <meta>，来增强你网页的 SEO。
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: false
 ---
 
-向你的网页注入 `<meta>`，来增强你网页的 SEO。
+## 使用插件
 
-<!-- more -->
+### 安装
+
+```bash
+npm i -D @mr-hope/vuepress-plugin-seo
+```
+
+或
+
+```bash
+yarn add -D @mr-hope/vuepress-plugin-seo
+```
+
+### 使用
+
+```js {3-7}
+// .vuepress/config.js
+module.exports = {
+  plugin: [
+    "@mr-hope/seo",
+    {
+      // 你的选项
+    },
+  ],
+};
+```
 
 ## 插件选项
 

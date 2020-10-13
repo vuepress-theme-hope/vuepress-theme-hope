@@ -12,8 +12,19 @@ export interface PageSeoInfo {
 }
 
 export interface SeoOptions {
-  twitterID: string;
-  /** Content restrictions */
+  /**
+   * 你的 Twitter 用户名
+   *
+   * your twitter username
+   */
+  twitterID?: string;
+  /**
+   * 内容分级情况
+   *
+   * Content restrictions
+   *
+   * The age rating of the content, the format is `[int]+`, such as `'13+'`
+   */
   restrictions?: string;
   /** A function to generate seo */
   seo?: (info: PageSeoInfo) => Partial<SeoContent>;

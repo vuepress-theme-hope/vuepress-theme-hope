@@ -114,7 +114,7 @@ const appendMeta = (
     }
 
   if (options.restrictions) add("og:restrictions:age", options.restrictions);
-  add("twitter:creator", options.twitterID);
+  if (options.twitterID) add("twitter:creator", options.twitterID);
 };
 
 export = (options: SeoOptions, context: Context): PluginOptionAPI => ({

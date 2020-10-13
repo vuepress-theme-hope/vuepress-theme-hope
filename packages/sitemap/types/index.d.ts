@@ -159,7 +159,13 @@ export interface SitemapOptions {
    * @default 'sitemap.xml'
    */
   outFile?: string;
-  /** 页面默认更新频率 */
+  /**
+   * 页面默认更新频率
+   *
+   * Page default update frequency
+   *
+   * @default "daily"
+   */
   changefreq?:
     | "always"
     | "hourly"

@@ -52,10 +52,10 @@ module.exports = config({
       appId: "JGjyHWyyPdU3wFBkM6P1xd51-gzGzoHsz",
       appKey: "dGFcnYzBWRWO5SIRiW2Q9grW",
     },
+
+    hostname: "https://vuepress-last-update.mrhope.site/",
+
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/last-update/src",
   },
-
-  hostname: "https://vuepress-add-this.mrhope.site/",
-
-  repo: "https://github.com/mister-hope/vuepress-theme-hope",
-  docsDir: "docs/add-this/src",
 });

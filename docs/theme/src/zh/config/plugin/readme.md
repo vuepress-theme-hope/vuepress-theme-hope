@@ -24,11 +24,11 @@ vuepress-theme-hope 自带了很多 vuepress 插件。一些插件会自动启�
 
 - [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA 支持
 
-- [@mr-hope/vuepress-plugin-reading-time](reading-time.md): 阅读时间与字数统计
+- [@mr-hope/vuepress-plugin-reading-time](https://vuepress-reading-time.mrhope.site/zh/): 阅读时间与字数统计
 
-- [@mr-hope/vuepress-plugin-seo](seo.md): SEO 增强插件
+- [@mr-hope/vuepress-plugin-seo](https://vuepress-seo.mrhope.site/zh/): SEO 增强插件
 
-- [@mr-hope/vuepress-plugin-sitemap](sitemap.md): 为你的站点生成 sitemap
+- [@mr-hope/vuepress-plugin-sitemap](https://vuepress-sitemap.mrhope.site/zh/): 为你的站点生成 sitemap
 
 - [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site/zh/): 让网站支持社交分享与关注
 

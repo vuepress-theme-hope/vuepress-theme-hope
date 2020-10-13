@@ -1,9 +1,9 @@
 ---
 home: true
-title: vuepress-plugin-copy-code
+title: "@mr-hope/vuepress-plugin-copy-code"
 icon: homefill
 heroImage: /logo.svg
-heroText: vuepress-plugin-copy-code
+heroText: "@mr-hope/vuepress-plugin-copy-code"
 tagline: Code Copy plugin for vuepress
 action:
   - text: Guide 💡
@@ -32,7 +32,7 @@ yarn add -D @mr-hope/vuepress-plugin-copy-code
 
 ### Usage
 
-```js {3-5}
+```js {3-7}
 // .vuepress/config.js
 module.exports = {
   plugin: [

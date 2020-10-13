@@ -80,10 +80,10 @@ module.exports = config({
         ],
       },
     },
+
+    hostname: "https://vuepress-copy-code.mrhope.site/",
+
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/copy-code/src",
   },
-
-  hostname: "https://vuepress-add-this.mrhope.site/",
-
-  repo: "https://github.com/mister-hope/vuepress-theme-hope",
-  docsDir: "docs/add-this/src",
 });

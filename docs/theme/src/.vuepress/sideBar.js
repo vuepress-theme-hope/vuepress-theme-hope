@@ -58,15 +58,7 @@ module.exports = {
         icon: "extension",
         prefix: "plugin/",
         collapsable: false,
-        children: [
-          "",
-          "pwa",
-          "reading-time",
-          "seo",
-          "sitemap",
-          "container",
-          "copyright",
-        ],
+        children: ["", "pwa", "container", "copyright"],
       },
     ],
 
@@ -159,15 +151,7 @@ module.exports = {
         icon: "extension",
         prefix: "plugin/",
         collapsable: false,
-        children: [
-          "",
-          "pwa",
-          "reading-time",
-          "seo",
-          "sitemap",
-          "container",
-          "copyright",
-        ],
+        children: ["", "pwa", "container", "copyright"],
       },
     ],
 
