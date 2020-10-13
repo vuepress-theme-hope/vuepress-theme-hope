@@ -22,13 +22,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
   - [Mark](feature/markdown/mark.md)
   - [Subsript and Supercript](feature/markdown/sup-sub.md)
 
-- [Picture preview feature](layout/page.md#picture-preview), supports:
-
-  - zooming
-  - dragging
-  - sliding browsing
-  - sharing
-  - downloading
+- [Picture preview feature](layout/page.md#picture-preview), supports zooming, dragging, sliding browsing, sharing and downloading
 
 - [Article info](layout/page.md#page-info-display)
 
@@ -59,7 +53,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - [Back to top button](feature/component.md#back-to-top-button-backtotop)
 
-- One-click copy code
+- [One-click copy code](https://vuepress-copy-code.mrhope.site)
 
 - Add copyright information when copying
 

@@ -32,11 +32,11 @@
 }
 
 #message-container .message {
-  background-color: #fff;
+  background-color: var(--background-color, #fff);
   margin: 10px 0;
   padding: 0 10px;
   height: 40px;
-  box-shadow: 0 0 10px 0 #ccc;
+  box-shadow: 0 0 10px 0 var(--box-shadow-color, #bbb);
   font-size: 14px;
   border-radius: 3px;
   display: flex;
@@ -56,6 +56,6 @@
 }
 
 #message-container .message .text {
-  color: #333;
+  color: var(--text-color, #333);
   padding: 0 20px 0 5px;
 }
