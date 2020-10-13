@@ -5,8 +5,8 @@ icon: homefill
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-sitemap"
 tagline: Automatically generate a sitemap for your website when you build it.
-copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyrightText: false
 ---
 
 ## How to use

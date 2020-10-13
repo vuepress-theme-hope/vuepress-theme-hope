@@ -5,8 +5,8 @@ icon: homefill
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-last-update"
 tagline: Last update plugin for vuepress
-copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyrightText: false
 ---
 
 This plugin will use git to inject a readable last update time and a last update time timestamp into the page.

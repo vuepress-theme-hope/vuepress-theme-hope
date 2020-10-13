@@ -13,7 +13,7 @@ action:
     link: /config/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyright: false
+copyrightText: false
 ---
 
 Let your images support preview, zoom, share, swipe view and download.

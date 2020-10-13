@@ -111,6 +111,27 @@ Set a password for the current article.
 
 Set current page's image，please fill in an absolute path.
 
+### copyright.minLength
+
+- Type: `number`
+- Default value: `100`
+
+The minimum number of characters that trigger copyright information or prohibit copying.
+
+### copyright.noCopy
+
+- Type: `boolean`
+- Default value: `false`
+
+Whether to prohibit copying
+
+### copyright.noSelect
+
+- Type: `boolean`
+- Default value: `false`
+
+Whether to prohibit selected text
+
 ## Page display configuration
 
 ### pageInfo
@@ -211,6 +232,13 @@ Set the footer content of the current page. If you want an empty content, set it
 Set it to `false` if you want to disable the footer, and set it to `true` if you want to display the default footer on a specific page.
 
 For more details, please see [Page → Footer Support](../guide/layout/page.md#footer-support)
+
+### copyrightText
+
+- Type: `string | false`
+- Required: No
+
+Set copyright info for current page.
 
 ### medialink
 

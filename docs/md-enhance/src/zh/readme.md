@@ -37,8 +37,8 @@ features:
     details: Markdown 现在也可以支持 Tex 语法以显示公式
     link: /zh/guide/text/
 
-copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyrightText: false
 ---
 
 ## 使用插件

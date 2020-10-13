@@ -5,8 +5,8 @@ icon: homefill
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-reading-time"
 tagline: Words and reading time counter
-copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyrightText: false
 ---
 
 Expect eading time and word count statistics

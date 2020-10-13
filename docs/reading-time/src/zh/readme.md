@@ -6,7 +6,7 @@ heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-reading-time"
 tagline: 字数与阅读时间统计
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyright: false
+copyrightText: false
 ---
 
 阅读时间与字数统计

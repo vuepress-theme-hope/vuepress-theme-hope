@@ -6,7 +6,7 @@ heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-seo"
 tagline: 向你的网页注入 <meta>，来增强你网页的 SEO。
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyright: false
+copyrightText: false
 ---
 
 ## 使用插件

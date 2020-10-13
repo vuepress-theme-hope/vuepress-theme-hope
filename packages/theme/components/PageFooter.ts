@@ -11,11 +11,11 @@ export default class PageFooter extends Vue {
 
   /** 显示页脚 */
   private get display(): boolean {
-    const { copyright, footer, medialink } = this.$page.frontmatter;
+    const { copyrightText, footer, medialink } = this.$page.frontmatter;
 
     return (
       footer !== false &&
-      Boolean(copyright || footer || medialink || this.footerConfig.display)
+      Boolean(copyrightText || footer || medialink || this.footerConfig.display)
     );
   }
 
@@ -32,9 +32,9 @@ export default class PageFooter extends Vue {
 
   /** 版权信息 */
   private get copyright(): string | false {
-    return this.$frontmatter.copyright === false
+    return this.$frontmatter.copyrightText === false
       ? false
-      : (this.$frontmatter.copyright as string | undefined) ||
+      : (this.$frontmatter.copyrightText as string | undefined) ||
           this.footerConfig.copyright ||
           (this.$themeConfig.author
             ? `Copyright © 2020 ${this.$themeConfig.author}`

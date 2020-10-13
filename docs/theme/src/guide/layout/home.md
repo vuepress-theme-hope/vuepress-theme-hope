@@ -140,7 +140,7 @@ features:
     link: /guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyright: false
+copyrightText: false
 ---
 
 ```

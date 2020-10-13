@@ -6,7 +6,7 @@ heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-sitemap"
 tagline: 自动在你构建网页时为你生成网页的 sitemap。
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyright: false
+copyrightText: false
 ---
 
 ## 使用插件

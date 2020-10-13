@@ -85,7 +85,7 @@ next: false
 
 如果希望每个页面都显示页脚，需要将 `themeConfig.footer.display` 设置为 `true`。同时，你可以使用 `themeConfig.footer.copyright` 和 `themeConfig.content` 设置默认的版权信息与页脚内容。
 
-你也可以在页面的 `Front Matter` 中配置 `footer`，`copyright` 与 `medialink` 字段。
+你也可以在页面的 `Front Matter` 中配置 `footer`，`copyrightText` 与 `medialink` 字段。
 
 - `footer` 字段可以填入字符串或布尔值。
 
@@ -93,7 +93,7 @@ next: false
 
   如果你填入一个字符串，它会以 `v-html` 指令的形式插入到页脚的主位置，所以你可以填入 HTMLString。
 
-- `copyright` 字段可以填入本页面的版权信息，同样也支持 HTMLString。这当你引用了来自别处的文章且对方使用了特定许可是很有用的。你也可以填入 `false` 来隐藏特定页面的版权信息。
+- `copyrightText` 字段可以填入本页面的版权信息，同样也支持 HTMLString。这当你引用了来自别处的文章且对方使用了特定许可是很有用的。你也可以填入 `false` 来隐藏特定页面的版权信息。
 
 - `medialink` 字段同 `themeConfig.blog.links` ([具体配置见此](./blog.md#可配置的项目))，你可以在特定页面配置它以展示不同的社交媒体链接，你也可以填入 `false` 来隐藏它。
 
@@ -112,7 +112,7 @@ footer: true
 ```md
 ---
 footer: This website is served by Github Pages
-copyright: false
+copyrightText: false
 medialink: false
 ---
 ```
@@ -121,8 +121,8 @@ medialink: false
 
 ```md
 ---
-copyright: MIT LICENSE
 footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
+copyrightText: MIT LICENSE
 medialink:
   Zhihu: https://zhihu.com
 ---

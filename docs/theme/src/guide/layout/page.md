@@ -85,7 +85,7 @@ See the [Comment section](../feature/comment.md) for details.
 
 If you want to display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 
-You can also configure the `footer`, `copyright` and `medialink` fields in the `Front Matter` page.
+You can also configure the `footer`, `copyrightText` and `medialink` fields in the `Front Matter` page.
 
 - The `footer` field can be filled with a string or Boolean value.
 
@@ -93,7 +93,7 @@ You can also configure the `footer`, `copyright` and `medialink` fields in the `
 
   If you fill in a string, it will be inserted into footer by `v-html`, so you can fill in HTMLString.
 
-- The `copyright` field can be filled with copyright information on this page,(also support HTMLString) which is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
+- The `copyrightText` field can be filled with copyright information on this page,(also support HTMLString) which is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
 
 - The `medialink` field is the same as `themeConfig.blog.links` ([specific configuration see here](./blog.md#configurable-items)), you can configure it in a specific page to display different social media links. You can also set it to `false` to hide it.
 
@@ -112,7 +112,7 @@ Customize footer text without displaying copyright information and media links:
 ```md
 ---
 footer: This website is served by Github Pages
-copyright: false
+copyrightText: false
 medialink: false
 ---
 ```
@@ -121,8 +121,8 @@ Custom footer content and copyright information and media links:
 
 ```md
 ---
-copyright: MIT LICENSE
 footer: <a href="https://github.com/Mister-Hope"> Mr.Hope </a>
+copyrightText: MIT LICENSE
 medialink:
   Zhihu: https://zhihu.com
 ---

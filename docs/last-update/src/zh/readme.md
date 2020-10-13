@@ -6,7 +6,7 @@ heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-last-update"
 tagline: 最后更新时间插件
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyright: false
+copyrightText: false
 ---
 
 这个插件将会利用 Git 的日志向 page 注入可阅读的最后更新时间文字与最后更新时间的时间戳。

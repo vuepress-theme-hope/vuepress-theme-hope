@@ -115,12 +115,26 @@ tags:
 
 设置当前页面的预览图(分享图)，请填入绝对路径。
 
-### copyright
+### copyright.minLength
 
-- 类型: `string | false`
-- 默认值: 全局中配置的值
+- 类型: `number`
+- 默认值: `100`
 
-设置当前页面的版权信息，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
+触发版权信息或禁止复制动作的最少字符数。
+
+### copyright.noCopy
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否禁止复制
+
+### copyright.noSelect
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否禁止选中文字
 
 ## 页面显示配置
 
@@ -220,6 +234,13 @@ tags:
 设置当前页面的页脚内容，如果你想要禁用页脚，请设置为 `false`，如果你想要移除默认的页脚内容，请设置为 `''`，如果你想使用默认页脚，请设置为 `true`。
 
 更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
+
+### copyrightText
+
+- 类型: `string | false`
+- 默认值: 全局中配置的值
+
+设置当前页面的版权信息，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
 
 ### mediaLink
 

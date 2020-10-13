@@ -37,8 +37,8 @@ features:
     details: Markdown now have Tex Support so you can write yout formula easily
     link: /guide/tex/
 
-copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyrightText: false
 ---
 
 ### Install
