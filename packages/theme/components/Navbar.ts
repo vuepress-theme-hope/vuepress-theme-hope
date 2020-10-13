@@ -56,7 +56,7 @@ export default class Navbar extends Vue {
   private mounted(): void {
     // Refer to config.styl
     const MOBILE_DESKTOP_BREAKPOINT = 719;
-    const NAVBAR_VERTICAL_PADDING =
+    const NAVBAR_HORIZONTAL_PADDING =
       parseInt(css(this.$el, "paddingLeft")) +
       parseInt(css(this.$el, "paddingRight"));
     const handleLinksWrapWidth = (): void => {
@@ -65,9 +65,10 @@ export default class Navbar extends Vue {
       else
         this.linksWrapMaxWidth =
           (this.$el as HTMLElement).offsetWidth -
-          NAVBAR_VERTICAL_PADDING -
-          ((this.$refs.siteName &&
-            (this.$refs.siteName as HTMLElement).offsetWidth) ||
+          NAVBAR_HORIZONTAL_PADDING -
+          ((this.$refs.siteInfo &&
+            (this.$refs.siteInfo as Vue).$el &&
+            ((this.$refs.siteInfo as Vue).$el as HTMLElement).offsetWidth) ||
             0);
     };
 

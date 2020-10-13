@@ -2,7 +2,7 @@
   <header class="navbar">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
-    <RouterLink :to="$localePath" class="home-link">
+    <RouterLink ref="siteInfo" :to="$localePath" class="home-link">
       <img
         v-if="$themeConfig.logo"
         class="logo"
@@ -18,7 +18,6 @@
       />
       <span
         v-if="$siteTitle"
-        ref="siteName"
         :class="{ 'can-hide': $themeConfig.logo }"
         class="site-name"
         >{{ $siteTitle }}</span
@@ -114,12 +113,12 @@
     .can-hide
       display none
 
-    .links
-      padding-left 1.5rem
-
     .site-name
       width calc(100vw - 9.4rem)
       overflow hidden
       white-space nowrap
       text-overflow ellipsis
+
+    .links
+      padding-left 1.5rem
 </style>
