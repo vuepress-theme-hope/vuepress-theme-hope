@@ -1,16 +1,16 @@
-import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from "./types";
+import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from "../types";
 import { deepAssignReverse } from "@mr-hope/vuepress-shared-utils";
-import defaultConfig from "./lib/defaultConfig";
-import resolveHead from "./lib/resolveHead";
-import resolveLocales from "./lib/resolveLocales";
-import resolveThemeConfig from "./lib/resolveThemeConfig";
+import defaultConfig from "./defaultConfig";
+import resolveHead from "./resolveHead";
+import resolveLocales from "./resolveLocales";
+import resolveThemeConfig from "./resolveThemeConfig";
 
 /**
  * 处理 vuepress 配置
  *
  * @param config
  */
-const resolveConfig = (
+export const config = (
   config: HopeVuepressConfig
 ): ResolvedHopeVuepressConfig => {
   // 合并默认配置
@@ -24,5 +24,3 @@ const resolveConfig = (
 
   return resolvedConfig;
 };
-
-export = resolveConfig;

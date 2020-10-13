@@ -75,15 +75,15 @@ npm i -D vuepress-theme-hope
 
 ```js
 // .vuepress/config.js
-const resolve = require("vuepress-theme-hope/resolve");
+const { config } = require("vuepress-theme-hope");
 
-module.exports = resolve({
+module.exports = config({
   // your config here
 });
 ```
 
 ::: tip
-引入 resolve 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，很方便的给你提示。
+引入 `config` 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，很方便的给你提示。
 
-同时，resolve 函数也会为你补全一些直接交付给 vuepress 的默认配置。
+同时，`config` 函数也会为你补全一些直接交付给 vuepress 的默认配置。
 :::

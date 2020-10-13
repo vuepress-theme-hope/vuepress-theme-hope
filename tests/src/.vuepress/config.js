@@ -1,8 +1,8 @@
-const resolve = require("vuepress-theme-hope/resolve");
+const { config } = require("vuepress-theme-hope");
 const navBarConfig = require("./config/navBar");
 const sideBarConfig = require("./config/sideBar");
 
-module.exports = resolve({
+module.exports = config({
   title: "Theme Demo",
   description: "vuepress-theme-hope 的 demo",
 

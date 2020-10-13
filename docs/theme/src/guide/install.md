@@ -21,9 +21,9 @@ npm i -D vuepress-theme-hope
 
 ```js
 // .vuepress/config.js
-const resolve = require("vuepress-theme-hope/resolve");
+const { config } = require("vuepress-theme-hope");
 
-module.exports = resolve({
+module.exports = config({
   // your config here
 });
 ```

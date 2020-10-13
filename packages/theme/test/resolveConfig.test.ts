@@ -2,10 +2,10 @@
 import { describe, it } from "mocha";
 import { HopeVuepressConfig } from "../types";
 import { expect } from "chai";
-import resolveConfig = require("../resolve");
+import { config } from "../";
 
 describe("Test resolveTheme function", () => {
-  const config: HopeVuepressConfig = {
+  const vuepressConfig: HopeVuepressConfig = {
     /** 网站标题 */
     title: "vuepress-theme-hope",
 
@@ -247,7 +247,7 @@ describe("Test resolveTheme function", () => {
     ],
   };
 
-  const resolvedConfig = resolveConfig(config);
+  const resolvedConfig = config(vuepressConfig);
 
   it("should resolve locates for vuepress", () => {
     expect(resolvedConfig.locales).to.have.property("/");

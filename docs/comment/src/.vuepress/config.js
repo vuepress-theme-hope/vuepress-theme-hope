@@ -1,6 +1,6 @@
-const resolve = require("vuepress-theme-hope/resolve");
+const { config } = require("vuepress-theme-hope");
 
-module.exports = resolve({
+module.exports = config({
   title: "Comment Plugin",
   description: "Comment Plugin for Vuepress",
 

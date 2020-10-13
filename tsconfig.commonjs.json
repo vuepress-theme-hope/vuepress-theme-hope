@@ -4,9 +4,5 @@
     "module": "commonjs",
     "target": "ES6"
   },
-  "include": [
-    "packages/**/lib/**/*.ts",
-    "packages/theme/index.ts",
-    "packages/theme/resolve.ts"
-  ]
+  "include": ["packages/**/lib/**/*.ts", "packages/theme/index.ts"]
 }

@@ -1,9 +1,11 @@
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { ResolvedHopeThemeConfig } from "./types";
+import { resolve } from "path";
 import { CAC } from "cac";
 import eject from "./lib/eject";
 import getPlugin from "./lib/plugins";
-import { resolve } from "path";
+import { config } from "./lib/config";
+
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import { ResolvedHopeThemeConfig } from "./types";
 
 interface ThemeOptionAPI extends PluginOptionAPI {
   extend?: string;
@@ -58,7 +60,7 @@ const getAlias = (
 };
 
 // Theme API.
-export = (
+const themeAPI = (
   themeConfig: ResolvedHopeThemeConfig,
   ctx: Context
 ): ThemeOptionAPI => {
@@ -94,3 +96,7 @@ export = (
 
   return config;
 };
+
+themeAPI.config = config;
+
+export = themeAPI;

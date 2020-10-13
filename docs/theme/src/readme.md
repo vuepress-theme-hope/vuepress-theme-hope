@@ -75,15 +75,15 @@ npm i -D vuepress-theme-hope
 
 ```js
 // .vuepress/config.js
-const resolve = require("vuepress-theme-hope/resolve");
+const { config } = require("vuepress-theme-hope");
 
-module.exports = resolve({
+module.exports = config({
   // your config here
 });
 ```
 
 ::: tip
-The purpose of introducing the resolve function is to give you full hints through TS's Interface and JSDoc when you edit the configuration.
+The purpose of introducing the `config` function is to give you full hints through TS's Interface and JSDoc when you edit the configuration.
 
-At the same time, the resolve function will also complete some default configurations for your current configuration which will pass directly to vuepress.
+At the same time, the `config` function will also complete some default configurations for your current configuration which will pass directly to vuepress.
 :::

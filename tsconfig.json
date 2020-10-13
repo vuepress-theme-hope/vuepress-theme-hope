@@ -9,7 +9,6 @@
   "exclude": [
     "packages/**/lib/**/*.ts",
     "packages/*/test/**/*.ts",
-    "packages/theme/index.ts",
-    "packages/theme/resolve.ts"
+    "packages/theme/index.ts"
   ]
 }
