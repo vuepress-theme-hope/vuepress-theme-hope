@@ -41,6 +41,12 @@ icon: Home
 
 详见 [文章信息](../feature/page-info.md) 章节。
 
+## 图片预览
+
+支持点击预览并缩放图片，同时支持页面图片的滑动浏览与图片的分享与下载。
+
+具体配置请见 [photo-swipe 插件配置](https://vuepress-photo-swipe.mrhope.site/zh/config/)
+
 ## 最后更新时间
 
 你可以通过 `themeConfig.lastUpdated` 选项来获取每个文件最后一次 `git` 提交的 UNIX 时间戳(ms)，同时它将以合适的日期格式显示在每一页的底部：

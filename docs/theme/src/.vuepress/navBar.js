@@ -31,12 +31,28 @@ module.exports = {
           link: "/zh/demo/",
         },
         {
+          text: "AddThis 插件",
+          link: "https://vuepress-add-this.mrhope.site/zh/",
+        },
+        {
           text: "评论插件",
           link: "https://vuepress-comment.mrhope.site/zh/",
         },
         {
+          text: "代码复制插件",
+          link: "https://vuepress-copy-code.mrhope.site/zh/",
+        },
+        {
+          text: "最后更新时间插件",
+          link: "https://vuepress-last-update.mrhope.site/zh/",
+        },
+        {
           text: "Markdown 增强插件",
           link: "https://vuepress-md-enhance.mrhope.site/zh/",
+        },
+        {
+          text: "图片预览插件",
+          link: "https://vuepress-photo-swipe.mrhope.site/zh/",
         },
       ],
     },
@@ -73,12 +89,28 @@ module.exports = {
           link: "/demo/",
         },
         {
+          text: "AddThis Plugin",
+          link: "https://vuepress-add-this.mrhope.site",
+        },
+        {
           text: "Comment Plugin",
-          link: "https://vuepress-comment.mrhope.site/",
+          link: "https://vuepress-comment.mrhope.site",
+        },
+        {
+          text: "Copy Code Plugin",
+          link: "https://vuepress-copy-code.mrhope.site",
+        },
+        {
+          text: "Last Update Plugin",
+          link: "https://vuepress-last-update.mrhope.site",
         },
         {
           text: "Markdown Enhance Plugin",
-          link: "https://vuepress-md-enhance.mrhope.site/",
+          link: "https://vuepress-md-enhance.mrhope.site",
+        },
+        {
+          text: "Photo Swipe Plugin",
+          link: "https://vuepress-photo-swipe.mrhope.site",
         },
       ],
     },

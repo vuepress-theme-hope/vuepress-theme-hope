@@ -12,57 +12,97 @@ tags: intro
 
 ## 主题特点
 
-- [**导航栏**](layout/navbar.md)
+主题很大程度上保持了 Vuepress 默认主题的风格，并在此基础上添加了大量功能与优化:
 
-- [**侧边栏**](layout/sidebar.md)
+### 页面增强
 
-- [**页面**](layout/page.md)
+- 为 Markdown 添加了更多语法，丰富文档与博客写作
 
-  - [页面图标](layout/page.md#图标支持)
-  - [路径导航](layout/page.md#路径导航)
-  - [文章信息展示](layout/page.md#文章信息展示)
-    - 作者
-    - 写作时间
-    - 访问量
-    - 预计阅读时间
-    - 字数
-    - 分类
-    - 标签
-  - [自定义页脚](layout/page.md#页脚支持)
-  - [主页](layout/home.md)
-  - [博客主页](layout/blog.md)
+  - [Tex 支持](feature/markdown/tex.md)
+  - [自定义对齐](feature/markdown/align.md)
+  - [流程图](feature/markdown/flowchart.md)
+  - [标记](feature/markdown/mark.md)
+  - [上下角标](feature/markdown/sup-sub.md)
 
-- [**新增特性**](feature/readme.md)
+- [图片预览](layout/page.md#图片预览)，支持:
 
-  - [图标支持](feature/readme.md)
+  - 放大
+  - 拖拽
+  - 滑动浏览
+  - 分享
+  - 下载
 
-  - 主题模式
+- [文章信息展示](layout/page.md#文章信息展示)
 
-    - [主题色切换](feature/theme.md#主题色)
-    - [深色模式](feature/theme.md#深色模式)
-    - [全屏按钮](feature/theme.md#全屏按钮)
+  - 阅读量统计
+  - 作者与写作日期
+  - 自动生成的字数与预计阅读时间
+  - 标签与分类
 
-  - [文章加密](feature/encrypt.md)
+- [评论系统](feature/comment.md)
 
-  - [评论系统](feature/comment.md)
+- [路径导航](layout/page.md#路径导航)
 
-  - [博客](feature/blog.md)
+- [页面图标](layout/page.md#图标支持)
 
-    - 博主信息展示
-    - 文章列表
-    - 分类列表
-    - 标签列表
-    - 时间线
+- [自定义页脚](layout/page.md#页脚支持)
 
-  - [**Markdown 增强**](feature/markdown/readme.md)
+### 功能增强
 
-  - [Typescript 支持](feature/typescript.md)
+#### 零配置自动实现并允许你定制
 
-- [**新增组件**](feature/component.md)
+- [全新主题色，允许你在浏览过程中动态切换](feature/theme.md#主题色)
 
-  - [返回顶部按钮 `<BackToTop />`](feature/component.md#返回顶部按钮-backtotop)
+- [深色模式，允许你手动切换或者是根据设备设置自动应用](feature/theme.md#深色模式)
 
+- [全屏按钮](feature/theme.md#全屏按钮)
+
+- [PWA 支持](../config/plugin/pwa.md)
+
+- [返回顶部按钮](feature/component.md#返回顶部按钮-backtotop)
+
+- 一键复制代码
+
+- 复制时添加版权信息
+
+#### 更多强大功能
+
+- [SEO 增强](feature/seoAndSitemap.md#SEO)
+
+- [Sitemap 生成](feature/seoAndSitemap.md#Sitemap)
+
+- [加密特定文章或路径](feature/encrypt.md)
+
+- [Typescript 支持](feature/typescript.md)
+
+### 样式优化
+
+- [图标支持](feature/readme.md)
+
+- [默认主页优化](layout/home.md)
+
+  - 特性拥有全新动画并支持跳转
+  - 多个动作按钮
+  - 宽屏布局优化
+
+- 其他内置组件优化
+
+  - [**导航栏**](layout/navbar.md)
+  - [**侧边栏**](layout/sidebar.md)
   - [徽章 `<MyBadge />`](feature/component.md#徽章-mybadge): 在官方基础上增加了颜色支持
+
+### 博客部分
+
+- [全新博客主页布局](layout/blog.md)
+
+- [社交关注按钮与页面社交分享](https://vuepress-add-this.mrhope.site/zh/)
+
+- [文章展示](feature/blog.md)
+
+  - [支持置顶的文章列表](feature/blog.md#文章)
+  - [分类分组列表](feature/blog.md#分类)
+  - [标签分组列表](feature/blog.md#标签)
+  - [时间线](feature/blog.md#时间线)
 
 ## 内建插件
 
@@ -72,7 +112,9 @@ tags: intro
 
 - [@mr-hope/vuepress-plugin-component](feature/component.md): 提供一些开箱即用的插件
 
-- [@mr-hope/vuepress-plugin-last-update](../config/plugin/last-update.md): 最后更新时间
+- [@mr-hope/vuepress-plugin-copy-code](https://vuepress-copy-code.mrhope.site/zh/): 提供一键复制代码块功能。
+
+- [@mr-hope/vuepress-plugin-last-update](https://vuepress-last-update.mrhope.site/zh/): 支持多语言格式的最后更新时间
 
 - [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA 支持
 
@@ -82,6 +124,8 @@ tags: intro
 
 - [@mr-hope/vuepress-plugin-sitemap](../config/plugin/sitemap.md): 为你的站点生成 sitemap
 
+- [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site/zh/): 让网站支持社交分享与关注
+
 - [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/zh/): 提供更多 Markdown 语法
 
-- [vuepress-plugin-photo-swipe](../config/plugin/photo-swipe.md): 使网站的图片支持点击缩放
+- [vuepress-plugin-photo-swipe](https://vuepress-photo-swipe.mrhope.site/zh/): 使网站的图片支持缩放与滑动浏览

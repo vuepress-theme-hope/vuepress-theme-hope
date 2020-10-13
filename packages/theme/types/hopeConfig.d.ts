@@ -9,6 +9,8 @@ import { MarkdownEnhanceOption } from "vuepress-plugin-md-enhance/types";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
+import { PhotoSwipeOptions } from "packages/photo-swipe/types";
+import { CopyCodeOptions } from "packages/copy-code/types";
 
 /**
  * 合法的媒体
@@ -66,6 +68,8 @@ export type BlogOptions = {
    * 是否在侧边栏展示博主信息
    *
    * Whether to display blogger info in sidebar
+   *
+   * @default 'none'
    */
   sidebarDisplay?: "mobile" | "none" | "always";
   /**
@@ -97,18 +101,16 @@ export type BlogOptions = {
    * 时间轴自定义文字
    *
    * Custom text for timeline
+   *
+   * @default 'Yesterday once more'
    */
   timeline?: string;
-  /**
-   * 项目配置
-   *
-   * Project Configuration
-   */
-  project?: ProjectOptions[];
   /**
    * 每页的文章数量
    *
    * Article number per page
+   *
+   * @default 10
    */
   perPage?: number;
 };
@@ -135,6 +137,8 @@ export interface HopeFooterConfig {
    * 是否默认显示页脚
    *
    * Whether to display footer by default
+   *
+   * @default false
    */
   display?: boolean;
 }
@@ -187,12 +191,14 @@ export interface EncryptOptions {
    * 功能状态
    *
    * - `'global'` 意味着全局启用
-   * - `'local'` 意味着全局禁用，可在页面内启用 (默认)
+   * - `'local'` 意味着全局禁用，可在页面内启用
    *
    * Feature Status
    *
    * - `'global'` means enabled globally
-   * - `'local'` means disabled globally and can be enabled in pages (Default)
+   * - `'local'` means disabled globally and can be enabled in pages
+   *
+   * @default 'local'
    */
   status?: "global" | "local";
   /**
@@ -287,6 +293,8 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * 根目录对应的语言
    *
    * The language of the home directory
+   *
+   * @default 'en-US'
    */
   baseLang?: string;
   /**
@@ -320,6 +328,8 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * - `'switch'`: "Close | Open" toggle switch
    * - `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
    * - `'disable'`: disable dark mode
+   *
+   * @default 'auto-switch'
    */
   darkmode?: "auto-switch" | "auto" | "switch" | "disable";
   /**
@@ -336,6 +346,8 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    *   orange: '#fb9b5f'
    * }
    * ```
+   *
+   * @default { blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }
    */
   themeColor?: Record<string, string> | false;
   /**
@@ -354,9 +366,27 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * 是否在桌面模式显示锚点标题
    *
    * Whether display anchor in desktop mode
+   *
+   * @default true
    */
   anchorDisplay?: boolean;
-  /** 页面信息 */
+  /**
+   * 页面信息
+   *
+   * Article information
+   *
+   * Avaliable Options:
+   *
+   * - `'Author'`: Author
+   * - `'Time'`: Writing Date
+   * - `'Category'`: Category
+   * - `'Tag'`: Tags
+   * - `'ReadTime'`: Expect reading time
+   * - `'Word'`: Word number for the article
+   * - `'Visitor'`: Visitor Number
+   *
+   * @default ['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']
+   */
   pageInfo?: PageInfotype[] | false;
   /**
    * Markdown 增强设置
@@ -385,20 +415,18 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    */
   copyright?: HopeCopyrightConfig;
 
+  /** 站点地址 */
+  hostname?: string;
+  /** SEO */
+  seo?: SeoOptions | false;
+  /** Sitemap */
+  sitemap?: SitemapOptions | false;
   /**
    * 加密设置
    *
    * Encrypt Configuration
    */
   encrypt?: EncryptOptions;
-  /** 站点地址 */
-  hostname?: string;
-  /** 最后更新时间转换 */
-  lastUpdatedTransformer?: (timestamp: number, lang: string) => string;
-  /** SEO */
-  seo?: SeoOptions | false;
-  /** Sitemap */
-  sitemap?: SitemapOptions | false;
   /**
    * AddThis 的公共 ID
    *
@@ -406,13 +434,19 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    */
   addthis?: string;
   /**
-   * 是否启用代码复制按钮
+   * 代码复制选项
    *
-   * Whether enable code copy feature
-   *
-   * @default true
+   * code copy options
    */
-  copyCode?: boolean;
+  copyCode?: CopyCodeOptions | false;
+  /**
+   * 图片预览设置
+   *
+   * Photo Swipe Options
+   */
+  photoSwipe?: PhotoSwipeOptions | false;
+  /** 最后更新时间转换 */
+  lastUpdatedTransformer?: (timestamp: number, lang: string) => string;
   /**
    * ts-loader 选项
    *
@@ -420,25 +454,77 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   typescript?: boolean | Record<string, any>;
-  /** 图标前缀 */
+  /**
+   * 图标前缀
+   *
+   * Prefix of icon class
+   *
+   * @default 'icon-'
+   */
   iconPrefix?: string;
-  /** 是否在侧边栏显示图标 */
+  /**
+   * 每分钟的阅读字数
+   *
+   * Reading speed of word per minute
+   *
+   * @default 300
+   */
+  wordPerminute?: number;
+  /**
+   * 是否在侧边栏显示图标
+   *
+   * Whether display icon in sidebar
+   *
+   * @default true
+   */
   sidebarIcon?: boolean;
-  /** 是否全局启用路径导航 */
+  /**
+   * 是否全局启用路径导航
+   *
+   * Whether enable breadcrumb globally
+   *
+   * @default true
+   */
   breadcrumb?: boolean;
-  /** 是否在路径导航显示图标 */
+  /**
+   * 是否在路径导航显示图标
+   *
+   * Whether display icon in breadcrumb
+   *
+   * @default true
+   */
   breadcrumbIcon?: boolean;
-  /** 是否启用平滑滚动 */
+  /**
+   * 是否启用平滑滚动
+   *
+   * Enable smooth scrolling feature
+   *
+   * @default true
+   */
   smoothScroll?: boolean;
-  /** 是否开启图片预览 */
-  photoSwipe?: boolean;
-  /** 是否显示返回顶部按钮 */
-  backToTop?: boolean;
-  /** 是否在导航栏显示仓库链接 */
+  /**
+   * 是否显示返回顶部按钮
+   *
+   * 如果设置为数字，则该数字为触发临界值
+   *
+   * Wether display backto top button
+   *
+   * If it's set with a number, then it will be the threshold
+   *
+   * @default true
+   */
+  backToTop?: boolean | number;
+  /**
+   * 是否在导航栏显示仓库链接
+   *
+   * @default true
+   */
   repoDisplay?: boolean;
-  /** 时间轴自定义文字 */
-  timeline?: string;
-  /** 是否显示 ”全屏“ 按钮 */
+  /**
+   * 是否显示 ”全屏“ 按钮
+   *
+   * @default true
+   */
   fullscreen?: boolean;
 }
 

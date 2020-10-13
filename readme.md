@@ -52,10 +52,15 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
   - Automatically generated word count and estimated reading time
   - Tags and Categorys
 
-- Customize the footer of each article
-- Copyright display
+- Comment System
+
 - BreadCrumbs
-- Comment feature
+
+- Page Icon
+
+- Copyright display
+
+- Customizable footer
 
 ### Function enhancement
 
@@ -82,6 +87,8 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 - Sitemap generation
 
 - Encryption of specific articles and paths
+
+- Typescript Support
 
 ### Style optimization
 
@@ -141,10 +148,13 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
   - 自动生成的字数与预计阅读时间
   - 标签与分类
 
-- 允许自定义每篇文章的页脚
+- 评论系统
+
+- 自定义页脚
+
 - 版权显示
+
 - 路径导航
-- 添加文章的评论功能
 
 ### 功能增强
 
@@ -171,6 +181,8 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 - Sitemap 生成
 
 - 支持对特定文章与路径进行加密
+
+- Typescript 支持
 
 ### 样式优化
 

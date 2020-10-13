@@ -30,6 +30,8 @@ All articles will be added to the article list by default and rendered under pat
 
 If you don't want specific articles to be included, just set `article` to `false` in the article's Front Matter.
 
+If you want to stick a specific article, just set `sticky` to `true` in the article's Front Matter.
+
 ## timeline
 
 All articles with a writing date will be sorted by time in the timeline page `/timeline/`.

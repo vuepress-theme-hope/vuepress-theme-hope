@@ -10,56 +10,97 @@ If you met a bug while using, you can open an issue [here](https://github.com/Mi
 
 ## Theme Features
 
-- [**navbar**](layout/navbar.md)
+The theme largely maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
 
-- [**Sidebar**](layout/sidebar.md)
+### Page enhancement
 
-- [**Page**](layout/page.md)
+- Added more syntax to Markdown, enriching documentation and blog writing
 
-  - [Page Icon](layout/page.md#icon-support)
-  - [Article Information Display](layout/page.md#page-info-display)
-    - Author
-    - Date
-    - PageViews
-    - Expect reading time
-    - Word count
-    - Category
-    - Tag
-  - [Custom footer](layout/page.md#footer-support)
-  - [Homepage](layout/home.md)
-  - [Blog homepage](layout/blog.md)
+  - [Tex Support](feature/markdown/tex.md)
+  - [Custom alignment](feature/markdown/align.md)
+  - [Flow chart](feature/markdown/flowchart.md)
+  - [Mark](feature/markdown/mark.md)
+  - [Subsript and Supercript](feature/markdown/sup-sub.md)
 
-- [**New Features**](feature/readme.md)
+- [Picture preview feature](layout/page.md#picture-preview), supports:
 
-  - [Icon support](feature/icon.md)
+  - zooming
+  - dragging
+  - sliding browsing
+  - sharing
+  - downloading
 
-  - Theme
+- [Article info](layout/page.md#page-info-display)
 
-    - [Theme color](feature/theme.md#theme-color)
-    - [Dark Mode](feature/theme.md#darkmode)
-    - [Full Screen Button](feature/theme.md#fullscreen-button)
+  - Reading Counts
+  - Author and writing date
+  - Automatically generated word count and estimated reading time
+  - Tags and Categorys
 
-  - [Article Encryption](feature/encrypt.md)
+- [Comment System](feature/comment.md)
 
-  - [Comment](feature/comment.md)
+- [Path navigation](layout/page.md#breadcrumb)
 
-  - [Blog Support](feature/blog.md)
+- [Page Icon](layout/page.md#icon-support)
 
-    - Blogger information display
-    - Article list
-    - Category List
-    - Tag list
-    - Timeline
+- [Custom footer](layout/page.md#footer-support)
 
-  - [**Markdown enhancement**](feature/markdown/readme.md)
+### Function enhancement
 
-  - [Typescript support](feature/typescript.md)
+#### Implemente below with 0 configuration while allowing to customize
 
-- [**Newly Add Component**](feature/component.md)
+- [Brand new theme colors, allowing you to switch dynamically during browsing](feature/theme.md#theme-color)
 
-  - [Back to Top Button `<BackToTop />`](feature/component.md#back-to-top-button-backtotop)
+- [Dark mode, allowing you to switch manually or apply automatically according to device settings](feature/theme.md#darkmode)
 
+- [Full Screen Button](feature/theme.md#fullscreen-button)
+
+- [PWA support](../config/plugin/pwa.md)
+
+- [Back to top button](feature/component.md#back-to-top-button-backtotop)
+
+- One-click copy code
+
+- Add copyright information when copying
+
+#### More powerful functions
+
+- [SEO enhancement](feature/seoAndSitemap.md#SEO)
+
+- [Sitemap generation](feature/seoAndSitemap.md#Sitemap)
+
+- [Encryption of specific articles and paths](feature/encrypt.md)
+
+- [Typescript support](feature/typescript.md)
+
+### Style optimization
+
+- [Icon support](feature/readme.md)
+
+- [Default homepage optimization](layout/home.md)
+
+  - Features have new animations and support jump
+  - Multiple action buttons
+  - Widescreen layout optimization
+
+- Optimization of other built-in components
+
+  - [**navbar**](layout/navbar.md)
+  - [**Sidebar**](layout/sidebar.md)
   - [Badge `<MyBadge />`](feature/component.md#badge-mybadge): Added color support on the official basis
+
+### Blog section
+
+- [New blog homepage layout](layout/blog.md)
+
+- [Social follow button and page social sharing](https://vuepress-add-this.mrhope.site)
+
+- [Article display](feature/blog.md)
+
+  - [Articles list swith sticky support](feature/blog.md#article)
+  - [Cateory lists](feature/blog.md#category)
+  - [Tag lists](feature/blog.md#tags)
+  - [Timeline](feature/blog.md#timeline)
 
 ## Plugins build-in
 
@@ -69,7 +110,9 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-component](feature/component.md): Provide some out of box plugins
 
-- [@mr-hope/vuepress-plugin-last-update](../config/plugin/last-update.md): Last update time
+- [@mr-hope/vuepress-plugin-copy-code](https://vuepress-copy-code.mrhope.site): Provide copy button for code blocks
+
+- [@mr-hope/vuepress-plugin-last-update](https://vuepress-last-update.mrhope.site): Last update time
 
 - [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA support
 
@@ -79,6 +122,8 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-sitemap](../config/plugin/sitemap.md): Sitemap Generator for your site
 
+- [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site): Provide sociel share and follow function
+
 - [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site): Provide more Markdown syntax
 
-- [vuepress-plugin-photo-swipe](../config/plugin/photo-swipe.md): Make the site's picture support click zoom
+- [vuepress-plugin-photo-swipe](https://vuepress-photo-swipe.mrhope.site): Make the site's picture support click zoom

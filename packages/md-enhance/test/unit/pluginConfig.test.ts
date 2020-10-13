@@ -142,7 +142,6 @@ describe("Test pluginConfig generate", () => {
     };
 
     const themeConfig = {
-      baseLang: "en-US",
       markdown: {
         enableAll: true,
       },

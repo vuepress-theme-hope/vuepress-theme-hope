@@ -41,6 +41,12 @@ Otherwise, the path navigation will automatically ignore that level because the 
 
 See [Page Info Section](../feature/page-info.md)
 
+## Picture Preview
+
+We supports clicking to preview and zooming the picture, while supporting the sliding browsing of the page picture and the sharing and downloading of the picture too.
+
+For specific configuration, please refer to [photo-swipe plugin configuration](https://vuepress-photo-swipe.mrhope.site/config/)
+
 ## Last Updated
 
 The `themeConfig.lastUpdated` option allows you to get the UNIX timestamp(ms) of each file’s last `git` commit, and it will also display at the bottom of each page in an appropriate format:

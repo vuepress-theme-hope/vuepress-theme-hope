@@ -30,6 +30,8 @@ tags:
 
 如果你不希望该列表包含一些特定的文章，只需在文章的 Front Matter 中将 `article` 设置为 `false`。
 
+如果你希望置顶特定文章，只需在文章的 Front Matter 中将 `sticky` 设置为 `true`。
+
 ## 时间线
 
 所有注明了写作日期的文章都会被按照时间排序在 `/timeline/` 时间线中。

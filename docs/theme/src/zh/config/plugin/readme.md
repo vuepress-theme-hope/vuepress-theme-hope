@@ -18,7 +18,9 @@ vuepress-theme-hope 自带了很多 vuepress 插件。一些插件会自动启�
 
 - [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): 提供一些开箱即用的插件
 
-- [@mr-hope/vuepress-plugin-last-update](last-update.md): 最后更新时间
+- [@mr-hope/vuepress-plugin-copy-code](https://vuepress-copy-code.mrhope.site/zh/): 提供一键复制代码块功能。
+
+- [@mr-hope/vuepress-plugin-last-update](https://vuepress-last-update.mrhope.site/zh/): 支持多语言格式的最后更新时间
 
 - [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA 支持
 
@@ -28,9 +30,11 @@ vuepress-theme-hope 自带了很多 vuepress 插件。一些插件会自动启�
 
 - [@mr-hope/vuepress-plugin-sitemap](sitemap.md): 为你的站点生成 sitemap
 
+- [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site/zh/): 让网站支持社交分享与关注
+
 - [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/zh/): 提供更多 Markdown 语法
 
-- [vuepress-plugin-photo-swipe](photo-swipe.md): 使网站的图片支持点击缩放
+- [vuepress-plugin-photo-swipe](https://vuepress-photo-swipe.mrhope.site/zh/): 使网站的图片支持缩放与滑动浏览
 
 ## 外部插件
 

@@ -13,10 +13,7 @@
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm) ![Dependencies](https://img.shields.io/librariesio/release/npm/vuepress-theme-hope?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-hope)
 
-![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
-![Issues](https://img.shields.io/github/issues-raw/mister-hope/vuepress-theme-hope?style=flat-square&logo=github)
+[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/12381/branches/190414/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=12381&bid=190414) ![Issues](https://img.shields.io/github/issues-raw/mister-hope/vuepress-theme-hope?style=flat-square&logo=github)
 
 A light vuepress theme / 一个轻量的 vuepress 主题
 
@@ -55,10 +52,15 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
   - Automatically generated word count and estimated reading time
   - Tags and Categorys
 
-- Customize the footer of each article
-- Copyright display
+- Comment System
+
 - BreadCrumbs
-- Comment feature
+
+- Page Icon
+
+- Copyright display
+
+- Customizable footer
 
 ### Function enhancement
 
@@ -85,6 +87,8 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 - Sitemap generation
 
 - Encryption of specific articles and paths
+
+- Typescript Support
 
 ### Style optimization
 
@@ -144,10 +148,13 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
   - 自动生成的字数与预计阅读时间
   - 标签与分类
 
-- 允许自定义每篇文章的页脚
+- 评论系统
+
+- 自定义页脚
+
 - 版权显示
+
 - 路径导航
-- 添加文章的评论功能
 
 ### 功能增强
 
@@ -174,6 +181,8 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 - Sitemap 生成
 
 - 支持对特定文章与路径进行加密
+
+- Typescript 支持
 
 ### 样式优化
 

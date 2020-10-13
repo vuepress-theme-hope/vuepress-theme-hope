@@ -18,7 +18,9 @@ vuepress-theme-hope brings you many vuepress plugins. Some plugins are automatic
 
 - [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): Provide some out of box plugins
 
-- [@mr-hope/vuepress-plugin-last-update](last-update.md): Last update time
+- [@mr-hope/vuepress-plugin-copy-code](https://vuepress-copy-code.mrhope.site): Provide copy button for code blocks
+
+- [@mr-hope/vuepress-plugin-last-update](https://vuepress-last-update.mrhope.site): Last update time
 
 - [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA support
 
@@ -28,9 +30,11 @@ vuepress-theme-hope brings you many vuepress plugins. Some plugins are automatic
 
 - [@mr-hope/vuepress-plugin-sitemap](sitemap.md): Sitemap Generator for your site
 
+- [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site): Provide sociel share and follow function
+
 - [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site): Provide more Markdown syntax
 
-- [vuepress-plugin-photo-swipe](photo-swipe.md): Make the site's picture support click zoom
+- [vuepress-plugin-photo-swipe](https://vuepress-photo-swipe.mrhope.site): Make the site's picture support click zoom
 
 ## Other related plugins
 

@@ -270,22 +270,12 @@ Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体�
 
 时间轴的顶部文字。
 
-## pwa <MyBadge text="默认启用" />
+### blog.perPage
 
-PWA 设置选项。
+- 类型: `number`
+- 默认: `10`
 
-> 如果您不需要这个功能，请设置为 `false`。
-
-### pwa.popupComponent
-
-- Type: `string`
-- Required: No
-
-用于替换默认弹出组件的自定义组件。
-
-### pwa.gerateSWConfig
-
-workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+每页的文章数量
 
 ## pageInfo
 
@@ -303,84 +293,6 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 - `'ReadTime'`: 预计阅读时间
 - `'Word'`: 字数
 - `'Visitor'`: 访问量
-
-## SEO <MyBadge text="默认启用" />
-
-> 如果您不需要这个功能，请设置为 `false`。
-
-### seo.twitterID
-
-- 类型: `string`
-- 必填: 否
-
-填入你的 twitter 用户名
-
-### seo.restrictions
-
-- 类型: `string`
-- 必填: 否
-
-内容的年龄分级，格式为 `[int]+`，如 `'13+'`
-
-### seo.seo
-
-- 类型: `(info: PageSeoInfo) => Record<string, string>`
-
-你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，详情请见 [插件配置](plugin/seo.md#seo)。
-
-### seo.customMeta
-
-- 类型: `(meta: Meta, info: PageSeoInfo) => void`
-
-你可以使用此选项来直接向 Meta 中注入内容。详情请见 [插件配置](plugin/seo.md#customMeta)。
-
-## Sitemap <MyBadge text="默认启用" />
-
-> 如果您不需要这个功能，请设置为 `false`。
-
-### sitemap.hostname
-
-- 类型: `string`
-- 必填: 是
-
-当前网站部署到的域名，请至少将其传入或设置 `themeConfig.hostname`，否则插件将无法工作。
-
-### sitemap.urls
-
-- 类型: `string[]`
-- 必填: 否
-
-需要额外包含的网址
-
-### sitemap.exclude
-
-- 类型: `string[]`
-- 必填: 否
-
-不被收录的页面
-
-### sitemap.outFile
-
-- 类型: `string`
-- 默认值: `"sitemap.xml"`
-
-输出的文件名
-
-### sitemap.changefreq
-
-- 类型: `"always"|"hourly"|"daily"|"weekly"|"monthly"|"yearly"|"never"`
-- 默认值: `"daily"`
-
-页面默认更新频率
-
-### sitemap.dateFormatter
-
-- 类型: `($page: PageComputed) => string`
-- 必填: 否
-
-时间格式化器。默认会自动生成时间戳，如果你遇到了时区问题，请设置这个选项。
-
-### sitemap
 
 ## Markdown 增强
 
@@ -451,7 +363,7 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 具体配配置请见　[@mr-hope/vuepress-plugin-comment 文档](https://vuepress-comment.mrhope.site/zh/config/)
 
-可以直接设置为 `false` 来禁用评论功能
+> 可以直接设置为 `false` 来禁用评论功能
 
 ## 页脚设置
 
@@ -506,6 +418,109 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 是否禁止选中文字
 
+## pwa <MyBadge text="默认启用" />
+
+PWA 设置选项。
+
+> 默认请款下无需任何配置。
+>
+> 如果您不需要这个功能，请设置为 `false`。
+
+### pwa.popupComponent
+
+- Type: `string`
+- Required: No
+
+用于替换默认弹出组件的自定义组件。
+
+### pwa.gerateSWConfig
+
+workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+
+## seo <MyBadge text="默认启用" />
+
+搜索引擎增强
+
+> 默认请款下无需任何配置。
+>
+> 如果您不需要这个功能，请设置为 `false`。
+
+### seo.twitterID
+
+- 类型: `string`
+- 必填: 否
+
+填入你的 twitter 用户名
+
+### seo.restrictions
+
+- 类型: `string`
+- 必填: 否
+
+内容的年龄分级，格式为 `[int]+`，如 `'13+'`
+
+### seo.seo
+
+- 类型: `(info: PageSeoInfo) => Record<string, string>`
+
+你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，详情请见 [插件配置](plugin/seo.md#seo)。
+
+### seo.customMeta
+
+- 类型: `(meta: Meta, info: PageSeoInfo) => void`
+
+你可以使用此选项来直接向 Meta 中注入内容。详情请见 [插件配置](plugin/seo.md#customMeta)。
+
+## sitemap <MyBadge text="默认启用" />
+
+Sitemap 生成配置
+
+> 默认请款下无需任何配置。
+>
+> 如果您不需要这个功能，请设置为 `false`。
+
+### sitemap.hostname
+
+- 类型: `string`
+- 必填: 是
+
+当前网站部署到的域名，请至少将其传入或设置 `themeConfig.hostname`，否则插件将无法工作。
+
+### sitemap.urls
+
+- 类型: `string[]`
+- 必填: 否
+
+需要额外包含的网址
+
+### sitemap.exclude
+
+- 类型: `string[]`
+- 必填: 否
+
+不被收录的页面
+
+### sitemap.outFile
+
+- 类型: `string`
+- 默认值: `"sitemap.xml"`
+
+输出的文件名
+
+### sitemap.changefreq
+
+- 类型: `"always"|"hourly"|"daily"|"weekly"|"monthly"|"yearly"|"never"`
+- 默认值: `"daily"`
+
+页面默认更新频率
+
+### sitemap.dateFormatter
+
+- 类型: `($page: PageComputed) => string`
+- 必填: 否
+
+时间格式化器。默认会自动生成时间戳，如果你遇到了时区问题，请设置这个选项。
+
 ## 加密设置
 
 加密设置选项。
@@ -551,6 +566,24 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 AddThis 的 pubid
 
+> 详情请见 [AddThis 插件](https://vuepress-add-this.mrhope.site/zh/)
+
+## copycode
+
+复制代码插件的选项，设置为 `false` 以禁用此插件。
+
+> 默认情况下，不需要任何配置
+>
+> 有关详细信息，请参见[copy-code 插件配置](https://vuepress-copy-code.mrhope.site/zh/)
+
+## photoswipe
+
+照片预览插件的选项，设置为 `false` 以禁用此插件。
+
+> 默认情况下，不需要更多配置
+>
+> 有关详细信息，请参见 [PhotoSwipe 插件配置](https://vuepress-photo-swipe.mrhope.site/zh/)
+
 ## 其他配置选项
 
 以下是主题提供的其他配置选项，一般情况下你无需改动他们，但是主题也向你提供了更多有关主题的配置项。
@@ -561,6 +594,20 @@ AddThis 的 pubid
 - 默认值: `'icon-'`
 
 设置 iconfont 的图标前缀
+
+### anchorDisplay
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在桌面模式显示锚点标题
+
+### wordPerminute
+
+- 类型: `number`
+- 默认值: `300`
+
+每分钟的阅读字数
 
 ### sidebarIcon
 
@@ -583,13 +630,6 @@ AddThis 的 pubid
 
 是否在路径导航显示图标
 
-### wordPerminute
-
-- 类型: `number`
-- 默认值: `300`
-
-每分钟的阅读字数
-
 ### smoothScroll <MyBadge text="改变默认值" type="error" />
 
 - 类型: `boolean`
@@ -597,16 +637,9 @@ AddThis 的 pubid
 
 是否启用平滑滚动功能
 
-### photoSwipe
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否启用图片预览功能
-
 ### backToTop
 
-- 类型: `boolean | Number`
+- 类型: `boolean | number`
 - 默认值: `true`
 
 返回顶部按钮的配置。默认的触发距离为 300px，填入数字时可改变这一触发距离。填入 `false` 会禁用返回顶部按钮。
@@ -624,3 +657,12 @@ AddThis 的 pubid
 - 默认值: `true`
 
 是否显示 ”全屏“ 按钮
+
+### transformer
+
+- 类型: `(timestamp: number, lang: string) => string`
+- 默认值: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
+
+时间转换函数，默认情况下，会使用 dayjs 自动根据当前页面语言进行本地化。
+
+如: `2020年5月8日 16:05` `May 8, 2020 16:05`
