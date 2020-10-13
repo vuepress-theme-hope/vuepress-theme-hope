@@ -39,6 +39,20 @@ module.exports = {
 
 ## Plugin options
 
+### author
+
+- Type: `string`
+- Required: No
+
+Default author
+
+### hostname
+
+- Type: `string`
+- Required: No
+
+Deploy address
+
 ### twitterID
 
 - Type: `string`

@@ -1,0 +1,66 @@
+import { PageSeoInfo, SeoOptions } from "../types";
+import { SeoContent } from "../types/seo";
+
+export const generateSeo = (
+  options: SeoOptions,
+  { $page, $site, locale, path, themeConfig }: PageSeoInfo
+): SeoContent => {
+  const {
+    frontmatter: {
+      author: pageAuthor,
+      date,
+      image,
+      time = date as Date,
+      tag,
+      tags = tag as string[],
+    },
+    lastUpdatedTime,
+  } = $page;
+  const hostname = (options.hostname || themeConfig.hostname || "").replace(
+    /\/$/u,
+    ""
+  );
+  const type = ["article", "category", "tag", "timeline"].some((folder) =>
+    $page.regularPath.startsWith(`/${folder}`)
+  )
+    ? "website"
+    : "article";
+  const author =
+    pageAuthor === false
+      ? ""
+      : (pageAuthor as string) || options.author || themeConfig.author || "";
+  const modifiedTime =
+    typeof lastUpdatedTime === "number"
+      ? new Date(lastUpdatedTime).toISOString()
+      : "";
+  const articleTags: string[] = Array.isArray(tags)
+    ? (tags as string[])
+    : typeof tag === "string"
+    ? [tag]
+    : [];
+
+  return {
+    "og:url": `${hostname}${path}`,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    "og:site_name": $site.title || "",
+    "og:title": $page.title,
+    "og:description": $page.frontmatter.description || "",
+    "og:type": type,
+    "og:image": image ? `${hostname}${image as string}` : "",
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    "og:updated_time": modifiedTime,
+    // eslint-disable-next-line no-underscore-dangle
+    "og:locale": $page._computed.$lang,
+    "og:locale:alternate": locale,
+
+    "twitter:card": "summary_large_image",
+    "twitter:image:alt": $site.title || "",
+
+    "article:author": author,
+    "article:tag": articleTags,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    "article:published_time": time ? new Date(time).toISOString() : "",
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    "article:modified_time": modifiedTime,
+  };
+};

@@ -39,6 +39,20 @@ module.exports = {
 
 ## 插件选项
 
+### author
+
+- 类型: `string`
+- 必填: 否
+
+默认作者
+
+### hostname
+
+- 类型: `string`
+- 必填: 否
+
+部署地址
+
 ### twitterID
 
 - 类型: `string`
