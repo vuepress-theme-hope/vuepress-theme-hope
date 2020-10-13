@@ -1,76 +1,76 @@
 ---
-title: Vuepress 案例
+title: Vuepress Cases
 icon: discoverfill
 category: basic
 tags:
   - vuepress
 ---
 
-## 资源
+## Resources
 
-### 官方资源
+### Official Resources
 
-- [文档 -官方指南](https://vuepress.vuejs.org/guide/)
-- [文档 - 配置手册](https://vuepress.vuejs.org/config/)
-- [文档 - GitHub 库](https://github.com/vuejs/vuepress)
-- [文档 - 发布说明](https://github.com/vuejs/vuepress/blob/master/CHANGELOG.md)
+- [Docs - Official Guide](https://vuepress.vuejs.org/guide/)
+- [Docs - Config Reference](https://vuepress.vuejs.org/config/)
+- [Docs - GitHub Repo](https://github.com/vuejs/vuepress)
+- [Docs - Release Notes](https://github.com/vuejs/vuepress/blob/master/CHANGELOG.md)
 - [Medium - Intro to VuePress 1.x](https://medium.com/@_ulivz/intro-to-vuepress-1-x-7e2b7885f95f)
 
-### 额外资源
+### External Resources
 
 - [Working with Ghost and VuePress](https://ghost.org/docs/api/vuepress/)
 
-### 教程
+### Tutorials
 
 - [20180518 VueNYC - Introduction to VuePress - Evan You](https://www.youtube.com/watch?v=lIv1ItUzktc)
 - [20190107 Twitch Session: Trying to Write a VuePress Plugin](https://www.youtube.com/watch?v=JbOd6giUiWU)
 - [20190320 Create a Blog with VuePress on GitLab Pages](https://blog.howar31.com/vuepress-blog-tutorial/)
 - [20190625 Secure GitLab Pages with Let's Encrypt Certificate](https://blog.howar31.com/lets-encrypt-ssl-gitlab-pages)
 
-### 官方示例
+### Official Examples
 
 - [70-lines-of-vuepress-blog-theme](https://github.com/ulivz/70-lines-of-vuepress-blog-theme)
 
-### 示例
+### Examples
 
 - [davidangel.net](https://davidangel.net/) - An example of a site running VuePress on Netlify.
 
-### 博客提交
+### Blog Posts
 
 - [Using VuePress for component library documentation](https://www.xiegerts.com/post/creating-vue-component-library-documentation/)
 
-## 画廊
+## Gallery
 
 - [vuepress.gallery](https://vuepress.gallery/) - By [@vicbergquist](https://github.com/vicbergquist)
 
-## 插件
+## Plugins
 
-### 官方插件
+### Official Plugins
 
-**由 [vuejs/vuepress](https://github.com/vuejs/vuepress) 维护:**
+**Maintained by [vuejs/vuepress](https://github.com/vuejs/vuepress):**
 
-- [@vuepress/plugin-blog](https://vuepress-plugin-blog.ulivz.com/) - 博客插件
-- [@vuepress/plugin-active-header-links](https://v1.vuepress.vuejs.org/plugin/official/plugin-active-header-links.html) - 一个当页面滚动时自动激活侧边栏对应项的插件
-- [@vuepress/plugin-back-to-top](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-back-to-top) - 返回顶部按钮插件
-- [@vuepress/plugin-google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html) - Google analytics 插件
-- [@vuepress/plugin-i18n-ui](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-i18n-ui) - 多语言适配插件
-- [@vuepress/plugin-last-updated](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-last-updated) - 显示上次页面编辑时间的插件
-- [@vuepress/plugin-medium-zoom](https://v1.vuepress.vuejs.org/plugin/official/plugin-medium-zoom.html) - medium-zoom 插件(图片缩放插件)
-- [@vuepress/plugin-nprogress](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-nprogress) - nprogress 插件( 进度条插件)
-- [@vuepress/plugin-pwa](https://v1.vuepress.vuejs.org/plugin/official/plugin-pwa.html) - PWA 插件
-- [@vuepress/plugin-register-components](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-register-components) - 注册 Vue 组建插件
-- [@vuepress/plugin-search](https://v1.vuepress.vuejs.org/plugin/official/plugin-search.html) - 基于标题的搜索插件
+- [@vuepress/plugin-blog](https://vuepress-plugin-blog.ulivz.com/) - Blog plugin
+- [@vuepress/plugin-active-header-links](https://v1.vuepress.vuejs.org/plugin/official/plugin-active-header-links.html) - A plugin of automatically activating sidebar links when page scrolls
+- [@vuepress/plugin-back-to-top](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-back-to-top) - A plugin for "back to top" button
+- [@vuepress/plugin-google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html) - Google analytics plugin
+- [@vuepress/plugin-i18n-ui](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-i18n-ui) - I18N UI plugin
+- [@vuepress/plugin-last-updated](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-last-updated) - A plugin for displaying last updated time of pages
+- [@vuepress/plugin-medium-zoom](https://v1.vuepress.vuejs.org/plugin/official/plugin-medium-zoom.html) - medium-zoom plugin
+- [@vuepress/plugin-nprogress](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-nprogress) - nprogress plugin
+- [@vuepress/plugin-pwa](https://v1.vuepress.vuejs.org/plugin/official/plugin-pwa.html) - PWA plugin
+- [@vuepress/plugin-register-components](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-register-components) - A plugin for registering Vue components
+- [@vuepress/plugin-search](https://v1.vuepress.vuejs.org/plugin/official/plugin-search.html) - Headers-based search plugin
 
-**由 [github.com/vuepress](https://github.com/vuepress) 维护:**
+**Maintained by [github.com/vuepress](https://github.com/vuepress):**
 
-- [vuepress-plugin-clean-urls](https://vuepress.github.io/plugins/clean-urls/) - :droplet: 在 VuePress 中用干净的 url
-- [vuepress-plugin-container](https://vuepress.github.io/plugins/container/) - :package: 在 VuePress 中使用 markdown 容器
-- [vuepress-plugin-copyright](https://vuepress.github.io/plugins/copyright/) - :clipboard: 控制 Vuepress 的复制行为.
+- [vuepress-plugin-clean-urls](https://vuepress.github.io/plugins/clean-urls/) - :droplet: Use clean urls in VuePress.
+- [vuepress-plugin-container](https://vuepress.github.io/plugins/container/) - :package: Use markdown containers in VuePress.
+- [vuepress-plugin-copyright](https://vuepress.github.io/plugins/copyright/) - :clipboard: Handle copy behaviors in VuePress.
 - [vuepress-plugin-dehydrate](https://vuepress.github.io/plugins/dehydrate/) - :fire: Dehydrate HTML files in VuePress.
 - [vuepress-plugin-mathjax](https://vuepress.github.io/plugins/mathjax/) - :page_with_curl: Use TeX syntax in VuePress.
 - [vuepress-plugin-serve](https://vuepress.github.io/plugins/serve/) - :key: Serve generated files in VuePress.
 
-### 社区插件
+### Community Plugins
 
 - [vuepress-plugin-yuque](https://github.com/ulivz/vuepress-plugin-yuque) - Input: Yuque Repo, Output: VuePress Site!
 - [vuepress-plugin-docgen](https://github.com/f3ltron/vuepress-plugin-docgen) - auto docs generation for your components
@@ -108,14 +108,14 @@ tags:
 - [vuepress-plugin-code-copy](https://github.com/znicholasbrown/vuepress-plugin-code-copy) - automatically add copy buttons to all code blocks
 - [vuepress-plugin-img-lazy](https://github.com/tolking/vuepress-plugin-img-lazy) - A vuepress plugin to better supporting image lazy loading
 
-## 主题
+## Themes
 
-### 官方主题
+### Official Themes
 
 - [@vuepress/theme-default](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/theme-default)
 - [@vuepress/theme-blog](https://vuepress-theme-blog.ulivz.com/)
 
-### 社区主题
+### Community Themes
 
 - [vuepress-theme-reco](https://github.com/vuepress-reco/vuepress-theme-reco) - 💥 A simple and beautiful vuepress blog theme
 - [vuepress-theme-thindark](https://github.com/lisniuse/vuepress-theme-thindark) - A dark theme for VuePress.
@@ -136,9 +136,9 @@ tags:
 - [vuepress-theme-yur](https://github.com/cnguu/vuepress-theme-yur) - :revolving_hearts: A simple and powerful vuepress blog theme by cnguu - [Preview](https://gleehub.com)
 - [vuepress-theme-modern-blog](https://github.com/z3by/vuepress-theme-modern-blog) - 💖 Vuepress Blog Modern Theme
 
-## 使用 Vuepress 的项目
+## Projects Using VuePress
 
-### 官方项目
+### Official Projects
 
 - [vue-cli](https://cli.vuejs.org/)
 - [vuex](https://vuex.vuejs.org/)
@@ -150,18 +150,18 @@ tags:
 - [rollup-plugin-vue](https://rollup-plugin-vue.vuejs.org/)
 - [events](https://github.com/vuejs/events)
 
-### 博客
+### Blogging
 
-> 使用 VuePress 的博客站
+> Blog websites that use VuePress.
 
 - [ULIVZ](https://ulivz.com/)
 - [thuycom.studio (VuePress × Netlify)](https://thuycom.studio)
 - [Nobi.dev (VuePress with AMP)](https://nobi.dev/)
 - [Howar31 Blog (VuePress with GitLab Pages)](https://blog.howar31.com/)
 
-### 开源项目
+### Open Source
 
-> 使用 Vuepress 的文档站点
+> Documentation websites that use VuePress.
 
 - [discordjs.guide](https://discordjs.guide/) - The official guide for discord.js, created and maintained by core members of its community.
 - [vue-i18n](https://kazupon.github.io/vue-i18n/) - Vue I18n is internationalization plugin for Vue.js

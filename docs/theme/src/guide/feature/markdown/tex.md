@@ -1,35 +1,34 @@
 ---
 icon: tex
-category: markdown
 tags:
   - feature
   - markdown
 ---
 
-# Tex 语法支持
+# Tex Support
 
-让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。
+Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
-## 配置
+## Configuration
 
 ```js {3,5,6}
 module.exports = {
   themeConfig: {
     markdown: {
-      // 启用 TEX 支持
+      // Add Tex support
       tex: true,
     },
   },
 };
 ```
 
-## 语法
+## Grammar
 
-### 行内语法
+### Inline syntax
 
-使用 `$codes$` 来表示。
+Use `$codes$` to indicate.
 
-::: details 例子
+::: details Demo
 
 ```md
 Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -38,26 +37,26 @@ Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 :::
 
-### 块语法
+### Block syntax
 
-使用 `$$codes$$` 来表示。
+Use `$$codes$$` to indicate.
 
-::: details 例子
+::: details Demo
 
 ```md
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
 $$
 ```
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
 $$
 
 :::
 
-### 更多
+### More
 
-关于具体的 Tex 语法，请看 [Katex 教程](https://vuepress-md-enhance.mrhope.site/guide/tex/#%E8%BF%90%E7%AE%97%E7%AC%A6)
+For specific Tex syntax, see [Katex tutorial](https://vuepress-md-enhance.mrhope.site/guide/tex/#tutorial)

@@ -1,8 +1,8 @@
 {
   "name": "vuepress-plugin-photo-swipe",
   "short_name": "photo-swipe",
-  "description": "AddThis plugin for Vuepress",
-  "lang": "zh-CN",
+  "description": "Phowo swipe plugin for Vuepress",
+  "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [
     {

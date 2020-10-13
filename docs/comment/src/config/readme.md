@@ -1,62 +1,64 @@
 ---
+title: API Config
 icon: configuration
 ---
 
-# 配置
+## baseLang
+
+- Type: `string`
+- Default: `'en-US'`
+
+The language of the home directory.
 
 ## type
 
-- 类型: `'valine' | 'vssue' | 'disable'`
-- 必填: 是
+- Type: `'valine' | 'vssue' | 'disable'`
+- Required: true
 
-使用 Valine 还是 Vssue。设置为 `'disabled'` 会禁用评论功能，仅提供页面信息功能。
+Use Valine or Vssue. Setting to `'disable'` will only enable PageInfo feature.
 
 ## author
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: false
 
-文章的默认作者
+Default author for pages
 
 ## pageInfo
 
-- 类型: `string[] | false`
-- 默认值: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+- Type: `string[] | false`
+- Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
 
-文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
+Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
 
-可以填入的条目如下：
+The items that can be filled are as follows:
 
-- `'Author'`: 作者
-- `'Time'`: 写作日期
-- `'Category'`: 分类
-- `'Tag'`: 标签
-- `'ReadTime'`: 预计阅读时间
-- `'Word'`: 字数
-- `'Visitor'`: 访问量
+- `'Author'`: Author
+- `'Time'`: Writing Date
+- `'Category'`: Category
+- `'Tag'`: Tags
+- `'ReadTime'`: Expect reading time
+- `'Word'`: Word number for the article
+- `'Visitor'`: Visitor Number
 
 ## comment
 
-- 类型: `boolean`
-- 默认: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否默认启用评论功能。
+Whether to enable comment feature by default.
 
 ## wordPerminute
 
-- 类型: `number`
-- 默认: `300`
+- Type: `number`
+- Default: `300`
 
-每分钟阅读的字数。
+Reading words per minute.
 
-## Valine 配置
+## Valine config
 
-- [点击查看](valine.md)
+- [See here](valine.md)
 
-## Vssue 配置
+## Vssue config
 
-- [点击查看](vssue.md)
-
-## 页面配置
-
-- [点击查看](frontmatter.md)
+- [See here](vssue.md)

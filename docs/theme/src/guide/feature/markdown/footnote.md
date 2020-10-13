@@ -6,61 +6,35 @@ tags:
   - markdown
 ---
 
-# 脚注
+# Footnote
 
-让你的 VuePress 站点中的 Markdown 文件支持脚注。
+Let the Markdown file in your VuePress site support footnotes.
 
-## 配置
-
-默认启用，你也可以在主题配置禁用它：
+## Configuration
 
 ```js {3,5,6}
 module.exports = {
   themeConfig: {
     markdown: {
-      // 启用脚注功能
+      // Add Footnote support
       footnote: true
     }
   }
 };
 ```
 
-## 语法
+## Syntax
 
-- 在 Markdown 中使用 `[^锚点文字]` 来定义脚注。
+Footnote 1 link[^first].
 
-- 在之后的任何位置使用 `[^锚点文字]: ...` 来描述脚注内容。
+Footnote 2 link[^second].
 
-- 如果脚注包含多个段落，其后的段落应当保持双层缩进。
+Inline footnote^[Text of inline footnote] definition.
 
-## 案例
+Duplicated footnote reference[^second].
 
-脚注 1 链接[^first].
+[^first]: Footnote **can have markup**
 
-脚注 2 链接[^second].
+    and multiple paragraphs.
 
-行内的脚注^[Text of inline footnote] 定义.
-
-重复的页脚引用[^second].
-
-[^first]: 脚注 **可以包含特殊标记**
-
-    也可以由多个段落组成
-
-[^second]: 脚注文字。
-
-```md
-脚注 1 链接[^first].
-
-脚注 2 链接[^second].
-
-行内的脚注^[Text of inline footnote] 定义.
-
-重复的页脚引用[^second].
-
-[^first]: 脚注 **可以包含特殊标记**
-
-    也可以由多个段落组成
-
-[^second]: 脚注文字。
-```
+[^second]: Footnote text.

@@ -1,24 +1,24 @@
 ---
-title: 配置
+title: config
 icon: configuration
 ---
 
-## 选项
+## Options
 
 ### container
 
-- 类型: `string`
-- 默认值: `'.theme-default-content'`
+- Type: `string`
+- Default: `'.theme-default-content'`
 
-选择的范围，只有 container 元素内部的图片才会支持点击缩放。
+The range for selection. Only the image inside the container element will support click zoom.
 
 ### selector
 
-- 类型: `string`
-- 默认值: `'.theme-default-content :not(a) > img'`
+- Type: `string`
+- Default: `'.theme-default-content :not(a) > img'`
 
-图片选择器
+Image selector
 
 ### options
 
-传递给 [`photo-swipe`](http://photoswipe.com/) 的额外选项
+Options passed to [**photo-swipe**](http://photoswipe.com/)

@@ -44,7 +44,7 @@ const setThemeLocales = (
  */
 const resolveThemeConfig = (themeConfig: ResolvedHopeThemeConfig): void => {
   /** 主目录对应语言 */
-  const { baseLang = "zh-CN" } = themeConfig;
+  const { baseLang = "en-US" } = themeConfig;
 
   // 如果主目录启用了未适配的语言，抛出错误
   if (!checkLang(baseLang))

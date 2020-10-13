@@ -6,133 +6,137 @@ tags:
   - layout
 ---
 
-# 首页
+# Home Page
 
-vuepress-theme-hope 对首页布局进行了一些改进。
+vuepress-theme-hope improves the default home page.
 
-如果想要使用它，请在 Front Matter 中设置 `home: true`。任何 `YAML front matter` 之后额外的内容将会以普通的 markdown 被渲染，并插入到 `features` 的后面。
+If you want to use it, set `home: true` in page Front Matter. Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
 
-![首页截图](./assets/home.png)
+![Screenshot](./assets/home.png)
 
-## 配置选项
+## Item style
 
-可以配置的 Front Matter 参数如下:
+The Front Matter parameters that can be configured are as follows:
 
 ### home
 
-- 类型: `boolean`
+- Type: `boolean`
 
-设置为 `true` 时启用首页样式
+Enable homepage style when set to `true`
 
 ### title
 
-- 类型: `string | false`
-- 默认值: `'Hello'`
+- Type: `string | false`
+- Default: `'Hello'`
 
-标题，填入 `false` 会取消显示。
+Title, won't display if it is set to `false`
 
 ### heroImage
 
-- 类型: `string`
+- Type: `string`
 
-主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)
+Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
 
 ### darkHeroImage
 
 - 类型: `string`
 
-深色模式下主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)，默认同 `heroImage`。
+Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
 
 ### heroText
 
-- 类型: `string`
+- Type: `string`
 
-主页图标替代文字。
+Home icon alt text
 
 ### tagline
 
-- 类型: `string`
-- 默认值: `'Welcome to your VuePress site'`
+- Type: `string`
+- Default: `'Welcome to your VuePress site'`
 
-附加文字描述
+Append text
 
 ### action
 
-- 类型: `ActionConfig | ActionConfig[]`
+- Type: `ActionConfig | ActionConfig[]`
 
-`ActionConfig` 结构:
+`ActionConfig` structure:
 
-- text: 按钮文字
-- link: 按钮链接
+- text: Button text
+- link: Button link
 
 ### features
 
-- 类型：`Feature[]`
+- Type: `Feature[]`
 
-`Feature` 结构：
+Structure of `Feature`:
 
-- title: `string` 标题
-- details: `string` 详情
-- link(可选): `string` 链接地址
+- title: `string` title
+- details: `string` details
+- link (optional): `string` link address
 
-特性说明
+Feature description
 
-## 配置案例
+## Demo
 
 ```yaml
 ---
 home: true
-title: vuepress-theme-hope
 icon: homefill
+title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
-tagline: 一个轻量的 Vuepress 主题
+tagline: A light Vuepress theme
 action:
-  - text: 快速上手 💡
+  - text: Get Started 💡
     link: /guide/
 
-  - text: 配置 🛠
+  - text: Config 🛠
     link: /config/
 
 features:
-  - title: 主题色切换
-    details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
-    link: /guide/feature/themecolor/#自定义主题色
-
-  - title: 深色模式
-    details: 可以自由切换浅色模式与深色模式
-    link: /guide/feature/themecolor/#深色模式
-
-  - title: 浏览量与评论
-    details: 配合 Valine 与 Vssue 来开启阅读量统计与评论支持
+  - title: Pageviews and comments
+    details: Start pageview statistics and comment support with Valine and Vssue
     link: /guide/feature/comment/
 
-  - title: 文章信息展示
-    details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
+  - title: Article information display
+    details: Add author, writing date, reading time, word count and other information to your article
     link: /guide/feature/page-info/
 
-  - title: Markdown 增强
-    details: 新增文字对齐、上下角标、脚注、标记、公式与流程图支持
+  - title: Markdown Enhance
+    details: Add align, sup/sub script, footnote, tex, flowchart and mark support in markdown
     link: /guide/feature/markdown/
 
-  - title: 博客支持
-    details: 为你的文章添加日期、标签和分类，将自动生成文章、分类、标签与时间轴列表
+  - title: Blog support
+    details: Just date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
     link: /guide/feature/blog/
 
-  - title: 文章加密
-    details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
-    link: /guide/feature/encrypt/
+  - title: Article Encryption
+    details: Encrypt you article based on path and folders, so that only the one you want could see them
+    link: /guide/feature/blog/
 
-  - title: 更多新特性
-    details: 包括博客主页、图标支持、路径导航、页脚支持、全屏按钮、返回顶部按钮等
+  - title: Custom theme color
+    details: Supports custom theme colors and allows users to switch between preset theme colors
+    link: /guide/feature/themecolor/
+
+  - title: Dark Mode
+    details: Switch between light and dark modes freely
+    link: /guide/feature/darkmode/
+
+  - title: Sitemap generation and SEO enhancement
+    details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
+    link: /guide/feature/seoAndSitemap/
+
+  - title: More new features
+    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
     link: /guide/feature/
 
-  - title: PWA 支持
-    details: 内置的 PWA 插件会让你的网站更像一个 APP。
+  - title: PWA support
+    details: The built-in PWA plugin will make your website more like an APP.
     link: /config/plugin/pwa/
 
-  - title: TS 支持
-    details: 为你的 Vuepress 开启 Typescript 支持
+  - title: TS support
+    details: Turn on Typescript support for your Vuepress
     link: /guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

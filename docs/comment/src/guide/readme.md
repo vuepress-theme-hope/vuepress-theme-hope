@@ -2,33 +2,35 @@
 icon: creativefill
 ---
 
-# 指南
+# Guide
 
-此插件暴露两个组件，路径为 `@mr-hope/vuepress-plugin-comment/<组件名>.vue`。请在你的主题中手动引入。
+This plugin exposes two components at `@mr-hope/vuepress-plugin-comment/<component name>.vue`. Please include it manually in your theme.
 
-- `<Comment />`：评论组件
-- `<PageInfo />`: 页面信息组件
+- `<Comment />`: Comment component
+- `<PageInfo />`: Page information component
+
+There are two comment plugins to choose from: Valine and Vssue.
 
 ## `<PageInfo />`
 
-你需要将页面信息组件 (`<PageInfo />`) 插入在 `<Content />` 组件前。
+You need to insert the page information component (`<PageInfo />`) before the `<Content />` component.
 
-- [查看详情](page-info.md)
+- [View Details](page-info.md)
 
 ## `<Comment />`
 
-推荐将评论组件 (`<Comment />`) 插入在 `<PageNav />` 组件后。
+It is recommended to insert the comment component (`<Comment />`) after the `<PageNav />` component.
 
-`<Comment />` 组件默认全局启用。你可以在特定页面的 `Front Matter` 中设置 `comment: false` 来局部禁用它。
+`<Comment />` components are enabled globally by default. You can disable it by setting `comment: false` in `Front Matter` on a specific page.
 
-如果你需要保持全局禁用，请在插件选项中设置 `comment` 为 `false`。这样你可以在特定页面的 `Front Matter` 中设置 `comment: true` 来局部启用它。
+If you need to keep it globally disabled, please set `comment` to `false` in the plugin options. This way you can set `comment: true` in the Front Matter of a particular page to enable it locally.
 
-有两个评论插件可以选择: Valine 和 Vssue。
+There are two comment plugins to choose from: Valine and Vssue.
 
 ### Valine
 
-[详见 Valine 指南](valine.md)
+See [Valine Config Guide](valine.md)
 
 ### Vssue
 
-[详见 Vssue 指南](vssue.md)
+See [Vssue Config Guide](vssue.md)

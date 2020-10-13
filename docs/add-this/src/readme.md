@@ -4,28 +4,41 @@ title: vuepress-plugin-add-this
 icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-add-this
-tagline: 为 Vuepress 提供 addthis 支持
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+tagline: AddThis plugin for vuepress
+action:
+  - text: Guide 💡
+    link: /guide/
+
+  - text: Config 🛠
+    link: /config/
+
 copyright: false
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-## 使用插件
+## How to use
 
-### 安装
+### Install
 
 ```bash
 npm i -D vuepress-plugin-add-this
 ```
 
-### 使用
+Or
 
-```js
+```bash
+yarn add -D vuepress-plugin-add-this
+```
+
+### Usage
+
+```js {3-5}
 // .vuepress/config.js
 module.exports = {
   plugin: [
     "add-this",
     {
-      pubid: "你的 pubid",
+      pubid: "your pubid",
     },
   ],
 };

@@ -19,14 +19,17 @@ export interface CopyCodeOptions {
    */
   selector?: string | string[];
   /**
-   * prompt message display time.
+   * 提示消息显示时间
+   *
+   * Prompt message display time
    *
    * @default 300
    */
   duration?: number;
   /**
    * 是否展示在移动端
-   * whether to display on the mobile side
+   *
+   * Whether to display on the mobile side
    *
    * @default false
    */

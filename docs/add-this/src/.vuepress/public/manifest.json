@@ -2,7 +2,7 @@
   "name": "vuepress-plugin-add-this",
   "short_name": "add-this",
   "description": "AddThis plugin for Vuepress",
-  "lang": "zh-CN",
+  "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [
     {

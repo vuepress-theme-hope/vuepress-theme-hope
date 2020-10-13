@@ -2,26 +2,26 @@
 icon: creativefill
 ---
 
-# 使用 Vssue
+# Using Vssue
 
-## 选择你要使用的代码托管平台
+## Choose a platform to use
 
-Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为你的静态页面提供评论功能，你可以选择其中之一来使用。
+Vssue can enable comments for your static pages via the `Issue System` of `Github`, `Gitlab`, `Bitbucket` or `Gitee`, and you can choose one of those platforms.
 
-前往 [支持的代码托管平台 - 创建 OAuth App](./supported-platforms.md) 查看详细指引。
+Go to [Supported Platforms - Set up OAuth App](./supported-platforms.md) for detailed instructions.
 
-完成这一步之后，你将会配置好一个 OAuth App，并得到对应的 `client id` 和 `client secret`，它们将会用于 Vssue 的使用。
+After this step, you will get `client id` and `client secret` of your OAuth App, which will be used for Vssue options:
 
-- `owner`: 对应 repository 的拥有者帐号或者团队
-- `repo`: 用来存储评论的 repository
-- `clientId`: OAuth App 的 `client id`
-- `clientSecret`: OAuth App 的 `client secret` （只有在使用某些平台时需要）
+- `owner`: the account / group that owns the repository
+- `repo`: the name of the repository to store comments
+- `clientId`: the `client id` of your oauth app
+- `clientSecret`: the `client secret` of your oauth app (only required for some of the platforms)
 
-## Vssue 配置
+## Vssue Config
 
-本插件通过 Vssue 提供的 [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@vssue/vuepress-plugin-vssue) 来帮助你在 VuePress 中快速使用 Vssue。
+This plugin uses [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@vssue/vuepress-plugin-vssue) to help use Vssue in VuePress quickly.
 
-### 使用插件
+### Use the plugin
 
 ```js
 // .vuepress/config.js
@@ -30,10 +30,10 @@ module.exports = {
   plugins: {
     "@mr-hope/comment": {
       type: "vssue",
-      // 设置 `platform` 而不是 `api`
+      // set `platform` rather than `api`
       platform: "github",
 
-      // 其他的 Vssue 配置
+      // all other options of Vssue are allowed
       owner: "OWNER_OF_REPO",
       repo: "NAME_OF_REPO",
       clientId: "YOUR_CLIENT_ID",
@@ -44,21 +44,21 @@ module.exports = {
 ```
 
 ::: tip
-唯一的区别在于，你需要设置 `platform` 而不是对应的 `api` 包。
+The only difference is that, you should set `platform` rather than the `api` package itself.
 
-`@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 api 包：
+`@vssue/vuepress-plugin-vssue` will auto resolve the corresponding api package according to the value of `platform`:
 
-- platform `github` - api 包 `@vssue/api-github-v3`
-- platform `github-v4` - api 包 `@vssue/api-github-v4`
-- platform `gitlab` - api 包 `@vssue/api-gitlab-v4`
-- platform `bitbucket` - api 包 `@vssue/api-bitbucket-v2`
-- platform `gitee` - api 包 `@vssue/api-gitee-v5`
+- platform `github` - api package `@vssue/api-github-v3`
+- platform `github-v4` - api package `@vssue/api-github-v4`
+- platform `gitlab` - api package `@vssue/api-gitlab-v4`
+- platform `bitbucket` - api package `@vssue/api-bitbucket-v2`
+- platform `gitee` - api package `@vssue/api-gitee-v5`
 
 :::
 
-### 使用 Vssue 组件
+### Use Vssue Component
 
-`Vssue` 已经注册为 Vue 组件，你可以在你的 VuePress Markdown 文件中直接使用它。
+`Vssue` has already been registered as a Vue component, and can be used in your VuePress markdown directly.
 
 ```md
 <!-- README.md -->
@@ -68,44 +68,48 @@ module.exports = {
 <Vssue title="Vssue Demo" />
 ```
 
-### 自定义样式变量
+::: tip
+You can go to the repo [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
+:::
 
-通过 VuePress 的 [palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)，你可以很轻松地修改 Vssue 的样式变量。
+## Custom Style Variables
 
-Vssue 样式中预定义了一些 [Stylus 变量](http://stylus-lang.com/docs/variables.html)，你可以在 `vssue/src/styles/_variables.styl` 中查看它们：
+With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the [Variables of Vssue Style](./styles.md#use-variables-to-customize-vssue) easily.
+
+There are some pre-defined [stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
 
 ```stylus
-// 主题颜色
+// the main color
 $vssue-theme-color
 
-// 文字颜色 （用于普通文字）
+// the text color (used for common text)
 $vssue-text-color
 
-// 浅色文字颜色 （用于备注等文字）
+// the text light color (used for muted text, disabled text, etc)
 $vssue-text-light-color
 
-// 边框颜色
+// the border color
 $vssue-border-color
 
-// 进度条颜色
+// the progress color
 $vssue-progress-color
 
-// 文字大小
+// the font size
 $vssue-font-size
 
-// 字体
+// the font family
 $vssue-font-family
 
-// 切换为移动端模式的屏幕宽度
+// the mobile breakpoint
 $vssue-breakpoint-mobile
 
-// 文字方向 (ltr / rtl) （为 RTL 语言使用，如希伯来语等）
+// the text direction (ltr / rtl) (used for RTL languages, e.g. Hebrew)
 $vssue-direction
 ```
 
-举例来说，Vssue 默认使用一个“Vue 绿色”（`#3eaf7c`）作为主题颜色，并将其设置为 `$vssue-theme-color` 的默认值。你可以在引入 `vssue/src/styles/index.styl` 之前设置 `$vssue-theme-color` 的值来改变主题颜色。
+For example, Vssue use a "Vue green" (`#3eaf7c`) as the theme color, which is defined as the default value of variable `$vssue-theme-color`. You can change the theme color by setting `$vssue-theme-color` before import `vssue/src/styles/index.styl`.
 
-默认情况下，下面这些 Vssue 的样式变量与 VuePress 的样式变量相等：
+By default, those Vssue variables are set to VuePress variables:
 
 ```stylus
 // @vssue/vuepress-plugin-vssue/styles/index.styl
@@ -116,23 +120,21 @@ $vssue-border-color ?= $borderColor
 $vssue-breakpoint-mobile ?= $MQMobile
 ```
 
-如果你想要覆盖它们，在你的 `palette.styl` 中设置即可：
+If you want to override them, just set them in your `palette.styl`:
 
 ```stylus
 // .vuepress/styles/palette.styl
 
-$accentColor = blue
-
 $vssue-theme-color = red
 ```
 
-## 不想使用 Vssue 插件
+## Do not want to use our plugin
 
-Vssue 是适配 SSR 的，所以你可以不使用 `@vssue/vuepress-plugin-vssue`，而是像其他 Vue 插件 / 组件一样，在 VuePress 中直接引入 Vssue（尤其是在你对 Vssue 的样式进行了自定义的时候）。
+Vssue has tried to be SSR-friendly, so you can import Vssue directly in VuePress like other vue plugins / components without `@vssue/vuepress-plugin-vssue` (especially if you have customized the styles of Vssue).
 
-但是我们仍然建议你在 VuePress 中通过 `@vssue/vuepress-plugin-vssue` 来使用 Vssue，该插件已经帮助你仅在客户端加载 Vssue 来避免一些潜在的问题。
+But we still suggest you to use `@vssue/vuepress-plugin-vssue` in VuePress, which has already helped you make `<Vssue>` component client-only to avoid some potential issues.
 
-如果你不想使用我们提供的插件，你可能需要将 `<Vssue>` 组件放置在 `<ClientOnly>` 组件中来避免这些潜在的问题，即：
+If you do not want to use the plugin we provided, you may need to wrap `<Vssue>` component into `<ClientOnly>` component to avoid those potential issues, i.e. :
 
 ```vue
 <ClientOnly>
@@ -140,4 +142,4 @@ Vssue 是适配 SSR 的，所以你可以不使用 `@vssue/vuepress-plugin-vssue
 </ClientOnly>
 ```
 
-> 参考 VuePress [内置的组件 - ClientOnly](https://vuepress.vuejs.org/zh/guide/using-vue.html#clientonly)
+> See [Built-in Components - ClientOnly](https://vuepress.vuejs.org/guide/using-vue.html#clientonly) of VuePress

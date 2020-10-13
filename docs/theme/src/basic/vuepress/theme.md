@@ -1,16 +1,18 @@
 ---
-title: 主题配置
+title: Theme Config
 icon: skinfill
 category: basic
 tags:
   - vuepress
 ---
 
-使用一个主题和使用一个插件的方式几乎一致。
+## Using a theme
 
-### 使用来自依赖的主题
+Using a theme is almost the same as using a plugin.
 
-一个主题可以在以 `vuepress-theme-xxx` 的形式发布到 npm，你可以这样使用它：
+## Using a theme from a dependency
+
+Themes can be published on npm in raw Vue SFC format as `vuepress-theme-xxx`.
 
 ```js
 module.exports = {
@@ -18,9 +20,7 @@ module.exports = {
 };
 ```
 
-### 主题的缩写
-
-如果你的主题名以 `vuepress-theme-` 开头，你可以使用缩写来省略这个前缀：
+If you prefix the theme with `vuepress-theme-`, you can use a shorthand to leave out that prefix:
 
 ```js
 module.exports = {
@@ -28,7 +28,7 @@ module.exports = {
 };
 ```
 
-和下面等价：
+Same with:
 
 ```js
 module.exports = {
@@ -36,22 +36,22 @@ module.exports = {
 };
 ```
 
-这也适用于 [Scoped Packages](https://docs.npmjs.com/misc/scope):
+This also works with [Scoped Packages](https://docs.npmjs.com/misc/scope):
 
 ```js
 module.exports = {
-  theme: "@org/vuepress-theme-xxx", // 或者一个官方主题: '@vuepress/theme-xxx'
+  theme: "@org/vuepress-theme-xxx", // or an official theme: '@vuepress/theme-xxx'
 };
 ```
 
-缩写:
+Shorthand:
 
 ```js
 module.exports = {
-  theme: "@org/xxx", // 或者一个官方主题: '@vuepress/xxx'
+  theme: "@org/xxx", // or an official theme: '@vuepress/xxx'
 };
 ```
 
-::: warning
-以 `@vuepress/theme-` 开头的主题是官方维护的主题。
+::: warning Note
+The theme whose name starts with `@vuepress/theme-` is an officially maintained theme.
 :::

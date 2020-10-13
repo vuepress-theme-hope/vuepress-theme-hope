@@ -6,14 +6,18 @@ export interface PWAOptions {
    * 主目录所对应的语言。
    *
    * The language of the home directory.
+   *
+   * @default 'en-US'
    */
   baseLang?: string;
   /**
    * 用于替换默认弹出组件的自定义组件。
    *
    * A custom component to replace the default popup component.
+   *
+   * @default 'SWUpdatePopup'
    */
-  popupComponent: string;
+  popupComponent?: string;
   /**
    * workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *

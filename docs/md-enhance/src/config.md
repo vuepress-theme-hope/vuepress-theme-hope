@@ -1,63 +1,69 @@
 ---
+title: Config
 icon: configuration
 ---
 
-# 配置
+You can pass these options to the plugin:
 
-你可以传递以下选项来启用或禁用一些功能
+## baseLang
 
-## enableAll
+- Type: `string`
+- Default: `'en-US'`
 
-- 类型: `boolean`
-- 默认值: `false`
+The language of the home directory.
 
-启用全部功能。
+## Enable all
+
+- Type: `boolean`
+- Default: `false`
+
+Enable all features.
 
 ## lineNumbers
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否在每个代码块的左侧显示行号。
+Whether to display the line number to the left of each code block.
 
 ## sup
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用上角标格式支持。
+Whether to enable the upper format support.
 
 ## sub
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用下角标格式支持。
+Whether to enable the lower corner format support.
 
 ## footnote
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用脚注格式支持。
+Whether to enable footnote format support.
 
 ## mark
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用标记格式支持。
+Whether to enable mark support.
 
 ## tex
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 $\TeX$ 语法支持。
+Whether to enable $\TeX$ syntax support.
 
 ## flowchart
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 流程图 语法支持。
+Whether to enable flowchart syntax support.

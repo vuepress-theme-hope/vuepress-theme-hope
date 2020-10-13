@@ -6,27 +6,27 @@ tags:
   - function
 ---
 
-# 新增组件
+# New Component
 
-## 徽章 `<MyBadge />`
+## Badge `<MyBadge />`
 
-- **属性**:
+- **Props**:
 
   - `text` - string
-  - `type` - string, 可选值： `"tip"|"warn"|"error"`，默认值是： `"tip"`
-  - `color` - string, 可选
-  - `vertical` - string, 可选值： `"top"|"middle"`，默认值是： `"top"`
+  - `type` - string, optionals: `"tip"|"warn"|"error"` default is `"tip"`
+  - `color` - string, optional
+  - `vertical` - string, optionals: `"top"|"middle"`，default is `"top"`
 
-- **使用**:
+- **Usage**:
 
-  你可以在标题中，使用这个组件来为标题或链接添加一些状态：
+  You can use this component in the title to add some status to the title or link:
 
   ```md
   ### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
   ```
 
-## 返回顶部按钮 `<BackToTop />` <MyBadge text="支持页面配置" />
+## Back to top button `<BackToTop />` <MyBadge text="Support page config" />
 
-vuepress-theme-hope 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
+vuepress-theme-hope adds a back-to-top control which will show up after scrolling down 300px by default.
 
-该内容的配置项为 `backToTop`。
+The config key is `backToTop`.

@@ -1,31 +1,30 @@
 ---
-title: "@mr-hope/pwa"
+title: "@mr-hope/plugin-pwa"
 category: config
 tags:
   - plugin
   - config
 ---
 
-渐进式网页应用 (Progressive Web App) 支持。
+Progressive Web App Support
 
-<!-- more -->
+## Plugin description
 
-## 插件说明
+Turn on PWA support. A pop-up window will be displayed in the lower right corner when an update is obtained.
 
-开启 PWA 支持。当获得更新时将会在右下角显示弹窗。
+The default language of the popup will automatically be set to `baseLang` configured in `themeConfig`.
 
-弹窗默认语言将自动设置为 `themeConfig` 中配置的 `baseLang`。
+This feature is enabled by default. If you do not need this feature or want to use other pwa plugins, you can set the `themeConfig.pwa` to `false` to disable the plugin.
 
-在本主题中，该功能默认启用，如果你不需要该功能或想使用其他的 pwa 插件，可以设置 `themeConfig.pwa` 为 `false` 来禁用本插件。
-
-## 插件配置
+## Plugin configuration
 
 ### popupComponent
 
-- 类型: `string`
+- Type: `string`
+- Default: `'SWUpdatePopup'`
 
-可填入自定义的弹窗组件路径。
+You can fill in the custom pop-up component path.
 
 ### generateSwConfig
 
-传递给 `workbox-build` 的选项，具体详情，请见 [Workbox 文档](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
+Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)

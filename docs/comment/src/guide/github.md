@@ -4,59 +4,59 @@ icon: github
 
 # GitHub OAuth App
 
-> Vssue 同样可以配合自己搭建的 GitHub Enterprise Server 使用。只需要将 `baseURL` 设置为你的 Github URL 即可。查看 [配置参考 - baseURL](../options/README.md#baseurl)
+> Vssue can also work with self-hosted GitHub Enterprise Server. Set the `baseURL` options to your Github URL. See [Options Reference - baseURL](../options/README.md#baseurl)
 >
-> GitHub 需要设置 `clientSecret`，因为 [GitHub 目前还不支持 implicit grant type](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
+> GitHub requires `clientSecret` because [GitHub does not support implicit grant type](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
 >
 > ![Set up OAuth App - Github 00](/img/oauth-app-github-00.png)
 
-## 创建一个新的 OAuth App
+## Create a new OAuth App
 
-- 前往 [Settings - Developer Settings - OAuth Apps](https://github.com/settings/developers)
-- 点击 [New OAuth App](https://github.com/settings/applications/new)
+- Go to [Settings - Developer Settings - OAuth Apps](https://github.com/settings/developers)
+- Click [New OAuth App](https://github.com/settings/applications/new)
 
-->![配置 OAuth App - Github 01](/img/oauth-app-github-01.png)<-
-->![配置 OAuth App - Github 02](/img/oauth-app-github-02.png)<-
-->![配置 OAuth App - Github 03](/img/oauth-app-github-03.png)<-
+->![Set up OAuth App - Github 01](/img/oauth-app-github-01.png)<-
+->![Set up OAuth App - Github 02](/img/oauth-app-github-02.png)<-
+->![Set up OAuth App - Github 03](/img/oauth-app-github-03.png)<-
 
-- 将 `Homepage URL` 和 `Authorization callback URL` 设置为你的网站 URL （这里我们用 `localhost:8080` 作为示例）
+- Set the `Homepage URL` and `Authorization callback URL` to your website URL (Here we take `localhost:8080` for example)
 
-->![配置 OAuth App - Github 04](/img/oauth-app-github-04.png)<-
+->![Set up OAuth App - Github 04](/img/oauth-app-github-04.png)<-
 
-## 获取 Client ID 和 Secret
+## Get the Client ID and Secret
 
-现在你已经创建了一个新的 OAuth App，并得到了相应的 `Client ID` 和 `Client Secret`。
+Then you've created a new OAuth App, and here is your `Client ID` and `Client Secret`.
 
-->![配置 OAuth App - Github 05](/img/oauth-app-github-05.png)<-
+->![Set up OAuth App - Github 05](/img/oauth-app-github-05.png)<-
 
-## 配置并启动你的 Vssue
+## Config and start your Vssue
 
-复制 `Client ID` 和 `Client Secret`, 并设置 `owner` 和 `repo`。
+Copy the `Client ID` and `Client Secret`, and set `owner` and `repo`.
 
-> Github repository 的 URL 模式为 `https://github.com/${owner}/${repo}`
+> The URL pattern of github repo is `https://github.com/${owner}/${repo}`
 
-这里我们以 `https://github.com/meteorlxy/vssue-demo` 为例，并把 issue 的 `title` 设置为 `Vssue Demo`。
+Here we take `https://github.com/meteorlxy/vssue-demo` for example, and set the `title` of issue to `Vssue Demo`.
 
-然后运行 `anywhere -h localhost 8080`，在 `localhost:8080` 监听一个 http server 并返回 `index.html`。
+Then run `anywhere -h localhost 8080` to serve the `index.html` on `localhost:8080`.
 
-->![配置 OAuth App - Github 06](/img/oauth-app-github-06.png)<-
+->![Set up OAuth App - Github 06](/img/oauth-app-github-06.png)<-
 
-## 在本地尝试 Vssue
+## Try out Vssue locally
 
-Vssue 已经成功运行。点击 `Login` 使用 Github 帐号登录。
+Vssue has already run here. Click `Login` to login with github account.
 
-->![配置 OAuth App - Github 07](/img/oauth-app-github-07.png)<-
+->![Set up OAuth App - Github 07](/img/oauth-app-github-07.png)<-
 
-重定向到 Github 授权页面。点击 `Authorize ${你的帐号}` 来登录。
+Redirect to Github Authorization page. Click `Authorize ${your account}` to login.
 
-->![配置 OAuth App - Github 08](/img/oauth-app-github-08.png)<-
+->![Set up OAuth App - Github 08](/img/oauth-app-github-08.png)<-
 
-在当前页面写下评论吧 ~
+Leave a comment on this page ~
 
-->![配置 OAuth App - Github 09](/img/oauth-app-github-09.png)<-
+->![Set up OAuth App - Github 09](/img/oauth-app-github-09.png)<-
 
-->![配置 OAuth App - Github 10](/img/oauth-app-github-10.png)<-
+->![Set up OAuth App - Github 10](/img/oauth-app-github-10.png)<-
 
 ::: tip
-你可以前往 [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) 来获取 demo 代码。前往该仓库的 [#1 issue](https://github.com/meteorlxy/vssue-demo/issues/1) 看看发生了什么。
+You can go to the repo [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://github.com/meteorlxy/vssue-demo/issues/1) of that repo to see what happened.
 :::

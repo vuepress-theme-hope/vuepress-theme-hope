@@ -5,9 +5,9 @@
 **/markdown.md
 
 docs/theme/src/basic/vuepress/theme/dev.md
-docs/theme/src/en/guide/feature/page-info.md
-docs/theme/src/en/guide/layout/navbar.md
-docs/theme/src/en/guide/layout/sidebar.md
+docs/theme/src/zh/guide/feature/page-info.md
+docs/theme/src/zh/guide/layout/navbar.md
+docs/theme/src/zh/guide/layout/sidebar.md
 docs/theme/src/guide/feature/page-info.md
 docs/theme/src/guide/layout/navbar.md
 docs/theme/src/guide/layout/sidebar.md

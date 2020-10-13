@@ -1,5 +1,5 @@
 ---
-title: 主题配置
+title: Theme Config
 icon: configuration
 category: config
 tags:
@@ -7,212 +7,202 @@ tags:
   - themeConfig
 ---
 
-除了查看本指南，你也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) 或本文档的 [配置文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js)。
+In addition to viewing this guide, you can also directly view the [types file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts) in the source code or [configuration file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js) of this document.
 
 ::: warning
-通过注入，vuepress-theme-hope 改变了默认主题一些配置的默认值。
+By injecting, vuepress-theme-hope changes the default values of some configurations of the default theme.
 
-虽然一般情况下，它们影响不大，但是还是需要着重提示这可能造成与默认文档预期不符的结果。
+Although in general, they have little effect, but they may led to a result that does not match the default document expectations.
 
-文档下方仔细的列出了所有配置项的改变。
+The changes to all configuration items are carefully listed below the documentation.
 :::
 
-`.vuepress/config.js` 中的 themeConfig 字段(主题字段)新增以下配置：
+The following configuration has been added to the themeConfig field in `.vuepress/config.js`:
 
-## 基本选项
+## Basic options
 
-这些选项需要你正确配置。
+These options require you to configure them correctly.
 
 ### baseLang
 
-- 类型: `string`
-- 默认值: `'zh-CN'`
+- Type: `string`
+- Default: `'zh-CN'`
 
-主目录所对应的语言。
+The language of the home directory.
 
-这个选项会保证主目录页面中主题文字使用正确的语言显示。你可以根据自己的需要将其改为其他语言。
+This option ensures that the subject text in the main catalog page is displayed in the correct language. You can change it to other languages according to your needs.
 
 ::: tip
-目前多语言仅适配了 **简体中文** (zh-CN) 与 **英文(美国)** (en-US)。
+Currently only **Simplified Chinese** (zh-CN) and **English (United States)** (en-US) are available for i18n.
 
-如果你需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
+If you need multi-language support for other languages, you can [submit a PR to this file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
 :::
 
 ### author
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-文章显示的默认作者
+The default author of the article
 
-### nav <MyBadge text="改进" type="warn" />
+### nav <MyBadge text="improved" type="warn" />
 
-NavBarItem 新增
+NavBarItem now has
 
-- `icon` 字段来支持图标显示。
-- `prefix` 字段来自动添加分组前缀
+- `icon` field to support icon display.
+- `prefix` field to automatically add group prefix
 
-具体配置，请见 [布局 → 导航栏](../guide/layout/navbar.md)
+### sidebar <MyBadge text="improved" type="warn" />
 
-### sidebar <MyBadge text="改进" type="warn" />
+SideBarItem now has
 
-SideBarItem 新增
-
-- `icon` 字段来支持图标显示。
-- `prefix` 字段来自动添加分组前缀
-
-具体配置，请见 [布局 → 侧边栏](../guide/layout/sidebar.md)
+- `icon` field to support icon display.
+- `prefix` field to automatically add group prefix
 
 ### locales
 
-- 类型: `Record<string, HopeLangI18nConfigItem>`
+-Type: `Record <string, HopeLangI18nConfigItem>`
 
-主题的多语言配置，主要需要配置各语言的 `nav` 与 `sidebar`。
+The multi-language configuration of the theme mainly needs to configure `nav` and`sidebar` of each language.
 
-## 默认主题配置
+## Default theme config
 
-以下这些配置沿用了 `@vuepress/theme-default` 的配置项，你无需进行改动:
+The following configurations follow the configuration items in `@vuepress/theme-default`:
 
-### logo <MyBadge text="改进" type="warn" />
+### logo <MyBadge text="improved" type="warn" />
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-导航栏的 logo 图片，需填入绝对路径并放入 `.vuepress/public` 文件夹。
-
-如果你希望在深色模式下显示另一个 logo，请配置 `themeConfig.darkLogo` 选项。
+The logo image of the navigation bar. Needs to be filled with an absolute path. If you want to display another logo in dark mode, please configure the `themeConfig.darkLogo` option.
 
 ### sidebarDepth
 
-- 类型: `number`
-- 默认值: `2`
+- Type: `number`
+- Default: `2`
 
-侧边栏嵌套的标题深度
+Nested headings depth in sidebar
 
 ### displayAllHeaders
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否显示所有页面的标题链接
+Whether to display header links in sidebar for all pages
 
 ### activeHeaderLinks
 
-- 类型: `boolean`
-- 默认值: `true`
+-Type: `boolean`
+-Default value: `true`
 
-是否自动更新嵌套的标题链接和 URL 中的 Hash 值
+Whether to automatically update hash values ​​in URLs and sidebar active headings.
 
 ### search
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否启用默认的搜索框
+Whether to enable the default search box
 
 ### searchPlaceholder
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-搜索框的占位符文字
+Placeholder for the search box
 
 ### searchMaxSuggestions
 
-- 类型: `number`
-- 默认值: `10`
+- Type: `number`
+- Default: `10`
 
-默认搜索框显示的搜索结果数量
+The number of search results displayed in the default search box
 
 ### algolia
 
-- 类型: `AlgoliaOption`
-- 必填: 否
+-Type: `AlgoliaOption`
+-Required: No
 
-Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体详见 [Doc Search 文档](https://github.com/algolia/docsearch#docsearch-options)。你也可以为每个语言配置 algolia。
+Algolia search configuration, you need to provide at least `apiKey` and`indexName`. For details, see [Doc Search documentation](https://github.com/algolia/docsearch#docsearch-options). You can also configure algolia for each language.
 
 ### nextLinks
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-所有页面的 下一篇 链接
+Whether to display next link of all pages
 
 ### prevLinks
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-所有页面的 上一篇 链接
+Whether to display previous link on all pages
 
 ### repo
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-项目仓库地址
+Project repo address
 
 ### repoLabel
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-仓库标签文字，会自动解析 `repo` 选项，尝试推导出 `'GitHub'` `'GitLab'` `'Bitbucket'`，如果未能识别，显示为 `'Source'`。
+Repo label text, will automatically try to parse the `repo` option, try to derive `'GitHub'` `'GitLab'` `'Bitbucket'`, if it is not recognized, it will be displayed as `'Source'`
 
 ### docsRepo
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-文档所属仓库，默认同 `repo`。
+The address of the docs repo. Will be the same as `repo` by default.
 
 ### docsDir
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-文档所属文件夹，默认为仓库根目录。
+The folder which the document belongs to, the default is the root directory of the repo.
 
 ### docsBranch
 
-- 类型: `string`
-- 默认值: `'master'`
+- Type: `string`
+- Default: `'master'`
 
-文档所属分支
+Document branch
 
-### editLinks <MyBadge text="改变默认值" type="error" />
+### editLinks <MyBadge text = "Change default value" type = "error" />
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-显示编辑本页链接
+Show edit page link
 
-## 主题色与深色模式 <MyBadge text="默认启用" />
+## darkmode <MyBadge text="Enabled by default" />
 
-主题色和深色模式设置选项配置。
+- Type: `'auto-switch' | 'switch' | 'auto' | 'disable'`
+- Default: `'auto-switch'`
 
-### darkmode
+Dark mode support options:
 
-- 类型: `'auto-switch' | 'switch' | 'auto' | 'disable'`
-- 默认值: `'auto-switch'`
+- `'auto-switch'`: "off | automatic | on" three-stage switch
+- `'switch'`: "Close | Open" toggle switch
+- `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
+- `'disable'`: disable dark mode
 
-深色模式支持选项:
+> If you don't need this feature, set `darkmode: "disable"` to disable it.
 
-- `'auto-switch'`: "关闭 | 自动 | 打开" 的三段式开关
-- `'switch'`: "关闭 | 打开" 的切换式开关
-- `'auto'`: 自动根据用户设备主题或当前时间决定是否应用深色模式
-- `'disable'`: 禁用深色模式
+## themeColor <MyBadge text="Enabled by default" />
 
-> 如果你不需要这项功能，请设置 `darkmode: "disable"` 将其禁用。
+Theme color configuration.
 
-### themeColor
+> If you don't need this feature, set `themeColor: false` to disable it.
 
-主题色选项配置。
-
-> 如果你不需要这项功能，请设置 `themeColor: false` 将其禁用。
-
-- 类型: `Record<string, string>`
-- 默认值:
+- Type: `Record<string, string>`
+- Defaults:
 
   ```js
   {
@@ -223,321 +213,319 @@ Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体�
   }
   ```
 
-## 博客配置 <MyBadge text="默认启用" />
+## Blog configuration <MyBadge text="Enabled by default" />
 
-博客配置。
+Blog configuration.
 
-> 如果您不需要博客相关功能，为了加快构建速度，请设置 `blog: false`。
+> You can directly set `blog: false` to disable related functions.
 
 ### blog.blogger
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-博主姓名，默认为 `themeConfig.author`
+Blogger name, default is `themeConfig.author`
 
 ### blog.avatar
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-博主头像，默认为 `themeConfig.logo`
+Blogger avatar, default is `themeConfig.logo`
 
 ### blog.sidebarDisplay
 
-- 类型: `'mobile' | 'none' | 'always'`
-- 默认值: `'none'`
+- Type: `'mobile' | 'none' | 'always'`
+- Default: `'none'`
 
-是否在侧边栏展示博主信息
+Whether to show blogger information in the sidebar
 
-- `mobile`: 在移动视图中显示在侧边栏中
-- `'always'`: 总是展示在侧边栏中
-- `'none'`: 永远不在侧边栏展示
+- `mobile`: Show in sidebar in mobile view
+- `'always'`: Always show in the sidebar
+- `'none'`: Never show in the sidebar
 
 ### blog.intro
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-博主的个人介绍地址。
+Personal introduction address of the blogger.
 
-填写后将允许点击“博主信息”中的头像或姓名进入个人介绍页。
+After filling in, you will be allowed to click on the avatar or name in "Blogger Information" to enter the personal introduction page.
 
 ### blog.timeline
 
-- 类型: `string`
-- 默认值: `'昨日不在'`
+- Type: `string`
+- Default: `'Yesterday once more'`
 
-时间轴的顶部文字。
+Text on the top of timeline page.
 
-## pwa <MyBadge text="默认启用" />
+## pwa <MyBadge text="Enabled by default" />
 
-PWA 设置选项。
+PWA setting options
 
-> 如果您不需要这个功能，请设置为 `false`。
+> If you don't need this feature, please set to `false`.
 
 ### pwa.popupComponent
 
 - Type: `string`
 - Required: No
 
-用于替换默认弹出组件的自定义组件。
+A custom component to replace the default popup component.
 
 ### pwa.gerateSWConfig
 
-workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
 
-## pageInfo
+## Seo <MyBadge text="Enabled by default" />
 
-- 类型: `string[] | false`
-- 默认值: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
-
-文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
-
-可以填入的条目如下：
-
-- `'Author'`: 作者
-- `'Time'`: 写作日期
-- `'Category'`: 分类
-- `'Tag'`: 标签
-- `'ReadTime'`: 预计阅读时间
-- `'Word'`: 字数
-- `'Visitor'`: 访问量
-
-## SEO <MyBadge text="默认启用" />
-
-> 如果您不需要这个功能，请设置为 `false`。
+> If you don't need this feature, please set to `false`.
 
 ### seo.twitterID
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-填入你的 twitter 用户名
+Fill in your twitter username
 
 ### seo.restrictions
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-内容的年龄分级，格式为 `[int]+`，如 `'13+'`
+The age rating of the content, the format is `[int]+`, such as `'13+'`
 
 ### seo.seo
 
-- 类型: `(info: PageSeoInfo) => Record<string, string>`
+- Type: `(info: PageSeoInfo) => Record<string, string>`
 
-你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，详情请见 [插件配置](plugin/seo.md#seo)。
+You can use this option to inject new or overwrite the default generated SEO. For details, see [Plugin options](plugin/seo.md#seo).
 
 ### seo.customMeta
 
-- 类型: `(meta: Meta, info: PageSeoInfo) => void`
+- Type: `(meta: Meta, info: PageSeoInfo) => void`
 
-你可以使用此选项来直接向 Meta 中注入内容。详情请见 [插件配置](plugin/seo.md#customMeta)。
+You can use this option to inject content directly into Meta. For details, see [Plugin options](plugin/seo.md#customMeta).
 
-## Sitemap <MyBadge text="默认启用" />
+## Sitemap <MyBadge text="Enabled by default" />
 
-> 如果您不需要这个功能，请设置为 `false`。
+> If you don't need this feature, please set to `false`.
 
 ### sitemap.hostname
 
-- 类型: `string`
-- 必填: 是
+- Type: `string`
+- Required: Yes
 
-当前网站部署到的域名，请至少将其传入或设置 `themeConfig.hostname`，否则插件将无法工作。
+The domain name where the current website is deployed, please at least set it, or fill in `themeConfig.hostname`, otherwise the plugin will not work.
 
 ### sitemap.urls
 
-- 类型: `string[]`
-- 必填: 否
+- Type: `string[]`
+- Required: No
 
-需要额外包含的网址
+URLs to be included
 
 ### sitemap.exclude
 
-- 类型: `string[]`
-- 必填: 否
+- Type: `string[]`
+- Required: No
 
-不被收录的页面
+Pages not included
 
 ### sitemap.outFile
 
-- 类型: `string`
-- 默认值: `"sitemap.xml"`
+- Type: `string`
+- Default value: `"sitemap.xml"`
 
-输出的文件名
+The output file name
 
 ### sitemap.changefreq
 
-- 类型: `"always"|"hourly"|"daily"|"weekly"|"monthly"|"yearly"|"never"`
-- 默认值: `"daily"`
+- Type: `"always" | "hourly" | "daily" | "weekly" |"monthly" | "yearly" | "never"`
+- Default value: `"daily"`
 
-页面默认更新频率
+Page default update frequency
 
 ### sitemap.dateFormatter
 
-- 类型: `($page: PageComputed) => string`
-- 必填: 否
+- Type: `($page: PageComputed) => string`
+- Required: No
 
-时间格式化器。默认会自动生成时间戳，如果你遇到了时区问题，请设置这个选项。
+Time formatter. The timestamp will be automatically generated by default. If you encounter time zone problems, please set this option.
 
-### sitemap
+## pageInfo
 
-## Markdown 增强
+- Type: `string[] | false`
+- Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+
+Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
+
+The items that can be filled are as follows:
+
+- `'Author'`: Author
+- `'Time'`: Writing Date
+- `'Category'`: Category
+- `'Tag'`: Tags
+- `'ReadTime'`: Expect reading time
+- `'Word'`: Word number for the article
+- `'Visitor'`: Visitor Number
+
+## Markdown enhancement
 
 ### markdown.enableAll
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用全部功能
+Whether to enable all features
 
-### markdown.lineNumbers <MyBadge text="改变默认值" type="error" />
+### markdown.lineNumbers <MyBadge text="Default value changed" type = "error" />
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否在每个代码块的左侧显示行号
+Whether to show line numbers to the left of each code block
 
 ### markdown.align
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用自定义对齐支持
+Whether to enable align support
 
 ### markdown.sup
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用上角标格式支持
+Whether to enable superscript format support
 
 ### markdown.sub
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用下角标格式支持
+Whether to enable subscript format support
 
 ### markdown.footnote
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用脚注格式支持
+Whether to enable footnote format support
 
 ### markdown.mark
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用标记格式支持
+Whether to enable mark format support
 
 ### markdown.tex
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 TeX 语法支持
+Whether to enable TeX syntax support
 
 ### markdown.flowchart
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 流程图 语法支持
+Whether to enable flowchart syntax support
 
-## 评论设置
+## Comment settings
 
-具体配配置请见　[@mr-hope/vuepress-plugin-comment 文档](https://vuepress-comment.mrhope.site/config/)
+For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation](https://vuepress-comment.mrhope.site/config/)
 
-可以直接设置为 `false` 来禁用评论功能
+You can set it to `false` directly to disable the comment function
 
-## 页脚设置
+## Footer settings
 
 ### footer.content
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: false
 
-页脚的默认内容，可输入 HTMLString。
+The default content for the footer, can accept HTMLString.
 
 ### footer.copyright
 
-- 类型: `string | boolean`
-- 默认值: `'Copyright © <作者>'`
+- Type: `string | boolean`
+- Default: `'Copyright © <author>'`
 
-默认的版权信息，设置为 `false` 来默认禁用它。
+The default copyright info, set it to `false` to disable it by default.
 
 ### footer.display
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否默认显示页脚
+Whether to display footer by default
 
-## 版权设置
+## Copyright Settings
 
 ### copyright.status
 
-- 类型: `"global" | "local"`
-- 必填: 是
+- Type: `"global" | "local"`
+- Required: Yes
 
-是否全局启用该功能。
+Whether to enable this feature globally.
 
 ### copyright.minLength
 
-- 类型: `number`
-- 默认值: `100`
+- Type: `number`
+- Default value: `100`
 
-触发版权信息或禁止复制动作的最少字符数。
+The minimum number of characters that trigger copyright information or prohibit copying.
 
 ### copyright.noCopy
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default value: `false`
 
-是否禁止复制
+Whether to prohibit copying
 
 ### copyright.noSelect
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default value: `false`
 
-是否禁止选中文字
+Whether to prohibit selected text
 
-## 加密设置
+## Encryption settings
 
-加密设置选项。
+Encryption setting options
 
 ### encrypt.status
 
-- 类型: `"global" | "local"`
-- 默认值: `"local"`
+-Type: `"global" | "local"`
+-Default value: `"local"`
 
-是否全局加密
+Whether to encrypt globally
 
 ### encrypt.global
 
-- 类型: `string | string[]`
-- 必填: 否
+- Type: `string | string []`
+- Required: No
 
-最高权限密码，可以以数组的形式设置多个
+Highest authority password, you can set multiple by using array
 
 ### encrypt.config
 
-- 类型: `Record<string, string | string[]>`
-- 必填: 否
+- Type: `Record <string, string | string []>`
+- Required: No
 
-加密配置，为一个对象，键名为匹配的路径，键值为对应的密码，接受字符串或字符串数组。
+The encryption configuration is an object with a key name matching the path and a key value corresponding to a password that accepts a string or an array of strings.
 
-::: details 例子
+::: details Example
 
 ```js
 {
-  // 这会加密整个 guide 目录，并且两个密码都是可用的
+  // This will encrypt the entire guide directory and both passwords will be available
   "/guide/": ["1234", "5678"],
-  // 这只会加密 config/page.html
+  // this will only encrypt config/page.html
   "/config/page.html": "1234"
 }
 ```
@@ -546,81 +534,81 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 ## addthis
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: 否
 
-AddThis 的 pubid
+pubid for AddThis
 
-## 其他配置选项
+## Other configuration options
 
-以下是主题提供的其他配置选项，一般情况下你无需改动他们，但是主题也向你提供了更多有关主题的配置项。
+The following are other configuration options provided by the theme. In general, you do not need to change them, but the theme also provides you with more configuration items about the theme.
 
 ### iconPrefix
 
-- 类型: `string`
-- 默认值: `'icon-'`
+- Type: `string`
+- Default: `'icon-'`
 
-设置 iconfont 的图标前缀
+Set iconfont icon prefix
 
 ### sidebarIcon
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否在侧边栏显示图标
+Whether to show icons in the sidebar
 
 ### breadcrumb
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否全局启用路径导航
+Whether to enable route navigation globally
 
 ### breadcrumbIcon
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否在路径导航显示图标
+Whether to show icons in route navigation
 
 ### wordPerminute
 
-- 类型: `number`
-- 默认值: `300`
+- Type: `number`
+- Default value: `300`
 
-每分钟的阅读字数
+Words reading per minute
 
-### smoothScroll <MyBadge text="改变默认值" type="error" />
+### smoothScroll <MyBadge text="Default value changed" type="error" />
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否启用平滑滚动功能
+Whether to enable smooth scrolling
 
 ### photoSwipe
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否启用图片预览功能
+Whether to enable picture preview feature
 
 ### backToTop
 
-- 类型: `boolean | Number`
-- 默认值: `true`
+- Type: `boolean | Number`
+- Default: `true`
 
-返回顶部按钮的配置。默认的触发距离为 300px，填入数字时可改变这一触发距离。填入 `false` 会禁用返回顶部按钮。
+Back to top button configuration. The default trigger distance is 300px, which can be changed when you fill in the number. Filling in `false` disables the back to top button.
 
 ### repoDisplay
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否在导航栏显示仓库链接
+Whether to display the warehouse link in the navigation bar
 
 ### fullscreen
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否显示 ”全屏“ 按钮
+Whether to show the "full screen" button

@@ -1,15 +1,16 @@
 ---
 icon: configuration
 category: config
-tags: config
+tags:
+  - config
 ---
 
-# 配置文档
+# Config Docs
 
-- [**themeConfig 配置**](themeConfig.md)
+- [**themeConfig Config**](themeConfig.md)
 
-- [**Front Matter 配置**](page.md)
+- [**Front Matter Config**](page.md)
 
-- [**样式配置**](stylus.md)
+- [**Style Config**](stylus.md)
 
-- [**插件**](plugin/readme.md)
+- [**Plugin**](plugin/readme.md)

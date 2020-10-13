@@ -5,24 +5,24 @@ tags:
   - emoji
 ---
 
-# Emoji 列表
+# Emoji List
 
-## 人物
+## People
 
-- [点击前往](people.md)
+- [View Detail](people.md)
 
-## 自然
+## Nature
 
-- [点击前往](nature.md)
+- [View Detail](nature.md)
 
-## 对象
+## Object
 
-- [点击前往](object.md)
+- [View Detail](object.md)
 
-## 地点
+## Location
 
-- [点击前往](place.md)
+- [View Detail](place.md)
 
-## 符号
+## Synbol
 
-- [点击前往](symbol.md)
+- [View Detail](symbol.md)

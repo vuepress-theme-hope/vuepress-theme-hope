@@ -2,10 +2,9 @@
 icon: infofill
 ---
 
-# 基础知识
+# Basic
 
-这里是一些和 Vuepress 有关的基础知识。
+Here are some docs about Vuepress.
 
 - [Markdown](markdown/readme.md)
-
 - [Vuepress](vuepress/readme.md)

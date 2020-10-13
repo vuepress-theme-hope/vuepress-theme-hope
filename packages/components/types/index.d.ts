@@ -5,6 +5,8 @@ export interface ComponentOptions {
    * 主目录所对应的语言。
    *
    * The language of the home directory.
+   *
+   * @default 'en-US'
    */
   baseLang?: string;
 }

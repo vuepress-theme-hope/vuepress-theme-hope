@@ -13,7 +13,7 @@ const resolveLocales = (config: ResolvedHopeVuepressConfig): void => {
   if (!config.locales) config.locales = {};
 
   /** 主目录对应语言 */
-  const { baseLang } = config.themeConfig;
+  const { baseLang = "en-US" } = config.themeConfig;
 
   const { locales } = config;
 

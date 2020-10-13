@@ -7,17 +7,17 @@ tags:
   - function
 ---
 
-# SEO 和 Sitemap
+# SEO and Sitemap
 
-vuepress-theme-hope 引入了 `@mr-hope/vuepress-plugin-seo` 与 `@mr-hope/vuepress-plugin-sitemap` 为你提供 SEO 增强功能和 Sitemap 生成。
+vuepress-theme-hope introduces `@ mr-hope / vuepress-plugin-seo` and `@ mr-hope / vuepress-plugin-sitemap` to provide you with SEO enhancements and Sitemap generation.
 
-为了使两个插件能够更好的工作，您可能需要查看一下 [页面信息配置](../../config/page.md#页面信息配置) 并合理的配置它们。
+In order to make the two plugins work better, you may need to look at [Page Information Configuration](../../config/page.md#page-information-configuration) and configure them reasonably.
 
 ## SEO
 
-插件会向网页的 `<head>` 注入一些 `<meta>` 标签，使你的网页对搜索引擎和社交媒体更加友好。默认情况下，插件会读取站点配置、主题配置与页面的 frontmatter 来尽可能自动为你生成 `<meta>` 标签。诸如站点名称，页面标题，页面类型，写作日期，最后更新日期，文章标签均会自动生成。
+The plugin will inject some `<meta>` tags into the web page's `<head>`, making your web page more friendly to search engines and social media. By default, the plugin will read the site configuration, theme configuration and frontmatter of the page to automatically generate the `<meta>` tag for you whenever possible. Such as site name, page title, page type, writing date, last update date, article tags are automatically generated.
 
-插件会读取的配置 (你应当进行的配置) 有:
+The configuration that the plugin will read (the options you should config) is:
 
 - siteConfig.title
 - siteConfig.description
@@ -31,16 +31,16 @@ vuepress-theme-hope 引入了 `@mr-hope/vuepress-plugin-seo` 与 `@mr-hope/vuepr
 - frontmatter.time
 - frontmatter.tags
 
-- git 的上一次提交时间
+- git's last commit time
 
-你还可以查看 [插件的具体配置](../../config/plugin/seo.md)
+You can also view [Plugin configuration](../../config/plugin/seo.md) to find more options.
 
 ## Sitemap
 
-插件会自动读取整个文档的配置，尽可能自动的为你生成 sitemap。
+The plugin will automatically read the configuration of the entire document and automatically generate a sitemap for you as much as possible.
 
-除了 [插件的配置](../../config/plugin/sitemap.md) 外，你还可以在页面的 Frontmatter 中的 sitemap 设置如下内容:
+In addition to [plugin configuration](../../config/plugin/sitemap.md), you can also set the following in the sitemap in Frontmatter of the page:
 
-- sitemap.changefreq: 更新频率，可选值为: `"always"` `"hourly"` `"daily"` `"weekly"` `"monthly"` `"yearly"` `"never"`
-- sitemap.exclude: 是否不包含此页面
-- sitemap.priority: 页面优先级，范围 0~1，默认为 `0.5`
+- sitemap.changefreq: update frequency, optional values: `"always"` `"hourly"` `"daily"` `"weekly"` `"monthly"` `"yearly"` `"never"`
+- sitemap.exclude: whether to exclude this page
+- sitemap.priority: page priority, range 0 ~ 1, default is `0.5`

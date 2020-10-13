@@ -4,56 +4,65 @@ title: vuepress-plugin-md-enhance
 icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
-tagline: 为 Vuepress 提供更多 Markdown 增强功能
+tagline: Enhancement for markdown in Vuepress
 action:
-  - text: 快速上手 💡
+  - text: Get Started 💡
     link: /guide/
 
-  - text: 配置 🛠
+  - text: Config 🛠
     link: /config/
 
 features:
-  - title: 上下角标支持
-    details: 你的 Markdown 现在将支持上下角标
+  - title: Superscript and subscript support
+    details: Your markdown now suppport superscript and subscript
     link: /guide/sup-sub/
 
-  - title: 脚注
-    details: 你的 Markdown 现在将支持脚注
+  - title: Footnote support
+    details: Your markdown now suppport footnotes
     link: /guide/footnote/
 
-  - title: 自定义对齐支持
-    details: 让你在 Markdown 中对段落进行对齐
+  - title: DIY Align
+    details: Let you decide to align paragraphs in the way you like
     link: /guide/align/
 
-  - title: 标记支持
-    details: 让你在 Markdown 中对词句进行标记
-    link: /guide/mark/
-
-  - title: 流程图支持
-    details: 可以在 Markdown 中直接写出流程图
+  - title: Mark Support
+    details: Mark words and sentences in markdown easily
     link: /guide/flowchart/
 
-  - title: Tex 支持
-    details: Markdown 现在也可以支持 Tex 语法以显示公式
-    link: /guide/text/
+  - title: Flowchart Support
+    details: Create your flowchart in markdown easily
+    link: /guide/flowchart/
+
+  - title: Tex Support
+    details: Markdown now have Tex Support so you can write yout formula easily
+    link: /guide/tex/
 
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-## 使用插件
-
-### 安装
+### Install
 
 ```bash
 npm i -D vuepress-plugin-md-enhance
 ```
 
-### 使用
+Or
 
-```js {3}
+```bash
+yarn add -D vuepress-plugin-md-enhance
+```
+
+### Usage
+
+```js {3-5}
 // .vuepress/config.js
 module.exports = {
-  plugin: ["md-enhance"],
+  plugin: [
+    "md-enhance",
+    {
+      // your options
+    },
+  ],
 };
 ```

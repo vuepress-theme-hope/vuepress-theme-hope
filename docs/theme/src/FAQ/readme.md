@@ -3,52 +3,52 @@ icon: questionfill
 category: FAQ
 ---
 
-# 常见问题
+# Common problems
 
-## 部分页面设置失效
+## Some page settings are invalid
 
-你可以先重新查阅文档，看看该设置是否 **不支持页面配置**。
+You can first review the documentation to see if the setting **does not support partial configuration**.
 
-**支持页面配置** 意味着主题允许页面的配置能够覆盖全局的同名(同功能)配置，但并不是所有功能都满足此设置。为了项目的编译速度，有些项目在全局配置禁用后不会在编译阶段加载，它们就无法局部启用。
+**Support for partial configuration** means that the theme allows the configuration of the page to override the global configuration of the same name (same function), but not all functions meet this setting. For the sake of project compilation speed, some projects will not be loaded during the compilation phase after the global configuration is disabled, and they cannot be enabled locally.
 
-## Typescript 相关问题
+## Typescript problems
 
-请确保你的项目依赖了 typescript，且目录下有一个合法的 tsconfig.json 文件。
+Please make sure your project depends on typescript and there is a valid tsconfig.json file in the working directory.
 
-同时，保证你的项目至少有一个 TypeScript 文件被其 include。
+Also, make sure that your project has at least one TypeScript file included by it.
 
 ### error when parsing tsconfig.json
 
-这个问题通常是 ts-loader 找不到 tsconfig.json 导致的。由于主题添加了 TypeScript 支持，你需要在你的项目内创建一个合法的 tsconfig.json。
+This problem is usually caused by ts-loader not finding tsconfig.json. Since the theme adds TypeScript support, you need to create a valid tsconfig.json inside your project.
 
-一个简单的 tsconfig.json 如下：
+A simple tsconfig.json is as follows:
 
 ```json
 {
   "compilerOptions": {
-    "target": "ES6", // 任何不低于 ES6 的 target 均可
-    "allowSyntheticDefaultImports": true, // 规避 vuepress-types 的类型定义问题
-    "experimentalDecorators": true, // Vue 的 Typescript 写法需要开启此选项
-    "module": "commonjs", // 为了避免 vuepress-types 解析失败
-    // vuepress 与本主题的类型定义文件
+    "target": "ES6", /// Any target which is not less than 'ES5'
+    "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
+    "experimentalDecorators": true, // Typescript files for '.vue' needs this option
+    "module": "commonjs", // Avoiding some issues related to vuepress-types
+    // type definition files of vuepress and this theme
     "types": ["@mr-hope/vuepress-theme-types"]
   },
   "include": [
-    "src/.vuepress/enhanceApp.ts" // 请将 src 替换成你的文档目录
+    "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder
   ]
 }
 ```
 
-### 提示找不到相应 types
+### Can't find corresponding types
 
-请确保将 `"@mr-hope/vuepress-theme-types"` 加入 `compilerOptions.types` 中，因为它不在 `@types` 目录下。
+Make sure to add `"@mr-hope/vuepress-theme-types"` to `compilerOptions.types`, because it is not in the`@ types` directory.
 
 ### No inputs were found in config file 'tsconfig.json'
 
-这个问题一般是你的项目中没有 TypeScript 文件 (或你的 tsconfig.json 配置有误) 导致的。
+This problem is usually caused by the absence of a TypeScript file in your project (or your tsconfig.json configuration is incorrect).
 
-ts-loader 要求 tsconfig.json 的 include 和 exclude 配置项包含项目内至少一个 ts 文件。
+ts-loader requires that the include and exclude configuration items of tsconfig.json include at least one ts file in the project.
 
-如果你的项目没有 ts 文件，为了规避这个问题，你可以在你的项目的任意地方创建一个空的 ts 文件并把它添加至 tsconfig.json 的 include 中。
+If your project does not have a ts file, to avoid this problem, you can create an empty ts file anywhere in your project and add it to the include of tsconfig.json.
 
-一个稍微好些的解决方案是通过在 `.vuepress` 目录下，建立一个空的 `enhanceApp.ts` 来解决这个问题，如果你已经有 `enhanceApp.js`，你可以直接将其转换为 TS。
+A better solution is to solve this problem by creating an empty `enhanceApp.ts` in the`.vuepress` directory. If you already have `enhanceApp.js`, you can directly convert it to TS.

@@ -1,9 +1,8 @@
 const resolve = require("vuepress-theme-hope/resolve");
 
 module.exports = resolve({
-  title: "图片预览插件",
-  /** 网站在该语言下的描述 */
-  description: "Vuepress 的图片预览插件",
+  title: "Photo swipe Plugin",
+  description: "Photo swipe Plugin for Vuepress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -21,9 +20,9 @@ module.exports = resolve({
   dest: "./dist",
 
   locales: {
-    "/en/": {
-      title: "Photo swipe Plugin",
-      description: "Photo swipe Plugin for Vuepress",
+    "/zh/": {
+      title: "图片预览插件",
+      description: "Vuepress 的图片预览插件",
     },
   },
 
@@ -36,8 +35,9 @@ module.exports = resolve({
     iconPrefix: "vuepress-",
 
     nav: [
-      { text: "主页", icon: "homefill", link: "/" },
-      { text: "配置", icon: "configuration", link: "/config/" },
+      { text: "Home", icon: "homefill", link: "/" },
+      { text: "Demo", icon: "creativefill", link: "/demo/" },
+      { text: "Config", icon: "configuration", link: "/config/" },
     ],
 
     footer: {
@@ -56,10 +56,11 @@ module.exports = resolve({
     },
 
     locales: {
-      "/en/": {
+      "/zh/": {
         nav: [
-          { text: "主页", icon: "homefill", link: "/en/" },
-          { text: "配置", icon: "configuration", link: "/en/config/" },
+          { text: "主页", icon: "homefill", link: "/zh/" },
+          { text: "演示", icon: "creativefill", link: "/zh/demo/" },
+          { text: "配置", icon: "configuration", link: "/zh/config/" },
         ],
       },
     },

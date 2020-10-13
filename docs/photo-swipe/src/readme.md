@@ -4,20 +4,26 @@ title: vuepress-plugin-photo-swipe
 icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
-tagline: 为 Vuepress 提供图片预览支持
+tagline: Photo swipe plugin for vuepress
+action:
+  - text: Config 🛠
+    link: /config/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
 ---
 
-## 使用插件
+Let your images support preview, zoom, share, swipe view and download.
 
-### 安装
+## How to use
+
+### Install
 
 ```bash
 npm i -D vuepress-plugin-photo-swipe
 ```
 
-### 使用
+### Usage
 
 ```js
 // .vuepress/config.js
@@ -25,9 +31,3 @@ module.exports = {
   plugin: ["photo-swipe"],
 };
 ```
-
-## 演示
-
-![logo1](/logo.png)
-![logo2](/logo.png)
-![logo3](/logo.png)

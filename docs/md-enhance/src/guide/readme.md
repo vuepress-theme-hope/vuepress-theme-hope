@@ -2,22 +2,22 @@
 icon: markdown
 ---
 
-# Markdown 中的新语法
+# New syntax in Markdown
 
-通过安装并启用此插件，你可以在 Markdown 中使用更多的语法。
+By installing and enableing this plugin, you can use more syntax in your markdown files.
 
-如果你担心你的网站大小，担心使用插件后网站文件大幅增长，那你 duck 不必。如果你不启用某个功能，相关代码则不会包含在输出文件中。
+If you don't need them and want to reduce your site size, you can remove them from your code by not enabling them.
 
-## 新增功能
+## New Feature
 
-- [上下角标](sup-sub.md)
+- [Superscript and Subscript](sup-sub.md)
 
-- [对齐](align.md)
+- [Align](align.md)
 
-- [脚注](footnote.md)
+- [Footnote](footnote.md)
 
-- [标记](mark.md)
+- [Mark](mark.md)
 
-- [流程图](flowchart.md)
+- [Flowchart](flowchart.md)
 
-- [$\TeX$ 语法](tex.md)
+- [$\TeX$ Syntax](tex.md)

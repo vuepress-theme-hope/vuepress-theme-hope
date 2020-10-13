@@ -4,54 +4,54 @@ icon: gitlab
 
 # GitLab Application
 
-> 查看 [Gitlab 官方文档](https://docs.gitlab.com/ce/integration/oauth_provider.html#adding-an-application-through-the-profile) 作为参考。
-> Vssue 同样可以配合自己搭建的 GitLab 使用。只需要将 `baseURL` 设置为你的 Gitlab URL 即可。查看 [配置参考 - baseURL](../options/README.md#baseurl)
+> See [Gitlab official docs](https://docs.gitlab.com/ce/integration/oauth_provider.html#adding-an-application-through-the-profile) for reference.
+> Vssue can also work with self-hosted GitLab. Set the `baseURL` options to your Gitlab URL. See [Options Reference - baseURL](../options/README.md#baseurl)
 
-## 创建一个新的 Application
+## Create a new Application
 
-- 前往 [Settings - Applications](https://gitlab.com/profile/applications)
+- Go to [Settings - Applications](https://gitlab.com/profile/applications)
 
-->![配置 OAuth App - Gitlab 01](/img/oauth-app-gitlab-01.png)<-
-->![配置 OAuth App - Gitlab 02](/img/oauth-app-gitlab-02.png)<-
+->![Set up OAuth App - Gitlab 01](/img/oauth-app-gitlab-01.png)<-
+->![Set up OAuth App - Gitlab 02](/img/oauth-app-gitlab-02.png)<-
 
-- 将 `Redirect URI` 设置为你的网站 URL（这里我们用 `localhost:8080` 作为示例）
-- 勾选 `api` scope
+- Set the `Redirect URI` to your website URL (Here we take `localhost:8080` for example)
+- Select `api` scope
 
-->![配置 OAuth App - Gitlab 03](/img/oauth-app-gitlab-03.png)<-
+->![Set up OAuth App - Gitlab 03](/img/oauth-app-gitlab-03.png)<-
 
-## 获取 Client ID
+## Get the Client ID
 
-现在你已经创建了一个新的 Application，并得到了相应的 **Application ID** (`Client ID`)。
+Then you've created a new Application, and here is your **Application ID** (`Client ID`).
 
-->![配置 OAuth App - Gitlab 04](/img/oauth-app-gitlab-04.png)<-
+->![Set up OAuth App - Gitlab 04](/img/oauth-app-gitlab-04.png)<-
 
-## 配置并启动你的 Vssue
+## Config and start your Vssue
 
-复制 `Client ID`，并设置 `owner` 和 `repo`。
+Copy the `Client ID`, and set `owner` and `repo`.
 
-> Gitlab repository 的 URL 模式为 `https://gitlab.com/${owner}/${repo}`
+> The URL pattern of gitlab repo is `https://gitlab.com/${owner}/${repo}`
 
-这里我们以 `https://gitlab.com/meteorlxy/vssue-demo` 为例，并把 issue 的 `title` 设置为 `Vssue Demo`。
+Here we take `https://gitlab.com/meteorlxy/vssue-demo` for example, and set the `title` of issue to `Vssue Demo`.
 
-然后运行 `anywhere -h localhost 8080`，在 `localhost:8080` 监听一个 http server 并返回 `index.html`。
+Then run `anywhere -h localhost 8080` to serve the `index.html` on `localhost:8080`.
 
-->![配置 OAuth App - Gitlab 05](/img/oauth-app-gitlab-05.png)<-
+->![Set up OAuth App - Gitlab 05](/img/oauth-app-gitlab-05.png)<-
 
-## 在本地尝试 Vssue
+## Try out Vssue locally
 
-Vssue 已经成功运行。点击 `Login` 使用 Gitlab 帐号登录。
+Vssue has already run here. Click `Login` to login with Gitlab account.
 
-->![配置 OAuth App - Gitlab 06](/img/oauth-app-gitlab-06.png)<-
+->![Set up OAuth App - Gitlab 06](/img/oauth-app-gitlab-06.png)<-
 
-重定向到 Gitlab 授权页面。点击 `Authorize` 来登录。
+Redirect to GitLab Authorization page. Click `Authorize` to login.
 
-->![配置 OAuth App - Gitlab 07](/img/oauth-app-gitlab-07.png)<-
+->![Set up OAuth App - Gitlab 07](/img/oauth-app-gitlab-07.png)<-
 
-在当前页面写下评论吧 ~
+Leave a comment on this page ~
 
-->![配置 OAuth App - Gitlab 08](/img/oauth-app-gitlab-08.png)<-
-->![配置 OAuth App - Gitlab 09](/img/oauth-app-gitlab-09.png)<-
+->![Set up OAuth App - Gitlab 08](/img/oauth-app-gitlab-08.png)<-
+->![Set up OAuth App - Gitlab 09](/img/oauth-app-gitlab-09.png)<-
 
 ::: tip
-你可以前往 [meteorlxy/vssue-demo](https://gitlab.com/meteorlxy/vssue-demo) 来获取 demo 代码。前往该仓库的 [#1 issue](https://gitlab.com/meteorlxy/vssue-demo/issues/1) 看看发生了什么。
+You can go to the repo [meteorlxy/vssue-demo](https://gitlab.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://gitlab.com/meteorlxy/vssue-demo/issues/1) of that repo to see what happened.
 :::

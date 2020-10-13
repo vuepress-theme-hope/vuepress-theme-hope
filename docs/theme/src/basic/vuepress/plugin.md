@@ -1,22 +1,22 @@
 ---
-title: 插件
+title: Plugins
 icon: extension
 category: basic
 tags:
   - vuepress
 ---
 
-## 介绍
+## Introduction
 
-插件通常会为 VuePress 添加全局功能。
+Plugins generally add global-level functionality to VuePress.
 
-整个插件系统的架构如下:
+The architecture of the whole plugin system is as follows:
 
-![插件系统架构](./assets/architecture.png)
+![Plugin system architecture](./assets/architecture.png)
 
-## 使用插件
+## Using a plugin
 
-你可以通过在 `.vuepress/config.js` 中做一些配置来使用插件：
+You can use plugins by doing some configuration at `.vuepress/config.js`:
 
 ```js
 module.exports = {
@@ -24,9 +24,9 @@ module.exports = {
 };
 ```
 
-### 使用来自依赖的插件
+### Use plugins from a dependency
 
-一个插件可以在以 `vuepress-plugin-xxx` 的形式发布到 npm，你可以这样使用它：
+A plugin can be published on npm in `CommonJS` format as `vuepress-plugin-xxx`. You can use it:
 
 ```js
 module.exports = {
@@ -34,7 +34,7 @@ module.exports = {
 };
 ```
 
-同时，如果你的插件名以 `vuepress-plugin-` 开头，你可以使用缩写来省略这个前缀：
+If you prefix the plugin with `vuepress-plugin-`, you can use a shorthand to leave out that prefix:
 
 ```js
 module.exports = {
@@ -42,7 +42,7 @@ module.exports = {
 };
 ```
 
-和下面等价：
+Same with:
 
 ```js
 module.exports = {
@@ -50,7 +50,7 @@ module.exports = {
 };
 ```
 
-这也适用于 [Scoped Packages](https://docs.npmjs.com/misc/scope):
+This also works with [Scoped Packages](https://docs.npmjs.com/misc/scope):
 
 ```js
 module.exports = {
@@ -58,7 +58,7 @@ module.exports = {
 };
 ```
 
-等价于:
+Shorthand:
 
 ```js
 module.exports = {
@@ -66,17 +66,17 @@ module.exports = {
 };
 ```
 
-::: warning 注意
-以 `@vuepress/plugin-` 开头的插件是官方维护的插件。
+::: warning Note
+The plugin whose name starts with `@vuepress/plugin-` is an officially maintained plugin.
 :::
 
-## 插件的配置
+## Plugin options
 
-通过`config.js`的`plugin`字段配置。
+Config it by `pugins` in `config.js`.
 
-### Babel 式
+### Babel Style
 
-插件可以通过在配置内的数组中封装名称和选项对象来指定选项：
+Plugins can have options specified by wrapping the name and an options object in an array inside your config:
 
 ```js
 module.exports = {
@@ -91,11 +91,11 @@ module.exports = {
 };
 ```
 
-由于这种风格和 [babeld Plugin/Preset Options](https://babeljs.io/docs/en/plugins#plugin-preset-options) 一致，我们称之为"Babel 风格"。
+Since this style is consistent with [babel’s Plugin/Preset Options](https://babeljs.io/docs/en/plugins#plugin-preset-options), we call it `Babel Style`.
 
-### 对象式
+### Object Style
 
-VuePress 也提供了一种更简单的方式来使用来自依赖的插件：
+VuePress also provides a simpler way to use plugins from a dependency:
 
 ```js
 module.exports = {
@@ -108,13 +108,13 @@ module.exports = {
 ```
 
 :::warning
-由于某些插件可能存在多个实例，强烈推荐使用**babel 风格**写法。
+Prefer **Babel Style** first, because some plugins can have muti instance.
 :::
 
-:::tip
-可以通过显示地将选项设置成 `false` 来禁用一个插件：
+::: tip
+The plugin can be disabled when `false` is explicitly passed as option.
 
-- Babel 风格
+- Babel style
 
 ```js
 module.exports = {
@@ -124,7 +124,7 @@ module.exports = {
 };
 ```
 
-- 对象风格
+- Object style
 
 ```js
 module.exports = {
@@ -136,36 +136,36 @@ module.exports = {
 
 :::
 
-## 官方插件
+## Official Plugins
 
-- [active-header-links](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-active-header-links.html)：页面滚动时自动激活侧边栏链接
-- [back-to-top](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-back-to-top.html)：添加返回顶部按钮
-- [google-analytics](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html)：添加 Google analytics
-- [last-updated](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-last-updated.html)：更新时间
-- [medium-zoom](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-medium-zoom.html)：图片缩放
-- [nprogress](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-nprogress.html)：进度条
-- [PWA](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-pwa.html)：支持 Progressive Web App
-- [register-component](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-register-components.html)：注册 components
-- [search](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-search.html)：基于标题的搜索插件
+- [active-header-links](https://v1.vuepress.vuejs.org/plugin/official/plugin-active-header-links.html): A plugin of automatically activating sidebar links when page scrolls
+- [back-to-top](https://v1.vuepress.vuejs.org/plugin/official/plugin-back-to-top.html): Add the Back-to-top button
+- [google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html)：Add Google analytics
+- [last-updated](https://v1.vuepress.vuejs.org/plugin/official/plugin-last-updated.html): Update last edit time
+- [medium-zoom](https://v1.vuepress.vuejs.org/plugin/official/plugin-medium-zoom.html): Picture Zoom
+- [nprogress](https://v1.vuepress.vuejs.org/plugin/official/plugin-nprogress.html): A progress bar plugin based on nprogress
+- [PWA](https://v1.vuepress.vuejs.org/plugin/official/plugin-pwa.html): Surport for **Progressive Web App**
+- [register-component](https://v1.vuepress.vuejs.org/plugin/official/plugin-register-components.html): register components
+- [search](https://v1.vuepress.vuejs.org/plugin/official/plugin-search.html): Headers-based search plugin
 
 :::tip
-具体用法详见：[Vuepress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
+More configuration, please view[Vuepress Plugins](https://v1.vuepress.vuejs.org/plugin/)
 :::
 
-## 社区插件
+## Community Plugins
 
-- [clean-urls](https://vuepress.github.io/zh/plugins/clean-urls.html): 在 VuePress 中使用简洁链接
-- [container](https://vuepress.github.io/zh/plugins/container.html): 在 VuePress 中使用 markdown 容器
-- [copyright](https://vuepress.github.io/zh/plugins/copyright.html): 在 VuePress 中处理复制行为
-- [dehydrate](https://vuepress.github.io/zh/plugins/dehydrate.html): 修改 VuePress 生成的 HTML 文件
-- [git-log](https://vuepress.github.io/zh/plugins/git-log.html): 在 VuePress 中整合 git 日志
-- [mathjax](https://vuepress.github.io/zh/plugins/mathjax.html): 在 VuePress 中使用 TeX 语法
-- [migrate](https://vuepress.github.io/zh/plugins/migrate.html): 从其他网站迁移到 VuePress
-- [named-chunks](https://vuepress.github.io/zh/plugins/named-chunks.html): 在 VuePress 中使用命名模块
-- [redirect](https://vuepress.github.io/zh/plugins/redirect.html): 在 VuePress 中处理重定向
-- [serve](https://vuepress.github.io/zh/plugins/serve.html): 在本地构建静态 VuePress 服务器
-- [zooming](https://vuepress.github.io/zh/plugins/zooming.html): 使 VuePress 中的图片支持缩放(使用 zooming)
+- [clean-urls](https://vuepress.github.io/en/plugins/clean-urls.html): Use clean urls in VuePress
+- [container](https://vuepress.github.io/en/plugins/container.html): Use markdown containers in VuePress
+- [copyright](https://vuepress.github.io/en/plugins/copyright.html): 在 VuePress 中处理复制行为
+- [dehydrate](https://vuepress.github.io/en/plugins/dehydrate.html): Dehydrate HTML files in VuePress
+- [git-log](https://vuepress.github.io/en/plugins/git-log.html): Integrate git logs into VuePress
+- [mathjax](https://vuepress.github.io/en/plugins/mathjax.html): Use TeX syntax in VuePress
+- [migrate](https://vuepress.github.io/en/plugins/migrate.html): Migrate another website to VuePress
+- [named-chunks](https://vuepress.github.io/en/plugins/named-chunks.html): Generate named chunks in VuePress
+- [redirect](https://vuepress.github.io/en/plugins/redirect.html): Handle redirections in VuePress
+- [serve](https://vuepress.github.io/en/plugins/serve.html): Serve generated files in VuePress
+- [zooming](https://vuepress.github.io/en/plugins/zooming.html): Make images zoomable in VuePress (with zooming)
 
 :::tip
-文档详见：[Vuepress 社区](https://vuepress.github.io/zh/)
+For more infomation, please visit [Vuepress Community](https://vuepress.github.io/en/)
 :::

@@ -6,30 +6,30 @@ tags:
   - config
 ---
 
-这个插件将会使你的图片支持点击缩放。 <MyBadge text="v0.4.0+" />
+Let your images support click zoom. <MyBadge text="v0.4.0+" />
 
 <!-- more -->
 
-## 选项
+## Options
 
 ### container
 
-- 类型: `string`
-- 默认值: `'.theme-default-content'`
+- Type: `string`
+- Default: `'.theme-default-content'`
 
-选择的范围，只有 container 元素内部的图片才会支持点击缩放。
+The range for selection. Only the image inside the container element will support click zoom.
 
 ### selector
 
-- 类型: `string`
-- 默认值: `'.theme-default-content :not(a) > img'`
+- Type: `string`
+- Default: `'.theme-default-content :not(a) > img'`
 
-图片选择器
+Image selector
 
 ### options
 
-传递给 [`photo-swipe`](http://photoswipe.com/) 的额外选项
+Options passed to [`photo-swipe`](http://photoswipe.com/)
 
-## 效果
+## Effect
 
 ![logo](/logo.svg)

@@ -4,13 +4,13 @@ icon: valine
 
 # Valine
 
-借助 Valine，插件实现了无后端开启阅读量展示与评论功能。
+With Valine，this plugin provides you comment and visitors function。
 
-## 获取 APP ID 和 APP Key
+## Get APP_ID and APP_Key
 
-请先 [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud, 进入控制台后点击左下角创建应用：
+[Click here](https://leancloud.cn/dashboard/login.html#/signup) to register or login in leancloud.
 
-应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用 Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了：
+Create new application in Leancloud, and you will get APP ID/APP Key.
 
 ```js
 options = {
@@ -20,10 +20,8 @@ options = {
 };
 ```
 
-将对应的 `APP ID` 和 `APP Key` 填入， Valine 即配置完成。
-
-Valine 评论的其他配置将在 [配置](../config/valine.md) 中列出。
+Config will be listed on [Config](../api/valine.md).
 
 ::: tip
-更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。
+For Valine config and usage, please see [Valine Docs](https://valine.js.org)。
 :::

@@ -6,28 +6,28 @@ tags:
   - config
 ---
 
-阅读时间与字数统计 <MyBadge text="v0.3.0+" />
+Expect eading time and word count statistics
 
 <!-- more -->
 
-这个插件将会向 page 对象注入阅读时间与字数统计。
+This plugin will inject reading time and word count statistics into the page object.
 
-会自动向 page 对象注入 `readingTime`:
+Will automatically inject `readingTime` into the page object:
 
 ```ts
 interface ReadingTime {
-  /** 分钟数 */
+  /** Expect reading minute */
   minutes: number;
-  /** 字数 */
+  /** Words count */
   words: number;
 }
 ```
 
-## 选项
+## Options
 
 ### wordPerminute
 
 - 类型: `number`
 - 默认值: `300`
 
-每分钟阅读字数
+Reading speed (words per minute)

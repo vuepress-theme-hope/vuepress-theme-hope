@@ -1,17 +1,17 @@
 ---
-title: stylus 配置
-icon: configuration
+title: stylus configuration
+icon: skinfill
 category: config
 tags:
   - config
   - style
 ---
 
-你可以通过在 `.vuepress/styles` 中的 palette.styl 写入变量值来更改主题的样式。
+You can use palette.styl in `.vuepress/styles` folder to change the style of this theme。
 
 <!-- more -->
 
-## 响应式布局断点
+## Responsive breakpoints
 
 ```stylus
 /* responsive breakpoints */
@@ -22,7 +22,7 @@ $MQMobile ?= 719px // wide mobile
 $MQMobileNarrow ?= 419px // narrow mobile
 ```
 
-## 布局
+## Layout
 
 ```stylus
 // layout
@@ -35,7 +35,7 @@ $navbar-vertical-padding ?= 0.7rem
 $navbar-horizontal-padding ?= 1.5rem
 ```
 
-## 颜色
+## Color
 
 ```stylus
 /* basic color */
@@ -74,11 +74,11 @@ $lineNumbersWrapperWidth ?= 2.5rem
 $codeLang ?= js ts html md vue css sass scss less stylus go java c sh yaml py docker dockerfile makefile
 ```
 
-## 主题色
+## ThemeColor
 
-使用 `$colorPicker` 进行主题选择器配置，需要与主题配置中的选择器配置相同。
+Use `$colorPicker` to config theme color, should be the same as themeConfig.
 
-案例：
+Case:
 
 ```stylus
 $colorPicker = {

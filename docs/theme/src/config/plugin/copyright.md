@@ -6,22 +6,22 @@ tags:
   - config
 ---
 
-处理你的 VuePress 站点中的复制操作
+Handling copy operations in your VuePress site
 
 <!-- more -->
 
-## 默认配置说明
+## Default configuration
 
-当用户从你的站点复制超过 100 字的消息时，在这段消息的尾部添加声明消息。
+When the user copies a message of more than 100 words from your site, a declaration message is added at the end of the message.
 
-作者名称会从你在主题中配置的作者信息或站点名称自动生成。
+The author name is automatically generated from the author information or sitename that you configured in the theme.
 
-默认配置如下：
+The default configuration is:
 
 ```js {4-11}
 module.exports = {
   plugins: [
-    /** 复制操作处理 */
+    /** Copy operation processing */
     [
       "copyright",
       {
@@ -34,10 +34,10 @@ module.exports = {
 };
 ```
 
-## 配置项
+## Configuration Item
 
-详见 [官方文档](https://vuepress.github.io/zh/plugins/copyright/#配置项)
+See [Official Documentation](https://vuepress.github.io/en/plugins/copyright/#Configs)
 
-## 演示
+## Demonstration
 
-请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。
+Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect.

@@ -2,32 +2,32 @@
 icon: writefill
 ---
 
-# 标记
+# Mark
 
-让你的 VuePress 站点中的 Markdown 文件支持标记。
+Make Markdown files in your VuePress site support markup.
 
-## 配置
+## Configuration
 
 ```js {6}
 module.exports = {
   plugin: [
     "md-enhance",
     {
-      // 开启标记
+      // open tag
       mark: true,
     },
   ],
 };
 ```
 
-## 语法
+## Syntax
 
-使用 `== ==` 进行标记。请注意两边需要有空格。
+Use `== ==` to mark.
 
-## 案例
+## Case
 
-Mr.Hope ==十分== 帅
+Mr. Hope is ==very== handsome.
 
 ```md
-Mr.Hope ==十分== 帅
+Mr. Hope is ==very== handsome.
 ```

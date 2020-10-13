@@ -1,8 +1,8 @@
 const resolve = require("vuepress-theme-hope/resolve");
 
 module.exports = resolve({
-  title: "Markdown 增强",
-  description: "Vuepress 的 Markdown 增强插件",
+  title: "Markdown Enhance Plugin",
+  description: "Markdown Enhancement for Vuepress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -20,9 +20,9 @@ module.exports = resolve({
   dest: "./dist",
 
   locales: {
-    "/en/": {
-      title: "Markdown Enhance Plugin",
-      description: "Markdown Enhancement for Vuepress",
+    "/zh/": {
+      title: "Markdown 增强",
+      description: "Vuepress 的 Markdown 增强插件",
     },
   },
 
@@ -30,9 +30,9 @@ module.exports = resolve({
     logo: "/logo.svg",
 
     nav: [
-      { text: "主页", icon: "homefill", link: "/" },
-      { text: "指南", icon: "creativefill", link: "/guide/" },
-      { text: "配置", icon: "configuration", link: "/config.html" },
+      { text: "Home", icon: "homefill", link: "/" },
+      { text: "Guide", icon: "creativefill", link: "/guide/" },
+      { text: "Config", icon: "configuration", link: "/config/" },
     ],
     sidebar: {
       "/guide/": [
@@ -67,14 +67,14 @@ module.exports = resolve({
     },
 
     locales: {
-      "/en/": {
+      "/zh/": {
         nav: [
-          { text: "Home", icon: "homefill", link: "/en/" },
-          { text: "Guide", icon: "creativefill", link: "/en/guide/" },
-          { text: "Config", icon: "configuration", link: "/en/config.html" },
+          { text: "主页", icon: "homefill", link: "/zh/" },
+          { text: "指南", icon: "creativefill", link: "/zh/guide/" },
+          { text: "配置", icon: "configuration", link: "/zh/config/" },
         ],
         sidebar: {
-          "/en/guide/": [
+          "/zh/guide/": [
             "",
             "sup-sub",
             "align",
@@ -84,7 +84,7 @@ module.exports = resolve({
             "tex",
           ],
 
-          "/en/": ["", "guide/", "config"],
+          "/zh/": ["", "guide/", "config"],
         },
       },
     },

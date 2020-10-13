@@ -4,29 +4,40 @@ title: vuepress-plugin-comment
 icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-comment
-tagline: 评论与阅读量插件
+tagline: Comment and visitors plugin for vuepress
 action:
-  - text: 快速上手 💡
+  - text: Get Started 💡
     link: /guide/
 
-  - text: 配置 🛠
+  - text: Config 🛠
     link: /config/
 
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-## 安装
+## Install
 
 ```bash
 npm i -D @mr-hope/vuepress-plugin-comment
 ```
 
-## 使用
+Or
+
+```bash
+yarn add -D @mr-hope/vuepress-plugin-comment
+```
+
+### Usage
 
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: ["@mr-hope/comment", options],
+  plugin: [
+    "@mr-hope/comment",
+    {
+      // your options
+    },
+  ],
 };
 ```

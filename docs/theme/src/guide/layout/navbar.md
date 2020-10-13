@@ -6,30 +6,32 @@ tags:
   - layout
 ---
 
-# 导航栏
+# NavBar
 
-导航栏可能包含你的站点名称、[搜索框](#搜索框)、 [导航栏链接](#导航栏链接)、[多语言切换](https://v1.vuepress.vuejs.org/zh/guide/i18n.md)、[仓库链接](#git-仓库和编辑链接)，它们均取决于你的配置。
+## Navbar
 
-## 导航栏链接
+The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [Languages](https://v1.vuepress.vuejs.org/guide/i18n.md) and [Repository Link](#git-repo-and-edit-links), they all depend on your configuration.
 
-你可以通过 `themeConfig.nav` 增加一些导航栏链接。
+### Navbar Links
 
-基础的配置项有 `text` 导航栏文字，`link` 导航栏链接， `icon` 导航栏图标：
+You can add links to the navbar via `themeConfig.nav`.
+
+The basic configuration items are `text` navigation bar text, `link` navigation bar link, and `icon` navigation bar icon:
 
 ```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     nav: [
-      { text: '主页', link: '/', icon: 'homefill' },
-      { text: 'Vuepress介绍', link: '/vuepress/', icon: 'infofill' },
-      { text: 'Markdown介绍', link: '/markdown/', icon: 'markdown' }
+      { text: 'Home', link: '/', icon: 'homefill' },
+      { text: 'Guide', link: '/guide/', icon: 'infofill' },
+      { text: 'External', link: 'https://google.com', icon: 'markdown' }
     ]
   }
 };
 ```
 
-当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将显示为下拉列表 ：
+These links can also be dropdown menus if you provide an array of `items` instead of a `link`:
 
 ```js
 module.exports = {
@@ -48,7 +50,7 @@ module.exports = {
 };
 ```
 
-此外，你还可以通过嵌套的 `items` 来在下拉列表中设置分组：
+You can also have sub groups inside a dropdown by having nested items:
 
 ```js
 module.exports = {
@@ -76,7 +78,7 @@ module.exports = {
 };
 ```
 
-在导航栏分组中，你可以添加 `prefix` 字段为每一个子菜单链接添加一个前缀:
+In the navigation bar grouping, you can add a `prefix` field to add a prefix to each submenu link:
 
 ```js
 // .vuepress/config.js
@@ -84,7 +86,7 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: '基础',
+        text: 'Basic',
         icon: 'infofill',
         prefix: '/basic/',
         items: [
@@ -97,9 +99,9 @@ module.exports = {
 };
 ```
 
-### 禁用导航栏
+### Disable the Navbar
 
-你可以使用 `themeConfig.navbar` 来禁用所有页面的导航栏：
+To disable the navbar globally, use `themeConfig.navbar`:
 
 ```js
 // .vuepress/config.js
@@ -110,7 +112,7 @@ module.exports = {
 };
 ```
 
-你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏：
+You can disable the navbar for a specific page via `YAML front matter`:
 
 ```yaml
 ---
@@ -118,11 +120,11 @@ navbar: false
 ---
 ```
 
-### 导航栏图标
+### Navigation bar icon
 
-你可以使用 `themeConfig.logo` 来配置导航栏的图标，请填入绝对路径。
+You can use `themeConfig.logo` to configure the icons of the navigation bar, please fill in the absolute path.
 
-当配置图标之后，在移动视图上，图标将取代先前的站点名称显示在导航栏上。
+After configuring the icon, the icon will be displayed on the navigation bar instead of the previous site name on the mobile view.
 
 ```js
 // .vuepress/config.js
@@ -133,11 +135,11 @@ module.exports = {
 };
 ```
 
-## 搜索框
+## Search Box
 
-### 内置搜索
+### Built-in Search
 
-你可以通过设置 `themeConfig.search: false` 来禁用默认的搜索框，或是通过 `themeConfig.searchMaxSuggestions` 来调整默认搜索框显示的搜索结果数量：
+You can disable the built-in search box with `themeConfig.search: false`, and customize how many suggestions will be shown with `themeConfig.searchMaxSuggestions`:
 
 ```js
 module.exports = {
@@ -148,7 +150,7 @@ module.exports = {
 };
 ```
 
-你可以通过 `YAML front matter` 来对单独的页面禁用内置的搜索框：
+You can also disable the built-in search box for individual pages with `YAML front matter`:
 
 ```yaml
 ---
@@ -157,12 +159,12 @@ search: false
 ```
 
 ::: tip
-内置搜索只会为页面的标题、`h2` 和 `h3` 构建搜索索引，如果你需要全文搜索，你可以使用 [Algolia 搜索](#Algolia-搜索)。
+Built-in Search only builds index from the title, `h2` and `h3` headers, if you need full text search, you can use [Algolia DocSearch](#algolia-docsearch).
 :::
 
-### Algolia 搜索
+### Algolia DocSearch
 
-你可以通过 `themeConfig.algolia` 选项来用 [Algolia 搜索](https://community.algolia.com/docsearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`：
+The `themeConfig.algolia` option allows you to use [Algolia DocSearch](https://community.algolia.com/docsearch/) to replace the simple built-in search. To enable it, you need to provide at least `apiKey` and `indexName`:
 
 ```js
 module.exports = {
@@ -175,15 +177,15 @@ module.exports = {
 };
 ```
 
-::: warning 注意
-不同于开箱即用的 [内置搜索](#内置搜索)，[Algolia 搜索](https://community.algolia.com/docsearch/) 需要你在使用之前将你的网站提交给它们用于创建索引。
+::: warning Note
+Unlike the [built-in search](#built-in-search) engine which works out of the box, [Algolia DocSearch](https://community.algolia.com/docsearch/) requires you to submit your site to them for indexing before it starts working.
 :::
 
-更多选项请参考 [Algolia DocSearch 的文档](https://github.com/algolia/docsearch#docsearch-options)。
+For more options, check out [Algolia DocSearch’s documentation](https://github.com/algolia/docsearch#docsearch-options).
 
-### 搜索占位符
+### Search Placeholder
 
-你可以通过添加 `searchPlaceholder` 属性为搜索框定义一个占位符：
+You can define a placeholder for the search box by adding the `searchPlaceholder` attribute:
 
 ```js
 module.exports = {
@@ -193,76 +195,95 @@ module.exports = {
 };
 ```
 
-## Git 仓库和编辑链接
+## Git repository and Edit Links
 
-当你提供了 `themeConfig.repo` 选项，将会自动在每个页面的导航栏生成生成一个 GitHub 链接，以及在页面的底部生成一个 `"Edit this page"` 链接。
+Providing `themeConfig.repo` auto generates a GitHub link in the navbar and `"Edit this page"` links at the bottom of each page.
 
 ```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
+    // Assumes GitHub. Can also be a full GitLab url.
     repo: 'vuejs/vuepress',
-    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
-    // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: '查看源码',
-    // 是否在导航栏右侧显示仓库链接，默认为 `true`
+    // Customising the header label
+    // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
+    repoLabel: 'Contribute!',
+    // Whether to display repo link, default is `true`
     repoDisplay: true,
 
-    // 以下为可选的编辑链接选项
+    // Optional options for generating "Edit this page" link
 
-    // 假如你的文档仓库和项目本身不在一个仓库：
+    // if your docs are in a different repo from your main project:
     docsRepo: 'vuejs/vuepress',
-    // 假如文档不是放在仓库的根目录下：
+    // if your docs are not at the root of the repo:
     docsDir: 'docs',
-    // 假如文档放在一个特定的分支下：
+    // if your docs are in a specific branch (defaults to 'master'):
     docsBranch: 'master',
-    // 默认是 false, 设置为 true 来启用
+    // defaults to false, set to true to enable
     editLinks: true,
-    // 默认为 "Edit this page"
-    editLinkText: '帮助我们改善此页面！'
+    // default value is true. Allows to hide next page links on all pages
+    nextLinks: false,
+    // default value is true. Allows to hide prev page links on all pages
+    prevLinks: false,
+    // custom text for edit link. Defaults to "Edit this page"
+    editLinkText: 'Help us improve this page!'
   }
 };
 ```
 
-你可以通过 `YAML front matter` 来禁用指定页面的编辑链接：
+You can overwrite the following properties on specific pages via `YAML front matter`:
 
 ```yaml
 ---
-editLink: false
+editLink: false # Will overwrite 'editLinks' from themeConfig
 ---
 ```
 
-## 主题色切换按钮
+## Theme color button
 
-具体详情请见 [主题色](../feature/theme.md#主题色) 章节。
+For details, see the [Themecolor](../feature/theme.md#theme-color) section.
 
-## 深色模式切换按钮
+## Darkmode button
 
-具体详情请见 [深色模式](../feature/theme.md#深色模式) 章节。
+For details, see the [Darkmode](../feature/theme.md#darkmode) section.
 
-## 全屏按钮
+## Full screen button
 
-具体详情请见 [全屏按钮](../feature/theme.md#全屏按钮) 章节。
+For details, see the [Full Screen Button](../feature/theme.md#fullscreen-button) section.
 
-## 案例
+## Demo
 
 ```js {4-18}
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     nav: [
-      // 可在每一项中添加 icon 字段来显示图标
-      { text: '主页', link: '/', icon: 'homefill' },
-      { text: '指南', link: '/guide/', icon: 'creativefill' },
-      { text: '配置', link: '/config/', icon: 'code' },
+      // add icon field to each item to display icon
+      { text: 'Home', link: '/', icon: 'homefill' },
+      { text: 'Guide', link: '/guide/', icon: 'creativefill' },
+      { text: 'Config', link: '/config/', icon: 'configuration' },
       {
-        text: '基础',
+        text: 'Basic',
         icon: 'infofill',
-        prefix: '/basic/',
+        prefix: "/basic/",
         items: [
-          { text: 'Markdown', link: 'markdown', icon: 'markdown' },
-          { text: 'Vuepress', link: 'vuepress/', icon: 'vue' }
+          { text: 'Markdown', link: 'markdown/', icon: 'markdown' },
+          { text: 'Vuepress', link: '/vuepress/', icon: 'vue' }
+        ]
+      },
+      {
+        text: 'Project',
+        icon: 'infofill',
+        items: [
+          {
+            text: 'Changelog',
+            link:
+              'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
+          },
+          {
+            text: 'Repo',
+            link: 'https://github.com/mister-hope/vuepress-theme-hope'
+          }
         ]
       }
     ]

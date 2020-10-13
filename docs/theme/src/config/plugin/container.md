@@ -6,81 +6,81 @@ tags:
   - config
 ---
 
-Markdown 自定义容器。
+Markdown DIY container
 
 <!-- more -->
 
 ::: warning
-请注意，markdown 增强中的自适应对齐应用了该插件，因此如果你禁用本插件，你将无法使用自定义对齐与提示框。
+Please note that this plugin is applied to alignment in markdown enhancements, so if you disable this plugin, you will not be able to use custom alignment and the prompt boxes provided by the default theme.
 :::
 
-## 配置项
+## Configuration Item
 
 ### type
 
-- 类型: `string`
-- 必填: 是
+- type: `string`
+- required: true
 
-容器的类型。举个例子，如果 `type` 被设置为 `foo`，则仅有下面的语法会被解析为 markdown 容器：
+The type for the container. For example, if type is set to foo, only the following syntax will be parsed as a container:
 
 ```md
 ::: foo bar
-随便写点啥 ~
+write something here ~
 :::
 ```
 
 ### defaultTitle
 
-- 类型: `string | Record<string, string>`
-- 默认值: `type` 的大写形式
+- type: `string | Record<string, string>`
+- default: the upper case of type
 
-容器的默认标题。如果没有提供标题，则会使用 `defaultTitle` 作为容器的标题。
+The default title for the container. If no title is provided, `defaultTitle` will be shown as the title of the container.
 
-提供一个对象作为多语言配置，则默认标题将会基于当前 `locale` 选取。
+Provide an object as locale config, and the default title will depend on current `locale`.
 
 ### before
 
-- 类型: `string | ((info: string) => string)`
-- 默认值: `undefined`
+- type: `string | ((info: string) => string)`
+- default: `undefined`
 
-要插入在容器前的 HTML。
+String to be placed before the block.
 
-如果设置为一个函数，将传入当前的 `info` 作为第一个参数。（在上面的例子中，`info` 的值为 `bar`。）
+If specified as a function, an argument `info` will be passed to it. (In the example above, `info` will be `bar`.)
 
-如果设置了 `before` 的值， `defaultTitle` 将会被忽略。
+If specified value for `before`, `defaultTitle` will be ignored.
 
 ### after
 
-- 类型: `string | ((info: string) => string)`
-- 默认值: `undefined`
+- type: `string | ((info: string) => string)`
+- default: `undefined`
 
-要插入在容器后的 HTML。
+String to be placed after the block.
 
-如果设置为一个函数，将传入当前的 `info` 作为第一个参数。（在上面的例子中，`info` 的值为 `bar`。）
+If specified as a function, an argument `info` will be passed to it. (In the example above, `info` will be `bar`.)
+
+> See [markdown-it-container API](https://github.com/markdown-it/markdown-it-container#api)
 
 ### validate
 
-- 类型: `((params: string) => boolean)`
-- 默认值: `undefined`
+- type: `((params: string) => boolean)`
+- default: `undefined`
 
-一个用于判定容器是否结束的函数。当认定容器范围结束时应返回一个 `true`。
-
-> 参考 [markdown-it-container API](https://github.com/markdown-it/markdown-it-container#api)
+A function to validate tail after opening marker, should return true on success.
 
 ### render
 
-- 类型: `Function`
-- 默认值: `undefined`
+- type: `Function`
+- default: `undefined`
 
-容器开头和结束 token 的渲染函数。如果设置了这个值， `before`, `after` 和 `defaultTitle` 都将被忽略。
+The renderer function for opening/closing tokens. If specified, `before`, `after` and `defaultTitle` will be ignored.
 
-> 参考 [markdown-it-container API](https://github.com/markdown-it/markdown-it-container#api)
+> See [markdown-it-container API](https://github.com/markdown-it/markdown-it-container#api)
 
 ### marker
 
-- 类型: `string`
-- 默认值: `':'`
+- type: `string`
+- default: `':'`
 
-用于分隔符的字符。
+The character to use as a delimiter.
 
-> 参考 [markdown-it-container API](https://github.com/markdown-it/markdown-it-container#api)
+> See [markdown-it-container API](https://github.com/markdown-it/markdown-it-container#api)

@@ -6,28 +6,30 @@ tags:
   - layout
 ---
 
-# 布局
+# Layout
 
-- [**导航栏**](navbar.md)
+vuepress-theme-hope adds a lot of layout changes to the default theme layout.
 
-- [**侧边栏**](sidebar.md)
+- [**Navigation Bar**](navbar.md)
 
-- [**普通页面**](page.md)
+- [**Sidebar**](sidebar.md)
 
-- [**主页**](home.md)
+- [**Page**](page.md)
 
-- [**博客主页**](blog.md)
+- [**Home Page**](home.md)
 
-- **其他**
+- [**Blog Home Page**](blog.md)
 
-  - 切换动画
+- **Others**
 
-    在页面切换时，将会显示一个渐入的切换动画。提升 文档 / 博客 质感。
+  - **Switch** animation
 
-  - 返回顶部按钮
+  As the page switches, a gradual transition animation will be displayed. Improve document / blog texture.
 
-    vuepress-theme-hope 添加了一个自制的返回顶部控件，默认情况下将在下滑 300px 后显示。
+  - **Back to top button**
 
-    返回顶部按钮使用了一个圆形有色图标代替了默认主题中的箭头。
+  vuepress-theme-hope adds a home-made back-to-top control that will show up by 300px by default.
 
-    你可以在 `themeConfig` 将 `backToTop` 设置为 `false` 来禁用它。
+  The back to top button uses a round colored icon instead of the arrow in the default theme.
+
+  You can disable it by setting `backToTop` in`themeConfig` to `false`.

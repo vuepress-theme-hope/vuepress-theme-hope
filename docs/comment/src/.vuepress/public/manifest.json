@@ -2,7 +2,7 @@
   "name": "vuepress-plugin-comment",
   "short_name": "comment",
   "description": "Comment plugin for Vuepress",
-  "lang": "zh-CN",
+  "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [
     {

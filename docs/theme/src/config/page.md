@@ -1,5 +1,5 @@
 ---
-title: 页面配置
+title: Page Configuration
 icon: configuration
 category: config
 tags:
@@ -7,277 +7,268 @@ tags:
   - frontmatter
 ---
 
-页面的 Front Matter 新增如下配置选项：
+The following configuration options have been added to the page's Front Matter:
 
-## 页面信息配置
+## Page Infomation Configuration
 
 ### icon
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-设置当前页面图标的 FontClass (建议填写)
+Set the FontClass of the current page icon (recommended)
 
 ### title
 
-- 类型: `string`
-- 必填: 否
+- Type: `string | boolean`
+- Required: No
 
-设置当前页面内容标题，默认为 Markdown 文件中的第一个 h1 标签内容。
+Current page's title. Markdown's first h1 by default.
 
 ### description
 
-- 类型: `string`
-- 必填: 否
+- Type: `string | boolean`
+- Required: No
 
-设置当前页面内容描述。
+Current page's description
 
 ### author
 
-- 类型: `string | boolean`
-- 必填: 否
+- Type: `string | boolean`
+- Required: No
 
-显示当前页面的作者，如果不填，则会回退到默认作者。
+Show the author of the current page. If you don't fill it, you will fall back to the default author.
 
 ::: tip
-当全局默认作者启用时，可以设置 `false` 取消作者显示
+When the global default author is enabled, you can set `false` to cancel the author display
 :::
 
 ### original
 
-- 类型: `boolean`
-- 默认: `false`
+- Type: `boolean`
+- Default: `false`
 
-当前文章是否为原创。
+Whether the current article is original.
 
 ### time
 
-- 类型: `timeString | string`
-- 必填: 否
-- 格式: `YYYY-MM-DD` 或 `YYYY/MM/DD hh:mm:ss`
+- Type: `string`
+- Required: No
+- Format: `YYYY-MM-DD` or `YYYY/MM/DD hh:mm:ss`
 
-设置当前页面的写作时间。
+Set the writing time of the current page
 
 ::: warning
-尽管本主题及 Mister-Hope 的其他插件会正确解析你输入的时间，如 `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD` 等，但是其他插件可能不能正确的读取他们。使用非标准格式的值可能会导致其他插件报错，
+Although this theme and other plugins of Mister-Hope will correctly parse the time you enter, such as `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD`, etc. The plugin may not be able to read them correctly. Using values in non-standard formats may cause other plugins reporting errors,
 :::
 
 ### category
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-设置当前页面的分类
+Set the category of the current page
 
 ### tags
 
-- 类型: `string | string[]`
-- 必填: 否
+- Type: `string | string []`
+- Required: No
 
-设置当前页面的标签
+Set the label of the current page
 
 ### sticky
 
-- 类型: `boolean | number`
-- 默认值: `false`
+- Type: `boolean | number`
+- Default: `false`
 
-设置当前文章是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
+Sets whether the current article is pinned in the list. When fill in with number, the ones which is greater will come first.
 
 ### article
 
-- 类型: `boolean`
-- 默认: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否将该文章添加至文章列表中。
+Whether to add the article to the article list.
 
 ### timeline
 
-- 类型: `boolean`
-- 默认: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否将该文章添加至文章列表中。
+Whether to add the article to the timeline list.
 
 ### password
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-设置当前文章的密码。
-
-::: warning
-请注意，由于密码会进行二次混淆加密，请确保密码是字符串格式。`'1234'` 和 `1234` 混淆后产生的结果是不同的。
-:::
+Set a password for the current article.
 
 ### image
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-设置当前页面的预览图(分享图)，请填入绝对路径。
+Set current page's image，please fill in an absolute path.
 
-### copyright
-
-- 类型: `string | false`
-- 默认值: 全局中配置的值
-
-设置当前页面的版权信息，更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
-
-## 页面显示配置
+## Page display configuration
 
 ### pageInfo
 
-- 类型: `PageInfo[] | false`
-- 默认值: 全局中配置的值 (全局默认为 `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)
+- Type: `PageInfo[] | false`
+- Default value: Globally configured value (global default is `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)
 
-`PageInfo` 可选的值和对应内容如下:
+The optional values and corresponding contents of `PageInfo` are as follows:
 
-| 条目         | 对应内容     | 页面 Front Matter 值    |
-| ------------ | ------------ | ----------------------- |
-| `'author'`   | 作者         | author                  |
-| `'time'`     | 写作日期     | time                    |
-| `'category'` | 分类         | category                |
-| `'tag'`      | 标签         | tags                    |
-| `'readtime'` | 预计阅读时间 | N/A(自动生成)           |
-| `'word'`     | 字数         | N/A(自动生成)           |
-| `'visitor'`  | 访问量       | visitor(仅 Valine 可用) |
+| Item         | Corresponding Content | Page Front Matter Value              |
+| ------------ | --------------------- | ------------------------------------ |
+| `'author'`   | Author                | author                               |
+| `'time'`     | Writing Date          | time                                 |
+| `'category'` | Category              | category                             |
+| `'tag'`      | Tags                  | tags                                 |
+| `'readTime'` | Expect reading time   | N / A (automatically generated)      |
+| `'word'`     | Word count            | N / A (automatically generated)      |
+| `'visitor'`  | Visit Number          | visitor (only available with Valine) |
 
-设置当前页面的文章信息内容
+Set whether to show page details on the current page
 
 ### visitor
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (配置全局的 `comment` 为 `'valine'` 后默认为 `true`)
+- Type: `boolean`
+- Default value: Globally configured value (defaults to `true` after setting global`comment` to `valine ')
 
-当前页面是否显示浏览量
+Whether the current page shows page views
 
 ::: tip
-显示浏览量功能需要你正确配置了 Valine 类型的评论配置。
+The display pageview feature requires you to configure Valine type comment configuration correctly.
 :::
 
 ### breadcrumb
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (全局默认为 `true`)
+- Type: `boolean`
+- Default value: Globally configured value (global default is `true`)
 
-当前页面是否开启路径导航
+Whether path navigation is enabled on the current page
 
 ### breadcrumbIcon
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (全局默认为 `true`)
+- Type: `boolean`
+- Default value: Globally configured value (global default is `true`)
 
-当前页面是否开启路径导航图标
+Whether path navigation icon is enabled on the current page
 
 ### navbar
 
-- 类型: `boolean`
+- Type: `boolean`
 
-页面的导航栏配置，填入 `false` 会禁用导航栏
+The navigation bar configuration of the page, filling in `false` will disable the navigation bar
 
 ### sidebar
 
-- 类型: `false | 'auto'`
+- Type: `false | 'auto'`
 
-页面的侧边栏配置选项。支持 `false` 或 `auto`。
+Page sidebar configuration options. Supports `false` or`auto`.
 
 ### sidebarDepth
 
-- 类型: `number`
-- 默认值: `2`
+- Type: `number`
+- Default: `2`
 
-该页面的侧边栏渲染深度
+The page's sidebar rendering depth
 
 ### comment
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (配置全局的 `comment` 后默认为 `true`)
+- Type: `boolean`
+- Default value: Configured globally (defaults to `true` after configuring global`comment`)
 
-当前页面是否开启评论功能
+Whether to enable comments on the current page
 
 ### editLink
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值
+- Type: `boolean`
+- Default value: the value configured globally
 
-是否显示编辑链接
+Whether to show edit link
 
 ### prev
 
-- 类型: `string | false`
+- Type: `string | false`
 
-上一篇文章链接
+Previous article link
 
 ### next
 
-- 类型: `string | false`
+- Type: `string | false`
 
-下一篇文章链接
+Next article link
 
 ### footer
 
-- 类型: `boolean | string | HTMLString`
+- Type: `boolean | string | HTMLString`
+- Default value: the value configured globally
 
-设置当前页面的页脚内容，如果你想要禁用页脚，请设置为 `false`，如果你想要移除默认的页脚内容，请设置为 `''`，如果你想使用默认页脚，请设置为 `true`。
+Set the footer content of the current page. If you want an empty content, set it to an empty string.
+Set it to `false` if you want to disable the footer, and set it to `true` if you want to display the default footer on a specific page.
 
-更多详情请看 [页面 → 页脚支持](../guide/layout/page.md#页脚支持)
+For more details, please see [Page → Footer Support](../guide/layout/page.md#footer-support)
 
-### mediaLink
+### medialink
 
-- 类型: `MediaType[] | false`
-- 默认值: 主题中 `themeConfig.blog.links` 的值
+- Type: `MediaType[] | false`
+- Default: `themeConfig.blog.links`
 
-设置当前页面的页脚社交链接。
+Set the social link for the current page footer.
 
-::: tip 可用的社交媒体：
+::: tip Available social media:
 
-`MediaType` 的可选值如下:
+The optional values of `MediaType` are as follows:
 
-- `'Baidu'`: 百度
+- `'Baidu'`: Baidu
 - `'Bitbucket'`: Bitbucket
-- `'Dingding'`: 钉钉
+- `'Dingding'`: Dingding
 - `'Discord'`: Discord
 - `'Dribbble'`: Dribble
-- `'Evernote'`: 印象笔记
-- `'Facebook'`: 脸书
-- `'Flipboard'`: 红板报
-- `'Github'`: ~~Gayhub~~ Github
+- `'Evernote'`: Evernote
+- `'Facebook'`: Facebook
+- `'Flipboard'`: Flipboard
+- `'Github'`: ~~ Gayhub ~~ Github
 - `'Gitlab'`: Gitlab
-- `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
+- `'Gmail'`: Google mailbox (of course you can also fill in your own other mailbox)
 - `'Instagram'`: Instagram
 - `'Line'`: Line
-- `'Linkedin'`: 领英
-- `'Pinterest'`: 拼趣
+- `'Linkedin'`: LinkedIn
+- `'Pinterest'`: Pinterest
 - `'Pocket'`: Pocket
 - `'QQ'`: QQ
-- `'Qzone'`: QQ 空间
+- `'Qzone'`: Qzone
 - `'Reddit'`: Reddit
-- `'Rss'`: RSS 地址
+- `'Rss'`: RSS address
 - `'Steam'`: Steam
 - `'Twitter'`: Twitter
-- `'Wechat'`: 微信
-- `'Weibo'`: 微博
+- `'Wechat'`: WeChat
+- `'Weibo'`: Weibo
 - `'Whatsapp'`: Whatsapp
 - `'Youtube'`: YouTube
-- `'Zhihu'`: 知乎
+- `'Zhihu'`: Zhihu
 
 :::
 
 ### search
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (全局默认为 `true`)
+- Type: `boolean`
+- Default value: the value configured in the global (global default is `true`)
 
-当前页面是否显示搜索框。
+Whether the current page displays search box.
 
 ### backToTop
 
-- 类型: `boolean`
-- 默认值: 全局中配置的值 (全局默认为 `true`)
+- Type: `boolean`
+- Default value: Globally configured value (global default is `true`)
 
-设置当前页面是否显示返回顶部按钮
+Sets whether the current page displays the back to top button
 
 ## layout
 
-- 类型: `string`
+- Type: `string`
 
-页面的自定义布局名称
+Page custom layout name

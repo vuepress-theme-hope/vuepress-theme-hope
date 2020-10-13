@@ -25,6 +25,8 @@ interface BaseCommentOptions {
    * 主目录所对应的语言。
    *
    * The language of the home directory.
+   *
+   * @default 'en-US'
    */
   baseLang?: string;
   /**
@@ -44,20 +46,26 @@ interface BaseCommentOptions {
    *
    * Page Info display configuration
    *
-   * @see https://vuepress-comment.mrhope.site/config/#pageinfo (zh)
-   * @see https://vuepress-comment.mrhope.site/en/config/#pageinfo (en)
+   * @see https://vuepress-comment.mrhope.site/zh/config/#pageinfo (zh)
+   * @see https://vuepress-comment.mrhope.site/config/#pageinfo (en)
+   *
+   * @default ['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']
    */
   pageInfo?: PageInfotype[] | false;
   /**
    * 是否默认启用评论
    *
    * Whether enable comment by default
+   *
+   * @default true
    */
   comment?: boolean;
   /**
    * 每分钟阅读字数
    *
    * Reading speed of words per minute
+   *
+   * @default 300
    */
   wordPerminute?: number;
 }
@@ -81,6 +89,8 @@ export interface ValineOptions extends BaseCommentOptions {
    * 是否启用访问量
    *
    * Whether enable page views count by default
+   *
+   * @default true
    */
   visitor?: boolean;
 
@@ -95,6 +105,8 @@ export interface ValineOptions extends BaseCommentOptions {
    * 评论所需信息
    *
    * Commenter's info
+   *
+   * @default ['nick','mail','link']
    */
   meta?: string[];
 
@@ -109,7 +121,10 @@ export interface ValineOptions extends BaseCommentOptions {
    * 头像类型
    *
    * Avator type
+   *
    * @see https://valine.js.org/avatar.html
+   *
+   * @default 'retro'
    */
   avatar?: string;
 
@@ -117,6 +132,8 @@ export interface ValineOptions extends BaseCommentOptions {
    * 是否记录 IP
    *
    * Whether to record users' IP
+   *
+   * @default false
    */
   recordIP?: boolean;
 
@@ -124,6 +141,8 @@ export interface ValineOptions extends BaseCommentOptions {
    * 每页的最大评论数
    *
    * Max comments per page
+   *
+   * @default 10
    */
   pageSize?: number;
 
@@ -131,6 +150,8 @@ export interface ValineOptions extends BaseCommentOptions {
    * 是否启用昵称框自动获取 QQ 昵称和 QQ 头像
    *
    * Whether fetch QQ nickname and avator when inputing QQ number
+   *
+   * @default true
    */
   enableQQ?: boolean;
 
@@ -199,12 +220,16 @@ export interface VssueOptions extends BaseCommentOptions {
    * 用来设置 Vssue 使用的 Issue 的 labels (标签)
    *
    * To set the labels of issues that Vssue uses.
+   *
+   * @default ['Vssue']
    */
   labels?: string;
   /**
    * Issue 标题的前缀。用于生成存储评论的对应 Issue 的实际标题
    *
    * The title prefix for issues. Used for generating the actual title of the corresponding issue.
+   *
+   * @default ['Vssue']
    */
   prefix?: string;
   /**
@@ -219,6 +244,8 @@ export interface VssueOptions extends BaseCommentOptions {
    * 默认每页显示的评论数
    *
    * The default value of how many comments to show per page
+   *
+   * @default 10
    */
   perPage?: number;
   /**
@@ -248,6 +275,8 @@ export interface VssueOptions extends BaseCommentOptions {
    * 在对应的 Issue 不存在时，Vssue 会自动尝试为你创建 Issue
    *
    * Vssue will try to create an issue automatically when the corresponding issue does not exist.
+   *
+   * @default false
    */
   autoCreateIssue?: false;
 }

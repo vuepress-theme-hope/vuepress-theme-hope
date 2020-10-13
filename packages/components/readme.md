@@ -10,7 +10,7 @@ Components for vuepress-theme-hope.
 npm i @mr-hope/vuepress-plugin-components
 ```
 
-This plugin expose 4 components and 1 global component:
+This plugin register 4 components and 1 global component:
 
 - BackToTop (Global Components)
 - BreadCrumb
@@ -58,7 +58,7 @@ vuepress-theme-hope 的组件。
 npm i @mr-hope/vuepress-plugin-components
 ```
 
-此插件提供 4 个组件和一个全局组件:
+此插件注册 4 个组件和一个全局组件:
 
 - BackToTop (全局组件)
 - BreadCrumb

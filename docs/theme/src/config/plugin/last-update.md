@@ -6,23 +6,23 @@ tags:
   - config
 ---
 
-最后更新日期。
+Last update time
 
 <!-- more -->
 
-这个插件将会利用 Git 的日志向 page 注入可阅读的最后更新时间文字与最后更新时间的时间戳。
+This plugin will use git to inject a readable last update time and a last update time timestamp into the page.
 
-## 插件说明
+## Plugin description
 
-该插件基于 Git，会自动读取文件的上一次提交时间，并以本地化的形式，注入到 `lastUpdated` 上，同时，会将时间戳注入到 `lastUpdatedTime` 上，以供其他插件使用。
+The plugin is based on Git and will automatically read the file's last commit time and inject it into `lastUpdated` in a localized form. At the same time, it will inject a timestamp in `lastUpdatedTime` for use by other plugins.
 
-## 配置
+## Configuration
 
 ### transformer
 
-- 类型: `(timestamp: number, lang: string) => string`
-- 默认值: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
+- Type: `(timestamp: number, lang: string) => string`
+- Default value: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
 
-时间转换函数，默认情况下，会使用 dayjs 自动根据当前页面语言进行本地化。
+Time conversion function, by default, will use dayjs to automatically localize according to the current page language.
 
-如: `2020年5月8日 16:05` `May 8, 2020 16:05`
+Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`

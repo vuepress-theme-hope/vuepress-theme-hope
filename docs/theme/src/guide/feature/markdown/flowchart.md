@@ -6,39 +6,40 @@ tags:
   - markdown
 ---
 
-# 流程图支持
+# Flowchart
 
-让你的 VuePress 站点中的 Markdown 文件支持流程图。
+Let the Markdown file support flow chart in your VuePress site
 
-## 配置
+## Configuration
 
-```js {3,5,6}
+```js {3-5}
 module.exports = {
   themeConfig: {
     markdown: {
-      // 启用流程图功能
       flowchart: true,
     },
   },
 };
 ```
 
-## 语法
+## Syntax
 
-```md
+### Markdown Syntax
+
+```markdown
 @flowstart [preset]
 
-<!-- 放置你的流程图代码 -->
+<!-- Your flowchart code here. -->
 
 @flowend
 ```
 
-目前可用的预设：
+Available presets:
 
-- `vue`（默认）
+- `vue` (default)
 - `ant`
 
-## 演示
+## Demo
 
 <!-- markdownlint-disable -->
 
@@ -82,6 +83,6 @@ c2(no)->op2->e
 @flowend
 ```
 
-## 流程图介绍
+## Flowchart Introduction
 
-详见 [流程图介绍](https://vuepress-md-enhance.mrhope.site/guide/flowchart/#%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%BB%8B%E7%BB%8D)。
+See [Flowchart Introduction](https://vuepress-md-enhance.mrhope.site/guide/flowchart/#flowchart-intro).

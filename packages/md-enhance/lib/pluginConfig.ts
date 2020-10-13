@@ -7,8 +7,8 @@ const pluginConfig = (
   themeConfig: ThemeConfig
 ): PluginConfig[] => {
   /** i18n config */
-  const containerConfig = i18n.config.container;
-  const baseLang = markdownOption.baseLang || themeConfig.baseLang || "zh-CN";
+  const { container } = i18n.config;
+  const baseLang = markdownOption.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = i18n.lang2path(baseLang);
 
   const resolveConfig = (
@@ -22,19 +22,16 @@ const pluginConfig = (
   const config: PluginConfig[] = [
     [
       "container",
-      { type: "info", defaultTitle: resolveConfig(containerConfig.info) },
+      { type: "info", defaultTitle: resolveConfig(container.info) },
+    ],
+    ["container", { type: "tip", defaultTitle: resolveConfig(container.tip) }],
+    [
+      "container",
+      { type: "warning", defaultTitle: resolveConfig(container.warning) },
     ],
     [
       "container",
-      { type: "tip", defaultTitle: resolveConfig(containerConfig.tip) },
-    ],
-    [
-      "container",
-      { type: "warning", defaultTitle: resolveConfig(containerConfig.warning) },
-    ],
-    [
-      "container",
-      { type: "danger", defaultTitle: resolveConfig(containerConfig.danger) },
+      { type: "danger", defaultTitle: resolveConfig(container.danger) },
     ],
     [
       "container",

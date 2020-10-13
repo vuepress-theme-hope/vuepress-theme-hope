@@ -5,15 +5,15 @@ tags:
   - layout
 ---
 
-# 页面
+# Page
 
-## 图标支持
+## Icon support
 
-可以在页面的 `Front Matter` 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
+You can configure the icon field in the `Front Matter` of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
 
-该图标会在 **路径导航** 和 **侧边栏** 中使用。
+This icon is used in **Path Navigation** and **Sidebar**.
 
-::: details 例子
+::: details Example
 
 ```md
 ---
@@ -23,27 +23,27 @@ icon: Home
 
 :::
 
-## 路径导航 <MyBadge text="支持页面配置" />
+## Breadcrumb <MyBadge text="Support page config" />
 
-本主题添加了开箱即用的路径导航支持，配置项为 `breadcrumb`。
+This theme adds a new Breadcrumb support, the config key is `breadcrumb`.
 
-无需任何额外配置，一个和主题色相符合的路径导航会显示在页面内容最上方，帮助阅读者理解文档结构。
+Without any additional configuration, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
-路径导航的图标显示也<MyBadge text="支持页面配置" />，配置项为 `breadcrumbIcon`。
+The icon display of path navigation is also <MyBadge text="Support page config" />, the configuration item is `breadcrumbIcon`.
 
 ::: warning
-为了保证路径导航更好的提示，建议在每一个路径下创建 readme.md 文件。
+In order to ensure Breadcrumb working well, the `readme.md` file should be included in each folder.
 
-否则，路径导航将因对应层级文件夹没有主页，无法生成标题与链接，而自动忽略那一层级。
+Otherwise, the path navigation will automatically ignore that level because the component can not generate titles and links from the corresponding level folder.
 :::
 
-## 文章信息展示
+## Page Info Display
 
-详见 [文章信息](../feature/page-info.md) 章节。
+See [Page Info Section](../feature/page-info.md)
 
-## 最后更新时间
+## Last Updated
 
-你可以通过 `themeConfig.lastUpdated` 选项来获取每个文件最后一次 `git` 提交的 UNIX 时间戳(ms)，同时它将以合适的日期格式显示在每一页的底部：
+The `themeConfig.lastUpdated` option allows you to get the UNIX timestamp(ms) of each file’s last `git` commit, and it will also display at the bottom of each page in an appropriate format:
 
 ```js
 module.exports = {
@@ -53,15 +53,15 @@ module.exports = {
 };
 ```
 
-请注意，`themeConfig.lastUpdated` 默认是关闭的，如果给定一个字符串，它将会作为前缀显示(默认值是：`Last Updated`)。
+Note that it’s `off` by default. If given a `string`, it will be displayed as a prefix (default value: `Last Updated`).
 
-::: warning 使用须知
-由于 `lastUpdated` 是基于 `git` 的, 所以你只能在一个基于 `git` 的项目中启用它。此外，由于使用的时间戳来自 git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。
+::: warning
+Since `lastUpdated` is based on `git`, you can only use it in a `git` repository. Also, since the timestamp used comes from the git commit, it will display only after a first commit for a given page, and update only on ensuing commits of that page.
 :::
 
-## 上 / 下一篇链接
+## Prev / Next Links
 
-上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以使用 `themeConfig` 或 `Front matter` 来明确地重写或者禁用它：
+Prev and next links are automatically inferred based on the sidebar order of the active page. You can also explicitly overwrite or disable them globally with theme config or on specific pages using `Front matter`:
 
 ```yaml
 ---
@@ -71,29 +71,29 @@ next: false
 
 ```
 
-## 评论
+## Comment
 
-具体详情请见 [评论](../feature/comment.md) 章节。
+See the [Comment section](../feature/comment.md) for details.
 
-## 页脚支持 <MyBadge text="支持页面配置" />
+## Footer Support <MyBadge text="Support page config" />
 
-如果希望每个页面都显示页脚，需要将 `themeConfig.footer.display` 设置为 `true`。同时，你可以使用 `themeConfig.footer.copyright` 和 `themeConfig.content` 设置默认的版权信息与页脚内容。
+If you want to display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 
-你也可以在页面的 `Front Matter` 中配置 `footer`，`copyright` 与 `medialink` 字段。
+You can also configure the `footer`, `copyright` and `medialink` fields in the `Front Matter` page.
 
-- `footer` 字段可以填入字符串或布尔值。
+- The `footer` field can be filled with a string or Boolean value.
 
-  将 `footer` 设置为 `true` 会显示默认的页脚文字。将 `footer` 设置为 `false` 会禁用该页面的页脚。
+  Setting `footer` to `true` will display the default footer content. Setting `footer` to`false` will disable the page footer.
 
-  如果你填入一个字符串，它会以 `v-html` 指令的形式插入到页脚的主位置，所以你可以填入 HTMLString。
+  If you fill in a string, it will be inserted into footer by `v-html`, so you can fill in HTMLString.
 
-- `copyright` 字段可以填入本页面的版权信息，同样也支持 HTMLString。这当你引用了来自别处的文章且对方使用了特定许可是很有用的。你也可以填入 `false` 来隐藏特定页面的版权信息。
+- The `copyright` field can be filled with copyright information on this page,(also support HTMLString) which is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
 
-- `medialink` 字段同 `themeConfig.blog.links` ([具体配置见此](./blog.md#可配置的项目))，你可以在特定页面配置它以展示不同的社交媒体链接，你也可以填入 `false` 来隐藏它。
+- The `medialink` field is the same as `themeConfig.blog.links` ([specific configuration see here](./blog.md#configurable-items)), you can configure it in a specific page to display different social media links. You can also set it to `false` to hide it.
 
-::: details 例子
+::: details Example
 
-启用默认的页脚文字：
+Enable the default footer text:
 
 ```md
 ---
@@ -101,7 +101,7 @@ footer: true
 ---
 ```
 
-自定义页脚文字，同时不显示版权信息和媒体链接
+Customize footer text without displaying copyright information and media links:
 
 ```md
 ---
@@ -111,18 +111,18 @@ medialink: false
 ---
 ```
 
-自定义页脚的内容和版权信息与媒体链接
+Custom footer content and copyright information and media links:
 
 ```md
 ---
 copyright: MIT LICENSE
-footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
+footer: <a href="https://github.com/Mister-Hope"> Mr.Hope </a>
 medialink:
   Zhihu: https://zhihu.com
 ---
 ```
 
-当你在主题中设置了 `footer.display` 为 true 时，你还可以局部禁用它
+When you set `footer.display` to true in the theme, you can also disable it locally:
 
 ```md
 ---
@@ -130,7 +130,7 @@ footer: false
 ---
 ```
 
-如果你希望移除默认的 footer 内容同时保持社交媒体与版权信息显示，请传入一个空字符串。
+If you want to remove the default footer content while keeping social media and copyright information displayed, please use an empty string.
 
 ```md
 ---
@@ -140,9 +140,9 @@ footer: ""
 
 :::
 
-## 特定页面的自定义布局
+## Custom Layout for Specific Pages
 
-默认情况下，每个 `*.md` 文件将会被渲染在一个 `<div class="page">` 容器中，同时还有侧边栏、自动生成的编辑链接，以及上 / 下一篇文章的链接。如果你想要使用一个完全自定义的组件来代替当前的页面(而只保留导航栏)，你可以再次使用 `Front matter` 来指定这个组件。
+By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using `YAML front matter`:
 
 ```yaml
 ---
@@ -151,4 +151,4 @@ layout: SpecialLayout
 
 ```
 
-这将会为当前的页面渲染 `.vuepress/components/SpecialLayout.vue` 布局。
+This will render `.vuepress/components/SpecialLayout.vue` for the given page.

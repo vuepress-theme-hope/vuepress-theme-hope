@@ -1,48 +1,46 @@
 ---
+title: Page information
 icon: infofill
-original: true
 ---
 
-# 页面信息
+The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in `Front Matter` of a specific page.
 
-`<PageInfo />` 组件默认全局启用。你可以在特定页面的 `Front Matter` 中设置 `pageInfo: false` 来局部禁用它。
+If you need to keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.
 
-如果你需要保持全局禁用，请在插件选项中设置 `pageInfo` 为 `false`。这样你可以在特定页面的 `Front Matter` 中设置 `pageInfo` 来局部启用它。
+## Parameters
 
-## 参数
+`pageInfo` accepts an array of strings by default, filling in a group of items. The order of filling is the order in which the items are displayed.
 
-`pageInfo` 默认接受一个字符串数组，可以填入各条目名称，填入的顺序即是各条目显示的顺序。
+The optional values ​​and corresponding contents of the entry are as follows:
 
-条目可选的值和对应内容如下:
+| Entry        | Corresponding content  | page Front Matter value            |
+| ------------ | ---------------------- | ---------------------------------- |
+| `'Author'`   | author                 | author                             |
+| `'Time'`     | Writing Date           | time                               |
+| `'Category'` | Category               | category                           |
+| `'Tag'`      | tags                   | tags                               |
+| `'ReadTime'` | Estimated reading time | N / A (automatically generated)    |
+| `'Word'`     | Word count             | N / A (automatically generated)    |
+| `'Visitor'`  | Visits                 | visitor (only Valine is available) |
 
-| 条目         | 对应内容     | 页面 Front Matter 值    |
-| ------------ | ------------ | ----------------------- |
-| `'Author'`   | 作者         | author                  |
-| `'Time'`     | 写作日期     | time                    |
-| `'Category'` | 分类         | category                |
-| `'Tag'`      | 标签         | tags                    |
-| `'ReadTime'` | 预计阅读时间 | N/A(自动生成)           |
-| `'Word'`     | 字数         | N/A(自动生成)           |
-| `'Visitor'`  | 访问量       | visitor(仅 Valine 可用) |
+By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 
-默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
-
-::: tip 其他说明
+::: tip Other notes
 
 - **author**
 
-你可以在插件选项中配置 `author` 来设置默认作者，同样，你仍可以在页面中配置 `Front Matter` 中的 `author` 为一个新值来覆盖默认作者，或者设置为 `false` 以取消该页面的作者显示。
+You can configure `author` in the plugin options to set the default author. And you can alse configure `author` in Front Matter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
 
 - **time**
 
-建议 time 以标准格式输入日期，即 `xxxx-xx-xx` 的形式，如 “2020 年 4 月 1 日” 应当输入为 `2020-04-01`
+It is recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
-- **阅读时间**
+- **Reading time**
 
-默认的统计方式是一分钟 300 字，你可以在插件配置中设置 `wordPerminute` 来覆盖它，该选项不支持在页面单独配置。
+The default statistic method is 300 words per minute. You can override it by setting `wordPerminute` in the plugin configuration. This option does not support individual configuration on the page.
 
 :::
 
-## 原创标识
+## Original logo
 
-你可以在特定页面的 frontmatter 中设置 `original` 为 `true` 来为你的文章添加原创标签。
+You can set `original` to `true` in the frontmatter of a specific page to add original tags to your articles.

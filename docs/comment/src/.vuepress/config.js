@@ -1,8 +1,8 @@
 const resolve = require("vuepress-theme-hope/resolve");
 
 module.exports = resolve({
-  title: "评论插件",
-  description: "Vuepress 的评论插件",
+  title: "Comment Plugin",
+  description: "Comment Plugin for Vuepress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -20,32 +20,37 @@ module.exports = resolve({
   dest: "./dist",
 
   locales: {
-    "/en/": {
-      title: "Comment Plugin",
-      description: "Comment Plugin for Vuepress",
-    },
+    "/zh/": { title: "评论插件", description: "Vuepress 的评论插件" },
   },
 
   themeConfig: {
     logo: "/logo.svg",
 
     nav: [
-      { text: "主页", icon: "homefill", link: "/" },
+      { text: "Home", icon: "homefill", link: "/" },
       {
-        text: "指南",
+        text: "Guide",
         icon: "creativefill",
         items: [
-          { text: "页面信息", icon: "infofill", link: "/guide/page-info/" },
+          {
+            text: "Page Info",
+            icon: "infofill",
+            link: "/guide/page-info/",
+          },
           { text: "Valine", icon: "valine", link: "/guide/valine/" },
           { text: "Vssue", icon: "vssue", link: "/guide/vssue/" },
         ],
       },
       {
-        text: "配置",
+        text: "Config",
         icon: "configuration",
         items: [
-          { text: "配置", icon: "configuration", link: "/config/" },
-          { text: "Valine", icon: "valine", link: "/config/valine/" },
+          { text: "Config", icon: "configuration", link: "/config/" },
+          {
+            text: "Valine",
+            icon: "valine",
+            link: "/config/valine/",
+          },
           { text: "Vssue", icon: "vssue", link: "/config/vssue/" },
         ],
       },
@@ -62,7 +67,7 @@ module.exports = resolve({
           children: [
             "vssue",
             {
-              title: "支持平台",
+              title: "Supported platforms",
               icon: "support",
               children: [
                 "supported-platforms",
@@ -98,39 +103,35 @@ module.exports = resolve({
     },
 
     locales: {
-      "/en/": {
+      "/zh/": {
         nav: [
-          { text: "Home", icon: "homefill", link: "/en/" },
+          { text: "主页", icon: "homefill", link: "/zh/" },
           {
-            text: "Guide",
+            text: "指南",
             icon: "creativefill",
             items: [
               {
-                text: "Page Info",
+                text: "页面信息",
                 icon: "infofill",
-                link: "/en/guide/page-info/",
+                link: "/zh/guide/page-info/",
               },
-              { text: "Valine", icon: "valine", link: "/en/guide/valine/" },
-              { text: "Vssue", icon: "vssue", link: "/en/guide/vssue/" },
+              { text: "Valine", icon: "valine", link: "/zh/guide/valine/" },
+              { text: "Vssue", icon: "vssue", link: "/zh/guide/vssue/" },
             ],
           },
           {
-            text: "Config",
+            text: "配置",
             icon: "configuration",
             items: [
-              { text: "Config", icon: "configuration", link: "/en/config/" },
-              {
-                text: "Valine",
-                icon: "valine",
-                link: "/en/config/valine/",
-              },
-              { text: "Vssue", icon: "vssue", link: "/en/config/vssue/" },
+              { text: "配置", icon: "configuration", link: "/zh/config/" },
+              { text: "Valine", icon: "valine", link: "/zh/config/valine/" },
+              { text: "Vssue", icon: "vssue", link: "/zh/config/vssue/" },
             ],
           },
         ],
 
         sidebar: {
-          "/en/guide/": [
+          "/zh/guide/": [
             "",
             "page-info",
             "valine",
@@ -140,7 +141,7 @@ module.exports = resolve({
               children: [
                 "vssue",
                 {
-                  title: "Supported platforms",
+                  title: "支持平台",
                   icon: "support",
                   children: [
                     "supported-platforms",
@@ -153,8 +154,8 @@ module.exports = resolve({
               ],
             },
           ],
-          "/en/config/": ["", "valine", "vssue"],
-          "/en/": ["", "guide/", "config/"],
+          "/zh/config/": ["", "valine", "vssue"],
+          "/zh/": ["", "guide/", "config/"],
         },
       },
     },

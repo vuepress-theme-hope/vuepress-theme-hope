@@ -6,61 +6,57 @@ tags:
   - config
 ---
 
-向你的网页注入 `<meta>`，来增强你网页的 SEO。
+Inject `<meta>` into your webpage to enhance the SEO of your webpage.
 
 <!-- more -->
 
-## 插件选项
+## Plugin options
 
 ### twitterID
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-填入你的 twitter 用户名
+Fill in your twitter username
 
 ### restrictions
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-内容的年龄分级，格式为 `[int]+`，如 `'13+'`
+The age rating of the content, the format is `[int]+`, such as `'13+'`
 
 ### seo
 
-- 类型: `(info: PageSeoInfo) => Record<string, string>`
+- Type: `(info: PageSeoInfo) => Record<string, string>`
 
-`PageSeoInfo` 的接口类型如下:
+The interface types of `PageSeoInfo` are as follows:
 
 ```ts
 interface PageSeoInfo {
-  /** 页面对象 */
   $page: Page;
-  /** 站点对象 */
   $site: SiteConfig;
-  /** 主题配置 */
   themeConfig: ThemeConfig;
-  /** 支持的多语言 */
+  /** supported languages */
   locales: string[];
-  /** 当前页面地址 */
   path: string;
 }
 ```
 
-你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，你需要按照 `<property>: <content>` 的格式来返回一个对象。
+You can use this option to inject new or overwrite the default generated SEO, you need to return an object in the format of `<property>: <content>`.
 
-比如如果你返回了 `{ 'og:url': 'google.com', 'og:image': 'google.com/logo.jpg' }`，则插件会注入以下内容到 `<head>` 中:
+For example, if you return `{ 'og:url': 'google.com', 'og:image': 'google.com/logo.jpg' }`, the plugin will inject the following into `<head>` :
 
 ```html
 <meta property="og:url" content="google.com" />
 <meta property="og:image" content="google.com/logo.jpg" />
 ```
 
-#### 默认值
+#### Defaults
 
-以下是会被默认注入到 `<head>` 中的 `<meta>` 标签及其值:
+The following are the `<meta>` tags and their values ​​that will be injected into `<head>` by default:
 
-|         属性名称         |                         值                         |
+|      Property Name       |                       Value                        |
 | :----------------------: | :------------------------------------------------: |
 |         `og:url`         |            themeConfig.hostname + path             |
 |      `og:site_name`      |                    \$site.title                    |
@@ -70,7 +66,7 @@ interface PageSeoInfo {
 |        `og:image`        |  themeConfig.hostname + \$page.frontmatter.image   |
 |    `og:updated_time`     |               \$page.lastUpdatedTime               |
 |       `og:locale`        |               $page._computed.$lang                |
-|  `og:locale:alternate`   |        \$themeConfig.locales 包含的其他语言        |
+|  `og:locale:alternate`   | other languages included in \$themeConfig.locales  |
 |      `twitter:card`      |              `'summary_large_image'`               |
 |   `twitter:image:alt`    |                    \$site.title                    |
 |     `article:author`     | \$page.frontmatter.author \|\| themeConfig.author  |
@@ -80,11 +76,11 @@ interface PageSeoInfo {
 
 ### customMeta
 
-- 类型: `(meta: Meta, info: PageSeoInfo) => void`
+- Type: `(meta: Meta, info: PageSeoInfo) => void`
 
-你可以使用此选项来直接向 Meta 中注入内容。`Meta` 格式请见 [Front Matter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
+You can use this option to inject content directly into Meta. For the format of `Meta`, please see [Front Matter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
 
-比如传入:
+For example:
 
 ```js
 (meta: Meta, info: PageSeoInfo) => {
@@ -92,7 +88,7 @@ interface PageSeoInfo {
 };
 ```
 
-会向当前页面的 `<head>` 注入:
+Will inject into the current page's `<head>` with:
 
 ```html
 <meta a="1" b="2" />

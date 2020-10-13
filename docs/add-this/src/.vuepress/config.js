@@ -1,9 +1,8 @@
 const resolve = require("vuepress-theme-hope/resolve");
 
 module.exports = resolve({
-  title: "AddThis 插件",
-  /** 网站在该语言下的描述 */
-  description: "Vuepress 的 AddThis 插件",
+  title: "vuepress-plugin-add-this",
+  description: "AddThis Plugin for vuepress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -21,9 +20,9 @@ module.exports = resolve({
   dest: "./dist",
 
   locales: {
-    "/en/": {
-      title: "AddThis Plugin",
-      description: "AddThis Plugin for Vuepress",
+    "/zh/": {
+      title: "AddThis 插件",
+      description: "Vuepress 的 AddThis 插件",
     },
   },
 
@@ -34,6 +33,20 @@ module.exports = resolve({
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+
+    nav: [
+      { text: "Home", icon: "homefill", link: "/" },
+      {
+        text: "Guide",
+        icon: "creativefill",
+        link: "/guide/",
+      },
+      {
+        text: "Config",
+        icon: "configuration",
+        link: "/config/",
+      },
+    ],
 
     footer: {
       display: true,
@@ -51,7 +64,21 @@ module.exports = resolve({
     },
 
     locales: {
-      "/en/": {},
+      "/zh/": {
+        nav: [
+          { text: "主页", icon: "homefill", link: "/zh/" },
+          {
+            text: "指南",
+            icon: "creativefill",
+            link: "/zh/guide/",
+          },
+          {
+            text: "配置",
+            icon: "configuration",
+            link: "/zh/config/",
+          },
+        ],
+      },
     },
 
     addthis: "ra-5f829c59e6c6bc9a",

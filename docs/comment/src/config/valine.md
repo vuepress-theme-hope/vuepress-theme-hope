@@ -2,113 +2,113 @@
 icon: valine
 ---
 
-# valine 配置
+# Valine Config
 
 ## appId
 
-- 类型: `string`
-- 必填: 是
+- Type: `string`
+- Required: true
 
-填入 LeanCloud 中应用的 APP ID
+Fill in the application appId in LeanCloud
 
 ## appKey
 
-- 类型: `string`
-- 必填: 是
+- Type: `string`
+- Required: true
 
-填入 LeanCloud 中应用的 APP Key
+Fill in the application appKey in LeanCloud
 
 ## commet
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-留言功能
+Comment Funtion
 
 ## visitor
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-文章访问量统计功能
+Pageviews FUntion
 
 ## pageSize
 
-- 类型: `number`
-- 默认值: `10`
+- Type: `Number`
+- Default: `10`
 
-评论列表分页，每页条数
+Number of comment per page
 
 ## recordIP
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否记录评论者 IP
+Whether to record the commenter IP
 
-## 更多 Valine 配置项
+## More Config about valine
 
 - **placeholder**
 
-  - 类型: `string`
-  - 默认值: `'请留言'`
+  - Type: `string`
+  - Default: `'请留言'`
 
-  评论框的 placeholder
+  Comment placeholder
 
 - **meta**
 
-  - 类型: `string[]`
-  - 默认值: `['nick','mail','link']`
+  - Type: `string[]`
+  - Default: `['nick','mail','link']`
 
-评论者相关属性
+  Commenter's info
 
 - **requiredFields**
 
-  - 类型: `string[]`
-  - 默认值: `['nick']`
+  - Type: `string []`
+  - Default value: `['nick']`
 
-设置必填项
+  Set required fields
 
 - **enableQQ**
 
-  - 类型: `boolean`
-  - 默认值: `true`
+  - Type: `boolean`
+  - Default value: `true`
 
-是否启用昵称框自动获取 QQ 昵称和 QQ 头像
+  Whether to enable the nickname box to automatically obtain QQ nickname and QQ avatar
 
 - **avatar**
 
-  - 类型: `string`
-  - 默认值: `'retro'`
+  - Type: `string`
+  - Default: `'retro'`
 
-  Gravatar 头像展示方式。
+  Gravatar avatar display method.
 
-  ::: tip 可选值
+  ::: tip Optional Values
 
-  - ''(空字符串): Gravatar 官方图形
-  - `mp`: 神秘人(一个灰白头像)
-  - `identicon`: 抽象几何图形
-  - `monsterid`: 小怪物
+  - `''`(Empty String): Gravatar Offical Pic
+  - `mp`: Mistery
+  - `identicon`
+  - `monsterid`
   - `wavatar`
   - `retro`
   - `robohash`
   - `hide`
 
-  具体相关说明详见 [Valine 头像配置](https://valine.js.org/avatar.html)
+  See [Valine Avator Config](https://valine.js.org/avatar.html) for details.
 
-  你可以引导用户到 [Gravatar](http://cn.gravatar.com/) 去设置自己的头像。
+  You can tell users to set their [Gravatar](http://cn.gravatar.com/).
   :::
 
 - **emojiCDN**
 
-  - 类型: `string`
-  - 必填: 否
+  - Type: `string`
+  - Required: No
 
-  设置表情包 CDN，请参考 [Valine 自定义表情包](https://valine.js.org/emoji.html)
+  To set the emoji package CDN, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)
 
 - **emojiMaps**
 
-  - 类型: `Object`
-  - 默认值: `null`
+  - Type: `sbject`
+  - Default value: `null`
 
-  设置表情包映射，请参考 [Valine 自定义表情包](https://valine.js.org/emoji.html)
+  To set the emoticon package mapping, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)

@@ -1,5 +1,5 @@
 ---
-title: 地点
+title: Place
 icon: emoji
 category: basic
 tags:

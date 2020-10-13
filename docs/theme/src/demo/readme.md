@@ -1,28 +1,28 @@
 ---
-title: 项目案例
+title: Demos
 icon: discoverfill
 category: demo
 ---
 
-## Mr.Hope 的个人博客
+## Mr.Hope's Blog
 
-- [项目地址](https://mrhope.site)
+- [Link](https://mrhope.site)
 
-## vuepress-theme-hope 文档
+## vuepress-theme-hope
 
-- [项目地址](https://vuepress-theme.mrhope.site)
-- [项目文件](https://github.com/mister-hope/vuepress-theme-hope/docs/theme)
+- [Link](https://vuepress-theme.mrhope.site)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/theme)
 
-## vuepress-plugin-comment 文档
+## vuepress-plugin-comment
 
-- [项目地址](https://vuepress-comment.mrhope.site)
-- [项目文件](https://github.com/mister-hope/vuepress-theme-hope/docs/comment)
+- [Link](https://vuepress-comment.mrhope.site)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/comment)
 
-## vuepress-plugin-md-enhance 文档
+## vuepress-plugin-md-enhance
 
-- [项目地址](https://vuepress-md-enhance.mrhope.site)
-- [项目文件](https://github.com/mister-hope/vuepress-theme-hope/docs/md-enhance)
+- [Link](https://vuepress-md-enhance.mrhope.site)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/md-enhance)
 
-## 更多
+## More
 
-- 随时随地添加你的博客或文档到此
+- Feel free to add yours

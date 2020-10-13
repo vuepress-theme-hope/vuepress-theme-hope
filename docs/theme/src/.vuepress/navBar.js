@@ -1,15 +1,16 @@
 module.exports = {
   zh: [
-    { text: "主页", link: "/", icon: "homefill" },
-    { text: "指南", link: "/guide/", icon: "creativefill" },
-    { text: "配置", link: "/config/", icon: "configuration" },
-    { text: "常见问题", link: "/FAQ/", icon: "questionfill" },
+    { text: "主页", link: "/zh/", icon: "homefill" },
+    { text: "指南", link: "/zh/guide/", icon: "creativefill" },
+    { text: "配置", link: "/zh/config/", icon: "configuration" },
+    { text: "常见问题", link: "/zh/FAQ/", icon: "questionfill" },
     {
       text: "基础",
       icon: "infofill",
+      prefix: "/zh/basic/",
       items: [
-        { text: "Markdown", link: "/basic/markdown/", icon: "markdown" },
-        { text: "Vuepress", link: "/basic/vuepress/", icon: "vue" },
+        { text: "Markdown", link: "markdown/", icon: "markdown" },
+        { text: "Vuepress", link: "vuepress/", icon: "vue" },
       ],
     },
     {
@@ -27,30 +28,31 @@ module.exports = {
         },
         {
           text: "项目案例",
-          link: "/demo/",
+          link: "/zh/demo/",
         },
         {
           text: "评论插件",
-          link: "https://vuepress-comment.mrhope.site",
+          link: "https://vuepress-comment.mrhope.site/zh/",
         },
         {
           text: "Markdown 增强插件",
-          link: "https://vuepress-md-enhance.mrhope.site",
+          link: "https://vuepress-md-enhance.mrhope.site/zh/",
         },
       ],
     },
   ],
   en: [
-    { text: "Home", link: "/en/", icon: "homefill" },
-    { text: "Guide", link: "/en/guide/", icon: "creativefill" },
-    { text: "Config", link: "/en/config/", icon: "configuration" },
+    { text: "Home", link: "/", icon: "homefill" },
+    { text: "Guide", link: "/guide/", icon: "creativefill" },
+    { text: "Config", link: "/config/", icon: "configuration" },
     { text: "FAQ", link: "/FAQ/", icon: "questionfill" },
     {
       text: "Basic",
       icon: "infofill",
+      prefix: "/basic/",
       items: [
-        { text: "Markdown", link: "/en/basic/markdown/", icon: "markdown" },
-        { text: "Vuepress", link: "/en/basic/vuepress/", icon: "vue" },
+        { text: "Markdown", link: "markdown/", icon: "markdown" },
+        { text: "Vuepress", link: "vuepress/", icon: "vue" },
       ],
     },
     {
@@ -68,15 +70,15 @@ module.exports = {
         },
         {
           text: "Demo",
-          link: "/en/demo/",
+          link: "/demo/",
         },
         {
           text: "Comment Plugin",
-          link: "https://vuepress-comment.mrhope.site/en/",
+          link: "https://vuepress-comment.mrhope.site/",
         },
         {
           text: "Markdown Enhance Plugin",
-          link: "https://vuepress-md-enhance.mrhope.site/en/",
+          link: "https://vuepress-md-enhance.mrhope.site/",
         },
       ],
     },

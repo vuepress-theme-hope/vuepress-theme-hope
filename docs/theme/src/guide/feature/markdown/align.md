@@ -6,130 +6,130 @@ tags:
   - markdown
 ---
 
-# 自定义对齐
+# Custom alignment
 
-通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
+By injecting additional configuration into vuepress-plugin-container, you can use
 
 ```md
 ::: center
-要居中的段落
+Paragraph to center
 :::
 
 ::: right
-要居右的段落
+Right paragraph
 :::
 ```
 
-来对你的段落对齐进行自定义。
+To customize your paragraph alignment.
 
-## 演示
+## Demo
 
-本主题仍在制作中，API 可能会有
+This topic is still in production, the API may have
 
 ::: center
-重大的变动。
+Significant changes.
 :::
 
-如果你在使用过程中遇到了 bug，可以
+If you encounter a bug during use, you can
 
 ::: right
-[提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+[Mention an issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
 :::
 
 ```md
-本主题仍在制作中，API 可能会有
+This topic is still in production, the API may have
 
 ::: center
-重大的变动。
+Significant changes.
 :::
 
-如果你在使用过程中遇到了 bug，可以
+If you encounter a bug during use, you can
 
 ::: right
-[提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+[Mention an issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
 :::
 ```
 
-## 其他自定义容器
+## Other custom containers
 
 ::: info
-信息容器。
+Information container
 :::
 
 ::: tip
-提示容器
+Tip container
 :::
 
 ::: warning
-警告容器
+Warning container
 :::
 
 ::: danger
-危险容器
+Dangerous container
 :::
 
 ::: details
-详情容器
+Details container
 :::
 
-::: info 自定义标题
-信息容器
+::: info custom title
+Information container
 :::
 
-::: tip 自定义标题
-提示容器
+::: tip custom title
+Tip container
 :::
 
-::: warning 自定义标题
-警告容器
+::: warning custom title
+Warning container
 :::
 
-::: danger 自定义标题
-危险容器
+::: danger custom Title
+Dangerous container
 :::
 
-::: details 自定义标题
-详情容器
+::: details custom title
+Details container
 :::
 
 ```md
 ::: info
-信息容器。
+Information container
 :::
 
 ::: tip
-提示容器
+Tip container
 :::
 
 ::: warning
-警告容器
+Warning container
 :::
 
 ::: danger
-危险容器
+Dangerous container
 :::
 
 ::: details
-详情容器
+Details container
 :::
 
-::: info 自定义标题
-信息容器
+::: info custom title
+Information container
 :::
 
-::: tip 自定义标题
-提示容器
+::: tip custom title
+Tip container
 :::
 
-::: warning 自定义标题
-警告容器
+::: warning custom title
+Warning container
 :::
 
-::: danger 自定义标题
-危险容器
+::: danger custom Title
+Dangerous container
 :::
 
-::: details 自定义标题
-详情容器
+::: details custom title
+Details container
 :::
 ```

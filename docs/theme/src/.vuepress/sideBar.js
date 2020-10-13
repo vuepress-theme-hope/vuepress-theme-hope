@@ -1,6 +1,6 @@
 module.exports = {
   zh: {
-    "/guide/": [
+    "/zh/guide/": [
       {
         title: "快速上手",
         icon: "creativefill",
@@ -48,7 +48,7 @@ module.exports = {
       },
     ],
 
-    "/config/": [
+    "/zh/config/": [
       "",
       "themeConfig",
       "page",
@@ -72,7 +72,7 @@ module.exports = {
       },
     ],
 
-    "/basic/": [
+    "/zh/basic/": [
       {
         title: "Markdown",
         prefix: "markdown/",
@@ -100,10 +100,10 @@ module.exports = {
       },
     ],
 
-    "/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
+    "/zh/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
   },
   en: {
-    "/en/guide/": [
+    "/guide/": [
       {
         title: "Get Started",
         icon: "creativefill",
@@ -151,7 +151,7 @@ module.exports = {
       },
     ],
 
-    "/en/config/": [
+    "/config/": [
       "",
       "themeConfig",
       "page",
@@ -175,7 +175,7 @@ module.exports = {
       },
     ],
 
-    "/en/basic/": [
+    "/basic/": [
       {
         title: "Markdown",
         icon: "markdown",
@@ -203,6 +203,6 @@ module.exports = {
       },
     ],
 
-    "/en/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
+    "/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
   },
 };

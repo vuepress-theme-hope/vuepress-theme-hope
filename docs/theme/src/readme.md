@@ -1,77 +1,77 @@
 ---
 home: true
-title: vuepress-theme-hope
 icon: homefill
+title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
-tagline: 一个轻量的 Vuepress 主题
+tagline: A light Vuepress theme
 action:
-  - text: 快速上手 💡
+  - text: Get Started 💡
     link: /guide/
 
-  - text: 配置 🛠
+  - text: Config 🛠
     link: /config/
 
 features:
-  - title: 浏览量与评论
-    details: 配合 Valine 与 Vssue 来开启阅读量统计与评论支持
+  - title: Pageviews and comments
+    details: Start pageview statistics and comment support with Valine and Vssue
     link: /guide/feature/comment/
 
-  - title: 文章信息展示
-    details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
+  - title: Article information display
+    details: Add author, writing date, reading time, word count and other information to your article
     link: /guide/feature/page-info/
 
-  - title: Markdown 增强
-    details: 新增文字对齐、上下角标、脚注、标记、数学公式与流程图支持
+  - title: Markdown Enhance
+    details: Add align, sup/sub script, footnote, tex, flowchart and mark support in markdown
     link: /guide/feature/markdown/
 
-  - title: 博客支持
-    details: 为你的文章添加日期、标签和分类，即可自动生成文章、分类、标签与时间轴列表
+  - title: Blog support
+    details: Just date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
     link: /guide/feature/blog/
 
-  - title: 文章加密
-    details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
-    link: /guide/feature/encrypt/
+  - title: Article Encryption
+    details: Encrypt you article based on path and folders, so that only the one you want could see them
+    link: /guide/feature/blog/
 
-  - title: 主题色切换
-    details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
-    link: /guide/feature/themecolor/#自定义主题色
+  - title: Custom theme color
+    details: Supports custom theme colors and allows users to switch between preset theme colors
+    link: /guide/feature/themecolor/
 
-  - title: 深色模式
-    details: 可以自由切换浅色模式与深色模式
-    link: /guide/feature/themecolor/#深色模式
+  - title: Dark Mode
+    details: Switch between light and dark modes freely
+    link: /guide/feature/darkmode/
 
-  - title: Sitemap 生成与 SEO 增强
-    details: 主题可以自动为你的网站生成 Sitemap，并将最终生成的网页针对搜索引擎进行优化。
+  - title: Sitemap generation and SEO enhancement
+    details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
     link: /guide/feature/seoAndSitemap/
 
-  - title: 更多新特性
-    details: 包括博客主页、图标支持、路径导航、页脚支持、全屏按钮、返回顶部按钮等
+  - title: More new features
+    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
     link: /guide/feature/
 
-  - title: PWA 支持
-    details: 内置的 PWA 插件会让你的网站更像一个 APP。
+  - title: PWA support
+    details: The built-in PWA plugin will make your website more like an APP.
     link: /config/plugin/pwa/
 
-  - title: TS 支持
-    details: 为你的 Vuepress 开启 Typescript 支持
+  - title: TS support
+    details: Turn on Typescript support for your Vuepress
     link: /guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
 ---
 
-## 使用主题
+## Use themes
 
-你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 vuepress 之旅。
+You can use [vuepress-theme-hope template](https://github.com/Mister-Hope/vuepress-theme-hope-template) directly to start your vuepress journey.
 
-### 安装
+### Install
 
 ```bash
 npm i -D vuepress-theme-hope
 ```
 
-### 使用
+### Usage
 
 ```js
 // .vuepress/config.js
@@ -83,7 +83,7 @@ module.exports = resolve({
 ```
 
 ::: tip
-引入 resolve 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，很方便的给你提示。
+The purpose of introducing the resolve function is to give you full hints through TS's Interface and JSDoc when you edit the configuration.
 
-同时，resolve 函数也会为你补全一些直接交付给 vuepress 的默认配置。
+At the same time, the resolve function will also complete some default configurations for your current configuration which will pass directly to vuepress.
 :::

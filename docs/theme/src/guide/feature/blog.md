@@ -6,46 +6,46 @@ tags:
   - function
 ---
 
-# 博客相关
+# Blog related
 
-主题通过配置 `@vuepress/plugin-blog` 启用了一些博客功能。你也可以配置 `themeConfig.blog` 为 `false` 来禁用全部的博客功能。
+The theme enables some blogging features by configuring `@vuepress/plugin-blog`. Also you can set `themeConfig.blog` to `false` to disable all blog features.
 
-## 分类
+## Category
 
-只需要在页面的 Front Matter 中添加 `category: <分类名>` ，该文章会自动渲染在 `/category/` 分类页面的列表中。
+Just add `category: <category name>` to the Front Matter of the page, and the article will be automatically rendered in the list of category pages with url `/category/`.
 
 ![category](./assets/category.png)
 
-请注意，一篇文章只能设置一个分类。
+Please note that only one category can be set per article.
 
-## 标签
+## Tags
 
-只需要在页面的 Front Matter 中添加 `tags: <标签名>` 即可，该文章就会自动列出在 `/tag/` 标签页面的列表中。
+Just add `tags: <tag name>` to the Front Matter of the page, and the article will be automatically listed in the list on the `/tag/` tag page.
 
-`tags` 接受 `string | string[]`，也就是说一个文章可以包含多个标签。
+`tags` accepts `string | string []`, which means that an article can contain multiple tags.
 
-## 文章
+## Article
 
-所有文章都会默认被添加到文章列表中渲染在 `/article/` 路径下。
+All articles will be added to the article list by default and rendered under path `/article/` .
 
-如果你不希望该列表包含一些特定的文章，只需在文章的 Front Matter 中将 `article` 设置为 `false`。
+If you don't want specific articles to be included, just set `article` to `false` in the article's Front Matter.
 
-## 时间线
+## timeline
 
-所有注明了写作日期的文章都会被按照时间排序在 `/timeline/` 时间线中。
+All articles with a writing date will be sorted by time in the timeline page `/timeline/`.
 
-如果你不希望某篇文章被包含，只需在文章的 Front Matter 中将 `timeline` 设置为 `false`。
+If you don't want an article to be included, just set `timeline` to `false` in the article's Frontmatter.
 
 ::: warning
-请勿在根目录中添加并放置对应的文件夹("tag", "article", "timeline")，否则可能造成编译时文件被覆盖而造成错误。
+Do not add and place the corresponding folders ("tag", "article", "timeline") in the root directory, otherwise the files may be overwritten during compilation and cause errors.
 
-如果你的确需要一个“文章”文件夹的话，请考虑使用 "articles"。
+If you do need an "articles" folder, consider using "articles".
 :::
 
-## 版权信息
+## Copyright Information
 
-有些时候，你可能不想让你的某些文章被他人复制，或者你想让他人在复制时，自动生成一段版权信息到剪切板中。
+Sometimes, you may not want some of your articles to be copied by others, or you want others to automatically generate a piece of copyright information to the clipboard when copying.
 
-你可以在页面中配置这一内容，在 Front Matter 中设置 `noCopy: true` 会禁用该页面的复制，设置 `noSelect :true` 会禁止该页面的选中。
+You can configure this content on the page. Setting `noCopy: true` in Front Matter will disable copying of this page, and setting `noSelect: true` will disable the selection of this page.
 
-你还可以通过 `minLength` 设置触发禁用复制或者追加版权信息的最小字符数，默认为 `100`。
+You can also use `minLength` to set the minimum number of characters to trigger copying or append copyright information. The default is `100`.
