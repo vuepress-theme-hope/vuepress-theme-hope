@@ -221,4 +221,7 @@
         margin-top 0
         color var(--text-color-l25)
         text-align justify
+
+  {$contentClass}
+    padding-bottom 1.5rem
 </style>
