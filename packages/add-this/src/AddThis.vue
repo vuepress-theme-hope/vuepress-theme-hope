@@ -1,5 +1,5 @@
 <template>
-  <script :src="`//s7.addthis.com/js/300/addthis_widget.js#pubid=${pubid}`" />
+  <div class="add-this"></div>
 </template>
 
 <script src="./AddThis" />
