@@ -54,6 +54,18 @@ module.exports = {
           text: "图片预览插件",
           link: "https://vuepress-photo-swipe.mrhope.site/zh/",
         },
+        {
+          text: "阅读时间插件",
+          link: "https://vuepress-reading-time.mrhope.site/zh/",
+        },
+        {
+          text: "Seo 插件",
+          link: "https://vuepress-seo.mrhope.site/zh/",
+        },
+        {
+          text: "Sitemap 插件",
+          link: "https://vuepress-sitemap.mrhope.site/zh/",
+        },
       ],
     },
   ],
@@ -111,6 +123,18 @@ module.exports = {
         {
           text: "Photo Swipe Plugin",
           link: "https://vuepress-photo-swipe.mrhope.site",
+        },
+        {
+          text: "Reading Time Plugin",
+          link: "https://vuepress-reading-time.mrhope.site",
+        },
+        {
+          text: "Seo Plugin",
+          link: "https://vuepress-seo.mrhope.site",
+        },
+        {
+          text: "Sitemap Plugin",
+          link: "https://vuepress-sitemap.mrhope.site",
         },
       ],
     },

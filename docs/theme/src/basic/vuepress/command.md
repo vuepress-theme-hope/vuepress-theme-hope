@@ -1,44 +1,44 @@
 ---
-title: 项目指令
+title: Vuepress commands
 icon: program
 category: basic
 tags:
   - vuepress
 ---
 
-## 安装项目依赖
+## Install Dependence
 
 ```bash
 npm install
 ```
 
-或
+Or
 
 ```bash
 npm i
 ```
 
-## 升级依赖
+## Update Dependence
 
 ```bash
 npm update
 ```
 
-## 调试项目
+## Start Dev
 
-创建开启一个本地预览，请使用[localhost:8080](http://localhost:8080)访问。
+Open local develope environment, please visit[localhost:8080](http://localhost:8080)。
 
 ```bash
 npm run serve
 ```
 
 :::tip
-使用`Ctrl + C`终止任务本地调试进程。
+Use `Ctrl + C` to stop local dev process.
 :::
 
-## 构建项目
+## Build project
 
-打包构建项目，生成最终部署到服务器上的文件
+Generate the files that will eventually be deployed to the server.
 
 ```bash
 npm run build

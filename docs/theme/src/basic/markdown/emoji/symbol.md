@@ -1,5 +1,5 @@
 ---
-title: 符号
+title: Symbol
 icon: emoji
 category: basic
 tags:

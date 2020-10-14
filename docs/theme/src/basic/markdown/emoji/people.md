@@ -1,5 +1,5 @@
 ---
-title: 人物
+title: People
 icon: emoji
 category: basic
 tags:

@@ -1,5 +1,5 @@
 ---
-title: 自然
+title: Nature
 icon: emoji
 category: basic
 tags:
