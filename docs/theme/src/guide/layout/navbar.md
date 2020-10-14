@@ -23,11 +23,11 @@ The basic configuration items are `text` navigation bar text, `link` navigation 
 module.exports = {
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/', icon: 'homefill' },
-      { text: 'Guide', link: '/guide/', icon: 'infofill' },
-      { text: 'External', link: 'https://google.com', icon: 'markdown' }
-    ]
-  }
+      { text: "Home", link: "/", icon: "homefill" },
+      { text: "Guide", link: "/guide/", icon: "infofill" },
+      { text: "External", link: "https://google.com", icon: "markdown" },
+    ],
+  },
 };
 ```
 
@@ -38,15 +38,15 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: 'Languages',
-        ariaLabel: 'Language Menu',
+        text: "Languages",
+        ariaLabel: "Language Menu",
         items: [
-          { text: 'Chinese', link: '/language/chinese/' },
-          { text: 'Japanese', link: '/language/japanese/' }
-        ]
-      }
-    ]
-  }
+          { text: "Chinese", link: "/language/chinese/" },
+          { text: "Japanese", link: "/language/japanese/" },
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -57,24 +57,24 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: 'Languages',
+        text: "Languages",
         items: [
           {
-            text: 'Group1',
+            text: "Group1",
             items: [
               /*  */
-            ]
+            ],
           },
           {
-            text: 'Group2',
+            text: "Group2",
             items: [
               /*  */
-            ]
-          }
-        ]
-      }
-    ]
-  }
+            ],
+          },
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -86,16 +86,16 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: 'Basic',
-        icon: 'infofill',
-        prefix: '/basic/',
+        text: "Basic",
+        icon: "infofill",
+        prefix: "/basic/",
         items: [
-          { text: 'Markdown', link: 'markdown', icon: 'markdown' },
-          { text: 'Vuepress', link: 'vuepress/', icon: 'vue' }
-        ]
-      }
-    ]
-  }
+          { text: "Markdown", link: "markdown", icon: "markdown" },
+          { text: "Vuepress", link: "vuepress/", icon: "vue" },
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -107,8 +107,8 @@ To disable the navbar globally, use `themeConfig.navbar`:
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    navbar: false
-  }
+    navbar: false,
+  },
 };
 ```
 
@@ -118,6 +118,7 @@ You can disable the navbar for a specific page via `YAML front matter`:
 ---
 navbar: false
 ---
+
 ```
 
 ### Navigation bar icon
@@ -130,8 +131,8 @@ After configuring the icon, the icon will be displayed on the navigation bar ins
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    logo: '/logo.png'
-  }
+    logo: "/logo.png",
+  },
 };
 ```
 
@@ -145,8 +146,8 @@ You can disable the built-in search box with `themeConfig.search: false`, and cu
 module.exports = {
   themeConfig: {
     search: false,
-    searchMaxSuggestions: 10
-  }
+    searchMaxSuggestions: 10,
+  },
 };
 ```
 
@@ -156,6 +157,7 @@ You can also disable the built-in search box for individual pages with `YAML fro
 ---
 search: false
 ---
+
 ```
 
 ::: tip
@@ -170,10 +172,10 @@ The `themeConfig.algolia` option allows you to use [Algolia DocSearch](https://c
 module.exports = {
   themeConfig: {
     algolia: {
-      apiKey: '<API_KEY>',
-      indexName: '<INDEX_NAME>'
-    }
-  }
+      apiKey: "<API_KEY>",
+      indexName: "<INDEX_NAME>",
+    },
+  },
 };
 ```
 
@@ -190,8 +192,8 @@ You can define a placeholder for the search box by adding the `searchPlaceholder
 ```js
 module.exports = {
   themeConfig: {
-    searchPlaceholder: 'Search...'
-  }
+    searchPlaceholder: "Search...",
+  },
 };
 ```
 
@@ -204,21 +206,21 @@ Providing `themeConfig.repo` auto generates a GitHub link in the navbar and `"Ed
 module.exports = {
   themeConfig: {
     // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'vuejs/vuepress',
+    repo: "vuejs/vuepress",
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
-    repoLabel: 'Contribute!',
+    repoLabel: "Contribute!",
     // Whether to display repo link, default is `true`
     repoDisplay: true,
 
     // Optional options for generating "Edit this page" link
 
     // if your docs are in a different repo from your main project:
-    docsRepo: 'vuejs/vuepress',
+    docsRepo: "vuejs/vuepress",
     // if your docs are not at the root of the repo:
-    docsDir: 'docs',
+    docsDir: "docs",
     // if your docs are in a specific branch (defaults to 'master'):
-    docsBranch: 'master',
+    docsBranch: "master",
     // defaults to false, set to true to enable
     editLinks: true,
     // default value is true. Allows to hide next page links on all pages
@@ -226,8 +228,8 @@ module.exports = {
     // default value is true. Allows to hide prev page links on all pages
     prevLinks: false,
     // custom text for edit link. Defaults to "Edit this page"
-    editLinkText: 'Help us improve this page!'
-  }
+    editLinkText: "Help us improve this page!",
+  },
 };
 ```
 
@@ -237,6 +239,7 @@ You can overwrite the following properties on specific pages via `YAML front mat
 ---
 editLink: false # Will overwrite 'editLinks' from themeConfig
 ---
+
 ```
 
 ## Theme color button
@@ -259,34 +262,34 @@ module.exports = {
   themeConfig: {
     nav: [
       // add icon field to each item to display icon
-      { text: 'Home', link: '/', icon: 'homefill' },
-      { text: 'Guide', link: '/guide/', icon: 'creativefill' },
-      { text: 'Config', link: '/config/', icon: 'configuration' },
+      { text: "Home", link: "/", icon: "homefill" },
+      { text: "Guide", link: "/guide/", icon: "creativefill" },
+      { text: "Config", link: "/config/", icon: "configuration" },
       {
-        text: 'Basic',
-        icon: 'infofill',
+        text: "Basic",
+        icon: "infofill",
         prefix: "/basic/",
         items: [
-          { text: 'Markdown', link: 'markdown/', icon: 'markdown' },
-          { text: 'Vuepress', link: '/vuepress/', icon: 'vue' }
-        ]
+          { text: "Markdown", link: "markdown/", icon: "markdown" },
+          { text: "Vuepress", link: "/vuepress/", icon: "vue" },
+        ],
       },
       {
-        text: 'Project',
-        icon: 'infofill',
+        text: "Project",
+        icon: "infofill",
         items: [
           {
-            text: 'Changelog',
+            text: "Changelog",
             link:
-              'https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md'
+              "https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md",
           },
           {
-            text: 'Repo',
-            link: 'https://github.com/mister-hope/vuepress-theme-hope'
-          }
-        ]
-      }
-    ]
-  }
+            text: "Repo",
+            link: "https://github.com/mister-hope/vuepress-theme-hope",
+          },
+        ],
+      },
+    ],
+  },
 };
 ```

@@ -21,11 +21,11 @@ tags:
 module.exports = {
   themeConfig: {
     nav: [
-      { text: '主页', link: '/', icon: 'homefill' },
-      { text: 'Vuepress介绍', link: '/vuepress/', icon: 'infofill' },
-      { text: 'Markdown介绍', link: '/markdown/', icon: 'markdown' }
-    ]
-  }
+      { text: "主页", link: "/", icon: "homefill" },
+      { text: "Vuepress介绍", link: "/vuepress/", icon: "infofill" },
+      { text: "Markdown介绍", link: "/markdown/", icon: "markdown" },
+    ],
+  },
 };
 ```
 
@@ -36,15 +36,15 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: 'Languages',
-        ariaLabel: 'Language Menu',
+        text: "Languages",
+        ariaLabel: "Language Menu",
         items: [
-          { text: 'Chinese', link: '/language/chinese/' },
-          { text: 'Japanese', link: '/language/japanese/' }
-        ]
-      }
-    ]
-  }
+          { text: "Chinese", link: "/language/chinese/" },
+          { text: "Japanese", link: "/language/japanese/" },
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -55,24 +55,24 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: 'Languages',
+        text: "Languages",
         items: [
           {
-            text: 'Group1',
+            text: "Group1",
             items: [
               /*  */
-            ]
+            ],
           },
           {
-            text: 'Group2',
+            text: "Group2",
             items: [
               /*  */
-            ]
-          }
-        ]
-      }
-    ]
-  }
+            ],
+          },
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -84,16 +84,16 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: '基础',
-        icon: 'infofill',
-        prefix: '/basic/',
+        text: "基础",
+        icon: "infofill",
+        prefix: "/basic/",
         items: [
-          { text: 'Markdown', link: 'markdown', icon: 'markdown' },
-          { text: 'Vuepress', link: 'vuepress/', icon: 'vue' }
-        ]
-      }
-    ]
-  }
+          { text: "Markdown", link: "markdown", icon: "markdown" },
+          { text: "Vuepress", link: "vuepress/", icon: "vue" },
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -105,8 +105,8 @@ module.exports = {
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    navbar: false
-  }
+    navbar: false,
+  },
 };
 ```
 
@@ -116,6 +116,7 @@ module.exports = {
 ---
 navbar: false
 ---
+
 ```
 
 ### 导航栏图标
@@ -128,8 +129,8 @@ navbar: false
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    logo: '/logo.png'
-  }
+    logo: "/logo.png",
+  },
 };
 ```
 
@@ -143,8 +144,8 @@ module.exports = {
 module.exports = {
   themeConfig: {
     search: false,
-    searchMaxSuggestions: 10
-  }
+    searchMaxSuggestions: 10,
+  },
 };
 ```
 
@@ -154,6 +155,7 @@ module.exports = {
 ---
 search: false
 ---
+
 ```
 
 ::: tip
@@ -168,10 +170,10 @@ search: false
 module.exports = {
   themeConfig: {
     algolia: {
-      apiKey: '<API_KEY>',
-      indexName: '<INDEX_NAME>'
-    }
-  }
+      apiKey: "<API_KEY>",
+      indexName: "<INDEX_NAME>",
+    },
+  },
 };
 ```
 
@@ -188,8 +190,8 @@ module.exports = {
 ```js
 module.exports = {
   themeConfig: {
-    searchPlaceholder: 'Search...'
-  }
+    searchPlaceholder: "Search...",
+  },
 };
 ```
 
@@ -202,26 +204,26 @@ module.exports = {
 module.exports = {
   themeConfig: {
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
-    repo: 'vuejs/vuepress',
+    repo: "vuejs/vuepress",
     // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
     // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: '查看源码',
+    repoLabel: "查看源码",
     // 是否在导航栏右侧显示仓库链接，默认为 `true`
     repoDisplay: true,
 
     // 以下为可选的编辑链接选项
 
     // 假如你的文档仓库和项目本身不在一个仓库：
-    docsRepo: 'vuejs/vuepress',
+    docsRepo: "vuejs/vuepress",
     // 假如文档不是放在仓库的根目录下：
-    docsDir: 'docs',
+    docsDir: "docs",
     // 假如文档放在一个特定的分支下：
-    docsBranch: 'master',
+    docsBranch: "master",
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"
-    editLinkText: '帮助我们改善此页面！'
-  }
+    editLinkText: "帮助我们改善此页面！",
+  },
 };
 ```
 
@@ -231,6 +233,7 @@ module.exports = {
 ---
 editLink: false
 ---
+
 ```
 
 ## 主题色切换按钮
@@ -253,19 +256,19 @@ module.exports = {
   themeConfig: {
     nav: [
       // 可在每一项中添加 icon 字段来显示图标
-      { text: '主页', link: '/zh/', icon: 'homefill' },
-      { text: '指南', link: '/zh/guide/', icon: 'creativefill' },
-      { text: '配置', link: '/zh/config/', icon: 'code' },
+      { text: "主页", link: "/zh/", icon: "homefill" },
+      { text: "指南", link: "/zh/guide/", icon: "creativefill" },
+      { text: "配置", link: "/zh/config/", icon: "code" },
       {
-        text: '基础',
-        icon: 'infofill',
-        prefix: '/zh/basic/',
+        text: "基础",
+        icon: "infofill",
+        prefix: "/zh/basic/",
         items: [
-          { text: 'Markdown', link: 'markdown', icon: 'markdown' },
-          { text: 'Vuepress', link: 'vuepress/', icon: 'vue' }
-        ]
-      }
-    ]
-  }
+          { text: "Markdown", link: "markdown", icon: "markdown" },
+          { text: "Vuepress", link: "vuepress/", icon: "vue" },
+        ],
+      },
+    ],
+  },
 };
 ```

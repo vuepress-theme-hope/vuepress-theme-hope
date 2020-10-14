@@ -13,11 +13,14 @@ extends:
 ignorePatterns:
   - "**/dist/**"
   - "**/node_modules/**"
+
   - "packages/**/*.js"
   - "packages/**/*.d.ts"
+
   - "!packages/pwa/lib/skip-waiting.js"
   - "!packages/theme/src/lib/clientRootMixin.js"
   - "!packages/theme/src/lib/noopModule.js"
+
   - "!packages/**/test/**/*.js"
   - "!packages/**/types/**/*.d.ts"
   - "!.vuepress/**"

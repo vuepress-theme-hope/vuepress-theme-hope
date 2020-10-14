@@ -145,4 +145,5 @@
 @media (max-width $MQMobile)
   .timeline-wrapper
     margin 0 1.2rem
-</style>D
+</style>
+D

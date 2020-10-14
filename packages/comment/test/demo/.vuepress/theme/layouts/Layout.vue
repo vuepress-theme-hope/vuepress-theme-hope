@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import Home from '@parent-theme/components/Home.vue';
-import Navbar from '@parent-theme/components/Navbar.vue';
-import Page from '@theme/components/Page.vue';
-import Sidebar from '@parent-theme/components/Sidebar.vue';
-import { resolveSidebarItems } from '@parent-theme/util';
+import Home from "@parent-theme/components/Home.vue";
+import Navbar from "@parent-theme/components/Navbar.vue";
+import Page from "@theme/components/Page.vue";
+import Sidebar from "@parent-theme/components/Sidebar.vue";
+import { resolveSidebarItems } from "@parent-theme/util";
 
 export default {
   components: { Home, Page, Sidebar, Navbar },
@@ -40,11 +40,15 @@ export default {
       const { themeConfig } = this.$site;
       const { frontmatter } = this.$page;
 
-      if (frontmatter.navbar === false || themeConfig.navbar === false) return false;
+      if (frontmatter.navbar === false || themeConfig.navbar === false)
+        return false;
 
       return (
-        this.$title || themeConfig.logo || themeConfig.repo ||
-        themeConfig.nav || this.$themeLocaleConfig.nav
+        this.$title ||
+        themeConfig.logo ||
+        themeConfig.repo ||
+        themeConfig.nav ||
+        this.$themeLocaleConfig.nav
       );
     },
 
@@ -52,12 +56,19 @@ export default {
       const { frontmatter } = this.$page;
 
       return (
-        !frontmatter.home && frontmatter.sidebar !== false && this.sidebarItems.length
+        !frontmatter.home &&
+        frontmatter.sidebar !== false &&
+        this.sidebarItems.length
       );
     },
 
     sidebarItems() {
-      return resolveSidebarItems(this.$page, this.$page.regularPath, this.$site, this.$localePath);
+      return resolveSidebarItems(
+        this.$page,
+        this.$page.regularPath,
+        this.$site,
+        this.$localePath
+      );
     },
 
     pageClasses() {
@@ -65,13 +76,13 @@ export default {
 
       return [
         {
-          'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
+          "no-navbar": !this.shouldShowNavbar,
+          "sidebar-open": this.isSidebarOpen,
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -82,15 +93,15 @@ export default {
 
   methods: {
     toggleSidebar(to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen;
-      this.$emit('toggle-sidebar', this.isSidebarOpen);
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+      this.$emit("toggle-sidebar", this.isSidebarOpen);
     },
 
     // Side swipe
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -101,7 +112,7 @@ export default {
       if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40)
         if (dx > 0 && this.touchStart.x <= 80) this.toggleSidebar(true);
         else this.toggleSidebar(false);
-    }
-  }
+    },
+  },
 };
 </script>

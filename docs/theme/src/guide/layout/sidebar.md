@@ -14,8 +14,8 @@ To enable the sidebar, use `themeConfig.sidebar`. The basic configuration expect
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    sidebar: ['/', '/page-a', ['/page-b', 'Explicit link text']]
-  }
+    sidebar: ["/", "/page-a", ["/page-b", "Explicit link text"]],
+  },
 };
 ```
 
@@ -44,8 +44,8 @@ The sidebar only displays links for headers in the current active page. You can 
 ```js
 module.exports = {
   themeConfig: {
-    displayAllHeaders: true // Default: false
-  }
+    displayAllHeaders: true, // Default: false
+  },
 };
 ```
 
@@ -56,8 +56,8 @@ By default, the nested header links and the hash in the URL are updated as the u
 ```js
 module.exports = {
   themeConfig: {
-    activeHeaderLinks: false // Default: true
-  }
+    activeHeaderLinks: false, // Default: true
+  },
 };
 ```
 
@@ -71,20 +71,20 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
-        title: 'Group 1', // required
-        path: '/foo/', // optional, which should be a absolute path.
+        title: "Group 1", // required
+        path: "/foo/", // optional, which should be a absolute path.
         collapsable: false, // optional, defaults to true
         sidebarDepth: 2, // optional, defaults to 2
-        children: ['/']
+        children: ["/"],
       },
       {
-        title: 'Group 2',
+        title: "Group 2",
         children: [
           /* ... */
-        ]
-      }
-    ]
-  }
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -96,7 +96,7 @@ A sidebar group config also supports [sidebarDepth](#nested-header-links) field 
 
 To display different sidebars for different sections of content, first organize your pages into directories for each desired section:
 
-```md
+```
 .
 ├─ README.md
 ├─ contact.md
@@ -118,26 +118,26 @@ Then, update your configuration to define your sidebar for each section.
 module.exports = {
   themeConfig: {
     sidebar: {
-      '/foo/': [
-        '' /* /foo/ */,
-        'one' /* /foo/one.html */,
-        'two' /* /foo/two.html */
+      "/foo/": [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
       ],
 
-      '/bar/': [
-        '' /* /bar/ */,
-        'three' /* /bar/three.html */,
-        'four' /* /bar/four.html */
+      "/bar/": [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
       ],
 
       // fallback
-      '/': [
-        '' /* / */,
-        'contact' /* /contact.html */,
-        'about' /* /about.html */
-      ]
-    }
-  }
+      "/": [
+        "" /* / */,
+        "contact" /* /contact.html */,
+        "about" /* /about.html */,
+      ],
+    },
+  },
 };
 ```
 
@@ -153,6 +153,7 @@ To automatically generate a sidebar that contains only the header links for the 
 ---
 sidebar: auto
 ---
+
 ```
 
 You can also enable it in all pages by using config:
@@ -161,8 +162,8 @@ You can also enable it in all pages by using config:
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    sidebar: 'auto'
-  }
+    sidebar: "auto",
+  },
 };
 ```
 
@@ -172,10 +173,10 @@ In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.md) mode, you can a
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    '/': {
-      sidebar: 'auto'
-    }
-  }
+    "/": {
+      sidebar: "auto",
+    },
+  },
 };
 ```
 
@@ -187,6 +188,7 @@ You can disable the sidebar on a specific page with `YAML front matter`:
 ---
 sidebar: false
 ---
+
 ```
 
 ## Blogger Information
@@ -303,8 +305,8 @@ module.exports = {
       ],
 
       "/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
-    }
-  }
+    },
+  },
 };
 ```
 

@@ -25,7 +25,7 @@
 
 <script src="./BackToTop" />
 
-<style lang='stylus'>
+<style lang="stylus">
 .back-to-top
   cursor pointer
   position fixed

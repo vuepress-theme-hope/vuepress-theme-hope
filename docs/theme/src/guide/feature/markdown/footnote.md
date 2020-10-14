@@ -17,9 +17,9 @@ module.exports = {
   themeConfig: {
     markdown: {
       // Add Footnote support
-      footnote: true
-    }
-  }
+      footnote: true,
+    },
+  },
 };
 ```
 

@@ -17,6 +17,12 @@ You can use [vuepress-theme-hope template](https://github.com/Mister-Hope/vuepre
 npm i -D vuepress-theme-hope
 ```
 
+Or
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
 ### Usage
 
 ```js

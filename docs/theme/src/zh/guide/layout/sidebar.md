@@ -14,8 +14,8 @@ tags:
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    sidebar: ['/', '/page-a', ['/page-b', 'Explicit link text']]
-  }
+    sidebar: ["/", "/page-a", ["/page-b", "Explicit link text"]],
+  },
 };
 ```
 
@@ -44,8 +44,8 @@ sidebarDepth: 2
 ```js
 module.exports = {
   themeConfig: {
-    displayAllHeaders: true // 默认值：false
-  }
+    displayAllHeaders: true, // 默认值：false
+  },
 };
 ```
 
@@ -56,8 +56,8 @@ module.exports = {
 ```js
 module.exports = {
   themeConfig: {
-    activeHeaderLinks: false // 默认值：true
-  }
+    activeHeaderLinks: false, // 默认值：true
+  },
 };
 ```
 
@@ -71,20 +71,20 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
-        title: 'Group 1', // 必要的
-        path: '/foo/', // 可选的, 应该是一个绝对路径
+        title: "Group 1", // 必要的
+        path: "/foo/", // 可选的, 应该是一个绝对路径
         collapsable: false, // 可选的, 默认值是 true,
         sidebarDepth: 2, // 可选的, 默认值是 2
-        children: ['/']
+        children: ["/"],
       },
       {
-        title: 'Group 2',
+        title: "Group 2",
         children: [
           /* ... */
-        ]
-      }
-    ]
-  }
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -102,13 +102,13 @@ module.exports = {
 ├─ contact.md
 ├─ about.md
 ├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
+│ ├─ README.md
+│ ├─ one.md
+│ └─ two.md
 └─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
+├─ README.md
+├─ three.md
+└─ four.md
 ```
 
 接着，遵循以下的侧边栏配置：
@@ -118,26 +118,26 @@ module.exports = {
 module.exports = {
   themeConfig: {
     sidebar: {
-      '/foo/': [
-        '' /* /foo/ */,
-        'one' /* /foo/one.html */,
-        'two' /* /foo/two.html */
+      "/foo/": [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
       ],
 
-      '/bar/': [
-        '' /* /bar/ */,
-        'three' /* /bar/three.html */,
-        'four' /* /bar/four.html */
+      "/bar/": [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
       ],
 
       // fallback
-      '/': [
-        '' /* / */,
-        'contact' /* /contact.html */,
-        'about' /* /about.html */
-      ]
-    }
-  }
+      "/": [
+        "" /* / */,
+        "contact" /* /contact.html */,
+        "about" /* /about.html */,
+      ],
+    },
+  },
 };
 ```
 
@@ -162,8 +162,8 @@ sidebar: auto
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    sidebar: 'auto'
-  }
+    sidebar: "auto",
+  },
 };
 ```
 
@@ -173,10 +173,10 @@ module.exports = {
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    '/zh/': {
-      sidebar: 'auto'
-    }
-  }
+    "/zh/": {
+      sidebar: "auto",
+    },
+  },
 };
 ```
 
@@ -188,6 +188,7 @@ module.exports = {
 ---
 sidebar: false
 ---
+
 ```
 
 ## 博主信息
@@ -304,8 +305,8 @@ module.exports = {
       ],
 
       "/zh/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
-    }
-  }
+    },
+  },
 };
 ```
 
