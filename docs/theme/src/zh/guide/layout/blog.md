@@ -33,6 +33,7 @@ vuepress-theme-hope 允许你启用博客风格的首页。
 - `'Evernote'`: 印象笔记
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
+- `'Gitee'`: Gitee
 - `'Github'`: ~~Gayhub~~ Github
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)

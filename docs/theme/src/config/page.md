@@ -259,6 +259,7 @@ The optional values of `MediaType` are as follows:
 - `'Evernote'`: Evernote
 - `'Facebook'`: Facebook
 - `'Flipboard'`: Flipboard
+- `'Gitee'`: Gitee
 - `'Github'`: ~~ Gayhub ~~ Github
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: Google mailbox (of course you can also fill in your own other mailbox)

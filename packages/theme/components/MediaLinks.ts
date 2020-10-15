@@ -7,6 +7,7 @@ import Dribbble from "@mr-hope/vuepress-shared-utils/icons/media/Dribbble.vue";
 import Evernote from "@mr-hope/vuepress-shared-utils/icons/media/Evernote.vue";
 import Facebook from "@mr-hope/vuepress-shared-utils/icons/media/Facebook.vue";
 import Flipboard from "@mr-hope/vuepress-shared-utils/icons/media/Flipboard.vue";
+import Gitee from "@mr-hope/vuepress-shared-utils/icons/media/Gitee.vue";
 import Github from "@mr-hope/vuepress-shared-utils/icons/media/Github.vue";
 import Gitlab from "@mr-hope/vuepress-shared-utils/icons/media/Gitlab.vue";
 import Gmail from "@mr-hope/vuepress-shared-utils/icons/media/Gmail.vue";
@@ -38,6 +39,7 @@ const medias: BlogMedia[] = [
   "Evernote",
   "Facebook",
   "Flipboard",
+  "Gitee",
   "Github",
   "Gitlab",
   "Gmail",
@@ -74,6 +76,7 @@ interface MediaLink {
     Evernote,
     Facebook,
     Flipboard,
+    Gitee,
     Github,
     Gitlab,
     Gmail,

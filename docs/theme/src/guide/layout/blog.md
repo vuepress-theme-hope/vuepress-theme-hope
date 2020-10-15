@@ -33,6 +33,7 @@ You can also configure your social media links in the format of `<social media n
 - `'Evernote'`
 - `'Facebook'`
 - `'Flipboard'`
+- `'Gitee'`
 - `'Github'`
 - `'Gitlab'`
 - `'Gmail'`

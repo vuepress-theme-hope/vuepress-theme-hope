@@ -26,6 +26,7 @@ type BlogMedia =
   | "Evernote"
   | "Facebook"
   | "Flipboard"
+  | "Gitee"
   | "Github"
   | "Gitlab"
   | "Gmail"
