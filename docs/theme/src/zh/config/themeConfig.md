@@ -35,7 +35,7 @@ tags:
 ::: tip
 目前多语言仅适配了 **简体中文** (zh-CN) 与 **英文(美国)** (en-US)。
 
-如果你需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/src/i18n/config.ts)
+如果你需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts)
 :::
 
 ### author
