@@ -4,7 +4,6 @@
     class="nav-link"
     :class="{ active }"
     :to="link"
-    :exact="exact"
     @focusout="focusoutAction"
   >
     <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
