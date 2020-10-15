@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "components plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -26,8 +26,8 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^1.0.0",
-    "@mr-hope/vuepress-types": "^1.0.0",
+    "@mr-hope/vuepress-shared-utils": "^1.0.1",
+    "@mr-hope/vuepress-types": "^1.0.1",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "5.0.2",
