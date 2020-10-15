@@ -3,7 +3,7 @@
   <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
-<h4 align="center">A light vuepress theme✨ / 一个轻量的 vuepress 主题✨</h4>
+<h4 align="center">A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题✨</h4>
 
 [![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
 
