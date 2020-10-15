@@ -422,7 +422,7 @@ Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体�
 
 PWA 设置选项。
 
-> 默认请款下无需任何配置。
+> 默认情况下无需任何配置。
 >
 > 如果您不需要这个功能，请设置为 `false`。
 
@@ -441,7 +441,7 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 搜索引擎增强
 
-> 默认请款下无需任何配置。
+> 默认情况下无需任何配置。
 >
 > 如果您不需要这个功能，请设置为 `false`。
 
@@ -475,7 +475,7 @@ workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/wo
 
 Sitemap 生成配置
 
-> 默认请款下无需任何配置。
+> 默认情况下无需任何配置。
 >
 > 如果您不需要这个功能，请设置为 `false`。
 
