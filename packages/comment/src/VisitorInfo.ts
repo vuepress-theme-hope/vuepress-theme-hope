@@ -59,10 +59,11 @@ export default class VisitorInfo extends Vue {
       const count = countElement.textContent;
 
       if (count && !isNaN(Number(count))) this.count = Number(count);
-    } else
-      setTimeout(() => {
-        this.getCount();
-      }, 500);
+      else
+        setTimeout(() => {
+          this.getCount();
+        }, 500);
+    }
   }
 
   @Watch("$route")
