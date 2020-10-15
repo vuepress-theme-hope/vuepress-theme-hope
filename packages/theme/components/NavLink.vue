@@ -2,6 +2,7 @@
   <RouterLink
     v-if="isInternal"
     class="nav-link"
+    :class="{ active }"
     :to="link"
     :exact="exact"
     @focusout="focusoutAction"

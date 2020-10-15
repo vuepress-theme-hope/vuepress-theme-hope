@@ -43,7 +43,7 @@
     "@types/bcryptjs": "2.4.2",
     "@vuepress/plugin-blog": "^1.9.2",
     "bcryptjs": "^2.4.3",
-    "dayjs": "^1.9.1",
+    "dayjs": "^1.9.3",
     "docsearch.js": "^2.6.3",
     "vue-class-component": "^7.2.6",
     "vuepress-plugin-add-this": "^1.0.0-0",
@@ -61,6 +61,6 @@
   },
   "peerDependencies": {
     "typescript": "^4.0.3",
-    "vuepress": "^1.6.0"
+    "vuepress": "^1.7.0"
   }
 }

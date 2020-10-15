@@ -84,6 +84,8 @@ export interface DefaultThemeConfig {
   activeHeaderLinks?: boolean;
   /** 是否启用默认的搜索框 */
   search?: boolean;
+  /** 搜索框占位符 */
+  searchPlaceholder?: string;
   /** 默认搜索框显示的搜索结果数量 */
   searchMaxSuggestions?: number;
   /** Algolia 搜索配置 */

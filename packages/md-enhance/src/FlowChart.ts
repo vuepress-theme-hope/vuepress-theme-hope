@@ -2,13 +2,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import Loading from "@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue";
 import debounce from "lodash.debounce";
 import presets from "./presets";
+import * as Flowchart from "flowchart.js";
 
-interface Parse {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  drawSVG: (id: string, options: any) => void;
-}
-
-let svg: Parse;
+let svg: Flowchart.Instance;
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { Loading } })

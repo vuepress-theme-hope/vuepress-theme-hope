@@ -17,13 +17,8 @@ export default class NavLink extends Vue {
     return iconPrefix === "" ? "" : iconPrefix || "icon-";
   }
 
-  private get exact(): boolean {
-    if (this.$site.locales)
-      return Object.keys(this.$site.locales).some(
-        (rootLink) => rootLink === this.link
-      );
-
-    return this.link === "/";
+  private get active(): boolean {
+    return this.link === this.$route.path;
   }
 
   private get isNonHttpURI(): boolean {
