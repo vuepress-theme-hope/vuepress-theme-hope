@@ -120,4 +120,7 @@ export interface DefaultThemeConfig {
   editLinks?: boolean;
   /** 编辑本页文字 */
   editLinkText?: string;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [prop: string]: any;
 }

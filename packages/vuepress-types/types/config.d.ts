@@ -98,7 +98,7 @@ export interface I18nConfig extends Record<string, any> {
 
 export type LocaleConfig = Record<string, I18nConfig>;
 
-export type HeadItem = [string, Record<string, string>];
+export type HeadItem = [string, Record<string, string>, string?];
 
 interface BaseSiteConfig {
   /** 部署站点的基础路径 */
