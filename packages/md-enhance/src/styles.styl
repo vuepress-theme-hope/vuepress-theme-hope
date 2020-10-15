@@ -41,6 +41,9 @@
       left -16px
       box-sizing border-box
 
+      .theme-dark &
+        content url('~vuepress-plugin-md-enhance/src/icon/info-dark.svg')
+
   &.tip
     border-color #42b983
     background-color #f8f8f8
@@ -49,10 +52,13 @@
       color darken(#42b983, 20%)
 
     &::before
-      content url('~vuepress-plugin-md-enhance/src/icon/bulb.svg')
+      content url('~vuepress-plugin-md-enhance/src/icon/tip.svg')
       width 25px
       height 25px
       left -16px
+
+      .theme-dark &
+        content url('~vuepress-plugin-md-enhance/src/icon/tip-dark.svg')
 
   &.warning
     border-color #f4cd00
@@ -62,11 +68,14 @@
       color darken(#f4cd00, 20%)
 
     &::before
-      content url('~vuepress-plugin-md-enhance/src/icon/danger.svg')
+      content url('~vuepress-plugin-md-enhance/src/icon/warning.svg')
       width 25px
       height 25px
       left -16px
       box-sizing border-box
+
+      .theme-dark &
+        content url('~vuepress-plugin-md-enhance/src/icon/warning-dark.svg')
 
   &.danger
     border-color #f55
@@ -76,10 +85,13 @@
       color #a33
 
     &::before
-      content url('~vuepress-plugin-md-enhance/src/icon/stop.svg')
+      content url('~vuepress-plugin-md-enhance/src/icon/danger.svg')
       width 25px
       height 25px
       left -16px
+
+      .theme-dark &
+        content url('~vuepress-plugin-md-enhance/src/icon/danger-dark.svg')
 
   &.details
     display block
