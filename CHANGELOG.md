@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.0.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-0...v1.0.0) (2020-10-15)
+
+### Bug Fixes
+
+- **theme:** update heading styles ([19986f8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/19986f817bf4a12b91fef3f5911b8a3cbe208737))
+- **add-this:** try to fix add this problems ([eb5c920](https://github.com/Mister-Hope/vuepress-theme-hope/commit/eb5c9202e80b123ce8a03f8d0de646506b6faf6d))
+- **seo:** erro link when hostname ends with `/` ([9bbf122](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9bbf122037ac36ba368ecc65426be96ec70f153d))
+- **theme:** fix missing margin on Home page ([d42a018](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d42a018d4d267ae351d243d54363c4de8c5153ec))
+
+### Features
+
+- **copy-code:** add darkmode support ([24bee55](https://github.com/Mister-Hope/vuepress-theme-hope/commit/24bee55c88ddc869c9fa89ef3179336624dabad1))
+- **theme:** move resolve function to entrance and rename to config ([a4b958d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a4b958d772ee0d5e814ccb2bd2d95b824d34991d))
+- **theme:** rename copyright to copyrightText ([91ba436](https://github.com/Mister-Hope/vuepress-theme-hope/commit/91ba43689f56ebee9f61dd564d91914dd5c98f37))
+- add copy-code plugin ([6ba7962](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6ba796245723f415e36cb516954b451fecee338c))
+- change baseLang default to 'en-US' ([4baea15](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4baea15432b93b08380350953b3b2db597145e6a))
+- rebuild plugin i18n ([9cdf643](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9cdf64327097eedb65bbb93810c50502fe60f427))
+- **theme:** update Home ([89862ab](https://github.com/Mister-Hope/vuepress-theme-hope/commit/89862ab3c57710c39af0ba1d0ec67ed63dce5820))
+
+### BREAKING CHANGES
+
+- **theme:** Use `const { config } = require('vuepress-theme-hope')` instead of `const resolve = require('vuepress-theme-hope/resolve')`
+- change baseLang default to 'en-US'
+
 ## [1.0.0-0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.8.0...v1.0.0-0) (2020-10-13)
 
 ### Bug Fixes
