@@ -2,7 +2,7 @@
 export default {
   base: process.env.VuePress_BASE || "/",
 
-  temp: "node_modules/.temp",
+  temp: "./node_modules/.temp",
 
   theme: "hope",
 

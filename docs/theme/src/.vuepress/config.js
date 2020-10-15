@@ -18,7 +18,6 @@ module.exports = config({
     },
   },
 
-  temp: "./node_modules/.temp",
   dest: "./dist",
 
   extraWatchFiles: [".vuepress/navBar.js", ".vuepress/sideBar.js"],

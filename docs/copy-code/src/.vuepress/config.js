@@ -16,7 +16,6 @@ module.exports = config({
     },
   },
 
-  temp: "./node_modules/.temp",
   dest: "./dist",
 
   locales: {
