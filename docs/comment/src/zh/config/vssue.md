@@ -20,7 +20,7 @@ icon: vssue
 - **类型**: `string`
 - **详细**:
 
-  用来存储 Issue 和评论的仓库的拥有者的名称。可能是一个用户，也可能是一个组织（**Github Organization** / **Gitlab Group** / **Bitbucket Team**）
+  用来存储 Issue 和评论的仓库的拥有者的名称。可能是一个用户，也可能是一个组织 (**Github Organization** / **Gitlab Group** / **Bitbucket Team**)
 
   Vssue 将通过 `owner` 和 `repo` 在平台上定位这个仓库。
 
@@ -74,9 +74,9 @@ icon: vssue
   在和某些平台一起使用时， Vssue 将使用 `clientId` 和 `clientSecret` 来获取用户的 access token。
 
   ::: tip
-  一些平台（如 Bitbucket 和 GitLab）支持 [Implicit Grant](https://tools.ietf.org/html/rfc6749#section-4.2)，所以在使用这些平台时不需要 `clientSecret`。
+  一些平台 (如 Bitbucket 和 GitLab) 支持 [Implicit Grant](https://tools.ietf.org/html/rfc6749#section-4.2)，所以在使用这些平台时不需要 `clientSecret`。
 
-  然而，有一些平台（如 GitHub 和 Gitee）不支持它，所以在使用这些平台时 `clientSecret` 是必须的。
+  然而，有一些平台 (如 GitHub 和 Gitee) 不支持它，所以在使用这些平台时 `clientSecret` 是必须的。
   :::
 
 - **参考**:
@@ -87,7 +87,7 @@ icon: vssue
 ## baseURL
 
 - **类型**: `string`
-- **默认值**: `undefined` （根据不同平台变化）
+- **默认值**: `undefined` (根据不同平台变化)
 - **详细**:
 
   平台的 base URL。
@@ -100,7 +100,7 @@ icon: vssue
   - Gitee 是`'https://gitee.com'`
 
   ::: warning 注意
-  只有在你要使用 **自行搭建的** 平台时才需要设置这个选项。（比如 **GitLab Community / Enterprise Edition** 或 **GitHub Enterprise Server**）
+  只有在你要使用 **自行搭建的** 平台时才需要设置这个选项。 (比如 **GitLab Community / Enterprise Edition** 或 **GitHub Enterprise Server**)
   :::
 
 - **参考**:
@@ -125,7 +125,7 @@ icon: vssue
 - **默认值**: `['Vssue']`
 - **详细**:
 
-  用来设置 Vssue 使用的 Issue 的 labels （标签）。
+  用来设置 Vssue 使用的 Issue 的 labels (标签) 。
 
   Vssue 只会请求拥有对应标签的 Issue，忽略其他的 Issue。Vssue 通过 `title` 和 `labels` 来确定用来存储评论的对应 Issue。传入多个字符串可以设置多个标签，只有同时满足这些标签的 Issue 才会被 Vssue 请求。
 
@@ -207,9 +207,9 @@ icon: vssue
 - **默认值**: `` url => `https://cors-anywhere.herokuapp.com/${url}` ``
 - **详细**:
 
-  某些平台（如 GitHub 和 Gitee）不支持 Implicit Grant，所以我们必须通过请求平台的 API 来获取 Access Token。
+  某些平台 (如 GitHub 和 Gitee) 不支持 Implicit Grant，所以我们必须通过请求平台的 API 来获取 Access Token。
 
-  然而，平台的 Access Token API 不支持 CORS （详见 [GitHub 的相关 Issue](https://github.com/isaacs/github/issues/330)）。由于 Vssue 是一个纯前端插件，我们必须要通过代理来请求 Access Token。
+  然而，平台的 Access Token API 不支持 CORS (详见 [GitHub 的相关 Issue](https://github.com/isaacs/github/issues/330)) 。由于 Vssue 是一个纯前端插件，我们必须要通过代理来请求 Access Token。
 
   默认情况下，我们使用一个开源的 CORS 代理服务 [cors-anywhere](https://github.com/Rob--W/cors-anywhere)。
 

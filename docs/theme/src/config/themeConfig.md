@@ -351,7 +351,7 @@ Whether to enable flowchart syntax support
 
 ## Comment settings
 
-For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation](https://vuepress-comment.mrhope.site/config/)
+For specific configuration, see [@mr-hope/vuepress-plugin-comment documentation][comment-config]
 
 > You can set it to `false` to disable the comment function
 
@@ -556,19 +556,19 @@ The encryption configuration is an object with a key name matching the path and 
 
 pubid for AddThis
 
-> For details see [AddThis Plugin](https://vuepress-add-this.mrhope.site)
+> For details see [AddThis Plugin][add-this]
 
 ## copycode
 
 Options for copy code plugin, set to `false` to disable this plugin.
 
-> By default no more configuration is needed, and for details see [Copy Code Plugin Config](https://vuepress-copy-code.mrhope.site)
+> By default no more configuration is needed, and for details see [Copy Code Plugin Config][copy-code]
 
 ## photoswipe
 
 Options for photo preview plugin, set to `false` to disable this plugin.
 
-> By default no more configuration is needed, and for details see [PhotoSwipe Plugin Config](https://vuepress-photo-swipe.mrhope.site)
+> By default no more configuration is needed, and for details see [PhotoSwipe Plugin Config][photo-swipe-config]
 
 ## Other configuration options
 
@@ -652,3 +652,8 @@ Whether to show the "full screen" button
 Time conversion function, by default, will use dayjs to automatically localize according to the current page language.
 
 Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`
+
+[add-this]: https://vuepress-add-this.mrhope.site
+[comment-config]: https://vuepress-comment.mrhope.site/config/
+[copy-code]: https://vuepress-copy-code.mrhope.site
+[photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/conffig/

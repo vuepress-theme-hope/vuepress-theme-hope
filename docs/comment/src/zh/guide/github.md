@@ -19,7 +19,7 @@ icon: github
 ->![配置 OAuth App - Github 02](/img/oauth-app-github-02.png)<-
 ->![配置 OAuth App - Github 03](/img/oauth-app-github-03.png)<-
 
-- 将 `Homepage URL` 和 `Authorization callback URL` 设置为你的网站 URL （这里我们用 `localhost:8080` 作为示例）
+- 将 `Homepage URL` 和 `Authorization callback URL` 设置为你的网站 URL (这里我们用 `localhost:8080` 作为示例)
 
 ->![配置 OAuth App - Github 04](/img/oauth-app-github-04.png)<-
 

@@ -112,7 +112,7 @@ You can go to the repo [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue
 
 ### Custom Style Variables
 
-With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the [Variables of Vssue Style](./styles.md#use-variables-to-customize-vssue) easily.
+With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the Variables of Vssue Style easily.
 
 There are some pre-defined [stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
 

@@ -13,7 +13,7 @@ icon: bitbucket
 ->![配置 OAuth App - Bitbucket 02](/img/oauth-app-bitbucket-02.png)<-
 ->![配置 OAuth App - Bitbucket 03](/img/oauth-app-bitbucket-03.png)<-
 
-- 将 `Callback URL` 设置为你的网站 URL（这里我们用 `localhost:8080` 作为示例）
+- 将 `Callback URL` 设置为你的网站 URL (这里我们用 `localhost:8080` 作为示例)
 - 取消选择 `This is a private consumer`
 - 勾选 `Account - Read` 和 `Issues - Write` 权限
 

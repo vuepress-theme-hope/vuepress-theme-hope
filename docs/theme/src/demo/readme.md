@@ -10,54 +10,65 @@ category: demo
 
 ## vuepress-theme-hope
 
-- [Link](https://vuepress-theme.mrhope.site)
+- [Link][vuepress-theme-hope]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/theme)
 
 ## @mr-hope/vuepress-plugin-comment
 
-- [Link](https://vuepress-comment.mrhope.site)
+- [Link][comment]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/comment)
 
 ## @mr-hope/vuepress-plugin-copy-code
 
-- [Link](https://vuepress-copy-code.mrhope.site)
+- [Link][copy-code]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/copy-code)
 
 ## @mr-hope/vuepress-plugin-last-update
 
-- [Link](https://vuepress-last-update.mrhope.site)
+- [Link][last-update]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/last-update)
 
 ## @mr-hope/vuepress-plugin-reading-time
 
-- [Link](https://vuepress-reading-time.mrhope.site)
+- [Link][reading-time]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/reading-time)
 
 ## @mr-hope/vuepress-plugin-seo
 
-- [Link](https://vuepress-seo.mrhope.site)
+- [Link][seo]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/seo)
 
 ## @mr-hope/vuepress-plugin-sitemap
 
-- [Link](https://vuepress-sitemap.mrhope.site)
+- [Link][sitemap]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/sitemap)
 
 ## vuepress-plugin-add-this
 
-- [Link](https://vuepress-add-this.mrhope.site)
+- [Link][add-this]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/add-this)
 
 ## vuepress-plugin-md-enhance
 
-- [Link](https://vuepress-md-enhance.mrhope.site)
+- [Link][md-enhance]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/md-enhance)
 
 ## vuepress-plugin-photo-swipe
 
-- [Link](https://vuepress-photo-swipe.mrhope.site)
+- [Link][photo-swipe]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/photo-swipe)
 
 ## More
 
 - Feel free to add yours
+
+[vuepress-theme-hope]: https://vuepress-theme.mrhope.site
+[add-this]: https://vuepress-add-this.mrhope.site
+[comment]: https://vuepress-comment.mrhope.site
+[copy-code]: https://vuepress-copy-code.mrhope.site
+[last-update]: https://vuepress-last-update.mrhope.site
+[md-enhance]: https://vuepress-md-enhance.mrhope.site
+[photo-swipe]: https://vuepress-photo-swipe.mrhope.site
+[reading-time]: https://vuepress-reading-time.mrhope.site
+[seo]: https://vuepress-seo.mrhope.site
+[sitemap]: https://vuepress-sitemap.mrhope.site

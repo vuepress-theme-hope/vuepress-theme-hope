@@ -16,7 +16,7 @@ icon: gitee
 ->![配置 OAuth App - Gitee 01](/img/oauth-app-gitee-01.png)<-
 ->![配置 OAuth App - Gitee 02](/img/oauth-app-gitee-02.png)<-
 
-- 将 `应用主页` 和 `应用回调地址` 设置为你的网站 URL （这里我们用 `localhost:8080` 作为示例）
+- 将 `应用主页` 和 `应用回调地址` 设置为你的网站 URL (这里我们用 `localhost:8080` 作为示例)
 - 权限选择 `issues` 和 `notes`
 
 ->![配置 OAuth App - Gitee 03](/img/oauth-app-gitee-03.png)<-

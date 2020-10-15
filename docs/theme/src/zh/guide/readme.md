@@ -102,24 +102,34 @@ tags: intro
 
 本主题还包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
-- [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site/zh/): 评论与文章信息功能
+- [@mr-hope/vuepress-plugin-comment][comment]: 评论与文章信息功能
 
 - [@mr-hope/vuepress-plugin-component](feature/component.md): 提供一些开箱即用的插件
 
-- [@mr-hope/vuepress-plugin-copy-code](https://vuepress-copy-code.mrhope.site/zh/): 提供一键复制代码块功能。
+- [@mr-hope/vuepress-plugin-copy-code][copy-code]: 提供一键复制代码块功能。
 
-- [@mr-hope/vuepress-plugin-last-update](https://vuepress-last-update.mrhope.site/zh/): 支持多语言格式的最后更新时间
+- [@mr-hope/vuepress-plugin-last-update][last-update]: 支持多语言格式的最后更新时间
 
 - [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA 支持
 
-- [@mr-hope/vuepress-plugin-reading-time](https://vuepress-reading-time.mrhope.site/zh/): 阅读时间与字数统计
+- [@mr-hope/vuepress-plugin-reading-time][reading-time]: 阅读时间与字数统计
 
-- [@mr-hope/vuepress-plugin-seo](https://vuepress-seo.mrhope.site/zh/): SEO 增强插件
+- [@mr-hope/vuepress-plugin-seo][seo]: SEO 增强插件
 
-- [@mr-hope/vuepress-plugin-sitemap](https://vuepress-sitemap.mrhope.site/zh/): 为你的站点生成 sitemap
+- [@mr-hope/vuepress-plugin-sitemap][sitemap]: 为你的站点生成 sitemap
 
-- [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site/zh/): 让网站支持社交分享与关注
+- [vuepress-plugin-add-this][add-this]: 让网站支持社交分享与关注
 
-- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site/zh/): 提供更多 Markdown 语法
+- [vuepress-plugin-md-enhance][md-enhance]: 提供更多 Markdown 语法
 
-- [vuepress-plugin-photo-swipe](https://vuepress-photo-swipe.mrhope.site/zh/): 使网站的图片支持缩放与滑动浏览
+- [vuepress-plugin-photo-swipe][photo-swipe]: 使网站的图片支持缩放与滑动浏览
+
+[add-this]: https://vuepress-add-this.mrhope.site/zh/
+[comment]: https://vuepress-comment.mrhope.site/zh/
+[copy-code]: https://vuepress-copy-code.mrhope.site/zh/
+[last-update]: https://vuepress-last-update.mrhope.site/zh/
+[md-enhance]: https://vuepress-md-enhance.mrhope.site/zh/
+[photo-swipe]: https://vuepress-photo-swipe.mrhope.site/zh/
+[reading-time]: https://vuepress-reading-time.mrhope.site/zh/
+[seo]: https://vuepress-seo.mrhope.site/zh/
+[sitemap]: https://vuepress-sitemap.mrhope.site/zh/

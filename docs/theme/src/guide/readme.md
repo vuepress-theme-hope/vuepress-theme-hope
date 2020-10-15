@@ -53,7 +53,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - [Back to top button](feature/component.md#back-to-top-button-backtotop)
 
-- [One-click copy code](https://vuepress-copy-code.mrhope.site)
+- [One-click copy code][copy-code]
 
 - Add copyright information when copying
 
@@ -87,7 +87,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - [New blog homepage layout](layout/blog.md)
 
-- [Social follow button and page social sharing](https://vuepress-add-this.mrhope.site)
+- [Social follow button and page social sharing][add-this]
 
 - [Article display](feature/blog.md)
 
@@ -100,24 +100,34 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 The theme also includes the following plugins, you can use them in other themes or directly.
 
-- [@mr-hope/vuepress-plugin-comment](https://vuepress-comment.mrhope.site): Comment and page info feature
+- [@mr-hope/vuepress-plugin-comment][comment]: Comment and page info feature
 
 - [@mr-hope/vuepress-plugin-component](feature/component.md): Provide some out of box plugins
 
-- [@mr-hope/vuepress-plugin-copy-code](https://vuepress-copy-code.mrhope.site): Provide copy button for code blocks
+- [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
 
-- [@mr-hope/vuepress-plugin-last-update](https://vuepress-last-update.mrhope.site): Last update time
+- [@mr-hope/vuepress-plugin-last-update][last-update]: Last update time
 
 - [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA support
 
-- [@mr-hope/vuepress-plugin-reading-time](https://vuepress-reading-time.mrhope.site): Expect reading time and words count
+- [@mr-hope/vuepress-plugin-reading-time][reading-time]: Expect reading time and words count
 
-- [@mr-hope/vuepress-plugin-seo](https://vuepress-seo.mrhope.site): SEO Enhancement Plugin
+- [@mr-hope/vuepress-plugin-seo][seo]: SEO Enhancement Plugin
 
-- [@mr-hope/vuepress-plugin-sitemap](https://vuepress-sitemap.mrhope.site): Sitemap Generator for your site
+- [@mr-hope/vuepress-plugin-sitemap][sitemap]: Sitemap Generator for your site
 
-- [vuepress-plugin-add-this](https://vuepress-add-this.mrhope.site): Provide sociel share and follow function
+- [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function
 
-- [vuepress-plugin-md-enhance](https://vuepress-md-enhance.mrhope.site): Provide more Markdown syntax
+- [vuepress-plugin-md-enhance][md-enhance]): Provide more Markdown syntax
 
-- [vuepress-plugin-photo-swipe](https://vuepress-photo-swipe.mrhope.site): Make the site's picture support click zoom
+- [vuepress-plugin-photo-swipe][photo-swipe]: Make the site's picture support click zoom
+
+[add-this]: https://vuepress-add-this.mrhope.site
+[comment]: https://vuepress-comment.mrhope.site
+[copy-code]: https://vuepress-copy-code.mrhope.site
+[last-update]: https://vuepress-last-update.mrhope.site
+[md-enhance]: https://vuepress-md-enhance.mrhope.site
+[photo-swipe]: https://vuepress-photo-swipe.mrhope.site
+[reading-time]: https://vuepress-reading-time.mrhope.site
+[seo]: https://vuepress-seo.mrhope.site
+[sitemap]: https://vuepress-sitemap.mrhope.site

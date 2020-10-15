@@ -35,7 +35,7 @@ module.exports = {
 
 目前可用的预设：
 
-- `vue`（默认）
+- `vue` (默认)
 - `ant`
 
 ## 演示

@@ -14,7 +14,7 @@ icon: gitlab
 ->![配置 OAuth App - Gitlab 01](/img/oauth-app-gitlab-01.png)<-
 ->![配置 OAuth App - Gitlab 02](/img/oauth-app-gitlab-02.png)<-
 
-- 将 `Redirect URI` 设置为你的网站 URL（这里我们用 `localhost:8080` 作为示例）
+- 将 `Redirect URI` 设置为你的网站 URL (这里我们用 `localhost:8080` 作为示例)
 - 勾选 `api` scope
 
 ->![配置 OAuth App - Gitlab 03](/img/oauth-app-gitlab-03.png)<-

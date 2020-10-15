@@ -46,10 +46,10 @@ category: basic
 
 ## Text
 
-This sentence has **bold**、*italic*和~~delete~~ style text.
+This sentence has **bold**、_italic_ and ~~delete~~ style text.
 
 ```md
-This sentence has **bold**、*italic*和~~delete~~ style text.
+This sentence has **bold**、_italic_ and ~~delete~~ style text.
 ```
 
 ## Paragraph

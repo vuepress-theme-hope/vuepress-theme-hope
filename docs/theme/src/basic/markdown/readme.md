@@ -17,46 +17,46 @@ In addition, because we have a god-level editor like RStudio, we can quickly tur
 
 ## ShortCut Key
 
-| Display       | Code       | ShortCut Key |
-| ------------- | ---------- | ------------ |
-| **Bold**      | `**text**` | Ctrl/⌘ + B   |
-| _Emphasize_   | `*text*`   | Ctrl/⌘ + I   |
-| `Inline Code` | \`code\`   | 选中后"\`"   |
+| Display       | Code       | ShortCut Key   |
+| ------------- | ---------- | -------------- |
+| **Bold**      | `**text**` | Ctrl/⌘ + B     |
+| _Emphasize_   | `*text*`   | Ctrl/⌘ + I     |
+| `Inline Code` | \`code\`   | 选中后 `` ` `` |
 
 ## Title
 
 The title shows the structure of the article. Insert 1-6 # at the beginning of the line, each adding a # indicates a more in-depth content, corresponding to the depth of the title by 1-6.
 
-- H1 :`# Header 1`
-- H2 :`## Header 2`
-- H3 :`### Header 3`
-- H4 :`#### Header 4`
-- H5 :`##### Header 5`
-- H6 :`###### Header 6`
+- H1: `# Header 1`
+- H2: `## Header 2`
+- H3: `### Header 3`
+- H4: `#### Header 4`
+- H5: `##### Header 5`
+- H6: `###### Header 6`
 
 ## Text Style
 
-- Link :`[Title](URL)`
-- Bold :`**Bold**`
+- Link: `[Title](URL)`
+- Bold: `**Bold**`
 - Italic:`*Italics*`
 - Delete:`~~Italics~~`
-- Paragraph : Space one link
-- Line break : enter two space at the end of the line
-- List : add `-` to become a list item
-- Blockquote : `> Blockquote Content`
-- HR : Enter `---` in a single line
+- Paragraph: Space one link
+- Line break: enter two space at the end of the line
+- List: add `-` to become a list item
+- Blockquote: `> Blockquote Content`
+- HR: Enter `---` in a single line
 
 ## Link
 
 `[Title](URL)`
 
-e.g:`[Baidu](https://baidu.com)`
+e.g: `[Baidu](https://baidu.com)`
 
 ## Image
 
 `![Alt](ImageLink)` 。
 
-e.g:`![This is a title](/img/title.jpg)`.
+e.g: `![This is a title](/img/title.jpg)`.
 
 ## Tables
 
@@ -70,7 +70,7 @@ e.g:`![This is a title](/img/title.jpg)`.
 
 `:emoji name:`
 
-eg:`:smile:`
+eg: `:smile:`
 
 ## Markdown Display
 

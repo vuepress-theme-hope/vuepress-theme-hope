@@ -15,7 +15,7 @@ Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 - `owner`: 对应 repository 的拥有者帐号或者团队
 - `repo`: 用来存储评论的 repository
 - `clientId`: OAuth App 的 `client id`
-- `clientSecret`: OAuth App 的 `client secret` （只有在使用某些平台时需要）
+- `clientSecret`: OAuth App 的 `client secret` (只有在使用某些平台时需要)
 
 ## Vssue 配置
 
@@ -78,10 +78,10 @@ Vssue 样式中预定义了一些 [Stylus 变量](http://stylus-lang.com/docs/va
 // 主题颜色
 $vssue-theme-color
 
-// 文字颜色 （用于普通文字）
+// 文字颜色  (用于普通文字)
 $vssue-text-color
 
-// 浅色文字颜色 （用于备注等文字）
+// 浅色文字颜色  (用于备注等文字)
 $vssue-text-light-color
 
 // 边框颜色
@@ -99,11 +99,11 @@ $vssue-font-family
 // 切换为移动端模式的屏幕宽度
 $vssue-breakpoint-mobile
 
-// 文字方向 (ltr / rtl) （为 RTL 语言使用，如希伯来语等）
+// 文字方向 (ltr / rtl)  (为 RTL 语言使用，如希伯来语等)
 $vssue-direction
 ```
 
-举例来说，Vssue 默认使用一个“Vue 绿色”（`#3eaf7c`）作为主题颜色，并将其设置为 `$vssue-theme-color` 的默认值。你可以在引入 `vssue/src/styles/index.styl` 之前设置 `$vssue-theme-color` 的值来改变主题颜色。
+举例来说，Vssue 默认使用一个“Vue 绿色” (`#3eaf7c`) 作为主题颜色，并将其设置为 `$vssue-theme-color` 的默认值。你可以在引入 `vssue/src/styles/index.styl` 之前设置 `$vssue-theme-color` 的值来改变主题颜色。
 
 默认情况下，下面这些 Vssue 的样式变量与 VuePress 的样式变量相等：
 
@@ -128,7 +128,7 @@ $vssue-theme-color = red
 
 ## 不想使用 Vssue 插件
 
-Vssue 是适配 SSR 的，所以你可以不使用 `@vssue/vuepress-plugin-vssue`，而是像其他 Vue 插件 / 组件一样，在 VuePress 中直接引入 Vssue（尤其是在你对 Vssue 的样式进行了自定义的时候）。
+Vssue 是适配 SSR 的，所以你可以不使用 `@vssue/vuepress-plugin-vssue`，而是像其他 Vue 插件 / 组件一样，在 VuePress 中直接引入 Vssue (尤其是在你对 Vssue 的样式进行了自定义的时候) 。
 
 但是我们仍然建议你在 VuePress 中通过 `@vssue/vuepress-plugin-vssue` 来使用 Vssue，该插件已经帮助你仅在客户端加载 Vssue 来避免一些潜在的问题。
 
