@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.0.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0...v1.0.1) (2020-10-15)
+
+### Bug Fixes
+
+- **comment:** fix visitor icon issue ([3a4f5d7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3a4f5d7c111ea49f639efa18a699d83875931b8d))
+- **theme:** fix NavLink issue ([8c44f53](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8c44f5308e6fcd45ac281a1f1e2243f71a7a3328))
+- fix wrong i18n config link ([793faf9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/793faf9b8ccba7c89dc9d425a4a3866b274185b8))
+- **vuepress-types:** fix type issues ([230d084](https://github.com/Mister-Hope/vuepress-theme-hope/commit/230d084ef2d6276c7c1d0a4c296e253dfd4f922d))
+
+### Features
+
+- **md-enhance:** icons support darkmode ([46d139d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/46d139d4aed0e0280d980d62e50e337cec1a5f06))
+- **md-enhance:** update danger title color ([2ba1018](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2ba10188b9f3df968f8ab6bb0fca7a1895da96bb))
+- **theme:** add Gitee for MediaLink ([6080b11](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6080b11f74541202af5c40ce62f1b7855d90e5ab))
+
 ## [1.0.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-0...v1.0.0) (2020-10-15)
 
 ### Bug Fixes
