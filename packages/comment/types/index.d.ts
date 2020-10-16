@@ -71,6 +71,7 @@ interface BaseCommentOptions {
 }
 
 export interface ValineOptions extends BaseCommentOptions {
+  type: "valine";
   /**
    * 填入 LeanCloud 中应用的 APP ID
    *
@@ -172,6 +173,7 @@ export interface ValineOptions extends BaseCommentOptions {
 
 /** Vssue 配置 */
 export interface VssueOptions extends BaseCommentOptions {
+  type: "vssue";
   /**
    * 平台 API 包
    *
@@ -281,12 +283,20 @@ export interface VssueOptions extends BaseCommentOptions {
   autoCreateIssue?: false;
 }
 
+export interface DisableCommentOptions extends BaseCommentOptions {
+  type: "disable";
+  comment: never;
+}
+
 /**
  * 评论选项
  *
  * Comment options
  */
-export type CommentOptions = ValineOptions | VssueOptions;
+export type CommentOptions =
+  | ValineOptions
+  | VssueOptions
+  | DisableCommentOptions;
 
 declare global {
   const COMMENT_OPTIONS: CommentOptions;
