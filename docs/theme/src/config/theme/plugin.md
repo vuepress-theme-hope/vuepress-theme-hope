@@ -16,67 +16,67 @@ All the config key name is the camelCase version of plugin name.
 E.g.: `@mr-hope/vuepress-copy-code` 's config keyname will be `copyCode`.
 :::
 
-## mdEhance
+## mdEnhance
 
 Markdown Enhance config, for details see [vuepress-plugin-md-enhance documentation][md-enhance-config]
 
-### mdEhance.enableAll
+### mdEnhance.enableAll
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable all features
 
-### mdEhance.lineNumbers <MyBadge text="Default value changed" type = "error" />
+### mdEnhance.lineNumbers <MyBadge text="Default value changed" type = "error" />
 
 - Type: `boolean`
 - Default: `true`
 
 Whether to show line numbers to the left of each code block
 
-### mdEhance.align
+### mdEnhance.align
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable align support
 
-### mdEhance.sup
+### mdEnhance.sup
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable superscript format support
 
-### mdEhance.sub
+### mdEnhance.sub
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable subscript format support
 
-### mdEhance.footnote
+### mdEnhance.footnote
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable footnote format support
 
-### mdEhance.mark
+### mdEnhance.mark
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable mark format support
 
-### mdEhance.tex
+### mdEnhance.tex
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable TeX syntax support
 
-### mdEhance.flowchart
+### mdEnhance.flowchart
 
 - Type: `boolean`
 - Default: `false`

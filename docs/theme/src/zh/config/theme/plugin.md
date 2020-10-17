@@ -16,67 +16,67 @@ tags:
 例如: `@mr-hope/vuepress-copy-code` 的配置键名为 `copyCode`。
 :::
 
-## mdEhance
+## mdEnhance
 
 Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enhance-config]
 
-### mdEhance.enableAll
+### mdEnhance.enableAll
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用全部功能
 
-### mdEhance.lineNumbers <MyBadge text="改变默认值" type="error" />
+### mdEnhance.lineNumbers <MyBadge text="改变默认值" type="error" />
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否在每个代码块的左侧显示行号
 
-### mdEhance.align
+### mdEnhance.align
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用自定义对齐支持
 
-### mdEhance.sup
+### mdEnhance.sup
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用上角标格式支持
 
-### mdEhance.sub
+### mdEnhance.sub
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用下角标格式支持
 
-### mdEhance.footnote
+### mdEnhance.footnote
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用脚注格式支持
 
-### mdEhance.mark
+### mdEnhance.mark
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用标记格式支持
 
-### mdEhance.tex
+### mdEnhance.tex
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用 TeX 语法支持
 
-### mdEhance.flowchart
+### mdEnhance.flowchart
 
 - 类型: `boolean`
 - 默认值: `false`
