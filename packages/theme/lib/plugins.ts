@@ -15,14 +15,7 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ["@mr-hope/components"],
 
     /** 更新时间插件 */
-    [
-      "@mr-hope/last-update",
-      themeConfig.lastUpdated === false
-        ? false
-        : themeConfig.lastUpdatedTransformer
-        ? { transformer: themeConfig.lastUpdatedTransformer }
-        : {},
-    ],
+    ["@mr-hope/last-update", themeConfig.lastUpdate === false ? false : {}],
 
     /** PWA 插件 */
     ["@mr-hope/pwa", themeConfig.pwa],
@@ -75,12 +68,7 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ],
 
     /** add this 支持 */
-    [
-      "add-this",
-      typeof themeConfig.addthis === "string"
-        ? { pubid: themeConfig.addthis }
-        : false,
-    ],
+    ["add-this", typeof themeConfig.addThis === "string"],
 
     /** 使 VuePress 站点支持简洁链接 */
     ["clean-urls", { normalSuffix: "/" }],
@@ -102,7 +90,7 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ],
 
     /** Markdown 增强插件 */
-    ["md-enhance", themeConfig.markdown || false],
+    ["md-enhance", themeConfig.mdEnhance || false],
 
     /** Chunk命名 */
     [
@@ -120,7 +108,7 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ],
 
     /** 复制按钮插件 */
-    ["@mr-hope/copy-code", themeConfig.copyCode !== false],
+    ["@mr-hope/copy-code", themeConfig.copyCode],
 
     /** Photo-swipe 插件 */
     ["photo-swipe", themeConfig.photoSwipe],

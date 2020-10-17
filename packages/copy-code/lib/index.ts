@@ -5,8 +5,10 @@ import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { CopyCodeOptions } from "../types";
 
-export = (options: CopyCodeOptions, context: Context): PluginOptionAPI => {
-  const { themeConfig } = context;
+export = (
+  options: CopyCodeOptions,
+  { themeConfig }: Context
+): PluginOptionAPI => {
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = i18n.lang2path(baseLang);
   const copyCodeConfig = i18n.config.copyCode;
@@ -17,7 +19,8 @@ export = (options: CopyCodeOptions, context: Context): PluginOptionAPI => {
     name: "copy-code",
 
     define: {
-      CODE_COPY_OPIONS: options,
+      CODE_COPY_OPIONS:
+        Object.keys(options).length > 0 ? options : themeConfig.copyCode || {},
       CODE_COPY_I18N: copyCodeConfig,
     },
 

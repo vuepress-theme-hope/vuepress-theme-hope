@@ -10,11 +10,12 @@ import { resolve } from "path";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
 
-export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
+export = (
+  option: MarkdownEnhanceOption,
+  { themeConfig }: Context
+): PluginOptionAPI => {
   const markdownOption =
-    Object.keys(option).length === 0
-      ? context.themeConfig.markdown || {}
-      : option;
+    Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
 
   const config: PluginOptionAPI = {
     name: "md-enhance",
@@ -47,7 +48,7 @@ export = (option: MarkdownEnhanceOption, context: Context): PluginOptionAPI => {
     },
   };
 
-  config.plugins = pluginConfig(markdownOption, context.themeConfig);
+  config.plugins = pluginConfig(markdownOption, themeConfig);
 
   return config;
 };

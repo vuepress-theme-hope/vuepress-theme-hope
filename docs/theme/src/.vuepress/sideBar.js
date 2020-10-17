@@ -49,8 +49,13 @@ module.exports = {
     ],
 
     "/zh/config/": [
-      "",
-      "themeConfig",
+      {
+        title: "主题配置",
+        icon: "extension",
+        prefix: "theme/",
+        collapsable: false,
+        children: ["", "default", "feature", "plugin", "apperance"],
+      },
       "page",
       "stylus",
       {
@@ -142,8 +147,13 @@ module.exports = {
     ],
 
     "/config/": [
-      "",
-      "themeConfig",
+      {
+        title: "ThemeConfig",
+        icon: "extension",
+        prefix: "theme/",
+        collapsable: false,
+        children: ["", "default", "feature", "plugin", "apperance"],
+      },
       "page",
       "stylus",
       {

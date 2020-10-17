@@ -4,8 +4,10 @@ import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { CommentOptions } from "../types";
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
-export = (options: CommentOptions, context: Context): PluginOptionAPI => {
-  const { themeConfig } = context;
+export = (
+  options: CommentOptions,
+  { themeConfig }: Context
+): PluginOptionAPI => {
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = i18n.lang2path(baseLang);
   const { pageInfo, readingTime, valine } = i18n.config;
@@ -18,7 +20,8 @@ export = (options: CommentOptions, context: Context): PluginOptionAPI => {
     name: "comment",
 
     define: () => ({
-      COMMENT_OPTIONS: options,
+      COMMENT_OPTIONS:
+        Object.keys(options).length > 0 ? options : themeConfig.comment || {},
       PAGE_INFO_I18N: pageInfo,
       READING_TIME_I18N: readingTime,
       VALINE_I18N: valine,

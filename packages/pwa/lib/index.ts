@@ -8,20 +8,24 @@ import workboxBuild = require("workbox-build");
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { PWAOptions } from "../types";
 
-export = (options: PWAOptions, context: Context): PluginOptionAPI => {
-  const { themeConfig } = context;
+export = (
+  options: PWAOptions,
+  { base, outDir, themeConfig }: Context
+): PluginOptionAPI => {
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = i18n.lang2path(baseLang);
   const pwaConfig = i18n.config.pwa;
+  const option =
+    Object.keys(options).length > 0 ? options : themeConfig.pwa || {};
 
   pwaConfig["/"] = pwaConfig[baseLangPath];
 
   const config: PluginOptionAPI = {
     name: "pwa",
 
-    define: { SW_BASE_URL: context.base || "/", PWA_I18N: pwaConfig },
+    define: { SW_BASE_URL: base || "/", PWA_I18N: pwaConfig },
 
-    globalUIComponents: options.popupComponent || "SWUpdatePopup",
+    globalUIComponents: option.popupComponent || "SWUpdatePopup",
 
     enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
   };
@@ -29,15 +33,15 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
   config.generated = async (): Promise<void> => {
     console.log(chalk.cyan("wait"), "Generating service worker...");
 
-    const swFilePath = resolve(context.outDir, "./service-worker.js");
+    const swFilePath = resolve(outDir, "./service-worker.js");
 
     await workboxBuild.generateSW({
       swDest: swFilePath,
-      globDirectory: context.outDir,
+      globDirectory: outDir,
       globPatterns: [
         "**/*.{js,css,html,png,jpg,jpeg,gif,svg,woff,woff2,eot,ttf,otf}",
       ],
-      ...(options.generateSWConfig || {}),
+      ...(option.generateSWConfig || {}),
     });
     await fs.writeFile(
       swFilePath,

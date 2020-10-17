@@ -18,37 +18,42 @@ const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
   return langs;
 };
 
-export = (options: SeoOptions, context: Context): PluginOptionAPI => ({
-  name: "seo",
+export = (options: SeoOptions, context: Context): PluginOptionAPI => {
+  const option =
+    Object.keys(options).length > 0 ? options : context.themeConfig.seo || {};
 
-  extendPageData($page): void {
-    const $site = context.getSiteData();
-    const meta = $page.frontmatter.meta || [];
+  return {
+    name: "seo",
 
-    // In Vuepress core, permalinks are built after enhancers.
-    const pageClone = Object.assign(
-      Object.create(Object.getPrototypeOf($page)) as Page,
-      $page
-    );
-    pageClone.buildPermalink();
+    extendPageData($page): void {
+      const $site = context.getSiteData();
+      const meta = $page.frontmatter.meta || [];
 
-    const pageSeoInfo: PageSeoInfo = {
-      $page,
-      $site,
-      themeConfig: $site.themeConfig || {},
-      locale: getLocales($site.themeConfig),
-      path: pageClone.path,
-    };
-    const metaContext: SeoContent = {
-      ...generateSeo(options, pageSeoInfo),
-      ...(options.seo ? options.seo(pageSeoInfo) : {}),
-    };
+      // In Vuepress core, permalinks are built after enhancers.
+      const pageClone = Object.assign(
+        Object.create(Object.getPrototypeOf($page)) as Page,
+        $page
+      );
+      pageClone.buildPermalink();
 
-    appendMeta(meta, metaContext, options);
-    if (options.customMeta) options.customMeta(meta, pageSeoInfo);
+      const pageSeoInfo: PageSeoInfo = {
+        $page,
+        $site,
+        themeConfig: $site.themeConfig || {},
+        locale: getLocales($site.themeConfig),
+        path: pageClone.path,
+      };
+      const metaContext: SeoContent = {
+        ...generateSeo(option, pageSeoInfo),
+        ...(option.seo ? option.seo(pageSeoInfo) : {}),
+      };
 
-    $page.frontmatter.meta = meta;
-  },
+      appendMeta(meta, metaContext, option);
+      if (option.customMeta) option.customMeta(meta, pageSeoInfo);
 
-  plugins: ["@mr-hope/last-update", ["@vuepress/last-updated", false]],
-});
+      $page.frontmatter.meta = meta;
+    },
+
+    plugins: ["@mr-hope/last-update", ["@vuepress/last-updated", false]],
+  };
+};

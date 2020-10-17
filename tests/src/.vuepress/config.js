@@ -40,9 +40,11 @@ module.exports = config({
     sidebar: sideBarConfig.zh,
 
     author: "Mr.Hope",
+
     footer: {
       display: false,
     },
+
     pageInfo: [
       "Author",
       "Category",
@@ -52,15 +54,17 @@ module.exports = config({
       "Word",
       "Visitor",
     ],
+
     themeColor: false,
 
-    markdown: { enableAll: true },
+    mdEnhance: { enableAll: true },
 
     comment: {
       type: "valine",
       appId: "msnseO76haIVIGvfJ10BKnpv-gzGzoHsz",
       appKey: "9QMulKhu7EDp1va0TYXR2PrI",
     },
+
     encrypt: {
       global: "01311031",
       config: {
@@ -86,13 +90,9 @@ module.exports = config({
         sidebar: sideBarConfig.en,
       },
     },
+
     hostname: "https://vuepress-theme-demo.mrhope.site/",
     repo: "https://github.com/mister-hope/vuepress-theme-hope",
     repoLabel: "Github",
-    /** 分享设置 */
-    // share: {
-    //   content: ['qq', 'twitter', 'weibo'],
-    //   fallbackImage: '/logo.png'
-    // }
   },
 });

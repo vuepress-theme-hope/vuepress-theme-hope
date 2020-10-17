@@ -6,16 +6,26 @@ tags:
   - config
 ---
 
-::: tip
-You can view [Config of this site][docs-config] as an example.
-:::
+## Theme Config
 
-- [**themeConfig Config**](themeConfig.md)
+- [**ThemeConfig**](theme/readme.md)
+
+- [**Default Theme Config**](theme/default.md)
+
+- [**Theme Feature Config**](theme/feature.md)
+
+- [**Theme Plugin Config**](theme/plugin.md)
+
+- [**Theme Apperance Config**](theme/apperance.md)
+
+## Page Config
 
 - [**Front Matter Config**](page.md)
 
+## Style Config
+
 - [**Style Config**](stylus.md)
 
-- [**Plugin**](plugin/readme.md)
+## Plugin Config
 
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1.0.0/docs/theme/src/.vuepress/config.js
+- [**Plugin Config**](plugin/readme.md)

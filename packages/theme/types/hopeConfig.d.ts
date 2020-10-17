@@ -160,8 +160,10 @@ export interface HopeCopyrightConfig {
    *
    * - `'global'` means enabled globally
    * - `'local'` means disabled globally and can be enabled in pages
+   *
+   * @default 'global'
    */
-  status: "global" | "local";
+  status?: "global" | "local";
   /**
    * 触发版权信息或禁止复制动作的最少字符数
    *
@@ -274,8 +276,79 @@ export interface ProjectOptions {
   link: string;
 }
 
+export interface HopeThemePluginConfig {
+  /**
+   * AddThis 的公共 ID
+   *
+   * pubid for addthis
+   */
+  addThis?: string;
+
+  /**
+   * 评论设置
+   * @see http://comment.mrhope.site/config/
+   *
+   * Comment Configuration
+   * @see http://comment.mrhope.site/en/config/
+   */
+  comment?: CommentOptions | false;
+
+  /**
+   * 代码复制选项
+   *
+   * code copy options
+   */
+  copyCode?: CopyCodeOptions | false;
+
+  /**
+   * 版权设置
+   *
+   * Copyright Configuration
+   */
+  copyright?: HopeCopyrightConfig;
+
+  /**
+   * Markdown 增强设置
+   *
+   * Markdown enhance configuration
+   */
+  mdEnhance?: MarkdownEnhanceOption | false;
+
+  /**
+   * PWA 设置
+   *
+   * PWA configuration
+   */
+  pwa?: PWAOptions | false;
+
+  /**
+   * 图片预览设置
+   *
+   * Photo Swipe Options
+   */
+  photoSwipe?: PhotoSwipeOptions | false;
+
+  /** SEO */
+  seo?: SeoOptions | false;
+
+  /** Sitemap */
+  sitemap?: SitemapOptions | false;
+
+  /** 最后更新时间转换 */
+  lastUpdate?: ((timestamp: number, lang: string) => string) | false;
+  /**
+   * ts-loader 选项
+   *
+   * Options which will passed to ts-loader
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  typescript?: Record<string, any> | boolean;
+}
+
 /** vuepress-theme-hope 主题配置 */
-export interface HopeThemeConfig extends DefaultThemeConfig {
+export interface HopeThemeConfig
+  extends DefaultThemeConfig,
+    HopeThemePluginConfig {
   lastUpdated?: never;
   editLinkText?: never;
   /**
@@ -298,12 +371,17 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default 'en-US'
    */
   baseLang?: string;
+
+  /** 站点地址 */
+  hostname?: string;
+
   /**
    * 文章显示的默认作者
    *
    * The default author of the article
    */
   author?: string;
+
   /**
    * 导航栏配置
    *
@@ -316,6 +394,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * Sidebar configuration
    */
   sidebar?: HopeSideBarConfig;
+
   /**
    * 深色模式支持选项:
    * - `'auto-switch'`: "关闭 | 自动 | 打开" 的三段式开关 (默认)
@@ -351,26 +430,14 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default { blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }
    */
   themeColor?: Record<string, string> | false;
+
   /**
    * 博客设置
    *
    * Blog configuration
    */
   blog?: BlogOptions | false;
-  /**
-   * PWA 设置
-   *
-   * PWA configuration
-   */
-  pwa?: PWAOptions | false;
-  /**
-   * 是否在桌面模式显示锚点标题
-   *
-   * Whether display anchor in desktop mode
-   *
-   * @default true
-   */
-  anchorDisplay?: boolean;
+
   /**
    * 页面信息
    *
@@ -389,72 +456,30 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default ['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']
    */
   pageInfo?: PageInfotype[] | false;
-  /**
-   * Markdown 增强设置
-   *
-   * Markdown enhance configuration
-   */
-  markdown?: MarkdownEnhanceOption | false;
-  /**
-   * 评论设置
-   * @see http://comment.mrhope.site/config/
-   *
-   * Comment Configuration
-   * @see http://comment.mrhope.site/en/config/
-   */
-  comment?: CommentOptions | false;
+
   /**
    * 页脚配置
    *
    * Footer Configuration
    */
   footer?: HopeFooterConfig;
-  /**
-   * 版权设置
-   *
-   * Copyright Configuration
-   */
-  copyright?: HopeCopyrightConfig;
 
-  /** 站点地址 */
-  hostname?: string;
-  /** SEO */
-  seo?: SeoOptions | false;
-  /** Sitemap */
-  sitemap?: SitemapOptions | false;
   /**
    * 加密设置
    *
    * Encrypt Configuration
    */
   encrypt?: EncryptOptions;
+
   /**
-   * AddThis 的公共 ID
+   * 是否在桌面模式显示锚点标题
    *
-   * pubid for addthis
-   */
-  addthis?: string;
-  /**
-   * 代码复制选项
+   * Whether display anchor in desktop mode
    *
-   * code copy options
+   * @default true
    */
-  copyCode?: CopyCodeOptions | false;
-  /**
-   * 图片预览设置
-   *
-   * Photo Swipe Options
-   */
-  photoSwipe?: PhotoSwipeOptions | false;
-  /** 最后更新时间转换 */
-  lastUpdatedTransformer?: (timestamp: number, lang: string) => string;
-  /**
-   * ts-loader 选项
-   *
-   * Options which will passed to ts-loader
-   */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  typescript?: boolean | Record<string, any>;
+  anchorDisplay?: boolean;
+
   /**
    * 图标前缀
    *
@@ -463,6 +488,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default 'icon-'
    */
   iconPrefix?: string;
+
   /**
    * 每分钟的阅读字数
    *
@@ -471,6 +497,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default 300
    */
   wordPerminute?: number;
+
   /**
    * 是否在侧边栏显示图标
    *
@@ -479,6 +506,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default true
    */
   sidebarIcon?: boolean;
+
   /**
    * 是否全局启用路径导航
    *
@@ -487,6 +515,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default true
    */
   breadcrumb?: boolean;
+
   /**
    * 是否在路径导航显示图标
    *
@@ -495,6 +524,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default true
    */
   breadcrumbIcon?: boolean;
+
   /**
    * 是否启用平滑滚动
    *
@@ -503,6 +533,7 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default true
    */
   smoothScroll?: boolean;
+
   /**
    * 是否显示返回顶部按钮
    *
@@ -515,12 +546,14 @@ export interface HopeThemeConfig extends DefaultThemeConfig {
    * @default true
    */
   backToTop?: boolean | number;
+
   /**
    * 是否在导航栏显示仓库链接
    *
    * @default true
    */
   repoDisplay?: boolean;
+
   /**
    * 是否显示 ”全屏“ 按钮
    *

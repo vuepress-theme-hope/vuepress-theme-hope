@@ -50,7 +50,7 @@ module.exports = config({
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
-    markdown: {
+    mdEnhance: {
       enableAll: true,
     },
 
@@ -78,7 +78,7 @@ module.exports = config({
       },
     },
 
-    addthis: "ra-5f829c59e6c6bc9a",
+    addThis: "ra-5f829c59e6c6bc9a",
     hostname: "https://vuepress-add-this.mrhope.site/",
 
     repo: "https://github.com/mister-hope/vuepress-theme-hope",

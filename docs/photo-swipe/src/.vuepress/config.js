@@ -44,7 +44,7 @@ module.exports = config({
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
-    markdown: {
+    mdEnhance: {
       enableAll: true,
     },
 

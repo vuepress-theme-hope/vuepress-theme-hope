@@ -43,7 +43,7 @@ module.exports = config({
       },
     },
 
-    markdown: {
+    mdEnhance: {
       enableAll: true,
     },
 

@@ -1,5 +1,5 @@
 import { LastUpdateOption } from "../types";
-import { PluginOptionAPI } from "@mr-hope/vuepress-types";
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import getTime from "./time";
 import dayjs = require("dayjs");
 import localizedFormat = require("dayjs/plugin/localizedFormat");
@@ -21,7 +21,10 @@ const defaultTransformer = (timestamp: number, lang: string): string => {
   return `${dayjs(timestamp).format("LL")} ${dayjs(timestamp).format("HH:mm")}`;
 };
 
-export = (options: LastUpdateOption): PluginOptionAPI => ({
+export = (
+  options: LastUpdateOption,
+  { themeConfig }: Context
+): PluginOptionAPI => ({
   name: "last-updated",
 
   extendPageData($page): void {
@@ -33,6 +36,8 @@ export = (options: LastUpdateOption): PluginOptionAPI => ({
       const lastUpdated =
         typeof transformer === "function"
           ? transformer(timestamp, $lang)
+          : typeof themeConfig.lastUpdate === "function"
+          ? themeConfig.lastUpdate
           : defaultTransformer(timestamp, $lang);
 
       $page.lastUpdated = lastUpdated;

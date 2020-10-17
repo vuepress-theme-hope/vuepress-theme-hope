@@ -5,16 +5,26 @@ category: config
 tags: config
 ---
 
-::: tip
-你可以查看 [本文档配置][docs-config] 作为一个配置参考。
-:::
+## 主题配置
 
-- [**themeConfig 配置**](themeConfig.md)
+- [**主题重要配置**](theme/readme.md)
+
+- [**默认主题配置**](theme/default.md)
+
+- [**主题功能配置**](theme/feature.md)
+
+- [**主题插件配置**](theme/plugin.md)
+
+- [**主题外观配置**](theme/apperance.md)
+
+## 页面配置
 
 - [**Front Matter 配置**](page.md)
 
+## 样式配置
+
 - [**样式配置**](stylus.md)
 
-- [**插件**](plugin/readme.md)
+## 插件配置
 
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1.0.0/docs/theme/src/.vuepress/config.js
+- [**插件配置**](plugin/readme.md)

@@ -119,27 +119,25 @@ const generatePageMap = (
   return pagesMap;
 };
 
-const generateSiteMap = (
-  siteData: SiteData,
-  { outDir, themeConfig }: Context,
-  options: SitemapOptions
-): void => {
+const generateSiteMap = (options: SitemapOptions, context: Context): void => {
   log("Generating sitemap...");
 
+  const siteData = context.getSiteData();
+
   const {
-    urls = [],
     hostname,
+    urls = [],
     outFile = "sitemap.xml",
     xslUrl,
     exclude = [],
     xmlNameSpace: xmlns,
   } = options;
   const sitemap = new SitemapStream({
-    hostname: hostname || themeConfig.hostname,
+    hostname,
     xslUrl,
     xmlns,
   });
-  const sitemapXML = resolve(outDir, outFile);
+  const sitemapXML = resolve(context.outDir, outFile);
   const writeStream = createWriteStream(sitemapXML);
 
   sitemap.pipe(writeStream);
@@ -161,10 +159,19 @@ export = (options: SitemapOptions, context: Context): PluginOptionAPI => ({
   name: "sitemap",
 
   generated(): void {
-    const hostname = options.hostname || context.themeConfig.hostname;
+    const { themeConfig } = context;
+    const hostname = options.hostname || themeConfig.hostname;
 
-    if (hostname) generateSiteMap(context.getSiteData(), context, options);
-    else
+    if (hostname) {
+      const option =
+        Object.keys(options).length > 0
+          ? { ...options, hostname: hostname }
+          : themeConfig.sitemap
+          ? { ...themeConfig.sitemap, hostname: hostname }
+          : { hostname: hostname };
+
+      generateSiteMap(option, context);
+    } else
       log(
         'Not generating sitemap because required "hostname" option doesn\'t exist',
         "red"

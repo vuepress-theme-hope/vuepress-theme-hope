@@ -9,9 +9,12 @@ export default class AddThis extends Vue {
   }
 
   private mounted(): void {
-    const script = document.createElement("script");
+    if (this.pubid) {
+      const script = document.createElement("script");
 
-    script.src = this.addthisLink;
-    document.getElementsByTagName("body")[0].appendChild(script);
+      script.src = this.addthisLink;
+      document.getElementsByTagName("body")[0].appendChild(script);
+    } else
+      console.error("[AddThis]: Please provide a pubid to let plugin work");
   }
 }
