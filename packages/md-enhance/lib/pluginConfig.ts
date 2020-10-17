@@ -1,6 +1,6 @@
 import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "../types";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
+import { PluginI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
 
 const pluginConfig = (
   markdownOption: MarkdownEnhanceOption,
@@ -12,8 +12,8 @@ const pluginConfig = (
   const baseLangPath = i18n.lang2path(baseLang);
 
   const resolveConfig = (
-    titleConfig: Record<string, string>
-  ): Record<string, string> => {
+    titleConfig: PluginI18nConfig<string>
+  ): PluginI18nConfig<string> => {
     titleConfig["/"] = titleConfig[baseLangPath];
 
     return titleConfig;

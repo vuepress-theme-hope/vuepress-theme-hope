@@ -1,5 +1,6 @@
 import {
   Langs,
+  LangPaths,
   config,
   lang2PathConfig,
   langs,
@@ -18,8 +19,8 @@ export const checkLang = (lang: string): boolean =>
  *
  * @param lang 语言
  */
-export const lang2path = (lang: string): string => {
-  if (lang2PathConfig[lang]) return lang2PathConfig[lang];
+export const lang2path = (lang: string): LangPaths | "/" => {
+  if (lang2PathConfig[lang as Langs]) return lang2PathConfig[lang as Langs];
 
   console.error(
     `${lang} has no path config, and will return '/' instead.
@@ -34,8 +35,9 @@ You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/ma
  *
  * @param path 路径
  */
-export const path2lang = (path: string): string => {
-  if (path2langConfig[path]) return path2langConfig[path];
+export const path2lang = (path: string): Langs => {
+  if (path2langConfig[path as LangPaths])
+    return path2langConfig[path as LangPaths];
 
   console.error(
     `${path} isn't assign with a lang, and will return 'en-US' instead.
@@ -51,7 +53,7 @@ You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/ma
  * @param lang
  */
 export const getLocale = (lang: string): HopeLangI18nConfig => {
-  if (localesConfig[lang]) return localesConfig[lang];
+  if (localesConfig[lang as Langs]) return localesConfig[lang as Langs];
 
   if (!reportStatus[lang]) {
     console.warn(

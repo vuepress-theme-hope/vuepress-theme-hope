@@ -6,27 +6,29 @@ import {
   ReadingTimeI18NCOnfig,
 } from "../../types";
 
+/** Types for supported lang codes */
 export type Langs = "zh-CN" | "en-US";
 
+/** Types for supported lang paths */
 export type LangPaths = "/zh/" | "/en/";
 
-/** 支持语言 */
+/** Supported lang codes */
 export const langs: Langs[] = ["zh-CN", "en-US"];
 
-/** 语言对应路径 */
-export const lang2PathConfig: Record<string, LangPaths> = {
+/** Lang to pat convert */
+export const lang2PathConfig: Record<Langs, LangPaths> = {
   "zh-CN": "/zh/",
   "en-US": "/en/",
 };
 
-/** 路径对应语言 */
-export const path2langConfig: Record<string, Langs> = {
+/** Path to lang convert */
+export const path2langConfig: Record<LangPaths, Langs> = {
   "/zh/": "zh-CN",
   "/en/": "en-US",
 };
 
-/** 语言设置 */
-export const localesConfig: Record<string, HopeLangI18nConfig> = {
+/** Muti language config */
+export const localesConfig: Record<Langs, HopeLangI18nConfig> = {
   "zh-CN": {
     lang: "zh-CN",
     selectText: "选择语言",
@@ -58,11 +60,9 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
     },
   },
 
-  /** 英文设置 */
   "en-US": {
     lang: "en-US",
     selectText: "Language",
-    /** 辅助标签 */
     ariaLabel: "Select language",
     lastUpdated: "Last update",
     label: "English",
@@ -93,8 +93,10 @@ export const localesConfig: Record<string, HopeLangI18nConfig> = {
   },
 };
 
-/** 页面信息 */
-const pageInfoConfig: Record<string, PageInfoI18nConfig> = {
+export type PluginI18nConfig<T> = Record<LangPaths, T> & { "/"?: T };
+
+/** Muti language config for Page Info */
+const pageInfoConfig: PluginI18nConfig<PageInfoI18nConfig> = {
   "/zh/": {
     author: "作者🖊",
     time: "写作日期📅",
@@ -117,7 +119,8 @@ const pageInfoConfig: Record<string, PageInfoI18nConfig> = {
   },
 };
 
-const componentConfig: Record<string, ComponentI18NConfig> = {
+/** Muti language config for components */
+const componentConfig: PluginI18nConfig<ComponentI18NConfig> = {
   "/zh/": {
     backToTop: "返回顶部",
     pagination: {
@@ -140,8 +143,8 @@ const componentConfig: Record<string, ComponentI18NConfig> = {
   },
 };
 
-/** 自定义容器插件 */
-const containerConfig: Record<string, Record<string, string>> = {
+/** Muti language config for markdown containers */
+const containerConfig: Record<string, PluginI18nConfig<string>> = {
   info: {
     "/zh/": "相关信息",
     "/en/": "Info",
@@ -164,7 +167,8 @@ const containerConfig: Record<string, Record<string, string>> = {
   },
 };
 
-const copyCodeConfig: Record<string, CopyCodeI18NConfig> = {
+/** Muti language config for copy code */
+const copyCodeConfig: PluginI18nConfig<CopyCodeI18NConfig> = {
   "/zh/": {
     copy: "复制成功 🎉",
     hint: "复制代码",
@@ -175,12 +179,14 @@ const copyCodeConfig: Record<string, CopyCodeI18NConfig> = {
   },
 };
 
-const pwaConfig: Record<string, string> = {
+/** Muti language config for pwa popup */
+const pwaConfig: PluginI18nConfig<string> = {
   "/zh/": "发现新内容可用",
   "/en/": "New content is available.",
 };
 
-const readingTimeConfig: Record<string, ReadingTimeI18NCOnfig> = {
+/** Muti language config for reading time plugin */
+const readingTimeConfig: PluginI18nConfig<ReadingTimeI18NCOnfig> = {
   "/zh/": {
     word: "约 $word 字",
     minute: "小于 1 分钟",
@@ -193,12 +199,13 @@ const readingTimeConfig: Record<string, ReadingTimeI18NCOnfig> = {
   },
 };
 
-const valineConfig: Record<string, string> = {
+/** Muti language config for valine */
+const valineConfig: PluginI18nConfig<string> = {
   "/zh/": "请留言",
   "/en/": "Write a comment here",
 };
 
-/** 插件配置 */
+/** Muti language config for plugins */
 export const config = {
   container: containerConfig,
   component: componentConfig,
