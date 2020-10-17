@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.1...v1.1.0) (2020-10-17)
+
+### Bug Fixes
+
+- fix issues in release script ([3ffe96c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3ffe96c5402931f6add156152ef254a238cad157))
+- **comment:** fix option types ([879dd50](https://github.com/Mister-Hope/vuepress-theme-hope/commit/879dd5018ba2233592217135422b04ffa9dad45b))
+
+### Features
+
+- **theme:** rename all the plugin config in theme to the camelcase version of plugin ([b533be0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b533be07d065d3ae1fa204154e2ffa9cd25bebdc))
+
+### BREAKING CHANGES
+
+- **theme:** Rename all the plugin config in theme to the camelcase version of plugin:
+
+- `addthis` renamed as `addThis`
+- `markdown` renamed as `mdEnhance`
+- `lastUpdatedTransformer` renamed as `lastUpdate`
+
 ## [1.0.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0...v1.0.1) (2020-10-15)
 
 ### Bug Fixes
@@ -37,7 +56,7 @@
 ### BREAKING CHANGES
 
 - **theme:** Use `const { config } = require('vuepress-theme-hope')` instead of `const resolve = require('vuepress-theme-hope/resolve')`
-- change baseLang default to 'en-US'
+- change baseLang default to `'en-US'`
 
 ## [1.0.0-0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.8.0...v1.0.0-0) (2020-10-13)
 
@@ -176,7 +195,7 @@ We are glad to announce we do not have any typescript files in runtime, which wi
 
 ### Features
 
-- **comment:** add title ([02909e2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/02909e2576c28149235a728efddb903b90e195d4))
+- **component:** add title ([02909e2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/02909e2576c28149235a728efddb903b90e195d4))
 - **theme:** add default config to change temp folder ([cc650e1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cc650e1146a0e1914cfea5baf624266a202815ae))
 - **theme:** add one-click-copy plugin ([e5ec9bb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e5ec9bbc33441f0775584d57bccf7e5160e61288))
 - **theme:** add styl label for stylus blocks ([b1335cf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b1335cfa9b22ee31217ecaf56464634925f607e7))
@@ -288,7 +307,7 @@ All the links will end with a splash `/`, instead of `.html`
 
 ### Features
 
-add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3c85ba86ba401c959e2f91fa924cbae66e8598e2))
+- add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3c85ba86ba401c959e2f91fa924cbae66e8598e2))
 
 ## [0.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.2.0...v0.3.0) (2020-05-14)
 
@@ -348,6 +367,12 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 
 - **theme:** fix project config ([d46bf35](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d46bf35256167fa579f91605c71b185a86a86f08))
 
+## [0.1.0-rc.20](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.19...v0.1.0-rc.20) (2020-05-06)
+
+### Features
+
+- **theme:** add project display ([792b72c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/792b72cda2011435e4d9a0113d17c21d3d900ce3))
+
 ## [0.1.0-rc.19](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.18...v0.1.0-rc.19) (2020-05-05)
 
 ### Bug Fixes
@@ -363,7 +388,6 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 ### Features
 
 - improve colors ([24a7c83](https://github.com/Mister-Hope/vuepress-theme-hope/commit/24a7c83a506380e701bcacc9e751fff5816ee291))
-
 - style update ([9bc857d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9bc857d9ca02c4b49e208cccb161b91ae5888a42))
 
 ## [0.1.0-rc.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.16...v0.1.0-rc.17) (2020-04-30)
@@ -464,6 +488,11 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 
 ## [0.1.0-rc.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.8...v0.1.0-rc.9) (2020-04-10)
 
+### Bug Fixes
+
+- **deps:** pin dependency @mr-hope/vuepress-plugin-theme-color to 0.1.0-rc.8 ([e3b5b0c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e3b5b0c89f78c2c8c4de039c89c212c978ec2609))
+- **theme:** fix markdown highlight issue ([768c091](https://github.com/Mister-Hope/vuepress-theme-hope/commit/768c091f2e3a506914e22392f0a67fada038b4aa))
+
 ### Features
 
 - remove theme-color plugin and rebuild theme color ([4c43673](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4c43673d83c90fd5dbfd76830502a07d2a7b124f))
@@ -504,6 +533,10 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 
 - **md-enhance:** revert change ([056acb3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/056acb3e14677176a8d62cbf2c1cdb16bfbf2b2a))
 
+## [0.1.0-rc.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-rc.2...v0.1.0-rc.3) (2020-03-23)
+
+## [0.1.0-rc.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-RC1...v0.1.0-rc.2) (2020-03-23)
+
 ## [0.1.0-RC1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.40...v0.1.0-RC1) (2020-03-23)
 
 ### Bug Fixes
@@ -525,7 +558,8 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 
 ### Features
 
-- update theme apperance ([cf455dc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cf455dc74057d9a9d06a97ffefbd5f197cef2ea6)) ([f2e35e8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2e35e8ee49b18d86a161eeb334378292e9a3389))
+- **theme:** update theme apperence ([f2e35e8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2e35e8ee49b18d86a161eeb334378292e9a3389))
+- update theme apperance ([cf455dc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cf455dc74057d9a9d06a97ffefbd5f197cef2ea6))
 - **md-enhance:** use katex for tex support ([4d2d018](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d2d018bb32cee3c34b0f7f4368a9eb898b59328))
 - **theme:** make theme ts ([01602c0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/01602c05e5996327956445633dffd89d04ae86e5))
 - **theme:** stop extending theme-default ([e97c08c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e97c08c879ea79722fa504ad8546ee31a618af8b))
@@ -539,6 +573,10 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 - **theme:** fix npmignore ([bc9935a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bc9935a9585f85ccf6ff605eaf9ec518c9d09d13))
 
 ## [0.1.0-beta.38](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.37...v0.1.0-beta.38) (2020-03-19)
+
+### Bug Fixes
+
+- fix ci issue ([c98ea28](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c98ea285de488444fa143409975901a77776e23a))
 
 ### Features
 
@@ -687,7 +725,7 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 
 ### Features
 
-- **md-enhance:** use ts ([9df9a9d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9df9a9d08b107ddbcb255367653b1bc9d119dc51))
+- **md-enhance:** make ts ([9df9a9d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9df9a9d08b107ddbcb255367653b1bc9d119dc51))
 
 ## [0.1.0-beta.23](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.22...v0.1.0-beta.23) (2020-01-06)
 
@@ -695,11 +733,9 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 
 - fix types problem ([eab05a0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/eab05a058e8b0deb2b9ab4febe8793adf5c5552c))
 
+## [0.1.0-beta.22](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.21...v0.1.0-beta.22) (2020-01-06)
+
 ## [0.1.0-beta.21](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.20...v0.1.0-beta.21) (2020-01-06)
-
-### Bug Fixes
-
-- try to fix types problem
 
 ## [0.1.0-beta.20](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.19...v0.1.0-beta.20) (2020-01-06)
 
@@ -709,6 +745,10 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 - **theme:** add missing deps typescript ([47d7e29](https://github.com/Mister-Hope/vuepress-theme-hope/commit/47d7e29ea9684757a3ede320cde20a7c5fa432d5))
 
 ## [0.1.0-beta.19](https://github.com/Mister-Hope/vuepress-theme-hope/compare/41144c96da5f3632c32ef7d1a1ce1b6f731dfdda...v0.1.0-beta.19) (2020-01-06)
+
+### Bug Fixes
+
+- fix theme test not working ([7730b5d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7730b5deee8ca5b6cf4764588f6bbcb174cb1486))
 
 ### Features
 
@@ -721,7 +761,6 @@ add a new plugin: vuepress-plugin-photo-swipe ([3c85ba8](https://github.com/Mist
 - add ts support for theme ([400d74e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/400d74e6a9ba1ad89b4cd1763f17fe7175d53675))
 - init from master ([41144c9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/41144c96da5f3632c32ef7d1a1ce1b6f731dfdda))
 - rebuild shared-utils ([26deb40](https://github.com/Mister-Hope/vuepress-theme-hope/commit/26deb4060186777f90f65dff8ad1e5d90eafd612))
-- add theme test ([7730b5d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7730b5deee8ca5b6cf4764588f6bbcb174cb1486))
 
 ## [0.1.0-beta.18](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.17...v0.1.0-beta.18) (2019-11-23)
 
