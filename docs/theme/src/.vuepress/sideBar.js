@@ -51,7 +51,7 @@ module.exports = {
     "/zh/config/": [
       {
         title: "主题配置",
-        icon: "extension",
+        icon: "configuration",
         prefix: "theme/",
         collapsable: false,
         children: ["", "default", "feature", "plugin", "apperance"],
@@ -149,7 +149,7 @@ module.exports = {
     "/config/": [
       {
         title: "ThemeConfig",
-        icon: "extension",
+        icon: "configuration",
         prefix: "theme/",
         collapsable: false,
         children: ["", "default", "feature", "plugin", "apperance"],
