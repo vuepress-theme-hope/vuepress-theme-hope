@@ -15,7 +15,7 @@ const getNpmTags = (version) => {
 };
 
 const release = async () => {
-  await execa("yarn", ["run", "tsc"]);
+  await execa("yarn", ["run", "typescript:compile"]);
 
   console.log(`Current version: ${curVersion}`);
 
