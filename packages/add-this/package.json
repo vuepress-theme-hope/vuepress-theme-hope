@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-add-this",
-  "version": "1.0.1",
+  "version": "1.1.0-0",
   "description": "add-this plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -32,6 +32,6 @@
     "demo:serve": "vuepress dev test/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "^1.0.1"
+    "@mr-hope/vuepress-types": "^1.1.0-0"
   }
 }
