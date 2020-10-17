@@ -235,7 +235,7 @@ const copyCodeConfig: PluginI18nConfig<CopyCodeI18NConfig> = {
     copy: "Copy successfully 🎉",
     hint: "Copy the code",
   },
-  "/en/": {
+  "/vi/": {
     copy: "Sao chép thành công 🎉",
     hint: "Sao chép code",
   },
