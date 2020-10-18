@@ -2,7 +2,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   title: "Markdown Enhance Plugin",
-  description: "Markdown Enhancement for Vuepress",
+  description: "Markdown Enhancement for VuePress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "Markdown 增强",
-      description: "Vuepress 的 Markdown 增强插件",
+      description: "VuePress 的 Markdown 增强插件",
     },
   },
 

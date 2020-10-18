@@ -2,7 +2,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   title: "Photo swipe Plugin",
-  description: "Photo swipe Plugin for Vuepress",
+  description: "Photo swipe Plugin for VuePress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "图片预览插件",
-      description: "Vuepress 的图片预览插件",
+      description: "VuePress 的图片预览插件",
     },
   },
 

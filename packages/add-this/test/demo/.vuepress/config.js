@@ -6,7 +6,7 @@ module.exports = {
   title: 'Add this',
 
   /** 网站在该语言下的描述 */
-  description: 'Vuepress 的 Add this 插件',
+  description: 'VuePress 的 Add this 插件',
 
   /** 生成网站头部的标签 */
   head: [

@@ -177,7 +177,7 @@ tags:
 ```
 
 :::tip
-Vuepress 还兼容如下跳转到主页的写法:
+VuePress 还兼容如下跳转到主页的写法:
 
 - [相对路径访问，兼容 markdown 编写时相互跳转](../readme.md)
 

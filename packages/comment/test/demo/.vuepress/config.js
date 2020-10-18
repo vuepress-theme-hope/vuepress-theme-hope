@@ -3,7 +3,7 @@ module.exports = {
 
   title: 'Comment Plugin',
 
-  description: 'Comment Plugin for Vuepress',
+  description: 'Comment Plugin for VuePress',
 
   dest: './dist',
 

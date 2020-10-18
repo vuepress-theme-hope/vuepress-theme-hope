@@ -1,7 +1,7 @@
 {
   "name": "@mr-hope/vuepress-plugin-seo",
   "short_name": "vuepress-plugin-seo",
-  "description": "SEO plugin for Vuepress",
+  "description": "SEO plugin for VuePress",
   "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [

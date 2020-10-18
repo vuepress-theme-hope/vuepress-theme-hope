@@ -3,7 +3,7 @@ home: true
 title: vuepress-plugin-add-this
 heroImage: /logo.svg
 heroText: vuepress-plugin-add-this
-tagline: 为 Vuepress 提供 add this 支持
+tagline: 为 VuePress 提供 add this 支持
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

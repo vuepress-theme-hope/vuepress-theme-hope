@@ -13,7 +13,7 @@ tags:
 ├── dist → Built Output
 │
 ├── src
-│ ├── .vuepress (Optional) → Vuepress Config
+│ ├── .vuepress (Optional) → VuePress Config
 │ │ ├── components (Optional) → Components in this dir will be registered as global components
 │ │ │
 │ │ ├── theme (Optional) → Personal built Theme
@@ -65,7 +65,7 @@ tags:
 
 ## src folder
 
-The **source code** is placed in the `src` directory, in which all **markdown** files are rendered into **HTML**. That is the time when **readme.md** is rendered into **index.html**. In addition, Vuepress's configuration files are all placed in the `src/.vuepress` directory.
+The **source code** is placed in the `src` directory, in which all **markdown** files are rendered into **HTML**. That is the time when **readme.md** is rendered into **index.html**. In addition, VuePress's configuration files are all placed in the `src/.vuepress` directory.
 
 ## dist folder
 
@@ -103,14 +103,14 @@ Beginners can use it in learning to reduce their own mistakes and develop a stan
 
 ## .vuepress
 
-The `.vuepress` folder should be placed directly in the source code directory. It contains the configuration options for Vuepress.
+The `.vuepress` folder should be placed directly in the source code directory. It contains the configuration options for VuePress.
 
 ### config.js
 
 The configuration file for the project. For specific configuration instructions, please open the file to view the comments.
 
 :::tip
-For more details, please view[Vuepress Config](https://v1.vuepress.vuejs.org/config/)
+For more details, please view[VuePress Config](https://v1.vuepress.vuejs.org/config/)
 :::
 
 ### public folder
@@ -129,6 +129,6 @@ File that do not need to be understand at the beginning:
 
 | Forlder     | Content                                             |
 | ----------- | --------------------------------------------------- |
-| compoenents | Placed the Vue component in the Vuepress site       |
-| theme       | Placed the theme of the Vuepress site               |
-| templates   | Placed the template and layout of the Vuepress site |
+| compoenents | Placed the Vue component in the VuePress site       |
+| theme       | Placed the theme of the VuePress site               |
+| templates   | Placed the template and layout of the VuePress site |

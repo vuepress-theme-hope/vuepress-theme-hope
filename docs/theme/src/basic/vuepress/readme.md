@@ -1,5 +1,5 @@
 ---
-title: About Vuepress
+title: About VuePress
 icon: vue
 category: basic
 tags:
@@ -25,14 +25,14 @@ npm run serve
 npm run build
 ```
 
-## Vuepress Offical Docs
+## VuePress Offical Docs
 
-- [Vuepress Gudie](https://v1.vuepress.vuejs.org/guide/)
-- [Vuepress Config](https://v1.vuepress.vuejs.org/config/)
-- [Vuepress Plugins](https://v1.vuepress.vuejs.org/plugin/)
-- [Vuepress Theme](https://v1.vuepress.vuejs.org/theme/)
+- [VuePress Gudie](https://v1.vuepress.vuejs.org/guide/)
+- [VuePress Config](https://v1.vuepress.vuejs.org/config/)
+- [VuePress Plugins](https://v1.vuepress.vuejs.org/plugin/)
+- [VuePress Theme](https://v1.vuepress.vuejs.org/theme/)
 
-## Vuepress Intro
+## VuePress Intro
 
 - [File Stucture](file.md)
 - [Plugins](plugin.md)

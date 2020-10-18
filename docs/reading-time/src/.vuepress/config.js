@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "阅读时间生成插件",
-      description: "Vuepress 的阅读时间生成插件",
+      description: "VuePress 的阅读时间生成插件",
     },
   },
 

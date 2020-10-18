@@ -6,7 +6,7 @@ module.exports = {
   title: 'Markdown 增强',
 
   /** 网站在该语言下的描述 */
-  description: 'Vuepress 的 Markdown 增强插件',
+  description: 'VuePress 的 Markdown 增强插件',
 
   /** 生成网站头部的标签 */
   head: [
@@ -50,7 +50,7 @@ module.exports = {
       title: 'Markdown Enhance Plugin',
 
       /** 网站在该语言下的描述 */
-      description: 'Markdown Enhancement for Vuepress'
+      description: 'Markdown Enhancement for VuePress'
     }
   },
 

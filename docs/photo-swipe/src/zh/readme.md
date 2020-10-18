@@ -4,7 +4,7 @@ title: vuepress-plugin-photo-swipe
 icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
-tagline: 为 Vuepress 提供图片预览支持
+tagline: 为 VuePress 提供图片预览支持
 action:
   - text: 演示 💡
     link: /zh/demo/

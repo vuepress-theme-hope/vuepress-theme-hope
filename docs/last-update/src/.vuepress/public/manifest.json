@@ -1,7 +1,7 @@
 {
   "name": "@mr-hope/vuepress-plugin-last-update",
   "short_name": "last-update",
-  "description": "Last plugin for Vuepress",
+  "description": "Last plugin for VuePress",
   "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [

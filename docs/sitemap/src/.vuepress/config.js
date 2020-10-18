@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "Sitemap 生成插件",
-      description: "Vuepress 的 Sitemap 生成插件",
+      description: "VuePress 的 Sitemap 生成插件",
     },
   },
 

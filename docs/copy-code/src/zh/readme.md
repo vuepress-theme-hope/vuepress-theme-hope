@@ -4,7 +4,7 @@ title: "@mr-hope/vuepress-plugin-copy-code"
 icon: homefill
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-copy-code"
-tagline: 为 Vuepress 提供代码块一键复制
+tagline: 为 VuePress 提供代码块一键复制
 action:
   - text: 快速上手 💡
     link: /zh/guide/

@@ -22,7 +22,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "主页", link: "/", icon: "homefill" },
-      { text: "Vuepress介绍", link: "/vuepress/", icon: "infofill" },
+      { text: "VuePress介绍", link: "/vuepress/", icon: "infofill" },
       { text: "Markdown介绍", link: "/markdown/", icon: "markdown" },
     ],
   },
@@ -89,7 +89,7 @@ module.exports = {
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown", icon: "markdown" },
-          { text: "Vuepress", link: "vuepress/", icon: "vue" },
+          { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
       },
     ],
@@ -265,7 +265,7 @@ module.exports = {
         prefix: "/zh/basic/",
         items: [
           { text: "Markdown", link: "markdown", icon: "markdown" },
-          { text: "Vuepress", link: "vuepress/", icon: "vue" },
+          { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
       },
     ],

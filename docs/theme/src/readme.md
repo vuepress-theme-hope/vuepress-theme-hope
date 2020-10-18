@@ -4,7 +4,7 @@ icon: homefill
 title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
-tagline: A light Vuepress theme
+tagline: A vuepress theme with tons of features✨
 action:
   - text: Get Started 💡
     link: /guide/
@@ -54,7 +54,7 @@ features:
     link: /config/plugin/pwa/
 
   - title: TS support
-    details: Turn on Typescript support for your Vuepress
+    details: Turn on Typescript support for your VuePress
     link: /guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

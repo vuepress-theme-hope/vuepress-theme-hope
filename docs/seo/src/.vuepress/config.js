@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "SEO 增强插件",
-      description: "Vuepress 的 SEO 增强插件",
+      description: "VuePress 的 SEO 增强插件",
     },
   },
 

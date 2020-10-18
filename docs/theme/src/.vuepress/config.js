@@ -4,7 +4,7 @@ const sideBarConfig = require("./sideBar");
 
 module.exports = config({
   title: "vuepress-theme-hope",
-  description: "A light vuepress theme",
+  description: "A vuepress theme with tons of features✨",
 
   headOption: {
     icon: "/favicon.ico",
@@ -25,7 +25,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "vuepress-theme-hope",
-      description: "一个轻量的 vuepress 主题",
+      description: "一个具有强大功能的 vuepress 主题✨",
     },
   },
 

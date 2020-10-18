@@ -1,5 +1,5 @@
 ---
-title: Vuepress commands
+title: VuePress commands
 icon: program
 category: basic
 tags:

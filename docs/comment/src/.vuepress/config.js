@@ -2,7 +2,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   title: "Comment Plugin",
-  description: "Comment Plugin for Vuepress",
+  description: "Comment Plugin for VuePress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -19,7 +19,7 @@ module.exports = config({
   dest: "./dist",
 
   locales: {
-    "/zh/": { title: "评论插件", description: "Vuepress 的评论插件" },
+    "/zh/": { title: "评论插件", description: "VuePress 的评论插件" },
   },
 
   themeConfig: {

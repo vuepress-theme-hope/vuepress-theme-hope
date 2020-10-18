@@ -86,7 +86,7 @@ title: vuepress-theme-hope
 icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
-tagline: 一个轻量的 Vuepress 主题
+tagline: 一个具有强大功能的 vuepress 主题✨
 action:
   - text: 快速上手 💡
     link: /zh/guide/
@@ -136,7 +136,7 @@ features:
     link: /zh/config/plugin/pwa/
 
   - title: TS 支持
-    details: 为你的 Vuepress 开启 Typescript 支持
+    details: 为你的 VuePress 开启 Typescript 支持
     link: /zh/guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

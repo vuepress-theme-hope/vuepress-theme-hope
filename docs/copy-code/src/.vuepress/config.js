@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "代码一键复制插件",
-      description: "Vuepress 的代码一键复制插件",
+      description: "VuePress 的代码一键复制插件",
     },
   },
 

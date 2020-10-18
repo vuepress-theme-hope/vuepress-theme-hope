@@ -4,7 +4,7 @@ title: vuepress-plugin-add-this
 icon: homefill
 heroImage: /logo.svg
 heroText: vuepress-plugin-add-this
-tagline: 为 Vuepress 提供 addthis 支持
+tagline: 为 VuePress 提供 addthis 支持
 action:
   - text: 快速上手 💡
     link: /zh/guide/

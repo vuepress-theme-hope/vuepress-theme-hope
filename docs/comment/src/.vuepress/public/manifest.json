@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-comment",
   "short_name": "comment",
-  "description": "Comment plugin for Vuepress",
+  "description": "Comment plugin for VuePress",
   "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [

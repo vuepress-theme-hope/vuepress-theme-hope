@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-hope",
-  "short_name": "Hope-VuepressTheme",
-  "description": "一个轻量的 Vuepress 主题",
+  "short_name": "Hope-VuePressTheme",
+  "description": "一个具有强大功能的 vuepress 主题✨",
   "lang": "zh-CN",
   "orientation": "portrait-primary",
   "icons": [

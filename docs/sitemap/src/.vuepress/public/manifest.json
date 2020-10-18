@@ -1,7 +1,7 @@
 {
   "name": "@mr-hope/vuepress-plugin-sitemap",
   "short_name": "vuepress-plugin-sitemap",
-  "description": "Sitemap plugin for Vuepress",
+  "description": "Sitemap plugin for VuePress",
   "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [

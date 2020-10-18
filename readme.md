@@ -15,7 +15,7 @@
 
 [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/12381/branches/190414/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=12381&bid=190414) ![Issues](https://img.shields.io/github/issues-raw/mister-hope/vuepress-theme-hope?style=flat-square&logo=github)
 
-A light vuepress theme / 一个轻量的 vuepress 主题
+A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
 ## Official Docs / 官方文档
 
@@ -88,7 +88,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - Encryption of specific articles and paths
 
-- Typescript Support
+- TypeScript Support
 
 ### Style optimization
 
@@ -121,7 +121,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 ## 主题特点
 
-主题很大程度上保持了 Vuepress 默认主题的风格，并在此基础上添加了大量功能与优化:
+主题很大程度上保持了 VuePress 默认主题的风格，并在此基础上添加了大量功能与优化:
 
 ### 页面增强
 
@@ -182,7 +182,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - 支持对特定文章与路径进行加密
 
-- Typescript 支持
+- TypeScript 支持
 
 ### 样式优化
 

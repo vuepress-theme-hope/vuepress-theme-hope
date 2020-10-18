@@ -296,7 +296,7 @@ module.exports = {
           ],
         },
         {
-          title: "Vuepress",
+          title: "VuePress",
           icon: "vue",
           prefix: "vuepress/",
           collapsable: false,

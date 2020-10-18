@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "AddThis 插件",
-      description: "Vuepress 的 AddThis 插件",
+      description: "VuePress 的 AddThis 插件",
     },
   },
 

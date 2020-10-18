@@ -149,7 +149,7 @@ module.exports = {
 - [search](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-search.html): 基于标题的搜索插件
 
 :::tip
-具体用法详见: [Vuepress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
+具体用法详见: [VuePress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
 :::
 
 ## 社区插件
@@ -167,5 +167,5 @@ module.exports = {
 - [zooming](https://vuepress.github.io/zh/plugins/zooming.html): 使 VuePress 中的图片支持缩放(使用 zooming)
 
 :::tip
-文档详见: [Vuepress 社区](https://vuepress.github.io/zh/)
+文档详见: [VuePress 社区](https://vuepress.github.io/zh/)
 :::

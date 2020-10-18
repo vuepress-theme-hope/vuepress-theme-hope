@@ -87,7 +87,7 @@ module.exports = {
         ],
       },
       {
-        title: "Vuepress",
+        title: "VuePress",
         prefix: "vuepress/",
         icon: "vue",
         collapsable: false,
@@ -185,7 +185,7 @@ module.exports = {
         ],
       },
       {
-        title: "Vuepress",
+        title: "VuePress",
         icon: "vue",
         prefix: "vuepress/",
         collapsable: false,

@@ -4,7 +4,7 @@ home: true
 title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
-tagline: 一个轻量的 Vuepress 主题
+tagline: 一个具有强大功能的 vuepress 主题✨
 action:
   text: 页面布局测试 →
   link: /test/

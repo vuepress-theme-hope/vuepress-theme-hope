@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-md-enhance",
   "short_name": "md-enhance",
-  "description": "Markdown Enhancement for Vuepress",
+  "description": "Markdown Enhancement for VuePress",
   "lang": "zh-CN",
   "orientation": "portrait-primary",
   "icons": [

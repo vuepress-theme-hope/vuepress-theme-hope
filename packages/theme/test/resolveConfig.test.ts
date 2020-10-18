@@ -10,7 +10,7 @@ describe("Test resolveTheme function", () => {
     title: "vuepress-theme-hope",
 
     /** 网站描述 */
-    description: "一个轻量的 vuepress 主题",
+    description: "一个具有强大功能的 vuepress 主题✨",
 
     locales: {
       "/en/": {
@@ -18,7 +18,7 @@ describe("Test resolveTheme function", () => {
         title: "vuepress-theme-hope",
 
         /** 网站在该语言下的描述 */
-        description: "A light vuepress theme",
+        description: "A vuepress theme with tons of features✨",
       },
     },
 

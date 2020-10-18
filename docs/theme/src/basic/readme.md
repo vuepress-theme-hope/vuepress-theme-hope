@@ -4,7 +4,7 @@ icon: infofill
 
 # Basic
 
-Here are some docs about Vuepress.
+Here are some docs about VuePress.
 
 - [Markdown](markdown/readme.md)
-- [Vuepress](vuepress/readme.md)
+- [VuePress](vuepress/readme.md)

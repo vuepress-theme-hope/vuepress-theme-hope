@@ -3,7 +3,7 @@ home: true
 title: "@mr-hope/vuepress-plugin-copy-code"
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-copy-code"
-tagline: 为 Vuepress 提供一键复制代码支持
+tagline: 为 VuePress 提供一键复制代码支持
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

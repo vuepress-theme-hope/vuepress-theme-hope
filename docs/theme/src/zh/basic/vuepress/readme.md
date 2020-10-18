@@ -1,5 +1,5 @@
 ---
-title: Vuepress
+title: VuePress
 icon: vue
 category: basic
 tags:
@@ -7,7 +7,7 @@ tags:
 prev: ../markdown/demo
 ---
 
-Vuepress 是一个 Vue 驱动的静态网站生成器。它遵循:
+VuePress 是一个 Vue 驱动的静态网站生成器。它遵循:
 
 - 简洁至上
 
@@ -42,7 +42,7 @@ npm run serve
 npm run build
 ```
 
-## Vuepress 介绍
+## VuePress 介绍
 
 - [文件结构简介](file.md)
 - [插件](plugin.md)
@@ -50,9 +50,9 @@ npm run build
 - [使用指令](command.md)
 - [案例](case.md)
 
-## Vuepress 官方文档
+## VuePress 官方文档
 
-- [Vuepress 指南](https://v1.vuepress.vuejs.org/zh/guide/)
-- [Vuepress 配置](https://v1.vuepress.vuejs.org/zh/config/)
-- [Vuepress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
-- [Vuepress 主题](https://v1.vuepress.vuejs.org/zh/theme/)
+- [VuePress 指南](https://v1.vuepress.vuejs.org/zh/guide/)
+- [VuePress 配置](https://v1.vuepress.vuejs.org/zh/config/)
+- [VuePress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
+- [VuePress 主题](https://v1.vuepress.vuejs.org/zh/theme/)

@@ -21,7 +21,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "最后更新时间插件",
-      description: "Vuepress 的最后更新时间插件",
+      description: "VuePress 的最后更新时间插件",
     },
   },
 

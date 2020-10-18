@@ -149,7 +149,7 @@ module.exports = {
 - [search](https://v1.vuepress.vuejs.org/plugin/official/plugin-search.html): Headers-based search plugin
 
 :::tip
-More configuration, please view[Vuepress Plugins](https://v1.vuepress.vuejs.org/plugin/)
+More configuration, please view[VuePress Plugins](https://v1.vuepress.vuejs.org/plugin/)
 :::
 
 ## Community Plugins
@@ -167,5 +167,5 @@ More configuration, please view[Vuepress Plugins](https://v1.vuepress.vuejs.org/
 - [zooming](https://vuepress.github.io/en/plugins/zooming.html): Make images zoomable in VuePress (with zooming)
 
 :::tip
-For more infomation, please visit [Vuepress Community](https://vuepress.github.io/en/)
+For more infomation, please visit [VuePress Community](https://vuepress.github.io/en/)
 :::

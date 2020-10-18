@@ -173,7 +173,7 @@ In codes above, two spaces are behind `at`.
 ```
 
 :::tip
-You can alse use these in Vuepress:
+You can alse use these in VuePress:
 
 - [Home page-Can route when editing markdown file](../readme.md)
 

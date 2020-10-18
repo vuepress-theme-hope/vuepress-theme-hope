@@ -29,7 +29,7 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
       const $site = context.getSiteData();
       const meta = $page.frontmatter.meta || [];
 
-      // In Vuepress core, permalinks are built after enhancers.
+      // In VuePress core, permalinks are built after enhancers.
       const pageClone = Object.assign(
         Object.create(Object.getPrototypeOf($page)) as Page,
         $page

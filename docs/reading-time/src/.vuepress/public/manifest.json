@@ -1,7 +1,7 @@
 {
   "name": "@mr-hope/vuepress-plugin-reading-time",
   "short_name": "vuepress-plugin-reading-time",
-  "description": "Reading Time generator for Vuepress",
+  "description": "Reading Time generator for VuePress",
   "lang": "en-US",
   "orientation": "portrait-primary",
   "icons": [

@@ -91,7 +91,7 @@ module.exports = {
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown", icon: "markdown" },
-          { text: "Vuepress", link: "vuepress/", icon: "vue" },
+          { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
       },
     ],
@@ -271,7 +271,7 @@ module.exports = {
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
-          { text: "Vuepress", link: "/vuepress/", icon: "vue" },
+          { text: "VuePress", link: "/vuepress/", icon: "vue" },
         ],
       },
       {
