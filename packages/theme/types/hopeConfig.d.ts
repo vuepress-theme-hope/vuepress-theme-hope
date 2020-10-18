@@ -3,6 +3,7 @@ import {
   HopeLangLocalesConfig,
   HopeNavBarConfig,
   HopeSideBarConfig,
+  Langs,
 } from "@mr-hope/vuepress-shared-utils";
 import { DefaultThemeConfig, SiteConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "vuepress-plugin-md-enhance/types";
@@ -370,7 +371,7 @@ export interface HopeThemeConfig
    *
    * @default 'en-US'
    */
-  baseLang?: string;
+  baseLang?: Langs;
 
   /** 站点地址 */
   hostname?: string;
@@ -565,7 +566,7 @@ export interface HopeThemeConfig
 /** 处理后的 vuepress-theme-hope 主题配置 */
 export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   /** 根目录对应的语言 */
-  baseLang: string;
+  baseLang: Langs;
   /** 侧边栏深度 */
   sidebarDepth: number;
   /** 图标 FontClass 前缀 */

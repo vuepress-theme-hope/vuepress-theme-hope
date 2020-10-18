@@ -26,7 +26,7 @@ export const lang2PathConfig: Record<Langs, LangPaths> = {
 export const path2langConfig: Record<LangPaths, Langs> = {
   "/zh/": "zh-CN",
   "/en/": "en-US",
-  "/vi/": "vi-VN"
+  "/vi/": "vi-VN",
 };
 
 /** Muti language config */
@@ -201,7 +201,7 @@ const containerConfig: Record<string, PluginI18nConfig<string>> = {
   info: {
     "/zh/": "相关信息",
     "/en/": "Info",
-    "/vi/": "Thông tin"
+    "/vi/": "Thông tin",
   },
   tip: {
     "/zh/": "提示",
@@ -216,12 +216,12 @@ const containerConfig: Record<string, PluginI18nConfig<string>> = {
   danger: {
     "/zh/": "警告",
     "/en/": "Warning",
-    "/vi/": "Cẩn thận"
+    "/vi/": "Cẩn thận",
   },
   detail: {
     "/zh/": "详情",
     "/en/": "Detail",
-    "/vi/": "Chi tiết"
+    "/vi/": "Chi tiết",
   },
 };
 
@@ -271,7 +271,7 @@ const readingTimeConfig: PluginI18nConfig<ReadingTimeI18NCOnfig> = {
 const valineConfig: PluginI18nConfig<string> = {
   "/zh/": "请留言",
   "/en/": "Write a comment here",
-  "/vi/": "Để lại bình luận"
+  "/vi/": "Để lại bình luận",
 };
 
 /** Muti language config for plugins */

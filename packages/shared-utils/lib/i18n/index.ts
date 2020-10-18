@@ -14,11 +14,7 @@ const reportStatus: Record<string, boolean> = {};
 export const checkLang = (lang: string): boolean =>
   langs.includes(lang as Langs);
 
-/**
- * 获取语言对应路径
- *
- * @param lang 语言
- */
+/** 获取语言对应路径 */
 export const lang2path = (lang: string): LangPaths | "/" => {
   if (lang2PathConfig[lang as Langs]) return lang2PathConfig[lang as Langs];
 
@@ -30,11 +26,7 @@ You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/ma
   return "/";
 };
 
-/**
- * 获取路径对应语言
- *
- * @param path 路径
- */
+/** 获取路径对应语言 */
 export const path2lang = (path: string): Langs => {
   if (path2langConfig[path as LangPaths])
     return path2langConfig[path as LangPaths];

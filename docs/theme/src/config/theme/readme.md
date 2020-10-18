@@ -29,7 +29,7 @@ The language of the home directory.
 This option ensures that the subject text in the main catalog page is displayed in the correct language. You can change it to other languages according to your needs.
 
 ::: tip
-Currently only **Simplified Chinese** (zh-CN) and **English (United States)** (en-US) are available for i18n.
+Currently only **Simplified Chinese** (zh-CN), **English (United States)** (en-US) and **Vietnamese** (vi-VN) are available for i18n.
 
 If you need multi-language support for other languages, you can [submit a PR to this file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts)
 :::

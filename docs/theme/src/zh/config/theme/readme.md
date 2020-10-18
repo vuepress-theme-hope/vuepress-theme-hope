@@ -29,7 +29,7 @@ tags:
 这个选项会保证主目录页面中主题文字使用正确的语言显示。你可以根据自己的需要将其改为其他语言。
 
 ::: tip
-目前多语言仅适配了 **简体中文** (zh-CN) 与 **英文(美国)** (en-US)。
+目前多语言仅适配了 **简体中文** (zh-CN)、**英文(美国)** (en-US) 与 越南语 (vi-VN)。
 
 如果你需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts)
 :::

@@ -1,3 +1,5 @@
+import { Langs } from "@mr-hope/vuepress-shared-utils";
+
 import "./declare";
 
 /** md-enhance plugin configuration */
@@ -9,7 +11,7 @@ export type MarkdownEnhanceOption = Partial<{
    *
    * @default 'en-US'
    */
-  baseLang?: string;
+  baseLang?: Langs;
   /**
    * 是否在每个代码块的左侧显示行号
    *

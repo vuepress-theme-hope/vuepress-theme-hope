@@ -1,4 +1,4 @@
-import { ComponentI18NConfig } from "@mr-hope/vuepress-shared-utils";
+import { ComponentI18NConfig, Langs } from "@mr-hope/vuepress-shared-utils";
 
 export interface ComponentOptions {
   /**
@@ -8,7 +8,7 @@ export interface ComponentOptions {
    *
    * @default 'en-US'
    */
-  baseLang?: string;
+  baseLang?: Langs;
 }
 
 declare global {

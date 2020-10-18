@@ -21,6 +21,9 @@ export default class Clipboard extends Vue {
       "en-US": `${this.html}\n-----\n${
         author ? `Copyright by ${author}.\n` : ""
       }Link: ${this.location}`,
+      "vi-VN": `${this.html}\n-----\n${
+        author ? `bản quyền bởi ${author}.\n` : ""
+      }Liên kết: ${this.location}`,
     };
 
     return content[this.lang];

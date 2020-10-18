@@ -1,4 +1,5 @@
 import {
+  Langs,
   PageInfoI18nConfig,
   ReadingTimeI18NCOnfig,
 } from "@mr-hope/vuepress-shared-utils";
@@ -28,7 +29,7 @@ interface BaseCommentOptions {
    *
    * @default 'en-US'
    */
-  baseLang?: string;
+  baseLang?: Langs;
   /**
    * 评论服务
    *

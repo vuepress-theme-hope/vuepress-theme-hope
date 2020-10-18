@@ -1,5 +1,6 @@
 import { describe, it } from "mocha";
 import { expect } from "chai";
+import { Langs } from "@mr-hope/vuepress-shared-utils";
 import resolveConfig from "../../lib/pluginConfig";
 
 describe("Test pluginConfig generate", () => {
@@ -16,57 +17,7 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(4, 1);
-
-    expect(pluginConfig).to.be.deep.equal([
-      [
-        "container",
-        {
-          type: "info",
-          defaultTitle: {
-            "/": "Info",
-            "/zh/": "相关信息",
-            "/en/": "Info",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "tip",
-          defaultTitle: {
-            "/": "Tips",
-            "/zh/": "提示",
-            "/en/": "Tips",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "warning",
-          defaultTitle: {
-            "/": "Note",
-            "/zh/": "注意",
-            "/en/": "Note",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "danger",
-          defaultTitle: {
-            "/": "Warning",
-            "/zh/": "警告",
-            "/en/": "Warning",
-          },
-        },
-      ],
-      ["container", { type: "left", defaultTitle: "" }],
-      ["container", { type: "center", defaultTitle: "" }],
-      ["container", { type: "right", defaultTitle: "" }],
-    ]);
+    expect((pluginConfig[0] as any)[1].defaultTitle["/"]).to.be.equal("Info");
   });
 
   it("should handle baseLang option", () => {
@@ -75,7 +26,7 @@ describe("Test pluginConfig generate", () => {
     };
 
     const themeConfig = {
-      baseLang: "zh-CN",
+      baseLang: "zh-CN" as Langs,
       markdown: {
         enableAll: false,
       },
@@ -83,119 +34,8 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    pluginConfig.splice(4, 1);
-
-    expect(pluginConfig).to.be.deep.equal([
-      [
-        "container",
-        {
-          type: "info",
-          defaultTitle: {
-            "/": "相关信息",
-            "/zh/": "相关信息",
-            "/en/": "Info",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "tip",
-          defaultTitle: {
-            "/": "提示",
-            "/zh/": "提示",
-            "/en/": "Tips",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "warning",
-          defaultTitle: {
-            "/": "注意",
-            "/zh/": "注意",
-            "/en/": "Note",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "danger",
-          defaultTitle: {
-            "/": "警告",
-            "/zh/": "警告",
-            "/en/": "Warning",
-          },
-        },
-      ],
-      ["container", { type: "left", defaultTitle: "" }],
-      ["container", { type: "center", defaultTitle: "" }],
-      ["container", { type: "right", defaultTitle: "" }],
-    ]);
-  });
-
-  it("should disable all", () => {
-    const option = {
-      enableAll: false,
-    };
-
-    const themeConfig = {
-      markdown: {
-        enableAll: true,
-      },
-    };
-
-    const pluginConfig = resolveConfig(option, themeConfig);
-
-    pluginConfig.splice(4, 1);
-
-    expect(pluginConfig).to.be.deep.equal([
-      [
-        "container",
-        {
-          type: "info",
-          defaultTitle: {
-            "/": "Info",
-            "/zh/": "相关信息",
-            "/en/": "Info",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "tip",
-          defaultTitle: {
-            "/": "Tips",
-            "/zh/": "提示",
-            "/en/": "Tips",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "warning",
-          defaultTitle: {
-            "/": "Note",
-            "/zh/": "注意",
-            "/en/": "Note",
-          },
-        },
-      ],
-      [
-        "container",
-        {
-          type: "danger",
-          defaultTitle: {
-            "/": "Warning",
-            "/zh/": "警告",
-            "/en/": "Warning",
-          },
-        },
-      ],
-    ]);
+    expect((pluginConfig[0] as any)[1].defaultTitle["/"]).to.be.equal(
+      "相关信息"
+    );
   });
 });

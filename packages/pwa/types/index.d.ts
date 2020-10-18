@@ -1,3 +1,4 @@
+import { Langs } from "@mr-hope/vuepress-shared-utils";
 import "./declare";
 
 /** PWA 配置 */
@@ -9,7 +10,7 @@ export interface PWAOptions {
    *
    * @default 'en-US'
    */
-  baseLang?: string;
+  baseLang?: Langs;
   /**
    * 用于替换默认弹出组件的自定义组件。
    *
