@@ -104,16 +104,20 @@
     img
       display block
       max-width 100%
-      max-height 280px
-      margin 3rem auto 1.5rem
+      max-height 320px
+      margin 0
+
+      @media (max-width $MQNarrow)
+        max-height 280px
+        margin 3rem auto 1.5rem
+
+      @media (max-width $MQMobile)
+        max-height 240px
+        margin 2rem auto 1.2rem
 
       @media (max-width $MQMobileNarrow)
         max-height 210px
-        margin 2rem auto 1.2rem
-
-      @media (min-width $MQNarrow)
-        max-height 320px
-        margin 0
+        margin 1.5rem auto 1rem
 
       .theme-light &
         &.light
@@ -132,11 +136,17 @@
     h1
       font-size 3rem
 
+      @media (max-width $MQMobile)
+        font-size 2.5rem
+
       @media (max-width $MQMobileNarrow)
         font-size 2rem
 
     h1, .description, .action
       margin 1.8rem auto
+
+      @media (max-width $MQMobile)
+        margin 1.5rem auto
 
       @media (max-width $MQMobileNarrow)
         margin 1.2rem auto
@@ -146,6 +156,9 @@
       font-size 1.6rem
       line-height 1.3
       color var(--text-color-l40)
+
+      @media (max-width $MQMobile)
+        font-size 1.4rem
 
       @media (max-width $MQMobileNarrow)
         font-size 1.2rem
@@ -215,12 +228,18 @@
         color var(--text-color-l10)
 
         @media (max-width $MQMobileNarrow)
-          font-size 1.25rem
+          font-size 1.2rem
 
       p
         margin-top 0
         color var(--text-color-l25)
         text-align justify
+
+      @media (max-width $MQMobile)
+        font-size 0.95rem
+
+      @media (max-width $MQMobileNarrow)
+        font-size 0.9rem
 
   {$contentClass}
     padding-bottom 1.5rem
