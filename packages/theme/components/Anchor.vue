@@ -6,7 +6,7 @@ $headings = 2 3 4 5 6
 #anchor
   display none
   position fixed
-  top ($navbarHeight + 2rem)
+  top ($navbarHeight + 2.5rem)
   right 0.5rem
   min-width 10rem
   max-width 15rem
