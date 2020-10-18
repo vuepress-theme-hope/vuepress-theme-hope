@@ -256,7 +256,7 @@ Items in `[]` are optional.
 
 ### Directions
 
-The following directions are availiable and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used to indicate that one of the below should be used in its place.
+The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used to indicate that one of the below should be used in its place.
 
 - left
 - right
@@ -322,7 +322,7 @@ e=>end: End:>http://www.yahoo.com
 
 Symbols that should possibly not be used in the text: `=>` and `->` and `:>` and `|` and `@>` and `:$`
 
-If you want to emphasize a specific path in your flowchart, you can additionally define it like this:
+To emphasize a specific path in your flowchart, you can additionally define it like this:
 
 ```
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})

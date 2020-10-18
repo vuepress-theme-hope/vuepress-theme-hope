@@ -11,7 +11,7 @@
 
 VuePress add-this plugin💌 / VuePress AddThis 插件 💌
 
-## [Offical Docs](https://vuepress-add-this.mrhope.site/) / [官方文档](https://vuepress-add-this.mrhope.site/zh/)
+## [Official Docs](https://vuepress-add-this.mrhope.site/) / [官方文档](https://vuepress-add-this.mrhope.site/zh/)
 
 ## How to use
 

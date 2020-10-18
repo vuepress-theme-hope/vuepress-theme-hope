@@ -48,3 +48,4 @@ jobs:
         run: |
           yarn run test
           yarn run lint:check
+          yarn run lint-md

@@ -9,7 +9,7 @@
 
 <!-- markdownlint-restore -->
 
-## [Offical Docs](https://vuepress-photo-swipe.mrhope.site/en/) / [官方文档](https://vuepress-photo-swipe.mrhope.site)
+## [Official Docs](https://vuepress-photo-swipe.mrhope.site/en/) / [官方文档](https://vuepress-photo-swipe.mrhope.site)
 
 ## Usage
 

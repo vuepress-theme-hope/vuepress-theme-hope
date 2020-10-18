@@ -32,7 +32,7 @@ Will read these options from `themeConfig`:
 
 ## MyBadge
 
-A badge which allows you to diy it's color.
+A badge which allows you to diy it’s color.
 
 ## Pagination
 
