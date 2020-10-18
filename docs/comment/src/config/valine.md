@@ -23,14 +23,14 @@ Fill in the application appKey in LeanCloud
 - Type: `boolean`
 - Default: `true`
 
-Comment Funtion
+Comment Function
 
 ## visitor
 
 - Type: `boolean`
 - Default: `true`
 
-Pageviews FUntion
+Pageviews Function
 
 ## pageSize
 
@@ -60,7 +60,7 @@ Whether to record the commenter IP
   - Type: `string[]`
   - Default: `['nick','mail','link']`
 
-  Commenter's info
+  Commenter’s info
 
 - **requiredFields**
 
@@ -85,8 +85,8 @@ Whether to record the commenter IP
 
   ::: tip Optional Values
 
-  - `''`(Empty String): Gravatar Offical Pic
-  - `mp`: Mistery
+  - `''`(Empty String): Gravatar Official Pic
+  - `mp`: Mystery
   - `identicon`
   - `monsterid`
   - `wavatar`
@@ -104,11 +104,11 @@ Whether to record the commenter IP
   - Type: `string`
   - Required: No
 
-  To set the emoji package CDN, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)
+  To set the emoji package CDN, please see [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)
 
 - **emojiMaps**
 
   - Type: `sbject`
   - Default value: `null`
 
-  To set the emoticon package mapping, please refer to [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)
+  To set the emoticon package mapping, please see [Valine Custom Emoticon Package](https://valine.js.org/emoji.html)

@@ -119,7 +119,7 @@ The following are the `<meta>` tags and their values ​​that will be injected
 
 - Type: `(meta: Meta, info: PageSeoInfo) => void`
 
-You can use this option to inject content directly into Meta. For the format of `Meta`, please see [Front Matter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
+You can use this option to inject content directly into Meta. For the format of `Meta`, please see [Frontmatter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
 
 For example:
 
@@ -129,7 +129,7 @@ For example:
 };
 ```
 
-Will inject into the current page's `<head>` with:
+Will inject into the current page’s `<head>` with:
 
 ```html
 <meta a="1" b="2" />

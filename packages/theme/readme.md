@@ -88,7 +88,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - Encryption of specific articles and paths
 
-- Typescript Support
+- TypeScript Support
 
 ### Style optimization
 
@@ -182,7 +182,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - 支持对特定文章与路径进行加密
 
-- Typescript 支持
+- TypeScript 支持
 
 ### 样式优化
 

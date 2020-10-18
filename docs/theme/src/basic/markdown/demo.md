@@ -173,15 +173,15 @@ In codes above, two spaces are behind `at`.
 ```
 
 :::tip
-You can alse use these in VuePress:
+You can also use these in VuePress:
 
-- [Home page-Can route when editing markdown file](../readme.md)
+- [Home page-Can route when editing Markdown file](../readme.md)
 
 - [Home page using absolute path 2](/readme.md)
 
 - [Visit in HTML](../index.html)
 
-If you want to be able to jump to each other when editing the markdown using the editor, you need to use the **relative path**, and `readme.md` **cannot** be omitted.
+To be able to jump to each other when editing the Markdown using the editor, you need to use the **relative path**, and `readme.md` **cannot** be omitted.
 
 代码:
 

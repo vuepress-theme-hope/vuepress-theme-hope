@@ -67,7 +67,7 @@ tags: intro
 
 - [加密特定文章或路径](feature/encrypt.md)
 
-- [Typescript 支持](feature/typescript.md)
+- [TypeScript 支持](feature/typescript.md)
 
 ### 样式优化
 

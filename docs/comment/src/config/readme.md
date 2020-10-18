@@ -29,7 +29,7 @@ Default author for pages
 - Type: `string[] | false`
 - Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
 
-Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
+Article information should be filled in with an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
 
 The items that can be filled are as follows:
 

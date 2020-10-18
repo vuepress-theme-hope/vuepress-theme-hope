@@ -32,7 +32,7 @@ tags:
 
   FontClass format icon support has been added in multiple places throughout the theme.
 
-  Please import the corresponding icon css file in `index.styl` under `.vuepress/styles`. E.g:
+  Please import the corresponding icon CSS file in `index.styl` under `.vuepress/styles`. E.g:
 
   ```css
   @import "//at.alicdn.com/t/font_1446717_giwlq66d28j.css";
@@ -40,4 +40,4 @@ tags:
 
   The class added to the icon is `iconfont`, and the prefix of the icon is `icon-` by default, which can be changed in the `iconPrefix` field in the theme configuration.
 
-- [**Typescript support**](typescript.md)
+- [**TypeScript support**](typescript.md)

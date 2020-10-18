@@ -251,10 +251,10 @@ nodeVar2->nodeVar3
 
 以下方向可用，并定义了连接将从节点离开的方向。如果指定符不止一个，则总是最后一个。所有节点都有默认方向，这使其成为可选规范。`<direction>` 的可选值为:
 
-- left
-- right
-- top
-- bottom
+- `left`
+- `right`
+- `top`
+- `bottom`
 
 ### 节点特定说明符
 

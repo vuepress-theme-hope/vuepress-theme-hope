@@ -46,19 +46,19 @@ module.exports = {
 ::: tip
 The only difference is that, you should set `platform` rather than the `api` package itself.
 
-`@vssue/vuepress-plugin-vssue` will auto resolve the corresponding api package according to the value of `platform`:
+`@vssue/vuepress-plugin-vssue` will auto resolve the corresponding API package according to the value of `platform`:
 
-- platform `github` - api package `@vssue/api-github-v3`
-- platform `github-v4` - api package `@vssue/api-github-v4`
-- platform `gitlab` - api package `@vssue/api-gitlab-v4`
-- platform `bitbucket` - api package `@vssue/api-bitbucket-v2`
-- platform `gitee` - api package `@vssue/api-gitee-v5`
+- Platform `github` - API package `@vssue/api-github-v3`
+- Platform `github-v4` - API package `@vssue/api-github-v4`
+- Platform `gitlab` - API package `@vssue/api-gitlab-v4`
+- Platform `bitbucket` - API package `@vssue/api-bitbucket-v2`
+- Platform `gitee` - API package `@vssue/api-gitee-v5`
 
 :::
 
 ### Use Vssue Component
 
-`Vssue` has already been registered as a Vue component, and can be used in your VuePress markdown directly.
+`Vssue` has already been registered as a Vue component, and can be used in your VuePress Markdown directly.
 
 ```md
 <!-- README.md -->
@@ -69,14 +69,14 @@ The only difference is that, you should set `platform` rather than the `api` pac
 ```
 
 ::: tip
-You can go to the repo [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
+You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
 :::
 
 ## Custom Style Variables
 
 With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the [Variables of Vssue Style](./styles.md#use-variables-to-customize-vssue) easily.
 
-There are some pre-defined [stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
+There are some predefined [Stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
 
 ```stylus
 // the main color
@@ -120,7 +120,7 @@ $vssue-border-color ?= $borderColor
 $vssue-breakpoint-mobile ?= $MQMobile
 ```
 
-If you want to override them, just set them in your `palette.styl`:
+To override them, just set them in your `palette.styl`:
 
 ```stylus
 // .vuepress/styles/palette.styl
@@ -134,7 +134,7 @@ Vssue has tried to be SSR-friendly, so you can import Vssue directly in VuePress
 
 But we still suggest you to use `@vssue/vuepress-plugin-vssue` in VuePress, which has already helped you make `<Vssue>` component client-only to avoid some potential issues.
 
-If you do not want to use the plugin we provided, you may need to wrap `<Vssue>` component into `<ClientOnly>` component to avoid those potential issues, i.e. :
+If you do not want to use the plugin we provided, you may need to wrap `<Vssue>` component into `<ClientOnly>` component to avoid those potential issues, that is :
 
 ```vue
 <ClientOnly>

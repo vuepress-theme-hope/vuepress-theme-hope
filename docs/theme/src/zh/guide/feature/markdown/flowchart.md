@@ -46,7 +46,7 @@ module.exports = {
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
-op2=>operation: Stuff|current
+op2=>operation: Do something|current
 sub1=>subroutine: My Subroutine|invalid
 cond=>condition: Yes
 or No?|approved:>http://www.google.com
@@ -67,7 +67,7 @@ c2(no)->op2->e
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
-op2=>operation: Stuff|current
+op2=>operation: Do something|current
 sub1=>subroutine: My Subroutine|invalid
 cond=>condition: Yes
 or No?|approved:>http://www.google.com

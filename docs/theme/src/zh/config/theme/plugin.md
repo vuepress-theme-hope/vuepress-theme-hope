@@ -93,7 +93,7 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 ## 版权设置
 
-详细信息，请参见 [vuepress-plugin-copyright 文档][copyright-config]
+详细信息，请参见 [vuepress-plugin-copyright 文档](https://vuepress.github.io/zh/plugins/copyright/)
 
 > 这是一个 vuepress 社区插件，而不是内置插件。因此，如果你遇到问题，请前往 [它的仓库](https://github.com/vuepress/vuepress-plugin-copyright) 寻求帮助。
 

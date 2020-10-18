@@ -8,4 +8,4 @@ icon: configuration
 - Type: `string`
 - Required: true
 
-pubid for Add this
+Pubid for Add this

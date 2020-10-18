@@ -65,7 +65,7 @@ tags:
 
 ## src folder
 
-The **source code** is placed in the `src` directory, in which all **markdown** files are rendered into **HTML**. That is the time when **readme.md** is rendered into **index.html**. In addition, VuePress's configuration files are all placed in the `src/.vuepress` directory.
+The **source code** is placed in the `src` directory, in which all **Markdown** files are rendered into **HTML**. That is the time when **readme.md** is rendered into **index.HTML**. In addition, VuePress’s configuration files are all placed in the `src/.vuepress` directory.
 
 ## dist folder
 
@@ -75,30 +75,27 @@ If you use an automated build tool, you **DONOT** need to perform the build loca
 
 ## package.json
 
-Node.js declaration file for the entire project, it is a file that must be included in the Node project. Contains information such as **project name**, **details**, **license**, and **packages** being used.
+Node.js declaration file for the entire project, it is a file that must be included in the Node.js project. Contains information such as **project name**, **details**, **license**, and **packages** being used.
 
 ## readme.md
 
-Project documentation on Github.
+Project documentation on GitHub.
 
 ## Others
 
 File that do not need to be understand at the beginning:
 
-| Files             | Content                                                        |
-| ----------------- | -------------------------------------------------------------- |
-| node_modules      | Stored the package used by the project                         |
-| LICENSE           | Project license document                                       |
-| package-lock.json | The structure of the package actually installed by the project |
-| .eslintignore     | Files ignored by ESLint                                        |
-| .eslintrc.js      | ESLint rule configuration file                                 |
-| .nvmrc            | Node version declaration file of the environment               |
-| .travis.yml       | Travis CI Config file                                          |
+| Files         | Content                                                        |
+| ------------- | -------------------------------------------------------------- |
+| node_modules  | Stored the package used by the project                         |
+| LICENSE       | Project license document                                       |
+| yarn.lock     | The structure of the package actually installed by the project |
+| .eslintrc.yml | ESLint rule configuration file                                 |
 
 :::tip
 ESLint is a JS code linter.
 
-Beginners can use it in learning to reduce their own mistakes and develop a standardized code style. But you don't need to know the specific configuration method and working principle.
+Beginners can use it in learning to reduce their own mistakes and develop a standardized code style. But you don’t need to know the specific configuration method and working principle.
 :::
 
 ## .vuepress
@@ -115,7 +112,7 @@ For more details, please view[VuePress Config](https://v1.vuepress.vuejs.org/con
 
 ### public folder
 
-A folder where other files on the site being placed. The files in the folder will be copied directly to the built directory when you build. Its content are usually resources that do not need to be imported using relative paths, such as icons for websites.
+A folder where other files on the site being placed. The files in the folder will be copied directly to the built directory when you build. Its content are usually resources that do not need to be imported using relative paths, such as icons for sites.
 
 ### style folder
 

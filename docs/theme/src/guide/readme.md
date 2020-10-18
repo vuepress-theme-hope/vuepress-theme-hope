@@ -65,7 +65,7 @@ The theme largely maintains the style of the `@vuepress/theme-default`, and adds
 
 - [Encryption of specific articles and paths](feature/encrypt.md)
 
-- [Typescript support](feature/typescript.md)
+- [TypeScript support](feature/typescript.md)
 
 ### Style optimization
 
@@ -120,7 +120,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [vuepress-plugin-md-enhance][md-enhance]): Provide more Markdown syntax
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: Make the site's picture support click zoom
+- [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
 
 [add-this]: https://vuepress-add-this.mrhope.site
 [comment]: https://vuepress-comment.mrhope.site

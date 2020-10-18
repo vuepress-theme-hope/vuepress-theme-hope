@@ -14,14 +14,14 @@ icon: gitlab
 ->![Set up OAuth App - Gitlab 01](/img/oauth-app-gitlab-01.png)<-
 ->![Set up OAuth App - Gitlab 02](/img/oauth-app-gitlab-02.png)<-
 
-- Set the `Redirect URI` to your website URL (Here we take `localhost:8080` for example)
+- Set the `Redirect URI` to your site URL (Here we take `localhost:8080` for example)
 - Select `api` scope
 
 ->![Set up OAuth App - Gitlab 03](/img/oauth-app-gitlab-03.png)<-
 
 ## Get the Client ID
 
-Then you've created a new Application, and here is your **Application ID** (`Client ID`).
+Then you’ve created a new Application, and here is your **Application ID** (`Client ID`).
 
 ->![Set up OAuth App - Gitlab 04](/img/oauth-app-gitlab-04.png)<-
 
@@ -53,5 +53,5 @@ Leave a comment on this page ~
 ->![Set up OAuth App - Gitlab 09](/img/oauth-app-gitlab-09.png)<-
 
 ::: tip
-You can go to the repo [meteorlxy/vssue-demo](https://gitlab.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://gitlab.com/meteorlxy/vssue-demo/issues/1) of that repo to see what happened.
+You can go to the repository [meteorlxy/vssue-demo](https://gitlab.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://gitlab.com/meteorlxy/vssue-demo/issues/1) of that repository to see what happened.
 :::

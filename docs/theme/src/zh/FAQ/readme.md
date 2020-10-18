@@ -11,7 +11,7 @@ category: FAQ
 
 **支持页面配置** 意味着主题允许页面的配置能够覆盖全局的同名(同功能)配置，但并不是所有功能都满足此设置。为了项目的编译速度，有些项目在全局配置禁用后不会在编译阶段加载，它们就无法局部启用。
 
-## Typescript 相关问题
+## TypeScript 相关问题
 
 请确保你的项目依赖了 typescript，且目录下有一个合法的 tsconfig.json 文件。
 
@@ -28,7 +28,7 @@ category: FAQ
   "compilerOptions": {
     "target": "ES6", // 任何不低于 ES6 的 target 均可
     "allowSyntheticDefaultImports": true, // 规避 vuepress-types 的类型定义问题
-    "experimentalDecorators": true, // Vue 的 Typescript 写法需要开启此选项
+    "experimentalDecorators": true, // Vue 的 TypeScript 写法需要开启此选项
     "module": "commonjs", // 为了避免 vuepress-types 解析失败
     // vuepress 与本主题的类型定义文件
     "types": ["@mr-hope/vuepress-theme-types"]
@@ -43,7 +43,7 @@ category: FAQ
 
 请确保将 `"@mr-hope/vuepress-theme-types"` 加入 `compilerOptions.types` 中，因为它不在 `@types` 目录下。
 
-### No inputs were found in config file 'tsconfig.json'
+### No inputs were found in config file tsconfig.json
 
 这个问题一般是你的项目中没有 TypeScript 文件 (或你的 tsconfig.json 配置有误) 导致的。
 

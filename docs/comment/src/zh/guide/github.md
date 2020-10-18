@@ -43,11 +43,11 @@ icon: github
 
 ## 在本地尝试 Vssue
 
-Vssue 已经成功运行。点击 `Login` 使用 Github 帐号登录。
+Vssue 已经成功运行。点击 `Login` 使用 GitHub 帐号登录。
 
 ->![配置 OAuth App - Github 07](/img/oauth-app-github-07.png)<-
 
-重定向到 Github 授权页面。点击 `Authorize ${你的帐号}` 来登录。
+重定向到 GitHub 授权页面。点击 `Authorize ${你的帐号}` 来登录。
 
 ->![配置 OAuth App - Github 08](/img/oauth-app-github-08.png)<-
 

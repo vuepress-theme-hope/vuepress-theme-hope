@@ -8,9 +8,9 @@ tags:
 
 # TS 支持
 
-vuepress-theme-hope 的大部分文件都是使用 Typescript 编写，所以 vuepress-theme-hope 也可以为你的 vuepress 项目带来了原生的 Typescript 支持，你只需设置 `themeConfig.typescript` 为 `true` 即可开启 `typescript` 支持。
+`vuepress-theme-hope` 的大部分文件都是使用 TypeScript 编写，所以 vuepress-theme-hope 也可以为你的 VuePress 项目带来了原生的 TypeScript 支持，你只需设置 `themeConfig.typescript` 为 `true` 即可开启 `typescript` 支持。
 
-开启 Typescript 支持意味着你可以使用 `enhanceAppFiles.ts`，同时在你的 vue 组件 和 Markdown 文件中使用 Tyepscript。
+开启 TypeScript 支持意味着你可以使用 `enhanceAppFiles.ts`，同时在你的 vue 组件 和 Markdown 文件中使用 Tyepscript。
 
 如果你需要向 ts-loader 传递一些自定义选项，你也可以将 `themeConfig.typescript` 设置为一个 Object 来传递给 ts-loader。
 
@@ -33,7 +33,7 @@ npm i -D typescript
   "compilerOptions": {
     "target": "ES6", // 任何不小于 es6 的 target 均可
     "allowSyntheticDefaultImports": true, // 规避 vuepress-types 的类型定义问题
-    "experimentalDecorators": true, // Vue 的 Typescript 写法需要开启此选项
+    "experimentalDecorators": true, // Vue 的 TypeScript 写法需要开启此选项
     "module": "commonjs", // 为了避免 vuepress-types 解析失败
     "types": ["@mr-hope/vuepress-theme-types"]
   },

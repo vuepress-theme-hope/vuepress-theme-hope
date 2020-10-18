@@ -16,14 +16,14 @@ icon: gitee
 ->![Set up OAuth App - Gitee 01](/img/oauth-app-gitee-01.png)<-
 ->![Set up OAuth App - Gitee 02](/img/oauth-app-gitee-02.png)<-
 
-- Set the `Homepage URL` and `Authorization callback URL` to your website URL (Here we take `localhost:8080` for example)
+- Set the `Homepage URL` and `Authorization callback URL` to your site URL (Here we take `localhost:8080` for example)
 - Select `issues` and `notes` permissions
 
 ->![Set up OAuth App - Gitee 03](/img/oauth-app-gitee-03.png)<-
 
 ## Get the Client ID and Secret
 
-Then you've created a new Third Party Application, and here is your `Client ID` and `Client Secret`.
+Then you’ve created a new Third Party Application, and here is your `Client ID` and `Client Secret`.
 
 ->![Set up OAuth App - Gitee 04](/img/oauth-app-gitee-04.png)<-
 
@@ -56,5 +56,5 @@ Leave a comment on this page ~
 ->![Set up OAuth App - Gitee 09](/img/oauth-app-gitee-09.png)<-
 
 ::: tip
-You can go to the repo [meteor_lxy/vssue-demo](https://gitee.com/meteor_lxy/vssue-demo) to get the demo code. Check the [first issue](https://gitee.com/meteor_lxy/vssue-demo/issues/IWWTA) of that repo to see what happened.
+You can go to the repository [meteor_lxy/vssue-demo](https://gitee.com/meteor_lxy/vssue-demo) to get the demo code. Check the [first issue](https://gitee.com/meteor_lxy/vssue-demo/issues/IWWTA) of that repository to see what happened.
 :::

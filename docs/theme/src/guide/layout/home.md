@@ -8,15 +8,15 @@ tags:
 
 # Home Page
 
-vuepress-theme-hope improves the default home page.
+`vuepress-theme-hope` improves the default home page.
 
-If you want to use it, set `home: true` in page Front Matter. Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
+To use it, set `home: true` in page frontmatter. Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
 
 ![Screenshot](./assets/home.png)
 
 ## Item style
 
-The Front Matter parameters that can be configured are as follows:
+The frontmatter parameters that can be configured are as follows:
 
 ### home
 
@@ -29,7 +29,7 @@ Enable homepage style when set to `true`
 - Type: `string | false`
 - Default: `'Hello'`
 
-Title, won't display if it is set to `false`
+Title, won’t display if it is set to `false`
 
 ### heroImage
 
@@ -62,8 +62,8 @@ Append text
 
 `ActionConfig` structure:
 
-- text: Button text
-- link: Button link
+- `text`: Button text
+- `link`: Button link
 
 ### features
 
@@ -71,9 +71,9 @@ Append text
 
 Structure of `Feature`:
 
-- title: `string` title
-- details: `string` details
-- link (optional): `string` link address
+- `title`: `string` title
+- `details`: `string` details
+- `link` (optional): `string` link address
 
 Feature description
 
@@ -136,7 +136,7 @@ features:
     link: /config/plugin/pwa/
 
   - title: TS support
-    details: Turn on Typescript support for your VuePress
+    details: Turn on TypeScript support for your VuePress
     link: /guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

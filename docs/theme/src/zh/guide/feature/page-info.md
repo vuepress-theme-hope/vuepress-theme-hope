@@ -30,7 +30,7 @@ tags:
 
 条目可选的值和对应内容如下:
 
-| 条目         | 对应内容     | 页面 Front Matter 值    | 主题设置的配置项 |
+| 条目         | 对应内容     | 页面 frontmatter 值     | 主题设置的配置项 |
 | ------------ | ------------ | ----------------------- | ---------------- |
 | `'author'`   | 作者         | author                  | author           |
 | `'time'`     | 写作日期     | time                    | N/A              |
@@ -52,7 +52,7 @@ author: Mr.Hope
 ---
 ```
 
-作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。这时，你仍可以在页面中配置 Front Matter 中的 `author` 为一个新值来覆盖默认作者，或者设置 `author` 为 `false` 取消作者显示。
+作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。这时，你仍可以在页面中配置 frontmatter 中的 `author` 为一个新值来覆盖默认作者，或者设置 `author` 为 `false` 取消作者显示。
 
 - **写作日期**
 

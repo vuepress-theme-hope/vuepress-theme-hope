@@ -8,15 +8,15 @@ tags:
 
 # 首页
 
-vuepress-theme-hope 对首页布局进行了一些改进。
+`vuepress-theme-hope` 对首页布局进行了一些改进。
 
-如果想要使用它，请在 Front Matter 中设置 `home: true`。任何 `YAML front matter` 之后额外的内容将会以普通的 markdown 被渲染，并插入到 `features` 的后面。
+如果想要使用它，请在 frontmatter 中设置 `home: true`。任何 `YAML front matter` 之后额外的内容将会以普通的 Markdown 被渲染，并插入到 `features` 的后面。
 
 ![首页截图](./assets/home.png)
 
 ## 配置选项
 
-可以配置的 Front Matter 参数如下:
+可以配置的 frontmatter 参数如下:
 
 ### home
 
@@ -62,8 +62,8 @@ vuepress-theme-hope 对首页布局进行了一些改进。
 
 `ActionConfig` 结构:
 
-- text: 按钮文字
-- link: 按钮链接
+- `text`: 按钮文字
+- `tink`: 按钮链接
 
 ### features
 
@@ -71,9 +71,9 @@ vuepress-theme-hope 对首页布局进行了一些改进。
 
 `Feature` 结构:
 
-- title: `string` 标题
-- details: `string` 详情
-- link(可选): `string` 链接地址
+- `title`: `string` 标题
+- `details`: `string` 详情
+- `link`(可选): `string` 链接地址
 
 特性说明
 
@@ -136,7 +136,7 @@ features:
     link: /zh/config/plugin/pwa/
 
   - title: TS 支持
-    details: 为你的 VuePress 开启 Typescript 支持
+    details: 为你的 VuePress 开启 TypeScript 支持
     link: /zh/guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

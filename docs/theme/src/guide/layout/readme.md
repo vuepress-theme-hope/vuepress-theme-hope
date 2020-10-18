@@ -8,7 +8,7 @@ tags:
 
 # Layout
 
-vuepress-theme-hope adds a lot of layout changes to the default theme layout.
+`vuepress-theme-hope` adds a lot of layout changes to the default theme layout.
 
 - [**Navigation Bar**](navbar.md)
 
@@ -28,7 +28,7 @@ vuepress-theme-hope adds a lot of layout changes to the default theme layout.
 
   - **Back to top button**
 
-  vuepress-theme-hope adds a home-made back-to-top control that will show up by 300px by default.
+  `vuepress-theme-hope` adds a home-made back-to-top control that will display by 300px by default.
 
   The back to top button uses a round colored icon instead of the arrow in the default theme.
 

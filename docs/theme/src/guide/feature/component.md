@@ -27,6 +27,6 @@ tags:
 
 ## Back to top button `<BackToTop />` <MyBadge text="Support page config" />
 
-vuepress-theme-hope adds a back-to-top control which will show up after scrolling down 300px by default.
+`vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
 
 The config key is `backToTop`.

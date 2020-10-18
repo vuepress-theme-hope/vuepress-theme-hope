@@ -19,13 +19,13 @@ icon: github
 ->![Set up OAuth App - Github 02](/img/oauth-app-github-02.png)<-
 ->![Set up OAuth App - Github 03](/img/oauth-app-github-03.png)<-
 
-- Set the `Homepage URL` and `Authorization callback URL` to your website URL (Here we take `localhost:8080` for example)
+- Set the `Homepage URL` and `Authorization callback URL` to your site URL (Here we take `localhost:8080` for example)
 
 ->![Set up OAuth App - Github 04](/img/oauth-app-github-04.png)<-
 
 ## Get the Client ID and Secret
 
-Then you've created a new OAuth App, and here is your `Client ID` and `Client Secret`.
+Then you’ve created a new OAuth App, and here is your `Client ID` and `Client Secret`.
 
 ->![Set up OAuth App - Github 05](/img/oauth-app-github-05.png)<-
 
@@ -43,11 +43,11 @@ Then run `anywhere -h localhost 8080` to serve the `index.html` on `localhost:80
 
 ## Try out Vssue locally
 
-Vssue has already run here. Click `Login` to login with github account.
+Vssue has already run here. Click `Login` to login with GitHub account.
 
 ->![Set up OAuth App - Github 07](/img/oauth-app-github-07.png)<-
 
-Redirect to Github Authorization page. Click `Authorize ${your account}` to login.
+Redirect to GitHub Authorization page. Click `Authorize ${your account}` to login.
 
 ->![Set up OAuth App - Github 08](/img/oauth-app-github-08.png)<-
 
@@ -58,5 +58,5 @@ Leave a comment on this page ~
 ->![Set up OAuth App - Github 10](/img/oauth-app-github-10.png)<-
 
 ::: tip
-You can go to the repo [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://github.com/meteorlxy/vssue-demo/issues/1) of that repo to see what happened.
+You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://github.com/meteorlxy/vssue-demo/issues/1) of that repository to see what happened.
 :::

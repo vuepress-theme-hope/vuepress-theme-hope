@@ -7,7 +7,7 @@ tags:
   - config
 ---
 
-The following are appearence configuration options provided by the theme. In general, you do not need to config them, they are provided for users who need them.
+The following are appearance configuration options provided by the theme. In general, you do not need to config them, they are provided for users who need them.
 
 ## iconPrefix
 

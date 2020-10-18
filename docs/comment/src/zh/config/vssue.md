@@ -6,21 +6,21 @@ icon: vssue
 
 ## platform
 
-`@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 api 包:
+`@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 API 包:
 
-- platform `github` - api 包 `@vssue/api-github-v3`
-- platform `github-v4` - api 包 `@vssue/api-github-v4`
-- platform `gitlab` - api 包 `@vssue/api-gitlab-v4`
-- platform `bitbucket` - api 包 `@vssue/api-bitbucket-v2`
-- platform `gitee` - api 包 `@vssue/api-gitee-v5`
-- platform `gitea` - api 包 `@vssue/api-gitea-v1`
+- Platform `github` - API 包 `@vssue/api-github-v3`
+- Platform `github-v4` - API 包 `@vssue/api-github-v4`
+- Platform `gitlab` - API 包 `@vssue/api-gitlab-v4`
+- Platform `bitbucket` - API 包 `@vssue/api-bitbucket-v2`
+- Platform `gitee` - API 包 `@vssue/api-gitee-v5`
+- Platform `gitea` - API 包 `@vssue/api-gitea-v1`
 
 ## owner
 
 - **类型**: `string`
 - **详细**:
 
-  用来存储 Issue 和评论的仓库的拥有者的名称。可能是一个用户，也可能是一个组织 (**Github Organization** / **Gitlab Group** / **Bitbucket Team**)
+  用来存储 Issue 和评论的仓库的拥有者的名称。可能是一个用户，也可能是一个组织 (**GitHub Organization** / **Gitlab Group** / **Bitbucket Team**)
 
   Vssue 将通过 `owner` 和 `repo` 在平台上定位这个仓库。
 
@@ -94,7 +94,7 @@ icon: vssue
 
   对于我们支持的平台，默认值为:
 
-  - Github 是 `'https://github.com'`
+  - GitHub 是 `'https://github.com'`
   - Gitlab 是 `'https://gitlab.com'`
   - Bitbucket 是`'https://bitbucket.org'`
   - Gitee 是`'https://gitee.com'`
@@ -132,7 +132,7 @@ icon: vssue
   ::: tip
   Bitbucket 目前不支持 Issue 标签功能，所以如果你使用 Bitbucket 的话，这个配置将会被忽略。
 
-  Github 支持在标签名称中加入 emoji，如 `[':heart:Vssue', ':mailbox:Comments']`。
+  GitHub 支持在标签名称中加入 emoji，如 `[':heart:Vssue', ':mailbox:Comments']`。
   :::
 
 - **参考**: [title](#title)

@@ -9,15 +9,15 @@ tags:
 
 # Blog homepage
 
-vuepress-theme-hope allows you to enable a blog-style homepage.
+`vuepress-theme-hope` allows you to enable a blog-style homepage.
 
-You need to set `blog` to `true` in the Front Matter of the corresponding page to enable blog style.
+You need to set `blog` to `true` in the frontmatter of the corresponding page to enable blog style.
 
 ![Homepage screenshot](./assets/blog.png)
 
 ## Configurable items
 
-You can freely configure the blogger's avatar and blogger's name display in the left-top corner. Their configuration items are `themeConfig.blog.avatar` and `themeConfig.blog.name`. If you do not fill them in, they will automatically fall back to the site Logo (`themeConfig.logo`) and the site name (`themeConfig.name`).
+You can freely configure the blogger’s avatar and blogger’s name display in the left-top corner. Their configuration items are `themeConfig.blog.avatar` and `themeConfig.blog.name`. If you do not fill them in, they will automatically fall back to the site Logo (`themeConfig.logo`) and the site name (`themeConfig.name`).
 
 If you use `themeConfig.intro` to configure the address of the personal introduction page, click on the blogger ’s profile picture and blogger ’s name in the left-top corner, and it will automatically jump to the link you provided.
 
@@ -58,7 +58,7 @@ You can also configure your social media links in the format of `<social media n
 
 If you are not satisfied with the prompt text on the top of the timeline page, you can use `themeConfig.blog.timeline` to customize one.
 
-## available parameters in Front Matter
+## available parameters in frontmatter
 
 ### hero
 

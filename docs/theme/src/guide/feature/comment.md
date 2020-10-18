@@ -8,7 +8,7 @@ tags:
 
 # Comment Function
 
-vuepress-theme-hope implements the comment feature with built-in `@mr-hope/vuepress-plugin-comment`.
+`vuepress-theme-hope` implements the comment feature with built-in `@mr-hope/vuepress-plugin-comment`.
 
 ```js
 // .vuepress/config.js
@@ -95,26 +95,26 @@ module.exports = {
 ::: tip
 The only difference is that, you should set `platform` rather than the `api` package itself.
 
-`@vssue/vuepress-plugin-vssue` will auto resolve the corresponding api package according to the value of `platform`:
+`@vssue/vuepress-plugin-vssue` will auto resolve the corresponding API package according to the value of `platform`:
 
-- platform `github` - `@vssue/api-github-v3` api package
-- platform `github-v4` - `@vssue/api-github-v4` api package
-- platform `gitlab` - `@vssue/api-gitlab-v4` api package
-- platform `bitbucket` - `@vssue/api-bitbucket-v2` api package
-- platform `gitee` - `@vssue/api-gitee-v5` api package
-- platform `gitea` - `@vssue/api-gitea-v1` api package
+- Platform `github` - `@vssue/api-github-v3` API package
+- Platform `github-v4` - `@vssue/api-github-v4` API package
+- Platform `gitlab` - `@vssue/api-gitlab-v4` API package
+- Platform `bitbucket` - `@vssue/api-bitbucket-v2` API package
+- Platform `gitee` - `@vssue/api-gitee-v5` API package
+- Platform `gitea` - `@vssue/api-gitea-v1` API package
 
 :::
 
 ::: tip
-You can go to the repo [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
+You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
 :::
 
 ### Custom Style Variables
 
 With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the Variables of Vssue Style easily.
 
-There are some pre-defined [stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
+There are some predefined [Stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
 
 ```stylus
 // the main color
@@ -158,7 +158,7 @@ $vssue-border-color ?= $borderColor
 $vssue-breakpoint-mobile ?= $MQMobile
 ```
 
-If you want to override them, just set them in your `palette.styl`:
+To override them, just set them in your `palette.styl`:
 
 ```stylus
 // .vuepress/styles/palette.styl

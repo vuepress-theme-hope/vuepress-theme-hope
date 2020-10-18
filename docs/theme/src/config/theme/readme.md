@@ -29,7 +29,7 @@ The language of the home directory.
 This option ensures that the subject text in the main catalog page is displayed in the correct language. You can change it to other languages according to your needs.
 
 ::: tip
-Currently only **Simplified Chinese** (zh-CN), **English (United States)** (en-US) and **Vietnamese** (vi-VN) are available for i18n.
+Only **Simplified Chinese** (zh-CN), **English (United States)** (en-US) and **Vietnamese** (vi-VN) are available for i18n.
 
 If you need multi-language support for other languages, you can [submit a PR to this file](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts)
 :::
@@ -46,7 +46,7 @@ The default author of the article
 - Type: `string`
 - Required: Yes
 
-The domain name where the current website is deployed.
+The domain name where the current site is deployed.
 
 ### nav <MyBadge text="improved" type="warn" />
 
@@ -76,6 +76,6 @@ The multi-language configuration of the theme mainly needs to configure `nav` an
 
 - [**Theme Plugin Config**](plugin.md)
 
-- [**Theme Apperance Config**](apperance.md)
+- [**Theme Appearance Config**](apperance.md)
 
 [docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js

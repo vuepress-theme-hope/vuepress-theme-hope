@@ -25,7 +25,7 @@ npm run serve
 npm run build
 ```
 
-## VuePress Offical Docs
+## VuePress Official Docs
 
 - [VuePress Gudie](https://v1.vuepress.vuejs.org/guide/)
 - [VuePress Config](https://v1.vuepress.vuejs.org/config/)
@@ -34,7 +34,7 @@ npm run build
 
 ## VuePress Intro
 
-- [File Stucture](file.md)
+- [File Structure](file.md)
 - [Plugins](plugin.md)
 - [Commands](command.md)
 - [Cases](case.md)

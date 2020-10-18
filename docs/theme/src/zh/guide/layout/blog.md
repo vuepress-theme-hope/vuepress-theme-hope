@@ -9,9 +9,9 @@ tags:
 
 # 博客首页
 
-vuepress-theme-hope 允许你启用博客风格的首页。
+`vuepress-theme-hope` 允许你启用博客风格的首页。
 
-你需要在相应的页面的 Front Matter 中，设置 `blog: true` 来开启博客风格。
+你需要在相应的页面的 frontmatter 中，设置 `blog: true` 来开启博客风格。
 
 ![首页截图](./assets/blog.png)
 
@@ -34,7 +34,7 @@ vuepress-theme-hope 允许你启用博客风格的首页。
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
 - `'Gitee'`: Gitee
-- `'Github'`: ~~Gayhub~~ Github
+- `'Github'`: ~~Gayhub~~ GitHub
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
 - `'Instagram'`: Instagram
@@ -58,7 +58,7 @@ vuepress-theme-hope 允许你启用博客风格的首页。
 
 如果你对时间轴上面的提示文字不满意，你可以使用 `themeConfig.blog.timeline` 自定义一个。
 
-## Front Matter 可用参数
+## Frontmatter 可用参数
 
 ### hero
 

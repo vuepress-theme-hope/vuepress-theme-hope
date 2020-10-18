@@ -30,7 +30,7 @@ This topic is still in production, the API may have
 Significant changes.
 :::
 
-If you encounter a bug during use, you can
+If you meet a bug during usage, you can
 
 ::: right
 [Mention an issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues).

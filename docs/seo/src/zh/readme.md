@@ -123,7 +123,7 @@ interface PageSeoInfo {
 
 - 类型: `(meta: Meta, info: PageSeoInfo) => void`
 
-你可以使用此选项来直接向 Meta 中注入内容。`Meta` 格式请见 [Front Matter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
+你可以使用此选项来直接向 Meta 中注入内容。`Meta` 格式请见 [Frontmatter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
 
 比如传入:
 

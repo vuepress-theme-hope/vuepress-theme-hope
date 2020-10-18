@@ -8,7 +8,7 @@ tags:
   - config
 ---
 
-vuepress-theme-hope 自带了很多 vuepress 插件。一些插件会自动启用，如果你不需要，可以在 themeConfig 中将其禁用；一些插件也只有你进行配置才会启用。
+`vuepress-theme-hope` 自带了很多 VuePress 插件。一些插件会自动启用，如果你不需要，可以在 themeConfig 中将其禁用；一些插件也只有你进行配置才会启用。
 
 <!-- more -->
 
@@ -42,7 +42,7 @@ vuepress-theme-hope 自带了很多 vuepress 插件。一些插件会自动启�
 
 - [vuepress-plugin-copyright](copyright.md): 在网站内容被复制的时候提供额外的版权信息
 
-- [vuepress-plugin-typescript](../../guide/feature/typescript.md): 提供 typescript 支持
+- [vuepress-plugin-typescript](../../guide/feature/typescript.md): 提供 TypeScript 支持
 
 - vuepress-plugin-smooth-scroll: 平滑滚动
 

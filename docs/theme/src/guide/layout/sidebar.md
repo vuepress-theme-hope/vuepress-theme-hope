@@ -193,7 +193,7 @@ sidebar: false
 
 ## Blogger Information
 
-If you have configured blog related options, you can configure `themeConfig.blog.sidebarDisplay` to decide whether to display the blogger's name, avatar, and the number of articles and tags in the sidebar.
+If you have configured blog related options, you can configure `themeConfig.blog.sidebarDisplay` to decide whether to display the blogger’s name, avatar, and the number of articles and tags in the sidebar.
 
 You can set `'mobile'` to display only in mobile view, or set `always` to keep it displayed in the sidebar.
 

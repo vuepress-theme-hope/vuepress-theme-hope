@@ -8,7 +8,7 @@ icon: support
 
 指南: [创建 GitHub OAuth App](./github.md)
 
-### Github REST API V3
+### GitHub REST API V3
 
 - Vssue API 包: [@vssue/api-github-v3](https://www.npmjs.com/package/@vssue/api-github-v3)
 - 特点 / 缺点:
@@ -19,7 +19,7 @@ icon: support
   - 可以不登录浏览评论，但 API 有调用频率限制
 - 开发者参考: [官方文档](https://developer.github.com/v3)
 
-### Github GraphQL API V4
+### GitHub GraphQL API V4
 
 - Vssue API 包: [@vssue/api-github-v4](https://www.npmjs.com/package/@vssue/api-github-v4)
 - 特点 / 缺点:

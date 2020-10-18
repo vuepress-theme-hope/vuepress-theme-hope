@@ -7,7 +7,7 @@ tags:
   - frontmatter
 ---
 
-页面的 Front Matter 新增如下配置选项:
+页面的 frontmatter 新增如下配置选项:
 
 ## 页面信息配置
 
@@ -145,7 +145,7 @@ tags:
 
 `PageInfo` 可选的值和对应内容如下:
 
-| 条目         | 对应内容     | 页面 Front Matter 值    |
+| 条目         | 对应内容     | 页面 frontmatter 值     |
 | ------------ | ------------ | ----------------------- |
 | `'author'`   | 作者         | author                  |
 | `'time'`     | 写作日期     | time                    |
@@ -262,7 +262,7 @@ tags:
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
 - `'Gitee'`: Gitee
-- `'Github'`: ~~Gayhub~~ Github
+- `'Github'`: ~~Gayhub~~ GitHub
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
 - `'Instagram'`: Instagram

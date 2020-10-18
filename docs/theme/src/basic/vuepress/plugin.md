@@ -154,18 +154,18 @@ More configuration, please view[VuePress Plugins](https://v1.vuepress.vuejs.org/
 
 ## Community Plugins
 
-- [clean-urls](https://vuepress.github.io/en/plugins/clean-urls.html): Use clean urls in VuePress
-- [container](https://vuepress.github.io/en/plugins/container.html): Use markdown containers in VuePress
+- [clean-urls](https://vuepress.github.io/en/plugins/clean-urls.html): Use clean URLs in VuePress
+- [container](https://vuepress.github.io/en/plugins/container.html): Use Markdown containers in VuePress
 - [copyright](https://vuepress.github.io/en/plugins/copyright.html): 在 VuePress 中处理复制行为
 - [dehydrate](https://vuepress.github.io/en/plugins/dehydrate.html): Dehydrate HTML files in VuePress
 - [git-log](https://vuepress.github.io/en/plugins/git-log.html): Integrate git logs into VuePress
 - [mathjax](https://vuepress.github.io/en/plugins/mathjax.html): Use TeX syntax in VuePress
-- [migrate](https://vuepress.github.io/en/plugins/migrate.html): Migrate another website to VuePress
+- [migrate](https://vuepress.github.io/en/plugins/migrate.html): Migrate another site to VuePress
 - [named-chunks](https://vuepress.github.io/en/plugins/named-chunks.html): Generate named chunks in VuePress
 - [redirect](https://vuepress.github.io/en/plugins/redirect.html): Handle redirections in VuePress
 - [serve](https://vuepress.github.io/en/plugins/serve.html): Serve generated files in VuePress
 - [zooming](https://vuepress.github.io/en/plugins/zooming.html): Make images zoomable in VuePress (with zooming)
 
 :::tip
-For more infomation, please visit [VuePress Community](https://vuepress.github.io/en/)
+For more information, please visit [VuePress Community](https://vuepress.github.io/en/)
 :::

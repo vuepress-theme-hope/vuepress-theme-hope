@@ -7,9 +7,9 @@ tags:
   - frontmatter
 ---
 
-The following configuration options have been added to the page's Front Matter:
+The following configuration options have been added to the page’s Front Matter:
 
-## Page Infomation Configuration
+## Page Information Configuration
 
 ### icon
 
@@ -23,21 +23,21 @@ Set the FontClass of the current page icon (recommended)
 - Type: `string | boolean`
 - Required: No
 
-Current page's title. Markdown's first h1 by default.
+Current page’s title. Markdown’s first h1 by default.
 
 ### description
 
 - Type: `string | boolean`
 - Required: No
 
-Current page's description
+Current page’s description
 
 ### author
 
 - Type: `string | boolean`
 - Required: No
 
-Show the author of the current page. If you don't fill it, you will fall back to the default author.
+Show the author of the current page. If you don’t fill it, you will fall back to the default author.
 
 ::: tip
 When the global default author is enabled, you can set `false` to cancel the author display
@@ -81,7 +81,7 @@ Set the label of the current page
 - Type: `boolean | number`
 - Default: `false`
 
-Sets whether the current article is pinned in the list. When fill in with number, the ones which is greater will come first.
+Sets whether the current article is pinned in the list. When fill in with number, greater ones come before smaller ones.
 
 ### article
 
@@ -109,7 +109,7 @@ Set a password for the current article.
 - Type: `string`
 - Required: No
 
-Set current page's image，please fill in an absolute path.
+Set current page’s image，please fill in an absolute path.
 
 ### copyright.minLength
 
@@ -141,7 +141,7 @@ Whether to prohibit selected text
 
 The optional values and corresponding contents of `PageInfo` are as follows:
 
-| Item         | Corresponding Content | Page Front Matter Value              |
+| Item         | Corresponding Content | Page frontmatter Value               |
 | ------------ | --------------------- | ------------------------------------ |
 | `'author'`   | Author                | author                               |
 | `'time'`     | Writing Date          | time                                 |
@@ -195,7 +195,7 @@ Page sidebar configuration options. Supports `false` or`auto`.
 - Type: `number`
 - Default: `2`
 
-The page's sidebar rendering depth
+The page’s sidebar rendering depth
 
 ### comment
 
@@ -229,7 +229,7 @@ Next article link
 - Default value: the value configured globally
 
 Set the footer content of the current page. If you want an empty content, set it to an empty string.
-Set it to `false` if you want to disable the footer, and set it to `true` if you want to display the default footer on a specific page.
+Set it to `false` to disable the footer, and set it to `true` to display the default footer on a specific page.
 
 For more details, please see [Page → Footer Support](../guide/layout/page.md#footer-support)
 
@@ -260,9 +260,9 @@ The optional values of `MediaType` are as follows:
 - `'Facebook'`: Facebook
 - `'Flipboard'`: Flipboard
 - `'Gitee'`: Gitee
-- `'Github'`: ~~ Gayhub ~~ Github
+- `'Github'`: ~~ Gayhub ~~ GitHub
 - `'Gitlab'`: Gitlab
-- `'Gmail'`: Google mailbox (of course you can also fill in your own other mailbox)
+- `'Gmail'`: Google mailbox (you can also fill in your own other mailbox)
 - `'Instagram'`: Instagram
 - `'Line'`: Line
 - `'Linkedin'`: LinkedIn

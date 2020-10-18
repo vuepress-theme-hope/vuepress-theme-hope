@@ -18,7 +18,7 @@ Dark mode support options:
 
 - `'auto-switch'`: "off | automatic | on" switch (default)
 - `'switch'`: "Close | Open" toggle switch
-- `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
+- `'auto'`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
 - `'disable'`: disable dark mode
 
 ## Theme color
@@ -27,7 +27,7 @@ This is an out-of-the-box feature that offers five theme color "red, blue, green
 
 ### Disable
 
-You can disable it by setting the theme field's `themeConfig.themeColor` to false.
+You can disable it by setting the theme field’s `themeConfig.themeColor` to false.
 
 ### Custom color
 
@@ -51,7 +51,7 @@ module.exports = {
 
 :::
 
-In order to let the stylus compiler to work, you also need to assign the color variable to `$colorPicker` and write it to `.vuepress/styles/palette.styl`:
+To let the Stylus compiler to work, you also need to assign the color variable to `$colorPicker` and write it to `.vuepress/styles/palette.styl`:
 
 ::: details Example
 

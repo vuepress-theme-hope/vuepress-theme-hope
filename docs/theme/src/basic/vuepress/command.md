@@ -26,7 +26,7 @@ npm update
 
 ## Start Dev
 
-Open local develope environment, please visit[localhost:8080](http://localhost:8080)。
+Open local develop environment, please visit[localhost:8080](http://localhost:8080)。
 
 ```bash
 npm run serve

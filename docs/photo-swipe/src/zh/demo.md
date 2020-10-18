@@ -3,6 +3,6 @@ title: 演示
 icon: creativefill
 ---
 
-![logo1](/logo.png)
-![logo2](/logo.png)
-![logo3](/logo.png)
+![Logo1](/logo.png)
+![Logo2](/logo.png)
+![Logo3](/logo.png)

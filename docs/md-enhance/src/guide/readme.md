@@ -4,9 +4,9 @@ icon: markdown
 
 # New syntax in Markdown
 
-By installing and enableing this plugin, you can use more syntax in your markdown files.
+By installing and enableing this plugin, you can use more syntax in your Markdown files.
 
-If you don't need them and want to reduce your site size, you can remove them from your code by not enabling them.
+If you don’t need them and want to reduce your site size, you can remove them from your code by not enabling them.
 
 ## New Feature
 

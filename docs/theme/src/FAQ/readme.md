@@ -11,9 +11,9 @@ You can first review the documentation to see if the setting **does not support 
 
 **Support for partial configuration** means that the theme allows the configuration of the page to override the global configuration of the same name (same function), but not all functions meet this setting. For the sake of project compilation speed, some projects will not be loaded during the compilation phase after the global configuration is disabled, and they cannot be enabled locally.
 
-## Typescript problems
+## TypeScript problems
 
-Please make sure your project depends on typescript and there is a valid tsconfig.json file in the working directory.
+Please make sure your project depends on TypeScript and there is a valid tsconfig.json file in the working directory.
 
 Also, make sure that your project has at least one TypeScript file included by it.
 
@@ -28,7 +28,7 @@ A simple tsconfig.json is as follows:
   "compilerOptions": {
     "target": "ES6", /// Any target which is not less than 'ES5'
     "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
-    "experimentalDecorators": true, // Typescript files for '.vue' needs this option
+    "experimentalDecorators": true, // TypeScript files for '.vue' needs this option
     "module": "commonjs", // Avoiding some issues related to vuepress-types
     // type definition files of vuepress and this theme
     "types": ["@mr-hope/vuepress-theme-types"]
@@ -39,11 +39,11 @@ A simple tsconfig.json is as follows:
 }
 ```
 
-### Can't find corresponding types
+### Can’t find corresponding types
 
 Make sure to add `"@mr-hope/vuepress-theme-types"` to `compilerOptions.types`, because it is not in the`@ types` directory.
 
-### No inputs were found in config file 'tsconfig.json'
+### No inputs were found in config file tsconfig.json
 
 This problem is usually caused by the absence of a TypeScript file in your project (or your tsconfig.json configuration is incorrect).
 

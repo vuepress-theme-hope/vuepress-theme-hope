@@ -39,12 +39,12 @@ module.exports = {
 ```
 
 ::: warning
-You must disable the offical plugin
+You must disable the official plugin!
 :::
 
 ## Plugin description
 
-The plugin is based on Git and will automatically read the file's last commit time and inject it into `lastUpdated` in a localized form. At the same time, it will inject a timestamp in `lastUpdatedTime` for use by other plugins.
+The plugin is based on Git and will automatically read the file’s last commit time and inject it into `lastUpdated` in a localized form. At the same time, it will inject a timestamp in `lastUpdatedTime` for use by other plugins.
 
 ## Configuration
 

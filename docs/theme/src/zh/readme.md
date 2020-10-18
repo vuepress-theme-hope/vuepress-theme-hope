@@ -54,7 +54,7 @@ features:
     link: /zh/config/plugin/pwa/
 
   - title: TS 支持
-    details: 为你的 VuePress 开启 Typescript 支持
+    details: 为你的 VuePress 开启 TypeScript 支持
     link: /zh/guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
@@ -63,7 +63,7 @@ copyrightText: false
 
 ## 使用主题
 
-你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 vuepress 之旅。
+你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 VuePress 之旅。
 
 ### 安装
 
@@ -85,7 +85,7 @@ module.exports = config({
 ::: tip
 引入 `config` 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，很方便的给你提示。
 
-同时，`config` 函数也会为你补全一些直接交付给 vuepress 的默认配置。
+同时，`config` 函数也会为你补全一些直接交付给 VuePress 的默认配置。
 
 你可以查看 [本文档配置][docs-config] 作为一个配置参考。
 :::

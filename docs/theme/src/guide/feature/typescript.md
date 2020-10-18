@@ -8,11 +8,11 @@ tags:
 
 # TS support
 
-Most of the files of vuepress-theme-hope are written using Typescript, so vuepress-theme-hope can also bring native Typescript support to your vuepress project, you only need to set `themeConfig.typescript` to `true` ie Support for `typescript` can be turned on.
+Most of the files of vuepress-theme-hope are written using TypeScript, so vuepress-theme-hope can also bring native TypeScript support to your VuePress project, you only need to set `themeConfig.typescript` to `true` so that support for `typescript` can be turned on.
 
 This means you can use `enhanceAppFiles.ts` and use Tyepscript in both your vue components and Markdown files.
 
-If you need to pass some custom options to ts-loader, you can also set `themeConfig.typescript` with an Object to pass it to ts-loader.
+To pass some custom options to ts-loader, you can also set `themeConfig.typescript` with an Object to pass it to ts-loader.
 
 ::: tip
 After enabling this theme, you no longer need to require and enable `@vuepress/plugin-typescript`.
@@ -33,7 +33,7 @@ At the same time, you need to ensure that your workspace contains a valid `tscon
   "compilerOptions": {
     "target": "ES6", // Any target not lower than 'es6'
     "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
-    "experimentalDecorators": true, // Typescript files for '.vue' needs this option
+    "experimentalDecorators": true, // TypeScript files for '.vue' needs this option
     "module": "commonjs", // Avoiding some issues related to vuepress-types
     "types": ["@mr-hope/vuepress-theme-types"]
   },
@@ -46,7 +46,7 @@ At the same time, you need to ensure that your workspace contains a valid `tscon
 
 If you already have `tsconfig.json`, then you only need to add the type definition file package of vuepress-theme-hope `"@mr-hope/vuepress-theme-types"` to `compilerOptions.types`.
 
-You should also create a ts file in your project and add it in the `include` option of `tsconfig.json`. You can simply create an empty enhanceApp.ts and import it.
+You should also create a ts file in your project and add it in the `include` option of `tsconfig.json`. You can create an empty enhanceApp.ts and import it.
 
 ::: warning
 

@@ -22,7 +22,7 @@ The `<PageInfo />` component support local config[^applypartically], and is enab
     Of course, you can also set the `themeConfig.breadcrumb` option to `false` to disable it globally, and set `breadcrumb: true` in the Front Matter of a specific page to enable it locally.
     :::
 
-If you need to keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.
+To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.
 
 ## Parameters <MyBadge text="Support page config" />
 
@@ -30,7 +30,7 @@ If you need to keep it globally disabled, please set `pageInfo` to `false` in th
 
 The optional values ​​and corresponding contents of the entry are as follows:
 
-| Entry        | Corresponding content  | page Front Matter value            |
+| Entry        | Corresponding content  | page frontmatter value             |
 | ------------ | ---------------------- | ---------------------------------- |
 | `'author'`   | author                 | author                             |
 | `'time'`     | Writing Date           | time                               |
@@ -52,7 +52,7 @@ author: Mr.Hope
 ---
 ```
 
-You can configure `author` in the plugin options to set the default author. And you can alse configure `author` in Front Matter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
+You can configure `author` in the plugin options to set the default author. And you can also configure `author` in frontmatter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
 
 - **time**
 

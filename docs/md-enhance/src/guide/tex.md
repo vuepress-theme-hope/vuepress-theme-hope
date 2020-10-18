@@ -27,10 +27,10 @@ module.exports = {
 Use `$codes$` to indicate.
 
 ```md
-Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
+Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 ```
 
-Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
+Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 ### Block syntax
 
@@ -155,7 +155,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 - Superscript, use `^` to achieve
 - Subscript, use `_` to achieve
-- By default, superscript and subscript only apply to the next character. If you want to work with several consecutive characters, please enclose these characters in curly brackets `{}`.
+- By default, superscript and subscript only apply to the next character. To work with several consecutive characters, please enclose these characters in curly brackets `{}`.
 
 #### Case
 
@@ -179,7 +179,7 @@ Note that curly braces are usually used to enter command and environment paramet
 Because the application of `|` and `\|` in LaTeX is too casual, we recommend using `\lvert\rvert` and `\ lVert\rVert` instead.
 :::
 
-In order to adjust the size of these delimiters, we recommend using `\big`, `\Big`, `\bigg`, `\Bigg` and a series of commands to adjust the size before the above brackets.
+To adjust the size of these delimiters, we recommend using `\big`, `\Big`, `\bigg`, `\Bigg` and a series of commands to adjust the size before the above brackets.
 
 $\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
 $\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr]$

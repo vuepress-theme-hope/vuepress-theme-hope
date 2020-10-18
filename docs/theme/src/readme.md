@@ -54,7 +54,7 @@ features:
     link: /config/plugin/pwa/
 
   - title: TS support
-    details: Turn on Typescript support for your VuePress
+    details: Turn on TypeScript support for your VuePress
     link: /guide/feature/typescript/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
@@ -63,7 +63,7 @@ copyrightText: false
 
 ## Use themes
 
-You can use [vuepress-theme-hope template](https://github.com/Mister-Hope/vuepress-theme-hope-template) directly to start your vuepress journey.
+You can use [vuepress-theme-hope template](https://github.com/Mister-Hope/vuepress-theme-hope-template) directly to start your VuePress journey.
 
 ### Install
 
@@ -89,9 +89,9 @@ module.exports = config({
 ```
 
 ::: tip
-The purpose of introducing the `config` function is to give you full hints through TS's Interface and JSDoc when you edit the configuration.
+The purpose of introducing the `config` function is to give you full hints through TS’s Interface and JSDoc when you edit the configuration.
 
-At the same time, the `config` function will also complete some default configurations for your current configuration which will pass directly to vuepress.
+At the same time, the `config` function will also complete some default configurations for your current configuration which will pass directly to VuePress.
 
 You can view [Config of this site][docs-config] as an example.
 :::

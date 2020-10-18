@@ -20,7 +20,7 @@ module.exports = {
 
 ## Syntax
 
-By injecting some options to `vuepress-plugin-container`, you can use
+By injecting some options to `vuepress-plugin-container`, you can use below syntax to diy your paragraph align.
 
 ```md
 ::: center
@@ -31,8 +31,6 @@ Paragraph to be align-center
 Paragraph to be align-right
 :::
 ```
-
-to diy your paragraph align.
 
 If you need nesting, the outer `:::` needs to be increased in order.
 

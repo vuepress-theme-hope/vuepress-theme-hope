@@ -70,7 +70,7 @@ tags:
 
 ## src 文件夹
 
-**源代码**被放置在`src`目录下，在该目录下，所有的**markdown**文件都会被渲染成**HTML**，其中`readme.md`会被渲染成`index.html`。 另外 VuePress 的配置文件全部放置在`src/.vuepress`目录下。
+**源代码**被放置在`src`目录下，在该目录下，所有的**Markdown**文件都会被渲染成**HTML**，其中`readme.md`会被渲染成`index.html`。 另外 VuePress 的配置文件全部放置在`src/.vuepress`目录下。
 
 ## dist 文件夹
 
@@ -80,24 +80,21 @@ tags:
 
 ## package.json
 
-Node.js 对整个项目的声明文件，它是 Node 项目必包含的文件。包含了**项目名称**、**详情**、**许可证**以及使用的**package**等信息。
+Node.js 对整个项目的声明文件，它是 Node.js 项目必包含的文件。包含了**项目名称**、**详情**、**许可证**以及使用的**package**等信息。
 
 ## readme.md
 
-项目在 Github 的说明文件。
+项目在 GitHub 的说明文件。
 
 ## 其他
 
 初期无需掌握用途的文件:
 | 文件 | 内容 |
-| ----------------- | --------------------------- |
+| ------------- | --------------------------- |
 | node_modules | 存放了项目使用的 package |
 | LICENSE | 项目许可证文件 |
-| package-lock.json | 项目实际使用的 package 结构 |
-| .eslintignore | ESLint 忽略的文件 |
-| .eslintrc.js | ESLint 规则配置文件 |
-| .nvmrc | node 版本声明文件 |
-| .travis.yml | Travis CI 配置文件 |
+| yarn.lock | 项目实际使用的 package 结构 |
+| .eslintrc.yml | ESLint 规则配置文件 |
 
 :::tip
 ESLint 是一个 JS 的代码格式与错误提示器。
@@ -107,7 +104,7 @@ ESLint 是一个 JS 的代码格式与错误提示器。
 
 ## .vuepress
 
-.vuepress 文件夹应直接放置在源代码的目录里。里面包含了 VuePress 的配置选项。
+`.vuepress` 文件夹应直接放置在源代码的目录里。里面包含了 VuePress 的配置选项。
 
 ### config.js
 

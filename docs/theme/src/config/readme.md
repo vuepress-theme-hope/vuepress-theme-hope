@@ -16,11 +16,11 @@ tags:
 
 - [**Theme Plugin Config**](theme/plugin.md)
 
-- [**Theme Apperance Config**](theme/apperance.md)
+- [**Theme Appearance Config**](theme/apperance.md)
 
 ## Page Config
 
-- [**Front Matter Config**](page.md)
+- [**Frontmatter Config**](page.md)
 
 ## Style Config
 

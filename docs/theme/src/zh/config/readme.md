@@ -19,7 +19,7 @@ tags: config
 
 ## 页面配置
 
-- [**Front Matter 配置**](page.md)
+- [**Frontmatter 配置**](page.md)
 
 ## 样式配置
 

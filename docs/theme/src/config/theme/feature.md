@@ -18,16 +18,16 @@ Dark mode support options:
 
 - `'auto-switch'`: "off | automatic | on" three-stage switch
 - `'switch'`: "Close | Open" toggle switch
-- `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
+- `'auto'`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
 - `'disable'`: disable dark mode
 
-> If you don't need this feature, set `darkmode: "disable"` to disable it.
+> If you don’t need this feature, set `darkmode: "disable"` to disable it.
 
 ## themeColor <MyBadge text="Enabled by default" />
 
 Theme color configuration.
 
-> If you don't need this feature, set `themeColor: false` to disable it.
+> If you don’t need this feature, set `themeColor: false` to disable it.
 
 - Type: `Record<string, string>`
 - Defaults:
@@ -102,7 +102,7 @@ Article number per page
 
 Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
 
-Avaliable Options:
+Available Options:
 
 - `'Author'`: Author
 - `'Time'`: Writing Date
@@ -158,7 +158,7 @@ Highest authority password, you can set multiple by using array
 - Type: `Record <string, string | string []>`
 - Required: No
 
-The encryption configuration is an object with a key name matching the path and a key value corresponding to a password that accepts a string or an array of strings.
+The encryption configuration is an object with a key name matching the path and a key-value corresponding to a password that accepts a string or an array of strings.
 
 ::: details Example
 

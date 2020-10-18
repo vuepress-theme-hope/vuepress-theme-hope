@@ -22,7 +22,7 @@ All the configuration items changes are carefully listed below the documentation
 - Type: `string`
 - Required: No
 
-The logo image of the navigation bar. Needs to be filled with an absolute path. If you want to display another logo in dark mode, please configure the `themeConfig.darkLogo` option.
+The logo image of the navigation bar. Needs to be filled with an absolute path. To display another logo in dark mode, please configure the `themeConfig.darkLogo` option.
 
 ## sidebarDepth
 
@@ -92,28 +92,28 @@ Whether to display previous link on all pages
 - Type: `string`
 - Required: No
 
-Project repo address
+Project repository address
 
 ## repoLabel
 
 - Type: `string`
 - Required: No
 
-Repo label text, will automatically try to parse the `repo` option, try to derive `'GitHub'` `'GitLab'` `'Bitbucket'`, if it is not recognized, it will be displayed as `'Source'`
+Repository label text, will automatically try to parse the `repo` option, try to derive `'GitHub'` `'GitLab'` `'Bitbucket'`, if it is not recognized, it will be displayed as `'Source'`
 
 ## docsRepo
 
 - Type: `string`
 - Required: No
 
-The address of the docs repo. Will be the same as `repo` by default.
+The address of the docs repository. Will be the same as `repo` by default.
 
 ## docsDir
 
 - Type: `string`
 - Required: No
 
-The folder which the document belongs to, the default is the root directory of the repo.
+The folder which the document belongs to, the default is the root directory of the repository.
 
 ## docsBranch
 

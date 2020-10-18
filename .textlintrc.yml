@@ -1,0 +1,38 @@
+rules:
+  "@textlint-rule/no-unmatched-pair": true
+
+  apostrophe: true
+
+  common-misspellings: true
+
+  diacritics: true
+
+  # en-capitalization:
+  #   allowHeading: false
+  #   allowLists: true
+
+  stop-words:
+    severity: warning
+
+  # terminology:
+  #   terms:
+  #     - Stylus
+  #     - VuePress
+  #     - - front[- ]matter
+  #       - frontmatter
+  #   exclude:
+  #     - node
+  #     - repo
+
+  write-good:
+    severity: warning
+
+  zh-half-and-full-width-bracket:
+    bracket: halfWidth
+
+filters:
+  allowlist:
+    allow:
+      - "/@flowstart[\\s\\S]*?@flowend/m"
+
+  comments: true

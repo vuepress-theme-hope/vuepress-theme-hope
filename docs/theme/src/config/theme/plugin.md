@@ -95,7 +95,7 @@ For details, see [@mr-hope/vuepress-plugin-comment documentation][comment-config
 
 For details see [vuepress-plugin-copyright documentation][copyright-config]
 
-> It's a vuepress community plugin, not a built-in plugin. So if you met bugs, please come to [it's repo](https://github.com/vuepress/vuepress-plugin-copyright) for help.
+> It’s a vuepress community plugin, not a built-in plugin. So if you met bugs, please come to [it’s repo](https://github.com/vuepress/vuepress-plugin-copyright) for help.
 
 ### copyright.status
 
@@ -129,7 +129,7 @@ Whether to prohibit selected text
 
 PWA setting options，no configuration is needed by default.
 
-> If you don't need this feature, please set to `false`.
+> If you don’t need this feature, please set to `false`.
 
 ### pwa.popupComponent
 
@@ -140,7 +140,7 @@ A custom component to replace the default popup component.
 
 ### pwa.gerateSWConfig
 
-workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+Workbox-build’s [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
 
 ## seo <MyBadge text="Enabled by default" />
 
@@ -148,7 +148,7 @@ SEO Enhance settings, no configuration is needed by default.
 
 > For details, see [vuepress-plugin-seo config][seo-config]
 >
-> If you don't need this feature, please set to `false`.
+> If you don’t need this feature, please set to `false`.
 
 ## sitemap <MyBadge text="Enabled by default" />
 
@@ -156,14 +156,14 @@ Sitemap Generator settings, no configuration is needed by default.
 
 > For details, see [vuepress-plugin-sitemap config][sitemap-config]
 >
-> If you don't need this feature, please set to `false`.
+> If you don’t need this feature, please set to `false`.
 
 ## addThis
 
 - Type: `string`
 - Required: No
 
-pubid for AddThis
+Pubid for AddThis
 
 > For details see [AddThis Plugin][add-this]
 

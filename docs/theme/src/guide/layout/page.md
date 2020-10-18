@@ -32,7 +32,7 @@ Without any additional configuration, a Breadcrumb that matches the theme color 
 The icon display of path navigation is also <MyBadge text="Support page config" />, the configuration item is `breadcrumbIcon`.
 
 ::: warning
-In order to ensure Breadcrumb working well, the `readme.md` file should be included in each folder.
+To ensure Breadcrumb working well, the `readme.md` file should be included in each folder.
 
 Otherwise, the path navigation will automatically ignore that level because the component can not generate titles and links from the corresponding level folder.
 :::
@@ -45,7 +45,7 @@ See [Page Info Section](../feature/page-info.md)
 
 We supports clicking to preview and zooming the picture, while supporting the sliding browsing of the page picture and the sharing and downloading of the picture too.
 
-For specific configuration, please refer to [photo-swipe plugin configuration](https://vuepress-photo-swipe.mrhope.site/config/)
+For specific configuration, please see [photo-swipe plugin configuration](https://vuepress-photo-swipe.mrhope.site/config/)
 
 ## Last Updated
 
@@ -83,7 +83,7 @@ See the [Comment section](../feature/comment.md) for details.
 
 ## Footer Support <MyBadge text="Support page config" />
 
-If you want to display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
+To display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 
 You can also configure the `footer`, `copyrightText` and `medialink` fields in the `Front Matter` page.
 
@@ -93,7 +93,7 @@ You can also configure the `footer`, `copyrightText` and `medialink` fields in t
 
   If you fill in a string, it will be inserted into footer by `v-html`, so you can fill in HTMLString.
 
-- The `copyrightText` field can be filled with copyright information on this page,(also support HTMLString) which is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
+- The `copyrightText` field can be filled with copyright information on this page,(also support HTMLString). It is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
 
 - The `medialink` field is the same as `themeConfig.blog.links` ([specific configuration see here](./blog.md#configurable-items)), you can configure it in a specific page to display different social media links. You can also set it to `false` to hide it.
 
@@ -136,7 +136,7 @@ footer: false
 ---
 ```
 
-If you want to remove the default footer content while keeping social media and copyright information displayed, please use an empty string.
+To remove the default footer content while keeping social media and copyright information displayed, please use an empty string.
 
 ```md
 ---

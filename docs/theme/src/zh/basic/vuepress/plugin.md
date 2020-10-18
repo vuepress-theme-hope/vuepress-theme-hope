@@ -155,7 +155,7 @@ module.exports = {
 ## 社区插件
 
 - [clean-urls](https://vuepress.github.io/zh/plugins/clean-urls.html): 在 VuePress 中使用简洁链接
-- [container](https://vuepress.github.io/zh/plugins/container.html): 在 VuePress 中使用 markdown 容器
+- [container](https://vuepress.github.io/zh/plugins/container.html): 在 VuePress 中使用 Markdown 容器
 - [copyright](https://vuepress.github.io/zh/plugins/copyright.html): 在 VuePress 中处理复制行为
 - [dehydrate](https://vuepress.github.io/zh/plugins/dehydrate.html): 修改 VuePress 生成的 HTML 文件
 - [git-log](https://vuepress.github.io/zh/plugins/git-log.html): 在 VuePress 中整合 git 日志
