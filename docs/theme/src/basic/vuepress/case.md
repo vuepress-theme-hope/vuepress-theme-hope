@@ -178,7 +178,7 @@ tags:
 - [openhab](https://www.openhab.org/docs/) - an open source, technology agnostic home automation platform which runs as the center of your smart home!
 - [ms-design](https://ms-design.github.io/) - Vue components that implement Microsoft Design Language
 - [archcheatsheet](https://archcheatsheet.com/) - Offline dual boot/no desktop environment
-- [zaobao](https://wubaiqing.github.io/zaobao/) - 每日时报，以前端技术体系为主要分享课题。根据：文章、工具、新闻、视频几大板块作为主要分类。
+- [zaobao](https://wubaiqing.github.io/zaobao/) - 每日时报，以前端技术体系为主要分享课题。根据: 文章、工具、新闻、视频几大板块作为主要分类。
 - [vue-cli-plugin-apollo](https://vue-cli-plugin-apollo.netlify.com/) - @vue/cli plugin for Vue Apollo
 - [vue-cli-plugin-ssr](https://vue-cli-plugin-ssr.netlify.com/) - ✨ Simple SSR plugin for Vue CLI
 - [vue-concise-slider](https://warpcgd.github.io/vue-concise-slider) - vue-concise-slider,A simple vue sliding component

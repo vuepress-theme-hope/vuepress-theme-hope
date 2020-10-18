@@ -16,7 +16,7 @@ tags:
 
 ## 使用插件
 
-你可以通过在 `.vuepress/config.js` 中做一些配置来使用插件：
+你可以通过在 `.vuepress/config.js` 中做一些配置来使用插件:
 
 ```js
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
 
 ### 使用来自依赖的插件
 
-一个插件可以在以 `vuepress-plugin-xxx` 的形式发布到 npm，你可以这样使用它：
+一个插件可以在以 `vuepress-plugin-xxx` 的形式发布到 npm，你可以这样使用它:
 
 ```js
 module.exports = {
@@ -34,7 +34,7 @@ module.exports = {
 };
 ```
 
-同时，如果你的插件名以 `vuepress-plugin-` 开头，你可以使用缩写来省略这个前缀：
+同时，如果你的插件名以 `vuepress-plugin-` 开头，你可以使用缩写来省略这个前缀:
 
 ```js
 module.exports = {
@@ -42,7 +42,7 @@ module.exports = {
 };
 ```
 
-和下面等价：
+和下面等价:
 
 ```js
 module.exports = {
@@ -76,7 +76,7 @@ module.exports = {
 
 ### Babel 式
 
-插件可以通过在配置内的数组中封装名称和选项对象来指定选项：
+插件可以通过在配置内的数组中封装名称和选项对象来指定选项:
 
 ```js
 module.exports = {
@@ -95,7 +95,7 @@ module.exports = {
 
 ### 对象式
 
-VuePress 也提供了一种更简单的方式来使用来自依赖的插件：
+VuePress 也提供了一种更简单的方式来使用来自依赖的插件:
 
 ```js
 module.exports = {
@@ -112,7 +112,7 @@ module.exports = {
 :::
 
 :::tip
-可以通过显示地将选项设置成 `false` 来禁用一个插件：
+可以通过显示地将选项设置成 `false` 来禁用一个插件:
 
 - Babel 风格
 
@@ -138,18 +138,18 @@ module.exports = {
 
 ## 官方插件
 
-- [active-header-links](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-active-header-links.html)：页面滚动时自动激活侧边栏链接
-- [back-to-top](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-back-to-top.html)：添加返回顶部按钮
-- [google-analytics](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html)：添加 Google analytics
-- [last-updated](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-last-updated.html)：更新时间
-- [medium-zoom](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-medium-zoom.html)：图片缩放
-- [nprogress](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-nprogress.html)：进度条
-- [PWA](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-pwa.html)：支持 Progressive Web App
-- [register-component](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-register-components.html)：注册 components
-- [search](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-search.html)：基于标题的搜索插件
+- [active-header-links](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-active-header-links.html): 页面滚动时自动激活侧边栏链接
+- [back-to-top](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-back-to-top.html): 添加返回顶部按钮
+- [google-analytics](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html): 添加 Google analytics
+- [last-updated](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-last-updated.html): 更新时间
+- [medium-zoom](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-medium-zoom.html): 图片缩放
+- [nprogress](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-nprogress.html): 进度条
+- [PWA](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-pwa.html): 支持 Progressive Web App
+- [register-component](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-register-components.html): 注册 components
+- [search](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-search.html): 基于标题的搜索插件
 
 :::tip
-具体用法详见：[Vuepress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
+具体用法详见: [Vuepress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
 :::
 
 ## 社区插件
@@ -167,5 +167,5 @@ module.exports = {
 - [zooming](https://vuepress.github.io/zh/plugins/zooming.html): 使 VuePress 中的图片支持缩放(使用 zooming)
 
 :::tip
-文档详见：[Vuepress 社区](https://vuepress.github.io/zh/)
+文档详见: [Vuepress 社区](https://vuepress.github.io/zh/)
 :::

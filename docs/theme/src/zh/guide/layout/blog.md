@@ -23,7 +23,7 @@ vuepress-theme-hope 允许你启用博客风格的首页。
 
 你还可以在 `themeConfig.blog.links` 这个对象中以 `社交媒体名: 社交媒体链接` 的格式配置你的社交媒体链接。
 
-::: tip 可用的社交媒体：
+::: tip 可用的社交媒体:
 
 - `'Baidu'`: 百度
 - `'Bitbucket'`: Bitbucket

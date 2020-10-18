@@ -37,9 +37,9 @@ module.exports = {
 
 ### 获取 APP ID 和 APP Key
 
-请先 [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud, 进入控制台后点击左下角创建应用：
+请先 [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud, 进入控制台后点击左下角创建应用。
 
-应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了：
+应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了。
 
 ```js
 {
@@ -97,7 +97,7 @@ module.exports = {
 ::: tip
 唯一的区别在于，你需要设置 `platform` 而不是对应的 `api` 包。
 
-`@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 api 包：
+`@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 api 包:
 
 - platform `github` - api 包 `@vssue/api-github-v3`
 - platform `github-v4` - api 包 `@vssue/api-github-v4`
@@ -112,7 +112,7 @@ module.exports = {
 
 通过 VuePress 的 [palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)，你可以很轻松地修改 Vssue 的样式变量。
 
-Vssue 样式中预定义了一些 [Stylus 变量](http://stylus-lang.com/docs/variables.html)，你可以在 `vssue/src/styles/_variables.styl` 中查看它们：
+Vssue 样式中预定义了一些 [Stylus 变量](http://stylus-lang.com/docs/variables.html)，你可以在 `vssue/src/styles/_variables.styl` 中查看它们:
 
 ```stylus
 // 主题颜色
@@ -145,7 +145,7 @@ $vssue-direction
 
 举例来说，Vssue 默认使用一个“Vue 绿色” (`#3eaf7c`) 作为主题颜色，并将其设置为 `$vssue-theme-color` 的默认值。你可以在引入 `vssue/src/styles/index.styl` 之前设置 `$vssue-theme-color` 的值来改变主题颜色。
 
-默认情况下，下面这些 Vssue 的样式变量与 VuePress 的样式变量相等：
+默认情况下，下面这些 Vssue 的样式变量与 VuePress 的样式变量相等:
 
 ```stylus
 // @vssue/vuepress-plugin-vssue/styles/index.styl
@@ -156,7 +156,7 @@ $vssue-border-color ?= $borderColor
 $vssue-breakpoint-mobile ?= $MQMobile
 ```
 
-如果你想要覆盖它们，在你的 `palette.styl` 中设置即可：
+如果你想要覆盖它们，在你的 `palette.styl` 中设置即可:
 
 ```stylus
 // .vuepress/styles/palette.styl

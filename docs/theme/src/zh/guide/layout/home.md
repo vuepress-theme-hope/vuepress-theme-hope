@@ -67,9 +67,9 @@ vuepress-theme-hope 对首页布局进行了一些改进。
 
 ### features
 
-- 类型：`Feature[]`
+- 类型: `Feature[]`
 
-`Feature` 结构：
+`Feature` 结构:
 
 - title: `string` 标题
 - details: `string` 详情

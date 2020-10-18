@@ -4,13 +4,15 @@
 
 By injecting some options to `vuepress-plugin-container`, you can use
 
-    ::: center
-    Paragraph to be align-center
-    :::
+```md
+::: center
+Paragraph to be align-center
+:::
 
-    ::: right
-    Paragraph to be align-right
-    :::
+::: right
+Paragraph to be align-right
+:::
+```
 
 to diy your paragraph align.
 

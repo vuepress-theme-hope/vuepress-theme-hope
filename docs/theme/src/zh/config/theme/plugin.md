@@ -165,7 +165,7 @@ Sitemap 生成配置，默认情况下无需任何配置。
 
 AddThis 的 pubid
 
-> 详情请见 [AddThis 插件](https://vuepress-add-this.mrhope.site/zh/)
+> 详情请见 [AddThis 插件][add-this]
 
 ## copyCode
 
@@ -173,7 +173,7 @@ AddThis 的 pubid
 
 > 默认情况下，不需要任何配置
 >
-> 有关详细信息，请参见[copy-code 插件配置](https://vuepress-copy-code.mrhope.site/zh/)
+> 有关详细信息，请参见[copy-code 插件配置][copy-code]
 
 ## photoSwipe
 
@@ -181,7 +181,7 @@ AddThis 的 pubid
 
 > 默认情况下，不需要更多配置
 >
-> 有关详细信息，请参见 [PhotoSwipe 插件配置](https://vuepress-photo-swipe.mrhope.site/zh/)
+> 有关详细信息，请参见 [PhotoSwipe 插件配置][photo-swipe-config]]
 
 ### lastUpdate
 

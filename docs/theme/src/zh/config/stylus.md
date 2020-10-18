@@ -78,7 +78,7 @@ $codeLang ?= js ts html md vue css sass scss less stylus go java c sh yaml py do
 
 使用 `$colorPicker` 进行主题选择器配置，需要与主题配置中的选择器配置相同。
 
-案例：
+案例:
 
 ```stylus
 $colorPicker = {

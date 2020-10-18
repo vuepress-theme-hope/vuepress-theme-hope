@@ -31,7 +31,7 @@ tags:
 
 ### 自定义颜色
 
-你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式来配置 `themeConfig.themeColor`：
+你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式来配置 `themeConfig.themeColor`:
 
 ::: details 例子
 
@@ -51,7 +51,7 @@ module.exports = {
 
 :::
 
-同时为了使 stylus 编译器正常工作，你还需要将颜色变量赋值给 `$colorPicker` 写入 `.vuepress/styles/palette.styl` 中：
+同时为了使 stylus 编译器正常工作，你还需要将颜色变量赋值给 `$colorPicker` 写入 `.vuepress/styles/palette.styl` 中:
 
 ::: details 例子
 

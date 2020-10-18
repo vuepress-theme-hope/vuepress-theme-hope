@@ -21,7 +21,7 @@ category: FAQ
 
 这个问题通常是 ts-loader 找不到 tsconfig.json 导致的。由于主题添加了 TypeScript 支持，你需要在你的项目内创建一个合法的 tsconfig.json。
 
-一个简单的 tsconfig.json 如下：
+一个简单的 tsconfig.json 如下:
 
 ```json
 {

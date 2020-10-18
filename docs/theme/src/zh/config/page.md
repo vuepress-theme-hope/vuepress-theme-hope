@@ -7,7 +7,7 @@ tags:
   - frontmatter
 ---
 
-页面的 Front Matter 新增如下配置选项：
+页面的 Front Matter 新增如下配置选项:
 
 ## 页面信息配置
 
@@ -249,7 +249,7 @@ tags:
 
 设置当前页面的页脚社交链接。
 
-::: tip 可用的社交媒体：
+::: tip 可用的社交媒体:
 
 `MediaType` 的可选值如下:
 

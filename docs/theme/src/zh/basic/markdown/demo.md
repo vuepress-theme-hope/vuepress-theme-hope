@@ -77,7 +77,7 @@ tags:
 ```
 
 :::tip
-上方的代码中`这里`后面有两个空格
+上方的代码中 `这里` 后面有两个空格
 :::
 
 ## 引用
@@ -177,7 +177,7 @@ tags:
 ```
 
 :::tip
-Vuepress 还兼容如下跳转到主页的写法：
+Vuepress 还兼容如下跳转到主页的写法:
 
 - [相对路径访问，兼容 markdown 编写时相互跳转](../readme.md)
 
@@ -187,7 +187,7 @@ Vuepress 还兼容如下跳转到主页的写法：
 
 如果希望在使用编辑器编辑 markdown 时也能够进行相互跳转的话，则需要全部使用**相对路径**，并且`readme.md`**不能省略**。
 
-代码：
+代码:
 
 ```md
 [根目录访问主页 2](/readme.md)
@@ -247,22 +247,24 @@ Vuepress 还兼容如下跳转到主页的写法：
 
 ## 代码
 
-行内代码效果： `code`
-
-    行内代码效果： `code`
-
-缩进代码：
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-实际代码：
+行内代码效果: `code`
 
 ```md
-缩进代码：
+行内代码效果: `code`
+```
 
+缩进代码:
+
+```
+// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+```
+
+实际代码:
+
+```md
     // Some comments
     line 1 of code
     line 2 of code
@@ -275,13 +277,15 @@ Vuepress 还兼容如下跳转到主页的写法：
 Sample text here...
 ```
 
-    块级代码
+````md
+块级代码
 
-    ```
-    Sample text here...
-    ```
+```
+Sample text here...
+```
+````
 
-高亮格式：
+高亮格式:
 
 ```js
 var foo = function (bar) {
@@ -291,12 +295,14 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
-    高亮格式：
+````md
+高亮格式:
 
-    ```js
-    var foo = function (bar) {
-      return bar++;
-    };
+```js
+var foo = function (bar) {
+  return bar++;
+};
 
-    console.log(foo(5));
-    ```
+console.log(foo(5));
+```
+````

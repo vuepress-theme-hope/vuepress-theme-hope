@@ -20,7 +20,7 @@ vuepress-theme-hope 的大部分文件都是使用 Typescript 编写，所以 vu
 
 ## 开启准备
 
-如果你的项目没有依赖 typescript，你需要额外安装它：
+如果你的项目没有依赖 typescript，你需要额外安装它:
 
 ```bash
 npm i -D typescript

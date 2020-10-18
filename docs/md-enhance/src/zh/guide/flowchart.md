@@ -32,7 +32,7 @@ module.exports = {
 @flowend
 ```
 
-目前可用的预设：
+目前可用的预设:
 
 - `vue` (默认)
 - `ant`
@@ -234,14 +234,14 @@ para(path2)->e
 
 连接方式在流程图中节点定义后描述，使用 `->` 指定一个节点之间的链接，例如 `nodeVar1->nodeVar2->nodeVar3`
 
-流程可以被分开：
+流程可以被分开:
 
 ```md
 nodeVar1->nodeVar2
 nodeVar2->nodeVar3
 ```
 
-连接格式定义如下：
+连接格式定义如下:
 
 `<node variable name>[(<specificaion1>[, <specification2])]-><node variable name>[[(<specificaion1>[, <specification2])]-><node variable name>]`
 
@@ -249,7 +249,7 @@ nodeVar2->nodeVar3
 
 ### 方向
 
-以下方向可用，并定义了连接将从节点离开的方向。如果指定符不止一个，则总是最后一个。所有节点都有默认方向，这使其成为可选规范。`<direction>` 的可选值为：
+以下方向可用，并定义了连接将从节点离开的方向。如果指定符不止一个，则总是最后一个。所有节点都有默认方向，这使其成为可选规范。`<direction>` 的可选值为:
 
 - left
 - right
@@ -311,8 +311,10 @@ e=>end: End:>http://www.yahoo.com
 
 ### 建议
 
-文本中可能不应该使用的符号：`=>`、`->`、 `:>`、`|`、`@>` 和 `:$`
+文本中可能不应该使用的符号: `=>`、`->`、 `:>`、`|`、`@>` 和 `:$`
 
-如果要在流程图中强调特定路径，则可以另外定义它，如下所示：
+如果要在流程图中强调特定路径，则可以另外定义它，如下所示:
 
-    st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
+```
+st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
+```

@@ -49,7 +49,7 @@ icon: Home
 
 ## 最后更新时间
 
-你可以通过 `themeConfig.lastUpdated` 选项来获取每个文件最后一次 `git` 提交的 UNIX 时间戳(ms)，同时它将以合适的日期格式显示在每一页的底部：
+你可以通过 `themeConfig.lastUpdated` 选项来获取每个文件最后一次 `git` 提交的 UNIX 时间戳(ms)，同时它将以合适的日期格式显示在每一页的底部:
 
 ```js
 module.exports = {
@@ -59,7 +59,7 @@ module.exports = {
 };
 ```
 
-请注意，`themeConfig.lastUpdated` 默认是关闭的，如果给定一个字符串，它将会作为前缀显示(默认值是：`Last Updated`)。
+请注意，`themeConfig.lastUpdated` 默认是关闭的，如果给定一个字符串，它将会作为前缀显示(默认值是: `Last Updated`)。
 
 ::: warning 使用须知
 由于 `lastUpdated` 是基于 `git` 的, 所以你只能在一个基于 `git` 的项目中启用它。此外，由于使用的时间戳来自 git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。
@@ -67,7 +67,7 @@ module.exports = {
 
 ## 上 / 下一篇链接
 
-上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以使用 `themeConfig` 或 `Front matter` 来明确地重写或者禁用它：
+上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以使用 `themeConfig` 或 `Front matter` 来明确地重写或者禁用它:
 
 ```yaml
 ---
@@ -99,7 +99,7 @@ next: false
 
 ::: details 例子
 
-启用默认的页脚文字：
+启用默认的页脚文字:
 
 ```md
 ---

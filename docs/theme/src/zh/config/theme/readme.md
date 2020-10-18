@@ -11,7 +11,7 @@ tags:
 你可以查看 [本文档的配置][docs-config] 作为案例，你也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts)
 :::
 
-`.vuepress/config.js` 中的 themeConfig 字段(主题字段)新增以下配置：
+`.vuepress/config.js` 中的 themeConfig 字段(主题字段)新增以下配置:
 
 ## 基本选项
 
@@ -64,8 +64,6 @@ SideBarItem 新增
 - 类型: `Record<string, HopeLangI18nConfigItem>`
 
 主题的多语言配置，主要需要配置各语言的 `nav` 与 `sidebar`。
-
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js
 
 ### hostname
 

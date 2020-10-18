@@ -10,7 +10,7 @@ tags:
 
 ### 使用来自依赖的主题
 
-一个主题可以在以 `vuepress-theme-xxx` 的形式发布到 npm，你可以这样使用它：
+一个主题可以在以 `vuepress-theme-xxx` 的形式发布到 npm，你可以这样使用它:
 
 ```js
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
 
 ### 主题的缩写
 
-如果你的主题名以 `vuepress-theme-` 开头，你可以使用缩写来省略这个前缀：
+如果你的主题名以 `vuepress-theme-` 开头，你可以使用缩写来省略这个前缀:
 
 ```js
 module.exports = {
@@ -28,7 +28,7 @@ module.exports = {
 };
 ```
 
-和下面等价：
+和下面等价:
 
 ```js
 module.exports = {

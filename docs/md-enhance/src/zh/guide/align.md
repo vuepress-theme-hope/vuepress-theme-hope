@@ -22,13 +22,15 @@ module.exports = {
 
 通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
 
-    ::: center
-    要居中的段落
-    :::
+```md
+::: center
+要居中的段落
+:::
 
-    ::: right
-    要居右的段落
-    :::
+::: right
+要居右的段落
+:::
+```
 
 来对你的段落对齐进行自定义。
 

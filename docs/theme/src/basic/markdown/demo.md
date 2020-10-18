@@ -183,7 +183,7 @@ You can alse use these in Vuepress:
 
 If you want to be able to jump to each other when editing the markdown using the editor, you need to use the **relative path**, and `readme.md` **cannot** be omitted.
 
-代码：
+代码:
 
 ```md
 - [Home page-Can route when editing markdown file](../readme.md)
@@ -251,10 +251,12 @@ Inline Code: `code`
 
 Indented code:
 
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
+```
+// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+```
 
 ```
 Indented code:
@@ -271,11 +273,13 @@ Block code:
 Sample text here...
 ```
 
-    Block code:
+````md
+Block code:
 
-    ```
-    Sample text here...
-    ```
+```
+Sample text here...
+```
+````
 
 Syntax highlighting:
 
@@ -287,12 +291,14 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
-    Syntax highlighting:
+````md
+Syntax highlighting:
 
-    ```js
-    var foo = function (bar) {
-      return bar++;
-    };
+```js
+var foo = function (bar) {
+  return bar++;
+};
 
-    console.log(foo(5));
-    ```
+console.log(foo(5));
+```
+````

@@ -8,7 +8,7 @@ tags:
 
 # 侧边栏
 
-想要使 侧边栏(Sidebar)生效，需要配置 `themeConfig.sidebar`，基本的配置，需要一个包含了多个链接的数组：
+想要使 侧边栏(Sidebar)生效，需要配置 `themeConfig.sidebar`，基本的配置，需要一个包含了多个链接的数组:
 
 ```js
 // .vuepress/config.js
@@ -29,7 +29,7 @@ module.exports = {
 
 默认情况下，侧边栏会自动地显示由当前页面的标题(headers)组成的链接，并按照页面本身的结构进行嵌套，你可以通过 `themeConfig.sidebarDepth` 来修改它的行为。默认的深度(也是最大的深度)是 `2`，它将提取到 `h2` 和 `h3` 的标题，设置成 `0` 将会禁用标题(headers)链接。
 
-也可以使用 `Front Matter` 来为某个页面重写此值：
+也可以使用 `Front Matter` 来为某个页面重写此值:
 
 ```md
 ---
@@ -39,24 +39,24 @@ sidebarDepth: 2
 
 ## 显示所有页面的标题链接
 
-默认情况下，侧边栏只会显示由当前活动页面的标题 (headers) 组成的链接，你可以将 `themeConfig.displayAllHeaders` 设置为 `true` 来显示所有页面的标题链接：
+默认情况下，侧边栏只会显示由当前活动页面的标题 (headers) 组成的链接，你可以将 `themeConfig.displayAllHeaders` 设置为 `true` 来显示所有页面的标题链接:
 
 ```js
 module.exports = {
   themeConfig: {
-    displayAllHeaders: true, // 默认值：false
+    displayAllHeaders: true, // 默认值: false
   },
 };
 ```
 
 ## 活动的标题链接
 
-默认情况下，当用户通过滚动查看页面的不同部分时，嵌套的标题链接和 URL 中的 Hash 值会实时更新，这个行为可以通过以下的配置来禁用：
+默认情况下，当用户通过滚动查看页面的不同部分时，嵌套的标题链接和 URL 中的 Hash 值会实时更新，这个行为可以通过以下的配置来禁用:
 
 ```js
 module.exports = {
   themeConfig: {
-    activeHeaderLinks: false, // 默认值：true
+    activeHeaderLinks: false, // 默认值: true
   },
 };
 ```
@@ -94,7 +94,7 @@ module.exports = {
 
 ## 多个侧边栏
 
-如果你想为不同的页面组来显示不同的侧边栏，首先，将你的页面文件组织成下述的目录结构：
+如果你想为不同的页面组来显示不同的侧边栏，首先，将你的页面文件组织成下述的目录结构:
 
 ```md
 .
@@ -111,7 +111,7 @@ module.exports = {
 └─ four.md
 ```
 
-接着，遵循以下的侧边栏配置：
+接着，遵循以下的侧边栏配置:
 
 ```js
 // .vuepress/config.js
@@ -147,7 +147,7 @@ module.exports = {
 
 ## 自动生成侧栏
 
-如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 `Front matter` 来实现：
+如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 `Front matter` 来实现:
 
 ```yaml
 ---
@@ -156,7 +156,7 @@ sidebar: auto
 
 ```
 
-你也可以通过配置来在所有页面中启用它：
+你也可以通过配置来在所有页面中启用它:
 
 ```js
 // .vuepress/config.js
@@ -167,7 +167,7 @@ module.exports = {
 };
 ```
 
-在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.md) 模式下, 你也可以将其应用到某一特定的语言下：
+在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.md) 模式下, 你也可以将其应用到某一特定的语言下:
 
 ```js
 // .vuepress/config.js
@@ -182,7 +182,7 @@ module.exports = {
 
 ## 禁用侧边栏
 
-你可以通过 `YAML front matter` 来禁用指定页面的侧边栏：
+你可以通过 `YAML front matter` 来禁用指定页面的侧边栏:
 
 ```yaml
 ---

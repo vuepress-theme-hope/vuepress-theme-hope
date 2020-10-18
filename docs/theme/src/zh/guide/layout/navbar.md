@@ -14,7 +14,7 @@ tags:
 
 你可以通过 `themeConfig.nav` 增加一些导航栏链接。
 
-基础的配置项有 `text` 导航栏文字，`link` 导航栏链接， `icon` 导航栏图标：
+基础的配置项有 `text` 导航栏文字，`link` 导航栏链接， `icon` 导航栏图标:
 
 ```js
 // .vuepress/config.js
@@ -29,7 +29,7 @@ module.exports = {
 };
 ```
 
-当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将显示为下拉列表 ：
+当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将显示为下拉列表 :
 
 ```js
 module.exports = {
@@ -48,7 +48,7 @@ module.exports = {
 };
 ```
 
-此外，你还可以通过嵌套的 `items` 来在下拉列表中设置分组：
+此外，你还可以通过嵌套的 `items` 来在下拉列表中设置分组:
 
 ```js
 module.exports = {
@@ -99,7 +99,7 @@ module.exports = {
 
 ### 禁用导航栏
 
-你可以使用 `themeConfig.navbar` 来禁用所有页面的导航栏：
+你可以使用 `themeConfig.navbar` 来禁用所有页面的导航栏:
 
 ```js
 // .vuepress/config.js
@@ -110,7 +110,7 @@ module.exports = {
 };
 ```
 
-你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏：
+你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏:
 
 ```yaml
 ---
@@ -138,7 +138,7 @@ module.exports = {
 
 ### 内置搜索
 
-你可以通过设置 `themeConfig.search: false` 来禁用默认的搜索框，或是通过 `themeConfig.searchMaxSuggestions` 来调整默认搜索框显示的搜索结果数量：
+你可以通过设置 `themeConfig.search: false` 来禁用默认的搜索框，或是通过 `themeConfig.searchMaxSuggestions` 来调整默认搜索框显示的搜索结果数量:
 
 ```js
 module.exports = {
@@ -149,7 +149,7 @@ module.exports = {
 };
 ```
 
-你可以通过 `YAML front matter` 来对单独的页面禁用内置的搜索框：
+你可以通过 `YAML front matter` 来对单独的页面禁用内置的搜索框:
 
 ```yaml
 ---
@@ -164,7 +164,7 @@ search: false
 
 ### Algolia 搜索
 
-你可以通过 `themeConfig.algolia` 选项来用 [Algolia 搜索](https://community.algolia.com/docsearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`：
+你可以通过 `themeConfig.algolia` 选项来用 [Algolia 搜索](https://community.algolia.com/docsearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`:
 
 ```js
 module.exports = {
@@ -185,7 +185,7 @@ module.exports = {
 
 ### 搜索占位符
 
-你可以通过添加 `searchPlaceholder` 属性为搜索框定义一个占位符：
+你可以通过添加 `searchPlaceholder` 属性为搜索框定义一个占位符:
 
 ```js
 module.exports = {
@@ -213,11 +213,11 @@ module.exports = {
 
     // 以下为可选的编辑链接选项
 
-    // 假如你的文档仓库和项目本身不在一个仓库：
+    // 假如你的文档仓库和项目本身不在一个仓库:
     docsRepo: "vuejs/vuepress",
-    // 假如文档不是放在仓库的根目录下：
+    // 假如文档不是放在仓库的根目录下:
     docsDir: "docs",
-    // 假如文档放在一个特定的分支下：
+    // 假如文档放在一个特定的分支下:
     docsBranch: "master",
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
@@ -227,7 +227,7 @@ module.exports = {
 };
 ```
 
-你可以通过 `YAML front matter` 来禁用指定页面的编辑链接：
+你可以通过 `YAML front matter` 来禁用指定页面的编辑链接:
 
 ```yaml
 ---

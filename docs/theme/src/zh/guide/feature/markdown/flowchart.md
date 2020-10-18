@@ -33,7 +33,7 @@ module.exports = {
 @flowend
 ```
 
-目前可用的预设：
+目前可用的预设:
 
 - `vue` (默认)
 - `ant`

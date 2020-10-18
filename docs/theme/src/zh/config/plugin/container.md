@@ -21,7 +21,7 @@ Markdown 自定义容器。
 - 类型: `string`
 - 必填: 是
 
-容器的类型。举个例子，如果 `type` 被设置为 `foo`，则仅有下面的语法会被解析为 markdown 容器：
+容器的类型。举个例子，如果 `type` 被设置为 `foo`，则仅有下面的语法会被解析为 markdown 容器:
 
 ```md
 ::: foo bar

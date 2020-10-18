@@ -7,7 +7,7 @@ tags:
 prev: ../markdown/demo
 ---
 
-Vuepress 是一个 Vue 驱动的静态网站生成器。它遵循：
+Vuepress 是一个 Vue 驱动的静态网站生成器。它遵循:
 
 - 简洁至上
 

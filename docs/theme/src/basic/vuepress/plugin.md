@@ -140,7 +140,7 @@ module.exports = {
 
 - [active-header-links](https://v1.vuepress.vuejs.org/plugin/official/plugin-active-header-links.html): A plugin of automatically activating sidebar links when page scrolls
 - [back-to-top](https://v1.vuepress.vuejs.org/plugin/official/plugin-back-to-top.html): Add the Back-to-top button
-- [google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html)：Add Google analytics
+- [google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html): Add Google analytics
 - [last-updated](https://v1.vuepress.vuejs.org/plugin/official/plugin-last-updated.html): Update last edit time
 - [medium-zoom](https://v1.vuepress.vuejs.org/plugin/official/plugin-medium-zoom.html): Picture Zoom
 - [nprogress](https://v1.vuepress.vuejs.org/plugin/official/plugin-nprogress.html): A progress bar plugin based on nprogress

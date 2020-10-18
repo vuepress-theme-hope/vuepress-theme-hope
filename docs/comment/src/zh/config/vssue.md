@@ -6,7 +6,7 @@ icon: vssue
 
 ## platform
 
-`@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 api 包：
+`@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 api 包:
 
 - platform `github` - api 包 `@vssue/api-github-v3`
 - platform `github-v4` - api 包 `@vssue/api-github-v4`
@@ -38,7 +38,7 @@ icon: vssue
 - **参考**: [owner](#owner)
 
 ::: tip
-仓库 URL 的常见模式是 `` `${baseURL}/${owner}/${repo}` ``：
+仓库 URL 的常见模式是 `` `${baseURL}/${owner}/${repo}` ``:
 
 - Github: `https://github.com/${owner}/${repo}`
 - Gitlab: `https://gitlab.com/${owner}/${repo}`
@@ -92,7 +92,7 @@ icon: vssue
 
   平台的 base URL。
 
-  对于我们支持的平台，默认值为：
+  对于我们支持的平台，默认值为:
 
   - Github 是 `'https://github.com'`
   - Gitlab 是 `'https://gitlab.com'`
@@ -191,7 +191,7 @@ icon: vssue
   Vssue 使用 [vue-i18n](https://kazupon.github.io/vue-i18n/) 实现国际化，但是并不会影响你的 Vue 应用的其他部分。
   如果你在项目中已经使用了 vue-i18n，也不会对 Vssue 造成影响。
 
-  语言包在 [src/i18n/langs](https://github.com/meteorlxy/vssue/tree/master/packages/vssue/src/i18n/langs) 目录下。目前我们支持：
+  语言包在 [src/i18n/langs](https://github.com/meteorlxy/vssue/tree/master/packages/vssue/src/i18n/langs) 目录下。目前我们支持:
 
   - `'en'` (`'en-US'`)
   - `'zh'` (`'zh-CN'`)
@@ -236,7 +236,7 @@ icon: vssue
 
   Vssue 将使用该函数的返回值作为 Issue 的内容。
 
-  参数包含两个属性：
+  参数包含两个属性:
 
   - `options` 是 Vssue 的 options。
   - `url` 是当前页面的 URL ，是 Vssue 生成 Issue 时默认使用的内容。
@@ -245,7 +245,7 @@ icon: vssue
 
   ```js
   issueContent: ({ url }) =>
-    `这个 Issue 由 Vssue 自动创建，用来存储该页面的评论：${url}`;
+    `这个 Issue 由 Vssue 自动创建，用来存储该页面的评论: ${url}`;
   ```
 
   ::: tip

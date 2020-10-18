@@ -17,7 +17,7 @@ export default class Clipboard extends Vue {
     const content: Record<string, string> = {
       "zh-CN": `${this.html}\n-----\n${
         author ? `著作权归${author}所有。\n` : ""
-      }链接：${this.location}`,
+      }链接: ${this.location}`,
       "en-US": `${this.html}\n-----\n${
         author ? `Copyright by ${author}.\n` : ""
       }Link: ${this.location}`,
