@@ -69,19 +69,19 @@ const codeCopyMinxin = Vue.extend({
       }
     },
 
-    copyToClipboard(str: string): void {
+    copyToClipboard(code: string): void {
       const selection = document.getSelection();
 
       /** 当前选中 */
       const selectedRange =
-        selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
+        selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 
       const textAreaElement = document.createElement("textarea");
 
-      textAreaElement.value = str;
+      textAreaElement.value = code;
       textAreaElement.setAttribute("readonly", "");
       textAreaElement.style.position = "absolute";
-      textAreaElement.style.visibility = "hidden";
+      textAreaElement.style.top = "-9999px";
       document.body.appendChild(textAreaElement);
 
       textAreaElement.select();
