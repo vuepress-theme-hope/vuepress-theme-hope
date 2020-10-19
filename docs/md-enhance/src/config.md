@@ -19,6 +19,13 @@ The language of the home directory.
 
 Enable all features.
 
+## align
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable custom align.
+
 ## lineNumbers
 
 - Type: `boolean`

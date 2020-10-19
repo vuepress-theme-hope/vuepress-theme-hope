@@ -19,6 +19,13 @@ icon: configuration
 
 启用全部功能。
 
+## align
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用自定义对齐格式支持。
+
 ## lineNumbers
 
 - 类型: `boolean`
