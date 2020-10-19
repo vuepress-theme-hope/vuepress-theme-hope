@@ -74,7 +74,7 @@ Whether to record the commenter IP
   - Type: `boolean`
   - Default value: `true`
 
-  Whether to enable the nickname box to automatically obtain QQ nickname and QQ avatar
+  Whether automatically get QQ nickname and QQ avatar when detecting QQ number in nickname box
 
 - **avatar**
 

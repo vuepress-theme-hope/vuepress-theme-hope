@@ -32,7 +32,7 @@ yarn add -D vuepress-plugin-add-this
 
 ### 使用
 
-```js {3-7}
+```js {4-7}
 module.exports = {
   plugin: [
     "add-this",

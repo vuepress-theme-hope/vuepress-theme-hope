@@ -10,7 +10,7 @@ If you met a bug while using, you can open an issue [here](https://github.com/Mi
 
 ## Theme Features
 
-The theme largely maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
+The theme maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
 
 ### Page enhancement
 

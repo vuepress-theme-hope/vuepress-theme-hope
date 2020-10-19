@@ -2,8 +2,6 @@
 
 Let the Markdown file in your VuePress site support the Tex syntax.
 
-This feature is brought by [vuepress-plugin-mathjax](https://github.com/vuepress/vuepress-plugin-mathjax).
-
 ## Configuration
 
 ```js
@@ -22,7 +20,7 @@ module.exports = {
 
 ### Inline syntax
 
-Use `$codes$` to indicate.
+Use `$codes$`.
 
 ```md
 Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -32,7 +30,7 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 ### Block syntax
 
-Use `$$codes$$` to indicate.
+Use `$$codes$$`.
 
 ```md
 $$

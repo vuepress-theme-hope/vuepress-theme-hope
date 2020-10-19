@@ -171,7 +171,7 @@ tags:
 - [umi](https://umijs.org/) - 🌋 Pluggable enterprise-level react application framework.
 - [dva](https://dvajs.com/) - 🌱 React and redux based, lightweight and elm-style framework. (Inspired by elm and choo)
 - [macaca](https://github.com/alibaba/macaca) - Automation test solution for native, hybrid, mobile web and web application on mobile and desktop platforms.
-- [macaca-datahub](https://macacajs.github.io/macaca-datahub/) - Just enjoy the data out-of-the-box.
+- [macaca-datahub](https://macacajs.github.io/macaca-datahub/) - Enjoy the data out-of-the-box.
 - [app-inspector](https://macacajs.github.io/app-inspector/) - Mobile UI viewer in browser, view the UI in a tree view, and generate XPath automatically
 - [form-wrapper-js](https://nevoss.github.io/form-wrapper-js/) - A lightweight library that creates forms systems in a convenient and easy way, without dependencies and magic code.
 - [lin-cms-vue](https://github.com/TaleLin/lin-cms-vue) - A simple and practical CMS implememted by Vue

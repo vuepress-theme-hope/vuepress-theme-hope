@@ -5,8 +5,6 @@ rules:
 
   common-misspellings: true
 
-  diacritics: true
-
   # en-capitalization:
   #   allowHeading: false
   #   allowLists: true
@@ -14,18 +12,27 @@ rules:
   stop-words:
     severity: warning
 
-  # terminology:
-  #   terms:
-  #     - Stylus
-  #     - VuePress
-  #     - - front[- ]matter
-  #       - frontmatter
-  #   exclude:
-  #     - node
-  #     - repo
+  terminology:
+    terms:
+      - Stylus
+      - VuePress
+      - - front[- ]matter
+        - frontmatter
+    exclude:
+      - Node.js
+      - URLs
+      - repo
+
+    severity: warning
 
   write-good:
+    passive: false
     severity: warning
+    whitelist:
+      - daily
+      - only
+      - multiple
+      - validate
 
   zh-half-and-full-width-bracket:
     bracket: halfWidth

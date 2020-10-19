@@ -6482,15 +6482,15 @@ eslint-plugin-prettier@3.1.4:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-vue@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.0.1.tgz#8e69a9041bb9719c018f154fdcacbb17713e0240"
-  integrity sha512-Pzl88S8Gue9BPcvSg+K/Av2V5UlwGeBxiZW5cLYbDngHm7vLnSuO/q2n54kIyCqfPmuD5PKlJrNSzoN+Ur9HRg==
+eslint-plugin-vue@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.1.0.tgz#832d83e4e1e480c7285b2bc3ff1076cd0dca7a5b"
+  integrity sha512-9dW7kj8/d2IkDdgNpvIhJdJ3XzU3x4PThXYMzWt49taktYnGyrTY6/bXCYZ/VtQKU9kXPntPrZ41+8Pw0Nxblg==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
     semver "^7.3.2"
-    vue-eslint-parser "^7.1.0"
+    vue-eslint-parser "^7.1.1"
 
 eslint-scope@^4.0.3:
   version "4.0.3"
@@ -10120,11 +10120,6 @@ markdownlint@~0.21.0:
   integrity sha512-rTxr0fbCFmS65oxXBD0HNy3/+PSukLS+b7Z6rGDWbjdRJp/e2dKj538r3KTn8oXrusx+ZtuYOozV2Knpnn0pkQ==
   dependencies:
     markdown-it "11.0.0"
-
-match-casing@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/match-casing/-/match-casing-1.0.3.tgz#cda6c33e377dbe49daff286e0d500d90766b16a4"
-  integrity sha512-oMyC3vUVCFbGu+M2Zxl212LPJThcaw7QxB5lFuJPQCgV/dsGBP0yZeCoLmX6CiBkoBcVbAKDJZrBpJVu0XcLMw==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -14613,14 +14608,6 @@ textlint-rule-common-misspellings@1.0.1:
     misspellings "^1.0.1"
     textlint-rule-helper "^1.1.5"
 
-textlint-rule-diacritics@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/textlint-rule-diacritics/-/textlint-rule-diacritics-1.0.0.tgz#3f34e2b72633a8e2eee3993678a3f80a2ad0e47e"
-  integrity sha512-hhJvDZzhV+sKD7walPQ4VmWkBw5o1T/lFLRsoDsAJF+LYhD89R5/L4yFVtxFRUkP9VZ5cvoUIPkYjZvkPEawTA==
-  dependencies:
-    match-casing "^1.0.2"
-    strip-json-comments "^3.0.1"
-
 textlint-rule-en-capitalization@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/textlint-rule-en-capitalization/-/textlint-rule-en-capitalization-2.0.2.tgz#42ca1c479108a82010216088181132278c23b5c7"
@@ -15686,7 +15673,7 @@ vue-disqus@^3.0.5:
   resolved "https://registry.yarnpkg.com/vue-disqus/-/vue-disqus-3.0.5.tgz#8d0dd5cabdba7c47f82d129d2907a64366842fa8"
   integrity sha512-T3Y68lXf5W2lYt6j4Y3kZ4opLPH0EAzqriy11MS4D4Q2+UN0tFuUXeYP1MxfvdyaCEboXSM6CUswxsULuNV70Q==
 
-vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.1.0:
+vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.1.1.tgz#c43c1c715ff50778b9a7e9a4e16921185f3425d3"
   integrity sha512-8FdXi0gieEwh1IprIBafpiJWcApwrU+l2FEj8c1HtHFdNXMd0+2jUSjBVmcQYohf/E72irwAXEXLga6TQcB3FA==
@@ -15738,10 +15725,15 @@ vue-property-decorator@^8.1.1:
   dependencies:
     vue-class-component "^7.1.0"
 
-vue-router@^3.4.5, vue-router@^3.4.6:
+vue-router@^3.4.5:
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.6.tgz#f7bda2c9a43d39837621c9a02ba7789f5daa24b2"
   integrity sha512-kaXnB3pfFxhAJl/Mp+XG1HJMyFqrL/xPqV7oXlpXn4AwMmm6VNgf0nllW8ksflmZANfI4kdo0bVn/FYSsAolPQ==
+
+vue-router@^3.4.7:
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.7.tgz#bf189bafd16f4e4ef783c4a6250a3090f2c1fa1b"
+  integrity sha512-CbHXue5BLrDivOk5O4eZ0WT4Yj8XwdXa4kCnsEIOzYUPF/07ZukayA2jGxDCJxLc9SgVQX9QX0OuGOwGlVB4Qg==
 
 vue-server-renderer@^2.6.10:
   version "2.6.12"

@@ -19,7 +19,7 @@ After this step, you will get `client id` and `client secret` of your OAuth App,
 
 ## Vssue Config
 
-This plugin uses [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@vssue/vuepress-plugin-vssue) to help use Vssue in VuePress quickly.
+This plugin uses [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@vssue/vuepress-plugin-vssue) to help use Vssue in VuePress.
 
 ### Use the plugin
 
@@ -74,7 +74,7 @@ You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy
 
 ## Custom Style Variables
 
-With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the [Variables of Vssue Style](./styles.md#use-variables-to-customize-vssue) easily.
+With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the Vssue Style.
 
 There are some predefined [Stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
 

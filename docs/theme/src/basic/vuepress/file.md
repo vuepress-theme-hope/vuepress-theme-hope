@@ -124,7 +124,7 @@ Styl is a extend of CSS that extends and changes the way CSS is written, and var
 
 File that do not need to be understand at the beginning:
 
-| Forlder     | Content                                             |
+| Folder      | Content                                             |
 | ----------- | --------------------------------------------------- |
 | compoenents | Placed the Vue component in the VuePress site       |
 | theme       | Placed the theme of the VuePress site               |

@@ -26,8 +26,8 @@ Use `== ==` to mark.
 
 ## Case
 
-Mr. Hope is ==very== handsome.
+Mr. Hope is ==handsome==.
 
 ```md
-Mr. Hope is ==very== handsome.
+Mr. Hope is ==handsome==.
 ```

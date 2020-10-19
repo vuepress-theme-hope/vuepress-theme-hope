@@ -32,7 +32,7 @@ Paragraph to be align-right
 :::
 ```
 
-If you need nesting, the outer `:::` needs to be increased in order.
+If you need nesting, you should increase the outer `:::` mark number.
 
 ```md
 :::: right
@@ -59,7 +59,7 @@ This theme is still in built, the API may have
 Significant changes.
 :::
 
-If you encounter a bug while using, you can
+If you meet a bug while using, you can
 
 ::: right
 [open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
@@ -106,23 +106,23 @@ Details container
 :::
 
 ::: info custom title
-Information container
+A custom information container
 :::
 
 ::: tip custom title
-Tip container
+A custom tip container
 :::
 
 ::: warning custom title
-Warning container
+A custom warning container
 :::
 
 ::: danger custom Title
-Dangerous container
+A custom danger container
 :::
 
 ::: details custom title
-Details container
+A custom details container
 :::
 
 ```md
@@ -147,22 +147,22 @@ Details container
 :::
 
 ::: info custom title
-Information container
+A custom information container
 :::
 
 ::: tip custom title
-Tip container
+A custom tip container
 :::
 
 ::: warning custom title
-Warning container
+A custom warning container
 :::
 
 ::: danger custom Title
-Dangerous container
+A custom danger container
 :::
 
 ::: details custom title
-Details container
+A custom details container
 :::
 ```

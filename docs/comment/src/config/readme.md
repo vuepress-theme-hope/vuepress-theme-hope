@@ -15,7 +15,9 @@ The language of the home directory.
 - Type: `'valine' | 'vssue' | 'disable'`
 - Required: true
 
-Use Valine or Vssue. Setting to `'disable'` will only enable PageInfo feature.
+Comment service provider.
+
+Setting it to `'disable'` will disable the comment feature while still enabling PageInfo feature.
 
 ## author
 
@@ -29,9 +31,9 @@ Default author for pages
 - Type: `string[] | false`
 - Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
 
-Article information should be filled in with an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
+The order of the items decides the display order . Fill in `false` to disable it.
 
-The items that can be filled are as follows:
+Available items:
 
 - `'Author'`: Author
 - `'Time'`: Writing Date

@@ -82,14 +82,14 @@ In codes above, two spaces are behind `at`.
 
 > Blockquotes can also be nested...
 >
-> > ...by using additional greater-than signs right next to each other...
+> > ...by using greater-than signs right next to each other...
 > >
 > > > ...or with spaces between arrows.
 
 ```md
 > Blockquotes can also be nested...
 >
-> > ...by using additional greater-than signs right next to each other...
+> > ...by using greater-than signs right next to each other...
 > >
 > > > ...or with spaces between arrows.
 ```
@@ -99,7 +99,7 @@ In codes above, two spaces are behind `at`.
 ### Unordered List
 
 - Create a list by starting a line with `-`
-- Sub-lists are made by indenting 2 spaces:
+- Make sub-lists by indenting 2 spaces:
 
   - Marker character change forces new list start:
 
@@ -181,7 +181,7 @@ You can also use these in VuePress:
 
 - [Visit in HTML](../index.html)
 
-To be able to jump to each other when editing the Markdown using the editor, you need to use the **relative path**, and `readme.md` **cannot** be omitted.
+To be able to jump to each other when editing the Markdown using the editor, you need to use the **relative path**, also you must place `readme.md` in **every folder**.
 
 代码:
 

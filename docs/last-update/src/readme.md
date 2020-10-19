@@ -44,7 +44,7 @@ You must disable the official plugin!
 
 ## Plugin description
 
-The plugin is based on Git and will automatically read the file’s last commit time and inject it into `lastUpdated` in a localized form. At the same time, it will inject a timestamp in `lastUpdatedTime` for use by other plugins.
+To let the plugin work, your docs should be a git project, the plugin will automatically read the file’s last commit time and inject it into `lastUpdated` in a localized form. At the same time, it will inject a timestamp in `lastUpdatedTime` for use by other plugins.
 
 ## Configuration
 

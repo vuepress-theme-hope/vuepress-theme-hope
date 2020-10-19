@@ -12,7 +12,7 @@ The theme enables some blogging features by configuring `@vuepress/plugin-blog`.
 
 ## Category
 
-Just add `category: <category name>` to the frontmatter of the page, and the article will be automatically rendered in the list of category pages with URL `/category/`.
+Add `category: <category name>` to the frontmatter of the page, and the article will be automatically rendered in the list of category pages with URL `/category/`.
 
 ![Category](./assets/category.png)
 
@@ -20,7 +20,7 @@ Please note that only one category can be set per article.
 
 ## Tags
 
-Just add `tags: <tag name>` to the frontmatter of the page, and the article will be automatically listed in the list on the `/tag/` tag page.
+Add `tags: <tag name>` to the frontmatter of the page, and the article will be automatically listed in the list on the `/tag/` tag page.
 
 `tags` accepts `string | string []`, which means that an article can contain multiple tags.
 

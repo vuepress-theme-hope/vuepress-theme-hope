@@ -25,7 +25,7 @@ In addition, because we have a god-level editor like RStudio, we can quickly tur
 
 ## Title
 
-The title shows the structure of the article. Insert 1-6 # at the beginning of the line, each adding a # indicates a more in-depth content, corresponding to the depth of the title by 1-6.
+The title shows the structure of the article. Insert 1-6 `#` at the beginning of the line, each adding a `#` indicates a more in-depth content, corresponding to the depth of the title by 1-6.
 
 - H1: `# Header 1`
 - H2: `## Header 2`

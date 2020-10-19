@@ -20,7 +20,7 @@ options = {
 };
 ```
 
-Config will be listed on [Config](../api/valine.md).
+You can find all config items on [Config](../api/valine.md).
 
 ::: tip
 For Valine config and usage, please see [Valine Docs](https://valine.js.org)。

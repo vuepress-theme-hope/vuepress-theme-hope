@@ -309,9 +309,9 @@ Each node variables has optional specifiers, like direction, and some have speci
 
 A external link can be added to a node with the `:>` operator.
 
-The `st` node is linked to `http://www.google.com` and will open a new tab because `[blank]` is at the end of the URL.
+The `st` node is linked with `http://www.google.com` and will open a new tab because `[blank]` is at the end of the URL.
 
-The `e` node is linked to `http://www.yahoo.com` and will cause the page to navigate to that page instead of opening a new tab.
+The `e` node is linked with `http://www.yahoo.com` and will cause the page to navigate to that page instead of opening a new tab.
 
 ```md
 st=>start: Start:>http://www.google.com[blank]

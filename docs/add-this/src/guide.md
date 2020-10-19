@@ -11,4 +11,4 @@ Please go to [Add this registration page](https://www.addthis.com/register?next=
 
 Go to [Tools page](https://www.addthis.com/dashboard#gallery/) to add the tools you need, then config them.
 
-After the configuration is complete, please enter the [Get The Code Page](https://www.addthis.com/dashboard#get-the-code/) to get your pubid from the code.
+After you finish the configuration, please enter the [Get The Code Page](https://www.addthis.com/dashboard#get-the-code/) to get your pubid from the code.

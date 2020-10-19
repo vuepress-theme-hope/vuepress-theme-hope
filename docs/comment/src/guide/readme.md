@@ -9,8 +9,6 @@ This plugin exposes two components at `@mr-hope/vuepress-plugin-comment/<compone
 - `<Comment />`: Comment component
 - `<PageInfo />`: Page information component
 
-There are two comment plugins to choose from: Valine and Vssue.
-
 ## `<PageInfo />`
 
 You need to insert the page information component (`<PageInfo />`) before the `<Content />` component.
@@ -25,7 +23,7 @@ It is recommended to insert the comment component (`<Comment />`) after the `<Pa
 
 To keep it globally disabled, please set `comment` to `false` in the plugin options. This way you can set `comment: true` in the frontmatter of a particular page to enable it locally.
 
-There are two comment plugins to choose from: Valine and Vssue.
+You can choose from 2 comment service provider: Valine and Vssue.
 
 ### Valine
 

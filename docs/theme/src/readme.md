@@ -26,7 +26,7 @@ features:
     link: /guide/feature/markdown/
 
   - title: Blog support
-    details: Just date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
+    details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
     link: /guide/feature/blog/
 
   - title: Article Encryption

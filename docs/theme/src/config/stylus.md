@@ -51,7 +51,7 @@ $nightCodeBgColor ?= #282c34
 $arrowBgColor ?= #ccc
 $nightArrowBgColor ?= #333
 
-/* additional color provided by theme */
+/* colors provided by theme */
 $boxShadowColor ?= #f0f1f2
 $nightBoxShadowColor ?= #0f0e0d
 $cardShadowColor ?= rgba(0, 0, 0, 0.15)

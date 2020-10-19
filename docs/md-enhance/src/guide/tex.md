@@ -24,7 +24,7 @@ module.exports = {
 
 ### Inline syntax
 
-Use `$codes$` to indicate.
+Use `$codes$`.
 
 ```md
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -34,7 +34,7 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 ### Block syntax
 
-Use `$$codes$$` to indicate.
+Use `$$codes$$`.
 
 ```md
 $$
@@ -88,7 +88,7 @@ $$
   - `\idotsint` $\idotsint$
 
 ::: tip
-Large operators such as continuous addition, multiplication, limits, and integrals can use `\limits` and `\nolimits` to force explicitly specify whether or not to compress these superscripts.
+Large operators such as continuous addition, multiplication, limits, and integrals can use `\limits` and `\nolimits` to force explicitly specify compress these superscripts or not.
 
 `\iiiint`($\liiiint$) is support by hack, so for inline display you should use `\liiiint`.
 

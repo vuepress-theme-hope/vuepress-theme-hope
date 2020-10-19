@@ -243,6 +243,7 @@ para(path2)->e
 ## Connections
 
 Connections are defined in their own section below the node definitions.
+
 The `->` operator specifies a connection from one node to another like `nodeVar1->nodeVar2->nodeVar3`.
 
 Not all nodes need to be specified in one string and can be separaged like so
@@ -313,9 +314,9 @@ Each node variables has optional specifiers, like direction, and some have speci
 
 A external link can be added to a node with the `:>` operator.
 
-The `st` node is linked to `http://www.google.com` and will open a new tab because `[blank]` is at the end of the URL.
+The `st` node is linked with `http://www.google.com` and will open a new tab because `[blank]` is at the end of the URL.
 
-The `e` node is linked to `http://www.yahoo.com` and will cause the page to navigate to that page instead of opening a new tab.
+The `e` node is linked with `http://www.yahoo.com` and will cause the page to navigate to that page instead of opening a new tab.
 
 ```md
 st=>start: Start:>http://www.google.com[blank]
@@ -326,7 +327,7 @@ e=>end: End:>http://www.yahoo.com
 
 Symbols that should possibly not be used in the text: `=>` and `->` and `:>` and `|` and `@>` and `:$`
 
-To emphasize a specific path in your flowchart, you can additionally define it like this:
+To emphasize a specific path in your flowchart, you can define it like this:
 
 ```md
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})

@@ -23,7 +23,7 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Theme Highlights
 
-The theme largely maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
+The theme maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
 
 ### Page enhancement
 
