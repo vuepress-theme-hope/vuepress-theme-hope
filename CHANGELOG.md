@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.1.0...v1.2.0) (2020-10-19)
+
+### Bug Fixes
+
+- **copy-code:** cannot copy code ([f3a51de](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f3a51dec6d1e76fe10c8a8b36a57385ce75cc772))
+
+### Features
+
+- **theme:** adjust Anchor position ([98ddf3b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/98ddf3b6da87aea522bf000fc831cf446542859f))
+- **theme:** improve homepage appearance ([68954c8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/68954c80d70f894f69c47e348afc0724baf334fd))
+- support Vietnamese ([c01fb35](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c01fb356e243ff6f4b4bab64315033f585a58915))
+- **shared-utils:** add Vietnamese support ([#407](https://github.com/Mister-Hope/vuepress-theme-hope/issues/407)) ([6bb8d0c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6bb8d0c890a200cd1814f0f6ef2e3c59d6a4226b))
+
 ## [1.1.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.1...v1.1.0) (2020-10-17)
 
 ### Bug Fixes
