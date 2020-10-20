@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.2.0...v1.2.1) (2020-10-20)
+
+### Bug Fixes
+
+- **theme:** add min-height for layout ([ed02546](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ed0254638f6203a266af3c32deae78d05650d0b7))
+
+### Features
+
+- **theme:** rebuild blog page ([f7d4f5d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f7d4f5d6fb8bef785ac6dc8035d63c5e10fdc10d))
+
 ## [1.2.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.1.0...v1.2.0) (2020-10-19)
 
 ### Bug Fixes
