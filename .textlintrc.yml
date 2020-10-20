@@ -1,5 +1,5 @@
 rules:
-  "@textlint-rule/no-unmatched-pair": true
+  # "@textlint-rule/no-unmatched-pair": true
 
   apostrophe: true
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.2.2...v1.3.0) (2020-10-20)
+
+### Bug Fixes
+
+- **theme:** fix hero image width larger then screen on mobile ([13544ea](https://github.com/Mister-Hope/vuepress-theme-hope/commit/13544ea15846809f16cbe585c8976f3438060345))
+
+### Features
+
+- **md-enhance:** add reveal.js ([3521bd5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3521bd5dbb730f84fb19b2ec40610ebca478410d))
+
 ## [1.2.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.2.1...v1.2.2) (2020-10-20)
 
 ### Bug Fixes

@@ -88,7 +88,9 @@ const a = 1;
 
 ## 幻灯片 3.2
 
-$$ J(\theta_0,\theta_1) = \sum_{i=0} $$
+$$
+J(\theta_0,\theta_1) = \sum_{i=0}
+$$
 
 @slideend
 
@@ -118,7 +120,9 @@ const a = 1;
 
 ## 幻灯片 3.2
 
-$$ J(\theta_0,\theta_1) = \sum_{i=0} $$
+$$
+J(\theta_0,\theta_1) = \sum_{i=0}
+$$
 
 @slideend
 ````
