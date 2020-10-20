@@ -62,7 +62,7 @@
 <style lang="stylus">
 .pagination-wrapper
   font-weight 600
-  margin 1.25rem -0.5rem 0.75rem
+  margin 1.25rem 0 0.75rem
   font-family Arial, Helvetica, sans-serif
 
   .pagination-list
@@ -122,7 +122,7 @@
       display flex
       justify-content center
       align-items center
-      margin 0 0.5em
+      margin 0.5em
 
       div.text
         font-size 14px

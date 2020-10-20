@@ -43,7 +43,7 @@
 <style lang="stylus">
 .page.blog
   min-height 100vh - $navbarHeight
-  padding $navbarHeight 0 0
+  padding-top $navbarHeight
   margin 0px auto
   background-color var(--bgcolor-light)
 
@@ -78,5 +78,6 @@
         margin 0 15px
 
       .article-title
+        font-size 1.8rem
         margin 10px 15px
 </style>

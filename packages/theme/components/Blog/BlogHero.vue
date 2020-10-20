@@ -43,9 +43,9 @@
 .blog-hero
   position relative
   color #fff
+  margin-bottom 16px
 
   @media (min-width $MQMobile)
-    margin 0 auto 16px
     overflow hidden
 
   @media (max-width $MQMobile)

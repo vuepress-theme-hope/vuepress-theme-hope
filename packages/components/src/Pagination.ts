@@ -71,10 +71,10 @@ export default class Pagination extends Vue {
   }
 
   /** Navigate to certain page */
-  private navigate(index: number): void {
-    const path = `${this.$route.path}?index=${index}`;
+  private navigate(page: number): void {
+    const path = `${this.$route.path}${page === 1 ? "" : `?page=${page}`}`;
 
-    this.$emit("change", index);
+    this.$emit("change", page);
     if (this.$route.fullPath !== path) void this.$router.push(path);
   }
 
