@@ -56,6 +56,8 @@ module.exports = {
 
   /** 主题配置 */
   themeConfig: {
+    baseLang: 'zh-CN',
+
     /** 网站的logo */
     logo: '/logo.svg',
 
@@ -68,7 +70,7 @@ module.exports = {
 
     /** 侧边栏配置 */
     sidebar: {
-      '/guide/': ['', 'sup-sub', 'align', 'footnote', 'flowchart', 'tex'],
+      '/guide/': ['', 'sup-sub', 'align', 'footnote', 'flowchart', 'tex', 'presentation'],
 
       '/': ['', 'guide/', 'api']
     },
@@ -120,7 +122,8 @@ module.exports = {
             'align',
             'footnote',
             'flowchart',
-            'tex'
+            'tex',
+            'presentation',
           ],
 
           '/en/': ['', 'guide/', 'api']

@@ -74,3 +74,12 @@ Whether to enable $\TeX$ syntax support.
 - Default: `false`
 
 Whether to enable flowchart syntax support.
+
+## presentation
+
+- Type: `RevealOptions | boolean`
+- Default: `false`
+
+Whether to enable presentation syntax support.
+
+You can set it with an object, the object will be used as reveal.js config.

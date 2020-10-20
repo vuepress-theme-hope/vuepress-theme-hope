@@ -42,6 +42,7 @@ module.exports = config({
         "mark",
         "flowchart",
         "tex",
+        "presentation",
       ],
 
       "/": ["", "guide/", "config"],
@@ -81,6 +82,7 @@ module.exports = config({
             "mark",
             "flowchart",
             "tex",
+            "presentation",
           ],
 
           "/zh/": ["", "guide/", "config"],
