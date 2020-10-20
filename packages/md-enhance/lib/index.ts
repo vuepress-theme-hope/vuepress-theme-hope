@@ -1,14 +1,18 @@
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { MarkdownEnhanceOption } from "../types";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { resolve } from "path";
+import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
+
 import flowchart from "./markdown-it/flowchart";
 import footnote from "./markdown-it/footnote";
-import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 import katex from "./markdown-it/katex";
 import mark from "./markdown-it/mark";
-import pluginConfig from "./pluginConfig";
-import { resolve } from "path";
+import reveal from "./markdown-it/reveal";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
+import pluginConfig from "./pluginConfig";
+
+import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import { MarkdownEnhanceOption } from "../types";
 
 export = (
   option: MarkdownEnhanceOption,
@@ -20,7 +24,15 @@ export = (
   const config: PluginOptionAPI = {
     name: "md-enhance",
 
+    define: () => ({
+      REVEAL_OPTIONS:
+        typeof markdownOption.presentation === "object"
+          ? markdownOption.presentation
+          : {},
+    }),
+
     enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+
     chainMarkdown: (md) => {
       if (markdownOption.lineNumbers !== false)
         md.plugin("line-numbers").use(lineNumbers);
@@ -45,6 +57,8 @@ export = (
             },
           },
         ]);
+      if (markdownOption.presentation || markdownOption.enableAll)
+        md.plugin("presentation").use(reveal);
     },
   };
 

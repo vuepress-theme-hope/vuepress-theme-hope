@@ -1,5 +1,5 @@
 import { Langs } from "@mr-hope/vuepress-shared-utils";
-
+import { RevealOptions } from "reveal.js";
 import "./declare";
 
 /** md-enhance plugin configuration */
@@ -69,13 +69,21 @@ export type MarkdownEnhanceOption = Partial<{
    */
   tex: boolean;
   /**
-   * 是否启用流程图语法支持
+   * 是否启用流程图支持
    *
-   * Whether to enable flowchart syntax support
+   * Whether to enable flowchart support
    *
    * @default false
    */
   flowchart: boolean;
+  /**
+   * 是否启用幻灯片支持
+   *
+   * Whether to enable presentation support
+   *
+   * @default false
+   */
+  presentation: Partial<RevealOptions> | boolean;
   /**
    * 是否启用全部增强
    *
@@ -85,3 +93,7 @@ export type MarkdownEnhanceOption = Partial<{
    */
   enableAll: boolean;
 }>;
+
+declare global {
+  const REVEAL_OPTIONS: Partial<RevealOptions>;
+}
