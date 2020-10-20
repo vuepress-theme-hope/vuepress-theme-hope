@@ -8,7 +8,6 @@ import { Route } from "vue-router";
 import { generatePagination } from "@theme/util/article";
 import { BlogOptions } from "@theme/types";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { ArticleItem, MyTransition, Pagination } })
 export default class ArticleList extends Mixins(ArticleMixin) {
   /** 当前页面 */

@@ -3,7 +3,6 @@ import MyTransition from "@theme/components/MyTransition.vue";
 import { TimelineMixin } from "@theme/util/articleMixin";
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { MyTransition } })
 export default class Timeline extends Mixins(TimelineMixin) {
   /** 提示文字 */

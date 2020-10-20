@@ -5,7 +5,6 @@ import { PageComputed } from "@mr-hope/vuepress-types";
 import StickyIcon from "@mr-hope/vuepress-shared-utils/icons/StickyIcon.vue";
 import { pathHitKeys } from "@theme/util/encrypt";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { ArticleInfo, LockIcon, StickyIcon } })
 export default class ArticleItem extends Vue {
   @Prop({ type: Object, required: true })

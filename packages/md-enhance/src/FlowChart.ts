@@ -6,7 +6,6 @@ import * as Flowchart from "flowchart.js";
 
 let svg: Flowchart.Instance;
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { Loading } })
 export default class FlowChart extends Vue {
   @Prop({ type: String, required: true })

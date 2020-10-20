@@ -6,7 +6,6 @@ import NavLink from "@theme/components/NavLink.vue";
 import { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/util/navbar";
 import { resolveNavLinkItem } from "@theme/util/navbar";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { NavLink, DropdownLink } })
 export default class NavLinks extends Vue {
   private get userNav(): NavBarConfigItem[] {

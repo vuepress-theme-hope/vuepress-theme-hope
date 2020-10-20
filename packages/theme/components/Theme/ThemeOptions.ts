@@ -18,7 +18,6 @@ interface ThemeColor {
   picker: Record<string, string>;
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { DarkmodeSwitch } })
 export default class ThemeOptions extends Vue {
   private themeColor = {} as ThemeColor;

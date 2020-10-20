@@ -5,7 +5,6 @@ import ThemeOptions from "@theme/components/Theme/ThemeOptions.vue";
 @Component({
   directives: { "click-outside": ClickOutside },
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   components: { ThemeOptions },
 })
 export default class ThemeColor extends Vue {

@@ -5,7 +5,6 @@ import MediaLinks from "@theme/components/MediaLinks.vue";
 import navigate from "@theme/util/navigate";
 import { BlogOptions } from "@theme/types";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { MediaLinks } })
 export default class BloggerInfo extends Mixins(ArticleMixin, TimelineMixin) {
   private get blogConfig(): BlogOptions {

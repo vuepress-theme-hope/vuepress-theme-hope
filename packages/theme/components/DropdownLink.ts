@@ -3,7 +3,6 @@ import DropdownTransition from "@theme/components/DropdownTransition.vue";
 import { NavBarConfigItem } from "@theme/util/navbar";
 import NavLink from "@theme/components/NavLink.vue";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { NavLink, DropdownTransition } })
 export default class DropdownLink extends Vue {
   @Prop({ type: Object, required: true })

@@ -9,7 +9,6 @@ interface ActionConfig {
   link: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { MyTransition, NavLink, PageFooter } })
 export default class Home extends Vue {
   private get actionLinks(): ActionConfig[] {

@@ -4,7 +4,6 @@ import DarkIcon from "@mr-hope/vuepress-shared-utils/icons/DarkIcon.vue";
 import LightIcon from "@mr-hope/vuepress-shared-utils/icons/LightIcon.vue";
 import { dom } from "@mr-hope/vuepress-shared-utils";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { AutoIcon, DarkIcon, LightIcon } })
 export default class DarkmodeSwitch extends Vue {
   private darkmode: "auto" | "on" | "off" = "auto";

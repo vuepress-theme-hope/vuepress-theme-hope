@@ -1,7 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import MyTransition from "@theme/components/MyTransition.vue";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { MyTransition } })
 export default class BlogHero extends Vue {
   private get heroImageStyle(): Record<string, string> {

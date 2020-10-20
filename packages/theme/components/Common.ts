@@ -11,7 +11,6 @@ import Password from "@theme/components/Password.vue";
 import { PageHeader } from "@mr-hope/vuepress-types";
 import Sidebar from "@theme/components/Sidebar.vue";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { Password, Sidebar, Navbar } })
 export default class Common extends Mixins(GlobalEncryptMixin) {
   @Prop({ type: Boolean, default: true })

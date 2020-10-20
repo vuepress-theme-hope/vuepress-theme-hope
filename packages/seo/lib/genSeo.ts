@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { PageSeoInfo, SeoOptions } from "../types";
 import { SeoContent } from "../types/seo";
 
@@ -41,13 +42,11 @@ export const generateSeo = (
 
   return {
     "og:url": `${hostname}${path}`,
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     "og:site_name": $site.title || "",
     "og:title": $page.title,
     "og:description": $page.frontmatter.description || "",
     "og:type": type,
     "og:image": image ? `${hostname}${image as string}` : "",
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     "og:updated_time": modifiedTime,
     // eslint-disable-next-line no-underscore-dangle
     "og:locale": $page._computed.$lang,
@@ -58,9 +57,7 @@ export const generateSeo = (
 
     "article:author": author,
     "article:tag": articleTags,
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     "article:published_time": time ? new Date(time).toISOString() : "",
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     "article:modified_time": modifiedTime,
   };
 };

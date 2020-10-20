@@ -5,7 +5,6 @@ import NavLinks from "@theme/components/NavLinks.vue";
 import { SidebarItem } from "@theme/util/sidebar";
 import SidebarLinks from "@theme/components/SidebarLinks.vue";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { BloggerInfo, SidebarLinks, NavLinks } })
 export default class Sidebar extends Vue {
   @Prop({ type: Array, required: true })

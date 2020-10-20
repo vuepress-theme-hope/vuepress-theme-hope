@@ -26,7 +26,6 @@ const resolveOpenGroupIndex = (route: Route, items: SidebarItem[]): number => {
   return -1;
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { SidebarGroup, SidebarLink } })
 export default class SidebarLinks extends Vue {
   @Prop(Array)

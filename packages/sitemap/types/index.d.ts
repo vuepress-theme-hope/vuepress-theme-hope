@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { PageComputed } from "@mr-hope/vuepress-types";
 
 interface SitemapImageOption {
@@ -15,7 +16,6 @@ interface SitemapImageOption {
 
 interface SitemapVideoOption {
   /** A URL pointing to the video thumbnail image file */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   thumbnail_loc: string;
   /** The title of the video. */
   title: string;
@@ -26,27 +26,21 @@ interface SitemapVideoOption {
    * HTML is not a supported format. Flash is allowed, but no longer supported on most mobile platforms,
    * and so may be indexed less well. Must not be the same as the <loc> URL.
    */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   content_loc?: string;
   /**
    * A URL pointing to a player for a specific video. Usually this is the information
    * in the src element of an <embed> tag. Must not be the same as the <loc> URL
    */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   player_loc?: string;
   /** a string the search engine can append as a query param to enable automatic playback */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "player_loc:autoplay"?: string;
   /** duration of video in seconds */
   duration?: number;
   /** The date after which the video will no longer be available */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   expiration_date?: string;
   /** The number of times the video has been viewed. */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   view_count: number;
   /** The date the video was first published, in W3C format. */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   publication_date?: string;
   /**
    * A short description of the broad category that the video belongs to.
@@ -77,10 +71,8 @@ interface SitemapVideoOption {
   tag?: string[];
   /** The rating of the video. Supported values are float numbers */
   rating?: number;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   family_friendly?: "YES" | "NO";
   /** Indicates whether a subscription (either paid or free) is required to view the video. */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   requires_subscription?: "YES" | "NO";
   /** Indicates whether the video is a live stream. Supported values are yes or no. */
   live?: "YES" | "NO";

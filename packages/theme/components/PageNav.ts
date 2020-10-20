@@ -77,7 +77,6 @@ const resolvePageLink = (
   return find(page, sidebarItems, linkType === "prev" ? -1 : 1);
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { NextIcon, PrevIcon } })
 export default class PageNav extends Vue {
   @Prop(Array)

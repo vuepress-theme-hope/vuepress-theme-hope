@@ -6,7 +6,6 @@ import ProjectIcon from "@mr-hope/vuepress-shared-utils/icons/ProjectIcon.vue";
 import navigate from "@theme/util/navigate";
 
 @Component({
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon },
 })
 export default class ProjectList extends Vue {

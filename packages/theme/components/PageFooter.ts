@@ -2,7 +2,6 @@ import { Component, Vue } from "vue-property-decorator";
 import { HopeFooterConfig } from "../types";
 import MediaLinks from "@theme/components/MediaLinks.vue";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 @Component({ components: { MediaLinks } })
 export default class PageFooter extends Vue {
   private get footerConfig(): HopeFooterConfig {
