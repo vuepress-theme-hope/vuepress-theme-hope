@@ -85,6 +85,7 @@
 .home
   padding $navbarHeight 2rem 0
   max-width $homePageWidth
+  min-height 100vh - $navbarHeight
   margin 0px auto
   display block
 

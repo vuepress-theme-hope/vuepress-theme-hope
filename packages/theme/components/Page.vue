@@ -63,6 +63,7 @@
 
 <style lang="stylus">
 .page
+  min-height 100vh - $navbarHeight - 2rem
   padding-bottom 2rem
   display block
   padding-left $sidebarWidth

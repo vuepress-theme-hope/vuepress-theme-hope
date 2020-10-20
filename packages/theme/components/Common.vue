@@ -33,6 +33,9 @@
 <script src="./Common" />
 
 <style lang="stylus">
+.theme-container
+  min-height 100vh
+
 .sidebar-mask
   position fixed
   z-index 9

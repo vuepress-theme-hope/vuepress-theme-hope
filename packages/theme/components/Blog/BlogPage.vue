@@ -40,6 +40,7 @@
 
 <style lang="stylus">
 .page.blog
+  min-height 100vh - $navbarHeight
   padding $navbarHeight 0 0
   margin 0px auto
   background-color var(--bgcolor-light)
