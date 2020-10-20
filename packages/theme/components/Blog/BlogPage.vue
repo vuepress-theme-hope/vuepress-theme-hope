@@ -6,7 +6,9 @@
       <main class="blog-list">
         <MyTransition>
           <component :is="componentName" v-if="componentName" />
-          <h1 v-else-if="!$frontmatter.home">{{ articleListText }}</h1>
+          <h1 v-else-if="!$frontmatter.home" class="article-title">
+            {{ articleListText }}
+          </h1>
         </MyTransition>
 
         <MyTransition :delay="0.16">
@@ -74,4 +76,7 @@
 
       @media (min-width $MQMobile)
         margin 0 15px
+
+      .article-title
+        margin 10px 15px
 </style>
