@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.2.1...v1.2.2) (2020-10-20)
+
+### Bug Fixes
+
+- blog page layout issue ([320ee7b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/320ee7b185916c48e0f2a0d8cc2f6974808eac47))
+- **theme:** fix article title margin ([eb0fd62](https://github.com/Mister-Hope/vuepress-theme-hope/commit/eb0fd6243a405f213121c8dc25cb61895c4aaa68))
+
 ## [1.2.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.2.0...v1.2.1) (2020-10-20)
 
 ### Bug Fixes
