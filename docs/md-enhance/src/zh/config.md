@@ -74,3 +74,12 @@ icon: configuration
 - 默认值: `false`
 
 是否启用 流程图 语法支持。
+
+## presentation
+
+- 类型: `RevealOptions | boolean`
+- 默认值: `false`
+
+是否启用 幻灯片 语法支持。
+
+你可以传入一个对象，这个对象将用于 reveal.js 配置。

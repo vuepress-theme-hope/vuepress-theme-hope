@@ -37,6 +37,10 @@ features:
     details: Markdown now have Tex Support so you can write yout formula easily
     link: /guide/tex/
 
+  - title: Presentation Support
+    details: You can insert presentation in markdown files directly
+    link: /guide/presentation/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---

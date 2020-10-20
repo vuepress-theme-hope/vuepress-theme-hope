@@ -22,7 +22,7 @@ features:
     link: /guide/feature/page-info/
 
   - title: Markdown Enhance
-    details: Add align, sup/sub script, footnote, tex, flowchart and mark support in markdown
+    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
     link: /guide/feature/markdown/
 
   - title: Blog support

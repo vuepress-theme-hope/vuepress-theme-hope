@@ -83,6 +83,15 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 是否启用 流程图 语法支持
 
+### mdEnhance.presentation
+
+- 类型: `RevealOptions | boolean`
+- 默认值: `false`
+
+是否启用 幻灯片 语法支持。
+
+你可以传入一个对象，这个对象将用于 reveal.js 配置。
+
 ## 评论设置
 
 评论配置因为复杂度在这里被省略。

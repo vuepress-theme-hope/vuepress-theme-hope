@@ -83,6 +83,15 @@ Whether to enable TeX syntax support
 
 Whether to enable flowchart syntax support
 
+### mdEnhance.presentation
+
+- Type: `RevealOptions | boolean`
+- Default: `false`
+
+Whether to enable presentation syntax support.
+
+You can set it with an object, the object will be used as reveal.js config.
+
 ## Comment settings
 
 Comment options are omitted here because of the complexity.

@@ -21,3 +21,5 @@ icon: markdown
 - [流程图](flowchart.md)
 
 - [$\TeX$ 语法](tex.md)
+
+- [幻灯片](presentation.md)

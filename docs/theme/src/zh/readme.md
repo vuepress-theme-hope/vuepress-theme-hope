@@ -22,7 +22,7 @@ features:
     link: /zh/guide/feature/page-info/
 
   - title: Markdown 增强
-    details: 新增文字对齐、上下角标、脚注、标记、数学公式与流程图支持
+    details: 新增文字对齐、上下角标、脚注、标记、数学公式、流程图与幻灯片支持
     link: /zh/guide/feature/markdown/
 
   - title: 博客支持

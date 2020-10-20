@@ -35,7 +35,11 @@ features:
 
   - title: Tex 支持
     details: Markdown 现在也可以支持 Tex 语法以显示公式
-    link: /zh/guide/text/
+    link: /zh/guide/tex/
+
+  - title: 幻灯片支持
+    details: 你可以直接在 Markdown 中插入幻灯片
+    link: /zh/guide/presentation/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
