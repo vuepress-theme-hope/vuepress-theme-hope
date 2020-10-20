@@ -1,5 +1,8 @@
 ---
 icon: presentation
+tags:
+  - feature
+  - markdown
 ---
 
 # 幻灯片支持
