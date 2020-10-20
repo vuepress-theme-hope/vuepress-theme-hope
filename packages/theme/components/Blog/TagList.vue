@@ -34,7 +34,7 @@
     cursor pointer
     font-size 12px
     text-align center
-    border-radius 14px
+    border-radius 8px
     box-shadow 0 1px 6px 0 var(--box-shadow-color)
     overflow hidden
     transition all 0.5s

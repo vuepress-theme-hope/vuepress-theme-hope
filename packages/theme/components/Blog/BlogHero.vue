@@ -45,8 +45,7 @@
   color #fff
 
   @media (min-width $MQMobile)
-    margin 16px auto
-    border-radius 8px
+    margin 0 auto 16px
     overflow hidden
 
   @media (max-width $MQMobile)

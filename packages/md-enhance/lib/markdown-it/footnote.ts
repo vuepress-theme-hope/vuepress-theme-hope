@@ -1,6 +1,5 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable max-statements */
-/* eslint-disable @typescript-eslint/naming-convention */
 
 import MarkdownIt = require("markdown-it");
 import Renderer = require("markdown-it/lib/renderer");

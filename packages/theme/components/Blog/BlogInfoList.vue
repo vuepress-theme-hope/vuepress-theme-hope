@@ -1,0 +1,198 @@
+<template>
+  <div class="blog-info-list">
+    <div class="switch-wrapper">
+      <button
+        class="switch-button"
+        :class="{ active: active === 'article' }"
+        :aria-label="i18n.article"
+        data-balloon-pos="up"
+        @click="setActive('article')"
+      >
+        <ArticleIconFill />
+      </button>
+      <button
+        class="switch-button"
+        :class="{ active: active === 'category' }"
+        :aria-label="i18n.category"
+        data-balloon-pos="up"
+        @click="setActive('category')"
+      >
+        <CategoryIcon />
+      </button>
+      <button
+        class="switch-button"
+        :class="{ active: active === 'tag' }"
+        :aria-label="i18n.tag"
+        data-balloon-pos="up"
+        @click="setActive('tag')"
+      >
+        <TagIcon />
+      </button>
+      <button
+        class="switch-button"
+        :class="{ active: active === 'timeline' }"
+        :aria-label="i18n.timeline"
+        data-balloon-pos="up"
+        @click="setActive('timeline')"
+      >
+        <TimeIcon />
+      </button>
+    </div>
+
+    <!-- 文章 -->
+    <MyTransition v-if="active === 'article'">
+      <div class="sticky-article-wrapper">
+        <div class="title" @click="$router.push('/article/')">
+          <ArticleIconFill />
+          <span class="num">{{ $articles.length }}</span>
+          {{ i18n.article }}
+        </div>
+        <hr />
+        <ul class="sticky-article-list">
+          <MyTransition
+            v-for="(article, index) in $stickArticles"
+            :key="article.path"
+            :delay="(index + 1) * 0.08"
+          >
+            <li
+              class="sticky-article"
+              @click="$router.push(article.path)"
+              v-text="article.title"
+            />
+          </MyTransition>
+        </ul>
+      </div>
+    </MyTransition>
+
+    <!-- 分类 -->
+    <MyTransition v-if="active === 'category'">
+      <div class="category-wrapper">
+        <div
+          v-if="$category.list.length !== 0"
+          class="title"
+          @click="$router.push('/category/')"
+        >
+          <CategoryIcon />
+          <span class="num">{{ $category.list.length }}</span>
+          {{ i18n.category }}
+        </div>
+        <hr />
+        <MyTransition :delay="0.04">
+          <CategoryList />
+        </MyTransition>
+      </div>
+    </MyTransition>
+
+    <!-- 标签 -->
+    <MyTransition v-if="active === 'tag'">
+      <div class="tag-wrapper">
+        <div
+          v-if="$tag.list.length !== 0"
+          class="title"
+          @click="$router.push('/tag/')"
+        >
+          <TagIcon />
+          <span class="num">{{ $tag.list.length }}</span>
+          {{ i18n.tag }}
+        </div>
+        <hr />
+        <MyTransition :delay="0.04">
+          <TagList />
+        </MyTransition>
+      </div>
+    </MyTransition>
+
+    <MyTransition v-if="active === 'timeline'">
+      <TimelineList />
+    </MyTransition>
+  </div>
+</template>
+<script src="./BlogInfoList" />
+<style lang="stylus">
+.blog-info-list
+  margin 8px auto
+  padding 8px 16px
+  background-color var(--background-color)
+
+  .page &
+    border-radius 6px
+    box-shadow 0 1px 3px 0 var(--card-shadow-color)
+
+    &:hover
+      box-shadow 0 2px 6px 0 var(--card-shadow-color)
+
+  .switch-wrapper
+    display flex
+    justify-content center
+    padding 4px 0
+
+    .switch-button
+      width 32px
+      height 32px
+      margin 0 4px
+      padding 6px
+      border none
+      border-radius 50%
+      color var(--text-color)
+      background-color rgba(127, 127, 127, 0.1)
+
+      &:hover
+        cursor pointer
+
+      &:focus
+        outline none
+
+      &.active
+        .theme-light &
+          background-color var(--accent-color-l10)
+
+        .theme-dark &
+          background-color var(--accent-color-d10)
+
+      .icon
+        width 100%
+        height 100%
+
+  .sticky-article-wrapper, .category-wrapper, .tag-wrapper
+    padding 8px 0
+
+    .title
+      cursor pointer
+
+      .icon
+        position relative
+        bottom -0.125rem
+        width 16px
+        height 16px
+        margin 0 6px
+
+      .num
+        position relative
+        margin 0 2px
+        font-size 22px
+
+  .sticky-article-wrapper
+    .sticky-article-list
+      margin 8px auto
+
+      .sticky-article
+        padding 12px 8px 4px
+        border-bottom 1px dashed var(--grey14)
+
+        &:hover
+          cursor pointer
+          color var(--accent-color)
+
+  .category-wrapper
+    .category-list-wrapper
+      margin 8px auto
+
+  .tag-wrapper
+    .tag-list-wrapper
+      margin 8px auto
+
+  .page &
+    .timeline-list-wrapper
+      .content
+        max-height 60vh
+</style>

@@ -37,18 +37,7 @@
 
 <style lang="stylus">
 .timeline-list-wrapper
-  padding 8px 16px
-
-  .page &
-    margin 16px 0
-    border-radius 8px
-    box-shadow 0 2px 8px 0 var(--card-shadow-color)
-
-    &:hover
-      box-shadow 0 4px 16px 0 var(--card-shadow-color)
-
-  .page .blog-detail-wrapper &
-    margin-top 0
+  padding 8px 0
 
   .title
     cursor pointer

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Vue } from "vue-property-decorator";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Prop, Vue } from "vue-property-decorator";
 import Anchor from "@theme/components/Anchor.vue";
 import Comment from "@Comment";

@@ -85,7 +85,7 @@
       z-index 2
       color var(--grey3)
       font-size 16px
-      font-weight 600px
+      font-weight 500
 
     .desc
       position relative

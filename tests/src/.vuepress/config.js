@@ -34,6 +34,7 @@ module.exports = config({
   ],
 
   themeConfig: {
+    baseLang: "zh-CN",
     logo: "/logo.svg",
 
     nav: navBarConfig.zh,

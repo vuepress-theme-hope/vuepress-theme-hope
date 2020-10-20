@@ -1,6 +1,6 @@
 <template>
   <footer v-if="display" class="footer-wrapper">
-    <MediaLinks />
+    <MediaLinks v-if="!($frontmatter.home && $frontmatter.blog)" />
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="footerContent" class="footer" v-html="footerContent" />
     <!-- eslint-disable-next-line vue/no-v-html -->
@@ -17,9 +17,10 @@
   justify-content space-evenly
   align-items center
   padding 12px 30px
-  border-top 1px solid var(--border-color, $borderColor)
-  text-align center
+  border-top 1px solid var(--border-color)
+  background-color var(--background-color)
   color var(--dark-color, #666)
+  text-align center
 
   & > div
     @media (max-width $MQMobileNarrow)
@@ -33,7 +34,7 @@
     font-size 14px
 
   .copyright
-    margin 6px auto
+    margin 6px 0
     font-size 13px
 
 .page .footer-wrapper

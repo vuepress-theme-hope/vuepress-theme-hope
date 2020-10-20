@@ -63,6 +63,7 @@
 .pagination-wrapper
   font-weight 600
   margin 1.25rem -0.5rem 0.75rem
+  font-family Arial, Helvetica, sans-serif
 
   .pagination-list
     display flex
@@ -75,6 +76,7 @@
     .btn-group
       display flex
       align-items stretch
+      height 30px
       margin 0 0.5em
       border 1px solid var(--border-color, $borderColor)
       border-radius 0.25em
@@ -82,9 +84,11 @@
 
       div
         position relative
-        padding 5px 0.5em
-        font-size 14px
+        padding 0 0.5em
+        background var(--background-color, $bgColor)
         color var(--accent-color, $accentColor)
+        font-size 14px
+        line-height 30px
         cursor pointer
 
         &::before
@@ -139,6 +143,7 @@
         font-size 14px
         margin-left 5px
         padding 0.25em 0.5em
+        background var(--background-color, $bgColor)
         border 1px solid var(--border-color, $borderColor)
         border-radius 0.25em
         overflow hidden

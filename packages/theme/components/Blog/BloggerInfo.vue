@@ -11,20 +11,23 @@
           />
           <div v-if="bloggerName" class="name" v-text="bloggerName" />
         </div>
-        <MediaLinks class="logo-media-link" />
       </div>
       <div class="num-wrapper">
-        <div @click="navigate('/article/', $router, $route)">
-          <div>{{ i18n.article }}</div>
+        <div @click="navigate('/article/')">
           <div class="num">{{ $articles.length }}</div>
+          <div>{{ i18n.article }}</div>
         </div>
-        <div @click="navigate('/category/', $router, $route)">
-          <div>{{ i18n.category }}</div>
+        <div @click="navigate('/category/')">
           <div class="num">{{ $category.list.length }}</div>
+          <div>{{ i18n.category }}</div>
         </div>
-        <div @click="navigate('/tag/', $router, $route)">
-          <div>{{ i18n.tag }}</div>
+        <div @click="navigate('/tag/')">
           <div class="num">{{ $tag.list.length }}</div>
+          <div>{{ i18n.tag }}</div>
+        </div>
+        <div @click="navigate('/timeline/')">
+          <div class="num">{{ $timelineItems.length }}</div>
+          <div>{{ i18n.timeline }}</div>
         </div>
       </div>
     </div>
@@ -36,30 +39,15 @@
 
 <style lang="stylus">
 .blogger-info-wrapper
+  background-color var(--background-color)
+
   .blogger-info
-    @media (min-width $MQNormal)
-      display flex
-
-    .logo-media-link
-      display none
-
-      @media (min-width $MQNormal)
-        display flex
-
-      @media (min-width $MQWide)
-        display none
-
-      // do not display in sidebar
-      .sidebar &
-        display none
-
     .blogger-wrapper
       padding 8px 0
       text-align center
 
       .blogger
         display inline-block
-        padding 0 32px
 
         &.hasIntro
           cursor pointer
@@ -67,9 +55,6 @@
         .name
           margin 16px auto
           font-size 22px
-
-          @media (min-width $MQNormal)
-            font-size 24px
 
         .avatar
           display block
@@ -79,41 +64,24 @@
 
     .num-wrapper
       display flex
-      margin 8px auto
+      margin 0 auto 16px
       width 80%
 
-      @media (min-width $MQNormal)
-        width 100%
-        flex-direction column-reverse
-        justify-content space-evenly
-
       > div
+        width 25%
         text-align center
-        flex auto
-        font-size 14px
+        font-size 13px
         cursor pointer
-
-        @media (min-width $MQNormal)
-          display flex
-          flex-direction row-reverse
-          justify-content space-evenly
-          align-items center
-
-          .num
-            margin-right 10px
 
         &:hover
           color var(--accent-color)
 
         .num
           position relative
-          line-height 1.5
+          margin-bottom 8px
           font-weight 600
           font-size 20px
 
   .bottom-media-link
-    display none
-
-    @media (min-width $MQWide)
-      display flex
+    display flex
 </style>

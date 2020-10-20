@@ -70,4 +70,20 @@ export default class ArticleInfo extends Vue {
           Math.round(this.article.readingTime.minutes).toString()
         );
   }
+
+  private get authorText(): string {
+    return PAGE_INFO_I18N[this.$localePath || "/"].author;
+  }
+
+  private get timeText(): string {
+    return PAGE_INFO_I18N[this.$localePath || "/"].time;
+  }
+
+  private get tagText(): string {
+    return PAGE_INFO_I18N[this.$localePath || "/"].tag;
+  }
+
+  private get readingTimeText(): string {
+    return PAGE_INFO_I18N[this.$localePath || "/"].readingTime;
+  }
 }

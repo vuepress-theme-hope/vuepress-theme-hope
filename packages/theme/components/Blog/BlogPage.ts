@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { ArticleMixin, StickyMixin } from "@theme/util/articleMixin";
 import { Component, Mixins } from "vue-property-decorator";
 import ArticleList from "@theme/components/Blog/ArticleList.vue";

@@ -25,18 +25,21 @@
     margin 0 auto 20px
     padding 16px 20px
     width 100%
-    overflow hidden
-    border-radius 8px
-    box-shadow 0 2px 8px 0 var(--card-shadow-color)
+    background-color var(--background-color)
+    border-radius 6px
+    box-shadow 0 1px 3px 0 var(--card-shadow-color)
     box-sizing border-box
     -webkit-transition all 0.3s
     transition all 0.3s
+
+    @media (max-width $MQMobileNarrow)
+      border-radius 0
 
     &:last-child
       margin-bottom 0
 
     &:hover
-      box-shadow 0 4px 16px 0 var(--card-shadow-color)
+      box-shadow 0 2px 6px 0 var(--card-shadow-color)
 
     .sticky-icon
       position absolute
