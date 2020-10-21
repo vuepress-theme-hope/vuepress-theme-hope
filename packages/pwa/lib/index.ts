@@ -61,7 +61,9 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
       console.log(
         chalk.blue("PWA:"),
         chalk.black.bgGreen("Success"),
-        `Generated service worker, which will precache ${count} files, totaling ${size} bytes.\n${
+        `Generated service worker, which will precache ${count} files, totaling ${Math.ceil(
+          size / 1024
+        )} Kb.\n${
           warnings.length > 0 ? `Warnings: ${warnings.toString()}:""` : ""
         }`
       );
