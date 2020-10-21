@@ -738,21 +738,7 @@ declare module "reveal.js/plugin/math/math.esm.js" {
   export default mathPlugin;
 }
 
-declare module "vuepress-plugin-md-enhance/src/styles/align.styl" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const stylusStyle: never;
-
-  export default stylusStyle;
-}
-
-declare module "vuepress-plugin-md-enhance/src/styles/footnote.styl" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const stylusStyle: never;
-
-  export default stylusStyle;
-}
-
-declare module "vuepress-plugin-md-enhance/src/styles/tex.styl" {
+declare module "vuepress-plugin-md-enhance/src/styles/*.styl" {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const stylusStyle: never;
 

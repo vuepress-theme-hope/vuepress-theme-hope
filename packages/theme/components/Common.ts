@@ -94,8 +94,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     });
   }
 
-  private toggleSidebar(to: any): void {
-    console.log("to", to);
+  private toggleSidebar(to: boolean): void {
     this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
     this.$emit("toggle-sidebar", this.isSidebarOpen);
   }

@@ -12,15 +12,9 @@ import {
   SitemapOptions,
 } from "../types";
 import { SitemapStream } from "sitemap";
-import chalk from "chalk";
 import { createWriteStream } from "fs";
 import { resolve } from "path";
-
-const log = (
-  msg: string,
-  color: "cyan" | "red" = "cyan",
-  label = "Sitemap"
-): void => console.log(`\n${chalk[color](`${label}: `)}${msg}`);
+import chalk = require("chalk");
 
 const stripLocalePrefix = (
   path: string,
@@ -120,7 +114,11 @@ const generatePageMap = (
 };
 
 const generateSiteMap = (options: SitemapOptions, context: Context): void => {
-  log("Generating sitemap...");
+  console.log(
+    chalk.blue("Sitemap"),
+    chalk.black.bgYellow("wait"),
+    "Generating sitemap..."
+  );
 
   const siteData = context.getSiteData();
 
@@ -152,7 +150,11 @@ const generateSiteMap = (options: SitemapOptions, context: Context): void => {
 
   urls.forEach((item) => sitemap.write(item));
   sitemap.end();
-  log("Sitemap generated.");
+  console.log(
+    chalk.blue("Sitemap"),
+    chalk.black.bgGreen("success"),
+    "Sitemap generated."
+  );
 };
 
 export = (options: SitemapOptions, context: Context): PluginOptionAPI => ({
@@ -172,9 +174,10 @@ export = (options: SitemapOptions, context: Context): PluginOptionAPI => ({
 
       generateSiteMap(option, context);
     } else
-      log(
-        'Not generating sitemap because required "hostname" option doesn\'t exist',
-        "red"
+      console.log(
+        chalk.blue("Sitemap"),
+        chalk.black.bgRed("error"),
+        'Not generating sitemap because required "hostname" option doesn\'t exist'
       );
   },
 

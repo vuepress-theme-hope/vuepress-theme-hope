@@ -1,6 +1,6 @@
 import { relative, resolve } from "path";
-import chalk from "chalk";
 import { copy } from "fs-extra";
+import chalk = require("chalk");
 
 const EXCLUDED_FILES = [
   "__tests__",

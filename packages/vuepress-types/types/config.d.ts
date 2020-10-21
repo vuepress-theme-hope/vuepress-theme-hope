@@ -173,6 +173,7 @@ export type BuildSiteConfig = {
    */
   configureWebpack?:
     | Configuration
+    | ((config: Configuration, isServer: boolean) => void)
     | ((config: Configuration, isServer: boolean) => Configuration);
   /** 通过 webpack-chain 来修改内部的 Webpack 配置 */
   chainWebpack?: (config: any, isServer: boolean) => void;
