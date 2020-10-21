@@ -1,6 +1,5 @@
 import { Component, Vue, Watch } from "vue-property-decorator";
 import PhotoSwipe from "photoswipe";
-import PhotoSwipeUIDefault from "photoswipe/dist/photoswipe-ui-default";
 
 let images: NodeListOf<HTMLImageElement>;
 
@@ -9,20 +8,27 @@ export default class PhotoSwipeUI extends Vue {
   private photoswipe(): void {
     const pswp = document.querySelector(".pswp") as HTMLElement;
 
-    void this.getImages().then((imageConfig) => {
-      images.forEach((image, index) => {
-        image.onclick = (): void => {
-          const gallery = new PhotoSwipe(
-            pswp,
-            PhotoSwipeUIDefault,
-            imageConfig,
-            {
-              ...PHOTOSWIPE_OPTIONS,
-              index,
-            }
-          );
-          gallery.init();
-        };
+    void Promise.all([
+      import(/* webpackChunkName: "photo-swipe" */ "photoswipe"),
+      import(
+        /* webpackChunkName: "photo-swipe" */ "photoswipe/dist/photoswipe-ui-default"
+      ),
+    ]).then(([photoSwipe, photoSwipeUIDefault]) => {
+      void this.getImages().then((imageConfig) => {
+        images.forEach((image, index) => {
+          image.onclick = (): void => {
+            const gallery = new photoSwipe.default(
+              pswp,
+              photoSwipeUIDefault.default,
+              imageConfig,
+              {
+                ...PHOTOSWIPE_OPTIONS,
+                index,
+              }
+            );
+            gallery.init();
+          };
+        });
       });
     });
   }
