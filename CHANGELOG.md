@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.3.1...v1.4.0) (2020-10-21)
+
+### Bug Fixes
+
+- add missing deps and update types ([60bcfba](https://github.com/Mister-Hope/vuepress-theme-hope/commit/60bcfbab1bcf62a60c84c1f88c60b79a11f095bf)), closes [#394](https://github.com/Mister-Hope/vuepress-theme-hope/issues/394)
+
+### Features
+
+- **commet:** rebuild types ([2988199](https://github.com/Mister-Hope/vuepress-theme-hope/commit/29881993625e62c3a820d92734184a1ceeb33ff0))
+- **md-enhance:** rebuild md-enhance fonts ([f69fffd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f69fffd3a92f401bcfe8276d0f9116c8eba0a7b1))
+- **photo-swipe:** spilt photo-swipe in sperate chunk ([e66427a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e66427a74489a00f71bfc99327a79dbca7d9efb8))
+- **pwa:** count using KB instead of B ([2305cc6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2305cc684439692297c06c365a50ae210c771d61))
+- **pwa:** support more options ([06cc46f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/06cc46fd78094b8d0e04a540381a502995fcf782))
+
 ## [1.3.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.3.0...v1.3.1) (2020-10-21)
 
 ### Bug Fixes
