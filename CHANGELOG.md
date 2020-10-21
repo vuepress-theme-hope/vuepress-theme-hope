@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.0...v1.4.1) (2020-10-21)
+
+### Bug Fixes
+
+- **pwa:** fix option types issue ([ec0c69b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ec0c69b4c7ba599854ec030092c1681737b3c11a))
+
+### Features
+
+- **pwa:** add `cacheHTML` option ([f548060](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f548060b2fe3dd16c9cf3f77cd25fea9ffe65cf7))
+
 ## [1.4.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.3.1...v1.4.0) (2020-10-21)
 
 ### Bug Fixes
