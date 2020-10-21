@@ -32,40 +32,40 @@ export default class Reveal extends Vue {
     this.$el.setAttribute("id", this.id);
     const revealElement = document.querySelector(`#${this.id}`);
 
-    if (revealElement)
-      if (this.theme === "auto") revealElement.setAttribute("auto-theme", "");
-      else revealElement.classList.add(this.theme);
+    if (revealElement) {
+      revealElement.setAttribute("theme", this.theme);
 
-    void Promise.all([
-      import(/* webpackChunkName: "reveal" */ "reveal.js"),
-      import(
-        /* webpackChunkName: "reveal" */ "reveal.js/plugin/highlight/highlight.esm.js"
-      ),
-      import(
-        /* webpackChunkName: "reveal" */ "reveal.js/plugin/markdown/markdown.esm.js"
-      ),
-      import(
-        /* webpackChunkName: "reveal" */ "reveal.js/plugin/math/math.esm.js"
-      ),
-    ]).then(([revealJS, revealHighlight, revealMarkdown, revealMath]) => {
-      const reveal = new revealJS.default({
-        plugins: [
-          revealMarkdown.default,
-          revealHighlight.default,
-          revealMath.default,
-        ],
-      });
-
-      void reveal
-        .initialize({
-          slideNumber: true,
-          ...REVEAL_OPTIONS,
-          ...(this.$frontmatter.reveal || {}),
-          embedded: true,
-        })
-        .then(() => {
-          this.loading = false;
+      void Promise.all([
+        import(/* webpackChunkName: "reveal" */ "reveal.js"),
+        import(
+          /* webpackChunkName: "reveal" */ "reveal.js/plugin/highlight/highlight.esm.js"
+        ),
+        import(
+          /* webpackChunkName: "reveal" */ "reveal.js/plugin/markdown/markdown.esm.js"
+        ),
+        import(
+          /* webpackChunkName: "reveal" */ "reveal.js/plugin/math/math.esm.js"
+        ),
+      ]).then(([revealJS, revealHighlight, revealMarkdown, revealMath]) => {
+        const reveal = new revealJS.default(revealElement as HTMLElement, {
+          plugins: [
+            revealMarkdown.default,
+            revealHighlight.default,
+            revealMath.default,
+          ],
         });
-    });
+
+        void reveal
+          .initialize({
+            slideNumber: true,
+            ...REVEAL_OPTIONS,
+            ...(this.$frontmatter.reveal || {}),
+            embedded: true,
+          })
+          .then(() => {
+            this.loading = false;
+          });
+      });
+    }
   }
 }

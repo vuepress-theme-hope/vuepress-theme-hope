@@ -19,10 +19,10 @@ $linkColor = #51483D
 $linkColorHover = lighten($linkColor, 20%)
 $selectionBackgroundColor = #26351C
 
-.reveal a
-  line-height 1.3em
-
-.reveal.serif
+.reveal[theme='serif']
   dark-bg-text-color(#fff)
 
-theme('.serif')
+  a
+    line-height 1.3em
+
+theme("[theme='serif']")

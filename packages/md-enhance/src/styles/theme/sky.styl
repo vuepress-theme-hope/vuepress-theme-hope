@@ -20,14 +20,13 @@ $linkColor = #3b759e
 $linkColorHover = lighten($linkColor, 20%)
 $selectionBackgroundColor = #134674
 
-// Fix links so they are not cut off
-.reveal a
-  line-height 1.3em
-
 bodyBackground()
   radial-gradient-mixin(#add9e4, #f7fbfc)
 
-.reveal.sky
+.reveal[theme='sky']
   dark-bg-text-color(#fff)
 
-theme('.sky')
+  a
+    line-height 1.3em
+
+theme("[theme='sky']")

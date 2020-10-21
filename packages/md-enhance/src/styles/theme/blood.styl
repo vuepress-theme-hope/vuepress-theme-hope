@@ -34,13 +34,13 @@ $linkColorHover = lighten($linkColor, 20%)
 // Text selection
 $selectionBackgroundColor = $blood
 
-.reveal.blood
+.reveal[theme='blood']
   light-bg-text-color(#222)
 
-theme('.blood')
+theme("[theme='blood']")
 
 // some overrides after theme template import
-.reveal.blood
+.reveal[theme='blood']
   p
     font-weight 300
     text-shadow 1px 1px $coal
