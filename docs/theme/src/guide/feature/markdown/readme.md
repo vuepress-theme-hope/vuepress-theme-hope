@@ -93,7 +93,7 @@ $$
 
 ## Slide 1
 
-A paragraph with some text and a [link](http://mrhope.site)
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 

@@ -93,7 +93,7 @@ $$
 
 ## 幻灯片 1
 
-一个有文字和 [链接](http://mrhope.site) 的段落
+一个有文字和 [链接](https://mrhope.site) 的段落
 
 ---
 

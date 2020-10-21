@@ -60,7 +60,7 @@ module.exports = {
 
 ## 幻灯片 1
 
-一个有文字和 [链接](http://mrhope.site) 的段落
+一个有文字和 [链接](https://mrhope.site) 的段落
 
 ---
 
@@ -92,7 +92,7 @@ $$
 
 ## 幻灯片 1
 
-一个有文字和 [链接](http://mrhope.site) 的段落
+一个有文字和 [链接](https://mrhope.site) 的段落
 
 ---
 
@@ -119,3 +119,249 @@ $$
 
 @slideend
 ````
+
+## 主题
+
+<!-- markdownlint-disable -->
+
+### Auto
+
+@slidestart
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Black
+
+@slidestart black
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### White
+
+@slidestart white
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### League
+
+@slidestart league
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Beige
+
+@slidestart beige
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Sky
+
+@slidestart sky
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Night
+
+@slidestart night
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Serif
+
+@slidestart serif
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Simple
+
+@slidestart simple
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Solarized
+
+@slidestart solarized
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Blood
+
+@slidestart blood
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Moon
+
+@slidestart moon
+
+## 幻灯片标题
+
+一个拥有文字和 [链接](https://mrhope.site) 的段落
+
+## 代码着色
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+<!-- markdownlint-restore -->

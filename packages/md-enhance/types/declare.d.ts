@@ -296,6 +296,7 @@ declare module "reveal.js" {
 
   class Reveal {
     constructor(options?: Partial<RevealOptions>);
+    constructor(selector: HTMLElement, options?: Partial<RevealOptions>);
     /** Starts up the presentation if the client is capable. */
     initialize(config?: Partial<RevealOptions>): Promise<void>;
     /**

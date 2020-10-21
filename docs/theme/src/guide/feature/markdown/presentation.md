@@ -66,7 +66,7 @@ Theme available:
 
 ## Slide 1
 
-A paragraph with some text and a [link](http://mrhope.site)
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
@@ -98,7 +98,7 @@ $$
 
 ## Slide 1
 
-A paragraph with some text and a [link](http://mrhope.site)
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
@@ -131,3 +131,273 @@ $$
 You can set `reveal` to pass options to reveal.js per page in frontmatter, you can also set `presentation` in plugin options to set reveal.js globally.
 
 For more options, see [reveal.js config](https://revealjs.com/config/). For more usage, see [reveal.js documatation](https://revealjs.com/)
+
+## Themes
+
+<!-- markdownlint-disable -->
+
+### Auto
+
+@slidestart
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Black
+
+@slidestart black
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### White
+
+@slidestart white
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### League
+
+@slidestart league
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Beige
+
+@slidestart beige
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Sky
+
+@slidestart sky
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Night
+
+@slidestart night
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Serif
+
+@slidestart serif
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Simple
+
+@slidestart simple
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Solarized
+
+@slidestart solarized
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Blood
+
+@slidestart blood
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+### Moon
+
+@slidestart moon
+
+## Slide Title
+
+A paragraph with some text and a [link](https://mrhope.site)
+
+---
+
+## Highlight
+
+```js
+const add = (a, b) => {
+  if (typeof b === "undefined") return a + 1;
+
+  return a + b;
+};
+```
+
+@slideend
+
+<!-- markdownlint-restore -->
