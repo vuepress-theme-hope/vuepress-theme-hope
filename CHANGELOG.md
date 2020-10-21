@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.3.0...v1.3.1) (2020-10-21)
+
+### Bug Fixes
+
+- **md-enhance:** fix blood theme ([247ca09](https://github.com/Mister-Hope/vuepress-theme-hope/commit/247ca090362ce0fcdc1497be4223451b8e9d7b91))
+- **md-enhance:** support muti slides in one page ([8ba03c8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8ba03c886246068b5675c3e52eb4d4ae593c152f))
+
+### Features
+
+- **md-enhance:** import styles only when necessary ([65e83f0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/65e83f0c068376ff6b6bee212bac1bcccd38f361))
+
 ## [1.3.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.2.2...v1.3.0) (2020-10-20)
 
 ### Bug Fixes
