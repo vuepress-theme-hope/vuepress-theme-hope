@@ -4,10 +4,8 @@
   "description": "Reading time plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
-    "vuepress",
-    "reading-time",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "reading time",
+    "word count"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/read-time#readme",
   "bugs": {

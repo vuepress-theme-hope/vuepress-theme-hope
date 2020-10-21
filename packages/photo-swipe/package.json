@@ -6,8 +6,9 @@
     "vuepress-plugin",
     "vuepress",
     "photo-swipe",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "preview",
+    "zoom",
+    "picture"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/photo-swipe#readme",
   "bugs": {

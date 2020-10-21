@@ -5,9 +5,17 @@
   "keywords": [
     "vuepress-plugin",
     "markdown",
-    "vuepress",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "align",
+    "superscript",
+    "subscript",
+    "footnote",
+    "flowchart",
+    "tex",
+    "latex",
+    "katex",
+    "mark",
+    "presentation",
+    "reveal.js"
   ],
   "homepage": "https://vuepress-md-enhance.mrhope.site/",
   "bugs": {

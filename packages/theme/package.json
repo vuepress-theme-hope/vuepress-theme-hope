@@ -4,11 +4,9 @@
   "description": "a light vuepress theme",
   "keywords": [
     "vuepress-theme",
-    "vuepress",
     "vuepress-blog",
     "vuepress-theme-blog",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "vuepress"
   ],
   "homepage": "https://vuepress-theme.mrhope.site",
   "bugs": {

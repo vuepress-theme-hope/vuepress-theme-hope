@@ -6,8 +6,7 @@
     "vuepress-plugin",
     "vuepress",
     "copy-code",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "code-copy"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/copy-code#readme",
   "bugs": {

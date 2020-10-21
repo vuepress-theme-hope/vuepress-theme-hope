@@ -6,8 +6,7 @@
     "vuepress-plugin",
     "vuepress",
     "add-this",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "share"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/add-this#readme",
   "bugs": {

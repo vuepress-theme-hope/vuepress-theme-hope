@@ -5,9 +5,7 @@
   "keywords": [
     "vuepress-plugin",
     "vuepress",
-    "last-update",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "last-update"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/last-update#readme",
   "bugs": {

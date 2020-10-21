@@ -4,10 +4,7 @@
   "description": "components plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
-    "components",
-    "vuepress",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "components"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme",
   "bugs": {

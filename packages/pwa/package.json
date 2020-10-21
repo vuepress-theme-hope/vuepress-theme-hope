@@ -5,9 +5,9 @@
   "keywords": [
     "vuepress-plugin",
     "pwa",
-    "vuepress",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "web app",
+    "workbox",
+    "service worker"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/pwa#readme",
   "bugs": {

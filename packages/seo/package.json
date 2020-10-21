@@ -4,10 +4,9 @@
   "description": "seo plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
-    "vuepress",
     "seo",
-    "vuepress-theme-hope",
-    "mr-hope"
+    "search",
+    "share"
   ],
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/seo#readme",
   "bugs": {

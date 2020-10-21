@@ -4,11 +4,11 @@
   "description": "A simple Comment plugin",
   "keywords": [
     "vuepress-plugin",
-    "comment",
-    "vuepress-theme-hope",
     "vuepress-blog",
-    "vuepress",
-    "mr-hope"
+    "comment",
+    "valine",
+    "vssue",
+    "page-info"
   ],
   "homepage": "https://vuepress-comment.mrhope.site",
   "bugs": {
