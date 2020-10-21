@@ -13,15 +13,13 @@ tags:
 
 ## 配置
 
-```js {3,6,7}
+```js {4}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 启用幻灯片
+  themeConfig: {
+    mdEnhance: {
       presentation: true,
     },
-  ],
+  },
 };
 ```
 

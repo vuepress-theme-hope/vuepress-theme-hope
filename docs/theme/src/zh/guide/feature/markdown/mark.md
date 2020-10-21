@@ -11,15 +11,13 @@ tags:
 
 ## 配置
 
-```js {6}
+```js {4}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 开启标记
+  themeConfig: {
+    mdEnhance: {
       mark: true,
     },
-  ],
+  },
 };
 ```
 

@@ -12,10 +12,10 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Configuration
 
-```js {3-6}
+```js {4,5}
 module.exports = {
   themeConfig: {
-    markdown: {
+    mdEnhance: {
       sub: true,
       sup: true,
     },

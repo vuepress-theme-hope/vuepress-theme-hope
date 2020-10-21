@@ -22,6 +22,18 @@ Right paragraph
 
 To customize your paragraph alignment.
 
+## Config
+
+```js {4}
+module.exports = {
+  themeConfig: {
+    mdEnhance: {
+      align: true,
+    },
+  },
+};
+```
+
 ## Demo
 
 This topic is still in production, the API may have

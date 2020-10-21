@@ -12,11 +12,10 @@ Let the Markdown file in your VuePress site support footnotes.
 
 ## Configuration
 
-```js {3,5,6}
+```js {4}
 module.exports = {
   themeConfig: {
-    markdown: {
-      // Add Footnote support
+    mdEnhance: {
       footnote: true,
     },
   },

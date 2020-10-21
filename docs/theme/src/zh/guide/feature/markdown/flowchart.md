@@ -12,11 +12,10 @@ tags:
 
 ## 配置
 
-```js {3,5,6}
+```js {4}
 module.exports = {
   themeConfig: {
-    markdown: {
-      // 启用流程图功能
+    mdEnhance: {
       flowchart: true,
     },
   },

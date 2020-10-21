@@ -22,6 +22,18 @@ tags:
 
 来对你的段落对齐进行自定义。
 
+## 配置
+
+```js {4}
+module.exports = {
+  themeConfig: {
+    mdEnhance: {
+      align: true,
+    },
+  },
+};
+```
+
 ## 演示
 
 本主题仍在制作中，API 可能会有

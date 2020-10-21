@@ -12,10 +12,10 @@ Let the Markdown file support flow chart in your VuePress site
 
 ## Configuration
 
-```js {3-5}
+```js {4}
 module.exports = {
   themeConfig: {
-    markdown: {
+    mdEnhance: {
       flowchart: true,
     },
   },

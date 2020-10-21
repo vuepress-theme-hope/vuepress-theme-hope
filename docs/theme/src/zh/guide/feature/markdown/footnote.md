@@ -14,11 +14,10 @@ tags:
 
 默认启用，你也可以在主题配置禁用它:
 
-```js {3,5,6}
+```js {4}
 module.exports = {
   themeConfig: {
-    markdown: {
-      // 启用脚注功能
+    mdEnhance: {
       footnote: true,
     },
   },

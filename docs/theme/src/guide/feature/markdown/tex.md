@@ -11,11 +11,10 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ## Configuration
 
-```js {3,5,6}
+```js {4}
 module.exports = {
   themeConfig: {
-    markdown: {
-      // Add Tex support
+    mdEnhance: {
       tex: true,
     },
   },

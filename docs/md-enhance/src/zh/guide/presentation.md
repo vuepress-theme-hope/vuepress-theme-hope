@@ -10,7 +10,7 @@ icon: presentation
 
 ## 配置
 
-```js {3,6,7}
+```js {6}
 module.exports = {
   plugin: [
     "md-enhance",

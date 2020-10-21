@@ -8,7 +8,7 @@ icon: footnote
 
 ## 配置
 
-```js {3,5,6}
+```js {6}
 module.exports = {
   plugin: [
     "md-enhance",

@@ -11,15 +11,14 @@ Let the Markdown file in your VuePress site support presentation.
 
 ## Configuration
 
-```js {3,6,7}
+```js {5}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // Enable presentation
+  themeConfig: {
+    mdEnhance: {
+      // or you can pass an object to config reveal.js
       presentation: true,
     },
-  ],
+  },
 };
 ```
 

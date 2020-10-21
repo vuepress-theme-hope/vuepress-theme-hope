@@ -8,7 +8,7 @@ Let the Markdown file in your VuePress site support presentation.
 
 ## Configuration
 
-```js {3,6,7}
+```js {6}
 module.exports = {
   plugin: [
     "md-enhance",

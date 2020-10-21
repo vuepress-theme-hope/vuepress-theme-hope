@@ -12,10 +12,10 @@ tags:
 
 ## 配置
 
-```js {3,5,7,8}
+```js {5,7}
 module.exports = {
   themeConfig: {
-    markdown: {
+    mdEnhance: {
       // 启用下角标功能
       sub: true,
       // 启用上角标

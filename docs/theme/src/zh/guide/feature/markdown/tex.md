@@ -12,11 +12,10 @@ tags:
 
 ## 配置
 
-```js {3,5,6}
+```js {4}
 module.exports = {
   themeConfig: {
-    markdown: {
-      // 启用 TEX 支持
+    mdEnhance: {
       tex: true,
     },
   },
