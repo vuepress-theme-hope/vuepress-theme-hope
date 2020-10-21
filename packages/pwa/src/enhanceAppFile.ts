@@ -7,6 +7,7 @@ import event from "./event";
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
   Vue.component("SWUpdatePopup", SWUpdatePopup);
+
   if (process.env.NODE_ENV === "production" && !isServer) {
     const { register } = await import("register-service-worker");
 
