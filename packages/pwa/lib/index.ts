@@ -40,12 +40,13 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
     const additionalManifestEntries: WorkboxBuild.ManifestEntry[] = [];
 
-    const globPatterns = [
-      "**/*.{js,css,html}",
-      "**/*.{woff,woff2,eot,ttf,otf}",
-    ];
+    const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
 
-    if (options.cachePic) globPatterns.push("**/*.{png,jpg,jpeg,svg}");
+    if (options.cacheHTML === false)
+      globPatterns.push("./index.html", "./404.html");
+    else globPatterns.push("**/*.html");
+
+    if (options.cachePic) globPatterns.push("**/*.{png,jpg,jpeg}");
 
     await WorkboxBuild.generateSW({
       swDest,
@@ -62,11 +63,24 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
         chalk.blue("PWA:"),
         chalk.black.bgGreen("Success"),
         `Generated service worker, which will precache ${count} files, totaling ${Math.ceil(
-          size / 1024
-        )} Kb.\n${
+          size / 1024 / 1024
+        )} Mb.\n${
           warnings.length > 0 ? `Warnings: ${warnings.toString()}:""` : ""
         }`
       );
+
+      if (size > 104857600)
+        console.log(
+          chalk.black.bgRed("Error"),
+          "Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n",
+          chalk.blue("Please consider disable `cacheHTMl` and `cachePic`")
+        );
+      else if (size > 52428800)
+        console.log(
+          chalk.black.bgYellow("Warning"),
+          "\nCache Size is larger than 50Mb, which will not be registerd on Safari.\n",
+          chalk.blue("Please consider disable `cacheHTMl` and `cachePic`")
+        );
     });
 
     await fs.writeFile(

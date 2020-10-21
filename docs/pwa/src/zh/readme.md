@@ -83,6 +83,15 @@ module.exports = {
 
 :::
 
+### cacheHTML
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否缓存主页和 404 错误页之外的 HTMl 文件
+
+当你站点包含 HTML 文件后体积过大时很有用。
+
 ### cachePic
 
 - 类型: `boolean`

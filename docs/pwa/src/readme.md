@@ -83,6 +83,15 @@ There are some options which will have their fallback if you donot set them.
 
 :::
 
+### cacheHTML
+
+- Type: `boolean`
+- Default: `true`
+
+Whether cache html files besides home page and 404 page.
+
+It is useful if your site is too large when containing HTMl files.
+
 ### cachePic
 
 - Type: `boolean`

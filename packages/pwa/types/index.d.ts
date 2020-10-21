@@ -65,6 +65,14 @@ export interface PWAOptions {
    */
   manifest?: ManifestOption;
   /**
+   * 是否缓存除主页与 404 之外的 HTML
+   *
+   * Whether cache html files besides home page and 404
+   *
+   * @default true
+   */
+  cacheHTML?: boolean;
+  /**
    * 是否缓存站点图片
    *
    * Whether cache pictures
