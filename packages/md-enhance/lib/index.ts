@@ -6,7 +6,7 @@ import flowchart from "./markdown-it/flowchart";
 import footnote from "./markdown-it/footnote";
 import katex from "./markdown-it/katex";
 import mark from "./markdown-it/mark";
-import reveal from "./markdown-it/reveal";
+import presentation from "./markdown-it/presentation";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
 import pluginConfig from "./pluginConfig";
@@ -59,7 +59,7 @@ export = (
           },
         ]);
       if (markdownOption.presentation || markdownOption.enableAll)
-        md.plugin("presentation").use(reveal);
+        md.plugin("presentation").use(presentation);
     },
   };
 

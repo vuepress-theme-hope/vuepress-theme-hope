@@ -3,7 +3,7 @@ import hash = require("hash-sum");
 import MarkdownIt = require("markdown-it");
 import StateBlock = require("markdown-it/lib/rules_block/state_block");
 
-const reveal = (
+const presentation = (
   md: MarkdownIt & { $dataBlock: Record<string, string> }
 ): void => {
   const OPEN_MARKER = "@slidestart";
@@ -90,7 +90,7 @@ const reveal = (
       .slice(startLine + 1, nextLine)
       .join("\n");
 
-    const token = state.push("reveal", "fence", 0);
+    const token = state.push("presentation", "fence", 0);
     token.block = true;
     token.info = params;
     token.content = contents;
@@ -102,19 +102,19 @@ const reveal = (
     return true;
   };
 
-  md.block.ruler.before("fence", "reveal", uml, {
+  md.block.ruler.before("fence", "presentation", uml, {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
-  md.renderer.rules.reveal = (tokens, idx): string => {
+  md.renderer.rules.presentation = (tokens, idx): string => {
     const token = tokens[idx];
-    const key = `reveal_${hash(idx)}`;
+    const key = `presentation_${hash(idx)}`;
     const { content, info } = token;
     md.$dataBlock[key] = content;
-    return `<Reveal id="${key}" :code="$dataBlock.${key}" theme="${
+    return `<Presentation id="${key}" key="${key}" :code="$dataBlock.${key}" theme="${
       info.trim() || "auto"
-    }"></Reveal>`;
+    }"></Presentation>`;
   };
 };
 
-export default reveal;
+export default presentation;

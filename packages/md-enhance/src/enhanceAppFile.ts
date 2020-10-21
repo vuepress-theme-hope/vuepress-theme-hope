@@ -1,5 +1,5 @@
 import FlowChart from "./FlowChart.vue";
-import Reveal from "./Reveal.vue";
+import Presentation from "./Presentation.vue";
 
 import "katex/dist/katex.min.css";
 import "./styles/container.styl";
@@ -21,7 +21,7 @@ const enhanceApp: EnhanceApp = ({ Vue }) => {
     MARKDOWN_ENHANCE_OPTIONS.presentation ||
     MARKDOWN_ENHANCE_OPTIONS.enableAll
   )
-    Vue.component("Reveal", Reveal);
+    Vue.component("Presentation", Presentation);
 };
 
 export default enhanceApp;

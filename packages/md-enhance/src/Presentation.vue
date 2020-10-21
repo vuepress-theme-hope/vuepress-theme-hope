@@ -1,6 +1,6 @@
 <template>
-  <div :class="{ loading }" class="md-reveal reveal reveal-viewport">
-    <Loading v-if="loading" class="md-reveal-loading-icon" />
+  <div :class="{ loading }" class="md-presentation reveal reveal-viewport">
+    <Loading v-if="loading" class="md-presentation-loading-icon" />
     <div v-show="!loading" class="slides">
       <section
         data-markdown
@@ -15,14 +15,14 @@
   </div>
 </template>
 
-<script src="./Reveal" />
+<script src="./Presentation" />
 
 <style lang="stylus">
 @require '~reveal.js/dist/reveal.css'
 @require './styles/highlight'
 @require './styles/theme'
 
-.md-reveal
+.md-presentation
   transition all 1s
   width 100%
   min-height 400px
@@ -38,7 +38,7 @@
     margin 0 -1.5rem
     min-height 300px
 
-  svg.md-reveal-loading-icon
+  svg.md-presentation-loading-icon
     width 2.5em
     height 2.5em
     margin 2.5em auto

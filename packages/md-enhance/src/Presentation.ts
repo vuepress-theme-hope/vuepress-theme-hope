@@ -16,7 +16,7 @@ type ThemeType =
   | "moon";
 
 @Component({ components: { Loading } })
-export default class Reveal extends Vue {
+export default class Presentation extends Vue {
   @Prop({ type: String, required: true })
   private readonly id!: string;
 
