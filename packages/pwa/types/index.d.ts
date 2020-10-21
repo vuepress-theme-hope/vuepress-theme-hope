@@ -93,7 +93,7 @@ export interface PWAOptions {
    *
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  generateSWConfig?: WorkboxBuild.Options;
+  generateSWConfig?: Partial<WorkboxBuild.Options>;
 }
 
 declare global {
