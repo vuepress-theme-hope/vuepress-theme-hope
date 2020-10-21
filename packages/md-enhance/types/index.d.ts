@@ -96,4 +96,5 @@ export type MarkdownEnhanceOption = Partial<{
 
 declare global {
   const REVEAL_OPTIONS: Partial<RevealOptions>;
+  const MARKDOWN_ENHANCE_OPTIONS: MarkdownEnhanceOption;
 }

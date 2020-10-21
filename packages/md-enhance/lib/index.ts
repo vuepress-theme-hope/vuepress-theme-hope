@@ -25,6 +25,7 @@ export = (
     name: "md-enhance",
 
     define: () => ({
+      MARKDOWN_ENHANCE_OPTIONS: markdownOption,
       REVEAL_OPTIONS:
         typeof markdownOption.presentation === "object"
           ? markdownOption.presentation

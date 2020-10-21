@@ -1,0 +1,16 @@
+// footnote anchor fix
+.footnotes .footnotes-list .footnote-item
+  margin-top (- $navbarHeight)
+  padding-top ($navbarHeight + 0.5rem)
+
+  p
+    margin-bottom 0
+
+.footnote-ref
+  position relative
+  margin-top - $navbarHeight - 0.5rem
+  padding-top (($navbarHeight + 0.5rem))
+
+  .footnote-anchor
+    position absolute
+    top 0
