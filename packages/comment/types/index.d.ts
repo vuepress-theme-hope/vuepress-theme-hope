@@ -4,6 +4,7 @@ import {
   ReadingTimeI18NCOnfig,
 } from "@mr-hope/vuepress-shared-utils";
 import { Vssue } from "vssue";
+import { ValineOption } from "valine";
 
 import "./declare";
 
@@ -71,105 +72,10 @@ interface BaseCommentOptions {
   wordPerminute?: number;
 }
 
-export interface ValineOptions extends BaseCommentOptions {
+export interface ValineOptions
+  extends BaseCommentOptions,
+    Omit<ValineOption, "el"> {
   type: "valine";
-  /**
-   * 填入 LeanCloud 中应用的 APP ID
-   *
-   * Fill in the application appId in LeanCloud
-   */
-  appId: string;
-
-  /**
-   * 填入 LeanCloud 中应用的 APP Key
-   *
-   * Fill in the application appKey in LeanCloud
-   */
-  appKey: string;
-
-  /**
-   * 是否启用访问量
-   *
-   * Whether enable page views count by default
-   *
-   * @default true
-   */
-  visitor?: boolean;
-
-  /**
-   * 评论占位符
-   *
-   * Placeholder for comment input
-   */
-  placeholder?: string;
-
-  /**
-   * 评论所需信息
-   *
-   * Commenter's info
-   *
-   * @default ['nick','mail','link']
-   */
-  meta?: string[];
-
-  /**
-   * 评论信息必填项配置
-   *
-   * Set required fields for Commenter's info
-   */
-  requiredFields?: string[];
-
-  /**
-   * 头像类型
-   *
-   * Avator type
-   *
-   * @see https://valine.js.org/avatar.html
-   *
-   * @default 'retro'
-   */
-  avatar?: string;
-
-  /**
-   * 是否记录 IP
-   *
-   * Whether to record users' IP
-   *
-   * @default false
-   */
-  recordIP?: boolean;
-
-  /**
-   * 每页的最大评论数
-   *
-   * Max comments per page
-   *
-   * @default 10
-   */
-  pageSize?: number;
-
-  /**
-   * 是否启用昵称框自动获取 QQ 昵称和 QQ 头像
-   *
-   * Whether fetch QQ nickname and avator when inputing QQ number
-   *
-   * @default true
-   */
-  enableQQ?: boolean;
-
-  /**
-   * 自定义表情 CDN
-   *
-   * Emoji CDN
-   */
-  emojiCDN?: string;
-
-  /**
-   * 自定义表情包映射
-   *
-   * Emoji maps
-   */
-  emojiMaps?: Record<string, string>;
 }
 
 /** Vssue 配置 */

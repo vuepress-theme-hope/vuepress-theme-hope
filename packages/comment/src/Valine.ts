@@ -31,15 +31,7 @@ export default class Valine extends Vue {
   }
 
   private mounted(): void {
-    if (this.valineEnable) {
-      // eslint-disable-next-line
-      const AV = require("leancloud-storage");
-
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      if (typeof window !== "undefined") window.AV = AV;
-    }
-
-    this.valine(this.$route.path);
+    if (this.valineEnable) this.valine(this.$route.path);
   }
 
   @Watch("$route")
@@ -54,28 +46,32 @@ export default class Valine extends Vue {
   // Init valine
   private valine(path: string): void {
     const { valineConfig } = this;
-    // eslint-disable-next-line
-    const valine = new (require("valine"))();
 
-    // eslint-disable-next-line
-    valine.init({
-      el: "#valine",
-      appId: valineConfig.appId, // Your appId
-      appKey: valineConfig.appKey, // Your appKey
-      placeholder:
-        valineConfig.placeholder || VALINE_I18N[this.$localePath || "/"],
-      meta: valineConfig.meta || ["nick", "mail", "link"],
-      requiredFields: valineConfig.requiredFields || ["nick"],
-      avatar: valineConfig.avatar || "retro",
-      visitor: this.visitorDisplay,
-      recordIP: valineConfig.recordIP || false,
-      path:
-        path || (typeof window === "undefined" ? "" : window.location.pathname),
-      pageSize: valineConfig.pageSize || 10,
-      enableQQ: valineConfig.enableQQ || true,
-      emojiCDN: valineConfig.emojiCDN || "",
-      emojiMaps: valineConfig.emojiMaps || null,
-      lang: this.$lang === "zh-CN" ? "zh-CN" : "en",
-    });
+    void import(/* webpackChunkName: "valine" */ "valine").then(
+      (valineConstructor) => {
+        const valine = new valineConstructor.default();
+
+        valine.init({
+          el: "#valine",
+          appId: valineConfig.appId, // Your appId
+          appKey: valineConfig.appKey, // Your appKey
+          placeholder:
+            valineConfig.placeholder || VALINE_I18N[this.$localePath || "/"],
+          meta: valineConfig.meta || ["nick", "mail", "link"],
+          requiredFields: valineConfig.requiredFields || ["nick"],
+          avatar: valineConfig.avatar || "retro",
+          visitor: this.visitorDisplay,
+          recordIP: valineConfig.recordIP || false,
+          path:
+            path ||
+            (typeof window === "undefined" ? "" : window.location.pathname),
+          pageSize: valineConfig.pageSize || 10,
+          enableQQ: valineConfig.enableQQ || true,
+          emojiCDN: valineConfig.emojiCDN || "",
+          emojiMaps: valineConfig.emojiMaps,
+          lang: this.$lang === "zh-CN" ? "zh-CN" : "en",
+        });
+      }
+    );
   }
 }
