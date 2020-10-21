@@ -1,5 +1,5 @@
 rules:
-  # "@textlint-rule/no-unmatched-pair": true
+  "@textlint-rule/no-unmatched-pair": true
 
   apostrophe: true
 
@@ -37,9 +37,13 @@ rules:
   zh-half-and-full-width-bracket:
     bracket: halfWidth
 
+plugins:
+  - latex2e
+
 filters:
   allowlist:
     allow:
       - "/@flowstart[\\s\\S]*?@flowend/m"
+      - "/\\$\\$[\\s\\S]*?\\$\\$/m"
 
   comments: true
