@@ -598,7 +598,7 @@ All the links will end with a splash `/`, instead of `.html`
 
 ### Features
 
-- **theme:** update theme apperence ([f2e35e8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2e35e8ee49b18d86a161eeb334378292e9a3389))
+- **theme:** update theme apperance ([f2e35e8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2e35e8ee49b18d86a161eeb334378292e9a3389))
 - update theme apperance ([cf455dc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cf455dc74057d9a9d06a97ffefbd5f197cef2ea6))
 - **md-enhance:** use katex for tex support ([4d2d018](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d2d018bb32cee3c34b0f7f4368a9eb898b59328))
 - **theme:** make theme ts ([01602c0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/01602c05e5996327956445633dffd89d04ae86e5))
