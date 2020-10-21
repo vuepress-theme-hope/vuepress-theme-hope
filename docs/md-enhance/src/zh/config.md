@@ -5,7 +5,7 @@ icon: configuration
 
 你可以传递以下选项来启用或禁用一些功能
 
-### baseLang
+## baseLang
 
 - 类型: `string`
 - 默认值: `'en-US'`

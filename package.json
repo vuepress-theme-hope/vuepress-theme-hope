@@ -25,6 +25,8 @@
     "docs/md-enhance:serve": "yarn workspace md-enhance-docs serve",
     "docs/photo-swipe:build": "yarn workspace photo-swipe-docs build",
     "docs/photo-swipe:serve": "yarn workspace photo-swipe-docs serve",
+    "docs/pwa:build": "yarn workspace pwa-docs build",
+    "docs/pwa:serve": "yarn workspace pwa-docs serve",
     "docs/reading-time:build": "yarn workspace reading-time-docs build",
     "docs/reading-time:serve": "yarn workspace reading-time-docs serve",
     "docs/seo:build": "yarn workspace seo-docs build",
