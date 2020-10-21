@@ -1,6 +1,7 @@
 const { config } = require("vuepress-theme-hope");
 const navBarConfig = require("./config/navBar");
 const sideBarConfig = require("./config/sideBar");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = config({
   title: "Theme Demo",
@@ -89,6 +90,26 @@ module.exports = config({
       "/en/": {
         nav: navBarConfig.en,
         sidebar: sideBarConfig.en,
+      },
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+        ],
       },
     },
 

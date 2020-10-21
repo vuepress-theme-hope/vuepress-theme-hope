@@ -1,8 +1,8 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "vuepress-plugin-seo",
-  description: "SEO Plugin for vuepress",
+  title: "SEO Enhance",
+  description: "Using <meta> tags to Enhance Your site SEO",
 
   headOption: {
     icon: "/favicon.ico",
@@ -20,8 +20,8 @@ module.exports = config({
 
   locales: {
     "/zh/": {
-      title: "SEO 增强插件",
-      description: "VuePress 的 SEO 增强插件",
+      title: "SEO 增强",
+      description: "使用 <meta> tag 为你的站点提供 SEO 增强",
     },
   },
 
@@ -44,6 +44,28 @@ module.exports = config({
 
     locales: {
       "/zh/": {},
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "@mr-hope/vuepress-plugin-seo",
+        short_name: "seo-plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+        ],
+      },
     },
 
     hostname: "https://vuepress-seo.mrhope.site/",

@@ -1,8 +1,8 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "vuepress-plugin-copy-code",
-  description: "Copy Code Plugin for vuepress",
+  title: "Quick Code Copy",
+  description: "Quick Code Copy Plugin for vuepress",
 
   headOption: {
     icon: "/favicon.ico",
@@ -20,7 +20,7 @@ module.exports = config({
 
   locales: {
     "/zh/": {
-      title: "代码一键复制插件",
+      title: "代码一键复制",
       description: "VuePress 的代码一键复制插件",
     },
   },
@@ -75,6 +75,28 @@ module.exports = config({
             text: "配置",
             icon: "configuration",
             link: "/zh/config/",
+          },
+        ],
+      },
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "@mr-hope/vuepress-plugin-copy-code",
+        short_name: "copy-code plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
           },
         ],
       },

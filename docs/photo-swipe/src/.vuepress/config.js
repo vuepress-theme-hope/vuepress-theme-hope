@@ -1,7 +1,7 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "Photo swipe Plugin",
+  title: "Photo preview",
   description: "Photo swipe Plugin for VuePress",
 
   headOption: {
@@ -20,7 +20,7 @@ module.exports = config({
 
   locales: {
     "/zh/": {
-      title: "图片预览插件",
+      title: "图片预览",
       description: "VuePress 的图片预览插件",
     },
   },
@@ -60,6 +60,28 @@ module.exports = config({
           { text: "主页", icon: "homefill", link: "/zh/" },
           { text: "演示", icon: "creativefill", link: "/zh/demo/" },
           { text: "配置", icon: "configuration", link: "/zh/config/" },
+        ],
+      },
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "vuepress-plugin-photo-swipe",
+        short_name: "photo-swipe plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
         ],
       },
     },

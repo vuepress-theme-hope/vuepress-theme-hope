@@ -58,6 +58,26 @@ module.exports = config({
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
+    pwa: {
+      cachePic: true,
+      manifest: {
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+        ],
+      },
+    },
+
     algolia: {
       apiKey: "4deb442097fb6a05638adf10ef86e222",
       indexName: "mrhope_vuepress-theme",

@@ -1,7 +1,7 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "vuepress-plugin-reading-time",
+  title: "Reading Time Counter",
   description: "Reading Time Counter for vuepress",
 
   headOption: {
@@ -20,7 +20,7 @@ module.exports = config({
 
   locales: {
     "/zh/": {
-      title: "阅读时间生成插件",
+      title: "阅读时间生成",
       description: "VuePress 的阅读时间生成插件",
     },
   },
@@ -44,6 +44,28 @@ module.exports = config({
 
     locales: {
       "/zh/": {},
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "@mr-hope/vuepress-plugin-reading-time",
+        short_name: "reading-time plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+        ],
+      },
     },
 
     hostname: "https://vuepress-reading-time.mrhope.site/",

@@ -1,8 +1,8 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "vuepress-plugin-add-this",
-  description: "AddThis Plugin for vuepress",
+  title: "Share Plugin",
+  description: "Share Plugin provided by AddThis",
 
   headOption: {
     icon: "/favicon.ico",
@@ -20,8 +20,8 @@ module.exports = config({
 
   locales: {
     "/zh/": {
-      title: "AddThis 插件",
-      description: "VuePress 的 AddThis 插件",
+      title: "分享插件",
+      description: "由 AddThis 提供的分享插件",
     },
   },
 
@@ -73,6 +73,28 @@ module.exports = config({
             text: "配置",
             icon: "configuration",
             link: "/zh/config/",
+          },
+        ],
+      },
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "vuepress-plugin-add-this",
+        short_name: "add-this plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
           },
         ],
       },

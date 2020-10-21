@@ -159,6 +159,28 @@ module.exports = config({
       },
     },
 
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "@mr-hope/vuepress-plugin-comment",
+        short_name: "comment plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+        ],
+      },
+    },
+
     hostname: "https://vuepress-comment.mrhope.site/",
 
     repo: "https://github.com/mister-hope/vuepress-theme-hope",

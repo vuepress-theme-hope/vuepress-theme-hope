@@ -1,7 +1,7 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "Markdown Enhance Plugin",
+  title: "Markdown Enhance",
   description: "Markdown Enhancement for VuePress",
 
   headOption: {
@@ -87,6 +87,28 @@ module.exports = config({
 
           "/zh/": ["", "guide/", "config"],
         },
+      },
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "vuepress-plugin-md-enhance",
+        short_name: "md-enhance plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+        ],
       },
     },
 

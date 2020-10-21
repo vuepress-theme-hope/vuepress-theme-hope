@@ -1,8 +1,8 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "vuepress-plugin-sitemap",
-  description: "Sitemap Plugin for vuepress",
+  title: "Sitemap Generator",
+  description: "Generate Sitemap for your site",
 
   headOption: {
     icon: "/favicon.ico",
@@ -20,8 +20,8 @@ module.exports = config({
 
   locales: {
     "/zh/": {
-      title: "Sitemap 生成插件",
-      description: "VuePress 的 Sitemap 生成插件",
+      title: "Sitemap 生成器",
+      description: "为你的站点生成 Sitemap",
     },
   },
 
@@ -40,6 +40,28 @@ module.exports = config({
 
     mdEnhance: {
       enableAll: true,
+    },
+
+    pwa: {
+      cachePic: true,
+      manifest: {
+        name: "@mr-hope/vuepress-plugin-sitemap",
+        short_name: "sitemap plugin",
+        icons: [
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+        ],
+      },
     },
 
     locales: {
