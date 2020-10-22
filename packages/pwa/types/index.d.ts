@@ -1,46 +1,9 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { Langs } from "@mr-hope/vuepress-shared-utils";
 import WorkboxBuild from "workbox-build";
 import "./declare";
+import { ManifestOption } from "./manifest";
 
-export interface ManifestIcon {
-  src: string;
-  sizes: string;
-  type?: string;
-  purpose?: "any" | "maskable";
-}
-
-export interface ManifestRelatedApps {
-  platform: string;
-  url: string;
-  id?: string;
-}
-
-export interface ManifestOption {
-  name?: string;
-
-  short_name?: string;
-  description?: string;
-  background_color?: string;
-  dir?: "ltr" | "rtl" | "auto";
-  lang?: string;
-  display?: "fullscreen" | "standalone" | "minimal-ui" | "browser";
-  icons?: ManifestIcon[];
-  orientation?:
-    | "any"
-    | "natural"
-    | "landscape"
-    | "landscape-primary"
-    | "landscape-secondary"
-    | "portrait"
-    | "portrait-primary"
-    | "portrait-secondary";
-  prefer_related_applications?: boolean;
-  related_applications?: ManifestRelatedApps[];
-  scope?: string;
-  start_url?: string;
-  theme_color?: string;
-}
+export * from "./manifest";
 
 /** PWA 配置 */
 export interface PWAOptions {
