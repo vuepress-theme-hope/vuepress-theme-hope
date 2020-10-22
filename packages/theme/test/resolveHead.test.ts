@@ -10,7 +10,7 @@ describe("Test resolveHead function", () => {
       headOption: {
         icon: "/favicon.ico",
         pwa: {
-          manifest: "/manifest.json",
+          manifest: "/manifest.webmanifest",
           themeColor: "#46bd87",
           appleStatusBarColor: "black",
           appleIcon: "/img/icon/appleIcon152.png",
@@ -56,7 +56,7 @@ describe("Test resolveHead function", () => {
               "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
           },
         ],
-        ["link", { rel: "manifest", href: "/manifest.json" }],
+        ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
         ["meta", { name: "theme-color", content: "#46bd87" }],
         ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
         [
@@ -79,7 +79,7 @@ describe("Test resolveHead function", () => {
       headOption: {
         icon: "/favicon.ico",
         pwa: {
-          manifest: "/manifest.json",
+          manifest: "/manifest.webmanifest",
           themeColor: "#46bd87",
           appleStatusBarColor: "black",
           appleIcon: "/img/icon/appleIcon152.png",

@@ -17,6 +17,10 @@ Service worker 成功获取内容更新后，将在右下角显示一个弹出�
 
 您也可以在 `themeConfig.pwa.manifest` 中设置其他选项。
 
+::: info 更多
+更多内容，请详见 [W3C Manifest](https://w3c.github.io/manifest/)
+:::
+
 ## 缓存大小
 
 为了更好地控制 Service Worker 可以预缓存的内容，可以设置 `themeConfig.pwa.cachePic` 和 `themeConfig.pwa.cacheHTML` 来决定 Service Worker 是否缓存除主页和 404 错误页外的 HTML 文件与站点图片。

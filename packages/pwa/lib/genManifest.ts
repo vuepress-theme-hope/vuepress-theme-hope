@@ -44,7 +44,7 @@ export const genManifest = async (
     ...optionManifest,
   };
 
-  await fs.writeJSON(resolve(outDir, "./manifest.json"), finalManifest, {
+  await fs.writeJSON(resolve(outDir, "./manifest.webmanifest"), finalManifest, {
     flag: "w",
   });
 

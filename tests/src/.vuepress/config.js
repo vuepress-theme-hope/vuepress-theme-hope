@@ -10,7 +10,7 @@ module.exports = config({
   headOption: {
     icon: "/favicon.ico",
     pwa: {
-      manifest: "/manifest.json",
+      manifest: "/manifest.webmanifest",
       themeColor: "#46bd87",
       appleStatusBarColor: "black",
       appleIcon: "/assets/icon/apple-icon-152.png",

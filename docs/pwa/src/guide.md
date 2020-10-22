@@ -17,6 +17,10 @@ To let your site be able to register as Web App, you should set icons in `themeC
 
 You can also set other options in `themeConfig.pwa.manifest`.
 
+::: info More
+For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
+:::
+
 ## Cache Size
 
 To better control what your Service Worker can precache, you can set `themeConfig.pwa.cachePic` and `themeConfig.pwa.cacheHTML` to decide whether the service worker caches HTML files except the homepage and 404 error pages and site pictures.
