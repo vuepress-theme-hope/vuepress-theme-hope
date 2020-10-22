@@ -16,13 +16,6 @@ Markdown 的目标是实现「易读易写」。
 
 不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 [Setext][1]、[atx][2]、[Textile][3]、[reStructuredText][4]、[Grutatext][5] 和 [EtText][6]，然而最大灵感来源其实是纯文字的电子邮件格式。
 
-[1]: http://docutils.sourceforge.net/mirror/setext.html
-[2]: http://www.aaronsw.com/2002/atx/
-[3]: http://textism.com/tools/textile/
-[4]: http://docutils.sourceforge.net/rst.html
-[5]: http://www.triptico.com/software/grutatxt.html
-[6]: http://ettext.taint.org/doc/
-
 因此 Markdown 的语法全由标点符号所组成，并经过严谨慎选，是为了让它们看起来就像所要表达的意思。像是在文字两旁加上星号，看起来就像\*强调\*。Markdown 的列表看起来，嗯，就是列表。假如你有使用过电子邮件，引言写法看起来就真的像是引用一段文字。
 
 Markdown 具有一系列衍生版本，用于扩展 Markdown 的功能 (如表格、脚注、内嵌 HTML 等等) ，这些功能原初的 Markdown 尚不具备，它们能让 Markdown 转换成更多的格式，例如 LaTeX，Docbook。Markdown 增强版中比较有名的有 Markdown Extra、MultiMarkdown、 Maruku 等。这些衍生版本要么基于工具，如 Pandoc；要么基于网站，如 GitHub 和 Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。
@@ -63,11 +56,7 @@ This is another regular paragraph.
 
 在 HTML 文件中，有两个字元需要特殊处理: `<` 和 `&` 。 `<` 符号用于起始标签，`&` 符号则用于标记 HTML 实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是 `&lt;` 和 `&amp;`。
 
-`&` 符号其实很容易让写作网络文件的人感到困扰，如果你要打「AT&T」 ，你必须要写成「`AT&amp;T`」 ，还得转换网址内的 `&` 符号，如果你要链接到:
-
-```
-http://images.google.com/images?num=30&q=larry+bird
-```
+`&` 符号其实很容易让写作网络文件的人感到困扰，如果你要打「AT&T」 ，你必须要写成「`AT&amp;T`」 ，还得转换网址内的 `&` 符号，如果你要链接到 `http://images.google.com/images?num=30&q=larry+bird`
 
 你必须要把网址转成:
 
@@ -122,9 +111,6 @@ Markdown 将会把它转换为:
 如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空白，然后按 enter。
 
 是的，这确实需要花比较多功夫来插入 `<br />` ，但是「每个换行都转换为 `<br />`」的方法在 Markdown 中并不适合， Markdown 中 email 式的 [块引言][bq] 和多段落的 [列表][l] 在使用换行来排版的时候，不但更好用，还更好阅读。
-
-[bq]: #blockquote
-[l]: #list
 
 ### 标题
 
@@ -838,3 +824,12 @@ E.g.: `:smile:` :smile:
 ## Markdown 效果演示
 
 - [查看详情](demo.md)
+
+[1]: http://docutils.sourceforge.net/mirror/setext.html
+[2]: http://www.aaronsw.com/2002/atx/
+[3]: http://textism.com/tools/textile/
+[4]: http://docutils.sourceforge.net/rst.html
+[5]: http://www.triptico.com/software/grutatxt.html
+[6]: http://ettext.taint.org/doc/
+[bq]: #blockquote
+[l]: #list

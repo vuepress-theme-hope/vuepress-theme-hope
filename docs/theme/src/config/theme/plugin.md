@@ -224,7 +224,7 @@ Fill in the icon address used by Apple, the recommended size is 152×152
 - Type: `"black" | "white"`
 - Default: `"black"`
 
-Apple's status bar color
+Apple’s status bar color
 
 #### pwa.apple.maskIcon
 

@@ -91,7 +91,7 @@ $$
 `\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` 目前不被支持。
 :::
 
-#### 案例
+::: tip 案例
 
 $\sqrt{x}$, $\frac{1}{2}$.
 
@@ -120,6 +120,8 @@ $\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idots
 
 $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 ```
+
+:::
 
 ### 符号
 

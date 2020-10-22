@@ -3,7 +3,7 @@ title: config
 icon: configuration
 ---
 
-## Options
+## Plugin Options
 
 ### container
 

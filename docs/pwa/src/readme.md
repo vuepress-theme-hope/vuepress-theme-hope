@@ -47,7 +47,7 @@ module.exports = {
 ```
 
 ::: tip
-The reason you should use `head` function is that plugin cannot insert head tags to the output HTML.
+You should use `head` function because plugins cannot insert head tags to the output HTML.
 
-The function will inject some PWA related tags to the `<head>` tag part of output site html files.
+The function will inject some PWA related tags to the `<head>` tag part of output site HTML files.
 :::

@@ -53,7 +53,7 @@ icon: configuration
 - 类型: `string`
 - 必填: 否
 
-favicon 地址，填入绝对路径。(建议为你的站点生成 favicon)
+`favicon.ico` 地址，填入绝对路径。(建议为你的站点生成 favicon)
 
 ## themeColor
 

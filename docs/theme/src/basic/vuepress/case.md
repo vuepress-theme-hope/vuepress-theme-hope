@@ -211,7 +211,7 @@ tags:
 - [PicGo-Core](https://picgo.github.io/PicGo-Core-Doc/) - A tool for picture uploading. Both CLI & API supports.
 - [EasyHexo](https://easyhexo.com) - 🤘 Build your own site with Hexo, the easy way. | 轻松使用 Hexo 建站。
 - [d2-daily](https://daily.fairyever.com/) - D2 日报。
-- [SorryPress](https://github.com/fritx/SorryPress) - VuePress version of [_xtyxtyx/sorry_](https://github.com/xtyxtyx/sorry)
+- [SorryPress](https://github.com/fritx/SorryPress) - VuePress version of [xtyxtyx/sorry](https://github.com/xtyxtyx/sorry)
 - [vue-showdown](https://vue-showdown.js.org) - Use showdown.js in Vue
 - [vssue](https://vssue.js.org) - A Vue-powered Issue-based Comment Plugin
 - [codemirror-colorpicker](https://easylogic.github.io/codemirror-colorpicker/) - Colorpicker manual site

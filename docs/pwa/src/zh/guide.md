@@ -25,7 +25,7 @@ Service worker 成功获取内容更新后，将在右下角显示一个弹出�
 
 ### Head 标签注入
 
-你需要使用内置的 head 函数来自动为你站点的头部注入 head 标签，以能够在所有的设备上成功注册并良好显示。 head 函数的第一个参数是插件选项，第二个参数是可选的原 head 数组。
+你需要使用内置的 head 函数来自动为你站点的头部注入 head 标签，以能够在所有的设备上成功注册并良好显示。 `head` 函数的第一个参数是插件选项，第二个参数是可选的原 head 数组。
 
 ```js
 const { head } = require("@mr-hope/vuepress-plugin-pwa");

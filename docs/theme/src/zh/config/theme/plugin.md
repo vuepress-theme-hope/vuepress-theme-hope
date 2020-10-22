@@ -140,7 +140,7 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 > 如果您不需要这个功能，请设置为 `false`。
 >
-> 有关更多详细信息，请参见 [pwa 插件文档][pwa]
+> 有关更多详细信息，请参见 [pwa 插件文档][pwa-config]
 
 ### pwa.manifest
 

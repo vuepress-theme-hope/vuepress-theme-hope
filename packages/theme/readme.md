@@ -61,9 +61,9 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 - Customizable footer
 
-### Function enhancement
+### Features
 
-#### Implemente below with 0 configuration while allowing to customize
+#### Out of box
 
 - Brand new theme colors, allowing you to switch dynamically during browsing
 
@@ -79,7 +79,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 - Add copyright information when copying
 
-#### More powerful functions
+#### More powerful features
 
 - SEO enhancement
 

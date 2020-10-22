@@ -1,9 +1,0 @@
-plugins:
-  - frontmatter
-  - - footnotes
-    - inlineNotes: true
-  - math
-  - preset-lint-recommended
-  - preset-lint-consistent
-  - - lint-list-item-indent
-    - space

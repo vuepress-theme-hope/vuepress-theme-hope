@@ -40,9 +40,9 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 - [Custom footer](layout/page.md#footer-support)
 
-### Function enhancement
+### Features
 
-#### Implemente below with 0 configuration while allowing to customize
+#### Out of box
 
 - [Brand new theme colors, allowing you to switch dynamically during browsing](feature/theme.md#theme-color)
 

@@ -44,44 +44,44 @@ By default it will display "Author, Visit Number, Writing Date, Category, Tags, 
 
 - **author** <MyBadge text="Support page config" />
 
-Example:
+  Example:
 
-```md
----
-author: Mr.Hope
----
-```
+  ```md
+  ---
+  author: Mr.Hope
+  ---
+  ```
 
-You can configure `author` in the plugin options to set the default author. And you can also configure `author` in frontmatter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
+  You can configure `author` in the plugin options to set the default author. And you can also configure `author` in frontmatter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
 
 - **time**
 
-We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
+  We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
-E.g.:
+  E.g.:
 
-```md
----
-time: 2020-01-01
----
-```
+  ```md
+  ---
+  time: 2020-01-01
+  ---
+  ```
 
 - **Category and Tags**
 
-See [blog section](blog.md) for details
+  See [blog section](blog.md) for details
 
 - **Reading time**
 
-The default statistic method is 300 words per minute. You can override it by setting `wordPerminute` in the plugin configuration. This option does not support individual configuration on the page.
+  The default statistic method is 300 words per minute. You can override it by setting `wordPerminute` in the plugin configuration. This option does not support individual configuration on the page.
 
 - **Visitor Number** <MyBadge text="Support page config" />
 
-When [Comment Function](../feature/comment.md) is configured, this function is enabled by default.
+  When [Comment Function](../feature/comment.md) is configured, this function is enabled by default.
 
-E.g.:
+  E.g.:
 
-```md
----
-visitor: false
----
-```
+  ```md
+  ---
+  visitor: false
+  ---
+  ```

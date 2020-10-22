@@ -131,17 +131,17 @@ In codes above, two spaces are behind `at`.
 ### Ordered List
 
 1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit  
+1. Consectetur adipiscing elit  
    line break  
    line break again
-3. Integer molestie lorem at massa
+1. Integer molestie lorem at massa
 
 ```md
 1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit  
+1. Consectetur adipiscing elit  
    line break  
    line break again
-3. Integer molestie lorem at massa
+1. Integer molestie lorem at massa
 ```
 
 ## HR

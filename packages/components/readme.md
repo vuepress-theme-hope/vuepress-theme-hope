@@ -86,7 +86,7 @@ npm i @mr-hope/vuepress-plugin-components
 
 分页组件。
 
-### Props
+### 属性
 
 - currentPage: V-model 双向绑定，当前为第几个页面。
 - total: 总项数

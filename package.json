@@ -80,6 +80,33 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "remarkConfig": {
+    "plugins": [
+      "frontmatter",
+      [
+        "footnotes",
+        {
+          "inlineNotes": true
+        }
+      ],
+      "math",
+      "preset-lint-consistent",
+      "preset-lint-recommended",
+      "preset-lint-markdown-style-guide",
+      [
+        "lint-maximum-line-length",
+        false
+      ],
+      [
+        "lint-list-item-spacing",
+        false
+      ],
+      [
+        "lint-list-item-indent",
+        "space"
+      ]
+    ]
+  },
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.7",
     "@types/chai": "4.2.14",
@@ -110,6 +137,7 @@
     "remark-lint": "8.0.0",
     "remark-math": "4.0.0",
     "remark-preset-lint-consistent": "4.0.0",
+    "remark-preset-lint-markdown-style-guide": "^4.0.0",
     "remark-preset-lint-recommended": "5.0.0",
     "sort-package-json": "1.46.0",
     "textlint": "11.7.6",

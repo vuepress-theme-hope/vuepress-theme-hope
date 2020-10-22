@@ -95,7 +95,7 @@ Large operators such as continuous addition, multiplication, limits, and integra
 `\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` are not supported currently.
 :::
 
-#### Case
+::: tip Case
 
 $\sqrt{x}$, $\frac{1}{2}$.
 
@@ -124,6 +124,8 @@ $\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idots
 
 $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 ```
+
+:::
 
 ### Symbol
 

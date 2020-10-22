@@ -1,5 +1,7 @@
 # Changelog
 
+<!--lint disable no-duplicate-headings-->
+
 ## [1.4.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.1...v1.4.2) (2020-10-22)
 
 ### Bug Fixes

@@ -49,5 +49,5 @@ module.exports = {
 ::: tip
 你需要使用 `head` 函数的原因是插件不能在输出 HTML 中插入 head 标签。
 
-该函数会将一些与 PWA 相关的标签注入到输出站点 HTMl 文件的 `<head>` 部分。
+该函数会将一些与 PWA 相关的标签注入到输出站点 HTML 文件的 `<head>` 部分。
 :::
