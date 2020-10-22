@@ -10,8 +10,8 @@ module.exports = config({
       manifest: "/manifest.json",
       themeColor: "#46bd87",
       appleStatusBarColor: "black",
-      appleIcon: "/assets/icon/appleIcon152.png",
-      msTileImage: "/assets/icon/msIcon144.png",
+      appleIcon: "/assets/icon/apple-icon-152.png",
+      msTileImage: "/assets/icon/ms-icon-144.png",
       msTileColor: "#ffffff",
     },
   },
@@ -99,11 +99,21 @@ module.exports = config({
           {
             src: "/assets/icon/chrome-192.png",
             sizes: "192x192",
-            purpose: "maskable",
             type: "image/png",
           },
           {
             src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-mask-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",

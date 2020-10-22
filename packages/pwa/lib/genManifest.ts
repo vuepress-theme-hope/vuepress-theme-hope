@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { resolve } from "path";
 import chalk = require("chalk");
 import fs = require("fs-extra");
@@ -25,20 +26,20 @@ export const genManifest = async (
   const finalManifest: ManifestOption = {
     name:
       siteConfig.title || (themeConfig.title as string | undefined) || "Site",
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     short_name:
       siteConfig.title || (themeConfig.title as string | undefined) || "Site",
     description:
       siteConfig.description || "A site built with vuepress-theme-hope",
     lang: options.baseLang || themeConfig.baseLang || "en-US",
     orientation: "portrait-primary",
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     start_url: context.base,
     scope: context.base,
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    background_color: "#ffffff",
-    // eslint-disable-next-line @typescript-eslint/naming-convention
+
+    display: "standalone",
     theme_color: "#46bd87",
+    background_color: "#ffffff",
+    prefer_related_applications: false,
+
     ...userManifest,
     ...optionManifest,
   };
