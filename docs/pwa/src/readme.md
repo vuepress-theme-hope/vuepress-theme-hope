@@ -27,14 +27,27 @@ yarn add -D @mr-hope/vuepress-plugin-pwa
 
 ### Usage
 
-```js {3-7}
+```js
+const { head } = require("@mr-hope/vuepress-plugin-pwa");
+
+const pwaOptions = {
+  // your options
+};
+
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/pwa",
-    {
-      // your options
-    },
-  ],
+  head: head(pwaOptions, [
+    /*
+     * your original head
+     * omit this param if you don’t have any config
+     */
+  ]),
+  plugin: [["@mr-hope/pwa", pwaOptions]],
 };
 ```
+
+::: tip
+The reason you should use `head` function is that plugin cannot insert head tags to the output HTML.
+
+The function will inject some PWA related tags to the `<head>` tag part of output site html files.
+:::

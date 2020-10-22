@@ -136,20 +136,141 @@ Whether to prohibit selected text
 
 ## pwa <MyBadge text="Enabled by default" />
 
-PWA setting options，no configuration is needed by default.
+Progressive Web App support
 
 > If you don’t need this feature, please set to `false`.
+>
+> For more detail, see [pwa plugin documatation][pwa-config]
 
-### pwa.popupComponent
+### pwa.manifest
+
+- Type: `ManifestOption`
+- Required: No
+
+You can fill with an object which will be parsed to manifest.webmanifest.
+
+::: tip
+Some options have their fallback if you donot set them.
+
+- name: `siteConfig.title` || `themeConfig.title` || `'Site'`
+- short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
+- description: `siteConfig.description` || `themeConfig.description` || `'A site built with vuepress-theme-hope'`
+- lang: `options.baseLang` || `themeConfig.baseLang` || `"en-US"`
+- start_url: `context.base`
+- scope: `context.base`
+
+- display: `"standalone"`
+- theme_color: `"#46bd87"`
+- background_color: `'#ffffff'`
+- orientation: `'portrait-primary'`
+- prefer_related_applications: `false`
+
+:::
+
+### pwa.favicon
 
 - Type: `string`
 - Required: No
 
-A custom component to replace the default popup component.
+Path of favico.ico with absolute path.(We recommand you to set it for your site)
 
-### pwa.gerateSWConfig
+### pwa.themeColor
 
-Workbox-build’s [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+- 类型: `string`
+- 默认值: `"#46bd87"`
+
+Theme Color
+
+### pwa.cacheHTML
+
+- Type: `boolean`
+- Default: `true`
+
+Whether cache HTML files besides home page and 404 page.
+
+::: tip
+This option is useful if your site is too large when containing HTML files.
+:::
+
+### pwa.cachePic
+
+- Type: `boolean`
+- Default: `false`
+
+Whether cache pictures
+
+### pwa.cacheMaxSize
+
+- Type: `number`
+- Default: `1024`
+
+Max size which allows to cache, with KB unit
+
+### pwa.apple
+
+Special settings for Apple
+
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want to be compatible with apple, please set it to `false`.
+
+#### pwa.apple.icon
+
+- Type: `string`
+- Required: No
+
+Fill in the icon address used by Apple, the recommended size is 152×152
+
+#### pwa.apple.statusBarColor
+
+- Type: `"black" | "white"`
+- Default: `"black"`
+
+Apple's status bar color
+
+#### pwa.apple.maskIcon
+
+- Type: `string`
+- Required: No
+
+Safari mask icon
+
+### pwa.msTile
+
+Special settings for Microsoft tiles
+
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want to be compatible with windows, please set it to `false`.
+
+#### pwa.msTile.image
+
+- Type: `string`
+- Required: No
+
+Tile icon
+
+### pwa.msTile.color
+
+- Type: `string`
+- Default value: `themeColor`
+
+The tile color will automatically fall back to themeColor if you don’t set it.
+
+### pwa.popupComponent
+
+- Type: `string`
+- Default: `'SWUpdatePopup'`
+
+You can fill in the custom pop-up component path.
+
+### pwa.generateSwConfig
+
+Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
+
+::: tip
+We will precache all site related files `**/*.{js,css,svg}` and font files `**/*.{woff,woff2,eot,ttf,otf}` for you.
+
+If you set `cachePic` to `true`, we will also precache `**/*.{png,jpg,jpeg,gif,webp}` files for you.
+
+All the files larger than `cacheMaxSize` will be dropped.
+:::
 
 ## seo <MyBadge text="Enabled by default" />
 
@@ -205,5 +326,6 @@ Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`
 [md-enhance-config]: https://vuepress-md-enhance.mrhope.site/config/
 [copy-code]: https://vuepress-copy-code.mrhope.site
 [photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/config/
+[pwa-config]: https://vuepress-pwa.mrhope.site/config/
 [seo-config]: https://vuepress-seo.mrhope.site/config/
 [sitemap-config]: https://vuepress-sitemap.mrhope.site/config/

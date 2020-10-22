@@ -1,9 +1,53 @@
 import { Langs } from "@mr-hope/vuepress-shared-utils";
+import { HeadItem } from "@mr-hope/vuepress-types";
 import WorkboxBuild from "workbox-build";
-import "./declare";
 import { ManifestOption } from "./manifest";
 
+import "./declare";
+
 export * from "./manifest";
+
+interface ApplePWAOptions {
+  /**
+   * 苹果上使用的图标路径
+   *
+   * 推荐 152×152 大小
+   *
+   * path of icon used on apple
+   *
+   * Recommand 152×152 size
+   */
+  icon?: string;
+  /**
+   * 状态栏的颜色
+   *
+   * Color of status bar
+   *
+   * @default 'black'
+   */
+  statusBarColor?: "black" | "white";
+  /**
+   * Safari mask icon
+   */
+  maskIcon?: string;
+}
+
+interface MicrosoftPWAOptions {
+  /**
+   * 磁贴图片
+   *
+   * tile image
+   *
+   * 144×144 transperent recommanded
+   */
+  image?: string;
+  /**
+   * 磁贴颜色
+   *
+   * tile color
+   */
+  color?: string;
+}
 
 /** PWA 配置 */
 export interface PWAOptions {
@@ -16,17 +60,31 @@ export interface PWAOptions {
    */
   baseLang?: Langs;
   /**
-   * 用于替换默认弹出组件的自定义组件。
+   * manifest 文件设置
    *
-   * A custom component to replace the default popup component.
-   *
-   * @default 'SWUpdatePopup'
-   */
-  popupComponent?: string;
-  /**
-   * manifest Config
+   * manifest file Config
    */
   manifest?: ManifestOption;
+  /**
+   * 部署站点的基础路径
+   *
+   * The base URL the site will be deployed at
+   *
+   * @default '/'
+   */
+  base?: string;
+  /**
+   * favico 地址
+   *
+   * Path of favico
+   */
+  favicon?: string;
+  /**
+   * 主题色
+   *
+   * @default "#46bd87"
+   */
+  themeColor?: string;
   /**
    * 是否缓存除主页与 404 之外的 HTML
    *
@@ -52,12 +110,34 @@ export interface PWAOptions {
    */
   cacheMaxSize?: number;
   /**
+   * 苹果设置
+   *
+   * settings for apple
+   */
+  apple?: ApplePWAOptions | false;
+  /**
+   * 微软设置
+   *
+   * Settings for Microsoft
+   */
+  msTile?: MicrosoftPWAOptions | false;
+  /**
+   * 用于替换默认弹出组件的自定义组件。
+   *
+   * A custom component to replace the default popup component.
+   *
+   * @default 'SWUpdatePopup'
+   */
+  popupComponent?: string;
+  /**
    * workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   generateSWConfig?: Partial<WorkboxBuild.Options>;
 }
+
+export const head: (options: PWAOptions, head?: HeadItem[]) => HeadItem[];
 
 declare global {
   const SW_BASE_URL: string;

@@ -13,15 +13,22 @@ export const genManifest = async (
   const { sourceDir, outDir, siteConfig, themeConfig } = context;
   const userManifestPath = resolve(
     sourceDir,
+    "./.vuepress/public/manifest.webmanifest"
+  );
+  const userManifestJSONPath = resolve(
+    sourceDir,
     "./.vuepress/public/manifest.json"
   );
+
   const optionManifest = options.manifest || {};
+
   const userManifest = JSON.parse(
     fs.existsSync(userManifestPath)
       ? await fs.readFile(userManifestPath, "utf8")
+      : fs.existsSync(userManifestJSONPath)
+      ? await fs.readFile(userManifestJSONPath, "utf8")
       : "{}"
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ) as Record<string, any>;
+  ) as ManifestOption;
 
   const finalManifest: ManifestOption = {
     name:
@@ -35,7 +42,7 @@ export const genManifest = async (
     scope: context.base,
 
     display: "standalone",
-    theme_color: "#46bd87",
+    theme_color: options.themeColor || "#46bd87",
     background_color: "#ffffff",
     orientation: "portrait-primary",
     prefer_related_applications: false,
@@ -44,13 +51,13 @@ export const genManifest = async (
     ...optionManifest,
   };
 
-  await fs.writeJSON(resolve(outDir, "./manifest.webmanifest"), finalManifest, {
+  await fs.writeJSON(resolve(outDir, "manifest.webmanifest"), finalManifest, {
     flag: "w",
   });
 
   console.log(
     chalk.blue("PWA:"),
     chalk.black.bgGreen("Success"),
-    "Generated manifest.json"
+    "Generated manifest.webmanifest"
   );
 };

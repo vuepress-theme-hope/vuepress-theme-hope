@@ -579,33 +579,10 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   editLinks: boolean;
 }
 
-/** 头部选项配置 */
-export type HopeHeadOptionConfig = Partial<{
-  /** 网站的图标 */
-  icon: string;
-  /** PWA 设置 */
-  pwa: Partial<{
-    /** manifest 文件的路径 */
-    manifest: string;
-    /** 主题色 */
-    themeColor: string;
-    /** 苹果导航栏颜色 */
-    appleStatusBarColor: "black" | "white";
-    /** 苹果的图标 */
-    appleIcon: string;
-    /** 微软磁贴图片 */
-    msTileImage: string;
-    /** 微软磁贴颜色 */
-    msTileColor: string;
-  }>;
-}>;
-
 /** vuepress-theme-hope 项目配置 */
 export interface HopeVuepressConfig extends SiteConfig {
   /** 自定义主题的配置 */
   themeConfig: HopeThemeConfig;
-  /** 构建头部选项 */
-  headOption?: HopeHeadOptionConfig;
 }
 
 /** 处理过的 vuepress-theme-hope 项目配置 */
@@ -614,6 +591,4 @@ export interface ResolvedHopeVuepressConfig extends HopeVuepressConfig {
   theme: "hope";
   /** 自定义主题的配置 */
   themeConfig: ResolvedHopeThemeConfig;
-  /** 构建头部选项 */
-  headOption?: HopeHeadOptionConfig;
 }

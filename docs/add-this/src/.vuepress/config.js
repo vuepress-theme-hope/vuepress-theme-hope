@@ -4,18 +4,6 @@ module.exports = config({
   title: "Share Plugin",
   description: "Share Plugin provided by AddThis",
 
-  headOption: {
-    icon: "/favicon.ico",
-    pwa: {
-      manifest: "/manifest.webmanifest",
-      themeColor: "#46bd87",
-      appleStatusBarColor: "black",
-      appleIcon: "/assets/icon/apple-icon-152.png",
-      msTileImage: "/assets/icon/ms-icon-144.png",
-      msTileColor: "#ffffff",
-    },
-  },
-
   dest: "./dist",
 
   locales: {
@@ -79,7 +67,17 @@ module.exports = config({
     },
 
     pwa: {
+      favicon: "/favicon.ico",
+      themeColor: "#46bd87",
       cachePic: true,
+      apple: {
+        icon: "/assets/icon/apple-icon-152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/ms-icon-144.png",
+        color: "#ffffff",
+      },
       manifest: {
         name: "vuepress-plugin-add-this",
         short_name: "add-this plugin",

@@ -9,7 +9,7 @@
     <div class="pswp__scroll-wrap">
       <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
       <div class="pswp__container">
-        <!-- don't modify these 3 pswp__item elements, data is added later on -->
+        <!-- don’t modify these 3 pswp__item elements, data is added later on -->
         <div class="pswp__item" />
         <div class="pswp__item" />
         <div class="pswp__item" />

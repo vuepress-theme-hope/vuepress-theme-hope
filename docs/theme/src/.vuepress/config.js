@@ -6,18 +6,6 @@ module.exports = config({
   title: "vuepress-theme-hope",
   description: "A vuepress theme with tons of features✨",
 
-  headOption: {
-    icon: "/favicon.ico",
-    pwa: {
-      manifest: "/manifest.webmanifest",
-      themeColor: "#46bd87",
-      appleStatusBarColor: "black",
-      appleIcon: "/assets/icon/apple-icon-152.png",
-      msTileImage: "/assets/icon/ms-icon-144.png",
-      msTileColor: "#ffffff",
-    },
-  },
-
   dest: "./dist",
 
   extraWatchFiles: [".vuepress/navBar.js", ".vuepress/sideBar.js"],
@@ -57,9 +45,18 @@ module.exports = config({
       display: true,
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
-
     pwa: {
+      favicon: "/favicon.ico",
+      themeColor: "#46bd87",
       cachePic: true,
+      apple: {
+        icon: "/assets/icon/apple-icon-152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/ms-icon-144.png",
+        color: "#ffffff",
+      },
       manifest: {
         icons: [
           {

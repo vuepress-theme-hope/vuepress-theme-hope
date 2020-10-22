@@ -4,18 +4,6 @@ module.exports = config({
   title: "Last Update Time",
   description: "Last update time getter for vuepress",
 
-  headOption: {
-    icon: "/favicon.ico",
-    pwa: {
-      manifest: "/manifest.webmanifest",
-      themeColor: "#46bd87",
-      appleStatusBarColor: "black",
-      appleIcon: "/assets/icon/apple-icon-152.png",
-      msTileImage: "/assets/icon/ms-icon-144.png",
-      msTileColor: "#ffffff",
-    },
-  },
-
   dest: "./dist",
 
   locales: {
@@ -51,9 +39,18 @@ module.exports = config({
       appId: "JGjyHWyyPdU3wFBkM6P1xd51-gzGzoHsz",
       appKey: "dGFcnYzBWRWO5SIRiW2Q9grW",
     },
-
     pwa: {
+      favicon: "/favicon.ico",
+      themeColor: "#46bd87",
       cachePic: true,
+      apple: {
+        icon: "/assets/icon/apple-icon-152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/ms-icon-144.png",
+        color: "#ffffff",
+      },
       manifest: {
         name: "@mr-hope/vuepress-plugin-last-update",
         short_name: "last-update plugin",

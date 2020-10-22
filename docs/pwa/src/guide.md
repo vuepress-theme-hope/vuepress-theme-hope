@@ -9,9 +9,11 @@ After the Service worker obtains the content update, a popup will be displayed i
 
 The default language of the popup will automatically be set to `baseLang` configured in `themeConfig`.
 
-## Manifest
+## PWA
 
-A manifest.json will be auto generated in dist folder. If you have a manifest.json in `.vuepress/public`, the plugin will read and merge it in the final manifest.
+### Manifest
+
+A `manifest.webmanifest` will be auto generated in dist folder. If you have a manifest.webmanifest or manifest.json in `.vuepress/public`, the plugin will read and merge it in the final manifest.
 
 To let your site be able to register as Web App, you should set icons in `themeConfig.pwa.manifest.icons`.
 
@@ -20,6 +22,29 @@ You can also set other options in `themeConfig.pwa.manifest`.
 ::: info More
 For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 :::
+
+### Head Tags Inject
+
+You need to use the built-in head function to automatically inject the head tag into the `<head>` of your site to be able to register and display well on all devices. The first parameter of the head function is the plugin option, and the second parameter is the optional original head array.
+
+```js
+const { head } = require("@mr-hope/vuepress-plugin-pwa");
+
+const pwaOptions = {
+  // your options
+};
+
+// .vuepress/config.js
+module.exports = {
+  head: head(pwaOptions, [
+    /*
+     * your original head
+     * omit this param if you don’t have any config
+     */
+  ]),
+  plugin: [["@mr-hope/pwa", pwaOptions]],
+};
+```
 
 ## Cache Size
 

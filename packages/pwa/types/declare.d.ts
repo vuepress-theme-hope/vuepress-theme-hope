@@ -102,11 +102,11 @@ declare module "workbox-build" {
        */
       mode?: string;
       /**
-       * A mapping of prefixes that, if present in an entry in the precache manifest, will be replaced with the corresponding value. This can be used to, for example, remove or add a path prefix from a manifest entry if your web hosting setup doesn't match your local filesystem setup. As an alternative with more flexibility, you can use the manifestTransforms option and provide a function that modifies the entries in the manifest using whatever logic you provide.
+       * A mapping of prefixes that, if present in an entry in the precache manifest, will be replaced with the corresponding value. This can be used to, for example, remove or add a path prefix from a manifest entry if your web hosting setup doesn’t match your local filesystem setup. As an alternative with more flexibility, you can use the manifestTransforms option and provide a function that modifies the entries in the manifest using whatever logic you provide.
        */
       modifyURLPrefix?: Record<string, string>;
       /**
-       * If specified, all navigation requests for URLs that aren't precached will be fulfilled with the HTML at the URL provided. You must pass in the URL of an HTML document that is listed in your precache manifest. This is meant to be used in a Single Page App scenario, in which you want all navigations to use common App Shell HTML.
+       * If specified, all navigation requests for URLs that aren’t precached will be fulfilled with the HTML at the URL provided. You must pass in the URL of an HTML document that is listed in your precache manifest. This is meant to be used in a Single Page App scenario, in which you want all navigations to use common App Shell HTML.
        */
       navigateFallback?: string;
       /**

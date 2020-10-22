@@ -60,7 +60,7 @@ const presentation = (
         break;
 
       if (
-        // didn't find the closing fence
+        // didn’t find the closing fence
         closeChar === state.src.charCodeAt(start) &&
         // closing fence should not be indented with respect of opening fence
         state.sCount[nextLine] <= state.sCount[startLine]

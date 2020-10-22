@@ -13,7 +13,7 @@ const subscript = (state: StateInline, silent?: boolean): boolean => {
 
   if (state.src.charCodeAt(start) !== 0x7e /* ~ */) return false;
 
-  if (silent) return false; // don't run any pairs in validation mode
+  if (silent) return false; // don’t run any pairs in validation mode
   if (start + 2 >= max) return false;
 
   state.pos = start + 1;
@@ -35,7 +35,7 @@ const subscript = (state: StateInline, silent?: boolean): boolean => {
 
   const content = state.src.slice(start + 1, state.pos);
 
-  // don't allow unescaped spaces/newlines inside
+  // don’t allow unescaped spaces/newlines inside
   if (/(^|[^\\])(\\\\)*\s/u.exec(content)) {
     state.pos = start;
 

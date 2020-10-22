@@ -4,18 +4,6 @@ module.exports = config({
   title: "Quick Code Copy",
   description: "Quick Code Copy Plugin for vuepress",
 
-  headOption: {
-    icon: "/favicon.ico",
-    pwa: {
-      manifest: "/manifest.webmanifest",
-      themeColor: "#46bd87",
-      appleStatusBarColor: "black",
-      appleIcon: "/assets/icon/apple-icon-152.png",
-      msTileImage: "/assets/icon/ms-icon-144.png",
-      msTileColor: "#ffffff",
-    },
-  },
-
   dest: "./dist",
 
   locales: {
@@ -79,9 +67,18 @@ module.exports = config({
         ],
       },
     },
-
     pwa: {
+      favicon: "/favicon.ico",
+      themeColor: "#46bd87",
       cachePic: true,
+      apple: {
+        icon: "/assets/icon/apple-icon-152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/ms-icon-144.png",
+        color: "#ffffff",
+      },
       manifest: {
         name: "@mr-hope/vuepress-plugin-copy-code",
         short_name: "copy-code plugin",

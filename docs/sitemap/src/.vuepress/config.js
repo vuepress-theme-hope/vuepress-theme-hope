@@ -4,18 +4,6 @@ module.exports = config({
   title: "Sitemap Generator",
   description: "Generate Sitemap for your site",
 
-  headOption: {
-    icon: "/favicon.ico",
-    pwa: {
-      manifest: "/manifest.webmanifest",
-      themeColor: "#46bd87",
-      appleStatusBarColor: "black",
-      appleIcon: "/assets/icon/apple-icon-152.png",
-      msTileImage: "/assets/icon/ms-icon-144.png",
-      msTileColor: "#ffffff",
-    },
-  },
-
   dest: "./dist",
 
   locales: {
@@ -41,9 +29,18 @@ module.exports = config({
     mdEnhance: {
       enableAll: true,
     },
-
     pwa: {
+      favicon: "/favicon.ico",
+      themeColor: "#46bd87",
       cachePic: true,
+      apple: {
+        icon: "/assets/icon/apple-icon-152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/ms-icon-144.png",
+        color: "#ffffff",
+      },
       manifest: {
         name: "@mr-hope/vuepress-plugin-sitemap",
         short_name: "sitemap plugin",

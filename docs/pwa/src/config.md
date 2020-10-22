@@ -10,19 +10,12 @@ icon: configuration
 
 The language of the home directory.
 
-## popupComponent
-
-- Type: `string`
-- Default: `'SWUpdatePopup'`
-
-You can fill in the custom pop-up component path.
-
 ## manifest
 
 - Type: `ManifestOption`
 - Required: No
 
-You can fill with an object which will be parsed to manifest.json.
+You can fill with an object which will be parsed to manifest.webmanifest.
 
 ::: tip
 Some options have their fallback if you donot set them.
@@ -41,6 +34,33 @@ Some options have their fallback if you donot set them.
 - prefer_related_applications: `false`
 
 :::
+
+::: info More
+For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
+:::
+
+## base
+
+- Type: `string`
+- Default: `'/'`
+
+The base URL the site will be deployed at.
+
+You should set this option if you are deploying to a subfolder of a site, to ensure you have the right manifest link.
+
+## favicon
+
+- Type: `string`
+- Required: No
+
+Path of favico.ico with absolute path.(We recommand you to set it for your site)
+
+## themeColor
+
+- 类型: `string`
+- 默认值: `"#46bd87"`
+
+Theme Color
 
 ## cacheHTML
 
@@ -66,6 +86,60 @@ Whether cache pictures
 - Default: `1024`
 
 Max size which allows to cache, with KB unit
+
+## apple
+
+Special settings for Apple
+
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want to be compatible with apple, please set it to `false`.
+
+### apple.icon
+
+- Type: `string`
+- Required: No
+
+Fill in the icon address used by Apple, the recommended size is 152×152
+
+### apple.statusBarColor
+
+- Type: `"black" | "white"`
+- Default: `"black"`
+
+Apple's status bar color
+
+### apple.maskIcon
+
+- Type: `string`
+- Required: No
+
+Safari mask icon
+
+## msTile
+
+Special settings for Microsoft tiles
+
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want to be compatible with windows, please set it to `false`.
+
+### msTile.image
+
+- Type: `string`
+- Required: No
+
+Tile icon
+
+### msTile.color
+
+- Type: `string`
+- Default value: `themeColor`
+
+The tile color will automatically fall back to themeColor if you don’t set it.
+
+## popupComponent
+
+- Type: `string`
+- Default: `'SWUpdatePopup'`
+
+You can fill in the custom pop-up component path.
 
 ## generateSwConfig
 

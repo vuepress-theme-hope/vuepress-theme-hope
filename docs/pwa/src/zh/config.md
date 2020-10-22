@@ -10,19 +10,12 @@ icon: configuration
 
 主目录所对应的语言。
 
-## popupComponent
-
-- 类型: `string`
-- 默认值: `'SWUpdatePopup'`
-
-可填入自定义的弹窗组件路径。
-
 ## manifest
 
 - 类型: `ManifestOption`
 - 必填: 否
 
-您可以填充一个将被解析为 manifest.json 的对象。
+您可以填充一个将被解析为 manifest.webmanifest 的对象。
 
 ::: tip
 如果您未设置某些选项，则这些选项会回退到插件预设值。
@@ -41,6 +34,33 @@ icon: configuration
 - prefer_related_applications: `false`
 
 :::
+
+::: info 更多
+更多内容，请详见 [W3C Manifest](https://w3c.github.io/manifest/)
+:::
+
+## base
+
+- 类型: `string`
+- 默认值: `"/"`
+
+部署站点的基础路径
+
+如果你部署到站点内的某个目录，你应当提供正确的 base，以生成正确的 manifest 链接。
+
+## favicon
+
+- 类型: `string`
+- 必填: 否
+
+favicon 地址，填入绝对路径。(建议为你的站点生成 favicon)
+
+## themeColor
+
+- 类型: `string`
+- 默认值: `"#46bd87"`
+
+主题色
 
 ## cacheHTML
 
@@ -66,6 +86,60 @@ icon: configuration
 - 默认值: `1024`
 
 允许缓存的最大大小 (以 KB 为单位)
+
+## apple
+
+针对苹果的特殊设置
+
+> 如果你不想进行精细的设置，可以忽略它；如果你不想兼容 apple，请设置为 `false`。
+
+### apple.icon
+
+- 类型: `string`
+- 必填: 否
+
+填入苹果使用的图标地址，推荐 152×152 大小
+
+### apple.statusBarColor
+
+- 类型: `"black" | "white"`
+- 默认: `"black"`
+
+苹果的状态栏颜色
+
+### apple.maskIcon
+
+- 类型: `string`
+- 必填: 否
+
+Safari 图标
+
+## msTile
+
+针对微软磁贴的特殊设置
+
+> 如果你不想进行精细的设置，可以忽略它；如果你不想兼容 windows，请设置为 `false`。
+
+### msTile.image
+
+- 类型: `string`
+- 必填: 否
+
+磁贴图标
+
+### msTile.color
+
+- 类型: `string`
+- 默认值: `themeColor`
+
+磁贴颜色，缺省会自动回退到主题色。
+
+## popupComponent
+
+- 类型: `string`
+- 默认值: `'SWUpdatePopup'`
+
+可填入自定义的弹窗组件路径。
 
 ## generateSwConfig
 

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { resolve } from "path";
+import { head } from "./head";
 import { genManifest } from "./genManifest";
 import chalk = require("chalk");
 import fs = require("fs-extra");
@@ -9,7 +10,7 @@ import WorkboxBuild = require("workbox-build");
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { PWAOptions } from "../types";
 
-export = (options: PWAOptions, context: Context): PluginOptionAPI => {
+const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
   const { base, outDir, themeConfig, siteConfig } = context;
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = i18n.lang2path(baseLang);
@@ -94,3 +95,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
   return config;
 };
+
+pwaPlugin.head = head;
+
+export = pwaPlugin;

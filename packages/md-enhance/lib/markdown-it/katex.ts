@@ -20,7 +20,7 @@ const isValidDelim = (
 
   /*
    * Check non-whitespace conditions for opening and closing, and
-   * check that closing delimeter isn't followed by a number
+   * check that closing delimeter isn’t followed by a number
    */
   if (
     prevChar === 0x20 /* " " */ ||

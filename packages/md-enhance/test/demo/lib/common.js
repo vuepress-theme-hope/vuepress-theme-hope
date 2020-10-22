@@ -13,7 +13,7 @@ module.exports = (code, name, markup) => (state, silent) => {
 
   if (state.src.charCodeAt(start) !== code) return false;
 
-  if (silent) return false; // don't run any pairs in validation mode
+  if (silent) return false; // don’t run any pairs in validation mode
   if (start + 2 >= max) return false;
 
   state.pos = start + 1;
@@ -35,7 +35,7 @@ module.exports = (code, name, markup) => (state, silent) => {
 
   const content = state.src.slice(start + 1, state.pos);
 
-  // don't allow unescaped spaces/newlines inside
+  // don’t allow unescaped spaces/newlines inside
   if (content.match(/(^|[^\\])(\\\\)*\s/u)) {
     state.pos = start;
 

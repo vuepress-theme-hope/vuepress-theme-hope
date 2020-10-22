@@ -32,7 +32,7 @@ export const path2lang = (path: string): Langs => {
     return path2langConfig[path as LangPaths];
 
   console.error(
-    `${path} isn't assign with a lang, and will return 'en-US' instead.
+    `${path} isn’t assign with a lang, and will return 'en-US' instead.
 You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts`
   );
 
