@@ -58,7 +58,7 @@ You can also configure your social media links in the format of `<social media n
 
 If you are not satisfied with the prompt text on the top of the timeline page, you can use `themeConfig.blog.timeline` to customize one.
 
-## available parameters in frontmatter
+## Available parameters in frontmatter
 
 ### hero
 
@@ -91,7 +91,7 @@ CSS style for home icon
 
 `ProjectOption` including this keys:
 
-- `type`: type of the project, you can choose from `'link' | 'project' | 'book' | 'article'`
+- `type`: the project type, you can choose from `'link' | 'project' | 'book' | 'article'`
 - `name`: required, project name
 - `link`: required, project link, fill in an external path or absolute path
 - `desc`: project description

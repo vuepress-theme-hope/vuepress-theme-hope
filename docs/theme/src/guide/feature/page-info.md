@@ -56,7 +56,7 @@ You can configure `author` in the plugin options to set the default author. And 
 
 - **time**
 
-It is recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
+We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
 E.g.:
 

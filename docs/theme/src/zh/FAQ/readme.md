@@ -47,7 +47,7 @@ category: FAQ
 
 这个问题一般是你的项目中没有 TypeScript 文件 (或你的 tsconfig.json 配置有误) 导致的。
 
-ts-loader 要求 tsconfig.json 的 include 和 exclude 配置项包含项目内至少一个 ts 文件。
+`ts-loader` 要求 tsconfig.json 的 include 和 exclude 配置项包含项目内至少一个 ts 文件。
 
 如果你的项目没有 ts 文件，为了规避这个问题，你可以在你的项目的任意地方创建一个空的 ts 文件并把它添加至 tsconfig.json 的 include 中。
 

@@ -112,7 +112,7 @@ You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy
 
 ### Custom Style Variables
 
-With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the Variables of Vssue Style easily.
+With the power of [palette.styl](https://vuepress.vuejs.org/config/#palette-styl) of VuePress, you can set the Variables of Vssue Style.
 
 There are some predefined [Stylus variables](http://stylus-lang.com/docs/variables.html) of Vssue, and you can check them in `vssue/src/styles/_variables.styl`:
 
@@ -158,7 +158,7 @@ $vssue-border-color ?= $borderColor
 $vssue-breakpoint-mobile ?= $MQMobile
 ```
 
-To override them, just set them in your `palette.styl`:
+To override them, set them in your `palette.styl`:
 
 ```stylus
 // .vuepress/styles/palette.styl

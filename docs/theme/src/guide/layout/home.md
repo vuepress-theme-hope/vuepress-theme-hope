@@ -29,7 +29,7 @@ Enable homepage style when set to `true`
 - Type: `string | false`
 - Default: `'Hello'`
 
-Title, won’t display if it is set to `false`
+Title, won’t display when set to `false`
 
 ### heroImage
 

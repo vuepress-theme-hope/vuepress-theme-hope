@@ -110,7 +110,7 @@ In codes above, two spaces are behind `at`.
 
       New paragraph
 
-- Very easy!
+- It’s easy!
 
 ```md
 - Create a list by starting a line with `-`

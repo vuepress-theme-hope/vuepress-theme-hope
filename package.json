@@ -81,7 +81,7 @@
     }
   },
   "devDependencies": {
-    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.7",
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.7",
     "@types/chai": "4.2.14",
     "@types/mocha": "8.0.3",
     "@typescript-eslint/eslint-plugin": "4.5.0",
@@ -95,7 +95,7 @@
     "cz-conventional-changelog": "3.3.0",
     "del": "6.0.0",
     "eslint": "7.11.0",
-    "eslint-config-prettier": "6.13.0",
+    "eslint-config-prettier": "6.14.0",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-vue": "7.1.0",
     "husky": "4.3.0",
@@ -112,10 +112,10 @@
     "remark-preset-lint-consistent": "4.0.0",
     "remark-preset-lint-recommended": "5.0.0",
     "sort-package-json": "1.46.0",
-    "textlint": "^11.7.6",
-    "textlint-filter-rule-allowlist": "^2.0.1",
+    "textlint": "11.7.6",
+    "textlint-filter-rule-allowlist": "2.0.1",
     "textlint-filter-rule-comments": "1.2.2",
-    "textlint-plugin-latex2e": "^1.0.0",
+    "textlint-plugin-latex2e": "1.0.0",
     "textlint-rule-apostrophe": "2.0.0",
     "textlint-rule-common-misspellings": "1.0.1",
     "textlint-rule-en-capitalization": "2.0.2",
@@ -127,7 +127,7 @@
     "typescript": "4.0.3",
     "vue-template-compiler": "2.6.12",
     "webpack": "4.44.2",
-    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-bundle-analyzer": "3.9.0",
     "webpack-chain": "6.5.1",
     "webpack-dev-server": "3.11.0"
   }

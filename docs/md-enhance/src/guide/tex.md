@@ -125,7 +125,7 @@ $\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idots
 $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 ```
 
-### symbol
+### Symbol
 
 - English letters can be entered directly
 
@@ -155,7 +155,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 - Superscript, use `^` to achieve
 - Subscript, use `_` to achieve
-- By default, superscript and subscript only apply to the next character. To work with several consecutive characters, please enclose these characters in curly brackets `{}`.
+- By default, superscript and subscript only apply to the next character. To work with mutiple consecutive characters, please enclose these characters in curly brackets `{}`.
 
 #### Case
 

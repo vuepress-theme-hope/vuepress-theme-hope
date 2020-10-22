@@ -8,7 +8,7 @@ tags:
 
 # Custom alignment
 
-By injecting additional configuration into vuepress-plugin-container, you can use
+By injecting configuration into vuepress-plugin-container, you can use
 
 ```md
 ::: center
@@ -85,23 +85,23 @@ Details container
 :::
 
 ::: info custom title
-Information container
+A custom information container
 :::
 
 ::: tip custom title
-Tip container
+A custom tip container
 :::
 
 ::: warning custom title
-Warning container
+A custom warning container
 :::
 
 ::: danger custom Title
-Dangerous container
+A custom danger container
 :::
 
 ::: details custom title
-Details container
+A custom details container
 :::
 
 ```md
@@ -126,22 +126,22 @@ Details container
 :::
 
 ::: info custom title
-Information container
+A custom information container
 :::
 
 ::: tip custom title
-Tip container
+A custom tip container
 :::
 
 ::: warning custom title
-Warning container
+A custom warning container
 :::
 
 ::: danger custom Title
-Dangerous container
+A custom danger container
 :::
 
 ::: details custom title
-Details container
+A custom details container
 :::
 ```

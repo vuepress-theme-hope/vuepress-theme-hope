@@ -8,7 +8,7 @@ tags:
   - config
 ---
 
-`vuepress-theme-hope` brings you many VuePress plugins. Some plugins are automatically enabled. If you don’t need them, you can disable them in themeConfig; some plugins will only be enabled if you configure them.
+`vuepress-theme-hope` brings you some VuePress plugins. Some plugins are automatically enabled. If you don’t need them, you can disable them in themeConfig; some plugins will only be enabled if you configure them.
 
 <!-- more -->
 
@@ -40,7 +40,7 @@ tags:
 
 - [vuepress-plugin-container](container.md): custom container
 
-- [vuepress-plugin-copyright](copyright.md): Provide additional copyright information when the content of the site is copied
+- [vuepress-plugin-copyright](copyright.md): Provide copyright information when the content of the site is copied
 
 - [vuepress-plugin-typescript](../../guide/feature/typescript.md): Provide TypeScript support
 

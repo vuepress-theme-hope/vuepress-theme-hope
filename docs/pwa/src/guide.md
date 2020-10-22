@@ -5,7 +5,7 @@ icon: creativefill
 
 ## Content Cache and update
 
-After the Service worker successfully obtains the content update, a popup will be displayed in the bottom right corner, prompting the user that new content is available and allowing the user to trigger the update.
+After the Service worker obtains the content update, a popup will be displayed in the bottom right corner, prompting the user that new content is available and allowing the user to trigger the update.
 
 The default language of the popup will automatically be set to `baseLang` configured in `themeConfig`.
 
@@ -13,7 +13,7 @@ The default language of the popup will automatically be set to `baseLang` config
 
 A manifest.json will be auto generated in dist folder. If you have a manifest.json in `.vuepress/public`, the plugin will read and merge it in the final manifest.
 
-In order to let your site be able to register as Web App, you should set icons in `themeConfig.pwa.manifest.icons`.
+To let your site be able to register as Web App, you should set icons in `themeConfig.pwa.manifest.icons`.
 
 You can also set other options in `themeConfig.pwa.manifest`.
 

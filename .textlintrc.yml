@@ -5,9 +5,10 @@ rules:
 
   common-misspellings: true
 
-  # en-capitalization:
-  #   allowHeading: false
-  #   allowLists: true
+  en-capitalization:
+    allowHeading: false
+    allowLists: false
+    severity: warning
 
   stop-words:
     severity: warning

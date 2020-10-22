@@ -27,7 +27,7 @@ icon: Home
 
 The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig.
 
-Without any additional configuration, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
+Without any configuration, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
 You can also control the icon display of the path navigation <MyBadge text="Support page config" />, the configuration item is `breadcrumbIcon`.
 
@@ -87,7 +87,7 @@ You can also configure the `footer`, `copyrightText` and `medialink` fields in t
 
   If you fill in a string, it will be inserted into footer by `v-html`, so you can fill in HTMLString.
 
-- The `copyrightText` field can be filled with copyright information on this page,(also support HTMLString). It is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
+- The `copyrightText` field can be filled with copyright information on this page,(also support HTMLString), which is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
 
 - The `medialink` field is the same as `themeConfig.blog.links` ([specific configuration see here](./blog.md#configurable-items)), you can configure it in a specific page to display different social media links. You can also set it to `false` to hide it.
 

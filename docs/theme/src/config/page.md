@@ -59,7 +59,7 @@ Whether the current article is original.
 Set the writing time of the current page
 
 ::: warning
-Although this theme and other plugins of Mister-Hope will correctly parse the time you enter, such as `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD`, etc. The plugin may not be able to read them correctly. Using values in non-standard formats may cause other plugins reporting errors,
+Although this theme and other plugins of Mister-Hope will parse the time you enter, such as `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD`, etc. other plugin may not be able to read them. Using values in non-standard formats may cause other plugins reporting errors,
 :::
 
 ### category

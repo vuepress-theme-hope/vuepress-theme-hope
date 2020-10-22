@@ -140,7 +140,7 @@ module.exports = {
 
 ### Built-in Search
 
-You can disable the built-in search box with `themeConfig.search: false`, and customize how many suggestions will be shown with `themeConfig.searchMaxSuggestions`:
+You can disable the built-in search box with `themeConfig.search: false`, and customize the number of suggestions will be shown with `themeConfig.searchMaxSuggestions`:
 
 ```js
 module.exports = {

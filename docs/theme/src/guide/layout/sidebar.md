@@ -63,7 +63,7 @@ module.exports = {
 
 ### Sidebar Groups
 
-You can divide sidebar links into several groups by using objects. You can use `prefix` to add a default path prefix to each link in the group, and `icon` to add an icon to the group text.
+You can divide sidebar links into mutiple groups by using objects. You can use `prefix` to add a default path prefix to each link in the group, and `icon` to add an icon to the group text.
 
 ```js
 // .vuepress/config.js

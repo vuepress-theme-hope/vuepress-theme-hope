@@ -38,7 +38,7 @@ Use `Ctrl + C` to stop local dev process.
 
 ## Build project
 
-Generate the files that will eventually be deployed to the server.
+Generate the files that will be deployed to the server.
 
 ```bash
 npm run build

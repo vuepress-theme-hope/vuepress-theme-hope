@@ -14,7 +14,7 @@ By injecting, vuepress-theme-hope changes the default values of some configurati
 
 Although in general, they have little effect, but they may led to a result that does not match the default document expectations.
 
-All the configuration items changes are carefully listed below the documentation.
+All the configuration items changes are listed below the documentation.
 :::
 
 ## logo <MyBadge text="improved" type="warn" />
@@ -99,7 +99,7 @@ Project repository address
 - Type: `string`
 - Required: No
 
-Repository label text, will automatically try to parse the `repo` option, try to derive `'GitHub'` `'GitLab'` `'Bitbucket'`, if it is not recognized, it will be displayed as `'Source'`
+Repository label text, will automatically try to parse the `repo` option, try to derive `'GitHub'` `'GitLab'` `'Bitbucket'`, if the repo link is not recognized, it will be displayed as `'Source'`
 
 ## docsRepo
 

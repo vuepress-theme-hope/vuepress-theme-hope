@@ -149,7 +149,7 @@ PWA 设置选项，默认情况下无需任何配置。
 
 ### pwa.gerateSWConfig
 
-workbox-build 的 [generateSW 配置](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+`workbox-build` 的 [generateSW 配置](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
 
 ## seo <MyBadge text="默认启用" />
 

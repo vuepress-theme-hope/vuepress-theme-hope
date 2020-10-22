@@ -16,7 +16,7 @@ The following configuration has been added to the themeConfig field in `.vuepres
 ## Basic options
 
 ::: danger
-These options are important and require you to configure them correctly.
+These options are important and require you to configure them.
 :::
 
 ### baseLang

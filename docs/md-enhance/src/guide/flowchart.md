@@ -2,7 +2,7 @@
 icon: flowchart
 ---
 
-# flowchart
+# Flowchart
 
 Let the Markdown file support flow chart in your VuePress site.
 
@@ -261,7 +261,7 @@ Items in `[]` are optional.
 
 ### Directions
 
-The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used to indicate that one of the below should be used in its place.
+The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used and one of the below list should be used in its place.
 
 - `left`
 - `right`

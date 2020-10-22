@@ -28,15 +28,15 @@ Add `tags: <tag name>` to the frontmatter of the page, and the article will be a
 
 All articles will be added to the article list by default and rendered under path `/article/` .
 
-If you don’t want specific articles to be included, just set `article` to `false` in the article’s frontmatter.
+If you don’t want specific articles to be included, set `article` to `false` in the article’s frontmatter.
 
-To stick a specific article, just set `sticky` to `true` in the article’s frontmatter.
+To stick a specific article, set `sticky` to `true` in the article’s frontmatter.
 
-## timeline
+## Timeline
 
 All articles with a writing date will be sorted by time in the timeline page `/timeline/`.
 
-If you don’t want an article to be included, just set `timeline` to `false` in the article’s Frontmatter.
+If you don’t want an article to be included, set `timeline` to `false` in the article’s Frontmatter.
 
 ::: warning
 Do not add and place the corresponding folders ("tag", "article", "timeline") in the root directory, otherwise the files may be overwritten during compilation and cause errors.

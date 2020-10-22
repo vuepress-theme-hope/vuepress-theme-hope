@@ -47,7 +47,7 @@ tags:
 
 ### Official Plugins
 
-**Maintained by [vuejs/vuepress](https://github.com/vuejs/vuepress):**
+**Maintained by [`vuejs/vuepress`](https://github.com/vuejs/vuepress):**
 
 - [@vuepress/plugin-blog](https://vuepress-plugin-blog.ulivz.com/) - Blog plugin
 - [@vuepress/plugin-active-header-links](https://v1.vuepress.vuejs.org/plugin/official/plugin-active-header-links.html) - A plugin of automatically activating sidebar links when page scrolls
@@ -61,7 +61,7 @@ tags:
 - [@vuepress/plugin-register-components](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-register-components) - A plugin for registering Vue components
 - [@vuepress/plugin-search](https://v1.vuepress.vuejs.org/plugin/official/plugin-search.html) - Headers-based search plugin
 
-**Maintained by [github.com/vuepress](https://github.com/vuepress):**
+**Maintained by [`github.com/vuepress`](https://github.com/vuepress):**
 
 - [vuepress-plugin-clean-urls](https://vuepress.github.io/plugins/clean-urls/) - :droplet: Use clean URLs in VuePress.
 - [vuepress-plugin-container](https://vuepress.github.io/plugins/container/) - :package: Use Markdown containers in VuePress.
@@ -124,7 +124,7 @@ tags:
 - [vuepress-theme-meteorlxy](https://github.com/meteorlxy/vuepress-theme-meteorlxy) - 💖 VuePress Theme - Meteorlxy
 - [vuepress-theme-macgs](https://github.com/EasyHexo/vuepress-theme-macgs) - :dizzy: A VuePress theme for [easyhexo.com](https://easyhexo.com)
 - [vuepress-theme-jupiter](https://github.com/zlliang/vuepress-theme-jupiter) - A simple theme using [Bulma-jupiter](https://github.com/zlliang/bulma-jupiter) styles, and supporting LaTeX rendering
-- [vuepress-theme-simple](https://github.com/viko16/vuepress-theme-simple) - ✏️ Very Simple Blog Theme for VuePress
+- [vuepress-theme-simple](https://github.com/viko16/vuepress-theme-simple) - ✏️ Simple Blog Theme for VuePress
 - [vuepress-theme-melody](https://github.com/Molunerfinn/vuepress-theme-melody) - A simple & beautiful blog theme for VuePress. <https://molunerfinn.com/hexo-theme-melody-doc/>
 - [vuepress-theme-api](https://github.com/sqrthree/vuepress-theme-api) - :package::memo::art: A api-friendly theme for VuePress. <https://blog.sqrtthree.com/vuepress-theme-api/>
 - [vuepress-theme-ktquez](https://github.com/ktquez/vuepress-theme-ktquez) - A blog theme for VuePress by Ktquez :metal: - <https://ktquez-play.web.app/en/>

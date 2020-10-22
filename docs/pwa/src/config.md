@@ -25,7 +25,7 @@ You can fill in the custom pop-up component path.
 You can fill with an object which will be parsed to manifest.json.
 
 ::: tip
-There are some options which will have their fallback if you donot set them.
+Some options have their fallback if you donot set them.
 
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
 - short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
@@ -47,9 +47,11 @@ There are some options which will have their fallback if you donot set them.
 - Type: `boolean`
 - Default: `true`
 
-Whether cache html files besides home page and 404 page.
+Whether cache HTML files besides home page and 404 page.
 
-It is useful if your site is too large when containing HTMl files.
+::: tip
+This option is useful if your site is too large when containing HTML files.
+:::
 
 ## cachePic
 

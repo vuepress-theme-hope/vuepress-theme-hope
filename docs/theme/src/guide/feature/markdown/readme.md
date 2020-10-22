@@ -61,7 +61,7 @@ This text has footnote[^first].
 
 ### Mark
 
-You can mark ==important things== .
+You can mark ==important words== .
 
 - [View Detail](mark.md)
 

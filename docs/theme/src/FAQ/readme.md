@@ -19,7 +19,7 @@ Also, make sure that your project has at least one TypeScript file included by i
 
 ### error when parsing tsconfig.json
 
-This problem is usually caused by ts-loader not finding tsconfig.json. Since the theme adds TypeScript support, you need to create a valid tsconfig.json inside your project.
+This problem is caused by ts-loader not finding tsconfig.json. Since the theme adds TypeScript support, you need to create a valid tsconfig.json inside your project.
 
 A simple tsconfig.json is as follows:
 
@@ -41,13 +41,13 @@ A simple tsconfig.json is as follows:
 
 ### Can’t find corresponding types
 
-Make sure to add `"@mr-hope/vuepress-theme-types"` to `compilerOptions.types`, because it is not in the`@ types` directory.
+Make sure to add `"@mr-hope/vuepress-theme-types"` to `compilerOptions.types`, because the package is not in the `@types` directory.
 
 ### No inputs were found in config file tsconfig.json
 
-This problem is usually caused by the absence of a TypeScript file in your project (or your tsconfig.json configuration is incorrect).
+This problem is caused by the absence of a TypeScript file in your project (or your tsconfig.json configuration is incorrect).
 
-ts-loader requires that the include and exclude configuration items of tsconfig.json include at least one ts file in the project.
+`ts-loader` requires that the include and exclude configuration items of tsconfig.json include at least one ts file in the project.
 
 If your project does not have a ts file, to avoid this problem, you can create an empty ts file anywhere in your project and add it to the include of tsconfig.json.
 

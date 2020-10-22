@@ -10,10 +10,9 @@ Markdown has a series of derivative versions that extend Markdown’s functional
 
 ## Usage
 
-Markdown’s grammar is simple and straightforward, easy to learn, and features more powerful than plain text, so many people use it to write blogs. WordPress, the world’s most popular blogging platform, and large CMSs such as Joomla and Drupal all support Markdown. The blog platforms that use the Markdown editor are Ghost and Typecho.
+Markdown’s grammar is simple and straightforward, easy to learn, and features more powerful than plain text, so people use it to write blogs. WordPress, the world’s most popular blogging platform, and large CMSs such as Joomla and Drupal all support Markdown. The blog platforms that use the Markdown editor are Ghost and Typecho.
 
-Used to write documentation and save it under the software’s directory under the filename "README.md".
-In addition, because we have a god-level editor like RStudio, we can quickly turn Markdown into a presentation PPT, Word product documentation, LaTex papers, and even a minimally usable prototype with very little code. In the field of data science, Markdown has been widely used, greatly promoting the historical process of dynamic repeatability research.
+Used to write documentation and save it under the software’s directory under the filename "README.md". Because we have a god-level editor like RStudio, we can turn Markdown into a presentation PPT, Word product documentation, LaTex papers, and even a minimally usable prototype with little code. In the field of data science, Markdown has been widely used, greatly promoting the historical process of dynamic repeatability research.
 
 ## ShortCut Key
 

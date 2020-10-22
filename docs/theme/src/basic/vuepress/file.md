@@ -65,7 +65,7 @@ tags:
 
 ## src folder
 
-The **source code** is placed in the `src` directory, in which all **Markdown** files are rendered into **HTML**. That is the time when **readme.md** is rendered into **index.HTML**. In addition, VuePress’s configuration files are all placed in the `src/.vuepress` directory.
+The **source code** is placed in the `src` directory, in which all **Markdown** files are rendered into **HTML**. That is the time when **readme.md** is rendered into **index.HTML**. VuePress’s configuration files are all placed in the `src/.vuepress` directory.
 
 ## dist folder
 
