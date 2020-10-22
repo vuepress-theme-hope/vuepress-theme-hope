@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.1...v1.4.2) (2020-10-22)
+
+### Bug Fixes
+
+- **pwa:** add default value for display ([78e0f54](https://github.com/Mister-Hope/vuepress-theme-hope/commit/78e0f54bfd7327f8daeaf17efb39d94ad0d67fbb))
+
 ## [1.4.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.0...v1.4.1) (2020-10-21)
 
 ### Bug Fixes
