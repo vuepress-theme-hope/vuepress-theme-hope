@@ -3,7 +3,7 @@ icon: setting
 category: feature
 tags:
   - pwa
-  - function
+  - feature
 ---
 
 # PWA

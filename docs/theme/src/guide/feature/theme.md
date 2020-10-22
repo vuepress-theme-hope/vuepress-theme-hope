@@ -3,7 +3,7 @@ icon: skinfill
 category: feature
 tags:
   - style
-  - function
+  - feature
 ---
 
 # Darkmode and Theme color

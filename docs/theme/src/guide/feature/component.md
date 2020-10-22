@@ -3,7 +3,7 @@ icon: extension
 category: feature
 tags:
   - components
-  - function
+  - feature
 ---
 
 # New Component

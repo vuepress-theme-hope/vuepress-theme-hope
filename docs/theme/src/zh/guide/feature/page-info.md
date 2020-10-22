@@ -3,7 +3,7 @@ icon: infofill
 category: feature
 tags:
   - page-info
-  - function
+  - feature
 ---
 
 # 页面信息

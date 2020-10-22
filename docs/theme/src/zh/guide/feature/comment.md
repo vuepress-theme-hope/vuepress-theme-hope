@@ -3,7 +3,7 @@ icon: commentfill
 category: feature
 tags:
   - comment
-  - function
+  - feature
 ---
 
 # 评论功能

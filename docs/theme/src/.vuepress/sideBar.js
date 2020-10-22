@@ -17,6 +17,7 @@ module.exports = {
           "theme",
           "page-info",
           "comment",
+          "page",
           "blog",
           "encrypt",
           {
@@ -117,6 +118,7 @@ module.exports = {
           "theme",
           "page-info",
           "comment",
+          "page",
           "blog",
           "encrypt",
           {

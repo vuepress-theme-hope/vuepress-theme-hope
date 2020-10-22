@@ -56,7 +56,7 @@ module.exports = {
 
 ### wordPerminute
 
-- 类型: `number`
-- 默认值: `300`
+- Type: `number`
+- Default: `300`
 
 Reading speed (words per minute)

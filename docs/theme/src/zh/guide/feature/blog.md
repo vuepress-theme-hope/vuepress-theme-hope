@@ -3,7 +3,7 @@ icon: blog
 category: feature
 tags:
   - blog
-  - function
+  - feature
 ---
 
 # 博客相关
@@ -48,6 +48,6 @@ tags:
 
 有些时候，你可能不想让你的某些文章被他人复制，或者你想让他人在复制时，自动生成一段版权信息到剪切板中。
 
-你可以在页面中配置这一内容，在 frontmatter 中设置 `noCopy: true` 会禁用该页面的复制，设置 `noSelect :true` 会禁止该页面的选中。
+你可以在页面中配置这一内容，在 frontmatter 中讲 `copyright.noCopy` 设置为 `true` 会禁用该页面的复制，设置 `copyright.noSelect` 为 `true` 会禁止该页面的选中。
 
-你还可以通过 `minLength` 设置触发禁用复制或者追加版权信息的最小字符数，默认为 `100`。
+你还可以通过 `copyright.minLength` 设置触发禁用复制或者追加版权信息的最小字符数，默认为 `100`。

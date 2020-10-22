@@ -3,7 +3,7 @@ icon: lock
 category: feature
 tags:
   - encrypt
-  - function
+  - feature
 ---
 
 # 加密功能

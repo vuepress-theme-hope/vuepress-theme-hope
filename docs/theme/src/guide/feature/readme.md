@@ -3,7 +3,7 @@ icon: discoverfill
 category: feature
 tags:
   - intro
-  - function
+  - feature
 ---
 
 # New feature
@@ -15,6 +15,8 @@ tags:
 - [**Page Information**](page-info.md)
 
 - [**Comment function**](comment.md)
+
+- [**Page Enhance**](page.md)
 
 - [**Encryption function**](encrypt.md)
 

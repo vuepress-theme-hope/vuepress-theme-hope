@@ -3,7 +3,7 @@ icon: lock
 category: feature
 tags:
   - encrypt
-  - function
+  - feature
 ---
 
 # Encryption function

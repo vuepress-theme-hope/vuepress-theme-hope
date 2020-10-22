@@ -25,11 +25,11 @@ icon: Home
 
 ## Breadcrumb <MyBadge text="Support page config" />
 
-This theme adds a new Breadcrumb support, the config key is `breadcrumb`.
+The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig.
 
 Without any additional configuration, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
-The icon display of path navigation is also <MyBadge text="Support page config" />, the configuration item is `breadcrumbIcon`.
+You can also control the icon display of the path navigation <MyBadge text="Support page config" />, the configuration item is `breadcrumbIcon`.
 
 ::: warning
 To ensure Breadcrumb working well, the `readme.md` file should be included in each folder.
@@ -40,12 +40,6 @@ Otherwise, the path navigation will automatically ignore that level because the 
 ## Page Info Display
 
 See [Page Info Section](../feature/page-info.md)
-
-## Picture Preview
-
-We supports clicking to preview and zooming the picture, while supporting the sliding browsing of the page picture and the sharing and downloading of the picture too.
-
-For specific configuration, please see [photo-swipe plugin configuration](https://vuepress-photo-swipe.mrhope.site/config/)
 
 ## Last Updated
 
@@ -59,7 +53,7 @@ module.exports = {
 };
 ```
 
-Note that it’s `off` by default. If given a `string`, it will be displayed as a prefix (default value: `Last Updated`).
+Note that it’s `on` by default. If given a `string`, it will be displayed as a prefix.
 
 ::: warning
 Since `lastUpdated` is based on `git`, you can only use it in a `git` repository. Also, since the timestamp used comes from the git commit, it will display only after a first commit for a given page, and update only on ensuing commits of that page.

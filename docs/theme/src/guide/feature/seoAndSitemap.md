@@ -4,7 +4,7 @@ category: feature
 tags:
   - seo
   - sitemap
-  - function
+  - feature
 ---
 
 # SEO and Sitemap

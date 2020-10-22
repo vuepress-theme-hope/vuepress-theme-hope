@@ -3,7 +3,7 @@ icon: discoverfill
 category: feature
 tags:
   - intro
-  - function
+  - feature
 ---
 
 # 新增特性
@@ -15,6 +15,8 @@ tags:
 - [**页面信息**](page-info.md)
 
 - [**评论功能**](comment.md)
+
+- [**页面增强**](page.md)
 
 - [**加密功能**](encrypt.md)
 

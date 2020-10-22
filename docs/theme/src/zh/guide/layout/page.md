@@ -29,7 +29,7 @@ icon: Home
 
 无需任何额外配置，一个和主题色相符合的路径导航会显示在页面内容最上方，帮助阅读者理解文档结构。
 
-路径导航的图标显示也<MyBadge text="支持页面配置" />，配置项为 `breadcrumbIcon`。
+你也可以控制路径导航的图标显示<MyBadge text="支持页面配置" />，配置项为 `breadcrumbIcon`。
 
 ::: warning
 为了保证路径导航更好的提示，建议在每一个路径下创建 readme.md 文件。
@@ -40,12 +40,6 @@ icon: Home
 ## 文章信息展示
 
 详见 [文章信息](../feature/page-info.md) 章节。
-
-## 图片预览
-
-支持点击预览并缩放图片，同时支持页面图片的滑动浏览与图片的分享与下载。
-
-具体配置请见 [photo-swipe 插件配置](https://vuepress-photo-swipe.mrhope.site/zh/config/)
 
 ## 最后更新时间
 
@@ -59,7 +53,7 @@ module.exports = {
 };
 ```
 
-请注意，`themeConfig.lastUpdated` 默认是关闭的，如果给定一个字符串，它将会作为前缀显示(默认值是: `Last Updated`)。
+请注意，`themeConfig.lastUpdated` 默认是打开的，如果给定一个字符串，它将会作为前缀显示。
 
 ::: warning 使用须知
 由于 `lastUpdated` 是基于 `git` 的, 所以你只能在一个基于 `git` 的项目中启用它。此外，由于使用的时间戳来自 git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。

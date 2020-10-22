@@ -3,7 +3,7 @@ icon: skinfill
 category: feature
 tags:
   - style
-  - function
+  - feature
 ---
 
 # 深色模式与主题色

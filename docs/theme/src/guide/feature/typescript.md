@@ -3,7 +3,7 @@ icon: typescript
 category: feature
 tags:
   - typescript
-  - function
+  - feature
 ---
 
 # TS support
