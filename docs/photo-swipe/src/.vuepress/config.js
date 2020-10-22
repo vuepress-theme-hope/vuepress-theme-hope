@@ -93,6 +93,16 @@ module.exports = config({
             type: "image/png",
           },
         ],
+        shortcuts: [
+          {
+            name: "Demo",
+            url: "/demo/",
+          },
+          {
+            name: "Config",
+            url: "/config/",
+          },
+        ],
       },
     },
 

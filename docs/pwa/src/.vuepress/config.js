@@ -103,6 +103,16 @@ module.exports = config({
             type: "image/png",
           },
         ],
+        shortcuts: [
+          {
+            name: "Guide",
+            url: "/guide/",
+          },
+          {
+            name: "Config",
+            url: "/config/",
+          },
+        ],
       },
     },
 
