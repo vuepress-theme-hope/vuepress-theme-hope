@@ -158,5 +158,61 @@
     "webpack-bundle-analyzer": "3.9.0",
     "webpack-chain": "6.5.1",
     "webpack-dev-server": "3.11.0"
+  },
+  "textlint": {
+    "rules": {
+      "@textlint-rule/no-unmatched-pair": true,
+      "apostrophe": true,
+      "common-misspellings": true,
+      "en-capitalization": {
+        "allowHeading": false,
+        "allowLists": false,
+        "severity": "warning"
+      },
+      "stop-words": {
+        "severity": "warning"
+      },
+      "terminology": {
+        "terms": [
+          "Stylus",
+          "VuePress",
+          [
+            "front[- ]matter",
+            "frontmatter"
+          ]
+        ],
+        "exclude": [
+          "Node.js",
+          "URLs",
+          "repo"
+        ],
+        "severity": "warning"
+      },
+      "write-good": {
+        "passive": false,
+        "severity": "warning",
+        "whitelist": [
+          "daily",
+          "only",
+          "multiple",
+          "validate"
+        ]
+      },
+      "zh-half-and-full-width-bracket": {
+        "bracket": "halfWidth"
+      }
+    },
+    "plugins": [
+      "latex2e"
+    ],
+    "filters": {
+      "allowlist": {
+        "allow": [
+          "/@flowstart[\\s\\S]*?@flowend/m",
+          "/\\$\\$[\\s\\S]*?\\$\\$/m"
+        ]
+      },
+      "comments": true
+    }
   }
 }

@@ -29,7 +29,7 @@ You can configure the encryption options in the `themeConfig.encrypt` field.
 }
 ```
 
-At the same time, you can easily configure the password in the frontmatter of the page
+You can also configure the password in the frontmatter of the page
 
 ```md
 ---

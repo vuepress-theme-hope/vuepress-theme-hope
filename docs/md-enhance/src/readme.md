@@ -26,15 +26,15 @@ features:
     link: /guide/align/
 
   - title: Mark Support
-    details: Mark words and sentences in markdown easily
+    details: Mark words and sentences in markdown
     link: /guide/flowchart/
 
   - title: Flowchart Support
-    details: Create your flowchart in markdown easily
+    details: Create your flowchart in markdown
     link: /guide/flowchart/
 
   - title: Tex Support
-    details: Markdown now have Tex Support so you can write yout formula easily
+    details: Markdown now have Tex Support so you can write your formula
     link: /guide/tex/
 
   - title: Presentation Support

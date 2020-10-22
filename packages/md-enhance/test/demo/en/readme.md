@@ -12,9 +12,9 @@ features:
   - title: DIY Align
     details: Let you decide to align paragraphs in the way you like
   - title: Flowchart Support
-    details: Create your flowchart in markdown easily
+    details: Create your flowchart in markdown
   - title: Tex Support
-    details: Markdown now have Tex Support so you can write yout formula easily
+    details: Markdown now have Tex Support so you can write your formula
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
