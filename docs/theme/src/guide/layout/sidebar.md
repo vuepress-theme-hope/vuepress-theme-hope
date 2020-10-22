@@ -229,6 +229,7 @@ module.exports = {
               title: "Markdown enhance",
               icon: "markdown",
               prefix: "markdown/",
+              collapsable: false,
               children: [
                 "",
                 "align",
@@ -237,6 +238,7 @@ module.exports = {
                 "mark",
                 "tex",
                 "flowchart",
+                "presentation",
               ],
             },
             "component",
@@ -254,8 +256,13 @@ module.exports = {
       ],
 
       "/config/": [
-        "",
-        "themeConfig",
+        {
+          title: "ThemeConfig",
+          icon: "configuration",
+          prefix: "theme/",
+          collapsable: false,
+          children: ["", "default", "feature", "plugin", "apperance"],
+        },
         "page",
         "stylus",
         {
@@ -263,17 +270,7 @@ module.exports = {
           icon: "extension",
           prefix: "plugin/",
           collapsable: false,
-          children: [
-            "",
-            "last-update",
-            "photo-swipe",
-            "pwa",
-            "reading-time",
-            "seo",
-            "sitemap",
-            "container",
-            "copyright",
-          ],
+          children: ["", "container", "copyright"],
         },
       ],
 
@@ -291,6 +288,7 @@ module.exports = {
               icon: "emoji",
               path: "emoji/",
               prefix: "emoji/",
+              collapsable: false,
               children: ["people", "nature", "object", "place", "symbol"],
             },
           ],

@@ -133,7 +133,7 @@ features:
 
   - title: PWA support
     details: The built-in PWA plugin will make your website more like an APP.
-    link: /config/plugin/pwa/
+    link: /guide/feature/pwa/
 
   - title: TS support
     details: Turn on TypeScript support for your VuePress

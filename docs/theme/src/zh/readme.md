@@ -51,7 +51,7 @@ features:
 
   - title: PWA 支持
     details: 内置的 PWA 插件会让你的网站更像一个 APP。
-    link: /zh/config/plugin/pwa/
+    link: /zh/guide/feature/pwa/
 
   - title: TS 支持
     details: 为你的 VuePress 开启 TypeScript 支持

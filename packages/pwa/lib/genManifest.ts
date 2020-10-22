@@ -31,13 +31,13 @@ export const genManifest = async (
     description:
       siteConfig.description || "A site built with vuepress-theme-hope",
     lang: options.baseLang || themeConfig.baseLang || "en-US",
-    orientation: "portrait-primary",
     start_url: context.base,
     scope: context.base,
 
     display: "standalone",
     theme_color: "#46bd87",
     background_color: "#ffffff",
+    orientation: "portrait-primary",
     prefer_related_applications: false,
 
     ...userManifest,

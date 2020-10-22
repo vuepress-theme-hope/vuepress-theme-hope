@@ -22,7 +22,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-last-update][last-update]: Last update time
 
-- [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA support
+- [@mr-hope/vuepress-plugin-pwa][pwa]: Powerful PWA support
 
 - [@mr-hope/vuepress-plugin-reading-time][reading-time]: Expect reading time and words count
 
@@ -64,6 +64,7 @@ tags:
 [last-update]: https://vuepress-last-update.mrhope.site
 [md-enhance]: https://vuepress-md-enhance.mrhope.site
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site
+[pwa]: https://vuepress-pwa.mrhope.site
 [reading-time]: https://vuepress-reading-time.mrhope.site
 [seo]: https://vuepress-seo.mrhope.site
 [sitemap]: https://vuepress-sitemap.mrhope.site

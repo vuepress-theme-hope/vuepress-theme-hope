@@ -20,6 +20,8 @@ tags:
 
 - [**Markdown 增强**](markdown/readme.md)
 
+- [**PWA 支持**](pwa.md)
+
 - [**新增组件**](component.md)
 
 - [**Seo 和 Sitemap 支持**](seoAndSitemap.md)

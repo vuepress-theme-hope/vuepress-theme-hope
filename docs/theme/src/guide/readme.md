@@ -50,7 +50,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 - [Full Screen Button](feature/theme.md#fullscreen-button)
 
-- [PWA support](../config/plugin/pwa.md)
+- [PWA support](feature/pwa.md)
 
 - [Back to top button](feature/component.md#back-to-top-button-backtotop)
 
@@ -109,7 +109,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-last-update][last-update]: Last update time
 
-- [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA support
+- [@mr-hope/vuepress-plugin-pwa][pwa]: PWA support
 
 - [@mr-hope/vuepress-plugin-reading-time][reading-time]: Expect reading time and words count
 
@@ -129,6 +129,7 @@ The theme also includes the following plugins, you can use them in other themes 
 [last-update]: https://vuepress-last-update.mrhope.site
 [md-enhance]: https://vuepress-md-enhance.mrhope.site
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site
+[pwa]: https://vuepress-pwa.mrhope.site
 [reading-time]: https://vuepress-reading-time.mrhope.site
 [seo]: https://vuepress-seo.mrhope.site
 [sitemap]: https://vuepress-sitemap.mrhope.site

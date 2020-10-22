@@ -52,7 +52,7 @@ tags: intro
 
 - [全屏按钮](feature/theme.md#全屏按钮)
 
-- [PWA 支持](../config/plugin/pwa.md)
+- [PWA 支持](feature/pwa.md)
 
 - [返回顶部按钮](feature/component.md#返回顶部按钮-backtotop)
 
@@ -111,7 +111,7 @@ tags: intro
 
 - [@mr-hope/vuepress-plugin-last-update][last-update]: 支持多语言格式的最后更新时间
 
-- [@mr-hope/vuepress-plugin-pwa](../config/plugin/pwa.md): PWA 支持
+- [@mr-hope/vuepress-plugin-pwa][pwa]: PWA 支持
 
 - [@mr-hope/vuepress-plugin-reading-time][reading-time]: 阅读时间与字数统计
 
@@ -131,6 +131,7 @@ tags: intro
 [last-update]: https://vuepress-last-update.mrhope.site/zh/
 [md-enhance]: https://vuepress-md-enhance.mrhope.site/zh/
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site/zh/
+[pwa]: https://vuepress-pwa.mrhope.site/zh/
 [reading-time]: https://vuepress-reading-time.mrhope.site/zh/
 [seo]: https://vuepress-seo.mrhope.site/zh/
 [sitemap]: https://vuepress-sitemap.mrhope.site/zh/

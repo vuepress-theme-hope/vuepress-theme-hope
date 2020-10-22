@@ -46,7 +46,7 @@ export = (options: PWAOptions, context: Context): PluginOptionAPI => {
       globPatterns.push("./index.html", "./404.html");
     else globPatterns.push("**/*.html");
 
-    if (options.cachePic) globPatterns.push("**/*.{png,jpg,jpeg}");
+    if (options.cachePic) globPatterns.push("**/*.{png,jpg,jpeg,gif,webp}");
 
     await WorkboxBuild.generateSW({
       swDest,

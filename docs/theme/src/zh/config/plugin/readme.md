@@ -22,7 +22,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-last-update][last-update]: 支持多语言格式的最后更新时间
 
-- [@mr-hope/vuepress-plugin-pwa](pwa.md): PWA 支持
+- [@mr-hope/vuepress-plugin-pwa][pwa]: PWA 支持
 
 - [@mr-hope/vuepress-plugin-reading-time][reading-time]: 阅读时间与字数统计
 
@@ -64,6 +64,7 @@ tags:
 [last-update]: https://vuepress-last-update.mrhope.site/zh/
 [md-enhance]: https://vuepress-md-enhance.mrhope.site/zh/
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site/zh/
+[pwa]: https://vuepress-pwa.mrhope.site/zh/
 [reading-time]: https://vuepress-reading-time.mrhope.site/zh/
 [seo]: https://vuepress-seo.mrhope.site/zh/
 [sitemap]: https://vuepress-sitemap.mrhope.site/zh/

@@ -35,6 +35,7 @@ module.exports = {
               "presentation",
             ],
           },
+          "pwa",
           "component",
           "seoAndSitemap",
           "typescript",
@@ -64,7 +65,7 @@ module.exports = {
         icon: "extension",
         prefix: "plugin/",
         collapsable: false,
-        children: ["", "pwa", "container", "copyright"],
+        children: ["", "container", "copyright"],
       },
     ],
 
@@ -134,6 +135,7 @@ module.exports = {
               "presentation",
             ],
           },
+          "pwa",
           "component",
           "seoAndSitemap",
           "typescript",
@@ -163,7 +165,7 @@ module.exports = {
         icon: "extension",
         prefix: "plugin/",
         collapsable: false,
-        children: ["", "pwa", "container", "copyright"],
+        children: ["", "container", "copyright"],
       },
     ],
 
