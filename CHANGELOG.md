@@ -2,6 +2,21 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.4.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.2...v1.4.3) (2020-10-22)
+
+### Bug Fixes
+
+- **pwa:** add missing options for manifest ([a351086](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a351086b03e36466b386380417e63e152cc26613))
+
+### Features
+
+- **pwa:** add head function ([dbd313b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dbd313b06b9a91980b4cc6198899907f4eca4365))
+- **pwa:** use offical ext for manifest ([5830936](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5830936b7539bd23ff4ac008c404945191585fd3))
+
+### BREAKING CHANGES
+
+- **pwa:** use .webmanifest extension for manifest instead of .json
+
 ## [1.4.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.1...v1.4.2) (2020-10-22)
 
 ### Bug Fixes
