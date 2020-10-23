@@ -2,6 +2,18 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.4.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.4...v1.4.5) (2020-10-23)
+
+### Features
+
+- **pwa:** add maxPicSize option ([fe53e98](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fe53e98b1c238e04a444c533fc65915686e6316f))
+- **seo:** auto generated robots.txt ([2b75c70](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2b75c70c575c1a9c4031ef2007008527e839deac))
+- improve lighthouse audit ([eb1baa8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/eb1baa8fca4b743aeec0791d8545a44cd48a0309))
+
+### BREAKING CHANGES
+
+- **pwa:** `cacheMaxSize` rename to `maxSize`
+
 ## [1.4.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.3...v1.4.4) (2020-10-23)
 
 ### Bug Fixes
