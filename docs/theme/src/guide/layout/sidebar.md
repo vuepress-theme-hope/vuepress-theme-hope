@@ -242,7 +242,7 @@ module.exports = {
               ],
             },
             "component",
-            "seoAndSitemap",
+            "seo-sitemap",
             "typescript",
           ],
         },

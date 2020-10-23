@@ -8,14 +8,16 @@ icon: footnote
 
 ## 配置
 
-```js {6}
+```js {7}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 启用脚注
-      footnote: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 启用脚注
+        footnote: true,
+      },
+    ],
   ],
 };
 ```

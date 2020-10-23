@@ -25,9 +25,9 @@ tags: intro
   - [上下角标](feature/markdown/sup-sub.md)
   - [幻灯片](feature/markdown/presentation.md)
 
-- [图片预览](layout/page.md#图片预览)，支持放大，拖拽，滑动浏览，分享和下载
+- [图片预览](feature/page.md#图片预览)，支持放大，拖拽，滑动浏览，分享和下载
 
-- [文章信息展示](layout/page.md#文章信息展示)
+- [文章信息展示](feature/page-info.md)
 
   - 阅读量统计
   - 作者与写作日期
@@ -56,15 +56,15 @@ tags: intro
 
 - [返回顶部按钮](feature/component.md#返回顶部按钮-backtotop)
 
-- [一键复制代码](https://vuepress-copy-code.mrhope.site/zh/)
+- [一键复制代码](feature/page.md#代码复制)
 
 - 复制时添加版权信息
 
 #### 更多强大功能
 
-- [SEO 增强](feature/seoAndSitemap.md#SEO)
+- [SEO 增强](feature/seo-sitemap.md#SEO)
 
-- [Sitemap 生成](feature/seoAndSitemap.md#Sitemap)
+- [Sitemap 生成](feature/seo-sitemap.md#Sitemap)
 
 - [加密特定文章或路径](feature/encrypt.md)
 

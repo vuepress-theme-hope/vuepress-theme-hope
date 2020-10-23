@@ -23,9 +23,9 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
   - [Subsript and Supercript](feature/markdown/sup-sub.md)
   - [Presentation](feature/markdown/presentation.md)
 
-- [Picture preview feature](layout/page.md#picture-preview), supports zooming, dragging, sliding browsing, sharing and downloading
+- [Picture preview feature](feature/page.md#picture-preview), supports zooming, dragging, sliding browsing, sharing and downloading
 
-- [Article info](layout/page.md#page-info-display)
+- [Article info](feature/page-info.md)
 
   - Reading Counts
   - Author and writing date
@@ -54,15 +54,15 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 - [Back to top button](feature/component.md#back-to-top-button-backtotop)
 
-- [One-click copy code][copy-code]
+- [One-click copy code](feature/page.md#code-copy)
 
 - Add copyright information when copying
 
 #### More powerful functions
 
-- [SEO enhancement](feature/seoAndSitemap.md#SEO)
+- [SEO enhancement](feature/seo-sitemap.md#SEO)
 
-- [Sitemap generation](feature/seoAndSitemap.md#Sitemap)
+- [Sitemap generation](feature/seo-sitemap.md#Sitemap)
 
 - [Encryption of specific articles and paths](feature/encrypt.md)
 

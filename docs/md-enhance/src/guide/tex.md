@@ -8,14 +8,16 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ## Configuration
 
-```js {6}
+```js {7}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // Enable Tex Support
-      tex: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // Enable Tex Support
+        tex: true,
+      },
+    ],
   ],
 };
 ```

@@ -8,12 +8,14 @@
 
 ```js
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 启用 Tex 支持
-      mathjax: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 启用 Tex 支持
+        mathjax: true,
+      },
+    ],
   ],
 };
 ```

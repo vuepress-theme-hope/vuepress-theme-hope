@@ -23,7 +23,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### 安装
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-md-enhance
+npm i -D vuepress-plugin-md-enhance
 ```
 
 ### 使用
@@ -31,6 +31,13 @@ npm i -D @mr-hope/vuepress-plugin-md-enhance
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: ["md-enhance"],
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // your options
+      },
+    ],
+  ],
 };
 ```

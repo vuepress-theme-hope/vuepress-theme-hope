@@ -20,11 +20,13 @@ npm i -D @mr-hope/vuepress-plugin-copy-code
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/copy-code",
-    {
-      // 你的配置选项
-    },
+  plugins: [
+    [
+      "@mr-hope/copy-code",
+      {
+        // 你的配置选项
+      },
+    ],
   ],
 };
 ```

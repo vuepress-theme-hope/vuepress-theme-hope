@@ -32,11 +32,13 @@ yarn add -D vuepress-plugin-add-this
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "add-this",
-    {
-      pubid: "your pubid",
-    },
+  plugins: [
+    [
+      "add-this",
+      {
+        pubid: "your pubid",
+      },
+    ],
   ],
 };
 ```
@@ -59,14 +61,16 @@ yarn add -D vuepress-plugin-add-this
 
 ### 使用
 
-```js
+```js {7}
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "add-this",
-    {
-      pubid: "你的 pubid",
-    },
+  plugins: [
+    [
+      "add-this",
+      {
+        pubid: "你的 pubid",
+      },
+    ],
   ],
 };
 ```

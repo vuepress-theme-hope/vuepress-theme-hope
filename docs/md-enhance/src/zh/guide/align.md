@@ -6,14 +6,16 @@ icon: align
 
 ## 配置
 
-```js {6}
+```js {7}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 启用自定义对齐
-      align: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 启用自定义对齐
+        align: true,
+      },
+    ],
   ],
 };
 ```

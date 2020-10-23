@@ -49,7 +49,7 @@ module.exports = {
      * 如果你原来没有配置，可以忽略此参数
      */
   ]),
-  plugin: [["@mr-hope/pwa", pwaOptions]],
+  plugins: [["@mr-hope/pwa", pwaOptions]],
 };
 ```
 

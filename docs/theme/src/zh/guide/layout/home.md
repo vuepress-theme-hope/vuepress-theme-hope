@@ -125,7 +125,7 @@ features:
 
   - title: Sitemap 生成与 SEO 增强
     details: 主题可以自动为你的网站生成 Sitemap，并将最终生成的网页针对搜索引擎进行优化。
-    link: /zh/guide/feature/seoAndSitemap/
+    link: /zh/guide/feature/seo-sitemap/
 
   - title: 更多新特性
     details: 包括博客主页、图标支持、路径导航、页脚支持、全屏按钮、返回顶部按钮等

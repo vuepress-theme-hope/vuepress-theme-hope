@@ -9,7 +9,7 @@ tags:
 
 # SEO and Sitemap
 
-`vuepress-theme-hope` introduces `@ mr-hope / vuepress-plugin-seo` and `@ mr-hope / vuepress-plugin-sitemap` to provide you with SEO enhancements and Sitemap generation.
+`vuepress-theme-hope` introduces `@mr-hope/vuepress-plugin-seo` and `@mr-hope/vuepress-plugin-sitemap` to provide you with SEO enhancements and Sitemap generation.
 
 To make the two plugins work better, you may need to look at [Page Information Configuration](../../config/page.md#page-information-configuration) and configure them reasonably.
 

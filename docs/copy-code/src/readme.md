@@ -32,14 +32,16 @@ yarn add -D @mr-hope/vuepress-plugin-copy-code
 
 ### Usage
 
-```js {3-7}
+```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/copy-code",
-    {
-      // your options
-    },
+  plugins: [
+    [
+      "@mr-hope/copy-code",
+      {
+        // your options
+      },
+    ],
   ],
 };
 ```

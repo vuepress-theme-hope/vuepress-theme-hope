@@ -12,14 +12,16 @@ icon: presentation
 
 ## 配置
 
-```js {6}
+```js {7}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 启用幻灯片
-      presentation: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 启用幻灯片
+        presentation: true,
+      },
+    ],
   ],
 };
 ```

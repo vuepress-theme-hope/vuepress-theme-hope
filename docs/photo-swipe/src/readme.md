@@ -31,6 +31,6 @@ npm i -D vuepress-plugin-photo-swipe
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: ["photo-swipe"],
+  plugins: ["photo-swipe"],
 };
 ```

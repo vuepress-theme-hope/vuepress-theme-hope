@@ -16,11 +16,13 @@ icon: creativefill
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/copy-code",
-    {
-      // 你的选项
-    },
+  plugins: [
+    [
+      "@mr-hope/copy-code",
+      {
+        // 你的选项
+      },
+    ],
   ],
 };
 ```

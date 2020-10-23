@@ -30,14 +30,16 @@ yarn add -D @mr-hope/vuepress-plugin-comment
 
 ## 使用
 
-```js {3-7}
+```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/comment",
-    {
-      // 配置选项
-    },
+  plugins: [
+    [
+      "@mr-hope/comment",
+      {
+        // 配置选项
+      },
+    ],
   ],
 };
 ```

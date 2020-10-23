@@ -6,12 +6,14 @@ Let the Markdown file in your VuePress site support the Tex syntax.
 
 ```js
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // Enable Tex Support
-      mathjax: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // Enable Tex Support
+        mathjax: true,
+      },
+    ],
   ],
 };
 ```

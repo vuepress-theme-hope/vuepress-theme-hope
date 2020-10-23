@@ -8,14 +8,16 @@ icon: tex
 
 ## 配置
 
-```js {6}
+```js {7}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 启用 TeX 支持
-      tex: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 启用 TeX 支持
+        tex: true,
+      },
+    ],
   ],
 };
 ```

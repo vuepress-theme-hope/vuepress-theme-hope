@@ -6,12 +6,14 @@
 
 ```js {3,5,6}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 启用脚注
-      footnote: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 启用脚注
+        footnote: true,
+      },
+    ],
   ],
 };
 ```

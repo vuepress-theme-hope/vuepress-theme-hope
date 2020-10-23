@@ -25,14 +25,16 @@ yarn add -D @mr-hope/vuepress-plugin-sitemap
 
 ### Usage
 
-```js {3-7}
+```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/sitemap",
-    {
-      // your options
-    },
+  plugins: [
+    [
+      "@mr-hope/sitemap",
+      {
+        // your options
+      },
+    ],
   ],
 };
 ```

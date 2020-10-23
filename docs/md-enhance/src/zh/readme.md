@@ -61,14 +61,16 @@ yarn add -D vuepress-plugin-md-enhance
 
 ### 使用
 
-```js {3-7}
+```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 配置选项
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 配置选项
+      },
+    ],
   ],
 };
 ```

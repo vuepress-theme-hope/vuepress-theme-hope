@@ -25,14 +25,16 @@ yarn add -D @mr-hope/vuepress-plugin-seo
 
 ### Usage
 
-```js {3-7}
+```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/seo",
-    {
-      // your options
-    },
+  plugins: [
+    [
+      "@mr-hope/seo",
+      {
+        // your options
+      },
+    ],
   ],
 };
 ```

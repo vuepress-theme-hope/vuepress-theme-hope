@@ -26,7 +26,7 @@ tags:
 
 - [**New component**](component.md)
 
-- [**Seo and Sitemap**](seoAndSitemap.md)
+- [**Seo and Sitemap**](seo-sitemap.md)
 
 - Icon support
 

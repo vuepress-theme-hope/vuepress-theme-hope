@@ -91,7 +91,7 @@ Max size which allows to cache, with KB unit
 
 Special settings for Apple
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want to be compatible with apple, please set it to `false`.
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatable with apple, please set it to `false`.
 
 ### apple.icon
 
@@ -118,7 +118,7 @@ Safari mask icon
 
 Special settings for Microsoft tiles
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want to be compatible with windows, please set it to `false`.
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatable with windows, please set it to `false`.
 
 ### msTile.image
 

@@ -16,11 +16,13 @@ By default, the button is only displayed on desktop mode.
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/copy-code",
-    {
-      // your options
-    },
+  plugins: [
+    [
+      "@mr-hope/copy-code",
+      {
+        // your options
+      },
+    ],
   ],
 };
 ```

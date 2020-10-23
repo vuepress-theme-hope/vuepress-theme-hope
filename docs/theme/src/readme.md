@@ -43,7 +43,7 @@ features:
 
   - title: Sitemap generation and SEO enhancement
     details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
-    link: /guide/feature/seoAndSitemap/
+    link: /guide/feature/seo-sitemap/
 
   - title: More new features
     details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.

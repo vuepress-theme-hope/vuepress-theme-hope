@@ -8,14 +8,16 @@ icon: writefill
 
 ## 配置
 
-```js {6}
+```js {7}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // 开启标记
-      mark: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // 开启标记
+        mark: true,
+      },
+    ],
   ],
 };
 ```

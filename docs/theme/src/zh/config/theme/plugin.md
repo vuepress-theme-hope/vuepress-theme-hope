@@ -92,15 +92,17 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 你可以传入一个对象，这个对象将用于 reveal.js 配置。
 
-## 评论设置
+## comment
 
-评论配置因为复杂度在这里被省略。
+评论系统
 
-具体配置请见　[@mr-hope/vuepress-plugin-comment 文档][comment-config]
+配置因为复杂度在这里被省略，具体配置请见　[@mr-hope/vuepress-plugin-comment 文档][comment-config]
 
 > 你可以直接设置为 `false` 来禁用评论插件
 
-## 版权设置
+## copyright
+
+处理你的 VuePress 站点中的复制操作
 
 详细信息，请参见 [vuepress-plugin-copyright 文档](https://vuepress.github.io/zh/plugins/copyright/)
 

@@ -17,14 +17,16 @@ npm i -D vuepress-plugin-add-this
 
 ### 使用
 
-```js
+```js {7}
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "add-this",
-    {
-      pubid: "your pubid",
-    },
+  plugins: [
+    [
+      "add-this",
+      {
+        pubid: "your pubid",
+      },
+    ],
   ],
 };
 ```

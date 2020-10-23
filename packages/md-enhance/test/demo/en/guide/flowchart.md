@@ -8,12 +8,14 @@ This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to su
 
 ```js
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // Enable flowchart
-      flowchart: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // Enable flowchart
+        flowchart: true,
+      },
+    ],
   ],
 };
 ```

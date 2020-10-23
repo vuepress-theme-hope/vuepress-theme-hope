@@ -6,14 +6,16 @@ icon: align
 
 ## Configuration
 
-```js {6}
+```js {7}
 module.exports = {
-  plugin: [
-    "md-enhance",
-    {
-      // Enable Align
-      align: true,
-    },
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // Enable Align
+        align: true,
+      },
+    ],
   ],
 };
 ```

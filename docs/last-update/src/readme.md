@@ -31,10 +31,10 @@ yarn add -D @mr-hope/vuepress-plugin-last-update
 
 ### Usage
 
-```js {3}
+```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [["@vuepress/last-updated", false], "@mr-hope/last-update"],
+  plugins: [["@vuepress/last-updated", false], "@mr-hope/last-update"],
 };
 ```
 

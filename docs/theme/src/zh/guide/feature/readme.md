@@ -26,7 +26,7 @@ tags:
 
 - [**新增组件**](component.md)
 
-- [**Seo 和 Sitemap 支持**](seoAndSitemap.md)
+- [**Seo 和 Sitemap 支持**](seo-sitemap.md)
 
 - 图标支持
 

@@ -40,14 +40,16 @@ yarn add -D @mr-hope/vuepress-plugin-reading-time
 
 ### 使用
 
-```js {3-7}
+```js
 // .vuepress/config.js
 module.exports = {
-  plugin: [
-    "@mr-hope/reading-time",
-    {
-      // 你的选项
-    },
+  plugins: [
+    [
+      "@mr-hope/reading-time",
+      {
+        // 你的选项
+      },
+    ],
   ],
 };
 ```
