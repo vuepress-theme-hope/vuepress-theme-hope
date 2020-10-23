@@ -10,6 +10,12 @@ export const genManifest = async (
   options: PWAOptions,
   context: Context
 ): Promise<void> => {
+  console.log(
+    blue("PWA:"),
+    black.bgYellow("wait"),
+    "Generating manifest.webmanifest..."
+  );
+
   const { sourceDir, outDir, siteConfig, themeConfig } = context;
   const userManifestPath = resolve(
     sourceDir,

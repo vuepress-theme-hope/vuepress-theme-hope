@@ -86,6 +86,14 @@ export interface PWAOptions {
    */
   themeColor?: string;
   /**
+   * 允许缓存的最大大小，单位 KB
+   *
+   * Max size which allows to cache, with KB unit
+   *
+   * @default 1024
+   */
+  maxSize?: number;
+  /**
    * 是否缓存除主页与 404 之外的 HTML
    *
    * Whether cache html files besides home page and 404
@@ -102,13 +110,13 @@ export interface PWAOptions {
    */
   cachePic?: boolean;
   /**
-   * 允许缓存的最大大小，单位 KB
+   * 图片允许缓存的最大大小，单位 KB
    *
    * Max size which allows to cache, with KB unit
    *
-   * @default 1024
+   * @default 512
    */
-  cacheMaxSize?: number;
+  picMaxSize?: number;
   /**
    * 苹果设置
    *

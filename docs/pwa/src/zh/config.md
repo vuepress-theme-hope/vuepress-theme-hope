@@ -62,6 +62,13 @@ icon: configuration
 
 主题色
 
+## maxSize
+
+- 类型: `number`
+- 默认值: `1024`
+
+允许缓存的最大大小 (以 KB 为单位)
+
 ## cacheHTML
 
 - 类型: `boolean`
@@ -80,12 +87,14 @@ icon: configuration
 
 是否缓存图片
 
-## cacheMaxSize
+> 任何以 `.png`, `.jpg`, `.jpeg` , `.gif`, `.bmp`, `.webp` 结尾的文件都会视为图片。
+
+## maxPicSize
 
 - 类型: `number`
-- 默认值: `1024`
+- 默认值: `512`
 
-允许缓存的最大大小 (以 KB 为单位)
+图片允许缓存的最大大小 (以 KB 为单位)
 
 ## apple
 
@@ -150,5 +159,5 @@ Safari 图标
 
 如果将 `cachePic` 设置为 `true`，我们还将为您预缓存 `**/*.{png,jpg,jpeg,gif,webp}` 文件。
 
-所有大于 `cacheMaxSize` 的文件将被忽略。
+所有大于 `maxSize` 的文件将被忽略。
 :::

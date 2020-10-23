@@ -34,7 +34,7 @@ declare module "workbox-build" {
       manifestEntries: ManifestEntry[],
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       compilation: any
-    ) => Promise<ManifestTransformResult>;
+    ) => Promise<ManifestTransformResult> | ManifestTransformResult;
 
     interface Options {
       /** The local directory you wish to match `globPatterns` against. The path is relative to the current directory. */

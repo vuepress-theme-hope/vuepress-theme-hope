@@ -183,6 +183,13 @@ favicon 地址，填入绝对路径。(建议为你的站点生成 favicon)
 
 主题色
 
+### pwa.maxSize
+
+- 类型: `number`
+- 默认值: `1024`
+
+允许缓存的最大大小 (以 KB 为单位)
+
 ### pwa.cacheHTML
 
 - 类型: `boolean`
@@ -201,10 +208,12 @@ favicon 地址，填入绝对路径。(建议为你的站点生成 favicon)
 
 是否缓存图片
 
-### pwa.cacheMaxSize
+> 任何以 `.png`, `.jpg`, `.jpeg` , `.gif`, `.bmp`, `.webp` 结尾的文件都会视为图片。
+
+### pwa.maxPicSize
 
 - 类型: `number`
-- 默认值: `1024`
+- 默认值: `512`
 
 允许缓存的最大大小 (以 KB 为单位)
 
@@ -269,9 +278,9 @@ Safari 图标
 ::: tip
 我们将为您预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
 
-如果将 `cachePic` 设置为 `true`，我们还将为您预缓存 `**/*.{png,jpg,jpeg,gif,webp}` 文件。
+如果将 `cachePic` 设置为 `true`，我们还将为您预缓存 `**/*.{png,jpg,jpeg,gif,bmp,webp}` 文件。
 
-所有大于 `cacheMaxSize` 的文件将被忽略。
+所有大于 `maxSize` 的文件与所有大于 `maxPicSize` 的图片将被忽略。
 :::
 
 ## seo <MyBadge text="默认启用" />

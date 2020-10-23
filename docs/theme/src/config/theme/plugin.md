@@ -181,6 +181,13 @@ Path of favico.ico with absolute path.(We recommand you to set it for your site)
 
 Theme Color
 
+### pwa.maxSize
+
+- Type: `number`
+- Default: `1024`
+
+Max size which allows to cache, with KB unit
+
 ### pwa.cacheHTML
 
 - Type: `boolean`
@@ -199,12 +206,14 @@ This option is useful if your site is too large when containing HTML files.
 
 Whether cache pictures
 
-### pwa.cacheMaxSize
+> Any file ends with `.png`, `.jpg`, `.jpeg` , `.gif`, `.bmp`, `.webp` will be seen as picture files.
+
+### pwa.maxPicSize
 
 - Type: `number`
-- Default: `1024`
+- Default: `512`
 
-Max size which allows to cache, with KB unit
+Max picture size which allows to cache, with KB unit
 
 ### pwa.apple
 
@@ -267,9 +276,9 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
 ::: tip
 We will precache all site related files `**/*.{js,css,svg}` and font files `**/*.{woff,woff2,eot,ttf,otf}` for you.
 
-If you set `cachePic` to `true`, we will also precache `**/*.{png,jpg,jpeg,gif,webp}` files for you.
+If you set `cachePic` to `true`, we will also precache `**/*.{png,jpg,jpeg,gif,bmp,webp}` files for you.
 
-All the files larger than `cacheMaxSize` will be dropped.
+All the files larger than `maxSize` or any pictures larger than `maxPicSize` will be dropped.
 :::
 
 ## seo <MyBadge text="Enabled by default" />
