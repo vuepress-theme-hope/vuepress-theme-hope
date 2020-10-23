@@ -6,7 +6,7 @@ export interface ManifestImage {
 }
 
 export interface ManifestIcon extends ManifestImage {
-  purpose?: "any" | "maskable";
+  purpose?: "any" | "maskable" | "monochrome";
 }
 
 export interface ManifestRelatedApps {
@@ -20,7 +20,7 @@ export interface ManifestShortCuts {
   url: string;
   short_name?: string;
   description?: string;
-  icons?: string;
+  icons?: ManifestIcon[];
 }
 
 export interface ManifestOption {
