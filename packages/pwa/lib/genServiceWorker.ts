@@ -75,13 +75,17 @@ export const genServiceWorker = async (
       console.log(
         black.bgRed("Error"),
         "Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n",
-        blue("Please consider disable `cacheHTMl` and `cachePic`")
+        blue(
+          "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option."
+        )
       );
     else if (size > 52428800)
       console.log(
         black.bgYellow("Warning"),
-        "\nCache Size is larger than 50Mb, which will not be registerd on Safari.\n",
-        blue("Please consider disable `cacheHTMl` and `cachePic`")
+        "\nCache Size is larger than 50MB, which will not be registerd on Safari.\n",
+        blue(
+          "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option."
+        )
       );
   });
 
