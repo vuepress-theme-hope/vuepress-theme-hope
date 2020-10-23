@@ -68,13 +68,9 @@ module.exports = config({
         short_name: "photo-swipe plugin",
         icons: [
           {
-            src: "/assets/icon/chrome-192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-512.png",
+            src: "/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
+            purpose: "maskable",
             type: "image/png",
           },
           {
@@ -84,20 +80,54 @@ module.exports = config({
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-mask-512.png",
+            src: "/assets/icon/chrome-512.png",
             sizes: "512x512",
-            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
             type: "image/png",
           },
         ],
         shortcuts: [
           {
             name: "Demo",
+            short_name: "Demo",
             url: "/demo/",
+            icons: [
+              {
+                src: "/assets/icon/demo-monochrome.png",
+                sizes: "192x192",
+                purpose: "monochrome",
+                type: "image/png",
+              },
+              {
+                src: "/assets/icon/demo-maskable.png",
+                sizes: "192x192",
+                purpose: "maskable",
+                type: "image/png",
+              },
+            ],
           },
           {
             name: "Config",
+            short_name: "Config",
             url: "/config/",
+            icons: [
+              {
+                src: "/assets/icon/config-monochrome.png",
+                sizes: "192x192",
+                purpose: "monochrome",
+                type: "image/png",
+              },
+              {
+                src: "/assets/icon/config-maskable.png",
+                sizes: "192x192",
+                purpose: "maskable",
+                type: "image/png",
+              },
+            ],
           },
         ],
       },

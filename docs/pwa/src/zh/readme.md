@@ -5,6 +5,13 @@ icon: homefill
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-pwa"
 tagline: 一个强大的 PWA 插件
+action:
+  - text: 快速上手 💡
+    link: /zh/guide/
+
+  - text: 配置 🛠
+    link: /zh/config/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---

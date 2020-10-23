@@ -46,13 +46,9 @@ module.exports = config({
         short_name: "sitemap plugin",
         icons: [
           {
-            src: "/assets/icon/chrome-192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-512.png",
+            src: "/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
+            purpose: "maskable",
             type: "image/png",
           },
           {
@@ -62,9 +58,13 @@ module.exports = config({
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-mask-512.png",
+            src: "/assets/icon/chrome-512.png",
             sizes: "512x512",
-            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
             type: "image/png",
           },
         ],

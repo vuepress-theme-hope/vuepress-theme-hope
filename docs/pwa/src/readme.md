@@ -5,6 +5,13 @@ icon: homefill
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-pwa"
 tagline: A powerfull PWA plugin
+action:
+  - text: Guide 💡
+    link: /guide/
+
+  - text: Config 🛠
+    link: /config/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
