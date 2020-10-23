@@ -7229,7 +7229,7 @@ forwarded@~0.1.2:
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
 
-fp-ts@^2.5.3:
+fp-ts@^2.8.3:
   version "2.8.4"
   resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.8.4.tgz#d1af738a94de8591d441ef656153d04bd878edeb"
   integrity sha512-J+kwce5SysU0YKuZ3aCnFk+dyezZD1mij6u26w1fCVfuLYgJR4eeXmVfJiUjthpZ+4yCRkRfcwMI5SkGw52oFA==
@@ -9486,7 +9486,7 @@ latest-version@^5.0.0:
   dependencies:
     package-json "^6.3.0"
 
-latex-utensils@^2.0.0-beta.4:
+latex-utensils@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/latex-utensils/-/latex-utensils-2.0.3.tgz#0b855eaa93ee59503dc5d23dba9705aaa1d80245"
   integrity sha512-vMjx8YdO4JRFzYRxoLHWwlaaFeHdaj45hJCHFSJPZBchW0NvdoX60zuVmNeA2ZA1YMDz7ztbt1aZ7rqtSgs+nQ==
@@ -14969,14 +14969,14 @@ textlint-filter-rule-comments@1.2.2:
   resolved "https://registry.yarnpkg.com/textlint-filter-rule-comments/-/textlint-filter-rule-comments-1.2.2.tgz#3a72c494994e068e0e4aaad0f24ea7cfe338503a"
   integrity sha1-OnLElJlOBo4OSqrQ8k6nz+M4UDo=
 
-textlint-plugin-latex2e@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/textlint-plugin-latex2e/-/textlint-plugin-latex2e-1.0.0.tgz#cb1b58134f8f7516b10e93b1267b5c4c2c8fac5c"
-  integrity sha512-F+xcuWzZhbtq8peXzDZxPQCKMsIUa6hZMCkvBtrRt5ae8VFVNYGfEuU3t3jHUtGXQvToIchsPuSbFcPJVm+iPw==
+textlint-plugin-latex2e@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/textlint-plugin-latex2e/-/textlint-plugin-latex2e-1.0.2.tgz#bf195f2a3f6fbb280cba3b567af4f215bff4bf32"
+  integrity sha512-i9wpHFr0bjGoq3nJpkmY9lhvSCaO+5e7oSQTvQr3bkp5uDc0cm43D4QlJPExYoCsfIUcCziBmGzzupNEV+M7DQ==
   dependencies:
-    "@textlint/ast-node-types" "^4.2.5"
-    fp-ts "^2.5.3"
-    latex-utensils "^2.0.0-beta.4"
+    "@textlint/ast-node-types" "^4.3.4"
+    fp-ts "^2.8.3"
+    latex-utensils "^2.0.3"
 
 textlint-rule-apostrophe@2.0.0:
   version "2.0.0"
