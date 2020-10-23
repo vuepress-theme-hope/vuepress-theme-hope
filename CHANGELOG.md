@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.4.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.3...v1.4.4) (2020-10-23)
+
+### Bug Fixes
+
+- **pwa:** fix shortcuts icon type ([c916390](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c91639007703f57bf2473ea738acbf4ba4bb8091))
+
 ## [1.4.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.2...v1.4.3) (2020-10-22)
 
 ### Bug Fixes
