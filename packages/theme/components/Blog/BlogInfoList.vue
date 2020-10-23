@@ -1,41 +1,45 @@
 <template>
   <div class="blog-info-list">
     <div class="switch-wrapper">
-      <button
-        class="switch-button"
-        :class="{ active: active === 'article' }"
-        :aria-label="i18n.article"
-        data-balloon-pos="up"
-        @click="setActive('article')"
-      >
-        <ArticleIconFill />
+      <button class="switch-button" @click="setActive('article')">
+        <div
+          class="icon-wapper"
+          :class="{ active: active === 'article' }"
+          :aria-label="i18n.article"
+          data-balloon-pos="up"
+        >
+          <ArticleIconFill />
+        </div>
       </button>
-      <button
-        class="switch-button"
-        :class="{ active: active === 'category' }"
-        :aria-label="i18n.category"
-        data-balloon-pos="up"
-        @click="setActive('category')"
-      >
-        <CategoryIcon />
+      <button class="switch-button" @click="setActive('category')">
+        <div
+          class="icon-wapper"
+          :class="{ active: active === 'category' }"
+          :aria-label="i18n.category"
+          data-balloon-pos="up"
+        >
+          <CategoryIcon />
+        </div>
       </button>
-      <button
-        class="switch-button"
-        :class="{ active: active === 'tag' }"
-        :aria-label="i18n.tag"
-        data-balloon-pos="up"
-        @click="setActive('tag')"
-      >
-        <TagIcon />
+      <button class="switch-button" @click="setActive('tag')">
+        <div
+          class="icon-wapper"
+          :class="{ active: active === 'tag' }"
+          :aria-label="i18n.tag"
+          data-balloon-pos="up"
+        >
+          <TagIcon />
+        </div>
       </button>
-      <button
-        class="switch-button"
-        :class="{ active: active === 'timeline' }"
-        :aria-label="i18n.timeline"
-        data-balloon-pos="up"
-        @click="setActive('timeline')"
-      >
-        <TimeIcon />
+      <button class="switch-button" @click="setActive('timeline')">
+        <div
+          class="icon-wapper"
+          :class="{ active: active === 'timeline' }"
+          :aria-label="i18n.timeline"
+          data-balloon-pos="up"
+        >
+          <TimeIcon />
+        </div>
       </button>
     </div>
 
@@ -124,34 +128,43 @@
   .switch-wrapper
     display flex
     justify-content center
-    padding 4px 0
+    margin-bottom 8px
 
     .switch-button
-      width 32px
-      height 32px
-      margin 0 4px
-      padding 6px
+      width 48px
+      height 48px
+      margin 0 6px
+      padding 4px
       border none
-      border-radius 50%
-      color var(--text-color)
-      background-color rgba(127, 127, 127, 0.1)
-
-      &:hover
-        cursor pointer
+      background-color transparent
 
       &:focus
         outline none
 
-      &.active
-        .theme-light &
-          background-color var(--accent-color-l10)
+      .theme-dark &
+        color #ccc
 
-        .theme-dark &
-          background-color var(--accent-color-d10)
+      .icon-wapper
+        width 24px
+        height 24px
+        padding 8px
+        border-radius 50%
+        color var(--text-color)
+        background-color rgba(127, 127, 127, 0.1)
 
-      .icon
-        width 100%
-        height 100%
+        &:hover
+          cursor pointer
+
+        &.active
+          .theme-light &
+            background-color var(--accent-color-l10)
+
+          .theme-dark &
+            background-color var(--accent-color-d10)
+
+        .icon
+          width 100%
+          height 100%
 
   .sticky-article-wrapper, .category-wrapper, .tag-wrapper
     padding 8px 0

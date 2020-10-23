@@ -4,6 +4,7 @@
     class="algolia-search-wrapper search-box"
     role="search"
   >
+    <label class="sr-only" for="algolia-search-input">Algolia search</label>
     <input
       id="algolia-search-input"
       class="search-query"

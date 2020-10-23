@@ -5,8 +5,10 @@
       :key="link.name"
       class="media-link"
       :href="link.url"
+      rel="noopener noreferrer"
       target="_blank"
     >
+      <span class="sr-only" v-text="link.icon" />
       <Component :is="link.icon" />
     </a>
   </div>

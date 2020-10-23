@@ -91,7 +91,7 @@
       position relative
       z-index 2
       margin 6px 0
-      color var(--light-grey)
+      color var(--dark-grey)
       font-size 13px
 
 @require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
