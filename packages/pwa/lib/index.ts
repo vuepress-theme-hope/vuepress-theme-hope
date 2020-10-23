@@ -3,8 +3,8 @@ import { i18n } from "@mr-hope/vuepress-shared-utils";
 import { resolve } from "path";
 import { head } from "./head";
 import { genManifest } from "./genManifest";
-import chalk = require("chalk");
-import fs = require("fs-extra");
+import { blue, black } from "chalk";
+import { readFile, writeFile } from "fs-extra";
 import WorkboxBuild = require("workbox-build");
 
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
@@ -32,8 +32,8 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
   config.generated = async (): Promise<void> => {
     console.log(
-      chalk.blue("PWA:"),
-      chalk.black.bgYellow("wait"),
+      blue("PWA:"),
+      black.bgYellow("wait"),
       "Generating service worker..."
     );
 
@@ -61,8 +61,8 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
       ...(option.generateSWConfig || {}),
     }).then(({ count, size, warnings }) => {
       console.log(
-        chalk.blue("PWA:"),
-        chalk.black.bgGreen("Success"),
+        blue("PWA:"),
+        black.bgGreen("Success"),
         `Generated service worker, which will precache ${count} files, totaling ${Math.ceil(
           size / 1024 / 1024
         )} Mb.\n${
@@ -72,21 +72,21 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
       if (size > 104857600)
         console.log(
-          chalk.black.bgRed("Error"),
+          black.bgRed("Error"),
           "Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n",
-          chalk.blue("Please consider disable `cacheHTMl` and `cachePic`")
+          blue("Please consider disable `cacheHTMl` and `cachePic`")
         );
       else if (size > 52428800)
         console.log(
-          chalk.black.bgYellow("Warning"),
+          black.bgYellow("Warning"),
           "\nCache Size is larger than 50Mb, which will not be registerd on Safari.\n",
-          chalk.blue("Please consider disable `cacheHTMl` and `cachePic`")
+          blue("Please consider disable `cacheHTMl` and `cachePic`")
         );
     });
 
-    await fs.writeFile(
+    await writeFile(
       swDest,
-      await fs.readFile(resolve(__dirname, "./skip-waiting.js"), "utf8"),
+      await readFile(resolve(__dirname, "./skip-waiting.js"), "utf8"),
       { flag: "a" }
     );
 

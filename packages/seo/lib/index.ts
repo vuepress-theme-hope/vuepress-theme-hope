@@ -1,3 +1,6 @@
+import { black, blue } from "chalk";
+import { readFile, existsSync, writeFile } from "fs-extra";
+import { resolve } from "path";
 import { generateSeo } from "./genSeo";
 import { appendMeta } from "./meta";
 
@@ -52,6 +55,40 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
       if (option.customMeta) option.customMeta(meta, pageSeoInfo);
 
       $page.frontmatter.meta = meta;
+    },
+
+    async generated(): Promise<void> {
+      console.log(
+        blue("SEO:"),
+        black.bgYellow("wait"),
+        "Generating robots.txt..."
+      );
+      const useRobotsTxtPath = resolve(
+        context.sourceDir,
+        "./.vuepress/public/robots.txt"
+      );
+
+      let userRobotsTxT = existsSync(useRobotsTxtPath)
+        ? await readFile(useRobotsTxtPath, { encoding: "utf8" })
+        : "";
+
+      if (userRobotsTxT && !userRobotsTxT.includes("User-agent"))
+        console.log(
+          blue("SEO:"),
+          black.bgRed("error"),
+          "robots.txt seems invalid!"
+        );
+      else userRobotsTxT += "\nUser-agent:*\nDisallow:\n";
+
+      await writeFile(resolve(context.outDir, "./robots.txt"), userRobotsTxT, {
+        flag: "w",
+      });
+
+      console.log(
+        blue("SEO:"),
+        black.bgGreen("Success"),
+        "Generated robots.txt"
+      );
     },
 
     plugins: ["@mr-hope/last-update", ["@vuepress/last-updated", false]],

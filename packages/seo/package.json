@@ -26,7 +26,10 @@
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-types": "^1.4.4"
+    "@mr-hope/vuepress-types": "^1.4.4",
+    "@types/fs-extra": "^9.0.2",
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1"
   },
   "publishConfig": {
     "access": "public"

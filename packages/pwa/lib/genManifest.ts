@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { resolve } from "path";
-import chalk = require("chalk");
-import fs = require("fs-extra");
+import { existsSync, readFile, writeJSON } from "fs-extra";
+import { black, blue } from "chalk";
 
 import { ManifestOption, PWAOptions } from "../types";
 import { Context } from "@mr-hope/vuepress-types";
@@ -23,10 +23,10 @@ export const genManifest = async (
   const optionManifest = options.manifest || {};
 
   const userManifest = JSON.parse(
-    fs.existsSync(userManifestPath)
-      ? await fs.readFile(userManifestPath, "utf8")
-      : fs.existsSync(userManifestJSONPath)
-      ? await fs.readFile(userManifestJSONPath, "utf8")
+    existsSync(userManifestPath)
+      ? await readFile(userManifestPath, "utf8")
+      : existsSync(userManifestJSONPath)
+      ? await readFile(userManifestJSONPath, "utf8")
       : "{}"
   ) as ManifestOption;
 
@@ -51,13 +51,13 @@ export const genManifest = async (
     ...optionManifest,
   };
 
-  await fs.writeJSON(resolve(outDir, "manifest.webmanifest"), finalManifest, {
+  await writeJSON(resolve(outDir, "manifest.webmanifest"), finalManifest, {
     flag: "w",
   });
 
   console.log(
-    chalk.blue("PWA:"),
-    chalk.black.bgGreen("Success"),
+    blue("PWA:"),
+    black.bgGreen("Success"),
     "Generated manifest.webmanifest"
   );
 };
