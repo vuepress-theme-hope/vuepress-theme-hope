@@ -39,8 +39,8 @@
   z-index 1
   fill currentcolor
 
-.back-to-top:hover
-  color var(--accent-color-l25, lighten($accentColor, 25%))
+  &:hover
+    color var(--accent-color-l25, lighten($accentColor, 25%))
 
 .fade-enter-active, .fade-leave-active
   transition opacity 0.3s

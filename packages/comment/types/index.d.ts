@@ -1,7 +1,7 @@
 import {
   Langs,
   PageInfoI18nConfig,
-  ReadingTimeI18NCOnfig,
+  ReadingTimeI18NConfig,
 } from "@mr-hope/vuepress-shared-utils";
 import { Vssue } from "vssue";
 import { ValineOption } from "valine";
@@ -208,6 +208,6 @@ export type CommentOptions =
 declare global {
   const COMMENT_OPTIONS: CommentOptions;
   const PAGE_INFO_I18N: Record<string, PageInfoI18nConfig>;
-  const READING_TIME_I18N: Record<string, ReadingTimeI18NCOnfig>;
+  const READING_TIME_I18N: Record<string, ReadingTimeI18NConfig>;
   const VALINE_I18N: Record<string, string>;
 }

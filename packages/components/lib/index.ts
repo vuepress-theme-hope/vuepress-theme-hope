@@ -16,9 +16,9 @@ export = (options: ComponentOptions, context: Context): PluginOptionAPI => {
   return {
     name: "components",
 
-    define: {
+    define: (): Record<string, unknown> => ({
       COMPONENT_I18N: componentConfig,
-    },
+    }),
 
     enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
 

@@ -21,10 +21,10 @@ export = (
   const markdownOption =
     Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
 
-  const config: PluginOptionAPI = {
+  return {
     name: "md-enhance",
 
-    define: () => ({
+    define: (): Record<string, unknown> => ({
       MARKDOWN_ENHANCE_OPTIONS: markdownOption,
       REVEAL_OPTIONS:
         typeof markdownOption.presentation === "object"
@@ -34,7 +34,7 @@ export = (
 
     enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
 
-    chainMarkdown: (md) => {
+    chainMarkdown: (md): void => {
       if (markdownOption.lineNumbers !== false)
         md.plugin("line-numbers").use(lineNumbers);
       if (markdownOption.sup || markdownOption.enableAll)
@@ -61,9 +61,7 @@ export = (
       if (markdownOption.presentation || markdownOption.enableAll)
         md.plugin("presentation").use(presentation);
     },
+
+    plugins: pluginConfig(markdownOption, themeConfig),
   };
-
-  config.plugins = pluginConfig(markdownOption, themeConfig);
-
-  return config;
 };

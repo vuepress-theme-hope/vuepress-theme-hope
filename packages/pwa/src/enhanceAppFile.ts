@@ -1,11 +1,13 @@
 /* global SW_BASE_URL */
 import { EnhanceApp } from "@mr-hope/vuepress-types";
 import SWUpdateEvent from "./SWUpdateEvent";
+import PWAInstall from "./PWAInstall.vue";
 import SWUpdatePopup from "./SWUpdatePopup.vue";
 import event from "./event";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
+  Vue.component("PWAInstall", PWAInstall);
   Vue.component("SWUpdatePopup", SWUpdatePopup);
 
   if (process.env.NODE_ENV === "production" && !isServer) {

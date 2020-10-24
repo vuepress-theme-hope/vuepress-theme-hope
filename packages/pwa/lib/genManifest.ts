@@ -6,17 +6,11 @@ import { black, blue } from "chalk";
 import { ManifestOption, PWAOptions } from "../types";
 import { Context } from "@mr-hope/vuepress-types";
 
-export const genManifest = async (
+export const getManifest = async (
   options: PWAOptions,
   context: Context
-): Promise<void> => {
-  console.log(
-    blue("PWA:"),
-    black.bgYellow("wait"),
-    "Generating manifest.webmanifest..."
-  );
-
-  const { sourceDir, outDir, siteConfig, themeConfig } = context;
+): Promise<ManifestOption> => {
+  const { sourceDir, siteConfig, themeConfig } = context;
   const userManifestPath = resolve(
     sourceDir,
     "./.vuepress/public/manifest.webmanifest"
@@ -57,7 +51,22 @@ export const genManifest = async (
     ...optionManifest,
   };
 
-  await writeJSON(resolve(outDir, "manifest.webmanifest"), finalManifest, {
+  return finalManifest;
+};
+
+export const genManifest = async (
+  options: PWAOptions,
+  context: Context
+): Promise<void> => {
+  console.log(
+    blue("PWA:"),
+    black.bgYellow("wait"),
+    "Generating manifest.webmanifest..."
+  );
+
+  const manifest = getManifest(options, context);
+
+  await writeJSON(resolve(context.outDir, "manifest.webmanifest"), manifest, {
     flag: "w",
   });
 

@@ -10,7 +10,7 @@ export default class SWUpdatePopup extends Vue {
   }
 
   private get message(): string {
-    return PWA_I18N[this.$localePath || "/"];
+    return PWA_I18N[this.$localePath || "/"].update;
   }
 
   private created(): void {

@@ -63,26 +63,26 @@ const getAlias = (
 const themeAPI = (
   themeConfig: ResolvedHopeThemeConfig,
   ctx: Context
-): ThemeOptionAPI => {
-  const config: ThemeOptionAPI = {};
+): ThemeOptionAPI => ({
+  alias: getAlias(themeConfig, ctx),
 
-  if (themeConfig.blog !== false)
-    config.additionalPages = [
-      {
-        path: "/article/",
-        frontmatter: { layout: "Blog" },
-      },
-      {
-        path: "/timeline/",
-        frontmatter: { layout: "Blog" },
-      },
-    ];
+  plugins: getPlugin(themeConfig),
 
-  config.alias = getAlias(themeConfig, ctx);
+  additionalPages:
+    themeConfig.blog === false
+      ? []
+      : [
+          {
+            path: "/article/",
+            frontmatter: { layout: "Blog" },
+          },
+          {
+            path: "/timeline/",
+            frontmatter: { layout: "Blog" },
+          },
+        ],
 
-  config.plugins = getPlugin(themeConfig);
-
-  config.extendCli = (cli: CAC): void => {
+  extendCli: (cli: CAC): void => {
     cli
       .command(
         "eject-hope [targetDir]",
@@ -92,10 +92,8 @@ const themeAPI = (
       .action((dir = ".") => {
         void eject(dir);
       });
-  };
-
-  return config;
-};
+  },
+});
 
 themeAPI.config = config;
 

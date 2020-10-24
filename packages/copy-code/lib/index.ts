@@ -18,11 +18,11 @@ export = (
   return {
     name: "copy-code",
 
-    define: {
+    define: (): Record<string, unknown> => ({
       CODE_COPY_OPIONS:
         Object.keys(options).length > 0 ? options : themeConfig.copyCode || {},
       CODE_COPY_I18N: copyCodeConfig,
-    },
+    }),
 
     clientRootMixin: resolve(__dirname, "../src/clientRootMixin.js"),
   };

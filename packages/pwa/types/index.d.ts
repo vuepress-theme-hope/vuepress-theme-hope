@@ -2,7 +2,7 @@ import { Langs } from "@mr-hope/vuepress-shared-utils";
 import { HeadItem } from "@mr-hope/vuepress-types";
 import WorkboxBuild from "workbox-build";
 import { ManifestOption } from "./manifest";
-
+import { PWAI18NConfig } from "@mr-hope/vuepress-shared-utils";
 import "./declare";
 
 export * from "./manifest";
@@ -59,6 +59,14 @@ export interface PWAOptions {
    * @default 'en-US'
    */
   baseLang?: Langs;
+  /**
+   * 是否显示安装按钮
+   *
+   * Whether display install button
+   *
+   * @default true
+   */
+  showInstall?: boolean;
   /**
    * manifest 文件设置
    *
@@ -148,6 +156,7 @@ export interface PWAOptions {
 export const head: (options: PWAOptions, head?: HeadItem[]) => HeadItem[];
 
 declare global {
+  const PWA_OPTION: PWAOptions;
+  const PWA_I18N: Record<string, PWAI18NConfig>;
   const SW_BASE_URL: string;
-  const PWA_I18N: Record<string, string>;
 }
