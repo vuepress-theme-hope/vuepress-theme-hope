@@ -97,15 +97,15 @@ module.exports = config({
             url: "/demo/",
             icons: [
               {
-                src: "/assets/icon/demo-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-              {
                 src: "/assets/icon/demo-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
+                type: "image/png",
+              },
+              {
+                src: "/assets/icon/demo-monochrome.png",
+                sizes: "192x192",
+                purpose: "monochrome",
                 type: "image/png",
               },
             ],
@@ -116,15 +116,15 @@ module.exports = config({
             url: "/config/",
             icons: [
               {
-                src: "/assets/icon/config-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-              {
                 src: "/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
+                type: "image/png",
+              },
+              {
+                src: "/assets/icon/config-monochrome.png",
+                sizes: "192x192",
+                purpose: "monochrome",
                 type: "image/png",
               },
             ],
