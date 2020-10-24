@@ -64,7 +64,7 @@ export const genManifest = async (
     "Generating manifest.webmanifest..."
   );
 
-  const manifest = getManifest(options, context);
+  const manifest = await getManifest(options, context);
 
   await writeJSON(resolve(context.outDir, "manifest.webmanifest"), manifest, {
     flag: "w",
