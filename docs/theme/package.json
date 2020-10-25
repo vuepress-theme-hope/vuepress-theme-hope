@@ -1,6 +1,6 @@
 {
   "name": "theme-docs",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "private": true,
   "description": "Docs for vuepress-theme-hope",
   "license": "MIT",
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "vuepress": "1.7.1",
-    "vuepress-theme-hope": "^1.4.5"
+    "vuepress-theme-hope": "^1.4.6"
   }
 }
