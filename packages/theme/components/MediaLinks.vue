@@ -7,6 +7,8 @@
       :href="link.url"
       rel="noopener noreferrer"
       target="_blank"
+      :aria-label="link.icon"
+      data-balloon-pos="up"
     >
       <span class="sr-only" v-text="link.icon" />
       <Component :is="link.icon" />
@@ -27,11 +29,15 @@
     height 28px
     margin 4px
     transform scale(1, 1)
-    transition all 0.2s
+    transition all 0.18s ease-out 0.18s
 
     &:hover
       cursor pointer
       transform scale(1.2, 1.2)
+
+    &::after
+      --balloon-font-size 8px
+      padding 0.3em 0.6em
 
     .icon
       width 100%

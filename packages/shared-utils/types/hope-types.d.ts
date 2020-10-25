@@ -77,6 +77,8 @@ interface HopeLangI18nConfigItem {
     timelineText: string;
     /** 全部文字 */
     allText: string;
+    /** 个人介绍 */
+    intro: string;
   };
 }
 

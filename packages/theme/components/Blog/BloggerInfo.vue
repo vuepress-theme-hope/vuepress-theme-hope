@@ -2,7 +2,13 @@
   <div class="blogger-info-wrapper">
     <div class="blogger-info">
       <div class="blogger-wrapper">
-        <div class="blogger" :class="{ hasIntro }" @click="jumpIntro">
+        <div
+          class="blogger"
+          :class="{ hasIntro }"
+          :aria-label="hasIntro ? i18n.intro : ''"
+          :data-balloon-pos="hasIntro ? 'right' : ''"
+          @click="jumpIntro"
+        >
           <img
             v-if="bloggerAvatar"
             class="avatar"

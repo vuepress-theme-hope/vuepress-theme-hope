@@ -1,39 +1,37 @@
 <template>
-  <div class="blog-hero">
+  <div
+    v-if="$frontmatter.hero !== false"
+    class="blog-hero"
+    :style="{ ...bgImageStyle }"
+  >
     <div
-      v-if="$frontmatter.hero !== false"
-      class="hero"
-      :style="{ ...bgImageStyle }"
-    >
-      <div
-        class="mask"
-        :style="{
-          background: `url(${
-            $frontmatter.bgImage
-              ? $withBase($frontmatter.bgImage)
-              : require('@theme/assets/homeImage.jpg')
-          }) center/cover no-repeat`,
-        }"
+      class="mask"
+      :style="{
+        background: `url(${
+          $frontmatter.bgImage
+            ? $withBase($frontmatter.bgImage)
+            : require('@theme/assets/homeImage.jpg')
+        }) center/cover no-repeat`,
+      }"
+    />
+    <MyTransition :delay="0.04">
+      <img
+        v-if="$frontmatter.heroImage"
+        class="hero-logo"
+        :style="heroImageStyle || {}"
+        :src="$withBase($frontmatter.heroImage)"
+        alt="hero"
       />
-      <MyTransition :delay="0.04">
-        <img
-          v-if="$frontmatter.heroImage"
-          class="hero-logo"
-          :style="heroImageStyle || {}"
-          :src="$withBase($frontmatter.heroImage)"
-          alt="hero"
-        />
-      </MyTransition>
-      <MyTransition :delay="0.08">
-        <h1 v-if="$frontmatter.showTitle !== false">
-          {{ $frontmatter.heroText || $title || "Hope" }}
-        </h1>
-      </MyTransition>
+    </MyTransition>
+    <MyTransition :delay="0.08">
+      <h1 v-if="$frontmatter.showTitle !== false">
+        {{ $frontmatter.heroText || $title || "Hope" }}
+      </h1>
+    </MyTransition>
 
-      <MyTransition :delay="0.12">
-        <p v-if="$description" class="description" v-text="$description" />
-      </MyTransition>
-    </div>
+    <MyTransition :delay="0.12">
+      <p v-if="$description" class="description" v-text="$description" />
+    </MyTransition>
   </div>
 </template>
 
@@ -42,11 +40,8 @@
 <style lang="stylus">
 .blog-hero
   position relative
-  color #fff
+  color #eee
   margin-bottom 16px
-
-  @media (min-width $MQMobile)
-    overflow hidden
 
   @media (max-width $MQMobile)
     height 450px

@@ -60,6 +60,7 @@ export const localesConfig: Record<Langs, HopeLangI18nConfig> = {
       timeline: "时间轴",
       timelineText: "昨日不在",
       allText: "全部",
+      intro: "个人介绍",
     },
   },
 
@@ -92,6 +93,7 @@ export const localesConfig: Record<Langs, HopeLangI18nConfig> = {
       timeline: "Timeline",
       timelineText: "Yesterday Once More!",
       allText: "All",
+      intro: "Personal Intro",
     },
   },
   "vi-VN": {
@@ -123,6 +125,7 @@ export const localesConfig: Record<Langs, HopeLangI18nConfig> = {
       timeline: "Timeline",
       timelineText: "Yesterday Once More!",
       allText: "Tất cả",
+      intro: "Giới thiệu cá nhân",
     },
   },
 };
