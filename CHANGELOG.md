@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.4.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/1.4.6...v1.4.7) (2020-10-25)
+
+### Features
+
+- **theme:** add hint ([dcb0e74](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dcb0e74058238d8f756ae5c9aafadba773335e17))
+- **pwa**: add install modal([6671320](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6671320bbc2878b140715a48f02f4de92ab418a0))
+
 ## [1.4.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.4...v1.4.5) (2020-10-23)
 
 ### Features
