@@ -10,6 +10,13 @@ icon: configuration
 
 主目录所对应的语言。
 
+## showInstall
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否显示安装按钮
+
 ## manifest
 
 - 类型: `ManifestOption`

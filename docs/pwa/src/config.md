@@ -10,6 +10,13 @@ icon: configuration
 
 The language of the home directory.
 
+## showInstall
+
+- Type: `boolean`
+- Default: `true`
+
+Whether display install button
+
 ## manifest
 
 - Type: `ManifestOption`
