@@ -22,7 +22,7 @@ tags:
 ### baseLang
 
 - 类型: `string`
-- 默认值: `'zh-CN'`
+- 默认值: `'en-US'`
 
 主目录所对应的语言。
 
