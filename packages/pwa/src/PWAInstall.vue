@@ -9,7 +9,7 @@
     </button>
     <PWAInstallModal
       v-show="isOpen"
-      @can-install="canInstall = $evnet"
+      @can-install="canInstall = $event"
       @toogle="isOpen = $event"
     />
   </div>
