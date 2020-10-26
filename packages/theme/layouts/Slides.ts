@@ -7,6 +7,14 @@ import ClickOutside from "@theme/util/click-outside";
 export default class Slides extends Vue {
   private showMenu = false;
 
+  private destroyed(): void {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    document.querySelector("html")!.classList.remove("reveal-full-page");
+    document.body.classList.remove("reveal-viewport");
+    document.body.style.removeProperty("--slide-width");
+    document.body.style.removeProperty("--slide-height");
+  }
+
   private toggle(): void {
     this.showMenu = !this.showMenu;
   }
