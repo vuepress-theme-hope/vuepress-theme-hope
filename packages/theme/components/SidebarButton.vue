@@ -1,23 +1,25 @@
 <template>
-  <div class="sidebar-button" @click="$emit('toggle-sidebar')">
+  <button class="sidebar-button" @click="$emit('toggle-sidebar')">
     <span class="icon" />
-  </div>
+  </button>
 </template>
 
 <style lang="stylus">
 .sidebar-button
-  cursor pointer
   display none
+  box-sizing content-box
   position absolute
-  padding 0.6rem
   top 0.6rem
   left 1rem
   width 20px
   height 20px
-  transition transform 0.2s ease-in-out
-  vertical-align middle
+  padding 0.6rem
   border 0 none
   background transparent
+  font unset
+  vertical-align middle
+  transition transform 0.2s ease-in-out
+  cursor pointer
 
   &::before
     content ' '
