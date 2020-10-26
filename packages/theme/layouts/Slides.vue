@@ -51,6 +51,9 @@
     &:hover
       background-color var(--accent-color)
 
+    @media screen and (orientation landscape)
+      bottom 2rem
+
     .theme-dark &
       background-color #666
 
