@@ -17,7 +17,6 @@ interface InstallPromptEvent extends Event {
 
 @Component({ components: { ArrowLeftIcon, ArrowRightIcon, CloseIcon } })
 export default class PWAInstallModal extends Vue {
-  manifestpath = "manifest.webmanifest";
   manifest: ManifestOption = {};
   isIOS = false;
 
@@ -59,27 +58,22 @@ export default class PWAInstallModal extends Vue {
   }
 
   async getManifest(): Promise<void> {
-    if (this.manifestpath) {
+    const manifestContent = localStorage.getItem("manifest");
+
+    if (manifestContent)
+      this.manifest = JSON.parse(manifestContent) as ManifestOption;
+    else
       try {
-        const response = await fetch(this.manifestpath);
+        const response = await fetch("manifest.webmanifest");
         const data = (await response.json()) as ManifestOption;
 
-        if (!data.icons || !data.icons[0])
-          console.error("Your web manifest must have atleast one icon listed");
-
-        if (!data.name)
-          console.error("Your web manifest must have a name listed");
-
-        if (!data.description)
-          console.error("Your web manifest must have a description listed");
-
         this.manifest = data;
+        localStorage.setItem("manifest", JSON.stringify(data));
       } catch (err) {
         console.error(
-          "Error getting manifest, check that you have a valid web manifest"
+          "Error getting manifest, check that you have a valid web manifest or network connection"
         );
       }
-    }
   }
 
   scrollToLeft(): void {
