@@ -1,68 +1,84 @@
 const { config } = require("vuepress-theme-hope");
-const navBarConfig = require("./config/navBar");
-const sideBarConfig = require("./config/sideBar");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = config({
   title: "Theme Demo",
-  description: "vuepress-theme-hope 的 demo",
+  description: "A demo for vuepress-theme-hope",
 
   dest: "./dist",
 
   locales: {
-    "/en/": {
+    "/zh/": {
       title: "Theme Demo",
-      description: "A demo for vuepress-theme-hope",
+      description: "vuepress-theme-hope 的 demo",
     },
   },
 
-  extraWatchFiles: [
-    ".vuepress/config/navBar.js",
-    ".vuepress/config/sideBar.js",
-    ".vuepress/config/theme.js",
-  ],
-
   themeConfig: {
-    baseLang: "zh-CN",
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-demo.mrhope.site/",
 
-    nav: navBarConfig.zh,
-    sidebar: sideBarConfig.zh,
-
-    author: "Mr.Hope",
-
-    footer: {
-      display: false,
-    },
-
-    pageInfo: [
-      "Author",
-      "Category",
-      "ReadTime",
-      "Tag",
-      "Time",
-      "Word",
-      "Visitor",
+    nav: [
+      { text: "Blog Home", link: "/", icon: "home" },
+      { text: "Project Home", link: "/home/", icon: "home" },
+      {
+        text: "Guide",
+        icon: "creative",
+        link: "/guide/",
+      },
+      {
+        text: "Docs",
+        link: "https://vuepress-theme.mrhope.site/",
+        icon: "note",
+      },
     ],
 
-    themeColor: false,
-
-    mdEnhance: { enableAll: true },
-
-    comment: {
-      type: "valine",
-      appId: "msnseO76haIVIGvfJ10BKnpv-gzGzoHsz",
-      appKey: "9QMulKhu7EDp1va0TYXR2PrI",
+    sidebar: {
+      "/": [
+        "",
+        "home",
+        "slides",
+        {
+          title: "Guide",
+          icon: "creative",
+          prefix: "guide/",
+          children: ["", "page", "markdown", "disable", "encrypt"],
+        },
+      ],
     },
 
-    encrypt: {
-      global: "01311031",
-      config: {
-        "/en/": ["1234", "5678"],
-        "/test/detail/": "1234",
-        "/test/footer/default": "5678",
+    locales: {
+      "/zh/": {
+        nav: [
+          { text: "博客主页", link: "/zh/", icon: "home" },
+          { text: "项目主页", link: "/zh/home/", icon: "home" },
+          {
+            text: "如何使用",
+            icon: "creative",
+            link: "/zh/guide/",
+          },
+          {
+            text: "主题文档",
+            icon: "note",
+            link: "https://vuepress-theme.mrhope.site/zh/",
+          },
+        ],
+        sidebar: {
+          "/zh/": [
+            "",
+            "home",
+            "slides",
+            {
+              title: "如何使用",
+              icon: "creative",
+              prefix: "guide/",
+              children: ["", "page", "markdown", "disable", "encrypt"],
+            },
+          ],
+        },
       },
     },
+
+    author: "Mr.Hope",
 
     blog: {
       intro: "/intro/",
@@ -74,15 +90,26 @@ module.exports = config({
       },
     },
 
-    locales: {
-      "/en/": {
-        nav: navBarConfig.en,
-        sidebar: sideBarConfig.en,
-      },
+    comment: {
+      type: "valine",
+      appId: "msnseO76haIVIGvfJ10BKnpv-gzGzoHsz",
+      appKey: "9QMulKhu7EDp1va0TYXR2PrI",
     },
+
+    copyright: {
+      status: "global",
+    },
+
+    footer: {
+      content: "默认页脚",
+    },
+
+    mdEnhance: {
+      enableAll: true,
+    },
+
     pwa: {
       favicon: "/favicon.ico",
-      themeColor: "#46bd87",
       cachePic: true,
       apple: {
         icon: "/assets/icon/apple-icon-152.png",
@@ -117,10 +144,30 @@ module.exports = config({
             type: "image/png",
           },
         ],
+        shortcuts: [
+          {
+            name: "Guide",
+            short_name: "Guide",
+            url: "/guide/",
+            icons: [
+              {
+                src: "/assets/icon/guide-maskable.png",
+                sizes: "192x192",
+                purpose: "maskable",
+                type: "image/png",
+              },
+              {
+                src: "/assets/icon/guide-monochrome.png",
+                sizes: "192x192",
+                purpose: "monochrome",
+                type: "image/png",
+              },
+            ],
+          },
+        ],
       },
     },
 
-    hostname: "https://vuepress-theme-demo.mrhope.site/",
     repo: "https://github.com/mister-hope/vuepress-theme-hope",
     repoLabel: "Github",
   },

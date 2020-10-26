@@ -1,48 +1,33 @@
 ---
 blog: true
 home: true
-title: vuepress-theme-hope
+icon: home
+title: Mr.Hope
 heroImage: /logo.svg
-heroText: vuepress-theme-hope
-tagline: 一个具有强大功能的 vuepress 主题✨
-action:
-  text: 页面布局测试 →
-  link: /test/
+heroText: the name of your blog
+tagline: You can put your slogan here
 project:
-  - type: "project"
-    name: "vuepress-theme-hope"
-    link: "https://github.com/mister-hope/vuepress-theme-hope"
-    cover: "/logo.png"
+  - type: project
+    name: project name
+    desc: project detailed description
+    link: your project link
 
-  - type: "book"
-    name: "markdown3"
-    desc: "A display for markdown enhance."
-    link: "/markdown/"
+  - type: link
+    name: link name
+    desc: link detailed description
+    link: link address
 
-  - type: "article"
-    name: "markdown2"
-    desc: "A display for markdown enhance."
-    link: "/markdown/"
+  - type: book
+    name: book name
+    desc: Detailed description of the book
+    link: link to your book
 
-  - type: "link"
-    name: "markdown1"
-    desc: "A display for markdown enhance."
-    link: "/markdown/"
+  - type: article
+    name: article name
+    desc: Detailed description of the article
+    link: link to your article
 
-  - type: "book"
-    name: "markdown4"
-    desc: "A display for markdown enhance."
-    link: "/markdown/"
-
-  - type: "article"
-    name: "markdown5"
-    desc: "A display for markdown enhance."
-    link: "/markdown/"
-
-  - type: "link"
-    name: "markdown6"
-    desc: "A display for markdown enhance."
-    link: "/markdown/"
-
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+footer: customize your footer text
 ---
+
+For related configuration documents, please see [blog homepage](https://vuepress-theme.mrhope.site/guide/layout/blog/)

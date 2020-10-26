@@ -1,7 +1,7 @@
 ---
-time: 2020-04-04
+icon: info
 ---
 
-# 个人介绍
+# Intro Page
 
-个人介绍内容。
+Place your introducation and profile here.
