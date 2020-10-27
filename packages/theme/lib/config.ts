@@ -21,7 +21,11 @@ export const config = (
   resolveLocales(resolvedConfig);
 
   if (resolvedConfig.themeConfig.pwa)
-    resolvedConfig.head = head(resolvedConfig.themeConfig.pwa, config.head);
+    resolvedConfig.head = head(
+      resolvedConfig.themeConfig.pwa,
+      config.head,
+      config.base || "/"
+    );
 
   return resolvedConfig;
 };

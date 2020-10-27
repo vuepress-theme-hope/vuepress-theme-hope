@@ -1,14 +1,16 @@
 import { HeadItem } from "@mr-hope/vuepress-types";
 import { PWAOptions } from "../types";
 
-export const head = (options: PWAOptions, head?: HeadItem[]): HeadItem[] => {
-  const headList = head || [];
-
+export const head = (
+  options: PWAOptions,
+  head: HeadItem[] = [],
+  base?: string
+): HeadItem[] => {
   const metaKeys: string[] = [];
   const linkKeys: string[] = [];
 
   // Generate Hash for Head
-  headList.forEach((item) => {
+  head.forEach((item) => {
     if (item[0] === "meta") metaKeys.push(item[1].name);
     else if (item[0] === "link") linkKeys.push(item[1].rel);
   });
@@ -19,8 +21,7 @@ export const head = (options: PWAOptions, head?: HeadItem[]): HeadItem[] => {
     href: string,
     more: Record<string, string> = {}
   ): void => {
-    if (!linkKeys.includes(rel))
-      headList.push(["link", { rel, href, ...more }]);
+    if (!linkKeys.includes(rel)) head.push(["link", { rel, href, ...more }]);
   };
 
   const setMeta = (
@@ -29,7 +30,7 @@ export const head = (options: PWAOptions, head?: HeadItem[]): HeadItem[] => {
     more: Record<string, string> = {}
   ): void => {
     if (!metaKeys.includes(name))
-      headList.push(["meta", { name, content, ...more }]);
+      head.push(["meta", { name, content, ...more }]);
   };
 
   if (options.favicon) setLink("icon", options.favicon);
@@ -48,7 +49,7 @@ export const head = (options: PWAOptions, head?: HeadItem[]): HeadItem[] => {
     }
   }
 
-  setLink("manifest", `${options.base || "/"}manifest.webmanifest`);
+  setLink("manifest", `${base || options.base || "/"}manifest.webmanifest`);
   setMeta("theme-color", options.themeColor || "#46bd87");
 
   if (
@@ -91,5 +92,5 @@ export const head = (options: PWAOptions, head?: HeadItem[]): HeadItem[] => {
     "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
   );
 
-  return headList;
+  return head;
 };

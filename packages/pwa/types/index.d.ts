@@ -153,7 +153,11 @@ export interface PWAOptions {
   generateSWConfig?: Partial<WorkboxBuild.Options>;
 }
 
-export const head: (options: PWAOptions, head?: HeadItem[]) => HeadItem[];
+export const head: (
+  options: PWAOptions,
+  head?: HeadItem[],
+  base?: string
+) => HeadItem[];
 
 declare global {
   const PWA_OPTION: PWAOptions;
