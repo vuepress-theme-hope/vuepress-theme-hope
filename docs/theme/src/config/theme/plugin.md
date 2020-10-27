@@ -167,6 +167,13 @@ Some options have their fallback if you donot set them.
 
 :::
 
+### pwa.showInstall
+
+- Type: `boolean`
+- Default: `true`
+
+Whether display install button
+
 ### pwa.favicon
 
 - Type: `string`

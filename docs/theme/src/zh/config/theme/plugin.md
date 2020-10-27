@@ -169,6 +169,13 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 :::
 
+### pwa.showInstall
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否显示安装按钮
+
 ### pwa.favicon
 
 - 类型: `string`
