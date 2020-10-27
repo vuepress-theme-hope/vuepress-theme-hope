@@ -8,7 +8,7 @@
           :aria-label="i18n.article"
           data-balloon-pos="up"
         >
-          <ArticleIconFill />
+          <ArticleIcon />
         </div>
       </button>
       <button class="switch-button" @click="setActive('category')">
@@ -47,7 +47,7 @@
     <MyTransition v-if="active === 'article'">
       <div class="sticky-article-wrapper">
         <div class="title" @click="$router.push('/article/')">
-          <ArticleIconFill />
+          <ArticleIcon />
           <span class="num">{{ $articles.length }}</span>
           {{ i18n.article }}
         </div>

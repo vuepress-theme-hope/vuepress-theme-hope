@@ -4,6 +4,7 @@
     <StickyIcon v-if="article.frontmatter.sticky" />
     <RouterLink class="title" tag="header" :to="article.path">
       <LockIcon v-if="isEncrypted" />
+      <PresentationIcon v-if="article.frontmatter.layout === 'Slides'" />
       {{ article.title }}
     </RouterLink>
     <div
@@ -79,12 +80,14 @@
           -webkit-transform scaleX(1)
           transform scaleX(1)
 
-      .lock-icon
+      .lock-icon, .presentation-icon
+        position relative
+        bottom -0.125em
         display inline-block
         vertical-align baseline
         width 20px
         height 20px
-        fill var(--accent-color)
+        color var(--accent-color)
 
     .article-excerpt
       h1

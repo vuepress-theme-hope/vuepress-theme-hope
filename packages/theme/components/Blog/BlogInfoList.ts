@@ -1,7 +1,7 @@
 import { ArticleMixin, StickyMixin } from "@theme/util/articleMixin";
 import { Component, Mixins } from "vue-property-decorator";
 import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
-import ArticleIconFill from "@mr-hope/vuepress-shared-utils/icons/ArticleIconFill.vue";
+import ArticleIcon from "@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue";
 import ArticleList from "@theme/components/Blog/ArticleList.vue";
 import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
 import CategoryList from "@theme/components/Blog/CategoryList.vue";
@@ -14,7 +14,7 @@ import TimelineList from "@theme/components/Blog/TimelineList.vue";
 
 @Component({
   components: {
-    ArticleIconFill,
+    ArticleIcon,
     ArticleList,
     CategoryIcon,
     CategoryList,

@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="icon icon-close"
+    class="icon close-icon"
     width="23"
     height="22"
     xmlns="http://www.w3.org/2000/svg"
