@@ -2,6 +2,21 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.0-beta.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.7...v1.5.0-beta.0) (2020-10-27)
+
+### Bug Fixes
+
+- **pwa:** fix typos ([6fd86ab](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6fd86ab5b9a5e58e296be9bc3913d2c29d07220e))
+- **theme:** clear influence when navigating from Slide Layout ([e1dd0fc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e1dd0fc90624de8b3194876e3bb91e2a7582c16a))
+- **theme:** generate right manifest link when base are set ([b121797](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b1217977cc063bc85a70a30fcd70ea7de1050354))
+
+### Features
+
+- **pwa:** cache manifest to work offline ([5a71a15](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5a71a1543acbf2037111dac9bd64eb769d529f9c))
+- **theme:** add Icon for Slide page ([fffc83d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fffc83d48a6e92c3fbcca83055a12d76e298680a))
+- **theme:** add Slides layout ([1de9d42](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1de9d426e3f1a87cdf89cc87b80055eafdf6747e))
+- **theme:** adjust button position in landscape mode ([2943ed1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2943ed18da9098525d01aba1f601e9aa8c0ac401))
+
 ## [1.4.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/1.4.6...v1.4.7) (2020-10-25)
 
 ### Features
