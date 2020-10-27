@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-pwa",
-  "version": "1.4.7",
+  "version": "1.5.0-beta.0",
   "description": "pwa plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -30,8 +30,8 @@
     "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/**/*.test.ts"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^1.4.7",
-    "@mr-hope/vuepress-types": "^1.4.7",
+    "@mr-hope/vuepress-shared-utils": "^1.5.0-beta.0",
+    "@mr-hope/vuepress-types": "^1.5.0-beta.0",
     "@types/fs-extra": "^9.0.2",
     "chalk": "^4.1.0",
     "fs-extra": "^9.0.1",
