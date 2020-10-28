@@ -160,7 +160,6 @@ export const head: (
 ) => HeadItem[];
 
 declare global {
-  const PWA_OPTION: PWAOptions;
   const PWA_I18N: Record<string, PWAI18NConfig>;
   const SW_BASE_URL: string;
 }

@@ -7,6 +7,7 @@ import TagInfo from "./src/TagInfo.vue";
 import TimeInfo from "./src/TimeInfo.vue";
 import VisitorInfo from "./src/VisitorInfo.vue";
 import WordInfo from "./src/WordInfo.vue";
+import { commentOptions, pageInfoI18n } from "./src/define";
 
 import "balloon-css";
 
@@ -22,7 +23,7 @@ import "balloon-css";
   },
 })
 export default class PageInfo extends Vue {
-  private commentConfig = COMMENT_OPTIONS;
+  private commentConfig = commentOptions;
 
   private get config(): PageInfotype[] | false {
     const themeConfig = this.$themeConfig.pageInfo;
@@ -58,6 +59,6 @@ export default class PageInfo extends Vue {
   }
 
   private get originText(): string {
-    return PAGE_INFO_I18N[this.$localePath || "/"].origin;
+    return pageInfoI18n[this.$localePath || "/"].origin;
   }
 }

@@ -1,10 +1,11 @@
 import { Component, Vue } from "vue-property-decorator";
 import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
+import { commentOptions, pageInfoI18n } from "./define";
 import { CommentOptions } from "../types";
 
 @Component({ components: { AuthorIcon } })
 export default class AuthorInfo extends Vue {
-  private commentOption: CommentOptions = COMMENT_OPTIONS;
+  private commentOption: CommentOptions = commentOptions;
 
   private get author(): string {
     const { author } = this.$frontmatter;
@@ -16,6 +17,6 @@ export default class AuthorInfo extends Vue {
   }
 
   private get hint(): string {
-    return PAGE_INFO_I18N[this.$localePath || "/"].author;
+    return pageInfoI18n[this.$localePath || "/"].author;
   }
 }

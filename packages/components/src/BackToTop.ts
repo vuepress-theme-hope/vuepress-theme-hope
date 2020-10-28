@@ -1,6 +1,6 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import debounce from "lodash.debounce";
-
+import { componentI18n } from "./define";
 @Component
 export default class BackToTop extends Vue {
   @Prop({ type: Number, default: 300 })
@@ -27,7 +27,7 @@ export default class BackToTop extends Vue {
   }
 
   private get hint(): string {
-    return COMPONENT_I18N[this.$localePath || "/"].backToTop;
+    return componentI18n[this.$localePath || "/"].backToTop;
   }
 
   private mounted(): void {

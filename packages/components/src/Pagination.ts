@@ -1,5 +1,6 @@
 import { ComponentI18NConfig } from "@mr-hope/vuepress-shared-utils";
 import { Component, Model, Prop, Vue } from "vue-property-decorator";
+import { componentI18n } from "./define";
 
 @Component
 export default class Pagination extends Vue {
@@ -61,7 +62,7 @@ export default class Pagination extends Vue {
   }
 
   private get i18n(): ComponentI18NConfig["pagination"] {
-    return COMPONENT_I18N[this.$localePath || "/"].pagination;
+    return componentI18n[this.$localePath || "/"].pagination;
   }
 
   private mounted(): void {

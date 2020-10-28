@@ -1,6 +1,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
 import { capitalize } from "@mr-hope/vuepress-shared-utils";
+import { pageInfoI18n } from "./define";
 
 @Component({ components: { CategoryIcon } })
 export default class CategoryInfo extends Vue {
@@ -26,6 +27,6 @@ export default class CategoryInfo extends Vue {
   }
 
   private get hint(): string {
-    return PAGE_INFO_I18N[this.$localePath || "/"].category;
+    return pageInfoI18n[this.$localePath || "/"].category;
   }
 }

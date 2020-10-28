@@ -22,7 +22,6 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
     name: "pwa",
 
     define: () => ({
-      PWA_OPTION: pwaOption,
       PWA_I18N: pwaI18N,
       SW_BASE_URL: base || "/",
     }),

@@ -1,6 +1,7 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
+import { valineI18n } from "./define";
 
 @Component
 export default class Valine extends Vue {
@@ -56,7 +57,7 @@ export default class Valine extends Vue {
           appId: valineConfig.appId, // Your appId
           appKey: valineConfig.appKey, // Your appKey
           placeholder:
-            valineConfig.placeholder || VALINE_I18N[this.$localePath || "/"],
+            valineConfig.placeholder || valineI18n[this.$localePath || "/"],
           meta: valineConfig.meta || ["nick", "mail", "link"],
           requiredFields: valineConfig.requiredFields || ["nick"],
           avatar: valineConfig.avatar || "retro",
