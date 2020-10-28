@@ -48,7 +48,7 @@
       <div class="sticky-article-wrapper">
         <div class="title" @click="$router.push('/article/')">
           <ArticleIcon />
-          <span class="num">{{ $articles.length }}</span>
+          <span class="num">{{ articleNumber }}</span>
           {{ i18n.article }}
         </div>
         <hr />

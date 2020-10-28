@@ -89,7 +89,7 @@ export const compareDate = (
  */
 export const filterArticle = (
   pages: PageComputed[],
-  filterFunc?: (frontmatter: PageFrontmatter) => boolean
+  filterFunc?: (page: PageComputed) => boolean
 ): PageComputed[] =>
   pages.filter((page) => {
     const {
@@ -102,7 +102,7 @@ export const filterArticle = (
       blogpage !== true &&
       home !== true &&
       article !== false &&
-      (!filterFunc || filterFunc(page.frontmatter))
+      (!filterFunc || filterFunc(page))
     );
   });
 

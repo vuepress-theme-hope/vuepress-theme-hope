@@ -8,17 +8,6 @@ export interface TimelineItem {
 }
 
 @Component
-export class ArticleMixin extends Vue {
-  /** 文章列表 */
-  protected get $articles(): PageComputed[] {
-    const { pages } = this.$site;
-
-    // 先过滤再排序
-    return sortArticle(filterArticle(pages));
-  }
-}
-
-@Component
 export class TimelineMixin extends Vue {
   /** 时间轴项目 */
   protected get $timelineItems(): PageComputed[] {
@@ -28,9 +17,9 @@ export class TimelineMixin extends Vue {
     return sortArticle(
       filterArticle(
         pages,
-        (frontmatter) =>
-          (frontmatter.time || frontmatter.date) &&
-          frontmatter.timeline !== false
+        (page) =>
+          (page.frontmatter.time || page.frontmatter.date) &&
+          page.frontmatter.timeline !== false
       )
     );
   }
@@ -67,7 +56,7 @@ export class StickyMixin extends Vue {
 
     // 先过滤再排序
     return sortArticle(
-      filterArticle(pages, (frontmatter) => Boolean(frontmatter.sticky))
+      filterArticle(pages, (page) => Boolean(page.frontmatter.sticky))
     );
   }
 }

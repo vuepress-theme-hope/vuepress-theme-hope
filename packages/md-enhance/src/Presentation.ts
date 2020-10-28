@@ -60,7 +60,7 @@ export default class Presentation extends Vue {
             slideNumber: true,
             ...REVEAL_OPTIONS,
             ...(this.$frontmatter.reveal || {}),
-            embedded: this.$frontmatter.layout !== "Slides",
+            embedded: this.$frontmatter.layout !== "Slide",
           })
           .then(() => {
             this.loading = false;

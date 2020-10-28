@@ -1,6 +1,6 @@
 ---
 title: Slide page
-layout: Slides
+layout: Slide
 ---
 
 @slidestart
@@ -12,6 +12,8 @@ A paragraph with some text and a [link](https://mrhope.site)
 ---
 
 ## Slide 2
+
+This is a very looooo ooooo ooooo ooooo ooooo ooooong content which is expecting to break.
 
 - Item 1
 - Item 2

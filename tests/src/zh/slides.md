@@ -1,6 +1,6 @@
 ---
 title: 幻灯片页
-layout: Slides
+layout: Slide
 ---
 
 @slidestart
@@ -12,6 +12,8 @@ layout: Slides
 ---
 
 ## 幻灯片 2
+
+这是一个超超超超超超超超超超超超超超超超超超超超超超超超超超长的会导致换行的内容。
 
 - 列表 1
 - 列表 2

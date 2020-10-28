@@ -1,9 +1,8 @@
 import { Component, Vue } from "vue-property-decorator";
-import ArticleList from "@theme/components/Blog/ArticleList.vue";
 import { capitalize } from "@mr-hope/vuepress-shared-utils";
 import navigate from "@theme/util/navigate";
 
-@Component({ components: { ArticleList } })
+@Component
 export default class CategoryList extends Vue {
   /** 大写首字母 */
   private capitalize = (name: string): string => capitalize(name);

@@ -1,15 +1,19 @@
-import { Component, Mixins, Watch } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import ArticleItem from "@theme/components/Blog/ArticleItem.vue";
-import { ArticleMixin } from "@theme/util/articleMixin";
 import MyTransition from "@theme/components/MyTransition.vue";
 import Pagination from "@mr-hope/vuepress-plugin-components/src/Pagination.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
-import { generatePagination } from "@theme/util/article";
+import {
+  filterArticle,
+  generatePagination,
+  sortArticle,
+} from "@theme/util/article";
 import { BlogOptions } from "@theme/types";
+import { pathHitKeys } from "@theme/util/encrypt";
 
 @Component({ components: { ArticleItem, MyTransition, Pagination } })
-export default class ArticleList extends Mixins(ArticleMixin) {
+export default class ArticleList extends Vue {
   /** 当前页面 */
   private currentPage = 1;
 
@@ -21,14 +25,34 @@ export default class ArticleList extends Mixins(ArticleMixin) {
     return this.$themeConfig.blog || {};
   }
 
-  /** 文章分页 */
-  private get $paginationArticles(): PageComputed[][] {
-    return generatePagination(this.$articles);
-  }
-
   /** 每页文章数 */
   private get articlePerPage(): number {
     return this.blogConfig.perPage || 10;
+  }
+
+  private get filter(): ((page: PageComputed) => boolean) | undefined {
+    const { path } = this.$route;
+
+    return path.includes("/article")
+      ? (page: PageComputed): boolean => page.frontmatter.layout !== "Slide"
+      : path.includes("/encrypt")
+      ? (page: PageComputed): boolean =>
+          pathHitKeys(this.$themeConfig.encrypt, page.path).length !== 0 ||
+          Boolean(page.frontmatter.password)
+      : path.includes("/slide")
+      ? (page: PageComputed): boolean => page.frontmatter.layout === "Slide"
+      : undefined;
+  }
+
+  /** 文章列表 */
+  private get $articles(): PageComputed[] {
+    // 先过滤再排序
+    return sortArticle(filterArticle(this.$site.pages, this.filter));
+  }
+
+  /** 文章分页 */
+  private get $paginationArticles(): PageComputed[][] {
+    return generatePagination(this.$articles);
   }
 
   /** 当前页面的文章 */

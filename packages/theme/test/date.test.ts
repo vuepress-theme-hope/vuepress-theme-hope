@@ -2,7 +2,7 @@ import { compareDate, getDate } from "../util/article";
 import { describe, it } from "mocha";
 import { expect } from "chai";
 
-describe("ArticleMixin Test", () => {
+describe("Date Test", () => {
   describe("getDate()", () => {
     describe("should parse day", () => {
       it("date string", () => {

@@ -4,7 +4,7 @@
     <StickyIcon v-if="article.frontmatter.sticky" />
     <RouterLink class="title" tag="header" :to="article.path">
       <LockIcon v-if="isEncrypted" />
-      <PresentationIcon v-if="article.frontmatter.layout === 'Slides'" />
+      <PresentationIcon v-if="article.frontmatter.layout === 'Slide'" />
       {{ article.title }}
     </RouterLink>
     <div

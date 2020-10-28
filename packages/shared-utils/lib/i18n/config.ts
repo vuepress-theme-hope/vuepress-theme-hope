@@ -61,6 +61,8 @@ export const localesConfig: Record<Langs, HopeLangI18nConfig> = {
       timelineText: "昨日不在",
       allText: "全部",
       intro: "个人介绍",
+      slides: "幻灯片",
+      encrypt: "加密",
     },
   },
 
@@ -94,6 +96,8 @@ export const localesConfig: Record<Langs, HopeLangI18nConfig> = {
       timelineText: "Yesterday Once More!",
       allText: "All",
       intro: "Personal Intro",
+      slides: "Slides",
+      encrypt: "Encrypted",
     },
   },
   "vi-VN": {
@@ -126,6 +130,8 @@ export const localesConfig: Record<Langs, HopeLangI18nConfig> = {
       timelineText: "Yesterday Once More!",
       allText: "Tất cả",
       intro: "Giới thiệu cá nhân",
+      slides: "bài thuyết trình",
+      encrypt: "mã hóa",
     },
   },
 };

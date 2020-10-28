@@ -20,7 +20,7 @@
       </div>
       <div class="num-wrapper">
         <div @click="navigate('/article/')">
-          <div class="num">{{ $articles.length }}</div>
+          <div class="num">{{ articleNumber }}</div>
           <div>{{ i18n.article }}</div>
         </div>
         <div @click="navigate('/category/')">

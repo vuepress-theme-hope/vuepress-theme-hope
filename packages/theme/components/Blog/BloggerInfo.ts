@@ -1,12 +1,13 @@
 import { Component, Mixins } from "vue-property-decorator";
 import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
-import { ArticleMixin, TimelineMixin } from "@theme/util/articleMixin";
+import { TimelineMixin } from "@theme/util/articleMixin";
 import MediaLinks from "@theme/components/MediaLinks.vue";
+import { filterArticle } from "@theme/util/article";
 import navigate from "@theme/util/navigate";
 import { BlogOptions } from "@theme/types";
 
 @Component({ components: { MediaLinks } })
-export default class BloggerInfo extends Mixins(ArticleMixin, TimelineMixin) {
+export default class BloggerInfo extends Mixins(TimelineMixin) {
   private get blogConfig(): BlogOptions {
     return this.$themeConfig.blog || {};
   }
@@ -27,6 +28,10 @@ export default class BloggerInfo extends Mixins(ArticleMixin, TimelineMixin) {
 
   private get i18n(): HopeLangI18nConfig["blog"] {
     return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
+  }
+
+  private get articleNumber(): number {
+    return filterArticle(this.$site.pages).length;
   }
 
   private navigate(url: string): void {

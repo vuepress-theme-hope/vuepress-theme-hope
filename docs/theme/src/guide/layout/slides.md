@@ -9,7 +9,7 @@ tags: -slides
 
 `vuepress-theme-hope` allows you to add slides pages.
 
-You need to set `layout: Slides` in the frontmatter of the corresponding page to enable the slides page.
+You need to set `layout: Slide` in the frontmatter of the corresponding page to enable the slides page.
 
 ![Slide page screenshot](./assets/slides.png)
 

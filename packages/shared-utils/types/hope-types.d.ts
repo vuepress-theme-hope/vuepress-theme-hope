@@ -79,6 +79,10 @@ interface HopeLangI18nConfigItem {
     allText: string;
     /** 个人介绍 */
     intro: string;
+    /** 幻灯片 */
+    slides: string;
+    /** 加密 */
+    encrypt: string;
   };
 }
 

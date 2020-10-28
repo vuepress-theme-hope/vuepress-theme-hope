@@ -43,6 +43,9 @@ const getAlias = (
     "@BlogInfo": blogEnabled
       ? resolve(__dirname, "./components/Blog/BlogInfo.vue")
       : noopModule,
+    "@BlogHome": blogEnabled
+      ? resolve(__dirname, "./components/Blog/BlogHome.vue")
+      : noopModule,
     "@BlogPage": blogEnabled
       ? resolve(__dirname, "./components/Blog/BlogPage.vue")
       : noopModule,
@@ -74,6 +77,14 @@ const themeAPI = (
       : [
           {
             path: "/article/",
+            frontmatter: { layout: "Blog" },
+          },
+          {
+            path: "/encrypt/",
+            frontmatter: { layout: "Blog" },
+          },
+          {
+            path: "/slide/",
             frontmatter: { layout: "Blog" },
           },
           {

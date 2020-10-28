@@ -4,7 +4,7 @@ import ClickOutside from "@theme/util/click-outside";
 @Component({
   directives: { "click-outside": ClickOutside },
 })
-export default class Slides extends Vue {
+export default class Slide extends Vue {
   private showMenu = false;
 
   private destroyed(): void {

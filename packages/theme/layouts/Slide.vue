@@ -27,18 +27,19 @@
   </div>
 </template>
 
-<script src="./Slides" />
+<script src="./Slide" />
 
 <style lang="stylus">
 .presentation
   .md-presentation
+    min-width 100vw
     min-height 100vh
 
   .menu-button, .back-button, .home-button
     box-sizing content-box
     position fixed
     cursor pointer
-    bottom 5rem
+    bottom 2rem
     width 1rem
     height 1rem
     padding 0.5rem
@@ -50,9 +51,6 @@
 
     &:hover
       background-color var(--accent-color)
-
-    @media screen and (orientation landscape)
-      bottom 2rem
 
     .theme-dark &
       background-color #666

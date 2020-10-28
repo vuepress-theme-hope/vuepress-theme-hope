@@ -10,7 +10,7 @@ tags:
 
 `vuepress-theme-hope` 允许你添加幻灯片页面。
 
-你需要在相应的页面的 frontmatter 中，设置 `layout: Slides` 来开启幻灯片风格。
+你需要在相应的页面的 frontmatter 中，设置 `layout: Slide` 来开启幻灯片风格。
 
 ![幻灯片页截图](./assets/slides.png)
 
