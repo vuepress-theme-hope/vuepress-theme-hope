@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { i18n } from "@mr-hope/vuepress-shared-utils";
+import { i18nConfig, lang2path } from "@mr-hope/vuepress-shared-utils";
 
 import { CommentOptions } from "../types";
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
@@ -9,8 +9,8 @@ export = (
   { themeConfig }: Context
 ): PluginOptionAPI => {
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = i18n.lang2path(baseLang);
-  const { pageInfo, readingTime, valine } = i18n.config;
+  const baseLangPath = lang2path(baseLang);
+  const { pageInfo, readingTime, valine } = i18nConfig;
 
   pageInfo["/"] = pageInfo[baseLangPath];
   readingTime["/"] = readingTime[baseLangPath];

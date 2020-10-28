@@ -1,7 +1,5 @@
 import { ResolvedHopeVuepressConfig } from "../types";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
-
-const { path2lang } = i18n;
+import { path2lang } from "@mr-hope/vuepress-shared-utils";
 
 /**
  * 生成对应语言配置

@@ -2,7 +2,7 @@ import { Component, Vue } from "vue-property-decorator";
 import AutoIcon from "@mr-hope/vuepress-shared-utils/icons/AutoIcon.vue";
 import DarkIcon from "@mr-hope/vuepress-shared-utils/icons/DarkIcon.vue";
 import LightIcon from "@mr-hope/vuepress-shared-utils/icons/LightIcon.vue";
-import { dom } from "@mr-hope/vuepress-shared-utils";
+import { changeClass } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { AutoIcon, DarkIcon, LightIcon } })
 export default class DarkmodeSwitch extends Vue {
@@ -67,7 +67,7 @@ export default class DarkmodeSwitch extends Vue {
   private toggleDarkmode(isDarkmode: boolean): void {
     const classes = document.body.classList;
 
-    if (isDarkmode) dom.changeClass(classes, ["theme-dark"], ["theme-light"]);
-    else dom.changeClass(classes, ["theme-light"], ["theme-dark"]);
+    if (isDarkmode) changeClass(classes, ["theme-dark"], ["theme-light"]);
+    else changeClass(classes, ["theme-light"], ["theme-dark"]);
   }
 }

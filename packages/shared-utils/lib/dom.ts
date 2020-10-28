@@ -19,7 +19,3 @@ export const changeClass = (
   domClass.value = "";
   domClass.add(...insert, ...oldClasses);
 };
-
-export default {
-  changeClass,
-};

@@ -312,7 +312,7 @@ const valineConfig: PluginI18nConfig<string> = {
 };
 
 /** Muti language config for plugins */
-export const config = {
+export const i18nConfig = {
   container: containerConfig,
   component: componentConfig,
   copyCode: copyCodeConfig,

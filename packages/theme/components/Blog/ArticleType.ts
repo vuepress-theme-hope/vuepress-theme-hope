@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
+import { getDefaultLocale } from "@mr-hope/vuepress-shared-utils";
 import navigate from "@theme/util/navigate";
 
 interface ArticleTypeItem {
@@ -10,8 +10,7 @@ interface ArticleTypeItem {
 @Component
 export default class ArticleType extends Vue {
   private get types(): ArticleTypeItem[] {
-    const blogI18n =
-      this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
+    const blogI18n = this.$themeLocaleConfig.blog || getDefaultLocale().blog;
 
     return [
       { text: blogI18n.allText, path: "/article/" },

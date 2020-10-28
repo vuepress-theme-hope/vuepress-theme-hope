@@ -1,6 +1,9 @@
 import { StickyMixin } from "@theme/util/articleMixin";
 import { Component, Mixins } from "vue-property-decorator";
-import { HopeLangI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
+import {
+  HopeLangI18nConfig,
+  getDefaultLocale,
+} from "@mr-hope/vuepress-shared-utils";
 import ArticleIcon from "@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue";
 import ArticleList from "@theme/components/Blog/ArticleList.vue";
 import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
@@ -31,7 +34,7 @@ export default class BlogInfo extends Mixins(StickyMixin) {
   private active = "category";
 
   private get i18n(): HopeLangI18nConfig["blog"] {
-    return this.$themeLocaleConfig.blog || i18n.getDefaultLocale().blog;
+    return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
   }
 
   private get articleNumber(): number {
