@@ -28,9 +28,9 @@
     "@types/markdown-it-anchor": "4.0.4",
     "@types/webpack-dev-server": "3.11.0",
     "cac": "6.6.1",
-    "markdown-it": "12.0.1",
+    "markdown-it": "12.0.2",
     "vue": "2.6.12",
-    "vue-loader": "15.9.3"
+    "vue-loader": "15.9.4"
   },
   "peerDependencies": {
     "vuepress": "^1.7.1"
