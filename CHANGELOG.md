@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.0-beta.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.0-beta.0...v1.5.0-beta.1) (2020-10-28)
+
+### Features
+
+- **theme:** rebuild blog feature ([0feed64](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0feed641fd641338c84bac8749e400930bbc7442))
+
 ## [1.5.0-beta.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.4.7...v1.5.0-beta.0) (2020-10-27)
 
 ### Bug Fixes
