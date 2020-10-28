@@ -1,7 +1,6 @@
 import {
   Langs,
   LangPaths,
-  config,
   lang2PathConfig,
   langs,
   localesConfig,
@@ -62,13 +61,3 @@ Note: This warning will be shown only once.`
 /** 获得默认多语言配置 */
 export const getDefaultLocale = (): HopeLangI18nConfig =>
   localesConfig["en-US"];
-
-export default {
-  checkLang,
-  config,
-  langs,
-  lang2path,
-  path2lang,
-  getDefaultLocale,
-  getLocale,
-};

@@ -1,5 +1,8 @@
 import { Component, Vue } from "vue-property-decorator";
-import { HopeLangI18nConfigItem, i18n } from "@mr-hope/vuepress-shared-utils";
+import {
+  HopeLangI18nConfigItem,
+  getDefaultLocale,
+} from "@mr-hope/vuepress-shared-utils";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
 
 /** 默认颜色选择器 */
@@ -25,10 +28,7 @@ export default class ThemeOptions extends Vue {
   private isDarkmode = false;
 
   private get text(): HopeLangI18nConfigItem["themeColor"] {
-    return (
-      i18n.getLocale(this.$lang).themeColor ||
-      i18n.getDefaultLocale().themeColor
-    );
+    return this.$themeLocaleConfig.themeColor || getDefaultLocale().themeColor;
   }
 
   private get themeColorEnabled(): boolean {

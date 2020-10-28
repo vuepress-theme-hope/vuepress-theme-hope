@@ -64,9 +64,11 @@ export const genServiceWorker = async (
     console.log(
       blue("PWA:"),
       black.bgGreen("Success"),
-      `Generated service worker, which will precache ${count} files, totaling ${Math.ceil(
-        size / 1024 / 1024
-      )} Mb.\n${
+      `Generated service worker, which will precache ${count} files, totaling ${(
+        size /
+        1024 /
+        1024
+      ).toFixed(2)} Mb.\n${
         warnings.length > 0 ? `Warnings: ${warnings.toString()}:""` : ""
       }`
     );

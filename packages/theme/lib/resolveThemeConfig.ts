@@ -1,8 +1,11 @@
 import { ResolvedHopeThemeConfig } from "../types";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
+import {
+  checkLang,
+  getLocale,
+  lang2path,
+  path2lang,
+} from "@mr-hope/vuepress-shared-utils";
 import resolveEncrypt from "./resolveEncrypt";
-
-const { checkLang, getLocale, lang2path, path2lang } = i18n;
 
 /**
  * 处理主题配置

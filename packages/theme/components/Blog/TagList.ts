@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
+import { getDefaultLocale } from "@mr-hope/vuepress-shared-utils";
 import navigate from "@theme/util/navigate";
 
 interface TagOption {
@@ -15,7 +15,7 @@ export default class TagList extends Vue {
       {
         name:
           this.$themeLocaleConfig.blog.allText ||
-          i18n.getDefaultLocale().blog.allText,
+          getDefaultLocale().blog.allText,
         path: "/tag/",
       },
       ...(this.$tag.list as TagOption[]),
@@ -28,7 +28,7 @@ export default class TagList extends Vue {
       name ===
       ((this.$currentTag && this.$currentTag.key) ||
         this.$themeLocaleConfig.blog.allText ||
-        i18n.getDefaultLocale().blog.allText)
+        getDefaultLocale().blog.allText)
     );
   }
 

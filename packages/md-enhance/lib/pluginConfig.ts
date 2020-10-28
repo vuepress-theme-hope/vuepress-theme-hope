@@ -1,15 +1,19 @@
 import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOption } from "../types";
-import { PluginI18nConfig, i18n } from "@mr-hope/vuepress-shared-utils";
+import {
+  PluginI18nConfig,
+  i18nConfig,
+  lang2path,
+} from "@mr-hope/vuepress-shared-utils";
 
 const pluginConfig = (
   markdownOption: MarkdownEnhanceOption,
   themeConfig: ThemeConfig
 ): PluginConfig[] => {
   /** i18n config */
-  const { container } = i18n.config;
+  const { container } = i18nConfig;
   const baseLang = markdownOption.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = i18n.lang2path(baseLang);
+  const baseLangPath = lang2path(baseLang);
 
   const resolveConfig = (
     titleConfig: PluginI18nConfig<string>

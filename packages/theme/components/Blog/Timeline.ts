@@ -1,7 +1,7 @@
 import { Component, Mixins } from "vue-property-decorator";
 import MyTransition from "@theme/components/MyTransition.vue";
 import { TimelineMixin } from "@theme/util/articleMixin";
-import { i18n } from "@mr-hope/vuepress-shared-utils";
+import { getDefaultLocale } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { MyTransition } })
 export default class Timeline extends Mixins(TimelineMixin) {
@@ -10,7 +10,7 @@ export default class Timeline extends Mixins(TimelineMixin) {
     return (
       (this.$themeConfig.blog && this.$themeConfig.blog.timeline) ||
       this.$themeLocaleConfig.blog.timelineText ||
-      i18n.getDefaultLocale().blog.timelineText
+      getDefaultLocale().blog.timelineText
     );
   }
 
