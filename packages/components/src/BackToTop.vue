@@ -29,18 +29,18 @@
 .back-to-top
   cursor pointer
   position fixed
-  bottom 5rem
-  right 2rem
+  bottom 4rem
+  right 1rem
   width 2rem
   color var(--accent-color, $accentColor)
   background-color var(--background-color, #fff)
   border-radius 50%
   overflow hidden
-  z-index 1
+  z-index 10
   fill currentcolor
 
   @media screen and (orientation landscape)
-    bottom 2rem
+    bottom 4rem
 
   &:hover
     color var(--accent-color-l25, lighten($accentColor, 25%))

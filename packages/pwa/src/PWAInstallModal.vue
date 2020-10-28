@@ -59,16 +59,14 @@
         </div>
       </div>
 
-      <div class="button-wrapper">
-        <p v-if="isIOS" class="iosText">{{ i18n.iOSInstall }}</p>
-        <template v-else>
-          <button class="install-button" @click="install">
-            {{ i18n.install }} <span>{{ manifest.short_name }}</span>
-          </button>
-          <button class="cancel-button" @click="$emit('toogle', false)">
-            {{ i18n.cancel }}
-          </button>
-        </template>
+      <p v-if="isIOS" class="iOSText">{{ i18n.iOSInstall }}</p>
+      <div v-else class="button-wrapper">
+        <button class="install-button" @click="install">
+          {{ i18n.install }} <span>{{ manifest.short_name }}</span>
+        </button>
+        <button class="cancel-button" @click="$emit('toogle', false)">
+          {{ i18n.cancel }}
+        </button>
       </div>
     </div>
   </div>
@@ -122,17 +120,10 @@
     bottom 0
     left 0
     right 0
-    background #eeeb
-    backdrop-filter blur(5px)
+    backdrop-filter blur(10px)
     z-index 998
     animation-name fadein
     animation-duration 250ms
-
-    .theme-dark &
-      background #111b
-
-    @media (max-width 400px)
-      display none
 
   .install-modal
     display flex
@@ -152,9 +143,11 @@
       animation-duration 250ms
 
     @media (max-width 400px)
-      width 100%
-      height 100%
-      overflow scroll
+      max-height 80%
+      overflow-y scroll
+
+      &::-webkit-scrollbar
+        display none
 
   .header
     display flex
@@ -241,7 +234,6 @@
     @media (max-width 800px)
       margin-left 20px
       margin-right 20px
-      margin-bottom 5em
 
     h3
       font-size 22px
@@ -400,17 +392,28 @@
       color var(--white, #fff)
 
   .iOSText
-    color var(--accent-color, $accentColor)
-    text-align center
-    font-weight bold
     position fixed
     bottom 0
-    left 0
-    right 0
-    backdrop-filter blur(10px)
-    background rgba(239, 239, 239, 0.17)
-    margin 0
-    padding 2em
+    box-sizing border-box
+    width 92%
+    margin 2em auto
+    padding 0.5em 2em
+    border-radius 8px
+    background-color var(--white)
+    text-align center
+    font-size 14px
+    font-weight bold
+
+    &::after
+      content ' '
+      position absolute
+      left calc(50% - 0.8em)
+      bottom -1em
+      width 0
+      height 0
+      border-top 1em solid var(--white)
+      border-left 0.8em solid transparent
+      border-right 0.8em solid transparent
 
 @media all and (display-mode standalone)
   button

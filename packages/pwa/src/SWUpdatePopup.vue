@@ -56,17 +56,17 @@
 
 .sw-update-popup
   position fixed
-  right 1.5em
-  bottom 1.5em
-  padding 0.6em 0.75em
+  right 1em
+  bottom 1em
+  padding 0.5em 0.75em
   display flex
   justify-content center
   align-items center
-  border-radius 0.4em
+  border-radius 0.5em
   color var(--text-color, $textColor)
   background var(--background-color, #fff)
   border 1px solid var(--grey12, #bbb)
-  z-index 2
+  z-index 11
   cursor pointer
 
   .text

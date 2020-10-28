@@ -20,16 +20,17 @@
 <style lang="stylus">
 .modal-button
   position fixed
-  right 2rem
+  right 1rem
   bottom 1rem
   border-radius 1.2rem
   padding 0 16px
   border none
   background var(--accent-color)
   color var(--white, #fff)
-  line-height 2.4rem
+  line-height 2.2rem
   cursor pointer
   outline none
+  z-index 10
 
   &:hover, &:active
     background-color var(--accent-color-l25, lighten($accentColor, 25%))
