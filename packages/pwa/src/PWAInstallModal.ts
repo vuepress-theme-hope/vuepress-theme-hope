@@ -4,6 +4,7 @@ import ArrowLeftIcon from "@mr-hope/vuepress-shared-utils/icons/ArrowLeftIcon.vu
 import ArrowRightIcon from "@mr-hope/vuepress-shared-utils/icons/ArrowRightIcon.vue";
 import CloseIcon from "@mr-hope/vuepress-shared-utils/icons/CloseIcon.vue";
 import { PWAI18NConfig } from "@mr-hope/vuepress-shared-utils";
+import { i18n } from "./define";
 
 export interface SafariNavigator extends Navigator {
   standalone: boolean;
@@ -23,7 +24,7 @@ export default class PWAInstallModal extends Vue {
   deferredprompt: InstallPromptEvent | null = null;
 
   get i18n(): PWAI18NConfig {
-    return PWA_I18N[this.$localePath || "/"];
+    return i18n[this.$localePath || "/"];
   }
 
   mounted(): void {

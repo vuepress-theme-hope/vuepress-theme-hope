@@ -1,6 +1,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import PWAInstallModal from "./PWAInstallModal.vue";
 import { SafariNavigator } from "./PWAInstallModal";
+import { i18n } from "./define";
 
 interface ModernNavigator extends Navigator {
   getInstalledRelatedApps: () => Promise<unknown[]>;
@@ -15,7 +16,7 @@ export default class PWAInstall extends Vue {
   isIOS = false;
 
   get install(): string {
-    return PWA_I18N[this.$localePath || "/"].install;
+    return i18n[this.$localePath || "/"].install;
   }
 
   get showInstall(): boolean {
