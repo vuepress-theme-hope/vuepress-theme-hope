@@ -1,9 +1,10 @@
 import { Component, Vue } from "vue-property-decorator";
 import Valine from "./src/Valine.vue";
+import { commentOptions } from "./src/define";
 
 @Component({ components: { Valine } })
 export default class Comment extends Vue {
-  private options = COMMENT_OPTIONS;
+  private options = commentOptions;
 
   private get pluginEnable(): boolean {
     return (

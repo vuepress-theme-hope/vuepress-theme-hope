@@ -19,5 +19,3 @@ export const deepAssignReverse = deepAssignReverseFunction;
 export const dom = domFunction;
 
 export const i18n = i18nConfig;
-
-export default { deepAssign, deepAssignReverse, i18n };

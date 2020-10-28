@@ -1,12 +1,13 @@
 import { Component, Vue, Watch } from "vue-property-decorator";
 import EyeIcon from "@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue";
 import FireIcon from "@mr-hope/vuepress-shared-utils/icons/FireIcon.vue";
+import { commentOptions, pageInfoI18n } from "./define";
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
 
 @Component({ components: { EyeIcon, FireIcon } })
 export default class VisitorInfo extends Vue {
-  private valineConfig = COMMENT_OPTIONS as ValineOptions;
+  private valineConfig = commentOptions as ValineOptions;
 
   private count = 0;
 
@@ -40,7 +41,7 @@ export default class VisitorInfo extends Vue {
   }
 
   private get hint(): string {
-    return PAGE_INFO_I18N[this.$localePath || "/"].views;
+    return pageInfoI18n[this.$localePath || "/"].views;
   }
 
   private mounted(): void {

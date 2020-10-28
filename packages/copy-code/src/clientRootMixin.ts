@@ -1,4 +1,3 @@
-/* global CODE_COPY_OPIONS */
 import "@mr-hope/vuepress-plugin-copy-code/style/code.css";
 import "balloon-css";
 import Message from "./message";

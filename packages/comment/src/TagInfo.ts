@@ -1,6 +1,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
 import { capitalize } from "@mr-hope/vuepress-shared-utils";
+import { pageInfoI18n } from "./define";
 
 @Component({ components: { TagIcon } })
 export default class TagInfo extends Vue {
@@ -32,6 +33,6 @@ export default class TagInfo extends Vue {
   }
 
   private get hint(): string {
-    return PAGE_INFO_I18N[this.$localePath || "/"].tag;
+    return pageInfoI18n[this.$localePath || "/"].tag;
   }
 }

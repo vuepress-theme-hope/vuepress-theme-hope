@@ -1,5 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import CalendarIcon from "@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue";
+import { pageInfoI18n } from "./define";
 
 @Component({ components: { CalendarIcon } })
 export default class TimeInfo extends Vue {
@@ -21,6 +22,6 @@ export default class TimeInfo extends Vue {
   }
 
   private get hint(): string {
-    return PAGE_INFO_I18N[this.$localePath || "/"].time;
+    return pageInfoI18n[this.$localePath || "/"].time;
   }
 }
