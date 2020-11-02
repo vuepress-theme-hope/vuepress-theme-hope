@@ -77,9 +77,34 @@ icon: configuration
 
 ## presentation
 
-- 类型: `RevealOptions | boolean`
+- 类型: `PresentationOptions | boolean`
 - 默认值: `false`
 
 是否启用 幻灯片 语法支持。
 
 你可以传入一个对象，这个对象将用于 reveal.js 配置。
+
+### presentation.plugins
+
+- 类型: `string[]`
+- 必填: No
+
+你想启用的 Reveal.js 插件
+
+可接受的插件有:
+
+- `"highlight"`
+- `"math"`
+- `"search"`
+- `"notes"`
+- `"zoom"`
+- `"anything"`
+- `"audio"`
+- `"chalkboard"`
+
+### presentation.revealConfig
+
+- 类型: `Partial<RevealOptions>`
+- 必填: No
+
+你想要传递给 Reveal.js 的配置选项

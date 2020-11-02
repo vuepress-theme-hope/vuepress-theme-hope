@@ -111,4 +111,4 @@ $$
 
 @slideend
 
-- [View Detail](<(https://vuepress-theme.mrhope.site/guide/feature/markdown/presentation/)>)
+- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/presentation/)

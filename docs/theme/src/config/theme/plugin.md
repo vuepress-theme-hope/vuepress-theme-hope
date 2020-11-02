@@ -85,12 +85,37 @@ Whether to enable flowchart syntax support
 
 ### mdEnhance.presentation
 
-- Type: `RevealOptions | boolean`
+- Type: `PresentationOptions | boolean`
 - Default: `false`
 
 Whether to enable presentation syntax support.
 
-You can set it with an object, the object will be used as reveal.js config.
+You can set it with an object, the object will be used to config reveal.js.
+
+#### mdEnhance.presentation.plugins
+
+- Type: `string[]`
+- Required: No
+
+Plugins you want to use on reveal.js.
+
+Acceptable values are:
+
+- `"highlight"`
+- `"math"`
+- `"search"`
+- `"notes"`
+- `"zoom"`
+- `"anything"`
+- `"audio"`
+- `"chalkboard"`
+
+#### mdEnhance.presentation.revealConfig
+
+- Type: `Partial<RevealOptions>`
+- Required: No
+
+Config which you want to pass to reveal.js.
 
 ## Comment settings
 

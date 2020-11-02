@@ -1,5 +1,5 @@
 import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
-import { MarkdownEnhanceOption } from "../types";
+import { MarkdownEnhanceOptions } from "../types";
 import {
   PluginI18nConfig,
   i18nConfig,
@@ -7,7 +7,7 @@ import {
 } from "@mr-hope/vuepress-shared-utils";
 
 const pluginConfig = (
-  markdownOption: MarkdownEnhanceOption,
+  markdownOption: MarkdownEnhanceOptions,
   themeConfig: ThemeConfig
 ): PluginConfig[] => {
   /** i18n config */

@@ -106,6 +106,18 @@ module.exports = config({
 
     mdEnhance: {
       enableAll: true,
+      presentation: {
+        plugins: [
+          "highlight",
+          "math",
+          "search",
+          "notes",
+          "zoom",
+          "anything",
+          "audio",
+          "chalkboard",
+        ],
+      },
     },
 
     pwa: {

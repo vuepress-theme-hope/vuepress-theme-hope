@@ -2,8 +2,23 @@ import { Langs } from "@mr-hope/vuepress-shared-utils";
 import { RevealOptions } from "reveal.js";
 import "./declare";
 
+export type RevealPlugin =
+  | "highlight"
+  | "math"
+  | "search"
+  | "notes"
+  | "zoom"
+  | "anything"
+  | "audio"
+  | "chalkboard";
+
+export interface PresentationOptions {
+  plugins?: RevealPlugin[];
+  revealConfig?: Partial<RevealOptions>;
+}
+
 /** md-enhance plugin configuration */
-export type MarkdownEnhanceOption = Partial<{
+export type MarkdownEnhanceOptions = Partial<{
   /**
    * 主目录所对应的语言。
    *
@@ -83,7 +98,7 @@ export type MarkdownEnhanceOption = Partial<{
    *
    * @default false
    */
-  presentation: Partial<RevealOptions> | boolean;
+  presentation: PresentationOptions | boolean;
   /**
    * 是否启用全部增强
    *
@@ -95,6 +110,7 @@ export type MarkdownEnhanceOption = Partial<{
 }>;
 
 declare global {
-  const REVEAL_OPTIONS: Partial<RevealOptions>;
-  const MARKDOWN_ENHANCE_OPTIONS: MarkdownEnhanceOption;
+  const REVEAL_CONFIG: Partial<RevealOptions>;
+  const REVEAL_PLUGINS: string[];
+  const MARKDOWN_ENHANCE_OPTIONS: MarkdownEnhanceOptions;
 }

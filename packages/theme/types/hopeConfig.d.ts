@@ -6,7 +6,7 @@ import {
   Langs,
 } from "@mr-hope/vuepress-shared-utils";
 import { DefaultThemeConfig, SiteConfig } from "@mr-hope/vuepress-types";
-import { MarkdownEnhanceOption } from "vuepress-plugin-md-enhance/types";
+import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance/types";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
@@ -313,7 +313,7 @@ export interface HopeThemePluginConfig {
    *
    * Markdown enhance configuration
    */
-  mdEnhance?: MarkdownEnhanceOption | false;
+  mdEnhance?: MarkdownEnhanceOptions | false;
 
   /**
    * PWA 设置

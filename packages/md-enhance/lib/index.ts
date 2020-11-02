@@ -12,10 +12,10 @@ import sup from "./markdown-it/sup";
 import pluginConfig from "./pluginConfig";
 
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { MarkdownEnhanceOption } from "../types";
+import { MarkdownEnhanceOptions } from "../types";
 
 export = (
-  option: MarkdownEnhanceOption,
+  option: MarkdownEnhanceOptions,
   { themeConfig }: Context
 ): PluginOptionAPI => {
   const markdownOption =
@@ -26,9 +26,15 @@ export = (
 
     define: (): Record<string, unknown> => ({
       MARKDOWN_ENHANCE_OPTIONS: markdownOption,
-      REVEAL_OPTIONS:
-        typeof markdownOption.presentation === "object"
-          ? markdownOption.presentation
+      REVEAL_PLUGINS:
+        typeof markdownOption.presentation === "object" &&
+        Array.isArray(markdownOption.presentation.plugins)
+          ? markdownOption.presentation.plugins
+          : [],
+      REVEAL_CONFIG:
+        typeof markdownOption.presentation === "object" &&
+        typeof markdownOption.presentation.revealConfig === "object"
+          ? markdownOption.presentation.revealConfig
           : {},
     }),
 
