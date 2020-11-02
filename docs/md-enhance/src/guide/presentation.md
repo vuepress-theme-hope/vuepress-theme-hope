@@ -26,6 +26,30 @@ module.exports = {
 
 This plugin is using [reveal.js](https://revealjs.com/) to support this feature.
 
+You can also pass an object for configuration.
+
+`presentation.plugins` receives an array of strings, allowing you to freely config whether to enable some preset plugins.
+
+::: tip
+
+Acceptable plugins are:
+
+- `"highlight"`
+- `"math"`
+- `"search"`
+- `"notes"`
+- `"zoom"`
+
+<!-- - `"anything"`
+- `"audio"`
+- `"chalkboard"` -->
+
+:::
+
+You can also use `presentation.revealConfig` set configuration options passed to Reveal.js globally.
+
+Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware). If you need a specific plugin, please submit a [Feature Request](https://github.com/Mister-Hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D) on GitHub.
+
 ## Syntax
 
 - Use `---` to split slides

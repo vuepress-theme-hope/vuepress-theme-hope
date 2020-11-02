@@ -738,6 +738,48 @@ declare module "reveal.js/plugin/math/math.esm.js" {
   export default mathPlugin;
 }
 
+declare module "reveal.js/plugin/search/search.esm.js" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const searchPlugin: any;
+
+  export default searchPlugin;
+}
+
+declare module "reveal.js/plugin/notes/notes.esm.js" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const notesPlugin: any;
+
+  export default notesPlugin;
+}
+
+declare module "reveal.js/plugin/zoom/zoom.esm.js" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const zoomPlugin: any;
+
+  export default zoomPlugin;
+}
+
+declare module "reveal.js-plugins/anything/anything.js" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const anythingPlugin: any;
+
+  export default anythingPlugin;
+}
+
+declare module "reveal.js-plugins/audio-slideshow/audio-slideshow.js" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const audioPlugin: any;
+
+  export default audioPlugin;
+}
+
+declare module "reveal.js-plugins/chalkboard/chalkboard.js" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const chalkboardPlugin: any;
+
+  export default chalkboardPlugin;
+}
+
 declare module "vuepress-plugin-md-enhance/src/styles/*.styl" {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const stylusStyle: never;
