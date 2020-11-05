@@ -1,4 +1,4 @@
-import { PageComputed, PageFrontmatter } from "@mr-hope/vuepress-types";
+import { PageComputed } from "@mr-hope/vuepress-types";
 import * as dayjs from "dayjs";
 
 /** 处理日期 */
