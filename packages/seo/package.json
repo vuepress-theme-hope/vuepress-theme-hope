@@ -27,7 +27,7 @@
   "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-types": "^1.5.0-beta.1",
-    "@types/fs-extra": "^9.0.2",
+    "@types/fs-extra": "^9.0.3",
     "chalk": "^4.1.0",
     "fs-extra": "^9.0.1"
   },
