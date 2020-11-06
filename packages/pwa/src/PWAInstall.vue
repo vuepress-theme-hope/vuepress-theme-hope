@@ -10,6 +10,7 @@
     <PWAInstallModal
       v-show="isOpen"
       @can-install="canInstall = $event"
+      @hide="hide"
       @toogle="isOpen = $event"
     />
   </div>

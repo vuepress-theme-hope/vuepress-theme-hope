@@ -15,18 +15,27 @@ export default class PWAInstall extends Vue {
 
   isIOS = false;
 
+  hinted = false;
+
   get install(): string {
     return i18n[this.$localePath || "/"].install;
   }
 
   get showInstall(): boolean {
-    return this.hasRelatedApps && this.canInstall;
+    return (
+      (this.hasRelatedApps && this.canInstall) ||
+      (this.isIOS && this.hinted === false)
+    );
   }
 
   mounted(): void {
-    this.isIOS =
+    if (
       "standalone" in navigator &&
-      (navigator as SafariNavigator).standalone === false;
+      (navigator as SafariNavigator).standalone === false
+    ) {
+      this.isIOS = true;
+      this.hinted = Boolean(localStorage.getItem("iOS-pwa-hint"));
+    }
 
     if ("getInstalledRelatedApps" in navigator)
       void (navigator as ModernNavigator)
@@ -41,5 +50,11 @@ export default class PWAInstall extends Vue {
       return (navigator as SafariNavigator).standalone;
 
     return matchMedia("(display-mode: standalone)").matches;
+  }
+
+  hide(): void {
+    this.isOpen = false;
+    this.hinted = true;
+    localStorage.setItem("iOS-pwa-hint", "hinted");
   }
 }

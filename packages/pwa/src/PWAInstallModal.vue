@@ -59,7 +59,10 @@
         </div>
       </div>
 
-      <p v-if="isIOS" class="iOSText">{{ i18n.iOSInstall }}</p>
+      <div v-if="isIOS" class="iOSText" @click="hide">
+        <p>{{ i18n.iOSInstall }}</p>
+        <button class="success">Got it!</button>
+      </div>
       <div v-else class="button-wrapper">
         <button class="install-button" @click="install">
           {{ i18n.install }} <span>{{ manifest.short_name }}</span>
@@ -399,10 +402,11 @@
     margin 2em auto
     padding 0.5em 2em
     border-radius 8px
-    background-color var(--white)
+    background-color var(--white, #fff)
     text-align center
     font-size 14px
     font-weight bold
+    box-shadow 0 2px 12px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.15))
 
     &::after
       content ' '
@@ -411,9 +415,20 @@
       bottom -1em
       width 0
       height 0
-      border-top 1em solid var(--white)
+      border-top 1em solid var(--white, #fff)
       border-left 0.8em solid transparent
       border-right 0.8em solid transparent
+
+    p
+      margin 0 0 0.5em
+
+    .success
+      padding 0.5em 1em
+      margin-bottom 0.5em
+      background-color #07c160
+      color var(--white, #fff)
+      border none
+      border-radius 1em
 
 @media all and (display-mode standalone)
   button

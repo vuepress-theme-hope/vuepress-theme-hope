@@ -107,14 +107,14 @@ export default class PWAInstallModal extends Vue {
       const choiceResult = await this.deferredprompt.userChoice;
 
       if (choiceResult.outcome === "accepted") {
-        console.log("PWA has been installed");
+        console.info("PWA has been installed");
 
         this.$emit("toogle", false);
         this.$emit("can-install", false);
 
         return true;
       } else {
-        console.log("You choose to not install PWA");
+        console.info("You choose to not install PWA");
 
         this.$emit("toogle", false);
         this.$emit("can-install", false);
@@ -122,5 +122,10 @@ export default class PWAInstallModal extends Vue {
     }
 
     return false;
+  }
+
+  hide(): void {
+    console.info("User accept the hint");
+    this.$emit("hide");
   }
 }
