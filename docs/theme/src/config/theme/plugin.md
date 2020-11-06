@@ -353,6 +353,17 @@ Options for photo preview plugin, set to `false` to disable this plugin.
 
 ## lastUpdate
 
+> If you don’t need this feature, please set to `false`.
+
+### lastUpdate.timezone
+
+- Type: `string`
+- Required: No
+
+Current timezone, useful when you are deploying through CI
+
+### lastUpdate.transformer
+
 - Type: `(timestamp: number, lang: string) => string`
 - Default value: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
 

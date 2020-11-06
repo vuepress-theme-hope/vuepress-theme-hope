@@ -357,7 +357,18 @@ AddThis 的 pubid
 >
 > 有关详细信息，请参见 [PhotoSwipe 插件配置][photo-swipe-config]]
 
-### lastUpdate
+## lastUpdate
+
+> 如果您不需要这个功能，请设置为 `false`。
+
+### lastUpdate.timezone
+
+- 类型: `string`
+- 必填: 否
+
+当前时区，使用 CI 部署时很有用
+
+### lastUpdate.transformer
 
 - 类型: `(timestamp: number, lang: string) => string`
 - 默认值: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``

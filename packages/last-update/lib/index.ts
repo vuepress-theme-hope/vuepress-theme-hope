@@ -3,11 +3,15 @@ import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import getTime from "./time";
 import dayjs = require("dayjs");
 import localizedFormat = require("dayjs/plugin/localizedFormat");
+import utc = require("dayjs/plugin/utc"); // dependent on utc plugin
+import timezone = require("dayjs/plugin/timezone");
 import "dayjs/locale/en";
 import "dayjs/locale/zh";
 import "dayjs/locale/zh-cn";
 
 dayjs.extend(localizedFormat);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const getLang = (lang: string): string => {
   const langcode = lang.toLowerCase();
@@ -15,8 +19,13 @@ const getLang = (lang: string): string => {
   return langcode === "en-us" || langcode === "en-uk" ? "en" : langcode;
 };
 
-const defaultTransformer = (timestamp: number, lang: string): string => {
+const defaultTransformer = (
+  timestamp: number,
+  lang: string,
+  timezone?: string
+): string => {
   dayjs.locale(getLang(lang));
+  if (timezone) dayjs.tz.setDefault(timezone);
 
   return `${dayjs(timestamp).format("LL")} ${dayjs(timestamp).format("HH:mm")}`;
 };
@@ -38,7 +47,7 @@ export = (
           ? transformer(timestamp, $lang)
           : typeof themeConfig.lastUpdate === "function"
           ? themeConfig.lastUpdate
-          : defaultTransformer(timestamp, $lang);
+          : defaultTransformer(timestamp, $lang, options.timezone);
 
       $page.lastUpdated = lastUpdated;
       $page.lastUpdatedTime = timestamp;

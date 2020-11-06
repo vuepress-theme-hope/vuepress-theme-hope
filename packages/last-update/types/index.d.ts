@@ -1,5 +1,11 @@
 export interface LastUpdateOption {
   /**
+   * 当前时区，使用 CI 部署时很有用
+   *
+   * Current timezone, useful when you are deploying through CI
+   */
+  timezone?: string;
+  /**
    * 时间转换器
    *
    * Time transformer

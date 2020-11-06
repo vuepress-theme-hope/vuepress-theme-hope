@@ -48,6 +48,13 @@ module.exports = {
 
 ## 配置
 
+### timezone
+
+- 类型: `string`
+- 必填: 否
+
+当前时区，使用 CI 部署时很有用
+
 ### transformer
 
 - 类型: `(timestamp: number, lang: string) => string`

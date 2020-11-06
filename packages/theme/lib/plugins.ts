@@ -15,7 +15,7 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ["@mr-hope/components"],
 
     /** 更新时间插件 */
-    ["@mr-hope/last-update", themeConfig.lastUpdate === false ? false : {}],
+    ["@mr-hope/last-update", themeConfig.lastUpdate],
 
     /** PWA 插件 */
     ["@mr-hope/pwa", themeConfig.pwa],

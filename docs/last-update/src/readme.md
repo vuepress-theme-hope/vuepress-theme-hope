@@ -48,6 +48,13 @@ To let the plugin work, your docs should be a git project, the plugin will autom
 
 ## Configuration
 
+### timezone
+
+- Type: `string`
+- Required: No
+
+Current timezone, useful when you are deploying through CI
+
 ### transformer
 
 - Type: `(timestamp: number, lang: string) => string`
