@@ -129,7 +129,7 @@
     "lerna": "3.22.1",
     "lint-staged": "10.5.1",
     "markdownlint-cli": "0.24.0",
-    "mocha": "8.2.0",
+    "mocha": "8.2.1",
     "prettier": "2.1.2",
     "remark-cli": "9.0.0",
     "remark-footnotes": "3.0.0",
