@@ -1,5 +1,6 @@
 <template>
   <div class="presentation">
+    <ThemeColor v-show="false" />
     <Content :key="$route.path" class="presentation-content" />
     <div
       v-click-outside="clickOutside"

@@ -32,7 +32,10 @@ export default class Valine extends Vue {
   }
 
   private mounted(): void {
-    if (this.valineEnable) this.valine(this.$route.path);
+    if (this.valineEnable)
+      setTimeout(() => {
+        this.valine(this.$route.path);
+      }, 500);
   }
 
   @Watch("$route")

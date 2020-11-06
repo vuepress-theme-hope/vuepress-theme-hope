@@ -65,7 +65,7 @@ export default class PWAInstallModal extends Vue {
       this.manifest = JSON.parse(manifestContent) as ManifestOption;
     else
       try {
-        const response = await fetch("manifest.webmanifest");
+        const response = await fetch("/manifest.webmanifest");
         const data = (await response.json()) as ManifestOption;
 
         this.manifest = data;

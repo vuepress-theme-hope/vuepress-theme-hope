@@ -44,6 +44,12 @@ module.exports = config({
       enableAll: true,
     },
 
+    comment: {
+      type: "valine",
+      appId: "rjC4JEYLxD9Ia3GoJ4VXilsD-gzGzoHsz",
+      appKey: "OrPR6yHV4e4uik7y55KbK4Ds",
+    },
+
     locales: {
       "/zh/": {
         nav: [

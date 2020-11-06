@@ -1,7 +1,9 @@
 import { Component, Vue } from "vue-property-decorator";
 import ClickOutside from "@theme/util/click-outside";
+import ThemeColor from "@theme/components/Theme/ThemeColor.vue";
 
 @Component({
+  components: { ThemeColor },
   directives: { "click-outside": ClickOutside },
 })
 export default class Slide extends Vue {
