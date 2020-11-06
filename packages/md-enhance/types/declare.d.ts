@@ -781,7 +781,6 @@ declare module "reveal.js-plugins/chalkboard/chalkboard.js" {
 }
 
 declare module "vuepress-plugin-md-enhance/src/styles/*.styl" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const stylusStyle: never;
 
   export default stylusStyle;
