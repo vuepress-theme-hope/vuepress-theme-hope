@@ -78,26 +78,26 @@ export default class Presentation extends Vue {
           )
         );
 
-      if (REVEAL_PLUGINS.includes("anything"))
-        promises.push(
-          import(
-            /* webpackChunkName: "reveal" */ "reveal.js-plugins/anything/anything.js"
-          )
-        );
+      // if (REVEAL_PLUGINS.includes("anything"))
+      //   promises.push(
+      //     import(
+      //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/anything/anything.js"
+      //     )
+      //   );
 
-      if (REVEAL_PLUGINS.includes("audio"))
-        promises.push(
-          import(
-            /* webpackChunkName: "reveal" */ "reveal.js-plugins/audio-slideshow/audio-slideshow.js"
-          )
-        );
+      // if (REVEAL_PLUGINS.includes("audio"))
+      //   promises.push(
+      //     import(
+      //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/audio-slideshow/audio-slideshow.js"
+      //     )
+      //   );
 
-      if (REVEAL_PLUGINS.includes("chalkboard"))
-        promises.push(
-          import(
-            /* webpackChunkName: "reveal" */ "reveal.js-plugins/chalkboard/chalkboard.js"
-          )
-        );
+      // if (REVEAL_PLUGINS.includes("chalkboard"))
+      //   promises.push(
+      //     import(
+      //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/chalkboard/chalkboard.js"
+      //     )
+      //   );
 
       void Promise.all(promises).then(([revealJS, ...plugins]) => {
         const reveal = new revealJS.default(revealElement as HTMLElement, {
