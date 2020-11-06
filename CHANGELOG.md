@@ -2,6 +2,24 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.0-beta.1...v1.5.0) (2020-11-06)
+
+### Bug Fixes
+
+- some bug fixes ([11122aa](https://github.com/Mister-Hope/vuepress-theme-hope/commit/11122aae814e9c53fd6e73c942c7b7885d364a5e))
+- **pwa:** fix popup issue on iOS device ([d8e248e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d8e248e668d60f6ee01ea84ea5ee8e1d573c9b63))
+- **pwa:** fix wrong layout on mobile ([cf269d2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cf269d2e07084487b1614e2bf68fac015adbf08b))
+
+### Features
+
+- **last-update:** add timezone option ([d2de01b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d2de01b7dec7dfc2e89d2e102e50b617b65069a4))
+- **md-enhance:** support to config plugins for presentation ([009391b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/009391b2c3c6ea6ba8e713a7d08542affdc19649))
+- **shared-utils:** add font-awesome ([6c7a175](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6c7a1757d0dec01e5f4c46a7aec4da7bb48af24a))
+
+### Reverts
+
+- **md-enhance:** drop 3rd-party plugin support ([0dd9c67](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0dd9c67bc68fed4ecc4af465b8d3dcc11dd7fd4e))
+
 ## [1.5.0-beta.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.0-beta.0...v1.5.0-beta.1) (2020-10-28)
 
 ### Features
