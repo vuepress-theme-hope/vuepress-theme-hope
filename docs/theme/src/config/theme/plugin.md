@@ -362,6 +362,8 @@ Options for photo preview plugin, set to `false` to disable this plugin.
 
 Current timezone, useful when you are deploying through CI
 
+> For timezone list, please see [Timezone list](https://www.zeitverschiebung.net/en/all-time-zones.html)
+
 ### lastUpdate.transformer
 
 - Type: `(timestamp: number, lang: string) => string`

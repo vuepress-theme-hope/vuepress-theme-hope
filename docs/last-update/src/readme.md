@@ -53,7 +53,9 @@ To let the plugin work, your docs should be a git project, the plugin will autom
 - Type: `string`
 - Required: No
 
-Current timezone, useful when you are deploying through CI
+Current timezone, useful when you are deploying through CI.
+
+> For timezone list, please see [Timezone list](https://www.zeitverschiebung.net/en/all-time-zones.html)
 
 ### transformer
 

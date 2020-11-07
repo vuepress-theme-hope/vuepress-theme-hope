@@ -24,6 +24,9 @@
   },
   "main": "lib/index.js",
   "types": "types/index.d.ts",
+  "scripts": {
+    "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/*.test.ts"
+  },
   "dependencies": {
     "@mr-hope/vuepress-types": "^1.5.0",
     "@types/cross-spawn": "^6.0.2",

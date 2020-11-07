@@ -55,6 +55,8 @@ module.exports = {
 
 当前时区，使用 CI 部署时很有用
 
+> 详细的时区列表，详见 [时区列表](https://www.zeitverschiebung.net/cn/all-time-zones.html)
+
 ### transformer
 
 - 类型: `(timestamp: number, lang: string) => string`
