@@ -1,4 +1,4 @@
-export interface LastUpdateOption {
+export interface LastUpdateOptions {
   /**
    * 当前时区，使用 CI 部署时很有用
    *

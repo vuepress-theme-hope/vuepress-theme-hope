@@ -1,5 +1,5 @@
 ---
-icon: blog
+icon: presentation
 category: layout
 tags:
   - slides

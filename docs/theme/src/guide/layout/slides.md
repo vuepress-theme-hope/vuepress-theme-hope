@@ -1,8 +1,9 @@
 ---
-icon: blog
+icon: presentation
 category: layout
-tags: -slides
-  -layout
+tags:
+  - slides
+  - layout
 ---
 
 # Slide

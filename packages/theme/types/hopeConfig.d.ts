@@ -7,6 +7,7 @@ import {
 } from "@mr-hope/vuepress-shared-utils";
 import { DefaultThemeConfig, SiteConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance/types";
+import { LastUpdateOptions } from "@mr-hope/vuepress-plugin-last-update";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
@@ -336,7 +337,7 @@ export interface HopeThemePluginConfig {
   sitemap?: SitemapOptions | false;
 
   /** 最后更新时间转换 */
-  lastUpdate?: ((timestamp: number, lang: string) => string) | false;
+  lastUpdate?: LastUpdateOptions | false;
   /**
    * ts-loader 选项
    *

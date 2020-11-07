@@ -1,4 +1,4 @@
-import { LastUpdateOption } from "../types";
+import { LastUpdateOptions } from "../types";
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import getTime from "./time";
 import dayjs = require("dayjs");
@@ -31,7 +31,7 @@ const defaultTransformer = (
 };
 
 export = (
-  options: LastUpdateOption,
+  options: LastUpdateOptions,
   { themeConfig }: Context
 ): PluginOptionAPI => ({
   name: "last-updated",
