@@ -23,13 +23,13 @@
 .article-wrapper
   .article
     position relative
+    box-sizing border-box
+    width 100%
     margin 0 auto 20px
     padding 16px 20px
-    width 100%
     background-color var(--bgcolor)
     border-radius 6px
     box-shadow 0 1px 3px 0 var(--card-shadow-color)
-    box-sizing border-box
     -webkit-transition all 0.3s
     transition all 0.3s
 
@@ -54,10 +54,10 @@
         fill var(--white)
 
     .title
+      display inline-block
       position relative
       font-size 1.28rem
       line-height 36px
-      display inline-block
 
       &::after
         content ''
@@ -68,7 +68,6 @@
         left 0
         background-color var(--accent-color)
         visibility hidden
-        -webkit-transform scaleX(0)
         transform scaleX(0)
         transition 0.3s ease-in-out
 
@@ -77,7 +76,6 @@
 
         &::after
           visibility visible
-          -webkit-transform scaleX(1)
           transform scaleX(1)
 
       .lock-icon, .presentation-icon
@@ -93,8 +91,8 @@
       h1
         display none
 
-      h1+p
-        margin-top 0.5em
+        & + p
+          margin-top 0.5em
 
       p
         &:first-child

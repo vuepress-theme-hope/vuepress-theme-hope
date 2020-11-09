@@ -10,10 +10,8 @@
       }"
       @click="clickCategory(category.path)"
     >
-      <div class="category-name">
-        {{ capitalize(category.name) }}
-        <span class="category-num">{{ category.pages.length }}</span>
-      </div>
+      {{ capitalize(category.name) }}
+      <span class="category-num">{{ category.pages.length }}</span>
     </li>
   </ul>
 </template>
@@ -31,14 +29,11 @@ $categoryListTextSize ?= 14px
   font-size $categoryListTextSize
 
   .category
-    display inline-flex
-    justify-content space-between
-    align-items center
-    box-sizing border-box
+    display inline-block
     vertical-align middle
-    margin 0.3em 0.6em 0.8em
-    padding 0.4em 0.8em
-    border-radius 0.25em
+    margin 0.3rem 0.6rem 0.8rem
+    padding 0.4rem 0.8rem
+    border-radius 0.25rem
     box-shadow 0 1px 4px 0 var(--card-shadow-color)
     color var(--dark-grey)
     cursor pointer
@@ -46,19 +41,18 @@ $categoryListTextSize ?= 14px
     transition all 0.5s
 
     @media (max-width $MQMobileNarrow)
-      font-size 0.9em
+      font-size 0.9rem
 
     .category-num
       display inline-block
-      min-width 1.4em
-      height 1.4em
+      min-width 1.2rem
+      height 1.2rem
       margin-left 0.2em
-      padding 0.1em 0.2em
-      border-radius 0.7em
+      border-radius 0.5rem
       color var(--white)
       font-family sans-serif
-      font-size 0.7em
-      line-height 1.4em
+      font-size 0.7rem
+      line-height 1.2rem
       text-align center
 
 @require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'

@@ -17,25 +17,22 @@
 <style lang="stylus">
 .article-type-wrapper
   position relative
-  list-style none
   padding-left 0
-  z-index 2
   font-size 18px
   font-weight 600
   display flex
   justify-content center
   align-items center
+  list-style none
+  z-index 2
 
   .article-type
     position relative
     vertical-align middle
     margin 0.3em 0.8em
-    cursor pointer
     line-height 1.2
+    cursor pointer
     transition all 0.3s ease-in-out
-
-    &:hover
-      cursor pointer
 
     &::after
       position absolute
@@ -56,8 +53,8 @@
 
       span
         display inline-block
-        transform scale(1.1, 1.1)
         color var(--accent-color)
+        transform scale(1.1, 1.1)
 
     &:hover, &.active
       &::after

@@ -29,8 +29,10 @@
 
 <style lang="stylus">
 .page.blog
-  min-height 100vh - $navbarHeight
+  box-sizing border-box
+  min-height 100vh
   padding-top $navbarHeight
+  padding-bottom 2rem
   margin 0px auto
   background-color var(--bgcolor-light)
   display flex
@@ -38,8 +40,7 @@
   justify-content space-between
 
   @media (max-width $MQMobile)
-    min-height 100vh - $navbarMobileHeight
-    padding $navbarMobileHeight 1.5rem 0
+    padding $navbarMobileHeight 1.5rem 2rem
 
   @media (max-width $MQMobileNarrow)
     padding-left 0

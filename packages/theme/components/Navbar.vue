@@ -133,8 +133,4 @@
       padding-left 0
       right $navbarMobileHorizontalPadding
       top $navbarMobileVerticalPadding
-
-    .search-box
-      flex 0 0 auto
-      vertical-align top
 </style>

@@ -29,16 +29,16 @@
     position relative
     vertical-align middle
     min-width 24px
-    padding 3px 8px
     margin 4px 6px
-    cursor pointer
-    font-size 12px
-    text-align center
+    padding 3px 8px
     border-radius 8px
     box-shadow 0 1px 6px 0 var(--box-shadow-color)
-    overflow hidden
-    transition all 0.5s
     color var(--white)
+    font-size 12px
+    text-align center
+    overflow hidden
+    cursor pointer
+    transition all 0.5s
 
     &:hover
       cursor pointer

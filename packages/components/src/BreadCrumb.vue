@@ -39,13 +39,12 @@ h1, h2, h3, h4, h5, h6
 .breadcrumb
   @extend $wrapper
   position relative
-  z-index 2
-  font-size 15px
-  white-space nowrap
   margin-top $navbarHeight
   margin-bottom (- $navbarHeight)
   padding-top 0.2rem
   padding-bottom 0.2rem
+  font-size 15px
+  z-index 2
 
   @media (max-width $MQNarrow)
     margin-top $navbarMobileHeight
@@ -63,21 +62,16 @@ h1, h2, h3, h4, h5, h6
     font-size inherit
 
     &:before
-      line-height 1
-      vertical-align middle
       display inline-block
+      vertical-align middle
+      line-height 1
 
   ul
-    list-style none
     padding-left 0px
-    align-items flex-start
-    display flex
-    flex-wrap wrap
-    justify-content flex-start
+    list-style none
 
     li
-      align-items center
-      display flex
+      display inline-block
 
       &:first-child a
         padding-left 0
@@ -94,13 +88,16 @@ h1, h2, h3, h4, h5, h6
         padding 0 0.5em
 
         &:before
+          position relative
+          bottom 0.125rem
           margin-right 0.25em
 
         &:hover
           cursor pointer
           text-decoration underline
 
-    li+li::before
-      color var(--light-grey, #999)
-      content '\0002f'
+    li
+      & + li::before
+        color var(--light-grey, #999)
+        content '\0002f'
 </style>

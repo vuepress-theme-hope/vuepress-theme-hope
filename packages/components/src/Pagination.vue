@@ -61,34 +61,33 @@
 
 <style lang="stylus">
 .pagination-wrapper
-  font-weight 600
   margin 1.25rem 0 0.75rem
   font-family Arial, Helvetica, sans-serif
+  font-weight 600
+  font-size 15px
+  line-height 2
 
   .pagination-list
     display flex
     justify-content space-evenly
     align-items center
-    -webkit-touch-callout none
-    user-select none
     flex-wrap wrap
+    user-select none
 
     .btn-group
       display flex
       align-items stretch
       height 30px
-      margin 0 0.5em
+      margin 0 0.5rem
       border 1px solid var(--border-color, $borderColor)
-      border-radius 0.25em
+      border-radius 0.25rem
       overflow hidden
 
       div
         position relative
-        padding 0 0.5em
+        padding 0 0.5rem
         background var(--bgcolor, $bgColor)
         color var(--accent-color, $accentColor)
-        font-size 14px
-        line-height 30px
         cursor pointer
 
         &::before
@@ -122,34 +121,30 @@
       display flex
       justify-content center
       align-items center
-      margin 0.5em
-
-      div.text
-        font-size 14px
+      margin 0.5rem
 
       input
-        width 3.5em
-        height 1.5em
-        font-size 13px
+        width 3.5rem
+        margin 6px 0
         border 1px solid var(--border-color, $borderColor)
         border-radius 0.25em
-        outline none
-        text-align center
-        margin 6px 0
-        color var(--black, #000)
+        color var(--text-color, $textColor)
         background-color var(--bgcolor, #fff)
+        text-align center
+        line-height 2
+        outline none
 
       .navigate-button
-        font-size 14px
         margin-left 5px
-        padding 0.25em 0.5em
+        padding 0 0.75em
         background var(--bgcolor, $bgColor)
+        color var(--accent-color, $accentColor)
         border 1px solid var(--border-color, $borderColor)
         border-radius 0.25em
         overflow hidden
-        cursor pointer
 
         &:hover
+          cursor pointer
           color var(--white, #fff)
           background var(--accent-color, $accentColor)
           border-color var(--accent-color, $accentColor)

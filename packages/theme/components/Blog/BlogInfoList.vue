@@ -137,20 +137,20 @@
       padding 4px
       border none
       background-color transparent
+      color var(--grey3)
 
       &:focus
         outline none
-
-      .theme-dark &
-        color #ccc
 
       .icon-wapper
         width 24px
         height 24px
         padding 8px
         border-radius 50%
-        color var(--text-color)
-        background-color rgba(127, 127, 127, 0.1)
+        background-color rgba(127, 127, 127, 0.15)
+
+        .theme-dark &
+          background-color rgba(255, 255, 255, 0.15)
 
         &:hover
           cursor pointer

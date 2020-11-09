@@ -23,10 +23,10 @@
   position fixed
   right 1rem
   bottom 1rem
-  border-radius 1.2rem
   padding 0 16px
   border none
-  background var(--accent-color)
+  border-radius 1.2rem
+  background var(--accent-color, $accentColor)
   color var(--white, #fff)
   line-height 2.2rem
   cursor pointer

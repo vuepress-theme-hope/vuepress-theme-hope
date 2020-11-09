@@ -39,9 +39,6 @@
   z-index 10
   fill currentcolor
 
-  @media screen and (orientation landscape)
-    bottom 4rem
-
   &:hover
     color var(--accent-color-l25, lighten($accentColor, 25%))
 

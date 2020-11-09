@@ -1,5 +1,6 @@
 <template>
   <div id="article" class="article-wrapper">
+    <h2 v-if="!articles.length" class="empty">暂无文章</h2>
     <MyTransition
       v-for="(article, index) in articles"
       :key="article.path"
@@ -26,4 +27,7 @@
   @media (max-width $MQMobile)
     margin-top -0.5rem - $navbarMobileHeight
     padding-top $navbarMobileHeight + 0.5rem
+
+  .empty
+    margin 20px auto
 </style>
