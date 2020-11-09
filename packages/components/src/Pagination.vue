@@ -85,7 +85,7 @@
       div
         position relative
         padding 0 0.5em
-        background var(--background-color, $bgColor)
+        background var(--bgcolor, $bgColor)
         color var(--accent-color, $accentColor)
         font-size 14px
         line-height 30px
@@ -137,13 +137,13 @@
         text-align center
         margin 6px 0
         color var(--black, #000)
-        background-color var(--background-color, #fff)
+        background-color var(--bgcolor, #fff)
 
       .navigate-button
         font-size 14px
         margin-left 5px
         padding 0.25em 0.5em
-        background var(--background-color, $bgColor)
+        background var(--bgcolor, $bgColor)
         border 1px solid var(--border-color, $borderColor)
         border-radius 0.25em
         overflow hidden

@@ -30,6 +30,13 @@ tags:
 
 每分钟的阅读字数
 
+## navAutoHide
+
+- 类型: `"always" | "mobile" | "none"`
+- 默认值: `"mobile"`
+
+是否在向下滚动时自动隐藏导航栏
+
 ## sidebarIcon
 
 - 类型: `boolean`

@@ -4,7 +4,7 @@ import { endingSlashRE, outboundRE } from "@theme/util/path";
 @Component
 export default class PageEdit extends Vue {
   private get lastUpdated(): string {
-    return this.$themeConfig.lastUpdated === false
+    return this.$themeConfig.lastUpdate === false
       ? ""
       : this.$page.lastUpdated || "";
   }

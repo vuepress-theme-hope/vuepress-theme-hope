@@ -39,19 +39,13 @@
 
   .project
     position relative
-    width calc(33% - 40px)
+    width calc(50% - 40px)
     background-color var(--grey14)
     border-radius 8px
     margin 6px 8px
     padding 12px
     transition all 0.5s
     align-self stretch
-
-    @media (max-width $MQMobileNarrow)
-      width calc(50% - 40px)
-
-    @media (min-width $MQMobile)
-      width calc(50% - 40px)
 
     @media (min-width $MQNarrow)
       width calc(33% - 40px)

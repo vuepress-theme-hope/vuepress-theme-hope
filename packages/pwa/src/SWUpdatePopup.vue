@@ -64,7 +64,7 @@
   align-items center
   border-radius 0.5em
   color var(--text-color, $textColor)
-  background var(--background-color, #fff)
+  background var(--bgcolor, #fff)
   border 1px solid var(--grey12, #bbb)
   z-index 11
   cursor pointer

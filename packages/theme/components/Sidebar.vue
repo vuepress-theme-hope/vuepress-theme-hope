@@ -29,10 +29,14 @@
   box-sizing border-box
   width $sidebarWidth
   margin 0
-  background-color var(--background-color)
+  background-color var(--bgcolor-blur)
+  box-shadow 2px 0 8px var(--card-shadow-color)
+  backdrop-filter saturate(200%) blur(20px)
   font-size 16px
   overflow-y auto
-  box-shadow 2px 0 8px var(--card-shadow-color)
+
+  @media (max-width $MQMobile)
+    top $navbarMobileHeight
 
   .theme-container.no-navbar &
     top 0

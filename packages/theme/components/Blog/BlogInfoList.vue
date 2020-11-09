@@ -116,9 +116,9 @@
 .blog-info-list
   margin 8px auto
   padding 8px 16px
-  background-color var(--background-color)
 
   .page &
+    background-color var(--bgcolor)
     border-radius 6px
     box-shadow 0 1px 3px 0 var(--card-shadow-color)
 

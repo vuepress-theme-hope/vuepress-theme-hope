@@ -31,7 +31,7 @@
 
       pre, code
         color var(--dark-grey, #666)
-        background-color var(--code-bg-color, #ecf4fa)
+        background-color var(--code-bgcolor, #ecf4fa)
 
       blockquote
         color var(--dark-grey, #666)
@@ -57,20 +57,20 @@
         .vmark
           .valert
             .vtext
-              color var(--background-color, #fff)
+              color var(--bgcolor, #fff)
 
             .vcode
               background-color var(--grey12, #bbb)
 
               &:focus
-                background-color var(--background-color, #fff)
+                background-color var(--bgcolor, #fff)
                 border-color var(--accent-color, $accentColor)
 
       .power
         color var(--light-grey, #999)
 
       .vbtn
-        background-color var(--background-color, #fff)
+        background-color var(--bgcolor, #fff)
 
         &:active, &:hover
           color var(--white, #fff)

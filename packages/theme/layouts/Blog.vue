@@ -33,10 +33,13 @@
   padding-top $navbarHeight
   margin 0px auto
   background-color var(--bgcolor-light)
+  display flex
+  flex-direction column
+  justify-content space-between
 
   @media (max-width $MQMobile)
-    padding-left 1.5rem
-    padding-right 1.5rem
+    min-height 100vh - $navbarMobileHeight
+    padding $navbarMobileHeight 1.5rem 0
 
   @media (max-width $MQMobileNarrow)
     padding-left 0
@@ -46,6 +49,8 @@
   display flex
   justify-content center
   align-items flex-start
+  box-sizing border-box
+  width 100%
   margin 0 auto
 
   @media (min-width $MQMobile)

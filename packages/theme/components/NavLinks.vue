@@ -30,6 +30,12 @@
     line-height 1.4rem
     color var(--dark-grey)
 
+    @media (max-width $MQMobile)
+      color var(--text-color)
+
+      &:hover, &.active
+        color var(--accent-color)
+
     &.active
       color var(--accent-color)
 
@@ -39,6 +45,9 @@
     margin-left 1.5rem
     line-height 2rem
 
+    @media (max-width $MQMobile)
+      margin-left 0
+
     &:first-child
       margin-left 0
 
@@ -46,22 +55,30 @@
     color var(--dark-grey)
     margin-left 1.5rem
 
-@media (max-width $MQMobile)
-  .nav-links
-    .nav-link
-      color var(--text-color)
-
-      &:hover, &.active
-        color var(--accent-color)
-
-    .nav-item, .repo-link
+    @media (max-width $MQMobile)
       margin-left 0
 
 @media (min-width $MQMobile)
   .nav-item > .nav-link
+    &::after
+      position absolute
+      content ' '
+      left 0
+      right 0
+      bottom 0px
+      height 2px
+      background-color var(--accent-color-l10)
+      border-radius 1px
+      visibility hidden
+      -webkit-transform scaleX(0)
+      transform scaleX(0)
+      transition all 0.3s ease-in-out
+
     &:hover, &.active
-      margin-bottom -2px
-      border-bottom 2px solid var(--accent-color-l10)
+      &::after
+        visibility visible
+        -webkit-transform scaleX(1)
+        transform scaleX(1)
 
     &.active
       color var(--accent-color)

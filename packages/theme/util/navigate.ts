@@ -23,7 +23,7 @@ const navigate = (url: string, router: VueRouter, route: Route): void => {
       // Inner relative path
       const base = route.path.slice(0, route.path.lastIndexOf("/"));
 
-      void router.push(`${base}/${url}`);
+      void router.push(`${base}/${encodeURI(url)}`);
     }
 };
 

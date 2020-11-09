@@ -64,7 +64,7 @@
       width 18px
 
   .color-picker-menu
-    background-color var(--background-color)
+    background-color var(--bgcolor)
     position absolute
     top 40px
     left 50%
@@ -82,7 +82,7 @@
       top -7px
       left 50%
       border-style solid
-      border-color transparent transparent var(--background-color)
+      border-color transparent transparent var(--bgcolor)
       border-width 0 7px 7px
       transform translateX(-50%)
 

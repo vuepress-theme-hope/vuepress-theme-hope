@@ -21,7 +21,7 @@
 
     <!-- Markdown 内容 -->
     <MyTransition :delay="0.28">
-      <Content :key="$route.path" class="home-center" custom />
+      <Content :key="$route.path" class="theme-default-content" custom />
     </MyTransition>
 
     <!-- 页脚 -->
@@ -41,8 +41,8 @@
   background-color var(--bgcolor-light)
 
   @media (max-width $MQMobile)
-    padding-left 1.5rem
-    padding-right 1.5rem
+    min-height 100vh - $navbarMobileHeight
+    padding $navbarMobileHeight 1.5rem 0
 
   @media (max-width $MQMobileNarrow)
     padding-left 0

@@ -31,7 +31,7 @@
     "@mr-hope/vuepress-types": "^1.5.1",
     "@types/cross-spawn": "^6.0.2",
     "cross-spawn": "^7.0.3",
-    "dayjs": "^1.9.4"
+    "dayjs": "^1.9.5"
   },
   "publishConfig": {
     "access": "public"

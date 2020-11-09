@@ -25,6 +25,8 @@
   align-items center
 
   @media (max-width $MQNarrow)
+    height 90vh - $navbarMobileHeight
+    margin-top $navbarMobileHeight
     padding-left $mobileSidebarWidth
 
   @media (max-width $MQMobile)
@@ -63,7 +65,7 @@
       margin-left 20px
       font-size 20px
       color var(--black) !important
-      background-color var(--background-color) !important
+      background-color var(--bgcolor) !important
       border none
       flex 1
       line-height 2
@@ -75,7 +77,7 @@
       height 42px
       background-color var(--accent-color)
       line-height 2
-      color var(--background-color)
+      color var(--bgcolor)
       font-size 20px
       cursor pointer
 

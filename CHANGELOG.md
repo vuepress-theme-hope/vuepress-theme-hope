@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.0...v1.5.1) (2020-11-07)
+
+### Bug Fixes
+
+- **last-update:** fix timezone convert issue ([48884c2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/48884c28490443024380dc54c8ee6d5ca71ae1be))
+- fix wrong types ([537fa43](https://github.com/Mister-Hope/vuepress-theme-hope/commit/537fa43c6698b61ca6054c4a7dc92ba676da9e4b))
+
 ## [1.5.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.0-beta.1...v1.5.0) (2020-11-06)
 
 ### Bug Fixes

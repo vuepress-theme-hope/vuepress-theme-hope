@@ -29,7 +29,7 @@
       padding 4px
       border 1px solid var(--light-grey)
       border-radius 4px
-      background-color var(--background-color)
+      background-color var(--bgcolor)
       font-size 16px
       text-align left
 
@@ -43,7 +43,7 @@
       [class*=ds-dataset-]
         padding 0
         border none
-        background var(--background-color)
+        background var(--bgcolor)
 
       .ds-suggestions
         margin-top 0
@@ -57,7 +57,7 @@
     .algolia-docsearch-suggestion
       padding 0
       border-color var(--border-color)
-      background var(--background-color)
+      background var(--bgcolor)
       color var(--text-color)
 
       .algolia-docsearch-suggestion--category-header
@@ -85,7 +85,7 @@
         vertical-align top
         padding 5px 7px 5px 5px
         border-color var(--border-color)
-        background var(--background-color)
+        background var(--bgcolor)
         color var(--text-color)
 
         @media (min-width $MQMobile)

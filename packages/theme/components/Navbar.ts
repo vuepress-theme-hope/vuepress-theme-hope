@@ -38,6 +38,8 @@ const css = (
 export default class Navbar extends Vue {
   private linksWrapMaxWidth = 0;
 
+  private isMobile = false;
+
   /** Algolia 配置 */
   private get algolia(): AlgoliaOption | false {
     return (
@@ -52,16 +54,24 @@ export default class Navbar extends Vue {
     );
   }
 
+  private get canHide(): boolean {
+    const autoHide = this.$themeConfig.navAutoHide;
+
+    return autoHide !== "none" && (autoHide === "always" || this.isMobile);
+  }
+
   private mounted(): void {
     // Refer to config.styl
     const MOBILE_DESKTOP_BREAKPOINT = 719;
     const NAVBAR_HORIZONTAL_PADDING =
       parseInt(css(this.$el, "paddingLeft")) +
       parseInt(css(this.$el, "paddingRight"));
-    const handleLinksWrapWidth = (): void => {
-      if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT)
+    const handler = (): void => {
+      if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
+        this.isMobile = true;
         this.linksWrapMaxWidth = 0;
-      else
+      } else {
+        this.isMobile = false;
         this.linksWrapMaxWidth =
           (this.$el as HTMLElement).offsetWidth -
           NAVBAR_HORIZONTAL_PADDING -
@@ -69,10 +79,11 @@ export default class Navbar extends Vue {
             (this.$refs.siteInfo as Vue).$el &&
             ((this.$refs.siteInfo as Vue).$el as HTMLElement).offsetWidth) ||
             0);
+      }
     };
 
-    handleLinksWrapWidth();
-    window.addEventListener("resize", handleLinksWrapWidth, false);
-    window.onorientationchange = (): (() => void) => handleLinksWrapWidth;
+    handler();
+    window.addEventListener("resize", handler);
+    window.addEventListener("orientationchange", handler);
   }
 }
