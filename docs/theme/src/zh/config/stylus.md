@@ -27,12 +27,15 @@ $MQMobileNarrow ?= 419px // narrow mobile
 ```stylus
 // layout
 $navbarHeight ?= 3.6rem
+$navbarMobileHeight ?= 3.2rem
+$navbarHorizontalPadding ?= 1.5rem
+$navbarMobileHorizontalPadding ?= 1rem
+$navbarVerticalPadding ?= 0.7rem
+$navbarMobileVerticalPadding ?= 0.4rem
 $sidebarWidth ?= 18rem
 $mobileSidebarWidth ?= $sidebarWidth
 $contentWidth ?= 740px
 $homePageWidth ?= 960px
-$navbar-vertical-padding ?= 0.7rem
-$navbar-horizontal-padding ?= 1.5rem
 ```
 
 ## 颜色
@@ -44,6 +47,10 @@ $textColor ?= #2c3e50
 $nightTextColor ?= #9e9e9e
 $bgColor ?= #fff
 $nightBgColor ?= #1e1e1e
+$bgColorLight ?= #f8f8f8
+$nightBgColorLight ?= #272727
+$bgColorBlur ?= rgba(255, 255, 255, 0.9)
+$nightBgColorBlur ?= rgba(30, 30, 30, 0.9)
 $borderColor ?= #eaecef
 $nightBorderColor ?= #302d28
 $codeBgColor ?= #ecf4fa

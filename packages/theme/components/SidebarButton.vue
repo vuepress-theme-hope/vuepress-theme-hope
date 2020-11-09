@@ -9,11 +9,11 @@
   display none
   box-sizing content-box
   position absolute
-  top 0.6rem
+  top calc(50% - 1.075rem)
   left 1rem
-  width 20px
-  height 20px
-  padding 0.6rem
+  width 1.25rem
+  height 1.25rem
+  padding 0.45rem
   border 0 none
   background transparent
   font unset

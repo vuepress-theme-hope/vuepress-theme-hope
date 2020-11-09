@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" :class="{ 'can-hide': canHide }">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <RouterLink ref="siteInfo" :to="$localePath" class="home-link">
@@ -56,20 +56,38 @@
   left 0
   right 0
   height $navbarHeight
-  padding $navbar-vertical-padding $navbar-horizontal-padding
-  background-color var(--background-color)
+  padding $navbarVerticalPadding $navbarHorizontalPadding
+  background-color var(--bgcolor-blur)
   box-sizing border-box
-  line-height $navbarHeight - 1.4rem
   box-shadow 0 2px 8px var(--card-shadow-color)
+  backdrop-filter saturate(200%) blur(20px)
+  line-height $navbarHeight - $navbarVerticalPadding * 2
+  transition transform 0.3s ease-in-out
+
+  @media (max-width $MQMobile)
+    height $navbarMobileHeight
+    padding $navbarMobileVerticalPadding $navbarMobileHorizontalPadding
+    padding-left $navbarMobileHorizontalPadding + 2.4rem
+    line-height $navbarMobileHeight - $navbarMobileVerticalPadding * 2
+
+  .hide-navbar &.can-hide
+    transform translateY(-100%)
 
   a, span, img
     display inline-block
 
+  .home-link:hover .site-name
+    color var(--accent-color)
+
   .logo
-    height $navbarHeight - 1.4rem
-    min-width $navbarHeight - 1.4rem
+    min-width $navbarHeight - $navbarVerticalPadding * 2
+    height $navbarHeight - $navbarVerticalPadding * 2
     margin-right 0.8rem
     vertical-align top
+
+    @media (max-width $MQMobile)
+      min-width $navbarMobileHeight - $navbarMobileVerticalPadding * 2
+      height $navbarMobileHeight - $navbarMobileVerticalPadding * 2
 
     .theme-light &
       &.light
@@ -85,40 +103,38 @@
       &.dark
         display block
 
+  .can-hide
+    @media (max-width $MQMobile)
+      display none
+
   .site-name
     font-size 1.3rem
     font-weight 600
     color var(--text-color)
     position relative
 
-  .links
-    padding-left 1.5rem
-    box-sizing border-box
-    background-color var(--background-color)
-    white-space nowrap
-    font-size 0.9rem
-    position absolute
-    right $navbar-horizontal-padding
-    top $navbar-vertical-padding
-    display flex
-
-    .search-box
-      flex 0 0 auto
-      vertical-align top
-
-@media (max-width $MQMobile)
-  .navbar
-    padding-left 4rem
-
-    .can-hide
-      display none
-
-    .site-name
+    @media (max-width $MQMobile)
       width calc(100vw - 9.4rem)
       overflow hidden
       white-space nowrap
       text-overflow ellipsis
 
-    .links
-      padding-left 1.5rem
+  .links
+    padding-left 1.5rem
+    box-sizing border-box
+    white-space nowrap
+    font-size 0.9rem
+    position absolute
+    right $navbarHorizontalPadding
+    top $navbarVerticalPadding
+    display flex
+
+    @media (max-width $MQMobile)
+      padding-left 0
+      right $navbarMobileHorizontalPadding
+      top $navbarMobileVerticalPadding
+
+    .search-box
+      flex 0 0 auto
+      vertical-align top
 </style>

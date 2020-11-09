@@ -67,7 +67,7 @@ $headings = 2 3 4 5 6
             margin-top -3px
             width 6px
             height 6px
-            background var(--background-color)
+            background var(--bgcolor)
             border 1px solid var(--border-color)
             border-radius 50%
 

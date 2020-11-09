@@ -67,7 +67,10 @@
   padding-bottom 2rem
   display block
   padding-left $sidebarWidth
-  background-color var(--background-color)
+  background-color var(--bgcolor)
+
+  @media (max-width $MQMobile)
+    min-height 100vh - $navbarMobileHeight - 2rem
 
   // narrow desktop / iPad
   @media (max-width $MQNarrow)

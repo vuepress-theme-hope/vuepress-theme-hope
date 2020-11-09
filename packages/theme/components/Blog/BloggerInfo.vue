@@ -6,7 +6,7 @@
           class="blogger"
           :class="{ hasIntro }"
           :aria-label="hasIntro ? i18n.intro : ''"
-          :data-balloon-pos="hasIntro ? 'right' : ''"
+          :data-balloon-pos="hasIntro ? 'down' : ''"
           @click="jumpIntro"
         >
           <img
@@ -45,7 +45,8 @@
 
 <style lang="stylus">
 .blogger-info-wrapper
-  background-color var(--background-color)
+  .page &
+    background-color var(--bgcolor)
 
   .blogger-info
     .blogger-wrapper

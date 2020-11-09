@@ -96,7 +96,7 @@
           margin-top -4px
           width 8px
           height 8px
-          background var(--background-color)
+          background var(--bgcolor)
           border 1px solid var(--border-color)
           border-radius 50%
 
@@ -135,7 +135,7 @@
               width 6px
               height 6px
               margin-left -4px
-              background var(--background-color)
+              background var(--bgcolor)
               border-radius 50%
               border 1px solid var(--border-color)
               z-index 2

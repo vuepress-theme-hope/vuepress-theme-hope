@@ -203,7 +203,7 @@
       position absolute
       top 100%
       right 0
-      background-color var(--background-color)
+      background-color var(--bgcolor)
       padding 0.6rem 0
       border 1px solid var(--grey14)
       text-align left

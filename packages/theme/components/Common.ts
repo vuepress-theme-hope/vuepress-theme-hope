@@ -10,6 +10,7 @@ import Navbar from "@theme/components/Navbar.vue";
 import Password from "@theme/components/Password.vue";
 import { PageHeader } from "@mr-hope/vuepress-types";
 import Sidebar from "@theme/components/Sidebar.vue";
+import throttle from "lodash.throttle";
 
 @Component({ components: { Password, Sidebar, Navbar } })
 export default class Common extends Mixins(GlobalEncryptMixin) {
@@ -20,6 +21,8 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
   private readonly sidebar!: boolean;
 
   private isSidebarOpen = false;
+
+  private hideNavbar = false;
 
   private touchStart: { clientX: number; clientY: number } = {
     clientX: 0,
@@ -72,6 +75,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     return [
       {
         "no-navbar": !this.showNavbar,
+        "hide-navbar": this.hideNavbar,
         "sidebar-open": this.isSidebarOpen,
         "no-sidebar": !this.showSidebar,
         "has-anchor": this.showAnchor,
@@ -88,10 +92,39 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     return this.$themeConfig.anchorDisplay !== false && this.headers.length > 0;
   }
 
+  // Get scroll distance
+  private getScrollTop(): number {
+    return (
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0
+    );
+  }
+
   protected mounted(): void {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
+
+    // 向下滚动收起导航栏
+    let lastDistance = 0;
+    window.addEventListener(
+      "scroll",
+      throttle(() => {
+        // 侧边栏关闭时
+        if (!this.isSidebarOpen) {
+          const distance = this.getScrollTop();
+          if (lastDistance < distance && distance > 58)
+            // 向下滚动
+            this.hideNavbar = true;
+          // 向上
+          else this.hideNavbar = false;
+
+          lastDistance = distance;
+        }
+      }, 300)
+    );
   }
 
   private toggleSidebar(to: boolean): void {

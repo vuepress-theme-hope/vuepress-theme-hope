@@ -30,6 +30,13 @@ Whether display anchor in desktop mode
 
 Words reading per minute
 
+## navAutoHide
+
+- Type: `"always" | "mobile" | "none"`
+- Default: `"mobile"`
+
+Whether to hide navbar when scrolling down
+
 ## sidebarIcon
 
 - Type: `boolean`

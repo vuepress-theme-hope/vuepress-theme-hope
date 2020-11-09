@@ -35,6 +35,10 @@
   max-width 740px
   margin 0 auto
   padding 40px 0
+  --dot-color #fff
+
+  @media (prefers-color-scheme dark)
+    --dot-color #505050
 
   .timeline-content
     box-sizing border-box
@@ -70,7 +74,7 @@
         height 8px
         margin-left -4px
         margin-top -4px
-        background var(--background-color)
+        background var(--dot-color)
         border 1px solid var(--border-color)
         border-radius 50%
 
@@ -83,14 +87,14 @@
         content ' '
         position absolute
         z-index 2
-        left -20px
+        left -21px
         top 50%
         width 8px
         height 8px
         margin-left -4px
         margin-top -4px
-        background var(--background-color)
-        border 1px solid var(--border-color)
+        background var(--dot-color)
+        border 2px solid var(--border-color)
         border-radius 50%
 
     .year
@@ -110,11 +114,14 @@
         list-style none
 
         &:hover
+          cursor pointer
+
           .date
             color var(--accent-color)
 
             &::before
               background var(--accent-color)
+              border-color var(--dot-color)
 
           .title
             color var(--accent-color)
@@ -127,20 +134,19 @@
           &::before
             content ' '
             position absolute
-            left -19px
+            left -20px
             top 41px
             width 6px
             height 6px
             margin-left -4px
-            background var(--background-color)
+            background var(--dot-color)
             border-radius 50%
-            border 1px solid var(--border-color)
+            border 2px solid var(--border-color)
             z-index 2
 
         .title
           font-size 16px
           line-height 30px
-          cursor pointer
 
 @media (max-width $MQMobile)
   .timeline-wrapper

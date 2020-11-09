@@ -101,6 +101,7 @@ module.exports = config({
     },
 
     footer: {
+      display: true,
       content: "默认页脚",
     },
 

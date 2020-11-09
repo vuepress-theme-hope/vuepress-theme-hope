@@ -20,6 +20,10 @@
 
 <style lang="stylus">
 .article-wrapper
-  margin-top - $navbarHeight - 0.5rem
+  margin-top -0.5rem - $navbarHeight
   padding-top $navbarHeight + 0.5rem
+
+  @media (max-width $MQMobile)
+    margin-top -0.5rem - $navbarMobileHeight
+    padding-top $navbarMobileHeight + 0.5rem
 </style>

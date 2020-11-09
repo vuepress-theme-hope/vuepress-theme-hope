@@ -391,6 +391,14 @@ export interface HopeThemeConfig
    */
   nav?: HopeNavBarConfig;
   /**
+   * 是否在向下滚动时自动隐藏导航栏
+   *
+   * Whether to hide navbar when scrolling down
+   *
+   * @default 'mobile'
+   */
+  navAutoHide?: "always" | "mobile" | "none";
+  /**
    * 侧边栏配置
    *
    * Sidebar configuration

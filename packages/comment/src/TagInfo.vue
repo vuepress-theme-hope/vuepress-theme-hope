@@ -40,7 +40,7 @@
     &.clickable:hover
       cursor pointer
       box-shadow 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2))
-      background-color var(--background-color, #fff)
+      background-color var(--bgcolor, #fff)
 
     .theme-dark &
       background-color #222

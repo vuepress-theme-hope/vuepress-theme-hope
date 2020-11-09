@@ -135,7 +135,7 @@
     z-index 999
     max-width 56em
     border-radius 10px
-    background var(--background-color, #fff)
+    background var(--bgcolor, #fff)
     font-family sans-serif
     animation-name opened
     animation-duration 150ms

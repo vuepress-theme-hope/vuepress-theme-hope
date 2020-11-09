@@ -83,11 +83,15 @@
 
 <style lang="stylus">
 .home
-  padding $navbarHeight 2rem 0
   max-width $homePageWidth
   min-height 100vh - $navbarHeight
+  padding $navbarHeight 2rem 0
   margin 0px auto
   display block
+
+  @media (max-width $MQNarrow)
+    min-height 100vh - $navbarMobileHeight
+    padding-top $navbarMobileHeight
 
   @media (max-width $MQMobileNarrow)
     padding-left 1.5rem
