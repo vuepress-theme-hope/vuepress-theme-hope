@@ -2,30 +2,24 @@
   position relative
 
   .custom-block-title
-    font-weight 600
     margin-bottom -0.4rem
+    font-weight 600
 
   &.info, &.tip, &.warning, &.danger
-    padding 0.1rem 1.5rem
     margin 1rem 0
+    padding 0.1rem 1.5rem
     border-left-width 0.5rem
     border-left-style solid
-    border-bottom-right-radius 0.25rem
     border-top-right-radius 0.25rem
+    border-bottom-right-radius 0.25rem
 
     &::before
       position absolute
       top 14px
-      left -14px
-      color #fff
-      width 20px
-      height 20px
-      border-radius 100%
-      text-align center
-      line-height 20px
-      font-weight bold
-      font-family 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
-      font-size 14px
+      left -16px
+      width 25px
+      height 25px
+      border-radius 50%
 
   &.info
     border-color #007bff
@@ -36,10 +30,6 @@
 
     &::before
       content url('~vuepress-plugin-md-enhance/src/icon/info.svg')
-      width 25px
-      height 25px
-      left -16px
-      box-sizing border-box
 
       .theme-dark &
         content url('~vuepress-plugin-md-enhance/src/icon/info-dark.svg')
@@ -53,9 +43,6 @@
 
     &::before
       content url('~vuepress-plugin-md-enhance/src/icon/tip.svg')
-      width 25px
-      height 25px
-      left -16px
 
       .theme-dark &
         content url('~vuepress-plugin-md-enhance/src/icon/tip-dark.svg')
@@ -69,10 +56,6 @@
 
     &::before
       content url('~vuepress-plugin-md-enhance/src/icon/warning.svg')
-      width 25px
-      height 25px
-      left -16px
-      box-sizing border-box
 
       .theme-dark &
         content url('~vuepress-plugin-md-enhance/src/icon/warning-dark.svg')
@@ -86,9 +69,6 @@
 
     &::before
       content url('~vuepress-plugin-md-enhance/src/icon/danger.svg')
-      width 25px
-      height 25px
-      left -16px
 
       .theme-dark &
         content url('~vuepress-plugin-md-enhance/src/icon/danger-dark.svg')
@@ -96,10 +76,10 @@
   &.details
     display block
     position relative
-    border-radius 0.25rem
     margin 1.6em 0
     padding 1.6em
     background-color #eee
+    border-radius 0.25rem
 
     h4
       margin-top 0

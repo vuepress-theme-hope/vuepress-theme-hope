@@ -39,7 +39,7 @@ $pageInfoTextSize ?= 14px
       margin-bottom 0.5rem
 
       .iconfont
-        color var(--accent-color)
+        color var(--accent-color, $accentColor)
         font-size 0.8em
 
   .page-title + .theme-default-content:not(.custom)

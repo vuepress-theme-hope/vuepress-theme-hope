@@ -1,4 +1,4 @@
-import "@mr-hope/vuepress-plugin-copy-code/style/code.css";
+import "@mr-hope/vuepress-plugin-copy-code/style/code.styl";
 import "balloon-css";
 import Message from "./message";
 import Vue from "vue";

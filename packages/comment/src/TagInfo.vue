@@ -20,8 +20,8 @@
 <style lang="stylus">
 .tags-wrapper
   list-style none
-  padding-left 0
   margin 0
+  padding-left 0
 
   .tag
     display inline-block
@@ -29,7 +29,7 @@
     vertical-align middle
     margin 0 0.2em
     padding 0 0.2em
-    border 0.5px
+    border-width 0.5px
     border-style solid
     border-radius 0.75em
     background-color #f8f8f8
@@ -37,13 +37,13 @@
     overflow hidden
     transition all 0.5s
 
-    &.clickable:hover
-      cursor pointer
-      box-shadow 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2))
-      background-color var(--bgcolor, #fff)
-
     .theme-dark &
       background-color #222
+
+    &.clickable:hover
+      cursor pointer
+      background-color var(--bgcolor, #fff)
+      box-shadow 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2))
 
 @require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
 

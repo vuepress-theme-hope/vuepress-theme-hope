@@ -38,6 +38,10 @@
 <style lang="stylus">
 .timeline-list-wrapper
   padding 8px 0
+  --dot-color #fff
+
+  @media (prefers-color-scheme dark)
+    --dot-color #505050
 
   .title
     cursor pointer
@@ -80,7 +84,6 @@
 
       .year
         position relative
-        color var(--text-color)
         margin 20px 0 0px
         color var(--text-color)
         font-size 20px
@@ -96,7 +99,7 @@
           margin-top -4px
           width 8px
           height 8px
-          background var(--bgcolor)
+          background var(--dot-color)
           border 1px solid var(--border-color)
           border-radius 50%
 
@@ -116,6 +119,7 @@
 
               &::before
                 background var(--accent-color)
+                border-color var(--dot-color)
 
             .title
               color var(--accent-color)
@@ -135,7 +139,7 @@
               width 6px
               height 6px
               margin-left -4px
-              background var(--bgcolor)
+              background var(--dot-color)
               border-radius 50%
               border 1px solid var(--border-color)
               z-index 2

@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.1...v1.5.2) (2020-11-09)
+
+### Features
+
+- bug fixes and appearance improvement ([fe7408e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fe7408e28ff213ca27c7091e422472675b2c033d))
+
 ## [1.5.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.0...v1.5.1) (2020-11-07)
 
 ### Bug Fixes

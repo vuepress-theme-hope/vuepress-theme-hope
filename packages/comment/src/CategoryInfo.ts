@@ -16,14 +16,14 @@ export default class CategoryInfo extends Vue {
     return category ? capitalize(category) : "";
   }
 
-  private get active(): boolean {
+  private get canUse(): boolean {
     return this.$themeConfig.blog !== false;
   }
 
   private navigate(): void {
     const path = `/category/${this.categoryName}/`;
 
-    if (this.active && this.$route.path !== path) void this.$router.push(path);
+    if (this.canUse && this.$route.path !== path) void this.$router.push(path);
   }
 
   private get hint(): string {

@@ -2,7 +2,7 @@
   <transition name="sw-update-popup">
     <slot :reload="reload" :enabled="enabled" :message="message">
       <div v-if="enabled" class="sw-update-popup" @click="reload">
-        <span class="text">{{ message }}</span>
+        {{ message }}
         <span class="refresh">
           <svg
             viewBox="0 0 1024 1024"
@@ -59,31 +59,28 @@
   right 1em
   bottom 1em
   padding 0.5em 0.75em
-  display flex
-  justify-content center
-  align-items center
-  border-radius 0.5em
-  color var(--text-color, $textColor)
-  background var(--bgcolor, #fff)
   border 1px solid var(--grey12, #bbb)
+  border-radius 0.5em
+  background var(--bgcolor, #fff)
+  color var(--text-color, $textColor)
+  line-height 2
   z-index 11
   cursor pointer
 
-  .text
-    font-size 0.9em
-
   .refresh
-    width 1.5em
-    height 1.5em
+    display inline-block
+    vertical-align middle
+    width 1.5rem
+    height 1.5rem
     margin-left 0.4em
     background-color var(--accent-color, $accentColor)
-    border-radius 50%
+    border-radius 0.75rem
 
     svg
       animation rotate 3s ease infinite
-      width 70%
-      height 70%
-      margin 15%
+      width 1.2em
+      height 1.2em
+      margin 0.15em
       fill var(--white, #fff)
 
 .sw-update-popup-enter-active, .sw-update-popup-leave-active

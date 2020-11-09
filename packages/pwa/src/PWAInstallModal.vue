@@ -4,6 +4,13 @@
 
     <div class="install-modal">
       <div class="header">
+        <button
+          class="close-button"
+          aria-label="Close"
+          @click="$emit('toogle', false)"
+        >
+          <CloseIcon />
+        </button>
         <div class="logo">
           <img
             v-if="manifest.icons"
@@ -15,13 +22,6 @@
             <p class="desc">{{ i18n.explain }}</p>
           </div>
         </div>
-        <button
-          class="close-button"
-          aria-label="Close"
-          @click="$emit('toogle', false)"
-        >
-          <CloseIcon />
-        </button>
       </div>
       <div class="content">
         <div class="highlight">
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <div v-if="isIOS" class="iOSText" @click="hide">
+      <div v-if="isIOS" class="ios-text" @click="hide">
         <p>{{ i18n.iOSInstall }}</p>
         <button class="success">Got it!</button>
       </div>
@@ -108,9 +108,9 @@
   width 100vw
   height 100vh
   position fixed
-  overflow auto
   top 0
   left 0
+  overflow auto
   z-index 997
 
   button
@@ -125,8 +125,7 @@
     right 0
     backdrop-filter blur(10px)
     z-index 998
-    animation-name fadein
-    animation-duration 250ms
+    animation 0.25s fadein
 
   .install-modal
     display flex
@@ -137,13 +136,11 @@
     border-radius 10px
     background var(--bgcolor, #fff)
     font-family sans-serif
-    animation-name opened
-    animation-duration 150ms
+    animation 0.15s opened
 
     @media (max-width 1220px)
       width 92%
-      animation-name mobile
-      animation-duration 250ms
+      animation 0.25s mobile
 
     @media (max-width 400px)
       max-height 80%
@@ -153,10 +150,7 @@
         display none
 
   .header
-    display flex
-    justify-content space-between
-    margin 40px
-    margin-bottom 32px
+    margin 40px 40px 32px
 
     @media (max-width 962px)
       margin-bottom 24px
@@ -164,14 +158,23 @@
     @media (max-width 800px)
       margin 20px
 
+    .close-button
+      float right
+      border none
+      background-color transparent
+      color var(--grey3, #333)
+
+      &:hover, &:focus
+        color var(--dark-grey, #666)
+
     .logo
       display flex
 
     h1
-      font-size 34px
-      color var(--dark-gery, #666)
       margin-top 0
       margin-bottom 7px
+      color var(--dark-gery, #666)
+      font-size 34px
 
       @media (max-width 962px)
         margin-bottom 0
@@ -182,8 +185,8 @@
     img
       width 122px
       height 122px
-      padding 12px
       margin-right 24px
+      padding 12px
       border-radius 24px
       background-color #eee
 
@@ -191,31 +194,17 @@
         background-color #444
 
       @media (max-width 962px)
-        height 60px
         width 60px
+        height 60px
 
       @media (max-width 800px)
-        padding 8px
         margin-right 12px
+        padding 8px
 
       @media (max-width 400px)
-        height 40px
         width 40px
+        height 40px
         padding 6px
-
-    .close-button
-      align-self self-end
-      padding 4px 12px
-      border none
-      border-radius 20px
-      background transparent
-      color var(--grey3, #333)
-
-      &:hover, &:focus
-        color var(--dark-grey, #666)
-
-      @media (max-width 962px)
-        align-items center
 
     .desc
       max-width 40em
@@ -229,14 +218,12 @@
         display none
 
   .content
-    margin-left 40px
-    margin-right 40px
-    flex 1
+    margin 0 40px
     color var(--grey3, #333)
+    flex 1
 
     @media (max-width 800px)
-      margin-left 20px
-      margin-right 20px
+      margin 0 20px
 
     h3
       font-size 22px
@@ -257,18 +244,18 @@
       margin-right 0px
 
     h3
+      margin-top 0px
       font-size 22px
       font-weight 600
       line-height 225%
-      margin-top 0px
 
       @media (max-width 400px)
-        font-size 18px
         margin-bottom 0px
+        font-size 18px
 
   .feature-wrapper
-    overflow hidden
     padding-right 2em
+    overflow hidden
 
     ul
       padding-inline-start 22px
@@ -278,23 +265,22 @@
         margin-top 0px
 
     li
-      font-style normal
-      font-weight 600
       font-size 16px
+      font-weight 600
       line-height 29px
       color var(--dark-grey, #666)
 
   .screenshot-wrapper
+    max-width 30em
     max-height 220px
     display flex
-    max-width 30em
 
     @media (max-width 800px)
       width 100%
 
     button
-      border none
       width 4em
+      border none
       transition background-color 0.2s
 
       &:hover, &:focus
@@ -308,11 +294,11 @@
     width 22em
     max-height 220px
     display flex
-    scroll-snap-type x mandatory
     flex-wrap wrap
     flex-direction column
     overflow-x scroll
     -webkit-overflow-scrolling touch
+    scroll-snap-type x mandatory
 
     @media (max-width 1220px)
       justify-content center
@@ -322,12 +308,12 @@
 
     div
       display flex
-      align-items center
       justify-content center
-      scroll-snap-align start
-      height 14em
+      align-items center
       width 100%
+      height 14em
       background #efefef
+      scroll-snap-align start
 
     img
       height 100%
@@ -340,40 +326,23 @@
     margin-bottom 3em
 
   .button-wrapper
-    display flex
-    justify-content flex-end
-    align-items center
-    position relative
-    height 100px
-    background #dedede75
     width 100%
-    right 0em
-    border-radius 0px 0px 12px 12px
+    text-align right
+    padding 1rem 0
 
     @media (max-width 800px)
-      justify-content center
-      margin-bottom 0
-      padding-top 1em
-      padding-bottom 1em
-      background #efefef2b
-      backdrop-filter blur(10px)
-
-    @media (max-height 780px)
-      height 70px
-      background transparent
+      text-align center
 
   .install-button, .cancel-button
-    display block
+    display inline-block
     flex 0 0 auto
-    min-width 130px
-    padding 10px 20px
-    margin 0 15px
+    min-width 80px
+    margin 0.5rem 1rem
+    padding 0.5rem 1rem
     border solid 2px var(--accent-color, $accentColor)
     border-radius 20px
-    text-align center
-    font-weight 600
     font-size 14px
-    line-height 1
+    font-weight 600
 
   .install-button
     background-color var(--accent-color, $accentColor)
@@ -394,7 +363,7 @@
       background-color var(--accent-color-l10, $accentColor)
       color var(--white, #fff)
 
-  .iOSText
+  .ios-text
     position fixed
     bottom 0
     box-sizing border-box

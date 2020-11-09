@@ -39,10 +39,11 @@
         margin-right 8px
 
       a
+        vertical-align middle
         width 15px
         height 15px
-        border-radius 2px
         margin 0 2px
+        border-radius 2px
 
         &.default-theme
           background-color $accentColor // must be fixed to the original accent-color
@@ -55,4 +56,7 @@
     .desc
       line-height 1.5
       padding-right 8px
+
+    .full-screen, .cancel-full-screen
+      margin-left 0.5em
 </style>

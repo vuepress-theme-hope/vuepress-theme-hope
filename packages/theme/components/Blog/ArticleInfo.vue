@@ -43,25 +43,26 @@
 $articleInfoTextSize ?= 14px
 
 .article-info
-  display flex
-  justify-content flex-start
-  align-content stretch
-  align-items center
-  flex-wrap wrap
   color var(--dark-grey)
   font-size $articleInfoTextSize
 
   & > span
-    display flex
-    align-items center
-    flex-shrink 0
+    display inline-block
     margin-right 0.5em
+    line-height 1.8
 
     @media (max-width $MQMobileNarrow)
+      margin-right 0.3em
       font-size 0.86rem
+
+    svg
+      position relative
+      bottom -0.125em
+
+    .tags-wrapper
+      display inline-block
 
   .icon
     width 1em
     height 1em
-    margin-right 0.25em
 </style>
