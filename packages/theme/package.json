@@ -42,7 +42,7 @@
     "@vuepress/plugin-blog": "^1.9.3",
     "bcryptjs": "^2.4.3",
     "chalk": "^4.1.0",
-    "dayjs": "^1.9.4",
+    "dayjs": "^1.9.5",
     "docsearch.js": "^2.6.3",
     "vue-class-component": "^7.2.6",
     "vuepress-plugin-add-this": "^1.5.1",
