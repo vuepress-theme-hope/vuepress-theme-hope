@@ -1,3 +1,15 @@
+# [](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.5...v) (2020-11-10)
+
+## [1.5.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.4...v1.5.5) (2020-11-10)
+
+### Bug Fixes
+
+- **theme:** fix home content layout ([c7da578](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c7da578b1643d2f2eb0133a4b2dcc48883d8e31d))
+
+### Features
+
+- appearance improvement ([024ecd2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/024ecd26655fa5f1a0d2350596db6038f57601e3))
+
 # Changelog
 
 <!--lint disable no-duplicate-headings-->

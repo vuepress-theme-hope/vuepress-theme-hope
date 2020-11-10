@@ -50,4 +50,4 @@ module.exports = {
 
 To better control what your Service Worker can precache, you can set `themeConfig.pwa.cachePic` and `themeConfig.pwa.cacheHTML` to decide whether the service worker caches HTML files except the homepage and 404 error pages and site pictures.
 
-To prevent from including large files in your precache list, any resources larger than 1MB and any pictures larger than 512KB will be dropped. You can change the size limit by setting `themeConfig.pwa.maxSize` and `themeConfig.pwa.maxPicSize`.
+To prevent from including large files in your precache list, any resources larger than 2MB and any pictures larger than 1MB will be dropped. You can change the size limit by setting `themeConfig.pwa.maxSize` and `themeConfig.pwa.maxPicSize`.

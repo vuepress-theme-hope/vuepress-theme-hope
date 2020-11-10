@@ -72,7 +72,7 @@ Theme Color
 ## maxSize
 
 - Type: `number`
-- Default: `1024`
+- Default: `2048`
 
 Max size which allows to cache, with KB unit
 
@@ -99,7 +99,7 @@ Whether cache pictures
 ## maxPicSize
 
 - Type: `number`
-- Default: `512`
+- Default: `1024`
 
 Max picture size which allows to cache, with KB unit
 

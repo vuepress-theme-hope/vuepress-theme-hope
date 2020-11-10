@@ -72,7 +72,7 @@ icon: configuration
 ## maxSize
 
 - 类型: `number`
-- 默认值: `1024`
+- 默认值: `2048`
 
 允许缓存的最大大小 (以 KB 为单位)
 
@@ -99,7 +99,7 @@ icon: configuration
 ## maxPicSize
 
 - 类型: `number`
-- 默认值: `512`
+- 默认值: `1024`
 
 图片允许缓存的最大大小 (以 KB 为单位)
 

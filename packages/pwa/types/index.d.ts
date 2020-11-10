@@ -98,7 +98,7 @@ export interface PWAOptions {
    *
    * Max size which allows to cache, with KB unit
    *
-   * @default 1024
+   * @default 2048
    */
   maxSize?: number;
   /**
@@ -122,7 +122,7 @@ export interface PWAOptions {
    *
    * Max size which allows to cache, with KB unit
    *
-   * @default 512
+   * @default 1024
    */
   picMaxSize?: number;
   /**

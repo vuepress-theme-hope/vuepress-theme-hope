@@ -49,4 +49,4 @@ module.exports = {
 
 为了更好地控制 Service Worker 可以预缓存的内容，可以设置 `themeConfig.pwa.cachePic` 和 `themeConfig.pwa.cacheHTML` 来决定 Service Worker 是否缓存除主页和 404 错误页外的 HTML 文件与站点图片。
 
-为了防止在预缓存列表中包含大文件，任何大于 1MB 的文件或大于 512KB 的图片都将被删除。您可以通过设置 `themeConfig.pwa.maxSize` 和 `themeConfig.pwa.maxPicSize` 来更改大小限制。
+为了防止在预缓存列表中包含大文件，任何大于 2MB 的文件或大于 1MB 的图片都将被删除。您可以通过设置 `themeConfig.pwa.maxSize` 和 `themeConfig.pwa.maxPicSize` 来更改大小限制。

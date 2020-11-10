@@ -8,7 +8,7 @@ import { Context } from "@mr-hope/vuepress-types";
 
 const imageFilter = (
   outDir: string,
-  maxsize = 512
+  maxsize = 1024
 ): WorkboxBuild.ManifestTransform => (
   manifestEntries: WorkboxBuild.ManifestEntry[]
 ): WorkboxBuild.ManifestTransformResult => {
@@ -21,7 +21,9 @@ const imageFilter = (
       const stats = statSync(resolve(outDir, entry.url));
 
       if (stats.size > maxsize * 1024)
-        warnings.push(`Skipped ${entry.url}, as its ${stats.size} bytes.`);
+        warnings.push(
+          `Skipped ${entry.url}, as its ${Math.ceil(stats.size / 1024)} KB.\n`
+        );
       else manifest.push(entry);
     } else manifest.push(entry);
 
@@ -57,7 +59,7 @@ export const genServiceWorker = async (
     additionalManifestEntries,
     cleanupOutdatedCaches: true,
     clientsClaim: true,
-    maximumFileSizeToCacheInBytes: (options.maxSize || 1024) * 1024,
+    maximumFileSizeToCacheInBytes: (options.maxSize || 2048) * 1024,
     manifestTransforms: [imageFilter(context.outDir, options.picMaxSize)],
     ...(options.generateSWConfig || {}),
   }).then(({ count, size, warnings }) => {
@@ -69,7 +71,7 @@ export const genServiceWorker = async (
         1024 /
         1024
       ).toFixed(2)} Mb.\n${
-        warnings.length > 0 ? `Warnings: ${warnings.toString()}:""` : ""
+        warnings.length > 0 ? `Warnings: ${warnings.join("\n")}:""\n` : ""
       }`
     );
 
@@ -78,7 +80,7 @@ export const genServiceWorker = async (
         black.bgRed("Error"),
         "Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n",
         blue(
-          "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option."
+          "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )
       );
     else if (size > 52428800)
@@ -86,7 +88,7 @@ export const genServiceWorker = async (
         black.bgYellow("Warning"),
         "\nCache Size is larger than 50MB, which will not be registerd on Safari.\n",
         blue(
-          "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option."
+          "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )
       );
   });
