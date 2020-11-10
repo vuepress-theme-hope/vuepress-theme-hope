@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "markdown enhancement for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -41,8 +41,8 @@
     "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/unit/*.test.ts"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^1.5.3",
-    "@mr-hope/vuepress-types": "^1.5.3",
+    "@mr-hope/vuepress-shared-utils": "^1.5.4",
+    "@mr-hope/vuepress-types": "^1.5.4",
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.11.0",
     "@types/lodash.debounce": "^4.0.6",
