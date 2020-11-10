@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.2...v1.5.3) (2020-11-10)
+
+### Features
+
+- improve style ([685253f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/685253f324a5c7e79a9c7683d52b7ee54692f575))
+- rebuild style ([b4cc171](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b4cc1716d0a84dc172271e16dd09f6906b960664))
+
 ## [1.5.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.1...v1.5.2) (2020-11-09)
 
 ### Features

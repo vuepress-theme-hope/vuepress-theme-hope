@@ -91,6 +91,10 @@ h1, h2, h3, h4, h5, h6
   &:hover .header-anchor
     opacity 1
 
+p
+  {$contentClass}:not(.custom) > &
+    text-align justify
+
 h1
   font-size 2rem
 
@@ -101,9 +105,6 @@ h2
 
 h3
   font-size 1.35rem
-
-p
-  text-align justify
 
 a.header-anchor
   font-size 0.85em
