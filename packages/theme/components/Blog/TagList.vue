@@ -18,11 +18,12 @@
 .tag-list-wrapper
   position relative
   z-index 2
+  padding-left 0
+  font-family Arial, Helvetica, sans-serif
+  list-style none
   display flex
   flex-wrap wrap
   justify-content space-evenly
-  padding-left 0
-  list-style none
 
   .tag
     display inline-block

@@ -53,6 +53,7 @@ $pageInfoTextSize ?= 14px
     flex-wrap wrap
     color var(--dark-grey, #666)
     font-size $pageInfoTextSize
+    font-family Arial, Helvetica, sans-serif
 
     & > span
       display flex

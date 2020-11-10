@@ -45,6 +45,7 @@ $articleInfoTextSize ?= 14px
 .article-info
   color var(--dark-grey)
   font-size $articleInfoTextSize
+  font-family Arial, Helvetica, sans-serif
 
   & > span
     display inline-block

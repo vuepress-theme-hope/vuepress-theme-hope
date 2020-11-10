@@ -49,6 +49,7 @@
   @extend $wrapper
   padding-top 12px
   padding-bottom 0
+  font-family Arial, Helvetica, sans-serif
 
   .inner
     min-height 32px

@@ -23,6 +23,7 @@
   @extend $wrapper
   padding-top 12px
   padding-bottom 12px
+  font-family Arial, Helvetica, sans-serif
   overflow auto
 
   .edit-link

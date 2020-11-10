@@ -23,10 +23,11 @@ $categoryListTextSize ?= 14px
 
 .category-list-wrapper
   position relative
-  list-style none
-  padding-left 0
   z-index 2
+  padding-left 0
   font-size $categoryListTextSize
+  font-family Arial, Helvetica, sans-serif
+  list-style none
 
   .category
     display inline-block
@@ -66,8 +67,12 @@ for $color, $index in $colors
         background lighten($color, 75%)
 
       &.active
-        color var(--white)
         background var(--accent-color)
+        color var(--white)
+
+        .category-num
+          color var(--accent-color)
+          background var(--bgcolor-light)
 
     .theme-dark &
       background darken($color, 75%)
@@ -76,8 +81,8 @@ for $color, $index in $colors
         background darken($color, 60%)
 
       &.active
-        color var(--white)
         background var(--accent-color-d10)
+        color var(--white)
 
     .category-num
       background $color
