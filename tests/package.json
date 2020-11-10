@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "private": true,
   "description": "Tests for vuepress-theme-hope",
   "license": "MIT",
@@ -13,6 +13,6 @@
   },
   "devDependencies": {
     "vuepress": "1.7.1",
-    "vuepress-theme-hope": "^1.5.4"
+    "vuepress-theme-hope": "^1.5.5"
   }
 }
