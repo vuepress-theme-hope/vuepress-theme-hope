@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-sitemap",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "sitemap plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -24,7 +24,7 @@
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-types": "^1.5.2",
+    "@mr-hope/vuepress-types": "^1.5.3",
     "@types/fs-extra": "^9.0.3",
     "chalk": "^4.1.0",
     "fs-extra": "^9.0.1",

@@ -1,6 +1,6 @@
 {
   "name": "add-this-docs",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "private": true,
   "description": "Docs for vuepress-plugin-add-this",
   "license": "MIT",
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "vuepress": "1.7.1",
-    "vuepress-theme-hope": "^1.5.2"
+    "vuepress-theme-hope": "^1.5.3"
   }
 }
