@@ -2,6 +2,16 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.3...v1.5.4) (2020-11-10)
+
+### Bug Fixes
+
+- **theme:** fix paragraph align ([b9995a4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b9995a470be4d820806b3da04d029499e5bc0d5d))
+
+### Features
+
+- **md-enhance:** add justify align container ([1600b95](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1600b95a0beefac72ef7dcc4ce25e8e260c87289))
+
 ## [1.5.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.2...v1.5.3) (2020-11-10)
 
 ### Features

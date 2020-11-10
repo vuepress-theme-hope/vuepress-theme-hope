@@ -90,4 +90,4 @@ module.exports = config({
 你可以查看 [本文档配置][docs-config] 作为一个配置参考。
 :::
 
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1.0.0/docs/theme/src/.vuepress/config.js
+[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js

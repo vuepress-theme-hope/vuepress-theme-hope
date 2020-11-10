@@ -96,4 +96,4 @@ At the same time, the `config` function will also complete some default configur
 You can view [Config of this site][docs-config] as an example.
 :::
 
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1.0.0/docs/theme/src/.vuepress/config.js
+[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js
