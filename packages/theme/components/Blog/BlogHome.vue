@@ -71,6 +71,6 @@
       @media (min-width $MQMobile)
         margin 0 15px
 
-    .theme-default-content:empty
-      padding 0
+  .theme-default-content:empty
+    padding 0
 </style>
