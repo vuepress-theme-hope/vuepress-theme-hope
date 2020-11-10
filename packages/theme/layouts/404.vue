@@ -20,17 +20,17 @@
 
   .action-button
     display inline-block
-    font-size 1rem
-    color var(--white)
-    background-color var(--accent-color)
+    box-sizing border-box
     margin 0 0.25rem
     padding 0.5rem 1rem
-    border-radius 0.25rem
-    transition background-color 0.1s ease
-    box-sizing border-box
     border-bottom 1px solid var(--accent-color-d10)
+    border-radius 0.25rem
+    background var(--accent-color)
+    color var(--white)
+    font-size 1rem
+    transition background 0.1s ease
 
     &:hover
       cursor pointer
-      background-color var(--accent-color-l10)
+      background var(--accent-color-l10)
 </style>

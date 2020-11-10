@@ -46,18 +46,18 @@
     padding 0.5rem
     border 0 none
     border-radius 50%
-    background-color #bbb
+    background #bbb
     color var(--white)
     outline none
 
     &:hover
-      background-color var(--accent-color)
+      background var(--accent-color)
 
     .theme-dark &
-      background-color #666
+      background #666
 
       &:hover
-        background-color var(--accent-color)
+        background var(--accent-color)
 
   .menu-button
     left 2rem
@@ -82,7 +82,7 @@
       height 0.2em
       transition transform 0.2s ease-in-out
       border-radius 0.05em
-      background-color var(--white)
+      background var(--white)
 
   .active .menu-button
     &::before

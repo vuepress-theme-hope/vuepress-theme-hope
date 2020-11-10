@@ -18,7 +18,7 @@
   align-items center
   padding 12px 30px
   border-top 1px solid var(--border-color)
-  background-color var(--bgcolor)
+  background var(--bgcolor)
   color var(--dark-color, #666)
   text-align center
 

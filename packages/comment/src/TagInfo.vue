@@ -27,22 +27,24 @@
     display inline-block
     position relative
     vertical-align middle
+    min-width 1.5em
     margin 0 0.2em
     padding 0 0.2em
     border-width 0.5px
     border-style solid
     border-radius 0.75em
-    background-color #f8f8f8
+    background #f8f8f8
     font-size 0.75em
+    text-align center
     overflow hidden
     transition all 0.5s
 
     .theme-dark &
-      background-color #222
+      background #222
 
     &.clickable:hover
       cursor pointer
-      background-color var(--bgcolor, #fff)
+      background var(--bgcolor, #fff)
       box-shadow 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2))
 
 @require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'

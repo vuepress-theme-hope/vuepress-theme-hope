@@ -97,22 +97,22 @@
           left 0
           bottom 0
           width 1px
-          background-color var(--border-color, $borderColor)
+          background var(--border-color, $borderColor)
 
         &:first-child
           &::before
-            background-color transparent
+            background transparent
 
         &:hover, &.active
           background var(--accent-color, $accentColor)
           color var(--white, #fff)
 
           &::before
-            background-color var(--accent-color, $accentColor)
+            background var(--accent-color, $accentColor)
 
         &.active + div, &:hover + div
           &::before
-            background-color var(--accent-color, $accentColor)
+            background var(--accent-color, $accentColor)
 
         &.active, &.ellipsis
           cursor default
@@ -129,7 +129,7 @@
         border 1px solid var(--border-color, $borderColor)
         border-radius 0.25em
         color var(--text-color, $textColor)
-        background-color var(--bgcolor, #fff)
+        background var(--bgcolor, #fff)
         text-align center
         line-height 2
         outline none

@@ -70,15 +70,15 @@
 
   .dropdown-title
     display block
-    font-size 0.9rem
-    font-family inherit
     cursor inherit
     padding inherit
-    line-height 1.4rem
-    background transparent
     border none
-    font-weight 500
+    background transparent
     color var(--dark-grey)
+    font-size 0.9rem
+    font-family inherit
+    font-weight 500
+    line-height 1.4rem
 
     &::after
       border-left 5px solid var(--accent-color)
@@ -95,10 +95,10 @@
     @extend .dropdown-title
     display none
     font-weight 600
-
     font-size inherit
-      &:hover
-        color var(--accent-color)
+
+    &:hover
+      color var(--accent-color)
 
   .nav-dropdown
     .dropdown-item
@@ -121,12 +121,12 @@
 
       .nav-link
         display block
-        line-height 1.7rem
         position relative
-        border-bottom none
-        font-weight 400
         margin-bottom 0
         padding 0 1.5rem 0 1.25rem
+        border-bottom none
+        font-weight 400
+        line-height 1.7rem
 
         &:hover
           color var(--accent-color)
@@ -136,14 +136,14 @@
 
           &::after
             content ''
-            width 0
-            height 0
-            border-left 5px solid var(--accent-color)
-            border-top 3px solid transparent
-            border-bottom 3px solid transparent
             position absolute
             top calc(50% - 2px)
             left 9px
+            width 0
+            height 0
+            border-top 3px solid transparent
+            border-left 5px solid var(--accent-color)
+            border-bottom 3px solid transparent
 
       &:first-child h4
         margin-top 0
@@ -160,9 +160,9 @@
 
     .mobile-dropdown-title
       display block
+      color var(--text-color)
       font-weight 600
       font-size inherit
-      color var(--text-color)
 
       &:hover
         color var(--accent-color)
@@ -195,22 +195,22 @@
 
     .nav-dropdown
       display none
-      // Avoid height shaked by clicking
-      height auto !important
       box-sizing border-box
-      max-height calc(100vh - 2.7rem)
-      overflow-y auto
       position absolute
       top 100%
       right 0
-      background-color var(--bgcolor)
+      max-height calc(100vh - 2.7rem)
+      // Avoid height shaked by clicking
+      height auto !important
+      margin 0
       padding 0.6rem 0
       border 1px solid var(--grey14)
-      text-align left
       border-radius 0.25rem
-      white-space nowrap
-      margin 0
       box-shadow 2px 2px 10px var(--card-shadow-color)
+      background var(--bgcolor)
+      text-align left
+      white-space nowrap
+      overflow-y auto
 
       .dropdown-item .nav-link
         color var(--dark-grey)

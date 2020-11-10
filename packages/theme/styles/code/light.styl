@@ -1,7 +1,7 @@
 body:not(.theme-dark), body.theme-light
   {$contentClass}
     code
-      background-color rgba(127, 127, 127, 0.12)
+      background rgba(127, 127, 127, 0.12)
 
   /**
    * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
@@ -88,7 +88,7 @@ body:not(.theme-dark), body.theme-light
   div[class*='language-']
     .highlight-lines
       .highlighted
-        background-color darken(saturate($codeBgColor, 10%), 5%)
+        background darken(saturate($codeBgColor, 10%), 5%)
 
     pre, pre[class*='language-']
       background transparent
@@ -98,7 +98,7 @@ body:not(.theme-dark), body.theme-light
 
     &.line-numbers-mode
       .highlight-lines .highlighted:before
-        background-color darken(saturate($codeBgColor, 10%), 5%)
+        background darken(saturate($codeBgColor, 10%), 5%)
 
       .line-numbers-wrapper
         color rgba(0, 0, 0, 0.3)

@@ -46,7 +46,7 @@
         border-radius 2px
 
         &.default-theme
-          background-color $accentColor // must be fixed to the original accent-color
+          background $accentColor // must be fixed to the original accent-color
 
   .darkmode-toggle
     display flex
@@ -54,8 +54,8 @@
     margin-top 8px
 
     .desc
-      line-height 1.5
       padding-right 8px
+      line-height 1.5
 
     .full-screen, .cancel-full-screen
       margin-left 0.5em

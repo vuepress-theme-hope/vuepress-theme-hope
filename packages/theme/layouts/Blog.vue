@@ -31,10 +31,10 @@
 .page.blog
   box-sizing border-box
   min-height 100vh
+  margin 0px auto
   padding-top $navbarHeight
   padding-bottom 2rem
-  margin 0px auto
-  background-color var(--bgcolor-light)
+  background var(--bgcolor-light)
   display flex
   flex-direction column
   justify-content space-between
@@ -47,12 +47,12 @@
     padding-right 0
 
 .blog-page-wrapper
-  display flex
-  justify-content center
-  align-items flex-start
   box-sizing border-box
   width 100%
   margin 0 auto
+  display flex
+  justify-content center
+  align-items flex-start
 
   @media (min-width $MQMobile)
     padding 0 1rem

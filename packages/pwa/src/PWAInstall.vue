@@ -34,5 +34,5 @@
   z-index 10
 
   &:hover, &:active
-    background-color var(--accent-color-l25, lighten($accentColor, 25%))
+    background var(--accent-color-l25, lighten($accentColor, 25%))
 </style>

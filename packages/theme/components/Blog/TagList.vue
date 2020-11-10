@@ -51,14 +51,14 @@
 for $color, $index in $colors
   .tag-list-wrapper .tag{$index}
     .theme-light &, &
-      background-color lighten($color, 10%)
+      background lighten($color, 10%)
 
       &:hover, &.active
-        background-color darken($color, 5%)
+        background darken($color, 5%)
 
     .theme-dark &
-      background-color darken($color, 5%)
+      background darken($color, 5%)
 
       &:hover, &.active
-        background-color lighten($color, 10%)
+        background lighten($color, 10%)
 </style>

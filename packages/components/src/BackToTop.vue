@@ -33,7 +33,7 @@
   right 1rem
   width 2rem
   color var(--accent-color, $accentColor)
-  background-color var(--bgcolor, #fff)
+  background var(--bgcolor, #fff)
   border-radius 50%
   overflow hidden
   z-index 10

@@ -158,9 +158,9 @@
 
     .description
       max-width 35rem
+      color var(--text-color-l40)
       font-size 1.6rem
       line-height 1.3
-      color var(--text-color-l40)
 
       @media (max-width $MQMobile)
         font-size 1.4rem
@@ -170,14 +170,14 @@
 
     .action-button
       display inline-block
-      font-size 1.2rem
-      color var(--white)
-      background-color var(--accent-color)
-      padding 0.8rem 1.6rem
       margin 0.6rem 0.8rem
-      border-radius 0.25rem
-      transition background-color 0.1s ease
+      padding 0.8rem 1.6rem
       border-bottom 1px solid var(--accent-color-d10)
+      border-radius 0.25rem
+      background var(--accent-color)
+      color var(--white)
+      font-size 1.2rem
+      transition background 0.1s ease
       overflow hidden
 
       @media (max-width $MQMobileNarrow)
@@ -185,7 +185,7 @@
         font-size 1rem
 
       &:hover
-        background-color var(--accent-color-l10)
+        background var(--accent-color-l10)
 
   .features
     display flex
@@ -193,8 +193,8 @@
     justify-content space-between
     align-items stretch
     align-content stretch
-    padding 1.2rem 0
     margin 0 -2rem
+    padding 1.2rem 0
     border-top 1px solid $borderColor
 
     @media (max-width $MQMobile)
@@ -209,10 +209,10 @@
       flex-direction column
       justify-content center
       flex-basis calc(33% - 5rem)
-      transition all 0.5s
-      padding 0 1.5rem
       margin 0 1rem
+      padding 0 1.5rem
       border-radius 1rem
+      transition all 0.5s
       overflow hidden
 
       @media (max-width $MQNarrow)
@@ -226,11 +226,11 @@
         box-shadow 0 2px 12px 0 var(--card-shadow-color)
 
       h2
+        margin-bottom 0
+        border-bottom none
+        color var(--text-color-l10)
         font-size 1.25rem
         font-weight 500
-        border-bottom none
-        margin-bottom 0
-        color var(--text-color-l10)
 
         @media (max-width $MQMobileNarrow)
           font-size 1.2rem

@@ -161,7 +161,7 @@
     .close-button
       float right
       border none
-      background-color transparent
+      background transparent
       color var(--grey3, #333)
 
       &:hover, &:focus
@@ -188,10 +188,10 @@
       margin-right 24px
       padding 12px
       border-radius 24px
-      background-color #eee
+      background #eee
 
       .theme-dark &
-        background-color #444
+        background #444
 
       @media (max-width 962px)
         width 60px
@@ -281,10 +281,10 @@
     button
       width 4em
       border none
-      transition background-color 0.2s
+      transition background 0.2s
 
       &:hover, &:focus
-        background-color #bbb
+        background #bbb
 
       svg
         width 28px
@@ -345,22 +345,22 @@
     font-weight 600
 
   .install-button
-    background-color var(--accent-color, $accentColor)
+    background var(--accent-color, $accentColor)
     color var(--white, #fff)
 
     &:hover, &:focus
-      background-color var(--accent-color-l10, $accentColor)
+      background var(--accent-color-l10, $accentColor)
 
     @media (max-width 400px)
       span
         display none
 
   .cancel-button
-    background-color transparent
+    background transparent
     color var(--accent-color, $accentColor)
 
     &:hover, &:focus
-      background-color var(--accent-color-l10, $accentColor)
+      background var(--accent-color-l10, $accentColor)
       color var(--white, #fff)
 
   .ios-text
@@ -371,7 +371,7 @@
     margin 2em auto
     padding 0.5em 2em
     border-radius 8px
-    background-color var(--white, #fff)
+    background var(--white, #fff)
     text-align center
     font-size 14px
     font-weight bold
@@ -394,7 +394,7 @@
     .success
       padding 0.5em 1em
       margin-bottom 0.5em
-      background-color #07c160
+      background #07c160
       color var(--white, #fff)
       border none
       border-radius 1em

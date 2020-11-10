@@ -75,7 +75,7 @@ $pageInfoTextSize ?= 14px
         padding 0 0.5em
         border 0.5px solid var(--dark-grey)
         border-radius 0.75em
-        background-color var(--bg-color)
+        background var(--bg-color)
         font-size 0.75em
         line-height 1.5
         overflow hidden

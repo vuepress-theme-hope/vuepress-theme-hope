@@ -118,7 +118,7 @@
   padding 8px 16px
 
   .page &
-    background-color var(--bgcolor)
+    background var(--bgcolor)
     border-radius 6px
     box-shadow 0 1px 3px 0 var(--card-shadow-color)
 
@@ -136,7 +136,7 @@
       margin 0 6px
       padding 4px
       border none
-      background-color transparent
+      background transparent
       color var(--grey3)
 
       &:focus
@@ -147,20 +147,20 @@
         height 24px
         padding 8px
         border-radius 50%
-        background-color rgba(127, 127, 127, 0.15)
+        background rgba(127, 127, 127, 0.15)
 
         .theme-dark &
-          background-color rgba(255, 255, 255, 0.15)
+          background rgba(255, 255, 255, 0.15)
 
         &:hover
           cursor pointer
 
         &.active
           .theme-light &
-            background-color var(--accent-color-l10)
+            background var(--accent-color-l10)
 
           .theme-dark &
-            background-color var(--accent-color-d10)
+            background var(--accent-color-d10)
 
         .icon
           width 100%

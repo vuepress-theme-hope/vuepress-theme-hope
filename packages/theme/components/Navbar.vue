@@ -57,7 +57,7 @@
   right 0
   height $navbarHeight
   padding $navbarVerticalPadding $navbarHorizontalPadding
-  background-color var(--bgcolor-blur)
+  background var(--bgcolor-blur)
   box-sizing border-box
   box-shadow 0 2px 8px var(--card-shadow-color)
   backdrop-filter saturate(200%) blur(20px)
@@ -120,17 +120,17 @@
       text-overflow ellipsis
 
   .links
-    padding-left 1.5rem
-    box-sizing border-box
-    white-space nowrap
-    font-size 0.9rem
     position absolute
-    right $navbarHorizontalPadding
     top $navbarVerticalPadding
+    right $navbarHorizontalPadding
     display flex
+    box-sizing border-box
+    padding-left 1.5rem
+    font-size 0.9rem
+    white-space nowrap
 
     @media (max-width $MQMobile)
       padding-left 0
-      right $navbarMobileHorizontalPadding
       top $navbarMobileVerticalPadding
+      right $navbarMobileHorizontalPadding
 </style>

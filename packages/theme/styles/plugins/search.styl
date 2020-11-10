@@ -26,18 +26,18 @@
       background-color transparent
 
       @media (min-width $MQNarrow)
-        background-color lighten($nightBgColor, 10%) !important
+        background-color lighten($darkBgColor, 10%) !important
         border-color var(--border-color)
 
       &:focus
-        background-color lighten($nightBgColor, 10%) !important
+        background-color lighten($darkBgColor, 10%) !important
 
     .suggestion
       a
-        color darken($nightTextColor, 35%)
+        color darken($darkTextColor, 35%)
 
       &.focused
-        background-color #0c0b0a
+        background #0c0b0a
 
         a
           color var(--accent-color)
@@ -45,4 +45,4 @@
 
     .suggestions
       border-color var(--border-color)
-      background-color var(--white)
+      background var(--white)

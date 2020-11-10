@@ -60,25 +60,25 @@ $categoryListTextSize ?= 14px
 for $color, $index in $colors
   .category-list-wrapper .category{$index}
     &, .theme-light &
-      background-color lighten($color, 90%)
+      background lighten($color, 90%)
 
       &:hover
-        background-color lighten($color, 75%)
+        background lighten($color, 75%)
 
       &.active
         color var(--white)
-        background-color var(--accent-color)
+        background var(--accent-color)
 
     .theme-dark &
-      background-color darken($color, 75%)
+      background darken($color, 75%)
 
       &:hover
-        background-color darken($color, 60%)
+        background darken($color, 60%)
 
       &.active
         color var(--white)
-        background-color var(--accent-color-d10)
+        background var(--accent-color-d10)
 
     .category-num
-      background-color $color
+      background $color
 </style>

@@ -93,14 +93,14 @@
 for $color, $index in $colors
   .project-list .project{$index}
     &, .theme-light &
-      background-color lighten($color, 90%)
+      background lighten($color, 90%)
 
       &:hover
-        background-color lighten($color, 75%)
+        background lighten($color, 75%)
 
     .theme-dark &
-      background-color darken($color, 75%)
+      background darken($color, 75%)
 
       &:hover
-        background-color darken($color, 60%)
+        background darken($color, 60%)
 </style>

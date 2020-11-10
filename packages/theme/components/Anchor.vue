@@ -18,7 +18,7 @@ $headings = 2 3 4 5 6
       display block
 
   &::-webkit-scrollbar-track-piece
-    background-color transparent
+    background transparent
 
   .anchor-wrapper
     position relative
@@ -30,10 +30,10 @@ $headings = 2 3 4 5 6
       top 15px
       left 4px
       bottom 15px
-      z-index -1
-      margin-left -2px
       width 4px
+      margin-left -2px
       background var(--border-color)
+      z-index -1
 
     > .anchor-list
       margin 0
@@ -42,10 +42,10 @@ $headings = 2 3 4 5 6
       padding-left 0
 
       .anchor
-        line-height 1.5
         box-sizing border-box
-        list-style none
         padding 0px 8px
+        line-height 1.5
+        list-style none
 
         .anchor-link
           display inline-block
@@ -63,10 +63,10 @@ $headings = 2 3 4 5 6
             position absolute
             z-index 2
             top 50%
-            margin-left -3px
-            margin-top -3px
             width 6px
             height 6px
+            margin-left -3px
+            margin-top -3px
             background var(--bgcolor)
             border 1px solid var(--border-color)
             border-radius 50%

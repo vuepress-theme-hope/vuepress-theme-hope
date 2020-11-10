@@ -58,12 +58,10 @@
       border-left 1px solid $accentColor
 
     &.day
-      border-top-left-radius 4px
-      border-bottom-left-radius 4px
+      border-radius 4px 0 4px 0
 
     &.night
-      border-top-right-radius 4px
-      border-bottom-right-radius 4px
+      border-radius 0 4px 0 4px
 
     .icon
       width 16px
@@ -71,7 +69,7 @@
       color $accentColor
 
     &.active
-      background-color $accentColor
+      background $accentColor
 
       &:hover
         cursor default
@@ -81,7 +79,7 @@
 
 @keyframes starry_star
   50%
-    background-color rgba(255, 255, 255, 0.1)
+    background rgba(255, 255, 255, 0.1)
     box-shadow #fff 7.5px -0.75px 0 0, #fff 3px 2.5px 0 -0.25px, rgba(255, 255, 255, 0.1) 9.5px 4.5px 0 0.25px, #fff 8px 8.5px 0 0, rgba(255, 255, 255, 0.1) 5px 6px 0 -0.375px, #fff 1.25px 9.5px 0 0.25px
 
 @keyframes bounceIn
@@ -110,15 +108,14 @@
 
   .label
     display block
-    margin 0 auto
-    font-size 1.4em
-    transition all 350ms ease-in
     position relative
-    height 17.5px
     width 31.25px
+    height 17.5px
+    margin 0 auto
     border-radius 17.5px
     border 1px solid #1c1c1c
-    background-color #3c4145
+    background #3c4145
+    font-size 1.4em
     transition all 250ms ease-in
 
     &:hover
@@ -132,9 +129,9 @@
       left 1px
       width 14px
       height 14px
-      border-radius 50%
-      background-color #fff
       border 1.25px solid #e3e3c7
+      border-radius 50%
+      background #fff
       transition all 250ms ease-in
 
     &:after
@@ -147,7 +144,7 @@
       width 2.8px
       height 2.8px
       opacity 0
-      background-color #fff
+      background #fff
       border-radius 50%
       box-shadow #fff 0 0, #fff 0.75px 0, #fff 1.5px 0, #fff 2.25px 0, #fff 2.75px 0, #fff 3.5px 0, #fff 4px 0, #fff 5.25px -0.25px 0 0.25px, #fff 4px -1.75px 0 -0.5px, #fff 1.75px -1.75px 0 0.25px, #d3d3d3 0 0 0 1px, #d3d3d3 1.5px 0 0 1px, #d3d3d3 2.75px 0 0 1px, #d3d3d3 4px 0 0 1px, #d3d3d3 5.25px -0.25px 0 1.25px, #d3d3d3 4px -1.75px 0 0.25px, #d3d3d3 1.75px -1.75px 0 1.25px
       transition opacity 100ms ease-in
@@ -161,7 +158,7 @@
       width 1px
       height 1px
       border-radius 50%
-      background-color #fff
+      background #fff
       box-shadow rgba(255, 255, 255, 0.1) 7.5px -0.75px 0 0, rgba(255, 255, 255, 0.1) 3px 2.5px 0 -0.25px, #fff 9.5px 4.5px 0 0.25px, rgba(255, 255, 255, 0.1) 8px 8.5px 0 0, #fff 5px 6px 0 0.375px, rgba(255, 255, 255, 0.1) 1.25px 9.5px 0 0.25px
       animation starry_star 5s ease-in-out infinite
       transition all 250ms ease-in
@@ -174,7 +171,7 @@
         left -6.25px
         width 4.5px
         height 4.5px
-        background-color #fff
+        background #fff
         border-radius 50%
         border 1.25px solid #e3e3c7
         box-shadow #e3e3c7 -7px 0 0 -0.75px, #e3e3c7 -2px 6px 0 -0.5px
@@ -186,12 +183,12 @@
     transition all 250ms ease-in
 
     &:checked + .label
-      background-color #9ee3fb
+      background #9ee3fb
       border 1px solid #86c3d7
 
       &:before
         left 13.75px
-        background-color #ffdf6d
+        background #ffdf6d
         border 1.25px solid #e1c348
 
       &:after

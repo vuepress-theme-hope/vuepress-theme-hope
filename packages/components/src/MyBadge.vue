@@ -9,19 +9,19 @@
   border-radius 3px
   padding 0 6px
   color var(--white, #fff)
-  background-color #42b983
+  background #42b983
 
   &.tip, &.green
-    background-color #42b983
+    background #42b983
 
   &.error
-    background-color #DA5961
+    background #DA5961
 
   &.warning, &.warn, &.yellow
-    background-color darken(#ffe564, 35%)
+    background darken(#ffe564, 35%)
 
   &.grey
-    background-color #C2CBD2
+    background #C2CBD2
 
   & + &
     margin-left 0.3em

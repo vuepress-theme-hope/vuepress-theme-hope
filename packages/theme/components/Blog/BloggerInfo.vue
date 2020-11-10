@@ -46,7 +46,7 @@
 <style lang="stylus">
 .blogger-info-wrapper
   .page &
-    background-color var(--bgcolor)
+    background var(--bgcolor)
 
   .blogger-info
     .blogger-wrapper

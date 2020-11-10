@@ -73,7 +73,7 @@
     width 1.5rem
     height 1.5rem
     margin-left 0.4em
-    background-color var(--accent-color, $accentColor)
+    background var(--accent-color, $accentColor)
     border-radius 0.75rem
 
     svg

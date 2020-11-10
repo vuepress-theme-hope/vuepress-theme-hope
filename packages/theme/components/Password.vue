@@ -14,7 +14,7 @@
 
 <style lang="stylus">
 .password
-  background-color var(--bg-color)
+  background var(--bg-color)
   height 90vh - $navbarHeight
   margin-top $navbarHeight
   text-align center
@@ -65,7 +65,7 @@
       margin-left 20px
       font-size 20px
       color var(--black) !important
-      background-color var(--bgcolor) !important
+      background var(--bgcolor) !important
       border none
       flex 1
       line-height 2
@@ -75,14 +75,14 @@
     .button
       width 60px
       height 42px
-      background-color var(--accent-color)
+      background var(--accent-color)
       line-height 2
       color var(--bgcolor)
       font-size 20px
       cursor pointer
 
       &:hover
-        background-color lighten($accentColor, 15%)
+        background lighten($accentColor, 15%)
 
 @keyframes shake
   0%, 100%

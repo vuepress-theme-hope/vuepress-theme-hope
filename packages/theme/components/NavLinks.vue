@@ -67,17 +67,15 @@
       right 0
       bottom 0px
       height 2px
-      background-color var(--accent-color-l10)
+      background var(--accent-color-l10)
       border-radius 1px
       visibility hidden
-      -webkit-transform scaleX(0)
       transform scaleX(0)
       transition all 0.3s ease-in-out
 
     &:hover, &.active
       &::after
         visibility visible
-        -webkit-transform scaleX(1)
         transform scaleX(1)
 
     &.active

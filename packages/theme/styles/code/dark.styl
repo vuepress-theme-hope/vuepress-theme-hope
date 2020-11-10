@@ -1,7 +1,7 @@
 body.theme-dark
   {$contentClass}
     code
-      background-color var(--grey12)
+      background var(--grey12)
 
   /**
    * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
@@ -82,7 +82,7 @@ body.theme-dark
   div[class*='language-']
     .highlight-lines
       .highlighted
-        background-color darken(saturate($nightCodeBgColor, 10%), 25%)
+        background darken(saturate($darkCodeBgColor, 10%), 25%)
 
     pre, pre[class*='language-']
       background transparent
@@ -92,10 +92,10 @@ body.theme-dark
 
     &.line-numbers-mode
       .highlight-lines .highlighted:before
-        background-color darken(saturate($nightCodeBgColor, 10%), 25%)
+        background darken(saturate($darkCodeBgColor, 10%), 25%)
 
       .line-numbers-wrapper
         color rgba(255, 255, 255, 0.3)
 
       &::after
-        border-right 1px solid darken(saturate($nightCodeBgColor, 10%), 35%)
+        border-right 1px solid darken(saturate($darkCodeBgColor, 10%), 35%)

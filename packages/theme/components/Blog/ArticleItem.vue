@@ -27,7 +27,7 @@
     width 100%
     margin 0 auto 20px
     padding 16px 20px
-    background-color var(--bgcolor)
+    background var(--bgcolor)
     border-radius 6px
     box-shadow 0 1px 3px 0 var(--card-shadow-color)
     -webkit-transition all 0.3s
@@ -66,7 +66,7 @@
         height 2px
         bottom 0
         left 0
-        background-color var(--accent-color)
+        background var(--accent-color)
         visibility hidden
         transform scaleX(0)
         transition 0.3s ease-in-out

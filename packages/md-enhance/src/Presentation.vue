@@ -31,7 +31,7 @@
     display flex
     justify-content center
     align-items center
-    background-color var(--grey15, #eee)
+    background var(--grey15, #eee)
 
   @media (max-width $MQMobileNarrow)
     width calc(100% + 3rem)

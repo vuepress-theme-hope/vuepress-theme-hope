@@ -44,25 +44,25 @@ $homePageWidth ?= 960px
 /* basic color */
 $accentColor ?= #3eaf7c
 $textColor ?= #2c3e50
-$nightTextColor ?= #9e9e9e
+$darkTextColor ?= #9e9e9e
 $bgColor ?= #fff
-$nightBgColor ?= #1e1e1e
+$darkBgColor ?= #1e1e1e
 $bgColorLight ?= #f8f8f8
-$nightBgColorLight ?= #272727
+$darkBgColorLight ?= #272727
 $bgColorBlur ?= rgba(255, 255, 255, 0.9)
-$nightBgColorBlur ?= rgba(30, 30, 30, 0.9)
+$darkBgColorBlur ?= rgba(30, 30, 30, 0.9)
 $borderColor ?= #eaecef
-$nightBorderColor ?= #302d28
+$darkBorderColor ?= #302d28
 $codeBgColor ?= #ecf4fa
-$nightCodeBgColor ?= #282c34
+$darkCodeBgColor ?= #282c34
 $arrowBgColor ?= #ccc
-$nightArrowBgColor ?= #333
+$darkArrowBgColor ?= #333
 
 /* colors provided by theme */
 $boxShadowColor ?= #f0f1f2
-$nightBoxShadowColor ?= #0f0e0d
+$darkBoxShadowColor ?= #0f0e0d
 $cardShadowColor ?= rgba(0, 0, 0, 0.15)
-$nightCardShadowColor ?= rgba(0, 0, 0, 0.3)
+$darkCardShadowColor ?= rgba(0, 0, 0, 0.3)
 
 /* badge color */
 $badgeTipColor ?= #42b983

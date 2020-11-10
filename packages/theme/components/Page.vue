@@ -63,14 +63,15 @@
 
 <style lang="stylus">
 .page
-  min-height 100vh - $navbarHeight - 2rem
-  padding-bottom 2rem
   display block
+  box-sizing border-box
+  min-height 100vh
   padding-left $sidebarWidth
-  background-color var(--bgcolor)
+  padding-bottom 2rem
+  background var(--bgcolor)
 
   @media (max-width $MQMobile)
-    min-height 100vh - $navbarMobileHeight - 2rem
+    min-height 100vh
 
   // narrow desktop / iPad
   @media (max-width $MQNarrow)

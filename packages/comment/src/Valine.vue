@@ -31,7 +31,7 @@
 
       pre, code
         color var(--dark-grey, #666)
-        background-color var(--code-bgcolor, #ecf4fa)
+        background var(--code-bgcolor, #ecf4fa)
 
       blockquote
         color var(--dark-grey, #666)
@@ -60,21 +60,21 @@
               color var(--bgcolor, #fff)
 
             .vcode
-              background-color var(--grey12, #bbb)
+              background var(--grey12, #bbb)
 
               &:focus
-                background-color var(--bgcolor, #fff)
+                background var(--bgcolor, #fff)
                 border-color var(--accent-color, $accentColor)
 
       .power
         color var(--light-grey, #999)
 
       .vbtn
-        background-color var(--bgcolor, #fff)
+        background var(--bgcolor, #fff)
 
         &:active, &:hover
           color var(--white, #fff)
-          background-color var(--accent-color, $accentColor)
+          background var(--accent-color, $accentColor)
           border-color var(--accent-color, $accentColor)
 
       .vempty
@@ -99,7 +99,7 @@
                 right 0
                 bottom 0
                 height 1.5px
-                background-color var(--accent-color)
+                background var(--accent-color)
                 transform scaleX(0)
                 transition 0.2s ease-in-out
 
@@ -107,7 +107,7 @@
                 transform scaleX(1)
 
             .vsys
-              background-color var(--grey14, #eee)
+              background var(--grey14, #eee)
               color var(--light-grey, #999)
 
           .vh

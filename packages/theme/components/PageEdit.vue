@@ -50,7 +50,7 @@
       margin-bottom 8px
 
     .last-updated
-      font-size 13px
       float none
+      font-size 13px
       text-align left
 </style>

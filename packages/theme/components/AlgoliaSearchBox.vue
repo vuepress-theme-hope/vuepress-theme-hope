@@ -29,7 +29,7 @@
       padding 4px
       border 1px solid var(--light-grey)
       border-radius 4px
-      background-color var(--bgcolor)
+      background var(--bgcolor)
       font-size 16px
       text-align left
 
@@ -125,6 +125,6 @@
       border-color var(--border-color)
 
     .ds-cursor .algolia-docsearch-suggestion--content
-      background-color var(--grey3)
+      background var(--grey3)
       color var(--text-color)
 </style>

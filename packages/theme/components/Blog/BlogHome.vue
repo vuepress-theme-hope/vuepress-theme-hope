@@ -40,7 +40,7 @@
   padding-top $navbarHeight
   padding-bottom 2rem
   margin 0px auto
-  background-color var(--bgcolor-light)
+  background var(--bgcolor-light)
 
   @media (max-width $MQMobile)
     padding $navbarMobileHeight 1.5rem 2rem
@@ -70,4 +70,7 @@
 
       @media (min-width $MQMobile)
         margin 0 15px
+
+    .theme-default-content:empty
+      padding 0
 </style>

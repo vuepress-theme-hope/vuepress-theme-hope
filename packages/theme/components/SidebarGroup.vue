@@ -63,18 +63,18 @@
 
   &:not(.collapsable)
     .sidebar-heading:not(.clickable)
-      cursor auto
       color inherit
+      cursor auto
 
   // refine styles of nested sidebar groups
   &.is-sub-group
     padding-left 0
 
     & > .sidebar-heading
-      font-size 0.95em
-      line-height 1.4
-      font-weight normal
       padding-left 2rem
+      font-size 0.95em
+      font-weight normal
+      line-height 1.4
 
       &:not(.clickable)
         opacity 0.8
@@ -83,25 +83,24 @@
       padding-left 1rem
 
       & > li > .sidebar-link
-        font-size 0.95em
         border-left none
+        font-size 0.95em
 
   &.depth-2
     & > .sidebar-heading
       border-left none
 
 .sidebar-heading
+  box-sizing border-box
+  width 100%
+  margin 0
+  padding 0.35rem 1.5rem 0.35rem 1.25rem
+  border-left 0.25rem solid transparent
   color var(--text-color)
-  transition color 0.15s ease
-  cursor pointer
   font-size 1.1em
   font-weight bold
-  // text-transform uppercase
-  padding 0.35rem 1.5rem 0.35rem 1.25rem
-  width 100%
-  box-sizing border-box
-  margin 0
-  border-left 0.25rem solid transparent
+  cursor pointer
+  transition color 0.15s ease
   user-select none
 
   &.open, &:hover
@@ -114,15 +113,15 @@
 
   &.clickable
     &.active
-      font-weight 600
-      color var(--accent-color)
       border-left-color var(--accent-color)
+      color var(--accent-color)
+      font-weight 600
 
     &:hover
       color var(--accent-color)
 
 .sidebar-group-items
-  transition height 0.1s ease-out
   font-size 0.95em
+  transition height 0.1s ease-out
   overflow hidden
 </style>

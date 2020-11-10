@@ -41,7 +41,7 @@
       width 20px
       bottom -6px
       height 2px
-      background-color var(--accent-color)
+      background var(--accent-color)
       border-radius 1px
       visibility hidden
       -webkit-transform scaleX(0)

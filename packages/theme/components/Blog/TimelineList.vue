@@ -63,7 +63,7 @@
     max-height 80vh
 
     &::-webkit-scrollbar-track-piece
-      background-color transparent
+      background transparent
 
     .timeline-list
       position relative

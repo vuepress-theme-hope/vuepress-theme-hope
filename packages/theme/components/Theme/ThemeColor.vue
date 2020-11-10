@@ -64,7 +64,7 @@
       width 18px
 
   .color-picker-menu
-    background-color var(--bgcolor)
+    background var(--bgcolor)
     position absolute
     top 40px
     left 50%
