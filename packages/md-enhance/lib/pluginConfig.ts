@@ -54,7 +54,8 @@ const pluginConfig = (
     config.push(
       ["container", { type: "left", defaultTitle: "" }],
       ["container", { type: "center", defaultTitle: "" }],
-      ["container", { type: "right", defaultTitle: "" }]
+      ["container", { type: "right", defaultTitle: "" }],
+      ["container", { type: "justify", defaultTitle: "" }]
     );
 
   return config;
