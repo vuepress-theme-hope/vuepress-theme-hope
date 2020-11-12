@@ -30,8 +30,6 @@
     background var(--bgcolor)
     border-radius 6px
     box-shadow 0 1px 3px 0 var(--card-shadow-color)
-    -webkit-transition all 0.3s
-    transition all 0.3s
 
     @media (max-width $MQMobileNarrow)
       border-radius 0
@@ -69,7 +67,7 @@
         background var(--accent-color)
         visibility hidden
         transform scaleX(0)
-        transition 0.3s ease-in-out
+        transition transform 0.3s ease-in-out
 
       &:hover
         cursor pointer

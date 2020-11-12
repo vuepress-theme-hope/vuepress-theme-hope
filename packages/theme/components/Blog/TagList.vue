@@ -39,7 +39,7 @@
     text-align center
     overflow hidden
     cursor pointer
-    transition all 0.5s
+    transition background-color 0.3s, transform 0.3s
 
     &:hover
       cursor pointer

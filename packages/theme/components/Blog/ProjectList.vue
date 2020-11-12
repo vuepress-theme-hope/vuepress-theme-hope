@@ -35,7 +35,6 @@
   font-family sans-serif
   margin-bottom 12px
   z-index 2
-  transition transform 0.5s
 
   .project
     position relative
@@ -44,7 +43,7 @@
     border-radius 8px
     margin 6px 8px
     padding 12px
-    transition all 0.5s
+    transition background-color 0.3s, transform 0.3s
     align-self stretch
 
     @media (min-width $MQNarrow)

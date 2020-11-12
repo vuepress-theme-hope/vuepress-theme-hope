@@ -43,15 +43,12 @@
 <style lang="stylus">
 @keyframes rotate
   0%
-    -webkit-transform rotate(0deg)
     transform rotate(0deg)
 
   50%
-    -webkit-transform rotate(360deg)
     transform rotate(360deg)
 
   100%
-    -webkit-transform rotate(360deg)
     transform rotate(360deg)
 
 .sw-update-popup

@@ -39,7 +39,7 @@ $categoryListTextSize ?= 14px
     color var(--dark-grey)
     cursor pointer
     overflow hidden
-    transition all 0.5s
+    transition background-color 0.3s, color 0.3s
 
     @media (max-width $MQMobileNarrow)
       font-size 0.9rem

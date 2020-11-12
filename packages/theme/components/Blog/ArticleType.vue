@@ -32,7 +32,6 @@
     margin 0.3em 0.8em
     line-height 1.2
     cursor pointer
-    transition all 0.3s ease-in-out
 
     &::after
       position absolute
@@ -44,9 +43,8 @@
       background var(--accent-color)
       border-radius 1px
       visibility hidden
-      -webkit-transform scaleX(0)
       transform scaleX(0)
-      transition all 0.3s ease-in-out
+      transition transform 0.3s ease-in-out
 
     &.active
       position relative
@@ -59,6 +57,5 @@
     &:hover, &.active
       &::after
         visibility visible
-        -webkit-transform scaleX(1)
         transform scaleX(1)
 </style>

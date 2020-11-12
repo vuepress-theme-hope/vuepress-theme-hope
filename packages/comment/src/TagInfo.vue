@@ -37,7 +37,7 @@
     font-size 0.75em
     text-align center
     overflow hidden
-    transition all 0.5s
+    transition all 0.2s
 
     .theme-dark &
       background #222

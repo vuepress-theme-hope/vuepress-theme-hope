@@ -212,7 +212,7 @@
       margin 0 1rem
       padding 0 1.5rem
       border-radius 1rem
-      transition all 0.5s
+      transition transform 0.3s, box-shadow 0.3s
       overflow hidden
 
       @media (max-width $MQNarrow)

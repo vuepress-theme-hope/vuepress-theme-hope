@@ -50,26 +50,26 @@
 
   .item
     padding 2px
-    border 1px solid $accentColor
+    border 1px solid var(--accent-color)
     border-left none
     line-height 1
 
     &:first-child
-      border-left 1px solid $accentColor
+      border-left 1px solid var(--accent-color)
 
     &.day
-      border-radius 4px 0 4px 0
+      border-radius 4px 0 0 4px
 
     &.night
-      border-radius 0 4px 0 4px
+      border-radius 0 4px 4px 0
 
     .icon
       width 16px
       height 16px
-      color $accentColor
+      color var(--accent-color)
 
     &.active
-      background $accentColor
+      background var(--accent-color)
 
       &:hover
         cursor default

@@ -71,7 +71,7 @@
       border-radius 1px
       visibility hidden
       transform scaleX(0)
-      transition all 0.3s ease-in-out
+      transition transform 0.3s ease-in-out
 
     &:hover, &.active
       &::after

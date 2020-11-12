@@ -40,13 +40,15 @@ export default class DarkmodeSwitch extends Vue {
       const isLightMode = window.matchMedia("(prefers-color-scheme: light)")
         .matches;
 
-      window.matchMedia("(prefers-color-scheme: dark)").addListener((event) => {
-        if (event.matches) this.toggleDarkmode(true);
-      });
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (event.matches) this.toggleDarkmode(true);
+        });
 
       window
         .matchMedia("(prefers-color-scheme: light)")
-        .addListener((event) => {
+        .addEventListener("change", (event) => {
           if (event.matches) this.toggleDarkmode(false);
         });
 

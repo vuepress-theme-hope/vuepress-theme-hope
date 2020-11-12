@@ -29,7 +29,7 @@
     height 28px
     margin 4px
     transform scale(1, 1)
-    transition all 0.18s ease-out 0.18s
+    transition transform 0.18s ease-out 0.18s
 
     &:hover
       cursor pointer
