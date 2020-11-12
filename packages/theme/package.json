@@ -44,7 +44,7 @@
     "@vuepress/plugin-blog": "^1.9.3",
     "bcryptjs": "^2.4.3",
     "chalk": "^4.1.0",
-    "dayjs": "^1.9.5",
+    "dayjs": "^1.9.6",
     "docsearch.js": "^2.6.3",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
