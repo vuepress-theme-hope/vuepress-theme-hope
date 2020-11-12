@@ -60,6 +60,8 @@
 <script src="./Pagination" />
 
 <style lang="stylus">
+$bgColor ?= #fff
+
 .pagination-wrapper
   margin 1.25rem 0 0.75rem
   font-family Arial, Helvetica, sans-serif

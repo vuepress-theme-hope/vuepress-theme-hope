@@ -22,6 +22,8 @@
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared-utils/styles/wrapper.styl'
 
+$navbarMobileHeight ?= 3.2rem
+
 // Fix top boarder of heading1
 .theme-default-content:not(.custom)
   > *:first-child
