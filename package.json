@@ -110,7 +110,7 @@
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.7",
     "@types/chai": "4.2.14",
-    "@types/mocha": "8.0.3",
+    "@types/mocha": "8.0.4",
     "@typescript-eslint/eslint-plugin": "4.6.1",
     "@typescript-eslint/parser": "4.6.1",
     "@vue/eslint-config-prettier": "6.0.0",
