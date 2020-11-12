@@ -1,41 +1,30 @@
-# [](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.5...v) (2020-11-10)
+# Changelog
+
+<!--lint disable no-duplicate-headings-->
 
 ## [1.5.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.4...v1.5.5) (2020-11-10)
 
 ### Bug Fixes
 
-- **theme:** fix home content layout ([c7da578](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c7da578b1643d2f2eb0133a4b2dcc48883d8e31d))
-
-### Features
-
-- appearance improvement ([024ecd2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/024ecd26655fa5f1a0d2350596db6038f57601e3))
-
-# Changelog
-
-<!--lint disable no-duplicate-headings-->
+- **theme:** fix home content layout ([624b4b0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/624b4b027cc9b12c9c4f53506a18bbfe85cd6dec))
 
 ## [1.5.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.3...v1.5.4) (2020-11-10)
 
 ### Bug Fixes
 
-- **theme:** fix paragraph align ([b9995a4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b9995a470be4d820806b3da04d029499e5bc0d5d))
+- **theme:** fix paragraph align ([5e544e3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5e544e3962eb6aec3a9bbfab6cb9c29a45c41c31))
 
 ### Features
 
-- **md-enhance:** add justify align container ([1600b95](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1600b95a0beefac72ef7dcc4ce25e8e260c87289))
+- **md-enhance:** add justify align container ([2ac75e8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2ac75e81bbd592d994f6c56d44a331640fb474ec))
 
 ## [1.5.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.2...v1.5.3) (2020-11-10)
-
-### Features
-
-- improve style ([685253f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/685253f324a5c7e79a9c7683d52b7ee54692f575))
-- rebuild style ([b4cc171](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b4cc1716d0a84dc172271e16dd09f6906b960664))
 
 ## [1.5.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.1...v1.5.2) (2020-11-09)
 
 ### Features
 
-- bug fixes and appearance improvement ([fe7408e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fe7408e28ff213ca27c7091e422472675b2c033d))
+- **theme:** appearance bug fixes ([43c2007](https://github.com/Mister-Hope/vuepress-theme-hope/commit/43c2007e9ca61d826606ef59285bee919a0ab2af))
 
 ## [1.5.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.0...v1.5.1) (2020-11-07)
 
