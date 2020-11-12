@@ -24,7 +24,7 @@
   "types": "types/index.d.js",
   "dependencies": {
     "@types/express": "4.17.8",
-    "@types/markdown-it": "10.0.2",
+    "@types/markdown-it": "10.0.3",
     "@types/markdown-it-anchor": "4.0.4",
     "@types/webpack-dev-server": "3.11.1",
     "cac": "6.6.1",
