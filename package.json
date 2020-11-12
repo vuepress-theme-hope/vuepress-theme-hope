@@ -111,7 +111,7 @@
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.7",
     "@types/chai": "4.2.14",
     "@types/mocha": "8.0.3",
-    "@typescript-eslint/eslint-plugin": "4.6.1",
+    "@typescript-eslint/eslint-plugin": "4.7.0",
     "@typescript-eslint/parser": "4.6.1",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "7.0.0",
