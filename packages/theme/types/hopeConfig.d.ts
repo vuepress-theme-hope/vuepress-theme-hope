@@ -482,6 +482,14 @@ export interface HopeThemeConfig
   encrypt?: EncryptOptions;
 
   /**
+   * Algolia 搜索类型
+   *
+   * Algolia Search Type
+   *
+   * @default 'dropdown'
+   */
+  algoliaType?: "dropdown" | "full";
+  /**
    * 是否在桌面模式显示锚点标题
    *
    * Whether display anchor in desktop mode

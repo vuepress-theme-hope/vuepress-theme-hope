@@ -18,7 +18,7 @@ const getAlias = (
   const { siteConfig } = ctx;
   // Resolve algolia
   const isAlgoliaSearch =
-    themeConfig.algolia ||
+    Boolean(themeConfig.algolia) ||
     Object.keys((siteConfig.locales && themeConfig.locales) || {}).some(
       (base) => themeConfig.locales[base].algolia
     );
@@ -38,7 +38,9 @@ const getAlias = (
 
   return {
     "@AlgoliaSearchBox": isAlgoliaSearch
-      ? resolve(__dirname, "./components/AlgoliaSearchBox.vue")
+      ? themeConfig.algoliaType === "full"
+        ? resolve(__dirname, "./components/AlgoliaSearch/Full.vue")
+        : resolve(__dirname, "./components/AlgoliaSearch/Dropdown.vue")
       : noopModule,
     "@BlogInfo": blogEnabled
       ? resolve(__dirname, "./components/Blog/BlogInfo.vue")

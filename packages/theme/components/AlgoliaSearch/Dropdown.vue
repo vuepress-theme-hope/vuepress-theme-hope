@@ -13,7 +13,7 @@
   </form>
 </template>
 
-<script src="./AlgoliaSearchBox" />
+<script src="./Dropdown" />
 
 <style lang="stylus">
 .algolia-search-wrapper

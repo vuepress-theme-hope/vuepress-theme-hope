@@ -46,3 +46,31 @@
     .suggestions
       border-color var(--border-color)
       background var(--white)
+
+.navbar
+  #docsearch button
+    background-color transparent
+    border-color transparent
+    border-radius 0.25em
+
+    @media (max-width $MQMobile)
+      left 0
+      background-color transparent
+
+    @media (min-width $MQNarrow)
+      background-color #efeef4
+
+    &:focus
+      background-color var(--bgcolor)
+      border-color var(--accent-color)
+
+.theme-dark .navbar
+  #docsearch button
+    color var(--text-color)
+
+    @media (min-width $MQNarrow)
+      background-color lighten($darkBgColor, 10%) !important
+      border-color var(--border-color)
+
+    &:focus
+      background-color lighten($darkBgColor, 10%) !important

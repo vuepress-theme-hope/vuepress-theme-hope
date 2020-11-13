@@ -2,7 +2,7 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
 
 @Component
-export default class AlgoliaSearchBox extends Vue {
+export default class AlgoliaSearchDropdown extends Vue {
   @Prop({ type: Object, required: true }) options!: AlgoliaOption;
 
   private placeholder = "";

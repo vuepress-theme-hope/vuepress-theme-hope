@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.5.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.1...v1.5.6) (2020-11-12)
+
+### Bug Fixes
+
+- **components:** add default value for styl variables ([d9933e4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d9933e46909e910d569220e5620765d3ad5ee862))
+- **theme:** fix style issues ([cc712cf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cc712cfc5e1e21b273da011d744b6b98b376053b))
+
 ## [1.5.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.4...v1.5.5) (2020-11-10)
 
 ### Bug Fixes

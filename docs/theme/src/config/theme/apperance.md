@@ -9,6 +9,13 @@ tags:
 
 The following are appearance configuration options provided by the theme. In general, you do not need to config them, they are provided for users who need them.
 
+## algoliaType
+
+- Type: `"dropdown" | "full"`
+- Default: `"dropdown"`
+
+Algolia SearchBox type
+
 ## iconPrefix
 
 - Type: `string`

@@ -9,6 +9,13 @@ tags:
 
 以下是主题提供的外观配置选项，一般情况下你无需关注他们，它们仅为有相关配置需求的少数用户提供。
 
+## algoliaType
+
+- 类型: `"dropdown" | "full"`
+- 默认值: `"dropdown"`
+
+Algolia 搜索框类型
+
 ## iconPrefix
 
 - 类型: `string`
