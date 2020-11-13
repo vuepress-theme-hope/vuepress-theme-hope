@@ -22,14 +22,14 @@
       />
     </MyTransition>
 
-    <!-- 页面内容 -->
-    <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
-      <Content :key="$route.path" class="theme-default-content" />
-    </MyTransition>
-
     <!-- 编辑链接 -->
     <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
       <Anchor :key="$route.path" :header="headers" />
+    </MyTransition>
+
+    <!-- 页面内容 -->
+    <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
+      <Content :key="$route.path" class="theme-default-content" />
     </MyTransition>
 
     <!-- 编辑链接 -->

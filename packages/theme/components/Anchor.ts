@@ -107,14 +107,16 @@ interface SidebarLinkProps {
         2) + 1;
     const children = groupSidebarHeaders(header);
 
-    return h("aside", { attrs: { id: "anchor" } }, [
-      h("div", { class: "anchor-wrapper" }, [
-        renderChildren(h, {
-          children,
-          path: $route.path,
-          route: $route,
-          maxDepth,
-        }),
+    return h("div", { attrs: { class: "anchor-place-holder" } }, [
+      h("aside", { attrs: { id: "anchor" } }, [
+        h("div", { class: "anchor-wrapper" }, [
+          renderChildren(h, {
+            children,
+            path: $route.path,
+            route: $route,
+            maxDepth,
+          }),
+        ]),
       ]),
     ]);
   },

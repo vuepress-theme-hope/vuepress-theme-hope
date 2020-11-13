@@ -3,11 +3,23 @@
 <style lang="stylus">
 $headings = 2 3 4 5 6
 
+.anchor-place-holder
+  position sticky
+  top ($navbarHeight + 2rem)
+  max-width $contentWidth
+  margin 0 auto
+  padding 0 2.5rem
+
+  @media (max-width $MQNarrow)
+    padding 0 1.5rem
+
+  & + .theme-default-content:not(.custom)
+    padding-top 0
+
 #anchor
   display none
-  position fixed
-  top ($navbarHeight + 2.5rem)
-  right 0.5rem
+  position absolute
+  left calc(100% + 0.5rem)
   min-width 10rem
   max-width 15rem
   max-height 80vh
@@ -19,6 +31,13 @@ $headings = 2 3 4 5 6
 
   &::-webkit-scrollbar-track-piece
     background transparent
+
+  // 滚动条
+  &::-webkit-scrollbar
+    width 3px
+
+  &::-webkit-scrollbar-thumb:vertical
+    background var(--light-grey)
 
   .anchor-wrapper
     position relative
