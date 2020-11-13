@@ -5,7 +5,7 @@ export interface NavBarConfigItem extends HopeNavBarConfigItem {
   items: NavBarConfigItem[];
 }
 
-export const resolveNavLinkItem = (
+export const getNavLinkItem = (
   navbarLink: HopeNavBarConfigItem,
   beforeprefix = ""
 ): NavBarConfigItem => {
@@ -24,7 +24,7 @@ export const resolveNavLinkItem = (
   if (navbarItem.items && navbarItem.items.length)
     Object.assign(navbarItem, {
       type: "links",
-      items: navbarItem.items.map((item) => resolveNavLinkItem(item, prefix)),
+      items: navbarItem.items.map((item) => getNavLinkItem(item, prefix)),
     });
   else navbarItem.type = "link";
 

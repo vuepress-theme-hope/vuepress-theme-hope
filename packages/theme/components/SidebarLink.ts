@@ -13,7 +13,6 @@ import { hashRE, isActive } from "@theme/util/path";
 import { HopeSideBarConfigItemObject } from "@mr-hope/vuepress-shared-utils";
 import { Route } from "vue-router";
 
-/** 渲染图标 */
 const renderIcon = (h: CreateElement, icon: string): VNode | null =>
   icon
     ? h("i", {
@@ -23,17 +22,12 @@ const renderIcon = (h: CreateElement, icon: string): VNode | null =>
     : null;
 
 interface RenderLinkOption {
-  /** 图标 */
   icon?: string;
-  /** 链接地址 */
-  link: string;
-  /** 链接文字 */
   text: string;
-  /** 是否激活 */
+  link: string;
   active: boolean;
 }
 
-/** 渲染链接 */
 const renderLink = (
   h: CreateElement,
   { icon = "", text, link, active }: RenderLinkOption
@@ -54,8 +48,7 @@ const renderLink = (
     [renderIcon(h, icon), text]
   );
 
-/** 渲染外部链接 */
-const renderExternal = (
+const renderExternalLink = (
   h: CreateElement,
   { path, title = path }: SidebarExternalItem
 ): VNode =>
@@ -73,19 +66,13 @@ const renderExternal = (
   );
 
 interface RenderChildrenOptions {
-  /** 子项 */
   children: SidebarHeader[] | false;
-  /** 配置项路径 */
   path: string;
-  /** 当前路由对象 */
   route: Route;
-  /** 当前深度 */
   depth?: number;
-  /** 所允许的最大深度 */
   maxDepth: number;
 }
 
-/** 渲染子项 */
 const renderChildren = (
   h: CreateElement,
   { children, path, route, maxDepth, depth = 1 }: RenderChildrenOptions
@@ -133,14 +120,13 @@ interface SidebarLinkProps {
     h,
     { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props }
   ) {
-    /** 当前渲染项目配置 */
     const { item } = props as SidebarLinkProps;
 
-    // 当前配置未获取成功
+    // if the item can not be resolved
     if (item.type === "error") return null;
 
-    // 外部链接侧边栏项
-    if (item.type === "external") return renderExternal(h, item);
+    // external link
+    if (item.type === "external") return renderExternalLink(h, item);
 
     /*
      * Use custom active class matching logic
@@ -148,9 +134,9 @@ interface SidebarLinkProps {
      */
     const selfActive = isActive($route, item.path);
 
-    /** 当前渲染项目的激活状态 */
+    /** whether the item is active */
     const active =
-      // 如果是标题侧边栏的话，其中一个子标题匹配也需要激活
+      // if the item is a heading, then one of the children needs to be active
       item.type === "header"
         ? selfActive ||
           (item.children || []).some((child) =>
@@ -158,14 +144,13 @@ interface SidebarLinkProps {
           )
         : selfActive;
 
-    /** 最大显示深度 */
     const maxDepth =
       ($page.frontmatter.sidebarDepth as number | undefined) ||
       ($themeLocaleConfig.sidebarDepth as number) ||
       $themeConfig.sidebarDepth ||
       2;
 
-    // 如果是标题侧边栏
+    // the item is a heading
     if (item.type === "header")
       return [
         renderLink(h, {
@@ -181,7 +166,6 @@ interface SidebarLinkProps {
         }),
       ];
 
-    /** 是否显示所有标题 */
     const displayAllHeaders =
       ($themeLocaleConfig.displayAllHeaders as boolean | undefined) ||
       $themeConfig.displayAllHeaders;

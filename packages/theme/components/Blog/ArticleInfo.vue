@@ -1,12 +1,12 @@
 <template>
   <div v-if="author || time" class="article-info">
-    <!-- 作者 -->
+    <!-- Author -->
     <span v-if="author" :aria-label="authorText" data-balloon-pos="down">
       <AuthorIcon />
       <span v-text="author" />
     </span>
 
-    <!-- 时间 -->
+    <!-- Writing Date -->
     <span
       v-if="time"
       class="time"
@@ -24,7 +24,7 @@
 
     <TagInfo v-if="tags.length !== 0" :tags="tags" />
 
-    <!-- 阅读时间 -->
+    <!-- Reading time -->
     <span
       v-if="readtime"
       class="read-time-info"

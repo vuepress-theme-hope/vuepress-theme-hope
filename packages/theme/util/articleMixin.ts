@@ -9,11 +9,10 @@ export interface TimelineItem {
 
 @Component
 export class TimelineMixin extends Vue {
-  /** 时间轴项目 */
   protected get $timelineItems(): PageComputed[] {
     const { pages } = this.$site;
 
-    // 先过滤再排序
+    // filter before sort
     return sortArticle(
       filterArticle(
         pages,
@@ -24,11 +23,11 @@ export class TimelineMixin extends Vue {
     );
   }
 
-  /** 时间轴列表 */
+  /** Timeline list */
   protected get $timeline(): TimelineItem[] {
     const timelineItems: TimelineItem[] = [];
 
-    // 先过滤再排序
+    // filter before sort
     this.$timelineItems.forEach((article) => {
       const {
         frontmatter: { date, time = date as Date },
@@ -50,11 +49,10 @@ export class TimelineMixin extends Vue {
 
 @Component
 export class StickyMixin extends Vue {
-  /** 文章列表 */
   protected get $stickArticles(): PageComputed[] {
     const { pages } = this.$site;
 
-    // 先过滤再排序
+    // filter before sort
     return sortArticle(
       filterArticle(pages, (page) => Boolean(page.frontmatter.sticky))
     );

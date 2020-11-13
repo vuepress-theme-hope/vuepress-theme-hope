@@ -21,14 +21,12 @@ import TimelineList from "@theme/components/Blog/TimelineList.vue";
   },
 })
 export default class BlogPage extends Vue {
-  /** 是否显示文章 */
-  private get displayArticles(): boolean {
+  private get showArticles(): boolean {
     const { path } = this.$route;
 
     return !path.includes("/timeline");
   }
 
-  /** 组件名称 */
   private get componentName(): string {
     const pathName = this.$route.path.split("/")[1];
 

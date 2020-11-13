@@ -4,9 +4,8 @@
       <component :is="componentName" v-if="componentName" />
     </MyTransition>
 
-    <!-- 文章列表 -->
     <MyTransition :delay="0.24">
-      <ArticleList v-if="displayArticles" :key="$route.path" />
+      <ArticleList v-if="showArticles" :key="$route.path" />
     </MyTransition>
   </main>
 </template>

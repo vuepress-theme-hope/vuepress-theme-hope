@@ -6,7 +6,7 @@ import {
 import { TimelineMixin } from "@theme/util/articleMixin";
 import MediaLinks from "@theme/components/MediaLinks.vue";
 import { filterArticle } from "@theme/util/article";
-import navigate from "@theme/util/navigate";
+import { navigate } from "@theme/util/navigate";
 import { BlogOptions } from "@theme/types";
 
 @Component({ components: { MediaLinks } })

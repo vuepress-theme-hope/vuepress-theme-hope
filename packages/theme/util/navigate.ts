@@ -1,13 +1,15 @@
 import VueRouter, { Route } from "vue-router";
 
 /**
- * 导航
- *
- * @param url 跳转的网址
- * @param router 路由管理器
- * @param route 当前页面路由
+ * @param url navigate link
+ * @param router router
+ * @param route current route
  */
-const navigate = (url: string, router: VueRouter, route: Route): void => {
+export const navigate = (
+  url: string,
+  router: VueRouter,
+  route: Route
+): void => {
   if (url)
     if (url.startsWith("/")) {
       // Inner absolute path
@@ -26,5 +28,3 @@ const navigate = (url: string, router: VueRouter, route: Route): void => {
       void router.push(`${base}/${encodeURI(url)}`);
     }
 };
-
-export default navigate;

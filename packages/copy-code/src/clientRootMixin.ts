@@ -73,7 +73,7 @@ const codeCopyMinxin = Vue.extend({
     copyToClipboard(code: string): void {
       const selection = document.getSelection();
 
-      /** 当前选中 */
+      /** current selection */
       const selectedRange =
         selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 
@@ -91,7 +91,7 @@ const codeCopyMinxin = Vue.extend({
 
       document.body.removeChild(textAreaElement);
 
-      // 恢复之前的选择
+      // recover the previous selection
       if (selectedRange && selection) {
         selection.removeAllRanges();
         selection.addRange(selectedRange);

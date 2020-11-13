@@ -35,7 +35,7 @@
       class="links"
     >
       <ThemeColor />
-      <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
+      <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algoliaConfig" />
       <SearchBox
         v-else-if="
           $themeConfig.search !== false && $page.frontmatter.search !== false

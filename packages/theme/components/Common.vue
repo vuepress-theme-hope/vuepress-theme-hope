@@ -5,11 +5,10 @@
     @touchend="onTouchEnd"
     @touchstart="onTouchStart"
   >
-    <!-- 密码弹窗 -->
-    <Password v-if="globalEncrypted" @password-verify="globalPasswordCheck" />
-    <!-- 内容 -->
+    <Password v-if="isGlobalEncrypted" @password-verify="checkGlobalPassword" />
+    <!-- Content -->
     <template v-else>
-      <Navbar v-if="showNavbar" @toggle-sidebar="toggleSidebar" />
+      <Navbar v-if="enableNavbar" @toggle-sidebar="toggleSidebar" />
 
       <div class="sidebar-mask" @click="toggleSidebar(false)" />
 

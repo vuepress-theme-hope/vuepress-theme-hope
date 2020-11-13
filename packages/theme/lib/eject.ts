@@ -13,7 +13,7 @@ const EXCLUDED_FILES = [
   "readme.md",
 ];
 
-export default async (dir: string): Promise<void> => {
+export const eject = async (dir: string): Promise<void> => {
   try {
     const sourceDir = resolve(__dirname, "../");
     const targetDir = resolve(resolve(dir), ".vuepress/theme");

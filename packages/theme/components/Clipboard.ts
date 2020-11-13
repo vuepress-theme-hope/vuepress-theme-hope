@@ -11,9 +11,7 @@ export default class Clipboard extends Vue {
   private location = "";
 
   private get copyright(): string {
-    /** 作者 */
     const { author } = this.$themeConfig;
-    /** 内容 */
     const content: Record<string, string> = {
       "zh-CN": `${this.html}\n-----\n${
         author ? `著作权归${author}所有。\n` : ""

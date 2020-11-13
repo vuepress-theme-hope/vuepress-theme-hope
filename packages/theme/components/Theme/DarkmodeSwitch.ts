@@ -8,13 +8,11 @@ import { changeClass } from "@mr-hope/vuepress-shared-utils";
 export default class DarkmodeSwitch extends Vue {
   private darkmode: "auto" | "on" | "off" = "auto";
 
-  /** darkmode status */
   private get darkmodeConfig(): "auto-switch" | "auto" | "switch" | "disable" {
     return this.$themeConfig.darkmode || "auto-switch";
   }
 
   private mounted(): void {
-    /** 深色模式 */
     this.darkmode =
       (localStorage.getItem("darkmode") as "auto" | "on" | "off" | null) ||
       "auto";
@@ -22,15 +20,12 @@ export default class DarkmodeSwitch extends Vue {
     if (this.darkmodeConfig === "auto-switch")
       if (this.darkmode === "auto") this.setDarkmode("auto");
       else this.setDarkmode(this.darkmode);
-    // 自动模式
     else if (this.darkmodeConfig === "auto") this.setDarkmode("auto");
-    // 切换模式
     else if (this.darkmodeConfig === "switch") this.setDarkmode(this.darkmode);
-    // 被禁用
+    // disabled
     else this.setDarkmode("off");
   }
 
-  /** 设置夜间模式 */
   setDarkmode(status: "on" | "off" | "auto"): void {
     if (status === "on") this.toggleDarkmode(true);
     else if (status === "off") this.toggleDarkmode(false);
@@ -65,7 +60,6 @@ export default class DarkmodeSwitch extends Vue {
     localStorage.setItem("darkmode", status);
   }
 
-  /** 切换深色模式 */
   private toggleDarkmode(isDarkmode: boolean): void {
     const classes = document.body.classList;
 

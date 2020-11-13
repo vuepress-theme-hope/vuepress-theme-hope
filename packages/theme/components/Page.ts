@@ -29,17 +29,13 @@ export default class Page extends Vue {
   @Prop({ type: Array, default: () => [] })
   private readonly headers!: PageHeader[];
 
-  /** 用户输入的密码 */
   private password = "";
 
-  /** 是否启用评论 */
   private commentEnable(): boolean {
     return this.$themeConfig.comment !== false;
   }
 
-  /** 当前页面密码 */
   private get pagePassword(): string {
-    /** 页面当前密码 */
     const { password } = this.$frontmatter;
 
     return typeof password === "number"
@@ -49,7 +45,6 @@ export default class Page extends Vue {
       : "";
   }
 
-  /** 当前页面解密状态 */
   private get pageDescrypted(): boolean {
     return this.password === this.pagePassword;
   }

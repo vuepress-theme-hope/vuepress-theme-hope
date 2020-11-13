@@ -1,4 +1,3 @@
-/** 颜色 */
 export default class Color {
   constructor(
     public type: "hex" | "rgb",
@@ -8,7 +7,6 @@ export default class Color {
     public alpha = 1
   ) {}
 
-  /** 从 HEX 中生成 */
   public static fromHex(color: string): Color {
     const parseHex = (colorString: string): number => parseInt(colorString, 16);
     const parseAlpha = (colorString: string, total: number): number =>
@@ -48,7 +46,7 @@ export default class Color {
     );
   }
 
-  /** 从 RGB 或 RGBA 中生成 */
+  // From RGB or RGBA
   public static fromRGB(color: string): Color {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const RGBAPattern = /rgba\((.+)?,(.+)?,(.+)?,(.+)?\)/u;
@@ -86,7 +84,6 @@ export default class Color {
     throw new Error(`Can not handle color: ${color}`);
   }
 
-  /** 获取颜色 */
   public static getColor(colorString: string): Color {
     if (colorString.startsWith("#")) return this.fromHex(colorString);
 
@@ -136,7 +133,6 @@ export default class Color {
     else this[item] = result < 0 ? 0 : result > 255 ? 255 : result;
   }
 
-  /** 加深颜色 */
   public darken(amount: number): Color {
     this.adjust("red", 1 - amount);
     this.adjust("green", 1 - amount);
@@ -145,7 +141,6 @@ export default class Color {
     return this;
   }
 
-  /** 变浅颜色 */
   public lighten(amount: number): Color {
     this.adjust("red", 1 + amount);
     this.adjust("green", 1 + amount);

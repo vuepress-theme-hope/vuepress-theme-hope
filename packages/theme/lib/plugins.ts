@@ -2,34 +2,28 @@ import { Page, PluginConfig, ResolvedComponent } from "@mr-hope/vuepress-types";
 import { ResolvedHopeThemeConfig } from "../types";
 import { resolve } from "path";
 
-const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
-  // 设置作者
+export const getPluginConfig = (
+  themeConfig: ResolvedHopeThemeConfig
+): PluginConfig[] => {
+  // set author for comment plugin
   if (themeConfig.comment && themeConfig.author)
     themeConfig.comment.author = themeConfig.author;
 
   return [
-    /** 评论插件 */
     ["@mr-hope/comment", themeConfig.comment],
 
-    /** 全屏插件 */
     ["@mr-hope/components"],
 
-    /** 更新时间插件 */
     ["@mr-hope/last-update", themeConfig.lastUpdate],
 
-    /** PWA 插件 */
     ["@mr-hope/pwa", themeConfig.pwa],
 
-    /** SEO 增强 */
     ["@mr-hope/seo", themeConfig.seo],
 
-    /** Sitemap 生成 */
     ["@mr-hope/sitemap", themeConfig.sitemap],
 
-    /** 自动激活侧边栏标题 */
     ["@vuepress/active-header-links", themeConfig.activeHeaderLinks],
 
-    /** 博客插件 */
     [
       "@vuepress/blog",
       themeConfig.blog === false
@@ -55,25 +49,19 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ],
     ["@vuepress/last-updated", false],
 
-    /** 进度条 */
     "@vuepress/nprogress",
 
-    /** 搜索插件 */
     [
       "@vuepress/search",
       {
-        /** 搜索展示数量 */
         searchMaxSuggestions: themeConfig.searchMaxSuggestions || 10,
       },
     ],
 
-    /** add this 支持 */
     ["add-this", typeof themeConfig.addThis === "string"],
 
-    /** 使 VuePress 站点支持简洁链接 */
     ["clean-urls", { normalSuffix: "/" }],
 
-    /** 复制操作处理 */
     [
       "copyright",
       typeof themeConfig.copyright === "object"
@@ -89,10 +77,8 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
         : false,
     ],
 
-    /** Markdown 增强插件 */
     ["md-enhance", themeConfig.mdEnhance || false],
 
-    /** Chunk命名 */
     [
       "named-chunks",
       {
@@ -107,16 +93,12 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
       },
     ],
 
-    /** 复制按钮插件 */
     ["@mr-hope/copy-code", themeConfig.copyCode],
 
-    /** Photo-swipe 插件 */
     ["photo-swipe", themeConfig.photoSwipe],
 
-    /** 平滑滚动 */
     ["smooth-scroll", themeConfig.smoothScroll],
 
-    /** typescript 支持 */
     [
       "typescript",
       themeConfig.typescript
@@ -130,5 +112,3 @@ const pluginConfig = (themeConfig: ResolvedHopeThemeConfig): PluginConfig[] => {
     ],
   ];
 };
-
-export default pluginConfig;

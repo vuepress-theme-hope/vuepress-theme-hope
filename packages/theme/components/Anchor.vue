@@ -32,7 +32,6 @@ $headings = 2 3 4 5 6
   &::-webkit-scrollbar-track-piece
     background transparent
 
-  // 滚动条
   &::-webkit-scrollbar
     width 3px
 

@@ -5,8 +5,7 @@ import {
 } from "@mr-hope/vuepress-shared-utils";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
 
-/** 默认颜色选择器 */
-const defaultPicker: Record<string, string> = {
+const defaultColorPicker: Record<string, string> = {
   red: "#e74c3c",
   blue: "#3498db",
   green: "#3eaf7c",
@@ -15,9 +14,9 @@ const defaultPicker: Record<string, string> = {
 };
 
 interface ThemeColor {
-  /** 颜色列表 */
+  /** Color list */
   list: string[];
-  /** 颜色选择器 */
+  /** Color picker */
   picker: Record<string, string>;
 }
 
@@ -43,20 +42,18 @@ export default class ThemeOptions extends Vue {
   }
 
   private mounted(): void {
-    /** 所选主题 */
     const theme = localStorage.getItem("theme");
 
     this.themeColor = {
       list: this.$themeConfig.themeColor
         ? Object.keys(this.$themeConfig.themeColor)
-        : Object.keys(defaultPicker),
-      picker: this.$themeConfig.themeColor || defaultPicker,
+        : Object.keys(defaultColorPicker),
+      picker: this.$themeConfig.themeColor || defaultColorPicker,
     };
 
     if (theme) this.setTheme(theme);
   }
 
-  /** 设置主题 */
   private setTheme(theme?: string): void {
     const classes = document.body.classList;
     const themes = this.themeColor.list.map(

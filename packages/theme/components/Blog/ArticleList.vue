@@ -1,6 +1,7 @@
 <template>
   <div id="article" class="article-wrapper">
     <h2 v-if="!articles.length" class="empty">暂无文章</h2>
+
     <MyTransition
       v-for="(article, index) in articles"
       :key="article.path"
@@ -8,7 +9,7 @@
     >
       <ArticleItem :article="article" />
     </MyTransition>
-    <!-- 分页 -->
+
     <Pagination
       v-model="currentPage"
       :per-page="articlePerPage"

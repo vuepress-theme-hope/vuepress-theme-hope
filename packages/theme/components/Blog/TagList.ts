@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared-utils";
-import navigate from "@theme/util/navigate";
+import { navigate } from "@theme/util/navigate";
 
 interface TagOption {
   name: string;
@@ -9,7 +9,6 @@ interface TagOption {
 
 @Component
 export default class TagList extends Vue {
-  /** 标签列表 */
   private get tagList(): TagOption[] {
     return [
       {
@@ -22,7 +21,6 @@ export default class TagList extends Vue {
     ];
   }
 
-  /** 是否激活 */
   private isActive(name: string): boolean {
     return (
       name ===
@@ -32,7 +30,6 @@ export default class TagList extends Vue {
     );
   }
 
-  /** 点击标签导航 */
   private clickTag(path: string): void {
     navigate(path, this.$router, this.$route);
   }

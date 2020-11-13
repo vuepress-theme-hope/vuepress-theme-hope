@@ -1,7 +1,6 @@
 import { PageComputed } from "@mr-hope/vuepress-types";
 import * as dayjs from "dayjs";
 
-/** 处理日期 */
 export const getDate = (dateString: string): (number | undefined)[] => {
   const time = dayjs(dateString.trim());
 
@@ -48,11 +47,6 @@ export const getDate = (dateString: string): (number | undefined)[] => {
   ];
 };
 
-/**
- * 日期比较
- * @param dateA 比较的日期A
- * @param dateB 比较的日期B
- */
 export const compareDate = (
   dataA: string | undefined,
   dataB: string | undefined
@@ -81,12 +75,6 @@ export const compareDate = (
   return compare(getDate(dataA), getDate(dataB));
 };
 
-/**
- * 过滤文章
- *
- * @param pages 页面
- * @param filterFunc 额外的过滤函数
- */
 export const filterArticle = (
   pages: PageComputed[],
   filterFunc?: (page: PageComputed) => boolean
@@ -106,7 +94,6 @@ export const filterArticle = (
     );
   });
 
-/** 排序文章 */
 export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
   pages.slice(0).sort((prev, next) => {
     const prevSticky = prev.frontmatter.sticky as number | boolean | undefined;

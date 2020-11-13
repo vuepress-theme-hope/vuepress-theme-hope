@@ -5,7 +5,6 @@ import { getDefaultLocale } from "@mr-hope/vuepress-shared-utils";
 
 @Component({ components: { MyTransition } })
 export default class Timeline extends Mixins(TimelineMixin) {
-  /** 提示文字 */
   private get hint(): string {
     return (
       (this.$themeConfig.blog && this.$themeConfig.blog.timeline) ||

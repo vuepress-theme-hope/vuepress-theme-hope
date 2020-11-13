@@ -3,23 +3,20 @@ import { DirectiveBinding } from "vue/types/options";
 
 type Event = TouchEvent | MouseEvent;
 
-/** Popup HTML 事件 */
-interface PopupHtmlElements extends HTMLElement {
+interface PopupHtmlElement extends HTMLElement {
   $vueClickOutside?: {
     callback: (event: Event) => void;
     handler: (event: Event) => void;
   };
 }
 
-/** Popup 指令函数 */
 type PopupDirectiveFunction = (
-  el: PopupHtmlElements,
+  el: PopupHtmlElement,
   binding: DirectiveBinding,
   vnode: VNode,
   oldVnode: VNode
 ) => void;
 
-/** 验证函数 */
 const validate = (binding: DirectiveBinding): boolean => {
   if (typeof binding.value !== "function") {
     console.warn(
@@ -34,7 +31,6 @@ const validate = (binding: DirectiveBinding): boolean => {
   return true;
 };
 
-/** 是否是 Popup */
 const isPopup = (popupItem: Node, elements: Node[]): boolean => {
   if (!popupItem || !elements) return false;
 
@@ -50,7 +46,6 @@ const isPopup = (popupItem: Node, elements: Node[]): boolean => {
   return false;
 };
 
-/** 是否是服务器端代码 */
 const isServer = (vNode: VNode): boolean =>
   typeof vNode.componentInstance !== "undefined" &&
   vNode.componentInstance.$isServer;
@@ -91,13 +86,11 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
   if (!isServer(vNode)) document.addEventListener(clickHandler, handler);
 };
 
-/** 更新命令 */
 export const update: PopupDirectiveFunction = (el, binding) => {
   if (validate(binding) && el.$vueClickOutside)
     el.$vueClickOutside.callback = binding.value as (event: Event) => void;
 };
 
-/** 解绑命令 */
 export const unbind: PopupDirectiveFunction = (el, _binding, vNode) => {
   // Remove Event Listeners
   const clickHandler =

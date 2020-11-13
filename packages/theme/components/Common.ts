@@ -3,7 +3,7 @@ import {
   SidebarItem,
   SidebarGroupItem,
   SidebarHeader,
-  resolveSidebarItems,
+  getSidebarItems,
 } from "@theme/util/sidebar";
 import GlobalEncryptMixin from "@theme/util/globalEncryptMixin";
 import Navbar from "@theme/components/Navbar.vue";
@@ -22,15 +22,14 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
 
   private isSidebarOpen = false;
 
-  private hideNavbar = false;
+  private showNavbar = false;
 
   private touchStart: { clientX: number; clientY: number } = {
     clientX: 0,
     clientY: 0,
   };
 
-  /** 是否应该展示导航栏 */
-  private get showNavbar(): boolean {
+  private get enableNavbar(): boolean {
     if (this.navbar === false) return false;
 
     const { frontmatter } = this.$page;
@@ -47,8 +46,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     );
   }
 
-  /** 是否应该展示侧边栏 */
-  private get showSidebar(): boolean {
+  private get enableSidebar(): boolean {
     if (this.sidebar === false) return false;
 
     return (
@@ -58,14 +56,12 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     );
   }
 
-  /** 侧边栏内容 */
   private get sidebarItems(): SidebarItem[] {
     if (this.sidebar === false) return [];
 
-    return resolveSidebarItems(this.$page, this.$site, this.$localePath);
+    return getSidebarItems(this.$page, this.$site, this.$localePath);
   }
 
-  /** 页面 Class */
   private get pageClasses(): any {
     const userPageClass = this.$page.frontmatter.pageClass as
       | string
@@ -74,11 +70,11 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
 
     return [
       {
-        "no-navbar": !this.showNavbar,
-        "hide-navbar": this.hideNavbar,
+        "no-navbar": !this.enableNavbar,
+        "hide-navbar": this.showNavbar,
         "sidebar-open": this.isSidebarOpen,
-        "no-sidebar": !this.showSidebar,
-        "has-anchor": this.showAnchor,
+        "no-sidebar": !this.enableSidebar,
+        "has-anchor": this.enableAnchor,
       },
       userPageClass,
     ];
@@ -88,11 +84,11 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     return this.getHeader(this.sidebarItems);
   }
 
-  private get showAnchor(): boolean {
+  private get enableAnchor(): boolean {
     return this.$themeConfig.anchorDisplay !== false && this.headers.length > 0;
   }
 
-  // Get scroll distance
+  /** Get scroll distance */
   private getScrollTop(): number {
     return (
       window.pageYOffset ||
@@ -103,23 +99,21 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
   }
 
   protected mounted(): void {
+    let lastDistance = 0;
+
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
 
-    // 向下滚动收起导航栏
-    let lastDistance = 0;
     window.addEventListener(
       "scroll",
       throttle(() => {
-        // 侧边栏关闭时
         if (!this.isSidebarOpen) {
           const distance = this.getScrollTop();
-          if (lastDistance < distance && distance > 58)
-            // 向下滚动
-            this.hideNavbar = true;
-          // 向上
-          else this.hideNavbar = false;
+          // scroll down
+          if (lastDistance < distance && distance > 58) this.showNavbar = true;
+          // scroll up
+          else this.showNavbar = false;
 
           lastDistance = distance;
         }

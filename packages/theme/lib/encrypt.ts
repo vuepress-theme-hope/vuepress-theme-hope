@@ -1,13 +1,8 @@
 import { EncryptOptions } from "../types";
 import { hashSync } from "bcryptjs";
 
-/**
- * 处理密码配置
- *
- * @param encrypt 加密配置选项
- */
-const resolveEncrypt = (encrypt: EncryptOptions): void => {
-  // 处理全局密码
+export const resolveEncrypt = (encrypt: EncryptOptions): void => {
+  // handle global password
   if (encrypt.global)
     if (typeof encrypt.global === "string")
       encrypt.global = hashSync(encrypt.global, 10);
@@ -22,7 +17,6 @@ const resolveEncrypt = (encrypt: EncryptOptions): void => {
 Please add "global" option your "themeConfig.encrypt" config. It can be string or string[].`
       );
 
-  // 处理密码配置
   const passwordConfig = encrypt.config || {};
 
   Object.keys(passwordConfig).forEach((key) => {
@@ -47,5 +41,3 @@ The value of key ${key} MUST be string or string[]. But not it's ${typeof passwo
       );
   });
 };
-
-export default resolveEncrypt;

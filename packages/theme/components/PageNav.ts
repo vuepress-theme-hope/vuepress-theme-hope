@@ -54,7 +54,6 @@ interface LinkOptions {
   sidebarItems: SidebarItem[];
 }
 
-/** 处理页面链接 */
 const resolvePageLink = (
   linkType: "prev" | "next",
   { themeConfig, page, route, site, sidebarItems }: LinkOptions

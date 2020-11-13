@@ -40,17 +40,17 @@ export default class Navbar extends Vue {
 
   private isMobile = false;
 
-  /** Algolia 配置 */
-  private get algolia(): AlgoliaOption | false {
+  private get algoliaConfig(): AlgoliaOption | false {
     return (
       this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || false
     );
   }
 
-  /** 是否使用 Algolia 搜索 */
   private get isAlgoliaSearch(): boolean {
     return Boolean(
-      this.algolia && this.algolia.apiKey && this.algolia.indexName
+      this.algoliaConfig &&
+        this.algoliaConfig.apiKey &&
+        this.algoliaConfig.indexName
     );
   }
 

@@ -18,17 +18,17 @@ const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
       register(`${SW_BASE_URL}service-worker.js`, {
         registrationOptions: {},
         ready() {
-          console.log("[PWA]: Service worker 已激活");
+          console.log("[PWA]: Service worker is active");
           event.$emit("sw-ready");
         },
 
         cached(registration) {
-          console.log("[PWA]: 内容以被缓存以离线使用");
+          console.log("[PWA]: Content has been cached for offline usage");
           event.$emit("sw-cached", new SWUpdateEvent(registration));
         },
 
         updated(registration) {
-          console.log("[PWA]: 内容已更新");
+          console.log("[PWA]: Content has been updated");
           const key = "service-worker-version";
           const version = Number(localStorage.getItem(key) || 0);
           localStorage.setItem(key, (version + 1).toString());
@@ -37,12 +37,14 @@ const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
         },
 
         offline() {
-          console.log("[PWA]: 无网络链接，APP 以离线模式启动");
+          console.log(
+            "[PWA]: No internet connection，APP runs in offline mode"
+          );
           event.$emit("sw-offline");
         },
 
         error(err) {
-          console.error("[PWA]: 注册 Service Worker 出现错误:", err);
+          console.error("[PWA]: Register Service Worker error:", err);
           event.$emit("sw-error", err);
         },
       });

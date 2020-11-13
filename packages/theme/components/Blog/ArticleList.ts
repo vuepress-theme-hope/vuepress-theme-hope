@@ -10,22 +10,18 @@ import {
   sortArticle,
 } from "@theme/util/article";
 import { BlogOptions } from "@theme/types";
-import { pathHitKeys } from "@theme/util/encrypt";
+import { getPathMatchedKeys } from "@theme/util/encrypt";
 
 @Component({ components: { ArticleItem, MyTransition, Pagination } })
 export default class ArticleList extends Vue {
-  /** 当前页面 */
   private currentPage = 1;
 
-  /** 文章列表 */
   private articleList: PageComputed[] = [];
 
-  /** 博客配置 */
   private get blogConfig(): BlogOptions {
     return this.$themeConfig.blog || {};
   }
 
-  /** 每页文章数 */
   private get articlePerPage(): number {
     return this.blogConfig.perPage || 10;
   }
@@ -37,25 +33,19 @@ export default class ArticleList extends Vue {
       ? (page: PageComputed): boolean => page.frontmatter.layout !== "Slide"
       : path.includes("/encrypt")
       ? (page: PageComputed): boolean =>
-          pathHitKeys(this.$themeConfig.encrypt, page.path).length !== 0 ||
-          Boolean(page.frontmatter.password)
+          getPathMatchedKeys(this.$themeConfig.encrypt, page.path).length !==
+            0 || Boolean(page.frontmatter.password)
       : path.includes("/slide")
       ? (page: PageComputed): boolean => page.frontmatter.layout === "Slide"
       : undefined;
   }
 
-  /** 文章列表 */
   private get $articles(): PageComputed[] {
-    // 先过滤再排序
+    // filter then sort
     return sortArticle(filterArticle(this.$site.pages, this.filter));
   }
 
-  /** 文章分页 */
-  private get $paginationArticles(): PageComputed[][] {
-    return generatePagination(this.$articles);
-  }
-
-  /** 当前页面的文章 */
+  /** Articles in this page */
   private get articles(): PageComputed[] {
     return this.articleList.slice(
       (this.currentPage - 1) * this.articlePerPage,
@@ -63,7 +53,6 @@ export default class ArticleList extends Vue {
     );
   }
 
-  /** 更新文章列表 */
   private getArticleList(): PageComputed[] {
     try {
       return this.$pagination
@@ -78,19 +67,19 @@ export default class ArticleList extends Vue {
     this.articleList = this.getArticleList();
   }
 
-  /** 在路径发生改变时更新文章列表 */
+  // update article list when route is changed
   @Watch("$route")
   private onRouteUpdate(to: Route, from: Route): void {
     if (to.path !== from.path) {
       this.articleList = this.getArticleList();
-      // 将页面重置为 1
+      // reset page to 1
       this.currentPage = 1;
     }
   }
 
   @Watch("currentPage")
   private onPageChange(): void {
-    // 滚动到列表顶部
+    // list top border distance
     const distance =
       (document.querySelector("#article") as Element).getBoundingClientRect()
         .top + window.scrollY;

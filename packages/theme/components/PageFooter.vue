@@ -1,5 +1,5 @@
 <template>
-  <footer v-if="display" class="footer-wrapper">
+  <footer v-if="enable" class="footer-wrapper">
     <MediaLinks v-if="!($frontmatter.home && $frontmatter.blog)" />
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="footerContent" class="footer" v-html="footerContent" />

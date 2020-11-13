@@ -13,7 +13,7 @@ const reportStatus: Record<string, boolean> = {};
 export const checkLang = (lang: string): boolean =>
   langs.includes(lang as Langs);
 
-/** 获取语言对应路径 */
+/** get path from language */
 export const lang2path = (lang: string): LangPaths | "/" => {
   if (lang2PathConfig[lang as Langs]) return lang2PathConfig[lang as Langs];
 
@@ -25,7 +25,7 @@ You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/ma
   return "/";
 };
 
-/** 获取路径对应语言 */
+/** get language from path */
 export const path2lang = (path: string): Langs => {
   if (path2langConfig[path as LangPaths])
     return path2langConfig[path as LangPaths];
@@ -38,11 +38,7 @@ You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/ma
   return "en-US";
 };
 
-/**
- * 获取特定语言的本地化文字
- *
- * @param lang
- */
+/** Get locate of certain language */
 export const getLocale = (lang: string): HopeLangI18nConfig => {
   if (localesConfig[lang as Langs]) return localesConfig[lang as Langs];
 
@@ -58,6 +54,5 @@ Note: This warning will be shown only once.`
   return localesConfig["en-US"];
 };
 
-/** 获得默认多语言配置 */
 export const getDefaultLocale = (): HopeLangI18nConfig =>
   localesConfig["en-US"];

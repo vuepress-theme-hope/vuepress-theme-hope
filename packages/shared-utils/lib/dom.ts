@@ -1,9 +1,9 @@
 /**
- * 改变 DOM 的 class
+ * Change DOM classes
  *
- * @param domClass DOM 节点的 class 列表
- * @param insert 新插入的 class
- * @param remove 待移除的 class
+ * @param domClass DOM classlist
+ * @param insert class to insert
+ * @param remove class to remove
  */
 export const changeClass = (
   domClass: DOMTokenList,

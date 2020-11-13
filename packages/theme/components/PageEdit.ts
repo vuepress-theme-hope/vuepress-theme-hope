@@ -14,7 +14,6 @@ export default class PageEdit extends Vue {
   }
 
   private get editLink(): string | false {
-    /** 是否展示编辑此页链接 */
     const showEditLink =
       (this.$page.frontmatter.editLink as boolean | undefined) ||
       (this.$themeConfig.editLinks !== false &&

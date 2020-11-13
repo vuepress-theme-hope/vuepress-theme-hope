@@ -1,12 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IAnyObject = Record<string, any>;
 
-/**
- * 深度合并对象，合并到第一个
- *
- * @param originObject 原生对象
- * @param assignObjects 需要合并的对象
- */
+/** Deep merge objects to the first one */
 export const deepAssign = <
   T extends IAnyObject,
   U extends IAnyObject = T,
@@ -17,7 +12,7 @@ export const deepAssign = <
 ): V => {
   if (assignObjects.length === 0) return originObject as V;
 
-  /** 本次合并的对象 */
+  /** Object being merged */
   const assignObject = assignObjects.shift() as IAnyObject;
 
   Object.keys(assignObject).forEach((property) => {
@@ -46,20 +41,14 @@ export const deepAssign = <
   return deepAssign(originObject, ...assignObjects);
 };
 
-/**
- * 深度合并对象，合并到最后一个
- *
- * @param assignObjects 需要合并的对象
- */
+/** Deep merge objects to the last one */
 export const deepAssignReverse = (
   ...assignObjects: IAnyObject[]
 ): IAnyObject => {
   if (assignObjects.length === 0) throw new Error("No param is given");
   if (assignObjects.length === 1) return assignObjects[0];
 
-  /** 需要合并的对象 */
   const assignObject = assignObjects.pop() as IAnyObject;
-  /** 被合并的对象 */
   const originObject = assignObjects.pop() as IAnyObject;
 
   Object.keys(originObject).forEach((property) => {

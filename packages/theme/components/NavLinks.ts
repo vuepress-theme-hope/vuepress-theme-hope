@@ -4,7 +4,7 @@ import DropdownLink from "@theme/components/DropdownLink.vue";
 import { NavBarConfigItem } from "@mr-hope/vuepress-types";
 import NavLink from "@theme/components/NavLink.vue";
 import { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/util/navbar";
-import { resolveNavLinkItem } from "@theme/util/navbar";
+import { getNavLinkItem } from "@theme/util/navbar";
 
 @Component({ components: { NavLink, DropdownLink } })
 export default class NavLinks extends Vue {
@@ -53,7 +53,7 @@ export default class NavLinks extends Vue {
   }
 
   private get userLinks(): ResovledNavbarConfigItem[] {
-    return (this.nav || []).map((link) => resolveNavLinkItem(link));
+    return (this.nav || []).map((link) => getNavLinkItem(link));
   }
 
   private get repoLink(): string {

@@ -1,12 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-/**
- * 确认某个文件夹存在，如果不存在则创建它
- *
- * @param {string} dirPath 确认存在的文件夹路径
- */
-const markDirExistSync = (dirPath) => {
+const ensureDirExistSync = (dirPath) => {
   try {
     fs.readdirSync(dirPath);
   } catch (err) {
@@ -14,33 +9,19 @@ const markDirExistSync = (dirPath) => {
   }
 };
 
-/**
- * 复制文件
- *
- * @param {string} srcFile 源文件
- * @param {string} targetFile 目标文件
- * @return
- */
 const copyFile = (srcFile, targetFile) => {
   const targetDir = path.dirname(targetFile);
 
-  markDirExistSync(targetDir);
+  ensureDirExistSync(targetDir);
 
-  const rs = fs.createReadStream(srcFile); // 创建读取流
-  const ws = fs.createWriteStream(targetFile); // 创建写入流
+  const rs = fs.createReadStream(srcFile); // create read stream
+  const ws = fs.createWriteStream(targetFile); // create write stream
 
   rs.pipe(ws);
 };
 
-/**
- * 复制目录
- *
- * @param {string} srcDir 源目录
- * @param {string} targetDir 目标目录
- */
 const copyDir = (srcDir, targetDir) => {
-  // 读取目录
-  markDirExistSync(targetDir);
+  ensureDirExistSync(targetDir);
 
   const files = fs.readdirSync(srcDir, { withFileTypes: true });
 
@@ -52,12 +33,6 @@ const copyDir = (srcDir, targetDir) => {
   });
 };
 
-/**
- * 复制内容
- *
- * @param {string} src 源
- * @param {string} target 目标
- */
 const copy = (src, target) => {
   if (fs.statSync(src).isDirectory()) copyDir(src, target);
   else if (fs.statSync(src).isFile()) copyFile(src, target);

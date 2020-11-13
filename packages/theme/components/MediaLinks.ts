@@ -29,7 +29,6 @@ import Youtube from "@mr-hope/vuepress-shared-utils/icons/media/Youtube.vue";
 import Zhihu from "@mr-hope/vuepress-shared-utils/icons/media/Zhihu.vue";
 import { BlogMedia } from "@theme/types";
 
-/** 合法媒体 */
 const medias: BlogMedia[] = [
   "Baidu",
   "Bitbucket",

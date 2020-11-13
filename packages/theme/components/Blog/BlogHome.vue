@@ -8,7 +8,6 @@
           <ProjectList />
         </MyTransition>
 
-        <!-- 文章列表 -->
         <MyTransition :delay="0.24">
           <ArticleList :key="$route.path" />
         </MyTransition>
@@ -19,12 +18,10 @@
       </MyTransition>
     </div>
 
-    <!-- Markdown 内容 -->
     <MyTransition :delay="0.28">
       <Content :key="$route.path" class="theme-default-content" custom />
     </MyTransition>
 
-    <!-- 页脚 -->
     <MyTransition :delay="0.32">
       <PageFooter :key="$route.path" />
     </MyTransition>

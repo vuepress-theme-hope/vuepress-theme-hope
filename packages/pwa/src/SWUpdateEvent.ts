@@ -14,13 +14,13 @@ export default class SWUpdateEvent {
 
     if (!worker) return Promise.resolve();
 
-    console.log("[PWA]: 执行 worker.skipWaiting().");
+    console.log("[PWA]: Execute worker.skipWaiting().");
 
     return new Promise((resolve, reject) => {
       const channel = new MessageChannel();
 
       channel.port1.onmessage = (event): void => {
-        console.log("[PWA]: 完成 worker.skipWaiting().");
+        console.log("[PWA]: Finish worker.skipWaiting().");
         if ((event.data as { error: Error | null }).error)
           reject((event.data as { error: Error | null }).error);
         else resolve(event.data);

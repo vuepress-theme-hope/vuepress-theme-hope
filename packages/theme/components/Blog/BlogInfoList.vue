@@ -43,7 +43,7 @@
       </button>
     </div>
 
-    <!-- 文章 -->
+    <!-- Article -->
     <MyTransition v-if="active === 'article'">
       <div class="sticky-article-wrapper">
         <div class="title" @click="$router.push('/article/')">
@@ -68,7 +68,7 @@
       </div>
     </MyTransition>
 
-    <!-- 分类 -->
+    <!-- Category -->
     <MyTransition v-if="active === 'category'">
       <div class="category-wrapper">
         <div
@@ -87,7 +87,7 @@
       </div>
     </MyTransition>
 
-    <!-- 标签 -->
+    <!-- Tags -->
     <MyTransition v-if="active === 'tag'">
       <div class="tag-wrapper">
         <div
@@ -106,6 +106,7 @@
       </div>
     </MyTransition>
 
+    <!-- Timeline -->
     <MyTransition v-if="active === 'timeline'">
       <TimelineList />
     </MyTransition>

@@ -19,7 +19,6 @@ import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
 export default class ArticleInfo extends Vue {
   @Prop(Object) private readonly article!: PageComputed;
 
-  /** 作者 */
   private get author(): string {
     return (
       (this.article.frontmatter.author as string | false | undefined) ||
@@ -29,7 +28,6 @@ export default class ArticleInfo extends Vue {
     );
   }
 
-  /** 发表时间 */
   private get time(): string {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { date, time = date } = this.article.frontmatter;
@@ -48,7 +46,6 @@ export default class ArticleInfo extends Vue {
     return "";
   }
 
-  /** 标签 */
   private get tags(): string[] {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { tag, tags = tag } = this.article.frontmatter;

@@ -8,8 +8,7 @@ export default class PageFooter extends Vue {
     return this.$themeConfig.footer || {};
   }
 
-  /** 显示页脚 */
-  private get display(): boolean {
+  private get enable(): boolean {
     const { copyrightText, footer, medialink } = this.$page.frontmatter;
 
     return (
@@ -18,7 +17,6 @@ export default class PageFooter extends Vue {
     );
   }
 
-  /** 页脚内容 */
   private get footerContent(): string | false {
     const { footer } = this.$page.frontmatter;
 
@@ -29,7 +27,6 @@ export default class PageFooter extends Vue {
       : this.footerConfig.content || "";
   }
 
-  /** 版权信息 */
   private get copyright(): string | false {
     return this.$frontmatter.copyrightText === false
       ? false

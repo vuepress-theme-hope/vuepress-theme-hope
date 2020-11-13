@@ -5,7 +5,7 @@
     </template>
 
     <Password
-      v-if="currentPathEncrypted && !globalEncrypted"
+      v-if="isPathEncrypted && !isGlobalEncrypted"
       @password-verify="setPassword"
     />
     <div v-else class="page blog">
@@ -17,7 +17,6 @@
         </MyTransition>
       </div>
 
-      <!-- 页脚 -->
       <MyTransition :delay="0.28">
         <PageFooter :key="$route.path" />
       </MyTransition>

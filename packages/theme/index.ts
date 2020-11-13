@@ -1,7 +1,7 @@
 import { resolve } from "path";
 import { CAC } from "cac";
-import eject from "./lib/eject";
-import getPlugin from "./lib/plugins";
+import { eject } from "./lib/eject";
+import { getPluginConfig } from "./lib/plugins";
 import { config } from "./lib/config";
 
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
@@ -71,7 +71,7 @@ const themeAPI = (
 ): ThemeOptionAPI => ({
   alias: getAlias(themeConfig, ctx),
 
-  plugins: getPlugin(themeConfig),
+  plugins: getPluginConfig(themeConfig),
 
   additionalPages:
     themeConfig.blog === false

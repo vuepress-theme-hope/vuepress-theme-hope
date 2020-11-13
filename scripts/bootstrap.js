@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-/** 主题当前版本 */
 const baseVersion = require("../packages/theme/package.json").version;
 
 const packagesDir = path.resolve(__dirname, "../packages/");
@@ -12,7 +11,7 @@ files.forEach((pkgName) => {
   const desc = `${pkgName} plugin for vuepress-theme-hope`;
   const pkgPath = path.join(packagesDir, pkgName, "package.json");
 
-  // 生成 package.json
+  // generate package.json
   if (!fs.existsSync(pkgPath)) {
     const pkgJSON = {
       name: `@mr-hope/vuepress-plugin-${pkgName}`,
@@ -55,7 +54,7 @@ files.forEach((pkgName) => {
 
   const readmePath = path.join(packagesDir, pkgName, "readme.md");
 
-  // 生成 readme
+  // generate readme.md
   if (!fs.existsSync(readmePath))
     fs.writeFileSync(
       readmePath,
