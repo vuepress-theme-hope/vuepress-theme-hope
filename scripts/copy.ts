@@ -1,7 +1,7 @@
-const fs = require("fs");
-const path = require("path");
+import * as fs from "fs";
+import * as path from "path";
 
-const ensureDirExistSync = (dirPath) => {
+const ensureDirExistSync = (dirPath: string): void => {
   try {
     fs.readdirSync(dirPath);
   } catch (err) {
@@ -9,7 +9,7 @@ const ensureDirExistSync = (dirPath) => {
   }
 };
 
-const copyFile = (srcFile, targetFile) => {
+const copyFile = (srcFile: string, targetFile: string): void => {
   const targetDir = path.dirname(targetFile);
 
   ensureDirExistSync(targetDir);
@@ -20,7 +20,7 @@ const copyFile = (srcFile, targetFile) => {
   rs.pipe(ws);
 };
 
-const copyDir = (srcDir, targetDir) => {
+const copyDir = (srcDir: string, targetDir: string): void => {
   ensureDirExistSync(targetDir);
 
   const files = fs.readdirSync(srcDir, { withFileTypes: true });
@@ -33,9 +33,9 @@ const copyDir = (srcDir, targetDir) => {
   });
 };
 
-const copy = (src, target) => {
+const copy = (src: string, target: string): void => {
   if (fs.statSync(src).isDirectory()) copyDir(src, target);
   else if (fs.statSync(src).isFile()) copyFile(src, target);
 };
 
-module.exports = copy;
+export = copy;

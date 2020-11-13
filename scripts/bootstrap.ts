@@ -1,6 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-const baseVersion = require("../packages/theme/package.json").version;
+import * as fs from "fs";
+import * as path from "path";
+import { version } from "../packages/theme/package.json";
 
 const packagesDir = path.resolve(__dirname, "../packages/");
 const files = fs.readdirSync(packagesDir);
@@ -15,7 +15,7 @@ files.forEach((pkgName) => {
   if (!fs.existsSync(pkgPath)) {
     const pkgJSON = {
       name: `@mr-hope/vuepress-plugin-${pkgName}`,
-      version: baseVersion,
+      version,
       description: desc,
       main: "lib/index.js",
       types: "types/index.d.ts",
@@ -45,7 +45,7 @@ files.forEach((pkgName) => {
       },
       homepage: `https://github.com/Mister-Hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       dependencies: {
-        "@mr-hope/vuepress-types": `^${baseVersion}`,
+        "@mr-hope/vuepress-types": `^${version}`,
       },
     };
 

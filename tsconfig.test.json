@@ -4,5 +4,9 @@
     "module": "commonjs",
     "target": "ES6"
   },
-  "include": ["packages/*/test/**/*.ts", "packages/theme/util/*.ts"]
+  "include": [
+    "packages/*/test/**/*.ts",
+    "packages/theme/util/*.ts",
+    "scripts/**/*.ts"
+  ]
 }

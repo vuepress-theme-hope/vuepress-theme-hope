@@ -1,28 +1,42 @@
-const execa = require("execa");
-const semver = require("semver");
-const inquirer = require("inquirer");
-const versions = {};
-const curVersion = require("../lerna.json").version;
+import * as execa from "execa";
+import * as inquirer from "inquirer";
+import { ReleaseType, inc, prerelease } from "semver";
+import { version as currentVersion } from "../lerna.json";
 
-const getVersion = (answers) => answers.customVersion || versions[answers.bump];
+interface Answers {
+  bump: string;
+  customVersion: string;
+  npmTag: string;
+}
 
-const isPreRelease = (version) => Boolean(semver.prerelease(version));
+const versions: Record<string, string> = {};
 
-const getNpmTags = (version) => {
+const getVersion = (answers: Answers): string =>
+  answers.customVersion || versions[answers.bump];
+
+const isPreRelease = (version: string): boolean => Boolean(prerelease(version));
+
+const getNpmTags = (version: string): string[] => {
   if (isPreRelease(version)) return ["next", "alpha", "beta", "latest"];
 
   return ["latest", "beta", "alpha", "next"];
 };
 
-const release = async () => {
+const release = async (): Promise<void> => {
   await execa("yarn", ["run", "typescript:compile"]);
 
-  console.log(`Current version: ${curVersion}`);
+  console.log(`Current version: ${currentVersion}`);
 
-  const bumps = ["patch", "minor", "major", "prerelease", "premajor"];
+  const bumps: ReleaseType[] = [
+    "patch",
+    "minor",
+    "major",
+    "prerelease",
+    "premajor",
+  ];
 
   bumps.forEach((bump) => {
-    versions[bump] = semver.inc(curVersion, bump);
+    versions[bump] = inc(currentVersion, bump) as string;
   });
 
   const bumpChoices = bumps.map((bump) => ({
@@ -30,7 +44,7 @@ const release = async () => {
     value: bump,
   }));
 
-  const { bump, customVersion, npmTag } = await inquirer.prompt([
+  const { bump, customVersion, npmTag } = await inquirer.prompt<Answers>([
     {
       name: "bump",
       message: "Select release type:",
@@ -41,20 +55,20 @@ const release = async () => {
       name: "customVersion",
       message: "Input version:",
       type: "input",
-      when: (answers) => answers.bump === "custom",
+      when: (answers): boolean => answers.bump === "custom",
     },
     {
       name: "npmTag",
       message: "Input npm tag:",
       type: "list",
-      default: (answers) => getNpmTags(getVersion(answers))[0],
-      choices: (answers) => getNpmTags(getVersion(answers)),
+      default: (answers: Answers): string => getNpmTags(getVersion(answers))[0],
+      choices: (answers: Answers): string[] => getNpmTags(getVersion(answers)),
     },
   ]);
 
   const version = customVersion || versions[bump];
 
-  const { yes } = await inquirer.prompt([
+  const { yes } = await inquirer.prompt<{ yes: "Y" | "N" }>([
     {
       name: "yes",
       message: `Confirm releasing ${version} (${npmTag})?`,
