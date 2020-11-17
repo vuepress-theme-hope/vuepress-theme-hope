@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-types",
-  "version": "1.5.7",
+  "version": "1.6.0-beta.0",
   "description": "VuePress TypeScript helpers",
   "keywords": [
     "types",
