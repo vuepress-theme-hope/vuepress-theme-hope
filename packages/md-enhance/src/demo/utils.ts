@@ -235,27 +235,26 @@ export const getCode = (
   };
 };
 
-const cssStatus: Record<string, boolean> = {};
-
 export const injectCSS = (css: string, id: string): void => {
-  if (!cssStatus[id]) {
-    const reg = /([\s\S]*?)\{([\s\S]*?)\}/gu;
-    let scopeCss = "";
-    let result;
+  const wrapper = document.querySelector(`#${id}`);
 
-    while ((result = reg.exec(css))) {
-      const [, selectors, definition] = result;
-      scopeCss += `${selectors
-        .replace(/\n/g, "")
-        .split(",")
-        .map((selector) => `#${id} .display-wrapper ${selector}`)
-        .join(",")}{${definition}}`;
-    }
+  const reg = /([\s\S]*?)\{([\s\S]*?)\}/gu;
+  let scopeCss = "";
+  let result;
 
-    const style = h("style", { innerHTML: scopeCss });
-    const wrapper = document.querySelector(`#${id}`);
+  while ((result = reg.exec(css))) {
+    const [, selectors, definition] = result;
+    scopeCss += `${selectors
+      .replace(/\n/g, "")
+      .split(",")
+      .map((selector) => `#${id} .display-wrapper ${selector}`)
+      .join(",")}{${definition}}`;
+  }
 
-    if (wrapper) wrapper.appendChild(style);
-    cssStatus[id] = true;
+  const style = h("style", { innerHTML: scopeCss });
+
+  if (wrapper && !wrapper.hasAttribute("data-styled")) {
+    wrapper.appendChild(style);
+    wrapper.setAttribute("data-styled", "");
   }
 };

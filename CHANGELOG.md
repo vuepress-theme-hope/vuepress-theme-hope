@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.6.0-beta.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.7...v1.6.0-beta.0) (2020-11-17)
+
+### Features
+
+- **md-enhance:** add code demo ([75b4545](https://github.com/Mister-Hope/vuepress-theme-hope/commit/75b4545cfb352fbf7b99b26a02f62bd86d37249c))
+
 ## [1.5.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.1...v1.5.6) (2020-11-12)
 
 ### Bug Fixes
