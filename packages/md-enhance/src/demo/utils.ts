@@ -26,7 +26,11 @@ export const h = (
   return node;
 };
 
-const getHtmlTemplate = (html: string): string => `<div id="app">${html}</div>`;
+const handleHTML = (html: string): string =>
+  html.replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
+
+const getHtmlTemplate = (html: string): string =>
+  `<div id="app">${handleHTML(html)}</div>`;
 
 const getReactTemplate = (code: string): string =>
   `${code
@@ -173,7 +177,7 @@ export const getNormalCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
 ): NormalCode => ({
-  html: code.html[0] || "",
+  html: handleHTML(code.html[0] || ""),
   js: code.js[0] || "",
   css: code.css[0] || "",
   jsLib: config.jsLib || [],
