@@ -80,160 +80,147 @@ $$
 
 ### 代码案例
 
-::: demo
+::: demo 一个普通 Demo
 
 ```html
-<html>
-  <h1>Mr.Hope</h1>
-  <p>Is <span id="very">十分</span> 帅</p>
-</html>
+<h1>Mr.Hope</h1>
+<p><span id="very">十分</span> 帅</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("十分帅");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+::: demo [react] 一个 React Demo
+
+```js
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { message: "十分帅" };
+  }
+  render() {
+    return (
+      <div className="box-react">
+        Mr.Hope <span>{this.state.message}</span>
+      </div>
+    );
+  }
+}
+```
+
+```css
+.box-react span {
+  color: red;
+}
+```
+
+:::
+
+::: demo [vue] 一个 Vue Demo
+
+```vue
+<template>
+  <div class="box-vue">
+    Mr.Hope <span>{{ message }}</span>
+  </div>
+</template>
 <script>
-  document.querySelector("#very").addEventListener("click", () => {
-    alert("十分帅！");
-  });
+export default {
+  data: () => ({ message: "十分帅" }),
+};
 </script>
 <style>
+.box-vue span {
+  color: red;
+}
+</style>
+```
+
+:::
+
+::: demo 一个普通 Demo
+
+```md
+# 标题
+
+十分帅
+```
+
+```ts
+const message: string = "Mr.Hope";
+
+document.querySelector("h1").innerHTML = message;
+```
+
+```scss
+h1 {
+  font-style: italic;
+
+  + p {
+    color: red;
+  }
+}
+```
+
+:::
+
+::: demo [react] 一个 React Demo
+
+```ts
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { message: "十分帅" };
+  }
+  render() {
+    return (
+      <div className="box-react">
+        Mr.Hope <span>{this.state.message}</span>
+      </div>
+    );
+  }
+}
+```
+
+```css
+.box-react span {
+  color: red;
+}
+```
+
+:::
+
+::: demo [vue] 一个 Vue 示例
+
+```vue
+<template>
+  <div class="box-vue">
+    Mr.Hope <span>{{ message }}</span>
+  </div>
+</template>
+<script lang="ts">
+export default Vue.extend({
+  data: () => ({ message: "十分帅" }),
+});
+</script>
+<style lang="scss">
+.box-vue {
   span {
     color: red;
   }
+}
 </style>
-```
-
-:::
-
-::: demo react
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "十分帅" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-App.__style__ = `
-.box-react span {
-  color: red;
-}
-`;
-```
-
-:::
-
-::: demo vue
-
-```html
-<template>
-  <div class="box-vue">Mr.Hope <span>{{ message }}</span></div>
-</template>
-<script>
-  export default {
-    data: () => ({ message: "十分帅" }),
-  };
-</script>
-<style>
-  .box-vue span {
-    color: red;
-  }
-</style>
-```
-
-:::
-
-::: demo
-
-```html
-<html>
-  # 标题 十分帅！
-</html>
-<script>
-  const message: string = "Mr.Hope";
-
-  document.querySelector("h1").innerHTML = message;
-</script>
-<style>
-  h1 {
-    font-style: italic;
-
-    + p {
-      color: red;
-    }
-  }
-</style>
-```
-
-```json
-{
-  "html": "markdown",
-  "js": "typescript",
-  "css": "scss"
-}
-```
-
-:::
-
-::: demo react
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "十分帅" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-App.__style__ = `
-.box-react span {
-  color: red;
-}
-`;
-```
-
-```json
-{
-  "js": "typescript"
-}
-```
-
-:::
-
-::: demo vue
-
-```html
-<template>
-  <div class="box-vue">Mr.Hope <span>{{ message }}</span></div>
-</template>
-<script lang="ts">
-  export default Vue.extend({
-    data: () => ({ message: "十分帅" }),
-  });
-</script>
-<style lang="scss">
-  .box-vue {
-    span {
-      color: red;
-    }
-  }
-</style>
-```
-
-```json
-{
-  "js": "typescript",
-  "css": "scss"
-}
 ```
 
 :::

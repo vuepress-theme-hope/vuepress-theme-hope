@@ -1,5 +1,5 @@
 import { CodeDemoOptions } from "packages/md-enhance/types";
-
+import { FunctionComponent } from "react";
 export const option = CODE_DEMO_OPTIONS;
 
 export const h = (
@@ -64,102 +64,187 @@ const getVueScript = (html: string, js: string): VueScript => {
   return scriptObj;
 };
 
-const getVanillaScript = (js: string): string =>
-  window.Babel ? window.Babel.transform(js, { presets: ["es2015"] }).code : js;
+const getVanillaScript = (js: string): (() => unknown) => {
+  const script = window.Babel
+    ? window.Babel.transform(js, { presets: ["es2015"] }).code
+    : js;
+
+  // eslint-disable-next-line @typescript-eslint/no-implied-eval
+  return new Function(`return (function(){${script}})()`) as () => unknown;
+};
+
+type PreProcessorType = "html" | "js" | "css";
+
+const preProcessorConfig: Record<
+  PreProcessorType,
+  {
+    types: string[];
+    map: Record<string, string | undefined>;
+  }
+> = {
+  html: {
+    types: ["html", "slim", "haml", "md", "markdown", "vue"],
+    map: {
+      html: "none",
+      vue: "none",
+      md: "markdown",
+    },
+  },
+  js: {
+    types: [
+      "js",
+      "javascript",
+      "coffee",
+      "coffeescript",
+      "ts",
+      "typescript",
+      "ls",
+      "livescript",
+    ],
+    map: {
+      js: "none",
+      javascript: "none",
+      coffee: "coffeescript",
+      ls: "livescript",
+      ts: "typescript",
+    },
+  },
+  css: {
+    types: ["css", "less", "sass", "scss", "stylus", "styl"],
+    map: {
+      css: "none",
+      styl: "stylus",
+    },
+  },
+};
+
+export interface CodeType {
+  html: [code: string, type: string] | [];
+  js: [code: string, type: string] | [];
+  css: [code: string, type: string] | [];
+  isLegal: boolean;
+}
+
+export const getCode = (code: Record<string, string>): CodeType => {
+  const languages = Object.keys(code);
+  const result: CodeType = {
+    html: [],
+    js: [],
+    css: [],
+    isLegal: false,
+  };
+
+  (["html", "js", "css"] as PreProcessorType[]).forEach((type) => {
+    const match = languages.filter((language) =>
+      preProcessorConfig[type].types.includes(language)
+    );
+
+    if (match.length) {
+      const language = match[0];
+
+      result[type] = [
+        code[language].replace(/^\n|\n$/g, ""),
+        preProcessorConfig[type].map[language] || language,
+      ];
+    }
+  });
+
+  result.isLegal =
+    (!result.html.length || result.html[1] === "none") &&
+    (!result.js.length || result.js[1] === "none") &&
+    (!result.css.length || result.css[1] === "none");
+
+  return result;
+};
 
 export interface Code {
-  code: {
-    html: string;
-    js: string;
-    css: string;
-  };
-  template: {
-    html: string;
-    js: string;
-  };
-
+  html: string;
+  js: string;
+  css: string;
   jsLib: string[];
   cssLib: string[];
 }
 
 export interface VanillaCode extends Code {
-  script: string;
+  script?: () => unknown;
 }
 
 export const getVanillaCode = (
-  code: string,
+  code: CodeType,
   config: Partial<CodeDemoOptions>
-): VanillaCode => {
-  const htmlBlock = /<html>([\s\S]+)<\/html>/u.exec(code);
-  const jsBlock = /<script>([\s\S]+)<\/script>/u.exec(code);
-  const cssBlock = /<style>([\s\S]+)<\/style>/u.exec(code);
-  const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
-  const js = jsBlock ? jsBlock[1].replace(/^\n|\n$/g, "") : "";
-  const css = cssBlock ? cssBlock[1].replace(/^\n|\n$/g, "") : "";
-
-  return {
-    code: { html, js, css },
-    template: { html, js },
-    jsLib: config.jsLib || [],
-    cssLib: config.cssLib || [],
-    script: getVanillaScript(js),
-  };
-};
+): VanillaCode => ({
+  html: code.html[0] || "",
+  js: code.js[0] || "",
+  css: code.css[0] || "",
+  jsLib: config.jsLib || [],
+  cssLib: config.cssLib || [],
+  script: code.isLegal ? getVanillaScript(code.js[0] || "") : undefined,
+});
 
 export interface VueCode extends Code {
-  script: VueScript;
+  script?: VueScript;
 }
 
 export const getVueCode = (
-  code: string,
+  code: CodeType,
   config: Partial<CodeDemoOptions>
 ): VueCode => {
-  const htmlBlock = /<template>([\s\S]+)<\/template>/u.exec(code);
-  const jsBlock = /<script>([\s\S]+)<\/script>/u.exec(code);
-  const cssBlock = /<style>([\s\S]+)<\/style>/u.exec(code);
+  const vueTemplate = code.html[0] || "";
+  const htmlBlock = /<template>([\s\S]+)<\/template>/u.exec(vueTemplate);
+  const jsBlock = /<script(\s*lang=(['"])(.*?)\2)?>([\s\S]+)<\/script>/u.exec(
+    vueTemplate
+  );
+  const cssBlock = /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>/u.exec(
+    vueTemplate
+  );
   const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
-  const js = jsBlock ? jsBlock[1].replace(/^\n|\n$/g, "") : "";
-  const css = cssBlock ? cssBlock[1].replace(/^\n|\n$/g, "") : "";
+  const [js = "", jsLang = ""] = jsBlock
+    ? [jsBlock[4].replace(/^\n|\n$/g, ""), jsBlock[3]]
+    : [];
+  const [css = "", cssLang = ""] = cssBlock
+    ? [cssBlock[4].replace(/^\n|\n$/g, ""), cssBlock[3]]
+    : [];
+
+  const isLegal = jsLang === "" && (cssLang === "" || cssLang === "css");
 
   return {
-    code: { html, js, css },
-    template: { html: getHtmlTemplate(html), js: getVueJsTemplate(js) },
+    html: getHtmlTemplate(html),
+    js: getVueJsTemplate(js),
+    css,
     jsLib: [option.vue, ...(config.jsLib || [])],
     cssLib: config.cssLib || [],
-    script: getVueScript(html, js),
+    script: isLegal ? getVueScript(html, js) : undefined,
   };
 };
 
-export const getReactCode = (
-  code: string,
-  config: Partial<CodeDemoOptions>
-): Code | void => {
-  if (window.Babel) {
-    const reactComponent = window.Babel.transform(code, {
-      presets: ["es2015", "react"],
-    }).code;
-    const script = `(function(exports){var module={};module.exports=exports;${reactComponent};return module.exports.__esModule?module.exports.default:module.exports;})({})`;
-    // eslint-disable-next-line
-    const scriptObj = new Function(`return ${script}`)() as {
-      (): string;
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      __style__?: string;
-    };
+export interface ReactCode extends Code {
+  script?: FunctionComponent;
+}
 
-    return {
-      code: {
-        html: "",
-        js: (scriptObj as unknown) as string,
-        css: scriptObj.__style__ || "",
-      },
-      template: {
-        html: getHtmlTemplate(""),
-        js: getReactTemplate(code),
-      },
-      jsLib: [option.react, option.reactDOM, ...(config.jsLib || [])],
-      cssLib: config.cssLib || [],
-    };
-  } else console.error("Babel not found");
+export const getReactCode = (
+  code: CodeType,
+  config: Partial<CodeDemoOptions>
+): ReactCode => {
+  const scriptObj =
+    code.isLegal && window.Babel
+      ? // eslint-disable-next-line
+        (new Function(
+          `return (function(exports){var module={};module.exports=exports;${
+            window.Babel.transform(code.js[0] || "", {
+              presets: ["es2015", "react"],
+            }).code
+          };return module.exports.__esModule?module.exports.default:module.exports;})({})`
+        )() as FunctionComponent)
+      : undefined;
+
+  return {
+    html: getHtmlTemplate(""),
+    js: getReactTemplate(code.js[0] || ""),
+    css: code.css[0] || "",
+    jsLib: [option.react, option.reactDOM, ...(config.jsLib || [])],
+    cssLib: config.cssLib || [],
+    script: scriptObj,
+  };
 };
 
 export interface CodepenCode extends Code {
@@ -169,71 +254,6 @@ export interface CodepenCode extends Code {
     css: "none" | "less" | "scss" | "sass" | "stylus";
   };
 }
-
-export const getCode = (
-  code: string,
-  config: Partial<CodeDemoOptions>,
-  type: string
-): CodepenCode => {
-  if (type.includes("react")) {
-    const result = /__style__\s*=\s*([`'"])([\s\S]*)\1/u.exec(code);
-
-    return {
-      code: { html: "", js: "", css: result ? result[2] : "" },
-      template: {
-        html: getHtmlTemplate(""),
-        js: getReactTemplate(code),
-      },
-      jsLib: [option.react, option.reactDOM, ...(config.jsLib || [])],
-      cssLib: config.cssLib || [],
-      preprocessor: {
-        html: config.html || "none",
-        js: config.js || "none",
-        css: config.css || "none",
-      },
-    };
-  }
-
-  if (type.includes("vue")) {
-    const htmlBlock = /<template.*?>([\s\S]+)<\/template>/u.exec(code);
-    const jsBlock = /<script.*?>([\s\S]+)<\/script>/u.exec(code);
-    const cssBlock = /<style.*?>([\s\S]+)<\/style>/u.exec(code);
-    const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
-    const js = jsBlock ? jsBlock[1].replace(/^\n|\n$/g, "") : "";
-    const css = cssBlock ? cssBlock[1].replace(/^\n|\n$/g, "") : "";
-
-    return {
-      code: { html, js, css },
-      template: { html: getHtmlTemplate(html), js: getVueJsTemplate(js) },
-      jsLib: [option.vue, ...(config.jsLib || [])],
-      cssLib: config.cssLib || [],
-      preprocessor: {
-        html: config.html || "none",
-        js: config.js || "none",
-        css: config.css || "none",
-      },
-    };
-  }
-
-  const htmlBlock = /<html>([\s\S]+)<\/html>/u.exec(code);
-  const jsBlock = /<script>([\s\S]+)<\/script>/u.exec(code);
-  const cssBlock = /<style.*?>([\s\S]+)<\/style>/u.exec(code);
-  const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
-  const js = jsBlock ? jsBlock[1].replace(/^\n|\n$/g, "") : "";
-  const css = cssBlock ? cssBlock[1].replace(/^\n|\n$/g, "") : "";
-
-  return {
-    code: { html, js, css },
-    template: { html, js },
-    jsLib: config.jsLib || [],
-    cssLib: config.cssLib || [],
-    preprocessor: {
-      html: config.html || "none",
-      js: config.js || "none",
-      css: config.css || "none",
-    },
-  };
-};
 
 export const injectCSS = (css: string, id: string): void => {
   const wrapper = document.querySelector(`#${id}`);

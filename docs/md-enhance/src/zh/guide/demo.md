@@ -27,14 +27,16 @@ module.exports = {
 您应该使用以下语法：
 
 ````md
-::: demo [类型]
+::: demo [类型] 可选的标题文字
 
 ```html
-<!-- ↑ React 为 js -->
+<!-- ↑ 使用可用的语言 -->
 <!-- 放置你的代码 -->
+<!-- 你可以有多个代码块 -->
 ```
 
 ```json
+// json block 作为插件配置
 {
   // 放置你的配置 (optional)
 }
@@ -44,39 +46,47 @@ module.exports = {
 ````
 
 ::: tip
-json 块是可选的。
+JSON 块是可选的。
 :::
 
 该插件支持三种类型：
 
-- vanilla (默认)
+- normal (默认)
 - vue
 - react
 
-### Vanilla
+### Normal
 
 写法:
 
 ````md
-::: demo
+::: demo 可选的标题文字
 
 ```html
-<html>
-  <!-- html 代码 -->
-</html>
-<script>
-  // js 代码
-</script>
-<style>
-  /* css 代码 */
-</style>
+<!-- html code -->
+```
+
+```js
+// js code
+```
+
+```css
+/* css code */
 ```
 
 ```json
 // 配置 (可选)
+{
+  "jsLib": [
+    ...
+  ],
+  "cssLib":[
+    ...
+  ]
+}
 ```
 
-::::
+:::
 ````
 
 ### Vue
@@ -84,9 +94,10 @@ json 块是可选的。
 语法:
 
 ````md
-::: demo vue
+::: demo [vue] 可选的标题文字
 
-```html
+```vue
+<!-- ↑ 你也可以使用 html -->
 <template>
   <!-- vue 模板 -->
 </template>
@@ -112,15 +123,20 @@ json 块是可选的。
 语法:
 
 ````md
-::: demo react
+::: demo [react] 可选的标题文字
 
 ```js
 export default class App extends React.Component {
   // react 组件
 }
-App.__style__ = `
-  your styles
-`;
+```
+
+```css
+/* 你的 css 内容 */
+```
+
+```json
+// 配置 (可选)
 ```
 
 :::
@@ -158,82 +174,88 @@ module.exports = {
 我们还进行了增强: 如果你导入 Babel，则将使用 babel 将脚本解析为 es6，以确保能在浏览器上正常运行。
 :::
 
-### 预处理器
+### 可用的语言
 
-您可以在演示块中配置预处理器。但是，在运行时仅支持 JS 预处理器 `'babel'`(你还需要手动导入 babel 独立库)。
+您可以在演示块中使用不同语言。
 
-当您设置其他预处理器时，由于插件无法解析它们，因此演示将被禁用，您只能看到代码。插件将为您提供一个 "在 CodePen 中打开" 按钮。
+当您设置其他语言时，由于插件无法解析它们，因此演示将被禁用，您只能看到代码。插件将为您提供一个 "在 CodePen 中打开" 按钮允许你直接在 CodePen 打开代码。
 
-HTML 预处理器:
+可用的 HTML 语言:
 
-- `"none"` (默认)
+- `"html"` (默认)
 - `"slim"`
 - `"haml"`
 - `"markdown"`
 
-JS 预处理器:
+> 你也可以在代码块中使用 `md`。
 
-- `"none"` (默认)
+可用的 JS 语言:
+
+- `"javascript"` (default)
 - `"coffeescript"`
 - `"babel"`
 - `"livescript"`
 - `"typescript"`
 
-CSS 预处理器:
+> 你也可以在代码块中使用 `js`, `ts`, `coffee` 和 `ls`。
 
-- `"none"` (默认)
+可用的 CSS 语言:
+
+- `"css"` (default)
 - `"less"`
 - `"scss"`
 - `"sass"`
 - `"stylus"`
 
+> 你也可以在代码块中使用 `styl`。
+
 ## 演示
 
-::: demo
+::: demo 一个普通 Demo
 
 ```html
-<html>
   <h1>Mr.Hope</h1>
-  <p>Is <span id="very">十分</span> 帅</p>
-</html>
-<script>
-  document.querySelector("#very").addEventListener("click", () => {
-    alert("十分帅！");
-  });
-</script>
-<style>
-  span {
-    color: red;
-  }
-</style>
+  <p><span id="very">十分</span> 帅</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("十分帅");
+});
+```
+
+```css
+span {
+  color: red;
+}
 ```
 
 :::
 
 ````md
-::: demo
+::: demo 一个普通 Demo
 
 ```html
-<html>
   <h1>Mr.Hope</h1>
-  <p>Is <span id="very">十分</span> 帅</p>
-</html>
-<script>
-  document.querySelector("#very").addEventListener("click", () => {
-    alert("十分帅！");
-  });
-</script>
-<style>
-  span {
-    color: red;
-  }
-</style>
+  <p><span id="very">十分</span> 帅</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("十分帅");
+});
+```
+
+```css
+span {
+  color: red;
+}
 ```
 
 :::
 ````
 
-::: demo react
+::: demo [react] 一个 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -249,17 +271,18 @@ export default class App extends React.Component {
     );
   }
 }
-App.__style__ = `
+```
+
+```css
 .box-react span {
   color: red;
 }
-`;
 ```
 
 :::
 
 ````md
-::: demo react
+::: demo [react] 一个 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -275,19 +298,20 @@ export default class App extends React.Component {
     );
   }
 }
-App.__style__ = `
+```
+
+```css
 .box-react span {
   color: red;
 }
-`;
 ```
 
 :::
 ````
 
-::: demo vue
+::: demo [vue] 一个 Vue Demo
 
-```html
+```vue
 <template>
   <div class="box-vue">Mr.Hope <span>{{ message }}</span></div>
 </template>
@@ -306,9 +330,9 @@ App.__style__ = `
 :::
 
 ````md
-::: demo vue
+::: demo [vue] 一个 Vue Demo
 
-```html
+```vue
 <template>
   <div class="box-vue">Mr.Hope <span>{{ message }}</span></div>
 </template>
@@ -327,68 +351,54 @@ App.__style__ = `
 :::
 ````
 
-::: demo
+::: demo 一个普通 Demo
 
-```html
-<html>
+```md
 # 标题
 
-十分帅！
-</html>
-<script>
-  const message: string = "Mr.Hope";
-
-  document.querySelector("h1").innerHTML = message;
-</script>
-<style>
-  h1 {
-    font-style: italic;
-
-    + p {
-      color: red;
-    }
-  }
-</style>
+十分帅
 ```
 
-```json
-{
-  "html": "markdown",
-  "js": "typescript",
-  "css": "scss"
+```ts
+const message: string = "Mr.Hope";
+
+document.querySelector("h1").innerHTML = message;
+```
+
+```scss
+h1 {
+  font-style: italic;
+
+  + p {
+    color: red;
+  }
 }
 ```
 
 :::
 
 ````md
-::: demo
+::: demo 一个普通 Demo
 
-```html
-<html>
-  # 标题 十分帅！
-</html>
-<script>
-  const message: string = "Mr.Hope";
+```md
+# 标题
 
-  document.querySelector("h1").innerHTML = message;
-</script>
-<style>
-  h1 {
-    font-style: italic;
-
-    + p {
-      color: red;
-    }
-  }
-</style>
+十分帅
 ```
 
-```json
-{
-  "html": "markdown",
-  "js": "typescript",
-  "css": "scss"
+```ts
+const message: string = "Mr.Hope";
+
+document.querySelector("h1").innerHTML = message;
+```
+
+```scss
+h1 {
+  font-style: italic;
+
+  + p {
+    color: red;
+  }
 }
 ```
 

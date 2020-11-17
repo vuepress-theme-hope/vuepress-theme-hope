@@ -27,14 +27,16 @@ module.exports = {
 You should use the following syntax:
 
 ````md
-::: demo [type]
+::: demo [type] Optional title text
 
 ```html
-<!-- ↑ js for react -->
+<!-- ↑ use available ones -->
 <!-- your code here -->
+<!-- you can have mutiple code block -->
 ```
 
 ```json
+// json block is for config
 {
   // your config here (optional)
 }
@@ -49,31 +51,39 @@ The json block is optional.
 
 The plugin support three types:
 
-- vanilla (default)
+- normal (default)
 - vue
 - react
 
-### Vanilla
+### Normal
 
 Syntax:
 
 ````md
-::: demo
+::: demo Optional title text
 
 ```html
-<html>
-  <!-- html code -->
-</html>
-<script>
-  // js code
-</script>
-<style>
-  /* css code */
-</style>
+<!-- html code -->
+```
+
+```js
+// js code
+```
+
+```css
+/* css code */
 ```
 
 ```json
 // config (optional)
+{
+  "jsLib": [
+    ...
+  ],
+  "cssLib":[
+    ...
+  ]
+}
 ```
 
 ::::
@@ -84,19 +94,20 @@ Syntax:
 Syntax:
 
 ````md
-::: demo vue
+::: demo [vue] Optional title text
 
-```html
+```vue
+<!-- ↑ you can also use html-->
 <template>
   <!-- vue template -->
 </template>
 <script>
-  export default {
-    // vue component
-  };
+export default {
+  // vue component
+};
 </script>
 <style>
-  /* style */
+/* style */
 </style>
 ```
 
@@ -112,15 +123,20 @@ Syntax:
 Syntax:
 
 ````md
-::: demo react
+::: demo [react] Optional title text
 
 ```js
 export default class App extends React.Component {
   // your react component
 }
-App.__style__ = `
-  your styles
-`;
+```
+
+```css
+/* your css content */
+```
+
+```json
+// config (optional)
 ```
 
 :::
@@ -158,82 +174,88 @@ module.exports = {
 We also make an enhance: If you import Babel, then Vue and Vanilla script will be parsed to es6 using babel.
 :::
 
-### PreProcessor
+### Available languages
 
-You can config preprocessor in your demo block. But only jsPreprocessor `'babel'` is supported at runtime when you import babel standalone library.
+You can use different language in your demo block.
 
-When you set other proprocessor, since the plugin is not able to resolve them, demo display will be disabled, and only codes can be seen. And the plugin will provide you a button to open it in CodePen.
+When you set another language, since the plugin is not able to resolve them, demo display will be disabled, and only codes can be seen. And the plugin will provide you a button to open it in CodePen.
 
-HTML preprocessors:
+Available HTML languages:
 
-- `"none"` (default)
+- `"html"` (default)
 - `"slim"`
 - `"haml"`
 - `"markdown"`
 
-JS preprocessors:
+> You can also use `md` in code block.
 
-- `"none"` (default)
+Available JS languages:
+
+- `"javascript"` (default)
 - `"coffeescript"`
 - `"babel"`
 - `"livescript"`
 - `"typescript"`
 
-CSS preprocessors:
+> You can also use `js`, `ts`, `coffee` and `ls` in code block.
 
-- `"none"` (default)
+Available CSS languages:
+
+- `"css"` (default)
 - `"less"`
 - `"scss"`
 - `"sass"`
 - `"stylus"`
 
+> You can also use `styl` in code block.
+
 ## Demo
 
-::: demo
+::: demo A normal demo
 
 ```html
-<html>
-  <h1>Mr.Hope</h1>
-  <p>Is <span id="very">very</span> handsome</p>
-</html>
-<script>
-  document.querySelector("#very").addEventListener("click", () => {
-    alert("Very handsome!");
-  });
-</script>
-<style>
-  span {
-    color: red;
-  }
-</style>
+<h1>Mr.Hope</h1>
+<p>Is <span id="very">very</span> handsome</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("Very handsome!");
+});
+```
+
+```css
+span {
+  color: red;
+}
 ```
 
 :::
 
 ````md
-::: demo
+::: demo A normal demo
 
 ```html
-<html>
-  <h1>Mr.Hope</h1>
-  <p>Is <span id="very">very</span> handsome</p>
-</html>
-<script>
-  document.querySelector("#very").addEventListener("click", () => {
-    alert("Very handsome!");
-  });
-</script>
-<style>
-  span {
-    color: red;
-  }
-</style>
+<h1>Mr.Hope</h1>
+<p>Is <span id="very">very</span> handsome</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("Very handsome!");
+});
+```
+
+```css
+span {
+  color: red;
+}
 ```
 
 :::
 ````
 
-::: demo react
+::: demo [react] A react demo
 
 ```js
 export default class App extends React.Component {
@@ -249,17 +271,18 @@ export default class App extends React.Component {
     );
   }
 }
-App.__style__ = `
+```
+
+```css
 .box-react span {
   color: red;
 }
-`;
 ```
 
 :::
 
 ````md
-::: demo react
+::: demo [react] A react demo
 
 ```js
 export default class App extends React.Component {
@@ -275,118 +298,111 @@ export default class App extends React.Component {
     );
   }
 }
-App.__style__ = `
+```
+
+```css
 .box-react span {
   color: red;
 }
-`;
 ```
 
 :::
 ````
 
-::: demo vue
+::: demo [vue] A vue demo
 
-```html
+```vue
 <template>
-  <div class="box-vue">Mr.Hope is <span>{{ message }}</span></div>
+  <div class="box-vue">
+    Mr.Hope is <span>{{ message }}</span>
+  </div>
 </template>
 <script>
-  export default {
-    data: () => ({ message: "very handsome" }),
-  };
+export default {
+  data: () => ({ message: "very handsome" }),
+};
 </script>
 <style>
-  .box-vue span {
-    color: red;
-  }
+.box-vue span {
+  color: red;
+}
 </style>
 ```
 
 :::
 
 ````md
-::: demo vue
+::: demo [vue] A vue demo
 
-```html
+```vue
 <template>
-  <div class="box-vue">Mr.Hope is <span>{{ message }}</span></div>
+  <div class="box-vue">
+    Mr.Hope is <span>{{ message }}</span>
+  </div>
 </template>
 <script>
-  export default {
-    data: () => ({ message: "very handsome" }),
-  };
+export default {
+  data: () => ({ message: "very handsome" }),
+};
 </script>
 <style>
-  .box-vue span {
-    color: red;
-  }
+.box-vue span {
+  color: red;
+}
 </style>
 ```
 
 :::
 ````
 
-::: demo
+::: demo A normal demo
 
-```html
-<html>
-  # Title is very handsome.
-</html>
-<script>
-  const message: string = "Mr.Hope";
+```md
+# Title
 
-  document.querySelector("h1").innerHTML = message;
-</script>
-<style>
-  h1 {
-    font-style: italic;
-
-    + p {
-      color: red;
-    }
-  }
-</style>
+is very handsome.
 ```
 
-```json
-{
-  "html": "markdown",
-  "js": "typescript",
-  "css": "scss"
+```ts
+const message: string = "Mr.Hope";
+
+document.querySelector("h1").innerHTML = message;
+```
+
+```scss
+h1 {
+  font-style: italic;
+
+  + p {
+    color: red;
+  }
 }
 ```
 
 :::
 
 ````md
-::: demo
+::: demo A normal demo
 
-```html
-<html>
-  # Title is very handsome.
-</html>
-<script>
-  const message: string = "Mr.Hope";
+```md
+# Title
 
-  document.querySelector("h1").innerHTML = message;
-</script>
-<style>
-  h1 {
-    font-style: italic;
-
-    + p {
-      color: red;
-    }
-  }
-</style>
+is very handsome.
 ```
 
-```json
-{
-  "html": "markdown",
-  "js": "typescript",
-  "css": "scss"
+```ts
+const message: string = "Mr.Hope";
+
+document.querySelector("h1").innerHTML = message;
+```
+
+```scss
+h1 {
+  font-style: italic;
+
+  + p {
+    color: red;
+  }
 }
 ```
 

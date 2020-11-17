@@ -1,44 +1,6 @@
-import {
-  Code,
-  getCode,
-  getReactCode,
-  getVanillaCode,
-  getVueCode,
-  h,
-  injectCSS,
-  option,
-} from "./utils";
-import { getCodepenButton, getJsfiddleBtn } from "./button";
+import { initDom, select } from "./dom";
+import { getCode, getReactCode, getVanillaCode, getVueCode } from "./utils";
 import { CodeDemoOptions } from "packages/md-enhance/types";
-
-const select = (node: Element | Document, selector: string): HTMLElement[] =>
-  Array.from<HTMLElement>(node.querySelectorAll(`.${selector}`));
-
-const getExpandButton = (): HTMLElement => h("button", { className: "expand" });
-
-const expandHandler = (
-  expandNode: HTMLElement,
-  height: number,
-  codeNode: HTMLElement,
-  footerNode: HTMLElement
-): void => {
-  const toBeExpand = !expandNode.hasAttribute("expanded");
-
-  codeNode.style.height = toBeExpand ? `${height}px` : "0";
-
-  if (toBeExpand) footerNode.classList.add("show-link");
-  else footerNode.classList.remove("show-link");
-
-  if (toBeExpand) expandNode.setAttribute("expanded", "");
-  else expandNode.removeAttribute("expanded");
-};
-
-const actions = (detail: Code, id: string, footer: HTMLElement): void => {
-  if (detail.code.css) injectCSS(detail.code.css, id);
-
-  if (option.jsfiddle) footer.appendChild(getJsfiddleBtn(detail));
-  if (option.codepen) footer.appendChild(getCodepenButton(detail));
-};
 
 export const initDemo = (): void => {
   const containers = select(document, "code-demo-wrapper");
@@ -48,91 +10,49 @@ export const initDemo = (): void => {
       if (!container.hasAttribute("data-inited")) {
         container.style.display = "block";
 
-        const { id } = container;
-        const codeElement = select(container, "code-wrapper")[0];
-        const displayElement = select(container, "display-wrapper")[0];
-        const footerElement = select(container, "code-demo-footer")[0];
-        const appElement = select(displayElement, "code-demo-app")[0];
+        const appElement = select(container, "code-demo-app")[0];
 
-        const code = decodeURIComponent(container.dataset.code || "");
-        const type = decodeURIComponent(container.dataset.type || "");
+        const title = decodeURIComponent(container.dataset.title || "");
+        const type = decodeURIComponent(container.dataset.type || "vanilla");
         const config = JSON.parse(
           decodeURIComponent(container.dataset.config || "{}")
         ) as Partial<CodeDemoOptions>;
-        const { html = "none", js = "none", css = "none" } = config;
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const height = codeElement.querySelector("div")!.clientHeight;
+        const code = JSON.parse(
+          decodeURIComponent(container.dataset.code || "{}")
+        ) as Record<string, string>;
+        const codeType = getCode(code);
 
-        if (
-          html === "none" &&
-          (js === "none" || js === "babel") &&
-          css === "none"
-        ) {
-          const horizontalConfig =
-            typeof config.horizontal === "undefined"
-              ? option.horizontal
-              : config.horizontal;
-          const expandButton = getExpandButton();
+        if (type.includes("react")) {
+          const reactCode = getReactCode(codeType, config);
 
-          expandButton.addEventListener(
-            "click",
-            expandHandler.bind(
-              null,
-              expandButton,
-              height,
-              codeElement,
-              footerElement
-            )
-          );
-
-          footerElement.appendChild(expandButton);
-
-          if (horizontalConfig) {
-            container.classList.add("horizontal");
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            const hCodeNode = codeElement.firstChild!.cloneNode(
-              true
-            ) as HTMLElement;
-
-            hCodeNode.classList.add("code-demo-h-code");
-            displayElement.appendChild(hCodeNode);
+          if (reactCode.script) {
+            window.ReactDOM.render(
+              window.React.createElement(reactCode.script),
+              appElement
+            );
           }
 
-          if (type.includes("react")) {
-            const reactCode = getReactCode(code, config);
+          initDom({ code: reactCode, codeType, config, container, title });
+        } else if (type.includes("vue")) {
+          const vueCode = getVueCode(codeType, config);
 
-            if (reactCode) {
-              window.ReactDOM.render(
-                window.React.createElement(reactCode.code.js),
-                appElement
-              );
-
-              actions(reactCode, id, footerElement);
-            }
-          } else if (type.includes("vue")) {
-            const vueCode = getVueCode(code, config);
+          if (vueCode.script) {
             const component = window.Vue.extend(vueCode.script);
             const app = new component().$mount();
 
             appElement.appendChild(app.$el);
-
-            actions(vueCode, id, footerElement);
-          } else {
-            const vanillaCode = getVanillaCode(code, config);
-
-            appElement.innerHTML = vanillaCode.code.html;
-            // eslint-disable-next-line @typescript-eslint/no-implied-eval
-            new Function(`return (function(){${vanillaCode.script}})()`)();
-
-            actions(vanillaCode, id, footerElement);
           }
-        } else {
-          const codepenCode = getCode(code, config, type);
 
-          displayElement.style.display = "none";
-          codeElement.style.height = `${height}px`;
-          footerElement.appendChild(getCodepenButton(codepenCode));
-          footerElement.style.height = "40px";
+          initDom({ code: vueCode, codeType, config, container, title });
+        } else {
+          const vanillaCode = getVanillaCode(codeType, config);
+
+          if (vanillaCode.script) {
+            appElement.innerHTML = vanillaCode.html;
+            vanillaCode.script();
+          }
+
+          initDom({ code: vanillaCode, codeType, config, container, title });
         }
 
         container.setAttribute("data-inited", "");

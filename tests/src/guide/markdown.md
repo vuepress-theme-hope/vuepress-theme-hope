@@ -80,160 +80,147 @@ $$
 
 ### Demo
 
-::: demo
+::: demo A normal demo
 
 ```html
-<html>
-  <h1>Mr.Hope</h1>
-  <p>Is <span id="very">very</span> handsome</p>
-</html>
+<h1>Mr.Hope</h1>
+<p>Is <span id="very">very</span> handsome</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("Very handsome!");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+::: demo [react] A react demo
+
+```js
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { message: "very handsome" };
+  }
+  render() {
+    return (
+      <div className="box-react">
+        Mr.Hope is <span>{this.state.message}</span>
+      </div>
+    );
+  }
+}
+```
+
+```css
+.box-react span {
+  color: red;
+}
+```
+
+:::
+
+::: demo [vue] A vue demo
+
+```vue
+<template>
+  <div class="box-vue">
+    Mr.Hope is <span>{{ message }}</span>
+  </div>
+</template>
 <script>
-  document.querySelector("#very").addEventListener("click", () => {
-    alert("Very handsome!");
-  });
+export default {
+  data: () => ({ message: "very handsome" }),
+};
 </script>
 <style>
+.box-vue span {
+  color: red;
+}
+</style>
+```
+
+:::
+
+::: demo A normal demo
+
+```md
+# Title
+
+is very handsome.
+```
+
+```ts
+const message: string = "Mr.Hope";
+
+document.querySelector("h1").innerHTML = message;
+```
+
+```scss
+h1 {
+  font-style: italic;
+
+  + p {
+    color: red;
+  }
+}
+```
+
+:::
+
+::: demo [react] A react demo
+
+```ts
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { message: "very handsome" };
+  }
+  render(): void {
+    return (
+      <div className="box-react">
+        Mr.Hope is <span>{this.state.message}</span>
+      </div>
+    );
+  }
+}
+```
+
+```css
+.box-react span {
+  color: red;
+}
+```
+
+:::
+
+::: demo [vue] A vue demo
+
+```vue
+<template>
+  <div class="box-vue">
+    Mr.Hope is <span>{{ message }}</span>
+  </div>
+</template>
+<script lang="ts">
+export default Vue.extend({
+  data: () => ({ message: "very handsome" }),
+});
+</script>
+<style lang="scss">
+.box-vue {
   span {
     color: red;
   }
+}
 </style>
-```
-
-:::
-
-::: demo react
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "very handsome" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope is <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-App.__style__ = `
-.box-react span {
-  color: red;
-}
-`;
-```
-
-:::
-
-::: demo vue
-
-```html
-<template>
-  <div class="box-vue">Mr.Hope is <span>{{ message }}</span></div>
-</template>
-<script>
-  export default {
-    data: () => ({ message: "very handsome" }),
-  };
-</script>
-<style>
-  .box-vue span {
-    color: red;
-  }
-</style>
-```
-
-:::
-
-::: demo
-
-```html
-<html>
-  # Title is very handsome.
-</html>
-<script>
-  const message: string = "Mr.Hope";
-
-  document.querySelector("h1").innerHTML = message;
-</script>
-<style>
-  h1 {
-    font-style: italic;
-
-    + p {
-      color: red;
-    }
-  }
-</style>
-```
-
-```json
-{
-  "html": "markdown",
-  "js": "typescript",
-  "css": "scss"
-}
-```
-
-:::
-
-::: demo react
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "very handsome" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope is <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-App.__style__ = `
-.box-react span {
-  color: red;
-}
-`;
-```
-
-```json
-{
-  "js": "typescript"
-}
-```
-
-:::
-
-::: demo vue
-
-```html
-<template>
-  <div class="box-vue">Mr.Hope is <span>{{ message }}</span></div>
-</template>
-<script lang="ts">
-  export default Vue.extend({
-    data: () => ({ message: "very handsome" }),
-  });
-</script>
-<style lang="scss">
-  .box-vue {
-    span {
-      color: red;
-    }
-  }
-</style>
-```
-
-```json
-{
-  "js": "typescript",
-  "css": "scss"
-}
 ```
 
 :::

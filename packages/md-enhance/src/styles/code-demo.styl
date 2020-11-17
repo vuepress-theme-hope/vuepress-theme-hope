@@ -7,9 +7,6 @@
   &:hover
     box-shadow 0 2px 12px var(--card-shadow-color, rgba(0, 0, 0, 0.15))
 
-  div
-    box-sizing border-box
-
   .display-wrapper
     max-height 400px
     padding 20px
@@ -17,28 +14,51 @@
     overflow auto
 
   .code-demo-app
-    @media (max-width 1000px)
+    @media (max-width $MQNarrow)
       margin-left auto !important
       margin-right auto !important
 
   .code-wrapper
     overflow hidden
-    height 0
-    padding 0 !important
-    background-color var(--code-bgcolor, #ecf4fa)
     border-radius 0 !important
     transition height 0.5s
 
-    pre
-      margin 0 !important
+    > div
+      &:first-child pre
+        margin-top 0 !important
+
+      &:last-child pre
+        margin-bottom 0 !important
+
+      &.language-json
+        display none
+
+      .copy-code-button
+        top 0.8em
+        right 3.5em
+        bottom unset
+        width 14px
+        height 15px
+        padding 0
+        font-size 0.75rem
+        background-color transparent
+
+        svg
+          color rgba(0, 0, 0, 0.3)
+
+          .theme-dark &
+            color rgba(255, 255, 255, 0.4)
+
+    .line-numbers-mode::after
+      border-radius 0
 
   .code-demo-h-code
-    @media (max-width 1000px)
+    @media (max-width $MQNarrow)
       display none
 
   .code-demo-footer
     position relative
-    text-align center
+    text-align left
 
     &.show-link
       .code-demo-jsfiddle, .code-demo-codepen
@@ -50,22 +70,60 @@
         border-bottom 6px solid #ccc
         border-left 6px solid transparent
 
-    form:nth-last-child(2)
-      right 50px
+    .expand
+      position relative
+      width 60px
+      height 40px
+      margin 0
+      color var(--accent-color, $accentColor)
+      font-size 14px
+      background-color transparent
+      border-color transparent
+      outline none
+      transition all 0.5s
+      cursor pointer
 
-    form:last-child
-      right 10px
+      &::before
+        content ' '
+        position absolute
+        top 50%
+        left 50%
+        width 0
+        height 0
+        border-top 6px solid var(--grey12, #bbb)
+        border-right 6px solid transparent
+        border-left 6px solid transparent
+        transform translate(-50%, -50%)
+
+      &:hover
+        opacity 1
+
+        &::before
+          border-top-color var(--accent-color, $accentColor)
+          border-bottom-color var(--accent-color, $accentColor)
+
+    .title
+      display inline-block
+      vertical-align top
+      line-height 40px
+
+    .code-demo-jsfiddle, .code-demo-codepen
+      float right
+      margin 8px 4px
+
+      &:hover
+        opacity 1
 
     .button
+      position relative
+      margin 0
+      padding 0
       border-color transparent
       background-color transparent
-      font-size 14px
       color #3eaf7c
+      font-size 14px
       cursor pointer
       outline none
-      margin 0
-      width 46px
-      position relative
 
       &:hover
         &::before
@@ -97,49 +155,9 @@
           fill var(--accent-color, $accentColor)
 
       svg
-        width 34px
-        height 20px
-        fill #ccc
-
-    .code-demo-jsfiddle, .code-demo-codepen
-      position absolute
-      top 10px
-      transition all 0.5s
-
-      &:hover
-        opacity 1
-
-    .expand
-      position relative
-      width 100px
-      height 40px
-      margin 0
-      color var(--accent-color, $accentColor)
-      font-size 14px
-      background-color transparent
-      border-color transparent
-      outline none
-      transition all 0.5s
-      cursor pointer
-
-      &::before
-        content ''
-        position absolute
-        top 50%
-        left 50%
-        width 0
-        height 0
-        border-top 6px solid var(--grey12, #bbb)
-        border-right 6px solid transparent
-        border-left 6px solid transparent
-        transform translate(-50%, -50%)
-
-      &:hover
-        opacity 1
-
-        &::before
-          border-top-color var(--accent-color, $accentColor)
-          border-bottom-color var(--accent-color, $accentColor)
+        width 1.25rem
+        height 1.25rem
+        fill var(--grey12, #bbb)
 
   &.horizontal
     .display-wrapper

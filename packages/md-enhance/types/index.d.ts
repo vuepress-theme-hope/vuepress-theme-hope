@@ -75,33 +75,10 @@ export interface CodeDemoGlobalOptions {
   reactDOM: string;
 }
 
-export interface CodeDemoOptions
-  extends Omit<CodeDemoGlobalOptions, "vue" | "react" | "reactDOM"> {
-  /**
-   * CodePen HTML 预处理器
-   *
-   * CodePen HTML PreProcessor
-   *
-   * @default "none"
-   */
-  html: "none" | "slim" | "haml" | "markdown";
-  /**
-   * CodePen JS 预处理器
-   *
-   * CodePen JS PreProcessor
-   *
-   * @default "none"
-   */
-  js: "none" | "coffeescript" | "babel" | "livescript" | "typescript";
-  /**
-   * CodePen CSS 预处理器
-   *
-   * CodePen CSS PreProcessor
-   *
-   * @default "none"
-   */
-  css: "none" | "less" | "scss" | "sass" | "stylus";
-}
+export type CodeDemoOptions = Omit<
+  CodeDemoGlobalOptions,
+  "vue" | "react" | "reactDOM"
+>;
 
 export type RevealPlugin =
   | "highlight"

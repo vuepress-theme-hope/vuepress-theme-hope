@@ -3,7 +3,8 @@ import Token = require("markdown-it/lib/token");
 
 export const codeDemoRender = (tokens: Token[], idx: number): string => {
   const { nesting, info } = tokens[idx];
-
+  const type = /\[(.*)\]/u.exec(info);
+  const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
   if (nesting === -1)
     return `
             </div>
@@ -11,27 +12,29 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
           </div>
           `;
 
-  let codeStr = "";
-  let configStr = "";
+  let config = "";
+  const code: Record<string, string> = {};
 
   for (let i = idx; i < tokens.length; i++) {
     const { type, content, info } = tokens[i];
     if (type === "container_demo_close") break;
     if (!content) continue;
     if (type === "fence") {
-      if (info === "json") configStr = encodeURIComponent(content);
-      else codeStr = encodeURIComponent(content);
+      if (info === "json") config = encodeURIComponent(content);
+      else code[info] = content;
     }
   }
 
   return `
           <div
-            id="code-demo-${hash(codeStr)}"
+            id="code-demo-${hash(code)}"
             class="code-demo-wrapper"
             style="display: none;"
-            data-config="${configStr}"
-            data-type="${info}"
-            data-code="${codeStr}">
+  ${type ? `data-type="${encodeURIComponent(type[1])}"` : ""}
+ ${title ? `data-title="${encodeURIComponent(title[1])}"` : ""}
+${config ? `data-config="${config}"` : ""}
+            data-code="${encodeURIComponent(JSON.stringify(code))}"
+          >
               <div class="display-wrapper">
                 <div class="code-demo-app" />
               </div>
@@ -42,8 +45,6 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
 export const codeDemoDefaultSetting = {
   jsLib: [],
   cssLib: [],
-  jsfiddle: true,
-  codepen: true,
   codepenLayout: "left",
   codepenJsProcessor: "babel",
   codepenEditors: "101",

@@ -1,12 +1,44 @@
-import { CodepenCode, Code, h, option } from "./utils";
+import {
+  CodeType,
+  Code,
+  ReactCode,
+  VueCode,
+  VanillaCode,
+  h,
+  injectCSS,
+  option,
+} from "./utils";
+import { CodeDemoOptions } from "packages/md-enhance/types";
 
-export const getCodepenButton = <T extends Code & Partial<CodepenCode> = Code>({
-  code: { css },
-  template: { html, js },
-  jsLib,
-  cssLib,
-  preprocessor,
-}: T): HTMLElement =>
+export const select = (
+  node: Element | Document,
+  selector: string
+): HTMLElement[] =>
+  Array.from<HTMLElement>(node.querySelectorAll(`.${selector}`));
+
+const expandHandler = (
+  expandNode: HTMLElement,
+  codeNode: HTMLElement,
+  height: number,
+  footerNode: HTMLElement
+): void => {
+  const toBeExpand = !expandNode.hasAttribute("expanded");
+
+  codeNode.style.height = toBeExpand ? `${height}px` : "0";
+
+  if (toBeExpand) {
+    footerNode.classList.add("show-link");
+    expandNode.setAttribute("expanded", "");
+  } else {
+    footerNode.classList.remove("show-link");
+    expandNode.removeAttribute("expanded");
+  }
+};
+
+const getCodepenButton = (
+  { html, js, css, jsLib, cssLib }: Code,
+  codeType?: CodeType
+): HTMLElement =>
   h(
     "form",
     {
@@ -20,20 +52,20 @@ export const getCodepenButton = <T extends Code & Partial<CodepenCode> = Code>({
         type: "hidden",
         name: "data",
         value: JSON.stringify({
-          css,
           html,
           js,
+          css,
           // eslint-disable-next-line @typescript-eslint/naming-convention
           js_external: [...jsLib, ...option.jsLib].join(";"),
           // eslint-disable-next-line @typescript-eslint/naming-convention
           css_external: [...cssLib, ...option.cssLib].join(";"),
           layout: option.codepenLayout,
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          html_pre_processor: preprocessor ? preprocessor.html : "none",
+          html_pre_processor: codeType ? codeType.html[1] : "none",
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          js_pre_processor: preprocessor ? preprocessor.js : "none",
+          js_pre_processor: codeType ? codeType.js[1] : "none",
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          css_pre_processor: preprocessor ? preprocessor.css : "none",
+          css_pre_processor: codeType ? codeType.css[1] : "none",
           editors: option.editors,
         }),
       }),
@@ -47,12 +79,7 @@ export const getCodepenButton = <T extends Code & Partial<CodepenCode> = Code>({
     ]
   );
 
-export const getJsfiddleBtn = ({
-  code: { css },
-  template: { html, js },
-  jsLib,
-  cssLib,
-}: Code): HTMLElement =>
+const getJsfiddleBtn = ({ html, js, css, jsLib, cssLib }: Code): HTMLElement =>
   h(
     "form",
     {
@@ -83,3 +110,70 @@ export const getJsfiddleBtn = ({
       }),
     ]
   );
+
+export interface ActionOption {
+  container: HTMLElement;
+  code: VueCode | VanillaCode | ReactCode;
+  config: Partial<CodeDemoOptions>;
+  codeType: CodeType;
+  title: string;
+}
+
+export const initDom = ({
+  code,
+  codeType,
+  config,
+  container,
+  title,
+}: ActionOption): void => {
+  const { id } = container;
+  const display = select(container, "display-wrapper")[0];
+  const codeBlock = select(container, "code-wrapper")[0];
+  const footer = select(container, "code-demo-footer")[0];
+
+  if (code.script) {
+    const horizontalConfig =
+      typeof config.horizontal === "undefined"
+        ? option.horizontal
+        : config.horizontal;
+
+    const expandButton = h("button", { className: "expand" });
+
+    footer.appendChild(expandButton);
+    footer.appendChild(h("span", { className: "title", innerHTML: title }));
+
+    codeBlock.style.height = "";
+
+    expandButton.addEventListener(
+      "click",
+      expandHandler.bind(
+        null,
+        expandButton,
+        codeBlock,
+        codeBlock.clientHeight,
+        footer
+      )
+    );
+
+    codeBlock.style.height = "0";
+
+    if (horizontalConfig) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const hCodeNode = codeBlock.firstChild!.cloneNode(true) as HTMLElement;
+
+      container.classList.add("horizontal");
+      hCodeNode.classList.add("code-demo-h-code");
+      display.appendChild(hCodeNode);
+    }
+
+    if (code.css) injectCSS(code.css, id);
+
+    if (option.jsfiddle !== false) footer.appendChild(getJsfiddleBtn(code));
+    if (option.codepen !== false) footer.appendChild(getCodepenButton(code));
+  } else {
+    display.style.display = "none";
+    codeBlock.style.height = "auto";
+    footer.appendChild(getCodepenButton(code, codeType));
+    footer.style.height = "40px";
+  }
+};
