@@ -1,6 +1,6 @@
 ---
 title: 页面配置
-icon: configuration
+icon: config
 category: config
 tags:
   - config

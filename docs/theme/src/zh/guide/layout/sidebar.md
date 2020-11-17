@@ -209,13 +209,13 @@ module.exports = {
       "/zh/guide/": [
         {
           title: "快速上手",
-          icon: "creativefill",
+          icon: "creative",
           collapsable: false,
           children: ["", "install"],
         },
         {
           title: "新增功能",
-          icon: "discoverfill",
+          icon: "discover",
           prefix: "feature/",
           collapsable: false,
           children: [

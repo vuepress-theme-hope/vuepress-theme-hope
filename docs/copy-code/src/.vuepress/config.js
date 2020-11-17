@@ -22,15 +22,15 @@ module.exports = config({
     iconPrefix: "vuepress-",
 
     nav: [
-      { text: "Home", icon: "homefill", link: "/" },
+      { text: "Home", icon: "home", link: "/" },
       {
         text: "Guide",
-        icon: "creativefill",
+        icon: "creative",
         link: "/guide/",
       },
       {
         text: "Config",
-        icon: "configuration",
+        icon: "config",
         link: "/config/",
       },
     ],
@@ -53,15 +53,15 @@ module.exports = config({
     locales: {
       "/zh/": {
         nav: [
-          { text: "主页", icon: "homefill", link: "/zh/" },
+          { text: "主页", icon: "home", link: "/zh/" },
           {
             text: "指南",
-            icon: "creativefill",
+            icon: "creative",
             link: "/zh/guide/",
           },
           {
             text: "配置",
-            icon: "configuration",
+            icon: "config",
             link: "/zh/config/",
           },
         ],

@@ -22,4 +22,6 @@ If you don’t need them and want to reduce your site size, you can remove them 
 
 - [$\TeX$ Syntax](tex.md)
 
+- [Code demo](demo.md)
+
 - [Presentation](presentation.md)

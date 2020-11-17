@@ -1,6 +1,6 @@
 ---
 title: 指南
-icon: creativefill
+icon: creative
 ---
 
 ## 内容缓存和更新

@@ -1,6 +1,6 @@
 ---
 title: 演示
-icon: creativefill
+icon: creative
 ---
 
 ![Logo1](/logo.png)

@@ -1,5 +1,5 @@
 ---
-icon: writefill
+icon: write
 ---
 
 # 标记

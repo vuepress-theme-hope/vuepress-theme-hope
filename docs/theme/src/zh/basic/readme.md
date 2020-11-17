@@ -1,5 +1,5 @@
 ---
-icon: infofill
+icon: info
 ---
 
 # 基础知识

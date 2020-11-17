@@ -1,5 +1,5 @@
 ---
-icon: creativefill
+icon: creative
 ---
 
 # Guide

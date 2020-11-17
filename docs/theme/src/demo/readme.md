@@ -1,6 +1,6 @@
 ---
 title: Demos
-icon: discoverfill
+icon: discover
 category: demo
 ---
 

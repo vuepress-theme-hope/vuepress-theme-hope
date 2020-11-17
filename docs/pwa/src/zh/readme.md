@@ -1,7 +1,7 @@
 ---
 home: true
 title: "@mr-hope/vuepress-plugin-pwa"
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-pwa"
 tagline: 一个强大的 PWA 插件

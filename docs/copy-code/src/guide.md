@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creativefill
+icon: creative
 ---
 
 ## Usage

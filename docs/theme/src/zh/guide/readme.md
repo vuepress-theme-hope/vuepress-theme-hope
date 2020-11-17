@@ -1,5 +1,5 @@
 ---
-icon: infofill
+icon: info
 category: instruction
 tags: intro
 ---

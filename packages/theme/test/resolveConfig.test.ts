@@ -29,12 +29,12 @@ describe("Test resolveTheme function", () => {
 
       /** 头部导航栏的配置 */
       nav: [
-        { text: "主页", link: "/", icon: "homefill" },
-        { text: "指南", link: "/guide/", icon: "creativefill" },
+        { text: "主页", link: "/", icon: "home" },
+        { text: "指南", link: "/guide/", icon: "creative" },
         { text: "配置", link: "/config/", icon: "code" },
         {
           text: "基础",
-          icon: "infofill",
+          icon: "info",
           items: [
             { text: "Markdown", link: "/basic/markdown/", icon: "markdown" },
             { text: "Vuepress", link: "/basic/vuepress/", icon: "vue" },
@@ -57,12 +57,12 @@ describe("Test resolveTheme function", () => {
           },
           {
             title: "外观",
-            icon: "skinfill",
+            icon: "skin",
             children: ["navbar", "sidebar", "breadcrumb", "page"],
           },
           {
             title: "新增功能",
-            icon: "skinfill",
+            icon: "skin",
             children: ["themecolor", "fullscreen", "comment", "component"],
           },
           {
@@ -137,12 +137,12 @@ describe("Test resolveTheme function", () => {
         "/en/": {
           /** 该语言下头部导航栏的配置 */
           nav: [
-            { text: "Home", link: "/en/", icon: "homefill" },
-            { text: "Guide", link: "/en/guide/", icon: "creativefill" },
+            { text: "Home", link: "/en/", icon: "home" },
+            { text: "Guide", link: "/en/guide/", icon: "creative" },
             { text: "Config", link: "/en/config/", icon: "code" },
             {
               text: "Basic",
-              icon: "infofill",
+              icon: "info",
               items: [
                 {
                   text: "Markdown",
@@ -169,12 +169,12 @@ describe("Test resolveTheme function", () => {
               },
               {
                 title: "Outlook",
-                icon: "skinfill",
+                icon: "skin",
                 children: ["navbar", "sidebar", "breadcrumb", "page"],
               },
               {
                 title: "New Feature",
-                icon: "skinfill",
+                icon: "skin",
                 children: ["themecolor", "fullscreen", "comment", "component"],
               },
               {

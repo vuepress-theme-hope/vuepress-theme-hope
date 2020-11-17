@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creativefill
+icon: creative
 ---
 
 ## Content Cache and update

@@ -1,6 +1,6 @@
 ---
 title: 项目案例
-icon: discoverfill
+icon: discover
 category: demo
 ---
 

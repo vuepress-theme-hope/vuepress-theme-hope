@@ -21,8 +21,8 @@ tags:
 module.exports = {
   themeConfig: {
     nav: [
-      { text: "主页", link: "/", icon: "homefill" },
-      { text: "VuePress介绍", link: "/vuepress/", icon: "infofill" },
+      { text: "主页", link: "/", icon: "home" },
+      { text: "VuePress介绍", link: "/vuepress/", icon: "info" },
       { text: "Markdown介绍", link: "/markdown/", icon: "markdown" },
     ],
   },
@@ -85,7 +85,7 @@ module.exports = {
     nav: [
       {
         text: "基础",
-        icon: "infofill",
+        icon: "info",
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown", icon: "markdown" },
@@ -256,12 +256,12 @@ module.exports = {
   themeConfig: {
     nav: [
       // 可在每一项中添加 icon 字段来显示图标
-      { text: "主页", link: "/zh/", icon: "homefill" },
-      { text: "指南", link: "/zh/guide/", icon: "creativefill" },
+      { text: "主页", link: "/zh/", icon: "home" },
+      { text: "指南", link: "/zh/guide/", icon: "creative" },
       { text: "配置", link: "/zh/config/", icon: "code" },
       {
         text: "基础",
-        icon: "infofill",
+        icon: "info",
         prefix: "/zh/basic/",
         items: [
           { text: "Markdown", link: "markdown", icon: "markdown" },

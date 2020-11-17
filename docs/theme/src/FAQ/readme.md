@@ -1,5 +1,5 @@
 ---
-icon: questionfill
+icon: question
 category: FAQ
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Config
-icon: configuration
+icon: config
 category: config
 tags:
   - config

@@ -1,6 +1,6 @@
 ---
 title: 配置
-icon: configuration
+icon: config
 ---
 
 ## pubid

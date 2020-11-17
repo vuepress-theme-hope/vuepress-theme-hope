@@ -1,6 +1,6 @@
 ---
 title: 主题布局配置
-icon: configuration
+icon: config
 category: config
 tags:
   - themeConfig

@@ -22,4 +22,6 @@ icon: markdown
 
 - [$\TeX$ 语法](tex.md)
 
+- [代码案例](demo.md)
+
 - [幻灯片](presentation.md)

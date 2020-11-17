@@ -1,6 +1,6 @@
 ---
 title: Page Configuration
-icon: configuration
+icon: config
 category: config
 tags:
   - config

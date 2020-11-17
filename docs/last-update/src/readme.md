@@ -1,7 +1,7 @@
 ---
 home: true
 title: "@mr-hope/vuepress-plugin-last-update"
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-last-update"
 tagline: Last update plugin for vuepress

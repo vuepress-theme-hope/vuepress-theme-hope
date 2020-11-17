@@ -1,7 +1,7 @@
 ---
 home: true
 title: "@mr-hope/vuepress-plugin-copy-code"
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-copy-code"
 tagline: Code Copy plugin for vuepress

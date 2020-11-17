@@ -1,6 +1,6 @@
 ---
 title: VuePress 案例
-icon: discoverfill
+icon: discover
 category: basic
 tags:
   - vuepress

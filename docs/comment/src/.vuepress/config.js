@@ -13,14 +13,14 @@ module.exports = config({
     logo: "/logo.svg",
 
     nav: [
-      { text: "Home", icon: "homefill", link: "/" },
+      { text: "Home", icon: "home", link: "/" },
       {
         text: "Guide",
-        icon: "creativefill",
+        icon: "creative",
         items: [
           {
             text: "Page Info",
-            icon: "infofill",
+            icon: "info",
             link: "/guide/page-info/",
           },
           { text: "Valine", icon: "valine", link: "/guide/valine/" },
@@ -29,9 +29,9 @@ module.exports = config({
       },
       {
         text: "Config",
-        icon: "configuration",
+        icon: "config",
         items: [
-          { text: "Config", icon: "configuration", link: "/config/" },
+          { text: "Config", icon: "config", link: "/config/" },
           {
             text: "Valine",
             icon: "valine",
@@ -91,14 +91,14 @@ module.exports = config({
     locales: {
       "/zh/": {
         nav: [
-          { text: "主页", icon: "homefill", link: "/zh/" },
+          { text: "主页", icon: "home", link: "/zh/" },
           {
             text: "指南",
-            icon: "creativefill",
+            icon: "creative",
             items: [
               {
                 text: "页面信息",
-                icon: "infofill",
+                icon: "info",
                 link: "/zh/guide/page-info/",
               },
               { text: "Valine", icon: "valine", link: "/zh/guide/valine/" },
@@ -107,9 +107,9 @@ module.exports = config({
           },
           {
             text: "配置",
-            icon: "configuration",
+            icon: "config",
             items: [
-              { text: "配置", icon: "configuration", link: "/zh/config/" },
+              { text: "配置", icon: "config", link: "/zh/config/" },
               { text: "Valine", icon: "valine", link: "/zh/config/valine/" },
               { text: "Vssue", icon: "vssue", link: "/zh/config/vssue/" },
             ],

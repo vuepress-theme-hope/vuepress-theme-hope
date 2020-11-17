@@ -23,8 +23,8 @@ The basic configuration items are `text` navigation bar text, `link` navigation 
 module.exports = {
   themeConfig: {
     nav: [
-      { text: "Home", link: "/", icon: "homefill" },
-      { text: "Guide", link: "/guide/", icon: "infofill" },
+      { text: "Home", link: "/", icon: "home" },
+      { text: "Guide", link: "/guide/", icon: "info" },
       { text: "External", link: "https://google.com", icon: "markdown" },
     ],
   },
@@ -87,7 +87,7 @@ module.exports = {
     nav: [
       {
         text: "Basic",
-        icon: "infofill",
+        icon: "info",
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown", icon: "markdown" },
@@ -262,12 +262,12 @@ module.exports = {
   themeConfig: {
     nav: [
       // add icon field to each item to display icon
-      { text: "Home", link: "/", icon: "homefill" },
-      { text: "Guide", link: "/guide/", icon: "creativefill" },
-      { text: "Config", link: "/config/", icon: "configuration" },
+      { text: "Home", link: "/", icon: "home" },
+      { text: "Guide", link: "/guide/", icon: "creative" },
+      { text: "Config", link: "/config/", icon: "config" },
       {
         text: "Basic",
-        icon: "infofill",
+        icon: "info",
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
@@ -276,7 +276,7 @@ module.exports = {
       },
       {
         text: "Project",
-        icon: "infofill",
+        icon: "info",
         items: [
           {
             text: "Changelog",

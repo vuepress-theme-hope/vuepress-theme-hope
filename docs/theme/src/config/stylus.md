@@ -1,6 +1,6 @@
 ---
 title: stylus configuration
-icon: skinfill
+icon: skin
 category: config
 tags:
   - config

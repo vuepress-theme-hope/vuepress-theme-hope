@@ -1,6 +1,6 @@
 ---
 title: Theme Config
-icon: configuration
+icon: config
 category: config
 tags:
   - themeConfig

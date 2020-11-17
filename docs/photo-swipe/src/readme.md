@@ -1,7 +1,7 @@
 ---
 home: true
 title: vuepress-plugin-photo-swipe
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: Photo swipe plugin for vuepress

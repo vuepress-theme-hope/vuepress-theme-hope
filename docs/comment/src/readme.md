@@ -1,7 +1,7 @@
 ---
 home: true
 title: vuepress-plugin-comment
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-comment
 tagline: Comment and visitors plugin for vuepress

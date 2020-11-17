@@ -1,5 +1,5 @@
 ---
-icon: creativefill
+icon: creative
 ---
 
 # Using Vssue

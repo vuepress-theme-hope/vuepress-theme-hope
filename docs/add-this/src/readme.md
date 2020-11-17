@@ -1,7 +1,7 @@
 ---
 home: true
 title: vuepress-plugin-add-this
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-add-this
 tagline: AddThis plugin for vuepress

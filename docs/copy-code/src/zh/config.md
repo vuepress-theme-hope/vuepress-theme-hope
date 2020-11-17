@@ -1,6 +1,6 @@
 ---
 title: 配置
-icon: configuration
+icon: config
 ---
 
 ## 插件配置

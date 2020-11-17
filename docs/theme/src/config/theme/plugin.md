@@ -1,6 +1,6 @@
 ---
 title: Theme Plugin Config
-icon: configuration
+icon: config
 category: config
 tags:
   - config
@@ -82,6 +82,86 @@ Whether to enable TeX syntax support
 - Default: `false`
 
 Whether to enable flowchart syntax support
+
+### mdEnhance.demo
+
+- Type: `CodeDemoGlobalOptions | boolean`
+- Default: `false`
+
+Whether to enable code demo support.
+
+#### mdEnhance.demo.jsLib
+
+- Type: `string[]`
+- Required: No
+
+CodePen, JsFiddle requires an external JS library for dating.
+
+#### mdEnhance.demo.cssLib
+
+- Type: `string[]`
+- Required: No
+
+CodePen, JsFiddle need an external CSS library for dating.
+
+::: warning
+The above two options are only used by third-party code demo service, you need to import these libraries in `head`.
+:::
+
+#### mdEnhance.demo.jsfiddle
+
+- Type: `boolean`
+- Default value: `true`
+
+Whether to display the JSFiddle button,
+
+#### mdEnhance.demo.codepen
+
+- Type: `boolean`
+- Default value: `true`
+
+Whether to display the CodePen button,
+
+#### mdEnhance.demo.horizo​​ntal
+
+- Type: `boolean`
+- Default value: `false`
+
+Whether to display the code and view window horizontally
+
+#### mdEnhance.demo.codepenLayout
+
+- Type: `"top" | "left" | "correct"`
+- Default value: `"left"`
+
+CodePen editor layout
+
+#### mdEnhance.demo.editors
+
+- Type: `string`
+- Default value: `"101"`
+
+#### mdEnhance.others
+
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, don’t override the default values.
+
+::: warning
+Please note that if you use them, you still need to manually include them in your site using `head`.
+
+React depends on Babel.
+:::
+
+##### mdEnhance.demo.vue
+
+Default value: `"https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"`
+
+##### mdEnhance.demo.react
+
+Default value: `"https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"`
+
+##### mdEnhance.demo.reactDOM
+
+Default value: `"https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"`
 
 ### mdEnhance.presentation
 

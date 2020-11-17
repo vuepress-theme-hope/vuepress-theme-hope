@@ -1,6 +1,6 @@
 ---
 title: 主题配置
-icon: skinfill
+icon: skin
 category: basic
 tags:
   - vuepress

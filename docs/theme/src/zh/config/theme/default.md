@@ -1,6 +1,6 @@
 ---
 title: 默认主题配置
-icon: configuration
+icon: config
 category: config
 tags:
   - config

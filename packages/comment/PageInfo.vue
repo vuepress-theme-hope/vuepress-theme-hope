@@ -86,6 +86,6 @@ $pageInfoTextSize ?= 14px
       height 1em
       margin-right 0.25em
 
-  .theme-default-content:not(.custom) h1:first-child
+  .theme-default-content:not(.custom) > h1:first-child
     display none
 </style>

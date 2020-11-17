@@ -1,3 +1,5 @@
+import { codeDemoRender } from "./markdown-it/code-demo";
+
 import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOptions } from "../types";
 import {
@@ -57,6 +59,9 @@ const pluginConfig = (
       ["container", { type: "right", defaultTitle: "" }],
       ["container", { type: "justify", defaultTitle: "" }]
     );
+
+  if (markdownOption.codeDemo || markdownOption.enableAll)
+    config.push(["container", { type: "demo", render: codeDemoRender }]);
 
   return config;
 };

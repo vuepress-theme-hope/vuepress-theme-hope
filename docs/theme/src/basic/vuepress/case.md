@@ -1,6 +1,6 @@
 ---
 title: VuePress Cases
-icon: discoverfill
+icon: discover
 category: basic
 tags:
   - vuepress

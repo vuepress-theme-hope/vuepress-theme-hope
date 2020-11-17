@@ -1,6 +1,6 @@
 ---
 title: 页面信息
-icon: infofill
+icon: info
 ---
 
 `<PageInfo />` 组件默认全局启用。你可以在特定页面的 `Front Matter` 中设置 `pageInfo: false` 来局部禁用它。

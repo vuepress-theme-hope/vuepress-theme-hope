@@ -2,6 +2,7 @@
 import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 
+import { codeDemoDefaultSetting } from "./markdown-it/code-demo";
 import flowchart from "./markdown-it/flowchart";
 import footnote from "./markdown-it/footnote";
 import katex from "./markdown-it/katex";
@@ -26,6 +27,12 @@ export = (
 
     define: (): Record<string, unknown> => ({
       MARKDOWN_ENHANCE_OPTIONS: markdownOption,
+      CODE_DEMO_OPTIONS: {
+        ...codeDemoDefaultSetting,
+        ...(typeof markdownOption.codeDemo === "boolean"
+          ? {}
+          : markdownOption.codeDemo),
+      },
       REVEAL_PLUGINS:
         typeof markdownOption.presentation === "object" &&
         Array.isArray(markdownOption.presentation.plugins)
@@ -39,6 +46,8 @@ export = (
     }),
 
     enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+
+    clientRootMixin: resolve(__dirname, "../src/clientRootMixin.js"),
 
     chainMarkdown: (md): void => {
       if (markdownOption.lineNumbers !== false)

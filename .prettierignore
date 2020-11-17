@@ -11,3 +11,9 @@ packages/**/*.d.ts
 !packages/**/test/*.js
 !packages/**/types/*.d.ts
 !.vuepress/**
+
+docs/md-enhance/src/guide/demo.md
+docs/md-enhance/src/zh/guide/demo.md
+
+test/src/guide/markdown.md
+test/src/zh/guide/markdown.md

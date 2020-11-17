@@ -1,6 +1,6 @@
 ---
 title: Demo
-icon: creativefill
+icon: creative
 ---
 
 ![Logo1](/logo.png)

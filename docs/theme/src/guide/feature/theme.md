@@ -1,5 +1,5 @@
 ---
-icon: skinfill
+icon: skin
 category: feature
 tags:
   - style

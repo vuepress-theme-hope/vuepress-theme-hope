@@ -1,6 +1,6 @@
 ---
 title: stylus 配置
-icon: configuration
+icon: config
 category: config
 tags:
   - config

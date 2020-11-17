@@ -1,6 +1,6 @@
 ---
 title: config
-icon: configuration
+icon: config
 ---
 
 ## baseLang

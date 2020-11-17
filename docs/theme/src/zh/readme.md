@@ -1,7 +1,7 @@
 ---
 home: true
 title: vuepress-theme-hope
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: 一个具有强大功能的 vuepress 主题✨

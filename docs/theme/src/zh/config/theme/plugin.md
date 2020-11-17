@@ -1,6 +1,6 @@
 ---
 title: 主题插件配置
-icon: configuration
+icon: config
 category: config
 tags:
   - config
@@ -82,6 +82,88 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 - 默认值: `false`
 
 是否启用 流程图 语法支持
+
+### mdEnhance.demo
+
+- 类型: `CodeDemoGlobalOptions | boolean`
+- 默认值: `false`
+
+是否启用代码案例支持。
+
+#### mdEnhance.demo.jsLib
+
+- 类型: `string[]`
+- 必填: 否
+
+CodePen, JsFiddle 需要引入的外部 JS 库。
+
+#### mdEnhance.demo.cssLib
+
+- 类型: `string[]`
+- 必填: 否
+
+CodePen, JsFiddle 需要引入的外部 CSS 库。
+
+::: warning
+上述两个选项仅仅是给第三方代码演示使用的，你需要自行在 `head` 中导入这些库。
+:::
+
+#### mdEnhance.demo.jsfiddle
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否显示 JSFiddle 按钮，
+
+#### mdEnhance.demo.codepen
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否显示 CodePen 按钮，
+
+#### mdEnhance.demo.horizontal
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否水平显示代码和视图窗口
+
+#### mdEnhance.demo.codepenLayout
+
+- 类型: `"top" | "left" | "right"`
+- 默认值: `"left"`
+
+CodePen 编辑器布局
+
+#### mdEnhance.demo.editors
+
+- 类型: `string`
+- 默认值: `"101"`
+
+CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第三位代表演示页面。
+
+#### 其他
+
+以下是第三方代码演示使用的库地址，除非你的环境无法访问 jsdelivr 或访问缓慢，否则无需覆盖默认设置。
+
+::: warning
+请注意，如果你用到了它们，你仍需要利用 `head` 手动在你的网站中导入它们。
+
+React 依赖于 Babel。
+:::
+
+##### mdEnhance.demo.vue
+
+默认值: `"https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"`
+
+##### mdEnhance.demo.react
+
+默认值: `"https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"`
+
+##### mdEnhance.demo.reactDOM
+
+默认值: `"https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"`
 
 ### mdEnhance.presentation
 

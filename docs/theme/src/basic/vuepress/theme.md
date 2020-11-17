@@ -1,6 +1,6 @@
 ---
 title: Theme Config
-icon: skinfill
+icon: skin
 category: basic
 tags:
   - vuepress

@@ -1,6 +1,6 @@
 ---
 title: API Config
-icon: configuration
+icon: config
 ---
 
 ## baseLang

@@ -1,7 +1,7 @@
 ---
 home: true
 title: vuepress-plugin-md-enhance
-icon: homefill
+icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for markdown in VuePress

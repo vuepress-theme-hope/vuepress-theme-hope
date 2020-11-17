@@ -1,6 +1,6 @@
 ---
 home: true
-icon: homefill
+icon: home
 title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope

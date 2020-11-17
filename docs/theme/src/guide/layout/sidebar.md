@@ -209,13 +209,13 @@ module.exports = {
       "/guide/": [
         {
           title: "Get Started",
-          icon: "creativefill",
+          icon: "creative",
           collapsable: false,
           children: ["", "install"],
         },
         {
           title: "New Features",
-          icon: "discoverfill",
+          icon: "discover",
           prefix: "feature/",
           collapsable: false,
           children: [
@@ -258,7 +258,7 @@ module.exports = {
       "/config/": [
         {
           title: "ThemeConfig",
-          icon: "configuration",
+          icon: "config",
           prefix: "theme/",
           collapsable: false,
           children: ["", "default", "feature", "plugin", "apperance"],

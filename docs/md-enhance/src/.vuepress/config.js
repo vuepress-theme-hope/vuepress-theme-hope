@@ -6,6 +6,25 @@ module.exports = config({
 
   dest: "./dist",
 
+  head: [
+    [
+      "script",
+      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
+    ],
+    [
+      "script",
+      {
+        src:
+          "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+      },
+    ],
+    ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
+    [
+      "script",
+      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
+    ],
+  ],
+
   locales: {
     "/zh/": {
       title: "Markdown 增强",
@@ -17,9 +36,9 @@ module.exports = config({
     logo: "/logo.svg",
 
     nav: [
-      { text: "Home", icon: "homefill", link: "/" },
-      { text: "Guide", icon: "creativefill", link: "/guide/" },
-      { text: "Config", icon: "configuration", link: "/config/" },
+      { text: "Home", icon: "home", link: "/" },
+      { text: "Guide", icon: "creative", link: "/guide/" },
+      { text: "Config", icon: "config", link: "/config/" },
     ],
     sidebar: {
       "/guide/": [
@@ -30,6 +49,7 @@ module.exports = config({
         "mark",
         "flowchart",
         "tex",
+        "demo",
         "presentation",
       ],
 
@@ -57,9 +77,9 @@ module.exports = config({
     locales: {
       "/zh/": {
         nav: [
-          { text: "主页", icon: "homefill", link: "/zh/" },
-          { text: "指南", icon: "creativefill", link: "/zh/guide/" },
-          { text: "配置", icon: "configuration", link: "/zh/config/" },
+          { text: "主页", icon: "home", link: "/zh/" },
+          { text: "指南", icon: "creative", link: "/zh/guide/" },
+          { text: "配置", icon: "config", link: "/zh/config/" },
         ],
         sidebar: {
           "/zh/guide/": [
@@ -70,6 +90,7 @@ module.exports = config({
             "mark",
             "flowchart",
             "tex",
+            "demo",
             "presentation",
           ],
 

@@ -1,6 +1,6 @@
 ---
 title: Page information
-icon: infofill
+icon: info
 ---
 
 The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in `Front Matter` of a specific page.

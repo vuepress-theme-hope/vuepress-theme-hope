@@ -3,13 +3,13 @@ module.exports = {
     "/guide/": [
       {
         title: "Get Started",
-        icon: "creativefill",
+        icon: "creative",
         collapsable: false,
         children: ["", "install"],
       },
       {
         title: "New Features",
-        icon: "discoverfill",
+        icon: "discover",
         prefix: "feature/",
         collapsable: false,
         children: [
@@ -33,6 +33,7 @@ module.exports = {
               "mark",
               "tex",
               "flowchart",
+              "demo",
               "presentation",
             ],
           },
@@ -54,7 +55,7 @@ module.exports = {
     "/config/": [
       {
         title: "ThemeConfig",
-        icon: "configuration",
+        icon: "config",
         prefix: "theme/",
         collapsable: false,
         children: ["", "default", "feature", "plugin", "apperance"],
@@ -104,13 +105,13 @@ module.exports = {
     "/zh/guide/": [
       {
         title: "快速上手",
-        icon: "creativefill",
+        icon: "creative",
         collapsable: false,
         children: ["", "install"],
       },
       {
         title: "新增功能",
-        icon: "discoverfill",
+        icon: "discover",
         prefix: "feature/",
         collapsable: false,
         children: [
@@ -134,6 +135,7 @@ module.exports = {
               "mark",
               "tex",
               "flowchart",
+              "demo",
               "presentation",
             ],
           },
@@ -155,7 +157,7 @@ module.exports = {
     "/zh/config/": [
       {
         title: "主题配置",
-        icon: "configuration",
+        icon: "config",
         prefix: "theme/",
         collapsable: false,
         children: ["", "default", "feature", "plugin", "apperance"],

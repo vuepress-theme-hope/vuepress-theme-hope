@@ -1,6 +1,6 @@
 ---
 title: Config
-icon: configuration
+icon: config
 ---
 
 You can pass these options to the plugin:
@@ -74,6 +74,86 @@ Whether to enable $\TeX$ syntax support.
 - Default: `false`
 
 Whether to enable flowchart syntax support.
+
+## demo
+
+- Type: `CodeDemoGlobalOptions | boolean`
+- Default: `false`
+
+Whether to enable code demo support.
+
+### demo.jsLib
+
+- Type: `string[]`
+- Required: No
+
+CodePen, JsFiddle requires an external JS library for dating.
+
+### demo.cssLib
+
+- Type: `string[]`
+- Required: No
+
+CodePen, JsFiddle need an external CSS library for dating.
+
+::: warning
+The above two options are only used by third-party code demo service, you need to import these libraries in `head`.
+:::
+
+### demo.jsfiddle
+
+- Type: `boolean`
+- Default value: `true`
+
+Whether to display the JSFiddle button,
+
+### demo.codepen
+
+- Type: `boolean`
+- Default value: `true`
+
+Whether to display the CodePen button,
+
+### demo.horizo​​ntal
+
+- Type: `boolean`
+- Default value: `false`
+
+Whether to display the code and view window horizontally
+
+### demo.codepenLayout
+
+- Type: `"top" | "left" | "correct"`
+- Default value: `"left"`
+
+CodePen editor layout
+
+### demo.editors
+
+- Type: `string`
+- Default value: `"101"`
+
+### others
+
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, don’t override the default values.
+
+::: warning
+Please note that if you use them, you still need to manually include them in your site using `head`.
+
+React depends on Babel.
+:::
+
+#### demo.vue
+
+Default value: `"https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"`
+
+#### demo.react
+
+Default value: `"https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"`
+
+#### demo.reactDOM
+
+Default value: `"https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"`
 
 ## presentation
 

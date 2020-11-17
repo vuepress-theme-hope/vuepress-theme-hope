@@ -1,5 +1,5 @@
 ---
-icon: homefill
+icon: home
 category: layout
 tags:
   - home
@@ -82,7 +82,7 @@ Feature description
 ```yaml
 ---
 home: true
-icon: homefill
+icon: home
 title: vuepress-theme-hope
 heroImage: /logo.svg
 heroText: vuepress-theme-hope

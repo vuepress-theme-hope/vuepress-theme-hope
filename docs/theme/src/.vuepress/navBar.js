@@ -1,12 +1,12 @@
 module.exports = {
   en: [
-    { text: "Home", link: "/", icon: "homefill" },
-    { text: "Guide", link: "/guide/", icon: "creativefill" },
-    { text: "Config", link: "/config/", icon: "configuration" },
-    { text: "FAQ", link: "/FAQ/", icon: "questionfill" },
+    { text: "Home", link: "/", icon: "home" },
+    { text: "Guide", link: "/guide/", icon: "creative" },
+    { text: "Config", link: "/config/", icon: "config" },
+    { text: "FAQ", link: "/FAQ/", icon: "question" },
     {
       text: "Basic",
-      icon: "infofill",
+      icon: "info",
       prefix: "/basic/",
       items: [
         { text: "Markdown", link: "markdown/", icon: "markdown" },
@@ -15,7 +15,7 @@ module.exports = {
     },
     {
       text: "Project",
-      icon: "infofill",
+      icon: "info",
       items: [
         {
           text: "Changelog",
@@ -75,13 +75,13 @@ module.exports = {
   ],
 
   zh: [
-    { text: "主页", link: "/zh/", icon: "homefill" },
-    { text: "指南", link: "/zh/guide/", icon: "creativefill" },
-    { text: "配置", link: "/zh/config/", icon: "configuration" },
-    { text: "常见问题", link: "/zh/FAQ/", icon: "questionfill" },
+    { text: "主页", link: "/zh/", icon: "home" },
+    { text: "指南", link: "/zh/guide/", icon: "creative" },
+    { text: "配置", link: "/zh/config/", icon: "config" },
+    { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
     {
       text: "基础",
-      icon: "infofill",
+      icon: "info",
       prefix: "/zh/basic/",
       items: [
         { text: "Markdown", link: "markdown/", icon: "markdown" },
@@ -90,7 +90,7 @@ module.exports = {
     },
     {
       text: "项目",
-      icon: "infofill",
+      icon: "info",
       items: [
         {
           text: "更新日志",

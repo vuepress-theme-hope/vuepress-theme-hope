@@ -785,3 +785,18 @@ declare module "vuepress-plugin-md-enhance/src/styles/*.styl" {
 
   export default stylusStyle;
 }
+
+interface Window {
+  // eslint-disable-next-line
+  Babel: {
+    transform: (
+      code: string,
+      options: {
+        presets?: string[];
+      }
+    ) => { code: string };
+  };
+  ReactDOM: {
+    render: (reactElement: any, element: HTMLElement) => void;
+  };
+}
