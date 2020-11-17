@@ -87,6 +87,31 @@ $$
 
 - [View Detail](tex.md)
 
+### Code Demo
+
+::: demo A normal demo
+
+```html
+<h1>Mr.Hope</h1>
+<p>Is <span id="very">very</span> handsome</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("Very handsome!");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [View Detail](demo.md)
+
 ### Presentation
 
 @slidestart

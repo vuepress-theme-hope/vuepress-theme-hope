@@ -43,13 +43,13 @@ module.exports = {
 我在右对齐
 :::
 
-- [点击查看](align.md)
+- [查看详情](align.md)
 
 ### 上下角标
 
 19^th^ H~2~O
 
-- [点击查看](sup-sub.md)
+- [查看详情](sup-sub.md)
 
 ### 脚注
 
@@ -57,13 +57,13 @@ module.exports = {
 
 [^first]: 这是脚注内容
 
-- [点击查看](footnote.md)
+- [查看详情](footnote.md)
 
 ### 标记
 
 你可以标记 ==重要的内容== 。
 
-- [点击查看](mark.md)
+- [查看详情](mark.md)
 
 ### 流程图
 
@@ -76,7 +76,7 @@ cond(yes)->process->e
 cond(no)->e
 @flowend
 
-- [点击查看](flowchart.md)
+- [查看详情](flowchart.md)
 
 ### Tex 语法
 
@@ -85,7 +85,32 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [点击查看](tex.md)
+- [查看详情](tex.md)
+
+### 代码演示
+
+::: demo 一个普通 Demo
+
+```html
+<h1>Mr.Hope</h1>
+<p><span id="very">十分</span> 帅</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("十分帅");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [查看详情](demo.md)
 
 ### 幻灯片
 
@@ -120,4 +145,4 @@ $$
 
 @slideend
 
-- [点击查看](presentation.md)
+- [查看详情](presentation.md)

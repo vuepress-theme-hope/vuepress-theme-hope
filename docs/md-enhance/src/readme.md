@@ -37,6 +37,10 @@ features:
     details: Markdown now have Tex Support so you can write your formula
     link: /guide/tex/
 
+  - title: Code Demo Support
+    details: You can insert code demo easily
+    link: /guide/demo/
+
   - title: Presentation Support
     details: You can insert presentation in markdown files directly
     link: /guide/presentation/

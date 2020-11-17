@@ -2,6 +2,16 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.6.0-beta.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-beta.0...v1.6.0-beta.1) (2020-11-17)
+
+### Bug Fixes
+
+- **md-enhance:** fix code demo style ([64cf488](https://github.com/Mister-Hope/vuepress-theme-hope/commit/64cf4887eadff9b1eb9f3b10bce43d82f7c1f017))
+
+### Features
+
+- **md-enhance:** support mutiple code block in code-demo ([057fd4c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/057fd4ce9a0e1b9ef1d9978189a6d7f7b18b8d85))
+
 ## [1.6.0-beta.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.5.7...v1.6.0-beta.0) (2020-11-17)
 
 ### Features

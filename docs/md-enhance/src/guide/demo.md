@@ -35,7 +35,6 @@ You should use the following syntax:
 <!-- you can have mutiple code block -->
 ```
 
-
 ```json
 // json block is for config
 {

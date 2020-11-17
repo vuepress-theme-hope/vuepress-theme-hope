@@ -37,6 +37,10 @@ features:
     details: Markdown 现在也可以支持 Tex 语法以显示公式
     link: /zh/guide/tex/
 
+  - title: 代码案例支持
+    details: 你可以很方便的插入代码案例
+    link: /zh/guide/demo/
+
   - title: 幻灯片支持
     details: 你可以直接在 Markdown 中插入幻灯片
     link: /zh/guide/presentation/
