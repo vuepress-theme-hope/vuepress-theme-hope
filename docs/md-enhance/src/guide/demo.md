@@ -172,7 +172,7 @@ module.exports = {
 };
 ```
 
-We also make an enhance: If you import Babel, then Vue and Vanilla script will be parsed to es6 using babel.
+We also make an enhance: If you import Babel, then Vue and Normal script will be parsed to es6 using babel.
 :::
 
 ### Available languages

@@ -64,7 +64,7 @@ const getVueScript = (html: string, js: string): VueScript => {
   return scriptObj;
 };
 
-const getVanillaScript = (js: string): (() => unknown) => {
+const getNormalScript = (js: string): (() => unknown) => {
   const script = window.Babel
     ? window.Babel.transform(js, { presets: ["es2015"] }).code
     : js;
@@ -165,20 +165,20 @@ export interface Code {
   cssLib: string[];
 }
 
-export interface VanillaCode extends Code {
+export interface NormalCode extends Code {
   script?: () => unknown;
 }
 
-export const getVanillaCode = (
+export const getNormalCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
-): VanillaCode => ({
+): NormalCode => ({
   html: code.html[0] || "",
   js: code.js[0] || "",
   css: code.css[0] || "",
   jsLib: config.jsLib || [],
   cssLib: config.cssLib || [],
-  script: code.isLegal ? getVanillaScript(code.js[0] || "") : undefined,
+  script: code.isLegal ? getNormalScript(code.js[0] || "") : undefined,
 });
 
 export interface VueCode extends Code {

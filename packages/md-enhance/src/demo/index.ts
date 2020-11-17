@@ -1,5 +1,5 @@
 import { initDom, select } from "./dom";
-import { getCode, getReactCode, getVanillaCode, getVueCode } from "./utils";
+import { getCode, getReactCode, getNormalCode, getVueCode } from "./utils";
 import { CodeDemoOptions } from "packages/md-enhance/types";
 
 export const initDemo = (): void => {
@@ -13,7 +13,7 @@ export const initDemo = (): void => {
         const appElement = select(container, "code-demo-app")[0];
 
         const title = decodeURIComponent(container.dataset.title || "");
-        const type = decodeURIComponent(container.dataset.type || "vanilla");
+        const type = decodeURIComponent(container.dataset.type || "normal");
         const config = JSON.parse(
           decodeURIComponent(container.dataset.config || "{}")
         ) as Partial<CodeDemoOptions>;
@@ -45,14 +45,14 @@ export const initDemo = (): void => {
 
           initDom({ code: vueCode, codeType, config, container, title });
         } else {
-          const vanillaCode = getVanillaCode(codeType, config);
+          const normalCode = getNormalCode(codeType, config);
 
-          if (vanillaCode.script) {
-            appElement.innerHTML = vanillaCode.html;
-            vanillaCode.script();
+          if (normalCode.script) {
+            appElement.innerHTML = normalCode.html;
+            normalCode.script();
           }
 
-          initDom({ code: vanillaCode, codeType, config, container, title });
+          initDom({ code: normalCode, codeType, config, container, title });
         }
 
         container.setAttribute("data-inited", "");

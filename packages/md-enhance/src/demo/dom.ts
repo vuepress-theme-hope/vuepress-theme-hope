@@ -3,7 +3,7 @@ import {
   Code,
   ReactCode,
   VueCode,
-  VanillaCode,
+  NormalCode,
   h,
   injectCSS,
   option,
@@ -113,7 +113,7 @@ const getJsfiddleBtn = ({ html, js, css, jsLib, cssLib }: Code): HTMLElement =>
 
 export interface ActionOption {
   container: HTMLElement;
-  code: VueCode | VanillaCode | ReactCode;
+  code: VueCode | NormalCode | ReactCode;
   config: Partial<CodeDemoOptions>;
   codeType: CodeType;
   title: string;
