@@ -34,9 +34,9 @@ module.exports = {
 ::: danger
 Please use this option ONLY for playing or testing.
 
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It's adding more syntax to Markdown parser and more code to output.
+As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
 
-Enabling features you don't need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
+Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
 Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 

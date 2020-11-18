@@ -38,7 +38,7 @@ export default class AlgoliaSearchFull extends Vue {
               const { pathname: hitPathname } = new URL(
                 window.location.origin + suggestionUrl
               );
-              // Vue Router doesn't handle same-page navigation so we use
+              // Vue Router doesn’t handle same-page navigation so we use
               // the native browser location API for anchor navigation.
               if (this.$route.path === hitPathname)
                 window.location.assign(window.location.origin + suggestionUrl);
@@ -65,7 +65,7 @@ export default class AlgoliaSearchFull extends Vue {
               href: hit.url,
               onClick: (event: Event): void => {
                 // We rely on the native link scrolling when user is
-                // already on the right anchor because Vue Router doesn't
+                // already on the right anchor because Vue Router doesn’t
                 // support duplicated history entries.
                 if (this.$route.fullPath === hit.url) return;
 

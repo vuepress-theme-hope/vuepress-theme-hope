@@ -216,7 +216,7 @@ export default (
   };
 
   md.inline.ruler.after("escape", "inlineTex", inlineTex);
-  // It's a workaround here because types issue
+  // It’s a workaround here because types issue
   md.block.ruler.after("blockquote", "blockTex", blockTex, {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });

@@ -429,7 +429,7 @@ declare module "reveal.js" {
      *
      * @param [override] Flag which overrides the
      * toggle logic and forcibly sets the desired state. True means
-     * help is open, false means it's closed.
+     * help is open, false means it’s closed.
      */
     toggleHelp(override?: boolean): void;
 
@@ -438,7 +438,7 @@ declare module "reveal.js" {
      *
      * @param [override] Flag which overrides the
      * toggle logic and forcibly sets the desired state. True means
-     * overview is open, false means it's closed.
+     * overview is open, false means it’s closed.
      */
     toggleOverview(override?: boolean): void;
 

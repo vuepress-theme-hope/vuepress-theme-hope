@@ -93,7 +93,7 @@ const postProcess = (
   }
 
   /*
-   * If a marker sequence has an odd number of characters, it's splitted
+   * If a marker sequence has an odd number of characters, it’s splitted
    * like this: `~~~~~` -> `~` + `~~` + `~~`, leaving one marker at the
    * start of the sequence.
    *

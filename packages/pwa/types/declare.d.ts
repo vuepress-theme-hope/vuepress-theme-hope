@@ -58,7 +58,7 @@ declare module "workbox-build" {
        */
       directoryIndex?: string;
       /**
-       * Assets that match this will be assumed to be uniquely versioned via their URL, and exempted from the normal HTTP cache-busting that's done when populating the precache. While not required, it's recommended that if your existing build process already inserts a [hash] value into each filename, you provide a RegExp that will detect that, as it will reduce the bandwidth consumed when precaching.
+       * Assets that match this will be assumed to be uniquely versioned via their URL, and exempted from the normal HTTP cache-busting that's done when populating the precache. While not required, it’s recommended that if your existing build process already inserts a [hash] value into each filename, you provide a RegExp that will detect that, as it will reduce the bandwidth consumed when precaching.
        */
       dontCacheBustURLsMatching?: RegExp;
       /**

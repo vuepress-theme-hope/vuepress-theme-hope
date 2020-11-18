@@ -559,7 +559,7 @@ export interface HopeThemeConfig
    *
    * Wether display backto top button
    *
-   * If it's set with a number, then it will be the threshold
+   * If it’s set with a number, then it will be the threshold
    *
    * @default true
    */

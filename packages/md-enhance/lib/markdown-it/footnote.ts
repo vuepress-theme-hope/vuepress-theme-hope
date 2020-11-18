@@ -264,11 +264,11 @@ const footnote = (md: MarkdownIt): void => {
     const labelStart = start + 2;
     const labelEnd = parseLinkLabel(state, start + 1);
 
-    // parser failed to find ']', so it's not a valid note
+    // parser failed to find ']', so it’s not a valid note
     if (labelEnd < 0) return false;
 
     /*
-     * We found the end of the link, and know for a fact it's a valid link;
+     * We found the end of the link, and know for a fact it’s a valid link;
      * so all that's left to do is to call tokenizer.
      *
      */
