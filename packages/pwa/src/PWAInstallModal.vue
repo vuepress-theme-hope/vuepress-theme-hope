@@ -115,7 +115,6 @@
 
   button
     outline none
-    cursor pointer
 
   .background
     position fixed
@@ -160,8 +159,6 @@
 
     .close-button
       float right
-      border none
-      background transparent
       color var(--grey3, #333)
 
       &:hover, &:focus
@@ -280,7 +277,6 @@
 
     button
       width 4em
-      border none
       transition background 0.2s
 
       &:hover, &:focus
@@ -398,8 +394,4 @@
       color var(--white, #fff)
       border none
       border-radius 1em
-
-@media all and (display-mode standalone)
-  button
-    display none
 </style>

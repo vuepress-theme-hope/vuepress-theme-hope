@@ -22,6 +22,13 @@
   color var(--dark-color, #666)
   text-align center
 
+  @media (min-width $MQMobile)
+    padding-left $sidebarWidth
+    border-left 30px solid transparent
+
+    .home, .blog, .not-found + &
+      padding-left 30px
+
   & > div
     @media (max-width $MQMobileNarrow)
       width 100%
@@ -37,6 +44,6 @@
     margin 6px 0
     font-size 13px
 
-.page .footer-wrapper
-  margin-bottom -2rem
+.page:not(.not-found) + .footer-wrapper
+  margin-top -2rem
 </style>

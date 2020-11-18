@@ -83,8 +83,6 @@
     display block
     cursor inherit
     padding inherit
-    border none
-    background transparent
     color var(--dark-grey)
     font-size 0.9rem
     font-family inherit

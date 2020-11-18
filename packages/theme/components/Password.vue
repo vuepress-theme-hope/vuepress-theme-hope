@@ -1,11 +1,11 @@
 <template>
   <div class="password" :class="{ expand: page || isMainPage }">
-    <div class="text" :class="{ hasTried }">
+    <div class="hint" :class="{ hasTried }">
       {{ hasTried ? "请输入正确密码" : "请输入密码" }}
     </div>
-    <div class="input-wrapper">
+    <div class="input">
       <input v-model="password" type="password" @keypress.enter="verify" />
-      <div class="button" @click="verify">OK</div>
+      <button @click="verify">OK</button>
     </div>
   </div>
 </template>
@@ -37,7 +37,7 @@
     margin-top 0
     height 400px
 
-  .text
+  .hint
     margin-bottom 20px
     font-weight 600
     font-size 22px
@@ -50,36 +50,34 @@
       animation-timing-function ease-out
       animation-fill-mode both
 
-  .input-wrapper
+  .input
     width 80%
     max-width 600px
     display flex
     justify-content center
-    align-items center
-    border 2px solid var(--accent-color)
-    border-radius 21px
-    overflow hidden
 
     input
+      flex 1
       width calc(100% - 60px)
-      margin-left 20px
-      font-size 20px
+      padding-left 20px
       color var(--black) !important
       background var(--bgcolor) !important
-      border none
-      flex 1
-      line-height 2
+      border 2px solid var(--accent-color)
+      border-radius 22px 0 0 22px
+      font-size 20px
       letter-spacing 0.5em
+      line-height 2
       outline none
 
-    .button
-      width 60px
-      height 42px
+    button
+      width 70px
+      padding-right 10px
       background var(--accent-color)
-      line-height 2
       color var(--bgcolor)
+      border-radius 0 22px 22px 0
       font-size 20px
-      cursor pointer
+      line-height 2
+      outline none
 
       &:hover
         background lighten($accentColor, 15%)

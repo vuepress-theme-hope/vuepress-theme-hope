@@ -25,6 +25,8 @@
       </Sidebar>
 
       <slot :sidebar-items="sidebarItems" :headers="headers" />
+
+      <PageFooter :key="$route.path" />
     </template>
   </div>
 </template>

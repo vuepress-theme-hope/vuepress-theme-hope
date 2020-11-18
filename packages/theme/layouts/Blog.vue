@@ -16,10 +16,6 @@
           <BlogInfo />
         </MyTransition>
       </div>
-
-      <MyTransition :delay="0.28">
-        <PageFooter :key="$route.path" />
-      </MyTransition>
     </div>
   </Common>
 </template>

@@ -136,8 +136,6 @@
       height 48px
       margin 0 6px
       padding 4px
-      border none
-      background transparent
       color var(--grey3)
 
       &:focus

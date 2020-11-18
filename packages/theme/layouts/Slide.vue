@@ -39,12 +39,10 @@
   .menu-button, .back-button, .home-button
     box-sizing content-box
     position fixed
-    cursor pointer
     bottom 2rem
     width 1rem
     height 1rem
     padding 0.5rem
-    border 0 none
     border-radius 50%
     background #bbb
     color var(--white)

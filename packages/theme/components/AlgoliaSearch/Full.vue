@@ -53,14 +53,12 @@ body.theme-dark
   margin-right 1rem
   padding 0 8px
   background var(--docsearch-searchbox-background)
-  border 0
   border-radius 40px
   color var(--docsearch-muted-color)
   line-height 2rem
   display inline-flex
   align-items center
   user-select none
-  cursor pointer
   outline none
 
   .DocSearch-Search-Icon

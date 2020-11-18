@@ -1,11 +1,8 @@
 import { defaultTransformer, getGitLastUpdatedTimeStamp } from "./time";
 import { LastUpdateOptions } from "../types";
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import { PluginOptionAPI } from "@mr-hope/vuepress-types";
 
-export = (
-  options: LastUpdateOptions,
-  { themeConfig }: Context
-): PluginOptionAPI => ({
+export = (options: LastUpdateOptions): PluginOptionAPI => ({
   name: "last-updated",
 
   extendPageData($page): void {
@@ -17,8 +14,6 @@ export = (
       const lastUpdated =
         typeof transformer === "function"
           ? transformer(timestamp, $lang)
-          : typeof themeConfig.lastUpdate === "function"
-          ? themeConfig.lastUpdate
           : defaultTransformer(timestamp, $lang, options.timezone);
 
       $page.lastUpdated = lastUpdated;

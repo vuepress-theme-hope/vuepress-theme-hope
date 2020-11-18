@@ -1,8 +1,11 @@
 <template>
   <div v-click-outside="clickOutside" class="color-picker">
-    <span class="color-button" @click="showMenu = !showMenu">
+    <button
+      class="color-button"
+      :class="{ select: showMenu }"
+      @click="showMenu = !showMenu"
+    >
       <svg
-        :class="{ select: showMenu }"
         class="skin-icon"
         viewBox="0 0 1024 1024"
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +29,7 @@
           6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"
         />
       </svg>
-    </span>
+    </button>
     <transition mode="out-in" name="menu-transition">
       <div v-show="showMenu" class="color-picker-menu">
         <ThemeOptions />
@@ -40,28 +43,24 @@
 <style lang="stylus">
 .color-picker
   position relative
-  margin-right 1em
 
   .color-button
-    display flex
-    justify-content center
-    align-items center
-    height 100%
+    width 2.25rem
+    height 2.25rem
+    padding 0.5rem
+    outline none
+    color #aaa
+
+    &:hover, &.select
+      color var(--accent-color)
+
+    &.select:hover
+      color #aaa
 
     .skin-icon
-      width 1.4em
-      height 1.4em
-      color #aaa
+      width 100%
+      height 100%
       fill currentcolor
-
-      &:hover, &.select
-        color var(--accent-color)
-
-      &.select:hover
-        color #aaa
-
-    .settings-icon
-      width 18px
 
   .color-picker-menu
     background var(--bgcolor)

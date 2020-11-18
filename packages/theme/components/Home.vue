@@ -72,10 +72,6 @@
     <MyTransition :delay="0.24">
       <Content class="theme-default-content custom" />
     </MyTransition>
-
-    <MyTransition :delay="0.28">
-      <PageFooter />
-    </MyTransition>
   </main>
 </template>
 

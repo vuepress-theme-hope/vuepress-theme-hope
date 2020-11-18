@@ -14,12 +14,9 @@
   width 1.25rem
   height 1.25rem
   padding 0.45rem
-  border 0 none
-  background transparent
   font unset
   vertical-align middle
   transition transform 0.2s ease-in-out
-  cursor pointer
 
   &::before
     content ' '

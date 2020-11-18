@@ -4,7 +4,6 @@ import BlogPage from "@BlogPage";
 import Common from "@theme/components/Common.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageEncryptMixin from "@theme/util/pageEncryptMixin";
-import PageFooter from "@theme/components/PageFooter.vue";
 import Password from "@theme/components/Password.vue";
 
 @Component({
@@ -13,7 +12,6 @@ import Password from "@theme/components/Password.vue";
     BlogPage,
     Common,
     MyTransition,
-    PageFooter,
     Password,
   },
 })

@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
-  <section class="article">
+  <article class="article">
     <StickyIcon v-if="article.frontmatter.sticky" />
     <RouterLink class="title" tag="header" :to="article.path">
       <LockIcon v-if="isEncrypted" />
@@ -14,7 +14,7 @@
     />
     <hr class="hr" />
     <ArticleInfo :article="article" />
-  </section>
+  </article>
 </template>
 
 <script src="./ArticleItem" />

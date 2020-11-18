@@ -200,6 +200,10 @@ module.exports = config({
       },
     },
 
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
+    },
+
     repo: "https://github.com/mister-hope/vuepress-theme-hope",
     repoLabel: "Github",
   },

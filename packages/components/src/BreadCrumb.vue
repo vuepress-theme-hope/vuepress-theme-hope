@@ -1,17 +1,18 @@
 <template>
-  <nav :class="['breadcrumb', { disable: !enable }]">
+  <nav class="breadcrumb" :class="{ disable: !enable }">
     <ul v-if="enable">
       <li
         v-for="(item, index) in config"
         :key="item.url"
         :class="{ 'is-active': config.length - 1 === index }"
       >
-        <a
-          class="iconfont"
-          :class="item.icon && iconEnable ? `${iconPrefix}${item.icon}` : ''"
-          @click="$router.push(item.url)"
-          v-text="item.title"
-        />
+        <RouterLink :to="item.url">
+          <i
+            v-if="item.icon && iconEnable"
+            :class="`iconfont ${iconPrefix}${item.icon}`"
+          />
+          {{ item.title }}
+        </RouterLink>
       </li>
     </ul>
   </nav>
@@ -60,46 +61,42 @@ h1, h2, h3, h4, h5, h6
   &.disable
     padding-bottom 1.3em
 
-  .iconfont
-    font-size inherit
-
-    &:before
-      display inline-block
-      vertical-align middle
-      line-height 1
-
   ul
+    margin 0.5rem 0
     padding-left 0px
     list-style none
 
-    li
-      display inline-block
+  li
+    display inline-block
 
-      &:first-child a
-        padding-left 0
+    &:first-child a
+      padding-left 0
 
-      &:last-child a
-        padding-right 0
+    &:last-child a
+      padding-right 0
 
-      &.is-active a
-        color var(--light-grey, #999)
-        cursor default
-        pointer-events none
+    &.is-active a
+      color var(--light-grey, #999)
+      cursor default
+      pointer-events none
 
-      a
-        padding 0 0.5em
+  li + li::before
+    color var(--light-grey, #999)
+    content '\0002f'
 
-        &:before
-          position relative
-          bottom 0.125rem
-          margin-right 0.25em
+  a
+    display inline-block
+    padding 0 0.5em
+    line-height 2
 
-        &:hover
-          cursor pointer
-          text-decoration underline
+    &:before
+      position relative
+      bottom 0.125rem
+      margin-right 0.25em
 
-    li
-      & + li::before
-        color var(--light-grey, #999)
-        content '\0002f'
+    &:hover
+      color var(--accent-color-l10, lighten($accentColor, 10%))
+
+      .theme-dark &
+        color var(--accent-color-d10, darken($accentColor, 10%))
 </style>

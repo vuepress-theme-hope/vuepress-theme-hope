@@ -42,10 +42,6 @@
       <Comment :key="$route.path" />
     </MyTransition>
 
-    <MyTransition :delay="0.2">
-      <PageFooter :key="$route.path" />
-    </MyTransition>
-
     <slot name="bottom" />
   </main>
 </template>

@@ -49,9 +49,9 @@
       <div class="navigate-wrapper">
         <div class="text">{{ i18n.navigate }}:&nbsp;</div>
         <input v-model="input" type="text" @keypress.enter="jumpPage(input)" />
-        <div class="navigate-button" role="navigation" @click="jumpPage(input)">
+        <button class="navigate" role="navigation" @click="jumpPage(input)">
           {{ i18n.button }}
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -136,17 +136,20 @@ $bgColor ?= #fff
         line-height 2
         outline none
 
-      .navigate-button
+      .navigate
         margin-left 5px
         padding 0 0.75em
-        background var(--bgcolor, $bgColor)
-        color var(--accent-color, $accentColor)
         border 1px solid var(--border-color, $borderColor)
         border-radius 0.25em
+        background var(--bgcolor, $bgColor)
+        color var(--accent-color, $accentColor)
+        font-weight 600
+        font-size 15px
+        line-height 2
         overflow hidden
+        outline none
 
         &:hover
-          cursor pointer
           color var(--white, #fff)
           background var(--accent-color, $accentColor)
           border-color var(--accent-color, $accentColor)

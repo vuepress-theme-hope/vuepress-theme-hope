@@ -3,7 +3,7 @@
     <main class="page not-found">
       <h1>404</h1>
       <blockquote v-text="msg" />
-      <div class="action-button" @click="back">{{ i18n.back }}</div>
+      <button class="action-button" @click="back">{{ i18n.back }}</button>
       <RouterLink class="action-button" to="/">{{ i18n.home }}</RouterLink>
     </main>
   </Common>
@@ -16,7 +16,7 @@
   display block
   max-width $homePageWidth
   margin 0px auto
-  padding ($navbarHeight + 1rem) 2rem 0 !important
+  padding ($navbarHeight + 1rem) 2rem
 
   .action-button
     display inline-block
@@ -28,6 +28,7 @@
     background var(--accent-color)
     color var(--white)
     font-size 1rem
+    outline none
     transition background 0.1s ease
 
     &:hover

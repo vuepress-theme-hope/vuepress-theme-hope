@@ -21,10 +21,6 @@
     <MyTransition :delay="0.28">
       <Content :key="$route.path" class="theme-default-content" custom />
     </MyTransition>
-
-    <MyTransition :delay="0.32">
-      <PageFooter :key="$route.path" />
-    </MyTransition>
   </div>
 </template>
 
