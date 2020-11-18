@@ -26,8 +26,8 @@
     padding-left $sidebarWidth
     border-left 30px solid transparent
 
-    .home, .blog, .not-found + &
-      padding-left 30px
+  .home + &, .blog + &, .not-found + &
+    padding-left 30px
 
   & > div
     @media (max-width $MQMobileNarrow)
