@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-copy-code",
-  "version": "1.6.0-rc.1",
+  "version": "1.6.0-rc.2",
   "description": "copy-code plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -31,8 +31,8 @@
     "demo:serve": "vuepress dev test/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^1.6.0-rc.1",
-    "@mr-hope/vuepress-types": "^1.6.0-rc.1",
+    "@mr-hope/vuepress-shared-utils": "^1.6.0-rc.2",
+    "@mr-hope/vuepress-types": "^1.6.0-rc.2",
     "balloon-css": "^1.2.0"
   },
   "publishConfig": {
