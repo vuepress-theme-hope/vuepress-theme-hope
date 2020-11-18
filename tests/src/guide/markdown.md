@@ -175,55 +175,7 @@ h1 {
 
 :::
 
-::: demo [react] A react demo
-
-```ts
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "very handsome" };
-  }
-  render(): void {
-    return (
-      <div className="box-react">
-        Mr.Hope is <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-```
-
-```css
-.box-react span {
-  color: red;
-}
-```
-
-:::
-
-::: demo [vue] A vue demo
-
-```vue
-<template>
-  <div class="box-vue">
-    Mr.Hope is <span>{{ message }}</span>
-  </div>
-</template>
-<script lang="ts">
-export default Vue.extend({
-  data: () => ({ message: "very handsome" }),
-});
-</script>
-<style lang="scss">
-.box-vue {
-  span {
-    color: red;
-  }
-}
-</style>
-```
-
-:::
+- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/demo/)
 
 ### Presentation
 

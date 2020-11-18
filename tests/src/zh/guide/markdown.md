@@ -175,55 +175,7 @@ h1 {
 
 :::
 
-::: demo [react] 一个 React Demo
-
-```ts
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "十分帅" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-```
-
-```css
-.box-react span {
-  color: red;
-}
-```
-
-:::
-
-::: demo [vue] 一个 Vue 示例
-
-```vue
-<template>
-  <div class="box-vue">
-    Mr.Hope <span>{{ message }}</span>
-  </div>
-</template>
-<script lang="ts">
-export default Vue.extend({
-  data: () => ({ message: "十分帅" }),
-});
-</script>
-<style lang="scss">
-.box-vue {
-  span {
-    color: red;
-  }
-}
-</style>
-```
-
-:::
+- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/demo/)
 
 ### 幻灯片
 
