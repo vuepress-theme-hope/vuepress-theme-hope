@@ -15,7 +15,7 @@
 <style lang="stylus">
 .blog-info-wrapper
   .sidebar &
-    .blogger-info-wrapper
+    .blogger-info
       display none
 
   .page &
@@ -30,7 +30,7 @@
     @media (max-width $MQMobile)
       display none
 
-    .blogger-info-wrapper
+    .blogger-info
       margin-bottom 16px
       padding 8px 0
       border-radius 8px

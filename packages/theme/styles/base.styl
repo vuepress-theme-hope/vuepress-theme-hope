@@ -92,8 +92,14 @@ h1, h2, h3, h4, h5, h6
     opacity 1
 
 p
-  {$contentClass}:not(.custom) > &
+  {$contentClass}:not(.custom) > &, {$contentClass}:not(.custom) > ul &, {$contentClass}:not(.custom) > ol &
     text-align justify
+    word-break break-word
+    hyphens auto
+    overflow-wrap break-word
+
+    @media (max-width $MQMobileNarrow)
+      text-align left
 
 h1
   font-size 2rem

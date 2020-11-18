@@ -50,10 +50,10 @@
     display inline-block
     color var(--text-color)
 
-  .blogger-info-wrapper.mobile
+  .blogger-info.mobile
     display none
 
-  .blogger-info-wrapper.mobile + hr
+  .blogger-info.mobile + hr
     display none
 
   .nav-links
@@ -103,10 +103,10 @@
     .theme-container.no-navbar &
       top 0
 
-    .blogger-info-wrapper.mobile
+    .blogger-info.mobile
       display block
 
-    .blogger-info-wrapper.mobile + hr
+    .blogger-info.mobile + hr
       display block
       margin-top 16px
 

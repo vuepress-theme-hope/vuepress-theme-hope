@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.6.0-beta.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-beta.1...v1.6.0-beta.2) (2020-11-17)
+
+### Bug Fixes
+
+- **md-enhance:** fix self-close element issue ([a1da870](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a1da870fcc268f4a949df8b075bae3aceedd9444))
+
 ## [1.6.0-beta.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-beta.0...v1.6.0-beta.1) (2020-11-17)
 
 ### Bug Fixes

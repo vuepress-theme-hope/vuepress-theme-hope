@@ -127,8 +127,8 @@ export const initDom = ({
   title,
 }: ActionOption): void => {
   const { id } = container;
-  const display = select(container, "display-wrapper")[0];
-  const codeBlock = select(container, "code-wrapper")[0];
+  const display = select(container, "demo-wrapper")[0];
+  const codeBlock = select(container, "code-demo-container")[0];
   const footer = select(container, "code-demo-footer")[0];
 
   if (code.script) {

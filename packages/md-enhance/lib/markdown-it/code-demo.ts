@@ -35,10 +35,10 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
 ${config ? `data-config="${config}"` : ""}
             data-code="${encodeURIComponent(JSON.stringify(code))}"
           >
-              <div class="display-wrapper">
+              <div class="demo-wrapper">
                 <div class="code-demo-app" />
               </div>
-              <div class="code-wrapper">
+              <div class="code-demo-container">
         `;
 };
 

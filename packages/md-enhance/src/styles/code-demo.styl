@@ -1,3 +1,5 @@
+$contentClass ?= '.theme-default-content'
+
 .code-demo-wrapper
   margin-top 10px
   border 1px solid var(--border-color, #eaecef)
@@ -7,7 +9,7 @@
   &:hover
     box-shadow 0 2px 12px var(--card-shadow-color, rgba(0, 0, 0, 0.15))
 
-  .display-wrapper
+  .demo-wrapper
     max-height 400px
     padding 20px
     border-bottom 1px solid var(--border-color, #eaecef)
@@ -18,149 +20,12 @@
       margin-left auto !important
       margin-right auto !important
 
-  .code-wrapper
-    overflow hidden
-    border-radius 0 !important
-    transition height 0.5s
-
-    > div
-      &:first-child pre
-        margin-top 0 !important
-
-      &:last-child pre
-        margin-bottom 0 !important
-
-      &.language-json
-        display none
-
-      .copy-code-button
-        top 0.8em
-        right 3.5em
-        bottom unset
-        width 14px
-        height 15px
-        padding 0
-        font-size 0.75rem
-        background-color transparent
-
-        svg
-          color rgba(0, 0, 0, 0.3)
-
-          .theme-dark &
-            color rgba(255, 255, 255, 0.4)
-
-    .line-numbers-mode::after
-      border-radius 0
-
   .code-demo-h-code
     @media (max-width $MQNarrow)
       display none
 
-  .code-demo-footer
-    position relative
-    text-align left
-
-    &.show-link
-      .code-demo-jsfiddle, .code-demo-codepen
-        opacity 1
-
-      .expand::before
-        border-top none
-        border-right 6px solid transparent
-        border-bottom 6px solid #ccc
-        border-left 6px solid transparent
-
-    .expand
-      position relative
-      width 60px
-      height 40px
-      margin 0
-      color var(--accent-color, $accentColor)
-      font-size 14px
-      background-color transparent
-      border-color transparent
-      outline none
-      transition all 0.5s
-      cursor pointer
-
-      &::before
-        content ' '
-        position absolute
-        top 50%
-        left 50%
-        width 0
-        height 0
-        border-top 6px solid var(--grey12, #bbb)
-        border-right 6px solid transparent
-        border-left 6px solid transparent
-        transform translate(-50%, -50%)
-
-      &:hover
-        opacity 1
-
-        &::before
-          border-top-color var(--accent-color, $accentColor)
-          border-bottom-color var(--accent-color, $accentColor)
-
-    .title
-      display inline-block
-      vertical-align top
-      line-height 40px
-
-    .code-demo-jsfiddle, .code-demo-codepen
-      float right
-      margin 8px 4px
-
-      &:hover
-        opacity 1
-
-    .button
-      position relative
-      margin 0
-      padding 0
-      border-color transparent
-      background-color transparent
-      color #3eaf7c
-      font-size 14px
-      cursor pointer
-      outline none
-
-      &:hover
-        &::before
-          content attr(data-tip)
-          position absolute
-          top -28px
-          left 50%
-          z-index 100
-          padding 6px
-          border-radius 4px
-          background-color rgba(0, 0, 0, 0.8)
-          color #eee
-          font-size 12px
-          line-height 1
-          white-space nowrap
-          transform translateX(-50%)
-
-        &::after
-          content '' !important
-          display block
-          position absolute
-          left 50%
-          top -5px
-          transform translateX(-50%)
-          border 5px solid transparent
-          border-top-color rgba(0, 0, 0, 0.8)
-
-        svg
-          fill var(--accent-color, $accentColor)
-
-      svg
-        width 1.25rem
-        height 1.25rem
-        fill var(--grey12, #bbb)
-
   &.horizontal
-    .display-wrapper
+    .demo-wrapper
       height 400px
       display flex
 
@@ -178,3 +43,152 @@
 
         > pre
           overflow visible
+
+.code-demo-container
+  overflow hidden
+  border-radius 0 !important
+  transition height 0.5s
+
+  {$contentClass} & > div[class*='language-']
+    &:first-child pre
+      margin-top 0 !important
+
+    &:last-child pre
+      margin-bottom 0 !important
+
+    &.language-json
+      display none
+
+    &.line-numbers-mode::after
+      border-radius 0
+
+    @media (max-width $MQMobileNarrow)
+      margin 0.8rem 0
+
+      &.line-numbers-mode::after
+        display none
+
+      .line-numbers-wrapper
+        display none
+
+      pre[class*='language-']
+        padding 1.25rem 1.25rem 1rem
+
+    .copy-code-button
+      top 0.8em
+      right 3.5em
+      bottom unset
+      width 14px
+      height 15px
+      padding 0
+      font-size 0.75rem
+      background-color transparent
+
+      svg
+        color rgba(0, 0, 0, 0.3)
+
+        .theme-dark &
+          color rgba(255, 255, 255, 0.4)
+
+.code-demo-footer
+  position relative
+  text-align left
+
+  &.show-link
+    .code-demo-jsfiddle, .code-demo-codepen
+      opacity 1
+
+    .expand::before
+      border-top none
+      border-right 6px solid transparent
+      border-bottom 6px solid #ccc
+      border-left 6px solid transparent
+
+  .expand
+    position relative
+    width 60px
+    height 40px
+    margin 0
+    color var(--accent-color, $accentColor)
+    font-size 14px
+    background-color transparent
+    border-color transparent
+    outline none
+    transition all 0.5s
+    cursor pointer
+
+    &::before
+      content ' '
+      position absolute
+      top 50%
+      left 50%
+      width 0
+      height 0
+      border-top 6px solid var(--grey12, #bbb)
+      border-right 6px solid transparent
+      border-left 6px solid transparent
+      transform translate(-50%, -50%)
+
+    &:hover
+      opacity 1
+
+      &::before
+        border-top-color var(--accent-color, $accentColor)
+        border-bottom-color var(--accent-color, $accentColor)
+
+  .title
+    display inline-block
+    vertical-align top
+    line-height 40px
+
+  .code-demo-jsfiddle, .code-demo-codepen
+    float right
+    margin 8px 4px
+
+    &:hover
+      opacity 1
+
+  .button
+    position relative
+    margin 0
+    padding 0
+    border-color transparent
+    background-color transparent
+    color #3eaf7c
+    font-size 14px
+    cursor pointer
+    outline none
+
+    &:hover
+      &::before
+        content attr(data-tip)
+        position absolute
+        top -28px
+        left 50%
+        z-index 100
+        padding 6px
+        border-radius 4px
+        background-color rgba(0, 0, 0, 0.8)
+        color #eee
+        font-size 12px
+        line-height 1
+        white-space nowrap
+        transform translateX(-50%)
+
+      &::after
+        content '' !important
+        display block
+        position absolute
+        left 50%
+        top -5px
+        transform translateX(-50%)
+        border 5px solid transparent
+        border-top-color rgba(0, 0, 0, 0.8)
+
+      svg
+        fill var(--accent-color, $accentColor)
+
+    svg
+      width 1.25rem
+      height 1.25rem
+      fill var(--grey12, #bbb)

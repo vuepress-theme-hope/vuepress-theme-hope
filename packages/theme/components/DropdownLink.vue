@@ -68,6 +68,17 @@
 .dropdown-wrapper
   cursor pointer
 
+  @media (max-width $MQMobile)
+    &.open .dropdown-title
+      margin-bottom 0.5rem
+
+  @media (min-width $MQMobile)
+    height 1.8rem
+
+    &:hover .nav-dropdown, &.open .nav-dropdown
+      // override the inline style.
+      display block !important
+
   .dropdown-title
     display block
     cursor inherit
@@ -79,6 +90,9 @@
     font-family inherit
     font-weight 500
     line-height 1.4rem
+
+    @media (max-width $MQMobile)
+      display none
 
     &::after
       border-left 5px solid var(--accent-color)
@@ -94,106 +108,23 @@
   .mobile-dropdown-title
     @extend .dropdown-title
     display none
+    margin-bottom 0.25rem
     font-weight 600
     font-size inherit
+
+    @media (max-width $MQMobile)
+      display block
+      color var(--text-color)
 
     &:hover
       color var(--accent-color)
 
   .nav-dropdown
-    .dropdown-item
-      color inherit
-      line-height 1.7rem
-
-      h4
-        margin 0
-        padding 0.75rem 1rem 0.25rem 0.75rem
-        border-top 1px solid var(--grey14)
-        color var(--dark-grey)
-        font-size 0.9rem
-
-      .dropdown-subitem-wrapper
-        padding 0
-        list-style none
-
-        .dropdown-subitem
-          font-size 0.9em
-
-      .nav-link
-        display block
-        position relative
-        margin-bottom 0
-        padding 0 1.5rem 0 1.25rem
-        border-bottom none
-        font-weight 400
-        line-height 1.7rem
-
-        &:hover
-          color var(--accent-color)
-
-        &.active
-          color var(--accent-color)
-
-          &::after
-            content ''
-            position absolute
-            top calc(50% - 2px)
-            left 9px
-            width 0
-            height 0
-            border-top 3px solid transparent
-            border-left 5px solid var(--accent-color)
-            border-bottom 3px solid transparent
-
-      &:first-child h4
-        margin-top 0
-        padding-top 0
-        border-top 0
-
-@media (max-width $MQMobile)
-  .dropdown-wrapper
-    &.open .dropdown-title
-      margin-bottom 0.5rem
-
-    .dropdown-title
-      display none
-
-    .mobile-dropdown-title
-      display block
-      color var(--text-color)
-      font-weight 600
-      font-size inherit
-
-      &:hover
-        color var(--accent-color)
-
-    .nav-dropdown
+    @media (max-width $MQMobile)
       transition height 0.1s ease-out
       overflow hidden
 
-      .dropdown-item
-        h4
-          border-top 0
-          margin-top 0
-          padding-top 0
-
-        h4, & > .nav-link
-          font-size 15px
-          line-height 2rem
-
-        .dropdown-subitem
-          font-size 14px
-          padding-left 1rem
-
-@media (min-width $MQMobile)
-  .dropdown-wrapper
-    height 1.8rem
-
-    &:hover .nav-dropdown, &.open .nav-dropdown
-      // override the inline style.
-      display block !important
-
-    .nav-dropdown
+    @media (min-width $MQMobile)
       display none
       box-sizing border-box
       position absolute
@@ -212,6 +143,69 @@
       white-space nowrap
       overflow-y auto
 
-      .dropdown-item .nav-link
+  .dropdown-item
+    color inherit
+    line-height 1.7rem
+
+    h4
+      margin 0
+      padding 0.75rem 1rem 0.25rem 0.75rem
+      border-top 1px solid var(--grey14)
+      color var(--dark-grey)
+      font-size 0.9rem
+
+      @media (max-width $MQMobile)
+        margin-top 0
+        padding-top 0
+        border-top 0
+        line-height 2rem
+
+    .nav-link
+      display block
+      position relative
+      margin-bottom 0
+      padding 0 1.5rem 0 1.25rem
+      border-bottom none
+      font-weight 400
+      line-height 1.7rem
+
+      @media (min-width $MQMobile)
         color var(--dark-grey)
+
+      &:hover
+        color var(--accent-color)
+
+      &.active
+        color var(--accent-color)
+
+        &::after
+          content ''
+          position absolute
+          top calc(50% - 2px)
+          left 9px
+          width 0
+          height 0
+          border-top 3px solid transparent
+          border-left 5px solid var(--accent-color)
+          border-bottom 3px solid transparent
+
+    & > .nav-link
+      @media (max-width $MQMobile)
+        font-size 15px
+        line-height 2rem
+
+    .dropdown-subitem-wrapper
+      padding 0
+      list-style none
+
+    .dropdown-subitem
+      font-size 0.9em
+
+      @media (max-width $MQMobile)
+        padding-left 1rem
+
+    &:first-child h4
+      margin-top 0
+      padding-top 0
+      border-top 0
 </style>

@@ -271,7 +271,7 @@ export const injectCSS = (css: string, id: string): void => {
     scopeCss += `${selectors
       .replace(/\n/g, "")
       .split(",")
-      .map((selector) => `#${id} .display-wrapper ${selector}`)
+      .map((selector) => `#${id} .demo-wrapper ${selector}`)
       .join(",")}{${definition}}`;
   }
 
