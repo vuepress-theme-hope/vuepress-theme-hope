@@ -21,6 +21,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
   - [Flow chart](feature/markdown/flowchart.md)
   - [Mark](feature/markdown/mark.md)
   - [Subsript and Supercript](feature/markdown/sup-sub.md)
+  - [Code demo](feature/markdown/demo.md)
   - [Presentation](feature/markdown/presentation.md)
 
 - [Picture preview feature](feature/page.md#picture-preview), supports zooming, dragging, sliding browsing, sharing and downloading

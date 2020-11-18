@@ -34,6 +34,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
   - Flow chart
   - Mark
   - Subsript and Supercript
+  - Code Demo
   - Presentation
 
 - Picture preview feature, supports:
@@ -131,6 +132,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
   - 流程图
   - 标记
   - 上下角标
+  - 代码演示
   - 幻灯片
 
 - 图片预览功能，支持:

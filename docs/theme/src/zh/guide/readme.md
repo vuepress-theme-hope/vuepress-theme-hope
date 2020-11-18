@@ -23,6 +23,7 @@ tags: intro
   - [流程图](feature/markdown/flowchart.md)
   - [标记](feature/markdown/mark.md)
   - [上下角标](feature/markdown/sup-sub.md)
+  - [代码演示](feature/markdown/demo.md)
   - [幻灯片](feature/markdown/presentation.md)
 
 - [图片预览](feature/page.md#图片预览)，支持放大，拖拽，滑动浏览，分享和下载
