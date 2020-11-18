@@ -2,6 +2,18 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.6.0-rc.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-rc.0...v1.6.0-rc.1) (2020-11-18)
+
+### Bug Fixes
+
+- **md-enhance:** improve paragraph appearance in code demo ([adcff93](https://github.com/Mister-Hope/vuepress-theme-hope/commit/adcff93ba3fc415b18e7eddc1b66b6efe885409a))
+
+## [1.6.0-rc.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-beta.2...v1.6.0-rc.0) (2020-11-18)
+
+### Bug Fixes
+
+- **md-enhance:** improve mobile display for code-demo ([c784043](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c78404331d54a42a85f5888ecc6250d886a5d693))
+
 ## [1.6.0-beta.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-beta.1...v1.6.0-beta.2) (2020-11-17)
 
 ### Bug Fixes
