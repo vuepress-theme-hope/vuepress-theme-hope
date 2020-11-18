@@ -132,9 +132,9 @@
     margin-bottom 8px
 
     .switch-button
-      width 48px
-      height 48px
-      margin 0 6px
+      width 44px
+      height 44px
+      margin 0 8px
       padding 4px
       color var(--grey3)
 
@@ -142,8 +142,8 @@
         outline none
 
       .icon-wapper
-        width 24px
-        height 24px
+        width 20px
+        height 20px
         padding 8px
         border-radius 50%
         background rgba(127, 127, 127, 0.15)

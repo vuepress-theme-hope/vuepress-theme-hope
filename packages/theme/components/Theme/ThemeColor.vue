@@ -1,17 +1,17 @@
 <template>
-  <div v-click-outside="clickOutside" class="color-picker">
-    <button
-      class="color-button"
-      :class="{ select: showMenu }"
-      @click="showMenu = !showMenu"
+  <button
+    v-click-outside="clickOutside"
+    class="color-button"
+    :class="{ select: showMenu }"
+    @click="showMenu = !showMenu"
+  >
+    <svg
+      class="skin-icon"
+      viewBox="0 0 1024 1024"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        class="skin-icon"
-        viewBox="0 0 1024 1024"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4
+      <path
+        d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4
           38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32
           51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0
           102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2
@@ -27,53 +27,55 @@
           86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4
           80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6
           6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"
-        />
-      </svg>
-    </button>
+      />
+    </svg>
     <transition mode="out-in" name="menu-transition">
       <div v-show="showMenu" class="color-picker-menu">
         <ThemeOptions />
       </div>
     </transition>
-  </div>
+  </button>
 </template>
 
 <script src="./ThemeColor" />
 
 <style lang="stylus">
-.color-picker
+.color-button
   position relative
+  width 2.25rem
+  height 2.25rem
+  margin 0 0.25rem
+  padding 0.5rem
+  outline none
+  color #aaa
+  flex-shrink 0
 
-  .color-button
-    width 2.25rem
-    height 2.25rem
-    padding 0.5rem
-    outline none
+  &:hover, &.select
+    color var(--accent-color)
+
+  &.select:hover
     color #aaa
 
-    &:hover, &.select
-      color var(--accent-color)
-
-    &.select:hover
-      color #aaa
-
-    .skin-icon
-      width 100%
-      height 100%
-      fill currentcolor
+  .skin-icon
+    width 100%
+    height 100%
+    fill currentcolor
 
   .color-picker-menu
     background var(--bgcolor)
     position absolute
-    top 40px
+    top $navbarHeight - $navbarVerticalPadding
     left 50%
     min-width 100px
     margin 0
     padding 0.5em 0.75em
     box-shadow 2px 2px 10px var(--card-shadow-color)
     border-radius 0.25em
-    transform translateX(-50%)
+    transform translateX(-80%)
     z-index 150
+
+    @media (max-width $MQMobile)
+      top $navbarMobileHeight - $navbarMobileVerticalPadding
 
     &::before
       content ''
@@ -84,6 +86,9 @@
       border-color transparent transparent var(--bgcolor)
       border-width 0 7px 7px
       transform translateX(-50%)
+
+      @media (max-width $MQMobile)
+        left 80%
 
     &.menu-transition-enter-active, &.menu-transition-leave-active
       transition all 0.25s ease-in-out

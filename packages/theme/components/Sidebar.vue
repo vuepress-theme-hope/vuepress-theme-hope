@@ -61,6 +61,9 @@
     border-bottom 1px solid var(--border-color)
     padding 0.5rem 0 0.75rem 0
 
+    ul
+      margin-top 0.25rem
+
     a
       font-weight 600
 

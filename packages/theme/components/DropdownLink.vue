@@ -106,7 +106,6 @@
   .mobile-dropdown-title
     @extend .dropdown-title
     display none
-    margin-bottom 0.25rem
     font-weight 600
     font-size inherit
 
@@ -119,6 +118,7 @@
 
   .nav-dropdown
     @media (max-width $MQMobile)
+      margin-top 0.25rem
       transition height 0.1s ease-out
       overflow hidden
 
