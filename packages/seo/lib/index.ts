@@ -22,8 +22,9 @@ const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
 };
 
 export = (options: SeoOptions, context: Context): PluginOptionAPI => {
+  const { themeConfig } = context;
   const option =
-    Object.keys(options).length > 0 ? options : context.themeConfig.seo || {};
+    Object.keys(options).length > 0 ? options : themeConfig.seo || {};
 
   return {
     name: "seo",
@@ -42,8 +43,8 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
       const pageSeoInfo: PageSeoInfo = {
         $page,
         $site,
-        themeConfig: $site.themeConfig || {},
-        locale: getLocales($site.themeConfig),
+        themeConfig,
+        locale: getLocales(themeConfig),
         path: pageClone.path,
       };
       const metaContext: SeoContent = {
@@ -91,6 +92,10 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
       );
     },
 
-    plugins: ["@mr-hope/last-update", ["@vuepress/last-updated", false]],
+    plugins: [
+      ["@mr-hope/last-update", themeConfig.lastUpdate || true],
+
+      ["@vuepress/last-updated", false],
+    ],
   };
 };
