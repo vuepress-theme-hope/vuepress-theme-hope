@@ -37,7 +37,7 @@
   padding 40px 0
   --dot-color #fff
 
-  @media (prefers-color-scheme dark)
+  .theme-dark &
     --dot-color #505050
 
   .timeline-content

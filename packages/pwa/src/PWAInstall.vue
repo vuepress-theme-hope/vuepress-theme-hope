@@ -31,7 +31,7 @@
   outline none
   z-index 10
 
-  @media all and (display-mode standalone)
+  @media (display-mode standalone)
     display none
 
   &:hover, &:active
