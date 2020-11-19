@@ -53,15 +53,15 @@
 
 .sw-update-popup
   position fixed
-  right 1em
-  bottom 1em
-  padding 0.5em 0.75em
-  border 1px solid var(--grey12, #bbb)
-  border-radius 0.5em
+  right 1rem
+  bottom 1rem
+  padding 0.5rem 0.75rem
+  border-radius 0.5rem
+  box-shadow 0 2px 12px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.15))
   background var(--bgcolor, #fff)
   color var(--text-color, $textColor)
-  line-height 2
-  z-index 11
+  line-height 1.5
+  z-index 110
   cursor pointer
 
   .refresh
