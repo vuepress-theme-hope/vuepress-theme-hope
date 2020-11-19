@@ -3,6 +3,7 @@ import BreadCrumb from "./BreadCrumb.vue";
 import { EnhanceApp } from "@mr-hope/vuepress-types";
 import MyBadge from "./MyBadge.vue";
 import ScreenFull from "./ScreenFull.vue";
+import "@mr-hope/vuepress-shared-utils/styles/reset.styl";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const enhanceApp: EnhanceApp = ({ Vue }) => {

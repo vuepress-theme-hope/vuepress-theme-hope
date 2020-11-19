@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.6.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-rc.2...v1.6.0) (2020-11-18)
+
+### Bug Fixes
+
+- style fixes ([cd6dce8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cd6dce89995a4c932feb4ea5bda91bf5c87d8094))
+- **theme:** fix PageFooter Display ([3cdf7f2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3cdf7f274e52fc7fbf9ed7c893ec3b20500e615f))
+
 ## [1.6.0-rc.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-rc.1...v1.6.0-rc.2) (2020-11-18)
 
 ### Bug Fixes

@@ -1,7 +1,9 @@
-import "@mr-hope/vuepress-plugin-copy-code/style/code.styl";
-import "balloon-css";
 import Message from "./message";
 import Vue from "vue";
+
+import "@mr-hope/vuepress-shared-utils/styles/reset.styl";
+import "@mr-hope/vuepress-plugin-copy-code/style/code.styl";
+import "balloon-css";
 
 let message: Message;
 

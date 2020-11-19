@@ -3,7 +3,7 @@ module.exports = {
   base: process.env.VuePress_BASE || '/',
 
   /** 网站标题 */
-  title: 'Add this',
+  title: 'Copy Code',
 
   /** 网站在该语言下的描述 */
   description: 'VuePress 的 Add this 插件',
@@ -69,7 +69,7 @@ module.exports = {
   },
 
   plugins: [
-    /** Markdown 增强 */
+    /** Copy Code plugin */
     [require('../../../lib')]
   ]
 };
