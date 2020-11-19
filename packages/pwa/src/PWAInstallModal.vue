@@ -137,11 +137,11 @@
     font-family sans-serif
     animation 0.15s opened
 
-    @media (max-width 1220px)
+    @media (max-width $MQNormal)
       width 92%
       animation 0.25s mobile
 
-    @media (max-width 400px)
+    @media (max-width $MQMobileNarrow)
       max-height 80%
       overflow-y scroll
 
@@ -151,10 +151,10 @@
   .header
     margin 40px 40px 32px
 
-    @media (max-width 962px)
+    @media (max-width $MQNarrow)
       margin-bottom 24px
 
-    @media (max-width 800px)
+    @media (max-width $MQMobile)
       margin 20px
 
     .close-button
@@ -173,10 +173,10 @@
       color var(--dark-gery, #666)
       font-size 34px
 
-      @media (max-width 962px)
+      @media (max-width $MQNarrow)
         margin-bottom 0
 
-      @media (max-width 400px)
+      @media (max-width $MQMobileNarrow)
         font-size 26px
 
     img
@@ -190,15 +190,15 @@
       .theme-dark &
         background #444
 
-      @media (max-width 962px)
+      @media (max-width $MQNarrow)
         width 60px
         height 60px
 
-      @media (max-width 800px)
+      @media (max-width $MQMobile)
         margin-right 12px
         padding 8px
 
-      @media (max-width 400px)
+      @media (max-width $MQMobileNarrow)
         width 40px
         height 40px
         padding 6px
@@ -211,7 +211,7 @@
       white-space pre-wrap
       overflow hidden
 
-      @media (max-width 962px)
+      @media (max-width $MQNarrow)
         display none
 
   .content
@@ -219,7 +219,7 @@
     color var(--grey3, #333)
     flex 1
 
-    @media (max-width 800px)
+    @media (max-width $MQMobile)
       margin 0 20px
 
     h3
@@ -235,7 +235,7 @@
     align-items center
     margin-right 20px
 
-    @media (max-width 800px)
+    @media (max-width $MQMobile)
       flex-direction column
       align-items flex-start
       margin-right 0px
@@ -246,7 +246,7 @@
       font-weight 600
       line-height 225%
 
-      @media (max-width 400px)
+      @media (max-width $MQMobileNarrow)
         margin-bottom 0px
         font-size 18px
 
@@ -258,7 +258,7 @@
       padding-inline-start 22px
       margin-block-start 12px
 
-      @media (max-width 400px)
+      @media (max-width $MQMobileNarrow)
         margin-top 0px
 
     li
@@ -272,7 +272,7 @@
     max-height 220px
     display flex
 
-    @media (max-width 800px)
+    @media (max-width $MQMobile)
       width 100%
 
     button
@@ -296,7 +296,7 @@
     -webkit-overflow-scrolling touch
     scroll-snap-type x mandatory
 
-    @media (max-width 1220px)
+    @media (max-width $MQNormal)
       justify-content center
 
     &::-webkit-scrollbar
@@ -315,7 +315,7 @@
       height 100%
       object-fit contain
 
-      @media (max-width 800px)
+      @media (max-width $MQMobile)
         height 180px
 
   .description
@@ -326,7 +326,7 @@
     text-align right
     padding 1rem 0
 
-    @media (max-width 800px)
+    @media (max-width $MQMobile)
       text-align center
 
   .install-button, .cancel-button
@@ -347,7 +347,7 @@
     &:hover, &:focus
       background var(--accent-color-l10, $accentColor)
 
-    @media (max-width 400px)
+    @media (max-width $MQMobileNarrow)
       span
         display none
 
