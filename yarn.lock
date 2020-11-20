@@ -9772,10 +9772,10 @@ leancloud-storage@^3.0.4:
     underscore "^1.8.3"
     uuid "^3.3.2"
 
-leancloud-storage@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-4.7.0.tgz#b4ae3184ca574463990f1f821cf66cae278de4b8"
-  integrity sha512-xP+U6MjIqoxjeY3Yb04rI9HAAnWQ48BzTxgMSyt4r66fpY+uYJuOt8quQSzrcb6LKz3Z6m6Bvl/wPPS6+d598Q==
+leancloud-storage@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-4.8.0.tgz#87bbb90ec8b57401cf045c924bb1bdb25abd418a"
+  integrity sha512-Ubcnqq84e/PvZSdoaCYzdwF5Cz/94eC1m4F730iQoIA2mC3kEiB1fTVbUKFo4Q8JWJkZHqFVkWhwxMGhFplRzA==
   dependencies:
     "@leancloud/adapter-types" "^3.0.0"
     "@leancloud/platform-adapters-browser" "^1.1.0"
