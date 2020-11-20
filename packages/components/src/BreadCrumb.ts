@@ -11,7 +11,7 @@ interface BreadCrumbConfig {
 export default class BreadCrumb extends Vue {
   private get enable(): boolean {
     const globalEnable = this.$themeConfig.breadcrumb !== false;
-    const pageEnable = this.$page.frontmatter.breadcrumb as boolean | undefined;
+    const pageEnable = this.$page.frontmatter.breadcrumb;
 
     return (
       ((globalEnable && pageEnable !== false) || pageEnable === true) &&
@@ -50,7 +50,7 @@ export default class BreadCrumb extends Vue {
         if (element.path === links[index]) {
           breadcrumbConfig.push({
             title: element.title,
-            icon: element.frontmatter.icon as string | undefined,
+            icon: element.frontmatter.icon,
             url: element.path,
           });
           break;

@@ -10,10 +10,7 @@ export default class AuthorInfo extends Vue {
   private get author(): string {
     const { author } = this.$frontmatter;
 
-    return (
-      (author as string) ||
-      (author === false ? "" : this.commentOption.author || "")
-    );
+    return author || (author === false ? "" : this.commentOption.author || "");
   }
 
   private get hint(): string {

@@ -349,7 +349,7 @@ export interface HopeThemePluginConfig {
 
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig
-  extends DefaultThemeConfig,
+  extends Omit<DefaultThemeConfig, "locales">,
     HopeThemePluginConfig {
   lastUpdated?: never;
   editLinkText?: never;
@@ -597,7 +597,7 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
 }
 
 /** vuepress-theme-hope 项目配置 */
-export interface HopeVuepressConfig extends SiteConfig {
+export interface HopeVuepressConfig extends Omit<SiteConfig, "themeConfig"> {
   /** 自定义主题的配置 */
   themeConfig: HopeThemeConfig;
 }

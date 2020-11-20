@@ -17,7 +17,7 @@ export default class Valine extends Vue {
   private get commentDisplay(): boolean {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.comment !== false;
-    const pageEnable = this.$page.frontmatter.comment as boolean | undefined;
+    const pageEnable = this.$page.frontmatter.comment;
 
     return (globalEnable && pageEnable !== false) || pageEnable === true;
   }
@@ -26,7 +26,7 @@ export default class Valine extends Vue {
   private get visitorDisplay(): boolean {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.visitor !== false;
-    const pageEnable = this.$page.frontmatter.visitor as boolean | undefined;
+    const pageEnable = this.$page.frontmatter.visitor;
 
     return (globalEnable && pageEnable !== false) || pageEnable === true;
   }

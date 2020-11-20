@@ -17,7 +17,7 @@ export class TimelineMixin extends Vue {
       filterArticle(
         pages,
         (page) =>
-          (page.frontmatter.time || page.frontmatter.date) &&
+          Boolean(page.frontmatter.time || page.frontmatter.date) &&
           page.frontmatter.timeline !== false
       )
     );

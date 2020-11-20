@@ -1,10 +1,10 @@
 import { PageComputed } from "@mr-hope/vuepress-types";
 import * as dayjs from "dayjs";
 
-export const getDate = (dateString: string): (number | undefined)[] => {
-  const time = dayjs(dateString.trim());
+export const getDate = (date: string | Date): (number | undefined)[] => {
+  const time = dayjs(date instanceof Date ? date : date.trim());
 
-  if (time.isValid()) {
+  if (date instanceof Date || time.isValid()) {
     const year = time.year();
     const month = time.month() + 1;
     const date = time.date();
@@ -26,7 +26,7 @@ export const getDate = (dateString: string): (number | undefined)[] => {
 
   const pattern = /(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?/u;
   const [, year, month, day, hour, minute, second] =
-    pattern.exec(dateString.trim()) || [];
+    pattern.exec(date.trim()) || [];
 
   const getNumber = (a: string): number | undefined =>
     typeof a === "undefined" ? undefined : Number(a);
@@ -48,8 +48,8 @@ export const getDate = (dateString: string): (number | undefined)[] => {
 };
 
 export const compareDate = (
-  dataA: string | undefined,
-  dataB: string | undefined
+  dataA: Date | string | undefined,
+  dataB: Date | string | undefined
 ): number => {
   if (!dataA) return 1;
   if (!dataB) return -1;
@@ -96,14 +96,10 @@ export const filterArticle = (
 
 export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
   pages.slice(0).sort((prev, next) => {
-    const prevSticky = prev.frontmatter.sticky as number | boolean | undefined;
-    const nextSticky = next.frontmatter.sticky as number | boolean | undefined;
-    const prevTime =
-      (prev.frontmatter.time as string | undefined) ||
-      (prev.frontmatter.date as string | undefined);
-    const nextTime =
-      (next.frontmatter.time as string | undefined) ||
-      (next.frontmatter.date as string | undefined);
+    const prevSticky = prev.frontmatter.sticky;
+    const nextSticky = next.frontmatter.sticky;
+    const prevTime = prev.frontmatter.time || prev.frontmatter.date;
+    const nextTime = next.frontmatter.time || next.frontmatter.date;
 
     if (prevSticky && nextSticky)
       return prevSticky === nextSticky

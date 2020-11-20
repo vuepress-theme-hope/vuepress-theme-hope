@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.6.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0...v1.6.1) (2020-11-19)
+
+### Bug Fixes
+
+- add missing style for plugin ([8ab753f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8ab753f275da397d96037a9733a6d1cb3a10a91f))
+
 ## [1.6.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0-rc.2...v1.6.0) (2020-11-18)
 
 ### Bug Fixes

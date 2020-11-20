@@ -26,9 +26,9 @@ export default class VisitorInfo extends Vue {
   private get enableVisitor(): boolean {
     if (!this.valineEnable) return false;
     const globalEnable = this.valineConfig.visitor !== false;
-    const pageConfig = this.$frontmatter.visitor as boolean;
+    const pageConfig = this.$frontmatter.visitor;
 
-    return (globalEnable && pageConfig !== false) || pageConfig === true;
+    return (globalEnable && pageConfig !== false) || Boolean(pageConfig);
   }
 
   /** visitorID, use current path */

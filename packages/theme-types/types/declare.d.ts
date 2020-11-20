@@ -1,50 +1,66 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-declare module "@vuepress/shared-utils/lib/logger" {
-  interface LoggerOptions {
-    logLevel: number;
+import {
+  HopeNavBarConfig,
+  HopeSideBarConfig,
+  HopeLangI18nConfig,
+} from "@mr-hope/vuepress-shared-utils";
+import { BlogMedia, HopeThemeConfig } from "vuepress-theme-hope";
+import { PageInfotype } from "@mr-hope/vuepress-plugin-comment";
+import { AlgoliaOption } from "@mr-hope/vuepress-types";
+declare module "@mr-hope/vuepress-types" {
+  interface PageFrontmatter {
+    icon?: string;
+    author?: string | false;
+    original?: boolean;
+    /**
+     * @deprecated
+     */
+    date?: Date | string;
+    time?: Date | string;
+    category?: string;
+    tag?: string[];
+    /**
+     * @deprecated
+     */
+    tags?: string[];
+    sticky?: boolean | number;
+    article?: boolean;
+    timeline?: boolean;
+    password?: string | number;
+    image?: string;
+    copyright?: {
+      minLength?: number;
+      noCopy?: boolean;
+      noSelect?: boolean;
+    };
+    pageInfo?: PageInfotype[];
+    visitor?: boolean;
+    breadcrumb?: boolean;
+    breadcrumbIcon?: boolean;
+    navbar?: boolean;
+    sidebar?: "auto" | boolean;
+    sidebarDepth?: number;
+    comment?: boolean;
+    editLink?: boolean;
+    prev?: string | false;
+    next?: string | false;
+    footer?: string | boolean;
+    copyrightText?: string | false;
+    mediaLink?: BlogMedia;
+    search?: boolean;
+    backToTop?: boolean;
   }
 
-  class Logger {
-    options: LoggerOptions;
-
-    constructor(options?: LoggerOptions);
-
-    setOptions(options: LoggerOptions): void;
-
-    debug(...args: any[]): void;
-
-    warn(...args: any[]): void;
-
-    error(...args: any[]): void;
-
-    success(...args: any[]): void;
-
-    tip(...args: any[]): void;
-
-    info(...args: any[]): void;
-
-    wait(...args: any[]): void;
-
-    status(color: string, label: string, ...args: any[]): void;
-
-    developer(...args: any[]): void;
+  interface ThemeConfig extends HopeThemeConfig {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: unknown;
   }
 
-  const logger: Logger;
-  /**
-   * Expose a logger instance.
-   */
-  export = logger;
-}
-
-declare module "docsearch.js/dist/cdn/docsearch.min.js" {
-  const docsearch: any;
-
-  export default docsearch;
-}
-
-declare module "*.css" {
-  const content: undefined;
-
-  export default content;
+  interface I18nConfig extends HopeLangI18nConfig {
+    /** 导航栏链接 */
+    nav?: HopeNavBarConfig;
+    /** 侧边栏配置 */
+    sidebar?: HopeSideBarConfig;
+    /** 当前语言的 algolia 设置 */
+    algolia?: AlgoliaOption;
+  }
 }

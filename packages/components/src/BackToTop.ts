@@ -18,7 +18,7 @@ export default class BackToTop extends Vue {
   /** Whether to display button */
   private get isDisplay(): boolean {
     const globalEnable = this.$themeConfig.backToTop !== false;
-    const pageEnable = this.$page.frontmatter.backToTop as boolean | false;
+    const pageEnable = this.$page.frontmatter.backToTop;
 
     return (
       (pageEnable || (globalEnable && pageEnable !== false)) &&

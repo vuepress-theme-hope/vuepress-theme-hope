@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import {
-  HopeLangI18nConfigItem,
+  HopeLangI18nConfig,
   getDefaultLocale,
 } from "@mr-hope/vuepress-shared-utils";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
@@ -26,7 +26,7 @@ export default class ThemeOptions extends Vue {
 
   private isDarkmode = false;
 
-  private get text(): HopeLangI18nConfigItem["themeColor"] {
+  private get text(): HopeLangI18nConfig["themeColor"] {
     return this.$themeLocaleConfig.themeColor || getDefaultLocale().themeColor;
   }
 

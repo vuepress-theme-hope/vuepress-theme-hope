@@ -11,14 +11,11 @@ export default class TagInfo extends Vue {
   private get $tags(): string[] {
     if (this.tags.length !== 0) return this.tags;
 
-    const {
-      tag,
-      tags = tag as string | string[] | undefined,
-    } = this.$frontmatter;
+    const { tags, tag = tags } = this.$frontmatter;
 
-    if (typeof tags === "string") return [capitalize(tags)];
+    if (typeof tag === "string") return [capitalize(tag)];
 
-    if (Array.isArray(tags)) return tags.map((item) => capitalize(item));
+    if (Array.isArray(tag)) return tag.map((item) => capitalize(item));
 
     return [];
   }

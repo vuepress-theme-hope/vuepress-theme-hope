@@ -780,12 +780,6 @@ declare module "reveal.js-plugins/chalkboard/chalkboard.js" {
   export default chalkboardPlugin;
 }
 
-declare module "vuepress-plugin-md-enhance/src/styles/*.styl" {
-  const stylusStyle: never;
-
-  export default stylusStyle;
-}
-
 interface Window {
   // eslint-disable-next-line
   Babel: {

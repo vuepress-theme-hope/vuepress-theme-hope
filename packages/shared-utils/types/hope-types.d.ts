@@ -1,6 +1,5 @@
 import {
   AlgoliaOption,
-  DefaultThemeLangI18nConfig,
   NavBarConfigItem,
   SideBarConfigItemObject,
 } from "@mr-hope/vuepress-types";
@@ -44,7 +43,20 @@ export type HopeSideBarConfig =
   | "auto"
   | false;
 
-interface HopeLangI18nConfigItem {
+/** vuepress-theme-hope 国际化配置 */
+export interface HopeLangI18nConfig {
+  /** 当前语言代码 */
+  lang?: string;
+  /** 多语言下拉菜单的标题 */
+  selectText?: string;
+  /** 该语言下的更新时间文字 */
+  lastUpdated?: string;
+  /** 该语言在下拉菜单中的标签 */
+  label?: string;
+  /** 辅助标签 */
+  ariaLabel?: string;
+  /** 编辑链接文字 */
+  editLinkText?: string; // 默认为 "Edit this page"
   /** 主题色配置 */
   themeColor: {
     /** 颜色提示文字 */
@@ -86,22 +98,18 @@ interface HopeLangI18nConfigItem {
   };
 }
 
-/** vuepress-theme-hope 国际化配置 */
-export type HopeLangI18nConfig = DefaultThemeLangI18nConfig &
-  HopeLangI18nConfigItem;
-
 /** vuepress-theme-hope 多语言配置 */
-export interface HopeLangLocalesConfig
-  extends DefaultThemeLangI18nConfig,
-    Partial<HopeLangI18nConfigItem> {
+export interface HopeLangLocalesConfig extends Partial<HopeLangI18nConfig> {
+  /** 当前语言下的标题 */
+  title?: string;
+  /** 当前语言下的描述 */
+  description?: string;
   /** 导航栏链接 */
   nav?: HopeNavBarConfig;
   /** 侧边栏配置 */
   sidebar?: HopeSideBarConfig;
   /** 当前语言的 algolia 设置 */
   algolia?: AlgoliaOption;
-  /** 时间轴文字 */
-  timeline?: string;
 }
 
 export interface ComponentI18NConfig {
