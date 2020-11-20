@@ -1,13 +1,13 @@
 import { Component, Vue } from "vue-property-decorator";
-import { PageInfotype } from "./types";
-import AuthorInfo from "./src/AuthorInfo.vue";
-import CategoryInfo from "./src/CategoryInfo.vue";
-import ReadTimeInfo from "./src/ReadTimeInfo.vue";
-import TagInfo from "./src/TagInfo.vue";
-import TimeInfo from "./src/TimeInfo.vue";
-import VisitorInfo from "./src/VisitorInfo.vue";
-import WordInfo from "./src/WordInfo.vue";
-import { commentOptions, pageInfoI18n } from "./src/define";
+import { PageInfotype } from "../types";
+import AuthorInfo from "./AuthorInfo.vue";
+import CategoryInfo from "./CategoryInfo.vue";
+import ReadTimeInfo from "./ReadTimeInfo.vue";
+import TagInfo from "./TagInfo.vue";
+import TimeInfo from "./TimeInfo.vue";
+import VisitorInfo from "./VisitorInfo.vue";
+import WordInfo from "./WordInfo.vue";
+import { commentOptions, pageInfoI18n } from "./define";
 
 import "balloon-css";
 

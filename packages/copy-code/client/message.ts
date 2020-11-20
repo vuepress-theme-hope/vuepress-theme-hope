@@ -1,4 +1,4 @@
-import "../style/message.styl";
+import "./style/message.styl";
 
 export default class Message {
   private containerElement: HTMLElement;

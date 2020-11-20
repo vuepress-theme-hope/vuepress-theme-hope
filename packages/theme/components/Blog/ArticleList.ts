@@ -1,16 +1,13 @@
 import { Component, Vue, Watch } from "vue-property-decorator";
 import ArticleItem from "@theme/components/Blog/ArticleItem.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
-import Pagination from "@mr-hope/vuepress-plugin-components/src/Pagination.vue";
+import Pagination from "@mr-hope/vuepress-plugin-components/client/Pagination.vue";
+import { filterArticle, sortArticle } from "@theme/util/article";
+import { getPathMatchedKeys } from "@theme/util/encrypt";
+
+import { BlogOptions } from "@theme/types";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
-import {
-  filterArticle,
-  generatePagination,
-  sortArticle,
-} from "@theme/util/article";
-import { BlogOptions } from "@theme/types";
-import { getPathMatchedKeys } from "@theme/util/encrypt";
 
 @Component({ components: { ArticleItem, MyTransition, Pagination } })
 export default class ArticleList extends Vue {

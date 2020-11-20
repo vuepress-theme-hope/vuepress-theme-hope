@@ -7,7 +7,7 @@
   },
   "include": ["packages/**/*.ts"],
   "exclude": [
-    "packages/**/lib/**/*.ts",
+    "packages/**/node/**/*.ts",
     "packages/*/test/**/*.ts",
     "packages/theme/index.ts"
   ]

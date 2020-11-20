@@ -6,8 +6,8 @@ packages/**/*.d.ts
 
 !packages/**/types/**/*.d.ts
 
-!packages/pwa/lib/skip-waiting.js
-!packages/theme/lib/noopModule.js
+!packages/pwa/node/skip-waiting.js
+!packages/theme/node/noopModule.js
 
 !packages/**/test/**/*.js
 

@@ -45,9 +45,9 @@ export = (
           : {},
     }),
 
-    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    clientRootMixin: resolve(__dirname, "../src/clientRootMixin.js"),
+    clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
 
     chainMarkdown: (md): void => {
       if (markdownOption.lineNumbers !== false)

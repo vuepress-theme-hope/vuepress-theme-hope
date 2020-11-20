@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import { expect } from "chai";
-import { head } from "../lib/head";
+import { head } from "../node/head";
 import { PWAOptions } from "../types";
 import { HeadItem } from "@mr-hope/vuepress-types";
 

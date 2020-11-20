@@ -1,7 +1,7 @@
 import { describe, it } from "mocha";
 import { expect } from "chai";
 import { Langs } from "@mr-hope/vuepress-shared-utils";
-import resolveConfig from "../../lib/pluginConfig";
+import resolveConfig from "../../node/pluginConfig";
 
 describe("Test pluginConfig generate", () => {
   it("Should use plugin options first", () => {

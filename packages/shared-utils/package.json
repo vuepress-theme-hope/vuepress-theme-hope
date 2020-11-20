@@ -22,7 +22,7 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "lib/index.js",
+  "main": "node/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/unit/*.ts"

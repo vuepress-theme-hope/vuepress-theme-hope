@@ -70,6 +70,6 @@ module.exports = {
 
   plugins: [
     /** Markdown 增强 */
-    [require('../../../lib'), { pubid: "ra-5f829c59e6c6bc9a" }]
+    [require('../../../node'), { pubid: "ra-5f829c59e6c6bc9a" }]
   ]
 };

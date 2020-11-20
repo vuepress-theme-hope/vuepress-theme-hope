@@ -1,5 +1,5 @@
 import { describe, it } from "mocha";
-import { defaultTransformer } from "../lib/time";
+import { defaultTransformer } from "../node/time";
 import { expect } from "chai";
 
 describe("Last update test", () => {

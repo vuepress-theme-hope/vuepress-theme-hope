@@ -19,7 +19,7 @@ export = (
       PHOTOSWIPE_OPTIONS: option.option || {},
     }),
 
-    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     globalUIComponents: "PhotoSwipeUI",
   };

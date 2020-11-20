@@ -28,7 +28,7 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
     globalUIComponents: [pwaOption.popupComponent || "SWUpdatePopup"],
 
-    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     beforeDevServer(app) {
       app.get("/manifest.webmanifest", async (_req, res) => {

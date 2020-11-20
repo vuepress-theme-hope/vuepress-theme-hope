@@ -2,9 +2,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import { capitalize } from "@mr-hope/vuepress-shared-utils";
 import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
 import CalendarIcon from "@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue";
-import CategoryInfo from "@mr-hope/vuepress-plugin-comment/src/CategoryInfo.vue";
+import CategoryInfo from "@mr-hope/vuepress-plugin-comment/client/CategoryInfo.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
-import TagInfo from "@mr-hope/vuepress-plugin-comment/src/TagInfo.vue";
+import TagInfo from "@mr-hope/vuepress-plugin-comment/client/TagInfo.vue";
 import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
 
 @Component({

@@ -41,7 +41,7 @@ export const resolveThemeConfig = (
   // throw error when meeting an unsupported language
   if (!checkLang(baseLang))
     throw new Error(
-      "Base lang not supported. Make a PR to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts first!"
+      "Base lang not supported. Make a PR to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/node/i18n/config.ts first!"
     );
 
   setThemeLocales(themeConfig, baseLang);

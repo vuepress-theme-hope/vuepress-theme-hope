@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
-import Valine from "./src/Valine.vue";
-import { commentOptions } from "./src/define";
+import Valine from "./Valine.vue";
+import { commentOptions } from "./define";
 
 @Component({ components: { Valine } })
 export default class Comment extends Vue {

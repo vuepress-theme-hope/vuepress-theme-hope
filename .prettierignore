@@ -4,9 +4,8 @@
 packages/**/*.js
 packages/**/*.d.ts
 
-!packages/pwa/src/skip-waiting.js
-!packages/theme/src/lib/clientRootMixin.js
-!packages/theme/src/lib/noopModule.js
+!packages/pwa/client/skip-waiting.js
+!packages/theme/node/noopModule.js
 
 !packages/**/test/*.js
 !packages/**/types/*.d.ts

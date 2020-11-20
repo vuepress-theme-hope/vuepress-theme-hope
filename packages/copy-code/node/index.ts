@@ -24,6 +24,6 @@ export = (
       CODE_COPY_I18N: copyCodeConfig,
     }),
 
-    clientRootMixin: resolve(__dirname, "../src/clientRootMixin.js"),
+    clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
   };
 };

@@ -32,7 +32,7 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "lib/index.js",
+  "main": "node/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "demo:build": "vuepress build test/demo",

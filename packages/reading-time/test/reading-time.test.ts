@@ -1,5 +1,5 @@
 import { describe, it } from "mocha";
-import readingTime, { getChinese, getWordNumber } from "../lib/reading-time";
+import readingTime, { getChinese, getWordNumber } from "../node/reading-time";
 import { expect } from "chai";
 
 describe("Reading Time Test", () => {

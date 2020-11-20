@@ -21,7 +21,7 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "lib/index.js",
+  "main": "node/index.js",
   "dependencies": {
     "@mr-hope/vuepress-shared-utils": "^1.6.1",
     "@mr-hope/vuepress-types": "^1.6.1",

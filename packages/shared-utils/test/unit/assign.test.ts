@@ -1,4 +1,4 @@
-import { deepAssign, deepAssignReverse } from "../../lib/assign";
+import { deepAssign, deepAssignReverse } from "../../node/assign";
 import { describe, it } from "mocha";
 import { expect } from "chai";
 

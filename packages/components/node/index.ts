@@ -20,7 +20,7 @@ export = (options: ComponentOptions, context: Context): PluginOptionAPI => {
       COMPONENT_I18N: componentConfig,
     }),
 
-    enhanceAppFiles: resolve(__dirname, "../src/enhanceAppFile.js"),
+    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     globalUIComponents: "BackToTop",
   };

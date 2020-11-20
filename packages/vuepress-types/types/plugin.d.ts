@@ -54,9 +54,7 @@ export interface PluginOptionAPI {
         | PluginGeneratedFileTypes<EnhanceAppFilesGeneratedFile>
         | string
         | string[]);
-  clientDynamicModules?: () => PluginGeneratedFileTypes<
-    ClientDynamicModulesGeneratedFile
-  >;
+  clientDynamicModules?: () => PluginGeneratedFileTypes<ClientDynamicModulesGeneratedFile>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extendPageData?: (page: Page & Record<string, any>) => void | Promise<void>;
   clientRootMixin?: string;
