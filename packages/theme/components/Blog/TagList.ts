@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import { getDefaultLocale } from "@mr-hope/vuepress-shared-utils";
+import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import { navigate } from "@theme/util/navigate";
 
 interface TagOption {
@@ -13,7 +13,8 @@ export default class TagList extends Vue {
     return [
       {
         name:
-          this.$themeLocaleConfig.blog.allText ||
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          this.$themeLocaleConfig.blog!.allText ||
           getDefaultLocale().blog.allText,
         path: "/tag/",
       },
@@ -25,7 +26,8 @@ export default class TagList extends Vue {
     return (
       name ===
       ((this.$currentTag && this.$currentTag.key) ||
-        this.$themeLocaleConfig.blog.allText ||
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        this.$themeLocaleConfig.blog!.allText ||
         getDefaultLocale().blog.allText)
     );
   }

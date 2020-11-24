@@ -1,9 +1,7 @@
 import { Component, Vue } from "vue-property-decorator";
-import {
-  HopeLangI18nConfig,
-  getDefaultLocale,
-} from "@mr-hope/vuepress-shared-utils";
+import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
+import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
 
 const defaultColorPicker: Record<string, string> = {
   red: "#e74c3c",

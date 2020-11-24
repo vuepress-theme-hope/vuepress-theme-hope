@@ -1,9 +1,9 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import ArticleInfo from "@theme/components/Blog/ArticleInfo.vue";
-import LockIcon from "@mr-hope/vuepress-shared-utils/icons/LockIcon.vue";
+import LockIcon from "@theme/icons/LockIcon.vue";
 import { PageComputed } from "@mr-hope/vuepress-types";
-import PresentationIcon from "@mr-hope/vuepress-shared-utils/icons/PresentationIcon.vue";
-import StickyIcon from "@mr-hope/vuepress-shared-utils/icons/StickyIcon.vue";
+import PresentationIcon from "@theme/icons/PresentationIcon.vue";
+import StickyIcon from "@theme/icons/StickyIcon.vue";
 import { getPathMatchedKeys } from "@theme/util/encrypt";
 
 @Component({

@@ -1,7 +1,7 @@
-import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from "./hopeConfig";
+import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from "./theme";
 import "./declare";
 import "./extend";
 
-export * from "./hopeConfig";
+export * from "./theme";
 
 export const config: (config: HopeVuepressConfig) => ResolvedHopeVuepressConfig;

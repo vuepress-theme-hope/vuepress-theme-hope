@@ -89,7 +89,7 @@ interface SidebarLinkProps {
   ) {
     const { header } = props as SidebarLinkProps;
     const maxDepth =
-      (($page.frontmatter.sidebarDepth as number | undefined) ||
+      ($page.frontmatter.sidebarDepth ||
         ($themeLocaleConfig.sidebarDepth as number | undefined) ||
         $themeConfig.sidebarDepth ||
         2) + 1;

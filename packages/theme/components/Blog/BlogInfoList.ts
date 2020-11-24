@@ -1,21 +1,19 @@
-import { StickyMixin } from "@theme/util/articleMixin";
 import { Component, Mixins } from "vue-property-decorator";
-import {
-  HopeLangI18nConfig,
-  getDefaultLocale,
-} from "@mr-hope/vuepress-shared-utils";
-import ArticleIcon from "@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue";
+import { getDefaultLocale } from "@mr-hope/vuepress-shared";
+import ArticleIcon from "@theme/icons/ArticleIcon.vue";
+import CategoryIcon from "@mr-hope/vuepress-plugin-comment/client/icons/CategoryIcon.vue";
+import TagIcon from "@mr-hope/vuepress-plugin-comment/client/icons/TagIcon.vue";
+import TimeIcon from "@mr-hope/vuepress-plugin-comment/client/icons/TimeIcon.vue";
 import ArticleList from "@theme/components/Blog/ArticleList.vue";
-import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
 import CategoryList from "@theme/components/Blog/CategoryList.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
-import TagIcon from "@mr-hope/vuepress-shared-utils/icons/TagIcon.vue";
 import TagList from "@theme/components/Blog/TagList.vue";
-import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
 import Timeline from "@theme/components/Blog/Timeline.vue";
 import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { filterArticle } from "@theme/util/article";
+import { StickyMixin } from "@theme/util/articleMixin";
 
+import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
 @Component({
   components: {
     ArticleIcon,

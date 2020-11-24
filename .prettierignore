@@ -5,10 +5,10 @@ packages/**/*.js
 packages/**/*.d.ts
 
 !packages/pwa/client/skip-waiting.js
-!packages/theme/node/noopModule.js
+!packages/theme/util/noopModule.js
 
 !packages/**/test/*.js
-!packages/**/types/*.d.ts
+!packages/**/types/**/*.d.ts
 !.vuepress/**
 
 docs/md-enhance/src/guide/demo.md

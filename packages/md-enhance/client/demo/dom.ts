@@ -8,7 +8,7 @@ import {
   injectCSS,
   option,
 } from "./utils";
-import { CodeDemoOptions } from "packages/md-enhance/types";
+import { CodeDemoOptions } from "vuepress-plugin-md-enhance";
 
 export const select = (
   node: Element | Document,

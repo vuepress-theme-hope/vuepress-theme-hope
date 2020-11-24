@@ -16,7 +16,7 @@ export interface ContextConstructor {
 
 export type App = Context;
 
-export interface Context {
+export interface Context<T = ThemeConfig> {
   /**
    * Docs
    */
@@ -36,7 +36,7 @@ export interface Context {
   libDir: string;
   cwd: string;
   siteConfig: SiteConfig;
-  themeConfig: ThemeConfig;
+  themeConfig: T;
   markdown: Markdown;
   pluginAPI: PluginAPI;
   themeAPI: ThemeAPI;

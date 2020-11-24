@@ -7,9 +7,10 @@ packages/**/*.d.ts
 !packages/**/types/**/*.d.ts
 
 !packages/pwa/node/skip-waiting.js
-!packages/theme/node/noopModule.js
+!packages/theme/util/noopModule.js
 
 !packages/**/test/**/*.js
 
 .vscode/
 *.map
+*.tsbuildinfo

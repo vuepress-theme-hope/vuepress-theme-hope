@@ -38,7 +38,7 @@
     "@mr-hope/vuepress-plugin-pwa": "^1.6.1",
     "@mr-hope/vuepress-plugin-seo": "^1.6.1",
     "@mr-hope/vuepress-plugin-sitemap": "^1.6.1",
-    "@mr-hope/vuepress-shared-utils": "^1.6.1",
+    "@mr-hope/vuepress-shared": "^1.6.1",
     "@mr-hope/vuepress-theme-types": "^1.6.1",
     "@types/bcryptjs": "2.4.2",
     "@types/lodash.debounce": "^4.0.6",

@@ -1,6 +1,6 @@
 import { Component, Vue, Watch } from "vue-property-decorator";
-import EyeIcon from "@mr-hope/vuepress-shared-utils/icons/EyeIcon.vue";
-import FireIcon from "@mr-hope/vuepress-shared-utils/icons/FireIcon.vue";
+import EyeIcon from "./icons/EyeIcon.vue";
+import FireIcon from "./icons/FireIcon.vue";
 import { commentOptions, pageInfoI18n } from "./define";
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";

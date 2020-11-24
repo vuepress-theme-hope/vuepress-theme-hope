@@ -68,7 +68,6 @@ export interface DefaultThemeLangI18nConfig extends I18nConfig {
   editLinkText?: string; // 默认为 "Edit this page"
 }
 
-// export interface DefaultThemeConfig extends ThemeConfig {
 export interface DefaultThemeConfig {
   /** 导航栏 Logo，应为绝对路径 */
   logo?: string;
@@ -122,7 +121,4 @@ export interface DefaultThemeConfig {
   editLinks?: boolean;
   /** 编辑本页文字 */
   editLinkText?: string;
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
 }

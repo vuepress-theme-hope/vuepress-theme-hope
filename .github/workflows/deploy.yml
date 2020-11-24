@@ -96,7 +96,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/add-this:build
+        run: yarn workspace add-this-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -147,7 +147,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/comment:build
+        run: yarn workspace comment-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -198,7 +198,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/copy-code:build
+        run: yarn workspace copy-code-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -249,7 +249,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/last-update:build
+        run: yarn workspace last-update-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -300,7 +300,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/md-enhance:build
+        run: yarn workspace md-enhance-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -351,7 +351,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/photo-swipe:build
+        run: yarn workspace photo-swipe-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -402,7 +402,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/pwa:build
+        run: yarn workspace pwa-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -453,7 +453,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/reading-time:build
+        run: yarn workspace reading-time-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -504,7 +504,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/seo:build
+        run: yarn workspace seo-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -555,7 +555,7 @@ jobs:
         run: yarn run typescript:compile
 
       - name: Build Docs
-        run: yarn run docs/sitemap:build
+        run: yarn workspace sitemap-docs build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3

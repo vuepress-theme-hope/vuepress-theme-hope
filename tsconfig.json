@@ -1,14 +1,25 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "importHelpers": true,
-    "module": "ESNext",
-    "target": "ESNext"
+    "importHelpers": true
   },
-  "include": ["packages/**/*.ts"],
-  "exclude": [
-    "packages/**/node/**/*.ts",
-    "packages/*/test/**/*.ts",
-    "packages/theme/index.ts"
-  ]
+  "references": [
+    { "path": "./packages/comment/tsconfig.json" },
+    { "path": "./packages/components/tsconfig.json" },
+    { "path": "./packages/copy-code/tsconfig.json" },
+    { "path": "./packages/last-update/tsconfig.json" },
+    { "path": "./packages/pwa/tsconfig.json" },
+    { "path": "./packages/reading-time/tsconfig.json" },
+    { "path": "./packages/seo/tsconfig.json" },
+    { "path": "./packages/sitemap/tsconfig.json" },
+    { "path": "./packages/utils/tsconfig.json" },
+    { "path": "./packages/shared/tsconfig.json" },
+    { "path": "./packages/theme-types/tsconfig.json" },
+    { "path": "./packages/vuepress-types/tsconfig.json" },
+    { "path": "./packages/add-this/tsconfig.json" },
+    { "path": "./packages/md-enhance/tsconfig.json" },
+    { "path": "./packages/photo-swipe/tsconfig.json" },
+    { "path": "./packages/theme/tsconfig.json" }
+  ],
+  "include": []
 }

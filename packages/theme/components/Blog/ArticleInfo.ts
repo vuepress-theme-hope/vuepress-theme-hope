@@ -1,11 +1,12 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
-import AuthorIcon from "@mr-hope/vuepress-shared-utils/icons/AuthorIcon.vue";
-import CalendarIcon from "@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue";
+import { capitalize } from "@mr-hope/vuepress-shared";
+import AuthorIcon from "@mr-hope/vuepress-plugin-comment/client/icons/AuthorIcon.vue";
+import CalendarIcon from "@mr-hope/vuepress-plugin-comment/client/icons/CalendarIcon.vue";
 import CategoryInfo from "@mr-hope/vuepress-plugin-comment/client/CategoryInfo.vue";
-import { PageComputed } from "@mr-hope/vuepress-types";
 import TagInfo from "@mr-hope/vuepress-plugin-comment/client/TagInfo.vue";
-import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
+import TimeIcon from "@mr-hope/vuepress-plugin-comment/client/icons/TimeIcon.vue";
+
+import { PageComputed } from "@mr-hope/vuepress-types";
 
 @Component({
   components: {
@@ -21,7 +22,7 @@ export default class ArticleInfo extends Vue {
 
   private get author(): string {
     return (
-      (this.article.frontmatter.author as string | false | undefined) ||
+      this.article.frontmatter.author ||
       (this.$themeConfig.author && this.article.frontmatter.author !== false
         ? this.$themeConfig.author
         : "")

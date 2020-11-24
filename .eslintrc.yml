@@ -18,7 +18,7 @@ ignorePatterns:
   - "packages/**/*.d.ts"
 
   - "!packages/pwa/node/skip-waiting.js"
-  - "!packages/theme/node/noopModule.js"
+  - "!packages/theme/util/noopModule.js"
 
   - "!packages/**/test/**/*.js"
   - "!packages/**/types/**/*.d.ts"
@@ -101,8 +101,8 @@ overrides:
       parser: "@typescript-eslint/parser"
       project:
         - "./tsconfig.json"
-        - "./tsconfig.commonjs.json"
-        - "./tsconfig.test.json"
+        - "./tsconfig.eslint.json"
+
     rules:
       "@typescript-eslint/explicit-function-return-type":
         - warn

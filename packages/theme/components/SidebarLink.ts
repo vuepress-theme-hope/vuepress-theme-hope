@@ -10,7 +10,7 @@ import {
   groupSidebarHeaders,
 } from "@theme/util/sidebar";
 import { hashRE, isActive } from "@theme/util/path";
-import { HopeSideBarConfigItemObject } from "@mr-hope/vuepress-shared-utils";
+import { HopeSideBarConfigItemObject } from "../types";
 import { Route } from "vue-router";
 
 const renderIcon = (h: CreateElement, icon: string): VNode | null =>
@@ -145,7 +145,7 @@ interface SidebarLinkProps {
         : selfActive;
 
     const maxDepth =
-      ($page.frontmatter.sidebarDepth as number | undefined) ||
+      $page.frontmatter.sidebarDepth ||
       ($themeLocaleConfig.sidebarDepth as number) ||
       $themeConfig.sidebarDepth ||
       2;
@@ -177,7 +177,7 @@ interface SidebarLinkProps {
               $themeConfig.iconPrefix === ""
                 ? ""
                 : $themeConfig.iconPrefix || "icon-"
-            }${item.frontmatter.icon as string}`
+            }${item.frontmatter.icon}`
           : "",
       text: item.title || item.path,
       link: item.path,

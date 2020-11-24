@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import TimeIcon from "@mr-hope/vuepress-shared-utils/icons/TimeIcon.vue";
+import TimeIcon from "./icons/TimeIcon.vue";
 import { pageInfoI18n, readingTimeI18n } from "./define";
 
 @Component({ components: { TimeIcon } })

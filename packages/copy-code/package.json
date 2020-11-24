@@ -31,7 +31,7 @@
     "demo:serve": "vuepress dev test/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^1.6.1",
+    "@mr-hope/vuepress-shared": "^1.6.1",
     "@mr-hope/vuepress-types": "^1.6.1",
     "balloon-css": "^1.2.0"
   },

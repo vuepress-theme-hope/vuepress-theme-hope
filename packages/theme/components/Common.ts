@@ -1,7 +1,6 @@
 import { Component, Mixins, Prop } from "vue-property-decorator";
 import {
   SidebarItem,
-  SidebarGroupItem,
   SidebarHeader,
   getSidebarItems,
 } from "@theme/util/sidebar";
@@ -63,7 +62,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     return getSidebarItems(this.$page, this.$site, this.$localePath);
   }
 
-  private get pageClasses(): any {
+  private get pageClasses(): unknown {
     const userPageClass = this.$page.frontmatter.pageClass as
       | string
       | string[]
@@ -150,7 +149,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
 
       if (item.type === "group") {
         const matching: PageHeader[] = this.getHeader(
-          (item as SidebarGroupItem).children
+          item.children as SidebarItem[]
         );
 
         if (matching.length !== 0) return matching;

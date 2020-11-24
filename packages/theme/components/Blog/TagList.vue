@@ -47,7 +47,7 @@
     &.active
       transform scale(1.1, 1.1)
 
-@require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
+@require '~@mr-hope/vuepress-shared/styles/colors.styl'
 
 for $color, $index in $colors
   .tag-list-wrapper .tag{$index}

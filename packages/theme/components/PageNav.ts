@@ -3,13 +3,12 @@ import { PageComputed, SiteData, ThemeConfig } from "@mr-hope/vuepress-types";
 import {
   SidebarErrorItem,
   SidebarExternalItem,
-  SidebarGroupItem,
   SidebarItem,
   SidebarPageItem,
   resolvePageforSidebar,
 } from "@theme/util/sidebar";
-import NextIcon from "@mr-hope/vuepress-shared-utils/icons/NextIcon.vue";
-import PrevIcon from "@mr-hope/vuepress-shared-utils/icons/PrevIcon.vue";
+import NextIcon from "@theme/icons/NextIcon.vue";
+import PrevIcon from "@theme/icons/PrevIcon.vue";
 import { Route } from "vue-router";
 import { resolvePath } from "@theme/util/path";
 
@@ -19,7 +18,7 @@ const getSidebarItems = (
 ): void => {
   for (const item of items)
     if (item.type === "group")
-      getSidebarItems((item as SidebarGroupItem).children || [], result);
+      getSidebarItems((item.children || []) as SidebarItem[], result);
     else result.push(item);
 };
 
@@ -60,10 +59,7 @@ const resolvePageLink = (
 ): SidebarItem | false => {
   const themeLinkConfig =
     themeConfig[`${linkType}Links` as "prevLinks" | "nextLinks"];
-  const pageLinkConfig = page.frontmatter[linkType] as
-    | string
-    | false
-    | undefined;
+  const pageLinkConfig = page.frontmatter[linkType];
 
   if (themeLinkConfig === false || pageLinkConfig === false) return false;
 

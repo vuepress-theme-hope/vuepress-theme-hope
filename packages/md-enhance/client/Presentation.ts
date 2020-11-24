@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Loading from "@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue";
+import Loading from "./icons/LoadingIcon.vue";
 
 type ThemeType =
   | "auto"

@@ -1,4 +1,4 @@
-import { CodeDemoOptions } from "packages/md-enhance/types";
+import { CodeDemoOptions } from "vuepress-plugin-md-enhance";
 import { FunctionComponent } from "react";
 export const option = CODE_DEMO_OPTIONS;
 

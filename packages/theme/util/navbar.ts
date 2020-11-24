@@ -1,4 +1,4 @@
-import { HopeNavBarConfigItem } from "@mr-hope/vuepress-shared-utils";
+import { HopeNavBarConfigItem } from "../types";
 
 export interface NavBarConfigItem extends HopeNavBarConfigItem {
   type: "link" | "links";

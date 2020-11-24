@@ -1,7 +1,4 @@
-import {
-  HopeSideBarConfig,
-  HopeSideBarConfigItem,
-} from "@mr-hope/vuepress-shared-utils";
+import { HopeSideBarConfig, HopeSideBarConfigItem } from "../types";
 import { PageComputed, SiteData } from "@mr-hope/vuepress-types";
 import {
   ensureEndingSlash,
@@ -41,7 +38,7 @@ const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
       type: "group",
       collapsable: false,
       title: page.title,
-      icon: page.frontmatter.icon as string | undefined,
+      icon: page.frontmatter.icon,
       path: "",
       children: headers.map<SidebarHeaderItem>((header) => ({
         ...header,
@@ -95,7 +92,7 @@ export interface SidebarGroupItem {
   type: "group";
   title: string;
   /** @default true */
-  collapsable: boolean;
+  collapsable?: boolean;
   /** @default 1 */
   sidebarDepth?: number;
   icon?: string;
@@ -217,8 +214,7 @@ export const getSidebarItems = (
       : themeConfig;
 
   const sidebarConfig: HopeSideBarConfig | undefined =
-    (localeConfig.sidebar as HopeSideBarConfig | undefined) ||
-    themeConfig.sidebar;
+    localeConfig.sidebar || themeConfig.sidebar;
 
   // auto generate sidebar through headings
   if (page.frontmatter.sidebar === "auto" || sidebarConfig === "auto")

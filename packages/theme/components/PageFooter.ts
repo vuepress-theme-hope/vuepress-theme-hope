@@ -30,7 +30,7 @@ export default class PageFooter extends Vue {
   private get copyright(): string | false {
     return this.$frontmatter.copyrightText === false
       ? false
-      : (this.$frontmatter.copyrightText as string | undefined) ||
+      : this.$frontmatter.copyrightText ||
           this.footerConfig.copyright ||
           (this.$themeConfig.author
             ? `Copyright © 2020 ${this.$themeConfig.author}`

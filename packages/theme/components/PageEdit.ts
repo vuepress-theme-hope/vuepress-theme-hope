@@ -15,7 +15,7 @@ export default class PageEdit extends Vue {
 
   private get editLink(): string | false {
     const showEditLink =
-      (this.$page.frontmatter.editLink as boolean | undefined) ||
+      this.$page.frontmatter.editLink ||
       (this.$themeConfig.editLinks !== false &&
         this.$page.frontmatter.editLink !== false);
 

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "ESNext",
+    "target": "ESNext",
+    "paths": {
+      "@theme/*": ["*"]
+    }
+  },
+  "include": ["./"],
+  "exclude": ["./node", "./index.ts"]
+}

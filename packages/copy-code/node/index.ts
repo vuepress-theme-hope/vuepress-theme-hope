@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { resolve } from "path";
-import { i18nConfig, lang2path } from "@mr-hope/vuepress-shared-utils";
+import { i18n, lang2path } from "@mr-hope/vuepress-utils";
 
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { CopyCodeOptions } from "../types";
@@ -11,7 +11,7 @@ export = (
 ): PluginOptionAPI => {
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = lang2path(baseLang);
-  const copyCodeConfig = i18nConfig.copyCode;
+  const copyCodeConfig = i18n.copyCode;
 
   copyCodeConfig["/"] = copyCodeConfig[baseLangPath];
 

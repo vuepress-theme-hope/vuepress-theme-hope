@@ -1,8 +1,8 @@
 import { Component, Vue } from "vue-property-decorator";
-import AutoIcon from "@mr-hope/vuepress-shared-utils/icons/AutoIcon.vue";
-import DarkIcon from "@mr-hope/vuepress-shared-utils/icons/DarkIcon.vue";
-import LightIcon from "@mr-hope/vuepress-shared-utils/icons/LightIcon.vue";
-import { changeClass } from "@mr-hope/vuepress-shared-utils";
+import AutoIcon from "@theme/icons/AutoIcon.vue";
+import DarkIcon from "@theme/icons/DarkIcon.vue";
+import LightIcon from "@theme/icons/LightIcon.vue";
+import { changeClass } from "@theme/util/dom";
 
 @Component({ components: { AutoIcon, DarkIcon, LightIcon } })
 export default class DarkmodeSwitch extends Vue {

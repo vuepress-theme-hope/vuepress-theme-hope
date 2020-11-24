@@ -2,24 +2,21 @@ import { codeDemoRender } from "./markdown-it/code-demo";
 
 import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
 import { MarkdownEnhanceOptions } from "../types";
-import {
-  PluginI18nConfig,
-  i18nConfig,
-  lang2path,
-} from "@mr-hope/vuepress-shared-utils";
+import { i18n, lang2path } from "@mr-hope/vuepress-utils";
+import { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 
 const pluginConfig = (
   markdownOption: MarkdownEnhanceOptions,
   themeConfig: ThemeConfig
 ): PluginConfig[] => {
   /** i18n config */
-  const { container } = i18nConfig;
+  const { container } = i18n;
   const baseLang = markdownOption.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = lang2path(baseLang);
 
   const resolveConfig = (
-    titleConfig: PluginI18nConfig<string>
-  ): PluginI18nConfig<string> => {
+    titleConfig: PluginI18nConvert<string>
+  ): PluginI18nConvert<string> => {
     titleConfig["/"] = titleConfig[baseLangPath];
 
     return titleConfig;

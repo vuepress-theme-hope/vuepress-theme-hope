@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { i18nConfig, lang2path } from "@mr-hope/vuepress-shared-utils";
+import { i18n, lang2path } from "@mr-hope/vuepress-utils";
 import { resolve } from "path";
 import { head } from "./head";
 import { getManifest, genManifest } from "./genManifest";
@@ -12,7 +12,7 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
   const { base, themeConfig } = context;
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = lang2path(baseLang);
-  const pwaI18N = i18nConfig.pwa;
+  const pwaI18N = i18n.pwa;
   const pwaOption =
     Object.keys(options).length > 0 ? options : themeConfig.pwa || {};
 

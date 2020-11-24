@@ -780,6 +780,18 @@ declare module "reveal.js-plugins/chalkboard/chalkboard.js" {
   export default chalkboardPlugin;
 }
 
+declare module "*.styl" {
+  const content: undefined;
+
+  export default content;
+}
+
+declare module "*.css" {
+  const content: undefined;
+
+  export default content;
+}
+
 interface Window {
   // eslint-disable-next-line
   Babel: {
@@ -791,6 +803,7 @@ interface Window {
     ) => { code: string };
   };
   ReactDOM: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     render: (reactElement: any, element: HTMLElement) => void;
   };
 }

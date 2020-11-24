@@ -120,7 +120,7 @@ describe("Test resolveTheme function", () => {
       iconPrefix: "vuepress-",
 
       /** Markdown设置 */
-      markdown: {
+      mdEnhance: {
         enableAll: true,
       },
 

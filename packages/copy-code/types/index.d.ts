@@ -1,4 +1,4 @@
-import { CopyCodeI18NConfig } from "@mr-hope/vuepress-shared-utils";
+import { CopyCodeI18NConfig } from "@mr-hope/vuepress-shared";
 
 export interface CopyCodeOptions {
   /**

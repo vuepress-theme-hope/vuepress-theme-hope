@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Loading from "@mr-hope/vuepress-shared-utils/icons/LoadingIcon.vue";
+import Loading from "./icons/LoadingIcon.vue";
 import debounce from "lodash.debounce";
 import presets from "./presets";
 import * as Flowchart from "flowchart.js";

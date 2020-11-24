@@ -1,5 +1,5 @@
 import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from "../types";
-import { deepAssignReverse } from "@mr-hope/vuepress-shared-utils";
+import { deepAssignReverse } from "@mr-hope/vuepress-utils";
 import defaultConfig from "./defaultConfig";
 import { resolveLocales } from "./locales";
 import { resolveThemeConfig } from "./themeConfig";

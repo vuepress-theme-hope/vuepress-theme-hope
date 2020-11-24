@@ -4,7 +4,7 @@ import PWAInstall from "./PWAInstall.vue";
 import SWUpdatePopup from "./SWUpdatePopup.vue";
 import event from "./event";
 
-import "@mr-hope/vuepress-shared-utils/styles/reset.styl";
+import "@mr-hope/vuepress-shared/styles/reset.styl";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {

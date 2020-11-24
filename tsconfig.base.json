@@ -5,7 +5,10 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "alwaysStrict": false,
+    "baseUrl": "./",
+    "composite": true,
     "declaration": true,
+    "declarationMap": false,
     "diagnostics": false,
     "downlevelIteration": false,
     "experimentalDecorators": true,
@@ -14,8 +17,11 @@
     "importHelpers": false,
     "inlineSourceMap": false,
     "inlineSources": false,
+    "lib": ["DOM", "ES2020"],
     "listEmittedFiles": true,
     "moduleResolution": "node",
+    "newLine": "lf",
+    "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -24,15 +30,12 @@
     "pretty": true,
     "resolveJsonModule": true,
     "removeComments": false,
+    "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "lib": ["DOM"],
-    "types": ["@mr-hope/vuepress-theme-types"],
-    "baseUrl": "./",
-    "paths": {
-      "@theme/*": ["packages/theme/*"]
-    }
+    "target": "ESNext",
+    "types": ["@mr-hope/vuepress-theme-types"]
   }
 }

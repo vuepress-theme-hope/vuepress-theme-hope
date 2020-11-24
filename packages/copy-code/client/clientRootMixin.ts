@@ -1,7 +1,7 @@
 import Message from "./message";
 import Vue from "vue";
 
-import "@mr-hope/vuepress-shared-utils/styles/reset.styl";
+import "@mr-hope/vuepress-shared/styles/reset.styl";
 import "./style/code.styl";
 import "balloon-css";
 

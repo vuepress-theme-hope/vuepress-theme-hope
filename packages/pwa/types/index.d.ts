@@ -1,8 +1,8 @@
-import { Langs } from "@mr-hope/vuepress-shared-utils";
+import { Langs } from "@mr-hope/vuepress-shared";
 import { HeadItem } from "@mr-hope/vuepress-types";
 import WorkboxBuild from "workbox-build";
 import { ManifestOption } from "./manifest";
-import { PWAI18NConfig } from "@mr-hope/vuepress-shared-utils";
+import { PWAI18NConfig } from "@mr-hope/vuepress-shared";
 import "./declare";
 
 export * from "./manifest";

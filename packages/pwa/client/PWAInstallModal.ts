@@ -1,9 +1,9 @@
 import { Component, Vue } from "vue-property-decorator";
 import { ManifestOption } from "../types";
-import ArrowLeftIcon from "@mr-hope/vuepress-shared-utils/icons/ArrowLeftIcon.vue";
-import ArrowRightIcon from "@mr-hope/vuepress-shared-utils/icons/ArrowRightIcon.vue";
-import CloseIcon from "@mr-hope/vuepress-shared-utils/icons/CloseIcon.vue";
-import { PWAI18NConfig } from "@mr-hope/vuepress-shared-utils";
+import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
+import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
+import CloseIcon from "./icons/CloseIcon.vue";
+import { PWAI18NConfig } from "@mr-hope/vuepress-shared";
 import { i18n } from "./define";
 
 export interface SafariNavigator extends Navigator {

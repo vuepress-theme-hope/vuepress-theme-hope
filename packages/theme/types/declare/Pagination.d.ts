@@ -1,5 +1,5 @@
 declare module "@Pagination" {
-  import vue from 'vue';
+  import vue from "vue";
 
   export default vue;
 }

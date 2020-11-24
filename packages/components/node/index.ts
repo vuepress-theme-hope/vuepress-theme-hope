@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { i18nConfig, lang2path } from "@mr-hope/vuepress-shared-utils";
+import { i18n, lang2path } from "@mr-hope/vuepress-utils";
 import { resolve } from "path";
 
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
@@ -9,7 +9,7 @@ export = (options: ComponentOptions, context: Context): PluginOptionAPI => {
   const { themeConfig } = context;
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = lang2path(baseLang);
-  const componentConfig = i18nConfig.component;
+  const componentConfig = i18n.component;
 
   componentConfig["/"] = componentConfig[baseLangPath];
 

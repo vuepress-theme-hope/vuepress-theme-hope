@@ -1,6 +1,6 @@
 import { initDom, select } from "./dom";
 import { getCode, getReactCode, getNormalCode, getVueCode } from "./utils";
-import { CodeDemoOptions } from "packages/md-enhance/types";
+import { CodeDemoOptions } from "vuepress-plugin-md-enhance";
 
 export const initDemo = (): void => {
   const containers = select(document, "code-demo-wrapper");

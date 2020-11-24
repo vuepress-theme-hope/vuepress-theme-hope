@@ -1,6 +1,6 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
-import CategoryIcon from "@mr-hope/vuepress-shared-utils/icons/CategoryIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared-utils";
+import CategoryIcon from "./icons/CategoryIcon.vue";
+import { capitalize } from "@mr-hope/vuepress-shared";
 import { pageInfoI18n } from "./define";
 
 @Component({ components: { CategoryIcon } })

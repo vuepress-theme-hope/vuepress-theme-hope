@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@theme/*": ["*"]
+    }
+  },
+  "references": [
+    { "path": "../comment/tsconfig.json" },
+    { "path": "../utils/tsconfig.json" },
+    { "path": "../shared/tsconfig.json" },
+    { "path": "../vuepress-types/tsconfig.json" },
+    { "path": "./tsconfig.cjs.json" },
+    { "path": "./tsconfig.esm.json" }
+  ],
+  "files": []
+}

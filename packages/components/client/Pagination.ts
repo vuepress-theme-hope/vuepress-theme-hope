@@ -1,4 +1,4 @@
-import { ComponentI18NConfig } from "@mr-hope/vuepress-shared-utils";
+import { ComponentI18NConfig } from "@mr-hope/vuepress-shared";
 import { Component, Model, Prop, Vue } from "vue-property-decorator";
 import { componentI18n } from "./define";
 

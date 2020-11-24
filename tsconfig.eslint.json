@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {
+      "@theme/*": ["packages/theme/*"]
+    }
+  },
+  "include": ["**/*.ts"]
+}

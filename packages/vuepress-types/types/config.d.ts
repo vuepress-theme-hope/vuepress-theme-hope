@@ -5,6 +5,23 @@ import { Markdown } from "./markdown";
 import { PluginOptionAPI } from "./plugin";
 import MarkdownItAnchor = require("markdown-it-anchor");
 
+export interface I18nConfig extends Record<string, any> {
+  /** 当前语言代码 */
+  lang?: string;
+  /** 当前语言下的标题 */
+  title?: string;
+  /** 当前语言下的描述 */
+  description?: string;
+}
+
+export interface LocaleConfig {
+  [key: string]: I18nConfig;
+}
+
+export interface ThemeConfig extends Record<string, any> {
+  locales?: LocaleConfig;
+}
+
 export interface MarkdownItToc {
   /** Headings levels to use */
   includeLevel?: number[];
@@ -77,26 +94,12 @@ export interface MarkdownConfig {
    */
   extractHeaders: string[];
 }
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type PluginConfig<T = any> =
+export type PluginConfig<PluginOption = any> =
   | string
   | [string]
-  | [string, T]
-  | Record<string, T>
+  | [string, PluginOption]
+  | Record<string, PluginOption>
   | PluginOptionAPI;
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface I18nConfig extends Record<string, any> {
-  /** 当前语言代码 */
-  lang?: string;
-  /** 当前语言下的标题 */
-  title?: string;
-  /** 当前语言下的描述 */
-  description?: string;
-}
-
-export type LocaleConfig = Record<string, I18nConfig>;
 
 export type HeadItem = [string, Record<string, string>, string?];
 
@@ -167,10 +170,6 @@ export type BuildSiteConfig = {
   /** less-loader 的选项 */
   less?: Record<string, any>;
   /** 用于修改内部的 Webpack 配置  */
-  /*
-   * TODO: ask vuepress to upgrade webpack-chain to >=5.2.0
-   * https://github.com/neutrinojs/webpack-chain/blob/master/CHANGELOG.md#v520
-   */
   configureWebpack?:
     | Configuration
     | ((config: Configuration, isServer: boolean) => void)
@@ -202,12 +201,6 @@ export interface SiteConfig extends BaseSiteConfig, BuildSiteConfig {
   devTemplate?: string;
   permalink?: string;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
-}
-
-export interface ThemeConfig {
-  locales?: LocaleConfig;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }

@@ -1,4 +1,4 @@
-import { ComponentI18NConfig, Langs } from "@mr-hope/vuepress-shared-utils";
+import { ComponentI18NConfig, Langs } from "@mr-hope/vuepress-shared";
 
 export interface ComponentOptions {
   /**

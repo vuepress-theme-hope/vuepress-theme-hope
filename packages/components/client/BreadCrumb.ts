@@ -21,9 +21,7 @@ export default class BreadCrumb extends Vue {
 
   private get iconEnable(): boolean {
     const globalEnable = this.$themeConfig.breadcrumbIcon !== false;
-    const pageEnable = this.$page.frontmatter.breadcrumbIcon as
-      | boolean
-      | undefined;
+    const pageEnable = this.$page.frontmatter.breadcrumbIcon;
 
     return (
       this.enable &&

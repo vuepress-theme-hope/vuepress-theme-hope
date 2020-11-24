@@ -47,7 +47,7 @@
       background var(--bgcolor, #fff)
       box-shadow 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2))
 
-@require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
+@require '~@mr-hope/vuepress-shared/styles/colors.styl'
 
 for $color, $index in $colors
   .tags-wrapper .tag{$index}

@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import CalendarIcon from "@mr-hope/vuepress-shared-utils/icons/CalendarIcon.vue";
+import CalendarIcon from "./icons/CalendarIcon.vue";
 import { pageInfoI18n } from "./define";
 
 @Component({ components: { CalendarIcon } })

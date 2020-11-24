@@ -56,7 +56,7 @@ $categoryListTextSize ?= 14px
       line-height 1.2rem
       text-align center
 
-@require '~@mr-hope/vuepress-shared-utils/styles/colors.styl'
+@require '~@mr-hope/vuepress-shared/styles/colors.styl'
 
 for $color, $index in $colors
   .category-list-wrapper .category{$index}

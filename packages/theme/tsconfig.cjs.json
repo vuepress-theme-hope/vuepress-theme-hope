@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "commonjs"
+  },
+  "include": ["./node/**/*.ts", "./index.ts"],
+  "exclude": []
+}

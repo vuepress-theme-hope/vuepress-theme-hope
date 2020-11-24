@@ -35,7 +35,7 @@ export const generateSeo = (
       ? new Date(lastUpdatedTime).toISOString()
       : "";
   const articleTags: string[] = Array.isArray(tags)
-    ? (tags as string[])
+    ? tags
     : typeof tag === "string"
     ? [tag]
     : [];
@@ -46,7 +46,7 @@ export const generateSeo = (
     "og:title": $page.title,
     "og:description": $page.frontmatter.description || "",
     "og:type": type,
-    "og:image": image ? `${hostname}${image as string}` : "",
+    "og:image": image ? `${hostname}${image}` : "",
     "og:updated_time": modifiedTime,
     // eslint-disable-next-line no-underscore-dangle
     "og:locale": $page._computed.$lang,

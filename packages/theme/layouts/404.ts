@@ -1,9 +1,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import Common from "@theme/components/Common.vue";
-import {
-  HopeLangI18nConfig,
-  getDefaultLocale,
-} from "@mr-hope/vuepress-shared-utils";
+import { getDefaultLocale } from "@mr-hope/vuepress-shared";
+import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
 
 @Component({ components: { Common } })
 export default class NotFound extends Vue {

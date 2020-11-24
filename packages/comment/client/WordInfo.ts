@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import WordIcon from "@mr-hope/vuepress-shared-utils/icons/WordIcon.vue";
+import WordIcon from "./icons/WordIcon.vue";
 import { pageInfoI18n, readingTimeI18n } from "./define";
 
 @Component({ components: { WordIcon } })

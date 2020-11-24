@@ -34,8 +34,9 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-plugin-reading-time": "^1.6.1",
-    "@mr-hope/vuepress-shared-utils": "^1.6.1",
+    "@mr-hope/vuepress-shared": "^1.6.1",
     "@mr-hope/vuepress-types": "^1.6.1",
+    "@mr-hope/vuepress-utils": "^1.6.1",
     "@vssue/api-bitbucket-v2": "^1.4.0",
     "@vssue/api-gitea-v1": "^1.4.4",
     "@vssue/api-gitee-v5": "^1.4.4",

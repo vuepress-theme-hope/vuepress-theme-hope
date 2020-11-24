@@ -1,4 +1,4 @@
-import { Langs } from "@mr-hope/vuepress-shared-utils";
+import { Langs } from "@mr-hope/vuepress-shared";
 import { RevealOptions } from "reveal.js";
 import "./declare";
 

@@ -2,7 +2,7 @@ import {
   Langs,
   PageInfoI18nConfig,
   ReadingTimeI18NConfig,
-} from "@mr-hope/vuepress-shared-utils";
+} from "@mr-hope/vuepress-shared";
 import { Vssue } from "vssue";
 import { ValineOption } from "valine";
 

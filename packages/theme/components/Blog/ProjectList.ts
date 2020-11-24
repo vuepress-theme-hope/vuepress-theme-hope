@@ -1,8 +1,8 @@
 import { Component, Vue } from "vue-property-decorator";
-import ArticleIcon from "@mr-hope/vuepress-shared-utils/icons/ArticleIcon.vue";
-import BookIcon from "@mr-hope/vuepress-shared-utils/icons/BookIcon.vue";
-import LinkIcon from "@mr-hope/vuepress-shared-utils/icons/LinkIcon.vue";
-import ProjectIcon from "@mr-hope/vuepress-shared-utils/icons/ProjectIcon.vue";
+import ArticleIcon from "@theme/icons/ArticleIcon.vue";
+import BookIcon from "@theme/icons/BookIcon.vue";
+import LinkIcon from "@theme/icons/LinkIcon.vue";
+import ProjectIcon from "@theme/icons/ProjectIcon.vue";
 import { navigate } from "@theme/util/navigate";
 
 @Component({
