@@ -28,16 +28,6 @@ tags:
 
 - [**Seo and Sitemap**](seo-sitemap.md)
 
-- Icon support
-
-  FontClass format icon support has been added in multiple places throughout the theme.
-
-  Please import the corresponding icon CSS file in `index.styl` under `.vuepress/styles`. E.g:
-
-  ```css
-  @import "//at.alicdn.com/t/font_1446717_q5huxk6v1h.css";
-  ```
-
-  The class added to the icon is `iconfont`, and the prefix of the icon is `icon-` by default, which can be changed in the `iconPrefix` field in the theme configuration.
+- [**Icon support**](icon.md)
 
 - [**TypeScript support**](typescript.md)

@@ -28,16 +28,6 @@ tags:
 
 - [**Seo 和 Sitemap 支持**](seo-sitemap.md)
 
-- 图标支持
-
-  整个主题在多处都添加了 FontClass 格式图标的支持。
-
-  请在 `.vuepress/styles` 的 `index.styl` 中导入对应的图标 CSS 文件。例如:
-
-  ```css
-  @import "//at.alicdn.com/t/font_1446717_q5huxk6v1h.css";
-  ```
-
-  图标会默认添加 `iconfont` 类名，图标 class 的前缀默认为 `icon-`，可以在主题配置中的 `iconPrefix` 字段进行更改。
+- [**图标支持**](icon.md)
 
 - [**TypeScript 支持**](typescript.md)
