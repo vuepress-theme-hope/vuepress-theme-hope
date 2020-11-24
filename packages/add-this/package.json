@@ -31,6 +31,6 @@
     "demo:serve": "vuepress dev test/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "^1.6.1"
+    "@mr-hope/vuepress-types": "~1.6.1"
   }
 }
