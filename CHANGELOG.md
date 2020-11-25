@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.0...v1.7.1) (2020-11-25)
+
+### Features
+
+- remove vue-property-decorator on plugins ([867af4a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/867af4a141272b2c2fa8debc8091c62254814ea0))
+
 ## [1.7.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.1...v1.7.0) (2020-11-24)
 
 ### Features

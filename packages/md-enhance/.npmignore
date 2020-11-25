@@ -2,3 +2,5 @@
 !*.d.ts
 
 test/
+
+tsconfig.*
