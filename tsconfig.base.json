@@ -14,7 +14,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": false,
+    "importHelpers": true,
     "inlineSourceMap": false,
     "inlineSources": false,
     "lib": ["DOM", "ES2020"],
