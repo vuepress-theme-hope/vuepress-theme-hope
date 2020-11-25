@@ -1,21 +1,26 @@
-# @mr-hope/vuepress-plugin-copy-code
+<!-- markdownlint-disable -->
+<p align="center">
+  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
+</p>
+<h1 align="center">@mr-hope/vuepress-plugin-copy-code</h1>
+<h4 align="center">VuePress copy code plugin📋 / VuePress 代码复制插件📋</h4>
 
 [![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-copy-code?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-copy-code)
 
-copy-code plugin for vuepress-theme-hope.
+<!-- markdownlint-restore -->
 
-## Usage
+VuePress copy code plugin📋 / VuePress 代码复制插件 📋
+
+## [Official Docs](https://vuepress-copy-code.mrhope.site/) | [官方文档](https://vuepress-copy-code.mrhope.site/zh/)
+
+## Usage / 使用
 
 ```bash
-npm i @mr-hope/vuepress-plugin-copy-code
+npm i -D @mr-hope/vuepress-plugin-copy-code
 ```
 
----
-
-vuepress-theme-hope 的 copy-code 插件。
-
-## 使用
+Or
 
 ```bash
-npm i @mr-hope/vuepress-plugin-copy-code
+yarn add -D @mr-hope/vuepress-plugin-copy-code
 ```

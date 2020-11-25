@@ -13,9 +13,7 @@ VuePress add-this plugin💌 / VuePress AddThis 插件 💌
 
 ## [Official Docs](https://vuepress-add-this.mrhope.site/) / [官方文档](https://vuepress-add-this.mrhope.site/zh/)
 
-## How to use
-
-### Install
+## Install / 安装
 
 ```bash
 npm i -D vuepress-plugin-add-this
@@ -25,52 +23,4 @@ Or
 
 ```bash
 yarn add -D vuepress-plugin-add-this
-```
-
-### Usage
-
-```js
-// .vuepress/config.js
-module.exports = {
-  plugins: [
-    [
-      "add-this",
-      {
-        pubid: "your pubid",
-      },
-    ],
-  ],
-};
-```
-
----
-
-## 使用插件
-
-### 安装
-
-```bash
-npm i -D vuepress-plugin-add-this
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-add-this
-```
-
-### 使用
-
-```js {7}
-// .vuepress/config.js
-module.exports = {
-  plugins: [
-    [
-      "add-this",
-      {
-        pubid: "你的 pubid",
-      },
-    ],
-  ],
-};
 ```

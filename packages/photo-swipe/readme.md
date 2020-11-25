@@ -9,20 +9,16 @@
 
 <!-- markdownlint-restore -->
 
-## [Official Docs](https://vuepress-photo-swipe.mrhope.site/en/) / [官方文档](https://vuepress-photo-swipe.mrhope.site)
+## [Official Docs](https://vuepress-photo-swipe.mrhope.site) / [官方文档](https://vuepress-photo-swipe.mrhope.site/zh/)
 
-## Usage
+## Install / 安装
 
 ```bash
-npm i vuepress-plugin-photo-swipe
+npm i -D vuepress-plugin-photo-swipe
 ```
 
----
-
-vuepress-theme-hope 的 photo-swipe 插件。
-
-## 使用
+Or
 
 ```bash
-npm i vuepress-plugin-photo-swipe
+yarn add -D vuepress-plugin-photo-swipe
 ```

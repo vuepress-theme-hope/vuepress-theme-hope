@@ -11,11 +11,9 @@
 
 VuePress comment plugin💬 / VuePress 评论插件 💬
 
-## Docs / 文档
+## [Official Docs](https://vuepress-comment.mrhope.site/) | [官方文档](https://vuepress-comment.mrhope.site/zh/)
 
-[English Docs](https://vuepress-comment.mrhope.site/) | [中文文档](https://vuepress-comment.mrhope.site/zh/)
-
-## 使用 / Usage
+## 安装 / Install
 
 ```bash
 npm i @mr-hope/vuepress-plugin-comment
@@ -26,3 +24,9 @@ Or
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-comment
 ```
+
+## Feature / 特性
+
+Support both valine and vssue.
+
+支持 valine 和 vssue。
