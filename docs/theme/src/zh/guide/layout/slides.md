@@ -12,7 +12,7 @@ tags:
 
 你需要在相应的页面的 frontmatter 中，设置 `layout: Slide` 来开启幻灯片风格。
 
-另外，您应该通过设置 `themeConfig.mdEnhance.enableAll` 或 `themeConfig.mdEnhance.presentation` 再 `vuepress-plugin-md-enhance` 中启用幻灯片功能。
+另外，您应该通过设置 `themeConfig.mdEnhance.enableAll` 或 `themeConfig.mdEnhance.presentation` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能。
 
 ![幻灯片页截图](./assets/slides.png)
 

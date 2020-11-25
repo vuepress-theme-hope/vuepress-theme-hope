@@ -36,7 +36,7 @@ First, you need to create a new project to set and manage your website’s icons
 
 1. Search freely through iconfont to find the icon you want to use, and click the "Add to Library" button on the icon
 
-   ![Add to library](assets/iconfont-add.png)
+   ![Add to library](./assets/iconfont-add.png)
 
 1. After searching for all the icons, click the "Add to Library" icon in the upper right corner, click "Add to Project" below and select the project you just created then confirm.
 
@@ -44,13 +44,13 @@ First, you need to create a new project to set and manage your website’s icons
 
 On the project page, you can simply edit the icons in the project, including adjustments with position, size, rotate, color, Unicode number and Font Class / Symbol.
 
-![Edit icon](assets/iconfont-edit.png)
+![Edit icon](./assets/iconfont-edit.png)
 
 ### Generate icon files
 
 1. Please click the "Font Class" button above the project and click Generate.
 
-   ![Add to library](assets/iconfont-add.png)
+   ![Add to library](./assets/iconfont-add.png)
 
 1. Import the link in `index.styl` of `.vuepress/styles`. E.g:
 

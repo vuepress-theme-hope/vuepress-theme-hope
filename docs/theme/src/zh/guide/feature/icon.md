@@ -36,7 +36,7 @@ tags:
 
 1. 请自行在 iconfont 自由搜索寻找你想要使用的图标，并点击图标上的 “添加入库” 按钮
 
-   ![添加入库](assets/iconfont-add.png)
+   ![添加入库](./assets/iconfont-add.png)
 
 1. 在寻找完所有图标后，请点击右上角的 “添加入库” 图标，点击下方的 “添加至项目” 并选择你刚刚创建好的项目进行确定。
 
@@ -44,13 +44,13 @@ tags:
 
 在项目页面，你可以对项目内的图标进行简单的编辑，包括位置、缩放、旋转、颜色以及 Unicode 编号与 Font Class / Symbol 的调整。
 
-![编辑图标](assets/iconfont-edit.png)
+![编辑图标](./assets/iconfont-edit.png)
 
 ### 生成图标文件
 
 1. 请点击项目上方的 “Font Class” 按钮，并点击生成。
 
-   ![添加入库](assets/iconfont-add.png)
+   ![添加入库](./assets/iconfont-add.png)
 
 1. 在 `.vuepress/styles` 的 `index.styl` 中导入链接。例如:
 

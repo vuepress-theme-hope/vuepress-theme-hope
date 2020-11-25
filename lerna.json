@@ -5,6 +5,9 @@
   "command": {
     "run": {
       "npmClient": "yarn"
+    },
+    "version": {
+      "message": "chore(release): publish %s"
     }
   }
 }

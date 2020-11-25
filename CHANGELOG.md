@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.1...v1.7.0) (2020-11-24)
+
+### Features
+
+- update typescript to 4.1 and improve types ([7346cd8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7346cd8362237826a798d086409530e8987b6130))
+
 ## [1.6.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.6.0...v1.6.1) (2020-11-19)
 
 ### Bug Fixes
