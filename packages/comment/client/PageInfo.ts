@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import { PageInfotype } from "../types";
 import AuthorInfo from "./AuthorInfo.vue";
 import CategoryInfo from "./CategoryInfo.vue";
@@ -11,7 +11,9 @@ import { commentOptions, pageInfoI18n } from "./define";
 
 import "balloon-css";
 
-@Component({
+export default Vue.extend({
+  name: "PageInfo",
+
   components: {
     AuthorInfo,
     CategoryInfo,
@@ -21,44 +23,44 @@ import "balloon-css";
     VisitorInfo,
     WordInfo,
   },
-})
-export default class PageInfo extends Vue {
-  private commentConfig = commentOptions;
 
-  private get config(): PageInfotype[] | false {
-    const themeConfig = this.$themeConfig.pageInfo;
-    const pluginConfig = this.commentConfig.pageInfo;
-    const pageConfig = this.$page.frontmatter.pageInfo as
-      | false
-      | PageInfotype[]
-      | undefined;
+  data: () => ({
+    commentConfig: commentOptions,
+  }),
 
-    return pageConfig === false
-      ? false
-      : Array.isArray(pageConfig)
-      ? pageConfig
-      : pluginConfig === false
-      ? false
-      : Array.isArray(pluginConfig)
-      ? pluginConfig
-      : themeConfig === false
-      ? false
-      : Array.isArray(themeConfig)
-      ? themeConfig
-      : ["Author", "Visitor", "Time", "Category", "Tag", "ReadTime"];
-  }
+  computed: {
+    config(): PageInfotype[] | false {
+      const themeConfig = this.$themeConfig.pageInfo;
+      const pluginConfig = this.commentConfig.pageInfo;
+      const pageConfig = this.$page.frontmatter.pageInfo as
+        | false
+        | PageInfotype[]
+        | undefined;
 
-  private get iconPrefix(): string {
-    const { iconPrefix } = this.$themeConfig;
+      return pageConfig === false
+        ? false
+        : Array.isArray(pageConfig)
+        ? pageConfig
+        : pluginConfig === false
+        ? false
+        : Array.isArray(pluginConfig)
+        ? pluginConfig
+        : themeConfig === false
+        ? false
+        : Array.isArray(themeConfig)
+        ? themeConfig
+        : ["Author", "Visitor", "Time", "Category", "Tag", "ReadTime"];
+    },
+    iconPrefix(): string {
+      const { iconPrefix } = this.$themeConfig;
 
-    return iconPrefix === "" ? "" : iconPrefix || "icon-";
-  }
-
-  private get isOriginal(): boolean {
-    return this.$frontmatter.original === true;
-  }
-
-  private get originText(): string {
-    return pageInfoI18n[this.$localePath || "/"].origin;
-  }
-}
+      return iconPrefix === "" ? "" : iconPrefix || "icon-";
+    },
+    isOriginal(): boolean {
+      return this.$frontmatter.original === true;
+    },
+    originText(): string {
+      return pageInfoI18n[this.$localePath || "/"].origin;
+    },
+  },
+});

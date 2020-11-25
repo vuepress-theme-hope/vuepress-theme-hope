@@ -1,35 +1,43 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import TagIcon from "./icons/TagIcon.vue";
 import { capitalize } from "@mr-hope/vuepress-shared";
 import { pageInfoI18n } from "./define";
 
-@Component({ components: { TagIcon } })
-export default class TagInfo extends Vue {
-  @Prop({ type: Array, default: () => [] })
-  private readonly tags!: string[];
+export default Vue.extend({
+  name: "TagInfo",
 
-  private get $tags(): string[] {
-    if (this.tags.length !== 0) return this.tags;
+  components: { TagIcon },
 
-    const { tags, tag = tags } = this.$frontmatter;
+  props: {
+    tags: { type: Array as PropType<string[]>, default: (): string[] => [] },
+  },
 
-    if (typeof tag === "string") return [capitalize(tag)];
+  computed: {
+    $tags(): string[] {
+      if (this.tags.length !== 0) return this.tags;
 
-    if (Array.isArray(tag)) return tag.map((item) => capitalize(item));
+      const { tags, tag = tags } = this.$frontmatter;
 
-    return [];
-  }
+      if (typeof tag === "string") return [capitalize(tag)];
 
-  private get clickable(): boolean {
-    return this.$themeConfig.blog !== false;
-  }
+      if (Array.isArray(tag)) return tag.map((item) => capitalize(item));
 
-  private navigate(tagName: string): void {
-    const path = `/tag/${tagName}/`;
-    if (this.$route.path !== path) void this.$router.push(path);
-  }
+      return [];
+    },
 
-  private get hint(): string {
-    return pageInfoI18n[this.$localePath || "/"].tag;
-  }
-}
+    clickable(): boolean {
+      return this.$themeConfig.blog !== false;
+    },
+
+    hint(): string {
+      return pageInfoI18n[this.$localePath || "/"].tag;
+    },
+  },
+
+  methods: {
+    navigate(tagName: string): void {
+      const path = `/tag/${tagName}/`;
+      if (this.$route.path !== path) void this.$router.push(path);
+    },
+  },
+});

@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import PWAInstallModal from "./PWAInstallModal.vue";
 import { SafariNavigator } from "./PWAInstallModal";
 import { i18n } from "./define";
@@ -7,26 +7,31 @@ interface ModernNavigator extends Navigator {
   getInstalledRelatedApps: () => Promise<unknown[]>;
 }
 
-@Component({ components: { PWAInstallModal } })
-export default class PWAInstall extends Vue {
-  canInstall = false;
-  hasRelatedApps = false;
-  isOpen = false;
+export default Vue.extend({
+  name: "PWAInstall",
 
-  isIOS = false;
+  components: { PWAInstallModal },
 
-  hinted = false;
+  data: () => ({
+    canInstall: false,
+    hasRelatedApps: false,
+    isOpen: false,
+    isIOS: false,
+    hinted: false,
+  }),
 
-  get install(): string {
-    return i18n[this.$localePath || "/"].install;
-  }
+  computed: {
+    install(): string {
+      return i18n[this.$localePath || "/"].install;
+    },
 
-  get showInstall(): boolean {
-    return (
-      (this.hasRelatedApps && this.canInstall) ||
-      (this.isIOS && this.hinted === false)
-    );
-  }
+    showInstall(): boolean {
+      return (
+        (this.hasRelatedApps && this.canInstall) ||
+        (this.isIOS && this.hinted === false)
+      );
+    },
+  },
 
   mounted(): void {
     if (
@@ -43,18 +48,20 @@ export default class PWAInstall extends Vue {
         .then((result) => {
           this.hasRelatedApps = result.length > 0;
         });
-  }
+  },
 
-  getInstalledStatus(): boolean {
-    if ((navigator as SafariNavigator).standalone)
-      return (navigator as SafariNavigator).standalone;
+  methods: {
+    getInstalledStatus(): boolean {
+      if ((navigator as SafariNavigator).standalone)
+        return (navigator as SafariNavigator).standalone;
 
-    return matchMedia("(display-mode: standalone)").matches;
-  }
+      return matchMedia("(display-mode: standalone)").matches;
+    },
 
-  hide(): void {
-    this.isOpen = false;
-    this.hinted = true;
-    localStorage.setItem("iOS-pwa-hint", "hinted");
-  }
-}
+    hide(): void {
+      this.isOpen = false;
+      this.hinted = true;
+      localStorage.setItem("iOS-pwa-hint", "hinted");
+    },
+  },
+});

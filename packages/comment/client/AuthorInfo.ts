@@ -1,19 +1,26 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import AuthorIcon from "./icons/AuthorIcon.vue";
 import { commentOptions, pageInfoI18n } from "./define";
-import { CommentOptions } from "../types";
 
-@Component({ components: { AuthorIcon } })
-export default class AuthorInfo extends Vue {
-  private commentOption: CommentOptions = commentOptions;
+export default Vue.extend({
+  name: "AuthorInfo",
+  components: { AuthorIcon },
 
-  private get author(): string {
-    const { author } = this.$frontmatter;
+  data: () => ({
+    commentOption: commentOptions,
+  }),
 
-    return author || (author === false ? "" : this.commentOption.author || "");
-  }
+  computed: {
+    author(): string {
+      const { author } = this.$frontmatter;
 
-  private get hint(): string {
-    return pageInfoI18n[this.$localePath || "/"].author;
-  }
-}
+      return (
+        author || (author === false ? "" : this.commentOption.author || "")
+      );
+    },
+
+    hint(): string {
+      return pageInfoI18n[this.$localePath || "/"].author;
+    },
+  },
+});

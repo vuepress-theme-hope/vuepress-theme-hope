@@ -1,22 +1,26 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import { Screenfull } from "screenfull";
 import * as screenfull from "screenfull";
 
-@Component
-export default class ScreenFull extends Vue {
-  private canFullscreen = false;
+export default Vue.extend({
+  name: "ScreenFull",
 
-  private isFullscreen = false;
+  data: () => ({
+    canFullscreen: false,
+    isFullscreen: false,
+  }),
 
-  private click(): void {
-    if (screenfull.isEnabled)
-      void screenfull.toggle().then(() => {
-        this.isFullscreen = (screenfull as Screenfull).isFullscreen;
-      });
-  }
-
-  private mounted(): void {
+  mounted(): void {
     this.canFullscreen =
       screenfull.isEnabled && this.$themeConfig.fullscreen !== false;
-  }
-}
+  },
+
+  methods: {
+    click(): void {
+      if (screenfull.isEnabled)
+        void screenfull.toggle().then(() => {
+          this.isFullscreen = (screenfull as Screenfull).isFullscreen;
+        });
+    },
+  },
+});

@@ -1,27 +1,32 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import CalendarIcon from "./icons/CalendarIcon.vue";
 import { pageInfoI18n } from "./define";
 
-@Component({ components: { CalendarIcon } })
-export default class TimeInfo extends Vue {
-  private get time(): string {
-    const { time } = this.$frontmatter;
+export default Vue.extend({
+  name: "TimeInfo",
 
-    if (typeof time === "string") {
-      if (time.indexOf("T") !== -1) {
-        const [date, temp] = time.split("T");
-        const [moment] = temp.split(".");
+  components: { CalendarIcon },
 
-        return `${date} ${moment === "00:00:00" ? "" : moment}`;
+  computed: {
+    time(): string {
+      const { time } = this.$frontmatter;
+
+      if (typeof time === "string") {
+        if (time.indexOf("T") !== -1) {
+          const [date, temp] = time.split("T");
+          const [moment] = temp.split(".");
+
+          return `${date} ${moment === "00:00:00" ? "" : moment}`;
+        }
+
+        return time;
       }
 
-      return time;
-    }
+      return "";
+    },
 
-    return "";
-  }
-
-  private get hint(): string {
-    return pageInfoI18n[this.$localePath || "/"].time;
-  }
-}
+    hint(): string {
+      return pageInfoI18n[this.$localePath || "/"].time;
+    },
+  },
+});

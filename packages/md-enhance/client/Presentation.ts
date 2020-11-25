@@ -1,4 +1,4 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import Loading from "./icons/LoadingIcon.vue";
 
 type ThemeType =
@@ -15,20 +15,22 @@ type ThemeType =
   | "blood"
   | "moon";
 
-@Component({ components: { Loading } })
-export default class Presentation extends Vue {
-  @Prop({ type: String, required: true })
-  private readonly id!: string;
+export default Vue.extend({
+  name: "Presentation",
 
-  @Prop({ type: String, required: true })
-  private readonly code!: string;
+  components: { Loading },
 
-  @Prop({ type: String, default: "auto" })
-  private readonly theme!: ThemeType;
+  props: {
+    id: { type: String, required: true },
+    code: { type: String, required: true },
+    theme: { type: String as PropType<ThemeType>, default: "auto" },
+  },
 
-  private loading = true;
+  data: () => ({
+    loading: true,
+  }),
 
-  private mounted(): void {
+  mounted(): void {
     this.$el.setAttribute("id", this.id);
     const revealElement = document.querySelector(`#${this.id}`);
 
@@ -116,5 +118,5 @@ export default class Presentation extends Vue {
           });
       });
     }
-  }
-}
+  },
+});

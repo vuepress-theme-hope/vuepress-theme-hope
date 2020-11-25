@@ -1,4 +1,4 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import Loading from "./icons/LoadingIcon.vue";
 import debounce from "lodash.debounce";
 import presets from "./presets";
@@ -6,45 +6,48 @@ import * as Flowchart from "flowchart.js";
 
 let svg: Flowchart.Instance;
 
-@Component({ components: { Loading } })
-export default class FlowChart extends Vue {
-  @Prop({ type: String, required: true })
-  private readonly id!: string;
+export default Vue.extend({
+  name: "FlowChart",
 
-  @Prop({ type: String, required: true })
-  private readonly code!: string;
+  components: { Loading },
 
-  @Prop({ type: String, default: "vue" })
-  private readonly preset!: "ant" | "vue";
+  props: {
+    id: { type: String, required: true },
+    code: { type: String, required: true },
+    preset: { type: String as PropType<"ant" | "vue">, default: "vue" },
+  },
 
-  private loading = true;
+  data: () => ({
+    loading: true,
+    scale: 1,
+  }),
 
-  private scale = 1;
+  computed: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    $preset(): Record<string, any> {
+      const preset = presets[this.preset as "ant" | "vue"];
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private get $preset(): Record<string, any> {
-    const preset = presets[this.preset];
-
-    if (!preset) {
-      console.warn(`[md-enhance:flowchart] Unknown preset: ${this.preset}`);
-      return presets.vue;
-    }
-
-    return preset;
-  }
-
-  private get resize(): () => void {
-    return debounce(() => {
-      const scale = this.getScale(window.innerWidth);
-
-      if (this.scale !== scale) {
-        this.scale = scale;
-        svg.drawSVG(this.id, { ...this.$preset, scale });
+      if (!preset) {
+        console.warn(`[md-enhance:flowchart] Unknown preset: ${this.preset}`);
+        return presets.vue;
       }
-    }, 100);
-  }
 
-  private mounted(): void {
+      return preset;
+    },
+
+    resize(): () => void {
+      return debounce(() => {
+        const scale = this.getScale(window.innerWidth);
+
+        if (this.scale !== scale) {
+          this.scale = scale;
+          svg.drawSVG(this.id, { ...this.$preset, scale });
+        }
+      }, 100);
+    },
+  },
+
+  mounted(): void {
     const delay = (): Promise<void> =>
       new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -64,13 +67,16 @@ export default class FlowChart extends Vue {
 
       window.addEventListener("resize", this.resize);
     });
-  }
+  },
 
-  private beforeDestory(): void {
+  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
+  beforeDestroy(): void {
     window.removeEventListener("resize", this.resize);
-  }
+  },
 
-  private getScale(width: number): number {
-    return width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
-  }
-}
+  methods: {
+    getScale(width: number): number {
+      return width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
+    },
+  },
+});

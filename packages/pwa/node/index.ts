@@ -30,12 +30,10 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    beforeDevServer(app) {
-      app.get("/manifest.webmanifest", (_req, res, next) => {
-        void getManifest(pwaOption, context).then((manifest) => {
-          res.send(manifest);
-          next();
-        });
+    async beforeDevServer(app) {
+      const manifest = await getManifest(pwaOption, context);
+      app.get("/manifest.webmanifest", (_req, res) => {
+        res.send(manifest);
       });
     },
 

@@ -1,12 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { ComponentOptions } from "vue";
-
-// Functional Component Hack
-interface FunctionalComponentOptions extends ComponentOptions<Vue> {
-  functional?: boolean;
-}
+import Vue from "vue";
 
 interface ElementOption {
   class: string[];
@@ -14,9 +6,18 @@ interface ElementOption {
   "data-color"?: string;
 }
 
-@Component({
+export default Vue.extend({
   name: "MyBadge",
+
   functional: true,
+
+  props: {
+    type: { type: String, default: "tip" },
+    text: { type: String, default: "" },
+    vertical: { type: String, default: "top" },
+    color: { type: String, default: "" },
+  },
+
   render(h, { props, slots }) {
     const options: ElementOption = {
       class: ["badge", props.type],
@@ -29,19 +30,7 @@ interface ElementOption {
       options["data-color"] = props.color;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     return h("span", options, props.text || slots().default);
   },
-} as FunctionalComponentOptions)
-export default class MyBadge extends Vue {
-  @Prop({ type: String, default: "tip" })
-  private readonly type!: string;
-
-  @Prop({ type: String, default: "" })
-  private readonly text!: string;
-
-  @Prop({ type: String, default: "top" })
-  private readonly vertical!: string;
-
-  @Prop({ type: String, default: "" })
-  private readonly color!: string;
-}
+});

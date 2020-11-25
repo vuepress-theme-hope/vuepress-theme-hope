@@ -1,36 +1,43 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import debounce from "lodash.debounce";
 import { componentI18n } from "./define";
-@Component
-export default class BackToTop extends Vue {
-  @Prop({ type: Number, default: 300 })
-  private readonly threshold!: number;
 
-  /** Scroll distance */
-  private scrollTop = 0;
+export default Vue.extend({
+  name: "BackToTop",
 
-  private get thresholdDistance(): number {
-    return typeof this.$themeConfig.backToTop === "number"
-      ? this.$themeConfig.backToTop
-      : this.threshold;
-  }
+  props: {
+    threshold: { type: Number, default: 300 },
+  },
 
-  /** Whether to display button */
-  private get isDisplay(): boolean {
-    const globalEnable = this.$themeConfig.backToTop !== false;
-    const pageEnable = this.$page.frontmatter.backToTop;
+  data: () => ({
+    /** Scroll distance */
+    scrollTop: 0,
+  }),
 
-    return (
-      (pageEnable || (globalEnable && pageEnable !== false)) &&
-      this.scrollTop > this.thresholdDistance
-    );
-  }
+  computed: {
+    thresholdDistance(): number {
+      return typeof this.$themeConfig.backToTop === "number"
+        ? this.$themeConfig.backToTop
+        : this.threshold;
+    },
 
-  private get hint(): string {
-    return componentI18n[this.$localePath || "/"].backToTop;
-  }
+    /** Whether to display button */
+    isDisplay(): boolean {
+      const globalEnable = this.$themeConfig.backToTop !== false;
+      const pageEnable = this.$page.frontmatter.backToTop;
 
-  private mounted(): void {
+      return (
+        (pageEnable || (globalEnable && pageEnable !== false)) &&
+        this.scrollTop > this.thresholdDistance
+      );
+    },
+
+    hint(): string {
+      return componentI18n[this.$localePath || "/"].backToTop;
+    },
+  },
+
+  mounted(): void {
     this.scrollTop = this.getScrollTop();
     window.addEventListener(
       "scroll",
@@ -38,21 +45,23 @@ export default class BackToTop extends Vue {
         this.scrollTop = this.getScrollTop();
       }, 100)
     );
-  }
+  },
 
-  // Get scroll distance
-  private getScrollTop(): number {
-    return (
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0
-    );
-  }
+  methods: {
+    // Get scroll distance
+    getScrollTop(): number {
+      return (
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0
+      );
+    },
 
-  // Scroll to top
-  private scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    this.scrollTop = 0;
-  }
-}
+    // Scroll to top
+    scrollToTop(): void {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      this.scrollTop = 0;
+    },
+  },
+});

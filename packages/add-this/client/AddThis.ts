@@ -1,14 +1,19 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 
-@Component
-export default class AddThis extends Vue {
-  private pubid = PUB_ID;
+export default Vue.extend({
+  name: "AddThis",
 
-  private get addthisLink(): string {
-    return `//s7.addthis.com/js/300/addthis_widget.js#pubid=${this.pubid}`;
-  }
+  data: () => ({
+    pubid: PUB_ID,
+  }),
 
-  private mounted(): void {
+  computed: {
+    addthisLink(): string {
+      return `//s7.addthis.com/js/300/addthis_widget.js#pubid=${this.pubid}`;
+    },
+  },
+
+  mounted(): void {
     if (this.pubid) {
       const script = document.createElement("script");
 
@@ -16,5 +21,5 @@ export default class AddThis extends Vue {
       document.getElementsByTagName("body")[0].appendChild(script);
     } else
       console.error("[AddThis]: Please provide a pubid to let plugin work");
-  }
-}
+  },
+});
