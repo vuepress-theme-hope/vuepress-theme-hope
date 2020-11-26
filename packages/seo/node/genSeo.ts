@@ -48,7 +48,6 @@ export const generateSeo = (
     "og:type": type,
     "og:image": image ? `${hostname}${image}` : "",
     "og:updated_time": modifiedTime,
-    // eslint-disable-next-line no-underscore-dangle
     "og:locale": $page._computed.$lang,
     "og:locale:alternate": locale,
 

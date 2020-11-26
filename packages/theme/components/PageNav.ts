@@ -1,4 +1,4 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import { PageComputed, SiteData, ThemeConfig } from "@mr-hope/vuepress-types";
 import {
   SidebarErrorItem,
@@ -72,28 +72,37 @@ const resolvePageLink = (
   return find(page, sidebarItems, linkType === "prev" ? -1 : 1);
 };
 
-@Component({ components: { NextIcon, PrevIcon } })
-export default class PageNav extends Vue {
-  @Prop(Array)
-  private readonly sidebarItems!: SidebarItem[];
+export default Vue.extend({
+  name: "PageNav",
 
-  private get prev(): SidebarItem | false {
-    return resolvePageLink("prev", {
-      sidebarItems: this.sidebarItems,
-      themeConfig: this.$themeConfig,
-      page: this.$page,
-      route: this.$route,
-      site: this.$site,
-    });
-  }
+  components: { NextIcon, PrevIcon },
 
-  private get next(): SidebarItem | false {
-    return resolvePageLink("next", {
-      sidebarItems: this.sidebarItems,
-      themeConfig: this.$themeConfig,
-      page: this.$page,
-      route: this.$route,
-      site: this.$site,
-    });
-  }
-}
+  props: {
+    sidebarItems: {
+      type: Array as PropType<SidebarItem[]>,
+      default: (): SidebarItem[] => [],
+    },
+  },
+
+  computed: {
+    prev(): SidebarItem | false {
+      return resolvePageLink("prev", {
+        sidebarItems: this.sidebarItems,
+        themeConfig: this.$themeConfig,
+        page: this.$page,
+        route: this.$route,
+        site: this.$site,
+      });
+    },
+
+    next(): SidebarItem | false {
+      return resolvePageLink("next", {
+        sidebarItems: this.sidebarItems,
+        themeConfig: this.$themeConfig,
+        page: this.$page,
+        route: this.$route,
+        site: this.$site,
+      });
+    },
+  },
+});

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { PhotoSwipeOptions } from "../types";
 import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { resolve } from "path";

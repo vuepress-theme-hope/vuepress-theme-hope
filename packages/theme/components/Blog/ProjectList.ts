@@ -1,15 +1,18 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import ArticleIcon from "@theme/icons/ArticleIcon.vue";
 import BookIcon from "@theme/icons/BookIcon.vue";
 import LinkIcon from "@theme/icons/LinkIcon.vue";
 import ProjectIcon from "@theme/icons/ProjectIcon.vue";
 import { navigate } from "@theme/util/navigate";
 
-@Component({
+export default Vue.extend({
+  name: "ProjectList",
+
   components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon },
-})
-export default class ProjectList extends Vue {
-  private navigate(link: string): void {
-    navigate(link, this.$router, this.$route);
-  }
-}
+
+  methods: {
+    navigate(link: string): void {
+      navigate(link, this.$router, this.$route);
+    },
+  },
+});

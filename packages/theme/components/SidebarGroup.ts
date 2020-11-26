@@ -1,31 +1,36 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import { SidebarAutoItem, SidebarGroupItem } from "@theme/util/sidebar";
 import DropdownTransition from "@theme/components/DropdownTransition.vue";
 import { isActive } from "@theme/util/path";
 
-@Component({ components: { DropdownTransition } })
-export default class SidebarGroup extends Vue {
-  @Prop({ type: Object, default: () => ({}) })
-  private readonly item!: SidebarAutoItem | SidebarGroupItem;
+export default Vue.extend({
+  name: "SidebarGroup",
 
-  @Prop(Boolean)
-  private readonly open!: boolean;
+  components: { DropdownTransition },
 
-  @Prop(Number)
-  private readonly depth!: number;
+  props: {
+    item: {
+      type: Object as PropType<SidebarAutoItem | SidebarGroupItem>,
+      required: true,
+    },
+    open: { type: Boolean },
+    depth: { type: Number, required: true },
+  },
 
-  private isActive = isActive;
-
-  private getIcon(icon: string | undefined): string {
-    const { iconPrefix } = this.$themeConfig;
-
-    return this.$themeConfig.sidebarIcon !== false && icon
-      ? `${iconPrefix === "" ? "" : iconPrefix || "icon-"}${icon}`
-      : "";
-  }
-
-  private beforeCreate(): void {
+  beforeCreate(): void {
     // eslint-disable-next-line
     this.$options.components!.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
-  }
-}
+  },
+
+  methods: {
+    getIcon(icon: string | undefined): string {
+      const { iconPrefix } = this.$themeConfig;
+
+      return this.$themeConfig.sidebarIcon !== false && icon
+        ? `${iconPrefix === "" ? "" : iconPrefix || "icon-"}${icon}`
+        : "";
+    },
+
+    isActive,
+  },
+});

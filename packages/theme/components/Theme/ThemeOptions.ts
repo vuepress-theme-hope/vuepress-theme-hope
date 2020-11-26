@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
 import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
@@ -18,28 +18,37 @@ interface ThemeColor {
   picker: Record<string, string>;
 }
 
-@Component({ components: { DarkmodeSwitch } })
-export default class ThemeOptions extends Vue {
-  private themeColor = {} as ThemeColor;
+export default Vue.extend({
+  name: "ThemeOptions",
 
-  private isDarkmode = false;
+  components: { DarkmodeSwitch },
 
-  private get text(): HopeLangI18nConfig["themeColor"] {
-    return this.$themeLocaleConfig.themeColor || getDefaultLocale().themeColor;
-  }
+  data: () => ({
+    themeColor: {} as ThemeColor,
 
-  private get themeColorEnabled(): boolean {
-    return this.$themeConfig.themeColor !== false;
-  }
+    isDarkmode: false,
+  }),
 
-  private get switchEnabled(): boolean {
-    return (
-      this.$themeConfig.darkmode !== "disable" &&
-      this.$themeConfig.darkmode !== "auto"
-    );
-  }
+  computed: {
+    text(): HopeLangI18nConfig["themeColor"] {
+      return (
+        this.$themeLocaleConfig.themeColor || getDefaultLocale().themeColor
+      );
+    },
 
-  private mounted(): void {
+    themeColorEnabled(): boolean {
+      return this.$themeConfig.themeColor !== false;
+    },
+
+    switchEnabled(): boolean {
+      return (
+        this.$themeConfig.darkmode !== "disable" &&
+        this.$themeConfig.darkmode !== "auto"
+      );
+    },
+  },
+
+  mounted(): void {
     const theme = localStorage.getItem("theme");
 
     this.themeColor = {
@@ -50,26 +59,28 @@ export default class ThemeOptions extends Vue {
     };
 
     if (theme) this.setTheme(theme);
-  }
+  },
 
-  private setTheme(theme?: string): void {
-    const classes = document.body.classList;
-    const themes = this.themeColor.list.map(
-      (colorTheme) => `theme-${colorTheme}`
-    );
+  methods: {
+    setTheme(theme?: string): void {
+      const classes = document.body.classList;
+      const themes = this.themeColor.list.map(
+        (colorTheme) => `theme-${colorTheme}`
+      );
 
-    if (!theme) {
-      localStorage.removeItem("theme");
-      classes.remove(...themes);
+      if (!theme) {
+        localStorage.removeItem("theme");
+        classes.remove(...themes);
 
-      return;
-    }
+        return;
+      }
 
-    classes.remove(
-      ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
-    );
+      classes.remove(
+        ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
+      );
 
-    classes.add(`theme-${theme}`);
-    localStorage.setItem("theme", theme);
-  }
-}
+      classes.add(`theme-${theme}`);
+      localStorage.setItem("theme", theme);
+    },
+  },
+});

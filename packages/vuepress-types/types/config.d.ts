@@ -160,7 +160,6 @@ export type BuildSiteConfig = {
     use?: any[];
     import?: string[];
     preferPathResolver?: "webpack" | string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   };
   /** sass-loader 的选项 */
@@ -201,6 +200,5 @@ export interface SiteConfig extends BaseSiteConfig, BuildSiteConfig {
   devTemplate?: string;
   permalink?: string;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }

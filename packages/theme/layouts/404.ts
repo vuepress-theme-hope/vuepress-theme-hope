@@ -1,19 +1,26 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import Common from "@theme/components/Common.vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
 
-@Component({ components: { Common } })
-export default class NotFound extends Vue {
-  private get i18n(): HopeLangI18nConfig["error404"] {
-    return this.$themeLocaleConfig.error404 || getDefaultLocale().error404;
-  }
+export default Vue.extend({
+  name: "NotFound",
 
-  private get msg(): string {
-    return this.i18n.hint[Math.floor(Math.random() * this.i18n.hint.length)];
-  }
+  components: { Common },
 
-  private back(): void {
-    window.history.go(-1);
-  }
-}
+  computed: {
+    i18n(): HopeLangI18nConfig["error404"] {
+      return this.$themeLocaleConfig.error404 || getDefaultLocale().error404;
+    },
+
+    msg(): string {
+      return this.i18n.hint[Math.floor(Math.random() * this.i18n.hint.length)];
+    },
+  },
+
+  methods: {
+    back(): void {
+      window.history.go(-1);
+    },
+  },
+});

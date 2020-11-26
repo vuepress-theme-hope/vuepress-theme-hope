@@ -125,10 +125,19 @@ overrides:
           trailingUnderscore: allow
 
         - selector:
+            - parameter
+          format:
+            - camelCase
+            - PascalCase
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector:
             - property
           format:
             - camelCase
             - PascalCase
+            - UPPER_CASE
           leadingUnderscore: allow
           trailingUnderscore: allow
 

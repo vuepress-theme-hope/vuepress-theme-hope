@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import Baidu from "@theme/icons/media/Baidu.vue";
 import Bitbucket from "@theme/icons/media/Bitbucket.vue";
 import Dingding from "@theme/icons/media/Dingding.vue";
@@ -65,7 +65,9 @@ interface MediaLink {
   url: string;
 }
 
-@Component({
+export default Vue.extend({
+  name: "MediaLinks",
+
   components: {
     Baidu,
     Bitbucket,
@@ -96,34 +98,35 @@ interface MediaLink {
     Youtube,
     Zhihu,
   },
-})
-export default class MediaLinks extends Vue {
-  private get mediaLink(): Partial<Record<BlogMedia, string>> | false {
-    const { medialink } = this.$frontmatter;
 
-    return medialink === false
-      ? false
-      : typeof medialink === "object"
-      ? (medialink as Partial<Record<BlogMedia, string>>)
-      : this.$themeConfig.blog
-      ? this.$themeConfig.blog.links || false
-      : false;
-  }
+  computed: {
+    mediaLink(): Partial<Record<BlogMedia, string>> | false {
+      const { medialink } = this.$frontmatter;
 
-  private get links(): MediaLink[] {
-    if (this.mediaLink) {
-      const links: MediaLink[] = [];
+      return medialink === false
+        ? false
+        : typeof medialink === "object"
+        ? (medialink as Partial<Record<BlogMedia, string>>)
+        : this.$themeConfig.blog
+        ? this.$themeConfig.blog.links || false
+        : false;
+    },
 
-      for (const media in this.mediaLink)
-        if (medias.includes(media as BlogMedia))
-          links.push({
-            icon: media,
-            url: this.mediaLink[media as BlogMedia] as string,
-          });
+    links(): MediaLink[] {
+      if (this.mediaLink) {
+        const links: MediaLink[] = [];
 
-      return links;
-    }
+        for (const media in this.mediaLink)
+          if (medias.includes(media as BlogMedia))
+            links.push({
+              icon: media,
+              url: this.mediaLink[media as BlogMedia] as string,
+            });
 
-    return [];
-  }
-}
+        return links;
+      }
+
+      return [];
+    },
+  },
+});

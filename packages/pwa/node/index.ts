@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { i18n, lang2path } from "@mr-hope/vuepress-utils";
 import { resolve } from "path";
 import { head } from "./head";
@@ -30,10 +29,10 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    async beforeDevServer(app) {
-      const manifest = await getManifest(pwaOption, context);
-      app.get("/manifest.webmanifest", (_req, res) => {
-        res.send(manifest);
+    beforeDevServer(app) {
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+      app.get("/manifest.webmanifest", async (_req, res) => {
+        res.send(await getManifest(pwaOption, context));
       });
     },
 

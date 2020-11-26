@@ -1,24 +1,32 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue from "vue";
 
-@Component
-export default class Password extends Vue {
-  @Prop({ type: Boolean, default: false })
-  private readonly page!: boolean;
+export default Vue.extend({
+  name: "Password",
 
-  private password = "";
+  props: {
+    page: { type: Boolean, default: false },
+  },
 
-  private hasTried = false;
+  data: () => ({
+    password: "",
+    hasTried: false,
+  }),
 
-  private get isMainPage(): boolean {
-    return this.$frontmatter.home === true;
-  }
+  computed: {
+    isMainPage(): boolean {
+      return this.$frontmatter.home === true;
+    },
+  },
 
-  private verify(): void {
-    this.hasTried = false;
-    this.$emit("password-verify", this.password);
+  methods: {
+    verify(): void {
+      this.hasTried = false;
+      // eslint-disable-next-line vue/require-explicit-emits
+      this.$emit("password-verify", this.password);
 
-    void Vue.nextTick().then(() => {
-      this.hasTried = true;
-    });
-  }
-}
+      void Vue.nextTick().then(() => {
+        this.hasTried = true;
+      });
+    },
+  },
+});

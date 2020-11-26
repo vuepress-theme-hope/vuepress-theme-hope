@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { resolve } from "path";
 import { readFile, statSync, writeFile } from "fs-extra";
 import { black, blue } from "chalk";

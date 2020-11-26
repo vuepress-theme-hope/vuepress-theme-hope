@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";
 import NavLinks from "@theme/components/NavLinks.vue";
@@ -26,7 +26,9 @@ const css = (
   return window!.getComputedStyle(el, null)[property] as string;
 };
 
-@Component({
+export default Vue.extend({
+  name: "Navbar",
+
   components: {
     AlgoliaSearchBox,
     NavLinks,
@@ -34,33 +36,35 @@ const css = (
     SidebarButton,
     ThemeColor,
   },
-})
-export default class Navbar extends Vue {
-  private linksWrapMaxWidth = 0;
 
-  private isMobile = false;
+  data: () => ({
+    linksWrapMaxWidth: 0,
+    isMobile: false,
+  }),
 
-  private get algoliaConfig(): AlgoliaOption | false {
-    return (
-      this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || false
-    );
-  }
+  computed: {
+    algoliaConfig(): AlgoliaOption | false {
+      return (
+        this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || false
+      );
+    },
 
-  private get isAlgoliaSearch(): boolean {
-    return Boolean(
-      this.algoliaConfig &&
-        this.algoliaConfig.apiKey &&
-        this.algoliaConfig.indexName
-    );
-  }
+    isAlgoliaSearch(): boolean {
+      return Boolean(
+        this.algoliaConfig &&
+          this.algoliaConfig.apiKey &&
+          this.algoliaConfig.indexName
+      );
+    },
 
-  private get canHide(): boolean {
-    const autoHide = this.$themeConfig.navAutoHide;
+    canHide(): boolean {
+      const autoHide = this.$themeConfig.navAutoHide;
 
-    return autoHide !== "none" && (autoHide === "always" || this.isMobile);
-  }
+      return autoHide !== "none" && (autoHide === "always" || this.isMobile);
+    },
+  },
 
-  private mounted(): void {
+  mounted(): void {
     // Refer to config.styl
     const MOBILE_DESKTOP_BREAKPOINT = 719;
     const NAVBAR_HORIZONTAL_PADDING =
@@ -85,5 +89,5 @@ export default class Navbar extends Vue {
     handler();
     window.addEventListener("resize", handler);
     window.addEventListener("orientationchange", handler);
-  }
-}
+  },
+});

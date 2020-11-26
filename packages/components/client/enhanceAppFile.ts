@@ -5,7 +5,6 @@ import MyBadge from "./MyBadge.vue";
 import ScreenFull from "./ScreenFull.vue";
 import "@mr-hope/vuepress-shared/styles/reset.styl";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   Vue.component("BackToTop", BackToTop);
   Vue.component("BreadCrumb", BreadCrumb);

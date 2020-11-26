@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { resolve } from "path";
 import { i18n, lang2path } from "@mr-hope/vuepress-utils";
 

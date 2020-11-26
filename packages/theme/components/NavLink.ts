@@ -1,55 +1,62 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import { ensureExt, isExternal, isMailto, isTel } from "@theme/util/path";
 import { NavBarConfigItem } from "@theme/util/navbar";
 
-@Component
-export default class NavLink extends Vue {
-  @Prop({ type: Object, required: true })
-  private readonly item!: NavBarConfigItem;
+export default Vue.extend({
+  name: "NavLink",
 
-  private get link(): string {
-    return ensureExt(this.item.link as string);
-  }
+  props: {
+    item: { type: Object as PropType<NavBarConfigItem>, required: true },
+  },
 
-  private get iconPrefix(): string {
-    const { iconPrefix } = this.$themeConfig;
+  computed: {
+    link(): string {
+      return ensureExt(this.item.link as string);
+    },
 
-    return iconPrefix === "" ? "" : iconPrefix || "icon-";
-  }
+    iconPrefix(): string {
+      const { iconPrefix } = this.$themeConfig;
 
-  private get active(): boolean {
-    return this.link === this.$route.path;
-  }
+      return iconPrefix === "" ? "" : iconPrefix || "icon-";
+    },
 
-  private get isNonHttpURI(): boolean {
-    return isMailto(this.link) || isTel(this.link);
-  }
+    active(): boolean {
+      return this.link === this.$route.path;
+    },
 
-  private get isBlankTarget(): boolean {
-    return this.target === "_blank";
-  }
+    isNonHttpURI(): boolean {
+      return isMailto(this.link) || isTel(this.link);
+    },
 
-  private get isInternal(): boolean {
-    return !isExternal(this.link) && !this.isBlankTarget;
-  }
+    isBlankTarget(): boolean {
+      return this.target === "_blank";
+    },
 
-  private get target(): string | null {
-    if (this.isNonHttpURI) return null;
+    isInternal(): boolean {
+      return !isExternal(this.link) && !this.isBlankTarget;
+    },
 
-    if (this.item.target) return this.item.target;
+    target(): string | null {
+      if (this.isNonHttpURI) return null;
 
-    return isExternal(this.link) ? "_blank" : "";
-  }
+      if (this.item.target) return this.item.target;
 
-  private get rel(): string | null {
-    if (this.isNonHttpURI) return null;
-    if (this.item.rel === false) return null;
-    if (this.item.rel) return this.item.rel;
+      return isExternal(this.link) ? "_blank" : "";
+    },
 
-    return this.isBlankTarget ? "noopener noreferrer" : null;
-  }
+    rel(): string | null {
+      if (this.isNonHttpURI) return null;
+      if (this.item.rel === false) return null;
+      if (this.item.rel) return this.item.rel;
 
-  private focusoutAction(): void {
-    this.$emit("focusout");
-  }
-}
+      return this.isBlankTarget ? "noopener noreferrer" : null;
+    },
+  },
+
+  methods: {
+    focusoutAction(): void {
+      // eslint-disable-next-line vue/require-explicit-emits
+      this.$emit("focusout");
+    },
+  },
+});

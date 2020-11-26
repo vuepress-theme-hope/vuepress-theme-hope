@@ -1,34 +1,39 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 
-@Component({ components: { MyTransition } })
-export default class BlogHero extends Vue {
-  private get heroImageStyle(): Record<string, string> {
-    const defaultStyle = {
-      maxHeight: "180px",
-      margin:
-        this.$frontmatter.showTitle === false
-          ? "6rem auto 1.5rem"
-          : "1rem auto",
-    };
+export default Vue.extend({
+  name: "BlogHero",
 
-    return {
-      ...defaultStyle,
-      ...(this.$frontmatter.heroImageStyle as Record<string, string>),
-    };
-  }
+  components: { MyTransition },
 
-  private get bgImageStyle(): Record<string, string> {
-    const defaultBgImageStyle: Record<string, string> = {
-      height: "350px",
-      textAlign: "center",
-      overflow: "hidden",
-    };
-    const { bgImageStyle = {} } = this.$frontmatter;
+  computed: {
+    heroImageStyle(): Record<string, string> {
+      const defaultStyle = {
+        maxHeight: "180px",
+        margin:
+          this.$frontmatter.showTitle === false
+            ? "6rem auto 1.5rem"
+            : "1rem auto",
+      };
 
-    return {
-      ...defaultBgImageStyle,
-      ...(bgImageStyle as Record<string, string>),
-    };
-  }
-}
+      return {
+        ...defaultStyle,
+        ...(this.$frontmatter.heroImageStyle as Record<string, string>),
+      };
+    },
+
+    bgImageStyle(): Record<string, string> {
+      const defaultBgImageStyle: Record<string, string> = {
+        height: "350px",
+        textAlign: "center",
+        overflow: "hidden",
+      };
+      const { bgImageStyle = {} } = this.$frontmatter;
+
+      return {
+        ...defaultBgImageStyle,
+        ...(bgImageStyle as Record<string, string>),
+      };
+    },
+  },
+});

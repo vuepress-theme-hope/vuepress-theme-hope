@@ -5,7 +5,6 @@ import "./styles/container.styl";
 
 import { EnhanceApp } from "@mr-hope/vuepress-types";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_OPTIONS.align || MARKDOWN_ENHANCE_OPTIONS.enableAll)
     void import("vuepress-plugin-md-enhance/client/styles/align.styl");

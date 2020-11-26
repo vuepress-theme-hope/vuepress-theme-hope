@@ -1,9 +1,10 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import BlogInfoList from "@theme/components/Blog/BlogInfoList.vue";
 import BloggerInfo from "@theme/components/Blog/BloggerInfo.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 
-@Component({
+export default Vue.extend({
+  name: "BlogInfo",
+
   components: { BlogInfoList, BloggerInfo, MyTransition },
-})
-export default class BlogInfo extends Vue {}
+});

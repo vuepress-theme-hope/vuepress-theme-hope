@@ -1,16 +1,21 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import ClickOutside from "@theme/util/click-outside";
 import ThemeOptions from "@theme/components/Theme/ThemeOptions.vue";
 
-@Component({
+export default Vue.extend({
+  name: "ThemeColor",
+
   directives: { "click-outside": ClickOutside },
 
   components: { ThemeOptions },
-})
-export default class ThemeColor extends Vue {
-  private showMenu = false;
 
-  private clickOutside(): void {
-    this.showMenu = false;
-  }
-}
+  data: () => ({
+    showMenu: false,
+  }),
+
+  methods: {
+    clickOutside(): void {
+      this.showMenu = false;
+    },
+  },
+});

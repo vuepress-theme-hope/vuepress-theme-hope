@@ -4,7 +4,7 @@ import {
   HopeLangI18nConfig,
   PluginI18nConfig,
 } from "@mr-hope/vuepress-shared";
-import config = require("@mr-hope/vuepress-shared/shared/i18n.json");
+import config = require("@mr-hope/vuepress-shared/config/i18n.json");
 
 /** Supported lang codes */
 export const langs = config.langs as Langs[];

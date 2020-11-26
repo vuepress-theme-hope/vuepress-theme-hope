@@ -163,6 +163,5 @@ declare module "valine" {
 }
 
 interface Window {
-  // eslint-disable-next-line
-  AV: any;
+  AV: unknown;
 }

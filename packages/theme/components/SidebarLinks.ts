@@ -1,4 +1,4 @@
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import { SidebarHeaderItem, SidebarItem } from "@theme/util/sidebar";
 import { PageComputed } from "@mr-hope/vuepress-types";
 import { Route } from "vue-router";
@@ -24,36 +24,46 @@ const resolveOpenGroupIndex = (route: Route, items: SidebarItem[]): number => {
   return -1;
 };
 
-@Component({ components: { SidebarGroup, SidebarLink } })
-export default class SidebarLinks extends Vue {
-  @Prop(Array)
-  private readonly items!: SidebarItem[];
+export default Vue.extend({
+  name: "SidebarLinks",
 
-  @Prop(Number)
-  private readonly depth!: number;
+  components: { SidebarGroup, SidebarLink },
 
-  private openGroupIndex = 0;
+  props: {
+    items: {
+      type: Array as PropType<SidebarItem[]>,
+      required: true,
+    },
+    depth: { type: Number, required: true },
+  },
 
-  private refreshIndex(): void {
-    const index = resolveOpenGroupIndex(this.$route, this.items);
+  data: () => ({
+    openGroupIndex: 0,
+  }),
 
-    if (index > -1) this.openGroupIndex = index;
-  }
+  watch: {
+    $route(): void {
+      this.refreshIndex();
+    },
+  },
 
-  private toggleGroup(index: number): void {
-    this.openGroupIndex = index === this.openGroupIndex ? -1 : index;
-  }
-
-  private isActive(page: PageComputed): boolean {
-    return isActive(this.$route, page.regularPath);
-  }
-
-  private created(): void {
+  created(): void {
     this.refreshIndex();
-  }
+  },
 
-  @Watch("$route")
-  onRouteUpdate(): void {
-    this.refreshIndex();
-  }
-}
+  methods: {
+    refreshIndex(): void {
+      const index = resolveOpenGroupIndex(this.$route, this.items);
+
+      if (index > -1) this.openGroupIndex = index;
+    },
+
+    toggleGroup(index: number): void {
+      this.openGroupIndex = index === this.openGroupIndex ? -1 : index;
+    },
+
+    isActive(page: PageComputed): boolean {
+      return isActive(this.$route, page.regularPath);
+    },
+  },
+});

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 

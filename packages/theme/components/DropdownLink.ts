@@ -1,45 +1,56 @@
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import Vue, { PropType } from "vue";
 import DropdownTransition from "@theme/components/DropdownTransition.vue";
 import { NavBarConfigItem } from "@theme/util/navbar";
 import NavLink from "@theme/components/NavLink.vue";
 
-@Component({ components: { NavLink, DropdownTransition } })
-export default class DropdownLink extends Vue {
-  @Prop({ type: Object, required: true })
-  private readonly item!: NavBarConfigItem;
+export default Vue.extend({
+  name: "DropdownLink",
 
-  private open = false;
+  components: { NavLink, DropdownTransition },
 
-  private get dropdownAriaLabel(): string {
-    return this.item.ariaLabel || this.item.text;
-  }
+  props: {
+    item: { type: Object as PropType<NavBarConfigItem>, required: true },
+  },
 
-  private get iconPrefix(): string {
-    const { iconPrefix } = this.$themeConfig;
+  data: () => ({
+    open: false,
+  }),
 
-    return iconPrefix === "" ? "" : iconPrefix || "icon-";
-  }
+  computed: {
+    dropdownAriaLabel(): string {
+      return this.item.ariaLabel || this.item.text;
+    },
 
-  private setOpen(value: boolean): void {
-    this.open = value;
-  }
+    iconPrefix(): string {
+      const { iconPrefix } = this.$themeConfig;
 
-  handleDropdown(event: MouseEvent): void {
-    const isTriggerByTab = event.detail === 0;
-    if (isTriggerByTab) this.setOpen(!this.open);
-  }
+      return iconPrefix === "" ? "" : iconPrefix || "icon-";
+    },
+  },
 
-  private isLastItemOfArray(
-    item: NavBarConfigItem,
-    array: NavBarConfigItem[]
-  ): boolean {
-    if (Array.isArray(array)) return item === array[array.length - 1];
+  watch: {
+    $route(): void {
+      this.open = false;
+    },
+  },
 
-    return false;
-  }
+  methods: {
+    setOpen(value: boolean): void {
+      this.open = value;
+    },
 
-  @Watch("$route")
-  onRouteChange(): void {
-    this.open = false;
-  }
-}
+    handleDropdown(event: MouseEvent): void {
+      const isTriggerByTab = event.detail === 0;
+      if (isTriggerByTab) this.setOpen(!this.open);
+    },
+
+    isLastItemOfArray(
+      item: NavBarConfigItem,
+      array: NavBarConfigItem[]
+    ): boolean {
+      if (Array.isArray(array)) return item === array[array.length - 1];
+
+      return false;
+    },
+  },
+});

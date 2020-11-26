@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CAC } from "cac";
 import { Application } from "express";
 import * as WebpackDevServer from "webpack-dev-server";
@@ -8,10 +9,8 @@ import { Markdown } from "./markdown";
 import { Page, PageOptions } from "./page";
 import { PluginAPI } from "./plugin-api";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Plugin<Options = any> = PluginOptionAPI | PluginFunction<Options>;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type PluginFunction<Options = any> = (
   pluginOptions: Options,
   context: Context,
@@ -55,7 +54,6 @@ export interface PluginOptionAPI {
         | string
         | string[]);
   clientDynamicModules?: () => PluginGeneratedFileTypes<ClientDynamicModulesGeneratedFile>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extendPageData?: (page: Page & Record<string, any>) => void | Promise<void>;
   clientRootMixin?: string;
   additionalPages?:

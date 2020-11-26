@@ -1,65 +1,70 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import { endingSlashRE, outboundRE } from "@theme/util/path";
 
-@Component
-export default class PageEdit extends Vue {
-  private get lastUpdated(): string {
-    return this.$themeConfig.lastUpdate === false
-      ? ""
-      : this.$page.lastUpdated || "";
-  }
+export default Vue.extend({
+  name: "PageEdit",
 
-  private get lastUpdatedText(): string {
-    return this.$themeLocaleConfig.lastUpdated || "Last Updated";
-  }
+  computed: {
+    lastUpdated(): string {
+      return this.$themeConfig.lastUpdate === false
+        ? ""
+        : this.$page.lastUpdated || "";
+    },
 
-  private get editLink(): string | false {
-    const showEditLink =
-      this.$page.frontmatter.editLink ||
-      (this.$themeConfig.editLinks !== false &&
-        this.$page.frontmatter.editLink !== false);
+    lastUpdatedText(): string {
+      return this.$themeLocaleConfig.lastUpdated || "Last Updated";
+    },
 
-    const { repo, docsRepo } = this.$site.themeConfig;
+    editLink(): string | false {
+      const showEditLink =
+        this.$page.frontmatter.editLink ||
+        (this.$themeConfig.editLinks !== false &&
+          this.$page.frontmatter.editLink !== false);
 
-    if (showEditLink && (repo || docsRepo) && this.$page.relativePath)
-      return this.createEditLink();
+      const { repo, docsRepo } = this.$site.themeConfig;
 
-    return false;
-  }
+      if (showEditLink && (repo || docsRepo) && this.$page.relativePath)
+        return this.createEditLink();
 
-  private get editLinkText(): string {
-    return this.$themeLocaleConfig.editLinkText || "Edit this page";
-  }
+      return false;
+    },
 
-  private createEditLink(): string {
-    const {
-      repo = "",
-      docsRepo = repo,
-      docsDir = "",
-      docsBranch = "master",
-    } = this.$themeConfig;
+    editLinkText(): string {
+      return this.$themeLocaleConfig.editLinkText || "Edit this page";
+    },
+  },
 
-    const bitbucket = /bitbucket.org/u;
+  methods: {
+    createEditLink(): string {
+      const {
+        repo = "",
+        docsRepo = repo,
+        docsDir = "",
+        docsBranch = "master",
+      } = this.$themeConfig;
 
-    if (bitbucket.test(docsRepo))
-      return `${docsRepo.replace(endingSlashRE, "")}/src/${docsBranch}/${
-        docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
-      }${
-        this.$page.relativePath
-      }?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`;
+      const bitbucket = /bitbucket.org/u;
 
-    const gitlab = /gitlab.com/u;
-    if (gitlab.test(docsRepo))
-      return `${docsRepo.replace(endingSlashRE, "")}/-/edit/${docsBranch}/${
+      if (bitbucket.test(docsRepo))
+        return `${docsRepo.replace(endingSlashRE, "")}/src/${docsBranch}/${
+          docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
+        }${
+          this.$page.relativePath
+        }?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`;
+
+      const gitlab = /gitlab.com/u;
+      if (gitlab.test(docsRepo))
+        return `${docsRepo.replace(endingSlashRE, "")}/-/edit/${docsBranch}/${
+          docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
+        }${this.$page.relativePath}`;
+
+      const base = outboundRE.test(docsRepo)
+        ? docsRepo
+        : `https://github.com/${docsRepo}`;
+
+      return `${base.replace(endingSlashRE, "")}/edit/${docsBranch}/${
         docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
       }${this.$page.relativePath}`;
-
-    const base = outboundRE.test(docsRepo)
-      ? docsRepo
-      : `https://github.com/${docsRepo}`;
-
-    return `${base.replace(endingSlashRE, "")}/edit/${docsBranch}/${
-      docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
-    }${this.$page.relativePath}`;
-  }
-}
+    },
+  },
+});

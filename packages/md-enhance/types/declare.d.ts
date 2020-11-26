@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module "@vuepress/markdown/lib/lineNumbers" {
   import MarkdownIt = require("markdown-it");
   const lineNumbers: (md: MarkdownIt) => void;
@@ -59,7 +60,6 @@ declare module "reveal.js" {
       | "h/v"
       | "c"
       | "c/t"
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       | ((slideObject: any) => [string] | [string, string, string]);
 
     /**
@@ -209,7 +209,7 @@ declare module "reveal.js" {
     autoSlideStoppable: boolean;
 
     /** Use this method for navigation when auto-sliding (defaults to navigateNext) */
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     autoSlideMethod: null | any;
 
     /** Specify the average time in seconds that you think you will spend presenting each slide. This is used to show a pacing timer in the speaker view */
@@ -282,7 +282,6 @@ declare module "reveal.js" {
     /** Time before the cursor is hidden (in ms) */
     hideCursorTime: number;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     plugins: any[];
   }
 
@@ -553,7 +552,7 @@ declare module "reveal.js" {
      * Returns an array of objects where each object represents the
      * attributes on its respective slide.
      */
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     getSlidesAttributes(): Record<string, any>[];
 
     /**
@@ -625,7 +624,7 @@ declare module "reveal.js" {
     /**
      * Returns a hash with all registered plugins
      */
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     getPlugins(): any;
 
     /**
@@ -718,63 +717,54 @@ declare module "reveal.js" {
 }
 
 declare module "reveal.js/plugin/highlight/highlight.esm.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const highlightPlugin: any;
 
   export default highlightPlugin;
 }
 
 declare module "reveal.js/plugin/markdown/markdown.esm.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const markdownPlugin: any;
 
   export default markdownPlugin;
 }
 
 declare module "reveal.js/plugin/math/math.esm.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const mathPlugin: any;
 
   export default mathPlugin;
 }
 
 declare module "reveal.js/plugin/search/search.esm.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const searchPlugin: any;
 
   export default searchPlugin;
 }
 
 declare module "reveal.js/plugin/notes/notes.esm.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const notesPlugin: any;
 
   export default notesPlugin;
 }
 
 declare module "reveal.js/plugin/zoom/zoom.esm.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const zoomPlugin: any;
 
   export default zoomPlugin;
 }
 
 declare module "reveal.js-plugins/anything/anything.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const anythingPlugin: any;
 
   export default anythingPlugin;
 }
 
 declare module "reveal.js-plugins/audio-slideshow/audio-slideshow.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const audioPlugin: any;
 
   export default audioPlugin;
 }
 
 declare module "reveal.js-plugins/chalkboard/chalkboard.js" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const chalkboardPlugin: any;
 
   export default chalkboardPlugin;
@@ -803,7 +793,6 @@ interface Window {
     ) => { code: string };
   };
   ReactDOM: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     render: (reactElement: any, element: HTMLElement) => void;
   };
 }

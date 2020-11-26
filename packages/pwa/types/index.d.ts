@@ -149,7 +149,6 @@ export interface PWAOptions {
    * workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   generateSWConfig?: Partial<WorkboxBuild.Options>;
 }
 

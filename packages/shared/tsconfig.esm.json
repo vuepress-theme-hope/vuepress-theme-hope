@@ -3,5 +3,5 @@
   "compilerOptions": {
     "module": "ESNext"
   },
-  "include": ["./client", "./shared/i18n.json"]
+  "include": ["./client", "./config/i18n.json"]
 }

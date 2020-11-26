@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ClientComputedMixin } from "./computed";
 import { Context } from "./context";
 import { Markdown } from "./markdown";
@@ -32,7 +33,6 @@ export interface PageFrontmatter {
   layout?: string;
   metaTitle?: string;
   meta?: Record<"charset" | "content" | "http-equiv" | "name", string>[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 
@@ -41,8 +41,6 @@ export interface PageFrontmatter {
  * Page in context
  * ==================
  */
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type PageEnhancer<T = any> = OptionItem<T>[];
 
 export interface PageProcessOptions {

@@ -1,4 +1,4 @@
-import config from "../shared/i18n.json";
+import config from "../config/i18n.json";
 import { Langs, LangPaths, HopeLangI18nConfig } from "../types";
 
 const reportStatus: Record<string, boolean> = {};

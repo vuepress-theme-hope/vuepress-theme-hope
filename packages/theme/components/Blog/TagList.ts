@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import { navigate } from "@theme/util/navigate";
 
@@ -7,32 +7,37 @@ interface TagOption {
   path: string;
 }
 
-@Component
-export default class TagList extends Vue {
-  private get tagList(): TagOption[] {
-    return [
-      {
-        name:
+export default Vue.extend({
+  name: "TagList",
+
+  computed: {
+    tagList(): TagOption[] {
+      return [
+        {
+          name:
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            this.$themeLocaleConfig.blog!.allText ||
+            getDefaultLocale().blog.allText,
+          path: "/tag/",
+        },
+        ...(this.$tag.list as TagOption[]),
+      ];
+    },
+  },
+
+  methods: {
+    isActive(name: string): boolean {
+      return (
+        name ===
+        ((this.$currentTag && this.$currentTag.key) ||
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           this.$themeLocaleConfig.blog!.allText ||
-          getDefaultLocale().blog.allText,
-        path: "/tag/",
-      },
-      ...(this.$tag.list as TagOption[]),
-    ];
-  }
+          getDefaultLocale().blog.allText)
+      );
+    },
 
-  private isActive(name: string): boolean {
-    return (
-      name ===
-      ((this.$currentTag && this.$currentTag.key) ||
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        this.$themeLocaleConfig.blog!.allText ||
-        getDefaultLocale().blog.allText)
-    );
-  }
-
-  private clickTag(path: string): void {
-    navigate(path, this.$router, this.$route);
-  }
-}
+    clickTag(path: string): void {
+      navigate(path, this.$router, this.$route);
+    },
+  },
+});

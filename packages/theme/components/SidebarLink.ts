@@ -1,16 +1,14 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { ComponentOptions, CreateElement, VNode } from "vue";
+import Vue, { PropType } from "vue";
+import { CreateElement, VNode } from "vue";
 import {
-  SidebarAutoItem,
   SidebarExternalItem,
-  SidebarGroupItem,
+  SidebarErrorItem,
+  SidebarPageItem,
   SidebarHeader,
   SidebarHeaderItem,
-  SidebarItem,
   groupSidebarHeaders,
 } from "@theme/util/sidebar";
 import { hashRE, isActive } from "@theme/util/path";
-import { HopeSideBarConfigItemObject } from "../types";
 import { Route } from "vue-router";
 
 const renderIcon = (h: CreateElement, icon: string): VNode | null =>
@@ -103,24 +101,30 @@ const renderChildren = (
   );
 };
 
-// Functional Component Hack
-interface FunctionalComponentOptions extends ComponentOptions<Vue> {
-  functional?: boolean;
-}
+export default Vue.extend({
+  name: "SidebarLink",
 
-interface SidebarLinkProps {
-  item:
-    | Exclude<SidebarItem, SidebarAutoItem | SidebarGroupItem>
-    | SidebarHeaderItem;
-}
-
-@Component({
   functional: true,
+
+  props: {
+    item: {
+      type: Object as PropType<
+        | SidebarErrorItem
+        | SidebarExternalItem
+        | SidebarPageItem
+        | SidebarHeaderItem
+      >,
+      required: true,
+    },
+  },
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   render(
     h,
     { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props }
   ) {
-    const { item } = props as SidebarLinkProps;
+    const { item } = props;
 
     // if the item can not be resolved
     if (item.type === "error") return null;
@@ -204,8 +208,4 @@ interface SidebarLinkProps {
 
     return link;
   },
-} as FunctionalComponentOptions)
-export default class SidebarLink extends Vue {
-  @Prop({ type: Object, default: () => ({}) })
-  private readonly item!: HopeSideBarConfigItemObject;
-}
+});

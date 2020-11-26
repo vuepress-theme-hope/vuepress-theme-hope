@@ -1,10 +1,5 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { ComponentOptions, CreateElement, VNode } from "vue";
-import {
-  SidebarHeader,
-  SidebarHeaderItem,
-  groupSidebarHeaders,
-} from "@theme/util/sidebar";
+import Vue, { CreateElement, VNode, PropType } from "vue";
+import { SidebarHeader, groupSidebarHeaders } from "@theme/util/sidebar";
 import { Route } from "vue-router";
 import { isActive } from "@theme/util/path";
 
@@ -72,22 +67,23 @@ const renderChildren = (
   );
 };
 
-// Functional Component Hack
-interface FunctionalComponentOptions extends ComponentOptions<Vue> {
-  functional?: boolean;
-}
+export default Vue.extend({
+  name: "Anchor",
 
-interface SidebarLinkProps {
-  header: SidebarHeaderItem[];
-}
-
-@Component({
   functional: true,
+
+  props: {
+    header: {
+      type: Array as PropType<SidebarHeader[]>,
+      default: (): SidebarHeader[] => [],
+    },
+  },
+
   render(
     h,
     { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props }
   ) {
-    const { header } = props as SidebarLinkProps;
+    const { header } = props;
     const maxDepth =
       ($page.frontmatter.sidebarDepth ||
         ($themeLocaleConfig.sidebarDepth as number | undefined) ||
@@ -108,8 +104,4 @@ interface SidebarLinkProps {
       ]),
     ]);
   },
-} as FunctionalComponentOptions)
-export default class Anchor extends Vue {
-  @Prop({ type: Array, default: () => [] })
-  private readonly header!: SidebarHeader[];
-}
+});

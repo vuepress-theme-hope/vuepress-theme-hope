@@ -10,7 +10,6 @@ export = (
 
   extendPageData($page): void {
     $page.readingTime = readingTime(
-      // eslint-disable-next-line no-underscore-dangle
       $page._strippedContent,
       options.wordPerminute || themeConfig.wordPerminute || 300
     );

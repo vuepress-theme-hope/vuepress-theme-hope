@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git",
-    "directory": "packages/shared-utils"
+    "directory": "packages/utils"
   },
   "license": "MIT",
   "author": {

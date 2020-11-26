@@ -40,7 +40,6 @@ export interface Context<T = ThemeConfig> {
   markdown: Markdown;
   pluginAPI: PluginAPI;
   themeAPI: ThemeAPI;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   ClientComputedMixinConstructor: new () => ClientComputedMixin;
   ssrTemplate: string;
   devTemplate: string;

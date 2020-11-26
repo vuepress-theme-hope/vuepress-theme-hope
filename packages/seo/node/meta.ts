@@ -27,7 +27,6 @@ export const appendMeta = (
   content: SeoContent,
   options: SeoOptions
 ): void => {
-  // eslint-disable-next-line guard-for-in
   for (const property in content)
     switch (property) {
       case "article:tag":
@@ -43,8 +42,10 @@ export const appendMeta = (
         });
         break;
       default:
-        // eslint-disable-next-line
-        addMeta(meta, { name: property, content: (content as any)[property] });
+        addMeta(meta, {
+          name: property,
+          content: content[property as keyof SeoContent] as string,
+        });
     }
 
   if (options.restrictions)

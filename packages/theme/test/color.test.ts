@@ -34,7 +34,6 @@ describe("colorTest", () => {
     expect($5acf.toString()).to.be.equal("#5ac");
   });
 
-  // eslint-disable-next-line max-statements
   it("should handle long HEX color string", () => {
     const white = Color.getColor("#ffffff");
     expect(white.red).to.be.equal(255);
