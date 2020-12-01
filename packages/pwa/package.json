@@ -36,7 +36,7 @@
     "chalk": "^4.1.0",
     "fs-extra": "^9.0.1",
     "register-service-worker": "^1.7.1",
-    "workbox-build": "^5.1.4"
+    "workbox-build": "^6.0.0"
   },
   "publishConfig": {
     "access": "public"
