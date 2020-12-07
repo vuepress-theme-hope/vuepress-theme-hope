@@ -65,7 +65,7 @@
     padding-left $mobileSidebarWidth
 
   @media (min-width ($MQMobile + 1px))
-    .theme-container.no-sidebar &
+    .theme-container:not(.has-sidebar) &
       padding-left 0
 
   // wide mobile

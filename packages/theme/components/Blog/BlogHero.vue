@@ -42,13 +42,14 @@
   position relative
   color #eee
   margin-bottom 16px
+  height 450px
 
   @media (max-width $MQMobile)
-    height 450px
-    margin 0 0 16px
-
-  @media (max-width $MQNarrow)
     height 350px
+    margin 0 -1.5rem 16px
+
+  @media (max-width $MQMobileNarrow)
+    margin 0 0 16px
 
   .mask
     position absolute

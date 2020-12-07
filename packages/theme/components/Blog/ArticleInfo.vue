@@ -56,6 +56,10 @@ $articleInfoTextSize ?= 14px
       margin-right 0.3em
       font-size 0.86rem
 
+    &::after
+      --balloon-font-size 8px
+      padding 0.3em 0.6em !important
+
     svg
       position relative
       bottom -0.125em

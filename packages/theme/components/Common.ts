@@ -22,7 +22,7 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
 
   private isSidebarOpen = false;
 
-  private showNavbar = false;
+  private hideNavbar = false;
 
   private touchStart: { clientX: number; clientY: number } = {
     clientX: 0,
@@ -70,11 +70,11 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
 
     return [
       {
-        "no-navbar": !this.enableNavbar,
-        "hide-navbar": this.showNavbar,
-        "sidebar-open": this.isSidebarOpen,
-        "no-sidebar": !this.enableSidebar,
+        "has-navbar": this.enableNavbar,
+        "has-sidebar": this.enableSidebar,
         "has-anchor": this.enableAnchor,
+        "hide-navbar": this.hideNavbar,
+        "sidebar-open": this.isSidebarOpen,
       },
       userPageClass,
     ];
@@ -111,9 +111,9 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
         if (!this.isSidebarOpen) {
           const distance = this.getScrollTop();
           // scroll down
-          if (lastDistance < distance && distance > 58) this.showNavbar = true;
+          if (lastDistance < distance && distance > 58) this.hideNavbar = true;
           // scroll up
-          else this.showNavbar = false;
+          else this.hideNavbar = false;
 
           lastDistance = distance;
         }

@@ -12,7 +12,7 @@
 <script src="./404" />
 
 <style lang="stylus">
-.not-found
+.page.not-found
   display block
   max-width $homePageWidth
   margin 0px auto

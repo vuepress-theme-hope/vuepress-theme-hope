@@ -38,7 +38,7 @@
   @media (max-width $MQMobile)
     top $navbarMobileHeight
 
-  .theme-container.no-navbar &
+  .theme-container:not(.has-navbar) &
     top 0
 
   .nav-links ul, .sidebar-links ul
@@ -90,7 +90,7 @@
     font-size 15px
 
   @media (min-width ($MQMobile + 1px))
-    .theme-container.no-sidebar &
+    .theme-container:not(.has-sidebar) &
       display none
 
   // wide mobile
@@ -103,7 +103,7 @@
       transform translateX(0)
       box-shadow 2px 0 8px var(--card-shadow-color)
 
-    .theme-container.no-navbar &
+    .theme-container:not(.has-navbar) &
       top 0
 
     .blogger-info.mobile

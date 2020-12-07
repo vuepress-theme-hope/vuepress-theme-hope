@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.1...v1.7.2) (2020-11-26)
+
+### Bug Fixes
+
+- **pwa:** fix manifest generation in dev server ([070df9d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/070df9d4fdb4c7cda3fc9ec06f882e6974888cbb))
+
 ## [1.7.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.0...v1.7.1) (2020-11-25)
 
 ### Features
