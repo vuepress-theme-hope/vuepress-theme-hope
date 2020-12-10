@@ -21,11 +21,11 @@ const codeCopyMinxin = Vue.extend({
   mounted(): void {
     message = new Message();
 
-    if (!isMobile() && !options.showInMobile) this.genCopyButton();
+    if (!isMobile() || options.showInMobile) this.genCopyButton();
   },
 
   updated(): void {
-    if (!isMobile() && !options.showInMobile) this.genCopyButton();
+    if (!isMobile() || options.showInMobile) this.genCopyButton();
   },
 
   methods: {
