@@ -3,8 +3,7 @@ import { PWAOptions } from "../types";
 
 export const head = (
   options: PWAOptions,
-  head: HeadItem[] = [],
-  base?: string
+  head: HeadItem[] = []
 ): HeadItem[] => {
   const metaKeys: string[] = [];
   const linkKeys: string[] = [];
@@ -49,7 +48,7 @@ export const head = (
     }
   }
 
-  setLink("manifest", `${base || options.base || "/"}manifest.webmanifest`);
+  setLink("manifest", "/manifest.webmanifest");
   setMeta("theme-color", options.themeColor || "#46bd87");
 
   if (

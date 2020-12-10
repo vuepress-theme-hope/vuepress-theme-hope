@@ -46,15 +46,6 @@ Some options have their fallback if you donot set them.
 For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 :::
 
-## base
-
-- Type: `string`
-- Default: `'/'`
-
-The base URL the site will be deployed at.
-
-You should set this option if you are deploying to a subfolder of a site, to ensure you have the right manifest link.
-
 ## favicon
 
 - Type: `string`

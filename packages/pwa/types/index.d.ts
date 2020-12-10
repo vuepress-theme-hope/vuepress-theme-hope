@@ -74,14 +74,6 @@ export interface PWAOptions {
    */
   manifest?: ManifestOption;
   /**
-   * 部署站点的基础路径
-   *
-   * The base URL the site will be deployed at
-   *
-   * @default '/'
-   */
-  base?: string;
-  /**
    * favico 地址
    *
    * Path of favico
@@ -149,14 +141,10 @@ export interface PWAOptions {
    * workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *
    */
-  generateSWConfig?: Partial<WorkboxBuild.Options>;
+  generateSWConfig?: Partial<WorkboxBuild.GenerateSWOptions>;
 }
 
-export const head: (
-  options: PWAOptions,
-  head?: HeadItem[],
-  base?: string
-) => HeadItem[];
+export const head: (options: PWAOptions, head?: HeadItem[]) => HeadItem[];
 
 declare global {
   const PWA_I18N: Record<string, PWAI18NConfig>;

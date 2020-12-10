@@ -33,10 +33,74 @@ declare module "workbox-build" {
     type ManifestTransform = (
       manifestEntries: ManifestEntry[],
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      compilation: any
+      compilation?: Record<string, any>
     ) => Promise<ManifestTransformResult> | ManifestTransformResult;
 
-    interface Options {
+    interface HandlerContext {
+      /**
+       * The corresponding request.
+       */
+      request: Request | string;
+      /**
+       * The request's URL.
+       */
+      url: URL;
+      /**
+       * The corresponding event that triggered the request.
+       */
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      event: Event & Record<string, any>;
+      /**
+       * Array or Object parameters returned by the Route's match callback. This will be undefined if an empty array or object were returned.
+       */
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      params?: any[] | Record<string, any>;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    type HandlerCallback<T = any> = (context: HandlerContext) => Promise<T>;
+
+    interface MatchContext {
+      /**
+       * The corresponding request.
+       */
+      request: Request | string;
+      /**
+       * The request's URL.
+       */
+      url: URL;
+      /**
+       * The corresponding event that triggered the request.
+       */
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      event: Event & Record<string, any>;
+      /**
+       * The result of comparing url.origin against the current origin.
+       */
+      sameOrigin: boolean;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    type MatchCallback<T = any> = (context: MatchContext) => T;
+
+    interface RuntimeCachingEntry {
+      /**
+       * Either the name of one of the built-in strategy classes, or custom handler callback to use when the generated route matches.
+       */
+      handler: string | HandlerCallback;
+
+      /**
+       * The value that will be passed to registerRoute(), used to determine whether the generated route will match a given request.
+       */
+      urlPattern: string | RegExp | MatchCallback;
+
+      /**
+       * The HTTP method that will match the generated route.
+       */
+      method?: string;
+    }
+
+    interface GenerateSWOptions {
       /** The local directory you wish to match `globPatterns` against. The path is relative to the current directory. */
       globDirectory: string;
       /** The path and filename of the service worker file that will be created by the build process, relative to the current working directory. It must end in '.js'. */
@@ -124,11 +188,12 @@ declare module "workbox-build" {
       /**
        * Controls whether or not to include support for offline Google Analytics. When true, the call to workbox-google-analytics's initialize() will be added to your generated service worker. When set to an Object, that object will be passed in to the initialize() call, allowing you to customize the behavior.
        */
-      offlineGoogleAnalytics?: boolean;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      offlineGoogleAnalytics?: boolean | Record<string, any>;
       /**
        * Array of RuntimeCachingEntry
        */
-      runtimeCaching?: string[];
+      runtimeCaching?: RuntimeCachingEntry[];
       /**
        * Whether to add an unconditional call to skipWaiting() to the generated service worker. If false, then a message listener will be added instead, allowing you to conditionally call skipWaiting().
        */
@@ -154,7 +219,7 @@ declare module "workbox-build" {
 
   interface WorkboxBuild {
     generateSW: (
-      options: WorkboxBuild.Options
+      options: WorkboxBuild.GenerateSWOptions
     ) => Promise<WorkboxBuild.BuildInfo>;
   }
 

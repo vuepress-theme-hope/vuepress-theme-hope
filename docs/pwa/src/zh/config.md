@@ -46,15 +46,6 @@ icon: config
 更多内容，请详见 [W3C Manifest](https://w3c.github.io/manifest/)
 :::
 
-## base
-
-- 类型: `string`
-- 默认值: `"/"`
-
-部署站点的基础路径
-
-如果你部署到站点内的某个目录，你应当提供正确的 base，以生成正确的 manifest 链接。
-
 ## favicon
 
 - 类型: `string`

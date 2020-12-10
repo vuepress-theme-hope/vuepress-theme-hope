@@ -30,7 +30,7 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     beforeDevServer(app) {
-      app.get("/manifest.webmanifest", (_req, res) => {
+      app.get(`${base || "/"}/manifest.webmanifest`, (_req, res) => {
         getManifest(pwaOption, context)
           .then((manifest) => {
             res.send(manifest);
