@@ -106,7 +106,7 @@
     "@vuepress/test-utils": "1.7.1",
     "chai": "4.2.0",
     "conventional-changelog-cli": "2.1.1",
-    "cross-env": "7.0.2",
+    "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "del": "6.0.0",
     "eslint": "7.14.0",
