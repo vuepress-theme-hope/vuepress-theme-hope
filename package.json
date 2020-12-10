@@ -142,7 +142,7 @@
     "textlint-rule-terminology": "2.1.4",
     "textlint-rule-write-good": "1.6.2",
     "textlint-rule-zh-half-and-full-width-bracket": "1.1.0",
-    "ts-node": "9.0.0",
+    "ts-node": "9.1.1",
     "typescript": "4.1.2",
     "vue-template-compiler": "2.6.12",
     "webpack": "4.44.2",
