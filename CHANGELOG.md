@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.2...v1.7.3) (2020-12-10)
+
+### Bug Fixes
+
+- **pwa:** fix manifest base ([ff202e3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff202e318ee2ddf1258baa57169653b6f78f79a0)), closes [#475](https://github.com/Mister-Hope/vuepress-theme-hope/issues/475)
+- **theme:** fix themeColor popup ([4170746](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4170746e6aa0b816e2676b0301c4a11442a6cfe6))
+
 ## [1.7.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.1...v1.7.2) (2020-11-26)
 
 ### Bug Fixes
