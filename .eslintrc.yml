@@ -8,6 +8,7 @@ extends:
   - "plugin:vue/vue3-recommended"
   - "eslint:recommended"
   - prettier
+  - prettier/prettier
   - prettier/vue
 
 ignorePatterns:
