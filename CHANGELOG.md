@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.3...v1.7.4) (2020-12-10)
+
+### Bug Fixes
+
+- **theme:** fix Footer padding ([0bd268d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0bd268d2a6ffba90970ed73b06af2cfaea403ff0))
+- **theme:** fix themecolor button align ([270e5a9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/270e5a9187b385c6d2ecac8e379feb7e475370fa))
+
 ## [1.7.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.2...v1.7.3) (2020-12-10)
 
 ### Bug Fixes

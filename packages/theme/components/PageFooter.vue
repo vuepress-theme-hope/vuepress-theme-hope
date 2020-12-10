@@ -23,7 +23,7 @@
   text-align center
 
   @media (min-width $MQMobile)
-    .has-sidebar
+    .has-sidebar &
       padding-left $sidebarWidth
       border-left 30px solid transparent
 
