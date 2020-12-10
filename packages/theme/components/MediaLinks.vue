@@ -22,11 +22,12 @@
 .media-links-wrapper
   display flex
   justify-content center
+  flex-wrap wrap
   margin 8px auto
 
   .media-link
-    width 28px
-    height 28px
+    width 26px
+    height 26px
     margin 4px
     transform scale(1, 1)
     transition transform 0.18s ease-out 0.18s

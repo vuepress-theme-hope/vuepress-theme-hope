@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.4...v1.7.5) (2020-12-10)
+
+### Bug Fixes
+
+- **theme:** fix a typo in PageFooter ([88fe2ae](https://github.com/Mister-Hope/vuepress-theme-hope/commit/88fe2aea6561540869158e002845985951765b81)), closes [#481](https://github.com/Mister-Hope/vuepress-theme-hope/issues/481)
+
 ## [1.7.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.3...v1.7.4) (2020-12-10)
 
 ### Bug Fixes
