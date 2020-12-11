@@ -8,11 +8,12 @@
     "tests/"
   ],
   "scripts": {
-    "build": "lerna run build --parallel",
+    "build": "tsc --build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
     "commit": "npx git-cz",
     "demo:build": "yarn workspace test build",
     "demo:serve": "yarn workspace test serve",
+    "dev": "tsc --build --watch",
     "docs/add-this:serve": "yarn workspace add-this-docs serve",
     "docs/comment:serve": "yarn workspace comment-docs serve",
     "docs/copy-code:serve": "yarn workspace copy-code-docs serve",
@@ -24,6 +25,7 @@
     "docs/seo:serve": "yarn workspace seo-docs serve",
     "docs/sitemap:serve": "yarn workspace sitemap-docs serve",
     "docs/theme:serve": "yarn workspace theme-docs serve",
+    "docs:build": "lerna run build --parallel",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:clean": "lerna clean",
     "lint": "prettier --check --write . && eslint . --ext .js,.ts,.vue --fix && markdownlint **/*.md --ignore **/node_modules/** --fix",
@@ -36,13 +38,11 @@
     "packages:check-update": "lerna exec -- ncu --timeout 600000 && ncu --timeout 600000",
     "packages:release": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/release.ts",
     "packages:update": "lerna exec -- ncu -u --timeout 600000 && ncu -u --timeout 600000 && yarn install && yarn upgrade",
-    "test": "lerna run test --parallel",
-    "typescript:compile": "tsc --build",
-    "typescript:watch": "tsc --build --watch"
+    "test": "lerna run test --parallel"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run typescript:compile && yarn run test && lint-staged"
+      "pre-commit": "yarn run build && yarn run test && lint-staged"
     }
   },
   "lint-staged": {
@@ -105,6 +105,7 @@
     "@vue/eslint-config-typescript": "7.0.0",
     "@vuepress/test-utils": "1.7.1",
     "chai": "4.2.0",
+    "chalk": "4.1.0",
     "conventional-changelog-cli": "2.1.1",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",

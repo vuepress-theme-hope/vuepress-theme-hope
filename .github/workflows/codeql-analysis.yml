@@ -47,7 +47,7 @@ jobs:
 
       # - run: |
       #     yarn install
-      #     yarn run typescript:compile
+      #     yarn run build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1

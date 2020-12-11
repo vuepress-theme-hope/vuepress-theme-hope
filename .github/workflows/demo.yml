@@ -41,7 +41,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Theme demo
         run: yarn run demo:build

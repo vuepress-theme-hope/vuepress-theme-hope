@@ -2,6 +2,7 @@ import * as execa from "execa";
 import * as inquirer from "inquirer";
 import { ReleaseType, inc, prerelease } from "semver";
 import { version as currentVersion } from "../lerna.json";
+import { cyan, green, red } from "chalk";
 
 interface Answers {
   bump: string;
@@ -23,9 +24,9 @@ const getNpmTags = (version: string): string[] => {
 };
 
 const release = async (): Promise<void> => {
-  await execa("yarn", ["run", "typescript:compile"]);
+  await execa("yarn", ["run", "build"]);
 
-  console.log(`Current version: ${currentVersion}`);
+  console.log(`Current version: ${green(currentVersion)}`);
 
   const bumps: ReleaseType[] = [
     "patch",
@@ -68,17 +69,17 @@ const release = async (): Promise<void> => {
 
   const version = customVersion || versions[bump];
 
-  const { yes } = await inquirer.prompt<{ yes: "Y" | "N" }>([
+  const { confirm } = await inquirer.prompt<{ confirm: "Y" | "N" }>([
     {
-      name: "yes",
+      name: "confirm",
       message: `Confirm releasing ${version} (${npmTag})?`,
       type: "list",
       choices: ["N", "Y"],
     },
   ]);
 
-  if (yes === "N") {
-    console.log("[release] cancelled.");
+  if (confirm === "N") {
+    console.log(red("Release cancelled."));
     return;
   }
 
@@ -92,13 +93,17 @@ const release = async (): Promise<void> => {
     "https://registry.npmjs.org/",
   ];
 
-  console.log(`lerna ${releaseArguments.join(" ")}`);
+  console.log(cyan(`lerna ${releaseArguments.join(" ")}`));
 
   await execa(require.resolve("lerna/cli"), releaseArguments, {
     stdio: "inherit",
   });
 
+  console.log("Generating changelog");
+
   await execa("yarn", ["run", "changelog"]);
+
+  console.log(green("Release complete"));
 };
 
 release().catch((err) => {

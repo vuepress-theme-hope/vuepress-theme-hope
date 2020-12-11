@@ -43,7 +43,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace theme-docs build
@@ -93,7 +93,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace add-this-docs build
@@ -144,7 +144,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace comment-docs build
@@ -195,7 +195,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace copy-code-docs build
@@ -246,7 +246,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace last-update-docs build
@@ -297,7 +297,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace md-enhance-docs build
@@ -348,7 +348,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace photo-swipe-docs build
@@ -399,7 +399,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace pwa-docs build
@@ -450,7 +450,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace reading-time-docs build
@@ -501,7 +501,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace seo-docs build
@@ -552,7 +552,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Build Docs
         run: yarn workspace sitemap-docs build

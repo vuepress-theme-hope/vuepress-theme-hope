@@ -42,7 +42,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: TypeScript compile
-        run: yarn run typescript:compile
+        run: yarn run build
 
       - name: Run full test
         run: |
