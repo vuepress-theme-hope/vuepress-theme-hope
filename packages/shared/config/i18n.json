@@ -103,8 +103,8 @@
       "blog": {
         "article": "Bài viết",
         "articleList": "Danh sách Bài viết",
-        "category": "Category",
-        "tag": "Tags",
+        "category": "Chủ đề",
+        "tag": "Thẻ",
         "timeline": "Timeline",
         "timelineText": "Yesterday Once More!",
         "allText": "Tất cả",
@@ -140,11 +140,11 @@
         "author": "Người viết🖊",
         "time": "Ngày viết📅",
         "origin": "Nguồn💡",
-        "views": "Views của trang🔢",
-        "category": "Category🌈",
-        "tag": "Tags🏷",
+        "views": "Lượt xem của trang🔢",
+        "category": "Chủ đề🌈",
+        "tag": "Thẻ🏷",
         "readingTime": "Thời gian đọc⌛",
-        "words": "Words🔠"
+        "words": "Từ🔠"
       }
     },
     "component": {
