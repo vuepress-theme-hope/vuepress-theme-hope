@@ -48,7 +48,9 @@ export const head = (
     }
   }
 
-  setLink("manifest", "/manifest.webmanifest");
+  setLink("manifest", "/manifest.webmanifest", {
+    crossorigin: "use-credentials",
+  });
   setMeta("theme-color", options.themeColor || "#46bd87");
 
   if (

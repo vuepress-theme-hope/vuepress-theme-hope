@@ -113,7 +113,14 @@ describe("Test head function", () => {
         },
       ],
 
-      ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
+      [
+        "link",
+        {
+          rel: "manifest",
+          href: "/manifest.webmanifest",
+          crossorigin: "use-credentials",
+        },
+      ],
       ["meta", { name: "theme-color", content: "#46bd87" }],
       ["link", { rel: "apple-touch-icon", href: "/img/icon/appleIcon152.png" }],
       ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
@@ -160,7 +167,14 @@ describe("Test head function", () => {
 
       ["meta", { name: "theme-color", content: "#ffffff" }],
       ["meta", { name: "msapplication-TileColor", content: "#000000" }],
-      ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
+      [
+        "link",
+        {
+          rel: "manifest",
+          href: "/manifest.webmanifest",
+          crossorigin: "use-credentials",
+        },
+      ],
       ["link", { rel: "apple-touch-icon", href: "/img/icon/appleIcon152.png" }],
       ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
       [
@@ -204,7 +218,14 @@ describe("Test head function", () => {
           type: "image/png",
         },
       ],
-      ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
+      [
+        "link",
+        {
+          rel: "manifest",
+          href: "/manifest.webmanifest",
+          crossorigin: "use-credentials",
+        },
+      ],
       ["meta", { name: "theme-color", content: "#46bd87" }],
       [
         "link",
