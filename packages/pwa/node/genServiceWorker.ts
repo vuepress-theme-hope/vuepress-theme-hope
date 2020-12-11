@@ -59,7 +59,7 @@ export const genServiceWorker = async (
     cleanupOutdatedCaches: true,
     clientsClaim: true,
     maximumFileSizeToCacheInBytes: (options.maxSize || 2048) * 1024,
-    manifestTransforms: [imageFilter(context.outDir, options.picMaxSize)],
+    manifestTransforms: [imageFilter(context.outDir, options.maxPicSize)],
     ...(options.generateSWConfig || {}),
   }).then(({ count, size, warnings }) => {
     console.log(

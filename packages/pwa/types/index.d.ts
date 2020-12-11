@@ -116,7 +116,7 @@ export interface PWAOptions {
    *
    * @default 1024
    */
-  picMaxSize?: number;
+  maxPicSize?: number;
   /**
    * 苹果设置
    *
