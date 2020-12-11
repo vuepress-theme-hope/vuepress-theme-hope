@@ -74,7 +74,7 @@ export default Vue.extend({
         this.manifest = JSON.parse(manifestContent) as ManifestOption;
       else
         try {
-          const response = await fetch("/manifest.webmanifest");
+          const response = await fetch(`${SW_BASE_URL}manifest.webmanifest`);
           const data = (await response.json()) as ManifestOption;
 
           this.manifest = data;
