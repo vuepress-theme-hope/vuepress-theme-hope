@@ -2,6 +2,22 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.7...v1.7.8) (2020-12-11)
+
+### Bug Fixes
+
+- **pwa:** rename options to align the docs ([12ccc7e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/12ccc7e8db3377c278931ec7b28c1dead73abb91))
+
+## [1.7.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.6...v1.7.7) (2020-12-11)
+
+### Bug Fixes
+
+- **pwa:** fix missing base in PWAInstallModal ([5b2f2cc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5b2f2cc2f71ed18b582ac616d1394d6ea346dea4))
+
+### Features
+
+- **pwa:** add crossorigin for manifest link ([5b99eeb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5b99eebd33b78588c9fbb634ae234b6dc6fefe2b))
+
 ## [1.7.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.5...v1.7.6) (2020-12-10)
 
 ### Bug Fixes
