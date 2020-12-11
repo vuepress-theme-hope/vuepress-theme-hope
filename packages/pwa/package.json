@@ -32,7 +32,7 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "^1.7.6",
     "@mr-hope/vuepress-types": "^1.7.6",
-    "@types/fs-extra": "^9.0.4",
+    "@types/fs-extra": "^9.0.5",
     "chalk": "^4.1.0",
     "fs-extra": "^9.0.1",
     "register-service-worker": "^1.7.2",

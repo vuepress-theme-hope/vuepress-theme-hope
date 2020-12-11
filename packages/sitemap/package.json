@@ -25,7 +25,7 @@
   "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-types": "^1.7.6",
-    "@types/fs-extra": "^9.0.4",
+    "@types/fs-extra": "^9.0.5",
     "chalk": "^4.1.0",
     "fs-extra": "^9.0.1",
     "sitemap": "^6.3.3"
