@@ -2,6 +2,16 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.5...v1.7.6) (2020-12-10)
+
+### Bug Fixes
+
+- **copy-code:** fix showInMobile not working ([87b0d08](https://github.com/Mister-Hope/vuepress-theme-hope/commit/87b0d0863bb24458f87e5255cbb4ef08ca4f56a2))
+
+### Features
+
+- **theme:** update media icon ([2bb63fe](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2bb63feaf1e05ce5928806ec249eaac632c049be))
+
 ## [1.7.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.4...v1.7.5) (2020-12-10)
 
 ### Bug Fixes
