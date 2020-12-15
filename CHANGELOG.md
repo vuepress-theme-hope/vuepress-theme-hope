@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.7...v1.7.8) (2020-12-11)
+
+### Bug Fixes
+
+- **pwa:** rename options to align the docs ([12ccc7e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/12ccc7e8db3377c278931ec7b28c1dead73abb91))
+
 ## [1.7.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.5...v1.7.6) (2020-12-10)
 
 ### Bug Fixes
