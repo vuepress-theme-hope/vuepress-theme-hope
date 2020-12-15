@@ -22,7 +22,7 @@ export interface PhotoSwipeOptions {
    *
    * Options which will pass to `photo-swipe`
    */
-  option?: PhotoSwipe.Options;
+  options?: PhotoSwipe.Options;
 }
 
 declare global {

@@ -15,7 +15,7 @@ export = (
     define: (): Record<string, unknown> => ({
       IMAGE_CONTAINER: option.container || ".theme-default-content",
       IMAGE_SELECTOR: option.selector || ".theme-default-content :not(a) > img",
-      PHOTOSWIPE_OPTIONS: option.option || {},
+      PHOTOSWIPE_OPTIONS: option.options || {},
     }),
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
