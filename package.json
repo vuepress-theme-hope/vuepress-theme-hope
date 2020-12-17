@@ -113,7 +113,7 @@
     "eslint": "7.15.0",
     "eslint-config-prettier": "7.0.0",
     "eslint-plugin-prettier": "3.3.0",
-    "eslint-plugin-vue": "7.2.0",
+    "eslint-plugin-vue": "7.3.0",
     "execa": "5.0.0",
     "husky": "4.3.6",
     "inquirer": "7.3.3",
