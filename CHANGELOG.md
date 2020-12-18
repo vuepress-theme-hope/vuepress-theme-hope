@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.7.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.8...v1.7.9) (2020-12-15)
+
+### Bug Fixes
+
+- **i18n:** Fix misc in vi-VN ([#488](https://github.com/Mister-Hope/vuepress-theme-hope/issues/488)) ([9a2083f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9a2083fe945ac4865baeb1114c4bd3d116d01504))
+- **photo-swipe:** align document ([ed2b7af](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ed2b7af28f422327fc7be5ceaf2540dd027bda6c)), closes [#497](https://github.com/Mister-Hope/vuepress-theme-hope/issues/497)
+
 ## [1.7.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.7...v1.7.8) (2020-12-11)
 
 ### Bug Fixes
