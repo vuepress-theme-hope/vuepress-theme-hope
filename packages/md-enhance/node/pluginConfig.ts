@@ -57,7 +57,7 @@ const pluginConfig = (
       ["container", { type: "justify", defaultTitle: "" }]
     );
 
-  if (markdownOption.codeDemo || markdownOption.enableAll)
+  if (markdownOption.demo || markdownOption.enableAll)
     config.push(["container", { type: "demo", render: codeDemoRender }]);
 
   return config;

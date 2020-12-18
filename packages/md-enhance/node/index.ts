@@ -28,9 +28,9 @@ export = (
       MARKDOWN_ENHANCE_OPTIONS: markdownOption,
       CODE_DEMO_OPTIONS: {
         ...codeDemoDefaultSetting,
-        ...(typeof markdownOption.codeDemo === "boolean"
+        ...(typeof markdownOption.demo === "boolean"
           ? {}
-          : markdownOption.codeDemo),
+          : markdownOption.demo),
       },
       REVEAL_PLUGINS:
         typeof markdownOption.presentation === "object" &&

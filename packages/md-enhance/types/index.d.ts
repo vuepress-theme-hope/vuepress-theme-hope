@@ -176,7 +176,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  codeDemo: Partial<CodeDemoGlobalOptions> | boolean;
+  demo: Partial<CodeDemoGlobalOptions> | boolean;
   /**
    * 是否启用幻灯片支持
    *
