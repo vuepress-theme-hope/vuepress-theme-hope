@@ -29,7 +29,7 @@
     "@types/webpack-dev-server": "3.11.1",
     "cac": "6.7.1",
     "vue": "2.6.12",
-    "vue-loader": "15.9.5"
+    "vue-loader": "15.9.6"
   },
   "peerDependencies": {
     "vuepress": "^1.7.1"
