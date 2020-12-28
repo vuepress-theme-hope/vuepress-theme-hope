@@ -25,7 +25,7 @@ export const lang2path = (lang: string): LangPaths | "/" => {
 
   console.error(
     `${lang} has no path config, and will return '/' instead.
-You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts`
+You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/packages/shared/config/i18n.json`
   );
 
   return "/";
@@ -38,7 +38,7 @@ export const path2lang = (path: string): Langs => {
 
   console.error(
     `${path} isn’t assign with a lang, and will return 'en-US' instead.
-You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts`
+You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/packages/shared/config/i18n.json`
   );
 
   return "en-US";
@@ -53,7 +53,7 @@ export const getLocale = (lang: string): HopeLangI18nConfig => {
 
   console.warn(
     `${lang} locates config is missing, and will return 'en-US' instead.
-You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts.
+You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/packages/shared/config/i18n.json
 Note: This warning will be shown only once.`
   );
 

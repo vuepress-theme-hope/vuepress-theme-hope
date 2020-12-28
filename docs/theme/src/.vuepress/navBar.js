@@ -20,7 +20,7 @@ module.exports = {
         {
           text: "Changelog",
           link:
-            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md",
+            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
         },
         {
           text: "Repo",
@@ -95,7 +95,7 @@ module.exports = {
         {
           text: "更新日志",
           link:
-            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md",
+            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
         },
         {
           text: "项目地址",

@@ -3,7 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - master
+      - v1
 
 jobs:
   deploy-theme-docs:

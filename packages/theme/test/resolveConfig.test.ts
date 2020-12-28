@@ -43,7 +43,7 @@ describe("Test resolveTheme function", () => {
         {
           text: "更新日志",
           link:
-            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md",
+            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
         },
       ],
 
@@ -155,7 +155,7 @@ describe("Test resolveTheme function", () => {
             {
               text: "Changelog",
               link:
-                "https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/CHANGELOG.md",
+                "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
             },
           ],
 

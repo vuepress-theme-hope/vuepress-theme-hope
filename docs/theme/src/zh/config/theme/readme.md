@@ -8,7 +8,7 @@ tags:
 ---
 
 ::: tip
-你可以查看 [本文档的配置][docs-config] 作为案例，你也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/theme/types/hopeConfig.d.ts)
+你可以查看 [本文档的配置][docs-config] 作为案例，你也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/packages/theme/types/hopeConfig.d.ts)
 :::
 
 `.vuepress/config.js` 中的 themeConfig 字段(主题字段)新增以下配置:
@@ -31,7 +31,7 @@ tags:
 ::: tip
 目前多语言仅适配了 **简体中文** (zh-CN)、**英文(美国)** (en-US) 与 越南语 (vi-VN)。
 
-如果你需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared-utils/lib/i18n/config.ts)
+如果你需要其它语言的多语言支持，你可以 [向此文件提交一个 PR](https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/packages/shared-utils/lib/i18n/config.ts)
 :::
 
 ### author
@@ -82,4 +82,4 @@ SideBarItem 新增
 
 - [**主题外观配置**](apperance.md)
 
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/docs/theme/src/.vuepress/config.js
+[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js

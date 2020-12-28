@@ -7,7 +7,7 @@
     "vuepress",
     "mr-hope"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/node-shared-utils#readme",
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/v1/packages/node-shared-utils#readme",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
