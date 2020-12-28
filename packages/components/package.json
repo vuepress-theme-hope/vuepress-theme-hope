@@ -28,7 +28,7 @@
     "@mr-hope/vuepress-utils": "^1.7.9",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
-    "screenfull": "^5.0.2",
+    "screenfull": "^5.1.0",
     "vue-router": "^3.4.9"
   },
   "publishConfig": {
