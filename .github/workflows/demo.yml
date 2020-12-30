@@ -52,5 +52,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           CLEAN: true
-          FOLDER: tests/dist
+          FOLDER: demo/dist
           REPOSITORY_NAME: Mister-Hope/theme-demo

@@ -1,18 +1,18 @@
 {
-  "name": "vuepress-theme-hope",
+  "name": "vuepress-theme-hope-root",
   "private": true,
-  "description": "a light vuepress theme",
+  "description": "A light vuepress theme",
   "workspaces": [
+    "demo/",
     "docs/*",
-    "packages/*",
-    "tests/"
+    "packages/*"
   ],
   "scripts": {
     "build": "tsc --build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
     "commit": "npx git-cz",
-    "demo:build": "yarn workspace test build",
-    "demo:serve": "yarn workspace test serve",
+    "demo:build": "yarn workspace demo build",
+    "demo:serve": "yarn workspace demo serve",
     "dev": "tsc --build --watch",
     "docs/add-this:serve": "yarn workspace add-this-docs serve",
     "docs/comment:serve": "yarn workspace comment-docs serve",
