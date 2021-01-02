@@ -22,4 +22,8 @@ export default Vue.extend({
     } else
       console.error("[AddThis]: Please provide a pubid to let plugin work");
   },
+
+  render(h) {
+    return h("div", { class: "add-this" });
+  },
 });

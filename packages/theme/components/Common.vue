@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="pageClasses"
     class="theme-container"
-    @touchend="onTouchEnd"
+    :class="pageClasses"
     @touchstart="onTouchStart"
+    @touchend="onTouchEnd"
   >
     <Password v-if="isGlobalEncrypted" @password-verify="checkGlobalPassword" />
     <!-- Content -->

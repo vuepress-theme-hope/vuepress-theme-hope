@@ -1,5 +1,3 @@
-**/dist/**
-**/node_modules/**
 
 packages/**/*.js
 packages/**/*.d.ts
@@ -11,6 +9,22 @@ packages/**/*.d.ts
 
 !packages/**/test/**/*.js
 
-.vscode/
 *.map
+
+# Node modules
+node_modules/
+
+# Dist files
+lib/
+
+# VuePress Output
+dist/
+
+# VS Code Config file
+.vscode/
+
+# Typescript build info
 *.tsbuildinfo
+
+# Test files
+!packages/**/__tests__/**/*.js

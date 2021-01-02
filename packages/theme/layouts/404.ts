@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Common from "@theme/components/Common.vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
-import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
+import type { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
 
 export default Vue.extend({
   name: "NotFound",

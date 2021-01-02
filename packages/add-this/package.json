@@ -23,12 +23,15 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "node/index.js",
-  "types": "types/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/types/index.d.ts",
   "scripts": {
-    "demo:build": "vuepress build test/demo",
-    "demo:clean-serve": "vuepress dev test/demo --no-cache",
-    "demo:serve": "vuepress dev test/demo"
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
+    "demo:build": "vuepress build __tests__/demo",
+    "demo:clean-serve": "vuepress dev __tests__/demo --no-cache",
+    "demo:serve": "vuepress dev __tests__/demo"
   },
   "dependencies": {
     "@mr-hope/vuepress-types": "^1.7.9"
