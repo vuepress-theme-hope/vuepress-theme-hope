@@ -5,9 +5,9 @@
 <h1 align="center">@mr-hope/vuepress-plugin-last-update</h1>
 <h4 align="center">最后更新时间插件🕘 / Last Update Time plugin🕘</h4>
 
-<!-- markdownlint-restore -->
-
 [![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-last-update.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-last-update.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-last-update?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-last-update)
+
+<!-- markdownlint-restore -->
 
 最后更新时间插件 🕘 / Last Update Time plugin🕘
 

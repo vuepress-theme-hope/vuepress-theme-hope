@@ -102,12 +102,12 @@ Syntax:
   <!-- vue template -->
 </template>
 <script>
-  export default {
-    // vue component
-  };
+export default {
+  // vue component
+};
 </script>
 <style>
-  /* style */
+/* style */
 </style>
 ```
 
@@ -214,8 +214,8 @@ Available CSS languages:
 ::: demo A normal demo
 
 ```html
-  <h1>Mr.Hope</h1>
-  <p>Is <span id="very">very</span> handsome</p>
+<h1>Mr.Hope</h1>
+<p>Is <span id="very">very</span> handsome</p>
 ```
 
 ```js
@@ -236,8 +236,8 @@ span {
 ::: demo A normal demo
 
 ```html
-  <h1>Mr.Hope</h1>
-  <p>Is <span id="very">very</span> handsome</p>
+<h1>Mr.Hope</h1>
+<p>Is <span id="very">very</span> handsome</p>
 ```
 
 ```js
@@ -313,17 +313,19 @@ export default class App extends React.Component {
 
 ```vue
 <template>
-  <div class="box-vue">Mr.Hope is <span>{{ message }}</span></div>
+  <div class="box-vue">
+    Mr.Hope is <span>{{ message }}</span>
+  </div>
 </template>
 <script>
-  export default {
-    data: () => ({ message: "very handsome" }),
-  };
+export default {
+  data: () => ({ message: "very handsome" }),
+};
 </script>
 <style>
-  .box-vue span {
-    color: red;
-  }
+.box-vue span {
+  color: red;
+}
 </style>
 ```
 
@@ -334,17 +336,19 @@ export default class App extends React.Component {
 
 ```vue
 <template>
-  <div class="box-vue">Mr.Hope is <span>{{ message }}</span></div>
+  <div class="box-vue">
+    Mr.Hope is <span>{{ message }}</span>
+  </div>
 </template>
 <script>
-  export default {
-    data: () => ({ message: "very handsome" }),
-  };
+export default {
+  data: () => ({ message: "very handsome" }),
+};
 </script>
 <style>
-  .box-vue span {
-    color: red;
-  }
+.box-vue span {
+  color: red;
+}
 </style>
 ```
 

@@ -25,7 +25,10 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/unit/*.ts"
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
+    "test": "jest"
   },
   "publishConfig": {
     "access": "public"

@@ -1,18 +1,16 @@
-**/dist/**
-**/node_modules/**
+# Node modules
+node_modules/
 
-packages/**/*.js
-packages/**/*.d.ts
+# Dist files
+lib/
 
-!packages/pwa/client/skip-waiting.js
-!packages/theme/util/noopModule.js
+# VuePress Output
+dist/
 
-!packages/**/test/*.js
-!packages/**/types/**/*.d.ts
-!.vuepress/**
+# VS Code Config file
+.vscode/
 
-docs/md-enhance/src/guide/demo.md
-docs/md-enhance/src/zh/guide/demo.md
-
-test/src/guide/markdown.md
-test/src/zh/guide/markdown.md
+# Theme Output Files
+packages/theme/**/*.js
+packages/theme/**/*d.ts
+!packages/theme/types/**/*.d.ts

@@ -41,11 +41,13 @@ jobs:
         if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: TypeScript compile
+      - name: Build project
         run: yarn run build
 
-      - name: Run full test
+      - name: Linter test
         run: |
-          yarn run test
           yarn run lint:check
           yarn run lint-md
+
+      - name: Unit test
+        run: yarn run test

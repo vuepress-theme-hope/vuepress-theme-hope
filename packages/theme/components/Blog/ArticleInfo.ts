@@ -1,10 +1,10 @@
 import Vue, { PropType } from "vue";
 import { capitalize } from "@mr-hope/vuepress-shared";
-import AuthorIcon from "@mr-hope/vuepress-plugin-comment/client/icons/AuthorIcon.vue";
-import CalendarIcon from "@mr-hope/vuepress-plugin-comment/client/icons/CalendarIcon.vue";
-import CategoryInfo from "@mr-hope/vuepress-plugin-comment/client/CategoryInfo.vue";
-import TagInfo from "@mr-hope/vuepress-plugin-comment/client/TagInfo.vue";
-import TimeIcon from "@mr-hope/vuepress-plugin-comment/client/icons/TimeIcon.vue";
+import AuthorIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/AuthorIcon.vue";
+import CalendarIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/CalendarIcon.vue";
+import CategoryInfo from "@mr-hope/vuepress-plugin-comment/lib/client/CategoryInfo.vue";
+import TagInfo from "@mr-hope/vuepress-plugin-comment/lib/client/TagInfo.vue";
+import TimeIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/TimeIcon.vue";
 
 import { PageComputed } from "@mr-hope/vuepress-types";
 

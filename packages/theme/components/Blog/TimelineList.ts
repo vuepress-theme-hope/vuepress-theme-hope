@@ -1,6 +1,6 @@
 import { Component, Mixins } from "vue-property-decorator";
 import MyTransition from "@theme/components/MyTransition.vue";
-import TimeIcon from "@mr-hope/vuepress-plugin-comment/client/icons/TimeIcon.vue";
+import TimeIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/TimeIcon.vue";
 import { TimelineMixin } from "@theme/util/articleMixin";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 

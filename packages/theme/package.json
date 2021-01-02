@@ -25,6 +25,11 @@
   },
   "main": "index.js",
   "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf components/**/*.{js,d.ts} layouts/**/*.{js,d.ts} node/**/*.{js,d.ts} util/**/*.{js,d.ts} index.d.ts index.js *.tsbuildinfo",
+    "test": "jest"
+  },
   "dependencies": {
     "@docsearch/css": "^1.0.0-alpha.28",
     "@docsearch/js": "^1.0.0-alpha.28",

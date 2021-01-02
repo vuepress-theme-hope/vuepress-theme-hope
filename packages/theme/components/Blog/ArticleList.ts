@@ -1,7 +1,6 @@
 import Vue from "vue";
 import ArticleItem from "@theme/components/Blog/ArticleItem.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
-import Pagination from "@mr-hope/vuepress-plugin-components/client/Pagination.vue";
 import { filterArticle, sortArticle } from "@theme/util/article";
 import { getPathMatchedKeys } from "@theme/util/encrypt";
 
@@ -12,7 +11,7 @@ import { Route } from "vue-router";
 export default Vue.extend({
   name: "ArticleList",
 
-  components: { ArticleItem, MyTransition, Pagination },
+  components: { ArticleItem, MyTransition },
 
   data: () => ({
     currentPage: 1,

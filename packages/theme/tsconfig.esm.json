@@ -9,5 +9,5 @@
     }
   },
   "include": ["./"],
-  "exclude": ["./node", "./test", "./index.ts"]
+  "exclude": ["./node", "./__tests__", "./index.ts"]
 }

@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "module": "commonjs",
-    "rootDir": "./node",
+    "rootDir": "./src",
     "outDir": "./lib"
   },
-  "include": ["./node"]
+  "include": ["./src"]
 }

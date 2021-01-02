@@ -1,16 +1,22 @@
-**/dist/**
-**/node_modules/**
+# Node modules
+node_modules/
 
-packages/**/*.js
-packages/**/*.d.ts
+# Dist files
+lib/
 
-!packages/**/types/**/*.d.ts
+# VuePress Output
+dist/
 
-!packages/pwa/node/skip-waiting.js
-!packages/theme/util/noopModule.js
-
-!packages/**/test/**/*.js
-
+# VS Code Config file
 .vscode/
-*.map
+
+# Typescript build info
 *.tsbuildinfo
+
+# Map files
+*.map
+
+# Theme Output Files
+packages/theme/**/*.js
+packages/theme/**/*d.ts
+!packages/theme/types/**/*.d.ts

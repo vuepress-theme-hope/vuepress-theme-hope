@@ -21,8 +21,13 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "node/index.js",
-  "types": "types/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/types/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
+  },
   "dependencies": {
     "@mr-hope/vuepress-types": "^1.7.9",
     "@types/fs-extra": "^9.0.6",

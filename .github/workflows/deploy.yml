@@ -42,7 +42,7 @@ jobs:
         if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: TypeScript compile
+      - name: Build project
         run: yarn run build
 
       - name: Build Docs

@@ -12,18 +12,12 @@ extends:
   - prettier/vue
 
 ignorePatterns:
-  - "**/dist/**"
-  - "**/node_modules/**"
-
-  - "packages/**/*.js"
-  - "packages/**/*.d.ts"
-
-  - "!packages/pwa/node/skip-waiting.js"
-  - "!packages/theme/util/noopModule.js"
-
-  - "!packages/**/test/**/*.js"
-  - "!packages/**/types/**/*.d.ts"
-  - "!.vuepress/**"
+  - dist/
+  - node_modules/
+  - lib/
+  - "packages/theme/**/*.js"
+  - "packages/theme/**/*.d.ts"
+  - "!packages/theme/types/**/*.d.ts"
 
 overrides:
   - files:
@@ -154,28 +148,17 @@ overrides:
         - warn
 
   - files:
-      - "*.d.ts"
-    rules:
-      no-underscore-dangle:
-        - off
-
-  - files:
-      - "**/tests/unit/**/*.spec.{j,t}s?(x)"
-      - "**/__tests__/*.{j,t}s?(x)"
-      - "**/test/**/*.spec.js"
-      - "**/test/**/*.spec.ts"
-      - "**/test/**/*.test.js"
-      - "**/test/**/*.test.ts"
+      - "**/__tests__/**/*.spec.{j,t}s?(x)"
 
     env:
-      mocha: true
-
-  - files:
-      - "**/test/**/*.spec.ts"
-      - "**/test/**/*.test.ts"
+      jest: true
 
     rules:
       "@typescript-eslint/no-explicit-any":
+        - off
+      "@typescript-eslint/no-unsafe-assignment":
+        - off
+      "@typescript-eslint/no-unsafe-call":
         - off
       "@typescript-eslint/no-unsafe-member-access":
         - off

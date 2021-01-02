@@ -3,7 +3,8 @@
 
 !util/*.ts
 
-test/
+# Test Files
+__tests__/
 
-.mocharc.yml
+# Typescript Config files
 tsconfig.*

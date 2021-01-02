@@ -102,12 +102,12 @@ JSON 块是可选的。
   <!-- vue 模板 -->
 </template>
 <script>
-  export default {
-    // vue 组件
-  };
+export default {
+  // vue 组件
+};
 </script>
 <style>
-  /* css 代码 */
+/* css 代码 */
 </style>
 ```
 
@@ -214,8 +214,8 @@ module.exports = {
 ::: demo 一个普通 Demo
 
 ```html
-  <h1>Mr.Hope</h1>
-  <p><span id="very">十分</span> 帅</p>
+<h1>Mr.Hope</h1>
+<p><span id="very">十分</span> 帅</p>
 ```
 
 ```js
@@ -236,8 +236,8 @@ span {
 ::: demo 一个普通 Demo
 
 ```html
-  <h1>Mr.Hope</h1>
-  <p><span id="very">十分</span> 帅</p>
+<h1>Mr.Hope</h1>
+<p><span id="very">十分</span> 帅</p>
 ```
 
 ```js
@@ -313,17 +313,19 @@ export default class App extends React.Component {
 
 ```vue
 <template>
-  <div class="box-vue">Mr.Hope <span>{{ message }}</span></div>
+  <div class="box-vue">
+    Mr.Hope <span>{{ message }}</span>
+  </div>
 </template>
 <script>
-  export default {
-    data: () => ({ message: "十分帅" }),
-  };
+export default {
+  data: () => ({ message: "十分帅" }),
+};
 </script>
 <style>
-  .box-vue span {
-    color: red;
-  }
+.box-vue span {
+  color: red;
+}
 </style>
 ```
 
@@ -334,17 +336,19 @@ export default class App extends React.Component {
 
 ```vue
 <template>
-  <div class="box-vue">Mr.Hope <span>{{ message }}</span></div>
+  <div class="box-vue">
+    Mr.Hope <span>{{ message }}</span>
+  </div>
 </template>
 <script>
-  export default {
-    data: () => ({ message: "十分帅" }),
-  };
+export default {
+  data: () => ({ message: "十分帅" }),
+};
 </script>
 <style>
-  .box-vue span {
-    color: red;
-  }
+.box-vue span {
+  color: red;
+}
 </style>
 ```
 

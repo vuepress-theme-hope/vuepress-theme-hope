@@ -34,7 +34,7 @@ const getAlias = (
     themeConfig.themeColor === false && themeConfig.darkmode === "disable"
   );
 
-  const noopModule = "vuepress-theme-hope/util/noopModule.js";
+  const noopModule = "vuepress-theme-hope/util/noopModule";
 
   return {
     "@AlgoliaSearchBox": isAlgoliaSearch
@@ -53,10 +53,10 @@ const getAlias = (
       : noopModule,
     "@Comment":
       commentPluginEnabled && commentEnabled
-        ? "@mr-hope/vuepress-plugin-comment/client/Comment.vue"
+        ? "@mr-hope/vuepress-plugin-comment/lib/client/Comment.vue"
         : noopModule,
     "@PageInfo": commentPluginEnabled
-      ? "@mr-hope/vuepress-plugin-comment/client/PageInfo.vue"
+      ? "@mr-hope/vuepress-plugin-comment/lib/client/PageInfo.vue"
       : noopModule,
     "@ThemeColor": themeColorEnabled
       ? resolve(__dirname, "./components/Theme/ThemeColor.vue")

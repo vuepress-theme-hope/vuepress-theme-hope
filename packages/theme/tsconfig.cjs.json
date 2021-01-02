@@ -4,6 +4,6 @@
     "baseUrl": "./",
     "module": "commonjs"
   },
-  "include": ["./node/**/*.ts", "./index.ts"],
+  "include": ["./node", "./index.ts"],
   "exclude": []
 }

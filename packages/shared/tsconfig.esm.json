@@ -1,7 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "ESNext"
+    "module": "ESNext",
+    "target": "ESNext",
+    "rootDir": "./src",
+    "outDir": "./lib"
   },
-  "include": ["./client", "./config/i18n.json"]
+  "include": ["./src", "./src/config/i18n.json"]
 }

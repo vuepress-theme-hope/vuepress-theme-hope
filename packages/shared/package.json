@@ -22,8 +22,13 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "client/index.js",
-  "types": "types/index.d.ts",
+  "main": "lib/client/index.js",
+  "types": "lib/types/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
+  },
   "publishConfig": {
     "access": "public"
   }

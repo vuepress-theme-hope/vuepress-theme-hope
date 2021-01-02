@@ -4,6 +4,7 @@
     { "path": "../utils/tsconfig.json" },
     { "path": "../shared/tsconfig.json" },
     { "path": "../vuepress-types/tsconfig.json" },
+    { "path": "../reading-time/tsconfig.json" },
     { "path": "./tsconfig.cjs.json" },
     { "path": "./tsconfig.esm.json" }
   ],
