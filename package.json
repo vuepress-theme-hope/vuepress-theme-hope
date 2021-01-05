@@ -153,7 +153,7 @@
     "webpack": "4.44.2",
     "webpack-bundle-analyzer": "4.3.0",
     "webpack-chain": "6.5.1",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.1"
   },
   "textlint": {
     "rules": {
