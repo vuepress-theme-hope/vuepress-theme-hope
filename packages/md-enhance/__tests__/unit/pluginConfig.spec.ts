@@ -1,7 +1,5 @@
-import { describe, it } from "mocha";
-import { expect } from "chai";
 import { Langs } from "@mr-hope/vuepress-shared";
-import resolveConfig from "../../node/pluginConfig";
+import resolveConfig from "../../src/node/pluginConfig";
 
 describe("Test pluginConfig generate", () => {
   it("Should use plugin options first", () => {
@@ -17,7 +15,7 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    expect((pluginConfig[0] as any)[1].defaultTitle["/"]).to.be.equal("Info");
+    expect((pluginConfig[0] as any)[1].defaultTitle["/"]).toEqual("Info");
   });
 
   it("should handle baseLang option", () => {
@@ -34,8 +32,6 @@ describe("Test pluginConfig generate", () => {
 
     const pluginConfig = resolveConfig(option, themeConfig);
 
-    expect((pluginConfig[0] as any)[1].defaultTitle["/"]).to.be.equal(
-      "相关信息"
-    );
+    expect((pluginConfig[0] as any)[1].defaultTitle["/"]).toEqual("相关信息");
   });
 });

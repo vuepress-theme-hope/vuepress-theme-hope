@@ -149,6 +149,6 @@ module.exports = {
 
   plugins: [
     /** Markdown 增强 */
-    [require('../../../lib'), { enableAll: true }]
+    [require('../../../lib/node/'), { enableAll: true }]
   ]
 };

@@ -161,8 +161,6 @@ overrides:
 
   - files:
       - "**/tests/unit/**/*.spec.{j,t}s?(x)"
-      - "**/test/**/*.spec.js"
-      - "**/test/**/*.spec.ts"
       - "**/test/**/*.test.js"
       - "**/test/**/*.test.ts"
 
@@ -176,7 +174,7 @@ overrides:
         - off
 
   - files:
-      - "**/__tests__/*.{j,t}s?(x)"
+      - "**/__tests__/**/*.spec.{j,t}s?(x)"
 
     env:
       jest: true

@@ -7,11 +7,11 @@ import { EnhanceApp } from "@mr-hope/vuepress-types";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_OPTIONS.align || MARKDOWN_ENHANCE_OPTIONS.enableAll)
-    void import("vuepress-plugin-md-enhance/client/styles/align.styl");
+    void import("./styles/align.styl");
   if (MARKDOWN_ENHANCE_OPTIONS.footnote || MARKDOWN_ENHANCE_OPTIONS.enableAll)
-    void import("vuepress-plugin-md-enhance/client/styles/footnote.styl");
+    void import("./styles/footnote.styl");
   if (MARKDOWN_ENHANCE_OPTIONS.tex || MARKDOWN_ENHANCE_OPTIONS.enableAll) {
-    void import("vuepress-plugin-md-enhance/client/styles/tex.styl");
+    void import("./styles/tex.styl");
     void import("katex/dist/katex.min.css");
   }
 
