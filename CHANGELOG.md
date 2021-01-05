@@ -2,6 +2,16 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.8.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.9...v1.8.0) (2021-01-05)
+
+### Bug Fixes
+
+- **md-enhance:** align docs ([b7ad59f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b7ad59f46999a31e5552b1b2be59a37637a1190a))
+
+### Features
+
+- **theme:** add namedChunks option ([ebb2223](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ebb2223c2121b1a812a9f8b83aae963e03f5a947))
+
 ## [1.7.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.8...v1.7.9) (2020-12-15)
 
 ### Bug Fixes
