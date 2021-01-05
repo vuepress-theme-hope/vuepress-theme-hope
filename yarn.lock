@@ -15499,10 +15499,10 @@ textlint-filter-rule-comments@1.2.2:
   resolved "https://registry.yarnpkg.com/textlint-filter-rule-comments/-/textlint-filter-rule-comments-1.2.2.tgz#3a72c494994e068e0e4aaad0f24ea7cfe338503a"
   integrity sha1-OnLElJlOBo4OSqrQ8k6nz+M4UDo=
 
-textlint-plugin-latex2e@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/textlint-plugin-latex2e/-/textlint-plugin-latex2e-1.0.3.tgz#dfe95cdf4aff4a681f91f801c0cb4d6a067dfc52"
-  integrity sha512-hPlkFC9ja/m953dNKUntAtECAih7g1e4rRpVI/xALRwlnTI6IfC4njLKI9kgMcZN87rai/hP9VXIMpuh3NS72g==
+textlint-plugin-latex2e@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/textlint-plugin-latex2e/-/textlint-plugin-latex2e-1.0.5.tgz#40ed1791120832c6ba22dbb489e21ee7c4d0b554"
+  integrity sha512-bh3iEvoGWCFXgXEFCa0CJIZMcGQO6EPbE4PcNWVhiBFB0VxTuPIfZ+LHdd83DqhczvEIt3CxBzfJK8Tx/JxihQ==
   dependencies:
     "@textlint/ast-node-types" "^4.3.4"
     fp-ts "^2.8.3"
