@@ -1,7 +1,5 @@
-import { describe, it } from "mocha";
-import { expect } from "chai";
-import { head } from "../node/head";
-import { PWAOptions } from "../types";
+import { head } from "../src/node/head";
+import { PWAOptions } from "../src/types";
 import { HeadItem } from "@mr-hope/vuepress-types";
 
 const options: PWAOptions = {
@@ -74,7 +72,7 @@ const options2: PWAOptions = {
 
 describe("Test head function", () => {
   it("should generate PWA tags because they do not exist", () => {
-    expect(head(options)).to.be.deep.equal([
+    expect(head(options)).toEqual([
       ["link", { rel: "icon", href: "/favicon.ico" }],
       [
         "link",
@@ -162,7 +160,7 @@ describe("Test head function", () => {
       ["meta", { name: "msapplication-TileColor", content: "#000000" }],
     ];
 
-    expect(head(options, headList)).to.be.deep.equal([
+    expect(head(options, headList)).toEqual([
       ["link", { rel: "icon", href: "/icon.ico" }],
 
       ["meta", { name: "theme-color", content: "#ffffff" }],
@@ -208,7 +206,7 @@ describe("Test head function", () => {
   });
 
   it("should generate some simple tags", () => {
-    expect(head(options2)).to.be.deep.equal([
+    expect(head(options2)).toEqual([
       [
         "link",
         {

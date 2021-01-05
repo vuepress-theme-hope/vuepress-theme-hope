@@ -1,6 +1,8 @@
-*.ts
-!*.d.ts
+# Source Code
+src/
 
-test/
+# Test Files
+__tests__/
 
+# Typescript Config files
 tsconfig.*

@@ -7,7 +7,9 @@ export = (
   { themeConfig }: Context
 ): PluginOptionAPI => {
   const option =
-    Object.keys(options).length > 0 ? options : themeConfig.photoSwipe || {};
+    Object.keys(options).length > 0
+      ? options
+      : (themeConfig.photoSwipe as PhotoSwipeOptions) || {};
 
   return {
     name: "photo-swipe",
