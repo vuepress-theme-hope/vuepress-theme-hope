@@ -24,7 +24,7 @@
   "types": "types/index.d.js",
   "dependencies": {
     "@types/express": "4.17.9",
-    "@types/markdown-it": "12.0.0",
+    "@types/markdown-it": "12.0.1",
     "@types/markdown-it-anchor": "4.0.4",
     "@types/webpack-dev-server": "3.11.1",
     "cac": "6.7.1",
@@ -32,7 +32,7 @@
     "vue-loader": "15.9.6"
   },
   "peerDependencies": {
-    "vuepress": "^1.7.1"
+    "vuepress": "^1.8.0"
   },
   "publishConfig": {
     "access": "public"
