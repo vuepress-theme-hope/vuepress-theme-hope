@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-md-enhance",
   "version": "1.7.9",
-  "description": "markdown enhancement for vuepress",
+  "description": "Markdown enhancement for vuepress",
   "keywords": [
     "vuepress-plugin",
     "markdown",
@@ -49,7 +49,7 @@
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.11.0",
     "@types/lodash.debounce": "^4.0.6",
-    "@types/markdown-it": "^12.0.0",
+    "@types/markdown-it": "^12.0.1",
     "@types/react": "^17.0.0",
     "flowchart.js": "^1.15.0",
     "katex": "^0.12.0",

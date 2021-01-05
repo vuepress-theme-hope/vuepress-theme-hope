@@ -1,12 +1,12 @@
 {
   "name": "@mr-hope/vuepress-plugin-sitemap",
   "version": "1.7.9",
-  "description": "sitemap plugin for vuepress-theme-hope",
+  "description": "Sitemap plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
     "sitemap"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/sitemap#readme",
+  "homepage": "https://vuepress-sitemap.mrhope.site",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },

@@ -1,14 +1,14 @@
 {
   "name": "vuepress-plugin-add-this",
   "version": "1.7.9",
-  "description": "add-this plugin for vuepress",
+  "description": "Add This plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
     "vuepress",
     "add-this",
     "share"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/add-this#readme",
+  "homepage": "https://vuepress-add-this.mrhope.site",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },

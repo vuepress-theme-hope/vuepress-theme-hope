@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-photo-swipe",
   "version": "1.7.9",
-  "description": "photo-swipe plugin for vuepress-theme-hope",
+  "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
     "vuepress",
@@ -10,7 +10,7 @@
     "zoom",
     "picture"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/photo-swipe#readme",
+  "homepage": "https://vuepress-photo-swipe.mrhope.site",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
