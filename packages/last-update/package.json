@@ -34,7 +34,7 @@
     "@mr-hope/vuepress-types": "^1.7.9",
     "@types/cross-spawn": "^6.0.2",
     "cross-spawn": "^7.0.3",
-    "dayjs": "^1.9.8"
+    "dayjs": "^1.10.1"
   },
   "devDependencies": {
     "@types/jest": "26.0.19",
