@@ -36,6 +36,6 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "ESNext",
-    "types": ["@mr-hope/vuepress-theme-types"]
+    "types": ["@mr-hope/vuepress-theme-types", "jest"]
   }
 }

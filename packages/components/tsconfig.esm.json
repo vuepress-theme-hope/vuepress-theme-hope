@@ -2,7 +2,9 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "module": "ESNext",
-    "target": "ESNext"
+    "target": "ESNext",
+    "rootDir": "./src",
+    "outDir": "./lib"
   },
-  "include": ["./client", "./types"]
+  "include": ["./src/client", "./src/types"]
 }

@@ -22,16 +22,23 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "node/index.js",
-  "types": "types/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/types/index.d.ts",
   "scripts": {
-    "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha test/*.test.ts"
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
+    "test": "jest"
   },
   "dependencies": {
     "@mr-hope/vuepress-types": "^1.7.9",
     "@types/cross-spawn": "^6.0.2",
     "cross-spawn": "^7.0.3",
     "dayjs": "^1.9.8"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.19",
+    "jest": "26.6.3"
   },
   "publishConfig": {
     "access": "public"

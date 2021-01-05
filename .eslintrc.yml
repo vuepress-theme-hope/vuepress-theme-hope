@@ -161,7 +161,6 @@ overrides:
 
   - files:
       - "**/tests/unit/**/*.spec.{j,t}s?(x)"
-      - "**/__tests__/*.{j,t}s?(x)"
       - "**/test/**/*.spec.js"
       - "**/test/**/*.spec.ts"
       - "**/test/**/*.test.js"
@@ -170,12 +169,22 @@ overrides:
     env:
       mocha: true
 
+    rules:
+      "@typescript-eslint/no-explicit-any":
+        - off
+      "@typescript-eslint/no-unsafe-member-access":
+        - off
+
   - files:
-      - "**/test/**/*.spec.ts"
-      - "**/test/**/*.test.ts"
+      - "**/__tests__/*.{j,t}s?(x)"
+
+    env:
+      jest: true
 
     rules:
       "@typescript-eslint/no-explicit-any":
+        - off
+      "@typescript-eslint/no-unsafe-call":
         - off
       "@typescript-eslint/no-unsafe-member-access":
         - off
