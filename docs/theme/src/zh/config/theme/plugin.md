@@ -473,6 +473,12 @@ AddThis 的 pubid
 
 如: `2020年5月8日 16:05` `May 8, 2020 16:05`
 
+## namedChunks
+
+`vuepress-named-chunks` 的选项，设置为 `false` 以禁用此插件。
+
+默认情况下，所有页面块均以页面标题命名，所有布局块均以其组件名称命名。
+
 [add-this]: https://vuepress-add-this.mrhope.site/zh/
 [comment-config]: https://vuepress-comment.mrhope.site/zh/config/
 [copy-code]: https://vuepress-copy-code.mrhope.site/zh/

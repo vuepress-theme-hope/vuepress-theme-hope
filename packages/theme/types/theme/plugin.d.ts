@@ -6,6 +6,7 @@ import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
+import { NamedChunksPluginOptions } from "vuepress-plugin-named-chunks";
 
 /**
  * 版权设置
@@ -84,6 +85,13 @@ interface HopeThemePluginConfig {
    * Markdown enhance configuration
    */
   mdEnhance?: MarkdownEnhanceOptions | false;
+  /**
+   * named-chunk 启用
+   *
+   * @default true
+   */
+
+  namedChunks?: NamedChunksPluginOptions | false;
 
   /**
    * PWA 设置

@@ -81,12 +81,10 @@ export const getPluginConfig = (
 
     [
       "named-chunks",
-      {
+      themeConfig.namedChunks || {
         pageChunkName: (page: Page): string => {
           const title = (page.title || "").replace(/[.&*?#\\/:"<>| ]/gu, "");
-          return title
-            ? `page-${title}-${page.key.slice(1)}`
-            : `page-${page.key.slice(1)}`;
+          return title ? `page-${title}` : `page-${page.key.slice(1)}`;
         },
         layoutChunkName: (layout: ResolvedComponent): string =>
           `layout-${layout.componentName}`,

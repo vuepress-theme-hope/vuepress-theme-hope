@@ -467,6 +467,12 @@ Will use dayjs to automatically localize according to the current page language 
 
 Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`
 
+## namedChunks
+
+Options for `vuepress-named-chunks`, set to `false` to disable this plugin.
+
+By default, all page chunks will be named with page title, and all the layout chunks will be named by their component name.
+
 [add-this]: https://vuepress-add-this.mrhope.site
 [comment-config]: https://vuepress-comment.mrhope.site/config/
 [copyright-config]: https://vuepress.github.io/en/plugins/copyright/
