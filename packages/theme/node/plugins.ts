@@ -81,14 +81,19 @@ export const getPluginConfig = (
 
     [
       "named-chunks",
-      themeConfig.namedChunks || {
-        pageChunkName: (page: Page): string => {
-          const title = (page.title || "").replace(/[.&*?#\\/:"<>| ]/gu, "");
-          return title ? `page-${title}` : `page-${page.key.slice(1)}`;
-        },
-        layoutChunkName: (layout: ResolvedComponent): string =>
-          `layout-${layout.componentName}`,
-      },
+      themeConfig.namedChunks === false
+        ? false
+        : themeConfig.namedChunks || {
+            pageChunkName: (page: Page): string => {
+              const title = (page.title || "").replace(
+                /[.&*?#\\/:"<>| ]/gu,
+                ""
+              );
+              return title ? `page-${title}` : `page-${page.key.slice(1)}`;
+            },
+            layoutChunkName: (layout: ResolvedComponent): string =>
+              `layout-${layout.componentName}`,
+          },
     ],
 
     ["@mr-hope/copy-code", themeConfig.copyCode],
