@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.8.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.0...v1.8.1) (2021-01-05)
+
+### Bug Fixes
+
+- **theme:** fix `namedChunks` not working ([b45982f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b45982fd4cf2a07dc78229965c475cfbb128b934))
+
 ## [1.8.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.7.9...v1.8.0) (2021-01-05)
 
 ### Bug Fixes

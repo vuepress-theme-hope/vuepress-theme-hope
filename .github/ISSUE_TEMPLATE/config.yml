@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions about theme and plugins
+    url: https://github.com/Mister-Hope/vuepress-theme-hope/discussions/new
+    about: Please ask questions in Discussion.
