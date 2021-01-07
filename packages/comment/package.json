@@ -40,17 +40,17 @@
     "@mr-hope/vuepress-shared": "^1.8.1",
     "@mr-hope/vuepress-types": "^1.8.1",
     "@mr-hope/vuepress-utils": "^1.8.1",
-    "@vssue/api-bitbucket-v2": "^1.4.0",
-    "@vssue/api-gitea-v1": "^1.4.4",
-    "@vssue/api-gitee-v5": "^1.4.4",
-    "@vssue/api-github-v3": "^1.4.4",
-    "@vssue/api-github-v4": "^1.4.0",
-    "@vssue/api-gitlab-v4": "^1.4.0",
-    "@vssue/vuepress-plugin-vssue": "^1.4.6",
+    "@vssue/api-bitbucket-v2": "^1.4.7",
+    "@vssue/api-gitea-v1": "^1.4.7",
+    "@vssue/api-gitee-v5": "^1.4.7",
+    "@vssue/api-github-v3": "^1.4.7",
+    "@vssue/api-github-v4": "^1.4.7",
+    "@vssue/api-gitlab-v4": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.7",
     "balloon-css": "^1.2.0",
     "leancloud-storage": "^4.9.0",
     "valine": "^1.4.14",
-    "vssue": "^1.4.6"
+    "vssue": "^1.4.7"
   },
   "publishConfig": {
     "access": "public"
