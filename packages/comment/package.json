@@ -44,7 +44,7 @@
     "@vssue/api-gitea-v1": "^1.4.4",
     "@vssue/api-gitee-v5": "^1.4.4",
     "@vssue/api-github-v3": "^1.4.4",
-    "@vssue/api-github-v4": "^1.4.0",
+    "@vssue/api-github-v4": "^1.4.7",
     "@vssue/api-gitlab-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "balloon-css": "^1.2.0",
