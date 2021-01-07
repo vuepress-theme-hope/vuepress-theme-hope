@@ -412,7 +412,7 @@ Safari 图标
 
 搜索引擎增强，默认情况下无需任何配置。
 
-> 插件配置请参见 [vuepress-plugin-seo 配置][seo-config]
+> 插件配置请参见 [SEO 插件配置][seo-config]
 >
 > 如果您不需要这个功能，请设置为 `false`。
 
@@ -420,7 +420,7 @@ Safari 图标
 
 Sitemap 生成配置，默认情况下无需任何配置。
 
-> 插件配置请参见 [vuepress-plugin-sitemap 配置][sitemap-config]
+> 插件配置请参见 [Sitemap 插件配置][sitemap-config]
 >
 > 如果您不需要这个功能，请设置为 `false`。
 
@@ -439,7 +439,7 @@ AddThis 的 pubid
 
 > 默认情况下，不需要任何配置
 >
-> 有关详细信息，请参见[copy-code 插件配置][copy-code]
+> 有关详细信息，请参见[CopyCode 插件配置][copy-code]
 
 ## photoSwipe
 
@@ -485,5 +485,5 @@ AddThis 的 pubid
 [md-enhance-config]: https://vuepress-md-enhance.mrhope.site/zh/config/
 [photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/zh/config/
 [pwa-config]: https://vuepress-pwa.mrhope.site/zh/config/
-[seo-config]: https://vuepress-seo.mrhope.site/zh/config/
-[sitemap-config]: https://vuepress-sitemap.mrhope.site/zh/config/
+[seo-config]: https://vuepress-seo.mrhope.site/zh/#插件选项
+[sitemap-config]: https://vuepress-sitemap.mrhope.site/zh/#插件选项
