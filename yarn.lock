@@ -3065,10 +3065,10 @@
     "@vssue/utils" "^1.4.0"
     axios "^0.18.1"
 
-"@vssue/utils@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@vssue/utils/-/utils-1.4.0.tgz#3cc2fd8492a3409e343289981e2209b6ca2f8313"
-  integrity sha512-3d9WCYNurdFKApFzU8i7YD1GCGhunEVYnwSJxwQ2rDmEdpLneAYNJWg9+QS6bqzB+Pw7ymtwLf/Sqti9+xUGqA==
+"@vssue/utils@^1.4.0", "@vssue/utils@^1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@vssue/utils/-/utils-1.4.7.tgz#58a9ec2687d26080aa04cab17e8f87049f1342c3"
+  integrity sha512-e94karP4szmSNT2L4bgIT+VGToBSY3bdlgmGcomcD2qCXTWDK4krSOYm8ES+BhHTcmCvzQYU/xenHR4tzrythA==
   dependencies:
     date-fns "^1.29.0"
     qs "^6.6.0"
@@ -16415,12 +16415,12 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vssue@^1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.6.tgz#2ce16373907dc04bb92d6908224f0dd7239454f6"
-  integrity sha512-s92qMIaI/9LzBQCUUaX0fpNlA3kRRGtm0hQxDN/YBziOB4NXTWgPvoimLreyjP75hRItHvVhKzkXiZ8bIMjy7A==
+vssue@^1.4.6, vssue@^1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.7.tgz#d8b6fc3ddd6995ac1848ff7c99c281e079da30e4"
+  integrity sha512-o5Yns1lIlews+4c9Vm6n4gL58dggChHRz9VyVZuAGQaTGTe6CJ04O3zhoAcEUIeMWPrv3oUljqJvKBdQmFk0cg==
   dependencies:
-    "@vssue/utils" "^1.4.0"
+    "@vssue/utils" "^1.4.7"
     github-markdown-css "^3.0.1"
     vue "^2.6.10"
     vue-i18n "^8.11.2"
