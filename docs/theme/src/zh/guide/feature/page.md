@@ -26,7 +26,7 @@ tags:
 
 有关更多选项，请参阅 [copy-code 插件文档][copy-code]
 
-## Footer Support <MyBadge text =“ Support page config” />
+## 页脚支持 <MyBadge text="支持页面配置" />
 
 请参见 [布局 → 页面 → 页脚部分](../layout/page.md#页脚支持)
 

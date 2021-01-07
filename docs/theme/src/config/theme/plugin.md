@@ -410,7 +410,7 @@ All the files larger than `maxSize` or any pictures larger than `maxPicSize` wil
 
 SEO Enhance settings, no configuration is needed by default.
 
-> For details, see [vuepress-plugin-seo config][seo-config]
+> For details, see [SEO plugin config][seo-config]
 >
 > If you don’t need this feature, please set to `false`.
 
@@ -418,7 +418,7 @@ SEO Enhance settings, no configuration is needed by default.
 
 Sitemap Generator settings, no configuration is needed by default.
 
-> For details, see [vuepress-plugin-sitemap config][sitemap-config]
+> For details, see [Sitemap plugin config][sitemap-config]
 >
 > If you don’t need this feature, please set to `false`.
 
@@ -480,5 +480,5 @@ By default, all page chunks will be named with page title, and all the layout ch
 [copy-code]: https://vuepress-copy-code.mrhope.site
 [photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/config/
 [pwa-config]: https://vuepress-pwa.mrhope.site/config/
-[seo-config]: https://vuepress-seo.mrhope.site/config/
-[sitemap-config]: https://vuepress-sitemap.mrhope.site/config/
+[seo-config]: https://vuepress-seo.mrhope.site/#plugin-options
+[sitemap-config]: https://vuepress-sitemap.mrhope.site/#plugin-options
