@@ -137,7 +137,7 @@
     "textlint": "11.7.7",
     "textlint-filter-rule-allowlist": "2.0.1",
     "textlint-filter-rule-comments": "1.2.2",
-    "textlint-plugin-latex2e": "1.0.5",
+    "textlint-plugin-latex2e": "1.0.6",
     "textlint-rule-apostrophe": "2.0.0",
     "textlint-rule-common-misspellings": "1.0.1",
     "textlint-rule-en-capitalization": "2.0.3",
