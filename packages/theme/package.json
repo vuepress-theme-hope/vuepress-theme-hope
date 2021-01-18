@@ -46,7 +46,7 @@
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.throttle": "^4.1.6",
     "@types/react": "^17.0.0",
-    "@vuepress/plugin-blog": "^1.9.3",
+    "@vuepress/plugin-blog": "^1.9.4",
     "bcryptjs": "^2.4.3",
     "chalk": "^4.1.0",
     "dayjs": "^1.10.2",
