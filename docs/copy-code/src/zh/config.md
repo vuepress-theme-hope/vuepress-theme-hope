@@ -15,7 +15,7 @@ icon: config
 ### selector
 
 - 类型: `string | string[]`
-- 默认值: `['div[class*="language-"] pre','div[class*="aside-code"] aside']`
+- 默认值: `'.theme-default-content div[class*="language-"] pre'`
 
 代码块选择器
 

@@ -11,11 +11,8 @@ export interface CopyCodeOptions {
    * 代码块选择器
    *
    * Code block selector
-   * 
-   * @default [
-        'div[class*="language-"] pre',
-        'div[class*="aside-code"] aside',
-      ]
+   *
+   * @default '.theme-default-content div[class*="language-"] pre'
    */
   selector?: string | string[];
   /**

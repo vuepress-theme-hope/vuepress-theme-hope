@@ -13,7 +13,7 @@ The language of the home directory.
 ### selector
 
 - Type: `string | string[]`
-- Default: `['div[class*="language-"] pre','div[class*="aside-code"] aside']`
+- Default: `'.theme-default-content div[class*="language-"] pre'`
 
 Code block selector
 

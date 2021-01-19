@@ -30,7 +30,9 @@ const codeCopyMinxin = Vue.extend({
 
   methods: {
     genCopyButton(): void {
-      const selector = options.selector || 'div[class*="language-"] pre';
+      const selector =
+        options.selector ||
+        '.theme-default-content div[class*="language-"] pre';
 
       setTimeout(() => {
         if (typeof selector === "string")
