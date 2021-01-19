@@ -46,7 +46,9 @@ You should use the following syntax:
 ````
 
 ::: tip
+
 The json block is optional.
+
 :::
 
 The plugin support three types:

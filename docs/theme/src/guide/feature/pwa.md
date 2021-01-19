@@ -11,7 +11,9 @@ tags:
 The theme will enable progressive web app support using `@mr-hope/vuepress-plugin-pwa` by default. If you do not need this feature or want to use other pwa plugins, you can set the `themeConfig.pwa` to `false` to disable the plugin.
 
 ::: tip
+
 You don’t need to use `head` function to handle your head option while using vuepress-theme-hope, `config` function in theme will do the job for you. The only thing you need is to set `themeConfig.pwa`.
+
 :::
 
 ## Content Cache and update

@@ -5,7 +5,9 @@ icon: info
 # Introduction
 
 ::: tip
+
 If you met a bug while using, you can open an issue [here](https://github.com/Mister-Hope/vuepress-theme-hope/issues)
+
 :::
 
 ## Theme Features

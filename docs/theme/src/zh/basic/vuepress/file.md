@@ -64,8 +64,10 @@ tags:
 └── package.json → Nodejs 配置文件，也是项目的声明文件
 ```
 
-::warning
+::: warning
+
 请注意 VuePress 对目录大小写敏感。
+
 :::
 
 ## src 文件夹
@@ -96,7 +98,7 @@ Node.js 对整个项目的声明文件，它是 Node.js 项目必包含的文件
 | yarn.lock | 项目实际使用的 package 结构 |
 | .eslintrc.yml | ESLint 规则配置文件 |
 
-:::tip
+::: tip
 ESLint 是一个 JS 的代码格式与错误提示器。
 
 初学者可以在学习中结合使用，减少自己的错误并培养规范的代码风格。但无需掌握其具体配置方法与工作原理。
@@ -110,8 +112,10 @@ ESLint 是一个 JS 的代码格式与错误提示器。
 
 项目的配置文件。具体的配置说明请打开该文件查看注释。
 
-:::tip
+::: tip
+
 更多详情可以查看[VuePress 配置](https://v1.vuepress.vuejs.org/zh/config/)
+
 :::
 
 ### public 文件夹
@@ -122,8 +126,10 @@ ESLint 是一个 JS 的代码格式与错误提示器。
 
 放置了整个站点的样式，其中`index.styl`是整个站点额外扩充的样式文件，`palette.styl`是整个站点的配色配置。
 
-:::tip
+::: tip
+
 styl 是 CSS 的一个超集，扩充并改变了 CSS 的写法，在内部可以使用变量。初学者无需掌握。
+
 :::
 
 初期无需掌握用途的文件:

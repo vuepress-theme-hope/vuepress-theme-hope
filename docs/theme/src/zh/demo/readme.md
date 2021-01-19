@@ -8,6 +8,11 @@ category: demo
 
 - [项目地址](https://mrhope.site)
 
+## 希望工作室官网
+
+- [项目地址][hope-studio]
+- [项目文件](https://github.com/Hope-Studio/Hope-Studio.github.io)
+
 ## vuepress-theme-hope 文档
 
 - [项目地址][vuepress-theme-hope]
@@ -72,3 +77,4 @@ category: demo
 [reading-time]: https://vuepress-reading-time.mrhope.site/zh/
 [seo]: https://vuepress-seo.mrhope.site/zh/
 [sitemap]: https://vuepress-sitemap.mrhope.site/zh/
+[hope-studio]: https://hope-studio.innenu.com

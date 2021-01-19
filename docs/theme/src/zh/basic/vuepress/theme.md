@@ -53,5 +53,7 @@ module.exports = {
 ```
 
 ::: warning
+
 以 `@vuepress/theme-` 开头的主题是官方维护的主题。
+
 :::

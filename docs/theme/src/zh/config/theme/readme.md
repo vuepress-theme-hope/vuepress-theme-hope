@@ -8,7 +8,9 @@ tags:
 ---
 
 ::: tip
+
 你可以查看 [本文档的配置][docs-config] 作为案例，你也可以直接查看源代码中的 [types 文件](https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/packages/theme/types/hopeConfig.d.ts)
+
 :::
 
 `.vuepress/config.js` 中的 themeConfig 字段(主题字段)新增以下配置:
@@ -16,7 +18,9 @@ tags:
 ## 基本选项
 
 ::: danger
+
 这些选项很重要，需要你正确配置。
+
 :::
 
 ### baseLang

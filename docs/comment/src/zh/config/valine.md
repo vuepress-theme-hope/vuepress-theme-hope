@@ -97,6 +97,7 @@ icon: valine
   具体相关说明详见 [Valine 头像配置](https://valine.js.org/avatar.html)
 
   你可以引导用户到 [Gravatar](http://cn.gravatar.com/) 去设置自己的头像。
+
   :::
 
 - **emojiCDN**

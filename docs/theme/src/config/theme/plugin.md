@@ -117,7 +117,9 @@ CodePen, JsFiddle requires an external JS library for dating.
 CodePen, JsFiddle need an external CSS library for dating.
 
 ::: warning
+
 The above two options are only used by third-party code demo service, you need to import these libraries in `head`.
+
 :::
 
 #### mdEnhance.demo.jsfiddle
@@ -321,7 +323,9 @@ Max size which allows to cache, with KB unit
 Whether cache HTML files besides home page and 404 page.
 
 ::: tip
+
 This option is useful if your site is too large when containing HTML files.
+
 :::
 
 ### pwa.cachePic

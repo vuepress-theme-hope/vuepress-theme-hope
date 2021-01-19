@@ -11,7 +11,9 @@ tags:
 默认情况下，该主题将使用 `@mr-hope/vuepress-plugin-pwa` 启用渐进式 Web 应用程序支持。如果您不需要此功能或想使用其他 pwa 插件，则可以将 `themeConfig.pwa` 设置为 `false` 来禁用该插件。
 
 ::: tip
+
 在使用 vuepress-theme-hope 时，您无需使用 `head` 函数来处理 head 选项，主题中的 `config` 函数将为您完成这项工作。您唯一需要做的就是设置 `themeConfig.pwa`。
+
 :::
 
 ## 内容缓存和更新

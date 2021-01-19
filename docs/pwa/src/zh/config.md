@@ -75,7 +75,9 @@ icon: config
 是否缓存主页和 404 错误页之外的 HTML 文件
 
 ::: tip
+
 当你站点包含 HTML 文件后体积过大时很有用。
+
 :::
 
 ## cachePic

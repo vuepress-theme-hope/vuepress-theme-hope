@@ -59,5 +59,7 @@ Vssue 已经成功运行。点击 `Login` 使用 Bitbucket 帐号登录。
 ->![配置 OAuth App - Bitbucket 13](/img/oauth-app-bitbucket-13.png)<-
 
 ::: tip
+
 你可以前往 [meteorlxy/vssue-demo](https://bitbucket.org/meteorlxy/vssue-demo) 来获取 demo 代码。前往该仓库的 [#1 issue](https://bitbucket.org/meteorlxy/vssue-demo/issues/1) 看看发生了什么。
+
 :::

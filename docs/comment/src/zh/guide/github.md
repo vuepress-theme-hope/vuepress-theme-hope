@@ -58,5 +58,7 @@ Vssue 已经成功运行。点击 `Login` 使用 GitHub 帐号登录。
 ->![配置 OAuth App - Github 10](/img/oauth-app-github-10.png)<-
 
 ::: tip
+
 你可以前往 [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) 来获取 demo 代码。前往该仓库的 [#1 issue](https://github.com/meteorlxy/vssue-demo/issues/1) 看看发生了什么。
+
 :::

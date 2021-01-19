@@ -13,6 +13,11 @@ category: demo
 - [Link][vuepress-theme-hope]
 - [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/theme)
 
+## Hope Studio
+
+- [Link][hope-studio]
+- [Source](https://github.com/Hope-Studio/Hope-Studio.github.io)
+
 ## @mr-hope/vuepress-plugin-comment
 
 - [Link][comment]
@@ -72,3 +77,4 @@ category: demo
 [reading-time]: https://vuepress-reading-time.mrhope.site
 [seo]: https://vuepress-seo.mrhope.site
 [sitemap]: https://vuepress-sitemap.mrhope.site
+[hope-studio]: https://hope-studio.innenu.com

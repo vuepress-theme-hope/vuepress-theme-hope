@@ -142,7 +142,9 @@ module.exports = {
 ```
 
 ::: warning
+
 Make sure to define the fallback configuration last, because VuePress checks each sidebar config from top to bottom.
+
 :::
 
 ### Auto Sidebar for Single Pages

@@ -15,7 +15,9 @@ tags:
 如果你需要向 ts-loader 传递一些自定义选项，你也可以将 `themeConfig.typescript` 设置为一个 Object 来传递给 ts-loader。
 
 ::: tip
+
 启用本主题后，你无需再依赖并启用 `@vuepress/plugin-typescript`。
+
 :::
 
 ## 开启准备
@@ -49,5 +51,7 @@ npm i -D typescript
 你还应该在你的项目中创建一个 ts 文件并添加至 `tsconfig.json` 的 `include` 中，你可以直接创建一个空的 enhanceApp.ts 并将其引入。
 
 ::: warning
+
 `ts-loader` 要求 `tsconfig.json` 至少命中一个有效的 ts 文件，所以最简单的办法就是创建或者转换 (如果你已经有了 `enhanceAppFiles.js`) 一个 `enhanceAppFiles.ts` 并将它添加至 `include` 选项中
+
 :::

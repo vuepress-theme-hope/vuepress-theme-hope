@@ -56,7 +56,9 @@ module.exports = {
 Note that it’s `on` by default. If given a `string`, it will be displayed as a prefix.
 
 ::: warning
+
 Since `lastUpdated` is based on `git`, you can only use it in a `git` repository. Also, since the timestamp used comes from the git commit, it will display only after a first commit for a given page, and update only on ensuing commits of that page.
+
 :::
 
 ## Prev / Next Links

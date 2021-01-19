@@ -115,7 +115,9 @@ CodePen, JsFiddle 需要引入的外部 JS 库。
 CodePen, JsFiddle 需要引入的外部 CSS 库。
 
 ::: warning
+
 上述两个选项仅仅是给第三方代码演示使用的，你需要自行在 `head` 中导入这些库。
+
 :::
 
 #### mdEnhance.demo.jsfiddle
@@ -323,7 +325,9 @@ favicon 地址，填入绝对路径。(建议为你的站点生成 favicon)
 是否缓存主页和 404 错误页之外的 HTML 文件
 
 ::: tip
+
 当你站点包含 HTML 文件后体积过大时很有用。
+
 :::
 
 ### pwa.cachePic

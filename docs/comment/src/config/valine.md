@@ -97,6 +97,7 @@ Whether to record the commenter IP
   See [Valine Avator Config](https://valine.js.org/avatar.html) for details.
 
   You can tell users to set their [Gravatar](http://cn.gravatar.com/).
+
   :::
 
 - **emojiCDN**

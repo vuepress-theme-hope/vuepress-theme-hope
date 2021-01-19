@@ -25,5 +25,7 @@ options = {
 Valine 评论的其他配置将在 [配置](../config/valine.md) 中列出。
 
 ::: tip
+
 更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。
+
 :::

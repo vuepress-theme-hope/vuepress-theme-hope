@@ -32,8 +32,10 @@ npm update
 npm run serve
 ```
 
-:::tip
+::: tip
+
 使用`Ctrl + C`终止任务本地调试进程。
+
 :::
 
 ## 构建项目

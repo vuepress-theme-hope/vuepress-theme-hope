@@ -56,5 +56,7 @@ Vssue 已经成功运行。点击 `Login` 使用 Gitee 帐号登录，并通过 
 ->![配置 OAuth App - Gitee 09](/img/oauth-app-gitee-09.png)<-
 
 ::: tip 提示
+
 你可以前往 [meteor_lxy/vssue-demo](https://gitee.com/meteor_lxy/vssue-demo) 来获取 demo 代码。前往该仓库的 [第一个 issue](https://gitee.com/meteor_lxy/vssue-demo/issues/IWWTA) 看看发生了什么。
+
 :::

@@ -28,7 +28,9 @@ module.exports = {
 有两个评论插件可以选择: Valine 和 Vssue。
 
 ::: tip
+
 如果你希望看到更详细的评论设置，可以访问 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-comment.mrhope.site)
+
 :::
 
 ## Valine
@@ -54,7 +56,9 @@ module.exports = {
 Valine 评论的其他配置将在 [配置](http://vuepress-comment.mrhope.site/zh/config/valine/) 中列出。
 
 ::: tip
+
 更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。
+
 :::
 
 ## Vssue

@@ -40,7 +40,9 @@ Current page’s description
 Show the author of the current page. If you don’t fill it, you will fall back to the default author.
 
 ::: tip
+
 When the global default author is enabled, you can set `false` to cancel the author display
+
 :::
 
 ### original
@@ -59,7 +61,9 @@ Whether the current article is original.
 Set the writing time of the current page
 
 ::: warning
+
 Although this theme and other plugins of Mister-Hope will parse the time you enter, such as `YYYY/MM/DD hh:mm` `YYYY-MM-DD hh:mm` `YYYY/MM/DD`, etc. other plugin may not be able to read them. Using values in non-standard formats may cause other plugins reporting errors,
+
 :::
 
 ### category
@@ -161,7 +165,9 @@ Set whether to show page details on the current page
 Whether the current page shows page views
 
 ::: tip
+
 The display pageview feature requires you to configure Valine type comment configuration correctly.
+
 :::
 
 ### breadcrumb

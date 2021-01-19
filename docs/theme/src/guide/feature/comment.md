@@ -28,7 +28,9 @@ Comment function <MyBadge text="Support page config" /> enabled globally by defa
 You can choose between Valine and Vssue.
 
 ::: tip
+
 You can visit [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-comment.mrhope.site/) for more details
+
 :::
 
 ## Valine
@@ -52,7 +54,9 @@ Config will be listed on [Config](http://vuepress-comment.mrhope.site/config/val
 Fill in the corresponding APP ID and APP Key, then Valine will be well configured.
 
 ::: tip
+
 For Valine config and usage, please see [Valine Docs](https://valine.js.org)。
+
 :::
 
 ## Vssue
@@ -107,7 +111,9 @@ The only difference is that, you should set `platform` rather than the `api` pac
 :::
 
 ::: tip
+
 You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
+
 :::
 
 ### Custom Style Variables

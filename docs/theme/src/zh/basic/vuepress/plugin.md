@@ -107,11 +107,13 @@ module.exports = {
 };
 ```
 
-:::warning
+::: warning
+
 由于某些插件可能存在多个实例，强烈推荐使用**babel 风格**写法。
+
 :::
 
-:::tip
+::: tip
 可以通过显示地将选项设置成 `false` 来禁用一个插件:
 
 - Babel 风格
@@ -148,8 +150,10 @@ module.exports = {
 - [register-component](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-register-components.html): 注册 components
 - [search](https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-search.html): 基于标题的搜索插件
 
-:::tip
+::: tip
+
 具体用法详见: [VuePress 插件](https://v1.vuepress.vuejs.org/zh/plugin/)
+
 :::
 
 ## 社区插件
@@ -166,6 +170,8 @@ module.exports = {
 - [serve](https://vuepress.github.io/zh/plugins/serve.html): 在本地构建静态 VuePress 服务器
 - [zooming](https://vuepress.github.io/zh/plugins/zooming.html): 使 VuePress 中的图片支持缩放(使用 zooming)
 
-:::tip
+::: tip
+
 文档详见: [VuePress 社区](https://vuepress.github.io/zh/)
+
 :::

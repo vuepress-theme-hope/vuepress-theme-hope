@@ -92,7 +92,7 @@ File that do not need to be understand at the beginning:
 | yarn.lock     | The structure of the package actually installed by the project |
 | .eslintrc.yml | ESLint rule configuration file                                 |
 
-:::tip
+::: tip
 ESLint is a JS code linter.
 
 Beginners can use it in learning to reduce their own mistakes and develop a standardized code style. But you don’t need to know the specific configuration method and working principle.
@@ -106,8 +106,10 @@ The `.vuepress` folder should be placed directly in the source code directory. I
 
 The configuration file for the project. For specific configuration instructions, please open the file to view the comments.
 
-:::tip
+::: tip
+
 For more details, please view[VuePress Config](https://v1.vuepress.vuejs.org/config/)
+
 :::
 
 ### public folder
@@ -118,8 +120,10 @@ A folder where other files on the site being placed. The files in the folder wil
 
 The style of the entire site is placed, where `index.styl` is the style file for the extra expansion of the entire site, and `palette.styl` is the color configuration of the entire site.
 
-:::tip
+::: tip
+
 Styl is a extend of CSS that extends and changes the way CSS is written, and variables can be used derectly. Beginners do not need to master.
+
 :::
 
 File that do not need to be understand at the beginning:

@@ -59,5 +59,7 @@ Leave a comment on this page ~
 ->![Set up OAuth App - Bitbucket 13](/img/oauth-app-bitbucket-13.png)<-
 
 ::: tip
+
 You can go to the repository [meteorlxy/vssue-demo](https://bitbucket.org/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://bitbucket.org/meteorlxy/vssue-demo/issues/1) of that repository to see what happened.
+
 :::

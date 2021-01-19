@@ -15,7 +15,9 @@ This means you can use `enhanceAppFiles.ts` and use Tyepscript in both your vue 
 To pass some custom options to ts-loader, you can also set `themeConfig.typescript` with an Object to pass it to ts-loader.
 
 ::: tip
+
 After enabling this theme, you no longer need to require and enable `@vuepress/plugin-typescript`.
+
 :::
 
 ## Precautions

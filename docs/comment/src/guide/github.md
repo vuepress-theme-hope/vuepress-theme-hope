@@ -58,5 +58,7 @@ Leave a comment on this page ~
 ->![Set up OAuth App - Github 10](/img/oauth-app-github-10.png)<-
 
 ::: tip
+
 You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://github.com/meteorlxy/vssue-demo/issues/1) of that repository to see what happened.
+
 :::

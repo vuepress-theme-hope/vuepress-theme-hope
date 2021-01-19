@@ -74,8 +74,10 @@ I would like to line break at
 this point
 ```
 
-:::tip
+::: tip
+
 In codes above, two spaces are behind `at`.
+
 :::
 
 ## Blockquotes
@@ -172,7 +174,7 @@ In codes above, two spaces are behind `at`.
 [About page using relative path](../about.md)
 ```
 
-:::tip
+::: tip
 You can also use these in VuePress:
 
 - [Home page-Can route when editing Markdown file](../readme.md)
@@ -221,8 +223,10 @@ Shortcuts:
 8-) :) :\* :( :-) :-( ;)
 ```
 
-:::tip
+::: tip
+
 For more see [emoji list](emoji.md)
+
 :::
 
 ## Tables

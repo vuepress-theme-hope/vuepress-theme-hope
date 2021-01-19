@@ -11,7 +11,9 @@ Markdown DIY container
 <!-- more -->
 
 ::: warning
+
 Please note that this plugin is applied to alignment in Markdown enhancements, so if you disable this plugin, you will not be able to use custom alignment and the prompt boxes provided by the default theme.
+
 :::
 
 ## Configuration Item

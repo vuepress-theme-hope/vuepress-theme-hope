@@ -46,7 +46,9 @@ module.exports = {
 ````
 
 ::: tip
+
 JSON 块是可选的。
+
 :::
 
 该插件支持三种类型：

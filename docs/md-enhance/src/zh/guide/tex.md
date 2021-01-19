@@ -208,7 +208,9 @@ $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 省略号用 `\dots`, `\cdots`, `\vdots`, `\ddots` 等命令表示。
 
 ::: tip
+
 `\dots` 和 `\cdots` 的纵向位置不同，前者一般用于有下标的序列。
+
 :::
 
 $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$

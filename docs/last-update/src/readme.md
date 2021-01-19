@@ -12,7 +12,9 @@ copyrightText: false
 This plugin will use git to inject a readable last update time and a last update time timestamp into the page.
 
 ::: tip Why use this plugin
+
 The internationalization support of the official plugin is not good, this plugin provides better multi-language support.
+
 :::
 
 ## How to use
@@ -39,7 +41,9 @@ module.exports = {
 ```
 
 ::: warning
+
 You must disable the official plugin!
+
 :::
 
 ## Plugin description

@@ -53,5 +53,7 @@ Vssue 已经成功运行。点击 `Login` 使用 Gitlab 帐号登录。
 ->![配置 OAuth App - Gitlab 09](/img/oauth-app-gitlab-09.png)<-
 
 ::: tip
+
 你可以前往 [meteorlxy/vssue-demo](https://gitlab.com/meteorlxy/vssue-demo) 来获取 demo 代码。前往该仓库的 [#1 issue](https://gitlab.com/meteorlxy/vssue-demo/issues/1) 看看发生了什么。
+
 :::

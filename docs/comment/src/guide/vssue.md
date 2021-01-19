@@ -69,7 +69,9 @@ The only difference is that, you should set `platform` rather than the `api` pac
 ```
 
 ::: tip
+
 You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
+
 :::
 
 ## Custom Style Variables

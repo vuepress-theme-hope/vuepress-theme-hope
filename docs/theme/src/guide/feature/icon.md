@@ -59,7 +59,9 @@ On the project page, you can simply edit the icons in the project, including adj
    ```
 
 ::: tip
+
 If you add a new icon in the future, please regenerate the new CSS address and overwrite the old CSS address in `.vuepress/styles/index.styl`.
+
 :::
 
 ## Fontawesome

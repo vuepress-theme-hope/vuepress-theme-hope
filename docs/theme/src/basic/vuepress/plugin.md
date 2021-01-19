@@ -107,8 +107,10 @@ module.exports = {
 };
 ```
 
-:::warning
+::: warning
+
 Prefer **Babel Style** first, because some plugins can have muti instance.
+
 :::
 
 ::: tip
@@ -148,8 +150,10 @@ module.exports = {
 - [register-component](https://v1.vuepress.vuejs.org/plugin/official/plugin-register-components.html): register components
 - [search](https://v1.vuepress.vuejs.org/plugin/official/plugin-search.html): Headers-based search plugin
 
-:::tip
+::: tip
+
 More configuration, please view[VuePress Plugins](https://v1.vuepress.vuejs.org/plugin/)
+
 :::
 
 ## Community Plugins
@@ -166,6 +170,8 @@ More configuration, please view[VuePress Plugins](https://v1.vuepress.vuejs.org/
 - [serve](https://vuepress.github.io/en/plugins/serve.html): Serve generated files in VuePress
 - [zooming](https://vuepress.github.io/en/plugins/zooming.html): Make images zoomable in VuePress (with zooming)
 
-:::tip
+::: tip
+
 For more information, please visit [VuePress Community](https://vuepress.github.io/en/)
+
 :::

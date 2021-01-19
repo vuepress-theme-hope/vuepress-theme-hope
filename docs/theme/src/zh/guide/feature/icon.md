@@ -59,7 +59,9 @@ tags:
    ```
 
 ::: tip
+
 如果你日后添加了新的图标，请重新生成新的 CSS 地址并在 `.vuepress/styles/index.styl` 中覆盖旧的 CSS 地址。
+
 :::
 
 ## Fontawesome

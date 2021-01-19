@@ -56,5 +56,7 @@ Leave a comment on this page ~
 ->![Set up OAuth App - Gitee 09](/img/oauth-app-gitee-09.png)<-
 
 ::: tip
+
 You can go to the repository [meteor_lxy/vssue-demo](https://gitee.com/meteor_lxy/vssue-demo) to get the demo code. Check the [first issue](https://gitee.com/meteor_lxy/vssue-demo/issues/IWWTA) of that repository to see what happened.
+
 :::

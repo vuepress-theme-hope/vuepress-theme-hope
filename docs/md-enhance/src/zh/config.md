@@ -109,7 +109,9 @@ CodePen, JsFiddle 需要引入的外部 JS 库。
 CodePen, JsFiddle 需要引入的外部 CSS 库。
 
 ::: warning
+
 上述两个选项仅仅是给第三方代码演示使用的，你需要自行在 `head` 中导入这些库。
+
 :::
 
 ### demo.jsfiddle

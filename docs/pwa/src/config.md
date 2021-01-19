@@ -75,7 +75,9 @@ Max size which allows to cache, with KB unit
 Whether cache HTML files besides home page and 404 page.
 
 ::: tip
+
 This option is useful if your site is too large when containing HTML files.
+
 :::
 
 ## cachePic

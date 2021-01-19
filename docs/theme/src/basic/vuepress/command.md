@@ -32,8 +32,10 @@ Open local develop environment, please visit[localhost:8080](http://localhost:80
 npm run serve
 ```
 
-:::tip
+::: tip
+
 Use `Ctrl + C` to stop local dev process.
+
 :::
 
 ## Build project

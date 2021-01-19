@@ -53,5 +53,7 @@ Leave a comment on this page ~
 ->![Set up OAuth App - Gitlab 09](/img/oauth-app-gitlab-09.png)<-
 
 ::: tip
+
 You can go to the repository [meteorlxy/vssue-demo](https://gitlab.com/meteorlxy/vssue-demo) to get the demo code. Check the [#1 issue](https://gitlab.com/meteorlxy/vssue-demo/issues/1) of that repository to see what happened.
+
 :::
