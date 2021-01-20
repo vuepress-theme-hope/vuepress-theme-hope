@@ -277,8 +277,8 @@ export const injectCSS = (css: string, id: string): void => {
 
   const style = h("style", { innerHTML: scopeCss });
 
-  if (wrapper && !wrapper.hasAttribute("data-styled")) {
+  if (wrapper && !wrapper.hasAttribute("demo-styled")) {
     wrapper.appendChild(style);
-    wrapper.setAttribute("data-styled", "");
+    wrapper.setAttribute("demo-styled", "");
   }
 };

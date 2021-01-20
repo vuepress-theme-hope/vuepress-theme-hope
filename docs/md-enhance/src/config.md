@@ -128,13 +128,6 @@ Whether to display the JSFiddle button,
 
 Whether to display the CodePen button,
 
-### demo.horizo​​ntal
-
-- Type: `boolean`
-- Default value: `false`
-
-Whether to display the code and view window horizontally
-
 ### demo.codepenLayout
 
 - Type: `"top" | "left" | "correct"`

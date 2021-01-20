@@ -7,9 +7,7 @@ export const initDemo = (): void => {
 
   if (containers.length)
     containers.forEach((container) => {
-      if (!container.hasAttribute("data-inited")) {
-        container.style.display = "block";
-
+      if (!container.hasAttribute("demo-inited")) {
         const appElement = select(container, "code-demo-app")[0];
 
         const title = decodeURIComponent(container.dataset.title || "");
@@ -32,7 +30,7 @@ export const initDemo = (): void => {
             );
           }
 
-          initDom({ code: reactCode, codeType, config, container, title });
+          initDom({ code: reactCode, codeType, container, title });
         } else if (type.includes("vue")) {
           const vueCode = getVueCode(codeType, config);
 
@@ -43,7 +41,7 @@ export const initDemo = (): void => {
             appElement.appendChild(app.$el);
           }
 
-          initDom({ code: vueCode, codeType, config, container, title });
+          initDom({ code: vueCode, codeType, container, title });
         } else {
           const normalCode = getNormalCode(codeType, config);
 
@@ -52,10 +50,10 @@ export const initDemo = (): void => {
             normalCode.script();
           }
 
-          initDom({ code: normalCode, codeType, config, container, title });
+          initDom({ code: normalCode, codeType, container, title });
         }
 
-        container.setAttribute("data-inited", "");
+        container.setAttribute("demo-inited", "");
       }
     });
   else setTimeout(() => initDemo(), 300);

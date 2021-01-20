@@ -136,13 +136,6 @@ Whether to display the JSFiddle button,
 
 Whether to display the CodePen button,
 
-#### mdEnhance.demo.horizo​​ntal
-
-- Type: `boolean`
-- Default value: `false`
-
-Whether to display the code and view window horizontally
-
 #### mdEnhance.demo.codepenLayout
 
 - Type: `"top" | "left" | "correct"`

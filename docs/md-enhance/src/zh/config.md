@@ -128,13 +128,6 @@ CodePen, JsFiddle 需要引入的外部 CSS 库。
 
 是否显示 CodePen 按钮，
 
-### demo.horizontal
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否水平显示代码和视图窗口
-
 ### demo.codepenLayout
 
 - 类型: `"top" | "left" | "right"`

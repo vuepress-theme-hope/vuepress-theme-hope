@@ -32,14 +32,6 @@ export interface CodeDemoGlobalOptions {
    */
   codepen: boolean;
   /**
-   * 是否水平显示代码和视图窗口
-   *
-   * Whether display code and output horizontally
-   *
-   * @default false
-   */
-  horizontal: false;
-  /**
    * CodePen 编辑器布局
    *
    * CodePen editor layout

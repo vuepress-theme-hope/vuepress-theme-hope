@@ -8,9 +8,10 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
   if (nesting === -1)
     return `
             </div>
-            <div class="code-demo-footer" />
           </div>
-          `;
+          <div class="code-demo-footer" />
+        </div>
+`;
 
   let config = "";
   const code: Record<string, string> = {};
@@ -29,7 +30,6 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
           <div
             id="code-demo-${hash(code)}"
             class="code-demo-wrapper"
-            style="display: none;"
   ${type ? `data-type="${encodeURIComponent(type[1])}"` : ""}
  ${title ? `data-title="${encodeURIComponent(title[1])}"` : ""}
 ${config ? `data-config="${config}"` : ""}
@@ -38,8 +38,9 @@ ${config ? `data-config="${config}"` : ""}
               <div class="demo-wrapper">
                 <div class="code-demo-app" />
               </div>
-              <div class="code-demo-container">
-        `;
+              <div class="code-wrapper">
+                <div class="code">
+`;
 };
 
 export const codeDemoDefaultSetting = {
@@ -48,7 +49,6 @@ export const codeDemoDefaultSetting = {
   codepenLayout: "left",
   codepenJsProcessor: "babel",
   codepenEditors: "101",
-  horizontal: false,
   vue: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js",
   react: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
   reactDOM:

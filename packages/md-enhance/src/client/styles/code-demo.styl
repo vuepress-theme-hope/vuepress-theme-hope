@@ -6,6 +6,9 @@ $contentClass ?= '.theme-default-content'
   border-radius 4px
   transition all 0.2s
 
+  &:not([demo-inited])
+    display none
+
   &:hover
     box-shadow 0 2px 12px var(--card-shadow-color, rgba(0, 0, 0, 0.15))
 
@@ -21,67 +24,43 @@ $contentClass ?= '.theme-default-content'
       margin-left auto !important
       margin-right auto !important
 
-  .code-demo-h-code
-    @media (max-width $MQNarrow)
-      display none
-
-  &.horizontal
-    .demo-wrapper
-      height 400px
-      display flex
-
-      .code-demo-app
-        width 300px
-        border 1px solid #ebebeb
-        box-shadow 1px 1px 3px #ebebeb
-        margin-right 5px
-        overflow auto
-
-      .code-demo-h-code
-        flex 1
-        overflow auto
-        height 100%
-
-        > pre
-          overflow visible
-
-.code-demo-container
+.code-wrapper
   overflow hidden
-  border-radius 0 !important
   transition height 0.5s
 
-  & > p
-    margin 0.75rem
+  .code
+    & > p
+      margin 0.75rem
 
-  {$contentClass} & > div[class*='language-']
-    &:first-child pre
-      margin-top 0 !important
+    {$contentClass} &> div[class*='language-']
+      &:first-child pre
+        margin-top 0 !important
 
-    &.language-json
-      display none
-
-    &.line-numbers-mode::after
-      border-radius 0
-
-    @media (max-width $MQMobileNarrow)
-      margin 0.8rem 0
+      &.language-json
+        display none
 
       &.line-numbers-mode::after
-        display none
+        border-radius 0
 
-      .line-numbers-wrapper
-        display none
+      @media (max-width $MQMobileNarrow)
+        margin 0.8rem 0
 
-      pre[class*='language-']
-        padding 1.25rem 1.25rem 1rem
+        &.line-numbers-mode::after
+          display none
 
-    .copy-code-button
-      bottom -10px
-      right -2px
-      border-top-right-radius 50% 20%
-      border-bottom-right-radius 50% 20%
-      width 28px
-      height 28px
+        .line-numbers-wrapper
+          display none
+
+        pre[class*='language-']
+          padding 1.25rem 1.25rem 1rem
+
+      .copy-code-button
+        bottom -10px
+        right -2px
+        border-top-right-radius 50% 20%
+        border-bottom-right-radius 50% 20%
+        width 28px
+        height 28px
 
 .code-demo-footer
   position relative

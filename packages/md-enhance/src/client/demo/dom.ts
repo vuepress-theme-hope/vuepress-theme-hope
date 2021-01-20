@@ -8,7 +8,6 @@ import {
   injectCSS,
   option,
 } from "./utils";
-import { CodeDemoOptions } from "../../types";
 
 export const select = (
   node: Element | Document,
@@ -18,13 +17,15 @@ export const select = (
 
 const expandHandler = (
   expandNode: HTMLElement,
-  codeNode: HTMLElement,
-  height: number,
+  codeWrapperNode: HTMLElement,
+  codeContainerNode: HTMLElement,
   footerNode: HTMLElement
 ): void => {
   const toBeExpand = !expandNode.hasAttribute("expanded");
 
-  codeNode.style.height = toBeExpand ? `${height}px` : "0";
+  codeWrapperNode.style.height = toBeExpand
+    ? `${codeContainerNode.clientHeight}px`
+    : "0";
 
   if (toBeExpand) {
     footerNode.classList.add("show-link");
@@ -111,10 +112,9 @@ const getJsfiddleBtn = ({ html, js, css, jsLib, cssLib }: Code): HTMLElement =>
     ]
   );
 
-export interface ActionOption {
+export interface DOMInitOption {
   container: HTMLElement;
   code: VueCode | NormalCode | ReactCode;
-  config: Partial<CodeDemoOptions>;
   codeType: CodeType;
   title: string;
 }
@@ -122,57 +122,35 @@ export interface ActionOption {
 export const initDom = ({
   code,
   codeType,
-  config,
   container,
   title,
-}: ActionOption): void => {
+}: DOMInitOption): void => {
   const { id } = container;
-  const display = select(container, "demo-wrapper")[0];
-  const codeBlock = select(container, "code-demo-container")[0];
+  const demoWrapper = select(container, "demo-wrapper")[0];
+  const codeWrapper = select(container, "code-wrapper")[0];
+  const codeContainer = select(container, "code")[0];
   const footer = select(container, "code-demo-footer")[0];
 
   if (code.script) {
-    const horizontalConfig =
-      typeof config.horizontal === "undefined"
-        ? option.horizontal
-        : config.horizontal;
-
     const expandButton = h("button", { className: "expand" });
 
     footer.appendChild(expandButton);
     footer.appendChild(h("span", { className: "title", innerHTML: title }));
 
-    codeBlock.style.height = "";
-
     expandButton.addEventListener(
       "click",
-      expandHandler.bind(
-        null,
-        expandButton,
-        codeBlock,
-        codeBlock.clientHeight,
-        footer
-      )
+      expandHandler.bind(null, expandButton, codeWrapper, codeContainer, footer)
     );
 
-    codeBlock.style.height = "0";
-
-    if (horizontalConfig) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const hCodeNode = codeBlock.firstChild!.cloneNode(true) as HTMLElement;
-
-      container.classList.add("horizontal");
-      hCodeNode.classList.add("code-demo-h-code");
-      display.appendChild(hCodeNode);
-    }
+    codeWrapper.style.height = "0";
 
     if (code.css) injectCSS(code.css, id);
 
     if (option.jsfiddle !== false) footer.appendChild(getJsfiddleBtn(code));
     if (option.codepen !== false) footer.appendChild(getCodepenButton(code));
   } else {
-    display.style.display = "none";
-    codeBlock.style.height = "auto";
+    demoWrapper.style.display = "none";
+    codeWrapper.style.height = "auto";
     footer.appendChild(getCodepenButton(code, codeType));
     footer.style.height = "40px";
   }
