@@ -1,4 +1,5 @@
 ---
+title: Component disabled
 icon: set
 category: Guide
 backtotop: false
@@ -8,9 +9,9 @@ pageInfo: false
 comment: false
 ---
 
-# Component disabled
-
 You can disable some functions on the page by setting the Frontmatter of the page.
+
+<!-- more -->
 
 These should be disabled on this page:
 

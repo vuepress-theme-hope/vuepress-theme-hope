@@ -1,4 +1,5 @@
 ---
+title: 组件禁用
 icon: set
 category: 使用指南
 backtotop: false
@@ -8,9 +9,9 @@ pageInfo: false
 comment: false
 ---
 
-# 组件禁用
-
 你可以通过设置页面的 Frontmatter，在页面禁用一些功能。
+
+<!-- more -->
 
 本页面应当禁用了:
 
