@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.8.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.2...v1.8.3) (2021-01-20)
+
+### Bug Fixes
+
+- **component:** fix wrong margin when Pagination is disabled ([d4faa50](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d4faa504ce5e51e0754b39d8894400a2bbdc7d9a))
+- **theme:** fix width issue on BlogPage layout ([231d4c1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/231d4c1293eb89fd64861e1e29787fb504877bbc))
+
 ## [1.8.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.1...v1.8.2) (2021-01-20)
 
 ### Bug Fixes
