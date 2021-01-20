@@ -10,11 +10,13 @@ tags:
 以下这些配置沿用了 `@vuepress/theme-default` 的配置项，你无需进行改动:
 
 ::: warning
+
 通过注入，vuepress-theme-hope 改变了默认主题一些配置的默认值。
 
 虽然一般情况下，它们影响不大，但是还是需要着重提示这可能造成与默认文档预期不符的结果。
 
 文档下方仔细的列出了所有配置项的改变。
+
 :::
 
 ## logo <MyBadge text="改进" type="warn" />

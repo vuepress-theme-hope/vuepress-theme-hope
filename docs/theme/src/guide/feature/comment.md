@@ -97,6 +97,7 @@ module.exports = {
 ```
 
 ::: tip
+
 The only difference is that, you should set `platform` rather than the `api` package itself.
 
 `@vssue/vuepress-plugin-vssue` will auto resolve the corresponding API package according to the value of `platform`:

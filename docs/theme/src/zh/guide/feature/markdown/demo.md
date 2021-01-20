@@ -141,6 +141,7 @@ export default class App extends React.Component {
 ````
 
 ::: warning
+
 该插件未捆绑任何库，因此您必须通过在 `.vuepress/config.js` 文件中设置 `head` 来导入它们。
 
 ```js
@@ -170,6 +171,7 @@ module.exports = {
 ```
 
 我们还进行了增强: 如果你导入 Babel，则将使用 babel 将脚本解析为 es6，以确保能在浏览器上正常运行。
+
 :::
 
 ### 可用的语言

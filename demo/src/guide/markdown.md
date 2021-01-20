@@ -43,22 +43,30 @@ module.exports = {
 ### Align
 
 ::: center
+
 I am center
+
 :::
 
 ::: right
+
 I am right align
+
 :::
 
 :::: details Code
 
 ```md
 ::: center
+
 I am center
+
 :::
 
 ::: right
+
 I am right align
+
 :::
 ```
 

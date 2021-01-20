@@ -11,9 +11,11 @@ tags:
 这些是主题提供的插件配置选项。
 
 ::: tip
+
 所有的配置键名均为插件名称的驼峰式 (camelcase) 版本。
 
 例如: `@mr-hope/vuepress-copy-code` 的配置键名为 `copyCode`。
+
 :::
 
 ## mdEnhance
@@ -28,6 +30,7 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 是否启用全部功能
 
 ::: danger
+
 请仅将此选项用于体验或测试。随着时间的增长，`vupress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
 
 启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
@@ -35,6 +38,7 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 同样，幻灯片演示功能将在输出中添加 700KB 大小的代码 (主要是 `reveal.js`)。
 
 因此，请使用下面的选项，仅启用您要使用的功能。
+
 :::
 
 ### mdEnhance.lineNumbers <MyBadge text="改变默认值" type="error" />
@@ -153,9 +157,11 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 以下是第三方代码演示使用的库地址，除非你的环境无法访问 jsdelivr 或访问缓慢，否则无需覆盖默认设置。
 
 ::: warning
+
 请注意，如果你用到了它们，你仍需要利用 `head` 手动在你的网站中导入它们。
 
 React 依赖于 Babel。
+
 :::
 
 ##### mdEnhance.demo.vue
@@ -265,6 +271,7 @@ React 依赖于 Babel。
 您可以填充一个将被解析为 manifest.webmanifest 的对象。
 
 ::: tip
+
 如果您未设置某些选项，则这些选项会回退到插件预设值。
 
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
@@ -398,11 +405,13 @@ Safari 图标
 传递给 `workbox-build` 的选项，具体详情，请见 [Workbox 文档](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
 
 ::: tip
+
 我们将为您预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
 
 如果将 `cachePic` 设置为 `true`，我们还将为您预缓存 `**/*.{png,jpg,jpeg,gif,bmp,webp}` 文件。
 
 所有大于 `maxSize` 的文件与所有大于 `maxPicSize` 的图片将被忽略。
+
 :::
 
 ## seo <MyBadge text="默认启用" />

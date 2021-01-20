@@ -20,7 +20,9 @@ To let your site be able to register as Web App, you should set icons in `themeC
 You can also set other options in `themeConfig.pwa.manifest`.
 
 ::: info More
+
 For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
+
 :::
 
 ### Head Tags Inject

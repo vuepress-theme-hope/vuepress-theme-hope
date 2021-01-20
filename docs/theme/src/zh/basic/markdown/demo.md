@@ -181,6 +181,7 @@ tags:
 ```
 
 ::: tip
+
 VuePress 还兼容如下跳转到主页的写法:
 
 - [相对路径访问，兼容 Markdown 编写时相互跳转](../readme.md)

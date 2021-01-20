@@ -86,11 +86,13 @@ $$
   - `\idotsint` $\idotsint$
 
 ::: tip
+
 连加、连乘、极限、积分等大型运算符可以用 `\limits` 和 `\nolimits` 来强制显式地指定是否压缩这些上下标。
 
 `\iiiint`($\liiiint$) 是使用 hack 实现的，由于间距问题对于行公式需要使用 `\liiiint` 命令。
 
 `\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` 目前不被支持。
+
 :::
 
 ::: tip 案例
@@ -174,9 +176,11 @@ $2^{10} > 1000$
 各种括号用 `()`, `[]`, `\{\}`, `\langle\rangle` 等命令表示。
 
 ::: tip
+
 注意花括号通常用来输入命令和环境的参数，所以在数学公式中它们前面要加 `\`。
 
 因为 LaTeX 中 `|` 和 `\|` 的应用过于随意，推荐用 `\lvert\rvert` 和 `\lVert\rVert` 取而代之。
+
 :::
 
 为了调整这些定界符的大小，推荐使用 `\big`, `\Big`, `\bigg`, `\Bigg` 等一系列命令放在上述括号前面调整大小。
@@ -278,7 +282,9 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   ```
 
   ::: tip
+
   请注意，由于 $\KaTeX$ 支持自动换行，所以如果你手动指定换行会在控制台输出一个警告。
+
   :::
 
 - **对齐**

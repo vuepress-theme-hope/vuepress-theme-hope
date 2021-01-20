@@ -32,9 +32,11 @@ Without any configuration, a Breadcrumb that matches the theme color is displaye
 You can also control the icon display of the path navigation <MyBadge text="Support page config" />, the configuration item is `breadcrumbIcon`.
 
 ::: warning
+
 To ensure Breadcrumb working well, the `readme.md` file should be included in each folder.
 
 Otherwise, the path navigation will automatically ignore that level because the component can not generate titles and links from the corresponding level folder.
+
 :::
 
 ## Page Info Display

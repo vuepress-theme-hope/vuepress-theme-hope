@@ -83,11 +83,13 @@ module.exports = config({
 ```
 
 ::: tip
+
 引入 `config` 函数的作用是在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，很方便的给你提示。
 
 同时，`config` 函数也会为你补全一些直接交付给 VuePress 的默认配置。
 
 你可以查看 [本文档配置][docs-config] 作为一个配置参考。
+
 :::
 
 [docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js

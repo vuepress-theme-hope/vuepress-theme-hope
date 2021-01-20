@@ -39,9 +39,11 @@ tags:
 如果你不希望某篇文章被包含，只需在文章的 frontmatter 中将 `timeline` 设置为 `false`。
 
 ::: warning
+
 请勿在根目录中添加并放置对应的文件夹("tag", "article", "timeline")，否则可能造成编译时文件被覆盖而造成错误。
 
 如果你的确需要一个“文章”文件夹的话，请考虑使用 "articles"。
+
 :::
 
 ## 版权信息

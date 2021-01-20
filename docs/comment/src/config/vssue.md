@@ -38,6 +38,7 @@ icon: vssue
 - **Reference**: [owner](#owner)
 
 ::: tip
+
 The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
 
 - Github: `https://github.com/${owner}/${repo}`
@@ -74,7 +75,9 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
   When work with some of the platforms, Vssue will use it together with `clientId` to get user’s access token.
 
   ::: tip
+
   Some platforms (for example Bitbucket and GitLab) support [Implicit Grant](https://tools.ietf.org/html/rfc6749#section-4.2), so we don’t need `clientSecret` for those platforms. Mean while, some platforms (for example GitHub and Gitee) do not support it now, so `clientSecret` is required for those platforms.
+
   :::
 
 - **Reference**:
@@ -98,7 +101,9 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
   - `'https://gitee.com'` for Gitee
 
   ::: warning
+
   Only when you choose to use **self-hosted** platform should you set this option. (for example **GitLab Community / Enterprise Edition** or **GitHub Enterprise Server**)
+
   :::
 
 - **Reference**:
@@ -128,9 +133,11 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
   Vssue will only request those issues with the labels and ignore others. Together with `title`, `labels` will help to identify the corresponding issue of Vssue. If you use multiple labels by setting more strings, only issues with all those labels will be requested by Vssue.
 
   ::: tip
+
   Bitbucket does not support issue labels for now, so this option will be ignored if you are using Bitbucket.
 
   GitHub supports emoji in labels’ name, for example `[':heart:Vssue', ':mailbox:Comments']`.
+
   :::
 
 - **Reference**: [title](#title)
@@ -162,7 +169,9 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
   Only `admins` can auto create corresponding issue if it does not exist.
 
   ::: tip
+
   To auto create the issue when the `owner` is a organization rather than a user, you can add your username into `admins`.
+
   :::
 
 - **Reference**: [owner](#owner)
@@ -186,6 +195,7 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
   If not set, Vssue will use one of `window.navigator.languages`, or fallback to `'en'`.
 
   ::: tip
+
   Vssue uses [vue-i18n](https://kazupon.github.io/vue-i18n/) for i18n, but it will not affect other parts of your Vue App.
   And if you already have vue-i18n in your project, it will not affect Vssue.
 
@@ -197,6 +207,7 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
   - `'ja'` (`'ja-JP'`)
 
   Contributions welcome for more languages support.
+
   :::
 
 ## proxy
@@ -247,9 +258,11 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
   ```
 
   ::: tip
+
   The `issueContent` option is only used to auto create the corresponding issue when it does not exist.
 
   If the issue already exists, Vssue will not try to update the content.
+
   :::
 
 ## autoCreateIssue

@@ -145,6 +145,7 @@ export default class App extends React.Component {
 ````
 
 ::: warning
+
 This plugin is not bundling any librarys, so you must import them by setting `head` in your `.vuepress/config.js` files.
 
 ```js
@@ -174,6 +175,7 @@ module.exports = {
 ```
 
 We also make an enhance: If you import Babel, then Vue and Normal script will be parsed to es6 using babel.
+
 :::
 
 ### Available languages

@@ -12,9 +12,11 @@ tags:
 `themeconfig.mdEnhance` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option. So you can also read the [md-enhance documentation](https://vuepress-md-enhance.mrhope.site) to see the usage.
 
 ::: tip
+
 Don’t worry about the size of your site. If you don’t enable related features, the final code won’t include code for these features.
 
 At the same time, VuePress itself adds some Markdown syntaxes. You can [view the official documentation](https://v1.vuepress.vuejs.org/guide/markdown.html).
+
 :::
 
 ## Enable all
@@ -32,6 +34,7 @@ module.exports = {
 ```
 
 ::: danger
+
 Please use this option ONLY for playing or testing.
 
 As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
@@ -41,6 +44,7 @@ Enabling features you don’t need will increase dev and build time. (`markdown-
 Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 
 So please use the options below and enable ONLY the feature you want to use.
+
 :::
 
 ## New Feature
@@ -54,11 +58,15 @@ So please use the options below and enable ONLY the feature you want to use.
 ### Align
 
 ::: center
+
 I am center
+
 :::
 
 ::: right
+
 I am right align
+
 :::
 
 - [View Detail](align.md)

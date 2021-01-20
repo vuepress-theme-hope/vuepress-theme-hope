@@ -15,11 +15,13 @@ tags:
     **支持页面配置** 指主题允许页面的配置覆盖全局的配置。这意味着你可以在全局启用的情况下，在特定页面将其禁用，或在全局禁用的情况下在特定页面启用。
 
     ::: details 例子
+
     以路径导航为例:
 
     该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 Front Matter 中设置 `breadcrumb: false` 来局部禁用它。
 
     当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 Front Matter 中设置 `breadcrumb: true` 来局部启用它。
+
     :::
 
 如果你需要保持全局禁用，请设置 `themeConfig.pageInfo` 为 `false`。这样你可以在特定页面的 `Front Matter` 中设置 `pageInfo` 来局部启用它。

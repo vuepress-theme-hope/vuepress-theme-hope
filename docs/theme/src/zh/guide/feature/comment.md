@@ -99,6 +99,7 @@ module.exports = {
 ```
 
 ::: tip
+
 唯一的区别在于，你需要设置 `platform` 而不是对应的 `api` 包。
 
 `@vssue/vuepress-plugin-vssue` 会自动根据你设置的 `platform` 为你解析对应的 API 包:

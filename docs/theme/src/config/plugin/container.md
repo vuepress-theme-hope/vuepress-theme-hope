@@ -27,7 +27,9 @@ The type for the container. For example, if type is set to foo, only the followi
 
 ```md
 ::: foo bar
+
 write something here ~
+
 :::
 ```
 

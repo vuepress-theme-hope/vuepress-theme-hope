@@ -66,6 +66,7 @@ If you meet a bug while using, you can
 ::: right
 [open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
 :::
+
 ::::
 
 ```md
@@ -82,6 +83,7 @@ If you encounter a bug while using, you can
 ::: right
 [open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
 :::
+
 ::::
 ```
 

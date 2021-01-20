@@ -53,5 +53,7 @@ module.exports = {
 ```
 
 ::: warning Note
+
 The theme whose name starts with `@vuepress/theme-` is an officially maintained theme.
+
 :::

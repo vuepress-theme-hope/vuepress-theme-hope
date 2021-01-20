@@ -25,6 +25,7 @@ icon: config
 您可以填充一个将被解析为 manifest.webmanifest 的对象。
 
 ::: tip
+
 如果您未设置某些选项，则这些选项会回退到插件预设值。
 
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
@@ -43,7 +44,9 @@ icon: config
 :::
 
 ::: info 更多
+
 更多内容，请详见 [W3C Manifest](https://w3c.github.io/manifest/)
+
 :::
 
 ## favicon
@@ -155,9 +158,11 @@ Safari 图标
 传递给 `workbox-build` 的选项，具体详情，请见 [Workbox 文档](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
 
 ::: tip
+
 我们将为您预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
 
 如果将 `cachePic` 设置为 `true`，我们还将为您预缓存 `**/*.{png,jpg,jpeg,gif,webp}` 文件。
 
 所有大于 `maxSize` 的文件将被忽略。
+
 :::

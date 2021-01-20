@@ -15,11 +15,13 @@ The `<PageInfo />` component support local config[^applypartically], and is enab
     **Support local configuration**<MyBadge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
 
     ::: details Example
+
     Take path navigation as an example:
 
     This feature is enabled globally by default, that is, `themeConfig.breadcrumb` is `true` by default, and you can set `breadcrumb: false` in the Front Matter of a specific page to disable it locally.
 
     Of course, you can also set the `themeConfig.breadcrumb` option to `false` to disable it globally, and set `breadcrumb: true` in the Front Matter of a specific page to enable it locally.
+
     :::
 
 To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.

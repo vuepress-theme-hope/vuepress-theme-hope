@@ -67,6 +67,7 @@ module.exports = {
 ::: right
 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
+
 ::::
 
 ```md
@@ -82,6 +83,7 @@ module.exports = {
 ::: right
 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
 :::
+
 ::::
 ```
 

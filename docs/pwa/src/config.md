@@ -25,6 +25,7 @@ Whether display install button
 You can fill with an object which will be parsed to manifest.webmanifest.
 
 ::: tip
+
 Some options have their fallback if you donot set them.
 
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
@@ -43,7 +44,9 @@ Some options have their fallback if you donot set them.
 :::
 
 ::: info More
+
 For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
+
 :::
 
 ## favicon
@@ -155,9 +158,11 @@ You can fill in the custom pop-up component path.
 Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
 
 ::: tip
+
 We will precache all site related files `**/*.{js,css,svg}` and font files `**/*.{woff,woff2,eot,ttf,otf}` for you.
 
 If you set `cachePic` to `true`, we will also precache `**/*.{png,jpg,jpeg,gif,bmp,webp}` files for you.
 
 All the files larger than `maxSize` will be dropped.
+
 :::

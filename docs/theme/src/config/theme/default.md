@@ -10,11 +10,13 @@ tags:
 The following configurations follow the configuration items in `@vuepress/theme-default`:
 
 ::: warning
+
 By injecting, vuepress-theme-hope changes the default values of some configurations of the default theme.
 
 Although in general, they have little effect, but they may led to a result that does not match the default document expectations.
 
 All the configuration items changes are listed below the documentation.
+
 :::
 
 ## logo <MyBadge text="improved" type="warn" />

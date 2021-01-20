@@ -53,4 +53,5 @@ You should also create a ts file in your project and add it in the `include` opt
 ::: warning
 
 `ts-loader` requires `tsconfig.json` to hit at least one valid ts file, so the easiest way is to create or convert (if you already have `enhanceAppFiles.js`) an `enhanceAppFiles.ts` and add it in the `include` option
+
 :::

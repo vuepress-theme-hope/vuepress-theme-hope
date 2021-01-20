@@ -67,7 +67,9 @@ module.exports = {
 ```
 
 ::: warning Note
+
 The plugin whose name starts with `@vuepress/plugin-` is an officially maintained plugin.
+
 :::
 
 ## Plugin options
@@ -114,6 +116,7 @@ Prefer **Babel Style** first, because some plugins can have muti instance.
 :::
 
 ::: tip
+
 The plugin can be disabled when `false` is explicitly passed as option.
 
 - Babel style

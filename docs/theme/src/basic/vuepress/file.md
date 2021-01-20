@@ -93,9 +93,11 @@ File that do not need to be understand at the beginning:
 | .eslintrc.yml | ESLint rule configuration file                                 |
 
 ::: tip
+
 ESLint is a JS code linter.
 
 Beginners can use it in learning to reduce their own mistakes and develop a standardized code style. But you don’t need to know the specific configuration method and working principle.
+
 :::
 
 ## .vuepress

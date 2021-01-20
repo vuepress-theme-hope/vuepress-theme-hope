@@ -38,6 +38,7 @@ icon: vssue
 - **参考**: [owner](#owner)
 
 ::: tip
+
 仓库 URL 的常见模式是 `` `${baseURL}/${owner}/${repo}` ``:
 
 - Github: `https://github.com/${owner}/${repo}`
@@ -74,9 +75,11 @@ icon: vssue
   在和某些平台一起使用时， Vssue 将使用 `clientId` 和 `clientSecret` 来获取用户的 access token。
 
   ::: tip
+
   一些平台 (如 Bitbucket 和 GitLab) 支持 [Implicit Grant](https://tools.ietf.org/html/rfc6749#section-4.2)，所以在使用这些平台时不需要 `clientSecret`。
 
   然而，有一些平台 (如 GitHub 和 Gitee) 不支持它，所以在使用这些平台时 `clientSecret` 是必须的。
+
   :::
 
 - **参考**:
@@ -100,7 +103,9 @@ icon: vssue
   - Gitee 是`'https://gitee.com'`
 
   ::: warning 注意
+
   只有在你要使用 **自行搭建的** 平台时才需要设置这个选项。 (比如 **GitLab Community / Enterprise Edition** 或 **GitHub Enterprise Server**)
+
   :::
 
 - **参考**:
@@ -130,9 +135,11 @@ icon: vssue
   Vssue 只会请求拥有对应标签的 Issue，忽略其他的 Issue。Vssue 通过 `title` 和 `labels` 来确定用来存储评论的对应 Issue。传入多个字符串可以设置多个标签，只有同时满足这些标签的 Issue 才会被 Vssue 请求。
 
   ::: tip
+
   Bitbucket 目前不支持 Issue 标签功能，所以如果你使用 Bitbucket 的话，这个配置将会被忽略。
 
   GitHub 支持在标签名称中加入 emoji，如 `[':heart:Vssue', ':mailbox:Comments']`。
+
   :::
 
 - **参考**: [title](#title)
@@ -164,7 +171,9 @@ icon: vssue
   只有 `admins` 才能在存储评论的 Issue 不存在时自动创建它。
 
   ::: tip
+
   在 `owner` 是一个组织而不是用户时，可以将你的用户名添加进 `admins` 来自动创建对应 Issue。
+
   :::
 
 - **参考**: [owner](#owner)
@@ -188,6 +197,7 @@ icon: vssue
   不设置该选项时，Vssue 会使用 `window.navigator.languages` 中的语言，如果其中没有 Vssue 支持的语言则会默认使用 `'en'`。
 
   ::: tip
+
   Vssue 使用 [vue-i18n](https://kazupon.github.io/vue-i18n/) 实现国际化，但是并不会影响你的 Vue 应用的其他部分。
   如果你在项目中已经使用了 vue-i18n，也不会对 Vssue 造成影响。
 
@@ -199,6 +209,7 @@ icon: vssue
   - `'ja'` (`'ja-JP'`)
 
   欢迎贡献代码帮助 Vssue 支持更多语言。
+
   :::
 
 ## proxy
@@ -249,9 +260,11 @@ icon: vssue
   ```
 
   ::: tip
+
   `issueContent` 只用来在对应 Issue 不存在时新建 Issue。
 
   如果对应的 Issue 已经存在，Vssue 不会更新 Issue 的内容。
+
   :::
 
 ## autoCreateIssue

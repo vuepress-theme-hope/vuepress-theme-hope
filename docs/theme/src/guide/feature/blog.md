@@ -39,9 +39,11 @@ All articles with a writing date will be sorted by time in the timeline page `/t
 If you don’t want an article to be included, set `timeline` to `false` in the article’s Frontmatter.
 
 ::: warning
+
 Do not add and place the corresponding folders ("tag", "article", "timeline") in the root directory, otherwise the files may be overwritten during compilation and cause errors.
 
 If you do need an "articles" folder, consider using "articles".
+
 :::
 
 ## Copyright Information

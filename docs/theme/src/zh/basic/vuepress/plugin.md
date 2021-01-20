@@ -67,7 +67,9 @@ module.exports = {
 ```
 
 ::: warning 注意
+
 以 `@vuepress/plugin-` 开头的插件是官方维护的插件。
+
 :::
 
 ## 插件的配置
@@ -114,6 +116,7 @@ module.exports = {
 :::
 
 ::: tip
+
 可以通过显示地将选项设置成 `false` 来禁用一个插件:
 
 - Babel 风格

@@ -90,11 +90,13 @@ $$
   - `\idotsint` $\idotsint$
 
 ::: tip
+
 Large operators such as continuous addition, multiplication, limits, and integrals can use `\limits` and `\nolimits` to force explicitly specify compress these superscripts or not.
 
 `\iiiint`($\liiiint$) is support by hack, so for inline display you should use `\liiiint`.
 
 `\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` are not supported currently.
+
 :::
 
 ::: tip Case
@@ -178,9 +180,11 @@ $2^{10} > 1000$
 Various parentheses are represented by commands such as `()`, `[]`, `\{\}`, `\langle\rangle`.
 
 ::: tip
+
 Note that curly braces are usually used to enter command and environment parameters, so they must be preceded by `\` in mathematical formulas.
 
 Because the application of `|` and `\|` in LaTeX is too casual, we recommend using `\lvert\rvert` and `\ lVert\rVert` instead.
+
 :::
 
 To adjust the size of these delimiters, we recommend using `\big`, `\Big`, `\bigg`, `\Bigg` and a series of commands to adjust the size before the above brackets.
@@ -282,7 +286,9 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   ```
 
   ::: tip
+
   Note that because $\KaTeX$ supports auto word wrapping, if you specify a line feed manually, a warning is output in the console.
+
   :::
 
 - **Alignment**

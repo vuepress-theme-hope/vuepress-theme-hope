@@ -11,9 +11,11 @@ tags:
 These are plugin config provided by theme.
 
 ::: tip
+
 All the config key name is the camelCase version of plugin name.
 
 E.g.: `@mr-hope/vuepress-copy-code` 's config keyname will be `copyCode`.
+
 :::
 
 ## mdEnhance
@@ -28,6 +30,7 @@ Markdown Enhance config, for details see [vuepress-plugin-md-enhance documentati
 Whether to enable all features
 
 ::: danger
+
 Please use this option ONLY for playing or testing.
 
 As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
@@ -37,6 +40,7 @@ Enabling features you don’t need will increase dev and build time. (`markdown-
 Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 
 So please use the options below and enable ONLY the feature you want to use.
+
 :::
 
 ### mdEnhance.lineNumbers <MyBadge text="Default value changed" type = "error" />
@@ -153,9 +157,11 @@ CodePen editor layout
 The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, don’t override the default values.
 
 ::: warning
+
 Please note that if you use them, you still need to manually include them in your site using `head`.
 
 React depends on Babel.
+
 :::
 
 ##### mdEnhance.demo.vue
@@ -263,6 +269,7 @@ Progressive Web App support
 You can fill with an object which will be parsed to manifest.webmanifest.
 
 ::: tip
+
 Some options have their fallback if you donot set them.
 
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
@@ -396,11 +403,13 @@ You can fill in the custom pop-up component path.
 Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
 
 ::: tip
+
 We will precache all site related files `**/*.{js,css,svg}` and font files `**/*.{woff,woff2,eot,ttf,otf}` for you.
 
 If you set `cachePic` to `true`, we will also precache `**/*.{png,jpg,jpeg,gif,bmp,webp}` files for you.
 
 All the files larger than `maxSize` or any pictures larger than `maxPicSize` will be dropped.
+
 :::
 
 ## seo <MyBadge text="Enabled by default" />
