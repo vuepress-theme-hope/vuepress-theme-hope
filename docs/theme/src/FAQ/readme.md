@@ -26,7 +26,7 @@ A simple tsconfig.json is as follows:
 ```json
 {
   "compilerOptions": {
-    "target": "ES6", /// Any target which is not less than 'ES5'
+    "target": "ES6", /// Any target not less than 'ES5'
     "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
     "experimentalDecorators": true, // TypeScript files for '.vue' needs this option
     "module": "commonjs", // Avoiding some issues related to vuepress-types

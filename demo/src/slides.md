@@ -13,7 +13,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Slide 2
 
-This is a very looooo ooooo ooooo ooooo ooooo ooooong content which is expecting to break.
+This is a very looooo ooooo ooooo ooooo ooooo ooooong content and we expect it to break.
 
 - Item 1
 - Item 2

@@ -9,7 +9,7 @@ tags:
 
 `vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-md-enhance.mrhope.site) plugin.
 
-`themeconfig.mdEnhance` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option. So you can also read the [md-enhance documentation](https://vuepress-md-enhance.mrhope.site) to see the usage.
+`themeconfig.mdEnhance` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option. Visit [md-enhance documentation](https://vuepress-md-enhance.mrhope.site) to see the usage.
 
 ::: tip
 
@@ -43,7 +43,7 @@ Enabling features you don’t need will increase dev and build time. (`markdown-
 
 Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 
-So please use the options below and enable ONLY the feature you want to use.
+Please use the options below and enable ONLY the feature you want to use.
 
 :::
 

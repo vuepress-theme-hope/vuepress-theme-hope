@@ -172,9 +172,9 @@
           ]
         ],
         "exclude": [
-          "Node.js",
-          "URLs",
-          "repo"
+          "Node(?:js)?",
+          "URL['’]?s",
+          "repo\\b"
         ],
         "severity": "warning"
       },

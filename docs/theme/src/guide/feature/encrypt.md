@@ -14,7 +14,7 @@ The theme supports encryption of specific folders or specific paths, as well as 
 
 Note that because of the limitation of vuepress, the content of the article is only hidden before being decrypted, and visitors can still get the content of the article from the source code (from js).
 
-So please **DO NOT USE** this encryption function for any sensitive and confidential articles and files, please bear the consequences of it.
+Please **DO NOT USE** this encryption function for any sensitive and confidential articles and files, please bear the consequences of it.
 
 :::
 

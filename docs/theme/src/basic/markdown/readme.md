@@ -49,7 +49,7 @@ The title shows the structure of the article. Insert 1-6 `#` at the beginning of
 
 `[Title](URL)`
 
-E.g: `[Baidu](https://baidu.com)`
+Example: `[Baidu](https://baidu.com)`
 
 ## Image
 
@@ -69,7 +69,7 @@ E.g: `![This is a title](/img/title.jpg)`.
 
 `:emoji name:`
 
-E.g.: `:smile:`
+Example: `:smile:`
 
 ## Markdown Display
 

@@ -123,7 +123,7 @@ $vssue-border-color ?= $borderColor
 $vssue-breakpoint-mobile ?= $MQMobile
 ```
 
-To override them, just set them in your `palette.styl`:
+Set these variables in your `palette.styl` to override them:
 
 ```stylus
 // .vuepress/styles/palette.styl

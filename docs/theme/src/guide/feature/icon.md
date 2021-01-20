@@ -9,7 +9,7 @@ tags:
 
 The entire theme has added FontClass format icon support in mutiple places.
 
-Currently you can use iconfont and fontawesome to add icons to your project.
+You can use iconfont and fontawesome to add icons to your project.
 
 - For china users, iconfont is recommended
 - For overseas users, fontawesome is recommended
@@ -18,7 +18,7 @@ Currently you can use iconfont and fontawesome to add icons to your project.
 
 [Iconfont](https://iconfont.cn) is a vector icon management and communication platform created by Alimama MUX.
 
-The designer uploads the icon to the Iconfont platform, and the user can customize the download of icons in a variety of formats, and the platform can also convert the icon into a font, which is convenient for front-end engineers to freely adjust and call.
+The designer uploads the icon to the Iconfont platform, and the user can customize the download of icons in a variety of formats. Users can also convert the icon into a font.
 
 ### How to use
 
@@ -38,11 +38,11 @@ First, you need to create a new project to set and manage your website’s icons
 
    ![Add to library](./assets/iconfont-add.png)
 
-1. After searching for all the icons, click the "Add to Library" icon in the upper right corner, click "Add to Project" below and select the project you just created then confirm.
+1. After searching for all the icons, click the "Add to Library" icon in the upper right corner, click "Add to Project" below and select the project you created then confirm.
 
 ### Edit icon
 
-On the project page, you can simply edit the icons in the project, including adjustments with position, size, rotate, color, Unicode number and Font Class / Symbol.
+On the project page, you can edit the icons in the project, including adjustments with position, size, rotate, color, Unicode number and Font Class / Symbol.
 
 ![Edit icon](./assets/iconfont-edit.png)
 

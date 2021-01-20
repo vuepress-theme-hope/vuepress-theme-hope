@@ -91,7 +91,7 @@ You can also configure the `footer`, `copyrightText` and `medialink` fields in t
 
   If you fill in a string, it will be inserted into footer by `v-html`, so you can fill in HTMLString.
 
-- The `copyrightText` field can be filled with copyright information on this page,(also support HTMLString), which is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
+- The `copyrightText` field can be filled with copyright information on this page (also support HTMLString). This option is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
 
 - The `medialink` field is the same as `themeConfig.blog.links` ([specific configuration see here](./blog.md#configurable-items)), you can configure it in a specific page to display different social media links. You can also set it to `false` to hide it.
 

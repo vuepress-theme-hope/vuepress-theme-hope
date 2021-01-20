@@ -14,7 +14,7 @@ These are plugin config provided by theme.
 
 All the config key name is the camelCase version of plugin name.
 
-E.g.: `@mr-hope/vuepress-copy-code` 's config keyname will be `copyCode`.
+Example: `@mr-hope/vuepress-copy-code` 's config keyname will be `copyCode`.
 
 :::
 
@@ -39,7 +39,7 @@ Enabling features you don’t need will increase dev and build time. (`markdown-
 
 Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 
-So please use the options below and enable ONLY the feature you want to use.
+Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
@@ -223,7 +223,9 @@ For details, see [@mr-hope/vuepress-plugin-comment documentation][comment-config
 
 For details see [vuepress-plugin-copyright documentation][copyright-config]
 
-> It’s a vuepress community plugin, not a built-in plugin. So if you met bugs, please come to [it’s repo](https://github.com/vuepress/vuepress-plugin-copyright) for help.
+> It’s a vuepress community plugin, not a built-in plugin.
+>
+> If you met bugs, please ahead to [it’s repo](https://github.com/vuepress/vuepress-plugin-copyright) for help.
 
 ### copyright.status
 

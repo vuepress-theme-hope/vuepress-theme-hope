@@ -60,7 +60,7 @@ By default it will display "Author, Visit Number, Writing Date, Category, Tags, 
 
   We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
-  E.g.:
+  Example:
 
   ```md
   ---
@@ -80,7 +80,7 @@ By default it will display "Author, Visit Number, Writing Date, Category, Tags, 
 
   When [Comment Function](../feature/comment.md) is configured, this function is enabled by default.
 
-  E.g.:
+  Example:
 
   ```md
   ---

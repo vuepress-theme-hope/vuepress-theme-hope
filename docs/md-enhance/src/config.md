@@ -29,7 +29,7 @@ Enabling features you don’t need will increase dev and build time. (`markdown-
 
 Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 
-So please use the options below and enable ONLY the feature you want to use.
+Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
