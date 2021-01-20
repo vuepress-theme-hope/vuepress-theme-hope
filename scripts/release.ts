@@ -24,6 +24,7 @@ const getNpmTags = (version: string): string[] => {
 };
 
 const release = async (): Promise<void> => {
+  await execa("yarn", ["run", "clean"]);
   await execa("yarn", ["run", "build"]);
 
   console.log(`Current version: ${green(currentVersion)}`);
