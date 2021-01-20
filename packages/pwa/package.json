@@ -37,7 +37,7 @@
     "@mr-hope/vuepress-types": "^1.8.1",
     "@types/fs-extra": "^9.0.6",
     "chalk": "^4.1.0",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^9.1.0",
     "register-service-worker": "^1.7.2",
     "workbox-build": "^6.0.2"
   },
