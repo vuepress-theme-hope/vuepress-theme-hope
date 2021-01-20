@@ -98,4 +98,19 @@
 
         &:last-child
           margin-bottom 0.5em
+
+      // code block fix
+      pre
+        line-height 1.4
+        padding 1.25rem 1.5rem
+        margin 0.85rem 0
+
+      // line number fix
+      .line-numbers-mode
+        pre
+          padding-left ($lineNumbersWrapperWidth + 1) rem
+
+      // hide code demo
+      .code-demo-wrapper
+        display none
 </style>
