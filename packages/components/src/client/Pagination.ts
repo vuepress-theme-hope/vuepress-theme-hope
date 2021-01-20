@@ -33,33 +33,34 @@ export default Vue.extend({
     },
 
     displayLeftEllipsis(): boolean {
-      if (this.totalPages <= 5) return false;
+      if (this.totalPages < 7) return false;
 
       return this.currentPage > 4;
     },
 
     displayRightEllipsis(): boolean {
-      if (this.totalPages <= 5) return false;
+      if (this.totalPages < 7) return false;
 
-      return this.currentPage <= this.totalPages - 3;
+      return this.currentPage < this.totalPages - 3;
     },
 
     /** Page indexs */
     indexs(): number[] {
+      const { currentPage, totalPages } = this;
       let min = 1;
-      let max = this.totalPages;
+      let max = totalPages;
       const arr = [];
 
-      if (this.totalPages >= 7)
-        if (this.currentPage > 4 && this.currentPage < this.totalPages - 3) {
-          min = Number(this.currentPage) - 2;
-          max = Number(this.currentPage) + 2;
-        } else if (this.currentPage <= 4) {
+      if (totalPages >= 7)
+        if (currentPage <= 4 && currentPage < totalPages - 3) {
           min = 1;
           max = 5;
-        } else {
-          max = this.totalPages;
-          min = this.totalPages - 4;
+        } else if (currentPage > 4 && currentPage >= totalPages - 3) {
+          max = totalPages;
+          min = totalPages - 4;
+        } else if (totalPages > 7) {
+          min = currentPage - 2;
+          max = currentPage + 2;
         }
 
       // Generate page index

@@ -4,7 +4,7 @@
       <div class="btn-group">
         <div
           v-if="currentPage > 1"
-          class="btn"
+          class="prev"
           role="navigation"
           unselectable="on"
           @click="navigate(currentPage - 1)"
@@ -24,14 +24,9 @@
         >
           {{ num }}
         </div>
+        <div v-if="displayRightEllipsis" class="ellipsis">...</div>
         <div
-          v-if="displayRightEllipsis && currentPage < totalPages - 3"
-          class="ellipsis"
-        >
-          ...
-        </div>
-        <div
-          v-if="displayRightEllipsis && currentPage < totalPages - 3"
+          v-if="displayRightEllipsis"
           role="navigation"
           @click="navigate(totalPages)"
         >
@@ -39,7 +34,7 @@
         </div>
         <div
           v-if="currentPage < totalPages"
-          class="btn"
+          class="next"
           role="navigation"
           @click="navigate(currentPage + 1)"
         >
@@ -115,6 +110,10 @@ $bgColor ?= #fff
         &.active + div, &:hover + div
           &::before
             background var(--accent-color, $accentColor)
+
+        &.prev, &.next
+          font-size 13px
+          line-height 30px
 
         &.active, &.ellipsis
           cursor default
