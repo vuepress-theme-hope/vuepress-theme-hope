@@ -6,7 +6,7 @@ icon: creative
 
 ## 选择你要使用的代码托管平台
 
-Vssue 支持通过 Github, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为你的静态页面提供评论功能，你可以选择其中之一来使用。
+Vssue 支持通过 GitHub, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为你的静态页面提供评论功能，你可以选择其中之一来使用。
 
 前往 [支持的代码托管平台 - 创建 OAuth App](./supported-platforms.md) 查看详细指引。
 

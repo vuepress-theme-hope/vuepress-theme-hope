@@ -24,7 +24,7 @@ tags:
 
 首先你需要新建一个项目，对你网站的图标进行设置与管理:
 
-1. 使用 Github 或微博登录 Iconfont。
+1. 使用 GitHub 或微博登录 Iconfont。
 1. 在网站上方找到 “资源管理 → 我的项目”，点击右上角的 “新建项目” 图标。
 1. 设置可以辨识的项目名称
 1. `FontClass/Symbol 前缀` 填入 `icon-`(你也可以根据自己喜好填写，但需要将此值设置到 `themeConfig.iconPrefix`)

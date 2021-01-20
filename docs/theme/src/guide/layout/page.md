@@ -109,7 +109,7 @@ Customize footer text without displaying copyright information and media links:
 
 ```md
 ---
-footer: This website is served by Github Pages
+footer: This website is served by GitHub Pages
 copyrightText: false
 medialink: false
 ---

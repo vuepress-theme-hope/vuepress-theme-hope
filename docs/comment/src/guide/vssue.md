@@ -6,7 +6,7 @@ icon: creative
 
 ## Choose a platform to use
 
-Vssue can enable comments for your static pages via the `Issue System` of `Github`, `Gitlab`, `Bitbucket` or `Gitee`, and you can choose one of those platforms.
+Vssue can enable comments for your static pages via the `Issue System` of `GitHub`, `Gitlab`, `Bitbucket` or `Gitee`, and you can choose one of those platforms.
 
 Go to [Supported Platforms - Set up OAuth App](./supported-platforms.md) for detailed instructions.
 

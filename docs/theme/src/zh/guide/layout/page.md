@@ -109,7 +109,7 @@ footer: true
 
 ```md
 ---
-footer: This website is served by Github Pages
+footer: This website is served by GitHub Pages
 copyrightText: false
 medialink: false
 ---

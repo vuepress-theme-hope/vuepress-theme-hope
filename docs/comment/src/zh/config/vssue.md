@@ -41,7 +41,7 @@ icon: vssue
 
 仓库 URL 的常见模式是 `` `${baseURL}/${owner}/${repo}` ``:
 
-- Github: `https://github.com/${owner}/${repo}`
+- GitHub: `https://github.com/${owner}/${repo}`
 - Gitlab: `https://gitlab.com/${owner}/${repo}`
 - Bitbucket: `https://bitbucket.org/${owner}/${repo}`
 - Gitee: `https://gitee.com/${owner}/${repo}`

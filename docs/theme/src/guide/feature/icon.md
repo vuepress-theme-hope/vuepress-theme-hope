@@ -24,7 +24,7 @@ The designer uploads the icon to the Iconfont platform, and the user can customi
 
 First, you need to create a new project to set and manage your website’s icons:
 
-1. Log in to Iconfont using Github or Weibo.
+1. Log in to Iconfont using GitHub or Weibo.
 1. Find "Resources → My Projects" at the top of the website, and click the "New Project" icon in the upper right corner.
 1. Set a recognizable project name
 1. Fill in `FontClass/Symbol prefix` with `icon-` (you can also fill in according to your preference, but you need to set this value to `themeConfig.iconPrefix`)
