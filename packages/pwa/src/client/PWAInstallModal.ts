@@ -7,10 +7,6 @@ import CloseIcon from "./icons/CloseIcon.vue";
 import { PWAI18NConfig } from "@mr-hope/vuepress-shared";
 import { i18n } from "./define";
 
-export interface SafariNavigator extends Navigator {
-  standalone: boolean;
-}
-
 interface InstallPromptEvent extends Event {
   readonly platforms: string;
   prompt: () => void;
@@ -21,6 +17,13 @@ export default Vue.extend({
   name: "PWAInstallModal",
 
   components: { ArrowLeftIcon, ArrowRightIcon, CloseIcon },
+
+  props: {
+    useHint: {
+      type: Boolean,
+      default: false,
+    },
+  },
 
   data: () => ({
     manifest: {} as ManifestOption,
@@ -38,18 +41,6 @@ export default Vue.extend({
   mounted(): void {
     // eslint-disable-next-line no-prototype-builtins
     if (window.hasOwnProperty("BeforeInstallPromptEvent")) {
-      // handle iOS specifically, includes the regular iPad, iPad pro but not macOS
-      this.isIOS =
-        navigator.userAgent.includes("iPhone") ||
-        navigator.userAgent.includes("iPad") ||
-        Boolean(
-          navigator.userAgent.includes("Macintosh") &&
-            navigator.maxTouchPoints &&
-            navigator.maxTouchPoints > 2
-        );
-
-      if (this.isIOS) this.$emit("can-install", true);
-
       // grab an install event
       window.addEventListener("beforeinstallprompt", (event) => {
         this.deferredprompt = event as InstallPromptEvent;
@@ -133,9 +124,9 @@ export default Vue.extend({
       return false;
     },
 
-    hide(): void {
-      console.info("User accept the hint");
-      this.$emit("hide");
+    hint(): void {
+      console.info("You accepted the install hint");
+      this.$emit("hint");
     },
   },
 });

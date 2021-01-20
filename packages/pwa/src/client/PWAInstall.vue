@@ -1,15 +1,16 @@
 <template>
   <div id="pwa-install">
     <button
-      v-if="showInstall || isIOS"
+      v-if="showInstall"
       class="modal-button"
+      :use-hint="useHint"
       @click="isOpen = true"
       v-text="install"
     />
     <PWAInstallModal
       v-show="isOpen"
       @can-install="canInstall = $event"
-      @hide="hide"
+      @hint="hint"
       @toogle="isOpen = $event"
     />
   </div>

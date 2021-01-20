@@ -1,10 +1,16 @@
 import Vue from "vue";
 import PWAInstallModal from "./PWAInstallModal.vue";
-import { SafariNavigator } from "./PWAInstallModal";
 import { i18n } from "./define";
+import { ManifestRelatedApps } from "../types";
 
 interface ModernNavigator extends Navigator {
-  getInstalledRelatedApps: () => Promise<unknown[]>;
+  // Unstandard Api
+  getInstalledRelatedApps: () => Promise<ManifestRelatedApps[]>;
+}
+
+interface SafariNavigator extends Navigator {
+  // Available on Apple's iOS Safari only.
+  standalone: boolean;
 }
 
 export default Vue.extend({
@@ -17,6 +23,7 @@ export default Vue.extend({
     hasRelatedApps: false,
     isOpen: false,
     isIOS: false,
+    isSafari: false,
     hinted: false,
   }),
 
@@ -25,24 +32,39 @@ export default Vue.extend({
       return i18n[this.$localePath || "/"].install;
     },
 
+    useHint(): boolean {
+      return this.isIOS && this.isSafari && this.hinted === false;
+    },
+
     showInstall(): boolean {
-      return (
-        (this.hasRelatedApps && this.canInstall) ||
-        (this.isIOS && this.hinted === false)
-      );
+      return (this.hasRelatedApps && this.canInstall) || this.useHint;
     },
   },
 
   mounted(): void {
-    if (
-      "standalone" in navigator &&
-      (navigator as SafariNavigator).standalone === false
-    ) {
-      this.isIOS = true;
+    if (this.getInstalledStatus()) {
+      const { userAgent } = navigator;
+
+      // handle iOS specifically
+      this.isIOS =
+        // regular iPhone
+        userAgent.includes("iPhone") ||
+        // regular iPad
+        userAgent.includes("iPad") ||
+        // iPad pro
+        Boolean(
+          userAgent.includes("Macintosh") &&
+            navigator.maxTouchPoints &&
+            navigator.maxTouchPoints > 2
+        );
+
+      this.isSafari =
+        navigator.userAgent.includes("Safari") && !userAgent.includes("Chrome");
+
       this.hinted = Boolean(localStorage.getItem("iOS-pwa-hint"));
     }
 
-    if ("getInstalledRelatedApps" in navigator)
+    if ("getInstalledRelatedApps" in (navigator as ModernNavigator))
       void (navigator as ModernNavigator)
         .getInstalledRelatedApps()
         .then((result) => {
@@ -58,9 +80,10 @@ export default Vue.extend({
       return matchMedia("(display-mode: standalone)").matches;
     },
 
-    hide(): void {
+    hint(): void {
       this.isOpen = false;
       this.hinted = true;
+      // do not notify again
       localStorage.setItem("iOS-pwa-hint", "hinted");
     },
   },

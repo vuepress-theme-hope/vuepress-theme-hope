@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <div v-if="isIOS" class="ios-text" @click="hide">
+      <div v-if="useHint" class="ios-text" @click="hint">
         <p>{{ i18n.iOSInstall }}</p>
         <button class="success">Got it!</button>
       </div>
