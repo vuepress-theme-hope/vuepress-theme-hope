@@ -2,6 +2,23 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.8.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.1...v1.8.2) (2021-01-20)
+
+### Bug Fixes
+
+- **component:** fix Pagination issue ([fca0a95](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fca0a952cdb42b0ead8ce36a67ffa8cba5b0b96c))
+- **md-enhance:** remove horizontal config for code-demo ([134c0f2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/134c0f204e2e8272eb0bb69dc6ac3b85dad436df))
+- **pwa:** fix iOS hint ([e6b7af5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e6b7af51329ede06275c385a82805d1c48a6e8d3))
+- **theme:** fix width issue on article excerpt ([7acff53](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7acff5325c398b21c3ff8a875d27045878720d73))
+
+### Features
+
+- **copy-code:** update default option ([742a4d1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/742a4d118a6f7b892aea66bf04189f245edccb2a))
+
+### BREAKING CHANGES
+
+- **md-enhance:** remove horizontal config for code-demo
+
 ## [1.8.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.0...v1.8.1) (2021-01-05)
 
 ### Bug Fixes
