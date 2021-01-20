@@ -1,6 +1,6 @@
 <template>
-  <div v-if="enable" class="pagination-wrapper">
-    <div class="pagination-list">
+  <div class="pagination-wrapper">
+    <div v-if="enable" class="pagination-list">
       <div class="btn-group">
         <div
           v-if="currentPage > 1"
