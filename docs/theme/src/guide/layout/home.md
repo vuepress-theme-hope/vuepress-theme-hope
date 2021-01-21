@@ -96,49 +96,49 @@ action:
     link: /config/
 
 features:
-  - title: Pageviews and comments
+  - title: Pageviews and comments 💬
     details: Start pageview statistics and comment support with Valine and Vssue
     link: /guide/feature/comment/
 
-  - title: Article information display
+  - title: Article information display ℹ
     details: Add author, writing date, reading time, word count and other information to your article
     link: /guide/feature/page-info/
 
-  - title: Markdown Enhance
-    details: Add align, sup/sub script, footnote, tex, flowchart and mark support in markdown
+  - title: Markdown Enhance 🧰
+    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
     link: /guide/feature/markdown/
 
-  - title: Blog support
+  - title: Blog support 📝
     details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
     link: /guide/feature/blog/
 
-  - title: Article Encryption
+  - title: Article Encryption 🔐
     details: Encrypt you article based on path and folders, so that only the one you want could see them
     link: /guide/feature/blog/
 
-  - title: Custom theme color
+  - title: Custom theme color 🎨
     details: Supports custom theme colors and allows users to switch between preset theme colors
     link: /guide/feature/themecolor/
 
-  - title: Dark Mode
+  - title: Dark Mode 🌙
     details: Switch between light and dark modes freely
     link: /guide/feature/darkmode/
 
-  - title: Sitemap generation and SEO enhancement
+  - title: SEO enhancement and Sitemap 🗺
     details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
     link: /guide/feature/seo-sitemap/
 
-  - title: More new features
-    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
-    link: /guide/feature/
-
-  - title: PWA support
+  - title: PWA support 📲
     details: The built-in PWA plugin will make your website more like an APP.
     link: /guide/feature/pwa/
 
-  - title: TS support
+  - title: TS support 🔧
     details: Turn on TypeScript support for your VuePress
     link: /guide/feature/typescript/
+
+  - title: More new features ✨
+    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
+    link: /guide/feature/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false

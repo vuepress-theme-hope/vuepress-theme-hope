@@ -1,10 +1,9 @@
 ---
+title: 介绍
 icon: info
 category: instruction
 tags: intro
 ---
-
-# 介绍
 
 ::: tip
 
@@ -12,7 +11,7 @@ tags: intro
 
 :::
 
-## 主题特点
+## ✨ 主题特点
 
 主题很大程度上保持了 VuePress 默认主题的风格，并在此基础上添加了大量功能与优化:
 
@@ -102,7 +101,7 @@ tags: intro
   - [标签分组列表](feature/blog.md#标签)
   - [时间线](feature/blog.md#时间线)
 
-## 内建插件
+## 🧩 内建插件
 
 本主题还包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 

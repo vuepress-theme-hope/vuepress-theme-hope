@@ -10,7 +10,7 @@ If you met a bug while using, you can open an issue [here](https://github.com/Mi
 
 :::
 
-## Theme Features
+## ✨Theme Features
 
 The theme maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
 
@@ -100,7 +100,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
   - [Tag lists](feature/blog.md#tags)
   - [Timeline](feature/blog.md#timeline)
 
-## Plugins build-in
+## 🧩Build-in Plugins
 
 The theme also includes the following plugins, you can use them in other themes or directly.
 
