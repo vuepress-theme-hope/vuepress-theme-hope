@@ -2,6 +2,16 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.8.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.3...v1.8.4) (2021-01-21)
+
+### Bug Fixes
+
+- **theme:** improve anchor scrollbar appearance ([d50fb43](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d50fb43ac293ee66f3a876ece4e92198595006b4))
+
+### Features
+
+- **theme:** improve home appearance ([7e6fd93](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7e6fd93dde88c7bda6b670c5da4f1457074873af))
+
 ## [1.8.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.2...v1.8.3) (2021-01-20)
 
 ### Bug Fixes
