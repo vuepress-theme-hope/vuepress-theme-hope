@@ -25,4 +25,8 @@
 
   & + &
     margin-left 0.3em
+
+  // toc
+  .table-of-contents &
+    vertical-align middle
 </style>
