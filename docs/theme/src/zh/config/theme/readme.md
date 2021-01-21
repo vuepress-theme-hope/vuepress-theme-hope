@@ -54,7 +54,7 @@ NavBarItem 新增
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
 
-具体配置，请见 [布局 → 导航栏](../guide/layout/navbar.md)
+具体配置，请见 [布局 → 导航栏](../../guide/layout/navbar.md)
 
 ### sidebar <MyBadge text="改进" type="warn" />
 
@@ -63,7 +63,7 @@ SideBarItem 新增
 - `icon` 字段来支持图标显示。
 - `prefix` 字段来自动添加分组前缀
 
-具体配置，请见 [布局 → 侧边栏](../guide/layout/sidebar.md)
+具体配置，请见 [布局 → 侧边栏](../../guide/layout/sidebar.md)
 
 ### locales
 

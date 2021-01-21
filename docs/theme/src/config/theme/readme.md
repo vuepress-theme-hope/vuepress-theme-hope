@@ -61,12 +61,16 @@ NavBarItem now has
 - `icon` field to support icon display.
 - `prefix` field to automatically add group prefix
 
+For certain configuration, please see [Layout → Navbar](../../guide/layout/navbar.md)
+
 ### sidebar <MyBadge text="improved" type="warn" />
 
 SideBarItem now has
 
 - `icon` field to support icon display.
 - `prefix` field to automatically add group prefix
+
+For certain configuration, please see [Layout → Sidebar](../../guide/layout/sidebar.md)
 
 ### locales
 
