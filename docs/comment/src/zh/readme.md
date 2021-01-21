@@ -8,6 +8,7 @@ tagline: 评论与阅读量插件
 action:
   - text: 快速上手 💡
     link: /zh/guide/
+    type: primary
 
   - text: 配置 🛠
     link: /zh/config/

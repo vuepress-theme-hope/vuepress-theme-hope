@@ -45,6 +45,7 @@
               :key="action.text"
               :item="action"
               class="action-button"
+              :class="action.type || ''"
             />
           </p>
         </MyTransition>
@@ -59,7 +60,7 @@
         <div
           v-for="(feature, index) in $frontmatter.features"
           :key="index"
-          :class="{ link: feature.link }"
+          :class="{ link: feature.link, [`feature${index % 9}`]: true }"
           class="feature"
           @click="feature.link ? navigate(feature.link) : ''"
         >
@@ -79,11 +80,11 @@
 
 <style lang="stylus">
 .home
+  display block
   max-width $homePageWidth
   min-height 100vh - $navbarHeight
   padding $navbarHeight 2rem 0
   margin 0px auto
-  display block
 
   @media (max-width $MQNarrow)
     min-height 100vh - $navbarMobileHeight
@@ -168,10 +169,9 @@
       display inline-block
       margin 0.6rem 0.8rem
       padding 0.8rem 1.6rem
-      border-bottom 1px solid var(--accent-color-d10)
-      border-radius 0.25rem
-      background var(--accent-color)
-      color var(--white)
+      border 2px solid var(--accent-color)
+      border-radius 2rem
+      color var(--accent-color)
       font-size 1.2rem
       transition background 0.1s ease
       overflow hidden
@@ -181,7 +181,21 @@
         font-size 1rem
 
       &:hover
-        background var(--accent-color-l10)
+        color var(--white)
+        background-color var(--accent-color)
+
+      &.primary
+        color var(--white)
+        background-color var(--accent-color)
+
+        &:hover
+          border-color var(--accent-color-l10)
+          background-color var(--accent-color-l10)
+
+        .theme-dark &
+          &:hover
+            border-color var(--accent-color-d10)
+            background-color var(--accent-color-d10)
 
   .features
     display flex
@@ -193,10 +207,6 @@
     padding 1.2rem 0
     border-top 1px solid $borderColor
 
-    @media (max-width $MQMobile)
-      flex-direction column
-      align-items stretch
-
     @media (max-width $MQMobileNarrow)
       margin 0 -1.5rem
 
@@ -204,15 +214,24 @@
       display flex
       flex-direction column
       justify-content center
-      flex-basis calc(33% - 5rem)
-      margin 0 1rem
+      flex-basis calc(33% - 4rem)
+      margin 0.5rem
       padding 0 1.5rem
-      border-radius 1rem
+      border-radius 0.5rem
       transition transform 0.3s, box-shadow 0.3s
       overflow hidden
 
       @media (max-width $MQNarrow)
-        flex-basis calc(50% - 5rem)
+        flex-basis calc(50% - 4rem)
+
+      @media (max-width $MQMobile)
+        font-size 0.95rem
+
+      @media (max-width $MQMobileNarrow)
+        flex-basis calc(100%)
+        font-size 0.9rem
+        margin 0.5rem 0
+        border-radius 0
 
       &.link
         cursor pointer
@@ -222,7 +241,7 @@
         box-shadow 0 2px 12px 0 var(--card-shadow-color)
 
       h2
-        margin-bottom 0
+        margin-bottom 0.25rem
         border-bottom none
         color var(--text-color-l10)
         font-size 1.25rem
@@ -234,14 +253,17 @@
       p
         margin-top 0
         color var(--text-color-l25)
-        text-align justify
-
-      @media (max-width $MQMobile)
-        font-size 0.95rem
-
-      @media (max-width $MQMobileNarrow)
-        font-size 0.9rem
 
   {$contentClass}
     padding-bottom 1.5rem
+
+@require '~@mr-hope/vuepress-shared/styles/colors.styl'
+
+for $color, $index in $colors
+  .home .features .feature{$index}
+    &, .theme-light &
+      background lighten($color, 90%)
+
+    .theme-dark &
+      background darken($color, 75%)
 </style>

@@ -8,6 +8,7 @@ tagline: You can place the description of the project here.
 action:
   - text: How to Use
     link: /guide/
+    type: primary
 
   - text: Blog homepage
     link: /

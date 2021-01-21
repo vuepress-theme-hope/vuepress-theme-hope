@@ -8,6 +8,7 @@ tagline: AddThis plugin for vuepress
 action:
   - text: Guide 💡
     link: /guide/
+    type: primary
 
   - text: Config 🛠
     link: /config/

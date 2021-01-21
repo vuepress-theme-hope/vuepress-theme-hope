@@ -8,6 +8,7 @@ tagline: A powerfull PWA plugin
 action:
   - text: Guide 💡
     link: /guide/
+    type: primary
 
   - text: Config 🛠
     link: /config/

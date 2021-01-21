@@ -8,6 +8,7 @@ tagline: 一个强大的 PWA 插件
 action:
   - text: 快速上手 💡
     link: /zh/guide/
+    type: primary
 
   - text: 配置 🛠
     link: /zh/config/

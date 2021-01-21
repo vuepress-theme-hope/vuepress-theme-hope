@@ -8,6 +8,7 @@ tagline: Photo swipe plugin for vuepress
 action:
   - text: Demo 💡
     link: /demo/
+    type: primary
 
   - text: Config 🛠
     link: /config/

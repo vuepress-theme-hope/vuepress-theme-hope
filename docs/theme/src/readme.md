@@ -8,6 +8,7 @@ tagline: A vuepress theme with tons of features✨
 action:
   - text: Get Started 💡
     link: /guide/
+    type: primary
 
   - text: Config 🛠
     link: /config/

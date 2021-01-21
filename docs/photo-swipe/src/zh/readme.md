@@ -8,6 +8,7 @@ tagline: 为 VuePress 提供图片预览支持
 action:
   - text: 演示 💡
     link: /zh/demo/
+    type: primary
 
   - text: 配置 🛠
     link: /zh/config/

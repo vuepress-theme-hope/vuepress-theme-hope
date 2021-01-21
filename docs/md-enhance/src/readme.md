@@ -8,6 +8,7 @@ tagline: Enhancement for markdown in VuePress
 action:
   - text: Get Started 💡
     link: /guide/
+    type: primary
 
   - text: Config 🛠
     link: /config/

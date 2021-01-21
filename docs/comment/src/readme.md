@@ -8,6 +8,7 @@ tagline: Comment and visitors plugin for vuepress
 action:
   - text: Get Started 💡
     link: /guide/
+    type: primary
 
   - text: Config 🛠
     link: /config/
