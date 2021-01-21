@@ -1,6 +1,6 @@
 ---
 title: 插件
-icon: extension
+icon: plugin
 category: basic
 tags:
   - vuepress

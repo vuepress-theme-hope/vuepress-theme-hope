@@ -1,5 +1,6 @@
 ---
 title: vuepress-plugin-copyright
+icon: plugin
 category: config
 tags:
   - plugin

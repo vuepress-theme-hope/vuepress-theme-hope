@@ -1,5 +1,5 @@
 ---
-icon: extension
+icon: plugin
 category: feature
 tags:
   - components

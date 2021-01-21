@@ -1,6 +1,6 @@
 ---
 title: 文件结构介绍
-icon: file
+icon: folder
 category: basic
 tags:
   - vuepress

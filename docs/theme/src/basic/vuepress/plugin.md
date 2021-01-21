@@ -1,6 +1,6 @@
 ---
 title: Plugins
-icon: extension
+icon: plugin
 category: basic
 tags:
   - vuepress

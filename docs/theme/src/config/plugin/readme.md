@@ -1,5 +1,6 @@
 ---
 title: Plugin Description
+icon: info
 category: config
 copyright:
   minLength: 10

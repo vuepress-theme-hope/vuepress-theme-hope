@@ -1,5 +1,5 @@
 ---
-title: stylus 配置
+title: Stylus 配置
 icon: config
 category: config
 tags:

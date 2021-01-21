@@ -55,7 +55,7 @@ On the project page, you can edit the icons in the project, including adjustment
 1. Import the link in `index.styl` of `.vuepress/styles`. E.g:
 
    ```styl
-   @import "//at.alicdn.com/t/font_1446717_q5huxk6v1h.css";
+   @import "//at.alicdn.com/t/font_1446717_ao07m76h5t.css";
    ```
 
 ::: tip

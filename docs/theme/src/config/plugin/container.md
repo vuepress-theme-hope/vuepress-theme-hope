@@ -1,5 +1,6 @@
 ---
 title: vuepress-plugin-container
+icon: plugin
 category: config
 tags:
   - plugin

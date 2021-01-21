@@ -1,5 +1,5 @@
 ---
-title: Page Configuration
+title: Page Config
 icon: config
 category: config
 tags:

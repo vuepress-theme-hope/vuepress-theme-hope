@@ -65,7 +65,7 @@ module.exports = {
       "stylus",
       {
         title: "Plugins",
-        icon: "extension",
+        icon: "plugin",
         prefix: "plugin/",
         collapsable: false,
         children: ["", "container", "copyright"],
@@ -168,7 +168,7 @@ module.exports = {
       "stylus",
       {
         title: "插件配置",
-        icon: "extension",
+        icon: "plugin",
         prefix: "plugin/",
         collapsable: false,
         children: ["", "container", "copyright"],

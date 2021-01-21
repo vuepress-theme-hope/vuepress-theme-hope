@@ -1,5 +1,5 @@
 ---
-title: stylus configuration
+title: Stylus config
 icon: skin
 category: config
 tags:

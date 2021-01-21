@@ -1,5 +1,6 @@
 ---
 title: 插件说明
+icon: info
 category: config
 copyright:
   minLength: 10

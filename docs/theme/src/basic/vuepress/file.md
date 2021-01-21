@@ -1,6 +1,6 @@
 ---
 title: File Structure
-icon: file
+icon: folder
 category: basic
 tags:
   - vuepress
