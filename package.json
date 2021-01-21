@@ -13,7 +13,7 @@
     "clean": "lerna run clean --stream",
     "commit": "npx git-cz",
     "copy": "lerna run copy --stream",
-    "copy-watch": "lerna run copy --parallel -- --watch",
+    "copy:watch": "lerna run copy --parallel -- --watch",
     "demo:build": "yarn workspace demo build",
     "demo:serve": "yarn workspace demo serve",
     "docs/add-this:serve": "yarn workspace add-this-docs serve",
