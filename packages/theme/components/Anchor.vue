@@ -36,7 +36,10 @@ $headings = 2 3 4 5 6
     width 3px
 
   &::-webkit-scrollbar-thumb:vertical
-    background var(--light-grey)
+    background #ddd
+
+    .theme-dark &
+      background #333
 
   .anchor-wrapper
     position relative
