@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "components plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -28,9 +28,9 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "1.8.3",
-    "@mr-hope/vuepress-types": "1.8.3",
-    "@mr-hope/vuepress-utils": "1.8.3",
+    "@mr-hope/vuepress-shared": "1.8.4",
+    "@mr-hope/vuepress-types": "1.8.4",
+    "@mr-hope/vuepress-utils": "1.8.4",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "^5.1.0",
