@@ -200,7 +200,7 @@
   .features
     display flex
     flex-wrap wrap
-    justify-content space-between
+    justify-content center
     align-items stretch
     align-content stretch
     margin 0 -2rem
