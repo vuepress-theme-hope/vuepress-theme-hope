@@ -14,3 +14,6 @@ dist/
 packages/theme/**/*.js
 packages/theme/**/*d.ts
 !packages/theme/types/**/*.d.ts
+
+# Coverage Files
+coverage/

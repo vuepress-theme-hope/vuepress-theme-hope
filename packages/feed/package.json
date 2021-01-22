@@ -1,0 +1,40 @@
+{
+  "name": "@mr-hope/vuepress-plugin-feed",
+  "version": "1.8.4",
+  "description": "Feed plugin for vuepress-theme-hope",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "feed"
+  ],
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/feed#readme",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/feed"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/types/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
+    "test": "jest"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "xml-js": "^1.6.11"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

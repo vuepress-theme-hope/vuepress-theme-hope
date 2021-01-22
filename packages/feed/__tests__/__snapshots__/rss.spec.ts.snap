@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RSS 2.0 should generate a valid feed 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<rss version=\\"2.0\\" xmlns:atom=\\"http://www.w3.org/2005/Atom\\" xmlns:content=\\"http://purl.org/rss/1.0/modules/content/\\" xmlns:dc=\\"http://purl.org/dc/elements/1.1/\\">
+  <channel>
+    <atom:link href=\\"http://example.com/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+    <title>Feed Title</title>
+    <link>http://example.com/</link>
+    <description>This is my personnal feed!</description>
+    <language>en</language>
+    <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
+    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <copyright>All rights reserved 2013, John Doe</copyright>
+    <ttl>60</ttl>
+    <image>
+      <title>Feed Title</title>
+      <url>http://example.com/image.png</url>
+      <link>http://example.com/</link>
+    </image>
+    <category>Technology</category>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world?link=sanitized&amp;value=2</link>
+      <guid>https://example.com/hello-world?id=this&amp;that=true</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+  </channel>
+</rss>"
+`;
+
+exports[`RSS 2.0 should generate a valid feed with audio 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<rss version=\\"2.0\\" xmlns:atom=\\"http://www.w3.org/2005/Atom\\" xmlns:content=\\"http://purl.org/rss/1.0/modules/content/\\" xmlns:dc=\\"http://purl.org/dc/elements/1.1/\\">
+  <channel>
+    <atom:link href=\\"http://example.com/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+    <title>Feed Title</title>
+    <link>http://example.com/</link>
+    <description>This is my personnal feed!</description>
+    <language>en</language>
+    <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
+    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <copyright>All rights reserved 2013, John Doe</copyright>
+    <ttl>60</ttl>
+    <image>
+      <title>Feed Title</title>
+      <url>http://example.com/image.png</url>
+      <link>http://example.com/</link>
+    </image>
+    <category>Technology</category>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world?link=sanitized&amp;value=2</link>
+      <guid>https://example.com/hello-world?id=this&amp;that=true</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world2</link>
+      <guid isPermaLink=\\"false\\">419c523a-28f4-489c-877e-9604be64c001</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world2</link>
+      <guid isPermaLink=\\"false\\">419c523a-28f4-489c-877e-9604be64c001</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world3</link>
+      <guid>https://example.com/hello-world3</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.mp3\\" length=\\"12665\\" type=\\"audio/mpeg\\"/>
+    </item>
+  </channel>
+</rss>"
+`;
+
+exports[`RSS 2.0 should generate a valid feed with enclosure 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<rss version=\\"2.0\\" xmlns:atom=\\"http://www.w3.org/2005/Atom\\" xmlns:content=\\"http://purl.org/rss/1.0/modules/content/\\" xmlns:dc=\\"http://purl.org/dc/elements/1.1/\\">
+  <channel>
+    <atom:link href=\\"http://example.com/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+    <title>Feed Title</title>
+    <link>http://example.com/</link>
+    <description>This is my personnal feed!</description>
+    <language>en</language>
+    <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
+    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <copyright>All rights reserved 2013, John Doe</copyright>
+    <ttl>60</ttl>
+    <image>
+      <title>Feed Title</title>
+      <url>http://example.com/image.png</url>
+      <link>http://example.com/</link>
+    </image>
+    <category>Technology</category>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world?link=sanitized&amp;value=2</link>
+      <guid>https://example.com/hello-world?id=this&amp;that=true</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world2</link>
+      <guid isPermaLink=\\"false\\">419c523a-28f4-489c-877e-9604be64c001</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world2</link>
+      <guid isPermaLink=\\"false\\">419c523a-28f4-489c-877e-9604be64c001</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+  </channel>
+</rss>"
+`;
+
+exports[`RSS 2.0 should generate a valid feed with image properties 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<rss version=\\"2.0\\" xmlns:atom=\\"http://www.w3.org/2005/Atom\\" xmlns:content=\\"http://purl.org/rss/1.0/modules/content/\\" xmlns:dc=\\"http://purl.org/dc/elements/1.1/\\">
+  <channel>
+    <atom:link href=\\"http://example.com/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+    <title>Feed Title</title>
+    <link>http://example.com/</link>
+    <description>This is my personnal feed!</description>
+    <language>en</language>
+    <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
+    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <copyright>All rights reserved 2013, John Doe</copyright>
+    <ttl>60</ttl>
+    <image>
+      <title>Feed Title</title>
+      <url>http://example.com/image.png</url>
+      <link>http://example.com/</link>
+    </image>
+    <category>Technology</category>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world?link=sanitized&amp;value=2</link>
+      <guid>https://example.com/hello-world?id=this&amp;that=true</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world2</link>
+      <guid isPermaLink=\\"false\\">419c523a-28f4-489c-877e-9604be64c001</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.jpg\\" length=\\"12665\\" type=\\"image/jpeg\\"/>
+    </item>
+  </channel>
+</rss>"
+`;
+
+exports[`RSS 2.0 should generate a valid feed with video 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<rss version=\\"2.0\\" xmlns:atom=\\"http://www.w3.org/2005/Atom\\" xmlns:content=\\"http://purl.org/rss/1.0/modules/content/\\" xmlns:dc=\\"http://purl.org/dc/elements/1.1/\\">
+  <channel>
+    <atom:link href=\\"http://example.com/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+    <title>Feed Title</title>
+    <link>http://example.com/</link>
+    <description>This is my personnal feed!</description>
+    <language>en</language>
+    <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
+    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <copyright>All rights reserved 2013, John Doe</copyright>
+    <ttl>60</ttl>
+    <image>
+      <title>Feed Title</title>
+      <url>http://example.com/image.png</url>
+      <link>http://example.com/</link>
+    </image>
+    <item>
+      <title>Hello World</title>
+      <link>https://example.com/hello-world4</link>
+      <guid isPermaLink=\\"false\\">419c523a-28f4-489c-877e-9604be64c005</guid>
+      <source url=\\"http://example.com/rss.xml\\">Hello World</source>
+      <description>This is an article about Hello World.</description>
+      <author>janedoe@example.com (Jane Doe)</author>
+      <category>Grateful Dead</category>
+      <category domain=\\"http://www.fool.com/cusips\\">MSFT</category>
+      <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Content of my item]]></content:encoded>
+      <enclosure url=\\"https://example.com/hello-world.mp4\\" type=\\"video/mp4\\"/>
+    </item>
+  </channel>
+</rss>"
+`;

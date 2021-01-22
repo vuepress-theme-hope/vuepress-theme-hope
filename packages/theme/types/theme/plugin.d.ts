@@ -1,5 +1,6 @@
 import { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
+import { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
 import { LastUpdateOptions } from "@mr-hope/vuepress-plugin-last-update";
 import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
@@ -7,7 +8,6 @@ import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
 import { NamedChunksPluginOptions } from "vuepress-plugin-named-chunks";
-
 /**
  * 版权设置
  *
@@ -78,6 +78,13 @@ interface HopeThemePluginConfig {
    * Copyright Configuration
    */
   copyright?: HopeCopyrightConfig;
+
+  /**
+   * Feed 设置
+   *
+   * Feed Configuration
+   */
+  feed?: FeedOptions | false;
 
   /**
    * Markdown 增强设置

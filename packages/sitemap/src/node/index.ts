@@ -16,10 +16,8 @@ export = (options: SitemapOptions, context: Context): PluginOptionAPI => {
       if (hostname) {
         const option =
           Object.keys(options).length > 0
-            ? { ...options, hostname: hostname }
-            : themeConfig.sitemap
-            ? { ...themeConfig.sitemap, hostname: hostname }
-            : { hostname: hostname };
+            ? { ...options, hostname }
+            : { ...((themeConfig.sitemap as SitemapOptions) || {}), hostname };
 
         await genSiteMap(option, context);
       } else
