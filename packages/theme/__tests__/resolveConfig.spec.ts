@@ -4,67 +4,84 @@ import { config } from "../";
 
 describe("Test resolveTheme function", () => {
   const vuepressConfig: HopeVuepressConfig = {
-    /** 网站标题 */
     title: "vuepress-theme-hope",
+    description: "A vuepress theme with tons of features✨",
 
-    /** 网站描述 */
-    description: "一个具有强大功能的 vuepress 主题✨",
+    dest: "./dist",
+
+    head: [
+      [
+        "script",
+        {
+          src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
+        },
+      ],
+      [
+        "script",
+        {
+          src:
+            "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+        },
+      ],
+      ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
+      [
+        "script",
+        { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
+      ],
+    ],
+
+    extraWatchFiles: [".vuepress/navBar.js", ".vuepress/sideBar.js"],
 
     locales: {
-      "/en/": {
-        /** 网站在该语言下的标题 */
+      "/zh/": {
         title: "vuepress-theme-hope",
-
-        /** 网站在该语言下的描述 */
-        description: "A vuepress theme with tons of features✨",
+        description: "一个具有强大功能的 vuepress 主题✨",
       },
     },
 
-    /** 主题配置 */
     themeConfig: {
-      /** 网站的logo */
       logo: "/logo.svg",
-
-      /** 头部导航栏的配置 */
       nav: [
-        { text: "主页", link: "/", icon: "home" },
-        { text: "指南", link: "/guide/", icon: "creative" },
-        { text: "配置", link: "/config/", icon: "code" },
+        { text: "Home", link: "/en/", icon: "home" },
+        { text: "Guide", link: "/en/guide/", icon: "creative" },
+        { text: "Config", link: "/en/config/", icon: "code" },
         {
-          text: "基础",
+          text: "Basic",
           icon: "info",
           items: [
-            { text: "Markdown", link: "/basic/markdown/", icon: "markdown" },
-            { text: "Vuepress", link: "/basic/vuepress/", icon: "vue" },
+            {
+              text: "Markdown",
+              link: "/en/basic/markdown/",
+              icon: "markdown",
+            },
+            { text: "Vuepress", link: "/en/basic/vuepress/", icon: "vue" },
           ],
         },
         {
-          text: "更新日志",
+          text: "Changelog",
           link:
             "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
         },
       ],
-
-      /** 侧边栏配置 */
       sidebar: {
         "/guide/": [
           {
-            title: "快速上手",
+            title: "Get Started",
             icon: "creative",
             children: ["", "install"],
           },
           {
-            title: "外观",
+            title: "Outlook",
             icon: "skin",
             children: ["navbar", "sidebar", "breadcrumb", "page"],
           },
           {
-            title: "新增功能",
+            title: "New Feature",
             icon: "skin",
             children: ["themecolor", "fullscreen", "comment", "component"],
           },
           {
-            title: "Markdown 增强",
+            title: "Markdown Enhance",
             icon: "markdown",
             prefix: "markdown/",
             children: ["", "sup-sub", "footnote", "tex", "flowchart"],
@@ -77,7 +94,7 @@ describe("Test resolveTheme function", () => {
           "page",
           "stylus",
           {
-            title: "插件配置",
+            title: "Plugin Config",
             prefix: "plugin/",
             icon: "extension",
             children: ["", "copyright", "medium-zoom", "pwa"],
@@ -110,86 +127,65 @@ describe("Test resolveTheme function", () => {
 
         "/": ["", "guide/", "config/", "basic/"],
       },
-
-      /** 默认作者 */
       author: "Mr.Hope",
-
-      /** 图标前缀 */
       iconPrefix: "vuepress-",
 
-      /** Markdown设置 */
-      mdEnhance: {
-        enableAll: true,
-      },
-
-      /** 评论设置 */
-      comment: {
-        type: "valine",
-        appId: "ENQC8OAX6E76OUB07ODFfUHm-gzGzoHsz",
-        appKey: "2JK4ezJDqxPTF7JLn5Wk6i8y",
-      },
-
-      /** 语言设置 */
       locales: {
-        /** 英文设置 */
-        "/en/": {
-          /** 该语言下头部导航栏的配置 */
+        "/zh/": {
           nav: [
-            { text: "Home", link: "/en/", icon: "home" },
-            { text: "Guide", link: "/en/guide/", icon: "creative" },
-            { text: "Config", link: "/en/config/", icon: "code" },
+            { text: "主页", link: "/", icon: "home" },
+            { text: "指南", link: "/guide/", icon: "creative" },
+            { text: "配置", link: "/config/", icon: "code" },
             {
-              text: "Basic",
+              text: "基础",
               icon: "info",
               items: [
                 {
                   text: "Markdown",
-                  link: "/en/basic/markdown/",
+                  link: "/basic/markdown/",
                   icon: "markdown",
                 },
-                { text: "Vuepress", link: "/en/basic/vuepress/", icon: "vue" },
+                { text: "Vuepress", link: "/basic/vuepress/", icon: "vue" },
               ],
             },
             {
-              text: "Changelog",
+              text: "更新日志",
               link:
                 "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
             },
           ],
-
-          /** 网站在该语言下的侧边栏 */
           sidebar: {
-            "/en/guide/": [
+            "/zh/guide/": [
               {
-                title: "Get Started",
+                title: "快速上手",
                 icon: "creative",
                 children: ["", "install"],
               },
               {
-                title: "Outlook",
+                title: "外观",
                 icon: "skin",
                 children: ["navbar", "sidebar", "breadcrumb", "page"],
               },
               {
-                title: "New Feature",
+                title: "新增功能",
                 icon: "skin",
                 children: ["themecolor", "fullscreen", "comment", "component"],
               },
               {
-                title: "Markdown Enhance",
+                title: "Markdown 增强",
                 icon: "markdown",
                 prefix: "markdown/",
                 children: ["", "sup-sub", "footnote", "tex", "flowchart"],
               },
             ],
 
-            "/en/config/": [
+            "/zh/config/": [
               "",
               "themeConfig",
               "page",
               "stylus",
               {
-                title: "Plugin Config",
+                title: "插件配置",
                 prefix: "plugin/",
                 icon: "extension",
                 children: ["", "copyright", "medium-zoom", "pwa"],
@@ -197,7 +193,7 @@ describe("Test resolveTheme function", () => {
             ],
 
             // fallback
-            "/en/basic/": [
+            "/zh/basic/": [
               {
                 title: "Markdown",
                 prefix: "markdown/",
@@ -220,29 +216,135 @@ describe("Test resolveTheme function", () => {
               },
             ],
 
-            "/en/": ["", "guide/", "config/", "basic/"],
+            "/zh/": ["", "guide/", "config/", "basic/"],
           },
         },
       },
 
-      /** 搜索设置 */
+      mdEnhance: {
+        enableAll: true,
+      },
+
+      comment: {
+        type: "valine",
+        appId: "2vSLKb0SqFKKWEgrOPGy3sp1-gzGzoHsz",
+        appKey: "vma8Ewk61WeNkI81O3CGpT2i",
+      },
+
+      footer: {
+        display: true,
+        copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+      },
+      pwa: {
+        favicon: "/favicon.ico",
+        themeColor: "#46bd87",
+        cachePic: true,
+        apple: {
+          icon: "/assets/icon/apple-icon-152.png",
+          statusBarColor: "black",
+        },
+        msTile: {
+          image: "/assets/icon/ms-icon-144.png",
+          color: "#ffffff",
+        },
+        manifest: {
+          icons: [
+            {
+              src: "/assets/icon/chrome-mask-512.png",
+              sizes: "512x512",
+              purpose: "maskable",
+              type: "image/png",
+            },
+            {
+              src: "/assets/icon/chrome-mask-192.png",
+              sizes: "192x192",
+              purpose: "maskable",
+              type: "image/png",
+            },
+            {
+              src: "/assets/icon/chrome-512.png",
+              sizes: "512x512",
+              type: "image/png",
+            },
+            {
+              src: "/assets/icon/chrome-192.png",
+              sizes: "192x192",
+              type: "image/png",
+            },
+          ],
+          shortcuts: [
+            {
+              name: "Guide",
+              short_name: "Guide",
+              url: "/guide/",
+              icons: [
+                {
+                  src: "/assets/icon/guide-maskable.png",
+                  sizes: "192x192",
+                  purpose: "maskable",
+                  type: "image/png",
+                },
+                {
+                  src: "/assets/icon/guide-monochrome.png",
+                  sizes: "192x192",
+                  purpose: "monochrome",
+                  type: "image/png",
+                },
+              ],
+            },
+            {
+              name: "Config",
+              short_name: "Config",
+              url: "/config/",
+              icons: [
+                {
+                  src: "/assets/icon/config-maskable.png",
+                  sizes: "192x192",
+                  purpose: "maskable",
+                  type: "image/png",
+                },
+                {
+                  src: "/assets/icon/config-monochrome.png",
+                  sizes: "192x192",
+                  purpose: "monochrome",
+                  type: "image/png",
+                },
+              ],
+            },
+            {
+              name: "Basic",
+              short_name: "Basic",
+              url: "/basic/",
+              icons: [
+                {
+                  src: "/assets/icon/basic-maskable.png",
+                  sizes: "192x192",
+                  purpose: "maskable",
+                  type: "image/png",
+                },
+                {
+                  src: "/assets/icon/basic-monochrome.png",
+                  sizes: "192x192",
+                  purpose: "monochrome",
+                  type: "image/png",
+                },
+              ],
+            },
+          ],
+        },
+      },
+
       algolia: {
         apiKey: "4deb442097fb6a05638adf10ef86e222",
         indexName: "mrhope_vuepress-theme",
       },
 
-      /** repo地址 */
+      hostname: "https://vuepress-theme.mrhope.site/",
+
       repo: "https://github.com/mister-hope/vuepress-theme-hope",
-
-      /** 文档目录 */
-      docsDir: "docs/theme",
+      repoDisplay: false,
+      docsDir: "docs/theme/src",
     },
-
-    extraWatchFiles: [
-      ".vuepress/config/navBar.js",
-      ".vuepress/config/sideBar.js",
-      ".vuepress/config/theme.js",
-    ],
   };
 
   const resolvedConfig = config(vuepressConfig);
@@ -250,8 +352,8 @@ describe("Test resolveTheme function", () => {
   it("should resolve locates for vuepress", () => {
     expect(resolvedConfig.locales).toHaveProperty("/");
     expect(resolvedConfig.locales!["/"]).toHaveProperty("lang");
-    expect(resolvedConfig.locales).toHaveProperty("/en/");
-    expect(resolvedConfig.locales!["/en/"]).toHaveProperty("lang");
+    expect(resolvedConfig.locales).toHaveProperty("/zh/");
+    expect(resolvedConfig.locales!["/zh/"]).toHaveProperty("lang");
   });
 
   it("To have base option", () => {

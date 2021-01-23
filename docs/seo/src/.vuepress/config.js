@@ -13,9 +13,7 @@ module.exports = config({
     },
   },
 
-  /** 主题配置 */
   themeConfig: {
-    /** 网站的logo */
     logo: "/logo.svg",
 
     author: "Mr.Hope",
