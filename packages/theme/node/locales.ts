@@ -1,7 +1,7 @@
-import { ResolvedHopeVuepressConfig } from "../types";
+import { ResolvedHopeVuePressConfig } from "../types";
 import { path2lang } from "@mr-hope/vuepress-utils";
 
-export const resolveLocales = (config: ResolvedHopeVuepressConfig): void => {
+export const resolveLocales = (config: ResolvedHopeVuePressConfig): void => {
   // ensure locales config
   if (!config.locales) config.locales = {};
 

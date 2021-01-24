@@ -1,4 +1,4 @@
-import { HopeVuepressConfig, ResolvedHopeVuepressConfig } from "../types";
+import { HopeVuePressConfig, ResolvedHopeVuePressConfig } from "../types";
 import { deepAssignReverse } from "@mr-hope/vuepress-utils";
 import defaultConfig from "./defaultConfig";
 import { resolveLocales } from "./locales";
@@ -6,12 +6,12 @@ import { resolveThemeConfig } from "./themeConfig";
 import { head } from "@mr-hope/vuepress-plugin-pwa";
 
 export const config = (
-  config: HopeVuepressConfig
-): ResolvedHopeVuepressConfig => {
+  config: HopeVuePressConfig
+): ResolvedHopeVuePressConfig => {
   // merge default config
   deepAssignReverse(defaultConfig, config);
 
-  const resolvedConfig = config as ResolvedHopeVuepressConfig;
+  const resolvedConfig = config as ResolvedHopeVuePressConfig;
 
   resolveThemeConfig(resolvedConfig.themeConfig);
   resolveLocales(resolvedConfig);

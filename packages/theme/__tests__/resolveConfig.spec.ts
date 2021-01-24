@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { HopeVuepressConfig } from "../types";
+import { HopeVuePressConfig } from "../types";
 import { config } from "../";
 
 describe("Test resolveTheme function", () => {
-  const vuepressConfig: HopeVuepressConfig = {
+  const vuepressConfig: HopeVuePressConfig = {
     title: "vuepress-theme-hope",
     description: "A vuepress theme with tons of features✨",
 
@@ -54,7 +54,7 @@ describe("Test resolveTheme function", () => {
               link: "/en/basic/markdown/",
               icon: "markdown",
             },
-            { text: "Vuepress", link: "/en/basic/vuepress/", icon: "vue" },
+            { text: "VuePress", link: "/en/basic/vuepress/", icon: "vue" },
           ],
         },
         {
@@ -110,7 +110,7 @@ describe("Test resolveTheme function", () => {
             children: ["", "demo", "emoji"],
           },
           {
-            title: "Vuepress",
+            title: "VuePress",
             prefix: "vuepress/",
             icon: "vue",
             children: [
@@ -145,7 +145,7 @@ describe("Test resolveTheme function", () => {
                   link: "/basic/markdown/",
                   icon: "markdown",
                 },
-                { text: "Vuepress", link: "/basic/vuepress/", icon: "vue" },
+                { text: "VuePress", link: "/basic/vuepress/", icon: "vue" },
               ],
             },
             {
@@ -201,7 +201,7 @@ describe("Test resolveTheme function", () => {
                 children: ["", "demo", "emoji"],
               },
               {
-                title: "Vuepress",
+                title: "VuePress",
                 prefix: "vuepress/",
                 icon: "vue",
                 children: [

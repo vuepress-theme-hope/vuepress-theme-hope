@@ -6,13 +6,13 @@ export * from "./plugin";
 export * from "./theme";
 
 /** vuepress-theme-hope 项目配置 */
-export interface HopeVuepressConfig extends SiteConfig {
+export interface HopeVuePressConfig extends SiteConfig {
   /** 自定义主题的配置 */
   themeConfig: HopeThemeConfig;
 }
 
 /** 处理过的 vuepress-theme-hope 项目配置 */
-export interface ResolvedHopeVuepressConfig extends HopeVuepressConfig {
+export interface ResolvedHopeVuePressConfig extends HopeVuePressConfig {
   /** 使用的自定义主题 */
   theme: "hope";
   /** 自定义主题的配置 */
