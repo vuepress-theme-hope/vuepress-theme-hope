@@ -2,6 +2,18 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.9.0-rc.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.4...v1.9.0-rc.0) (2021-01-24)
+
+### Bug Fixes
+
+- **theme:** fix layout issue ([2088cfe](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2088cfe0c14dcc2970a5aa43d76df8dded85433c))
+
+### Features
+
+- add feed plugin ([17c7eba](https://github.com/Mister-Hope/vuepress-theme-hope/commit/17c7eba3c8d08e50d5808303f4244d54b4c11230))
+- **theme:** update Home features layout ([aa521c1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/aa521c1b31c7b40b477d885884f627f2b0f2c0f6))
+- **theme:** update nav item margin ([adb2bdf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/adb2bdf4655d1aee27c856eeeafc96fe5138fc11))
+
 ## [1.8.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.3...v1.8.4) (2021-01-21)
 
 ### Bug Fixes
