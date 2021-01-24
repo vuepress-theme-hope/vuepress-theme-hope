@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-feed",
-  "version": "1.8.4",
+  "version": "1.9.0-rc.0",
   "description": "Feed plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
