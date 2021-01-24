@@ -1,9 +1,9 @@
-import { resolve } from "path";
+import { black, blue, cyan } from "chalk";
 import { readFile, statSync, writeFile } from "fs-extra";
-import { black, blue } from "chalk";
+import { resolve } from "path";
 import WorkboxBuild = require("workbox-build");
-import { PWAOptions } from "../types";
-import { Context } from "@mr-hope/vuepress-types";
+import type { Context } from "@mr-hope/vuepress-types";
+import type { PWAOptions } from "../types";
 
 const imageFilter = (
   outDir: string,
@@ -65,17 +65,21 @@ export const genServiceWorker = async (
     console.log(
       blue("PWA:"),
       black.bgGreen("Success"),
-      `Generated service worker, which will precache ${count} files, totaling ${(
-        size /
-        1024 /
-        1024
-      ).toFixed(2)} Mb.\n${
-        warnings.length > 0 ? `Warnings: ${warnings.join("\n")}:""\n` : ""
-      }`
+      `Generated service worker, which will precache ${cyan(
+        `${count} files`
+      )}, totaling ${cyan(`${(size / 1024 / 1024).toFixed(2)} Mb`)}.`
     );
+
+    if (warnings.length)
+      console.log(
+        blue("PWA:"),
+        black.bgYellow("Warning"),
+        `${warnings.map((warning) => `  · ${warning}`).join("\n")}`
+      );
 
     if (size > 104857600)
       console.log(
+        blue("PWA:"),
         black.bgRed("Error"),
         "Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n",
         blue(
@@ -84,6 +88,7 @@ export const genServiceWorker = async (
       );
     else if (size > 52428800)
       console.log(
+        blue("PWA:"),
         black.bgYellow("Warning"),
         "\nCache Size is larger than 50MB, which will not be registerd on Safari.\n",
         blue(

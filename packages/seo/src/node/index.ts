@@ -1,6 +1,6 @@
-import { black, blue } from "chalk";
+import { black, blue, cyan } from "chalk";
 import { readFile, existsSync, writeFile } from "fs-extra";
-import { resolve } from "path";
+import { relative, resolve } from "path";
 import { generateSeo } from "./genSeo";
 import { appendMeta } from "./meta";
 
@@ -69,26 +69,30 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
         "./.vuepress/public/robots.txt"
       );
 
-      let userRobotsTxT = existsSync(useRobotsTxtPath)
+      let userRobotsTxt = existsSync(useRobotsTxtPath)
         ? await readFile(useRobotsTxtPath, { encoding: "utf8" })
         : "";
 
-      if (userRobotsTxT && !userRobotsTxT.includes("User-agent"))
+      if (userRobotsTxt && !userRobotsTxt.includes("User-agent"))
         console.log(
           blue("SEO:"),
           black.bgRed("error"),
           "robots.txt seems invalid!"
         );
-      else userRobotsTxT += "\nUser-agent:*\nDisallow:\n";
+      else userRobotsTxt += "\nUser-agent:*\nDisallow:\n";
 
-      await writeFile(resolve(context.outDir, "./robots.txt"), userRobotsTxT, {
+      const outputRobotsTxtPath = resolve(context.outDir, "./robots.txt");
+
+      await writeFile(outputRobotsTxtPath, userRobotsTxt, {
         flag: "w",
       });
 
       console.log(
         blue("SEO:"),
         black.bgGreen("Success"),
-        "Generated robots.txt"
+        `${cyan("robots.txt")} generated and saved to ${cyan(
+          relative(context.cwd, context.outDir)
+        )}`
       );
     },
 

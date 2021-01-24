@@ -25,7 +25,7 @@ export = (options: SitemapOptions, context: Context): PluginOptionAPI => {
       } else
         console.log(
           blue("Sitemap"),
-          black.bgRed("error"),
+          black.bgRed("Error"),
           'Not generating sitemap because required "hostname" option doesn\'t exist'
         );
     },

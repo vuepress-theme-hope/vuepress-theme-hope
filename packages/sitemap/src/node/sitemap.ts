@@ -1,7 +1,7 @@
-import { black, blue } from "chalk";
+import { black, blue, cyan } from "chalk";
 import { createWriteStream, readFile, existsSync, writeFile } from "fs-extra";
 
-import { resolve } from "path";
+import { relative, resolve } from "path";
 import { SitemapStream } from "sitemap";
 
 import { Context, PageComputed, SiteData } from "@mr-hope/vuepress-types";
@@ -114,7 +114,11 @@ export const genSiteMap = async (
   options: SitemapOptions,
   context: Context
 ): Promise<void> => {
-  console.log(blue("Sitemap"), black.bgYellow("wait"), "Generating sitemap...");
+  console.log(
+    blue("Sitemap:"),
+    black.bgYellow("wait"),
+    "Generating sitemap..."
+  );
 
   const siteData = context.getSiteData();
 
@@ -146,14 +150,20 @@ export const genSiteMap = async (
 
   urls.forEach((item) => sitemap.write(item));
   sitemap.end();
-  console.log(blue("Sitemap"), black.bgGreen("success"), "Generated sitemap");
+  console.log(
+    blue("Sitemap:"),
+    black.bgGreen("Success"),
+    `Sitemap generated and saved to ${cyan(
+      relative(context.cwd, sitemapXMLPath)
+    )}`
+  );
 
   const robotTxtPath = resolve(context.outDir, "robots.txt");
-  const robotsTxT = existsSync(robotTxtPath)
+  const robotsTxt = existsSync(robotTxtPath)
     ? await readFile(robotTxtPath, { encoding: "utf8" })
     : "";
 
-  const newRobotsTxtContent = `${robotsTxT.replace(
+  const newRobotsTxtContent = `${robotsTxt.replace(
     /^Sitemap: .*$/u,
     ""
   )}\nSitemap: ${options.hostname.replace(/\/$/u, "")}${outFile}\n`;
@@ -163,6 +173,6 @@ export const genSiteMap = async (
   console.log(
     blue("Sitemap:"),
     black.bgGreen("Success"),
-    "Appended sitemap path to robots.txt"
+    `Appended sitemap path to ${cyan("robots.txt")}`
   );
 };

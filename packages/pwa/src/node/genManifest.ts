@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { resolve } from "path";
+import { black, blue, cyan } from "chalk";
 import { existsSync, readFile, writeJSON } from "fs-extra";
-import { black, blue } from "chalk";
+import { relative, resolve } from "path";
 
-import { ManifestOption, PWAOptions } from "../types";
-import { Context } from "@mr-hope/vuepress-types";
+import type { Context } from "@mr-hope/vuepress-types";
+import type { ManifestOption, PWAOptions } from "../types";
 
 export const getManifest = async (
   options: PWAOptions,
@@ -64,15 +64,17 @@ export const genManifest = async (
     "Generating manifest.webmanifest..."
   );
 
+  const { cwd, outDir } = context;
   const manifest = await getManifest(options, context);
+  const manifestPath = resolve(outDir, "manifest.webmanifest");
 
-  await writeJSON(resolve(context.outDir, "manifest.webmanifest"), manifest, {
+  await writeJSON(manifestPath, manifest, {
     flag: "w",
   });
 
   console.log(
     blue("PWA:"),
     black.bgGreen("Success"),
-    "Generated manifest.webmanifest"
+    `Manifest generated and saved to ${cyan(relative(cwd, manifestPath))}`
   );
 };
