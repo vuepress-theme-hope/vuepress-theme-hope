@@ -19,6 +19,7 @@
     "docs/add-this:serve": "yarn workspace add-this-docs serve",
     "docs/comment:serve": "yarn workspace comment-docs serve",
     "docs/copy-code:serve": "yarn workspace copy-code-docs serve",
+    "docs/feed:serve": "yarn workspace feed-docs serve",
     "docs/last-update:serve": "yarn workspace last-update-docs serve",
     "docs/md-enhance:serve": "yarn workspace md-enhance-docs serve",
     "docs/photo-swipe:serve": "yarn workspace photo-swipe-docs serve",
