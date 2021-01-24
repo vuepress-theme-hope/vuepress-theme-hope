@@ -1,6 +1,6 @@
 ---
 home: true
-title: home
+title: Home
 icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-feed"
