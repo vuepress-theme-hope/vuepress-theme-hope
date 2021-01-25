@@ -38,6 +38,9 @@
   @media (max-width $MQMobile)
     top $navbarMobileHeight
 
+    .theme-container.hide-navbar &
+      top 0
+
   .theme-container:not(.has-navbar) &
     top 0
 
