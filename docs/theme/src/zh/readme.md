@@ -1,6 +1,6 @@
 ---
 home: true
-title: vuepress-theme-hope
+title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
