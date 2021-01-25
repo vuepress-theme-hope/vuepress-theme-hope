@@ -37,31 +37,12 @@ export default Vue.extend({
             ...userOptions,
             searchParameters: userOptions.searchParameters || {},
 
-            navigator: {
-              navigate: ({ suggestionUrl }): void => {
-                const { pathname: hitPathname } = new URL(
-                  window.location.origin + suggestionUrl
-                );
-                // Vue Router doesn’t handle same-page navigation so we use
-                // the native browser location API for anchor navigation.
-                if (this.$route.path === hitPathname)
-                  window.location.assign(
-                    window.location.origin + suggestionUrl
-                  );
-                else void this.$router.push(suggestionUrl);
-              },
-              navigateNewTab({ suggestionUrl }): void {
-                window.open(suggestionUrl);
-              },
-              navigateNewWindow({ suggestionUrl }): void {
-                window.open(suggestionUrl);
-              },
-            },
             transformItems: (items) =>
               items.map((item) => ({
                 ...item,
                 url: this.getRelativePath(item.url),
               })),
+
             hitComponent: ({ hit, children }) => ({
               type: "a",
               key: null,
@@ -87,6 +68,27 @@ export default Vue.extend({
                 children,
               },
             }),
+
+            navigator: {
+              navigate: ({ suggestionUrl }): void => {
+                const { pathname: hitPathname } = new URL(
+                  window.location.origin + suggestionUrl
+                );
+                // Vue Router doesn’t handle same-page navigation so we use
+                // the native browser location API for anchor navigation.
+                if (this.$route.path === hitPathname)
+                  window.location.assign(
+                    window.location.origin + suggestionUrl
+                  );
+                else void this.$router.push(suggestionUrl);
+              },
+              navigateNewTab({ suggestionUrl }): void {
+                window.open(suggestionUrl);
+              },
+              navigateNewWindow({ suggestionUrl }): void {
+                window.open(suggestionUrl);
+              },
+            },
           } as DocSearchProps);
         }
       );
