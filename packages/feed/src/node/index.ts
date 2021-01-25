@@ -11,7 +11,7 @@ import {
   getFeedLinks,
   getOutput,
 } from "./options";
-import { Head } from "./head";
+import { injectLinkstoHead } from "./injectHead";
 import { Generator } from "./generator";
 
 const isFeed = (frontmatter: PageFrontmatter): boolean =>
@@ -45,7 +45,7 @@ export = (options: FeedOptions, context: Context): PluginOptionAPI => {
     },
 
     ready(): void {
-      new Head(options, context).addLinks();
+      injectLinkstoHead(options, context);
     },
 
     async generated(): Promise<void> {

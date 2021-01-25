@@ -203,17 +203,17 @@ export class FeedPage {
     return {
       title,
       link,
-      ...({ description } || {}),
-      ...({ author } || {}),
-      ...({ category } || {}),
-      ...({ enclosure } || {}),
-      ...({ guid } || {}),
-      ...({ pubDate } || {}),
+      description,
+      author,
+      category,
+      enclosure,
+      guid,
+      pubDate,
       lastUpdated,
-      ...({ content } || {}),
-      ...({ image } || {}),
-      ...({ contributor } || {}),
-      ...({ copyright } || {}),
+      content,
+      image,
+      contributor,
+      copyright,
     };
   }
 }
