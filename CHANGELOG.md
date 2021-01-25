@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.9.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.9.0-rc.0...v1.9.0) (2021-01-25)
+
+### Features
+
+- **pwa:** remove head function and use hack ([f3a53ac](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f3a53ac762cf330f24aeb5833fed58ffeccb641c))
+
 ## [1.9.0-rc.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.8.4...v1.9.0-rc.0) (2021-01-24)
 
 ### Bug Fixes
