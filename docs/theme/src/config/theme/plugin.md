@@ -255,6 +255,30 @@ Whether to prohibit copying
 
 Whether to prohibit selected text
 
+## lastUpdate
+
+> If you don’t need this feature, please set to `false`.
+
+### lastUpdate.timezone
+
+- Type: `string`
+- Required: No
+
+Current timezone, useful when you are deploying through CI
+
+> For timezone list, please see [Timezone list](https://www.zeitverschiebung.net/en/all-time-zones.html)
+
+### lastUpdate.transformer
+
+- Type: `(timestamp: number, lang: string) => string`
+- Default value: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
+
+Time conversion function for `@mr-hope/plugin-last-update`.
+
+Will use dayjs to automatically localize according to the current page language by default.
+
+Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`
+
 ## pwa <MyBadge text="Enabled by default" />
 
 Progressive Web App support
@@ -414,6 +438,14 @@ All the files larger than `maxSize` or any pictures larger than `maxPicSize` wil
 
 :::
 
+## feed <MyBadge text="Enabled by default" />
+
+Feed generation settings, no configuration is needed by default.
+
+> For details, see [Feed plugin config][feed-config]
+>
+> If you don’t need this feature, please set to `false`.
+
 ## seo <MyBadge text="Enabled by default" />
 
 SEO Enhance settings, no configuration is needed by default.
@@ -451,30 +483,6 @@ Options for photo preview plugin, set to `false` to disable this plugin.
 
 > By default no more configuration is needed, and for details see [PhotoSwipe Plugin Config][photo-swipe-config]
 
-## lastUpdate
-
-> If you don’t need this feature, please set to `false`.
-
-### lastUpdate.timezone
-
-- Type: `string`
-- Required: No
-
-Current timezone, useful when you are deploying through CI
-
-> For timezone list, please see [Timezone list](https://www.zeitverschiebung.net/en/all-time-zones.html)
-
-### lastUpdate.transformer
-
-- Type: `(timestamp: number, lang: string) => string`
-- Default value: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
-
-Time conversion function for `@mr-hope/plugin-last-update`.
-
-Will use dayjs to automatically localize according to the current page language by default.
-
-Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`
-
 ## namedChunks
 
 Options for `vuepress-named-chunks`, set to `false` to disable this plugin.
@@ -488,5 +496,6 @@ By default, all page chunks will be named with page title, and all the layout ch
 [copy-code]: https://vuepress-copy-code.mrhope.site
 [photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/config/
 [pwa-config]: https://vuepress-pwa.mrhope.site/config/
+[feed-config]: https://vuepress-feed.mrhope.site/config/
 [seo-config]: https://vuepress-seo.mrhope.site/#plugin-options
 [sitemap-config]: https://vuepress-sitemap.mrhope.site/#plugin-options

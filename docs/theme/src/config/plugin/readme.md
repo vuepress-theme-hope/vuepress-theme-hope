@@ -21,6 +21,8 @@ tags:
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
 
+- [@mr-hope/vuepress-plugin-feed][feed]: Feed generation support
+
 - [@mr-hope/vuepress-plugin-last-update][last-update]: Last update time
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: Powerful PWA support
@@ -62,6 +64,7 @@ tags:
 [add-this]: https://vuepress-add-this.mrhope.site
 [comment]: https://vuepress-comment.mrhope.site
 [copy-code]: https://vuepress-copy-code.mrhope.site
+[feed]: https://vuepress-feed.mrhope.site
 [last-update]: https://vuepress-last-update.mrhope.site
 [md-enhance]: https://vuepress-md-enhance.mrhope.site
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site

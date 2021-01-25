@@ -55,7 +55,7 @@ tags:
 1. 在 `.vuepress/styles` 的 `index.styl` 中导入链接。例如:
 
    ```styl
-   @import "//at.alicdn.com/t/font_1446717_ao07m76h5t.css";
+   @import "//at.alicdn.com/t/font_1446717_4irvtfrarcx.css";
    ```
 
 ::: tip

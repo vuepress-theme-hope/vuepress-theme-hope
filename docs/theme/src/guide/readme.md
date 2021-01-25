@@ -63,6 +63,8 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 #### More powerful functions
 
+- [Feed generation](feature/feed.md)
+
 - [SEO enhancement](feature/seo-sitemap.md#SEO)
 
 - [Sitemap generation](feature/seo-sitemap.md#Sitemap)
@@ -110,6 +112,8 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
 
+- [@mr-hope/vuepress-plugin-feed][feed]: Feed support
+
 - [@mr-hope/vuepress-plugin-last-update][last-update]: Last update time
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: PWA support
@@ -129,6 +133,7 @@ The theme also includes the following plugins, you can use them in other themes 
 [add-this]: https://vuepress-add-this.mrhope.site
 [comment]: https://vuepress-comment.mrhope.site
 [copy-code]: https://vuepress-copy-code.mrhope.site
+[feed]: https://vuepress-feed.mrhope.site
 [last-update]: https://vuepress-last-update.mrhope.site
 [md-enhance]: https://vuepress-md-enhance.mrhope.site
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site

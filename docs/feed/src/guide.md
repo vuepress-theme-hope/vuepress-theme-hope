@@ -75,13 +75,13 @@ All pages whose `frontmatter.article` is not `false` and are not the homepage wi
 - `page.excerpt`: any content before `<!-- more -->` , used as the alternative description of the article
 - The rendered page content: used to describe the content of the feed item
 
-### customize
+### Customize
 
 You can control the generation of feed items for specific articles by configuring the feed options in frontmatter.
 
 If you want to remove a specific page from the feed, you can set `feed.enable` to `false` in the frontmatter of the page.
 
-Of course, you can also add content directly to the feed plugin via `frontmatter.feed`. The supported options are as follows:
+You can also add content directly to the feed plugin via `frontmatter.feed`. The supported options are as follows:
 
 - `feed.title`: Override default article title for feed items
 - `feed.description`: Override the default article description for the feed item

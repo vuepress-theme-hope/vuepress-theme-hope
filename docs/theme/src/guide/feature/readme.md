@@ -26,6 +26,8 @@ tags:
 
 - [**New component**](component.md)
 
+- [**Feed Support**](feed.md)
+
 - [**Seo and Sitemap**](seo-sitemap.md)
 
 - [**Icon support**](icon.md)

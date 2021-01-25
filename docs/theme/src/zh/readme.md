@@ -46,6 +46,10 @@ features:
     details: 主题可以自动为你的网站生成 Sitemap，并将最终生成的网页针对搜索引擎进行优化。
     link: /zh/guide/feature/seo-sitemap/
 
+  - title: Feed 支持 📡
+    details: 你可以生成你的 Feed，并通知你的用户订阅它。
+    link: /zh/guide/feature/feed/
+
   - title: PWA 支持 📲
     details: 内置的 PWA 插件会让你的网站更像一个 APP。
     link: /zh/guide/feature/pwa/

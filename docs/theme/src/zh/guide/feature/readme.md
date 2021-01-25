@@ -26,6 +26,8 @@ tags:
 
 - [**新增组件**](component.md)
 
+- [**Feed 支持**](feed.md)
+
 - [**Seo 和 Sitemap 支持**](seo-sitemap.md)
 
 - [**图标支持**](icon.md)

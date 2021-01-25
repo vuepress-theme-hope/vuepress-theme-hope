@@ -231,7 +231,7 @@ The identifier of the feed item, used to identify the feed item.
   - Meaning: The cover of the feed item
   - Value:
     - `frontmatter.image`
-    - If the above is not provided, fall back to the first iamge link in the page content
+    - If the above is not provided, fall back to the first non-relative image link in the page content
 
 - **enclosure**
 

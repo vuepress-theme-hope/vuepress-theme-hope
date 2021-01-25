@@ -46,6 +46,10 @@ features:
     details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
     link: /guide/feature/seo-sitemap/
 
+  - title: Feed support 📡
+    details: You can generate feed, and let users to subcribe it
+    link: /guide/feature/feed/
+
   - title: PWA support 📲
     details: The built-in PWA plugin will make your website more like an APP.
     link: /guide/feature/pwa/

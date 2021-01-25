@@ -82,6 +82,8 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 #### More powerful features
 
+- Feed generation
+
 - SEO enhancement
 
 - Sitemap generation
@@ -177,6 +179,8 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 - 复制时添加版权信息
 
 #### 更多强大功能
+
+- Feed 生成
 
 - SEO 增强
 

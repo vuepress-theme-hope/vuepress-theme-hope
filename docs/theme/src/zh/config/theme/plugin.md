@@ -255,6 +255,30 @@ React 依赖于 Babel。
 
 是否禁止选中文字
 
+## lastUpdate
+
+> 如果您不需要这个功能，请设置为 `false`。
+
+### lastUpdate.timezone
+
+- 类型: `string`
+- 必填: 否
+
+当前时区，使用 CI 部署时很有用
+
+> 详细的时区列表，详见 [时区列表](https://www.zeitverschiebung.net/cn/all-time-zones.html)
+
+### lastUpdate.transformer
+
+- 类型: `(timestamp: number, lang: string) => string`
+- 默认值: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
+
+`@mr-hope/plugin-last-update` 的时间转换函数。
+
+默认情况下，会使用 dayjs 自动根据当前页面语言进行本地化。
+
+如: `2020年5月8日 16:05` `May 8, 2020 16:05`
+
 ## pwa <MyBadge text="默认启用" />
 
 渐进式网络应用程序支持
@@ -414,6 +438,14 @@ Safari 图标
 
 :::
 
+## feed <MyBadge text="默认启用" />
+
+Feed 生成，默认情况下无需任何配置。
+
+> 插件配置请参见 [Feed 插件配置][feed-config]
+>
+> 如果您不需要这个功能，请设置为 `false`。
+
 ## seo <MyBadge text="默认启用" />
 
 搜索引擎增强，默认情况下无需任何配置。
@@ -455,30 +487,6 @@ AddThis 的 pubid
 >
 > 有关详细信息，请参见 [PhotoSwipe 插件配置][photo-swipe-config]]
 
-## lastUpdate
-
-> 如果您不需要这个功能，请设置为 `false`。
-
-### lastUpdate.timezone
-
-- 类型: `string`
-- 必填: 否
-
-当前时区，使用 CI 部署时很有用
-
-> 详细的时区列表，详见 [时区列表](https://www.zeitverschiebung.net/cn/all-time-zones.html)
-
-### lastUpdate.transformer
-
-- 类型: `(timestamp: number, lang: string) => string`
-- 默认值: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
-
-`@mr-hope/plugin-last-update` 的时间转换函数。
-
-默认情况下，会使用 dayjs 自动根据当前页面语言进行本地化。
-
-如: `2020年5月8日 16:05` `May 8, 2020 16:05`
-
 ## namedChunks
 
 `vuepress-named-chunks` 的选项，设置为 `false` 以禁用此插件。
@@ -491,5 +499,6 @@ AddThis 的 pubid
 [md-enhance-config]: https://vuepress-md-enhance.mrhope.site/zh/config/
 [photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/zh/config/
 [pwa-config]: https://vuepress-pwa.mrhope.site/zh/config/
+[feed-config]: https://vuepress-feed.mrhope.site/zh/config/
 [seo-config]: https://vuepress-seo.mrhope.site/zh/#插件选项
 [sitemap-config]: https://vuepress-sitemap.mrhope.site/zh/#插件选项

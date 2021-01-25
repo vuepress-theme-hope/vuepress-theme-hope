@@ -64,6 +64,8 @@ tags: intro
 
 #### 更多强大功能
 
+- [Feed 生成](feature/feed.md)
+
 - [SEO 增强](feature/seo-sitemap.md#SEO)
 
 - [Sitemap 生成](feature/seo-sitemap.md#Sitemap)
@@ -111,6 +113,8 @@ tags: intro
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: 提供一键复制代码块功能。
 
+- [@mr-hope/vuepress-plugin-feed][feed]: Feed 支持
+
 - [@mr-hope/vuepress-plugin-last-update][last-update]: 支持多语言格式的最后更新时间
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: PWA 支持
@@ -130,6 +134,7 @@ tags: intro
 [add-this]: https://vuepress-add-this.mrhope.site/zh/
 [comment]: https://vuepress-comment.mrhope.site/zh/
 [copy-code]: https://vuepress-copy-code.mrhope.site/zh/
+[feed]: https://vuepress-feed.mrhope.site/zh/
 [last-update]: https://vuepress-last-update.mrhope.site/zh/
 [md-enhance]: https://vuepress-md-enhance.mrhope.site/zh/
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site/zh/
