@@ -26,11 +26,7 @@
 
     <div
       :style="
-        linksWrapMaxWidth
-          ? {
-              'max-width': `${linksWrapMaxWidth}px`,
-            }
-          : {}
+        linksWrapMaxWidth ? { 'max-width': `${linksWrapMaxWidth}px` } : {}
       "
       class="links"
     >

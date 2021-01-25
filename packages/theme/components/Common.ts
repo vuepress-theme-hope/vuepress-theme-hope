@@ -108,15 +108,15 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
     window.addEventListener(
       "scroll",
       throttle(() => {
-        if (!this.isSidebarOpen) {
-          const distance = this.getScrollTop();
-          // scroll down
-          if (lastDistance < distance && distance > 58) this.hideNavbar = true;
-          // scroll up
-          else this.hideNavbar = false;
+        const distance = this.getScrollTop();
 
-          lastDistance = distance;
-        }
+        // scroll down
+        if (lastDistance < distance && distance > 58) {
+          if (!this.isSidebarOpen) this.hideNavbar = true;
+          // scroll up
+        } else this.hideNavbar = false;
+
+        lastDistance = distance;
       }, 300)
     );
   }
