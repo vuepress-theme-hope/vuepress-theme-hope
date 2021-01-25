@@ -1,5 +1,4 @@
 import { Langs } from "@mr-hope/vuepress-shared";
-import { HeadItem } from "@mr-hope/vuepress-types";
 import WorkboxBuild from "workbox-build";
 import { ManifestOption } from "./manifest";
 import { PWAI18NConfig } from "@mr-hope/vuepress-shared";
@@ -143,8 +142,6 @@ export interface PWAOptions {
    */
   generateSWConfig?: Partial<WorkboxBuild.GenerateSWOptions>;
 }
-
-export const head: (options: PWAOptions, head?: HeadItem[]) => HeadItem[];
 
 declare global {
   const PWA_I18N: Record<string, PWAI18NConfig>;

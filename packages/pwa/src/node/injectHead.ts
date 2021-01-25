@@ -1,7 +1,7 @@
 import { HeadItem } from "@mr-hope/vuepress-types";
 import { PWAOptions } from "../types";
 
-export const head = (
+export const injectLinkstoHead = (
   options: PWAOptions,
   head: HeadItem[] = []
 ): HeadItem[] => {

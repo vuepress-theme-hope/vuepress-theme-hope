@@ -1,6 +1,6 @@
 import { i18n, lang2path } from "@mr-hope/vuepress-utils";
 import { resolve } from "path";
-import { head } from "./head";
+import { injectLinkstoHead } from "./injectHead";
 import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
 
@@ -41,6 +41,13 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
       });
     },
 
+    ready(): void {
+      context.siteConfig.head = injectLinkstoHead(
+        pwaOption,
+        context.siteConfig.head
+      );
+    },
+
     async generated(): Promise<void> {
       await genManifest(pwaOption, context);
       await genServiceWorker(pwaOption, context);
@@ -53,7 +60,4 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
   return config;
 };
-
-pwaPlugin.head = head;
-
 export = pwaPlugin;

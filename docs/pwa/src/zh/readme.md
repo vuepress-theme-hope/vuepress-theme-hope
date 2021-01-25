@@ -36,28 +36,15 @@ yarn add -D @mr-hope/vuepress-plugin-pwa
 ### 使用
 
 ```js
-const { head } = require("@mr-hope/vuepress-plugin-pwa");
-
-const pwaOptions = {
-  // 你的选项
-};
-
 // .vuepress/config.js
 module.exports = {
-  head: head(pwaOptions, [
-    /*
-     * 你原始的 head 数组
-     * 如果你原来没有配置，可以忽略此参数
-     */
-  ]),
-  plugins: [["@mr-hope/pwa", pwaOptions]],
+  plugins: [
+    [
+      "@mr-hope/pwa",
+      {
+        // 你的选项
+      },
+    ],
+  ],
 };
 ```
-
-::: tip
-
-你需要使用 `head` 函数的原因是插件不能在输出 HTML 中插入 head 标签。
-
-该函数会将一些与 PWA 相关的标签注入到输出站点 HTML 文件的 `<head>` 部分。
-
-:::

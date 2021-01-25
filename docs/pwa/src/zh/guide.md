@@ -25,28 +25,6 @@ Service worker 成功获取内容更新后，将在右下角显示一个弹出�
 
 :::
 
-### Head 标签注入
-
-你需要使用内置的 head 函数来自动为你站点的头部注入 head 标签，以能够在所有的设备上成功注册并良好显示。 `head` 函数的第一个参数是插件选项，第二个参数是可选的原 head 数组。
-
-```js
-const { head } = require("@mr-hope/vuepress-plugin-pwa");
-
-const pwaOptions = {
-  // 你的选项
-};
-
-// .vuepress/config.js
-module.exports = {
-  head: head(pwaOptions, [
-    /*
-     * 你原始的 head 数组
-     * 如果你原来没有配置，可以忽略此参数
-     */
-  ]),
-};
-```
-
 ## 缓存大小
 
 为了更好地控制 Service Worker 可以预缓存的内容，可以设置 `themeConfig.pwa.cachePic` 和 `themeConfig.pwa.cacheHTML` 来决定 Service Worker 是否缓存除主页和 404 错误页外的 HTML 文件与站点图片。

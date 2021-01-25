@@ -36,28 +36,15 @@ yarn add -D @mr-hope/vuepress-plugin-pwa
 ### Usage
 
 ```js
-const { head } = require("@mr-hope/vuepress-plugin-pwa");
-
-const pwaOptions = {
-  // your options
-};
-
 // .vuepress/config.js
 module.exports = {
-  head: head(pwaOptions, [
-    /*
-     * your original head
-     * omit this param if you don’t have any config
-     */
-  ]),
-  plugins: [["@mr-hope/pwa", pwaOptions]],
+  plugins: [
+    [
+      "@mr-hope/pwa",
+      {
+        // your options
+      },
+    ],
+  ],
 };
 ```
-
-::: tip
-
-You should use `head` function because plugins cannot insert head tags to the output HTML.
-
-The function will inject some PWA related tags to the `<head>` tag part of output site HTML files.
-
-:::

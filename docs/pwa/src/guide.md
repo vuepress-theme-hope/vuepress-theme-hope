@@ -25,29 +25,6 @@ For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 
 :::
 
-### Head Tags Inject
-
-You need to use the built-in head function to automatically inject the head tag into the `<head>` of your site to be able to register and display well on all devices. The first parameter of the head function is the plugin option, and the second parameter is the optional original head array.
-
-```js
-const { head } = require("@mr-hope/vuepress-plugin-pwa");
-
-const pwaOptions = {
-  // your options
-};
-
-// .vuepress/config.js
-module.exports = {
-  head: head(pwaOptions, [
-    /*
-     * your original head
-     * omit this param if you don’t have any config
-     */
-  ]),
-  plugins: [["@mr-hope/pwa", pwaOptions]],
-};
-```
-
 ## Cache Size
 
 To better control what your Service Worker can precache, you can set `themeConfig.pwa.cachePic` and `themeConfig.pwa.cacheHTML` to decide whether the service worker caches HTML files except the homepage and 404 error pages and site pictures.

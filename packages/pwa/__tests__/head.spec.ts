@@ -1,4 +1,4 @@
-import { head } from "../src/node/head";
+import { injectLinkstoHead } from "../src/node/injectHead";
 import { PWAOptions } from "../src/types";
 import { HeadItem } from "@mr-hope/vuepress-types";
 
@@ -72,7 +72,7 @@ const options2: PWAOptions = {
 
 describe("Test head function", () => {
   it("should generate PWA tags because they do not exist", () => {
-    expect(head(options)).toEqual([
+    expect(injectLinkstoHead(options)).toEqual([
       ["link", { rel: "icon", href: "/favicon.ico" }],
       [
         "link",
@@ -160,7 +160,7 @@ describe("Test head function", () => {
       ["meta", { name: "msapplication-TileColor", content: "#000000" }],
     ];
 
-    expect(head(options, headList)).toEqual([
+    expect(injectLinkstoHead(options, headList)).toEqual([
       ["link", { rel: "icon", href: "/icon.ico" }],
 
       ["meta", { name: "theme-color", content: "#ffffff" }],
@@ -206,7 +206,7 @@ describe("Test head function", () => {
   });
 
   it("should generate some simple tags", () => {
-    expect(head(options2)).toEqual([
+    expect(injectLinkstoHead(options2)).toEqual([
       [
         "link",
         {
