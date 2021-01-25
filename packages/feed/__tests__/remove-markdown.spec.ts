@@ -146,5 +146,9 @@ describe("remove Markdown", () => {
         "\nThis is a heading\n\nThis is a paragraph with a link.\n\nThis is another heading\n\nIn Getting Started we set up something foo.\n\n  Some list\n  With items\n    Even indented";
       expect(removeMarkdown(paragraph)).toEqual(expected);
     });
+
+    it("should handle without param", () => {
+      expect(removeMarkdown()).toEqual("");
+    });
   });
 });

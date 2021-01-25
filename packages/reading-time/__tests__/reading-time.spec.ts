@@ -58,5 +58,10 @@ describe("Reading Time Test", () => {
       minutes: 0.44,
       words: 133,
     });
+
+    expect(readingTime("")).toEqual({
+      minutes: 0,
+      words: 0,
+    });
   });
 });
