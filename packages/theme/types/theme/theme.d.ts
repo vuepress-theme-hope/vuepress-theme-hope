@@ -102,6 +102,14 @@ export type BlogOptions = {
    */
   avatar?: string;
   /**
+   * 是否剪裁头像为圆形形状
+   *
+   * Whether cliping the avatar with round shape
+   *
+   * @default true
+   */
+  roundAvatar?: boolean;
+  /**
    * 是否在侧边栏展示博主信息
    *
    * Whether to display blogger info in sidebar

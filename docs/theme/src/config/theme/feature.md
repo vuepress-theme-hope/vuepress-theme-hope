@@ -61,6 +61,13 @@ Blogger name, default is `themeConfig.author`
 
 Blogger avatar, default is `themeConfig.logo`
 
+### blog.roundAvatar
+
+- Type: `boolean`
+- Default: `true`
+
+Whether cliping the avatar with round shape
+
 ### blog.sidebarDisplay
 
 - Type: `'mobile' | 'none' | 'always'`

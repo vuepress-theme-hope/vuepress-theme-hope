@@ -10,6 +10,7 @@
       <img
         v-if="bloggerAvatar"
         class="avatar"
+        :class="{ round: blogConfig.roundAvatar !== false }"
         alt="Blogger Avatar"
         :src="$withBase(bloggerAvatar)"
       />
@@ -55,7 +56,9 @@
       width 128px
       height 128px
       margin 0 auto
-      border-radius 50%
+
+      &.round
+        border-radius 50%
 
     .name
       margin 16px auto

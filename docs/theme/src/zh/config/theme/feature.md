@@ -65,6 +65,13 @@ tags:
 
 博主头像，默认为 `themeConfig.logo`
 
+### blog.roundAvatar
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否剪裁头像为圆形形状
+
 ### blog.sidebarDisplay
 
 - 类型: `'mobile' | 'none' | 'always'`
