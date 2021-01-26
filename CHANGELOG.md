@@ -2,6 +2,20 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.9.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.9.0...v1.9.1) (2021-01-26)
+
+### Bug Fixes
+
+- **comment:** use shared wrapper ([37e7a23](https://github.com/Mister-Hope/vuepress-theme-hope/commit/37e7a2372bb428cb1ec0acb0f617b9ba905446ec))
+- **sitemap:** fix sitemap url in robot.txt ([5a28078](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5a28078dd2ac7055eb8854a18556f89abffc45b2))
+- **theme:** allow to show navbar when scroll up ([220bbfa](https://github.com/Mister-Hope/vuepress-theme-hope/commit/220bbfa61c62ae96a43d56938876421aa1cc8bdd))
+- **theme:** fix project list ([3208e4f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3208e4f3099c87f758e3bad46b8abc21aa7fedbe))
+- **theme:** fix sidebar layout on mobile ([c17ff43](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c17ff432c23e78e645ad498de9e42cb3b242c9c9))
+
+### Features
+
+- **theme:** add roundAvatar option ([797d09c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/797d09c5fa93eeab406148a861168380f828f945))
+
 ## [1.9.0](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.9.0-rc.0...v1.9.0) (2021-01-25)
 
 ### Features
