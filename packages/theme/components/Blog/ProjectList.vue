@@ -31,7 +31,6 @@
   align-content stretch
   align-items stretch
   flex-wrap wrap
-  align-items center
   font-family sans-serif
   margin-bottom 12px
   z-index 2
@@ -44,7 +43,6 @@
     margin 6px 8px
     padding 12px
     transition background-color 0.3s, transform 0.3s
-    align-self stretch
 
     @media (min-width $MQNarrow)
       width calc(33% - 40px)
