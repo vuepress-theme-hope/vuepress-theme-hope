@@ -11,7 +11,7 @@ category: demo
 ## vuepress-theme-hope
 
 - [Link][vuepress-theme-hope]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/theme)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/theme)
 
 ## Hope Studio
 
@@ -21,47 +21,52 @@ category: demo
 ## @mr-hope/vuepress-plugin-comment
 
 - [Link][comment]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/comment)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/comment)
 
 ## @mr-hope/vuepress-plugin-copy-code
 
 - [Link][copy-code]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/copy-code)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/copy-code)
+
+## @mr-hope/vuepress-plugin-feed
+
+- [Link][feed]
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/feed)
 
 ## @mr-hope/vuepress-plugin-last-update
 
 - [Link][last-update]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/last-update)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/last-update)
 
 ## @mr-hope/vuepress-plugin-reading-time
 
 - [Link][reading-time]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/reading-time)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/reading-time)
 
 ## @mr-hope/vuepress-plugin-seo
 
 - [Link][seo]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/seo)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/seo)
 
 ## @mr-hope/vuepress-plugin-sitemap
 
 - [Link][sitemap]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/sitemap)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/sitemap)
 
 ## vuepress-plugin-add-this
 
 - [Link][add-this]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/add-this)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/add-this)
 
 ## vuepress-plugin-md-enhance
 
 - [Link][md-enhance]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/md-enhance)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/md-enhance)
 
 ## vuepress-plugin-photo-swipe
 
 - [Link][photo-swipe]
-- [Source](https://github.com/mister-hope/vuepress-theme-hope/docs/photo-swipe)
+- [Source](https://github.com/mister-hope/vuepress-theme-hope/tree/v1/docs/photo-swipe)
 
 ## More
 
@@ -71,6 +76,7 @@ category: demo
 [add-this]: https://vuepress-add-this.mrhope.site
 [comment]: https://vuepress-comment.mrhope.site
 [copy-code]: https://vuepress-copy-code.mrhope.site
+[feed]: https://vuepress-feed.mrhope.site
 [last-update]: https://vuepress-last-update.mrhope.site
 [md-enhance]: https://vuepress-md-enhance.mrhope.site
 [photo-swipe]: https://vuepress-photo-swipe.mrhope.site

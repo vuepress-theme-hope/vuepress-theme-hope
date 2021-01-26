@@ -43,6 +43,10 @@ module.exports = {
           link: "https://vuepress-copy-code.mrhope.site",
         },
         {
+          text: "Feed Plugin",
+          link: "https://vuepress-feed.mrhope.site",
+        },
+        {
           text: "Last Update Plugin",
           link: "https://vuepress-last-update.mrhope.site",
         },
@@ -116,6 +120,10 @@ module.exports = {
         {
           text: "代码复制插件",
           link: "https://vuepress-copy-code.mrhope.site/zh/",
+        },
+        {
+          text: "Feed 插件",
+          link: "https://vuepress-feed.mrhope.site/zh/",
         },
         {
           text: "最后更新时间插件",
