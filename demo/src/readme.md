@@ -2,7 +2,7 @@
 blog: true
 home: true
 icon: home
-title: Mr.Hope
+title: Blog Home
 heroImage: /logo.svg
 heroText: the name of your blog
 tagline: You can put your slogan here

@@ -2,7 +2,7 @@
 blog: true
 home: true
 icon: home
-title: Mr.Hope
+title: 博客主页
 heroImage: /logo.svg
 heroText: 你博客的名称
 tagline: 你可以在这里放置你的口号与标语
