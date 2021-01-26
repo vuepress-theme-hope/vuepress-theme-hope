@@ -80,7 +80,6 @@
       display block !important
 
   .dropdown-title
-    display block
     cursor inherit
     padding inherit
     color var(--dark-grey)
@@ -135,8 +134,8 @@
       padding 0.6rem 0
       border 1px solid var(--grey14)
       border-radius 0.25rem
-      box-shadow 2px 2px 10px var(--card-shadow-color)
       background var(--bgcolor)
+      box-shadow 2px 2px 10px var(--card-shadow-color)
       text-align left
       white-space nowrap
       overflow-y auto
@@ -176,10 +175,10 @@
       &.active
         color var(--accent-color)
 
-        &::after
+        &::before
           content ''
           position absolute
-          top calc(50% - 2px)
+          top calc(50% - 3px)
           left 9px
           width 0
           height 0

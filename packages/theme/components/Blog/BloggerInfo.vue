@@ -1,21 +1,19 @@
 <template>
   <div class="blogger-info">
-    <div class="blogger-wrapper">
-      <div
-        class="blogger"
-        :class="{ hasIntro }"
-        :aria-label="hasIntro ? i18n.intro : ''"
-        :data-balloon-pos="hasIntro ? 'down' : ''"
-        @click="jumpIntro"
-      >
-        <img
-          v-if="bloggerAvatar"
-          class="avatar"
-          alt="blogger-avatar"
-          :src="$withBase(bloggerAvatar)"
-        />
-        <div v-if="bloggerName" class="name" v-text="bloggerName" />
-      </div>
+    <div
+      class="blogger"
+      :class="{ hasIntro }"
+      :aria-label="hasIntro ? i18n.intro : ''"
+      :data-balloon-pos="hasIntro ? 'down' : ''"
+      @click="jumpIntro"
+    >
+      <img
+        v-if="bloggerAvatar"
+        class="avatar"
+        alt="Blogger Avatar"
+        :src="$withBase(bloggerAvatar)"
+      />
+      <div v-if="bloggerName" class="name" v-text="bloggerName" />
     </div>
     <div class="num-wrapper">
       <div @click="navigate('/article/')">
@@ -35,7 +33,7 @@
         <div>{{ i18n.timeline }}</div>
       </div>
     </div>
-    <MediaLinks class="bottom-media-link" />
+    <MediaLinks />
   </div>
 </template>
 
@@ -46,25 +44,22 @@
   .page &
     background var(--bgcolor)
 
-  .blogger-wrapper
+  .blogger
     padding 8px 0
     text-align center
-
-  .blogger
-    display inline-block
 
     &.hasIntro
       cursor pointer
 
+    .avatar
+      width 128px
+      height 128px
+      margin 0 auto
+      border-radius 50%
+
     .name
       margin 16px auto
       font-size 22px
-
-    .avatar
-      display block
-      width 128px
-      height 128px
-      border-radius 50%
 
   .num-wrapper
     display flex
@@ -85,7 +80,4 @@
         margin-bottom 8px
         font-weight 600
         font-size 20px
-
-  .bottom-media-link
-    display flex
 </style>

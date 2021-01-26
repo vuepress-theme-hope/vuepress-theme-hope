@@ -24,3 +24,18 @@
 </template>
 
 <script src="./NavLink" />
+
+<style lang="stylus">
+.nav-link
+  line-height 1.4rem
+  color var(--dark-grey)
+
+  @media (max-width $MQMobile)
+    color var(--text-color)
+
+    &:hover, &.active
+      color var(--accent-color)
+
+  &.active
+    color var(--accent-color)
+</style>

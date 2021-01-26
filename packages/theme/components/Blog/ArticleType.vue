@@ -26,36 +26,36 @@
   list-style none
   z-index 2
 
-  .article-type
+.article-type
+  position relative
+  vertical-align middle
+  margin 0.3em 0.8em
+  line-height 1.2
+  cursor pointer
+
+  &::after
+    position absolute
+    content ' '
+    left calc(50% - 10px)
+    width 20px
+    bottom -6px
+    height 2px
+    background var(--accent-color)
+    border-radius 1px
+    visibility hidden
+    transform scaleX(0)
+    transition transform 0.3s ease-in-out
+
+  &.active
     position relative
-    vertical-align middle
-    margin 0.3em 0.8em
-    line-height 1.2
-    cursor pointer
 
+    span
+      display inline-block
+      color var(--accent-color)
+      transform scale(1.1, 1.1)
+
+  &:hover, &.active
     &::after
-      position absolute
-      content ' '
-      left calc(50% - 10px)
-      width 20px
-      bottom -6px
-      height 2px
-      background var(--accent-color)
-      border-radius 1px
-      visibility hidden
-      transform scaleX(0)
-      transition transform 0.3s ease-in-out
-
-    &.active
-      position relative
-
-      span
-        display inline-block
-        color var(--accent-color)
-        transform scale(1.1, 1.1)
-
-    &:hover, &.active
-      &::after
-        visibility visible
-        transform scaleX(1)
+      visibility visible
+      transform scaleX(1)
 </style>

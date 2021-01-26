@@ -1,5 +1,5 @@
 <template>
-  <div id="article" class="article-wrapper">
+  <div id="article-list" class="article-wrapper">
     <h2 v-if="!articles.length" class="empty">暂无文章</h2>
 
     <MyTransition
@@ -21,7 +21,7 @@
 <script src="./ArticleList" />
 
 <style lang="stylus">
-.article-wrapper
+.article-list
   margin-top -0.5rem - $navbarHeight
   padding-top $navbarHeight + 0.5rem
 

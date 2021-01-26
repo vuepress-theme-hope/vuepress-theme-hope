@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable vue/no-v-html -->
   <article class="article">
     <StickyIcon v-if="article.frontmatter.sticky" />
     <RouterLink class="title" tag="header" :to="article.path">
@@ -7,11 +6,8 @@
       <PresentationIcon v-if="article.frontmatter.layout === 'Slide'" />
       {{ article.title }}
     </RouterLink>
-    <div
-      v-if="article.excerpt"
-      class="article-excerpt"
-      v-html="article.excerpt"
-    />
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <div v-if="article.excerpt" class="excerpt" v-html="article.excerpt" />
     <hr class="hr" />
     <ArticleInfo :article="article" />
   </article>
@@ -20,97 +16,96 @@
 <script src="./ArticleItem" />
 
 <style lang="stylus">
-.article-wrapper
-  .article
+.article
+  position relative
+  box-sizing border-box
+  width 100%
+  margin 0 auto 20px
+  padding 16px 20px
+  background var(--bgcolor)
+  border-radius 6px
+  box-shadow 0 1px 3px 0 var(--card-shadow-color)
+
+  @media (max-width $MQMobileNarrow)
+    border-radius 0
+
+  &:last-child
+    margin-bottom 0
+
+  &:hover
+    box-shadow 0 2px 6px 0 var(--card-shadow-color)
+
+  .sticky-icon
+    position absolute
+    top 0
+    right 0
+    width 40px
+    height 40px
+    fill var(--accent-color)
+
+    .sticky-text
+      fill var(--white)
+
+  .title
+    display inline-block
     position relative
-    box-sizing border-box
-    width 100%
-    margin 0 auto 20px
-    padding 16px 20px
-    background var(--bgcolor)
-    border-radius 6px
-    box-shadow 0 1px 3px 0 var(--card-shadow-color)
+    font-size 1.28rem
+    line-height 36px
 
-    @media (max-width $MQMobileNarrow)
-      border-radius 0
-
-    &:last-child
-      margin-bottom 0
+    &::after
+      content ''
+      position absolute
+      width 100%
+      height 2px
+      bottom 0
+      left 0
+      background var(--accent-color)
+      visibility hidden
+      transform scaleX(0)
+      transition transform 0.3s ease-in-out
 
     &:hover
-      box-shadow 0 2px 6px 0 var(--card-shadow-color)
-
-    .sticky-icon
-      position absolute
-      top 0
-      right 0
-      width 40px
-      height 40px
-      fill var(--accent-color)
-
-      .sticky-text
-        fill var(--white)
-
-    .title
-      display inline-block
-      position relative
-      font-size 1.28rem
-      line-height 36px
+      cursor pointer
 
       &::after
-        content ''
-        position absolute
-        width 100%
-        height 2px
-        bottom 0
-        left 0
-        background var(--accent-color)
-        visibility hidden
-        transform scaleX(0)
-        transition transform 0.3s ease-in-out
+        visibility visible
+        transform scaleX(1)
 
-      &:hover
-        cursor pointer
+    .lock-icon, .presentation-icon
+      position relative
+      bottom -0.125em
+      display inline-block
+      vertical-align baseline
+      width 20px
+      height 20px
+      color var(--accent-color)
 
-        &::after
-          visibility visible
-          transform scaleX(1)
+  .excerpt
+    h1
+      display none
 
-      .lock-icon, .presentation-icon
-        position relative
-        bottom -0.125em
-        display inline-block
-        vertical-align baseline
-        width 20px
-        height 20px
-        color var(--accent-color)
+      & + p
+        margin-top 0.5em
 
-    .article-excerpt
-      h1
-        display none
+    p
+      &:first-child
+        margin-top 0.5em
 
-        & + p
-          margin-top 0.5em
+      &:last-child
+        margin-bottom 0.5em
 
-      p
-        &:first-child
-          margin-top 0.5em
+    // code block fix
+    pre
+      line-height 1.4
+      padding 1.25rem 1.5rem
+      margin 0.85rem 0
 
-        &:last-child
-          margin-bottom 0.5em
-
-      // code block fix
+    // line number fix
+    .line-numbers-mode
       pre
-        line-height 1.4
-        padding 1.25rem 1.5rem
-        margin 0.85rem 0
+        padding-left ($lineNumbersWrapperWidth + 1) rem
 
-      // line number fix
-      .line-numbers-mode
-        pre
-          padding-left ($lineNumbersWrapperWidth + 1) rem
-
-      // hide code demo
-      .code-demo-wrapper
-        display none
+    // hide code demo
+    .code-demo-wrapper
+      display none
 </style>

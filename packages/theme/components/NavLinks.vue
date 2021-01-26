@@ -26,58 +26,47 @@
 .nav-links
   display inline-block
 
-  .nav-link
-    line-height 1.4rem
-    color var(--dark-grey)
+.nav-item
+  position relative
+  display inline-block
+  margin-left 1rem
+  line-height 2rem
 
-    @media (max-width $MQMobile)
-      color var(--text-color)
+  @media (max-width $MQMobile)
+    margin-left 0
 
-      &:hover, &.active
+  &:first-child
+    margin-left 0
+
+  > .nav-link
+    @media (min-width $MQMobile)
+      color var(--dark-grey)
+
+      &::after
+        position absolute
+        content ' '
+        left 0
+        right 0
+        bottom 0px
+        height 2px
+        background var(--accent-color-l10)
+        border-radius 1px
+        visibility hidden
+        transform scaleX(0)
+        transition transform 0.3s ease-in-out
+
+      &.active
         color var(--accent-color)
 
-    &.active
-      color var(--accent-color)
+      &:hover, &.active
+        &::after
+          visibility visible
+          transform scaleX(1)
 
-  .nav-item
-    position relative
-    display inline-block
-    margin-left 1rem
-    line-height 2rem
+.repo-link
+  color var(--dark-grey)
+  margin-left 1.5rem
 
-    @media (max-width $MQMobile)
-      margin-left 0
-
-    &:first-child
-      margin-left 0
-
-  .repo-link
-    color var(--dark-grey)
-    margin-left 1.5rem
-
-    @media (max-width $MQMobile)
-      margin-left 0
-
-@media (min-width $MQMobile)
-  .nav-item > .nav-link
-    &::after
-      position absolute
-      content ' '
-      left 0
-      right 0
-      bottom 0px
-      height 2px
-      background var(--accent-color-l10)
-      border-radius 1px
-      visibility hidden
-      transform scaleX(0)
-      transition transform 0.3s ease-in-out
-
-    &:hover, &.active
-      &::after
-        visibility visible
-        transform scaleX(1)
-
-    &.active
-      color var(--accent-color)
+  @media (max-width $MQMobile)
+    margin-left 0
 </style>
