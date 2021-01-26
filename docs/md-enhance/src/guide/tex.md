@@ -381,6 +381,10 @@ x,\quad x>0
 $$
 ```
 
+## Text
+
+If you need to insert text in tex, you should use `\text{}` to wrap them.
+
 ## More
 
 For more symbols, pleasae check out
