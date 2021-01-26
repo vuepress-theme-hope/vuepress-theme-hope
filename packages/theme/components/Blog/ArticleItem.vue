@@ -1,11 +1,11 @@
 <template>
   <article class="article">
     <StickyIcon v-if="article.frontmatter.sticky" />
-    <RouterLink class="title" tag="header" :to="article.path">
+    <header class="title" @click="$router.push(article.path)">
       <LockIcon v-if="isEncrypted" />
       <PresentationIcon v-if="article.frontmatter.layout === 'Slide'" />
       {{ article.title }}
-    </RouterLink>
+    </header>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="article.excerpt" class="excerpt" v-html="article.excerpt" />
     <hr class="hr" />
