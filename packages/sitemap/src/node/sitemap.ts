@@ -166,7 +166,9 @@ export const genSiteMap = async (
   const newRobotsTxtContent = `${robotsTxt.replace(
     /^Sitemap: .*$/u,
     ""
-  )}\nSitemap: ${options.hostname.replace(/\/$/u, "")}${outFile}\n`;
+  )}\nSitemap: ${options.hostname.replace(/\/$/u, "")}${
+    context.base
+  }${outFile}\n`;
 
   await writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
 
