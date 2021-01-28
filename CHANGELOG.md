@@ -2,6 +2,16 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.9.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.9.1...v1.9.2) (2021-01-28)
+
+### Bug Fixes
+
+- **theme:** remove warning in the newest router ([f2a07c3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2a07c376049f5a770cfdc78fbbdcc5e62ddcdaa))
+
+### Features
+
+- rebuild shared and remove utils ([7fc670c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7fc670cf028d2a0e7bdb68e598b762de73b5de4e))
+
 ## [1.9.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.9.0...v1.9.1) (2021-01-26)
 
 ### Bug Fixes
