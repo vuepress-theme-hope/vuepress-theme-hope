@@ -23,7 +23,8 @@ export const checkOptions = (
   const baseLang = options.baseLang || context.themeConfig.baseLang;
   const hostname = options.hostname || context.themeConfig.hostname;
 
-  if (hostname) options.hostname = hostname;
+  // make sure hostname do not end with `/`
+  if (hostname) options.hostname = hostname.replace(/\/?$/u, "");
   else {
     error("Option 'hostname' is required!");
     return false;
