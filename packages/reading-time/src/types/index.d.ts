@@ -1,4 +1,4 @@
-import { Langs } from "@mr-hope/vuepress-shared";
+import type { Langs } from "@mr-hope/vuepress-shared";
 
 export interface ReadingTimeI18nConfig {
   /** 字数模板 */

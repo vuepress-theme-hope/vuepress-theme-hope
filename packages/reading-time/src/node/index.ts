@@ -1,6 +1,6 @@
 import { lang2Path } from "@mr-hope/vuepress-shared";
-import readingTime from "./reading-time";
 import { i18n } from "./i18n";
+import { readingTime } from "./reading-time";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";

@@ -1,6 +1,7 @@
 import { initDom, select } from "./dom";
 import { getCode, getReactCode, getNormalCode, getVueCode } from "./utils";
-import { CodeDemoOptions } from "../../types";
+
+import type { CodeDemoOptions } from "../../types";
 
 export const initDemo = (): void => {
   const containers = select(document, "code-demo-wrapper");

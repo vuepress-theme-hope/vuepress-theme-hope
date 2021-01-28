@@ -1,6 +1,7 @@
-import readingTime, {
+import {
   getChinese,
   getWordNumber,
+  readingTime,
 } from "../src/node/reading-time";
 
 describe("Reading Time Test", () => {

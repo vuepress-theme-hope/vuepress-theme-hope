@@ -1,5 +1,6 @@
-import { EncryptOptions } from "../types";
 import { hashSync } from "bcryptjs";
+
+import type { EncryptOptions } from "../types";
 
 export const resolveEncrypt = (encrypt: EncryptOptions): void => {
   // handle global password

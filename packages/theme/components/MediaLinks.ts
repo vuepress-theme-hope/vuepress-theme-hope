@@ -27,7 +27,8 @@ import Weibo from "@theme/icons/media/Weibo.vue";
 import Whatsapp from "@theme/icons/media/Whatsapp.vue";
 import Youtube from "@theme/icons/media/Youtube.vue";
 import Zhihu from "@theme/icons/media/Zhihu.vue";
-import { BlogMedia } from "@theme/types";
+
+import type { BlogMedia } from "@theme/types";
 
 const medias: BlogMedia[] = [
   "Baidu",

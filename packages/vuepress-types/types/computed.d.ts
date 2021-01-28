@@ -1,7 +1,7 @@
-import { I18nConfig, ThemeConfig } from "./config";
-import { SiteData } from "./context";
-import { Page, PageComputed, PageFrontmatter } from "./page";
-import VueRouter, { Route } from "vue-router";
+import type { I18nConfig, ThemeConfig } from "./config";
+import type { SiteData } from "./context";
+import type { Page, PageComputed, PageFrontmatter } from "./page";
+import type VueRouter, { Route } from "vue-router";
 
 declare module "vue/types/vue" {
   export interface Vue {

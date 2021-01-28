@@ -1,5 +1,4 @@
-import { SeoOptions } from "../types";
-import { SeoContent, ArticleSeoContent } from "../types/seo";
+import type { ArticleSeoContent, SeoContent, SeoOptions } from "../types";
 
 type Meta = Record<string, string>[];
 

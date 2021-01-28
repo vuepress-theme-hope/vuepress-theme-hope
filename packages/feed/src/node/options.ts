@@ -1,8 +1,9 @@
-import { Context } from "@mr-hope/vuepress-types";
-import { FeedChannelOption } from "../types/feed";
-import { error, resolveUrl } from "./utils";
-import { FeedLinks, FeedOptions, FeedOutput } from "../types";
 import { deepAssign } from "@mr-hope/vuepress-shared";
+import { error, resolveUrl } from "./utils";
+
+import type { Context } from "@mr-hope/vuepress-types";
+import type { FeedChannelOption } from "../types/feed";
+import type { FeedLinks, FeedOptions, FeedOutput } from "../types";
 
 export interface ResolvedFeedOutputConfig {
   enable: boolean;

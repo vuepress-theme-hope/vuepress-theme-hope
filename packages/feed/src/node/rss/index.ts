@@ -1,13 +1,14 @@
 import * as convert from "xml-js";
-import { Feed } from "../feed";
-import {
+import { encodeCDATA, encodeXML, generator, isUrl } from "../utils";
+
+import type { Feed } from "../feed";
+import type {
   FeedAuthor,
   FeedCategory,
   FeedEnclosure,
   FeedItemOption,
 } from "../../types";
-import { encodeCDATA, encodeXML, generator, isUrl } from "../utils";
-import {
+import type {
   RSSCategory,
   RSSContent,
   RSSEnclosure,

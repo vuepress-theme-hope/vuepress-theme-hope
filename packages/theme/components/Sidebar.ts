@@ -1,9 +1,11 @@
-import Vue, { PropType } from "vue";
-import { BlogOptions } from "@theme/types";
+import Vue from "vue";
 import BloggerInfo from "@theme/components/Blog/BloggerInfo.vue";
 import NavLinks from "@theme/components/NavLinks.vue";
-import { SidebarItem } from "@theme/util/sidebar";
 import SidebarLinks from "@theme/components/SidebarLinks.vue";
+
+import type { PropType } from "vue";
+import type { BlogOptions } from "@theme/types";
+import type { SidebarItem } from "@theme/util/sidebar";
 
 export default Vue.extend({
   name: "Sidebar",

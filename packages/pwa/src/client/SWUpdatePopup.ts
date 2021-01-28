@@ -1,6 +1,6 @@
 import Vue from "vue";
-import event from "./event";
 import { i18n } from "./define";
+import { event } from "./event";
 
 export default Vue.extend({
   name: "SWUpdatePopup",

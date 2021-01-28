@@ -1,4 +1,4 @@
-import { Route } from "vue-router";
+import type { Route } from "vue-router";
 
 export const hashRE = /#.*$/u;
 export const extRE = /\.(md|html)$/u;

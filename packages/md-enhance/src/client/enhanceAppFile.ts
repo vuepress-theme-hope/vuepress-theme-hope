@@ -1,9 +1,9 @@
 import FlowChart from "./FlowChart.vue";
 import Presentation from "./Presentation.vue";
 
-import "./styles/container.styl";
+import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
-import { EnhanceApp } from "@mr-hope/vuepress-types";
+import "./styles/container.styl";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_OPTIONS.align || MARKDOWN_ENHANCE_OPTIONS.enableAll)

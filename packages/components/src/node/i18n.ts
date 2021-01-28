@@ -1,7 +1,7 @@
 import type { LangPaths } from "@mr-hope/vuepress-shared";
-import type { ComponentI18NConfig } from "../types";
+import type { ComponentI18nConfig } from "../types";
 
-export const i18n: Record<LangPaths, ComponentI18NConfig> = {
+export const i18n: Record<LangPaths, ComponentI18nConfig> = {
   "/zh/": {
     backToTop: "返回顶部",
     pagination: {

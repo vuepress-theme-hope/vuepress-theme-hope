@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CAC } from "cac";
-import { Application } from "express";
-import * as WebpackDevServer from "webpack-dev-server";
 import * as Config from "webpack-chain";
-import { PluginConfig } from "./config";
-import { Context } from "./context";
-import { Markdown } from "./markdown";
-import { Page, PageOptions } from "./page";
-import { PluginAPI } from "./plugin-api";
+import * as WebpackDevServer from "webpack-dev-server";
+import type { CAC } from "cac";
+import type { Application } from "express";
+import type { PluginConfig } from "./config";
+import type { Context } from "./context";
+import type { Markdown } from "./markdown";
+import type { Page, PageOptions } from "./page";
+import type { PluginAPI } from "./plugin-api";
 
 export type Plugin<Options = any> = PluginOptionAPI | PluginFunction<Options>;
 

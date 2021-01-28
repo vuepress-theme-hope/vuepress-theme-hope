@@ -1,18 +1,19 @@
 import {
-  Context,
-  Page,
-  PageFrontmatter,
-  PluginOptionAPI,
-} from "@mr-hope/vuepress-types";
-import { FeedOptions } from "../types";
-import {
   checkOptions,
   getFeedChannelOption,
   getFeedLinks,
   getOutput,
 } from "./options";
 import { injectLinkstoHead } from "./injectHead";
-import { Generator } from "./generator";
+import { FeedGenerator } from "./generator";
+
+import type {
+  Context,
+  Page,
+  PageFrontmatter,
+  PluginOptionAPI,
+} from "@mr-hope/vuepress-types";
+import type { FeedOptions } from "../types";
 
 const isFeed = (frontmatter: PageFrontmatter): boolean =>
   !frontmatter.home &&
@@ -54,7 +55,7 @@ export = (options: FeedOptions, context: Context): PluginOptionAPI => {
         : pages
       ).slice(0, options.count);
 
-      await new Generator(
+      await new FeedGenerator(
         feedPages,
         options,
         { channel: channelOptions, links: feedLinks },

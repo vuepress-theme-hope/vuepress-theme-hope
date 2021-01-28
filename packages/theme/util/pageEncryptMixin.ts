@@ -1,7 +1,8 @@
-import { Component, Vue } from "vue-property-decorator";
-import { EncryptOptions } from "../types";
 import { compareSync } from "bcryptjs";
+import { Component, Vue } from "vue-property-decorator";
 import { getPathMatchedKeys } from "./encrypt";
+
+import type { EncryptOptions } from "../types";
 
 @Component
 export default class PageEncryptMixin extends Vue {

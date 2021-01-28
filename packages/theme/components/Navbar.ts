@@ -1,10 +1,11 @@
 import Vue from "vue";
-import { AlgoliaOption } from "@mr-hope/vuepress-types";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";
 import NavLinks from "@theme/components/NavLinks.vue";
 import SearchBox from "@SearchBox";
 import SidebarButton from "@theme/components/SidebarButton.vue";
 import ThemeColor from "@ThemeColor";
+
+import type { AlgoliaOption } from "@mr-hope/vuepress-types";
 
 const css = (
   el: Element,

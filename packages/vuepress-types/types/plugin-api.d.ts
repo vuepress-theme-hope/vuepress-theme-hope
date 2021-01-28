@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Plugin, PluginOptionAPI } from "./plugin";
+import type { Plugin, PluginOptionAPI } from "./plugin";
 
 export interface OptionItem<Value = any> {
   value: Value;

@@ -1,6 +1,7 @@
 import Vue from "vue";
-import { Screenfull } from "screenfull";
 import * as screenfull from "screenfull";
+
+import type { Screenfull } from "screenfull";
 
 export default Vue.extend({
   name: "ScreenFull",

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { PageComputed } from "@mr-hope/vuepress-types";
+import type { PageComputed } from "@mr-hope/vuepress-types";
 
 interface SitemapImageOption {
   /** The URL of the image. */

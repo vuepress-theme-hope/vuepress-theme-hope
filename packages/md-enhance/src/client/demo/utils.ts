@@ -1,5 +1,13 @@
-import { CodeDemoOptions } from "../../types";
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
+import type {
+  CodeType,
+  NormalCode,
+  ReactCode,
+  VueCode,
+  VueScript,
+} from "./typings";
+import type { CodeDemoOptions } from "../../types";
+
 export const option = CODE_DEMO_OPTIONS;
 
 export const h = (
@@ -48,11 +56,6 @@ const getVueJsTemplate = (js: string): string =>
       "$1"
     )
     .trim()} })`;
-
-interface VueScript {
-  (): unknown;
-  template: string;
-}
 
 const getVueScript = (html: string, js: string): VueScript => {
   const scripts = js.split(/export\s+default/u);
@@ -122,13 +125,6 @@ const preProcessorConfig: Record<
   },
 };
 
-export interface CodeType {
-  html: [code: string, type: string] | [];
-  js: [code: string, type: string] | [];
-  css: [code: string, type: string] | [];
-  isLegal: boolean;
-}
-
 export const getCode = (code: Record<string, string>): CodeType => {
   const languages = Object.keys(code);
   const result: CodeType = {
@@ -161,18 +157,6 @@ export const getCode = (code: Record<string, string>): CodeType => {
   return result;
 };
 
-export interface Code {
-  html: string;
-  js: string;
-  css: string;
-  jsLib: string[];
-  cssLib: string[];
-}
-
-export interface NormalCode extends Code {
-  script?: () => unknown;
-}
-
 export const getNormalCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
@@ -184,10 +168,6 @@ export const getNormalCode = (
   cssLib: config.cssLib || [],
   script: code.isLegal ? getNormalScript(code.js[0] || "") : undefined,
 });
-
-export interface VueCode extends Code {
-  script?: VueScript;
-}
 
 export const getVueCode = (
   code: CodeType,
@@ -221,10 +201,6 @@ export const getVueCode = (
   };
 };
 
-export interface ReactCode extends Code {
-  script?: FunctionComponent;
-}
-
 export const getReactCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
@@ -250,14 +226,6 @@ export const getReactCode = (
     script: scriptObj,
   };
 };
-
-export interface CodepenCode extends Code {
-  preprocessor: {
-    html: "none" | "slim" | "haml" | "markdown";
-    js: "none" | "coffeescript" | "babel" | "livescript" | "typescript";
-    css: "none" | "less" | "scss" | "sass" | "stylus";
-  };
-}
 
 export const injectCSS = (css: string, id: string): void => {
   const wrapper = document.querySelector(`#${id}`);

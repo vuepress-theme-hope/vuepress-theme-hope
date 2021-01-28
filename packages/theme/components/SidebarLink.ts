@@ -1,15 +1,16 @@
-import Vue, { PropType } from "vue";
-import { CreateElement, VNode } from "vue";
-import {
+import Vue from "vue";
+import { hashRE, isActive } from "@theme/util/path";
+import { groupSidebarHeaders } from "@theme/util/sidebar";
+
+import type { CreateElement, PropType, VNode } from "vue";
+import type { Route } from "vue-router";
+import type {
   SidebarExternalItem,
   SidebarErrorItem,
   SidebarPageItem,
   SidebarHeader,
   SidebarHeaderItem,
-  groupSidebarHeaders,
 } from "@theme/util/sidebar";
-import { hashRE, isActive } from "@theme/util/path";
-import { Route } from "vue-router";
 
 const renderIcon = (h: CreateElement, icon: string): VNode | null =>
   icon

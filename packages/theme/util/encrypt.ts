@@ -1,4 +1,4 @@
-import { EncryptOptions } from "../types";
+import type { EncryptOptions } from "../types";
 
 export const getPathMatchedKeys = (
   encryptOptions: EncryptOptions | undefined,

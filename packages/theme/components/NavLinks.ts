@@ -1,10 +1,12 @@
 import Vue from "vue";
-import VueRouter, { RouterOptions } from "vue-router";
 import DropdownLink from "@theme/components/DropdownLink.vue";
-import { NavBarConfigItem } from "@mr-hope/vuepress-types";
 import NavLink from "@theme/components/NavLink.vue";
-import { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/util/navbar";
 import { getNavLinkItem } from "@theme/util/navbar";
+
+import type { NavBarConfigItem } from "@mr-hope/vuepress-types";
+import type VueRouter from "vue-router";
+import type { RouterOptions } from "vue-router";
+import type { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/util/navbar";
 
 export default Vue.extend({
   name: "NavLinks",

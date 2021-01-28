@@ -1,8 +1,13 @@
 import * as convert from "xml-js";
 import { encodeCDATA, encodeXML, generator } from "../utils";
-import { Feed } from "../feed";
-import { FeedAuthor, FeedCategory, FeedItemOption } from "../../types";
-import { AtomAuthor, AtomCategory, AtomContent, AtomEntry } from "./typings";
+import type { Feed } from "../feed";
+import type { FeedAuthor, FeedCategory, FeedItemOption } from "../../types";
+import type {
+  AtomAuthor,
+  AtomCategory,
+  AtomContent,
+  AtomEntry,
+} from "./typings";
 
 const genAuthororContributor = (author: FeedAuthor): AtomAuthor => {
   const { name, email, url } = author;

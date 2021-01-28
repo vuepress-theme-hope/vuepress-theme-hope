@@ -1,9 +1,9 @@
-import { ClientComputedMixin } from "./computed";
-import { PluginConfig, SiteConfig, ThemeConfig } from "./config";
-import { Markdown } from "./markdown";
-import { Page, PageComputed, PageOptions } from "./page";
-import { PluginAPI } from "./plugin-api";
-import { ThemeAPI } from "./theme-api";
+import type { ClientComputedMixin } from "./computed";
+import type { PluginConfig, SiteConfig, ThemeConfig } from "./config";
+import type { Markdown } from "./markdown";
+import type { Page, PageComputed, PageOptions } from "./page";
+import type { PluginAPI } from "./plugin-api";
+import type { ThemeAPI } from "./theme-api";
 
 /**
  * @see https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/core/lib/node/App.js

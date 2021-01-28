@@ -1,4 +1,3 @@
-import { ResolvedHopeThemeConfig } from "../types";
 import {
   checkLang,
   getLocale,
@@ -6,6 +5,8 @@ import {
   path2Lang,
 } from "@mr-hope/vuepress-shared";
 import { resolveEncrypt } from "./encrypt";
+
+import type { ResolvedHopeThemeConfig } from "../types";
 
 const setThemeLocales = (
   themeConfig: ResolvedHopeThemeConfig,

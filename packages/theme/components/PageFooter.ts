@@ -1,6 +1,7 @@
 import Vue from "vue";
-import { HopeFooterConfig } from "../types";
 import MediaLinks from "@theme/components/MediaLinks.vue";
+
+import type { HopeFooterConfig } from "../types";
 
 export default Vue.extend({
   name: "PageFooter",

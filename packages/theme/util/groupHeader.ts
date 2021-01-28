@@ -1,4 +1,4 @@
-import { PageHeader } from "@mr-hope/vuepress-types";
+import type { PageHeader } from "@mr-hope/vuepress-types";
 
 export interface SidebarHeader extends PageHeader {
   children?: PageHeader[];

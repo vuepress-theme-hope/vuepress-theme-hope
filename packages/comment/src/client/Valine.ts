@@ -1,7 +1,9 @@
-import Vue, { PropType } from "vue";
+import Vue from "vue";
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
 import { valineI18n } from "./define";
+
+import type { PropType } from "vue";
 
 export default Vue.extend({
   name: "Valine",

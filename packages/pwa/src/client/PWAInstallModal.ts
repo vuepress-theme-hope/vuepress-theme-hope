@@ -1,11 +1,11 @@
 /* eslint-disable vue/require-explicit-emits */
 import Vue from "vue";
-import { ManifestOption } from "../types";
 import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
 import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
-import { PWAI18NConfig } from "../types";
 import { i18n } from "./define";
+
+import type { ManifestOption, PWAI18NConfig } from "../types";
 
 interface InstallPromptEvent extends Event {
   readonly platforms: string;

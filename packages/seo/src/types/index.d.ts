@@ -1,5 +1,7 @@
-import { Page, SiteConfig, ThemeConfig } from "@mr-hope/vuepress-types";
-import { SeoContent } from "./seo";
+import type { Page, SiteConfig, ThemeConfig } from "@mr-hope/vuepress-types";
+import type { SeoContent } from "./seo";
+
+export type * from "./seo";
 
 export interface PageSeoInfo {
   $page: Page;

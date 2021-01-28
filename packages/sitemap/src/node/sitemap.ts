@@ -1,11 +1,10 @@
 import { black, blue, cyan } from "chalk";
 import { createWriteStream, readFile, existsSync, writeFile } from "fs-extra";
-
 import { relative, resolve } from "path";
 import { SitemapStream } from "sitemap";
 
-import { Context, PageComputed, SiteData } from "@mr-hope/vuepress-types";
-import {
+import type { Context, PageComputed, SiteData } from "@mr-hope/vuepress-types";
+import type {
   SitemapFrontmatterOption,
   SitemapLinkOption,
   SitemapImageOption,

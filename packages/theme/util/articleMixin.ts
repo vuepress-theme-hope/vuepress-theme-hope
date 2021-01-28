@@ -1,6 +1,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { filterArticle, getDate, sortArticle } from "./article";
-import { PageComputed } from "@mr-hope/vuepress-types";
+
+import type { PageComputed } from "@mr-hope/vuepress-types";
 
 export interface TimelineItem {
   year: number;

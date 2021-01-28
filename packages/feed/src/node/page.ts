@@ -1,18 +1,19 @@
 import {
-  Context,
-  Page,
-  PageComputed,
-  PageFrontmatter,
-} from "@mr-hope/vuepress-types";
-import { Feed } from "./feed";
-import {
   getImageMineType,
   isAbsoluteUrl,
   isUrl,
   resolveHTML,
   resolveUrl,
 } from "./utils";
-import {
+
+import type {
+  Context,
+  Page,
+  PageComputed,
+  PageFrontmatter,
+} from "@mr-hope/vuepress-types";
+import type { Feed } from "./feed";
+import type {
   FeedAuthor,
   FeedCategory,
   FeedContributor,

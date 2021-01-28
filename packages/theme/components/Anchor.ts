@@ -1,7 +1,9 @@
-import Vue, { CreateElement, VNode, PropType } from "vue";
+import Vue from "vue";
 import { SidebarHeader, groupSidebarHeaders } from "@theme/util/sidebar";
-import { Route } from "vue-router";
 import { isActive } from "@theme/util/path";
+
+import type { CreateElement, VNode, PropType } from "vue";
+import type { Route } from "vue-router";
 
 interface AnchorItem {
   link: string;

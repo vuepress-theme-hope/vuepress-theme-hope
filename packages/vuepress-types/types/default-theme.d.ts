@@ -1,4 +1,4 @@
-import { I18nConfig } from "./config";
+import type { I18nConfig } from "./config";
 
 /** 导航栏配置项 */
 export interface NavBarConfigItem {

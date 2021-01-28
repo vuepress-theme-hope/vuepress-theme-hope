@@ -1,4 +1,4 @@
-import Vue, { AsyncComponent } from "vue";
+import type Vue, { AsyncComponent } from "vue";
 
 export declare class Store {
   store: Vue;

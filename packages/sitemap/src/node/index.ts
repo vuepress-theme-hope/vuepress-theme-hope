@@ -1,8 +1,8 @@
 import { black, blue } from "chalk";
 import { genSiteMap } from "./sitemap";
 
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { SitemapOptions } from "../types";
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { SitemapOptions } from "../types";
 
 export = (options: SitemapOptions, context: Context): PluginOptionAPI => {
   const { themeConfig } = context;

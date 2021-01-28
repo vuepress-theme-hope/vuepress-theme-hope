@@ -1,9 +1,9 @@
+import { sync } from "cross-spawn";
 import { basename, dirname } from "path";
 import dayjs = require("dayjs");
 import localizedFormat = require("dayjs/plugin/localizedFormat");
 import utc = require("dayjs/plugin/utc"); // dependent on utc plugin
 import timezone = require("dayjs/plugin/timezone");
-import spawn = require("cross-spawn");
 
 import "dayjs/locale/en";
 import "dayjs/locale/zh";
@@ -23,11 +23,13 @@ export const getGitLastUpdatedTimeStamp = (
   filePath: string
 ): number | undefined => {
   try {
-    const timestamp = spawn
-      .sync("git", ["log", "-1", "--format=%at", basename(filePath)], {
+    const timestamp = sync(
+      "git",
+      ["log", "-1", "--format=%at", basename(filePath)],
+      {
         cwd: dirname(filePath),
-      })
-      .stdout.toString();
+      }
+    ).stdout.toString();
 
     return parseInt(timestamp) * 1000;
   } catch (err) {

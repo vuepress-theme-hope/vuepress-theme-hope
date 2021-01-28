@@ -1,6 +1,7 @@
-import { PhotoSwipeOptions } from "../types";
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import { resolve } from "path";
+
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { PhotoSwipeOptions } from "../types";
 
 export = (
   options: PhotoSwipeOptions,

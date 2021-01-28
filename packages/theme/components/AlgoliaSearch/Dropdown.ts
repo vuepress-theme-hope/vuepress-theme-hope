@@ -1,5 +1,7 @@
-import Vue, { PropType } from "vue";
-import { AlgoliaOption } from "@mr-hope/vuepress-types";
+import Vue from "vue";
+
+import type { AlgoliaOption } from "@mr-hope/vuepress-types";
+import type { PropType } from "vue";
 
 export default Vue.extend({
   name: "AlgoliaSearchDropdown",

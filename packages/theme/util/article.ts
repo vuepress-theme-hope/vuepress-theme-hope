@@ -1,5 +1,6 @@
-import { PageComputed } from "@mr-hope/vuepress-types";
 import * as dayjs from "dayjs";
+
+import type { PageComputed } from "@mr-hope/vuepress-types";
 
 export const getDate = (date: string | Date): (number | undefined)[] => {
   const time = dayjs(date instanceof Date ? date : date.trim());

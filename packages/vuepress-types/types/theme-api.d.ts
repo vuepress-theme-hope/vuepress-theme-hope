@@ -1,5 +1,5 @@
-import { PluginOptionAPI } from "./plugin";
-import { NormalizedPlugin } from "./plugin-api";
+import type { PluginOptionAPI } from "./plugin";
+import type { NormalizedPlugin } from "./plugin-api";
 
 export interface ResolvedComponent {
   filename: string;

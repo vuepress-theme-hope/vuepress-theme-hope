@@ -1,6 +1,7 @@
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { AddThisOptions } from "../types";
 import { resolve } from "path";
+
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { AddThisOptions } from "../types";
 
 export = (
   options: AddThisOptions,

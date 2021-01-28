@@ -1,5 +1,6 @@
-import { HopeVuePressConfig } from "../types";
 import { config } from "../";
+
+import type { HopeVuePressConfig } from "../types";
 
 describe("Test resolveTheme function", () => {
   const vuepressConfig: HopeVuePressConfig = {

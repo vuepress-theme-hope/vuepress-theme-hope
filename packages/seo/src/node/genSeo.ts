@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { PageSeoInfo, SeoOptions } from "../types";
-import { SeoContent } from "../types/seo";
+import type { PageSeoInfo, SeoContent, SeoOptions } from "../types";
 
 export const generateSeo = (
   options: SeoOptions,

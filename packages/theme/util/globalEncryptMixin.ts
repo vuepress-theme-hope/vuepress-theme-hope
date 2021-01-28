@@ -1,6 +1,7 @@
-import { Component, Vue } from "vue-property-decorator";
-import { EncryptOptions } from "../types";
 import { compareSync } from "bcryptjs";
+import { Component, Vue } from "vue-property-decorator";
+
+import type { EncryptOptions } from "../types";
 
 @Component
 export default class GlobalEncryptMixin extends Vue {

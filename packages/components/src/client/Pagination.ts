@@ -1,7 +1,8 @@
 /* eslint-disable vue/require-explicit-emits */
 import Vue from "vue";
-import { ComponentI18NConfig } from "../types";
 import { componentI18n } from "./define";
+
+import type { ComponentI18nConfig } from "../types";
 
 export default Vue.extend({
   name: "Pagination",
@@ -69,7 +70,7 @@ export default Vue.extend({
       return arr;
     },
 
-    i18n(): ComponentI18NConfig["pagination"] {
+    i18n(): ComponentI18nConfig["pagination"] {
       return componentI18n[this.$localePath || "/"].pagination;
     },
   },

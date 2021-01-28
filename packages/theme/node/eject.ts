@@ -1,6 +1,6 @@
-import { relative, resolve } from "path";
+import { cyan, red } from "chalk";
 import { copy } from "fs-extra";
-import chalk = require("chalk");
+import { relative, resolve } from "path";
 
 const EXCLUDED_FILES = [
   "__tests__",
@@ -24,9 +24,9 @@ export const eject = async (dir: string): Promise<void> => {
       },
     });
 
-    console.log(`Copied vuepress-theme-hope into ${chalk.cyan(targetDir)}.\n`);
+    console.log(`Copied vuepress-theme-hope into ${cyan(targetDir)}.\n`);
   } catch (err) {
-    console.error(chalk.red((err as Error).stack || ""));
+    console.error(red((err as Error).stack || ""));
     process.exitCode = 1;
   }
 };

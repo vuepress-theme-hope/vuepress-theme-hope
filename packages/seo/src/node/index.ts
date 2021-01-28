@@ -4,14 +4,14 @@ import { relative, resolve } from "path";
 import { generateSeo } from "./genSeo";
 import { appendMeta } from "./meta";
 
-import {
+import type {
   Context,
   PluginOptionAPI,
   ThemeConfig,
   Page,
 } from "@mr-hope/vuepress-types";
-import { PageSeoInfo, SeoOptions } from "../types";
-import { SeoContent } from "../types/seo";
+import type { PageSeoInfo, SeoOptions } from "../types";
+import type { SeoContent } from "../types/seo";
 
 const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
   const langs: string[] = [];

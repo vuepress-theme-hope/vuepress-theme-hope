@@ -1,4 +1,5 @@
-import VueRouter, { Route } from "vue-router";
+import type VueRouter from "vue-router";
+import type { Route } from "vue-router";
 
 /**
  * @param url navigate link

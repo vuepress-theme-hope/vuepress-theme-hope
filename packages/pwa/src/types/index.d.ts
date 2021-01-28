@@ -1,6 +1,6 @@
-import { Langs } from "@mr-hope/vuepress-shared";
-import WorkboxBuild from "workbox-build";
-import { ManifestOption } from "./manifest";
+import type { Langs } from "@mr-hope/vuepress-shared";
+import type WorkboxBuild from "workbox-build";
+import type { ManifestOption } from "./manifest";
 import "./declare";
 
 export interface PWAI18NConfig {

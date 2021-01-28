@@ -1,5 +1,5 @@
-import { Langs } from "@mr-hope/vuepress-shared";
-import { RevealOptions } from "reveal.js";
+import type { Langs } from "@mr-hope/vuepress-shared";
+import type { RevealOptions } from "reveal.js";
 import "./declare";
 
 export interface CodeDemoGlobalOptions {

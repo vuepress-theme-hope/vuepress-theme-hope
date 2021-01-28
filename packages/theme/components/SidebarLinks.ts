@@ -1,10 +1,12 @@
-import Vue, { PropType } from "vue";
-import { SidebarHeaderItem, SidebarItem } from "@theme/util/sidebar";
-import { PageComputed } from "@mr-hope/vuepress-types";
-import { Route } from "vue-router";
+import Vue from "vue";
 import SidebarGroup from "@theme/components/SidebarGroup.vue";
 import SidebarLink from "@theme/components/SidebarLink.vue";
 import { isActive } from "@theme/util/path";
+
+import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { PropType } from "vue";
+import type { Route } from "vue-router";
+import type { SidebarHeaderItem, SidebarItem } from "@theme/util/sidebar";
 
 const descendantIsActive = (route: Route, item: SidebarItem): boolean => {
   if (item.type === "group")

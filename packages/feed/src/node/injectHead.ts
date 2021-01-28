@@ -1,7 +1,8 @@
-import { Context, HeadItem } from "@mr-hope/vuepress-types";
-import { FeedOptions } from "../types";
 import { resolveUrl } from "./utils";
 import { getOutput } from "./options";
+
+import type { Context, HeadItem } from "@mr-hope/vuepress-types";
+import type { FeedOptions } from "../types";
 
 export const injectLinkstoHead = (
   options: FeedOptions,

@@ -1,6 +1,6 @@
-import { VueConstructor } from "vue";
-import VueRouter, { RouterOptions } from "vue-router";
-import { SiteData } from "./context";
+import type { VueConstructor } from "vue";
+import type VueRouter, { RouterOptions } from "vue-router";
+import type { SiteData } from "./context";
 
 export type EnhanceApp = (options: {
   Vue: VueConstructor;

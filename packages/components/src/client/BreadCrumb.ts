@@ -1,5 +1,6 @@
 import Vue from "vue";
-import { Route } from "vue-router";
+
+import type { Route } from "vue-router";
 
 interface BreadCrumbConfig {
   title: string;

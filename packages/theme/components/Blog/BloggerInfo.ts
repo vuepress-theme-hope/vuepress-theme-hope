@@ -5,8 +5,8 @@ import MediaLinks from "@theme/components/MediaLinks.vue";
 import { filterArticle } from "@theme/util/article";
 import { navigate } from "@theme/util/navigate";
 
-import { BlogOptions } from "@theme/types";
-import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+import type { BlogOptions } from "@theme/types";
+import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
 @Component({ components: { MediaLinks } })
 export default class BloggerInfo extends Mixins(TimelineMixin) {

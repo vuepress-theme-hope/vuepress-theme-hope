@@ -1,6 +1,11 @@
-import { Page, PluginConfig, ResolvedComponent } from "@mr-hope/vuepress-types";
-import { ResolvedHopeThemeConfig } from "../types";
 import { resolve } from "path";
+
+import type {
+  Page,
+  PluginConfig,
+  ResolvedComponent,
+} from "@mr-hope/vuepress-types";
+import type { ResolvedHopeThemeConfig } from "../types";
 
 export const getPluginConfig = (
   themeConfig: ResolvedHopeThemeConfig

@@ -13,7 +13,7 @@ import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { filterArticle } from "@theme/util/article";
 import { StickyMixin } from "@theme/util/articleMixin";
 
-import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 @Component({
   components: {
     ArticleIcon,

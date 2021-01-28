@@ -11,8 +11,8 @@ import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
 import pluginConfig from "./pluginConfig";
 
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { MarkdownEnhanceOptions } from "../types";
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { MarkdownEnhanceOptions } from "../types";
 
 export = (
   option: MarkdownEnhanceOptions,

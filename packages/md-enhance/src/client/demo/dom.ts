@@ -1,13 +1,6 @@
-import {
-  CodeType,
-  Code,
-  ReactCode,
-  VueCode,
-  NormalCode,
-  h,
-  injectCSS,
-  option,
-} from "./utils";
+import { h, injectCSS, option } from "./utils";
+
+import type { CodeType, Code, ReactCode, VueCode, NormalCode } from "./typings";
 
 export const select = (
   node: Element | Document,

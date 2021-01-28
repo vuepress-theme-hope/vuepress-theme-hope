@@ -1,6 +1,7 @@
 import { injectLinkstoHead } from "../src/node/injectHead";
-import { PWAOptions } from "../src/types";
-import { HeadItem } from "@mr-hope/vuepress-types";
+
+import type { HeadItem } from "@mr-hope/vuepress-types";
+import type { PWAOptions } from "../src/types";
 
 const options: PWAOptions = {
   favicon: "/favicon.ico",

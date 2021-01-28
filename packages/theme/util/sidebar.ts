@@ -1,5 +1,4 @@
-import { HopeSideBarConfig, HopeSideBarConfigItem } from "../types";
-import { PageComputed, SiteData } from "@mr-hope/vuepress-types";
+import { groupHeaders } from "./groupHeader";
 import {
   ensureEndingSlash,
   ensureExt,
@@ -7,8 +6,12 @@ import {
   normalize,
   resolvePath,
 } from "./path";
-import { SidebarHeader, groupHeaders } from "./groupHeader";
-export { SidebarHeader } from "./groupHeader";
+
+import type { PageComputed, SiteData } from "@mr-hope/vuepress-types";
+import type { HopeSideBarConfig, HopeSideBarConfigItem } from "../types";
+import type { SidebarHeader } from "./groupHeader";
+
+export type { SidebarHeader } from "./groupHeader";
 
 export interface SidebarHeaderItem extends SidebarHeader {
   type: "header";

@@ -1,7 +1,9 @@
-import Vue, { PropType } from "vue";
-import { SidebarAutoItem, SidebarGroupItem } from "@theme/util/sidebar";
+import Vue from "vue";
 import DropdownTransition from "@theme/components/DropdownTransition.vue";
 import { isActive } from "@theme/util/path";
+
+import type { PropType } from "vue";
+import type { SidebarAutoItem, SidebarGroupItem } from "@theme/util/sidebar";
 
 export default Vue.extend({
   name: "SidebarGroup",

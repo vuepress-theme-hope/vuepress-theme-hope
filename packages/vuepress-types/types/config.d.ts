@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Configuration } from "webpack";
-import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
-import { Markdown } from "./markdown";
-import { PluginOptionAPI } from "./plugin";
+import type { Configuration } from "webpack";
+import type { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
+import type { Markdown } from "./markdown";
+import type { PluginOptionAPI } from "./plugin";
 import MarkdownItAnchor = require("markdown-it-anchor");
 
 export interface I18nConfig extends Record<string, any> {

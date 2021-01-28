@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ClientComputedMixin } from "./computed";
-import { Context } from "./context";
-import { Markdown } from "./markdown";
-import { OptionItem } from "./plugin-api";
+import type { ClientComputedMixin } from "./computed";
+import type { Context } from "./context";
+import type { Markdown } from "./markdown";
+import type { OptionItem } from "./plugin-api";
 
 /**
  * @see https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/core/lib/node/Page.js

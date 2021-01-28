@@ -1,16 +1,22 @@
-import Vue, { PropType } from "vue";
-import { PageComputed, SiteData, ThemeConfig } from "@mr-hope/vuepress-types";
-import {
+import Vue from "vue";
+import NextIcon from "@theme/icons/NextIcon.vue";
+import PrevIcon from "@theme/icons/PrevIcon.vue";
+import { resolvePath } from "@theme/util/path";
+import { resolvePageforSidebar } from "@theme/util/sidebar";
+
+import type {
+  PageComputed,
+  SiteData,
+  ThemeConfig,
+} from "@mr-hope/vuepress-types";
+import type { PropType } from "vue";
+import type { Route } from "vue-router";
+import type {
   SidebarErrorItem,
   SidebarExternalItem,
   SidebarItem,
   SidebarPageItem,
-  resolvePageforSidebar,
 } from "@theme/util/sidebar";
-import NextIcon from "@theme/icons/NextIcon.vue";
-import PrevIcon from "@theme/icons/PrevIcon.vue";
-import { Route } from "vue-router";
-import { resolvePath } from "@theme/util/path";
 
 const getSidebarItems = (
   items: SidebarItem[],

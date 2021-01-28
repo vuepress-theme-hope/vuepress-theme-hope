@@ -4,9 +4,9 @@ import MyTransition from "@theme/components/MyTransition.vue";
 import { filterArticle, sortArticle } from "@theme/util/article";
 import { getPathMatchedKeys } from "@theme/util/encrypt";
 
-import { BlogOptions } from "@theme/types";
-import { PageComputed } from "@mr-hope/vuepress-types";
-import { Route } from "vue-router";
+import type { BlogOptions } from "@theme/types";
+import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { Route } from "vue-router";
 
 export default Vue.extend({
   name: "ArticleList",

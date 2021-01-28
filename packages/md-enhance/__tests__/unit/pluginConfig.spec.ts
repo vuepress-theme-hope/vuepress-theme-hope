@@ -1,5 +1,6 @@
-import { Langs } from "@mr-hope/vuepress-shared";
 import resolveConfig from "../../src/node/pluginConfig";
+
+import type { Langs } from "@mr-hope/vuepress-shared";
 
 describe("Test pluginConfig generate", () => {
   it("Should use plugin options first", () => {

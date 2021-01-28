@@ -1,6 +1,7 @@
 import { defaultTransformer, getGitLastUpdatedTimeStamp } from "./time";
-import { LastUpdateOptions } from "../types";
-import { PluginOptionAPI } from "@mr-hope/vuepress-types";
+
+import type { PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { LastUpdateOptions } from "../types";
 
 export = (options: LastUpdateOptions): PluginOptionAPI => ({
   name: "last-updated",

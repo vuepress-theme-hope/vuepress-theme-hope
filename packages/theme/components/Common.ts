@@ -1,9 +1,5 @@
 import { Component, Mixins, Prop } from "vue-property-decorator";
-import {
-  SidebarItem,
-  SidebarHeader,
-  getSidebarItems,
-} from "@theme/util/sidebar";
+import { getSidebarItems } from "@theme/util/sidebar";
 import GlobalEncryptMixin from "@theme/util/globalEncryptMixin";
 import Navbar from "@theme/components/Navbar.vue";
 import PageFooter from "@theme/components/PageFooter.vue";
@@ -11,6 +7,8 @@ import Password from "@theme/components/Password.vue";
 import { PageHeader } from "@mr-hope/vuepress-types";
 import Sidebar from "@theme/components/Sidebar.vue";
 import throttle from "lodash.throttle";
+
+import type { SidebarItem, SidebarHeader } from "@theme/util/sidebar";
 
 @Component({ components: { PageFooter, Password, Sidebar, Navbar } })
 export default class Common extends Mixins(GlobalEncryptMixin) {

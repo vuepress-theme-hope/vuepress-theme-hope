@@ -1,7 +1,12 @@
 import { renderAtom } from "./atom";
 import { renderJSON } from "./json";
 import { renderRSS } from "./rss";
-import { FeedContributor, FeedInitOptions, FeedItemOption } from "../types";
+
+import type {
+  FeedContributor,
+  FeedInitOptions,
+  FeedItemOption,
+} from "../types";
 
 export class Feed {
   items: FeedItemOption[] = [];

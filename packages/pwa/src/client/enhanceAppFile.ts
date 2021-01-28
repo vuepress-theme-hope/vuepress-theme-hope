@@ -1,8 +1,9 @@
-import { EnhanceApp } from "@mr-hope/vuepress-types";
 import SWUpdateEvent from "./SWUpdateEvent";
 import PWAInstall from "./PWAInstall.vue";
 import SWUpdatePopup from "./SWUpdatePopup.vue";
-import event from "./event";
+import { event } from "./event";
+
+import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
 import "@mr-hope/vuepress-shared/styles/reset.styl";
 

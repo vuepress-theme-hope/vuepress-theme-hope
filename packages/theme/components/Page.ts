@@ -1,13 +1,15 @@
-import Vue, { PropType } from "vue";
+import Vue from "vue";
 import Anchor from "@theme/components/Anchor.vue";
 import Comment from "@Comment";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageEdit from "@theme/components/PageEdit.vue";
-import { PageHeader } from "@mr-hope/vuepress-types";
 import PageInfo from "@PageInfo";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
-import { SidebarItem } from "@theme/util/sidebar";
+
+import type { PageHeader } from "@mr-hope/vuepress-types";
+import type { PropType } from "vue";
+import type { SidebarItem } from "@theme/util/sidebar";
 
 export default Vue.extend({
   name: "Page",

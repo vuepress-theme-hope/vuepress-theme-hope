@@ -1,7 +1,8 @@
 import Vue from "vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
-import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+
+import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
 const defaultColorPicker: Record<string, string> = {
   red: "#e74c3c",

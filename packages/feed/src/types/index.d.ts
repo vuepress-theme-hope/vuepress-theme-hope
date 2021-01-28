@@ -1,5 +1,5 @@
-import { FeedAuthor, FeedCategory, FeedChannelOption } from "./feed";
-import { Page } from "@mr-hope/vuepress-types";
+import type { FeedAuthor, FeedCategory, FeedChannelOption } from "./feed";
+import type { Page } from "@mr-hope/vuepress-types";
 
 export type * from "./feed";
 

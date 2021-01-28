@@ -4,8 +4,8 @@ import { eject } from "./node/eject";
 import { getPluginConfig } from "./node/plugins";
 import { config } from "./node/config";
 
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { ResolvedHopeThemeConfig } from "./types";
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { ResolvedHopeThemeConfig } from "./types";
 
 interface ThemeOptionAPI extends PluginOptionAPI {
   extend?: string;

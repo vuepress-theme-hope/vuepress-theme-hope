@@ -1,6 +1,6 @@
-import { Langs } from "@mr-hope/vuepress-shared";
+import type { Langs } from "@mr-hope/vuepress-shared";
 
-export interface ComponentI18NConfig {
+export interface ComponentI18nConfig {
   /** 返回顶部文字 */
   backToTop: string;
   /** 分页多语言配置 */
@@ -30,5 +30,5 @@ export interface ComponentOptions {
 }
 
 declare global {
-  const COMPONENT_I18N: Record<string, ComponentI18NConfig>;
+  const COMPONENT_I18N: Record<string, ComponentI18nConfig>;
 }

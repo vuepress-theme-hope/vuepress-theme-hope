@@ -1,5 +1,5 @@
-import { DirectiveOptions, VNode } from "vue";
-import { DirectiveBinding } from "vue/types/options";
+import type { DirectiveOptions, VNode } from "vue";
+import type { DirectiveBinding } from "vue/types/options";
 
 type Event = TouchEvent | MouseEvent;
 

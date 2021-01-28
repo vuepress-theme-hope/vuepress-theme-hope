@@ -1,14 +1,15 @@
 import { cyan } from "chalk";
 import { resolve, relative } from "path";
 import { outputFile } from "fs-extra";
-import { Context, Page } from "@mr-hope/vuepress-types";
-import { getOutput } from "./options";
 import { Feed } from "./feed";
+import { getOutput } from "./options";
 import { FeedPage } from "./page";
 import { wait, success } from "./utils";
-import { FeedOptions, FeedInitOptions } from "../types";
 
-export class Generator {
+import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { FeedOptions, FeedInitOptions } from "../types";
+
+export class FeedGenerator {
   /** feed 生成器 */
   feed: Feed;
 

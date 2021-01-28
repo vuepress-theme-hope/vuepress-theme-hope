@@ -2,8 +2,9 @@ import Vue from "vue";
 import EyeIcon from "./icons/EyeIcon.vue";
 import FireIcon from "./icons/FireIcon.vue";
 import { commentOptions, pageInfoI18n } from "./define";
-import { Route } from "vue-router";
-import { ValineOptions } from "../types";
+
+import type { Route } from "vue-router";
+import type { ValineOptions } from "../types";
 
 export default Vue.extend({
   name: "VisitorInfo",

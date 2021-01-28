@@ -13,7 +13,10 @@ export const getWordNumber = (data: string): number =>
     0
   ) + getChinese(data).length;
 
-const readingTime = (data: string, wordsPerMinute = 300): ReadingTime => {
+export const readingTime = (
+  data: string,
+  wordsPerMinute = 300
+): ReadingTime => {
   const words = getWordNumber(data || "");
 
   return {
@@ -21,5 +24,3 @@ const readingTime = (data: string, wordsPerMinute = 300): ReadingTime => {
     words,
   };
 };
-
-export default readingTime;
