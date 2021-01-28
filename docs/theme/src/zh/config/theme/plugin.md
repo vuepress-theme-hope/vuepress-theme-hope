@@ -227,10 +227,18 @@ React 依赖于 Babel。
 
 > 这是一个 vuepress 社区插件，而不是内置插件。因此，如果你遇到问题，请前往 [它的仓库](https://github.com/vuepress/vuepress-plugin-copyright) 寻求帮助。
 
+::: warning
+
+此插件不是默认启用的！
+
+你可以设置 `themeConfig.copyright: true` 或设置 `themeConfig.copyright.status` 来启用它。
+
+:::
+
 ### copyright.status
 
 - 类型: `"global" | "local"`
-- 必填: 是
+- 默认值: `"global"`
 
 是否全局启用该功能。
 
@@ -493,12 +501,12 @@ AddThis 的 pubid
 
 默认情况下，所有页面块均以页面标题命名，所有布局块均以其组件名称命名。
 
-[add-this]: https://vuepress-add-this.mrhope.site/zh/
-[comment-config]: https://vuepress-comment.mrhope.site/zh/config/
-[copy-code]: https://vuepress-copy-code.mrhope.site/zh/
-[md-enhance-config]: https://vuepress-md-enhance.mrhope.site/zh/config/
-[photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/zh/config/
-[pwa-config]: https://vuepress-pwa.mrhope.site/zh/config/
-[feed-config]: https://vuepress-feed.mrhope.site/zh/config/
-[seo-config]: https://vuepress-seo.mrhope.site/zh/#插件选项
-[sitemap-config]: https://vuepress-sitemap.mrhope.site/zh/#插件选项
+[add-this]: https://vuepress-theme-hope.mrhope.site/add-this/zh/
+[comment-config]: https://vuepress-theme-hope.mrhope.site/comment/zh/config/
+[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code/zh/
+[md-enhance-config]: https://vuepress-theme-hope.mrhope.site/md-enhance/zh/config/
+[photo-swipe-config]: https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/config/
+[pwa-config]: https://vuepress-theme-hope.mrhope.site/pwa/zh/config/
+[feed-config]: https://vuepress-theme-hope.mrhope.site/feed/zh/config/
+[seo-config]: https://vuepress-theme-hope.mrhope.site/seo/zh/#插件选项
+[sitemap-config]: https://vuepress-theme-hope.mrhope.site/sitemap/zh/#插件选项

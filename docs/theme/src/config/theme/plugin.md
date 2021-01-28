@@ -227,10 +227,18 @@ For details see [vuepress-plugin-copyright documentation][copyright-config]
 >
 > If you met bugs, please ahead to [it’s repo](https://github.com/vuepress/vuepress-plugin-copyright) for help.
 
+::: warning
+
+This plugin is not enabled by default!
+
+You can set `themeConfig.copyright: true` or set `themeConfig.copyright.status` to enable it.
+
+:::
+
 ### copyright.status
 
 - Type: `"global" | "local"`
-- Required: Yes
+- Default: `"global"`
 
 Whether to enable this feature globally.
 
@@ -489,13 +497,13 @@ Options for `vuepress-named-chunks`, set to `false` to disable this plugin.
 
 By default, all page chunks will be named with page title, and all the layout chunks will be named by their component name.
 
-[add-this]: https://vuepress-add-this.mrhope.site
-[comment-config]: https://vuepress-comment.mrhope.site/config/
+[add-this]: https://vuepress-theme-hope.mrhope.site/add-this
+[comment-config]: https://vuepress-theme-hope.mrhope.site/comment/config/
 [copyright-config]: https://vuepress.github.io/en/plugins/copyright/
-[md-enhance-config]: https://vuepress-md-enhance.mrhope.site/config/
-[copy-code]: https://vuepress-copy-code.mrhope.site
-[photo-swipe-config]: https://vuepress-photo-swipe.mrhope.site/config/
-[pwa-config]: https://vuepress-pwa.mrhope.site/config/
-[feed-config]: https://vuepress-feed.mrhope.site/config/
-[seo-config]: https://vuepress-seo.mrhope.site/#plugin-options
-[sitemap-config]: https://vuepress-sitemap.mrhope.site/#plugin-options
+[md-enhance-config]: https://vuepress-theme-hope.mrhope.site/md-enhance/config/
+[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code
+[photo-swipe-config]: https://vuepress-theme-hope.mrhope.site/photo-swipe/config/
+[pwa-config]: https://vuepress-theme-hope.mrhope.site/pwa/config/
+[feed-config]: https://vuepress-theme-hope.mrhope.site/feed/config/
+[seo-config]: https://vuepress-theme-hope.mrhope.site/seo/#plugin-options
+[sitemap-config]: https://vuepress-theme-hope.mrhope.site/sitemap/#plugin-options
