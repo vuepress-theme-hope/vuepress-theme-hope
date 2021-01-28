@@ -30,7 +30,6 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "1.9.1",
     "@mr-hope/vuepress-types": "1.9.1",
-    "@mr-hope/vuepress-utils": "1.9.1",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "^5.1.0",

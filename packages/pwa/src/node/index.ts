@@ -1,27 +1,29 @@
-import { i18n, lang2path } from "@mr-hope/vuepress-utils";
+import { lang2Path } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
+import { i18n } from "./i18n";
 import { injectLinkstoHead } from "./injectHead";
 import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
 
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { PWAOptions } from "../types";
+import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { PWAI18NConfig, PWAOptions } from "../types";
 
 const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
   const { base, themeConfig } = context;
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = lang2path(baseLang);
-  const pwaI18N = i18n.pwa;
+  const baseLangPath = lang2Path(baseLang);
+  const pwaI18nConfig = i18n as PluginI18nConvert<PWAI18NConfig>;
   const pwaOption =
     Object.keys(options).length > 0 ? options : themeConfig.pwa || {};
 
-  pwaI18N["/"] = pwaI18N[baseLangPath];
+  pwaI18nConfig["/"] = pwaI18nConfig[baseLangPath];
 
   const config: PluginOptionAPI = {
     name: "pwa",
 
     define: () => ({
-      PWA_I18N: pwaI18N,
+      PWA_I18N: pwaI18nConfig,
       SW_BASE_URL: base || "/",
     }),
 

@@ -1,4 +1,9 @@
-import { CopyCodeI18NConfig } from "@mr-hope/vuepress-shared";
+export interface CopyCodeI18NConfig {
+  /** 复制文字 */
+  copy: string;
+  /** 提示文字 */
+  hint: string;
+}
 
 export interface CopyCodeOptions {
   /**

@@ -1,5 +1,5 @@
 import { ResolvedHopeVuePressConfig } from "../types";
-import { path2lang } from "@mr-hope/vuepress-utils";
+import { path2Lang } from "@mr-hope/vuepress-shared";
 
 export const resolveLocales = (config: ResolvedHopeVuePressConfig): void => {
   // ensure locales config
@@ -18,6 +18,6 @@ export const resolveLocales = (config: ResolvedHopeVuePressConfig): void => {
   Object.keys(config.themeConfig.locales).forEach((path) => {
     if (path === "/") return;
 
-    locales[path] = { lang: path2lang(path), ...(locales[path] || {}) };
+    locales[path] = { lang: path2Lang(path), ...(locales[path] || {}) };
   });
 };

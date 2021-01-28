@@ -6,7 +6,7 @@ import { filterArticle } from "@theme/util/article";
 import { navigate } from "@theme/util/navigate";
 
 import { BlogOptions } from "@theme/types";
-import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
+import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
 @Component({ components: { MediaLinks } })
 export default class BloggerInfo extends Mixins(TimelineMixin) {
@@ -28,7 +28,7 @@ export default class BloggerInfo extends Mixins(TimelineMixin) {
     return Boolean(this.blogConfig.intro);
   }
 
-  private get i18n(): HopeLangI18nConfig["blog"] {
+  private get i18n(): HopeThemeLocaleConfigItem["blog"] {
     return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
   }
 

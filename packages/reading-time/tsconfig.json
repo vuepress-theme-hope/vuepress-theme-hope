@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "references": [
+    { "path": "../shared/tsconfig.json" },
     { "path": "../vuepress-types/tsconfig.json" },
     { "path": "./tsconfig.cjs.json" }
   ],

@@ -1,9 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
+    "emitDeclarationOnly": true,
+    "module": "ESNext",
+    "target": "ESNext",
     "rootDir": "./src",
-    "outDir": "./lib"
+    "outDir": "./lib/types"
   },
   "include": ["./src"]
 }

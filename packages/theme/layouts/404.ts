@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Common from "@theme/components/Common.vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
-import type { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
+import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
 export default Vue.extend({
   name: "NotFound",
@@ -9,7 +9,7 @@ export default Vue.extend({
   components: { Common },
 
   computed: {
-    i18n(): HopeLangI18nConfig["error404"] {
+    i18n(): HopeThemeLocaleConfigItem["error404"] {
       return this.$themeLocaleConfig.error404 || getDefaultLocale().error404;
     },
 

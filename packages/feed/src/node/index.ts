@@ -17,7 +17,7 @@ import { Generator } from "./generator";
 const isFeed = (frontmatter: PageFrontmatter): boolean =>
   !frontmatter.home &&
   frontmatter.article !== false &&
-  frontmatter.feed.enable !== false;
+  (!frontmatter.feed || frontmatter.feed.enable !== false);
 
 export = (options: FeedOptions, context: Context): PluginOptionAPI => {
   if (!checkOptions(options, context)) return {};

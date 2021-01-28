@@ -1,19 +1,21 @@
-import { i18n, lang2path } from "@mr-hope/vuepress-utils";
+import { lang2Path } from "@mr-hope/vuepress-shared";
+import { pageInfoI18n, valineI18n } from "./i18n";
 
-import { CommentOptions } from "../types";
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
+import type { CommentOptions, PageInfoI18nConfig } from "../types";
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
 export = (
   options: CommentOptions,
   { themeConfig }: Context
 ): PluginOptionAPI => {
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = lang2path(baseLang);
-  const { pageInfo, readingTime, valine } = i18n;
+  const baseLangPath = lang2Path(baseLang);
+  const pageInfoI18nConfig = pageInfoI18n as PluginI18nConvert<PageInfoI18nConfig>;
+  const valineI18nConfig = valineI18n as PluginI18nConvert<string>;
 
-  pageInfo["/"] = pageInfo[baseLangPath];
-  readingTime["/"] = readingTime[baseLangPath];
-  valine["/"] = valine[baseLangPath];
+  pageInfoI18nConfig["/"] = pageInfoI18nConfig[baseLangPath];
+  valineI18nConfig["/"] = valineI18nConfig[baseLangPath];
 
   const config: PluginOptionAPI = {
     name: "comment",
@@ -21,9 +23,8 @@ export = (
     define: () => ({
       COMMENT_OPTIONS:
         Object.keys(options).length > 0 ? options : themeConfig.comment || {},
-      PAGE_INFO_I18N: pageInfo,
-      READING_TIME_I18N: readingTime,
-      VALINE_I18N: valine,
+      PAGE_INFO_I18N: pageInfoI18nConfig,
+      VALINE_I18N: valineI18nConfig,
     }),
 
     plugins: [

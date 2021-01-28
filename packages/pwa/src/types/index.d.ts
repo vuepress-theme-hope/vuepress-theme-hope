@@ -1,8 +1,24 @@
 import { Langs } from "@mr-hope/vuepress-shared";
 import WorkboxBuild from "workbox-build";
 import { ManifestOption } from "./manifest";
-import { PWAI18NConfig } from "@mr-hope/vuepress-shared";
 import "./declare";
+
+export interface PWAI18NConfig {
+  /** 安装文字 */
+  install: string;
+  /** iOS 安装文字 */
+  iOSInstall: string;
+  /** 取消文字 */
+  cancel: string;
+  /** 安装解释 */
+  explain: string;
+  /** 描述 */
+  desc: string;
+  /** 特性文字 */
+  feature: string;
+  /** 更新内容文字 */
+  update: string;
+}
 
 export * from "./manifest";
 

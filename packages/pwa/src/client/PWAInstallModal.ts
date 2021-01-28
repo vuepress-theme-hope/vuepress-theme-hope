@@ -4,7 +4,7 @@ import { ManifestOption } from "../types";
 import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
 import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
-import { PWAI18NConfig } from "@mr-hope/vuepress-shared";
+import { PWAI18NConfig } from "../types";
 import { i18n } from "./define";
 
 interface InstallPromptEvent extends Event {

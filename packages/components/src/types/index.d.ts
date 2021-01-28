@@ -1,4 +1,22 @@
-import { ComponentI18NConfig, Langs } from "@mr-hope/vuepress-shared";
+import { Langs } from "@mr-hope/vuepress-shared";
+
+export interface ComponentI18NConfig {
+  /** 返回顶部文字 */
+  backToTop: string;
+  /** 分页多语言配置 */
+  pagination: {
+    /** 上一页文字 */
+    prev: string;
+    /** 下一页文字 */
+    next: string;
+    /** 跳转文字 */
+    navigate: string;
+    /** 按钮文字 */
+    button: string;
+    /** 错误文字 */
+    errorText: string;
+  };
+}
 
 export interface ComponentOptions {
   /**

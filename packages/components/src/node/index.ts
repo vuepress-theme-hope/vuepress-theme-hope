@@ -1,14 +1,16 @@
-import { i18n, lang2path } from "@mr-hope/vuepress-utils";
+import { lang2Path } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
+import { i18n } from "./i18n";
 
-import { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import { ComponentOptions } from "../types";
+import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
+import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { ComponentI18NConfig, ComponentOptions } from "../types";
 
 export = (options: ComponentOptions, context: Context): PluginOptionAPI => {
   const { themeConfig } = context;
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = lang2path(baseLang);
-  const componentConfig = i18n.component;
+  const baseLangPath = lang2Path(baseLang);
+  const componentConfig = i18n as PluginI18nConvert<ComponentI18NConfig>;
 
   componentConfig["/"] = componentConfig[baseLangPath];
 

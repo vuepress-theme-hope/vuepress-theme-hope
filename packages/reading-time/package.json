@@ -31,6 +31,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@mr-hope/vuepress-shared": "1.9.1",
     "@mr-hope/vuepress-types": "1.9.1"
   },
   "publishConfig": {

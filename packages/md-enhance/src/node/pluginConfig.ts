@@ -1,18 +1,17 @@
+import { lang2Path } from "@mr-hope/vuepress-shared";
 import { codeDemoRender } from "./markdown-it/code-demo";
+import { i18n } from "./i18n";
 
-import { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
-import { MarkdownEnhanceOptions } from "../types";
-import { i18n, lang2path } from "@mr-hope/vuepress-utils";
-import { PluginI18nConvert } from "@mr-hope/vuepress-shared";
+import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
+import type { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
+import type { MarkdownEnhanceOptions } from "../types";
 
 const pluginConfig = (
   markdownOption: MarkdownEnhanceOptions,
   themeConfig: ThemeConfig
 ): PluginConfig[] => {
-  /** i18n config */
-  const { container } = i18n;
   const baseLang = markdownOption.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = lang2path(baseLang);
+  const baseLangPath = lang2Path(baseLang);
 
   const resolveConfig = (
     titleConfig: PluginI18nConvert<string>
@@ -23,19 +22,13 @@ const pluginConfig = (
   };
 
   const config: PluginConfig[] = [
+    ["container", { type: "info", defaultTitle: resolveConfig(i18n.info) }],
+    ["container", { type: "tip", defaultTitle: resolveConfig(i18n.tip) }],
     [
       "container",
-      { type: "info", defaultTitle: resolveConfig(container.info) },
+      { type: "warning", defaultTitle: resolveConfig(i18n.warning) },
     ],
-    ["container", { type: "tip", defaultTitle: resolveConfig(container.tip) }],
-    [
-      "container",
-      { type: "warning", defaultTitle: resolveConfig(container.warning) },
-    ],
-    [
-      "container",
-      { type: "danger", defaultTitle: resolveConfig(container.danger) },
-    ],
+    ["container", { type: "danger", defaultTitle: resolveConfig(i18n.danger) }],
     [
       "container",
       {

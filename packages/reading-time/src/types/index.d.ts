@@ -1,3 +1,14 @@
+import { Langs } from "@mr-hope/vuepress-shared";
+
+export interface ReadingTimeI18nConfig {
+  /** 字数模板 */
+  word: string;
+  /** 小于一分钟文字 */
+  minute: string;
+  /** 时间模板 */
+  time: string;
+}
+
 export interface ReadingTime {
   /** expect reading time */
   minutes: number;
@@ -6,6 +17,15 @@ export interface ReadingTime {
 }
 
 export interface ReadingTimeOptions {
+  /**
+   * 主目录所对应的语言。
+   *
+   * The language of the home directory.
+   *
+   * @default 'en-US'
+   */
+  baseLang?: Langs;
+
   /**
    * 每分钟阅读的字数
    *

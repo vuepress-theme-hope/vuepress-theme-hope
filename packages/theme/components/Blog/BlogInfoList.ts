@@ -13,7 +13,7 @@ import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { filterArticle } from "@theme/util/article";
 import { StickyMixin } from "@theme/util/articleMixin";
 
-import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
+import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 @Component({
   components: {
     ArticleIcon,
@@ -31,7 +31,7 @@ import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
 export default class BlogInfo extends Mixins(StickyMixin) {
   private active = "category";
 
-  private get i18n(): HopeLangI18nConfig["blog"] {
+  private get i18n(): HopeThemeLocaleConfigItem["blog"] {
     return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
   }
 

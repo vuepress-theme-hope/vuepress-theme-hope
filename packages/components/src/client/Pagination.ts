@@ -1,6 +1,6 @@
 /* eslint-disable vue/require-explicit-emits */
 import Vue from "vue";
-import { ComponentI18NConfig } from "@mr-hope/vuepress-shared";
+import { ComponentI18NConfig } from "../types";
 import { componentI18n } from "./define";
 
 export default Vue.extend({

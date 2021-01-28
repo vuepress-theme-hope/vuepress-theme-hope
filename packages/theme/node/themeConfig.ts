@@ -2,16 +2,16 @@ import { ResolvedHopeThemeConfig } from "../types";
 import {
   checkLang,
   getLocale,
-  lang2path,
-  path2lang,
-} from "@mr-hope/vuepress-utils";
+  lang2Path,
+  path2Lang,
+} from "@mr-hope/vuepress-shared";
 import { resolveEncrypt } from "./encrypt";
 
 const setThemeLocales = (
   themeConfig: ResolvedHopeThemeConfig,
   baseLang: string
 ): void => {
-  const baseLangPath = lang2path(baseLang);
+  const baseLangPath = lang2Path(baseLang);
 
   // set locate for base
   themeConfig.locales["/"] = {
@@ -24,7 +24,7 @@ const setThemeLocales = (
   Object.keys(themeConfig.locales).forEach((path) => {
     if (path === "/") return;
 
-    const lang = path2lang(path);
+    const lang = path2Lang(path);
 
     themeConfig.locales[path] = {
       ...getLocale(lang),

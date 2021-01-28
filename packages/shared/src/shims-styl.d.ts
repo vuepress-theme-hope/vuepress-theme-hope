@@ -1,4 +1,4 @@
-declare module "@mr-hope/vuepress-shared/styles/*.styl" {
+declare module "*.styl" {
   const stylusStyle: never;
 
   export default stylusStyle;

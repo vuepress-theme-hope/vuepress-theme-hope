@@ -39,7 +39,6 @@
     "@mr-hope/vuepress-plugin-reading-time": "1.9.1",
     "@mr-hope/vuepress-shared": "1.9.1",
     "@mr-hope/vuepress-types": "1.9.1",
-    "@mr-hope/vuepress-utils": "1.9.1",
     "@vssue/api-bitbucket-v2": "^1.4.7",
     "@vssue/api-gitea-v1": "^1.4.7",
     "@vssue/api-gitee-v5": "^1.4.7",

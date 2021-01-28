@@ -24,6 +24,7 @@ export default Vue.extend({
   },
 
   methods: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     initialize(userOptions: AlgoliaOption, _lang: string): void {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore

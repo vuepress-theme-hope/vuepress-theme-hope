@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
+import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 import {
   BlogMedia,
   HopeThemeConfig,
@@ -7,6 +7,7 @@ import {
   HopeSideBarConfig,
 } from "./theme";
 import { PageInfotype } from "@mr-hope/vuepress-plugin-comment";
+import { FeedFrontmatterOption } from "@mr-hope/vuepress-plugin-feed";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
 
 declare module "vue/types/vue" {
@@ -45,6 +46,7 @@ declare module "@mr-hope/vuepress-types" {
       noCopy?: boolean;
       noSelect?: boolean;
     };
+    feed?: FeedFrontmatterOption;
     pageInfo?: PageInfotype[];
     visitor?: boolean;
     breadcrumb?: boolean;
@@ -63,7 +65,7 @@ declare module "@mr-hope/vuepress-types" {
     backToTop?: boolean;
   }
 
-  interface I18nConfig extends Partial<HopeLangI18nConfig> {
+  interface I18nConfig extends Partial<HopeThemeLocaleConfigItem> {
     /** 导航栏链接 */
     nav?: HopeNavBarConfig;
     /** 侧边栏配置 */

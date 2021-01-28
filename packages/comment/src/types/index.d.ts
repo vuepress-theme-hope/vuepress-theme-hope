@@ -1,12 +1,28 @@
-import {
-  Langs,
-  PageInfoI18nConfig,
-  ReadingTimeI18NConfig,
-} from "@mr-hope/vuepress-shared";
+import { Langs } from "@mr-hope/vuepress-shared";
 import { Vssue } from "vssue";
 import { ValineOption } from "valine";
+import { ReadingTimeI18nConfig } from "@mr-hope/vuepress-plugin-reading-time";
 
 import "./declare";
+
+export interface PageInfoI18nConfig {
+  /** 作者 */
+  author: string;
+  /** 写作日期 */
+  time: string;
+  /** 原创文字 */
+  origin: string;
+  /** 访问量 */
+  views: string;
+  /** 标签文字 */
+  tag: string;
+  /** 分类文字 */
+  category: string;
+  /** 阅读时间 */
+  readingTime: string;
+  /** 文章字数 */
+  words: string;
+}
 
 /**
  * 页面信息类型
@@ -208,6 +224,6 @@ export type CommentOptions =
 declare global {
   const COMMENT_OPTIONS: CommentOptions;
   const PAGE_INFO_I18N: Record<string, PageInfoI18nConfig>;
-  const READING_TIME_I18N: Record<string, ReadingTimeI18NConfig>;
+  const READING_TIME_I18N: Record<string, ReadingTimeI18nConfig>;
   const VALINE_I18N: Record<string, string>;
 }

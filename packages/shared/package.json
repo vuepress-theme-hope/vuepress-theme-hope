@@ -22,7 +22,8 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "lib/client/index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
   "scripts": {
     "build": "tsc -b tsconfig.json",

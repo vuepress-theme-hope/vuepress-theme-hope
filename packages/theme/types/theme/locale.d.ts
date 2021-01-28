@@ -1,12 +1,13 @@
 import {
   HopeNavBarConfig,
   HopeSideBarConfig,
-  HopeLangI18nConfig,
+  HopeThemeLocaleConfigItem,
 } from "@mr-hope/vuepress-shared";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
 
 /** vuepress-theme-hope 多语言配置 */
-export interface HopeLangLocalesConfig extends Partial<HopeLangI18nConfig> {
+export interface HopeLangLocalesConfig
+  extends Partial<HopeThemeLocaleConfigItem> {
   /** 当前语言下的标题 */
   title?: string;
   /** 当前语言下的描述 */
@@ -20,7 +21,8 @@ export interface HopeLangLocalesConfig extends Partial<HopeLangI18nConfig> {
 }
 
 /** 处理过的 vuepress-theme-hope 多语言配置 */
-export interface ResolvedHopeLangLocalesConfig extends HopeLangI18nConfig {
+export interface ResolvedHopeLangLocalesConfig
+  extends HopeThemeLocaleConfigItem {
   /** 导航栏链接 */
   nav: HopeNavBarConfig;
   /** 侧边栏配置 */

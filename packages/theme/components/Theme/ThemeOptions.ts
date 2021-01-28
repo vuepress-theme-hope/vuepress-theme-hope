@@ -1,7 +1,7 @@
 import Vue from "vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
-import { HopeLangI18nConfig } from "@mr-hope/vuepress-shared";
+import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
 const defaultColorPicker: Record<string, string> = {
   red: "#e74c3c",
@@ -30,7 +30,7 @@ export default Vue.extend({
   }),
 
   computed: {
-    text(): HopeLangI18nConfig["themeColor"] {
+    text(): HopeThemeLocaleConfigItem["themeColor"] {
       return (
         this.$themeLocaleConfig.themeColor || getDefaultLocale().themeColor
       );
