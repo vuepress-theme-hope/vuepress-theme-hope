@@ -23,7 +23,7 @@ const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
 
 export = (options: SeoOptions, context: Context): PluginOptionAPI => {
   const { themeConfig } = context;
-  const option =
+  const seoOption =
     Object.keys(options).length > 0 ? options : themeConfig.seo || {};
 
   return {
@@ -48,12 +48,12 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
         path: pageClone.path,
       };
       const metaContext: SeoContent = {
-        ...generateSeo(option, pageSeoInfo),
-        ...(option.seo ? option.seo(pageSeoInfo) : {}),
+        ...generateSeo(seoOption, context.base, pageSeoInfo),
+        ...(seoOption.seo ? seoOption.seo(pageSeoInfo) : {}),
       };
 
-      appendMeta(meta, metaContext, option);
-      if (option.customMeta) option.customMeta(meta, pageSeoInfo);
+      appendMeta(meta, metaContext, seoOption);
+      if (seoOption.customMeta) seoOption.customMeta(meta, pageSeoInfo);
 
       $page.frontmatter.meta = meta;
     },

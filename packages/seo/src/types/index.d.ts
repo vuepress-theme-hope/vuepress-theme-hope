@@ -21,12 +21,6 @@ export interface SeoOptions {
    */
   author?: string;
   /**
-   * 部署站点地址
-   *
-   * Deploy site url
-   */
-  hostname?: string;
-  /**
    * 你的 Twitter 用户名
    *
    * your twitter username

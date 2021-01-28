@@ -48,13 +48,6 @@ module.exports = {
 
 Default author
 
-### hostname
-
-- Type: `string`
-- Required: No
-
-Deploy address
-
 ### twitterID
 
 - Type: `string`

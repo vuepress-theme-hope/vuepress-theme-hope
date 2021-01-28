@@ -1,8 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PageSeoInfo, SeoContent, SeoOptions } from "../types";
 
+export const resolveUrl = (base: string, url: string) =>
+  `${base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")}${url.replace(
+    /^\//u,
+    ""
+  )}`;
+
 export const generateSeo = (
   options: SeoOptions,
+  base: string,
   { $page, $site, locale, path, themeConfig }: PageSeoInfo
 ): SeoContent => {
   const {
@@ -16,10 +23,7 @@ export const generateSeo = (
     },
     lastUpdatedTime,
   } = $page;
-  const hostname = (options.hostname || themeConfig.hostname || "").replace(
-    /\/$/u,
-    ""
-  );
+
   const type = ["article", "category", "tag", "timeline"].some((folder) =>
     $page.regularPath.startsWith(`/${folder}`)
   )
@@ -40,12 +44,12 @@ export const generateSeo = (
     : [];
 
   return {
-    "og:url": `${hostname}${path}`,
+    "og:url": resolveUrl(base, path),
     "og:site_name": $site.title || "",
     "og:title": $page.title,
     "og:description": $page.frontmatter.description || "",
     "og:type": type,
-    "og:image": image ? `${hostname}${image}` : "",
+    "og:image": image ? resolveUrl(base, image) : "",
     "og:updated_time": modifiedTime,
     "og:locale": $page._computed.$lang,
     "og:locale:alternate": locale,
