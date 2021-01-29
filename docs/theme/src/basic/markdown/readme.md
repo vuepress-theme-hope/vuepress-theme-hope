@@ -55,7 +55,7 @@ Example: `[Baidu](https://baidu.com)`
 
 `![Alt](ImageLink)` 。
 
-E.g: `![This is a title](/img/title.jpg)`.
+E.g: `![This is a title](./assets/title.jpg)`.
 
 ## Tables
 

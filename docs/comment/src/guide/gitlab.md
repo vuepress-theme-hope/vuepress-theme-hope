@@ -11,19 +11,19 @@ icon: gitlab
 
 - Go to [Settings - Applications](https://gitlab.com/profile/applications)
 
-->![Set up OAuth App - Gitlab 01](/img/oauth-app-gitlab-01.png)<-
-->![Set up OAuth App - Gitlab 02](/img/oauth-app-gitlab-02.png)<-
+![Set up OAuth App - Gitlab 01](./assets/oauth-app-gitlab-01.png)
+![Set up OAuth App - Gitlab 02](./assets/oauth-app-gitlab-02.png)
 
 - Set the `Redirect URI` to your site URL (Here we take `localhost:8080` for example)
 - Select `api` scope
 
-->![Set up OAuth App - Gitlab 03](/img/oauth-app-gitlab-03.png)<-
+![Set up OAuth App - Gitlab 03](./assets/oauth-app-gitlab-03.png)
 
 ## Get the Client ID
 
 Then you’ve created a new Application, and here is your **Application ID** (`Client ID`).
 
-->![Set up OAuth App - Gitlab 04](/img/oauth-app-gitlab-04.png)<-
+![Set up OAuth App - Gitlab 04](./assets/oauth-app-gitlab-04.png)
 
 ## Config and start your Vssue
 
@@ -35,22 +35,22 @@ Here we take `https://gitlab.com/meteorlxy/vssue-demo` for example, and set the 
 
 Then run `anywhere -h localhost 8080` to serve the `index.html` on `localhost:8080`.
 
-->![Set up OAuth App - Gitlab 05](/img/oauth-app-gitlab-05.png)<-
+![Set up OAuth App - Gitlab 05](./assets/oauth-app-gitlab-05.png)
 
 ## Try out Vssue locally
 
 Vssue has already run here. Click `Login` to login with Gitlab account.
 
-->![Set up OAuth App - Gitlab 06](/img/oauth-app-gitlab-06.png)<-
+![Set up OAuth App - Gitlab 06](./assets/oauth-app-gitlab-06.png)
 
 Redirect to GitLab Authorization page. Click `Authorize` to login.
 
-->![Set up OAuth App - Gitlab 07](/img/oauth-app-gitlab-07.png)<-
+![Set up OAuth App - Gitlab 07](./assets/oauth-app-gitlab-07.png)
 
 Leave a comment on this page ~
 
-->![Set up OAuth App - Gitlab 08](/img/oauth-app-gitlab-08.png)<-
-->![Set up OAuth App - Gitlab 09](/img/oauth-app-gitlab-09.png)<-
+![Set up OAuth App - Gitlab 08](./assets/oauth-app-gitlab-08.png)
+![Set up OAuth App - Gitlab 09](./assets/oauth-app-gitlab-09.png)
 
 ::: tip
 

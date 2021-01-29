@@ -9,22 +9,22 @@ icon: bitbucket
 - 前往 **Bitbucket settings - OAuth**
 - 点击 **Add consumer**
 
-->![配置 OAuth App - Bitbucket 01](/img/oauth-app-bitbucket-01.png)<-
-->![配置 OAuth App - Bitbucket 02](/img/oauth-app-bitbucket-02.png)<-
-->![配置 OAuth App - Bitbucket 03](/img/oauth-app-bitbucket-03.png)<-
+![配置 OAuth App - Bitbucket 01](./assets/oauth-app-bitbucket-01.png)
+![配置 OAuth App - Bitbucket 02](./assets/oauth-app-bitbucket-02.png)
+![配置 OAuth App - Bitbucket 03](./assets/oauth-app-bitbucket-03.png)
 
 - 将 `Callback URL` 设置为你的网站 URL (这里我们用 `localhost:8080` 作为示例)
 - 取消选择 `This is a private consumer`
 - 勾选 `Account - Read` 和 `Issues - Write` 权限
 
-->![配置 OAuth App - Bitbucket 04](/img/oauth-app-bitbucket-04.png)<-
-->![配置 OAuth App - Bitbucket 05](/img/oauth-app-bitbucket-05.png)<-
+![配置 OAuth App - Bitbucket 04](./assets/oauth-app-bitbucket-04.png)
+![配置 OAuth App - Bitbucket 05](./assets/oauth-app-bitbucket-05.png)
 
 ## 获取 Client ID
 
 现在你已经创建了一个新的 OAuth Consumer，并得到了相应的 **Key** (`Client ID`).
 
-->![配置 OAuth App - Bitbucket 06](/img/oauth-app-bitbucket-06.png)<-
+![配置 OAuth App - Bitbucket 06](./assets/oauth-app-bitbucket-06.png)
 
 ## 配置并启动你的 Vssue
 
@@ -36,27 +36,27 @@ icon: bitbucket
 
 然后运行 `anywhere -h localhost 8080`，在 `localhost:8080` 监听一个 http server 并返回 `index.html`。
 
-->![配置 OAuth App - Bitbucket 07](/img/oauth-app-bitbucket-07.png)<-
+![配置 OAuth App - Bitbucket 07](./assets/oauth-app-bitbucket-07.png)
 
 ## 在本地尝试 Vssue
 
 Vssue 已经成功运行。点击 `Login` 使用 Bitbucket 帐号登录。
 
-->![配置 OAuth App - Bitbucket 08](/img/oauth-app-bitbucket-08.png)<-
+![配置 OAuth App - Bitbucket 08](./assets/oauth-app-bitbucket-08.png)
 
 重定向到 Bitbucket 授权页面。点击 `Grant access` 来登录。
 
-->![配置 OAuth App - Bitbucket 09](/img/oauth-app-bitbucket-09.png)<-
-->![配置 OAuth App - Bitbucket 10](/img/oauth-app-bitbucket-10.png)<-
+![配置 OAuth App - Bitbucket 09](./assets/oauth-app-bitbucket-09.png)
+![配置 OAuth App - Bitbucket 10](./assets/oauth-app-bitbucket-10.png)
 
 如果出现加载评论失败，你需要确认你的仓库是否开启了 **Issue Tracker** 功能。
 
-->![配置 OAuth App - Bitbucket 11](/img/oauth-app-bitbucket-11.png)<-
+![配置 OAuth App - Bitbucket 11](./assets/oauth-app-bitbucket-11.png)
 
 在当前页面写下评论吧 ~
 
-->![配置 OAuth App - Bitbucket 12](/img/oauth-app-bitbucket-12.png)<-
-->![配置 OAuth App - Bitbucket 13](/img/oauth-app-bitbucket-13.png)<-
+![配置 OAuth App - Bitbucket 12](./assets/oauth-app-bitbucket-12.png)
+![配置 OAuth App - Bitbucket 13](./assets/oauth-app-bitbucket-13.png)
 
 ::: tip
 
