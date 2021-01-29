@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.9.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.2...v1.9.3) (2021-01-29)
+
+### Bug Fixes
+
+- **seo:** remove unnecessary 'hostname' ([68ad576](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68ad576f095c8467dc55243a52fa6e49a4ffe1db))
+
 ## [1.9.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.1...v1.9.2) (2021-01-28)
 
 ### Bug Fixes
