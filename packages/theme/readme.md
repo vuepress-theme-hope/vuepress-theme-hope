@@ -11,7 +11,9 @@
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm) ![Dependencies](https://img.shields.io/librariesio/release/npm/vuepress-theme-hope?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-hope)
 
-[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/12381/branches/190414/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=12381&bid=190414) ![Issues](https://img.shields.io/github/issues-raw/vuepress-theme-hope/vuepress-theme-hope?style=flat-square&logo=github)
+[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/15720/branches/318414/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9792&pid=15720&bid=318414)
+[![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/v1/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
+[![Issues](https://img.shields.io/github/issues-raw/vuepress-theme-hope/vuepress-theme-hope?style=flat-square&logo=github)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 

@@ -53,4 +53,4 @@ jobs:
           BRANCH: gh-pages
           CLEAN: true
           FOLDER: demo/dist
-          REPOSITORY_NAME: Mister-Hope/theme-demo
+          REPOSITORY_NAME: vuepress-theme-hope/vuepress-theme-hope-demo
