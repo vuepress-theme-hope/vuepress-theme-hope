@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.mrhope.site/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">@mr-hope/vuepress-plugin-seo</h1>
 <h4 align="center">VuePress SEO plugin🛠 / VuePress SEO 插件🛠</h4>
@@ -11,7 +11,7 @@
 
 VuePress SEO plugin🛠 / VuePress SEO 插件 🛠
 
-## [Official Docs](https://vuepress-seo.mrhope.site/) | [官方文档](https://vuepress-seo.mrhope.site/zh/)
+## [Official Docs](https://vuepress-theme-hope.mrhope.site/seo/) | [官方文档](https://vuepress-theme-hope.mrhope.site/seo/zh/)
 
 ## 安装 / Install
 

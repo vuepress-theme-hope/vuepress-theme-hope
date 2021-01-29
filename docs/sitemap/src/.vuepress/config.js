@@ -4,6 +4,7 @@ module.exports = config({
   title: "Sitemap Generator",
   description: "Generate Sitemap for your site",
 
+  base: "/sitemap/",
   dest: "./dist",
 
   locales: {
@@ -15,18 +16,28 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/sitemap/src",
+
+    locales: {
+      "/zh/": {},
+    },
+
+    blog: false,
 
     footer: {
       display: true,
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
-    mdEnhance: {
-      enableAll: true,
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
     },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -68,14 +79,5 @@ module.exports = config({
         ],
       },
     },
-
-    locales: {
-      "/zh/": {},
-    },
-
-    hostname: "https://vuepress-sitemap.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/sitemap/src",
   },
 });

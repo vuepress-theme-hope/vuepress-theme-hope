@@ -1,6 +1,6 @@
 ---
 home: true
-title: vuepress-plugin-comment
+title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-comment

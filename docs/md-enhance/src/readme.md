@@ -1,6 +1,6 @@
 ---
 home: true
-title: vuepress-plugin-md-enhance
+title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance

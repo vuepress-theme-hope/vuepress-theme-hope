@@ -494,7 +494,7 @@
 
 ### Features
 
-- add [add-this](https://vuepress-add-this.mrhope.site) plugin ([499525f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/499525f63c62855dd9138237bbf53f2092798221))
+- add [add-this](https://vuepress-theme-hope.mrhope.site/add-this) plugin ([499525f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/499525f63c62855dd9138237bbf53f2092798221))
 - **theme:** add a few medias in Medialink ([2234873](https://github.com/Mister-Hope/vuepress-theme-hope/commit/223487332187e1df7d4bc6fd45136f6bcbe2bce6))
 - **theme:** use `<a>` for Medialinks ([4734da0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4734da079d7557fa919563b1bf71172afb610364))
 

@@ -64,8 +64,8 @@ interface BaseCommentOptions {
    *
    * Page Info display configuration
    *
-   * @see https://vuepress-comment.mrhope.site/zh/config/#pageinfo (zh)
-   * @see https://vuepress-comment.mrhope.site/config/#pageinfo (en)
+   * @see https://vuepress-theme-hope.mrhope.site/comment/zh/config/#pageinfo (zh)
+   * @see https://vuepress-theme-hope.mrhope.site/comment/config/#pageinfo (en)
    *
    * @default ['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']
    */

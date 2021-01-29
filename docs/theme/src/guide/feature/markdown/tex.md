@@ -59,4 +59,4 @@ $$
 
 ### More
 
-For specific Tex syntax, see [Katex tutorial](https://vuepress-md-enhance.mrhope.site/guide/tex/#tutorial)
+For specific Tex syntax, see [Katex tutorial](https://vuepress-theme-hope.mrhope.site/md-enhance/guide/tex/#tutorial)

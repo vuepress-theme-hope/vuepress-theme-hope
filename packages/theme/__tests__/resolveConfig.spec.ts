@@ -30,8 +30,6 @@ describe("Test resolveTheme function", () => {
       ],
     ],
 
-    extraWatchFiles: [".vuepress/navBar.js", ".vuepress/sideBar.js"],
-
     locales: {
       "/zh/": {
         title: "vuepress-theme-hope",
@@ -41,6 +39,14 @@ describe("Test resolveTheme function", () => {
 
     themeConfig: {
       logo: "/logo.svg",
+      hostname: "https://vuepress-theme-hope.mrhope.site",
+
+      author: "Mr.Hope",
+      iconPrefix: "vuepress-",
+      repo: "https://github.com/mister-hope/vuepress-theme-hope",
+      repoDisplay: false,
+      docsDir: "docs/theme/src",
+
       nav: [
         { text: "Home", link: "/en/", icon: "home" },
         { text: "Guide", link: "/en/guide/", icon: "creative" },
@@ -127,8 +133,6 @@ describe("Test resolveTheme function", () => {
 
         "/": ["", "guide/", "config/", "basic/"],
       },
-      author: "Mr.Hope",
-      iconPrefix: "vuepress-",
 
       locales: {
         "/zh/": {
@@ -221,8 +225,14 @@ describe("Test resolveTheme function", () => {
         },
       },
 
-      mdEnhance: {
-        enableAll: true,
+      algolia: {
+        apiKey: "4deb442097fb6a05638adf10ef86e222",
+        indexName: "mrhope_vuepress-theme",
+      },
+
+      footer: {
+        display: true,
+        copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
       },
 
       comment: {
@@ -231,10 +241,14 @@ describe("Test resolveTheme function", () => {
         appKey: "vma8Ewk61WeNkI81O3CGpT2i",
       },
 
-      footer: {
-        display: true,
-        copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+      lastUpdate: {
+        timezone: "Asia/Shanghai",
       },
+
+      mdEnhance: {
+        enableAll: true,
+      },
+
       pwa: {
         favicon: "/favicon.ico",
         themeColor: "#46bd87",
@@ -333,17 +347,6 @@ describe("Test resolveTheme function", () => {
           ],
         },
       },
-
-      algolia: {
-        apiKey: "4deb442097fb6a05638adf10ef86e222",
-        indexName: "mrhope_vuepress-theme",
-      },
-
-      hostname: "https://vuepress-theme.mrhope.site/",
-
-      repo: "https://github.com/mister-hope/vuepress-theme-hope",
-      repoDisplay: false,
-      docsDir: "docs/theme/src",
     },
   };
 

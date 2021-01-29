@@ -3,6 +3,8 @@ const { config } = require("vuepress-theme-hope");
 module.exports = config({
   title: "Comment Plugin",
   description: "Comment Plugin for VuePress",
+
+  base: "/comment/",
   dest: "./dist",
 
   locales: {
@@ -11,6 +13,12 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
+
+    author: "Mr.Hope",
+    iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/comment/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -43,49 +51,46 @@ module.exports = config({
     ],
 
     sidebar: {
-      "/guide/": [
-        "",
-        "page-info",
-        "valine",
+      "/": [
         {
-          title: "Vssue",
-          icon: "vssue",
+          title: "Guide",
+          icon: "creative",
+          prefix: "/guide/",
+          collapsable: false,
           children: [
-            "vssue",
+            "",
+            "page-info",
+            "valine",
             {
-              title: "Supported platforms",
-              icon: "support",
+              title: "Vssue",
+              icon: "vssue",
+              collapsable: false,
               children: [
-                "supported-platforms",
-                "github",
-                "gitlab",
-                "gitee",
-                "bitbucket",
+                "vssue",
+                {
+                  title: "Supported platforms",
+                  icon: "support",
+                  collapsable: false,
+                  children: [
+                    "supported-platforms",
+                    "github",
+                    "gitlab",
+                    "gitee",
+                    "bitbucket",
+                  ],
+                },
               ],
             },
           ],
         },
+        {
+          title: "Config",
+          icon: "config",
+          prefix: "/config/",
+          collapsable: false,
+          children: ["", "valine", "vssue"],
+        },
       ],
-      "/config/": ["", "valine", "vssue"],
-      "/": ["", "guide/", "config/"],
-    },
-
-    author: "Mr.Hope",
-    iconPrefix: "vuepress-",
-
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
-
-    mdEnhance: {
-      enableAll: true,
-    },
-
-    comment: {
-      type: "valine",
-      appId: "GG2VSnGiz09Rx18y2OUzdaHS-gzGzoHsz",
-      appKey: "fBf2dptTBHxNqALKrzUlBXeB",
     },
 
     locales: {
@@ -117,34 +122,67 @@ module.exports = config({
         ],
 
         sidebar: {
-          "/zh/guide/": [
-            "",
-            "page-info",
-            "valine",
+          "/zh/": [
             {
-              title: "Vssue",
-              icon: "vssue",
+              title: "指南",
+              icon: "creative",
+              prefix: "guide/",
+              collapsable: false,
               children: [
-                "vssue",
+                "",
+                "page-info",
+                "valine",
                 {
-                  title: "支持平台",
-                  icon: "support",
+                  title: "Vssue",
+                  icon: "vssue",
+                  collapsable: false,
                   children: [
-                    "supported-platforms",
-                    "github",
-                    "gitlab",
-                    "gitee",
-                    "bitbucket",
+                    "vssue",
+                    {
+                      title: "支持平台",
+                      icon: "support",
+                      collapsable: false,
+                      children: [
+                        "supported-platforms",
+                        "github",
+                        "gitlab",
+                        "gitee",
+                        "bitbucket",
+                      ],
+                    },
                   ],
                 },
               ],
             },
+            {
+              title: "配置",
+              icon: "config",
+              prefix: "/config/",
+              collapsable: false,
+              children: ["", "valine", "vssue"],
+            },
           ],
-          "/zh/config/": ["", "valine", "vssue"],
-          "/zh/": ["", "guide/", "config/"],
         },
       },
     },
+
+    blog: false,
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    },
+
+    comment: {
+      type: "valine",
+      appId: "GG2VSnGiz09Rx18y2OUzdaHS-gzGzoHsz",
+      appKey: "fBf2dptTBHxNqALKrzUlBXeB",
+    },
+
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
+    },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -226,10 +264,5 @@ module.exports = config({
         ],
       },
     },
-
-    hostname: "https://vuepress-comment.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/comment/src",
   },
 });

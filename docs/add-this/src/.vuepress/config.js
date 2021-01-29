@@ -4,6 +4,8 @@ module.exports = config({
   title: "Share Plugin",
   description: "Share Plugin provided by AddThis",
 
+  base: "/add-this/",
+
   dest: "./dist",
 
   locales: {
@@ -15,6 +17,12 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
+
+    author: "Mr.Hope",
+    iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/add-this/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -29,24 +37,6 @@ module.exports = config({
         link: "/config/",
       },
     ],
-
-    author: "Mr.Hope",
-    iconPrefix: "vuepress-",
-
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
-
-    mdEnhance: {
-      enableAll: true,
-    },
-
-    comment: {
-      type: "valine",
-      appId: "EBfvFXOPGWKfEvTXSsw1RnXy-gzGzoHsz",
-      appKey: "M8y71yAlPuW2RQJ83r15qfk9",
-    },
 
     locales: {
       "/zh/": {
@@ -64,6 +54,25 @@ module.exports = config({
           },
         ],
       },
+    },
+
+    blog: false,
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    },
+
+    addThis: "ra-5f829c59e6c6bc9a",
+
+    comment: {
+      type: "valine",
+      appId: "EBfvFXOPGWKfEvTXSsw1RnXy-gzGzoHsz",
+      appKey: "M8y71yAlPuW2RQJ83r15qfk9",
+    },
+
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
     },
 
     pwa: {
@@ -147,11 +156,5 @@ module.exports = config({
         ],
       },
     },
-
-    addThis: "ra-5f829c59e6c6bc9a",
-    hostname: "https://vuepress-add-this.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/add-this/src",
   },
 });

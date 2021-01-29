@@ -26,7 +26,7 @@ tags:
 - 将建立 Feed 的日期转换为 ISOString 写入到 `channel.pubDate` 中
 - 通过 `channel.ttl` 中设置内容的更新周期(单位: 分钟)
 
-详细的选项及其默认值详见 [Feed 插件频道设置](https://vuepress-feed.mrhope.site/zh/config/channel/)
+详细的选项及其默认值详见 [Feed 插件频道设置](https://vuepress-theme-hope.mrhope.site/feed/zh/config/channel/)
 
 ## 项目设置
 
@@ -34,10 +34,10 @@ tags:
 
 如果你想在 feed 中移除指定页面，你可以在该页面的 frontmatter 中将 `feed.enable` 设置为 `false`。
 
-当然你也可以通过 `frontmatter.feed` 直接向 feed 插件传入内容。详细的选项及其默认值详见 [Feed 插件项目设置](https://vuepress-feed.mrhope.site/zh/config/item/)
+当然你也可以通过 `frontmatter.feed` 直接向 feed 插件传入内容。详细的选项及其默认值详见 [Feed 插件项目设置](https://vuepress-theme-hope.mrhope.site/feed/zh/config/item/)
 
 ## 输出配置
 
 你可通过配置选项中的 `output` 来决定输出哪些格式的 Feed 文件以及它们的位置。
 
-详细的选项及其默认值详见 [Feed 插件输出设置](https://vuepress-feed.mrhope.site/zh/config/#output)
+详细的选项及其默认值详见 [Feed 插件输出设置](https://vuepress-theme-hope.mrhope.site/feed/zh/config/#output)

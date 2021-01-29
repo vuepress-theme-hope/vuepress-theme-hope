@@ -9,7 +9,7 @@
     "workbox",
     "service worker"
   ],
-  "homepage": "https://vuepress-pwa.mrhope.site",
+  "homepage": "https://vuepress-theme-hope.mrhope.site/pwa/",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },

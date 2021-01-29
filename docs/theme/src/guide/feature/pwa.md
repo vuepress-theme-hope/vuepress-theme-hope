@@ -34,4 +34,4 @@ To prevent from including large files in your precache list, any resources large
 
 For more detail, see [pwa plugin documatation][pwa]
 
-[pwa]: https://vuepress-pwa.mrhope.site/
+[pwa]: https://vuepress-theme-hope.mrhope.site/pwa/

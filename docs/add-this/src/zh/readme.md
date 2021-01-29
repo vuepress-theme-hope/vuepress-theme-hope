@@ -1,6 +1,6 @@
 ---
 home: true
-title: vuepress-plugin-add-this
+title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-add-this

@@ -10,9 +10,9 @@
     "url": "https://mrhope.site"
   },
   "scripts": {
-    "build": "vuepress build src",
-    "clean-serve": "vuepress dev src --no-cache",
-    "serve": "vuepress dev src"
+    "docs:build": "vuepress build src",
+    "docs:clean-serve": "vuepress dev src --no-cache",
+    "docs:serve": "vuepress dev src"
   },
   "devDependencies": {
     "vuepress": "1.8.0",

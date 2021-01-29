@@ -15,28 +15,26 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/last-update/src",
+
+    locales: {
+      "/zh/": {},
+    },
 
     footer: {
       display: true,
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
-    mdEnhance: {
-      enableAll: true,
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
     },
 
-    locales: {
-      "/zh/": {},
-    },
-
-    comment: {
-      type: "valine",
-      appId: "JGjyHWyyPdU3wFBkM6P1xd51-gzGzoHsz",
-      appKey: "dGFcnYzBWRWO5SIRiW2Q9grW",
-    },
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -78,10 +76,5 @@ module.exports = config({
         ],
       },
     },
-
-    hostname: "https://vuepress-last-update.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/last-update/src",
   },
 });

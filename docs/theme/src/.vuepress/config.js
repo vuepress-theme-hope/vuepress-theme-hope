@@ -27,8 +27,6 @@ module.exports = config({
     ],
   ],
 
-  extraWatchFiles: [".vuepress/navBar.js", ".vuepress/sideBar.js"],
-
   locales: {
     "/zh/": {
       title: "vuepress-theme-hope",
@@ -38,10 +36,16 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
-    nav: navBarConfig.en,
-    sidebar: sideBarConfig.en,
+    hostname: "https://vuepress-theme-hope.mrhope.site",
+
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    repoDisplay: false,
+    docsDir: "docs/theme/src",
+
+    nav: navBarConfig.en,
+    sidebar: sideBarConfig.en,
 
     locales: {
       "/zh/": {
@@ -50,8 +54,14 @@ module.exports = config({
       },
     },
 
-    mdEnhance: {
-      enableAll: true,
+    algolia: {
+      apiKey: "4deb442097fb6a05638adf10ef86e222",
+      indexName: "mrhope_vuepress-theme",
+    },
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
     comment: {
@@ -60,10 +70,18 @@ module.exports = config({
       appKey: "vma8Ewk61WeNkI81O3CGpT2i",
     },
 
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    copyright: {
+      status: "local",
     },
+
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
+    },
+
+    mdEnhance: {
+      enableAll: true,
+    },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -162,16 +180,5 @@ module.exports = config({
         ],
       },
     },
-
-    algolia: {
-      apiKey: "4deb442097fb6a05638adf10ef86e222",
-      indexName: "mrhope_vuepress-theme",
-    },
-
-    hostname: "https://vuepress-theme.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    repoDisplay: false,
-    docsDir: "docs/theme/src",
   },
 });

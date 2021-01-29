@@ -6,13 +6,13 @@ tag:
   - markdown
 ---
 
-`vuepress-theme-hope` 通过内置 [md-enhance](https://vuepress-md-enhance.mrhope.site)，在 Markdown 中启用了更多的语法与新功能。
+`vuepress-theme-hope` 通过内置 [md-enhance](https://vuepress-theme-hope.mrhope.site/md-enhance)，在 Markdown 中启用了更多的语法与新功能。
 
 <!-- more -->
 
 ## 一键启用
 
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-md-enhance.mrhope.site) 插件的所有功能。
+你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.mrhope.site/md-enhance) 插件的所有功能。
 
 ```js {3-5}
 module.exports = {
@@ -38,7 +38,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/sup-sub/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/sup-sub/)
 
 ### 自定义对齐
 
@@ -72,7 +72,7 @@ module.exports = {
 
 ::::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/align/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/align/)
 
 ### 脚注
 
@@ -90,7 +90,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/footnote/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/footnote/)
 
 ### 标记
 
@@ -104,7 +104,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/mark/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/mark/)
 
 ### 流程图
 
@@ -132,7 +132,7 @@ cond(no)->e
 
 :::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/flowchart/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/flowchart/)
 
 ### Tex 语法
 
@@ -152,7 +152,7 @@ $$
 
 :::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/tex/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/tex/)
 
 ### 代码案例
 
@@ -370,7 +370,7 @@ h1 {
 
 ::::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/demo/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/demo/)
 
 ### 幻灯片
 
@@ -442,7 +442,7 @@ $$
 
 :::
 
-- [点击查看](https://vuepress-theme.mrhope.site/zh/guide/feature/markdown/presentation/)
+- [点击查看](https://vuepress-theme-hope.mrhope.site/zh/guide/feature/markdown/presentation/)
 
 ## 其他语法
 

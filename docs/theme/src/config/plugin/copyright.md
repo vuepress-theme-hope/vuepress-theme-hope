@@ -5,6 +5,8 @@ category: config
 tags:
   - plugin
   - config
+copyright:
+  minLength: 40
 ---
 
 Handling copy operations in your VuePress site

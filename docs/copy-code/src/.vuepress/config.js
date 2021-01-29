@@ -4,6 +4,7 @@ module.exports = config({
   title: "Quick Code Copy",
   description: "Quick Code Copy Plugin for vuepress",
 
+  base: "/copy-code/",
   dest: "./dist",
 
   locales: {
@@ -15,9 +16,12 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/copy-code/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -32,21 +36,6 @@ module.exports = config({
         link: "/config/",
       },
     ],
-
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
-
-    mdEnhance: {
-      enableAll: true,
-    },
-
-    comment: {
-      type: "valine",
-      appId: "AOUpdmlh8YrLcu7lhMAnm4zN-gzGzoHsz",
-      appKey: "eT8UQNRrAbur6O0fcf68Rg83",
-    },
 
     locales: {
       "/zh/": {
@@ -65,6 +54,24 @@ module.exports = config({
         ],
       },
     },
+
+    blog: false,
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    },
+
+    comment: {
+      type: "valine",
+      appId: "AOUpdmlh8YrLcu7lhMAnm4zN-gzGzoHsz",
+      appKey: "eT8UQNRrAbur6O0fcf68Rg83",
+    },
+
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
+    },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -146,10 +153,5 @@ module.exports = config({
         ],
       },
     },
-
-    hostname: "https://vuepress-copy-code.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/copy-code/src",
   },
 });

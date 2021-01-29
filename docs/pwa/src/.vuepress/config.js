@@ -4,6 +4,7 @@ module.exports = config({
   title: "PWA Support",
   description: "A powerful PWA plugin for vuepress",
 
+  base: "/pwa/",
   dest: "./dist",
 
   locales: {
@@ -15,9 +16,12 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/pwa/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -32,21 +36,6 @@ module.exports = config({
         link: "/config/",
       },
     ],
-
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
-
-    mdEnhance: {
-      enableAll: true,
-    },
-
-    comment: {
-      type: "valine",
-      appId: "rjC4JEYLxD9Ia3GoJ4VXilsD-gzGzoHsz",
-      appKey: "OrPR6yHV4e4uik7y55KbK4Ds",
-    },
 
     locales: {
       "/zh/": {
@@ -65,6 +54,24 @@ module.exports = config({
         ],
       },
     },
+
+    blog: false,
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    },
+
+    comment: {
+      type: "valine",
+      appId: "rjC4JEYLxD9Ia3GoJ4VXilsD-gzGzoHsz",
+      appKey: "OrPR6yHV4e4uik7y55KbK4Ds",
+    },
+
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
+    },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -146,10 +153,5 @@ module.exports = config({
         ],
       },
     },
-
-    hostname: "https://vuepress-pwa.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/pwa/src",
   },
 });

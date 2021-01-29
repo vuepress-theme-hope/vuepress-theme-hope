@@ -34,4 +34,4 @@ Service worker 成功获取内容更新后，将在右下角显示一个弹出�
 
 有关更多详细信息，请参见 [pwa 插件文档][pwa]
 
-[pwa]: https://vuepress-pwa.mrhope.site/zh/
+[pwa]: https://vuepress-theme-hope.mrhope.site/pwa/zh/

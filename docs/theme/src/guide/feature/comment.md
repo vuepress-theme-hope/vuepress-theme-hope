@@ -29,7 +29,7 @@ You can choose between Valine and Vssue.
 
 ::: tip
 
-You can visit [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-comment.mrhope.site/) for more details
+You can visit [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-theme-hope.mrhope.site/comment/) for more details
 
 :::
 

@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.mrhope.site/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
 <h4 align="center">A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题✨</h4>
@@ -17,7 +17,7 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Official Docs / 官方文档
 
-[English Docs](https://vuepress-theme.mrhope.site/) | [中文文档](https://vuepress-theme.mrhope.site/zh/)
+[English Docs](https://vuepress-theme-hope.mrhope.site/) | [中文文档](https://vuepress-theme-hope.mrhope.site/zh/)
 
 [Theme Highlights](#Theme-Highlights) | [主题特点](#主题特点)
 

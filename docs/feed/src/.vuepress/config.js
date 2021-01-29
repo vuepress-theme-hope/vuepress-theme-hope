@@ -4,6 +4,7 @@ module.exports = config({
   title: "Feed Generator",
   description: "Feed Plugin for vuepress",
 
+  base: "/feed/",
   dest: "./dist",
 
   locales: {
@@ -16,9 +17,12 @@ module.exports = config({
   /** 主题配置 */
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/feed/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -48,21 +52,6 @@ module.exports = config({
       ],
     },
 
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
-
-    mdEnhance: {
-      enableAll: true,
-    },
-
-    comment: {
-      type: "valine",
-      appId: "VwjF4qIJnQLFEpweey8k97oo-gzGzoHsz",
-      appKey: "iwNJjiGF53OCyfAQqihGbKKx",
-    },
-
     locales: {
       "/zh/": {
         nav: [
@@ -78,18 +67,34 @@ module.exports = config({
             link: "/zh/config/",
           },
         ],
-        sidebar: [
-          "/zh/",
-          "/zh/guide",
-          {
-            title: "配置",
-            icon: "config",
-            prefix: "/zh/config/",
-            collapsable: false,
-            children: ["", "channel", "item"],
-          },
-        ],
+
+        sidebar: {
+          "/zh/": [
+            "",
+            "guide",
+            {
+              title: "配置",
+              icon: "config",
+              prefix: "config/",
+              collapsable: false,
+              children: ["", "channel", "item"],
+            },
+          ],
+        },
       },
+    },
+
+    blog: false,
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    },
+
+    comment: {
+      type: "valine",
+      appId: "VwjF4qIJnQLFEpweey8k97oo-gzGzoHsz",
+      appKey: "iwNJjiGF53OCyfAQqihGbKKx",
     },
 
     pwa: {
@@ -173,10 +178,5 @@ module.exports = config({
         ],
       },
     },
-
-    hostname: "https://vuepress-feed.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/feed/src",
   },
 });

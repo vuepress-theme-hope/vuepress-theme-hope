@@ -32,47 +32,47 @@ module.exports = {
         },
         {
           text: "AddThis Plugin",
-          link: "https://vuepress-add-this.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/add-this/",
         },
         {
           text: "Comment Plugin",
-          link: "https://vuepress-comment.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/comment/",
         },
         {
           text: "Copy Code Plugin",
-          link: "https://vuepress-copy-code.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/copy-code/",
         },
         {
           text: "Feed Plugin",
-          link: "https://vuepress-feed.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/feed/",
         },
         {
           text: "Last Update Plugin",
-          link: "https://vuepress-last-update.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/last-update/",
         },
         {
           text: "Markdown Enhance Plugin",
-          link: "https://vuepress-md-enhance.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/md-enhance/",
         },
         {
           text: "Photo Swipe Plugin",
-          link: "https://vuepress-photo-swipe.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/photo-swipe/",
         },
         {
           text: "PWA Plugin",
-          link: "https://vuepress-pwa.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/pwa/",
         },
         {
           text: "Reading Time Plugin",
-          link: "https://vuepress-reading-time.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/reading-time/",
         },
         {
           text: "Seo Plugin",
-          link: "https://vuepress-seo.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/seo/",
         },
         {
           text: "Sitemap Plugin",
-          link: "https://vuepress-sitemap.mrhope.site",
+          link: "https://vuepress-theme-hope.mrhope.site/sitemap/",
         },
       ],
     },
@@ -111,47 +111,47 @@ module.exports = {
         },
         {
           text: "AddThis 插件",
-          link: "https://vuepress-add-this.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/add-this/zh/",
         },
         {
           text: "评论插件",
-          link: "https://vuepress-comment.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/comment/zh/",
         },
         {
           text: "代码复制插件",
-          link: "https://vuepress-copy-code.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/copy-code/zh/",
         },
         {
           text: "Feed 插件",
-          link: "https://vuepress-feed.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/feed/zh/",
         },
         {
           text: "最后更新时间插件",
-          link: "https://vuepress-last-update.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/last-update/zh/",
         },
         {
           text: "Markdown 增强插件",
-          link: "https://vuepress-md-enhance.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/md-enhance/zh/",
         },
         {
           text: "图片预览插件",
-          link: "https://vuepress-photo-swipe.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/",
         },
         {
           text: "PWA 插件",
-          link: "https://vuepress-pwa.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/pwa/zh/",
         },
         {
           text: "阅读时间插件",
-          link: "https://vuepress-reading-time.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/reading-time/zh/",
         },
         {
           text: "Seo 插件",
-          link: "https://vuepress-seo.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/seo/zh/",
         },
         {
           text: "Sitemap 插件",
-          link: "https://vuepress-sitemap.mrhope.site/zh/",
+          link: "https://vuepress-theme-hope.mrhope.site/sitemap/zh/",
         },
       ],
     },

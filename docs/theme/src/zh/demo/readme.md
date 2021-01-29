@@ -72,15 +72,15 @@ category: demo
 
 - 随时随地添加你的博客或文档到此
 
-[vuepress-theme-hope]: https://vuepress-theme.mrhope.site
-[add-this]: https://vuepress-add-this.mrhope.site/zh/
-[comment]: https://vuepress-comment.mrhope.site/zh/
-[copy-code]: https://vuepress-copy-code.mrhope.site/zh/
-[feed]: https://vuepress-feed.mrhope.site/zh/
-[last-update]: https://vuepress-last-update.mrhope.site/zh/
-[md-enhance]: https://vuepress-md-enhance.mrhope.site/zh/
-[photo-swipe]: https://vuepress-photo-swipe.mrhope.site/zh/
-[reading-time]: https://vuepress-reading-time.mrhope.site/zh/
-[seo]: https://vuepress-seo.mrhope.site/zh/
-[sitemap]: https://vuepress-sitemap.mrhope.site/zh/
+[vuepress-theme-hope]: https://vuepress-theme-hope.mrhope.site
+[add-this]: https://vuepress-theme-hope.mrhope.site/add-this/zh/
+[comment]: https://vuepress-theme-hope.mrhope.site/comment/zh/
+[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code/zh/
+[feed]: https://vuepress-theme-hope.mrhope.site/feed/zh/
+[last-update]: https://vuepress-theme-hope.mrhope.site/last-update/zh/
+[md-enhance]: https://vuepress-theme-hope.mrhope.site/md-enhance/zh/
+[photo-swipe]: https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/
+[reading-time]: https://vuepress-theme-hope.mrhope.site/reading-time/zh/
+[seo]: https://vuepress-theme-hope.mrhope.site/seo/zh/
+[sitemap]: https://vuepress-theme-hope.mrhope.site/sitemap/zh/
 [hope-studio]: https://hope-studio.innenu.com

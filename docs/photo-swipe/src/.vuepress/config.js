@@ -4,6 +4,7 @@ module.exports = config({
   title: "Photo preview",
   description: "Photo swipe Plugin for VuePress",
 
+  base: "/photo-swipe/",
   dest: "./dist",
 
   locales: {
@@ -15,30 +16,18 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    docsDir: "docs/photo-swipe/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
       { text: "Demo", icon: "creative", link: "/demo/" },
       { text: "Config", icon: "config", link: "/config/" },
     ],
-
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
-
-    mdEnhance: {
-      enableAll: true,
-    },
-
-    comment: {
-      type: "valine",
-      appId: "xouo0O4gVnPMvGC5Kn5CAi26-gzGzoHsz",
-      appKey: "T4CQVlS8wsnQkvXNX2T9wduv",
-    },
 
     locales: {
       "/zh/": {
@@ -49,6 +38,24 @@ module.exports = config({
         ],
       },
     },
+
+    blog: false,
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    },
+
+    comment: {
+      type: "valine",
+      appId: "xouo0O4gVnPMvGC5Kn5CAi26-gzGzoHsz",
+      appKey: "T4CQVlS8wsnQkvXNX2T9wduv",
+    },
+
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
+    },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -130,10 +137,5 @@ module.exports = config({
         ],
       },
     },
-
-    hostname: "https://vuepress-photo-swipe.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
-    docsDir: "docs/photo-swipe/src",
   },
 });

@@ -4,6 +4,7 @@ module.exports = config({
   title: "Markdown Enhance",
   description: "Markdown Enhancement for VuePress",
 
+  base: "/md-enhance/",
   dest: "./dist",
 
   head: [
@@ -34,12 +35,19 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope.mrhope.site",
+
+    author: "Mr.Hope",
+    iconPrefix: "vuepress-",
+    repo: "https://github.com/mister-hope/vuepress-theme-hope/",
+    docsDir: "docs/md-enhance/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
       { text: "Guide", icon: "creative", link: "/guide/" },
       { text: "Config", icon: "config", link: "/config/" },
     ],
+
     sidebar: {
       "/guide/": [
         "",
@@ -54,24 +62,6 @@ module.exports = config({
       ],
 
       "/": ["", "guide/", "config"],
-    },
-
-    author: "Mr.Hope",
-    iconPrefix: "vuepress-",
-
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
-
-    mdEnhance: {
-      enableAll: true,
-    },
-
-    comment: {
-      type: "valine",
-      appId: "YwtJvkJgikEDUjCFtygBQDwu-gzGzoHsz",
-      appKey: "BHsA7vE2TVwHAVELEpherqh4",
     },
 
     locales: {
@@ -98,6 +88,28 @@ module.exports = config({
         },
       },
     },
+
+    blog: false,
+
+    footer: {
+      display: true,
+      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    },
+
+    comment: {
+      type: "valine",
+      appId: "YwtJvkJgikEDUjCFtygBQDwu-gzGzoHsz",
+      appKey: "BHsA7vE2TVwHAVELEpherqh4",
+    },
+
+    lastUpdate: {
+      timezone: "Asia/Shanghai",
+    },
+
+    mdEnhance: {
+      enableAll: true,
+    },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
@@ -179,10 +191,5 @@ module.exports = config({
         ],
       },
     },
-
-    hostname: "https://vuepress-md-enhance.mrhope.site/",
-
-    repo: "https://github.com/mister-hope/vuepress-theme-hope/",
-    docsDir: "docs/md-enhance/src",
   },
 });

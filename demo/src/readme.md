@@ -30,4 +30,4 @@ project:
 footer: customize your footer text
 ---
 
-For related configuration documents, please see [blog homepage](https://vuepress-theme.mrhope.site/guide/layout/blog/)
+For related configuration documents, please see [blog homepage](https://vuepress-theme-hope.mrhope.site/guide/layout/blog/)

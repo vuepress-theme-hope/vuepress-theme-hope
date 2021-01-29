@@ -6,7 +6,7 @@
     "vuepress-plugin",
     "sitemap"
   ],
-  "homepage": "https://vuepress-sitemap.mrhope.site",
+  "homepage": "https://vuepress-theme-hope.mrhope.site/sitemap/",
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },

@@ -30,5 +30,5 @@ For more options, please see [copy-code plugin docs][copy-code]
 
 See [Layout → Page → Footer Section](../layout/page.md#footer-support)
 
-[copy-code]: https://vuepress-copy-code.mrhope.site/config/
-[photo-swipe]: https://vuepress-photo-swipe.mrhope.site/config/
+[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code/config/
+[photo-swipe]: https://vuepress-theme-hope.mrhope.site/photo-swipe/config/

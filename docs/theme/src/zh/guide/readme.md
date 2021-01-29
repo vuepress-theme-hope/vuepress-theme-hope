@@ -94,7 +94,7 @@ tags: intro
 
 - [全新博客主页布局](layout/blog.md)
 
-- [社交关注按钮与页面社交分享](https://vuepress-add-this.mrhope.site/zh/)
+- [社交关注按钮与页面社交分享](https://vuepress-theme-hope.mrhope.site/add-this/zh/)
 
 - [文章展示](feature/blog.md)
 
@@ -131,14 +131,14 @@ tags: intro
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: 使网站的图片支持缩放与滑动浏览
 
-[add-this]: https://vuepress-add-this.mrhope.site/zh/
-[comment]: https://vuepress-comment.mrhope.site/zh/
-[copy-code]: https://vuepress-copy-code.mrhope.site/zh/
-[feed]: https://vuepress-feed.mrhope.site/zh/
-[last-update]: https://vuepress-last-update.mrhope.site/zh/
-[md-enhance]: https://vuepress-md-enhance.mrhope.site/zh/
-[photo-swipe]: https://vuepress-photo-swipe.mrhope.site/zh/
-[pwa]: https://vuepress-pwa.mrhope.site/zh/
-[reading-time]: https://vuepress-reading-time.mrhope.site/zh/
-[seo]: https://vuepress-seo.mrhope.site/zh/
-[sitemap]: https://vuepress-sitemap.mrhope.site/zh/
+[add-this]: https://vuepress-theme-hope.mrhope.site/add-this/zh/
+[comment]: https://vuepress-theme-hope.mrhope.site/comment/zh/
+[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code/zh/
+[feed]: https://vuepress-theme-hope.mrhope.site/feed/zh/
+[last-update]: https://vuepress-theme-hope.mrhope.site/last-update/zh/
+[md-enhance]: https://vuepress-theme-hope.mrhope.site/md-enhance/zh/
+[photo-swipe]: https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/
+[pwa]: https://vuepress-theme-hope.mrhope.site/pwa/zh/
+[reading-time]: https://vuepress-theme-hope.mrhope.site/reading-time/zh/
+[seo]: https://vuepress-theme-hope.mrhope.site/seo/zh/
+[sitemap]: https://vuepress-theme-hope.mrhope.site/sitemap/zh/

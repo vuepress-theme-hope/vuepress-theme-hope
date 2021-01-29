@@ -6,13 +6,13 @@ tag:
   - markdown
 ---
 
-`vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-md-enhance.mrhope.site) plugin.
+`vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-theme-hope.mrhope.site/md-enhance) plugin.
 
 <!-- more -->
 
 ## Enable all
 
-You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-md-enhance.mrhope.site) plugin.
+You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.mrhope.site/md-enhance) plugin.
 
 ```js {3-5}
 module.exports = {
@@ -38,7 +38,7 @@ module.exports = {
 
 :::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/sup-sub/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/sup-sub/)
 
 ### Align
 
@@ -72,7 +72,7 @@ I am right align
 
 ::::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/align/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/align/)
 
 ### Footnote
 
@@ -90,7 +90,7 @@ This text has footnote[^first].
 
 :::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/footnote/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/footnote/)
 
 ### Mark
 
@@ -104,7 +104,7 @@ You can mark ==important words== .
 
 :::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/mark/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/mark/)
 
 ### Flowchart
 
@@ -132,7 +132,7 @@ cond(no)->e
 
 :::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/flowchart/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/flowchart/)
 
 ### Tex
 
@@ -152,7 +152,7 @@ $$
 
 :::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/tex/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/tex/)
 
 ### Demo
 
@@ -370,7 +370,7 @@ h1 {
 
 ::::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/demo/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/demo/)
 
 ### Presentation
 
@@ -442,7 +442,7 @@ $$
 
 :::
 
-- [View Detail](https://vuepress-theme.mrhope.site/guide/feature/markdown/presentation/)
+- [View Detail](https://vuepress-theme-hope.mrhope.site/guide/feature/markdown/presentation/)
 
 ## Other Syntax
 

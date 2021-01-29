@@ -1,6 +1,6 @@
 ---
 home: true
-title: "@mr-hope/vuepress-plugin-reading-time"
+title: Home
 icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-reading-time"

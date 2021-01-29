@@ -61,14 +61,14 @@ tags:
 
 - vuepress-plugin-smooth-scroll: Smooth scrolling.
 
-[add-this]: https://vuepress-add-this.mrhope.site
-[comment]: https://vuepress-comment.mrhope.site
-[copy-code]: https://vuepress-copy-code.mrhope.site
-[feed]: https://vuepress-feed.mrhope.site
-[last-update]: https://vuepress-last-update.mrhope.site
-[md-enhance]: https://vuepress-md-enhance.mrhope.site
-[photo-swipe]: https://vuepress-photo-swipe.mrhope.site
-[pwa]: https://vuepress-pwa.mrhope.site
-[reading-time]: https://vuepress-reading-time.mrhope.site
-[seo]: https://vuepress-seo.mrhope.site
-[sitemap]: https://vuepress-sitemap.mrhope.site
+[add-this]: https://vuepress-theme-hope.mrhope.site/add-this
+[comment]: https://vuepress-theme-hope.mrhope.site/comment
+[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code
+[feed]: https://vuepress-theme-hope.mrhope.site/feed
+[last-update]: https://vuepress-theme-hope.mrhope.site/last-update
+[md-enhance]: https://vuepress-theme-hope.mrhope.site/md-enhance
+[photo-swipe]: https://vuepress-theme-hope.mrhope.site/photo-swipe
+[pwa]: https://vuepress-theme-hope.mrhope.site/pwa
+[reading-time]: https://vuepress-theme-hope.mrhope.site/reading-time
+[seo]: https://vuepress-theme-hope.mrhope.site/seo
+[sitemap]: https://vuepress-theme-hope.mrhope.site/sitemap
