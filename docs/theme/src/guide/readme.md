@@ -1,8 +1,7 @@
 ---
+title: Introduction
 icon: info
 ---
-
-# Introduction
 
 ::: tip
 
