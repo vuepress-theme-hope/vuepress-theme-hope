@@ -497,13 +497,13 @@ Options for `vuepress-named-chunks`, set to `false` to disable this plugin.
 
 By default, all page chunks will be named with page title, and all the layout chunks will be named by their component name.
 
-[add-this]: https://vuepress-theme-hope.mrhope.site/add-this
-[comment-config]: https://vuepress-theme-hope.mrhope.site/comment/config/
+[add-this]: https://vuepress-theme-hope.github.io/add-this
+[comment-config]: https://vuepress-theme-hope.github.io/comment/config/
 [copyright-config]: https://vuepress.github.io/en/plugins/copyright/
-[md-enhance-config]: https://vuepress-theme-hope.mrhope.site/md-enhance/config/
-[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code
-[photo-swipe-config]: https://vuepress-theme-hope.mrhope.site/photo-swipe/config/
-[pwa-config]: https://vuepress-theme-hope.mrhope.site/pwa/config/
-[feed-config]: https://vuepress-theme-hope.mrhope.site/feed/config/
-[seo-config]: https://vuepress-theme-hope.mrhope.site/seo/#plugin-options
-[sitemap-config]: https://vuepress-theme-hope.mrhope.site/sitemap/#plugin-options
+[md-enhance-config]: https://vuepress-theme-hope.github.io/md-enhance/config/
+[copy-code]: https://vuepress-theme-hope.github.io/copy-code
+[photo-swipe-config]: https://vuepress-theme-hope.github.io/photo-swipe/config/
+[pwa-config]: https://vuepress-theme-hope.github.io/pwa/config/
+[feed-config]: https://vuepress-theme-hope.github.io/feed/config/
+[seo-config]: https://vuepress-theme-hope.github.io/seo/#plugin-options
+[sitemap-config]: https://vuepress-theme-hope.github.io/sitemap/#plugin-options

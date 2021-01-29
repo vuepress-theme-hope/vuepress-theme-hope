@@ -1,23 +1,23 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
 <h4 align="center">A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题✨</h4>
 
-[![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site) [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/LICENSE)
+[![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site) [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/LICENSE)
 
 <!-- markdownlint-restore -->
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm) ![Dependencies](https://img.shields.io/librariesio/release/npm/vuepress-theme-hope?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-hope)
 
-[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/12381/branches/190414/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=12381&bid=190414) ![Issues](https://img.shields.io/github/issues-raw/mister-hope/vuepress-theme-hope?style=flat-square&logo=github)
+[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/12381/branches/190414/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=12381&bid=190414) ![Issues](https://img.shields.io/github/issues-raw/vuepress-theme-hope/vuepress-theme-hope?style=flat-square&logo=github)
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
 ## Official Docs / 官方文档
 
-[English Docs](https://vuepress-theme-hope.mrhope.site/) | [中文文档](https://vuepress-theme-hope.mrhope.site/zh/)
+[English Docs](https://vuepress-theme-hope.github.io/) | [中文文档](https://vuepress-theme-hope.github.io/zh/)
 
 [Theme Highlights](#Theme-Highlights) | [主题特点](#主题特点)
 

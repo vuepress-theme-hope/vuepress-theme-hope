@@ -7,9 +7,9 @@ tags:
 
 # Markdown Enhance
 
-`vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-theme-hope.mrhope.site/md-enhance) plugin.
+`vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
 
-`themeconfig.mdEnhance` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option. Visit [md-enhance documentation](https://vuepress-theme-hope.mrhope.site/md-enhance) to see the usage.
+`themeconfig.mdEnhance` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option. Visit [md-enhance documentation](https://vuepress-theme-hope.github.io/md-enhance) to see the usage.
 
 ::: tip
 
@@ -21,7 +21,7 @@ At the same time, VuePress itself adds some Markdown syntaxes. You can [view the
 
 ## Enable all
 
-You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.mrhope.site/md-enhance) plugin.
+You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
 
 ```js {3-5}
 module.exports = {

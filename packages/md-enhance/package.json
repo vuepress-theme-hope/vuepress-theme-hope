@@ -17,13 +17,13 @@
     "presentation",
     "reveal.js"
   ],
-  "homepage": "https://vuepress-theme-hope.mrhope.site/md-enhance/",
+  "homepage": "https://vuepress-theme-hope.github.io/md-enhance/",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
     "directory": "packages/md-enhance"
   },
   "license": "MIT",

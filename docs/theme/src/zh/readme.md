@@ -66,7 +66,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 VuePress 之旅。
+你可以直接使用 [vuepress-theme-hope 模板](https://github.com/vuepress-theme-hope/vuepress-theme-hope-template) 来开始你的 VuePress 之旅。
 
 ## 🛠 安装
 
@@ -95,4 +95,4 @@ module.exports = config({
 
 :::
 
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js

@@ -30,5 +30,5 @@ tags:
 
 请参见 [布局 → 页面 → 页脚部分](../layout/page.md#页脚支持)
 
-[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code/zh/config/
-[photo-swipe]: https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/config/
+[copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/config/
+[photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/zh/config/

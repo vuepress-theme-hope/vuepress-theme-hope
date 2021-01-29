@@ -17,11 +17,11 @@ module.exports = config({
 
   themeConfig: {
     logo: "/logo.svg",
-    hostname: "https://vuepress-theme-hope.mrhope.site",
+    hostname: "https://vuepress-theme-hope.github.io",
 
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsDir: "docs/add-this/src",
 
     nav: [

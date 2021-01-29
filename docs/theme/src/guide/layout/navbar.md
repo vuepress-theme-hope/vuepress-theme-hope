@@ -285,11 +285,11 @@ module.exports = {
           {
             text: "Changelog",
             link:
-              "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
           },
           {
             text: "Repo",
-            link: "https://github.com/mister-hope/vuepress-theme-hope",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
           },
         ],
       },

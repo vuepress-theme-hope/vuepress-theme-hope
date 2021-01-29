@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">@mr-hope/vuepress-plugin-last-update</h1>
 <h4 align="center">最后更新时间插件🕘 / Last Update Time plugin🕘</h4>
@@ -11,7 +11,7 @@
 
 最后更新时间插件 🕘 / Last Update Time plugin🕘
 
-## [Official Docs](https://vuepress-theme-hope.mrhope.site/last-update/) | [官方文档](https://vuepress-theme-hope.mrhope.site/last-update/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/last-update/) | [官方文档](https://vuepress-theme-hope.github.io/last-update/zh/)
 
 ## Install / 安装
 

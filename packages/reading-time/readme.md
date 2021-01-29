@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">@mr-hope/vuepress-plugin-reading-time</h1>
 <h4 align="center">VuePress reading time plugin⏳ / VuePress 阅读时间插件⏳</h4>
@@ -11,7 +11,7 @@
 
 VuePress reading time plugin⏳ / VuePress 阅读时间插件 ⏳
 
-## [Official Docs](https://vuepress-theme-hope.mrhope.site/reading-time/) | [官方文档](https://vuepress-theme-hope.mrhope.site/reading-time/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/reading-time/) | [官方文档](https://vuepress-theme-hope.github.io/reading-time/zh/)
 
 ## 安装 / Install
 

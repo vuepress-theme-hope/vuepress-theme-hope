@@ -29,7 +29,7 @@ You can choose between Valine and Vssue.
 
 ::: tip
 
-You can visit [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-theme-hope.mrhope.site/comment/) for more details
+You can visit [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-theme-hope.github.io/comment/) for more details
 
 :::
 
@@ -49,7 +49,7 @@ Create new application in Leancloud, and you will get APP ID / APP Key.
 }
 ```
 
-Config will be listed on [Config](http://vuepress-comment.mrhope.site/config/valine/).
+Config will be listed on [Config](http://vuepress-theme-hope.github.io/comment/config/valine/).
 
 Fill in the corresponding APP ID and APP Key, then Valine will be well configured.
 
@@ -65,7 +65,7 @@ For Valine config and usage, please see [Valine Docs](https://valine.js.org)。
 
 Vssue can enable comments for your static pages via the `Issue System` of `GitHub`, `Gitlab`, `Bitbucket` or `Gitee`, and you can choose one of those platforms.
 
-Go to [Supported Platforms - Set up OAuth App](http://vuepress-comment.mrhope.site/guide/supported-platforms/) for detailed instructions.
+Go to [Supported Platforms - Set up OAuth App](http://vuepress-theme-hope.github.io/comment/guide/supported-platforms/) for detailed instructions.
 
 After this step, you will get `client id` and `client secret` of your OAuth App, which will be used for Vssue options:
 

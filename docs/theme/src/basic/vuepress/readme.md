@@ -10,7 +10,7 @@ tags:
 
 ```bash
 # find a proper place to clone this project template
-git clone git@github.com:Mister-Hope/vuepress-theme-hope-template.git
+git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope-template.git
 
 # enter the program folder
 cd vuepressTemplate

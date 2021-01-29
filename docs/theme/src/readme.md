@@ -66,7 +66,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-You can use [vuepress-theme-hope template](https://github.com/Mister-Hope/vuepress-theme-hope-template) directly to start your VuePress journey.
+You can use [vuepress-theme-hope template](https://github.com/vuepress-theme-hope/vuepress-theme-hope-template) directly to start your VuePress journey.
 
 ## 🛠Install
 
@@ -101,4 +101,4 @@ You can view [Config of this site][docs-config] as an example.
 
 :::
 
-[docs-config]: https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js

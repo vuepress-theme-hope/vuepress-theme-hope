@@ -61,14 +61,14 @@ tags:
 
 - vuepress-plugin-smooth-scroll: Smooth scrolling.
 
-[add-this]: https://vuepress-theme-hope.mrhope.site/add-this
-[comment]: https://vuepress-theme-hope.mrhope.site/comment
-[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code
-[feed]: https://vuepress-theme-hope.mrhope.site/feed
-[last-update]: https://vuepress-theme-hope.mrhope.site/last-update
-[md-enhance]: https://vuepress-theme-hope.mrhope.site/md-enhance
-[photo-swipe]: https://vuepress-theme-hope.mrhope.site/photo-swipe
-[pwa]: https://vuepress-theme-hope.mrhope.site/pwa
-[reading-time]: https://vuepress-theme-hope.mrhope.site/reading-time
-[seo]: https://vuepress-theme-hope.mrhope.site/seo
-[sitemap]: https://vuepress-theme-hope.mrhope.site/sitemap
+[add-this]: https://vuepress-theme-hope.github.io/add-this
+[comment]: https://vuepress-theme-hope.github.io/comment
+[copy-code]: https://vuepress-theme-hope.github.io/copy-code
+[feed]: https://vuepress-theme-hope.github.io/feed
+[last-update]: https://vuepress-theme-hope.github.io/last-update
+[md-enhance]: https://vuepress-theme-hope.github.io/md-enhance
+[photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe
+[pwa]: https://vuepress-theme-hope.github.io/pwa
+[reading-time]: https://vuepress-theme-hope.github.io/reading-time
+[seo]: https://vuepress-theme-hope.github.io/seo
+[sitemap]: https://vuepress-theme-hope.github.io/sitemap

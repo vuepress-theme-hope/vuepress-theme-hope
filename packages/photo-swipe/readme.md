@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-photo-swipe</h1>
 <h4 align="center">VuePress图片预览插件🔍 / VuePress photo preview plugin🔍</h4>
@@ -9,7 +9,7 @@
 
 <!-- markdownlint-restore -->
 
-## [Official Docs](https://vuepress-theme-hope.mrhope.site/photo-swipe) / [官方文档](https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/photo-swipe) / [官方文档](https://vuepress-theme-hope.github.io/photo-swipe/zh/)
 
 ## Install / 安装
 

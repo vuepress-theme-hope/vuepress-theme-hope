@@ -70,3 +70,4 @@ jobs:
           BRANCH: gh-pages
           CLEAN: true
           FOLDER: dist
+          REPOSITORY_NAME: vuepress-theme-hope/vuepress-theme-hope.github.io

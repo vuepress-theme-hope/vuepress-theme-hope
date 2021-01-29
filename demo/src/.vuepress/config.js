@@ -37,7 +37,7 @@ module.exports = config({
     hostname: "https://vuepress-theme-hope-demo.mrhope.site",
 
     author: "Mr.Hope",
-    repo: "https://github.com/mister-hope/vuepress-theme-hope",
+    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
     nav: [
       { text: "Blog Home", link: "/", icon: "home" },
@@ -49,7 +49,7 @@ module.exports = config({
       },
       {
         text: "Docs",
-        link: "https://vuepress-theme-hope.mrhope.site/",
+        link: "https://vuepress-theme-hope.github.io/",
         icon: "note",
       },
     ],
@@ -81,7 +81,7 @@ module.exports = config({
           {
             text: "主题文档",
             icon: "note",
-            link: "https://vuepress-theme-hope.mrhope.site/zh/",
+            link: "https://vuepress-theme-hope.github.io/zh/",
           },
         ],
         sidebar: {

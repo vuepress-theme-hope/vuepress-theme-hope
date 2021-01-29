@@ -8,13 +8,13 @@
     "search",
     "share"
   ],
-  "homepage": "https://vuepress-theme-hope.mrhope.site/seo/",
+  "homepage": "https://vuepress-theme-hope.github.io/seo/",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
     "directory": "packages/seo"
   },
   "license": "MIT",

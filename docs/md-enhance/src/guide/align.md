@@ -64,7 +64,7 @@ Significant changes.
 If you meet a bug while using, you can
 
 ::: right
-[open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
+[open an issue here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
 
 ::::
@@ -81,7 +81,7 @@ Significant changes.
 If you encounter a bug while using, you can
 
 ::: right
-[open an issue here](https://github.com/Mister-Hope/vuepress-theme-hope/issues).
+[open an issue here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
 
 ::::

@@ -26,7 +26,7 @@ We recommend you to set the following options:
 - Convert the date when the feed was created to ISOString and write it to `channel.pubDate`
 - Set the content update cycle (unit: minute) in `channel.ttl`
 
-For detailed options and their values, please see [Feed Channel Config](https://vuepress-theme-hope.mrhope.site/feed/config/channel/)
+For detailed options and their values, please see [Feed Channel Config](https://vuepress-theme-hope.github.io/feed/config/channel/)
 
 ## Project Settings
 
@@ -34,10 +34,10 @@ By default, all articles will be added to the feed stream. You can control the g
 
 If you want to remove a specific page from the feed, you can set `feed.enable` to `false` in the frontmatter of the page.
 
-You can also add content directly to the feed plugin via `frontmatter.feed`. For detailed options and their default values, please see [Feed Item Config](https://vuepress-theme-hope.mrhope.site/feed/config/item/)
+You can also add content directly to the feed plugin via `frontmatter.feed`. For detailed options and their default values, please see [Feed Item Config](https://vuepress-theme-hope.github.io/feed/config/item/)
 
 ## Output configuration
 
 You can use the `output` in the configuration options to decide which feed file formats to output and their location.
 
-For detailed options and their default values, please refer to [Feed Output config](https://vuepress-theme-hope.mrhope.site/feed/config/#output)
+For detailed options and their default values, please refer to [Feed Output config](https://vuepress-theme-hope.github.io/feed/config/#output)

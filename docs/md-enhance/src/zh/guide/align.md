@@ -65,7 +65,7 @@ module.exports = {
 如果你在使用过程中遇到了 bug，可以
 
 ::: right
-[提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
 
 ::::
@@ -81,7 +81,7 @@ module.exports = {
 如果你在使用过程中遇到了 bug，可以
 
 ::: right
-[提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
 
 ::::

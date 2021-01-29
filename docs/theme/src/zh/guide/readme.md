@@ -7,7 +7,7 @@ tags: intro
 
 ::: tip
 
-如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/Mister-Hope/vuepress-theme-hope/issues)。
+如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 
 :::
 
@@ -94,7 +94,7 @@ tags: intro
 
 - [全新博客主页布局](layout/blog.md)
 
-- [社交关注按钮与页面社交分享](https://vuepress-theme-hope.mrhope.site/add-this/zh/)
+- [社交关注按钮与页面社交分享](https://vuepress-theme-hope.github.io/add-this/zh/)
 
 - [文章展示](feature/blog.md)
 
@@ -131,14 +131,14 @@ tags: intro
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: 使网站的图片支持缩放与滑动浏览
 
-[add-this]: https://vuepress-theme-hope.mrhope.site/add-this/zh/
-[comment]: https://vuepress-theme-hope.mrhope.site/comment/zh/
-[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code/zh/
-[feed]: https://vuepress-theme-hope.mrhope.site/feed/zh/
-[last-update]: https://vuepress-theme-hope.mrhope.site/last-update/zh/
-[md-enhance]: https://vuepress-theme-hope.mrhope.site/md-enhance/zh/
-[photo-swipe]: https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/
-[pwa]: https://vuepress-theme-hope.mrhope.site/pwa/zh/
-[reading-time]: https://vuepress-theme-hope.mrhope.site/reading-time/zh/
-[seo]: https://vuepress-theme-hope.mrhope.site/seo/zh/
-[sitemap]: https://vuepress-theme-hope.mrhope.site/sitemap/zh/
+[add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
+[comment]: https://vuepress-theme-hope.github.io/comment/zh/
+[copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
+[feed]: https://vuepress-theme-hope.github.io/feed/zh/
+[last-update]: https://vuepress-theme-hope.github.io/last-update/zh/
+[md-enhance]: https://vuepress-theme-hope.github.io/md-enhance/zh/
+[photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/zh/
+[pwa]: https://vuepress-theme-hope.github.io/pwa/zh/
+[reading-time]: https://vuepress-theme-hope.github.io/reading-time/zh/
+[seo]: https://vuepress-theme-hope.github.io/seo/zh/
+[sitemap]: https://vuepress-theme-hope.github.io/sitemap/zh/

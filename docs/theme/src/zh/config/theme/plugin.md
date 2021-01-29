@@ -501,12 +501,12 @@ AddThis 的 pubid
 
 默认情况下，所有页面块均以页面标题命名，所有布局块均以其组件名称命名。
 
-[add-this]: https://vuepress-theme-hope.mrhope.site/add-this/zh/
-[comment-config]: https://vuepress-theme-hope.mrhope.site/comment/zh/config/
-[copy-code]: https://vuepress-theme-hope.mrhope.site/copy-code/zh/
-[md-enhance-config]: https://vuepress-theme-hope.mrhope.site/md-enhance/zh/config/
-[photo-swipe-config]: https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/config/
-[pwa-config]: https://vuepress-theme-hope.mrhope.site/pwa/zh/config/
-[feed-config]: https://vuepress-theme-hope.mrhope.site/feed/zh/config/
-[seo-config]: https://vuepress-theme-hope.mrhope.site/seo/zh/#插件选项
-[sitemap-config]: https://vuepress-theme-hope.mrhope.site/sitemap/zh/#插件选项
+[add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
+[comment-config]: https://vuepress-theme-hope.github.io/comment/zh/config/
+[copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
+[md-enhance-config]: https://vuepress-theme-hope.github.io/md-enhance/zh/config/
+[photo-swipe-config]: https://vuepress-theme-hope.github.io/photo-swipe/zh/config/
+[pwa-config]: https://vuepress-theme-hope.github.io/pwa/zh/config/
+[feed-config]: https://vuepress-theme-hope.github.io/feed/zh/config/
+[seo-config]: https://vuepress-theme-hope.github.io/seo/zh/#插件选项
+[sitemap-config]: https://vuepress-theme-hope.github.io/sitemap/zh/#插件选项

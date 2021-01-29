@@ -58,10 +58,10 @@ interface HopeThemePluginConfig {
 
   /**
    * 评论设置
-   * @see http://comment.mrhope.site/config/
+   * @see http://vuepress-theme-hope.github.io/comment/zh/config/
    *
    * Comment Configuration
-   * @see http://comment.mrhope.site/en/config/
+   * @see http://vuepress-theme-hope.github.io/comment/config/
    */
   comment?: CommentOptions | false;
 

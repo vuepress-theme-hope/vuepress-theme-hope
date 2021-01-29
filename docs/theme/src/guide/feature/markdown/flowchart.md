@@ -85,4 +85,4 @@ c2(no)->op2->e
 
 ## Flowchart Introduction
 
-See [Flowchart Introduction](https://vuepress-theme-hope.mrhope.site/md-enhance/guide/flowchart/#flowchart-intro).
+See [Flowchart Introduction](https://vuepress-theme-hope.github.io/md-enhance/guide/flowchart/#flowchart-intro).

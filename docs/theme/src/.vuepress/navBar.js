@@ -20,11 +20,11 @@ module.exports = {
         {
           text: "Changelog",
           link:
-            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
         },
         {
           text: "Repo",
-          link: "https://github.com/mister-hope/vuepress-theme-hope",
+          link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
         },
         {
           text: "Demo",
@@ -32,47 +32,47 @@ module.exports = {
         },
         {
           text: "AddThis Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/add-this/",
+          link: "https://vuepress-theme-hope.github.io/add-this/",
         },
         {
           text: "Comment Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/comment/",
+          link: "https://vuepress-theme-hope.github.io/comment/",
         },
         {
           text: "Copy Code Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/copy-code/",
+          link: "https://vuepress-theme-hope.github.io/copy-code/",
         },
         {
           text: "Feed Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/feed/",
+          link: "https://vuepress-theme-hope.github.io/feed/",
         },
         {
           text: "Last Update Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/last-update/",
+          link: "https://vuepress-theme-hope.github.io/last-update/",
         },
         {
           text: "Markdown Enhance Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/md-enhance/",
+          link: "https://vuepress-theme-hope.github.io/md-enhance/",
         },
         {
           text: "Photo Swipe Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/photo-swipe/",
+          link: "https://vuepress-theme-hope.github.io/photo-swipe/",
         },
         {
           text: "PWA Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/pwa/",
+          link: "https://vuepress-theme-hope.github.io/pwa/",
         },
         {
           text: "Reading Time Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/reading-time/",
+          link: "https://vuepress-theme-hope.github.io/reading-time/",
         },
         {
           text: "Seo Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/seo/",
+          link: "https://vuepress-theme-hope.github.io/seo/",
         },
         {
           text: "Sitemap Plugin",
-          link: "https://vuepress-theme-hope.mrhope.site/sitemap/",
+          link: "https://vuepress-theme-hope.github.io/sitemap/",
         },
       ],
     },
@@ -99,11 +99,11 @@ module.exports = {
         {
           text: "更新日志",
           link:
-            "https://github.com/Mister-Hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
         },
         {
           text: "项目地址",
-          link: "https://github.com/mister-hope/vuepress-theme-hope",
+          link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
         },
         {
           text: "项目案例",
@@ -111,47 +111,47 @@ module.exports = {
         },
         {
           text: "AddThis 插件",
-          link: "https://vuepress-theme-hope.mrhope.site/add-this/zh/",
+          link: "https://vuepress-theme-hope.github.io/add-this/zh/",
         },
         {
           text: "评论插件",
-          link: "https://vuepress-theme-hope.mrhope.site/comment/zh/",
+          link: "https://vuepress-theme-hope.github.io/comment/zh/",
         },
         {
           text: "代码复制插件",
-          link: "https://vuepress-theme-hope.mrhope.site/copy-code/zh/",
+          link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
         },
         {
           text: "Feed 插件",
-          link: "https://vuepress-theme-hope.mrhope.site/feed/zh/",
+          link: "https://vuepress-theme-hope.github.io/feed/zh/",
         },
         {
           text: "最后更新时间插件",
-          link: "https://vuepress-theme-hope.mrhope.site/last-update/zh/",
+          link: "https://vuepress-theme-hope.github.io/last-update/zh/",
         },
         {
           text: "Markdown 增强插件",
-          link: "https://vuepress-theme-hope.mrhope.site/md-enhance/zh/",
+          link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
         },
         {
           text: "图片预览插件",
-          link: "https://vuepress-theme-hope.mrhope.site/photo-swipe/zh/",
+          link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
         },
         {
           text: "PWA 插件",
-          link: "https://vuepress-theme-hope.mrhope.site/pwa/zh/",
+          link: "https://vuepress-theme-hope.github.io/pwa/zh/",
         },
         {
           text: "阅读时间插件",
-          link: "https://vuepress-theme-hope.mrhope.site/reading-time/zh/",
+          link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
         },
         {
           text: "Seo 插件",
-          link: "https://vuepress-theme-hope.mrhope.site/seo/zh/",
+          link: "https://vuepress-theme-hope.github.io/seo/zh/",
         },
         {
           text: "Sitemap 插件",
-          link: "https://vuepress-theme-hope.mrhope.site/sitemap/zh/",
+          link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
         },
       ],
     },

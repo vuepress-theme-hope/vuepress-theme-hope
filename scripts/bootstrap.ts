@@ -24,7 +24,8 @@ files.forEach((pkgName) => {
       },
       repository: {
         type: "git",
-        url: "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+        url:
+          "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
         directory: `packages/${pkgName}`,
       },
       keywords: [
@@ -41,9 +42,10 @@ files.forEach((pkgName) => {
       },
       license: "MIT",
       bugs: {
-        url: "https://github.com/Mister-Hope/vuepress-theme-hope/issues",
+        url:
+          "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
       },
-      homepage: `https://github.com/Mister-Hope/vuepress-theme-hope/packages/${pkgName}#readme`,
+      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       dependencies: {
         "@mr-hope/vuepress-types": `^${version}`,
       },

@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">@mr-hope/vuepress-theme-types</h1>
 <h4 align="center">Types for vuepress-theme-hope☑️ / vuepress-theme-hope 的类型定义文件☑️</h4>

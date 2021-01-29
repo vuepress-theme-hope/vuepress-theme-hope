@@ -39,7 +39,7 @@ export const getLocale = (lang: string): HopeThemeLocaleConfigItem => {
   if (!reportStatus[lang]) {
     console.warn(
       `${lang} locates config is missing, and will return 'en-US' instead.
-You can contribute to https://github.com/Mister-Hope/vuepress-theme-hope/blob/master/packages/shared/shared/i18n.json.
+You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/master/packages/shared/shared/i18n.json.
 Note: This warning will be shown only once.`
     );
     reportStatus[lang] = true;

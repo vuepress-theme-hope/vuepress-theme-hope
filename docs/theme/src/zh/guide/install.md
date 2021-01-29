@@ -7,7 +7,7 @@ tags: intro
 
 ## 在新项目中使用
 
-如果你想构建自己的博客，或者在一个新的项目中使用本主题生成你的文档，你可以直接使用 [vuepress-theme-hope 模板](https://github.com/Mister-Hope/vuepress-theme-hope-template) 来开始你的 VuePress 之旅。点击 `Use this template` 按钮即可。
+如果你想构建自己的博客，或者在一个新的项目中使用本主题生成你的文档，你可以直接使用 [vuepress-theme-hope 模板](https://github.com/vuepress-theme-hope/vuepress-theme-hope-template) 来开始你的 VuePress 之旅。点击 `Use this template` 按钮即可。
 
 ## 在旧项目中使用
 

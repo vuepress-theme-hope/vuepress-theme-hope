@@ -6,13 +6,13 @@
     "types",
     "vuepress"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/v1/packages/vuepress-types#readme",
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/packages/vuepress-types#readme",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
     "directory": "packages/vuepress-types"
   },
   "license": "MIT",
