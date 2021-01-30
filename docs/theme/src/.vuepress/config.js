@@ -10,6 +10,13 @@ module.exports = config({
 
   head: [
     [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "qG3soux9jAKB4Q_DYf7yj1p5cEIuib6yG4zDhpmv2_E",
+      },
+    ],
+    [
       "script",
       { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
     ],
