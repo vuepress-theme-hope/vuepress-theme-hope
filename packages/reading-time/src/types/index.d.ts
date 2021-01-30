@@ -45,3 +45,7 @@ declare module "@mr-hope/vuepress-types/types/page" {
     readingTime: ReadingTime;
   }
 }
+
+declare global {
+  const READING_TIME_I18N: Record<string, ReadingTimeI18nConfig>;
+}
