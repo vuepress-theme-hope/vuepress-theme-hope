@@ -4,7 +4,7 @@ import { i18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import type { CopyCodeI18NConfig, CopyCodeOptions } from "../types";
+import type { CopyCodeI18nConfig, CopyCodeOptions } from "../types";
 
 export = (
   options: CopyCodeOptions,
@@ -12,7 +12,7 @@ export = (
 ): PluginOptionAPI => {
   const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
   const baseLangPath = lang2Path(baseLang);
-  const copyCodeI18nConfig = i18n as PluginI18nConvert<CopyCodeI18NConfig>;
+  const copyCodeI18nConfig = i18n as PluginI18nConvert<CopyCodeI18nConfig>;
 
   copyCodeI18nConfig["/"] = copyCodeI18nConfig[baseLangPath];
 

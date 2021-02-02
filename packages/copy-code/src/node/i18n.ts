@@ -1,8 +1,8 @@
 import type { LangPaths } from "@mr-hope/vuepress-shared";
-import type { CopyCodeI18NConfig } from "../types";
+import type { CopyCodeI18nConfig } from "../types";
 
 /** Muti language config for copy code */
-export const i18n: Record<LangPaths, CopyCodeI18NConfig> = {
+export const i18n: Record<LangPaths, CopyCodeI18nConfig> = {
   "/zh/": {
     copy: "复制成功 🎉",
     hint: "复制代码",

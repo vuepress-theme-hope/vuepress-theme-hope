@@ -1,4 +1,4 @@
-export interface CopyCodeI18NConfig {
+export interface CopyCodeI18nConfig {
   /** 复制文字 */
   copy: string;
   /** 提示文字 */
@@ -40,5 +40,5 @@ export interface CopyCodeOptions {
 
 declare global {
   const CODE_COPY_OPIONS: Required<CopyCodeOptions>;
-  const CODE_COPY_I18N: Record<string, CopyCodeI18NConfig>;
+  const CODE_COPY_I18N: Record<string, CopyCodeI18nConfig>;
 }
