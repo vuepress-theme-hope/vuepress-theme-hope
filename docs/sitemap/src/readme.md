@@ -1,6 +1,6 @@
 ---
 home: true
-title: 主页
+title: Home
 icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-sitemap"
@@ -53,7 +53,7 @@ The domain name where the current site is deployed, please at least pass it into
 - Type: `string[]`
 - Required: No
 
-URLs to be included
+Extra links to be included
 
 ### exclude
 

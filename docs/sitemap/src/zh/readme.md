@@ -1,6 +1,6 @@
 ---
 home: true
-title: Home
+title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-sitemap"
