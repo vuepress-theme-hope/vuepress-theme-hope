@@ -168,7 +168,7 @@
     .action-button
       display inline-block
       margin 0.6rem 0.8rem
-      padding 0.8rem 1.6rem
+      padding 1rem 1.5rem
       border 2px solid var(--accent-color)
       border-radius 2rem
       color var(--accent-color)
@@ -176,8 +176,12 @@
       transition background 0.1s ease
       overflow hidden
 
+      @media (max-width $MQMobile)
+        padding 0.8rem 1.2rem
+        font-size 1.1rem
+
       @media (max-width $MQMobileNarrow)
-        padding 0.6rem 1.2rem
+        padding 0.6rem 1rem
         font-size 1rem
 
       &:hover
