@@ -1,7 +1,7 @@
 <template>
   <div class="password" :class="{ expand: page || isMainPage }">
     <div class="hint" :class="{ hasTried }">
-      {{ hasTried ? "请输入正确密码" : "请输入密码" }}
+      {{ hasTried ? encrypt.errorHint : encrypt.title }}
     </div>
     <div class="input">
       <input v-model="password" type="password" @keypress.enter="verify" />
@@ -39,6 +39,7 @@
 
   .hint
     margin-bottom 20px
+    font-family Arial, Helvetica, sans-serif
     font-weight 600
     font-size 22px
     line-height 2

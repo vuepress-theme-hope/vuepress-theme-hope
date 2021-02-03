@@ -25,6 +25,10 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
       themeColor: "主题色",
       themeMode: "主题模式",
     },
+    encrypt: {
+      title: "请输入密码",
+      errorHint: "请输入正确密码",
+    },
     error404: {
       hint: [
         "这里什么也没有",
@@ -60,6 +64,10 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
       themeColor: "Theme Color",
       themeMode: "Theme Mode",
     },
+    encrypt: {
+      title: "Please enter password",
+      errorHint: "Please enter the corrent password!",
+    },
     error404: {
       hint: [
         "There's nothing here.",
@@ -83,6 +91,7 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
       encrypt: "Encrypted",
     },
   },
+
   "vi-VN": {
     lang: "vi-VN",
     selectText: "Ngôn ngữ",
@@ -93,6 +102,10 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
     themeColor: {
       themeColor: "Màu nền",
       themeMode: "Theme Mode",
+    },
+    encrypt: {
+      title: "Xin vui lòng nhập mật khẩu",
+      errorHint: "Vui lòng nhập đúng mật khẩu",
     },
     error404: {
       hint: [

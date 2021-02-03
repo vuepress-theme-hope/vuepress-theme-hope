@@ -24,6 +24,11 @@ export interface HopeThemeLocaleConfigItem {
     /** 主题模式提示文字 */
     themeMode: string;
   };
+  /** 加密 */
+  encrypt: {
+    title: string;
+    errorHint: string;
+  };
   /** 404错误页 */
   error404: {
     /** 错误提示语 */
