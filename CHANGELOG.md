@@ -2,6 +2,13 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.9.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.4...v1.9.5) (2021-02-03)
+
+### Bug Fixes
+
+- **md-enhance:** fix code hightlight styles ([777593b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/777593bd206bc14b90f02a68d40b12bfce7fd619))
+- **theme:** at least enable containers when `mdEnhance` not set ([baa566b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/baa566baa0c34b0c89b2e4101ebbcb09998949f8))
+
 ## [1.9.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.3...v1.9.4) (2021-02-03)
 
 ### Bug Fixes
