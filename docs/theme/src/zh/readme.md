@@ -97,6 +97,6 @@ module.exports = config({
 
 ## 官方 QQ 群
 
-- [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK)
+- [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 
 [docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js

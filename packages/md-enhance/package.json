@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "1.9.4",
+  "version": "1.9.5",
   "description": "Markdown enhancement for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -44,8 +44,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "1.9.4",
-    "@mr-hope/vuepress-types": "1.9.4",
+    "@mr-hope/vuepress-shared": "1.9.5",
+    "@mr-hope/vuepress-types": "1.9.5",
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.11.0",
     "@types/lodash.debounce": "^4.0.6",

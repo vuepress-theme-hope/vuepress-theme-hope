@@ -6,7 +6,7 @@ category: FAQ
 
 ## 官方 QQ 群
 
-- [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK)
+- [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 
 ## 构建失败
 
