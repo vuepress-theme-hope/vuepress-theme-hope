@@ -2,7 +2,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   title: "Reading Time Counter",
-  description: "Reading Time Counter for vuepress",
+  description: "Expect reading time and word count statistics",
 
   base: "/reading-time/",
   dest: "./dist",
@@ -10,7 +10,7 @@ module.exports = config({
   locales: {
     "/zh/": {
       title: "阅读时间生成",
-      description: "VuePress 的阅读时间生成插件",
+      description: "预计阅读时间与字数统计生成",
     },
   },
 

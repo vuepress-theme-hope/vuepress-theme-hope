@@ -4,14 +4,12 @@ title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-reading-time"
-tagline: 字数与阅读时间统计
+tagline: 预计阅读时间与字数统计生成
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-阅读时间与字数统计
-
-这个插件将会向 page 对象注入阅读时间与字数统计。
+这个插件将会向 page 对象注入预计阅读时间与字数统计。
 
 会自动向 page 对象注入 `readingTime`:
 
