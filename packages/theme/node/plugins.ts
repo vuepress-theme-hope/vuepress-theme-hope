@@ -84,7 +84,7 @@ export const getPluginConfig = (
         : false,
     ],
 
-    ["md-enhance", themeConfig.mdEnhance || false],
+    ["md-enhance", themeConfig.mdEnhance || {}],
 
     [
       "named-chunks",
