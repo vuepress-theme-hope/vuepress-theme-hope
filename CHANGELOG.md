@@ -2,6 +2,17 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.9.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.3...v1.9.4) (2021-02-03)
+
+### Bug Fixes
+
+- **theme:** fix encrypt i18n ([d34e6a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d34e6a2e3487c417d9895fc6874de83eef6f0044))
+- fix global declare ([4293ec7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4293ec7f019865f309ad098c4ec1c568dad75a3c))
+
+### Features
+
+- **theme:** improve action button appearance ([6fab4e1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6fab4e188e227e9fd5411c01866d51b6859dc475))
+
 ## [1.9.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.2...v1.9.3) (2021-01-29)
 
 ### Bug Fixes
