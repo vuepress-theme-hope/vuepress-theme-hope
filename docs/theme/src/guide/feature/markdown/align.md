@@ -1,12 +1,11 @@
 ---
+title: Custom alignment
 icon: align
 category: markdown
 tags:
   - feature
   - markdown
 ---
-
-# Custom alignment
 
 By injecting configuration into vuepress-plugin-container, you can use
 
@@ -22,6 +21,8 @@ Right paragraph
 
 To customize your paragraph alignment.
 
+<!-- more -->
+
 ## Config
 
 ```js {4}
@@ -36,7 +37,7 @@ module.exports = {
 
 ## Demo
 
-This topic is still in production, the API may have
+vuepress-theme-hope v2 is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
@@ -49,13 +50,13 @@ If you meet a bug during usage, you can
 :::
 
 ```md
-This topic is still in production, the API may have
+vuepress-theme-hope v2 is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
 :::
 
-If you encounter a bug during use, you can
+If you meet a bug during usage, you can
 
 ::: right
 [Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).

@@ -58,7 +58,13 @@ module.exports = config({
         "flowchart",
         "tex",
         "demo",
-        "presentation",
+        {
+          title: "Presentation",
+          icon: "presentation",
+          prefix: "presentation/",
+          collapsable: false,
+          children: ["", "demo", "themes"],
+        },
       ],
 
       "/": ["", "guide/", "config"],
@@ -81,7 +87,13 @@ module.exports = config({
             "flowchart",
             "tex",
             "demo",
-            "presentation",
+            {
+              title: "幻灯片",
+              icon: "presentation",
+              prefix: "presentation/",
+              collapsable: false,
+              children: ["", "demo", "themes"],
+            },
           ],
 
           "/zh/": ["", "guide/", "config"],

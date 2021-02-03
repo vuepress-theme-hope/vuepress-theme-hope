@@ -1,5 +1,6 @@
 ---
-title: Slide page
+title: Demo
+icon: discover
 layout: Slide
 ---
 
@@ -49,7 +50,7 @@ Use `<!-- .slide: ... -->` to add attributes to slide
 
 <!-- .element: class="fragment fade-in" -->
 
-Use `<!-- .element: ... -->` to add attributes to the previous html element
+Use `<!-- .element: ... -->` to add attributes to the previous HTML element
 
 <!-- .element: class="fragment fade-in" -->
 
@@ -133,7 +134,7 @@ $$
 
 You can use all kinds of markup in slides.
 
-⚠**Note**: Table, hr and other unstandard markdown syntax is not supported.
+⚠**Note**: Table, hr and other unstandard Markdown syntax is not supported.
 
 ---
 

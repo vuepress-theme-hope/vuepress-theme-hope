@@ -1,10 +1,11 @@
 ---
+title: Markup
 icon: write
 ---
 
-# Mark
-
 Make Markdown files in your VuePress site support markup.
+
+<!-- more -->
 
 ## Configuration
 

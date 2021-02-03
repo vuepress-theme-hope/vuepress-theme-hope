@@ -1,13 +1,15 @@
 ---
+title: Tex
 icon: tex
+category: markdown
 tags:
   - feature
   - markdown
 ---
 
-# Tex Support
-
 Let the Markdown file in your VuePress site support the $\TeX$ syntax.
+
+<!-- more -->
 
 ## Configuration
 

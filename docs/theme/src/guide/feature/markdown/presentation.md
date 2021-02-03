@@ -1,15 +1,17 @@
 ---
+title: Presentation
 icon: presentation
+category: markdown
 tags:
   - feature
   - markdown
 ---
 
-# Presentation support
+Let the Markdown file in your VuePress site support presentation.
+
+<!-- more -->
 
 <!--lint disable no-duplicate-headings-->
-
-Let the Markdown file in your VuePress site support presentation.
 
 ## Configuration
 
@@ -47,7 +49,7 @@ This plugin is using [reveal.js](https://revealjs.com/) to support this feature.
 @slideend
 ```
 
-Theme available:
+Theme available(replace `[theme]` with them):
 
 - `auto` (Default)
 - `black`
@@ -61,6 +63,8 @@ Theme available:
 - `solarized`
 - `blood`
 - `moon`
+
+For details, see [Themes demo](https://vuepress-theme-hope.github.io/md-enhance/guide/presentation/themes/).
 
 ## Demo
 
@@ -128,278 +132,10 @@ $$
 @slideend
 ````
 
+For detailed demo, please see [Presentation Demo](https://vuepress-theme-hope.github.io/md-enhance/guide/presentation/demo/)
+
 ## Options
 
 You can set `reveal` to pass options to reveal.js per page in frontmatter, you can also set `presentation` in plugin options to set reveal.js globally.
 
 For more options, see [reveal.js config](https://revealjs.com/config/). For more usage, see [reveal.js documatation](https://revealjs.com/)
-
-## Themes
-
-<!-- markdownlint-disable -->
-
-### Auto
-
-@slidestart
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Black
-
-@slidestart black
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### White
-
-@slidestart white
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### League
-
-@slidestart league
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Beige
-
-@slidestart beige
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Sky
-
-@slidestart sky
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Night
-
-@slidestart night
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Serif
-
-@slidestart serif
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Simple
-
-@slidestart simple
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Solarized
-
-@slidestart solarized
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Blood
-
-@slidestart blood
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-### Moon
-
-@slidestart moon
-
-## Slide Title
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Highlight
-
-```js
-const add = (a, b) => {
-  if (typeof b === "undefined") return a + 1;
-
-  return a + b;
-};
-```
-
-@slideend
-
-<!-- markdownlint-restore -->

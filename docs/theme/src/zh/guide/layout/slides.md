@@ -1,12 +1,11 @@
 ---
+title: 幻灯片
 icon: presentation
 category: layout
 tags:
   - slides
   - layout
 ---
-
-# 幻灯片
 
 `vuepress-theme-hope` 允许你添加幻灯片页面。
 

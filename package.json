@@ -97,6 +97,10 @@
       [
         "lint-list-item-indent",
         "space"
+      ],
+      [
+        "lint-emphasis-marker",
+        false
       ]
     ]
   },

@@ -1,12 +1,11 @@
 ---
+title: Slide
 icon: presentation
 category: layout
 tags:
   - slides
   - layout
 ---
-
-# Slide
 
 `vuepress-theme-hope` allows you to add slides pages.
 

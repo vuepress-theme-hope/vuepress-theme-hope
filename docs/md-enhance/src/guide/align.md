@@ -1,10 +1,25 @@
 ---
+title: Custom alignment
 icon: align
 ---
 
-# Align
+By injecting configuration into vuepress-plugin-container, you can use
 
-## Configuration
+```md
+::: center
+Paragraph to center
+:::
+
+::: right
+Right paragraph
+:::
+```
+
+To customize your paragraph alignment.
+
+<!-- more -->
+
+## Config
 
 ```js {7}
 module.exports = {
@@ -20,70 +35,35 @@ module.exports = {
 };
 ```
 
-## Syntax
-
-By injecting some options to `vuepress-plugin-container`, you can use below syntax to diy your paragraph align.
-
-```md
-::: center
-Paragraph to be align-center
-:::
-
-::: right
-Paragraph to be align-right
-:::
-```
-
-If you need nesting, you should increase the outer `:::` mark number.
-
-```md
-:::: right
-Right-aligned text
-
-Right-aligned text
-
-::: center
-Centered text
-:::
-
-Right-aligned text
-
-::::
-```
-
 ## Demo
 
-:::: danger W.I.P
-
-This theme is still in built, the API may have
+:::: danger
+vuepress-theme-hope v2 is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
 :::
 
-If you meet a bug while using, you can
+If you meet a bug during usage, you can
 
 ::: right
-[open an issue here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
-
 ::::
 
 ```md
-:::: danger W.I.P
-
-This theme is still in built, the API may have
+:::: danger
+vuepress-theme-hope v2 is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
 :::
 
-If you encounter a bug while using, you can
+If you meet a bug during usage, you can
 
 ::: right
-[open an issue here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
-
 ::::
 ```
 

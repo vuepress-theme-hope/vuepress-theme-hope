@@ -1,75 +1,9 @@
 ---
-icon: presentation
+title: Themes
+icon: skin
 ---
-
-# Presentation support
 
 <!--lint disable no-duplicate-headings-->
-
-Let the Markdown file in your VuePress site support presentation.
-
-## Configuration
-
-```js {7}
-module.exports = {
-  plugins: [
-    [
-      "md-enhance",
-      {
-        // Enable presentation
-        presentation: true,
-      },
-    ],
-  ],
-};
-```
-
-This plugin is using [reveal.js](https://revealjs.com/) to support this feature.
-
-You can also pass an object for configuration.
-
-`presentation.plugins` receives an array of strings, allowing you to freely config whether to enable some preset plugins.
-
-::: tip
-
-Acceptable plugins are:
-
-- `"highlight"`
-- `"math"`
-- `"search"`
-- `"notes"`
-- `"zoom"`
-
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
-
-:::
-
-You can also use `presentation.revealConfig` set configuration options passed to Reveal.js globally.
-
-Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware). If you need a specific plugin, please submit a [Feature Request](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D) on GitHub.
-
-## Syntax
-
-- Use `---` to split slides
-- Use `--` to split the slides second time (vertical display)
-
-```md
-@slidestart [theme]
-
-<!-- slide1 -->
-
----
-
-<!-- slide2 -->
-
----
-
-<!-- slide3 -->
-
-@slideend
-```
 
 Theme available:
 
@@ -86,83 +20,9 @@ Theme available:
 - `blood`
 - `moon`
 
-## Demo
-
-@slidestart
-
-## Slide 1
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Slide 2
-
-- Item 1
-- Item 2
-
----
-
-## Slide 3.1
-
-```js
-const a = 1;
-```
-
---
-
-## Slide 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
-
-````md
-@slidestart
-
-## Slide 1
-
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Slide 2
-
-- Item 1
-- Item 2
-
----
-
-## Slide 3.1
-
-```js
-const a = 1;
-```
-
---
-
-## Slide 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
-````
-
-## Options
-
-You can set `reveal` to pass options to reveal.js per page in frontmatter, you can also set `presentation` in plugin options to set reveal.js globally.
-
-For more options, see [reveal.js config](https://revealjs.com/config/). For more usage, see [reveal.js documatation](https://revealjs.com/)
-
-## Themes
-
 <!-- markdownlint-disable -->
 
-### Auto
+## `auto`
 
 @slidestart
 
@@ -174,7 +34,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -184,7 +44,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Black
+## `black`
 
 @slidestart black
 
@@ -196,7 +56,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -206,7 +66,7 @@ const add = (a, b) => {
 
 @slideend
 
-### White
+## `white`
 
 @slidestart white
 
@@ -218,7 +78,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -228,7 +88,7 @@ const add = (a, b) => {
 
 @slideend
 
-### League
+## `league`
 
 @slidestart league
 
@@ -240,7 +100,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -250,7 +110,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Beige
+## `beige`
 
 @slidestart beige
 
@@ -262,7 +122,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -272,7 +132,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Sky
+## `sky`
 
 @slidestart sky
 
@@ -284,7 +144,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -294,7 +154,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Night
+## `night`
 
 @slidestart night
 
@@ -306,7 +166,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -316,7 +176,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Serif
+## `serif`
 
 @slidestart serif
 
@@ -328,7 +188,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -338,7 +198,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Simple
+## `simple`
 
 @slidestart simple
 
@@ -350,7 +210,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -360,7 +220,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Solarized
+## `solarized`
 
 @slidestart solarized
 
@@ -372,7 +232,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -382,7 +242,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Blood
+## `blood`
 
 @slidestart blood
 
@@ -394,7 +254,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 
@@ -404,7 +264,7 @@ const add = (a, b) => {
 
 @slideend
 
-### Moon
+## `moon`
 
 @slidestart moon
 
@@ -416,7 +276,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 
 ## Highlight
 
-```js
+```js [2-4|1-5]
 const add = (a, b) => {
   if (typeof b === "undefined") return a + 1;
 

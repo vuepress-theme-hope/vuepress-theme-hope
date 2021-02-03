@@ -1,10 +1,15 @@
 ---
+title: 代码演示
 icon: discover
+category: markdown
+tags:
+  - feature
+  - markdown
 ---
 
-# 代码演示
-
 让你的 VuePress 站点中的 Markdown 文件支持代码案例。
+
+<!-- more -->
 
 ## 配置
 

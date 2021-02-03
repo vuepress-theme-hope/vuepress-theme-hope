@@ -32,7 +32,7 @@ For detailed options and their values, please see [Feed Channel Config](https://
 
 By default, all articles will be added to the feed stream. You can control the generation of feed items for specific articles by configuring the feed options in frontmatter.
 
-If you want to remove a specific page from the feed, you can set `feed.enable` to `false` in the frontmatter of the page.
+To remove a specific page from the feed, set `feed.enable` to `false` in the frontmatter of the page.
 
 You can also add content directly to the feed plugin via `frontmatter.feed`. For detailed options and their default values, please see [Feed Item Config](https://vuepress-theme-hope.github.io/feed/config/item/)
 
@@ -40,4 +40,4 @@ You can also add content directly to the feed plugin via `frontmatter.feed`. For
 
 You can use the `output` in the configuration options to decide which feed file formats to output and their location.
 
-For detailed options and their default values, please refer to [Feed Output config](https://vuepress-theme-hope.github.io/feed/config/#output)
+For detailed options and their default values, see [Feed Output config](https://vuepress-theme-hope.github.io/feed/config/#output)

@@ -1,12 +1,11 @@
 ---
+title: 自定义对齐
 icon: align
 category: markdown
 tags:
   - feature
   - markdown
 ---
-
-# 自定义对齐
 
 通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
 
@@ -22,6 +21,8 @@ tags:
 
 来对你的段落对齐进行自定义。
 
+<!-- more -->
+
 ## 配置
 
 ```js {4}
@@ -36,7 +37,8 @@ module.exports = {
 
 ## 演示
 
-本主题仍在制作中，API 可能会有
+:::: danger W.I.P
+vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: center
 重大的变动。
@@ -47,9 +49,12 @@ module.exports = {
 ::: right
 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
+
+::::
 
 ```md
-本主题仍在制作中，API 可能会有
+:::: danger W.I.P
+vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: center
 重大的变动。
@@ -60,6 +65,8 @@ module.exports = {
 ::: right
 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
+
+::::
 ```
 
 ## 其他自定义容器

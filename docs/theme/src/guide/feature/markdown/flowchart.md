@@ -1,4 +1,5 @@
 ---
+title: Flowchart
 icon: flowchart
 category: markdown
 tags:
@@ -6,9 +7,9 @@ tags:
   - markdown
 ---
 
-# Flowchart
-
 Let the Markdown file support flow chart in your VuePress site
+
+<!-- more -->
 
 ## Configuration
 

@@ -1,8 +1,23 @@
 ---
+title: 自定义对齐
 icon: align
 ---
 
-# 自定义对齐
+通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
+
+```md
+::: center
+要居中的段落
+:::
+
+::: right
+要居右的段落
+:::
+```
+
+来对你的段落对齐进行自定义。
+
+<!-- more -->
 
 ## 配置
 
@@ -20,43 +35,10 @@ module.exports = {
 };
 ```
 
-## 语法
-
-通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
-
-```md
-::: center
-要居中的段落
-:::
-
-::: right
-要居右的段落
-:::
-```
-
-来对你的段落对齐进行自定义。
-
-如果你需要嵌套，则外面的 `:::` 需要依次增加。
-
-```md
-:::: right
-右对齐文字
-
-右对齐文字
-
-::: center
-居中文字
-:::
-
-右对齐文字
-
-::::
-```
-
 ## 演示
 
 :::: danger W.I.P
-本主题仍在制作中，API 可能会有
+vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: center
 重大的变动。
@@ -72,7 +54,7 @@ module.exports = {
 
 ```md
 :::: danger W.I.P
-本主题仍在制作中，API 可能会有
+vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: center
 重大的变动。

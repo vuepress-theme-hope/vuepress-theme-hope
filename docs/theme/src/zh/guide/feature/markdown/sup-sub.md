@@ -1,4 +1,5 @@
 ---
+title: 上下角标
 icon: superscript
 category: markdown
 tags:
@@ -6,9 +7,9 @@ tags:
   - markdown
 ---
 
-# 上下角标
-
 让你的 VuePress 站点中的 Markdown 文件支持上下角标。
+
+<!-- more -->
 
 ## 配置
 

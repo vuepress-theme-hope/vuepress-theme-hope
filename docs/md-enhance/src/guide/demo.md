@@ -1,10 +1,11 @@
 ---
+title: Code Demo
 icon: discover
 ---
 
-# Code Demo
-
 Let you insert code demos in your Markdown file.
+
+<!-- more -->
 
 ## Configuration
 

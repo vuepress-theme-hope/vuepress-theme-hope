@@ -1,13 +1,15 @@
 ---
+title: Markup
 icon: write
+category: markdown
 tags:
   - feature
   - markdown
 ---
 
-# Markup
-
 Make Markdown files in your VuePress site support markup.
+
+<!-- more -->
 
 ## Configuration
 

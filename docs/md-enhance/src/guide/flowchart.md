@@ -1,10 +1,11 @@
 ---
+title: Flowchart
 icon: flowchart
 ---
 
-# Flowchart
+Let the Markdown file support flow chart in your VuePress site
 
-Let the Markdown file support flow chart in your VuePress site.
+<!-- more -->
 
 This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to support this feature.
 
