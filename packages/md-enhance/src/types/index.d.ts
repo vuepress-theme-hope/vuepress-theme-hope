@@ -96,7 +96,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default 'en-US'
    */
-  baseLang?: Langs;
+  baseLang: Langs;
   /**
    * 是否在每个代码块的左侧显示行号
    *
