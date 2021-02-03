@@ -59,7 +59,7 @@ jobs:
           yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
           yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
           yarn cpx "docs/pwa/dist/**" dist/pwa
-          yarn cpx "docs/reading-time/dist**" dist/reading-time
+          yarn cpx "docs/reading-time/dist/**" dist/reading-time
           yarn cpx "docs/seo/dist/**" dist/seo
           yarn cpx "docs/sitemap/dist/**" dist/sitemap
 
