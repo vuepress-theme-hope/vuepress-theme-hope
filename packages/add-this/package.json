@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-add-this",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "description": "Add This plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -34,6 +34,6 @@
     "demo:serve": "vuepress dev __tests__/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "1.9.3"
+    "@mr-hope/vuepress-types": "1.9.4"
   }
 }
