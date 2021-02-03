@@ -119,6 +119,7 @@ theme($themeName)
       position relative
       width 90%
       margin $blockMargin auto
+      padding 0
       text-align left
       font-size 0.55em
       font-family $codeFont
@@ -211,6 +212,19 @@ theme($themeName)
     .progress
       background rgba(0, 0, 0, 0.2)
       color $linkColor
+
+    table.hljs-ln
+      display table
+      width 100%
+
+      tr
+        border none
+
+        &:nth-child(2n)
+          background-color inherit !important
+
+      td
+        border none
 
     @media print
       .backgrounds

@@ -108,6 +108,10 @@ export default Vue.extend({
 
         void reveal
           .initialize({
+            backgroundTransition: "slide",
+            hash: this.$frontmatter.layout === "Slide",
+            mouseWheel: this.$frontmatter.layout === "Slide",
+            transition: "slide",
             slideNumber: true,
             ...REVEAL_CONFIG,
             ...(this.$frontmatter.reveal || {}),
@@ -116,6 +120,8 @@ export default Vue.extend({
           .then(() => {
             this.loading = false;
           });
+
+        reveal.configure({ backgroundTransition: "slide" });
       });
     }
   },
