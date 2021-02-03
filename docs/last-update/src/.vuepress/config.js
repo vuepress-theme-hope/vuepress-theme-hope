@@ -4,6 +4,7 @@ module.exports = config({
   title: "Last Update Time",
   description: "Last update time getter for vuepress",
 
+  base: "/last-update/",
   dest: "./dist",
 
   locales: {
