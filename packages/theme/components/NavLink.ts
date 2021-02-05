@@ -23,7 +23,7 @@ export default Vue.extend({
     },
 
     active(): boolean {
-      return this.link === this.$route.path;
+      return this.$route.path.startsWith(this.link);
     },
 
     isNonHttpURI(): boolean {
