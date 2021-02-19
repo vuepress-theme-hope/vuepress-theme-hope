@@ -16,19 +16,26 @@ a.sidebar-link
   box-sizing border-box
   width 100%
   padding 0.35rem 1rem 0.35rem 1.25rem
-  border-left 0.25rem solid transparent
+  border-left 0.2rem solid transparent
   color var(--text-color)
   font-size 1em
-  line-height 1.4
+  line-height 1.5
   font-weight 400
 
   &:hover
     color var(--accent-color)
 
+    .iconfont
+      color var(--accent-color)
+
   &.active
-    font-weight 600
-    color var(--accent-color)
     border-left-color var(--accent-color)
+    background-color var(--accent-color-l75)
+    color var(--accent-color)
+    font-weight 600
+
+    .iconfont
+      color var(--accent-color)
 
   .sidebar-group &
     padding-left 2rem
@@ -39,5 +46,9 @@ a.sidebar-link
     border-left none
 
     &.active
+      background-color transparent
       font-weight 500
+
+  .iconfont
+    color var(--dark-grey)
 </style>
