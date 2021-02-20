@@ -93,8 +93,8 @@ module.exports = config({
 
     comment: {
       type: "valine",
-      appId: "VwjF4qIJnQLFEpweey8k97oo-gzGzoHsz",
-      appKey: "iwNJjiGF53OCyfAQqihGbKKx",
+      appId: "2vSLKb0SqFKKWEgrOPGy3sp1-gzGzoHsz",
+      appKey: "vma8Ewk61WeNkI81O3CGpT2i",
     },
 
     pwa: {

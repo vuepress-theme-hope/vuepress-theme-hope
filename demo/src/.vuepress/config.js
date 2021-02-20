@@ -117,8 +117,8 @@ module.exports = config({
 
     comment: {
       type: "valine",
-      appId: "msnseO76haIVIGvfJ10BKnpv-gzGzoHsz",
-      appKey: "9QMulKhu7EDp1va0TYXR2PrI",
+      appId: "2vSLKb0SqFKKWEgrOPGy3sp1-gzGzoHsz",
+      appKey: "vma8Ewk61WeNkI81O3CGpT2i",
     },
 
     copyright: true,
