@@ -30,7 +30,7 @@ a.sidebar-link
 
   &.active
     border-left-color var(--accent-color)
-    background-color var(--accent-color-l75)
+    background-color var(--accent-color-a25)
     color var(--accent-color)
     font-weight 600
 
