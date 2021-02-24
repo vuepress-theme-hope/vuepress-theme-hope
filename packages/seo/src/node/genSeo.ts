@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PageSeoInfo, SeoContent, SeoOptions } from "../types";
 
-export const resolveUrl = (base: string, url: string) =>
+export const resolveUrl = (base: string, url: string): string =>
   `${base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")}${url.replace(
     /^\//u,
     ""
