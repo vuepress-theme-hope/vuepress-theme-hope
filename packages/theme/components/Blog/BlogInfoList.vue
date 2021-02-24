@@ -54,7 +54,7 @@
         <hr />
         <ul class="sticky-article-list">
           <MyTransition
-            v-for="(article, index) in $stickArticles"
+            v-for="(article, index) in $stickyArticles"
             :key="article.path"
             :delay="(index + 1) * 0.08"
           >

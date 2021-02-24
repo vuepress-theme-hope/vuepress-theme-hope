@@ -50,7 +50,7 @@ export class TimelineMixin extends Vue {
 
 @Component
 export class StickyMixin extends Vue {
-  protected get $stickArticles(): PageComputed[] {
+  protected get $stickyArticles(): PageComputed[] {
     const { pages } = this.$site;
 
     // filter before sort
