@@ -1,7 +1,6 @@
 import type { Langs } from "@mr-hope/vuepress-shared";
 import type { Vssue } from "vssue";
 import type { ValineOption } from "valine";
-import type { ReadingTimeI18nConfig } from "@mr-hope/vuepress-plugin-reading-time";
 
 import "./declare";
 
