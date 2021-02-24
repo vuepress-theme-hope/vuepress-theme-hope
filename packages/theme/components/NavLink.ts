@@ -23,6 +23,18 @@ export default Vue.extend({
     },
 
     active(): boolean {
+      // link is home path
+      if (
+        (this.$site.locales &&
+          Object.keys(this.$site.locales).some(
+            (rootLink) => rootLink === this.link
+          )) ||
+        this.link === "/"
+      )
+        // exact match
+        return this.$route.path === this.link;
+
+      // inclusive match
       return this.$route.path.startsWith(this.link);
     },
 
