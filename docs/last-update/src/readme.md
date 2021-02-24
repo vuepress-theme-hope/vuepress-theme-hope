@@ -21,15 +21,19 @@ The internationalization support of the official plugin is not good, this plugin
 
 ### Install
 
-```bash
-npm i -D @mr-hope/vuepress-plugin-last-update
-```
-
-Or
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-last-update
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D @mr-hope/vuepress-plugin-last-update
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### Usage
 

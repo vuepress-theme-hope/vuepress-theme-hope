@@ -13,15 +13,19 @@ copyrightText: false
 
 ### 安装
 
-```bash
-npm i -D @mr-hope/vuepress-plugin-sitemap
-```
-
-或
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-sitemap
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D @mr-hope/vuepress-plugin-sitemap
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### 使用
 

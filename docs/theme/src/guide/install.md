@@ -13,15 +13,19 @@ You can use [vuepress-theme-hope template](https://github.com/vuepress-theme-hop
 
 ### Installation
 
-```bash
-npm i -D vuepress-theme-hope
-```
-
-Or
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D vuepress-theme-hope
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D vuepress-theme-hope
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### Usage
 

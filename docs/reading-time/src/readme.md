@@ -26,15 +26,19 @@ interface ReadingTime {
 
 ### Install
 
-```bash
-npm i -D @mr-hope/vuepress-plugin-reading-time
-```
-
-Or
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-reading-time
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D @mr-hope/vuepress-plugin-reading-time
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### Usage
 

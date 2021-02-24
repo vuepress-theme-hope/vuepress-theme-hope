@@ -21,15 +21,19 @@ copyrightText: false
 
 ### Install
 
-```bash
-npm i -D vuepress-plugin-add-this
-```
-
-Or
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D vuepress-plugin-add-this
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D vuepress-plugin-add-this
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### Usage
 

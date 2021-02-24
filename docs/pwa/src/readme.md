@@ -23,15 +23,19 @@ This plugin will turn on Progressive Web App Support.
 
 ### Install
 
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
-npm i -D @mr-hope/vuepress-plugin-pwa
+yarn add -D vuepress-plugin-pwa
 ```
+</CodeGroupItem>
 
-Or
-
+<CodeGroupItem title="npm">
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-pwa
+npm i -D vuepress-plugin-pwa
 ```
+</CodeGroupItem>
+</CodeGroup>
 
 ### Usage
 

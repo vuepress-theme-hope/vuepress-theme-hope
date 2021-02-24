@@ -19,15 +19,19 @@ copyrightText: false
 
 ## 安装
 
-```bash
-npm i -D @mr-hope/vuepress-plugin-comment
-```
-
-或
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-comment
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D @mr-hope/vuepress-plugin-comment
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ## 使用
 

@@ -21,15 +21,19 @@ copyrightText: false
 
 ### 安装
 
-```bash
-npm i -D vuepress-plugin-add-this
-```
-
-或
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D vuepress-plugin-add-this
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D vuepress-plugin-add-this
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### 使用
 

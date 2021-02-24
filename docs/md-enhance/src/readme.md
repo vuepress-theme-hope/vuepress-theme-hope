@@ -52,15 +52,19 @@ copyrightText: false
 
 ### Install
 
-```bash
-npm i -D vuepress-plugin-md-enhance
-```
-
-Or
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D vuepress-plugin-md-enhance
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D vuepress-plugin-md-enhance
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### Usage
 

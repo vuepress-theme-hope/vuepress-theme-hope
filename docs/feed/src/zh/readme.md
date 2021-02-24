@@ -21,15 +21,19 @@ copyrightText: false
 
 ### 安装
 
-```bash
-npm i -D @mr-hope/vuepress-plugin-feed
-```
-
-或
-
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-feed
 ```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D @mr-hope/vuepress-plugin-feed
+```
+</CodeGroupItem>
+</CodeGroup>
 
 ### 使用
 

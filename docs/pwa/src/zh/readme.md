@@ -23,15 +23,19 @@ copyrightText: false
 
 ### 安装
 
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
-npm i -D @mr-hope/vuepress-plugin-pwa
+yarn add -D vuepress-plugin-pwa
 ```
+</CodeGroupItem>
 
-或
-
+<CodeGroupItem title="npm">
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-pwa
+npm i -D vuepress-plugin-pwa
 ```
+</CodeGroupItem>
+</CodeGroup>
 
 ### 使用
 

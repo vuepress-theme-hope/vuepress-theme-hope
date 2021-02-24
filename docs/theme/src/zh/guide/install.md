@@ -13,9 +13,19 @@ tags: intro
 
 ### 安装
 
+<CodeGroup>
+<CodeGroupItem title="yarn">
+```bash
+yarn add -D vuepress-theme-hope
+```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
 ```bash
 npm i -D vuepress-theme-hope
 ```
+</CodeGroupItem>
+</CodeGroup>
 
 ### 使用
 

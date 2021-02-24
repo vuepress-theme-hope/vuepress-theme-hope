@@ -21,15 +21,19 @@ copyrightText: false
 
 ### 安装
 
+<CodeGroup>
+<CodeGroupItem title="yarn">
 ```bash
-npm i -D vuepress-plugin-last-update
+yarn add -D @mr-hope/vuepress-plugin-last-update
 ```
+</CodeGroupItem>
 
-或
-
+<CodeGroupItem title="npm">
 ```bash
-yarn add -D vuepress-plugin-last-update
+npm i -D @mr-hope/vuepress-plugin-last-update
 ```
+</CodeGroupItem>
+</CodeGroup>
 
 ### 使用
 
