@@ -5,18 +5,16 @@ env:
   es6: true
 
 extends:
-  - "plugin:vue/vue3-recommended"
-  - "eslint:recommended"
-  - prettier
-  - prettier/prettier
-  - prettier/vue
+  - plugin:vue/vue3-recommended
+  - eslint:recommended
+  - plugin:prettier/recommended
 
 ignorePatterns:
   - dist/
   - node_modules/
   - lib/
-  - "packages/theme/**/*.js"
-  - "packages/theme/**/*.d.ts"
+  - packages/theme/**/*.js
+  - packages/theme/**/*.d.ts
   - "!packages/theme/types/**/*.d.ts"
 
 overrides:
@@ -24,9 +22,9 @@ overrides:
       - "*.vue"
 
     extends:
-      - "plugin:@typescript-eslint/eslint-recommended"
-      - "plugin:@typescript-eslint/recommended"
-      - prettier/@typescript-eslint
+      - plugin:@typescript-eslint/eslint-recommended
+      - plugin:@typescript-eslint/recommended
+      - plugin:prettier/recommended
       - "@vue/typescript/recommended"
       - "@vue/prettier"
       - "@vue/prettier/@typescript-eslint"
@@ -82,10 +80,10 @@ overrides:
       - "*.ts"
 
     extends:
-      - "plugin:@typescript-eslint/eslint-recommended"
-      - "plugin:@typescript-eslint/recommended"
-      - "plugin:@typescript-eslint/recommended-requiring-type-checking"
-      - prettier/@typescript-eslint
+      - plugin:@typescript-eslint/eslint-recommended
+      - plugin:@typescript-eslint/recommended
+      - plugin:@typescript-eslint/recommended-requiring-type-checking
+      - plugin:prettier/recommended
 
     plugins:
       - "@typescript-eslint"
