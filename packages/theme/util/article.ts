@@ -95,19 +95,22 @@ export const filterArticle = (
     );
   });
 
-export const sortArticle = (pages: PageComputed[]): PageComputed[] =>
+export const sortArticle = (
+  pages: PageComputed[],
+  compareKey: "star" | "sticky" = "sticky"
+): PageComputed[] =>
   pages.slice(0).sort((prev, next) => {
-    const prevSticky = prev.frontmatter.sticky;
-    const nextSticky = next.frontmatter.sticky;
+    const prevKey = prev.frontmatter[compareKey];
+    const nextKey = next.frontmatter[compareKey];
     const prevTime = prev.frontmatter.time || prev.frontmatter.date;
     const nextTime = next.frontmatter.time || next.frontmatter.date;
 
-    if (prevSticky && nextSticky)
-      return prevSticky === nextSticky
+    if (prevKey && nextKey)
+      return prevKey === nextKey
         ? compareDate(prevTime, nextTime)
-        : Number(nextSticky) - Number(prevSticky);
-    if (prevSticky && !nextSticky) return -1;
-    if (!prevSticky && nextSticky) return 1;
+        : Number(nextKey) - Number(prevKey);
+    if (prevKey && !nextKey) return -1;
+    if (!prevKey && nextKey) return 1;
 
     return compareDate(prevTime, nextTime);
   });

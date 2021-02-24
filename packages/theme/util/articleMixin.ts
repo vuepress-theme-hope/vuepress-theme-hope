@@ -31,7 +31,7 @@ export class TimelineMixin extends Vue {
     // filter before sort
     this.$timelineItems.forEach((article) => {
       const {
-        frontmatter: { date, time = date as Date },
+        frontmatter: { date, time = date as Date | string },
       } = article;
       const [year, month, day] = getDate(time);
 
@@ -49,13 +49,14 @@ export class TimelineMixin extends Vue {
 }
 
 @Component
-export class StickyMixin extends Vue {
-  protected get $stickyArticles(): PageComputed[] {
+export class StarMixin extends Vue {
+  protected get $starArticles(): PageComputed[] {
     const { pages } = this.$site;
 
     // filter before sort
     return sortArticle(
-      filterArticle(pages, (page) => Boolean(page.frontmatter.sticky))
+      filterArticle(pages, (page) => Boolean(page.frontmatter.star)),
+      "star"
     );
   }
 }

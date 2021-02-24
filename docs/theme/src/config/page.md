@@ -87,6 +87,13 @@ Set the label of the current page
 
 Sets whether the current article is pinned in the list. When fill in with number, greater ones come before smaller ones.
 
+### star
+
+- Type: `boolean | number`
+- Default: `false`
+
+Sets whether the current article is pinned in the article list in blog theme. When fill in with number, greater ones come before smaller ones.
+
 ### article
 
 - Type: `boolean`

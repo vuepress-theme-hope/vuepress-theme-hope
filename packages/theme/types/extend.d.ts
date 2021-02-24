@@ -37,6 +37,7 @@ declare module "@mr-hope/vuepress-types" {
      */
     tags?: string[];
     sticky?: boolean | number;
+    star?: boolean | number;
     article?: boolean;
     timeline?: boolean;
     password?: string | number;

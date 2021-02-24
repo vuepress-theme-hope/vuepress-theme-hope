@@ -11,7 +11,7 @@ import TagList from "@theme/components/Blog/TagList.vue";
 import Timeline from "@theme/components/Blog/Timeline.vue";
 import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { filterArticle } from "@theme/util/article";
-import { StickyMixin } from "@theme/util/articleMixin";
+import { StarMixin } from "@theme/util/articleMixin";
 
 import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 @Component({
@@ -28,7 +28,7 @@ import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
     TimelineList,
   },
 })
-export default class BlogInfo extends Mixins(StickyMixin) {
+export default class BlogInfo extends Mixins(StarMixin) {
   private active = "category";
 
   private get i18n(): HopeThemeLocaleConfigItem["blog"] {
