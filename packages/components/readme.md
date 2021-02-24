@@ -14,6 +14,8 @@ This plugin register 4 components and 1 global component:
 
 - BackToTop (Global Components)
 - BreadCrumb
+- CodeGroup
+- CodeGroupItem
 - MyBadge
 - Pagination
 - ScreenFull
@@ -29,6 +31,28 @@ Will read these options from `themeConfig`:
 - `breadcrumbIcon`: Wether to display icon (default is `true`)
 - `breacurmb`: Wether to use path navigator
 - `iconPrefix`: Icon-font prefix, default is `icon-`. Set `false` or `''` to cancel auto-prefix。
+
+## CodeGroup, CodeGroupItem
+
+Code Group
+
+Demo:
+
+````md
+<CodeGroup>
+<CodeGroupItem title="yarn">
+```bash
+yarn add -D vuepress-theme-hope
+```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D vuepress-theme-hope
+```
+</CodeGroupItem>
+</CodeGroup>
+````
 
 ## MyBadge
 
@@ -62,6 +86,8 @@ npm i @mr-hope/vuepress-plugin-components
 
 - BackToTop (全局组件)
 - BreadCrumb
+- CodeGroup
+- CodeGroupItem
 - MyBadge
 - Pagination
 - ScreenFull
@@ -77,6 +103,28 @@ npm i @mr-hope/vuepress-plugin-components
 - `breadcrumbIcon`: 是否显示图标(默认显示)
 - `breacurmb`: 是否启用路径导航
 - `iconPrefix`: 图标前缀，默认为 `icon-`，设置 `false` 或 `''` 取消前缀，也可设置其他值。
+
+## `<CodeGroup />`, `<CodeGroupItem />`
+
+代码块分组。
+
+案例:
+
+````md
+<CodeGroup>
+<CodeGroupItem title="yarn">
+```bash
+yarn add -D vuepress-theme-hope
+```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npm i -D vuepress-theme-hope
+```
+</CodeGroupItem>
+</CodeGroup>
+````
 
 ## `<MyBadge />`
 
