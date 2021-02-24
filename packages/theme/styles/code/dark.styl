@@ -99,3 +99,20 @@ body.theme-dark
 
       &::after
         border-right 1px solid darken(saturate($darkCodeBgColor, 10%), 35%)
+
+  .code-group-nav
+    background-color darken(saturate($darkCodeBgColor, 10%), 35%)
+
+  .code-group-nav-tab
+    &:hover
+      background-color darken(saturate($darkCodeBgColor, 10%), 5%)
+
+    &.active
+      border-bottom 0
+      background-color $darkCodeBgColor
+
+      &:before
+        background radial-gradient(16px at left top, transparent 50%, $darkCodeBgColor 50%)
+
+      &:after
+        background radial-gradient(16px at right top, transparent 50%, $darkCodeBgColor 50%)

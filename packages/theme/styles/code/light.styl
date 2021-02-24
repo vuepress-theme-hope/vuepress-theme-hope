@@ -105,3 +105,20 @@ body:not(.theme-dark), body.theme-light
 
       &::after
         border-right 1px solid darken(saturate($codeBgColor, 20%), 10%)
+
+  .code-group-nav
+    background-color darken(saturate($codeBgColor, 20%), 10%)
+
+  .code-group-nav-tab
+    &:hover
+      background-color darken(saturate($codeBgColor, 10%), 5%)
+
+    &.active
+      border-bottom 0
+      background-color $codeBgColor
+
+      &:before
+        background radial-gradient(16px at left top, transparent 50%, $codeBgColor 50%)
+
+      &:after
+        background radial-gradient(16px at right top, transparent 50%, $codeBgColor 50%)
