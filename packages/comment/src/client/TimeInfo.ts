@@ -9,7 +9,7 @@ export default Vue.extend({
 
   computed: {
     time(): string {
-      const { time } = this.$frontmatter;
+      const { date, time = date } = this.$frontmatter;
 
       if (typeof time === "string") {
         if (time.indexOf("T") !== -1) {
