@@ -45,23 +45,23 @@
       &::after
         position absolute
         content ' '
-        left 0
-        right 0
+        left 50%
+        right 50%
         bottom 0px
         height 2px
         background var(--accent-color-l10)
         border-radius 1px
         visibility hidden
-        transform scaleX(0)
-        transition transform 0.3s ease-in-out
+        transition left 0.2s ease-in-out, right 0.2s ease-in-out
 
       &.active
         color var(--accent-color)
 
       &:hover, &.active
         &::after
+          left 0
+          right 0
           visibility visible
-          transform scaleX(1)
 
 .repo-link
   color var(--dark-grey)
