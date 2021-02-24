@@ -2,6 +2,24 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.10.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.6...v1.10.0) (2021-02-24)
+
+### Bug Fixes
+
+- **theme:** adjust page position without headings when anchor enabled ([fef76d7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fef76d7e3079687a289f092853f734fe574cd99b))
+- **theme:** fix broken link in i18n hint ([49bdc21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/49bdc21deba35cc153edd97f642194f832c25ee4))
+- **theme:** fix home link active in navbar ([0ba43f1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0ba43f1fd4247488d9e58ac6c22d299395036f44))
+- **theme:** fix navbar shrink issue ([a7085d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7085d2609e1dd3be25fd1f4c08fe165c59a08c8))
+- **theme:** fix sidebar activeColor on darkmode ([206eab7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/206eab7d9b0d94fb600f36bc5df1d9b4c83f5a57))
+
+### Features
+
+- **comment:** add `date` support for PageTimeInfo ([0f9177d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f9177d1afbcb1b63e605350252148b566ee3ec5))
+- **component:** update CodeGroup appearance ([6965b3e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6965b3ebd081693626e16ba215a8c90926f51400))
+- **components:** add CodeGroup and CodeGroupItem ([e50cb74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e50cb74d379beb0aa55ec0c5f2cef5d8c46e61f5))
+- **theme:** add star in frontmatter to star articles ([f1122dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f1122dc8d1c3a5f85e9b772f5d386650b40e6c04))
+- update UI ([203c21f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/203c21f3b2a63d53c65b3e2ffa0b1bfd5459469d))
+
 ## [1.9.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.4...v1.9.5) (2021-02-03)
 
 ### Bug Fixes
