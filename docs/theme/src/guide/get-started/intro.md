@@ -54,7 +54,7 @@ The theme also provides [Sitemap plugin](https://vuepress-theme-hope.github.io/s
 
 - Page: [**page icon**](../feature/icon.md), [**article information**](../feature/page-info.md),**Title list**, picture preview function.
 
-- Site structure: simplifie the configuration of [Navigation Bar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md), add support for icons and path prefixes. At the same time, the theme added [**PATH Navigation**](../layout/page.md#Path Navigation) and footer support.
+- Site structure: simplifie the configuration of [Navigation Bar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md), add support for icons and path prefixes. At the same time, the theme added [**breadcrumb**](../layout/page.md#breadcrumb) and footer support.
 
 ### Blog
 

@@ -8,7 +8,7 @@ tags:
 
 以下是 VuePress 在 Markdown 基础语法上对 Markdown 功能进行的扩展。
 
-## Header Anchors
+## 标题 Anchor
 
 所有的标题将会自动地应用 anchor 链接。
 

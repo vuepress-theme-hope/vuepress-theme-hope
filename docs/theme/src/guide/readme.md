@@ -1,6 +1,6 @@
 ---
-title: Introduction
-icon: info
+title: Guide
+icon: creative
 ---
 
 ::: tip
