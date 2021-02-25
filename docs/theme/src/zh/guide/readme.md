@@ -15,17 +15,19 @@ tags: intro
 
 主题很大程度上保持了 VuePress 默认主题的风格，并在此基础上添加了大量功能与优化:
 
+### Markdown 增强
+
+为 Markdown 添加了更多语法，丰富文档与博客写作
+
+- [Tex 支持](markdown/tex.md)
+- [自定义对齐](markdown/align.md)
+- [流程图](markdown/flowchart.md)
+- [标记](markdown/mark.md)
+- [上下角标](markdown/sup-sub.md)
+- [代码演示](markdown/demo.md)
+- [幻灯片](markdown/presentation.md)
+
 ### 页面增强
-
-- 为 Markdown 添加了更多语法，丰富文档与博客写作
-
-  - [Tex 支持](feature/markdown/tex.md)
-  - [自定义对齐](feature/markdown/align.md)
-  - [流程图](feature/markdown/flowchart.md)
-  - [标记](feature/markdown/mark.md)
-  - [上下角标](feature/markdown/sup-sub.md)
-  - [代码演示](feature/markdown/demo.md)
-  - [幻灯片](feature/markdown/presentation.md)
 
 - [图片预览](feature/page.md#图片预览)，支持放大，拖拽，滑动浏览，分享和下载
 

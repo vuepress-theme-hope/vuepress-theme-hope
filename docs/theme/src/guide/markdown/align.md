@@ -3,7 +3,6 @@ title: Custom alignment
 icon: align
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

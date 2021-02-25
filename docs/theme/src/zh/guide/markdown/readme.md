@@ -1,7 +1,6 @@
 ---
 icon: markdown
 tags:
-  - feature
   - markdown
 ---
 

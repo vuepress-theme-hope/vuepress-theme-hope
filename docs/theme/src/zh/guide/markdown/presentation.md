@@ -3,7 +3,6 @@ title: 幻灯片
 icon: presentation
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

@@ -3,7 +3,6 @@ title: Tex
 icon: tex
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

@@ -3,7 +3,6 @@ title: 脚注
 icon: footnote
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

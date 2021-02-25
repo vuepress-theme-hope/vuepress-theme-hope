@@ -27,17 +27,19 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 The theme maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
 
-### Page enhancement
+### Markdown Enhance
 
-- Added more syntax to Markdown, enriching documentation and blog writing
+Added more syntax to Markdown, enriching documentation and blog writing
 
-  - Tex support
-  - Custom alignment
-  - Flow chart
-  - Mark
-  - Subsript and Supercript
-  - Code Demo
-  - Presentation
+- Tex support
+- Custom alignment
+- Flow chart
+- Mark
+- Subsript and Supercript
+- Code Demo
+- Presentation
+
+### Page Enhance
 
 - Picture preview feature, supports:
 
@@ -127,17 +129,19 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 主题很大程度上保持了 VuePress 默认主题的风格，并在此基础上添加了大量功能与优化:
 
+### Markdown 增强
+
+为 Markdown 添加了更多语法，丰富文档与博客写作
+
+- Tex 支持
+- 自定义对齐
+- 流程图
+- 标记
+- 上下角标
+- 代码演示
+- 幻灯片
+
 ### 页面增强
-
-- 为 Markdown 添加了更多语法，丰富文档与博客写作
-
-  - Tex 支持
-  - 自定义对齐
-  - 流程图
-  - 标记
-  - 上下角标
-  - 代码演示
-  - 幻灯片
 
 - 图片预览功能，支持:
 

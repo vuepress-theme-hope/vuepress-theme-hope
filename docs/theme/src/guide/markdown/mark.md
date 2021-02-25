@@ -3,7 +3,6 @@ title: Markup
 icon: write
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

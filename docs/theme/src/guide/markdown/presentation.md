@@ -3,7 +3,6 @@ title: Presentation
 icon: presentation
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

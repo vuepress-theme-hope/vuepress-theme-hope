@@ -3,7 +3,6 @@ title: Code Demo
 icon: discover
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

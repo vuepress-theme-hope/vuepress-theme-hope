@@ -3,7 +3,6 @@ title: Footnote
 icon: footnote
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

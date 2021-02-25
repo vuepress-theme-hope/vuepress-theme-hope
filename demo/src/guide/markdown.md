@@ -38,7 +38,7 @@ module.exports = {
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/sup-sub/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/sup-sub/)
 
 ### Align
 
@@ -72,7 +72,7 @@ I am right align
 
 ::::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/align/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/align/)
 
 ### Footnote
 
@@ -90,7 +90,7 @@ This text has footnote[^first].
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/footnote/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/footnote/)
 
 ### Mark
 
@@ -104,7 +104,7 @@ You can mark ==important words== .
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/mark/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/mark/)
 
 ### Flowchart
 
@@ -132,7 +132,7 @@ cond(no)->e
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/flowchart/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/flowchart/)
 
 ### Tex
 
@@ -152,7 +152,7 @@ $$
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/tex/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/tex/)
 
 ### Demo
 
@@ -370,7 +370,7 @@ h1 {
 
 ::::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/demo/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/demo/)
 
 ### Presentation
 
@@ -442,7 +442,7 @@ $$
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/feature/markdown/presentation/)
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/presentation/)
 
 ## Other Syntax
 

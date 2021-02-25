@@ -38,7 +38,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/sup-sub/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/sup-sub/)
 
 ### 自定义对齐
 
@@ -72,7 +72,7 @@ module.exports = {
 
 ::::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/align/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/align/)
 
 ### 脚注
 
@@ -90,7 +90,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/footnote/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/footnote/)
 
 ### 标记
 
@@ -104,7 +104,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/mark/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/mark/)
 
 ### 流程图
 
@@ -132,7 +132,7 @@ cond(no)->e
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/flowchart/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/flowchart/)
 
 ### Tex 语法
 
@@ -152,7 +152,7 @@ $$
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/tex/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/tex/)
 
 ### 代码案例
 
@@ -370,7 +370,7 @@ h1 {
 
 ::::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/demo/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/demo/)
 
 ### 幻灯片
 
@@ -442,7 +442,7 @@ $$
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/presentation/)
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/presentation/)
 
 ## 其他语法
 

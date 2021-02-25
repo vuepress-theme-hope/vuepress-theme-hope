@@ -3,7 +3,6 @@ title: 自定义对齐
 icon: align
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

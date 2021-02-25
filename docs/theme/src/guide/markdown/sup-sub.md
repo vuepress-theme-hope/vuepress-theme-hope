@@ -3,7 +3,6 @@ title: Superscript and Subscript
 icon: superscript
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

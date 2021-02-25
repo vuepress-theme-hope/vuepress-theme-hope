@@ -20,8 +20,6 @@ tags:
 
 - [**Encryption function**](encrypt.md)
 
-- [**Markdown enhancement**](markdown/readme.md)
-
 - [**PWA Support**](pwa.md)
 
 - [**New component**](component.md)

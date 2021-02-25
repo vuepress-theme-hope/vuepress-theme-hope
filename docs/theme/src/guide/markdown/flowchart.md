@@ -3,7 +3,6 @@ title: Flowchart
 icon: flowchart
 category: markdown
 tags:
-  - feature
   - markdown
 ---
 

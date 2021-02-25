@@ -13,17 +13,19 @@ If you met a bug while using, you can open an issue [here](https://github.com/vu
 
 The theme maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
 
-### Page enhancement
+### Markdown Enhance
 
-- Added more syntax to Markdown, enriching documentation and blog writing
+Added more syntax to Markdown, enriching documentation and blog writing
 
-  - [Tex Support](feature/markdown/tex.md)
-  - [Custom alignment](feature/markdown/align.md)
-  - [Flow chart](feature/markdown/flowchart.md)
-  - [Mark](feature/markdown/mark.md)
-  - [Subsript and Supercript](feature/markdown/sup-sub.md)
-  - [Code demo](feature/markdown/demo.md)
-  - [Presentation](feature/markdown/presentation.md)
+- [Tex Support](markdown/tex.md)
+- [Custom alignment](markdown/align.md)
+- [Flow chart](markdown/flowchart.md)
+- [Mark](markdown/mark.md)
+- [Subsript and Supercript](markdown/sup-sub.md)
+- [Code demo](markdown/demo.md)
+- [Presentation](markdown/presentation.md)
+
+### Page Enhance
 
 - [Picture preview feature](feature/page.md#picture-preview), supports zooming, dragging, sliding browsing, sharing and downloading
 

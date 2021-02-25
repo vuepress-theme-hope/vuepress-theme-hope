@@ -24,7 +24,7 @@ features:
 
   - title: Markdown Enhance 🧰
     details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
-    link: https://vuepress-theme-hope.github.io/guide/feature/markdown/
+    link: https://vuepress-theme-hope.github.io/guide/markdown/
 
   - title: Blog support 📝
     details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated

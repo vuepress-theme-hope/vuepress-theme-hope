@@ -20,8 +20,6 @@ tags:
 
 - [**加密功能**](encrypt.md)
 
-- [**Markdown 增强**](markdown/readme.md)
-
 - [**PWA 支持**](pwa.md)
 
 - [**新增组件**](component.md)

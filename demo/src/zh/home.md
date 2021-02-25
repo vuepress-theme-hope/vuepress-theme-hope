@@ -24,7 +24,7 @@ features:
 
   - title: Markdown 增强 🧰
     details: 新增文字对齐、上下角标、脚注、标记、数学公式、流程图与幻灯片支持
-    link: https://vuepress-theme-hope.github.io/zh/guide/feature/markdown/
+    link: https://vuepress-theme-hope.github.io/zh/guide/markdown/
 
   - title: 博客支持 📝
     details: 为你的文章添加日期、标签和分类，即可自动生成文章、分类、标签与时间轴列表
