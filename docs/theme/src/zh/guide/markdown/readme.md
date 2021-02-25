@@ -46,3 +46,21 @@ module.exports = {
 ### 启用特定的语法
 
 特定语法的配置项可以在对应的说明页或者 [主题插件配置](../../config/theme/plugin.md#mdEnhance) 中找到。
+
+## 新语法
+
+- [自定义对齐](align.md)
+
+- [上下角标](sup-sub.md)
+
+- [脚注](footnote.md)
+
+- [标记](mark.md)
+
+- [流程图](flowchart.md)
+
+- [Tex 语法](tex.md)
+
+- [代码演示](demo.md)
+
+- [幻灯片](presentation.md)

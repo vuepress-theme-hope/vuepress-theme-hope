@@ -48,3 +48,21 @@ Please use the options below and enable ONLY the feature you want to use.
 ### Enable specific syntax
 
 Specific syntax configuration items can be found in the corresponding instruction page or [Theme Plugin Config](../../config/theme/plugin.md#mdEnhance).
+
+## New syntax
+
+- [Custom Alignment](align.md)
+
+- [Superscript and subscript](sup-sub.md)
+
+- [Footnote](footnote.md)
+
+- [Mark](mark.md)
+
+- [Flowchart](flowchart.md)
+
+- [Tex](tex.md)
+
+- [Code demo](demo.md)
+
+- [Presentation](presentation.md)
