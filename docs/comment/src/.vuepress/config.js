@@ -51,46 +51,33 @@ module.exports = config({
     ],
 
     sidebar: {
-      "/": [
+      "/guide/": [
+        "",
+        "page-info",
+        "valine",
         {
-          title: "Guide",
-          icon: "creative",
-          prefix: "/guide/",
+          title: "Vssue",
+          icon: "vssue",
           collapsable: false,
           children: [
-            "",
-            "page-info",
-            "valine",
+            "vssue",
             {
-              title: "Vssue",
-              icon: "vssue",
+              title: "Supported platforms",
+              icon: "support",
               collapsable: false,
               children: [
-                "vssue",
-                {
-                  title: "Supported platforms",
-                  icon: "support",
-                  collapsable: false,
-                  children: [
-                    "supported-platforms",
-                    "github",
-                    "gitlab",
-                    "gitee",
-                    "bitbucket",
-                  ],
-                },
+                "supported-platforms",
+                "github",
+                "gitlab",
+                "gitee",
+                "bitbucket",
               ],
             },
           ],
         },
-        {
-          title: "Config",
-          icon: "config",
-          prefix: "/config/",
-          collapsable: false,
-          children: ["", "valine", "vssue"],
-        },
       ],
+      "/config/": ["", "valine", "vssue"],
+      "/": ["guide/", "config/"],
     },
 
     locales: {
@@ -122,46 +109,33 @@ module.exports = config({
         ],
 
         sidebar: {
-          "/zh/": [
+          "/zh/guide/": [
+            "",
+            "page-info",
+            "valine",
             {
-              title: "指南",
-              icon: "creative",
-              prefix: "guide/",
+              title: "Vssue",
+              icon: "vssue",
               collapsable: false,
               children: [
-                "",
-                "page-info",
-                "valine",
+                "vssue",
                 {
-                  title: "Vssue",
-                  icon: "vssue",
+                  title: "支持平台",
+                  icon: "support",
                   collapsable: false,
                   children: [
-                    "vssue",
-                    {
-                      title: "支持平台",
-                      icon: "support",
-                      collapsable: false,
-                      children: [
-                        "supported-platforms",
-                        "github",
-                        "gitlab",
-                        "gitee",
-                        "bitbucket",
-                      ],
-                    },
+                    "supported-platforms",
+                    "github",
+                    "gitlab",
+                    "gitee",
+                    "bitbucket",
                   ],
                 },
               ],
             },
-            {
-              title: "配置",
-              icon: "config",
-              prefix: "/config/",
-              collapsable: false,
-              children: ["", "valine", "vssue"],
-            },
           ],
+          "/zh/config/": ["", "valine", "vssue"],
+          "/zh/": ["guide/", "config/"],
         },
       },
     },
