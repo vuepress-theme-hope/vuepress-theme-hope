@@ -3,7 +3,7 @@ title: Markup
 icon: write
 category: markdown
 tags:
-  - markdown
+  - Markdown
 ---
 
 Make Markdown files in your VuePress site support markup.

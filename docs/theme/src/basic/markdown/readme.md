@@ -71,6 +71,8 @@ E.g: `![This is a title](./assets/title.jpg)`.
 
 Example: `:smile:`
 
+For full emoji list, see [Emoji List](emoji/readme.md).
+
 ## Markdown Display
 
 - [View Detail](demo.md)

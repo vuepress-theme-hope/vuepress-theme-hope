@@ -1,7 +1,7 @@
 ---
 icon: emoji
 tags:
-  - markdown
+  - Markdown
   - emoji
 ---
 

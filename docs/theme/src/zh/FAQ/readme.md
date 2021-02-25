@@ -12,7 +12,7 @@ category: FAQ
 
 请确保你使用的是最新版本主题，之后在禁用缓存的情况下重新运行开发服务器: `vuepress dev <你的文档地址> --no-cache`。
 
-如果问题依然存在，请在 Github 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose)
+如果问题依然存在，请在 GitHub 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose)
 
 ## 部分页面设置失效
 

@@ -4,8 +4,9 @@ module.exports = {
       {
         title: "Get Started",
         icon: "creative",
+        prefix: "get-started/",
         collapsable: false,
-        children: ["", "install"],
+        children: ["intro", "install", "markdown"],
       },
       {
         title: "Markdown enhance",
@@ -30,7 +31,6 @@ module.exports = {
         prefix: "feature/",
         collapsable: false,
         children: [
-          "",
           "theme",
           "page-info",
           "comment",
@@ -97,7 +97,15 @@ module.exports = {
         icon: "vue",
         prefix: "vuepress/",
         collapsable: false,
-        children: ["", "file", "plugin", "theme", "command", "case"],
+        children: [
+          "",
+          "file",
+          "markdown",
+          "plugin",
+          "theme",
+          "command",
+          "case",
+        ],
       },
     ],
 
@@ -108,8 +116,9 @@ module.exports = {
       {
         title: "快速上手",
         icon: "creative",
+        prefix: "get-started/",
         collapsable: false,
-        children: ["", "install"],
+        children: ["intro", "install", "markdown"],
       },
       {
         title: "Markdown 增强",
@@ -134,7 +143,6 @@ module.exports = {
         prefix: "feature/",
         collapsable: false,
         children: [
-          "",
           "theme",
           "page-info",
           "comment",
@@ -201,7 +209,15 @@ module.exports = {
         icon: "vue",
         prefix: "vuepress/",
         collapsable: false,
-        children: ["", "file", "plugin", "theme", "command", "case"],
+        children: [
+          "",
+          "file",
+          "markdown",
+          "plugin",
+          "theme",
+          "command",
+          "case",
+        ],
       },
     ],
 

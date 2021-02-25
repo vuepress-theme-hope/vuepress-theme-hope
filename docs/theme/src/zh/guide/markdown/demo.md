@@ -3,7 +3,7 @@ title: 代码演示
 icon: discover
 category: markdown
 tags:
-  - markdown
+  - Markdown
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持代码案例。

@@ -3,7 +3,7 @@ title: Place
 icon: emoji
 category: basic
 tags:
-  - markdown
+  - Markdown
   - emoji
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Install / Usage
 icon: install
-category: instruction
+category: Get Started
 tags: intro
 ---
 

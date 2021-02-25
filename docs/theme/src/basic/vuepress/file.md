@@ -85,20 +85,11 @@ Project documentation on GitHub.
 
 File that do not need to be understand at the beginning:
 
-| Files         | Content                                                        |
-| ------------- | -------------------------------------------------------------- |
-| node_modules  | Stored the package used by the project                         |
-| LICENSE       | Project license document                                       |
-| yarn.lock     | The structure of the package actually installed by the project |
-| .eslintrc.yml | ESLint rule configuration file                                 |
-
-::: tip
-
-ESLint is a JS code linter.
-
-Beginners can use it in learning to reduce their own mistakes and develop a standardized code style. But you don’t need to know the specific configuration method and working principle.
-
-:::
+| Files                          | Content                                                        |
+| ------------------------------ | -------------------------------------------------------------- |
+| node_modules                   | Stored the package used by the project                         |
+| LICENSE                        | Project license document                                       |
+| yarn.lock or package-lock.json | The structure of the package actually installed by the project |
 
 ## .vuepress
 
@@ -130,8 +121,8 @@ Styl is a extend of CSS that extends and changes the way CSS is written, and var
 
 File that do not need to be understand at the beginning:
 
-| Folder      | Content                                             |
-| ----------- | --------------------------------------------------- |
-| compoenents | Placed the Vue component in the VuePress site       |
-| theme       | Placed the theme of the VuePress site               |
-| templates   | Placed the template and layout of the VuePress site |
+| Folder     | Content                                             |
+| ---------- | --------------------------------------------------- |
+| components | Placed the Vue component in the VuePress site       |
+| theme      | Placed the theme of the VuePress site               |
+| templates  | Placed the template and layout of the VuePress site |

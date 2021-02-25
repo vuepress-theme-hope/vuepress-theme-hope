@@ -46,9 +46,7 @@ tags: intro
 
 - [自定义页脚](layout/page.md#页脚支持)
 
-### 功能增强
-
-#### 零配置自动实现并允许你定制
+### 零配置自动实现并允许你定制
 
 - [全新主题色，允许你在浏览过程中动态切换](feature/theme.md#主题色)
 
@@ -64,13 +62,15 @@ tags: intro
 
 - 复制时添加版权信息
 
-#### 更多强大功能
+### SEO 相关
 
 - [Feed 生成](feature/feed.md)
 
 - [SEO 增强](feature/seo-sitemap.md#SEO)
 
 - [Sitemap 生成](feature/seo-sitemap.md#Sitemap)
+
+### 安全性
 
 - [加密特定文章或路径](feature/encrypt.md)
 

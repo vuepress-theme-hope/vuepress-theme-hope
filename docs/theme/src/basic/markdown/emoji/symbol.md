@@ -3,7 +3,7 @@ title: Symbol
 icon: emoji
 category: basic
 tags:
-  - markdown
+  - Markdown
   - emoji
 ---
 

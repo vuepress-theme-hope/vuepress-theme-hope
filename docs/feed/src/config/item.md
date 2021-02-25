@@ -5,7 +5,7 @@ icon: config
 
 You can control the generation of each feed item individually by configuring the frontmatter of each page.
 
-By default, all articles will be added to the feed stream. If you want to remove a specific page from the feed, you can set `feed.enable` to `false` in frontmatter.
+By default, all articles will be added to the feed stream. To remove a specific page from the feed, you can set `feed.enable` to `false` in frontmatter.
 
 ## FrontMatter options
 
@@ -88,12 +88,12 @@ The author of the feed item
 interface FeedAuthor {
   /** Author name */
   name: string;
-  /** Author's email */
+  /** Author’s email */
   email?: string;
-  /** Author's website */
+  /** Author’s website */
   url?: string;
   /**
-   * Author's avatar address
+   * Author’s avatar address
    *
    * Square, preferably not less than 128×128, transparent background
    */
@@ -115,12 +115,12 @@ Contributors to the feed item
 interface FeedContributor {
   /** Name of ontributor */
   name: string;
-  /** Contributor's email */
+  /** Contributor’s email */
   email?: string;
   /** Sharer website */
   url?: string;
   /**
-   * Sharer's avatar address
+   * Sharer’s avatar address
    *
    * Square, preferably not less than 128×128, transparent background
    */

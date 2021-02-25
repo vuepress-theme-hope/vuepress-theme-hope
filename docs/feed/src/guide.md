@@ -79,7 +79,7 @@ All pages whose `frontmatter.article` is not `false` and are not the homepage wi
 
 You can control the generation of feed items for specific articles by configuring the feed options in frontmatter.
 
-If you want to remove a specific page from the feed, you can set `feed.enable` to `false` in the frontmatter of the page.
+To remove a specific page from the feed, you can set `feed.enable` to `false` in the frontmatter of the page.
 
 You can also add content directly to the feed plugin via `frontmatter.feed`. The supported options are as follows:
 
@@ -100,7 +100,7 @@ You can also add content directly to the feed plugin via `frontmatter.feed`. The
     /** Author website */
     url?: string;
     /**
-     * Author's avatar address
+     * Author’s avatar address
      *
      * Square, preferably not less than 128×128, transparent background
      */

@@ -1,24 +1,23 @@
 ---
+title: Markdown 增强
 icon: markdown
 tags:
-  - markdown
+  - Markdown
 ---
 
-# Markdown 增强
+除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance](https://vuepress-theme-hope.github.io/md-enhance)，在 Markdown 中启用了更多的语法与新功能。
 
-`vuepress-theme-hope` 通过内置 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance)，在 Markdown 中启用了更多的语法与新功能。
+## 启用 Markdown 增强
 
-`.vuepress/config.js` 中的 `themeconfig.mdEnhance` 会直接传递给插件作为插件选项。所以你也可以直接阅读 [md-enhance 文档](https://vuepress-theme-hope.github.io/md-enhance) 查看用法。
+`.vuepress/config.js` 中的 `themeconfig.mdEnhance` 会直接传递给插件作为插件选项。所以你也可以直接阅读 [vuepress-plugin-md-enhance 文档](https://vuepress-theme-hope.github.io/md-enhance) 查看用法。
 
 ::: tip
 
 请不用担心你的网站大小，如果你不启用相关功能，最终代码不会包含这些功能相关的代码。
 
-同时 VuePress 本身新增了一些 Markdown 语法，如果你对它们不熟悉，可以 [查看官方文档](https://v1.vuepress.vuejs.org/zh/guide/markdown.html)。
-
 :::
 
-## 一键启用
+### 一键启用
 
 你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) 插件的所有功能。
 
@@ -44,122 +43,6 @@ module.exports = {
 
 :::
 
-## 新增的更多语法
+### 启用特定的语法
 
-### 自定义对齐
-
-::: center
-
-我是居中的
-
-:::
-
-::: right
-
-我在右对齐
-
-:::
-
-- [查看详情](align.md)
-
-### 上下角标
-
-19^th^ H~2~O
-
-- [查看详情](sup-sub.md)
-
-### 脚注
-
-此文字有脚注[^first].
-
-[^first]: 这是脚注内容
-
-- [查看详情](footnote.md)
-
-### 标记
-
-你可以标记 ==重要的内容== 。
-
-- [查看详情](mark.md)
-
-### 流程图
-
-@flowstart
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
-
-cond(yes)->process->e
-cond(no)->e
-@flowend
-
-- [查看详情](flowchart.md)
-
-### Tex 语法
-
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
-
-- [查看详情](tex.md)
-
-### 代码演示
-
-::: demo 一个普通 Demo
-
-```html
-<h1>Mr.Hope</h1>
-<p><span id="very">十分</span> 帅</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("十分帅");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [查看详情](demo.md)
-
-### 幻灯片
-
-@slidestart
-
-## 幻灯片 1
-
-一个有文字和 [链接](https://mrhope.site) 的段落
-
----
-
-## 幻灯片 2
-
-- 项目 1
-- 项目 2
-
----
-
-## 幻灯片 3.1
-
-```js
-const a = 1;
-```
-
---
-
-## 幻灯片 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
-
-- [查看详情](presentation.md)
+特定语法的配置项可以在对应的说明页或者 [主题插件配置](../../config/theme/plugin.md#mdEnhance) 中找到。

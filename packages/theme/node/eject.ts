@@ -2,16 +2,17 @@ import { cyan, red } from "chalk";
 import { copy } from "fs-extra";
 import { relative, resolve } from "path";
 
+// #region exclude-files
 const EXCLUDED_FILES = [
   "__tests__",
   ".npmignore",
-  "test",
   "LICENSE",
   "package.json",
   "node_modules",
   "README.md",
   "readme.md",
 ];
+// #endregion exclude-files
 
 export const eject = async (dir: string): Promise<void> => {
   try {

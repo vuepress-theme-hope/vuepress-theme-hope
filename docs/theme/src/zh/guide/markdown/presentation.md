@@ -3,7 +3,7 @@ title: 幻灯片
 icon: presentation
 category: markdown
 tags:
-  - markdown
+  - Markdown
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持幻灯片。

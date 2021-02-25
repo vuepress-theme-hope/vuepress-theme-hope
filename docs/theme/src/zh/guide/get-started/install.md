@@ -1,8 +1,9 @@
 ---
 title: 安装/使用
 icon: install
-category: instruction
-tags: intro
+category: 快速上手
+tags:
+  - 安装
 ---
 
 ## 在新项目中使用

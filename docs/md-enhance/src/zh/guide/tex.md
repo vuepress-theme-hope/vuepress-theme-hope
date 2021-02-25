@@ -162,12 +162,12 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 #### 案例
 
-Einstein 's $E=mc^2$.
+Einstein ’s $E=mc^2$.
 
 $2^{10} > 1000$
 
 ```md
-Einstein 's $E=mc^2$.
+Einstein ’s $E=mc^2$.
 
 $2^{10} > 1000$
 ```

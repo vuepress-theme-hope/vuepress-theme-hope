@@ -23,7 +23,7 @@ footer: Footer content for test
 
 ## Page information
 
-You can set page information in Markdown's Frontmatter.
+You can set page information in Markdown’s Frontmatter.
 
 - The author is set to Ms.Hope.
 

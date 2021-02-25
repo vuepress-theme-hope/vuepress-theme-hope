@@ -14,7 +14,7 @@ These are plugin config provided by theme.
 
 All the config key name is the camelCase version of plugin name.
 
-Example: `@mr-hope/vuepress-copy-code` 's config keyname will be `copyCode`.
+Example: `@mr-hope/vuepress-copy-code` ’s config keyname will be `copyCode`.
 
 :::
 

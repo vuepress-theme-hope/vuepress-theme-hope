@@ -3,7 +3,7 @@ icon: markdown
 title: Markdown 增强
 category: 使用指南
 tag:
-  - markdown
+  - Markdown
 ---
 
 `vuepress-theme-hope` 通过内置 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance)，在 Markdown 中启用了更多的语法与新功能。

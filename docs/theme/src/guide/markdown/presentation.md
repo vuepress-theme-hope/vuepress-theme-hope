@@ -3,7 +3,7 @@ title: Presentation
 icon: presentation
 category: markdown
 tags:
-  - markdown
+  - Markdown
 ---
 
 Let the Markdown file in your VuePress site support presentation.

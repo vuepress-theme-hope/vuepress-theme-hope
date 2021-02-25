@@ -3,7 +3,7 @@ title: Markdown 介绍
 icon: markdown
 category: basic
 tags:
-  - markdown
+  - Markdown
 ---
 
 Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
@@ -179,7 +179,7 @@ Markdown 也允许你只在整个段落的第一行最前面加上 `>` :
 > 1. This is the first list item.
 > 2. This is the second list item.
 >
-> Here's some example code:
+> Here’s some example code:
 >
 >     return shell_exec("echo $input | $markdown_script");
 ```
@@ -820,6 +820,8 @@ Markdown 支持在下面这些符号前面加上反斜线来帮助插入普通�
 `:emoji名称:`
 
 Example: `:smile:` :smile:
+
+你可以在 [Emoji 列表](./emoji/readme.md) 找到所有可用的 Emoji。
 
 ## Markdown 效果演示
 

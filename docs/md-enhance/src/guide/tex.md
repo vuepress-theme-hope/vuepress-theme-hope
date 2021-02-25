@@ -166,12 +166,12 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 #### Case
 
-Einstein 's $E=mc^2$.
+Einstein ’s $E=mc^2$.
 
 $2^{10} > 1000$
 
 ```md
-Einstein 's $E=mc^2$.
+Einstein ’s $E=mc^2$.
 
 $2^{10} > 1000$
 ```
@@ -384,7 +384,7 @@ $$
 
 ## Text
 
-If you need to insert text in tex, you should use `\text{}` to wrap them.
+To insert text in tex, you should use `\text{}` to wrap them.
 
 ## More
 

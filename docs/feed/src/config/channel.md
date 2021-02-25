@@ -98,12 +98,12 @@ The author of the channel.
 interface FeedAuthor {
   /** Author name */
   name: string;
-  /** Author's email */
+  /** Author’s email */
   email?: string;
-  /** Author's website */
+  /** Author’s website */
   url?: string;
   /**
-   * Author's avatar address
+   * Author’s avatar address
    *
    * Square, preferably not less than 128×128 with transparent background
    */
