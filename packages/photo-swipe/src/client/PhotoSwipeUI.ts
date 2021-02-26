@@ -2,6 +2,7 @@ import Vue from "vue";
 import PhotoSwipe from "photoswipe";
 
 let images: NodeListOf<HTMLImageElement>;
+const i18n = PHOTOSWIPE_I18N;
 
 export default Vue.extend({
   name: "PhotoSwipeUI",
@@ -46,6 +47,7 @@ export default Vue.extend({
                 photoSwipeUIDefault.default,
                 imageConfig,
                 {
+                  shareButtons: i18n[this.$localePath || "/"],
                   ...PHOTOSWIPE_OPTIONS,
                   index,
                 }
