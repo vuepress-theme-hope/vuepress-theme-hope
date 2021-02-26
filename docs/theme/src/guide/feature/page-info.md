@@ -12,7 +12,7 @@ By including `@mr-hope/vuepress-plugin-comment`, `vuepress-theme-hope` can displ
 
 ## Enable
 
-Page infomation display is enabled globally by default, while supports local config[^applypartically]. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
+Page information display is enabled globally by default, while supports local config[^applypartically]. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
 
 [^applypartically]: **Apply Partically Support**
 

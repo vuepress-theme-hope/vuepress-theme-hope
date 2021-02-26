@@ -26,7 +26,7 @@ export interface PageInfoI18nConfig {
 /**
  * 页面信息类型
  *
- * Type of page infomation
+ * Type of page information
  */
 export type PageInfotype =
   | "Author"
