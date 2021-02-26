@@ -2,6 +2,25 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.11.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.10.0...v1.11.0) (2021-02-26)
+
+### Bug Fixes
+
+- **comment:** fix wrong comment loaded when base is set ([65e755f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65e755fbd6a384c1d0127b0ebddf0597e714ca4c))
+- **pwa:** fix wrong manifest path when base is set ([373e22a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/373e22a00c9db19bbac4376e01269ec72094465c))
+- **theme:** fix layout issue anchor caused ([db1ecde](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/db1ecde001868b3a5a3d3042f2271ec4b0d492cb))
+
+### Features
+
+- **component:** rename `<MyBadge>` to `<Badge>` ([837c35d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/837c35d3904c3af26aea994808536b8bac5921f2))
+- **copy-code:** hint can be disabled by setting duration to 0 ([1155c24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1155c244792e549e32ceefaf398b5a1cb5da40cf))
+- **photo-swipe:** add i18n support for sharebuttons ([e8ac6f1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8ac6f123c656b2360778ffb4f4d63babd4fa311))
+- **theme:** add `/star/` page ([9d37a91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d37a91023200e2f3193106ef2e2956401b506a3))
+
+### BREAKING CHANGES
+
+- **component:** rename `<MyBadge>` to `<Badge>`
+
 ## [1.10.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.9.6...v1.10.0) (2021-02-24)
 
 ### Bug Fixes
