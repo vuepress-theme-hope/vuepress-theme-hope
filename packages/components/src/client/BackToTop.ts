@@ -51,7 +51,7 @@ export default Vue.extend({
 
   // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   beforeDestroy(): void {
-    window.addEventListener("scroll", scrollHandler);
+    window.removeEventListener("scroll", scrollHandler);
   },
 
   methods: {
