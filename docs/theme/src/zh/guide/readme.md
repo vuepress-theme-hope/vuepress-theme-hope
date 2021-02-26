@@ -13,6 +13,8 @@ icon: creative
 
 主题很大程度上保持了 VuePress 默认主题的风格，并在此基础上添加了大量功能与优化:
 
+<!-- more -->
+
 ### Markdown 增强
 
 为 Markdown 添加了更多语法，丰富文档与博客写作

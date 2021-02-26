@@ -1,14 +1,14 @@
 ---
+title: 博客相关
 icon: blog
-category: feature
+category: blog
 tags:
   - blog
-  - feature
 ---
 
-# 博客相关
-
 主题通过配置 `@vuepress/plugin-blog` 启用了一些博客功能。你也可以配置 `themeConfig.blog` 为 `false` 来禁用全部的博客功能。
+
+<!-- more -->
 
 ## 分类
 

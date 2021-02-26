@@ -1,12 +1,11 @@
 ---
+title: 主题
 icon: skin
-category: feature
+category: interface
 tags:
-  - style
-  - feature
+  - darkmode
+  - themecolor
 ---
-
-# 深色模式与主题色
 
 ## 深色模式
 

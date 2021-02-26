@@ -1,6 +1,6 @@
 ---
 icon: blog
-category: layout
+category: blog
 tags:
   - home
   - blog

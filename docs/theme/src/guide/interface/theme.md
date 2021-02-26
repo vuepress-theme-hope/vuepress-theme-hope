@@ -1,12 +1,11 @@
 ---
+title: Theme
 icon: skin
-category: feature
+category: interface
 tags:
-  - style
-  - feature
+  - darkmode
+  - themecolor
 ---
-
-# Darkmode and Theme color
 
 ## Darkmode
 

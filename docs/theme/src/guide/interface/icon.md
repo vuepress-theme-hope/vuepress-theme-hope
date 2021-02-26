@@ -1,10 +1,9 @@
 ---
 title: Icon support
 icon: discover
-category: feature
+category: interface
 tags:
   - icon
-  - feature
 ---
 
 The entire theme has added FontClass format icon support in mutiple places.
@@ -55,7 +54,7 @@ On the project page, you can edit the icons in the project, including adjustment
 1. Import the link in `index.styl` of `.vuepress/styles`. E.g:
 
    ```styl
-   @import "//at.alicdn.com/t/font_1446717_4irvtfrarcx.css";
+   @import "//at.alicdn.com/t/font_1446717_tu6veyewux.css";
    ```
 
 ::: tip

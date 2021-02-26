@@ -1,4 +1,5 @@
 ---
+title: Features
 icon: discover
 category: feature
 tags:
@@ -6,11 +7,7 @@ tags:
   - feature
 ---
 
-# New feature
-
-- [**Dark Mode**](theme.md#dark-mode)
-
-- [**Theme Color**](theme.md#theme-color)
+## Catalog
 
 - [**Page Information**](page-info.md)
 
@@ -22,12 +19,8 @@ tags:
 
 - [**PWA Support**](pwa.md)
 
-- [**New component**](component.md)
-
 - [**Feed Support**](feed.md)
 
 - [**Seo and Sitemap**](seo-sitemap.md)
-
-- [**Icon support**](icon.md)
 
 - [**TypeScript support**](typescript.md)

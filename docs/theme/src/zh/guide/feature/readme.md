@@ -1,4 +1,5 @@
 ---
+title: 新增特性
 icon: discover
 category: feature
 tags:
@@ -6,11 +7,7 @@ tags:
   - feature
 ---
 
-# 新增特性
-
-- [**深色模式**](theme.md#深色模式)
-
-- [**主题色**](theme.md#主题色)
+## 目录
 
 - [**页面信息**](page-info.md)
 
@@ -22,12 +19,8 @@ tags:
 
 - [**PWA 支持**](pwa.md)
 
-- [**新增组件**](component.md)
-
 - [**Feed 支持**](feed.md)
 
 - [**Seo 和 Sitemap 支持**](seo-sitemap.md)
-
-- [**图标支持**](icon.md)
 
 - [**TypeScript 支持**](typescript.md)

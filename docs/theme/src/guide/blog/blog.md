@@ -1,6 +1,6 @@
 ---
 icon: blog
-category: feature
+category: blog
 tags:
   - blog
   - feature

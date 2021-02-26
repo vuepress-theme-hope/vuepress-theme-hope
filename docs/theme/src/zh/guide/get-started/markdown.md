@@ -8,6 +8,8 @@ tags:
 
 VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要通过在相应路径创建编写 Markdown 建立你的文档或博客页面。
 
+<!-- more -->
+
 ## Markdown 介绍
 
 如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](../../basic/markdown/readme.md) 和 [Markdown 演示](../../basic/markdown/demo.md)。

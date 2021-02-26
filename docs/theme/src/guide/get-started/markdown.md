@@ -10,6 +10,8 @@ Every document page in VuePress is rendered by Markdown.
 
 You need to build your document or blog page by creating and writing Markdown in the corresponding path.
 
+<!-- more -->
+
 ## Markdown introduction
 
 If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](../../basic/markdown/readme.md) and [Markdown Demo](../../basic/markdown/demo.md).

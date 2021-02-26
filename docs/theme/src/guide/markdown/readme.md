@@ -7,49 +7,18 @@ tags:
 
 Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via [vuepress-plugin-md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
 
-## Enable Markdown Enhance
+<!-- more -->
 
-`themeconfig.mdEnhance` in `.vuepress/config.js` will be passed directly to the plugin as a plugin option. Visit [md-enhance documentation](https://vuepress-theme-hope.github.io/md-enhance) to see the usage.
+## Built-in syntax
 
-::: tip
+- [Built-in Markdown extension](../../basic/vuepress/markdown.md)
 
-Don’t worry about the size of your site. If you don’t enable related features, the final code won’t include code for these features.
+## New Components
 
-:::
+- [`<Badge />`](components.md#badge)
+- [`<CodeGroup />` and `<CodeGroupItem />`](components.md#codegroup-codegroupitem)
 
-## Enable all
-
-You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
-
-```js {3-5}
-module.exports = {
-  themeConfig: {
-    mdEnhance: {
-      enableAll: true,
-    },
-  },
-};
-```
-
-::: danger
-
-Please use this option ONLY for playing or testing.
-
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
-
-Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
-
-Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
-
-Please use the options below and enable ONLY the feature you want to use.
-
-:::
-
-### Enable specific syntax
-
-Specific syntax configuration items can be found in the corresponding instruction page or [Theme Plugin Config](../../config/theme/plugin.md#mdEnhance).
-
-## New syntax
+## New Syntax
 
 - [Custom Alignment](align.md)
 
@@ -66,3 +35,7 @@ Specific syntax configuration items can be found in the corresponding instructio
 - [Code demo](demo.md)
 
 - [Presentation](presentation.md)
+
+## Others
+
+- [External Import](external.md)

@@ -13,6 +13,8 @@ If you met a bug while using, you can open an issue [here](https://github.com/vu
 
 The theme maintains the style of the `@vuepress/theme-default`, and adds a lot of features and optimizations:
 
+<!-- more -->
+
 ### Markdown Enhance
 
 Added more syntax to Markdown, enriching documentation and blog writing
