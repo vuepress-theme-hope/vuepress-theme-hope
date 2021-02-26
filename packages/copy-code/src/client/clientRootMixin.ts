@@ -91,7 +91,9 @@ const codeCopyMinxin = Vue.extend({
 
       textAreaElement.select();
       document.execCommand("copy");
-      message.pop(i18n[this.$localePath || "/"].copy, options.duration);
+
+      if (options.duration !== 0)
+        message.pop(i18n[this.$localePath || "/"].copy, options.duration);
 
       document.body.removeChild(textAreaElement);
 

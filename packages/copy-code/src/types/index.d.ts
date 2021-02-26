@@ -25,7 +25,7 @@ export interface CopyCodeOptions {
    *
    * Prompt message display time
    *
-   * @default 300
+   * @default 2000
    */
   duration?: number;
   /**
