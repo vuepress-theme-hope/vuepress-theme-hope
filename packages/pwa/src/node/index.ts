@@ -46,6 +46,7 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
     ready(): void {
       context.siteConfig.head = injectLinkstoHead(
         pwaOption,
+        base,
         context.siteConfig.head
       );
     },

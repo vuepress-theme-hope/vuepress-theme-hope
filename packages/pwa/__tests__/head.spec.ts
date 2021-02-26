@@ -161,7 +161,7 @@ describe("Test head function", () => {
       ["meta", { name: "msapplication-TileColor", content: "#000000" }],
     ];
 
-    expect(injectLinkstoHead(options, headList)).toEqual([
+    expect(injectLinkstoHead(options, "/", headList)).toEqual([
       ["link", { rel: "icon", href: "/icon.ico" }],
 
       ["meta", { name: "theme-color", content: "#ffffff" }],

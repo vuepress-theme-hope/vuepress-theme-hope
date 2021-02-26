@@ -3,6 +3,7 @@ import type { PWAOptions } from "../types";
 
 export const injectLinkstoHead = (
   options: PWAOptions,
+  base = "/",
   head: HeadItem[] = []
 ): HeadItem[] => {
   const metaKeys: string[] = [];
@@ -48,9 +49,13 @@ export const injectLinkstoHead = (
     }
   }
 
-  setLink("manifest", "/manifest.webmanifest", {
-    crossorigin: "use-credentials",
-  });
+  setLink(
+    "manifest",
+    `${base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")}manifest.webmanifest`,
+    {
+      crossorigin: "use-credentials",
+    }
+  );
   setMeta("theme-color", options.themeColor || "#46bd87");
 
   if (
