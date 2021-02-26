@@ -32,6 +32,9 @@ export default Vue.extend({
 
       return path.includes("/article")
         ? (page: PageComputed): boolean => page.frontmatter.layout !== "Slide"
+        : path.includes("/star")
+        ? (page: PageComputed): boolean =>
+            Boolean(page.frontmatter.star || page.frontmatter.sticky)
         : path.includes("/encrypt")
         ? (page: PageComputed): boolean =>
             getPathMatchedKeys(this.$themeConfig.encrypt, page.path).length !==

@@ -56,6 +56,8 @@ export interface HopeThemeLocaleConfigItem {
     allText: string;
     /** 个人介绍 */
     intro: string;
+    /** 搜藏文字 */
+    star: string;
     /** 幻灯片 */
     slides: string;
     /** 加密 */

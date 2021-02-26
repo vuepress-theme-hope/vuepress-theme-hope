@@ -82,6 +82,10 @@ const themeAPI = (
             frontmatter: { layout: "Blog" },
           },
           {
+            path: "/star/",
+            frontmatter: { layout: "Blog" },
+          },
+          {
             path: "/encrypt/",
             frontmatter: { layout: "Blog" },
           },

@@ -16,6 +16,7 @@ export default Vue.extend({
 
       return [
         { text: blogI18n.allText, path: "/article/" },
+        { text: blogI18n.star, path: "/star/" },
         { text: blogI18n.slides, path: "/slide/" },
         { text: blogI18n.encrypt, path: "/encrypt/" },
       ];
