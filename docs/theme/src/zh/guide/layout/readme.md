@@ -9,13 +9,13 @@ tags:
 
 ## 目录
 
-- [**导航栏**](navbar.md)
+- [导航栏](navbar.md)
 
-- [**侧边栏**](sidebar.md)
+- [侧边栏](sidebar.md)
 
-- [**普通页面**](page.md)
+- [普通页面](page.md)
 
-- [**主页**](home.md)
+- [主页](home.md)
 
 - 切换动画
 

@@ -11,7 +11,7 @@ copyright:
 
 有些时候，你可能不想让你的某些文章被他人复制，或者你想让他人在复制时，自动生成一段版权信息到剪切板中。
 
-为针对这一情况，`vuepress-theme-hope` 引入了 [vuepress-plugin-copyright](https://www.npmjs.com/package/vuepress-plugin-copyright)。
+针对这一情况，`vuepress-theme-hope` 引入了 [vuepress-plugin-copyright](https://www.npmjs.com/package/vuepress-plugin-copyright)。
 
 <!-- more -->
 

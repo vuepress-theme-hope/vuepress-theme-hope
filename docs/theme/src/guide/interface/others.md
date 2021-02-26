@@ -6,9 +6,9 @@ category: interface
 
 ## Fullscreen Button
 
-Enabled by default, it's in the theme card in navbar.
+Enabled by default, it’s in the theme card in navbar.
 
-If you don't need it, you can disable it by setting `fullscreen` to `false` in the themeConfig.
+If you don’t need it, you can disable it by setting `fullscreen` to `false` in the themeConfig.
 
 ::: tip
 
@@ -25,7 +25,7 @@ module.exports = {
 };
 ```
 
-## Back to top button `<BackToTop />` <Badge text="Support page config" />
+## Back to top button <Badge text="Support page config" />
 
 `vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
 

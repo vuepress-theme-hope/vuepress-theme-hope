@@ -86,7 +86,7 @@ export interface FeedChannelOption {
   /**
    * time to live.
    *
-   * It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
+   * It’s a number of minutes that indicates how long a channel can be cached before refreshing from the source.
    */
   ttl?: number;
 

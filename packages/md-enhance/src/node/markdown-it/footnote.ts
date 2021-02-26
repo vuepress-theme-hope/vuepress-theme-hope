@@ -269,7 +269,7 @@ const footnote = (md: MarkdownIt): void => {
 
     /*
      * We found the end of the link, and know for a fact it’s a valid link;
-     * so all that's left to do is to call tokenizer.
+     * so all that’s left to do is to call tokenizer.
      *
      */
     if (!silent) {

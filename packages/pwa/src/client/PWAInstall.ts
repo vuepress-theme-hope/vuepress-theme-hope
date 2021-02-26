@@ -10,7 +10,7 @@ interface ModernNavigator extends Navigator {
 }
 
 interface SafariNavigator extends Navigator {
-  // Available on Apple's iOS Safari only.
+  // Available on Apple’s iOS Safari only.
   standalone: boolean;
 }
 

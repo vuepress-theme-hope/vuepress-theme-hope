@@ -9,20 +9,22 @@ tags:
 
 ## Catalog
 
-- [**Page Information**](page-info.md)
+- [Page Information](page-info.md)
 
-- [**Comment function**](comment.md)
+- [Comment function](comment.md)
 
-- [**Copyright info**](copyright.md)
+- [Copyright info](copyright.md)
 
-- [**Page Enhance**](page.md)
+- [Page Enhance](page.md)
 
-- [**Encryption function**](encrypt.md)
+- [Encryption function](encrypt.md)
 
-- [**PWA Support**](pwa.md)
+- [One Click copy](code-copy.md)
 
-- [**Feed Support**](feed.md)
+- [PWA Support](pwa.md)
 
-- [**Seo and Sitemap**](seo-sitemap.md)
+- [Feed Support](feed.md)
 
-- [**TypeScript support**](typescript.md)
+- [Seo and Sitemap](seo-sitemap.md)
+
+- [TypeScript support](typescript.md)

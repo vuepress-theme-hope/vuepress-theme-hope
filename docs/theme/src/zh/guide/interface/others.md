@@ -25,7 +25,7 @@ module.exports = {
 };
 ```
 
-## 返回顶部按钮 `<BackToTop />` <Badge text="支持页面配置" />
+## 返回顶部按钮 <Badge text="支持页面配置" />
 
 `vuepress-theme-hope` 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
 

@@ -32,7 +32,7 @@ Please add "global" option your "themeConfig.encrypt" config. It can be string o
 
         throw new Error(`[vuepress-theme-hope]: You config "themeConfig.encrypt.config", but your config is invalid. 
         
-Key ${key}'s value MUST be string or string[]. But it’s type is ${typeof configPassword}. Please fix it`);
+Key ${key}’s value MUST be string or string[]. But it’s type is ${typeof configPassword}. Please fix it`);
       });
     else
       throw new Error(

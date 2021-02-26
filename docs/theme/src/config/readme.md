@@ -8,24 +8,24 @@ tags:
 
 ## Theme Config
 
-- [**ThemeConfig**](theme/readme.md)
+- [ThemeConfig](theme/readme.md)
 
-- [**Default Theme Config**](theme/default.md)
+- [Default Theme Config](theme/default.md)
 
-- [**Theme Feature Config**](theme/feature.md)
+- [Theme Feature Config](theme/feature.md)
 
-- [**Theme Plugin Config**](theme/plugin.md)
+- [Theme Plugin Config](theme/plugin.md)
 
-- [**Theme Appearance Config**](theme/apperance.md)
+- [Theme Appearance Config](theme/apperance.md)
 
 ## Page Config
 
-- [**Frontmatter Config**](page.md)
+- [Frontmatter Config](page.md)
 
 ## Style Config
 
-- [**Style Config**](stylus.md)
+- [Style Config](stylus.md)
 
 ## Plugin Config
 
-- [**Plugin Config**](plugin/readme.md)
+- [Plugin Config](plugin/readme.md)

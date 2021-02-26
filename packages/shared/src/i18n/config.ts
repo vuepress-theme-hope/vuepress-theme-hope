@@ -71,9 +71,9 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
     },
     error404: {
       hint: [
-        "There's nothing here.",
+        "There’s nothing here.",
         "How did we get here?",
-        "That's a Four-Oh-Four.",
+        "That’s a Four-Oh-Four.",
         "Looks like we've got some broken links.",
       ],
       back: "Go back",

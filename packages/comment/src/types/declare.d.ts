@@ -55,7 +55,7 @@ declare module "valine" {
     /**
      * 评论所需信息
      *
-     * Commenter's info
+     * Commenter’s info
      *
      * @default ["nick", "mail", "link"]
      */
@@ -148,7 +148,7 @@ declare module "valine" {
     /**
      * 评论信息必填项配置
      *
-     * Set required fields for Commenter's info
+     * Set required fields for Commenter’s info
      */
     requiredFields?: ["nick"] | ["nick", "mail"];
   }

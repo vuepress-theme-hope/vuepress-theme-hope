@@ -105,7 +105,7 @@ export interface VssueOptions extends BaseCommentOptions {
   /**
    * 用来存储 Issue 和评论的仓库的拥有者的名称
    *
-   * The owner's name of repository to store the issues and comments.
+   * The owner’s name of repository to store the issues and comments.
    */
   owner: string;
   /**

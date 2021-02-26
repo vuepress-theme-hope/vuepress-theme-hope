@@ -300,7 +300,7 @@ export default { // Highlighted
   data () {
     return {
       msg: `Highlighted!
-      This line isn't highlighted,
+      This line isn’t highlighted,
       but this and the next 2 are.`,
       motd: 'VuePress is awesome',
       lorem: 'ipsum',
@@ -315,7 +315,7 @@ export default { // Highlighted
   data () {
     return {
       msg: `Highlighted!
-      This line isn't highlighted,
+      This line isn’t highlighted,
       but this and the next 2 are.`,
       motd: 'VuePress is awesome',
       lorem: 'ipsum',

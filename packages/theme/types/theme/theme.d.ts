@@ -481,7 +481,7 @@ export interface HopeThemeConfig
    *
    * - `'auto-switch'`: "off | automatic | on" three-stage switch (Default)
    * - `'switch'`: "Close | Open" toggle switch
-   * - `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
+   * - `'auto'`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
    * - `'disable'`: disable dark mode
    *
    * @default 'auto-switch'

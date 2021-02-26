@@ -42,7 +42,7 @@ declare module "workbox-build" {
        */
       request: Request | string;
       /**
-       * The request's URL.
+       * The request’s URL.
        */
       url: URL;
       /**
@@ -51,7 +51,7 @@ declare module "workbox-build" {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       event: Event & Record<string, any>;
       /**
-       * Array or Object parameters returned by the Route's match callback. This will be undefined if an empty array or object were returned.
+       * Array or Object parameters returned by the Route’s match callback. This will be undefined if an empty array or object were returned.
        */
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       params?: any[] | Record<string, any>;
@@ -66,7 +66,7 @@ declare module "workbox-build" {
        */
       request: Request | string;
       /**
-       * The request's URL.
+       * The request’s URL.
        */
       url: URL;
       /**
@@ -122,7 +122,7 @@ declare module "workbox-build" {
        */
       directoryIndex?: string;
       /**
-       * Assets that match this will be assumed to be uniquely versioned via their URL, and exempted from the normal HTTP cache-busting that's done when populating the precache. While not required, it’s recommended that if your existing build process already inserts a [hash] value into each filename, you provide a RegExp that will detect that, as it will reduce the bandwidth consumed when precaching.
+       * Assets that match this will be assumed to be uniquely versioned via their URL, and exempted from the normal HTTP cache-busting that’s done when populating the precache. While not required, it’s recommended that if your existing build process already inserts a [hash] value into each filename, you provide a RegExp that will detect that, as it will reduce the bandwidth consumed when precaching.
        */
       dontCacheBustURLsMatching?: RegExp;
       /**
@@ -174,11 +174,11 @@ declare module "workbox-build" {
        */
       navigateFallback?: string;
       /**
-       * An optional array of regular expressions that restricts which URLs the configured navigateFallback behavior applies to. This is useful if only a subset of your site's URLs should be treated as being part of a Single Page App. If both navigateFallbackDenylist and navigateFallbackAllowlist are configured, the denylist takes precedent.
+       * An optional array of regular expressions that restricts which URLs the configured navigateFallback behavior applies to. This is useful if only a subset of your site’s URLs should be treated as being part of a Single Page App. If both navigateFallbackDenylist and navigateFallbackAllowlist are configured, the denylist takes precedent.
        */
       navigateFallbackDenylist?: RegExp[];
       /**
-       * An optional array of regular expressions that restricts which URLs the configured navigateFallback behavior applies to. This is useful if only a subset of your site's URLs should be treated as being part of a Single Page App. If both navigateFallbackDenylist and navigateFallbackAllowlist are configured, the denylist takes precedent.
+       * An optional array of regular expressions that restricts which URLs the configured navigateFallback behavior applies to. This is useful if only a subset of your site’s URLs should be treated as being part of a Single Page App. If both navigateFallbackDenylist and navigateFallbackAllowlist are configured, the denylist takes precedent.
        */
       navigateFallbackAllowlist?: RegExp[];
       /**
@@ -186,7 +186,7 @@ declare module "workbox-build" {
        */
       navigationPreload?: boolean;
       /**
-       * Controls whether or not to include support for offline Google Analytics. When true, the call to workbox-google-analytics's initialize() will be added to your generated service worker. When set to an Object, that object will be passed in to the initialize() call, allowing you to customize the behavior.
+       * Controls whether or not to include support for offline Google Analytics. When true, the call to workbox-google-analytics’s initialize() will be added to your generated service worker. When set to an Object, that object will be passed in to the initialize() call, allowing you to customize the behavior.
        */
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       offlineGoogleAnalytics?: boolean | Record<string, any>;

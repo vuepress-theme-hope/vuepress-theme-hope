@@ -9,20 +9,22 @@ tags:
 
 ## 目录
 
-- [**页面信息**](page-info.md)
+- [页面信息](page-info.md)
 
-- [**评论功能**](comment.md)
+- [评论功能](comment.md)
 
-- [**版权信息**](copyright.md)
+- [版权信息](copyright.md)
 
-- [**页面增强**](page.md)
+- [页面增强](page.md)
 
-- [**加密功能**](encrypt.md)
+- [加密功能](encrypt.md)
 
-- [**PWA 支持**](pwa.md)
+- [一键复制](code-copy.md)
 
-- [**Feed 支持**](feed.md)
+- [PWA 支持](pwa.md)
 
-- [**Seo 和 Sitemap 支持**](seo-sitemap.md)
+- [Feed 支持](feed.md)
 
-- [**TypeScript 支持**](typescript.md)
+- [Seo 和 Sitemap 支持](seo-sitemap.md)
+
+- [TypeScript 支持](typescript.md)

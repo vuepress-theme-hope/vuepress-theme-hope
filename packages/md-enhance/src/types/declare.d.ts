@@ -192,7 +192,7 @@ declare module "reveal.js" {
     /**
      * CSS properties that can be auto-animated.
      *
-     * Position & scale is matched separately so there's no need to include styles like top/right/bottom/left, width/height or margin
+     * Position & scale is matched separately so there’s no need to include styles like top/right/bottom/left, width/height or margin
      */
     autoAnimateStyles: string[];
 

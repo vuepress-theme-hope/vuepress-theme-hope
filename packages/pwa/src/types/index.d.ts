@@ -153,7 +153,7 @@ export interface PWAOptions {
    */
   popupComponent?: string;
   /**
-   * workbox-build's [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
+   * workbox-build’s [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *
    */
   generateSWConfig?: Partial<WorkboxBuild.GenerateSWOptions>;

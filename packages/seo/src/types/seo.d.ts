@@ -66,7 +66,7 @@ export interface SimpleSeoContent extends BaseSeoContent {
   /**
    * 当文章出现在句子中时，前面的量词
    *
-   * The word that appears before this object's title in a sentence.
+   * The word that appears before this object’s title in a sentence.
    * An enum of (a, an, the, "", auto). If auto is chosen, the consumer of your data should
    * chose between "a" or "an". Default is "" (blank).
    */

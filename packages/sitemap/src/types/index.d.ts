@@ -58,7 +58,7 @@ interface SitemapVideoOption {
   "price:currency"?: string;
   /** Specifies the purchase option. Supported values are rent and own. */
   "price:type"?: string;
-  /** The video uploader's name. Only one video:uploader is allowed per video. String value, max 255 characters. */
+  /** The video uploader’s name. Only one video:uploader is allowed per video. String value, max 255 characters. */
   uploader?: string;
   /** Whether to show or hide your video in search results on specified platform types. This is a list of space-delimited platform types. See https://support.google.com/webmasters/answer/80471?hl=en&ref_topic=4581190 for more detail */
   platform?: string;

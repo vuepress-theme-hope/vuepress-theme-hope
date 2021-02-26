@@ -9,14 +9,14 @@ tags:
 
 ## Catalog
 
-- [**Navigation Bar**](navbar.md)
+- [Navigation Bar](navbar.md)
 
-- [**Sidebar**](sidebar.md)
+- [Sidebar](sidebar.md)
 
-- [**Page**](page.md)
+- [Page](page.md)
 
-- [**Home Page**](home.md)
+- [Home Page](home.md)
 
-- **Switch** animation
+- Switch animation
 
   As the page switches, a gradual transition animation will be displayed. Improve document / blog texture.
