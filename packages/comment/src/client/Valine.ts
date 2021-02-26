@@ -44,7 +44,7 @@ export default Vue.extend({
       if (to.path !== from.path)
         // Refresh comment when navigating to a new page
         Vue.nextTick(() => {
-          this.initValine(to.path);
+          this.initValine();
         });
     },
   },
@@ -52,13 +52,13 @@ export default Vue.extend({
   mounted(): void {
     if (this.valineEnable)
       setTimeout(() => {
-        this.initValine(this.$route.path);
+        this.initValine();
       }, 500);
   },
 
   methods: {
     // Init valine
-    initValine(path: string): void {
+    initValine(): void {
       const { valineConfig } = this;
 
       void import(/* webpackChunkName: "valine" */ "valine").then(
@@ -76,9 +76,7 @@ export default Vue.extend({
             avatar: valineConfig.avatar || "retro",
             visitor: this.visitorDisplay,
             recordIP: valineConfig.recordIP || false,
-            path:
-              path ||
-              (typeof window === "undefined" ? "" : window.location.pathname),
+            path: typeof window === "undefined" ? "" : window.location.pathname,
             pageSize: valineConfig.pageSize || 10,
             enableQQ: valineConfig.enableQQ || true,
             emojiCDN: valineConfig.emojiCDN || "",
