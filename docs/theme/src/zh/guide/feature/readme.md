@@ -13,6 +13,8 @@ tags:
 
 - [**评论功能**](comment.md)
 
+- [**版权信息**](copyright.md)
+
 - [**页面增强**](page.md)
 
 - [**加密功能**](encrypt.md)

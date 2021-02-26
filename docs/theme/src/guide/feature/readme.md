@@ -13,6 +13,8 @@ tags:
 
 - [**Comment function**](comment.md)
 
+- [**Copyright info**](copyright.md)
+
 - [**Page Enhance**](page.md)
 
 - [**Encryption function**](encrypt.md)

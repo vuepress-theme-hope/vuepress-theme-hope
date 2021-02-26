@@ -1,12 +1,11 @@
 ---
+title: 评论
 icon: commentfill
 category: feature
 tags:
   - comment
   - feature
 ---
-
-# 评论功能
 
 `vuepress-theme-hope` 通过内置 `@mr-hope/vuepress-plugin-comment`，实现了评论功能。
 
@@ -26,6 +25,8 @@ module.exports = {
 评论功能 <Badge text="支持页面配置" /> 默认全局启用，配置项为 `comment`。
 
 有两个评论插件可以选择: Valine 和 Vssue。
+
+<!-- more -->
 
 ::: tip
 
@@ -112,61 +113,3 @@ module.exports = {
 - Platform `gitea` - API 包 `@vssue/api-gitea-v1`
 
 :::
-
-### 自定义样式变量
-
-通过 VuePress 的 [palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)，你可以很轻松地修改 Vssue 的样式变量。
-
-Vssue 样式中预定义了一些 [Stylus 变量](http://stylus-lang.com/docs/variables.html)，你可以在 `vssue/src/styles/_variables.styl` 中查看它们:
-
-```stylus
-// 主题颜色
-$vssue-theme-color
-
-// 文字颜色  (用于普通文字)
-$vssue-text-color
-
-// 浅色文字颜色  (用于备注等文字)
-$vssue-text-light-color
-
-// 边框颜色
-$vssue-border-color
-
-// 进度条颜色
-$vssue-progress-color
-
-// 文字大小
-$vssue-font-size
-
-// 字体
-$vssue-font-family
-
-// 切换为移动端模式的屏幕宽度
-$vssue-breakpoint-mobile
-
-// 文字方向 (ltr / rtl)  (为 RTL 语言使用，如希伯来语等)
-$vssue-direction
-```
-
-举例来说，Vssue 默认使用一个“Vue 绿色” (`#3eaf7c`) 作为主题颜色，并将其设置为 `$vssue-theme-color` 的默认值。你可以在引入 `vssue/src/styles/index.styl` 之前设置 `$vssue-theme-color` 的值来改变主题颜色。
-
-默认情况下，下面这些 Vssue 的样式变量与 VuePress 的样式变量相等:
-
-```stylus
-// @vssue/vuepress-plugin-vssue/styles/index.styl
-
-$vssue-theme-color ?= $accentColor
-$vssue-text-color ?= $textColor
-$vssue-border-color ?= $borderColor
-$vssue-breakpoint-mobile ?= $MQMobile
-```
-
-如果你想要覆盖它们，在你的 `palette.styl` 中设置即可:
-
-```stylus
-// .vuepress/styles/palette.styl
-
-$accentColor = blue
-
-$vssue-theme-color = red
-```
