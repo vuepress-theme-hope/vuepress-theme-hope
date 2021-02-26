@@ -5,8 +5,10 @@ icon: skin
 
 ## Catalog
 
-- [**Dark Mode**](theme.md#dark-mode)
+- [**Dark Mode**](dark-mode.md)
 
-- [**Theme Color**](theme.md#theme-color)
+- [**Theme Color**](theme-color.md)
 
 - [**Icon support**](icon.md)
+
+- [**Other features**](others.md)

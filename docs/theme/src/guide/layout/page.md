@@ -156,9 +156,3 @@ layout: SpecialLayout
 ```
 
 This will render `.vuepress/components/SpecialLayout.vue` for the given page.
-
-## Back to top button `<BackToTop />` <Badge text="Support page config" />
-
-`vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
-
-You can set `backToTop` to `false` in `themeConfig` to disable it, or set it to a number to change the default trigger timing of 300px.

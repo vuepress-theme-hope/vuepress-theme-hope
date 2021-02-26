@@ -156,9 +156,3 @@ layout: SpecialLayout
 ```
 
 这将会为当前的页面渲染 `.vuepress/components/SpecialLayout.vue` 布局。
-
-## 返回顶部按钮 `<BackToTop />` <Badge text="支持页面配置" />
-
-`vuepress-theme-hope` 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
-
-你可以在 `themeConfig` 将 `backToTop` 设置为 `false` 来禁用它，或者是设置为一个数字以更改默认的 300px 触发时机。

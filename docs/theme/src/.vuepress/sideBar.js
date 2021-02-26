@@ -13,14 +13,14 @@ module.exports = {
         icon: "skin",
         prefix: "interface/",
         collapsable: false,
-        children: ["theme", "icon"],
+        children: ["darkmode", "theme-color", "icon", "others"],
       },
       {
         title: "Layout",
         icon: "layout",
         prefix: "layout/",
         collapsable: false,
-        children: ["navbar", "sidebar", "page", "home", "blog", "slides"],
+        children: ["navbar", "sidebar", "page", "home", "slides"],
       },
       {
         title: "Markdown enhance",
@@ -137,14 +137,14 @@ module.exports = {
         icon: "skin",
         prefix: "interface/",
         collapsable: false,
-        children: ["theme", "icon"],
+        children: ["darkmode", "theme-color", "icon", "others"],
       },
       {
         title: "布局",
         icon: "layout",
         prefix: "layout/",
         collapsable: false,
-        children: ["navbar", "sidebar", "page", "home", "blog", "slides"],
+        children: ["navbar", "sidebar", "page", "home", "slides"],
       },
       {
         title: "Markdown 增强",
