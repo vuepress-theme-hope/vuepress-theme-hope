@@ -1,9 +1,10 @@
 ---
 title: 主题介绍
 icon: info
-category: 快速上手
+category: Get Started
+
 tags:
-  - 介绍
+  - intro
 ---
 
 ## 🎈 主题的初衷与设计目标

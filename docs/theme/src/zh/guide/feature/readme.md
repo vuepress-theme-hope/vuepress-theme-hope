@@ -15,11 +15,11 @@ tags:
 
 - [版权信息](copyright.md)
 
-- [页面增强](page.md)
-
 - [加密功能](encrypt.md)
 
-- [一键复制](code-copy.md)
+- [一键复制](copy-code.md)
+
+- [图片预览](photo-swipe.md)
 
 - [PWA 支持](pwa.md)
 

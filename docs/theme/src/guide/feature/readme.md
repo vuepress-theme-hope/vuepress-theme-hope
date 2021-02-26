@@ -15,11 +15,11 @@ tags:
 
 - [Copyright info](copyright.md)
 
-- [Page Enhance](page.md)
-
 - [Encryption function](encrypt.md)
 
-- [One Click copy](code-copy.md)
+- [One Click copy](copy-code.md)
+
+- [Picture preview](photo-swipe.md)
 
 - [PWA Support](pwa.md)
 

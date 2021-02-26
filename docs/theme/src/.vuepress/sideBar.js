@@ -49,9 +49,9 @@ module.exports = {
         children: [
           "page-info",
           "comment",
-          "page",
           "encrypt",
           "copy-code",
+          "photo-swipe",
           "pwa",
           "feed",
           "seo-sitemap",
@@ -174,9 +174,9 @@ module.exports = {
         children: [
           "page-info",
           "comment",
-          "page",
           "encrypt",
           "copy-code",
+          "photo-swipe",
           "pwa",
           "feed",
           "seo-sitemap",

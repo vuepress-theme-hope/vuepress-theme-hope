@@ -1,9 +1,10 @@
 ---
 title: 安装/使用
 icon: install
-category: 快速上手
+category: Get Started
+
 tags:
-  - 安装
+  - install
 ---
 
 ## 在新项目中使用
