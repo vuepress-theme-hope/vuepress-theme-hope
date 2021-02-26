@@ -12,7 +12,7 @@ This is an out-of-the-box feature that offers five theme color "red, blue, green
 
 ## Disable
 
-You can disable it by setting the theme field’s `themeConfig.themeColor` to false.
+You can disable it by setting the theme field’s `themeConfig.themeColor` to `false`.
 
 ## Custom color
 
@@ -36,7 +36,7 @@ module.exports = {
 
 :::
 
-To let the Stylus compiler to work, you also need to assign the color variable to `$colorPicker` and write it to `.vuepress/styles/palette.styl`:
+To let the Stylus compiler to work, you also need to assign the color variable to `$colorPicker` and write it to `palette.styl` under `.vuepress/styles`:
 
 ::: details Example
 

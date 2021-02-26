@@ -1,4 +1,5 @@
 ---
+title: Home Page
 icon: home
 category: layout
 tags:
@@ -6,13 +7,13 @@ tags:
   - layout
 ---
 
-# Home Page
-
 `vuepress-theme-hope` improves the default home page.
 
 To use it, set `home: true` in page frontmatter. Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
 
 ![Screenshot](./assets/home.png)
+
+<!-- more -->
 
 ## Item style
 
@@ -83,7 +84,7 @@ Feature description
 ---
 home: true
 icon: home
-title: vuepress-theme-hope
+title: Home
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: A vuepress theme with tons of features✨
@@ -96,6 +97,10 @@ action:
     link: /config/
 
 features:
+  - title: Markdown Enhance 🧰
+    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
+    link: /guide/markdown/
+
   - title: Pageviews and comments 💬
     details: Start pageview statistics and comment support with Valine and Vssue
     link: /guide/feature/comment/
@@ -104,29 +109,29 @@ features:
     details: Add author, writing date, reading time, word count and other information to your article
     link: /guide/feature/page-info/
 
-  - title: Markdown Enhance 🧰
-    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
-    link: /guide/markdown/
-
   - title: Blog support 📝
     details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
-    link: /guide/feature/blog/
+    link: /guide/blog/blog/
 
   - title: Article Encryption 🔐
     details: Encrypt you article based on path and folders, so that only the one you want could see them
-    link: /guide/feature/blog/
+    link: /guide/feature/encrypt/
 
   - title: Custom theme color 🎨
     details: Supports custom theme colors and allows users to switch between preset theme colors
-    link: /guide/feature/themecolor/
+    link: /guide/interface/theme-color/
 
   - title: Dark Mode 🌙
     details: Switch between light and dark modes freely
-    link: /guide/feature/darkmode/
+    link: /guide/interface/darkmode/
 
   - title: SEO enhancement and Sitemap 🗺
     details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
     link: /guide/feature/seo-sitemap/
+
+  - title: Feed support 📡
+    details: You can generate feed, and let users to subcribe it
+    link: /guide/feature/feed/
 
   - title: PWA support 📲
     details: The built-in PWA plugin will make your website more like an APP.

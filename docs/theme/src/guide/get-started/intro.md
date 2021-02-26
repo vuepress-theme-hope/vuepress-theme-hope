@@ -52,12 +52,12 @@ The theme also provides [Sitemap plugin](https://vuepress-theme-hope.github.io/s
 
 - Homepage: Support for multiple action buttons, and the UI has been optimized.
 
-- Page: [**page icon**](../feature/icon.md), [**article information**](../feature/page-info.md),**Title list**, picture preview function.
+- Page: [**page icon**](../interface/icon.md), [**article information**](../feature/page-info.md),**Title list**, picture preview function.
 
 - Site structure: simplifie the configuration of [Navigation Bar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md), add support for icons and path prefixes. At the same time, the theme added [**breadcrumb**](../layout/page.md#breadcrumb) and footer support.
 
 ### Blog
 
-The theme provides a brand new [**blog homepage**](../layout/blog.md), and also provides [**categories, tags, timeline, featured articles**](../feature/blog.md) and other functions.
+The theme provides [**categories, tags, timeline, featured articles**](../blog/blog.md) and other functions. Also, the theme gives you a brand new [**blog homepage**](../blog/home.md), and also .
 
 At the same time, the theme also provides common blog feature such as [**Comment**](../feature/comment.md) and [**Feed**](../feature/feed.md).

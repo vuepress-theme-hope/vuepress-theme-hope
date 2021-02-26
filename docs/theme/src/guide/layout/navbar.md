@@ -1,4 +1,5 @@
 ---
+title: NavBar
 icon: nav
 category: layout
 tags:
@@ -6,11 +7,9 @@ tags:
   - layout
 ---
 
-# NavBar
-
-## Introduction
-
 The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [Languages](https://v1.vuepress.vuejs.org/guide/i18n.md) and [Repository Link](#git-repo-and-edit-links), they all depend on your configuration.
+
+<!-- more -->
 
 ### Navbar Links
 

@@ -16,7 +16,7 @@ VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要�
 
 ::: info Front Matter
 
-Front Matter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Front Matter 介绍](../../basic/vuepress/markdown.md#front-matter)
+Front Matter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Front Matter 介绍](../../basic/vuepress/markdown.md#front-matter)。
 
 :::
 

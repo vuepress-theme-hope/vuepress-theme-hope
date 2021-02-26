@@ -1,4 +1,5 @@
 ---
+title: 侧边栏
 icon: sidebar
 category: layout
 tags:
@@ -6,9 +7,9 @@ tags:
   - layout
 ---
 
-# 侧边栏
+你需要配置 `themeConfig.sidebar`，才能在站点中显示侧边栏(Sidebar)。
 
-想要使 侧边栏(Sidebar)生效，需要配置 `themeConfig.sidebar`，基本的配置，需要一个包含了多个链接的数组:
+对于 Sidebar 基本的配置，可以传入一个包含多个链接的数组:
 
 ```js
 // .vuepress/config.js

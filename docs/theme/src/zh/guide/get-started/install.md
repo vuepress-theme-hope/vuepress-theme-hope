@@ -41,7 +41,7 @@ module.exports = config({
 
 ::: tip 为什么要引入 config 函数
 
-为了尽可能减轻用户配置，vuepress-theme-hope 提供了一些额外的配置选项，需要经过处理才能提交 vuepress、同时 vuepress-theme-hope 也会允许你省略一些配置并自动帮你生成它们。
+为了尽可能减轻用户配置，vuepress-theme-hope 提供了一些额外的配置选项，需要经过处理才能提交 VuePress、同时 vuepress-theme-hope 也会允许你省略一些配置并自动帮你生成它们。
 
 比如自动根据你的主题配置中的多语言选项，为你生成项目配置中的多语言选项，并自动帮你完成本地化工作。
 

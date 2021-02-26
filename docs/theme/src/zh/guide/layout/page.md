@@ -1,11 +1,10 @@
 ---
+title: 页面
 icon: page
 category: layout
 tags:
   - layout
 ---
-
-# 页面
 
 ## 图标支持
 

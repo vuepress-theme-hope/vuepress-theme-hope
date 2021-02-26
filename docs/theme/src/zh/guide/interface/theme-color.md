@@ -34,7 +34,7 @@ module.exports = {
 
 :::
 
-同时为了使 Stylus 编译器正常工作，你还需要将颜色变量赋值给 `$colorPicker` 写入 `.vuepress/styles/palette.styl` 中:
+同时为了使 Stylus 编译器正常工作，你还需要将颜色变量赋值给 `$colorPicker` 写入 `.vuepress/styles` 下的 `palette.styl` 中:
 
 ::: details 例子
 
