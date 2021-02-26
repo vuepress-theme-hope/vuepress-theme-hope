@@ -25,7 +25,7 @@ module.exports = config({
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
-      { text: "Demo", icon: "creative", link: "/demo/" },
+      { text: "Guide", icon: "creative", link: "/guide/" },
       { text: "Config", icon: "config", link: "/config/" },
     ],
 
@@ -33,7 +33,7 @@ module.exports = config({
       "/zh/": {
         nav: [
           { text: "主页", icon: "home", link: "/zh/" },
-          { text: "演示", icon: "creative", link: "/zh/demo/" },
+          { text: "指南", icon: "creative", link: "/zh/guide/" },
           { text: "配置", icon: "config", link: "/zh/config/" },
         ],
       },
@@ -97,18 +97,18 @@ module.exports = config({
         ],
         shortcuts: [
           {
-            name: "Demo",
-            short_name: "Demo",
-            url: "/demo/",
+            name: "Guide",
+            short_name: "Guide",
+            url: "/guide/",
             icons: [
               {
-                src: "/assets/icon/demo-maskable.png",
+                src: "/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/assets/icon/demo-monochrome.png",
+                src: "/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
