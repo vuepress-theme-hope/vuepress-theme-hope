@@ -54,7 +54,7 @@ The default author of the article
 
 The domain name where the current site is deployed.
 
-### nav <MyBadge text="improved" type="warn" />
+### nav <Badge text="improved" type="warn" />
 
 NavBarItem now has
 
@@ -63,7 +63,7 @@ NavBarItem now has
 
 For certain configuration, please see [Layout → Navbar](../../guide/layout/navbar.md)
 
-### sidebar <MyBadge text="improved" type="warn" />
+### sidebar <Badge text="improved" type="warn" />
 
 SideBarItem now has
 

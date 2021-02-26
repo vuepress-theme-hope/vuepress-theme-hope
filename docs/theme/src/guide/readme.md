@@ -88,7 +88,7 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
   - [**navbar**](layout/navbar.md)
   - [**Sidebar**](layout/sidebar.md)
-  - [Badge `<MyBadge />`](feature/component.md#badge-mybadge): Added color support on the official basis
+  - [Badge `<Badge />`](feature/component.md#badge-mybadge): Added color support on the official basis
 
 ### Blog section
 

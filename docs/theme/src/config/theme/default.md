@@ -19,7 +19,7 @@ All the configuration items changes are listed below the documentation.
 
 :::
 
-## logo <MyBadge text="improved" type="warn" />
+## logo <Badge text="improved" type="warn" />
 
 - Type: `string`
 - Required: No
@@ -124,7 +124,7 @@ The folder which the document belongs to, the default is the root directory of t
 
 Document branch
 
-## editLinks <MyBadge text = "Change default value" type = "error" />
+## editLinks <Badge text = "Change default value" type = "error" />
 
 - Type: `boolean`
 - Default: `true`

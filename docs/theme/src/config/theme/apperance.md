@@ -65,7 +65,7 @@ Whether to enable route navigation globally
 
 Whether to show icons in route navigation
 
-## smoothScroll <MyBadge text="Default value changed" type="error" />
+## smoothScroll <Badge text="Default value changed" type="error" />
 
 - Type: `boolean`
 - Default: `true`

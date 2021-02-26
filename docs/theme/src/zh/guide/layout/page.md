@@ -23,13 +23,13 @@ icon: Home
 
 :::
 
-## 路径导航 <MyBadge text="支持页面配置" />
+## 路径导航 <Badge text="支持页面配置" />
 
 本主题添加了开箱即用的路径导航支持，配置项为 `breadcrumb`。
 
 无需任何额外配置，一个和主题色相符合的路径导航会显示在页面内容最上方，帮助阅读者理解文档结构。
 
-你也可以控制路径导航的图标显示<MyBadge text="支持页面配置" />，配置项为 `breadcrumbIcon`。
+你也可以控制路径导航的图标显示<Badge text="支持页面配置" />，配置项为 `breadcrumbIcon`。
 
 ::: warning
 
@@ -79,7 +79,7 @@ next: false
 
 具体详情请见 [评论](../feature/comment.md) 章节。
 
-## 页脚支持 <MyBadge text="支持页面配置" />
+## 页脚支持 <Badge text="支持页面配置" />
 
 如果希望每个页面都显示页脚，需要将 `themeConfig.footer.display` 设置为 `true`。同时，你可以使用 `themeConfig.footer.copyright` 和 `themeConfig.content` 设置默认的版权信息与页脚内容。
 

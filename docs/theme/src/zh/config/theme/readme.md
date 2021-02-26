@@ -47,7 +47,7 @@ tags:
 
 文章显示的默认作者
 
-### nav <MyBadge text="改进" type="warn" />
+### nav <Badge text="改进" type="warn" />
 
 NavBarItem 新增
 
@@ -56,7 +56,7 @@ NavBarItem 新增
 
 具体配置，请见 [布局 → 导航栏](../../guide/layout/navbar.md)
 
-### sidebar <MyBadge text="改进" type="warn" />
+### sidebar <Badge text="改进" type="warn" />
 
 SideBarItem 新增
 

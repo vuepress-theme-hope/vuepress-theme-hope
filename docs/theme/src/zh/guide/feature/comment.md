@@ -23,7 +23,7 @@ module.exports = {
 };
 ```
 
-评论功能 <MyBadge text="支持页面配置" /> 默认全局启用，配置项为 `comment`。
+评论功能 <Badge text="支持页面配置" /> 默认全局启用，配置项为 `comment`。
 
 有两个评论插件可以选择: Valine 和 Vssue。
 

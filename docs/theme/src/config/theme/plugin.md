@@ -43,7 +43,7 @@ Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
-### mdEnhance.lineNumbers <MyBadge text="Default value changed" type = "error" />
+### mdEnhance.lineNumbers <Badge text="Default value changed" type = "error" />
 
 - Type: `boolean`
 - Default: `true`
@@ -287,7 +287,7 @@ Will use dayjs to automatically localize according to the current page language 
 
 Such as: `2020年5月8日 16:05` `May 8, 2020 16:05`
 
-## pwa <MyBadge text="Enabled by default" />
+## pwa <Badge text="Enabled by default" />
 
 Progressive Web App support
 
@@ -446,7 +446,7 @@ All the files larger than `maxSize` or any pictures larger than `maxPicSize` wil
 
 :::
 
-## feed <MyBadge text="Enabled by default" />
+## feed <Badge text="Enabled by default" />
 
 Feed generation settings, no configuration is needed by default.
 
@@ -454,7 +454,7 @@ Feed generation settings, no configuration is needed by default.
 >
 > If you don’t need this feature, please set to `false`.
 
-## seo <MyBadge text="Enabled by default" />
+## seo <Badge text="Enabled by default" />
 
 SEO Enhance settings, no configuration is needed by default.
 
@@ -462,7 +462,7 @@ SEO Enhance settings, no configuration is needed by default.
 >
 > If you don’t need this feature, please set to `false`.
 
-## sitemap <MyBadge text="Enabled by default" />
+## sitemap <Badge text="Enabled by default" />
 
 Sitemap Generator settings, no configuration is needed by default.
 

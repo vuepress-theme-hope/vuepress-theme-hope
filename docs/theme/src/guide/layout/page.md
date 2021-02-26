@@ -23,13 +23,13 @@ icon: Home
 
 :::
 
-## Breadcrumb <MyBadge text="Support page config" />
+## Breadcrumb <Badge text="Support page config" />
 
 The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig.
 
 Without any configuration, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
-You can also control the icon display of the path navigation <MyBadge text="Support page config" />, the configuration item is `breadcrumbIcon`.
+You can also control the icon display of the path navigation <Badge text="Support page config" />, the configuration item is `breadcrumbIcon`.
 
 ::: warning
 
@@ -79,7 +79,7 @@ next: false
 
 See the [Comment section](../feature/comment.md) for details.
 
-## Footer Support <MyBadge text="Support page config" />
+## Footer Support <Badge text="Support page config" />
 
 To display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 

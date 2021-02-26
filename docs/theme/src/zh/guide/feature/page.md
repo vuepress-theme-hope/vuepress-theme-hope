@@ -8,7 +8,7 @@ tags:
 
 # 页面增强
 
-## 路径导航 <MyBadge text="支持页面配置" />
+## 路径导航 <Badge text="支持页面配置" />
 
 参见 [布局 → 页面 → 路径导航 部分](../layout/page.md#路径导航)
 
@@ -26,7 +26,7 @@ tags:
 
 有关更多选项，请参阅 [copy-code 插件文档][copy-code]
 
-## 页脚支持 <MyBadge text="支持页面配置" />
+## 页脚支持 <Badge text="支持页面配置" />
 
 请参见 [布局 → 页面 → 页脚部分](../layout/page.md#页脚支持)
 

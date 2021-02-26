@@ -10,7 +10,7 @@ tags:
 
 页面信息支持页面配置[^applypartically]。默认全局启用展示。你可以在特定页面的 `Front Matter` 中设置 `pageInfo: false` 来局部禁用它。
 
-[^applypartically]: **支持页面配置** <MyBadge text="支持页面配置" />
+[^applypartically]: **支持页面配置** <Badge text="支持页面配置" />
 
     **支持页面配置** 指主题允许页面的配置覆盖全局的配置。这意味着你可以在全局启用的情况下，在特定页面将其禁用，或在全局禁用的情况下在特定页面启用。
 
@@ -26,7 +26,7 @@ tags:
 
 如果你需要保持全局禁用，请设置 `themeConfig.pageInfo` 为 `false`。这样你可以在特定页面的 `Front Matter` 中设置 `pageInfo` 来局部启用它。
 
-## 参数 <MyBadge text="支持页面配置" />
+## 参数 <Badge text="支持页面配置" />
 
 `pageInfo` 默认接受一个字符串数组，可以填入各条目名称，填入的顺序即是各条目显示的顺序。
 
@@ -44,7 +44,7 @@ tags:
 
 默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
 
-### 作者 <MyBadge text="支持页面配置" />
+### 作者 <Badge text="支持页面配置" />
 
 例子:
 
@@ -76,7 +76,7 @@ time: 2020-01-01
 
 默认的统计方式是一分钟 300 字，你可以设置 `themeConfig.wordPerminute` 来覆盖它，该选项不支持在页面单独配置。
 
-### 浏览量 <MyBadge text="支持页面配置" />
+### 浏览量 <Badge text="支持页面配置" />
 
 当配置 [评论功能](../feature/comment.md) 为 Valine 时，该功能默认启用。
 

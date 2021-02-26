@@ -115,7 +115,7 @@ lang = "en-US"
 
 <!--lint enable no-shortcut-reference-link no-undefined-references-->
 
-## 自定义容器 <MyBadge text="默认主题"/>
+## 自定义容器 <Badge text="默认主题"/>
 
 输入:
 
@@ -330,7 +330,7 @@ export default { // Highlighted
 
 默认情况下，每个代码块显示行号，但你可以通过设置 `markdown.lineNumbers` 为 `false` 禁用它:
 
-## 导入代码段 <MyBadge text="beta" type="warning"/>
+## 导入代码段 <Badge text="beta" type="warning"/>
 
 你可以通过下述的语法导入已经存在的文件中的代码段:
 

@@ -9,7 +9,7 @@ tags:
 
 These are config items of features provided by theme.
 
-## darkmode <MyBadge text="Enabled by default" />
+## darkmode <Badge text="Enabled by default" />
 
 - Type: `'auto-switch' | 'switch' | 'auto' | 'disable'`
 - Default: `'auto-switch'`
@@ -23,7 +23,7 @@ Dark mode support options:
 
 > If you don’t need this feature, set `darkmode: "disable"` to disable it.
 
-## themeColor <MyBadge text="Enabled by default" />
+## themeColor <Badge text="Enabled by default" />
 
 Theme color configuration.
 
@@ -41,7 +41,7 @@ Theme color configuration.
   }
   ```
 
-## Blog configuration <MyBadge text="Enabled by default" />
+## Blog configuration <Badge text="Enabled by default" />
 
 Blog configuration.
 

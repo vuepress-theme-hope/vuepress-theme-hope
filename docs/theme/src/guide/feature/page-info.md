@@ -12,7 +12,7 @@ The `<PageInfo />` component support local config[^applypartically], and is enab
 
 [^applypartically]: **Apply Partically Support**
 
-    **Support local configuration**<MyBadge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
+    **Support local configuration**<Badge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
 
     ::: details Example
 
@@ -26,7 +26,7 @@ The `<PageInfo />` component support local config[^applypartically], and is enab
 
 To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.
 
-## Parameters <MyBadge text="Support page config" />
+## Parameters <Badge text="Support page config" />
 
 `pageInfo` accepts an array of strings by default, filling in a group of items. The order of filling is the order in which the items are displayed.
 
@@ -44,7 +44,7 @@ The optional values ​​and corresponding contents of the entry are as follows
 
 By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 
-### author <MyBadge text="Support page config" />
+### author <Badge text="Support page config" />
 
 Example:
 
@@ -76,7 +76,7 @@ See [blog section](blog.md) for details
 
 The default statistic method is 300 words per minute. You can override it by setting `wordPerminute` in the plugin configuration. This option does not support individual configuration on the page.
 
-### View Count <MyBadge text="Support page config" />
+### View Count <Badge text="Support page config" />
 
 When [Comment Function](../feature/comment.md) is configured as Valine, this function is enabled by default.
 

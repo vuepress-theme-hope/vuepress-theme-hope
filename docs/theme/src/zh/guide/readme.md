@@ -88,7 +88,7 @@ icon: creative
 
   - [**导航栏**](layout/navbar.md)
   - [**侧边栏**](layout/sidebar.md)
-  - [徽章 `<MyBadge />`](feature/component.md#徽章-mybadge): 在官方基础上增加了颜色支持
+  - [徽章 `<Badge />`](feature/component.md#徽章-mybadge): 在官方基础上增加了颜色支持
 
 ### 博客部分
 

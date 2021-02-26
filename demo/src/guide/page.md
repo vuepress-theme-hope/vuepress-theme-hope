@@ -47,7 +47,7 @@ You are free to write your Markdown here.
 
 The theme contains a custom badge:
 
-> A dark blue badge text badge at the end of line. <MyBadge text="Badge text" color="#242378" />
+> A dark blue badge text badge at the end of line. <Badge text="Badge text" color="#242378" />
 
 ## Page structure
 

@@ -8,7 +8,7 @@ tags:
 
 # New Component
 
-## Badge `<MyBadge />`
+## Badge `<Badge />`
 
 - **Props**:
 
@@ -22,10 +22,10 @@ tags:
   You can use this component in the title to add some status to the title or link:
 
   ```md
-  ### MyBadge <MyBadge text="Building" type="warn"/> <MyBadge text="MrHope" color="grey" />
+  ### Badge <Badge text="Building" type="warn"/> <Badge text="MrHope" color="grey" />
   ```
 
-## Back to top button `<BackToTop />` <MyBadge text="Support page config" />
+## Back to top button `<BackToTop />` <Badge text="Support page config" />
 
 `vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
 

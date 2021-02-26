@@ -19,7 +19,7 @@ tags:
 
 :::
 
-## logo <MyBadge text="改进" type="warn" />
+## logo <Badge text="改进" type="warn" />
 
 - 类型: `string`
 - 必填: 否
@@ -126,7 +126,7 @@ Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体�
 
 文档所属分支
 
-## editLinks <MyBadge text="改变默认值" type="error" />
+## editLinks <Badge text="改变默认值" type="error" />
 
 - 类型: `boolean`
 - 默认值: `true`

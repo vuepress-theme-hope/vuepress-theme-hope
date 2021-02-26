@@ -8,7 +8,7 @@ tags:
 
 # Page Enhance
 
-## Breadcrumb <MyBadge text="Support page config" />
+## Breadcrumb <Badge text="Support page config" />
 
 See [Layout → Page → Breadcrumb Section](../layout/page.md#breadcrumb)
 
@@ -26,7 +26,7 @@ The button is displayed only in desktop mode by default.
 
 For more options, please see [copy-code plugin docs][copy-code]
 
-## Footer Support <MyBadge text="Support page config" />
+## Footer Support <Badge text="Support page config" />
 
 See [Layout → Page → Footer Section](../layout/page.md#footer-support)
 

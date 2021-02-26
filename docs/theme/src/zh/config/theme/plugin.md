@@ -41,7 +41,7 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 :::
 
-### mdEnhance.lineNumbers <MyBadge text="改变默认值" type="error" />
+### mdEnhance.lineNumbers <Badge text="改变默认值" type="error" />
 
 - 类型: `boolean`
 - 默认值: `true`
@@ -287,7 +287,7 @@ React 依赖于 Babel。
 
 如: `2020年5月8日 16:05` `May 8, 2020 16:05`
 
-## pwa <MyBadge text="默认启用" />
+## pwa <Badge text="默认启用" />
 
 渐进式网络应用程序支持
 
@@ -446,7 +446,7 @@ Safari 图标
 
 :::
 
-## feed <MyBadge text="默认启用" />
+## feed <Badge text="默认启用" />
 
 Feed 生成，默认情况下无需任何配置。
 
@@ -454,7 +454,7 @@ Feed 生成，默认情况下无需任何配置。
 >
 > 如果您不需要这个功能，请设置为 `false`。
 
-## seo <MyBadge text="默认启用" />
+## seo <Badge text="默认启用" />
 
 搜索引擎增强，默认情况下无需任何配置。
 
@@ -462,7 +462,7 @@ Feed 生成，默认情况下无需任何配置。
 >
 > 如果您不需要这个功能，请设置为 `false`。
 
-## sitemap <MyBadge text="默认启用" />
+## sitemap <Badge text="默认启用" />
 
 Sitemap 生成配置，默认情况下无需任何配置。
 

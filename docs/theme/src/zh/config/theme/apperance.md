@@ -65,7 +65,7 @@ Algolia 搜索框类型
 
 是否在路径导航显示图标
 
-## smoothScroll <MyBadge text="改变默认值" type="error" />
+## smoothScroll <Badge text="改变默认值" type="error" />
 
 - 类型: `boolean`
 - 默认值: `true`

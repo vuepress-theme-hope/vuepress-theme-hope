@@ -23,7 +23,7 @@ module.exports = {
 };
 ```
 
-Comment function <MyBadge text="Support page config" /> enabled globally by default, the configuration key is `comment`.
+Comment function <Badge text="Support page config" /> enabled globally by default, the configuration key is `comment`.
 
 You can choose between Valine and Vssue.
 
