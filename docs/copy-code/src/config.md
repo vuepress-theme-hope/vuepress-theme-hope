@@ -20,13 +20,13 @@ Code block selector
 ### duration
 
 - Type: `number`
-- Default: `300`
+- Default: `2000`
 
-Prompt message display time
+Hint display time, setting it to `0` will disable the hint.
 
 ### showInMobile
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to display on the mobile side
+Whether to display copy button on the mobile device

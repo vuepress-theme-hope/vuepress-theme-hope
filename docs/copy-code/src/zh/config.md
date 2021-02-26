@@ -22,9 +22,9 @@ icon: config
 ### duration
 
 - 类型: `number`
-- 默认值: `300`
+- 默认值: `2000`
 
-提示消息显示时间
+提示消息显示时间，设置为 `0` 会禁用提示。
 
 ### showInMobile
 
