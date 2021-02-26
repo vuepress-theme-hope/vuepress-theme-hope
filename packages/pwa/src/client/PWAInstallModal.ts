@@ -13,6 +13,9 @@ interface InstallPromptEvent extends Event {
   readonly userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
+let escapeHandler: (event: KeyboardEvent) => void;
+let installPromptHandler: (event: Event) => void;
+
 export default Vue.extend({
   name: "PWAInstallModal",
 
@@ -41,20 +44,32 @@ export default Vue.extend({
   mounted(): void {
     // eslint-disable-next-line no-prototype-builtins
     if (window.hasOwnProperty("BeforeInstallPromptEvent")) {
-      // grab an install event
-      window.addEventListener("beforeinstallprompt", (event) => {
+      installPromptHandler = (event): void => {
         this.deferredprompt = event as InstallPromptEvent;
 
         this.$emit("can-install", true);
         event.preventDefault();
-      });
+      };
+
+      // grab an install event
+      window.addEventListener("beforeinstallprompt", installPromptHandler);
 
       void this.getManifest();
 
-      document.addEventListener("keyup", (event) => {
+      escapeHandler = (event): void => {
         if (event.key === "Escape") this.$emit("toogle", false);
-      });
+      };
+
+      document.addEventListener("keyup", escapeHandler);
     }
+  },
+
+  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
+  beforeDestroy() {
+    // eslint-disable-next-line no-prototype-builtins
+    if (window.hasOwnProperty("BeforeInstallPromptEvent"))
+      document.removeEventListener("beforeinstallprompt", installPromptHandler);
+    document.removeEventListener("keyup", escapeHandler);
   },
 
   methods: {

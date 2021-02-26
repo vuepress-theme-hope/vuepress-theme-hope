@@ -2,6 +2,8 @@ import Vue from "vue";
 import debounce from "lodash.debounce";
 import { componentI18n } from "./define";
 
+let scrollHandler: () => void;
+
 export default Vue.extend({
   name: "BackToTop",
 
@@ -39,12 +41,17 @@ export default Vue.extend({
 
   mounted(): void {
     this.scrollTop = this.getScrollTop();
-    window.addEventListener(
-      "scroll",
-      debounce(() => {
-        this.scrollTop = this.getScrollTop();
-      }, 100)
-    );
+
+    scrollHandler = debounce(() => {
+      this.scrollTop = this.getScrollTop();
+    }, 100);
+
+    window.addEventListener("scroll", scrollHandler);
+  },
+
+  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
+  beforeDestroy(): void {
+    window.addEventListener("scroll", scrollHandler);
   },
 
   methods: {

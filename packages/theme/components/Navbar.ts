@@ -7,6 +7,8 @@ import ThemeColor from "@ThemeColor";
 
 import type { AlgoliaOption } from "@mr-hope/vuepress-types";
 
+let handler: () => void;
+
 const css = (
   el: Element,
   property: keyof Omit<
@@ -71,7 +73,8 @@ export default Vue.extend({
     const NAVBAR_HORIZONTAL_PADDING =
       parseInt(css(this.$el, "paddingLeft")) +
       parseInt(css(this.$el, "paddingRight"));
-    const handler = (): void => {
+
+    handler = (): void => {
       if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
         this.isMobile = true;
         this.linksWrapMaxWidth = 0;
@@ -90,5 +93,11 @@ export default Vue.extend({
     handler();
     window.addEventListener("resize", handler);
     window.addEventListener("orientationchange", handler);
+  },
+
+  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
+  beforeDestroy() {
+    window.removeEventListener("resize", handler);
+    window.removeEventListener("orientationchange", handler);
   },
 });
