@@ -19,6 +19,12 @@ To let your site be able to register as Web App, you should set icons in `themeC
 
 You can also set other options in `themeConfig.pwa.manifest`.
 
+::: warning
+
+Note that all the url in manifest will not be resolved, which means if you are deploying in a subfolder, you should set base yourself.
+
+:::
+
 ::: info More
 
 For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)

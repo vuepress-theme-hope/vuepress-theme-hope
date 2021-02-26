@@ -19,6 +19,12 @@ Service worker 成功获取内容更新后，将在右下角显示一个弹出�
 
 您也可以在 `themeConfig.pwa.manifest` 中设置其他选项。
 
+::: warning
+
+请注意，manifest 中的所有 url 都不会被处理，这意味着如果打算您部署到某个子目录，您则应自行设置添加 base 到 url。
+
+:::
+
 ::: info 更多
 
 更多内容，请详见 [W3C Manifest](https://w3c.github.io/manifest/)
