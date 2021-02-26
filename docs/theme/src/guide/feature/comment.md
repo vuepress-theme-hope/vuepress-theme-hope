@@ -1,4 +1,5 @@
 ---
+title: Comment Function
 icon: commentfill
 category: feature
 tags:
@@ -6,9 +7,11 @@ tags:
   - feature
 ---
 
-# Comment Function
-
 `vuepress-theme-hope` implements the comment feature with built-in `@mr-hope/vuepress-plugin-comment`.
+
+<!-- more -->
+
+## Enable <Badge text="Support page config" />
 
 ```js
 // .vuepress/config.js
@@ -23,13 +26,24 @@ module.exports = {
 };
 ```
 
-Comment function <Badge text="Support page config" /> enabled globally by default, the configuration key is `comment`.
-
-You can choose between Valine and Vssue.
+Comment feature is enabled globally by default, the configuration key is `comment`.
 
 ::: tip
 
-You can visit [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-theme-hope.github.io/comment/) for more details
+For the complete config item of the plugin ,please see [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-theme-hope.github.io/comment/).
+
+:::
+
+## Comment Provider
+
+You can choose between Valine and Vssue.
+
+::: tip Comparison between Valine and Vssue
+
+- Valine uses leancloud to support pageview statistics, and you can comment without logging in to any account
+- Vssue uses the issue panel of the code platform repo and requires the user to login or register the corresponding platform account.
+
+If your site is for the general public rather than programmers, Valine is recommended.
 
 :::
 

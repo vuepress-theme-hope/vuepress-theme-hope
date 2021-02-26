@@ -1,5 +1,5 @@
 ---
-title: 新增特性
+title: 功能
 icon: discover
 category: feature
 tags:
@@ -13,13 +13,13 @@ tags:
 
 - [评论功能](comment.md)
 
-- [版权信息](copyright.md)
-
-- [加密功能](encrypt.md)
-
 - [一键复制](copy-code.md)
 
 - [图片预览](photo-swipe.md)
+
+- [版权信息](copyright.md)
+
+- [加密功能](encrypt.md)
 
 - [PWA 支持](pwa.md)
 

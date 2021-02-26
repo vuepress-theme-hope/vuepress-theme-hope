@@ -3,9 +3,9 @@ title: 页面信息
 icon: info
 ---
 
-`<PageInfo />` 组件默认全局启用。你可以在特定页面的 `Front Matter` 中设置 `pageInfo: false` 来局部禁用它。
+`<PageInfo />` 组件默认全局启用。你可以在特定页面的 frontmatter 中设置 `pageInfo: false` 来局部禁用它。
 
-如果你需要保持全局禁用，请在插件选项中设置 `pageInfo` 为 `false`。这样你可以在特定页面的 `Front Matter` 中设置 `pageInfo` 来局部启用它。
+如果你需要保持全局禁用，请在插件选项中设置 `pageInfo` 为 `false`。这样你可以在特定页面的 frontmatter 中设置 `pageInfo` 来局部启用它。
 
 ## 参数
 
@@ -29,7 +29,7 @@ icon: info
 
 - **author**
 
-你可以在插件选项中配置 `author` 来设置默认作者，同样，你仍可以在页面中配置 `Front Matter` 中的 `author` 为一个新值来覆盖默认作者，或者设置为 `false` 以取消该页面的作者显示。
+你可以在插件选项中配置 `author` 来设置默认作者，同样，你仍可以在页面中配置 frontmatter 中的 `author` 为一个新值来覆盖默认作者，或者设置为 `false` 以取消该页面的作者显示。
 
 - **time**
 

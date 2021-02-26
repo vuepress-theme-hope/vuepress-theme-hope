@@ -13,13 +13,13 @@ tags:
 
 - [Comment function](comment.md)
 
-- [Copyright info](copyright.md)
-
-- [Encryption function](encrypt.md)
-
 - [One Click copy](copy-code.md)
 
 - [Picture preview](photo-swipe.md)
+
+- [Copyright info](copyright.md)
+
+- [Encryption function](encrypt.md)
 
 - [PWA Support](pwa.md)
 

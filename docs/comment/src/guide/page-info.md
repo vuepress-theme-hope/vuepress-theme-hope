@@ -3,9 +3,9 @@ title: Page information
 icon: info
 ---
 
-The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in `Front Matter` of a specific page.
+The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
 
-To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.
+To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in frontmatter of a specific page to enable it locally.
 
 ## Parameters
 

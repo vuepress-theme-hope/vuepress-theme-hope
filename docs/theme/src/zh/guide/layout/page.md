@@ -8,7 +8,7 @@ tags:
 
 ## 图标支持
 
-可以在页面的 `Front Matter` 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
+可以在页面的 frontmatter 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
 
 该图标会在 **路径导航** 和 **侧边栏** 中使用。
 
@@ -82,7 +82,7 @@ next: false
 
 如果希望每个页面都显示页脚，需要将 `themeConfig.footer.display` 设置为 `true`。同时，你可以使用 `themeConfig.footer.copyright` 和 `themeConfig.content` 设置默认的版权信息与页脚内容。
 
-你也可以在页面的 `Front Matter` 中配置 `footer`，`copyrightText` 与 `medialink` 字段。
+你也可以在页面的 frontmatter 中配置 `footer`，`copyrightText` 与 `medialink` 字段。
 
 - `footer` 字段可以填入字符串或布尔值。
 

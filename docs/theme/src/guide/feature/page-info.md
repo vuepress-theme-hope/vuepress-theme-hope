@@ -1,4 +1,6 @@
 ---
+title: Page information
+
 icon: info
 category: feature
 tags:
@@ -6,9 +8,11 @@ tags:
   - feature
 ---
 
-# Page information
+By including `@mr-hope/vuepress-plugin-comment`, `vuepress-theme-hope` can display article information for you.
 
-The `<PageInfo />` component support local config[^applypartically], and is enabled globally by default. You can disable it by setting `pageInfo: false` in `Front Matter` of a specific page.
+## Enable
+
+Page infomation display is enabled globally by default, while supports local config[^applypartically]. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
 
 [^applypartically]: **Apply Partically Support**
 
@@ -24,7 +28,7 @@ The `<PageInfo />` component support local config[^applypartically], and is enab
 
     :::
 
-To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. In this way you can set `pageInfo` in `Front Matter` of a specific page to enable it locally.
+To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. Then you can set `pageInfo` in frontmatter of a specific page to enable it locally.
 
 ## Parameters <Badge text="Support page config" />
 
@@ -70,7 +74,7 @@ time: 2020-01-01
 
 ### Category and Tags
 
-See [blog section](blog.md) for details
+See [blog section](../blog/blog.md) for details
 
 ### Reading time
 
@@ -78,7 +82,7 @@ The default statistic method is 300 words per minute. You can override it by set
 
 ### View Count <Badge text="Support page config" />
 
-When [Comment Function](../feature/comment.md) is configured as Valine, this function is enabled by default.
+When [Comment Function](comment.md) is configured as Valine, this function is enabled by default.
 
 Example:
 

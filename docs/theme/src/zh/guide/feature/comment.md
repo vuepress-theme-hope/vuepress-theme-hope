@@ -7,14 +7,20 @@ tags:
   - feature
 ---
 
-`vuepress-theme-hope` 通过内置 `@mr-hope/vuepress-plugin-comment`，实现了评论功能。
+通过内置 `@mr-hope/vuepress-plugin-comment`，`vuepress-theme-hope` 实现了评论功能。
 
-```js {4-8}
+<!-- more -->
+
+## 启用 <Badge text="支持页面配置" />
+
+```js {5,8,9}
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     comment: {
-      type: "valine", // 使用 Valine
+      type: "valine", // "valine" 或 "vssue"
+
+      // valine 模式下
       appId: "...", // your appId
       appKey: "...", // your appKey
     },
@@ -22,15 +28,24 @@ module.exports = {
 };
 ```
 
-评论功能 <Badge text="支持页面配置" /> 默认全局启用，配置项为 `comment`。
+评论功能默认全局启用，配置项为 `comment`。
+
+::: info
+
+受篇幅限制，完整的评论插件配置，详见 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-hope.github.io/comment)。
+
+:::
+
+## 评论服务
 
 有两个评论插件可以选择: Valine 和 Vssue。
 
-<!-- more -->
+::: tip Valine 与 Vssue 的比较
 
-::: tip
+- Valine 使用 leancloud，支持页面访问量统计，无需登录账号即可评论
+- Vssue 使用代码平台仓库的 issue 面板，需要用户登录或注册相应平台账号。
 
-如果你希望看到更详细的评论设置，可以访问 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-hope.github.io/comment)
+如果你的站点面向大众而非程序员，推荐使用 Valine。
 
 :::
 

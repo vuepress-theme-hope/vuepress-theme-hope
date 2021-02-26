@@ -1,4 +1,5 @@
 ---
+title: 页面信息
 icon: info
 category: feature
 tags:
@@ -6,9 +7,11 @@ tags:
   - feature
 ---
 
-# 页面信息
+通过内置 `@mr-hope/vuepress-plugin-comment`，`vuepress-theme-hope` 实现了文章信息。
 
-页面信息支持页面配置[^applypartically]。默认全局启用展示。你可以在特定页面的 `Front Matter` 中设置 `pageInfo: false` 来局部禁用它。
+## 启用
+
+页面信息默认全局启用，同时支持页面配置[^applypartically]。你可以在特定页面的 frontmatter 中设置 `pageInfo: false` 来局部禁用它。
 
 [^applypartically]: **支持页面配置** <Badge text="支持页面配置" />
 
@@ -24,7 +27,7 @@ tags:
 
     :::
 
-如果你需要保持全局禁用，请设置 `themeConfig.pageInfo` 为 `false`。这样你可以在特定页面的 `Front Matter` 中设置 `pageInfo` 来局部启用它。
+如果你需要保持全局禁用，请设置 `themeConfig.pageInfo` 为 `false`。这样你可以在特定页面的 frontmatter 中设置 `pageInfo` 来局部启用它。
 
 ## 参数 <Badge text="支持页面配置" />
 
@@ -70,7 +73,7 @@ time: 2020-01-01
 
 ### 分类与标签
 
-详见 [博客章节](blog.md)
+详见 [博客章节](../blog/blog.md)
 
 ### 阅读时间
 
@@ -78,7 +81,7 @@ time: 2020-01-01
 
 ### 浏览量 <Badge text="支持页面配置" />
 
-当配置 [评论功能](../feature/comment.md) 为 Valine 时，该功能默认启用。
+当配置 [评论功能](comment.md) 为 Valine 时，该功能默认启用。
 
 例子:
 

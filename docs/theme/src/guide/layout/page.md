@@ -9,7 +9,7 @@ tags:
 
 ## Icon support
 
-You can configure the icon field in the `Front Matter` of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
+You can configure the icon field in the frontmatter of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
 
 This icon is used in **Path Navigation** and **Sidebar**.
 
@@ -83,7 +83,7 @@ See the [Comment section](../feature/comment.md) for details.
 
 To display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
 
-You can also configure the `footer`, `copyrightText` and `medialink` fields in the `Front Matter` page.
+You can also configure the `footer`, `copyrightText` and `medialink` fields in the frontmatter page.
 
 - The `footer` field can be filled with a string or Boolean value.
 
