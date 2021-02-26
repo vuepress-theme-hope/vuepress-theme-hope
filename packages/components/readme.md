@@ -13,10 +13,10 @@ npm i @mr-hope/vuepress-plugin-components
 This plugin register 4 components and 1 global component:
 
 - BackToTop (Global Components)
+- Badge
 - BreadCrumb
 - CodeGroup
 - CodeGroupItem
-- MyBadge
 - Pagination
 - ScreenFull
 
@@ -31,6 +31,10 @@ Will read these options from `themeConfig`:
 - `breadcrumbIcon`: Wether to display icon (default is `true`)
 - `breacurmb`: Wether to use path navigator
 - `iconPrefix`: Icon-font prefix, default is `icon-`. Set `false` or `''` to cancel auto-prefix。
+
+## Badge
+
+A badge which allows you to diy it’s color.
 
 ## CodeGroup, CodeGroupItem
 
@@ -53,10 +57,6 @@ npm i -D vuepress-theme-hope
 </CodeGroupItem>
 </CodeGroup>
 ````
-
-## MyBadge
-
-A badge which allows you to diy it’s color.
 
 ## Pagination
 
@@ -85,10 +85,10 @@ npm i @mr-hope/vuepress-plugin-components
 此插件注册 4 个组件和一个全局组件:
 
 - BackToTop (全局组件)
+- Badge
 - BreadCrumb
 - CodeGroup
 - CodeGroupItem
-- MyBadge
 - Pagination
 - ScreenFull
 
@@ -103,6 +103,10 @@ npm i @mr-hope/vuepress-plugin-components
 - `breadcrumbIcon`: 是否显示图标(默认显示)
 - `breacurmb`: 是否启用路径导航
 - `iconPrefix`: 图标前缀，默认为 `icon-`，设置 `false` 或 `''` 取消前缀，也可设置其他值。
+
+## `<Badge />`
+
+支持自定义颜色的徽章
 
 ## `<CodeGroup />`, `<CodeGroupItem />`
 
@@ -125,10 +129,6 @@ npm i -D vuepress-theme-hope
 </CodeGroupItem>
 </CodeGroup>
 ````
-
-## `<MyBadge />`
-
-支持自定义颜色的徽章
 
 ## `<Pagination />`
 

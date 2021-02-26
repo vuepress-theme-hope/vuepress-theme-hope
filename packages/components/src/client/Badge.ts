@@ -7,7 +7,7 @@ interface ElementOption {
 }
 
 export default Vue.extend({
-  name: "MyBadge",
+  name: "Badge",
 
   functional: true,
 

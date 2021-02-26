@@ -1,4 +1,4 @@
-<script src="./MyBadge" />
+<script src="./Badge" />
 
 <style lang="stylus" scoped>
 .badge

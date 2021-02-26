@@ -11,7 +11,7 @@
     "allow_different_nesting": true
   },
   "MD033": {
-    "allowed_elements": ["br", "MyBadge", "Badge", "CodeGroup", "CodeGroupItem"]
+    "allowed_elements": ["br", "Badge", "CodeGroup", "CodeGroupItem"]
   },
   "MD035": {
     "style": "---"

@@ -33,7 +33,7 @@ export const resolveHTML = (html: string): string =>
     .replace(/<(?:a|div|span)[^>]*?\/>/gu, "")
     // remove other related tags
     .replace(
-      /<(Badge|FlowChart|MyBadge|Presentation).*?(?:>.*?<\/\1>|\/>)/gu,
+      /<(Badge|FlowChart|Presentation).*?(?:>.*?<\/\1>|\/>)/gu,
       "<i>Not supported content</i>"
     )
     // remove tex
