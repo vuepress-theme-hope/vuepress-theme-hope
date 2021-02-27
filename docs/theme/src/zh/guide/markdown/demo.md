@@ -13,7 +13,7 @@ tags:
 
 ## 配置
 
-```js {7}
+```js {4}
 module.exports = {
   themeConfig: {
     mdEnhance: {

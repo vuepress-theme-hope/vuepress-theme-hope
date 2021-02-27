@@ -265,7 +265,7 @@ For details, see the [Full Screen Button](../interface/others.md#fullscreen-butt
 
 ## Demo
 
-```js {4-18}
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {

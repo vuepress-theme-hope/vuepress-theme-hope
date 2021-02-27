@@ -261,7 +261,7 @@ editLink: false
 
 ## 案例
 
-```js {4-18}
+```js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
