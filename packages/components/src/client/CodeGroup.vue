@@ -38,7 +38,7 @@
   padding 0 5px calc(1.7rem - 7px)
   border-top-left-radius 6px
   border-top-right-radius 6px
-  background-color background-color darken(saturate(#282c34, 10%), 35%)
+  background-color darken(saturate(#282c34, 10%), 35%)
 
   @media (max-width $MQMobileNarrow)
     margin-left -1.5rem
