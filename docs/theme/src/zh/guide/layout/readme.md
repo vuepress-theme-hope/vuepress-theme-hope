@@ -4,7 +4,6 @@ icon: layout
 category: layout
 tags:
   - intro
-  - layout
 ---
 
 ## 目录
@@ -13,9 +12,15 @@ tags:
 
 - [侧边栏](sidebar.md)
 
-- [普通页面](page.md)
+- [页面](page.md)
+
+  - [路径导航](breadcrumb.md)
+
+  - [页脚](footer.md)
 
 - [主页](home.md)
+
+- [幻灯片页面](slides.md)
 
 - 切换动画
 

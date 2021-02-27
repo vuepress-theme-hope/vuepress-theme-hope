@@ -26,6 +26,8 @@ module.exports = {
 
 侧边栏默认启用图标支持，将在侧边栏的链接前显示页面的图标。可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
 
+<!-- more -->
+
 ## 嵌套的标题链接
 
 默认情况下，侧边栏会自动地显示由当前页面的标题(headers)组成的链接，并按照页面本身的结构进行嵌套，你可以通过 `themeConfig.sidebarDepth` 来修改它的行为。默认的深度(也是最大的深度)是 `2`，它将提取到 `h2` 和 `h3` 的标题，设置成 `0` 将会禁用标题(headers)链接。
@@ -150,7 +152,7 @@ module.exports = {
 
 ## 自动生成侧栏
 
-如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 `Front matter` 来实现:
+如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 frontmatter 来实现:
 
 ```yaml
 ---

@@ -135,6 +135,12 @@ module.exports = {
 };
 ```
 
+::: tip
+
+You can set `themeConfig.darkLogo` to display another logo in dark mode.
+
+:::
+
 ## Search Box
 
 ### Built-in Search
@@ -247,15 +253,15 @@ editLink: false # Will overwrite 'editLinks' from themeConfig
 
 ## Theme color button
 
-For details, see the [Themecolor](../feature/theme.md#theme-color) section.
+For details, see the [Themecolor](../interface/theme-color.md) section.
 
 ## Darkmode button
 
-For details, see the [Darkmode](../feature/theme.md#darkmode) section.
+For details, see the [Darkmode](../interface/darkmode.md) section.
 
 ## Full screen button
 
-For details, see the [Full Screen Button](../feature/theme.md#fullscreen-button) section.
+For details, see the [Full Screen Button](../interface/others.md#fullscreen-button) section.
 
 ## Demo
 
@@ -265,16 +271,17 @@ module.exports = {
   themeConfig: {
     nav: [
       // add icon field to each item to display icon
-      { text: "Home", link: "/", icon: "home" },
       { text: "Guide", link: "/guide/", icon: "creative" },
       { text: "Config", link: "/config/", icon: "config" },
+      { text: "FAQ", link: "/FAQ/", icon: "question" },
       {
         text: "Basic",
         icon: "info",
+        // add prefix field to add a link prefix to all the items
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
-          { text: "VuePress", link: "/vuepress/", icon: "vue" },
+          { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
       },
       {
@@ -289,6 +296,60 @@ module.exports = {
           {
             text: "Repo",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "Theme Demo",
+            link: "/demo/",
+          },
+          {
+            text: "Plugins",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis Plugin",
+                link: "https://vuepress-theme-hope.github.io/add-this/",
+              },
+              {
+                text: "Comment Plugin",
+                link: "https://vuepress-theme-hope.github.io/comment/",
+              },
+              {
+                text: "Copy Code Plugin",
+                link: "https://vuepress-theme-hope.github.io/copy-code/",
+              },
+              {
+                text: "Feed Plugin",
+                link: "https://vuepress-theme-hope.github.io/feed/",
+              },
+              {
+                text: "Last Update Plugin",
+                link: "https://vuepress-theme-hope.github.io/last-update/",
+              },
+              {
+                text: "Markdown Enhance Plugin",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+              },
+              {
+                text: "Photo Swipe Plugin",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+              },
+              {
+                text: "PWA Plugin",
+                link: "https://vuepress-theme-hope.github.io/pwa/",
+              },
+              {
+                text: "Reading Time Plugin",
+                link: "https://vuepress-theme-hope.github.io/reading-time/",
+              },
+              {
+                text: "Seo Plugin",
+                link: "https://vuepress-theme-hope.github.io/seo/",
+              },
+              {
+                text: "Sitemap Plugin",
+                link: "https://vuepress-theme-hope.github.io/sitemap/",
+              },
+            ],
           },
         ],
       },

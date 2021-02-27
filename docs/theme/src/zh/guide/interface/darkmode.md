@@ -4,6 +4,7 @@ icon: darkmode
 category: interface
 tags:
   - darkmode
+  - interface
 ---
 
 在深色模式下，页面会使用深色背景与浅色文字，以保护你的眼睛。

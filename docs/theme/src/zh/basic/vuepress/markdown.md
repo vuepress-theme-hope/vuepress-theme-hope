@@ -3,7 +3,7 @@ title: 内置 Markdown 拓展
 icon: markdown
 category: basic
 tags:
-  - Markdown
+  - markdown
 ---
 
 以下是 VuePress 在 Markdown 基础语法上对 Markdown 功能进行的扩展。

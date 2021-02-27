@@ -1,10 +1,10 @@
 ---
 title: 组件
 icon: plugin
-category: feature
+category: markdown
 tags:
-  - markdown
   - components
+  - markdown
 ---
 
 ## Badge

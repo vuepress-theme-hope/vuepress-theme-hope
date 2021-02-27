@@ -4,7 +4,6 @@ icon: discover
 category: feature
 tags:
   - intro
-  - feature
 ---
 
 ## Catalog
@@ -18,6 +17,8 @@ tags:
 - [Picture preview](photo-swipe.md)
 
 - [Copyright info](copyright.md)
+
+- [Last Update time](last-update.md)
 
 - [Encryption function](encrypt.md)
 

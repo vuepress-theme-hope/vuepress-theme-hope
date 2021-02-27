@@ -2,7 +2,8 @@
 title: Install / Usage
 icon: install
 category: Get Started
-tags: intro
+tags:
+  - install
 ---
 
 ## Use in new project

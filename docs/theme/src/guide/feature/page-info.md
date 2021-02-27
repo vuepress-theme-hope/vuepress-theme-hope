@@ -1,14 +1,15 @@
 ---
 title: Page information
-
 icon: info
 category: feature
 tags:
-  - page-info
   - feature
+  - page info
 ---
 
 By including `@mr-hope/vuepress-plugin-comment`, `vuepress-theme-hope` can display article information for you.
+
+<!-- more -->
 
 ## Enable
 

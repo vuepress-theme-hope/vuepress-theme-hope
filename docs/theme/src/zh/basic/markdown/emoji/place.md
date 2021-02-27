@@ -3,7 +3,7 @@ title: 地点
 icon: emoji
 category: basic
 tags:
-  - Markdown
+  - markdown
   - emoji
 ---
 

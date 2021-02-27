@@ -4,7 +4,6 @@ icon: layout
 category: layout
 tags:
   - intro
-  - layout
 ---
 
 ## Catalog
@@ -13,9 +12,13 @@ tags:
 
 - [Sidebar](sidebar.md)
 
+- [Footer](footer.md)
+
 - [Page](page.md)
 
 - [Home Page](home.md)
+
+- [Slides](slides.md)
 
 - Switch animation
 

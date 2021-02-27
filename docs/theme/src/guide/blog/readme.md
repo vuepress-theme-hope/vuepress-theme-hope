@@ -3,7 +3,7 @@ title: Blog
 icon: blog
 category: blog
 tags:
-  - blog
+  - intro
 ---
 
 ## Catalog

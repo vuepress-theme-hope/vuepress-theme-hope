@@ -3,7 +3,8 @@ title: Tex
 icon: tex
 category: markdown
 tags:
-  - Markdown
+  - markdown
+  - tex
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。

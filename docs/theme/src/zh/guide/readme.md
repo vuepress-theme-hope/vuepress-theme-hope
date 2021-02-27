@@ -1,6 +1,9 @@
 ---
 title: 指南
 icon: creative
+category: guide
+tags:
+  - intro
 ---
 
 ::: tip
@@ -15,70 +18,7 @@ icon: creative
 
 <!-- more -->
 
-### Markdown 增强
-
-为 Markdown 添加了更多语法，丰富文档与博客写作
-
-- [Tex 支持](markdown/tex.md)
-- [自定义对齐](markdown/align.md)
-- [流程图](markdown/flowchart.md)
-- [标记](markdown/mark.md)
-- [上下角标](markdown/sup-sub.md)
-- [代码演示](markdown/demo.md)
-- [幻灯片](markdown/presentation.md)
-
-### 页面增强
-
-- [图片预览](feature/page.md#图片预览)，支持放大，拖拽，滑动浏览，分享和下载
-
-- [文章信息展示](feature/page-info.md)
-
-  - 阅读量统计
-  - 作者与写作日期
-  - 自动生成的字数与预计阅读时间
-  - 标签与分类
-
-- [评论系统](feature/comment.md)
-
-- [路径导航](layout/page.md#路径导航)
-
-- [页面图标](layout/page.md#图标支持)
-
-- [自定义页脚](layout/page.md#页脚支持)
-
-### 零配置自动实现并允许你定制
-
-- [全新主题色，允许你在浏览过程中动态切换](feature/theme.md#主题色)
-
-- [深色模式，允许你手动切换或者是根据设备设置自动应用](feature/theme.md#深色模式)
-
-- [全屏按钮](feature/theme.md#全屏按钮)
-
-- [PWA 支持](feature/pwa.md)
-
-- [返回顶部按钮](feature/component.md#返回顶部按钮-backtotop)
-
-- [一键复制代码](feature/page.md#代码复制)
-
-- 复制时添加版权信息
-
-### SEO 相关
-
-- [Feed 生成](feature/feed.md)
-
-- [SEO 增强](feature/seo-sitemap.md#SEO)
-
-- [Sitemap 生成](feature/seo-sitemap.md#Sitemap)
-
-### 安全性
-
-- [加密特定文章或路径](feature/encrypt.md)
-
-- [TypeScript 支持](feature/typescript.md)
-
-### 样式优化
-
-- [图标支持](feature/readme.md)
+### 布局
 
 - [默认主页优化](layout/home.md)
 
@@ -88,22 +28,86 @@ icon: creative
 
 - 其他内置组件优化
 
-  - [**导航栏**](layout/navbar.md)
-  - [**侧边栏**](layout/sidebar.md)
-  - [徽章 `<Badge />`](feature/component.md#徽章-mybadge): 在官方基础上增加了颜色支持
+  - [导航栏](layout/navbar.md) 与 [侧边栏](layout/sidebar.md) 添加 `prefix` 与 `icon`
 
-### 博客部分
+- 新增:
 
-- [全新博客主页布局](layout/blog.md)
+  - [路径导航](layout/page.md#路径导航)
+
+  - [自定义页脚](layout/page.md#页脚支持)
+
+### Markdown
+
+为 Markdown 添加了更多语法，丰富文档与博客写作
+
+- [徽章 `<Badge />`](markdown/components.md#badge) 在官方基础上增加了颜色支持
+- [代码组 `<CodeGroup />`](markdown/components.md#codegroup-codegroupitem)
+- [Tex 支持](markdown/tex.md)
+- [自定义对齐](markdown/align.md)
+- [流程图](markdown/flowchart.md)
+- [标记](markdown/mark.md)
+- [上下角标](markdown/sup-sub.md)
+- [代码演示](markdown/demo.md)
+- [幻灯片](markdown/presentation.md)
+
+### 界面
+
+- [全新主题色](interface/theme-color.md)，允许你在浏览过程中动态切换
+
+- [深色模式](interface/darkmode.md)，允许你手动切换或者是根据设备设置自动应用
+
+- [图标支持](interface/icon.md)
+
+- [全屏按钮](interface/others.md#全屏按钮)
+
+- [返回顶部按钮](interface/others.md#返回顶部按钮)
+
+### 页面增强
+
+- [一键复制代码](feature/copy-code.md)
+
+- [图片预览](feature/photo-swipe.md)，支持放大，拖拽，滑动浏览，分享和下载
+
+- [版权信息](feature/copyright.md)
+
+- [评论系统](feature/comment.md)
+
+- [文章信息展示](feature/page-info.md)
+
+  - 阅读量统计
+  - 作者与写作日期
+  - 自动生成的字数与预计阅读时间
+  - 标签与分类
+
+- [加密特定文章或路径](feature/encrypt.md)
+
+### 功能
+
+- [PWA 支持](feature/pwa.md)
+
+- [Feed 生成](feature/feed.md)
+
+- [SEO 增强](feature/seo-sitemap.md#SEO)
+
+- [Sitemap 生成](feature/seo-sitemap.md#Sitemap)
+
+- [TypeScript 支持](feature/typescript.md)
+
+### 博客
 
 - [社交关注按钮与页面社交分享](https://vuepress-theme-hope.github.io/add-this/zh/)
 
-- [文章展示](feature/blog.md)
+- [文章展示](blog/blog.md)
 
-  - [支持置顶的文章列表](feature/blog.md#文章)
-  - [分类分组列表](feature/blog.md#分类)
-  - [标签分组列表](feature/blog.md#标签)
-  - [时间线](feature/blog.md#时间线)
+- [全新博客主页布局](blog/home.md)
+
+- [支持置顶的文章列表](blog/blog.md#文章)
+
+- [分类分组列表](blog/blog.md#分类)
+
+- [标签分组列表](blog/blog.md#标签)
+
+- [时间线](blog/blog.md#时间线)
 
 ## 🧩 内建插件
 
@@ -111,7 +115,7 @@ icon: creative
 
 - [@mr-hope/vuepress-plugin-comment][comment]: 评论与文章信息功能
 
-- [@mr-hope/vuepress-plugin-component](feature/component.md): 提供一些开箱即用的插件
+- [@mr-hope/vuepress-plugin-component][component]: 提供一些开箱即用的插件
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: 提供一键复制代码块功能。
 
@@ -135,6 +139,7 @@ icon: creative
 
 [add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
 [comment]: https://vuepress-theme-hope.github.io/comment/zh/
+[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#使用
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
 [feed]: https://vuepress-theme-hope.github.io/feed/zh/
 [last-update]: https://vuepress-theme-hope.github.io/last-update/zh/

@@ -3,7 +3,8 @@ title: Theme Color
 icon: skin
 category: interface
 tags:
-  - themecolor
+  - interface
+  - theme color
 ---
 
 This is an out-of-the-box feature that offers five theme color "red, blue, green, orange and purple" besides your theme color. You can also use your own theme color list.

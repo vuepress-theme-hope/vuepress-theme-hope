@@ -3,7 +3,8 @@ title: Tex
 icon: tex
 category: markdown
 tags:
-  - Markdown
+  - markdown
+  - tex
 ---
 
 Let the Markdown file in your VuePress site support the $\TeX$ syntax.

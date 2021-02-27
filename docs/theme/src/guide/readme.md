@@ -1,6 +1,9 @@
 ---
 title: Guide
 icon: creative
+category: guide
+tags:
+  - intro
 ---
 
 ::: tip
@@ -15,70 +18,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 <!-- more -->
 
-### Markdown Enhance
-
-Added more syntax to Markdown, enriching documentation and blog writing
-
-- [Tex Support](markdown/tex.md)
-- [Custom alignment](markdown/align.md)
-- [Flow chart](markdown/flowchart.md)
-- [Mark](markdown/mark.md)
-- [Subsript and Supercript](markdown/sup-sub.md)
-- [Code demo](markdown/demo.md)
-- [Presentation](markdown/presentation.md)
-
-### Page Enhance
-
-- [Picture preview feature](feature/page.md#picture-preview), supports zooming, dragging, sliding browsing, sharing and downloading
-
-- [Article info](feature/page-info.md)
-
-  - Reading Counts
-  - Author and writing date
-  - Automatically generated word count and estimated reading time
-  - Tags and Categorys
-
-- [Comment System](feature/comment.md)
-
-- [Path navigation](layout/page.md#breadcrumb)
-
-- [Page Icon](layout/page.md#icon-support)
-
-- [Custom footer](layout/page.md#footer-support)
-
-### Features
-
-#### Out of box
-
-- [Brand new theme colors, allowing you to switch dynamically during browsing](feature/theme.md#theme-color)
-
-- [Dark mode, allowing you to switch manually or apply automatically according to device settings](feature/theme.md#darkmode)
-
-- [Full Screen Button](feature/theme.md#fullscreen-button)
-
-- [PWA support](feature/pwa.md)
-
-- [Back to top button](feature/component.md#back-to-top-button-backtotop)
-
-- [One-click copy code](feature/page.md#code-copy)
-
-- Add copyright information when copying
-
-#### More powerful functions
-
-- [Feed generation](feature/feed.md)
-
-- [SEO enhancement](feature/seo-sitemap.md#SEO)
-
-- [Sitemap generation](feature/seo-sitemap.md#Sitemap)
-
-- [Encryption of specific articles and paths](feature/encrypt.md)
-
-- [TypeScript support](feature/typescript.md)
-
-### Style optimization
-
-- [Icon support](feature/readme.md)
+### Layout
 
 - [Default homepage optimization](layout/home.md)
 
@@ -88,22 +28,86 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
 - Optimization of other built-in components
 
-  - [**navbar**](layout/navbar.md)
-  - [**Sidebar**](layout/sidebar.md)
-  - [Badge `<Badge />`](feature/component.md#badge-mybadge): Added color support on the official basis
+  - Add `prefix` and `icon` for [Navbar](layout/navbar.md) [Sidebar](layout/sidebar.md)
 
-### Blog section
+- Add:
 
-- [New blog homepage layout](layout/blog.md)
+  - [Path navigation](layout/page.md#breadcrumb)
+
+  - [Custom footer](layout/page.md#footer-support)
+
+### Markdown Enhance
+
+Added more syntax to Markdown, enriching documentation and blog writing
+
+- [Badge `<Badge />`](feature/component.md#badge-mybadge): Added color support
+- [CodeGroup `<CodeGroup />`](markdown/components.md#codegroup-codegroupitem)
+- [Tex Support](markdown/tex.md)
+- [Custom alignment](markdown/align.md)
+- [Flow chart](markdown/flowchart.md)
+- [Mark](markdown/mark.md)
+- [Subsript and Supercript](markdown/sup-sub.md)
+- [Code demo](markdown/demo.md)
+- [Presentation](markdown/presentation.md)
+
+## Interface
+
+- [Theme colors](interface/theme-color.md), allowing you to switch dynamically during browsing
+
+- [Dark mode](interface/darkmode.md), allowing you to switch manually or apply automatically according to device settings
+
+- [Icon support](interface/icon.md)
+
+- [Full Screen Button](interface/others.md#fullscreen-button)
+
+- [Back to top button](interface/others.md#back-to-top-button)
+
+### Page Enhance
+
+- [One-click copy code](feature/copy-code.md)
+
+- [Picture preview feature](feature/photo-swipe.md), supports zooming, dragging, sliding browsing, sharing and downloading
+
+- [Copyright info](feature/copyright.md)
+
+- [Comment System](feature/comment.md)
+
+- [Article info](feature/page-info.md)
+
+  - Reading Counts
+  - Author and writing date
+  - Automatically generated word count and estimated reading time
+  - Tags and Categorys
+
+- [Encryption of specific articles and paths](feature/encrypt.md)
+
+### Features
+
+- [PWA support](feature/pwa.md)
+
+- [Feed generation](feature/feed.md)
+
+- [SEO enhancement](feature/seo-sitemap.md#SEO)
+
+- [Sitemap generation](feature/seo-sitemap.md#Sitemap)
+
+- [TypeScript support](feature/typescript.md)
+
+### Blog
 
 - [Social follow button and page social sharing][add-this]
 
-- [Article display](feature/blog.md)
+- [Article display](blog/blog.md)
 
-  - [Articles list swith sticky support](feature/blog.md#article)
-  - [Cateory lists](feature/blog.md#category)
-  - [Tag lists](feature/blog.md#tags)
-  - [Timeline](feature/blog.md#timeline)
+- [New blog homepage layout](blog/home.md)
+
+- [Articles list swith sticky support](blog/blog.md#article)
+
+- [Cateory lists](blog/blog.md#category)
+
+- [Tag lists](blog/blog.md#tags)
+
+- [Timeline](blog/blog.md#timeline)
 
 ## 🧩Build-in Plugins
 

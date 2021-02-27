@@ -1,12 +1,11 @@
 ---
+title: Encryption
 icon: lock
 category: feature
 tags:
   - encrypt
   - feature
 ---
-
-# Encryption function
 
 The theme supports encryption of specific folders or specific paths, as well as global scope encryption.
 
@@ -17,6 +16,8 @@ Note that because of the limitation of vuepress, the content of the article is o
 Please **DO NOT USE** this encryption function for any sensitive and confidential articles and files, please bear the consequences of it.
 
 :::
+
+<!-- more -->
 
 ## Encryption configuration
 

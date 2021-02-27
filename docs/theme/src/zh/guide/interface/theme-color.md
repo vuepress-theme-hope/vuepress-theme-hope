@@ -3,10 +3,13 @@ title: 主题色
 icon: skin
 category: interface
 tags:
-  - themecolor
+  - interface
+  - theme color
 ---
 
 这是一个开箱即用的功能，除了你的主题色之外，还提供 “红、蓝、绿、橙、紫” 五种颜色主题。你也可以定制自己的主题色选择列表。
+
+<!-- more -->
 
 ## 禁用功能
 

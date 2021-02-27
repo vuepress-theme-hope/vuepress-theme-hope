@@ -2,6 +2,8 @@
 title: Other features
 icon: others
 category: interface
+tags:
+  - interface
 ---
 
 ## Fullscreen Button

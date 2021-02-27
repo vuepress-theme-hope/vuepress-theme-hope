@@ -1,6 +1,9 @@
 ---
 title: 快速上手
 icon: creative
+category: Get Started
+tags:
+  - intro
 ---
 
 ## 目录

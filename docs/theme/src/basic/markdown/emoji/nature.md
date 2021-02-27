@@ -3,7 +3,7 @@ title: Nature
 icon: emoji
 category: basic
 tags:
-  - Markdown
+  - markdown
   - emoji
 ---
 

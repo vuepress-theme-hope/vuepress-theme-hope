@@ -1,12 +1,11 @@
 ---
+title: Sidebar
 icon: sidebar
 category: layout
 tags:
   - sidebar
   - layout
 ---
-
-# Sidebar
 
 To enable the sidebar, use `themeConfig.sidebar`. The basic configuration expects an Array of links:
 
@@ -19,17 +18,21 @@ module.exports = {
 };
 ```
 
+<!-- more -->
+
 You can omit the `.md` extension, and paths ending with `/` are inferred as `*/README.md`.
 
 The text for the link is automatically inferred (either from the first header in the page or explicit title in `YAML front matter`). To explicitly specify the link text, use an array in form of `[link, text]`.
 
 Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar. It can be disabled by setting `sidebarIcon` to `false` in `themeConfig`.
 
+<!-- more -->
+
 ## Nested Header Links
 
 The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `themeConfig.sidebarDepth`. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
 
-A page can also override this value via `Front matter`:
+A page can also override this value via frontmatter:
 
 ```md
 ---
@@ -149,7 +152,7 @@ Make sure to define the fallback configuration last, because VuePress checks eac
 
 ### Auto Sidebar for Single Pages
 
-To automatically generate a sidebar that contains only the header links for the current page, you can use `Front matter` on that page:
+To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
 
 ```yaml
 ---

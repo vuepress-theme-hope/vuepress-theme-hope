@@ -17,6 +17,8 @@ tags:
 
 考虑到现在 Feed 已经很小众，我们旨在提供最小配置来尽可能自动生成详细的 Feed 文件。
 
+<!-- more -->
+
 ## 频道设置
 
 你可以通过设置 `themeConfig.feed.channel` 选项来自自定义 Feed 频道的各项信息。

@@ -61,9 +61,13 @@ module.exports = {
 - 类型: `string`
 - 必填: 否
 
-当前时区，使用 CI 部署时很有用
+有些时候你的站点可能通过 CI 自动部署，而这些 CI 服务器的时间可能基于 UTC，这会导致生成的时间不同于你所在的时区，在这种情况下，你可以设置 `timezone` 选项 来指定你所在的时区。
 
-> 详细的时区列表，详见 [时区列表](https://www.zeitverschiebung.net/cn/all-time-zones.html)
+::: info 时区列表
+
+详细的时区列表，详见 [时区列表](https://www.zeitverschiebung.net/cn/all-time-zones.html)
+
+:::
 
 ### transformer
 

@@ -1,9 +1,9 @@
 ---
 title: Theme intro
 icon: info
-category: Get started
+category: Get Started
 tags:
-  - Intro
+  - intro
 ---
 
 ## 🎈 The original intention and design goals of this theme

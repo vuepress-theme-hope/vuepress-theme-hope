@@ -2,7 +2,6 @@
 title: Markdown
 icon: markdown
 category: Get Started
-
 tags:
   - markdown
 ---

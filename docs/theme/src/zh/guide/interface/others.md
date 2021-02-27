@@ -2,6 +2,8 @@
 title: 其他界面功能
 icon: others
 category: interface
+tags:
+  - interface
 ---
 
 ## 全屏按钮

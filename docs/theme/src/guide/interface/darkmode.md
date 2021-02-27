@@ -4,6 +4,7 @@ icon: skin
 category: interface
 tags:
   - darkmode
+  - interface
 ---
 
 In dark mode, the page uses a dark background to protect your eyes.

@@ -1,6 +1,9 @@
 ---
 title: Interface
 icon: skin
+category: interface
+tags:
+  - intro
 ---
 
 ## Catalog

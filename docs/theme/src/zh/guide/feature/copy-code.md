@@ -3,12 +3,15 @@ title: 代码复制
 icon: copy
 category: feature
 tags:
-  - code-copy
+  - copy code
+  - feature
 ---
 
 如果你是一个程序员，你可能希望你的用户能够一键复制你在正文中展示的代码。
 
 针对这一情况，`vuepress-theme-hope` 内置了 [@mr-hope/copy-code](https://vuepress-theme-hope.github.io/copy-code/zh/)，提供了一个复制按钮。
+
+<!-- more -->
 
 ## 使用
 

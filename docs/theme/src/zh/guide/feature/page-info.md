@@ -3,11 +3,13 @@ title: 页面信息
 icon: info
 category: feature
 tags:
-  - page-info
   - feature
+  - page info
 ---
 
 通过内置 `@mr-hope/vuepress-plugin-comment`，`vuepress-theme-hope` 实现了文章信息。
+
+<!-- more -->
 
 ## 启用
 

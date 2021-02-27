@@ -1,67 +1,51 @@
 ---
+title: Page
 icon: page
 category: layout
 tags:
+  - page
   - layout
 ---
 
-# Page
-
 ## Icon support
 
-You can configure the icon field in the frontmatter of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
-
-This icon is used in **Path Navigation** and **Sidebar**.
+You can configure the `icon` field in the frontmatter of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
 
 ::: details Example
 
 ```md
 ---
-icon: Home
+icon: home
 ---
 ```
 
 :::
 
-## Breadcrumb <Badge text="Support page config" />
+This icon is used in navbar, sidebar, breadcrumb and page title.
 
-The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig.
+::: info
 
-Without any configuration, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
-
-You can also control the icon display of the path navigation <Badge text="Support page config" />, the configuration item is `breadcrumbIcon`.
-
-::: warning
-
-To ensure Breadcrumb working well, the `readme.md` file should be included in each folder.
-
-Otherwise, the path navigation will automatically ignore that level because the component can not generate titles and links from the corresponding level folder.
+For icon settings, please refer to [Icon Support](../interface/icon.md)
 
 :::
 
 ## Page Info Display
 
-See [Page Info Section](../feature/page-info.md)
+Please see [Page Info Section](../feature/page-info.md)
+
+## Breadcrumb
+
+Please see [Breadcrumb](breadcrumb.md).
+
+## Title list
+
+In desktop mode, a list of article titles will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
+
+If you don’t want to display the title list on the right in desktop mode, please set `themeConfig.anchorDisplay` to `false`.
 
 ## Last Updated
 
-The `themeConfig.lastUpdated` option allows you to get the UNIX timestamp(ms) of each file’s last `git` commit, and it will also display at the bottom of each page in an appropriate format:
-
-```js
-module.exports = {
-  themeConfig: {
-    lastUpdated: "Last Updated", // string | boolean
-  },
-};
-```
-
-Note that it’s `on` by default. If given a `string`, it will be displayed as a prefix.
-
-::: warning
-
-Since `lastUpdated` is based on `git`, you can only use it in a `git` repository. Also, since the timestamp used comes from the git commit, it will display only after a first commit for a given page, and update only on ensuing commits of that page.
-
-:::
+Please see [LastUpdate time](../feature/last-update.md).
 
 ## Prev / Next Links
 
@@ -77,72 +61,7 @@ next: false
 
 ## Comment
 
-See the [Comment section](../feature/comment.md) for details.
-
-## Footer Support <Badge text="Support page config" />
-
-To display the footer on every page, you need to set `themeConfig.footer.display` to `true`. At the same time, you can also use `themeConfig.footer.copyright` and `themeConfig.content` to set the default copyright information and footer content.
-
-You can also configure the `footer`, `copyrightText` and `medialink` fields in the frontmatter page.
-
-- The `footer` field can be filled with a string or Boolean value.
-
-  Setting `footer` to `true` will display the default footer content. Setting `footer` to`false` will disable the page footer.
-
-  If you fill in a string, it will be inserted into footer by `v-html`, so you can fill in HTMLString.
-
-- The `copyrightText` field can be filled with copyright information on this page (also support HTMLString). This option is useful when you quote articles from other places while they are using a specific license. You can also fill in `false` to hide the copyright information in a specific page.
-
-- The `medialink` field is the same as `themeConfig.blog.links` ([specific configuration see here](./blog.md#configurable-items)), you can configure it in a specific page to display different social media links. You can also set it to `false` to hide it.
-
-::: details Example
-
-Enable the default footer text:
-
-```md
----
-footer: true
----
-```
-
-Customize footer text without displaying copyright information and media links:
-
-```md
----
-footer: This website is served by GitHub Pages
-copyrightText: false
-medialink: false
----
-```
-
-Custom footer content and copyright information and media links:
-
-```md
----
-footer: <a href="https://github.com/Mister-Hope"> Mr.Hope </a>
-copyrightText: MIT LICENSE
-medialink:
-  Zhihu: https://zhihu.com
----
-```
-
-When you set `footer.display` to true in the theme, you can also disable it locally:
-
-```md
----
-footer: false
----
-```
-
-To remove the default footer content while keeping social media and copyright information displayed, please use an empty string.
-
-```md
----
-footer: ""
----
-```
-
-:::
+Please see [Comment section](../feature/comment.md) for details.
 
 ## Custom Layout for Specific Pages
 

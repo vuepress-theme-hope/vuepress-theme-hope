@@ -4,10 +4,12 @@ icon: enable
 category: markdown
 tags:
   - intro
-  - Markdown
+  - markdown
 ---
 
 除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance](https://vuepress-theme-hope.github.io/md-enhance)，在 Markdown 中启用了更多的语法与新功能。
+
+<!-- more -->
 
 ## 内置增强
 

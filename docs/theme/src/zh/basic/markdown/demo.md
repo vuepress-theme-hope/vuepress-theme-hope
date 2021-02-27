@@ -3,7 +3,7 @@ title: Markdown示例
 icon: markdown
 category: basic
 tags:
-  - Markdown
+  - markdown
 ---
 
 <!-- markdownlint-disable -->

@@ -3,7 +3,8 @@ title: Custom alignment
 icon: align
 category: markdown
 tags:
-  - Markdown
+  - align
+  - markdown
 ---
 
 By injecting configuration into vuepress-plugin-container, you can use

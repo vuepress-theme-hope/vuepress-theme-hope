@@ -61,9 +61,13 @@ To let the plugin work, your docs should be a git project, the plugin will autom
 - Type: `string`
 - Required: No
 
-Current timezone, useful when you are deploying through CI.
+Sometimes your site may be automatically deployed through CI, and the time of these CI servers may be based on UTC, which will cause the generated time to be different from your time zone. In this case, you can set the `timezone` option to specify you The time zone you are in.
 
-> For timezone list, please see [Timezone list](https://www.zeitverschiebung.net/en/all-time-zones.html)
+::: info Timezone list
+
+For detailed timezone list, please refer to [Time Zone List](https://www.zeitverschiebung.net/cn/all-time-zones.html)
+
+:::
 
 ### transformer
 

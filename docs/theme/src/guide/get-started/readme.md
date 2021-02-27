@@ -1,6 +1,9 @@
 ---
 title: Get Started
 icon: creative
+category: Get Started
+tags:
+  - intro
 ---
 
 ## 目录

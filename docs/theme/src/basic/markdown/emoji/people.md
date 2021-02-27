@@ -3,7 +3,7 @@ title: People
 icon: emoji
 category: basic
 tags:
-  - Markdown
+  - markdown
   - emoji
 ---
 

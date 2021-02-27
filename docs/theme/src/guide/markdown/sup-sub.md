@@ -3,7 +3,9 @@ title: Superscript and Subscript
 icon: superscript
 category: markdown
 tags:
-  - Markdown
+  - subscript
+  - superscript
+  - markdown
 ---
 
 Let the Markdown file in your VuePress site support Subscript and Superscript.

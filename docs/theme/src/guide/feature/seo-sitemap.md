@@ -2,9 +2,9 @@
 icon: config
 category: feature
 tags:
+  - feature
   - seo
   - sitemap
-  - feature
 ---
 
 # SEO and Sitemap

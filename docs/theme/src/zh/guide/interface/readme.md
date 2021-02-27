@@ -1,6 +1,9 @@
 ---
 title: 界面
 icon: skin
+category: interface
+tags:
+  - intro
 ---
 
 ## 目录

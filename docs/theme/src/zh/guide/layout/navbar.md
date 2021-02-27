@@ -3,8 +3,8 @@ title: 导航栏
 icon: nav
 category: layout
 tags:
-  - navbar
   - layout
+  - navbar
 ---
 
 导航栏可能包含你的站点名称、[搜索框](#搜索框)、 [导航栏链接](#导航栏链接)、[多语言切换](https://v1.vuepress.vuejs.org/zh/guide/i18n.md)、[仓库链接](#git-仓库和编辑链接)，它们均取决于你的配置。
@@ -135,6 +135,12 @@ module.exports = {
 };
 ```
 
+::: tip
+
+你可以设置 `themeConfig.darkLogo` 以在暗黑模式下显示另一个 Logo。
+
+:::
+
 ## 搜索框
 
 ### 内置搜索
@@ -243,15 +249,15 @@ editLink: false
 
 ## 主题色切换按钮
 
-具体详情请见 [主题色](../feature/theme.md#主题色) 章节。
+具体详情请见 [主题色](../interface/theme-color.md) 章节。
 
 ## 深色模式切换按钮
 
-具体详情请见 [深色模式](../feature/theme.md#深色模式) 章节。
+具体详情请见 [深色模式](../interface/darkmode.md) 章节。
 
 ## 全屏按钮
 
-具体详情请见 [全屏按钮](../feature/theme.md#全屏按钮) 章节。
+具体详情请见 [全屏按钮](../interface/others.md#全屏按钮) 章节。
 
 ## 案例
 
@@ -261,16 +267,86 @@ module.exports = {
   themeConfig: {
     nav: [
       // 可在每一项中添加 icon 字段来显示图标
-      { text: "主页", link: "/zh/", icon: "home" },
       { text: "指南", link: "/zh/guide/", icon: "creative" },
-      { text: "配置", link: "/zh/config/", icon: "code" },
+      { text: "配置", link: "/zh/config/", icon: "config" },
+      { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
       {
         text: "基础",
         icon: "info",
+        // prefix 字段会为所有的 items 添加这段 prefix
         prefix: "/zh/basic/",
         items: [
-          { text: "Markdown", link: "markdown", icon: "markdown" },
+          { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
+        ],
+      },
+      {
+        text: "项目",
+        icon: "info",
+        items: [
+          {
+            text: "更新日志",
+            link:
+              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          },
+          {
+            text: "项目地址",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "项目案例",
+            link: "/zh/demo/",
+          },
+          {
+            text: "插件",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis 插件",
+                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
+              },
+              {
+                text: "评论插件",
+                link: "https://vuepress-theme-hope.github.io/comment/zh/",
+              },
+              {
+                text: "代码复制插件",
+                link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
+              },
+              {
+                text: "Feed 插件",
+                link: "https://vuepress-theme-hope.github.io/feed/zh/",
+              },
+              {
+                text: "最后更新时间插件",
+                link: "https://vuepress-theme-hope.github.io/last-update/zh/",
+              },
+              {
+                text: "Markdown 增强插件",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
+              },
+              {
+                text: "图片预览插件",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
+              },
+              {
+                text: "PWA 插件",
+                link: "https://vuepress-theme-hope.github.io/pwa/zh/",
+              },
+              {
+                text: "阅读时间插件",
+                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
+              },
+              {
+                text: "Seo 插件",
+                link: "https://vuepress-theme-hope.github.io/seo/zh/",
+              },
+              {
+                text: "Sitemap 插件",
+                link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
+              },
+            ],
+          },
         ],
       },
     ],

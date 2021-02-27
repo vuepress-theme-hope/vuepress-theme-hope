@@ -3,7 +3,8 @@ title: Code Demo
 icon: discover
 category: markdown
 tags:
-  - Markdown
+  - code demo
+  - markdown
 ---
 
 Let you insert code demos in your Markdown file.

@@ -1,14 +1,15 @@
 ---
+title: PWA
 icon: setting
 category: feature
 tags:
-  - pwa
   - feature
+  - pwa
 ---
 
-# PWA
-
 The theme will enable progressive web app support using `@mr-hope/vuepress-plugin-pwa` by default. If you do not need this feature or want to use other pwa plugins, you can set the `themeConfig.pwa` to `false` to disable the plugin.
+
+<!-- more -->
 
 ## Content Cache and update
 

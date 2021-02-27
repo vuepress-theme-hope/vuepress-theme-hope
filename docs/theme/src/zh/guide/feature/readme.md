@@ -4,7 +4,6 @@ icon: discover
 category: feature
 tags:
   - intro
-  - feature
 ---
 
 ## 目录
@@ -18,6 +17,8 @@ tags:
 - [图片预览](photo-swipe.md)
 
 - [版权信息](copyright.md)
+
+- [最后更新时间](last-update.md)
 
 - [加密功能](encrypt.md)
 

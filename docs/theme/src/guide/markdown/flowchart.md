@@ -3,7 +3,7 @@ title: Flowchart
 icon: flowchart
 category: markdown
 tags:
-  - Markdown
+  - markdown
 ---
 
 Let the Markdown file support flow chart in your VuePress site

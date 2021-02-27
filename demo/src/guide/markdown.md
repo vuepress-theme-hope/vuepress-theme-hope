@@ -3,7 +3,7 @@ icon: markdown
 title: Markdown Enhance
 category: Guide
 tag:
-  - Markdown
+  - markdown
 ---
 
 `vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.

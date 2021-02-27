@@ -4,6 +4,7 @@ icon: discover
 category: interface
 tags:
   - icon
+  - interface
 ---
 
 整个主题在多处都添加了 FontClass 格式图标的支持。
@@ -12,6 +13,8 @@ tags:
 
 - 对于国内用户，推荐使用 iconfont
 - 对于海外用户，推荐使用 fontawesome
+
+<!-- more -->
 
 ## Iconfont
 
@@ -54,7 +57,7 @@ tags:
 1. 在 `.vuepress/styles` 的 `index.styl` 中导入链接。例如:
 
    ```styl
-   @import "//at.alicdn.com/t/font_1446717_csg6trrgnv.css";
+   @import "//at.alicdn.com/t/font_1446717_wn9sf5nb7un.css";
    ```
 
 ::: tip

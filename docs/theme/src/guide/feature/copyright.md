@@ -13,6 +13,8 @@ Sometimes, you may not want some of your articles to be copied by others, or you
 
 `vuepress-theme-hope` introduced [vuepress-plugin-copyright](https://www.npmjs.com/package/vuepress-plugin-copyright) to provide related features.
 
+<!-- more -->
+
 ## Enable plugin
 
 Since part of users use this theme for building documents, and document sites usually do not require additional copyright information, this plugin is not enabled by default.

@@ -3,7 +3,7 @@ title: Builtin Markdown features
 icon: markdown
 category: basic
 tags:
-  - Markdown
+  - markdown
 ---
 
 Here are some enhance VuePress makes on markdown syntax.

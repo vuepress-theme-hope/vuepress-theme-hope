@@ -4,6 +4,7 @@ icon: discover
 category: interface
 tags:
   - icon
+  - interface
 ---
 
 The entire theme has added FontClass format icon support in mutiple places.
@@ -12,6 +13,8 @@ You can use iconfont and fontawesome to add icons to your project.
 
 - For china users, iconfont is recommended
 - For overseas users, fontawesome is recommended
+
+<!-- more -->
 
 ## Iconfont
 
@@ -54,7 +57,7 @@ On the project page, you can edit the icons in the project, including adjustment
 1. Import the link in `index.styl` of `.vuepress/styles`. E.g:
 
    ```styl
-   @import "//at.alicdn.com/t/font_1446717_csg6trrgnv.css";
+   @import "//at.alicdn.com/t/font_1446717_wn9sf5nb7un.css";
    ```
 
 ::: tip

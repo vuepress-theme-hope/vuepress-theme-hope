@@ -3,8 +3,8 @@ title: Feed Support
 icon: rss
 category: feature
 tags:
-  - feed
   - feature
+  - feed
 ---
 
 The theme will enable feed generation support using `@mr-hope/vuepress-plugin-feed` by default. If you do not need this feature, you can set the `themeConfig.feed` to `false` to disable the plugin.
@@ -16,6 +16,8 @@ The theme will enable feed generation support using `@mr-hope/vuepress-plugin-fe
 - RSS 2.0 (Default output: rss.xml)
 
 Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files.
+
+<!-- more -->
 
 ## Channel Settings
 

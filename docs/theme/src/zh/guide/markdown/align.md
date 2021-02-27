@@ -3,7 +3,8 @@ title: 自定义对齐
 icon: align
 category: markdown
 tags:
-  - Markdown
+  - align
+  - markdown
 ---
 
 通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
