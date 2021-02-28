@@ -3,7 +3,7 @@
     <div
       class="blogger"
       :class="{ hasIntro }"
-      :aria-label="hasIntro ? i18n.intro : ''"
+      :[hintAttr]="hasIntro ? i18n.intro : ''"
       :data-balloon-pos="hasIntro ? 'down' : ''"
       @click="jumpIntro"
     >

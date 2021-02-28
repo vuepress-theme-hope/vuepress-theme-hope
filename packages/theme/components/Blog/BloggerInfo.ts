@@ -28,6 +28,10 @@ export default class BloggerInfo extends Mixins(TimelineMixin) {
     return Boolean(this.blogConfig.intro);
   }
 
+  private get hintAttr(): string {
+    return this.hasIntro ? "aria-label" : "";
+  }
+
   private get i18n(): HopeThemeLocaleConfigItem["blog"] {
     return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
   }
