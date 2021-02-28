@@ -27,11 +27,11 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 你可以通过设置 `channel` 选项来自自定义 Feed 频道的各项信息。
 
-我们推荐您进行如下设置:
+我们推荐进行如下设置:
 
 - 将建立 Feed 的日期转换为 ISOString 写入到 `channel.pubDate` 中
 - 通过 `channel.ttl` 中设置内容的更新周期(单位: 分钟)
-- 通过 `channel.copyright` 设置您的版权信息
+- 通过 `channel.copyright` 设置版权信息
 - 通过 `channel.author` 设置频道作者，或设置 `themeConfig.author` 为作者名称。
 
 ::: tip 默认频道设置

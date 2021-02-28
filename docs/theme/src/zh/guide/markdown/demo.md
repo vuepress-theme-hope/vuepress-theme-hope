@@ -25,7 +25,7 @@ module.exports = {
 
 ## 语法
 
-您应该使用以下语法：
+你应该使用以下语法：
 
 ````md
 ::: demo [类型] 可选的标题文字
@@ -147,7 +147,7 @@ export default class App extends React.Component {
 
 ::: warning
 
-该插件未捆绑任何库，因此您必须通过在 `.vuepress/config.js` 文件中设置 `head` 来导入它们。
+该插件未捆绑任何库，因此你必须通过在 `.vuepress/config.js` 文件中设置 `head` 来导入它们。
 
 ```js
 // .vuepress/config.js
@@ -181,9 +181,9 @@ module.exports = {
 
 ### 可用的语言
 
-您可以在演示块中使用不同语言。
+你可以在演示块中使用不同语言。
 
-当您设置其他语言时，由于插件无法解析它们，因此演示将被禁用，您只能看到代码。插件将为您提供一个 "在 CodePen 中打开" 按钮允许你直接在 CodePen 打开代码。
+当你设置其他语言时，由于插件无法解析它们，因此演示将被禁用仅显示代码。插件将提供一个 "在 CodePen 中打开" 按钮允许用户直接在 CodePen 打开代码。
 
 可用的 HTML 语言:
 

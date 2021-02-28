@@ -37,7 +37,7 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 同样，幻灯片演示功能将在输出中添加 700KB 大小的代码 (主要是 `reveal.js`)。
 
-因此，请使用下面的选项，仅启用您要使用的功能。
+因此，请使用下面的选项，仅启用你要使用的功能。
 
 :::
 
@@ -265,7 +265,7 @@ React 依赖于 Babel。
 
 ## lastUpdate
 
-> 如果您不需要这个功能，请设置为 `false`。
+> 如果你不需要这个功能，请设置为 `false`。
 
 ### lastUpdate.timezone
 
@@ -291,7 +291,7 @@ React 依赖于 Babel。
 
 渐进式网络应用程序支持
 
-> 如果您不需要这个功能，请设置为 `false`。
+> 如果你不需要这个功能，请设置为 `false`。
 >
 > 有关更多详细信息，请参见 [pwa 插件文档][pwa-config]
 
@@ -300,11 +300,11 @@ React 依赖于 Babel。
 - 类型: `ManifestOption`
 - 必填: 否
 
-您可以填充一个将被解析为 manifest.webmanifest 的对象。
+你可以填充一个将被解析为 manifest.webmanifest 的对象。
 
 ::: tip
 
-如果您未设置某些选项，则这些选项会回退到插件预设值。
+如果你未设置某些选项，则这些选项会回退到插件预设值。
 
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
 - short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
@@ -438,9 +438,9 @@ Safari 图标
 
 ::: tip
 
-我们将为您预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
+我们将为你预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
 
-如果将 `cachePic` 设置为 `true`，我们还将为您预缓存 `**/*.{png,jpg,jpeg,gif,bmp,webp}` 文件。
+如果将 `cachePic` 设置为 `true`，我们还将为你预缓存 `**/*.{png,jpg,jpeg,gif,bmp,webp}` 文件。
 
 所有大于 `maxSize` 的文件与所有大于 `maxPicSize` 的图片将被忽略。
 
@@ -452,7 +452,7 @@ Feed 生成，默认情况下无需任何配置。
 
 > 插件配置请参见 [Feed 插件配置][feed-config]
 >
-> 如果您不需要这个功能，请设置为 `false`。
+> 如果你不需要这个功能，请设置为 `false`。
 
 ## seo <Badge text="默认启用" />
 
@@ -460,7 +460,7 @@ Feed 生成，默认情况下无需任何配置。
 
 > 插件配置请参见 [SEO 插件配置][seo-config]
 >
-> 如果您不需要这个功能，请设置为 `false`。
+> 如果你不需要这个功能，请设置为 `false`。
 
 ## sitemap <Badge text="默认启用" />
 
@@ -468,7 +468,7 @@ Sitemap 生成配置，默认情况下无需任何配置。
 
 > 插件配置请参见 [Sitemap 插件配置][sitemap-config]
 >
-> 如果您不需要这个功能，请设置为 `false`。
+> 如果你不需要这个功能，请设置为 `false`。
 
 ## addThis
 

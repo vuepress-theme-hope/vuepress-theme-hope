@@ -17,7 +17,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-让您的图像支持预览，缩放，共享，滑动查看和下载。
+让页面图像支持预览，缩放，共享，滑动查看和下载。
 
 ## 使用插件
 

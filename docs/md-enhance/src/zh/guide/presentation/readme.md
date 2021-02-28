@@ -29,7 +29,7 @@ module.exports = {
 
 你也可以传入一个对象以进行更详细的配置。
 
-`presentation.plugins` 接收一个字符串数组，让您可以自由配置是否启用一些预设的插件。
+`presentation.plugins` 接收一个字符串数组，可以自由配置是否启用一些预设的插件。
 
 ::: tip
 
@@ -95,6 +95,6 @@ Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wik
 
 ## 选项
 
-您可以在 Frontmatter 设置 `reveal` 以设置特定页面的 reveal.js 选项，也可以在插件选项中设置 `presentation` 以全局设置 reveal.js。
+你可以在 Frontmatter 设置 `reveal` 以设置特定页面的 reveal.js 选项，也可以在插件选项中设置 `presentation` 以全局设置 reveal.js。
 
 更多选项，请参见[reveal.js config](https://revealjs.com/config/)，更多用法，请参阅 [reveal.js 文档](https://revealjs.com/)。

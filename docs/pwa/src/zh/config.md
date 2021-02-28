@@ -22,11 +22,11 @@ icon: config
 - 类型: `ManifestOption`
 - 必填: 否
 
-您可以填充一个将被解析为 manifest.webmanifest 的对象。
+填充一个将被解析为 manifest.webmanifest 的对象。
 
 ::: tip
 
-如果您未设置某些选项，则这些选项会回退到插件预设值。
+如果未设置某些选项，它们会回退到插件预设值。
 
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
 - short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
@@ -159,9 +159,9 @@ Safari 图标
 
 ::: tip
 
-我们将为您预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
+插件会预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
 
-如果将 `cachePic` 设置为 `true`，我们还将为您预缓存 `**/*.{png,jpg,jpeg,gif,webp}` 文件。
+如果将 `cachePic` 设置为 `true`，插件也会预缓存 `**/*.{png,jpg,jpeg,gif,webp}` 文件。
 
 所有大于 `maxSize` 的文件将被忽略。
 

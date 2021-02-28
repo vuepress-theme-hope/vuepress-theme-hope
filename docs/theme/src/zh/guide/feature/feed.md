@@ -23,7 +23,7 @@ tags:
 
 你可以通过设置 `themeConfig.feed.channel` 选项来自自定义 Feed 频道的各项信息。
 
-我们推荐您进行如下设置:
+我们推荐你进行如下设置:
 
 - 将建立 Feed 的日期转换为 ISOString 写入到 `channel.pubDate` 中
 - 通过 `channel.ttl` 中设置内容的更新周期(单位: 分钟)
