@@ -13,23 +13,23 @@ icon: guide
 
 以下是会被默认注入到 `<head>` 中的 `<meta>` 标签及其值:
 
-| 属性名称 | 值 |
-| :------: | :---: || |
-| `og:url` | `themeConfig.hostname` + `path` |
-| `og:site_name` | `$site.title` |
-| `og:title` | `$page.title` |
-| `og:description` | `$page.frontmatter.description` |
-| `og:type` | `'article'` |
-| `og:image` | `themeConfig.hostname` + `$page.frontmatter.image` |
-| `og:updated_time` | `$page.lastUpdatedTime` |
-| `og:locale` | `$page._computed.$lang` |
-| `og:locale:alternate` | `$themeConfig.locales` 包含的其他语言 |
-| `twitter:card` | `'summary_large_image'` |
-| `twitter:image:alt` | `$site.title` |
-| `article:author` | `$page.frontmatter.author | | themeConfig.author` |
-| `article:tag` | `$page.frontmatter.tags | | $page.frontmatter.tag` |
-| `article:published_time` | `$page.frontmatter.time | | $page.frontmatter.date` |
-| `article:modified_time` | `$page.lastUpdatedTime` |
+|         属性名称         |                         值                         |
+| :----------------------: | :------------------------------------------------: | --- | ----------------------- |
+|         `og:url`         |          `themeConfig.hostname` + `path`           |
+|      `og:site_name`      |                   `$site.title`                    |
+|        `og:title`        |                   `$page.title`                    |
+|     `og:description`     |          `$page.frontmatter.description`           |
+|        `og:type`         |                    `'article'`                     |
+|        `og:image`        | `themeConfig.hostname` + `$page.frontmatter.image` |
+|    `og:updated_time`     |              `$page.lastUpdatedTime`               |
+|       `og:locale`        |              `$page._computed.$lang`               |
+|  `og:locale:alternate`   |       `$themeConfig.locales` 包含的其他语言        |
+|      `twitter:card`      |              `'summary_large_image'`               |
+|   `twitter:image:alt`    |                   `$site.title`                    |
+|     `article:author`     |             `$page.frontmatter.author              |     | themeConfig.author`     |
+|      `article:tag`       |              `$page.frontmatter.tags               |     | $page.frontmatter.tag`  |
+| `article:published_time` |              `$page.frontmatter.time               |     | $page.frontmatter.date` |
+| `article:modified_time`  |              `$page.lastUpdatedTime`               |
 
 ## 自由定制
 
