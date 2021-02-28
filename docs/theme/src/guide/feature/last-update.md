@@ -7,7 +7,7 @@ tags:
   - last update
 ---
 
-vuepress-theme-hope willautomatic generate the last update time of the page through the built-in `@mr-hope/vuepress-plugin-last-update` plugin.
+vuepress-theme-hope willautomatic generate the last update time of the page through the built-in [`@mr-hope/vuepress-plugin-last-update`](https://vuepress-theme-hope.github.io/last-update/) plugin.
 
 By default, the plugin will get the UNIX timestamp(ms) of each file’s last `git` commit for you, and it will also display at the bottom of each page in an appropriate format.
 

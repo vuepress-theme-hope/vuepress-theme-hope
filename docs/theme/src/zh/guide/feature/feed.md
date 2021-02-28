@@ -7,7 +7,7 @@ tags:
   - feature
 ---
 
-`vuepress-theme-hope` 通过 `@mr-hope/vuepress-plugin-feed` 插件来为你提供 feed 支持。如果你不需要这个功能，则可以将 `themeConfig.feed` 设置为 `false` 来禁用该插件。
+`vuepress-theme-hope` 通过内置 [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/feed/zh/) 插件来为你提供 feed 支持。
 
 主题会自动为你生成以下三种格式的 feed 文件:
 
@@ -15,7 +15,7 @@ tags:
 - JSON 1.1 (默认输出为 feed.json)
 - RSS 2.0 (默认输出为 rss.xml)
 
-考虑到现在 Feed 已经很小众，我们旨在提供最小配置来尽可能自动生成详细的 Feed 文件。
+考虑到现在 Feed 已经很小众，我们旨在提供最小配置来尽可能自动生成详细的 Feed 文件。如果你不需要这个功能，则可以将 `themeConfig.feed` 设置为 `false` 来禁用该插件。
 
 <!-- more -->
 

@@ -7,7 +7,7 @@ tags:
   - feed
 ---
 
-The theme will enable feed generation support using `@mr-hope/vuepress-plugin-feed` by default. If you do not need this feature, you can set the `themeConfig.feed` to `false` to disable the plugin.
+The theme will enable feed generation support using [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/feed/) by default.
 
 `@mr-hope/vuepress-plugin-feed` plugin will automatically generate feed in the following three formats for you
 
@@ -15,7 +15,7 @@ The theme will enable feed generation support using `@mr-hope/vuepress-plugin-fe
 - JSON 1.1 (Default output: feed.json)
 - RSS 2.0 (Default output: rss.xml)
 
-Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files.
+Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files. And if you do not need this feature, you can set the `themeConfig.feed` to `false` to disable the plugin.
 
 <!-- more -->
 

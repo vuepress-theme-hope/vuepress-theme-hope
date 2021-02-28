@@ -73,7 +73,7 @@ You need to put a blank line between each `<CodeGroupItem />`, otherwise VuePres
 
 Input:
 
-````xml
+````md
 <CodeGroup>
 <CodeGroupItem title="yarn">
 ```bash

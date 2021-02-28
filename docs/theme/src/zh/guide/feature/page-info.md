@@ -7,7 +7,7 @@ tags:
   - page info
 ---
 
-通过内置 `@mr-hope/vuepress-plugin-comment`，`vuepress-theme-hope` 实现了文章信息。
+通过内置 [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/zh/)，`vuepress-theme-hope` 实现了文章信息展示。
 
 <!-- more -->
 

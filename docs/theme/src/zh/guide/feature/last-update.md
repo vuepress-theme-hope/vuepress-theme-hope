@@ -7,7 +7,7 @@ tags:
   - last update
 ---
 
-vuepress-theme-hope 通过内置 `@mr-hope/vuepress-plugin-last-update` 插件，实现了页面最后更新时间的自动生成。
+vuepress-theme-hope 通过内置 [`@mr-hope/vuepress-plugin-last-update`](https://vuepress-theme-hope.github.io/last-update/zh/) 插件，实现了页面最后更新时间的自动生成。
 
 默认情况下，页面的更新时间会通过页面文件文件最后一次 `git` 提交的 UNIX 时间戳 (ms) 来自动生成，并将以合适的日期格式显示在每一页的底部。
 

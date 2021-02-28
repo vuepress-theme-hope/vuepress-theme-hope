@@ -7,7 +7,7 @@ tags:
   - page info
 ---
 
-By including `@mr-hope/vuepress-plugin-comment`, `vuepress-theme-hope` can display article information for you.
+By including [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/), `vuepress-theme-hope` can display article information for you.
 
 <!-- more -->
 

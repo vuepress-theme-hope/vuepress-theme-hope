@@ -7,7 +7,7 @@ tags:
   - feature
 ---
 
-`vuepress-theme-hope` implements the comment feature with built-in `@mr-hope/vuepress-plugin-comment`.
+`vuepress-theme-hope` implements the comment feature with built-in [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/).
 
 <!-- more -->
 

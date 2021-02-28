@@ -73,7 +73,7 @@ tags:
 
 输入:
 
-````xml
+````md
 <CodeGroup>
 <CodeGroupItem title="yarn">
 ```bash

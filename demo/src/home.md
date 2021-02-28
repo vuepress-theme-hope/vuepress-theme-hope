@@ -14,6 +14,10 @@ action:
     link: /
 
 features:
+  - title: Markdown Enhance 🧰
+    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
+    link: https://vuepress-theme-hope.github.io/guide/markdown/
+
   - title: Pageviews and comments 💬
     details: Start pageview statistics and comment support with Valine and Vssue
     link: https://vuepress-theme-hope.github.io/guide/feature/comment/
@@ -22,25 +26,21 @@ features:
     details: Add author, writing date, reading time, word count and other information to your article
     link: https://vuepress-theme-hope.github.io/guide/feature/page-info/
 
-  - title: Markdown Enhance 🧰
-    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
-    link: https://vuepress-theme-hope.github.io/guide/markdown/
-
   - title: Blog support 📝
     details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
-    link: https://vuepress-theme-hope.github.io/guide/feature/blog/
+    link: https://vuepress-theme-hope.github.io/guide/blog/blog/
 
   - title: Article Encryption 🔐
     details: Encrypt you article based on path and folders, so that only the one you want could see them
-    link: https://vuepress-theme-hope.github.io/guide/feature/blog/
+    link: https://vuepress-theme-hope.github.io/guide/feature/encrypt/
 
   - title: Custom theme color 🎨
     details: Supports custom theme colors and allows users to switch between preset theme colors
-    link: https://vuepress-theme-hope.github.io/guide/feature/themecolor/
+    link: https://vuepress-theme-hope.github.io/guide/interface/theme-color/
 
   - title: Dark Mode 🌙
     details: Switch between light and dark modes freely
-    link: https://vuepress-theme-hope.github.io/guide/feature/darkmode/
+    link: https://vuepress-theme-hope.github.io/guide/interface/darkmode/
 
   - title: SEO enhancement and Sitemap 🗺
     details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.

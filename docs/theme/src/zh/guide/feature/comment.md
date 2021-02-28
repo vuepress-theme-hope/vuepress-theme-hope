@@ -7,7 +7,7 @@ tags:
   - feature
 ---
 
-通过内置 `@mr-hope/vuepress-plugin-comment`，`vuepress-theme-hope` 实现了评论功能。
+通过内置 [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/zh/)，`vuepress-theme-hope` 实现了评论功能。
 
 <!-- more -->
 

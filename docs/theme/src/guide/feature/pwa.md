@@ -7,7 +7,9 @@ tags:
   - pwa
 ---
 
-The theme will enable progressive web app support using `@mr-hope/vuepress-plugin-pwa` by default. If you do not need this feature or want to use other pwa plugins, you can set the `themeConfig.pwa` to `false` to disable the plugin.
+The theme will enable progressive web app support by including [`@mr-hope/vuepress-plugin-pwa`](https://vuepress-theme-hope.github.io/pwa/).
+
+If you do not need this feature or want to use other pwa plugins, you can set the `themeConfig.pwa` to `false` to disable the plugin.
 
 <!-- more -->
 
