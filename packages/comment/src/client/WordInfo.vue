@@ -7,6 +7,7 @@
   >
     <WordIcon />
     <span v-text="words" />
+    <meta property="wordCount" :content="$page.readingTime.words" />
   </span>
 </template>
 

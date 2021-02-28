@@ -11,6 +11,7 @@
       >
         <span :role="clickable ? 'navigation' : ''" v-text="tag" />
       </li>
+      <meta property="keywords" :content="$tags.join(',')" />
     </ul>
   </span>
 </template>

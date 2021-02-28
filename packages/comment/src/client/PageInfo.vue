@@ -1,11 +1,11 @@
 <template>
-  <div class="page-title">
+  <div class="page-title" vocab="https://schema.org/" typeof="Article">
     <h1>
       <i
         v-if="$frontmatter.icon"
         :class="`iconfont ${iconPrefix}${$frontmatter.icon}`"
       />
-      {{ $page.title }}
+      <span property="name">{{ $page.title }}</span>
     </h1>
     <div v-if="config" class="page-info">
       <span v-if="isOriginal" class="origin" v-text="originText" />

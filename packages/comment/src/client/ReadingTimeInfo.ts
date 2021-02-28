@@ -8,7 +8,11 @@ export default Vue.extend({
   components: { TimeIcon },
 
   computed: {
-    readtime(): string {
+    readingTime(): string {
+      return `PT${Math.max(Math.round(this.$page.readingTime.minutes), 1)}M`;
+    },
+
+    text(): string {
       const minute = readingTimeI18n[this.$localePath || "/"].minute;
       const time = readingTimeI18n[this.$localePath || "/"].time;
 

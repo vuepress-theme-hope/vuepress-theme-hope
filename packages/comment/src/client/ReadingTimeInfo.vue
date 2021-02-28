@@ -1,12 +1,13 @@
 <template>
   <span
-    v-if="readtime"
+    v-if="text"
     class="reading-time-info"
     :aria-label="hint"
     data-balloon-pos="down"
   >
     <TimeIcon />
-    <span v-text="readtime" />
+    <span v-text="text" />
+    <meta property="timeRequired" :content="readingTime" />
   </span>
 </template>
 

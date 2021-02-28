@@ -6,7 +6,7 @@
     data-balloon-pos="down"
   >
     <CalendarIcon />
-    <span v-text="time" />
+    <span property="datePublished" v-text="time" />
   </span>
 </template>
 

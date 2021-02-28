@@ -3,7 +3,7 @@
     <!-- Author -->
     <span v-if="author" :aria-label="authorText" data-balloon-pos="down">
       <AuthorIcon />
-      <span v-text="author" />
+      <span property="author" v-text="author" />
     </span>
 
     <!-- Writing Date -->
@@ -14,7 +14,7 @@
       data-balloon-pos="down"
     >
       <CalendarIcon />
-      <span v-text="time" />
+      <span property="datePublished" v-text="time" />
     </span>
 
     <CategoryInfo
@@ -26,13 +26,14 @@
 
     <!-- Reading time -->
     <span
-      v-if="readtime"
+      v-if="readingTime"
       class="read-time-info"
       :aria-label="readingTimeText"
       data-balloon-pos="down"
     >
       <TimeIcon />
-      <span v-text="readtime" />
+      <span v-text="readingTime" />
+      <meta property="timeRequired" :content="readingTimeContent" />
     </span>
   </div>
 </template>

@@ -61,7 +61,11 @@ export default Vue.extend({
       return [];
     },
 
-    readtime(): string {
+    readingTimeContent(): string {
+      return `PT${Math.max(Math.round(this.$page.readingTime.minutes), 1)}M`;
+    },
+
+    readingTime(): string {
       const { minute, time } = READING_TIME_I18N[this.$localePath || "/"];
 
       return this.article.readingTime.minutes < 1

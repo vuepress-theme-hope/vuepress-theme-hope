@@ -1,10 +1,10 @@
 <template>
-  <article class="article">
+  <article class="article" vocab="https://schema.org/" typeof="Article">
     <StickyIcon v-if="article.frontmatter.sticky" />
     <header class="title" @click="$router.push(article.path)">
       <LockIcon v-if="isEncrypted" />
       <PresentationIcon v-if="article.frontmatter.layout === 'Slide'" />
-      {{ article.title }}
+      <span property="name">{{ article.title }}</span>
     </header>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="article.excerpt" class="excerpt" v-html="article.excerpt" />

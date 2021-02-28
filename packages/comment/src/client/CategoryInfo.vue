@@ -9,7 +9,7 @@
     @click="navigate"
   >
     <CategoryIcon />
-    <span v-text="categoryName" />
+    <span property="articleSection" v-text="categoryName" />
   </span>
 </template>
 
