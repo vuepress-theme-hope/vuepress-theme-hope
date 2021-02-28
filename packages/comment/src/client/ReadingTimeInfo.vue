@@ -1,7 +1,7 @@
 <template>
   <span
     v-if="readtime"
-    class="read-time-info"
+    class="reading-time-info"
     :aria-label="hint"
     data-balloon-pos="down"
   >
@@ -10,4 +10,4 @@
   </span>
 </template>
 
-<script src="./ReadTimeInfo" />
+<script src="./ReadingTimeInfo" />

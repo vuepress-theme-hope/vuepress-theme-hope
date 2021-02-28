@@ -29,13 +29,13 @@ export interface PageInfoI18nConfig {
  * Type of page information
  */
 export type PageInfotype =
-  | "Author"
-  | "Time"
-  | "Category"
-  | "Tag"
-  | "ReadTime"
-  | "Word"
-  | "Visitor";
+  | "author"
+  | "time"
+  | "category"
+  | "tag"
+  | "reading-time"
+  | "word"
+  | "visitor";
 
 interface BaseCommentOptions {
   /**

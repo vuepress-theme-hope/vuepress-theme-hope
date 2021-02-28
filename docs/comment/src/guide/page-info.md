@@ -13,15 +13,15 @@ To keep it globally disabled, please set `pageInfo` to `false` in the plugin opt
 
 The optional values ​​and corresponding contents of the entry are as follows:
 
-| Entry        | Corresponding content  | page frontmatter value             |
-| ------------ | ---------------------- | ---------------------------------- |
-| `'Author'`   | author                 | author                             |
-| `'Time'`     | Writing Date           | time                               |
-| `'Category'` | Category               | category                           |
-| `'Tag'`      | tags                   | tags                               |
-| `'ReadTime'` | Estimated reading time | N / A (automatically generated)    |
-| `'Word'`     | Word count             | N / A (automatically generated)    |
-| `'Visitor'`  | Visits                 | visitor (only Valine is available) |
+| Entry            | Corresponding content  | page frontmatter value               |
+| ---------------- | ---------------------- | ------------------------------------ |
+| `'author'`       | author                 | `author`                             |
+| `'time'`         | Writing Date           | `time`                               |
+| `'category'`     | Category               | `category`                           |
+| `'tag'`          | tags                   | `tags`                               |
+| `'reading-time'` | Estimated reading time | N / A (automatically generated)      |
+| `'word'`         | Word count             | N / A (automatically generated)      |
+| `'visitor'`      | Pageviews              | `visitor` (only Valine is available) |
 
 By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 
@@ -35,7 +35,7 @@ You can configure `author` in the plugin options to set the default author. And 
 
 It is recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
-- **Reading time**
+- **reading time**
 
 The default statistic method is 300 words per minute. You can override it by setting `wordPerminute` in the plugin configuration. This option does not support individual configuration on the page.
 

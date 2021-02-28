@@ -29,19 +29,19 @@ Default author for pages
 ## pageInfo
 
 - Type: `string[] | false`
-- Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+- Default: `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`
 
-The order of the items decides the display order . Fill in `false` to disable it.
+The order of the items decides the display order. Fill in `false` to disable it.
 
 Available items:
 
-- `'Author'`: Author
-- `'Time'`: Writing Date
-- `'Category'`: Category
-- `'Tag'`: Tags
-- `'ReadTime'`: Expect reading time
-- `'Word'`: Word number for the article
-- `'Visitor'`: Visitor Number
+- `'author'`: author
+- `'time'`: writing date
+- `'category'`: category
+- `'tag'`: tags
+- `'reading-time'`: expect reading time
+- `'word'`: word number for the article
+- `'visitor'`: pageviews
 
 ## comment
 

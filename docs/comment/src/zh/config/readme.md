@@ -27,19 +27,19 @@ icon: config
 ## pageInfo
 
 - 类型: `string[] | false`
-- 默认值: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+- 默认值: `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`
 
 文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
 
 可以填入的条目如下:
 
-- `'Author'`: 作者
-- `'Time'`: 写作日期
-- `'Category'`: 分类
-- `'Tag'`: 标签
-- `'ReadTime'`: 预计阅读时间
-- `'Word'`: 字数
-- `'Visitor'`: 访问量
+- `'author'`: 作者
+- `'time'`: 写作日期
+- `'category'`: 分类
+- `'tag'`: 标签
+- `'reading-time'`: 预计阅读时间
+- `'word'`: 字数
+- `'visitor'`: 访问量
 
 ## comment
 

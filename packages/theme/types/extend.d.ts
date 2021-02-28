@@ -48,7 +48,7 @@ declare module "@mr-hope/vuepress-types" {
       noSelect?: boolean;
     };
     feed?: FeedFrontmatterOption;
-    pageInfo?: PageInfotype[];
+    pageInfo?: PageInfotype[] | false;
     visitor?: boolean;
     breadcrumb?: boolean;
     breadcrumbIcon?: boolean;

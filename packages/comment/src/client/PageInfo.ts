@@ -2,7 +2,7 @@ import Vue from "vue";
 import { PageInfotype } from "../types";
 import AuthorInfo from "./AuthorInfo.vue";
 import CategoryInfo from "./CategoryInfo.vue";
-import ReadTimeInfo from "./ReadTimeInfo.vue";
+import ReadingTimeInfo from "./ReadingTimeInfo.vue";
 import TagInfo from "./TagInfo.vue";
 import TimeInfo from "./TimeInfo.vue";
 import VisitorInfo from "./VisitorInfo.vue";
@@ -17,7 +17,7 @@ export default Vue.extend({
   components: {
     AuthorInfo,
     CategoryInfo,
-    ReadTimeInfo,
+    ReadingTimeInfo,
     TagInfo,
     TimeInfo,
     VisitorInfo,
@@ -32,10 +32,7 @@ export default Vue.extend({
     config(): PageInfotype[] | false {
       const themeConfig = this.$themeConfig.pageInfo;
       const pluginConfig = this.commentConfig.pageInfo;
-      const pageConfig = this.$page.frontmatter.pageInfo as
-        | false
-        | PageInfotype[]
-        | undefined;
+      const pageConfig = this.$page.frontmatter.pageInfo;
 
       return pageConfig === false
         ? false
@@ -49,7 +46,7 @@ export default Vue.extend({
         ? false
         : Array.isArray(themeConfig)
         ? themeConfig
-        : ["Author", "Visitor", "Time", "Category", "Tag", "ReadTime"];
+        : ["author", "visitor", "time", "category", "tag", "reading-time"];
     },
     iconPrefix(): string {
       const { iconPrefix } = this.$themeConfig;

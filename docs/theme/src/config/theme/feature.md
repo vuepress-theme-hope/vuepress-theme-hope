@@ -105,19 +105,19 @@ Article number per page
 ## pageInfo
 
 - Type: `string[] | false`
-- Default: `['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']`
+- Default: `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`
 
-Article information can be filled in an array, and the order of the array is the order in which the items are displayed. Fill in `false` to disable it.
+Article information. The order of the items decides the display order. Fill in `false` to disable it.
 
-Available Options:
+Available items:
 
-- `'Author'`: Author
-- `'Time'`: Writing Date
-- `'Category'`: Category
-- `'Tag'`: Tags
-- `'ReadTime'`: Expect reading time
-- `'Word'`: Word number for the article
-- `'Visitor'`: Visitor Number
+- `'author'`: author
+- `'time'`: writing date
+- `'category'`: category
+- `'tag'`: tags
+- `'reading-time'`: expect reading time
+- `'word'`: word number for the article
+- `'visitor'`: pageviews
 
 ## Footer settings
 

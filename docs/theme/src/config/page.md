@@ -148,19 +148,19 @@ Whether to prohibit selected text
 ### pageInfo
 
 - Type: `PageInfo[] | false`
-- Default value: Globally configured value (global default is `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)
+- Default value: Globally configured value (global default is `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`)
 
 The optional values and corresponding contents of `PageInfo` are as follows:
 
-| Item         | Corresponding Content | Page frontmatter Value               |
-| ------------ | --------------------- | ------------------------------------ |
-| `'author'`   | Author                | author                               |
-| `'time'`     | Writing Date          | time                                 |
-| `'category'` | Category              | category                             |
-| `'tag'`      | Tags                  | tags                                 |
-| `'readTime'` | Expect reading time   | N / A (automatically generated)      |
-| `'word'`     | Word count            | N / A (automatically generated)      |
-| `'visitor'`  | Visit Number          | visitor (only available with Valine) |
+| Item             | Corresponding Content | Page frontmatter Value                 |
+| ---------------- | --------------------- | -------------------------------------- |
+| `'author'`       | Author                | `author`                               |
+| `'time'`         | Writing Date          | `time`                                 |
+| `'category'`     | Category              | `category`                             |
+| `'tag'`          | Tags                  | `tag`                                  |
+| `'reading-time'` | Expect reading time   | N / A (automatically generated)        |
+| `'word'`         | Word count            | N / A (automatically generated)        |
+| `'visitor'`      | Visit Number          | `visitor` (only available with Valine) |
 
 Set whether to show page details on the current page
 

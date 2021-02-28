@@ -154,19 +154,19 @@ tags:
 ### pageInfo
 
 - 类型: `PageInfo[] | false`
-- 默认值: 全局中配置的值 (全局默认为 `['author', 'visitor', 'time', 'category', 'tag', 'readtime']`)
+- 默认值: 全局中配置的值 (全局默认为 `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`)
 
 `PageInfo` 可选的值和对应内容如下:
 
-| 条目         | 对应内容     | 页面 frontmatter 值     |
-| ------------ | ------------ | ----------------------- |
-| `'author'`   | 作者         | author                  |
-| `'time'`     | 写作日期     | time                    |
-| `'category'` | 分类         | category                |
-| `'tag'`      | 标签         | tags                    |
-| `'readtime'` | 预计阅读时间 | N/A(自动生成)           |
-| `'word'`     | 字数         | N/A(自动生成)           |
-| `'visitor'`  | 访问量       | visitor(仅 Valine 可用) |
+| 条目             | 对应内容     | 页面 frontmatter 值     |
+| ---------------- | ------------ | ----------------------- |
+| `'author'`       | 作者         | author                  |
+| `'time'`         | 写作日期     | time                    |
+| `'category'`     | 分类         | category                |
+| `'tag'`          | 标签         | tags                    |
+| `'reading-time'` | 预计阅读时间 | N/A(自动生成)           |
+| `'word'`         | 字数         | N/A(自动生成)           |
+| `'visitor'`      | 访问量       | visitor(仅 Valine 可用) |
 
 设置当前页面的文章信息内容
 

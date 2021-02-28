@@ -37,15 +37,15 @@ To keep it globally disabled, please set `pageInfo` to `false` in the plugin opt
 
 The optional values ​​and corresponding contents of the entry are as follows:
 
-| Entry        | Corresponding content  | page frontmatter value             |
-| ------------ | ---------------------- | ---------------------------------- |
-| `'author'`   | author                 | author                             |
-| `'time'`     | Writing Date           | time                               |
-| `'category'` | Category               | category                           |
-| `'tag'`      | tags                   | tags                               |
-| `'readtime'` | Estimated reading time | N / A (automatically generated)    |
-| `'word'`     | Word count             | N / A (automatically generated)    |
-| `'visitor'`  | Visits                 | visitor (only Valine is available) |
+| Entry            | Corresponding content  | page frontmatter value             |
+| ---------------- | ---------------------- | ---------------------------------- |
+| `'author'`       | author                 | author                             |
+| `'time'`         | Writing Date           | time                               |
+| `'category'`     | Category               | category                           |
+| `'tag'`          | tags                   | tags                               |
+| `'reading-time'` | Estimated reading time | N / A (automatically generated)    |
+| `'word'`         | Word count             | N / A (automatically generated)    |
+| `'visitor'`      | Visits                 | visitor (only Valine is available) |
 
 By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 

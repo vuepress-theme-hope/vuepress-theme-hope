@@ -520,15 +520,15 @@ export interface HopeThemeConfig
    *
    * Avaliable Options:
    *
-   * - `'Author'`: Author
-   * - `'Time'`: Writing Date
-   * - `'Category'`: Category
-   * - `'Tag'`: Tags
-   * - `'ReadTime'`: Expect reading time
-   * - `'Word'`: Word number for the article
-   * - `'Visitor'`: Visitor Number
+   * - `'author'`: Author
+   * - `'time'`: Writing Date
+   * - `'category'`: Category
+   * - `'tag'`: Tags
+   * - `'reading-time'`: Expect reading time
+   * - `'word'`: Word number for the article
+   * - `'visitor'`: Visitor Number
    *
-   * @default ['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']
+   * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
    */
   pageInfo?: PageInfotype[] | false;
 
