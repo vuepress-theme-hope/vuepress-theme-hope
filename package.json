@@ -25,7 +25,7 @@
     "docs/photo-swipe:serve": "yarn workspace photo-swipe-docs docs:serve",
     "docs/pwa:serve": "yarn workspace pwa-docs docs:serve",
     "docs/reading-time:serve": "yarn workspace reading-time-docs docs:serve",
-    "docs/seo:serve": "yarn workspace seo-docs serve",
+    "docs/seo:serve": "yarn workspace seo-docs docs:serve",
     "docs/sitemap:serve": "yarn workspace sitemap-docs docs:serve",
     "docs/theme:serve": "yarn workspace theme-docs docs:serve",
     "docs:build": "lerna run docs:build --parallel",

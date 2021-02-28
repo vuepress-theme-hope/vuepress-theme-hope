@@ -23,8 +23,36 @@ module.exports = config({
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsDir: "docs/seo/src",
 
+    nav: [
+      { text: "Home", icon: "home", link: "/" },
+      {
+        text: "Guide",
+        icon: "creative",
+        link: "/guide/",
+      },
+      {
+        text: "Config",
+        icon: "config",
+        link: "/config/",
+      },
+    ],
+
     locales: {
-      "/zh/": {},
+      "/zh/": {
+        nav: [
+          { text: "主页", icon: "home", link: "/zh/" },
+          {
+            text: "指南",
+            icon: "creative",
+            link: "/zh/guide/",
+          },
+          {
+            text: "配置",
+            icon: "config",
+            link: "/zh/config/",
+          },
+        ],
+      },
     },
 
     blog: false,

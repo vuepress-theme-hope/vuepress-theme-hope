@@ -1,7 +1,7 @@
 import { black, blue, cyan } from "chalk";
 import { readFile, existsSync, writeFile } from "fs-extra";
 import { relative, resolve } from "path";
-import { generateSeo } from "./genSeo";
+import { generateSeo } from "./seo";
 import { appendMeta } from "./meta";
 
 import type {
@@ -29,20 +29,20 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
   return {
     name: "seo",
 
-    extendPageData($page): void {
-      const $site = context.getSiteData();
-      const meta = $page.frontmatter.meta || [];
+    extendPageData(page): void {
+      const site = context.getSiteData();
+      const meta = page.frontmatter.meta || [];
 
       // In VuePress core, permalinks are built after enhancers.
       const pageClone = Object.assign(
-        Object.create(Object.getPrototypeOf($page)) as Page,
-        $page
+        Object.create(Object.getPrototypeOf(page)) as Page,
+        page
       );
       pageClone.buildPermalink();
 
       const pageSeoInfo: PageSeoInfo = {
-        $page,
-        $site,
+        page,
+        site,
         themeConfig,
         locale: getLocales(themeConfig),
         path: pageClone.path,
@@ -55,7 +55,7 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
       appendMeta(meta, metaContext, seoOption);
       if (seoOption.customMeta) seoOption.customMeta(meta, pageSeoInfo);
 
-      $page.frontmatter.meta = meta;
+      page.frontmatter.meta = meta;
     },
 
     async generated(): Promise<void> {

@@ -10,7 +10,7 @@ export const resolveUrl = (base: string, url: string): string =>
 export const generateSeo = (
   options: SeoOptions,
   base: string,
-  { $page, $site, locale, path, themeConfig }: PageSeoInfo
+  { page, site, locale, path, themeConfig }: PageSeoInfo
 ): SeoContent => {
   const {
     frontmatter: {
@@ -22,10 +22,10 @@ export const generateSeo = (
       tags = tag as string[],
     },
     lastUpdatedTime,
-  } = $page;
+  } = page;
 
   const type = ["article", "category", "tag", "timeline"].some((folder) =>
-    $page.regularPath.startsWith(`/${folder}`)
+    page.regularPath.startsWith(`/${folder}`)
   )
     ? "website"
     : "article";
@@ -45,17 +45,17 @@ export const generateSeo = (
 
   return {
     "og:url": resolveUrl(base, path),
-    "og:site_name": $site.title || "",
-    "og:title": $page.title,
-    "og:description": $page.frontmatter.description || "",
+    "og:site_name": site.title || "",
+    "og:title": page.title,
+    "og:description": page.frontmatter.description || "",
     "og:type": type,
     "og:image": image ? resolveUrl(base, image) : "",
     "og:updated_time": modifiedTime,
-    "og:locale": $page._computed.$lang,
+    "og:locale": page._computed.$lang,
     "og:locale:alternate": locale,
 
     "twitter:card": "summary_large_image",
-    "twitter:image:alt": $site.title || "",
+    "twitter:image:alt": site.title || "",
 
     "article:author": author,
     "article:tag": articleTags,

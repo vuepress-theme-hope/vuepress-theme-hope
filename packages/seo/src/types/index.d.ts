@@ -4,8 +4,11 @@ import type { SeoContent } from "./seo";
 export type * from "./seo";
 
 export interface PageSeoInfo {
-  $page: Page;
-  $site: SiteConfig;
+  /** Current Page Object */
+  page: Page;
+  /** Vuepress Config  */
+  site: SiteConfig;
+  /** Current ThemeConfig */
   themeConfig: ThemeConfig | Record<string, never>;
   /** langs which are supported */
   locale: string[];
