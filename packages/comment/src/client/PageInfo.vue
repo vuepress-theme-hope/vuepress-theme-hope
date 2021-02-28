@@ -5,7 +5,7 @@
         v-if="$frontmatter.icon"
         :class="`iconfont ${iconPrefix}${$frontmatter.icon}`"
       />
-      <span property="name">{{ $page.title }}</span>
+      <span property="headline">{{ $page.title }}</span>
     </h1>
     <div v-if="config" class="page-info">
       <span v-if="isOriginal" class="origin" v-text="originText" />
@@ -15,6 +15,11 @@
         :key="$route.path + item"
       />
     </div>
+    <meta
+      v-if="$frontmatter.image"
+      property="image"
+      :content="$withBase($frontmatter.image)"
+    />
     <hr />
   </div>
 </template>

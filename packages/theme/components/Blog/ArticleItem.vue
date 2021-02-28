@@ -4,7 +4,12 @@
     <header class="title" @click="$router.push(article.path)">
       <LockIcon v-if="isEncrypted" />
       <PresentationIcon v-if="article.frontmatter.layout === 'Slide'" />
-      <span property="name">{{ article.title }}</span>
+      <span property="headline">{{ article.title }}</span>
+      <meta
+        v-if="article.frontmatter.image"
+        property="image"
+        :content="$withBase(article.frontmatter.image)"
+      />
     </header>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="article.excerpt" class="excerpt" v-html="article.excerpt" />
