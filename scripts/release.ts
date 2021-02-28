@@ -87,7 +87,6 @@ const release = async (): Promise<void> => {
   const releaseArguments = [
     "publish",
     version,
-    "--force-publish",
     "--dist-tag",
     npmTag,
     "--registry",
