@@ -2,7 +2,7 @@ import Vue from "vue";
 import { SidebarHeader, groupSidebarHeaders } from "@theme/util/sidebar";
 import { isActive } from "@theme/util/path";
 
-import type { CreateElement, VNode, PropType } from "vue";
+import type { CreateElement, VNode } from "vue";
 import type { Route } from "vue-router";
 
 interface AnchorItem {
@@ -74,24 +74,13 @@ export default Vue.extend({
 
   functional: true,
 
-  props: {
-    header: {
-      type: Array as PropType<SidebarHeader[]>,
-      default: (): SidebarHeader[] => [],
-    },
-  },
-
-  render(
-    h,
-    { parent: { $page, $route, $themeConfig, $themeLocaleConfig }, props }
-  ) {
-    const { header } = props;
+  render(h, { parent: { $page, $route, $themeConfig, $themeLocaleConfig } }) {
     const maxDepth =
       ($page.frontmatter.sidebarDepth ||
         ($themeLocaleConfig.sidebarDepth as number | undefined) ||
         $themeConfig.sidebarDepth ||
         2) + 1;
-    const children = groupSidebarHeaders(header);
+    const children = groupSidebarHeaders($page.headers || []);
 
     return h("div", { attrs: { class: "anchor-place-holder" } }, [
       h("aside", { attrs: { id: "anchor" } }, [

@@ -20,7 +20,7 @@
     </MyTransition>
 
     <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
-      <Anchor :key="$route.path" :header="headers" />
+      <Anchor :key="$route.path" />
     </MyTransition>
 
     <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
