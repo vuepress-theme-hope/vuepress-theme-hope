@@ -2,6 +2,28 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.11.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.11.0...v1.11.1) (2021-02-28)
+
+### Bug Fixes
+
+- **component:** fix a typo bug ([b8fa45e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b8fa45e318c13131ddf115f221ec20ecaf88c6af))
+- **components:** fix typos in style ([276b955](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/276b95571ca0ffb99cafe388795e2271356b83d8))
+- **theme:** display Anchor headers when sidebar is disabled ([f59efe3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f59efe3eca97c8bf91b1dd3bcc1340beedb98545))
+- **theme:** fix blogger intro hint ([a2a7e34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a2a7e3400c5583a4aa0747bcaa50d590c818dbc3))
+- **theme:** fix error when nagivating to same url ([eaf34e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eaf34e64e0ef30725606b832c3cc1d7c770189f5))
+
+### Features
+
+- **comment:** add RDFa ([4dc4a35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4dc4a355de53cff7397074974a5580d7d81df4e1))
+- **comment:** let pageInfo to be lowercase ([fd9a6a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd9a6a08c30019e05ccf5bfa0e78158b6b4e91c4))
+- **components:** add RDFa for BreadCrumb ([2c93ebb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c93ebb5fc0c26de558e24d1e4a3e916c3ebce30))
+- **seo:** add headline and image for RDFa ([36ccc4c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/36ccc4c180132af4f1ceeba776477fb23d0b8d05))
+- **theme:** add RDFa for BloggerInfo ([2788fbd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2788fbde428f12fd08ad5f008ef5673831fbc2da))
+
+### BREAKING CHANGES
+
+- **comment:** `ReadTime` changed to `reading-time`
+
 ## [1.11.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.10.0...v1.11.0) (2021-02-26)
 
 ### Bug Fixes
