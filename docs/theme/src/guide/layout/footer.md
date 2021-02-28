@@ -85,5 +85,3 @@ This field is the same as `themeConfig.blog.links` ([see here for specific confi
   footer: ""
   ---
   ```
-
-:::

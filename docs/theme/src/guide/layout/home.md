@@ -40,7 +40,7 @@ Home hero (logo) image address, need to fill in the absolute path (pictures need
 
 ### darkHeroImage
 
-- 类型: `string`
+- Type: `string`
 
 Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
 
@@ -80,7 +80,7 @@ Feature description
 
 ## Demo
 
-```yaml
+```md
 ---
 home: true
 icon: home
@@ -148,5 +148,4 @@ features:
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
-
 ```

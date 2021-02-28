@@ -7,13 +7,13 @@ tags:
   - layout
 ---
 
-The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig <Badge text="Support page config" />[^applypartically], the default value is `true`.
+The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig <Badge text="Support page config" /> [^applypartically], the default value is `true`.
 
 Without any config, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
 <!-- more -->
 
-You can also control the icon display of the path navigation using `breadcrumbIcon` field <Badge text="Support page config" />[^applypartically], the default value is `true`.
+You can also control the icon display of the path navigation using `breadcrumbIcon` field <Badge text="Support page config" />, the default value is `true`.
 
 ::: warning Notice
 

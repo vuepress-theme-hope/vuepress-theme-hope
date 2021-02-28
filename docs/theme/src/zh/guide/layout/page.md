@@ -51,12 +51,11 @@ icon: home
 
 上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以使用 `themeConfig` 或 frontmatter 来明确地重写或者禁用它:
 
-```yaml
+```md
 ---
 prev: ./some-other-page
 next: false
 ---
-
 ```
 
 ## 评论
@@ -67,11 +66,10 @@ next: false
 
 默认情况下，每个 `*.md` 文件将会被渲染在一个 `<div class="page">` 容器中，同时还有侧边栏、自动生成的编辑链接，以及上 / 下一篇文章的链接。如果你想要使用一个完全自定义的组件来代替当前的页面(而只保留导航栏)，你可以再次使用 frontmatter 来指定这个组件。
 
-```yaml
+```md
 ---
 layout: SpecialLayout
 ---
-
 ```
 
 这将会为当前的页面渲染 `.vuepress/components/SpecialLayout.vue` 布局。

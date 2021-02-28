@@ -75,30 +75,26 @@ VuePress also supports JSON and [TOML](https://github.com/toml-lang/toml) frontm
 
 JSON frontmatter needs to start and end in curly braces:
 
-```
+```md
 ---
-{
-  "title": "Blogging Like a Hacker",
-  "lang": "en-US"
-}
+{ "title": "Blogging Like a Hacker", "lang": "en-US" }
 ---
 ```
 
 TOML frontmatter needs to be explicitly marked as TOML:
 
-```
+```md
 ---toml
 title = "Blogging Like a Hacker"
 lang = "en-US"
 ---
 ```
 
-```yaml
+```md
 ---
 title: Blogging Like a Hacker
 lang: en-US
 ---
-
 ```
 
 ## Table of Contents

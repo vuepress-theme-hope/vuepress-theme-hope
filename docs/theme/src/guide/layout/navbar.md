@@ -7,7 +7,7 @@ tags:
   - layout
 ---
 
-The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [Languages](https://v1.vuepress.vuejs.org/guide/i18n.md) and [Repository Link](#git-repo-and-edit-links), they all depend on your configuration.
+The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [Languages](https://v1.vuepress.vuejs.org/guide/i18n.html) and [Repository Link](#git-repo-and-edit-links), they all depend on your configuration.
 
 <!-- more -->
 
@@ -113,11 +113,10 @@ module.exports = {
 
 You can disable the navbar for a specific page via `YAML front matter`:
 
-```yaml
+```md
 ---
 navbar: false
 ---
-
 ```
 
 ### Navigation bar icon
@@ -158,11 +157,10 @@ module.exports = {
 
 You can also disable the built-in search box for individual pages with `YAML front matter`:
 
-```yaml
+```md
 ---
 search: false
 ---
-
 ```
 
 ::: tip
@@ -244,11 +242,10 @@ module.exports = {
 
 You can overwrite the following properties on specific pages via `YAML front matter`:
 
-```yaml
+```md
 ---
 editLink: false # Will overwrite 'editLinks' from themeConfig
 ---
-
 ```
 
 ## Theme color button

@@ -154,11 +154,10 @@ Make sure to define the fallback configuration last, because VuePress checks eac
 
 To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
 
-```yaml
+```md
 ---
 sidebar: auto
 ---
-
 ```
 
 You can also enable it in all pages by using config:
@@ -172,7 +171,7 @@ module.exports = {
 };
 ```
 
-In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.md) mode, you can also apply it to a specific locale:
+In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.html) mode, you can also apply it to a specific locale:
 
 ```js
 // .vuepress/config.js
@@ -189,11 +188,10 @@ module.exports = {
 
 You can disable the sidebar on a specific page with `YAML front matter`:
 
-```yaml
+```md
 ---
 sidebar: false
 ---
-
 ```
 
 ## Blogger Information

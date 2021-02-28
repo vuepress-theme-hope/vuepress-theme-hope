@@ -7,7 +7,7 @@ tags:
   - navbar
 ---
 
-导航栏可能包含你的站点名称、[搜索框](#搜索框)、 [导航栏链接](#导航栏链接)、[多语言切换](https://v1.vuepress.vuejs.org/zh/guide/i18n.md)、[仓库链接](#git-仓库和编辑链接)，它们均取决于你的配置。
+导航栏可能包含你的站点名称、[搜索框](#搜索框)、 [导航栏链接](#导航栏链接)、[多语言切换](https://v1.vuepress.vuejs.org/zh/guide/i18n.html)、[仓库链接](#git-仓库和编辑链接)，它们均取决于你的配置。
 
 <!-- more -->
 
@@ -113,11 +113,10 @@ module.exports = {
 
 你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏:
 
-```yaml
+```md
 ---
 navbar: false
 ---
-
 ```
 
 ### 导航栏图标
@@ -158,11 +157,10 @@ module.exports = {
 
 你可以通过 `YAML front matter` 来对单独的页面禁用内置的搜索框:
 
-```yaml
+```md
 ---
 search: false
 ---
-
 ```
 
 ::: tip
@@ -240,11 +238,10 @@ module.exports = {
 
 你可以通过 `YAML front matter` 来禁用指定页面的编辑链接:
 
-```yaml
+```md
 ---
 editLink: false
 ---
-
 ```
 
 ## 主题色切换按钮

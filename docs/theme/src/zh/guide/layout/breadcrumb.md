@@ -7,11 +7,11 @@ tags:
   - layout
 ---
 
-vuepress-theme-hope 添加了开箱即用的路径导航支持，你可以通过 `breadcrumb` 字段控制它 <Badge text="支持页面配置" />[^applypartically]，默认的值为 `true`。
+vuepress-theme-hope 添加了开箱即用的路径导航支持，你可以通过 `breadcrumb` 字段控制它 <Badge text="支持页面配置" /> [^applypartically]，默认的值为 `true`。
 
 无需任何额外配置，一个和主题色相符合的路径导航会显示在页面内容最上方，帮助阅读者理解文档结构。
 
-你也可以通过 `breadcrumbIcon` 字段 <Badge text="支持页面配置" />[^applypartically] 控制路径导航的图标显示，默认值为 `true`。
+你也可以通过 `breadcrumbIcon` 字段 <Badge text="支持页面配置" /> 控制路径导航的图标显示，默认值为 `true`。
 
 <!-- more -->
 

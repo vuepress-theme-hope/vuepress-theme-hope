@@ -51,12 +51,11 @@ Please see [LastUpdate time](../feature/last-update.md).
 
 Prev and next links are automatically inferred based on the sidebar order of the active page. You can also explicitly overwrite or disable them globally with theme config or on specific pages using `Front matter`:
 
-```yaml
+```md
 ---
 prev: ./some-other-page
 next: false
 ---
-
 ```
 
 ## Comment
@@ -67,11 +66,10 @@ Please see [Comment section](../feature/comment.md) for details.
 
 By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using `YAML front matter`:
 
-```yaml
+```md
 ---
 layout: SpecialLayout
 ---
-
 ```
 
 This will render `.vuepress/components/SpecialLayout.vue` for the given page.

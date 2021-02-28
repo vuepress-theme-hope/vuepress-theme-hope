@@ -80,7 +80,7 @@ tags:
 
 ## 配置案例
 
-```yaml
+```md
 ---
 home: true
 title: 主页
@@ -148,5 +148,4 @@ features:
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
-
 ```

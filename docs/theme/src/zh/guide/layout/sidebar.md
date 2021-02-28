@@ -99,7 +99,7 @@ module.exports = {
 
 如果你想为不同的页面组来显示不同的侧边栏，首先，将你的页面文件组织成下述的目录结构:
 
-```md
+```
 .
 ├─ README.md
 ├─ contact.md
@@ -154,11 +154,10 @@ module.exports = {
 
 如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 frontmatter 来实现:
 
-```yaml
+```md
 ---
 sidebar: auto
 ---
-
 ```
 
 你也可以通过配置来在所有页面中启用它:
@@ -172,7 +171,7 @@ module.exports = {
 };
 ```
 
-在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.md) 模式下, 你也可以将其应用到某一特定的语言下:
+在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.html) 模式下, 你也可以将其应用到某一特定的语言下:
 
 ```js
 // .vuepress/config.js
@@ -189,11 +188,10 @@ module.exports = {
 
 你可以通过 `YAML front matter` 来禁用指定页面的侧边栏:
 
-```yaml
+```md
 ---
 sidebar: false
 ---
-
 ```
 
 ## 博主信息
