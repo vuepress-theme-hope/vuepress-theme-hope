@@ -74,14 +74,14 @@ The effective time of the content. It’s the time to keep the cache after reque
 - Type: `string`
 - Recommended to set manually: **Yes**
 
-A picture presenting the channel. It is recommended to set a square picture with a size not smaller than 512×512.
+A picture presenting the channel. A square picture with a size not smaller than 512×512 is recommended.
 
 ## channel.icon
 
 - Type: `string`
 - Recommended to set manually: **Yes**
 
-An icon representing a channel, it is recommended to set a square picture, the size is preferably not less than 128×128, and the background color should be transparent.
+An icon representing a channel, a square picture, with not less than 128×128 in size, and transparent background color is recommended .
 
 ## channel.author
 

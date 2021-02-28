@@ -15,7 +15,7 @@ vuepress-theme-hope provides footer feature for all pages <Badge text="Support p
 
 In the themeConfig, `footer` field is used to config footer globally. You can set `footer.content` and `footer.copyright` in `themeConfig` to set the default footer content and copyright information globally.
 
-The footer is not displayed on the page by default. If you want to display the footer on every page, you need to set `themeConfig.footer.display` to `true`.
+The footer is not displayed on the page by default. To display the footer on every page, you need to set `themeConfig.footer.display` to `true`.
 
 ## Page Config
 
@@ -33,7 +33,7 @@ You can configure the `footer`, `copyrightText` and `medialink` fields in the fr
 
 The `copyrightText` field is used to set the copyright information of a specific page. It also supports HTMLString (useful when you cite an article and the article uses a specific license).
 
-Of course, when `themeConfig.footer.display` is `true`, you can also fill in `false` to hide the copyright information of a specific page.
+When `themeConfig.footer.display` is `true`, you can also fill in `false` to hide the copyright information of a specific page.
 
 ### medialink
 

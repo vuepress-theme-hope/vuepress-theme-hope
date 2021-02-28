@@ -11,7 +11,7 @@ In addition to using new syntax inside Markdown to enhance content, you can also
 
 ## shields.io
 
-You can use [shields.io](https://shields.io/) to generate a large number of dynamic badges, such as the project’s Stars, NPM version number, downloads, etc.
+You can use [shields.io](https://shields.io/) to generate a large number of dynamic badges, such as the project’s Stars, npm version number, downloads, etc.
 
 Input:
 
@@ -52,8 +52,8 @@ For detailed parameters and usage, please see [Home](https://shields.io/).
 
 Markmap is a tool for converting Markdown into mind maps. It supports more format and content than the built-in flowchart of the theme.
 
-1. Use [Markmap](https://markmap.js.org/) to generate mind map html file
-1. Place the html file under `.vuepress/public/`
+1. Use [Markmap](https://markmap.js.org/) to generate mind map HTML file
+1. Place the HTML file under `.vuepress/public/`
 1. Insert into Markdown via `<iframe>`
 
 Input:
@@ -76,7 +76,7 @@ Output:
 
 ## CodePen
 
-[Codepen](https://codepen.io/) can easily create code demo and embed them.
+You can use [CodePen](https://codepen.io/) to create code demo and embed them.
 
 ```html
 <iframe

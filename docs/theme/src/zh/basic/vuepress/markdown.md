@@ -54,11 +54,11 @@ tags:
 - [vuejs.org](https://vuejs.org)
 - [VuePress on GitHub](https://github.com/vuejs/vuepress)
 
-## Front Matter
+## Frontmatter
 
-VuePress 提供了对 [YAML front matter](https://jekyllrb.com/docs/frontmatter/) 开箱即用的支持。
+VuePress 提供了对 [YAML frontmatter](https://jekyllrb.com/docs/frontmatter/) 开箱即用的支持。
 
-Front matter 必须是 markdown 文件中的第一部分，并且必须采用在三点划线之间书写的有效的 YAML。 这是一个基本的例子:
+Frontmatter 必须是 Markdown 文件中的第一部分，并且必须采用在三点划线之间书写的有效的 YAML。 这是一个基本的例子:
 
 ```md
 ---
@@ -67,11 +67,11 @@ lang: en-US
 ---
 ```
 
-在这些三条虚线之间，你可以设置变量。然后，你可以使用 `$frontmatter` 访问这些变量。这些数据可以在当前 markdown 的正文，或者是任意的自定义或主题组件中使用。
+在这些三条虚线之间，你可以设置变量。然后，你可以使用 `$frontmatter` 访问这些变量。这些数据可以在当前 Markdown 的正文，或者是任意的自定义或主题组件中使用。
 
 ::: tip
 
-在 VuePress 中，Front matter 是 **可选的**。
+在 VuePress 中，Frontmatter 是 **可选的**。
 
 :::
 

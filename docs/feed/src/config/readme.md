@@ -8,7 +8,7 @@ icon: config
 - Type: `string`
 - Required: Yes
 
-The domain name of the deployment website.
+The domain name of the deployment site.
 
 ## baseLang
 
@@ -40,7 +40,7 @@ The final feed items will be the same squence.
 
 ::: warning
 
-We strongly recommend you to set this option, otherwise the order of items in the feed stream is completely determined by the order of pages output by vuepress.
+We strongly recommend you to set this option, otherwise the order of items in the feed stream is completely determined by the order of pages output by VuePress.
 
 You can sort the pages in the site according to your needs.
 
@@ -51,9 +51,9 @@ You can sort the pages in the site according to your needs.
 - Type: `number`
 - Default: All feed items count
 
-设置 feed 的最大项目数量。设置后会在所有页面排序好后，截取前 count 个项目。
+Set the maximum number of items in the feed. After setting, after all pages are sorted, the first `count` items will be intercepted.
 
-如果你的站点文章很多，你可能需要考虑设置这个选项以减少 feed 文件大小。
+If your site has a lot of articles, you may want to consider setting this option to reduce the feed file size.
 
 ## output
 

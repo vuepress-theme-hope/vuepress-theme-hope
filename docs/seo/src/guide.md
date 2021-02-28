@@ -3,7 +3,7 @@ title: Guide
 icon: guide
 ---
 
-This plugin will inject the `<meta>` tag to enhance the search engine optimization of the website.
+This plugin will inject the `<meta>` tag to enhance the search engine optimization of the site.
 
 ## Out of box
 
@@ -14,7 +14,7 @@ By default, the plugin will read the site configuration, theme configuration and
 The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
 
 | property | content |
-| :----------------------: | :-------------------------------------------------------------------: | | |
+| :------: | :-----: || |
 | `og:url` | `themeConfig.hostname` + `path` |
 | `og:site_name` | `$site.title` |
 | `og:title` | `$page.title` |
@@ -35,7 +35,7 @@ The following are the `<meta>` tags and their values that will be injected into 
 
 You can configure the `meta` option in the frontmatter of the page to customize the content of the `<meta>` tag of a specific page for SEO.
 
-E.g.:
+For example:
 
 ```md
 ---
@@ -85,9 +85,9 @@ interface PageSeoInfo {
 }
 ```
 
-The type of `Meta` is `Record<"content" | "name" | "charset" | "http-equiv", string>`, the key of the object will be rendered as the attribute of the `<meta>` tag, and the value will be rendered as The value of the corresponding attribute.
+The interface of `Meta` is `Record<"content" | "name" | "charset" | "http-equiv", string>`, the key of the object will be rendered as the attribute of the `<meta>` tag, and the value will be rendered as The value of the corresponding attribute.
 
-E.g.:
+For example:
 
 ```js
 (meta: Meta, info: PageSeoInfo) => {
@@ -103,9 +103,9 @@ Will inject `<meta a="1" b="2" />` into the `<head>` of the current page, and re
 
 ## SEO Introduction
 
-**S**earch **e**ngine **optimization** (SEO) is the process of improving the quality and quantity of website traffic to a website or a web page from search engines. SEO targets unpaid traffic (known as "natural" or "organic" results) rather than direct traffic or paid traffic. Unpaid traffic may originate from different kinds of searches, including image search, video search, academic search, news search, and industry-specific vertical search engines.
+**S**earch **e**ngine **optimization** (SEO) is the process of improving the quality and quantity of site traffic to a site or a web page from search engines. SEO targets unpaid traffic (known as "natural" or "organic" results) rather than direct traffic or paid traffic. Unpaid traffic may originate from different kinds of searches, including image search, video search, academic search, news search, and industry-specific vertical search engines.
 
-As an Internet marketing strategy, SEO considers how search engines work, the computer-programmed algorithms that dictate search engine behavior, what people search for, the actual search terms or keywords typed into search engines, and which search engines are preferred by their targeted audience. SEO is performed because a website will receive more visitors from a search engine when websites rank higher on the search engine results page (SERP). These visitors can then potentially be converted into customers.
+As an internet marketing strategy, SEO considers how search engines work, the computer-programmed algorithms that dictate search engine behavior, what people search for, the actual search terms or keywords typed into search engines, and which search engines are preferred by their targeted audience. SEO is performed because a site will receive more visitors from a search engine when sites rank higher on the search engine results page (SERP). These visitors can then potentially be converted into customers.
 
 ## Related documents
 
@@ -119,7 +119,7 @@ As an Internet marketing strategy, SEO considers how search engines work, the co
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 
-  RDFa mainly marks HTML structure. This is what the plugin cannot support. [vuepress-theme-hope](https://vuepress-theme-hope.github.io/zh/) uses this feature to pass Google's rich media structure test. You can consider using it.
+  RDFa mainly marks HTML structure. This is what the plugin cannot support. [vuepress-theme-hope](https://vuepress-theme-hope.github.io/zh/) uses this feature to pass Google’s rich media structure test. You can consider using it.
 
 - [Schema.Org](https://schema.org/)
 

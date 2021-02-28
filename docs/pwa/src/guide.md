@@ -21,7 +21,7 @@ You can also set other options in `themeConfig.pwa.manifest`.
 
 ::: warning
 
-Note that all the url in manifest will not be resolved, which means if you are deploying in a subfolder, you should set base yourself.
+Note that all the URL in manifest will not be resolved, which means if you are deploying in a subfolder, you should set base yourself.
 
 :::
 

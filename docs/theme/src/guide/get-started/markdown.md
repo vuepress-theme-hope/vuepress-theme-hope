@@ -16,9 +16,9 @@ You need to build your document or blog page by creating and writing Markdown in
 
 If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](../../basic/markdown/readme.md) and [Markdown Demo](../../basic/markdown/demo.md).
 
-::: info Front Matter
+::: info Frontmatter
 
-Front Matter is a very important concept in VuePress. If you don’t know it, you need to read [Front Matter Introduction](../../basic/vuepress/markdown.md#front-matter).
+Frontmatter is a very important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../basic/vuepress/markdown.md#front-matter).
 
 :::
 

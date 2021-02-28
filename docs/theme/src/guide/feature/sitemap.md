@@ -11,21 +11,21 @@ tags:
 
 The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages ​​according to the locales config.
 
-If you don't need this plugin, please set `themeConfig.sitemap` to `false`.
+If you don’t need this plugin, please set `themeConfig.sitemap` to `false`.
 
 ## Control Sitemap Link
 
-By default, all website links except 404 page will be added to the Sitemap.
+By default, all site links except 404 page will be added to the Sitemap.
 
-If you want to add other pages to the Sitemap outside of the VuePress project page, please turn them into an array and pass to `themeConfig.sitemap.urls`.
+To add other pages to the Sitemap outside of the VuePress project page, please turn them into an array and pass to `themeConfig.sitemap.urls`.
 
-If you don't want certain pages to appear in the sitemap, you can turn them into an array and pass them to `themeConfig.sitemap.exclude`, or set `feed.exclude` to `true` in the frontmatter of the corresponding page.
+If you don’t want certain pages to appear in the sitemap, you can turn them into an array and pass them to `themeConfig.sitemap.exclude`, or set `feed.exclude` to `true` in the frontmatter of the corresponding page.
 
 You can also control the output link through the `themeConfig.sitemap.outFile`. The default output directory is `sitemap.xml`.
 
 ## Change frequency
 
-The default update cycle of the page is `daily` (every day). If you want to modify the entire page cycle, please set `themeConfig.sitemap.changefreq`. You can also set `feed.changefreq` in the frontmatter of the page. Note that page has a higher priority.
+The default update cycle of the page is `daily` (every day). To modify the entire page cycle, please set `themeConfig.sitemap.changefreq`. You can also set `feed.changefreq` in the frontmatter of the page. Note that page has a higher priority.
 
 The legal frequencies are:
 

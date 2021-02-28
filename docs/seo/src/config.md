@@ -57,7 +57,7 @@ You can use this option to directly inject any format of `<meta>` tags into `<he
   }
   ```
 
-- The interface type of `Meta` is `Record<"content" | "name" | "charset" | "http-equiv", string>`
+- The interface of `Meta` is `Record<"content" | "name" | "charset" | "http-equiv", string>`
 
   The key of the `Meta` object will be rendered as the attribute of the meta tag, and the value will be rendered as the value of the corresponding attribute.
 

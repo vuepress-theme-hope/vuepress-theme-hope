@@ -53,8 +53,8 @@ tags:
 
 Markmap 是一个将 Markdown 转换为思维导图的工具。它相对于主题内置的 flowchart 支持更多的格式与内容。
 
-1. 使用 [Markmap](https://markmap.js.org/) 生成思维导图 html 文件
-1. 将 html 文件放在 `.vuepress/public/` 下
+1. 使用 [Markmap](https://markmap.js.org/) 生成思维导图 HTML 文件
+1. 将 HTML 文件放在 `.vuepress/public/` 下
 1. 通过 `<iframe>` 插入到 Markdown
 
 输入:
@@ -77,7 +77,7 @@ Markmap 是一个将 Markdown 转换为思维导图的工具。它相对于主�
 
 ## CodePen
 
-[Codepen](https://codepen.io/) 可以很方便的创建代码演示并嵌入。
+[CodePen](https://codepen.io/) 可以很方便的创建代码演示并嵌入。
 
 ```html
 <iframe

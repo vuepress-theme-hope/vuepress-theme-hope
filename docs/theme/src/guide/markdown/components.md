@@ -9,7 +9,7 @@ tags:
 
 ## Badge
 
-Badge available in markdown
+Badge available in Markdown
 
 ### Badge Props
 
@@ -25,7 +25,7 @@ Text of the badge
 - Type: `"tip" | "warn" | "error"`
 - Default: `"tip"`
 
-Type of the badge
+Badge types:
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warn" type="warn" vertical="middle" />
@@ -36,7 +36,7 @@ Type of the badge
 - Type: `string`
 - Required: No
 
-Badge color, please fill in css color strings
+Badge color, please fill in CSS color strings
 
 #### vertical
 
@@ -47,7 +47,7 @@ Vertical position of the badge
 
 ### Badge Usage
 
-You can use it in markdown to add some status for titles or links:
+You can use it in Markdown to add some status for titles or links:
 
 ```md
 ### Badge <Badge text="Building" type="warn"/> <Badge text="MrHope" color="grey" />
@@ -55,7 +55,7 @@ You can use it in markdown to add some status for titles or links:
 
 ## CodeGroup, CodeGroupItem
 
-CodeGroup available in markdown
+CodeGroup available in Markdown
 
 ### CodeGroup Usage
 

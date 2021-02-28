@@ -19,7 +19,7 @@ icon: config
 
 ## channel
 
-channel 选项用于配置 Feed 频道。
+`channel` 选项用于配置 Feed 频道。
 
 可用选项详见 [配置 → 频道设置](channel.md)
 
