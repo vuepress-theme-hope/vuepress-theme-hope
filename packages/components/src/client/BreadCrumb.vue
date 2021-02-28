@@ -1,20 +1,23 @@
 <template>
   <nav class="breadcrumb" :class="{ disable: !enable }">
-    <ul v-if="enable">
+    <ol v-if="enable" vocab="https://schema.org/" typeof="BreadcrumbList">
       <li
         v-for="(item, index) in config"
         :key="item.url"
         :class="{ 'is-active': config.length - 1 === index }"
+        property="itemListElement"
+        typeof="ListItem"
       >
-        <RouterLink :to="item.url">
+        <RouterLink :to="item.url" property="item" typeof="WebPage">
           <i
             v-if="item.icon && iconEnable"
             :class="`iconfont ${iconPrefix}${item.icon}`"
           />
-          {{ item.title }}
+          <span property="name">{{ item.title }}</span>
         </RouterLink>
+        <meta property="position" :content="index + 1" />
       </li>
-    </ul>
+    </ol>
   </nav>
 </template>
 
@@ -61,7 +64,7 @@ h1, h2, h3, h4, h5, h6
   &.disable
     padding-bottom 1.3em
 
-  ul
+  ol
     margin 0.5rem 0
     padding-left 0px
     list-style none
