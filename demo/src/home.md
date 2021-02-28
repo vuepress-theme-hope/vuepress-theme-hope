@@ -42,9 +42,13 @@ features:
     details: Switch between light and dark modes freely
     link: https://vuepress-theme-hope.github.io/guide/interface/darkmode/
 
-  - title: SEO enhancement and Sitemap 🗺
-    details: The theme can automatically generate a Sitemap for your website, and optimize the resulting web page for search engines.
-    link: https://vuepress-theme-hope.github.io/guide/feature/seo-sitemap/
+  - title: SEO enhancement ⚒
+    details: Optimize pages for search engines.
+    link: https://vuepress-theme-hope.github.io/guide/feature/seo/
+
+  - title: Sitemap 🗺
+    details: Generate a Sitemap for your website
+    link: https://vuepress-theme-hope.github.io/guide/feature/sitemap/
 
   - title: Feed support 📡
     details: You can generate feed, and let users to subcribe it

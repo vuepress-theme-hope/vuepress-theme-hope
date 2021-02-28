@@ -44,9 +44,9 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 ### Search engine enhancement
 
-The theme provides [SEO plugin](https://vuepress-theme-hope.github.io/seo/zh/), which automatically injects meta tags into web pages to enhance search engine indexing.
+The theme provides [SEO Enhance](../feature/seo.md), which automatically injects meta tags into web pages to enhance search engine indexing.
 
-The theme also provides [Sitemap plugin](https://vuepress-theme-hope.github.io/sitemap/zh/) to generate Sitemap automatically.
+The theme also provides [Sitemap Generation](../feature/sitemap.md) to generate Sitemap automatically.
 
 ### Page UI
 

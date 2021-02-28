@@ -6,6 +6,12 @@ tags:
   - interface
 ---
 
+## 样式定制
+
+主题允许你在 `.vuepress/style` 的 `palette.styl` 设置变量，来定制绝大部分颜色、响应式断点，页面布局尺寸等参数。
+
+详细的参数详见 [Stylus 配置](../../config/stylus.md)
+
 ## 全屏按钮
 
 默认启用，显示在导航栏的主题选项卡中。

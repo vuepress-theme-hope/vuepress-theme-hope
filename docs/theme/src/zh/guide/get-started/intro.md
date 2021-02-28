@@ -44,9 +44,9 @@ tags:
 
 ### 搜索引擎增强
 
-主题提供 [SEO 插件](https://vuepress-theme-hope.github.io/seo/zh/)，自动向网页注入 meta 标签增强搜索引擎索引。
+主题提供 [SEO 增强](../feature/seo.md)，自动向网页注入 meta 标签增强搜索引擎索引。
 
-主题也提供 [Sitemap 插件](https://vuepress-theme-hope.github.io/sitemap/zh/) 提供自动的 Sitemap 生成。
+主题也提供 [Sitemap 生成](../feature/sitemap.md) 提供自动的 Sitemap 生成。
 
 ### 页面 UI
 

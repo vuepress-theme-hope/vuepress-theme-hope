@@ -28,7 +28,9 @@ vuepress-theme-hope 引入了很多非常棒的功能。绝大部分功能都抽
 
 - [Feed 支持](feed.md)
 
-- [Seo 和 Sitemap 支持](seo-sitemap.md)
+- [SEO 增强](seo.md)
+
+- [Sitemap 生成](sitemap.md)
 
 - [TypeScript 支持](typescript.md)
 

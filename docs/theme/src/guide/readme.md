@@ -87,9 +87,9 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
 - [Feed generation](feature/feed.md)
 
-- [SEO enhancement](feature/seo-sitemap.md#SEO)
+- [SEO enhancement](feature/seo.md)
 
-- [Sitemap generation](feature/seo-sitemap.md#Sitemap)
+- [Sitemap generation](feature/sitemap.md)
 
 - [TypeScript support](feature/typescript.md)
 

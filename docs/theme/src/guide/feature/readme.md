@@ -28,7 +28,9 @@ vuepress-theme-hope introduces many great features. Most of the functions are se
 
 - [Feed Support](feed.md)
 
-- [Seo and Sitemap](seo-sitemap.md)
+- [SEO Enhance](seo.md)
+
+- [Sitemap Generation](sitemap.md)
 
 - [TypeScript support](typescript.md)
 

@@ -87,9 +87,9 @@ tags:
 
 - [Feed 生成](feature/feed.md)
 
-- [SEO 增强](feature/seo-sitemap.md#SEO)
+- [SEO 增强](feature/seo.md)
 
-- [Sitemap 生成](feature/seo-sitemap.md#Sitemap)
+- [Sitemap 生成](feature/sitemap.md)
 
 - [TypeScript 支持](feature/typescript.md)
 

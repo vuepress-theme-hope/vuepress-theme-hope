@@ -6,6 +6,12 @@ tags:
   - interface
 ---
 
+## Style customization
+
+The theme allows you to set variables in the `palette.styl` of `.vuepress/style` to customize most of the colors, responsive breakpoints, page layout size and other parameters.
+
+For detailed info, please refer to [Stylus Configuration](../../config/stylus.md)
+
 ## Fullscreen Button
 
 Enabled by default, it’s in the theme card in navbar.

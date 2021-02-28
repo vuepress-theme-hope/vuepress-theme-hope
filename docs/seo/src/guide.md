@@ -5,7 +5,7 @@ icon: guide
 
 This plugin will inject the `<meta>` tag to enhance the search engine optimization of the website.
 
-## Out of the box
+## Out of box
 
 The plugin is used out of the box. Without any configuration, it will extract the corresponding information from the page content to generate the `<meta>` tag as much as possible.
 
@@ -13,23 +13,23 @@ By default, the plugin will read the site configuration, theme configuration and
 
 The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
 
-|         property         |                       content                       |
-| :----------------------: | :-------------------------------------------------: | --- | ----------------------- |
-|         `og:url`         |           `themeConfig.hostname` + `path`           |
-|      `og:site_name`      |                    `$site.title`                    |
-|        `og:title`        |                    `$page.title`                    |
-|     `og:description`     |           `$page.frontmatter.description`           |
-|        `og:type`         |                     `'article'`                     |
-|        `og:image`        | `themeConfig.hostname` + `$page.frontmatter.image`  |
-|    `og:updated_time`     |               `$page.lastUpdatedTime`               |
-|       `og:locale`        |               `$page._computed.$lang`               |
-|  `og:locale:alternate`   | Other languages including in `$themeConfig.locales` |
-|      `twitter:card`      |               `'summary_large_image'`               |
-|   `twitter:image:alt`    |                    `$site.title`                    |
-|     `article:author`     |              `$page.frontmatter.author              |     | themeConfig.author`     |
-|      `article:tag`       |               `$page.frontmatter.tags               |     | $page.frontmatter.tag`  |
-| `article:published_time` |               `$page.frontmatter.time               |     | $page.frontmatter.date` |
-| `article:modified_time`  |               `$page.lastUpdatedTime`               |
+| property | content |
+| :----------------------: | :-------------------------------------------------------------------: | | |
+| `og:url` | `themeConfig.hostname` + `path` |
+| `og:site_name` | `$site.title` |
+| `og:title` | `$page.title` |
+| `og:description` | `$page.frontmatter.description` |
+| `og:type` | `'article'` |
+| `og:image` | `themeConfig.hostname` + `$page.frontmatter.image` |
+| `og:updated_time` | `$page.lastUpdatedTime` |
+| `og:locale` | `$page._computed.$lang` |
+| `og:locale:alternate` | Other languages including in `$themeConfig.locales` |
+| `twitter:card` | `'summary_large_image'` |
+| `twitter:image:alt` | `$site.title` |
+| `article:author` | `$page.frontmatter.author | | themeConfig.author` |
+| `article:tag` | `$page.frontmatter.tags | | $page.frontmatter.tag` |
+| `article:published_time` | `$page.frontmatter.time | | $page.frontmatter.date` |
+| `article:modified_time` | `$page.lastUpdatedTime` |
 
 ## Free customization
 
@@ -53,7 +53,7 @@ This plugin also allows you to fully control the generation logic of `<meta>` ta
 
 ### seo
 
-You can use the `seo` of the plugin option to pass in a function to inject a new `<meta>` tag or override the default generated content in the [Out of the box](#out-of-the-box) section. You need to return an object in the format of `<property>: <content>`.
+You can use the `seo` of the plugin option to pass in a function to inject a new `<meta>` tag or override the default generated content in the [Out of box](#out-of-box) section. You need to return an object in the format of `<property>: <content>`.
 
 For example, if you return `{'og:url':'google.com','og:image':'google.com/logo.jpg' }`, the plugin will inject the following content into `<head>`:
 

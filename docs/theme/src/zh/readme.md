@@ -42,9 +42,13 @@ features:
     details: 可以自由切换浅色模式与深色模式
     link: /zh/guide/interface/darkmode/
 
-  - title: SEO 增强和 Sitemap 🗺
-    details: 主题可以自动为你的网站生成 Sitemap，并将最终生成的网页针对搜索引擎进行优化。
-    link: /zh/guide/feature/seo-sitemap/
+  - title: SEO 增强 ⚒
+    details: 将最终生成的网页针对搜索引擎进行优化。
+    link: /zh/guide/feature/seo/
+
+  - title: Sitemap 🗺
+    details: 自动为你的网站生成 Sitemap
+    link: /zh/guide/feature/sitemap/
 
   - title: Feed 支持 📡
     details: 你可以生成你的 Feed，并通知你的用户订阅它。
