@@ -34,7 +34,7 @@ tags:
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
 - `'Gitee'`: Gitee
-- `'Github'`: ~~Gayhub~~ GitHub
+- `'Github'`: GitHub
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
 - `'Instagram'`: Instagram
