@@ -1,5 +1,5 @@
 <template>
-  <div class="blogger-info">
+  <div class="blogger-info" vocab="https://schema.org/" typeof="Person">
     <div
       class="blogger"
       :class="{ hasIntro }"
@@ -11,10 +11,21 @@
         v-if="bloggerAvatar"
         class="avatar"
         :class="{ round: blogConfig.roundAvatar !== false }"
+        property="image"
         alt="Blogger Avatar"
         :src="$withBase(bloggerAvatar)"
       />
-      <div v-if="bloggerName" class="name" v-text="bloggerName" />
+      <div
+        v-if="bloggerName"
+        class="name"
+        property="name"
+        v-text="bloggerName"
+      />
+      <meta
+        v-if="hasIntro"
+        property="url"
+        :content="$withBase(blogConfig.intro)"
+      />
     </div>
     <div class="num-wrapper">
       <div @click="navigate('/article/')">
