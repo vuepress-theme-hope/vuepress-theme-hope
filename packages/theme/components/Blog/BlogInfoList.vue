@@ -46,7 +46,7 @@
     <!-- Article -->
     <MyTransition v-if="active === 'article'">
       <div class="sticky-article-wrapper">
-        <div class="title" @click="$router.push('/article/')">
+        <div class="title" @click="navigate('/article/')">
           <ArticleIcon />
           <span class="num">{{ articleNumber }}</span>
           {{ i18n.article }}
@@ -60,7 +60,7 @@
           >
             <li
               class="sticky-article"
-              @click="$router.push(article.path)"
+              @click="navigate(article.path)"
               v-text="article.title"
             />
           </MyTransition>
@@ -74,7 +74,7 @@
         <div
           v-if="$category.list.length !== 0"
           class="title"
-          @click="$router.push('/category/')"
+          @click="navigate('/category/')"
         >
           <CategoryIcon />
           <span class="num">{{ $category.list.length }}</span>
@@ -93,7 +93,7 @@
         <div
           v-if="$tag.list.length !== 0"
           class="title"
-          @click="$router.push('/tag/')"
+          @click="navigate('/tag/')"
         >
           <TagIcon />
           <span class="num">{{ $tag.list.length }}</span>

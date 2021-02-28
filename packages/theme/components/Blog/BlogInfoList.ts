@@ -42,4 +42,8 @@ export default class BlogInfo extends Mixins(StarMixin) {
   private setActive(name: string): void {
     this.active = name;
   }
+
+  private navigate(path: string): void {
+    if (this.$route.path !== path) void this.$router.push(path);
+  }
 }
