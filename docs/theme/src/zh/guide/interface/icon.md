@@ -52,7 +52,7 @@ tags:
 
 1. 请点击项目上方的 “Font Class” 按钮，并点击生成。
 
-   ![添加入库](./assets/iconfont-add.png)
+   ![添加入库](./assets/iconfont-generate.png)
 
 1. 在 `.vuepress/styles` 的 `index.styl` 中导入链接。例如:
 

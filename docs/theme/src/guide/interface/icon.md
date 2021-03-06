@@ -52,7 +52,7 @@ On the project page, you can edit the icons in the project, including adjustment
 
 1. Please click the "Font Class" button above the project and click Generate.
 
-   ![Add to library](./assets/iconfont-add.png)
+   ![Add to library](./assets/iconfont-generate.png)
 
 1. Import the link in `index.styl` of `.vuepress/styles`. E.g:
 
