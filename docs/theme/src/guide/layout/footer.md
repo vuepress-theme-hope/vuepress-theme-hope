@@ -37,7 +37,7 @@ When `themeConfig.footer.display` is `true`, you can also fill in `false` to hid
 
 ### medialink
 
-This field is the same as `themeConfig.blog.links` ([see here for specific configuration](../blog/blog.md)). You can configure it on a specific page to display different social media links. You can also fill in `false` to hide it.
+This field is the same as `themeConfig.blog.links` ([see here for specific configuration](../blog/intro.md)). You can configure it on a specific page to display different social media links. You can also fill in `false` to hide it.
 
 ## Example
 

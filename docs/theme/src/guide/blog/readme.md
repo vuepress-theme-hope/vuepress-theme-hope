@@ -8,6 +8,6 @@ tags:
 
 ## Catalog
 
-- [Blog support](blog.md)
+- [Blog support Intro](intro.md)
 
 - [Blog homepage](home.md)

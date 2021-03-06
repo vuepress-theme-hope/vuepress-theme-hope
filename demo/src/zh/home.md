@@ -28,7 +28,7 @@ features:
 
   - title: 博客支持 📝
     details: 为你的文章添加日期、标签和分类，即可自动生成文章、分类、标签与时间轴列表
-    link: https://vuepress-theme-hope.github.io/zh/guide/blog/blog/
+    link: https://vuepress-theme-hope.github.io/zh/guide/blog/intro/
 
   - title: 文章加密 🔐
     details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们

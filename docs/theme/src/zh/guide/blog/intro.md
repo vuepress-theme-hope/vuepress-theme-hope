@@ -1,12 +1,15 @@
 ---
-title: 博客相关
+title: 博客功能介绍
 icon: blog
 category: blog
 tags:
   - blog
+  - intro
 ---
 
-主题通过配置 `@vuepress/plugin-blog` 启用了一些博客功能。你也可以配置 `themeConfig.blog` 为 `false` 来禁用全部的博客功能。
+主题通过引入 `@vuepress/plugin-blog` **默认**启用了一些博客功能。
+
+如果你不需要任何的博客功能，请你也可以配置 `themeConfig.blog` 为 `false` 来禁用全部的博客功能。
 
 <!-- more -->
 

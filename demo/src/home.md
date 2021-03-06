@@ -28,7 +28,7 @@ features:
 
   - title: Blog support 📝
     details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
-    link: https://vuepress-theme-hope.github.io/guide/blog/blog/
+    link: https://vuepress-theme-hope.github.io/guide/blog/intro/
 
   - title: Article Encryption 🔐
     details: Encrypt you article based on path and folders, so that only the one you want could see them

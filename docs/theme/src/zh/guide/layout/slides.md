@@ -21,6 +21,8 @@ tags:
 
 ![幻灯片页截图](./assets/slides.png)
 
+这里有一个展示了所有幻灯片功能的案例: [案例地址](https://vuepress-theme-hope-demo.mrhope.site/zh/slides/)
+
 你应该仅在该页面包含一个单一的幻灯片语法，以避免其他问题。
 
 ```md

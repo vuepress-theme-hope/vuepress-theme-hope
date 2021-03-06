@@ -6,8 +6,8 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: 为 VuePress 提供图片预览支持
 action:
-  - text: 演示 💡
-    link: /zh/demo/
+  - text: 快速上手 💡
+    link: /zh/guide/
     type: primary
 
   - text: 配置 🛠

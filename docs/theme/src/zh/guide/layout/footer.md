@@ -37,7 +37,7 @@ vuepress-theme-hope 为所有页面提供了页脚功能<Badge text="支持页�
 
 ### medialink
 
-该字段同 `themeConfig.blog.links` ([具体配置见此](../blog/blog.md#可配置的项目))，你可以在特定页面配置它以展示不同的社交媒体链接，你也可以填入 `false` 来隐藏它。
+该字段同 `themeConfig.blog.links` ([具体配置见此](../blog/intro.md#可配置的项目))，你可以在特定页面配置它以展示不同的社交媒体链接，你也可以填入 `false` 来隐藏它。
 
 ## 例子
 

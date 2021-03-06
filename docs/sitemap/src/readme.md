@@ -5,6 +5,14 @@ icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-sitemap"
 tagline: Automatically generate a sitemap for your website when you build it.
+action:
+  - text: Guide 💡
+    link: /guide/
+    type: primary
+
+  - text: Config 🛠
+    link: /config/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---

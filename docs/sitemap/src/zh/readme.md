@@ -5,6 +5,14 @@ icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-sitemap"
 tagline: 自动在你构建网页时为你生成网页的 sitemap。
+action:
+  - text: 快速上手 💡
+    link: /zh/guide/
+    type: primary
+
+  - text: 配置 🛠
+    link: /zh/config/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---

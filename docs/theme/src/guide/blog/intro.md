@@ -1,4 +1,5 @@
 ---
+title: Blog support Intro
 icon: blog
 category: blog
 tags:
@@ -6,9 +7,11 @@ tags:
   - feature
 ---
 
-# Blog related
+The theme enables some blogging features using `@vuepress/plugin-blog` by default.
 
-The theme enables some blogging features by configuring `@vuepress/plugin-blog`. Also you can set `themeConfig.blog` to `false` to disable all blog features.
+You can set `themeConfig.blog` to `false` to disable all blog features.
+
+<!-- more -->
 
 ## Category
 

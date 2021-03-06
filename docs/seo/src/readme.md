@@ -5,6 +5,14 @@ icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-seo"
 tagline: Inject <meta> into your webpage to enhance the SEO of your webpage.
+action:
+  - text: Guide 💡
+    link: /guide/
+    type: primary
+
+  - text: Config 🛠
+    link: /config/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---

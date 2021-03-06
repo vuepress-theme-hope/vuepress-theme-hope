@@ -97,17 +97,17 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
 - [Social follow button and page social sharing][add-this]
 
-- [Article display](blog/blog.md)
+- [Article display](blog/intro.md)
 
 - [New blog homepage layout](blog/home.md)
 
-- [Articles list swith sticky support](blog/blog.md#article)
+- [Articles list swith sticky support](blog/intro.md#article)
 
-- [Cateory lists](blog/blog.md#category)
+- [Cateory lists](blog/intro.md#category)
 
-- [Tag lists](blog/blog.md#tags)
+- [Tag lists](blog/intro.md#tags)
 
-- [Timeline](blog/blog.md#timeline)
+- [Timeline](blog/intro.md#timeline)
 
 ## 🧩Build-in Plugins
 

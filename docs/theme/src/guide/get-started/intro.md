@@ -58,6 +58,6 @@ The theme also provides [Sitemap Generation](../feature/sitemap.md) to generate 
 
 ### Blog
 
-The theme provides [**categories, tags, timeline, featured articles**](../blog/blog.md) and other functions. Also, the theme gives you a brand new [**blog homepage**](../blog/home.md), and also .
+The theme provides [**categories, tags, timeline, featured articles**](../blog/blointrog.md) and other functions. Also, the theme gives you a brand new [**blog homepage**](../blog/home.md), and also .
 
 At the same time, the theme also provides common blog feature such as [**Comment**](../feature/comment.md) and [**Feed**](../feature/feed.md).

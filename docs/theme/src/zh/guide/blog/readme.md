@@ -9,6 +9,6 @@ tags:
 
 ## 目录
 
-- [博客支持](blog.md)
+- [博客功能介绍](intro.md)
 
 - [博客主页](home.md)
