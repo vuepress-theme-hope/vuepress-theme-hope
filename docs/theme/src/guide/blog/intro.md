@@ -9,23 +9,11 @@ tags:
 
 The theme enables some blogging features using `@vuepress/plugin-blog` by default.
 
-You can set `themeConfig.blog` to `false` to disable all blog features.
+If you don’t need any blog features (such as a pure documentation site), you can set `themeConfig.blog` to `false` to disable all blog features.
 
 <!-- more -->
 
-## Category
-
-Add `category: <category name>` to the frontmatter of the page, and the article will be automatically rendered in the list of category pages with URL `/category/`.
-
-![Category](./assets/category.png)
-
-Please note that only one category can be set per article.
-
-## Tags
-
-Add `tags: <tag name>` to the frontmatter of the page, and the article will be automatically listed in the list on the `/tag/` tag page.
-
-`tags` accepts `string | string []`, which means that an article can contain multiple tags.
+## General
 
 ## Article
 

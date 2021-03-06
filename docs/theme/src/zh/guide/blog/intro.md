@@ -9,23 +9,13 @@ tags:
 
 主题通过引入 `@vuepress/plugin-blog` **默认**启用了一些博客功能。
 
-如果你不需要任何的博客功能，请你也可以配置 `themeConfig.blog` 为 `false` 来禁用全部的博客功能。
+如果你不需要任何的博客功能 (比如一个纯文档站点)，你可以配置 `themeConfig.blog` 为 `false` 来禁用全部的博客功能。
 
 <!-- more -->
 
-## 分类
+## 综述
 
-只需要在页面的 frontmatter 中添加 `category: <分类名>` ，该文章会自动渲染在 `/category/` 分类页面的列表中。
-
-![Category](./assets/category.png)
-
-请注意，一篇文章只能设置一个分类。
-
-## 标签
-
-只需要在页面的 frontmatter 中添加 `tags: <标签名>` 即可，该文章就会自动列出在 `/tag/` 标签页面的列表中。
-
-`tags` 接受 `string | string[]`，也就是说一个文章可以包含多个标签。
+总体上，通过启用主题功能，主题允许你通过页面的 frontmatter，为页面配置分类、标签、是否是文章、是否出现在时间线中、收藏、置顶等功能。
 
 ## 文章
 
