@@ -28,7 +28,7 @@ module.exports = {
 
 侧边栏链接的文字将会从页面自动获取 (优先读取在 frontmatter 中设置的标题，然后回退到页面的第一个标题)。如果你想要指定链接的文字，使用一个格式为 `[link, text]` 的数组。
 
-::: detail 例子
+::: details 例子
 
 ```js
 // .vuepress/config.js
@@ -105,6 +105,8 @@ module.exports = {
         icon: "bar",
         // 可选的, 分组标题对应的链接
         path: "/foo/",
+        // 可选的，会添加到每个 item 链接地址之前
+        prefix: "/foo/",
         // 可选的, 设置分组是否可以折叠，默认值是 true,
         collapsable: false,
         // 可选的, 嵌套渲染深度，默认值是 2
@@ -122,6 +124,144 @@ module.exports = {
   },
 };
 ```
+
+::: details 例子
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      {
+        title: "快速上手",
+        icon: "creative",
+        prefix: "/get-started/",
+        collapsable: false,
+        children: [
+          "intro" /* /get-started/intro.html */,
+          "install" /* /get-started/install.html */,
+          "markdown" /* /get-started/markdown.html */,
+        ],
+      },
+      {
+        title: "界面",
+        icon: "skin",
+        prefix: "/interface/",
+        collapsable: false,
+        children: [
+          "darkmode" /* /interface/darkmode.html */,
+          "theme-color" /* /interface/theme-color.html */,
+          "icon" /* /interface/icon.html */,
+          "others" /* /interface/others.html */,
+        ],
+      },
+    ],
+  },
+};
+```
+
+:::
+
+侧边栏分组也可以进行嵌套:
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      {
+        title: "Group",
+        prefix: "/",
+        children: [
+          "baz" /* /baz.html */,
+          {
+          title: "Sub Group 1",
+          children: [
+            "quz" /* /quz.html */,
+            "xyzzy" /* /xyzzy.html */,
+          ],
+          title: "Sub Group 2",
+          prefix: "corge/"
+          children: [
+            "fred" /* /corge/fred.html */,
+            "grault" /* /corge/grault.html */,
+          ],
+          },
+           "foo" /* /foo.html */,
+        ],
+      },
+    ],
+  },
+};
+```
+
+通常情况下，你可能希望搭配 `prefix` 使用来快速还原文档的结构。
+
+比如，将你的页面文件为下述的目录结构:
+
+```
+.
+├─ README.md
+├─ contact.md
+├─ about.md
+├─ foo/
+│   ├─ README.md
+│   ├─ one.md
+│   └─ two.md
+└─ bar/
+    ├─ README.md
+    ├─ three.md
+    └─ four.md
+```
+
+你就可以进行以下配置:
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      "/" /* / */,
+      {
+        title: "Foo",
+        prefix: "/foo/",
+        children: [
+          "" /* /foo/ */,
+          "one" /* /foo/one.html */,
+          "two" /* /foo/two.html */,
+        ],
+      },
+      {
+        title: "Bar",
+        prefix: "/bar/",
+        children: [
+          "" /* /bar/ */,
+          "three" /* /bar/three.html */,
+          "four" /* /bar/four.html */,
+        ],
+      },
+      "/contact" /* /contact.html */,
+      "/about" /* /about.html */,
+    ],
+  },
+};
+```
+
+::: warning
+
+在配置侧边栏时请特别注意 `/` 的添加。处于性能考虑，我们会假设用户对侧边栏进行了正确的配置，所以我们不会对路径进行任何处理和校验(比如遍历生成路径结构进行比对验证)，而是直接拼接生成。
+
+请留心你的配置是否可以拼接成正确的路径。
+
+比如期待 `bar/foo/`，却因为 `bar` 缺少尾随 `/` 而 `foo` 未配置前置 `/` 导致生成 `barfoo/` 的情况，或两者均配置而生成了错误的 `bar//foo`。它们都会造成解析错误，导致对应的侧边栏项目缺省。
+
+:::
+
+::: tip
+
+处于上面的一点原因，我们会在开发服务器的控制台打出任何无法找到对应页面的侧边栏链接。这意味着你的错误配置可以很容易的通过其追踪并修正。
+
+:::
 
 ## 多个侧边栏
 

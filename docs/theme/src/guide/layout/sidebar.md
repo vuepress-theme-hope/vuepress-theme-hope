@@ -26,7 +26,7 @@ Icon support is enabled in the sidebar by default, and the icon of the page will
 
 The text for the link is automatically inferred (`title` field in frontmatter, then first header in the page). To explicitly specify the link text, use an array in form of `[link, text]`.
 
-::: detail Demo
+::: details Demo
 
 ```js
 // .vuepress/config.js
@@ -103,6 +103,8 @@ module.exports = {
         icon: "bar",
         // optional, link of group title
         path: "/foo/",
+        // optional, will be appended to each item link
+        prefix: "/foo/",
         // optional, defaults to true
         collapsable: false,
         // optional, defaults to 2
@@ -120,6 +122,144 @@ module.exports = {
   },
 };
 ```
+
+::: details Demo
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      {
+        title: "Get Started",
+        icon: "creative",
+        prefix: "/get-started/",
+        collapsable: false,
+        children: [
+          "intro" /* /get-started/intro.html */,
+          "install" /* /get-started/install.html */,
+          "markdown" /* /get-started/markdown.html */,
+        ],
+      },
+      {
+        title: "Interface",
+        icon: "skin",
+        prefix: "/interface/",
+        collapsable: false,
+        children: [
+          "darkmode" /* /interface/darkmode.html */,
+          "theme-color" /* /interface/theme-color.html */,
+          "icon" /* /interface/icon.html */,
+          "others" /* /interface/others.html */,
+        ],
+      },
+    ],
+  },
+};
+```
+
+:::
+
+You can also nest Sidebar grouping:
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      {
+        title: "Group",
+        prefix: "/",
+        children: [
+          "baz" /* /baz.html */,
+          {
+          title: "Sub Group 1",
+          children: [
+            "quz" /* /quz.html */,
+            "xyzzy" /* /xyzzy.html */,
+          ],
+          title: "Sub Group 2",
+          prefix: "corge/"
+          children: [
+            "fred" /* /corge/fred.html */,
+            "grault" /* /corge/grault.html */,
+          ],
+          },
+           "foo" /* /foo.html */,
+        ],
+      },
+    ],
+  },
+};
+```
+
+Normally, you may want to use it with `prefix` to quickly restore the structure of the document.
+
+For example, suppose you have a following directory structure:
+
+```
+.
+├─ README.md
+├─ contact.md
+├─ about.md
+├─ foo/
+│   ├─ README.md
+│   ├─ one.md
+│   └─ two.md
+└─ bar/
+    ├─ README.md
+    ├─ three.md
+    └─ four.md
+```
+
+Then you can config:
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      "/" /* / */,
+      {
+        title: "Foo",
+        prefix: "/foo/",
+        children: [
+          "" /* /foo/ */,
+          "one" /* /foo/one.html */,
+          "two" /* /foo/two.html */,
+        ],
+      },
+      {
+        title: "Bar",
+        prefix: "/bar/",
+        children: [
+          "" /* /bar/ */,
+          "three" /* /bar/three.html */,
+          "four" /* /bar/four.html */,
+        ],
+      },
+      "/contact" /* /contact.html */,
+      "/about" /* /about.html */,
+    ],
+  },
+};
+```
+
+::: warning
+
+Please pay special attention to the addition of `/` when configuring the sidebar. For performance considerations, we will assume that the user has correctly configured the sidebar, so we won’t perform any resolveing and verification on the path (such as traversing pages for comparison verification), but directly splicing and generating it.
+
+Please pay attention to whether your configuration can be spliced into the correct path.
+
+For example, `bar/foo/` is expecting, while `bar` lacks a trailing `/` and `foo` isn’t with a prefix `/` resulting in `barfoo/`, or both are configured and an incorrect `bar//foo` is generated. They will cause parsing errors so the item won’t be rendered.
+
+:::
+
+::: tip
+
+For the above reason, we will print any broken sidebar links in the console where the corresponding page cannot be found. This means that your misconfiguration can be easily tracked and corrected.
+
+:::
 
 ### Multiple Sidebars
 
