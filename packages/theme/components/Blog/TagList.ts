@@ -20,6 +20,7 @@ export default Vue.extend({
             getDefaultLocale().blog.allText,
           path: "/tag/",
         },
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         ...(this.$tag.list as TagOption[]),
       ];
     },
@@ -29,6 +30,7 @@ export default Vue.extend({
     isActive(name: string): boolean {
       return (
         name ===
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         ((this.$currentTag && this.$currentTag.key) ||
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           this.$themeLocaleConfig.blog!.allText ||

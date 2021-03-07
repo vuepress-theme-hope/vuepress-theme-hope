@@ -47,6 +47,7 @@ export default Vue.extend({
           // #697 Make docsearch work well at i18n mode.
           algoliaOptions: {
             facetFilters: [`lang:${lang}`].concat(
+              // eslint-disable-next-line
               ((userOptions as any).facetFilters as string[]) || []
             ),
           },

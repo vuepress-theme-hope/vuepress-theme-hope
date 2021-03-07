@@ -97,20 +97,21 @@ export const filterArticle = (
 
 export const sortArticle = (
   pages: PageComputed[],
-  compareKey: "star" | "sticky" = "sticky"
+  compareKey?: "sticky" | "star"
 ): PageComputed[] =>
   pages.slice(0).sort((prev, next) => {
-    const prevKey = prev.frontmatter[compareKey];
-    const nextKey = next.frontmatter[compareKey];
+    if (compareKey) {
+      const prevKey = prev.frontmatter[compareKey];
+      const nextKey = next.frontmatter[compareKey];
+
+      if (prevKey && nextKey && prevKey !== nextKey)
+        return Number(nextKey) - Number(prevKey);
+      if (prevKey && !nextKey) return -1;
+      if (!prevKey && nextKey) return 1;
+    }
+
     const prevTime = prev.frontmatter.time || prev.frontmatter.date;
     const nextTime = next.frontmatter.time || next.frontmatter.date;
-
-    if (prevKey && nextKey)
-      return prevKey === nextKey
-        ? compareDate(prevTime, nextTime)
-        : Number(nextKey) - Number(prevKey);
-    if (prevKey && !nextKey) return -1;
-    if (!prevKey && nextKey) return 1;
 
     return compareDate(prevTime, nextTime);
   });

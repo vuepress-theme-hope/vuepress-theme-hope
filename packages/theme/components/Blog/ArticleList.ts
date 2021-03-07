@@ -46,7 +46,10 @@ export default Vue.extend({
 
     $articles(): PageComputed[] {
       // filter then sort
-      return sortArticle(filterArticle(this.$site.pages, this.filter));
+      return sortArticle(
+        filterArticle(this.$site.pages, this.filter),
+        "sticky"
+      );
     },
 
     /** Articles in this page */
@@ -89,7 +92,8 @@ export default Vue.extend({
     getArticleList(): PageComputed[] {
       try {
         return this.$pagination
-          ? (this.$pagination._matchedPages as PageComputed[])
+          ? // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            (this.$pagination._matchedPages as PageComputed[])
           : this.$articles;
       } catch (err) {
         return this.$articles;
