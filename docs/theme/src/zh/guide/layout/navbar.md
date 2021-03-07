@@ -22,9 +22,9 @@ tags:
 module.exports = {
   themeConfig: {
     nav: [
-      { text: "主页", link: "/", icon: "home" },
-      { text: "VuePress介绍", link: "/vuepress/", icon: "info" },
-      { text: "Markdown介绍", link: "/markdown/", icon: "markdown" },
+      { text: "指南", link: "/zh/guide/", icon: "creative" },
+      { text: "配置", link: "/zh/config/", icon: "config" },
+      { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
     ],
   },
 };
@@ -37,11 +37,11 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: "Languages",
-        ariaLabel: "Language Menu",
+        text: "基础",
+        icon: "info",
         items: [
-          { text: "Chinese", link: "/language/chinese/" },
-          { text: "Japanese", link: "/language/japanese/" },
+          { text: "Markdown", link: "/zh/basic/markdown/", icon: "markdown" },
+          { text: "VuePress", link: "/zh/basic/vuepress/", icon: "vue" },
         ],
       },
     ],
@@ -49,35 +49,7 @@ module.exports = {
 };
 ```
 
-此外，你还可以通过嵌套的 `items` 来在下拉列表中设置分组:
-
-```js
-module.exports = {
-  themeConfig: {
-    nav: [
-      {
-        text: "Languages",
-        items: [
-          {
-            text: "Group1",
-            items: [
-              /*  */
-            ],
-          },
-          {
-            text: "Group2",
-            items: [
-              /*  */
-            ],
-          },
-        ],
-      },
-    ],
-  },
-};
-```
-
-在导航栏分组中，你可以添加 `prefix` 字段为每一个子菜单链接添加一个前缀:
+由于大多数情况下，导航栏的分组项目都属于同一类别，会放在同一个子目录下，它们具有相同的路径前缀。为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
 
 ```js
 // .vuepress/config.js
@@ -97,6 +69,120 @@ module.exports = {
   },
 };
 ```
+
+此外，你还可以通过嵌套的 `items` 来在下拉列表中设置分组:
+
+```js
+module.exports = {
+  themeConfig: {
+    nav: [
+      {
+        text: "项目",
+        icon: "info",
+        items: [
+          {
+            text: "内置插件",
+            icon: "plugin",
+            items: [
+              /* 一些子项目 */
+            ],
+          },
+          {
+            text: "引入插件",
+            icon: "plugin",
+            items: [
+              /* 一些子项目 */
+            ],
+          },
+        ],
+      },
+    ],
+  },
+};
+```
+
+::: details 例子
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    nav: [
+      {
+        text: "项目",
+        icon: "info",
+        items: [
+          {
+            text: "更新日志",
+            link:
+              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          },
+          {
+            text: "项目地址",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "项目案例",
+            link: "/zh/demo/",
+          },
+          {
+            text: "插件",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis 插件",
+                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
+              },
+              {
+                text: "评论插件",
+                link: "https://vuepress-theme-hope.github.io/comment/zh/",
+              },
+              {
+                text: "代码复制插件",
+                link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
+              },
+              {
+                text: "Feed 插件",
+                link: "https://vuepress-theme-hope.github.io/feed/zh/",
+              },
+              {
+                text: "最后更新时间插件",
+                link: "https://vuepress-theme-hope.github.io/last-update/zh/",
+              },
+              {
+                text: "Markdown 增强插件",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
+              },
+              {
+                text: "图片预览插件",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
+              },
+              {
+                text: "PWA 插件",
+                link: "https://vuepress-theme-hope.github.io/pwa/zh/",
+              },
+              {
+                text: "阅读时间插件",
+                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
+              },
+              {
+                text: "Seo 插件",
+                link: "https://vuepress-theme-hope.github.io/seo/zh/",
+              },
+              {
+                text: "Sitemap 插件",
+                link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+};
+```
+
+:::
 
 ### 禁用导航栏
 
@@ -263,14 +349,12 @@ editLink: false
 module.exports = {
   themeConfig: {
     nav: [
-      // 可在每一项中添加 icon 字段来显示图标
       { text: "指南", link: "/zh/guide/", icon: "creative" },
       { text: "配置", link: "/zh/config/", icon: "config" },
       { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
       {
         text: "基础",
         icon: "info",
-        // prefix 字段会为所有的 items 添加这段 prefix
         prefix: "/zh/basic/",
         items: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },

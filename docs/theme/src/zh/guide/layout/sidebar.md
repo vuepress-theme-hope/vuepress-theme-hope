@@ -15,16 +15,35 @@ tags:
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    sidebar: ["/", "/page-a", ["/page-b", "Explicit link text"]],
+    sidebar: ["/", "/page-a", "/page-b"],
   },
 };
 ```
 
+数组的每一项最终都会渲染为一个侧边栏项目。
+
 你可以省略 `.md` 拓展名，同时以 `/` 结尾的路径将会被视为 `*/README.md`。
 
-侧边栏链接的文字将会被自动获取到 (无论你是声明为页面的第一个 header，还是明确地在 frontmatter 中指定页面的标题)。如果你想要显示地指定链接的文字，使用一个格式为 `[link, text]` 的数组。
+侧边栏默认启用图标支持，将在侧边栏的链接前显示页面的图标 (读取在 frontmatter 中设置的 `icon`)。你可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
 
-侧边栏默认启用图标支持，将在侧边栏的链接前显示页面的图标。可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
+侧边栏链接的文字将会从页面自动获取 (优先读取在 frontmatter 中设置的标题，然后回退到页面的第一个标题)。如果你想要指定链接的文字，使用一个格式为 `[link, text]` 的数组。
+
+::: detail 例子
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      "/",
+      "/page-a",
+      ["/page-b", "This text will be the title of `page-b`"],
+    ],
+  },
+};
+```
+
+:::
 
 <!-- more -->
 
@@ -66,7 +85,13 @@ module.exports = {
 
 ## 侧边栏分组
 
-你可以通过使用**对象**来将侧边栏划分成多个组，你可以使用 `prefix` 来为组内的每个链接添加默认的路径前缀，使用 `icon` 为该分组文字添加一个图标。
+你可以通过使用**对象**来将侧边栏划分成多个组。每一个组默认会被渲染成一个可以打开与折叠的菜单，菜单项目是组内通过 `children` 设置的每个分组链接。
+
+你可以使用 `prefix` 来为组内的每个链接添加默认的路径前缀，使用 `icon` 为该分组文字添加一个图标。
+
+侧边栏的每个子组默认是可折叠的，你可以设置 `collapsable: false` 来让一个组永远都是展开状态。
+
+一个侧边栏的子组配置同时支持 [sidebarDepth](#嵌套的标题链接) 字段用于重写默认显示的侧边栏深度(`2`)。
 
 ```js
 // .vuepress/config.js
@@ -74,10 +99,17 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
-        title: "Group 1", // 必要的
-        path: "/foo/", // 可选的, 应该是一个绝对路径
-        collapsable: false, // 可选的, 默认值是 true,
-        sidebarDepth: 2, // 可选的, 默认值是 2
+        // 必要的，分组的标题文字
+        title: "Group 1",
+        // 可选的, 分组标题对应的图标
+        icon: "bar",
+        // 可选的, 分组标题对应的链接
+        path: "/foo/",
+        // 可选的, 设置分组是否可以折叠，默认值是 true,
+        collapsable: false,
+        // 可选的, 嵌套渲染深度，默认值是 2
+        sidebarDepth: 2,
+        // 必要的，分组的子项目
         children: ["/"],
       },
       {
@@ -91,13 +123,11 @@ module.exports = {
 };
 ```
 
-侧边栏的每个子组默认是可折叠的，你可以设置 `collapsable: false` 来让一个组永远都是展开状态。
-
-一个侧边栏的子组配置同时支持 [sidebarDepth](#嵌套的标题链接) 字段用于重写默认显示的侧边栏深度(`2`)。
-
 ## 多个侧边栏
 
-如果你想为不同的页面组来显示不同的侧边栏，首先，将你的页面文件组织成下述的目录结构:
+如果你想为不同的页面组来显示不同的侧边栏，你需要通过 `路径前缀: 侧边栏配置` 的格式为侧边栏配置一个对象。
+
+比如，将你的页面文件为下述的目录结构:
 
 ```
 .
@@ -105,16 +135,16 @@ module.exports = {
 ├─ contact.md
 ├─ about.md
 ├─ foo/
-│ ├─ README.md
-│ ├─ one.md
-│ └─ two.md
+│   ├─ README.md
+│   ├─ one.md
+│   └─ two.md
 └─ bar/
-├─ README.md
-├─ three.md
-└─ four.md
+    ├─ README.md
+    ├─ three.md
+    └─ four.md
 ```
 
-接着，遵循以下的侧边栏配置:
+你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
 ```js
 // .vuepress/config.js
@@ -146,7 +176,9 @@ module.exports = {
 
 ::: warning
 
-确保 fallback 侧边栏被最后定义。VuePress 会按顺序遍历侧边栏配置来寻找匹配的配置。
+你需要特别注意对象键声明的顺序，通常来说你应该把更精确的路径放置在前边。这是因为 VuePress 会按顺序遍历侧边栏配置的各项键名来寻找匹配的配置，一旦一个键名成功匹配为当前路经，它就会显示对应的侧边栏配置。
+
+在本例中，fallback 侧边栏就是因为这个原因必须在最后定义。
 
 :::
 
@@ -171,19 +203,6 @@ module.exports = {
 };
 ```
 
-在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.html) 模式下, 你也可以将其应用到某一特定的语言下:
-
-```js
-// .vuepress/config.js
-module.exports = {
-  themeConfig: {
-    "/zh/": {
-      sidebar: "auto",
-    },
-  },
-};
-```
-
 ## 禁用侧边栏
 
 你可以通过 `YAML front matter` 来禁用指定页面的侧边栏:
@@ -192,6 +211,23 @@ module.exports = {
 ---
 sidebar: false
 ---
+```
+
+## 多语言
+
+在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.html) 模式下, 你也可以为某一特定的语言配置侧边栏:
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    "/zh/": {
+      sidebar: [
+        /* your config */
+      ],
+    },
+  },
+};
 ```
 
 ## 博主信息
@@ -218,11 +254,29 @@ module.exports = {
           children: ["intro", "install", "markdown"],
         },
         {
+          title: "界面",
+          icon: "skin",
+          prefix: "interface/",
+          collapsable: false,
+          children: ["darkmode", "theme-color", "icon", "others"],
+        },
+        {
           title: "布局",
           icon: "layout",
           prefix: "layout/",
           collapsable: false,
-          children: ["", "navbar", "sidebar", "page", "home", "blog", "slides"],
+          children: [
+            "navbar",
+            "sidebar",
+            {
+              title: "页面",
+              icon: "page",
+              collapsable: false,
+              children: ["page", "breadcrumb", "footer"],
+            },
+            "home",
+            "slides",
+          ],
         },
         {
           title: "Markdown 增强",
@@ -230,7 +284,6 @@ module.exports = {
           prefix: "markdown/",
           collapsable: false,
           children: [
-            "",
             "intro",
             "components",
             "align",
@@ -245,28 +298,31 @@ module.exports = {
           ],
         },
         {
-          title: "界面",
-          icon: "skin",
-          prefix: "interface/",
-          collapsable: false,
-          children: ["theme", "icon"],
-        },
-        {
-          title: "新增功能",
+          title: "功能",
           icon: "discover",
           prefix: "feature/",
           collapsable: false,
           children: [
             "page-info",
             "comment",
-            "page",
-            "blog",
+            "copy-code",
+            "photo-swipe",
+            "copyright",
+            "last-update",
             "encrypt",
             "pwa",
             "feed",
-            "seo-sitemap",
+            "seo",
+            "sitemap",
             "typescript",
           ],
+        },
+        {
+          title: "博客",
+          icon: "layout",
+          prefix: "blog/",
+          collapsable: false,
+          children: ["intro", "home", "category-and-tags"],
         },
       ],
 

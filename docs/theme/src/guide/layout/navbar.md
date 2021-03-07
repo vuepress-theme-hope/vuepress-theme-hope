@@ -22,9 +22,9 @@ The basic configuration items are `text` navigation bar text, `link` navigation 
 module.exports = {
   themeConfig: {
     nav: [
-      { text: "Home", link: "/", icon: "home" },
-      { text: "Guide", link: "/guide/", icon: "info" },
-      { text: "External", link: "https://google.com", icon: "markdown" },
+      { text: "Guide", link: "/guide/", icon: "creative" },
+      { text: "Config", link: "/config/", icon: "config" },
+      { text: "FAQ", link: "/FAQ/", icon: "question" },
     ],
   },
 };
@@ -37,11 +37,11 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: "Languages",
-        ariaLabel: "Language Menu",
+        text: "Basic",
+        icon: "info",
         items: [
-          { text: "Chinese", link: "/language/chinese/" },
-          { text: "Japanese", link: "/language/japanese/" },
+          { text: "Markdown", link: "/basic/markdown/", icon: "markdown" },
+          { text: "VuePress", link: "/basic/vuepress/", icon: "vue" },
         ],
       },
     ],
@@ -49,35 +49,7 @@ module.exports = {
 };
 ```
 
-You can also have sub groups inside a dropdown by having nested items:
-
-```js
-module.exports = {
-  themeConfig: {
-    nav: [
-      {
-        text: "Languages",
-        items: [
-          {
-            text: "Group1",
-            items: [
-              /*  */
-            ],
-          },
-          {
-            text: "Group2",
-            items: [
-              /*  */
-            ],
-          },
-        ],
-      },
-    ],
-  },
-};
-```
-
-In the navigation bar grouping, you can add a `prefix` field to add a prefix to each submenu link:
+In most cases, the grouped items in the navigation bar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix. To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
 ```js
 // .vuepress/config.js
@@ -89,7 +61,7 @@ module.exports = {
         icon: "info",
         prefix: "/basic/",
         items: [
-          { text: "Markdown", link: "markdown", icon: "markdown" },
+          { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
       },
@@ -97,6 +69,120 @@ module.exports = {
   },
 };
 ```
+
+You can also have sub groups inside a dropdown by having nested `items`:
+
+```js
+module.exports = {
+  themeConfig: {
+    nav: [
+      {
+        text: "Project",
+        icon: "info",
+        items: [
+          {
+            text: "Built in Plugins",
+            icon: "plugin",
+            items: [
+              /* Some items */
+            ],
+          },
+          {
+            text: "Third party Plugins",
+            icon: "plugin",
+            items: [
+              /* Some items */
+            ],
+          },
+        ],
+      },
+    ],
+  },
+};
+```
+
+::: details Demo
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    nav: [
+      {
+        text: "Project",
+        icon: "info",
+        items: [
+          {
+            text: "Changelog",
+            link:
+              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          },
+          {
+            text: "Repo",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "Theme Demo",
+            link: "/demo/",
+          },
+          {
+            text: "Plugins",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis Plugin",
+                link: "https://vuepress-theme-hope.github.io/add-this/",
+              },
+              {
+                text: "Comment Plugin",
+                link: "https://vuepress-theme-hope.github.io/comment/",
+              },
+              {
+                text: "Copy Code Plugin",
+                link: "https://vuepress-theme-hope.github.io/copy-code/",
+              },
+              {
+                text: "Feed Plugin",
+                link: "https://vuepress-theme-hope.github.io/feed/",
+              },
+              {
+                text: "Last Update Plugin",
+                link: "https://vuepress-theme-hope.github.io/last-update/",
+              },
+              {
+                text: "Markdown Enhance Plugin",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+              },
+              {
+                text: "Photo Swipe Plugin",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+              },
+              {
+                text: "PWA Plugin",
+                link: "https://vuepress-theme-hope.github.io/pwa/",
+              },
+              {
+                text: "Reading Time Plugin",
+                link: "https://vuepress-theme-hope.github.io/reading-time/",
+              },
+              {
+                text: "Seo Plugin",
+                link: "https://vuepress-theme-hope.github.io/seo/",
+              },
+              {
+                text: "Sitemap Plugin",
+                link: "https://vuepress-theme-hope.github.io/sitemap/",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+};
+```
+
+:::
 
 ### Disable the Navbar
 
@@ -267,14 +353,12 @@ For details, see the [Full Screen Button](../interface/others.md#fullscreen-butt
 module.exports = {
   themeConfig: {
     nav: [
-      // add icon field to each item to display icon
       { text: "Guide", link: "/guide/", icon: "creative" },
       { text: "Config", link: "/config/", icon: "config" },
       { text: "FAQ", link: "/FAQ/", icon: "question" },
       {
         text: "Basic",
         icon: "info",
-        // add prefix field to add a link prefix to all the items
         prefix: "/basic/",
         items: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },

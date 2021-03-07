@@ -13,18 +13,35 @@ To enable the sidebar, use `themeConfig.sidebar`. The basic configuration expect
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    sidebar: ["/", "/page-a", ["/page-b", "Explicit link text"]],
+    sidebar: ["/", "/page-a", "/page-b"],
   },
 };
 ```
 
-<!-- more -->
+Each item of the array will eventually be rendered as a sidebar item.
 
 You can omit the `.md` extension, and paths ending with `/` are inferred as `*/README.md`.
 
-The text for the link is automatically inferred (either from the first header in the page or explicit title in `YAML front matter`). To explicitly specify the link text, use an array in form of `[link, text]`.
+Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in `themeConfig`.
 
-Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar. It can be disabled by setting `sidebarIcon` to `false` in `themeConfig`.
+The text for the link is automatically inferred (`title` field in frontmatter, then first header in the page). To explicitly specify the link text, use an array in form of `[link, text]`.
+
+::: detail Demo
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      "/",
+      "/page-a",
+      ["/page-b", "This text will be the title of `page-b`"],
+    ],
+  },
+};
+```
+
+:::
 
 <!-- more -->
 
@@ -66,7 +83,13 @@ module.exports = {
 
 ### Sidebar Groups
 
-You can divide sidebar links into mutiple groups by using objects. You can use `prefix` to add a default path prefix to each link in the group, and `icon` to add an icon to the group text.
+You can divide the sidebar into multiple groups by using **Objects**. By default, each group will be rendered into a menu that can be opened and collapsed. The menu item is each group link set by `children` in the group.
+
+You can use `prefix` field to add a default path prefix to each link in the group, and `icon` field to add an icon to the group text.
+
+Sidebar groups are collapsable by default. You can force a group to be always open with `collapsable: false`.
+
+A sidebar group config also supports [sidebarDepth](#nested-header-links) field to override the default sidebar depth (`2`).
 
 ```js
 // .vuepress/config.js
@@ -74,10 +97,17 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
-        title: "Group 1", // required
-        path: "/foo/", // optional, which should be a absolute path.
-        collapsable: false, // optional, defaults to true
-        sidebarDepth: 2, // optional, defaults to 2
+        // required, title of group
+        title: "Group 1",
+        // optional, icon of group
+        icon: "bar",
+        // optional, link of group title
+        path: "/foo/",
+        // optional, defaults to true
+        collapsable: false,
+        // optional, defaults to 2
+        sidebarDepth: 2,
+        // required, items of group
         children: ["/"],
       },
       {
@@ -91,13 +121,11 @@ module.exports = {
 };
 ```
 
-Sidebar groups are collapsable by default. You can force a group to be always open with `collapsable: false`.
-
-A sidebar group config also supports [sidebarDepth](#nested-header-links) field to override the default sidebar depth (`2`).
-
 ### Multiple Sidebars
 
-To display different sidebars for different sections of content, first organize your pages into directories for each desired section:
+To display different sidebars for different page groups, set an object for the sidebar in the format of `path: config`.
+
+For example, if you have the following structure:
 
 ```
 .
@@ -114,7 +142,7 @@ To display different sidebars for different sections of content, first organize 
     └─ four.md
 ```
 
-Then, update your configuration to define your sidebar for each section.
+You can define your sidebar for each section using below configuration:
 
 ```js
 // .vuepress/config.js
@@ -146,7 +174,9 @@ module.exports = {
 
 ::: warning
 
-Make sure to define the fallback configuration last, because VuePress checks each sidebar config from top to bottom.
+You need to pay special attention to the order of object key declaration. Generally speaking, you should put the more precise path first, because VuePress will traverse the key names of the sidebar configuration in order to find the matching configuration. Once a key name is successfully matched with the current path, it will display the corresponding sidebar configuration.
+
+In this case, the fallback sidebar must be defined last for this reason.
 
 :::
 
@@ -171,19 +201,6 @@ module.exports = {
 };
 ```
 
-In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.html) mode, you can also apply it to a specific locale:
-
-```js
-// .vuepress/config.js
-module.exports = {
-  themeConfig: {
-    "/": {
-      sidebar: "auto",
-    },
-  },
-};
-```
-
 ### Disabling the Sidebar
 
 You can disable the sidebar on a specific page with `YAML front matter`:
@@ -192,6 +209,23 @@ You can disable the sidebar on a specific page with `YAML front matter`:
 ---
 sidebar: false
 ---
+```
+
+## Muti language support
+
+In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.html) mode, you can also apply it to a specific locale:
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    "/zh/": {
+      sidebar: [
+        /* your config */
+      ],: "auto",
+    },
+  },
+};
 ```
 
 ## Blogger Information
@@ -213,48 +247,80 @@ module.exports = {
         {
           title: "Get Started",
           icon: "creative",
+          prefix: "get-started/",
           collapsable: false,
-          children: ["", "install"],
+          children: ["intro", "install", "markdown"],
         },
         {
-          title: "New Features",
+          title: "Interface",
+          icon: "skin",
+          prefix: "interface/",
+          collapsable: false,
+          children: ["darkmode", "theme-color", "icon", "others"],
+        },
+        {
+          title: "Layout",
+          icon: "layout",
+          prefix: "layout/",
+          collapsable: false,
+          children: [
+            "navbar",
+            "sidebar",
+            {
+              title: "Page",
+              icon: "page",
+              collapsable: false,
+              children: ["page", "breadcrumb", "footer"],
+            },
+            "home",
+            "slides",
+          ],
+        },
+        {
+          title: "Markdown enhance",
+          icon: "markdown",
+          prefix: "markdown/",
+          collapsable: false,
+          children: [
+            "intro",
+            "components",
+            "align",
+            "sup-sub",
+            "footnote",
+            "mark",
+            "tex",
+            "flowchart",
+            "demo",
+            "presentation",
+            "external",
+          ],
+        },
+        {
+          title: "Features",
           icon: "discover",
           prefix: "feature/",
           collapsable: false,
           children: [
-            "",
-            "theme",
             "page-info",
             "comment",
-            "blog",
+            "copy-code",
+            "photo-swipe",
+            "copyright",
+            "last-update",
             "encrypt",
-            {
-              title: "Markdown enhance",
-              icon: "markdown",
-              prefix: "markdown/",
-              collapsable: false,
-              children: [
-                "",
-                "align",
-                "sup-sub",
-                "footnote",
-                "mark",
-                "tex",
-                "flowchart",
-                "presentation",
-              ],
-            },
-            "component",
-            "seo-sitemap",
+            "pwa",
+            "feed",
+            "seo",
+            "sitemap",
             "typescript",
           ],
         },
         {
-          title: "Outlook",
+          title: "Blog",
           icon: "layout",
-          prefix: "layout/",
+          prefix: "blog/",
           collapsable: false,
-          children: ["", "navbar", "sidebar", "page", "home", "blog"],
+          children: ["intro", "home", "category-and-tags"],
         },
       ],
 
@@ -270,7 +336,7 @@ module.exports = {
         "stylus",
         {
           title: "Plugins",
-          icon: "extension",
+          icon: "plugin",
           prefix: "plugin/",
           collapsable: false,
           children: ["", "container", "copyright"],
@@ -301,7 +367,15 @@ module.exports = {
           icon: "vue",
           prefix: "vuepress/",
           collapsable: false,
-          children: ["", "file", "plugin", "theme", "command", "case"],
+          children: [
+            "",
+            "file",
+            "markdown",
+            "plugin",
+            "theme",
+            "command",
+            "case",
+          ],
         },
       ],
 
