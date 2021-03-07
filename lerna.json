@@ -1,7 +1,7 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "1.11.1",
+  "version": "1.11.2",
   "command": {
     "run": {
       "npmClient": "yarn"
