@@ -49,6 +49,7 @@ module.exports = config({
     iconPrefix: "vuepress-",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     repoDisplay: false,
+    docsBranch: "v1",
     docsDir: "docs/theme/src",
 
     nav: navBarConfig.en,

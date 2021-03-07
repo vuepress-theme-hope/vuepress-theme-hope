@@ -22,6 +22,7 @@ module.exports = config({
     author: "Mr.Hope",
     iconPrefix: "vuepress-",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+    docsBranch: "v1",
     docsDir: "docs/feed/src",
 
     nav: [
