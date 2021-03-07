@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.11.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.11.1...v1.11.2) (2021-03-07)
+
+### Bug Fixes
+
+- **theme:** fix fimeline sorting issue ([70f279e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/70f279e76fb84a9176b74dc511cc3ef53d4f96d8))
+
 ## [1.11.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.11.0...v1.11.1) (2021-02-28)
 
 ### Bug Fixes
