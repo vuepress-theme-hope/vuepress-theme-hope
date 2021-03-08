@@ -1,21 +1,27 @@
-import * as fs from "fs";
-import * as path from "path";
+import {
+  createReadStream,
+  createWriteStream,
+  mkdirSync,
+  readdirSync,
+  statSync,
+} from "fs";
+import { dirname } from "path";
 
 const ensureDirExistSync = (dirPath: string): void => {
   try {
-    fs.readdirSync(dirPath);
+    readdirSync(dirPath);
   } catch (err) {
-    fs.mkdirSync(dirPath);
+    mkdirSync(dirPath);
   }
 };
 
 const copyFile = (srcFile: string, targetFile: string): void => {
-  const targetDir = path.dirname(targetFile);
+  const targetDir = dirname(targetFile);
 
   ensureDirExistSync(targetDir);
 
-  const rs = fs.createReadStream(srcFile); // create read stream
-  const ws = fs.createWriteStream(targetFile); // create write stream
+  const rs = createReadStream(srcFile); // create read stream
+  const ws = createWriteStream(targetFile); // create write stream
 
   rs.pipe(ws);
 };
@@ -23,7 +29,7 @@ const copyFile = (srcFile: string, targetFile: string): void => {
 const copyDir = (srcDir: string, targetDir: string): void => {
   ensureDirExistSync(targetDir);
 
-  const files = fs.readdirSync(srcDir, { withFileTypes: true });
+  const files = readdirSync(srcDir, { withFileTypes: true });
 
   files.forEach((file) => {
     if (file.isFile())
@@ -33,9 +39,7 @@ const copyDir = (srcDir: string, targetDir: string): void => {
   });
 };
 
-const copy = (src: string, target: string): void => {
-  if (fs.statSync(src).isDirectory()) copyDir(src, target);
-  else if (fs.statSync(src).isFile()) copyFile(src, target);
+export const copy = (src: string, target: string): void => {
+  if (statSync(src).isDirectory()) copyDir(src, target);
+  else if (statSync(src).isFile()) copyFile(src, target);
 };
-
-export = copy;

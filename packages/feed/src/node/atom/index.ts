@@ -1,4 +1,4 @@
-import * as convert from "xml-js";
+import convert = require("xml-js");
 import { encodeCDATA, encodeXML, generator } from "../utils";
 import type { Feed } from "../feed";
 import type { FeedAuthor, FeedCategory, FeedItemOption } from "../../types";

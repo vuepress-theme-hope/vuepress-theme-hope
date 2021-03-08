@@ -13,7 +13,7 @@ export const checkLang = (lang: Langs): boolean => langs.includes(lang);
 
 /** Get path from language */
 export const lang2Path = (lang = ""): LangPaths | "/" => {
-  if (lang2PathConfig[lang as Langs]) return lang2PathConfig[lang as Langs];
+  if (lang in lang2PathConfig) return lang2PathConfig[lang as Langs];
 
   console.error(`${lang} has no path config, and will return '/' instead.`);
 
@@ -22,8 +22,7 @@ export const lang2Path = (lang = ""): LangPaths | "/" => {
 
 /** Get language from path */
 export const path2Lang = (path = ""): Langs => {
-  if (path2langConfig[path as LangPaths])
-    return path2langConfig[path as LangPaths];
+  if (path in path2langConfig) return path2langConfig[path as LangPaths];
 
   console.error(
     `${path} isn’t assign with a lang, and will return 'en-US' instead.`
@@ -34,7 +33,7 @@ export const path2Lang = (path = ""): Langs => {
 
 /** Get locate of certain language */
 export const getLocale = (lang: string): HopeThemeLocaleConfigItem => {
-  if (localesConfig[lang as Langs]) return localesConfig[lang as Langs];
+  if (lang in localesConfig) return localesConfig[lang as Langs];
 
   if (!reportStatus[lang]) {
     console.warn(

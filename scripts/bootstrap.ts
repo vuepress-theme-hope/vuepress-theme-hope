@@ -1,18 +1,18 @@
-import * as fs from "fs";
-import * as path from "path";
+import { existsSync, writeFileSync, readdirSync } from "fs";
+import { join, resolve } from "path";
 import { version } from "../packages/theme/package.json";
 
-const packagesDir = path.resolve(__dirname, "../packages/");
-const files = fs.readdirSync(packagesDir);
+const packagesDir = resolve(__dirname, "../packages/");
+const files = readdirSync(packagesDir);
 
 files.forEach((pkgName) => {
   if (pkgName.charAt(0) === "." || pkgName === "theme") return;
 
   const desc = `${pkgName} plugin for vuepress-theme-hope`;
-  const pkgPath = path.join(packagesDir, pkgName, "package.json");
+  const pkgPath = join(packagesDir, pkgName, "package.json");
 
   // generate package.json
-  if (!fs.existsSync(pkgPath)) {
+  if (!existsSync(pkgPath)) {
     const pkgJSON = {
       name: `@mr-hope/vuepress-plugin-${pkgName}`,
       version,
@@ -51,14 +51,14 @@ files.forEach((pkgName) => {
       },
     };
 
-    fs.writeFileSync(pkgPath, `${JSON.stringify(pkgJSON, null, 2)}\n`);
+    writeFileSync(pkgPath, `${JSON.stringify(pkgJSON, null, 2)}\n`);
   }
 
-  const readmePath = path.join(packagesDir, pkgName, "readme.md");
+  const readmePath = join(packagesDir, pkgName, "readme.md");
 
   // generate readme.md
-  if (!fs.existsSync(readmePath))
-    fs.writeFileSync(
+  if (!existsSync(readmePath))
+    writeFileSync(
       readmePath,
       `# @mr-hope/vuepress-plugin-${pkgName}
 

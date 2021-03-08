@@ -34,7 +34,7 @@ export class FeedPage {
     private context: Context
   ) {
     this.frontmatter = $page.frontmatter;
-    this.feedOption = (this.frontmatter.feed as FeedFrontmatterOption) || {};
+    this.feedOption = this.frontmatter.feed || {};
   }
 
   /** Get current page */
@@ -96,7 +96,7 @@ export class FeedPage {
     if (this.image)
       return {
         url: this.image,
-        type: getImageMineType(this.image.split(".").pop() as string),
+        type: getImageMineType(this.image.split(".").pop() || ""),
       };
 
     return undefined;

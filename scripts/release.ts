@@ -1,5 +1,5 @@
-import * as execa from "execa";
-import * as inquirer from "inquirer";
+import execa = require("execa");
+import { prompt } from "inquirer";
 import { ReleaseType, inc, prerelease } from "semver";
 import { version as currentVersion } from "../lerna.json";
 import { cyan, green, red } from "chalk";
@@ -46,7 +46,7 @@ const release = async (): Promise<void> => {
     value: bump,
   }));
 
-  const { bump, customVersion, npmTag } = await inquirer.prompt<Answers>([
+  const { bump, customVersion, npmTag } = await prompt<Answers>([
     {
       name: "bump",
       message: "Select release type:",
@@ -70,7 +70,7 @@ const release = async (): Promise<void> => {
 
   const version = customVersion || versions[bump];
 
-  const { confirm } = await inquirer.prompt<{ confirm: "Y" | "N" }>([
+  const { confirm } = await prompt<{ confirm: "Y" | "N" }>([
     {
       name: "confirm",
       message: `Confirm releasing ${version} (${npmTag})?`,

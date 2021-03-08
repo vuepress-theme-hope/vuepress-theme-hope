@@ -17,9 +17,9 @@ export const generateSeo = (
       author: pageAuthor,
       date,
       image,
-      time = date as Date,
+      time = date,
       tag,
-      tags = tag as string[],
+      tags = tag,
     },
     createTimeStamp,
     updateTimeStamp,
@@ -33,7 +33,7 @@ export const generateSeo = (
   const author =
     pageAuthor === false
       ? ""
-      : (pageAuthor as string) || options.author || themeConfig.author || "";
+      : pageAuthor || options.author || themeConfig.author || "";
   const publishTime = time
     ? new Date(time).toISOString()
     : typeof createTimeStamp === "number"
