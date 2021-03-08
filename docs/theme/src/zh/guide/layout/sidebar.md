@@ -448,7 +448,7 @@ module.exports = {
             "copy-code",
             "photo-swipe",
             "copyright",
-            "last-update",
+            "git",
             "encrypt",
             "pwa",
             "feed",

@@ -121,7 +121,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-feed][feed]: Feed support
 
-- [@mr-hope/vuepress-plugin-last-update][last-update]: Last update time
+- [@mr-hope/vuepress-plugin-git][git]: Info plugin based on git
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: PWA support
 
@@ -141,7 +141,7 @@ The theme also includes the following plugins, you can use them in other themes 
 [comment]: https://vuepress-theme-hope.github.io/comment/
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/
 [feed]: https://vuepress-theme-hope.github.io/feed/
-[last-update]: https://vuepress-theme-hope.github.io/last-update/
+[git]: https://vuepress-theme-hope.github.io/git/
 [md-enhance]: https://vuepress-theme-hope.github.io/md-enhance/
 [photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/
 [pwa]: https://vuepress-theme-hope.github.io/pwa/

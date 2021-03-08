@@ -1,6 +1,6 @@
 import { defaultTransformer } from "../src/node/time";
 
-describe("Last update test", () => {
+describe("Time transformer test", () => {
   it("Can transform time", () => {
     expect(defaultTransformer(1604735743827, "zh", "Asia/Shanghai")).toEqual(
       "2020年11月7日 15:55"

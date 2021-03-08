@@ -29,23 +29,23 @@ By default, the plugin will read the site configuration, theme configuration and
 
 The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
 
-| property | content |
-| :------: | :-----: || |
-| `og:url` | `themeConfig.hostname` + `path` |
-| `og:site_name` | `$site.title` |
-| `og:title` | `$page.title` |
-| `og:description` | `$page.frontmatter.description` |
-| `og:type` | `'article'` |
-| `og:image` | `themeConfig.hostname` + `$page.frontmatter.image` |
-| `og:updated_time` | `$page.lastUpdatedTime` |
-| `og:locale` | `$page._computed.$lang` |
-| `og:locale:alternate` | Other languages including in `$themeConfig.locales` |
-| `twitter:card` | `'summary_large_image'` |
-| `twitter:image:alt` | `$site.title` |
-| `article:author` | `$page.frontmatter.author | | themeConfig.author` |
-| `article:tag` | `$page.frontmatter.tags | | $page.frontmatter.tag` |
-| `article:published_time` | `$page.frontmatter.time | | $page.frontmatter.date` |
-| `article:modified_time` | `$page.lastUpdatedTime` |
+|         property         |                                     content                                      |
+| :----------------------: | :------------------------------------------------------------------------------: |
+|         `og:url`         |                         `themeConfig.hostname` + `path`                          |
+|      `og:site_name`      |                                  `$site.title`                                   |
+|        `og:title`        |                                   `page.title`                                   |
+|     `og:description`     |                          `page.frontmatter.description`                          |
+|        `og:type`         |                                   `'article'`                                    |
+|        `og:image`        |                `themeConfig.hostname` + `page.frontmatter.image`                 |
+|    `og:updated_time`     |                             `page.updatedTimeStamp`                              |
+|       `og:locale`        |                              `page._computed.$lang`                              |
+|  `og:locale:alternate`   |               Other languages including in `$themeConfig.locales`                |
+|      `twitter:card`      |                             `'summary_large_image'`                              |
+|   `twitter:image:alt`    |                                  `$site.title`                                   |
+|     `article:author`     |               `page.frontmatter.author` \|\| `themeConfig.author`                |
+|      `article:tag`       |               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                |
+| `article:published_time` | `page.frontmatter.time` \|\| `page.frontmatter.date` \|\| `page.createTimeStamp` |
+| `article:modified_time`  |                             `page.updatedTimeStamp`                              |
 
 ## Free customization
 

@@ -241,7 +241,7 @@ describe("Test resolveTheme function", () => {
         appKey: "vma8Ewk61WeNkI81O3CGpT2i",
       },
 
-      lastUpdate: {
+      git: {
         timezone: "Asia/Shanghai",
       },
 

@@ -20,7 +20,7 @@ vuepress-theme-hope introduces many great features. Most of the functions are se
 
 - [Copyright info](copyright.md)
 
-- [Last Update time](last-update.md)
+- [Git info](git.md)
 
 - [Encryption function](encrypt.md)
 
@@ -46,7 +46,7 @@ The theme includes the following plugins, you can use them directly in other the
 
 - [@mr-hope/vuepress-plugin-feed][feed]: Feed support
 
-- [@mr-hope/vuepress-plugin-last-update][last-update]: Last update time
+- [@mr-hope/vuepress-plugin-git][git]: Info based on git
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: PWA support
 
@@ -66,7 +66,7 @@ The theme includes the following plugins, you can use them directly in other the
 [comment]: https://vuepress-theme-hope.github.io/comment/
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/
 [feed]: https://vuepress-theme-hope.github.io/feed/
-[last-update]: https://vuepress-theme-hope.github.io/last-update/
+[git]: https://vuepress-theme-hope.github.io/git/
 [md-enhance]: https://vuepress-theme-hope.github.io/md-enhance/
 [photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/
 [pwa]: https://vuepress-theme-hope.github.io/pwa/

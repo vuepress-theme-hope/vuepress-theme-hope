@@ -21,7 +21,8 @@ export const generateSeo = (
       tag,
       tags = tag as string[],
     },
-    lastUpdatedTime,
+    createTimeStamp,
+    updateTimeStamp,
   } = page;
 
   const type = ["article", "category", "tag", "timeline"].some((folder) =>
@@ -33,9 +34,14 @@ export const generateSeo = (
     pageAuthor === false
       ? ""
       : (pageAuthor as string) || options.author || themeConfig.author || "";
+  const publishTime = time
+    ? new Date(time).toISOString()
+    : typeof createTimeStamp === "number"
+    ? new Date(createTimeStamp).toISOString()
+    : "";
   const modifiedTime =
-    typeof lastUpdatedTime === "number"
-      ? new Date(lastUpdatedTime).toISOString()
+    typeof updateTimeStamp === "number"
+      ? new Date(updateTimeStamp).toISOString()
       : "";
   const articleTags: string[] = Array.isArray(tags)
     ? tags
@@ -59,7 +65,7 @@ export const generateSeo = (
 
     "article:author": author,
     "article:tag": articleTags,
-    "article:published_time": time ? new Date(time).toISOString() : "",
+    "article:published_time": publishTime,
     "article:modified_time": modifiedTime,
   };
 };

@@ -146,8 +146,8 @@ module.exports = {
                 link: "https://vuepress-theme-hope.github.io/feed/zh/",
               },
               {
-                text: "最后更新时间插件",
-                link: "https://vuepress-theme-hope.github.io/last-update/zh/",
+                text: "Git 信息插件",
+                link: "https://vuepress-theme-hope.github.io/git/zh/",
               },
               {
                 text: "Markdown 增强插件",
@@ -399,8 +399,8 @@ module.exports = {
                 link: "https://vuepress-theme-hope.github.io/feed/zh/",
               },
               {
-                text: "最后更新时间插件",
-                link: "https://vuepress-theme-hope.github.io/last-update/zh/",
+                text: "Git 信息插件",
+                link: "https://vuepress-theme-hope.github.io/git/zh/",
               },
               {
                 text: "Markdown 增强插件",

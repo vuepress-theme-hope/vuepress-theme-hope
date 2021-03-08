@@ -96,10 +96,6 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
       );
     },
 
-    plugins: [
-      ["@mr-hope/last-update", themeConfig.lastUpdate || true],
-
-      ["@vuepress/last-updated", false],
-    ],
+    plugins: [["@mr-hope/git", themeConfig.git || true]],
   };
 };

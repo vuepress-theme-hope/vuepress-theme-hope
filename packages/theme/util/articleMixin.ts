@@ -18,8 +18,11 @@ export class TimelineMixin extends Vue {
       filterArticle(
         pages,
         (page) =>
-          Boolean(page.frontmatter.time || page.frontmatter.date) &&
-          page.frontmatter.timeline !== false
+          Boolean(
+            page.frontmatter.time ||
+              page.frontmatter.date ||
+              page.createTimeStamp
+          ) && page.frontmatter.timeline !== false
       )
     );
   }
@@ -31,9 +34,12 @@ export class TimelineMixin extends Vue {
     // filter before sort
     this.$timelineItems.forEach((article) => {
       const {
-        frontmatter: { date, time = date as Date | string },
+        frontmatter: { date, time = date },
+        createTimeStamp,
       } = article;
-      const [year, month, day] = getDate(time);
+      const [year, month, day] = getDate(
+        (time || createTimeStamp) as string | number | Date
+      );
 
       if (year && month && day) {
         if (!timelineItems[0] || timelineItems[0].year !== year)

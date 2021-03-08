@@ -43,9 +43,9 @@ In desktop mode, a list of article titles will automatically be displayed on the
 
 If you don’t want to display the title list on the right in desktop mode, please set `themeConfig.anchorDisplay` to `false`.
 
-## Last Updated
+## Contributors and Last Updated Time
 
-Please see [LastUpdate time](../feature/last-update.md).
+Please see [Git info plugin](../feature/git.md).
 
 ## Prev / Next Links
 

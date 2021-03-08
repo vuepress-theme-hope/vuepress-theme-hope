@@ -1,5 +1,5 @@
-import { sync } from "cross-spawn";
 import { basename, dirname } from "path";
+import execa = require("execa");
 import dayjs = require("dayjs");
 import localizedFormat = require("dayjs/plugin/localizedFormat");
 import utc = require("dayjs/plugin/utc"); // dependent on utc plugin
@@ -19,23 +19,39 @@ const getLang = (lang: string): string => {
   return langcode === "en-us" || langcode === "en-uk" ? "en" : langcode;
 };
 
-export const getGitLastUpdatedTimeStamp = (
+/**
+ * Get unix timestamp in milliseconds of the first commit
+ */
+export const getCreatedTimeStamp = async (
   filePath: string
-): number | undefined => {
-  try {
-    const timestamp = sync(
-      "git",
-      ["log", "-1", "--format=%at", basename(filePath)],
-      {
-        cwd: dirname(filePath),
-      }
-    ).stdout.toString();
+): Promise<number> => {
+  const { stdout } = await execa(
+    "git",
+    [
+      "--no-pager",
+      "log",
+      "--diff-filter=A",
+      "--format=%at",
+      basename(filePath),
+    ],
+    { cwd: dirname(filePath) }
+  );
 
-    return parseInt(timestamp) * 1000;
-  } catch (err) {
-    /* do not handle for now */
-    return undefined;
-  }
+  return Number.parseInt(stdout, 10) * 1000;
+};
+/**
+ * Get unix timestamp in milliseconds of the last commit
+ */
+export const getUpdatedTimeStamp = async (
+  filePath: string
+): Promise<number> => {
+  const { stdout } = await execa(
+    "git",
+    ["--no-pager", "log", "-1", "--format=%at", basename(filePath)],
+    { cwd: dirname(filePath) }
+  );
+
+  return Number.parseInt(stdout, 10) * 1000;
 };
 
 export const defaultTransformer = (

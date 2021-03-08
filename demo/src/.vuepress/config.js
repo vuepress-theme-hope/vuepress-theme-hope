@@ -123,7 +123,7 @@ module.exports = config({
 
     copyright: true,
 
-    lastUpdate: {
+    git: {
       timezone: "Asia/Shanghai",
     },
 

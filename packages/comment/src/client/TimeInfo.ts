@@ -22,7 +22,7 @@ export default Vue.extend({
         return time;
       }
 
-      return "";
+      return this.$page.createTime || "";
     },
 
     hint(): string {

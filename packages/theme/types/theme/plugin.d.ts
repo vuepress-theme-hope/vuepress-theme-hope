@@ -1,7 +1,7 @@
 import { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
 import { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
-import { LastUpdateOptions } from "@mr-hope/vuepress-plugin-last-update";
+import { GitOptions } from "@mr-hope/vuepress-plugin-git";
 import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
@@ -120,8 +120,8 @@ interface HopeThemePluginConfig {
   /** Sitemap */
   sitemap?: SitemapOptions | false;
 
-  /** 最后更新时间转换 */
-  lastUpdate?: LastUpdateOptions | false;
+  /** Git */
+  git?: GitOptions | false;
   /**
    * ts-loader 选项
    *

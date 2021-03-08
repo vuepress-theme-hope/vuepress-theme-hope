@@ -2,10 +2,14 @@ import * as dayjs from "dayjs";
 
 import type { PageComputed } from "@mr-hope/vuepress-types";
 
-export const getDate = (date: string | Date): (number | undefined)[] => {
-  const time = dayjs(date instanceof Date ? date : date.trim());
+export const getDate = (
+  date: string | number | Date
+): (number | undefined)[] => {
+  const time = dayjs(
+    date instanceof Date || typeof date === "number" ? date : date.trim()
+  );
 
-  if (date instanceof Date || time.isValid()) {
+  if (time.isValid()) {
     const year = time.year();
     const month = time.month() + 1;
     const date = time.date();
@@ -27,7 +31,7 @@ export const getDate = (date: string | Date): (number | undefined)[] => {
 
   const pattern = /(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?/u;
   const [, year, month, day, hour, minute, second] =
-    pattern.exec(date.trim()) || [];
+    pattern.exec((date as string).trim()) || [];
 
   const getNumber = (a: string): number | undefined =>
     typeof a === "undefined" ? undefined : Number(a);
@@ -49,8 +53,8 @@ export const getDate = (date: string | Date): (number | undefined)[] => {
 };
 
 export const compareDate = (
-  dataA: Date | string | undefined,
-  dataB: Date | string | undefined
+  dataA: Date | number | string | undefined,
+  dataB: Date | number | string | undefined
 ): number => {
   if (!dataA) return 1;
   if (!dataB) return -1;
@@ -110,8 +114,10 @@ export const sortArticle = (
       if (!prevKey && nextKey) return 1;
     }
 
-    const prevTime = prev.frontmatter.time || prev.frontmatter.date;
-    const nextTime = next.frontmatter.time || next.frontmatter.date;
+    const prevTime =
+      prev.frontmatter.time || prev.frontmatter.date || prev.createTimeStamp;
+    const nextTime =
+      next.frontmatter.time || next.frontmatter.date || next.createTimeStamp;
 
     return compareDate(prevTime, nextTime);
   });

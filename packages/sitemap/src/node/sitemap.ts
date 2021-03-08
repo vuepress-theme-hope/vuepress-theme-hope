@@ -47,7 +47,7 @@ const generatePageMap = (
     changefreq = "daily",
     exclude = [],
     dateFormatter = (page: PageComputed): string =>
-      page.lastUpdatedTime ? new Date(page.lastUpdatedTime).toISOString() : "",
+      page.updateTimeStamp ? new Date(page.updateTimeStamp).toISOString() : "",
   } = options;
 
   const { pages, locales = {} } = siteData;

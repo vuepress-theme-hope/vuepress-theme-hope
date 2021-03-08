@@ -121,7 +121,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-feed][feed]: Feed 支持
 
-- [@mr-hope/vuepress-plugin-last-update][last-update]: 支持多语言格式的最后更新时间
+- [@mr-hope/vuepress-plugin-git][git]: 基于 Git 的页面信息插件
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: PWA 支持
 
@@ -142,7 +142,7 @@ tags:
 [component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#使用
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
 [feed]: https://vuepress-theme-hope.github.io/feed/zh/
-[last-update]: https://vuepress-theme-hope.github.io/last-update/zh/
+[git]: https://vuepress-theme-hope.github.io/git/zh/
 [md-enhance]: https://vuepress-theme-hope.github.io/md-enhance/zh/
 [photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/zh/
 [pwa]: https://vuepress-theme-hope.github.io/pwa/zh/

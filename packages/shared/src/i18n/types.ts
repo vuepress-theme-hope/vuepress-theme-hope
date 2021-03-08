@@ -9,14 +9,20 @@ export interface HopeThemeLocaleConfigItem {
   lang?: string;
   /** 多语言下拉菜单的标题 */
   selectText?: string;
-  /** 该语言下的更新时间文字 */
-  lastUpdated?: string;
   /** 该语言在下拉菜单中的标签 */
   label?: string;
   /** 辅助标签 */
   ariaLabel?: string;
-  /** 编辑链接文字 */
-  editLinkText?: string;
+
+  /** 页面信息 */
+  meta: {
+    /** 贡献者文字 */
+    contributor: string;
+    /** 编辑链接文字 */
+    editLink: string;
+    /** 该语言下的更新时间文字 */
+    updateTime: string;
+  };
   /** 主题色配置 */
   themeColor: {
     /** 颜色提示文字 */

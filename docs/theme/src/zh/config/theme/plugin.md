@@ -263,11 +263,9 @@ React 依赖于 Babel。
 
 是否禁止选中文字
 
-## lastUpdate
+## git
 
-> 如果你不需要这个功能，请设置为 `false`。
-
-### lastUpdate.timezone
+### git.timezone
 
 - 类型: `string`
 - 必填: 否
@@ -276,12 +274,12 @@ React 依赖于 Babel。
 
 > 详细的时区列表，详见 [时区列表](https://www.zeitverschiebung.net/cn/all-time-zones.html)
 
-### lastUpdate.transformer
+### git.transformer
 
 - 类型: `(timestamp: number, lang: string) => string`
 - 默认值: `` `${dayjs(timestamp).format('LL')} ${dayjs(timestamp).format('HH:mm')}` ``
 
-`@mr-hope/plugin-last-update` 的时间转换函数。
+`@mr-hope/plugin-git` 的时间转换函数。
 
 默认情况下，会使用 dayjs 自动根据当前页面语言进行本地化。
 

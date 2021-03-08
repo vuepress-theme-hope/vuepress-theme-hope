@@ -418,8 +418,12 @@ export interface HopeThemeConfig
   docsDir?: string;
   /** 文档所属分支 */
   docsBranch?: string;
+  /** 显示贡献者 */
+  contributor?: boolean;
   /** 显示编辑本页链接 */
   editLinks?: boolean;
+  /** 显示更新时间 */
+  updateTime?: boolean;
   /**
    * 多语言配置
    *

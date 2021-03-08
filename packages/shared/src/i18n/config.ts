@@ -18,9 +18,12 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
   "zh-CN": {
     lang: "zh-CN",
     selectText: "选择语言",
-    lastUpdated: "上次编辑于",
     label: "简体中文",
-    editLinkText: "在 GitHub 上编辑此页",
+    meta: {
+      contributor: "贡献者",
+      editLink: "在 GitHub 上编辑此页",
+      updateTime: "上次编辑于",
+    },
     themeColor: {
       themeColor: "主题色",
       themeMode: "主题模式",
@@ -57,10 +60,13 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
   "en-US": {
     lang: "en-US",
     selectText: "Language",
-    ariaLabel: "Select language",
-    lastUpdated: "Last update",
     label: "English",
-    editLinkText: "Edit on Github",
+    ariaLabel: "Select language",
+    meta: {
+      contributor: "Contributors",
+      editLink: "Edit on Github",
+      updateTime: "Last update",
+    },
     themeColor: {
       themeColor: "Theme Color",
       themeMode: "Theme Mode",
@@ -97,10 +103,13 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
   "vi-VN": {
     lang: "vi-VN",
     selectText: "Ngôn ngữ",
-    ariaLabel: "Chọn ngôn ngữ",
-    lastUpdated: "Cập nhật gần nhất lúc",
     label: "Tiếng Việt",
-    editLinkText: "Chỉnh sửa trên GitHub",
+    ariaLabel: "Chọn ngôn ngữ",
+    meta: {
+      contributor: "Người đóng góp",
+      editLink: "Chỉnh sửa trên GitHub",
+      updateTime: "Cập nhật gần nhất lúc",
+    },
     themeColor: {
       themeColor: "Màu nền",
       themeMode: "Theme Mode",

@@ -4,7 +4,7 @@
 
 /// <reference types="@mr-hope/vuepress-plugin-feed" />
 
-/// <reference types="@mr-hope/vuepress-plugin-last-update" />
+/// <reference types="@mr-hope/vuepress-plugin-git" />
 
 /// <reference types="@mr-hope/vuepress-plugin-pwa" />
 

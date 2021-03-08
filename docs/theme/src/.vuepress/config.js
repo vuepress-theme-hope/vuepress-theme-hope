@@ -63,9 +63,11 @@ module.exports = config({
     },
 
     algolia: {
-      apiKey: "4deb442097fb6a05638adf10ef86e222",
-      indexName: "mrhope_vuepress-theme",
+      apiKey: "6b0dce9b8ac6778738e26c56def7eb76",
+      indexName: "vuepress-theme-hope",
     },
+
+    algoliaType: "full",
 
     footer: {
       display: true,
@@ -82,7 +84,7 @@ module.exports = config({
       status: "local",
     },
 
-    lastUpdate: {
+    git: {
       timezone: "Asia/Shanghai",
     },
 

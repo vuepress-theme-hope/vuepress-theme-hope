@@ -3,19 +3,13 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-last-update"
-tagline: 最后更新时间插件
+heroText: "@mr-hope/vuepress-plugin-git"
+tagline: Git 信息插件
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-这个插件将会利用 Git 的日志向 page 注入可阅读的最后更新时间文字与最后更新时间的时间戳。
-
-::: tip 为什么使用本插件
-
-官方插件的国际化支持并不良好，本插件提供了更为优秀的多语言支持。
-
-:::
+这个插件将会利用 Git 向 page 注入页面的贡献者与创建时间、最后更新时间的时间戳，同时还会使用 dayjs 生成本地化的时间文字。
 
 ## 使用插件
 
@@ -24,13 +18,13 @@ copyrightText: false
 <CodeGroup>
 <CodeGroupItem title="yarn">
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-last-update
+yarn add -D @mr-hope/vuepress-plugin-git
 ```
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
 ```bash
-npm i -D @mr-hope/vuepress-plugin-last-update
+npm i -D @mr-hope/vuepress-plugin-git
 ```
 </CodeGroupItem>
 </CodeGroup>
@@ -40,21 +34,29 @@ npm i -D @mr-hope/vuepress-plugin-last-update
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugins: [["@vuepress/last-updated", false], "@mr-hope/last-update"],
+  plugins: [
+    [
+      "@mr-hope/git",
+      {
+        // your options
+      },
+    ],
+  ],
 };
 ```
 
-::: warning
-
-你必须禁用官方插件
-
-:::
-
 ## 插件说明
 
-该插件基于 Git，会自动读取文件的上一次提交时间，并以本地化的形式，注入到 `lastUpdated` 上，同时，会将时间戳注入到 `lastUpdatedTime` 上，以供其他插件使用。
+该插件基于 Git，会自动读取文件的创建时间、上一次提交时间与贡献者，并注入到 page 上。同时，还会使用 dayjs 本地化时间，生成可阅读的时间文字。
 
 ## 配置
+
+### contributor
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否生成贡献者信息。
 
 ### timezone
 

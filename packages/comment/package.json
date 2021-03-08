@@ -36,6 +36,7 @@
     "demo:serve": "vuepress dev __tests__/demo"
   },
   "dependencies": {
+    "@mr-hope/vuepress-plugin-git": "1.11.0",
     "@mr-hope/vuepress-plugin-reading-time": "1.11.0",
     "@mr-hope/vuepress-shared": "1.11.0",
     "@mr-hope/vuepress-types": "1.11.0",

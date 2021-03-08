@@ -146,8 +146,8 @@ module.exports = {
                 link: "https://vuepress-theme-hope.github.io/feed/",
               },
               {
-                text: "Last Update Plugin",
-                link: "https://vuepress-theme-hope.github.io/last-update/",
+                text: "Git Info Plugin",
+                link: "https://vuepress-theme-hope.github.io/git/",
               },
               {
                 text: "Markdown Enhance Plugin",
@@ -403,8 +403,8 @@ module.exports = {
                 link: "https://vuepress-theme-hope.github.io/feed/",
               },
               {
-                text: "Last Update Plugin",
-                link: "https://vuepress-theme-hope.github.io/last-update/",
+                text: "Git Info Plugin",
+                link: "https://vuepress-theme-hope.github.io/git/",
               },
               {
                 text: "Markdown Enhance Plugin",

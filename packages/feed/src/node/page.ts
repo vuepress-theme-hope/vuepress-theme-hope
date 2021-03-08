@@ -109,16 +109,19 @@ export class FeedPage {
   get pubDate(): Date | undefined {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { date, time = date } = this.$page.frontmatter;
+    const createTimeStamp = this.$page.createTimeStamp;
 
-    return time && time instanceof Date ? time : undefined;
+    return time && time instanceof Date
+      ? time
+      : createTimeStamp
+      ? new Date(createTimeStamp)
+      : undefined;
   }
 
   get lastUpdated(): Date {
-    const lastUpdatedTimeStamp = (this.$page as PageComputed & {
-      lastUpdatedTime: number;
-    }).lastUpdatedTime;
+    const updateTimeStamp = this.$page.updateTimeStamp;
 
-    return lastUpdatedTimeStamp ? new Date(lastUpdatedTimeStamp) : new Date();
+    return updateTimeStamp ? new Date(updateTimeStamp) : new Date();
   }
 
   get content(): string {

@@ -3,19 +3,13 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-last-update"
-tagline: Last update plugin for vuepress
+heroText: "@mr-hope/vuepress-plugin-git"
+tagline: Git info plugin for vuepress
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-This plugin will use git to inject a readable last update time and a last update time timestamp into the page.
-
-::: tip Why use this plugin
-
-The internationalization support of the official plugin is not good, this plugin provides better multi-language support.
-
-:::
+This plugin will use git to inject contributors, createTime and updateTime timestamp into the page. It will also use dayjs to generate localized time text.
 
 ## How to use
 
@@ -24,13 +18,13 @@ The internationalization support of the official plugin is not good, this plugin
 <CodeGroup>
 <CodeGroupItem title="yarn">
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-last-update
+yarn add -D @mr-hope/vuepress-plugin-git
 ```
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
 ```bash
-npm i -D @mr-hope/vuepress-plugin-last-update
+npm i -D @mr-hope/vuepress-plugin-git
 ```
 </CodeGroupItem>
 </CodeGroup>
@@ -40,21 +34,29 @@ npm i -D @mr-hope/vuepress-plugin-last-update
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugins: [["@vuepress/last-updated", false], "@mr-hope/last-update"],
+  plugins: [
+    [
+      "@mr-hope/git",
+      {
+        // your options
+      },
+    ],
+  ],
 };
 ```
 
-::: warning
-
-You must disable the official plugin!
-
-:::
-
 ## Plugin description
 
-To let the plugin work, your docs should be a git project, the plugin will automatically read the file’s last commit time and inject it into `lastUpdated` in a localized form. At the same time, it will inject a timestamp in `lastUpdatedTime` for use by other plugins.
+To let the plugin work, your docs should be a git project, the plugin will automatically read the file’s contributors, create and last commit timestamp and inject it into page. It will also use dayjs to generate localized time text.
 
 ## Configuration
+
+### contributor
+
+- Type: `boolean`
+- Default: `true`
+
+Whether generate contributor info
 
 ### timezone
 

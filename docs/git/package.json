@@ -1,8 +1,8 @@
 {
-  "name": "last-update-docs",
+  "name": "git-docs",
   "version": "1.11.2",
   "private": true,
-  "description": "Docs for @mr-hope/vuepress-plugin-last-update",
+  "description": "Docs for @mr-hope/vuepress-plugin-git",
   "license": "MIT",
   "author": {
     "name": "Mr.Hope",

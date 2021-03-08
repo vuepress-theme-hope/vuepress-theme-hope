@@ -1,18 +1,40 @@
 import Vue from "vue";
+import { GitContributor } from "@mr-hope/vuepress-plugin-git";
 import { endingSlashRE, outboundRE } from "@theme/util/path";
+import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
 export default Vue.extend({
   name: "PageEdit",
 
   computed: {
-    lastUpdated(): string {
-      return this.$themeConfig.lastUpdate === false
-        ? ""
-        : this.$page.lastUpdated || "";
+    i18n(): HopeThemeLocaleConfigItem["meta"] {
+      return (
+        this.$themeLocaleConfig.meta || {
+          contributor: "Contributors",
+          editLink: "Edit this page",
+          updateTime: "Last Updated",
+        }
+      );
     },
 
-    lastUpdatedText(): string {
-      return this.$themeLocaleConfig.lastUpdated || "Last Updated";
+    contributors(): GitContributor[] {
+      return this.$themeConfig.contributor === false
+        ? []
+        : this.$page.contributors || [];
+    },
+
+    contributorsText(): string {
+      return this.i18n.contributor;
+    },
+
+    updateTime(): string {
+      return this.$themeConfig.updateTime === false
+        ? ""
+        : this.$page.updateTime || "";
+    },
+
+    updateTimeText(): string {
+      return this.i18n.updateTime;
     },
 
     editLink(): string | false {
@@ -30,7 +52,7 @@ export default Vue.extend({
     },
 
     editLinkText(): string {
-      return this.$themeLocaleConfig.editLinkText || "Edit this page";
+      return this.i18n.editLink;
     },
   },
 

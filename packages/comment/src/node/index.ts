@@ -28,6 +28,7 @@ export = (
     }),
 
     plugins: [
+      ["@mr-hope/git", themeConfig.git || true],
       ["@mr-hope/reading-time", { wordPerminute: options.wordPerminute }],
     ],
   };

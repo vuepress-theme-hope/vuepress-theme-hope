@@ -21,7 +21,7 @@ export const getPluginConfig = (
 
     ["@mr-hope/feed", themeConfig.feed],
 
-    ["@mr-hope/last-update", themeConfig.lastUpdate],
+    ["@mr-hope/git", themeConfig.git],
 
     ["@mr-hope/pwa", themeConfig.pwa],
 

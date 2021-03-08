@@ -1,16 +1,16 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "Last Update Time",
-  description: "Last update time getter for vuepress",
+  title: "Git-based info plugin",
+  description: "Info plugin based on git for vuepress",
 
-  base: "/last-update/",
+  base: "/git/",
   dest: "./dist",
 
   locales: {
     "/zh/": {
-      title: "最后更新时间",
-      description: "VuePress 的最后更新时间获取器",
+      title: "基于 Git 的信息插件",
+      description: "VuePress 的 Git 信息插件",
     },
   },
 
@@ -22,7 +22,7 @@ module.exports = config({
     iconPrefix: "vuepress-",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
-    docsDir: "docs/last-update/src",
+    docsDir: "docs/git/src",
 
     locales: {
       "/zh/": {},
@@ -33,7 +33,7 @@ module.exports = config({
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
-    lastUpdate: {
+    git: {
       timezone: "Asia/Shanghai",
     },
 
@@ -50,8 +50,8 @@ module.exports = config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-last-update",
-        short_name: "last-update plugin",
+        name: "@mr-hope/vuepress-plugin-git",
+        short_name: "Git plugin",
         icons: [
           {
             src: "/assets/icon/chrome-mask-512.png",
