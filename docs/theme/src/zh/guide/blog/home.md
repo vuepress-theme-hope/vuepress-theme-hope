@@ -1,4 +1,5 @@
 ---
+title: 博客首页
 icon: blog
 category: blog
 tags:
@@ -7,19 +8,21 @@ tags:
   - layout
 ---
 
-# 博客首页
-
 `vuepress-theme-hope` 允许你启用博客风格的首页。
 
 你需要在相应的页面的 frontmatter 中，设置 `blog: true` 来开启博客风格。
+
+<!-- more -->
 
 ![首页截图](./assets/blog.png)
 
 ## 可配置的项目
 
-你可以自由配置左上方的博主头像与博主姓名，他们的配置项为 `themeConfig.blog.avatar` 和 `themeConfig.blog.name`。如果你没有填写它们，它们会自动回退到站点 Logo (`themeConfig.logo`) 和 站点名称 (`themeConfig.name`)。
+你可以自由配置右上方的博主头像与博主姓名，他们的配置项为 `themeConfig.blog.avatar` 和 `themeConfig.blog.name`。如果你没有填写它们，它们会自动回退到站点 Logo (`themeConfig.logo`) 和 站点名称 (`themeConfig.name`)。
 
-如果你使用 `themeConfig.intro` 配置了个人介绍页地址，点击左上角的博主头像和博主名称，会自动跳转到博主的个人介绍页。
+主题默认会将头像剪裁成圆形，如果你拥有一个方形的 logo 且不希望它被破坏，请在 `themeConfig.blog` 中设置 `roundAvatar` 为 `false`。
+
+如果你将 `themeConfig.intro` 设置为个人介绍页地址，点击右上角的博主头像和博主名称，会自动跳转到博主的个人介绍页。
 
 你还可以在 `themeConfig.blog.links` 这个对象中以 `社交媒体名: 社交媒体链接` 的格式配置你的社交媒体链接。
 
@@ -56,8 +59,6 @@ tags:
 
 :::
 
-如果你对时间轴上面的提示文字不满意，你可以使用 `themeConfig.blog.timeline` 自定义一个。
-
 ## Frontmatter 可用参数
 
 ### hero
@@ -65,7 +66,7 @@ tags:
 - 类型: `boolean`
 - 默认: `true`
 
-是否显示主页的图标与描述。主页的图标、描述设置请见默认主页。
+是否显示主页的图标与描述。主页的图标、描述设置同 [默认主页](../layout/home.md)。
 
 ### bgImage
 

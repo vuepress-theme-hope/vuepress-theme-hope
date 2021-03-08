@@ -65,6 +65,7 @@ tags:
 
 - `text`: 按钮文字
 - `tink`: 按钮链接
+- `type`: 按钮类型 (仅支持 `'primary'` 与 `'default'` (默认))
 
 ### features
 

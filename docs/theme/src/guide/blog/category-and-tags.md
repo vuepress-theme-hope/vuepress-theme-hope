@@ -28,7 +28,7 @@ Page content...
 
 Then you can find it under the `/category/HTML` page.
 
-::: tip example
+::: info Example
 
 ![Category](./assets/category.png)
 
@@ -36,7 +36,7 @@ Then you can find it under the `/category/HTML` page.
 
 :::
 
-::: warn
+::: warning
 
 Please note that only one category can be set for an article. (V2 plan supports multiple categories of articles)
 
@@ -60,7 +60,7 @@ Page content...
 
 Then you can find it under the `/tag/HTML` and `/tag/Web` pages.
 
-::: tip example
+::: info Example
 
 ![Tag](./assets/tag.png)
 

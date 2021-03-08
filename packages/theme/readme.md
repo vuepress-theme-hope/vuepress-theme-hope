@@ -9,7 +9,7 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm) ![Dependencies](https://img.shields.io/librariesio/release/npm/vuepress-theme-hope?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-hope)
+[![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-hope)
 
 [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/15720/branches/318414/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9792&pid=15720&bid=318414)
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/v1/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
@@ -19,7 +19,7 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Official Docs / 官方文档
 
-[English Docs](https://vuepress-theme-hope.github.io/) | [中文文档](https://vuepress-theme-hope.github.io/zh/)
+[English Docs](https://vuepress-theme-hope.github.io/) | [中文文档](https://vuepress-theme-hope.github.io/zh/) | [Gitee 镜像](#gitee-镜像)
 
 [Theme Highlights](#Theme-Highlights) | [主题特点](#主题特点)
 
@@ -224,3 +224,9 @@ Added more syntax to Markdown, enriching documentation and blog writing
   - 分类分组列表
   - 标签分组列表
   - 时间线
+
+## Gitee 镜像
+
+由于有些人无法访问 Github Pages 或速度很慢，我们在 Gitee 上部署了 [国内镜像](https://vuepress-theme-hope.gitee.io)。
+
+请注意由于该镜像为手动部署，我们不保证它时刻与 Github Pages 的文档同步。

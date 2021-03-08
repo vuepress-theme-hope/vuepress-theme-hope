@@ -77,7 +77,7 @@ module.exports = {
         icon: "layout",
         prefix: "blog/",
         collapsable: false,
-        children: ["intro", "home", "category-and-tags"],
+        children: ["intro", "article", "category-and-tags", "timeline", "home"],
       },
     ],
 
@@ -216,7 +216,7 @@ module.exports = {
         icon: "layout",
         prefix: "blog/",
         collapsable: false,
-        children: ["intro", "home", "category-and-tags"],
+        children: ["intro", "article", "category-and-tags", "timeline", "home"],
       },
     ],
 

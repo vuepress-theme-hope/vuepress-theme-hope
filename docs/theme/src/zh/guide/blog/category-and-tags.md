@@ -28,7 +28,7 @@ category: HTML
 
 你就可以在 `/category/HTML` 页面下找到它。
 
-::: tip 例子
+::: info 例子
 
 ![Category](./assets/category.png)
 
@@ -36,7 +36,7 @@ category: HTML
 
 :::
 
-::: warn
+::: warning
 
 请注意，一篇文章只能设置一个分类。(V2 计划支持文章设置多个分类)
 
@@ -60,7 +60,7 @@ tags:
 
 你就可以在 `/tag/HTML` 和 `/tag/Web` 页面下找到它。
 
-::: tip 例子
+::: info 例子
 
 ![Tag](./assets/tag.png)
 

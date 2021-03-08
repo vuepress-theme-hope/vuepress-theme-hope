@@ -65,6 +65,7 @@ Append text
 
 - `text`: Button text
 - `link`: Button link
+- `type`: Button type (Only support `'primary'` and `'default'` (default))
 
 ### features
 

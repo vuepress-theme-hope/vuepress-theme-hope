@@ -1,4 +1,5 @@
 ---
+title: Blog homepage
 icon: blog
 category: blog
 tags:
@@ -7,11 +8,11 @@ tags:
   - layout
 ---
 
-# Blog homepage
-
 `vuepress-theme-hope` allows you to enable a blog-style homepage.
 
 You need to set `blog` to `true` in the frontmatter of the corresponding page to enable blog style.
+
+<!-- more -->
 
 ![Homepage screenshot](./assets/blog.png)
 
@@ -19,7 +20,9 @@ You need to set `blog` to `true` in the frontmatter of the corresponding page to
 
 You can freely configure the blogger’s avatar and blogger’s name display in the left-top corner. Their configuration items are `themeConfig.blog.avatar` and `themeConfig.blog.name`. If you do not fill them in, they will automatically fall back to the site Logo (`themeConfig.logo`) and the site name (`themeConfig.name`).
 
-If you use `themeConfig.intro` to configure the address of the personal introduction page, click on the blogger ’s profile picture and blogger ’s name in the left-top corner, and it will automatically jump to the link you provided.
+We will crop the avatar into a round circle by default. If you have a square logo and want to remian it, please set `roundAvatar` to `false` in `themeConfig.blog`.
+
+If you set `themeConfig.intro` with a link of personal introduction page, click on the blogger’s profile picture and blogger’s name in the right-top corner, and it will automatically jump to the link you provided.
 
 You can also configure your social media links in the format of `<social media name>: <social media links>` in the object `themeConfig.blog.links`.
 
@@ -65,7 +68,7 @@ If you are not satisfied with the prompt text on the top of the timeline page, y
 - Type: `boolean`
 - Default: `true`
 
-Whether to display the icon and description of the home page. For the icons and description settings of the homepage, please see the default homepage.
+Whether to display the icon and description of the home page.
 
 ### bgImage
 
