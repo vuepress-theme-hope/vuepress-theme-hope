@@ -2,6 +2,16 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.12.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.11.2...v1.12.0) (2021-03-08)
+
+### Features
+
+- rebuild `last-update` plugin as `git` plugin ([a5363db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a5363db3372f034af66ef3ed91f2491d43e10757))
+
+### BREAKING CHANGES
+
+- rebuild `last-update` plugin as `git` plugin
+
 ## [1.11.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.11.1...v1.11.2) (2021-03-07)
 
 ### Bug Fixes
