@@ -49,6 +49,26 @@ module.exports = {
 
 To let the plugin work, your docs should be a git project, the plugin will automatically read the file’s contributors, create and last commit timestamp and inject it into page. It will also use dayjs to generate localized time text.
 
+```ts
+interface GitContributor {
+  name: string;
+  email: string;
+  commits: number;
+}
+
+interface Page {
+  // other keys...
+
+  contributors?: GitContributor[];
+  /** Readable create time text in current language */
+  createTime?: string;
+  createTimeStamp?: number;
+  /** Readable time text in current language */
+  updateTime?: string;
+  updateTimeStamp?: number;
+}
+```
+
 ## Configuration
 
 ### contributor

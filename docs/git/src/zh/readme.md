@@ -49,6 +49,32 @@ module.exports = {
 
 该插件基于 Git，会自动读取文件的创建时间、上一次提交时间与贡献者，并注入到 page 上。同时，还会使用 dayjs 本地化时间，生成可阅读的时间文字。
 
+```ts
+interface GitContributor {
+  /** 姓名 */
+  name: string;
+  /** 邮箱 */
+  email: string;
+  /** 贡献的提交数 */
+  commits: number;
+}
+
+interface Page {
+  // other keys...
+
+  /** Git 贡献者 */
+  contributors?: GitContributor[];
+  /** 当前语言的创建时间文字 */
+  createTime?: string;
+  /** 创建时间的时间戳 */
+  createTimeStamp?: number;
+  /** 当前语言的更新时间文字 */
+  updateTime?: string;
+  /** 更新时间的时间戳 */
+  updateTimeStamp?: number;
+}
+```
+
 ## 配置
 
 ### contributor
