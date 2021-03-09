@@ -16,7 +16,6 @@ const renderIcon = (h: CreateElement, icon: string): VNode | null =>
   icon
     ? h("i", {
         class: ["iconfont", icon],
-        style: "margin-right: 0.2em;",
       })
     : null;
 

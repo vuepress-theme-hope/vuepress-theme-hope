@@ -99,8 +99,7 @@
 
     .arrow
       vertical-align middle
-      margin-top -1px
-      margin-left 0.4rem
+      font-size 1.2em
 
   .mobile-dropdown-title
     @extend .dropdown-title

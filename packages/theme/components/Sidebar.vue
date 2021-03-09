@@ -68,7 +68,7 @@
       margin-top 0.25rem
 
     a
-      font-weight 600
+      font-weight bold
 
     .nav-item, .repo-link
       display block
@@ -82,7 +82,7 @@
     & > li > a.sidebar-link
       font-size 1.1em
       line-height 1.7
-      font-weight bold
+      font-weight 500
 
     & > li:not(:first-child)
       margin-top 0.75rem

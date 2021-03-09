@@ -20,7 +20,7 @@
       @click="$emit('toggle')"
     >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
-      <span>{{ item.title }}</span>
+      <span class="title">{{ item.title }}</span>
       <span
         v-if="item.collapsable"
         :class="open ? 'down' : 'right'"
@@ -35,7 +35,7 @@
       @click="$emit('toggle')"
     >
       <i v-if="item.icon" :class="`iconfont ${getIcon(item.icon)}`" />
-      <span>{{ item.title }}</span>
+      <span class="title">{{ item.title }}</span>
       <span
         v-if="item.collapsable"
         :class="open ? 'down' : 'right'"
@@ -91,11 +91,14 @@
       border-left none
 
 .sidebar-heading
+  display flex
   box-sizing border-box
   width 100%
   margin 0
-  padding 0.35rem 1.5rem 0.35rem 1.25rem
+  padding 0.35rem 1rem 0.35rem 1.25rem
   border-left 0.25rem solid transparent
+  border-top-right-radius 0.25rem
+  border-bottom-right-radius 0.25rem
   color var(--text-color)
   font-size 1.1em
   font-weight bold
@@ -103,22 +106,30 @@
   transition color 0.15s ease
   user-select none
 
-  &.open, &:hover
+  &:hover
+    background-color var(--bgcolor-light)
+
+  &.open
     color inherit
 
+  .iconfont
+    margin-right 0.25em
+
+  .title
+    flex 1
+
   .arrow
-    position relative
-    top -0.12em
-    left 0.5em
+    font-size 1.5em
+    float right
 
   &.clickable
+    &:hover
+      background-color var(--bgcolor-light)
+
     &.active
       border-left-color var(--accent-color)
       color var(--accent-color)
-      font-weight 600
-
-    &:hover
-      color var(--accent-color)
+      font-weight 500
 
 .sidebar-group-items
   font-size 0.95em
