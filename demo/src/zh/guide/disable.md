@@ -1,6 +1,6 @@
 ---
 title: 组件禁用
-icon: set
+icon: config
 category: 使用指南
 backtotop: false
 breadcrumb: false

@@ -1,5 +1,6 @@
 ---
 title: Slide page
+icon: presentation
 layout: Slide
 ---
 

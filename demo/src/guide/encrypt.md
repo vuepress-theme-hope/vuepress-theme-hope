@@ -1,5 +1,5 @@
 ---
-icon: command
+icon: lock
 password: 1234
 category: Guide
 tag:

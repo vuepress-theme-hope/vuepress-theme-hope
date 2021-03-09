@@ -1,6 +1,6 @@
 ---
 title: Component disabled
-icon: set
+icon: config
 category: Guide
 backtotop: false
 breadcrumb: false
