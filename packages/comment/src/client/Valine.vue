@@ -37,7 +37,8 @@
         color var(--dark-grey, #666)
 
       .vwrap
-        border-color var(--grey12, #bbb)
+        border-width 0
+        box-shadow 0 0 8px 4px var(--box-shadow-color, #f0f1f2)
 
         .vicon.actived
           fill var(--accent-color, $accentColor)
@@ -116,17 +117,24 @@
             .vtime
               color var(--light-grey, #999)
 
-            .vmeta .vat
-              color var(--accent-color, $accentColor)
+          .vmeta .vat
+            padding 4px 6px
+            color var(--accent-color, $accentColor)
+            transition background-color 0.4s, color 0.4s
+            border-radius 4px
 
-              &:hover
-                color var(--accent-color-d10, $accentColor)
+            &:hover
+              background-color var(--accent-color, $accentColor)
+              color var(--white, #fff)
 
           .vcontent
             color var(--grey4, #444)
 
             &.expand:after
               color var(--grey, #888)
+
+          .vreply-wrapper .vwrap
+            margin 0 8px
 
           .vquote
             color var(--dark-grey, #666)
