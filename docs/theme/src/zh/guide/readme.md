@@ -97,17 +97,15 @@ tags:
 
 - [社交关注按钮与页面社交分享](https://vuepress-theme-hope.github.io/add-this/zh/)
 
-- [文章展示](blog/intro.md)
+- [支持置顶的文章列表](blog/intro.md)
+
+- [标签分组列表](blog/category-and-tags.md)
+
+- [时间线](blog/timeline.md)
+
+- [收藏文章](blog/article.md)
 
 - [全新博客主页布局](blog/home.md)
-
-- [支持置顶的文章列表](blog/intro.md#文章)
-
-- [分类分组列表](blog/intro.md#分类)
-
-- [标签分组列表](blog/intro.md#标签)
-
-- [时间线](blog/intro.md#时间线)
 
 ## 🧩 内建插件
 

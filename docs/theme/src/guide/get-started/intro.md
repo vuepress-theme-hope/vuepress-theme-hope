@@ -36,7 +36,7 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - To store some knowledge notes, the theme provides [Mark](../markdown/mark.md) and [Tex](../markdown/tex.md) support.
 
-- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, code group component `<CodeGroup />` and the "one-click copy" button (by [copy code plugin](https://vuepress-theme-hope.github.io/copy-code/)). At the same time, we also provide the [Code Demo](../markdown/demo.md) function, which is convenient for you to show your own Vue, React components or other demos.
+- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, code group component `<CodeGroup />` and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md) function, which is convenient for you to show your own Vue, React components or other demos.
 
 - If you are providing product documentation and presentation, the theme provides [slide](../markdown/presentation.md) and [flowchart](../markdown/flowchart.md) functions.
 
@@ -58,6 +58,6 @@ The theme also provides [Sitemap Generation](../feature/sitemap.md) to generate 
 
 ### Blog
 
-The theme provides [**categories, tags, timeline, featured articles**](../blog/blointrog.md) and other functions. Also, the theme gives you a brand new [**blog homepage**](../blog/home.md), and also .
+The theme provides [categories, tags](../blog/category-and-tags.md), [timeline](../blog/timeline.md), [star articles](../blog/article.md) and other functions. Also, the theme gives you a brand new [**blog homepage**](../blog/home.md), and also .
 
 At the same time, the theme also provides common blog feature such as [**Comment**](../feature/comment.md) and [**Feed**](../feature/feed.md).

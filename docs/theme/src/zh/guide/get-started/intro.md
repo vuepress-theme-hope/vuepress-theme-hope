@@ -36,7 +36,7 @@ tags:
 
 - 如果你希望存放一些知识笔记，主题提供了 [标记](../markdown/mark.md) 与 [公式](../markdown/tex.md) 支持。
 
-- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，代码组 `<CodeGroup />` 与 "一键复制" 按钮(由 [一键复制](https://vuepress-theme-hope.github.io/copy-code/zh/) 插件实现)。同时我们还提供 [代码演示](../markdown/demo.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
+- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，代码组 `<CodeGroup />` 与 ["一键复制" 按钮](../feature/copy-code.md)。同时我们还提供 [代码演示](../markdown/demo.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 
 - 如果你需要提供产品文档与展示，主题提供了 [幻灯片](../markdown/presentation.md) 与 [流程图](../markdown/flowchart.md) 功能。
 
@@ -58,6 +58,6 @@ tags:
 
 ### 博客
 
-主题提供了 [**分类、标签、时间线、精选文章**](../blog/intro.md) 等功能，并提供了全新的 [**博客主页**](../blog/home.md)。
+主题提供了 [分类、标签](../blog/category-and-tags.md)、[时间线](../blog/timeline.md)、[文章精选](../blog/article.md) 等功能，并提供了全新的 [**博客主页**](../blog/home.md)。
 
 同时主题还提供了 [**评论**](../feature/comment.md)、[**Feed**](../feature/feed.md) 等博客常用内容。
