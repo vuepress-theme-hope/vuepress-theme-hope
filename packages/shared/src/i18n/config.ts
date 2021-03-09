@@ -21,7 +21,7 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
     label: "简体中文",
     meta: {
       contributor: "贡献者",
-      editLink: "在 GitHub 上编辑此页",
+      editLink: "编辑此页",
       updateTime: "上次编辑于",
     },
     themeColor: {
@@ -64,7 +64,7 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
     ariaLabel: "Select language",
     meta: {
       contributor: "Contributors",
-      editLink: "Edit on Github",
+      editLink: "Edit this page",
       updateTime: "Last update",
     },
     themeColor: {
@@ -107,7 +107,7 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
     ariaLabel: "Chọn ngôn ngữ",
     meta: {
       contributor: "Người đóng góp",
-      editLink: "Chỉnh sửa trên GitHub",
+      editLink: "chỉnh sửa trang này",
       updateTime: "Cập nhật gần nhất lúc",
     },
     themeColor: {

@@ -28,7 +28,7 @@
     </MyTransition>
 
     <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
-      <PageEdit :key="$route.path" />
+      <PageMeta :key="$route.path" />
     </MyTransition>
 
     <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.14">

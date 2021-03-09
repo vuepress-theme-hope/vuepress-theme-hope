@@ -1,10 +1,13 @@
 import Vue from "vue";
 import { GitContributor } from "@mr-hope/vuepress-plugin-git";
+import EditIcon from "@theme/icons/EditIcon.vue";
 import { endingSlashRE, outboundRE } from "@theme/util/path";
 import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
 export default Vue.extend({
-  name: "PageEdit",
+  name: "PageMeta",
+
+  components: { EditIcon },
 
   computed: {
     i18n(): HopeThemeLocaleConfigItem["meta"] {

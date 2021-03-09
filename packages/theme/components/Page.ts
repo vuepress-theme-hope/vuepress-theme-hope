@@ -2,8 +2,8 @@ import Vue from "vue";
 import Anchor from "@theme/components/Anchor.vue";
 import Comment from "@Comment";
 import MyTransition from "@theme/components/MyTransition.vue";
-import PageEdit from "@theme/components/PageEdit.vue";
 import PageInfo from "@PageInfo";
+import PageMeta from "@theme/components/PageMeta.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
 
@@ -18,8 +18,8 @@ export default Vue.extend({
     Anchor,
     Comment,
     MyTransition,
-    PageEdit,
     PageInfo,
+    PageMeta,
     PageNav,
     Password,
   },

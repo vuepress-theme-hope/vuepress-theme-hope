@@ -1,10 +1,10 @@
 <template>
   <footer class="page-meta">
     <div v-if="editLink" class="edit-link">
+      <EditIcon />
       <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
         editLinkText
       }}</a>
-      <OutboundLink />
     </div>
 
     <div v-if="updateTime" class="meta-item update-time">
@@ -34,7 +34,7 @@
   </footer>
 </template>
 
-<script src="./PageEdit" />
+<script src="./PageMeta" />
 
 <style lang="stylus">
 @require '~@theme/styles/wrapper.styl'
@@ -59,6 +59,13 @@
     display inline-block
     font-size 14px
 
+    .icon
+      position relative
+      bottom -0.125em
+      width 1em
+      height 1em
+      color var(--accent-color)
+
     @media (max-width $MQMobile)
       margin-bottom 8px
 
@@ -76,7 +83,9 @@
 
   .contributors
     font-size 14px
+    text-align right
 
     @media (max-width $MQMobile)
       font-size 13px
+      text-align left
 </style>
