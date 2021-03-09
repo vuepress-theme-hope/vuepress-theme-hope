@@ -24,10 +24,10 @@
     padding 0.6em 0
 
   svg.md-flowchart-loading-icon
-    width 2.5em
-    height 2.5em
+    width 4em
+    height 4em
     margin 2.5em auto
-    fill var(--accent-color, $accentColor)
+    color var(--accent-color, $accentColor)
 
 .operation-element, .parallel-element
   rx 5px

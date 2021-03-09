@@ -1,56 +1,98 @@
 <template>
   <svg
-    style="enable-background: new 0 0 50 50"
-    viewBox="0 0 30 30"
     xmlns="http://www.w3.org/2000/svg"
+    style="background: 0 0; display: block; shape-rendering: auto"
+    width="200"
+    height="200"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="xMidYMid"
   >
-    <rect height="5" width="4" x="0" y="13">
+    <circle
+      cx="50"
+      cy="50"
+      r="0"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
       <animate
-        attributeName="height"
+        attributeName="r"
+        repeatCount="indefinite"
+        dur="1s"
+        values="0;40"
+        keyTimes="0;1"
+        keySplines="0 0.2 0.8 1"
+        calcMode="spline"
         begin="0s"
-        dur="0.6s"
-        repeatCount="indefinite"
-        values="5;21;5"
       />
       <animate
-        attributeName="y"
+        attributeName="opacity"
+        repeatCount="indefinite"
+        dur="1s"
+        values="1;0"
+        keyTimes="0;1"
+        keySplines="0.2 0 0.8 1"
+        calcMode="spline"
         begin="0s"
-        dur="0.6s"
-        repeatCount="indefinite"
-        values="13; 5; 13"
       />
-    </rect>
-    <rect height="5" width="4" x="10" y="13">
+    </circle>
+    <circle
+      cx="50"
+      cy="50"
+      r="0"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
       <animate
-        attributeName="height"
-        begin="0.15s"
-        dur="0.6s"
+        attributeName="r"
         repeatCount="indefinite"
-        values="5;21;5"
-      />
-      <animate
-        attributeName="y"
-        begin="0.15s"
-        dur="0.6s"
-        repeatCount="indefinite"
-        values="13; 5; 13"
-      />
-    </rect>
-    <rect height="5" width="4" x="20" y="13">
-      <animate
-        attributeName="height"
-        begin="0.3s"
-        dur="0.6s"
-        repeatCount="indefinite"
-        values="5;21;5"
+        dur="1s"
+        values="0;40"
+        keyTimes="0;1"
+        keySplines="0 0.2 0.8 1"
+        calcMode="spline"
+        begin="-0.3333333333333333s"
       />
       <animate
-        attributeName="y"
-        begin="0.3s"
-        dur="0.6s"
+        attributeName="opacity"
         repeatCount="indefinite"
-        values="13; 5; 13"
+        dur="1s"
+        values="1;0"
+        keyTimes="0;1"
+        keySplines="0.2 0 0.8 1"
+        calcMode="spline"
+        begin="-0.3333333333333333s"
       />
-    </rect>
+    </circle>
+    <circle
+      cx="50"
+      cy="50"
+      r="0"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <animate
+        attributeName="r"
+        repeatCount="indefinite"
+        dur="1s"
+        values="0;40"
+        keyTimes="0;1"
+        keySplines="0 0.2 0.8 1"
+        calcMode="spline"
+        begin="-0.6666666666666666s"
+      />
+      <animate
+        attributeName="opacity"
+        repeatCount="indefinite"
+        dur="1s"
+        values="1;0"
+        keyTimes="0;1"
+        keySplines="0.2 0 0.8 1"
+        calcMode="spline"
+        begin="-0.6666666666666666s"
+      />
+    </circle>
   </svg>
 </template>
