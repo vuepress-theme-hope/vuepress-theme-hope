@@ -45,7 +45,7 @@ $pageInfoTextSize ?= 14px
 
       .iconfont
         color var(--accent-color, $accentColor)
-        font-size 0.8em
+        font-size 0.9em
 
   .page-title + .theme-default-content:not(.custom)
     padding-top 0

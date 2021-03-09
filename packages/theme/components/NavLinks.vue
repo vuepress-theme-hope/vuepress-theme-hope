@@ -65,7 +65,7 @@
 
 .repo-link
   color var(--dark-grey)
-  margin-left 1.5rem
+  margin-left 1rem
 
   @media (max-width $MQMobile)
     margin-left 0

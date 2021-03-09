@@ -57,14 +57,14 @@
   box-sizing border-box
   box-shadow 0 2px 8px var(--card-shadow-color)
   backdrop-filter saturate(200%) blur(20px)
-  line-height $navbarHeight - $navbarVerticalPadding * 2
+  line-height: $navbarHeight - $navbarVerticalPadding * 2
   transition transform 0.3s ease-in-out
 
   @media (max-width $MQMobile)
     height $navbarMobileHeight
     padding $navbarMobileVerticalPadding $navbarMobileHorizontalPadding
-    padding-left $navbarMobileHorizontalPadding + 2.4rem
-    line-height $navbarMobileHeight - $navbarMobileVerticalPadding * 2
+    padding-left: $navbarMobileHorizontalPadding + 2.4rem
+    line-height: $navbarMobileHeight - $navbarMobileVerticalPadding * 2
 
   .hide-navbar &.can-hide
     transform translateY(-100%)
@@ -76,14 +76,14 @@
     color var(--accent-color)
 
   .logo
-    min-width $navbarHeight - $navbarVerticalPadding * 2
-    height $navbarHeight - $navbarVerticalPadding * 2
+    min-width: $navbarHeight - $navbarVerticalPadding * 2
+    height: $navbarHeight - $navbarVerticalPadding * 2
     margin-right 0.8rem
     vertical-align top
 
     @media (max-width $MQMobile)
-      min-width $navbarMobileHeight - $navbarMobileVerticalPadding * 2
-      height $navbarMobileHeight - $navbarMobileVerticalPadding * 2
+      min-width: $navbarMobileHeight - $navbarMobileVerticalPadding * 2
+      height: $navbarMobileHeight - $navbarMobileVerticalPadding * 2
 
     .theme-light &
       &.light
@@ -104,8 +104,7 @@
       display none
 
   .site-name
-    font-size 1.3rem
-    font-weight 600
+    font-size 1.5rem
     color var(--text-color)
     position relative
 
