@@ -28,14 +28,16 @@
 <style lang="stylus">
 .nav-link
   line-height 1.4rem
-  color var(--dark-grey)
 
-  @media (max-width $MQMobile)
+  .navbar &
+    color var(--dark-grey)
+
+    &.active
+      color var(--accent-color)
+
+  .sidebar &
     color var(--text-color)
 
     &:hover, &.active
       color var(--accent-color)
-
-  &.active
-    color var(--accent-color)
 </style>

@@ -59,33 +59,17 @@
   .blogger-info.mobile + hr
     display none
 
-  .nav-links
-    display none
-    border-bottom 1px solid var(--border-color)
-    padding 0.5rem 0 0.75rem 0
-
-    ul
-      margin-top 0.25rem
-
-    a
-      font-weight bold
-
-    .nav-item, .repo-link
-      display block
-      line-height 1.25rem
-      font-size 1.1em
-      padding 0.5rem 0 0.5rem 1.5rem
-
   & > .sidebar-links
     padding 1.5rem 0
 
-    & > li > a.sidebar-link
-      font-size 1.1em
-      line-height 1.7
-      font-weight 500
+    & > li
+      & > a.sidebar-link
+        font-size 1.1em
+        line-height 1.7
+        font-weight bold
 
-    & > li:not(:first-child)
-      margin-top 0.75rem
+      &:not(:first-child)
+        margin-top 0.75rem
 
   // narrow desktop / iPad
   @media (max-width $MQNarrow)

@@ -26,20 +26,33 @@
 .nav-links
   display inline-block
 
+  .sidebar &
+    display none
+    padding 0.5rem 0 0.75rem 0
+    border-bottom 1px solid var(--border-color)
+
+    ul
+      margin-top 0.25rem
+
 .nav-item
   position relative
   display inline-block
-  margin-left 1rem
   line-height 2rem
 
-  @media (max-width $MQMobile)
-    margin-left 0
+  .navbar &
+    margin-left 1rem
+
+  .sidebar &
+    display block
+    padding 0.5rem 0 0.5rem 1.5rem
+    font-size 1.1em
+    line-height 1.25rem
 
   &:first-child
     margin-left 0
 
   > .nav-link
-    @media (min-width $MQMobile)
+    .navbar &
       color var(--dark-grey)
 
       &::after
@@ -63,10 +76,18 @@
           right 0
           visibility visible
 
+    .sidebar &
+      font-weight bold
+
 .repo-link
   color var(--dark-grey)
-  margin-left 1rem
 
-  @media (max-width $MQMobile)
-    margin-left 0
+  .navbar &
+    margin-left 1rem
+
+  .sidebar &
+    display block
+    padding 0.5rem 0 0.5rem 1.5rem
+    font-size 1.1em
+    line-height 1.25rem
 </style>

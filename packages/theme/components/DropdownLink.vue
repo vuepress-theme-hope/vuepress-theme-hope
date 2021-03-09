@@ -68,27 +68,29 @@
 .dropdown-wrapper
   cursor pointer
 
-  @media (max-width $MQMobile)
+  .navbar &
+    height 1.8rem
+
+    &:hover, &.open
+      .nav-dropdown
+        display block !important
+
+  .sidebar &
     &.open .dropdown-title
       margin-bottom 0.5rem
 
-  @media (min-width $MQMobile)
-    height 1.8rem
-
-    &:hover .nav-dropdown, &.open .nav-dropdown
-      // override the inline style.
-      display block !important
-
-  .dropdown-title
+  .dropdown-title, .mobile-dropdown-title
     cursor inherit
     padding inherit
-    color var(--dark-grey)
-    font-size 0.9rem
     font-family inherit
-    font-weight 500
     line-height 1.4rem
 
-    @media (max-width $MQMobile)
+  .dropdown-title
+    color var(--dark-grey)
+    font-size 0.9rem
+    font-weight 500
+
+    .sidebar &
       display none
 
     &::after
@@ -98,29 +100,21 @@
       border-color transparent
 
     .arrow
-      vertical-align middle
       font-size 1.2em
 
   .mobile-dropdown-title
-    @extend .dropdown-title
-    display none
+    color var(--text-color)
     font-weight 600
     font-size inherit
 
-    @media (max-width $MQMobile)
-      display block
-      color var(--text-color)
+    .navbar &
+      display none
 
     &:hover
       color var(--accent-color)
 
   .nav-dropdown
-    @media (max-width $MQMobile)
-      margin-top 0.25rem
-      transition height 0.1s ease-out
-      overflow hidden
-
-    @media (min-width $MQMobile)
+    .navbar &
       display none
       box-sizing border-box
       position absolute
@@ -139,22 +133,33 @@
       white-space nowrap
       overflow-y auto
 
+    .sidebar &
+      margin-top 0.25rem
+      transition height 0.1s ease-out
+      overflow hidden
+
   .dropdown-item
     color inherit
     line-height 1.7rem
 
     h4
       margin 0
-      padding 0.75rem 1rem 0.25rem 0.75rem
-      border-top 1px solid var(--grey14)
-      color var(--dark-grey)
-      font-size 0.9rem
 
-      @media (max-width $MQMobile)
-        margin-top 0
+      .navbar &
+        padding 0.75rem 1rem 0.25rem 0.75rem
+        border-top 1px solid var(--grey14)
+        color var(--dark-grey)
+        font-size 0.9rem
+
+      .sidebar &
+        padding-left 1.25rem
+        font-size 15px
+        line-height 1.7
+
+    &:first-child h4
+      .navbar &
         padding-top 0
         border-top 0
-        line-height 2rem
 
     .nav-link
       display block
@@ -165,7 +170,7 @@
       font-weight 400
       line-height 1.7rem
 
-      @media (min-width $MQMobile)
+      .navbar &
         color var(--dark-grey)
 
       &:hover
@@ -186,7 +191,7 @@
           border-bottom 3px solid transparent
 
     & > .nav-link
-      @media (max-width $MQMobile)
+      .sidebar &
         font-size 15px
         line-height 2rem
 
@@ -197,11 +202,6 @@
     .dropdown-subitem
       font-size 0.9em
 
-      @media (max-width $MQMobile)
-        padding-left 1rem
-
-    &:first-child h4
-      margin-top 0
-      padding-top 0
-      border-top 0
+      .sidebar &
+        padding-left 0.5rem
 </style>
