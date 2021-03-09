@@ -43,7 +43,7 @@ body.theme-dark
   --docsearch-searchbox-background #090a11
   --docsearch-searchbox-focus-background #000
   --docsearch-hit-shadow none
-  --docsearch-key-gradient linear-gradient(-26.5deg, #565872, #31355b)
+  --docsearch-key-gradient linear-gradient(-26.5deg, #565862, #31353b)
   --docsearch-key-shadow inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d, 0 2px 2px 0 rgba(3, 4, 9, 0.3)
   --docsearch-footer-shadow inset 0 1px 0 0 rgba(73, 76, 106, 0.5), 0 -4px 8px 0 rgba(0, 0, 0, 0.2)
   --docsearch-muted-color #7f8497
@@ -61,12 +61,12 @@ body.theme-dark
   outline none
 
   .DocSearch-Search-Icon
-    width 1.1rem
-    height 1.1rem
+    width 1rem
+    height 1rem
+    margin 0.1rem
     color #aaa
     stroke-width 3
     position relative
-    bottom -0.125em
 
   @media (max-width $MQMobile)
     margin-right 0
