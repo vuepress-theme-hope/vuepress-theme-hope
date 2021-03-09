@@ -10,7 +10,7 @@
         background: `url(${
           $frontmatter.bgImage
             ? $withBase($frontmatter.bgImage)
-            : require('@theme/assets/homeImage.jpg')
+            : require('@theme/assets/hero.jpg')
         }) center/cover no-repeat`,
       }"
     />
