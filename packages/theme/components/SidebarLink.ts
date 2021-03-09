@@ -23,13 +23,14 @@ const renderIcon = (h: CreateElement, icon: string): VNode | null =>
 interface RenderLinkOption {
   icon?: string;
   text: string;
+  level?: number;
   link: string;
   active: boolean;
 }
 
 const renderLink = (
   h: CreateElement,
-  { icon = "", text, link, active }: RenderLinkOption
+  { icon = "", text, link, level, active }: RenderLinkOption
 ): VNode =>
   h(
     "RouterLink",
@@ -42,6 +43,7 @@ const renderLink = (
       class: {
         active,
         "sidebar-link": true,
+        [level ? `heading${level}` : ""]: level && level !== 2,
       },
     },
     [renderIcon(h, icon), text]
@@ -88,6 +90,7 @@ const renderChildren = (
         renderLink(h, {
           text: child.title,
           link: `${path}#${child.slug}`,
+          level: child.level,
           active,
         }),
         renderChildren(h, {
@@ -161,6 +164,7 @@ export default Vue.extend({
         renderLink(h, {
           text: item.title || item.path,
           link: item.path,
+          level: item.level,
           active,
         }),
         renderChildren(h, {

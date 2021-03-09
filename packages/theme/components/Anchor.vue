@@ -5,7 +5,7 @@ $headings = 2 3 4 5 6
 
 .anchor-place-holder
   position sticky
-  top ($navbarHeight + 2rem)
+  top: ($navbarHeight + 2rem)
   max-width $contentWidth
   margin 0 auto
   padding 0 2.5rem
@@ -84,13 +84,13 @@ $headings = 2 3 4 5 6
         position absolute
         z-index 2
         top 50%
+        left -16px
         width 6px
         height 6px
-        margin-left -3px
-        margin-top -3px
         background var(--bgcolor)
         border 1px solid var(--border-color)
         border-radius 50%
+        transform translateY(-3px)
 
       &:hover, &.active
         color var(--accent-color)
@@ -98,10 +98,8 @@ $headings = 2 3 4 5 6
         &::before
           background var(--accent-color)
 
-    for $heading in $headings
-      &.anchor{$heading} .anchor-link
-        font-size (16 - $heading)px
-
-        &::before
-          left (-8 * $heading + 4)px
+      for $heading in $headings
+        &.heading{$heading}
+          padding-left ($heading * 8 - 16) px
+          font-size: (16 - $heading)px
 </style>

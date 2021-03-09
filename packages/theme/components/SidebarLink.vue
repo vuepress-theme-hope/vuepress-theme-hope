@@ -1,6 +1,8 @@
 <script src="./SidebarLink" />
 
 <style lang="stylus">
+$headings = 3 4 5 6
+
 .sidebar
   .sidebar-links
     ul.sidebar-sub-headers
@@ -27,6 +29,10 @@ a.sidebar-link
 
     .iconfont
       color var(--accent-color)
+
+  for $heading in $headings
+    &.heading{$heading}
+      padding-left (1 + ($heading - 2) * 0.5)rem !important
 
   &.active
     border-left-color var(--accent-color)

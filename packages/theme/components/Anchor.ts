@@ -1,19 +1,20 @@
 import Vue from "vue";
-import { SidebarHeader, groupSidebarHeaders } from "@theme/util/sidebar";
+import { SidebarHeader } from "@theme/util/sidebar";
 import { isActive } from "@theme/util/path";
 
 import type { CreateElement, VNode } from "vue";
 import type { Route } from "vue-router";
 
 interface AnchorItem {
-  link: string;
   text: string;
+  level?: number;
+  link: string;
   active: boolean;
 }
 
 const renderLink = (
   h: CreateElement,
-  { text, link, active }: AnchorItem
+  { text, link, level, active }: AnchorItem
 ): VNode =>
   h(
     "RouterLink",
@@ -26,71 +27,53 @@ const renderLink = (
       class: {
         active,
         "anchor-link": true,
+        [level ? `heading${level}` : ""]: level,
       },
     },
     [h("div", {}, [text])]
   );
 
 interface RenderChildrenOptions {
-  children: SidebarHeader[] | false;
-  path: string;
+  children: SidebarHeader[];
   route: Route;
-  depth?: number;
-  maxDepth: number;
 }
 
 const renderChildren = (
   h: CreateElement,
-  { children, path, route, maxDepth, depth = 2 }: RenderChildrenOptions
-): VNode | null => {
-  if (!children || depth > maxDepth) return null;
-
-  return h(
+  { children, route }: RenderChildrenOptions
+): VNode =>
+  h(
     "ul",
     { class: "anchor-list" },
     children.map((child: SidebarHeader) => {
-      const active = isActive(route, `${path}#${child.slug}`);
+      const active = isActive(route, `${route.path}#${child.slug}`);
 
-      return h("li", { class: ["anchor", `anchor${depth}`] }, [
+      return h("li", { class: "anchor" }, [
         renderLink(h, {
           text: child.title,
-          link: `${path}#${child.slug}`,
+          link: `${route.path}#${child.slug}`,
+          level: child.level,
           active,
-        }),
-        renderChildren(h, {
-          children: child.children || false,
-          path,
-          route,
-          maxDepth,
-          depth: depth + 1,
         }),
       ]);
     })
   );
-};
 
 export default Vue.extend({
   name: "Anchor",
 
   functional: true,
 
-  render(h, { parent: { $page, $route, $themeConfig, $themeLocaleConfig } }) {
-    const maxDepth =
-      ($page.frontmatter.sidebarDepth ||
-        ($themeLocaleConfig.sidebarDepth as number | undefined) ||
-        $themeConfig.sidebarDepth ||
-        2) + 1;
-    const children = groupSidebarHeaders($page.headers || []);
-
+  render(h, { parent: { $page, $route } }) {
     return h("div", { attrs: { class: "anchor-place-holder" } }, [
       h("aside", { attrs: { id: "anchor" } }, [
         h("div", { class: "anchor-wrapper" }, [
-          renderChildren(h, {
-            children,
-            path: $route.path,
-            route: $route,
-            maxDepth,
-          }),
+          $page.headers
+            ? renderChildren(h, {
+                children: $page.headers,
+                route: $route,
+              })
+            : null,
         ]),
       ]),
     ]);
