@@ -57,7 +57,7 @@ On the project page, you can edit the icons in the project, including adjustment
 1. Import the link in `index.styl` of `.vuepress/styles`. E.g:
 
    ```styl
-   @import "//at.alicdn.com/t/font_1446717_wy5ujz8b14.css";
+   @import "//at.alicdn.com/t/font_2410206_hyvqo5dmahr.css";
    ```
 
 ::: tip
@@ -93,3 +93,11 @@ Please follow [fontawesome document](https://fontawesome.com/).
 
 - Icon will have `iconfont` class name by default
 - The prefix of the icon class is `icon-` by default, which can be changed in the `iconPrefix` field in themeConfig
+
+## Featured Icons
+
+```styl
+@import '//at.alicdn.com/t/font_2410206_hyvqo5dmahr.css';
+```
+
+<IconDisplay  link="//at.alicdn.com/t/font_2410206_hyvqo5dmahr.css" />

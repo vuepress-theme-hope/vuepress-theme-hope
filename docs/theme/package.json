@@ -15,6 +15,7 @@
     "docs:serve": "vuepress dev src"
   },
   "devDependencies": {
+    "axios": "0.21.1",
     "vuepress": "1.8.2",
     "vuepress-theme-hope": "1.12.0"
   }

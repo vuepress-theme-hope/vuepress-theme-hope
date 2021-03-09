@@ -57,7 +57,7 @@ tags:
 1. 在 `.vuepress/styles` 的 `index.styl` 中导入链接。例如:
 
    ```styl
-   @import "//at.alicdn.com/t/font_1446717_wy5ujz8b14.css";
+   @import "//at.alicdn.com/t/font_2410206_hyvqo5dmahr.css";
    ```
 
 ::: tip
@@ -93,3 +93,11 @@ tags:
 
 - 图标会默认添加 `iconfont` 类名
 - 图标 class 的前缀默认为 `icon-`，可以在主题配置中的 `iconPrefix` 字段进行更改
+
+## 精选图标
+
+```styl
+@import '//at.alicdn.com/t/font_2410206_hyvqo5dmahr.css';
+```
+
+<IconDisplay  link="//at.alicdn.com/t/font_2410206_hyvqo5dmahr.css" />

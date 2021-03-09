@@ -11,7 +11,14 @@
     "allow_different_nesting": true
   },
   "MD033": {
-    "allowed_elements": ["br", "iframe", "Badge", "CodeGroup", "CodeGroupItem"]
+    "allowed_elements": [
+      "br",
+      "iframe",
+      "Badge",
+      "CodeGroup",
+      "CodeGroupItem",
+      "IconDisplay"
+    ]
   },
   "MD035": {
     "style": "---"
