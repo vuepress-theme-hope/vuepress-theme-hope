@@ -56,7 +56,4 @@ a.sidebar-link
     &.active
       background-color transparent
       font-weight 500
-
-  .iconfont
-    color var(--dark-grey)
 </style>

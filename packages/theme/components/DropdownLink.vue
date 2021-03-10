@@ -104,7 +104,7 @@
 
   .mobile-dropdown-title
     color var(--text-color)
-    font-weight 600
+    font-weight bold
     font-size inherit
 
     .navbar &
