@@ -1,5 +1,5 @@
 import Vue from "vue";
-import DropdownTransition from "@theme/components/DropdownTransition.vue";
+import DropdownTransition from "@theme/components/Navbar/DropdownTransition.vue";
 import { isActive } from "@theme/util/path";
 
 import type { PropType } from "vue";
@@ -21,7 +21,7 @@ export default Vue.extend({
 
   beforeCreate(): void {
     // eslint-disable-next-line
-    this.$options.components!.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
+    this.$options.components!.SidebarLinks = require("@theme/components/Sidebar/SidebarLinks.vue").default;
   },
 
   methods: {

@@ -27,7 +27,7 @@
   "types": "types/index.d.ts",
   "scripts": {
     "build": "tsc -b tsconfig.json",
-    "clean": "rimraf components/**/*.{js,d.ts,.map} layouts/**/*.{js,d.ts,.map} node/**/*.{js,d.ts,.map} util/**/*.{js,d.ts,.map} index.d.ts index.js index.js.map *.tsbuildinfo",
+    "clean": "rimraf components/**/*.{js,d.ts,.js.map} layouts/**/*.{js,d.ts,.js.map} node/**/*.{js,d.ts,.js.map} util/**/*.{js,d.ts,.js.map} index.d.ts index.js index.js.map *.tsbuildinfo",
     "test": "jest"
   },
   "dependencies": {

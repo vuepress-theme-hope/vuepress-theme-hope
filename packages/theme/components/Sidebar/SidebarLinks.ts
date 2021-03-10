@@ -1,6 +1,6 @@
 import Vue from "vue";
-import SidebarGroup from "@theme/components/SidebarGroup.vue";
-import SidebarLink from "@theme/components/SidebarLink.vue";
+import SidebarGroup from "@theme/components/Sidebar/SidebarGroup.vue";
+import SidebarLink from "@theme/components/Sidebar/SidebarLink.vue";
 import { isActive } from "@theme/util/path";
 
 import type { PageComputed } from "@mr-hope/vuepress-types";

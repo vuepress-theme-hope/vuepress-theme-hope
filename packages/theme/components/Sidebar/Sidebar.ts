@@ -1,7 +1,7 @@
 import Vue from "vue";
 import BloggerInfo from "@theme/components/Blog/BloggerInfo.vue";
-import NavLinks from "@theme/components/NavLinks.vue";
-import SidebarLinks from "@theme/components/SidebarLinks.vue";
+import NavLinks from "@theme/components/Navbar/NavLinks.vue";
+import SidebarLinks from "@theme/components/Sidebar/SidebarLinks.vue";
 
 import type { PropType } from "vue";
 import type { BlogOptions } from "@theme/types";

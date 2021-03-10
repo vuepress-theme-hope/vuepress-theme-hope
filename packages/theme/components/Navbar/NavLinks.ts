@@ -1,6 +1,6 @@
 import Vue from "vue";
-import DropdownLink from "@theme/components/DropdownLink.vue";
-import NavLink from "@theme/components/NavLink.vue";
+import DropdownLink from "@theme/components/Navbar/DropdownLink.vue";
+import NavLink from "@theme/components/Navbar/NavLink.vue";
 import { getNavLinkItem } from "@theme/util/navbar";
 
 import type { NavBarConfigItem } from "@mr-hope/vuepress-types";

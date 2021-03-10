@@ -1,8 +1,8 @@
 import Vue from "vue";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";
-import NavLinks from "@theme/components/NavLinks.vue";
+import NavLinks from "@theme/components/Navbar/NavLinks.vue";
 import SearchBox from "@SearchBox";
-import SidebarButton from "@theme/components/SidebarButton.vue";
+import SidebarButton from "@theme/components/Navbar/SidebarButton.vue";
 import ThemeColor from "@ThemeColor";
 
 import type { AlgoliaOption } from "@mr-hope/vuepress-types";

@@ -1,11 +1,11 @@
 import { Component, Mixins, Prop } from "vue-property-decorator";
 import { getSidebarItems } from "@theme/util/sidebar";
 import GlobalEncryptMixin from "@theme/util/globalEncryptMixin";
-import Navbar from "@theme/components/Navbar.vue";
+import Navbar from "@theme/components/Navbar/Navbar.vue";
 import PageFooter from "@theme/components/PageFooter.vue";
 import Password from "@theme/components/Password.vue";
 import { PageHeader } from "@mr-hope/vuepress-types";
-import Sidebar from "@theme/components/Sidebar.vue";
+import Sidebar from "@theme/components/Sidebar/Sidebar.vue";
 import throttle from "lodash.throttle";
 
 import type { SidebarItem, SidebarHeader } from "@theme/util/sidebar";

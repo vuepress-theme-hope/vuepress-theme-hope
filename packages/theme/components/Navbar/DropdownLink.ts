@@ -1,6 +1,6 @@
 import Vue from "vue";
-import DropdownTransition from "@theme/components/DropdownTransition.vue";
-import NavLink from "@theme/components/NavLink.vue";
+import DropdownTransition from "@theme/components/Navbar/DropdownTransition.vue";
+import NavLink from "@theme/components/Navbar/NavLink.vue";
 
 import type { PropType } from "vue";
 import type { NavBarConfigItem } from "@theme/util/navbar";
