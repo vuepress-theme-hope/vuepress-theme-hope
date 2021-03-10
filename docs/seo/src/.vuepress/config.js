@@ -62,6 +62,12 @@ module.exports = config({
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
+    comment: {
+      type: "valine",
+      appId: "2vSLKb0SqFKKWEgrOPGy3sp1-gzGzoHsz",
+      appKey: "vma8Ewk61WeNkI81O3CGpT2i",
+    },
+
     git: {
       timezone: "Asia/Shanghai",
     },
