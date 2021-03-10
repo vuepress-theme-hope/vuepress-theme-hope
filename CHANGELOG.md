@@ -2,6 +2,21 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.12.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.0...v1.12.1) (2021-03-10)
+
+### Bug Fixes
+
+- **theme:** anchor and sidebar header indent ([a1fd75c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a1fd75c9079506ec7f3c23f88f8b0bad611751e2))
+- **theme:** fix AlgoliaSearchIcon position ([995339b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/995339b40bd6b3ffddb0b0f87b134106cfbddf50))
+
+### Features
+
+- update icon ([a16ffec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a16ffecc140dfc673c1d0f945a8e92baded433e2))
+- update valine UI ([1a697e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1a697e55d93b51c9170d7488347f4dc303711c89))
+- **theme:** change default hero image ([807496c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/807496cf6627083f5633883b07c0eb4f223e6825))
+- **theme:** rename PageEdit to PageMeta ([d360d61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d360d6198315ff64958139112e49c7c1c609e5a9))
+- **theme:** update sidebar appearance ([f34d016](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f34d0160ca8eae89355cdd72f0e16ae8cd6574a2))
+
 ## [1.12.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.11.2...v1.12.0) (2021-03-08)
 
 ### Features
