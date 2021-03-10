@@ -1,6 +1,6 @@
 ---
 title: 导航栏
-icon: nav
+icon: navbar
 category: layout
 tags:
   - layout

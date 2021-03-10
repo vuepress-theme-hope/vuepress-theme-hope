@@ -1,6 +1,6 @@
 ---
 title: Category and tags
-icon: blog
+icon: tag
 category: blog
 tags:
   - blog

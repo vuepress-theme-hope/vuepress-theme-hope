@@ -1,6 +1,6 @@
 ---
 title: 幻灯片页
-icon: presentation
+icon: slides
 layout: Slide
 ---
 

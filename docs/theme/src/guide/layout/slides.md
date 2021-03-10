@@ -1,6 +1,6 @@
 ---
 title: Slide
-icon: presentation
+icon: slides
 category: layout
 tags:
   - slides

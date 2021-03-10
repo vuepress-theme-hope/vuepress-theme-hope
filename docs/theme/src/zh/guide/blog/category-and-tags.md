@@ -1,6 +1,6 @@
 ---
 title: 分类与标签
-icon: blog
+icon: tag
 category: blog
 tags:
   - blog

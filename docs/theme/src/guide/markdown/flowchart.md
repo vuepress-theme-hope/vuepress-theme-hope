@@ -1,6 +1,6 @@
 ---
 title: Flowchart
-icon: flowchart
+icon: tree
 category: markdown
 tags:
   - markdown

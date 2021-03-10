@@ -1,6 +1,6 @@
 ---
 title: Path Navigation
-icon: breadcrumb
+icon: navigation
 category: layout
 tags:
   - breadcrumb

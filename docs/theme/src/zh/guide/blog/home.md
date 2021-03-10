@@ -1,6 +1,6 @@
 ---
 title: 博客首页
-icon: blog
+icon: home
 category: blog
 tags:
   - home

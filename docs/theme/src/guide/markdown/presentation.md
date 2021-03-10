@@ -1,6 +1,6 @@
 ---
 title: Presentation
-icon: presentation
+icon: slides
 category: markdown
 tags:
   - slides

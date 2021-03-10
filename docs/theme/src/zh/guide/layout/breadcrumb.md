@@ -1,6 +1,6 @@
 ---
 title: 路径导航
-icon: breadcrumb
+icon: navigation
 category: layout
 tags:
   - breadcrumb

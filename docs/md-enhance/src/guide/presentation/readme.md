@@ -1,6 +1,6 @@
 ---
 title: Presentation
-icon: presentation
+icon: slides
 ---
 
 Let the Markdown file in your VuePress site support presentation.

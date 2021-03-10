@@ -1,6 +1,6 @@
 ---
 title: Article List
-icon: blog
+icon: article
 category: blog
 tags:
   - article

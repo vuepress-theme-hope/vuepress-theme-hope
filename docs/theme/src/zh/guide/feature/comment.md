@@ -1,6 +1,6 @@
 ---
 title: 评论
-icon: commentfill
+icon: comment
 category: feature
 tags:
   - comment

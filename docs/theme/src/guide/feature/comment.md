@@ -1,6 +1,6 @@
 ---
 title: Comment Function
-icon: commentfill
+icon: comment
 category: feature
 tags:
   - comment

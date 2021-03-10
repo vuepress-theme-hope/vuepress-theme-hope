@@ -1,6 +1,6 @@
 ---
 title: 流程图
-icon: flowchart
+icon: tree
 category: markdown
 tags:
   - flowchart

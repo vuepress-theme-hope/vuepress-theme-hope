@@ -1,6 +1,6 @@
 ---
 title: 深色模式
-icon: darkmode
+icon: contrast
 category: interface
 tags:
   - darkmode

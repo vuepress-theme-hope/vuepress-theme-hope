@@ -1,6 +1,6 @@
 ---
 title: 文章列表
-icon: blog
+icon: article
 category: blog
 tags:
   - article

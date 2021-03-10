@@ -1,6 +1,6 @@
 ---
 title: Darkmode
-icon: skin
+icon: contrast
 category: interface
 tags:
   - darkmode

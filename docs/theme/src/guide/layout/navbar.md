@@ -1,6 +1,6 @@
 ---
 title: NavBar
-icon: nav
+icon: navbar
 category: layout
 tags:
   - navbar

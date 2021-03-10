@@ -1,6 +1,6 @@
 ---
 title: Blog homepage
-icon: blog
+icon: home
 category: blog
 tags:
   - home
