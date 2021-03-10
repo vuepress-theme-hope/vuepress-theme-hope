@@ -62,3 +62,7 @@ $$
 ### 更多
 
 关于具体的 Tex 语法，请看 [Katex 教程](https://vuepress-theme-hope.github.io/md-enhance/zh/guide/tex/#%E8%BF%90%E7%AE%97%E7%AC%A6)
+
+## 在此尝试
+
+<KatexPlayground />

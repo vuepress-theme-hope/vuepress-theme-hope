@@ -51,6 +51,10 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
 $$
 
+## Playground
+
+<KatexPlayground />
+
 ## Tutorial
 
 ### Operator

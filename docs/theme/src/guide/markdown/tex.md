@@ -62,3 +62,7 @@ $$
 ### More
 
 For specific Tex syntax, see [Katex tutorial](https://vuepress-theme-hope.github.io/md-enhance/guide/tex/#tutorial)
+
+## Playground
+
+<KatexPlayground />
