@@ -314,7 +314,7 @@ module.exports = {
 
 ::: warning
 
-You need to pay special attention to the order of object key declaration. Generally speaking, you should put the more precise path first, because VuePress will traverse the key names of the sidebar configuration in order to find the matching configuration. Once a key name is successfully matched with the current path, it will display the corresponding sidebar configuration.
+You need to pay special attention to the order of object key declaration. Generally speaking, you should put the more precise path first, because VuePress will traverse the key names of the sidebar configuration to find the matching configuration. Once a key name is successfully matched with the current path, it will display the corresponding sidebar configuration.
 
 In this case, the fallback sidebar must be defined last for this reason.
 

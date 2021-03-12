@@ -15,7 +15,7 @@ The language of the home directory.
 - Type: `boolean`
 - Default: `true`
 
-Whether display install button
+Whether display install button when Service Worker is first registered successfully.
 
 ## manifest
 
@@ -54,14 +54,20 @@ For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 - Type: `string`
 - Required: No
 
-Path of favico.ico with absolute path.(We recommand you to set it for your site)
+Path of favico.ico with absolute path.
+
+::: warning
+
+We recommand you to set favicon for your site
+
+:::
 
 ## themeColor
 
 - 类型: `string`
 - 默认值: `"#46bd87"`
 
-Theme Color
+Theme Color, default is theme green
 
 ## maxSize
 
@@ -70,6 +76,14 @@ Theme Color
 
 Max size which allows to cache, with KB unit
 
+::: warning
+
+This option has the highest priority, and any files exceeding this value will be excluded.
+
+So if you generate very large HTML or JS files, please consider increasing this value, otherwise your PWA may not work normally in offline mode.
+
+:::
+
 ## cacheHTML
 
 - Type: `boolean`
@@ -77,20 +91,12 @@ Max size which allows to cache, with KB unit
 
 Whether cache HTML files besides home page and 404 page.
 
-::: tip
-
-This option is useful if your site is too large when containing HTML files.
-
-:::
-
 ## cachePic
 
 - Type: `boolean`
 - Default: `false`
 
 Whether cache pictures
-
-> Any file ends with `.png`, `.jpg`, `.jpeg` , `.gif`, `.bmp`, `.webp` will be seen as picture files.
 
 ## maxPicSize
 
@@ -103,7 +109,7 @@ Max picture size which allows to cache, with KB unit
 
 Special settings for Apple
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatable with apple, please set it to `false`.
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatable with safari on apple, please set it to `false`.
 
 ### apple.icon
 
@@ -156,13 +162,3 @@ You can fill in the custom pop-up component path.
 ## generateSwConfig
 
 Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
-
-::: tip
-
-We will precache all site related files `**/*.{js,css,svg}` and font files `**/*.{woff,woff2,eot,ttf,otf}` for you.
-
-If you set `cachePic` to `true`, we will also precache `**/*.{png,jpg,jpeg,gif,bmp,webp}` files for you.
-
-All the files larger than `maxSize` will be dropped.
-
-:::

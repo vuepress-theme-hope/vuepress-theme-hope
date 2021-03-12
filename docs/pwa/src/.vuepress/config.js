@@ -72,6 +72,10 @@ module.exports = config({
       timezone: "Asia/Shanghai",
     },
 
+    mdEnhance: {
+      footnote: true,
+    },
+
     pwa: {
       favicon: "/favicon.ico",
       themeColor: "#46bd87",

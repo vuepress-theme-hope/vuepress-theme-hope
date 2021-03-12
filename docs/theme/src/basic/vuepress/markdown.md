@@ -6,7 +6,7 @@ tags:
   - markdown
 ---
 
-Here are some enhance VuePress makes on markdown syntax.
+Here are some enhance VuePress makes on Markdown syntax.
 
 ## Header Anchors
 
@@ -298,7 +298,7 @@ export default {
 
 :::
 
-In addition to a single line, you can also specify multiple single lines, ranges, or both:
+Beides a single line, you can also specify multiple single lines, ranges, or both:
 
 - Line ranges: for example `{5-8}`, `{3-10}`, `{10-17}`
 - Multiple single lines: for example `{4,7,9}`

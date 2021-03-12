@@ -20,7 +20,7 @@ All articles will be added to the article list by default and rendered under the
 
 If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article.
 
-If you want to top a specific article in the article list, just set `sticky` to `true` in the frontmatter of the article.
+To sticky a specific article in the article list, just set `sticky` to `true` in the frontmatter of the article.
 
 ::: tip Order
 
@@ -50,6 +50,6 @@ Similar to sticky articles, you can also set `star` to number to set their order
 
 The theme provides separate lists for the two special pages: encrypted article page and slide page. You can view them on the `/encrypt/` and `/slide/` pages.
 
-At the same time, in order to help visitors distinguish between these two categories of pages, their categories will be clearly marked with icons in the article list.
+At the same time, to help visitors distinguish between these two categories of pages, their categories will be clearly marked with icons in the article list.
 
 ![Category Tips](./assets/icon-type.png)

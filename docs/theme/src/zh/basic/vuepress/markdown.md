@@ -75,7 +75,7 @@ lang: en-US
 
 :::
 
-### 其他格式的 Front Matter
+### 其他格式的 Frontmatter
 
 除了 YAML 之外，VuePress 也支持 JSON 或者 [TOML](https://github.com/toml-lang/toml) 格式的 front matter。
 

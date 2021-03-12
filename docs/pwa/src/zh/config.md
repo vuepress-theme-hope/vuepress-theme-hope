@@ -15,7 +15,7 @@ icon: config
 - 类型: `boolean`
 - 默认值: `true`
 
-是否显示安装按钮
+是否在 Service Worker 首次成功注册时显示 PWA 安装按钮
 
 ## manifest
 
@@ -54,14 +54,20 @@ icon: config
 - 类型: `string`
 - 必填: 否
 
-`favicon.ico` 地址，填入绝对路径。(建议为你的站点生成 favicon)
+`favicon.ico` 地址，填入绝对路径。
+
+::: warning
+
+我们建议你为你的站点生成 favicon
+
+:::
 
 ## themeColor
 
 - 类型: `string`
 - 默认值: `"#46bd87"`
 
-主题色
+主题色，默认为主题绿
 
 ## maxSize
 
@@ -70,6 +76,14 @@ icon: config
 
 允许缓存的最大大小 (以 KB 为单位)
 
+::: warning
+
+此选项具有最高优先级，任何超过此值的文件都会被排除。
+
+所以你如果生成了很大的 HTML 或 JS 文件，请考虑调高此值，否则你的 PWA 可能无法在离线模式下正常运行。
+
+:::
+
 ## cacheHTML
 
 - 类型: `boolean`
@@ -77,20 +91,12 @@ icon: config
 
 是否缓存主页和 404 错误页之外的 HTML 文件
 
-::: tip
-
-当你站点包含 HTML 文件后体积过大时很有用。
-
-:::
-
 ## cachePic
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否缓存图片
-
-> 任何以 `.png`, `.jpg`, `.jpeg` , `.gif`, `.bmp`, `.webp` 结尾的文件都会视为图片。
+是否缓存图片。
 
 ## maxPicSize
 
@@ -99,11 +105,17 @@ icon: config
 
 图片允许缓存的最大大小 (以 KB 为单位)
 
+::: tip
+
+该选项不能大于 `maxSize`。
+
+:::
+
 ## apple
 
 针对苹果的特殊设置
 
-> 如果你不想进行精细的设置，可以忽略它；如果你不想兼容 apple，请设置为 `false`。
+> 如果你不想进行精细的设置，可以忽略它；如果你不想兼容 Apple 上的 Safari，请设置为 `false`。
 
 ### apple.icon
 
@@ -156,13 +168,3 @@ Safari 图标
 ## generateSwConfig
 
 传递给 `workbox-build` 的选项，具体详情，请见 [Workbox 文档](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
-
-::: tip
-
-插件会预缓存所有与网站相关的文件 `**/*.{js,css,svg}` 和字体文件 `**/*.{woff,woff2,eot,ttf,otf}`。
-
-如果将 `cachePic` 设置为 `true`，插件也会预缓存 `**/*.{png,jpg,jpeg,gif,webp}` 文件。
-
-所有大于 `maxSize` 的文件将被忽略。
-
-:::

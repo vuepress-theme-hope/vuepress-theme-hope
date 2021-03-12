@@ -9,7 +9,7 @@ tags:
 
 Most of the files of vuepress-theme-hope are written using TypeScript, so vuepress-theme-hope can also bring native TypeScript support to your VuePress project, you only need to set `themeConfig.typescript` to `true` so that support for `typescript` can be turned on.
 
-This means you can use `enhanceAppFiles.ts` and use Typescript in both your vue components and Markdown files.
+This means you can use `enhanceAppFiles.ts` and use TypeScript in both your vue components and Markdown files.
 
 To pass some custom options to ts-loader, you can also set `themeConfig.typescript` with an Object to pass it to ts-loader.
 
