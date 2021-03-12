@@ -27,7 +27,7 @@
 <script src="./PageInfo" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared/styles/wrapper'
 
 $pageInfoTextSize ?= 14px
 

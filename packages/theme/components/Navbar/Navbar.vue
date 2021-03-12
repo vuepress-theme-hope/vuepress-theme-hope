@@ -18,8 +18,8 @@
       />
       <span
         v-if="$siteTitle"
-        :class="{ 'can-hide': $themeConfig.logo }"
         class="site-name"
+        :class="{ 'can-hide': $themeConfig.logo }"
         >{{ $siteTitle }}</span
       >
     </RouterLink>

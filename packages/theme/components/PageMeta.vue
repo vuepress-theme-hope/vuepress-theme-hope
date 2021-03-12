@@ -37,7 +37,7 @@
 <script src="./PageMeta" />
 
 <style lang="stylus">
-@require '~@theme/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared/styles/wrapper'
 
 .page-meta
   @extend $wrapper

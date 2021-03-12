@@ -7,7 +7,7 @@
 <script src="./Valine" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared/styles/wrapper'
 
 .page
   .valine-wrapper

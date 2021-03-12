@@ -1,5 +1,5 @@
 @require '~@theme/styles/fonts/crimson.css'
-@require './wrapper'
+@require '~@mr-hope/vuepress-shared/styles/wrapper'
 
 html, body
   padding 0
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6
 
   {$contentClass}:not(.custom) > &
     margin-top 0.5rem - $navbarHeight
-    padding-top ($navbarHeight + 1rem)
+    padding-top: ($navbarHeight + 1rem)
     margin-bottom 0.5rem
 
     &:first-child

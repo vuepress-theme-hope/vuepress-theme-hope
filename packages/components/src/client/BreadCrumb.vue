@@ -24,7 +24,7 @@
 <script src="./BreadCrumb" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared/styles/wrapper'
 
 $navbarMobileHeight ?= 3.2rem
 
@@ -36,17 +36,17 @@ $navbarMobileHeight ?= 3.2rem
 h1, h2, h3, h4, h5, h6
   .theme-default-content:not(.custom) &:first-child
     margin-top 0.5rem - $navbarHeight !important
-    padding-top $navbarHeight + 1rem !important
+    padding-top: $navbarHeight + 1rem !important
 
     @media (max-width $MQMobile)
       margin-top 0.5rem - $navbarMobileHeight !important
-      padding-top $navbarMobileHeight + 1rem !important
+      padding-top: $navbarMobileHeight + 1rem !important
 
 .breadcrumb
   @extend $wrapper
   position relative
   margin-top $navbarHeight
-  margin-bottom (- $navbarHeight)
+  margin-bottom: (- $navbarHeight)
   padding-top 0.2rem
   padding-bottom 0.2rem
   font-size 15px
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6
 
   @media (max-width $MQNarrow)
     margin-top $navbarMobileHeight
-    margin-bottom (- $navbarMobileHeight)
+    margin-bottom: (- $navbarMobileHeight)
     font-size 14px
 
   @media (max-width $MQMobileNarrow)
