@@ -2,6 +2,17 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.12.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.1...v1.12.2) (2021-03-13)
+
+### Bug Fixes
+
+- **theme:** fix comment options ([dea23de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dea23dee327baf72ff80ecee7ec07f80aaefeabb))
+- **theme:** style fixes ([15dd7f7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/15dd7f73a29c4a15db4d7b8309d1b57f24b85fc7))
+
+### Features
+
+- **theme:** update structure ([9d0a177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d0a177cd46e7f46cd8e1ab743584d7158049afd))
+
 ## [1.12.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.0...v1.12.1) (2021-03-10)
 
 ### Bug Fixes
