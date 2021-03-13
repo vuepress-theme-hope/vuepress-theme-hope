@@ -217,7 +217,7 @@ Comment options are omitted here because of the complexity.
 
 For details, see [@mr-hope/vuepress-plugin-comment documentation][comment-config]
 
-> You can set it to `false` to disable the comment plugin
+> You can omit this option if you don't want the comment feature
 
 ## Copyright Settings
 

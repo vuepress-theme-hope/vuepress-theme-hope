@@ -3,7 +3,7 @@ title: 指南
 icon: creative
 ---
 
-此插件暴露两个组件，路径为 `@mr-hope/vuepress-plugin-comment/<组件名>.vue`。请在你的主题中手动引入。
+此插件暴露两个组件，路径为 `@mr-hope/vuepress-plugin-comment/lib/client/<组件名>.vue`。请在你的主题中手动引入。
 
 - `<Comment />`: 评论组件
 - `<PageInfo />`: 页面信息组件

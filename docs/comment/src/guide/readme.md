@@ -4,7 +4,7 @@ icon: creative
 
 # Guide
 
-This plugin exposes two components at `@mr-hope/vuepress-plugin-comment/<component name>.vue`. Please include it manually in your theme.
+This plugin exposes two components at `@mr-hope/vuepress-plugin-comment/lib/client/<component name>.vue`. Please include it manually in your theme.
 
 - `<Comment />`: Comment component
 - `<PageInfo />`: Page information component

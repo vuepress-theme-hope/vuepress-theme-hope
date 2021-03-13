@@ -217,7 +217,7 @@ React 依赖于 Babel。
 
 配置因为复杂度在这里被省略，具体配置请见　[@mr-hope/vuepress-plugin-comment 文档][comment-config]
 
-> 你可以直接设置为 `false` 来禁用评论插件
+> 如果你不需要评论功能，忽略此选项即可
 
 ## copyright
 
