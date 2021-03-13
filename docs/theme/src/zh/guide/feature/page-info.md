@@ -75,7 +75,7 @@ time: 2020-01-01
 
 ### 分类与标签
 
-详见 [博客章节](../blog/readme.md)
+详见 [博客章节](../blog/category-and-tags.md)
 
 ### 阅读时间
 

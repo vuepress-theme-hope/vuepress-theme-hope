@@ -75,7 +75,7 @@ time: 2020-01-01
 
 ### Category and Tags
 
-See [blog section](../blog/readme.md) for details
+See [blog section](../blog/category-and-tags.md) for details
 
 ### Reading time
 

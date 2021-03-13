@@ -265,6 +265,13 @@ React 依赖于 Babel。
 
 ## git
 
+### git.contributor
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否生成贡献者信息。
+
 ### git.timezone
 
 - 类型: `string`

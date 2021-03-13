@@ -217,7 +217,7 @@ Comment options are omitted here because of the complexity.
 
 For details, see [@mr-hope/vuepress-plugin-comment documentation][comment-config]
 
-> You can omit this option if you don't want the comment feature
+> You can omit this option if you don’t want the comment feature
 
 ## Copyright Settings
 
@@ -264,6 +264,13 @@ Whether to prohibit copying
 Whether to prohibit selected text
 
 ## git
+
+### git.contributor
+
+- Type: `boolean`
+- Default: `true`
+
+Whether generate contributor info
 
 ### git.timezone
 
