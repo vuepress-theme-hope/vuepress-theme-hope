@@ -18,24 +18,6 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 <!-- more -->
 
-### Layout
-
-- [Default homepage optimization](layout/home.md)
-
-  - Features have new animations and support jump
-  - Multiple action buttons
-  - Widescreen layout optimization
-
-- Optimization of other built-in components
-
-  - Add `prefix` and `icon` for [Navbar](layout/navbar.md) [Sidebar](layout/sidebar.md)
-
-- Add:
-
-  - [Path navigation](layout/page.md#breadcrumb)
-
-  - [Custom footer](layout/page.md#footer-support)
-
 ### Markdown Enhance
 
 Added more syntax to Markdown, enriching documentation and blog writing
@@ -50,7 +32,25 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
 
-## Interface
+### Layout
+
+- Optimization of other built-in components
+
+  - Add `prefix` and `icon` for [Navbar](layout/navbar.md) [Sidebar](layout/sidebar.md)
+
+- Add:
+
+  - [Path navigation](layout/page.md#breadcrumb)
+
+  - [Custom footer](layout/page.md#footer-support)
+
+  - [Default homepage optimization](layout/home.md)
+
+    - Features have new animations and support jump
+    - Multiple action buttons
+    - Widescreen layout optimization
+
+### Interface
 
 - [Theme colors](interface/theme-color.md), allowing you to switch dynamically during browsing
 
@@ -90,6 +90,8 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - [SEO enhancement](feature/seo.md)
 
 - [Sitemap generation](feature/sitemap.md)
+
+- [Information from Git](feature/git.md)
 
 - [TypeScript support](feature/typescript.md)
 

@@ -18,24 +18,6 @@ tags:
 
 <!-- more -->
 
-### 布局
-
-- [默认主页优化](layout/home.md)
-
-  - 特性拥有全新动画并支持跳转
-  - 多个动作按钮
-  - 宽屏布局优化
-
-- 其他内置组件优化
-
-  - [导航栏](layout/navbar.md) 与 [侧边栏](layout/sidebar.md) 添加 `prefix` 与 `icon`
-
-- 新增:
-
-  - [路径导航](layout/page.md#路径导航)
-
-  - [自定义页脚](layout/page.md#页脚支持)
-
 ### Markdown
 
 为 Markdown 添加了更多语法，丰富文档与博客写作
@@ -49,6 +31,24 @@ tags:
 - [上下角标](markdown/sup-sub.md)
 - [代码演示](markdown/demo.md)
 - [幻灯片](markdown/presentation.md)
+
+### 布局
+
+- 新增:
+
+  - [路径导航](layout/page.md#路径导航)
+
+  - [自定义页脚](layout/page.md#页脚支持)
+
+- 其他内置组件优化
+
+  - [导航栏](layout/navbar.md) 与 [侧边栏](layout/sidebar.md) 添加 `prefix` 与 `icon`
+
+  - [默认主页增强](layout/home.md)
+
+    - 特性拥有全新动画并支持跳转
+    - 多个动作按钮
+    - 宽屏布局优化
 
 ### 界面
 
@@ -90,6 +90,8 @@ tags:
 - [SEO 增强](feature/seo.md)
 
 - [Sitemap 生成](feature/sitemap.md)
+
+- [利用 Git 的信息生成](feature/git.md)
 
 - [TypeScript 支持](feature/typescript.md)
 

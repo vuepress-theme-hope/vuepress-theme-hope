@@ -79,6 +79,7 @@ module.exports = {
         collapsable: false,
         children: ["intro", "article", "category-and-tags", "timeline", "home"],
       },
+      "eject",
     ],
 
     "/config/": [
@@ -218,6 +219,7 @@ module.exports = {
         collapsable: false,
         children: ["intro", "article", "category-and-tags", "timeline", "home"],
       },
+      "eject",
     ],
 
     "/zh/config/": [
