@@ -16,7 +16,6 @@ export const getAlias = (
     );
 
   const blogEnabled = themeConfig.blog !== false;
-  const commentPluginEnabled = themeConfig.comment !== false;
   const commentEnabled =
     themeConfig.comment &&
     themeConfig.comment.type &&
@@ -43,12 +42,8 @@ export const getAlias = (
     "@BlogPage": blogEnabled
       ? resolve(__dirname, "../components/Blog/BlogPage.vue")
       : noopModule,
-    "@Comment":
-      commentPluginEnabled && commentEnabled
-        ? "@mr-hope/vuepress-plugin-comment/lib/client/Comment.vue"
-        : noopModule,
-    "@PageInfo": commentPluginEnabled
-      ? "@mr-hope/vuepress-plugin-comment/lib/client/PageInfo.vue"
+    "@Comment": commentEnabled
+      ? "@mr-hope/vuepress-plugin-comment/lib/client/Comment.vue"
       : noopModule,
     "@ThemeColor": themeColorEnabled
       ? resolve(__dirname, "../components/Theme/ThemeColor.vue")

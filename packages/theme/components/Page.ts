@@ -2,7 +2,7 @@ import Vue from "vue";
 import Anchor from "@theme/components/Anchor.vue";
 import Comment from "@Comment";
 import MyTransition from "@theme/components/MyTransition.vue";
-import PageInfo from "@PageInfo";
+import PageInfo from "@mr-hope/vuepress-plugin-comment/lib/client/PageInfo.vue";
 import PageMeta from "@theme/components/PageMeta.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
@@ -39,10 +39,6 @@ export default Vue.extend({
   }),
 
   computed: {
-    commentEnable(): boolean {
-      return this.$themeConfig.comment !== false;
-    },
-
     pagePassword(): string {
       const { password } = this.$frontmatter;
 

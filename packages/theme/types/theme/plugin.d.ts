@@ -51,47 +51,65 @@ export interface HopeCopyrightConfig {
 interface HopeThemePluginConfig {
   /**
    * AddThis 的公共 ID
+   * @see http://vuepress-theme-hope.github.io/add-this/zh/config/
    *
    * pubid for addthis
+   * @see http://vuepress-theme-hope.github.io/add-this/config/
    */
   addThis?: string;
 
   /**
-   * 评论设置
+   * 评论插件配置
    * @see http://vuepress-theme-hope.github.io/comment/zh/config/
    *
-   * Comment Configuration
+   * Comment plugin options
    * @see http://vuepress-theme-hope.github.io/comment/config/
    */
-  comment?: CommentOptions | false;
+  comment?: CommentOptions;
 
   /**
-   * 代码复制选项
+   * 代码复制插件配置
+   * @see http://vuepress-theme-hope.github.io/copy-code/zh/config/
    *
-   * code copy options
+   * code copy plugin options
+   * @see http://vuepress-theme-hope.github.io/copy-code/config/
    */
   copyCode?: CopyCodeOptions | false;
 
   /**
    * 版权设置
    *
-   * Copyright Configuration
+   * Copyright plugin options
    */
   copyright?: HopeCopyrightConfig;
 
   /**
-   * Feed 设置
+   * Feed 插件配置
+   * @see http://vuepress-theme-hope.github.io/feed/zh/config/
    *
-   * Feed Configuration
+   * Feed plugin options
+   * @see http://vuepress-theme-hope.github.io/feed/config/
    */
   feed?: FeedOptions | false;
 
   /**
-   * Markdown 增强设置
+   * Git 插件配置
+   * @see http://vuepress-theme-hope.github.io/git/zh/
    *
-   * Markdown enhance configuration
+   * Git plugin options
+   * @see http://vuepress-theme-hope.github.io/git/
+   */
+  git?: GitOptions | false;
+
+  /**
+   * Markdown 增强插件配置
+   * @see http://vuepress-theme-hope.github.io/md-enhance/zh/config/
+   *
+   * Markdown enhance plugin options
+   * @see http://vuepress-theme-hope.github.io/md-enhance/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false;
+
   /**
    * named-chunk 启用
    *
@@ -101,27 +119,41 @@ interface HopeThemePluginConfig {
   namedChunks?: NamedChunksPluginOptions | false;
 
   /**
-   * PWA 设置
+   * PWA 插件配置
+   * @see http://vuepress-theme-hope.github.io/pwa/zh/config/
    *
-   * PWA configuration
+   * PWA plugin options
+   * @see http://vuepress-theme-hope.github.io/pwa/config/
    */
   pwa?: PWAOptions | false;
 
   /**
-   * 图片预览设置
+   * 图片预览插件配置
+   * @see http://vuepress-theme-hope.github.io/photo-swipe/zh/config/
    *
-   * Photo Swipe Options
+   * Photo Swipe plugin options
+   * @see http://vuepress-theme-hope.github.io/photo-swipe/config/
    */
   photoSwipe?: PhotoSwipeOptions | false;
 
-  /** SEO */
+  /**
+   * SEO 插件配置
+   * @see http://vuepress-theme-hope.github.io/seo/zh/config/
+   *
+   * SEO plugin options
+   * @see http://vuepress-theme-hope.github.io/seo/config/
+   */
   seo?: SeoOptions | false;
 
-  /** Sitemap */
+  /**
+   * Sitemap 插件配置
+   * @see http://vuepress-theme-hope.github.io/sitemap/zh/config/
+   *
+   * Sitemap plugin options
+   * @see http://vuepress-theme-hope.github.io/sitemap/config/
+   */
   sitemap?: SitemapOptions | false;
 
-  /** Git */
-  git?: GitOptions | false;
   /**
    * ts-loader 选项
    *

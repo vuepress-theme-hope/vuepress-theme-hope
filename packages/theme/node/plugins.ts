@@ -15,7 +15,7 @@ export const getPluginConfig = (
     themeConfig.comment.author = themeConfig.author;
 
   return [
-    ["@mr-hope/comment", themeConfig.comment],
+    ["@mr-hope/comment", themeConfig.comment || true],
 
     ["@mr-hope/components"],
 

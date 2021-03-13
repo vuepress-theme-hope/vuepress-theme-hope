@@ -6,41 +6,39 @@
 
     <slot name="top" />
 
-    <MyTransition v-if="commentEnable" :delay="0.04">
+    <MyTransition :delay="0.04">
       <PageInfo :key="$route.path" />
     </MyTransition>
 
-    <MyTransition :delay="0.08">
+    <MyTransition v-if="pagePassword && !pageDescrypted" :delay="0.08">
       <Password
-        v-if="pagePassword && !pageDescrypted"
         :key="$route.path"
         :page="true"
         @password-verify="password = $event"
       />
     </MyTransition>
 
-    <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
-      <Anchor :key="$route.path" />
-    </MyTransition>
+    <template v-else>
+      <MyTransition :delay="0.12">
+        <Anchor :key="$route.path" />
+      </MyTransition>
 
-    <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
-      <Content :key="$route.path" class="theme-default-content" />
-    </MyTransition>
+      <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
+        <Content :key="$route.path" class="theme-default-content" />
+      </MyTransition>
 
-    <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.12">
-      <PageMeta :key="$route.path" />
-    </MyTransition>
+      <MyTransition :delay="0.12">
+        <PageMeta :key="$route.path" />
+      </MyTransition>
 
-    <MyTransition v-if="!pagePassword || pageDescrypted" :delay="0.14">
-      <PageNav :key="$route.path" v-bind="{ sidebarItems }" />
-    </MyTransition>
+      <MyTransition :delay="0.14">
+        <PageNav :key="$route.path" v-bind="{ sidebarItems }" />
+      </MyTransition>
 
-    <MyTransition
-      v-if="(!pagePassword || pageDescrypted) && commentEnable"
-      :delay="0.16"
-    >
-      <Comment :key="$route.path" />
-    </MyTransition>
+      <MyTransition :delay="0.16">
+        <Comment :key="$route.path" />
+      </MyTransition>
+    </template>
 
     <slot name="bottom" />
   </main>
