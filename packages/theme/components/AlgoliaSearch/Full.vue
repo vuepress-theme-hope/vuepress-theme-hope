@@ -22,7 +22,7 @@ body
   --docsearch-modal-shadow inset 1px 1px 0 0 hsla(0, 0%, 100%, 0.5), 0 3px 8px 0 #555a64
   --docsearch-searchbox-height 56px
   --docsearch-searchbox-background #ebedf0
-  --docsearch-searchbox-focus-background #fff
+  --docsearch-searchbox-focus-background #efeef4
   --docsearch-searchbox-shadow inset 0 0 0 2px var(--accent-color)
   --docsearch-hit-height 56px
   --docsearch-hit-color var(--dark-grey)
@@ -41,7 +41,7 @@ body.theme-dark
   --docsearch-container-background rgba(9, 10, 17, 0.8)
   --docsearch-modal-shadow inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309
   --docsearch-searchbox-background #090a11
-  --docsearch-searchbox-focus-background #000
+  --docsearch-searchbox-focus-background lighten($darkBgColor, 10%)
   --docsearch-hit-shadow none
   --docsearch-key-gradient linear-gradient(-26.5deg, #565862, #31353b)
   --docsearch-key-shadow inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d, 0 2px 2px 0 rgba(3, 4, 9, 0.3)
@@ -121,9 +121,6 @@ body.theme-dark
   height 100vh
   background-color var(--docsearch-container-background)
 
-  @media (max-width $MQNarrow)
-    position absolute
-
   *
     box-sizing border-box
 
@@ -131,22 +128,22 @@ body.theme-dark
     text-decoration none
 
 .DocSearch-Link
-  appearance none
-  background none
-  border 0
-  color var(--accent-color)
-  cursor pointer
-  font inherit
   margin 0
   padding 0
+  border 0
+  background none
+  color var(--accent-color)
+  font inherit
+  appearance none
+  cursor pointer
 
 .DocSearch-Modal
   position relative
   max-width var(--docsearch-modal-width)
   margin 60px auto auto
   border-radius 6px
+  background var(--bgcolor)
   box-shadow var(--docsearch-modal-shadow)
-  background var(--bgcolor-light)
   flex-direction column
 
   @media (max-width $MQNarrow)
@@ -164,8 +161,7 @@ body.theme-dark
 .DocSearch-Form
   align-items center
   background var(--docsearch-searchbox-focus-background)
-  border-radius 4px
-  box-shadow var(--docsearch-searchbox-shadow)
+  border-radius 8px
   display flex
   height var(--docsearch-searchbox-height)
   padding 0 var(--docsearch-spacing)
