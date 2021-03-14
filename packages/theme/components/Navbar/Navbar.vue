@@ -72,9 +72,6 @@
   a, span, img
     display inline-block
 
-  .home-link:hover .site-name
-    color var(--accent-color)
-
   .logo
     min-width: $navbarHeight - $navbarVerticalPadding * 2
     height: $navbarHeight - $navbarVerticalPadding * 2

@@ -1,10 +1,12 @@
 <template>
-  <nav v-if="userLinks.length || repoLink" class="nav-links">
+  <nav class="nav-links">
     <!-- user links -->
-    <div v-for="item in userLinks" :key="item.link" class="nav-item">
+    <div v-for="item in navLinks" :key="item.link" class="nav-item">
       <DropdownLink v-if="item.type === 'links'" :item="item" />
       <NavLink v-else :item="item" />
     </div>
+
+    <LanguageDropdown />
 
     <!-- repo link -->
     <a
