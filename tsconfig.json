@@ -5,6 +5,7 @@
     { "path": "./packages/comment/tsconfig.json" },
     { "path": "./packages/components/tsconfig.json" },
     { "path": "./packages/copy-code/tsconfig.json" },
+    { "path": "./packages/create/tsconfig.json" },
     { "path": "./packages/feed/tsconfig.json" },
     { "path": "./packages/git/tsconfig.json" },
     { "path": "./packages/md-enhance/tsconfig.json" },
