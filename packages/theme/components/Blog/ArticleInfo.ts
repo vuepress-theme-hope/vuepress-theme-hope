@@ -4,7 +4,7 @@ import AuthorIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/Author
 import CalendarIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/CalendarIcon.vue";
 import CategoryInfo from "@mr-hope/vuepress-plugin-comment/lib/client/CategoryInfo.vue";
 import TagInfo from "@mr-hope/vuepress-plugin-comment/lib/client/TagInfo.vue";
-import TimeIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/TimeIcon.vue";
+import TimerIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/TimerIcon.vue";
 
 import type { PageComputed } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
@@ -17,7 +17,7 @@ export default Vue.extend({
     CalendarIcon,
     CategoryInfo,
     TagInfo,
-    TimeIcon,
+    TimerIcon,
   },
 
   props: {
@@ -48,7 +48,7 @@ export default Vue.extend({
         return time;
       }
 
-      return "";
+      return this.article.createTime || "";
     },
 
     tags(): string[] {

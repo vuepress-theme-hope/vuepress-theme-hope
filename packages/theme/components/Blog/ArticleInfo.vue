@@ -31,7 +31,7 @@
       :aria-label="readingTimeText"
       data-balloon-pos="down"
     >
-      <TimeIcon />
+      <TimerIcon />
       <span v-text="readingTime" />
       <meta property="timeRequired" :content="readingTimeContent" />
     </span>

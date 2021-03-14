@@ -1,11 +1,11 @@
 import Vue from "vue";
-import TimeIcon from "./icons/TimeIcon.vue";
+import TimerIcon from "./icons/TimerIcon.vue";
 import { pageInfoI18n, readingTimeI18n } from "./define";
 
 export default Vue.extend({
   name: "ReadingTimeInfo",
 
-  components: { TimeIcon },
+  components: { TimerIcon },
 
   computed: {
     readingTime(): string {

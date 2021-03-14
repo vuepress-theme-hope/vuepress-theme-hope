@@ -5,7 +5,7 @@
     :aria-label="hint"
     data-balloon-pos="down"
   >
-    <TimeIcon />
+    <TimerIcon />
     <span v-text="text" />
     <meta property="timeRequired" :content="readingTime" />
   </span>
