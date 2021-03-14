@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.12.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.2...v1.12.3) (2021-03-14)
+
+### Features
+
+- add `create-vuepress-theme-hope` package ([e087c62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e087c6285935715ee909d5f6e055b7bade152bc0))
+
 ## [1.12.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.1...v1.12.2) (2021-03-13)
 
 ### Bug Fixes
