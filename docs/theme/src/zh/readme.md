@@ -70,9 +70,25 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-你可以直接使用 [vuepress-theme-hope 模板](https://github.com/vuepress-theme-hope/vuepress-theme-hope-template) 来开始你的 VuePress 之旅。
-
 ## 🛠 安装
+
+### 快速安装
+
+<CodeGroup>
+<CodeGroupItem title="yarn">
+```bash
+yarn create vuepress-theme-hope [dir]
+```
+</CodeGroupItem>
+
+<CodeGroupItem title="npm">
+```bash
+npx create-vuepress-theme-hope [dir]
+```
+</CodeGroupItem>
+</CodeGroup>
+
+### 手动安装
 
 <CodeGroup>
 <CodeGroupItem title="yarn">

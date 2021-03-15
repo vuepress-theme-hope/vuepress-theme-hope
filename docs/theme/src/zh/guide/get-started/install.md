@@ -6,13 +6,23 @@ tags:
   - install
 ---
 
-## 在新项目中使用
+## 快速安装
 
-如果你想构建自己的博客，或者在一个新的项目中使用本主题生成你的文档，你可以直接使用 [vuepress-theme-hope 模板](https://github.com/vuepress-theme-hope/vuepress-theme-hope-template) 来开始你的 VuePress 之旅。点击 `Use this template` 按钮即可。
+<CodeGroup>
+<CodeGroupItem title="yarn">
+```bash
+yarn create vuepress-theme-hope [dir]
+```
+</CodeGroupItem>
 
-## 在旧项目中使用
+<CodeGroupItem title="npm">
+```bash
+npx create-vuepress-theme-hope [dir]
+```
+</CodeGroupItem>
+</CodeGroup>
 
-### 安装
+## 手动安装
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
@@ -28,7 +38,7 @@ npm i -D vuepress-theme-hope
 </CodeGroupItem>
 </CodeGroup>
 
-### 使用
+## 使用
 
 ```js
 // .vuepress/config.js

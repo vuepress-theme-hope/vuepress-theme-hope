@@ -9,20 +9,8 @@ tags:
 ## As Easy as 1, 2, 3
 
 ```bash
-# find a proper place to clone this project template
-git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope-template.git
-
-# enter the program folder
-cd vuepress-theme-hope-template
-
-# install dependency
-npm i
-
-# start writing
-npm run serve
-
-# build to static files
-npm run build
+# Create a vuepress-theme-hope project under docs
+npx create-vuepress-theme-hope docs
 ```
 
 ## VuePress Intro

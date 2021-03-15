@@ -6,13 +6,23 @@ tags:
   - install
 ---
 
-## Use in new project
+## Quick Install
 
-You can use [vuepress-theme-hope template](https://github.com/vuepress-theme-hope/vuepress-theme-hope-template) directly to start your VuePress journey.
+<CodeGroup>
+<CodeGroupItem title="yarn">
+```bash
+yarn create vuepress-theme-hope [dir]
+```
+</CodeGroupItem>
 
-## Use in existing project
+<CodeGroupItem title="npm">
+```bash
+npx create-vuepress-theme-hope [dir]
+```
+</CodeGroupItem>
+</CodeGroup>
 
-### Installation
+## Manual Install
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
@@ -28,7 +38,7 @@ npm i -D vuepress-theme-hope
 </CodeGroupItem>
 </CodeGroup>
 
-### Usage
+## Usage
 
 ```js
 // .vuepress/config.js

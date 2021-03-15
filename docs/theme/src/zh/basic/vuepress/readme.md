@@ -26,20 +26,8 @@ VuePress 是一个 Vue 驱动的静态网站生成器。它遵循:
 ## 像数 1, 2, 3 一样容易
 
 ```shell
-# 找到合适的位置克隆本项目模板
-git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope-template.git
-
-# 进入项目目录
-cd vuepress-theme-hope-template
-
-# 安装依赖
-npm i
-
-# 开始写作
-npm run serve
-
-# 构建静态文件
-npm run build
+# 在 docs 文件夹创建 vuepress 项目
+npx create-vuepress-theme-hope docs
 ```
 
 ## VuePress 介绍
