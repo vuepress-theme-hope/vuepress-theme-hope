@@ -4,23 +4,23 @@
 
     <RouterLink ref="siteInfo" :to="$localePath" class="home-link">
       <img
-        v-if="$themeConfig.logo"
+        v-if="siteBrandLogo"
         class="logo"
-        :class="{ light: Boolean($themeConfig.darkLogo) }"
-        :src="$withBase($themeConfig.logo)"
-        :alt="$siteTitle"
+        :class="{ light: Boolean(siteBrandDarkLogo) }"
+        :src="siteBrandLogo"
+        :alt="siteBrandTitle"
       />
       <img
-        v-if="$themeConfig.darkLogo"
+        v-if="siteBrandDarkLogo"
         class="logo dark"
-        :src="$withBase($themeConfig.darkLogo)"
-        :alt="$siteTitle"
+        :src="siteBrandDarkLogo"
+        :alt="siteBrandTitle"
       />
       <span
-        v-if="$siteTitle"
+        v-if="siteBrandTitle"
         class="site-name"
-        :class="{ 'can-hide': $themeConfig.logo }"
-        >{{ $siteTitle }}</span
+        :class="{ 'can-hide': siteBrandLogo }"
+        >{{ siteBrandTitle }}</span
       >
     </RouterLink>
 

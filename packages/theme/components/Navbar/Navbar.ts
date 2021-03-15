@@ -46,6 +46,21 @@ export default Vue.extend({
   }),
 
   computed: {
+    siteBrandTitle(): string {
+      return this.$site.title;
+    },
+
+    siteBrandLogo(): string {
+      const { logo } = this.$themeConfig;
+
+      return logo ? this.$withBase(logo) : "";
+    },
+    siteBrandDarkLogo(): string {
+      const { darkLogo } = this.$themeConfig;
+
+      return darkLogo ? this.$withBase(darkLogo) : "";
+    },
+
     algoliaConfig(): AlgoliaOption | false {
       return (
         this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || false

@@ -28,23 +28,35 @@
     <DropdownTransition>
       <ul v-show="open" class="nav-dropdown">
         <li
-          v-for="(subItem, index) in item.items"
-          :key="subItem.link || index"
+          v-for="(child, index) in item.items"
+          :key="child.link || index"
           class="dropdown-item"
         >
-          <h4 v-if="subItem.type === 'links'">{{ subItem.text }}</h4>
+          <h4 v-if="child.type === 'links'" class="dropdown-subtitle">
+            <NavLink
+              v-if="child.link"
+              :item="child"
+              @focusout="
+                isLastItemOfArray(child, item.children) &&
+                  child.children.length === 0 &&
+                  setOpen(false)
+              "
+            />
 
-          <ul v-if="subItem.type === 'links'" class="dropdown-subitem-wrapper">
+            <span v-else>{{ child.text }}</span>
+          </h4>
+
+          <ul v-if="child.type === 'links'" class="dropdown-subitem-wrapper">
             <li
-              v-for="childSubItem in subItem.items"
-              :key="childSubItem.link"
+              v-for="grandchild in child.items"
+              :key="grandchild.link"
               class="dropdown-subitem"
             >
               <NavLink
-                :item="childSubItem"
+                :item="grandchild"
                 @focusout="
-                  isLastItemOfArray(childSubItem, subItem.items) &&
-                    isLastItemOfArray(subItem, item.items) &&
+                  isLastItemOfArray(grandchild, child.items) &&
+                    isLastItemOfArray(child, item.items) &&
                     setOpen(false)
                 "
               />
@@ -53,8 +65,8 @@
 
           <NavLink
             v-else
-            :item="subItem"
-            @focusout="isLastItemOfArray(subItem, item.items) && setOpen(false)"
+            :item="child"
+            @focusout="isLastItemOfArray(child, item.items) && setOpen(false)"
           />
         </li>
       </ul>
@@ -144,6 +156,9 @@
 
     h4
       margin 0
+
+      .nav-link
+        padding 0
 
       .navbar &
         padding 0.75rem 1rem 0.25rem 0.75rem
