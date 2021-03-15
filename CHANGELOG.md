@@ -2,6 +2,21 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.12.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.3...v1.12.4) (2021-03-15)
+
+### Bug Fixes
+
+- **create:** fix install logic and generate package.json ([39a5970](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39a597087e088037373d0822b4b5eebdfaf4beaa))
+- **md-enhance:** fix footnote style ([cdd7a66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdd7a66f6d1522fae77c6e4e873b2483d57e47b6))
+- **md-enhance:** fix last code block margin-bottom ([f157f18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f157f18a334833a40d2fa2869dcc4b6f052ae587))
+- **theme:** add support for dropdown children with link ([86b0bf2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/86b0bf23ed7c6ad410f300eaca132a3b48e014cf))
+- **theme:** fix Full AlgoliaSearch style ([a3000c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a3000c8f2feb08cdc7c2298435001635cbec6f8e))
+
+### Features
+
+- **theme:** update navbar ([576e620](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/576e620fdbe6f70be145b34295e6bdb5e9ab3aba))
+- update ReadingTimeIcon ([a595710](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a5957106b44d61cb037c9df187e4b832b48503c0))
+
 ## [1.12.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.2...v1.12.3) (2021-03-14)
 
 ### Features
