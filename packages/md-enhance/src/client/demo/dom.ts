@@ -17,7 +17,7 @@ const expandHandler = (
   const toBeExpand = !expandNode.hasAttribute("expanded");
 
   codeWrapperNode.style.height = toBeExpand
-    ? `${codeContainerNode.clientHeight}px`
+    ? `${codeContainerNode.clientHeight + 13.8}px`
     : "0";
 
   if (toBeExpand) {
