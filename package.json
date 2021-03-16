@@ -104,8 +104,8 @@
     "@types/inquirer": "7.3.1",
     "@types/jest": "26.0.20",
     "@types/semver": "7.3.4",
-    "@typescript-eslint/eslint-plugin": "4.17.0",
-    "@typescript-eslint/parser": "4.17.0",
+    "@typescript-eslint/eslint-plugin": "4.18.0",
+    "@typescript-eslint/parser": "4.18.0",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "7.0.0",
     "chalk": "4.1.0",
@@ -140,7 +140,6 @@
     "textlint": "11.8.2",
     "textlint-filter-rule-allowlist": "2.0.1",
     "textlint-filter-rule-comments": "1.2.2",
-    "textlint-plugin-latex2e": "1.1.0",
     "textlint-rule-apostrophe": "2.0.0",
     "textlint-rule-common-misspellings": "1.0.1",
     "textlint-rule-en-capitalization": "2.0.3",
@@ -195,9 +194,6 @@
         "bracket": "halfWidth"
       }
     },
-    "plugins": [
-      "latex2e"
-    ],
     "filters": {
       "allowlist": {
         "allow": [
