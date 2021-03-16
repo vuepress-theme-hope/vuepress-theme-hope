@@ -71,7 +71,7 @@
     padding-left 0
 
     & > .sidebar-heading
-      padding-left 2rem
+      padding-left 1.75rem
       font-size 0.95em
       font-weight normal
       line-height 1.4
