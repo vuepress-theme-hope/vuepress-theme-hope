@@ -15,6 +15,10 @@ tags:
 
 你可以将 `themeConfig` 的 `themeColor` 设置为 `false` 来禁用它。
 
+## 主题色
+
+主题色的第一个颜色是默认的主题色，你需要在 `.vuepress/styles/palette.styl` 中通过 `$accentColor` 设置它。
+
 ## 自定义颜色
 
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式来配置 `themeConfig.themeColor`:

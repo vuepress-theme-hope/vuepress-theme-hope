@@ -12,7 +12,7 @@ category: FAQ
 
 请确保你使用的是最新版本主题，之后在禁用缓存的情况下重新运行开发服务器: `vuepress dev <你的文档地址> --no-cache`。
 
-如果问题依然存在，请在 GitHub 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose)
+如果问题依然存在，请在 GitHub 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose)，并完整粘贴运行 `vuepress dev <你的文档地址> --debug` 时终端输出的内容，如果你的内容与页面显示相关，请一并附上相应的截图。
 
 ## 部分页面设置失效
 
@@ -20,44 +20,46 @@ category: FAQ
 
 **支持页面配置** 意味着主题允许页面的配置能够覆盖全局的同名(同功能)配置，但并不是所有功能都满足此设置。为了项目的编译速度，有些项目在全局配置禁用后不会在编译阶段加载，它们就无法局部启用。
 
-## TypeScript 相关问题
+## 代码块在浅色模式 (日间模式) 下不正常
 
-请确保你的项目依赖了 typescript，且目录下有一个合法的 tsconfig.json 文件。
+我猜这是你的问题，请你删除 `.vuepress/styles/palette.styl` 内的 `$codeBgColor`，主题的默认值是浅蓝色，而默认主题为墨蓝色。
 
-同时，保证你的项目至少有一个 TypeScript 文件被其 include。
+## 访问部分链接 404
 
-### error when parsing tsconfig.json
+如果你使用了中文的分类或者标签，如:
 
-这个问题通常是 ts-loader 找不到 tsconfig.json 导致的。由于主题添加了 TypeScript 支持，你需要在你的项目内创建一个合法的 tsconfig.json。
+```md
+---
+category: 软件
+tags:
+  - 谷歌浏览器
+---
+```
 
-一个简单的 tsconfig.json 如下:
+那么你直接访问 `/category/软件` 和 `/tag/谷歌浏览器/` 会被导航到 404 页面
+
+这是 `vue-router` 在 `3.4.6` 引入的潜在破坏性更改。自 `3.4.6` 起，`vue-router` 要求所有非标准 URL 路径都必须先 `encodeURI` 再作为路径添加到 `router` 中。
+
+主题使用 `@vuepress/plugin-blog` 进行博客支持，该问题应该在此插件中得到修正。Mr.Hope 已经提出了 [相关 Issue](https://github.com/vuepress/vuepress-plugin-blog/issues/95)，并提交了 [临时解决该问题的 PR](https://github.com/vuepress/vuepress-plugin-blog/pull/97)，但该 PR 并未被接受。
+
+::: tip 临时解决方案
+
+如果你在使用 yarn，你可以添加 `resolutions` 字段:
 
 ```json
 {
-  "compilerOptions": {
-    "target": "ES6", // 任何不低于 ES6 的 target 均可
-    "allowSyntheticDefaultImports": true, // 规避 vuepress-types 的类型定义问题
-    "experimentalDecorators": true, // Vue 的 TypeScript 写法需要开启此选项
-    "module": "commonjs", // 为了避免 vuepress-types 解析失败
-    // vuepress 与本主题的类型定义文件
-    "types": ["@mr-hope/vuepress-theme-types"]
+  ...
+  "resolutions": {
+    "vue-router": "3.4.5"
   },
-  "include": [
-    "src/.vuepress/enhanceApp.ts" // 请将 src 替换成你的文档目录
-  ]
+  ...
 }
 ```
 
-### 提示找不到相应 types
+到你的 package.json 来临时解决这个问题。
 
-请确保将 `"@mr-hope/vuepress-theme-types"` 加入 `compilerOptions.types` 中，因为它不在 `@types` 目录下。
+:::
 
-### No inputs were found in config file tsconfig.json
+## TypeScript 错误
 
-这个问题一般是你的项目中没有 TypeScript 文件 (或你的 tsconfig.json 配置有误) 导致的。
-
-`ts-loader` 要求 tsconfig.json 的 include 和 exclude 配置项包含项目内至少一个 ts 文件。
-
-如果你的项目没有 ts 文件，为了规避这个问题，你可以在你的项目的任意地方创建一个空的 ts 文件并把它添加至 tsconfig.json 的 include 中。
-
-一个稍微好些的解决方案是通过在 `.vuepress` 目录下，建立一个空的 `enhanceApp.ts` 来解决这个问题，如果你已经有 `enhanceApp.js`，你可以直接将其转换为 TS。
+详见 [Typescript 错误排查](typescript.md)

@@ -1,9 +1,22 @@
 ---
+title: Common problems
 icon: question
 category: FAQ
 ---
 
-# Common problems
+## Getting Help
+
+If you ran into some issues, please make sure you are in the lastest version and tried removing `node_modules` folder then a clean install.
+
+If the issue exists or there is somthing you don’t know how to solve, welcome to [open a dicussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure two points:
+
+1. You have tried searching related docs through search box.
+
+1. You are providing a detailed description in the discussion.
+
+   - If you don’t know how to config something, please describe what you want, and what you search or what section are you expecting to see the guidelines (so that we can improve our docs)
+
+   - If you are running into issues, provide related error log (by running `vuepress dev <docs dir> --debug`) and screenshots.
 
 ## Some page settings are invalid
 
@@ -11,44 +24,46 @@ You can first review the documentation to see if the setting **does not support 
 
 **Support for partial configuration** means that the theme allows the configuration of the page to override the global configuration of the same name (same function), but not all functions meet this setting. For the sake of project compilation speed, some projects will not be loaded during the compilation phase after the global configuration is disabled, and they cannot be enabled locally.
 
-## TypeScript problems
+## Code block is abnormal in light mode
 
-Please make sure your project depends on TypeScript and there is a valid tsconfig.json file in the working directory.
+I guess this is your fault. Please delete the `$codeBgColor` in `.vuepress/styles/palette.styl`. The default value of `vuepress-theme-hope` is light blue, while `@vuepress/theme-default` is dark blue.
 
-Also, make sure that your project has at least one TypeScript file included by it.
+## 404 when visiting some links
 
-### error when parsing tsconfig.json
+If you use non-URL-standard characters in category or tags, such as:
 
-This problem is caused by ts-loader not finding tsconfig.json. Since the theme adds TypeScript support, you need to create a valid tsconfig.json inside your project.
+```md
+---
+category: 软件
+tags:
+  - 谷歌浏览器
+---
+```
 
-A simple tsconfig.json is as follows:
+Then when you visit `/category/软件` and `/tag/谷歌浏览器/`, you will be navigated to the 404 page.
+
+This is a potentially breaking change introduced by `vue-router` in `3.4.6`. Starting from `3.4.6`, `vue-router` requires all non-standard URL paths to be handled by `encodeURI` and then added as a path to `router`.
+
+The theme uses `@vuepress/plugin-blog` for blog support. This problem should be corrected in this plugin. Mr. Hope has already reported [This Issue](https://github.com/vuepress/vuepress-plugin-blog/issues/95), and submitted a [PR](https://github.com/vuepress/vuepress-plugin-blog/pull/97) for a temporary fix, but no one reviewed that PR.
+
+::: tip Temporary solution
+
+If you are using yarn, you can add the `resolutions` field:
 
 ```json
 {
-  "compilerOptions": {
-    "target": "ES6", /// Any target not less than 'ES5'
-    "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
-    "experimentalDecorators": true, // TypeScript files for '.vue' needs this option
-    "module": "commonjs", // Avoiding some issues related to vuepress-types
-    // type definition files of vuepress and this theme
-    "types": ["@mr-hope/vuepress-theme-types"]
+  ...
+  "resolutions": {
+    "vue-router": "3.4.5"
   },
-  "include": [
-    "src/.vuepress/enhanceApp.ts" // replace `src` with your doc folder
-  ]
+  ...
 }
 ```
 
-### Can’t find corresponding types
+Go to your package.json to temporarily solve this problem.
 
-Make sure to add `"@mr-hope/vuepress-theme-types"` to `compilerOptions.types`, because the package is not in the `@types` directory.
+:::
 
-### No inputs were found in config file tsconfig.json
+## TypeScript problems
 
-This problem is caused by the absence of a TypeScript file in your project (or your tsconfig.json configuration is incorrect).
-
-`ts-loader` requires that the include and exclude configuration items of tsconfig.json include at least one ts file in the project.
-
-If your project does not have a ts file, to avoid this problem, you can create an empty ts file anywhere in your project and add it to the include of tsconfig.json.
-
-A better solution is to solve this problem by creating an empty `enhanceApp.ts` in the`.vuepress` directory. If you already have `enhanceApp.js`, you can directly convert it to TS.
+- [Typescript problems](typescript.md)

@@ -15,6 +15,10 @@ This is an out-of-the-box feature that offers five theme color "red, blue, green
 
 You can disable it by setting the theme field’s `themeConfig.themeColor` to `false`.
 
+## Accent Color
+
+The first color of the theme color is the default accent color, you need to set it with `$accentColor` in `.vuepress/styles/palette.styl`.
+
 ## Custom color
 
 You need to configure `themeConfig.themeColor` in the format `colorname1: colorvalue, colorname2: colorvalue, ... }`:

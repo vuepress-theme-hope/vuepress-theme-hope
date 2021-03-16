@@ -8,6 +8,7 @@ module.exports = {
       icon: "info",
       prefix: "/basic/",
       items: [
+        { text: "Tutorial", link: "tutorial", icon: "creative" },
         { text: "Markdown", link: "markdown/", icon: "markdown" },
         { text: "VuePress", link: "vuepress/", icon: "vue" },
       ],
@@ -92,6 +93,7 @@ module.exports = {
       icon: "info",
       prefix: "/zh/basic/",
       items: [
+        { text: "小白指南", link: "tutorial", icon: "creative" },
         { text: "Markdown", link: "markdown/", icon: "markdown" },
         { text: "VuePress", link: "vuepress/", icon: "vue" },
       ],
