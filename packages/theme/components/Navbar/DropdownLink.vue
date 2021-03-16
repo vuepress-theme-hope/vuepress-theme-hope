@@ -160,6 +160,9 @@
       .nav-link
         padding 0
 
+        &:before
+          display none
+
       .navbar &
         padding 0.75rem 1rem 0.25rem 0.75rem
         border-top 1px solid var(--grey14)
