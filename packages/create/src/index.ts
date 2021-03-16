@@ -6,8 +6,10 @@ import { cac } from "cac";
 import { prompt } from "inquirer";
 import execa = require("execa");
 import { copy } from "./copy";
-
+import { detectYarn } from "./hasYarn";
 const cli = cac("vuepress-theme-hope");
+
+const hasYarn = detectYarn();
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
@@ -95,26 +97,23 @@ cli
 
     console.log("Installing Deps...");
 
-    const installProcess = execa("yarn", ["install"]);
+    console.warn("This may take a few minutes, please be patient.");
 
-    installProcess.stdout?.pipe(process.stdout);
-
-    await installProcess;
+    execa.sync(hasYarn ? "yarn" : "npm", ["install"], { stdout: "inherit" });
 
     console.log("Successful Generated!");
 
     console.log("Staring dev server...");
 
-    const devProcess = execa("yarn", ["run", "docs:dev"]);
-
-    devProcess.stdout?.pipe(process.stdout);
-
-    await devProcess;
+    await execa(hasYarn ? "yarn" : "npm", ["run", "docs:dev"], {
+      stdout: "inherit",
+    });
   });
 
 cli.help(() => [
   {
-    title: "yarn create vuepress-theme-hope <dir>",
+    title:
+      "yarn create vuepress-theme-hope <dir> / npx create-vuepress-theme-hope <dir>",
     body: "Create a vuepress-theme-hope template in <dir>",
   },
 ]);
