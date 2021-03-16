@@ -72,7 +72,7 @@ copyrightText: false
 
 ## 🛠Install
 
-### Quick Install
+Create a vuepress-theme-hope project in `[dir]` folder under the current project:
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
@@ -84,22 +84,6 @@ yarn create vuepress-theme-hope [dir]
 <CodeGroupItem title="npm">
 ```bash
 npx create-vuepress-theme-hope [dir]
-```
-</CodeGroupItem>
-</CodeGroup>
-
-### Manual Install
-
-<CodeGroup>
-<CodeGroupItem title="yarn">
-```bash
-yarn add -D vuepress-theme-hope
-```
-</CodeGroupItem>
-
-<CodeGroupItem title="npm">
-```bash
-npm i -D vuepress-theme-hope
 ```
 </CodeGroupItem>
 </CodeGroup>

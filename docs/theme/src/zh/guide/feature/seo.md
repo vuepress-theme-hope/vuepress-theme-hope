@@ -115,6 +115,6 @@ interface PageSeoInfo {
 
 ::: tip
 
-你可以使用 [Google 富媒体结构测试工具](https://search.google.com/test/rich-results) 测试本站点。
+你可以使用 [Google 富媒体结构测试工具](https://search.google.com/test/rich-results?url=https%3A%2F%2Fvuepress-theme-hope.github.io%2Fzh%2Fguide%2Ffeature%2Fseo%2F&user_agent=1) 测试本站点。
 
 :::

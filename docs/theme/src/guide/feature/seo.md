@@ -117,6 +117,6 @@ The theme adds rich media structure support to most of the website structure by 
 
 ::: tip
 
-You can use [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results) to test this site.
+You can use [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results?url=https%3A%2F%2Fvuepress-theme-hope.github.io%2Fguide%2Ffeature%2Fseo%2F&user_agent=1) to test this site.
 
 :::

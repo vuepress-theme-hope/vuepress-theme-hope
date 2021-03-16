@@ -6,7 +6,9 @@ tags:
   - install
 ---
 
-## 快速安装
+## 安装
+
+在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
@@ -18,22 +20,6 @@ yarn create vuepress-theme-hope [dir]
 <CodeGroupItem title="npm">
 ```bash
 npx create-vuepress-theme-hope [dir]
-```
-</CodeGroupItem>
-</CodeGroup>
-
-## 手动安装
-
-<CodeGroup>
-<CodeGroupItem title="yarn">
-```bash
-yarn add -D vuepress-theme-hope
-```
-</CodeGroupItem>
-
-<CodeGroupItem title="npm">
-```bash
-npm i -D vuepress-theme-hope
 ```
 </CodeGroupItem>
 </CodeGroup>
