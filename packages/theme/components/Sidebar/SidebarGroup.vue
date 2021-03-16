@@ -106,7 +106,7 @@
   transition color 0.15s ease
   user-select none
 
-  &:hover
+  &.clickale:hover
     background-color var(--bgcolor-light)
 
   &.open
