@@ -78,9 +78,6 @@
           right 0
           visibility visible
 
-    .sidebar &
-      font-weight bold
-
 .repo-link
   color var(--dark-grey)
 

@@ -46,14 +46,13 @@ $headings = 2 3 4 5 6
     position relative
     padding-left 8px
 
-    &::after
+    &::before
       content ' '
       position absolute
-      top 15px
-      left 4px
-      bottom 15px
-      width 4px
-      margin-left -2px
+      top 0
+      left 0px
+      bottom 0
+      width 2px
       background var(--border-color)
       z-index -1
 
@@ -64,13 +63,36 @@ $headings = 2 3 4 5 6
     padding-left 0
 
   .anchor
+    position relative
     box-sizing border-box
     padding 0px 8px
-    line-height 1.5
     list-style none
+    line-height 1.5
+
+    &::before
+      content ' '
+      position absolute
+      z-index 2
+      top 0
+      bottom 0
+      left -8px
+      width 2px
+      background transparent
+
+    &:hover
+      .anchor-link
+        color var(--accent-color)
+
+    &.active
+      .anchor-link
+        color var(--accent-color)
+
+      &::before
+        background var(--accent-color)
 
     .anchor-link
       display inline-block
+      vertical-align middle
       position relative
       max-width 100%
       color var(--light-grey)
@@ -79,25 +101,6 @@ $headings = 2 3 4 5 6
         text-overflow ellipsis
         white-space nowrap
         overflow hidden
-
-      &::before
-        content ' '
-        position absolute
-        z-index 2
-        top 50%
-        left -16px
-        width 6px
-        height 6px
-        background var(--bgcolor)
-        border 1px solid var(--border-color)
-        border-radius 50%
-        transform translateY(-3px)
-
-      &:hover, &.active
-        color var(--accent-color)
-
-        &::before
-          background var(--accent-color)
 
       for $heading in $headings
         &.heading{$heading}

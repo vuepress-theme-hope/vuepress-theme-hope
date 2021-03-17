@@ -103,7 +103,6 @@
   border-bottom-right-radius 0.25rem
   color var(--text-color)
   font-size 1.1em
-  font-weight bold
   cursor pointer
   transition color 0.15s ease
   user-select none

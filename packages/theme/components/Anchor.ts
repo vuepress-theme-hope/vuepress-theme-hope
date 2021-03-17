@@ -9,12 +9,11 @@ interface AnchorItem {
   text: string;
   level?: number;
   link: string;
-  active: boolean;
 }
 
 const renderLink = (
   h: CreateElement,
-  { text, link, level, active }: AnchorItem
+  { text, link, level }: AnchorItem
 ): VNode =>
   h(
     "RouterLink",
@@ -25,7 +24,6 @@ const renderLink = (
         exactActiveClass: "",
       },
       class: {
-        active,
         "anchor-link": true,
         [level ? `heading${level}` : ""]: level,
       },
@@ -48,12 +46,11 @@ const renderChildren = (
     children.map((child: SidebarHeader) => {
       const active = isActive(route, `${route.path}#${child.slug}`);
 
-      return h("li", { class: "anchor" }, [
+      return h("li", { class: { anchor: true, active } }, [
         renderLink(h, {
           text: child.title,
           link: `${route.path}#${child.slug}`,
           level: child.level,
-          active,
         }),
       ]);
     })

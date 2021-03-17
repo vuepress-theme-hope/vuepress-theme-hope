@@ -66,7 +66,6 @@
       & > a.sidebar-link
         font-size 1.1em
         line-height 1.7
-        font-weight bold
 
       &:not(:first-child)
         margin-top 0.75rem
