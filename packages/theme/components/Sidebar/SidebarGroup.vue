@@ -57,6 +57,8 @@
 <script src="./SidebarGroup" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/arrow'
+
 .sidebar-group
   .sidebar-group
     padding-left 0.5em
@@ -119,6 +121,7 @@
     flex 1
 
   .arrow
+    arrow()
     font-size 1.5em
     float right
 

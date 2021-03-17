@@ -14,7 +14,7 @@ const expandHandler = (
   codeContainerNode: HTMLElement,
   footerNode: HTMLElement
 ): void => {
-  const toBeExpand = !expandNode.hasAttribute("expanded");
+  const toBeExpand = expandNode.classList.contains("down");
 
   codeWrapperNode.style.height = toBeExpand
     ? `${codeContainerNode.clientHeight + 13.8}px`
@@ -22,10 +22,10 @@ const expandHandler = (
 
   if (toBeExpand) {
     footerNode.classList.add("show-link");
-    expandNode.setAttribute("expanded", "");
+    expandNode.classList.remove("down");
   } else {
     footerNode.classList.remove("show-link");
-    expandNode.removeAttribute("expanded");
+    expandNode.classList.add("down");
   }
 };
 
@@ -125,7 +125,7 @@ export const initDom = ({
   const footer = select(container, "code-demo-footer")[0];
 
   if (code.script) {
-    const expandButton = h("button", { className: "expand" });
+    const expandButton = h("button", { className: "expand arrow down" });
 
     footer.appendChild(expandButton);
     footer.appendChild(h("span", { className: "title", innerHTML: title }));

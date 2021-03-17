@@ -77,6 +77,8 @@
 <script src="./DropdownLink" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/arrow'
+
 .dropdown-wrapper
   cursor pointer
 
@@ -112,6 +114,7 @@
       border-color transparent
 
     .arrow
+      arrow()
       font-size 1.2em
 
   .mobile-dropdown-title

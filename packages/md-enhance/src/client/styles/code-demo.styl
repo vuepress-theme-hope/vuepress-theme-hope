@@ -1,3 +1,5 @@
+@require '~@mr-hope/vuepress-shared/styles/arrow'
+
 $contentClass ?= '.theme-default-content'
 
 .code-demo-wrapper
@@ -70,43 +72,15 @@ $contentClass ?= '.theme-default-content'
     .code-demo-jsfiddle, .code-demo-codepen
       opacity 1
 
-    .expand::before
-      border-top none
-      border-right 6px solid transparent
-      border-bottom 6px solid #ccc
-      border-left 6px solid transparent
-
   .expand
+    arrow()
     position relative
-    width 60px
-    height 40px
-    margin 0
-    color var(--accent-color, $accentColor)
-    font-size 14px
+    margin 8px
     background-color transparent
     border-color transparent
+    font-size 24px
     outline none
-    transition all 0.5s
     cursor pointer
-
-    &::before
-      content ' '
-      position absolute
-      top 50%
-      left 50%
-      width 0
-      height 0
-      border-top 6px solid var(--grey12, #bbb)
-      border-right 6px solid transparent
-      border-left 6px solid transparent
-      transform translate(-50%, -50%)
-
-    &:hover
-      opacity 1
-
-      &::before
-        border-top-color var(--accent-color, $accentColor)
-        border-bottom-color var(--accent-color, $accentColor)
 
   .title
     display inline-block
