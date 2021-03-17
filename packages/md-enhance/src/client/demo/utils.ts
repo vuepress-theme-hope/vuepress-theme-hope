@@ -35,7 +35,9 @@ export const h = (
 };
 
 const handleHTML = (html: string): string =>
-  html.replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
+  html
+    .replace(/<br \/>/g, "<br>")
+    .replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
 
 const getHtmlTemplate = (html: string): string =>
   `<div id="app">${handleHTML(html)}</div>`;
