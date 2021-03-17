@@ -8,7 +8,7 @@
       v-if="isPathEncrypted && !isGlobalEncrypted"
       @password-verify="setPassword"
     />
-    <div v-else class="page blog">
+    <main v-else class="page blog">
       <div class="blog-page-wrapper">
         <BlogPage />
 
@@ -16,7 +16,7 @@
           <BlogInfo />
         </MyTransition>
       </div>
-    </div>
+    </main>
   </Common>
 </template>
 

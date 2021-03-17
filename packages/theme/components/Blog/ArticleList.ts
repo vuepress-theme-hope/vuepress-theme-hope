@@ -76,7 +76,10 @@ export default Vue.extend({
       const distance =
         (document.querySelector(
           "#article-list"
-        ) as Element).getBoundingClientRect().top + window.scrollY;
+        ) as Element).getBoundingClientRect().top +
+        window.scrollY -
+        (document.querySelector("header.navbar") as Element).clientHeight -
+        10;
 
       setTimeout(() => {
         window.scrollTo(0, distance);
