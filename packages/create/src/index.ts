@@ -6,7 +6,9 @@ import { cac } from "cac";
 import { prompt } from "inquirer";
 import execa = require("execa");
 import { copy } from "./copy";
+import { checkForLatestVersion } from "./checkVersion";
 import { detectYarn } from "./hasYarn";
+import { getLanguage } from "./i18n";
 const cli = cac("vuepress-theme-hope");
 
 const hasYarn = detectYarn();
@@ -15,6 +17,8 @@ cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
   .action(async (dir: string) => {
     if (!dir) return cli.outputHelp();
+
+    const { lang, message } = await getLanguage();
 
     const targetFolder = resolve(process.cwd(), dir);
     const packageJsonPath = resolve(process.cwd(), "package.json");
@@ -25,16 +29,21 @@ cli
       "docs:eject-theme": `vuepress eject-hope ${dir}`,
     };
 
+    console.log(message.getVersion);
+
+    const vuepressVersion = await checkForLatestVersion("vuepress");
+    const themeVersion = await checkForLatestVersion("vuepress-theme-hope");
+
     const devDependencies = {
-      vuepress: "^1.8.2",
-      "vuepress-theme-hope": "^1.12.3",
+      vuepress: `^${vuepressVersion}`,
+      "vuepress-theme-hope": `^${themeVersion}`,
     };
 
     if (!existsSync(targetFolder)) mkdirSync(targetFolder);
 
-    console.log("Generating package.json...");
-
     if (existsSync(packageJsonPath)) {
+      console.log(message.updatePackage);
+
       // eslint-disable-next-line
       const packageContent: any = JSON.parse(
         readFileSync(packageJsonPath, { encoding: "utf-8" })
@@ -48,37 +57,49 @@ cli
         { encoding: "utf-8" }
       );
     } else {
-      interface PromtAnswer {
+      console.log(message.createPackage);
+
+      interface PackageJsonAnswer {
         name: string;
         version: string;
         description: string;
+        license: string;
       }
 
-      const result = await prompt<PromtAnswer>([
+      const result = await prompt<PackageJsonAnswer>([
         {
           name: "name",
           type: "input",
+          message: message.nameMessage,
           default: "vuepress-theme-hope-project",
           validate: (input: string): true | string =>
             /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/u.exec(
               input
             )
               ? true
-              : 'String does not match the pattern of "^(?:@[a-z0-9-*~][a-z0-9-*._~]*/)?[a-z0-9-~][a-z0-9-._~]*$".',
+              : message.nameError,
         },
         {
           name: "version",
           type: "input",
+          message: message.versionMessage,
           default: "1.0.0",
           validate: (input: string): true | string =>
             /^[0-9]+\.[0-9]+\.(?:[0=9]+|[0-9]+-[a-z]+\.[0-9])$/u.exec(input)
               ? true
-              : "Version must be parseable by node-semver, which is bundled with npm as a dependency.",
+              : message.versionError,
         },
         {
           name: "description",
           type: "input",
+          message: message.descriptionMessage,
           default: "A project of vuepress-theme-hope",
+        },
+        {
+          name: "license",
+          type: "input",
+          message: message.licenseMessage,
+          default: "MIT",
         },
       ]);
 
@@ -91,23 +112,65 @@ cli
       );
     }
 
-    console.log("Generating Template...");
+    console.log(message.template);
 
     copy(resolve(__dirname, "../template"), resolve(process.cwd(), dir));
 
-    console.log("Installing Deps...");
+    console.log(message.install);
+    console.warn(message.wait);
 
-    console.warn("This may take a few minutes, please be patient.");
+    let registry = "";
+
+    // use `registry.npm.taobao.org`
+    if (lang === "zh-CN") {
+      const { stdout } = execa.sync(hasYarn ? "yarn" : "npm", [
+        "config",
+        "get",
+        "registry",
+      ]);
+
+      console.log(stdout);
+
+      registry = stdout;
+
+      execa.sync(hasYarn ? "yarn" : "npm", [
+        "config",
+        "set",
+        "registry",
+        "https://registry.npm.taobao.org/",
+      ]);
+    }
 
     execa.sync(hasYarn ? "yarn" : "npm", ["install"], { stdout: "inherit" });
 
-    console.log("Successful Generated!");
+    // restore registry
+    if (lang === "zh-CN")
+      execa.sync(hasYarn ? "yarn" : "npm", [
+        "config",
+        "set",
+        "registry",
+        registry,
+      ]);
 
-    console.log("Staring dev server...");
+    console.log(message.success);
 
-    await execa(hasYarn ? "yarn" : "npm", ["run", "docs:dev"], {
-      stdout: "inherit",
-    });
+    const { choise } = await prompt<{ choise: "Yes" | "No" }>([
+      {
+        name: "choise",
+        type: "list",
+        message: message.devServerAsk,
+        choices: ["Yes", "No"],
+      },
+    ]);
+
+    if (choise === "Yes") {
+      console.log(message.devServer);
+      console.log(message.wait);
+
+      await execa(hasYarn ? "yarn" : "npm", ["run", "docs:dev"], {
+        stdout: "inherit",
+      });
+    }
   });
 
 cli.help(() => [
