@@ -2,6 +2,23 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.12.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.4...v1.12.5) (2021-03-17)
+
+### Bug Fixes
+
+- **create:** use npm when yarn is not installed ([066623f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/066623fc0acbcc3c6018260d0d718ff66c1a826c))
+- **md-enhance:** special handle `<br />` for code demo ([fda23be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fda23beca7232ab7a2a6dff50665d9cf3f6f3132))
+- **theme:** fix active arrow on dropdown group title ([8c92877](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c92877dce43c4511981135c71a9eb039ecd2b56))
+- **theme:** fix article list jump top ([c4ada3b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4ada3b142a9e82194b1e795ed7bb0fc5f813fae))
+- **theme:** fix hover on unclickable sidebarItem ([815afb8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/815afb88626e35e4edfc65cc452d0b4533f59025))
+- **theme:** fix SidebarGroup Header padding ([14b8617](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/14b8617cc1132d59cabbbef2396bb4dc2c0dc45f))
+- **theme:** optimize category number ([f47383f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f47383f998903b3b04de6ac552eabcb38553706f))
+
+### Features
+
+- **create:** update hint ([05d156f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/05d156f336ee631c6efbe30dd9abcf9371bbfca7))
+- **md-enhance:** update demo expand arrow ([9f32c80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f32c8085f66219ed5c4e6ae058e99911e7944b1))
+
 ## [1.12.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.3...v1.12.4) (2021-03-15)
 
 ### Bug Fixes
