@@ -1,5 +1,6 @@
 import Vue from "vue";
 import ArticleItem from "@theme/components/Blog/ArticleItem.vue";
+import EmptyIcon from "@theme/icons/EmptyIcon.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import { filterArticle, sortArticle } from "@theme/util/article";
 import { getPathMatchedKeys } from "@theme/util/encrypt";
@@ -11,7 +12,7 @@ import type { Route } from "vue-router";
 export default Vue.extend({
   name: "ArticleList",
 
-  components: { ArticleItem, MyTransition },
+  components: { ArticleItem, EmptyIcon, MyTransition },
 
   data: () => ({
     currentPage: 1,
@@ -76,10 +77,7 @@ export default Vue.extend({
       const distance =
         (document.querySelector(
           "#article-list"
-        ) as Element).getBoundingClientRect().top +
-        window.scrollY -
-        (document.querySelector("header.navbar") as Element).clientHeight -
-        10;
+        ) as Element).getBoundingClientRect().top + window.scrollY;
 
       setTimeout(() => {
         window.scrollTo(0, distance);

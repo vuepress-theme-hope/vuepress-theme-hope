@@ -1,7 +1,7 @@
 <template>
   <Common :sidebar="false">
     <main class="page not-found">
-      <h1>404</h1>
+      <Page404Icon />
       <blockquote v-text="msg" />
       <button class="action-button" @click="back">{{ i18n.back }}</button>
       <RouterLink class="action-button" to="/">{{ i18n.home }}</RouterLink>
@@ -16,7 +16,12 @@
   display block
   max-width $homePageWidth
   margin 0px auto
-  padding ($navbarHeight + 1rem) 2rem
+  padding ($navbarHeight + 1rem) 2rem 0 2rem !important
+  text-align center
+
+  .page-404-icon
+    width 50%
+    margin 0 auto
 
   .action-button
     display inline-block

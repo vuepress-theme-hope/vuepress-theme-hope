@@ -19,12 +19,16 @@
   position relative
   padding-left 0
   font-size 18px
+  font-family Arial, Helvetica, sans-serif
   font-weight 600
   display flex
   justify-content center
   align-items center
   list-style none
   z-index 2
+
+  @media (max-width $MQMobileNarrow)
+    font-size 16px
 
 .article-type
   position relative
@@ -36,15 +40,17 @@
   &::after
     position absolute
     content ' '
-    left calc(50% - 10px)
-    width 20px
+    left 50%
+    right 50%
     bottom -6px
     height 2px
     background var(--accent-color)
     border-radius 1px
     visibility hidden
-    transform scaleX(0)
-    transition transform 0.3s ease-in-out
+    transition left 0.2s ease-in-out, right 0.2s ease-in-out
+
+  span
+    transition all 0.3s ease-in-out
 
   &.active
     position relative
@@ -56,6 +62,7 @@
 
   &:hover, &.active
     &::after
+      left calc(50% - 8px)
+      right calc(50% - 8px)
       visibility visible
-      transform scaleX(1)
 </style>
