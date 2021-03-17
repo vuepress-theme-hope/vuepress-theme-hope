@@ -128,6 +128,9 @@
     &:hover
       color var(--accent-color)
 
+    .arrow
+      arrow()
+
   .nav-dropdown
     .navbar &
       display none
