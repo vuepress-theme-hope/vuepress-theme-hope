@@ -9,6 +9,7 @@ $headings = 2 3 4 5 6
   max-width $contentWidth
   margin 0 auto
   padding 0 2.5rem
+  z-index 99
 
   @media (max-width $MQNarrow)
     padding 0 1.5rem

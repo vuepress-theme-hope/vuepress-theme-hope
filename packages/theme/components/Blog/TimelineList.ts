@@ -6,14 +6,14 @@ import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 
 @Component({ components: { MyTransition, TimeIcon } })
 export default class TimelineList extends Mixins(TimelineMixin) {
-  private get timeline(): string {
+  get hint(): string {
     return (
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.$themeLocaleConfig.blog!.timeline || getDefaultLocale().blog.timeline
     );
   }
 
-  private navigate(url: string): void {
+  navigate(url: string): void {
     void this.$router.push(url);
   }
 }

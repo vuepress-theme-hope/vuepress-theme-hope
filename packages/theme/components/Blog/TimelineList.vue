@@ -3,7 +3,7 @@
     <div class="title" @click="navigate('/timeline/')">
       <TimeIcon />
       <span class="num">{{ $timelineItems.length }}</span>
-      {{ timeline }}
+      {{ hint }}
     </div>
     <hr />
     <div class="content">

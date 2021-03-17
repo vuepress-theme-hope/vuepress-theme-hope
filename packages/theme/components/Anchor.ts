@@ -2,7 +2,7 @@ import Vue from "vue";
 import { SidebarHeader } from "@theme/util/sidebar";
 import { isActive } from "@theme/util/path";
 
-import type { CreateElement, VNode } from "vue";
+import type { CreateElement, PropType, VNode } from "vue";
 import type { Route } from "vue-router";
 
 interface AnchorItem {
@@ -64,11 +64,23 @@ export default Vue.extend({
 
   functional: true,
 
-  render(h, { parent: { $page, $route } }) {
+  props: {
+    items: {
+      type: Array as PropType<SidebarHeader[]>,
+      default: () => [],
+    },
+  },
+
+  render(h, { props, parent: { $page, $route } }) {
     return h("div", { attrs: { class: "anchor-place-holder" } }, [
       h("aside", { attrs: { id: "anchor" } }, [
         h("div", { class: "anchor-wrapper" }, [
-          $page.headers
+          props.items.length
+            ? renderChildren(h, {
+                children: props.items,
+                route: $route,
+              })
+            : $page.headers
             ? renderChildren(h, {
                 children: $page.headers,
                 route: $route,

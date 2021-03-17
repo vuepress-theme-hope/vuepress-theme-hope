@@ -4,13 +4,14 @@
       <MyTransition>
         <li class="desc">{{ hint }}</li>
       </MyTransition>
+      <Anchor :items="anchorConfig" />
       <MyTransition
         v-for="(item, index) in $timeline"
         :key="index"
         :delay="0.08 * (index + 1)"
       >
         <li>
-          <h3 class="year">{{ item.year }}</h3>
+          <h3 :id="item.year" class="year">{{ item.year }}</h3>
           <ul class="year-wrapper">
             <li
               v-for="(article, articleIndex) in item.articles"
@@ -39,6 +40,15 @@
 
   .theme-dark &
     --dot-color #505050
+
+  #anchor
+    left unset
+    right 0
+    min-width 0
+
+  .anchor-wrapper
+    position relative
+    z-index 10
 
   .timeline-content
     box-sizing border-box

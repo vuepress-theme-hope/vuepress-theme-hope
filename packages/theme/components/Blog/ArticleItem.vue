@@ -31,6 +31,7 @@
   border-radius 6px
   text-align left
   box-shadow 0 1px 3px 0 var(--card-shadow-color)
+  overflow hidden
 
   @media (max-width $MQMobileNarrow)
     border-radius 0

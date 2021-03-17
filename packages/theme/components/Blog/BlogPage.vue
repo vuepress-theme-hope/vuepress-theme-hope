@@ -15,7 +15,6 @@
 <style lang="stylus">
 .blog-page
   max-width 780px
-  overflow hidden
   flex 1
 
   @media (min-width $MQMobile)
