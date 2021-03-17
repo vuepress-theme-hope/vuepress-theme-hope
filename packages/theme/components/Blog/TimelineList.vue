@@ -39,9 +39,13 @@
 .timeline-list-wrapper
   padding 8px 0
   --dot-color #fff
+  --dot-bar-color #eaecef
+  --dot-border-color #ddd
 
-  @media (prefers-color-scheme dark)
-    --dot-color #505050
+  .theme-dark &
+    --dot-color #444
+    --dot-bar-color #333
+    --dot-border-color #555
 
   .title
     cursor pointer
@@ -80,7 +84,7 @@
         margin-left -2px
         width 4px
         height calc(100% - 14px)
-        background var(--border-color)
+        background var(--dot-bar-color)
 
       .year
         position relative
@@ -100,7 +104,7 @@
           width 8px
           height 8px
           background var(--dot-color)
-          border 1px solid var(--border-color)
+          border 1px solid var(--dot-border-color)
           border-radius 50%
 
       .year-wrapper
@@ -141,7 +145,7 @@
               margin-left -4px
               background var(--dot-color)
               border-radius 50%
-              border 1px solid var(--border-color)
+              border 1px solid var(--dot-border-color)
               z-index 2
 
           .timeline-title

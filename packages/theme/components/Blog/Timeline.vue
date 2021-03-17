@@ -37,9 +37,13 @@
   margin 0 auto
   padding 40px 0
   --dot-color #fff
+  --dot-bar-color #eaecef
+  --dot-border-color #ddd
 
   .theme-dark &
-    --dot-color #505050
+    --dot-color #444
+    --dot-bar-color #333
+    --dot-border-color #555
 
   #anchor
     left unset
@@ -53,18 +57,19 @@
   .timeline-content
     box-sizing border-box
     position relative
+    padding-left 76px
     list-style none
 
     &::after
       content ' '
       position absolute
       top 14px
-      left 0
+      left 64px
       z-index -1
       width 4px
       height calc(100% - 38px)
       margin-left -2px
-      background var(--border-color)
+      background var(--dot-bar-color)
 
     .desc
       position relative
@@ -78,42 +83,38 @@
         content ' '
         position absolute
         z-index 2
-        left -20px
+        left -12px
         top 50%
         width 8px
         height 8px
-        margin-left -4px
-        margin-top -4px
+        margin-left -6px
+        margin-top -6px
         background var(--dot-color)
-        border 1px solid var(--border-color)
+        border 2px solid var(--dot-border-color)
         border-radius 50%
 
     .year
       position relative
+      margin 60px 0 0px
       color var(--text-color)
-      font-size 16px
+      font-size 26px
+      font-weight 700
 
       &:before
         content ' '
         position absolute
         z-index 2
-        left -21px
+        left -12px
         top 50%
         width 8px
         height 8px
-        margin-left -4px
-        margin-top -4px
+        margin-left -6px
+        margin-top -6px
         background var(--dot-color)
-        border 2px solid var(--border-color)
+        border 2px solid var(--dot-border-color)
         border-radius 50%
 
-    .year
-      margin 80px 0 0px
-      color var(--text-color)
-      font-size 26px
-      font-weight 700
-
-    .year-wrapper
+    .year, .year-wrapper
       padding-left 0 !important
 
       li
@@ -129,34 +130,35 @@
           .date
             color var(--accent-color)
 
-            &::before
-              background var(--accent-color)
-              border-color var(--dot-color)
-
           .title
             color var(--accent-color)
 
         .date
+          position absolute
+          right calc(100% + 24px)
+          text-align right
           width 40px
-          font-size 12px
+          font-size 14px
+          line-height 30px
+
+        .title
+          position relative
+          font-size 16px
           line-height 30px
 
           &::before
             content ' '
             position absolute
-            left -20px
-            top 41px
+            z-index 2
+            left -12px
+            top 50%
             width 6px
             height 6px
-            margin-left -4px
+            margin-left -6px
+            margin-top -6px
             background var(--dot-color)
+            border 2px solid var(--dot-border-color)
             border-radius 50%
-            border 2px solid var(--border-color)
-            z-index 2
-
-        .title
-          font-size 16px
-          line-height 30px
 
 @media (max-width $MQMobile)
   .timeline-wrapper
