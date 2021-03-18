@@ -108,6 +108,9 @@ div[class*='language-']
       border-radius 6px 0 0 6px
       background var(--code-bgcolor)
 
+      @media (max-width $MQMobileNarrow)
+        border-radius 0
+
 for lang in $codeLang
   div{'[class~="language-' + lang + '"]'}
     &:before
