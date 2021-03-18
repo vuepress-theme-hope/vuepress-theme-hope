@@ -1,5 +1,5 @@
 import Vue from "vue";
-import DropdownTransition from "@theme/components/Navbar/DropdownTransition.vue";
+import DropdownTransition from "@theme/components/Sidebar/DropdownTransition.vue";
 import { isActive } from "@theme/util/path";
 
 import type { PropType } from "vue";

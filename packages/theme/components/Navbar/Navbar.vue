@@ -38,6 +38,8 @@
         "
       />
       <NavLinks class="can-hide" />
+      <LanguageDropdown />
+      <RepoLink class="can-hide" />
     </div>
   </header>
 </template>
@@ -47,7 +49,7 @@
 <style lang="stylus">
 .navbar
   position fixed
-  z-index 20
+  z-index 200
   top 0
   left 0
   right 0

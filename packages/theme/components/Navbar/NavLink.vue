@@ -1,10 +1,11 @@
 <template>
+  <!-- eslint-disable vue/no-deprecated-v-on-native-modifier -->
   <RouterLink
     v-if="isInternal"
     class="nav-link"
     :class="{ active }"
     :to="link"
-    @focusout="focusoutAction"
+    @focusout.native="focusoutAction"
   >
     <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
     {{ item.text }}

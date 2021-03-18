@@ -65,7 +65,7 @@ $headings = 2 3 4 5 6
   .anchor
     position relative
     box-sizing border-box
-    padding 0px 8px
+    padding 1px 8px
     list-style none
     line-height 1.5
 

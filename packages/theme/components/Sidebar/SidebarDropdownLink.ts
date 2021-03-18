@@ -1,13 +1,14 @@
 import Vue from "vue";
+import DropdownTransition from "@theme/components/Sidebar/DropdownTransition.vue";
 import NavLink from "@theme/components/Navbar/NavLink.vue";
 
 import type { PropType } from "vue";
 import type { NavBarConfigItem } from "@theme/util/navbar";
 
 export default Vue.extend({
-  name: "DropdownLink",
+  name: "SidebarDropdownLink",
 
-  components: { NavLink },
+  components: { NavLink, DropdownTransition },
 
   props: {
     item: { type: Object as PropType<NavBarConfigItem>, required: true },
@@ -37,6 +38,7 @@ export default Vue.extend({
 
   methods: {
     setOpen(value: boolean): void {
+      console.log("set");
       this.open = value;
     },
 

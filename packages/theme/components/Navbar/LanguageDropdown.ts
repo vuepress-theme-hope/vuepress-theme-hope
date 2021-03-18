@@ -1,5 +1,6 @@
 import Vue from "vue";
 import DropdownLink from "@theme/components/Navbar/DropdownLink.vue";
+import I18nIcon from "@theme/icons/I18nIcon.vue";
 import NavLink from "@theme/components/Navbar/NavLink.vue";
 import { getNavLinkItem } from "@theme/util/navbar";
 
@@ -57,8 +58,20 @@ export default Vue.extend({
 
   render(h): VNode {
     return this.dropdown
-      ? h("div", { class: "nav-item" }, [
-          h(DropdownLink, { props: { item: this.dropdown } }),
+      ? h("div", { class: "nav-links" }, [
+          h("div", { class: "nav-item" }, [
+            h(DropdownLink, { props: { item: this.dropdown } }, [
+              h(I18nIcon, {
+                slot: "title",
+                style: {
+                  width: "1rem",
+                  height: "1rem",
+                  verticalAlign: "middle",
+                  marginLeft: "1rem",
+                },
+              }),
+            ]),
+          ]),
         ])
       : ((null as unknown) as VNode);
   },

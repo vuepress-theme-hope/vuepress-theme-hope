@@ -1,28 +1,26 @@
 <template>
-  <div class="dropdown-wrapper" :class="{ open }">
+  <div class="mobile-dropdown-wrapper" :class="{ open }">
     <button
       class="dropdown-title"
       type="button"
       :aria-label="dropdownAriaLabel"
-      @click="handleDropdown"
+      @click="setOpen(!open)"
     >
-      <slot name="title">
-        <span class="title">
-          <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
-          {{ item.text }}
-        </span>
-      </slot>
-      <span class="arrow down" />
+      <span class="title">
+        <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
+        {{ item.text }}
+      </span>
+      <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
-    <ul class="nav-dropdown">
-      <li
-        v-for="(child, index) in item.items"
-        :key="child.link || index"
-        class="dropdown-item"
-      >
-        <template v-if="child.type === 'links'">
-          <h4 class="dropdown-subtitle">
+    <DropdownTransition>
+      <ul v-show="open" class="nav-dropdown">
+        <li
+          v-for="(child, index) in item.items"
+          :key="child.link || index"
+          class="dropdown-item"
+        >
+          <h4 v-if="child.type === 'links'" class="dropdown-subtitle">
             <NavLink
               v-if="child.link"
               :item="child"
@@ -36,7 +34,7 @@
             <span v-else>{{ child.text }}</span>
           </h4>
 
-          <ul class="dropdown-subitem-wrapper">
+          <ul v-if="child.type === 'links'" class="dropdown-subitem-wrapper">
             <li
               v-for="grandchild in child.items"
               :key="grandchild.link"
@@ -52,72 +50,46 @@
               />
             </li>
           </ul>
-        </template>
 
-        <NavLink
-          v-else
-          :item="child"
-          @focusout="isLastItemOfArray(child, item.items) && setOpen(false)"
-        />
-      </li>
-    </ul>
+          <NavLink
+            v-else
+            :item="child"
+            @focusout="isLastItemOfArray(child, item.items) && setOpen(false)"
+          />
+        </li>
+      </ul>
+    </DropdownTransition>
   </div>
 </template>
 
-<script src="./DropdownLink" />
+<script src="./SidebarDropdownLink" />
 
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared/styles/arrow'
 
-.dropdown-wrapper
-  height 1.8rem
+.mobile-dropdown-wrapper
   cursor pointer
-
-  &:hover, &.open
-    .nav-dropdown
-      z-index 2
-      transform scale(1)
-      visibility visible
-      opacity 1
+    &.open .dropdown-title
+      margin-bottom 0.5rem
 
   .dropdown-title
     cursor inherit
     padding inherit
-    color var(--dark-grey)
+    color var(--text-color)
     font-family inherit
-    font-size 0.9rem
-    font-weight 500
+    font-size inherit
     line-height 1.4rem
 
-    &::after
-      border-left 5px solid var(--accent-color)
-
     &:hover
-      border-color transparent
+      color var(--accent-color)
 
     .arrow
       arrow()
-      font-size 1.2em
 
   .nav-dropdown
-    box-sizing border-box
-    position absolute
-    top 100%
-    right 0
-    max-height 100vh - $navbarHeight
-    margin 0
-    padding 0.6rem 0
-    border 1px solid var(--grey14)
-    border-radius 0.25rem
-    background var(--bgcolor)
-    box-shadow 2px 2px 10px var(--card-shadow-color)
-    text-align left
-    white-space nowrap
-    overflow-y auto
-    transform scale(0.8)
-    opacity 0
-    visibility hidden
-    transition all 0.18s ease-out
+    margin-top 0.25rem
+    transition height 0.1s ease-out
+    overflow hidden
 
   .dropdown-item
     color inherit
@@ -125,10 +97,9 @@
 
     h4
       margin 0
-      padding 0.75rem 1rem 0.25rem 0.75rem
-      border-top 1px solid var(--grey14)
-      color var(--dark-grey)
-      font-size 0.9rem
+      padding-left 1.25rem
+      font-size 15px
+      line-height 1.7
 
       .nav-link
         padding 0
@@ -136,17 +107,12 @@
         &:before
           display none
 
-    &:first-child h4
-      padding-top 0
-      border-top 0
-
     .nav-link
       display block
       position relative
       margin-bottom 0
       padding 0 1.5rem 0 1.25rem
       border-bottom none
-      color var(--dark-grey)
       font-weight 400
       line-height 1.7rem
 
@@ -167,10 +133,15 @@
           border-left 5px solid var(--accent-color)
           border-bottom 3px solid transparent
 
+    & > .nav-link
+      font-size 15px
+      line-height 2rem
+
     .dropdown-subitem-wrapper
       padding 0
       list-style none
 
     .dropdown-subitem
       font-size 0.9em
+      padding-left 0.5rem
 </style>

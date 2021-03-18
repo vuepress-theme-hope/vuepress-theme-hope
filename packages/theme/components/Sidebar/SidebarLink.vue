@@ -3,9 +3,13 @@
 <style lang="stylus">
 $headings = 3 4 5 6
 
-.sidebar
-  .sidebar-links
-    ul.sidebar-sub-headers
+.sidebar-links
+  ul
+    padding 0
+    margin 0
+    list-style-type none
+
+    &.sidebar-sub-headers
       padding-left 1rem
       font-size 0.95em
 

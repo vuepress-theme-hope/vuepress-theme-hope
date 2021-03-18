@@ -7,7 +7,7 @@
 
     <slot name="top" />
 
-    <NavLinks />
+    <SidebarNavLinks />
 
     <slot name="center" />
 
@@ -22,7 +22,7 @@
 <style lang="stylus">
 .sidebar
   position fixed
-  z-index 10
+  z-index 150
   top $navbarHeight
   left 0
   bottom 0
@@ -43,11 +43,6 @@
 
   .theme-container:not(.has-navbar) &
     top 0
-
-  .nav-links ul, .sidebar-links ul
-    padding 0
-    margin 0
-    list-style-type none
 
   a
     display inline-block
@@ -98,9 +93,6 @@
     .blogger-info.mobile + hr
       display block
       margin-top 16px
-
-    .nav-links
-      display block
 
     & > .sidebar-links
       padding 1rem 0

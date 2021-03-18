@@ -1,6 +1,8 @@
 import Vue from "vue";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";
+import LanguageDropdown from "@theme/components/Navbar/LanguageDropdown";
 import NavLinks from "@theme/components/Navbar/NavLinks.vue";
+import RepoLink from "@theme/components/Navbar/RepoLink.vue";
 import SearchBox from "@SearchBox";
 import SidebarButton from "@theme/components/Navbar/SidebarButton.vue";
 import ThemeColor from "@ThemeColor";
@@ -34,7 +36,9 @@ export default Vue.extend({
 
   components: {
     AlgoliaSearchBox,
+    LanguageDropdown,
     NavLinks,
+    RepoLink,
     SearchBox,
     SidebarButton,
     ThemeColor,

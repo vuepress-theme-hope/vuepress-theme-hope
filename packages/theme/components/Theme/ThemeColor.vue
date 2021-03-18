@@ -64,7 +64,7 @@
   .color-picker-menu
     background var(--bgcolor)
     position absolute
-    top $navbarHeight - $navbarVerticalPadding
+    top: $navbarHeight - $navbarVerticalPadding
     left 50%
     min-width 100px
     margin 0
@@ -72,10 +72,10 @@
     box-shadow 2px 2px 10px var(--card-shadow-color)
     border-radius 0.25em
     transform translateX(-50%)
-    z-index 150
+    z-index 250
 
     @media (max-width $MQMobile)
-      top $navbarMobileHeight - $navbarMobileVerticalPadding
+      top: $navbarMobileHeight - $navbarMobileVerticalPadding
       transform translateX(-80%)
 
     &::before
