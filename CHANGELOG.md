@@ -2,6 +2,22 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.12.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.5...v1.12.6) (2021-03-18)
+
+### Bug Fixes
+
+- **theme:** fix year anchor ([f6733e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f6733e5904eb5be57977f179fa3229c4fa691f87))
+- **theme:** missing arrow on sidebar nav dropdown ([8a362e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a362e0aec671a84a094df43de0f3d1662a7b9d9))
+- **theme:** update home action button ([a9d6817](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9d6817ce8f9d2e7bdf2c43feded3bc21ec8d170))
+
+### Features
+
+- **theme:** improve appearance ([cf17bb6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf17bb6b03eab2ee6ec8f12679c434379d031f63))
+- **theme:** rebuild navbar ([472f5eb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/472f5eb1da1f17857d512dc4d6e50c73587d94b7))
+- **theme:** update Anchor style ([2373477](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/237347743094122c68d4bf6b8b5f055e6d4f0196))
+- **theme:** update timeline ([2f4475c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f4475c2eb36dab4101345880e4e3681d06bcc7c))
+- **theme:** update timeline ([12598be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/12598be064e926379b9918446cf266e220c91439))
+
 ## [1.12.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.4...v1.12.5) (2021-03-17)
 
 ### Bug Fixes
