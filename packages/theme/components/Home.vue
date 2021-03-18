@@ -181,7 +181,6 @@
         font-size 1.1rem
 
       @media (max-width $MQMobileNarrow)
-        padding 0.6rem 1rem
         font-size 1rem
 
       &:hover
