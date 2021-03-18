@@ -83,7 +83,7 @@ yarn create vuepress-theme-hope [dir]
 
 <CodeGroupItem title="npm">
 ```bash
-npx create-vuepress-theme-hope [dir]
+npm init vuepress-theme-hope [dir]
 ```
 </CodeGroupItem>
 </CodeGroup>

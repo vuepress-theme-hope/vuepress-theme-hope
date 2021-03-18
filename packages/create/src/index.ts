@@ -176,7 +176,7 @@ cli
 cli.help(() => [
   {
     title:
-      "yarn create vuepress-theme-hope <dir> / npx create-vuepress-theme-hope <dir>",
+      "yarn create vuepress-theme-hope <dir> / npm init vuepress-theme-hope <dir>",
     body: "Create a vuepress-theme-hope template in <dir>",
   },
 ]);

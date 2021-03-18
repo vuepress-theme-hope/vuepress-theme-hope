@@ -27,7 +27,7 @@ VuePress 是一个 Vue 驱动的静态网站生成器。它遵循:
 
 ```shell
 # 在 docs 文件夹创建 vuepress 项目
-npx create-vuepress-theme-hope docs
+npm init vuepress-theme-hope docs
 ```
 
 ## VuePress 介绍

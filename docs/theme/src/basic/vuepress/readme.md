@@ -10,7 +10,7 @@ tags:
 
 ```bash
 # Create a vuepress-theme-hope project under docs
-npx create-vuepress-theme-hope docs
+npm init vuepress-theme-hope docs
 ```
 
 ## VuePress Intro
