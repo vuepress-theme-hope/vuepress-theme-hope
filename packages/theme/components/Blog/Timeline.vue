@@ -11,7 +11,9 @@
         :delay="0.08 * (index + 1)"
       >
         <li>
-          <h3 :id="item.year" class="year">{{ item.year }}</h3>
+          <h3 :id="item.year" class="year">
+            <span>{{ item.year }}</span>
+          </h3>
           <ul class="year-wrapper">
             <li
               v-for="(article, articleIndex) in item.articles"
@@ -94,27 +96,31 @@
         border-radius 50%
 
     .year
-      position relative
-      margin 60px 0 0px
+      margin-top 0.5rem - $navbarHeight
+      margin-bottom 0.5rem
+      padding-top: ($navbarHeight + 3rem)
       color var(--text-color)
       font-size 26px
       font-weight 700
 
-      &:before
-        content ' '
-        position absolute
-        z-index 2
-        left -12px
-        top 50%
-        width 8px
-        height 8px
-        margin-left -6px
-        margin-top -6px
-        background var(--dot-color)
-        border 2px solid var(--dot-border-color)
-        border-radius 50%
+      span
+        position relative
 
-    .year, .year-wrapper
+        &:before
+          content ' '
+          position absolute
+          z-index 2
+          left -12px
+          top 50%
+          width 8px
+          height 8px
+          margin-left -6px
+          margin-top -6px
+          background var(--dot-color)
+          border 2px solid var(--dot-border-color)
+          border-radius 50%
+
+    .year-wrapper
       padding-left 0 !important
 
       li
@@ -128,10 +134,17 @@
           cursor pointer
 
           .date
-            color var(--accent-color)
+            font-size 16px
+            transition font-size 0.3s ease-out
+
+            &::before
+              background-color var(--bgcolor)
+              border-color var(--accent-color)
 
           .title
             color var(--accent-color)
+            font-size 18px
+            transition font-size 0.3s ease-out
 
         .date
           position absolute
@@ -141,16 +154,11 @@
           font-size 14px
           line-height 30px
 
-        .title
-          position relative
-          font-size 16px
-          line-height 30px
-
           &::before
             content ' '
             position absolute
             z-index 2
-            left -12px
+            right -16px
             top 50%
             width 6px
             height 6px
@@ -159,6 +167,11 @@
             background var(--dot-color)
             border 2px solid var(--dot-border-color)
             border-radius 50%
+
+        .title
+          position relative
+          font-size 16px
+          line-height 30px
 
 @media (max-width $MQMobile)
   .timeline-wrapper
