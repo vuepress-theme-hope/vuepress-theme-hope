@@ -85,6 +85,7 @@
   min-height 100vh - $navbarHeight
   padding $navbarHeight 2rem 0
   margin 0px auto
+  overflow-x hidden
 
   @media (max-width $MQNarrow)
     min-height 100vh - $navbarMobileHeight
