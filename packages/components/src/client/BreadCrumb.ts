@@ -64,7 +64,7 @@ export default Vue.extend({
 
   methods: {
     getLinks(route: Route): string[] {
-      const routePaths = route.fullPath.split("#")[0].split("/");
+      const routePaths = route.path.split("/");
       const links: string[] = [];
       let link = "";
 

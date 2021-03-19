@@ -45,16 +45,16 @@ h1, h2, h3, h4, h5, h6
 .breadcrumb
   @extend $wrapper
   position relative
-  margin-top $navbarHeight
-  margin-bottom: (- $navbarHeight)
+  margin-top: $navbarHeight + 0.5rem
+  margin-bottom 0.5rem - $navbarHeight
   padding-top 0.2rem
   padding-bottom 0.2rem
   font-size 15px
   z-index 2
 
-  @media (max-width $MQNarrow)
-    margin-top $navbarMobileHeight
-    margin-bottom: (- $navbarMobileHeight)
+  @media (max-width $MQMobile)
+    margin-top: $navbarMobileHeight + 0.5rem
+    margin-bottom 0.5rem - $navbarMobileHeight
     font-size 14px
 
   @media (max-width $MQMobileNarrow)
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6
     padding-bottom 1.3em
 
   ol
-    margin 0.5rem 0
+    margin 0
     padding-left 0px
     list-style none
 
