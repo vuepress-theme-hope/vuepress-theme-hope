@@ -59,7 +59,11 @@ export default Vue.extend({
             const { pathname, hash } = new URL(suggestion.url);
             const routepath = pathname.replace(this.$site.base, "/");
 
-            void this.$router.push(`${routepath}${decodeURIComponent(hash)}`);
+            if (
+              this.$router.getRoutes().some((route) => route.path === routepath)
+            )
+              void this.$router.push(`${routepath}${decodeURIComponent(hash)}`);
+            else window.open(suggestion.url);
           },
         });
       });

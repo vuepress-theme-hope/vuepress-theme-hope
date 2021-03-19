@@ -59,14 +59,19 @@ export default Vue.extend({
                   // support duplicated history entries.
                   if (this.$route.fullPath === hit.url) return;
 
-                  const { pathname: hitPathname } = new URL(
-                    `${window.location.origin}${hit.url}`
-                  );
+                  const fullPath = `${window.location.origin}${hit.url}`;
+                  const { pathname: hitPathname } = new URL(fullPath);
                   // If the hits goes to another page, we prevent the native link behavior
                   // to leverage the Vue Router loading feature.
                   if (this.$route.path !== hitPathname) event.preventDefault();
 
-                  void this.$router.push(hit.url);
+                  if (
+                    this.$router
+                      .getRoutes()
+                      .some((route) => route.path === hitPathname)
+                  )
+                    void this.$router.push(hit.url);
+                  else window.open(fullPath);
                 },
                 children,
               },
@@ -74,16 +79,19 @@ export default Vue.extend({
 
             navigator: {
               navigate: ({ suggestionUrl }): void => {
-                const { pathname: hitPathname } = new URL(
-                  window.location.origin + suggestionUrl
-                );
+                const fullPath = `${window.location.origin}${suggestionUrl}`;
+                const { pathname: hitPathname } = new URL(fullPath);
                 // Vue Router doesn’t handle same-page navigation so we use
                 // the native browser location API for anchor navigation.
                 if (this.$route.path === hitPathname)
-                  window.location.assign(
-                    window.location.origin + suggestionUrl
-                  );
-                else void this.$router.push(suggestionUrl);
+                  window.location.assign(fullPath);
+                else if (
+                  this.$router
+                    .getRoutes()
+                    .some((route) => route.path === hitPathname)
+                )
+                  void this.$router.push(suggestionUrl);
+                else window.open(fullPath);
               },
               navigateNewTab({ suggestionUrl }): void {
                 window.open(suggestionUrl);
