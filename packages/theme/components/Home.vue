@@ -209,7 +209,7 @@
     align-content stretch
     margin 0 -2rem
     padding 1.2rem 0
-    border-top 1px solid $borderColor
+    border-top 1px solid var(--border-color)
 
     @media (max-width $MQMobileNarrow)
       margin 0 -1.5rem
