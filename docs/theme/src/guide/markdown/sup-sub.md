@@ -30,7 +30,7 @@ module.exports = {
 - Use `^ ^` to mark the superscript.
 - Use `~ ~` to mark the subscript.
 
-::: details Demo
+## Demo
 
 - 19^th^
 - H~2~O
@@ -39,5 +39,3 @@ module.exports = {
 - 19^th^
 - H~2~O
 ```
-
-:::

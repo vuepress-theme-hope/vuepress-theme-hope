@@ -27,7 +27,7 @@ module.exports = {
 
 Use `== ==` to mark.
 
-## Case
+## Demo
 
 Mr. Hope is ==handsome==.
 

@@ -348,6 +348,8 @@ For details, see the [Full Screen Button](../interface/others.md#fullscreen-butt
 
 ## Demo
 
+::: details Configuration of this documentation
+
 ```js
 // .vuepress/config.js
 module.exports = {
@@ -438,3 +440,5 @@ module.exports = {
   },
 };
 ```
+
+:::

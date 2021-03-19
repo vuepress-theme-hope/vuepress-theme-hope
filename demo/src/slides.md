@@ -424,4 +424,10 @@ Hold down the `alt` key (`ctrl` in Linux) and click on any element to zoom towar
 
 Click again to zoom back out.
 
+---
+
+<!-- .element: class="r-fit-text" -->
+
+## The End
+
 @slideend

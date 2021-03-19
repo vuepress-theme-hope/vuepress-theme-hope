@@ -420,4 +420,10 @@ c(3);
 
 再次点击即可缩小。
 
+---
+
+<!-- .element: class="r-fit-text" -->
+
+## 结束
+
 @slideend

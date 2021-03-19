@@ -344,6 +344,8 @@ editLink: false
 
 ## 案例
 
+::: details 本文档的导航栏配置
+
 ```js
 // .vuepress/config.js
 module.exports = {
@@ -434,3 +436,5 @@ module.exports = {
   },
 };
 ```
+
+:::
