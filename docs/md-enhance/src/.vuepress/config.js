@@ -49,25 +49,33 @@ module.exports = config({
     ],
 
     sidebar: {
-      "/guide/": [
+      "/": [
         "",
-        "sup-sub",
-        "align",
-        "footnote",
-        "mark",
-        "flowchart",
-        "tex",
-        "demo",
         {
-          title: "Presentation",
-          icon: "presentation",
-          prefix: "presentation/",
+          title: "Guide",
+          icon: "creative",
+          prefix: "guide/",
           collapsable: false,
-          children: ["", "demo", "themes"],
+          children: [
+            "",
+            "sup-sub",
+            "align",
+            "footnote",
+            "mark",
+            "flowchart",
+            "tex",
+            "demo",
+            {
+              title: "Presentation",
+              icon: "slides",
+              prefix: "presentation/",
+              collapsable: false,
+              children: ["", "demo", "themes"],
+            },
+          ],
         },
+        "config",
       ],
-
-      "/": ["", "guide/", "config"],
     },
 
     locales: {
@@ -78,25 +86,33 @@ module.exports = config({
           { text: "配置", icon: "config", link: "/zh/config/" },
         ],
         sidebar: {
-          "/zh/guide/": [
+          "/zh/": [
             "",
-            "sup-sub",
-            "align",
-            "footnote",
-            "mark",
-            "flowchart",
-            "tex",
-            "demo",
             {
-              title: "幻灯片",
-              icon: "presentation",
-              prefix: "presentation/",
+              title: "指南",
+              icon: "creative",
+              prefix: "guide/",
               collapsable: false,
-              children: ["", "demo", "themes"],
+              children: [
+                "",
+                "sup-sub",
+                "align",
+                "footnote",
+                "mark",
+                "flowchart",
+                "tex",
+                "demo",
+                {
+                  title: "幻灯片",
+                  icon: "slides",
+                  prefix: "presentation/",
+                  collapsable: false,
+                  children: ["", "demo", "themes"],
+                },
+              ],
             },
+            "config",
           ],
-
-          "/zh/": ["", "guide/", "config"],
         },
       },
     },
