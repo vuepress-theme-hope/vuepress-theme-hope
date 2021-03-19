@@ -5,6 +5,7 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
   const { nesting, info } = tokens[idx];
   const type = /\[(.*)\]/u.exec(info);
   const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
+
   if (nesting === -1)
     return `
             </div>

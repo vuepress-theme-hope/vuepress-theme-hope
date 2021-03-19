@@ -66,14 +66,14 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 ### 流程图
 
-@flowstart
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
+```
 
 - [查看详情](../markdown/flowchart.md)
 

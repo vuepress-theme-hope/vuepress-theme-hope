@@ -79,14 +79,14 @@ module.exports = {
 
 ### 流程图
 
-@flowstart
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
+```
 
 - [查看详情](flowchart.md)
 

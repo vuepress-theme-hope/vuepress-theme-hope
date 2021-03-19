@@ -29,13 +29,13 @@ module.exports = {
 
 ### Markdown Syntax
 
-```markdown
-@flowstart [preset]
+````md
+```flow [preset]
 
 <!-- Your flowchart code here. -->
 
-@flowend
 ```
+````
 
 Available presets for now:
 
@@ -44,9 +44,7 @@ Available presets for now:
 
 ## Demo
 
-<!-- markdownlint-disable -->
-
-@flowstart
+```flow
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
@@ -62,29 +60,27 @@ cond(yes, right)->c2
 cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
-@flowend
-
-<!-- markdownlint-restore -->
-
-```md
-@flowstart
-st=>start: Start|past:>http://www.google.com[blank]
-e=>end: End|future:>http://www.google.com
-op1=>operation: My Operation|past
-op2=>operation: Stuff|current
-sub1=>subroutine: My Subroutine|invalid
-cond=>condition: Yes
-or No?|approved:>http://www.google.com
-c2=>condition: Good idea|rejected
-io=>inputoutput: catch something...|future
-
-st->op1(right)->cond
-cond(yes, right)->c2
-cond(no)->sub1(left)->op1
-c2(yes)->io->e
-c2(no)->op2->e
-@flowend
 ```
+
+````md
+```flow
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End|future:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|future
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+````
 
 ## Flowchart Intro
 
@@ -104,21 +100,21 @@ Default text is `End`.
 
 - `[Variable]->end: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 st=>start: Start
 e=>end: End
 
 st->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 st=>start: Start
 e=>end: End
 
 st->e
-@flowend
+```
 
 ### operation
 
@@ -126,21 +122,21 @@ Indicates that an operation needs to happen in the flow.
 
 - `[Variable]->operation: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>operation: Operation
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>operation: Operation
 e=>end: End
 
 process->e
-@flowend
+```
 
 ### inputoutput
 
@@ -148,21 +144,21 @@ Indicates that IO happens in a flow.
 
 - `[Variable]->inputoutput: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>inputoutput: Inputoutput
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>inputoutput: Inputoutput
 e=>end: End
 
 process->e
-@flowend
+```
 
 ### subroutine
 
@@ -170,21 +166,21 @@ Indicates that a subroutine happens in the flow and that there should be another
 
 - `[Variable]->subroutine: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>subroutine: Subroutine
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>subroutine: Subroutine
 e=>end: End
 
 process->e
-@flowend
+```
 
 ### condition
 
@@ -195,25 +191,25 @@ Allows for a conditional or logical statement to direct the flow into one of two
 - `[Variable]([yesText])->[Position]`
 - `[Variable]([noText])->[Position]`
 
-```markdown
-@flowstart
+````md
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
+```
 
 ### parallel
 
@@ -223,25 +219,25 @@ Allows for multiple flows to happen simultaneously.
 - `[Variable](path1, direction)->[Position]`
 - `[Variable](path1, direction)->[Position]`
 
-```markdown
-@flowstart
+````md
+```flow
 para=>parallel: parallel tasks
 process=>operation: Process
 e=>end: End
 
 para(path1, bottom)->process->e
 para(path2)->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 para=>parallel: parallel tasks
 process=>operation: Process
 e=>end: End
 
 para(path1, bottom)->process->e
 para(path2)->e
-@flowend
+```
 
 ## Connections
 

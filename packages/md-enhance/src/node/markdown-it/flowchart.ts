@@ -6,10 +6,8 @@ import StateBlock = require("markdown-it/lib/rules_block/state_block");
 const flowchart = (
   md: MarkdownIt & { $dataBlock: Record<string, string> }
 ): void => {
-  const OPEN_MARKER = "@flowstart";
-  const openChar = OPEN_MARKER.charCodeAt(0);
-  const CLOSEMARKER = "@flowend";
-  const closeChar = CLOSEMARKER.charCodeAt(0);
+  const OPEN_MARKER = "```flow";
+  const CLOSEMARKER = "```";
 
   const uml = (
     state: StateBlock,
@@ -23,13 +21,7 @@ const flowchart = (
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
 
-    /*
-     * Check out the first character quickly,
-     * this should filter out most of non-uml blocks
-     */
-    if (openChar !== state.src.charCodeAt(start)) return false;
-
-    // Check out the rest of the marker string
+    // Check out the marker string
     for (i = 0; i < OPEN_MARKER.length; ++i)
       if (OPEN_MARKER[i] !== state.src[start + i]) return false;
 
@@ -60,8 +52,6 @@ const flowchart = (
         break;
 
       if (
-        // didn’t find the closing fence
-        closeChar === state.src.charCodeAt(start) &&
         // closing fence should not be indented with respect of opening fence
         state.sCount[nextLine] <= state.sCount[startLine]
       ) {

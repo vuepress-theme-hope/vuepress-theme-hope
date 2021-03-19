@@ -1,12 +1,17 @@
-# flowchart
+---
+title: Flowchart
+icon: tree
+---
 
-Let the Markdown file support flow chart in your VuePress site.
+Let the Markdown file support flow chart in your VuePress site
+
+<!-- more -->
 
 This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to support this feature.
 
 ## Configuration
 
-```js
+```js {7}
 module.exports = {
   plugins: [
     [
@@ -24,13 +29,13 @@ module.exports = {
 
 ### Markdown Syntax
 
-```markdown
-@flowstart [preset]
+````md
+```flow [preset]
 
 <!-- Your flowchart code here. -->
 
-@flowend
 ```
+````
 
 Available presets for now:
 
@@ -41,7 +46,7 @@ Available presets for now:
 
 <!-- markdownlint-disable -->
 
-@flowstart
+```flow
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
@@ -57,12 +62,12 @@ cond(yes, right)->c2
 cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
-@flowend
+```
 
 <!-- markdownlint-restore -->
 
-```md
-@flowstart
+````md
+```flow
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
@@ -78,8 +83,8 @@ cond(yes, right)->c2
 cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
-@flowend
 ```
+````
 
 ## Flowchart Intro
 
@@ -99,21 +104,21 @@ Default text is `End`.
 
 - `[Variable]->end: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 st=>start: Start
 e=>end: End
 
 st->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 st=>start: Start
 e=>end: End
 
 st->e
-@flowend
+```
 
 ### operation
 
@@ -121,21 +126,21 @@ Indicates that an operation needs to happen in the flow.
 
 - `[Variable]->operation: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>operation: Operation
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>operation: Operation
 e=>end: End
 
 process->e
-@flowend
+```
 
 ### inputoutput
 
@@ -143,21 +148,21 @@ Indicates that IO happens in a flow.
 
 - `[Variable]->inputoutput: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>inputoutput: Inputoutput
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>inputoutput: Inputoutput
 e=>end: End
 
 process->e
-@flowend
+```
 
 ### subroutine
 
@@ -165,21 +170,21 @@ Indicates that a subroutine happens in the flow and that there should be another
 
 - `[Variable]->subroutine: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>subroutine: Subroutine
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>subroutine: Subroutine
 e=>end: End
 
 process->e
-@flowend
+```
 
 ### condition
 
@@ -190,25 +195,25 @@ Allows for a conditional or logical statement to direct the flow into one of two
 - `[Variable]([yesText])->[Position]`
 - `[Variable]([noText])->[Position]`
 
-```markdown
-@flowstart
+````md
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
+```
 
 ### parallel
 
@@ -218,29 +223,30 @@ Allows for multiple flows to happen simultaneously.
 - `[Variable](path1, direction)->[Position]`
 - `[Variable](path1, direction)->[Position]`
 
-```markdown
-@flowstart
+````md
+```flow
 para=>parallel: parallel tasks
 process=>operation: Process
 e=>end: End
 
 para(path1, bottom)->process->e
 para(path2)->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 para=>parallel: parallel tasks
 process=>operation: Process
 e=>end: End
 
 para(path1, bottom)->process->e
 para(path2)->e
-@flowend
+```
 
 ## Connections
 
 Connections are defined in their own section below the node definitions.
+
 The `->` operator specifies a connection from one node to another like `nodeVar1->nodeVar2->nodeVar3`.
 
 Not all nodes need to be specified in one string and can be separaged like so
@@ -258,12 +264,12 @@ Items in `[]` are optional.
 
 ### Directions
 
-The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used that one of list the below should be used in its place.
+The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used and one of the below list should be used in its place.
 
-- left
-- right
-- top
-- bottom
+- `left`
+- `right`
+- `top`
+- `bottom`
 
 ### Node Specific Specifiers by Type
 
@@ -324,8 +330,8 @@ e=>end: End:>http://www.yahoo.com
 
 Symbols that should possibly not be used in the text: `=>` and `->` and `:>` and `|` and `@>` and `:$`
 
-To emphasize a specific path in your flowchart, you can additionally define it like this:
+To emphasize a specific path in your flowchart, you can define it like this:
 
-```
+```md
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
 ```

@@ -108,27 +108,27 @@ You can mark ==important words== .
 
 ### Flowchart
 
-@flowstart
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
+```
 
 ::: details Code
 
-```md
-@flowstart
+````md
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
 ```
+````
 
 :::
 

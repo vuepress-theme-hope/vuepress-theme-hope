@@ -1,12 +1,17 @@
-# 流程图支持
+---
+title: 流程图
+icon: tree
+---
 
 让你的 VuePress 站点中的 Markdown 文件支持流程图。
 
 本插件利用了 [flowchart.js](https://github.com/adrai/flowchart.js) 来支持这一功能。
 
+<!-- more -->
+
 ## 配置
 
-```js
+```js {7}
 module.exports = {
   plugins: [
     [
@@ -22,13 +27,13 @@ module.exports = {
 
 ## 语法
 
-```md
-@flowstart [preset]
+````md
+```flow [preset]
 
 <!-- 放置你的流程图代码 -->
 
-@flowend
 ```
+````
 
 目前可用的预设:
 
@@ -39,7 +44,7 @@ module.exports = {
 
 <!-- markdownlint-disable -->
 
-@flowstart
+```flow
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
@@ -55,12 +60,12 @@ cond(yes, right)->c2
 cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
-@flowend
+```
 
 <!-- markdownlint-restore -->
 
-```md
-@flowstart
+````md
+```flow
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
@@ -76,8 +81,8 @@ cond(yes, right)->c2
 cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
-@flowend
 ```
+````
 
 ## 流程图介绍
 
@@ -97,81 +102,81 @@ c2(no)->op2->e
 
 - `[Variable]->end: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 st=>start: Start
 e=>end: End
 
 st->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 st=>start: Start
 e=>end: End
 
 st->e
-@flowend
+```
 
 #### 操作
 
 - `[Variable]->operation: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>operation: Operation
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>operation: Operation
 e=>end: End
 
 process->e
-@flowend
+```
 
 #### 输入输出
 
 - `[Variable]->inputoutput: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>inputoutput: Inputoutput
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>inputoutput: Inputoutput
 e=>end: End
 
 process->e
-@flowend
+```
 
 #### 子程序
 
 - `[Variable]->subroutine: [Text]`
 
-```markdown
-@flowstart
+````md
+```flow
 process=>subroutine: Subroutine
 e=>end: End
 
 process->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 process=>subroutine: Subroutine
 e=>end: End
 
 process->e
-@flowend
+```
 
 #### 条件
 
@@ -180,25 +185,25 @@ process->e
 - `[Variable]([yesText])->[Position]`
 - `[Variable]([noText])->[Position]`
 
-```markdown
-@flowstart
+````md
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 cond=>condition: Process?
 process=>operation: Process
 e=>end: End
 
 cond(yes)->process->e
 cond(no)->e
-@flowend
+```
 
 #### 平行
 
@@ -208,25 +213,25 @@ cond(no)->e
 - `[Variable](path1, direction)->[Position]`
 - `[Variable](path1, direction)->[Position]`
 
-```markdown
-@flowstart
+````md
+```flow
 para=>parallel: parallel tasks
 process=>operation: Process
 e=>end: End
 
 para(path1, bottom)->process->e
 para(path2)->e
-@flowend
 ```
+````
 
-@flowstart
+```flow
 para=>parallel: parallel tasks
 process=>operation: Process
 e=>end: End
 
 para(path1, bottom)->process->e
 para(path2)->e
-@flowend
+```
 
 ### 链接
 
@@ -249,10 +254,10 @@ nodeVar2->nodeVar3
 
 以下方向可用，并定义了连接将从节点离开的方向。如果指定符不止一个，则总是最后一个。所有节点都有默认方向，这使其成为可选规范。`<direction>` 的可选值为:
 
-- left
-- right
-- top
-- bottom
+- `left`
+- `right`
+- `top`
+- `bottom`
 
 ### 节点特定说明符
 
