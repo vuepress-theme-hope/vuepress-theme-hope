@@ -2,6 +2,24 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.13.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.6...v1.13.0) (2021-03-19)
+
+### Bug Fixes
+
+- **component:** fix breadcrumb padding ([20da1bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/20da1bf4ba5311364993ffb136eeeaa5f92e0ea7))
+- **theme:** fix code block scrollbar on mobile ([1b282ce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1b282cea4b92be98d69ca5e1294b6aa337eb96a6))
+- **theme:** fix home feature hover ([cdbde5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdbde5d22e2245a085cbe4bac08ff6ca43d95056))
+
+### Features
+
+- **md-enhance:** use flow code block for flowchart ([b3da521](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3da5211f18dc71fae54cdceae7b976eb74f8328))
+
+### BREAKING CHANGES
+
+- **md-enhance:** use ` ```flow ` and ` ``` ` instead of `@flowstart` and `@flowend`
+
+  This change is made to support typora
+
 ## [1.12.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.5...v1.12.6) (2021-03-18)
 
 ### Bug Fixes
