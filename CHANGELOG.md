@@ -2,6 +2,17 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.13.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.0...v1.13.1) (2021-03-21)
+
+### Bug Fixes
+
+- **theme:** fix Aligolia search ([58fd3a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/58fd3a1222d45a657ede7f54393d48aa40fb6cae))
+- **theme:** fix home border color ([68e2660](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68e2660bbb34abf009f654b60f7482f9b8e1b40d))
+
+### Features
+
+- **create:** update package ([610ea05](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/610ea0542f97daebceb04d09032f438baf177b1c))
+
 ## [1.13.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.12.6...v1.13.0) (2021-03-19)
 
 ### Bug Fixes
