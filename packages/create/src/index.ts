@@ -141,20 +141,8 @@ cli
       console.log(message.devServer);
       console.log(message.wait);
 
-      await new Promise<void>((resolve) => {
-        // holding the process
-        const devProcess = execa(bin, ["run", "docs:dev"], {
-          stdout: "inherit",
-        });
-
-        void devProcess.stdout?.on("data", (data) => {
-          console.log(data);
-        });
-
-        void devProcess.on("exit", () => {
-          console.log(message.exit);
-          resolve();
-        });
+      await execa(bin, ["run", "docs:dev"], {
+        stdout: "inherit",
       });
     } else console.log(message.hint);
   });
