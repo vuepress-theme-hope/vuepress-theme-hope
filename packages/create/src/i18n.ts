@@ -1,8 +1,8 @@
 import { prompt } from "inquirer";
 
-type Lang = "zh-CN" | "en-US";
+export type Lang = "zh-CN" | "en-US";
 
-interface CreateI18n {
+export interface CreateI18n {
   getVersion: string;
   createPackage: string;
   updatePackage: string;
@@ -12,6 +12,8 @@ interface CreateI18n {
   success: string;
   devServerAsk: string;
   devServer: string;
+  hint: string;
+  exit: string;
   nameMessage: string;
   nameError: string;
   versionMessage: string;
@@ -27,12 +29,14 @@ export const i18n: Record<Lang, CreateI18n> = {
     updatePackage: "更新 package.json...",
     template: "生成模板...",
     wait:
-      "这可能需要数分钟，请耐心等待.\n如果你的终端不支持 'cursorTo', 'clearLine' 方法，安装过程可能看起来卡住了，这是因为进度条无法正确显示。",
+      "这可能需要数分钟，请耐心等待.\n安装过程可能看起来卡住了，这是因为我们无法正确输出子进程的进度条。",
     install: "安装依赖...",
     success: "模板已成功生成!",
     devServerAsk: "是否想要现在启动 Demo 查看?",
     devServer:
       "启动开发服务器...\n启动成功后，请在浏览器输入给出的开发服务器地址(默认为 'localhost:8080')",
+    hint: '提示: 请使用 "yarn run docs:dev" 命令启动开发服务器',
+    exit: "退出中...",
     nameMessage: "设置应用名称",
     nameError: "应用名称应只包含小写字母、数字和连接线 (-)",
     versionMessage: "设置应用版本号",
@@ -46,12 +50,14 @@ export const i18n: Record<Lang, CreateI18n> = {
     updatePackage: "Updating package.json...",
     template: "Generating Template...",
     wait:
-      "This may take a few minutes, please be patient.\nIf your shell does not support command like 'cursorTo', 'clearLine', the process may look stuck.",
+      "This may take a few minutes, please be patient.\nThe process may look stuck becase we can not correctly output progress bar from child process.",
     install: "Installing Deps...",
     success: "Successful Generated!",
     devServerAsk: "Would you like to preview template now?",
     devServer:
       "Staring dev server...\nAfter the dev server starts running, please visit the given server link ('localhost:8080' by default)",
+    hint: 'Hint: You should execute "yarn run docs:dev" to start dev server.',
+    exit: "Exiting...",
     nameMessage: "Your project name",
     nameError:
       "package name should only contain lowercase characters, numbers and dash",
@@ -74,7 +80,7 @@ export const getLanguage = async (): Promise<LanguageResult> => {
       name: "language",
       type: "list",
       message: "Select a language to display",
-      choices: ["zh-CN", "en-US"],
+      choices: ["en-US", "zh-CN"],
     },
   ]);
 

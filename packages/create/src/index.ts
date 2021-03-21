@@ -9,9 +9,10 @@ import { copy } from "./copy";
 import { checkForLatestVersion } from "./checkVersion";
 import { detectYarn } from "./hasYarn";
 import { getLanguage } from "./i18n";
+import { getRegistry } from "./registry";
 const cli = cac("vuepress-theme-hope");
 
-const hasYarn = detectYarn();
+const bin = detectYarn() ? "yarn" : "npm";
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
@@ -119,38 +120,11 @@ cli
     console.log(message.install);
     console.warn(message.wait);
 
-    let registry = "";
+    const registry = await getRegistry(lang, bin);
 
-    // use `registry.npm.taobao.org`
-    if (lang === "zh-CN") {
-      const { stdout } = execa.sync(hasYarn ? "yarn" : "npm", [
-        "config",
-        "get",
-        "registry",
-      ]);
-
-      console.log(stdout);
-
-      registry = stdout;
-
-      execa.sync(hasYarn ? "yarn" : "npm", [
-        "config",
-        "set",
-        "registry",
-        "https://registry.npm.taobao.org/",
-      ]);
-    }
-
-    execa.sync(hasYarn ? "yarn" : "npm", ["install"], { stdout: "inherit" });
-
-    // restore registry
-    if (lang === "zh-CN")
-      execa.sync(hasYarn ? "yarn" : "npm", [
-        "config",
-        "set",
-        "registry",
-        registry,
-      ]);
+    execa.sync(bin, ["install", "--registry", registry], {
+      stdout: "inherit",
+    });
 
     console.log(message.success);
 
@@ -167,10 +141,22 @@ cli
       console.log(message.devServer);
       console.log(message.wait);
 
-      await execa(hasYarn ? "yarn" : "npm", ["run", "docs:dev"], {
-        stdout: "inherit",
+      await new Promise<void>((resolve) => {
+        // holding the process
+        const devProcess = execa(bin, ["run", "docs:dev"], {
+          stdout: "inherit",
+        });
+
+        void devProcess.stdout?.on("data", (data) => {
+          console.log(data);
+        });
+
+        void devProcess.on("exit", () => {
+          console.log(message.exit);
+          resolve();
+        });
       });
-    }
+    } else console.log(message.hint);
   });
 
 cli.help(() => [
