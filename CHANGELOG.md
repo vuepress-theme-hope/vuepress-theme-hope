@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.13.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.1...v1.13.2) (2021-03-21)
+
+### Bug Fixes
+
+- **create:** fix stuck in dev process ([5c8bdc9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5c8bdc946fdd00edcf0cd01fc38f310d814357f4))
+
 ## [1.13.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.0...v1.13.1) (2021-03-21)
 
 ### Bug Fixes
