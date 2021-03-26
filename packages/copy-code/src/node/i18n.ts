@@ -11,6 +11,10 @@ export const i18n: Record<LangPaths, CopyCodeI18nConfig> = {
     copy: "Copy successfully 🎉",
     hint: "Copy the code",
   },
+  "/de/": {
+    copy: "Kopieren erfolgreich 🎉",
+    hint: "Kopiere den Code.",
+  },
   "/vi/": {
     copy: "Sao chép thành công 🎉",
     hint: "Sao chép code",

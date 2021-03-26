@@ -13,6 +13,11 @@ export const i18n: Record<LangPaths, ReadingTimeI18nConfig> = {
     minute: "Less than 1 minute",
     time: "About $time min",
   },
+  "/de/": {
+    word: "Um die $word Wörter",
+    minute: "Weniger als eine Minute",
+    time: "Ungefähr $time min",
+  },
   "/vi/": {
     word: "Khoảng $word từ",
     minute: "Ít hơn 1 phút",
