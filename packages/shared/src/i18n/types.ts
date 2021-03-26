@@ -1,8 +1,8 @@
 /** Types for supported lang codes */
-export type Langs = "zh-CN" | "en-US" | "vi-VN";
+export type Langs = "zh-CN" | "en-US" | "vi-VN" | "de-AT";
 
 /** Types for supported lang paths */
-export type LangPaths = "/zh/" | "/en/" | "/vi/";
+export type LangPaths = "/zh/" | "/en/" | "/vi/" | "/de/";
 
 export interface HopeThemeLocaleConfigItem {
   /** 当前语言代码 */

@@ -1,16 +1,18 @@
 import type { HopeThemeLocaleConfigItem, LangPaths, Langs } from "./types";
 
-export const langs: Langs[] = ["zh-CN", "en-US", "vi-VN"];
+export const langs: Langs[] = ["zh-CN", "en-US", "vi-VN", "de-AT"];
 
 export const lang2PathConfig: Record<Langs, LangPaths> = {
   "zh-CN": "/zh/",
   "en-US": "/en/",
+  "de-AT": "/de/",
   "vi-VN": "/vi/",
 };
 
 export const path2langConfig: Record<LangPaths, Langs> = {
   "/zh/": "zh-CN",
   "/en/": "en-US",
+  "/de/": "de-AT",
   "/vi/": "vi-VN",
 };
 
@@ -97,6 +99,49 @@ export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
       star: "Star",
       slides: "Slides",
       encrypt: "Encrypted",
+    },
+  },
+
+  "de-AT": {
+    lang: "de-AT",
+    selectText: "Sprache",
+    label: "Deutsch",
+    ariaLabel: "Sprache wählen",
+    meta: {
+      contributor: "Mitwirkende",
+      editLink: "Diese Seite barbeiten",
+      updateTime: "Zuletzt geändert",
+    },
+    themeColor: {
+      themeColor: "Design-Farbe",
+      themeMode: "Design-Modus",
+    },
+    encrypt: {
+      title: "Passwort eingeben",
+      errorHint: "Bitte das korrekte Passwort eingeben!",
+    },
+    error404: {
+      hint: [
+        "Hier gibt es nichts.",
+        "Wie sind wir hier hergekommen?",
+        "Das ist wohl eine Vier-Null-Vier.",
+        "Sieht aus als hättest du einen kaputten Link gefunden.",
+      ],
+      back: "Zurück",
+      home: "Zur Startseite",
+    },
+    blog: {
+      article: "Artikel",
+      articleList: "Artikel Liste",
+      category: "Kategorie",
+      tag: "Tags",
+      timeline: "Timeline",
+      timelineText: "Yesterday Once More!",
+      allText: "Alle",
+      intro: "Persönliche Einleitung",
+      star: "Star",
+      slides: "Slides",
+      encrypt: "Verschlüsselt",
     },
   },
 
