@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "1.12.1",
+  "version": "1.13.3",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -36,7 +36,7 @@
     "demo:serve": "vuepress dev __tests__/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "1.12.1",
+    "@mr-hope/vuepress-types": "1.13.3",
     "@types/photoswipe": "^4.1.1",
     "photoswipe": "^4.1.3"
   },
