@@ -23,6 +23,16 @@ export const i18n: Record<LangPaths, PWAI18NConfig> = {
       "This app can be installed on your PC or mobile device.  This will allow this web app to look and behave like any other installed app.  You will find it in your app lists and be able to pin it to your home screen, start menus or task bars.  This installed web app will also be able to safely interact with other apps and your operating system. ",
     update: "New content is available.",
   },
+  "/de/": {
+    install: "Installieren",
+    iOSInstall: "Drucke den Share-Button und dan 'zu Homescreen hinzufügen'",
+    cancel: "Abbrechen",
+    desc: "Berschreibung",
+    feature: "Features",
+    explain:
+      "Diese App kann auf Ihrem PC oder Mobilgerät installiert werden.  Dadurch sieht diese Web-App aus und verhält sich wie jede andere installierte App.  Sie finden sie in Ihren App-Listen und können sie an den Startbildschirm, die Startmenüs oder die Taskleisten anheften.  Diese installierte Web-App kann auch sicher mit anderen Apps und Ihrem Betriebssystem interagieren.",
+    update: "Neue Inhalte sind verfügbar.",
+  },
   "/vi/": {
     install: "Tải về",
     iOSInstall: "Nhấn vào nút chia sẻ và sau đó 'Thêm vào Màn hình chính'",

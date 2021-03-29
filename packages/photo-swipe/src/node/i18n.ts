@@ -53,6 +53,31 @@ export const i18n: Record<LangPaths, PhotoSwipeDefaultUI.ShareButtonData[]> = {
       download: true,
     },
   ],
+  
+  "/de/": [
+    {
+      id: "facebook",
+      label: "Teilen auf Facebook",
+      url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+    },
+    {
+      id: "twitter",
+      label: "Tweet",
+      url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+    },
+    {
+      id: "pinterest",
+      label: "Pin it",
+      url:
+        "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+    },
+    {
+      id: "download",
+      label: "Bild herunterladen",
+      url: "{{raw_image_url}}",
+      download: true,
+    },
+  ],
 
   "/vi/": [
     {

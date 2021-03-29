@@ -23,6 +23,16 @@ export const pageInfoI18n: Record<LangPaths, PageInfoI18nConfig> = {
     readingTime: "Reading Time⌛",
     words: "Words🔠",
   },
+  "/de/": {
+    author: "Autor🖊",
+    time: "Datum📅",
+    origin: "Original💡",
+    views: "Besucher🔢",
+    category: "Kategorie🌈",
+    tag: "Tags🏷",
+    readingTime: "Lesezeit⌛",
+    words: "Wörter🔠",
+  },
   "/vi/": {
     author: "Người viết🖊",
     time: "Ngày viết📅",
@@ -38,5 +48,6 @@ export const pageInfoI18n: Record<LangPaths, PageInfoI18nConfig> = {
 export const valineI18n: Record<LangPaths, string> = {
   "/zh/": "请留言",
   "/en/": "Write a comment here",
+  "/de/": "Schreibe ein Kommentar",
   "/vi/": "Để lại bình luận",
 };
