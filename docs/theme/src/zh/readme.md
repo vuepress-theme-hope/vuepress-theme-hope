@@ -90,7 +90,7 @@ npm init vuepress-theme-hope [dir]
 
 ## 🚀 使用
 
-```js
+```js{2,4}
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
 

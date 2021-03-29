@@ -34,6 +34,9 @@ div[class*='language-']
   background var(--code-bgcolor)
   border-radius 6px
 
+  &.line-numbers-mode
+    padding-left $lineNumbersWrapperWidth
+
   .highlight-lines
     user-select none
     padding-top 1.3rem
@@ -70,19 +73,19 @@ div[class*='language-']
         content ' '
         position absolute
         z-index 3
-        left 0
         top 0
+        left 0
         display block
         width $lineNumbersWrapperWidth
         height 100%
 
     pre
-      padding-left ($lineNumbersWrapperWidth + 1) rem
       vertical-align middle
 
     .line-numbers-wrapper
       position absolute
       top 0
+      left 0
       width $lineNumbersWrapperWidth
       text-align center
       padding 1.25rem 0
