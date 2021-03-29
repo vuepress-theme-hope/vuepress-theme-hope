@@ -23,8 +23,6 @@ a.sidebar-link
   width 100%
   padding 0.35rem 1rem 0.35rem 1.25rem
   border-left 0.2rem solid transparent
-  border-top-right-radius 0.25rem
-  border-bottom-right-radius 0.25rem
   color var(--text-color)
   font-size 1em
   line-height 1.5
@@ -42,7 +40,7 @@ a.sidebar-link
 
   &.active
     border-left-color var(--accent-color)
-    background-color var(--accent-color-a25)
+    background-color var(--accent-color-a15)
     color var(--accent-color)
     font-weight 500
 
