@@ -7,10 +7,7 @@
       "npmClient": "yarn"
     },
     "version": {
-      "allowBranch": [
-        "main",
-        "v1"
-      ],
+      "allowBranch": ["main", "v1"],
       "exact": true,
       "message": "chore(release): publish %s"
     }
