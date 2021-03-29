@@ -21,7 +21,7 @@ export const i18n: Record<LangPaths, ComponentI18nConfig> = {
       button: "Go",
       errorText: "Please enter a number between 1 and $page !",
     },
-  },  
+  },
   "/de/": {
     backToTop: "Zurück nach oben.",
     pagination: {

@@ -53,7 +53,7 @@ export const i18n: Record<LangPaths, PhotoSwipeDefaultUI.ShareButtonData[]> = {
       download: true,
     },
   ],
-  
+
   "/de/": [
     {
       id: "facebook",
