@@ -17,7 +17,7 @@ Also, you should enable presentation feature in `vuepress-plugin-md-enhance` by 
 
 ![Slide page screenshot](./assets/slides.png)
 
-Here is a demo for your to preview all the slide features: [Demo](https://vuepress-theme-hope-demo.mrhope.site/slides/)
+[Here is a demo](https://vuepress-theme-hope-demo.mrhope.site/slides/) for your to preview all the slide features.
 
 You should only include a single slide syntax on this page to avoid other problems.
 
