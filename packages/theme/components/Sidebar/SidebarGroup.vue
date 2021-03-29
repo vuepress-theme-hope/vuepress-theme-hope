@@ -74,9 +74,8 @@
 
     & > .sidebar-heading
       padding-left 1.75rem
-      font-size 0.95em
       font-weight normal
-      line-height 1.4
+      line-height 1.5
 
       &:not(.clickable)
         opacity 0.8
