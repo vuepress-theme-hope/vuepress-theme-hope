@@ -54,7 +54,7 @@
     "flowchart.js": "^1.15.0",
     "katex": "^0.13.0",
     "lodash.debounce": "^4.0.8",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "reveal.js": "^4.1.0",
     "vuepress-plugin-container": "^2.1.5"
   }
