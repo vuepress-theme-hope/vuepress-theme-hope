@@ -1,24 +1,19 @@
 <template>
   <ClientOnly>
     <div class="code-group">
-      <div class="code-group-nav">
-        <ul class="code-group-ul">
-          <li
-            v-for="(codeTab, index) in codeTabs"
-            :key="codeTab.title"
-            class="code-group-li"
-          >
-            <button
-              class="code-group-nav-tab"
-              :class="{
-                active: index === activeTabIndex,
-              }"
-              @click="changeCodeTab(index)"
-              v-text="codeTab.title"
-            />
-          </li>
-        </ul>
-      </div>
+      <ul class="code-group-nav">
+        <li
+          v-for="(codeTab, index) in codeTabs"
+          :key="codeTab.title"
+          class="code-group-nav-tab"
+          :class="{
+            active: index === activeTabIndex,
+          }"
+          role="button"
+          @click="changeCodeTab(index)"
+          v-text="codeTab.title"
+        />
+      </ul>
       <slot />
       <pre
         v-if="!codeTabs.length"
@@ -33,36 +28,34 @@
 
 <style lang="stylus">
 .code-group-nav
+  display flex
   /* 2 * margin + border-radius of <pre> tag */
   margin 0.85rem 0 calc(-1.7rem - 7px)
-  padding 0 5px calc(1.7rem - 7px)
+  padding 0 0 calc(1.7rem - 7px)
   border-top-left-radius 6px
   border-top-right-radius 6px
   background-color darken(saturate(#282c34, 10%), 35%)
+  list-style none
 
   @media (max-width $MQMobileNarrow)
     margin-left -1.5rem
     margin-right -1.5rem
     border-radius 0
 
-.code-group-ul
-  display inline-flex
-  margin auto 0
-  padding-left 0
-  list-style none
 
 .code-group-nav-tab
   position relative
   border 0
   padding 6px 10px
   cursor pointer
-  border-top-left-radius 8px
-  border-top-right-radius 8px
+  border-top-left-radius 6px
+  border-top-right-radius 6px
   background-color transparent
-  font-size 0.85em
-  line-height 1.4
   color var(--text-color, $textColor)
+  font-family Arial
+  font-size 0.85em
   font-weight 600
+  line-height 1.4
 
   &:hover
     background-color darken(saturate(#282c34, 10%), 5%)
@@ -72,8 +65,8 @@
     z-index 1
     content ' '
     bottom 0
-    width 8px
-    height 8px
+    width 6px
+    height 6px
 
   &::before
     right 100%
@@ -88,8 +81,12 @@
     border-bottom var(--accent-color, $accentColor) 1px solid
 
     &:before
-      background radial-gradient(16px at left top, transparent 50%, #282c34 50%)
+      background radial-gradient(12px at left top, transparent 50%, #282c34 50%)
 
     &:after
-      background radial-gradient(16px at right top, transparent 50%, #282c34 50%)
+      background radial-gradient(12px at right top, transparent 50%, #282c34 50%)
+
+  &:first-child
+    &:before
+      display none
 </style>
