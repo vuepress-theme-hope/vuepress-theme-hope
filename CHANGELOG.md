@@ -2,6 +2,18 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.13.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.2...v1.13.3) (2021-03-29)
+
+### Bug Fixes
+
+- **component:** improve CodeGroup style ([dcb77a8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dcb77a834833b8dbacaab34ebe7c75ffdb1936b3))
+- **theme:** fix code block scroll bar ([c542cc1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c542cc1bc355859f5b0fd5c0e6b657cf385421e8))
+- **theme:** fix SidebarLink style ([b2abd98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b2abd989ed9b0c5dce660b40fe6ce9be1a459391))
+
+### Features
+
+- add german language support ([#588](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/588)) ([cb04bdc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cb04bdcf9071bc8d59d865177326b53dae7d1747))
+
 ## [1.13.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.1...v1.13.2) (2021-03-21)
 
 ### Bug Fixes
