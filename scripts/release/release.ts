@@ -1,29 +1,13 @@
 import execa = require("execa");
+import { black, cyan, green, red } from "chalk";
 import { prompt } from "inquirer";
-import { ReleaseType, inc, prerelease } from "semver";
-import { version as currentVersion } from "../lerna.json";
-import { cyan, green, red } from "chalk";
+import { ReleaseType, inc } from "semver";
+import { version as currentVersion } from "../../lerna.json";
+import { getNpmTags, getVersion, versions } from "./version";
+import type { Answers } from "./version";
 
-interface Answers {
-  bump: string;
-  customVersion: string;
-  npmTag: string;
-}
-
-const versions: Record<string, string> = {};
-
-const getVersion = (answers: Answers): string =>
-  answers.customVersion || versions[answers.bump];
-
-const isPreRelease = (version: string): boolean => Boolean(prerelease(version));
-
-const getNpmTags = (version: string): string[] => {
-  if (isPreRelease(version)) return ["next", "alpha", "beta", "latest"];
-
-  return ["latest", "beta", "alpha", "next"];
-};
-
-const release = async (): Promise<void> => {
+export const release = async (): Promise<void> => {
+  console.log(black.bgYellow("wait"), "Building project...");
   await execa("yarn", ["run", "clean"]);
   await execa("yarn", ["run", "build"]);
 
@@ -79,10 +63,7 @@ const release = async (): Promise<void> => {
     },
   ]);
 
-  if (confirm === "N") {
-    console.log(red("Release cancelled."));
-    return;
-  }
+  if (confirm === "N") return console.log(red("Release canceled."));
 
   const releaseArguments = [
     "publish",
@@ -99,14 +80,9 @@ const release = async (): Promise<void> => {
     stdio: "inherit",
   });
 
-  console.log("Generating changelog");
+  console.log(black.bgYellow("wait"), "Generating changelog...");
 
   await execa("yarn", ["run", "changelog"]);
 
   console.log(green("Release complete"));
 };
-
-release().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});

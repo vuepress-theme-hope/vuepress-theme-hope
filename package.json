@@ -41,7 +41,7 @@
     "lint:style": "prettier --check --write . && markdownlint **/*.md --ignore **/node_modules/** --fix",
     "packages:bootstrap": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/bootstrap.ts",
     "packages:check-update": "ncu --deep --timeout 600000",
-    "packages:release": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/release.ts",
+    "packages:release": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/release",
     "packages:update": "ncu -u --deep --timeout 600000 && yarn install && yarn upgrade",
     "test": "jest -i",
     "ts:build": "tsc --build",
