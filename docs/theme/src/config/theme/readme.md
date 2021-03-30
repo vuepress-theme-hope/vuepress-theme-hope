@@ -34,7 +34,7 @@ This option ensures that the subject text in the main catalog page is displayed 
 
 ::: tip
 
-Only **Simplified Chinese** (zh-CN), **English (United States)** (en-US) and **Vietnamese** (vi-VN) are available for i18n.
+Only **Simplified Chinese** (zh-CN), **English (United States)** (en-US), **German** (de-AT) and **Vietnamese** (vi-VN) are available for i18n.
 
 If you need multi-language support for other languages, you can [submit a PR to this file](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/shared/src/i18n/config.ts)
 
