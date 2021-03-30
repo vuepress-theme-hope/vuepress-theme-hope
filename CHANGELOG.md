@@ -2,6 +2,20 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.13.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.3...v1.13.4) (2021-03-30)
+
+### Bug Fixes
+
+- **theme:** auto generate year in footer copyright text ([#589](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/589)) ([fa0f521](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa0f521df356fc6c48365afeee230753c9a3ec6d))
+- **theme:** fix article item hint ([deee77f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/deee77f981e2517d22e04159711fac719b0f6401))
+- **theme:** fix SidebarGroup header ([143c6e2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/143c6e2c6c99c40c479f96a6c26fe03d02c1df54))
+
+### Features
+
+- **theme:** add `heroFullScreen` for blog homepage ([4f6b5f2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f6b5f2bf4dcf162258cfafc74e7e4588e6f51c7))
+- **theme:** add `hideSiteTitleonMobile` option ([a9f2913](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9f291312bc67ff42963799722ca8c272e7a034b))
+- **theme:** add Email Icon ([f0ed616](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f0ed6161b6798fa18c09830d316e9d1b39595414))
+
 ## [1.13.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.2...v1.13.3) (2021-03-29)
 
 ### Bug Fixes
