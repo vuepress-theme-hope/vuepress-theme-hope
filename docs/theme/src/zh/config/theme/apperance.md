@@ -44,6 +44,13 @@ Algolia 搜索框类型
 
 是否在向下滚动时自动隐藏导航栏
 
+## hideSiteTitleonMobile
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在移动视图下隐藏站点名称
+
 ## sidebarIcon
 
 - 类型: `boolean`

@@ -318,6 +318,15 @@ interface HopeThemeAppearanceConfig {
   wordPerminute?: number;
 
   /**
+   * 是否在移动视图下隐藏站点名称
+   *
+   * Whether hide site title on mobile
+   *
+   * @default true
+   */
+  hideSiteTitleonMobile?: boolean;
+
+  /**
    * 是否在侧边栏显示图标
    *
    * Whether display icon in sidebar

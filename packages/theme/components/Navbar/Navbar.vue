@@ -19,7 +19,7 @@
       <span
         v-if="siteBrandTitle"
         class="site-name"
-        :class="{ 'can-hide': siteBrandLogo }"
+        :class="{ 'can-hide': canHideSiteBrandTitle }"
         >{{ siteBrandTitle }}</span
       >
     </RouterLink>

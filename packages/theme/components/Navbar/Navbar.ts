@@ -54,11 +54,19 @@ export default Vue.extend({
       return this.$site.title;
     },
 
+    canHideSiteBrandTitle(): boolean {
+      return (
+        Boolean(this.siteBrandTitle) &&
+        this.$themeConfig.hideSiteTitleonMobile !== false
+      );
+    },
+
     siteBrandLogo(): string {
       const { logo } = this.$themeConfig;
 
       return logo ? this.$withBase(logo) : "";
     },
+
     siteBrandDarkLogo(): string {
       const { darkLogo } = this.$themeConfig;
 

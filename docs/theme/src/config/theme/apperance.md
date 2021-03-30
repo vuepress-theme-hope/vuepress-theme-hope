@@ -44,6 +44,13 @@ Words reading per minute
 
 Whether to hide navbar when scrolling down
 
+## hideSiteTitleonMobile
+
+- Type: `boolean`
+- Default: `true`
+
+Whether display icon in sidebar
+
 ## sidebarIcon
 
 - Type: `boolean`
