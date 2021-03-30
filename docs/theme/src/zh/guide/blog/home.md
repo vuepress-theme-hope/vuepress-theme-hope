@@ -86,6 +86,13 @@ tags:
 
 首页图标的 CSS 样式
 
+### heroFullScreen
+
+- 类型: `boolean`
+- 默认: `false`
+
+是否全屏显示 Hero
+
 ### 项目
 
 - 类型: `ProjectOption[]`

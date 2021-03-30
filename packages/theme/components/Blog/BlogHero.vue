@@ -2,6 +2,7 @@
   <div
     v-if="$frontmatter.hero !== false"
     class="blog-hero"
+    :class="{ full: $frontmatter.heroFullScreen }"
     :style="{ ...bgImageStyle }"
   >
     <div
@@ -43,6 +44,9 @@
   color #eee
   margin-bottom 16px
   height 450px
+  display flex
+  flex-direction column
+  justify-content center
 
   @media (max-width $MQMobile)
     height 350px
@@ -50,6 +54,15 @@
 
   @media (max-width $MQMobileNarrow)
     margin 0 0 16px
+
+  &.full
+    height 'calc(100vh - %s)' % $navbarHeight !important
+
+    @media (max-width $MQMobile)
+      height 'calc(100vh - %s)' % $navbarMobileHeight !important
+
+    .mask
+      background-position-y top !important
 
   .mask
     position absolute

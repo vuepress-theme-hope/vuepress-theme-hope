@@ -88,6 +88,13 @@ The CSS style of the background image.
 
 CSS style for home icon
 
+### heroFullScreen
+
+- Type: `boolean`
+- Default: `false`
+
+Whether Hero is full screen displayed
+
 ### Projects
 
 - Type: `ProjectOption[]`

@@ -1,6 +1,7 @@
 ---
 blog: true
 home: true
+heroFullScreen: true
 icon: home
 title: Blog Home
 heroImage: /logo.svg
