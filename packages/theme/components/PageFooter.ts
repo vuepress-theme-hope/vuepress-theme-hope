@@ -40,7 +40,9 @@ export default Vue.extend({
         : this.$frontmatter.copyrightText ||
             this.footerConfig.copyright ||
             (this.$themeConfig.author
-              ? `Copyright © ${new Date().getFullYear()} ${this.$themeConfig.author}`
+              ? `Copyright © ${new Date().getFullYear()} ${
+                  this.$themeConfig.author
+                }`
               : "");
     },
   },
