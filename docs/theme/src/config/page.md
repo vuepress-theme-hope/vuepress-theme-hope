@@ -269,6 +269,7 @@ The optional values of `MediaType` are as follows:
 - `'Dingding'`: Dingding
 - `'Discord'`: Discord
 - `'Dribbble'`: Dribble
+- `'Email'`: Email
 - `'Evernote'`: Evernote
 - `'Facebook'`: Facebook
 - `'Flipboard'`: Flipboard

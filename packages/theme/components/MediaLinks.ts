@@ -4,6 +4,7 @@ import Bitbucket from "@theme/icons/media/Bitbucket.vue";
 import Dingding from "@theme/icons/media/Dingding.vue";
 import Discord from "@theme/icons/media/Discord.vue";
 import Dribbble from "@theme/icons/media/Dribbble.vue";
+import Email from "@theme/icons/media/Email.vue";
 import Evernote from "@theme/icons/media/Evernote.vue";
 import Facebook from "@theme/icons/media/Facebook.vue";
 import Flipboard from "@theme/icons/media/Flipboard.vue";
@@ -36,6 +37,7 @@ const medias: BlogMedia[] = [
   "Dingding",
   "Discord",
   "Dribbble",
+  "Email",
   "Evernote",
   "Facebook",
   "Flipboard",
@@ -75,6 +77,7 @@ export default Vue.extend({
     Dingding,
     Discord,
     Dribbble,
+    Email,
     Evernote,
     Facebook,
     Flipboard,

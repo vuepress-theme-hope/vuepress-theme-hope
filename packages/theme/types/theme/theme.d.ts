@@ -59,6 +59,7 @@ type BlogMedia =
   | "Dingding"
   | "Discord"
   | "Dribbble"
+  | "Email"
   | "Evernote"
   | "Facebook"
   | "Flipboard"

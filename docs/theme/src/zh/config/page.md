@@ -273,6 +273,7 @@ tags:
 - `'Dingding'`: 钉钉
 - `'Discord'`: Discord
 - `'Dribbble'`: Dribble
+- `'Email'`: Email
 - `'Evernote'`: 印象笔记
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
