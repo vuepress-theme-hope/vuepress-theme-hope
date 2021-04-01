@@ -51,7 +51,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
 [^installable]: **Installable**
 
-    To let the site be registered as a PWA, the site needs to successfully register a valid service worker by itself, and at the same time add a valid mainfest manifest file and declare it.
+    To let the site be registered as a PWA, the site needs to successfully register a valid service worker by itself, and at the same time add a valid manifest file and declare it.
 
     Each platform or browser has requirements for the size of the Service Worker cache. When the file size of the Service Worker cache is too large, the site will be marked as not installable. For Safari, the threshold is 50 MB, a few browsers will set less or more values ​​(30MB, 70MB, 80MB), and Chrome will mark the threshold at 100 MB.
 

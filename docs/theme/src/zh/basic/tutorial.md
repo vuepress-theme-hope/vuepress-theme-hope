@@ -51,7 +51,7 @@ yarn create vuepress-theme-hope docs
 
 ::: tip
 
-启动开发服务器，请在终端输入 `yarn run docs:serve` 并回车。
+启动开发服务器，请在终端输入 `yarn run docs:dev` 并回车。
 
 如果你需要终止开发服务器，请点击终端，并连续两次按下 `Ctrl + C`。
 

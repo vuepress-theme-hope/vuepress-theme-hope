@@ -49,7 +49,7 @@ After a while, you can enter `localhost:8080/` in the browser address bar to acc
 
 ::: tip
 
-To start the development server, please enter `yarn run docs:serve` in the terminal and press Enter.
+To start the development server, please enter `yarn run docs:dev` in the terminal and press Enter.
 
 If you need to terminate the development server, please click on the terminal and press `Ctrl + C` twice.
 

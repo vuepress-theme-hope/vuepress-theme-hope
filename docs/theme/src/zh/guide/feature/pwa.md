@@ -51,7 +51,7 @@ PWA 插件会自动通过 `workbox-build` 注册 Service Woker。
 
 [^installable]: **可安装性**
 
-    想要让网站可以注册为 PWA，网站需要自行成功注册有效的 Service Worker，同时添加合法的 mainfest 清单文件并在网站中声明它。
+    想要让网站可以注册为 PWA，网站需要自行成功注册有效的 Service Worker，同时添加合法的 manifest 清单文件并在网站中声明它。
 
     各平台或浏览器对 Service Worker 缓存的大小有要求，当 Service Worker 缓存的文件体积过大后，该网站将会被标记为不可安装。对于 Safari 这个阈值是 50 MB，少数浏览器会设置更少或更多的值 (30MB, 70MB, 80MB)，最大的 Chrome 也将阈值标识在 100 MB。
 
