@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.13.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.4...v1.13.5) (2021-04-04)
+
+### Bug Fixes
+
+- **comment:** disable pageviews when valine is not set ([ca8f58b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ca8f58be0893ea859c6cb64c05842da94bc5b749)), closes [#591](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/591)
+
 ## [1.13.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.3...v1.13.4) (2021-03-30)
 
 ### Bug Fixes
