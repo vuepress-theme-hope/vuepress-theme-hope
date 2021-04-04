@@ -100,6 +100,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.7",
     "@types/inquirer": "7.3.1",
     "@types/jest": "26.0.22",
