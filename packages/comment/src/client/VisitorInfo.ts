@@ -26,7 +26,9 @@ export default Vue.extend({
           valineConfig.appId &&
           valineConfig.appKey
       );
-    } /** Whether enable page view display */,
+    },
+
+    /** Whether enable page view display */
     enableVisitor(): boolean {
       if (!this.valineEnable) return false;
       const globalEnable = this.valineConfig.visitor !== false;
