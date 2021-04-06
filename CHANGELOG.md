@@ -2,6 +2,12 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.13.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.5...v1.13.6) (2021-04-06)
+
+### Bug Fixes
+
+- **photo-swipe:** add missing deps ([7402050](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7402050ce5017d39fdbff09c506f7f71d5e21a0a))
+
 ## [1.13.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.4...v1.13.5) (2021-04-04)
 
 ### Bug Fixes
