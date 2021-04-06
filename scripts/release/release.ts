@@ -4,6 +4,7 @@ import { prompt } from "inquirer";
 import { ReleaseType, inc } from "semver";
 import { version as currentVersion } from "../../lerna.json";
 import { getNpmTags, getVersion, versions } from "./version";
+import { sync } from "./sync";
 import type { Answers } from "./version";
 
 export const release = async (): Promise<void> => {
@@ -79,6 +80,10 @@ export const release = async (): Promise<void> => {
   await execa(require.resolve("lerna/cli"), releaseArguments, {
     stdio: "inherit",
   });
+
+  console.log(black.bgYellow("wait"), "Syncing npm.taobao.org...");
+
+  await sync();
 
   console.log(black.bgYellow("wait"), "Generating changelog...");
 
