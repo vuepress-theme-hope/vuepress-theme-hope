@@ -1,12 +1,12 @@
 /*
- * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 .iconfont
   &.fa, &.fas
     font-weight 900
 
-.fa, .fab, .fad, .fal, .far, .fas
+.fa, .fas, .far, .fal, .fad, .fab
   -moz-osx-font-smoothing grayscale
   -webkit-font-smoothing antialiased
   display inline-block
@@ -76,7 +76,7 @@
   line-height inherit
 
 .fa-border
-  border 0.08em solid #eee
+  border solid 0.08em #eee
   border-radius 0.1em
   padding 0.2em 0.25em 0.15em
 
@@ -86,37 +86,37 @@
 .fa-pull-right
   float right
 
-.fa.fa-pull-left, .fab.fa-pull-left, .fal.fa-pull-left, .far.fa-pull-left, .fas.fa-pull-left
+.fa.fa-pull-left, .fas.fa-pull-left, .far.fa-pull-left, .fal.fa-pull-left, .fab.fa-pull-left
   margin-right 0.3em
 
-.fa.fa-pull-right, .fab.fa-pull-right, .fal.fa-pull-right, .far.fa-pull-right, .fas.fa-pull-right
+.fa.fa-pull-right, .fas.fa-pull-right, .far.fa-pull-right, .fal.fa-pull-right, .fab.fa-pull-right
   margin-left 0.3em
 
 .fa-spin
-  -webkit-animation fa-spin 2s linear infinite
-  animation fa-spin 2s linear infinite
+  -webkit-animation fa-spin 2s infinite linear
+  animation fa-spin 2s infinite linear
 
 .fa-pulse
-  -webkit-animation fa-spin 1s steps(8) infinite
-  animation fa-spin 1s steps(8) infinite
+  -webkit-animation fa-spin 1s infinite steps(8)
+  animation fa-spin 1s infinite steps(8)
 
 @keyframes fa-spin
   0%
     -webkit-transform rotate(0deg)
     transform rotate(0deg)
 
-  to
-    -webkit-transform rotate(1turn)
-    transform rotate(1turn)
+  100%
+    -webkit-transform rotate(360deg)
+    transform rotate(360deg)
 
 @keyframes fa-spin
   0%
     -webkit-transform rotate(0deg)
     transform rotate(0deg)
 
-  to
-    -webkit-transform rotate(1turn)
-    transform rotate(1turn)
+  100%
+    -webkit-transform rotate(360deg)
+    transform rotate(360deg)
 
 .fa-rotate-90
   -ms-filter 'progid:DXImageTransform.Microsoft.BasicImage(rotation=1)'
@@ -135,21 +135,20 @@
 
 .fa-flip-horizontal
   -ms-filter 'progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)'
-  -webkit-transform scaleX(-1)
-  transform scaleX(-1)
+  -webkit-transform scale(-1, 1)
+  transform scale(-1, 1)
 
 .fa-flip-vertical
-  -webkit-transform scaleY(-1)
-  transform scaleY(-1)
-
-.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical, .fa-flip-vertical
   -ms-filter 'progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)'
+  -webkit-transform scale(1, -1)
+  transform scale(1, -1)
 
 .fa-flip-both, .fa-flip-horizontal.fa-flip-vertical
-  -webkit-transform scale(-1)
-  transform scale(-1)
+  -ms-filter 'progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)'
+  -webkit-transform scale(-1, -1)
+  transform scale(-1, -1)
 
-:root .fa-flip-both, :root .fa-flip-horizontal, :root .fa-flip-vertical, :root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270
+:root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270, :root .fa-flip-horizontal, :root .fa-flip-vertical, :root .fa-flip-both
   -webkit-filter none
   filter none
 
@@ -176,6 +175,8 @@
 .fa-inverse
   color #fff
 
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+readers do not read off random characters that represent icons */
 .fa-500px:before
   content '\f26e'
 
@@ -4576,21 +4577,23 @@
   font-style normal
   font-weight 400
   font-display block
-  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-brands-400.eot')
-  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-brands-400.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-brands-400.woff2') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-brands-400.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-brands-400.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-brands-400.svg#fontawesome') format('svg')
+  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.eot')
+  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.woff2') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.svg#fontawesome') format('svg')
 
 .fab
   font-family 'Font Awesome 5 Brands'
+  font-weight 400
 
 @font-face
   font-family 'Font Awesome 5 Free'
   font-style normal
   font-weight 400
   font-display block
-  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.eot')
-  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.woff2') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.svg#fontawesome') format('svg')
+  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-regular-400.eot')
+  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-regular-400.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-regular-400.woff2') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-regular-400.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-regular-400.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-regular-400.svg#fontawesome') format('svg')
 
-.fab, .far
+.far
+  font-family 'Font Awesome 5 Free'
   font-weight 400
 
 @font-face
@@ -4598,11 +4601,9 @@
   font-style normal
   font-weight 900
   font-display block
-  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot')
-  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff2') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.svg#fontawesome') format('svg')
-
-.fa, .far, .fas
-  font-family 'Font Awesome 5 Free'
+  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.eot')
+  src url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.woff2') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.svg#fontawesome') format('svg')
 
 .fa, .fas
+  font-family 'Font Awesome 5 Free'
   font-weight 900
