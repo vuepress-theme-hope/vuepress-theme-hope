@@ -1,6 +1,6 @@
 {
   "name": "create-vuepress-theme-hope",
-  "version": "1.14.2",
+  "version": "1.14.3",
   "description": "Theme create shortcut for yarn",
   "keywords": [
     "create",
@@ -30,7 +30,7 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "1.14.2",
+    "@mr-hope/vuepress-shared": "1.14.3",
     "@types/inquirer": "^7.3.1",
     "cac": "^6.7.2",
     "execa": "^5.0.0",
