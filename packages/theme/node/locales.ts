@@ -1,17 +1,20 @@
 import { path2Lang } from "@mr-hope/vuepress-shared";
 
+import type { HopeLang } from "@mr-hope/vuepress-shared";
 import type { ResolvedHopeVuePressConfig } from "../types";
 
-export const resolveLocales = (config: ResolvedHopeVuePressConfig): void => {
+export const resolveLocales = (
+  config: ResolvedHopeVuePressConfig,
+  rootLang: HopeLang
+): void => {
   // ensure locales config
   if (!config.locales) config.locales = {};
 
-  const { baseLang = "en-US" } = config.themeConfig;
   const { locales } = config;
 
   // set locate for base
   locales["/"] = {
-    lang: baseLang,
+    lang: rootLang,
     ...(locales["/"] || {}),
   };
 

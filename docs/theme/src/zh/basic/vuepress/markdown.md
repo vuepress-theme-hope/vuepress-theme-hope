@@ -349,12 +349,12 @@ export default { // Highlighted
 输入:
 
 ```md
-<<< @/../../packages/theme/node/defaultConfig.ts{2,4,6,8,10}
+<<< @/../../packages/theme/node/eject.ts{6-14}
 ```
 
 输出
 
-<<< @/../../packages/theme/node/defaultConfig.ts{2,4,6,8,10}
+<<< @/../../packages/theme/node/eject.ts{6-14}
 
 :::
 

@@ -13,7 +13,7 @@ import type {
 
 const reportStatus: Record<string, boolean> = {};
 
-const showLangError = (lang: string): void => {
+export const showLangError = (lang: string): void => {
   if (!reportStatus[lang]) {
     console.warn(
       `${lang} locates config is missing, and will return 'en-US' instead.
@@ -25,10 +25,8 @@ Note: This warning will be shown only once.`
 };
 
 /** Check if the lang is supported */
-export const checkLang = (lang?: string): boolean => {
+export const checkLang = (lang: string | undefined): boolean => {
   const result = langs.includes((lang as unknown) as HopeLang);
-
-  if (!result && lang) showLangError(lang);
 
   return result;
 };
@@ -46,6 +44,8 @@ export const getRootLang = (context: Context): HopeLang => {
 
   if (themeLocales?.["/"] && checkLang(themeLocales["/"]?.lang))
     return themeLocales["/"].lang as HopeLang;
+
+  showLangError("root");
 
   return "en-US";
 };

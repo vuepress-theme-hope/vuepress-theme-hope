@@ -365,12 +365,12 @@ It also supports [line highlighting](#line-highlighting-in-code-blocks):
 Input:
 
 ```md
-<<< @/../../packages/theme/node/defaultConfig.ts{2,4,6,8,10}
+<<< @/../../packages/theme/node/eject.ts{6-14}
 ```
 
 Output:
 
-<<< @/../../packages/theme/node/defaultConfig.ts{2,4,6,8,10}
+<<< @/../../packages/theme/node/eject.ts{6-14}
 
 :::
 

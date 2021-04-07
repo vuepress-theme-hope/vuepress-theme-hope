@@ -92,6 +92,7 @@ module.exports = {
       },
       "page",
       "stylus",
+      "i18n",
       {
         title: "Plugins",
         icon: "plugin",
@@ -159,7 +160,7 @@ module.exports = {
         icon: "config",
         prefix: "config/",
         collapsable: false,
-        children: ["", "theme/", "page", "stylus", "plugin/"],
+        children: ["", "theme/", "page", "stylus", "i18n", "plugin/"],
       },
       {
         title: "Basic",
@@ -265,6 +266,7 @@ module.exports = {
       },
       "page",
       "stylus",
+      "i18n",
       {
         title: "插件配置",
         icon: "plugin",
@@ -332,7 +334,7 @@ module.exports = {
         icon: "config",
         prefix: "config/",
         collapsable: false,
-        children: ["", "theme/", "page", "stylus", "plugin/"],
+        children: ["", "theme/", "page", "stylus", "i18n", "plugin/"],
       },
       {
         title: "基础",

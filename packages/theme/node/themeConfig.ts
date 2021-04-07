@@ -1,23 +1,19 @@
-import {
-  checkLang,
-  getLocale,
-  lang2Path,
-  path2Lang,
-} from "@mr-hope/vuepress-shared";
+import { getLocale, lang2Path, path2Lang } from "@mr-hope/vuepress-shared";
 import { resolveEncrypt } from "./encrypt";
 
+import type { HopeLang } from "@mr-hope/vuepress-shared";
 import type { ResolvedHopeThemeConfig } from "../types";
 
 const setThemeLocales = (
   themeConfig: ResolvedHopeThemeConfig,
-  baseLang: string
+  rootLang: string
 ): void => {
-  const baseLangPath = lang2Path(baseLang);
+  const rootLangPath = lang2Path(rootLang);
 
   // set locate for base
   themeConfig.locales["/"] = {
-    ...getLocale(baseLang),
-    ...(themeConfig.locales[baseLangPath] || {}),
+    ...getLocale(rootLang),
+    ...(themeConfig.locales[rootLangPath] || {}),
     ...(themeConfig.locales["/"] || {}),
   };
 
@@ -35,17 +31,10 @@ const setThemeLocales = (
 };
 
 export const resolveThemeConfig = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: ResolvedHopeThemeConfig,
+  rootLang: HopeLang
 ): void => {
-  const { baseLang = "en-US" } = themeConfig;
-
-  // throw error when meeting an unsupported language
-  if (!checkLang(baseLang))
-    throw new Error(
-      "Base lang not supported. Make a PR to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/shared/src/i18n/config.ts first!"
-    );
-
-  setThemeLocales(themeConfig, baseLang);
+  setThemeLocales(themeConfig, rootLang);
 
   if (themeConfig.encrypt) resolveEncrypt(themeConfig.encrypt);
 };
