@@ -165,9 +165,9 @@ const blockTex = (
 
   token.block = true;
   token.content =
-    (firstLine && firstLine.trim() ? `${firstLine}\n` : "") +
+    (firstLine?.trim() ? `${firstLine}\n` : "") +
     state.getLines(start + 1, next, state.tShift[start], true) +
-    (lastLine && lastLine.trim() ? lastLine : "");
+    (lastLine?.trim() ? lastLine : "");
   token.map = [start, state.line];
   token.markup = "$$";
 

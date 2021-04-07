@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "module": "ESNext",
-    "target": "ESNext",
+    "target": "ES2017",
     "paths": {
       "@theme/*": ["*"]
     }

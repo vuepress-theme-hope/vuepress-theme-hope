@@ -124,11 +124,11 @@ const mark = (md: MarkdownIt): void => {
 
     postProcess(state, state.delimiters);
 
-    for (let curr = 0; curr < tokensMeta.length; curr++)
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      if (tokensMeta[curr] && tokensMeta[curr]!.delimiters)
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        postProcess(state, tokensMeta[curr]!.delimiters);
+    for (let curr = 0; curr < tokensMeta.length; curr++) {
+      const tokenMeta = tokensMeta[curr];
+
+      if (tokenMeta?.delimiters) postProcess(state, tokenMeta.delimiters);
+    }
 
     return true;
   });

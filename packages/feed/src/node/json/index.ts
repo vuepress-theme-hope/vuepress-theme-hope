@@ -29,7 +29,7 @@ export const renderJSON = (feed: Feed): string => {
   if (channel.image) content.icon = channel.image;
   if (channel.icon) content.favicon = channel.icon;
 
-  if (channel.author && channel.author.name) {
+  if (channel.author?.name) {
     content.author = {
       name: channel.author.name,
       ...(channel.author.url ? { url: channel.author.url } : {}),

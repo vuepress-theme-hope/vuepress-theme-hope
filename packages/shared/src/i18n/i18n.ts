@@ -25,10 +25,10 @@ Note: This warning will be shown only once.`
 };
 
 /** Check if the lang is supported */
-export const checkLang = (lang: string): boolean => {
+export const checkLang = (lang?: string): boolean => {
   const result = langs.includes((lang as unknown) as HopeLang);
 
-  if (!result) showLangError(lang);
+  if (!result && lang) showLangError(lang);
 
   return result;
 };
@@ -38,23 +38,13 @@ export const getRootLang = (context: Context): HopeLang => {
   // infer from siteLocale
   const siteLocales = context.siteConfig.locales;
 
-  if (
-    siteLocales &&
-    siteLocales["/"] &&
-    siteLocales["/"].lang &&
-    checkLang(siteLocales["/"].lang)
-  )
+  if (siteLocales?.["/"] && checkLang(siteLocales["/"]?.lang))
     return siteLocales["/"].lang as HopeLang;
 
   // infer from themeLocale
   const themeLocales = context.themeConfig.locales;
 
-  if (
-    themeLocales &&
-    themeLocales["/"] &&
-    themeLocales["/"].lang &&
-    checkLang(themeLocales["/"].lang)
-  )
+  if (themeLocales?.["/"] && checkLang(themeLocales["/"]?.lang))
     return themeLocales["/"].lang as HopeLang;
 
   return "en-US";

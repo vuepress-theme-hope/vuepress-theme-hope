@@ -35,7 +35,7 @@ export const injectLinkstoHead = (
 
   if (options.favicon) setLink("icon", options.favicon);
 
-  if (options.manifest && options.manifest.icons) {
+  if (options.manifest?.icons) {
     const { icons } = options.manifest;
 
     if (icons.length > 0) {

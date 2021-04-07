@@ -10,7 +10,7 @@ import type { SidebarHeader } from "@theme/util/groupHeader";
 export default class Timeline extends Mixins(TimelineMixin) {
   get hint(): string {
     return (
-      (this.$themeConfig.blog && this.$themeConfig.blog.timeline) ||
+      (this.$themeConfig.blog && this.$themeConfig.blog?.timeline) ||
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.$themeLocaleConfig.blog!.timelineText ||
       getDefaultLocale().blog.timelineText

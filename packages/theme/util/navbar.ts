@@ -21,7 +21,7 @@ export const getNavLinkItem = (
     delete navbarItem.prefix;
   }
 
-  if (navbarItem.items && navbarItem.items.length)
+  if (navbarItem.items?.length)
     Object.assign(navbarItem, {
       type: "links",
       items: navbarItem.items.map((item) => getNavLinkItem(item, prefix)),

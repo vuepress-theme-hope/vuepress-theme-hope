@@ -21,8 +21,7 @@ export default Vue.extend({
       const { valineConfig } = this;
 
       return Boolean(
-        valineConfig &&
-          valineConfig.type === "valine" &&
+        valineConfig.type === "valine" &&
           valineConfig.appId &&
           valineConfig.appKey
       );

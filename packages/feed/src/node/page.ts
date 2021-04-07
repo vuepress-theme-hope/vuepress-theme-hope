@@ -111,7 +111,7 @@ export class FeedPage {
     const { date, time = date } = this.$page.frontmatter;
     const createTimeStamp = this.$page.createTimeStamp;
 
-    return time && time instanceof Date
+    return time instanceof Date
       ? time
       : createTimeStamp
       ? new Date(createTimeStamp)
@@ -171,8 +171,7 @@ export class FeedPage {
     if (this.frontmatter.copyrightText) return this.frontmatter.copyrightText;
     const firstAuthor = this.author[0];
 
-    if (firstAuthor && firstAuthor.name)
-      return `Copyright by ${firstAuthor.name}`;
+    if (firstAuthor?.name) return `Copyright by ${firstAuthor.name}`;
 
     return undefined;
   }
