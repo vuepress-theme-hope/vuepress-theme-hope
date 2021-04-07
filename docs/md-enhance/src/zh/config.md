@@ -5,13 +5,6 @@ icon: config
 
 你可以传递以下选项来启用或禁用一些功能
 
-## baseLang
-
-- 类型: `string`
-- 默认值: `'en-US'`
-
-主目录所对应的语言。
-
 ## enableAll
 
 - 类型: `boolean`

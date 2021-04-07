@@ -1,5 +1,5 @@
-import { lang2Path } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
+import { getRootLangPath } from "@mr-hope/vuepress-shared";
 import { i18n } from "./i18n";
 import { injectLinkstoHead } from "./injectHead";
 import { getManifest, genManifest } from "./genManifest";
@@ -11,13 +11,11 @@ import type { PWAI18NConfig, PWAOptions } from "../types";
 
 const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
   const { base, themeConfig } = context;
-  const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = lang2Path(baseLang);
   const pwaI18nConfig = i18n as PluginI18nConvert<PWAI18NConfig>;
   const pwaOption =
     Object.keys(options).length > 0 ? options : themeConfig.pwa || {};
 
-  pwaI18nConfig["/"] = pwaI18nConfig[baseLangPath];
+  pwaI18nConfig["/"] = pwaI18nConfig[getRootLangPath(context)];
 
   const config: PluginOptionAPI = {
     name: "pwa",

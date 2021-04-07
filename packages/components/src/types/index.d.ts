@@ -1,5 +1,3 @@
-import type { Langs } from "@mr-hope/vuepress-shared";
-
 export interface ComponentI18nConfig {
   /** 返回顶部文字 */
   backToTop: string;
@@ -16,17 +14,6 @@ export interface ComponentI18nConfig {
     /** 错误文字 */
     errorText: string;
   };
-}
-
-export interface ComponentOptions {
-  /**
-   * 主目录所对应的语言。
-   *
-   * The language of the home directory.
-   *
-   * @default 'en-US'
-   */
-  baseLang?: Langs;
 }
 
 declare global {

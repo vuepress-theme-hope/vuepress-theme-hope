@@ -5,13 +5,6 @@ icon: config
 
 ## 插件配置
 
-### baseLang
-
-- 类型: `string`
-- 默认值: `'en-US'`
-
-主目录所对应的语言。
-
 ### selector
 
 - 类型: `string | string[]`

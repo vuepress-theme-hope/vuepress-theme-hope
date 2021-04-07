@@ -1,4 +1,3 @@
-import type { Langs } from "@mr-hope/vuepress-shared";
 import type WorkboxBuild from "workbox-build";
 import type { ManifestOption } from "./manifest";
 import "./declare";
@@ -66,14 +65,6 @@ interface MicrosoftPWAOptions {
 
 /** PWA 配置 */
 export interface PWAOptions {
-  /**
-   * 主目录所对应的语言。
-   *
-   * The language of the home directory.
-   *
-   * @default 'en-US'
-   */
-  baseLang?: Langs;
   /**
    * 是否显示安装按钮
    *

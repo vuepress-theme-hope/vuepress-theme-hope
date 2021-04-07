@@ -30,8 +30,8 @@ icon: config
 
 - 类型: `string`
 - 默认值:
-  - `options.baseLang`
-  - 如果上述未提供，回退到 `themeConfig.baseLang`
+  - `siteConfig.lcoales['/'].locales`
+  - 如果上述未提供，回退到 `themeConfig.lcoales['/'].locales`
   - 如果上述未提供，回退到 `'en-US'`
 
 频道使用的语言

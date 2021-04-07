@@ -5,13 +5,6 @@ icon: config
 
 You can pass these options to the plugin:
 
-## baseLang
-
-- Type: `string`
-- Default: `'en-US'`
-
-The language of the home directory.
-
 ## Enable all
 
 - Type: `boolean`

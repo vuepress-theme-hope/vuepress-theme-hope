@@ -1,22 +1,26 @@
-import type { HopeThemeLocaleConfigItem, LangPaths, Langs } from "./types";
+import type {
+  HopeThemeLocaleConfigItem,
+  HopeLangPath,
+  HopeLang,
+} from "./types";
 
-export const langs: Langs[] = ["zh-CN", "en-US", "vi-VN", "de-AT"];
+export const langs: HopeLang[] = ["zh-CN", "en-US", "vi-VN", "de-AT"];
 
-export const lang2PathConfig: Record<Langs, LangPaths> = {
+export const lang2PathConfig: Record<HopeLang, HopeLangPath> = {
   "zh-CN": "/zh/",
   "en-US": "/en/",
   "de-AT": "/de/",
   "vi-VN": "/vi/",
 };
 
-export const path2langConfig: Record<LangPaths, Langs> = {
+export const path2langConfig: Record<HopeLangPath, HopeLang> = {
   "/zh/": "zh-CN",
   "/en/": "en-US",
   "/de/": "de-AT",
   "/vi/": "vi-VN",
 };
 
-export const localesConfig: Record<Langs, HopeThemeLocaleConfigItem> = {
+export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
   "zh-CN": {
     lang: "zh-CN",
     selectText: "选择语言",

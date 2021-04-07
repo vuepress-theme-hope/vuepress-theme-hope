@@ -7,12 +7,6 @@ export interface CopyCodeI18nConfig {
 
 export interface CopyCodeOptions {
   /**
-   * 主目录所对应的语言。
-   *
-   * The language of the home directory.
-   */
-  baseLang?: string;
-  /**
    * 代码块选择器
    *
    * Code block selector

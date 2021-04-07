@@ -1,4 +1,4 @@
-import { deepAssign } from "@mr-hope/vuepress-shared";
+import { deepAssign, getRootLang } from "@mr-hope/vuepress-shared";
 import { error, resolveUrl } from "./utils";
 
 import type { Context } from "@mr-hope/vuepress-types";
@@ -20,7 +20,6 @@ export const checkOptions = (
   options: FeedOptions,
   context: Context
 ): boolean => {
-  const baseLang = options.baseLang || context.themeConfig.baseLang;
   const hostname = options.hostname || context.themeConfig.hostname;
 
   // make sure hostname do not end with `/`
@@ -30,7 +29,7 @@ export const checkOptions = (
     return false;
   }
 
-  options.baseLang = baseLang || "en-US";
+  options.rootLang = getRootLang(context);
 
   return true;
 };
@@ -58,7 +57,7 @@ export const getFeedChannelOption = (
   options: FeedOptions,
   context: Context
 ): FeedChannelOption => {
-  const { baseLang, hostname, icon, image } = options;
+  const { rootLang, hostname, icon, image } = options;
   const { base, themeConfig } = context;
   const { title, description } = context.getSiteData();
   const author = options.channel?.author?.name || themeConfig.author;
@@ -70,19 +69,13 @@ export const getFeedChannelOption = (
     title,
     link: resolveUrl(hostname, base),
     description,
-    language: baseLang,
+    language: rootLang,
     copyright,
     pubDate: new Date(),
     lastUpdated: new Date(),
     ...(icon ? { icon } : {}),
     ...(image ? { image } : {}),
-    ...(author
-      ? {
-          author: {
-            name: author,
-          },
-        }
-      : {}),
+    ...(author ? { author: { name: author } } : {}),
   };
 
   return deepAssign(defaultChannelOpion, options.channel || {});

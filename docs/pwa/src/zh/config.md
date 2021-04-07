@@ -3,13 +3,6 @@ title: 配置
 icon: config
 ---
 
-## baseLang
-
-- 类型: `string`
-- 默认值: `'en-US'`
-
-主目录所对应的语言。
-
 ## showInstall
 
 - 类型: `boolean`
@@ -31,7 +24,7 @@ icon: config
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
 - short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
 - description: `siteConfig.description` || `themeConfig.description` || `'A site built with vuepress-theme-hope'`
-- lang: `options.baseLang` || `themeConfig.baseLang` || `"en-US"`
+- lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
 

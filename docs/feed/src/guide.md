@@ -21,7 +21,7 @@ Please use RSS by default.
 
 Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files. Also it allows you to freely define the output content of the feed.
 
-To generate the link address correctly, you need to provide `baseLang` (root directory language) and `hostname` (deployment domain name) in the plugin options or themeConfig. All other options are optional.
+To generate the link address correctly, you need to provide `hostname` (deployment domain name) in the plugin options or themeConfig. All other options are optional.
 
 ## Channel Settings
 

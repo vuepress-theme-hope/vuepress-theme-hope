@@ -3,13 +3,6 @@ title: Config
 icon: config
 ---
 
-## baseLang
-
-- Type: `string`
-- Default: `'en-US'`
-
-The language of the home directory.
-
 ## showInstall
 
 - Type: `boolean`
@@ -31,7 +24,7 @@ Some options have their fallback if you donot set them.
 - name: `siteConfig.title` || `themeConfig.title` || `'Site'`
 - short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
 - description: `siteConfig.description` || `themeConfig.description` || `'A site built with vuepress-theme-hope'`
-- lang: `options.baseLang` || `themeConfig.baseLang` || `"en-US"`
+- lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
 

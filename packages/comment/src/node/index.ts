@@ -1,21 +1,18 @@
-import { lang2Path } from "@mr-hope/vuepress-shared";
+import { getRootLangPath } from "@mr-hope/vuepress-shared";
 import { pageInfoI18n, valineI18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { CommentOptions, PageInfoI18nConfig } from "../types";
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
-export = (
-  options: CommentOptions,
-  { themeConfig }: Context
-): PluginOptionAPI => {
-  const baseLang = options.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = lang2Path(baseLang);
+export = (options: CommentOptions, context: Context): PluginOptionAPI => {
+  const { themeConfig } = context;
+  const rootLangPath = getRootLangPath(context);
   const pageInfoI18nConfig = pageInfoI18n as PluginI18nConvert<PageInfoI18nConfig>;
   const valineI18nConfig = valineI18n as PluginI18nConvert<string>;
 
-  pageInfoI18nConfig["/"] = pageInfoI18nConfig[baseLangPath];
-  valineI18nConfig["/"] = valineI18nConfig[baseLangPath];
+  pageInfoI18nConfig["/"] = pageInfoI18nConfig[rootLangPath];
+  valineI18nConfig["/"] = valineI18nConfig[rootLangPath];
 
   const config: PluginOptionAPI = {
     name: "comment",

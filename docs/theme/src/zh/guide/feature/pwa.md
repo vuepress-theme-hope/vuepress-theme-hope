@@ -102,7 +102,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 ### 更新弹窗
 
-弹出窗口的默认语言将自动设置为 `themeConfig.baseLang` 选项的值，当未设置时，回退到 `en-US`。
+成功下载新内容后，我们将提供更新弹出窗口。
 
 ::: tip 自定义弹窗
 
@@ -141,7 +141,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 | name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
 | short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
 | description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress-theme-hope'` |
-| lang                        | `options.baseLang` \|\| `themeConfig.baseLang`                                                         | \\  | `"en-US"` |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                     | \\  | `"en-US"` |
 | start_url                   | `context.base`                                                                                         |
 | scope                       | `context.base`                                                                                         |
 | display                     | `"standalone"`                                                                                         |

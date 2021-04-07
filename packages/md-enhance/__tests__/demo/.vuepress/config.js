@@ -56,8 +56,6 @@ module.exports = {
 
   /** 主题配置 */
   themeConfig: {
-    baseLang: "zh-CN",
-
     logo: "/logo.svg",
 
     /** 头部导航栏的配置 */

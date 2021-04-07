@@ -3,13 +3,6 @@ title: API Config
 icon: config
 ---
 
-## baseLang
-
-- Type: `string`
-- Default: `'en-US'`
-
-The language of the home directory.
-
 ## type
 
 - Type: `'valine' | 'vssue' | 'disable'`

@@ -60,7 +60,7 @@ export interface FeedOptions {
   /**
    * 根目录语言
    */
-  baseLang: string;
+  rootLang: string;
   /**
    * 部署的域名
    *

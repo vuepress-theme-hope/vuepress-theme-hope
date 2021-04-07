@@ -1,4 +1,3 @@
-import type { Langs } from "@mr-hope/vuepress-shared";
 import type { RevealOptions } from "reveal.js";
 import "./declare";
 
@@ -89,14 +88,6 @@ export interface PresentationOptions {
 
 /** md-enhance plugin configuration */
 export type MarkdownEnhanceOptions = Partial<{
-  /**
-   * 主目录所对应的语言。
-   *
-   * The language of the home directory.
-   *
-   * @default 'en-US'
-   */
-  baseLang: Langs;
   /**
    * 是否在每个代码块的左侧显示行号
    *

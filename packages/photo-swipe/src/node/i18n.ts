@@ -1,7 +1,10 @@
-import type { LangPaths } from "@mr-hope/vuepress-shared";
+import type { HopeLangPath } from "@mr-hope/vuepress-shared";
 import type PhotoSwipeDefaultUI from "photoswipe/dist/photoswipe-ui-default";
 
-export const i18n: Record<LangPaths, PhotoSwipeDefaultUI.ShareButtonData[]> = {
+export const i18n: Record<
+  HopeLangPath,
+  PhotoSwipeDefaultUI.ShareButtonData[]
+> = {
   "/zh/": [
     {
       id: "qq",

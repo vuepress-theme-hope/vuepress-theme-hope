@@ -1,22 +1,21 @@
-import { lang2Path } from "@mr-hope/vuepress-shared";
+import { getRootLangPath } from "@mr-hope/vuepress-shared";
 import { codeDemoRender } from "./markdown-it/code-demo";
 import { i18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
-import type { PluginConfig, ThemeConfig } from "@mr-hope/vuepress-types";
+import type { Context, PluginConfig } from "@mr-hope/vuepress-types";
 import type { MarkdownEnhanceOptions } from "../types";
 
-const pluginConfig = (
+export const pluginConfig = (
   markdownOption: MarkdownEnhanceOptions,
-  themeConfig: ThemeConfig
+  context: Context
 ): PluginConfig[] => {
-  const baseLang = markdownOption.baseLang || themeConfig.baseLang || "en-US";
-  const baseLangPath = lang2Path(baseLang);
+  const rootLangPath = getRootLangPath(context);
 
   const resolveConfig = (
     titleConfig: PluginI18nConvert<string>
   ): PluginI18nConvert<string> => {
-    titleConfig["/"] = titleConfig[baseLangPath];
+    titleConfig["/"] = titleConfig[rootLangPath];
 
     return titleConfig;
   };
@@ -55,5 +54,3 @@ const pluginConfig = (
 
   return config;
 };
-
-export default pluginConfig;

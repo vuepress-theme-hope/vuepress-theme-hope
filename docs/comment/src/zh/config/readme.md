@@ -3,13 +3,6 @@ title: 配置
 icon: config
 ---
 
-## baseLang
-
-- 类型: `string`
-- 默认值: `'en-US'`
-
-主目录所对应的语言。
-
 ## type
 
 - 类型: `'valine' | 'vssue' | 'disable'`

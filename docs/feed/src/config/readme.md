@@ -10,13 +10,6 @@ icon: config
 
 The domain name of the deployment site.
 
-## baseLang
-
-- Type: `string`
-- Default: `'en-US'`
-
-The language of the home directory.
-
 ## channel
 
 `channel` option is used to config _Feed Channels_.

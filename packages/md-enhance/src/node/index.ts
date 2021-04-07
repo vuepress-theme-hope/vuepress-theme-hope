@@ -9,15 +9,16 @@ import mark from "./markdown-it/mark";
 import presentation from "./markdown-it/presentation";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
-import pluginConfig from "./pluginConfig";
+import { pluginConfig } from "./pluginConfig";
 
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import type { MarkdownEnhanceOptions } from "../types";
 
 export = (
   option: MarkdownEnhanceOptions,
-  { themeConfig }: Context
+  context: Context
 ): PluginOptionAPI => {
+  const { themeConfig } = context;
   const markdownOption =
     Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
 
@@ -76,6 +77,6 @@ export = (
         md.plugin("presentation").use(presentation);
     },
 
-    plugins: pluginConfig(markdownOption, themeConfig),
+    plugins: pluginConfig(markdownOption, context),
   };
 };

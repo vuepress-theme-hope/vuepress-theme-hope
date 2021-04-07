@@ -3,12 +3,6 @@ import type PhotoSwipeDefaultUI from "photoswipe/dist/photoswipe-ui-default";
 
 export interface PhotoSwipeOptions {
   /**
-   * 根目录的语言
-   *
-   * @default 'en-US'
-   */
-  baseLang?: string;
-  /**
    * 选择的范围，只有 container 元素内部的图片才会支持点击缩放。
    *
    * The range for selection. Only the image inside the container element will support click zoom

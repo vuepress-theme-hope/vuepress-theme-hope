@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { getRootLang } from "@mr-hope/vuepress-shared";
 import { black, blue, cyan } from "chalk";
 import { existsSync, readFile, writeJSON } from "fs-extra";
 import { relative, resolve } from "path";
@@ -37,7 +38,7 @@ export const getManifest = async (
       siteConfig.title || (themeConfig.title as string | undefined) || "Site",
     description:
       siteConfig.description || "A site built with vuepress-theme-hope",
-    lang: options.baseLang || themeConfig.baseLang || "en-US",
+    lang: getRootLang(context),
     start_url: context.base,
     scope: context.base,
 

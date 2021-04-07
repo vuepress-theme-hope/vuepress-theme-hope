@@ -1,8 +1,8 @@
 /** Types for supported lang codes */
-export type Langs = "zh-CN" | "en-US" | "vi-VN" | "de-AT";
+export type HopeLang = "zh-CN" | "en-US" | "vi-VN" | "de-AT";
 
 /** Types for supported lang paths */
-export type LangPaths = "/zh/" | "/en/" | "/vi/" | "/de/";
+export type HopeLangPath = "/zh/" | "/en/" | "/vi/" | "/de/";
 
 export interface HopeThemeLocaleConfigItem {
   /** 当前语言代码 */
@@ -71,4 +71,4 @@ export interface HopeThemeLocaleConfigItem {
   };
 }
 
-export type PluginI18nConvert<T> = Record<LangPaths, T> & { "/"?: T };
+export type PluginI18nConvert<T> = Record<HopeLangPath, T> & { "/"?: T };

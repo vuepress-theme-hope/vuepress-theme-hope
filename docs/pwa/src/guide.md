@@ -91,7 +91,7 @@ You can customize the maximum file size of the cache (unit: KB) with the `maxSiz
 
 ### Update popup
 
-The default language of the popup componnet will be automatically set to `baseLang`, when it is not set, it will fall back to `en-US`.
+We provide an update popup when new content is successfully downloaded.
 
 ::: tip Custom popup
 
@@ -101,7 +101,7 @@ If you are not satisfied with the default popup component, you can write compone
 
 ## Manifest file generation
 
-In order to ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `link`.
+To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `link`.
 
 [^manifest]: **Manifest File**
 
@@ -130,7 +130,7 @@ If the following fields are not set, they will try to fallback to the following 
 | name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
 | short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
 | description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress-theme-hope'` |
-| lang                        | `options.baseLang` \|\| `themeConfig.baseLang` \|\|`"en-US"`                                           |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                     |
 | start_url                   | `context.base`                                                                                         |
 | scope                       | `context.base`                                                                                         |
 | display                     | `"standalone"`                                                                                         |

@@ -1,5 +1,5 @@
 import { PageInfotype } from "@mr-hope/vuepress-plugin-comment";
-import { Langs } from "@mr-hope/vuepress-shared";
+import { HopeLang } from "@mr-hope/vuepress-shared";
 import {
   AlgoliaOption,
   I18nConfig,
@@ -447,7 +447,7 @@ export interface HopeThemeConfig
    *
    * @default 'en-US'
    */
-  baseLang?: Langs;
+  baseLang?: HopeLang;
 
   /** 站点地址 */
   hostname?: string;
@@ -564,7 +564,7 @@ export interface HopeThemeConfig
 /** 处理后的 vuepress-theme-hope 主题配置 */
 export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   /** 根目录对应的语言 */
-  baseLang: Langs;
+  baseLang: HopeLang;
   /** 侧边栏深度 */
   sidebarDepth: number;
   /** 图标 FontClass 前缀 */

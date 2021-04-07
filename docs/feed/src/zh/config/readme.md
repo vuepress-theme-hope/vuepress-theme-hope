@@ -10,13 +10,6 @@ icon: config
 
 部署网站的域名。
 
-## baseLang
-
-- 类型: `string`
-- 默认值: `'en-US'`
-
-主目录所对应的语言。
-
 ## channel
 
 `channel` 选项用于配置 Feed 频道。
