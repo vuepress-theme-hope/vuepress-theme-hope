@@ -1,6 +1,10 @@
 # Changelog
 
-<!--lint disable no-duplicate-headings-->
+## [1.14.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.0...v1.14.1) (2021-04-07)
+
+### Features
+
+- **theme:** add `themeConfig`, `navbarConfig` and `sidebarConfig` helper ([26b9eef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/26b9eefbb6fe82dbf5faac20d9a7ca25d4bdcd2b))
 
 ## [1.14.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.6...v1.14.0) (2021-04-07)
 
