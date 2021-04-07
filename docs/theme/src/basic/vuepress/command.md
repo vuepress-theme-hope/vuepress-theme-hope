@@ -1,6 +1,6 @@
 ---
 title: VuePress commands
-icon: program
+icon: command
 category: basic
 tags:
   - vuepress

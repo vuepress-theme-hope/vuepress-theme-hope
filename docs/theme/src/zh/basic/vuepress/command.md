@@ -1,6 +1,6 @@
 ---
 title: 项目指令
-icon: program
+icon: command
 category: basic
 tags:
   - vuepress
