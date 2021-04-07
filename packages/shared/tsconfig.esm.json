@@ -2,7 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "module": "ESNext",
-    "target": "ES2017",
     "rootDir": "./src",
     "outDir": "./lib/esm"
   },
