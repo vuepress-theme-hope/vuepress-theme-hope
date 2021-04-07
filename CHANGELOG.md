@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.1...v1.14.2) (2021-04-07)
+
+### Bug Fixes
+
+- **theme:** remove unecessary optional chaining ([f7abfc5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f7abfc5cb370aac8f059a625138ce329b8a09faf))
+- set "target" to "ES2017" to support Node.js v10 and v12 ([fe36992](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe369921a712ee52b56c71d4571c1c717494d1fd))
+
 ## [1.14.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.0...v1.14.1) (2021-04-07)
 
 ### Features
