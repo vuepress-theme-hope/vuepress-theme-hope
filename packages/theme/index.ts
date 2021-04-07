@@ -5,7 +5,12 @@ import { eject } from "./node/eject";
 import { getPluginConfig } from "./node/plugins";
 
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import type { ResolvedHopeThemeConfig } from "./types";
+import type {
+  HopeNavBarConfig,
+  HopeSideBarConfig,
+  HopeThemeConfig,
+  ResolvedHopeThemeConfig,
+} from "./types";
 
 interface ThemeOptionAPI extends PluginOptionAPI {
   extend?: string;
@@ -60,5 +65,14 @@ const themeAPI = (
 });
 
 themeAPI.config = config;
+
+// helper functions
+themeAPI.themeConfig = (themeConfig: HopeThemeConfig): HopeThemeConfig =>
+  themeConfig;
+themeAPI.navbarConfig = (navbarConfig: HopeNavBarConfig): HopeNavBarConfig =>
+  navbarConfig;
+themeAPI.sidebarConfig = (
+  sidebarConfig: HopeSideBarConfig
+): HopeSideBarConfig => sidebarConfig;
 
 export = themeAPI;

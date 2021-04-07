@@ -374,6 +374,23 @@ If you have configured blog related options, you can configure `themeConfig.blog
 
 You can set `'mobile'` to display only in mobile view, or set `always` to keep it displayed in the sidebar.
 
+## `sidebarConfig`
+
+We provide a `sidebarConfig` Helper function. You can import it from `vuepress-theme-hope` and wrap your navigation bar configuration to let the editor provide auto-completion and help you verify the sidebar configuration.
+
+```js
+// .vuepress/sidebar.js
+const { sidebarConfig } = require("vuepress-theme-hope");
+
+module.exports = sidebarConfig(/* Your sidebar configuration */);
+```
+
+::: tip
+
+When you are spliting vuepress configuration into multiple parts, you can use this helper function to keep automatic completion and verification.
+
+:::
+
 ## Demo
 
 ::: details Configuration of this documentation
@@ -404,7 +421,7 @@ module.exports = {
           prefix: "layout/",
           collapsable: false,
           children: [
-            "navbar",
+            "sidebar",
             "sidebar",
             {
               title: "Page",

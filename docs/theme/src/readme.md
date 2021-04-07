@@ -101,9 +101,11 @@ module.exports = config({
 
 ::: tip
 
-The purpose of introducing the `config` function is to give you full hints through TS’s Interface and JSDoc when you edit the configuration.
+`config` is just a helper function, it will give you config description and provide auto-completion through TS’s Interface and JSDoc.
 
 At the same time, the `config` function will also complete some default configurations for your current configuration which will pass directly to VuePress.
+
+Don’t worry it will change your config! It will respect every config you make to make sure your other plugins work well.
 
 You can view [Config of this site][docs-config] as an example.
 

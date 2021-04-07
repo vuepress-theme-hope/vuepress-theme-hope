@@ -1,5 +1,7 @@
+const { navbarConfig } = require("vuepress-theme-hope");
+
 module.exports = {
-  en: [
+  en: navbarConfig([
     { text: "Guide", link: "/guide/", icon: "creative" },
     { text: "Config", link: "/config/", icon: "config" },
     { text: "FAQ", link: "/FAQ/", icon: "question" },
@@ -82,9 +84,9 @@ module.exports = {
         },
       ],
     },
-  ],
+  ]),
 
-  zh: [
+  zh: navbarConfig([
     { text: "指南", link: "/zh/guide/", icon: "creative" },
     { text: "配置", link: "/zh/config/", icon: "config" },
     { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
@@ -167,5 +169,5 @@ module.exports = {
         },
       ],
     },
-  ],
+  ]),
 };

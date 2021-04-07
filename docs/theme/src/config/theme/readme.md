@@ -11,6 +11,15 @@ tags:
 
 You can view [Config of this site][docs-config] as an example, and you can directly view [Type Declaration file](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/theme/types/theme/) in the source code.
 
+Besides, we also provide a `themeConfig` helper function, which you can import to provide automatic completion and verification:
+
+```js
+// .vuepress/themeConfig.js
+const { themeConfig } = require("vuepress-theme-hope");
+
+module.exports = themeConfig(/* Your themeConfig here */);
+```
+
 :::
 
 The following configuration has been added to the themeConfig field in `.vuepress/config.js`:

@@ -376,6 +376,23 @@ module.exports = {
 
 你可以设置 `'mobile'` 来只在移动视图显示，或者设置 `always`，来保持在侧边栏显示。
 
+## `sidebarConfig`
+
+我们提供了一个 `sidebarConfig` Helper 函数。你可以从 `vuepress-theme-hope` 中将其引入，并包裹你的导航栏配置来让编辑器提供自动补全并帮助你校验侧边栏配置是否正确。
+
+```js
+// .vuepress/sidebar.js
+const { sidebarConfig } = require("vuepress-theme-hope");
+
+module.exports = sidebarConfig(/* 你的导航栏配置 */);
+```
+
+::: tip
+
+当你将 vuepress 配置拆分成多个部分时，你可以使用该 Helper 函数来保持自动补全与校验。
+
+:::
+
 ## 案例
 
 ::: details 本文档的侧边栏配置
@@ -406,7 +423,7 @@ module.exports = {
           prefix: "layout/",
           collapsable: false,
           children: [
-            "navbar",
+            "sidebar",
             "sidebar",
             {
               title: "页面",

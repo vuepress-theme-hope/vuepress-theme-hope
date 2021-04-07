@@ -342,6 +342,23 @@ editLink: false
 
 具体详情请见 [全屏按钮](../interface/others.md#全屏按钮) 章节。
 
+## `navbarConfig`
+
+我们提供了一个 `navbarConfig` Helper 函数。你可以从 `vuepress-theme-hope` 中将其引入，并包裹你的导航栏配置来让编辑器提供自动补全并帮助你校验导航栏配置是否正确。
+
+```js
+// .vuepress/navbar.js
+const { navbarConfig } = require("vuepress-theme-hope");
+
+module.exports = navbarConfig(/* 你的导航栏配置 */);
+```
+
+::: tip
+
+当你将 vuepress 配置拆分成多个部分时，你可以使用该 Helper 函数来保持自动补全与校验。
+
+:::
+
 ## 案例
 
 ::: details 本文档的导航栏配置

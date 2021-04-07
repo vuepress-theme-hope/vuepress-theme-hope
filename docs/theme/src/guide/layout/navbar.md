@@ -346,6 +346,23 @@ For details, see the [Darkmode](../interface/darkmode.md) section.
 
 For details, see the [Full Screen Button](../interface/others.md#fullscreen-button) section.
 
+## `navbarConfig`
+
+We provide a `navbarConfig` Helper function. You can import it from `vuepress-theme-hope` and wrap your navigation bar configuration to let the editor provide auto-completion and help you verify the navbar configuration.
+
+```js
+// .vuepress/navbar.js
+const { navbarConfig } = require("vuepress-theme-hope");
+
+module.exports = navbarConfig(/* Your navbar configuration */);
+```
+
+::: tip
+
+When you are spliting vuepress configuration into multiple parts, you can use this helper function to keep automatic completion and verification.
+
+:::
+
 ## Demo
 
 ::: details Configuration of this documentation
