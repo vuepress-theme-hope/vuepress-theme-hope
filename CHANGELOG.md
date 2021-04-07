@@ -2,6 +2,15 @@
 
 <!--lint disable no-duplicate-headings-->
 
+## [1.14.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.6...v1.14.0) (2021-04-07)
+
+### Features
+
+- **md-enhance:** rebuild markdown-it render function and fix theme support ([d570e99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d570e99d5b2e74435b630672fcff0cd34dd18355))
+- **shared:** update font-awesome to 5.15.3 ([381934a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/381934ad98941cc176166ab0c928ea16b26cc43d))
+- **theme:** remove baseLang ([85f92a7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/85f92a7315f6a69eb0d6e31ee78add2a641f38da))
+- update baseLang detect ([524ffcf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/524ffcf04ecc876c1733f84e40b982a8aaf46aa4))
+
 ## [1.13.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.13.5...v1.13.6) (2021-04-06)
 
 ### Bug Fixes
