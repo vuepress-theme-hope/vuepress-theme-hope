@@ -15,7 +15,6 @@ export default Vue.extend({
 
   props: {
     id: { type: String, required: true },
-    code: { type: String, required: true },
     preset: { type: String as PropType<"ant" | "vue">, default: "vue" },
   },
 
@@ -60,8 +59,13 @@ export default Vue.extend({
       delay(),
     ]).then(([flowchart]) => {
       const { parse } = flowchart;
+      console.log(
+        decodeURIComponent((this.$el as HTMLElement).dataset.code || "")
+      );
 
-      svg = parse(this.code);
+      svg = parse(
+        decodeURIComponent((this.$el as HTMLElement).dataset.code || "")
+      );
       this.scale = this.getScale(window.innerWidth);
 
       svg.drawSVG(this.id, { ...this.$preset, scale: this.scale });

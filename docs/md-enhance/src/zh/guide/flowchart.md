@@ -28,7 +28,9 @@ module.exports = {
 ## 语法
 
 ````md
-```flow [preset]
+<!-- ↓ :preset 是可选的 -->
+
+```flow:preset
 
 <!-- 放置你的流程图代码 -->
 

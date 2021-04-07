@@ -30,7 +30,9 @@ module.exports = {
 ### Markdown Syntax
 
 ````md
-```flow [preset]
+<!-- ↓ :preset is optional -->
+
+```flow:preset
 
 <!-- Your flowchart code here. -->
 
