@@ -25,7 +25,7 @@ export const getAlias = (
     themeConfig.themeColor === false && themeConfig.darkmode === "disable"
   );
 
-  const noopModule = "vuepress-theme-hope/util/noopModule";
+  const noopModule = "@mr-hope/vuepress-shared/lib/esm/noopModule";
 
   return {
     "@AlgoliaSearchBox": isAlgoliaSearch
