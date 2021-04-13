@@ -1,10 +1,10 @@
-import { Context } from "@mr-hope/vuepress-types";
 import {
   langs,
   lang2PathConfig,
   path2langConfig,
   localesConfig,
 } from "./config";
+import type { Context } from "@mr-hope/vuepress-types";
 import type {
   HopeLang,
   HopeLangPath,

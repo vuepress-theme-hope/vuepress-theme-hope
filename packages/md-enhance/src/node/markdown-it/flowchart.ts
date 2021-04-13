@@ -3,9 +3,7 @@ import hash = require("hash-sum");
 import MarkdownIt = require("markdown-it");
 import Token = require("markdown-it/lib/token");
 
-const flowchart = (
-  md: MarkdownIt & { $dataBlock: Record<string, string> }
-): void => {
+const flowchart = (md: MarkdownIt): void => {
   const flowchartRender = (tokens: Token[], idx: number): string => {
     const token = tokens[idx];
     const key = `flowchart_${hash(idx)}`;

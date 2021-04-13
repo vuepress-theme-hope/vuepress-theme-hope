@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6
 
   li + li::before
     color var(--light-grey, #999)
-    content '\0002f'
+    content '/'
 
   a
     display inline-block

@@ -1,4 +1,8 @@
-export const i18n = {
+import type { HopeLangPath } from "@mr-hope/vuepress-shared";
+
+export type ContainerName = "info" | "tip" | "warning" | "danger" | "detail";
+
+export const i18n: Record<ContainerName, Record<HopeLangPath, string>> = {
   info: {
     "/zh/": "相关信息",
     "/en/": "Info",
