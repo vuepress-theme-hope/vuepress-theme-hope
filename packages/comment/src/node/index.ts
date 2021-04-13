@@ -14,13 +14,18 @@ export = (options: CommentOptions, context: Context): PluginOptionAPI => {
   pageInfoI18nConfig["/"] = pageInfoI18nConfig[rootLangPath];
   valineI18nConfig["/"] = valineI18nConfig[rootLangPath];
 
+  const commentOptions: CommentOptions =
+    Object.keys(options).length > 0
+      ? options
+      : themeConfig.comment || { type: "disable" };
+
   const config: PluginOptionAPI = {
     name: "comment",
 
     define: () => ({
-      COMMENT_OPTIONS:
-        Object.keys(options).length > 0 ? options : themeConfig.comment || {},
+      COMMENT_OPTIONS: commentOptions,
       PAGE_INFO_I18N: pageInfoI18nConfig,
+      VALINE_ENABLE: commentOptions.type === "valine",
       VALINE_I18N: valineI18nConfig,
     }),
 

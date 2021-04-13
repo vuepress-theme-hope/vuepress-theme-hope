@@ -1,11 +1,18 @@
 import Vue from "vue";
-import Valine from "./Valine.vue";
 import { commentOptions } from "./define";
 
 export default Vue.extend({
   name: "Comment",
 
-  components: { Valine },
+  components: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    Valine: () =>
+      VALINE_ENABLE
+        ? import(/* webpackChunkName: "valine" */ "./Valine.vue")
+        : import(
+            /* webpackChunkName: "noopModule" */ "@mr-hope/vuepress-shared/lib/esm/noopModule"
+          ),
+  },
 
   data: () => ({
     options: commentOptions,
