@@ -78,9 +78,9 @@ tags:
 @import "~@mr-hope/vuepress-shared/styles/font-awesome";
 ```
 
-> Font-awesome 当前版本为 5.15.1
+> Font-awesome 当前版本为 5.15.3
 
-并将 `themeConfig.iconPrefix` 设置为 `''`。
+并将 `themeConfig.iconPrefix` 设置为 `'fas fa-'`。
 
 ### 使用
 

@@ -78,9 +78,9 @@ Add in `index.styl` of `.vuepress/styles`:
 @import "~@mr-hope/vuepress-shared/styles/font-awesome";
 ```
 
-> Font-awesome current version is 5.15.1
+> Font-awesome current version is 5.15.3
 
-And set `themeConfig.iconPrefix` to `''`.
+And set `themeConfig.iconPrefix` to `'fas fa-'`.
 
 ### Use
 
