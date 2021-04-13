@@ -180,7 +180,15 @@ export type MarkdownEnhanceOptions = Partial<{
 
 declare global {
   const CODE_DEMO_OPTIONS: CodeDemoGlobalOptions;
+  const MARKDOWN_ENHANCE_ALIGN: boolean;
+  const MARKDOWN_ENHANCE_FLOWCHART: boolean;
+  const MARKDOWN_ENHANCE_FOOTNOTE: boolean;
+  const MARKDOWN_ENHANCE_PRESENTATION: boolean;
+  const MARKDOWN_ENHANCE_TEX: boolean;
   const REVEAL_CONFIG: Partial<RevealOptions>;
-  const REVEAL_PLUGINS: string[];
-  const MARKDOWN_ENHANCE_OPTIONS: MarkdownEnhanceOptions;
+  const REVEAL_PLUGIN_HIGHLIGHT: boolean;
+  const REVEAL_PLUGIN_MATH: boolean;
+  const REVEAL_PLUGIN_NOTES: boolean;
+  const REVEAL_PLUGIN_SEARCH: boolean;
+  const REVEAL_PLUGIN_ZOOM: boolean;
 }

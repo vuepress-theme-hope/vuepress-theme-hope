@@ -45,35 +45,35 @@ export default Vue.extend({
         )
       );
 
-      if (REVEAL_PLUGINS.includes("highlight"))
+      if (REVEAL_PLUGIN_HIGHLIGHT)
         promises.push(
           import(
             /* webpackChunkName: "reveal" */ "reveal.js/plugin/highlight/highlight.esm.js"
           )
         );
 
-      if (REVEAL_PLUGINS.includes("math"))
+      if (REVEAL_PLUGIN_MATH)
         promises.push(
           import(
             /* webpackChunkName: "reveal" */ "reveal.js/plugin/math/math.esm.js"
           )
         );
 
-      if (REVEAL_PLUGINS.includes("search"))
+      if (REVEAL_PLUGIN_SEARCH)
         promises.push(
           import(
             /* webpackChunkName: "reveal" */ "reveal.js/plugin/search/search.esm.js"
           )
         );
 
-      if (REVEAL_PLUGINS.includes("notes"))
+      if (REVEAL_PLUGIN_NOTES)
         promises.push(
           import(
             /* webpackChunkName: "reveal" */ "reveal.js/plugin/notes/notes.esm.js"
           )
         );
 
-      if (REVEAL_PLUGINS.includes("zoom"))
+      if (REVEAL_PLUGIN_ZOOM)
         promises.push(
           import(
             /* webpackChunkName: "reveal" */ "reveal.js/plugin/zoom/zoom.esm.js"

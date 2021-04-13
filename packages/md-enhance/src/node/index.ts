@@ -22,22 +22,37 @@ export = (
   const markdownOption =
     Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
 
+  const revealPlugins =
+    typeof markdownOption.presentation === "object" &&
+    Array.isArray(markdownOption.presentation.plugins)
+      ? markdownOption.presentation.plugins
+      : [];
+
   return {
     name: "md-enhance",
 
     define: (): Record<string, unknown> => ({
-      MARKDOWN_ENHANCE_OPTIONS: markdownOption,
+      MARKDOWN_ENHANCE_ALIGN:
+        markdownOption.enableAll || markdownOption.align || false,
+      MARKDOWN_ENHANCE_FLOWCHART:
+        markdownOption.enableAll || markdownOption.flowchart || false,
+      MARKDOWN_ENHANCE_FOOTNOTE:
+        markdownOption.enableAll || markdownOption.footnote || false,
+      MARKDOWN_ENHANCE_PRESENTATION:
+        markdownOption.enableAll || markdownOption.presentation || false,
+      MARKDOWN_ENHANCE_TEX:
+        markdownOption.enableAll || markdownOption.tex || false,
       CODE_DEMO_OPTIONS: {
         ...codeDemoDefaultSetting,
         ...(typeof markdownOption.demo === "boolean"
           ? {}
           : markdownOption.demo),
       },
-      REVEAL_PLUGINS:
-        typeof markdownOption.presentation === "object" &&
-        Array.isArray(markdownOption.presentation.plugins)
-          ? markdownOption.presentation.plugins
-          : [],
+      REVEAL_PLUGIN_HIGHLIGHT: revealPlugins.includes("highlight"),
+      REVEAL_PLUGIN_MATH: revealPlugins.includes("math"),
+      REVEAL_PLUGIN_NOTES: revealPlugins.includes("notes"),
+      REVEAL_PLUGIN_SEARCH: revealPlugins.includes("search"),
+      REVEAL_PLUGIN_ZOOM: revealPlugins.includes("zoom"),
       REVEAL_CONFIG:
         typeof markdownOption.presentation === "object" &&
         typeof markdownOption.presentation.revealConfig === "object"

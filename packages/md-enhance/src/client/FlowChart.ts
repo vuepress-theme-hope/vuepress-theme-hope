@@ -59,9 +59,6 @@ export default Vue.extend({
       delay(),
     ]).then(([flowchart]) => {
       const { parse } = flowchart;
-      console.log(
-        decodeURIComponent((this.$el as HTMLElement).dataset.code || "")
-      );
 
       svg = parse(
         decodeURIComponent((this.$el as HTMLElement).dataset.code || "")
