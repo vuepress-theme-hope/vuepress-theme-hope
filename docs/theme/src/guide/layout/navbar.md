@@ -312,8 +312,8 @@ module.exports = {
     docsRepo: "vuejs/vuepress",
     // if your docs are not at the root of the repo:
     docsDir: "docs",
-    // if your docs are in a specific branch (defaults to 'master'):
-    docsBranch: "master",
+    // if your docs are in a specific branch (defaults to 'main'):
+    docsBranch: "main",
     // defaults to false, set to true to enable
     editLinks: true,
     // default value is true. Allows to hide next page links on all pages

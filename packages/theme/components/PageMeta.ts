@@ -65,7 +65,7 @@ export default Vue.extend({
         repo = "",
         docsRepo = repo,
         docsDir = "",
-        docsBranch = "master",
+        docsBranch = "main",
       } = this.$themeConfig;
 
       const bitbucket = /bitbucket.org/u;

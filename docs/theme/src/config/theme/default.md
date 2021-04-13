@@ -120,7 +120,7 @@ The folder which the document belongs to, the default is the root directory of t
 ## docsBranch
 
 - Type: `string`
-- Default: `'master'`
+- Default: `'main'`
 
 Document branch
 
