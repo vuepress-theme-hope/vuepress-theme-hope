@@ -35,11 +35,11 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "1.14.3",
     "@mr-hope/vuepress-types": "1.14.3",
-    "@types/fs-extra": "^9.0.10",
+    "@types/fs-extra": "^9.0.11",
     "chalk": "^4.1.0",
     "fs-extra": "^9.1.0",
     "register-service-worker": "^1.7.2",
-    "workbox-build": "^6.1.2"
+    "workbox-build": "^6.1.5"
   },
   "publishConfig": {
     "access": "public"

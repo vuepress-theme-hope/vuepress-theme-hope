@@ -52,7 +52,7 @@
     "@types/markdown-it": "^12.0.1",
     "@types/react": "^17.0.3",
     "flowchart.js": "^1.15.0",
-    "katex": "^0.13.1",
+    "katex": "^0.13.2",
     "lodash.debounce": "^4.0.8",
     "react": "^17.0.2",
     "reveal.js": "^4.1.0",
