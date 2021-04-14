@@ -30,6 +30,9 @@
     "clean": "rimraf lib *.tsbuildinfo",
     "copy": "cpx \"src/**/*.{d.ts,vue,styl,json}\" lib"
   },
+  "dependencies": {
+    "tslib": "^2.2.0"
+  },
   "publishConfig": {
     "access": "public"
   }
