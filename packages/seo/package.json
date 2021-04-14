@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-seo",
-  "version": "1.14.3",
+  "version": "1.14.4",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
