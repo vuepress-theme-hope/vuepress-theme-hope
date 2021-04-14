@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.14.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.3...v1.14.4) (2021-04-14)
+
+### Bug Fixes
+
+- **shared:** add tslib deps ([46e1c14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46e1c1453f32eb1c6b315aab8646d365a8454621))
+
+### Features
+
+- add missing root lang for template and demo ([f4f029c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f4f029cc644deba5deff146df825826b44a5bc2c))
+- **comment:** load Valine only when necessary ([96d3793](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/96d379364bcedcb4e04deb14873363617496d761))
+- **md-enhance:** load modules only when necessary ([5e04f19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e04f19e30012e3fe7cd122f34cfb75c61c1cf5e))
+- **theme:** update docsBranch default value ([d7f5f62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d7f5f62e594fe51f3e65339d09bd636fdebeda69))
+
 ## [1.14.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.1...v1.14.2) (2021-04-07)
 
 ### Bug Fixes
