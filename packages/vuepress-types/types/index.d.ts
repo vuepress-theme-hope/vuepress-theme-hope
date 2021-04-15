@@ -1,4 +1,6 @@
 import "./core";
+import "./shims-css";
+import "./shims-styl";
 import "./shims-vue";
 
 export * from "./computed";
