@@ -25,7 +25,7 @@ cli
     const packageJsonPath = resolve(process.cwd(), "package.json");
     const scripts = {
       "docs:build": `vuepress build ${dir}`,
-      "dev:clean-dev": `vuepress dev ${dir} --no-cache`,
+      "docs:clean-dev": `vuepress dev ${dir} --no-cache`,
       "docs:dev": `vuepress dev ${dir}`,
       "docs:eject-theme": `vuepress eject-hope ${dir}`,
     };
