@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.14.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.4...v1.14.5) (2021-04-22)
+
+### Bug Fixes
+
+- fix cycle deps ([0c8721e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c8721e7cb91d2ff130d60c3016961faa3663f57))
+- **comment:** fix options reading when using vssue ([4757f65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4757f65010a120188c1d00c2e155e616026bd4ce))
+- **create:** typo fixes ([f520760](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f5207601f487ff50a6967f0f55b9463267a9aa73))
+- **vuepress-types:** add missing import ([81e0c67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81e0c67aab863d6c5cc6f31456b9a5ad99d395b4))
+
 ## [1.14.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.3...v1.14.4) (2021-04-14)
 
 ### Bug Fixes
