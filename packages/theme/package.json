@@ -49,7 +49,7 @@
     "@types/react": "^17.0.3",
     "@vuepress/plugin-blog": "^1.9.4",
     "bcryptjs": "^2.4.3",
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.1",
     "dayjs": "^1.10.4",
     "docsearch.js": "^2.6.3",
     "lodash.debounce": "^4.0.8",

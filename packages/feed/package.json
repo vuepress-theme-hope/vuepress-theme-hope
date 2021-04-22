@@ -31,7 +31,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.1",
     "xml-js": "^1.6.11"
   },
   "publishConfig": {
