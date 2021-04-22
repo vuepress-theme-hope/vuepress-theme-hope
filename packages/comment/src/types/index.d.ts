@@ -213,6 +213,5 @@ export type CommentOptions =
 declare global {
   const COMMENT_OPTIONS: CommentOptions;
   const PAGE_INFO_I18N: Record<string, PageInfoI18nConfig>;
-  const VALINE_ENABLE: boolean;
   const VALINE_I18N: Record<string, string>;
 }

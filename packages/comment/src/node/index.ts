@@ -1,4 +1,5 @@
 import { getRootLangPath } from "@mr-hope/vuepress-shared";
+import { resolve } from "path";
 import { pageInfoI18n, valineI18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
@@ -25,9 +26,15 @@ export = (options: CommentOptions, context: Context): PluginOptionAPI => {
     define: () => ({
       COMMENT_OPTIONS: commentOptions,
       PAGE_INFO_I18N: pageInfoI18nConfig,
-      VALINE_ENABLE: commentOptions.type === "valine",
       VALINE_I18N: valineI18nConfig,
     }),
+
+    alias: {
+      "@Valine":
+        commentOptions.type === "valine"
+          ? resolve(__dirname, "../client/Valine.vue")
+          : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+    },
 
     plugins: [
       ["@mr-hope/git", themeConfig.git || true],

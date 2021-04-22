@@ -21,6 +21,14 @@ export = (
   const { themeConfig } = context;
   const markdownOption =
     Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
+  const alignEnable = markdownOption.enableAll || markdownOption.align || false;
+  const flowchartEnable =
+    markdownOption.enableAll || markdownOption.flowchart || false;
+  const footnoteEnable =
+    markdownOption.enableAll || markdownOption.footnote || false;
+  const presentationEnable =
+    markdownOption.enableAll || markdownOption.presentation || false;
+  const texEnable = markdownOption.enableAll || markdownOption.tex || false;
 
   const revealPlugins =
     typeof markdownOption.presentation === "object" &&
@@ -31,17 +39,21 @@ export = (
   return {
     name: "md-enhance",
 
+    alias: {
+      "@FlowChart": flowchartEnable
+        ? resolve(__dirname, "../client/FlowChart.vue")
+        : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+      "@Presentation": presentationEnable
+        ? resolve(__dirname, "../client/Presentation.vue")
+        : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+    },
+
     define: (): Record<string, unknown> => ({
-      MARKDOWN_ENHANCE_ALIGN:
-        markdownOption.enableAll || markdownOption.align || false,
-      MARKDOWN_ENHANCE_FLOWCHART:
-        markdownOption.enableAll || markdownOption.flowchart || false,
-      MARKDOWN_ENHANCE_FOOTNOTE:
-        markdownOption.enableAll || markdownOption.footnote || false,
-      MARKDOWN_ENHANCE_PRESENTATION:
-        markdownOption.enableAll || markdownOption.presentation || false,
-      MARKDOWN_ENHANCE_TEX:
-        markdownOption.enableAll || markdownOption.tex || false,
+      MARKDOWN_ENHANCE_ALIGN: alignEnable,
+      MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
+      MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
+      MARKDOWN_ENHANCE_PRESENTATION: presentationEnable,
+      MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {
         ...codeDemoDefaultSetting,
         ...(typeof markdownOption.demo === "boolean"

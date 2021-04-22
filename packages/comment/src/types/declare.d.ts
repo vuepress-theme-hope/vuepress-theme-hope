@@ -162,6 +162,12 @@ declare module "valine" {
   export default Valine;
 }
 
+declare module "@Valine" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 interface Window {
   AV: unknown;
 }

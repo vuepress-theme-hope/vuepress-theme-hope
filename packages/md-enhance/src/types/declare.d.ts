@@ -782,6 +782,18 @@ declare module "*.css" {
   export default content;
 }
 
+declare module "@FlowChart" {
+  import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@Presentation" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 interface Window {
   // eslint-disable-next-line
   Babel: {
