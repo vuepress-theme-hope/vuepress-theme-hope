@@ -27,6 +27,7 @@ module.exports = config({
   ],
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
       title: "Markdown 增强",
       description: "VuePress 的 Markdown 增强插件",

@@ -8,6 +8,7 @@ module.exports = config({
   dest: "./dist",
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
       title: "图片预览",
       description: "VuePress 的图片预览插件",

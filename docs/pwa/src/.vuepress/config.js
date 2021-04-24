@@ -8,6 +8,7 @@ module.exports = config({
   dest: "./dist",
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
       title: "PWA 支持",
       description: "一个强大的 PWA 插件",

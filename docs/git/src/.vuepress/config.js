@@ -8,6 +8,7 @@ module.exports = config({
   dest: "./dist",
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
       title: "基于 Git 的信息插件",
       description: "VuePress 的 Git 信息插件",
@@ -22,10 +23,6 @@ module.exports = config({
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
     docsDir: "docs/git/src",
-
-    locales: {
-      "/zh/": {},
-    },
 
     footer: {
       display: true,

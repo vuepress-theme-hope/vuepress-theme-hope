@@ -8,6 +8,7 @@ module.exports = config({
   dest: "./dist",
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
       title: "Sitemap 生成器",
       description: "为你的站点生成 Sitemap",

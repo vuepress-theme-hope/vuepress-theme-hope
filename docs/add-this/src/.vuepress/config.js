@@ -9,6 +9,7 @@ module.exports = config({
   dest: "./dist",
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
       title: "分享插件",
       description: "由 AddThis 提供的分享插件",

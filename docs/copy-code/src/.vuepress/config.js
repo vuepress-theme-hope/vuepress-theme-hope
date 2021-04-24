@@ -8,6 +8,7 @@ module.exports = config({
   dest: "./dist",
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
       title: "代码一键复制",
       description: "VuePress 的代码一键复制插件",
