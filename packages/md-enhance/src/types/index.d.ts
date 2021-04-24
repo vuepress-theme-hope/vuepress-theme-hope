@@ -1,3 +1,4 @@
+import { Mermaid } from "mermaid";
 import type { RevealOptions } from "reveal.js";
 import "./declare";
 
@@ -145,13 +146,21 @@ export type MarkdownEnhanceOptions = Partial<{
    */
   tex: boolean;
   /**
-   * 是否启用流程图支持
+   * 是否启用 flowchart 流程图支持
    *
    * Whether to enable flowchart support
    *
    * @default false
    */
   flowchart: boolean;
+  /**
+   * 是否启用 Mermaid 流程图支持
+   *
+   * Whether to enable mermaid support
+   *
+   * @default false
+   */
+  mermaid: boolean;
   /**
    * 是否启用代码示例功能
    *
@@ -183,8 +192,10 @@ declare global {
   const MARKDOWN_ENHANCE_ALIGN: boolean;
   const MARKDOWN_ENHANCE_FLOWCHART: boolean;
   const MARKDOWN_ENHANCE_FOOTNOTE: boolean;
+  const MARKDOWN_ENHANCE_MERMAID: boolean;
   const MARKDOWN_ENHANCE_PRESENTATION: boolean;
   const MARKDOWN_ENHANCE_TEX: boolean;
+  const MERMAID_OPTIONS: Mermaid.mermaidAPI.Config;
   const REVEAL_CONFIG: Partial<RevealOptions>;
   const REVEAL_PLUGIN_HIGHLIGHT: boolean;
   const REVEAL_PLUGIN_MATH: boolean;
