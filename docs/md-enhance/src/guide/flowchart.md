@@ -27,8 +27,6 @@ module.exports = {
 
 ## Syntax
 
-### Markdown Syntax
-
 ````md
 <!-- ↓ :preset is optional -->
 

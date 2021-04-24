@@ -134,6 +134,32 @@ cond(no)->e
 
 - [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/flowchart/)
 
+## Mermaid
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+::: details Code
+
+````md
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+````
+
+:::
+
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/mermaid/)
+
 ### Tex
 
 $$

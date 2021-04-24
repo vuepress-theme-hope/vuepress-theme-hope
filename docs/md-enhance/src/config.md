@@ -68,6 +68,13 @@ Whether to enable footnote format support.
 
 Whether to enable mark support.
 
+## mermaid
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
+
 ## tex
 
 - Type: `boolean`

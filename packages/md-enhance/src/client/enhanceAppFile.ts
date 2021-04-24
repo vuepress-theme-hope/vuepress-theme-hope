@@ -1,4 +1,5 @@
 import FlowChart from "@FlowChart";
+import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
@@ -10,6 +11,11 @@ const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_FOOTNOTE) void import("./styles/footnote.styl");
 
   if (MARKDOWN_ENHANCE_FLOWCHART) Vue.component("FlowChart", FlowChart);
+
+  if (MARKDOWN_ENHANCE_MERMAID) {
+    void import("./styles/mermaid.styl");
+    Vue.component("Mermaid", Mermaid);
+  }
 
   if (MARKDOWN_ENHANCE_PRESENTATION)
     Vue.component("Presentation", Presentation);

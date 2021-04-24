@@ -68,6 +68,13 @@ icon: config
 
 是否启用标记格式支持。
 
+## mermaid
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+
 ## tex
 
 - 类型: `boolean`

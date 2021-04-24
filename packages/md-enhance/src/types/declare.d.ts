@@ -788,6 +788,12 @@ declare module "@FlowChart" {
   export default vue;
 }
 
+declare module "@Mermaid" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 declare module "@Presentation" {
   import vue from "vue";
 

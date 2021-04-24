@@ -64,6 +64,7 @@ module.exports = config({
             "footnote",
             "mark",
             "flowchart",
+            "mermaid",
             "tex",
             "demo",
             {
@@ -101,6 +102,7 @@ module.exports = config({
                 "footnote",
                 "mark",
                 "flowchart",
+                "mermaid",
                 "tex",
                 "demo",
                 {

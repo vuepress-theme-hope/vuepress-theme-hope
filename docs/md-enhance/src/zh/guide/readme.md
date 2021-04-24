@@ -90,6 +90,27 @@ cond(no)->e
 
 - [查看详情](flowchart.md)
 
+### Mermaid
+
+```mermaid
+flowchart TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+    one --> two
+    three --> two
+    two --> c2
+```
+
+- [查看详情](mermaid.md)
+
 ### Tex 语法
 
 $$

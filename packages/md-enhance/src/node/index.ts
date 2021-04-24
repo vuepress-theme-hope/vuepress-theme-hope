@@ -6,6 +6,7 @@ import flowchart from "./markdown-it/flowchart";
 import footnote from "./markdown-it/footnote";
 import katex from "./markdown-it/katex";
 import mark from "./markdown-it/mark";
+import mermaid from "./markdown-it/mermaid";
 import presentation from "./markdown-it/presentation";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
@@ -26,8 +27,10 @@ export = (
     markdownOption.enableAll || markdownOption.flowchart || false;
   const footnoteEnable =
     markdownOption.enableAll || markdownOption.footnote || false;
+  const mermaidEnable =
+    markdownOption.enableAll || Boolean(markdownOption.mermaid) || false;
   const presentationEnable =
-    markdownOption.enableAll || markdownOption.presentation || false;
+    markdownOption.enableAll || Boolean(markdownOption.presentation) || false;
   const texEnable = markdownOption.enableAll || markdownOption.tex || false;
 
   const revealPlugins =
@@ -43,6 +46,9 @@ export = (
       "@FlowChart": flowchartEnable
         ? resolve(__dirname, "../client/FlowChart.vue")
         : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+      "@Mermaid": mermaidEnable
+        ? resolve(__dirname, "../client/Mermaid.js")
+        : "@mr-hope/vuepress-shared/lib/esm/noopModule",
       "@Presentation": presentationEnable
         ? resolve(__dirname, "../client/Presentation.vue")
         : "@mr-hope/vuepress-shared/lib/esm/noopModule",
@@ -52,6 +58,7 @@ export = (
       MARKDOWN_ENHANCE_ALIGN: alignEnable,
       MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
+      MARKDOWN_ENHANCE_MERMAID: mermaidEnable,
       MARKDOWN_ENHANCE_PRESENTATION: presentationEnable,
       MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {
@@ -60,16 +67,20 @@ export = (
           ? {}
           : markdownOption.demo),
       },
-      REVEAL_PLUGIN_HIGHLIGHT: revealPlugins.includes("highlight"),
-      REVEAL_PLUGIN_MATH: revealPlugins.includes("math"),
-      REVEAL_PLUGIN_NOTES: revealPlugins.includes("notes"),
-      REVEAL_PLUGIN_SEARCH: revealPlugins.includes("search"),
-      REVEAL_PLUGIN_ZOOM: revealPlugins.includes("zoom"),
+      MERMAID_OPTIONS:
+        typeof markdownOption.mermaid === "object"
+          ? markdownOption.mermaid
+          : {},
       REVEAL_CONFIG:
         typeof markdownOption.presentation === "object" &&
         typeof markdownOption.presentation.revealConfig === "object"
           ? markdownOption.presentation.revealConfig
           : {},
+      REVEAL_PLUGIN_HIGHLIGHT: revealPlugins.includes("highlight"),
+      REVEAL_PLUGIN_MATH: revealPlugins.includes("math"),
+      REVEAL_PLUGIN_NOTES: revealPlugins.includes("notes"),
+      REVEAL_PLUGIN_SEARCH: revealPlugins.includes("search"),
+      REVEAL_PLUGIN_ZOOM: revealPlugins.includes("zoom"),
     }),
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
@@ -83,13 +94,12 @@ export = (
         md.plugin("sup").use(sup);
       if (markdownOption.sub || markdownOption.enableAll)
         md.plugin("sub").use(sub);
-      if (markdownOption.footnote || markdownOption.enableAll)
-        md.plugin("footnote").use(footnote);
+      if (footnoteEnable) md.plugin("footnote").use(footnote);
+      if (flowchartEnable) md.plugin("flowchart").use(flowchart);
       if (markdownOption.mark || markdownOption.enableAll)
         md.plugin("mark").use(mark);
-      if (markdownOption.flowchart || markdownOption.enableAll)
-        md.plugin("flowchart").use(flowchart);
-      if (markdownOption.tex || markdownOption.enableAll)
+      if (mermaidEnable) md.plugin("mermaid").use(mermaid);
+      if (texEnable)
         md.plugin("katex").use(katex, [
           {
             macros: {
@@ -100,8 +110,7 @@ export = (
             },
           },
         ]);
-      if (markdownOption.presentation || markdownOption.enableAll)
-        md.plugin("presentation").use(presentation);
+      if (presentationEnable) md.plugin("presentation").use(presentation);
     },
 
     plugins: pluginConfig(markdownOption, context),

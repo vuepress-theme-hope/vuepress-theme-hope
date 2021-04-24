@@ -92,6 +92,27 @@ cond(no)->e
 
 - [View Detail](flowchart.md)
 
+### Mermaid
+
+```mermaid
+flowchart TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+    one --> two
+    three --> two
+    two --> c2
+```
+
+- [View Detail](mermaid.md)
+
 ### Tex
 
 $$
