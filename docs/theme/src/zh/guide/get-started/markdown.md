@@ -64,6 +64,13 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 - [查看详情](../markdown/mark.md)
 
+### 任务列表
+
+- [x] 计划 1
+- [ ] 计划 2
+
+- [查看详情](../markdown/tasklist.md)
+
 ### 流程图
 
 ```flow
@@ -76,6 +83,18 @@ cond(no)->e
 ```
 
 - [查看详情](../markdown/flowchart.md)
+
+## Mermaid
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+- [查看详情](../markdown/mermaid.md)
 
 ### Tex 语法
 

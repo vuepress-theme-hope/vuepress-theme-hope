@@ -77,6 +77,13 @@ module.exports = {
 
 - [查看详情](mark.md)
 
+### 任务列表
+
+- [x] 计划 1
+- [ ] 计划 2
+
+- [查看详情](tasklist.md)
+
 ### 流程图
 
 ```flow
@@ -90,7 +97,7 @@ cond(no)->e
 
 - [查看详情](flowchart.md)
 
-### Mermaid
+### Mermaid 图表
 
 ```mermaid
 flowchart TB

@@ -6,6 +6,7 @@ title: Blog Home
 heroImage: /logo.svg
 heroText: the name of your blog
 tagline: You can put your slogan here
+heroFullScreen: true
 project:
   - type: project
     name: project name

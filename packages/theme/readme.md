@@ -36,6 +36,8 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - Custom alignment
 - Flow chart
 - Mark
+- Diagram
+- Task list
 - Subsript and Supercript
 - Code Demo
 - Presentation
@@ -138,6 +140,8 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - 自定义对齐
 - 流程图
 - 标记
+- 图表
+- 任务列表
 - 上下角标
 - 代码演示
 - 幻灯片

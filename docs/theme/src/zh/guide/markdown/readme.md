@@ -29,7 +29,11 @@ tags:
 
 - [标记](mark.md)
 
+- [任务列表](tasklist.md)
+
 - [流程图](flowchart.md)
+
+- [Mermaid 图标](mermaid.md)
 
 - [Tex 语法](tex.md)
 

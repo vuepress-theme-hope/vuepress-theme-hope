@@ -34,11 +34,11 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - If you are a literature lover and want to place some essays, the theme provides [Custom Alignment](../markdown/align.md) and [footnote](../markdown/footnote.md).
 
-- To store some knowledge notes, the theme provides [Mark](../markdown/mark.md) and [Tex](../markdown/tex.md) support.
+- To store some knowledge notes, the theme provides [Mark](../markdown/mark.md), [Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
 
 - If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, code group component `<CodeGroup />` and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md) function, which is convenient for you to show your own Vue, React components or other demos.
 
-- If you are providing product documentation and presentation, the theme provides [slide](../markdown/presentation.md) and [flowchart](../markdown/flowchart.md) functions.
+- If you are providing product documentation and presentation, the theme provides [slide](../markdown/presentation.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
 
 In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 

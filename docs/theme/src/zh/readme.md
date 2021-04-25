@@ -15,7 +15,7 @@ action:
 
 features:
   - title: Markdown 增强 🧰
-    details: 新增文字对齐、上下角标、脚注、标记、数学公式、流程图与幻灯片支持
+    details: 新增文字对齐、上下角标、脚注、标记、任务列表、数学公式、流程图、图表与幻灯片支持
     link: /zh/guide/markdown/
 
   - title: 浏览量与评论 💬

@@ -106,6 +106,22 @@ You can mark ==important words== .
 
 - [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/mark/)
 
+### Tasklist
+
+- [x] Plan A
+- [ ] Plan B
+
+::: details Code
+
+```md
+- [x] Plan A
+- [ ] Plan B
+```
+
+:::
+
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/tasklist/)
+
 ### Flowchart
 
 ```flow

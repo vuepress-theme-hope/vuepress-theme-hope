@@ -66,6 +66,13 @@ You can mark ==important words== .
 
 - [View Detail](../markdown/mark.md)
 
+### Tasklist
+
+- [x] Plan A
+- [ ] Plan B
+
+- [View Detail](../markdown/tasklist.md)
+
 ### Flowchart
 
 ```flow
@@ -78,6 +85,18 @@ cond(no)->e
 ```
 
 - [View Detail](../markdown/flowchart.md)
+
+## Mermaid
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+- [View Detail](../markdown/mermaid.md)
 
 ### Tex
 

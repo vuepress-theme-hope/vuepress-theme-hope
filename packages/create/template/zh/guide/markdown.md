@@ -106,6 +106,22 @@ module.exports = {
 
 - [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/mark/)
 
+### 任务列表
+
+- [x] 计划 1
+- [ ] 计划 2
+
+::: details Code
+
+```md
+- [x] 计划 1
+- [ ] 计划 2
+```
+
+:::
+
+- [点击查看](https://vuepress-theme-hope.github.io/guide/markdown/tasklist/)
+
 ### 流程图
 
 ```flow
@@ -133,6 +149,32 @@ cond(no)->e
 :::
 
 - [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/flowchart/)
+
+## Mermaid
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+::: details 代码
+
+````md
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+````
+
+:::
+
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/mermaid/)
 
 ### Tex 语法
 
