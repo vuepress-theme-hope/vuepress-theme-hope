@@ -138,6 +138,14 @@ export type MarkdownEnhanceOptions = Partial<{
    */
   mark: boolean;
   /**
+   * 是否启用任务里表支持
+   *
+   * Whether to enable tastlist format support
+   *
+   * @default false
+   */
+  tasklist: boolean;
+  /**
    * 是否启用 TeX 语法支持
    *
    * Whether to enable TeX syntax support
@@ -194,6 +202,7 @@ declare global {
   const MARKDOWN_ENHANCE_FOOTNOTE: boolean;
   const MARKDOWN_ENHANCE_MERMAID: boolean;
   const MARKDOWN_ENHANCE_PRESENTATION: boolean;
+  const MARKDOWN_ENHANCE_TASKLIST: boolean;
   const MARKDOWN_ENHANCE_TEX: boolean;
   const MERMAID_OPTIONS: Mermaid.mermaidAPI.Config;
   const REVEAL_CONFIG: Partial<RevealOptions>;

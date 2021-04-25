@@ -64,8 +64,6 @@ const superscript = (state: StateInline, silent?: boolean): boolean => {
   return true;
 };
 
-const sup = (md: MarkdownIt): void => {
+export default (md: MarkdownIt): void => {
   md.inline.ruler.after("emphasis", "sup", superscript);
 };
-
-export default sup;

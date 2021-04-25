@@ -68,6 +68,13 @@ icon: config
 
 是否启用标记格式支持。
 
+## tasklist
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用任务列表格式支持。
+
 ## mermaid
 
 - 类型: `boolean`

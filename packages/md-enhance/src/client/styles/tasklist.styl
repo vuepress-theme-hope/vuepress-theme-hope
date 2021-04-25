@@ -1,0 +1,41 @@
+input[type=checkbox].task-list-item-checkbox
+  cursor pointer
+  position relative
+
+  &::after
+    position absolute
+    display inline-block
+    visibility visible
+    content ' '
+    top 0
+    box-sizing border-box
+    width 14px
+    height 14px
+    padding-left 0px
+    border 1px solid #ddd
+    border-radius 2px
+    background-color #fff
+    text-align center
+
+    .theme-dark &
+      border-color #666
+      background-color #333
+
+  &:checked
+    &::after
+      content ''
+      background-color var(--accent-color)
+      border-color var(--accent-color)
+      background-color var(--accent-color)
+
+    &::before
+      content ''
+      position absolute
+      top 1px
+      left 5px
+      width 3px
+      height 8px
+      border solid var(--white)
+      border-width 0 2px 2px 0
+      transform rotate(45deg)
+      z-index 1

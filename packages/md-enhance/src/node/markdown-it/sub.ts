@@ -62,8 +62,6 @@ const subscript = (state: StateInline, silent?: boolean): boolean => {
   return true;
 };
 
-const sub = (md: MarkdownIt): void => {
+export default (md: MarkdownIt): void => {
   md.inline.ruler.after("emphasis", "sub", subscript);
 };
-
-export default sub;

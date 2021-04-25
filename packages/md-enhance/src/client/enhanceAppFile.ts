@@ -20,6 +20,8 @@ const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_PRESENTATION)
     Vue.component("Presentation", Presentation);
 
+  if (MARKDOWN_ENHANCE_TASKLIST) void import("./styles/tasklist.styl");
+
   if (MARKDOWN_ENHANCE_TEX) {
     void import("./styles/tex.styl");
     void import("katex/dist/katex.min.css");

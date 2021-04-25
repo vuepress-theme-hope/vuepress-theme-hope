@@ -68,6 +68,13 @@ Whether to enable footnote format support.
 
 Whether to enable mark support.
 
+## tasklist
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable tasklist format support.
+
 ## mermaid
 
 - Type: `boolean`

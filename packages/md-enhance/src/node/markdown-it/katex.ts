@@ -94,6 +94,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
 
   // Check for valid closing delimiter
   res = isValidDelim(state, match);
+
   if (!res.canClose) {
     if (!silent) state.pending += "$";
 
@@ -108,6 +109,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
   }
 
   state.pos = match + 1;
+
   return true;
 };
 

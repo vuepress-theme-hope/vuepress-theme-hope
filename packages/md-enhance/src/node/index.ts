@@ -10,6 +10,7 @@ import mermaid from "./markdown-it/mermaid";
 import presentation from "./markdown-it/presentation";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
+import tasklist from "./markdown-it/tasklist";
 import { pluginConfig } from "./pluginConfig";
 
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
@@ -27,6 +28,8 @@ export = (
     markdownOption.enableAll || markdownOption.flowchart || false;
   const footnoteEnable =
     markdownOption.enableAll || markdownOption.footnote || false;
+  const tasklistEnable =
+    markdownOption.enableAll || markdownOption.tasklist || false;
   const mermaidEnable =
     markdownOption.enableAll || Boolean(markdownOption.mermaid) || false;
   const presentationEnable =
@@ -60,6 +63,7 @@ export = (
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
       MARKDOWN_ENHANCE_MERMAID: mermaidEnable,
       MARKDOWN_ENHANCE_PRESENTATION: presentationEnable,
+      MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
       MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {
         ...codeDemoDefaultSetting,
@@ -98,6 +102,7 @@ export = (
       if (flowchartEnable) md.plugin("flowchart").use(flowchart);
       if (markdownOption.mark || markdownOption.enableAll)
         md.plugin("mark").use(mark);
+      if (tasklistEnable) md.plugin("tasklist").use(tasklist);
       if (mermaidEnable) md.plugin("mermaid").use(mermaid);
       if (texEnable)
         md.plugin("katex").use(katex, [

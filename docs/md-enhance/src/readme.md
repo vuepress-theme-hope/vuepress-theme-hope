@@ -30,9 +30,17 @@ features:
     details: Mark words and sentences in markdown
     link: /guide/flowchart/
 
+  - title: Tasklist Support
+    details: Use tasklist in markdown
+    link: /guide/tasklist/
+
   - title: Flowchart Support
     details: Create your flowchart in markdown
     link: /guide/flowchart/
+
+  - title: Mermaid Support
+    details: Add mermaid diagram in markdown
+    link: /guide/mermaid/
 
   - title: Tex Support
     details: Markdown now have Tex Support so you can write your formula

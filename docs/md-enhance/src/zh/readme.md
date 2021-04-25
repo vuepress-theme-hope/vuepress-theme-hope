@@ -30,9 +30,17 @@ features:
     details: 让你在 Markdown 中对词句进行标记
     link: /zh/guide/mark/
 
+  - title: 任务列表
+    details: 在 Markdown 中使用任务列表
+    link: /zh/guide/tasklist/
+
   - title: 流程图支持
     details: 可以在 Markdown 中直接写出流程图
     link: /zh/guide/flowchart/
+
+  - title: Mermaid 支持
+    details: 可以在 Markdown 中添加 Mermaid 图例
+    link: /zh/guide/mermaid/
 
   - title: Tex 支持
     details: Markdown 现在也可以支持 Tex 语法以显示公式
