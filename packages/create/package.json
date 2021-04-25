@@ -32,7 +32,7 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "1.15.0",
     "@types/inquirer": "^7.3.1",
-    "cac": "^6.7.2",
+    "cac": "^6.7.3",
     "execa": "^5.0.0",
     "inquirer": "^8.0.0"
   }

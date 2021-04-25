@@ -53,9 +53,9 @@
     "@types/mermaid": "^8.2.5",
     "@types/react": "^17.0.3",
     "flowchart.js": "^1.15.0",
-    "katex": "^0.13.2",
+    "katex": "^0.13.3",
     "lodash.debounce": "^4.0.8",
-    "mermaid": "^8.9.2",
+    "mermaid": "^8.9.3",
     "react": "^17.0.2",
     "reveal.js": "^4.1.0",
     "vuepress-plugin-container": "^2.1.5"
