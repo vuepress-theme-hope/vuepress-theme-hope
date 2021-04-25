@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-reading-time",
-  "version": "1.14.5",
+  "version": "1.15.0",
   "description": "Reading time plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -31,7 +31,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-shared": "1.14.4",
+    "@mr-hope/vuepress-shared": "1.15.0",
     "@mr-hope/vuepress-types": "1.14.5"
   },
   "publishConfig": {
