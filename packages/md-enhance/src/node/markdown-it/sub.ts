@@ -5,13 +5,13 @@ import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
-const subscript = (state: StateInline, silent?: boolean): boolean => {
+const subscriptRender = (state: StateInline, silent?: boolean): boolean => {
   let found;
   let token;
   const max = state.posMax;
   const start = state.pos;
 
-  if (state.src.charCodeAt(start) !== 0x7e /* ~ */) return false;
+  if (state.src.charAt(start) !== "~") return false;
 
   if (silent) return false; // don’t run any pairs in validation mode
   if (start + 2 >= max) return false;
@@ -19,7 +19,7 @@ const subscript = (state: StateInline, silent?: boolean): boolean => {
   state.pos = start + 1;
 
   while (state.pos < max) {
-    if (state.src.charCodeAt(state.pos) === 0x7e /* ~ */) {
+    if (state.src.charAt(state.pos) === "~") {
       found = true;
       break;
     }
@@ -63,5 +63,5 @@ const subscript = (state: StateInline, silent?: boolean): boolean => {
 };
 
 export default (md: MarkdownIt): void => {
-  md.inline.ruler.after("emphasis", "sub", subscript);
+  md.inline.ruler.after("emphasis", "sub", subscriptRender);
 };

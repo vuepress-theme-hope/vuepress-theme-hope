@@ -7,13 +7,13 @@ import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 // same as UNESCAPE_MD_RE plus a space
 const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
-const superscript = (state: StateInline, silent?: boolean): boolean => {
+const superscriptRender = (state: StateInline, silent?: boolean): boolean => {
   let found;
   let token;
   const max = state.posMax;
   const start = state.pos;
 
-  if (state.src.charCodeAt(start) !== 0x5e /* ^ */) return false;
+  if (state.src.charAt(start) !== "^") return false;
 
   if (silent) return false; // don’t run any pairs in validation mode
   if (start + 2 >= max) return false;
@@ -21,7 +21,7 @@ const superscript = (state: StateInline, silent?: boolean): boolean => {
   state.pos = start + 1;
 
   while (state.pos < max) {
-    if (state.src.charCodeAt(state.pos) === 0x5e /* ^ */) {
+    if (state.src.charAt(state.pos) === "^") {
       found = true;
       break;
     }
@@ -65,5 +65,5 @@ const superscript = (state: StateInline, silent?: boolean): boolean => {
 };
 
 export default (md: MarkdownIt): void => {
-  md.inline.ruler.after("emphasis", "sup", superscript);
+  md.inline.ruler.after("emphasis", "sup", superscriptRender);
 };
