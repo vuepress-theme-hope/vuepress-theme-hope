@@ -31,6 +31,7 @@ describe("Test resolveTheme function", () => {
     ],
 
     locales: {
+      "/": { lang: "en-US" },
       "/zh/": {
         title: "vuepress-theme-hope",
         description: "一个具有强大功能的 vuepress 主题✨",
