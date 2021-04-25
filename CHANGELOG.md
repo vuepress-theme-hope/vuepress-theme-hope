@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.15.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/1.14.5...v1.15.0) (2021-04-25)
+
+### Features
+
+- **md-enhance:** add mermaid support ([b1e1803](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1e1803537e4541ceedf3540c43ff213497a9473))
+- **md-enhance:** add tasklist ([84b5b4f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84b5b4f608e98a9a188fa35a272189369f88f975))
+- **shared:** add darkmode watch ([74f5620](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/74f5620b2deb24c2aa40eff2ce6f98c6e0c7bfb6))
+
 ## [1.14.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.14.4...v1.14.5) (2021-04-22)
 
 ### Bug Fixes
