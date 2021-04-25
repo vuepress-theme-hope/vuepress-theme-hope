@@ -18,7 +18,7 @@ icon: valine
 
 填入 LeanCloud 中应用的 APP Key
 
-## commet
+## comment
 
 - 类型: `boolean`
 - 默认值: `true`

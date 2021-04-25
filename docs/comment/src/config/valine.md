@@ -18,7 +18,7 @@ Fill in the application appId in LeanCloud
 
 Fill in the application appKey in LeanCloud
 
-## commet
+## comment
 
 - Type: `boolean`
 - Default: `true`
