@@ -85,10 +85,10 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 ### mdEnhance.tex
 
-- 类型: `boolean`
+- 类型: `KatexOptions | boolean`
 - 默认值: `false`
 
-是否启用 TeX 语法支持
+是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
 
 ### mdEnhance.flowchart
 

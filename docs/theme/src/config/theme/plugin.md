@@ -87,10 +87,10 @@ Whether to enable mark format support
 
 ### mdEnhance.tex
 
-- Type: `boolean`
+- Type: `KatexOptions | boolean`
 - Default: `false`
 
-Whether to enable TeX syntax support
+Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
 
 ### mdEnhance.flowchart
 

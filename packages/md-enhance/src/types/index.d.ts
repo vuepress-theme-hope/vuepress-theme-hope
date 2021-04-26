@@ -1,6 +1,7 @@
 import { Mermaid } from "mermaid";
 import type { RevealOptions } from "reveal.js";
 import "./declare";
+import { KatexOptions } from "katex";
 
 export interface CodeDemoGlobalOptions {
   /**
@@ -152,7 +153,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  tex: boolean;
+  tex: KatexOptions | boolean;
   /**
    * 是否启用 flowchart 流程图支持
    *

@@ -84,10 +84,10 @@ Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
 ## tex
 
-- Type: `boolean`
+- Type: `KatexOptions | boolean`
 - Default: `false`
 
-Whether to enable $\TeX$ syntax support.
+Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
 
 ## flowchart
 

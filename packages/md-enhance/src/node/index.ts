@@ -34,7 +34,8 @@ export = (
     markdownOption.enableAll || Boolean(markdownOption.mermaid) || false;
   const presentationEnable =
     markdownOption.enableAll || Boolean(markdownOption.presentation) || false;
-  const texEnable = markdownOption.enableAll || markdownOption.tex || false;
+  const texEnable =
+    markdownOption.enableAll || Boolean(markdownOption.tex) || false;
 
   const revealPlugins =
     typeof markdownOption.presentation === "object" &&
@@ -113,6 +114,9 @@ export = (
               "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
               "\\idotsint": "\\int\\!\\cdots\\!\\int",
             },
+            ...(typeof markdownOption.tex === "object"
+              ? markdownOption.tex
+              : {}),
           },
         ]);
       if (presentationEnable) md.plugin("presentation").use(presentation);

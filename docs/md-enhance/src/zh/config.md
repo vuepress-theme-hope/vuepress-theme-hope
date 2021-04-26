@@ -84,10 +84,10 @@ icon: config
 
 ## tex
 
-- 类型: `boolean`
+- 类型: `KatexOptions | boolean`
 - 默认值: `false`
 
-是否启用 $\TeX$ 语法支持。
+是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
 
 ## flowchart
 
