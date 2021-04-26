@@ -178,7 +178,7 @@ const footnoteDef = (
   const label = state.src.slice(start + 2, pos - 2);
   state.env.footnotes.refs[`:${label}`] = -1;
 
-  token = new state.Token("footnoteReferenceOpen", "", 1);
+  token = new Token("footnoteReferenceOpen", "", 1);
   token.meta = { label };
   token.level = state.level++;
   state.tokens.push(token);
@@ -226,7 +226,7 @@ const footnoteDef = (
   state.sCount[startLine] = oldSCount;
   state.bMarks[startLine] = oldBMark;
 
-  token = new state.Token("footnoteReferenceClose", "", -1);
+  token = new Token("footnoteReferenceClose", "", -1);
   token.level = --state.level;
   state.tokens.push(token);
 
@@ -375,27 +375,27 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
   if (!state.env.footnotes.list) return false;
   const { list } = state.env.footnotes;
 
-  token = new state.Token("footnoteBlockOpen", "", 1);
+  token = new Token("footnoteBlockOpen", "", 1);
   state.tokens.push(token);
 
   for (let i = 0, { length } = list; i < length; i++) {
-    token = new state.Token("footnoteOpen", "", 1);
+    token = new Token("footnoteOpen", "", 1);
     token.meta = { id: i, label: list[i].label };
     state.tokens.push(token);
 
     if (list[i].tokens) {
       tokens = [];
 
-      token = new state.Token("paragraph_open", "p", 1);
+      token = new Token("paragraph_open", "p", 1);
       token.block = true;
       tokens.push(token);
 
-      token = new state.Token("inline", "", 0);
+      token = new Token("inline", "", 0);
       token.children = list[i].tokens as Token[];
       token.content = list[i].content as string;
       tokens.push(token);
 
-      token = new state.Token("paragraph_close", "p", -1);
+      token = new Token("paragraph_close", "p", -1);
       token.block = true;
       tokens.push(token);
     } else if (list[i].label) tokens = refTokens[`:${list[i].label as string}`];
@@ -411,18 +411,18 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
       j < (Number(list[i].count) > 0 ? (list[i].count as number) : 1);
       j++
     ) {
-      token = new state.Token("footnoteAnchor", "", 0);
+      token = new Token("footnoteAnchor", "", 0);
       token.meta = { id: i, subId: j, label: list[i].label };
       state.tokens.push(token);
     }
 
     if (lastParagraph) state.tokens.push(lastParagraph);
 
-    token = new state.Token("footnoteClose", "", -1);
+    token = new Token("footnoteClose", "", -1);
     state.tokens.push(token);
   }
 
-  token = new state.Token("footnoteBlockClose", "", -1);
+  token = new Token("footnoteBlockClose", "", -1);
   state.tokens.push(token);
 
   return true;
