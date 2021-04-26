@@ -83,12 +83,43 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 是否启用标记格式支持
 
+### mdEnhance.tasklist
+
+- 类型: `TaskListOptions | boolean`
+- 默认值: `false`
+
+是否启用任务列表格式支持。你可以传入一个对象作为任务列表的配置选项。
+
+```ts
+interface TaskListOptions {
+  /**
+   * 是否使用 `<label>` 来包裹文字
+   *
+   * @default true
+   */
+  label?: boolean;
+  /**
+   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean;
+}
+```
+
 ### mdEnhance.tex
 
 - 类型: `KatexOptions | boolean`
 - 默认值: `false`
 
 是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+
+## mdEnhance.mermaid
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
 
 ### mdEnhance.flowchart
 

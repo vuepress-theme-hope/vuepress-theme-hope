@@ -85,12 +85,43 @@ Whether to enable footnote format support
 
 Whether to enable mark format support
 
+### mdEnhance.tasklist
+
+- Type: `TaskListOptions | boolean`
+- Default: `false`
+
+Whether to enable tasklist format support. You can pass an object to config task list.
+
+```ts
+interface TaskListOptions {
+  /**
+   * Whether use `<label>` to wrap text
+   *
+   * @default true
+   */
+  label?: boolean;
+  /**
+   * Whether place `<label>` after `<input>` or wrap `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean;
+}
+```
+
 ### mdEnhance.tex
 
 - Type: `KatexOptions | boolean`
 - Default: `false`
 
 Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
+
+### mdEnhance.mermaid
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
 ### mdEnhance.flowchart
 

@@ -1,7 +1,7 @@
 import { Mermaid } from "mermaid";
+import type { KatexOptions } from "katex";
 import type { RevealOptions } from "reveal.js";
 import "./declare";
-import { KatexOptions } from "katex";
 
 export interface CodeDemoGlobalOptions {
   /**
@@ -88,6 +88,25 @@ export interface PresentationOptions {
   revealConfig?: Partial<RevealOptions>;
 }
 
+export interface TaskListOptions {
+  /**
+   * Whether use `<label>` to wrap text
+   *
+   * 是否使用 `<label>` 来包裹文字
+   *
+   * @default true
+   */
+  label?: boolean;
+  /**
+   * Whether place `<label>` after `<input>` or wrap `<input>`
+   *
+   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean;
+}
+
 /** md-enhance plugin configuration */
 export type MarkdownEnhanceOptions = Partial<{
   /**
@@ -145,7 +164,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  tasklist: boolean;
+  tasklist: TaskListOptions | boolean;
   /**
    * 是否启用 TeX 语法支持
    *

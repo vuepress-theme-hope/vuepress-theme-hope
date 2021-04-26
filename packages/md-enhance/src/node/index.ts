@@ -103,7 +103,12 @@ export = (
       if (flowchartEnable) md.plugin("flowchart").use(flowchart);
       if (markdownOption.mark || markdownOption.enableAll)
         md.plugin("mark").use(mark);
-      if (tasklistEnable) md.plugin("tasklist").use(tasklist);
+      if (tasklistEnable)
+        md.plugin("tasklist").use(tasklist, [
+          typeof markdownOption.tasklist === "object"
+            ? markdownOption.tasklist
+            : {},
+        ]);
       if (mermaidEnable) md.plugin("mermaid").use(mermaid);
       if (texEnable)
         md.plugin("katex").use(katex, [

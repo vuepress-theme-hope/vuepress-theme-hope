@@ -26,19 +26,19 @@ Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
-## align
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable custom align.
-
 ## lineNumbers
 
 - Type: `boolean`
 - Default: `true`
 
 Whether to display the line number to the left of each code block.
+
+## align
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable custom align.
 
 ## sup
 
@@ -70,17 +70,27 @@ Whether to enable mark support.
 
 ## tasklist
 
-- Type: `boolean`
+- Type: `TaskListOptions | boolean`
 - Default: `false`
 
-Whether to enable tasklist format support.
+Whether to enable tasklist format support. You can pass an object to config task list.
 
-## mermaid
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
+```ts
+interface TaskListOptions {
+  /**
+   * Whether use `<label>` to wrap text
+   *
+   * @default true
+   */
+  label?: boolean;
+  /**
+   * Whether place `<label>` after `<input>` or wrap `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean;
+}
+```
 
 ## tex
 
@@ -88,6 +98,13 @@ Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 - Default: `false`
 
 Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
+
+## mermaid
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
 ## flowchart
 

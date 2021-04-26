@@ -26,19 +26,19 @@ icon: config
 
 :::
 
-## align
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否启用自定义对齐格式支持。
-
 ## lineNumbers
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否在每个代码块的左侧显示行号。
+
+## align
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用自定义对齐格式支持。
 
 ## sup
 
@@ -70,17 +70,27 @@ icon: config
 
 ## tasklist
 
-- 类型: `boolean`
+- 类型: `TaskListOptions | boolean`
 - 默认值: `false`
 
-是否启用任务列表格式支持。
+是否启用任务列表格式支持。你可以传入一个对象作为任务列表的配置选项。
 
-## mermaid
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+```ts
+interface TaskListOptions {
+  /**
+   * 是否使用 `<label>` 来包裹文字
+   *
+   * @default true
+   */
+  label?: boolean;
+  /**
+   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean;
+}
+```
 
 ## tex
 
@@ -88,6 +98,13 @@ icon: config
 - 默认值: `false`
 
 是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+
+## mermaid
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
 
 ## flowchart
 
