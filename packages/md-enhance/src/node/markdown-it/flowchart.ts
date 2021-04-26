@@ -3,19 +3,20 @@ import hash = require("hash-sum");
 import MarkdownIt = require("markdown-it");
 import Token = require("markdown-it/lib/token");
 
+const flowchartRender = (tokens: Token[], idx: number): string => {
+  const token = tokens[idx];
+  const key = `flowchart_${hash(idx)}`;
+  const { content, info } = token;
+
+  return `<FlowChart id="${key}" data-code="${encodeURIComponent(
+    content
+  )}" preset="${info.trim().split(":")[1] || "vue"}"></FlowChart>`;
+};
+
 const flowchart = (md: MarkdownIt): void => {
-  const flowchartRender = (tokens: Token[], idx: number): string => {
-    const token = tokens[idx];
-    const key = `flowchart_${hash(idx)}`;
-    const { content, info } = token;
-
-    return `<FlowChart id="${key}" data-code="${encodeURIComponent(
-      content
-    )}" preset="${info.trim().split(":")[1] || "vue"}"></FlowChart>`;
-  };
-
   // Handle ```flow and ```flowchart blocks
   const fence = md.renderer.rules.fence;
+
   md.renderer.rules.fence = (...args): string => {
     const [tokens, idx] = args;
     const { info } = tokens[idx];

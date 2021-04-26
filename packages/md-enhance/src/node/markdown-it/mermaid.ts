@@ -3,17 +3,17 @@ import hash = require("hash-sum");
 import MarkdownIt = require("markdown-it");
 import Token = require("markdown-it/lib/token");
 
+const mermaidRender = (tokens: Token[], idx: number): string => {
+  const token = tokens[idx];
+  const key = `mermaid${hash(idx)}`;
+  const { content } = token;
+
+  return `<Mermaid id="${key}" data-code="${encodeURIComponent(
+    content
+  )}"></Mermaid>`;
+};
+
 const mermaid = (md: MarkdownIt): void => {
-  const mermaidRender = (tokens: Token[], idx: number): string => {
-    const token = tokens[idx];
-    const key = `mermaid${hash(idx)}`;
-    const { content } = token;
-
-    return `<Mermaid id="${key}" data-code="${encodeURIComponent(
-      content
-    )}"></Mermaid>`;
-  };
-
   // Handle ```mermaid blocks
   const fence = md.renderer.rules.fence;
 

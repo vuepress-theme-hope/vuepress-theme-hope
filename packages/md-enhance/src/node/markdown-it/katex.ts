@@ -13,42 +13,21 @@ const isValidDelim = (
   state: StateInline,
   pos: number
 ): { canOpen: boolean; canClose: boolean } => {
-  let canOpen = true;
-  let canClose = true;
-  const max = state.posMax;
-  const prevChar = pos > 0 ? state.src.charCodeAt(pos - 1) : -1;
-  const nextChar = pos + 1 <= max ? state.src.charCodeAt(pos + 1) : -1;
-
-  //   const prevChar = pos > 0 ? state.src.charAt(pos - 1) : -1;
-  //   const nextChar = pos + 1 <= state.posMax ? state.src.charAt(pos + 1) : -1;
-
-  //   /*
-  //    * Check non-whitespace conditions for opening and closing, and
-  //    * check that closing delimeter isn’t followed by a number
-  //    */
-  //   return {
-  //     canOpen: nextChar !== " " && nextChar !== "\t",
-  //     canClose:
-  //       prevChar !== " " && prevChar !== "\t" && Number.isNaN(Number(nextChar)),
-  //   };
-
-  /*
-   * Check non-whitespace conditions for opening and closing, and
-   * check that closing delimeter isn’t followed by a number
-   */
-  if (
-    prevChar === 0x20 /* " " */ ||
-    prevChar === 0x09 /* \t */ ||
-    (nextChar >= 0x30 /* "0" */ && nextChar <= 0x39) /* "9" */
-  )
-    canClose = false;
-
-  if (nextChar === 0x20 /* " " */ || nextChar === 0x09 /* \t */)
-    canOpen = false;
+  const prevChar = pos > 0 ? state.src.charAt(pos - 1) : "";
+  const nextChar = pos + 1 <= state.posMax ? state.src.charAt(pos + 1) : "";
 
   return {
-    canOpen,
-    canClose,
+    canOpen: nextChar !== " " && nextChar !== "\t",
+
+    /*
+     * Check non-whitespace conditions for opening and closing, and
+     * check that closing delimeter isn’t followed by a number
+     */
+    canClose: !(
+      prevChar === " " ||
+      prevChar === "\t" ||
+      /[0-9]/u.exec(nextChar)
+    ),
   };
 };
 
