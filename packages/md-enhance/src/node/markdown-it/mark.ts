@@ -8,13 +8,10 @@ import StateInline = require("markdown-it/lib/rules_inline/state_inline");
  */
 const tokenize = (state: StateInline, silent: boolean): boolean => {
   const start = state.pos;
-  const marker = state.src.charCodeAt(start);
+  const marker = state.src.charAt(start);
 
-  if (silent) return false;
+  if (silent || marker !== "=") return false;
 
-  if (marker !== 0x3d /* = */) return false;
-
-  const char = String.fromCharCode(marker);
   const scanned = state.scanDelims(state.pos, true);
   let { length } = scanned;
 
@@ -23,19 +20,19 @@ const tokenize = (state: StateInline, silent: boolean): boolean => {
 
   if (length % 2) {
     token = state.push("text", "", 0);
-    token.content = char;
+    token.content = marker;
     length -= 1;
   }
 
   for (let i = 0; i < length; i += 2) {
     token = state.push("text", "", 0);
-    token.content = `${char}${char}`;
+    token.content = `${marker}${marker}`;
 
     if (scanned.can_open || scanned.can_close)
       state.delimiters.push({
-        marker,
+        marker: 0x3d,
         length: 0, // disable "rule of 3" length checks meant for emphasis
-        jump: i,
+        jump: i / 2,
         token: state.tokens.length - 1,
         end: -1,
         open: scanned.can_open,
@@ -56,19 +53,15 @@ const postProcess = (
   state: StateInline,
   delimiters: StateInline.Delimiter[]
 ): void => {
-  let i;
-  let j;
-  let startDelim;
-  let endDelim;
   let token;
   const loneMarkers = [];
   const max = delimiters.length;
 
-  for (i = 0; i < max; i++) {
-    startDelim = delimiters[i];
+  for (let i = 0; i < max; i++) {
+    const startDelim = delimiters[i];
 
     if (startDelim.marker === 0x3d /* = */ && startDelim.end !== -1) {
-      endDelim = delimiters[startDelim.end];
+      const endDelim = delimiters[startDelim.end];
 
       token = state.tokens[startDelim.token];
       token.type = "mark_open";
@@ -101,8 +94,8 @@ const postProcess = (
    *
    */
   while (loneMarkers.length) {
-    i = loneMarkers.pop() as number;
-    j = i + 1;
+    const i = loneMarkers.pop() as number;
+    let j = i + 1;
 
     while (j < state.tokens.length && state.tokens[j].type === "mark_close")
       j += 1;
