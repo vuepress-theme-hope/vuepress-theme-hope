@@ -4,9 +4,8 @@ import MarkdownIt = require("markdown-it");
 import StateBlock = require("markdown-it/lib/rules_block/state_block");
 
 const OPEN_MARKER = "@slidestart";
-const openChar = OPEN_MARKER.charCodeAt(0);
 const CLOSEMARKER = "@slideend";
-const closeChar = CLOSEMARKER.charCodeAt(0);
+const markChar = "@";
 
 const uml = (
   state: StateBlock,
@@ -24,7 +23,7 @@ const uml = (
    * Check out the first character quickly,
    * this should filter out most of non-uml blocks
    */
-  if (openChar !== state.src.charCodeAt(start)) return false;
+  if (state.src.charAt(start) !== markChar) return false;
 
   // Check out the rest of the marker string
   for (i = 0; i < OPEN_MARKER.length; ++i)
@@ -58,7 +57,7 @@ const uml = (
 
     if (
       // didn’t find the closing fence
-      closeChar === state.src.charCodeAt(start) &&
+      state.src.charAt(start) !== markChar &&
       // closing fence should not be indented with respect of opening fence
       state.sCount[nextLine] <= state.sCount[startLine]
     ) {
@@ -99,9 +98,7 @@ const uml = (
   return true;
 };
 
-export default (
-  md: MarkdownIt & { $dataBlock: Record<string, string> }
-): void => {
+export default (md: MarkdownIt): void => {
   md.block.ruler.before("fence", "presentation", uml, {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
@@ -110,9 +107,9 @@ export default (
     const token = tokens[idx];
     const key = `presentation_${hash(idx)}`;
     const { content, info } = token;
-    md.$dataBlock[key] = content;
-    return `<Presentation id="${key}" key="${key}" :code="$dataBlock.${key}" theme="${
-      info.trim() || "auto"
-    }"></Presentation>`;
+
+    return `<Presentation id="${key}" data-code="${encodeURIComponent(
+      content
+    )}" theme="${info.trim() || "auto"}"></Presentation>`;
   };
 };

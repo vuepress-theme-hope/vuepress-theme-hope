@@ -22,16 +22,20 @@ export default Vue.extend({
 
   props: {
     id: { type: String, required: true },
-    code: { type: String, required: true },
     theme: { type: String as PropType<ThemeType>, default: "auto" },
   },
 
   data: () => ({
     loading: true,
+    code: "",
   }),
 
   mounted(): void {
     this.$el.setAttribute("id", this.id);
+    this.code = decodeURIComponent(
+      (this.$el as HTMLElement).dataset.code || ""
+    );
+
     const revealElement = document.querySelector(`#${this.id}`);
 
     if (revealElement) {
