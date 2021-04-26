@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.15.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.0...v1.15.1) (2021-04-26)
+
+### Features
+
+- **md-enhance:** update flowchart to support ```flowchart and add tests ([cdd3030](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdd3030bbeb0053b4b413b18e65b292c191202a8))
+- **md-enhance:** update tasklist to support options ([d97b76a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d97b76a52aab4426bd8d4e1f85e7a35a00cd4335))
+- **md-enhance:** update tex to support options config ([bbb1055](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bbb1055fef6bd9cdb8fe7ec74fe899830f17c405))
+
+### Performance Improvements
+
+- **md-enhance:** improve footnote performance and add related tests ([5101e55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5101e557d227591f9c4247fa094f8622c2f3df83))
+- **md-enhance:** improve mark and add tests ([e06120d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e06120dc9809293b8b0289e846260f26b06d17db))
+
 ## [1.15.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/1.14.5...v1.15.0) (2021-04-25)
 
 ### Features
