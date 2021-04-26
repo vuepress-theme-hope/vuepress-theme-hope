@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mermaid Shoud not render 1`] = `
+"<p>flowchart TB
+c1--&gt;a2
+subgraph one
+a1--&gt;a2
+end
+subgraph two
+b1--&gt;b2
+end
+subgraph three
+c1--&gt;c2
+end
+one --&gt; two
+three --&gt; two
+two --&gt; c2</p>
+"
+`;
+
+exports[`mermaid Shoud not render 2`] = `
+"<pre><code class=\\"language-md\\">flowchart TB
+    c1--&gt;a2
+    subgraph one
+    a1--&gt;a2
+    end
+    subgraph two
+    b1--&gt;b2
+    end
+    subgraph three
+    c1--&gt;c2
+    end
+    one --&gt; two
+    three --&gt; two
+    two --&gt; c2
+</code></pre>
+"
+`;
+
+exports[`mermaid Should render \`\`\`mermaid 1`] = `"<Mermaid id=\\"mermaid1a96284a\\" data-code=\\"flowchart%20TB%0A%20%20%20%20c1--%3Ea2%0A%20%20%20%20subgraph%20one%0A%20%20%20%20a1--%3Ea2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20two%0A%20%20%20%20b1--%3Eb2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20three%0A%20%20%20%20c1--%3Ec2%0A%20%20%20%20end%0A%20%20%20%20one%20--%3E%20two%0A%20%20%20%20three%20--%3E%20two%0A%20%20%20%20two%20--%3E%20c2%0A\\"></Mermaid>"`;
