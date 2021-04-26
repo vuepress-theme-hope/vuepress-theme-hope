@@ -14,13 +14,14 @@ const flowchart = (md: MarkdownIt): void => {
     )}" preset="${info.trim().split(":")[1] || "vue"}"></FlowChart>`;
   };
 
-  // Handle ```flow blocks
+  // Handle ```flow and ```flowchart blocks
   const fence = md.renderer.rules.fence;
   md.renderer.rules.fence = (...args): string => {
     const [tokens, idx] = args;
     const { info } = tokens[idx];
+    const realInfo = info.trim().split(":")[0];
 
-    if (info.trim().split(":")[0] === "flow")
+    if (realInfo === "flow" || realInfo === "flowchart")
       return flowchartRender(tokens, idx);
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
