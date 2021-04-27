@@ -71,7 +71,7 @@ export default Vue.extend({
             appKey: valineConfig.appKey, // Your appKey
             placeholder:
               valineConfig.placeholder || valineI18n[this.$localePath || "/"],
-            meta: valineConfig.meta || ["nick", "mail", "link"],
+            meta: valineConfig.meta || ["nick", "mail"],
             requiredFields: valineConfig.requiredFields || ["nick"],
             avatar: valineConfig.avatar || "retro",
             visitor: this.visitorDisplay,
