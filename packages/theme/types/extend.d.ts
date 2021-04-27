@@ -64,6 +64,7 @@ declare module "@mr-hope/vuepress-types" {
     mediaLink?: BlogMedia;
     search?: boolean;
     backToTop?: boolean;
+    anchorDisplay?: boolean;
   }
 
   interface I18nConfig extends Partial<HopeThemeLocaleConfigItem> {

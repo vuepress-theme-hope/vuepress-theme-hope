@@ -113,14 +113,14 @@ Whether to add the article to the timeline list.
 - Type: `string`
 - Required: No
 
-Set a password for the current article.
+Password for the current article.
 
 ### image
 
 - Type: `string`
 - Required: No
 
-Set current page’s image，please fill in an absolute path.
+Current page’s image，needs an absolute path.
 
 ### copyright.minLength
 
@@ -251,7 +251,7 @@ For more details, please see [Page → Footer Support](../guide/layout/page.md#f
 - Type: `string | false`
 - Required: No
 
-Set copyright info for current page.
+Copyright info of current page.
 
 ### medialink
 
@@ -301,14 +301,21 @@ The optional values of `MediaType` are as follows:
 - Type: `boolean`
 - Default value: the value configured in the global (global default is `true`)
 
-Whether the current page displays search box.
+Whether display search box on current page
 
 ### backToTop
 
 - Type: `boolean`
 - Default value: Globally configured value (global default is `true`)
 
-Sets whether the current page displays the back to top button
+Whether display the back to top button on current page
+
+### anchorDisplay
+
+- Type: `boolean`
+- Default value: Globally configured value (global default is `true`)
+
+Whether display anchor in desktop mode on current page
 
 ## layout
 

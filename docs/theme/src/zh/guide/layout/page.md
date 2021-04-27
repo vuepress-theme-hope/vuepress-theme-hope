@@ -43,6 +43,8 @@ icon: home
 
 如果你不希望在桌面模式下显示右侧的标题列表，请将 `themeConfig.anchorDisplay` 设置为 `false`。
 
+你也可以在特定页面的 frontmatter 中通过 `anchorDisplay` 来指定它。
+
 ## 贡献者与最后更新时间
 
 详见 [Git 信息插件](../feature/git.md) 章节。

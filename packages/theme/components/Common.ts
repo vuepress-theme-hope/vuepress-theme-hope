@@ -83,7 +83,11 @@ export default class Common extends Mixins(GlobalEncryptMixin) {
   }
 
   private get enableAnchor(): boolean {
-    return this.$themeConfig.anchorDisplay !== false;
+    return (
+      this.$frontmatter.anchorDisplay ||
+      (this.$themeConfig.anchorDisplay !== false &&
+        this.$frontmatter.anchorDisplay !== false)
+    );
   }
 
   /** Get scroll distance */

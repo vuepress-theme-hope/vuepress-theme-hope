@@ -37,11 +37,13 @@ Please see [Page Info Section](../feature/page-info.md)
 
 Please see [Breadcrumb](breadcrumb.md).
 
-## Title list
+## Heading list
 
-In desktop mode, a list of article titles will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
+In desktop mode, a list of article headings will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
 
 If you don’t want to display the title list on the right in desktop mode, please set `themeConfig.anchorDisplay` to `false`.
+
+You can also set it in `Front matter` on specific pages.
 
 ## Contributors and Last Updated Time
 
