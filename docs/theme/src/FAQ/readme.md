@@ -18,13 +18,43 @@ If the issue exists or there is somthing you don’t know how to solve, welcome 
 
    - If you are running into issues, provide related error log (by running `vuepress dev <docs dir> --debug`) and screenshots.
 
+## `warning Overiding existing page xxx`
+
+If you see `warning Overiding existing page xxx` while the dev process is starting up, please check your file structure.
+
+You probably created two file with same path.
+
+E.g.: `a/b.md` and `a/b/readme.md` will both be `/a/b/`
+
+This will cause one page content be lost and it will also cause others issue.
+
+## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
+
+If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
+
+If you only have one language, please set root lang like this way:
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  locales: {
+    "/": {
+      // set language you want
+      lang: "en-US",
+    },
+  },
+});
+```
+
 ## Some page settings are invalid
 
 You can first review the documentation to see if the setting **does not support partial configuration**.
 
 **Support for partial configuration** means that the theme allows the configuration of the page to override the global configuration of the same name (same function), but not all functions meet this setting. For the sake of project compilation speed, some projects will not be loaded during the compilation phase after the global configuration is disabled, and they cannot be enabled locally.
 
-## Code block is abnormal in light mode
+## Code block does not look right in light mode
 
 I guess this is your fault. Please delete the `$codeBgColor` in `.vuepress/styles/palette.styl`. The default value of `vuepress-theme-hope` is light blue, while `@vuepress/theme-default` is dark blue.
 

@@ -14,6 +14,36 @@ category: FAQ
 
 如果问题依然存在，请在 GitHub 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose)，并完整粘贴运行 `vuepress dev <你的文档地址> --debug` 时终端输出的内容，如果你的内容与页面显示相关，请一并附上相应的截图。
 
+## `warning Overiding existing page xxx`
+
+如果在开发过程启动时看到 `warning Overiding existing page xxx`，请检查文件结构。
+
+你很有可能创建了两个具有相同路径的文件。
+
+例如：`a/b.md` 和 `a/b/readme.md` 均会被生成为 `/a/b/`
+
+这将导致其中一页内容丢失，也可能导致其他渲染问题。
+
+## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
+
+如果在开发过程启动时看到 `xxx isn’t assign with a lang, and will return 'en-US' instead.`，请检查你是否为多语言配置的每个语言设置了语言项目。
+
+如果你只有一个语言，请通过此方式设置语言
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  locales: {
+    "/": {
+      // 设置需要的语言
+      lang: "zh-CN",
+    },
+  },
+});
+```
+
 ## 部分页面设置失效
 
 你可以先重新查阅文档，看看该设置是否 **不支持页面配置**。
