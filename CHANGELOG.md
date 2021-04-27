@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.15.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.1...v1.15.2) (2021-04-27)
+
+### Features
+
+- **md-enhance:** add more code blocks for mermaid ([9c8e9f9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9c8e9f91b907163e79c6aa874947a2b2b5e55528))
+- **md-enhance:** update mermaid theme ([fbeb168](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fbeb168d491dd375994f2eeca5e858437f63dbec))
+- **theme:** allow config anchorDisplay per page ([a1d0583](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a1d0583669eead73afc523f743fce22aed27cdd9))
+
 ## [1.15.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.0...v1.15.1) (2021-04-26)
 
 ### Features

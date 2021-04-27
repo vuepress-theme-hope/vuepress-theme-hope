@@ -7,6 +7,58 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.15.2
+
+### Features
+
+- **md-enhance:** add more code blocks for mermaid
+
+  You can now use these code blocks in Markdown:
+
+  ````md
+  ```sequence
+  sequence diagram here
+  ```
+  ````
+
+  ````md
+  ```class
+  class diagram here
+  ```
+  ````
+
+  ````md
+  ```state
+  state diagram here
+  ```
+  ````
+
+  ````md
+  ```er
+  er diagram here
+  ```
+  ````
+
+  ````md
+  ```gantt
+  gantt diagram here
+  ```
+  ````
+
+  ````md
+  ```pie
+  pie diagram here
+  ```
+  ````
+
+  ````md
+  ```journey
+  user journey here
+  ```
+  ````
+
+- **theme:** add `anchorDisplay` option in frontmatter
+
 ## v1.15.1
 
 ### Features
