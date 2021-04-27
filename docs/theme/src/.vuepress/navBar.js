@@ -105,7 +105,7 @@ module.exports = {
       items: [
         {
           text: "变更日志",
-          link: "/changelog/",
+          link: "/zh/changelog/",
         },
         {
           text: "项目地址",
