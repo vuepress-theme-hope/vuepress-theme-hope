@@ -46,7 +46,59 @@ export default Vue.extend({
         };
 
         initialize({
-          theme: isDarkTheme ? "dark" : "default",
+          theme: "base",
+          themeVariables: {
+            dark: isDarkTheme,
+            background: isDarkTheme ? "#1e1e1e" : "#fff",
+
+            primaryColor: isDarkTheme ? "#389d70" : "#4abf8a",
+            primaryBorderColor: isDarkTheme ? "#389d70" : "#4abf8a",
+            primaryTextColor: "#fff",
+
+            secondaryColor: "#f39c12",
+            secondaryBorderColor: isDarkTheme ? "#fff" : "#000",
+            secondaryTextColor: isDarkTheme ? "#ddd" : "#333",
+
+            tertiaryColor: isDarkTheme ? "#22182d" : "#eeeaf3",
+            tertiaryBorderColor: isDarkTheme ? "#fff" : "#000",
+            tertiaryTextColor: isDarkTheme ? "#ddd" : "#333",
+
+            // note
+            noteBkgColor: isDarkTheme ? "#f6d365" : "#fff5ad",
+            noteTextColor: "#242424",
+            noteBorderColor: isDarkTheme ? "#f6d365" : "#333",
+
+            lineColor: isDarkTheme ? "#d3d3d3" : "#333",
+            // textColor: isDarkTheme ? "#9e9e9e" : "#242424",
+            textColor: isDarkTheme ? "#fff" : "#242424",
+
+            mainBkg: isDarkTheme ? "#389d70" : "#4abf8a",
+            errorBkgColor: "#eb4d5d",
+            errorTextColor: "#fff",
+
+            // flowchart
+            nodeBorder: isDarkTheme ? "#389d70" : "#4abf8a",
+            nodeTextColor: isDarkTheme ? "#fff" : "#242424",
+
+            // sequence
+            signalTextColor: isDarkTheme ? "#9e9e9e" : "#242424",
+
+            // class
+            classText: "#fff",
+
+            // state
+            labelColor: "#fff",
+
+            // colors
+            fillType0: isDarkTheme ? "#cf1322" : "#f1636e",
+            fillType1: "#f39c12",
+            fillType2: "#2ecc71",
+            fillType3: "#fa541c",
+            fillType4: "#25a55b",
+            fillType5: "#13c2c2",
+            fillType6: "#096dd9",
+            fillType7: "#aa6fe9",
+          },
           ...MERMAID_OPTIONS,
           startOnLoad: false,
         });
