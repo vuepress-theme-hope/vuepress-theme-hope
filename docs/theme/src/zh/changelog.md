@@ -106,7 +106,7 @@ interface TaskListOptions {
 
 #### Mermaid <Badge text="new" />
 
-我们通过 `mermaid` 选项在 `md-enhance` 插件中支持 mermaid。
+`md-enhance` 插件中新增 `mermaid` 选项以支持 mermaid 图表。
 
 你可以使用:
 
@@ -116,13 +116,13 @@ your mermaid...
 ```
 ````
 
-在您的 Markdown 中生成 mermaid 图表。
+在你的 Markdown 中生成 mermaid 图表。
 
 #### 任务列表 <Badge text="new" />
 
-我们通过 `tasklist` 选项在 `md-enhance` 插件中支持任务列表。
+`md-enhance` 插件中新增 `tasklist` 选项以支持任务列表。
 
-您你可以在 Markdown 中使用 `- [ ] 文字` 或 `- [x] 文字` 来生成任务列表。
+你可以在 Markdown 中使用 `- [ ] 文字` 或 `- [x] 文字` 来生成任务列表。
 
 ## v1.14.4
 
@@ -138,11 +138,9 @@ your mermaid...
 
 ## v1.14.1
 
-### 新功能
+### 新功能 <Badge text="new" />
 
-#### 新辅助函数 <Badge text="new" />
-
-我们在 `vuepress-theme-hope` 中添加了 `themeConfig`、`navbarConfig` 和 `sidebarConfig` 辅助函数，以在配置文件中提供更好的验证和自动补全功能。
+`vuepress-theme-hope` 新增 `themeConfig`、`navbarConfig` 和 `sidebarConfig` 辅助函数，以便在配置文件中提供更好的验证和自动补全功能。
 
 ## v1.14.0
 
@@ -168,7 +166,7 @@ your flowchart...
 
 所有的 `baseLang` 选项均被移除。
 
-您应该使用 `lang` 键在 `locales["/"]` 中指定根目录语言。
+你应该使用 `lang` 键在 `locales["/"]` 中指定根目录语言。
 
 ## v1.13.4
 
@@ -212,21 +210,23 @@ your flowchart...
 
 新增 `create-vuepress-theme-hope` 包。
 
-您可以使用 `yarn create vuepress-theme-hope [dir]` 或 `npm init vuepress-theme-hope [dir]` 轻松创建主题模板。
+你可以使用 `yarn create vuepress-theme-hope [dir]` 或 `npm init vuepress-theme-hope [dir]` 轻松创建主题模板。
 
 ## v1.12.1
 
 ### 破坏变更 <Badge text="结构" type="warn" />
 
-我们更改了主题的结构，因此，如果你正在扩展此主题，则可能需要更新代码。
+主题的结构发生了变更，因此如果你正在扩展此主题，则可能需要更新代码。
 
 ## v1.12.0
 
 ### 新功能 <Badge text="new" />
 
-我们移除了 `last-update` 插件并添加了 `git` 插件(`@mr-hope/vuepress-plugin-git`)。 :tada:
+- 新增 [`git` 插件](https://vuepress-theme-hope.github.io/git/zh/) (`@mr-hope/vuepress-plugin-git`) :tada:
 
-[文档见此](https://vuepress-theme-hope.github.io/git/zh/)
+### 破坏变更 <Badge text="移除" type="warn" />
+
+- `last-update` 插件已移除
 
 ## v1.11.1
 
@@ -250,9 +250,9 @@ your flowchart...
 
 - **components**: 添加了 `<CodeGroup>` 和 `<CodeGroupItem>` 组件。
 
-- **theme**: 您可以在页面的 Frontmatter 中使用 `star：true` 为页面加注星标。
+- **theme**: 你可以在页面的 Frontmatter 中使用 `star：true` 为页面加注星标。
 
-星标页面都将出现在文章侧边栏中。
+  星标页面都将出现在文章侧边栏中。
 
 ## v1.9.1
 
@@ -264,17 +264,17 @@ your flowchart...
 
 ### 新功能 <Badge text="new" />
 
-我们添加了全新的 [**Feed 插件**](https://vuepress-theme-hope.github.io/feed//zh/)。:tada:
+新增 [**Feed 插件**](https://vuepress-theme-hope.github.io/feed//zh/)。:tada:
 
 ### 破坏变更 <Badge text="移除" type="warn" />
 
-- **pwa**: 删除 `head` 函数，使用 hacking 注入 PWA 链接。
+- **pwa**: 移除 `head` 函数，使用 hacking 注入 PWA 链接。
 
 ## v1.8.2
 
 ### 破坏变更 <Badge text="移除" type="warn" />
 
-- **md-enhance**: 删除代码演示的 `horizontal` 选项
+- **md-enhance**: 移除代码演示的 `horizontal` 选项
 
 ## v1.8.0
 
@@ -314,7 +314,7 @@ your flowchart...
 - **theme**: 添加 Font Awesome 图标支持
 - **theme**: 添加幻灯片布局
 
-  您可以在 Frontmatter 中使用 `layout: Slide` 来使用幻灯片布局。
+  你可以在 Frontmatter 中使用 `layout: Slide` 来使用幻灯片布局。
 
 ## v1.4.7
 
@@ -367,7 +367,7 @@ your flowchart...
 
 - `addthis` 重命名为 `addThis`
 - `markdown` 更名为 `mdEnhance`
-- `lastUpdatedTransformer` 重命名为 lastUpdate`
+- `lastUpdatedTransformer` 重命名为 `lastUpdate`
 
 ## v1.0.1
 

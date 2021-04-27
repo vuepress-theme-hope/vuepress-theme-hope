@@ -110,7 +110,7 @@ interface TaskListOptions {
 
 #### Mermaid <Badge text="new" />
 
-We now support mermaid in plugin `md-enhance` with `mermaid` option.
+New `mermaid` option in plugin `md-enhance` to support mermaid diagram.
 
 You should use
 
@@ -124,10 +124,9 @@ in your Markdown to generate mermaid diagrams.
 
 #### Task List <Badge text="new" />
 
-We now support task lists in plugin `md-enhance` with `tasklist` option.
+New `tasklist` option in plugin `md-enhance` to support task lists.
 
-You should use `- [ ] text` or `- [x] text`
-in your Markdown to generatetask lists.
+You should use `- [ ] text` or `- [x] text` in your Markdown to generatetask lists.
 
 ## v1.14.4
 
@@ -147,7 +146,9 @@ This will help make better control of bundle size.
 
 #### New helpers <Badge text="new" />
 
-We add `themeConfig`, `navbarConfig` and `sidebarConfig` helper in `vuepress-theme-hope` to provide better validate and autocomplete in config file.
+New helper functions `themeConfig`, `navbarConfig` and `sidebarConfig`in `vuepress-theme-hope`.
+
+These are for better validatation and autocomplete in config file.
 
 ## v1.14.0
 
@@ -171,7 +172,7 @@ your flowchart...
 
 #### baselang <Badge text="remove" type="error" />
 
-All the `baseLang` is removed.
+All the `baseLang` options are removed.
 
 You should specifc root folder language in `locales["/"]` using `lang` key.
 
@@ -223,15 +224,16 @@ You can use `yarn create vuepress-theme-hope [dir]` or `npm init vuepress-theme-
 
 ### Breaking Changes <Badge text="structure" type="warn" />
 
-We change the structure of the theme, so if you are extending this theme, you may need to update your code.
+Theme components structure is changed.
+
+If you are extending this theme, you may need to update your code.
 
 ## v1.12.0
 
 ### Features <Badge text="new" />
 
-We remove `last-update` plugin and add a `git` plugin (`@mr-hope/vuepress-plugin-git`). :tada:
-
-[Here is the docs](https://vuepress-theme-hope.github.io/git/)
+- `last-update` plugin is removed
+- a new [`git` plugin](https://vuepress-theme-hope.github.io/git/) (`@mr-hope/vuepress-plugin-git`) :tada:
 
 ## v1.11.1
 
@@ -257,7 +259,7 @@ We remove `last-update` plugin and add a `git` plugin (`@mr-hope/vuepress-plugin
 
 - **theme**: You can use `star: true` in frontmatter to star a page.
 
-A star page will both appear in article sidebar.
+  Star pages will appear in article sidebar.
 
 ## v1.9.1
 
@@ -269,7 +271,7 @@ A star page will both appear in article sidebar.
 
 ### Features <Badge text="new" />
 
-We add a [**new Feed plugin**](https://vuepress-theme-hope.github.io/feed/). :tada:
+[**new Feed plugin**](https://vuepress-theme-hope.github.io/feed/). :tada:
 
 ### Breaking Changes <Badge text="drop" type="error" />
 
