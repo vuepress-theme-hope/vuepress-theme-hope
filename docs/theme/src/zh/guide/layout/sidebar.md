@@ -389,7 +389,7 @@ module.exports = sidebarConfig(/* 你的导航栏配置 */);
 
 ::: tip
 
-当你将 vuepress 配置拆分成多个部分时，你可以使用该 Helper 函数来保持自动补全与校验。
+当你将 VuePress 配置拆分成多个部分时，你可以使用该 Helper 函数来保持自动补全与校验。
 
 :::
 

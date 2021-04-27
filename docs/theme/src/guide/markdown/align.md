@@ -37,7 +37,7 @@ module.exports = {
 
 ## Demo
 
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+`vuepress-theme-hope` v2 is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
@@ -50,7 +50,7 @@ If you meet a bug during usage, you can
 :::
 
 ```md
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+`vuepress-theme-hope` v2 is still in W.I.P, the API may have
 
 ::: center
 Significant changes.

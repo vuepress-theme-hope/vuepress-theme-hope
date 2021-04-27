@@ -61,11 +61,11 @@ CodeGroup available in Markdown
 
 Please use `<CodeGroup />` to wrap `<CodeGroupItem />`。
 
-For each `<CodeGroupItem />`, you need to set `title` attribute as tab’s title，and only put a code block in the tab。You can also set `active` attribute on one of `<CodeGroupItem />` to make it active by default.
+For each `<CodeGroupItem />`, you need to set `title` attribute as tab’s title，and put one code block per tab。You can also set `active` attribute on one of `<CodeGroupItem />` to make it active by default.
 
 ::: tip
 
-You need to put a blank line between each `<CodeGroupItem />`, otherwise VuePress may not be able to parse them correctly.
+You need to put a blank line between each `<CodeGroupItem />`, otherwise VuePress may not be able to parse them.
 
 :::
 

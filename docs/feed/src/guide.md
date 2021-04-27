@@ -147,4 +147,4 @@ For detailed options and their default values, please see [Configuration → Ite
 
 You can use the `output` in the configuration options to decide which feed file formats to output and their location.
 
-For detailed options and their default values, please refer to [Configuration → Output](config/readme.md#output)
+For detailed options and their default values, please see [Configuration → Output](config/readme.md#output)

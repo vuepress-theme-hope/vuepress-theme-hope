@@ -1,5 +1,5 @@
 ---
-title: Typescript 错误排查
+title: TypeScript 错误排查
 icon: typescript
 category: FAQ
 ---

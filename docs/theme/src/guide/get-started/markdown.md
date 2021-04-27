@@ -18,7 +18,7 @@ If you are a new learner and don’t know how to write Markdown, please read [Ma
 
 ::: info Frontmatter
 
-Frontmatter is a very important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../basic/vuepress/markdown.md#front-matter).
+Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../basic/vuepress/markdown.md#front-matter).
 
 :::
 

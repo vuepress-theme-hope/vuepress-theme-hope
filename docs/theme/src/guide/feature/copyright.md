@@ -53,7 +53,7 @@ Please copy this text and paste it to any location to see the effect. Please cop
 
 ## Documentation
 
-For more information about this plugin, please refer to [vuepress-plugin-copyright docs](https://vuepress.github.io/zh/plugins/copyright/#配置项)
+For more information about this plugin, please see [vuepress-plugin-copyright docs](https://vuepress.github.io/zh/plugins/copyright/#配置项)
 
 ::: warning
 

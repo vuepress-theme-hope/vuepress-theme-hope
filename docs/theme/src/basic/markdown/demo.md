@@ -189,7 +189,7 @@ To be able to jump to each other when editing the Markdown using the editor, you
 代码:
 
 ```md
-- [Home page-Can route when editing markdown file](../readme.md)
+- [Home page-Can route when editing Markdown file](../readme.md)
 
 - [Home page using absolute path 2](/readme.md)
 

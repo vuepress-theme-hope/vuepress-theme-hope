@@ -144,7 +144,7 @@ This is a dangerous warning
 
 ::: details
 
-This is a details block, which does not work in IE / Edge
+This is a details block, which does not work in Internet Explorer / Edge
 
 :::
 ```
@@ -171,7 +171,7 @@ This is a dangerous warning
 
 ::: details
 
-This is a details block, which does not work in IE / Edge
+This is a details block, which does not work in Internet Explorer / Edge
 
 :::
 

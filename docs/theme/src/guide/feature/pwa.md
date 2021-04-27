@@ -55,7 +55,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     Each platform or browser has requirements for the size of the Service Worker cache. When the file size of the Service Worker cache is too large, the site will be marked as not installable. For Safari, the threshold is 50 MB, a few browsers will set less or more values ​​(30MB, 70MB, 80MB), and Chrome will mark the threshold at 100 MB.
 
-    In addition, the manifest file should contain at least `name` (or `short_name`) `icons` `start_url`
+    The manifest file should contain at least `name` (or `short_name`) `icons` `start_url`
 
     And starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
 
@@ -80,7 +80,7 @@ When your site is too large, you can set `themeConfig.pwa.cacheHTML` to `false` 
 Though VuePress generates HTML files through SSR[^ssr] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering,
-[^seo]: **SEO**: **S**earch **E**ngine **O**ptimization. For details, please refer to [SEO Introduction](https://mrhope.site/code/site/html/definition/seo/)
+[^seo]: **SEO**: **S**earch **E**ngine **O**ptimization. For details, please see [SEO Introduction](https://mrhope.site/code/site/html/definition/seo/)
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, mMost of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 
 VuePress is essentially a SPA. This means that you can enter from the homepage to access all pages normally only caching the homepage.
@@ -117,7 +117,7 @@ To ensure the installability of PWA, the site needs to generate a manifest file 
 
     ::: info
 
-    For Manifest standards and specifications, please refer to [W3C Manifest](https://w3c.github.io/manifest/)
+    For Manifest standards and specifications, please see [W3C Manifest](https://w3c.github.io/manifest/)
 
     :::
 
@@ -145,7 +145,7 @@ If the following fields are not set, they will try to fallback to the following 
 | orientation                 | `'portrait-primary'`                                                                                   |
 | prefer_related_applications | `false`                                                                                                |
 
-For complete configuration items, please refer to [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/pwa/src/types/manifest.d.ts)
+For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/pwa/src/types/manifest.d.ts)
 
 ### Manual configuration
 

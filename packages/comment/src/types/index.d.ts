@@ -158,7 +158,7 @@ export interface VssueOptions extends BaseCommentOptions {
   /**
    * 默认每页显示的评论数
    *
-   * The default value of how many comments to show per page
+   * The default value of comments to show per page
    *
    * @default 10
    */

@@ -256,7 +256,7 @@ your flowchart...
 
 - **last-update**: 添加 `timezone` 选项
 
-  当你通过 Github actions 上进行部署时，这很有用。(Github actions 使用 `UTC` 时区)
+  当你通过 GitHub actions 上进行部署时，这很有用。(GitHub actions 使用 `UTC` 时区)
 
 - **md-enhance**: 可以通过 `presentation.plugins` 选项配置幻灯片使用的插件
 - **theme**: 添加 Font Awesome 图标支持

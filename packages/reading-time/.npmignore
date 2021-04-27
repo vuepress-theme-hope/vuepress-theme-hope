@@ -4,5 +4,5 @@ src/
 # Test Files
 __tests__/
 
-# Typescript Config files
+# TypeScript Config files
 tsconfig.*

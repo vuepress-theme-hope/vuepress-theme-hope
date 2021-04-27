@@ -10,7 +10,7 @@ dist/
 # VS Code Config file
 .vscode/
 
-# Typescript build info
+# TypeScript build info
 *.tsbuildinfo
 
 # Map files

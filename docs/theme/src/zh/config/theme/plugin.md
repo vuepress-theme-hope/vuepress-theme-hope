@@ -369,7 +369,13 @@ React 依赖于 Babel。
 - 类型: `string`
 - 必填: 否
 
-favicon 地址，填入绝对路径。(建议为你的站点生成 favicon)
+填入 favicon 地址，(绝对路径)
+
+::: tip
+
+我们建议你为自己的站点生成 favicon。
+
+:::
 
 ### pwa.themeColor
 

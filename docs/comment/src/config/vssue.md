@@ -182,7 +182,7 @@ The common pattern of repository’s URL is `` `${baseURL}/${owner}/${repo}` ``:
 - **Default**: `10`
 - **Details**:
 
-  The default value of how many comments to show per page.
+  The default value of comments to show per page.
 
 ## locale
 

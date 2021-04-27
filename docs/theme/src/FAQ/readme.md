@@ -96,4 +96,4 @@ Go to your package.json to temporarily solve this problem.
 
 ## TypeScript problems
 
-- [Typescript problems](typescript.md)
+- [TypeScript problems](typescript.md)

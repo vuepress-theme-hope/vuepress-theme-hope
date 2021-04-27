@@ -110,7 +110,7 @@ module.exports = {
         label: "English",
 
         /** 编辑链接文字 */
-        editLinkText: "Edit on Github",
+        editLinkText: "Edit on GitHub",
 
         /** 该语言下头部导航栏的配置 */
         nav: [
@@ -143,7 +143,7 @@ module.exports = {
     docsDir: "docs",
 
     /** 自定义仓库链接文字 */
-    repoLabel: "Github",
+    repoLabel: "GitHub",
 
     /** 开启编辑此页链接 */
     editLinks: true, // 默认是 false, 设置为 true 来启用

@@ -4,7 +4,7 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
-tagline: Enhancement for markdown in VuePress
+tagline: Enhancement for Markdown in VuePress
 action:
   - text: Get Started 💡
     link: /guide/
@@ -15,11 +15,11 @@ action:
 
 features:
   - title: Superscript and subscript support
-    details: Your markdown now suppport superscript and subscript
+    details: Your Markdown now suppport superscript and subscript
     link: /guide/sup-sub/
 
   - title: Footnote support
-    details: Your markdown now suppport footnotes
+    details: Your Markdown now suppport footnotes
     link: /guide/footnote/
 
   - title: DIY Align
@@ -27,19 +27,19 @@ features:
     link: /guide/align/
 
   - title: Mark Support
-    details: Mark words and sentences in markdown
+    details: Mark words and sentences in Markdown
     link: /guide/flowchart/
 
   - title: Tasklist Support
-    details: Use tasklist in markdown
+    details: Use tasklist in Markdown
     link: /guide/tasklist/
 
   - title: Flowchart Support
-    details: Create your flowchart in markdown
+    details: Create your flowchart in Markdown
     link: /guide/flowchart/
 
   - title: Mermaid Support
-    details: Add mermaid diagram in markdown
+    details: Add mermaid diagram in Markdown
     link: /guide/mermaid/
 
   - title: Tex Support
@@ -51,7 +51,7 @@ features:
     link: /guide/demo/
 
   - title: Presentation Support
-    details: You can insert presentation in markdown files directly
+    details: You can insert presentation in Markdown files directly
     link: /guide/presentation/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

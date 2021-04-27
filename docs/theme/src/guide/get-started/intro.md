@@ -12,11 +12,11 @@ tags:
 
 The original intention of making this theme was to find that VuePress is just a pure static document generator. For example, it will not inject meta tags for SEO optimization, nor will it generate a Sitemap to help search engines index the content of the document.
 
-At the same time, as Evan You switched to VitePress driven by Vite, the community ecosystem of VuePress was getting worse and worse. Some developers took up the most intuitive plugin names, such as `copy-code` `feed` `seo` `sitemap`, etc, while provides very weak functions and no longer provides any updates.
+At the same time, as Evan You switched to VitePress driven by Vite, the community ecosystem of VuePress was getting worse and worse. Some developers took up the most intuitive plugin names, such as `copy-code` `feed` `seo` `sitemap`, etc, while provides weak functions and no longer provides any updates.
 
 At the same time, though VuePress has extended Markdown syntax to a certain extent, it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, dark mode, etc.
 
-In this case, the design of `vuepress-theme-hope` was born. Since the developer, Mr. Hope, is a physics major and is not good at design, this theme maintains the simple style of the default theme without making too many changes, while dedicates to provide a full range of enhancements for **VuePress** in terms of functionality.
+In this case, the design of `vuepress-theme-hope` was born. Since the developer, Mr. Hope, is a physics major and is not good at design, this theme maintains the simple style of the default theme with little changes, while dedicates to provide a full range of enhancements for **VuePress**.
 
 ### Design goals
 
@@ -24,9 +24,9 @@ In this case, the design of `vuepress-theme-hope` was born. Since the developer,
 
 - Powerful and independent functions: The theme provides comprehensive details on functions and decompose them into independent plugins so users can use them in other themes.
 
-- Zero or simple configuration: All functions of this theme are designed to work under zero or very simple configuration to reduce your migration or learning costs while directly enjoy their convenience.
+- Zero or simple configuration: All functions of this theme are designed to work under zero or simple configuration to reduce your migration or learning costs while directly enjoy their convenience.
 
-## ✨ Why it is powerful
+## ✨ Why is it powerful
 
 ### Markdown
 

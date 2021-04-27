@@ -74,7 +74,7 @@ For example, if you return `{'og:url':'google.com','og:image':'google.com/logo.j
 <meta property="og:image" content="google.com/logo.jpg" />
 ```
 
-When the `<meta>` you need to inject does not use `property` and `content`, or you want to remove the existing meta, you can pass in a custom generation function to `themeConfig.seo.customMeta` to completely customize the `<meta>` tag .
+When the `<meta>` you need to inject does not use `property` and `content`, or you want to remove the existing meta, you can pass in a custom generation function to `themeConfig.seo.customMeta` to fully customize the `<meta>` tag .
 
 The structure of `customMeta` is `(meta: Meta[], info: PageSeoInfo) => void`
 
@@ -113,7 +113,7 @@ Will inject `<meta a="1" b="2" />` into the `<head>` of the current page, and re
 
 ## RDFa 1.1
 
-The theme adds rich media structure support to most of the website structure by following [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/).
+The theme adds rich media structure support to most of the site structure by following [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/).
 
 ::: tip
 

@@ -183,7 +183,7 @@ We also make an enhance: If you import Babel, then Vue and Normal script will be
 
 You can use different language in your demo block.
 
-When you set another language, since the plugin is not able to resolve them, demo display will be disabled, and only codes can be seen. And the plugin will provide you a button to open it in CodePen.
+When you set another language, since the plugin is not able to resolve them, demo display will be disabled. The plugin will show the code and provide you a button to open it in CodePen.
 
 Available HTML languages:
 

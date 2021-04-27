@@ -5,13 +5,13 @@ tags:
   - markdown
 ---
 
-In addition to using new syntax inside Markdown to enhance content, you can also use `<iframe>` or `<img>` to import external links to enhance your Markdown content.
+To using new syntax inside Markdown to enhance content, you can also use `<iframe>` or `<img>` to import external links to enhance your Markdown content.
 
 <!-- more -->
 
 ## shields.io
 
-You can use [shields.io](https://shields.io/) to generate a large number of dynamic badges, such as the project’s Stars, npm version number, downloads, etc.
+You can use [shields.io](https://shields.io/) to generate lots of dynamic badges, such as the project’s Stars, npm version number, downloads, etc.
 
 Input:
 

@@ -7,7 +7,7 @@ tags:
   - layout
 ---
 
-vuepress-theme-hope 为所有页面提供了页脚功能<Badge text="支持页面配置" />。
+`vuepress-theme-hope` 为所有页面提供了页脚功能<Badge text="支持页面配置" />。
 
 <!-- more -->
 

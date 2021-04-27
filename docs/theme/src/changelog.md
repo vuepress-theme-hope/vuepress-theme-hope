@@ -261,7 +261,7 @@ We add a [**new Feed plugin**](https://vuepress-theme-hope.github.io/feed/). :ta
 
 - **last-update**: add `timezone` option
 
-  This is useful when you are deploying on Github actions. (Github actions use `UTC` timezone)
+  This is useful when you are deploying on GitHub actions. (GitHub actions use `UTC` timezone)
 
 - **md-enhance**: you can config plugins for presentation now using `presentation.plugins`
 - **theme**: add Font Awesome icon support
@@ -290,7 +290,7 @@ We add a [**new Feed plugin**](https://vuepress-theme-hope.github.io/feed/). :ta
 
 ### Breaking Changes <Badge text="ext" type="warn" />
 
-- **pwa**: use offical ext for manifest
+- **pwa**: use official ext for manifest
 
   Mmanifest file name change from `manifest.json` to `manifest.webmanifest`.
 

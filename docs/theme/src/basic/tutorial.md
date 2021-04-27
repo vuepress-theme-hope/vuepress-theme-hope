@@ -16,7 +16,7 @@ Download address:
 
   > Please click the green button on the left.
 
-  During the installation process, keep all the default settings, just click "next step" till it comes to "finish".
+  During the installation process, keep all the default settings, click "next step" till it comes to "finish".
 
   ::: warning
 
@@ -52,15 +52,15 @@ After a while, you can enter `localhost:8080/` in the browser address bar to acc
 
 To start the development server, please enter `yarn run docs:dev` in the terminal and press Enter.
 
-If you need to terminate the development server, please click on the terminal and press `Ctrl + C` twice.
+To terminate the development server, please click on the terminal and press `Ctrl + C` twice.
 
 :::
 
 ## Add or modify pages
 
-Except for the `.vuepress` folder under the docs folder, all the files are rendered as web pages, and the generated links correspond to the folder structure and file name one-to-one. Only `readme.md` is a special case, it will be displayed as the default webpage (default homepage) under the folder. This should be easy to understand.
+Except for the `.vuepress` folder under the docs folder, all the files are rendered as web pages, and the generated links correspond to the folder structure and filename one-to-one. Only `readme.md` is a special case, it will be displayed as the default web page (default homepage) under the folder. This should be easy to understand.
 
-For example, if you want to create a `/a/b/`, you can create `docs/a/b.md` or `docs/a/b/readme.md`, but remember not to create both of them at the same time!
+For example, to create a `/a/b/`, you can create `docs/a/b.md` or `docs/a/b/readme.md`, but remember not to create both of them at the same time!
 
 The content of Markdown will be rendered as the content of the web page. For the Markdown tutorial, please see [Markdown Tutorial](markdown/readme.md). You can learn the content of Markdown in about fifteen minutes, and remember to come back after reading it!
 
@@ -109,14 +109,14 @@ If you feel that you have mastered it, the next step is to read [VuePress offici
 
 Please be sure to read the official document first before reading theme docs.
 
-The theme docs does not give too many repetitive introductions to the existing content of the official document, so if you do not read the official document, you may not be able to master certain configurations, such as muti-language used in the template.
+The theme docs do not provide repetitive introductions to the existing content of the official document, so if you do not read the official document, you may not be able to master certain configurations, such as muti-language used in the template.
 
 :::
 
-## Building website
+## Building a site
 
-After you have initially configured the project, you can use the `yarn run docs:build` command to output the website build to the dist folder.
+After you have initially configured the project, you can use the `yarn run docs:build` command to output the build result to the dist folder.
 
-You can deploy the contents of the folder to the server of your website. The easiest way is to upload to Github and serve with Github Pages.
+You can deploy the contents of the folder to the server of your site. The easiest way is to upload to GitHub and serve with GitHub Pages.
 
-For related tutorials on Github, you can refer to [Github Documentation](https://docs.github.com/).
+For related tutorials on GitHub, you can see [GitHub Documentation](https://docs.github.com/).

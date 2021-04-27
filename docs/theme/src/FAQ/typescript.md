@@ -1,5 +1,5 @@
 ---
-title: Typescript Troubleshoot
+title: TypeScript Troubleshoot
 icon: typescript
 category: FAQ
 ---

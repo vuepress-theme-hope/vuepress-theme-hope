@@ -99,7 +99,7 @@ action:
 
 features:
   - title: Markdown Enhance 🧰
-    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in markdown
+    details: Add align, sup/sub script, footnote, tex, flowchart, mark and presentation support in Markdown
     link: /guide/markdown/
 
   - title: Pageviews and comments 💬

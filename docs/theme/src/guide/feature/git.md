@@ -17,7 +17,7 @@ At the same time, all contributors to the page will be displayed at the bottom o
 
 ::: warning
 
-Since the last update time is based on `git`, you can only enable it in a project based on `git`. In addition, since the timestamp used is from git commit, it will only be displayed after the first commit of a given page, and will only be updated when subsequent changes are committed to that page.
+Since the last update time is based on `git`, you can only enable it in a project based on `git`. Since the timestamp used is from git commit, it will only be displayed after the first commit of a given page, and will only be updated when subsequent changes are committed to that page.
 
 :::
 

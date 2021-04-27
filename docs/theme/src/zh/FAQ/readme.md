@@ -92,4 +92,4 @@ tags:
 
 ## TypeScript 错误
 
-详见 [Typescript 错误排查](typescript.md)
+详见 [TypeScript 错误排查](typescript.md)

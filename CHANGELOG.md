@@ -634,7 +634,7 @@
 ### Features
 
 - **pwa:** add head function ([dbd313b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dbd313b06b9a91980b4cc6198899907f4eca4365))
-- **pwa:** use offical ext for manifest ([5830936](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5830936b7539bd23ff4ac008c404945191585fd3))
+- **pwa:** use official ext for manifest ([5830936](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5830936b7539bd23ff4ac008c404945191585fd3))
 
 ### BREAKING CHANGES
 
@@ -1212,7 +1212,7 @@ All the links will end with a splash `/`, instead of `.html`
 ### Bug Fixes
 
 - **deps:** pin dependency @mr-hope/vuepress-plugin-theme-color to 0.1.0-rc.8 ([e3b5b0c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e3b5b0c89f78c2c8c4de039c89c212c978ec2609))
-- **theme:** fix markdown highlight issue ([768c091](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/768c091f2e3a506914e22392f0a67fada038b4aa))
+- **theme:** fix Markdown highlight issue ([768c091](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/768c091f2e3a506914e22392f0a67fada038b4aa))
 
 ### Features
 

@@ -232,6 +232,6 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
 ## Gitee 镜像
 
-由于有些人无法访问 Github Pages 或速度很慢，我们在 Gitee 上部署了 [国内镜像](https://vuepress-theme-hope.gitee.io)。
+由于有些人无法访问 GitHub Pages 或速度很慢，我们在 Gitee 上部署了 [国内镜像](https://vuepress-theme-hope.gitee.io)。
 
-请注意由于该镜像为手动部署，我们不保证它时刻与 Github Pages 的文档同步。
+请注意由于该镜像为手动部署，我们不保证它时刻与 GitHub Pages 的文档同步。

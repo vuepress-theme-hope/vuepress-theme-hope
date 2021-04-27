@@ -140,7 +140,7 @@ lang = "en-US"
 
 ::: details
 
-这是一个详情块，在 IE / Edge 中不生效
+这是一个详情块，在 Internet Explorer / Edge 中不生效
 
 :::
 ```
@@ -167,7 +167,7 @@ lang = "en-US"
 
 ::: details
 
-这是一个详情块，在 IE / Edge 中不生效
+这是一个详情块，在 Internet Explorer / Edge 中不生效
 
 :::
 
@@ -205,7 +205,7 @@ console.log("你好，VuePress！");
 
 ## 代码块中的语法高亮
 
-VuePress 使用了 [Prism](https://prismjs.com/) 来为 markdown 中的代码块实现语法高亮。Prism 支持大量的编程语言，你需要做的只是在代码块的开始倒勾中附加一个有效的语言别名:
+VuePress 使用了 [Prism](https://prismjs.com/) 来为 Markdown 中的代码块实现语法高亮。Prism 支持大量的编程语言，你需要做的只是在代码块的开始倒勾中附加一个有效的语言别名:
 
 ::: details 例子
 

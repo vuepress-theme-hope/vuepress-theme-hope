@@ -2,24 +2,24 @@ import { removeMarkdown } from "./remove-markdown";
 
 describe("remove Markdown", () => {
   describe("removeMarkdown", () => {
-    it("should leave a string alone without markdown", () => {
+    it("should leave a string alone without Markdown", () => {
       const string = "Javascript Developers are the best.";
       expect(removeMarkdown(string)).toEqual(string);
     });
 
-    it("should strip out remaining markdown", () => {
+    it("should strip out remaining Markdown", () => {
       const string = "*Javascript* developers are the _best_.";
       const expected = "Javascript developers are the best.";
       expect(removeMarkdown(string)).toEqual(expected);
     });
 
-    it("should leave non-matching markdown markdown", () => {
+    it("should leave non-matching Markdown", () => {
       const string = "*Javascript* developers* are the _best_.";
       const expected = "Javascript developers* are the best.";
       expect(removeMarkdown(string)).toEqual(expected);
     });
 
-    it("should leave non-matching markdown, but strip empty anchors", () => {
+    it("should leave non-matching Markdown, but strip empty anchors", () => {
       const string = "*Javascript* [developers]()* are the _best_.";
       const expected = "Javascript developers* are the best.";
       expect(removeMarkdown(string)).toEqual(expected);
@@ -139,7 +139,7 @@ describe("remove Markdown", () => {
       expect(removeMarkdown(string)).toEqual(expected);
     });
 
-    it("should handle paragraphs with markdown", () => {
+    it("should handle paragraphs with Markdown", () => {
       const paragraph =
         "\n## This is a heading ##\n\nThis is a paragraph with [a link](http://www.disney.com/).\n\n### This is another heading\n\nIn `Getting Started` we set up `something` foo.\n\n  * Some list\n  * With items\n    * Even indented";
       const expected =

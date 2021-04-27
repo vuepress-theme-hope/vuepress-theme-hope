@@ -25,7 +25,7 @@ This icon is used in navbar, sidebar, breadcrumb and page title.
 
 ::: info
 
-For icon settings, please refer to [Icon Support](../interface/icon.md)
+For icon settings, please see [Icon Support](../interface/icon.md)
 
 :::
 

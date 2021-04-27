@@ -58,7 +58,7 @@ layout: Slide
 
 <!-- .element: class="r-fit-text" -->
 
-你可以在幻灯片中使用 markdown 语法的各种标记.
+你可以在幻灯片中使用 Markdown 语法的各种标记.
 
 <!-- .element: class="r-fit-text" -->
 
@@ -68,7 +68,7 @@ layout: Slide
 
 ## Markdown
 
-你可以在幻灯片中使用 markdown 语法的各种标记.
+你可以在幻灯片中使用 Markdown 语法的各种标记.
 
 ### 这是一个 H3
 
@@ -82,7 +82,7 @@ layout: Slide
 
 ## Markdown
 
-你可以在幻灯片中使用 markdown 语法的各种标记.
+你可以在幻灯片中使用 Markdown 语法的各种标记.
 
 列表默认为 `inline-block`
 
@@ -100,7 +100,7 @@ layout: Slide
 
 ## Markdown
 
-你可以在幻灯片中使用 markdown 语法的各种标记.
+你可以在幻灯片中使用 Markdown 语法的各种标记.
 
 在你启用 `highlight` 插件后，代码块会自动高亮。
 
@@ -114,7 +114,7 @@ const a = 1;
 
 ## Markdown
 
-你可以在幻灯片中使用 markdown 语法的各种标记.
+你可以在幻灯片中使用 Markdown 语法的各种标记.
 
 在你启用 `math` 插件后，你也可以使用 TEX 格式使用数学公式。
 
@@ -128,9 +128,9 @@ $$
 
 ## Markdown
 
-你可以在幻灯片中使用 markdown 语法的各种标记.
+你可以在幻灯片中使用 Markdown 语法的各种标记.
 
-⚠**请注意**: 表格和分割线，以及所有不在 markdown 标准语法中的内容均不受支持。
+⚠**请注意**: 表格和分割线，以及所有不在 Markdown 标准语法中的内容均不受支持。
 
 ---
 

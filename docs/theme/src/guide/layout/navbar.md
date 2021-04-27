@@ -359,7 +359,7 @@ module.exports = navbarConfig(/* Your navbar configuration */);
 
 ::: tip
 
-When you are spliting vuepress configuration into multiple parts, you can use this helper function to keep automatic completion and verification.
+When you are spliting VuePress configuration into multiple parts, you can use this helper function to keep automatic completion and verification.
 
 :::
 

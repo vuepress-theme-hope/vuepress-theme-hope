@@ -87,7 +87,7 @@ Sometimes your site may be automatically deployed through CI, and the time of th
 
 ::: info Timezone list
 
-For detailed timezone list, please refer to [Time Zone List](https://www.zeitverschiebung.net/cn/all-time-zones.html)
+For detailed timezone list, please see [Time Zone List](https://www.zeitverschiebung.net/cn/all-time-zones.html)
 
 :::
 

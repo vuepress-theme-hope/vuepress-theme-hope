@@ -7,7 +7,7 @@ tags:
   - layout
 ---
 
-vuepress-theme-hope provides footer feature for all pages <Badge text="Support page config" />.
+`vuepress-theme-hope` provides footer feature for all pages <Badge text="Support page config" />.
 
 <!-- more -->
 

@@ -18,7 +18,7 @@ module.exports = {
 };
 ```
 
-Each item of the array will eventually be rendered as a sidebar item.
+Each item of the array will be rendered as a sidebar item.
 
 You can omit the `.md` extension, and paths ending with `/` are inferred as `*/README.md`.
 
@@ -193,7 +193,7 @@ module.exports = {
 };
 ```
 
-Normally, you may want to use it with `prefix` to quickly restore the structure of the document.
+Normally, you may want to use it with `prefix` to restore the structure of the document easily.
 
 For example, suppose you have a following directory structure:
 
@@ -387,7 +387,7 @@ module.exports = sidebarConfig(/* Your sidebar configuration */);
 
 ::: tip
 
-When you are spliting vuepress configuration into multiple parts, you can use this helper function to keep automatic completion and verification.
+When you are spliting VuePress configuration into multiple parts, you can use this helper function to keep automatic completion and verification.
 
 :::
 

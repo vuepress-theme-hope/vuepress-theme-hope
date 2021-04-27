@@ -60,7 +60,7 @@ yarn create vuepress-theme-hope docs
 
 ## 添加或修改页面
 
-docs 文件夹下除 `.vuepress` 文件夹之外的文件都会渲染为网页，渲染后的链接与文件夹结构和文件名称一一对应。只有 `readme.md` 是特例，它会显示为文件夹下的默认网页 (默认主页)。这应该很好理解。
+`docs` 文件夹下除 `.vuepress` 文件夹之外的文件都会渲染为网页，渲染后的链接与文件夹结构和文件名称一一对应。只有 `readme.md` 是特例，它会显示为文件夹下的默认网页 (默认主页)。这应该很好理解。
 
 比如你想要创建一个 `/a/b/`，你就可以创建 `docs/a/b.md` 或 `docs/a/b/readme.md`，但切记不要同时创建它们两个！
 
@@ -119,6 +119,6 @@ themeConfig:
 
 在你初步配置好项目之后，你就可以使用 `yarn run docs:build` 命令将网站构建输出到 dist 文件夹下。
 
-你可以将文件夹的内容部署到你网站的服务器上。最简单的做法是上传到 Github 并开启 Github Pages。
+你可以将文件夹的内容部署到你网站的服务器上。最简单的做法是上传到 GitHub 并开启 GitHub Pages。
 
-关于 Github 的相关教程，你可以参考 [Github 简介](https://mrhope.site/code/github/)。
+关于 GitHub 的相关教程，你可以参考 [GitHub 简介](https://mrhope.site/code/github/)。
