@@ -46,8 +46,11 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
 };
 
 export const valineI18n: Record<HopeLangPath, string> = {
-  "/zh/": "请留言",
-  "/en/": "Write a comment here",
-  "/de/": "Schreibe ein Kommentar",
-  "/vi/": "Để lại bình luận",
+  "/zh/": "请留言。(填写邮箱可在被回复时收到邮件提醒)",
+  "/en/":
+    "Write a comment here (Fill in the email address to receive an email notification when being replied)",
+  "/de/":
+    "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
+  "/vi/":
+    "Để lại bình luận (Điền địa chỉ email để nhận email thông báo khi được trả lời)",
 };
