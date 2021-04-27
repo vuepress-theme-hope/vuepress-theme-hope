@@ -22,7 +22,15 @@ export default Vue.extend({
         return time;
       }
 
-      return this.$page.createTime || "";
+      const { createTimeStamp } = this.$page;
+
+      if (createTimeStamp) {
+        const date = new Date(createTimeStamp);
+
+        return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+      }
+
+      return "";
     },
 
     hint(): string {
