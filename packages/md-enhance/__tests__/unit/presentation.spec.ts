@@ -41,7 +41,7 @@ ${demo}
 `);
 
     expect(renderResult).toMatch(
-      /<Presentation id="presentation_.*?" data-code=".*?" theme=".*?"><\/Presentation>/
+      /<Presentation id="presentation-.*?" data-code=".*?" theme=".*?"><\/Presentation>/
     );
     expect(renderResult).toMatchSnapshot();
   });

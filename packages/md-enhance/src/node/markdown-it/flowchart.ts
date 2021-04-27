@@ -5,7 +5,7 @@ import Token = require("markdown-it/lib/token");
 
 const flowchartRender = (tokens: Token[], idx: number): string => {
   const token = tokens[idx];
-  const key = `flowchart_${hash(idx)}`;
+  const key = `flowchart-${hash(idx)}`;
   const { content, info } = token;
 
   return `<FlowChart id="${key}" data-code="${encodeURIComponent(

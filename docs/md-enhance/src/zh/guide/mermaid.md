@@ -83,31 +83,29 @@ flowchart TB
 
 ### 循序图
 
-```mermaid
-sequenceDiagram
-    Alice ->> Bob: Hello Bob, how are you?
-    Bob-->>John: How about you John?
-    Bob--x Alice: I am good thanks!
-    Bob-x John: I am good thanks!
-    Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+```sequence
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
 
-    Bob-->Alice: Checking with John...
-    Alice->John: Yes... John, how are you?
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?
 ```
 
 ::: details Code
 
 ````md
-```mermaid
-sequenceDiagram
-    Alice ->> Bob: Hello Bob, how are you?
-    Bob-->>John: How about you John?
-    Bob--x Alice: I am good thanks!
-    Bob-x John: I am good thanks!
-    Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+```sequence
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
 
-    Bob-->Alice: Checking with John...
-    Alice->John: Yes... John, how are you?
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?
 ```
 ````
 
@@ -115,8 +113,7 @@ sequenceDiagram
 
 ### 类图
 
-```mermaid
-classDiagram
+```class
 class Square~Shape~{
     int id
     List~int~ position
@@ -132,8 +129,7 @@ Square : +getMessages() List~string~
 ::: details Code
 
 ````md
-```mermaid
-classDiagram
+```class
 class Square~Shape~{
     int id
     List~int~ position
@@ -151,45 +147,43 @@ Square : +getMessages() List~string~
 
 ### 状态图
 
-```mermaid
-stateDiagram-v2
-    [*] --> Active
+```state
+[*] --> Active
 
-    state Active {
-        [*] --> NumLockOff
-        NumLockOff --> NumLockOn : EvNumLockPressed
-        NumLockOn --> NumLockOff : EvNumLockPressed
-        --
-        [*] --> CapsLockOff
-        CapsLockOff --> CapsLockOn : EvCapsLockPressed
-        CapsLockOn --> CapsLockOff : EvCapsLockPressed
-        --
-        [*] --> ScrollLockOff
-        ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
-        ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
-    }
+state Active {
+    [*] --> NumLockOff
+    NumLockOff --> NumLockOn : EvNumLockPressed
+    NumLockOn --> NumLockOff : EvNumLockPressed
+    --
+    [*] --> CapsLockOff
+    CapsLockOff --> CapsLockOn : EvCapsLockPressed
+    CapsLockOn --> CapsLockOff : EvCapsLockPressed
+    --
+    [*] --> ScrollLockOff
+    ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
+    ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
+}
 ```
 
 ::: details Code
 
 ````md
-```mermaid
-stateDiagram-v2
-    [*] --> Active
+```state
+[*] --> Active
 
-    state Active {
-        [*] --> NumLockOff
-        NumLockOff --> NumLockOn : EvNumLockPressed
-        NumLockOn --> NumLockOff : EvNumLockPressed
-        --
-        [*] --> CapsLockOff
-        CapsLockOff --> CapsLockOn : EvCapsLockPressed
-        CapsLockOn --> CapsLockOff : EvCapsLockPressed
-        --
-        [*] --> ScrollLockOff
-        ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
-        ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
-    }
+state Active {
+    [*] --> NumLockOff
+    NumLockOff --> NumLockOn : EvNumLockPressed
+    NumLockOn --> NumLockOff : EvNumLockPressed
+    --
+    [*] --> CapsLockOff
+    CapsLockOff --> CapsLockOn : EvCapsLockPressed
+    CapsLockOn --> CapsLockOff : EvCapsLockPressed
+    --
+    [*] --> ScrollLockOff
+    ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
+    ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
+}
 ```
 ````
 
@@ -197,39 +191,37 @@ stateDiagram-v2
 
 ### 关系图
 
-```mermaid
-erDiagram
-    CAR ||--o{ NAMED-DRIVER : allows
-    CAR {
-        string registrationNumber
-        string make
-        string model
-    }
-    PERSON ||--o{ NAMED-DRIVER : is
-    PERSON {
-        string firstName
-        string lastName
-        int age
-    }
+```er
+CAR ||--o{ NAMED-DRIVER : allows
+CAR {
+    string registrationNumber
+    string make
+    string model
+}
+PERSON ||--o{ NAMED-DRIVER : is
+PERSON {
+    string firstName
+    string lastName
+    int age
+}
 ```
 
 ::: details Code
 
 ````md
-```mermaid
-erDiagram
-    CAR ||--o{ NAMED-DRIVER : allows
-    CAR {
-        string registrationNumber
-        string make
-        string model
-    }
-    PERSON ||--o{ NAMED-DRIVER : is
-    PERSON {
-        string firstName
-        string lastName
-        int age
-    }
+```er
+CAR ||--o{ NAMED-DRIVER : allows
+CAR {
+    string registrationNumber
+    string make
+    string model
+}
+PERSON ||--o{ NAMED-DRIVER : is
+PERSON {
+    string firstName
+    string lastName
+    int age
+}
 ```
 ````
 
@@ -237,31 +229,29 @@ erDiagram
 
 ### 用户日记图
 
-```mermaid
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
+```journey
+title My working day
+section Go to work
+  Make tea: 5: Me
+  Go upstairs: 3: Me
+  Do work: 1: Me, Cat
+section Go home
+  Go downstairs: 5: Me
+  Sit down: 5: Me
 ```
 
 ::: details Code
 
 ````md
-```mermaid
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
+```journey
+title My working day
+section Go to work
+  Make tea: 5: Me
+  Go upstairs: 3: Me
+  Do work: 1: Me, Cat
+section Go home
+  Go downstairs: 5: Me
+  Sit down: 5: Me
 ```
 ````
 
@@ -269,71 +259,69 @@ journey
 
 ### 甘特图
 
-```mermaid
-gantt
-    dateFormat  YYYY-MM-DD
-    title       Adding GANTT diagram functionality to mermaid
-    excludes    weekends
-    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
+```gantt
+dateFormat  YYYY-MM-DD
+title       Adding GANTT diagram functionality to mermaid
+excludes    weekends
+%% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
 
-    section A section
-    Completed task            :done,    des1, 2014-01-06,2014-01-08
-    Active task               :active,  des2, 2014-01-09, 3d
-    Future task               :         des3, after des2, 5d
-    Future task2              :         des4, after des3, 5d
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2              :         des4, after des3, 5d
 
-    section Critical tasks
-    Completed task in the critical line :crit, done, 2014-01-06,24h
-    Implement parser and jison          :crit, done, after des1, 2d
-    Create tests for parser             :crit, active, 3d
-    Future task in critical line        :crit, 5d
-    Create tests for renderer           :2d
-    Add to mermaid                      :1d
+section Critical tasks
+Completed task in the critical line :crit, done, 2014-01-06,24h
+Implement parser and jison          :crit, done, after des1, 2d
+Create tests for parser             :crit, active, 3d
+Future task in critical line        :crit, 5d
+Create tests for renderer           :2d
+Add to mermaid                      :1d
 
-    section Documentation
-    Describe gantt syntax               :active, a1, after des1, 3d
-    Add gantt diagram to demo page      :after a1  , 20h
-    Add another diagram to demo page    :doc1, after a1  , 48h
+section Documentation
+Describe gantt syntax               :active, a1, after des1, 3d
+Add gantt diagram to demo page      :after a1  , 20h
+Add another diagram to demo page    :doc1, after a1  , 48h
 
-    section Last section
-    Describe gantt syntax               :after doc1, 3d
-    Add gantt diagram to demo page      :20h
-    Add another diagram to demo page    :48h
+section Last section
+Describe gantt syntax               :after doc1, 3d
+Add gantt diagram to demo page      :20h
+Add another diagram to demo page    :48h
 ```
 
 ::: details Code
 
 ````md
-```mermaid
-gantt
-    dateFormat  YYYY-MM-DD
-    title       Adding GANTT diagram functionality to mermaid
-    excludes    weekends
-    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
+```gantt
+dateFormat  YYYY-MM-DD
+title       Adding GANTT diagram functionality to mermaid
+excludes    weekends
+%% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
 
-    section A section
-    Completed task            :done,    des1, 2014-01-06,2014-01-08
-    Active task               :active,  des2, 2014-01-09, 3d
-    Future task               :         des3, after des2, 5d
-    Future task2              :         des4, after des3, 5d
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2              :         des4, after des3, 5d
 
-    section Critical tasks
-    Completed task in the critical line :crit, done, 2014-01-06,24h
-    Implement parser and jison          :crit, done, after des1, 2d
-    Create tests for parser             :crit, active, 3d
-    Future task in critical line        :crit, 5d
-    Create tests for renderer           :2d
-    Add to mermaid                      :1d
+section Critical tasks
+Completed task in the critical line :crit, done, 2014-01-06,24h
+Implement parser and jison          :crit, done, after des1, 2d
+Create tests for parser             :crit, active, 3d
+Future task in critical line        :crit, 5d
+Create tests for renderer           :2d
+Add to mermaid                      :1d
 
-    section Documentation
-    Describe gantt syntax               :active, a1, after des1, 3d
-    Add gantt diagram to demo page      :after a1  , 20h
-    Add another diagram to demo page    :doc1, after a1  , 48h
+section Documentation
+Describe gantt syntax               :active, a1, after des1, 3d
+Add gantt diagram to demo page      :after a1  , 20h
+Add another diagram to demo page    :doc1, after a1  , 48h
 
-    section Last section
-    Describe gantt syntax               :after doc1, 3d
-    Add gantt diagram to demo page      :20h
-    Add another diagram to demo page    :48h
+section Last section
+Describe gantt syntax               :after doc1, 3d
+Add gantt diagram to demo page      :20h
+Add another diagram to demo page    :48h
 ```
 ````
 
@@ -341,21 +329,21 @@ gantt
 
 ### 饼图
 
-```mermaid
-pie title What Voldemort doesn't have?
-    "FRIENDS" : 2
-    "FAMILY" : 3
-    "NOSE" : 45
+```pie
+title What Voldemort doesn't have?
+  "FRIENDS" : 2
+  "FAMILY" : 3
+  "NOSE" : 45
 ```
 
 ::: details Code
 
 ````md
-```mermaid
-pie title What Voldemort doesn't have?
-    "FRIENDS" : 2
-    "FAMILY" : 3
-    "NOSE" : 45
+```pie
+title What Voldemort doesn't have?
+  "FRIENDS" : 2
+  "FAMILY" : 3
+  "NOSE" : 45
 ```
 ````
 

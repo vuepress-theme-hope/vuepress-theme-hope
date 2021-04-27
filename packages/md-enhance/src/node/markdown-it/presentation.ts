@@ -17,7 +17,7 @@ export default (md: MarkdownIt): void => {
 
   md.renderer.rules.presentation = (tokens, idx): string => {
     const token = tokens[idx];
-    const key = `presentation_${hash(idx)}`;
+    const key = `presentation-${hash(idx)}`;
     const { content, info } = token;
 
     return `<Presentation id="${key}" data-code="${encodeURIComponent(
