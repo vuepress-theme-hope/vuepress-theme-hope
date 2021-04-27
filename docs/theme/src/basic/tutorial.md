@@ -1,5 +1,6 @@
 ---
 title: Step by Step Tutorial
+icon: creative
 category: Get Started
 ---
 

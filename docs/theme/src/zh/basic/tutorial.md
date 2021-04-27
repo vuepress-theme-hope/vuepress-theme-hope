@@ -1,5 +1,6 @@
 ---
 title: 小白教程
+icon: creative
 category: Get Started
 ---
 
