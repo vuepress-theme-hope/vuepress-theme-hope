@@ -55,7 +55,7 @@ ${demo}
 
     expect(
       markdownIt.render(`
-@slidestarta
+@slidestar
 ${demo}
 @slideend
 `)

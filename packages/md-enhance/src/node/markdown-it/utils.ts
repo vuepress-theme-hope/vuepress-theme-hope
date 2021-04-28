@@ -106,7 +106,7 @@ export const generateUML = (
 
       if (
         // didn’t find the closing fence
-        state.src.charAt(start) !== "@" &&
+        state.src.charAt(start) === "@" &&
         // closing fence should not be indented with respect of opening fence
         state.sCount[nextLine] <= state.sCount[startLine]
       ) {
