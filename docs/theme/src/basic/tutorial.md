@@ -79,6 +79,10 @@ title: Theme Demo
 description: A demo for vuepress-theme-hope
 # Output directory
 dest: ./dist
+# Set locale for root folder
+locales:
+  /:
+    lang: en-US
 # Use this theme
 theme: hope
 # Theme configuration

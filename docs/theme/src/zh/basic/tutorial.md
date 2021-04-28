@@ -76,11 +76,15 @@ Markdown 的内容会渲染为网页的内容。关于 Markdown 教程，请见 
 
 ```yml
 # 站点名称
-title: Theme Demo
+title: 主题演示
 # 站点描述
-description: A demo for vuepress-theme-hope
+description: vuepress-theme-hope 的演示
 # 输出目录
 dest: ./dist
+# 设置根目录语言
+locales:
+  /:
+    lang: zh-CN
 # 使用本主题
 theme: hope
 # 主题配置
