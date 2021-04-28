@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.15.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.2...v1.15.3) (2021-04-28)
+
+### Bug Fixes
+
+- **md-enhance:** fix presentation close char issue ([75af7fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75af7fb538906ba4542531a0d5d155c4def0ec01))
+
+### Features
+
+- **comment:** do not show link by default when using valine ([9e9a500](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e9a5009628dcfb5fffafa45442e998019455cbd))
+- **comment:** only show date of create time when inffered from git ([e3b3b7c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e3b3b7c34d45c742f73da003ab399712e4ec83ee))
+- **comment:** update valine placeholder text ([67b97c5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67b97c561d2558efe802b881cf9ca9797d265d8b))
+
 ## [1.15.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.1...v1.15.2) (2021-04-27)
 
 ### Features
