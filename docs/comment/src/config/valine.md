@@ -58,7 +58,7 @@ Whether to record the commenter IP
 - **meta**
 
   - Type: `string[]`
-  - Default: `['nick','mail','link']`
+  - Default: `['nick','mail']`
 
   Commenter’s info
 

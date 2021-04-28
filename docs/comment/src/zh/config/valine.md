@@ -58,7 +58,7 @@ icon: valine
 - **meta**
 
   - 类型: `string[]`
-  - 默认值: `['nick','mail','link']`
+  - 默认值: `['nick','mail']`
 
 评论者相关属性
 
