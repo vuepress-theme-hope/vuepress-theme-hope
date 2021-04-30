@@ -11,7 +11,7 @@ tags:
 
 <!-- more -->
 
-## Configuration
+## 配置
 
 ```js {4}
 module.exports = {
