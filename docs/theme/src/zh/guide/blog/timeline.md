@@ -9,7 +9,7 @@ tags:
 
 你可以通过 `/timeline/` 访问时间页面，在页面中，你可以按照时间倒序查看所有的文章列表。
 
-![时间线列表哦](./assets/timeline.png)
+![时间线列表](./assets/timeline.png)
 
 ## 排除文章
 
