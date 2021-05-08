@@ -9,29 +9,25 @@ describe("Reading Time Test", () => {
     expect(getChinese("春眠不觉晓，处处闻啼鸟。").length).toEqual(10);
 
     expect(
-      getWordNumber("\n Mr.Hope is handsome, and he is a great man.")
+      getWordNumber("\n Hope is handsome, and he is a great man.")
     ).toEqual(9);
 
     expect(
-      getWordNumber(
-        "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
-      )
+      getWordNumber("\n Hope ! is #$%^&* handsome, and %^&* he is a great man.")
     ).toEqual(9);
 
     expect(getWordNumber("春眠^&*(不觉晓，处处闻!#$%啼鸟。")).toEqual(10);
 
     expect(
       getWordNumber(
-        "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
+        "  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man."
       )
     ).toEqual(19);
   });
 
   it("Reading Time", () => {
     expect(
-      readingTime(
-        "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
-      )
+      readingTime("\n Hope ! is #$%^&* handsome, and %^&* he is a great man.")
     ).toEqual({
       minutes: 0.03,
       words: 9,
@@ -44,7 +40,7 @@ describe("Reading Time Test", () => {
 
     expect(
       readingTime(
-        "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
+        "  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man."
       )
     ).toEqual({
       minutes: 0.06,
@@ -53,7 +49,7 @@ describe("Reading Time Test", () => {
 
     expect(
       readingTime(
-        "\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
+        "\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man."
       )
     ).toEqual({
       minutes: 0.44,
