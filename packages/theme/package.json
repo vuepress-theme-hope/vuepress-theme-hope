@@ -31,8 +31,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@docsearch/css": "^1.0.0-alpha.28",
-    "@docsearch/js": "^1.0.0-alpha.28",
+    "@docsearch/css": "^3.0.0-alpha.36",
+    "@docsearch/js": "^3.0.0-alpha.36",
     "@mr-hope/vuepress-plugin-comment": "1.15.3",
     "@mr-hope/vuepress-plugin-components": "1.15.2",
     "@mr-hope/vuepress-plugin-copy-code": "1.15.2",
