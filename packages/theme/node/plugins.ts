@@ -1,10 +1,9 @@
 import { resolve } from "path";
 
-import type {
-  Page,
-  PluginConfig,
-  ResolvedComponent,
-} from "@mr-hope/vuepress-types";
+import { cleanUrlPlugin } from "./clean-url";
+import { chunkRenamePlugin } from "./chunk-rename";
+
+import type { PluginConfig } from "@mr-hope/vuepress-types";
 import type { ResolvedHopeThemeConfig } from "../types";
 
 export const getPluginConfig = (
@@ -67,8 +66,6 @@ export const getPluginConfig = (
 
     ["add-this", typeof themeConfig.addThis === "string"],
 
-    ["clean-urls", { normalSuffix: "/" }],
-
     [
       "copyright",
       typeof themeConfig.copyright === "object"
@@ -86,23 +83,6 @@ export const getPluginConfig = (
 
     ["md-enhance", themeConfig.mdEnhance || {}],
 
-    [
-      "named-chunks",
-      themeConfig.namedChunks === false
-        ? false
-        : themeConfig.namedChunks || {
-            pageChunkName: (page: Page): string => {
-              const title = (page.title || "").replace(
-                /[.&*?#\\/:"<>| ]/gu,
-                ""
-              );
-              return title ? `page-${title}` : `page-${page.key.slice(1)}`;
-            },
-            layoutChunkName: (layout: ResolvedComponent): string =>
-              `layout-${layout.componentName}`,
-          },
-    ],
-
     ["@mr-hope/copy-code", themeConfig.copyCode],
 
     ["photo-swipe", themeConfig.photoSwipe],
@@ -119,6 +99,18 @@ export const getPluginConfig = (
                 : {},
           }
         : false,
+    ],
+
+    [
+      cleanUrlPlugin,
+      themeConfig.cleanUrl === false
+        ? false
+        : themeConfig.cleanUrl || { normalSuffix: "/" },
+    ],
+
+    [
+      chunkRenamePlugin,
+      themeConfig.chunkRename === false ? false : themeConfig.chunkRename,
     ],
   ];
 };

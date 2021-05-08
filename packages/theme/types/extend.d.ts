@@ -78,4 +78,12 @@ declare module "@mr-hope/vuepress-types" {
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface ThemeConfig extends HopeThemeConfig {}
+
+  interface Page {
+    _chunkName?: string;
+  }
+
+  interface ResolvedComponent {
+    _chunkName?: string;
+  }
 }

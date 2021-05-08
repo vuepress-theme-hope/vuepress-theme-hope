@@ -7,7 +7,60 @@ import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
-import { NamedChunksPluginOptions } from "vuepress-plugin-named-chunks";
+
+import type { Page, ResolvedComponent } from "@mr-hope/vuepress-types";
+
+/**
+ * 重命名块选项
+ *
+ * Options for renaming chunks
+ */
+export interface ChunkRenameOptions {
+  /**
+   * 页面块重命名选项。 默认情况下，所有页面块都将以页面标题命名。
+   *
+   * Page Chunk Rename Option. By default, all page chunks will be named with page title.
+   */
+  pageChunkName: ((page: Page) => string) | false;
+
+  /**
+   * 布局块重命名选项。 默认情况下，所有布局块都将通过其组件名称来命名。
+   *
+   * Layout Chunk Rename Option. By default, all the layout chunks will be named by their component name.
+   */
+  layoutChunkName: ((layout: ResolvedComponent) => string) | false;
+}
+
+/**
+ * Options for cleaning url suffix
+ */
+export interface CleanUrlOptions {
+  /**
+   * 普通页面后缀。此默认行为将为 `/a/b.md` 生成 `/a/b`。
+   *
+   * Nornal Page suffix. This default behavior will generate `a/b.md` with `/a/b`.
+   *
+   * @default ''
+   */
+  normalSuffix: string;
+  /**
+   * `index.md`，`readme.md` 和 `README.md` 的页面后缀。此默认行为将为 `a/readme.md` 生成 `/a/`。
+   *
+   * Page suffix for `index.md`, `readme.md` and `README.md`. This default behavior will generate `a/readme.md` with `/a/`.
+   *
+   * @default '/'
+   */
+  indexSuffix: string;
+  /**
+   * 未找到页面的链接
+   *
+   * Link for not found pages
+   *
+   * @default './404.html'
+   */
+  notFoundPath: string;
+}
+
 /**
  * 版权设置
  *
@@ -68,6 +121,26 @@ interface HopeThemePluginConfig {
   comment?: CommentOptions;
 
   /**
+   * chunk 重命名
+   *
+   * @see https://vuepress-theme-hope.github.io/zh/config/theme/plugin/#chunkrename
+   *
+   * Chunk Rename
+   * @see https://vuepress-theme-hope.github.io/config/theme/plugin/#chunkrename
+   */
+
+  chunkRename?: ChunkRenameOptions | false;
+
+  /**
+   * 清理插件配置
+   * @see https://vuepress-theme-hope.github.io/zh/config/theme/plugin/#cleanurl
+   *
+   * Clean Url Config
+   * @see https://vuepress-theme-hope.github.io/config/theme/plugin/#cleanurl
+   */
+  cleanUrl?: CleanUrlOptions | false;
+
+  /**
    * 代码复制插件配置
    * @see http://vuepress-theme-hope.github.io/copy-code/zh/config/
    *
@@ -109,14 +182,6 @@ interface HopeThemePluginConfig {
    * @see http://vuepress-theme-hope.github.io/md-enhance/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false;
-
-  /**
-   * named-chunk 启用
-   *
-   * @default true
-   */
-
-  namedChunks?: NamedChunksPluginOptions | false;
 
   /**
    * PWA 插件配置

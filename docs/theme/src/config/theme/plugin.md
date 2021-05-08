@@ -534,11 +534,67 @@ Options for photo preview plugin, set to `false` to disable this plugin.
 
 > By default no more configuration is needed, and for details see [PhotoSwipe Plugin Config][photo-swipe-config]
 
-## namedChunks
+## chunkRename
 
-Options for `vuepress-named-chunks`, set to `false` to disable this plugin.
+Options for renaming chunks, set with `false` to disable this feature.
 
-By default, all page chunks will be named with page title, and all the layout chunks will be named by their component name.
+### chunkRename.pageChunkName
+
+- Type: `((page: Page) => string) | false`
+- Default:
+
+  ```ts
+  ({ title = "", key }): string => {
+    const chunkTitle = (title || "").replace(/[.&*?#\\/:"<>| ]/gu, "");
+
+    return chunkTitle ? `page-${chunkTitle}` : `page-${key.slice(1)}`;
+  };
+  ```
+
+- Required: No
+
+Page Chunk Rename Option. By default, all page chunks will be named with page title.
+
+### chunkRename.layoutChunkName
+
+- Type: `((layout: ResolvedComponent) => string) | false`
+- Default:
+
+  ```ts
+  (layout): string => `layout-${layout.componentName}`;
+  ```
+
+- Required: No
+
+Layout Chunk Rename Option. By default, all the layout chunks will be named by their component name.
+
+## cleanUrl
+
+Options for cleaning url suffix, set to `false` to disable this feature.
+
+### cleanUrl.normalSuffix
+
+- Type: `string`
+- Default: `""`
+- Required: No
+
+Nornal Page suffix. This default behavior will generate `a/b.md` with `/a/b`.
+
+### cleanUrl.indexSuffix
+
+- Type: `string`
+- Default: `"/"`
+- Required: No
+
+Page suffix for `index.md`, `readme.md` and `README.md`. This default behavior will generate `a/readme.md` with `/a/`.
+
+### cleanUrl.notFoundPath
+
+- Type: `string`
+- Default: `"/404.html"`
+- Required: No
+
+Link for not found pages.
 
 [add-this]: https://vuepress-theme-hope.github.io/add-this
 [comment-config]: https://vuepress-theme-hope.github.io/comment/config/

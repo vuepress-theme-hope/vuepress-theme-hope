@@ -544,11 +544,67 @@ AddThis 的 pubid
 >
 > 有关详细信息，请参见 [PhotoSwipe 插件配置][photo-swipe-config]]
 
-## namedChunks
+## chunkRename
 
-`vuepress-named-chunks` 的选项，设置为 `false` 以禁用此插件。
+重命名块选项，设置为 `false` 以禁用此功能。
 
-默认情况下，所有页面块均以页面标题命名，所有布局块均以其组件名称命名。
+### chunkRename.pageChunkName
+
+- 类型: `((page: Page) => string) | false`
+- 默认值:
+
+  ```ts
+  ({ title = "", key }): string => {
+    const chunkTitle = (title || "").replace(/[.&*?#\\/:"<>| ]/gu, "");
+
+    return chunkTitle ? `page-${chunkTitle}` : `page-${key.slice(1)}`;
+  };
+  ```
+
+- 必填: 否
+
+页面块重命名选项。 默认情况下，所有页面块都将以页面标题命名。
+
+### chunkRename.layoutChunkName
+
+- 类型: `((layout: ResolvedComponent) => string) | false`
+- 默认值:
+
+  ```ts
+  (layout): string => `layout-${layout.componentName}`;
+  ```
+
+- 必填: 否
+
+布局块重命名选项。 默认情况下，所有布局块都将通过其组件名称来命名。
+
+## cleanUrl
+
+清除 url 后缀选项，设置 `false` 以禁用此功能。
+
+### cleanUrl.normalSuffix
+
+- 类型: `string`
+- 默认值: `""`
+- 必填: 否
+
+普通页面后缀。此默认行为将为 `/a/b.md` 生成 `/a/b`。
+
+### cleanUrl.indexSuffix
+
+- 类型: `string`
+- 默认值: `"/"`
+- 必填: 否
+
+`index.md`，`readme.md` 和 `README.md` 的页面后缀。此默认行为将为 `a/readme.md` 生成 `/a/`。
+
+### cleanUrl.notFoundPath
+
+- 类型: `string`
+- 默认值: `"/404.html"`
+- 必填: 否
+
+未找到页面的链接。
 
 [add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
 [comment-config]: https://vuepress-theme-hope.github.io/comment/zh/config/
