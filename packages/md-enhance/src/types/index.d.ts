@@ -118,6 +118,14 @@ export type MarkdownEnhanceOptions = Partial<{
    */
   lineNumbers: boolean;
   /**
+   * 是否修复包含特殊字符的图片路径
+   *
+   * Whether to fix image links containing special characters
+   *
+   * @default true
+   */
+  imageFix: boolean;
+  /**
    * 是否启用自定义对齐支持
    *
    * Whether to enable align support

@@ -48,6 +48,13 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 是否在每个代码块的左侧显示行号
 
+### mdEnhance.imageFix
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否修复包含特殊字符的图片的引用
+
 ### mdEnhance.align
 
 - 类型: `boolean`

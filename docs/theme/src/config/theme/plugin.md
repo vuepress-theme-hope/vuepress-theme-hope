@@ -50,6 +50,13 @@ Please use the options below and enable ONLY the feature you want to use.
 
 Whether to show line numbers to the left of each code block
 
+### mdEnhance.imageFix
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to fix image links containing special characters
+
 ### mdEnhance.align
 
 - Type: `boolean`

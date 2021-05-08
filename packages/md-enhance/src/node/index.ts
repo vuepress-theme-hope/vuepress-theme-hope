@@ -2,6 +2,7 @@ import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 
 import { codeDemoDefaultSetting } from "./markdown-it/code-demo";
+import decodeURL from "./markdown-it/decode-url";
 import flowchart from "./markdown-it/flowchart";
 import footnote from "./markdown-it/footnote";
 import katex from "./markdown-it/katex";
@@ -93,6 +94,8 @@ export = (
     clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
 
     chainMarkdown: (md): void => {
+      if (markdownOption.imageFix !== false)
+        md.plugin("decode-url").use(decodeURL);
       if (markdownOption.lineNumbers !== false)
         md.plugin("line-numbers").use(lineNumbers);
       if (markdownOption.sup || markdownOption.enableAll)

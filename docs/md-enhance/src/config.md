@@ -33,6 +33,13 @@ Please use the options below and enable ONLY the feature you want to use.
 
 Whether to display the line number to the left of each code block.
 
+## imageFix
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to fix image links containing special characters
+
 ## align
 
 - Type: `boolean`

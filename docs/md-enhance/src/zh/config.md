@@ -33,6 +33,13 @@ icon: config
 
 是否在每个代码块的左侧显示行号。
 
+## imageFix
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否修复包含特殊字符的图片的引用
+
 ## align
 
 - 类型: `boolean`
