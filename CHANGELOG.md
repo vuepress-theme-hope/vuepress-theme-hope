@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.16.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.3...v1.16.0) (2021-05-08)
+
+### Bug Fixes
+
+- **reading-time:** improve word count ([b6bc6e9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b6bc6e9e7fe1f2942e853f9a2e42199b16ce0807))
+
+### Features
+
+- **md-enhance:** add imageFix option ([81b20ff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81b20ffb79007593aeca4729cdff57b6ed779a3c))
+- **theme:** add cleanUrl option ([5e7b976](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e7b976af777b5717ed93c1a83c31fefdf6e447d))
+- **theme:** update docsearch to V3 ([aab88d7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aab88d709349cd88837e901508991b1dcce374fa))
+
+### BREAKING CHANGES
+
+- **theme:** rename `namedChunk` to `chunkRename`
+
 ## [1.15.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.2...v1.15.3) (2021-04-28)
 
 ### Bug Fixes

@@ -7,6 +7,24 @@ icon: time
 
 <!-- more -->
 
+## v1.16.0
+
+### 新功能
+
+#### 图片链接修复 <Badge text="new" />
+
+现在，你可以在图片链接中使用特殊字符。这是一个针对 VuePress 内部 Bug 的修正。
+
+此功能默认情况下处于启用状态，并由 `imageFix` 选项控制。
+
+#### 链接控制 <Badge text="new" />
+
+themeConfig 新增 `cleanUrl` 选项以更好地控制链接生成。
+
+### 破坏变更 <Badge text="配置" type="warn" />
+
+themeConfig 中的 `namedChunk` 选项更名为 `chunkRename`。
+
 ## v1.15.2
 
 ### 新功能

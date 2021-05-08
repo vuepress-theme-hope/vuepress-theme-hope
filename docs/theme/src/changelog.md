@@ -7,6 +7,24 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.16.0
+
+### Features
+
+#### Image Link fix <Badge text="new" />
+
+Now you can use special characters when you are linking images. This is a workaround on VuePress internal bug.
+
+This feature is on by default and controlled by `imageFix` option.
+
+#### Link Control <Badge text="new" />
+
+New `cleanUrl` option in themeConfig to take better contorl of generating links.
+
+### Breaking Changes <Badge text="config" type="warn" />
+
+`namedChunk` in themeConfig is renamed to `chunkRename`.
+
 ## v1.15.2
 
 ### Features
