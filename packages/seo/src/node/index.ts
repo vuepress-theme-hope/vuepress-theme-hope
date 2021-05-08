@@ -4,12 +4,7 @@ import { relative, resolve } from "path";
 import { generateSeo } from "./seo";
 import { appendMeta } from "./meta";
 
-import type {
-  Context,
-  PluginOptionAPI,
-  ThemeConfig,
-  Page,
-} from "@mr-hope/vuepress-types";
+import type { Page, Plugin, ThemeConfig } from "@mr-hope/vuepress-types";
 import type { PageSeoInfo, SeoOptions } from "../types";
 import type { SeoContent } from "../types/seo";
 
@@ -21,7 +16,7 @@ const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
   return langs;
 };
 
-export = (options: SeoOptions, context: Context): PluginOptionAPI => {
+const seoPlugin: Plugin<SeoOptions> = (options, context) => {
   const { themeConfig } = context;
   const seoOption =
     Object.keys(options).length > 0 ? options : themeConfig.seo || {};
@@ -99,3 +94,5 @@ export = (options: SeoOptions, context: Context): PluginOptionAPI => {
     plugins: [["@mr-hope/git", themeConfig.git || true]],
   };
 };
+
+export = seoPlugin;

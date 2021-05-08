@@ -1,12 +1,9 @@
 import { resolve } from "path";
 
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin } from "@mr-hope/vuepress-types";
 import type { AddThisOptions } from "../types";
 
-export = (
-  options: AddThisOptions,
-  { themeConfig }: Context
-): PluginOptionAPI => ({
+const addThisPlugin: Plugin<AddThisOptions> = (options, { themeConfig }) => ({
   name: "add-this",
 
   define: { PUB_ID: options.pubid || themeConfig.addThis || "" },
@@ -15,3 +12,5 @@ export = (
 
   enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 });
+
+export = addThisPlugin;

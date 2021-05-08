@@ -6,10 +6,10 @@ import {
   getUpdatedTimeStamp,
 } from "./time";
 
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin } from "@mr-hope/vuepress-types";
 import type { GitOptions } from "../types";
 
-export = (options: GitOptions, { cwd }: Context): PluginOptionAPI => {
+const gitPlugin: Plugin<GitOptions> = (options, { cwd }) => {
   const isGitRepoValid = checkGitRepo(cwd);
 
   return {
@@ -49,3 +49,5 @@ export = (options: GitOptions, { cwd }: Context): PluginOptionAPI => {
     },
   };
 };
+
+export = gitPlugin;

@@ -12,15 +12,11 @@ import type {
   ResolvedHopeThemeConfig,
 } from "./types";
 
-interface ThemeOptionAPI extends PluginOptionAPI {
-  extend?: string;
-}
-
 // Theme API.
 const themeAPI = (
   themeConfig: ResolvedHopeThemeConfig,
   ctx: Context
-): ThemeOptionAPI => ({
+): PluginOptionAPI => ({
   alias: getAlias(themeConfig, ctx),
 
   plugins: getPluginConfig(themeConfig),

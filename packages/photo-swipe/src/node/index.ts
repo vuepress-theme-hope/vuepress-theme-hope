@@ -3,11 +3,11 @@ import { getRootLangPath } from "@mr-hope/vuepress-shared";
 import { i18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin } from "@mr-hope/vuepress-types";
 import type { PhotoSwipeOptions } from "../types";
 import type PhotoSwipeDefaultUI from "photoswipe/dist/photoswipe-ui-default";
 
-export = (options: PhotoSwipeOptions, context: Context): PluginOptionAPI => {
+const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, context) => {
   const option =
     Object.keys(options).length > 0
       ? options
@@ -34,3 +34,5 @@ export = (options: PhotoSwipeOptions, context: Context): PluginOptionAPI => {
     globalUIComponents: "PhotoSwipeUI",
   };
 };
+
+export = photoSwipePlugin;

@@ -3,10 +3,10 @@ import { i18n } from "./i18n";
 import { readingTime } from "./reading-time";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin } from "@mr-hope/vuepress-types";
 import type { ReadingTimeOptions } from "../types";
 
-export = (options: ReadingTimeOptions, context: Context): PluginOptionAPI => {
+const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, context) => {
   const readingTimeConfig = i18n as PluginI18nConvert<ReadingTimeOptions>;
 
   readingTimeConfig["/"] = readingTimeConfig[getRootLangPath(context)];
@@ -26,3 +26,5 @@ export = (options: ReadingTimeOptions, context: Context): PluginOptionAPI => {
     },
   };
 };
+
+export = readingTimePlugin;

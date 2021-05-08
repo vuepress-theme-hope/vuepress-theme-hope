@@ -6,10 +6,10 @@ import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import type { PWAI18NConfig, PWAOptions } from "../types";
 
-const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
+const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
   const { base, themeConfig } = context;
   const pwaI18nConfig = i18n as PluginI18nConvert<PWAI18NConfig>;
   const pwaOption =
@@ -61,4 +61,5 @@ const pwaPlugin = (options: PWAOptions, context: Context): PluginOptionAPI => {
 
   return config;
 };
+
 export = pwaPlugin;

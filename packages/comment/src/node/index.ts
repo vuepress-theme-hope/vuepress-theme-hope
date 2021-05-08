@@ -4,9 +4,9 @@ import { pageInfoI18n, valineI18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { CommentOptions, PageInfoI18nConfig } from "../types";
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
-export = (options: CommentOptions, context: Context): PluginOptionAPI => {
+const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   const { themeConfig } = context;
   const rootLangPath = getRootLangPath(context);
   const pageInfoI18nConfig = pageInfoI18n as PluginI18nConvert<PageInfoI18nConfig>;
@@ -48,3 +48,5 @@ export = (options: CommentOptions, context: Context): PluginOptionAPI => {
 
   return config;
 };
+
+export = commentPlugin;

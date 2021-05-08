@@ -14,13 +14,10 @@ import sup from "./markdown-it/sup";
 import tasklist from "./markdown-it/tasklist";
 import { pluginConfig } from "./pluginConfig";
 
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin } from "@mr-hope/vuepress-types";
 import type { MarkdownEnhanceOptions } from "../types";
 
-export = (
-  option: MarkdownEnhanceOptions,
-  context: Context
-): PluginOptionAPI => {
+const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
   const { themeConfig } = context;
   const markdownOption =
     Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
@@ -133,3 +130,5 @@ export = (
     plugins: pluginConfig(markdownOption, context),
   };
 };
+
+export = mdEnhancePlugin;

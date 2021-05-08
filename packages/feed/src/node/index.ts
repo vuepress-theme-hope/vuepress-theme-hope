@@ -7,12 +7,7 @@ import {
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
 
-import type {
-  Context,
-  Page,
-  PageFrontmatter,
-  PluginOptionAPI,
-} from "@mr-hope/vuepress-types";
+import type { Page, PageFrontmatter, Plugin } from "@mr-hope/vuepress-types";
 import type { FeedOptions } from "../types";
 
 const isFeed = (frontmatter: PageFrontmatter): boolean =>
@@ -20,7 +15,7 @@ const isFeed = (frontmatter: PageFrontmatter): boolean =>
   frontmatter.article !== false &&
   (!frontmatter.feed || frontmatter.feed.enable !== false);
 
-export = (options: FeedOptions, context: Context): PluginOptionAPI => {
+const feedPlugin: Plugin<FeedOptions> = (options, context) => {
   if (!checkOptions(options, context)) return {};
 
   const channelOptions = getFeedChannelOption(options, context);
@@ -64,3 +59,5 @@ export = (options: FeedOptions, context: Context): PluginOptionAPI => {
     },
   };
 };
+
+export = feedPlugin;

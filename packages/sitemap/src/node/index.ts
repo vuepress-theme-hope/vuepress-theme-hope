@@ -1,10 +1,10 @@
 import { black, blue } from "chalk";
 import { genSiteMap } from "./sitemap";
 
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin } from "@mr-hope/vuepress-types";
 import type { SitemapOptions } from "../types";
 
-export = (options: SitemapOptions, context: Context): PluginOptionAPI => {
+const sitemapPlugin: Plugin<SitemapOptions> = (options, context) => {
   const { themeConfig } = context;
 
   return {
@@ -31,3 +31,5 @@ export = (options: SitemapOptions, context: Context): PluginOptionAPI => {
     plugins: [["@mr-hope/git", themeConfig.git || true]],
   };
 };
+
+export = sitemapPlugin;

@@ -3,10 +3,10 @@ import { getRootLangPath } from "@mr-hope/vuepress-shared";
 import { i18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin } from "@mr-hope/vuepress-types";
 import type { CopyCodeI18nConfig, CopyCodeOptions } from "../types";
 
-export = (options: CopyCodeOptions, context: Context): PluginOptionAPI => {
+const copyCodePlugin: Plugin<CopyCodeOptions> = (options, context) => {
   const copyCodeI18nConfig = i18n as PluginI18nConvert<CopyCodeI18nConfig>;
 
   copyCodeI18nConfig["/"] = copyCodeI18nConfig[getRootLangPath(context)];
@@ -25,3 +25,5 @@ export = (options: CopyCodeOptions, context: Context): PluginOptionAPI => {
     clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
   };
 };
+
+export = copyCodePlugin;
