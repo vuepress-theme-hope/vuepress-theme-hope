@@ -62,14 +62,15 @@
     fill currentcolor
 
   .color-picker-menu
-    background var(--bgcolor)
     position absolute
     top: $navbarHeight - $navbarVerticalPadding
     left 50%
     min-width 100px
     margin 0
     padding 0.5em 0.75em
+    background var(--bgcolor)
     box-shadow 2px 2px 10px var(--card-shadow-color)
+    color var(--dark-grey)
     border-radius 0.25em
     transform translateX(-50%)
     z-index 250
