@@ -1,9 +1,7 @@
 /* eslint-disable max-statements */
 import MarkdownIt = require("markdown-it");
 import StateInline = require("markdown-it/lib/rules_inline/state_inline");
-
-// same as UNESCAPE_MD_RE plus a space
-const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
+import { UNESCAPE_RE } from "./utils";
 
 const subscriptRender = (state: StateInline, silent?: boolean): boolean => {
   let found;
