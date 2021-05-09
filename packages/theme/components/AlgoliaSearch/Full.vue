@@ -49,16 +49,35 @@ body.theme-dark
   --docsearch-muted-color #7f8497
 
 .DocSearch-Button
+  display inline-flex
+  justify-content space-between
+  align-items center
   height 36px
   margin 0 1rem 0 0.25rem
   padding 0.5rem
   background var(--docsearch-searchbox-background)
   border-radius 40px
   color var(--docsearch-muted-color)
-  display inline-flex
-  align-items center
+  font-weight 500
   user-select none
   outline none
+
+  @media (max-width $MQMobile)
+    margin-right 0
+
+  &:active, &:focus, &:hover
+    background var(--docsearch-searchbox-focus-background)
+    box-shadow var(--docsearch-searchbox-shadow)
+    color var(--dark-grey)
+
+  &:hover .DocSearch-Search-Icon
+    @media (max-width $MQMobile)
+      color var(--accent-color)
+
+.DocSearch-Button-Container
+  .navbar &
+    align-items center
+    display flex
 
   .DocSearch-Search-Icon
     width 1rem
@@ -68,13 +87,6 @@ body.theme-dark
     stroke-width 3
     position relative
 
-  @media (max-width $MQMobile)
-    margin-right 0
-
-    &:hover
-      .DocSearch-Search-Icon
-        color var(--accent-color)
-
 .DocSearch-Search-Icon
   stroke-width 1.6
 
@@ -83,7 +95,8 @@ body.theme-dark
   font-size 1rem
 
 .DocSearch-Button-Keys
-  display flex
+  .navbar &
+    display flex
 
 .DocSearch-Button-Key
   position relative
