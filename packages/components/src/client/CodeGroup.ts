@@ -31,7 +31,7 @@ export default Vue.extend({
         .filter((slot) => Boolean(slot.componentOptions))
         .map((slot, index) => {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          const propsData = (slot.componentOptions!.propsData as unknown) as {
+          const propsData = slot.componentOptions!.propsData as unknown as {
             title: string;
             active?: string | boolean;
           };

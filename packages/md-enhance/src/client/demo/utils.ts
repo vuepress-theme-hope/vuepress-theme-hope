@@ -180,9 +180,10 @@ export const getVueCode = (
   const jsBlock = /<script(\s*lang=(['"])(.*?)\2)?>([\s\S]+)<\/script>/u.exec(
     vueTemplate
   );
-  const cssBlock = /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>/u.exec(
-    vueTemplate
-  );
+  const cssBlock =
+    /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>/u.exec(
+      vueTemplate
+    );
   const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
   const [js = "", jsLang = ""] = jsBlock
     ? [jsBlock[4].replace(/^\n|\n$/g, ""), jsBlock[3]]

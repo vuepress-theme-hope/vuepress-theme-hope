@@ -20,9 +20,11 @@ export default Vue.extend({
 
       if (locales && Object.keys(locales).length > 1) {
         const currentLink = this.$page.path;
-        const { routes } = ((this.$router as unknown) as VueRouter & {
-          options: RouterOptions;
-        }).options;
+        const { routes } = (
+          this.$router as unknown as VueRouter & {
+            options: RouterOptions;
+          }
+        ).options;
         const themeLocales = this.$themeConfig.locales || {};
         const languageDropdown = {
           text: this.$themeLocaleConfig.selectText || "Languages",
@@ -73,6 +75,6 @@ export default Vue.extend({
             ]),
           ]),
         ])
-      : ((null as unknown) as VNode);
+      : (null as unknown as VNode);
   },
 });

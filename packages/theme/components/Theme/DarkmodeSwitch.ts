@@ -38,10 +38,12 @@ export default Vue.extend({
       if (status === "on") this.toggleDarkmode(true);
       else if (status === "off") this.toggleDarkmode(false);
       else {
-        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
-          .matches;
-        const isLightMode = window.matchMedia("(prefers-color-scheme: light)")
-          .matches;
+        const isDarkMode = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const isLightMode = window.matchMedia(
+          "(prefers-color-scheme: light)"
+        ).matches;
 
         window
           .matchMedia("(prefers-color-scheme: dark)")

@@ -5,29 +5,28 @@ import WorkboxBuild = require("workbox-build");
 import type { Context } from "@mr-hope/vuepress-types";
 import type { PWAOptions } from "../types";
 
-const imageFilter = (
-  outDir: string,
-  maxsize = 1024
-): WorkboxBuild.ManifestTransform => (
-  manifestEntries: WorkboxBuild.ManifestEntry[]
-): WorkboxBuild.ManifestTransformResult => {
-  const warnings: string[] = [];
-  const manifest: WorkboxBuild.ManifestEntry[] = [];
-  const imageExtensions = [".png", ".jpg", ".jpeg", "webp", "bmp", "gif"];
+const imageFilter =
+  (outDir: string, maxsize = 1024): WorkboxBuild.ManifestTransform =>
+  (
+    manifestEntries: WorkboxBuild.ManifestEntry[]
+  ): WorkboxBuild.ManifestTransformResult => {
+    const warnings: string[] = [];
+    const manifest: WorkboxBuild.ManifestEntry[] = [];
+    const imageExtensions = [".png", ".jpg", ".jpeg", "webp", "bmp", "gif"];
 
-  for (const entry of manifestEntries)
-    if (imageExtensions.some((ext) => entry.url.endsWith(ext))) {
-      const stats = statSync(resolve(outDir, entry.url));
+    for (const entry of manifestEntries)
+      if (imageExtensions.some((ext) => entry.url.endsWith(ext))) {
+        const stats = statSync(resolve(outDir, entry.url));
 
-      if (stats.size > maxsize * 1024)
-        warnings.push(
-          `Skipped ${entry.url}, as its ${Math.ceil(stats.size / 1024)} KB.\n`
-        );
-      else manifest.push(entry);
-    } else manifest.push(entry);
+        if (stats.size > maxsize * 1024)
+          warnings.push(
+            `Skipped ${entry.url}, as its ${Math.ceil(stats.size / 1024)} KB.\n`
+          );
+        else manifest.push(entry);
+      } else manifest.push(entry);
 
-  return { warnings, manifest };
-};
+    return { warnings, manifest };
+  };
 
 export const genServiceWorker = async (
   options: PWAOptions,

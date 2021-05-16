@@ -19,8 +19,7 @@ describe("Test resolveTheme function", () => {
       [
         "script",
         {
-          src:
-            "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+          src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
         },
       ],
       ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
@@ -65,8 +64,7 @@ describe("Test resolveTheme function", () => {
         },
         {
           text: "Changelog",
-          link:
-            "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
         },
       ],
       sidebar: {
@@ -154,8 +152,7 @@ describe("Test resolveTheme function", () => {
             },
             {
               text: "更新日志",
-              link:
-                "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+              link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
             },
           ],
           sidebar: {

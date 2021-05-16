@@ -114,8 +114,7 @@ module.exports = {
         items: [
           {
             text: "更新日志",
-            link:
-              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
           },
           {
             text: "项目地址",
@@ -386,8 +385,7 @@ module.exports = {
         items: [
           {
             text: "更新日志",
-            link:
-              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
           },
           {
             text: "项目地址",

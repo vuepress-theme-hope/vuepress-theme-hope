@@ -14,8 +14,7 @@ module.exports = config({
     [
       "script",
       {
-        src:
-          "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
       },
     ],
     ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],

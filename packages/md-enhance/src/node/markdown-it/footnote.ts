@@ -213,7 +213,7 @@ const footnoteDef = (
 
   state.bMarks[startLine] = posAfterColon;
   state.blkIndent += 4;
-  state.parentType = ("footnote" as unknown) as StateBlock.ParentType;
+  state.parentType = "footnote" as unknown as StateBlock.ParentType;
 
   if (state.sCount[startLine] < state.blkIndent)
     state.sCount[startLine] += state.blkIndent;

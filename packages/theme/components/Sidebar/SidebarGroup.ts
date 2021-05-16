@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import Vue from "vue";
 import DropdownTransition from "@theme/components/Sidebar/DropdownTransition.vue";
 import { isActive } from "@theme/util/path";
@@ -21,7 +22,9 @@ export default Vue.extend({
 
   beforeCreate(): void {
     // eslint-disable-next-line
-    this.$options.components!.SidebarLinks = require("@theme/components/Sidebar/SidebarLinks.vue").default;
+    this.$options.components!.SidebarLinks =
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      require("@theme/components/Sidebar/SidebarLinks.vue").default;
   },
 
   methods: {

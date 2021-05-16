@@ -75,9 +75,9 @@ export default Vue.extend({
     currentPage(): void {
       // list top border distance
       const distance =
-        (document.querySelector(
-          "#article-list"
-        ) as Element).getBoundingClientRect().top + window.scrollY;
+        (
+          document.querySelector("#article-list") as Element
+        ).getBoundingClientRect().top + window.scrollY;
 
       setTimeout(() => {
         window.scrollTo(0, distance);

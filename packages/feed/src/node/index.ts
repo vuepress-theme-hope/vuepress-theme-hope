@@ -45,9 +45,8 @@ const feedPlugin: Plugin<FeedOptions> = (options, context) => {
     },
 
     async generated(): Promise<void> {
-      const feedPages = (typeof options.sort === "function"
-        ? pages.sort(options.sort)
-        : pages
+      const feedPages = (
+        typeof options.sort === "function" ? pages.sort(options.sort) : pages
       ).slice(0, options.count);
 
       await new FeedGenerator(

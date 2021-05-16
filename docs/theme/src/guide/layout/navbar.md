@@ -114,8 +114,7 @@ module.exports = {
         items: [
           {
             text: "Changelog",
-            link:
-              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
           },
           {
             text: "Repo",
@@ -390,8 +389,7 @@ module.exports = {
         items: [
           {
             text: "Changelog",
-            link:
-              "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
           },
           {
             text: "Repo",

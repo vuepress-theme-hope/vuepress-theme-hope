@@ -33,11 +33,8 @@ const find = (
   items: SidebarItem[],
   offset: -1 | 1
 ): SidebarItem | false => {
-  const result: (
-    | SidebarPageItem
-    | SidebarExternalItem
-    | SidebarErrorItem
-  )[] = [];
+  const result: (SidebarPageItem | SidebarExternalItem | SidebarErrorItem)[] =
+    [];
 
   getSidebarItems(items, result);
 
