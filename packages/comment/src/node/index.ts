@@ -9,7 +9,8 @@ import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   const { themeConfig } = context;
   const rootLangPath = getRootLangPath(context);
-  const pageInfoI18nConfig = pageInfoI18n as PluginI18nConvert<PageInfoI18nConfig>;
+  const pageInfoI18nConfig =
+    pageInfoI18n as PluginI18nConvert<PageInfoI18nConfig>;
   const valineI18nConfig = valineI18n as PluginI18nConvert<string>;
 
   pageInfoI18nConfig["/"] = pageInfoI18nConfig[rootLangPath];
@@ -33,6 +34,10 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
       "@Valine":
         commentOptions.type === "valine"
           ? resolve(__dirname, "../client/Valine.vue")
+          : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+      "@Waline":
+        commentOptions.type === "waline"
+          ? resolve(__dirname, "../client/Waline.vue")
           : "@mr-hope/vuepress-shared/lib/esm/noopModule",
     },
 

@@ -1,11 +1,15 @@
 import Vue from "vue";
 import { commentOptions } from "./define";
 import Valine from "@Valine";
+import Waline from "@Waline";
 
 export default Vue.extend({
   name: "Comment",
 
-  components: { Valine },
+  components: {
+    Valine,
+    Waline,
+  },
 
   data: () => ({
     options: commentOptions,
