@@ -50,10 +50,14 @@ Whether to enable comment feature by default.
 
 Reading words per minute.
 
-## Valine config
+## Waline config
 
-- [See here](valine.md)
+- [See here](waline.md)
 
 ## Vssue config
 
 - [See here](vssue.md)
+
+## Valine config
+
+- [See here](valine.md)

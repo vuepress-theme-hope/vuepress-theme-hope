@@ -23,21 +23,26 @@ It is recommended to insert the comment component (`<Comment />`) after the `<Pa
 
 To keep it globally disabled, please set `comment` to `false` in the plugin options. This way you can set `comment: true` in the frontmatter of a particular page to enable it locally.
 
-You can choose from 2 comment service provider: Valine and Vssue.
+You can choose from 3 comment service provider: Waline, Vssue and Valine.
 
-::: tip Comparison between Valine and Vssue
+::: tip Comparison between services
 
-- Valine uses leancloud to support pageview statistics, and you can comment without logging in to any account
+- Waline uses a backend server to support comment and pageview statistics, and you can comment without logging in to any account. It needs extra configuration on backend, and you can deploy on vercel for free.
 - Vssue uses the issue panel of the code platform repo and requires the user to login or register the corresponding platform account.
+- Valine uses leancloud to support pageview statistics, and you can comment without logging in to any account
 
-If your site is for the general public rather than programmers, Valine is recommended.
+If your site is for the general public rather than programmers, Waline is recommended.
 
 :::
 
-### Valine
+### Waline
 
-See [Valine Config Guide](valine.md)
+See [Waline Config Guide](waline.md)
 
 ### Vssue
 
 See [Vssue Config Guide](vssue.md)
+
+### Valine
+
+See [Valine Config Guide](valine.md)

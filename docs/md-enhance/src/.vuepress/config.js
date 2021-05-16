@@ -130,9 +130,8 @@ module.exports = config({
     },
 
     comment: {
-      type: "valine",
-      appId: "2vSLKb0SqFKKWEgrOPGy3sp1-gzGzoHsz",
-      appKey: "vma8Ewk61WeNkI81O3CGpT2i",
+      type: "waline",
+      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
     git: {

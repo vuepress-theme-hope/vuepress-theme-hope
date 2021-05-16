@@ -1,8 +1,7 @@
 ---
+title: Valine Config
 icon: valine
 ---
-
-# Valine Config
 
 ## appId
 

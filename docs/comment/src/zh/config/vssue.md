@@ -1,8 +1,7 @@
 ---
+title: Vssue 配置
 icon: vssue
 ---
-
-# Vssue 配置
 
 ## platform
 

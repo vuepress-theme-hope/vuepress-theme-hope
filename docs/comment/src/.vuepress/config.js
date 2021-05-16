@@ -32,8 +32,9 @@ module.exports = config({
             icon: "info",
             link: "/guide/page-info/",
           },
-          { text: "Valine", icon: "valine", link: "/guide/valine/" },
+          { text: "Waline", icon: "waline", link: "/guide/waline/" },
           { text: "Vssue", icon: "vssue", link: "/guide/vssue/" },
+          { text: "Valine", icon: "valine", link: "/guide/valine/" },
         ],
       },
       {
@@ -42,11 +43,16 @@ module.exports = config({
         items: [
           { text: "Config", icon: "config", link: "/config/" },
           {
+            text: "Waline",
+            icon: "waline",
+            link: "/config/waline/",
+          },
+          { text: "Vssue", icon: "vssue", link: "/config/vssue/" },
+          {
             text: "Valine",
             icon: "valine",
             link: "/config/valine/",
           },
-          { text: "Vssue", icon: "vssue", link: "/config/vssue/" },
         ],
       },
     ],
@@ -55,7 +61,7 @@ module.exports = config({
       "/guide/": [
         "",
         "page-info",
-        "valine",
+        "waline",
         {
           title: "Vssue",
           icon: "vssue",
@@ -76,8 +82,9 @@ module.exports = config({
             },
           ],
         },
+        "valine",
       ],
-      "/config/": ["", "valine", "vssue"],
+      "/config/": ["", "waline", "vssue", "valine"],
       "/": ["guide/", "config/"],
     },
 
@@ -94,8 +101,9 @@ module.exports = config({
                 icon: "info",
                 link: "/zh/guide/page-info/",
               },
-              { text: "Valine", icon: "valine", link: "/zh/guide/valine/" },
+              { text: "Waline", icon: "waline", link: "/zh/guide/waline/" },
               { text: "Vssue", icon: "vssue", link: "/zh/guide/vssue/" },
+              { text: "Valine", icon: "valine", link: "/zh/guide/valine/" },
             ],
           },
           {
@@ -103,8 +111,9 @@ module.exports = config({
             icon: "config",
             items: [
               { text: "配置", icon: "config", link: "/zh/config/" },
-              { text: "Valine", icon: "valine", link: "/zh/config/valine/" },
+              { text: "Waline", icon: "waline", link: "/zh/config/waline/" },
               { text: "Vssue", icon: "vssue", link: "/zh/config/vssue/" },
+              { text: "Valine", icon: "valine", link: "/zh/config/valine/" },
             ],
           },
         ],
@@ -113,7 +122,7 @@ module.exports = config({
           "/zh/guide/": [
             "",
             "page-info",
-            "valine",
+            "waline",
             {
               title: "Vssue",
               icon: "vssue",
@@ -134,8 +143,9 @@ module.exports = config({
                 },
               ],
             },
+            "valine",
           ],
-          "/zh/config/": ["", "valine", "vssue"],
+          "/zh/config/": ["", "waline", "vssue", "valine"],
           "/zh/": ["guide/", "config/"],
         },
       },
@@ -149,9 +159,8 @@ module.exports = config({
     },
 
     comment: {
-      type: "valine",
-      appId: "2vSLKb0SqFKKWEgrOPGy3sp1-gzGzoHsz",
-      appKey: "vma8Ewk61WeNkI81O3CGpT2i",
+      type: "waline",
+      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
     git: {

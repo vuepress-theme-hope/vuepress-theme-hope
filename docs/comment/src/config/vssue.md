@@ -1,8 +1,7 @@
 ---
+title: Vssue Config
 icon: vssue
 ---
-
-# Vssue Options
 
 ## platform
 

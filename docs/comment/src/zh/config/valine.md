@@ -1,8 +1,7 @@
 ---
+title: Valine 配置
 icon: valine
 ---
-
-# valine 配置
 
 ## appId
 

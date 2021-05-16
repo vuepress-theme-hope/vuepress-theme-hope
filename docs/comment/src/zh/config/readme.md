@@ -48,13 +48,17 @@ icon: config
 
 每分钟阅读的字数。
 
-## Valine 配置
+## Waline 配置
 
-- [点击查看](valine.md)
+- [点击查看](waline.md)
 
 ## Vssue 配置
 
 - [点击查看](vssue.md)
+
+## Valine 配置
+
+- [点击查看](valine.md)
 
 ## 页面配置
 
