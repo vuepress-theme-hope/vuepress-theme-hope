@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.17.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.16.0...v1.17.0) (2021-05-17)
+
+### Bug Fixes
+
+- **theme:** fix docsearch fullbox appearance ([68b5012](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68b50127ae26bd76062db8d8e0d892e25bbc51bc))
+- **theme:** fix themeColorPicker color ([078c4bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/078c4bc6ec89b3db6d3728038fc190d424f0ac0d))
+
+### Features
+
+- **comment:** add Waline support ([c2c6b7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c2c6b7e0207670bc2b52242047d87519676f56e3))
+
 ## [1.16.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.15.3...v1.16.0) (2021-05-08)
 
 ### Bug Fixes

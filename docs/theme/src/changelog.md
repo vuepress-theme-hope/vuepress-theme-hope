@@ -7,6 +7,12 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.17.0
+
+### Features
+
+Add Waline support
+
 ## v1.16.0
 
 ### Features
