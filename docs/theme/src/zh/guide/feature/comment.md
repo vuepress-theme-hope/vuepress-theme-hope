@@ -38,42 +38,51 @@ module.exports = {
 
 ## 评论服务
 
-有两个评论插件可以选择: Valine 和 Vssue。
+有三个评论插件可以选择: Waline、Vssue 和 Valine。
 
-::: tip Valine 与 Vssue 的比较
+::: tip 评论服务的比较
 
-- Valine 使用 leancloud，支持页面访问量统计，无需登录账号即可评论
+- Waline 需要后端服务器以及额外的配置，支持页面访问量统计，无需登录账号即可评论。可以使用 Vercel。
 - Vssue 使用代码平台仓库的 issue 面板，需要用户登录或注册相应平台账号。
+- Valine 使用 leancloud，支持页面访问量统计，无需登录账号即可评论
 
-如果你的站点面向大众而非程序员，推荐使用 Valine。
+如果你的站点面向大众而非程序员，推荐使用 Waline。
 
 :::
 
-## Valine
-
-借助 Valine，主题实现了无后端开启阅读量展示与评论功能。
+## Waline
 
 ### 获取 APP ID 和 APP Key
 
-请先 [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud, 进入控制台后点击左下角创建应用。
+请先 [登录](https://console.leancloud.app/login.html#/signin) 或 [注册](https://console.leancloud.app/login.html#/signup) `LeanCloud 国际版`, 进入 [控制台](https://console.leancloud.app/applist.html#/apps) 后点击左下角 [创建应用](https://console.leancloud.app/applist.html#/newapp)。创建应用后进入该应用，选择左下角的 `设置` > `应用Key`，然后记下 `APP ID`,`APP Key` 和 `Master Key`。
 
-应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了。
+之后点击下方按钮，跳转至 Vercel 进行快速部署。
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/lizheming/waline/tree/master/example)
+
+按照要求输入 Vercel 项目名称与 GitHub 仓库名称。Vercel 会基于 waline 模板帮助你新建并初始化该仓库。仓库初始化完毕后，需要在 Environment Variables 中配置 `LEAN_ID`, `LEAN_KEY` 和 `LEAN_MASTER_KEY` 三个环境变量。它们的值分别对应上一步在 LeanCloud 中获得的 `APP ID`, `APP KEY`, `Master Key`。
+
+设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
 ```js
-{
-  type: 'valine',
-  appId: '...', // your appId
-  appKey: '...' // your appKey
-}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    comment: {
+      type: "waline",
+      serverURL: "YOUR_SERVER_URL", // your server url
+    },
+  },
+});
 ```
 
-将对应的 `APP ID` 和 `APP Key` 填入， Valine 即配置完成。
-
-Valine 评论的其他配置将在 [配置](http://vuepress-theme-hope.github.io/comment/zh/config/valine/) 中列出。
+Waline 评论的其他配置将在 [配置](http://vuepress-theme-hope.github.io/comment/zh/config/waline/) 中列出。
 
 ::: tip
 
-更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。
+更多配置与使用，请见 [Waline 官方文档](https://waline.js.org)。
 
 :::
 
@@ -126,5 +135,40 @@ module.exports = {
 - Platform `bitbucket` - API 包 `@vssue/api-bitbucket-v2`
 - Platform `gitee` - API 包 `@vssue/api-gitee-v5`
 - Platform `gitea` - API 包 `@vssue/api-gitea-v1`
+
+:::
+
+## Valine
+
+借助 Valine，主题实现了无后端开启阅读量展示与评论功能。
+
+### 获取 APP ID 和 APP Key
+
+请先 [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud, 进入控制台后点击左下角创建应用。
+
+应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了。
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    comment: {
+      type: "valine",
+      appId: "...", // your appId
+      appKey: "...", // your appKey
+    },
+  },
+});
+```
+
+将对应的 `APP ID` 和 `APP Key` 填入， Valine 即配置完成。
+
+Valine 评论的其他配置将在 [配置](http://vuepress-theme-hope.github.io/comment/zh/config/valine/) 中列出。
+
+::: tip
+
+更多配置与使用，请见 [Valine 官方文档](https://valine.js.org)。
 
 :::

@@ -36,40 +36,51 @@ For the complete config item of the plugin ,please see [@mr-hope/vuepress-plugin
 
 ## Comment Provider
 
-You can choose between Valine and Vssue.
+You can choose from 3 comment service provider: Waline, Vssue and Valine.
 
-::: tip Comparison between Valine and Vssue
+::: tip Comparison between services
 
-- Valine uses leancloud to support pageview statistics, and you can comment without logging in to any account
+- Waline uses a backend server to support comment and pageview statistics, and you can comment without logging in to any account. It needs extra configuration on backend, and you can deploy on vercel for free.
 - Vssue uses the issue panel of the code platform repo and requires the user to login or register the corresponding platform account.
+- Valine uses leancloud to support pageview statistics, and you can comment without logging in to any account
 
-If your site is for the general public rather than programmers, Valine is recommended.
+If your site is for the general public rather than programmers, Waline is recommended.
 
 :::
 
-## Valine
+## Waline
 
 ### Get APP_ID and APP_Key
 
-[Click here](https://leancloud.cn/dashboard/login.html#/signup) to register or login in leancloud.
+[Sign in](https://console.leancloud.app/login.html#/signin) or [sign up](https://console.leancloud.app/login.html#/signup) leancloud. Then create new application in Leancloud, and you will get APP ID / APP Key / APP Master Key.
 
-Create new application in Leancloud, and you will get APP ID / APP Key.
+After that, create a vercel app using the below button.
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/lizheming/waline/tree/master/example)
+
+Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
+
+Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your themeConfig:
 
 ```js
-{
-  type: 'valine',
-  appId: '...', // your appId
-  appKey: '...' // your appKey
-}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    comment: {
+      type: "waline",
+      serverURL: "YOUR_SERVER_URL", // your server url
+    },
+  },
+});
 ```
-
-Config will be listed on [Config](http://vuepress-theme-hope.github.io/comment/config/valine/).
-
-Fill in the corresponding APP ID and APP Key, then Valine will be well configured.
 
 ::: tip
 
-For Valine config and usage, please see [Valine Docs](https://valine.js.org)。
+Config will be listed on [Plugin Config](http://vuepress-theme-hope.github.io/comment/config/waline/).
+
+For more details, please see [Waline Docs](https://waline.js.org/en/)。
 
 :::
 
@@ -90,12 +101,13 @@ After this step, you will get `client id` and `client secret` of your OAuth App,
 
 ### Use the plugin
 
-```js {5-15}
+```js {7-17}
 // .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-module.exports = {
-  plugins: {
-    "@mr-hope/comment": {
+module.exports = config({
+  themeConfig: {
+    comment: {
       type: "vssue",
       // set `platform` rather than `api`
       platform: "github",
@@ -107,7 +119,7 @@ module.exports = {
       clientSecret: "YOUR_CLIENT_SECRET",
     },
   },
-};
+});
 ```
 
 ::: tip
@@ -128,5 +140,38 @@ The only difference is that, you should set `platform` rather than the `api` pac
 ::: tip
 
 You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy/vssue-demo) to get the demo code.
+
+:::
+
+## Valine
+
+### Get APP_ID and APP_Key
+
+[Click here](https://leancloud.cn/dashboard/login.html#/signup) to register or login in leancloud.
+
+Create new application in Leancloud, and you will get APP ID / APP Key.
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    comment: {
+      type: "valine",
+      appId: "...", // your appId
+      appKey: "...", // your appKey
+    },
+  },
+});
+```
+
+Config will be listed on [Config](http://vuepress-theme-hope.github.io/comment/config/valine/).
+
+Fill in the corresponding APP ID and APP Key, then Valine will be well configured.
+
+::: tip
+
+For Valine config and usage, please see [Valine Docs](https://valine.js.org/en/)。
 
 :::
