@@ -570,7 +570,7 @@ Layout Chunk Rename Option. By default, all the layout chunks will be named by t
 
 ## cleanUrl
 
-Options for cleaning url suffix, set to `false` to disable this feature.
+Options for cleaning URL suffix, set to `false` to disable this feature.
 
 ### cleanUrl.normalSuffix
 

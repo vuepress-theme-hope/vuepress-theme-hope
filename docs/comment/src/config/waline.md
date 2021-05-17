@@ -15,7 +15,7 @@ The DOM element to be mounted on initialization. It must be a valid **CSS select
 - Type: `string`
 - Required: Yes
 
-Waline server address url
+Waline server address URL
 
 ## placeholder
 
@@ -39,7 +39,7 @@ Comment word s limit. When a single number is filled in, it 's the maximum numbe
 - Default: `window.location.pathname`
 - Required: No
 
-Article path id. Used to distinguish different _article pages_ to ensure loading the correct comment list under the _article page_.
+Article path ID. Used to distinguish different _article pages_ to ensure loading the correct comment list under the _article page_.
 
 Optional value:
 
@@ -86,7 +86,7 @@ Reviewer attributes. Optional values: `'nick'`, `'mail'`, `'link'`
 - Default: `10`
 - Required: No
 
-number of comments per page.
+Number of comments per page.
 
 ## lang
 
@@ -106,7 +106,7 @@ Optional value:
 - `'jp'`
 - `'jp-JP'`
 
-If you need a custom language, please refer to [i18n](./i18n.md).
+If you need a custom language, please see [i18n](./i18n.md).
 
 ## visitor
 
@@ -123,7 +123,7 @@ Article reading statistics.
 
 Darkmode support
 
-- Set it to `'auto'` will display darkmode due to device settings.
+- Set it to `'auto'` will display darkmode by device settings.
 - Filling in a CSS selector will enable darkmode only when the selector match waline ancestor nodes.
 
 ::: tip Examples
@@ -168,7 +168,7 @@ Whether **force** pulling the latest avatar each time.
 - Default: `https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/`
 - Required: No
 
-Set **Emoji Pack CDN**, refer to [Custom Emoji](./emoji.md).
+Set **Emoji Pack CDN**, see [Custom Emoji](./emoji.md).
 
 ## emojiMaps
 
@@ -176,7 +176,7 @@ Set **Emoji Pack CDN**, refer to [Custom Emoji](./emoji.md).
 - Default: `null`
 - Required: No
 
-Set `Emoji Packet Mapping’, refer to [Custom Emoji](./emoji.md).
+Set `Emoji Packet Mapping’, see [Custom Emoji](./emoji.md).
 
 ## requiredFields
 

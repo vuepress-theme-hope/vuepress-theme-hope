@@ -580,7 +580,7 @@ AddThis 的 pubid
 
 ## cleanUrl
 
-清除 url 后缀选项，设置 `false` 以禁用此功能。
+清除 URL 后缀选项，设置 `false` 以禁用此功能。
 
 ### cleanUrl.normalSuffix
 

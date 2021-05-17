@@ -33,7 +33,7 @@ icon: config
 
 ::: warning
 
-强烈建议设置这个选项，否则 feed 流中，项目的顺序完全由 vuepress 默认输出的 pages 顺序决定。
+强烈建议设置这个选项，否则 feed 流中，项目的顺序完全由 VuePress 默认输出的 pages 顺序决定。
 
 你可以按照自己的需求对站点内的页面进行排序。
 

@@ -101,7 +101,7 @@ You should learn some YAML knowledge, we recommend you to check [YAML Tutorial](
 
 Using YAML as a configuration file has certain limitations, such cannot use encryption.
 
-If you want to use all the functions, please do not perform the above replacement operation, and read [JS Quick Start Tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects).
+To use all the functions, please do not perform the above replacement operation, and read [JS Quick Start Tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects).
 
 :::
 

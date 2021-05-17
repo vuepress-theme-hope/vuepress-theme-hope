@@ -89,7 +89,7 @@ your flowchart...
 ```
 ````
 
-can also generate a flowchart besides
+Can also generate a flowchart besides
 
 ````md
 ```flow
@@ -138,7 +138,7 @@ your mermaid...
 ```
 ````
 
-in your Markdown to generate mermaid diagrams.
+In your Markdown to generate mermaid diagrams.
 
 #### Task List <Badge text="new" />
 
@@ -180,7 +180,7 @@ your flowchart...
 ```
 ````
 
-is changed to
+Is changed to
 
 ````md
 ```flow:preset
@@ -220,7 +220,7 @@ your flowchart...
 @flowend
 ```
 
-to
+To
 
 ````md
 ```flow
@@ -364,7 +364,7 @@ If you are extending this theme, you may need to update your code.
 
 - **pwa**: use official ext for manifest
 
-  Mmanifest file name change from `manifest.json` to `manifest.webmanifest`.
+  Mmanifest filename change from `manifest.json` to `manifest.webmanifest`.
 
 ## v1.4.1
 

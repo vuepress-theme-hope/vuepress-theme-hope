@@ -3,7 +3,7 @@ title: Waline
 icon: waline
 ---
 
-If you want to use Waline in your site, please follow this guide.
+To use Waline in your site, please follow this guide.
 
 <!-- more -->
 
@@ -21,7 +21,7 @@ After app is created, we need click into it. Select `Settings` > `App Keys` at t
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/lizheming/waline/tree/master/example)
 
-Click the blue button above, it will redirect you to vercel to deploy with waline template. We recommend you to sign in with GitHub if you don't have a vercel account. Input your Vercel project name after login.
+Click the blue button above, it will redirect you to vercel to deploy with waline template. We recommend you to sign in with GitHub if you don’t have a vercel account. Input your Vercel project name after login.
 
 ![Create project](https://p2.ssl.qhimg.com/t018cd2a91a8896a555.png)
 
@@ -29,17 +29,17 @@ Click `Continue` to the next step then input your new GitHub repo name. The repo
 
 ![Select repo](https://p4.ssl.qhimg.com/t01bb30e74f85ddf5b3.png)
 
-Now the repo is initialized. It's ready to deploy to Vercel! Setting `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column is required. The variables' value are what you get on the previous step in LeanCloud. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
+Now the repo is initialized. It’s ready to deploy to Vercel! Setting `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column is required. The variables’ value are what you get on the previous step in LeanCloud. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
 
 ![Set environment variables](https://p5.ssl.qhimg.com/t019aec05e3e5fea5cc.png)
 
-Finally click `Deploy` button, and vercel will tell you the deployment finishes successfully after one or two minutes. Now you can click `Visit` button to visit the site. Please memorize the site's url, we will use it in next step.
+Click `Deploy` button, and vercel will tell you the deployment finishes after one or two minutes. Now you can click `Visit` button to visit the site. Please memorize the site’s url, we will use it in next step.
 
 ![Deploy](https://p0.ssl.qhimg.com/t0142b58c2e8f886b28.png)
 
 ## HTML References
 
-Set `serverURL` option with the site url in options.
+Set `serverURL` option with the site URL in options.
 
 ```html
 <head>
@@ -92,4 +92,4 @@ new Waline({
 
 ## Comment Management
 
-Waline provides a simple admin control panel for us to manage comment data. You can register in `<serverURL>/ui/register` after deployed successfully. The first person registered will be administrator.
+Waline provides a simple admin control panel for us to manage comment data. You can register in `<serverURL>/ui/register` after deployed. The first person registered will be administrator.

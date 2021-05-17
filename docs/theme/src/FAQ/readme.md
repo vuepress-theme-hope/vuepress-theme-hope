@@ -24,7 +24,7 @@ If you see `warning Overiding existing page xxx` while the dev process is starti
 
 You probably created two file with same path.
 
-E.g.: `a/b.md` and `a/b/readme.md` will both be `/a/b/`
+For example: `a/b.md` and `a/b/readme.md` will both be `/a/b/`
 
 This will cause one page content be lost and it will also cause others issue.
 

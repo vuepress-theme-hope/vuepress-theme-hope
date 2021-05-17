@@ -19,11 +19,11 @@ icon: time
 
 #### 链接控制 <Badge text="new" />
 
-themeConfig 新增 `cleanUrl` 选项以更好地控制链接生成。
+ThemeConfig 新增 `cleanUrl` 选项以更好地控制链接生成。
 
 ### 破坏变更 <Badge text="配置" type="warn" />
 
-themeConfig 中的 `namedChunk` 选项更名为 `chunkRename`。
+ThemeConfig 中的 `namedChunk` 选项更名为 `chunkRename`。
 
 ## v1.15.2
 
