@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-seo",
-  "version": "1.16.0",
+  "version": "1.17.0",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -31,7 +31,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "1.16.0",
+    "@mr-hope/vuepress-types": "1.17.0",
     "@types/fs-extra": "^9.0.11",
     "chalk": "^4.1.1",
     "fs-extra": "^10.0.0"
