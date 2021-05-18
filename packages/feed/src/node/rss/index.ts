@@ -2,12 +2,7 @@ import convert = require("xml-js");
 import { encodeCDATA, encodeXML, generator, isUrl } from "../utils";
 
 import type { Feed } from "../feed";
-import type {
-  FeedAuthor,
-  FeedCategory,
-  FeedEnclosure,
-  FeedItemOption,
-} from "../../types";
+import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../../types";
 import type {
   RSSCategory,
   RSSContent,
@@ -119,27 +114,21 @@ export const renderRSS = (feed: Feed): string => {
    * Channel Categories
    * https://validator.w3.org/feed/docs/rss2.html#comments
    */
-  feed.categories.forEach((category) => {
-    if (!content.rss.channel.category) content.rss.channel.category = [];
-
-    content.rss.channel.category.push({ _text: category });
-  });
+  content.rss.channel.category = Array.from(feed.categories).map(
+    (category) => ({ _text: category })
+  );
 
   /**
    * Channel Categories
    * https://validator.w3.org/feed/docs/rss2.html#hrelementsOfLtitemgt
    */
-  content.rss.channel.item = [];
-
-  feed.items.forEach((entry) => {
+  content.rss.channel.item = feed.items.map((entry) => {
     const item: RSSItem = {
       title: { _text: encodeXML(entry.title) },
       link: { _text: encodeXML(entry.link) },
       guid: genGuid(entry),
       source: {
-        _attributes: {
-          url: links.rss,
-        },
+        _attributes: { url: links.rss },
         _text: entry.title,
       },
     };
@@ -150,12 +139,14 @@ export const renderRSS = (feed: Feed): string => {
     /**
      * Item Author
      */
-    if (Array.isArray(entry.author))
-      entry.author.forEach((author: FeedAuthor) => {
-        if (author.email && author.name && !item.author)
-          item.author = { _text: `${author.email} (${author.name})` };
-      });
-    else if (typeof entry.author === "object") {
+    if (Array.isArray(entry.author)) {
+      const author = entry.author.find((author) => author.email && author.name);
+
+      if (author)
+        item.author = {
+          _text: `${author.email as string} (${author.name as string})`,
+        };
+    } else if (typeof entry.author === "object") {
       const { name, email } = entry.author;
 
       if (email && name) item.author = { _text: `${email} (${name})` };
@@ -167,12 +158,9 @@ export const renderRSS = (feed: Feed): string => {
      * @see https://validator.w3.org/feed/docs/rss2.html#ltcategorygtSubelementOfLtitemgt
      */
     if (Array.isArray(entry.category)) {
-      item.category = [];
-
-      entry.category.forEach((category: FeedCategory) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        if (category.name) item.category!.push(genCategory(category));
-      });
+      item.category = entry.category
+        .filter((category) => category.name)
+        .map((category) => genCategory(category));
     } else if (typeof entry.category === "object" && entry.category.name)
       item.category = [genCategory(entry.category)];
 
@@ -192,8 +180,7 @@ export const renderRSS = (feed: Feed): string => {
      */
     if (entry.enclosure) item.enclosure = genEnclosure(entry.enclosure);
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    content.rss.channel.item!.push(item);
+    return item;
   });
 
   if (hasContent) {

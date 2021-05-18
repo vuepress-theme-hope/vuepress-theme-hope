@@ -1,7 +1,8 @@
 import convert = require("xml-js");
 import { encodeCDATA, encodeXML, generator } from "../utils";
+
 import type { Feed } from "../feed";
-import type { FeedAuthor, FeedCategory, FeedItemOption } from "../../types";
+import type { FeedAuthor, FeedCategory } from "../../types";
 import type {
   AtomAuthor,
   AtomCategory,
@@ -83,27 +84,18 @@ export const renderAtom = (feed: Feed): string => {
 
   if (channel.copyright) content.feed.rights = channel.copyright;
 
-  content.feed.category = [];
+  content.feed.category = Array.from(feed.categories).map((category) => ({
+    _attributes: { term: category },
+  }));
 
-  feed.categories.forEach((category) => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    content.feed.category!.push({ _attributes: { term: category } });
-  });
-
-  content.feed.contributor = [];
-
-  feed.contributors.forEach((contributor) => {
-    if (contributor.name)
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      content.feed.contributor!.push(genAuthororContributor(contributor));
-  });
-
-  content.feed.entry = [];
+  content.feed.contributor = Array.from(feed.contributors)
+    .filter((contributor) => contributor.name)
+    .map((contributor) => genAuthororContributor(contributor));
 
   /**
    * "entry" nodes
    */
-  feed.items.forEach((item: FeedItemOption) => {
+  content.feed.entry = feed.items.map((item) => {
     // entry: required elements
     const entry: AtomEntry = {
       title: { _attributes: { type: "html" }, _text: encodeXML(item.title) },
@@ -126,34 +118,23 @@ export const renderAtom = (feed: Feed): string => {
       };
 
     // author(s)
-    if (Array.isArray(item.author)) {
-      entry.author = [];
+    if (Array.isArray(item.author))
+      entry.author = item.author
+        .filter((author) => author.name)
+        .map((author) => genAuthororContributor(author));
+    else if (item.author && item.author.name)
+      entry.author = [genAuthororContributor(item.author)];
 
-      item.author.forEach((author) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        if (author.name) entry.author!.push(genAuthororContributor(author));
-      });
-    }
-
-    // category
-    if (Array.isArray(item.category)) {
-      entry.category = [];
-
-      item.category.forEach((category: FeedCategory) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        entry.category!.push(genCategory(category));
-      });
-    }
+    if (Array.isArray(item.category))
+      // category
+      entry.category = item.category.map((category) => genCategory(category));
+    else if (item.category) entry.category = [genCategory(item.category)];
 
     // contributor
-    if (Array.isArray(item.contributor)) {
-      entry.contributor = [];
-
-      item.contributor.forEach((contributor: FeedAuthor) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        entry.contributor!.push(genAuthororContributor(contributor));
-      });
-    }
+    if (Array.isArray(item.contributor))
+      entry.contributor = item.contributor.map((contributor) =>
+        genAuthororContributor(contributor)
+      );
 
     // published
     if (item.pubDate) entry.published = item.pubDate.toISOString();
@@ -161,8 +142,7 @@ export const renderAtom = (feed: Feed): string => {
     // rights
     if (item.copyright) entry.rights = item.copyright;
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    content.feed.entry!.push(entry);
+    return entry;
   });
 
   return convert.js2xml(content, {

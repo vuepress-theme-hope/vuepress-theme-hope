@@ -58,22 +58,18 @@ export const renderJSON = (feed: Feed): string => {
 
     // author
     if (Array.isArray(item.author)) {
-      feedItem.authors = [];
-      item.author.forEach((author) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        if (author.name) feedItem.authors!.push(formatAuthor(author));
-      });
+      feedItem.authors = item.author
+        .filter((author) => author.name)
+        .map((author) => formatAuthor(author));
     } else if (typeof item.author === "object")
       feedItem.authors = [formatAuthor(item.author)];
 
-    if (Array.isArray(item.category)) {
-      feedItem.tags = [];
-
-      item.category.forEach((category) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        if (category.name) feedItem.tags!.push(category.name);
-      });
-    }
+    // tags
+    if (Array.isArray(item.category))
+      feedItem.tags = item.category
+        .filter((category) => category.name)
+        .map((category) => category.name);
+    else if (item.category) feedItem.tags = [item.category.name];
 
     return feedItem;
   });
