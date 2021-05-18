@@ -511,9 +511,14 @@ declare module "@waline/client" {
     requiredFields?: Meta[];
   }
 
-  const waline: (option: WalineOption) => void;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  function Waline(option: WalineOption): void;
 
-  export default waline;
+  class Waline {
+    constructor(option: WalineOption): void;
+  }
+
+  export default Waline;
 }
 
 declare module "@Valine" {

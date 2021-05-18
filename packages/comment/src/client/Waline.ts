@@ -5,6 +5,8 @@ import { valineI18n } from "./define";
 
 import type { PropType } from "vue";
 
+let timeout: NodeJS.Timeout | null = null;
+
 export default Vue.extend({
   name: "Valine",
 
@@ -41,30 +43,40 @@ export default Vue.extend({
 
   watch: {
     $route(to: Route, from: Route): void {
-      if (to.path !== from.path)
-        // Refresh comment when navigating to a new page
+      // Refresh comment when navigating to a new page
+      if (to.path !== from.path) {
         Vue.nextTick(() => {
-          this.initWaline();
+          if (timeout) clearTimeout(timeout);
+
+          timeout = setTimeout(() => {
+            this.initWaline();
+          }, 1000);
         });
+      }
     },
   },
 
   mounted(): void {
     if (this.walineEnable)
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         this.initWaline();
-      }, 500);
+      }, 1000);
+  },
+
+  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
+  beforeDestroy(): void {
+    if (timeout) clearTimeout(timeout);
   },
 
   methods: {
-    // Init valine
+    // Init waline
     initWaline(): void {
       const { walineConfig } = this;
 
       void import(/* webpackChunkName: "waline" */ "@waline/client").then(
         ({ default: Waline }) => {
           Waline({
-            el: "#waline",
+            el: "#waline-comment",
             lang: this.$lang === "zh-CN" ? "zh-CN" : "en-US",
             placeholder: valineI18n[this.$localePath || "/"],
             meta: walineConfig.meta || ["nick", "mail"],

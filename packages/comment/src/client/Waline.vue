@@ -1,6 +1,6 @@
 <template>
   <div v-show="commentDisplay" class="waline-wrapper">
-    <div id="waline" />
+    <div id="waline-comment" />
   </div>
 </template>
 
