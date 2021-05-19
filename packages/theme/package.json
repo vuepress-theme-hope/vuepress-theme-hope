@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "1.17.0",
+  "version": "1.17.1",
   "description": "A light vuepress theme with tons for features",
   "keywords": [
     "vuepress-theme",
@@ -33,16 +33,16 @@
   "dependencies": {
     "@docsearch/css": "^3.0.0-alpha.36",
     "@docsearch/js": "^3.0.0-alpha.36",
-    "@mr-hope/vuepress-plugin-comment": "1.17.0",
+    "@mr-hope/vuepress-plugin-comment": "1.17.1",
     "@mr-hope/vuepress-plugin-components": "1.17.0",
     "@mr-hope/vuepress-plugin-copy-code": "1.17.0",
-    "@mr-hope/vuepress-plugin-feed": "1.17.0",
+    "@mr-hope/vuepress-plugin-feed": "1.17.1",
     "@mr-hope/vuepress-plugin-git": "1.17.0",
     "@mr-hope/vuepress-plugin-pwa": "1.17.0",
     "@mr-hope/vuepress-plugin-seo": "1.17.0",
     "@mr-hope/vuepress-plugin-sitemap": "1.17.0",
     "@mr-hope/vuepress-shared": "1.17.0",
-    "@mr-hope/vuepress-theme-types": "1.17.0",
+    "@mr-hope/vuepress-theme-types": "1.17.1",
     "@types/bcryptjs": "^2.4.2",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.throttle": "^4.1.6",
@@ -58,7 +58,7 @@
     "vuepress-plugin-add-this": "1.17.0",
     "vuepress-plugin-container": "^2.1.5",
     "vuepress-plugin-copyright": "^1.0.2",
-    "vuepress-plugin-md-enhance": "1.17.0",
+    "vuepress-plugin-md-enhance": "1.17.1",
     "vuepress-plugin-photo-swipe": "1.17.0",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-typescript": "^0.3.1"
