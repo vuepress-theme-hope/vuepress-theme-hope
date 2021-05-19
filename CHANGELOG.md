@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.17.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.17.0...v1.17.1) (2021-05-19)
+
+### Bug Fixes
+
+- **comment:** fix waline initialize error when quick switching pages ([55c3a5a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/55c3a5a7c8e5257c2cb661ba22293580f9b3ca20))
+
 ## [1.17.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.16.0...v1.17.0) (2021-05-17)
 
 ### Bug Fixes
