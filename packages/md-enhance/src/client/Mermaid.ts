@@ -3,6 +3,8 @@ import Loading from "./icons/LoadingIcon.vue";
 
 import type { Mermaid } from "mermaid";
 
+import "./styles/mermaid.styl";
+
 export default Vue.extend({
   name: "Mermaid",
 
@@ -13,9 +15,9 @@ export default Vue.extend({
   },
 
   data: () => ({
-    theme: "dark",
     loading: true,
     svgCode: "",
+    observer: null as MutationObserver | null,
   }),
 
   mounted(): void {
@@ -69,7 +71,6 @@ export default Vue.extend({
             noteBorderColor: isDarkTheme ? "#f6d365" : "#333",
 
             lineColor: isDarkTheme ? "#d3d3d3" : "#333",
-            // textColor: isDarkTheme ? "#9e9e9e" : "#242424",
             textColor: isDarkTheme ? "#fff" : "#242424",
 
             mainBkg: isDarkTheme ? "#389d70" : "#4abf8a",
@@ -117,13 +118,20 @@ export default Vue.extend({
       renderMermaid(body.classList.contains("theme-dark"));
 
       // watch theme change
-      new MutationObserver(() => {
+      this.observer = new MutationObserver(() => {
         renderMermaid(body.classList.contains("theme-dark"));
-      }).observe(body, {
+      });
+
+      this.observer.observe(body, {
         attributeFilter: ["class"],
         attributes: true,
       });
     });
+  },
+
+  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
+  beforeDestroy() {
+    if (this.observer) this.observer.disconnect();
   },
 
   render(h) {

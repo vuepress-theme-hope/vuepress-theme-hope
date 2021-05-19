@@ -12,10 +12,7 @@ const enhanceApp: EnhanceApp = ({ Vue }) => {
 
   if (MARKDOWN_ENHANCE_FLOWCHART) Vue.component("FlowChart", FlowChart);
 
-  if (MARKDOWN_ENHANCE_MERMAID) {
-    void import("./styles/mermaid.styl");
-    Vue.component("Mermaid", Mermaid);
-  }
+  if (MARKDOWN_ENHANCE_MERMAID) Vue.component("Mermaid", Mermaid);
 
   if (MARKDOWN_ENHANCE_PRESENTATION)
     Vue.component("Presentation", Presentation);

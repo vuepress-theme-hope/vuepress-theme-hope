@@ -22,6 +22,7 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
   const markdownOption =
     Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
   const alignEnable = markdownOption.enableAll || markdownOption.align || false;
+  const demoEnable = markdownOption.enableAll || markdownOption.demo || false;
   const flowchartEnable =
     markdownOption.enableAll || markdownOption.flowchart || false;
   const footnoteEnable =
@@ -88,7 +89,11 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
+    ...(demoEnable
+      ? {
+          clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
+        }
+      : {}),
 
     chainMarkdown: (md): void => {
       if (markdownOption.imageFix !== false)
