@@ -2885,7 +2885,7 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/mdurl@*", "@types/mdurl@^1.0.2":
+"@types/mdurl@*":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@types/mdurl/-/mdurl-1.0.2.tgz#e2ce9d83a613bacf284c7be7d491945e39e1f8e9"
   integrity sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==
@@ -3517,10 +3517,10 @@
     vuepress-plugin-container "^2.0.2"
     vuepress-plugin-smooth-scroll "^0.0.3"
 
-"@waline/client@^0.16.2":
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/@waline/client/-/client-0.16.2.tgz#0e2a604c433efb58b715b014c6660169ec98cf20"
-  integrity sha512-XadHKNnK5TLF4Ixg/qRvJ536KBmYT3q7UKCS4tIVke6UL+kHH3gMgreUNg65UEdWv9J+GdJCxSXoxeK2E2CwTg==
+"@waline/client@^0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@waline/client/-/client-0.17.0.tgz#2ca3b4a8bac235e48c4f5afe36e8c7111204020e"
+  integrity sha512-Tr6SjHRmHU01zfs5tXrvrhMOa5GmVn5C5O0KGteoizh2JGK06dhAEHb47cVn4KfsTN2jtc+6ByEsqGQK1AJ+kQ==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
