@@ -69,8 +69,6 @@
 
 .mobile-dropdown-wrapper
   cursor pointer
-    &.open .dropdown-title
-      margin-bottom 0.5rem
 
   .dropdown-title
     cursor inherit
