@@ -57,16 +57,29 @@
         v-if="$frontmatter.features && $frontmatter.features.length"
         class="features"
       >
-        <div
-          v-for="(feature, index) in $frontmatter.features"
-          :key="index"
-          :class="{ link: feature.link, [`feature${index % 9}`]: true }"
-          class="feature"
-          @click="feature.link ? navigate(feature.link) : ''"
-        >
-          <h2>{{ feature.title }}</h2>
-          <p>{{ feature.details }}</p>
-        </div>
+        <template v-for="(feature, index) in $frontmatter.features">
+          <RouterLink
+            v-if="feature.link"
+            :key="index"
+            :to="feature.link"
+            class="feature"
+            :class="['link', `feature${index % 9}`]"
+            tabindex="0"
+            role="navigation"
+          >
+            <h2>{{ feature.title }}</h2>
+            <p>{{ feature.details }}</p>
+          </RouterLink>
+          <div
+            v-else
+            :key="index"
+            class="feature"
+            :class="`feature${index % 9}`"
+          >
+            <h2>{{ feature.title }}</h2>
+            <p>{{ feature.details }}</p>
+          </div>
+        </template>
       </div>
     </MyTransition>
 

@@ -7,6 +7,8 @@ const i18n = PHOTOSWIPE_I18N;
 export default Vue.extend({
   name: "PhotoSwipeUI",
 
+  data: () => ({ i18n }),
+
   watch: {
     $route(): void {
       const timer = setInterval(() => {
@@ -47,7 +49,7 @@ export default Vue.extend({
                 photoSwipeUIDefault.default,
                 imageConfig,
                 {
-                  shareButtons: i18n[this.$localePath || "/"],
+                  shareButtons: i18n[this.$localePath || "/"].buttons,
                   ...PHOTOSWIPE_OPTIONS,
                   index,
                 }

@@ -42,8 +42,13 @@
         </div>
       </div>
       <div class="navigate-wrapper">
-        <div class="text">{{ i18n.navigate }}:&nbsp;</div>
-        <input v-model="input" type="text" @keypress.enter="jumpPage(input)" />
+        <label for="navigation-text">{{ i18n.navigate }}:&nbsp;</label>
+        <input
+          id="navigation-text"
+          v-model="input"
+          type="text"
+          @keypress.enter="jumpPage(input)"
+        />
         <button class="navigate" role="navigation" @click="jumpPage(input)">
           {{ i18n.button }}
         </button>

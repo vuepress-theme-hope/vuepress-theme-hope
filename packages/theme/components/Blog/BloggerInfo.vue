@@ -5,6 +5,7 @@
       :class="{ hasIntro }"
       :[hintAttr]="hasIntro ? i18n.intro : ''"
       :data-balloon-pos="hasIntro ? 'down' : ''"
+      role="navigation"
       @click="jumpIntro"
     >
       <img

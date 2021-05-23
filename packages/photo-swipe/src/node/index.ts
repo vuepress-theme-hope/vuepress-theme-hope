@@ -4,8 +4,7 @@ import { i18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { Plugin } from "@mr-hope/vuepress-types";
-import type { PhotoSwipeOptions } from "../types";
-import type PhotoSwipeDefaultUI from "photoswipe/dist/photoswipe-ui-default";
+import type { PhowoSwipeI18n, PhotoSwipeOptions } from "../types";
 
 const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, context) => {
   const option =
@@ -13,9 +12,7 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, context) => {
       ? options
       : context.themeConfig.photoSwipe || {};
 
-  const photoSwipeI18nConfig = i18n as PluginI18nConvert<
-    PhotoSwipeDefaultUI.ShareButtonData[]
-  >;
+  const photoSwipeI18nConfig = i18n as PluginI18nConvert<PhowoSwipeI18n>;
 
   photoSwipeI18nConfig["/"] = photoSwipeI18nConfig[getRootLangPath(context)];
 

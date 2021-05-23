@@ -1,7 +1,13 @@
 <template>
   <transition name="sw-update-popup">
     <slot :reload="reload" :enabled="enabled" :message="message">
-      <div v-if="enabled" class="sw-update-popup" @click="reload">
+      <div
+        v-if="enabled"
+        class="sw-update-popup"
+        role="button"
+        tabindex="0"
+        @click="reload"
+      >
         {{ message }}
         <span class="refresh">
           <svg

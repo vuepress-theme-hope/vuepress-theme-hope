@@ -2,6 +2,7 @@
   <button
     v-if="canFullscreen"
     :class="isFullscreen ? 'cancel-full-screen' : 'full-screen'"
+    :aria-pressed="isFullscreen"
     @click="click"
   >
     <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">

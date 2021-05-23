@@ -7,6 +7,9 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
     install: "安装",
     iOSInstall: "点击分享按钮然后点击“添加到主屏幕”",
     cancel: "取消",
+    close: "关闭",
+    prevImage: "上一张图片",
+    nextImage: "下一张图片",
     desc: "详情",
     feature: "主要特色",
     explain:
@@ -17,6 +20,9 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
     install: "Install",
     iOSInstall: "Tap the share button and then 'Add to Homescreen'",
     cancel: "Cancel",
+    close: "Close",
+    prevImage: "Previous Image",
+    nextImage: "Next Image",
     desc: "Description",
     feature: "Key Features",
     explain:
@@ -27,6 +33,9 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
     install: "Installieren",
     iOSInstall: "Drucke den Share-Button und dan 'zu Homescreen hinzufügen'",
     cancel: "Abbrechen",
+    close: "Schließen",
+    prevImage: "Vorheriges Bild",
+    nextImage: "Nächstes Bild",
     desc: "Berschreibung",
     feature: "Features",
     explain:
@@ -37,6 +46,9 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
     install: "Tải về",
     iOSInstall: "Nhấn vào nút chia sẻ và sau đó 'Thêm vào Màn hình chính'",
     cancel: "Huỷ bỏ",
+    close: "Đóng",
+    prevImage: "Hình ảnh trước đó",
+    nextImage: "Hình ảnh tiếp theo",
     desc: "Sự miêu tả",
     feature: "Các tính năng chính",
     explain:

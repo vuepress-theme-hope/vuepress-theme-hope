@@ -6,7 +6,7 @@
       <div class="header">
         <button
           class="close-button"
-          aria-label="Close"
+          :aria-label="i18n.close"
           @click="$emit('toogle', false)"
         >
           <CloseIcon />
@@ -37,7 +37,7 @@
           </div>
 
           <div v-if="manifest.screenshots" class="screenshot-wrapper">
-            <button aria-label="previous image" @click="scrollToLeft">
+            <button :aria-label="i18n.prevImage" @click="scrollToLeft">
               <ArrowLeftIcon />
             </button>
             <section class="screenshot">
@@ -48,7 +48,7 @@
                 <img alt="App Screenshot" :src="screenshot.src" />
               </div>
             </section>
-            <button aria-label="next image" @click="scrollToRight">
+            <button :aria-label="i18n.nextImage" @click="scrollToRight">
               <ArrowRightIcon />
             </button>
           </div>

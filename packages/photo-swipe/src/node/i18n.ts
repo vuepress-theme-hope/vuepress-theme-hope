@@ -1,9 +1,15 @@
 import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type PhotoSwipeDefaultUI from "photoswipe/dist/photoswipe-ui-default";
+import type { PhowoSwipeI18n } from "../types";
 
-export const i18n: Record<HopeLangPath, PhotoSwipeDefaultUI.ShareButtonData[]> =
-  {
-    "/zh/": [
+export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
+  "/zh/": {
+    close: "关闭",
+    fullsreen: "切换全屏",
+    share: "分享",
+    zoom: "缩放",
+    prev: "上一个 (左箭头)",
+    next: "下一个 (右箭头)",
+    buttons: [
       {
         id: "qq",
         label: "分享到 QQ",
@@ -26,8 +32,16 @@ export const i18n: Record<HopeLangPath, PhotoSwipeDefaultUI.ShareButtonData[]> =
         download: true,
       },
     ],
+  },
 
-    "/en/": [
+  "/en/": {
+    close: "Close",
+    fullsreen: "Vollbild umschalten",
+    share: "Teilen",
+    zoom: "Zoom in/out",
+    prev: "Prev (Arrow Left)",
+    next: "Next (Arrow Right)",
+    buttons: [
       {
         id: "facebook",
         label: "Share on Facebook",
@@ -50,8 +64,16 @@ export const i18n: Record<HopeLangPath, PhotoSwipeDefaultUI.ShareButtonData[]> =
         download: true,
       },
     ],
+  },
 
-    "/de/": [
+  "/de/": {
+    close: "Schließen",
+    fullsreen: "Toggle fullscreen",
+    share: "Teilen",
+    zoom: "Rein / rauszoomen",
+    prev: "Zurück (Pfeil links)",
+    next: "Weiter (Pfeil rechts)",
+    buttons: [
       {
         id: "facebook",
         label: "Teilen auf Facebook",
@@ -74,8 +96,16 @@ export const i18n: Record<HopeLangPath, PhotoSwipeDefaultUI.ShareButtonData[]> =
         download: true,
       },
     ],
+  },
 
-    "/vi/": [
+  "/vi/": {
+    close: "Đóng",
+    fullsreen: "Bật chế độ toàn màn hình",
+    share: "Chia sẻ",
+    zoom: "Phóng to / thu nhỏ",
+    prev: "Trước (Mũi tên trái)",
+    next: "Tiếp theo (Mũi tên Phải)",
+    buttons: [
       {
         id: "facebook",
         label: "Share on Facebook",
@@ -98,4 +128,5 @@ export const i18n: Record<HopeLangPath, PhotoSwipeDefaultUI.ShareButtonData[]> =
         download: true,
       },
     ],
-  };
+  },
+};

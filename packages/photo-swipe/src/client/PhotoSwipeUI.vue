@@ -24,17 +24,27 @@
 
           <button
             class="pswp__button pswp__button--close"
-            title="Close (Esc)"
+            :title="i18n.close"
+            :aria-label="i18n.close"
           />
 
-          <button class="pswp__button pswp__button--share" title="Share" />
+          <button
+            class="pswp__button pswp__button--share"
+            :title="i18n.share"
+            :aria-label="i18n.share"
+          />
 
           <button
             class="pswp__button pswp__button--fs"
-            title="Toggle fullscreen"
+            :title="i18n.fullscreen"
+            :aria-label="i18n.fullscreen"
           />
 
-          <button class="pswp__button pswp__button--zoom" title="Zoom in/out" />
+          <button
+            class="pswp__button pswp__button--zoom"
+            :title="i18n.zoom"
+            :aria-label="i18n.zoom"
+          />
 
           <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
           <!-- element will get class pswp__preloader--active when preloader is running -->
@@ -55,12 +65,14 @@
 
         <button
           class="pswp__button pswp__button--arrow--left"
-          title="Previous (arrow left)"
+          :title="i18n.prev"
+          :aria-label="i18n.prev"
         />
 
         <button
           class="pswp__button pswp__button--arrow--right"
-          title="Next (arrow right)"
+          :title="i18n.next"
+          :aria-label="i18n.next"
         />
 
         <div class="pswp__caption">

@@ -34,7 +34,6 @@
   width 3rem
   height 3rem
   padding 8px
-  outline none
 
   &:hover
     color var(--accent-color-l25, lighten($accentColor, 25%))

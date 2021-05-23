@@ -5,12 +5,17 @@
         <li
           v-for="(codeTab, index) in codeTabs"
           :key="codeTab.title"
+          ref="tab"
           class="code-group-nav-tab"
           :class="{
             active: index === activeTabIndex,
           }"
+          tabindex="0"
           role="button"
+          :aria-pressed="index === activeTabIndex"
+          :aria-expanded="index === activeTabIndex"
           @click="changeCodeTab(index)"
+          @keydown="keyDownHandler($event, index)"
           v-text="codeTab.title"
         />
       </ul>
@@ -42,7 +47,6 @@
     margin-right -1.5rem
     border-radius 0
 
-
 .code-group-nav-tab
   position relative
   border 0
@@ -73,9 +77,6 @@
 
   &::after
     left 100%
-
-  &:focus
-    outline none
 
   &.active
     border-bottom var(--accent-color, $accentColor) 1px solid

@@ -5,6 +5,7 @@
       :key="type.text"
       class="article-type"
       :class="{ active: type.path === $route.path }"
+      role="navigation"
       @click="navigate(type.path)"
     >
       <span>{{ type.text }}</span>

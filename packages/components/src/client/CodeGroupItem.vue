@@ -1,5 +1,5 @@
 <template>
-  <div class="code-group-item" :class="{ active }">
+  <div class="code-group-item" :class="{ active }" :aria-selected="active">
     <slot />
   </div>
 </template>

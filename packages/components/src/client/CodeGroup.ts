@@ -55,6 +55,25 @@ export default Vue.extend({
       this.activeTabIndex = index;
     },
 
+    keyDownHandler(event: KeyboardEvent, index: number): void {
+      if (event.key === " " || event.key === "Enter") {
+        event.preventDefault();
+        this.activeTabIndex = index;
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        if (index + 1 < this.codeTabs.length) {
+          this.activeTabIndex = index + 1;
+          (this.$refs.tab as HTMLUListElement[])[index + 1].focus();
+        }
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        if (index - 1 >= 0) {
+          this.activeTabIndex = index - 1;
+          (this.$refs.tab as HTMLUListElement[])[index - 1].focus();
+        }
+      }
+    },
+
     activateCodeTab(activeIndex: number): void {
       this.codeTabs.forEach((codeTab, index) => {
         const { element } = codeTab;
