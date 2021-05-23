@@ -128,6 +128,10 @@ Added more syntax to Markdown, enriching documentation and blog writing
   - Tag lists
   - Timeline
 
+### Full A11y support
+
+The theme and all its plugins are fully optimized to provide complete accessibility support.
+
 ## 主题特点
 
 主题很大程度上保持了 VuePress 默认主题的风格，并在此基础上添加了大量功能与优化:
@@ -229,6 +233,10 @@ Added more syntax to Markdown, enriching documentation and blog writing
   - 分类分组列表
   - 标签分组列表
   - 时间线
+
+### 完整的无障碍支持
+
+主题及其所有插件均经过全面优化，以提供完整的辅助功能支持。
 
 ## Gitee 镜像
 
