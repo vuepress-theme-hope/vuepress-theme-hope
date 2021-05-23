@@ -4,7 +4,7 @@ import FireIcon from "./icons/FireIcon.vue";
 import { commentOptions, pageInfoI18n } from "./define";
 
 import type { Route } from "vue-router";
-import type { ValineOptions } from "../types";
+import type { ValineOptions, WalineOptions } from "../types";
 
 export default Vue.extend({
   name: "VisitorInfo",
@@ -13,24 +13,24 @@ export default Vue.extend({
 
   data: () => ({
     count: 0,
-    valineConfig: commentOptions as ValineOptions,
   }),
 
   computed: {
-    valineEnable(): boolean {
-      const { valineConfig } = this;
-
-      return Boolean(
-        valineConfig.type === "valine" &&
-          valineConfig.appId &&
-          valineConfig.appKey
-      );
-    },
-
     /** Whether enable page view display */
     enableVisitor(): boolean {
-      if (!this.valineEnable) return false;
-      const globalEnable = this.valineConfig.visitor !== false;
+      const pluginEnable = Boolean(
+        // valine enabled
+        (commentOptions.type === "valine" &&
+          commentOptions.appId &&
+          commentOptions.appKey) ||
+          // waline enabled
+          (commentOptions.type === "waline" && commentOptions.serverURL)
+      );
+
+      if (!pluginEnable) return false;
+
+      const globalEnable =
+        (commentOptions as ValineOptions | WalineOptions).visitor !== false;
       const pageConfig = this.$frontmatter.visitor;
 
       return (globalEnable && pageConfig !== false) || Boolean(pageConfig);
