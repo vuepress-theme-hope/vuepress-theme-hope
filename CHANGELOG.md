@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.17.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.17.1...v1.17.2) (2021-05-23)
+
+### Bug Fixes
+
+- **comment:** fix visitor not working on waline ([5003293](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/500329356fce2d769793f60c4142841bd1079c42))
+- **theme:** fix mobile dropdown ([059178e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/059178e9eb97c8a17f50b6b9e07bcd142b0f1ac4))
+
+### Features
+
+- improve A11y ([1d8a3c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d8a3c76e5218b59b411c3213c1668bf903eaa69))
+
 ## [1.17.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.17.0...v1.17.1) (2021-05-19)
 
 ### Bug Fixes
