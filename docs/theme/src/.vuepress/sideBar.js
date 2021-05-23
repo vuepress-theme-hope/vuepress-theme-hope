@@ -15,7 +15,13 @@ module.exports = {
         icon: "skin",
         prefix: "interface/",
         collapsable: false,
-        children: ["darkmode", "theme-color", "icon", "others"],
+        children: [
+          "darkmode",
+          "theme-color",
+          "icon",
+          "accessibility",
+          "others",
+        ],
       },
       {
         title: "Layout",
@@ -193,7 +199,13 @@ module.exports = {
         icon: "skin",
         prefix: "interface/",
         collapsable: false,
-        children: ["darkmode", "theme-color", "icon", "others"],
+        children: [
+          "darkmode",
+          "theme-color",
+          "icon",
+          "accessibility",
+          "others",
+        ],
       },
       {
         title: "布局",
