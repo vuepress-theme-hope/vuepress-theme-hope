@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-pwa",
-  "version": "1.17.0",
+  "version": "1.17.2",
   "description": "Powerful PWA plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
