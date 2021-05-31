@@ -50,14 +50,14 @@
     "@types/katex": "^0.11.0",
     "@types/lodash.debounce": "^4.0.6",
     "@types/markdown-it": "^12.0.1",
-    "@types/mermaid": "^8.2.5",
-    "@types/react": "^17.0.5",
+    "@types/mermaid": "^8.2.6",
+    "@types/react": "^17.0.8",
     "flowchart.js": "^1.15.0",
     "katex": "^0.13.11",
     "lodash.debounce": "^4.0.8",
     "mermaid": "^8.10.1",
     "react": "^17.0.2",
-    "reveal.js": "^4.1.0",
+    "reveal.js": "^4.1.1",
     "vuepress-plugin-container": "^2.1.5"
   }
 }

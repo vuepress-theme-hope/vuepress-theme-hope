@@ -46,11 +46,11 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.throttle": "^4.1.6",
-    "@types/react": "^17.0.5",
+    "@types/react": "^17.0.8",
     "@vuepress/plugin-blog": "^1.9.4",
     "bcryptjs": "^2.4.3",
     "chalk": "^4.1.1",
-    "dayjs": "^1.10.4",
+    "dayjs": "^1.10.5",
     "docsearch.js": "^2.6.3",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
@@ -64,7 +64,7 @@
     "vuepress-plugin-typescript": "^0.3.1"
   },
   "peerDependencies": {
-    "typescript": "^4.2.4",
+    "typescript": "^4.3.2",
     "vuepress": "^1.8.2"
   }
 }
