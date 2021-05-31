@@ -1,6 +1,6 @@
 import type { Vssue } from "vssue";
 import type { ValineOption } from "valine";
-import type { WalineOption } from "@waline/client";
+import type { WalineOptions as _WalineOptions } from "@waline/client";
 
 import "./declare";
 
@@ -87,7 +87,7 @@ export interface ValineOptions
 
 export interface WalineOptions
   extends BaseCommentOptions,
-    Omit<WalineOption, "el"> {
+    Omit<_WalineOptions, "el"> {
   type: "waline";
 }
 
