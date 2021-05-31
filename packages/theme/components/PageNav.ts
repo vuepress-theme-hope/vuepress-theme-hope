@@ -61,6 +61,7 @@ const resolvePageLink = (
   { themeConfig, page, route, site, sidebarItems }: LinkOptions
 ): SidebarItem | false => {
   const themeLinkConfig =
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     themeConfig[`${linkType}Links` as "prevLinks" | "nextLinks"];
   const pageLinkConfig = page.frontmatter[linkType];
 
