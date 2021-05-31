@@ -58,18 +58,18 @@
         class="features"
       >
         <template v-for="(feature, index) in $frontmatter.features">
-          <RouterLink
+          <div
             v-if="feature.link"
             :key="index"
-            :to="feature.link"
-            class="feature"
-            :class="['link', `feature${index % 9}`]"
+            class="feature link"
+            :class="`feature${index % 9}`"
             tabindex="0"
             role="navigation"
+            @click="navigate(feature.link)"
           >
             <h2>{{ feature.title }}</h2>
             <p>{{ feature.details }}</p>
-          </RouterLink>
+          </div>
           <div
             v-else
             :key="index"
