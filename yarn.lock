@@ -3560,10 +3560,10 @@
     vuepress-plugin-container "^2.0.2"
     vuepress-plugin-smooth-scroll "^0.0.3"
 
-"@waline/client@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@waline/client/-/client-1.0.1.tgz#93d3a8d6d7518a06348043a424165ba3768b56f6"
-  integrity sha512-BxKNtjD8261mfzdOg05bjv3/PO57SS4fkuek9dEpekklbPV3Qs8kI9w4/ekX5oMXojW5g+6J+x5PL/b47hNMSQ==
+"@waline/client@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@waline/client/-/client-1.0.2.tgz#8f5f837b2a077cd2ba0c5f355c89db406c5a26fc"
+  integrity sha512-94o2UfIfr+nxNQMnHpPkgXSUSfaJo+CfZIma2kmsV+qRT0LKtx1BajivEUaVkooBp1Ac0CROpyxBtKnEXaKkfA==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"

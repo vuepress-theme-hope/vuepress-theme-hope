@@ -47,7 +47,7 @@
     "@vssue/api-github-v4": "^1.4.7",
     "@vssue/api-gitlab-v4": "^1.4.7",
     "@vssue/vuepress-plugin-vssue": "^1.4.8",
-    "@waline/client": "^1.0.1",
+    "@waline/client": "^1.0.2",
     "balloon-css": "^1.2.0",
     "valine": "^1.4.14",
     "vssue": "^1.4.8"
