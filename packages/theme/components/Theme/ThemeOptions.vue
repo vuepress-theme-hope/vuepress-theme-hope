@@ -3,13 +3,12 @@
     <ul v-if="themeColorEnabled" class="themecolor-select">
       <label for="themecolor-select" v-text="`${text.themeColor}:`" />
       <li>
-        <a class="default-theme" href="#" @click.prevent="setTheme()" />
+        <span class="default-theme" @click="setTheme()" />
       </li>
       <li v-for="color in themeColor.list" :key="color">
-        <a
+        <span
           :style="{ background: themeColor.picker[color] }"
-          href="#"
-          @click.prevent="setTheme(color)"
+          @click="setTheme(color)"
         />
       </li>
     </ul>
@@ -38,7 +37,7 @@
       &:first-child
         margin-right 8px
 
-      a
+      span
         vertical-align middle
         width 15px
         height 15px

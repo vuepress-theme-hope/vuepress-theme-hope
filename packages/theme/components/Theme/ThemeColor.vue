@@ -3,6 +3,7 @@
     v-click-outside="clickOutside"
     class="color-button"
     :class="{ select: showMenu }"
+    aria-hidden="true"
     @click="showMenu = !showMenu"
   >
     <svg

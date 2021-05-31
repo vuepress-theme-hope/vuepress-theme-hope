@@ -1,5 +1,9 @@
 <template>
-  <button class="sidebar-button" @click="$emit('toggle-sidebar')">
+  <button
+    class="sidebar-button"
+    title="Sidebar Button"
+    @click="$emit('toggle-sidebar')"
+  >
     <span class="icon" />
   </button>
 </template>
