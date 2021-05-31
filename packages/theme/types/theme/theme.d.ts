@@ -242,6 +242,19 @@ export interface EncryptOptions {
   config?: Record<string, string | string[]>;
 }
 
+export interface CustomOptions {
+  contentTop?: string;
+  contentBottom?: string;
+  navbarCenter?: string;
+  navbarEnd?: string;
+  navbarStart?: string;
+  pageTop?: string;
+  pageBottom?: string;
+  sidebarTop?: string;
+  sidebarCenter?: string;
+  sidebarBottom?: string;
+}
+
 /**
  * 项目配置
  *
@@ -550,6 +563,11 @@ export interface HopeThemeConfig
    * Encrypt Configuration
    */
   encrypt?: EncryptOptions;
+
+  /**
+   * 自定义组件设置
+   */
+  custom?: CustomOptions;
 }
 
 /** 处理后的 vuepress-theme-hope 主题配置 */

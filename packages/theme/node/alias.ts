@@ -24,6 +24,7 @@ export const getAlias = (
   const themeColorEnabled = !(
     themeConfig.themeColor === false && themeConfig.darkmode === "disable"
   );
+  const { custom = {} } = themeConfig;
 
   const noopModule = "@mr-hope/vuepress-shared/lib/esm/noopModule";
 
@@ -42,11 +43,41 @@ export const getAlias = (
     "@BlogPage": blogEnabled
       ? resolve(__dirname, "../components/Blog/BlogPage.vue")
       : noopModule,
+    "@ContentTop": custom.contentTop
+      ? resolve(ctx.sourceDir, ".vuepress", custom.contentTop)
+      : noopModule,
+    "@ContentBottom": custom.contentBottom
+      ? resolve(ctx.sourceDir, ".vuepress", custom.contentBottom)
+      : noopModule,
+    "@PageTop": custom.pageTop
+      ? resolve(ctx.sourceDir, ".vuepress", custom.pageTop)
+      : noopModule,
+    "@PageBottom": custom.pageBottom
+      ? resolve(ctx.sourceDir, ".vuepress", custom.pageBottom)
+      : noopModule,
     "@Comment": commentEnabled
       ? "@mr-hope/vuepress-plugin-comment/lib/client/Comment.vue"
       : noopModule,
+    "@NavbarStart": custom.navbarStart
+      ? resolve(ctx.sourceDir, ".vuepress", custom.navbarStart)
+      : noopModule,
+    "@NavbarCenter": custom.navbarCenter
+      ? resolve(ctx.sourceDir, ".vuepress", custom.navbarCenter)
+      : noopModule,
+    "@NavbarEnd": custom.navbarEnd
+      ? resolve(ctx.sourceDir, ".vuepress", custom.navbarEnd)
+      : noopModule,
     "@ThemeColor": themeColorEnabled
       ? resolve(__dirname, "../components/Theme/ThemeColor.vue")
+      : noopModule,
+    "@SidebarTop": custom.sidebarTop
+      ? resolve(ctx.sourceDir, ".vuepress", custom.sidebarTop)
+      : noopModule,
+    "@SidebarCenter": custom.sidebarCenter
+      ? resolve(ctx.sourceDir, ".vuepress", custom.sidebarCenter)
+      : noopModule,
+    "@SidebarBottom": custom.sidebarBottom
+      ? resolve(ctx.sourceDir, ".vuepress", custom.sidebarBottom)
       : noopModule,
   };
 };

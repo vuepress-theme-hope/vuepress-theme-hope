@@ -8,7 +8,17 @@
     <Password v-if="isGlobalEncrypted" @password-verify="checkGlobalPassword" />
     <!-- Content -->
     <template v-else>
-      <Navbar v-if="enableNavbar" @toggle-sidebar="toggleSidebar" />
+      <Navbar v-if="enableNavbar" @toggle-sidebar="toggleSidebar">
+        <template #start>
+          <slot name="navbar-start" />
+        </template>
+        <template #center>
+          <slot name="navbar-center" />
+        </template>
+        <template #end>
+          <slot name="navbar-end" />
+        </template>
+      </Navbar>
 
       <div class="sidebar-mask" @click="toggleSidebar(false)" />
 

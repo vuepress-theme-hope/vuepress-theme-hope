@@ -1,5 +1,7 @@
 <template>
   <header class="navbar" :class="{ 'can-hide': canHide }">
+    <slot name="start" />
+
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <RouterLink ref="siteInfo" :to="$localePath" class="home-link">
@@ -24,6 +26,8 @@
       >
     </RouterLink>
 
+    <slot name="center" />
+
     <div
       :style="
         linksWrapMaxWidth ? { 'max-width': `${linksWrapMaxWidth}px` } : {}
@@ -40,6 +44,8 @@
       <NavLinks class="can-hide" />
       <LanguageDropdown />
       <RepoLink class="can-hide" />
+
+      <slot name="end" />
     </div>
   </header>
 </template>

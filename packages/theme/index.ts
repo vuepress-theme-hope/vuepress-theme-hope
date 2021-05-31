@@ -12,6 +12,29 @@ import type {
   ResolvedHopeThemeConfig,
 } from "./types";
 
+const blogAddtionalPages = [
+  {
+    path: "/article/",
+    frontmatter: { layout: "Blog" },
+  },
+  {
+    path: "/star/",
+    frontmatter: { layout: "Blog" },
+  },
+  {
+    path: "/encrypt/",
+    frontmatter: { layout: "Blog" },
+  },
+  {
+    path: "/slide/",
+    frontmatter: { layout: "Blog" },
+  },
+  {
+    path: "/timeline/",
+    frontmatter: { layout: "Blog" },
+  },
+];
+
 // Theme API.
 const themeAPI = (
   themeConfig: ResolvedHopeThemeConfig,
@@ -21,31 +44,7 @@ const themeAPI = (
 
   plugins: getPluginConfig(themeConfig),
 
-  additionalPages:
-    themeConfig.blog === false
-      ? []
-      : [
-          {
-            path: "/article/",
-            frontmatter: { layout: "Blog" },
-          },
-          {
-            path: "/star/",
-            frontmatter: { layout: "Blog" },
-          },
-          {
-            path: "/encrypt/",
-            frontmatter: { layout: "Blog" },
-          },
-          {
-            path: "/slide/",
-            frontmatter: { layout: "Blog" },
-          },
-          {
-            path: "/timeline/",
-            frontmatter: { layout: "Blog" },
-          },
-        ],
+  additionalPages: themeConfig.blog === false ? [] : blogAddtionalPages,
 
   extendCli: (cli: CAC): void => {
     cli

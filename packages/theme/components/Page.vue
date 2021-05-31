@@ -23,9 +23,13 @@
         <Anchor :key="$route.path" />
       </MyTransition>
 
+      <slot v-if="!pagePassword || pageDescrypted" name="content-top" />
+
       <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
         <Content :key="$route.path" class="theme-default-content" />
       </MyTransition>
+
+      <slot v-if="!pagePassword || pageDescrypted" name="content-bottom" />
 
       <MyTransition :delay="0.12">
         <PageMeta :key="$route.path" />
