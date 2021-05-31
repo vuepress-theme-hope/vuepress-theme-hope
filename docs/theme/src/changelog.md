@@ -7,6 +7,12 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.18.0
+
+### Features
+
+Add Custom layout support
+
 ## v1.17.0
 
 ### Features

@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.18.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.17.2...v1.18.0) (2021-05-31)
+
+### Bug Fixes
+
+- **theme:** fix home feature link ([5e7adfe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e7adfe6b5dc05ec94c1d8f604e1bd99c1313078))
+- **theme:** fix linter test ([e07000b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e07000bc24aae3490d025bde9c3adf6855a40ce3))
+
+### Features
+
+- **comment:** update waline ([bbdbf81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bbdbf8196ef18725528fb0c70ae0205082e8a2ca))
+- **create:** update template and related docs ([33c72be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/33c72bee22919de914f3ef79e109aced5a8a252e))
+- **theme:** add custom layout support ([0e51ff6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e51ff6c6fce5380cc835648127ab4c626b9992a))
+- **theme:** improve A11y ([5f4fd93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f4fd93809a68c3ab7699cb009bcf11353be162c))
+
 ## [1.17.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.17.1...v1.17.2) (2021-05-23)
 
 ### Bug Fixes
