@@ -39,6 +39,7 @@ module.exports = {
           },
           "home",
           "slides",
+          "custom",
         ],
       },
       {
@@ -223,6 +224,7 @@ module.exports = {
           },
           "home",
           "slides",
+          "custom",
         ],
       },
       {

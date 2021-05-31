@@ -4,7 +4,7 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-seo"
-tagline: Inject <meta> into your webpage to enhance the SEO of your webpage.
+tagline: Inject <meta> into your web page to enhance the SEO of your web page.
 action:
   - text: Guide 💡
     link: /guide/

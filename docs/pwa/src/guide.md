@@ -23,7 +23,7 @@ Service Worker [^service-worker] (SW for short) is mainly used to cache and prox
 
     1. After the registration complete, the Service Worker is activated, and starts to proxy and control all your requests.
 
-    1. Whenever you want to initiate an access request through the browser, the Service Worker will check whether it exists in its own cache list, if it exists, it will directly return the cached result, otherwise it will call its own fetch method to get it. You can use a custom fetch method to fully control the result of the request for resources in the webpage, such as providing a fallback webpage when offline.
+    1. Whenever you want to initiate an access request through the browser, the Service Worker will check whether it exists in its own cache list, if it exists, it will directly return the cached result, otherwise it will call its own fetch method to get it. You can use a custom fetch method to fully control the result of the request for resources in the web page, such as providing a fallback web page when offline.
 
     1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Woker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
 

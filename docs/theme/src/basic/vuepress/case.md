@@ -223,7 +223,7 @@ tags:
 - [Mevn-CLI](https://mevn.madhacks.co) - Light Speed setup for MEVN stack based apps.
 - [teachcode](https://teachcode.madhacks.co) - A tool to develop and improve a student’s programming skills by introducing the earliest lessons of coding.
 - [Docker 绿皮书](http://docs.nigeerhuo.com/docker) - Help beginners get started quickly with docker, and show docker’s power through a few simple small examples.
-- [idea 快捷键速查文档](http://docs.nigeerhuo.com/idea/) - Help Intellij IDEA users write code without mouse. And also supply Chinese translation of official keymap PDF(Mac/Win/Linux), it’s available on webpage!
+- [idea 快捷键速查文档](http://docs.nigeerhuo.com/idea/) - Help Intellij IDEA users write code without mouse. And also supply Chinese translation of official keymap PDF(Mac/Win/Linux), it’s available on web page!
 - [SiteWhere Documentation](https://sitewhere.io/docs/2.0.0/) - [SiteWhere](https://sitewhere.io/en/) is the open platform for the internet of Things. [Source](https://github.com/sitewhere/sitewhere-documentation).
 - [Pomerium](https://www.pomerium.io) - Pomerium is the [open-source](https://github.com/pomerium/pomerium) identity-aware access proxy.
 - [Wasabi Wallet](https://docs.wasabiwallet.io) – An archive of knowledge about the open-source, non-custodial and privacy-focused Bitcoin wallet for desktop.
