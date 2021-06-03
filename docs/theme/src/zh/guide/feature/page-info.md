@@ -13,7 +13,7 @@ tags:
 
 ## 启用
 
-页面信息默认全局启用，同时支持页面配置[^applypartically]。你可以在特定页面的 frontmatter 中设置 `pageInfo: false` 来局部禁用它。
+页面信息默认全局启用，同时支持页面配置[^applypartically]。你可以在特定页面的 front matter 中设置 `pageInfo: false` 来局部禁用它。
 
 [^applypartically]: **支持页面配置** <Badge text="支持页面配置" />
 
@@ -23,9 +23,9 @@ tags:
 
     以路径导航为例:
 
-    该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 front Matter 中设置 `breadcrumb: false` 来局部禁用它。
+    该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 front matter 中设置 `breadcrumb: false` 来局部禁用它。
 
-    当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 front Matter 中设置 `breadcrumb: true` 来局部启用它。
+    当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 front matter 中设置 `breadcrumb: true` 来局部启用它。
 
     :::
 
@@ -59,7 +59,7 @@ author: Mr.Hope
 ---
 ```
 
-作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。这时，你仍可以在页面中配置 frontmatter 中的 `author` 为一个新值来覆盖默认作者，或者设置 `author` 为 `false` 取消作者显示。
+作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。这时，你仍可以在页面中配置 front matter 中的 `author` 为一个新值来覆盖默认作者，或者设置 `author` 为 `false` 取消作者显示。
 
 ### 写作日期
 

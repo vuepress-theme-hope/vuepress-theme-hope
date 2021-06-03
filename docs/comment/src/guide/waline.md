@@ -3,93 +3,79 @@ title: Waline
 icon: waline
 ---
 
-To use Waline in your site, please follow this guide.
+Welcome to Waline. In just a few steps, you can enable Waline to provide comments and pageviews on your site.
 
 <!-- more -->
 
-## Get APP ID and APP Key
+## LeanCloud settings (Database)
 
-First you need [sign in](https://console.leancloud.app/login.html#/signin) or [sign up](https://console.leancloud.app/login.html#/signup) LeanCloud. Then go to [Console](https://console.leancloud.app/applist.html#/apps) and click [Create app](https://console.leancloud.app/applist.html#/newapp) button to create a new app:
+1. [sign in](https://console.leancloud.app/login.html#/signin) or [sign up](https://console.leancloud.app/login.html#/signup) LeanCloud and enter [Console](https://console.leancloud.app/applist.html#/apps).
 
-![Create App](https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg)
+1. Click [Create app](https://console.leancloud.app/applist.html#/newapp) button to create a new app and enter a name you like:
 
-After app is created, we need click into it. Select `Settings` > `App Keys` at the left bottom side, then you can see `APP ID`, `APP Key` and `Master Key` of your app!
+   ![Create App](https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg)
 
-![ID and Key](https://i.loli.net/2019/06/21/5d0c997a60baa24436.jpg)
+1. Enter the app, then select `Settings` > `App Keys` at the left bottom corner. You will see `APP ID`, `APP Key` and `Master Key` of your app. We will use them later
 
-## Deploy to Vercel
+   ![ID and Key](https://i.loli.net/2019/06/21/5d0c997a60baa24436.jpg)
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/lizheming/waline/tree/master/example)
+## Deploy to Vercel (Server)
 
-Click the blue button above, it will redirect you to vercel to deploy with waline template. We recommend you to sign in with GitHub if you don’t have a vercel account. Input your Vercel project name after login.
+[![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/walinejs/waline/tree/main/example)
 
-![Create project](https://p2.ssl.qhimg.com/t018cd2a91a8896a555.png)
+1. Click the blue button above, it will redirect you to vercel to deploy with waline template.
 
-Click `Continue` to the next step then input your new GitHub repo name. The repo will be created and initiallized automatically base on waline example template by Vercel.
+1. If you haven’t logined, we recommend you to sign in with GitHub.
 
-![Select repo](https://p4.ssl.qhimg.com/t01bb30e74f85ddf5b3.png)
+1. Input your Vercel project name then click `Continue`.
 
-Now the repo is initialized. It’s ready to deploy to Vercel! Setting `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column is required. The variables’ value are what you get on the previous step in LeanCloud. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
+   ![Create project](https://p2.ssl.qhimg.com/t018cd2a91a8896a555.png)
 
-![Set environment variables](https://p5.ssl.qhimg.com/t019aec05e3e5fea5cc.png)
+1. Input your new GitHub repo name then click `Continue`. So that repo will be created and initiallized automatically base on waline example template by Vercel.
 
-Click `Deploy` button, and vercel will tell you the deployment finishes after one or two minutes. Now you can click `Visit` button to visit the site. Please memorize the site’s url, we will use it in next step.
+   ![Select repo](https://p4.ssl.qhimg.com/t01bb30e74f85ddf5b3.png)
 
-![Deploy](https://p0.ssl.qhimg.com/t0142b58c2e8f886b28.png)
+1. After repo is initialized, enter `Environment Variables` and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY`. The variables’ value should be the ones you got in the previous step. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
 
-## HTML References
+   ![Set environment variables](https://p5.ssl.qhimg.com/t019aec05e3e5fea5cc.png)
 
-Set `serverURL` option with the site URL in options.
+1. Click `Deploy` button, and after one minute or two, vercel should finish the deployment. Click `Visit` button to visit the site. This link is your server address.
 
-```html
-<head>
-  ..
-  <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
-  ...
-</head>
-<body>
-  ...
-  <div id="waline"></div>
-  <script>
-    new Waline({
-      el: "#waline",
-      serverURL: "https://your-domain.vercel.app",
-    });
-  </script>
-</body>
-```
+   ![Deploy](https://p0.ssl.qhimg.com/t0142b58c2e8f886b28.png)
 
-## NPM
+## Importing in HTML (Client)
 
-You can use [npm](https://www.npmjs.com/package/@waline/client) to install Waline instead of CDN link. Install in CLI like this:
+Make the following settings on your web page:
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
-```bash
-yarn add -D @waline/client
-```
-</CodeGroupItem>
+1. Use CDN to import Waline: `///cdn.jsdelivr.net/npm/@waline/client`.
 
-<CodeGroupItem title="npm">
-```bash
-npm i -D @waline/client
-```
-</CodeGroupItem>
-</CodeGroup>
+1. Create a `<script>` tag and initialize with `Waline()` while passing in the necessary `el` and `serverURL` options.
 
-```js
-// Use import
-import Waline from '@waline/client';
-// or Use require
-const Waline = require('@waline/client');
+   - The `el` option is the element used for Waline rendering. You can set a CSS selector in the form of a string or an HTMLElement object.
+   - `serverURL` is the link of the server, which you just got.
 
-new Waline({
-  el: '#waline',
-  // other config
-  ...
-});
-```
+   ```html:line-numbers
+   <head>
+     ..
+     <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+     ...
+   </head>
+   <body>
+     ...
+     <div id="waline"></div>
+     <script>
+       Waline({
+         el: '#waline',
+         serverURL: 'https://your-domain.vercel.app',
+       });
+     </script>
+   </body>
+   ```
 
-## Comment Management
+1. The comment service will now run successfully on your site :tada:
 
-Waline provides a simple admin control panel for us to manage comment data. You can register in `<serverURL>/ui/register` after deployed. The first person registered will be administrator.
+## Comment management (Management)
+
+1. After the deployment is complete, please visit `<serverURL>/ui/register` to register. The first person to register will be set as an administrator.
+1. After you log in as administrator, you can see the comment management interface. You can edit, mark or delete comments here.
+1. Users can also register their account in the comment box, and they will be redirected to their profile page after logging in.

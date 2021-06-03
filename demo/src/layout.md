@@ -3,6 +3,8 @@ title: Custom Layout
 icon: layout
 ---
 
+You can use slots with markdown support to custom page layout.
+
 ::: slot page-top
 
 Page top content
@@ -63,4 +65,4 @@ Sidebar bottom content
 
 :::
 
-Page Content
+For details, see [Custom layout](https://vuepress-theme-hope.github.io/guide/layout/custom/).

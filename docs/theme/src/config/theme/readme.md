@@ -37,7 +37,7 @@ These options are important and require you to configure them.
 - Type: `string`
 - Required: No
 
-The default author of the article
+Default author
 
 ### hostname
 

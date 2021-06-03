@@ -5,10 +5,16 @@ icon: waline
 
 ## el
 
-- 类型: `string`
-- 必填: 是
+- 类型: `string | HTMLElement`
+- 必填: 否
 
-Waline 的初始化挂载器。必须是一个有效的 **CSS 选择器**。
+Waline 的初始化挂载器。必须是一个有效的 **CSS 选择器** 或 HTMLELement 对象。
+
+::: tip
+
+如果你只想使用浏览量统计功能，请不要设置该项。
+
+:::
 
 ## serverURL
 
@@ -16,22 +22,6 @@ Waline 的初始化挂载器。必须是一个有效的 **CSS 选择器**。
 - 必填: 是
 
 Waline 的服务端地址。
-
-## placeholder
-
-- 类型:`string`
-- 默认值: `'撰写评论...'`
-- 必填: 否
-
-评论框 **占位提示符**。
-
-## wordLimit
-
-- 类型: `number | [number, number]`
-- 默认值: `0`
-- 必要性: `false`
-
-评论字数限制。填入单个数字时为最大字数限制。设置为 `0` 时无限制。
 
 ## path
 
@@ -51,43 +41,6 @@ Waline 的服务端地址。
 >
 > II. 如果值为 `window.location.href`，可能会出现随便加 _不同参数_ 进入该页面，而被判断成新页面的情况。
 
-## avatar
-
-- 类型: `string`
-- 默认值: `mp`
-- 必填: 否
-
-[Gravatar](http://cn.gravatar.com/) 头像展示方式。
-
-可选值:
-
-- `''`
-- `'mp'`
-- `'identicon'`
-- `'monsterid'`
-- `'wavatar'`
-- `'retro'`
-- `'robohash'`
-- `'hide'`
-
-更多信息，请查看 [头像配置](./avatar.md)。
-
-## meta
-
-- 类型: `string[]`
-- 默认值: `['nick', 'mail', 'link']`
-- 必填: 否
-
-评论者相关属性。可选值: `'nick'`, `'mail'`, `'link'`
-
-## pageSize
-
-- 类型: `number`
-- 默认值: `10`
-- 必填: 否
-
-评论列表分页，每页条数。
-
 ## lang
 
 - 类型: `string`
@@ -106,7 +59,7 @@ Waline 的服务端地址。
 - `'jp'`
 - `'jp-JP'`
 
-如需 _自定义语言_，请参考 [i18n](./i18n.md)。
+如需 _自定义语言_，请参考 [i18n](../guide/client/i18n.md)。
 
 ## visitor
 
@@ -115,6 +68,13 @@ Waline 的服务端地址。
 - 必填: 否
 
 文章访问量统计。
+
+## emoji
+
+- 类型: `(string | EmojiInfo)[]`
+- 默认值: `['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']`
+
+表情设置，详见 [自定义表情](../guide/client/emoji.md)
 
 ## dark
 
@@ -136,15 +96,76 @@ Waline 的服务端地址。
 
 :::
 
-自定义样式与暗黑模式详见 [自定义样式](./style.md)。
+自定义样式与暗黑模式详见 [自定义样式](../guide/client/style.md)。
 
-## highlight
+## meta
 
-- 类型: `boolean`
-- 默认值: `true`
+- 类型: `string[]`
+- 默认值: `['nick', 'mail', 'link']`
 - 必填: 否
 
-**代码高亮**，默认开启，若不需要，请手动关闭
+评论者相关属性。可选值: `'nick'`, `'mail'`, `'link'`
+
+## requiredMeta
+
+- 类型: `string[]`
+- 默认值: `[]`
+- 必填: 否
+
+设置**必填项**，默认匿名，可选值:
+
+- `[]`
+- `['nick']`
+- `['nick', 'mail']`
+
+## login
+
+- 类型: `string`
+- 默认值: `'enable'`
+- 必填: 否
+
+登录模式状态，可选值:
+
+- `'enable'`: 启用登录 (默认)
+- `'disable'`: 禁用登录，用户只能填写信息评论
+- `'force'`: 强制登录，用户必须注册并登录才可发布评论
+
+## avatar
+
+- 类型: `string`
+- 默认值: `mp`
+- 必填: 否
+
+[Gravatar](http://cn.gravatar.com/) 头像展示方式。
+
+可选值:
+
+- `''`
+- `'mp'`
+- `'identicon'`
+- `'monsterid'`
+- `'wavatar'`
+- `'retro'`
+- `'robohash'`
+- `'hide'`
+
+更多信息，请查看 [头像配置](../guide/client/avatar.md)。
+
+## wordLimit
+
+- 类型: `number | [number, number]`
+- 默认值: `0`
+- 必要性: `false`
+
+评论字数限制。填入单个数字时为最大字数限制。设置为 `0` 时无限制。
+
+## pageSize
+
+- 类型: `number`
+- 默认值: `10`
+- 必填: 否
+
+评论列表分页，每页条数。
 
 ## avatarCDN
 
@@ -164,34 +185,6 @@ Waline 的服务端地址。
 
 > 不推荐设置为 `true`，目前的*评论列表头像*会自动带上 `Waline` 的版本号
 
-## emojiCDN
-
-- 类型: `string`
-- 默认值: `https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/`
-- 必填: 否
-
-设置**表情包 CDN**，参考[自定义表情](./emoji.md)
-
-## emojiMaps
-
-- 类型: `Object`
-- 默认值: `微博表情包`
-- 必填: 否
-
-设置**表情包映射**，参考[自定义表情](./emoji.md)
-
-## requiredFields
-
-- 类型: `string[]`
-- 默认值: `[]`
-- 必填: 否
-
-设置**必填项**，默认匿名，可选值:
-
-- `[]`
-- `['nick']`
-- `['nick', 'mail']`
-
 ## uploadImage
 
 - 类型: `Function`
@@ -199,9 +192,18 @@ Waline 的服务端地址。
 
 自定义图片上传方法，方便更好的存储图片。方法执行时会将图片对象传入。
 
-## anonymous
+## highlight
 
 - 类型: `boolean`
+- 默认值: `true`
 - 必填: 否
 
-是否允许登录评论。默认情况是两者都支持，设置为 `true` 表示仅支持匿名评论，`false` 表示仅支持登录评论。
+**代码高亮**，默认开启，若不需要，请手动关闭
+
+## copyright
+
+- 类型: `boolean`
+- 默认值: `true`
+- 必填: 否
+
+是否显示页脚版权信息。

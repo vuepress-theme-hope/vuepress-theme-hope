@@ -3,6 +3,8 @@ title: 自定义布局
 icon: layout
 ---
 
+您可以使用带有 Markdown 支持的插槽来自定义页面布局。
+
 ::: slot page-top
 
 页面顶部内容
@@ -63,4 +65,4 @@ icon: layout
 
 :::
 
-页面内容
+更多详情，详见 [自定义布局](https://vuepress-theme-hope.github.io/zh/guide/layout/custom/).

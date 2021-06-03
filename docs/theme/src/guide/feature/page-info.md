@@ -23,9 +23,9 @@ Page information display is enabled globally by default, while supports local co
 
     Take path navigation as an example:
 
-    This feature is enabled globally by default, that is, `themeConfig.breadcrumb` is `true` by default, and you can set `breadcrumb: false` in the front Matter of a specific page to disable it locally.
+    This feature is enabled globally by default, that is, `themeConfig.breadcrumb` is `true` by default, and you can set `breadcrumb: false` in the front matter of a specific page to disable it locally.
 
-    Of course, you can also set the `themeConfig.breadcrumb` option to `false` to disable it globally, and set `breadcrumb: true` in the front Matter of a specific page to enable it locally.
+    Of course, you can also set the `themeConfig.breadcrumb` option to `false` to disable it globally, and set `breadcrumb: true` in the front matter of a specific page to enable it locally.
 
     :::
 

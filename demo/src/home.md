@@ -72,4 +72,6 @@ footer: MIT Licensed | Copyright © 2019-present Mr. Hope
 
 This is an example of a normal homepage. You can place your main content here.
 
-For related descriptions of configuration items, please see [Home Page Layout Configuration](https://vuepress-theme-hope.github.io/guide/layout/home/).
+To use this layout, you need to set `home: true` in the page front matter.
+
+For related descriptions of configuration items, please see [Project HomePage Layout Config](https://vuepress-theme-hope.github.io/guide/layout/home/).

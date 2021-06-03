@@ -11,24 +11,28 @@ project:
   - type: project
     name: project name
     desc: project detailed description
-    link: your project link
+    link: https://your.project.link
 
   - type: link
     name: link name
     desc: link detailed description
-    link: link address
+    link: https://link.address
 
   - type: book
     name: book name
     desc: Detailed description of the book
-    link: link to your book
+    link: https://link.to.your.book
 
   - type: article
     name: article name
     desc: Detailed description of the article
-    link: link to your article
+    link: https://link.to.your.article
 
 footer: customize your footer text
 ---
 
-For related configuration documents, please see [blog homepage](https://vuepress-theme-hope.github.io/guide/layout/blog/)
+This is a blog home page.
+
+To use this layout, you should set both `blog: true` and `home: true` in the page front matter.
+
+For related configuration docs, please see [blog homepage](https://vuepress-theme-hope.github.io/guide/blog/home/)

@@ -72,4 +72,6 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 这是普通主页的案例。你可以在这里放置你的主体内容。
 
-配置项的相关说明请见 [首页布局配置](https://vuepress-theme-hope.github.io/zh/guide/layout/home/)。
+想要使用此布局，你需要在页面 front matter 中设置 `home: true`。
+
+配置项的相关说明详见 [项目主页配置](https://vuepress-theme-hope.github.io/zh/guide/layout/home/)。
