@@ -47,7 +47,7 @@ Blog configuration.
 
 > You can directly set `blog: false` to disable related functions.
 
-### blog.blogger
+### blog.name
 
 - Type: `string`
 - Required: No
@@ -60,6 +60,58 @@ Blogger name, default is `themeConfig.author`
 - Required: No
 
 Blogger avatar, default is `themeConfig.logo`
+
+### blog.intro
+
+- Type: `string`
+- Required: No
+
+Personal introduction address of the blogger.
+
+After filling in, you will be allowed to click on the avatar or name in "Blogger Information" to enter the personal introduction page.
+
+### blog.links
+
+- Type: `Record<MediaType, string>`
+- Required: No
+
+Set social links.
+
+::: tip Available social media:
+
+The optional values of `MediaType` are as follows:
+
+- `'Baidu'`: Baidu
+- `'Bitbucket'`: Bitbucket
+- `'Dingding'`: Dingding
+- `'Discord'`: Discord
+- `'Dribbble'`: Dribble
+- `'Email'`: Email
+- `'Evernote'`: Evernote
+- `'Facebook'`: Facebook
+- `'Flipboard'`: Flipboard
+- `'Gitee'`: Gitee
+- `'Github'`: GitHub
+- `'Gitlab'`: Gitlab
+- `'Gmail'`: Google mailbox (you can also fill in your own other mailbox)
+- `'Instagram'`: Instagram
+- `'Line'`: Line
+- `'Linkedin'`: LinkedIn
+- `'Pinterest'`: Pinterest
+- `'Pocket'`: Pocket
+- `'QQ'`: QQ
+- `'Qzone'`: Qzone
+- `'Reddit'`: Reddit
+- `'Rss'`: RSS address
+- `'Steam'`: Steam
+- `'Twitter'`: Twitter
+- `'Wechat'`: WeChat
+- `'Weibo'`: Weibo
+- `'Whatsapp'`: Whatsapp
+- `'Youtube'`: YouTube
+- `'Zhihu'`: Zhihu
+
+:::
 
 ### blog.roundAvatar
 
@@ -79,15 +131,6 @@ Whether to show blogger information in the sidebar
 - `'always'`: Always show in the sidebar
 - `'none'`: Never show in the sidebar
 
-### blog.intro
-
-- Type: `string`
-- Required: No
-
-Personal introduction address of the blogger.
-
-After filling in, you will be allowed to click on the avatar or name in "Blogger Information" to enter the personal introduction page.
-
 ### blog.timeline
 
 - Type: `string`
@@ -101,46 +144,6 @@ Text on the top of timeline page.
 - Default: `10`
 
 Article number per page
-
-## pageInfo
-
-- Type: `string[] | false`
-- Default: `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`
-
-Article information. The order of the items decides the display order. Fill in `false` to disable it.
-
-Available items:
-
-- `'author'`: author
-- `'time'`: writing date
-- `'category'`: category
-- `'tag'`: tags
-- `'reading-time'`: expect reading time
-- `'word'`: word number for the article
-- `'visitor'`: pageviews
-
-## Footer settings
-
-### footer.content
-
-- Type: `string`
-- Required: false
-
-The default content for the footer, can accept HTMLString.
-
-### footer.copyright
-
-- Type: `string | boolean`
-- Default: `'Copyright © <author>'`
-
-The default copyright info, set it to `false` to disable it by default.
-
-### footer.display
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to display footer by default
 
 ## Encryption settings
 
@@ -179,3 +182,93 @@ The encryption configuration is an object with a key name matching the path and 
 ```
 
 :::
+
+## Custom layout
+
+The following options control the custom layout of the theme. You need to fill in the path of the Vue component.
+
+You can fill in an absolute path or a relative path relative to the `.vuepress` folder.
+
+### custom.pageTop
+
+- Type: `string`
+- Required: No
+
+Page top slot
+
+### custom.contentTop
+
+- Type: `string`
+- Required: No
+
+Content top slot
+
+### custom.contentBottom
+
+- Type: `string`
+- Required: No
+
+Content bottom slot
+
+### custom.pageBottom
+
+- Type: `string`
+- Required: No
+
+Page bottom slot
+
+### custom.navbarStart
+
+- Type: `string`
+- Required: No
+
+Navbar start slot
+
+### custom.navbarCenter
+
+- Type: `string`
+- Required: No
+
+Navbar center slot
+
+### custom.navbarEnd
+
+- Type: `string`
+- Required: No
+
+Navbar end slot
+
+### custom.sidebarTop
+
+- Type: `string`
+- Required: No
+
+Sidebar top slot
+
+### custom.sidebarCenter
+
+- Type: `string`
+- Required: No
+
+Sidebar center slot
+
+### custom.sidebarBottom
+
+- Type: `string`
+- Required: No
+
+Sidebar bottom slot
+
+## smoothScroll
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to enable smooth scrolling
+
+## wordPerminute
+
+- Type: `number`
+- Default: `300`
+
+Words reading per minute

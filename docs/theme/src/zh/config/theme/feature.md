@@ -51,7 +51,7 @@ tags:
 
 > 如果你不需要博客相关功能，为了加快构建速度，请设置 `blog: false`。
 
-### blog.blogger
+### blog.name
 
 - 类型: `string`
 - 必填: 否
@@ -64,6 +64,58 @@ tags:
 - 必填: 否
 
 博主头像，默认为 `themeConfig.logo`
+
+### blog.intro
+
+- 类型: `string`
+- 必填: 否
+
+博主的个人介绍地址。
+
+填写后将允许点击“博主信息”中的头像或姓名进入个人介绍页。
+
+### blog.links
+
+- 类型: `Record<MediaType, string>`
+- 必填: 否
+
+媒体链接配置
+
+::: tip 可用的社交媒体:
+
+`MediaType` 的可选值如下:
+
+- `'Baidu'`: 百度
+- `'Bitbucket'`: Bitbucket
+- `'Dingding'`: 钉钉
+- `'Discord'`: Discord
+- `'Dribbble'`: Dribble
+- `'Email'`: Email
+- `'Evernote'`: 印象笔记
+- `'Facebook'`: 脸书
+- `'Flipboard'`: 红板报
+- `'Gitee'`: Gitee
+- `'Github'`: GitHub
+- `'Gitlab'`: Gitlab
+- `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
+- `'Instagram'`: Instagram
+- `'Line'`: Line
+- `'Linkedin'`: 领英
+- `'Pinterest'`: 拼趣
+- `'Pocket'`: Pocket
+- `'QQ'`: QQ
+- `'Qzone'`: QQ 空间
+- `'Reddit'`: Reddit
+- `'Rss'`: RSS 地址
+- `'Steam'`: Steam
+- `'Twitter'`: Twitter
+- `'Wechat'`: 微信
+- `'Weibo'`: 微博
+- `'Whatsapp'`: Whatsapp
+- `'Youtube'`: YouTube
+- `'Zhihu'`: 知乎
+
+:::
 
 ### blog.roundAvatar
 
@@ -83,15 +135,6 @@ tags:
 - `'always'`: 总是展示在侧边栏中
 - `'none'`: 永远不在侧边栏展示
 
-### blog.intro
-
-- 类型: `string`
-- 必填: 否
-
-博主的个人介绍地址。
-
-填写后将允许点击“博主信息”中的头像或姓名进入个人介绍页。
-
 ### blog.timeline
 
 - 类型: `string`
@@ -105,46 +148,6 @@ tags:
 - 默认: `10`
 
 每页的文章数量
-
-## pageInfo
-
-- 类型: `string[] | false`
-- 默认值: `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`
-
-文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
-
-可以填入的条目如下:
-
-- `'author'`: 作者
-- `'time'`: 写作日期
-- `'category'`: 分类
-- `'tag'`: 标签
-- `'reading-time'`: 预计阅读时间
-- `'word'`: 字数
-- `'visitor'`: 访问量
-
-## 页脚设置
-
-### footer.content
-
-- 类型: `string`
-- 必填: 否
-
-页脚的默认内容，可输入 HTMLString。
-
-### footer.copyright
-
-- 类型: `string | boolean`
-- 默认值: `'Copyright © <作者>'`
-
-默认的版权信息，设置为 `false` 来默认禁用它。
-
-### footer.display
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否默认显示页脚
 
 ## 加密设置
 
@@ -183,3 +186,93 @@ tags:
 ```
 
 :::
+
+## 自定义布局
+
+以下选项控制主题的自定义布局。你需要填入 Vue 组件的路径。
+
+你可以填入一个绝对路径，也可以填入一个相对于 `.vuepress` 文件夹的相对路径。
+
+### custom.pageTop
+
+- 类型: `string`
+- 必填: 否
+
+页面顶部插槽
+
+### custom.contentTop
+
+- 类型: `string`
+- 必填: 否
+
+文章内容顶部插槽
+
+### custom.contentBottom
+
+- 类型: `string`
+- 必填: 否
+
+文章内容底部插槽
+
+### custom.pageBottom
+
+- 类型: `string`
+- 必填: 否
+
+页面底部插槽
+
+### custom.navbarStart
+
+- 类型: `string`
+- 必填: 否
+
+导航栏起始插槽
+
+### custom.navbarCenter
+
+- 类型: `string`
+- 必填: 否
+
+导航栏中部插槽
+
+### custom.navbarEnd
+
+- 类型: `string`
+- 必填: 否
+
+导航栏结束插槽
+
+### custom.sidebarTop
+
+- 类型: `string`
+- 必填: 否
+
+侧边栏顶部插槽
+
+### custom.sidebarCenter
+
+- 类型: `string`
+- 必填: 否
+
+侧边栏中部插槽
+
+### custom.sidebarBottom
+
+- 类型: `string`
+- 必填: 否
+
+侧边栏底部插槽
+
+## smoothScroll
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否启用平滑滚动功能
+
+## wordPerminute
+
+- 类型: `number`
+- 默认值: `300`
+
+每分钟的阅读字数

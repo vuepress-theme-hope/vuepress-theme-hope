@@ -48,7 +48,7 @@ The domain name where the current site is deployed.
 
 ### nav <Badge text="improved" type="warn" />
 
-NavBarItem now has
+NavBarItem now has:
 
 - `icon` field to support icon display.
 - `prefix` field to automatically add group prefix
@@ -57,7 +57,7 @@ For certain configuration, please see [Layout → Navbar](../../guide/layout/nav
 
 ### sidebar <Badge text="improved" type="warn" />
 
-SideBarItem now has
+SideBarItem now has:
 
 - `icon` field to support icon display.
 - `prefix` field to automatically add group prefix
@@ -77,6 +77,8 @@ The multi-language configuration of the theme mainly needs to configure `nav` an
 - [**Theme Feature Config**](feature.md)
 
 - [**Theme Plugin Config**](plugin.md)
+
+- [**Theme Layout Config**](layout.md)
 
 - [**Theme Appearance Config**](apperance.md)
 

@@ -16,6 +16,8 @@ tags:
 
 - [Theme Plugin Config](theme/plugin.md)
 
+- [Theme Layout Config](theme/layout.md)
+
 - [Theme Appearance Config](theme/apperance.md)
 
 ## Page Config

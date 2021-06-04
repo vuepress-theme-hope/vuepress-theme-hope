@@ -1,5 +1,5 @@
 ---
-title: Theme Layout Config
+title: Theme Appearance Config
 icon: config
 category: config
 tags:
@@ -7,7 +7,7 @@ tags:
   - config
 ---
 
-These are appearance configuration options provided by the theme.
+These are appearance options provided by the theme.
 
 ## algoliaType
 
@@ -21,63 +21,70 @@ Algolia SearchBox type
 - Type: `string`
 - Default: `'icon-'`
 
-Set iconfont icon prefix
-
-## anchorDisplay
-
-- Type: `boolean`
-- Default: `true`
-
-Whether display anchor in desktop mode
-
-## wordPerminute
-
-- Type: `number`
-- Default value: `300`
-
-Words reading per minute
-
-## navAutoHide
-
-- Type: `"always" | "mobile" | "none"`
-- Default: `"mobile"`
-
-Whether to hide navbar when scrolling down
+Prefix of icon class
 
 ## hideSiteTitleonMobile
 
 - Type: `boolean`
 - Default: `true`
 
-Whether display icon in sidebar
+Whether hide site title on mobile
+
+## repoDisplay
+
+- Type: `boolean`
+- Default: `true`
+
+Whether display repo link in navbar
+
+## fullscreen
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show the "full screen" button
 
 ## sidebarIcon
 
 - Type: `boolean`
 - Default: `true`
 
-Whether to show icons in the sidebar
+Whether show icons in the sidebar
 
-## breadcrumb
+## sidebarDepth
 
-- Type: `boolean`
-- Default: `true`
+- Type: `number`
+- Default: `2`
 
-Whether to enable route navigation globally
+Nested headings depth in sidebar
 
 ## breadcrumbIcon
 
 - Type: `boolean`
 - Default: `true`
 
-Whether to show icons in route navigation
+Whether show icons in route navigation
 
-## smoothScroll <Badge text="Default value changed" type="error" />
+## contributor
 
 - Type: `boolean`
 - Default: `true`
 
-Whether to enable smooth scrolling
+Whether show contributors in each page
+
+## editLinks
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show edit link on each page
+
+## updateTime
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show update time on each page
 
 ## backToTop
 
@@ -85,17 +92,3 @@ Whether to enable smooth scrolling
 - Default: `true`
 
 Back to top button configuration. The default trigger distance is 300px, which can be changed when you fill in the number. Filling in `false` disables the back to top button.
-
-## repoDisplay
-
-- Type: `boolean`
-- Default: `true`
-
-Whether to display the warehouse link in the navigation bar
-
-## fullscreen
-
-- Type: `boolean`
-- Default: `true`
-
-Whether to show the "full screen" button

@@ -255,7 +255,7 @@ Copyright info of current page.
 
 ### medialink
 
-- Type: `MediaType[] | false`
+- Type: `Record<MediaType, string> | false`
 - Default: `themeConfig.blog.links`
 
 Set the social link for the current page footer.

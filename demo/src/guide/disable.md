@@ -2,11 +2,21 @@
 title: Component disabled
 icon: config
 category: Guide
-backtotop: false
+
+navbar: false
+sidebar: false
+
 breadcrumb: false
-footer: false
 pageInfo: false
+contributor: false
+editLink: false
+updateTime: false
+prev: false
+next: false
 comment: false
+footer: false
+
+backtotop: false
 ---
 
 You can disable some functions on the page by setting the Frontmatter of the page.
@@ -15,8 +25,14 @@ You can disable some functions on the page by setting the Frontmatter of the pag
 
 These should be disabled on this page:
 
-- Back to top button
-- Route navigation
+- Navbar
+- Sidebar
+- Breadcrumb
 - Page information
-- Comment component
+- Contributors
+- Edit link
+- Update time
+- Prev/Next link
+- Comment
 - Footer
+- Back to top button

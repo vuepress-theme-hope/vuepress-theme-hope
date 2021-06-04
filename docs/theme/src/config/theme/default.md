@@ -26,13 +26,6 @@ All the configuration items changes are listed below the documentation.
 
 The logo image of the navigation bar. Needs to be filled with an absolute path. To display another logo in dark mode, please configure the `themeConfig.darkLogo` option.
 
-## sidebarDepth
-
-- Type: `number`
-- Default: `2`
-
-Nested headings depth in sidebar
-
 ## displayAllHeaders
 
 - Type: `boolean`
@@ -124,9 +117,23 @@ The folder which the document belongs to, the default is the root directory of t
 
 Document branch
 
-## editLinks <Badge text = "Change default value" type = "error" />
+## editLinks <Badge text="Change default value" type="error" />
 
 - Type: `boolean`
 - Default: `true`
 
 Show edit page link
+
+## contributor <Badge text="New" />
+
+- Type: `boolean`
+- Default: `true`
+
+Show contributors of this page
+
+## updateTime <Badge text="New" />
+
+- Type: `boolean`
+- Default: `true`
+
+Show last update time of this page

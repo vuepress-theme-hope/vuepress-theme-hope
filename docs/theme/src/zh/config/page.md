@@ -259,7 +259,7 @@ tags:
 
 ### mediaLink
 
-- 类型: `MediaType[] | false`
+- 类型: `Record<MediaType, string> | false`
 - 默认值: 主题中 `themeConfig.blog.links` 的值
 
 设置当前页面的页脚社交链接。

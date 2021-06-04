@@ -57,6 +57,8 @@ declare module "@mr-hope/vuepress-types" {
     sidebarDepth?: number;
     comment?: boolean;
     editLink?: boolean;
+    contributor?: boolean;
+    updateTime?: boolean;
     prev?: string | false;
     next?: string | false;
     footer?: string | boolean;

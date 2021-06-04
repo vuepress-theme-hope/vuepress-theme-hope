@@ -1,8 +1,9 @@
 import Vue from "vue";
-import { GitContributor } from "@mr-hope/vuepress-plugin-git";
 import EditIcon from "@theme/icons/EditIcon.vue";
 import { endingSlashRE, outboundRE } from "@theme/util/path";
-import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+
+import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+import type { GitContributor } from "@mr-hope/vuepress-plugin-git";
 
 export default Vue.extend({
   name: "PageMeta",
@@ -21,7 +22,9 @@ export default Vue.extend({
     },
 
     contributors(): GitContributor[] {
-      return this.$themeConfig.contributor === false
+      return this.$page.frontmatter.contributor === false ||
+        (this.$themeConfig.contributor === false &&
+          !this.$page.frontmatter.contributor)
         ? []
         : this.$page.contributors || [];
     },
@@ -31,7 +34,9 @@ export default Vue.extend({
     },
 
     updateTime(): string {
-      return this.$themeConfig.updateTime === false
+      return this.$page.frontmatter.contributor === false ||
+        (this.$themeConfig.updateTime === false &&
+          !this.$page.frontmatter.updateTime)
         ? ""
         : this.$page.updateTime || "";
     },

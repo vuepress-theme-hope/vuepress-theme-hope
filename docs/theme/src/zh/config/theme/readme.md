@@ -78,6 +78,8 @@ SideBarItem 新增
 
 - [**主题插件配置**](plugin.md)
 
+- [**主题布局配置**](layout.md)
+
 - [**主题外观配置**](apperance.md)
 
 [docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js

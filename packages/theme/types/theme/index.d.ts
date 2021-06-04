@@ -1,6 +1,10 @@
 import { HopeThemeConfig, ResolvedHopeThemeConfig } from "./theme";
 import { SiteConfig } from "@mr-hope/vuepress-types";
 
+export * from "./appearance";
+export * from "./extends";
+export * from "./feature";
+export * from "./layout";
 export * from "./locale";
 export * from "./plugin";
 export * from "./theme";

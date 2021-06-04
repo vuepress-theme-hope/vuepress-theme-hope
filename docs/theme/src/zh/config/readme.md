@@ -15,6 +15,8 @@ tags: config
 
 - [主题插件配置](theme/plugin.md)
 
+- [主题布局配置](theme/layout.md)
+
 - [主题外观配置](theme/apperance.md)
 
 ## 页面配置
