@@ -1,0 +1,94 @@
+@use "@mr-hope/vuepress-palette" as *;
+
+.code-group-nav {
+  display: flex;
+  /* 2 * margin + border-radius of <pre> tag */
+  margin: 0.85rem 0 calc(-1.7rem - 7px);
+  padding: 0 0 calc(1.7rem - 7px);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: var(--code-border-color);
+  list-style: none;
+
+  @media (max-width: $screenS) {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    border-radius: 0;
+  }
+}
+
+.code-group-nav-tab {
+  position: relative;
+  border: 0;
+  padding: 6px 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: transparent;
+  font-family: Arial;
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: var(--text-color);
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--code-highlight-line-color);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: 1;
+    content: " ";
+    bottom: 0;
+    width: 6px;
+    height: 6px;
+  }
+
+  &::before {
+    right: 100%;
+  }
+
+  &::after {
+    left: 100%;
+  }
+
+  &.active {
+    background-color: var(--code-bg-color);
+
+    &:before {
+      background: radial-gradient(
+        12px at left top,
+        transparent 50%,
+        var(--code-bg-color) 50%
+      );
+    }
+
+    &:after {
+      background: radial-gradient(
+        12px at right top,
+        transparent 50%,
+        var(--code-bg-color) 50%
+      );
+    }
+  }
+
+  &:first-child {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.code-group-item {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  div[class*="language-"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

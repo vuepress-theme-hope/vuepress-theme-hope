@@ -1,0 +1,116 @@
+.pagination-wrapper {
+  margin: 1.25rem 0 0.75rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 2;
+
+  .pagination-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    user-select: none;
+
+    .btn-group {
+      display: flex;
+      align-items: stretch;
+      height: 30px;
+      margin: 0 0.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.25rem;
+      overflow: hidden;
+
+      div {
+        position: relative;
+        padding: 0 0.5rem;
+        background: var(--bg-color);
+        color: var(--accent-color);
+        cursor: pointer;
+
+        &::before {
+          content: " ";
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 1px;
+          background: var(--border-color);
+        }
+
+        &:first-child {
+          &::before {
+            background: transparent;
+          }
+        }
+
+        &:hover,
+        &.active {
+          background: var(--accent-color);
+          color: var(--white, #fff);
+
+          &::before {
+            background: var(--accent-color);
+          }
+        }
+
+        &.active + div,
+        &:hover + div {
+          &::before {
+            background: var(--accent-color);
+          }
+        }
+
+        &.prev,
+        &.next {
+          font-size: 13px;
+          line-height: 30px;
+        }
+
+        &.active,
+        &.ellipsis {
+          cursor: default;
+        }
+      }
+    }
+
+    .navigate-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.5rem;
+
+      input {
+        width: 3.5rem;
+        margin: 6px 0;
+        border: 1px solid var(--border-color);
+        border-radius: 0.25em;
+        color: var(--text-color);
+        background: var(--bg-color);
+        text-align: center;
+        line-height: 2;
+        outline: none;
+      }
+
+      .navigate {
+        margin-left: 5px;
+        padding: 0 0.75em;
+        border: 1px solid var(--border-color);
+        border-radius: 0.25em;
+        background: var(--bg-color);
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 2;
+        overflow: hidden;
+        outline: none;
+
+        &:hover {
+          color: var(--white);
+          background: var(--accent-color);
+          border-color: var(--accent-color);
+        }
+      }
+    }
+  }
+}
