@@ -1,0 +1,23 @@
+// katex fix
+.katex {
+  font-size: 1.05em;
+}
+
+.katex-display {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  overflow: auto hidden;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .katex {
+    font-size: 1.21em;
+  }
+}
+
+.katex-error {
+  color: red;
+}

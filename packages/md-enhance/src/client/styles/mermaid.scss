@@ -1,0 +1,34 @@
+@use '@mr-hope/vuepress-palette' as *;
+
+.md-enhance-mermaid {
+  text-align: center;
+  transition: all 1s;
+
+  @media (max-width: $screenS) {
+    margin: 0 -1.5rem;
+  }
+
+  &.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--grey15);
+
+    svg {
+      width: 4em;
+      height: 4em;
+      margin: 2.5em auto;
+      color: var(--accent-color);
+    }
+  }
+
+  .content {
+    width: 100%;
+    overflow-x: scroll;
+    padding: 0.6em 0.4em;
+
+    @media (max-width: $screenS) {
+      padding: 0.6em 0;
+    }
+  }
+}

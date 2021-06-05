@@ -1,0 +1,167 @@
+@use 'sass:color';
+@use '@mr-hope/vuepress-palette' as *;
+@use '@mr-hope/vuepress-shared/styles/svg';
+@use 'icons';
+
+$darkBgColor: #1e1e1e !default;
+$darkTextColor: #9e9e9e !default;
+
+.custom-container {
+  position: relative;
+
+  .custom-container-title {
+    margin-bottom: -0.4rem;
+    font-weight: 600;
+  }
+
+  &.info,
+  &.tip,
+  &.warning,
+  &.danger {
+    margin: 1rem 0;
+    padding: 0.1rem 1.5rem;
+    border-left-width: 0.5rem;
+    border-left-style: solid;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 14px;
+      left: -16px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+  }
+
+  &.info,
+  &.tip,
+  &.warning,
+  &.danger {
+    a {
+      color: var(--accent-color);
+    }
+
+    body[data-theme="dark"] & {
+      background: color.scale($darkBgColor, $lightness: 10%);
+      color: color.scale($darkTextColor, $lightness: 10%);
+
+      code {
+        background: #444;
+      }
+    }
+  }
+
+  &.info {
+    border-color: #007bff;
+    background: #f8f8f8;
+
+    .custom-container-title {
+      color: color.scale(#007bff, $lightness: -20%);
+    }
+
+    &::before {
+      @include svg.background-svg(icons.$infoIcon);
+
+      body[data-theme="dark"] & {
+        @include svg.background-svg(icons.$infoDarkIcon);
+      }
+    }
+  }
+
+  &.tip {
+    border-color: #42b983;
+    background: #f8f8f8;
+
+    .custom-container-title {
+      color: color.scale(#42b983, $lightness: -20%);
+    }
+
+    &::before {
+      @include svg.background-svg(icons.$tipIcon);
+
+      body[data-theme="dark"] & {
+        @include svg.background-svg(icons.$tipDarkIcon);
+      }
+    }
+  }
+
+  &.warning {
+    border-color: #f4cd00;
+    background: #fff7d0;
+
+    .custom-container-title {
+      color: color.scale(#f4cd00, $lightness: -20%);
+    }
+
+    &::before {
+      @include svg.background-svg(icons.$warningIcon);
+
+      body[data-theme="dark"] & {
+        @include svg.background-svg(icons.$warningDarkIcon);
+      }
+    }
+  }
+
+  &.danger {
+    border-color: #f55;
+    background: #ffe6e6;
+
+    .custom-container-title {
+      color: color.scale(#f55, $lightness: -20%);
+    }
+
+    &::before {
+      @include svg.background-svg(icons.$dangerIcon);
+
+      body[data-theme="dark"] & {
+        @include svg.background-svg(icons.$dangerDarkIcon);
+      }
+    }
+  }
+}
+
+.custom-block.details {
+  display: block;
+  position: relative;
+  margin: 1.6em 0;
+  padding: 1.6em;
+  background: #eee;
+  border-radius: 0.25rem;
+
+  h4 {
+    margin-top: 0;
+  }
+
+  figure,
+  p {
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: var(--accent-color);
+  }
+
+  summary {
+    outline: none;
+    cursor: pointer;
+  }
+
+  &[open] summary {
+    margin-bottom: 0.5em;
+  }
+
+  body[data-theme="dark"] & {
+    background: color.scale($darkBgColor, $lightness: 10%);
+    color: color.scale($darkTextColor, $lightness: 10%);
+
+    code {
+      background: #444;
+    }
+  }
+}

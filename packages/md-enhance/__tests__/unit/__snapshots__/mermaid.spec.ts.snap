@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mermaid Shoud not render 1`] = `
+"<p>flowchart TB
+c1--&gt;a2
+subgraph one
+a1--&gt;a2
+end
+subgraph two
+b1--&gt;b2
+end
+subgraph three
+c1--&gt;c2
+end
+one --&gt; two
+three --&gt; two
+two --&gt; c2</p>
+"
+`;
+
+exports[`mermaid Shoud not render 2`] = `
+"<pre><code class=\\"language-md\\">flowchart TB
+    c1--&gt;a2
+    subgraph one
+    a1--&gt;a2
+    end
+    subgraph two
+    b1--&gt;b2
+    end
+    subgraph three
+    c1--&gt;c2
+    end
+    one --&gt; two
+    three --&gt; two
+    two --&gt; c2
+</code></pre>
+"
+`;
+
+exports[`mermaid Should render \`\`\`class 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"classDiagram%0A%20%20%20%20class%20Square~Shape~%7B%0A%20%20%20%20%20%20%20%20int%20id%0A%20%20%20%20%20%20%20%20List~int~%20position%0A%20%20%20%20%20%20%20%20setPoints(List~int~%20points)%0A%20%20%20%20%20%20%20%20getPoints()%20List~int~%0A%20%20%20%20%7D%0A%0A%20%20%20%20Square%20%3A%20-List~string~%20messages%0A%20%20%20%20Square%20%3A%20%2BsetMessages(List~string~%20messages)%0A%20%20%20%20Square%20%3A%20%2BgetMessages()%20List~string~%0A\\"></Mermaid>"`;
+
+exports[`mermaid Should render \`\`\`er 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"erDiagram%0A%20%20%20%20CAR%20%7C%7C--o%7B%20NAMED-DRIVER%20%3A%20allows%0A%20%20%20%20CAR%20%7B%0A%20%20%20%20%20%20%20%20string%20registrationNumber%0A%20%20%20%20%20%20%20%20string%20make%0A%20%20%20%20%20%20%20%20string%20model%0A%20%20%20%20%7D%0A%20%20%20%20PERSON%20%7C%7C--o%7B%20NAMED-DRIVER%20%3A%20is%0A%20%20%20%20PERSON%20%7B%0A%20%20%20%20%20%20%20%20string%20firstName%0A%20%20%20%20%20%20%20%20string%20lastName%0A%20%20%20%20%20%20%20%20int%20age%0A%20%20%20%20%7D%0A\\"></Mermaid>"`;
+
+exports[`mermaid Should render \`\`\`gantt 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"gantt%0A%20%20%20%20dateFormat%20%20YYYY-MM-DD%0A%20%20%20%20title%20%20%20%20%20%20%20Adding%20GANTT%20diagram%20functionality%20to%20mermaid%0A%20%20%20%20excludes%20%20%20%20weekends%0A%20%20%20%20%25%25%20(%60excludes%60%20accepts%20specific%20dates%20in%20YYYY-MM-DD%20format%2C%20days%20of%20the%20week%20(%22sunday%22)%20or%20%22weekends%22%2C%20but%20not%20the%20word%20%22weekdays%22.)%0A%0A%20%20%20%20section%20A%20section%0A%20%20%20%20Completed%20task%20%20%20%20%20%20%20%20%20%20%20%20%3Adone%2C%20%20%20%20des1%2C%202014-01-06%2C2014-01-08%0A%20%20%20%20Active%20task%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Aactive%2C%20%20des2%2C%202014-01-09%2C%203d%0A%20%20%20%20Future%20task%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3A%20%20%20%20%20%20%20%20%20des3%2C%20after%20des2%2C%205d%0A%20%20%20%20Future%20task2%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3A%20%20%20%20%20%20%20%20%20des4%2C%20after%20des3%2C%205d%0A%0A%20%20%20%20section%20Critical%20tasks%0A%20%20%20%20Completed%20task%20in%20the%20critical%20line%20%3Acrit%2C%20done%2C%202014-01-06%2C24h%0A%20%20%20%20Implement%20parser%20and%20jison%20%20%20%20%20%20%20%20%20%20%3Acrit%2C%20done%2C%20after%20des1%2C%202d%0A%20%20%20%20Create%20tests%20for%20parser%20%20%20%20%20%20%20%20%20%20%20%20%20%3Acrit%2C%20active%2C%203d%0A%20%20%20%20Future%20task%20in%20critical%20line%20%20%20%20%20%20%20%20%3Acrit%2C%205d%0A%20%20%20%20Create%20tests%20for%20renderer%20%20%20%20%20%20%20%20%20%20%20%3A2d%0A%20%20%20%20Add%20to%20mermaid%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3A1d%0A%0A%20%20%20%20section%20Documentation%0A%20%20%20%20Describe%20gantt%20syntax%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Aactive%2C%20a1%2C%20after%20des1%2C%203d%0A%20%20%20%20Add%20gantt%20diagram%20to%20demo%20page%20%20%20%20%20%20%3Aafter%20a1%20%20%2C%2020h%0A%20%20%20%20Add%20another%20diagram%20to%20demo%20page%20%20%20%20%3Adoc1%2C%20after%20a1%20%20%2C%2048h%0A%0A%20%20%20%20section%20Last%20section%0A%20%20%20%20Describe%20gantt%20syntax%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Aafter%20doc1%2C%203d%0A%20%20%20%20Add%20gantt%20diagram%20to%20demo%20page%20%20%20%20%20%20%3A20h%0A%20%20%20%20Add%20another%20diagram%20to%20demo%20page%20%20%20%20%3A48h%0A\\"></Mermaid>"`;
+
+exports[`mermaid Should render \`\`\`journey 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"journey%0A%20%20%20%20title%20My%20working%20day%0A%20%20%20%20section%20Go%20to%20work%0A%20%20%20%20%20%20Make%20tea%3A%205%3A%20Me%0A%20%20%20%20%20%20Go%20upstairs%3A%203%3A%20Me%0A%20%20%20%20%20%20Do%20work%3A%201%3A%20Me%2C%20Cat%0A%20%20%20%20section%20Go%20home%0A%20%20%20%20%20%20Go%20downstairs%3A%205%3A%20Me%0A%20%20%20%20%20%20Sit%20down%3A%205%3A%20Me%0A\\"></Mermaid>"`;
+
+exports[`mermaid Should render \`\`\`mermaid 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"flowchart%20TB%0A%20%20%20%20c1--%3Ea2%0A%20%20%20%20subgraph%20one%0A%20%20%20%20a1--%3Ea2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20two%0A%20%20%20%20b1--%3Eb2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20three%0A%20%20%20%20c1--%3Ec2%0A%20%20%20%20end%0A%20%20%20%20one%20--%3E%20two%0A%20%20%20%20three%20--%3E%20two%0A%20%20%20%20two%20--%3E%20c2%0A\\"></Mermaid>"`;
+
+exports[`mermaid Should render \`\`\`pie 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"pie%0A%20%20%20%20title%20What%20Voldemort%20doesn't%20have%3F%0A%20%20%20%20%20%20%22FRIENDS%22%20%3A%202%0A%20%20%20%20%20%20%22FAMILY%22%20%3A%203%0A%20%20%20%20%20%20%22NOSE%22%20%3A%2045%0A\\"></Mermaid>"`;
+
+exports[`mermaid Should render \`\`\`sequence 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"sequenceDiagram%0A%20%20%20%20Alice%20-%3E%3E%20Bob%3A%20Hello%20Bob%2C%20how%20are%20you%3F%0A%20%20%20%20Bob--%3E%3EJohn%3A%20How%20about%20you%20John%3F%0A%20%20%20%20Bob--x%20Alice%3A%20I%20am%20good%20thanks!%0A%20%20%20%20Bob-x%20John%3A%20I%20am%20good%20thanks!%0A%20%20%20%20Note%20right%20of%20John%3A%20Bob%20thinks%20a%20long%3Cbr%2F%3Elong%20time%2C%20so%20long%3Cbr%2F%3Ethat%20the%20text%20does%3Cbr%2F%3Enot%20fit%20on%20a%20row.%0A%0A%20%20%20%20Bob--%3EAlice%3A%20Checking%20with%20John...%0A%20%20%20%20Alice-%3EJohn%3A%20Yes...%20John%2C%20how%20are%20you%3F%0A\\"></Mermaid>"`;
+
+exports[`mermaid Should render \`\`\`state 1`] = `"<Mermaid id=\\"mermaid-1a96284a\\" data-code=\\"stateDiagram-v2%0A%20%20%20%20%5B*%5D%20--%3E%20Active%0A%0A%20%20%20%20state%20Active%20%7B%0A%20%20%20%20%20%20%20%20%5B*%5D%20--%3E%20NumLockOff%0A%20%20%20%20%20%20%20%20NumLockOff%20--%3E%20NumLockOn%20%3A%20EvNumLockPressed%0A%20%20%20%20%20%20%20%20NumLockOn%20--%3E%20NumLockOff%20%3A%20EvNumLockPressed%0A%20%20%20%20%20%20%20%20--%0A%20%20%20%20%20%20%20%20%5B*%5D%20--%3E%20CapsLockOff%0A%20%20%20%20%20%20%20%20CapsLockOff%20--%3E%20CapsLockOn%20%3A%20EvCapsLockPressed%0A%20%20%20%20%20%20%20%20CapsLockOn%20--%3E%20CapsLockOff%20%3A%20EvCapsLockPressed%0A%20%20%20%20%20%20%20%20--%0A%20%20%20%20%20%20%20%20%5B*%5D%20--%3E%20ScrollLockOff%0A%20%20%20%20%20%20%20%20ScrollLockOff%20--%3E%20ScrollLockOn%20%3A%20EvScrollLockPressed%0A%20%20%20%20%20%20%20%20ScrollLockOn%20--%3E%20ScrollLockOff%20%3A%20EvScrollLockPressed%0A%20%20%20%20%7D%0A\\"></Mermaid>"`;

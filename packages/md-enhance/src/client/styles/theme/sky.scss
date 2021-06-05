@@ -1,0 +1,37 @@
+/**
+ * Sky theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+@use "fonts/quicksand";
+@use "fonts/open-sans";
+
+@import "template/mixins";
+@import "template/settings";
+@import "template/theme";
+
+$mainFont: "Open Sans", sans-serif;
+$mainColor: #333;
+$headingFont: "Quicksand", sans-serif;
+$headingColor: #333;
+$headingLetterSpacing: -0.08em;
+$headingTextShadow: none;
+$backgroundColor: #f7fbfc;
+$linkColor: #3b759e;
+$linkColorHover: lighten($linkColor, 20%);
+$selectionBackgroundColor: #134674;
+
+@mixin bodyBackground() {
+  @include radial-gradient(#add9e4, #f7fbfc);
+}
+
+.reveal[data-theme="sky"] {
+  @include dark-bg-text-color(#fff);
+
+  a {
+    line-height: 1.3em;
+  }
+}
+
+@include theme("[data-theme='sky']");

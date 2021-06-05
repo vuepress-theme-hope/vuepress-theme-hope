@@ -9,7 +9,7 @@
     "diagnostics": false,
     "downlevelIteration": false,
     "experimentalDecorators": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "inlineSourceMap": false,

@@ -1,0 +1,38 @@
+// Base settings for all themes that can optionally be overridden by the super-theme
+
+// Background of the presentation
+$backgroundColor: #2b2b2b !default;
+
+// Primary/body text
+$mainFont: "Lato", sans-serif !default;
+$mainFontSize: 40px !default;
+$mainColor: #eee !default;
+
+// Vertical spacing between blocks of text
+$blockMargin: 20px !default;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0 !default;
+$headingFont: "League Gothic", Impact, sans-serif !default;
+$headingColor: #eee !default;
+$headingLineHeight: 1.2 !default;
+$headingLetterSpacing: normal !default;
+$headingTextTransform: uppercase !default;
+$headingTextShadow: none !default;
+$headingFontWeight: normal !default;
+$heading1TextShadow: $headingTextShadow !default;
+
+$heading1Size: 3.77em !default;
+$heading2Size: 2.11em !default;
+$heading3Size: 1.55em !default;
+$heading4Size: 1em !default;
+
+$codeFont: monospace !default;
+
+// Links and actions
+$linkColor: #13daec !default;
+$linkColorHover: lighten($linkColor, 20%) !default;
+
+// Text selection
+$selectionBackgroundColor: #ff5e99 !default;
+$selectionColor: #fff !default;

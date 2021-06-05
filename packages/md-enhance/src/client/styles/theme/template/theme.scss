@@ -1,0 +1,311 @@
+// Base theme template for reveal.js
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+
+// @import "./exposer";
+
+@mixin theme($theme) {
+  .reveal-viewport#{$theme} {
+    @include bodyBackground();
+    background-color: $backgroundColor;
+  }
+
+  .reveal#{$theme} {
+    font-family: $mainFont;
+    font-size: $mainFontSize;
+    font-weight: normal;
+    color: $mainColor;
+
+    ::selection {
+      color: $selectionColor;
+      background: $selectionBackgroundColor;
+      text-shadow: none;
+    }
+
+    ::-moz-selection {
+      color: $selectionColor;
+      background: $selectionBackgroundColor;
+      text-shadow: none;
+    }
+
+    .slides section,
+    .slides section > section {
+      line-height: 1.3;
+      font-weight: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: $headingMargin;
+      color: $headingColor;
+      font-family: $headingFont;
+      font-weight: $headingFontWeight;
+      line-height: $headingLineHeight;
+      letter-spacing: $headingLetterSpacing;
+      text-transform: $headingTextTransform;
+      text-shadow: $headingTextShadow;
+      word-wrap: break-word;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    h1 {
+      font-size: $heading1Size;
+      text-shadow: $heading1TextShadow;
+    }
+
+    h2 {
+      font-size: $heading2Size;
+    }
+
+    h3 {
+      font-size: $heading3Size;
+    }
+
+    h4 {
+      font-size: $heading4Size;
+    }
+
+    /*********************************************
+ * OTHER
+ *********************************************/
+
+    p {
+      margin: $blockMargin 0;
+      line-height: 1.3;
+    }
+
+    /* Ensure certain elements are never larger than the slide itself */
+    img,
+    video,
+    iframe {
+      max-width: 95%;
+      max-height: 95%;
+    }
+
+    strong,
+    b {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    ol,
+    dl,
+    ul {
+      display: inline-block;
+      text-align: left;
+      margin: 0 0 0 1em;
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+    ul {
+      list-style-type: disc;
+
+      & ul {
+        list-style-type: square;
+
+        & ul {
+          list-style-type: circle;
+        }
+      }
+    }
+
+    ul ul,
+    ul ol,
+    ol ol,
+    ol ul {
+      display: block;
+      margin-left: 40px;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-left: 40px;
+    }
+
+    blockquote {
+      display: block;
+      position: relative;
+      width: 70%;
+      margin: $blockMargin auto;
+      padding: 5px;
+      font-style: italic;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+
+      & p {
+        &:first-child,
+        &:last-child {
+          display: inline-block;
+        }
+      }
+    }
+
+    q {
+      font-style: italic;
+    }
+
+    pre {
+      display: block;
+      position: relative;
+      width: 90%;
+      margin: $blockMargin auto;
+      padding: 0;
+      text-align: left;
+      font-size: 0.55em;
+      font-family: $codeFont;
+      line-height: 1.2em;
+      word-wrap: break-word;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    code {
+      font-family: $codeFont;
+      text-transform: none;
+    }
+
+    pre code {
+      display: block;
+      padding: 5px;
+      overflow: auto;
+      max-height: 400px;
+      word-wrap: normal;
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      border-spacing: 0;
+
+      & th {
+        font-weight: bold;
+      }
+
+      & th,
+      & td {
+        text-align: left;
+        padding: 0.2em 0.5em 0.2em 0.5em;
+        border-bottom: 1px solid;
+
+        &[align="center"] {
+          text-align: center;
+        }
+
+        &[align="right"] {
+          text-align: right;
+        }
+      }
+
+      tbody tr:last-child {
+        th,
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+
+    sup {
+      vertical-align: super;
+      font-size: smaller;
+    }
+
+    sub {
+      vertical-align: sub;
+      font-size: smaller;
+    }
+
+    small {
+      display: inline-block;
+      font-size: 0.6em;
+      line-height: 1.2em;
+      vertical-align: top;
+
+      & * {
+        vertical-align: top;
+      }
+    }
+
+    img {
+      margin: $blockMargin 0;
+    }
+
+    a {
+      color: $linkColor;
+      text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: $linkColorHover;
+        text-shadow: none;
+        border: none;
+      }
+    }
+
+    .roll span:after {
+      color: #fff;
+      background: darken($linkColor, 15%);
+    }
+
+    .r-frame {
+      border: 4px solid $mainColor;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    a .r-frame {
+      transition: all 0.15s linear;
+    }
+
+    a:hover .r-frame {
+      border-color: $linkColor;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+    }
+
+    .controls {
+      color: $linkColor;
+    }
+
+    .progress {
+      background: rgba(0, 0, 0, 0.2);
+      color: $linkColor;
+    }
+
+    table.hljs-ln {
+      display: table;
+      width: 100%;
+
+      tr {
+        border: none;
+
+        &:nth-child(2n) {
+          background-color: inherit !important;
+        }
+      }
+
+      td {
+        border: none;
+      }
+    }
+
+    @media print {
+      .backgrounds {
+        background-color: $backgroundColor;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+@use "fonts/montserrat";
+@use "fonts/open-sans";
+
+@import "template/mixins";
+@import "template/settings";
+@import "template/theme";
+
+$backgroundColor: #111;
+
+$mainFont: "Open Sans", sans-serif;
+$linkColor: #e7ad52;
+$linkColorHover: lighten($linkColor, 20%);
+$headingFont: "Montserrat", Impact, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$selectionBackgroundColor: #e7ad52;
+
+.reveal[data-theme="night"] {
+  @include light-bg-text-color(#222);
+}
+
+@include theme("[data-theme='night']");

@@ -1,0 +1,60 @@
+{
+  "name": "vuepress-plugin-md-enhance",
+  "version": "2.0.0-alpha.0",
+  "description": "Markdown enhancement plugin for vuepress",
+  "keywords": [
+    "vuepress-plugin",
+    "markdown",
+    "align",
+    "superscript",
+    "subscript",
+    "footnote",
+    "flowchart",
+    "tex",
+    "katex",
+    "mark",
+    "presentation",
+    "reveal.js"
+  ],
+  "homepage": "https://vuepress-md-enhance.mrhope.site/",
+  "bugs": {
+    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "directory": "packages/md-enhance"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "node/index.js",
+  "types": "node/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "copy": "cpx src/client/styles/** client/styles",
+    "clean": "rimraf client node *.tsbuildinfo",
+    "demo:build": "vuepress build __tests__/demo",
+    "demo:serve": "vuepress dev __tests__/demo",
+    "dev": "rollup -c -w"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-plugin-palette": "2.0.0-alpha.0",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.0",
+    "@types/katex": "^0.11.0",
+    "@types/markdown-it": "^12.0.1",
+    "@types/mermaid": "^8.2.6",
+    "@types/react": "^17.0.9",
+    "@vuepress/plugin-container": "2.0.0-beta.17",
+    "katex": "^0.13.11",
+    "mermaid": "^8.10.1",
+    "react": "^17.0.2",
+    "reveal.js": "^4.1.1"
+  },
+  "devDependencies": {
+    "vuepress": "2.0.0-beta.17"
+  }
+}
