@@ -156,7 +156,7 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
     ariaLabel: "Chọn ngôn ngữ",
     meta: {
       contributor: "Người đóng góp",
-      editLink: "chỉnh sửa trang này",
+      editLink: "Chỉnh sửa trang này",
       updateTime: "Cập nhật gần nhất lúc",
     },
     themeColor: {
@@ -172,7 +172,7 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
         "Ở đây chẳng có gì cả.",
         "Sao chúng ta lại đến đây?",
         "Đây là lỗi bốn-không-bốn",
-        "Có vẻ chúng ta có vài liên kết gãy.",
+        "Có vẻ chúng ta có vài broken link.",
       ],
       back: "Quay lại",
       home: "Trang chủ",
@@ -187,8 +187,8 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
       allText: "Tất cả",
       intro: "Giới thiệu cá nhân",
       star: "Ngôi sao",
-      slides: "bài thuyết trình",
-      encrypt: "mã hóa",
+      slides: "Bài thuyết trình",
+      encrypt: "Mã hóa",
     },
   },
 };
