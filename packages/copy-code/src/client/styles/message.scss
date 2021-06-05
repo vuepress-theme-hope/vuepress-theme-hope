@@ -1,0 +1,60 @@
+@use '@mr-hope/vuepress-palette' as *;
+
+@keyframes message-move-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes message-move-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+#message-container {
+  position: fixed;
+  top: $navbarHeight + 1rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+
+  .message {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 0 var(--box-shadow-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    transition: height 0.2s ease-in-out, margin 0.2s ease-in-out;
+
+    &.move-in {
+      animation: message-move-in 0.3s ease-in-out;
+    }
+
+    &.move-out {
+      animation: message-move-out 0.3s ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    svg {
+      position: relative;
+      bottom: -0.125em;
+      margin-right: 5px;
+    }
+  }
+}

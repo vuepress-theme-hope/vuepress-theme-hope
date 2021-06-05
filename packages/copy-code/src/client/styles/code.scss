@@ -1,0 +1,36 @@
+@use "@mr-hope/vuepress-shared/styles/reset";
+@use '@mr-hope/vuepress-palette' as *;
+
+.copy-code-button {
+  @include reset.button;
+  width: 32px;
+  height: 32px;
+  padding: 7px 8px;
+  border-radius: 50%;
+  color: #fff;
+  background: #339af0;
+  outline: none;
+
+  &:hover {
+    cursor: pointer !important;
+    background: #228be6;
+  }
+
+  div[class*="language-"] & {
+    position: absolute;
+    right: -14px;
+    bottom: -14px;
+    z-index: 100;
+
+    @media (max-width: $screenS) {
+      right: -2px;
+      border-top-right-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
+    }
+  }
+
+  .icon-copy-code {
+    width: 100%;
+    height: 100%;
+  }
+}
