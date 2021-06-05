@@ -18,7 +18,7 @@ export const showLangError = (lang: string): void => {
   if (!reportStatus[lang]) {
     console.warn(
       `${lang} locates config is missing, and will return 'en-US' instead.
-You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/shared/src/i18n/config.ts and other 'i18n.ts' in this repository.
+You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v2/packages/shared/src/i18n/config.ts and other 'i18n.ts' in this repository.
 Note: This warning will be shown only once.`
     );
     reportStatus[lang] = true;
