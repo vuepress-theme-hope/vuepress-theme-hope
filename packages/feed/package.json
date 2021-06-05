@@ -1,0 +1,46 @@
+{
+  "name": "@mr-hope/vuepress-plugin-feed",
+  "version": "2.0.0-alpha.0",
+  "description": "Feed plugin for vuepress-theme-hope",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "feed"
+  ],
+  "homepage": "https://vuepress-theme-hope.github.io/feed/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/feed"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "node/index.js",
+  "types": "node/index.d.ts",
+  "files": [
+    "node"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./node",
+    "dev": "rollup -c -w"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.0",
+    "chalk": "^4.1.1",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "rollup": "2.50.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -47,4 +47,11 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    * 版权文字
    */
   copyrightText?: string | false;
+
+  /**
+   * 是否是主页
+   *
+   * Whether is home page
+   */
+  home?: boolean;
 }
