@@ -123,7 +123,7 @@
     "execa": "5.0.1",
     "husky": "6.0.0",
     "inquirer": "8.1.0",
-    "jest": "27.0.3",
+    "jest": "27.0.4",
     "lerna": "4.0.0",
     "lint-staged": "11.0.0",
     "markdownlint-cli": "0.27.1",

@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/jest": "26.0.23",
-    "jest": "27.0.3"
+    "jest": "27.0.4"
   },
   "publishConfig": {
     "access": "public"
