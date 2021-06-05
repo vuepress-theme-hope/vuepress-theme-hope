@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Dist files
+packages/*/client/
+packages/*/node/
+packages/theme/layouts/
+packages/theme/styles/
+
+# Vuepress Cache
+.cache/
+# Vuepress Temp
+.temp/
+# Vuepress Output
+dist/
+
+# VS Code Config file
+.vscode/
+
+# Rollup Cache
+.rollup.cache/
+
+# Typescript build info
+*.tsbuildinfo
+
+# Coverage Files
+coverage/

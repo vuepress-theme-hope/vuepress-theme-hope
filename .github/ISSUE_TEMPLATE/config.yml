@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions about theme and plugins
+    url: https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new
+    about: Please ask questions in Discussion.
+
+  - name: 官方 QQ 群
+    url: https://jq.qq.com/?_wv=1027&k=rATJyxGK
+    about: "加入主题官方 QQ 群: 1003437555"

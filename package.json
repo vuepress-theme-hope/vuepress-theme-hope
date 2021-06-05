@@ -1,0 +1,210 @@
+{
+  "name": "vuepress-theme-hope-root",
+  "private": true,
+  "description": "A vuepress theme with tons of features",
+  "workspaces": [
+    "demo/",
+    "docs/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "cross-env mode=production lerna run build --stream",
+    "clean": "lerna run clean --stream",
+    "commit": "npx git-cz",
+    "copy": "lerna run copy --stream",
+    "copy:watch": "lerna run copy --parallel -- --watch",
+    "demo:build": "yarn workspace demo build",
+    "demo:serve": "yarn workspace demo serve",
+    "dev": "lerna run dev --parallel",
+    "lerna:bootstrap": "lerna bootstrap",
+    "lerna:clean": "lerna clean",
+    "lint": "yarn run lint:style && yarn run lint:eslint",
+    "lint-md": "yarn lint-md:style && yarn lint-md:wording",
+    "lint-md:style": "remark --quiet .",
+    "lint-md:wording": "textlint ./docs/**/*.md",
+    "lint-md:wording:fix": "textlint ./docs/**/*.md --fix",
+    "lint:check": "prettier --check . && eslint . --ext .js,.ts,.vue && markdownlint **/*.md --ignore **/node_modules/**",
+    "lint:eslint": "eslint . --ext .js,.ts,.vue --fix",
+    "lint:style": "prettier --check --write . && markdownlint **/*.md --ignore **/node_modules/** --fix",
+    "packages:bootstrap": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/bootstrap.ts",
+    "packages:check-update": "ncu --deep --timeout 600000",
+    "packages:release": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/release",
+    "packages:update": "ncu -u --deep --timeout 600000 && yarn install && yarn upgrade",
+    "postinstall": "husky install",
+    "test": "jest -i"
+  },
+  "lint-staged": {
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json,yml}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "frontmatter",
+      [
+        "footnotes",
+        {
+          "inlineNotes": true
+        }
+      ],
+      "math",
+      "preset-lint-consistent",
+      "preset-lint-recommended",
+      "preset-lint-markdown-style-guide",
+      [
+        "lint-maximum-line-length",
+        false
+      ],
+      [
+        "lint-list-item-spacing",
+        false
+      ],
+      [
+        "lint-list-item-indent",
+        "space"
+      ],
+      [
+        "lint-emphasis-marker",
+        false
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "7.14.3",
+    "@babel/plugin-transform-modules-commonjs": "7.14.0",
+    "@babel/preset-env": "7.14.4",
+    "@commitlint/cli": "13.0.0",
+    "@commitlint/config-conventional": "13.0.0",
+    "@rollup/plugin-commonjs": "19.0.0",
+    "@rollup/plugin-json": "4.1.0",
+    "@rollup/plugin-node-resolve": "13.0.0",
+    "@rollup/plugin-typescript": "8.2.1",
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.8",
+    "@types/inquirer": "7.3.1",
+    "@types/jest": "26.0.23",
+    "@types/semver": "7.3.6",
+    "@typescript-eslint/eslint-plugin": "4.26.0",
+    "@typescript-eslint/parser": "4.26.0",
+    "@vue/eslint-config-prettier": "6.0.0",
+    "@vue/eslint-config-typescript": "7.0.0",
+    "babel-jest": "27.0.2",
+    "cpx": "1.5.0",
+    "cross-env": "7.0.3",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.28.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-vue": "7.10.0",
+    "husky": "6.0.0",
+    "inquirer": "8.1.0",
+    "jest": "27.0.4",
+    "lerna": "4.0.0",
+    "lint-staged": "11.0.0",
+    "markdownlint-cli": "0.27.1",
+    "npm-check-updates": "11.6.0",
+    "postcss": "8.3.0",
+    "postcss-loader": "5.3.0",
+    "prettier": "2.3.0",
+    "remark-cli": "9.0.0",
+    "remark-footnotes": "3.0.0",
+    "remark-frontmatter": "3.0.0",
+    "remark-lint": "8.0.0",
+    "remark-math": "4.0.0",
+    "remark-preset-lint-consistent": "4.0.0",
+    "remark-preset-lint-markdown-style-guide": "^4.0.0",
+    "remark-preset-lint-recommended": "5.0.0",
+    "rollup": "2.50.6",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dts": "3.0.2",
+    "rollup-plugin-styles": "^3.14.1",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-typescript2": "0.30.0",
+    "rollup-plugin-vue": "6.0.0",
+    "sass": "1.34.1",
+    "sass-loader": "12.0.0",
+    "semver": "7.3.5",
+    "sort-package-json": "1.50.0",
+    "textlint": "12.0.0",
+    "textlint-filter-rule-allowlist": "2.0.1",
+    "textlint-filter-rule-comments": "1.2.2",
+    "textlint-rule-apostrophe": "2.0.0",
+    "textlint-rule-common-misspellings": "1.0.1",
+    "textlint-rule-en-capitalization": "2.0.3",
+    "textlint-rule-stop-words": "2.0.9",
+    "textlint-rule-terminology": "2.1.5",
+    "textlint-rule-write-good": "1.6.2",
+    "textlint-rule-zh-half-and-full-width-bracket": "1.1.0",
+    "ts-jest": "27.0.2",
+    "ts-node": "10.0.0",
+    "typescript": "4.3.2",
+    "vuepress": "2.0.0-beta.17"
+  },
+  "textlint": {
+    "rules": {
+      "@textlint-rule/no-unmatched-pair": true,
+      "apostrophe": true,
+      "common-misspellings": true,
+      "en-capitalization": {
+        "allowHeading": false,
+        "allowLists": false,
+        "severity": "warning"
+      },
+      "stop-words": {
+        "severity": "warning"
+      },
+      "terminology": {
+        "terms": [
+          "Stylus",
+          "VuePress",
+          [
+            "front[- ]matter",
+            "front matter"
+          ]
+        ],
+        "exclude": [
+          "Node(?:js)?",
+          "URL['’]?s",
+          "repo\\b"
+        ],
+        "severity": "warning"
+      },
+      "write-good": {
+        "passive": false,
+        "severity": "warning",
+        "whitelist": [
+          "daily",
+          "only",
+          "multiple",
+          "validate"
+        ]
+      },
+      "zh-half-and-full-width-bracket": {
+        "bracket": "halfWidth"
+      }
+    },
+    "filters": {
+      "allowlist": {
+        "allow": [
+          "/\\$\\$[\\s\\S]*?\\$\\$/m"
+        ]
+      },
+      "comments": true
+    }
+  }
+}

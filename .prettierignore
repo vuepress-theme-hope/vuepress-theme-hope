@@ -1,0 +1,22 @@
+# Vuepress Cache
+.cache/
+# Vuepress Temp
+.temp/
+# Vuepress Output
+dist/
+
+# Node modules
+node_modules/
+
+# Test Coverage
+coverage/
+
+# Dist files
+packages/*/client/
+packages/*/node/
+packages/theme/layouts/
+packages/theme/styles/
+
+
+# Rollup cache
+.rollup.cache/
