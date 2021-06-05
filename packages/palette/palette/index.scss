@@ -1,0 +1,33 @@
+@use "sass:list";
+@use "sass:map";
+@forward "color";
+@forward "layout";
+
+/* responsive breakpoints */
+
+// wide screen
+$screenXXL: 1440px !default;
+// desktop
+$screenXL: 1280px !default;
+// narrow desktop / iPad
+$screenL: 959px !default;
+// wide mobile
+$screenM: 719px !default;
+// narrow mobile
+$screenS: 419px !default;
+
+/* theme-color */
+$colorPicker: (
+  "red": #e74c3c,
+  "blue": #3498db,
+  "green": #3eaf7c,
+  "orange": #f39c12,
+  "purple": #8e44ad,
+) !default;
+
+/* code block */
+$codeLang: js ts html md vue css sass scss less stylus go java c sh yaml py
+  docker dockerfile makefile !default;
+
+/* Content Class */
+$contentClass: ".theme-default-content" !default;

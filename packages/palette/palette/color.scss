@@ -1,0 +1,60 @@
+@use 'sass:color';
+@use "sass:list";
+
+$accentColor: (
+  color: #3eaf7c,
+  amount: (
+    -10%,
+    10%,
+    25%,
+  ),
+) !default;
+
+$textColor: (
+  color: (
+    #2c3e50,
+    #9e9e9e,
+  ),
+  amount: (
+    10%,
+    20%,
+    25%,
+    40%,
+  ),
+) !default;
+
+$bgColor: (#fff, #1e1e1e) !default;
+$bgColorLight: (#f8f8f8, #272727) !default;
+$bgColorBlur: (rgba(255, 255, 255, 0.9), rgba(30, 30, 30, 0.9)) !default;
+$borderColor: (#eaecef, #302d28) !default;
+$codeBgColor: (#ecf4fa, #282c34) !default;
+$codeHighlightLineColor: (
+  color.scale(list.nth($codeBgColor, 1), $saturation: 10%, $lightness: -5%),
+  color.scale(list.nth($codeBgColor, 2), $saturation: 10%, $lightness: -5%)
+) !default;
+$codeBorderColor: (
+  color.scale(list.nth($codeBgColor, 1), $saturation: 20%, $lightness: -10%),
+  color.scale(list.nth($codeBgColor, 2), $saturation: 20%, $lightness: -10%)
+) !default;
+$arrowColor: (#ccc, #333) !default;
+$boxShadowColor: (#f0f1f2, #0f0e0d) !default;
+$cardShadowColor: (rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3)) !default;
+
+$black: (#000, #fff) !default;
+$darkGrey: (#666, #999) !default;
+$lightGrey: (#999, #666) !default;
+$white: (#fff, #000) !default;
+$grey3: (#333, #bbb) !default;
+$grey12: (#bbb, #333) !default;
+$grey14: (#eee, #111) !default;
+
+$tipColor: #42b983 !default;
+$warningColor: #f4cd00 !default;
+$dangerColor: #f55 !default;
+$badgeTipColor: $tipColor !default;
+$badgeWarningColor: $warningColor !default;
+$badgeDangerColor: $dangerColor !default;
+
+/* Color list */
+$colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,
+  #eb2f96 !default;

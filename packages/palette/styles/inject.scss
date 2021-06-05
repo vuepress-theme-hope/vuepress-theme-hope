@@ -1,0 +1,78 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'helper';
+
+@use '@mr-hope/vuepress-palette';
+
+@mixin inject-value($module) {
+  $variables: meta.module-variables($module);
+
+  @each $varName, $varValue in $variables {
+    $keyName: helper.camelCasetokebab-case($varName);
+
+    // length
+    @if meta.type-of($varValue) == number {
+      :root {
+        #{$keyName}: #{$varValue};
+      }
+    } @else if meta.type-of($varValue) == map {
+      // it's a valid color config
+      @if meta.type-of(map.get($varValue, "amount")) ==
+        list and
+        (
+          meta.type-of(map.get($varValue, "color")) ==
+            list or
+            meta.type-of(map.get($varValue, "color")) ==
+            color
+        )
+      {
+        $lightColor: helper.get-color(map.get($varValue, "color"), false);
+        $darkColor: helper.get-color(map.get($varValue, "color"), true);
+
+        :root {
+          #{$keyName}: #{$lightColor};
+        }
+
+        @if $lightColor!=$darkColor {
+          body[data-theme="dark"] {
+            #{$keyName}: #{$darkColor};
+          }
+        }
+
+        @each $amount in map.get($varValue, "amount") {
+          $ammountKeyName: #{$keyName}-#{if($amount > 0, "l", "d")}#{math.div(
+              math.abs($amount),
+              1%
+            )};
+
+          :root {
+            #{$ammountKeyName}: #{color.scale(
+                $lightColor,
+                $lightness: $amount
+              )};
+          }
+
+          @if $lightColor!=$darkColor {
+            body[data-theme="dark"] {
+              #{$ammountKeyName}: #{color.scale(
+                  $darkColor,
+                  $lightness: $amount
+                )};
+            }
+          }
+        }
+      }
+    } @else if meta.type-of($varValue) == list and list.length($varValue) == 2 {
+      :root {
+        #{$keyName}: #{helper.get-color($varValue, false)};
+      }
+
+      body[data-theme="dark"] {
+        #{$keyName}: #{helper.get-color($varValue, true)};
+      }
+    }
+  }
+}
