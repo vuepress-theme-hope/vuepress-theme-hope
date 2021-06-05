@@ -1,0 +1,56 @@
+{
+  "name": "@mr-hope/vuepress-plugin-comment",
+  "version": "2.0.0-alpha.0",
+  "description": "A comment plugin for vuepress",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress-blog",
+    "comment",
+    "valine",
+    "vssue",
+    "page-info"
+  ],
+  "homepage": "https://vuepress-theme-hope.github.io/comment/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/comment"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "node/index.js",
+  "types": "node/index.d.ts",
+  "files": [
+    "client",
+    "node"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./client ./node",
+    "demo:build": "vuepress build __tests__/demo",
+    "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
+    "demo:serve": "vuepress dev __tests__/demo",
+    "dev": "rollup -c -w"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-plugin-palette": "2.0.0-alpha.0",
+    "@mr-hope/vuepress-plugin-reading-time": "2.0.0-alpha.0",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.0",
+    "@waline/client": "^1.2.1",
+    "balloon-css": "^1.2.0"
+  },
+  "devDependencies": {
+    "rollup": "2.50.6",
+    "vuepress": "2.0.0-beta.17"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,62 @@
+@use 'sass:color';
+@use 'sass:list';
+@use '@mr-hope/vuepress-palette' as *;
+
+.tags-wrapper {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  .tag {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    min-width: 1.5em;
+    margin: 0 0.2em;
+    padding: 0 0.2em;
+    border-width: 0.5px;
+    border-style: solid;
+    border-radius: 0.75em;
+    background: #f8f8f8;
+    font-size: 0.75em;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.2s;
+
+    [data-theme="dark"] & {
+      background: #222;
+    }
+
+    &.clickable:hover {
+      cursor: pointer;
+      background: var(--bg-color);
+      box-shadow: 0 1px 6px 0 var(--card-shadow-color);
+    }
+  }
+
+  @each $color in $colors {
+    $index: list.index($colors, $color) - 1;
+
+    .tag#{$index} {
+      & {
+        color: color.scale($color, $lightness: 10%);
+        border-color: color.scale($color, $lightness: 10%);
+
+        &.clickable:hover {
+          color: $color;
+          border-color: $color;
+        }
+      }
+
+      [data-theme="dark"] & {
+        color: color.scale($color, $lightness: -10%);
+        border-color: color.scale($color, $lightness: - 10%);
+
+        &.clickable:hover {
+          color: $color;
+          border-color: $color;
+        }
+      }
+    }
+  }
+}
