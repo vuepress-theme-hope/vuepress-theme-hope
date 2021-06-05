@@ -1,0 +1,421 @@
+@use "@mr-hope/vuepress-shared/styles/reset";
+@use "@mr-hope/vuepress-palette" as *;
+
+@keyframes pwa-opened {
+  from {
+    transform: scale(0.8, 0.8);
+    opacity: 0.4;
+  }
+
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes pwa-mobile {
+  from {
+    opacity: 0.6;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pwa-fadein {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-button {
+  @include reset.button;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0 16px;
+  border-radius: 1.2rem;
+  background: var(--accent-color);
+  color: var(--white);
+  font-weight: 600;
+  line-height: 2.2rem;
+  outline: none;
+  z-index: 10;
+
+  @media (display-mode: standalone) {
+    display: none;
+  }
+
+  &:hover,
+  &:active {
+    background: var(--accent-color-l25);
+  }
+}
+
+#install-modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 997;
+
+  button {
+    @include reset.button;
+  }
+
+  .background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    z-index: 998;
+    animation: 0.25s pwa-fadein;
+  }
+
+  .install-modal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 999;
+    max-width: 56em;
+    border-radius: 10px;
+    background: var(--bgcolor);
+    font-family: sans-serif;
+    animation: 0.15s pwa-opened;
+
+    @media (max-width: $screenXL) {
+      width: 92%;
+      animation: 0.25s pwa-mobile;
+    }
+
+    @media (max-width: $screenS) {
+      max-height: 80%;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .header {
+    margin: 40px 40px 32px;
+
+    @media (max-width: $screenL) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: $screenM) {
+      margin: 20px;
+    }
+
+    .close-button {
+      @include reset.button;
+      float: right;
+      color: var(--grey3);
+
+      &:hover,
+      &:focus {
+        color: var(--dark-grey);
+      }
+    }
+
+    .logo {
+      display: flex;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 7px;
+      color: var(--dark-gery);
+      font-size: 34px;
+
+      @media (max-width: $screenL) {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: $screenS) {
+        font-size: 26px;
+      }
+    }
+
+    img {
+      width: 122px;
+      height: 122px;
+      margin-right: 24px;
+      padding: 12px;
+      border-radius: 24px;
+      background: #eee;
+
+      .theme-dark & {
+        background: #444;
+      }
+
+      @media (max-width: $screenL) {
+        width: 60px;
+        height: 60px;
+      }
+
+      @media (max-width: $screenM) {
+        margin-right: 12px;
+        padding: 8px;
+      }
+
+      @media (max-width: $screenS) {
+        width: 40px;
+        height: 40px;
+        padding: 6px;
+      }
+    }
+
+    .desc {
+      max-width: 40em;
+      color: var(--grey);
+      font-size: 14px;
+      text-overflow: ellipsis;
+      white-space: pre-wrap;
+      overflow: hidden;
+
+      @media (max-width: $screenL) {
+        display: none;
+      }
+    }
+  }
+
+  .content {
+    margin: 0 40px;
+    color: var(--grey3);
+    flex: 1;
+
+    @media (max-width: $screenM) {
+      margin: 0 20px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .highlight {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+
+    @media (max-width: $screenM) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 0px;
+    }
+
+    h3 {
+      margin-top: 0px;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 225%;
+
+      @media (max-width: $screenS) {
+        margin-bottom: 0px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .feature-wrapper {
+    padding-right: 2em;
+    overflow: hidden;
+
+    ul {
+      padding-inline-start: 22px;
+      margin-block-start: 12px;
+
+      @media (max-width: $screenS) {
+        margin-top: 0px;
+      }
+    }
+
+    li {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 29px;
+      color: var(--dark-grey);
+    }
+  }
+
+  .screenshot-wrapper {
+    max-width: 30em;
+    max-height: 220px;
+    display: flex;
+
+    @media (max-width: $screenM) {
+      width: 100%;
+    }
+
+    button {
+      @include reset.button;
+      width: 4em;
+      transition: background 0.2s;
+
+      &:hover,
+      &:focus {
+        background: #bbb;
+      }
+
+      svg {
+        width: 28px;
+        fill: #6b6969;
+      }
+    }
+  }
+
+  .screenshot {
+    width: 22em;
+    max-height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+
+    @media (max-width: $screenXL) {
+      justify-content: center;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 14em;
+      background: #efefef;
+      scroll-snap-align: start;
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+
+      @media (max-width: $screenM) {
+        height: 180px;
+      }
+    }
+  }
+
+  .description {
+    margin-bottom: 3em;
+  }
+
+  .button-wrapper {
+    width: 100%;
+    text-align: right;
+    padding: 1rem 0;
+
+    @media (max-width: $screenM) {
+      text-align: center;
+    }
+  }
+
+  .install-button,
+  .cancel-button {
+    @include reset.button;
+    display: inline-block;
+    flex: 0 0 auto;
+    min-width: 80px;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+    border: solid 2px var(--accent-color);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .install-button {
+    background: var(--accent-color);
+    color: var(--white);
+
+    &:hover,
+    &:focus {
+      background: var(--accent-color-l10);
+    }
+
+    @media (max-width: $screenS) {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .cancel-button {
+    background: transparent;
+    color: var(--accent-color);
+
+    &:hover,
+    &:focus {
+      background: var(--accent-color-l10);
+      color: var(--white);
+    }
+  }
+
+  .ios-text {
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 92%;
+    margin: 2em auto;
+    padding: 0.5em 2em;
+    border-radius: 8px;
+    background: var(--white);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 12px 0 var(--card-shadow-color);
+
+    &::after {
+      content: " ";
+      position: absolute;
+      left: calc(50% - 0.8em);
+      bottom: -1em;
+      width: 0;
+      height: 0;
+      border-top: 1em solid var(--white);
+      border-left: 0.8em solid transparent;
+      border-right: 0.8em solid transparent;
+    }
+
+    p {
+      margin: 0 0 0.5em;
+    }
+
+    .success {
+      @include reset.button;
+      padding: 0.5em 1em;
+      margin-bottom: 0.5em;
+      background: #07c160;
+      color: var(--white);
+      border: none;
+      border-radius: 1em;
+    }
+  }
+}
