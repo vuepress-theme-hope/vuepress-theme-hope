@@ -33,7 +33,7 @@
     "@mr-hope/vuepress-shared": "1.18.1",
     "@types/inquirer": "^7.3.1",
     "cac": "^6.7.3",
-    "execa": "^5.0.1",
+    "execa": "^5.1.1",
     "inquirer": "^8.1.0"
   }
 }

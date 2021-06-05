@@ -33,7 +33,7 @@
   "dependencies": {
     "@mr-hope/vuepress-types": "1.18.0",
     "dayjs": "^1.10.5",
-    "execa": "^5.0.1"
+    "execa": "^5.1.1"
   },
   "devDependencies": {
     "@types/jest": "26.0.23",
