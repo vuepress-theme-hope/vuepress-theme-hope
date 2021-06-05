@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.18.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.0...v1.18.1) (2021-06-05)
+
+### Bug Fixes
+
+- correct Vietnamese i18n ([#614](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/614)) ([9318f22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9318f229e9a49582fee29d8d78b105890d5ecde7))
+
 ## [1.18.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.17.2...v1.18.0) (2021-05-31)
 
 ### Bug Fixes
