@@ -1,0 +1,1 @@
+export { IconBase } from "./IconBase";
