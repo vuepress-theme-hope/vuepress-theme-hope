@@ -128,7 +128,7 @@
     "lint-staged": "11.0.0",
     "markdownlint-cli": "0.27.1",
     "npm-check-updates": "11.6.0",
-    "prettier": "2.3.0",
+    "prettier": "2.3.1",
     "remark-cli": "9.0.0",
     "remark-footnotes": "3.0.0",
     "remark-frontmatter": "3.0.0",
