@@ -183,6 +183,7 @@ module.exports = {
       "changelog",
       "FAQ/",
       "demo/",
+      "contribution",
     ],
   }),
 
@@ -368,6 +369,7 @@ module.exports = {
       "changelog",
       "FAQ/",
       "demo/",
+      "contribution",
     ],
   }),
 };

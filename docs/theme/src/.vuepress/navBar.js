@@ -32,6 +32,10 @@ module.exports = {
           link: "/demo/",
         },
         {
+          text: "Contribution Guide",
+          link: "/contribution/",
+        },
+        {
           text: "Plugins",
           icon: "plugin",
           items: [
@@ -114,6 +118,10 @@ module.exports = {
         {
           text: "项目案例",
           link: "/zh/demo/",
+        },
+        {
+          text: "贡献指南",
+          link: "/zh/contribution/",
         },
         {
           text: "插件",
