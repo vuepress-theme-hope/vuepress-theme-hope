@@ -1,5 +1,3 @@
-import { path } from "@vuepress/utils";
-
 import type { UserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 

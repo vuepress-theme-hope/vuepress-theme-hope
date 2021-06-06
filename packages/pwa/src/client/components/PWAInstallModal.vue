@@ -159,7 +159,7 @@ export default defineComponent({
         });
     };
 
-    const install = async (): Promise<boolean> => {
+    const install = async (): Promise<void> => {
       if (deferredprompt.value) {
         deferredprompt.value.prompt();
 
@@ -172,8 +172,6 @@ export default defineComponent({
 
           emit("toggle", false);
           emit("can-install", false);
-
-          return true;
         } else {
           console.info("You choose to not install PWA");
 
@@ -181,8 +179,6 @@ export default defineComponent({
           emit("can-install", false);
         }
       }
-
-      return false;
     };
 
     const hint = (): void => {
