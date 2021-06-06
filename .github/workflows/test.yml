@@ -44,6 +44,9 @@ jobs:
       - name: Build project
         run: yarn run build
 
+      - name: Demo build
+        run: yarn workspace theme-demo docs:build
+
       - name: Linter test
         run: |
           yarn run lint:check

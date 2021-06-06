@@ -23,7 +23,7 @@ import { useNavLink } from "./useNavLink";
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
 
 export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> =
-  Symbol("sidebarItems");
+  Symbol.for("sidebarItems");
 
 /**
  * Inject sidebar items global computed

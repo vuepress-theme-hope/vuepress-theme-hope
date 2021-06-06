@@ -10,7 +10,7 @@ module.exports = {
   },
   projects: [
     // ...docs.map((item) => `./docs/${item}`),
-    // "./demo",
+    "./demo",
     ...packages.map((item) => `./packages/${item}`),
   ],
 };

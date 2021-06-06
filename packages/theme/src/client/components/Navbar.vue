@@ -89,6 +89,7 @@ export default defineComponent({
           linksWrapperMaxWidth.value = 0;
         } else {
           linksWrapperMaxWidth.value =
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             navbar.value!.offsetWidth -
             navbarHorizontalPadding -
             (siteBrand.value?.offsetWidth || 0);
