@@ -47,7 +47,7 @@ jobs:
       - name: Linter test
         run: |
           yarn run lint:check
-          yarn run lint-md
+          yarn run lint:md
 
       - name: Unit test
         run: yarn run test
