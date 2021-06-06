@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const docs = fs.readdirSync(path.resolve(__dirname, "docs"));
+// const docs = fs.readdirSync(path.resolve(__dirname, "docs"));
 const packages = fs.readdirSync(path.resolve(__dirname, "packages"));
 
 module.exports = {
@@ -9,8 +9,8 @@ module.exports = {
     "vetur.useWorkspaceDependencies": true,
   },
   projects: [
-    ...docs.map((item) => `./docs/${item}`),
-    "./demo",
+    // ...docs.map((item) => `./docs/${item}`),
+    // "./demo",
     ...packages.map((item) => `./packages/${item}`),
   ],
 };

@@ -1,0 +1,156 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--c-bg);
+  transition: background-color ease 0.3s;
+}
+
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: var(--c-text);
+}
+
+a {
+  font-weight: 500;
+  color: var(--c-text-accent);
+  text-decoration: none;
+}
+
+p a code {
+  font-weight: 400;
+  color: var(--c-text-accent);
+}
+
+kbd {
+  font-family: var(--font-family-code);
+  background: var(--c-bg-lighter);
+  border: solid 0.15rem var(--c-border-dark);
+  border-bottom: solid 0.25rem var(--c-border-dark);
+  border-radius: 0.15rem;
+  padding: 0 0.15em;
+}
+
+code {
+  font-family: var(--font-family-code);
+  color: var(--c-text-lighter);
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: var(--c-bg-light);
+  border-radius: 3px;
+  overflow-wrap: break-word;
+}
+
+blockquote {
+  font-size: 1rem;
+  color: var(--c-text-quote);
+  border-left: 0.2rem solid var(--c-border-dark);
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+
+  & > p {
+    margin: 0;
+  }
+}
+
+ul,
+ol {
+  padding-left: 1.2em;
+}
+
+strong {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+
+  &:hover .header-anchor {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+h5 {
+  font-size: 1.05rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a.header-anchor {
+  font-size: 0.85em;
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  margin-top: 0.125em;
+  opacity: 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
+p,
+ul,
+ol {
+  line-height: 1.7;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--c-border);
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  display: block;
+  overflow-x: auto;
+}
+
+tr {
+  border-top: 1px solid var(--c-border-dark);
+
+  &:nth-child(2n) {
+    background-color: var(--c-bg-light);
+  }
+}
+
+th,
+td {
+  border: 1px solid var(--c-border-dark);
+  padding: 0.6em 1em;
+}
