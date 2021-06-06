@@ -27,17 +27,12 @@
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
-    "test": "jest"
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
     "@mr-hope/vuepress-types": "1.18.0",
     "dayjs": "^1.10.5",
-    "execa": "^5.0.1"
-  },
-  "devDependencies": {
-    "@types/jest": "26.0.23",
-    "jest": "27.0.3"
+    "execa": "^5.1.1"
   },
   "publishConfig": {
     "access": "public"
