@@ -5,15 +5,20 @@
       <hr />
     </template>
 
-    <slot name="top" />
+    <SidebarTop />
+    <Content slot-key="sidebar-top" />
 
     <SidebarNavLinks />
 
-    <slot name="center" />
+    <SidebarCenter />
+    <Content slot-key="sidebar-center" />
 
     <SidebarLinks :depth="0" :items="items" />
 
-    <slot name="bottom" />
+    <SidebarBottom />
+    <Content slot-key="sidebar-bottom" />
+
+    <BlogInfo v-if="$frontmatter.blog && $themeConfig.blog !== false" />
   </aside>
 </template>
 

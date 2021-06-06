@@ -1,10 +1,14 @@
 import Vue from "vue";
 import Anchor from "@theme/components/Anchor.vue";
 import Comment from "@Comment";
+import ContentBottom from "@ContentBottom";
+import ContentTop from "@ContentTop";
 import MyTransition from "@theme/components/MyTransition.vue";
+import PageBottom from "@PageBottom";
 import PageInfo from "@mr-hope/vuepress-plugin-comment/lib/client/PageInfo.vue";
 import PageMeta from "@theme/components/PageMeta.vue";
 import PageNav from "@theme/components/PageNav.vue";
+import PageTop from "@PageTop";
 import Password from "@theme/components/Password.vue";
 
 import type { PageHeader } from "@mr-hope/vuepress-types";
@@ -17,10 +21,14 @@ export default Vue.extend({
   components: {
     Anchor,
     Comment,
+    ContentBottom,
+    ContentTop,
     MyTransition,
+    PageBottom,
     PageInfo,
     PageMeta,
     PageNav,
+    PageTop,
     Password,
   },
   props: {

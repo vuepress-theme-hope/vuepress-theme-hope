@@ -1,6 +1,7 @@
 <template>
   <header class="navbar" :class="{ 'can-hide': canHide }">
-    <slot name="start" />
+    <NavbarStart />
+    <Content slot-key="navbar-start" />
 
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
@@ -26,7 +27,8 @@
       >
     </RouterLink>
 
-    <slot name="center" />
+    <NavbarCenter />
+    <Content slot-key="navbar-center" />
 
     <div
       :style="
@@ -45,7 +47,8 @@
       <LanguageDropdown />
       <RepoLink class="can-hide" />
 
-      <slot name="end" />
+      <NavbarEnd />
+      <Content slot-key="navbar-end" />
     </div>
   </header>
 </template>

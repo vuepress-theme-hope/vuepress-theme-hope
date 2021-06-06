@@ -8,31 +8,11 @@
     <Password v-if="isGlobalEncrypted" @password-verify="checkGlobalPassword" />
     <!-- Content -->
     <template v-else>
-      <Navbar v-if="enableNavbar" @toggle-sidebar="toggleSidebar">
-        <template #start>
-          <slot name="navbar-start" />
-        </template>
-        <template #center>
-          <slot name="navbar-center" />
-        </template>
-        <template #end>
-          <slot name="navbar-end" />
-        </template>
-      </Navbar>
+      <Navbar v-if="enableNavbar" @toggle-sidebar="toggleSidebar" />
 
       <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-      <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
-        <template #top>
-          <slot name="sidebar-top" />
-        </template>
-        <template #center>
-          <slot name="sidebar-center" />
-        </template>
-        <template #bottom>
-          <slot name="sidebar-bottom" />
-        </template>
-      </Sidebar>
+      <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" />
 
       <slot :sidebar-items="sidebarItems" :headers="headers" />
 

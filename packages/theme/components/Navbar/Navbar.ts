@@ -1,6 +1,9 @@
 import Vue from "vue";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";
 import LanguageDropdown from "@theme/components/Navbar/LanguageDropdown";
+import NavbarStart from "@NavbarStart";
+import NavbarCenter from "@NavbarCenter";
+import NavbarEnd from "@NavbarEnd";
 import NavLinks from "@theme/components/Navbar/NavLinks.vue";
 import RepoLink from "@theme/components/Navbar/RepoLink.vue";
 import SearchBox from "@SearchBox";
@@ -37,6 +40,9 @@ export default Vue.extend({
   components: {
     AlgoliaSearchBox,
     LanguageDropdown,
+    NavbarCenter,
+    NavbarEnd,
+    NavbarStart,
     NavLinks,
     RepoLink,
     SearchBox,

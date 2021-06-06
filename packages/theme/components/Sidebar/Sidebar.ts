@@ -1,7 +1,11 @@
 import Vue from "vue";
-import BloggerInfo from "@theme/components/Blog/BloggerInfo.vue";
+import BlogInfo from "@BlogInfo";
+import BloggerInfo from "@BloggerInfo";
 import SidebarNavLinks from "@theme/components/Sidebar/SidebarNavLinks.vue";
+import SidebarBottom from "@SidebarBottom";
+import SidebarCenter from "@SidebarCenter";
 import SidebarLinks from "@theme/components/Sidebar/SidebarLinks.vue";
+import SidebarTop from "@SidebarTop";
 
 import type { PropType } from "vue";
 import type { BlogOptions } from "@theme/types";
@@ -10,7 +14,15 @@ import type { SidebarItem } from "@theme/util/sidebar";
 export default Vue.extend({
   name: "Sidebar",
 
-  components: { BloggerInfo, SidebarLinks, SidebarNavLinks },
+  components: {
+    BlogInfo,
+    BloggerInfo,
+    SidebarBottom,
+    SidebarCenter,
+    SidebarLinks,
+    SidebarNavLinks,
+    SidebarTop,
+  },
 
   props: {
     items: { type: Array as PropType<SidebarItem[]>, required: true },

@@ -129,7 +129,7 @@
     "chalk": "4.1.1",
     "concurrently": "^6.2.0",
     "conventional-changelog-cli": "2.1.1",
-    "cpx": "1.5.0",
+    "cpx2": "3.0.0",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.28.0",

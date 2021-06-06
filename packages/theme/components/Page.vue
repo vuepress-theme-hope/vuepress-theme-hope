@@ -4,7 +4,8 @@
       <BreadCrumb :key="$route.path" />
     </MyTransition>
 
-    <slot name="top" />
+    <PageTop />
+    <Content slot-key="page-top" />
 
     <MyTransition :delay="0.04">
       <PageInfo :key="$route.path" />
@@ -23,13 +24,19 @@
         <Anchor :key="$route.path" />
       </MyTransition>
 
-      <slot v-if="!pagePassword || pageDescrypted" name="content-top" />
+      <template v-if="!pagePassword || pageDescrypted">
+        <ContentTop />
+        <Content slot-key="content-top" />
+      </template>
 
       <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
         <Content :key="$route.path" class="theme-default-content" />
       </MyTransition>
 
-      <slot v-if="!pagePassword || pageDescrypted" name="content-bottom" />
+      <template v-if="!pagePassword || pageDescrypted">
+        <ContentBottom />
+        <Content slot-key="content-bottom" />
+      </template>
 
       <MyTransition :delay="0.12">
         <PageMeta :key="$route.path" />
@@ -44,7 +51,8 @@
       </MyTransition>
     </template>
 
-    <slot name="bottom" />
+    <PageBottom />
+    <Content slot-key="page-bottom" />
   </main>
 </template>
 
