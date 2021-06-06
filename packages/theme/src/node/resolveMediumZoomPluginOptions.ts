@@ -1,15 +1,13 @@
 import type { MediumZoomPluginOptions } from "@vuepress/plugin-medium-zoom";
-import type { DefaultThemePluginsOptions } from "../../shared";
+import type { HopeThemePluginsOptions } from "../shared";
 
 /**
  * Resolve options for @vuepress/plugin-medium-zoom
  */
 export const resolveMediumZoomPluginOptions = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: HopeThemePluginsOptions
 ): MediumZoomPluginOptions | boolean => {
-  if (themePlugins?.mediumZoom === false) {
-    return false;
-  }
+  if (themePlugins?.mediumZoom === false) return false;
 
   return {
     selector:

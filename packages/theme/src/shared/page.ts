@@ -1,18 +1,17 @@
 import type { GitPluginPageData } from "@vuepress/plugin-git";
-import type { NavLink, SidebarConfig } from "./nav";
+import type { NavLink, SidebarConfig } from "./options/nav";
 
-export interface DefaultThemePageData extends GitPluginPageData {
+export interface HopeThemePageData extends GitPluginPageData {
   filePathRelative: string;
 }
 
-export interface DefaultThemePageFrontmatter {
+export interface HopeThemePageFrontmatter {
   home?: boolean;
   navbar?: boolean;
   pageClass?: string;
 }
 
-export interface DefaultThemeHomePageFrontmatter
-  extends DefaultThemePageFrontmatter {
+export interface HopeThemeHomePageFrontmatter extends HopeThemePageFrontmatter {
   home: true;
   heroImage?: string;
   heroAlt?: string;
@@ -31,8 +30,8 @@ export interface DefaultThemeHomePageFrontmatter
   footerHtml?: boolean;
 }
 
-export interface DefaultThemeNormalPageFrontmatter
-  extends DefaultThemePageFrontmatter {
+export interface HopeThemeNormalPageFrontmatter
+  extends HopeThemePageFrontmatter {
   home?: false;
   editLink?: boolean;
   lastUpdated?: boolean;

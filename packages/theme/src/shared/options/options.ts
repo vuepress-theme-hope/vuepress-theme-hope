@@ -2,7 +2,7 @@ import type { LocaleData } from "@vuepress/shared";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { NavbarConfig, SidebarConfig } from "./nav";
 
-export interface DefaultThemePluginsOptions {
+export interface HopeThemePluginsOptions {
   /**
    * Enable @vuepress/plugin-active-header-links or not
    */
@@ -46,11 +46,7 @@ export interface DefaultThemePluginsOptions {
   prismjs?: boolean;
 }
 
-export type DefaultThemeLocaleOptions = DefaultThemeData;
-
-export type DefaultThemeData = ThemeData<DefaultThemeLocaleData>;
-
-export interface DefaultThemeLocaleData extends LocaleData {
+export interface HopeThemeLocaleData extends LocaleData {
   /**
    * Home path of current locale
    *
@@ -246,3 +242,7 @@ export interface DefaultThemeLocaleData extends LocaleData {
    */
   openInNewWindow?: string;
 }
+
+export type HopeThemeData = ThemeData<HopeThemeLocaleData>;
+
+export type HopeThemeLocaleOptions = HopeThemeData;

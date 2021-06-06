@@ -1,11 +1,6 @@
-import type { Theme, ThemeConfig } from "@vuepress/core";
 import { path } from "@vuepress/utils";
-import type {
-  DefaultThemeLocaleOptions,
-  DefaultThemePluginsOptions,
-} from "../shared";
+import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
 import {
-  assignDefaultLocaleOptions,
   resolveActiveHeaderLinksPluginOptions,
   resolveContainerPluginOptions,
   resolveContainerPluginOptionsForDetails,
@@ -13,19 +8,23 @@ import {
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveGitPluginOptions,
   resolveMediumZoomPluginOptions,
-} from "./utils";
+} from "./plugins";
 
-export interface DefaultThemeOptions
-  extends ThemeConfig,
-    DefaultThemeLocaleOptions {
+import type { Theme, ThemeConfig } from "@vuepress/core";
+import type {
+  HopeThemeLocaleOptions,
+  HopeThemePluginsOptions,
+} from "../shared";
+
+export interface HopeThemeOptions extends ThemeConfig, HopeThemeLocaleOptions {
   /**
    * To avoid confusion with the root `plugins` option,
    * we use `themePlugins`
    */
-  themePlugins?: DefaultThemePluginsOptions;
+  themePlugins?: HopeThemePluginsOptions;
 }
 
-export const defaultTheme: Theme<DefaultThemeOptions> = ({
+export const themeHope: Theme<HopeThemeOptions> = ({
   themePlugins = {},
   ...localeOptions
 }) => {
@@ -41,7 +40,11 @@ export const defaultTheme: Theme<DefaultThemeOptions> = ({
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
 
     // use the relative file path to generate edit link
-    extendsPageData: ({ filePathRelative }) => ({ filePathRelative }),
+    extendsPageData: ({
+      filePathRelative,
+    }): { filePathRelative: string | null } => ({
+      filePathRelative,
+    }),
 
     plugins: [
       [

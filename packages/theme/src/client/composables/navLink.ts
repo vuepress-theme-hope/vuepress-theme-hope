@@ -1,5 +1,6 @@
+import { useResolveRouteWithRedirect } from "./resolveRouteWithRedirect";
+
 import type { NavLink } from "../../shared";
-import { useResolveRouteWithRedirect } from "./useResolveRouteWithRedirect";
 
 /**
  * Resolve NavLink props from string

@@ -31,11 +31,8 @@ export const resolveEditLink = ({
 
   let pattern: string | undefined;
 
-  if (editLinkPattern) {
-    pattern = editLinkPattern;
-  } else if (repoType !== null) {
-    pattern = editLinkPatterns[repoType];
-  }
+  if (editLinkPattern) pattern = editLinkPattern;
+  else if (repoType !== null) pattern = editLinkPatterns[repoType];
 
   if (!pattern) return null;
 

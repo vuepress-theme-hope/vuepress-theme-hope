@@ -16,7 +16,7 @@ import { useRouteLocale } from "@vuepress/client";
 import { useThemeLocaleData } from "../composables";
 
 export default defineComponent({
-  name: "404",
+  name: "Page404",
 
   setup() {
     const routeLocale = useRouteLocale();

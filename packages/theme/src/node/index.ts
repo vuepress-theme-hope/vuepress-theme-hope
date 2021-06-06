@@ -1,7 +1,8 @@
-import { defaultTheme } from "./defaultTheme";
+import { themeHope } from "./theme";
 
+export * from "./defaultLocaleAssign";
+export * from "./theme";
+export * from "./plugins";
 export * from "../shared";
-export * from "./defaultTheme";
-export * from "./utils";
 
-export default defaultTheme;
+export default themeHope;

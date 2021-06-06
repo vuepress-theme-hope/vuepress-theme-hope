@@ -1,8 +1,6 @@
+import type { LocaleConfig } from "@vuepress/core";
 import type { ContainerPluginOptions } from "@vuepress/plugin-container";
-import type {
-  DefaultThemePluginsOptions,
-  DefaultThemeData,
-} from "../../shared";
+import type { HopeThemePluginsOptions, HopeThemeData } from "../shared";
 
 /**
  * Resolve options for @vuepress/plugin-container
@@ -10,19 +8,14 @@ import type {
  * For custom containers default title
  */
 export const resolveContainerPluginOptions = (
-  themePlugins: DefaultThemePluginsOptions,
-  localeOptions: DefaultThemeData,
+  themePlugins: HopeThemePluginsOptions,
+  localeOptions: HopeThemeData,
   type: "tip" | "warning" | "danger"
 ): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.[type] === false) {
-    return false;
-  }
+  if (themePlugins?.container?.[type] === false) return false;
 
   const locales = Object.entries(localeOptions.locales || {}).reduce(
-    (result, [key, value]) => {
-      // FIXME:
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+    (result: LocaleConfig<{ defaultInfo: string }>, [key, value]) => {
       result[key] = {
         defaultInfo: value?.[type] ?? localeOptions[type],
       };
@@ -43,19 +36,17 @@ export const resolveContainerPluginOptions = (
  * For details container
  */
 export const resolveContainerPluginOptionsForDetails = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: HopeThemePluginsOptions
 ): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.details === false) {
-    return false;
-  }
+  if (themePlugins?.container?.details === false) return false;
 
   return {
     type: "details",
-    before: (info) =>
+    before: (info): string =>
       `<details class="custom-container details">${
         info ? `<summary>${info}</summary>` : ""
       }\n`,
-    after: () => "</details>\n",
+    after: (): string => "</details>\n",
   };
 };
 
@@ -65,16 +56,14 @@ export const resolveContainerPluginOptionsForDetails = (
  * For code-group container
  */
 export const resolveContainerPluginOptionsForCodeGroup = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: HopeThemePluginsOptions
 ): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.codeGroup === false) {
-    return false;
-  }
+  if (themePlugins?.container?.codeGroup === false) return false;
 
   return {
     type: "code-group",
-    before: () => `<CodeGroup>\n`,
-    after: () => "</CodeGroup>\n",
+    before: (): string => `<CodeGroup>\n`,
+    after: (): string => "</CodeGroup>\n",
   };
 };
 
@@ -84,15 +73,13 @@ export const resolveContainerPluginOptionsForCodeGroup = (
  * For code-group-item block
  */
 export const resolveContainerPluginOptionsForCodeGroupItem = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: HopeThemePluginsOptions
 ): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.codeGroupItem === false) {
-    return false;
-  }
+  if (themePlugins?.container?.codeGroupItem === false) return false;
 
   return {
     type: "code-group-item",
-    before: (info) => `<CodeGroupItem title="${info}">\n`,
-    after: () => "</CodeGroupItem>\n",
+    before: (info): string => `<CodeGroupItem title="${info}">\n`,
+    after: (): string => "</CodeGroupItem>\n",
   };
 };

@@ -10,15 +10,15 @@ import {
   resolveLocalePath,
 } from "@vuepress/shared";
 import type {
-  DefaultThemeData,
-  DefaultThemeNormalPageFrontmatter,
+  HopeThemeData,
+  HopeThemeNormalPageFrontmatter,
   SidebarConfigArray,
   SidebarConfigObject,
   SidebarGroup,
   SidebarItem,
   ResolvedSidebarItem,
 } from "../../shared";
-import { useNavLink } from "./useNavLink";
+import { useNavLink } from "./navLink";
 
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
 
@@ -34,40 +34,6 @@ export const useSidebarItems = (): SidebarItemsRef => {
     throw new Error("useSidebarItems() is called without provider.");
   }
   return sidebarItems;
-};
-
-/**
- * Resolve sidebar items global computed
- *
- * It should only be resolved and provided once
- */
-export const resolveSidebarItems = (
-  frontmatter: DefaultThemeNormalPageFrontmatter,
-  themeLocale: DefaultThemeData
-): ResolvedSidebarItem[] => {
-  // get sidebar config from frontmatter > themeConfig
-  const sidebarConfig = frontmatter.sidebar ?? themeLocale.sidebar ?? "auto";
-  const sidebarDepth =
-    frontmatter.sidebarDepth ?? themeLocale.sidebarDepth ?? 2;
-
-  // resolve sidebar items according to the config
-  if (frontmatter.home || sidebarConfig === false) {
-    return [];
-  }
-
-  if (sidebarConfig === "auto") {
-    return resolveAutoSidebarItems(sidebarDepth);
-  }
-
-  if (isArray(sidebarConfig)) {
-    return resolveArraySidebarItems(sidebarConfig, sidebarDepth);
-  }
-
-  if (isPlainObject(sidebarConfig)) {
-    return resolveMultiSidebarItems(sidebarConfig, sidebarDepth);
-  }
-
-  return [];
 };
 
 /**
@@ -120,23 +86,19 @@ export const resolveArraySidebarItems = (
   const handleChildItem = (
     item: ResolvedSidebarItem | SidebarGroup | SidebarItem | string
   ): ResolvedSidebarItem => {
-    let childItem: ResolvedSidebarItem;
-    if (isString(item)) {
-      childItem = useNavLink(item);
-    } else {
-      childItem = item as ResolvedSidebarItem;
-    }
+    const childItem = isString(item)
+      ? (useNavLink(item) as ResolvedSidebarItem)
+      : (item as ResolvedSidebarItem);
 
-    if (childItem.children) {
+    if (childItem.children)
       return {
         ...childItem,
         children: childItem.children.map((item) => handleChildItem(item)),
       };
-    }
 
     // if the sidebar item is current page and children is not set
     // use headers of current page as children
-    if (childItem.link === route.path) {
+    if (childItem.link === route.path)
       return {
         ...childItem,
         children: headersToSidebarItemChildren(
@@ -144,7 +106,6 @@ export const resolveArraySidebarItems = (
           sidebarDepth
         ),
       };
-    }
 
     return childItem;
   };
@@ -164,4 +125,30 @@ export const resolveMultiSidebarItems = (
   const matchedSidebarConfig = sidebarConfig[sidebarPath] ?? [];
 
   return resolveArraySidebarItems(matchedSidebarConfig, sidebarDepth);
+};
+
+/**
+ * Resolve sidebar items global computed
+ *
+ * It should only be resolved and provided once
+ */
+export const resolveSidebarItems = (
+  frontmatter: HopeThemeNormalPageFrontmatter,
+  themeLocale: HopeThemeData
+): ResolvedSidebarItem[] => {
+  // get sidebar config from frontmatter > themeConfig
+  const sidebarConfig = frontmatter.sidebar ?? themeLocale.sidebar ?? "auto";
+  const sidebarDepth =
+    frontmatter.sidebarDepth ?? themeLocale.sidebarDepth ?? 2;
+
+  // resolve sidebar items according to the config
+  return frontmatter.home || sidebarConfig === false
+    ? []
+    : sidebarConfig === "auto"
+    ? resolveAutoSidebarItems(sidebarDepth)
+    : isArray(sidebarConfig)
+    ? resolveArraySidebarItems(sidebarConfig, sidebarDepth)
+    : isPlainObject(sidebarConfig)
+    ? resolveMultiSidebarItems(sidebarConfig, sidebarDepth)
+    : [];
 };

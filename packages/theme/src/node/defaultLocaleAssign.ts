@@ -1,9 +1,6 @@
-import type {
-  DefaultThemeLocaleOptions,
-  DefaultThemeLocaleData,
-} from "../../shared";
+import type { HopeThemeLocaleOptions, HopeThemeLocaleData } from "../shared";
 
-const defaultLocaleOptions: DefaultThemeLocaleOptions = {
+const defaultLocaleOptions: HopeThemeLocaleOptions = {
   // navbar
   navbar: [],
   logo: null,
@@ -36,7 +33,7 @@ const defaultLocaleOptions: DefaultThemeLocaleOptions = {
   openInNewWindow: "open in new window",
 };
 
-const defaultLocaleData: DefaultThemeLocaleData = {
+const defaultLocaleData: HopeThemeLocaleData = {
   // navbar
   selectLanguageName: "English",
 };
@@ -45,7 +42,7 @@ const defaultLocaleData: DefaultThemeLocaleData = {
  * Assign default options to `themeConfig`
  */
 export const assignDefaultLocaleOptions = (
-  localeOptions: DefaultThemeLocaleOptions
+  localeOptions: HopeThemeLocaleOptions
 ): void => {
   if (!localeOptions.locales) {
     localeOptions.locales = {};
