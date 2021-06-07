@@ -151,7 +151,7 @@ exports[`footnote Should support inline note 1`] = `
 <section class=\\"footnotes\\">
 <ol class=\\"footnotes-list\\">
 <li id=\\"footnote1\\" class=\\"footnote-item\\"><p>Inlines notes are easier to write, since
-you don't have to pick an identifier and move down to type the
+you don’t have to pick an identifier and move down to type the
 note. <a href=\\"#footnote-ref1\\" class=\\"footnote-backref\\">↩︎</a></p>
 </li>
 </ol>
