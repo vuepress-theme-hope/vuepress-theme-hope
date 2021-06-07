@@ -167,6 +167,7 @@ declare module "utterances" {
     /**
      * The repo to store the comment (Don't know zh tbh)
      */
+    src: string;
     repo: string;
     /**
      * Blog Post ↔️ Issue Mapping
@@ -174,7 +175,7 @@ declare module "utterances" {
      *
      * @default "url"
      */
-    issue-term?: "url" | "pathname" | "title" | "og:title";
+    issueTerm?: "url" | "pathname" | "title" | "og:title";
     /**
      * Color of the comment part
      * @default 'preferred-color-scheme'
@@ -192,7 +193,7 @@ declare module "utterances" {
     | "boxy-light"
     ;
     
-    crossorigin: 'anonymous';
+    crossorigin: string;
   }
 
   export class Utterances {

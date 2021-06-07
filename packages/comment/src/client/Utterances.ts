@@ -1,7 +1,6 @@
 // import { Component, Prop, Ref, Vue, Watch } from 'vue-property-decorator';
 import Vue from "vue";
 import { Route } from "vue-router";
-import { valineI18n } from "./define";
 
 // import type { WalineInstance } from "@utterances/client";
 import type { PropType } from "vue";
@@ -65,28 +64,17 @@ export default Vue.extend({
   mounted(): void {
     if (this.walineEnable)
       timeout = setTimeout(() => {
-        const { walineConfig } = this;
+        const { utterancesConfig } = this;
 
         void import(/* webpackChunkName: "utterances" */ "@utterances/client").then(
           ({ default: utterances }) => {
             this.utterances = utterances({
               src: "https://utteranc.es/client.js",
               repo: utterancesConfig.repo,
-              issue-term: utterancesConfig.issue-term,
+              issueTerm: utterancesConfig.issue-term,
               theme: utterancesConfig.theme || "github-light",
               crossorigin: "anonymous",
               async: true,
-            //   lang: this.$lang === "zh-CN" ? "zh-CN" : "en-US",
-            //   locale: {
-            //     placeholder: valineI18n[this.$localePath || "/"],
-            //   },
-            //   meta: walineConfig.meta || ["nick", "mail"],
-            //   requiredMeta: walineConfig.requiredMeta || ["nick"],
-            //   avatar: walineConfig.avatar || "retro",
-            //   emoji: [
-            //     "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
-            //     "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
-            //   ],
               ...utterancesConfig,
               dark: "body.theme-dark",
               visitor: this.visitorDisplay,
