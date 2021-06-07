@@ -182,17 +182,16 @@ declare module "utterances" {
      */
 
     theme?:
-    | "github-light"
-    | "github-dark"
-    | "preferred-color-scheme"
-    | "github-dark-orange"
-    | "icy-dark"
-    | "retro"
-    | "dark-blue"
-    | "photon-dark"
-    | "boxy-light"
-    ;
-    
+      | "github-light"
+      | "github-dark"
+      | "preferred-color-scheme"
+      | "github-dark-orange"
+      | "icy-dark"
+      | "retro"
+      | "dark-blue"
+      | "photon-dark"
+      | "boxy-light";
+
     crossorigin: string;
   }
 
