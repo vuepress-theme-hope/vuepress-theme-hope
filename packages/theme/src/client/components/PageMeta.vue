@@ -1,20 +1,24 @@
 <template>
   <footer class="page-meta">
     <div v-if="editNavLink" class="meta-item edit-link">
-      <NavLink class="meta-item-label" :item="editNavLink" />
+      <NavLink class="label" :item="editNavLink">
+        <template #before>
+          <EditIcon />
+        </template>
+      </NavLink>
     </div>
 
-    <div v-if="lastUpdated" class="meta-item last-updated">
-      <span class="meta-item-label">{{ themeLocale.lastUpdatedText }}: </span>
-      <span class="meta-item-info">{{ lastUpdated }}</span>
+    <div v-if="updateTime" class="meta-item update-time">
+      <span class="label">{{ themeLocale.lastUpdatedText }}: </span>
+      <span class="info">{{ updateTime }}</span>
     </div>
 
     <div
       v-if="contributors && contributors.length"
       class="meta-item contributors"
     >
-      <span class="meta-item-label">{{ themeLocale.contributorsText }}: </span>
-      <span class="meta-item-info">
+      <span class="label">{{ themeLocale.contributorsText }}: </span>
+      <span class="info">
         <template v-for="(contributor, index) in contributors" :key="index">
           <span class="contributor" :title="`email: ${contributor.email}`">
             {{ contributor.name }}
@@ -34,19 +38,21 @@ import {
   usePageFrontmatter,
   useSiteLocaleData,
 } from "@vuepress/client";
-import type {
-  DefaultThemePageData,
-  DefaultThemeNormalPageFrontmatter,
-  NavLink as NavLinkType,
-} from "../../shared";
 import { useThemeLocaleData } from "../composables";
 import { resolveEditLink } from "../utils";
 import NavLink from "./NavLink.vue";
+import { EditIcon } from "./icons";
+
+import type {
+  HopeThemePageData,
+  HopeThemeNormalPageFrontmatter,
+  NavLink as NavLinkType,
+} from "../../shared";
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<DefaultThemePageData>();
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>();
+  const page = usePageData<HopeThemePageData>();
+  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showEditLink =
@@ -82,11 +88,11 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   });
 };
 
-const useLastUpdated = (): ComputedRef<null | string> => {
+const useUpdateTime = (): ComputedRef<null | string> => {
   const siteLocale = useSiteLocaleData();
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<DefaultThemePageData>();
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>();
+  const page = usePageData<HopeThemePageData>();
+  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showLastUpdated =
@@ -103,11 +109,11 @@ const useLastUpdated = (): ComputedRef<null | string> => {
 };
 
 const useContributors = (): ComputedRef<
-  null | Required<DefaultThemePageData["git"]>["contributors"]
+  null | Required<HopeThemePageData["git"]>["contributors"]
 > => {
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<DefaultThemePageData>();
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>();
+  const page = usePageData<HopeThemePageData>();
+  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showContributors =
@@ -123,19 +129,20 @@ export default defineComponent({
   name: "PageMeta",
 
   components: {
+    EditIcon,
     NavLink,
   },
 
   setup() {
     const themeLocale = useThemeLocaleData();
     const editNavLink = useEditNavLink();
-    const lastUpdated = useLastUpdated();
+    const updateTime = useUpdateTime();
     const contributors = useContributors();
 
     return {
       themeLocale,
       editNavLink,
-      lastUpdated,
+      updateTime,
       contributors,
     };
   },

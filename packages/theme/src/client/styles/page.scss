@@ -1,3 +1,4 @@
+@use '@mr-hope/vuepress-shared/styles/wrapper';
 @import "_variables";
 @import "_wrapper";
 
@@ -8,44 +9,62 @@
 
 .page-meta {
   @extend %wrapper;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: Arial, Helvetica, sans-serif;
   overflow: auto;
 
   .meta-item {
     cursor: default;
     margin-top: 0.8rem;
 
-    .meta-item-label {
+    .label {
       font-weight: 500;
-      color: var(--c-text-lighter);
+      color: var(--text-color-l25);
     }
 
-    .meta-item-info {
+    .info {
       font-weight: 400;
-      color: var(--c-text-quote);
+      color: var(--dark-grey);
     }
   }
 
   .edit-link {
     display: inline-block;
+    font-size: 14px;
     margin-right: 0.25rem;
-  }
 
-  .last-updated {
-    float: right;
-  }
-}
-
-@media (max-width: $MQMobile) {
-  .page-meta {
-    .last-updated {
-      font-size: 0.8em;
-      float: none;
+    .icon {
+      position: relative;
+      bottom: -0.125em;
+      width: 1em;
+      height: 1em;
     }
 
-    .contributors {
-      font-size: 0.8em;
+    @media (max-width: $MQMobile) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .update-time {
+    float: right;
+
+    font-size: 14px;
+
+    @media (max-width: $MQMobile) {
+      float: none;
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+
+  .contributors {
+    font-size: 14px;
+    text-align: right;
+
+    @media (max-width: $MQMobile) {
+      font-size: 13px;
+      text-align: left;
     }
   }
 }
