@@ -1,7 +1,8 @@
-@use 'sass:string';
+@use 'sass:color';
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:meta';
+@use 'sass:string';
 
 @function isUpperCase($char) {
   @return string.to-lower-case($char) != $char;
@@ -26,13 +27,131 @@
   @return $property;
 }
 
-@function get-color($variable, $isDark) {
-  @if meta.type-of($variable) == color {
-    @return $variable;
-  } @else if meta.type-of($variable) == list {
-    @return if($isDark, list.nth($variable, 2), list.nth($variable, 1));
+@function islegal-color($value) {
+  // single color
+  @if meta.type-of($value) == color {
+    @return true;
+  }
+
+  // it's a shortcut config
+  @if (meta.type-of($value) == list and list.length($value) == 2) {
+    $isLegal: true;
+
+    @each $color in $value {
+      @if meta.type-of($color) != color {
+        $isLegal: false;
+      }
+    }
+
+    @if $isLegal {
+      @return true;
+    }
+
+    @debug "Unexpected value: getting #{$value}";
+
+    @return false;
+  }
+
+  // it's a valid map color config
+  @if (meta.type-of($value) == map) {
+    @if (meta.type-of(map.get($value, "light")) == color) and
+      (meta.type-of(map.get($value, "dark")) == color)
+    {
+      @return true;
+    }
+
+    @if (islegal-config(map.get($value, "base"))) {
+      $scale: map.get($value, "scale");
+
+      @if (meta.type-of($scale) == map) {
+        @each $name, $amount in $scale {
+          @if (meta.type-of($amount) != number) {
+            @debug "Unexpected value: getting #{$value}";
+
+            @return false;
+          }
+        }
+
+        @return true;
+      }
+    }
+  }
+
+  @debug "Unexpected value: getting #{$value}";
+
+  @return false;
+}
+
+@function get-color($config) {
+  @if meta.type-of($config) == color {
+    @return (light: $config, dark: $config);
+  }
+
+  @if meta.type-of($config) == list {
+    @return (light: list.nth($config, 1), dark: list.nth($config, 2));
+  }
+
+  $lightColor: map.get($config, "light");
+  $darkColor: map.get($config, "dark");
+
+  @if $lightColor and $darkColor {
+    @return (light: $lightColor, dark: $darkColor);
+  }
+
+  @debug "Unexpected color: getting #{$cofig}";
+
+  @return (light: transparent, dark: transparent);
+}
+
+@mixin inject-color($key, $config, $darkSelecter) {
+  @if meta.type-of($config) == color {
+    :root {
+      #{$key}: #{$config};
+    }
+  } @else if meta.type-of($config) == list {
+    :root {
+      #{$key}: list.nth($config, 1);
+    }
+
+    #{$darkSelecter} {
+      #{$key}: list.nth($config, 2);
+    }
   } @else {
-    @debug "Unexpected variable type #{meta.type-of($variable)}";
-    @return transparent;
+    $lightColor: map.get($config, "light");
+    $darkColor: map.get($config, "dark");
+
+    @if $lightColor and $darkColor {
+      :root {
+        #{$key}: #{$lightColor};
+      }
+
+      @if $lightColor != $darkColor {
+        #{$darkSelecter} {
+          #{$key}: #{$darkColor};
+        }
+      }
+    } @else {
+      $base: map.get($config, "base");
+      $scale: map.get($config, "scale");
+      $baseColor: get-color($base);
+      $baseLight: map.get($baseColor, "light");
+      $baseDark: map.get($baseColor, "dark");
+
+      @include inject-color($key, $base, $darkSelecter);
+
+      @each $subkey, $amount in $scale {
+        $keyName: #{$key}-#{$subkey};
+
+        :root {
+          #{$keyName}: #{color.scale($baseLight, $lightness: $amount)};
+        }
+
+        @if $baseLight != $baseDark {
+          #{$darkSelecter} {
+            #{$keyName}: #{color.scale($baseDark, $lightness: $amount)};
+          }
+        }
+      }
+    }
   }
 }

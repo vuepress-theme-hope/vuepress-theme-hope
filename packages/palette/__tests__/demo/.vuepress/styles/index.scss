@@ -1,3 +1,5 @@
-@use 'sass:meta';
+@use '@hope/palette';
+@use '@hope/config';
 
-@use "@mr-hope/vuepress-style";
+@debug config.$screenXL;
+@debug config.$screenXXL;

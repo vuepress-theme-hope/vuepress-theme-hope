@@ -1,37 +1,36 @@
-import { fs } from "@vuepress/utils";
+import { fs, path } from "@vuepress/utils";
 import type { Plugin } from "@vuepress/core";
 
-export const palettePlugin: Plugin<never> = (_, app) => {
-  const userPalette = app.dir.source(".vuepress/styles/hope-palette.scss");
-  const userStyle = app.dir.source(".vuepress/styles/hope.scss");
-  const tempPaletteFile = "styles/hope-palette.scss";
-  const tempStyleFile = "styles/hope.scss";
-  const importCode = (filePath: string): string => `@forward '${filePath}';\n`;
+export interface PaletteConfig {
+  config?: string;
+  palette?: string;
+  style?: string;
+}
+
+const emptyFile = path.resolve(__dirname, "../styles/empty.scss");
+
+export const palettePlugin: Plugin<PaletteConfig> = (
+  {
+    config = ".vuepress/styles/hope-config.scss",
+    palette = ".vuepress/styles/hope-palette.scss",
+    style = ".vuepress/styles/hope-style.scss",
+  },
+  app
+) => {
+  const userConfig = app.dir.source(config);
+  const userPalette = app.dir.source(palette);
+  const userStyle = app.dir.source(style);
 
   return {
     name: "palette",
 
     alias: {
-      "@mr-hope/vuepress-palette": app.dir.temp(tempPaletteFile),
-      "@mr-hope/vuepress-style": app.dir.temp(tempStyleFile),
-    },
-
-    onPrepared: async (): Promise<void> => {
-      let paletteContent = importCode(
-        "@mr-hope/vuepress-plugin-palette/palette"
-      );
-      let styleContent = importCode("@mr-hope/vuepress-plugin-palette/styles");
-
-      if (await fs.pathExists(userPalette)) {
-        paletteContent += importCode(userPalette);
-      }
-
-      if (await fs.pathExists(userStyle)) {
-        styleContent += importCode(userStyle);
-      }
-
-      await app.writeTemp(tempPaletteFile, paletteContent);
-      await app.writeTemp(tempStyleFile, styleContent);
+      "@user/config": fs.pathExistsSync(userConfig) ? userConfig : emptyFile,
+      "@user/palette": fs.pathExistsSync(userPalette) ? userPalette : emptyFile,
+      "@user/style": fs.pathExistsSync(userStyle) ? userStyle : emptyFile,
+      "@hope/config": path.resolve(__dirname, "../styles/config.scss"),
+      "@hope/palette": path.resolve(__dirname, "../styles/palette.scss"),
+      "@hope/style": path.resolve(__dirname, "../styles/style.scss"),
     },
   };
 };

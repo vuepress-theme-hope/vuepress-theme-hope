@@ -1,7 +1,6 @@
 @use "sass:list";
 @use "sass:map";
-@forward "color";
-@forward "layout";
+@import "@user/config";
 
 /* responsive breakpoints */
 
@@ -31,3 +30,7 @@ $codeLang: js ts html md vue css sass scss less stylus go java c sh yaml py
 
 /* Content Class */
 $contentClass: ".theme-default-content" !default;
+
+/* Color list */
+$colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,
+  #eb2f96 !default;
