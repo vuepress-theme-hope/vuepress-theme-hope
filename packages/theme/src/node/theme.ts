@@ -47,6 +47,7 @@ export const themeHope: Theme<HopeThemeOptions> = ({
     }),
 
     plugins: [
+      ["@mr-hope/palette"],
       [
         "@vuepress/active-header-links",
         resolveActiveHeaderLinksPluginOptions(themePlugins),

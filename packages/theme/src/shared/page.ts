@@ -1,3 +1,4 @@
+import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 import type { NavLink, SidebarConfig } from "./options/nav";
 
@@ -5,8 +6,7 @@ export interface HopeThemePageData extends GitPluginPageData {
   filePathRelative: string;
 }
 
-export interface HopeThemePageFrontmatter {
-  home?: boolean;
+export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
   navbar?: boolean;
   pageClass?: string;
 }

@@ -1,158 +1,248 @@
-@import "_variables";
+@use 'sass:color';
+@use 'sass:list';
+
+@use '@mr-hope/vuepress-palette' as *;
+@use "_variables" as *;
 
 .home {
-  padding: var(--navbar-height) 2rem 0;
-  max-width: var(--homepage-width);
-  margin: 0px auto;
   display: block;
+  max-width: $homePageWidth;
+  min-height: calc(100vh - var(--navbar-height));
+  padding: var(--navbar-height) 2rem 0;
+  margin: 0px auto;
+  // TODO: check this
+  overflow-x: hidden;
+
+  @media (max-width: $screenL) {
+    min-height: calc(100vh - var(--mobile-navbar-height));
+    padding-top: var(--mobile-navbar-height);
+  }
+
+  @media (max-width: $screenS) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 
   .hero {
     text-align: center;
 
+    @media (min-width: $screenL) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: left;
+    }
+
     img {
-      max-width: 100%;
-      max-height: 280px;
       display: block;
-      margin: 3rem auto 1.5rem;
+      max-width: 100%;
+      max-height: 320px;
+      margin: 0;
+
+      @media (max-width: $screenL) {
+        max-height: 280px;
+        margin: 3rem auto 1.5rem;
+      }
+
+      @media (max-width: $screenM) {
+        max-height: 240px;
+        margin: 2rem auto 1.2rem;
+      }
+
+      @media (max-width: $screenS) {
+        max-height: 210px;
+        margin: 1.5rem auto 1rem;
+      }
+
+      .theme-light & {
+        &.light {
+          display: block;
+        }
+
+        &.dark {
+          display: none;
+        }
+      }
+
+      .theme-dark & {
+        &.light {
+          display: none;
+        }
+
+        &.dark {
+          display: block;
+        }
+      }
     }
 
     h1 {
       font-size: 3rem;
+
+      @media (max-width: $screenM) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: $screenS) {
+        font-size: 2rem;
+      }
     }
 
     h1,
     .description,
-    .actions {
+    .action {
       margin: 1.8rem auto;
+
+      @media (max-width: $screenM) {
+        margin: 1.5rem auto;
+      }
+
+      @media (max-width: $screenS) {
+        margin: 1.2rem auto;
+      }
     }
 
     .description {
       max-width: 35rem;
+      color: var(--text-color-l40);
       font-size: 1.6rem;
       line-height: 1.3;
-      color: var(--c-text-lightest);
+
+      @media (max-width: $screenM) {
+        font-size: 1.4rem;
+      }
+
+      @media (max-width: $screenS) {
+        font-size: 1.2rem;
+      }
     }
 
     .action-button {
       display: inline-block;
+      margin: 0.6rem 0.8rem;
+      padding: 1rem 1.5rem;
+      border: 2px solid var(--accent-color);
+      border-radius: 2rem;
+      color: var(--accent-color);
       font-size: 1.2rem;
-      padding: 0.8rem 1.6rem;
-      border-width: 2px;
-      border-style: solid;
-      border-radius: 4px;
-      transition: background-color 0.1s ease;
-      box-sizing: border-box;
+      transition: background 0.1s ease;
+      overflow: hidden;
 
-      &:not(:first-child) {
-        margin-left: 1.5rem;
+      @media (max-width: $screenM) {
+        padding: 0.8rem 1.2rem;
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: $screenS) {
+        font-size: 1rem;
+      }
+
+      &:hover {
+        color: var(--white);
+        background-color: var(--accent-color);
       }
 
       &.primary {
-        color: var(--c-bg);
-        background-color: var(--c-brand);
-        border-color: var(--c-brand);
-        &:hover {
-          background-color: var(--c-brand-light);
-        }
-      }
+        color: var(--white);
+        background-color: var(--accent-color);
 
-      &.secondary {
-        color: var(--c-brand);
-        background-color: var(--c-bg);
-        border-color: var(--c-brand);
         &:hover {
-          color: var(--c-bg);
-          background-color: var(--c-brand-light);
+          border-color: var(--accent-color-l10);
+          background-color: var(--accent-color-l10);
+        }
+
+        .theme-dark & {
+          &:hover {
+            border-color: var(--accent-color-d10);
+            background-color: var(--accent-color-d10);
+          }
         }
       }
     }
   }
 
   .features {
-    border-top: 1px solid var(--c-border);
-    padding: 1.2rem 0;
-    margin-top: 2.5rem;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: stretch;
     align-content: stretch;
-    justify-content: space-between;
-  }
+    margin: 0 -2rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--border-color);
 
-  .feature {
-    flex-grow: 1;
-    flex-basis: 30%;
-    max-width: 30%;
-
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 500;
-      border-bottom: none;
-      padding-bottom: 0;
-      color: var(--c-text-light);
+    @media (max-width: $screenS) {
+      margin: 0 -1.5rem;
     }
 
-    p {
-      color: var(--c-text-lighter);
-    }
-  }
-
-  .footer {
-    padding: 2.5rem;
-    border-top: 1px solid var(--c-border);
-    text-align: center;
-    color: var(--c-text-lighter);
-  }
-}
-
-@media (max-width: $MQMobile) {
-  .home {
-    .features {
+    .feature {
+      display: flex;
       flex-direction: column;
-    }
+      justify-content: center;
+      flex-basis: calc(33% - 4rem);
+      margin: 0.5rem;
+      padding: 0 1.5rem;
+      border-radius: 0.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
 
-    .feature {
-      max-width: 100%;
-      padding: 0 2.5rem;
+      @media (max-width: $screenL) {
+        flex-basis: calc(50% - 4rem);
+      }
+
+      @media (max-width: $screenM) {
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: $screenS) {
+        flex-basis: calc(100%);
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+        border-radius: 0;
+      }
+
+      &.link {
+        cursor: pointer;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 2px 12px 0 var(--card-shadow-color);
+      }
+
+      h2 {
+        margin-bottom: 0.25rem;
+        border-bottom: none;
+        color: var(--text-color-l10);
+        font-size: 1.25rem;
+        font-weight: 500;
+
+        @media (max-width: $screenS) {
+          font-size: 1.2rem;
+        }
+      }
+
+      p {
+        margin-top: 0;
+        color: var(--text-color-l25);
+      }
     }
+  }
+
+  #{$contentClass} {
+    padding-bottom: 1.5rem;
   }
 }
 
-@media (max-width: $MQMobileNarrow) {
-  .home {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+@each $color in $colors {
+  $index: list.index($colors, $color) - 1;
 
-    .hero {
-      img {
-        max-height: 210px;
-        margin: 2rem auto 1.2rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      h1,
-      .description,
-      .actions {
-        margin: 1.2rem auto;
-      }
-
-      .description {
-        font-size: 1.2rem;
-      }
-
-      .action-button {
-        font-size: 1rem;
-        padding: 0.6rem 1.2rem;
-      }
+  .home .features .feature#{$index} {
+    & {
+      background: color.scale($color, $lightness: 90%);
     }
 
-    .feature {
-      h2 {
-        font-size: 1.25rem;
-      }
+    html.dark & {
+      background: color.scale($color, $lightness: -75%);
     }
   }
 }

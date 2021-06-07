@@ -33,6 +33,7 @@
   "scripts": {
     "build": "rollup -c",
     "copy": "cpx \"src/client/styles/**/*.scss\" client/styles",
+    "dev:copy": "cpx \"src/client/styles/**/*.scss\" client/styles -w",
     "dev": "rollup -c -w"
   },
   "dependencies": {
