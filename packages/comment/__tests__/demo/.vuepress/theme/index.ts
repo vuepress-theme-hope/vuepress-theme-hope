@@ -15,6 +15,7 @@ const commentTheme: Theme<DefaultThemeOptions> = {
       {
         type: "waline",
         author: "Mr.Hope",
+        dark: "html.dark",
         serverURL: "https://vuepress-theme-hope-comment.vercel.app",
       },
     ],

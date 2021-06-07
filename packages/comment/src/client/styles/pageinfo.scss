@@ -1,4 +1,4 @@
-@use '@mr-hope/vuepress-palette' as *;
+@use "@hope/config";
 @use '@mr-hope/vuepress-shared/styles/wrapper';
 
 .page {
@@ -19,11 +19,11 @@
       }
     }
 
-    + #{$contentClass}:not(.custom) {
+    + #{config.$contentClass}:not(.custom) {
       padding-top: 0;
     }
 
-    + #{$contentClass}:not(.custom) > h1:first-child {
+    + #{config.$contentClass}:not(.custom) > h1:first-child {
       display: none;
     }
   }
@@ -45,11 +45,11 @@
       margin-right: 0.5em;
       line-height: 2;
 
-      @media (min-width: $wide) {
+      @media (min-width: config.$wide) {
         font-size: 1.1em;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         font-size: 0.875em;
       }
 

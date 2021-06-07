@@ -1,11 +1,7 @@
-@use "@mr-hope/vuepress-palette";
+@use "@hope/config";
 
-@mixin wrapper(
-  $contentWidth: vuepress-palette.$contentWidth,
-  $pad: vuepress-palette.$pad,
-  $mobileS: vuepress-palette.$mobileS
-) {
-  max-width: $contentWidth;
+@mixin wrapper($pad: config.$pad, $mobileS: config.$mobileS) {
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 2rem 2.5rem;
 

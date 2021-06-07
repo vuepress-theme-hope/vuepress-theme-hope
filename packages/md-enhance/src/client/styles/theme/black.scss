@@ -4,6 +4,8 @@
  * By Hakim El Hattab, http://hakim.se
  */
 
+@use '@hope/config';
+
 @import "template/mixins";
 @import "template/settings";
 @import "template/theme";
@@ -35,6 +37,6 @@ $heading4Size: 1em;
 
 @include theme("[data-theme='black']");
 
-body[data-theme="dark"] {
+#{config.$darkSelecter} {
   @include theme("[data-theme='auto']");
 }

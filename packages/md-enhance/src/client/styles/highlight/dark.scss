@@ -1,4 +1,6 @@
-body[data-theme="dark"] .reveal[theme="auto"],
+@use '@hope/config';
+
+#{config.$darkSelecter} .reveal[theme="auto"],
 .reveal[theme="black"],
 .reveal[theme="league"],
 .reveal[theme="night"],

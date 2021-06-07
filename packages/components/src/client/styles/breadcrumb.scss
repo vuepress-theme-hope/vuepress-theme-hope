@@ -1,8 +1,8 @@
 @use '@mr-hope/vuepress-shared/styles/wrapper';
-@use "@mr-hope/vuepress-palette" as *;
+@use "@hope/config";
 
 // Fix top boarder of heading1
-#{$contentClass}:not(.custom) {
+#{config.$contentClass}:not(.custom) {
   > *:first-child {
     margin-top: 0;
   }
@@ -14,9 +14,9 @@ h3,
 h4,
 h5,
 h6 {
-  #{$contentClass}:not(.custom) &:first-child {
+  #{config.$contentClass}:not(.custom) &:first-child {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
-    padding-top: calc($navbarHeight + 1rem) !important;
+    padding-top: calc(var(--navbar-height) + 1rem) !important;
 
     @media (max-width: $mobile) {
       margin-top: calc(0.5rem - var(--navbar-mobile-height)) !important;
@@ -90,11 +90,7 @@ h6 {
     }
 
     &:hover {
-      color: var(--accent-color-l10);
-
-      [data-theme="dark"] & {
-        color: var(--accent-color-d10);
-      }
+      color: var(--accent-color-light);
     }
   }
 }

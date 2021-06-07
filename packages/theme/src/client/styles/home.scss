@@ -1,24 +1,24 @@
 @use 'sass:color';
 @use 'sass:list';
 
-@use '@mr-hope/vuepress-palette' as *;
+@use "@hope/config";
 @use "_variables" as *;
 
 .home {
   display: block;
-  max-width: $homePageWidth;
+  max-width: var(--home-page-width);
   min-height: calc(100vh - var(--navbar-height));
   padding: var(--navbar-height) 2rem 0;
   margin: 0px auto;
   // TODO: check this
   overflow-x: hidden;
 
-  @media (max-width: $pad) {
+  @media (max-width: config.$pad) {
     min-height: calc(100vh - var(--mobile-navbar-height));
     padding-top: var(--mobile-navbar-height);
   }
 
-  @media (max-width: $mobileS) {
+  @media (max-width: config.$mobileS) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -26,7 +26,7 @@
   .hero {
     text-align: center;
 
-    @media (min-width: $pad) {
+    @media (min-width: config.$pad) {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
@@ -39,37 +39,33 @@
       max-height: 320px;
       margin: 0;
 
-      @media (max-width: $pad) {
+      @media (max-width: config.$pad) {
         max-height: 280px;
         margin: 3rem auto 1.5rem;
       }
 
-      @media (max-width: $mobile) {
+      @media (max-width: config.$mobile) {
         max-height: 240px;
         margin: 2rem auto 1.2rem;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         max-height: 210px;
         margin: 1.5rem auto 1rem;
       }
 
-      .theme-light & {
-        &.light {
-          display: block;
-        }
+      &.light {
+        display: block;
 
-        &.dark {
+        #{config.$darkSelecter} & {
           display: none;
         }
       }
 
-      .theme-dark & {
-        &.light {
-          display: none;
-        }
+      &.dark {
+        display: none;
 
-        &.dark {
+        #{config.$darkSelecter} & {
           display: block;
         }
       }
@@ -78,11 +74,11 @@
     h1 {
       font-size: 3rem;
 
-      @media (max-width: $mobile) {
+      @media (max-width: config.$mobile) {
         font-size: 2.5rem;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         font-size: 2rem;
       }
     }
@@ -92,26 +88,26 @@
     .action {
       margin: 1.8rem auto;
 
-      @media (max-width: $mobile) {
+      @media (max-width: config.$mobile) {
         margin: 1.5rem auto;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         margin: 1.2rem auto;
       }
     }
 
     .description {
       max-width: 35rem;
-      color: var(--text-color-l40);
+      color: var(--text-color-bright);
       font-size: 1.6rem;
       line-height: 1.3;
 
-      @media (max-width: $mobile) {
+      @media (max-width: config.$mobile) {
         font-size: 1.4rem;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         font-size: 1.2rem;
       }
     }
@@ -127,12 +123,12 @@
       transition: background 0.1s ease;
       overflow: hidden;
 
-      @media (max-width: $mobile) {
+      @media (max-width: config.$mobile) {
         padding: 0.8rem 1.2rem;
         font-size: 1.1rem;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         font-size: 1rem;
       }
 
@@ -146,15 +142,8 @@
         background-color: var(--accent-color);
 
         &:hover {
-          border-color: var(--accent-color-l10);
-          background-color: var(--accent-color-l10);
-        }
-
-        .theme-dark & {
-          &:hover {
-            border-color: var(--accent-color-d10);
-            background-color: var(--accent-color-d10);
-          }
+          border-color: var(--accent-color-light);
+          background-color: var(--accent-color-light);
         }
       }
     }
@@ -170,7 +159,7 @@
     padding: 1.2rem 0;
     border-top: 1px solid var(--border-color);
 
-    @media (max-width: $mobileS) {
+    @media (max-width: config.$mobileS) {
       margin: 0 -1.5rem;
     }
 
@@ -185,15 +174,15 @@
       transition: transform 0.3s, box-shadow 0.3s;
       overflow: hidden;
 
-      @media (max-width: $pad) {
+      @media (max-width: config.$pad) {
         flex-basis: calc(50% - 4rem);
       }
 
-      @media (max-width: $mobile) {
+      @media (max-width: config.$mobile) {
         font-size: 0.95rem;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         flex-basis: calc(100%);
         font-size: 0.9rem;
         margin: 0.5rem 0;
@@ -212,18 +201,18 @@
       h2 {
         margin-bottom: 0.25rem;
         border-bottom: none;
-        color: var(--text-color-l10);
+        color: var(--text-color-light);
         font-size: 1.25rem;
         font-weight: 500;
 
-        @media (max-width: $mobileS) {
+        @media (max-width: config.$mobileS) {
           font-size: 1.2rem;
         }
       }
 
       p {
         margin-top: 0;
-        color: var(--text-color-l25);
+        color: var(--text-color-lighter);
       }
     }
   }
@@ -233,15 +222,15 @@
   }
 }
 
-@each $color in $colors {
-  $index: list.index($colors, $color) - 1;
+@each $color in config.$colors {
+  $index: list.index(config.$colors, $color) - 1;
 
   .home .features .feature#{$index} {
     & {
       background: color.scale($color, $lightness: 90%);
     }
 
-    html.dark & {
+    #{config.$darkSelecter} & {
       background: color.scale($color, $lightness: -75%);
     }
   }

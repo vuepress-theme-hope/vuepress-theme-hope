@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '@mr-hope/vuepress-palette' as *;
+@use "@hope/config";
 @use '@mr-hope/vuepress-shared/styles/svg';
 @use 'icons';
 
@@ -44,7 +44,7 @@ $darkTextColor: #9e9e9e !default;
       color: var(--accent-color);
     }
 
-    body[data-theme="dark"] & {
+    #{config.$darkSelecter} & {
       background: color.scale($darkBgColor, $lightness: 10%);
       color: color.scale($darkTextColor, $lightness: 10%);
 
@@ -65,7 +65,7 @@ $darkTextColor: #9e9e9e !default;
     &::before {
       @include svg.background-svg(icons.$infoIcon);
 
-      body[data-theme="dark"] & {
+      #{config.$darkSelecter} & {
         @include svg.background-svg(icons.$infoDarkIcon);
       }
     }
@@ -82,7 +82,7 @@ $darkTextColor: #9e9e9e !default;
     &::before {
       @include svg.background-svg(icons.$tipIcon);
 
-      body[data-theme="dark"] & {
+      #{config.$darkSelecter} & {
         @include svg.background-svg(icons.$tipDarkIcon);
       }
     }
@@ -99,7 +99,7 @@ $darkTextColor: #9e9e9e !default;
     &::before {
       @include svg.background-svg(icons.$warningIcon);
 
-      body[data-theme="dark"] & {
+      #{config.$darkSelecter} & {
         @include svg.background-svg(icons.$warningDarkIcon);
       }
     }
@@ -116,7 +116,7 @@ $darkTextColor: #9e9e9e !default;
     &::before {
       @include svg.background-svg(icons.$dangerIcon);
 
-      body[data-theme="dark"] & {
+      #{config.$darkSelecter} & {
         @include svg.background-svg(icons.$dangerDarkIcon);
       }
     }
@@ -156,7 +156,7 @@ $darkTextColor: #9e9e9e !default;
     margin-bottom: 0.5em;
   }
 
-  body[data-theme="dark"] & {
+  #{config.$darkSelecter} & {
     background: color.scale($darkBgColor, $lightness: 10%);
     color: color.scale($darkTextColor, $lightness: 10%);
 
