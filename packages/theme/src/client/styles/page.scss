@@ -7,6 +7,8 @@
   display: block;
 }
 
+/* Page Meta */
+
 .page-meta {
   @extend %wrapper;
   padding-top: 0.75rem;
@@ -68,6 +70,8 @@
     }
   }
 }
+
+/* Page Nav */
 
 .page-nav {
   @extend %wrapper;

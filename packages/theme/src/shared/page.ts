@@ -1,6 +1,6 @@
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
-import type { NavLink, SidebarConfig } from "./options/nav";
+import type { MediaLinksConfig, NavLink, SidebarConfig } from "./options";
 
 export interface HopeThemePageData extends GitPluginPageData {
   filePathRelative: string;
@@ -9,6 +9,7 @@ export interface HopeThemePageData extends GitPluginPageData {
 export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
   navbar?: boolean;
   pageClass?: string;
+  medialinks?: MediaLinksConfig | false;
 }
 
 export interface HopeThemeHomePageFrontmatter extends HopeThemePageFrontmatter {
@@ -26,8 +27,6 @@ export interface HopeThemeHomePageFrontmatter extends HopeThemePageFrontmatter {
     title: string;
     details: string;
   }[];
-  footer?: string;
-  footerHtml?: boolean;
 }
 
 export interface HopeThemeNormalPageFrontmatter

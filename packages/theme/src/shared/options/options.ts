@@ -1,5 +1,7 @@
 import type { LocaleData } from "@vuepress/shared";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
+import type { HopeBlogOptions } from "./features";
+import type { HopeFooterConfig } from "./layout";
 import type { NavbarConfig, SidebarConfig } from "./nav";
 
 export interface HopeThemePluginsOptions {
@@ -53,6 +55,11 @@ export interface HopeThemeLocaleData extends LocaleData {
    * Used as the link of back-to-home and navbar logo
    */
   home?: string;
+
+  /**
+   * Default author
+   */
+  author?: string;
 
   /**
    * Navbar config
@@ -201,6 +208,10 @@ export interface HopeThemeLocaleData extends LocaleData {
    * The text to replace the default "Contributors"
    */
   contributorsText?: string;
+
+  footer?: HopeFooterConfig;
+
+  blog?: HopeBlogOptions | false;
 
   /**
    * Custom block config

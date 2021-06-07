@@ -1,0 +1,44 @@
+@import "_variables";
+
+.footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bgcolor);
+  color: var(--dark-color, #666);
+  text-align: center;
+
+  @media (min-width: $MQMobile) {
+    .has-sidebar & {
+      padding-left: var(--sidebar-width);
+      border-left: 2rem solid transparent;
+    }
+  }
+
+  & > div {
+    @media (max-width: $MQMobileNarrow) {
+      width: 100%;
+    }
+  }
+
+  .media-links-wrapper {
+    margin: 0;
+  }
+
+  .footer {
+    margin: 0.5rem 1rem;
+    font-size: 14px;
+  }
+
+  .copyright {
+    margin: 6px 0;
+    font-size: 13px;
+  }
+}
+
+.page:not(.not-found) + .footer-wrapper {
+  margin-top: -2rem;
+}
