@@ -12,15 +12,15 @@ export default Vue.extend({
   name: "Utterances",
 
   props: {
-    walineConfig: {
+    utterancesConfig: {
       type: Object as PropType<UtterancesOptions>,
       required: true,
     },
   },
 
-//   data: () => ({
-//     utterances: null as WalineInstance | null,
-//   }),
+    data: () => ({
+      utterances: null as UtterancesInstance | null,
+    }),
 
   computed: {
     utterancesEnable(): boolean {
@@ -38,7 +38,7 @@ export default Vue.extend({
 
     /** Whether to display view number */
     visitorDisplay(): boolean {
-      if (!this.walineEnable) return false;
+      if (!this.utterancesEnable) return false;
       const globalEnable = this.utterancesConfig.visitor !== false;
       const pageEnable = this.$page.frontmatter.visitor;
 
@@ -62,33 +62,22 @@ export default Vue.extend({
   },
 
   mounted(): void {
-    if (this.walineEnable)
+    if (this.utterancesEnable)
       timeout = setTimeout(() => {
         const { utterancesConfig } = this;
 
-        void import(/* webpackChunkName: "utterances" */ "@utterances/client").then(
-          ({ default: utterances }) => {
-            this.utterances = utterances({
-              src: "https://utteranc.es/client.js",
-              repo: utterancesConfig.repo,
-              issueTerm: utterancesConfig.issue-term,
-              theme: utterancesConfig.theme || "github-light",
-              crossorigin: "anonymous",
-              async: true,
-              ...utterancesConfig,
-              dark: "body.theme-dark",
-              visitor: this.visitorDisplay,
-              path:
-                typeof window === "undefined" ? "" : window.location.pathname,
-            }) as WalineInstance;
-          }
-        );
+        void import(/*"utterances"*/).then(({ default: Utterances }) => {
+          this.utterances = Utterances({
+            src: "https://utteranc.es/client.js",
+            repo: utterancesConfig.repo,
+            issueTerm: utterancesConfig.issueTerm,
+            theme: utterancesConfig.theme || "github-light",
+            crossorigin: "anonymous",
+            async: true,
+            ...utterancesConfig,
+            visitor: this.visitorDisplay,
+          });
+        });
       }, 1000);
-  },
-
-  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
-  beforeDestroy(): void {
-    if (timeout) clearTimeout(timeout);
-    this.utterances?.destroy();
   },
 });

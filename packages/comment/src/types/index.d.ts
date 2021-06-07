@@ -91,6 +91,12 @@ export interface WalineOptions
   type: "waline";
 }
 
+export interface UtterancesOptions
+  extends BaseCommentOptions,
+    Omit<UtterancesOption, "repo"> {
+  type: "utterances";
+}
+
 /** Vssue 配置 */
 export interface VssueOptions extends BaseCommentOptions {
   type: "vssue";
