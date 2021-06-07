@@ -1,5 +1,5 @@
 @use '@hope/palette';
 @use '@hope/config';
 
-@debug config.$screenXL;
-@debug config.$screenXXL;
+@debug config.$desktop;
+@debug config.$wide;

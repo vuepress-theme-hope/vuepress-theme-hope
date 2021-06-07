@@ -45,7 +45,7 @@
   border-bottom: var(--c-brand) 1px solid;
 }
 
-@media (max-width: $MQMobileNarrow) {
+@media (max-width: $mobileS) {
   .code-group__nav {
     margin-left: -1.5rem;
     margin-right: -1.5rem;

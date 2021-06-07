@@ -45,11 +45,11 @@
       margin-right: 0.5em;
       line-height: 2;
 
-      @media (min-width: $screenXXL) {
+      @media (min-width: $wide) {
         font-size: 1.1em;
       }
 
-      @media (max-width: $screenS) {
+      @media (max-width: $mobileS) {
         font-size: 0.875em;
       }
 

@@ -5,15 +5,15 @@
 /* responsive breakpoints */
 
 // wide screen
-$screenXXL: 1440px !default;
+$wide: 1440px !default;
 // desktop
-$screenXL: 1280px !default;
+$desktop: 1280px !default;
 // narrow desktop / iPad
-$screenL: 959px !default;
+$pad: 959px !default;
 // wide mobile
-$screenM: 719px !default;
+$mobile: 719px !default;
 // narrow mobile
-$screenS: 419px !default;
+$mobileS: 419px !default;
 
 /* theme-color */
 $colorPicker: (

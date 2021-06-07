@@ -44,6 +44,19 @@ $borderColor: (
   dark: #302d28,
 ) !default;
 
+$arrowColor: (
+  light: #ccc,
+  dark: #333,
+) !default;
+
+$boxShadowColor: (
+  light: #f0f1f2,
+  dark: #0f0e0d,
+) !default;
+
+$cardShadowColor: (rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3)) !default;
+
+// code
 $codeBgColor: (
   light: #ecf4fa,
   dark: #282c34,
@@ -78,42 +91,38 @@ $codeBorderColor: (
     ),
 ) !default;
 
-$arrowColor: (
-  light: #ccc,
-  dark: #333,
-) !default;
-
-$boxShadowColor: (
-  light: #f0f1f2,
-  dark: #0f0e0d,
-) !default;
-
-$cardShadowColor: (rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3)) !default;
+// contants
 
 $black: (
   light: #000,
   dark: #fff,
 ) !default;
+
 $darkGrey: (
   light: #666,
   dark: #999,
 ) !default;
+
 $lightGrey: (
   light: #999,
   dark: #666,
 ) !default;
+
 $white: (
   light: #fff,
   dark: #000,
 ) !default;
+
 $grey3: (
   light: #333,
   dark: #bbb,
 ) !default;
+
 $grey12: (
   light: #bbb,
   dark: #333,
 ) !default;
+
 $grey14: (
   light: #eee,
   dark: #111,

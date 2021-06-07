@@ -25,7 +25,7 @@
   }
 
   .code-demo-app {
-    @media (max-width: $screenL) {
+    @media (max-width: $pad) {
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -54,7 +54,7 @@
         border-radius: 0;
       }
 
-      @media (max-width: $screenS) {
+      @media (max-width: $mobileS) {
         margin: 0.8rem 0;
 
         &.line-numbers-mode::after {

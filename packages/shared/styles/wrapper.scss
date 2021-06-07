@@ -2,18 +2,18 @@
 
 @mixin wrapper(
   $contentWidth: vuepress-palette.$contentWidth,
-  $screenL: vuepress-palette.$screenL,
-  $screenS: vuepress-palette.$screenS
+  $pad: vuepress-palette.$pad,
+  $mobileS: vuepress-palette.$mobileS
 ) {
   max-width: $contentWidth;
   margin: 0 auto;
   padding: 2rem 2.5rem;
 
-  @media (max-width: $screenL) {
+  @media (max-width: $pad) {
     padding: 1.5rem;
   }
 
-  @media (max-width: $screenS) {
+  @media (max-width: $mobileS) {
     padding: 1rem 1.5rem;
   }
 }
