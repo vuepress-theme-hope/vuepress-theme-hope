@@ -1,7 +1,7 @@
 import { defineComponent, h } from "vue";
 import { useNavbarConfig } from "../../composables";
 import DropdownLink from "./DropdownLink.vue";
-import NavLink from "./NavLink.vue";
+import NavLink from "../NavLink.vue";
 
 import type { VNode } from "vue";
 

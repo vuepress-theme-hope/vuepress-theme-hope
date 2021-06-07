@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <NavbarLinks />
+    <NavLinks />
 
     <slot name="top" />
 
@@ -18,15 +18,15 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useSidebarItems } from "../composables";
-import NavbarLinks from "./NavbarLinks.vue";
+import { useSidebarItems } from "../../composables";
+import NavLinks from "./NavLinks.vue";
 import { SidebarChild } from "./SidebarChild";
 
 export default defineComponent({
   name: "Sidebar",
 
   components: {
-    NavbarLinks,
+    NavLinks,
     SidebarChild,
   },
 

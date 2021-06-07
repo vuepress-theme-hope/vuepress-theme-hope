@@ -1,9 +1,10 @@
 import { h } from "vue";
-import type { FunctionalComponent, VNode } from "vue";
 import { useRoute } from "vue-router";
+import NavLink from "../NavLink.vue";
+
+import type { FunctionalComponent, VNode } from "vue";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
-import type { ResolvedSidebarItem } from "../../shared";
-import NavLink from "./NavLink.vue";
+import type { ResolvedSidebarItem } from "../../../shared";
 
 const normalizePath = (path: string): string =>
   decodeURI(path)

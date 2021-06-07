@@ -10,17 +10,23 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import type { ComputedRef } from "vue";
 import { isString } from "@vuepress/shared";
-import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from "../../shared";
+
 import {
   useNavLink,
   useNavbarLanguageDropdown,
   useNavbarRepo,
   useThemeLocaleData,
-} from "../composables";
+} from "../../composables";
 import DropdownLink from "./DropdownLink.vue";
-import NavLink from "./NavLink.vue";
+import NavLink from "../NavLink.vue";
+
+import type { ComputedRef } from "vue";
+import type {
+  NavbarItem,
+  NavbarGroup,
+  ResolvedNavbarItem,
+} from "../../../shared";
 
 const resolveNavbarItem = (
   item: NavbarItem | NavbarGroup | string
@@ -45,7 +51,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
 };
 
 export default defineComponent({
-  name: "NavbarLinks",
+  name: "SidebarNavLinks",
 
   components: {
     NavLink,
