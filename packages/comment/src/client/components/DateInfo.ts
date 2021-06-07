@@ -13,10 +13,9 @@ export default defineComponent({
 
   setup() {
     const routeLocale = useRouteLocale();
-    const page =
-      usePageData<{
-        git: { createTimeStamp: number | undefined };
-      }>();
+    const page = usePageData<{
+      git: { createTimeStamp: number | undefined };
+    }>();
 
     const date = computed(() => {
       const { createTimeStamp } = page.value.git;

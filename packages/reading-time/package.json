@@ -31,13 +31,14 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./client ./node",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.0"
   },
   "devDependencies": {
-    "rollup": "2.50.6"
+    "rollup": "2.51.0"
   },
   "publishConfig": {
     "access": "public"

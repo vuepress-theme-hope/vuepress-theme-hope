@@ -35,10 +35,11 @@
     "demo:build": "vuepress build __tests__/demo",
     "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
     "demo:serve": "vuepress dev __tests__/demo",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "dev:rollup": "rollup -c -w"
   },
   "devDependencies": {
-    "rollup": "2.50.6",
+    "rollup": "2.51.0",
     "vuepress": "2.0.0-beta.17"
   }
 }

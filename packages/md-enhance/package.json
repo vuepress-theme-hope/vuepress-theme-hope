@@ -35,11 +35,13 @@
   "types": "node/index.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "copy": "cpx src/client/styles/** client/styles",
-    "clean": "rimraf client node *.tsbuildinfo",
+    "clean": "rimraf ./client ./node",
     "demo:build": "vuepress build __tests__/demo",
+    "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
     "demo:serve": "vuepress dev __tests__/demo",
-    "dev": "rollup -c -w"
+    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:rollup\"",
+    "dev:copy": "cpx src/client/styles/** client/styles -w",
+    "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
     "@mr-hope/vuepress-plugin-palette": "2.0.0-alpha.0",
@@ -50,7 +52,7 @@
     "@types/react": "^17.0.9",
     "@vuepress/plugin-container": "2.0.0-beta.17",
     "katex": "^0.13.11",
-    "mermaid": "^8.10.1",
+    "mermaid": "^8.10.2",
     "react": "^17.0.2",
     "reveal.js": "^4.1.1"
   },

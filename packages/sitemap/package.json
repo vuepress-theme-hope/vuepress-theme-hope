@@ -29,7 +29,8 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./node",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
     "@types/fs-extra": "^9.0.11",

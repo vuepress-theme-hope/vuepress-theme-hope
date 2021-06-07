@@ -176,24 +176,24 @@ export default defineUserConfig<HopeThemeOptions>({
     //     id: process.env.DOCS_GA_ID,
     //   },
     // ],
-    // ["@vuepress/plugin-pwa"],
-    // [
-    //   "@vuepress/plugin-pwa-popup",
-    //   {
-    //     locales: {
-    //       "/zh/": {
-    //         message: "发现新内容可用",
-    //         buttonText: "刷新",
-    //       },
-    //     },
-    //   },
-    // ],
-    // [
-    //   "@vuepress/plugin-register-components",
-    //   {
-    //     componentsDir: path.resolve(__dirname, "./components"),
-    //   },
-    // ],
+    ["@vuepress/plugin-pwa"],
+    [
+      "@vuepress/plugin-pwa-popup",
+      {
+        locales: {
+          "/zh/": {
+            message: "发现新内容可用",
+            buttonText: "刷新",
+          },
+        },
+      },
+    ],
+    [
+      "@vuepress/plugin-register-components",
+      {
+        componentsDir: path.resolve(__dirname, "./components"),
+      },
+    ],
     // only enable shiki plugin in production mode
     [
       "@vuepress/plugin-shiki",
