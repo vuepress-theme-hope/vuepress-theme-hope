@@ -164,6 +164,6 @@ The project uses `husky` and `lint-staged` to add Git Hooks for verification:
 
 If you cannot pass the above Git Hooks, you will not be able to complete `git commit`.
 
-If you have already contributed, but cannot complete the submission and don't know how to fix it, you can add the `--no-verify` flag when commiting to bypass Git Hooks.
+If you have already contributed, but cannot complete the submission and don’t know how to fix it, you can add the `--no-verify` flag when committing to bypass Git Hooks.
 
 :::
