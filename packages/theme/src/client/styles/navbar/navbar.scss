@@ -1,0 +1,108 @@
+@use "@mr-hope/vuepress-palette" as *;
+
+.navbar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  padding: var(--navbar-padding-v) var(--navbar-padding-h);
+  background: var(--bg-color-blur);
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px var(--card-shadow-color);
+  backdrop-filter: saturate(200%) blur(20px);
+  line-height: calc(var(--navbar-height) - var(--navbar-padding-v) * 2);
+  transition: transform ease-in-out 0.3s, background-color ease 0.3s;
+
+  @media (max-width: $screenM) {
+    height: var(--mobile-navbar-height);
+    padding: var(--mobile-navbar-padding-v) var(--mobile-navbar-padding-h);
+    padding-left: calc(var(--mobile-navbar-padding-h) + 2.4rem);
+    line-height: calc(
+      var(--mobile-navbar-height) - var(--navbar-padding-v) * 2
+    );
+  }
+
+  .hide-navbar &.can-hide {
+    transform: translateY(-100%);
+  }
+
+  a,
+  span,
+  img {
+    display: inline-block;
+  }
+
+  .home-link:hover .site-name {
+    color: var(--accent-color);
+  }
+
+  .logo {
+    min-width: calc(var(--navbar-height) - var(--navbar-padding-v) * 2);
+    height: calc(var(--navbar-height) - var(--navbar-padding-v) * 2);
+    margin-right: 0.8rem;
+    vertical-align: top;
+
+    @media (max-width: $screenM) {
+      min-width: calc(
+        var(--mobile-navbar-height) - var(--navbar-padding-v) * 2
+      );
+      height: calc(var(--mobile-navbar-height) - var(--navbar-padding-v) * 2);
+    }
+
+    &.light {
+      display: block;
+    }
+
+    &.dark {
+      display: none;
+    }
+
+    html.dark & {
+      &.light {
+        display: none;
+      }
+
+      &.dark {
+        display: block;
+      }
+    }
+  }
+
+  .can-hide {
+    @media (max-width: $screenM) {
+      display: none;
+    }
+  }
+
+  .site-name {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+
+    @media (max-width: $screenM) {
+      width: calc(100vw - 9.4rem);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .navbar-links-wrapper {
+    position: absolute;
+    top: var(--navbar-padding-v);
+    right: var(--navbar-padding-h);
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+
+    @media (max-width: $screenM) {
+      padding-left: 0;
+      top: var(--mobile-navbar-padding-v);
+      right: var(--mobile-navbar-padding-h);
+    }
+  }
+}

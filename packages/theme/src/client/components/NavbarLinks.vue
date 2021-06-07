@@ -59,8 +59,8 @@ export default defineComponent({
 
     const navbarLinks = computed(() => [
       ...navbarConfig.value,
-      ...navbarLanguageDropdown.value,
-      ...navbarRepo.value,
+      navbarLanguageDropdown.value,
+      navbarRepo.value,
     ]);
 
     return {

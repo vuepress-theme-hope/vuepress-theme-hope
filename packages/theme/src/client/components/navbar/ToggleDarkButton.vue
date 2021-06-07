@@ -36,25 +36,36 @@
   </button>
 </template>
 
-<script setup lang="ts">
-import { onMounted, ref, watch } from "vue";
+<script lang="ts">
+import { defineComponent, onMounted, ref, watch } from "vue";
 
-const isDark = ref(false);
-const toggleDark = (): void => {
-  isDark.value = !isDark.value;
-};
+export default defineComponent({
+  name: "ToggleDarkButton",
 
-const setDarkClass = (): void => {
-  const htmlEl = window?.document.querySelector("html");
-  htmlEl?.classList.toggle("dark", isDark.value);
-};
+  setup() {
+    const isDark = ref(false);
+    const toggleDark = (): void => {
+      isDark.value = !isDark.value;
+    };
 
-onMounted(() => {
-  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  isDark.value = mediaQuery.matches;
-  mediaQuery.addEventListener("change", (event) => {
-    isDark.value = event.matches;
-  });
-  watch(isDark, setDarkClass, { immediate: true });
+    const setDarkClass = (): void => {
+      const htmlEl = window?.document.querySelector("html");
+      htmlEl?.classList.toggle("dark", isDark.value);
+    };
+
+    onMounted(() => {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      isDark.value = mediaQuery.matches;
+      mediaQuery.addEventListener("change", (event) => {
+        isDark.value = event.matches;
+      });
+      watch(isDark, setDarkClass, { immediate: true });
+    });
+
+    return {
+      isDark,
+      toggleDark,
+    };
+  },
 });
 </script>

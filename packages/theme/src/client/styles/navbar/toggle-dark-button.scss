@@ -1,0 +1,21 @@
+/**
+ * toggle dark button
+ */
+.toggle-dark-button {
+  display: flex;
+  margin: auto;
+  margin-left: 1rem;
+  border: 0;
+  outline: none;
+  background: none;
+  color: var(--c-text);
+  opacity: 0.8;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

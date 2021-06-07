@@ -1,0 +1,127 @@
+@use "@mr-hope/vuepress-shared/styles/arrow";
+@use "@mr-hope/vuepress-palette" as *;
+
+.dropdown-wrapper {
+  height: 1.8rem;
+  cursor: pointer;
+
+  &:hover,
+  &.open {
+    .nav-dropdown {
+      z-index: 2;
+      transform: scale(1);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .dropdown-title {
+    cursor: inherit;
+    padding: inherit;
+    color: var(--dark-grey);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4rem;
+
+    &::after {
+      border-left: 5px solid var(--accent-color);
+    }
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    .arrow {
+      @include arrow.arrow();
+      font-size: 1.2em;
+    }
+  }
+
+  .nav-dropdown {
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    max-height: calc(100vh - $navbarHeight);
+    margin: 0;
+    padding: 0.6rem 0;
+    border: 1px solid var(--grey14);
+    border-radius: 0.25rem;
+    background: var(--bgcolor);
+    box-shadow: 2px 2px 10px var(--card-shadow-color);
+    text-align: left;
+    white-space: nowrap;
+    overflow-y: auto;
+    transform: scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.18s ease-out;
+  }
+
+  .dropdown-item {
+    color: inherit;
+    line-height: 1.7rem;
+
+    .dropdown-subtitle {
+      margin: 0;
+      padding: 0.75rem 1rem 0.25rem 0.75rem;
+      border-top: 1px solid var(--grey14);
+      color: var(--dark-grey);
+      font-size: 0.9rem;
+
+      .nav-link {
+        padding: 0;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    &:first-child .dropdown-subtitle {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .nav-link {
+      display: block;
+      position: relative;
+      margin-bottom: 0;
+      padding: 0 1.5rem 0 1.25rem;
+      border-bottom: none;
+      color: var(--dark-grey);
+      font-weight: 400;
+      line-height: 1.7rem;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+
+      &.active {
+        color: var(--accent-color);
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: calc(50% - 3px);
+          left: 9px;
+          width: 0;
+          height: 0;
+          border-top: 3px solid transparent;
+          border-left: 5px solid var(--accent-color);
+          border-bottom: 3px solid transparent;
+        }
+      }
+    }
+
+    .dropdown-subitem-wrapper {
+      padding: 0;
+      list-style: none;
+    }
+
+    .dropdown-subitem {
+      font-size: 0.9em;
+    }
+  }
+}

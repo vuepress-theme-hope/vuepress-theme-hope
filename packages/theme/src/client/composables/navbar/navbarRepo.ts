@@ -4,12 +4,12 @@ import { useThemeLocaleData } from "../themeData";
 import { resolveRepoType } from "../../utils";
 
 import type { ComputedRef } from "vue";
-import type { ResolvedNavbarItem } from "../../../shared";
+import type { NavLink } from "../../../shared";
 
 /**
  * Get navbar config of repository link
  */
-export const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
+export const useNavbarRepo = (): ComputedRef<NavLink | null> => {
   const themeLocale = useThemeLocaleData();
 
   const repo = computed(() => themeLocale.value.repo);
@@ -18,9 +18,8 @@ export const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
   );
 
   const repoLink = computed(() => {
-    if (repo.value && !isLinkHttp(repo.value)) {
+    if (repo.value && !isLinkHttp(repo.value))
       return `https://github.com/${repo.value}`;
-    }
 
     return repo.value;
   });
@@ -33,15 +32,11 @@ export const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
   });
 
   return computed(() => {
-    if (!repoLink.value || !repoLabel.value) {
-      return [];
-    }
+    if (!repoLink.value || !repoLabel.value) return null;
 
-    return [
-      {
-        text: repoLabel.value,
-        link: repoLink.value,
-      },
-    ];
+    return {
+      text: repoLabel.value,
+      link: repoLink.value,
+    };
   });
 };
