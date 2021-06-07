@@ -162,7 +162,55 @@ declare module "valine" {
   export default Valine;
 }
 
+declare module "utterances" {
+  export interface UtterancesOption {
+    /**
+     * The repo to store the comment (Don't know zh tbh)
+     */
+    repo: string;
+    /**
+     * Blog Post ↔️ Issue Mapping
+     * Choose the mapping between blog posts and GitHub issues.
+     *
+     * @default "url"
+     */
+    issue-term?: "url" | "pathname" | "title" | "og:title";
+    /**
+     * Color of the comment part
+     * @default 'preferred-color-scheme'
+     */
+
+    theme?:
+    | "github-light"
+    | "github-dark"
+    | "preferred-color-scheme"
+    | "github-dark-orange"
+    | "icy-dark"
+    | "retro"
+    | "dark-blue"
+    | "photon-dark"
+    | "boxy-light"
+    ;
+    
+    crossorigin: 'anonymous';
+  }
+
+  export class Utterances {
+    constructor(options?: UtterancesOption);
+    init(options: UtterancesOption): Utterances;
+    setpath(path: string): void;
+  }
+
+  export default Utterances;
+}
+
 declare module "@Valine" {
+  import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@Utterances" {
   import vue from "vue";
 
   export default vue;

@@ -43,7 +43,7 @@ interface BaseCommentOptions {
    *
    * Comment Service
    */
-  type: "valine" | "vssue" | "disable";
+  type: "valine" | "vssue" | "utterances" | "disable";
   /**
    * 默认作者
    *
@@ -216,6 +216,7 @@ export type CommentOptions =
   | ValineOptions
   | WalineOptions
   | VssueOptions
+  | UtterancesOptions
   | DisableCommentOptions;
 
 declare global {
