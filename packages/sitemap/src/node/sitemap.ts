@@ -1,8 +1,10 @@
-import { black, blue, cyan } from "chalk";
+import { load } from "@mr-hope/vuepress-shared";
+import { blue, cyan } from "chalk";
 import { createWriteStream, readFile, existsSync, writeFile } from "fs-extra";
 import { SitemapStream } from "sitemap";
 
 import type { App, Page, PageData } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import type {
   SitemapFrontmatterOption,
   SitemapLinkOption,
@@ -39,8 +41,11 @@ const generatePageMap = (
   const {
     changefreq = "daily",
     exclude = [],
-    dateFormatter = (page: PageData & { lastUpdatedTime?: number }): string =>
-      page.lastUpdatedTime ? new Date(page.lastUpdatedTime).toISOString() : "",
+    dateFormatter = (page: PageData & { git?: GitData }): string => {
+      const { git = {} } = page;
+
+      return git.updatedTime ? new Date(git.updatedTime).toISOString() : "";
+    },
   } = options;
 
   const {
@@ -106,11 +111,7 @@ export const generateSiteMap = async (
   options: SitemapOptions,
   app: App
 ): Promise<void> => {
-  console.log(
-    blue("Sitemap:"),
-    black.bgYellow("wait"),
-    "Generating sitemap..."
-  );
+  const sitemapSpinner = load("Generating sitemap", "Sitemap");
 
   const { urls = [], xslUrl, exclude = [], xmlNameSpace: xmlns } = options;
   const hostname = options.hostname.replace(/\/$/u, "");
@@ -141,10 +142,13 @@ export const generateSiteMap = async (
   urls.forEach((item) => sitemap.write(item));
   sitemap.end();
 
-  console.log(
-    blue("Sitemap:"),
-    black.bgGreen("Success"),
-    `Sitemap generated and saved to ${cyan(outFile)}`
+  sitemapSpinner.succeed(
+    `${blue("Sitemap")}: Sitemap generated and saved to ${cyan(outFile)}`
+  );
+
+  const robotSpinner = load(
+    `Appended sitemap path to ${cyan("robots.txt")}`,
+    "Sitemap"
   );
 
   const robotTxtPath = dir.dest("robots.txt");
@@ -159,9 +163,5 @@ export const generateSiteMap = async (
 
   await writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
 
-  console.log(
-    blue("Sitemap:"),
-    black.bgGreen("Success"),
-    `Appended sitemap path to ${cyan("robots.txt")}`
-  );
+  robotSpinner.succeed();
 };

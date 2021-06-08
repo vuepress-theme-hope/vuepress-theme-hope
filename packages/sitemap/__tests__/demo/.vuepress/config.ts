@@ -6,10 +6,10 @@ const config: UserConfig<DefaultThemeOptions> = {
   base: process.env.VuePress_BASE || "/",
 
   /** 网站标题 */
-  title: "Seo",
+  title: "Sitemap",
 
   /** 网站在该语言下的描述 */
-  description: "VuePress Seo",
+  description: "VuePress Sitemap",
 
   /** 生成网站头部的标签 */
   head: [
@@ -66,7 +66,7 @@ const config: UserConfig<DefaultThemeOptions> = {
     },
   },
 
-  plugins: [["seo2"]],
+  plugins: [["sitemap2", { hostname: "https://exapmle.com" }]],
 };
 
 export default config;

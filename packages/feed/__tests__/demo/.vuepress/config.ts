@@ -6,7 +6,7 @@ const config: UserConfig<DefaultThemeOptions> = {
   base: process.env.VuePress_BASE || "/",
 
   /** 网站标题 */
-  title: "Copy Code",
+  title: "Feed",
 
   /** 网站在该语言下的描述 */
   description: "VuePress Feed",

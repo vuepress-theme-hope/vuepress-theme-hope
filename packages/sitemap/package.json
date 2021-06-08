@@ -29,10 +29,14 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./node",
+    "demo:build": "vuepress build __tests__/demo",
+    "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
+    "demo:serve": "vuepress dev __tests__/demo",
     "dev": "rollup -c -w",
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.0",
     "@types/fs-extra": "^9.0.11",
     "chalk": "^4.1.1",
     "fs-extra": "^10.0.0",
