@@ -1,3 +1,7 @@
+import { Logger } from "@mr-hope/vuepress-shared";
+
+export const logger = new Logger("Feed");
+
 export const resolveHTML = (html: string): string =>
   html
     // remove html class

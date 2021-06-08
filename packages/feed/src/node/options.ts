@@ -1,5 +1,5 @@
-import { deepAssign, error, getRootLang } from "@mr-hope/vuepress-shared";
-import { resolveUrl } from "./utils";
+import { deepAssign, getRootLang } from "@mr-hope/vuepress-shared";
+import { logger, resolveUrl } from "./utils";
 
 import type { App } from "@vuepress/core";
 import type {
@@ -31,7 +31,7 @@ export const checkOptions = (
   // make sure hostname do not end with `/`
   if (hostname) options.hostname = hostname.replace(/\/?$/u, "");
   else {
-    error("Option 'hostname' is required!", "Feed");
+    logger.error("Option 'hostname' is required!");
     return false;
   }
 

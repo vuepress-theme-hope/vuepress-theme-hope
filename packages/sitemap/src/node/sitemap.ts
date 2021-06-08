@@ -1,5 +1,5 @@
-import { load } from "@mr-hope/vuepress-shared";
-import { blue, cyan } from "chalk";
+import { Logger } from "@mr-hope/vuepress-shared";
+import { cyan } from "chalk";
 import { createWriteStream, readFile, existsSync, writeFile } from "fs-extra";
 import { SitemapStream } from "sitemap";
 
@@ -21,6 +21,8 @@ interface SitemapPageInfo {
   video?: SitemapVideoOption[];
   alternateLinks?: SitemapLinkOption[];
 }
+
+export const logger = new Logger("Sitemap");
 
 const stripLocalePrefix = (
   page: Page
@@ -111,7 +113,7 @@ export const generateSiteMap = async (
   options: SitemapOptions,
   app: App
 ): Promise<void> => {
-  const sitemapSpinner = load("Generating sitemap", "Sitemap");
+  logger.load("Generating sitemap");
 
   const { urls = [], xslUrl, exclude = [], xmlNameSpace: xmlns } = options;
   const hostname = options.hostname.replace(/\/$/u, "");
@@ -142,14 +144,10 @@ export const generateSiteMap = async (
   urls.forEach((item) => sitemap.write(item));
   sitemap.end();
 
-  sitemapSpinner.succeed(
-    `${blue("Sitemap")}: Sitemap generated and saved to ${cyan(outFile)}`
-  );
+  logger.success();
+  logger.update(`Sitemap generated and saved to ${cyan(outFile)}`);
 
-  const robotSpinner = load(
-    `Appended sitemap path to ${cyan("robots.txt")}`,
-    "Sitemap"
-  );
+  logger.load(`Appended sitemap path to ${cyan("robots.txt")}`);
 
   const robotTxtPath = dir.dest("robots.txt");
   const robotsTxt = existsSync(robotTxtPath)
@@ -163,5 +161,5 @@ export const generateSiteMap = async (
 
   await writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
 
-  robotSpinner.succeed();
+  logger.success();
 };

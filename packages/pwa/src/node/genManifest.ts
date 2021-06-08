@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getRootLang } from "@mr-hope/vuepress-shared";
-import { black, blue, cyan } from "chalk";
+import { cyan } from "chalk";
 import { existsSync, readFile, writeJSON } from "fs-extra";
 import { relative } from "path";
+import { logger } from "./logger";
 
 import type { App } from "@vuepress/core";
 import type { ManifestOption, PWAOptions } from "../shared";
@@ -53,11 +54,8 @@ export const genManifest = async (
   options: PWAOptions,
   app: App
 ): Promise<void> => {
-  console.log(
-    blue("PWA:"),
-    black.bgYellow("wait"),
-    "Generating manifest.webmanifest..."
-  );
+  logger.load("Generating manifest.webmanifest");
+
   const { dir } = app;
   const manifest = await getManifest(options, app);
   const manifestPath = dir.dest("manifest.webmanifest");
@@ -66,9 +64,8 @@ export const genManifest = async (
     flag: "w",
   });
 
-  console.log(
-    blue("PWA:"),
-    black.bgGreen("Success"),
+  logger.success();
+  logger.update(
     `Manifest generated and saved to ${cyan(
       relative(process.cwd(), manifestPath)
     )}!`

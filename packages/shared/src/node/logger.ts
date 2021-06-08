@@ -1,14 +1,51 @@
 import chalk from "chalk";
 import ora from "ora";
 
-export const load = (message: string, plugin = ""): ora.Ora =>
-  ora(`${plugin ? `${chalk.blue(`${plugin}: `)}` : ""}${message}`);
+export class Logger {
+  private currentInstance: ora.Ora | null = ora();
+  constructor(private name = "") {}
 
-export const warn = (message: string, plugin = ""): ora.Ora =>
-  ora(`${plugin ? `${chalk.blue(`${plugin}: `)}` : ""}${message}`).warn();
+  create(text: string): ora.Ora {
+    this.currentInstance = ora({
+      prefixText: chalk.blue(`${this.name}: `) || "",
+      text,
+    });
 
-export const error = (message: string, plugin = ""): ora.Ora =>
-  ora(`${plugin ? `${chalk.blue(`${plugin}: `)}` : ""}${message}`).fail();
+    return this.currentInstance;
+  }
 
-export const success = (message: string, plugin = ""): ora.Ora =>
-  ora(`${plugin ? `${chalk.blue(`${plugin}: `)}` : ""}${message}`).succeed();
+  update(text: string): void {
+    if (this.currentInstance) this.currentInstance.text = text;
+    else this.create(text);
+  }
+
+  load(text = ""): ora.Ora {
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
+    ).start();
+  }
+
+  info(text = ""): ora.Ora {
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
+    ).info();
+  }
+
+  success(text = ""): ora.Ora {
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
+    ).succeed();
+  }
+
+  warn(text = ""): ora.Ora {
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
+    ).warn();
+  }
+
+  error(text = ""): ora.Ora {
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
+    ).fail();
+  }
+}

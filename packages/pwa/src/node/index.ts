@@ -50,7 +50,7 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
       app.siteData.head = injectLinkstoHead(pwaOption, base, app.siteData.head);
     },
 
-    plugins: [["@mr-hope/palette"]],
+    plugins: ["@mr-hope/palette"],
 
     async onGenerated(): Promise<void> {
       await genManifest(pwaOption, app);

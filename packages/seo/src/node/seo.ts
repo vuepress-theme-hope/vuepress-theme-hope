@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { getDate } from "@mr-hope/vuepress-shared";
-import { load } from "@mr-hope/vuepress-shared";
-import { blue, cyan } from "chalk";
+import { getDate, Logger } from "@mr-hope/vuepress-shared";
 import { readFile, existsSync, writeFile } from "fs-extra";
 import { getLocales, resolveUrl } from "./utils";
 
 import type { AppDir } from "@vuepress/core";
 import type { PageSeoInfo, SeoContent, SeoOptions } from "./types";
+
+const logger = new Logger("Seo");
 
 export const generateSeo = (
   options: SeoOptions,
@@ -85,22 +85,23 @@ export const generateSeo = (
 };
 
 export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
-  const spinner = load("Generating robots.txt", "Seo");
+  logger.load("Generating robots.txt");
   const publicPath = dir.public("robots.txt");
 
   let content = existsSync(publicPath)
     ? await readFile(publicPath, { encoding: "utf8" })
     : "";
 
-  if (content && !content.includes("User-agent"))
-    spinner.fail(`${blue("SEO")}: robots.txt seems invalid!`);
-  else {
+  if (content && !content.includes("User-agent")) {
+    logger.error();
+    logger.update("robots.txt seems invalid!");
+  } else {
     content += "\nUser-agent:*\nDisallow:\n";
 
     await writeFile(dir.dest("robots.txt"), content, {
       flag: "w",
     });
 
-    spinner.succeed(`${blue("SEO")}: ${cyan("robots.txt")} generated!`);
+    logger.success();
   }
 };

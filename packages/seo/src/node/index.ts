@@ -2,9 +2,8 @@ import { resolvePagePermalink } from "@vuepress/core";
 import { generateRobotsTxt, generateSeo } from "./seo";
 import { appendMeta } from "./meta";
 
-import type { Page, Plugin } from "@vuepress/core";
-import type { GitData } from "@vuepress/plugin-git";
-import type { PageSeoInfo, SeoContent, SeoOptions } from "./types";
+import type { Plugin } from "@vuepress/core";
+import type { ExtendPage, PageSeoInfo, SeoContent, SeoOptions } from "./types";
 
 export * from "./types";
 
@@ -22,7 +21,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
     extendsPageData(page): Record<string, unknown> {
       const meta = page.frontmatter.head || [];
       const pageSeoInfo: PageSeoInfo = {
-        page: page as Page & { git?: GitData } & Record<string, unknown>,
+        page: page as ExtendPage,
         app,
         permalink: resolvePagePermalink(page),
       };
