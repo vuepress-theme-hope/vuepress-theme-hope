@@ -16,7 +16,8 @@ export const generateSeo = (
   const {
     frontmatter: {
       author: pageAuthor,
-      date,
+      time,
+      date = time,
       banner,
       cover,
       tag,

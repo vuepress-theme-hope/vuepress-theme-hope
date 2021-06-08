@@ -38,7 +38,7 @@ const feedPlugin: Plugin<FeedOptions> = (options, app) => {
       else if (
         typeof pluginOptions.filter === "function" &&
         pluginOptions.filter($page) &&
-        isFeed($page.frontmatter)
+        isFeed($page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>)
       )
         pages.push($page);
     },

@@ -12,21 +12,15 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    */
   category?: string | string[];
   /**
-   * @deprecated use `date` instead
+   * Writting Date
    */
-  time?: Date | string;
-  /**
-   * @deprecated use `category` instead
-   */
-  categories?: string[];
+  date?: Date;
+
   /**
    * Page Tag(s)
    */
   tag?: string[] | string;
-  /**
-   * @deprecated use `tag` instead
-   */
-  tags?: string[];
+
   /**
    * Whether the page is an article
    */
@@ -54,4 +48,18 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    * Whether is home page
    */
   home?: boolean;
+
+  /**
+   * @deprecated use `date` instead
+   */
+  time?: Date | string;
+
+  /**
+   * @deprecated use `category` instead
+   */
+  categories?: string[];
+  /**
+   * @deprecated use `tag` instead
+   */
+  tags?: string[];
 }

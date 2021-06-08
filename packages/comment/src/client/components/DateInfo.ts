@@ -4,6 +4,7 @@ import { computed, defineComponent, h } from "vue";
 import { CalendarIcon } from "./icons";
 import { commentOptions, pageInfoI18n } from "../define";
 
+import type { GitData } from "@vuepress/plugin-git";
 import type { VNode } from "vue";
 
 export default defineComponent({
@@ -14,21 +15,21 @@ export default defineComponent({
   setup() {
     const routeLocale = useRouteLocale();
     const page = usePageData<{
-      git?: { createTimeStamp?: number };
+      git?: GitData;
     }>();
 
     const date = computed(() => {
-      const { createTimeStamp } = page.value.git || {};
+      const { createdTime } = page.value.git || {};
 
       return (
         useDate(
           { type: "date" },
-          createTimeStamp ? new Date(createTimeStamp) : undefined
+          createdTime ? new Date(createdTime) : undefined
         ).value?.display || ""
       );
     });
 
-    const hint = computed(() => pageInfoI18n[routeLocale.value].time);
+    const hint = computed(() => pageInfoI18n[routeLocale.value].date);
 
     return (): VNode | null =>
       date.value

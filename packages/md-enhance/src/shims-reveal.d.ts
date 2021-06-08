@@ -477,7 +477,6 @@ declare module "reveal.js" {
      *
      * @param slide Slide to show
      */
-    // eslint-disable-next-line
     loadSlide(slide: HTMLElement, options?: any): void;
 
     /**
@@ -555,7 +554,6 @@ declare module "reveal.js" {
     /**
      * Returns the slide element matching the specified index.
      */
-    // eslint-disable-next-line
     getSlide(x: any, y: any): HTMLElement;
 
     /**
@@ -659,7 +657,6 @@ declare module "reveal.js" {
      * Add a custom key binding with optional description to
      * be added to the help screen.
      */
-    // eslint-disable-next-line
     addKeyBinding(binding: any, callback: () => void): void;
 
     /**
@@ -674,7 +671,6 @@ declare module "reveal.js" {
      * before considering itself ready, as long as the plugin
      * is registered before calling `Reveal.initialize()`.
      */
-    // eslint-disable-next-line
     registerPlugin(id: string, plugin: any): void;
 
     /**
@@ -690,7 +686,6 @@ declare module "reveal.js" {
      *
      * @param id Unique plugin identifier
      */
-    // eslint-disable-next-line
     getPlugin(id: string): any;
 
     /**
@@ -701,7 +696,6 @@ declare module "reveal.js" {
     /**
      * Registers a new shortcut to include in the help overlay
      */
-    // eslint-disable-next-line
     registerKeyboardShortcut(key: string, value: any): void;
   }
 

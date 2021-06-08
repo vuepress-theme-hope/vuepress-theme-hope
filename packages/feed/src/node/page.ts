@@ -33,29 +33,25 @@ export class FeedPage {
   private themeConfig: BaseThemeConfig;
 
   constructor(
-    private $page: Page,
+    private page: Page & { git?: GitData },
     private feed: Feed,
     private options: FeedOptions,
     private app: App
   ) {
-    this.frontmatter = $page.frontmatter;
+    this.frontmatter =
+      page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>;
     this.feedOption = this.frontmatter.feed || {};
     this.base = this.app.options.base;
     this.themeConfig = this.app.options.themeConfig as BaseThemeConfig;
   }
 
-  /** Get current page */
-  private get page(): Page {
-    return this.app.pages.find((page) => page.key === this.$page.key) as Page;
-  }
-
   get title(): string {
-    return this.feedOption.title || this.$page.title;
+    return this.feedOption.title || this.page.title;
   }
 
   /** real url */
   get link(): string {
-    return resolveUrl(this.options.hostname, this.base, this.$page.path);
+    return resolveUrl(this.options.hostname, this.base, this.page.path);
   }
 
   get description(): string | undefined {
@@ -63,9 +59,8 @@ export class FeedPage {
 
     if (this.frontmatter.description) return this.frontmatter.description;
 
-    if (this.$page.excerpt)
-      // return resolveHTML(this.app.markdown.render(this.$page.excerpt).html);
-      return resolveHTML(this.app.markdown.render(this.$page.excerpt));
+    if (this.page.excerpt)
+      return resolveHTML(this.app.markdown.render(this.page.excerpt));
 
     return undefined;
   }
@@ -110,30 +105,19 @@ export class FeedPage {
   }
 
   get pubDate(): Date | undefined {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { date, time = date } = this.$page.frontmatter;
+    const { time, date = time } = this.page.frontmatter;
 
-    const { createdTime } =
-      (
-        this.$page as Page & {
-          git?: GitData;
-        }
-      ).git || {};
+    const { createdTime } = this.page.git || {};
 
-    return time && time instanceof Date
-      ? time
+    return date && date instanceof Date
+      ? date
       : createdTime
       ? new Date(createdTime)
       : undefined;
   }
 
   get lastUpdated(): Date {
-    const { updatedTime } =
-      (
-        this.$page as Page & {
-          git?: GitData;
-        }
-      ).git || {};
+    const { updatedTime } = this.page.git || {};
 
     return updatedTime ? new Date(updatedTime) : new Date();
   }

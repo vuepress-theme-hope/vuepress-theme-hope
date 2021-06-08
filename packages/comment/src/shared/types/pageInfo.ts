@@ -2,7 +2,7 @@ export interface PageInfoI18nConfig {
   /** 作者 */
   author: string;
   /** 写作日期 */
-  time: string;
+  date: string;
   /** 原创文字 */
   origin: string;
   /** 访问量 */
