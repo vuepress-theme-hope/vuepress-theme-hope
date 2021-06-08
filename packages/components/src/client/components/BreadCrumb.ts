@@ -111,7 +111,7 @@ export default defineComponent({
                           })
                         : null,
                       // text
-                      h("span", { property: "name" }, item.title),
+                      h("span", { property: "name" }, item.title || "Unknown"),
                       // meta
                       h("meta", { property: "position", content: index + 1 }),
                     ]
