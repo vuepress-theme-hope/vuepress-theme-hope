@@ -3,7 +3,7 @@ import type {
   PageInfoI18nConfig,
   WalineOptions,
 } from "../shared";
-import type { ReadingTimeI18nConfig } from "@mr-hope/vuepress-plugin-reading-time";
+import type { ReadingTimeI18nConfig } from "vuepress-plugin-reading-time2";
 
 declare const READING_TIME_I18N: Record<string, ReadingTimeI18nConfig>;
 

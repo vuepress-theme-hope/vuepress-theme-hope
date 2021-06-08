@@ -1,6 +1,7 @@
 {
   "name": "vuepress-theme-hope",
   "version": "2.0.0-alpha.0",
+  "private": true,
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress-theme",

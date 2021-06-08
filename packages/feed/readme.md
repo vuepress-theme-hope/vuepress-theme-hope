@@ -2,10 +2,10 @@
 <p align="center">
   <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
-<h1 align="center">@mr-hope/vuepress-plugin-feed</h1>
+<h1 align="center">vuepress-plugin-feed2</h1>
 <h4 align="center">VuePress feed plugin 📡 / VuePress Feed 插件 📡</h4>
 
-[![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-feed.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-feed.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-feed?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-feed)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-feed2.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-feed2.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-feed2?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-feed2)
 
 <!-- markdownlint-restore -->
 
@@ -16,11 +16,11 @@ VuePress feed plugin 📡 / VuePress Feed 插件 📡
 ## Usage / 使用
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-feed
+npm i -D vuepress-plugin-feed2
 ```
 
 or
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-feed
+yarn add -D vuepress-plugin-feed2
 ```

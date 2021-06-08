@@ -11,7 +11,7 @@ const commentTheme: Theme<DefaultThemeOptions> = {
 
   plugins: [
     [
-      "@mr-hope/comment",
+      "comment2",
       {
         type: "waline",
         author: "Mr.Hope",

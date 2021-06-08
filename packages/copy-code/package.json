@@ -1,5 +1,5 @@
 {
-  "name": "@mr-hope/vuepress-plugin-copy-code",
+  "name": "vuepress-plugin-copy-code2",
   "version": "2.0.0-alpha.0",
   "description": "Copy Code plugin for vuepress",
   "keywords": [

@@ -30,10 +30,7 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
         );
     },
 
-    plugins: [
-      ["@mr-hope/last-update", themeConfig.lastUpdate || true],
-      ["@vuepress/last-updated", false],
-    ],
+    plugins: [["@vuepress/last-updated"]],
   };
 };
 

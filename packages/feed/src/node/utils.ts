@@ -102,4 +102,4 @@ export const encodeXML = (content: string): string =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 
-export const generator = "@mr-hope/vuepress-plugin-feed";
+export const generator = "vuepress-plugin-feed2";

@@ -27,7 +27,7 @@ const config: UserConfig<DefaultThemeOptions> = {
     },
   },
 
-  plugins: [["@mr-hope/pwa"]],
+  plugins: [["pwa2"]],
 };
 
 export default config;

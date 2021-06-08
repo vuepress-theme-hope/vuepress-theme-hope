@@ -43,11 +43,11 @@ const feedPlugin: Plugin<FeedOptions> = (options, app) => {
         pages.push($page);
     },
 
-    ready(): void {
+    onPrepared(): void {
       injectLinkstoHead(pluginOptions, app);
     },
 
-    async generated(): Promise<void> {
+    async onGenerated(): Promise<void> {
       const feedPages = (
         typeof pluginOptions.sort === "function"
           ? pages.sort(pluginOptions.sort)

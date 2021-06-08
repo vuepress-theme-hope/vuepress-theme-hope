@@ -1,5 +1,5 @@
 {
-  "name": "@mr-hope/vuepress-plugin-comment",
+  "name": "vuepress-plugin-comment2",
   "version": "2.0.0-alpha.0",
   "description": "A comment plugin for vuepress",
   "keywords": [
@@ -43,10 +43,10 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-plugin-palette": "2.0.0-alpha.0",
-    "@mr-hope/vuepress-plugin-reading-time": "2.0.0-alpha.0",
     "@mr-hope/vuepress-shared": "2.0.0-alpha.0",
-    "@waline/client": "^1.2.2",
-    "balloon-css": "^1.2.0"
+    "@waline/client": "^1.2.3",
+    "balloon-css": "^1.2.0",
+    "vuepress-plugin-reading-time2": "2.0.0-alpha.0"
   },
   "devDependencies": {
     "rollup": "2.51.0",

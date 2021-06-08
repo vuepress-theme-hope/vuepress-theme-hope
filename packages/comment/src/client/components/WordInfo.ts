@@ -6,7 +6,7 @@ import { commentOptions, pageInfoI18n } from "../define";
 import type {
   ReadingTime,
   ReadingTimeI18nConfig,
-} from "@mr-hope/vuepress-plugin-reading-time";
+} from "vuepress-plugin-reading-time2";
 import type { VNode } from "vue";
 
 export default defineComponent({

@@ -46,8 +46,8 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
 
     plugins: [
       ["@mr-hope/palette"],
-      ["@mr-hope/reading-time", { wordPerminute: options.wordPerminute }],
       ["@vuepress/git"],
+      ["reading-time2", { wordPerminute: options.wordPerminute }],
     ],
   };
 

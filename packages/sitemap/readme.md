@@ -2,10 +2,10 @@
 <p align="center">
   <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
-<h1 align="center">@mr-hope/vuepress-plugin-sitemapt</h1>
+<h1 align="center">vuepress-plugin-sitemap2t</h1>
 <h4 align="center">VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件🗺️</h4>
 
-[![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-sitemap.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-sitemap.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-sitemap?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-sitemap)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-sitemap2.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-sitemap2.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-sitemap2?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-sitemap2)
 
 <!-- markdownlint-restore -->
 
@@ -16,11 +16,11 @@ VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件 🗺️
 ## 安装 / Install
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-sitemap
+npm i -D vuepress-plugin-sitemap2
 ```
 
 Or
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-sitemap
+yarn add -D vuepress-plugin-sitemap2
 ```

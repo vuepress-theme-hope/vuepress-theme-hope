@@ -1,5 +1,5 @@
 {
-  "name": "@mr-hope/vuepress-plugin-reading-time",
+  "name": "vuepress-plugin-reading-time2",
   "version": "2.0.0-alpha.0",
   "description": "Reading time plugin for VuePress",
   "keywords": [
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
-    "directory": "packages/@mr-hope/vuepress-plugin-read-time"
+    "directory": "packages/reading-time"
   },
   "license": "MIT",
   "author": {

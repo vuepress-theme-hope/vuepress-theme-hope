@@ -1,5 +1,5 @@
 {
-  "name": "@mr-hope/vuepress-plugin-seo",
+  "name": "vuepress-plugin-seo2",
   "version": "2.0.0-alpha.0",
   "description": "SEO plugin for vuepress",
   "keywords": [

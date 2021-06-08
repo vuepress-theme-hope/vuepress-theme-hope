@@ -66,10 +66,7 @@ const config: UserConfig<DefaultThemeOptions> = {
     },
   },
 
-  plugins: [
-    /** Copy Code plugin */
-    ["copy-code2"],
-  ],
+  plugins: [["feed2", { hostname: "https://example.com" }]],
 };
 
 export default config;

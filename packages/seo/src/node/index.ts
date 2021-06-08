@@ -39,15 +39,11 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
       page.frontmatter.meta = meta;
     },
 
-    async generated(): Promise<void> {
+    async onGenerated(): Promise<void> {
       await generateRobotsTxt(app.dir);
     },
 
-    plugins: [
-      ["@mr-hope/last-update", themeConfig.lastUpdate || true],
-
-      ["@vuepress/last-updated", false],
-    ],
+    plugins: [["@vuepress/last-updated"]],
   };
 };
 

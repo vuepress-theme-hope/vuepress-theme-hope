@@ -6,12 +6,12 @@ export default [
   }),
   ...rollupTypescript("client/appEnhance", {
     external: [
-      "@mr-hope/vuepress-plugin-reading-time/client/i18n",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "balloon-css",
       "vue",
       "vue-router",
+      "vuepress-plugin-reading-time2/client/i18n",
       "@Waline",
       /\.scss$/,
     ],

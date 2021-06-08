@@ -2,7 +2,7 @@
 home: true
 title: PWA plugin
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-pwa"
+heroText: "vuepress-plugin-pwa2"
 tagline: 为 VuePress 提供 PWA 支持
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
@@ -12,7 +12,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### 安装
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-pwa
+npm i -D vuepress-plugin-pwa2
 ```
 
 ### 使用
@@ -22,7 +22,7 @@ npm i -D @mr-hope/vuepress-plugin-pwa
 module.exports = {
   plugins: [
     [
-      "@mr-hope/pwa",
+      "pwa2",
       {
         // your options
       },

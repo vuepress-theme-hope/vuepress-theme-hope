@@ -3,7 +3,7 @@ import { computed, defineComponent, h } from "vue";
 import { TimerIcon } from "./icons";
 import { commentOptions, pageInfoI18n, readingTimeI18n } from "../define";
 
-import type { ReadingTime } from "@mr-hope/vuepress-plugin-reading-time";
+import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { VNode } from "vue";
 
 export default defineComponent({

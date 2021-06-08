@@ -1,9 +1,9 @@
 ---
 home: true
-title: "vuepress-plugin-copy-code2"
+title: "vuepress-plugin-feed2"
 heroImage: /logo.svg
-heroText: "vuepress-plugin-copy-code2"
-tagline: 为 VuePress 提供一键复制代码支持
+heroText: "vuepress-plugin-feed2"
+tagline: 为 VuePress 提供流支持
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
@@ -12,7 +12,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### 安装
 
 ```bash
-npm i -D vuepress-plugin-copy-code2
+npm i -D vuepress-plugin-feed2
 ```
 
 ### 使用
@@ -22,7 +22,7 @@ npm i -D vuepress-plugin-copy-code2
 module.exports = {
   plugins: [
     [
-      "copy-code2",
+      "feed2",
       {
         // 你的配置选项
       },

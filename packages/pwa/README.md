@@ -2,10 +2,10 @@
 <p align="center">
   <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
-<h1 align="center">@mr-hope/vuepress-plugin-pwa</h1>
+<h1 align="center">vuepress-plugin-pwa2</h1>
 <h4 align="center">VuePress PWA plugin📦 / VuePress PWA 插件📦</h4>
 
-[![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-pwa.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-pwa.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-pwa?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-pwa)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-pwa2.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-pwa2.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-pwa2?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-pwa2)
 
 <!-- markdownlint-restore -->
 
@@ -16,11 +16,11 @@ VuePress PWA plugin📦 / VuePress PWA 插件 📦
 ## Install / 安装
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-pwa
+npm i -D vuepress-plugin-pwa2
 ```
 
 Or
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-pwa
+yarn add -D vuepress-plugin-pwa2
 ```
