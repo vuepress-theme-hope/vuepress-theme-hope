@@ -106,8 +106,6 @@ export class FeedPage {
   }
 
   get guid(): string {
-    // TODO: Add support for permalink
-    // return this.feedOption.guid || this.page._permalink || this.link;
     return this.feedOption.guid || this.link;
   }
 

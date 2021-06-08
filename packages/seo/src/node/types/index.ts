@@ -1,12 +1,13 @@
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { App, HeadConfig, Page, PageFrontmatter } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import type { SeoContent } from "./seo";
 
 export * from "./seo";
 
 export type ExtendPage<ExtendObject = Record<string, unknown>> = Page & {
   frontmatter: PageFrontmatter<BasePageFrontMatter>;
-  lastUpdatedTime?: number;
+  git?: GitData;
 } & ExtendObject;
 
 export interface PageSeoInfo<PageExtends = Record<string, unknown>> {

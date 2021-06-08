@@ -18,7 +18,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
   return {
     name: "seo",
 
-    extendsPageData(page): void {
+    extendsPageData(page): Record<string, unknown> {
       const meta = page.frontmatter.head || [];
       const pageSeoInfo: PageSeoInfo = {
         page: page as Page & { lastUpdatedTime?: number } & Record<
@@ -36,14 +36,12 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
       appendMeta(meta, metaContext, seoOption);
       if (seoOption.customHead) seoOption.customHead(meta, pageSeoInfo);
 
-      page.frontmatter.meta = meta;
+      return { frontmatter: { head: meta } };
     },
 
     async onGenerated(): Promise<void> {
       await generateRobotsTxt(app.dir);
     },
-
-    plugins: [["@vuepress/last-updated"]],
   };
 };
 

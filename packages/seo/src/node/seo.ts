@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getDate } from "@mr-hope/vuepress-shared";
-import { black, blue, cyan } from "chalk";
+import { load } from "@mr-hope/vuepress-shared";
+import { blue, cyan } from "chalk";
 import { readFile, existsSync, writeFile } from "fs-extra";
 import { getLocales, resolveUrl } from "./utils";
 
 import type { AppDir } from "@vuepress/core";
-
 import type { PageSeoInfo, SeoContent, SeoOptions } from "./types";
 
 export const generateSeo = (
@@ -22,7 +22,7 @@ export const generateSeo = (
       tag,
       tags = tag as string[],
     },
-    lastUpdatedTime,
+    git = {},
   } = page;
   const { siteData } = app;
   const locales = getLocales(siteData.locales);
@@ -41,10 +41,9 @@ export const generateSeo = (
         options.author ||
         (app.options.themeConfig.author as string | undefined) ||
         "";
-  const modifiedTime =
-    typeof lastUpdatedTime === "number"
-      ? new Date(lastUpdatedTime).toISOString()
-      : "";
+  const { updatedTime } = git;
+
+  const modifiedTime = updatedTime ? new Date(updatedTime).toISOString() : "";
   const articleTags: string[] = Array.isArray(tags)
     ? tags
     : typeof tag === "string"
@@ -85,7 +84,7 @@ export const generateSeo = (
 };
 
 export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
-  console.log(blue("SEO:"), black.bgYellow("wait"), "Generating robots.txt...");
+  const spinner = load("Generating robots.txt", "Seo");
   const publicPath = dir.public("robots.txt");
 
   let content = existsSync(publicPath)
@@ -93,20 +92,14 @@ export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
     : "";
 
   if (content && !content.includes("User-agent"))
-    console.log(
-      blue("SEO:"),
-      black.bgRed("error"),
-      "robots.txt seems invalid!"
-    );
-  else content += "\nUser-agent:*\nDisallow:\n";
+    spinner.fail(`${blue("SEO")}: robots.txt seems invalid!`);
+  else {
+    content += "\nUser-agent:*\nDisallow:\n";
 
-  await writeFile(dir.dest("robots.txt"), content, {
-    flag: "w",
-  });
+    await writeFile(dir.dest("robots.txt"), content, {
+      flag: "w",
+    });
 
-  console.log(
-    blue("SEO:"),
-    black.bgGreen("Success"),
-    `${cyan("robots.txt")} generated`
-  );
+    spinner.succeed(`${blue("SEO")}: ${cyan("robots.txt")} generated!`);
+  }
 };

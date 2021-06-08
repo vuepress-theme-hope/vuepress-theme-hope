@@ -9,7 +9,7 @@ const config: UserConfig<DefaultThemeOptions> = {
   title: "Copy Code",
 
   /** 网站在该语言下的描述 */
-  description: "VuePress Feed",
+  description: "VuePress Seo",
 
   /** 生成网站头部的标签 */
   head: [
@@ -66,7 +66,7 @@ const config: UserConfig<DefaultThemeOptions> = {
     },
   },
 
-  plugins: [["feed2", { hostname: "https://example.com" }]],
+  plugins: [["seo2"]],
 };
 
 export default config;
