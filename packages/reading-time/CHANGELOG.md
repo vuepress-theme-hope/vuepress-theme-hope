@@ -1,0 +1,11 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 2.0.0-alpha.0 (2021-06-08)
+
+### Features
+
+- add components plugin ([75a5cf9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/75a5cf9e96c2154c091760d86b668f900cfe9625))
+- add reading-time plugin ([c455d03](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c455d032a6c1c43fd94d725381685f7dffe0a390))
