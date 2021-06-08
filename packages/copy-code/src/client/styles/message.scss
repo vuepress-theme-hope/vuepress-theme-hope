@@ -1,4 +1,4 @@
-@use '@mr-hope/vuepress-palette' as *;
+@use "@hope/config";
 
 @keyframes message-move-in {
   0% {
@@ -26,7 +26,7 @@
 
 #message-container {
   position: fixed;
-  top: $navbarHeight + 1rem;
+  top: calc(var(--navbar-height) + 1rem);
   left: 0;
   right: 0;
   z-index: 100;

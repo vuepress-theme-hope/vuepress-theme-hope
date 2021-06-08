@@ -5,11 +5,11 @@
   margin: 0 auto;
   padding: 2rem 2.5rem;
 
-  @media (max-width: $MQNarrow) {
+  @media (max-width: $pad) {
     padding: 2rem;
   }
 
-  @media (max-width: $MQMobileNarrow) {
+  @media (max-width: $mobileS) {
     padding: 1.5rem;
   }
 }

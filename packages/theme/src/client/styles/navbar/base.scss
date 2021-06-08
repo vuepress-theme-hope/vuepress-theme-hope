@@ -35,7 +35,7 @@
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $mobile) {
   .navbar {
     padding-left: 4rem;
 
@@ -85,7 +85,7 @@
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $mobile) {
   .navbar-links {
     .navbar-links-item {
       margin-left: 0;
@@ -93,7 +93,7 @@
   }
 }
 
-@media (min-width: $MQMobile) {
+@media (min-width: $mobile) {
   .navbar-links a {
     &:hover,
     &.router-link-active {

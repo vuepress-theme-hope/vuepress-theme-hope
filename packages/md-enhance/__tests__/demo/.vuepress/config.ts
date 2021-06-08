@@ -105,7 +105,7 @@ const config: UserConfig<DefaultThemeOptions> = {
             "/guide/tex.md",
             "/guide/presentation/readme.md",
             "/guide/presentation/demo.md",
-            "/guide/presentation/theme.md",
+            "/guide/presentation/themes.md",
           ],
 
           "/": ["/readme.md", "/guide/readme.md"],

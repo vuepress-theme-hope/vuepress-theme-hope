@@ -1,4 +1,5 @@
 @use 'sass:meta';
-@use 'container';
 
-@use "@mr-hope/vuepress-style";
+@use "@hope/palette";
+
+@use 'container';

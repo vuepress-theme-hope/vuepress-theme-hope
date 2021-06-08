@@ -1,9 +1,9 @@
 @import "@vuepress/plugin-palette/palette";
 
 // responsive breakpoints
-$MQNarrow: 959px !default;
-$MQMobile: 719px !default;
-$MQMobileNarrow: 419px !default;
+$pad: 959px !default;
+$mobile: 719px !default;
+$mobileS: 419px !default;
 
 // code languages
 $codeLang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"

@@ -1,0 +1,136 @@
+@use 'sass:color';
+@use "sass:list";
+@use "sass:map";
+
+$accentColor: (
+  base: #3eaf7c,
+  scale: (
+    dark: -10%,
+    light: 10%,
+    lighter: 25%,
+  ),
+) !default;
+
+$textColor: (
+  base: (
+    #2c3e50,
+    #9e9e9e,
+  ),
+  scale: (
+    light: 10%,
+    lighter: 20%,
+    lightest: 25%,
+    bright: 40%,
+  ),
+) !default;
+
+$bgColor: (
+  light: #fff,
+  dark: #1e1e1e,
+) !default;
+
+$bgColorLight: (
+  light: #f8f8f8,
+  dark: #272727,
+) !default;
+
+$bgColorBlur: (
+  light: rgba(255, 255, 255, 0.9),
+  dark: rgba(30, 30, 30, 0.9),
+) !default;
+
+$borderColor: (
+  light: #eaecef,
+  dark: #302d28,
+) !default;
+
+$arrowColor: (
+  light: #ccc,
+  dark: #333,
+) !default;
+
+$boxShadowColor: (
+  light: #f0f1f2,
+  dark: #0f0e0d,
+) !default;
+
+$cardShadowColor: (rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3)) !default;
+
+// code
+$codeBgColor: (
+  light: #ecf4fa,
+  dark: #282c34,
+) !default;
+$codeHighlightLineColor: (
+  light:
+    color.scale(
+      map.get($codeBgColor, "light"),
+      $saturation: 10%,
+      $lightness: -5%
+    ),
+  dark:
+    color.scale(
+      map.get($codeBgColor, "dark"),
+      $saturation: 10%,
+      $lightness: -5%
+    ),
+) !default;
+
+$codeBorderColor: (
+  light:
+    color.scale(
+      map.get($codeBgColor, "light"),
+      $saturation: 20%,
+      $lightness: -10%
+    ),
+  dark:
+    color.scale(
+      map.get($codeBgColor, "dark"),
+      $saturation: 20%,
+      $lightness: -10%
+    ),
+) !default;
+
+// contants
+
+$black: (
+  light: #000,
+  dark: #fff,
+) !default;
+
+$darkGrey: (
+  light: #666,
+  dark: #999,
+) !default;
+
+$lightGrey: (
+  light: #999,
+  dark: #666,
+) !default;
+
+$white: (
+  light: #fff,
+  dark: #000,
+) !default;
+
+$grey3: (
+  light: #333,
+  dark: #bbb,
+) !default;
+
+$grey12: (
+  light: #bbb,
+  dark: #333,
+) !default;
+
+$grey14: (
+  light: #eee,
+  dark: #111,
+) !default;
+
+$tipColor: #42b983 !default;
+$warningColor: #f4cd00 !default;
+$dangerColor: #f55 !default;
+$badgeTipColor: $tipColor !default;
+$badgeWarningColor: $warningColor !default;
+$badgeDangerColor: $dangerColor !default;

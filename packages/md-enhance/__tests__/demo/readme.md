@@ -121,19 +121,6 @@ You can mark ==important words== .
 
 - [View Detail](../markdown/mark.md)
 
-### Flowchart
-
-```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
-
-cond(yes)->process->e
-cond(no)->e
-```
-
-- [View Detail](../markdown/flowchart.md)
-
 ### Tex
 
 $$

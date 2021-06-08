@@ -1,9 +1,11 @@
-body[data-theme="dark"] .reveal[theme="auto"],
-.reveal[theme="black"],
-.reveal[theme="league"],
-.reveal[theme="night"],
-.reveal[theme="blood"],
-.reveal[theme="moon"] {
+@use '@hope/config';
+
+#{config.$darkSelecter} .reveal[data-theme="auto"],
+.reveal[data-theme="black"],
+.reveal[data-theme="league"],
+.reveal[data-theme="night"],
+.reveal[data-theme="blood"],
+.reveal[data-theme="moon"] {
   .hljs-comment,
   .hljs-quote {
     color: #b6b18b;

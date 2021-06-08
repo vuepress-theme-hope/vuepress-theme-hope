@@ -1,24 +1,25 @@
-@use 'sass:string';
+@use 'sass:color';
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:meta';
+@use 'sass:string';
 
-@function isUpperCase($char) {
+@function is-upper-case($char) {
   @return string.to-lower-case($char) != $char;
 }
 
-@function isLowerCase($char) {
+@function is-lower-case($char) {
   @return string.to-upper-case($char) != $char;
 }
 
-@function camelCasetokebab-case($string) {
+@function camel-to-kebab($string) {
   $length: string.length($string);
   $property: "--";
 
   @for $i from 1 through $length {
     $char: string.slice($string, $i, $i);
 
-    $property: "#{$property}#{if(isUpperCase($char), "-#{string.to-lower-case(
+    $property: "#{$property}#{if(is-upper-case($char), "-#{string.to-lower-case(
         $char
       )}",$char)}";
   }
@@ -26,13 +27,136 @@
   @return $property;
 }
 
-@function get-color($variable, $isDark) {
-  @if meta.type-of($variable) == color {
-    @return $variable;
-  } @else if meta.type-of($variable) == list {
-    @return if($isDark, list.nth($variable, 2), list.nth($variable, 1));
+@function color-islegal($value) {
+  // single color
+  @if meta.type-of($value) == color {
+    @return true;
+  }
+
+  // it's a shortcut config
+  @if (meta.type-of($value) == list and list.length($value) == 2) {
+    $isLegal: true;
+
+    @each $color in $value {
+      @if meta.type-of($color) != color {
+        $isLegal: false;
+      }
+    }
+
+    @if $isLegal {
+      @return true;
+    }
+
+    @debug "Unexpected value: getting #{$value}";
+
+    @return false;
+  }
+
+  // it's a valid map color config
+  @if (meta.type-of($value) == map) {
+    @if (meta.type-of(map.get($value, "light")) == color) and
+      (meta.type-of(map.get($value, "dark")) == color)
+    {
+      @return true;
+    }
+
+    @if (islegal-config(map.get($value, "base"))) {
+      $scale: map.get($value, "scale");
+
+      @if (meta.type-of($scale) == map) {
+        @each $name, $amount in $scale {
+          @if (meta.type-of($amount) != number) {
+            @debug "Unexpected value: getting #{$value}";
+
+            @return false;
+          }
+        }
+
+        @return true;
+      }
+    }
+  }
+
+  @debug "Unexpected value: getting #{$value}";
+
+  @return false;
+}
+
+@function get-color($color, $isDark: false) {
+  @if meta.type-of($color) == color {
+    @return $color;
+  }
+
+  @if meta.type-of($color) == list {
+    @return list.nth($color, if($isDark, 2, 1));
+  }
+
+  $lightColor: map.get($color, "light");
+  $darkColor: map.get($color, "dark");
+
+  @if $lightColor and $darkColor {
+    @return if($isDark, $darkColor, $lightColor);
+  }
+
+  $base: map.get($color, "base");
+
+  @if $base {
+    @return get-color($base, $isDark);
+  }
+
+  @debug "Unexpected color: getting #{$color}";
+
+  @return transparent;
+}
+
+@mixin inject-color($key, $config, $darkSelecter) {
+  @if meta.type-of($config) == color {
+    :root {
+      #{$key}: #{$config};
+    }
+  } @else if meta.type-of($config) == list {
+    :root {
+      #{$key}: list.nth($config, 1);
+    }
+
+    #{$darkSelecter} {
+      #{$key}: list.nth($config, 2);
+    }
   } @else {
-    @debug "Unexpected variable type #{meta.type-of($variable)}";
-    @return transparent;
+    $lightColor: map.get($config, "light");
+    $darkColor: map.get($config, "dark");
+
+    @if $lightColor and $darkColor {
+      :root {
+        #{$key}: #{$lightColor};
+      }
+
+      @if $lightColor != $darkColor {
+        #{$darkSelecter} {
+          #{$key}: #{$darkColor};
+        }
+      }
+    } @else {
+      $base: map.get($config, "base");
+      $scale: map.get($config, "scale");
+      $baseLight: get-color($base);
+      $baseDark: get-color($base, $isDark: true);
+
+      @include inject-color($key, $base, $darkSelecter);
+
+      @each $subkey, $amount in $scale {
+        $keyName: #{$key}-#{$subkey};
+
+        :root {
+          #{$keyName}: #{color.scale($baseLight, $lightness: $amount)};
+        }
+
+        @if $baseLight != $baseDark {
+          #{$darkSelecter} {
+            #{$keyName}: #{color.scale($baseDark, $lightness: $amount)};
+          }
+        }
+      }
+    }
   }
 }

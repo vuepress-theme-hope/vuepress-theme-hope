@@ -1,3 +1,5 @@
+@use '@hope/config';
+
 input[type="checkbox"].task-list-item-checkbox {
   cursor: pointer;
   position: relative;
@@ -17,7 +19,7 @@ input[type="checkbox"].task-list-item-checkbox {
     background-color: #fff;
     text-align: center;
 
-    [data-theme="dark"] & {
+    #{config.$darkSelecter} & {
       border-color: #666;
       background-color: #333;
     }

@@ -1,5 +1,5 @@
 @use "@mr-hope/vuepress-shared/styles/reset";
-@use "@mr-hope/vuepress-palette" as *;
+@use "@hope/config";
 
 @keyframes pwa-opened {
   from {
@@ -53,7 +53,7 @@
 
   &:hover,
   &:active {
-    background: var(--accent-color-l25);
+    background: var(--accent-color-light);
   }
 }
 
@@ -95,12 +95,12 @@
     font-family: sans-serif;
     animation: 0.15s pwa-opened;
 
-    @media (max-width: $screenXL) {
+    @media (max-width: config.$desktop) {
       width: 92%;
       animation: 0.25s pwa-mobile;
     }
 
-    @media (max-width: $screenS) {
+    @media (max-width: config.$mobileS) {
       max-height: 80%;
       overflow-y: scroll;
 
@@ -113,11 +113,11 @@
   .header {
     margin: 40px 40px 32px;
 
-    @media (max-width: $screenL) {
+    @media (max-width: config.$pad) {
       margin-bottom: 24px;
     }
 
-    @media (max-width: $screenM) {
+    @media (max-width: config.$mobile) {
       margin: 20px;
     }
 
@@ -142,11 +142,11 @@
       color: var(--dark-gery);
       font-size: 34px;
 
-      @media (max-width: $screenL) {
+      @media (max-width: $pad) {
         margin-bottom: 0;
       }
 
-      @media (max-width: $screenS) {
+      @media (max-width: $mobileS) {
         font-size: 26px;
       }
     }
@@ -159,21 +159,21 @@
       border-radius: 24px;
       background: #eee;
 
-      .theme-dark & {
+      #{config.$darkSelecter} & {
         background: #444;
       }
 
-      @media (max-width: $screenL) {
+      @media (max-width: config.$pad) {
         width: 60px;
         height: 60px;
       }
 
-      @media (max-width: $screenM) {
+      @media (max-width: config.$mobile) {
         margin-right: 12px;
         padding: 8px;
       }
 
-      @media (max-width: $screenS) {
+      @media (max-width: config.$mobileS) {
         width: 40px;
         height: 40px;
         padding: 6px;
@@ -188,7 +188,7 @@
       white-space: pre-wrap;
       overflow: hidden;
 
-      @media (max-width: $screenL) {
+      @media (max-width: config.$pad) {
         display: none;
       }
     }
@@ -199,7 +199,7 @@
     color: var(--grey3);
     flex: 1;
 
-    @media (max-width: $screenM) {
+    @media (max-width: config.$mobile) {
       margin: 0 20px;
     }
 
@@ -219,7 +219,7 @@
     align-items: center;
     margin-right: 20px;
 
-    @media (max-width: $screenM) {
+    @media (max-width: config.$mobile) {
       flex-direction: column;
       align-items: flex-start;
       margin-right: 0px;
@@ -231,7 +231,7 @@
       font-weight: 600;
       line-height: 225%;
 
-      @media (max-width: $screenS) {
+      @media (max-width: config.$mobileS) {
         margin-bottom: 0px;
         font-size: 18px;
       }
@@ -246,7 +246,7 @@
       padding-inline-start: 22px;
       margin-block-start: 12px;
 
-      @media (max-width: $screenS) {
+      @media (max-width: config.$mobileS) {
         margin-top: 0px;
       }
     }
@@ -264,7 +264,7 @@
     max-height: 220px;
     display: flex;
 
-    @media (max-width: $screenM) {
+    @media (max-width: config.$mobile) {
       width: 100%;
     }
 
@@ -295,7 +295,7 @@
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
 
-    @media (max-width: $screenXL) {
+    @media (max-width: config.$desktop) {
       justify-content: center;
     }
 
@@ -317,7 +317,7 @@
       height: 100%;
       object-fit: contain;
 
-      @media (max-width: $screenM) {
+      @media (max-width: config.$mobile) {
         height: 180px;
       }
     }
@@ -332,7 +332,7 @@
     text-align: right;
     padding: 1rem 0;
 
-    @media (max-width: $screenM) {
+    @media (max-width: config.$mobile) {
       text-align: center;
     }
   }
@@ -357,10 +357,10 @@
 
     &:hover,
     &:focus {
-      background: var(--accent-color-l10);
+      background: var(--accent-color-light);
     }
 
-    @media (max-width: $screenS) {
+    @media (max-width: config.$mobileS) {
       span {
         display: none;
       }
@@ -373,7 +373,7 @@
 
     &:hover,
     &:focus {
-      background: var(--accent-color-l10);
+      background: var(--accent-color-light);
       color: var(--white);
     }
   }

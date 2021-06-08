@@ -1,0 +1,27 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'helper';
+
+@use 'variables';
+@use '@user/palette';
+
+$userVariables: meta.module-variables("palette");
+$defaultVariables: meta.module-variables("variables");
+
+$variables: map.deep-merge($defaultVariables, $userVariables);
+
+@each $name, $value in $variables {
+  $key: helper.camel-to-kebab($name);
+
+  // simple length
+  @if meta.type-of($value) == number {
+    :root {
+      #{$key}: #{$value};
+    }
+  } @else if helper.color-islegal($value) {
+    @include helper.inject-color($key, $value, $darkSelecter: "html.dark");
+  }
+}

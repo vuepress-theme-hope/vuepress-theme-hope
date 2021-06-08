@@ -11,7 +11,7 @@
   color: var(--dark-color, #666);
   text-align: center;
 
-  @media (min-width: $MQMobile) {
+  @media (min-width: $mobile) {
     .has-sidebar & {
       padding-left: var(--sidebar-width);
       border-left: 2rem solid transparent;
@@ -19,7 +19,7 @@
   }
 
   & > div {
-    @media (max-width: $MQMobileNarrow) {
+    @media (max-width: $mobileS) {
       width: 100%;
     }
   }

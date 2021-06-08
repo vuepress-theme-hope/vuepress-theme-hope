@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use 'sass:list';
-@use '@mr-hope/vuepress-palette' as *;
+@use "@hope/config";
 
 .tags-wrapper {
   list-style: none;
@@ -23,7 +23,7 @@
     overflow: hidden;
     transition: all 0.2s;
 
-    [data-theme="dark"] & {
+    #{config.$darkSelecter} & {
       background: #222;
     }
 
@@ -34,8 +34,8 @@
     }
   }
 
-  @each $color in $colors {
-    $index: list.index($colors, $color) - 1;
+  @each $color in config.$colors {
+    $index: list.index(config.$colors, $color) - 1;
 
     .tag#{$index} {
       & {
@@ -48,7 +48,7 @@
         }
       }
 
-      [data-theme="dark"] & {
+      #{config.$darkSelecter} & {
         color: color.scale($color, $lightness: -10%);
         border-color: color.scale($color, $lightness: - 10%);
 

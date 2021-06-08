@@ -1,4 +1,4 @@
-@use "@mr-hope/vuepress-palette" as *;
+@use "@hope/config";
 
 .code-group-nav {
   display: flex;
@@ -10,7 +10,7 @@
   background-color: var(--code-border-color);
   list-style: none;
 
-  @media (max-width: $screenS) {
+  @media (max-width: config.$mobileS) {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
     border-radius: 0;

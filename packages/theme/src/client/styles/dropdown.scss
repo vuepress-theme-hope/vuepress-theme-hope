@@ -109,7 +109,7 @@
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $mobile) {
   .dropdown-wrapper {
     &.open .dropdown-title {
       margin-bottom: 0.5rem;
@@ -150,7 +150,7 @@
   }
 }
 
-@media (min-width: $MQMobile) {
+@media (min-width: $mobile) {
   .dropdown-wrapper {
     height: 1.8rem;
 

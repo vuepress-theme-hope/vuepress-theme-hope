@@ -1,8 +1,8 @@
 @use '@mr-hope/vuepress-shared/styles/wrapper';
-@use "@mr-hope/vuepress-palette" as *;
+@use "@hope/config";
 
 // Fix top boarder of heading1
-#{$contentClass}:not(.custom) {
+#{config.$contentClass}:not(.custom) {
   > *:first-child {
     margin-top: 0;
   }
@@ -14,11 +14,11 @@ h3,
 h4,
 h5,
 h6 {
-  #{$contentClass}:not(.custom) &:first-child {
+  #{config.$contentClass}:not(.custom) &:first-child {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
-    padding-top: calc($navbarHeight + 1rem) !important;
+    padding-top: calc(var(--navbar-height) + 1rem) !important;
 
-    @media (max-width: $screenM) {
+    @media (max-width: $mobile) {
       margin-top: calc(0.5rem - var(--navbar-mobile-height)) !important;
       padding-top: calc(var(--navbar-mobile-height) + 1rem) !important;
     }
@@ -35,13 +35,13 @@ h6 {
   font-size: 15px;
   z-index: 2;
 
-  @media (max-width: $screenL) {
+  @media (max-width: $pad) {
     margin-top: calc(var(--navbar-mobile-height) + 0.5rem);
     margin-bottom: calc(0.5rem - var(--navbar-mobile-height));
     font-size: 14px;
   }
 
-  @media (max-width: $screenS) {
+  @media (max-width: $mobileS) {
     font-size: 12.8px;
   }
 
@@ -90,11 +90,7 @@ h6 {
     }
 
     &:hover {
-      color: var(--accent-color-l10);
-
-      [data-theme="dark"] & {
-        color: var(--accent-color-d10);
-      }
+      color: var(--accent-color-light);
     }
   }
 }
