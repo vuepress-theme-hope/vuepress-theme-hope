@@ -1,4 +1,4 @@
-import { RevealOptions } from "reveal.js";
+import { RevealOptions } from "./reveal";
 
 export type RevealPlugin =
   | "highlight"
