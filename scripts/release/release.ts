@@ -1,5 +1,6 @@
 import execa = require("execa");
-import { black, cyan, green, red } from "chalk";
+import ora = require("ora");
+import { green, red } from "chalk";
 import { prompt } from "inquirer";
 import { ReleaseType, inc } from "semver";
 import { version as currentVersion } from "../../lerna.json";
@@ -8,17 +9,20 @@ import { sync } from "./sync";
 import type { Answers } from "./version";
 
 export const release = async (): Promise<void> => {
-  console.log(black.bgYellow("wait"), "Building project...");
+  const buildSpinner = ora("Building project");
+
   await execa("yarn", ["run", "clean"]);
   await execa("yarn", ["run", "build"]);
 
-  console.log(`Current version: ${green(currentVersion)}`);
+  buildSpinner.succeed();
+
+  ora().info(`Current version: ${green(currentVersion)}`);
 
   const bumps: ReleaseType[] = [
+    "prerelease",
     "patch",
     "minor",
     "major",
-    "prerelease",
     "premajor",
   ];
 
@@ -64,7 +68,10 @@ export const release = async (): Promise<void> => {
     },
   ]);
 
-  if (confirm === "N") return console.log(red("Release canceled."));
+  if (confirm === "N") {
+    ora().fail(red("Release canceled."));
+    return;
+  }
 
   const releaseArguments = [
     "publish",
@@ -75,19 +82,23 @@ export const release = async (): Promise<void> => {
     "https://registry.npmjs.org/",
   ];
 
-  console.log(cyan(`lerna ${releaseArguments.join(" ")}`));
+  const publishSpinner = ora("Publishing");
 
   await execa(require.resolve("lerna/cli"), releaseArguments, {
     stdio: "inherit",
   });
 
-  console.log(black.bgYellow("wait"), "Syncing npm.taobao.org...");
+  publishSpinner.succeed();
+
+  const taobaoSpinner = ora("Syncing npm.taobao.org");
 
   await sync();
+  taobaoSpinner.succeed();
 
-  console.log(black.bgYellow("wait"), "Generating changelog...");
+  const changelogSpinner = ora("Generating changelog");
 
   await execa("yarn", ["run", "changelog"]);
+  changelogSpinner.succeed();
 
-  console.log(green("Release complete"));
+  ora().succeed("Release complete");
 };
