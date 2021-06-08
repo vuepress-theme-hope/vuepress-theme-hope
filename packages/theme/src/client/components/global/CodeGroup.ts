@@ -45,7 +45,7 @@ export default defineComponent({
       }
     };
 
-    return () => {
+    return (): VNode | null => {
       // NOTICE: here we put the `slots.default()` inside the render function to make
       // the slots reactive, otherwise the slot content won't be changed once the
       // `setup()` function of current component is called
@@ -109,7 +109,9 @@ export default defineComponent({
                       }
                     },
                     class: {
+                      // eslint-disable-next-line @typescript-eslint/naming-convention
                       "code-group__nav-tab": true,
+                      // eslint-disable-next-line @typescript-eslint/naming-convention
                       "code-group__nav-tab-active": isActive,
                     },
                     ariaPressed: isActive,
