@@ -110,19 +110,15 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
         ]);
       if (mermaidEnable) markdownIt.use(mermaid);
       if (texEnable)
-        markdownIt.use(katex, [
-          {
-            macros: {
-              // support more symbols
-              "\\liiiint": "\\int\\!\\!\\!\\iiint",
-              "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
-              "\\idotsint": "\\int\\!\\cdots\\!\\int",
-            },
-            ...(typeof markdownOption.tex === "object"
-              ? markdownOption.tex
-              : {}),
+        markdownIt.use(katex, {
+          macros: {
+            // support more symbols
+            "\\liiiint": "\\int\\!\\!\\!\\iiint",
+            "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
+            "\\idotsint": "\\int\\!\\cdots\\!\\int",
           },
-        ]);
+          ...(typeof markdownOption.tex === "object" ? markdownOption.tex : {}),
+        });
       if (presentationEnable) markdownIt.use(presentation);
     },
 
