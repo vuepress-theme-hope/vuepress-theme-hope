@@ -48,10 +48,6 @@
     "balloon-css": "^1.2.0",
     "vuepress-plugin-reading-time2": "2.0.0-alpha.0"
   },
-  "devDependencies": {
-    "rollup": "2.51.0",
-    "vuepress": "2.0.0-beta.17"
-  },
   "publishConfig": {
     "access": "public"
   }

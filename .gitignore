@@ -3,6 +3,7 @@ node_modules/
 
 # Dist files
 packages/*/client/
+packages/*/lib/
 packages/*/node/
 packages/theme/layouts/
 packages/theme/styles/

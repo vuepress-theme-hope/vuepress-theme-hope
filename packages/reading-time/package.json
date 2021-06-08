@@ -37,9 +37,6 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.0"
   },
-  "devDependencies": {
-    "rollup": "2.51.0"
-  },
   "publishConfig": {
     "access": "public"
   }
