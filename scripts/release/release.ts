@@ -9,14 +9,14 @@ import { sync } from "./sync";
 import type { Answers } from "./version";
 
 export const release = async (): Promise<void> => {
-  const buildSpinner = ora("Building project");
+  const buildSpinner = ora("Building project").start();
 
   await execa("yarn", ["run", "clean"]);
   await execa("yarn", ["run", "build"]);
 
   buildSpinner.succeed();
 
-  ora().info(`Current version: ${green(currentVersion)}`);
+  ora(`Current version: ${green(currentVersion)}`).info();
 
   const bumps: ReleaseType[] = [
     "prerelease",
@@ -69,7 +69,7 @@ export const release = async (): Promise<void> => {
   ]);
 
   if (confirm === "N") {
-    ora().fail(red("Release canceled."));
+    ora(red("Release canceled.")).fail();
     return;
   }
 
@@ -82,7 +82,7 @@ export const release = async (): Promise<void> => {
     "https://registry.npmjs.org/",
   ];
 
-  const publishSpinner = ora("Publishing");
+  const publishSpinner = ora("Publishing").start();
 
   await execa(require.resolve("lerna/cli"), releaseArguments, {
     stdio: "inherit",
@@ -90,15 +90,15 @@ export const release = async (): Promise<void> => {
 
   publishSpinner.succeed();
 
-  const taobaoSpinner = ora("Syncing npm.taobao.org");
+  const taobaoSpinner = ora("Syncing npm.taobao.org").start();
 
   await sync();
   taobaoSpinner.succeed();
 
-  const changelogSpinner = ora("Generating changelog");
+  const changelogSpinner = ora("Generating changelog").start();
 
   await execa("yarn", ["run", "changelog"]);
   changelogSpinner.succeed();
 
-  ora().succeed("Release complete");
+  ora("Release complete").succeed();
 };
