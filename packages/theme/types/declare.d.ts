@@ -23,6 +23,12 @@ declare module "@BlogInfo" {
   export default vue;
 }
 
+declare module "@BloggerInfo" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 declare module "@BlogPage" {
   import vue from "vue";
 

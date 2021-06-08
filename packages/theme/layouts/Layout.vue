@@ -36,7 +36,6 @@
     </template>
 
     <template #sidebar-bottom>
-      <BlogInfo v-if="$frontmatter.blog && $themeConfig.blog !== false" />
       <slot name="sidebar-bottom">
         <SidebarBottom />
         <Content slot-key="sidebar-bottom" />

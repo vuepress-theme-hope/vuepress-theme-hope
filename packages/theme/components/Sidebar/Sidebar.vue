@@ -14,6 +14,8 @@
     <SidebarLinks :depth="0" :items="items" />
 
     <slot name="bottom" />
+
+    <BlogInfo v-if="$frontmatter.blog && $themeConfig.blog !== false" />
   </aside>
 </template>
 

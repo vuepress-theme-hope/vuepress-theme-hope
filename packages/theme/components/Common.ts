@@ -10,7 +10,14 @@ import throttle from "lodash.throttle";
 
 import type { SidebarItem, SidebarHeader } from "@theme/util/sidebar";
 
-@Component({ components: { PageFooter, Password, Sidebar, Navbar } })
+@Component({
+  components: {
+    Navbar,
+    PageFooter,
+    Password,
+    Sidebar,
+  },
+})
 export default class Common extends Mixins(GlobalEncryptMixin) {
   @Prop({ type: Boolean, default: true })
   private readonly navbar!: boolean;

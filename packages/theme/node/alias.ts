@@ -37,6 +37,9 @@ export const getAlias = (
     "@BlogInfo": blogEnabled
       ? resolve(__dirname, "../components/Blog/BlogInfo.vue")
       : noopModule,
+    "@BloggerInfo": blogEnabled
+      ? resolve(__dirname, "../components/Blog/BloggerInfo.vue")
+      : noopModule,
     "@BlogHome": blogEnabled
       ? resolve(__dirname, "../components/Blog/BlogHome.vue")
       : noopModule,
