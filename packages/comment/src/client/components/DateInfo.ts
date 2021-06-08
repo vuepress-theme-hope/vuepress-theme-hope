@@ -14,11 +14,11 @@ export default defineComponent({
   setup() {
     const routeLocale = useRouteLocale();
     const page = usePageData<{
-      git: { createTimeStamp: number | undefined };
+      git?: { createTimeStamp?: number };
     }>();
 
     const date = computed(() => {
-      const { createTimeStamp } = page.value.git;
+      const { createTimeStamp } = page.value.git || {};
 
       return (
         useDate(

@@ -1,17 +1,19 @@
 import {
-  getImageMineType,
+  getAuthor,
+  getCategory,
   isAbsoluteUrl,
   isUrl,
+} from "@mr-hope/vuepress-shared";
+import {
+  getImageMineType,
   resolveHTML,
+  removeTemplate,
   resolveUrl,
 } from "./utils";
 
-import {
-  BaseThemeConfig,
-  getAuthor,
-  getCategory,
-} from "@mr-hope/vuepress-shared";
+import type { BaseThemeConfig } from "@mr-hope/vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import type { Feed } from "./feed";
 import type {
   FeedAuthor,
@@ -113,31 +115,35 @@ export class FeedPage {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { date, time = date } = this.$page.frontmatter;
 
-    return time && time instanceof Date ? time : undefined;
+    const { createdTime } =
+      (
+        this.$page as Page & {
+          git?: GitData;
+        }
+      ).git || {};
+
+    return time && time instanceof Date
+      ? time
+      : createdTime
+      ? new Date(createdTime)
+      : undefined;
   }
 
   get lastUpdated(): Date {
-    const lastUpdatedTimeStamp = (
-      this.$page as Page & {
-        lastUpdatedTime: number;
-      }
-    ).lastUpdatedTime;
+    const { updatedTime } =
+      (
+        this.$page as Page & {
+          git?: GitData;
+        }
+      ).git || {};
 
-    return lastUpdatedTimeStamp ? new Date(lastUpdatedTimeStamp) : new Date();
+    return updatedTime ? new Date(updatedTime) : new Date();
   }
 
   get content(): string {
     if (this.feedOption.content) return this.feedOption.content;
 
-    // TODO: Support this
-    // // eslint-disable-next-line no-underscore-dangle
-    // const { html } = this.app.markdown.render(
-    //   this.page?._strippedContent || ""
-    // );
-
-    // return resolveHTML(html);
-
-    return this.page.content;
+    return resolveHTML(removeTemplate(this.page.componentFileContent));
   }
 
   get image(): string | undefined {
@@ -146,29 +152,29 @@ export class FeedPage {
     if (banner) {
       if (isAbsoluteUrl(banner))
         return resolveUrl(this.options.hostname, this.app.options.base, banner);
+
       if (isUrl(banner)) return banner;
     }
 
     if (cover) {
       if (isAbsoluteUrl(cover))
         return resolveUrl(this.options.hostname, this.app.options.base, cover);
+
       if (isUrl(cover)) return cover;
     }
 
-    // TODO: Support page image
-    // const result = /!\[.*?\]\((.*?)\)/iu.exec(
-    //   this.page?._strippedContent || ""
-    // );
+    const result = /!\[.*?\]\((.*?)\)/iu.exec(this.page.content);
 
-    // if (result) {
-    //   if (isAbsoluteUrl(result[1]))
-    //     return resolveUrl(
-    //       this.options.hostname,
-    //       this.app.options.base,
-    //       result[1]
-    //     );
-    //   if (isUrl(result[1])) return result[1];
-    // }
+    if (result) {
+      if (isAbsoluteUrl(result[1]))
+        return resolveUrl(
+          this.options.hostname,
+          this.app.options.base,
+          result[1]
+        );
+
+      if (isUrl(result[1])) return result[1];
+    }
 
     return undefined;
   }

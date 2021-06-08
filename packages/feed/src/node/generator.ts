@@ -1,10 +1,10 @@
+import { load, success } from "@mr-hope/vuepress-shared";
 import { cyan } from "chalk";
 import { relative } from "path";
 import { outputFile } from "fs-extra";
 import { Feed } from "./feed";
 import { getOutput } from "./options";
 import { FeedPage } from "./page";
-import { wait, success } from "./utils";
 
 import type { App, Page } from "@vuepress/core";
 import type { FeedOptions, FeedInitOptions } from "./types";
@@ -40,7 +40,7 @@ export class FeedGenerator {
       }
     }
 
-    success(`added ${cyan(`${count} page(s)`)} as feed item(s)`);
+    success(`added ${cyan(`${count} page(s)`)} as feed item(s)`, "Feed");
   }
 
   async generateFeed(): Promise<void> {
@@ -49,7 +49,7 @@ export class FeedGenerator {
 
     this.addPages();
 
-    wait("Generating Feed...");
+    load("Generating Feed...", "Feed");
 
     // generate atom files
     if (output.atom.enable) {
@@ -60,7 +60,8 @@ export class FeedGenerator {
       success(
         `Atom feed file generated and saved to ${cyan(
           relative(__dirname, filePath)
-        )}`
+        )}`,
+        "Feed"
       );
     }
 
@@ -73,7 +74,8 @@ export class FeedGenerator {
       success(
         `JSON feed file generated and saved to ${cyan(
           relative(__dirname, filePath)
-        )}`
+        )}`,
+        "Feed"
       );
     }
 
@@ -86,7 +88,8 @@ export class FeedGenerator {
       success(
         `RSS feed file generated and saved to ${cyan(
           relative(__dirname, filePath)
-        )}`
+        )}`,
+        "Feed"
       );
     }
   }

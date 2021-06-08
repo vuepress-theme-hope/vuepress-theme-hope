@@ -1,5 +1,6 @@
+import { encodeCDATA, encodeXML, isUrl } from "@mr-hope/vuepress-shared";
 import * as convert from "xml-js";
-import { encodeCDATA, encodeXML, generator, isUrl } from "../utils";
+import { generator } from "../utils";
 
 import type { Feed } from "../feed";
 import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../types";
