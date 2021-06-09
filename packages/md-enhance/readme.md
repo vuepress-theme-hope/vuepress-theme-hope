@@ -13,7 +13,7 @@
 
 Markdown enhancement plugin📄 / Markdown 增强插件 📄
 
-## [Official Docs](https://vuepress-md-enhance.mrhope.site/) | [官方文档](https://vuepress-md-enhance.mrhope.site/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/md-enhance/) | [官方文档](https://vuepress-theme-hope.github.io/md-enhance/zh/)
 
 ## Install / 安装
 
