@@ -1,5 +1,6 @@
 import execa = require("execa");
-import { black, cyan, green, red } from "chalk";
+import ora = require("ora");
+import { green, red } from "chalk";
 import { prompt } from "inquirer";
 import { ReleaseType, inc } from "semver";
 import { version as currentVersion } from "../../lerna.json";
@@ -8,11 +9,14 @@ import { sync } from "./sync";
 import type { Answers } from "./version";
 
 export const release = async (): Promise<void> => {
-  console.log(black.bgYellow("wait"), "Building project...");
+  const buildSpinner = ora("Building project").start();
+
   await execa("yarn", ["run", "clean"]);
   await execa("yarn", ["run", "build"]);
 
-  console.log(`Current version: ${green(currentVersion)}`);
+  buildSpinner.succeed();
+
+  ora(`Current version: ${green(currentVersion)}`).info();
 
   const bumps: ReleaseType[] = [
     "patch",
@@ -64,7 +68,10 @@ export const release = async (): Promise<void> => {
     },
   ]);
 
-  if (confirm === "N") return console.log(red("Release canceled."));
+  if (confirm === "N") {
+    ora(red("Release canceled.")).fail();
+    return;
+  }
 
   const releaseArguments = [
     "publish",
@@ -75,19 +82,19 @@ export const release = async (): Promise<void> => {
     "https://registry.npmjs.org/",
   ];
 
-  console.log(cyan(`lerna ${releaseArguments.join(" ")}`));
-
   await execa(require.resolve("lerna/cli"), releaseArguments, {
     stdio: "inherit",
   });
 
-  console.log(black.bgYellow("wait"), "Syncing npm.taobao.org...");
+  const taobaoSpinner = ora("Syncing npm.taobao.org").start();
 
   await sync();
+  taobaoSpinner.succeed();
 
-  console.log(black.bgYellow("wait"), "Generating changelog...");
+  const changelogSpinner = ora("Generating changelog").start();
 
   await execa("yarn", ["run", "changelog"]);
+  changelogSpinner.succeed();
 
-  console.log(green("Release complete"));
+  ora("Release complete").succeed();
 };
