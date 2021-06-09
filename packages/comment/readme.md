@@ -27,6 +27,6 @@ yarn add -D @mr-hope/vuepress-plugin-comment
 
 ## Feature / 特性
 
-Support both valine and vssue.
+Support waline, vssue and valine.
 
-支持 valine 和 vssue。
+支持 waline， vssue 和 valine。
