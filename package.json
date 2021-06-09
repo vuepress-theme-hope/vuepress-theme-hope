@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "cross-env mode=production lerna run build --stream",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "clean": "lerna run clean --stream",
     "commit": "npx git-cz",
     "copy": "lerna run copy --stream",
@@ -105,6 +106,7 @@
     "@vue/eslint-config-typescript": "7.0.0",
     "babel-jest": "27.0.2",
     "concurrently": "6.2.0",
+    "conventional-changelog-cli": "^2.1.1",
     "cpx2": "3.0.0",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
