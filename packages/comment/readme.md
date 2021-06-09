@@ -27,6 +27,9 @@ yarn add -D vuepress-plugin-comment2
 
 ## Feature / 特性
 
-Support both valine and vssue.
+Support Waline.
 
-支持 valine 和 vssue。
+## Migration from V1
+
+- valine service is removed
+- new option `hint` controlling whether a popup hint is disaplayed when page-info item is hovered

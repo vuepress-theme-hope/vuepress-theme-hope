@@ -26,3 +26,9 @@ Or
 ```bash
 yarn add -D vuepress-plugin-md-enhance
 ```
+
+## Migration from V1 / 从 V1 迁移
+
+- `imageFix` option → removed
+
+  Links has been fixed in V2

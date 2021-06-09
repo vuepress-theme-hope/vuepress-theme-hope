@@ -22,3 +22,7 @@ Or
 ```bash
 yarn add -D vuepress-plugin-photo-swipe
 ```
+
+## Migration from V1
+
+- new `delay` option
