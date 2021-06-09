@@ -2,7 +2,7 @@
 
 // footnote anchor fix
 .footnotes .footnotes-list .footnote-item {
-  margin-top: calc(- var(--navbar-height));
+  margin-top: calc(0rem - var(--navbar-height));
   padding-top: calc(var(--navbar-height) + 0.5rem);
 
   & > p {
@@ -12,7 +12,7 @@
 
 .footnote-ref {
   position: relative;
-  margin-top: calc(- var(--navbar-height) - 0.5rem);
+  margin-top: calc(0rem - var(--navbar-height) - 0.5rem);
   padding-top: calc(var(--navbar-height) + 0.5rem);
 
   .footnote-anchor {

@@ -31,6 +31,11 @@ input[type="checkbox"].task-list-item-checkbox {
       background-color: var(--accent-color);
       border-color: var(--accent-color);
       background-color: var(--accent-color);
+
+      #{config.$darkSelecter} & {
+        border-color: var(--accent-color);
+        background-color: var(--accent-color);
+      }
     }
 
     &::before {

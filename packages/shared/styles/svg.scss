@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-@function svg-url($svg) {
+@function encode-svg($svg) {
   $encoded: "";
   $slice: 2000;
   $index: 0;
@@ -26,7 +26,7 @@
 }
 
 @mixin background-svg($svg) {
-  background-image: svg-url($svg);
+  background-image: encode-svg($svg);
 }
 
 @function str-replace($string, $search, $replace: "") {
