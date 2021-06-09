@@ -6,6 +6,7 @@
     "allowUnusedLabels": false,
     "alwaysStrict": false,
     "baseUrl": "./",
+    "checkJs": false,
     "diagnostics": false,
     "downlevelIteration": false,
     "experimentalDecorators": true,
@@ -32,6 +33,7 @@
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
   }
 }
