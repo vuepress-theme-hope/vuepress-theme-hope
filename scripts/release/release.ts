@@ -82,13 +82,9 @@ export const release = async (): Promise<void> => {
     "https://registry.npmjs.org/",
   ];
 
-  const publishSpinner = ora("Publishing").start();
-
   await execa(require.resolve("lerna/cli"), releaseArguments, {
     stdio: "inherit",
   });
-
-  publishSpinner.succeed();
 
   const taobaoSpinner = ora("Syncing npm.taobao.org").start();
 
