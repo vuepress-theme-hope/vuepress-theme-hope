@@ -1,4 +1,4 @@
-import { getDate } from "../src/shared/utils/date";
+import { getDate } from "../../src/shared/utils/date";
 
 const getCurrentDate = (date: Date): Date =>
   new Date(date.getTime() + new Date().getTimezoneOffset() * 60 * 1000);

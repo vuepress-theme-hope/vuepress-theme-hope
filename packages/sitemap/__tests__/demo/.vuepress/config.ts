@@ -3,6 +3,7 @@ import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 const config: UserConfig<DefaultThemeOptions> = {
   base: process.env.VuePress_BASE || "/",
+  bundler: process.env.BUNDLER ?? "@vuepress/webpack",
 
   title: "Sitemap",
 
@@ -20,8 +21,6 @@ const config: UserConfig<DefaultThemeOptions> = {
       },
     ],
   ],
-
-  dest: "./dist",
 
   locales: {
     "/": {

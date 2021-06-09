@@ -6,6 +6,7 @@ const config: UserConfig<DefaultThemeOptions> = {
 
   title: "Copy Code",
   description: "VuePress 的复制代码插件",
+  bundler: process.env.BUNDLER ?? "@vuepress/webpack",
 
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],

@@ -1,4 +1,4 @@
-import { deepAssign, deepAssignReverse } from "../src/shared/utils/assign";
+import { deepAssign, deepAssignReverse } from "../../src/shared/utils/assign";
 
 describe("deepassign", () => {
   it("simple assign", () => {

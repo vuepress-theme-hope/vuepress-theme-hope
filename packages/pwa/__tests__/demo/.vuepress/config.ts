@@ -3,7 +3,7 @@ import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 const config: UserConfig<DefaultThemeOptions> = {
   base: process.env.VuePress_BASE || "/",
-  dest: "./dist",
+  bundler: process.env.BUNDLER ?? "@vuepress/webpack",
 
   locales: {
     "/": {

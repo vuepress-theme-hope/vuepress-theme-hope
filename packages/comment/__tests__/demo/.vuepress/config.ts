@@ -9,7 +9,7 @@ const config: UserConfig<DefaultThemeOptions> = {
 
   description: "Comment Plugin for VuePress",
 
-  dest: "./dist",
+  bundler: process.env.BUNDLER ?? "@vuepress/webpack",
 
   theme: path.resolve(__dirname, "./theme"),
 
