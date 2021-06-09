@@ -70,9 +70,7 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
       MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {
         ...codeDemoDefaultSetting,
-        ...(typeof markdownOption.demo === "boolean"
-          ? {}
-          : markdownOption.demo),
+        ...(typeof markdownOption.demo === "object" ? markdownOption.demo : {}),
       },
       MERMAID_OPTIONS:
         typeof markdownOption.mermaid === "object"

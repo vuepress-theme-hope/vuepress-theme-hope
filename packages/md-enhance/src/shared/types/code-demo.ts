@@ -54,7 +54,7 @@ export interface CodeDemoGlobalOptions {
   /**
    * Vue lib address
    *
-   * @default "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"
+   * @default "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js"
    */
   vue: string;
   /**
