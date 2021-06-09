@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-palette",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "description": "Palette plugin for vuepress-theme-hope and its plugins",
   "keywords": [
     "vuepress-plugin",
@@ -42,7 +42,7 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.0"
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"
