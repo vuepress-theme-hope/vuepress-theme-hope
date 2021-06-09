@@ -60,7 +60,7 @@ import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import type { HopeThemePageFrontmatter } from "../../shared";
 import Home from "../components/Home.vue";
 import Page from "../components/Page.vue";
-import Navbar from "../components/navbar/Navbar.vue";
+import Navbar from "@Navbar";
 import Sidebar from "../components/sidebar/Sidebar.vue";
 import {
   useScrollPromise,

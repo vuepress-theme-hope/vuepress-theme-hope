@@ -26,8 +26,22 @@ export default [
       "vue-router",
     ],
   }),
+  ...rollupVue("client/components/navbar/Navbar.vue", {
+    copy: [["client/components/navbar/styles", "client/components/navbar"]],
+    external: [
+      "@mr-hope/vuepress-shared/client",
+      "@vuepress/client",
+      "@vuepress/plugin-theme-data/lib/client",
+      "@vuepress/shared",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupVue("client/layouts/Layout.vue", {
     external: [
+      "@Navbar",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",

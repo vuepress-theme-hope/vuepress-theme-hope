@@ -1,54 +1,69 @@
+@use '@hope/config';
+@use '@mr-hope/vuepress-shared/styles/wrapper';
+@use 'fonts/crimson.css';
+
 html,
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--c-bg);
+  background: var(--bg-color);
   transition: background-color ease 0.3s;
 }
 
 body {
+  min-height: 100vh;
+
+  color: var(--text-color);
+  font-display: optional;
   font-family: var(--font-family);
+  font-size: 16px;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  color: var(--c-text);
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
   font-weight: 500;
-  color: var(--c-text-accent);
+  color: var(--accent-color);
   text-decoration: none;
 }
 
 p a code {
   font-weight: 400;
-  color: var(--c-text-accent);
+  color: var(--accent-color);
 }
 
 kbd {
-  font-family: var(--font-family-code);
-  background: var(--c-bg-lighter);
-  border: solid 0.15rem var(--c-border-dark);
-  border-bottom: solid 0.25rem var(--c-border-dark);
-  border-radius: 0.15rem;
   padding: 0 0.15em;
+  border: solid 0.15rem var(--grey14);
+  border-bottom: solid 0.25rem var(--grey14);
+  border-radius: 0.15rem;
+
+  background: var(--bg-color-light);
+
+  font-family: var(--font-family-code);
 }
 
 code {
-  font-family: var(--font-family-code);
-  color: var(--c-text-lighter);
-  padding: 0.25rem 0.5rem;
   margin: 0;
-  font-size: 0.85em;
-  background-color: var(--c-bg-light);
+  padding: 0.25rem 0.5rem;
   border-radius: 3px;
+  background: rgba(127, 127, 127, 0.12);
+  color: var(--text-lighter);
+  font-family: var(--font-family-code);
+  font-size: 0.85em;
   overflow-wrap: break-word;
+
+  #{config.$darkSelecter} & {
+    background: var(--grey12);
+  }
 }
 
 blockquote {
   font-size: 1rem;
-  color: var(--c-text-quote);
-  border-left: 0.2rem solid var(--c-border-dark);
+  color: var(--light-grey);
+  border-left: 0.2rem solid var(--grey14);
   margin: 1rem 0;
   padding: 0.25rem 0 0.25rem 1rem;
 
@@ -72,8 +87,26 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
+
+  // TODO: newly added
+  #{config.$contentClass}:not(.custom) > & {
+    margin-top: calc(0.5rem - var(--navbar-height));
+    padding-top: calc(var(--navbar-height) + 1rem);
+    margin-bottom: 0.5rem;
+
+    &:first-child {
+      margin-top: -3rem;
+      margin-bottom: 1rem;
+
+      + p,
+      + pre,
+      + .custom-block {
+        margin-top: 2rem;
+      }
+    }
+  }
 
   &:hover .header-anchor {
     opacity: 1;
@@ -81,29 +114,13 @@ h6 {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 h2 {
   font-size: 1.65rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid var(--c-border);
-}
-
-h3 {
-  font-size: 1.35rem;
-}
-
-h4 {
-  font-size: 1.15rem;
-}
-
-h5 {
-  font-size: 1.05rem;
-}
-
-h6 {
-  font-size: 1rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 a.header-anchor {
@@ -113,6 +130,7 @@ a.header-anchor {
   padding-right: 0.23em;
   margin-top: 0.125em;
   opacity: 0;
+  transition: opacity 0.2s;
 
   &:hover {
     text-decoration: none;
@@ -120,6 +138,22 @@ a.header-anchor {
 
   &:focus-visible {
     opacity: 1;
+  }
+}
+
+// TODO: new
+p {
+  #{config.$contentClass}:not(.custom) > &,
+  #{config.$contentClass}:not(.custom) > ul &,
+  #{config.$contentClass}:not(.custom) > ol & {
+    text-align: justify;
+    word-break: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
+
+    @media (max-width: $mobileS) {
+      text-align: left;
+    }
   }
 }
 
@@ -131,7 +165,7 @@ ol {
 
 hr {
   border: 0;
-  border-top: 1px solid var(--c-border);
+  border-top: 1px solid var(--border-color);
 }
 
 table {
@@ -142,15 +176,59 @@ table {
 }
 
 tr {
-  border-top: 1px solid var(--c-border-dark);
+  border-top: 1px solid var(--grey14);
 
   &:nth-child(2n) {
-    background-color: var(--c-bg-light);
+    background: var(--bg-color-light);
   }
 }
 
 th,
 td {
-  border: 1px solid var(--c-border-dark);
+  border: 1px solid var(--grey14);
   padding: 0.6em 1em;
+}
+
+// TODO: new added
+.theme-dark {
+  tr:nth-child(2n) {
+    background: #252322;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--grey12);
+  }
+}
+
+#{config.$contentClass}:not(.custom) {
+  @include wrapper.wrapper;
+
+  > *:first-child {
+    margin-top: var(--navbar-height);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  // unknow container
+  p.demo {
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+#{$contentClass}.custom {
+  padding: 0;
+  margin: 0;
+
+  img {
+    max-width: 100%;
+  }
 }

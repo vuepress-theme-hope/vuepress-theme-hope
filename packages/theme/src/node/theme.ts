@@ -7,7 +7,6 @@ import {
   resolveContainerPluginOptionsForCodeGroup,
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveGitPluginOptions,
-  resolveMediumZoomPluginOptions,
 } from "./plugins";
 
 import type { Theme, ThemeConfig } from "@vuepress/core";
@@ -78,7 +77,6 @@ export const themeHope: Theme<HopeThemeOptions> = ({
         resolveContainerPluginOptionsForCodeGroupItem(themePlugins),
       ],
       ["@vuepress/git", resolveGitPluginOptions(themePlugins, localeOptions)],
-      ["@vuepress/medium-zoom", resolveMediumZoomPluginOptions(themePlugins)],
       ["@vuepress/nprogress", themePlugins.nprogress !== false],
       ["@vuepress/palette", { preset: "sass" }],
       ["@vuepress/prismjs", themePlugins.prismjs !== false],
