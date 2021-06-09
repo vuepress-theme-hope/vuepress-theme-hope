@@ -24,9 +24,9 @@ export default Vue.extend({
 
   computed: {
     utterancesEnable(): boolean {
-      const { UtterancesConfig } = this;
+      const { utterancesConfig } = this;
 
-      return Boolean(UtterancesConfig?.repo);
+      return Boolean(utterancesConfig?.repo);
     },
     commentDisplay(): boolean {
       if (!this.utterancesEnable) return false;
