@@ -24,6 +24,7 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
     define: (): Record<string, unknown> => ({
       IMAGE_CONTAINER: option.container || ".theme-default-content",
       IMAGE_SELECTOR: option.selector || ".theme-default-content :not(a) > img",
+      PHOTOSWIPE_DELAY: option.delay || 500,
       PHOTOSWIPE_OPTIONS: option.options || {},
       PHOTOSWIPE_I18N: photoSwipeI18nConfig,
     }),
@@ -32,8 +33,6 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
       __dirname,
       "../client/root-components/PhotoSwipe.js"
     ),
-
-    plugins: ["@mr-hope/palette"],
   };
 };
 

@@ -87,7 +87,7 @@
 import { useRouteLocale } from "@vuepress/client";
 import { defineComponent, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { imageContainer, i18n, options, imageSelector } from "../define";
+import { delay, imageContainer, imageSelector, i18n, options } from "../define";
 import { getImages } from "../composables";
 
 import "photoswipe/dist/photoswipe.css";
@@ -137,7 +137,7 @@ export default defineComponent({
           initPhotoSwipe();
           clearInterval(timer);
         }
-      }, 500);
+      }, delay);
     };
 
     watch(
