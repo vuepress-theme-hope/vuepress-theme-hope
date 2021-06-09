@@ -2,18 +2,10 @@ import type { UserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 const config: UserConfig<DefaultThemeOptions> = {
-  /** 部署目录 */
   base: process.env.VuePress_BASE || "/",
-
-  /** 生成网站头部的标签 */
   head: [
-    // 设置网站图标
     ["link", { rel: "icon", href: "/favicon.ico" }],
-
-    // 设置网站作者
     ["meta", { name: "author", content: "Mr.Hope" }],
-
-    // 移动端App体验
     [
       "meta",
       {
@@ -24,16 +16,20 @@ const config: UserConfig<DefaultThemeOptions> = {
     ],
   ],
 
-  /** 主题配置 */
   themeConfig: {
-    /** 网站的logo */
     logo: "/logo.svg",
+
+    navbar: [
+      { text: "Home", link: "/" },
+      { text: "Test", link: "/test.html" },
+    ],
+
+    themePlugins: {
+      mediumZoom: false,
+    },
   },
 
-  plugins: [
-    /** Markdown 增强 */
-    ["photo-swipe"],
-  ],
+  plugins: ["photo-swipe"],
 };
 
 export default config;
