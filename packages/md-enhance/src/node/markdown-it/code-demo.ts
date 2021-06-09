@@ -2,8 +2,8 @@ import { hash } from "@vuepress/utils";
 
 import type Token from "markdown-it/lib/token";
 
-export const codeDemoRender = (tokens: Token[], idx: number): string => {
-  const { nesting, info } = tokens[idx];
+export const codeDemoRender = (tokens: Token[], index: number): string => {
+  const { nesting, info } = tokens[index];
   const type = /\[(.*)\]/u.exec(info);
   const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
 
@@ -18,7 +18,7 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
   let config = "";
   const code: Record<string, string> = {};
 
-  for (let i = idx; i < tokens.length; i++) {
+  for (let i = index; i < tokens.length; i++) {
     const { type, content, info } = tokens[i];
     if (type === "container_demo_close") break;
     if (!content) continue;

@@ -210,8 +210,8 @@ export const katex = (
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
-  md.renderer.rules.inlineTex = (tokens, idx): string =>
-    katexInline(tokens[idx].content, katexOptions);
-  md.renderer.rules.blockTex = (tokens, idx): string =>
-    `${katexBlock(tokens[idx].content, katexOptions)}\n`;
+  md.renderer.rules.inlineTex = (tokens, index): string =>
+    katexInline(tokens[index].content, katexOptions);
+  md.renderer.rules.blockTex = (tokens, index): string =>
+    `${katexBlock(tokens[index].content, katexOptions)}\n`;
 };

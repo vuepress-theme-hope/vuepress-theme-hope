@@ -44,13 +44,13 @@ interface FootNoteStateCore extends StateCore {
   env: FootNoteEnv;
 }
 
-const getIDSuffix = (tokens: FootNoteToken[], idx: number): string =>
+const getIDSuffix = (tokens: FootNoteToken[], index: number): string =>
   // add suffix when mutiple id was found
-  tokens[idx].meta.subId > 0 ? `:${tokens[idx].meta.subId}` : "";
+  tokens[index].meta.subId > 0 ? `:${tokens[index].meta.subId}` : "";
 
 const renderFootnoteAnchorName = (
   tokens: FootNoteToken[],
-  idx: number,
+  index: number,
   _options: MarkdownIt.Options,
   env: FootNoteEnv
 ): string =>
@@ -59,36 +59,45 @@ const renderFootnoteAnchorName = (
     typeof env.docId === "string" ? `-${env.docId}-` : ""
   }${
     // increasing id
-    (tokens[idx].meta.id + 1).toString()
+    (tokens[index].meta.id + 1).toString()
   }`;
 
-const renderFootnoteCaption = (tokens: FootNoteToken[], idx: number): string =>
+const renderFootnoteCaption = (
+  tokens: FootNoteToken[],
+  index: number
+): string =>
   `[${
     // number
-    (tokens[idx].meta.id + 1).toString()
-  }${getIDSuffix(tokens, idx)}]`;
+    (tokens[index].meta.id + 1).toString()
+  }${getIDSuffix(tokens, index)}]`;
 
 const renderFootnoteRef = (
   tokens: FootNoteToken[],
-  idx: number,
+  index: number,
   options: MarkdownIt.Options,
   env: FootNoteEnv,
   self: Renderer
 ): string => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const id = self.rules.footnoteAnchorName!(tokens, idx, options, env, self);
+  const id = self.rules.footnoteAnchorName!(tokens, index, options, env, self);
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const caption = self.rules.footnoteCaption!(tokens, idx, options, env, self);
+  const caption = self.rules.footnoteCaption!(
+    tokens,
+    index,
+    options,
+    env,
+    self
+  );
 
   return `<sup class="footnote-ref"><a href="#footnote${id}">${caption}</a><a class="footnote-anchor" id="footnote-ref${id}${getIDSuffix(
     tokens,
-    idx
+    index
   )}" /></sup>`;
 };
 
 const renderFootnoteBlockOpen = (
   _tokens: FootNoteToken[],
-  _idx: number,
+  _index: number,
   options: MarkdownIt.Options
 ): string =>
   `${
@@ -101,7 +110,7 @@ const renderFootnoteBlockClose = (): string => "</ol>\n</section>\n";
 
 const renderFootnoteOpen = (
   tokens: FootNoteToken[],
-  idx: number,
+  index: number,
   options: MarkdownIt.Options,
   env: FootNoteEnv,
   slf: Renderer
@@ -109,17 +118,17 @@ const renderFootnoteOpen = (
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   `<li id="footnote${slf.rules.footnoteAnchorName!(
     tokens,
-    idx,
+    index,
     options,
     env,
     slf
-  )}${getIDSuffix(tokens, idx)}" class="footnote-item">`;
+  )}${getIDSuffix(tokens, index)}" class="footnote-item">`;
 
 const renderFootnoteClose = (): string => "</li>\n";
 
 const renderFootnoteAnchor = (
   tokens: FootNoteToken[],
-  idx: number,
+  index: number,
   options: MarkdownIt.Options,
   env: FootNoteEnv,
   self: Renderer
@@ -127,12 +136,12 @@ const renderFootnoteAnchor = (
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return ` <a href="#footnote-ref${self.rules.footnoteAnchorName!(
     tokens,
-    idx,
+    index,
     options,
     env,
     self
   )}${
-    getIDSuffix(tokens, idx)
+    getIDSuffix(tokens, index)
     /* ↩ with escape code to prevent display as Apple Emoji on iOS */
   }" class="footnote-backref">\u21a9\uFE0E</a>`;
 };
