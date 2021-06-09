@@ -14,7 +14,7 @@ const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
   copyCodeI18nConfig["/"] = copyCodeI18nConfig[getRootLangPath(app)];
 
   return {
-    name: "copy-code",
+    name: "copy-code2",
 
     define: (): Record<string, unknown> => ({
       CODE_COPY_OPIONS:

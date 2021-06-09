@@ -22,7 +22,7 @@ export const palettePlugin: Plugin<PaletteConfig> = (
   const userStyle = app.dir.source(style);
 
   return {
-    name: "palette",
+    name: "@mr-hope/palette",
 
     alias: {
       "@user/config": fs.pathExistsSync(userConfig) ? userConfig : emptyFile,

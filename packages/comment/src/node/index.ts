@@ -24,7 +24,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       : (themeConfig.comment as CommentOptions) || { type: "disable" };
 
   const config: PluginObject = {
-    name: "comment",
+    name: "comment2",
 
     alias: {
       "@Waline":

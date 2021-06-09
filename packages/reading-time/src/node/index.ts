@@ -15,7 +15,7 @@ const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, app) => {
   readingTimeConfig["/"] = readingTimeConfig[getRootLangPath(app)];
 
   return {
-    name: "reading-time",
+    name: "reading-time2",
 
     define: (): Record<string, unknown> => ({
       READING_TIME_I18N: readingTimeConfig,

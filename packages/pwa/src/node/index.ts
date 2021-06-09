@@ -21,7 +21,7 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   pwaI18nConfig["/"] = pwaI18nConfig[getRootLangPath(app)];
 
   const config: PluginObject = {
-    name: "pwa",
+    name: "pwa2",
 
     define: () => ({
       PWA_I18N: pwaI18nConfig,

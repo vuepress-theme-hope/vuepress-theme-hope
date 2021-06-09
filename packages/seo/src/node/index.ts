@@ -16,7 +16,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
       : (themeConfig.seo as SeoOptions) || {};
 
   return {
-    name: "seo",
+    name: "seo2",
 
     extendsPageData(page): Record<string, unknown> {
       const meta = page.frontmatter.head || [];

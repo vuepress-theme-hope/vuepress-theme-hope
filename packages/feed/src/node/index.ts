@@ -28,7 +28,7 @@ const feedPlugin: Plugin<FeedOptions> = (options, app) => {
   const pages: Page[] = [];
 
   return {
-    name: "feed",
+    name: "feed2",
 
     /**
      * Store pages for future usage

@@ -9,7 +9,7 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
   const { themeConfig } = app.options;
 
   return {
-    name: "sitemap",
+    name: "sitemap2",
 
     async onGenerated(): Promise<void> {
       const hostname = options.hostname || (themeConfig.hostname as string);
