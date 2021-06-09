@@ -111,7 +111,7 @@ export default defineComponent({
       ]).then(([photoSwipe, photoSwipeUIDefault]) => {
         void getImages(imageSelector).then((images) => {
           images.elements.forEach((image, index) => {
-            image.onclick = (): void => {
+            image.addEventListener("click", (): void => {
               const gallery = new photoSwipe.default(
                 pswp,
                 photoSwipeUIDefault.default,
@@ -124,7 +124,7 @@ export default defineComponent({
                 }
               );
               gallery.init();
-            };
+            });
           });
         });
       });
@@ -137,7 +137,7 @@ export default defineComponent({
           initPhotoSwipe();
           clearInterval(timer);
         }
-      }, 200);
+      }, 500);
     };
 
     watch(
