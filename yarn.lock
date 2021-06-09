@@ -3144,6 +3144,11 @@
     "@typescript-eslint/types" "4.26.0"
     eslint-visitor-keys "^2.0.0"
 
+"@vitejs/plugin-vue@^1.2.2":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.2.3.tgz#2e8e008b1cc3a6ad1dfbec75743c7ffd9b4872a6"
+  integrity sha512-LlnLpObkGKZ+b7dcpL4T24l13nPSHLjo+6Oc7MbZiKz5PMAUzADfNJ3EKfYIQ0l0969nxf2jp/9vsfnuJ7h6fw==
+
 "@vue/compiler-core@3.0.11":
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.0.11.tgz#5ef579e46d7b336b8735228758d1c2c505aae69a"
@@ -3248,6 +3253,26 @@
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.11.tgz#20d22dd0da7d358bb21c17f9bde8628152642c77"
   integrity sha512-b+zB8A2so8eCE0JsxjL24J7vdGl8rzPQ09hZNhystm+KqSbKcAej1A+Hbva1rCMmTTqA+hFnUSDc5kouEo0JzA==
+
+"@vuepress/bundler-vite@2.0.0-beta.17":
+  version "2.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@vuepress/bundler-vite/-/bundler-vite-2.0.0-beta.17.tgz#452e3f0bcc04a85ebeb1351406d3d42f218010a8"
+  integrity sha512-DHKr9djSKVObuF6bFQf2cttiod42eMsMNmgCAoDEDCPKx5jHAFMRy/jTyoHO7Ea6BISkKbN8nA0Z0M5iTMIFFw==
+  dependencies:
+    "@vitejs/plugin-vue" "^1.2.2"
+    "@vue/compiler-sfc" "^3.0.11"
+    "@vue/server-renderer" "^3.0.11"
+    "@vuepress/client" "2.0.0-beta.15"
+    "@vuepress/core" "2.0.0-beta.17"
+    "@vuepress/shared" "2.0.0-beta.7"
+    "@vuepress/utils" "2.0.0-beta.15"
+    autoprefixer "^10.2.5"
+    postcss "^8.3.0"
+    postcss-csso "^5.0.1"
+    rollup "^2.50.1"
+    vite "^2.3.4"
+    vue "^3.0.11"
+    vue-router "^4.0.8"
 
 "@vuepress/bundler-webpack@2.0.0-beta.17":
   version "2.0.0-beta.17"
@@ -6360,6 +6385,11 @@ esbuild@^0.11.19, esbuild@^0.11.20:
   version "0.11.23"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.11.23.tgz#c42534f632e165120671d64db67883634333b4b8"
   integrity sha512-iaiZZ9vUF5wJV8ob1tl+5aJTrwDczlvGP0JoMmnpC2B0ppiMCu8n8gmy5ZTGl5bcG081XBVn+U+jP+mPFm5T5Q==
+
+esbuild@^0.12.5:
+  version "0.12.8"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.8.tgz#ac90da77cb3bfbf49ab815200bcef7ffe1a3348f"
+  integrity sha512-sx/LwlP/SWTGsd9G4RlOPrXnIihAJ2xwBUmzoqe2nWwbXORMQWtAGNJNYLBJJqa3e9PWvVzxdrtyFZJcr7D87g==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -13035,6 +13065,13 @@ rollup@2.51.0:
   optionalDependencies:
     fsevents "~2.3.1"
 
+rollup@^2.38.5, rollup@^2.50.1:
+  version "2.51.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.51.1.tgz#87bcd4095fe79b14c9bec0edc7ffa44e4827f793"
+  integrity sha512-8xfDbAtBleXotb6qKEHWuo/jkn94a9dVqGc7Rwl3sqspCVlnCfbRek7ldhCARSi7h32H0xR4QThm1t9zHN+3uw==
+  optionalDependencies:
+    fsevents "~2.3.1"
+
 rollup@^2.43.1:
   version "2.50.6"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.50.6.tgz#24e2211caf9031081656e98a5e5e94d3b5e786e2"
@@ -14989,6 +15026,18 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
+vite@^2.3.4:
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.3.7.tgz#3023892419367465e1af1739578f8663d04243b2"
+  integrity sha512-Y0xRz11MPYu/EAvzN94+FsOZHbSvO6FUvHv127CyG7mV6oDoay2bw+g5y9wW3Blf8OY3chaz3nc/DcRe1IQ3Nw==
+  dependencies:
+    esbuild "^0.12.5"
+    postcss "^8.3.0"
+    resolve "^1.19.0"
+    rollup "^2.38.5"
+  optionalDependencies:
+    fsevents "~2.3.1"
+
 vscode-textmate@^5.2.0:
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/vscode-textmate/-/vscode-textmate-5.4.0.tgz#4b25ffc1f14ac3a90faf9a388c67a01d24257cd7"
@@ -15030,6 +15079,16 @@ vue@^3.0.11:
     "@vue/compiler-dom" "3.0.11"
     "@vue/runtime-dom" "3.0.11"
     "@vue/shared" "3.0.11"
+
+vuepress-vite@2.0.0-beta.17:
+  version "2.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/vuepress-vite/-/vuepress-vite-2.0.0-beta.17.tgz#cb9e82cb84c33df904b3206bcbaa58e4ac95f8f5"
+  integrity sha512-UvgTffoAw3LA/UtQwWECH92mS/IlFqahn24oUu22WKu5RQ62I0YuAmNCU+EOoaVu6uPcm8fFvuANz3WAQy6OtQ==
+  dependencies:
+    "@vuepress/bundler-vite" "2.0.0-beta.17"
+    "@vuepress/cli" "2.0.0-beta.17"
+    "@vuepress/core" "2.0.0-beta.17"
+    "@vuepress/theme-default" "2.0.0-beta.17"
 
 vuepress@2.0.0-beta.17:
   version "2.0.0-beta.17"

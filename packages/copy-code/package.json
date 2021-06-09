@@ -35,6 +35,9 @@
     "demo:build": "vuepress build __tests__/demo",
     "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
     "demo:serve": "vuepress dev __tests__/demo",
+    "demo:vite-build": "vuepress-vite build __tests__/demo",
+    "demo:vite-clean-serve": "vuepress-vite dev __tests__/demo --clean-cache",
+    "demo:vite-serve": "vuepress-vite dev __tests__/demo",
     "dev": "concurrently \"yarn dev:copy\" \"yarn dev:rollup\"",
     "dev:copy": "cpx src/client/styles/** client/styles -w",
     "dev:rollup": "rollup -c -w"
