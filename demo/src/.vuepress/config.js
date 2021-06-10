@@ -124,7 +124,9 @@ module.exports = config({
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
-    copyright: true,
+    copyright: {
+      status: "global",
+    },
 
     git: {
       timezone: "Asia/Shanghai",
