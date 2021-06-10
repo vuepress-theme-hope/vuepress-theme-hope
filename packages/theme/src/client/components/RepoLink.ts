@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
-import NavLink from "../NavLink.vue";
-import { useNavbarRepo } from "../../composables";
+import NavLink from "./NavLink.vue";
+import { useNavbarRepo } from "../composables";
 
 import type { VNode } from "vue";
 

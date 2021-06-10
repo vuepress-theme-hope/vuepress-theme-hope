@@ -8,12 +8,14 @@
   border: 0;
   outline: none;
   background: none;
-  color: var(--c-text);
+  color: var(--text-color);
   opacity: 0.8;
   cursor: pointer;
+
   &:hover {
     opacity: 1;
   }
+
   .icon {
     width: 1.25rem;
     height: 1.25rem;

@@ -1,0 +1,8 @@
+.sidebar .nav-link {
+  color: var(--text-color);
+
+  &:hover,
+  &.active {
+    color: var(--accent-color);
+  }
+}

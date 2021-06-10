@@ -50,7 +50,7 @@ import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
 import { useThemeLocaleData } from "../../composables";
 import LanguageDropdown from "./LanguageDropdown";
 import NavbarLinks from "./NavbarLinks";
-import RepoLink from "./RepoLink";
+import RepoLink from "../RepoLink";
 import ToggleDarkButton from "./ToggleDarkButton.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton";
 
