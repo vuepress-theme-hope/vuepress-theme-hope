@@ -6,6 +6,7 @@
     "allowUnusedLabels": false,
     "alwaysStrict": false,
     "baseUrl": "./",
+    "checkJs": false,
     "composite": true,
     "declaration": true,
     "declarationMap": false,
