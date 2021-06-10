@@ -7,12 +7,12 @@
   left: 0;
   right: 0;
   height: var(--navbar-height);
-  padding: var(--navbar-padding-v) var(--navbar-padding-h);
+  padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
   background: var(--bg-color-blur);
   box-sizing: border-box;
   box-shadow: 0 2px 8px var(--card-shadow-color);
   backdrop-filter: saturate(200%) blur(20px);
-  line-height: calc(var(--navbar-height) - var(--navbar-padding-v) * 2);
+  line-height: calc(var(--navbar-height) - var(--navbar-vertical-padding) * 2);
   transition: transform ease-in-out 0.3s, background-color ease 0.3s;
 
   @media (max-width: config.$mobile) {
@@ -20,7 +20,7 @@
     padding: var(--mobile-navbar-padding-v) var(--mobile-navbar-padding-h);
     padding-left: calc(var(--mobile-navbar-padding-h) + 2.4rem);
     line-height: calc(
-      var(--mobile-navbar-height) - var(--navbar-padding-v) * 2
+      var(--mobile-navbar-height) - var(--navbar-vertical-padding) * 2
     );
   }
 
@@ -39,16 +39,18 @@
   }
 
   .logo {
-    min-width: calc(var(--navbar-height) - var(--navbar-padding-v) * 2);
-    height: calc(var(--navbar-height) - var(--navbar-padding-v) * 2);
+    min-width: calc(var(--navbar-height) - var(--navbar-vertical-padding) * 2);
+    height: calc(var(--navbar-height) - var(--navbar-vertical-padding) * 2);
     margin-right: 0.8rem;
     vertical-align: top;
 
     @media (max-width: config.$mobile) {
       min-width: calc(
-        var(--mobile-navbar-height) - var(--navbar-padding-v) * 2
+        var(--mobile-navbar-height) - var(--navbar-vertical-padding) * 2
       );
-      height: calc(var(--mobile-navbar-height) - var(--navbar-padding-v) * 2);
+      height: calc(
+        var(--mobile-navbar-height) - var(--navbar-vertical-padding) * 2
+      );
     }
 
     &.light {
@@ -91,8 +93,8 @@
 
   .navbar-links-wrapper {
     position: absolute;
-    top: var(--navbar-padding-v);
-    right: var(--navbar-padding-h);
+    top: var(--navbar-vertical-padding);
+    right: var(--navbar-horizontal-padding);
     display: flex;
     box-sizing: border-box;
     padding-left: 1.5rem;

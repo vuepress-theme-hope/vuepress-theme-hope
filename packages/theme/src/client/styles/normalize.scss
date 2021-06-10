@@ -55,7 +55,7 @@ code {
   font-size: 0.85em;
   overflow-wrap: break-word;
 
-  #{config.$darkSelecter} & {
+  #{config.$darkSelector} & {
     background: var(--grey12);
   }
 }
@@ -151,7 +151,7 @@ p {
     hyphens: auto;
     overflow-wrap: break-word;
 
-    @media (max-width: $mobileS) {
+    @media (max-width: config.$mobileS) {
       text-align: left;
     }
   }
@@ -224,7 +224,7 @@ td {
   }
 }
 
-#{$contentClass}.custom {
+#{config.$contentClass}.custom {
   padding: 0;
   margin: 0;
 

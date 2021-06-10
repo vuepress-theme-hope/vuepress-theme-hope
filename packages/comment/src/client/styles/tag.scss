@@ -23,7 +23,7 @@
     overflow: hidden;
     transition: all 0.2s;
 
-    #{config.$darkSelecter} & {
+    #{config.$darkSelector} & {
       background: #222;
     }
 
@@ -48,7 +48,7 @@
         }
       }
 
-      #{config.$darkSelecter} & {
+      #{config.$darkSelector} & {
         color: color.scale($color, $lightness: -10%);
         border-color: color.scale($color, $lightness: - 10%);
 

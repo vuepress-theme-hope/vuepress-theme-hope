@@ -35,7 +35,7 @@
     "build": "rollup -c",
     "clean": "rimraf ./client ./node",
     "dev": "concurrently \"yarn dev:copy\" \"yarn dev:rollup\"",
-    "dev:copy": "cpx \"src/client/styles/**/*.scss\" client/styles -w",
+    "dev:copy": "cpx \"src/client/**/styles/**/*.scss\" client -w",
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 @import "../_variables";
 
 .navbar {
-  padding: var(--navbar-padding-v) var(--navbar-padding-h);
+  padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
   line-height: calc(var(--navbar-height) - 1.4rem);
 
   .logo {
@@ -24,8 +24,8 @@
     white-space: nowrap;
     font-size: 0.9rem;
     position: absolute;
-    right: var(--navbar-padding-h);
-    top: var(--navbar-padding-v);
+    right: var(--navbar-horizontal-padding);
+    top: var(--navbar-vertical-padding);
     display: flex;
 
     .search-box {

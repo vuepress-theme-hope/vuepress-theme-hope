@@ -148,7 +148,7 @@ div[class*="language-"] {
   }
 }
 
-@each $lang in $codeLang {
+@each $lang in config.$codeLang {
   div[class*="language-"].ext-#{$lang} {
     &:before {
       content: "" + $lang;

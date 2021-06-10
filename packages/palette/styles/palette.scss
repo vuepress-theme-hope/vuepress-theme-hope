@@ -22,6 +22,6 @@ $variables: map.deep-merge($defaultVariables, $userVariables);
       #{$key}: #{$value};
     }
   } @else if helper.color-islegal($value) {
-    @include helper.inject-color($key, $value, $darkSelecter: "html.dark");
+    @include helper.inject-color($key, $value, $darkSelector: "html.dark");
   }
 }

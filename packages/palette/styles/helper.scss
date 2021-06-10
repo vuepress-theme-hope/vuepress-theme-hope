@@ -109,7 +109,7 @@
   @return transparent;
 }
 
-@mixin inject-color($key, $config, $darkSelecter) {
+@mixin inject-color($key, $config, $darkSelector) {
   @if meta.type-of($config) == color {
     :root {
       #{$key}: #{$config};
@@ -119,7 +119,7 @@
       #{$key}: list.nth($config, 1);
     }
 
-    #{$darkSelecter} {
+    #{$darkSelector} {
       #{$key}: list.nth($config, 2);
     }
   } @else {
@@ -132,7 +132,7 @@
       }
 
       @if $lightColor != $darkColor {
-        #{$darkSelecter} {
+        #{$darkSelector} {
           #{$key}: #{$darkColor};
         }
       }
@@ -142,7 +142,7 @@
       $baseLight: get-color($base);
       $baseDark: get-color($base, $isDark: true);
 
-      @include inject-color($key, $base, $darkSelecter);
+      @include inject-color($key, $base, $darkSelector);
 
       @each $subkey, $amount in $scale {
         $keyName: #{$key}-#{$subkey};
@@ -152,7 +152,7 @@
         }
 
         @if $baseLight != $baseDark {
-          #{$darkSelecter} {
+          #{$darkSelector} {
             #{$keyName}: #{color.scale($baseDark, $lightness: $amount)};
           }
         }

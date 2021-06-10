@@ -34,6 +34,13 @@ export const themeHope: Theme<HopeThemeOptions> = ({
 
     layouts: path.resolve(__dirname, "../client/layouts"),
 
+    alias: {
+      "@Navbar": path.resolve(
+        __dirname,
+        "../client/components/navbar/Navbar.js"
+      ),
+    },
+
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),

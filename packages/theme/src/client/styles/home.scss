@@ -57,7 +57,7 @@
       &.light {
         display: block;
 
-        #{config.$darkSelecter} & {
+        #{config.$darkSelector} & {
           display: none;
         }
       }
@@ -65,7 +65,7 @@
       &.dark {
         display: none;
 
-        #{config.$darkSelecter} & {
+        #{config.$darkSelector} & {
           display: block;
         }
       }
@@ -215,23 +215,22 @@
         color: var(--text-color-lighter);
       }
     }
+
+    @each $color in config.$colors {
+      $index: list.index(config.$colors, $color);
+
+      .feature#{$index} {
+        background: color.scale($color, $lightness: 90%);
+
+        @debug config.$darkSelector;
+        #{config.$darkSelector} & {
+          background: color.scale($color, $lightness: -75%);
+        }
+      }
+    }
   }
 
   #{config.$contentClass} {
     padding-bottom: 1.5rem;
-  }
-}
-
-@each $color in config.$colors {
-  $index: list.index(config.$colors, $color) - 1;
-
-  .home .features .feature#{$index} {
-    & {
-      background: color.scale($color, $lightness: 90%);
-    }
-
-    #{config.$darkSelecter} & {
-      background: color.scale($color, $lightness: -75%);
-    }
   }
 }

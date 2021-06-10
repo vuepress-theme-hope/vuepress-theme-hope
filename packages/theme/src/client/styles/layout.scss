@@ -72,7 +72,7 @@
   }
 }
 
-@media (min-width: ($mobile + 1px)) {
+@media (min-width: (config.$mobile + 1px)) {
   .theme-container.no-sidebar {
     .sidebar {
       display: none;
@@ -131,7 +131,7 @@ h6 {
 }
 
 // narrow desktop / iPad
-@media (max-width: $pad) {
+@media (max-width: config.$pad) {
   .sidebar {
     font-size: 15px;
     width: var(--sidebar-width-mobile);
@@ -143,7 +143,7 @@ h6 {
 }
 
 // wide mobile
-@media (max-width: $mobile) {
+@media (max-width: config.$mobile) {
   .sidebar {
     top: 0;
     padding-top: var(--navbar-height);
@@ -171,7 +171,7 @@ h6 {
 }
 
 // narrow mobile
-@media (max-width: $mobileS) {
+@media (max-width: config.$mobileS) {
   h1 {
     font-size: 1.9rem;
   }

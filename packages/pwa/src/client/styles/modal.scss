@@ -159,7 +159,7 @@
       border-radius: 24px;
       background: #eee;
 
-      #{config.$darkSelecter} & {
+      #{config.$darkSelector} & {
         background: #444;
       }
 

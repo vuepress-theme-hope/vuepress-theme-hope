@@ -37,6 +37,6 @@ $heading4Size: 1em;
 
 @include theme("[data-theme='black']");
 
-#{config.$darkSelecter} {
+#{config.$darkSelector} {
   @include theme("[data-theme='auto']");
 }

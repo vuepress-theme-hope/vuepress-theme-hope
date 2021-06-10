@@ -45,7 +45,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
       color: var(--accent-color);
     }
 
-    #{config.$darkSelecter} & {
+    #{config.$darkSelector} & {
       background: color.scale($darkBgColor, $lightness: 10%);
       color: color.scale($darkTextColor, $lightness: 10%);
 
@@ -66,7 +66,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$infoIcon);
 
-      #{config.$darkSelecter} & {
+      #{config.$darkSelector} & {
         @include svg.background-svg(icons.$infoDarkIcon);
       }
     }
@@ -83,7 +83,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$tipIcon);
 
-      #{config.$darkSelecter} & {
+      #{config.$darkSelector} & {
         @include svg.background-svg(icons.$tipDarkIcon);
       }
     }
@@ -100,7 +100,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$warningIcon);
 
-      #{config.$darkSelecter} & {
+      #{config.$darkSelector} & {
         @include svg.background-svg(icons.$warningDarkIcon);
       }
     }
@@ -117,7 +117,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$dangerIcon);
 
-      #{config.$darkSelecter} & {
+      #{config.$darkSelector} & {
         @include svg.background-svg(icons.$dangerDarkIcon);
       }
     }
@@ -157,7 +157,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     margin-bottom: 0.5em;
   }
 
-  #{config.$darkSelecter} & {
+  #{config.$darkSelector} & {
     background: color.scale($darkBgColor, $lightness: 10%);
     color: color.scale($darkTextColor, $lightness: 10%);
 

@@ -36,6 +36,6 @@ $heading4Size: 1em;
 
 @include theme("[data-theme='white']");
 
-#{config.$lightSelecter} {
+#{config.$lightSelector} {
   @include theme("[data-theme='auto']");
 }

@@ -54,7 +54,7 @@ import RepoLink from "./RepoLink";
 import ToggleDarkButton from "./ToggleDarkButton.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton";
 
-import "styles/index.scss";
+import "./styles/index.scss";
 
 const getCssValue = (
   el: Element | null,
