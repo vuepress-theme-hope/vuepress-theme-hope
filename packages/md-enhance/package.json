@@ -51,7 +51,7 @@
     "@types/lodash.debounce": "^4.0.6",
     "@types/markdown-it": "^12.0.2",
     "@types/mermaid": "^8.2.6",
-    "@types/react": "^17.0.9",
+    "@types/react": "^17.0.11",
     "flowchart.js": "^1.15.0",
     "katex": "^0.13.11",
     "lodash.debounce": "^4.0.8",
