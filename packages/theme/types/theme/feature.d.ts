@@ -79,7 +79,7 @@ export type BlogOptions = {
    * }
    * ```
    */
-  links?: Record<BlogMedia, string>;
+  links?: Partial<Record<BlogMedia, string>>;
 
   /**
    * 是否剪裁头像为圆形形状
