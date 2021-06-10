@@ -61,7 +61,7 @@ import type { HopeThemePageFrontmatter } from "../../shared";
 import Home from "../components/Home.vue";
 import Page from "../components/Page.vue";
 import Navbar from "@Navbar";
-import Sidebar from "../components/sidebar/Sidebar.vue";
+import Sidebar from "@Sidebar";
 import {
   useScrollPromise,
   useSidebarItems,

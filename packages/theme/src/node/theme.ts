@@ -39,6 +39,10 @@ export const themeHope: Theme<HopeThemeOptions> = ({
         __dirname,
         "../client/components/navbar/Navbar.js"
       ),
+      "@Sidebar": path.resolve(
+        __dirname,
+        "../client/components/sidebar/Sidebar.js"
+      ),
     },
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),

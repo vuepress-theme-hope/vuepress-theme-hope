@@ -17,14 +17,15 @@
 
   @media (max-width: config.$mobile) {
     height: var(--mobile-navbar-height);
-    padding: var(--mobile-navbar-padding-v) var(--mobile-navbar-padding-h);
-    padding-left: calc(var(--mobile-navbar-padding-h) + 2.4rem);
+    padding: var(--mobile-navbar-vertical-padding)
+      var(--mobile-navbar-horizontal-padding);
+    padding-left: calc(var(--mobile-navbar-horizontal-padding) + 2.4rem);
     line-height: calc(
-      var(--mobile-navbar-height) - var(--navbar-vertical-padding) * 2
+      var(--mobile-navbar-height) - var(--mobile-navbar-vertical-padding) * 2
     );
   }
 
-  .hide-navbar &.can-hide {
+  .hide-navbar &.auto-hide {
     transform: translateY(-100%);
   }
 
@@ -46,10 +47,10 @@
 
     @media (max-width: config.$mobile) {
       min-width: calc(
-        var(--mobile-navbar-height) - var(--navbar-vertical-padding) * 2
+        var(--mobile-navbar-height) - var(--mobile-navbar-vertical-padding) * 2
       );
       height: calc(
-        var(--mobile-navbar-height) - var(--navbar-vertical-padding) * 2
+        var(--mobile-navbar-height) - var(--mobile-navbar-vertical-padding) * 2
       );
     }
 
@@ -69,12 +70,6 @@
       &.dark {
         display: block;
       }
-    }
-  }
-
-  .can-hide {
-    @media (max-width: config.$mobile) {
-      display: none;
     }
   }
 
@@ -103,8 +98,8 @@
 
     @media (max-width: config.$mobile) {
       padding-left: 0;
-      top: var(--mobile-navbar-padding-v);
-      right: var(--mobile-navbar-padding-h);
+      top: var(--mobile-navbar-vertical-padding);
+      right: var(--mobile-navbar-horizontal-padding);
     }
   }
 }

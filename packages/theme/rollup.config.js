@@ -5,9 +5,11 @@ export default [
     output: { format: "cjs" },
     external: ["@vuepress/utils"],
   }),
-  ...rollupVue("client/appEnhance.ts", {
-    copy: [["client/styles", "client"]],
+
+  ...rollupVue("client/components/navbar/Navbar.vue", {
+    copy: [["client/components/navbar/styles", "client/components/navbar"]],
     external: [
+      "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
@@ -17,17 +19,8 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/appSetup.ts", {
-    external: [
-      "@vuepress/client",
-      "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "vue",
-      "vue-router",
-    ],
-  }),
-  ...rollupVue("client/components/navbar/Navbar.vue", {
-    copy: [["client/components/navbar/styles", "client/components/navbar"]],
+  ...rollupVue("client/components/sidebar/Sidebar.vue", {
+    copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
     external: [
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
@@ -42,6 +35,7 @@ export default [
   ...rollupVue("client/layouts/Layout.vue", {
     external: [
       "@Navbar",
+      "@Sidebar",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
@@ -62,5 +56,26 @@ export default [
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
+  }),
+  ...rollupVue("client/appEnhance.ts", {
+    copy: [["client/styles", "client"]],
+    external: [
+      "@vuepress/client",
+      "@vuepress/plugin-theme-data/lib/client",
+      "@vuepress/shared",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupVue("client/appSetup.ts", {
+    external: [
+      "@vuepress/client",
+      "@vuepress/plugin-theme-data/lib/client",
+      "@vuepress/shared",
+      "vue",
+      "vue-router",
+    ],
   }),
 ];

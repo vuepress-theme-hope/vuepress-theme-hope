@@ -1,5 +1,5 @@
 <template>
-  <header ref="navbar" class="navbar" :class="{ 'can-hide': canHide }">
+  <header ref="navbar" class="navbar" :class="{ 'auto-hide': autoHide }">
     <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
 
     <RouterLink ref="siteBrand" :to="siteBrandLink" class="home-link">
@@ -28,7 +28,7 @@
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <slot name="before" />
 
-      <NavbarLinks class="can-hide" />
+      <NavbarLinks class="hide-in-mobile" />
 
       <LanguageDropdown />
 
@@ -120,7 +120,7 @@ export default defineComponent({
       };
     });
 
-    const canHide = computed(() => {
+    const autoHide = computed(() => {
       const autoHide = themeLocale.value.navAutoHide;
 
       return autoHide !== "none" && (autoHide === "always" || isMobile.value);
@@ -167,7 +167,7 @@ export default defineComponent({
     });
 
     return {
-      canHide,
+      autoHide,
       navbar,
       siteBrand,
       siteBrandLink,

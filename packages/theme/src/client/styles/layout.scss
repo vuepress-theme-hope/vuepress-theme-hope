@@ -58,11 +58,11 @@
 @media (max-width: config.$pad) {
   .sidebar {
     font-size: 15px;
-    width: var(--sidebar-width-mobile);
+    width: var(--mobile-sidebar-width);
   }
 
   .page {
-    padding-left: var(--sidebar-width-mobile);
+    padding-left: var(--mobile-sidebar-width);
   }
 }
 

@@ -14,7 +14,7 @@ $headings: (3, 4, 5, 6);
       font-size: 0.95em;
 
       .has-anchor & {
-        @media (min-width: $MQWide) {
+        @media (min-width: config.$wide) {
           display: none;
         }
       }
@@ -63,7 +63,7 @@ a.sidebar-link {
   }
 
   &:hover {
-    background-color: var(--bgcolor-light);
+    background-color: var(--bg-color-light);
   }
 
   &.active {
@@ -152,7 +152,7 @@ a.sidebar-link {
   user-select: none;
 
   &.clickale:hover {
-    background-color: var(--bgcolor-light);
+    background-color: var(--bg-color-light);
   }
 
   &.open {
@@ -176,7 +176,7 @@ a.sidebar-link {
 
   &.clickable {
     &:hover {
-      background-color: var(--bgcolor-light);
+      background-color: var(--bg-color-light);
     }
 
     &.active {

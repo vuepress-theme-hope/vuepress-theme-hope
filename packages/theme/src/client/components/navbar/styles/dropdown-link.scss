@@ -1,4 +1,5 @@
 @use "@mr-hope/vuepress-shared/styles/arrow";
+@use "@mr-hope/vuepress-shared/styles/reset";
 @use "@hope/config";
 
 .dropdown-wrapper {
@@ -16,20 +17,22 @@
   }
 
   .dropdown-title {
-    cursor: inherit;
+    @include reset.button;
+
     padding: inherit;
     color: var(--dark-grey);
     font-family: inherit;
     font-size: 0.9rem;
     font-weight: 500;
     line-height: 1.4rem;
-
-    &::after {
-      border-left: 5px solid var(--accent-color);
-    }
+    cursor: inherit;
 
     &:hover {
       border-color: transparent;
+    }
+
+    &::after {
+      border-left: 5px solid var(--accent-color);
     }
 
     .arrow {
@@ -48,7 +51,7 @@
     padding: 0.6rem 0;
     border: 1px solid var(--grey14);
     border-radius: 0.25rem;
-    background: var(--bgcolor);
+    background: var(--bg-color);
     box-shadow: 2px 2px 10px var(--card-shadow-color);
     text-align: left;
     white-space: nowrap;

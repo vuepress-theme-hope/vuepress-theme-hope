@@ -12,9 +12,10 @@
   text-align: center;
 
   @media (min-width: config.$mobile) {
-    .has-sidebar & {
-      padding-left: var(--sidebar-width);
-      border-left: 2rem solid transparent;
+    padding-left: calc(var(--sidebar-width) + 2rem);
+
+    .no-sidebar & {
+      padding-left: 2rem;
     }
   }
 

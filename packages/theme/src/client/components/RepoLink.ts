@@ -14,10 +14,18 @@ export default defineComponent({
 
     return (): VNode | null =>
       repo.value
-        ? h(NavLink, {
-            class: "repo-link",
-            item: repo.value,
-          })
+        ? h(
+            "div",
+            { class: "nav-links" },
+            h(
+              "div",
+              { class: "nav-item" },
+              h(NavLink, {
+                class: "repo-link",
+                item: repo.value,
+              })
+            )
+          )
         : null;
   },
 });
