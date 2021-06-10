@@ -49,13 +49,13 @@
             v-if="feature.link"
             :to="feature.link"
             class="feature link"
-            :class="{ [`feature${index % 9}`]: !isPure }"
+            :class="{ [`feature${(index % 9) + 1}`]: !isPure }"
             role="navigation"
           >
             <h2>{{ feature.title }}</h2>
             <p>{{ feature.details }}</p>
           </RouterLink>
-          <div v-else class="feature" :class="`feature${index % 9}`">
+          <div v-else class="feature" :class="`feature${(index % 9) + 1}`">
             <h2>{{ feature.title }}</h2>
             <p>{{ feature.details }}</p>
           </div>

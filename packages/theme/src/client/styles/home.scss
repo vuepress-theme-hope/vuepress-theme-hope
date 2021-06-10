@@ -222,7 +222,6 @@
       .feature#{$index} {
         background: color.scale($color, $lightness: 90%);
 
-        @debug config.$darkSelector;
         #{config.$darkSelector} & {
           background: color.scale($color, $lightness: -75%);
         }
