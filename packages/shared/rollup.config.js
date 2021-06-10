@@ -15,4 +15,7 @@ export default [
       "vue",
     ],
   }),
+  ...rollupTypescript("client/noopModule", {
+    external: ["vue"],
+  }),
 ];

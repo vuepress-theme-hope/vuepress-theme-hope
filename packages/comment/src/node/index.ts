@@ -30,7 +30,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       "@Waline":
         commentOptions.type === "waline"
           ? path.resolve(__dirname, "../client/components/Waline")
-          : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+          : "@mr-hope/vuepress-shared/client/noopModule",
     },
 
     define: () => ({
