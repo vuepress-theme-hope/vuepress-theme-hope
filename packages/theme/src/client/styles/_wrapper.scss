@@ -1,15 +1,15 @@
-@import "_variables";
+@use "@hope/config";
 
 %wrapper {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 2rem 2.5rem;
 
-  @media (max-width: $pad) {
+  @media (max-width: config.$pad) {
     padding: 2rem;
   }
 
-  @media (max-width: $mobileS) {
+  @media (max-width: config.$mobileS) {
     padding: 1.5rem;
   }
 }

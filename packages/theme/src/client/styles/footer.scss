@@ -1,4 +1,4 @@
-@import "_variables";
+@use '@hope/config';
 
 .footer-wrapper {
   display: flex;
@@ -7,11 +7,11 @@
   align-items: center;
   padding: 0.75rem 2rem;
   border-top: 1px solid var(--border-color);
-  background: var(--bgcolor);
-  color: var(--dark-color, #666);
+  background: var(--bg-color);
+  color: var(--dark-color);
   text-align: center;
 
-  @media (min-width: $mobile) {
+  @media (min-width: config.$mobile) {
     .has-sidebar & {
       padding-left: var(--sidebar-width);
       border-left: 2rem solid transparent;
@@ -19,7 +19,7 @@
   }
 
   & > div {
-    @media (max-width: $mobileS) {
+    @media (max-width: config.$mobileS) {
       width: 100%;
     }
   }
