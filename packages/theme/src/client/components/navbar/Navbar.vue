@@ -19,7 +19,7 @@
       <span
         v-if="siteBrandTitle"
         class="site-name"
-        :class="{ 'can-hide': siteBrandLogo }"
+        :class="{ 'hide-in-mobile': siteBrandLogo }"
       >
         {{ siteBrandTitle }}
       </span>
@@ -28,11 +28,7 @@
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <slot name="before" />
 
-      <NavbarLinks class="hide-in-mobile" />
-
-      <LanguageDropdown />
-
-      <RepoLink class="can-hide" />
+      <NavbarLinks />
 
       <slot name="center" />
 
@@ -48,9 +44,7 @@
 import { computed, defineComponent, onBeforeMount, onMounted, ref } from "vue";
 import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
 import { useThemeLocaleData } from "../../composables";
-import LanguageDropdown from "./LanguageDropdown";
 import NavbarLinks from "./NavbarLinks";
-import RepoLink from "../RepoLink";
 import ToggleDarkButton from "./ToggleDarkButton.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton";
 
@@ -81,9 +75,7 @@ export default defineComponent({
   name: "Navbar",
 
   components: {
-    LanguageDropdown,
     NavbarLinks,
-    RepoLink,
     ToggleDarkButton,
     ToggleSidebarButton,
   },

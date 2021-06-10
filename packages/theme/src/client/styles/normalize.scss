@@ -1,5 +1,4 @@
 @use '@hope/config';
-@use '@mr-hope/vuepress-shared/styles/wrapper';
 @use 'fonts/crimson.css';
 
 html,
@@ -90,28 +89,6 @@ h6 {
   font-weight: 500;
   line-height: 1.25;
 
-  // TODO: newly added
-  #{config.$contentClass}:not(.custom) > & {
-    margin-top: calc(0.5rem - var(--navbar-height));
-    padding-top: calc(1rem + var(--navbar-height));
-    margin-bottom: 0.5rem;
-
-    &:first-child {
-      margin-bottom: 1rem;
-
-      + p,
-      + pre,
-      + .custom-container {
-        margin-top: 2rem;
-      }
-    }
-
-    .theme-container.no-navbar & {
-      margin-top: 1.5rem;
-      padding-top: 0;
-    }
-  }
-
   &:hover .header-anchor {
     opacity: 1;
   }
@@ -145,22 +122,6 @@ a.header-anchor {
   }
 }
 
-// TODO: new
-p {
-  #{config.$contentClass}:not(.custom) > &,
-  #{config.$contentClass}:not(.custom) > ul &,
-  #{config.$contentClass}:not(.custom) > ol & {
-    text-align: justify;
-    word-break: break-word;
-    hyphens: auto;
-    overflow-wrap: break-word;
-
-    @media (max-width: config.$mobileS) {
-      text-align: left;
-    }
-  }
-}
-
 p,
 ul,
 ol {
@@ -182,8 +143,13 @@ table {
 tr {
   border-top: 1px solid var(--grey14);
 
+  // TODO: improve color
   &:nth-child(2n) {
     background: var(--bg-color-light);
+
+    #{config.$darkSelector} {
+      background: #252322;
+    }
   }
 }
 
@@ -191,48 +157,9 @@ th,
 td {
   border: 1px solid var(--grey14);
   padding: 0.6em 1em;
-}
 
-// TODO: new added
-.theme-dark {
-  tr:nth-child(2n) {
-    background: #252322;
-  }
-
-  th,
-  td {
+  // TODO: improve color
+  #{config.$darkSelector} {
     border: 1px solid var(--grey12);
-  }
-}
-
-#{config.$contentClass}:not(.custom) {
-  @include wrapper.wrapper;
-
-  > *:first-child {
-    margin-top: var(--navbar-height);
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  // unknow container
-  p.demo {
-    padding: 1rem 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-
-  img {
-    max-width: 100%;
-  }
-}
-
-#{config.$contentClass}.custom {
-  padding: 0;
-  margin: 0;
-
-  img {
-    max-width: 100%;
   }
 }

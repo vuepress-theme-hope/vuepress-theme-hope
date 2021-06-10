@@ -1,7 +1,83 @@
 @use '@hope/config';
+@use '@mr-hope/vuepress-shared/styles/wrapper';
 
 .hide-in-mobile {
   @media (max-width: config.$mobile) {
     display: none;
+  }
+}
+
+#{config.$contentClass}:not(.custom) {
+  @include wrapper.wrapper;
+
+  > {
+    *:first-child {
+      margin-top: calc(0rem - var(--navbar-height));
+    }
+
+    // heading fix
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: calc(0.5rem - var(--navbar-height));
+      padding-top: calc(1rem + var(--navbar-height));
+      margin-bottom: 0.5rem;
+
+      &:first-child {
+        margin-bottom: 1rem;
+
+        + p,
+        + pre,
+        + .custom-container {
+          margin-top: 2rem;
+        }
+      }
+
+      .theme-container.no-navbar & {
+        margin-top: 1.5rem;
+        padding-top: 0;
+      }
+    }
+
+    // paragraph fix
+    p,
+    ul p,
+    ol p {
+      text-align: justify;
+      word-break: break-word;
+      hyphens: auto;
+      overflow-wrap: break-word;
+
+      @media (max-width: config.$mobileS) {
+        text-align: left;
+      }
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // unknow container
+  p.demo {
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+#{config.$contentClass}.custom {
+  padding: 0;
+  margin: 0;
+
+  img {
+    max-width: 100%;
   }
 }
