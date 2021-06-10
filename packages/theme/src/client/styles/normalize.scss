@@ -93,18 +93,22 @@ h6 {
   // TODO: newly added
   #{config.$contentClass}:not(.custom) > & {
     margin-top: calc(0.5rem - var(--navbar-height));
-    padding-top: calc(var(--navbar-height) + 1rem);
+    padding-top: calc(1rem + var(--navbar-height));
     margin-bottom: 0.5rem;
 
     &:first-child {
-      margin-top: -3rem;
       margin-bottom: 1rem;
 
       + p,
       + pre,
-      + .custom-block {
+      + .custom-container {
         margin-top: 2rem;
       }
+    }
+
+    .theme-container.no-navbar & {
+      margin-top: 1.5rem;
+      padding-top: 0;
     }
   }
 

@@ -1,0 +1,194 @@
+@use '@hope/config';
+@use '@mr-hope/vuepress-shared/styles/arrow';
+
+$headings: (3, 4, 5, 6);
+
+.sidebar-links {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    &.sidebar-sub-headers {
+      padding-left: 1rem;
+      font-size: 0.95em;
+
+      .has-anchor & {
+        @media (min-width: $MQWide) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .sidebar > & {
+    padding: 1.5rem 0;
+
+    @media (max-width: config.$mobile) {
+      padding: 1rem 0;
+    }
+
+    & > li {
+      & > a.sidebar-link {
+        font-size: 1.1em;
+        line-height: 1.7;
+      }
+
+      &:not(:first-child) {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+}
+
+a.sidebar-link {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.35rem 1rem 0.35rem 1.25rem;
+  border-left: 0.2rem solid transparent;
+  color: var(--text-color);
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 400;
+
+  @each $heading in $headings {
+    &.heading#{$heading} {
+      padding-left: ($heading - 0.5) * 0.5rem !important;
+    }
+  }
+
+  .iconfont {
+    margin-right: 0.25em;
+  }
+
+  &:hover {
+    background-color: var(--bgcolor-light);
+  }
+
+  &.active {
+    border-left-color: var(--accent-color);
+    background-color: var(--accent-color-a15);
+    color: var(--accent-color);
+    font-weight: 500;
+
+    .iconfont {
+      color: var(--accent-color);
+    }
+  }
+
+  .sidebar-group & {
+    padding-left: 1.75rem;
+  }
+
+  .sidebar-sub-headers & {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-left: none;
+
+    &.active {
+      background-color: transparent;
+      font-weight: 500;
+    }
+  }
+}
+
+.sidebar-group {
+  .sidebar-group {
+    padding-left: 0.5em;
+  }
+
+  &:not(.collapsable) {
+    .sidebar-heading:not(.clickable) {
+      color: inherit;
+      cursor: auto;
+    }
+  }
+
+  // refine styles of nested sidebar groups
+  &.is-sub-group {
+    padding-left: 0;
+
+    & > .sidebar-heading {
+      padding-left: 1.75rem;
+      font-weight: normal;
+      line-height: 1.5;
+
+      &:not(.clickable) {
+        opacity: 0.8;
+      }
+    }
+
+    & > .sidebar-group-items {
+      padding-left: 1rem;
+
+      & > li > .sidebar-link {
+        border-left: none;
+        font-size: 0.95em;
+      }
+    }
+  }
+
+  &.depth-2 {
+    & > .sidebar-heading {
+      border-left: none;
+    }
+  }
+}
+
+.sidebar-heading {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0.35rem 1rem 0.35rem 1.25rem;
+  border-left: 0.25rem solid transparent;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  color: var(--text-color);
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  user-select: none;
+
+  &.clickale:hover {
+    background-color: var(--bgcolor-light);
+  }
+
+  &.open {
+    color: inherit;
+  }
+
+  .iconfont {
+    margin-right: 0.25em;
+  }
+
+  .title {
+    flex: 1;
+  }
+
+  .arrow {
+    @include arrow.arrow;
+
+    font-size: 1.5em;
+    float: right;
+  }
+
+  &.clickable {
+    &:hover {
+      background-color: var(--bgcolor-light);
+    }
+
+    &.active {
+      border-left-color: var(--accent-color);
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+  }
+}
+
+.sidebar-group-items {
+  font-size: 0.95em;
+  transition: height 0.1s ease-out;
+  overflow: hidden;
+}

@@ -1,6 +1,26 @@
+import { isString } from "@vuepress/shared";
 import { useResolveRouteWithRedirect } from "./resolveRouteWithRedirect";
 
-import type { NavLink } from "../../shared";
+import type {
+  NavbarItem,
+  NavbarGroup,
+  NavLink,
+  ResolvedNavbarItem,
+} from "../../shared";
+
+export const resolveNavbarItem = (
+  item: NavbarItem | NavbarGroup | string
+): ResolvedNavbarItem => {
+  if (isString(item)) return useNavLink(item);
+
+  if ((item as NavbarGroup).children)
+    return {
+      ...item,
+      children: (item as NavbarGroup).children.map(resolveNavbarItem),
+    };
+
+  return item as ResolvedNavbarItem;
+};
 
 /**
  * Resolve NavLink props from string

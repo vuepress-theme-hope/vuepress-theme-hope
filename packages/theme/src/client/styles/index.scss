@@ -1,5 +1,9 @@
 @use 'vars';
 @use 'vars-dark';
+
+@use '@vuepress/plugin-palette/style';
+@use "@hope/palette";
+
 @use 'normalize';
 
 @use 'arrow';
@@ -11,13 +15,7 @@
 @use 'home';
 @use 'layout';
 @use 'medialinks';
-// @use 'navbar';
 @use 'page';
-@use 'sidebar';
 @use 'sr-only';
 @use 'toc';
 @use 'transitions';
-
-@use '@vuepress/plugin-palette/style';
-
-@use "@hope/palette";

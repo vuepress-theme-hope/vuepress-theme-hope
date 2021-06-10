@@ -1,0 +1,103 @@
+@use '@hope/config';
+
+.sidebar {
+  position: fixed;
+  z-index: 150;
+  top: var(--navbar-height);
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: var(--sidebar-width);
+  margin: 0;
+  background: var(--bgcolor-blur);
+  box-shadow: 2px 0 4px var(--card-shadow-color);
+  backdrop-filter: saturate(200%) blur(20px);
+  font-size: 16px;
+  overflow-y: auto;
+  transition: background-color ease 0.3s;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) var(--border-color);
+
+  a {
+    display: inline-block;
+    color: var(--text-color);
+  }
+
+  .blogger-info.mobile {
+    display: none;
+  }
+
+  .blogger-info.mobile + hr {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--border);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+  }
+
+  .theme-container.no-navbar & {
+    top: 0;
+  }
+
+  @media (max-width: config.$pad) {
+    width: var(--mobile-sidebar-width);
+    font-size: 15px;
+  }
+
+  @media (min-width: (config.$mobile + 1px)) {
+    .theme-container:not(.has-sidebar) & {
+      display: none;
+    }
+  }
+
+  // wide mobile
+  @media (max-width: config.$mobile) {
+    top: var(--mobile-navbar-height);
+
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: none;
+
+    .theme-container.hide-navbar &,
+    .theme-container.no-navbar & {
+      top: 0;
+    }
+
+    .theme-container.sidebar-open & {
+      transform: translateX(0);
+      box-shadow: 2px 0 8px var(--card-shadow-color);
+    }
+
+    .blogger-info.mobile {
+      display: block;
+    }
+
+    .blogger-info.mobile + hr {
+      display: block;
+      margin-top: 16px;
+    }
+  }
+}
+
+.sidebar-mask {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+
+  .theme-container.sidebar-open & {
+    display: block;
+  }
+}

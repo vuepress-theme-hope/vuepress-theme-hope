@@ -22,6 +22,8 @@ import { useSidebarItems } from "../../composables";
 import NavLinks from "./NavLinks.vue";
 import { SidebarChild } from "./SidebarChild";
 
+import "./styles/index.scss";
+
 export default defineComponent({
   name: "Sidebar",
 
