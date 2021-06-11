@@ -106,11 +106,17 @@
   transition color 0.15s ease
   user-select none
 
-  &.clickale:hover
-    background-color var(--bgcolor-light)
-
   &.open
     color inherit
+
+  &.clickable
+    &:hover
+      background-color var(--bgcolor-light)
+
+    &.active
+      border-left-color var(--accent-color)
+      color var(--accent-color)
+      font-weight 500
 
   .iconfont
     margin-right 0.25em
@@ -122,15 +128,6 @@
     arrow()
     font-size 1.5em
     float right
-
-  &.clickable
-    &:hover
-      background-color var(--bgcolor-light)
-
-    &.active
-      border-left-color var(--accent-color)
-      color var(--accent-color)
-      font-weight 500
 
 .sidebar-group-items
   font-size 0.95em
