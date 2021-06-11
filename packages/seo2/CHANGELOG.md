@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
+
+### Bug Fixes
+
+- **seo2:** bug fixes ([c2b618f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c2b618f114a3be0b16a5c9cc9e2368fc24c5a4f5))
+
 # [2.0.0-alpha.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-06-09)
 
 **Note:** Version bump only for package vuepress-plugin-seo2

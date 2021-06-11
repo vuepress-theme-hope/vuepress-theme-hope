@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
+
+### Features
+
+- **theme:** apply more plugins to theme ([a95bbb5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a95bbb5cf152c13c5b55f6a280475c5bc3da1971))
+
 # [2.0.0-alpha.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-06-09)
 
 **Note:** Version bump only for package vuepress-plugin-feed2

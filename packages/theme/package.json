@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress-theme",
@@ -38,8 +38,8 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "@mr-hope/vuepress-plugin-components": "2.0.0-alpha.1",
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.1",
+    "@mr-hope/vuepress-plugin-components": "2.0.0-alpha.2",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.2",
     "@vuepress/client": "2.0.0-beta.15",
     "@vuepress/core": "2.0.0-beta.17",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.17",
@@ -56,14 +56,14 @@
     "sass-loader": "^12.0.0",
     "vue": "^3.0.11",
     "vue-router": "^4.0.8",
-    "vuepress-plugin-comment2": "2.0.0-alpha.1",
-    "vuepress-plugin-copy-code2": "2.0.0-alpha.1",
-    "vuepress-plugin-feed2": "2.0.0-alpha.1",
-    "vuepress-plugin-md-enhance": "2.0.0-alpha.1",
-    "vuepress-plugin-photo-swipe": "2.0.0-alpha.1",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.1",
-    "vuepress-plugin-seo2": "2.0.0-alpha.1",
-    "vuepress-plugin-sitemap2": "2.0.0-alpha.1"
+    "vuepress-plugin-comment2": "2.0.0-alpha.2",
+    "vuepress-plugin-copy-code2": "2.0.0-alpha.2",
+    "vuepress-plugin-feed2": "2.0.0-alpha.2",
+    "vuepress-plugin-md-enhance": "2.0.0-alpha.2",
+    "vuepress-plugin-photo-swipe": "2.0.0-alpha.2",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.2",
+    "vuepress-plugin-seo2": "2.0.0-alpha.2",
+    "vuepress-plugin-sitemap2": "2.0.0-alpha.2"
   },
   "publishConfig": {
     "access": "public"

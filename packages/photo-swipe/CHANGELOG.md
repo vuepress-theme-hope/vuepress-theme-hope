@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
+
+### Bug Fixes
+
+- **photo-swipe:** add missing deps ([e7462ba](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7462baf73d3376818e6d80161449189567782f3))
+
+### Features
+
+- **palette:** rebuild palette plugin ([313de83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/313de83895c621f34059516cd5e1999e5da7e982))
+- **palette:** rename as sass-palette ([728bfa0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/728bfa0c4f21d1666fcbb5ab4c3f55164fad4853))
+
 # [2.0.0-alpha.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-06-09)
 
 ### Bug Fixes

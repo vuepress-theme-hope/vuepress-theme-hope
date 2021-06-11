@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
+
+### Features
+
+- **palette:** rebuild palette plugin ([313de83](https://github.com/Mister-Hope/vuepress-theme-hope/commit/313de83895c621f34059516cd5e1999e5da7e982))
+- **palette:** rename as sass-palette ([728bfa0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/728bfa0c4f21d1666fcbb5ab4c3f55164fad4853))
+- **theme:** apply more plugins to theme ([a95bbb5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a95bbb5cf152c13c5b55f6a280475c5bc3da1971))
+
 # [2.0.0-alpha.1](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-06-09)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components

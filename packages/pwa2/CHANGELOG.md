@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
+
+### Features
+
+- **palette:** rename as sass-palette ([728bfa0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/728bfa0c4f21d1666fcbb5ab4c3f55164fad4853))
+
 # [2.0.0-alpha.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-06-09)
 
 **Note:** Version bump only for package vuepress-plugin-pwa2
