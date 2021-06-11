@@ -29,7 +29,7 @@ export const palettePlugin: Plugin<PaletteOptions> = (
       [`@${id}/palette`]: `@temp/styles/${id}-palette.scss`,
       [`@${id}/config`]: `@temp/styles/${id}-config.scss`,
       [`@${id}/helper`]: path.resolve(__dirname, "../styles/helper.scss"),
-      [`@${id}/style`]: getPath(userStyle),
+      [`@${id}/style`]: `@temp/styles/${id}-style.scss`,
     },
 
     async onPrepared(): Promise<void> {
@@ -42,6 +42,7 @@ export const palettePlugin: Plugin<PaletteOptions> = (
 @import "${getPath(userConfig)}";
 `
       );
+
       await app.writeTemp(
         `styles/${id}-palette.scss`,
         `
@@ -72,6 +73,12 @@ $variables: map.deep-merge($defaultVariables, $userVariables);
     @include helper.inject-color($key, $value, $darkSelector: "html.dark");
   }
 }
+`
+      );
+
+      await app.writeTemp(
+        `styles/${id}-style.scss`,
+        `@forward "${getPath(userStyle)}";
 `
       );
     },

@@ -34,8 +34,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
   usePalettePlugin(app, {
     id: "hope",
     config: ".vuepress/styles/config.scss",
+    defaultConfig: path.resolve(__dirname, "../client/styles/config.scss"),
+    defaultPalette: path.resolve(__dirname, "../client/styles/palette.scss"),
     palette: ".vuepress/styles/palette.scss",
-    style: ".vuepress/styles/style.scss",
+    style: ".vuepress/styles/index.scss",
   });
 
   return {
