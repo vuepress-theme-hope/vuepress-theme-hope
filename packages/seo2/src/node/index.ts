@@ -33,7 +33,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
       appendMeta(meta, metaContext, seoOption);
       if (seoOption.customHead) seoOption.customHead(meta, pageSeoInfo);
 
-      return { frontmatter: { head: meta } };
+      return { frontmatter: { ...page.frontmatter, head: meta } };
     },
 
     async onGenerated(): Promise<void> {
