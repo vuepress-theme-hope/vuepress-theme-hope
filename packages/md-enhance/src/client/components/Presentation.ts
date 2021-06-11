@@ -5,6 +5,7 @@ import { LoadingIcon } from "./loading";
 import type { RevealOptions } from "reveal.js";
 import type { PropType, VNode } from "vue";
 
+declare const MARKDOWN_DELAY: number;
 declare const REVEAL_CONFIG: Partial<RevealOptions>;
 declare const REVEAL_PLUGIN_HIGHLIGHT: boolean;
 declare const REVEAL_PLUGIN_MATH: boolean;
@@ -50,7 +51,10 @@ export default defineComponent({
         presentationElement.value.setAttribute("id", props.id);
         presentationElement.value.setAttribute("data-theme", props.theme);
 
-        const promises = [import(/* webpackChunkName: "reveal" */ "reveal.js")];
+        const promises: [Promise<void>, Promise<typeof import("reveal.js")>] = [
+          new Promise((resolve) => setTimeout(resolve, MARKDOWN_DELAY)),
+          import(/* webpackChunkName: "reveal" */ "reveal.js"),
+        ];
 
         promises.push(
           import(
@@ -114,10 +118,14 @@ export default defineComponent({
         //     )
         //   );
 
-        void Promise.all(promises).then(([revealJS, ...plugins]) => {
+        void Promise.all(promises).then(([, revealJS, ...plugins]) => {
           const reveal = new revealJS.default(
             presentationElement.value as HTMLElement,
-            { plugins: plugins.map((plugin) => plugin.default) }
+            {
+              plugins: plugins.map(
+                (plugin) => (plugin as typeof import("reveal.js")).default
+              ),
+            }
           );
 
           void reveal

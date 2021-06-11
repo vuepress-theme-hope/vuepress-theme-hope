@@ -14,6 +14,7 @@ import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
 
+declare const MARKDOWN_DELAY: number;
 declare const MERMAID_OPTIONS: MermaidAPI.Config;
 
 export default defineComponent({
@@ -29,7 +30,7 @@ export default defineComponent({
     let observer: MutationObserver;
 
     const delay = (): Promise<void> =>
-      new Promise((resolve) => setTimeout(resolve, 500));
+      new Promise((resolve) => setTimeout(resolve, MARKDOWN_DELAY));
 
     onMounted(() => {
       const code = decodeURIComponent(mermaidElement.value?.dataset.code || "");

@@ -4,6 +4,7 @@ export default [
   ...rollupTypescript("node/index", {
     external: [
       "@mr-hope/vuepress-shared",
+      "@vuepress/plugin-container",
       "@vuepress/utils",
       "markdown-it/lib/token",
       "markdown-it/lib/helpers/parse_link_label",
@@ -32,7 +33,7 @@ export default [
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/appSetup", {
-    external: ["@vuepress/client", "vue", /\.scss$/],
+    external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {

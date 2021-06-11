@@ -99,6 +99,15 @@ const config: UserConfig<DefaultThemeOptions> = {
     repoLabel: "Github",
     editLinks: true,
     editLinkText: "在 GitHub 上编辑此页",
+
+    themePlugins: {
+      container: {
+        tip: false,
+        warning: false,
+        danger: false,
+        details: false,
+      },
+    },
   },
 
   plugins: [

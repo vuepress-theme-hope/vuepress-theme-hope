@@ -2,6 +2,7 @@ import { getRootLangPath } from "@mr-hope/vuepress-shared";
 import { codeDemoRender } from "./markdown-it/code-demo";
 import { i18n } from "./i18n";
 
+import { ContainerPluginOptions } from "@vuepress/plugin-container";
 import type { App } from "@vuepress/core";
 import type { LocaleConfig } from "@vuepress/shared";
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
@@ -31,14 +32,14 @@ export const usePlugins = (
     return locale;
   };
 
-  if (markdownOption.customContainer) {
+  if (markdownOption.customContainer || markdownOption.enableAll) {
     const containers: ContainerName[] = ["info", "tip", "warning", "danger"];
 
     containers.forEach((type) =>
       app.use("@vuepress/container", {
         type,
-        defaultTitle: resolveConfig(i18n[type]),
-      })
+        locales: resolveConfig(i18n[type]),
+      } as ContainerPluginOptions)
     );
 
     app.use("@vuepress/container", {
@@ -48,15 +49,12 @@ export const usePlugins = (
           info || "Details"
         }</summary>\n`,
       after: (): string => "</details>\n",
-    });
+    } as ContainerPluginOptions);
   }
 
   if (markdownOption.align || markdownOption.enableAll)
     ["left", "center", "right", "justify"].forEach((type) =>
-      app.use("@vuepress/container", {
-        type,
-        defaultTitle: "",
-      })
+      app.use("@vuepress/container", { type } as ContainerPluginOptions)
     );
 
   if (markdownOption.demo || markdownOption.enableAll)

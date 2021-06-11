@@ -1,14 +1,17 @@
 import { defineClientAppSetup } from "@vuepress/client";
-import { onMounted, onUpdated } from "vue";
+import { onMounted, watch } from "vue";
+import { useRoute } from "vue-router";
 import { initDemo } from "./demo";
 
 import "./styles/code-demo.scss";
 
 export default defineClientAppSetup(() => {
-  onMounted(() => {
-    initDemo();
-  });
-  onUpdated(() => {
-    initDemo();
-  });
+  const route = useRoute();
+
+  watch(
+    () => route.path,
+    () => initDemo()
+  );
+
+  onMounted(() => initDemo());
 });
