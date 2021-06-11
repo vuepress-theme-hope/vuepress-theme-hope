@@ -1,4 +1,6 @@
 import { path } from "@vuepress/utils";
+import { removePalettePlugin, usePalettePlugin } from "vuepress-plugin-palette";
+
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
 import {
   resolveActiveHeaderLinksPluginOptions,
@@ -23,11 +25,14 @@ export interface HopeThemeOptions extends ThemeConfig, HopeThemeLocaleOptions {
   themePlugins?: HopeThemePluginsOptions;
 }
 
-export const themeHope: Theme<HopeThemeOptions> = ({
-  themePlugins = {},
-  ...localeOptions
-}) => {
+export const themeHope: Theme<HopeThemeOptions> = (
+  { themePlugins = {}, ...localeOptions },
+  app
+) => {
   assignDefaultLocaleOptions(localeOptions);
+
+  removePalettePlugin(app, "hope");
+  usePalettePlugin(app, { id: "hope" });
 
   return {
     name: "@vuepress/theme-default",
@@ -57,7 +62,6 @@ export const themeHope: Theme<HopeThemeOptions> = ({
     }),
 
     plugins: [
-      ["@mr-hope/palette"],
       [
         "@vuepress/active-header-links",
         resolveActiveHeaderLinksPluginOptions(themePlugins),
@@ -94,6 +98,13 @@ export const themeHope: Theme<HopeThemeOptions> = ({
       ["@vuepress/theme-data", { themeData: localeOptions }],
       ["comment2", themePlugins.comment || { type: "disable" }],
       ["md-enhance", themePlugins.mdEnhance || {}],
+      [
+        "palette",
+        {
+          defaultConfig: path.resolve(__dirname, "../client/styles/config"),
+          defaultPalette: path.resolve(__dirname, "../client/styles/palette"),
+        },
+      ],
     ],
   };
 };

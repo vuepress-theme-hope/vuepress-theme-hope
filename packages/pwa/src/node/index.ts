@@ -1,9 +1,9 @@
 import { path } from "@vuepress/utils";
 import { getRootLangPath } from "@mr-hope/vuepress-shared";
+import { usePalettePlugin } from "vuepress-plugin-palette";
 import { i18n } from "./i18n";
 import { injectLinkstoHead } from "./injectHead";
 import { genManifest } from "./genManifest";
-// import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
@@ -20,8 +20,14 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
 
   pwaI18nConfig["/"] = pwaI18nConfig[getRootLangPath(app)];
 
+  usePalettePlugin(app, {
+    id: "hope",
+    config: ".vuepress/styles/hope-config",
+    palette: ".vuepress/styles/hope-palette",
+  });
+
   const config: PluginObject = {
-    name: "pwa2",
+    name: "vuepress-plugin-pwa2",
 
     define: () => ({
       PWA_I18N: pwaI18nConfig,
@@ -49,8 +55,6 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
     onPrepared(): void {
       app.siteData.head = injectLinkstoHead(pwaOption, base, app.siteData.head);
     },
-
-    plugins: ["@mr-hope/palette"],
 
     async onGenerated(): Promise<void> {
       await genManifest(pwaOption, app);

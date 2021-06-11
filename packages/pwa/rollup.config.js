@@ -9,6 +9,7 @@ export default [
       "fs-extra",
       "workbox-build",
       "path",
+      "vuepress-plugin-palette",
     ],
   }),
   ...rollupTypescript("client/appSetup", {

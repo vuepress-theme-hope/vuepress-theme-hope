@@ -14,7 +14,7 @@ const componentPlugin: Plugin<never> = (_options, app) => {
   componentConfig["/"] = componentConfig[getRootLangPath(app)];
 
   return {
-    name: "@mr-hope/components",
+    name: "@mr-hope/vuepress-plugin-components",
 
     define: (): Record<string, unknown> => ({
       COMPONENT_I18N: componentConfig,

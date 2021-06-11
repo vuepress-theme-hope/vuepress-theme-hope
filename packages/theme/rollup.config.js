@@ -3,7 +3,7 @@ import { rollupTypescript, rollupVue } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     output: { format: "cjs" },
-    external: ["@vuepress/utils"],
+    external: ["@vuepress/utils", "vuepress-plugin-palette"],
   }),
 
   ...rollupVue("client/components/navbar/Navbar.vue", {

@@ -1,5 +1,6 @@
 import { path } from "@vuepress/utils";
 import { getRootLangPath } from "@mr-hope/vuepress-shared";
+import { usePalettePlugin } from "vuepress-plugin-palette";
 import { i18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
@@ -18,8 +19,14 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
 
   photoSwipeI18nConfig["/"] = photoSwipeI18nConfig[getRootLangPath(app)];
 
+  usePalettePlugin(app, {
+    id: "hope",
+    config: ".vuepress/styles/hope-config",
+    palette: ".vuepress/styles/hope-palette",
+  });
+
   return {
-    name: "photo-swipe",
+    name: "vuepress-plugin-photo-swipe",
 
     define: (): Record<string, unknown> => ({
       IMAGE_CONTAINER: option.container || ".theme-default-content",

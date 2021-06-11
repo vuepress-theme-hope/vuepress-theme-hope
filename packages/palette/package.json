@@ -1,13 +1,13 @@
 {
-  "name": "@mr-hope/vuepress-plugin-palette",
+  "name": "vuepress-plugin-palette",
   "version": "2.0.0-alpha.1",
-  "description": "Palette plugin for vuepress-theme-hope and its plugins",
+  "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
     "vuepress-plugin",
     "vuepress",
     "palette"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/v2/packages/@mr-hope/vuepress-plugin-palette#readme",
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/v2/packages/palette#readme",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },
