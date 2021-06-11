@@ -26,8 +26,8 @@
   >
     <slot name="before">
       <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
-      {{ item.text }}</slot
-    >
+    </slot>
+    {{ item.text }}
     <OutboundLink v-if="isBlankTarget" />
     <slot name="after" />
   </a>
@@ -52,6 +52,10 @@ export default defineComponent({
     item: {
       type: Object as PropType<NavLink>,
       required: true,
+    },
+    exact: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -112,6 +116,8 @@ export default defineComponent({
 
     // should be active when current route is a subpath of this link
     const shouldBeActiveInSubpath = computed(() => {
+      if (props.exact) return false;
+
       const localeKeys = Object.keys(site.value.locales);
       if (localeKeys.length) {
         return !localeKeys.some((key) => key === item.value.link);

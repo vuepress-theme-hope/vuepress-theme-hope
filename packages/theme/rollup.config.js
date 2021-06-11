@@ -60,6 +60,7 @@ export default [
   ...rollupVue("client/appEnhance.ts", {
     copy: [["client/styles", "client"]],
     external: [
+      "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
@@ -71,6 +72,7 @@ export default [
   }),
   ...rollupVue("client/appSetup.ts", {
     external: [
+      "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",

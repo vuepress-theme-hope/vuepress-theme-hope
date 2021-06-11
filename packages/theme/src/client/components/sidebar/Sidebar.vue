@@ -1,16 +1,10 @@
 <template>
   <aside class="sidebar">
-    <NavLinks />
+    <SidebarNavLinks />
 
     <slot name="top" />
 
-    <ul class="sidebar-links">
-      <SidebarChild
-        v-for="item in sidebarItems"
-        :key="item.link || item.text"
-        :item="item"
-      />
-    </ul>
+    <SidebarLinks :items="sidebarItems" />
 
     <slot name="bottom" />
   </aside>
@@ -19,8 +13,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useSidebarItems } from "../../composables";
-import NavLinks from "./NavLinks.vue";
-import { SidebarChild } from "./SidebarChild";
+import SidebarNavLinks from "./NavLinks.vue";
+import SidebarLinks from "./SidebarLinks";
 
 import "./styles/index.scss";
 
@@ -28,8 +22,8 @@ export default defineComponent({
   name: "Sidebar",
 
   components: {
-    NavLinks,
-    SidebarChild,
+    SidebarNavLinks,
+    SidebarLinks,
   },
 
   setup() {

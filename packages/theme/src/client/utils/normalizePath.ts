@@ -1,6 +1,15 @@
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import type { ResolvedSidebarItem } from "../../shared";
 
+export const hashRE = /#.*$/u;
+
+export const getHash = (path: string): string | void => {
+  const match = hashRE.exec(path);
+  if (match) return match[0];
+
+  return "";
+};
+
 export const normalizePath = (path: string): string =>
   decodeURI(path)
     .replace(/#.*$/, "")
@@ -12,7 +21,9 @@ export const isActiveLink = (
 ): boolean => {
   if (link === undefined) return false;
 
-  if (route.hash === link) return true;
+  const linkHash = getHash(link);
+
+  if (linkHash && route.hash !== link) return false;
 
   const currentPath = normalizePath(route.path);
   const targetPath = normalizePath(link);
