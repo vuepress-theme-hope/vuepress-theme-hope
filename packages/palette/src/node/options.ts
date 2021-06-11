@@ -12,7 +12,7 @@ export interface PaletteOptions {
    *
    * This is the file you should use to provide default values with `!default`
    *
-   * @default "vuepress-plugin-palette/styles/default/config.scss"
+   * @default "vuepress-plugin-sass-palette/styles/default/config.scss"
    */
   defaultConfig?: string;
   /**
@@ -26,7 +26,7 @@ export interface PaletteOptions {
    *
    * This is the file you should use to provide default values with `!default`
    *
-   * @default "vuepress-plugin-palette/styles/default/palette.scss"
+   * @default "vuepress-plugin-sass-palette/styles/default/palette.scss"
    */
 
   defaultPalette?: string;

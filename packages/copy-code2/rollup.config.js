@@ -6,7 +6,7 @@ export default [
       "@mr-hope/vuepress-shared",
       "@vuepress/utils",
       "vue",
-      "vuepress-plugin-palette",
+      "vuepress-plugin-sass-palette",
     ],
   }),
   ...rollupTypescript("client/appSetup", {

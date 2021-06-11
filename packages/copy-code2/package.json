@@ -45,7 +45,7 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.1",
     "balloon-css": "^1.2.0",
-    "vuepress-plugin-palette": "2.0.0-alpha.1"
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"

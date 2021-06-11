@@ -46,7 +46,7 @@
     "lodash.debounce": "^4.0.8",
     "screenfull": "^5.1.0",
     "vue-router": "^4.0.8",
-    "vuepress-plugin-palette": "2.0.0-alpha.1"
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"

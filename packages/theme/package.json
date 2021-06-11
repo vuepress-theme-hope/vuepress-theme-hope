@@ -58,7 +58,7 @@
     "vue-router": "^4.0.8",
     "vuepress-plugin-comment2": "2.0.0-alpha.1",
     "vuepress-plugin-md-enhance": "2.0.0-alpha.1",
-    "vuepress-plugin-palette": "2.0.0-alpha.1"
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"

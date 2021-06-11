@@ -8,7 +8,7 @@ export default [
       "markdown-it/lib/token",
       "markdown-it/lib/helpers/parse_link_label",
       "katex",
-      "vuepress-plugin-palette",
+      "vuepress-plugin-sass-palette",
     ],
   }),
   ...rollupTypescript("client/appEnhance", {

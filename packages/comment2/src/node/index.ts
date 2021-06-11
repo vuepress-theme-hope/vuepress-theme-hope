@@ -1,6 +1,6 @@
 import { getRootLangPath } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
-import { usePalettePlugin } from "vuepress-plugin-palette";
+import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { pageInfoI18n, walineI18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
@@ -24,11 +24,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       ? (options as CommentOptions)
       : (themeConfig.comment as CommentOptions) || { type: "disable" };
 
-  usePalettePlugin(app, {
-    id: "hope",
-    config: ".vuepress/styles/hope-config",
-    palette: ".vuepress/styles/hope-palette",
-  });
+  usePalettePlugin(app, { id: "hope" });
 
   const config: PluginObject = {
     name: "vuepress-plugin-comment2",

@@ -1,5 +1,5 @@
 import { path } from "@vuepress/utils";
-import { usePalettePlugin } from "vuepress-plugin-palette";
+import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { codeDemoDefaultSetting } from "./markdown-it/code-demo";
 import {
   footnote,
@@ -50,11 +50,7 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
       ? markdownOption.presentation.plugins
       : [];
 
-  usePalettePlugin(app, {
-    id: "hope",
-    config: ".vuepress/styles/hope-config",
-    palette: ".vuepress/styles/hope-palette",
-  });
+  usePalettePlugin(app, { id: "hope" });
 
   usePlugins(app, markdownOption);
 

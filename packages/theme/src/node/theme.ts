@@ -1,5 +1,5 @@
 import { path } from "@vuepress/utils";
-import { removePalettePlugin, usePalettePlugin } from "vuepress-plugin-palette";
+import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
 import {
@@ -31,8 +31,12 @@ export const themeHope: Theme<HopeThemeOptions> = (
 ) => {
   assignDefaultLocaleOptions(localeOptions);
 
-  removePalettePlugin(app, "hope");
-  usePalettePlugin(app, { id: "hope" });
+  usePalettePlugin(app, {
+    id: "hope",
+    config: ".vuepress/styles/config.scss",
+    palette: ".vuepress/styles/palette.scss",
+    style: ".vuepress/styles/style.scss",
+  });
 
   return {
     name: "@vuepress/theme-default",
@@ -93,18 +97,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
       ],
       ["@vuepress/git", resolveGitPluginOptions(themePlugins, localeOptions)],
       ["@vuepress/nprogress", themePlugins.nprogress !== false],
-      ["@vuepress/palette", { preset: "sass" }],
       ["@vuepress/prismjs", themePlugins.prismjs !== false],
       ["@vuepress/theme-data", { themeData: localeOptions }],
       ["comment2", themePlugins.comment || { type: "disable" }],
       ["md-enhance", themePlugins.mdEnhance || {}],
-      [
-        "palette",
-        {
-          defaultConfig: path.resolve(__dirname, "../client/styles/config"),
-          defaultPalette: path.resolve(__dirname, "../client/styles/palette"),
-        },
-      ],
     ],
   };
 };

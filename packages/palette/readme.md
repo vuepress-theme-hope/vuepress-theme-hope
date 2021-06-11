@@ -2,10 +2,10 @@
 <p align="center">
   <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
 </p>
-<h1 align="center">vuepress-plugin-palette</h1>
+<h1 align="center">vuepress-plugin-sass-palette</h1>
 <h4 align="center">VuePress style config plugin 📡 / VuePress 样式配置插件 📡</h4>
 
-[![Version](https://img.shields.io/npm/v/vuepress-plugin-palette.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-palette.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-palette?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-palette)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-sass-palette.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-sass-palette.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-sass-palette?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-sass-palette)
 
 <!-- markdownlint-restore -->
 
@@ -16,11 +16,11 @@ VuePress palette plugin 📡 / VuePress 样式配置插件 📡
 ## Usage / 使用
 
 ```bash
-npm i -D vuepress-plugin-palette
+npm i -D vuepress-plugin-sass-palette
 ```
 
 or
 
 ```bash
-yarn add -D vuepress-plugin-palette
+yarn add -D vuepress-plugin-sass-palette
 ```

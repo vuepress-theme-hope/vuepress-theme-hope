@@ -45,7 +45,7 @@
     "fs-extra": "^10.0.0",
     "mitt": "^2.1.0",
     "register-service-worker": "^1.7.2",
-    "vuepress-plugin-palette": "2.0.0-alpha.1",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.1",
     "workbox-build": "^6.1.5"
   },
   "publishConfig": {

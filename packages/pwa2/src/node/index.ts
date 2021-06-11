@@ -1,6 +1,6 @@
 import { path } from "@vuepress/utils";
 import { getRootLangPath } from "@mr-hope/vuepress-shared";
-import { usePalettePlugin } from "vuepress-plugin-palette";
+import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { i18n } from "./i18n";
 import { injectLinkstoHead } from "./injectHead";
 import { genManifest } from "./genManifest";
@@ -20,11 +20,7 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
 
   pwaI18nConfig["/"] = pwaI18nConfig[getRootLangPath(app)];
 
-  usePalettePlugin(app, {
-    id: "hope",
-    config: ".vuepress/styles/hope-config",
-    palette: ".vuepress/styles/hope-palette",
-  });
+  usePalettePlugin(app, { id: "hope" });
 
   const config: PluginObject = {
     name: "vuepress-plugin-pwa2",

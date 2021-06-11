@@ -48,8 +48,8 @@
     "@mr-hope/vuepress-shared": "2.0.0-alpha.1",
     "@waline/client": "^1.2.3",
     "balloon-css": "^1.2.0",
-    "vuepress-plugin-palette": "2.0.0-alpha.1",
-    "vuepress-plugin-reading-time2": "2.0.0-alpha.1"
+    "vuepress-plugin-reading-time2": "2.0.0-alpha.1",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"

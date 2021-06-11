@@ -1,6 +1,6 @@
 import { path } from "@vuepress/utils";
 import { getRootLangPath } from "@mr-hope/vuepress-shared";
-import { usePalettePlugin } from "vuepress-plugin-palette";
+import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { i18n } from "./i18n";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
@@ -14,11 +14,7 @@ const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
 
   copyCodeI18nConfig["/"] = copyCodeI18nConfig[getRootLangPath(app)];
 
-  usePalettePlugin(app, {
-    id: "hope",
-    config: ".vuepress/styles/hope-config",
-    palette: ".vuepress/styles/hope-palette",
-  });
+  usePalettePlugin(app, { id: "hope" });
 
   return {
     name: "vuepress-plugin-copy-code2",

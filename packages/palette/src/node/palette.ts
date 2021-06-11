@@ -8,11 +8,11 @@ const emptyFile = path.resolve(__dirname, "../styles/empty.scss");
 export const palettePlugin: Plugin<PaletteOptions> = (
   {
     id = "hope",
-    config = ".vuepress/styles/config.scss",
+    config = `.vuepress/styles/${id}-config.scss`,
     defaultConfig = path.resolve(__dirname, "../styles/default/config.scss"),
-    palette = ".vuepress/styles/palette.scss",
+    palette = `.vuepress/styles/${id}-palette.scss`,
     defaultPalette = path.resolve(__dirname, "../styles/default/palette.scss"),
-    style = ".vuepress/styles/style.scss",
+    style = `.vuepress/styles/${id}-style.scss`,
   },
   app
 ) => {
