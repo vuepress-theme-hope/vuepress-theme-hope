@@ -19,7 +19,7 @@ export default defineComponent({
     const hint = computed(() => pageInfoI18n[routeLocale.value].author);
 
     return (): VNode | null =>
-      author.value
+      author.value.length
         ? h(
             "span",
             {
