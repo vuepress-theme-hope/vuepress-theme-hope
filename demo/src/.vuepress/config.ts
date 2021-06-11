@@ -80,6 +80,8 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "docs",
 
+    hostname: "https://example.com",
+
     // theme-level locales config
     locales: {
       /**
@@ -154,28 +156,6 @@ export default defineUserConfig<HopeThemeOptions>({
 
   plugins: [
     ["@vuepress/plugin-debug"],
-    // [
-    //   "@vuepress/plugin-docsearch",
-    //   {
-    //     apiKey: "3a539aab83105f01761a137c61004d85",
-    //     indexName: "vuepress",
-    //     searchParameters: {
-    //       facetFilters: ["tags:v2"],
-    //     },
-    //     locales: {
-    //       "/zh/": {
-    //         placeholder: "搜索文档",
-    //       },
-    //     },
-    //   },
-    // ],
-    // [
-    //   "@vuepress/plugin-google-analytics",
-    //   {
-    //     // we have multiple deployments, which would use different id
-    //     id: process.env.DOCS_GA_ID,
-    //   },
-    // ],
     ["@vuepress/plugin-pwa"],
     [
       "@vuepress/plugin-pwa-popup",
@@ -195,14 +175,7 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     ],
     // only enable shiki plugin in production mode
-    [
-      "@vuepress/plugin-shiki",
-      isProd
-        ? {
-            theme: "dark-plus",
-          }
-        : false,
-    ],
+    ["@vuepress/plugin-shiki", isProd ? { theme: "dark-plus" } : false],
   ],
 
   onWatched: (_, watchers, restart) => {

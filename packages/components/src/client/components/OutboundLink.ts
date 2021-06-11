@@ -10,13 +10,13 @@ export default defineComponent({
 
   setup() {
     return (): VNode =>
-      h(
-        OutboundLink,
-        h(
-          "span",
-          { class: "sr-only" },
-          componentI18n[useRouteLocale().value].openInNewWindow
-        )
-      );
+      h(OutboundLink, {
+        default: () =>
+          h(
+            "span",
+            { class: "sr-only" },
+            componentI18n[useRouteLocale().value].openInNewWindow
+          ),
+      });
   },
 });

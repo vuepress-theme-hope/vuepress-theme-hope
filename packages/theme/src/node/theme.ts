@@ -4,8 +4,6 @@ import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
 import {
   resolveActiveHeaderLinksPluginOptions,
-  resolveContainerPluginOptions,
-  resolveContainerPluginOptionsForDetails,
   resolveContainerPluginOptionsForCodeGroup,
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveGitPluginOptions,
@@ -68,26 +66,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
     }),
 
     plugins: [
+      ["@mr-hope/components"],
       [
         "@vuepress/active-header-links",
         resolveActiveHeaderLinksPluginOptions(themePlugins),
-      ],
-      ["@vuepress/back-to-top", themePlugins.backToTop !== false],
-      [
-        "@vuepress/container",
-        resolveContainerPluginOptions(themePlugins, localeOptions, "tip"),
-      ],
-      [
-        "@vuepress/container",
-        resolveContainerPluginOptions(themePlugins, localeOptions, "warning"),
-      ],
-      [
-        "@vuepress/container",
-        resolveContainerPluginOptions(themePlugins, localeOptions, "danger"),
-      ],
-      [
-        "@vuepress/container",
-        resolveContainerPluginOptionsForDetails(themePlugins),
       ],
       [
         "@vuepress/container",
@@ -102,7 +84,12 @@ export const themeHope: Theme<HopeThemeOptions> = (
       ["@vuepress/prismjs", themePlugins.prismjs !== false],
       ["@vuepress/theme-data", { themeData: localeOptions }],
       ["comment2", themePlugins.comment || { type: "disable" }],
+      ["copy-code2", themePlugins.copyCode],
+      ["feed2", themePlugins.feed],
       ["md-enhance", themePlugins.mdEnhance || {}],
+      ["photo-swipe", themePlugins.photoSwipe],
+      ["seo2", themePlugins.seo],
+      ["sitemap2", themePlugins.sitemap],
     ],
   };
 };

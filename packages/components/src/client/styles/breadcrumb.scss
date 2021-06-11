@@ -18,7 +18,7 @@ h6 {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
     padding-top: calc(var(--navbar-height) + 1rem) !important;
 
-    @media (max-width: $mobile) {
+    @media (max-width: config.$mobile) {
       margin-top: calc(0.5rem - var(--navbar-mobile-height)) !important;
       padding-top: calc(var(--navbar-mobile-height) + 1rem) !important;
     }
@@ -35,13 +35,13 @@ h6 {
   font-size: 15px;
   z-index: 2;
 
-  @media (max-width: $pad) {
+  @media (max-width: config.$pad) {
     margin-top: calc(var(--navbar-mobile-height) + 0.5rem);
     margin-bottom: calc(0.5rem - var(--navbar-mobile-height));
     font-size: 14px;
   }
 
-  @media (max-width: $mobileS) {
+  @media (max-width: config.$mobileS) {
     font-size: 12.8px;
   }
 

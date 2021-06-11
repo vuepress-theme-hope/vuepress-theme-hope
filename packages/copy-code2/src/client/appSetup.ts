@@ -1,5 +1,6 @@
 import { defineClientAppSetup, useRouteLocale } from "@vuepress/client";
-import { onMounted, onUpdated } from "vue";
+import { onMounted, watch } from "vue";
+import { useRoute } from "vue-router";
 import { i18n, options } from "./define";
 import Message from "./message";
 
@@ -14,6 +15,7 @@ const isMobile = (): boolean =>
     : false;
 
 export default defineClientAppSetup(() => {
+  const route = useRoute();
   const routeLocale = useRouteLocale();
   let message: Message;
 
@@ -83,7 +85,7 @@ export default defineClientAppSetup(() => {
             .querySelectorAll<HTMLElement>(item)
             .forEach(insertCopyButton);
         });
-    }, 1000);
+    }, options.delay || 500);
   };
 
   onMounted(() => {
@@ -92,7 +94,10 @@ export default defineClientAppSetup(() => {
     if (!isMobile() || options.showInMobile) genCopyButton();
   });
 
-  onUpdated(() => {
-    if (!isMobile() || options.showInMobile) genCopyButton();
-  });
+  watch(
+    () => route.path,
+    () => {
+      if (!isMobile() || options.showInMobile) genCopyButton();
+    }
+  );
 });

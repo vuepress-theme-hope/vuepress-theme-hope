@@ -38,11 +38,11 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
+    "@mr-hope/vuepress-plugin-components": "2.0.0-alpha.1",
     "@mr-hope/vuepress-shared": "2.0.0-alpha.1",
     "@vuepress/client": "2.0.0-beta.15",
     "@vuepress/core": "2.0.0-beta.17",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.17",
-    "@vuepress/plugin-back-to-top": "2.0.0-beta.17",
     "@vuepress/plugin-container": "2.0.0-beta.17",
     "@vuepress/plugin-git": "2.0.0-beta.17",
     "@vuepress/plugin-medium-zoom": "2.0.0-beta.17",
@@ -57,8 +57,13 @@
     "vue": "^3.0.11",
     "vue-router": "^4.0.8",
     "vuepress-plugin-comment2": "2.0.0-alpha.1",
+    "vuepress-plugin-copy-code2": "2.0.0-alpha.1",
+    "vuepress-plugin-feed2": "2.0.0-alpha.1",
     "vuepress-plugin-md-enhance": "2.0.0-alpha.1",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.1"
+    "vuepress-plugin-photo-swipe": "2.0.0-alpha.1",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.1",
+    "vuepress-plugin-seo2": "2.0.0-alpha.1",
+    "vuepress-plugin-sitemap2": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"

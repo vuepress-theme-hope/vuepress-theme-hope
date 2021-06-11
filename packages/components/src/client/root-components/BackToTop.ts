@@ -72,24 +72,30 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h(Transition, { name: "fade" }, [
-        show.value
-          ? h(
-              "button",
-              {
-                class: "back-to-top",
-                // hint text
-                ariaLabel: componentI18n[routeLocale.value || "/"].backToTop,
-                "data-balloon-pos": "left",
-                // Scroll to top
-                onClick: () => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                  scrollTop.value = 0;
-                },
-              },
-              h(BacktoTopIcon)
-            )
-          : null,
-      ]);
+      h(
+        Transition,
+        { name: "fade" },
+        {
+          default: () =>
+            show.value
+              ? h(
+                  "button",
+                  {
+                    class: "back-to-top",
+                    // hint text
+                    ariaLabel:
+                      componentI18n[routeLocale.value || "/"].backToTop,
+                    "data-balloon-pos": "left",
+                    // Scroll to top
+                    onClick: () => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      scrollTop.value = 0;
+                    },
+                  },
+                  h(BacktoTopIcon)
+                )
+              : null,
+        }
+      );
   },
 });

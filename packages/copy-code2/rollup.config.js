@@ -15,6 +15,7 @@ export default [
       "@vuepress/client",
       "balloon-css",
       "vue",
+      "vue-router",
       /\.scss$/,
     ],
     dtsExternal: ["balloon-css", /\.scss$/],

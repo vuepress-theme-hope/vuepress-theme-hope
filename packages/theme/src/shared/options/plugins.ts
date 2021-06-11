@@ -1,5 +1,10 @@
 import type { CommentOptions } from "vuepress-plugin-comment2";
+import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
+import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
+import type { SitemapOptions } from "vuepress-plugin-sitemap2";
+import type { SeoOptions } from "vuepress-plugin-seo2";
 
 export interface HopeThemePluginsOptions {
   /**
@@ -22,6 +27,24 @@ export interface HopeThemePluginsOptions {
   comment?: CommentOptions;
 
   /**
+   * 代码复制插件配置
+   * @see http://vuepress-theme-hope.github.io/copy-code/zh/config/
+   *
+   * code copy plugin options
+   * @see http://vuepress-theme-hope.github.io/copy-code/config/
+   */
+  copyCode?: CopyCodeOptions | false;
+
+  /**
+   * Feed 插件配置
+   * @see http://vuepress-theme-hope.github.io/feed/zh/config/
+   *
+   * Feed plugin options
+   * @see http://vuepress-theme-hope.github.io/feed/config/
+   */
+  feed?: FeedOptions | false;
+
+  /**
    * Markdown 增强插件配置
    * @see http://vuepress-theme-hope.github.io/md-enhance/zh/config/
    *
@@ -29,6 +52,33 @@ export interface HopeThemePluginsOptions {
    * @see http://vuepress-theme-hope.github.io/md-enhance/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false;
+
+  /**
+   * 图片预览插件配置
+   * @see http://vuepress-theme-hope.github.io/photo-swipe/zh/config/
+   *
+   * Photo Swipe plugin options
+   * @see http://vuepress-theme-hope.github.io/photo-swipe/config/
+   */
+  photoSwipe?: PhotoSwipeOptions | false;
+
+  /**
+   * SEO 插件配置
+   * @see http://vuepress-theme-hope.github.io/seo/zh/config/
+   *
+   * SEO plugin options
+   * @see http://vuepress-theme-hope.github.io/seo/config/
+   */
+  seo?: SeoOptions | false;
+
+  /**
+   * Sitemap 插件配置
+   * @see http://vuepress-theme-hope.github.io/sitemap/zh/config/
+   *
+   * Sitemap plugin options
+   * @see http://vuepress-theme-hope.github.io/sitemap/config/
+   */
+  sitemap?: SitemapOptions | false;
 
   /**
    * Enable @vuepress/plugin-container or not

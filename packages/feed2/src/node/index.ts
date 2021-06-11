@@ -10,6 +10,8 @@ import { FeedGenerator } from "./generator";
 import type { Page, PageFrontmatter, Plugin } from "@vuepress/core";
 import type { FeedOptions, FeedPluginFrontmatter } from "./types";
 
+export * from "./types";
+
 const isFeed = (frontmatter: PageFrontmatter<FeedPluginFrontmatter>): boolean =>
   !frontmatter.home &&
   frontmatter.article !== false &&
