@@ -6,6 +6,30 @@ import type { TaskListOptions } from "./tasklist";
 /** md-enhance plugin configuration */
 export type MarkdownEnhanceOptions = Partial<{
   /**
+   * 是否启用自定义容器
+   *
+   * - info
+   * - tip
+   * - warning
+   * - danger
+   * - details
+   *
+   * ⚠ 最后四个会和默认主题冲突，且可能会覆盖默认主题的样式与行为
+   *
+   * Whether to enable custom container including
+   *
+   * - info
+   * - tip
+   * - warning
+   * - danger
+   * - details
+   *
+   * ⚠ The last 4 is conflict with default theme and may overide it.
+   *
+   * @default false
+   */
+  customContainer: boolean;
+  /**
    * 是否启用自定义对齐支持
    *
    * Whether to enable align support

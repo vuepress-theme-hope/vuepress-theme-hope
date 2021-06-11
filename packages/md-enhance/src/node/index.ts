@@ -11,7 +11,7 @@ import {
   sup,
   tasklist,
 } from "./markdown-it";
-import { resolvePlugin } from "./resolvePlugin";
+import { usePlugins } from "./usePlugins";
 
 import type { Plugin } from "@vuepress/core";
 import type { MarkdownEnhanceOptions } from "../shared";
@@ -55,6 +55,8 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
     config: ".vuepress/styles/hope-config",
     palette: ".vuepress/styles/hope-palette",
   });
+
+  usePlugins(app, markdownOption);
 
   return {
     name: "vuepress-plugin-md-enhance",
@@ -126,8 +128,6 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
         });
       if (presentationEnable) markdownIt.use(presentation);
     },
-
-    plugins: resolvePlugin(markdownOption, app),
   };
 };
 
