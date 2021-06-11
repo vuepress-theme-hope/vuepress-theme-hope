@@ -17,7 +17,6 @@
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: 1.5; // TODO: new
 
     -moz-tab-size: 4;
     tab-size: 4;
@@ -29,8 +28,6 @@
 
   /* Code blocks */
   pre[class*="language-"] {
-    padding: 1em; // TODO: new
-    margin: 0.5em 0; // TODO: new
     overflow: auto;
   }
 

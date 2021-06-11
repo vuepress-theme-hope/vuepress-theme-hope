@@ -42,7 +42,7 @@
 }
 
 .code-group__nav-tab-active {
-  border-bottom: var(--c-brand) 1px solid;
+  border-bottom: var(--accent-color) 1px solid;
 }
 
 @media (max-width: config.$mobileS) {

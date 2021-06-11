@@ -16,7 +16,7 @@
   pre,
   pre[class*="language-"] {
     line-height: 1.4;
-    padding: 1.25rem 1.5rem;
+    padding: 1rem;
     margin: 0.85rem 0;
     // TODO: removed
     // background: var(--code-bg-color);
@@ -66,7 +66,7 @@ div[class*="language-"] {
 
   .highlight-lines {
     user-select: none;
-    padding-top: 1.3rem;
+    padding-top: 1.1rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -101,9 +101,7 @@ div[class*="language-"] {
     }
 
     pre {
-      margin-left: var(--code-ln-wrapper-width);
-      // TODO: new
-      padding-left: 1rem;
+      margin-left: var(--code-ln-wrapper-width) !important;
       vertical-align: middle;
     }
 
@@ -113,7 +111,7 @@ div[class*="language-"] {
       left: 0;
       width: var(--code-ln-wrapper-width);
       text-align: center;
-      padding: 1.25rem 0;
+      padding: 1rem 0;
       // padding-top: 1.25rem;
       line-height: 1.4;
 
