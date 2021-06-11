@@ -92,6 +92,8 @@ export const themeHope: Theme<HopeThemeOptions> = ({
       ["@vuepress/palette", { preset: "sass" }],
       ["@vuepress/prismjs", themePlugins.prismjs !== false],
       ["@vuepress/theme-data", { themeData: localeOptions }],
+      ["comment2", themePlugins.comment || { type: "disable" }],
+      ["md-enhance", themePlugins.mdEnhance || {}],
     ],
   };
 };

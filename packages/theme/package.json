@@ -56,7 +56,9 @@
     "sass": "^1.34.1",
     "sass-loader": "^12.0.0",
     "vue": "^3.0.11",
-    "vue-router": "^4.0.8"
+    "vue-router": "^4.0.8",
+    "vuepress-plugin-comment2": "2.0.0-alpha.1",
+    "vuepress-plugin-md-enhance": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"

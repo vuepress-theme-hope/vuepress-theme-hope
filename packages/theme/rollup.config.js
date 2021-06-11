@@ -48,6 +48,7 @@ export default [
   }),
   ...rollupVue("client/layouts/404.vue", {
     external: [
+      "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",

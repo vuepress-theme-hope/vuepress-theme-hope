@@ -54,11 +54,11 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
 
     alias: {
       "@Mermaid": mermaidEnable
-        ? path.resolve(__dirname, "../client/components/Mermaid")
-        : "@mr-hope/vuepress-shared/client/noopModule",
+        ? path.resolve(__dirname, "../client/components/Mermaid.js")
+        : "@mr-hope/vuepress-shared/client/noopModule.js",
       "@Presentation": presentationEnable
-        ? path.resolve(__dirname, "../client/components/Presentation")
-        : "@mr-hope/vuepress-shared/client/noopModule",
+        ? path.resolve(__dirname, "../client/components/Presentation.js")
+        : "@mr-hope/vuepress-shared/client/noopModule.js",
     },
 
     define: (): Record<string, unknown> => ({

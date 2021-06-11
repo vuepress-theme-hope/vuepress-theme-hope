@@ -24,13 +24,13 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       : (themeConfig.comment as CommentOptions) || { type: "disable" };
 
   const config: PluginObject = {
-    name: "comment2",
+    name: "vuepress-plugin-comment2",
 
     alias: {
       "@Waline":
         commentOptions.type === "waline"
-          ? path.resolve(__dirname, "../client/components/Waline")
-          : "@mr-hope/vuepress-shared/client/noopModule",
+          ? path.resolve(__dirname, "../client/components/Waline.js")
+          : "@mr-hope/vuepress-shared/client/noopModule.js",
     },
 
     define: () => ({
