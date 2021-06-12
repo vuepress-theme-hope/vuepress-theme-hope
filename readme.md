@@ -14,7 +14,7 @@
 [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/15720/branches/318414/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9792&pid=15720&bid=318414)
 ![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/codeql-analysis.yml/badge.svg)
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
-![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test.yml/badge.svg)
+![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test-v2.yml/badge.svg)
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
@@ -26,20 +26,20 @@ Current branch is based on VuePress@v2, and still in W.I.P. For stable releasae 
 
 ## Details
 
-V2 will come together with VuePress@v2, with power of vite@v2 webpack@v5 and vue@v3.
+V2 will come together with _VuePress@v2_, with the power of _vite@v2_ _webpack@v5_ and _vue@v3_.
 
 V2 will be a totally rewrite including:
 
-- All the components will be rewrite with composition api in vue3
-- All the styles will be mirgate to sass
+- All the components will be rewrite with _composition api in vue3_
+- All the styles will be mirgate to _sass_
 
-Also we are going to make sure the rewrite one has a better performance (no less than 25% increasement)
+Also we are going to make sure the rewrite one has a better performance!🚀 (no less than 25% increasement)
 
 ---
 
 Here is a list of changes:
 
-> Note: All plugin name is PascalCases and without `vuepress-plugin-` prefix, you should change to `kebab-case` your self.
+> Note: All plugin names are in PascalCase and without `vuepress-plugin-` prefix, you should change to `kebab-case` and add the prefix yourself to get the correct plugin name.
 
 ## AddThis💌 ![deprecated](https://img.shields.io/badge/-deprecated-yellow)
 
@@ -69,6 +69,8 @@ Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. �
 
 - [x] Option `hint` (default `true`) for handling page info hints. ![new](https://img.shields.io/badge/-new-brightgreen)
 
+- [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
+
 ### Note
 
 Vssue is currently being dropped because vssue has not support v2 yet. We will add it back after it supports v2.
@@ -82,6 +84,8 @@ Renamed from `@mr-hope/vuepress-plugin-copy-code` to `vuepress-plugin-copy-code2
 - [x] Option `delay` (default `500`) for handling the page swtiching transition. ![new](https://img.shields.io/badge/-new-brightgreen)
 
 - [ ] Option `pure` (default `false`) for handling fancy styles. ![new](https://img.shields.io/badge/-new-brightgreen)
+
+- [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ## Feed2
 
@@ -103,7 +107,9 @@ Renamed from `@mr-hope/vuepress-plugin-feed` to `vuepress-plugin-feed2`. ⚠
 
   We are adding mermaid support, and mermaid support flowchart.
 
-- [ ] Move SlidePage layout from theme to the plugin
+- [x] Move SlidePage layout from theme to the plugin
+
+- [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ## LightGallery ![new](https://img.shields.io/badge/-new-brightgreen)
 
@@ -113,6 +119,10 @@ Renamed from `@mr-hope/vuepress-plugin-feed` to `vuepress-plugin-feed2`. ⚠
 
 Renamed from `@mr-hope/vuepress-plugin-pwa` to `vuepress-plugin-pwa2`. ⚠
 
+### Changes
+
+- [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
+
 ## PhotoSwipe ![deprecated](https://img.shields.io/badge/-deprecated-yellow)
 
 This plugin will still be under maintained, but we are going to build a better plugin using [lightGallary](https://www.lightgalleryjs.com/).
@@ -121,9 +131,13 @@ This plugin will still be under maintained, but we are going to build a better p
 
 - [x] Option `delay` (default `500`) for handling the page swtiching transition. ![new](https://img.shields.io/badge/-new-brightgreen)
 
+- [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
+
 ## ReadingTime2
 
 Renamed from `@mr-hope/vuepress-plugin-reading-time` to `vuepress-plugin-reading-time2`. ⚠
+
+- [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ## Share2 ![new](https://img.shields.io/badge/-new-brightgreen)
 
@@ -202,17 +216,20 @@ Renamed from `@mr-hope/vuepress-plugin-sitemap` to `vuepress-plugin-sitemap2`. �
 
 ## VuepressThemeHope
 
-- [ ] Pure Mode in theme and all plugins #438
+- [ ] Pure Mode in theme and all plugins #438 ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] Dim non focused area #168
+- [ ] Dim non focused area #168 ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] Code block theme config #189
+- [ ] Code block theme config #189 ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] Muti categories support
+- [ ] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] Drop fullscreen feature, or make it a optional feature (disabled by default).
+- [ ] Drop fullscreen feature, or make it a optional feature (disabled by default). ![removed](https://img.shields.io/badge/-removed-red)
 
   Most visitors do not use this feature.
 
-- [ ] Drop themecolor feature, or make it a optional feature (disabled by default) .
-      Most visitors do not use this feature.
+- [ ] Drop themecolor feature, or make it a optional feature (disabled by default). ![removed](https://img.shields.io/badge/-removed-red)
+
+  Most visitors do not use this feature.
+
+- [ ] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
