@@ -1,36 +1,32 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
+import type { MarkdownEnhanceLocaleConfig } from "../shared";
 
-export type ContainerName = "info" | "tip" | "warning" | "danger" | "detail";
-
-export const i18n: Record<ContainerName, Record<HopeLangPath, string>> = {
-  info: {
-    "/zh/": "相关信息",
-    "/en/": "Info",
-    "/de/": "Information",
-    "/vi/": "Thông tin",
+export const i18n: MarkdownEnhanceLocaleConfig = {
+  "/zh/": {
+    info: "相关信息",
+    tip: "提示",
+    warning: "注意",
+    danger: "相关信息",
+    details: "详情",
   },
-  tip: {
-    "/zh/": "提示",
-    "/en/": "Tips",
-    "/de/": "Tips",
-    "/vi/": "Tips",
+  "/en/": {
+    info: "Info",
+    tip: "Tips",
+    warning: "Note",
+    danger: "Warning",
+    details: "Details",
   },
-  warning: {
-    "/zh/": "注意",
-    "/en/": "Note",
-    "/de/": "Notiz",
-    "/vi/": "Lưu ý",
+  "/de/": {
+    info: "Information",
+    tip: "Tips",
+    warning: "Notiz",
+    danger: "Warnung",
+    details: "Details",
   },
-  danger: {
-    "/zh/": "警告",
-    "/en/": "Warning",
-    "/de/": "Warnung",
-    "/vi/": "Cẩn thận",
-  },
-  detail: {
-    "/zh/": "详情",
-    "/en/": "Detail",
-    "/de/": "Details",
-    "/vi/": "Chi tiết",
+  "/vi/": {
+    info: "Thông tin",
+    tip: "Tips",
+    warning: "Lưu ý",
+    danger: "Cẩn thận",
+    details: "Chi tiết",
   },
 };

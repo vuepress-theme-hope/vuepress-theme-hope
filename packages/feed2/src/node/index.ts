@@ -18,14 +18,14 @@ const isFeed = (frontmatter: PageFrontmatter<FeedPluginFrontmatter>): boolean =>
   (!frontmatter.feed || frontmatter.feed.enable !== false);
 
 const feedPlugin: Plugin<FeedOptions> = (options, app) => {
-  const pluginOptions = checkOptions(options, app);
+  const feedOptions = checkOptions(options, app);
 
   // plugin option is missing required field
-  if (!pluginOptions) return {};
+  if (!feedOptions) return {};
 
-  const channelOptions = getFeedChannelOption(pluginOptions, app);
-  const output = getOutput(pluginOptions.output);
-  const feedLinks = getFeedLinks(pluginOptions, output, app);
+  const channelOptions = getFeedChannelOption(feedOptions, app);
+  const output = getOutput(feedOptions.output);
+  const feedLinks = getFeedLinks(feedOptions, output, app);
 
   const pages: Page[] = [];
 
@@ -36,29 +36,29 @@ const feedPlugin: Plugin<FeedOptions> = (options, app) => {
      * Store pages for future usage
      */
     extendsPageData($page): void {
-      if (!pluginOptions.filter) pages.push($page);
+      if (!feedOptions.filter) pages.push($page);
       else if (
-        typeof pluginOptions.filter === "function" &&
-        pluginOptions.filter($page) &&
+        typeof feedOptions.filter === "function" &&
+        feedOptions.filter($page) &&
         isFeed($page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>)
       )
         pages.push($page);
     },
 
     onPrepared(): void {
-      injectLinkstoHead(pluginOptions, app);
+      injectLinkstoHead(feedOptions, app);
     },
 
     async onGenerated(): Promise<void> {
       const feedPages = (
-        typeof pluginOptions.sort === "function"
-          ? pages.sort(pluginOptions.sort)
+        typeof feedOptions.sort === "function"
+          ? pages.sort(feedOptions.sort)
           : pages
-      ).slice(0, pluginOptions.count);
+      ).slice(0, feedOptions.count);
 
       await new FeedGenerator(
         feedPages,
-        pluginOptions,
+        feedOptions,
         { channel: channelOptions, links: feedLinks },
         app
       ).generateFeed();

@@ -1,8 +1,7 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type { PageInfoI18nConfig } from "../shared";
+import type { PageInfoLocaleConfig, WalineLocaleConfig } from "../shared";
 
 /** Muti language config for Page Info */
-export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
+export const pageInfoI18n: PageInfoLocaleConfig = {
   "/zh/": {
     author: "作者🖊",
     date: "写作日期📅",
@@ -45,12 +44,20 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
   },
 };
 
-export const walineI18n: Record<HopeLangPath, string> = {
-  "/zh/": "请留言。(填写邮箱可在被回复时收到邮件提醒)",
-  "/en/":
-    "Write a comment here (Fill in the email address to receive an email notification when being replied)",
-  "/de/":
-    "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
-  "/vi/":
-    "Để lại bình luận (Điền địa chỉ email để nhận email thông báo khi được trả lời)",
+export const walineI18n: WalineLocaleConfig = {
+  "/zh/": {
+    placeholder: "请留言。(填写邮箱可在被回复时收到邮件提醒)",
+  },
+  "/en/": {
+    placeholder:
+      "Write a comment here (Fill in the email address to receive an email notification when being replied)",
+  },
+  "/de/": {
+    placeholder:
+      "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
+  },
+  "/vi/": {
+    placeholder:
+      "Để lại bình luận (Điền địa chỉ email để nhận email thông báo khi được trả lời)",
+  },
 };

@@ -1,3 +1,4 @@
+import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
 import { usePageFrontmatter, usePagesData } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
@@ -21,6 +22,8 @@ export default defineComponent({
     const themeData = useThemeData<BaseThemeConfig>();
     const pagesData = usePagesData();
     const route = useRoute();
+    const iconPrefix = useIconPrefix();
+
     const config = ref<BreadCrumbConfig[]>([]);
 
     const enable = computed<boolean>(() => {
@@ -41,12 +44,6 @@ export default defineComponent({
         enable.value &&
         ((globalEnable && pageEnable !== false) || pageEnable === true)
       );
-    });
-
-    const iconPrefix = computed<string>(() => {
-      const { iconPrefix } = themeData.value;
-
-      return iconPrefix === "" ? "" : iconPrefix || "icon-";
     });
 
     const updateConfig = async (): Promise<void> => {

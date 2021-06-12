@@ -15,7 +15,7 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
     return { name: "sitemap2" };
   }
 
-  const option =
+  const sitemapOptions =
     Object.keys(options).length > 0
       ? { ...options, hostname }
       : { ...((themeConfig.sitemap as SitemapOptions) || {}), hostname };
@@ -24,7 +24,7 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
     name: "sitemap2",
 
     async onGenerated(): Promise<void> {
-      await generateSiteMap(option, app);
+      await generateSiteMap(sitemapOptions, app);
     },
   };
 };

@@ -1,8 +1,7 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type { CopyCodeI18nConfig } from "../shared";
+import type { CopyCodeLocaleConfig } from "../shared";
 
 /** Muti language config for copy code */
-export const i18n: Record<HopeLangPath, CopyCodeI18nConfig> = {
+export const i18n: CopyCodeLocaleConfig = {
   "/zh/": {
     copy: "复制成功 🎉",
     hint: "复制代码",

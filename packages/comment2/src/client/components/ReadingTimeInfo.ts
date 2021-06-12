@@ -1,4 +1,5 @@
-import { usePageData, useRouteLocale } from "@vuepress/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { TimerIcon } from "./icons";
 import { commentOptions, pageInfoI18n, readingTimeI18n } from "../define";
@@ -12,16 +13,14 @@ export default defineComponent({
   components: { TimerIcon },
 
   setup() {
-    const routeLocale = useRouteLocale();
     const page = usePageData<{ readingTime: ReadingTime }>();
-    const { minute = "", time = "" } = readingTimeI18n[routeLocale.value] || {};
-
-    const hint = computed(() => pageInfoI18n[routeLocale.value].readingTime);
+    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
+    const readingTimeLocale = useLocaleConfig(readingTimeI18n);
 
     const readingTime = computed(() =>
       page.value.readingTime.minutes < 1
-        ? minute
-        : time.replace(
+        ? readingTimeLocale.value.minute
+        : readingTimeLocale.value.time.replace(
             "$time",
             Math.round(page.value.readingTime.minutes).toString()
           )
@@ -35,7 +34,7 @@ export default defineComponent({
               class: "reading-time-info",
               ...(commentOptions.hint !== false
                 ? {
-                    ariaLabel: hint.value,
+                    ariaLabel: pageInfoLocale.value.readingTime,
                     "data-balloon-pos": "down",
                   }
                 : {}),

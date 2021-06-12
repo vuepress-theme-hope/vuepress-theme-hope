@@ -1,5 +1,5 @@
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
 import { useBlogConfig, useTag } from "@mr-hope/vuepress-shared/client";
-import { useRouteLocale } from "@vuepress/client";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { TagIcon } from "./icons";
@@ -19,9 +19,8 @@ export default defineComponent({
   setup(props) {
     const route = useRoute();
     const router = useRouter();
-    const routeLocale = useRouteLocale();
 
-    const hint = computed(() => pageInfoI18n[routeLocale.value].tag);
+    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
 
     const items = props.tags.length ? toRef(props, "tags") : useTag();
 
@@ -38,7 +37,7 @@ export default defineComponent({
             "span",
             commentOptions.hint !== false
               ? {
-                  ariaLabel: hint.value,
+                  ariaLabel: pageInfoLocale.value.tag,
                   "data-balloon-pos": "down",
                 }
               : {},

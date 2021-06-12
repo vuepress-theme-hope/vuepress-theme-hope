@@ -1,6 +1,8 @@
-// import type { Vssue } from "vssue";
+import type { LocaleConfig } from "@vuepress/core";
 import type { WalineOptions as _WalineOptions } from "@waline/client";
-import type { PageInfoType } from "./pageInfo";
+// import type { Vssue } from "vssue";
+import type { PageInfoI18nConfig, PageInfoType } from "./pageInfo";
+import type { WalineI18nConfig } from "./waline";
 
 interface BaseCommentOptions {
   /**
@@ -35,6 +37,7 @@ interface BaseCommentOptions {
    * @default ['Author', 'PageView', 'Date', 'Category', 'Tag', 'ReadTime']
    */
   pageInfo?: PageInfoType[] | false;
+
   /**
    * 是否默认启用评论
    *
@@ -43,6 +46,7 @@ interface BaseCommentOptions {
    * @default true
    */
   comment?: boolean;
+
   /**
    * 每分钟阅读字数
    *
@@ -51,6 +55,9 @@ interface BaseCommentOptions {
    * @default 300
    */
   wordPerminute?: number;
+
+  pageInfoLocale?: LocaleConfig<PageInfoI18nConfig>;
+  walineLocale?: LocaleConfig<WalineI18nConfig>;
 }
 
 export interface WalineOptions

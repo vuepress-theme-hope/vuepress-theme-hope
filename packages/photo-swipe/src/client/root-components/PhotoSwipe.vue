@@ -24,26 +24,22 @@
 
           <button
             class="pswp__button pswp__button--close"
-            :title="i18n.close"
-            :aria-label="i18n.close"
+            :title="locales.close"
           />
 
           <button
             class="pswp__button pswp__button--share"
-            :title="i18n.share"
-            :aria-label="i18n.share"
+            :title="locales.share"
           />
 
           <button
             class="pswp__button pswp__button--fs"
-            :title="i18n.fullscreen"
-            :aria-label="i18n.fullscreen"
+            :title="locales.fullscreen"
           />
 
           <button
             class="pswp__button pswp__button--zoom"
-            :title="i18n.zoom"
-            :aria-label="i18n.zoom"
+            :title="locales.zoom"
           />
 
           <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
@@ -65,14 +61,12 @@
 
         <button
           class="pswp__button pswp__button--arrow--left"
-          :title="i18n.prev"
-          :aria-label="i18n.prev"
+          :title="locales.prev"
         />
 
         <button
           class="pswp__button pswp__button--arrow--right"
-          :title="i18n.next"
-          :aria-label="i18n.next"
+          :title="locales.next"
         />
 
         <div class="pswp__caption">
@@ -84,7 +78,7 @@
 </template>
 
 <script lang="ts">
-import { useRouteLocale } from "@vuepress/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
 import { defineComponent, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { delay, imageContainer, imageSelector, i18n, options } from "../define";
@@ -98,7 +92,7 @@ export default defineComponent({
 
   setup() {
     const route = useRoute();
-    const routeLocale = useRouteLocale();
+    const locales = useLocaleConfig(i18n);
 
     const initPhotoSwipe = (): void => {
       const pswp = document.querySelector(".pswp") as HTMLElement;
@@ -117,8 +111,7 @@ export default defineComponent({
                 photoSwipeUIDefault.default,
                 images.infos,
                 {
-                  shareButtons:
-                    i18n[routeLocale.value].buttons || i18n["/"].buttons,
+                  shareButtons: locales.value.buttons,
                   ...options,
                   index,
                 }
@@ -147,7 +140,7 @@ export default defineComponent({
 
     onMounted(() => update());
 
-    return { i18n };
+    return { locales };
   },
 });
 </script>

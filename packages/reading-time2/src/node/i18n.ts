@@ -1,8 +1,7 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type { ReadingTimeI18nConfig } from "../shared";
+import type { ReadingTimeLocaleConfig } from "../shared";
 
 /** Muti language config for reading time plugin */
-export const i18n: Record<HopeLangPath, ReadingTimeI18nConfig> = {
+export const i18n: ReadingTimeLocaleConfig = {
   "/zh/": {
     word: "约 $word 字",
     minute: "小于 1 分钟",

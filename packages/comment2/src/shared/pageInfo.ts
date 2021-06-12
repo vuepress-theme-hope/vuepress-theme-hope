@@ -1,3 +1,5 @@
+import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+
 export interface PageInfoI18nConfig {
   /** 作者 */
   author: string;
@@ -16,6 +18,8 @@ export interface PageInfoI18nConfig {
   /** 文章字数 */
   words: string;
 }
+
+export type PageInfoLocaleConfig = ResolvedLocaleConfig<PageInfoI18nConfig>;
 
 /**
  * 页面信息类型

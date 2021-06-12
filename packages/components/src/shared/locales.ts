@@ -1,3 +1,5 @@
+import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+
 export interface ComponentI18nConfig {
   /** 返回顶部文字 */
   backToTop: string;
@@ -17,3 +19,5 @@ export interface ComponentI18nConfig {
     errorText: string;
   };
 }
+
+export type ComponentLocaleConfig = ResolvedLocaleConfig<ComponentI18nConfig>;

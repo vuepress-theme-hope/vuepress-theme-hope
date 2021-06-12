@@ -13,7 +13,7 @@ export const deepAssign = <
   if (assignObjects.length === 0) return originObject as V;
 
   /** Object being merged */
-  const assignObject = assignObjects.shift() as IAnyObject;
+  const assignObject = (assignObjects.shift() as IAnyObject) || {};
 
   Object.keys(assignObject).forEach((property) => {
     if (

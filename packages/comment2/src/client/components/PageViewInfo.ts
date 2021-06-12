@@ -1,8 +1,5 @@
-import {
-  usePageFrontmatter,
-  useRouteLocale,
-  useSiteData,
-} from "@vuepress/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { usePageFrontmatter, useSiteData } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 import { EyeIcon, FireIcon } from "./icons";
@@ -20,10 +17,8 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     const site = useSiteData();
-    const routeLocale = useRouteLocale();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
-
-    const hint = computed(() => pageInfoI18n[routeLocale.value].views);
+    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
 
     const pageViews = ref(0);
     const enablePageViews = computed(() =>
@@ -71,7 +66,7 @@ export default defineComponent({
               class: "visitor-info",
               ...(commentOptions.hint !== false
                 ? {
-                    ariaLabel: hint.value,
+                    ariaLabel: pageInfoLocale.value.views,
                     "data-balloon-pos": "down",
                   }
                 : {}),

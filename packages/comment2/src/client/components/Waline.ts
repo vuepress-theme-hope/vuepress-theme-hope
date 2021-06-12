@@ -1,9 +1,8 @@
-import { useThemePluginConfig } from "@mr-hope/vuepress-shared/client";
 import {
-  usePageFrontmatter,
-  usePageLang,
-  useRouteLocale,
-} from "@vuepress/client";
+  useLocaleConfig,
+  useThemePluginConfig,
+} from "@mr-hope/vuepress-shared/client";
+import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import Waline from "@waline/client";
 import {
   computed,
@@ -28,11 +27,11 @@ export default defineComponent({
   name: "Waline",
 
   setup() {
-    const lang = usePageLang();
-    const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const route = useRoute();
-    const routeLocale = useRouteLocale();
+    const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
+    const lang = usePageLang();
     const themePluginConfig = useThemePluginConfig<WalineOptions>("comment");
+    const walineLocale = useLocaleConfig(walineI18n);
 
     let timeout: NodeJS.Timeout | null = null;
     let waline: WalineInstance | null = null;
@@ -63,7 +62,7 @@ export default defineComponent({
       waline = Waline({
         lang: lang.value === "zh-CN" ? "zh-CN" : "en",
         locale: {
-          placeholder: walineI18n[routeLocale.value],
+          ...walineLocale.value,
           ...(walineOption.locale || {}),
         },
         emoji: [
@@ -99,7 +98,7 @@ export default defineComponent({
                 waline.update({
                   lang: lang.value === "zh-CN" ? "zh-CN" : "en",
                   locale: {
-                    placeholder: walineI18n[routeLocale.value],
+                    ...walineLocale.value,
                     ...(walineOption.locale || {}),
                   },
                 });

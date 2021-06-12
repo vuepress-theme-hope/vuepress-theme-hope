@@ -1,19 +1,14 @@
 import { path } from "@vuepress/utils";
-import { getRootLangPath } from "@mr-hope/vuepress-shared";
+import { getLocales } from "@mr-hope/vuepress-shared";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { i18n } from "./i18n";
 
-import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { Plugin } from "@vuepress/core";
-import type { CopyCodeI18nConfig, CopyCodeOptions } from "../shared";
+import type { CopyCodeOptions } from "../shared";
 
 export * from "../shared";
 
 const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
-  const copyCodeI18nConfig = i18n as PluginI18nConvert<CopyCodeI18nConfig>;
-
-  copyCodeI18nConfig["/"] = copyCodeI18nConfig[getRootLangPath(app)];
-
   usePalettePlugin(app, { id: "hope" });
 
   return {
@@ -24,7 +19,7 @@ const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
         Object.keys(options).length > 0
           ? options
           : app.options.themeConfig.copyCode || {},
-      CODE_COPY_I18N: copyCodeI18nConfig,
+      CODE_COPY_I18N: getLocales(app, i18n, options.locale),
     }),
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),

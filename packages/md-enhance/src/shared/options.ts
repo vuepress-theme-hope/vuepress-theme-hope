@@ -1,5 +1,7 @@
+import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { CodeDemoGlobalOptions } from "./code-demo";
+import type { MarkdownEnhanceI18nConfig } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
 
@@ -129,4 +131,5 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default 500
    */
   delay?: number;
+  locales?: LocaleConfig<MarkdownEnhanceI18nConfig>;
 }>;

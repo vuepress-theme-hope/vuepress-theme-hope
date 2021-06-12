@@ -10,7 +10,7 @@ export * from "./types";
 export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
   const { base, themeConfig } = app.options;
 
-  const seoOption =
+  const seoOptions =
     Object.keys(options).length > 0
       ? options
       : (themeConfig.seo as SeoOptions) || {};
@@ -26,12 +26,12 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
         permalink: resolvePagePermalink(page),
       };
       const metaContext: SeoContent = {
-        ...generateSeo(seoOption, base, pageSeoInfo),
-        ...(seoOption.seo ? seoOption.seo(pageSeoInfo) : {}),
+        ...generateSeo(seoOptions, base, pageSeoInfo),
+        ...(seoOptions.seo ? seoOptions.seo(pageSeoInfo) : {}),
       };
 
-      appendMeta(meta, metaContext, seoOption);
-      if (seoOption.customHead) seoOption.customHead(meta, pageSeoInfo);
+      appendMeta(meta, metaContext, seoOptions);
+      if (seoOptions.customHead) seoOptions.customHead(meta, pageSeoInfo);
 
       return { frontmatter: { ...page.frontmatter, head: meta } };
     },

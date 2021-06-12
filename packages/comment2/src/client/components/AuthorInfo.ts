@@ -1,6 +1,5 @@
-import { useAuthor } from "@mr-hope/vuepress-shared/client";
-import { useRouteLocale } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { useAuthor, useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { defineComponent, h } from "vue";
 import { AuthorIcon } from "./icons";
 import { commentOptions, pageInfoI18n } from "../define";
 
@@ -12,11 +11,8 @@ export default defineComponent({
   components: { AuthorIcon },
 
   setup() {
-    const routeLocale = useRouteLocale();
-
     const author = useAuthor(commentOptions.author);
-    const text = computed(() => author.value.join(", "));
-    const hint = computed(() => pageInfoI18n[routeLocale.value].author);
+    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
 
     return (): VNode | null =>
       author.value.length
@@ -26,12 +22,12 @@ export default defineComponent({
               class: "author-info",
               ...(commentOptions.hint !== false
                 ? {
-                    ariaLabel: hint.value,
+                    ariaLabel: pageInfoLocale.value.author,
                     "data-balloon-pos": "down",
                   }
                 : {}),
             },
-            [h(AuthorIcon), h("span", text.value)]
+            [h(AuthorIcon), h("span", author.value.join(", "))]
           )
         : null;
   },

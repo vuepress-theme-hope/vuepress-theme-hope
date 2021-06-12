@@ -1,4 +1,4 @@
-import { useRouteLocale } from "@vuepress/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import PWAInstallModal from "../components/PWAInstallModal.vue";
 import { i18n } from "../define";
@@ -22,15 +22,14 @@ export default defineComponent({
   name: "PWAInstall",
 
   setup() {
-    const routeLocale = useRouteLocale();
+    const locales = useLocaleConfig(i18n);
+
     const canInstall = ref(false);
     const hasRelatedApps = ref(false);
     const isOpen = ref(false);
     const isIOS = ref(false);
     const isSafari = ref(false);
     const hinted = ref(false);
-
-    const install = computed(() => i18n[routeLocale.value].install);
 
     const useHint = computed(
       () => isIOS.value && isSafari.value && hinted.value === false
@@ -98,7 +97,7 @@ export default defineComponent({
                   isOpen.value = true;
                 },
               },
-              install.value
+              locales.value.install
             )
           : null,
         h(PWAInstallModal, {

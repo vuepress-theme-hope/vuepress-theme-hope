@@ -1,12 +1,9 @@
 import {
   useIconPrefix,
+  useLocaleConfig,
   useThemePluginConfig,
 } from "@mr-hope/vuepress-shared/client";
-import {
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-} from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, resolveComponent, h } from "vue";
 import AuthorInfo from "./AuthorInfo";
 import CategoryInfo from "./CategoryInfo";
@@ -42,7 +39,6 @@ export default defineComponent({
   setup() {
     const page = usePageData();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
-    const routeLocale = useRouteLocale();
     const themePluginConfig = useThemePluginConfig<CommentOptions>("comment");
     const iconPrefix = useIconPrefix();
 
@@ -67,7 +63,7 @@ export default defineComponent({
     });
 
     const isOriginal = computed(() => frontmatter.value.original);
-    const originText = computed(() => pageInfoI18n[routeLocale.value].origin);
+    const i18n = useLocaleConfig(pageInfoI18n);
 
     return (): VNode =>
       h("div", { class: "page-title" }, [
@@ -85,7 +81,7 @@ export default defineComponent({
         config.value
           ? h("div", { class: "page-info" }, [
               isOriginal.value
-                ? h("span", { class: "origin" }, originText.value)
+                ? h("span", { class: "origin" }, i18n.value.origin)
                 : null,
               config.value.map((item) => h(resolveComponent(`${item}-info`))),
             ])

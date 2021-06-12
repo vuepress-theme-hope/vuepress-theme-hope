@@ -1,8 +1,7 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type { PWAI18nConfig } from "../shared";
+import type { PWALocaleConfig } from "../shared";
 
 /** Muti language config for pwa popup */
-export const i18n: Record<HopeLangPath, PWAI18nConfig> = {
+export const i18n: PWALocaleConfig = {
   "/zh/": {
     install: "安装",
     iOSInstall: "点击分享按钮然后点击“添加到主屏幕”",

@@ -1,9 +1,5 @@
-export interface CopyCodeI18nConfig {
-  /** 复制文字 */
-  copy: string;
-  /** 提示文字 */
-  hint: string;
-}
+import type { LocaleConfig } from "@vuepress/core";
+import type { CopyCodeI18nConfig } from "./locales";
 
 export interface CopyCodeOptions {
   /**
@@ -42,4 +38,6 @@ export interface CopyCodeOptions {
    * @default 500
    */
   delay?: number;
+
+  locale?: LocaleConfig<CopyCodeI18nConfig>;
 }

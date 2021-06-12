@@ -1,4 +1,4 @@
-import { useRouteLocale } from "@vuepress/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { i18n } from "../define";
 import { UpdateIcon } from "../components/icons";
@@ -12,11 +12,10 @@ export default defineComponent({
   name: "SWUpdatePopup",
 
   setup(_props, { slots }) {
-    const routeLocale = useRouteLocale();
+    const locales = useLocaleConfig(i18n);
     const registration = ref<ServiceWorkerRegistration | null>(null);
 
     const enabled = computed(() => Boolean(registration.value));
-    const message = computed(() => i18n[routeLocale.value].update);
 
     const reload = (): void => {
       if (registration.value) {
@@ -54,7 +53,10 @@ export default defineComponent({
                   tabindex: 0,
                   onClick: () => reload(),
                 },
-                [message.value, h("span", { class: "update" }, h(UpdateIcon))]
+                [
+                  locales.value.update,
+                  h("span", { class: "update" }, h(UpdateIcon)),
+                ]
               )
             : "")
       );

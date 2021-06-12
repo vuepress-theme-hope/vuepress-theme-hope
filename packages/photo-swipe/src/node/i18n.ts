@@ -1,7 +1,6 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type { PhowoSwipeI18n } from "../shared";
+import type { PhowoSwipeLocaleConfig } from "../shared";
 
-export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
+export const i18n: PhowoSwipeLocaleConfig = {
   "/zh/": {
     close: "关闭",
     fullsreen: "切换全屏",

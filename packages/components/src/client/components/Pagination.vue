@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import { useRouteLocale } from "@vuepress/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
 import { computed, defineComponent, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { componentI18n } from "../define";
@@ -82,9 +82,10 @@ export default defineComponent({
   emits: ["change"],
 
   setup(props, { emit }) {
-    const routeLocale = useRouteLocale();
     const route = useRoute();
     const router = useRouter();
+
+    const componentLocale = useLocaleConfig(componentI18n);
 
     const input = ref("");
     const totalPages = computed(() => Math.ceil(props.total / props.perPage));
@@ -127,9 +128,7 @@ export default defineComponent({
       return arr;
     });
 
-    const i18n = computed(
-      () => componentI18n[routeLocale.value || "/"].pagination
-    );
+    const i18n = computed(() => componentLocale.value.pagination);
 
     /** Navigate to certain page */
     const navigate = (page: number): void => {

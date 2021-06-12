@@ -1,6 +1,6 @@
-import type { PWAI18nConfig } from "../shared";
+import type { PWALocaleConfig } from "../shared";
 
-declare const PWA_I18N: Record<string, PWAI18nConfig>;
+declare const PWA_I18N: PWALocaleConfig;
 declare const SW_PATH: string;
 
 export const serviceWorkerPath = SW_PATH;

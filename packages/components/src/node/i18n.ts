@@ -1,7 +1,6 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type { ComponentI18nConfig } from "../shared";
+import type { ComponentLocaleConfig } from "../shared";
 
-export const i18n: Record<HopeLangPath, ComponentI18nConfig> = {
+export const i18n: ComponentLocaleConfig = {
   "/zh/": {
     backToTop: "返回顶部",
     openInNewWindow: "在新窗口中打开",

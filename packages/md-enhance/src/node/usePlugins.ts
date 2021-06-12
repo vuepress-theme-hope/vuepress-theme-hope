@@ -1,47 +1,46 @@
-import { getRootLangPath } from "@mr-hope/vuepress-shared";
+import { getLocales } from "@mr-hope/vuepress-shared";
 import { codeDemoRender } from "./markdown-it/code-demo";
 import { i18n } from "./i18n";
 
-import { ContainerPluginOptions } from "@vuepress/plugin-container";
+import type { ContainerPluginOptions } from "@vuepress/plugin-container";
 import type { App } from "@vuepress/core";
 import type { LocaleConfig } from "@vuepress/shared";
-import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
-import type { ContainerName } from "./i18n";
-import type { MarkdownEnhanceOptions } from "../shared";
+import type { MarkdownContainerName, MarkdownEnhanceOptions } from "../shared";
 
 export const usePlugins = (
   app: App,
-  markdownOption: MarkdownEnhanceOptions
+  markdownOptions: MarkdownEnhanceOptions
 ): void => {
-  const resolveConfig = (
-    titleConfig: PluginI18nConvert<string>
+  const locales = getLocales(app, i18n, markdownOptions.locales);
+
+  const getContainterLocale = (
+    key: MarkdownContainerName
   ): LocaleConfig<{
     defaultInfo: string;
-  }> => {
-    const locale: LocaleConfig<{
-      defaultInfo: string;
-    }> = {};
+  }> =>
+    Object.fromEntries(
+      Object.keys(locales).map((path) => [
+        path,
+        { defaultInfo: locales[path][key] },
+      ])
+    );
 
-    for (const key in titleConfig)
-      locale[key] = {
-        defaultInfo: titleConfig[key as keyof PluginI18nConvert<string>],
-      };
-
-    locale["/"] = { defaultInfo: titleConfig[getRootLangPath(app)] };
-
-    return locale;
-  };
-
-  if (markdownOption.customContainer || markdownOption.enableAll) {
-    const containers: ContainerName[] = ["info", "tip", "warning", "danger"];
+  if (markdownOptions.customContainer || markdownOptions.enableAll) {
+    const containers: MarkdownContainerName[] = [
+      "info",
+      "tip",
+      "warning",
+      "danger",
+    ];
 
     containers.forEach((type) =>
       app.use("@vuepress/container", {
         type,
-        locales: resolveConfig(i18n[type]),
+        locales: getContainterLocale(type),
       } as ContainerPluginOptions)
     );
 
+    // TODO: improve here to support locales
     app.use("@vuepress/container", {
       type: "details",
       before: (info: string): string =>
@@ -52,12 +51,12 @@ export const usePlugins = (
     } as ContainerPluginOptions);
   }
 
-  if (markdownOption.align || markdownOption.enableAll)
+  if (markdownOptions.align || markdownOptions.enableAll)
     ["left", "center", "right", "justify"].forEach((type) =>
       app.use("@vuepress/container", { type } as ContainerPluginOptions)
     );
 
-  if (markdownOption.demo || markdownOption.enableAll)
+  if (markdownOptions.demo || markdownOptions.enableAll)
     app.use("@vuepress/container", {
       type: "demo",
       render: codeDemoRender,

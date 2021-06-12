@@ -2,7 +2,7 @@ export * from "./navbar";
 export * from "./sidebar";
 export * from "./layout";
 
-export * from "./locale";
+export * from "./locales";
 
 export * from "./medialinks";
 

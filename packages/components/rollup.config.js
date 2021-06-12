@@ -7,6 +7,7 @@ export default [
       "@vuepress/utils",
       "lodash.debounce",
       "vue",
+      "vuepress-plugin-sass-palette",
     ],
   }),
   ...rollupVue("client/appEnhance.ts", {

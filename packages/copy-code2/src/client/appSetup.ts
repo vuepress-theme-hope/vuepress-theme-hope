@@ -1,4 +1,5 @@
-import { defineClientAppSetup, useRouteLocale } from "@vuepress/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { defineClientAppSetup } from "@vuepress/client";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { i18n, options } from "./define";
@@ -16,7 +17,8 @@ const isMobile = (): boolean =>
 
 export default defineClientAppSetup(() => {
   const route = useRoute();
-  const routeLocale = useRouteLocale();
+  const locale = useLocaleConfig(i18n);
+
   let message: Message;
 
   const copyToClipboard = (code: string): void => {
@@ -36,7 +38,7 @@ export default defineClientAppSetup(() => {
 
     textAreaElement.select();
     document.execCommand("copy");
-    message.pop(i18n[routeLocale.value].copy, options.duration);
+    message.pop(locale.value.copy, options.duration);
 
     document.body.removeChild(textAreaElement);
 
@@ -58,7 +60,7 @@ export default defineClientAppSetup(() => {
         copyToClipboard(codeBlockElement.innerText);
       });
 
-      copyElement.setAttribute("aria-label", i18n[routeLocale.value].hint);
+      copyElement.setAttribute("aria-label", locale.value.hint);
       copyElement.setAttribute("data-balloon-pos", "left");
 
       if (codeBlockElement.parentElement)

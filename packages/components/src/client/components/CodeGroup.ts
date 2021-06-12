@@ -13,21 +13,17 @@ export default defineComponent({
 
     // activate next tab
     const activateNext = (i = activeIndex.value): void => {
-      if (i < tabRefs.value.length - 1) {
-        activeIndex.value = i + 1;
-      } else {
-        activeIndex.value = 0;
-      }
+      if (i < tabRefs.value.length - 1) activeIndex.value = i + 1;
+      else activeIndex.value = 0;
+
       tabRefs.value[activeIndex.value].focus();
     };
 
     // activate previous tab
     const activatePrev = (i = activeIndex.value): void => {
-      if (i > 0) {
-        activeIndex.value = i - 1;
-      } else {
-        activeIndex.value = tabRefs.value.length - 1;
-      }
+      if (i > 0) activeIndex.value = i - 1;
+      else activeIndex.value = tabRefs.value.length - 1;
+
       tabRefs.value[activeIndex.value].focus();
     };
 
@@ -75,12 +71,12 @@ export default defineComponent({
 
         // if there is no `active` props on code-group-item, set the first item active
         if (activeIndex.value === -1) activeIndex.value = 0;
-      } else {
-        // set the active item
+      }
+      // set the active item
+      else
         items.forEach((vnode, index) => {
           vnode.props.active = index === activeIndex.value;
         });
-      }
 
       return h("div", { class: "code-group" }, [
         h(
