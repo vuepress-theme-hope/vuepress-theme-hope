@@ -148,3 +148,20 @@ export const getDate = (
 
   return null;
 };
+
+export const compareDate = (
+  dateA: Date | number | string | undefined,
+  dateB: Date | number | string | undefined
+): number => {
+  const parsedDateA = getDate(
+    typeof dateA === "number" ? new Date(dateA) : dateA
+  );
+  const parsedDateB = getDate(
+    typeof dateB === "number" ? new Date(dateB) : dateB
+  );
+
+  if (!parsedDateA || !parsedDateA.value) return 1;
+  if (!parsedDateB || !parsedDateB.value) return -1;
+
+  return parsedDateB.value.getTime() - parsedDateA.value.getTime();
+};
