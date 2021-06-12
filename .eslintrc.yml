@@ -12,16 +12,10 @@ extends:
 ignorePatterns:
   - "**/dist/**"
   - "**/node_modules/**"
-
-  - "packages/**/*.js"
-  - "packages/**/*.d.ts"
-
-  - "!packages/pwa/node/skip-waiting.js"
-  - "!packages/theme/util/noopModule.js"
-
-  - "!packages/**/test/**/*.js"
-  - "!packages/**/types/**/*.d.ts"
-  - "!.vuepress/**"
+  - ".cache/**"
+  - ".temp/**"
+  - "packages/*/client/**"
+  - "packages/*/node/**"
 
 overrides:
   - files:

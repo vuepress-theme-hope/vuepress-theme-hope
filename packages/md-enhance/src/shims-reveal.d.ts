@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module "reveal.js" {
   export interface RevealOptions {
     /**

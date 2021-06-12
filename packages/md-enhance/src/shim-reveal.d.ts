@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 declare module "reveal.js/plugin/highlight/highlight.esm.js" {
   const highlightPlugin: any;
 
