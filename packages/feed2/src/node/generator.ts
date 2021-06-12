@@ -1,5 +1,4 @@
 import { cyan } from "chalk";
-import { relative } from "path";
 import { outputFile } from "fs-extra";
 import { Feed } from "./feed";
 import { getOutput } from "./options";
@@ -49,7 +48,7 @@ export class FeedGenerator {
 
     this.addPages();
 
-    const spinner = logger.load("Generating Feed...");
+    logger.load("Generating Feed");
 
     // generate atom files
     if (output.atom.enable) {
@@ -57,11 +56,11 @@ export class FeedGenerator {
 
       await outputFile(filePath, this.feed.atom());
 
-      logger.success(
-        `Atom feed file generated and saved to ${cyan(
-          relative(__dirname, filePath)
-        )}`
+      logger.update(
+        `Atom feed file generated and saved to ${cyan(output.atom.path)}`
       );
+      logger.success();
+      logger.load("Generating Feed");
     }
 
     // generate json files
@@ -70,11 +69,11 @@ export class FeedGenerator {
 
       await outputFile(filePath, this.feed.json());
 
-      logger.success(
-        `JSON feed file generated and saved to ${cyan(
-          relative(__dirname, filePath)
-        )}`
+      logger.update(
+        `JSON feed file generated and saved to ${cyan(output.json.path)}`
       );
+      logger.success();
+      logger.load("Generating Feed");
     }
 
     // generate rss files
@@ -83,13 +82,10 @@ export class FeedGenerator {
 
       await outputFile(filePath, this.feed.rss());
 
-      logger.success(
-        `RSS feed file generated and saved to ${cyan(
-          relative(__dirname, filePath)
-        )}`
+      logger.update(
+        `RSS feed file generated and saved to ${cyan(output.rss.path)}`
       );
+      logger.success();
     }
-
-    spinner.succeed();
   }
 }
