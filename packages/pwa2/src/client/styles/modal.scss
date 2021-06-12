@@ -142,11 +142,11 @@
       color: var(--dark-gery);
       font-size: 34px;
 
-      @media (max-width: $pad) {
+      @media (max-width: config.$pad) {
         margin-bottom: 0;
       }
 
-      @media (max-width: $mobileS) {
+      @media (max-width: config.$mobileS) {
         font-size: 26px;
       }
     }

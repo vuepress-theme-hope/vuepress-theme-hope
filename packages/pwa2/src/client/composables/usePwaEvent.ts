@@ -25,8 +25,8 @@ export const pwaEventSymbol: InjectionKey<PwaEvent> = Symbol.for("PWAEvent");
 
 export const usePwaEvent = (): PwaEvent => {
   const pwaEvent = inject(pwaEventSymbol);
-  if (!pwaEvent) {
-    throw new Error("usePwaEvent() is called without provider.");
-  }
+
+  if (!pwaEvent) throw new Error("usePwaEvent() is called without provider.");
+
   return pwaEvent;
 };

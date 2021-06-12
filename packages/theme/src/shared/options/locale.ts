@@ -2,7 +2,7 @@ import type { LocaleData } from "@vuepress/shared";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { HopeBlogOptions } from "./features";
 import type { HopeFooterConfig } from "./layout";
-import type { NavbarConfig } from "./nav";
+import type { NavbarConfig } from "./navbar";
 import type { SidebarConfig } from "./sidebar";
 
 export interface HopeThemeLocaleData extends LocaleData {

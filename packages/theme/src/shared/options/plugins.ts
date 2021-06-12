@@ -3,6 +3,7 @@ import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
+import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 
@@ -61,6 +62,15 @@ export interface HopeThemePluginsOptions {
    * @see http://vuepress-theme-hope.github.io/photo-swipe/config/
    */
   photoSwipe?: PhotoSwipeOptions | false;
+
+  /**
+   * PWA 插件配置
+   * @see http://vuepress-theme-hope.github.io/pwa/zh/config/
+   *
+   * PWA plugin options
+   * @see http://vuepress-theme-hope.github.io/pwa/config/
+   */
+  pwa?: PWAOptions | false;
 
   /**
    * SEO 插件配置

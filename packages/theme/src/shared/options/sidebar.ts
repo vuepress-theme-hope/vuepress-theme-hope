@@ -1,4 +1,4 @@
-import { NavGroup, NavLink } from "./nav";
+import { NavGroup, NavLink } from "./navbar";
 
 /**
  * Sidebar types

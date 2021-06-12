@@ -1,5 +1,5 @@
 import { useRouteLocale } from "@vuepress/client";
-import { Transition, computed, defineComponent, h, ref } from "vue";
+import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { i18n } from "../define";
 import { UpdateIcon } from "../components/icons";
 import { usePwaEvent, useSkipWaiting } from "../composables";
@@ -12,7 +12,6 @@ export default defineComponent({
   name: "SWUpdatePopup",
 
   setup(_props, { slots }) {
-    const event = usePwaEvent();
     const routeLocale = useRouteLocale();
     const registration = ref<ServiceWorkerRegistration | null>(null);
 
@@ -28,10 +27,14 @@ export default defineComponent({
       }
     };
 
-    event.on("updated", (reg) => {
-      if (reg) {
-        registration.value = reg;
-      }
+    onMounted(() => {
+      const event = usePwaEvent();
+
+      event.on("updated", (reg) => {
+        if (reg) {
+          registration.value = reg;
+        }
+      });
     });
 
     return (): VNode =>

@@ -2,7 +2,7 @@ import type WorkboxBuild from "workbox-build";
 import type { ManifestOption } from "./manifest";
 import "./declare";
 
-export interface PWAI18NConfig {
+export interface PWAI18nConfig {
   /** 安装文字 */
   install: string;
   /** iOS 安装文字 */
@@ -165,6 +165,6 @@ export interface PWAOptions {
 }
 
 declare global {
-  const PWA_I18N: Record<string, PWAI18NConfig>;
+  const PWA_I18N: Record<string, PWAI18nConfig>;
   const SW_BASE_URL: string;
 }

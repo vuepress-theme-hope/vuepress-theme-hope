@@ -1,6 +1,6 @@
-import type { PWAI18NConfig } from "../shared";
+import type { PWAI18nConfig } from "../shared";
 
-declare const PWA_I18N: Record<string, PWAI18NConfig>;
+declare const PWA_I18N: Record<string, PWAI18nConfig>;
 declare const SW_PATH: string;
 
 export const serviceWorkerPath = SW_PATH;

@@ -1,18 +1,22 @@
 import { path } from "@vuepress/utils";
 import { getRootLangPath } from "@mr-hope/vuepress-shared";
+// import { getRootLangPath, useCustomDevServer } from "@mr-hope/vuepress-shared";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { i18n } from "./i18n";
 import { injectLinkstoHead } from "./injectHead";
 import { genManifest } from "./genManifest";
+// import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
 
 import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { Plugin, PluginObject } from "@vuepress/core";
-import type { PWAI18NConfig, PWAOptions } from "../shared";
+import type { PWAI18nConfig, PWAOptions } from "../shared";
+
+export * from "../shared";
 
 const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   const { base, themeConfig } = app.options;
-  const pwaI18nConfig = i18n as PluginI18nConvert<PWAI18NConfig>;
+  const pwaI18nConfig = i18n as PluginI18nConvert<PWAI18nConfig>;
   const pwaOption =
     Object.keys(options).length > 0
       ? options
@@ -22,6 +26,14 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
 
   usePalettePlugin(app, { id: "hope" });
 
+  // TODO: Wait until a valid fix
+  // useCustomDevServer(
+  //   app,
+  //   "manifest.webmanifest",
+  //   () => getManifest(pwaOption, app),
+  //   "Unexpected manifest generate error"
+  // );
+
   const config: PluginObject = {
     name: "vuepress-plugin-pwa2",
 
@@ -30,23 +42,12 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
       SW_PATH: options.swPath || "service-worker.js",
     }),
 
-    clientAppRootComponentFiles:
+    clientAppRootComponentFiles: [
       pwaOption.popupComponent ||
-      path.resolve(__dirname, "../client/global-components/SWUpdatePopup.js"),
+        path.resolve(__dirname, "../client/global-components/SWUpdatePopup.js"),
+    ],
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
-
-    // beforeDevServer(app) {
-    //   app.get(`${base || "/"}manifest.webmanifest`, (_req, res) => {
-    //     getManifest(pwaOption, app)
-    //       .then((manifest) => {
-    //         res.send(manifest);
-    //       })
-    //       .catch(() =>
-    //         res.status(500).send("Unexpected manifest generate error")
-    //       );
-    //   });
-    // },
 
     onPrepared(): void {
       app.siteData.head = injectLinkstoHead(pwaOption, base, app.siteData.head);

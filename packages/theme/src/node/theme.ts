@@ -16,15 +16,11 @@ import type {
 } from "../shared";
 
 export interface HopeThemeOptions extends ThemeConfig, HopeThemeLocaleOptions {
-  /**
-   * To avoid confusion with the root `plugins` option,
-   * we use `themePlugins`
-   */
-  themePlugins?: HopeThemePluginsOptions;
+  plugins?: HopeThemePluginsOptions;
 }
 
 export const themeHope: Theme<HopeThemeOptions> = (
-  { themePlugins = {}, ...localeOptions },
+  { plugins = {}, ...localeOptions },
   app
 ) => {
   assignDefaultLocaleOptions(localeOptions);
@@ -69,27 +65,28 @@ export const themeHope: Theme<HopeThemeOptions> = (
       ["@mr-hope/components"],
       [
         "@vuepress/active-header-links",
-        resolveActiveHeaderLinksPluginOptions(themePlugins),
+        resolveActiveHeaderLinksPluginOptions(plugins),
       ],
       [
         "@vuepress/container",
-        resolveContainerPluginOptionsForCodeGroup(themePlugins),
+        resolveContainerPluginOptionsForCodeGroup(plugins),
       ],
       [
         "@vuepress/container",
-        resolveContainerPluginOptionsForCodeGroupItem(themePlugins),
+        resolveContainerPluginOptionsForCodeGroupItem(plugins),
       ],
-      ["@vuepress/git", resolveGitPluginOptions(themePlugins, localeOptions)],
-      ["@vuepress/nprogress", themePlugins.nprogress !== false],
-      ["@vuepress/prismjs", themePlugins.prismjs !== false],
+      ["@vuepress/git", resolveGitPluginOptions(plugins, localeOptions)],
+      ["@vuepress/nprogress", plugins.nprogress !== false],
+      ["@vuepress/prismjs", plugins.prismjs !== false],
       ["@vuepress/theme-data", { themeData: localeOptions }],
-      ["comment2", themePlugins.comment || { type: "disable" }],
-      ["copy-code2", themePlugins.copyCode],
-      ["feed2", themePlugins.feed],
-      ["md-enhance", themePlugins.mdEnhance || {}],
-      ["photo-swipe", themePlugins.photoSwipe],
-      ["seo2", themePlugins.seo],
-      ["sitemap2", themePlugins.sitemap],
+      ["comment2", plugins.comment || { type: "disable" }],
+      ["copy-code2", plugins.copyCode],
+      ["feed2", plugins.feed],
+      ["md-enhance", plugins.mdEnhance || {}],
+      ["photo-swipe", plugins.photoSwipe],
+      ["pwa2", plugins.pwa],
+      ["seo2", plugins.seo],
+      ["sitemap2", plugins.sitemap],
     ],
   };
 };
