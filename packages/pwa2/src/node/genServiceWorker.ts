@@ -1,5 +1,5 @@
 import { blue, cyan } from "chalk";
-import { readFile, statSync, writeFile } from "fs-extra";
+import { statSync } from "fs-extra";
 import { relative, resolve } from "path";
 import { generateSW } from "workbox-build";
 import { logger } from "./logger";
@@ -46,7 +46,7 @@ export const genServiceWorker = async (
 
   const additionalManifestEntries: ManifestEntry[] = [];
 
-  const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
+  const globPatterns = ["**/*.{js,css,svg,woff,woff2,eot,ttf,otf}"];
 
   if (options.cacheHTML === false)
     globPatterns.push("./index.html", "./404.html");
@@ -90,10 +90,4 @@ export const genServiceWorker = async (
         )}`
       );
   });
-
-  await writeFile(
-    swDest,
-    await readFile(resolve(__dirname, "./skip-waiting.js"), "utf8"),
-    { flag: "a" }
-  );
 };
