@@ -1,6 +1,6 @@
 import { defineComponent, h, onMounted, ref } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
-import { LoadingIcon } from "./loading";
+import { LoadingIcon } from "./icons";
 
 import type { RevealOptions } from "reveal.js";
 import type { PropType, VNode } from "vue";

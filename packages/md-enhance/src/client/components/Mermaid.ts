@@ -6,7 +6,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { LoadingIcon } from "./loading";
+import { LoadingIcon } from "./icons";
 import MermaidAPI from "mermaid/mermaidAPI";
 
 import type { Mermaid } from "mermaid";

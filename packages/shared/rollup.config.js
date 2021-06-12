@@ -4,6 +4,7 @@ export default [
   ...rollupTypescript("node/index", {
     resolve: true,
     external: ["chalk", "http", "ora", "vite"],
+    dtsExternal: ["http"],
   }),
   ...rollupTypescript("client/index", {
     resolve: true,
