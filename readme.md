@@ -14,7 +14,7 @@
 [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/15720/branches/318414/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9792&pid=15720&bid=318414)
 ![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/codeql-analysis.yml/badge.svg)
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/v1/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
-![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test.yml/badge.svg)
+![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test-v1.yml/badge.svg)
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
