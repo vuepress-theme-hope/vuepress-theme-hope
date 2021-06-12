@@ -141,7 +141,7 @@
     "rollup-plugin-typescript2": "0.30.0",
     "rollup-plugin-vue": "6.0.0",
     "sass": "1.34.1",
-    "sass-loader": "12.0.0",
+    "sass-loader": "12.1.0",
     "semver": "7.3.5",
     "sort-package-json": "1.50.0",
     "textlint": "12.0.0",
