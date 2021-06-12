@@ -3,7 +3,7 @@ import { rollupTypescript } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     resolve: true,
-    external: ["chalk", "ora"],
+    external: ["chalk", "http", "ora", "vite"],
   }),
   ...rollupTypescript("client/index", {
     resolve: true,
