@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
+      - v1
   pull_request:
-    # The branches below must be a subset of the branches above
     branches:
       - main
+      - v1
   schedule:
     - cron: "30 7 * * 3"
 

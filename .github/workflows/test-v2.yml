@@ -1,8 +1,12 @@
-name: Test Theme
+name: Test V2 Theme
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test-theme:
