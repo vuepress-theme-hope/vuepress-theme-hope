@@ -4,14 +4,6 @@ import type { PhowoSwipeI18nConfig } from "./locales";
 
 export interface PhotoSwipeOptions {
   /**
-   * 选择的范围，只有 container 元素内部的图片才会支持点击缩放。
-   *
-   * The range for selection. Only the image inside the container element will support click zoom
-   *
-   * @default '.theme-default-content'
-   */
-  container?: string;
-  /**
    * 图片选择器
    *
    * Image selector

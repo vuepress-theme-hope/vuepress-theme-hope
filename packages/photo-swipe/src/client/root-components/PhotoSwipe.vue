@@ -81,7 +81,7 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
 import { defineComponent, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { delay, imageContainer, imageSelector, i18n, options } from "../define";
+import { delay, imageSelector, i18n, options } from "../define";
 import { getImages } from "../composables";
 
 import "photoswipe/dist/photoswipe.css";
@@ -102,43 +102,33 @@ export default defineComponent({
         import(
           /* webpackChunkName: "photo-swipe" */ "photoswipe/dist/photoswipe-ui-default"
         ),
-      ]).then(([photoSwipe, photoSwipeUIDefault]) => {
-        void getImages(imageSelector).then((images) => {
-          images.elements.forEach((image, index) => {
-            image.addEventListener("click", (): void => {
-              const gallery = new photoSwipe.default(
-                pswp,
-                photoSwipeUIDefault.default,
-                images.infos,
-                {
-                  shareButtons: locales.value.buttons,
-                  ...options,
-                  index,
-                }
-              );
-              gallery.init();
-            });
+        getImages(imageSelector),
+        new Promise<void>((resolve) => setTimeout(() => resolve(), delay)),
+      ]).then(([photoSwipe, photoSwipeUIDefault, images]) => {
+        images.elements.forEach((image, index) => {
+          image.addEventListener("click", (): void => {
+            const gallery = new photoSwipe.default(
+              pswp,
+              photoSwipeUIDefault.default,
+              images.infos,
+              {
+                shareButtons: locales.value.buttons,
+                ...options,
+                index,
+              }
+            );
+            gallery.init();
           });
         });
       });
     };
 
-    const update = (): void => {
-      const timer = setInterval(() => {
-        const content = document.querySelector<HTMLElement>(imageContainer);
-        if (content) {
-          initPhotoSwipe();
-          clearInterval(timer);
-        }
-      }, delay);
-    };
-
     watch(
       () => route.path,
-      () => update()
+      () => initPhotoSwipe()
     );
 
-    onMounted(() => update());
+    onMounted(() => initPhotoSwipe());
 
     return { locales };
   },
