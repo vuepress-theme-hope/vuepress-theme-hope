@@ -1,5 +1,6 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
+import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { pageInfoI18n, walineI18n } from "./i18n";
 
@@ -15,6 +16,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       ? (options as CommentOptions)
       : (themeConfig.comment as CommentOptions) || { type: "disable" };
 
+  useReadingTimePlugin(app, { wordPerminute: options.wordPerminute });
   usePalettePlugin(app, { id: "hope" });
 
   const config: PluginObject = {
@@ -37,8 +39,6 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     }),
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
-
-    plugins: [["reading-time2", { wordPerminute: options.wordPerminute }]],
   };
 
   // if (commentOptions.type === "vssue")
