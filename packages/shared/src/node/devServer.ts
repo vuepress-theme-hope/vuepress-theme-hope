@@ -22,11 +22,11 @@ export const useCustomDevServer = (
     ) =>
       getResponse(request)
         .then((data) => {
-          response.statusCode === 200;
+          response.statusCode = 200;
           response.end(data);
         })
         .catch(() => {
-          response.statusCode === 500;
+          response.statusCode = 500;
           response.end(errMsg);
         });
 
