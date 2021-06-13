@@ -138,7 +138,8 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     },
 
-    themePlugins: {
+    plugins: {
+      mdEnhance: { enableAll: true },
       // only enable git plugin in production mode
       git: isProd,
     },

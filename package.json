@@ -140,8 +140,6 @@
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-typescript2": "0.30.0",
     "rollup-plugin-vue": "6.0.0",
-    "sass": "1.34.1",
-    "sass-loader": "12.1.0",
     "semver": "7.3.5",
     "sort-package-json": "1.50.0",
     "textlint": "12.0.0",
@@ -157,8 +155,8 @@
     "ts-jest": "27.0.3",
     "ts-node": "10.0.0",
     "typescript": "4.3.2",
-    "vuepress": "2.0.0-beta.17",
-    "vuepress-vite": "2.0.0-beta.17"
+    "vuepress": "2.0.0-beta.18",
+    "vuepress-vite": "2.0.0-beta.18"
   },
   "textlint": {
     "rules": {
