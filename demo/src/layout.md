@@ -11,7 +11,7 @@ This is just a demo, you should add styles according to your own needs.
 
 <!-- markdownlint-disable MD033 -->
 
-<style lang="sass">
+<style lang="scss">
 @use '@mr-hope/vuepress-shared/styles/wrapper';
 
 .content__navbar-start, .content__navbar-center, .content__navbar-end {

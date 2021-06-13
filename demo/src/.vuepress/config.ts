@@ -45,11 +45,11 @@ export default defineUserConfig<HopeThemeOptions>({
     },
   },
 
-  // bundler:
-  //   // specify bundler via environment variable
-  //   process.env.DOCS_BUNDLER ??
-  //   // use vite in dev, use webpack in prod
-  //   (isProd ? '@vuepress/webpack' : '@vuepress/vite'),
+  bundler:
+    // specify bundler via environment variable
+    process.env.DOCS_BUNDLER ??
+    // use vite in dev, use webpack in prod
+    (isProd ? "@vuepress/webpack" : "@vuepress/vite"),
 
   theme: "hope",
 

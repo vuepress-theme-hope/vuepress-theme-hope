@@ -49,7 +49,7 @@ jobs:
         run: yarn run build
 
       - name: Demo build
-        run: yarn workspace theme-demo build
+        run: yarn workspace theme-demo demo:build
 
       - name: Linter test
         run: |
