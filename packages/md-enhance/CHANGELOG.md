@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-06-13)
+
+### Features
+
+- **md-enhance:** support i18n in details block ([72488b3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/72488b372f2f585c345639dc8d8d9f6582378098))
+- rebuild locales ([885ab30](https://github.com/Mister-Hope/vuepress-theme-hope/commit/885ab30af568537adfbc8e873795548865535fb5))
+- **md-enhance:** add layout ([dd66598](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dd6659890e20093e811e5871d2922810610d5c06))
+
 # [2.0.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
 
 ### Bug Fixes

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-06-13)
+
+### Bug Fixes
+
+- **pwa2:** fix error ([2bd6edb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2bd6edb8422dca2f74b249ed40d2ac50365d6694))
+
+### Features
+
+- rebuild locales ([885ab30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/885ab30af568537adfbc8e873795548865535fb5))
+- **theme:** add pwa plugin ([f45d1d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f45d1d25d7bc23cae6028b90ca13e056170c4545))
+
 # [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
 
 ### Features

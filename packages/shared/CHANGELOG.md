@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-06-13)
+
+### Features
+
+- **shared:** add addViteOptimizeDeps ([9dcae5b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9dcae5bb1542efff228fbb04d2388a65292cc667))
+- rebuild locales ([885ab30](https://github.com/Mister-Hope/vuepress-theme-hope/commit/885ab30af568537adfbc8e873795548865535fb5))
+- **md-enhance:** add layout ([dd66598](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dd6659890e20093e811e5871d2922810610d5c06))
+- **shared:** add compareDate method ([0048e3d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0048e3dccc7a213dab1d5ced6d1e0896c13cdecc))
+- **shared:** add useCustomDevServer ([81b0421](https://github.com/Mister-Hope/vuepress-theme-hope/commit/81b0421585446d7b65599862c42dfbf543dc4bf7))
+
 # [2.0.0-alpha.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
 
 ### Bug Fixes

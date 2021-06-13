@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-06-13)
+
+### Bug Fixes
+
+- fix demo ([a8f2abb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8f2abbf2a01a4438bd0b368d360d66db3d4b0ed))
+- **comment2:** correctly use reading time ([568a764](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/568a7647201a429ead66a7f905b90f44902d8e5d))
+- **components:** fixkeyboard event ([1044c45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1044c45ba5236a0fc55fbe9a96e9c68858e5ef2c))
+- **pwa2:** fix error ([2bd6edb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2bd6edb8422dca2f74b249ed40d2ac50365d6694))
+- **sass-palette:** fix palette plugin under vite ([0e97068](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e97068b1d145fb2ba50589cb0ac6a75c17a19c2))
+
+### Features
+
+- compatable with vite ([67d1ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67d1ce0fb081199d473b2b71e8e3a9e17946cbf2))
+- **comment2:** prebundle @waline/client ([c4d06c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4d06c61f0b0097fa2204efaf02ddaa375426385))
+- **md-enhance:** add layout ([dd66598](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd6659890e20093e811e5871d2922810610d5c06))
+- **md-enhance:** support i18n in details block ([72488b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72488b372f2f585c345639dc8d8d9f6582378098))
+- **shared:** add addViteOptimizeDeps ([9dcae5b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9dcae5bb1542efff228fbb04d2388a65292cc667))
+- rebuild locales ([885ab30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/885ab30af568537adfbc8e873795548865535fb5))
+- **shared:** add compareDate method ([0048e3d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0048e3dccc7a213dab1d5ced6d1e0896c13cdecc))
+- **shared:** add useCustomDevServer ([81b0421](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81b0421585446d7b65599862c42dfbf543dc4bf7))
+- **theme:** add pwa plugin ([f45d1d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f45d1d25d7bc23cae6028b90ca13e056170c4545))
+
 # [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
 
 ### Bug Fixes

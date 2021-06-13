@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sass-palette",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
     "vuepress-plugin",
@@ -42,7 +42,7 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.2",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.3",
     "sass": "^1.34.1",
     "sass-loader": "^12.1.0"
   },
