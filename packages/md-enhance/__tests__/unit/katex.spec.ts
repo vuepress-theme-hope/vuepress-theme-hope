@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { katex } from "../../src/node/markdown-it";
+import { katex } from "../../src/node/markdown-it/katex";
 
 const markdownIt = MarkdownIt({ linkify: true }).use(katex);
 const markdownItWithError = MarkdownIt({ linkify: true }).use(katex, {

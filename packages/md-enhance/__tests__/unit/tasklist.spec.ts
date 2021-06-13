@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { tasklist } from "../../src/node/markdown-it";
+import { tasklist } from "../../src/node/markdown-it/tasklist";
 
 describe("Task list", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(tasklist);

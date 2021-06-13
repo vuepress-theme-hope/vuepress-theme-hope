@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { sup } from "../../src/node/markdown-it";
+import { sup } from "../../src/node/markdown-it/sup";
 
 describe("superscript", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(sup);

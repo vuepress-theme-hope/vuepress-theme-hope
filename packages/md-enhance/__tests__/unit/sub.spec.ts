@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { sub } from "../../src/node/markdown-it";
+import { sub } from "../../src/node/markdown-it/sub";
 
 describe("subscript", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(sub);

@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { footnote } from "../../src/node/markdown-it";
+import { footnote } from "../../src/node/markdown-it/footnote";
 
 describe("footnote", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(footnote);

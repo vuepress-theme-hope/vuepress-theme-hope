@@ -194,4 +194,15 @@ describe("deepassignReverse", () => {
 
     expect(ans).toEqual({ a: { a: 1, b: 0, c: 2 }, b: { a: 1 } });
   });
+
+  it("assign empty object", () => {
+    const object1 = { a: { a: 1, b: 2 }, d: 1 };
+    const object2 = { d: 1 };
+    const object3 = { a: { a: 2, c: 3 }, b: [], c: false };
+    const object4 = { d: 2 };
+
+    const ans = deepAssignReverse(object1, object2, object3, object4);
+
+    expect(ans).toEqual({ a: { a: 2, b: 2, c: 3 }, b: [], c: false, d: 2 });
+  });
 });

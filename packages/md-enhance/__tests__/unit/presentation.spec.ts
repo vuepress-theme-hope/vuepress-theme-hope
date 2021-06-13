@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { presentation } from "../../src/node/markdown-it";
+import { presentation } from "../../src/node/markdown-it/presentation";
 
 const demo = `
 ## Slide 1

@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { mark } from "../../src/node/markdown-it";
+import { mark } from "../../src/node/markdown-it/mark";
 
 describe("mark", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(mark);

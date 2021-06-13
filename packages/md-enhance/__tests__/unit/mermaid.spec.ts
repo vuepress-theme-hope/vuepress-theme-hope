@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { mermaid } from "../../src/node/markdown-it";
+import { mermaid } from "../../src/node/markdown-it/mermaid";
 
 const demo = `flowchart TB
     c1-->a2
