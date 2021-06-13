@@ -8,7 +8,7 @@ const files = readdirSync(packagesDir);
 files.forEach((pkgName) => {
   if (pkgName.charAt(0) === "." || pkgName === "theme") return;
 
-  const desc = `${pkgName} plugin for vuepress-theme-hope`;
+  const desc = `${pkgName} plugin for VuePress`;
   const pkgPath = join(packagesDir, pkgName, "package.json");
 
   // generate package.json
@@ -27,13 +27,7 @@ files.forEach((pkgName) => {
         url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
         directory: `packages/${pkgName}`,
       },
-      keywords: [
-        "vuepress-plugin",
-        "vuepress",
-        pkgName,
-        "vuepress-theme-hope",
-        "mr-hope",
-      ],
+      keywords: ["vuepress-plugin", "vuepress", pkgName, "mr-hope"],
       author: {
         email: "zhangbowang1998@gmail.com",
         name: "Mr.Hope",
@@ -75,7 +69,7 @@ npm i @mr-hope/vuepress-plugin-${pkgName}
 
 ---
 
-vuepress-theme-hope 的 ${pkgName} 插件。
+VuePress 的 ${pkgName} 插件。
 
 ## 使用
 
