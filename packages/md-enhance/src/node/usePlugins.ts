@@ -1,5 +1,5 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
-import { codeDemoRender } from "./markdown-it/code-demo";
+import { codeDemoRender, getDetailsRender } from "./markdown-it";
 import { i18n } from "./i18n";
 
 import type { ContainerPluginOptions } from "@vuepress/plugin-container";
@@ -40,14 +40,9 @@ export const usePlugins = (
       } as ContainerPluginOptions)
     );
 
-    // TODO: improve here to support locales
     app.use("@vuepress/container", {
       type: "details",
-      before: (info: string): string =>
-        `<details class="custom-block details"><summary>${
-          info || "Details"
-        }</summary>\n`,
-      after: (): string => "</details>\n",
+      render: getDetailsRender(getContainterLocale("details")),
     } as ContainerPluginOptions);
   }
 

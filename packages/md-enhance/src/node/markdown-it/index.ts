@@ -1,4 +1,5 @@
 export * from "./code-demo";
+export * from "./details";
 export * from "./footnote";
 export * from "./katex";
 export * from "./mark";
