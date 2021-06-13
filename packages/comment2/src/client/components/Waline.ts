@@ -3,7 +3,6 @@ import {
   useThemePluginConfig,
 } from "@mr-hope/vuepress-shared/client";
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import Waline from "@waline/client";
 import {
   computed,
   defineComponent,
@@ -33,7 +32,7 @@ export default defineComponent({
     const themePluginConfig = useThemePluginConfig<WalineOptions>("comment");
     const walineLocale = useLocaleConfig(walineI18n);
 
-    let timeout: NodeJS.Timeout | null = null;
+    let id: number;
     let waline: WalineInstance | null = null;
 
     const enableComment = computed(() => {
@@ -58,30 +57,55 @@ export default defineComponent({
       resolveEnablePageViews(frontmatter.value)
     );
 
-    const initWaline = (): void => {
-      waline = Waline({
-        lang: lang.value === "zh-CN" ? "zh-CN" : "en",
-        locale: {
-          ...walineLocale.value,
-          ...(walineOption.locale || {}),
-        },
-        emoji: [
-          "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
-          "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
-        ],
-        dark: 'body[data-theme="dark"]',
-        ...walineOption,
-        el: "#waline-comment",
-        visitor: enablePageViews.value,
-      }) as WalineInstance;
+    const delayPromise = new Promise<void>((resolve) => {
+      setTimeout(() => resolve(), walineOption.delay);
+    });
+
+    const updateWaline = (timeStamp: number): void => {
+      if (waline)
+        setTimeout(() => {
+          if (timeStamp === id)
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            waline!.update({
+              lang: lang.value === "zh-CN" ? "zh-CN" : "en",
+              locale: {
+                ...walineLocale.value,
+                ...(walineOption.locale || {}),
+              },
+            });
+        }, walineOption.delay);
+      else
+        void Promise.all([import("@waline/client"), delayPromise]).then(
+          ([{ default: Waline }]) => {
+            if (timeStamp === id)
+              waline = Waline({
+                lang: lang.value === "zh-CN" ? "zh-CN" : "en",
+                locale: {
+                  ...walineLocale.value,
+                  ...(walineOption.locale || {}),
+                },
+                emoji: [
+                  "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
+                  "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
+                ],
+                dark: 'body[data-theme="dark"]',
+                ...walineOption,
+                el: "#waline-comment",
+                visitor: enablePageViews.value,
+              }) as WalineInstance;
+          }
+        );
     };
 
     onMounted(() => {
-      if (enableWaline) timeout = setTimeout(() => initWaline(), 1000);
+      if (enableWaline) {
+        id = new Date().getTime();
+        updateWaline(id);
+      }
     });
 
     onBeforeUnmount(() => {
-      if (timeout) clearTimeout(timeout);
+      id = new Date().getTime();
       if (waline) waline.destroy();
     });
 
@@ -90,20 +114,8 @@ export default defineComponent({
       () =>
         // Refresh comment when navigating to a new page
         nextTick(() => {
-          if (timeout) clearTimeout(timeout);
-
-          if (enableWaline)
-            timeout = setTimeout(() => {
-              if (waline)
-                waline.update({
-                  lang: lang.value === "zh-CN" ? "zh-CN" : "en",
-                  locale: {
-                    ...walineLocale.value,
-                    ...(walineOption.locale || {}),
-                  },
-                });
-              else initWaline();
-            }, 1000);
+          id = new Date().getTime();
+          updateWaline(id);
         })
     );
 

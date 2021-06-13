@@ -21,7 +21,7 @@ import type {
   PageInfoType,
 } from "../../shared";
 
-import "balloon-css";
+import "balloon-css/balloon.css";
 
 export default defineComponent({
   name: "PageInfo",

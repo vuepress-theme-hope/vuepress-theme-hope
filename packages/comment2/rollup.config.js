@@ -6,6 +6,7 @@ export default [
       "@mr-hope/vuepress-shared",
       "@vuepress/utils",
       "vuepress-plugin-sass-palette",
+      "vuepress-plugin-reading-time2",
     ],
   }),
   ...rollupTypescript("client/appEnhance", {
@@ -15,7 +16,6 @@ export default [
       "balloon-css",
       "vue",
       "vue-router",
-      "vuepress-plugin-reading-time2/client/i18n",
       "@Waline",
       /\.scss$/,
     ],

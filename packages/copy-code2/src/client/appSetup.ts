@@ -6,7 +6,7 @@ import { i18n, options } from "./define";
 import Message from "./message";
 
 import "./styles/index.scss";
-import "balloon-css";
+import "balloon-css/balloon.css";
 
 const isMobile = (): boolean =>
   navigator
