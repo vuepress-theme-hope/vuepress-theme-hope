@@ -157,18 +157,6 @@ export default defineUserConfig<HopeThemeOptions>({
 
   plugins: [
     ["@vuepress/plugin-debug"],
-    ["@vuepress/plugin-pwa"],
-    [
-      "@vuepress/plugin-pwa-popup",
-      {
-        locales: {
-          "/zh/": {
-            message: "发现新内容可用",
-            buttonText: "刷新",
-          },
-        },
-      },
-    ],
     [
       "@vuepress/plugin-register-components",
       {
