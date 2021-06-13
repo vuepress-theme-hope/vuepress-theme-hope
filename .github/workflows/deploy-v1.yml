@@ -1,14 +1,18 @@
-name: Deploy theme demo
+name: Deploy V1 Docs
 
 on:
-  - push
+  push:
+    branches:
+      - v1
 
 jobs:
-  theme-demo:
+  deploy-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: restore lerna
         uses: actions/cache@v2
@@ -41,13 +45,28 @@ jobs:
       - name: Build project
         run: yarn run build
 
-      - name: Build Theme demo
-        run: yarn run demo:build
+      - name: Build Docs
+        run: yarn run docs:build
+
+      - name: Combine output
+        run: |
+          yarn cpx "docs/theme/dist/**" dist
+          yarn cpx "docs/add-this/dist/**" dist/add-this
+          yarn cpx "docs/comment/dist/**" dist/comment
+          yarn cpx "docs/copy-code/dist/**" dist/copy-code
+          yarn cpx "docs/feed/dist/**" dist/feed
+          yarn cpx "docs/git/dist/**" dist/git
+          yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
+          yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
+          yarn cpx "docs/pwa/dist/**" dist/pwa
+          yarn cpx "docs/reading-time/dist/**" dist/reading-time
+          yarn cpx "docs/seo/dist/**" dist/seo
+          yarn cpx "docs/sitemap/dist/**" dist/sitemap
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: demo/dist
+          folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: vuepress-theme-hope/vuepress-theme-hope-demo
+          repository-name: vuepress-theme-hope/vuepress-theme-hope.github.io

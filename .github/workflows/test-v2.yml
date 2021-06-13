@@ -1,18 +1,21 @@
-name: Deploy GitHub Pages
+name: Test V2 Theme
 
 on:
   push:
     branches:
-      - v1
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  deploy-docs:
+  test-theme:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          persist-credentials: false
 
       - name: restore lerna
         uses: actions/cache@v2
@@ -45,28 +48,17 @@ jobs:
       - name: Build project
         run: yarn run build
 
-      - name: Build Docs
-        run: yarn run docs:build
+      - name: Demo build
+        run: yarn workspace theme-demo demo:build
 
-      - name: Combine output
+      - name: Linter test
         run: |
-          yarn cpx "docs/theme/dist/**" dist
-          yarn cpx "docs/add-this/dist/**" dist/add-this
-          yarn cpx "docs/comment/dist/**" dist/comment
-          yarn cpx "docs/copy-code/dist/**" dist/copy-code
-          yarn cpx "docs/feed/dist/**" dist/feed
-          yarn cpx "docs/git/dist/**" dist/git
-          yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
-          yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
-          yarn cpx "docs/pwa/dist/**" dist/pwa
-          yarn cpx "docs/reading-time/dist/**" dist/reading-time
-          yarn cpx "docs/seo/dist/**" dist/seo
-          yarn cpx "docs/sitemap/dist/**" dist/sitemap
+          yarn run lint:check
+        # yarn run lint:md
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages
-          folder: dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: vuepress-theme-hope/vuepress-theme-hope.github.io
+      - name: Unit test
+        run: yarn run test
+
+      - name: Upload coverage
+        if: github.ref == 'refs/heads/main'
+        uses: codecov/codecov-action@v1
