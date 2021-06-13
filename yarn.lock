@@ -3884,10 +3884,10 @@
     ora "^5.4.1"
     upath "^2.0.1"
 
-"@waline/client@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@waline/client/-/client-1.2.3.tgz#e4d673050f2d7ca8aef9295a936c2031c93c9311"
-  integrity sha512-cKltOAffRPb8jb6f3G0XlsjmRyCUG1Lo8ZsYI1lHjcCyfdw+hSveYITJxDgdvfhjmQnOm5JuTChkqEsE/I2xrw==
+"@waline/client@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@waline/client/-/client-1.2.4.tgz#ca81c721f38f87beafab674c08a0bf2ad0411d60"
+  integrity sha512-qp89GqLduL5c/99Yme5IjeL9AvuaN92TNowQqXtd+w2ZUkmCSDn7bNyN4oBeUgw20GWG5mOqd0tcMkdJXLaa7w==
 
 "@webassemblyjs/ast@1.11.0":
   version "1.11.0"

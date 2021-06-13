@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.2",
-    "@waline/client": "^1.2.3",
+    "@waline/client": "^1.2.4",
     "balloon-css": "^1.2.0",
     "vuepress-plugin-reading-time2": "2.0.0-alpha.2",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.2"
