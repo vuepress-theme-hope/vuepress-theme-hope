@@ -1,4 +1,4 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
+import { addViteOptimizeDeps, getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
@@ -15,6 +15,8 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     Object.keys(options).length > 0
       ? (options as CommentOptions)
       : (themeConfig.comment as CommentOptions) || { type: "disable" };
+
+  addViteOptimizeDeps(app, "@waline/client");
 
   useReadingTimePlugin(app, { wordPerminute: options.wordPerminute });
   usePalettePlugin(app, { id: "hope" });
