@@ -11,57 +11,37 @@ export default defineUserConfig<HopeThemeOptions>({
 
   head: [
     [
-      "link",
+      "script",
+      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
+    ],
+    [
+      "script",
       {
-        rel: "icon",
-        type: "image/png",
-        sizes: "16x16",
-        href: `/images/icons/favicon-16x16.png`,
+        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
       },
     ],
     [
-      "link",
+      "script",
       {
-        rel: "icon",
-        type: "image/png",
-        sizes: "32x32",
-        href: `/images/icons/favicon-32x32.png`,
+        src: "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js",
       },
     ],
-    ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
-    ["meta", { name: "application-name", content: "VuePress" }],
-    ["meta", { name: "apple-mobile-web-app-title", content: "VuePress" }],
     [
-      "meta",
-      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+      "script",
+      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
     ],
-    [
-      "link",
-      { rel: "apple-touch-icon", href: `/images/icons/apple-touch-icon.png` },
-    ],
-    [
-      "link",
-      {
-        rel: "mask-icon",
-        href: "/images/icons/safari-pinned-tab.svg",
-        color: "#3eaf7c",
-      },
-    ],
-    ["meta", { name: "msapplication-TileColor", content: "#3eaf7c" }],
-    ["meta", { name: "theme-color", content: "#3eaf7c" }],
   ],
 
-  // site-level locales config
   locales: {
     "/": {
       lang: "en-US",
-      title: "VuePress",
-      description: "Vue-powered Static Site Generator",
+      title: "Theme Demo",
+      description: "A demo for vuepress-theme-hope",
     },
     "/zh/": {
       lang: "zh-CN",
-      title: "VuePress",
-      description: "Vue 驱动的静态网站生成器",
+      title: "主题演示",
+      description: "vuepress-theme-hope 的演示",
     },
   },
 
@@ -74,13 +54,13 @@ export default defineUserConfig<HopeThemeOptions>({
   theme: "hope",
 
   themeConfig: {
-    logo: "/images/hero.png",
+    logo: "/logo.svg",
+    hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
 
-    repo: "vuepress/vuepress-next",
+    author: "Mr.Hope",
+    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
-    docsDir: "docs",
-
-    hostname: "https://example.com",
+    docsDir: "demo/src",
 
     // theme-level locales config
     locales: {
@@ -96,6 +76,11 @@ export default defineUserConfig<HopeThemeOptions>({
 
         // sidebar
         sidebar: sidebar.en,
+
+        footer: {
+          display: true,
+          content: "Default footer",
+        },
 
         // page meta
         editLinkText: "Edit this page on GitHub",
@@ -113,6 +98,11 @@ export default defineUserConfig<HopeThemeOptions>({
 
         // sidebar
         sidebar: sidebar.zh,
+
+        footer: {
+          display: true,
+          content: "默认页脚",
+        },
 
         // page meta
         editLinkText: "在 GitHub 上编辑此页",

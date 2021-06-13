@@ -1,55 +1,59 @@
-# Page
-
-VuePress is markdown-centered. Each markdown file inside your project is a standalone page.
-
-## Routing
-
-By default, the route path of a page is determined by the relative path of your markdown file.
-
-Assuming this is the directory structure of your markdown files:
-
-```
-└─ docs
-   ├─ guide
-   │  ├─ getting-started.md
-   │  └─ README.md
-   ├─ contributing.md
-   └─ README.md
-```
-
-Take the `docs` directory as your [sourceDir](../reference/cli.md), e.g. your are running `vuepress dev docs` command. Then the route paths of your markdown files would be:
-
-| Relative Path      | Route Path           |
-| ------------------ | -------------------- |
-| `/README.md`       | `/`                  |
-| `/contributing.md` | `/contributing.html` |
-| `/guide/README.md` | `/guide/`            |
-| `/guide/page.md`   | `/guide/page.html`   |
-
-## Frontmatter
-
-A markdown file could contain a [YAML](https://yaml.org/) frontmatter. The frontmatter must be at the top of the Markdown file and must be wrapped with a couple of triple-dashed lines. Here is a basic example:
-
-```md
 ---
-lang: en-US
-title: Title of this page
-description: Description of this page
+# This is the icon of the page
+icon: page
+# This is the title of the article
+title: page config
+# Set author
+author: Ms.Hope
+# Set writing time
+time: 2020-01-01
+# A page can only have one category
+category: Guide
+# A page can have multiple tags
+tag:
+  - Page config
+  - Guide
+# this page is sticky in article list
+sticky: true
+# this page will appear in aricle channel in home page
+star: true
+# You can customize the footer
+footer: Footer content for test
 ---
-```
 
-You must have noticed that those fields are similar with the [Site Config](./configuration.md#site-config) in the [Config File](./configuration.md#config-file). You can override `lang`, `title`, `description`, etc., of current page via frontmatter. So you can take frontmatter as page scope config.
+## Page information
 
-Also, VuePress has built-in support for some frontmatter fields, and your theme may have its own special frontmatter, too.
+You can set page information in Markdown’s Frontmatter.
+
+- The author is set to Ms.Hope.
+
+- The writing time should be January 1, 2020
+
+- Category is "Guide"
+
+- Tags are "Page Config" and "Guide"
+
+## Page content
+
+You are free to write your Markdown here.
 
 ::: tip
-Check out the [Frontmatter Reference](../reference/frontmatter.md) for a full list of VuePress built-in frontmatter.
 
-Check out the [Default Theme > Frontmatter Reference](../reference/default-theme/frontmatter.md) for the frontmatter of default theme.
+- Please use the relative link `./` for pictures in the Markdown folder.
+
+- For pictures in `.vuepress/public` folder, please use absolute link `/` for reference
+
 :::
 
-## Content
+The theme contains a custom badge:
 
-The main content of your page is written in Markdown. VuePress will firstly transform your Markdown to HTML code, then treat the HTML code as `<template>` of Vue SFC.
+> A dark blue badge text badge at the end of line. <Badge text="Badge text" color="#242378" />
 
-With the power of [markdown-it](https://github.com/markdown-it/markdown-it) and Vue template syntax, the basic Markdown can be extended a lot. Next, check out the [Markdown](./markdown.md) guide for all the extensions of Markdown in VuePress.
+## Page structure
+
+This page should contain:
+
+- Back to top button
+- Route navigation
+- Comments
+- Footer
