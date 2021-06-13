@@ -103,7 +103,7 @@ export default defineComponent({
                 onClick: () => {
                   activeIndex.value = index;
                 },
-                onKeyDown: (event: KeyboardEvent) =>
+                onKeydown: (event: KeyboardEvent) =>
                   keyboardHandler(event, index),
               },
               vnode.props.title
