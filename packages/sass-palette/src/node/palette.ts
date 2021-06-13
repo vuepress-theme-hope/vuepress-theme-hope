@@ -26,10 +26,10 @@ export const palettePlugin: Plugin<PaletteOptions> = (
     name: `palette-${id}`,
 
     alias: {
-      [`@${id}/palette`]: `@temp/styles/${id}-palette.scss`,
-      [`@${id}/config`]: `@temp/styles/${id}-config.scss`,
+      [`@${id}/palette`]: app.dir.temp(`styles/${id}-palette.scss`),
+      [`@${id}/config`]: app.dir.temp(`styles/${id}-config.scss`),
       [`@${id}/helper`]: path.resolve(__dirname, "../styles/helper.scss"),
-      [`@${id}/style`]: `@temp/styles/${id}-style.scss`,
+      [`@${id}/style`]: app.dir.temp(`styles/${id}-style.scss`),
     },
 
     async onPrepared(): Promise<void> {
