@@ -3,7 +3,6 @@ import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 const config: UserConfig<DefaultThemeOptions> = {
   base: process.env.VuePress_BASE || "/",
-  bundler: process.env.BUNDLER ?? "@vuepress/webpack",
 
   locales: {
     "/": {
@@ -27,7 +26,7 @@ const config: UserConfig<DefaultThemeOptions> = {
     },
   },
 
-  plugins: [["@mr-hope/palette"]],
+  plugins: [["sass-palette"]],
 };
 
 export default config;

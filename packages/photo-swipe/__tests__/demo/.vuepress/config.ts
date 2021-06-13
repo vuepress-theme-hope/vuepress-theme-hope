@@ -3,7 +3,7 @@ import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 const config: UserConfig<DefaultThemeOptions> = {
   base: process.env.VuePress_BASE || "/",
-  bundler: process.env.BUNDLER ?? "@vuepress/webpack",
+
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "author", content: "Mr.Hope" }],
