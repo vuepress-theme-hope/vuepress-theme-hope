@@ -11,7 +11,7 @@
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-hope)
 
-[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/15720/branches/318414/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9792&pid=15720&bid=318414)
+[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/17544/branches/405512/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=17544&bid=405512)
 ![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/codeql-analysis.yml/badge.svg)
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
 ![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test-v2.yml/badge.svg)
@@ -53,10 +53,6 @@ AdBlocks are blocking addThis link heavily, and in most cases this plugin won't 
 
 We will provide a new share plugin in v2.
 
-## @MrHope/Blog ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [ ] Build a own blog plugin to support blog with better performance
-
 ## Comment2💬
 
 Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. ⚠
@@ -70,6 +66,8 @@ Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. �
 - [x] Option `hint` (default `true`) for handling page info hints. ![new](https://img.shields.io/badge/-new-brightgreen)
 
 - [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
+
+- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ### Note
 
@@ -95,6 +93,8 @@ Renamed from `@mr-hope/vuepress-plugin-feed` to `vuepress-plugin-feed2`. ⚠
 
 - [x] Better log output. ![improve](https://img.shields.io/badge/-improved-blue)
 
+- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
+
 ## MdEnhance
 
 ### Changes
@@ -108,6 +108,8 @@ Renamed from `@mr-hope/vuepress-plugin-feed` to `vuepress-plugin-feed2`. ⚠
   We are adding mermaid support, and mermaid support flowchart.
 
 - [x] Move SlidePage layout from theme to the plugin
+
+- [x] Allow I18N Title in details block ![new](https://img.shields.io/badge/-new-brightgreen)
 
 - [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
 
@@ -138,10 +140,6 @@ This plugin will still be under maintained, but we are going to build a better p
 Renamed from `@mr-hope/vuepress-plugin-reading-time` to `vuepress-plugin-reading-time2`. ⚠
 
 - [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
-
-## Share2 ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [ ] A new share plugin providing page share.
 
 ## SassPalette ![new](https://img.shields.io/badge/-new-brightgreen)
 
@@ -206,6 +204,16 @@ Renamed from `@mr-hope/vuepress-plugin-seo` to `vuepress-plugin-seo2`. ⚠
 
 - [x] Better log output. ![improve](https://img.shields.io/badge/-improved-blue)
 
+- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
+
+## Share2 ![new](https://img.shields.io/badge/-new-brightgreen)
+
+- [ ] A new share plugin providing page share.
+
+## SimpleBlog ![new](https://img.shields.io/badge/-new-brightgreen)
+
+- [ ] Build a own blog plugin to support blog with better performance
+
 ## Sitemap2
 
 Renamed from `@mr-hope/vuepress-plugin-sitemap` to `vuepress-plugin-sitemap2`. ⚠
@@ -213,6 +221,8 @@ Renamed from `@mr-hope/vuepress-plugin-sitemap` to `vuepress-plugin-sitemap2`. �
 ### Changes
 
 - [x] Better log output. ![improve](https://img.shields.io/badge/-improved-blue)
+
+- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ## VuepressThemeHope
 
