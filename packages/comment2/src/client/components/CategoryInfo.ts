@@ -51,9 +51,7 @@ export default defineComponent({
             },
             [
               h(CategoryIcon),
-              h(
-                "ul",
-                { class: "categories-wrapper" },
+              h("ul", { class: "categories-wrapper" }, [
                 items.value.map((category) =>
                   h(
                     "li",
@@ -72,8 +70,12 @@ export default defineComponent({
                       category
                     )
                   )
-                )
-              ),
+                ),
+                h("meta", {
+                  property: "articleSection",
+                  content: items.value.join(","),
+                }),
+              ]),
             ]
           )
         : null;

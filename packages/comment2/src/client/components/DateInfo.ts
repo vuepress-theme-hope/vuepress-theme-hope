@@ -18,12 +18,10 @@ export default defineComponent({
     const date = computed(() => {
       const { createdTime } = page.value.git || {};
 
-      return (
-        useDate(
-          { type: "date" },
-          createdTime ? new Date(createdTime) : undefined
-        ).value?.display || ""
-      );
+      return useDate(
+        { type: "date" },
+        createdTime ? new Date(createdTime) : undefined
+      ).value;
     });
 
     const pageInfoLocale = useLocaleConfig(pageInfoI18n);
@@ -41,7 +39,15 @@ export default defineComponent({
                   }
                 : {}),
             },
-            [h(CalendarIcon), h("span", date.value)]
+            [
+              h(CalendarIcon),
+              h("span", date.value?.display),
+              h("meta", {
+                property: "datePublished",
+                // ISO Format Date string
+                content: date.value?.value?.toISOString() || "",
+              }),
+            ]
           )
         : null;
   },

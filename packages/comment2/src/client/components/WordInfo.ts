@@ -16,11 +16,9 @@ export default defineComponent({
     const pageInfoLocale = useLocaleConfig(pageInfoI18n);
     const readingTimeLocale = useLocaleConfig(readingTimeI18n);
 
+    const words = computed(() => page.value.readingTime.words.toString());
     const wordText = computed(() =>
-      readingTimeLocale.value.word.replace(
-        "$word",
-        page.value.readingTime.words.toString()
-      )
+      readingTimeLocale.value.word.replace("$word", words.value)
     );
 
     return (): VNode | null =>
@@ -36,7 +34,14 @@ export default defineComponent({
                   }
                 : {}),
             },
-            [h(WordIcon), h("span", wordText.value)]
+            [
+              h(WordIcon),
+              h("span", wordText.value),
+              h("meta", {
+                property: "wordCount",
+                content: words.value,
+              }),
+            ]
           )
         : null;
   },

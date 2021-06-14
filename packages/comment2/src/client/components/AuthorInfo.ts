@@ -25,7 +25,14 @@ export default defineComponent({
                   }
                 : {}),
             },
-            [h(AuthorIcon), h("span", author.value.join(", "))]
+            [
+              h(AuthorIcon),
+              h("span", author.value.join(", ")),
+              h("span", {
+                property: "author",
+                content: author.value.join(", "),
+              }),
+            ]
           )
         : null;
   },
