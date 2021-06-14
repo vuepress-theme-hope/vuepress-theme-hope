@@ -13,7 +13,7 @@ tags:
 
 主题提供了 10 个插槽:
 
-| 插槽名称       | camelCase     | 备注       |
+| Markdown 插槽名称       | 主题属性名 | 备注       |
 | -------------- | ------------- | ---------- |
 | content-top    | contentTop    | 内容顶部   |
 | content-bottom | contentBottom | 内容底部   |
