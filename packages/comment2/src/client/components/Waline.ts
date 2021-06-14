@@ -61,10 +61,12 @@ export default defineComponent({
       setTimeout(() => resolve(), walineOption.delay);
     });
 
-    const updateWaline = (timeStamp: number): void => {
+    const updateWaline = (): void => {
+      const timeID = (id = new Date().getTime());
+
       if (waline)
         setTimeout(() => {
-          if (timeStamp === id)
+          if (timeID === id)
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             waline!.update({
               lang: lang.value === "zh-CN" ? "zh-CN" : "en",
@@ -77,7 +79,7 @@ export default defineComponent({
       else
         void Promise.all([import("@waline/client"), delayPromise]).then(
           ([{ default: Waline }]) => {
-            if (timeStamp === id)
+            if (timeID === id)
               waline = Waline({
                 lang: lang.value === "zh-CN" ? "zh-CN" : "en",
                 locale: {
@@ -98,14 +100,10 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      if (enableWaline) {
-        id = new Date().getTime();
-        updateWaline(id);
-      }
+      if (enableWaline) updateWaline();
     });
 
     onBeforeUnmount(() => {
-      id = new Date().getTime();
       if (waline) waline.destroy();
     });
 
@@ -113,10 +111,7 @@ export default defineComponent({
       () => route.path,
       () =>
         // Refresh comment when navigating to a new page
-        nextTick(() => {
-          id = new Date().getTime();
-          updateWaline(id);
-        })
+        nextTick(() => updateWaline())
     );
 
     return (): VNode =>
