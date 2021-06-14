@@ -13,19 +13,18 @@ tags:
 
 主题提供了 10 个插槽:
 
-- `content-top`: 内容顶部
-- `content-bottom`: 内容底部
-
-- `page-top`: 页面顶部
-- `page-bottom`: 页面底部
-
-- `navbar-start`: 导航栏起始
-- `navbar-center`: 导航栏中部
-- `navbar-end`: 导航栏结束
-
-- `sidebar-top`: 侧边栏顶部
-- `sidebar-center`: 侧边栏中部
-- `sidebar-bottom`: 侧边栏底部
+| Markdown 插槽名称 | 主题属性名    | 备注       |
+| ----------------- | ------------- | ---------- |
+| content-top       | contentTop    | 内容顶部   |
+| content-bottom    | contentBottom | 内容底部   |
+| page-top          | pageTop       | 页面顶部   |
+| page-bottom       | pageBottom    | 页面底部   |
+| navbar-start      | navbarStart   | 导航栏起始 |
+| navbar-center     | navbarCenter  | 导航栏中部 |
+| navbar-end        | navbarEnd     | 导航栏结束 |
+| sidebar-top       | sidebarTop    | 侧边栏顶部 |
+| sidebar-center    | sidebarCenter | 侧边栏中部 |
+| sidebar-bottom    | sidebarBottom | 侧边栏底部 |
 
 ## 使用方式
 

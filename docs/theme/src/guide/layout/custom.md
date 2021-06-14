@@ -13,19 +13,18 @@ We understand the needs of custom layout, you can add content to a specific part
 
 The theme provides 10 slots:
 
-- `content-top`: top of content
-- `content-bottom`: bottom of content
-
-- `page-top`: top of the page
-- `page-bottom`: bottom of the page
-
-- `navbar-start`: start of navigation bar
-- `navbar-center`: the upper part of the navigation bar
-- `navbar-end`: the end of the navigation bar
-
-- `sidebar-top`: the top of the sidebar
-- `sidebar-center`: the upper part of the sidebar
-- `sidebar-bottom`: the bottom of the sidebar
+| Markdown Slot Name | ThemeConfig Key | Note                                 |
+| ------------------ | --------------- | ------------------------------------ |
+| content-top        | contentTop      | top of content                       |
+| content-bottom     | contentBottom   | bottom of content                    |
+| page-top           | pageTop         | top of the page                      |
+| page-bottom        | pageBottom      | bottom of the page                   |
+| navbar-start       | navbarStart     | start of navigation bar              |
+| navbar-center      | navbarCenter    | the upper part of the navigation bar |
+| navbar-end         | navbarEnd       | the end of the navigation bar        |
+| sidebar-top        | sidebarTop      | the top of the sidebar               |
+| sidebar-center     | sidebarCenter   | the upper part of the sidebar        |
+| sidebar-bottom     | sidebarBottom   | the bottom of the sidebar            |
 
 ## Usage
 
