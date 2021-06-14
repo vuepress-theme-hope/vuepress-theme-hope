@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-06-14)
+
+### Features
+
+- **comment2:** add meta tags for pageinfo ([f325305](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f325305bf0427a4d5b84398f2837c1b601cff60d))
+
 # [2.0.0-alpha.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-06-13)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-lightgallery",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.4",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
     "vuepress-plugin",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "lightgallery": "^2.1.5",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.3"
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.4"
   },
   "publishConfig": {
     "access": "public"
