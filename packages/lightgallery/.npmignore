@@ -1,0 +1,11 @@
+# Source Code
+src/
+
+# Test Files
+__tests__/
+
+# Rollup Config files
+rollup.config.js
+
+# Typescript Config files
+tsconfig.json

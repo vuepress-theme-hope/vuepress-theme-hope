@@ -1,0 +1,47 @@
+{
+  "name": "vuepress-plugin-lightgallery",
+  "version": "2.0.0-alpha.2",
+  "description": "Light Gallery plugin for VuePress",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "lightgallery",
+    "mr-hope"
+  ],
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/lightgallery#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/lightgallery"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "node/index.js",
+  "types": "node/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./client ./node",
+    "demo:build": "vuepress build __tests__/demo",
+    "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
+    "demo:serve": "vuepress dev __tests__/demo",
+    "demo:vite-build": "vuepress-vite build __tests__/demo",
+    "demo:vite-clean-serve": "vuepress-vite dev __tests__/demo --clean-cache",
+    "demo:vite-serve": "vuepress-vite dev __tests__/demo",
+    "dev": "rollup -c -w",
+    "dev:rollup": "rollup -c -w"
+  },
+  "dependencies": {
+    "lightgallery": "^2.1.5",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

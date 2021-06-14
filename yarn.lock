@@ -9601,6 +9601,11 @@ libnpmpublish@^4.0.0:
     semver "^7.1.3"
     ssri "^8.0.1"
 
+lightgallery@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.1.5.tgz#10472793117e4faf4f07a84d3d0bb7d1b8a182b0"
+  integrity sha512-JlBvmdA/uz3v3aErNuZ0/vv2b5/0E2rFz0hLpDjxLlUVv+nz76m8ycyg30aSaGAYJOAYJaY6t30iDea4DI9Wyg==
+
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
