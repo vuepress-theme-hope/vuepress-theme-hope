@@ -13,7 +13,7 @@ We understand the needs of custom layout, you can add content to a specific part
 
 The theme provides 10 slots:
 
-| slots name     | camelCase     | note                                 |
+| Markdown Slot Name | ThemeConfig Key | Note                                 |
 | -------------- | ------------- | ------------------------------------ |
 | content-top    | contentTop    | top of content                       |
 | content-bottom | contentBottom | bottom of content                    |
