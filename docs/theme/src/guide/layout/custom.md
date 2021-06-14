@@ -66,13 +66,13 @@ You can fill in an absolute path or a relative path under the `.vuepress` folder
 
 ```js
 // .vuepress/config.js
-const { config } = require('vuepress-theme-hope');
+const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
     custom: {
-      navbarStart: './components/MyLogo.vue',
-      sidebarStart: path.resolve(__dirname, '../common/Ads.vue')
+      navbarStart: "./components/MyLogo.vue",
+      sidebarStart: path.resolve(__dirname, "../common/Ads.vue")
     }
   }
 });
