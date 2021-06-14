@@ -72,9 +72,9 @@ module.exports = config({
   themeConfig: {
     custom: {
       navbarStart: "./components/MyLogo.vue",
-      sidebarStart: path.resolve(__dirname, "../common/Ads.vue")
-    }
-  }
+      sidebarStart: path.resolve(__dirname, "../common/Ads.vue"),
+    },
+  },
 });
 ```
 
