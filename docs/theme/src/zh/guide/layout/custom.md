@@ -13,18 +13,18 @@ tags:
 
 主题提供了 10 个插槽:
 
-|插槽名称|camelCase|备注|
-|---|---|---|
-|content-top|contentTop|内容顶部|
-|content-bottom|contentBottom|内容底部|
-|page-top|pageTop|页面顶部|
-|page-bottom|pageBottom|页面底部|
-|navbar-start|navbarStart|导航栏起始|
-|navbar-center|navbarCenter|导航栏中部|
-|navbar-end|navbarEnd|导航栏结束|
-|sidebar-top|sidebarTop|侧边栏顶部|
-|sidebar-center|sidebarCenter|侧边栏中部|
-|sidebar-bottom|sidebarBottom|侧边栏底部|
+| 插槽名称       | camelCase     | 备注       |
+| -------------- | ------------- | ---------- |
+| content-top    | contentTop    | 内容顶部   |
+| content-bottom | contentBottom | 内容底部   |
+| page-top       | pageTop       | 页面顶部   |
+| page-bottom    | pageBottom    | 页面底部   |
+| navbar-start   | navbarStart   | 导航栏起始 |
+| navbar-center  | navbarCenter  | 导航栏中部 |
+| navbar-end     | navbarEnd     | 导航栏结束 |
+| sidebar-top    | sidebarTop    | 侧边栏顶部 |
+| sidebar-center | sidebarCenter | 侧边栏中部 |
+| sidebar-bottom | sidebarBottom | 侧边栏底部 |
 
 ## 使用方式
 
@@ -66,15 +66,15 @@ Hope
 
 ```js
 // .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+const { config } = require('vuepress-theme-hope');
 
 module.exports = config({
   themeConfig: {
     custom: {
-      navbarStart: "./components/MyLogo.vue",
-      sidebarStart: path.resolve(__dirname, "../common/Ads.vue"),
-    },
-  },
+      navbarStart: './components/MyLogo.vue',
+      sidebarStart: path.resolve(__dirname, '../common/Ads.vue')
+    }
+  }
 });
 ```
 

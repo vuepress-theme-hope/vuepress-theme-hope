@@ -13,18 +13,18 @@ We understand the needs of custom layout, you can add content to a specific part
 
 The theme provides 10 slots:
 
-|slots name|camelCase|note|
-|---|---|---|
-|content-top|contentTop|top of content|
-|content-bottom|contentBottom|bottom of content|
-|page-top|pageTop|top of the page|
-|page-bottom|pageBottom|bottom of the page|
-|navbar-start|navbarStart|start of navigation bar|
-|navbar-center|navbarCenter|the upper part of the navigation bar|
-|navbar-end|navbarEnd|the end of the navigation bar|
-|sidebar-top|sidebarTop|the top of the sidebar|
-|sidebar-center|sidebarCenter|the upper part of the sidebar|
-|sidebar-bottom|sidebarBottom|the bottom of the sidebar|
+| slots name     | camelCase     | note                                 |
+| -------------- | ------------- | ------------------------------------ |
+| content-top    | contentTop    | top of content                       |
+| content-bottom | contentBottom | bottom of content                    |
+| page-top       | pageTop       | top of the page                      |
+| page-bottom    | pageBottom    | bottom of the page                   |
+| navbar-start   | navbarStart   | start of navigation bar              |
+| navbar-center  | navbarCenter  | the upper part of the navigation bar |
+| navbar-end     | navbarEnd     | the end of the navigation bar        |
+| sidebar-top    | sidebarTop    | the top of the sidebar               |
+| sidebar-center | sidebarCenter | the upper part of the sidebar        |
+| sidebar-bottom | sidebarBottom | the bottom of the sidebar            |
 
 ## Usage
 
@@ -66,15 +66,15 @@ You can fill in an absolute path or a relative path under the `.vuepress` folder
 
 ```js
 // .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+const { config } = require('vuepress-theme-hope');
 
 module.exports = config({
   themeConfig: {
     custom: {
-      navbarStart: "./components/MyLogo.vue",
-      sidebarStart: path.resolve(__dirname, "../common/Ads.vue"),
-    },
-  },
+      navbarStart: './components/MyLogo.vue',
+      sidebarStart: path.resolve(__dirname, '../common/Ads.vue')
+    }
+  }
 });
 ```
 
