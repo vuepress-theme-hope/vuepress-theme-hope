@@ -13,8 +13,6 @@ import type { PropType, VNode } from "vue";
 export default defineComponent({
   name: "CategoryInfo",
 
-  components: { CategoryIcon },
-
   props: {
     categories: {
       type: Array as PropType<string[]>,

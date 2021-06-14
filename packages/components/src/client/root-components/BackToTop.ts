@@ -21,8 +21,6 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "BackToTop",
 
-  components: { BacktoTopIcon },
-
   props: {
     threshold: { type: Number, default: 300 },
   },

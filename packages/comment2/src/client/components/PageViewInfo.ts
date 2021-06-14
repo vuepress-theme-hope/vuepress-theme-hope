@@ -12,8 +12,6 @@ import type { CommentPluginFrontmatter } from "../../shared";
 export default defineComponent({
   name: "PageViewInfo",
 
-  components: { EyeIcon, FireIcon },
-
   setup() {
     const route = useRoute();
     const site = useSiteData();

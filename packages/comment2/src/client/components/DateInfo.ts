@@ -10,8 +10,6 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "DateInfo",
 
-  components: { CalendarIcon },
-
   setup() {
     const page = usePageData<{
       git?: GitData;

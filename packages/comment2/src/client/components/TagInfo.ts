@@ -10,8 +10,6 @@ import type { PropType, VNode } from "vue";
 export default defineComponent({
   name: "TagInfo",
 
-  components: { TagIcon },
-
   props: {
     tags: { type: Array as PropType<string[]>, default: (): string[] => [] },
   },

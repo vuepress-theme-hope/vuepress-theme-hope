@@ -10,8 +10,6 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "ReadingTimeInfo",
 
-  components: { TimerIcon },
-
   setup() {
     const page = usePageData<{ readingTime: ReadingTime }>();
     const pageInfoLocale = useLocaleConfig(pageInfoI18n);

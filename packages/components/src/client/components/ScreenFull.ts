@@ -9,8 +9,6 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "ScreenFull",
 
-  components: { CancelFullScreenIcon, EnterFullScreenIcon },
-
   setup() {
     const canFullscreen = ref(false);
     const isFullscreen = ref(false);

@@ -8,8 +8,6 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "AuthorInfo",
 
-  components: { AuthorIcon },
-
   setup() {
     const author = useAuthor(commentOptions.author);
     const pageInfoLocale = useLocaleConfig(pageInfoI18n);
