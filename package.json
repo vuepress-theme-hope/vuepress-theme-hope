@@ -122,7 +122,7 @@
     "lint-staged": "11.0.0",
     "markdownlint-cli": "0.27.1",
     "npm-check-updates": "11.6.0",
-    "postcss": "8.3.2",
+    "postcss": "8.3.4",
     "postcss-loader": "6.1.0",
     "prettier": "2.3.1",
     "remark-cli": "9.0.0",
