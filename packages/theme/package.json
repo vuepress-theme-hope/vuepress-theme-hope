@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "1.18.2",
+  "version": "1.18.3",
   "description": "A light vuepress theme with tons for features",
   "keywords": [
     "vuepress-theme",
@@ -36,13 +36,13 @@
     "@mr-hope/vuepress-plugin-comment": "1.18.2",
     "@mr-hope/vuepress-plugin-components": "1.18.2",
     "@mr-hope/vuepress-plugin-copy-code": "1.18.2",
-    "@mr-hope/vuepress-plugin-feed": "1.17.1",
+    "@mr-hope/vuepress-plugin-feed": "1.18.3",
     "@mr-hope/vuepress-plugin-git": "1.18.2",
     "@mr-hope/vuepress-plugin-pwa": "1.18.2",
     "@mr-hope/vuepress-plugin-seo": "1.18.2",
     "@mr-hope/vuepress-plugin-sitemap": "1.18.2",
     "@mr-hope/vuepress-shared": "1.18.2",
-    "@mr-hope/vuepress-theme-types": "1.18.2",
+    "@mr-hope/vuepress-theme-types": "1.18.3",
     "@types/bcryptjs": "^2.4.2",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.throttle": "^4.1.6",

@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-theme-types",
-  "version": "1.18.2",
+  "version": "1.18.3",
   "description": "Theme types for vuepress-theme-hope",
   "keywords": [
     "vuepress-theme",
@@ -27,7 +27,7 @@
   "types": "types/index.d.ts",
   "dependencies": {
     "@mr-hope/vuepress-plugin-comment": "1.18.2",
-    "@mr-hope/vuepress-plugin-feed": "1.17.1",
+    "@mr-hope/vuepress-plugin-feed": "1.18.3",
     "@mr-hope/vuepress-plugin-git": "1.18.2",
     "@mr-hope/vuepress-plugin-pwa": "1.18.2",
     "@mr-hope/vuepress-plugin-reading-time": "1.18.2",
