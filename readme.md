@@ -115,7 +115,7 @@ Renamed from `@mr-hope/vuepress-plugin-feed` to `vuepress-plugin-feed2`. ⚠
 
 ## LightGallery ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] Build a photo preview plugin using [lightGallary](https://www.lightgalleryjs.com/)
+- [x] Build a photo preview plugin using [lightGallary](https://www.lightgalleryjs.com/)
 
 ## Pwa2
 
