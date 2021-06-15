@@ -101,7 +101,7 @@
     "@types/jest": "26.0.23",
     "@types/semver": "7.3.6",
     "@typescript-eslint/eslint-plugin": "4.26.1",
-    "@typescript-eslint/parser": "4.26.1",
+    "@typescript-eslint/parser": "4.27.0",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "7.0.0",
     "@vuedx/typescript-plugin-vue": "0.7.4",
