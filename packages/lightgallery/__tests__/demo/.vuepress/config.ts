@@ -30,7 +30,7 @@ const config: UserConfig<DefaultThemeOptions> = {
     },
   },
 
-  plugins: ["lightgallery"],
+  plugins: [["lightgallery", { plugins: ["video"] }]],
 };
 
 export default config;

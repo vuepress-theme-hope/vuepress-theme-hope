@@ -26,7 +26,6 @@ declare const LIGHT_GALLERY_FULLSCREEN: boolean;
 declare const LIGHT_GALLERY_PAGER: boolean;
 declare const LIGHT_GALLERY_THUMBNAIL: boolean;
 declare const LIGHT_GALLERY_ROTATE: boolean;
-declare const LIGHT_GALLERY_VIDEO: boolean;
 declare const LIGHT_GALLERY_SHARE: boolean;
 declare const LIGHT_GALLERY_ZOOM: boolean;
 
@@ -92,11 +91,6 @@ export default defineComponent({
     if (LIGHT_GALLERY_THUMBNAIL) {
       plugins.push(import("lightgallery/plugins/thumbnail"));
       pluginsStyles.push(import("lightgallery/scss/lg-thumbnail.scss"));
-    }
-
-    if (LIGHT_GALLERY_VIDEO) {
-      plugins.push(import("lightgallery/plugins/video"));
-      pluginsStyles.push(import("lightgallery/scss/lg-video.scss"));
     }
 
     if (LIGHT_GALLERY_ZOOM) {

@@ -28,7 +28,6 @@ const lightGalleryPlugin: Plugin<LightGalleryOptions> = (options, app) => {
       LIGHT_GALLERY_PAGER: plugins.includes("pager"),
       LIGHT_GALLERY_THUMBNAIL: plugins.includes("thumbnail"),
       LIGHT_GALLERY_ROTATE: plugins.includes("rotate"),
-      LIGHT_GALLERY_VIDEO: plugins.includes("video"),
       LIGHT_GALLERY_SHARE: plugins.includes("share"),
       LIGHT_GALLERY_ZOOM: plugins.includes("zoom"),
     }),

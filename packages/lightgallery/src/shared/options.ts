@@ -6,7 +6,6 @@ export type LightGalleryPlugin =
   | "pager"
   | "thumbnail"
   | "rotate"
-  | "video"
   | "share"
   | "zoom";
 
@@ -52,12 +51,11 @@ export interface LightGalleryOptions {
    * - "pager"
    * - "thumbnail"
    * - "rotate"
-   * - "video"
    * - "share"
    * - "zoom"
    *
    * @default ["pager", "share", "zoom"]
    */
 
-  plugins: LightGalleryPlugin[];
+  plugins?: LightGalleryPlugin[];
 }
