@@ -91,10 +91,5 @@ export const release = async (): Promise<void> => {
   await sync();
   taobaoSpinner.succeed();
 
-  const changelogSpinner = ora("Generating changelog").start();
-
-  await execa("yarn", ["run", "changelog"]);
-  changelogSpinner.succeed();
-
   ora("Release complete").succeed();
 };
