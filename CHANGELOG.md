@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.18.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.2...v1.18.3) (2021-06-15)
+
+### Bug Fixes
+
+- **feed:** add missing deps ([4f1e282](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f1e2825a642816396b0458a2b59b3b335608a8c))
+
 ## [1.18.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.1...v1.18.2) (2021-06-15)
 
 ### Bug Fixes
