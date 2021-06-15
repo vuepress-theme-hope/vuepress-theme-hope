@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.18.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.1...v1.18.2) (2021-06-15)
+
+### Bug Fixes
+
+- **create:** fix template config ([64c373c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/64c373c0be6562e621d38e1444125c7d23fb10b9))
+- **theme:** fix a typo in style ([a02a3c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a02a3c39dc9d54bc37e0302602a1630b07db24ec))
+- **theme:** fix wrong types ([7512806](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75128064eddd7e283bae383a56bbc9138e4c3ac0))
+
+### Features
+
+- **theme:** rebuild custom layout ([40eeca6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/40eeca6e2903cef75ad9ab768deaa6bd1d28f562))
+
 ## [1.18.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.0...v1.18.1) (2021-06-05)
 
 ### Bug Fixes
