@@ -3422,7 +3422,7 @@
     "@vue/compiler-dom" "3.1.1"
     "@vue/shared" "3.1.1"
 
-"@vue/devtools-api@^6.0.0-beta.10":
+"@vue/devtools-api@^6.0.0-beta.14":
   version "6.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.14.tgz#6ed2d6f8d66a9256c9ad04bfff08309ba87b9723"
   integrity sha512-44fPrrN1cqcs6bFkT0C+yxTM6PZXLbR+ESh1U1j8UD22yO04gXvxH62HApMjLbS3WqJO/iCNC+CYT+evPQh2EQ==
@@ -10539,7 +10539,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
@@ -15493,12 +15492,12 @@ vue-loader@^16.2.0:
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
 
-vue-router@^4.0.8:
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.8.tgz#55d4290a3122444edbc91a3cd2492bb1d0cef494"
-  integrity sha512-42mWSQaH7CCBQDspQTHv63f34VEnZC20g9QNK4WJ/zW8SdIUeT6TQ2i/78fjF/pVBUPLBWrGhvB7uDnaz7O/pA==
+vue-router@^4.0.8, vue-router@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.9.tgz#248496941b79c4c1010f6ebfcf235cd4267d85da"
+  integrity sha512-i3IaZJ57YeMbRHQlqKyXdUMr5NzTCcJkn3f8u38TsZjYWtGcd3IX2zRd3389SCOwuRf11mgfHAyngR6FVDE9og==
   dependencies:
-    "@vue/devtools-api" "^6.0.0-beta.10"
+    "@vue/devtools-api" "^6.0.0-beta.14"
 
 vue@^3.1.1:
   version "3.1.1"
