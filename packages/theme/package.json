@@ -55,6 +55,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2",
     "vuepress-plugin-add-this": "1.18.2",
     "vuepress-plugin-container": "^2.1.5",
     "vuepress-plugin-copyright": "^1.0.2",
