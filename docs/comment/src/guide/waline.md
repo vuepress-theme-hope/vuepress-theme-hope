@@ -61,6 +61,8 @@ Now Waline will run successfully on your site. :tada:
 
 You can also pass in other options supported by Waline (except `el`).
 
+For details, see [Waline Config](../config/waline.md)
+
 :::
 
 ## Comment management (Management)

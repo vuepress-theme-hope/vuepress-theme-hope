@@ -81,6 +81,8 @@ icon: waline
 
 你也可以传入其他 Waline 支持的选项 (除了 `el`)。
 
+详情请见 [Waline 配置](../config/waline.md)
+
 :::
 
 ## 评论管理 (管理端)
