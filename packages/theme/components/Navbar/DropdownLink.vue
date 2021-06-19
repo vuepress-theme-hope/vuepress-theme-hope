@@ -12,7 +12,7 @@
           {{ item.text }}
         </span>
       </slot>
-      <span class="arrow down" />
+      <span class="arrow" />
     </button>
 
     <ul class="nav-dropdown">
@@ -72,6 +72,10 @@
 .dropdown-wrapper
   height 1.8rem
   cursor pointer
+
+  &:not(:hover)
+    .arrow
+      transform rotate(-180deg)
 
   &:hover, &.open
     .nav-dropdown
