@@ -43,36 +43,25 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
    ![Deploy](https://p0.ssl.qhimg.com/t0142b58c2e8f886b28.png)
 
-## Importing in HTML (Client)
+## Client
 
-Make the following settings on your web page:
+### Using plugin
 
-1. Use CDN to import Waline: `///cdn.jsdelivr.net/npm/@waline/client`.
+Set `type: 'waline'` in the plugin options, and set `serverURL` as the link obtained in the previous step.
 
-1. Create a `<script>` tag and initialize with `Waline()` while passing in the necessary `el` and `serverURL` options.
+Then, place the `<Comment>` component at a suitable location in your website (usually at the bottom of the page), you will be able to see the comment box.
 
-   - The `el` option is the element used for Waline rendering. You can set a CSS selector in the form of a string or an HTMLElement object.
-   - `serverURL` is the link of the server, which you just got.
+### Using theme
 
-   ```html:line-numbers
-   <head>
-     ..
-     <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
-     ...
-   </head>
-   <body>
-     ...
-     <div id="waline"></div>
-     <script>
-       Waline({
-         el: '#waline',
-         serverURL: 'https://your-domain.vercel.app',
-       });
-     </script>
-   </body>
-   ```
+In `themeConfig.comment`, set `type: 'waline'` and `serverURL` as the link obtained in the previous step.
 
-1. The comment service will now run successfully on your site :tada:
+Now Waline will run successfully on your site. :tada:
+
+::: tip
+
+You can also pass in other options supported by Waline (except `el`).
+
+:::
 
 ## Comment management (Management)
 
