@@ -43,12 +43,14 @@ export default defineComponent({
       frontmatter.value.copyrightText === false
         ? false
         : frontmatter.value.copyrightText ||
-          config.value.copyright ||
-          (themeLocaleData.value.author
-            ? `Copyright © ${new Date().getFullYear()} ${
-                themeLocaleData.value.author
-              }`
-            : "")
+          (config.value.copyright === false
+            ? false
+            : config.value.copyright ||
+              (themeLocaleData.value.author
+                ? `Copyright © ${new Date().getFullYear()} ${
+                    themeLocaleData.value.author
+                  }`
+                : ""))
     );
 
     return (): VNode | null =>
