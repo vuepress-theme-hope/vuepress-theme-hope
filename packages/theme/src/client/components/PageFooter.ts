@@ -60,7 +60,12 @@ export default defineComponent({
               ? null
               : h(MediaLinks),
             h("div", { class: "footer", innerHTML: content.value }),
-            h("div", { class: "copyright", innerHTML: copyright.value }),
+            copyright.value
+              ? h("div", {
+                  class: "copyright",
+                  innerHTML: copyright.value,
+                })
+              : null,
           ])
         : null;
   },

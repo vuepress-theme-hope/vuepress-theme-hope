@@ -32,10 +32,24 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/layouts/Layout.vue", {
+  ...rollupVue("client/components/Common.ts", {
     external: [
       "@Navbar",
       "@Sidebar",
+      "@mr-hope/vuepress-shared/client",
+      "@vuepress/client",
+      "@vuepress/plugin-theme-data/lib/client",
+      "@vuepress/shared",
+      "lodash.throttle",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupVue("client/layouts/Layout.ts", {
+    external: [
+      "@Common",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
@@ -48,6 +62,7 @@ export default [
   }),
   ...rollupVue("client/layouts/404.vue", {
     external: [
+      "@Common",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
