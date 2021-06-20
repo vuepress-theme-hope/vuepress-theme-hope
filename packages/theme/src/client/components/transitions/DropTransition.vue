@@ -1,5 +1,5 @@
 <template>
-  <transition
+  <Transition
     v-if="type === 'single'"
     name="drop"
     appear
@@ -10,8 +10,8 @@
     @before-leave="setStyle"
   >
     <slot />
-  </transition>
-  <transition-group
+  </Transition>
+  <TransitionGroup
     v-if="type === 'group'"
     name="drop"
     appear
@@ -22,16 +22,21 @@
     @before-leave="setStyle"
   >
     <slot />
-  </transition-group>
+  </TransitionGroup>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { Transition, TransitionGroup, defineComponent } from "vue";
 
 import type { PropType } from "vue";
 
 export default defineComponent({
   name: "DropTransition",
+
+  components: {
+    Transition,
+    TransitionGroup,
+  },
 
   props: {
     type: { type: String as PropType<"single" | "group">, default: "single" },

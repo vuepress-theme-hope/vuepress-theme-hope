@@ -4,7 +4,7 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "ExpandTransition",
 
-  setup() {
+  setup(_props, { slots }) {
     const setHeight = (items: Element): void => {
       // explicitly set height so that it can be transitioned
       (items as HTMLElement).style.height = `${items.scrollHeight}px`;
@@ -15,11 +15,15 @@ export default defineComponent({
     };
 
     return (): VNode =>
-      h(Transition, {
-        name: "expand",
-        onEnter: setHeight,
-        onAfterEnter: unsetHeight,
-        onBefoerLeave: unsetHeight,
-      });
+      h(
+        Transition,
+        {
+          name: "expand",
+          onEnter: setHeight,
+          onAfterEnter: unsetHeight,
+          onBeforeLeave: unsetHeight,
+        },
+        { default: () => slots.default?.() }
+      );
   },
 });

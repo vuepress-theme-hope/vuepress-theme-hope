@@ -27,13 +27,7 @@
 
     <Home v-if="frontmatter.home" />
 
-    <Transition
-      v-else
-      name="fade-slide-y"
-      mode="out-in"
-      @before-enter="onBeforeEnter"
-      @before-leave="onBeforeLeave"
-    >
+    <FadeSideY v-else>
       <Page :key="page.path">
         <template #top>
           <slot name="page-top" />
@@ -42,41 +36,31 @@
           <slot name="page-bottom" />
         </template>
       </Page>
-    </Transition>
+    </FadeSideY>
   </div>
 </template>
 
 <script lang="ts">
-import {
-  computed,
-  defineComponent,
-  onMounted,
-  onUnmounted,
-  ref,
-  Transition,
-} from "vue";
+import { computed, defineComponent, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import type { HopeThemePageFrontmatter } from "../../shared";
+import FadeSideY from "../components/transitions/FadeSlideY";
 import Home from "../components/Home.vue";
 import Page from "../components/Page.vue";
 import Navbar from "@Navbar";
 import Sidebar from "@Sidebar";
-import {
-  useScrollPromise,
-  useSidebarItems,
-  useThemeLocaleData,
-} from "../composables";
+import { useSidebarItems, useThemeLocaleData } from "../composables";
 
 export default defineComponent({
   name: "Layout",
 
   components: {
+    FadeSideY,
     Home,
     Page,
     Navbar,
     Sidebar,
-    Transition,
   },
 
   setup() {
@@ -135,11 +119,6 @@ export default defineComponent({
       unregisterRouterHook();
     });
 
-    // handle scrollBehavior with transition
-    const scrollPromise = useScrollPromise();
-    const onBeforeEnter = scrollPromise.resolve;
-    const onBeforeLeave = scrollPromise.pending;
-
     return {
       frontmatter,
       page,
@@ -148,8 +127,6 @@ export default defineComponent({
       toggleSidebar,
       onTouchStart,
       onTouchEnd,
-      onBeforeEnter,
-      onBeforeLeave,
     };
   },
 });
