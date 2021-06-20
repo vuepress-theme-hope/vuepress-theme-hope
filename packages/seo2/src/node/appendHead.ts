@@ -20,7 +20,7 @@ const addMeta = (
   if (content) meta.push(["meta", { [attribute]: name, content }]);
 };
 
-export const appendMeta = (
+export const appendSEO = (
   head: HeadConfig[],
   content: SeoContent,
   options: SeoOptions
