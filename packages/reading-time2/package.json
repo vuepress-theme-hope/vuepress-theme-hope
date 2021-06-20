@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-reading-time2",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "description": "Reading time plugin for VuePress",
   "keywords": [
     "vuepress-plugin",
@@ -35,7 +35,7 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.4"
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.5"
   },
   "publishConfig": {
     "access": "public"

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
+
+### Bug Fixes
+
+- **shared:** fix useCustomServer ([7d51d90](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d51d906dbb6846ccc36f44306447e662a9386df))
+
+### Features
+
+- **lightgallery:** remove video plugin ([11c66ce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/11c66ce47412515cc10bba7ed451398b9e595558))
+- **theme:** update dropdown arrow ([51f1fe6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/51f1fe6e868c0516dbfeedf8827017a1392969ef))
+- **theme:** update navbar ([d8a90cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d8a90cd868582292a3a795cc1424948f56045c6a))
+
 # [2.0.0-alpha.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-06-14)
 
 ### Bug Fixes

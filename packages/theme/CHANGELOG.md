@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
+
+### Features
+
+- **theme:** update dropdown arrow ([51f1fe6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/51f1fe6e868c0516dbfeedf8827017a1392969ef))
+- **theme:** update navbar ([d8a90cd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d8a90cd868582292a3a795cc1424948f56045c6a))
+
 # [2.0.0-alpha.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-06-14)
 
 **Note:** Version bump only for package vuepress-theme-hope
