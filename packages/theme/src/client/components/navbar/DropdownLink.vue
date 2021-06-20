@@ -12,7 +12,7 @@
           {{ item.text }}
         </span>
       </slot>
-      <span class="arrow down" />
+      <span class="arrow" />
     </button>
 
     <ul class="nav-dropdown">

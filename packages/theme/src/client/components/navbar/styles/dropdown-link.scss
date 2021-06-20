@@ -6,6 +6,12 @@
   height: 1.8rem;
   cursor: pointer;
 
+  &:not(:hover) {
+    .arrow {
+      transform: rotate(-180deg);
+    }
+  }
+
   &:hover,
   &.open {
     .nav-dropdown {
