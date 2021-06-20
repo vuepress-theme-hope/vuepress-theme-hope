@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /images/hero.png
+heroImage: /logo.svg
 actions:
   - text: Get Started
     link: /guide/getting-started.html
@@ -28,7 +28,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ### As Easy as 1, 2, 3
 
 <CodeGroup>
-  <CodeGroupItem title="YARN" active>
+<CodeGroupItem title="YARN" active>
 
 ```bash
 # install in your project
@@ -44,10 +44,10 @@ yarn vuepress dev
 yarn vuepress build
 ```
 
-  </CodeGroupItem>
+</CodeGroupItem>
 
-  <CodeGroupItem title="NPM">
-  
+<CodeGroupItem title="NPM">
+
 ```bash
 # install in your project
 npm install -D vuepress@next
@@ -66,6 +66,5 @@ npx vuepress build
 
 ```
 
-  </CodeGroupItem>
+</CodeGroupItem>
 </CodeGroup>
-```
