@@ -5,6 +5,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared",
       "@vuepress/plugin-container",
+      "@vuepress/shared",
       "@vuepress/utils",
       "markdown-it/lib/token",
       "markdown-it/lib/helpers/parse_link_label",

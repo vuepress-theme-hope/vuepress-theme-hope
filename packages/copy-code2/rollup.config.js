@@ -11,14 +11,14 @@ export default [
   }),
   ...rollupTypescript("client/appSetup", {
     external: [
-      "@mr-hope/vuepress-shared/styles/config/index.scss",
+      "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
-      "balloon-css",
+      "balloon-css/balloon.css",
       "vue",
       "vue-router",
       /\.scss$/,
     ],
-    dtsExternal: ["balloon-css", /\.scss$/],
+    dtsExternal: ["balloon-css/balloon.css", /\.scss$/],
     copy: [["client/styles", "client"]],
   }),
 ];

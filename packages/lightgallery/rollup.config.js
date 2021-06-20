@@ -11,7 +11,13 @@ export default [
   }),
   ...rollupTypescript("client/root-components/LightGallery", {
     resolve: true,
-    external: ["@vuepress/client", "vue", "vue-router", /.scss$/u],
+    external: [
+      "@mr-hope/vuepress-shared/client",
+      "@vuepress/client",
+      "vue",
+      "vue-router",
+      /.scss$/u,
+    ],
     dtsExternal: [/.scss$/u],
   }),
 ];
