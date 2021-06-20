@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.18.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.3...v1.18.4) (2021-06-20)
+
+### Bug Fixes
+
+- **theme:** fix copyright cannot disabled throught theme config ([4cb1dac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4cb1dacef4fe9de7f2d538519b6d115bd1bb7507))
+
+### Features
+
+- **theme:** add animation for dropdown arrow ([3af8177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3af8177f5cb72cced1a84b29c09ac7cc7096aed1))
+
 ## [1.18.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.2...v1.18.3) (2021-06-15)
 
 ### Bug Fixes
