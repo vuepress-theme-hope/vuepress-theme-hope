@@ -38,12 +38,14 @@ export default Vue.extend({
       return this.$frontmatter.copyrightText === false
         ? false
         : this.$frontmatter.copyrightText ||
-            this.footerConfig.copyright ||
-            (this.$themeConfig.author
-              ? `Copyright © ${new Date().getFullYear()} ${
-                  this.$themeConfig.author
-                }`
-              : "");
+            (this.footerConfig.copyright === false
+              ? false
+              : this.footerConfig.copyright ||
+                (this.$themeConfig.author
+                  ? `Copyright © ${new Date().getFullYear()} ${
+                      this.$themeConfig.author
+                    }`
+                  : ""));
     },
   },
 });
