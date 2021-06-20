@@ -41,7 +41,13 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onBeforeMount, onMounted, ref } from "vue";
+import {
+  computed,
+  defineComponent,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from "vue";
 import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
 import { useThemeLocaleData } from "../../composables";
 import NavbarLinks from "./NavbarLinks";
@@ -150,7 +156,7 @@ export default defineComponent({
       window.addEventListener("orientationchange", handleLinksWrapWidth, false);
     });
 
-    onBeforeMount(() => {
+    onBeforeUnmount(() => {
       window.removeEventListener("resize", handleLinksWrapWidth, false);
       window.removeEventListener(
         "orientationchange",
