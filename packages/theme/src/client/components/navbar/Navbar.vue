@@ -32,7 +32,7 @@
 
       <slot name="center" />
 
-      <ToggleDarkButton />
+      <ToggleDarkModeButton v-if="enableDarkMode" />
 
       <NavbarSearch />
       <slot name="after" />
@@ -45,7 +45,7 @@ import { computed, defineComponent, onBeforeMount, onMounted, ref } from "vue";
 import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
 import { useThemeLocaleData } from "../../composables";
 import NavbarLinks from "./NavbarLinks";
-import ToggleDarkButton from "./ToggleDarkButton.vue";
+import ToggleDarkModeButton from "./ToggleDarkModeButton.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton";
 
 import "./styles/index.scss";
@@ -76,7 +76,7 @@ export default defineComponent({
 
   components: {
     NavbarLinks,
-    ToggleDarkButton,
+    ToggleDarkModeButton,
     ToggleSidebarButton,
   },
 
@@ -117,6 +117,7 @@ export default defineComponent({
 
       return autoHide !== "none" && (autoHide === "always" || isMobile.value);
     });
+    const enableDarkMode = computed(() => themeLocale.value.darkMode);
 
     let handleLinksWrapWidth: () => void;
 
@@ -159,14 +160,17 @@ export default defineComponent({
     });
 
     return {
-      autoHide,
       navbar,
+      autoHide,
+      enableDarkMode,
+
+      linksWrapperStyle,
+
       siteBrand,
       siteBrandLink,
       siteBrandLogo,
       siteBrandDarkLogo,
       siteBrandTitle,
-      linksWrapperStyle,
 
       withBase,
     };

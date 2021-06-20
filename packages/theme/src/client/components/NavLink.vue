@@ -125,13 +125,17 @@ export default defineComponent({
       return item.value.link !== "/";
     });
 
-    // if this link is active in subpath
-    const isActive = computed(() => {
-      if (!isRouterLink.value || !shouldBeActiveInSubpath.value) {
-        return false;
-      }
-      return route.path.startsWith(item.value.link);
-    });
+    // if this link is active
+    const isActive = computed(() =>
+      !isRouterLink.value
+        ? false
+        : item.value.activeMatch
+        ? new RegExp(item.value.activeMatch).test(route.path)
+        : // if this link is active in subpath
+        !shouldBeActiveInSubpath.value
+        ? false
+        : route.path.startsWith(item.value.link)
+    );
 
     const focusoutAction = (): void => emit("focusout");
 

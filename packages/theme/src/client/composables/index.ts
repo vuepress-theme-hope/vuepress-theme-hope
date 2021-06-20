@@ -1,3 +1,4 @@
+export * from "./darkmode";
 export * from "./navbar";
 export * from "./navLink";
 export * from "./resolveRouteWithRedirect";

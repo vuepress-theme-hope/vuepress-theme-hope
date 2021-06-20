@@ -1,6 +1,11 @@
 <template>
-  <button class="toggle-dark-button" @click="toggleDark">
-    <svg v-show="!isDark" class="icon" focusable="false" viewBox="0 0 32 32">
+  <button class="toggle-dark-button" @click="toggleDarkMode">
+    <svg
+      v-show="!isDarkMode"
+      class="icon"
+      focusable="false"
+      viewBox="0 0 32 32"
+    >
       <path
         d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z"
         fill="currentColor"
@@ -37,34 +42,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from "vue";
+import { defineComponent } from "vue";
+import { useDarkMode } from "../../composables";
 
 export default defineComponent({
-  name: "ToggleDarkButton",
+  name: "ToggleDarkModeButton",
 
   setup() {
-    const isDark = ref(false);
-    const toggleDark = (): void => {
-      isDark.value = !isDark.value;
-    };
+    const isDarkMode = useDarkMode();
 
-    const setDarkClass = (): void => {
-      const htmlEl = window?.document.querySelector("html");
-      htmlEl?.classList.toggle("dark", isDark.value);
+    const toggleDarkMode = (): void => {
+      isDarkMode.value = !isDarkMode.value;
     };
-
-    onMounted(() => {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      isDark.value = mediaQuery.matches;
-      mediaQuery.addEventListener("change", (event) => {
-        isDark.value = event.matches;
-      });
-      watch(isDark, setDarkClass, { immediate: true });
-    });
 
     return {
-      isDark,
-      toggleDark,
+      isDarkMode,
+      toggleDarkMode,
     };
   },
 });
