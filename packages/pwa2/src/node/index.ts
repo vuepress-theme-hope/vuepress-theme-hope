@@ -1,11 +1,9 @@
 import { path } from "@vuepress/utils";
-import { getLocales } from "@mr-hope/vuepress-shared";
-// import { getRootLangPath, useCustomDevServer } from "@mr-hope/vuepress-shared";
+import { getLocales, useCustomDevServer } from "@mr-hope/vuepress-shared";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { i18n } from "./i18n";
 import { injectLinkstoHead } from "./injectHead";
-import { genManifest } from "./genManifest";
-// import { getManifest, genManifest } from "./genManifest";
+import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
 
 import type { Plugin, PluginObject } from "@vuepress/core";
@@ -22,13 +20,12 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
 
   usePalettePlugin(app, { id: "hope" });
 
-  // TODO: Wait until a valid fix
-  // useCustomDevServer(
-  //   app,
-  //   "manifest.webmanifest",
-  //   () => getManifest(pwaOption, app),
-  //   "Unexpected manifest generate error"
-  // );
+  useCustomDevServer(
+    app,
+    "manifest.webmanifest",
+    () => getManifest(pwaOptions, app),
+    "Unexpected manifest generate error"
+  );
 
   const config: PluginObject = {
     name: "vuepress-plugin-pwa2",

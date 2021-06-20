@@ -1,10 +1,11 @@
 import { mergeConfig } from "vite";
 
 import type { App } from "@vuepress/core";
-import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
+import type {
+  WebpackBundlerOptions,
+  WebpackDevServer,
+} from "@vuepress/bundler-webpack";
 import type { HandleFunction } from "connect";
-import type { Application } from "express";
-import type * as WebpackDevServer from "webpack-dev-server";
 import type { Plugin } from "vite";
 import type { IncomingMessage, ServerResponse } from "http";
 
@@ -52,10 +53,9 @@ export const useCustomDevServer = (
       .beforeDevServer;
 
     app.options.bundlerConfig.beforeDevServer = (
-      expressApp: Application,
       server: WebpackDevServer
     ): void => {
-      expressApp.get(
+      server.app.get(
         `${app.options.base.replace(/\/$/, "")}${path}`,
         (request, response) => {
           getResponse(request)
@@ -63,7 +63,7 @@ export const useCustomDevServer = (
             .catch(() => response.status(500).send(errMsg));
         }
       );
-      beforeDevServer?.(expressApp, server);
+      beforeDevServer?.(server);
     };
   }
 };
