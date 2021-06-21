@@ -1,7 +1,8 @@
+@use '@mr-hope/vuepress-shared/styles/reset';
 @use '@hope/config';
 
 .presentation {
-  .md-presentation {
+  .md-enhance-presentation {
     min-width: 100vw;
     min-height: 100vh;
   }
@@ -9,6 +10,7 @@
   .menu-button,
   .back-button,
   .home-button {
+    @include reset.button();
     box-sizing: content-box;
     position: fixed;
     bottom: 2rem;
@@ -16,20 +18,12 @@
     height: 1rem;
     padding: 0.5rem;
     border-radius: 50%;
-    background: #bbb;
+    background: rgba(127, 127, 127, 0.35);
     color: var(--white);
     outline: none;
 
     &:hover {
       background: var(--accent-color);
-    }
-
-    #{config.$darkSelector} & {
-      background: #666;
-
-      &:hover {
-        background: var(--accent-color);
-      }
     }
   }
 

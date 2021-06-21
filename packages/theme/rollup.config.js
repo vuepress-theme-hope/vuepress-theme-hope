@@ -2,7 +2,6 @@ import { rollupTypescript, rollupVue } from "../../scripts/rollup";
 
 export default [
   ...rollupTypescript("node/index", {
-    output: { format: "cjs" },
     external: ["@vuepress/utils", "vuepress-plugin-sass-palette"],
   }),
 
@@ -60,6 +59,19 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupVue("client/layouts/Layout.ts", {
+    external: [
+      "@Common",
+      "@mr-hope/vuepress-shared/client",
+      "@vuepress/client",
+      "@vuepress/plugin-theme-data/lib/client",
+      "@vuepress/shared",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupVue("client/layouts/404.ts", {
     external: [
       "@Common",
@@ -73,7 +85,10 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/appEnhance.ts", {
+  ...rollupTypescript("client/layouts/Slide", {
+    external: ["vuepress-plugin-md-enhance/client/SlidePage", "vue"],
+  }),
+  ...rollupTypescript("client/appEnhance", {
     copy: [["client/styles", "client"]],
     external: [
       "@mr-hope/vuepress-shared/client",
@@ -86,7 +101,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/appSetup.ts", {
+  ...rollupTypescript("client/appSetup", {
     external: [
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",

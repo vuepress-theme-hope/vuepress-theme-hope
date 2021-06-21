@@ -1,8 +1,7 @@
-<script lang="ts">
 import { clickOutside } from "@mr-hope/vuepress-shared/client";
 import { Content } from "@vuepress/client";
 import { defineComponent, h, ref, onBeforeUnmount, withDirectives } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { useRouter } from "vue-router";
 import { BackIcon, HomeIcon } from "./components/icons";
 
 import type { VNode } from "vue";
@@ -10,11 +9,10 @@ import type { VNode } from "vue";
 import "./styles/layout.scss";
 
 export default defineComponent({
-  name: "Slide",
+  name: "SlidePage",
 
   setup() {
     const router = useRouter();
-    const route = useRoute();
     const showMenu = ref(false);
 
     const toggle = (): void => {
@@ -45,7 +43,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "presentation" }, [
-        h(Content, { pageKey: route.path }),
+        h(Content),
         withDirectives(
           h("div", { class: { menu: true, active: showMenu.value } }, [
             h(
@@ -69,4 +67,3 @@ export default defineComponent({
       ]);
   },
 });
-</script>

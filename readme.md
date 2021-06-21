@@ -206,6 +206,8 @@ Renamed from `@mr-hope/vuepress-plugin-seo` to `vuepress-plugin-seo2`. ⚠
 
 - [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
 
+- [ ] Alternate Language Link support ![new](https://img.shields.io/badge/-new-brightgreen)
+
 ## Share2 ![new](https://img.shields.io/badge/-new-brightgreen)
 
 - [ ] A new share plugin providing page share.

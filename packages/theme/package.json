@@ -33,7 +33,7 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./client ./node",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:rollup\"",
+    "dev": "node --max_old_space_size=8192 ../../node_modules/concurrently/bin/concurrently.js \"yarn dev:copy\" \"yarn dev:rollup\"",
     "dev:copy": "cpx \"src/client/**/styles/**/*.scss\" client -w",
     "dev:rollup": "rollup -c -w"
   },
