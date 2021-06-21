@@ -7,10 +7,13 @@
 
 @use 'code';
 @use 'home';
-@use 'layout';
+
 @use 'medialinks';
 @use 'page';
 @use 'sr-only';
 @use 'toc';
 @use 'transitions';
 @use 'theme';
+
+@use 'layout';
+@use 'page404';

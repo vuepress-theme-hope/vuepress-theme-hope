@@ -3,7 +3,7 @@ import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import Common from "@Common";
 import FadeSideY from "../components/transitions/FadeSlideY";
 import Home from "../components/Home.vue";
-import Page from "../components/Page.vue";
+import Page from "../components/Page";
 
 import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";

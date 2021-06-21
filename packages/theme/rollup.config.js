@@ -60,7 +60,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/layouts/404.vue", {
+  ...rollupVue("client/layouts/404.ts", {
     external: [
       "@Common",
       "@mr-hope/vuepress-shared/client",
