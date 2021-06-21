@@ -45,6 +45,9 @@ jobs:
         if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
+      - name: Increase Node Old Space
+        run: export NODE_OPTIONS=--max_old_space_size=8192"
+
       - name: Build project
         run: yarn run build
 
