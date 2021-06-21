@@ -1,11 +1,11 @@
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
+import SidebarLinks from "./SidebarLinks";
 import { renderGroupHeader } from "../../composables";
 import { isActiveItem } from "../../utils";
 
 import type { PropType, VNode } from "vue";
 import type { ResolvedSidebarGroupItem } from "../../../shared";
-import SidebarLinks from "./SidebarLinks";
 
 export default defineComponent({
   name: "SidebarGroup",

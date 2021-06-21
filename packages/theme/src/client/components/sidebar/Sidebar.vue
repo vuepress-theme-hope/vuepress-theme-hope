@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useSidebarItems } from "../../composables";
-import SidebarNavLinks from "./NavLinks.vue";
+import SidebarNavLinks from "./NavLinks";
 import SidebarLinks from "./SidebarLinks";
 
 import "./styles/index.scss";
