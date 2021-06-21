@@ -96,6 +96,11 @@ h6 {
 
 h1 {
   font-size: 2rem;
+
+  // narrow mobile
+  @media (max-width: config.$mobileS) {
+    font-size: 1.9rem;
+  }
 }
 
 h2 {

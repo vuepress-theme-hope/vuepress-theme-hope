@@ -1,16 +1,19 @@
 @use '@hope/config';
+@use "@mr-hope/vuepress-shared/styles/reset";
 @use '@mr-hope/vuepress-shared/styles/arrow';
 
 .mobile-dropdown-wrapper {
   cursor: pointer;
 
   .dropdown-title {
-    cursor: inherit;
+    @include reset.button;
+
     padding: inherit;
     color: var(--text-color);
     font-family: inherit;
     font-size: inherit;
     line-height: 1.4rem;
+    cursor: inherit;
 
     &:hover {
       color: var(--accent-color);

@@ -10,6 +10,7 @@ import {
   isString,
   resolveLocalePath,
 } from "@vuepress/shared";
+// import { hash } from "@vuepress/utils";
 import { getLink } from "./getLink";
 
 import type { ComputedRef, InjectionKey } from "vue";
@@ -84,7 +85,7 @@ export const resolveArraySidebarItems = async (
   const handleChildItem = async (
     item: SidebarItem
   ): Promise<ResolvedSidebarPageItem | ResolvedSidebarGroupItem> => {
-    const childItem = isString(item) ? getLink(router, item) : item;
+    const childItem = isString(item) ? await getLink(router, item) : item;
 
     // resolved group item
     if ("children" in childItem) {
@@ -99,15 +100,22 @@ export const resolveArraySidebarItems = async (
       };
     }
 
-    const pageData = pages.value[childItem.link]
-      ? await pages.value[childItem.link]()
-      : null;
+    // FIXME: Find a way to get page key
+    const pageKey = childItem.link;
+    // const pageKey = hash(childItem.link);
+    const pageData = pages.value[pageKey] ? await pages.value[pageKey]() : null;
 
     return {
       type: "page",
       ...childItem,
       children: pageData
-        ? headersToSidebarItemChildren(pageData.headers, sidebarDepth)
+        ? headersToSidebarItemChildren(
+            // skip h1 header
+            pageData.headers[0]?.level === 1
+              ? pageData.headers[0].children
+              : pageData.headers,
+            sidebarDepth
+          )
         : [],
     };
   };

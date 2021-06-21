@@ -44,19 +44,9 @@
     background-color: var(--accent-color);
   }
 
-  .theme-container.no-navbar & {
-    top: 0;
-  }
-
   @media (max-width: config.$pad) {
     width: var(--mobile-sidebar-width);
     font-size: 15px;
-  }
-
-  @media (min-width: (config.$mobile + 1px)) {
-    .theme-container.no-sidebar & {
-      display: none;
-    }
   }
 
   // wide mobile
@@ -67,8 +57,7 @@
     transition: transform 0.2s ease;
     box-shadow: none;
 
-    .theme-container.hide-navbar &,
-    .theme-container.no-navbar & {
+    .theme-container.hide-navbar & {
       top: 0;
     }
 

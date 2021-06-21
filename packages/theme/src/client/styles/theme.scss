@@ -3,7 +3,7 @@
 
 .hide-in-mobile {
   @media (max-width: config.$mobile) {
-    display: none;
+    display: none !important;
   }
 }
 

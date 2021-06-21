@@ -1,4 +1,7 @@
+import { usePagesData } from "@vuepress/client";
 import { isFunction, isString } from "@vuepress/shared";
+// import { hash } from "@vuepress/utils";
+
 import type { Router } from "vue-router";
 import type { NavLink } from "../../../shared";
 
@@ -33,11 +36,22 @@ export const resolveRouteWithRedirect = (
  *
  * @example
  * - Input: '/README.md'
- * - Output: { text: 'Home', link: '/' }
+ * - Output: { icon: 'home', text: 'Home', link: '/' }
  */
-export const getLink = (router: Router, item: string): NavLink => {
+export const getLink = async (
+  router: Router,
+  item: string
+): Promise<NavLink> => {
   const resolved = resolveRouteWithRedirect(router, item);
+  const pages = usePagesData();
+  // FIXME: Find a way to get page key
+  const pageKey = resolved.path;
+  // const pageKey = hash(resolved.path);
+
   return {
+    icon: (await pages.value[pageKey]?.())?.frontmatter.icon as
+      | string
+      | undefined,
     text: resolved.meta.title || item,
     link: resolved.name === "404" ? item : resolved.fullPath,
   };

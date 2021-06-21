@@ -1,16 +1,32 @@
 @use '@hope/config';
 @use '@mr-hope/vuepress-shared/styles/wrapper';
-@import "_wrapper";
 
 .page {
-  padding-bottom: 2rem;
   display: block;
+  padding-top: var(--navbar-height);
+  padding-left: var(--sidebar-width);
+  padding-bottom: 2rem;
+
+  // page should at least one screen length
+  @media (max-width: config.$mobile) {
+    min-height: 100vh;
+  }
+
+  // change sidebar width
+  @media (max-width: config.$pad) {
+    padding-left: var(--mobile-sidebar-width);
+  }
+
+  // no space for sidebar on wide mobile
+  @media (max-width: config.$mobile) {
+    padding-left: 0;
+  }
 }
 
 /* Page Meta */
 
 .page-meta {
-  @extend %wrapper;
+  @include wrapper.wrapper;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -74,7 +90,7 @@
 /* Page Nav */
 
 .page-nav {
-  @extend %wrapper;
+  @include wrapper.wrapper;
   padding-top: 0.75rem;
   padding-bottom: 0;
   font-family: Arial, Helvetica, sans-serif;

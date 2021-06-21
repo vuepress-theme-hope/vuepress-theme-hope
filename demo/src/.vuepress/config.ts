@@ -62,6 +62,8 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "demo/src",
 
+    darkmode: true,
+
     // theme-level locales config
     locales: {
       /**

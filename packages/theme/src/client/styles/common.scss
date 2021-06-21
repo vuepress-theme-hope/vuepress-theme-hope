@@ -1,0 +1,57 @@
+@use '@hope/config';
+@use '@mr-hope/vuepress-shared/styles/wrapper';
+
+@use 'footer';
+
+.theme-container {
+  &.no-navbar {
+    .page {
+      padding-top: 0;
+    }
+
+    .sidebar {
+      top: 0;
+
+      @media (max-width: config.$mobile) {
+        top: 0;
+      }
+    }
+  }
+
+  &.no-sidebar {
+    @media (min-width: (config.$mobile + 1px)) {
+      .page {
+        padding-left: 0;
+      }
+
+      .sidebar {
+        display: none;
+      }
+    }
+  }
+}
+
+.theme-default-content {
+  &.custom {
+    padding: 0;
+    margin: 0;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &:not(.custom) {
+    @include wrapper.wrapper;
+
+    padding-top: 0;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

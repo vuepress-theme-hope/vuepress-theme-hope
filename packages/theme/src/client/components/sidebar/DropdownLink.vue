@@ -4,7 +4,7 @@
       class="dropdown-title"
       type="button"
       :aria-label="dropdownAriaLabel"
-      @click="handleDropdown"
+      @click="handleDropdown(!open)"
     >
       <slot name="title">
         <span class="title">
@@ -30,7 +30,7 @@
                 @focusout="
                   isLastItemOfArray(child, item.children) &&
                     child.children.length === 0 &&
-                    (open = false)
+                    handleDropdown(false)
                 "
               />
 
@@ -48,7 +48,7 @@
                   @focusout="
                     isLastItemOfArray(grandchild, child.children) &&
                       isLastItemOfArray(child, item.children) &&
-                      (open = false)
+                      handleDropdown(false)
                   "
                 />
               </li>
@@ -118,13 +118,8 @@ export default defineComponent({
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
      */
-    const handleDropdown = (e: MouseEvent): void => {
-      const isTriggerByTab = e.detail === 0;
-      if (isTriggerByTab) {
-        open.value = !open.value;
-      } else {
-        open.value = false;
-      }
+    const handleDropdown = (event: boolean): void => {
+      open.value = event;
     };
 
     const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
