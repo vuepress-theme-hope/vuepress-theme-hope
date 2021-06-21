@@ -18,9 +18,17 @@ export default defineComponent({
     return (): VNode =>
       h(
         Common,
-        frontmatter.value.home
-          ? h(Home)
-          : h(FadeSideY, h(Page, { key: page.value.path }))
+        {},
+        {
+          default: () =>
+            frontmatter.value.home
+              ? h(Home)
+              : h(
+                  FadeSideY,
+                  {},
+                  { default: () => h(Page, { key: page.value.path }) }
+                ),
+        }
       );
   },
 });

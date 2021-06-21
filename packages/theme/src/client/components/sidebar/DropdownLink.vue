@@ -74,7 +74,7 @@ import { computed, defineComponent, ref, toRefs, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
 import ExpandTransition from "../transitions/ExpandTransition";
-import NavLink from "../NavLink.vue";
+import NavLink from "../NavLink";
 
 import type { PropType } from "vue";
 import type { NavGroup, NavItem } from "../../../shared";

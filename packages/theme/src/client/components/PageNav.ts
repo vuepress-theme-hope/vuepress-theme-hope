@@ -1,32 +1,17 @@
-<template>
-  <nav v-if="prevNavLink || nextNavLink" class="page-nav">
-    <p class="inner">
-      <span v-if="prevNavLink" class="prev">
-        <PrevIcon />
-        <NavLink :item="prevNavLink" />
-      </span>
-
-      <span v-if="nextNavLink" class="next">
-        <NavLink :item="nextNavLink" />
-        <NextIcon />
-      </span>
-    </p>
-  </nav>
-</template>
-
-<script lang="ts">
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 import { usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
+import NavLink from "./NavLink";
+import { PrevIcon, NextIcon } from "./icons";
+import { useNavLink, useSidebarItems } from "../composables";
+
+import type { VNode } from "vue";
 import type {
   HopeThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
   ResolvedSidebarItem,
 } from "../../shared";
-import { useNavLink, useSidebarItems } from "../composables";
-import NavLink from "./NavLink.vue";
-import { PrevIcon, NextIcon } from "./icons";
 
 /**
  * Resolve `prev` or `next` config from frontmatter
@@ -105,10 +90,26 @@ export default defineComponent({
         : resolveFromSidebarItems(sidebarItems.value, route.path, 1);
     });
 
-    return {
-      prevNavLink,
-      nextNavLink,
-    };
+    return (): VNode | null =>
+      prevNavLink.value || nextNavLink.value
+        ? h(
+            "nav",
+            { class: "page-nav" },
+            h("p", { class: "inner" }, [
+              prevNavLink.value
+                ? h("span", { class: "prev" }, [
+                    h(PrevIcon),
+                    h(NavLink, { item: prevNavLink.value }),
+                  ])
+                : null,
+              nextNavLink.value
+                ? h("span", { class: "next" }, [
+                    h(NavLink, { item: nextNavLink.value }),
+                    h(NextIcon),
+                  ])
+                : null,
+            ])
+          )
+        : null;
   },
 });
-</script>

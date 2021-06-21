@@ -2,7 +2,7 @@ import { defineComponent, h } from "vue";
 import { useNavbarConfig } from "../../composables";
 import DropdownLink from "./DropdownLink.vue";
 import LanguageDropdown from "./LanguageDropdown";
-import NavLink from "../NavLink.vue";
+import NavLink from "../NavLink";
 import RepoLink from "../RepoLink";
 
 import type { VNode } from "vue";

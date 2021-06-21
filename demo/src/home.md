@@ -5,13 +5,13 @@ title: Project home
 heroImage: /logo.svg
 heroText: Project name
 tagline: You can place the description of the project here.
-action:
+actions:
   - text: How to Use 💡
     link: /guide/
-    type: primary
 
   - text: Blog homepage 🏠
     link: /
+    type: secondary
 
 features:
   - title: Markdown Enhance 🧰

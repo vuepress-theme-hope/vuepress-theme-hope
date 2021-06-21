@@ -151,7 +151,6 @@ export default defineComponent({
       };
 
       handleLinksWrapWidth();
-      // TODO: Add destory
       window.addEventListener("resize", handleLinksWrapWidth, false);
       window.addEventListener("orientationchange", handleLinksWrapWidth, false);
     });

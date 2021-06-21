@@ -1,7 +1,7 @@
 import { Content } from "@vuepress/client";
 import { defineComponent, h, resolveComponent } from "vue";
-import PageMeta from "./PageMeta.vue";
-import PageNav from "./PageNav.vue";
+import PageMeta from "./PageMeta";
+import PageNav from "./PageNav";
 
 import type { VNode } from "vue";
 

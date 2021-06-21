@@ -26,21 +26,24 @@ export default defineComponent({
       h(
         Common,
         { sidebar: false },
-        h("main", { class: "page not-found" }, [
-          h(Page404Icon),
-          h("blockquote", getMsg()),
-          // TODO: Only show button when can go back
-          h(
-            "button",
-            { class: "action-button", onClick: () => goBack() },
-            themeLocale.value.back
-          ),
-          h(
-            RouterLink,
-            { to: themeLocale.value.home ?? routeLocale.value },
-            themeLocale.value.backToHome ?? "Back to home"
-          ),
-        ])
+        {
+          default: () =>
+            h("main", { class: "page not-found" }, [
+              h(Page404Icon),
+              h("blockquote", getMsg()),
+              // TODO: Only show button when can go back
+              h(
+                "button",
+                { class: "action-button", onClick: () => goBack() },
+                themeLocale.value.back
+              ),
+              h(
+                RouterLink,
+                { to: themeLocale.value.home ?? routeLocale.value },
+                themeLocale.value.backToHome ?? "Back to home"
+              ),
+            ]),
+        }
       );
   },
 });

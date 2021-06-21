@@ -1,47 +1,12 @@
-<template>
-  <footer class="page-meta">
-    <div v-if="editNavLink" class="meta-item edit-link">
-      <NavLink class="label" :item="editNavLink">
-        <template #before>
-          <EditIcon />
-        </template>
-      </NavLink>
-    </div>
-
-    <div v-if="updateTime" class="meta-item update-time">
-      <span class="label">{{ themeLocale.lastUpdatedText }}: </span>
-      <span class="info">{{ updateTime }}</span>
-    </div>
-
-    <div
-      v-if="contributors && contributors.length"
-      class="meta-item contributors"
-    >
-      <span class="label">{{ themeLocale.contributorsText }}: </span>
-      <span class="info">
-        <template v-for="(contributor, index) in contributors" :key="index">
-          <span class="contributor" :title="`email: ${contributor.email}`">
-            {{ contributor.name }}
-          </span>
-          <template v-if="index !== contributors.length - 1">, </template>
-        </template>
-      </span>
-    </div>
-  </footer>
-</template>
-
-<script lang="ts">
-import { computed, defineComponent } from "vue";
+import { computed } from "vue";
 import type { ComputedRef } from "vue";
 import {
   usePageData,
   usePageFrontmatter,
   useSiteLocaleData,
 } from "@vuepress/client";
-import { useThemeLocaleData } from "../composables";
+import { useThemeLocaleData } from "./themeData";
 import { resolveEditLink } from "../utils";
-import NavLink from "./NavLink.vue";
-import { EditIcon } from "./icons";
 
 import type {
   HopeThemePageData,
@@ -49,7 +14,7 @@ import type {
   NavLink as NavLinkType,
 } from "../../shared";
 
-const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
+export const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<HopeThemePageData>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
@@ -88,7 +53,7 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   });
 };
 
-const useUpdateTime = (): ComputedRef<null | string> => {
+export const useUpdateTime = (): ComputedRef<null | string> => {
   const siteLocale = useSiteLocaleData();
   const themeLocale = useThemeLocaleData();
   const page = usePageData<HopeThemePageData>();
@@ -108,7 +73,7 @@ const useUpdateTime = (): ComputedRef<null | string> => {
   });
 };
 
-const useContributors = (): ComputedRef<
+export const useContributors = (): ComputedRef<
   null | Required<HopeThemePageData["git"]>["contributors"]
 > => {
   const themeLocale = useThemeLocaleData();
@@ -124,27 +89,3 @@ const useContributors = (): ComputedRef<
     return page.value.git?.contributors ?? null;
   });
 };
-
-export default defineComponent({
-  name: "PageMeta",
-
-  components: {
-    EditIcon,
-    NavLink,
-  },
-
-  setup() {
-    const themeLocale = useThemeLocaleData();
-    const editNavLink = useEditNavLink();
-    const updateTime = useUpdateTime();
-    const contributors = useContributors();
-
-    return {
-      themeLocale,
-      editNavLink,
-      updateTime,
-      contributors,
-    };
-  },
-});
-</script>

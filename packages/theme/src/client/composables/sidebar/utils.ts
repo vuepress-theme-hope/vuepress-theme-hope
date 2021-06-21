@@ -1,7 +1,7 @@
 import { h } from "vue";
 import { useRoute } from "vue-router";
 import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
-import NavLink from "../../components/NavLink.vue";
+import NavLink from "../../components/NavLink";
 import { isActiveLink } from "../../utils";
 
 import type { VNode } from "vue";
@@ -24,6 +24,8 @@ export const renderItem = (
 ): VNode => {
   return item.link
     ? // if the item has link, render it as `<NavLink>`
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       h(NavLink, {
         ...props,
         item,

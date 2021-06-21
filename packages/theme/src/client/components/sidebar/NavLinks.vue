@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import NavLink from "../NavLink.vue";
+import NavLink from "../NavLink";
 import RepoLink from "../RepoLink";
 import SidebarDropdownLink from "./DropdownLink.vue";
 import { useNavbarConfig, useNavbarRepo } from "../../composables";

@@ -1,46 +1,10 @@
-<template>
-  <RouterLink
-    v-if="isRouterLink"
-    class="nav-link"
-    :class="{ active: isActive }"
-    :to="item.link"
-    :aria-label="linkAriaLabel"
-    v-bind="$attrs"
-    @focusout="focusoutAction"
-  >
-    <slot name="before">
-      <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
-    </slot>
-    {{ item.text }}
-    <slot name="after" />
-  </RouterLink>
-  <a
-    v-else
-    class="nav-link external"
-    :href="item.link"
-    :rel="linkRel"
-    :target="linkTarget"
-    :aria-label="linkAriaLabel"
-    v-bind="$attrs"
-    @focusout="focusoutAction"
-  >
-    <slot name="before">
-      <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
-    </slot>
-    {{ item.text }}
-    <OutboundLink v-if="isBlankTarget" />
-    <slot name="after" />
-  </a>
-</template>
-
-<script lang="ts">
-import { computed, defineComponent, toRefs } from "vue";
-import { useRoute } from "vue-router";
-import { useSiteData } from "@vuepress/client";
+import { computed, defineComponent, h, toRef } from "vue";
+import { RouterLink, useRoute } from "vue-router";
+import { OutboundLink, useSiteData } from "@vuepress/client";
 import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
 
-import type { PropType } from "vue";
+import type { PropType, VNode } from "vue";
 import type { NavLink } from "../../shared";
 
 export default defineComponent({
@@ -61,12 +25,12 @@ export default defineComponent({
 
   emits: ["focusout"],
 
-  setup(props, { emit }) {
+  setup(props, { attrs, emit, slots }) {
     const route = useRoute();
     const site = useSiteData();
     const iconPrefix = useIconPrefix();
 
-    const { item } = toRefs(props);
+    const item = toRef(props, "item");
 
     // if the link has http protocol
     const hasHttpProtocol = computed(() => isLinkHttp(item.value.link));
@@ -137,19 +101,51 @@ export default defineComponent({
         : route.path.startsWith(item.value.link)
     );
 
-    const focusoutAction = (): void => emit("focusout");
+    const renderIcon = (item: NavLink): VNode | null =>
+      item.icon
+        ? h("i", {
+            class: `iconfont ${iconPrefix.value}${item.icon}`,
+          })
+        : null;
 
-    return {
-      isActive,
-      iconPrefix,
-      isBlankTarget,
-      isRouterLink,
-      linkRel,
-      linkTarget,
-      linkAriaLabel,
-
-      focusoutAction,
-    };
+    return (): VNode =>
+      isRouterLink.value
+        ? h(
+            RouterLink,
+            {
+              to: item.value.link,
+              ariaLabel: linkAriaLabel.value,
+              ...attrs,
+              // class needs to be merged manually
+              class: ["nav-link", { active: isActive.value }, attrs.class],
+              onFocusOut: () => emit("focusout"),
+            },
+            {
+              default: () => [
+                slots.before?.() || renderIcon(item.value),
+                item.value.text,
+                slots.after?.(),
+              ],
+            }
+          )
+        : h(
+            "a",
+            {
+              href: item.value.link,
+              rel: linkRel.value,
+              target: linkTarget.value,
+              ariaLabel: linkAriaLabel.value,
+              ...attrs,
+              // class needs to be merged manually
+              class: ["nav-link external", attrs.class],
+              onFocusOut: () => emit("focusout"),
+            },
+            [
+              slots.before?.() || renderIcon(item.value),
+              item.value.text,
+              isBlankTarget.value ? h(OutboundLink) : null,
+              slots.after?.(),
+            ]
+          );
   },
 });
-</script>

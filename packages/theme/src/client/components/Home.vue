@@ -81,7 +81,7 @@ import {
 } from "@vuepress/client";
 import { isArray } from "@vuepress/shared";
 import DropTransition from "./transitions/DropTransition.vue";
-import NavLink from "./NavLink.vue";
+import NavLink from "./NavLink";
 
 import type { HopeThemeHomePageFrontmatter } from "../../shared";
 
