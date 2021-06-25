@@ -38,13 +38,7 @@ export default Vue.extend({
 
   methods: {
     setOpen(value: boolean): void {
-      console.log("set");
       this.open = value;
-    },
-
-    handleDropdown(event: MouseEvent): void {
-      const isTriggerByTab = event.detail === 0;
-      if (isTriggerByTab) this.setOpen(!this.open);
     },
 
     isLastItemOfArray(
