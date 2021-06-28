@@ -3480,7 +3480,7 @@
     "@vue/compiler-ssr" "3.1.2"
     "@vue/shared" "3.1.2"
 
-"@vue/shared@3.1.2", "@vue/shared@^3.1.1":
+"@vue/shared@3.1.2", "@vue/shared@^3.1.1", "@vue/shared@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.2.tgz#1069c0bc7d6f4bd15ccf3a5f3be29450aca368f9"
   integrity sha512-EmH/poaDWBPJaPILXNI/1fvUbArJQmmTyVCwvvyDYDFnkPoTclAbHRAtyIvqfez7jybTDn077HTNILpxlsoWhg==
@@ -3851,6 +3851,13 @@
   integrity sha512-8+rexBWtyX1VQv+G3XcAINgFL+zUHBk3DgZDQ3Qy83kQXsAzt0b2utA1lIUygjSmOfgPonWq6Do9I8zP8tTnxw==
   dependencies:
     "@vue/shared" "^3.1.1"
+
+"@vuepress/shared@2.0.0-beta.20":
+  version "2.0.0-beta.20"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.20.tgz#135b3b02c13ac61ad3c3cfd45fa770e8604478c7"
+  integrity sha512-aSdU6Gw1yksEx6yAODf2rD7924u77F7FLFSlnmXoHo9K1edC1FUaKjsgV/bTHXfas7kx3MhAZshTM3KlvNyEeQ==
+  dependencies:
+    "@vue/shared" "^3.1.2"
 
 "@vuepress/theme-default@2.0.0-beta.19":
   version "2.0.0-beta.19"
@@ -10552,7 +10559,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
