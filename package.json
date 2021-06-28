@@ -154,7 +154,7 @@
     "textlint-rule-zh-half-and-full-width-bracket": "1.1.0",
     "ts-jest": "27.0.3",
     "ts-node": "10.0.0",
-    "typescript": "4.4.0-dev.20210624",
+    "typescript": "4.4.0-dev.20210627",
     "vuepress": "2.0.0-beta.19",
     "vuepress-vite": "2.0.0-beta.19"
   },
