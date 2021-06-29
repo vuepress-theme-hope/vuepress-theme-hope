@@ -38,7 +38,7 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "lightgallery": "^2.1.5",
+    "lightgallery": "^2.1.6",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.5"
   },
   "publishConfig": {
