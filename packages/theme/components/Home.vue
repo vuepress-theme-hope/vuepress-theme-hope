@@ -12,6 +12,8 @@
           :src="$withBase($frontmatter.heroImage)"
           :alt="$frontmatter.heroAlt || 'HomeLogo'"
         />
+      </MyTransition>
+      <MyTransition>
         <img
           v-if="$frontmatter.darkHeroImage"
           key="dark"
