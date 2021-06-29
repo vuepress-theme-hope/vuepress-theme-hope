@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.18.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.4...v1.18.5) (2021-06-29)
+
+### Bug Fixes
+
+- **theme:** fix darkHeroImage issue ([fd1db49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd1db49940056a698232c04b6b5263fb10f5c748))
+
 ## [1.18.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.3...v1.18.4) (2021-06-20)
 
 ### Bug Fixes
