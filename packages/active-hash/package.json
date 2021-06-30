@@ -1,0 +1,42 @@
+{
+  "name": "vuepress-plugin-active-hash",
+  "version": "1.18.5",
+  "description": "active-hash plugin for vuepress",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "active-hash",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/active-hash#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/active-hash"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/types/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-types": "^1.18.2",
+    "@types/lodash.debounce": "^4.0.6",
+    "lodash.debounce": "^4.0.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

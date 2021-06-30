@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.base.json",
   "references": [
+    { "path": "./packages/active-hash/tsconfig.json" },
     { "path": "./packages/add-this/tsconfig.json" },
     { "path": "./packages/comment/tsconfig.json" },
     { "path": "./packages/components/tsconfig.json" },
