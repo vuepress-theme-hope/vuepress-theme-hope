@@ -36,11 +36,11 @@ $navbarMobileHeight ?= 3.2rem
 h1, h2, h3, h4, h5, h6
   .theme-default-content:not(.custom) &:first-child
     margin-top 0.5rem - $navbarHeight !important
-    padding-top: $navbarHeight + 1rem !important
+    padding-top $navbarHeight !important
 
     @media (max-width $MQMobile)
       margin-top 0.5rem - $navbarMobileHeight !important
-      padding-top: $navbarMobileHeight + 1rem !important
+      padding-top $navbarMobileHeight !important
 
 .breadcrumb
   @extend $wrapper
