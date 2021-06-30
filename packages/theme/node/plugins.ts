@@ -28,7 +28,14 @@ export const getPluginConfig = (
 
     ["@mr-hope/sitemap", themeConfig.sitemap],
 
-    ["@vuepress/active-header-links", themeConfig.activeHeaderLinks],
+    [
+      "@mr-hope/smooth-scroll",
+      themeConfig.smoothScroll === false
+        ? false
+        : typeof themeConfig.smoothScroll === "number"
+        ? { delay: themeConfig.smoothScroll }
+        : themeConfig.smoothScroll || { delay: 500 },
+    ],
 
     [
       "@vuepress/blog",
@@ -64,6 +71,8 @@ export const getPluginConfig = (
       },
     ],
 
+    ["active-hash", themeConfig.activeHash],
+
     ["add-this", typeof themeConfig.addThis === "string"],
 
     [
@@ -86,8 +95,6 @@ export const getPluginConfig = (
     ["@mr-hope/copy-code", themeConfig.copyCode],
 
     ["photo-swipe", themeConfig.photoSwipe],
-
-    ["smooth-scroll", themeConfig.smoothScroll],
 
     [
       "typescript",

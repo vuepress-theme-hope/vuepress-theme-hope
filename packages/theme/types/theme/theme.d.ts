@@ -21,8 +21,6 @@ export interface HopeThemeConfig
   darkLogo?: string;
   /** 显示所有页面的标题链接 */
   displayAllHeaders?: boolean;
-  /** 是否自动更新嵌套的标题链接和 URL 中的 Hash 值 */
-  activeHeaderLinks?: boolean;
   /** 是否启用默认的搜索框 */
   search?: boolean;
   /** 搜索框占位符 */

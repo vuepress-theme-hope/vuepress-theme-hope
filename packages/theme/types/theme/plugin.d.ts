@@ -1,3 +1,4 @@
+import { ActiveHashOptions } from "vuepress-plugin-active-hash";
 import { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
 import { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
@@ -7,6 +8,7 @@ import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
+import { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
 
 import type { Page, ResolvedComponent } from "@mr-hope/vuepress-types";
 
@@ -110,6 +112,8 @@ interface HopeThemePluginConfig {
    * @see http://vuepress-theme-hope.github.io/add-this/config/
    */
   addThis?: string;
+
+  activeHash?: ActiveHashOptions | false;
 
   /**
    * 评论插件配置
@@ -218,6 +222,8 @@ interface HopeThemePluginConfig {
    * @see http://vuepress-theme-hope.github.io/sitemap/config/
    */
   sitemap?: SitemapOptions | false;
+
+  smoothScrollOptions?: SmoothScrollOptions | number | false;
 
   /**
    * ts-loader 选项

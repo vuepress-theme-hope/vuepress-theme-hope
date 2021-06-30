@@ -7,8 +7,23 @@
     }
   },
   "references": [
+    { "path": "../active-hash/tsconfig.json" },
+    { "path": "../add-this/tsconfig.json" },
     { "path": "../comment/tsconfig.json" },
+    { "path": "../components/tsconfig.json" },
+    { "path": "../copy-code/tsconfig.json" },
+    { "path": "../create/tsconfig.json" },
+    { "path": "../feed/tsconfig.json" },
+    { "path": "../git/tsconfig.json" },
+    { "path": "../md-enhance/tsconfig.json" },
+    { "path": "../photo-swipe/tsconfig.json" },
+    { "path": "../pwa/tsconfig.json" },
+    { "path": "../reading-time/tsconfig.json" },
+    { "path": "../seo/tsconfig.json" },
     { "path": "../shared/tsconfig.json" },
+    { "path": "../sitemap/tsconfig.json" },
+    { "path": "../smooth-scroll/tsconfig.json" },
+    { "path": "../theme-types/tsconfig.json" },
     { "path": "../vuepress-types/tsconfig.json" },
     { "path": "./tsconfig.cjs.json" },
     { "path": "./tsconfig.esm.json" }
