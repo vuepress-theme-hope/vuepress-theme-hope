@@ -29,8 +29,10 @@ export default Vue.extend({
         document.querySelectorAll<HTMLAnchorElement>(
           ACTIVE_HASH_HEADER_SELECTOR
         )
-      ).filter((anchor) =>
-        activeLinks.some((activeLink) => activeLink.hash === anchor.hash)
+      ).filter(
+        (anchor) =>
+          activeLinks.length === 0 ||
+          activeLinks.some((activeLink) => activeLink.hash === anchor.hash)
       );
 
       const themeContentScrollTop =
@@ -70,7 +72,7 @@ export default Vue.extend({
       };
 
       // try to remove hash
-      if (scrollTop === 0 && routeHash) {
+      if (scrollTop - themeContentScrollTop < 0 && routeHash) {
         updateHash("", -1);
         return;
       }
