@@ -17,16 +17,6 @@ files.forEach((pkgName) => {
       name: `@mr-hope/vuepress-plugin-${pkgName}`,
       version,
       description: desc,
-      main: "lib/index.js",
-      types: "types/index.d.ts",
-      publishConfig: {
-        access: "public",
-      },
-      repository: {
-        type: "git",
-        url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-        directory: `packages/${pkgName}`,
-      },
       keywords: [
         "vuepress-plugin",
         "vuepress",
@@ -34,18 +24,33 @@ files.forEach((pkgName) => {
         "vuepress-theme-hope",
         "mr-hope",
       ],
+      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
+      bugs: {
+        url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
+      },
+      repository: {
+        type: "git",
+        url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+        directory: `packages/${pkgName}`,
+      },
+      license: "MIT",
       author: {
         email: "zhangbowang1998@gmail.com",
         name: "Mr.Hope",
         url: "https://mrhope.site",
       },
-      license: "MIT",
-      bugs: {
-        url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
+      main: "lib/node/index.js",
+      types: "lib/types/index.d.ts",
+      scripts: {
+        build: "tsc -b tsconfig.json",
+        clean: "rimraf lib *.tsbuildinfo",
+        copy: 'cpx "src/**/*.{d.ts,vue,styl}" lib',
       },
-      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       dependencies: {
         "@mr-hope/vuepress-types": `^${version}`,
+      },
+      publishConfig: {
+        access: "public",
       },
     };
 
