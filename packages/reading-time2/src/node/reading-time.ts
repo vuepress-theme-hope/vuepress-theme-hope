@@ -4,7 +4,7 @@ export const getWords = (data: string): RegExpMatchArray =>
   data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) || [];
 
 export const getChinese = (data: string): RegExpMatchArray =>
-  data.match(/[\u4E00-\u9FA5]/gu) || [];
+  data.match(/[\u4E00-\u9FD5]/gu) || [];
 
 export const getWordNumber = (data: string): number =>
   getWords(data).reduce<number>(
