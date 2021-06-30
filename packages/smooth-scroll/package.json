@@ -1,0 +1,40 @@
+{
+  "name": "@mr-hope/vuepress-plugin-smooth-scroll",
+  "version": "1.18.5",
+  "description": "smooth-scroll plugin for vuepress",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "smooth-scroll",
+    "vuepress-theme-hope",
+    "mr-hope"
+  ],
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/smooth-scroll#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/smooth-scroll"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/types/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-types": "^1.18.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
