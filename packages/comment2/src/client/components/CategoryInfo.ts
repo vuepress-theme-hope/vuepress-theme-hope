@@ -64,9 +64,7 @@ export default defineComponent({
                     },
                     h(
                       "span",
-                      {
-                        role: clickable.value ? "navigation" : "",
-                      },
+                      { role: clickable.value ? "navigation" : "" },
                       category
                     )
                   )
