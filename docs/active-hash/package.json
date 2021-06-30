@@ -1,0 +1,21 @@
+{
+  "name": "active-hash-docs",
+  "version": "1.18.5",
+  "private": true,
+  "description": "Docs for vuepress-plugin-active-hash",
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "zhangbowang1998@gmail.com",
+    "url": "https://mrhope.site"
+  },
+  "scripts": {
+    "docs:build": "vuepress build src",
+    "docs:clean-serve": "vuepress dev src --no-cache",
+    "docs:serve": "vuepress dev src"
+  },
+  "devDependencies": {
+    "vuepress": "1.8.2",
+    "vuepress-theme-hope": "1.18.5"
+  }
+}

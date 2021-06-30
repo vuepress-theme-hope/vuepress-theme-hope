@@ -1,22 +1,32 @@
 export interface ActiveHashOptions {
   /**
    * Selector for header anchors
+   *
+   * 标题锚点的选择器
+   *
+   * @default ".header-anchor"
    */
-  headerSelector: string;
+  headerAnchorSelector: string;
   /**
    * Selector for active anchors
    *
-   * @default '.sidebar-link'
-   */
-  activeSelecter: string;
-  /**
-   * Selector for theme container
+   * 需要激活锚点的选择器
    *
-   * @default '.theme-default-content'
+   * @default ".sidebar-link"
+   */
+  activeLinkSelecter: string;
+  /**
+   * Selector for theme content container
+   *
+   * 主题内容容器的选择器
+   *
+   * @default ".theme-default-content"
    */
   containerSelecter: string;
   /**
-   * Header offset in px
+   * Addtional offset for anchor position, used to make sure the anchor is aligned perfectly.
+   *
+   * 用于锚点位置额外的偏移，用于精准对其标题锚点
    *
    * @default 0
    */
