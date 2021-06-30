@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.19.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.5...v1.19.0) (2021-06-30)
+
+### Bug Fixes
+
+- **active-hash:** active all headers when active links are empty ([9d9bc2a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d9bc2a79dc4b84a4674b26247a48d1665de8ba6))
+- **components:** fix breadCrumb title fix ([96579f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/96579f554e8e359bbf6f7752442804605130fc7d))
+
+### Features
+
+- add active hash plugin ([88d1ce2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88d1ce20f77adb734c7f7f917cd25fe1cc8237a1))
+- add new plugins in theme ([80d503f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/80d503fdc386ace69b0593733db6b2ee8270f8b7))
+- add smooth scroll plugin ([e9cd100](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e9cd10045df6026a810649e471cea6a4d3508e19))
+
 ## [1.18.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.4...v1.18.5) (2021-06-29)
 
 ### Bug Fixes

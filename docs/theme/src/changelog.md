@@ -7,6 +7,13 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.19.0
+
+### Features
+
+- active-hash plugin <Badge text="new" />
+- smooth-scroll plugin <Badge text="new" />
+
 ## v1.18.0
 
 ### Features

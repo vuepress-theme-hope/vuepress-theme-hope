@@ -7,6 +7,13 @@ icon: time
 
 <!-- more -->
 
+## v1.19.0
+
+### 新功能
+
+- active-hash 插件 <Badge text="新增" />
+- smooth-scroll 插件 <Badge text="新增" />
+
 ## v1.18.0
 
 ### 新功能
