@@ -4,12 +4,7 @@ import {
   isAbsoluteUrl,
   isUrl,
 } from "@mr-hope/vuepress-shared";
-import {
-  getImageMineType,
-  resolveHTML,
-  removeTemplate,
-  resolveUrl,
-} from "./utils";
+import { getImageMineType, resolveHTML, resolveUrl } from "./utils";
 
 import type { BaseThemeConfig } from "@mr-hope/vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
@@ -125,7 +120,7 @@ export class FeedPage {
   get content(): string {
     if (this.feedOption.content) return this.feedOption.content;
 
-    return resolveHTML(removeTemplate(this.page.componentFileContent));
+    return resolveHTML(this.page.contentRendered);
   }
 
   get image(): string | undefined {

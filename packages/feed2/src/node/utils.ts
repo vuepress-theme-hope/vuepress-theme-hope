@@ -29,9 +29,6 @@ export const resolveHTML = (html: string): string =>
     // remove tex
     .replace(/<math[\s\S]*?\/math>/gu, "<i>Content not supported</i>");
 
-export const removeTemplate = (content: string): string =>
-  content.replace(/<template>.*<\/template>/, "$1");
-
 export const resolveUrl = (hostname: string, base = "", path = ""): string =>
   `${hostname}${
     // make sure base starts and ends with '/'
