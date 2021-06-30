@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-smooth-scroll",
-  "version": "1.18.5",
+  "version": "1.19.0",
   "description": "smooth-scroll plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
