@@ -17,7 +17,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-comment][comment]: Comment and page info feature
 
-- [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): Provide some out of box plugins
+- [@mr-hope/vuepress-plugin-component][component]: Provide some out of box plugins
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
 
@@ -33,6 +33,10 @@ tags:
 
 - [@mr-hope/vuepress-plugin-sitemap][sitemap]: Sitemap Generator for your site
 
+- @mr-hope/vuepress-plugin-smooth-scroll: Smooth scrolling (Remove old browers polyfill)
+
+- [vuepress-plugin-active-hash][active-hash]: automatically update hash in link
+
 - [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function
 
 - [vuepress-plugin-md-enhance][md-enhance]: Provide more Markdown syntax
@@ -47,22 +51,17 @@ tags:
 
 - [vuepress-plugin-typescript](../../guide/feature/typescript.md): Provide TypeScript support
 
-- vuepress-plugin-smooth-scroll: smooth scrolling
-
 - @vuepress/plugin-search: Search for plugins
 
 - @vuepress/plugin-nprogress: progress bar
-
-- @vuepress/plugin-active-header-links: automatically activate sidebar headers
 
 - @vuepress/plugin-blog: Blog support
 
 - @vuepress/plugin-search: search for plugins, **increase maximum search suggestions to 10**
 
-- vuepress-plugin-smooth-scroll: Smooth scrolling.
-
 [add-this]: https://vuepress-theme-hope.github.io/add-this/
 [comment]: https://vuepress-theme-hope.github.io/comment/
+[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#usage
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/
 [feed]: https://vuepress-theme-hope.github.io/feed/
 [git]: https://vuepress-theme-hope.github.io/git/

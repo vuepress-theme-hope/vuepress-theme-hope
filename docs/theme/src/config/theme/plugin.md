@@ -534,9 +534,15 @@ Options for photo preview plugin, set to `false` to disable this plugin.
 
 > By default no more configuration is needed, and for details see [PhotoSwipe Plugin Config][photo-swipe-config]
 
+## activeHash
+
+Options for activing hash in links automatically, set to `false` to disable this feature.
+
+> By default no more configuration is needed, and for details see [Active Hash Plugin Config][active-hash-config]
+
 ## chunkRename
 
-Options for renaming chunks, set with `false` to disable this feature.
+Options for renaming chunks, set to `false` to disable this feature.
 
 ### chunkRename.pageChunkName
 
@@ -596,7 +602,14 @@ Page suffix for `index.md`, `readme.md` and `README.md`. This default behavior w
 
 Link for not found pages.
 
-[add-this]: https://vuepress-theme-hope.github.io/add-this
+## smoothScroll
+
+Delay to smooth scroll to hash, default is `500`.
+
+> Set to `false` to disable this feature.
+
+[active-hash-config]: https://vuepress-theme-hope.github.io/active-hash/#config
+[add-this]: https://vuepress-theme-hope.github.io/add-this/
 [comment-config]: https://vuepress-theme-hope.github.io/comment/config/
 [copyright-config]: https://vuepress.github.io/en/plugins/copyright/
 [md-enhance-config]: https://vuepress-theme-hope.github.io/md-enhance/config/

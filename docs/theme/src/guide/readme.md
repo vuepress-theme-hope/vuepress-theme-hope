@@ -117,7 +117,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-comment][comment]: Comment and page info feature
 
-- [@mr-hope/vuepress-plugin-component](feature/component.md): Provide some out of box plugins
+- [@mr-hope/vuepress-plugin-component][component]: Provide some out of box plugins
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
 
@@ -133,14 +133,20 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-sitemap][sitemap]: Sitemap Generator for your site
 
+- @mr-hope/vuepress-plugin-smooth-scroll: Smooth scrolling (Remove old browers polyfill)
+
+- [vuepress-plugin-active-hash][active-hash]: update active hash in links automatically
+
 - [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function
 
 - [vuepress-plugin-md-enhance][md-enhance]): Provide more Markdown syntax
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
 
+[active-hash]: https://vuepress-theme-hope.github.io/active-hash/
 [add-this]: https://vuepress-theme-hope.github.io/add-this/
 [comment]: https://vuepress-theme-hope.github.io/comment/
+[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#usage
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/
 [feed]: https://vuepress-theme-hope.github.io/feed/
 [git]: https://vuepress-theme-hope.github.io/git/

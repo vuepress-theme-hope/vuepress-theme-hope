@@ -11,7 +11,7 @@ The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links
 
 <!-- more -->
 
-### Navbar Links
+## Navbar Links
 
 You can add links to the navbar via `themeConfig.nav`.
 
@@ -183,7 +183,7 @@ module.exports = {
 
 :::
 
-### Disable the Navbar
+## Disable the Navbar
 
 To disable the navbar globally, use `themeConfig.navbar`:
 
@@ -204,7 +204,7 @@ navbar: false
 ---
 ```
 
-### Navigation bar icon
+## Navigation bar icon
 
 You can use `themeConfig.logo` to configure the icons of the navigation bar, please fill in the absolute path.
 

@@ -263,13 +263,6 @@ tags:
 
 侧边栏底部插槽
 
-## smoothScroll
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否启用平滑滚动功能
-
 ## wordPerminute
 
 - 类型: `number`

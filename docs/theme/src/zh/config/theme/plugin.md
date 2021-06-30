@@ -534,15 +534,23 @@ AddThis 的 pubid
 
 > 默认情况下，不需要任何配置
 >
-> 有关详细信息，请参见[CopyCode 插件配置][copy-code]
+> 有关详细信息，请参见[复制代码插件配置][copy-code]
 
 ## photoSwipe
 
 照片预览插件的选项，设置为 `false` 以禁用此插件。
 
-> 默认情况下，不需要更多配置
+> 默认情况下，不需要任何配置
 >
-> 有关详细信息，请参见 [PhotoSwipe 插件配置][photo-swipe-config]]
+> 有关详细信息，请参见 [PhotoSwipe 插件配置][photo-swipe-config]
+
+## activeHash
+
+自动激活链接中的 hash，设置为 `false` 以禁用此功能。
+
+> 默认情况下，不需要任何配置
+>
+> 有关详细信息，请参见 [Active Hash 插件配置][active-hash-config]
 
 ## chunkRename
 
@@ -606,6 +614,13 @@ AddThis 的 pubid
 
 未找到页面的链接。
 
+## smoothScroll
+
+延迟一段时间之后平滑滚动到 hash，默认为 `500`。
+
+> 设置为 `false` 以禁用此功能。
+
+[active-hash-config]: https://vuepress-theme-hope.github.io/active-hash/zh/#配置
 [add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
 [comment-config]: https://vuepress-theme-hope.github.io/comment/zh/config/
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/

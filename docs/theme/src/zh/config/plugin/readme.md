@@ -17,7 +17,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-comment][comment]: 评论与文章信息功能
 
-- [@mr-hope/vuepress-plugin-component](../../guide/feature/component.md): 提供一些开箱即用的插件
+- [@mr-hope/vuepress-plugin-component][component]: 提供一些开箱即用的插件
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: 提供一键复制代码块功能。
 
@@ -33,6 +33,10 @@ tags:
 
 - [@mr-hope/vuepress-plugin-sitemap][sitemap]: 为你的站点生成 sitemap
 
+- @mr-hope/vuepress-plugin-smooth-scroll: 启用平滑滚动 (移除了旧浏览器兼容)
+
+- [vuepress-plugin-active-hash][active-hash]: 自动激活锚点
+
 - [vuepress-plugin-add-this][add-this]: 让网站支持社交分享与关注
 
 - [vuepress-plugin-md-enhance][md-enhance]: 提供更多 Markdown 语法
@@ -47,22 +51,16 @@ tags:
 
 - [vuepress-plugin-typescript](../../guide/feature/typescript.md): 提供 TypeScript 支持
 
-- vuepress-plugin-smooth-scroll: 平滑滚动
-
-- @vuepress/plugin-search: 搜索插件
-
-- @vuepress/plugin-nprogress: 进度条
-
-- @vuepress/plugin-active-header-links: 自动激活侧边栏标题
-
 - @vuepress/plugin-blog: 博客支持
 
 - @vuepress/plugin-search: 搜索插件，**将最大搜索建议增加至 10**
 
-- vuepress-plugin-smooth-scroll: 平滑滚动。
+- @vuepress/plugin-nprogress: 进度条
 
+[active-hash]: https://vuepress-theme-hope.github.io/active-hash/zh/
 [add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
 [comment]: https://vuepress-theme-hope.github.io/comment/zh/
+[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#使用
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
 [feed]: https://vuepress-theme-hope.github.io/feed/zh/
 [git]: https://vuepress-theme-hope.github.io/git/zh/

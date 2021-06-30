@@ -40,6 +40,10 @@ module.exports = {
           icon: "plugin",
           items: [
             {
+              text: "Active Hash Plugin",
+              link: "https://vuepress-theme-hope.github.io/active-hash/",
+            },
+            {
               text: "AddThis Plugin",
               link: "https://vuepress-theme-hope.github.io/add-this/",
             },
@@ -127,6 +131,10 @@ module.exports = {
           text: "插件",
           icon: "plugin",
           items: [
+            {
+              text: "自动激活锚点插件",
+              link: "https://vuepress-theme-hope.github.io/active-hash/zh/",
+            },
             {
               text: "AddThis 插件",
               link: "https://vuepress-theme-hope.github.io/add-this/zh/",

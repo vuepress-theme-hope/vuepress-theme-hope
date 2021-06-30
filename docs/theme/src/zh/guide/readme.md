@@ -133,12 +133,17 @@ tags:
 
 - [@mr-hope/vuepress-plugin-sitemap][sitemap]: 为你的站点生成 sitemap
 
+- @mr-hope/vuepress-plugin-smooth-scroll: 启用平滑滚动 (移除了旧浏览器兼容)
+
+- [vuepress-plugin-active-hash][active-hash]: 自动激活锚点
+
 - [vuepress-plugin-add-this][add-this]: 让网站支持社交分享与关注
 
 - [vuepress-plugin-md-enhance][md-enhance]: 提供更多 Markdown 语法
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: 使网站的图片支持缩放与滑动浏览
 
+[active-hash]: https://vuepress-theme-hope.github.io/active-hash/zh/
 [add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
 [comment]: https://vuepress-theme-hope.github.io/comment/zh/
 [component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#使用

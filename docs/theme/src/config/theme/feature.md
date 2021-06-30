@@ -259,13 +259,6 @@ Sidebar center slot
 
 Sidebar bottom slot
 
-## smoothScroll
-
-- Type: `boolean`
-- Default: `true`
-
-Whether to enable smooth scrolling
-
 ## wordPerminute
 
 - Type: `number`
