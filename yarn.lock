@@ -8185,6 +8185,13 @@ imurmurhash@^0.1.4:
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
 
+increase-memory-limit@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/increase-memory-limit/-/increase-memory-limit-1.0.7.tgz#80417e736e45fcfd6a3d515b435e2eaea4e62233"
+  integrity sha512-ozyn+HHAPD9VxMT1U50A7G8XXlktUWhnnEDYSeDYnQjKsNrBWHqq6XfEA0uhMdDPD+q/7rXWlzF1CbXX/c1LiQ==
+  dependencies:
+    glob "^7.1.1"
+
 indent-string@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"

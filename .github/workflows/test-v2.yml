@@ -48,6 +48,12 @@ jobs:
       - name: Increase Node Old Space
         run: export NODE_OPTIONS=--max_old_space_size=8192
 
+      - name: Test NODE_OPTIONS
+        run: echo $NODE_OPTIONS
+
+      - name: Fix Memory Limit
+        run: yarn run fix-memory-limit
+
       - name: Build project
         run: yarn run build
 
