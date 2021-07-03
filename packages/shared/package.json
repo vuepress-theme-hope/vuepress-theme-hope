@@ -36,7 +36,7 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "@types/webpack-dev-server": "^3.11.4",
+    "@types/webpack-dev-server": "^3.11.5",
     "dayjs": "^1.10.5"
   },
   "publishConfig": {
