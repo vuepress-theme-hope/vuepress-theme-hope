@@ -49,7 +49,7 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.5",
     "@types/katex": "^0.11.0",
-    "@types/markdown-it": "^12.0.2",
+    "@types/markdown-it": "^12.0.3",
     "@types/mermaid": "^8.2.6",
     "@types/react": "^17.0.13",
     "@vuepress/plugin-container": "2.0.0-beta.20",
