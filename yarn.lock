@@ -9556,10 +9556,10 @@ libnpmpublish@^4.0.0:
     semver "^7.1.3"
     ssri "^8.0.1"
 
-lightgallery@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.1.7.tgz#7856d2c4922caa279a12682d2d8f5b974dc87494"
-  integrity sha512-u96yhzf7tz4IbBcylYUk7meJFbDNnXFIyn/HtuLSGbV9Z11xN9Q3JZxzm+c0RVDtM1GK9s91lYE5UY5ZfuG/ng==
+lightgallery@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.1.8.tgz#11fc2a84f8719ad86184ddab59f46222b93f533c"
+  integrity sha512-YyPVsnCDn6NHDemJ44NM0cgqROOpxvLlO09fQz+++mo9BVmhyRvn+jykZsZit53QiHQPlgLxLhMRa5cCF3htkg==
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
@@ -10472,7 +10472,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
