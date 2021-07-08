@@ -17,7 +17,7 @@ const EXCLUDED_FILES = [
 export const eject = async (dir: string): Promise<void> => {
   try {
     const sourceDir = resolve(__dirname, "../");
-    const targetDir = resolve(resolve(dir), ".vuepress/theme");
+    const targetDir = resolve(process.cwd(), dir, ".vuepress/theme");
 
     await copy(sourceDir, targetDir, {
       filter: (src) => {
