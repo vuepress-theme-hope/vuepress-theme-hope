@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.5",
-    "sass": "^1.35.1",
+    "sass": "^1.35.2",
     "sass-loader": "^12.1.0"
   },
   "publishConfig": {
