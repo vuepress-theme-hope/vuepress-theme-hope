@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "1.18.2",
-    "@types/inquirer": "^7.3.2",
+    "@types/inquirer": "^7.3.3",
     "cac": "^6.7.3",
     "execa": "^5.1.1",
     "inquirer": "^8.1.1"
