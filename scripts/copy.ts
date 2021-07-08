@@ -1,10 +1,4 @@
-import {
-  createReadStream,
-  createWriteStream,
-  mkdirSync,
-  readdirSync,
-  statSync,
-} from "fs";
+import { copyFileSync, mkdirSync, readdirSync, statSync } from "fs";
 import { dirname } from "path";
 
 const ensureDirExistSync = (dirPath: string): void => {
@@ -20,10 +14,7 @@ const copyFile = (srcFile: string, targetFile: string): void => {
 
   ensureDirExistSync(targetDir);
 
-  const rs = createReadStream(srcFile); // create read stream
-  const ws = createWriteStream(targetFile); // create write stream
-
-  rs.pipe(ws);
+  copyFileSync(srcFile, targetFile);
 };
 
 const copyDir = (srcDir: string, targetDir: string): void => {
