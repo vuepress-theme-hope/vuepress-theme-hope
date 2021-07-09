@@ -21,7 +21,7 @@ export const resolveHTML = (html: string): string =>
     // remove anchor
     .replace(/<a href="#.*?">.*?<\/a>/gu, "")
     // remove html comment
-    .replace(/<!--.*?-->/gu, "")
+    .replace(/(<!--.*?-->)|(<!--[\S\s]+?-->)|(<!--[\S\s]*?$)/gu, "")
     // remove OutboundLink
     .replace(/<OutboundLink ?\/>/gu, "")
     // resolve RouterLink
