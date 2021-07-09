@@ -16,11 +16,11 @@ h5,
 h6 {
   #{config.$contentClass}:not(.custom) &:first-child {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
-    padding-top: calc(var(--navbar-height) + 1rem) !important;
+    padding-top: var(--navbar-height) !important;
 
     @media (max-width: config.$mobile) {
       margin-top: calc(0.5rem - var(--navbar-mobile-height)) !important;
-      padding-top: calc(var(--navbar-mobile-height) + 1rem) !important;
+      padding-top: var(--navbar-mobile-height) !important;
     }
   }
 }
