@@ -3168,10 +3168,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/photoswipe@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@types/photoswipe/-/photoswipe-4.1.1.tgz#3d76ed9698775ea17a1191578e4d0eeb331024a2"
-  integrity sha512-5ffGZEWjDqARuX/04uH/913zwkz/z9fuCVgMAnToeDBwOcN7P0xJE5LCrX50EiuyfpWN2AlkAIFwRfhaWYs6mw==
+"@types/photoswipe@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@types/photoswipe/-/photoswipe-4.1.2.tgz#3ddafb668bf6800f8dfab5bea2ba82dda879cd84"
+  integrity sha512-HA9TtCAQKToldgxRiyJ1DbsElg/cQV/SQ8COVjqIqghjy60Zxfh78E1WiFotthquqkS86nz13Za9wEbToe0svQ==
 
 "@types/prettier@^2.1.5":
   version "2.3.2"
