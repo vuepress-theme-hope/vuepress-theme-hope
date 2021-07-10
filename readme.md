@@ -11,6 +11,8 @@
 
 [![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-hope)
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
+
 [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/17544/branches/405512/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=17544&bid=405512)
 ![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/codeql-analysis.yml/badge.svg)
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
