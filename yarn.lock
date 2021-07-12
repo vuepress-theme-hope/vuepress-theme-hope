@@ -3697,10 +3697,35 @@
     gray-matter "^4.0.3"
     toml "^3.0.0"
 
+"@vuepress/core@2.0.0-beta.22":
+  version "2.0.0-beta.22"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-2.0.0-beta.22.tgz#5eac3d7050137b97a94a2eb3aabf85274fe6ffe0"
+  integrity sha512-22kwkGIbJxgMevj+byXfKvPVzXQsHvUguftBiBQEMFly09lz4g3bJNa3M6RD4JjciLWWavHKeyt8Rr21OX7R/w==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.21"
+    "@vuepress/markdown" "2.0.0-beta.22"
+    "@vuepress/shared" "2.0.0-beta.21"
+    "@vuepress/utils" "2.0.0-beta.21"
+    gray-matter "^4.0.3"
+    toml "^3.0.0"
+
 "@vuepress/markdown@2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.21.tgz#2f38a55b529131b8552e2e7963ca28bf540ac23d"
   integrity sha512-m6KLntaBIUMUtGLz4z60J315sDoSFui7NoMZSktktnpFYs9WeoMh6002MeOQ0+9cxeK6KRfUgCR/zTMrGmyNkw==
+  dependencies:
+    "@types/markdown-it" "^12.0.2"
+    "@vuepress/shared" "2.0.0-beta.21"
+    "@vuepress/utils" "2.0.0-beta.21"
+    markdown-it "^12.1.0"
+    markdown-it-anchor "^8.1.0"
+    markdown-it-emoji "^2.0.0"
+    mdurl "^1.0.1"
+
+"@vuepress/markdown@2.0.0-beta.22":
+  version "2.0.0-beta.22"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.22.tgz#d2f8648e7d78124f782f14af32dd1c4c827348b0"
+  integrity sha512-QQQmmbSuIN/Up4ne4PIsLfgXdE2rGTZwWTrR4hT8aFxv18v9gnz/PqUCsprIcm7UAWzSp5EQZg6RexPqHbzIpQ==
   dependencies:
     "@types/markdown-it" "^12.0.2"
     "@vuepress/shared" "2.0.0-beta.21"
@@ -3779,6 +3804,14 @@
   integrity sha512-A2Q/+FHUIsCf4mcZyypjcsdWStBEyCi8Zt6lM/nCMorR4gDmEdWzT84Qy1Mv1SJTX+JJE6Pmj8EkFE6KYaNvng==
   dependencies:
     "@vuepress/core" "2.0.0-beta.21"
+    execa "^5.1.1"
+
+"@vuepress/plugin-git@2.0.0-beta.22":
+  version "2.0.0-beta.22"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-git/-/plugin-git-2.0.0-beta.22.tgz#634638b49aa6d11443dcad2eba5ba4ba73d288c2"
+  integrity sha512-VKFvNUgwOQ2Erpdis5Dx0NFcQFSHrOjKmMtKH+pyFQiCUf2sxPoq2jcigsfpUTk3owDbmfeZ2PXiKlA7qBsing==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.22"
     execa "^5.1.1"
 
 "@vuepress/plugin-medium-zoom@2.0.0-beta.21":
