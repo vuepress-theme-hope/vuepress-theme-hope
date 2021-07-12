@@ -144,7 +144,7 @@
     "rollup-plugin-vue": "6.0.0",
     "semver": "7.3.5",
     "sort-package-json": "1.50.0",
-    "textlint": "12.0.0",
+    "textlint": "12.0.2",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-filter-rule-comments": "1.2.2",
     "textlint-rule-apostrophe": "2.0.0",
