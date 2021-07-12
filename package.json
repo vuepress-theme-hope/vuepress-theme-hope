@@ -158,7 +158,7 @@
     "ts-node": "10.0.0",
     "typescript": "4.3.5",
     "vuepress": "2.0.0-beta.21",
-    "vuepress-vite": "2.0.0-beta.21"
+    "vuepress-vite": "2.0.0-beta.22"
   },
   "textlint": {
     "rules": {
