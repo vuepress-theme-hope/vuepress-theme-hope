@@ -60,11 +60,11 @@ export default defineComponent({
                     )
                   )
                 ),
-                h("meta", {
-                  property: "keywords",
-                  content: items.value.join(","),
-                }),
               ]),
+              h("meta", {
+                property: "keywords",
+                content: items.value.join(","),
+              }),
             ]
           )
         : null;

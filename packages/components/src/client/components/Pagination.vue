@@ -49,7 +49,12 @@
           type="text"
           @keypress.enter="jumpPage(input)"
         />
-        <button class="navigate" role="navigation" @click="jumpPage(input)">
+        <button
+          class="navigate"
+          role="navigation"
+          :title="i18n.button"
+          @click="jumpPage(input)"
+        >
           {{ i18n.button }}
         </button>
       </div>
