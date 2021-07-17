@@ -3,6 +3,7 @@
     v-click-outside="clickOutside"
     class="color-button"
     :class="{ select: showMenu }"
+    tabindex="-1"
     aria-hidden="true"
     @click="showMenu = !showMenu"
   >
