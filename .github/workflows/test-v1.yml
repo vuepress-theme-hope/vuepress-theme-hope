@@ -58,4 +58,4 @@ jobs:
 
       - name: Upload coverage
         if: github.ref == 'refs/heads/v1'
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2.0.1
