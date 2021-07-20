@@ -26,6 +26,7 @@ a {
   font-weight: 500;
   color: var(--accent-color);
   text-decoration: none;
+  overflow-wrap: break-word;
 }
 
 p a code {
