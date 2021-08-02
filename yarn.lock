@@ -3509,10 +3509,15 @@
     "@vue/compiler-ssr" "3.1.4"
     "@vue/shared" "3.1.4"
 
-"@vue/shared@3.1.4", "@vue/shared@^3.1.4":
+"@vue/shared@3.1.4":
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.4.tgz#c14c461ec42ea2c1556e86f60b0354341d91adc3"
   integrity sha512-6O45kZAmkLvzGLToBxEz4lR2W6kXohCtebV2UxjH9GXjd8X9AhEn68FN9eNanFtWNzvgw1hqd6HkPRVQalqf7Q==
+
+"@vue/shared@^3.1.4", "@vue/shared@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.5.tgz#74ee3aad995d0a3996a6bb9533d4d280514ede03"
+  integrity sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==
 
 "@vuedx/analyze@0.7.4":
   version "0.7.4"
@@ -3880,6 +3885,13 @@
   integrity sha512-G5+iJRNEEq+TBYCOkUMS32dLAsv2bQ/3qTxSwa/ccX6UDSMAkCm/85GLN5DwrCPmyf2SHHomG8C/qvIZp3+jRA==
   dependencies:
     "@vue/shared" "^3.1.4"
+
+"@vuepress/shared@2.0.0-beta.23":
+  version "2.0.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.23.tgz#2105db88eec260adcd80101a046667935ea20fd9"
+  integrity sha512-FFpQKqcksauwHuXeCPOwc8TnTP+nXMVBo5k3uk/XfPsfre8qigCz2R+wsj2xeOM5KjfqjBKi4Vr8pAslfI+bUw==
+  dependencies:
+    "@vue/shared" "^3.1.5"
 
 "@vuepress/theme-default@2.0.0-beta.21":
   version "2.0.0-beta.21"
