@@ -13408,10 +13408,10 @@ sass-loader@^12.1.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass@^1.35.1, sass@^1.35.2:
-  version "1.35.2"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.35.2.tgz#b732314fcdaf7ef8d0f1698698adc378043cb821"
-  integrity sha512-jhO5KAR+AMxCEwIH3v+4zbB2WB0z67V1X0jbapfVwQQdjHZUGUyukpnoM6+iCMfsIUC016w9OPKQ5jrNOS9uXw==
+sass@^1.35.1, sass@^1.37.2:
+  version "1.37.2"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.37.2.tgz#eb87c01a1e6ec12e50fa69571b69628ea043a372"
+  integrity sha512-+XMg8QOg7OGLo4F5R3fLYEti/3MxFkyX0NxYbqWycU8xYMAhPDN5FuCO2ZJudnM1wcnZ3CeJRnpqUBZpLOitCQ==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
 
