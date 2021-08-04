@@ -127,7 +127,7 @@
     "postcss": "8.3.5",
     "postcss-loader": "6.1.1",
     "prettier": "2.3.2",
-    "remark-cli": "9.0.0",
+    "remark-cli": "10.0.0",
     "remark-footnotes": "3.0.0",
     "remark-frontmatter": "3.0.0",
     "remark-lint": "8.0.0",
