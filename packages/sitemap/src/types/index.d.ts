@@ -97,24 +97,28 @@ export interface SitemapFrontmatterOption {
     | "monthly"
     | "yearly"
     | "never";
+
   /**
    * 是否不包含此页面
    *
    * Whether to exclude this page from sitemap
    */
   exclude?: boolean;
+
   /**
    * 页面优先级，0.0 - 1.0
    *
    * Priority of this page, supports 0.0 -1.0
    */
   priority?: number;
+
   /**
    * 图片配置
    *
    * Image config
    */
   img?: SitemapImageOption[];
+
   /**
    * 视频配置
    *
@@ -131,18 +135,21 @@ export interface SitemapOptions {
    * domain which to be deployed to
    */
   hostname: string;
+
   /**
    * 需要额外包含的网址
    *
    * Extra urls to be included
    */
   urls?: string[];
+
   /**
    * 不被收录的页面
    *
    * Urls to be excluded
    */
   exclude?: string[];
+
   /**
    * 输出的文件名
    *
@@ -151,6 +158,7 @@ export interface SitemapOptions {
    * @default 'sitemap.xml'
    */
   outFile?: string;
+
   /**
    * 页面默认更新频率
    *
@@ -166,13 +174,14 @@ export interface SitemapOptions {
     | "monthly"
     | "yearly"
     | "never";
+
   /**
-   * 时间格式化器
-   *
    * Date format function
    */
   dateFormatter?: ($page: PageComputed) => string;
+
   xslUrl?: string;
+
   /** XML namespaces to turn on - all by default */
   xmlNameSpace?: {
     news: boolean;
