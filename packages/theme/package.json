@@ -31,8 +31,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@docsearch/css": "^3.0.0-alpha.36",
-    "@docsearch/js": "^3.0.0-alpha.36",
+    "@docsearch/css": "^3.0.0-alpha.39",
+    "@docsearch/js": "^3.0.0-alpha.39",
     "@mr-hope/vuepress-plugin-comment": "1.18.2",
     "@mr-hope/vuepress-plugin-components": "1.19.0",
     "@mr-hope/vuepress-plugin-copy-code": "1.18.2",
@@ -47,10 +47,10 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.throttle": "^4.1.6",
-    "@types/react": "^17.0.14",
+    "@types/react": "^17.0.15",
     "@vuepress/plugin-blog": "^1.9.4",
     "bcryptjs": "^2.4.3",
-    "chalk": "^4.1.1",
+    "chalk": "^4.1.2",
     "dayjs": "^1.10.6",
     "docsearch.js": "^2.6.3",
     "lodash.debounce": "^4.0.8",

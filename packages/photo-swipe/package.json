@@ -38,7 +38,7 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "1.18.2",
     "@mr-hope/vuepress-types": "1.18.2",
-    "@types/photoswipe": "^4.1.1",
+    "@types/photoswipe": "^4.1.2",
     "photoswipe": "^4.1.3"
   },
   "publishConfig": {

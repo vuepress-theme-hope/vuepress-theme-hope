@@ -36,7 +36,7 @@
     "@mr-hope/vuepress-shared": "1.18.2",
     "@mr-hope/vuepress-types": "1.18.2",
     "@types/fs-extra": "^9.0.12",
-    "chalk": "^4.1.1",
+    "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
     "register-service-worker": "^1.7.2",
     "workbox-build": "^6.1.5"
