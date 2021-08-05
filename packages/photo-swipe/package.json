@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.5",
-    "@types/photoswipe": "^4.1.1",
+    "@types/photoswipe": "^4.1.2",
     "photoswipe": "^4.1.3",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.5"
   },
