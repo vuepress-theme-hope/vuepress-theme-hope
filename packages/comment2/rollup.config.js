@@ -13,7 +13,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
-      "balloon-css",
+      "balloon-css/balloon.css",
       "vue",
       "vue-router",
       "@Waline",
