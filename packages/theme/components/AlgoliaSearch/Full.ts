@@ -62,6 +62,7 @@ export default Vue.extend({
 
                 const fullPath = `${window.location.origin}${hit.url}`;
                 const { pathname: hitPathname } = new URL(fullPath);
+
                 // If the hits goes to another page, we prevent the native link behavior
                 // to leverage the Vue Router loading feature.
                 if (this.$route.path !== hitPathname) event.preventDefault();
@@ -69,7 +70,10 @@ export default Vue.extend({
                 if (
                   this.$router
                     .getRoutes()
-                    .some((route) => route.path === hitPathname)
+                    .some(
+                      (route) =>
+                        route.path.replace(/index\.html$/, "") === hitPathname
+                    )
                 )
                   void this.$router.push(hit.url);
                 else window.open(fullPath);
