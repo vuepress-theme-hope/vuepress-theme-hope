@@ -1,17 +1,22 @@
 import { black, blue, cyan } from "chalk";
 import { readFile, statSync, writeFile } from "fs-extra";
 import { resolve } from "path";
-import WorkboxBuild = require("workbox-build");
+import { generateSW } from "workbox-build";
 import type { Context } from "@mr-hope/vuepress-types";
+import type {
+  ManifestEntry,
+  ManifestTransform,
+  ManifestTransformResult,
+} from "workbox-build";
 import type { PWAOptions } from "../types";
 
 const imageFilter =
-  (outDir: string, maxsize = 1024): WorkboxBuild.ManifestTransform =>
+  (outDir: string, maxsize = 1024): ManifestTransform =>
   (
-    manifestEntries: WorkboxBuild.ManifestEntry[]
-  ): WorkboxBuild.ManifestTransformResult => {
+    manifestEntries: (ManifestEntry & { size: number })[]
+  ): ManifestTransformResult => {
     const warnings: string[] = [];
-    const manifest: WorkboxBuild.ManifestEntry[] = [];
+    const manifest: (ManifestEntry & { size: number })[] = [];
     const imageExtensions = [".png", ".jpg", ".jpeg", "webp", "bmp", "gif"];
 
     for (const entry of manifestEntries)
@@ -39,7 +44,7 @@ export const genServiceWorker = async (
   );
   const swDest = resolve(context.outDir, "./service-worker.js");
 
-  const additionalManifestEntries: WorkboxBuild.ManifestEntry[] = [];
+  const additionalManifestEntries: ManifestEntry[] = [];
 
   const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
 
@@ -49,7 +54,7 @@ export const genServiceWorker = async (
 
   if (options.cachePic) globPatterns.push("**/*.{png,jpg,jpeg,bmp,gif,webp}");
 
-  await WorkboxBuild.generateSW({
+  await generateSW({
     swDest,
     globDirectory: context.outDir,
     cacheId: context.siteConfig.name || "mr-hope",

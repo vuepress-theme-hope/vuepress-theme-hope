@@ -1,6 +1,5 @@
-import type WorkboxBuild from "workbox-build";
+import type { GenerateSWOptions } from "workbox-build";
 import type { ManifestOption } from "./manifest";
-import "./declare";
 
 export interface PWAI18NConfig {
   /** 安装文字 */
@@ -153,7 +152,7 @@ export interface PWAOptions {
    * workbox-build’s [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *
    */
-  generateSWConfig?: Partial<WorkboxBuild.GenerateSWOptions>;
+  generateSWConfig?: GenerateSWOptions;
 }
 
 declare global {
