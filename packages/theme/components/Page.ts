@@ -1,4 +1,3 @@
-import Vue from "vue";
 import Anchor from "@theme/components/Anchor.vue";
 import Comment from "@Comment";
 import MyTransition from "@theme/components/MyTransition.vue";
@@ -6,12 +5,13 @@ import PageInfo from "@mr-hope/vuepress-plugin-comment/lib/client/PageInfo.vue";
 import PageMeta from "@theme/components/PageMeta.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
+import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 
 import type { PageHeader } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
 import type { SidebarItem } from "@theme/util/sidebar";
 
-export default Vue.extend({
+export default pathEncryptMixin.extend({
   name: "Page",
 
   components: {
@@ -23,6 +23,7 @@ export default Vue.extend({
     PageNav,
     Password,
   },
+
   props: {
     sidebarItems: {
       type: Array as PropType<SidebarItem[]>,

@@ -4,9 +4,10 @@
       <BlogInfo />
     </template>
 
+    <Password v-if="isGlobalEncrypted" @password-verify="checkGlobalPassword" />
     <Password
-      v-if="isPathEncrypted && !isGlobalEncrypted"
-      @password-verify="setPassword"
+      v-else-if="isPathEncrypted"
+      @password-verify="checkPathPassword"
     />
     <main v-else class="page blog">
       <div class="blog-page-wrapper">

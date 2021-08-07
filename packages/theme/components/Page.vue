@@ -18,6 +18,14 @@
       />
     </MyTransition>
 
+    <MyTransition v-else-if="isPathEncrypted" :delay="0.08">
+      <Password
+        :key="$route.path"
+        :page="true"
+        @password-verify="checkPathPassword"
+      />
+    </MyTransition>
+
     <template v-else>
       <MyTransition :delay="0.12">
         <Anchor :key="$route.path" />

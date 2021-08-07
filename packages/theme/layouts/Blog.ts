@@ -1,12 +1,12 @@
-import { Component, Mixins } from "vue-property-decorator";
 import BlogInfo from "@BlogInfo";
 import BlogPage from "@BlogPage";
 import Common from "@theme/components/Common.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
-import PageEncryptMixin from "@theme/util/pageEncryptMixin";
+import { globalEncryptMixin } from "@theme/mixins/globalEncrypt";
+import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 import Password from "@theme/components/Password.vue";
 
-@Component({
+export default globalEncryptMixin.extend(pathEncryptMixin).extend({
   components: {
     BlogInfo,
     BlogPage,
@@ -14,5 +14,4 @@ import Password from "@theme/components/Password.vue";
     MyTransition,
     Password,
   },
-})
-export default class Blog extends Mixins(PageEncryptMixin) {}
+});
