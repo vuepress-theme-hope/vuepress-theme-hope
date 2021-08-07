@@ -8,6 +8,7 @@
   color: var(--white);
   background-color: var(--accent-color);
   vertical-align: top;
+  transition: background-color ease 0.3s, color ease 0.3s;
 
   .table-of-contents & {
     vertical-align: middle;

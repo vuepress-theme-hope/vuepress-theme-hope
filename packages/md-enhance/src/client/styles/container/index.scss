@@ -9,6 +9,8 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
 
 .custom-container {
   position: relative;
+  transition: background-color ease 0.3s, border-color ease 0.3s,
+    color ease 0.3s;
 
   .custom-container-title {
     margin-bottom: -0.4rem;

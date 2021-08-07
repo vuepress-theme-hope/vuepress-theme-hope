@@ -17,7 +17,8 @@
   box-shadow: 0 2px 8px var(--card-shadow-color);
   backdrop-filter: saturate(200%) blur(20px);
   line-height: var(--navbar-line-height);
-  transition: transform ease-in-out 0.3s, background-color ease 0.3s;
+  transition: transform ease-in-out 0.3s, background-color ease 0.3s,
+    box-shadow ease 0.3s;
 
   @media (max-width: config.$mobile) {
     --navbar-line-height: calc(

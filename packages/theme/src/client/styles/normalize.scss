@@ -53,6 +53,7 @@ code {
   font-family: var(--font-family-code);
   font-size: 0.85em;
   overflow-wrap: break-word;
+  transition: background-color ease 0.3s, color ease 0.3s;
 
   #{config.$darkSelector} & {
     background: var(--grey12);
