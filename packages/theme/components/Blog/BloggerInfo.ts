@@ -1,51 +1,60 @@
-import { Component, Mixins } from "vue-property-decorator";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
-import { TimelineMixin } from "@theme/util/articleMixin";
 import MediaLinks from "@theme/components/MediaLinks.vue";
+import { timelineMixin } from "@theme/mixins/timeline";
 import { filterArticle } from "@theme/util/article";
 import { navigate } from "@theme/util/navigate";
 
 import type { BlogOptions } from "@theme/types";
 import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 
-@Component({ components: { MediaLinks } })
-export default class BloggerInfo extends Mixins(TimelineMixin) {
-  private get blogConfig(): BlogOptions {
-    return this.$themeConfig.blog || {};
-  }
+export default timelineMixin.extend({
+  name: "BloggerInfo",
 
-  private get bloggerName(): string {
-    return (
-      this.blogConfig.name || this.$themeConfig.author || this.$site.title || ""
-    );
-  }
+  components: { MediaLinks },
 
-  private get bloggerAvatar(): string {
-    return this.blogConfig.avatar || this.$themeConfig.logo || "";
-  }
+  computed: {
+    blogConfig(): BlogOptions {
+      return this.$themeConfig.blog || {};
+    },
 
-  private get hasIntro(): boolean {
-    return Boolean(this.blogConfig.intro);
-  }
+    bloggerName(): string {
+      return (
+        this.blogConfig.name ||
+        this.$themeConfig.author ||
+        this.$site.title ||
+        ""
+      );
+    },
 
-  private get hintAttr(): string {
-    return this.hasIntro ? "aria-label" : "";
-  }
+    bloggerAvatar(): string {
+      return this.blogConfig.avatar || this.$themeConfig.logo || "";
+    },
 
-  private get i18n(): HopeThemeLocaleConfigItem["blog"] {
-    return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
-  }
+    hasIntro(): boolean {
+      return Boolean(this.blogConfig.intro);
+    },
 
-  private get articleNumber(): number {
-    return filterArticle(this.$site.pages).length;
-  }
+    hintAttr(): string {
+      return this.hasIntro ? "aria-label" : "";
+    },
 
-  private navigate(url: string): void {
-    navigate(url, this.$router, this.$route);
-  }
+    i18n(): HopeThemeLocaleConfigItem["blog"] {
+      return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
+    },
 
-  private jumpIntro(): void {
-    if (this.hasIntro)
-      navigate(this.blogConfig.intro as string, this.$router, this.$route);
-  }
-}
+    articleNumber(): number {
+      return filterArticle(this.$site.pages).length;
+    },
+  },
+
+  methods: {
+    navigate(url: string): void {
+      navigate(url, this.$router, this.$route);
+    },
+
+    jumpIntro(): void {
+      if (this.hasIntro)
+        navigate(this.blogConfig.intro as string, this.$router, this.$route);
+    },
+  },
+});

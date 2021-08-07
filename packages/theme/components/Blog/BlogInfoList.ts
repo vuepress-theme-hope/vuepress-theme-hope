@@ -1,4 +1,3 @@
-import { Component, Mixins } from "vue-property-decorator";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import ArticleIcon from "@theme/icons/ArticleIcon.vue";
 import CategoryIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/CategoryIcon.vue";
@@ -11,10 +10,13 @@ import TagList from "@theme/components/Blog/TagList.vue";
 import Timeline from "@theme/components/Blog/Timeline.vue";
 import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { filterArticle } from "@theme/util/article";
-import { StarMixin } from "@theme/util/articleMixin";
+import { starMixin } from "@theme/mixins/star";
 
 import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
-@Component({
+
+export default starMixin.extend({
+  name: "BlogInfo",
+
   components: {
     ArticleIcon,
     ArticleList,
@@ -27,23 +29,28 @@ import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
     Timeline,
     TimelineList,
   },
-})
-export default class BlogInfo extends Mixins(StarMixin) {
-  private active = "category";
 
-  private get i18n(): HopeThemeLocaleConfigItem["blog"] {
-    return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
-  }
+  data: () => ({
+    active: "category",
+  }),
 
-  private get articleNumber(): number {
-    return filterArticle(this.$site.pages).length;
-  }
+  computed: {
+    i18n(): HopeThemeLocaleConfigItem["blog"] {
+      return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
+    },
 
-  private setActive(name: string): void {
-    this.active = name;
-  }
+    articleNumber(): number {
+      return filterArticle(this.$site.pages).length;
+    },
+  },
 
-  private navigate(path: string): void {
-    if (this.$route.path !== path) void this.$router.push(path);
-  }
-}
+  methods: {
+    setActive(name: string): void {
+      this.active = name;
+    },
+
+    navigate(path: string): void {
+      if (this.$route.path !== path) void this.$router.push(path);
+    },
+  },
+});
