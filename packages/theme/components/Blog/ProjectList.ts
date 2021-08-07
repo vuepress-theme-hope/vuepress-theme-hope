@@ -3,7 +3,7 @@ import ArticleIcon from "@theme/icons/ArticleIcon.vue";
 import BookIcon from "@theme/icons/BookIcon.vue";
 import LinkIcon from "@theme/icons/LinkIcon.vue";
 import ProjectIcon from "@theme/icons/ProjectIcon.vue";
-import { navigate } from "@theme/util/navigate";
+import { navigate } from "@theme/utils/navigate";
 
 export default Vue.extend({
   name: "ProjectList",

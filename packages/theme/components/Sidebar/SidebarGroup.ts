@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import Vue from "vue";
 import DropdownTransition from "@theme/components/Sidebar/DropdownTransition.vue";
-import { isActive } from "@theme/util/path";
+import { isActive } from "@theme/utils/path";
 
 import type { PropType } from "vue";
-import type { SidebarAutoItem, SidebarGroupItem } from "@theme/util/sidebar";
+import type { SidebarAutoItem, SidebarGroupItem } from "@theme/utils/sidebar";
 
 export default Vue.extend({
   name: "SidebarGroup",

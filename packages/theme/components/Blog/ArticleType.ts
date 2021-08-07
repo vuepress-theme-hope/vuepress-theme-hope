@@ -1,6 +1,6 @@
 import Vue from "vue";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
-import { navigate } from "@theme/util/navigate";
+import { navigate } from "@theme/utils/navigate";
 
 interface ArticleTypeItem {
   text: string;

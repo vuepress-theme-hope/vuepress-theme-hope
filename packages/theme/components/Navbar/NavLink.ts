@@ -1,8 +1,8 @@
 import Vue from "vue";
-import { ensureExt, isExternal, isMailto, isTel } from "@theme/util/path";
+import { ensureExt, isExternal, isMailto, isTel } from "@theme/utils/path";
 
 import type { PropType } from "vue";
-import type { NavBarConfigItem } from "@theme/util/navbar";
+import type { NavBarConfigItem } from "@theme/utils/navbar";
 
 export default Vue.extend({
   name: "NavLink",

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import EditIcon from "@theme/icons/EditIcon.vue";
-import { endingSlashRE, outboundRE } from "@theme/util/path";
+import { endingSlashRE, outboundRE } from "@theme/utils/path";
 
 import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 import type { GitContributor } from "@mr-hope/vuepress-plugin-git";

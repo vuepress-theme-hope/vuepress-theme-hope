@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { filterArticle, getDate, sortArticle } from "@theme/util/article";
+import { filterArticle, getDate, sortArticle } from "@theme/utils/article";
 
 import type { PageComputed } from "@mr-hope/vuepress-types";
 

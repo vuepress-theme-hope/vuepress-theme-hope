@@ -1,5 +1,5 @@
 import Vue from "vue";
-import ClickOutside from "@theme/util/click-outside";
+import ClickOutside from "@theme/utils/click-outside";
 import ThemeOptions from "@theme/components/Theme/ThemeOptions.vue";
 
 export default Vue.extend({

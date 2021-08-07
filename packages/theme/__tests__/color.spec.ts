@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import Color from "../util/color.ts";
+import Color from "../utils/color.ts";
 
 describe("colorTest", () => {
   it("should handle short HEX color string", () => {

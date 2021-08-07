@@ -1,7 +1,7 @@
 import Vue from "vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import NavLink from "@theme/components/Navbar/NavLink.vue";
-import { navigate } from "@theme/util/navigate";
+import { navigate } from "@theme/utils/navigate";
 
 interface ActionConfig {
   text: string;

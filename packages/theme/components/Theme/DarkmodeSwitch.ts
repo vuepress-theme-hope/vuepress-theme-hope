@@ -2,7 +2,7 @@ import Vue from "vue";
 import AutoIcon from "@theme/icons/AutoIcon.vue";
 import DarkIcon from "@theme/icons/DarkIcon.vue";
 import LightIcon from "@theme/icons/LightIcon.vue";
-import { changeClass } from "@theme/util/dom";
+import { changeClass } from "@theme/utils/dom";
 
 export default Vue.extend({
   name: "DarkmodeSwitch",

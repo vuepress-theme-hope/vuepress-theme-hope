@@ -2,12 +2,12 @@ import Vue from "vue";
 import DropdownLink from "@theme/components/Navbar/DropdownLink.vue";
 import I18nIcon from "@theme/icons/I18nIcon.vue";
 import NavLink from "@theme/components/Navbar/NavLink.vue";
-import { getNavLinkItem } from "@theme/util/navbar";
+import { getNavLinkItem } from "@theme/utils/navbar";
 
 import type { VNode } from "vue";
 import type VueRouter from "vue-router";
 import type { RouterOptions } from "vue-router";
-import type { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/util/navbar";
+import type { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/utils/navbar";
 
 export default Vue.extend({
   name: "LanguageDropdown",

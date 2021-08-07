@@ -1,8 +1,8 @@
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import MediaLinks from "@theme/components/MediaLinks.vue";
 import { timelineMixin } from "@theme/mixins/timeline";
-import { filterArticle } from "@theme/util/article";
-import { navigate } from "@theme/util/navigate";
+import { filterArticle } from "@theme/utils/article";
+import { navigate } from "@theme/utils/navigate";
 
 import type { BlogOptions } from "@theme/types";
 import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";

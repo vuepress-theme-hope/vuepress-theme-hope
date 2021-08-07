@@ -2,10 +2,10 @@ import Vue from "vue";
 import RepoLink from "@theme/components/Navbar/RepoLink.vue";
 import SidebarDropdownLink from "@theme/components/Sidebar/SidebarDropdownLink.vue";
 import NavLink from "@theme/components/Navbar/NavLink.vue";
-import { getNavLinkItem } from "@theme/util/navbar";
+import { getNavLinkItem } from "@theme/utils/navbar";
 
 import type { NavBarConfigItem } from "@mr-hope/vuepress-types";
-import type { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/util/navbar";
+import type { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/utils/navbar";
 
 export default Vue.extend({
   name: "SidebarNavLinks",

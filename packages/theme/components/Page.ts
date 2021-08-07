@@ -9,7 +9,7 @@ import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 
 import type { PageHeader } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
-import type { SidebarItem } from "@theme/util/sidebar";
+import type { SidebarItem } from "@theme/utils/sidebar";
 
 export default pathEncryptMixin.extend({
   name: "Page",

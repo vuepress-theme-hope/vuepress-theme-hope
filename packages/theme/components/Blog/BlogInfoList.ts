@@ -9,7 +9,7 @@ import MyTransition from "@theme/components/MyTransition.vue";
 import TagList from "@theme/components/Blog/TagList.vue";
 import Timeline from "@theme/components/Blog/Timeline.vue";
 import TimelineList from "@theme/components/Blog/TimelineList.vue";
-import { filterArticle } from "@theme/util/article";
+import { filterArticle } from "@theme/utils/article";
 import { starMixin } from "@theme/mixins/star";
 
 import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";

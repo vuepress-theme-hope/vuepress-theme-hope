@@ -1,6 +1,6 @@
 import Vue from "vue";
-import { hashRE, isActive } from "@theme/util/path";
-import { groupSidebarHeaders } from "@theme/util/sidebar";
+import { hashRE, isActive } from "@theme/utils/path";
+import { groupSidebarHeaders } from "@theme/utils/sidebar";
 
 import type { CreateElement, PropType, VNode } from "vue";
 import type { Route } from "vue-router";
@@ -10,7 +10,7 @@ import type {
   SidebarPageItem,
   SidebarHeader,
   SidebarHeaderItem,
-} from "@theme/util/sidebar";
+} from "@theme/utils/sidebar";
 
 const renderIcon = (h: CreateElement, icon: string): VNode | null =>
   icon

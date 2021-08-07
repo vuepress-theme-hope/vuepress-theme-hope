@@ -3,7 +3,7 @@ import MyTransition from "@theme/components/MyTransition.vue";
 import { timelineMixin } from "@theme/mixins/timeline";
 import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 
-import type { SidebarHeader } from "@theme/util/groupHeader";
+import type { SidebarHeader } from "@theme/utils/groupHeader";
 
 export default timelineMixin.extend({
   name: "Timeline",

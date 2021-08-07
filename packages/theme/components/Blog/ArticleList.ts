@@ -2,8 +2,8 @@ import Vue from "vue";
 import ArticleItem from "@theme/components/Blog/ArticleItem.vue";
 import EmptyIcon from "@theme/icons/EmptyIcon.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
-import { filterArticle, sortArticle } from "@theme/util/article";
-import { getPathMatchedKeys } from "@theme/util/encrypt";
+import { filterArticle, sortArticle } from "@theme/utils/article";
+import { getPathMatchedKeys } from "@theme/utils/encrypt";
 
 import type { BlogOptions } from "@theme/types";
 import type { PageComputed } from "@mr-hope/vuepress-types";

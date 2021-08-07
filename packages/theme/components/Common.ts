@@ -1,4 +1,4 @@
-import { getSidebarItems } from "@theme/util/sidebar";
+import { getSidebarItems } from "@theme/utils/sidebar";
 import { globalEncryptMixin } from "@theme/mixins/globalEncrypt";
 import Navbar from "@theme/components/Navbar/Navbar.vue";
 import PageFooter from "@theme/components/PageFooter.vue";
@@ -7,7 +7,7 @@ import { PageHeader } from "@mr-hope/vuepress-types";
 import Sidebar from "@theme/components/Sidebar/Sidebar.vue";
 import throttle from "lodash.throttle";
 
-import type { SidebarItem, SidebarHeader } from "@theme/util/sidebar";
+import type { SidebarItem, SidebarHeader } from "@theme/utils/sidebar";
 
 export default globalEncryptMixin.extend({
   name: "Common",

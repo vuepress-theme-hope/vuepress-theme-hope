@@ -3,7 +3,7 @@ import DropdownTransition from "@theme/components/Sidebar/DropdownTransition.vue
 import NavLink from "@theme/components/Navbar/NavLink.vue";
 
 import type { PropType } from "vue";
-import type { NavBarConfigItem } from "@theme/util/navbar";
+import type { NavBarConfigItem } from "@theme/utils/navbar";
 
 export default Vue.extend({
   name: "SidebarDropdownLink",

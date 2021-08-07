@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { compareDate, getDate } from "../util/article.ts";
+import { compareDate, getDate } from "../utils/article.ts";
 
 describe("Date Test", () => {
   describe("getDate()", () => {
