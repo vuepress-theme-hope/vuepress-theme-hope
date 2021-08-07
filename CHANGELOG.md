@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.19.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.0...v1.19.1) (2021-08-07)
+
+### Bug Fixes
+
+- **active-hash:** fix scrollTop issue ([678e47e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/678e47efc3ae2b7b17cacb2cba036a11bbf82bb4))
+- **feed:** update comment remove regexp ([8f3a81a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8f3a81aa7fc1e538d402002aef241593b31d1a35))
+- **shared:** make sure fontawesome overides iconfont ([4ed4304](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ed4304c6ed7507070f4289954956c1e25fcdb05))
+- **theme:** break a tag when it's too long ([6712329](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67123290ab2c26ecc69ecd2ca6fafb58d15864fb))
+- **theme:** fix algolia search link ([2fb2071](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2fb2071855b1f08b7df6d9d566c2cdba04ff2e2e))
+- **theme:** improve eject command ([e394c0a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e394c0a0af9768ba1d9fe852fa746425b4a25836))
+
 ## [1.19.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.18.5...v1.19.0) (2021-06-30)
 
 ### Bug Fixes
