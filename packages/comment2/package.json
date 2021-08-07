@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-comment2",
-  "version": "2.0.0-alpha.5",
+  "version": "2.0.0-alpha.6",
   "description": "A comment plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -45,11 +45,11 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.5",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.6",
     "@waline/client": "^1.3.3",
     "balloon-css": "^1.2.0",
-    "vuepress-plugin-reading-time2": "2.0.0-alpha.5",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.5"
+    "vuepress-plugin-reading-time2": "2.0.0-alpha.6",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.6"
   },
   "publishConfig": {
     "access": "public"

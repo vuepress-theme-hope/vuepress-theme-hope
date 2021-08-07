@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
+
+### Bug Fixes
+
+- **theme:** fix 404 button ([0458b95](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0458b95b8b2212ff9d1a4847f0d347722219a4d2))
+- **theme:** fix copyright cannot disabled throught theme config ([3935929](https://github.com/Mister-Hope/vuepress-theme-hope/commit/39359290c0f82bfcd5e4d6990a7440c76da09149))
+- **theme:** fix navbar ([82ce925](https://github.com/Mister-Hope/vuepress-theme-hope/commit/82ce9254bd128d7e440e7e0849aab7721d436d7b))
+- **theme:** fix style issues ([025a4ba](https://github.com/Mister-Hope/vuepress-theme-hope/commit/025a4ba1880a24525090da9ce75354129989be2e))
+- **theme:** show outline of toggle-dark-button ([c5f3d96](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c5f3d96bd426ba127a99117bf1b797397e58bb93))
+
+### Features
+
+- enhance color transition ([7daad73](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7daad734c9e318b0a7bb005d64bca19e1da9fce3))
+- **theme:** add slide layout ([351c1c2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/351c1c24cff2fb89e0586163ea3c0e70fff44de7))
+- **theme:** extact transition ([991c21c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/991c21c8fb6e11b228921405b17d3b8a3f19333a))
+- **theme:** update components ([9757853](https://github.com/Mister-Hope/vuepress-theme-hope/commit/97578534fc5ce0c1183863f9d68ed5ab6b10a4d8))
+- **theme:** update darkmode ([fe7ebef](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fe7ebefe9f4c72be9999d5f386cd6f5a2de438f9))
+- **theme:** update layout ([be8dbbc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/be8dbbc4e4d92c54e7b057d7515d5c94ae23d556))
+- update layout ([3b131fb](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3b131fbe7674feaee3ee2092b1cb401d84b1e612))
+
 # [2.0.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
 
 ### Features

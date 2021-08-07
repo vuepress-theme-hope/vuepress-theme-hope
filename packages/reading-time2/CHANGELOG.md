@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
+
+### Bug Fixes
+
+- **reading-time2:** update chinese reg ([39252c9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/39252c9dda348b3850ad61708a5c40431454f613))
+
 # [2.0.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
 
 **Note:** Version bump only for package vuepress-plugin-reading-time2

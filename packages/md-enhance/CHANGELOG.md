@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
+
+### Features
+
+- enhance color transition ([7daad73](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7daad734c9e318b0a7bb005d64bca19e1da9fce3))
+- **theme:** add slide layout ([351c1c2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/351c1c24cff2fb89e0586163ea3c0e70fff44de7))
+
 # [2.0.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

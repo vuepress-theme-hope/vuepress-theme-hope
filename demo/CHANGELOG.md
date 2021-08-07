@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
+
+### Bug Fixes
+
+- **demo:** fix demo logo ([8d96c8d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8d96c8d8aadbc502cccc5e8d71cd7749ee4fb468))
+- **theme:** fix style issues ([025a4ba](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/025a4ba1880a24525090da9ce75354129989be2e))
+
+### Features
+
+- **theme:** add slide layout ([351c1c2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/351c1c24cff2fb89e0586163ea3c0e70fff44de7))
+- **theme:** update components ([9757853](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/97578534fc5ce0c1183863f9d68ed5ab6b10a4d8))
+
 # [2.0.0-alpha.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
 
 **Note:** Version bump only for package theme-demo

@@ -1,6 +1,6 @@
 {
   "name": "theme-demo",
-  "version": "2.0.0-alpha.5",
+  "version": "2.0.0-alpha.6",
   "private": true,
   "description": "Demo for vuepress-theme-hope",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@vuepress/plugin-shiki": "2.0.0-beta.23",
     "cross-env": "7.0.3",
     "vuepress": "2.0.0-beta.23",
-    "vuepress-theme-hope": "2.0.0-alpha.5",
+    "vuepress-theme-hope": "2.0.0-alpha.6",
     "vuepress-vite": "2.0.0-beta.23"
   }
 }

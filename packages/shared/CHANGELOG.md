@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
+
+### Bug Fixes
+
+- **shared:** fix font-awesome ([049168b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/049168bde2091e00d894dec4035b71fea29323ad))
+
 # [2.0.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
 
 ### Bug Fixes

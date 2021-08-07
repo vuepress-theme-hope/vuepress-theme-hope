@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
+
+### Bug Fixes
+
+- **components:** fix breadCrumb title ([897aca1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/897aca18c10857411c0e94c4ae567a59d9a5a616))
+
+### Features
+
+- enhance color transition ([7daad73](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7daad734c9e318b0a7bb005d64bca19e1da9fce3))
+
 # [2.0.0-alpha.5](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components
