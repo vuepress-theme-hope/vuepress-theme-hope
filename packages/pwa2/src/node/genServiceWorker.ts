@@ -15,9 +15,11 @@ import type { PWAOptions } from "../shared";
 
 const imageFilter =
   (outDir: string, maxsize = 1024): ManifestTransform =>
-  (manifestEntries: ManifestEntry[]): ManifestTransformResult => {
+  (
+    manifestEntries: (ManifestEntry & { size: number })[]
+  ): ManifestTransformResult => {
     const warnings: string[] = [];
-    const manifest: ManifestEntry[] = [];
+    const manifest: (ManifestEntry & { size: number })[] = [];
     const imageExtensions = [".png", ".jpg", ".jpeg", "webp", "bmp", "gif"];
 
     for (const entry of manifestEntries)
@@ -46,7 +48,7 @@ export const genServiceWorker = async (
 
   const additionalManifestEntries: ManifestEntry[] = [];
 
-  const globPatterns = ["**/*.{js,css,svg,woff,woff2,eot,ttf,otf}"];
+  const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
 
   if (options.cacheHTML === false)
     globPatterns.push("./index.html", "./404.html");

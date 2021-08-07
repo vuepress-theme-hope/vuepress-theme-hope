@@ -1,5 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type WorkboxBuild from "workbox-build";
+import type { GenerateSWOptions } from "workbox-build";
 import type { PWAI18nConfig } from "./locales";
 import type { ManifestOption } from "./manifest";
 
@@ -137,7 +137,7 @@ export interface PWAOptions {
    * workbox-build’s [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *
    */
-  generateSWConfig?: Partial<WorkboxBuild.GenerateSWOptions>;
+  generateSWConfig?: GenerateSWOptions;
 
   locales?: LocaleConfig<PWAI18nConfig>;
 }
