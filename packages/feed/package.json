@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-feed",
-  "version": "1.18.4",
+  "version": "1.19.1",
   "description": "Feed plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -31,7 +31,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "1.18.2",
+    "@mr-hope/vuepress-types": "1.19.1",
     "chalk": "^4.1.2",
     "xml-js": "^1.6.11"
   },

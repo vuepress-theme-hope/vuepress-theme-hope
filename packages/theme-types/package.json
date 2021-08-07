@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-theme-types",
-  "version": "1.18.5",
+  "version": "1.19.1",
   "description": "Theme types for vuepress-theme-hope",
   "keywords": [
     "vuepress-theme",
@@ -26,14 +26,14 @@
   },
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-plugin-comment": "1.18.2",
-    "@mr-hope/vuepress-plugin-feed": "1.18.4",
-    "@mr-hope/vuepress-plugin-git": "1.18.2",
-    "@mr-hope/vuepress-plugin-pwa": "1.18.2",
-    "@mr-hope/vuepress-plugin-reading-time": "1.18.2",
-    "@mr-hope/vuepress-types": "1.18.2",
-    "vuepress-plugin-md-enhance": "1.18.5",
-    "vuepress-plugin-photo-swipe": "1.18.2"
+    "@mr-hope/vuepress-plugin-comment": "1.19.1",
+    "@mr-hope/vuepress-plugin-feed": "1.19.1",
+    "@mr-hope/vuepress-plugin-git": "1.19.1",
+    "@mr-hope/vuepress-plugin-pwa": "1.19.1",
+    "@mr-hope/vuepress-plugin-reading-time": "1.19.1",
+    "@mr-hope/vuepress-types": "1.19.1",
+    "vuepress-plugin-md-enhance": "1.19.1",
+    "vuepress-plugin-photo-swipe": "1.19.1"
   },
   "publishConfig": {
     "access": "public"

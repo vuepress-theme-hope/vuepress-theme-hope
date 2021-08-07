@@ -1,6 +1,6 @@
 {
   "name": "feed-docs",
-  "version": "1.19.0",
+  "version": "1.19.1",
   "private": true,
   "description": "Docs for @mr-hope/vuepress-plugin-feed",
   "license": "MIT",
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "vuepress": "1.8.2",
-    "vuepress-theme-hope": "1.19.0"
+    "vuepress-theme-hope": "1.19.1"
   }
 }
