@@ -72,7 +72,7 @@
     width $mobileSidebarWidth
     font-size 15px
 
-  @media (min-width ($MQMobile + 1px))
+  @media (min-width $MQMobile)
     .theme-container:not(.has-sidebar) &
       display none
 
