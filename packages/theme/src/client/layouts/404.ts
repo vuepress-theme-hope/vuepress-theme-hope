@@ -1,5 +1,5 @@
 import { defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
+import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
 import Common from "@Common";
 import Page404Icon from "../components/icons/Page404.vue";
@@ -22,6 +22,10 @@ export default defineComponent({
       window.history.go(-1);
     };
 
+    const { navigate } = useLink({
+      to: themeLocale.value.home ?? routeLocale.value,
+    });
+
     return (): VNode =>
       h(
         Common,
@@ -35,11 +39,11 @@ export default defineComponent({
               h(
                 "button",
                 { class: "action-button", onClick: () => goBack() },
-                themeLocale.value.back
+                themeLocale.value.back ?? "Go back"
               ),
               h(
-                RouterLink,
-                { to: themeLocale.value.home ?? routeLocale.value },
+                "button",
+                { class: "action-button", onClick: () => navigate() },
                 themeLocale.value.backToHome ?? "Back to home"
               ),
             ]),
