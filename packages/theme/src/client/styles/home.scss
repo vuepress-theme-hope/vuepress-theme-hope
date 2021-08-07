@@ -157,6 +157,7 @@
     margin: 0 -2rem;
     padding: 1.2rem 0;
     border-top: 1px solid var(--border-color);
+    transition: border-top ease 0.3s;
 
     @media (max-width: config.$mobileS) {
       margin: 0 -1.5rem;

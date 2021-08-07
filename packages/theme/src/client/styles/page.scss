@@ -102,6 +102,7 @@
     padding-top: 1rem;
     // clear float
     overflow: auto;
+    transition: border-top ease 0.3s;
   }
 
   .prev .icon,
