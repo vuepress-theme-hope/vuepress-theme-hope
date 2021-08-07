@@ -43,7 +43,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useDarkMode } from "../../composables";
+import {
+  useDarkClass,
+  useDarkMode,
+  usePrefersColorScheme,
+} from "../../composables";
 
 export default defineComponent({
   name: "ToggleDarkModeButton",
@@ -54,6 +58,9 @@ export default defineComponent({
     const toggleDarkMode = (): void => {
       isDarkMode.value = !isDarkMode.value;
     };
+
+    useDarkClass(isDarkMode);
+    usePrefersColorScheme(isDarkMode);
 
     return {
       isDarkMode,

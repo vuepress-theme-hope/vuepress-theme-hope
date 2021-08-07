@@ -9,6 +9,10 @@ body {
   transition: background-color ease 0.3s;
 }
 
+#{config.$darkSelector} {
+  color-scheme: dark;
+}
+
 body {
   min-height: 100vh;
 
