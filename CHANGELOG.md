@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.1...v1.19.2) (2021-08-07)
+
+### Bug Fixes
+
+- **theme:** fix encrypt ([61d51a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/61d51a2ec2dea02e139c65e8913eaec2e41ce10d))
+- **theme:** fix layout issue when exact 719 ([5a355cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5a355cc067a1dd468ad42d705f64a7d6a24df5ce))
+
 ## [1.19.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.0...v1.19.1) (2021-08-07)
 
 ### Bug Fixes
