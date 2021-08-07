@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getRootLang } from "@mr-hope/vuepress-shared";
-import { cyan } from "chalk";
-import { existsSync, readFile, writeJSON } from "fs-extra";
+import { chalk, fs } from "@vuepress/utils";
 import { relative } from "path";
 import { logger } from "./logger";
 
@@ -20,10 +19,10 @@ export const getManifest = async (
   const optionManifest = options.manifest || {};
 
   const userManifest = JSON.parse(
-    existsSync(userManifestPath)
-      ? await readFile(userManifestPath, "utf8")
-      : existsSync(userManifestJSONPath)
-      ? await readFile(userManifestJSONPath, "utf8")
+    fs.existsSync(userManifestPath)
+      ? await fs.readFile(userManifestPath, "utf8")
+      : fs.existsSync(userManifestJSONPath)
+      ? await fs.readFile(userManifestJSONPath, "utf8")
       : "{}"
   ) as ManifestOption;
 
@@ -60,13 +59,13 @@ export const genManifest = async (
   const manifest = await getManifest(options, app);
   const manifestPath = dir.dest("manifest.webmanifest");
 
-  await writeJSON(manifestPath, manifest, {
+  await fs.writeJSON(manifestPath, manifest, {
     flag: "w",
   });
 
   logger.success();
   logger.update(
-    `Manifest generated and saved to ${cyan(
+    `Manifest generated and saved to ${chalk.cyan(
       relative(process.cwd(), manifestPath)
     )}!`
   );

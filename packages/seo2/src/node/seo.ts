@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getDate, Logger } from "@mr-hope/vuepress-shared";
-import { readFile, existsSync, writeFile } from "fs-extra";
+import { fs } from "@vuepress/utils";
 import { getLocales, resolveUrl } from "./utils";
 
 import type { AppDir } from "@vuepress/core";
@@ -88,8 +88,8 @@ export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
   logger.load("Generating robots.txt");
   const publicPath = dir.public("robots.txt");
 
-  let content = existsSync(publicPath)
-    ? await readFile(publicPath, { encoding: "utf8" })
+  let content = fs.existsSync(publicPath)
+    ? await fs.readFile(publicPath, { encoding: "utf8" })
     : "";
 
   if (content && !content.includes("User-agent")) {
@@ -98,7 +98,7 @@ export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
   } else {
     content += "\nUser-agent:*\nDisallow:\n";
 
-    await writeFile(dir.dest("robots.txt"), content, {
+    await fs.writeFile(dir.dest("robots.txt"), content, {
       flag: "w",
     });
 

@@ -5,8 +5,6 @@ export default [
     external: [
       "@mr-hope/vuepress-shared",
       "@vuepress/utils",
-      "chalk",
-      "fs-extra",
       "workbox-build",
       "path",
       "vuepress-plugin-sass-palette",

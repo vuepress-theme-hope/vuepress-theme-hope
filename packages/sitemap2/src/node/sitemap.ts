@@ -1,6 +1,5 @@
 import { Logger } from "@mr-hope/vuepress-shared";
-import { cyan } from "chalk";
-import { createWriteStream, readFile, existsSync, writeFile } from "fs-extra";
+import { chalk, fs } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
 
 import type { App, Page, PageData } from "@vuepress/core";
@@ -132,7 +131,7 @@ export const generateSiteMap = async (
   });
   const pagesMap = generatePageMap(options, app);
   const sitemapXMLPath = dir.dest(outFile);
-  const writeStream = createWriteStream(sitemapXMLPath);
+  const writeStream = fs.createWriteStream(sitemapXMLPath);
 
   sitemap.pipe(writeStream);
 
@@ -145,13 +144,13 @@ export const generateSiteMap = async (
   sitemap.end();
 
   logger.success();
-  logger.update(`Sitemap generated and saved to ${cyan(outFile)}`);
+  logger.update(`Sitemap generated and saved to ${chalk.cyan(outFile)}`);
 
-  logger.load(`Appended sitemap path to ${cyan("robots.txt")}`);
+  logger.load(`Appended sitemap path to ${chalk.cyan("robots.txt")}`);
 
   const robotTxtPath = dir.dest("robots.txt");
-  const robotsTxt = existsSync(robotTxtPath)
-    ? await readFile(robotTxtPath, { encoding: "utf8" })
+  const robotsTxt = fs.existsSync(robotTxtPath)
+    ? await fs.readFile(robotTxtPath, { encoding: "utf8" })
     : "";
 
   const newRobotsTxtContent = `${robotsTxt.replace(
@@ -159,7 +158,7 @@ export const generateSiteMap = async (
     ""
   )}\nSitemap: ${hostname}${base}${outFile}\n`;
 
-  await writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
+  await fs.writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
 
   logger.success();
 };

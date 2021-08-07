@@ -1,5 +1,4 @@
-import { cyan } from "chalk";
-import { outputFile } from "fs-extra";
+import { chalk, fs } from "@vuepress/utils";
 import { Feed } from "./feed";
 import { getOutput } from "./options";
 import { FeedPage } from "./page";
@@ -39,7 +38,7 @@ export class FeedGenerator {
       }
     }
 
-    logger.success(`added ${cyan(`${count} page(s)`)} as feed item(s)`);
+    logger.success(`added ${chalk.cyan(`${count} page(s)`)} as feed item(s)`);
   }
 
   async generateFeed(): Promise<void> {
@@ -54,10 +53,10 @@ export class FeedGenerator {
     if (output.atom.enable) {
       const filePath = dest(output.atom.path);
 
-      await outputFile(filePath, this.feed.atom());
+      await fs.outputFile(filePath, this.feed.atom());
 
       logger.update(
-        `Atom feed file generated and saved to ${cyan(output.atom.path)}`
+        `Atom feed file generated and saved to ${chalk.cyan(output.atom.path)}`
       );
       logger.success();
       logger.load("Generating Feed");
@@ -67,10 +66,10 @@ export class FeedGenerator {
     if (output.json.enable) {
       const filePath = dest(output.json.path);
 
-      await outputFile(filePath, this.feed.json());
+      await fs.outputFile(filePath, this.feed.json());
 
       logger.update(
-        `JSON feed file generated and saved to ${cyan(output.json.path)}`
+        `JSON feed file generated and saved to ${chalk.cyan(output.json.path)}`
       );
       logger.success();
       logger.load("Generating Feed");
@@ -80,10 +79,10 @@ export class FeedGenerator {
     if (output.rss.enable) {
       const filePath = dest(output.rss.path);
 
-      await outputFile(filePath, this.feed.rss());
+      await fs.outputFile(filePath, this.feed.rss());
 
       logger.update(
-        `RSS feed file generated and saved to ${cyan(output.rss.path)}`
+        `RSS feed file generated and saved to ${chalk.cyan(output.rss.path)}`
       );
       logger.success();
     }

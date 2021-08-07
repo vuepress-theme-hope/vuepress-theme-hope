@@ -4,8 +4,7 @@ export default rollupTypescript("node/index", {
   external: [
     "@mr-hope/vuepress-shared",
     "@vuepress/core",
-    "chalk",
-    "fs-extra",
+    "@vuepress/utils",
     "path",
     "sitemap",
   ],

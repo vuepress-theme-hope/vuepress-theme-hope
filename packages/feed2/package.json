@@ -41,9 +41,6 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.5",
-    "@types/fs-extra": "^9.0.12",
-    "chalk": "^4.1.2",
-    "fs-extra": "^10.0.0",
     "xml-js": "^1.6.11"
   },
   "publishConfig": {
