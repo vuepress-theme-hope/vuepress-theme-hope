@@ -73,7 +73,7 @@ export default Vue.extend({
 
       // try to remove hash
       if (scrollTop - themeContentScrollTop < 0 && routeHash) {
-        updateHash("", -1);
+        updateHash("#", -1);
         return;
       }
 
