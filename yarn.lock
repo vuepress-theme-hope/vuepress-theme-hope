@@ -3168,7 +3168,7 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
 
-"@types/katex@^0.11.1":
+"@types/katex@^0.11.0", "@types/katex@^0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@types/katex/-/katex-0.11.1.tgz#34de04477dcf79e2ef6c8d23b41a3d81f9ebeaf5"
   integrity sha512-DUlIj2nk0YnJdlWgsFuVKcX27MLW0KbKmGVoUHmFr+74FYYNUDAaj9ZqTADvsbE8rfxuVmSFc7KczYn5Y09ozg==
@@ -9939,14 +9939,7 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-katex@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/katex/-/katex-0.12.0.tgz#2fb1c665dbd2b043edcf8a1f5c555f46beaa0cb9"
-  integrity sha512-y+8btoc/CK70XqcHqjxiGWBOeIL8upbS0peTPXTvgrh21n1RiWWcIpSWM+4uXq+IAgNh9YYQWdc7LVDPDAEEAg==
-  dependencies:
-    commander "^2.19.0"
-
-katex@^0.13.13:
+katex@^0.13.0, katex@^0.13.13:
   version "0.13.13"
   resolved "https://registry.yarnpkg.com/katex/-/katex-0.13.13.tgz#15a796e95516869bc6d483443b58b2df872ee40f"
   integrity sha512-cCMcil4jwMm7behpXGiQfXJA29sko/Gd/26iCsr53Dv5Jn2iHbHyEb14dm9uVrIijUXx6Zz1WhlFhHE6DckvkQ==
@@ -10716,14 +10709,14 @@ mdast-util-heading-style@^1.0.2:
   resolved "https://registry.yarnpkg.com/mdast-util-heading-style/-/mdast-util-heading-style-1.0.6.tgz#6410418926fd5673d40f519406b35d17da10e3c5"
   integrity sha512-8ZuuegRqS0KESgjAGW8zTx4tJ3VNIiIaGFNEzFpRSAQBavVc7AvOo9I4g3crcZBfYisHs4seYh0rAVimO6HyOw==
 
-mdast-util-math@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/mdast-util-math/-/mdast-util-math-0.1.2.tgz#629a0793bd8822432917e5ddda5279492390cc2b"
-  integrity sha512-fogAitds+wH+QRas78Yr1TwmQGN4cW/G2WRw5ePuNoJbBSPJCxIOCE8MTzHgWHVSpgkRaPQTgfzXRE1CrwWSlg==
+mdast-util-math@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mdast-util-math/-/mdast-util-math-1.1.0.tgz#b3bc09fa68cd95352191f77265353e0b6c4064a9"
+  integrity sha512-1ZpkJXMyGCnwyzax2F6DPODP7LNwXDY54KfUxYC38c19aqx6Y7h9iiDpPicdgqgPDEb65b69YukD7zgw294l4w==
   dependencies:
-    longest-streak "^2.0.0"
-    mdast-util-to-markdown "^0.6.0"
-    repeat-string "^1.0.0"
+    "@types/mdast" "^3.0.0"
+    longest-streak "^3.0.0"
+    mdast-util-to-markdown "^1.0.0"
 
 mdast-util-to-markdown@^0.6.0, mdast-util-to-markdown@^0.6.1, mdast-util-to-markdown@~0.6.0:
   version "0.6.5"
@@ -10988,13 +10981,17 @@ micromark-extension-gfm@^0.3.0:
     micromark-extension-gfm-tagfilter "~0.3.0"
     micromark-extension-gfm-task-list-item "~0.3.0"
 
-micromark-extension-math@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/micromark-extension-math/-/micromark-extension-math-0.1.2.tgz#5d7bb2b86018da4a758c05f3991664430ee4d711"
-  integrity sha512-ZJXsT2eVPM8VTmcw0CPSDeyonOn9SziGK3Z+nkf9Vb6xMPeU+4JMEnO6vzDL10562Favw8Vste74f54rxJ/i6Q==
+micromark-extension-math@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/micromark-extension-math/-/micromark-extension-math-1.0.0.tgz#596a4c036ef9cf6f8d84801d0016b18fed369d3d"
+  integrity sha512-VOuF6LpBSrXskmIsQTe2il1VdbNjm8JHcVWuHWsIm7UXpEyCRwVRnG/GuG58Ggj1T13UpAuP8sP7BBHuVCp5IA==
   dependencies:
-    katex "^0.12.0"
-    micromark "~2.11.0"
+    "@types/katex" "^0.11.0"
+    katex "^0.13.0"
+    micromark-factory-space "^1.0.0"
+    micromark-util-character "^1.0.0"
+    micromark-util-symbol "^1.0.0"
+    micromark-util-types "^1.0.0"
 
 micromark-factory-destination@^1.0.0:
   version "1.0.0"
@@ -13886,13 +13883,15 @@ remark-lint@8.0.0, remark-lint@^8.0.0:
   dependencies:
     remark-message-control "^6.0.0"
 
-remark-math@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-4.0.0.tgz#494ddd50766555ad2332e3afca7796a76452256f"
-  integrity sha512-lH7SoQenXtQrvL0bm+mjZbvOk//YWNuyR+MxV18Qyv8rgFmMEGNuB0TSCQDkoDaiJ40FCnG8lxErc/zhcedYbw==
+remark-math@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.0.0.tgz#8a92db22f8bbaaf9eea7d0f2dc18aaaeccfeef63"
+  integrity sha512-foC+W2SScQGA0893FplapKzAjrSvUISgiMxhEpPE2lYPXlIohzzeTDj8qc34RCIYye96DVS2qLXBQJHmzzXGZw==
   dependencies:
-    mdast-util-math "^0.1.0"
-    micromark-extension-math "^0.1.0"
+    "@types/mdast" "^3.0.0"
+    mdast-util-math "^1.0.0"
+    micromark-extension-math "^1.0.0"
+    unified "^10.0.0"
 
 remark-message-control@^6.0.0:
   version "6.0.0"
