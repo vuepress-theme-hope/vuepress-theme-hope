@@ -25,6 +25,14 @@ or
 yarn add -D vuepress-plugin-feed2
 ```
 
+## Migrate from V1
+
+Renamed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
+
+- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
+
+- [x] Better log output ![improve](https://img.shields.io/badge/-improved-blue)
+
 ---
 
 ## 安装
@@ -38,3 +46,11 @@ npm i -D vuepress-plugin-feed2
 ```bash
 yarn add -D vuepress-plugin-feed2
 ```
+
+## 从 V1 迁移
+
+名称从 `@mr-hope/vuepress-feed` 改为 `vuepress-plugin-feed2`. ⚠
+
+- [x] 多分类支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+- [x] 更好的日志输出 ![改进](https://img.shields.io/badge/-改进-blue)

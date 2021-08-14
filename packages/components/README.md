@@ -22,8 +22,14 @@ This plugin register 6 components and 1 global component:
 - BreadCrumb
 - CodeGroup and CodeGroupItem
 - MyBadge
+- OutboundLink
 - Pagination
 - ScreenFull
+
+## Migrate from V1
+
+- component `OutboundLink` ![new](https://img.shields.io/badge/-new-brightgreen)
+- option `locale` for i18n config ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ## BackToTop
 
@@ -81,8 +87,14 @@ yarn add @mr-hope/vuepress-plugin-components
 - BreadCrumb
 - CodeGroup and CodeGroupItem
 - MyBadge
+- OutboundLink
 - Pagination
 - ScreenFull
+
+## 从 V1 迁移
+
+- 组件 `OutboundLink` ![新增](https://img.shields.io/badge/-新增-brightgreen)
+- 选项 `locale` 用于国际化配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
 ## `<BackToTop />`
 

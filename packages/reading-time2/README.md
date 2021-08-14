@@ -13,7 +13,7 @@ VuePress reading time plugin⏳ / VuePress 阅读时间插件 ⏳
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/reading-time/) | [官方文档](https://vuepress-theme-hope.github.io/reading-time/zh/)
 
-## 安装 / Install
+## Install
 
 ```bash
 npm i -D vuepress-plugin-reading-time2
@@ -24,3 +24,29 @@ or
 ```bash
 yarn add -D vuepress-plugin-reading-time2
 ```
+
+## Migration from V1
+
+Renamed from `@mr-hope/vuepress-plugin-reading-time` to `vuepress-plugin-reading-time2`. ⚠
+
+- option `locale` to support i18n config ![new](https://img.shields.io/badge/-new-brightgreen)
+
+---
+
+## 安装
+
+```bash
+npm i -D vuepress-plugin-reading-time2
+```
+
+或
+
+```bash
+yarn add -D vuepress-plugin-reading-time2
+```
+
+## 从 V1 迁移
+
+命名从 `@mr-hope/vuepress-plugin-reading-time` 改为 `vuepress-plugin-reading-time2`. ⚠
+
+- 选项 `locale` 以支持国际化配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)

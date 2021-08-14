@@ -9,11 +9,12 @@ interface ApplePWAOptions {
    *
    * 推荐 152×152 大小
    *
-   * path of icon used on apple
+   * Path of icon used on apple devices
    *
    * Recommand 152×152 size
    */
   icon?: string;
+
   /**
    * 状态栏的颜色
    *
@@ -22,7 +23,10 @@ interface ApplePWAOptions {
    * @default 'black'
    */
   statusBarColor?: "black" | "white";
+
   /**
+   * Safari 图标
+   *
    * Safari mask icon
    */
   maskIcon?: string;
@@ -30,13 +34,14 @@ interface ApplePWAOptions {
 
 interface MicrosoftPWAOptions {
   /**
-   * 磁贴图片
+   * 微软磁贴图片
    *
-   * tile image
+   * Microsoft tile image
    *
    * 144×144 transperent recommanded
    */
   image?: string;
+
   /**
    * 磁贴颜色
    *
@@ -55,6 +60,7 @@ export interface PWAOptions {
    * @default 'service-worker.js'
    */
   swPath?: string;
+
   /**
    * 是否显示安装按钮
    *
@@ -63,24 +69,30 @@ export interface PWAOptions {
    * @default true
    */
   showInstall?: boolean;
+
   /**
    * manifest 文件设置
    *
    * manifest file Config
    */
   manifest?: ManifestOption;
+
   /**
    * favico 地址
    *
    * Path of favico
    */
   favicon?: string;
+
   /**
    * 主题色
+   *
+   * Theme Color
    *
    * @default "#46bd87"
    */
   themeColor?: string;
+
   /**
    * 允许缓存的最大大小，单位 KB
    *
@@ -89,6 +101,7 @@ export interface PWAOptions {
    * @default 2048
    */
   maxSize?: number;
+
   /**
    * 是否缓存除主页与 404 之外的 HTML
    *
@@ -97,6 +110,7 @@ export interface PWAOptions {
    * @default true
    */
   cacheHTML?: boolean;
+
   /**
    * 是否缓存站点图片
    *
@@ -105,6 +119,7 @@ export interface PWAOptions {
    * @default false
    */
   cachePic?: boolean;
+
   /**
    * 图片允许缓存的最大大小，单位 KB
    *
@@ -113,18 +128,21 @@ export interface PWAOptions {
    * @default 1024
    */
   maxPicSize?: number;
+
   /**
    * 苹果设置
    *
    * settings for apple
    */
   apple?: ApplePWAOptions | false;
+
   /**
    * 微软设置
    *
    * Settings for Microsoft
    */
   msTile?: MicrosoftPWAOptions | false;
+
   /**
    * 用于替换默认弹出组件的自定义组件。
    *
@@ -133,11 +151,18 @@ export interface PWAOptions {
    * @default 'SWUpdatePopup'
    */
   popupComponent?: string;
+
   /**
    * workbox-build’s [generateSW config](https://developers.google.com/web/tools/workbox/modules/workbox-build#full_generatesw_config)
    *
    */
   generateSWConfig?: GenerateSWOptions;
+
+  /**
+   * 国际化配置
+   *
+   * I18n locales
+   */
 
   locales?: LocaleConfig<PWAI18nConfig>;
 }

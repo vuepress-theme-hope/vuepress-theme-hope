@@ -25,9 +25,9 @@ yarn add -D vuepress-plugin-photo-swipe
 
 ## Migration from V1
 
-- new option `delay`, which means the delay finding images when page loaded or navigated
+- option `delay`, which means the delay finding images when page loaded or navigated ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- new option `locale` support i18n config
+- option `locale` to support i18n config ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ---
 
@@ -45,6 +45,6 @@ yarn add -D vuepress-plugin-photo-swipe
 
 ## 从 V1 迁移
 
-- 新选项 `delay`，控制页面加载和切换后寻找页面图片的延迟
+- 选项 `delay`，控制页面加载和切换后寻找页面图片的延迟 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-- 新选项 `locale` 来支持国际化配置
+- 选项 `locale` 以支持国际化配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
