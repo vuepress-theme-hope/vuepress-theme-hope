@@ -1,14 +1,6 @@
-import {
-  // computed,
-  defineComponent,
-  h,
-  onMounted,
-  onUnmounted,
-  ref,
-  watch,
-} from "vue";
-import { useRoute } from "vue-router";
 import lightGallery from "lightgallery";
+import { defineComponent, h, onMounted, onUnmounted, ref, watch } from "vue";
+import { useRoute } from "vue-router";
 
 import type { LightGallery } from "lightgallery/lightgallery";
 import type { LightGallerySettings } from "lightgallery/lg-settings";

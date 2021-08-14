@@ -13,13 +13,27 @@ VuePress feed plugin 📡 / VuePress Feed 插件 📡
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/feed/) | [官方文档](https://vuepress-theme-hope.github.io/feed/zh/)
 
-## Usage / 使用
+## Install
 
 ```bash
 npm i -D vuepress-plugin-feed2
 ```
 
 or
+
+```bash
+yarn add -D vuepress-plugin-feed2
+```
+
+---
+
+## 安装
+
+```bash
+npm i -D vuepress-plugin-feed2
+```
+
+或
 
 ```bash
 yarn add -D vuepress-plugin-feed2

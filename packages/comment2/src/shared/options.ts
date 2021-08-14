@@ -5,12 +5,13 @@ import type { PageInfoI18nConfig, PageInfoType } from "./pageInfo";
 import type { WalineI18nConfig } from "./waline";
 
 interface BaseCommentOptions {
+  // TODO: Add vussue back
+  // type: "waline" | "vssue" | "disable";
   /**
    * 评论服务
    *
    * Comment Service
    */
-  // type: "waline" | "vssue" | "disable";
   type: "waline" | "disable";
   /**
    * 默认作者
@@ -69,7 +70,14 @@ interface BaseCommentOptions {
    */
   delay?: number;
 
+  /**
+   * I18n config for pageInfo
+   */
   pageInfoLocale?: LocaleConfig<PageInfoI18nConfig>;
+
+  /**
+   * I18n config for waline
+   */
   walineLocale?: LocaleConfig<WalineI18nConfig>;
 }
 

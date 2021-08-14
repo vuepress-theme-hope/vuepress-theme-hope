@@ -7,6 +7,7 @@ export interface TaskListOptions {
    * @default true
    */
   label?: boolean;
+
   /**
    * Whether place `<label>` after `<input>` or wrap `<input>`
    *

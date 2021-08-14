@@ -5,7 +5,9 @@ import type { MarkdownEnhanceI18nConfig } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
 
-/** md-enhance plugin configuration */
+/**
+ * md-enhance plugin configuration
+ */
 export type MarkdownEnhanceOptions = Partial<{
   /**
    * 是否启用自定义容器
@@ -31,6 +33,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   customContainer: boolean;
+
   /**
    * 是否启用自定义对齐支持
    *
@@ -39,6 +42,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   align: boolean;
+
   /**
    * 是否启用上角标格式支持
    *
@@ -47,6 +51,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   sup: boolean;
+
   /**
    * 是否启用下角标格式支持
    *
@@ -55,6 +60,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   sub: boolean;
+
   /**
    * 是否启用脚注格式支持
    *
@@ -63,6 +69,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   footnote: boolean;
+
   /**
    * 是否启用标注支持
    *
@@ -71,6 +78,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   mark: boolean;
+
   /**
    * 是否启用任务里表支持
    *
@@ -79,6 +87,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   tasklist: TaskListOptions | boolean;
+
   /**
    * 是否启用 TeX 语法支持
    *
@@ -87,6 +96,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   tex: KatexOptions | boolean;
+
   /**
    * 是否启用 Mermaid 流程图支持
    *
@@ -95,6 +105,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   mermaid: boolean;
+
   /**
    * 是否启用代码示例功能
    *
@@ -103,6 +114,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   demo: Partial<CodeDemoGlobalOptions> | boolean;
+
   /**
    * 是否启用幻灯片支持
    *
@@ -111,6 +123,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   presentation: PresentationOptions | boolean;
+
   /**
    * 是否启用全部增强
    *
@@ -119,6 +132,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   enableAll: boolean;
+
   /**
    * 操作页面 DOM 的延时，单位 ms
    *
@@ -131,5 +145,11 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default 500
    */
   delay?: number;
+
+  /**
+   * 国际化配置选项
+   *
+   * I18n config
+   */
   locales?: LocaleConfig<MarkdownEnhanceI18nConfig>;
 }>;

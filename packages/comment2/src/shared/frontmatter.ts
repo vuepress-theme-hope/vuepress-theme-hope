@@ -10,6 +10,7 @@ export interface CommentPluginFrontmatter extends BasePageFrontMatter {
    * @default true
    */
   comment?: boolean;
+
   /**
    * @description Only available when using valine
    *
@@ -19,7 +20,8 @@ export interface CommentPluginFrontmatter extends BasePageFrontMatter {
    *
    * @default true
    */
-  pageviews?: boolean;
+  pageview?: boolean;
+
   /**
    * PageInfo items
    *

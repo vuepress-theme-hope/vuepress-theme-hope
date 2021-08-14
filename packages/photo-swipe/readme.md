@@ -11,7 +11,7 @@
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/photo-swipe) / [官方文档](https://vuepress-theme-hope.github.io/photo-swipe/zh/)
 
-## Install / 安装
+## Install
 
 ```bash
 npm i -D vuepress-plugin-photo-swipe
@@ -25,4 +25,26 @@ yarn add -D vuepress-plugin-photo-swipe
 
 ## Migration from V1
 
-- new `delay` option
+- new option `delay`, which means the delay finding images when page loaded or navigated
+
+- new option `locale` support i18n config
+
+---
+
+## 安装
+
+```bash
+npm i -D vuepress-plugin-photo-swipe
+```
+
+或
+
+```bash
+yarn add -D vuepress-plugin-photo-swipe
+```
+
+## 从 V1 迁移
+
+- 新选项 `delay`，控制页面加载和切换后寻找页面图片的延迟
+
+- 新选项 `locale` 来支持国际化配置

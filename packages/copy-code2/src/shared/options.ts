@@ -10,6 +10,7 @@ export interface CopyCodeOptions {
    * @default '.theme-default-content div[class*="language-"] pre'
    */
   selector?: string | string[];
+
   /**
    * 提示消息显示时间
    *
@@ -18,6 +19,7 @@ export interface CopyCodeOptions {
    * @default 300
    */
   duration?: number;
+
   /**
    * 是否展示在移动端
    *
@@ -26,6 +28,7 @@ export interface CopyCodeOptions {
    * @default false
    */
   showInMobile?: boolean;
+
   /**
    * 注册复制按钮的延时，单位 ms
    *
@@ -39,5 +42,8 @@ export interface CopyCodeOptions {
    */
   delay?: number;
 
+  /**
+   * I18n config for plugin
+   */
   locale?: LocaleConfig<CopyCodeI18nConfig>;
 }

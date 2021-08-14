@@ -11,7 +11,7 @@ export const resolveEnablePageViews = (
   if (!enableWaline) return false;
   const themeConfig = themePluginConfig.value.pageviews;
   const pluginConfig = walineOption.pageviews !== false;
-  const pageConfig = frontmatter.pageviews;
+  const pageConfig = frontmatter.pageview;
 
   return (
     // Enable in page

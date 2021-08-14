@@ -11,6 +11,7 @@ export interface PhotoSwipeOptions {
    * @default '.theme-default-content :not(a) > img'
    */
   selector?: string;
+
   /**
    * photo-swipe 抓取页面图片的延时，单位 ms
    *
@@ -23,6 +24,7 @@ export interface PhotoSwipeOptions {
    * @default 500
    */
   delay?: number;
+
   /**
    * 传递给 photo-swipe 的额外选项
    *
@@ -30,5 +32,10 @@ export interface PhotoSwipeOptions {
    */
   options?: PhotoSwipe.Options;
 
+  /**
+   * 国际化配置
+   *
+   * I18n config
+   */
   locale?: LocaleConfig<PhowoSwipeI18nConfig>;
 }

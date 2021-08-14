@@ -2,7 +2,7 @@ import { defineComponent, h } from "vue";
 import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
 import Common from "@Common";
-import Page404Icon from "../components/icons/Page404.vue";
+import { Page404Icon } from "../components/icons";
 import { useThemeLocaleData } from "../composables";
 
 import type { VNode } from "vue";

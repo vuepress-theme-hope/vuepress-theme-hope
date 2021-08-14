@@ -13,7 +13,7 @@ VuePress copy code plugin📋 / VuePress 代码复制插件 📋
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/copy-code/) | [官方文档](https://vuepress-theme-hope.github.io/copy-code/zh/)
 
-## Usage / 使用
+## Install
 
 ```bash
 npm i -D vuepress-plugin-copy-code2
@@ -24,3 +24,27 @@ Or
 ```bash
 yarn add -D vuepress-plugin-copy-code2
 ```
+
+## Migrate from V1
+
+- new option `delay`, which means the delay registing copy buttons when page loaded or navigated
+- new option `locale` for i18n config
+
+---
+
+## 安装
+
+```bash
+npm i -D vuepress-plugin-copy-code2
+```
+
+或
+
+```bash
+yarn add -D vuepress-plugin-copy-code2
+```
+
+## 从 V1 迁移
+
+- 新选项 `delay`，控制页面加载和切换后注册复制按钮的延迟
+- 新选项 `locale` 用于国际化配置

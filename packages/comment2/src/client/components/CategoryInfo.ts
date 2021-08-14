@@ -31,7 +31,7 @@ export default defineComponent({
     const clickable = computed(() => useBlogConfig().value !== false);
 
     const navigate = (categoryName: string): void => {
-      const path = `/category/${categoryName}/`;
+      const path = `/category/${encodeURI(categoryName)}/`;
 
       if (clickable.value && route.path !== path) void router.push(path);
     };

@@ -25,8 +25,9 @@ export default defineComponent({
     const clickable = computed(() => useBlogConfig().value !== false);
 
     const navigate = (tagName: string): void => {
-      const path = `/tag/${tagName}/`;
-      if (route.path !== path) void router.push(path);
+      const path = `/tag/${encodeURI(tagName)}/`;
+
+      if (clickable.value && route.path !== path) void router.push(path);
     };
 
     return (): VNode | null =>

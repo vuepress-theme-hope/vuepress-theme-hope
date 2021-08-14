@@ -1,5 +1,8 @@
 import type { LightGallerySettings } from "lightgallery/lg-settings";
 
+/**
+ * LightGallery plugins
+ */
 export type LightGalleryPlugin =
   | "autoplay"
   | "fullscreen"
@@ -9,6 +12,9 @@ export type LightGalleryPlugin =
   | "share"
   | "zoom";
 
+/**
+ * Options of plugin
+ */
 export interface LightGalleryOptions {
   /**
    * 图片选择器

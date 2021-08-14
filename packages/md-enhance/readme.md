@@ -15,7 +15,7 @@ Markdown enhancement plugin📄 / Markdown 增强插件 📄
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/md-enhance/) | [官方文档](https://vuepress-theme-hope.github.io/md-enhance/zh/)
 
-## Install / 安装
+## Install
 
 ```bash
 npm i -D vuepress-plugin-md-enhance
@@ -27,8 +27,38 @@ Or
 yarn add -D vuepress-plugin-md-enhance
 ```
 
-## Migration from V1 / 从 V1 迁移
+## Migration from V1
 
 - `imageFix` option → removed
 
   Links has been fixed in V2
+
+- new option `customContainer`, decides whether enable custom container that default theme provides
+
+- new option `delay`, which means the delay operating DOM when page loaded or navigated
+
+- new option `locale` support i18n config
+
+---
+
+## 安装
+
+```bash
+npm i -D vuepress-plugin-md-enhance
+```
+
+或
+
+```bash
+yarn add -D vuepress-plugin-md-enhance
+```
+
+## 从 V1 迁移
+
+- `imageFix` 选项已被移除，因为链接已经在 V2 中得到修正
+
+- 新选项 `customContainer`，决定是否启用默认主题提供的自定义容器
+
+- 新选项 `delay`，控制页面加载和切换后进行 DOM 操作的延迟
+
+- 新选项 `locale` 来支持国际化配置
