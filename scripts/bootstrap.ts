@@ -43,9 +43,9 @@ files.forEach((pkgName) => {
     writeFileSync(pkgPath, `${JSON.stringify(pkgJSON, null, 2)}\n`);
   }
 
-  const readmePath = join(packagesDir, pkgName, "readme.md");
+  const readmePath = join(packagesDir, pkgName, "README.md");
 
-  // generate readme.md
+  // generate README.md
   if (!existsSync(readmePath))
     writeFileSync(
       readmePath,

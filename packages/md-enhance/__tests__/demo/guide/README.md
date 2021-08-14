@@ -174,4 +174,4 @@ $$
 
 @slideend
 
-- [View Detail](presentation/readme.md)
+- [View Detail](presentation/README.md)

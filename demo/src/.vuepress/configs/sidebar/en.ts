@@ -2,7 +2,7 @@ import type { SidebarConfig } from "vuepress-theme-hope";
 
 export const en: SidebarConfig = {
   "/": [
-    "/readme.md",
+    "/README.md",
     "/home.md",
     "/slides.md",
     "/layout.md",
@@ -10,7 +10,7 @@ export const en: SidebarConfig = {
       icon: "creative",
       text: "Guide",
       children: [
-        "/guide/readme.md",
+        "/guide/README.md",
         "/guide/page.md",
         "/guide/markdown.md",
         "/guide/disable.md",

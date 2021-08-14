@@ -70,18 +70,18 @@ const config: UserConfig<DefaultThemeOptions> = {
 
         sidebar: {
           "/guide/": [
-            "/guide/readme.md",
+            "/guide/README.md",
             "/guide/sup-sub.md",
             "/guide/align.md",
             "/guide/footnote.md",
             "/guide/mermaid.md",
             "/guide/tex.md",
-            "/guide/presentation/readme.md",
+            "/guide/presentation/README.md",
             "/guide/presentation/demo.md",
             "/guide/presentation/themes.md",
           ],
 
-          "/": ["/readme.md", "/guide/readme.md"],
+          "/": ["/README.md", "/guide/README.md"],
         },
       },
       "/zh/": {
