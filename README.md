@@ -45,27 +45,27 @@ Here is a list of changes:
 
 ## Changes in plugins
 
-- [@mr-hope/components readme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/components/readme.md)
+- [@mr-hope/components readme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/components/README.md)
 
-- [vuepress-plugin-add-this](<(https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/add-this/readme.md)>) ![deprecated](https://img.shields.io/badge/-deprecated-yellow)
+- [vuepress-plugin-add-this](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/add-this/README.md) ![deprecated](https://img.shields.io/badge/-deprecated-yellow)
 
-- [vuepress-plugin-comment2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/comment2/readme.md)
+- [vuepress-plugin-comment2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/comment2/README.md)
 
-- [vuepress-plugin-copy-code2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/copy-code2/readme.md)
+- [vuepress-plugin-copy-code2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/copy-code2/README.md)
 
-- [vuepress-plugin-feed2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/feed2/readme.md)
+- [vuepress-plugin-feed2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/feed2/README.md)
 
-- [vuepress-plugin-md-enhance](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/readme.md)
+- [vuepress-plugin-md-enhance](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/README.md)
 
-- [vuepress-plugin-photo-swipe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/photo-swipe/readme.md)
+- [vuepress-plugin-photo-swipe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/photo-swipe/README.md)
 
-- [vuepress-plugin-pwa2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/readme.md)
+- [vuepress-plugin-pwa2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/README.md)
 
-- [vuepress-plugin-reading-time2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/reading-time2/readme.md)
+- [vuepress-plugin-reading-time2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/reading-time2/README.md)
 
-- [vuepress-plugin-seo2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/seo2/readme.md)
+- [vuepress-plugin-seo2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/seo2/README.md)
 
-- [vuepress-plugin-sitemap2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/sitemap2/readme.md)
+- [vuepress-plugin-sitemap2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/sitemap2/README.md)
 
 ## New plugins
 
@@ -73,13 +73,13 @@ Here is a list of changes:
 
   A image viewer plugin for VuePress using [lightGallary](https://www.lightgalleryjs.com/)
 
-  See [LightGallery readme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/lightgallery/readme.md)
+  See [LightGallery readme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/lightgallery/README.md)
 
 - [x] SassPalette ![new](https://img.shields.io/badge/-new-brightgreen)
 
   A style system for sass across plugins and theme
 
-  See [SassPalette readme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/sass-palette/readme.md)
+  See [SassPalette readme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/sass-palette/README.md)
 
 - [ ] Share2 ![new](https://img.shields.io/badge/-new-brightgreen)
 
