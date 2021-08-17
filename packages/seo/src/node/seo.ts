@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { resolveUrl } from "./utils";
 import type { PageSeoInfo, SeoContent, SeoOptions } from "../types";
-
-export const resolveUrl = (base: string, url: string): string =>
-  `${base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")}${url.replace(
-    /^\//u,
-    ""
-  )}`;
 
 export const generateSeo = (
   options: SeoOptions,
@@ -53,7 +48,8 @@ export const generateSeo = (
     "og:url": resolveUrl(base, path),
     "og:site_name": site.title || "",
     "og:title": page.title,
-    "og:description": page.frontmatter.description || "",
+    "og:description":
+      page.frontmatter.description || page.frontmatter.summary || "",
     "og:type": type,
     "og:image": image ? resolveUrl(base, image) : "",
     "og:updated_time": modifiedTime,

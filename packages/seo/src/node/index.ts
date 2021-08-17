@@ -3,6 +3,8 @@ import { readFile, existsSync, writeFile } from "fs-extra";
 import { relative, resolve } from "path";
 import { generateSeo } from "./seo";
 import { appendMeta } from "./meta";
+import { striptags } from "./stripTags";
+import { md2text } from "./utils";
 
 import type { Page, Plugin, ThemeConfig } from "@mr-hope/vuepress-types";
 import type { PageSeoInfo, SeoOptions } from "../types";
@@ -27,6 +29,13 @@ const seoPlugin: Plugin<SeoOptions> = (options, context) => {
     extendPageData(page): void {
       const site = context.getSiteData();
       const meta = page.frontmatter.meta || [];
+
+      // generate summary
+      if (!page.frontmatter.description)
+        page.frontmatter.summary =
+          striptags(page.excerpt) ||
+          md2text(page._strippedContent).slice(0, 120) ||
+          "";
 
       // In VuePress core, permalinks are built after enhancers.
       const pageClone = Object.assign(

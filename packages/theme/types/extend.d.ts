@@ -36,6 +36,7 @@ declare module "@mr-hope/vuepress-types" {
      * @deprecated
      */
     tags?: string[];
+    summary?: string;
     sticky?: boolean | number;
     star?: boolean | number;
     article?: boolean;

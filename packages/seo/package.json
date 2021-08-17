@@ -28,7 +28,8 @@
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
+    "test": "jest"
   },
   "dependencies": {
     "@mr-hope/vuepress-types": "1.19.1",
