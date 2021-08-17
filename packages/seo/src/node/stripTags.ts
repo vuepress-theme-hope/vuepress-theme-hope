@@ -174,9 +174,9 @@ export class StateMachine {
   constructor() {
     this.state = new InPlaintextState();
 
-    this.transitionFunction = ((next: State): void => {
+    this.transitionFunction = (next: State): void => {
       this.state = next;
-    }).bind(this);
+    };
   }
 
   public consume(text: string): string {

@@ -34,7 +34,7 @@ const seoPlugin: Plugin<SeoOptions> = (options, context) => {
       if (!page.frontmatter.description)
         page.frontmatter.summary =
           striptags(page.excerpt) ||
-          md2text(page._strippedContent).slice(0, 120) ||
+          md2text(page._strippedContent).slice(0, 180) ||
           "";
 
       // In VuePress core, permalinks are built after enhancers.
