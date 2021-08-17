@@ -12,7 +12,7 @@
       />
     </header>
     <!-- eslint-disable-next-line vue/no-v-html -->
-    <div v-if="article.excerpt" class="excerpt" v-html="article.excerpt" />
+    <div v-if="excerpt" class="excerpt" v-html="excerpt" />
     <hr class="hr" />
     <ArticleInfo :article="article" />
   </article>
@@ -88,6 +88,7 @@
 
   .excerpt
     overflow hidden
+    line-height 1.7
 
     h1
       display none

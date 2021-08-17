@@ -24,5 +24,15 @@ export default Vue.extend({
           .length !== 0 || Boolean(this.article.frontmatter.password)
       );
     },
+
+    excerpt(): string {
+      if (this.article.excerpt) return this.article.excerpt;
+
+      return (
+        this.article.frontmatter.description ||
+        this.article.frontmatter.summary ||
+        ""
+      );
+    },
   },
 });
