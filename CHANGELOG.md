@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.19.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.2...v1.19.3) (2021-08-17)
+
+### Bug Fixes
+
+- **seo:** update summary length ([3ba5ca9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3ba5ca99cc68c693b78c19990f36c1f021761595))
+
+### Features
+
+- **seo:** update og:description ([318f537](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/318f537c5809640a57c266129dd28cdbc584cfc2))
+- **theme:** update article summary ([34b346e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34b346eba483daf078a48cbbc8c08570d9b114a2))
+- **theme:** update encrypt hint ([3b720ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3b720ad789e209198c61f6abf01b2bb995b65e07))
+
 ## [1.19.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.1...v1.19.2) (2021-08-07)
 
 ### Bug Fixes
