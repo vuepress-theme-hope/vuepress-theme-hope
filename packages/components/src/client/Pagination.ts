@@ -84,10 +84,16 @@ export default Vue.extend({
   methods: {
     /** Navigate to certain page */
     navigate(page: number): void {
-      const path = `${this.$route.path}${page === 1 ? "" : `?page=${page}`}`;
+      const query = { ...this.$route.query };
+
+      if (query.page === page.toString() || (page === 1 && !query.page)) return;
 
       this.$emit("change", page);
-      if (this.$route.fullPath !== path) void this.$router.push(path);
+
+      if (page === 1) delete query.page;
+      else query.page = page.toString();
+
+      void this.$router.push({ path: this.$route.path, query });
     },
 
     /** Check and navigate to certain page */
@@ -95,11 +101,10 @@ export default Vue.extend({
       const pageNum = parseInt(index);
 
       if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
-      else {
-        const errorText = this.i18n.errorText.split("$page");
-
-        alert(`${errorText[0]}${this.totalPages}${errorText[1]}`);
-      }
+      else
+        alert(
+          this.i18n.errorText.replace(/\$page/g, this.totalPages.toString())
+        );
     },
   },
 });
