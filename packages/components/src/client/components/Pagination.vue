@@ -71,11 +71,6 @@ import { componentI18n } from "../define";
 export default defineComponent({
   name: "Pagination",
 
-  model: {
-    prop: "currentPage",
-    event: "change",
-  },
-
   props: {
     /** Number of total items */
     total: { type: Number, default: 10 },
@@ -84,7 +79,7 @@ export default defineComponent({
     currentPage: { type: Number, default: 1 },
   },
 
-  emits: ["change"],
+  emits: ["update:currentPage"],
 
   setup(props, { emit }) {
     const route = useRoute();
@@ -137,10 +132,16 @@ export default defineComponent({
 
     /** Navigate to certain page */
     const navigate = (page: number): void => {
-      const path = `${route.path}${page === 1 ? "" : `?page=${page}`}`;
+      const query = { ...route.query };
 
-      emit("change", page);
-      if (route.fullPath !== path) void router.push(path);
+      if (query.page === page.toString() || (page === 1 && !query.page)) return;
+
+      emit("update:currentPage", page);
+
+      if (page === 1) delete query.page;
+      else query.page = page.toString();
+
+      void router.push({ path: route.path, query });
     };
 
     /** Check and navigate to certain page */
@@ -148,11 +149,10 @@ export default defineComponent({
       const pageNum = parseInt(index);
 
       if (pageNum <= totalPages.value && pageNum > 0) navigate(pageNum);
-      else {
-        const errorText = i18n.value.errorText.split("$page");
-
-        alert(`${errorText[0]}${totalPages.value}${errorText[1]}`);
-      }
+      else
+        alert(
+          i18n.value.errorText.replace(/\$page/g, totalPages.value.toString())
+        );
     };
 
     onMounted(() => {
