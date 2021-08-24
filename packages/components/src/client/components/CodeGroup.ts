@@ -80,13 +80,13 @@ export default defineComponent({
 
       return h("div", { class: "code-group" }, [
         h(
-          "ul",
+          "div",
           { class: "code-group-nav" },
           items.map((vnode, index) => {
             const isActive = index === activeIndex.value;
 
             return h(
-              "li",
+              "button",
               {
                 ref: (element) => {
                   if (element)
@@ -96,8 +96,6 @@ export default defineComponent({
                   "code-group-nav-tab": true,
                   active: isActive,
                 },
-                role: "button",
-                tabindex: 0,
                 ariaPressed: isActive,
                 ariaExpanded: isActive,
                 onClick: () => {
