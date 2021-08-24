@@ -95,7 +95,7 @@ export const injectLinkstoHead = (
   // enhance pwa experience
   setMeta(
     "viewport",
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    "width=device-width, initial-scale=1.0, viewport-fit=cover"
   );
 
   return head;
