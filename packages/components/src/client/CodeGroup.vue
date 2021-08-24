@@ -10,8 +10,6 @@
           :class="{
             active: index === activeTabIndex,
           }"
-          tabindex="0"
-          role="button"
           :aria-pressed="index === activeTabIndex"
           :aria-expanded="index === activeTabIndex"
           @click="changeCodeTab(index)"
