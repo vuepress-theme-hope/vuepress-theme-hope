@@ -152,14 +152,14 @@ The above two options are only used by third-party code demo service, you need t
 - Type: `boolean`
 - Default value: `true`
 
-Whether to display the JSFiddle button,
+Whether to display the JSFiddle button
 
 ### demo.codepen
 
 - Type: `boolean`
 - Default value: `true`
 
-Whether to display the CodePen button,
+Whether to display the CodePen button
 
 ### demo.codepenLayout
 
@@ -168,22 +168,20 @@ Whether to display the CodePen button,
 
 CodePen editor layout
 
-### demo.editors
+### demo.codepenEditors
 
 - Type: `string`
 - Default value: `"101"`
 
+CodePen editor status
+
 ### others
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, don’t override the default values.
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, you probably don’t need to override the default values.
 
-::: warning
+#### demo.babel
 
-Please note that if you use them, you still need to manually include them in your site using `head`.
-
-React depends on Babel.
-
-:::
+Default value: `"https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"`
 
 #### demo.vue
 

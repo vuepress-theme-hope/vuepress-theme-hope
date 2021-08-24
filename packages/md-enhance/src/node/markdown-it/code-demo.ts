@@ -1,6 +1,8 @@
 import hash = require("hash-sum");
 import Token = require("markdown-it/lib/token");
 
+import type { CodeDemoOptions } from "../../types";
+
 export const codeDemoRender = (tokens: Token[], idx: number): string => {
   const { nesting, info } = tokens[idx];
   const type = /\[(.*)\]/u.exec(info);
@@ -44,12 +46,16 @@ ${config ? `data-config="${config}"` : ""}
 `;
 };
 
-export const codeDemoDefaultSetting = {
+export const codeDemoDefaultSetting: CodeDemoOptions & {
+  codepenJsProcessor: "babel";
+} = {
+  useBabel: false,
   jsLib: [],
   cssLib: [],
   codepenLayout: "left",
   codepenJsProcessor: "babel",
   codepenEditors: "101",
+  babel: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js",
   vue: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js",
   react: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
   reactDOM:

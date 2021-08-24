@@ -3,7 +3,14 @@ import type { KatexOptions } from "katex";
 import type { RevealOptions } from "reveal.js";
 import "./declare";
 
-export interface CodeDemoGlobalOptions {
+export interface CodeDemoOptions {
+  /**
+   * 是否使用 Babel 转义
+   *
+   * @default false
+   */
+  useBabel: boolean;
+
   /**
    * 引入的 JS 外部库链接
    *
@@ -23,7 +30,7 @@ export interface CodeDemoGlobalOptions {
    *
    * @default true
    */
-  jsfiddle: boolean;
+  jsfiddle?: boolean;
   /**
    * 是否显示 CodePen 按钮
    *
@@ -31,7 +38,7 @@ export interface CodeDemoGlobalOptions {
    *
    * @default true
    */
-  codepen: boolean;
+  codepen?: boolean;
   /**
    * CodePen 编辑器布局
    *
@@ -47,7 +54,15 @@ export interface CodeDemoGlobalOptions {
    *
    * @default "101"
    */
-  editors: "101" | "100" | "110" | "111" | "011" | "001" | "010";
+  codepenEditors: "101" | "100" | "110" | "111" | "011" | "001" | "010";
+
+  /**
+   * Babel lib address
+   *
+   * @default "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"
+   */
+  babel: string;
+
   /**
    * Vue lib address
    *
@@ -67,11 +82,6 @@ export interface CodeDemoGlobalOptions {
    */
   reactDOM: string;
 }
-
-export type CodeDemoOptions = Omit<
-  CodeDemoGlobalOptions,
-  "vue" | "react" | "reactDOM"
->;
 
 export type RevealPlugin =
   | "highlight"
@@ -204,7 +214,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  demo: Partial<CodeDemoGlobalOptions> | boolean;
+  demo: Partial<CodeDemoOptions> | boolean;
   /**
    * 是否启用幻灯片支持
    *
@@ -224,7 +234,7 @@ export type MarkdownEnhanceOptions = Partial<{
 }>;
 
 declare global {
-  const CODE_DEMO_OPTIONS: CodeDemoGlobalOptions;
+  const CODE_DEMO_OPTIONS: CodeDemoOptions;
   const MARKDOWN_ENHANCE_ALIGN: boolean;
   const MARKDOWN_ENHANCE_FLOWCHART: boolean;
   const MARKDOWN_ENHANCE_FOOTNOTE: boolean;

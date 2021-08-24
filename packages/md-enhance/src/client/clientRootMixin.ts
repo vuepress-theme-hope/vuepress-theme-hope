@@ -4,10 +4,14 @@ import { initDemo } from "./demo";
 
 export default {
   mounted(): void {
-    initDemo();
+    setTimeout(() => {
+      void initDemo();
+    }, 1000);
   },
 
   updated(): void {
-    initDemo();
+    setTimeout(() => {
+      void initDemo();
+    }, 1000);
   },
 };

@@ -33,7 +33,7 @@ You should use the following syntax:
 ```html
 <!-- ↑ use available ones -->
 <!-- your code here -->
-<!-- you can have mutiple code block -->
+<!-- you can have mutiple code block, but each language must appear only once. -->
 ```
 
 ```json
@@ -48,7 +48,7 @@ You should use the following syntax:
 
 ::: tip
 
-The json block is optional.
+The json block is optional, for config please see [config](../config.md#demo).
 
 :::
 
@@ -145,44 +145,11 @@ export default class App extends React.Component {
 :::
 ````
 
-::: warning
-
-This plugin is not bundling any librarys, so you must import them by setting `head` in your `.vuepress/config.js` files.
-
-```js
-// .vuepress/config.js
-module.exports = {
-  head: [
-    // react needs React, ReactDOM and Babel
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
-      },
-    ],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
-    ],
-    // vue only needs vue
-    ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
-  ],
-};
-```
-
-We also make an enhance: If you import Babel, then Vue and Normal script will be parsed to es6 using babel.
-
-:::
-
 ### Available languages
 
 You can use different language in your demo block.
 
-When you set another language, since the plugin is not able to resolve them, demo display will be disabled. The plugin will show the code and provide you a button to open it in CodePen.
+When you set language which can not run on browers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
 
 Available HTML languages:
 

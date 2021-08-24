@@ -25,30 +25,32 @@ module.exports = {
 
 ## 语法
 
-你应该使用以下语法：
+请使用以下语法：
 
 ````md
 ::: demo [类型] 可选的标题文字
 
 ```html
 <!-- ↑ 使用可用的语言 -->
-<!-- 放置你的代码 -->
-<!-- 你可以有多个代码块 -->
+<!-- 在代码块中放置你对应语言的代码，一个语言不能出现多个块 -->
+<!-- 你可以有多个代码块，并且 html, js, css 都是视情况可选的 -->
 ```
+````
 
 ```json
-// json block 作为插件配置
+// json block 作为插件配置存放处
 {
   // 放置你的配置 (optional)
 }
 ```
 
 :::
-````
+
+`````
 
 ::: tip
 
-JSON 块是可选的。
+JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
 
 :::
 
@@ -90,7 +92,7 @@ JSON 块是可选的。
 ```
 
 :::
-````
+`````
 
 ### Vue
 
@@ -145,44 +147,11 @@ export default class App extends React.Component {
 :::
 ````
 
-::: warning
-
-该插件未捆绑任何库，因此你必须通过在 `.vuepress/config.js` 文件中设置 `head` 来导入它们。
-
-```js
-// .vuepress/config.js
-module.exports = {
-  head: [
-    // react 需要 React, ReactDOM 和 Babel 库
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
-      },
-    ],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
-    ],
-    // vue 只需要 vue 库
-    ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
-  ],
-};
-```
-
-我们还进行了增强: 如果你导入 Babel，则将使用 babel 将脚本解析为 es6，以确保能在浏览器上正常运行。
-
-:::
-
 ### 可用的语言
 
 你可以在演示块中使用不同语言。
 
-当你设置其他语言时，由于插件无法解析它们，因此演示将被禁用仅显示代码。插件将提供一个 "在 CodePen 中打开" 按钮允许用户直接在 CodePen 打开代码。
+当你设置一些不能在浏览器上直接运行的语言时，由于插件无法解析它们，因此网页演示将被禁用。插件只显示代码。同时提供一个 "在 CodePen 中打开" 按钮允许用户直接在 CodePen 打开并浏览代码。
 
 可用的 HTML 语言:
 

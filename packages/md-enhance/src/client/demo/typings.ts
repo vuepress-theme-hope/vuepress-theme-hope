@@ -1,4 +1,5 @@
 import type { FunctionComponent } from "react";
+import type { CodeDemoOptions } from "../../types";
 
 export interface CodeType {
   html: [code: string, type: string] | [];
@@ -7,16 +8,15 @@ export interface CodeType {
   isLegal: boolean;
 }
 
-export interface Code {
+export interface Code extends CodeDemoOptions {
   html: string;
   js: string;
   css: string;
-  jsLib: string[];
-  cssLib: string[];
+  isLegal: boolean;
 }
 
 export interface NormalCode extends Code {
-  script?: () => unknown;
+  run: () => unknown;
 }
 
 export interface VueScript {
@@ -25,9 +25,9 @@ export interface VueScript {
 }
 
 export interface VueCode extends Code {
-  script?: VueScript;
+  getScript: () => VueScript;
 }
 
 export interface ReactCode extends Code {
-  script?: FunctionComponent;
+  getComponent: () => FunctionComponent;
 }

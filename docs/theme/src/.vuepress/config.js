@@ -16,21 +16,6 @@ module.exports = config({
         content: "qG3soux9jAKB4Q_DYf7yj1p5cEIuib6yG4zDhpmv2_E",
       },
     ],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
-      },
-    ],
-    ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
-    ],
   ],
 
   locales: {

@@ -185,6 +185,13 @@ Whether to display the CodePen button,
 
 CodePen editor layout
 
+#### mdEnhance.demo.codepenEditors
+
+- Type: `string`
+- Default value: `"101"`
+
+CodePen editor status
+
 #### mdEnhance.demo.editors
 
 - Type: `string`
@@ -192,15 +199,11 @@ CodePen editor layout
 
 #### mdEnhance.others
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, don’t override the default values.
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, you probably don’t need to override the default values.
 
-::: warning
+##### mdEnhance.demo.babel
 
-Please note that if you use them, you still need to manually include them in your site using `head`.
-
-React depends on Babel.
-
-:::
+Default value: `"https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"`
 
 ##### mdEnhance.demo.vue
 

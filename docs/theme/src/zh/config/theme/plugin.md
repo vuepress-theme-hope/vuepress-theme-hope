@@ -176,12 +176,12 @@ CodePen, JsFiddle 需要引入的外部 CSS 库。
 
 是否显示 CodePen 按钮，
 
-#### mdEnhance.demo.codepenLayout
+#### mdEnhance.demo.codepenEditors
 
-- 类型: `"top" | "left" | "right"`
-- 默认值: `"left"`
+- Type: `string`
+- Default value: `"101"`
 
-CodePen 编辑器布局
+CodePen 编辑器状态
 
 #### mdEnhance.demo.editors
 
@@ -194,13 +194,9 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 以下是第三方代码演示使用的库地址，除非你的环境无法访问 jsdelivr 或访问缓慢，否则无需覆盖默认设置。
 
-::: warning
+##### mdEnhance.demo.babel
 
-请注意，如果你用到了它们，你仍需要利用 `head` 手动在你的网站中导入它们。
-
-React 依赖于 Babel。
-
-:::
+默认值: `"https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"`
 
 ##### mdEnhance.demo.vue
 

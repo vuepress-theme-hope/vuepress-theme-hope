@@ -1,4 +1,4 @@
-import { h, injectCSS, option } from "./utils";
+import { h, injectCSS } from "./utils";
 
 import type { CodeType, Code, ReactCode, VueCode, NormalCode } from "./typings";
 
@@ -30,7 +30,7 @@ const expandHandler = (
 };
 
 const getCodepenButton = (
-  { html, js, css, jsLib, cssLib }: Code,
+  { html, js, css, jsLib, cssLib, codepenEditors, codepenLayout }: Code,
   codeType?: CodeType
 ): HTMLElement =>
   h(
@@ -50,17 +50,17 @@ const getCodepenButton = (
           js,
           css,
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          js_external: [...jsLib, ...option.jsLib].join(";"),
+          js_external: jsLib.join(";"),
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          css_external: [...cssLib, ...option.cssLib].join(";"),
-          layout: option.codepenLayout,
+          css_external: cssLib.join(";"),
+          layout: codepenLayout,
           // eslint-disable-next-line @typescript-eslint/naming-convention
           html_pre_processor: codeType ? codeType.html[1] : "none",
           // eslint-disable-next-line @typescript-eslint/naming-convention
           js_pre_processor: codeType ? codeType.js[1] : "none",
           // eslint-disable-next-line @typescript-eslint/naming-convention
           css_pre_processor: codeType ? codeType.css[1] : "none",
-          editors: option.editors,
+          editors: codepenEditors,
         }),
       }),
       h("button", {
@@ -91,9 +91,7 @@ const getJsfiddleBtn = ({ html, js, css, jsLib, cssLib }: Code): HTMLElement =>
       h("input", {
         type: "hidden",
         name: "resources",
-        value: [...jsLib, ...cssLib, ...option.cssLib, ...option.jsLib].join(
-          ","
-        ),
+        value: [...cssLib, ...jsLib].join(","),
       }),
       h("button", {
         type: "submit",
@@ -124,7 +122,7 @@ export const initDom = ({
   const codeContainer = select(container, "code")[0];
   const footer = select(container, "code-demo-footer")[0];
 
-  if (code.script) {
+  if (code.isLegal) {
     const expandButton = h("button", { className: "expand arrow down" });
 
     footer.appendChild(expandButton);
@@ -139,12 +137,14 @@ export const initDom = ({
 
     if (code.css) injectCSS(code.css, id);
 
-    if (option.jsfiddle !== false) footer.appendChild(getJsfiddleBtn(code));
-    if (option.codepen !== false) footer.appendChild(getCodepenButton(code));
+    if (code.jsfiddle !== false) footer.appendChild(getJsfiddleBtn(code));
+    if (code.codepen !== false) footer.appendChild(getCodepenButton(code));
   } else {
     demoWrapper.style.display = "none";
     codeWrapper.style.height = "auto";
     footer.appendChild(getCodepenButton(code, codeType));
     footer.style.height = "40px";
   }
+
+  container.setAttribute("demo-inited", "");
 };
