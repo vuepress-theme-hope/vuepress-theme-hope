@@ -106,24 +106,16 @@ const preProcessorConfig: Record<
 
 export const getConfig = (
   config: Partial<CodeDemoOptions>
-): CodeDemoOptions => {
-  const result = {
-    ...options,
-    ...config,
-  };
-
-  if (config.jsLib && options.jsLib)
-    result.jsLib = Array.from(
-      new Set([...(options.jsLib || []), ...(config.jsLib || [])])
-    );
-
-  if (config.cssLib && options.cssLib)
-    result.cssLib = Array.from(
-      new Set([...(options.cssLib || []), ...(config.cssLib || [])])
-    );
-
-  return result;
-};
+): CodeDemoOptions => ({
+  ...options,
+  ...config,
+  jsLib: Array.from(
+    new Set([...(options.jsLib || []), ...(config.jsLib || [])])
+  ),
+  cssLib: Array.from(
+    new Set([...(options.cssLib || []), ...(config.cssLib || [])])
+  ),
+});
 
 export const getCode = (code: Record<string, string>): CodeType => {
   const languages = Object.keys(code);
