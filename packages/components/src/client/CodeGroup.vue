@@ -1,8 +1,8 @@
 <template>
   <ClientOnly>
     <div class="code-group">
-      <ul class="code-group-nav">
-        <li
+      <div v:if="codeTabs.length" class="code-group-nav">
+        <button
           v-for="(codeTab, index) in codeTabs"
           :key="codeTab.title"
           ref="tab"
@@ -18,7 +18,7 @@
           @keydown="keyDownHandler($event, index)"
           v-text="codeTab.title"
         />
-      </ul>
+      </div>
       <slot />
       <pre
         v-if="!codeTabs.length"
