@@ -14189,10 +14189,10 @@ remark-preset-lint-markdown-style-guide@5.0.0:
     remark-lint-unordered-list-marker-style "^3.0.0"
     unified "^10.0.0"
 
-remark-preset-lint-recommended@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/remark-preset-lint-recommended/-/remark-preset-lint-recommended-6.0.0.tgz#b4d0685a9b670e361f548eb27540b02c2383bc91"
-  integrity sha512-ZVugDvBLFQ2JZ/tRIb0q/Oo4Qwp8s8AD8M/8GU7VgQYQ39GDVzo8lUTg2ugWy3YuBCX7wmnP0UDOSwIJt7vn0A==
+remark-preset-lint-recommended@6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/remark-preset-lint-recommended/-/remark-preset-lint-recommended-6.0.1.tgz#4e93784b9f007bc9eee7c0e401ea31eacc147cca"
+  integrity sha512-8ZlwP2aDCGf+3UFPP1K8CofWI/WLoq8hPhQiuKotCFNSdTe98/27XYqWXpbMt4feWtX4+tcJY1y0duuLK5lhBg==
   dependencies:
     "@types/mdast" "^3.0.0"
     remark-lint "^9.0.0"
