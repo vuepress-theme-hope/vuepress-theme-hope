@@ -203,6 +203,8 @@ span {
 
 :::
 
+:::: details Code
+
 ````md
 ::: demo A normal demo
 
@@ -226,6 +228,8 @@ span {
 :::
 ````
 
+::::
+
 ::: demo [react] A react demo
 
 ```js
@@ -251,6 +255,8 @@ export default class App extends React.Component {
 ```
 
 :::
+
+:::: details Code
 
 ````md
 ::: demo [react] A react demo
@@ -280,6 +286,8 @@ export default class App extends React.Component {
 :::
 ````
 
+::::
+
 ::: demo [vue] A vue demo
 
 ```vue
@@ -301,6 +309,8 @@ export default {
 ```
 
 :::
+
+:::: details Code
 
 ````md
 ::: demo [vue] A vue demo
@@ -325,6 +335,8 @@ export default {
 
 :::
 ````
+
+::::
 
 ::: demo A normal demo
 
@@ -352,6 +364,8 @@ h1 {
 
 :::
 
+:::: details Code
+
 ````md
 ::: demo A normal demo
 
@@ -379,3 +393,5 @@ h1 {
 
 :::
 ````
+
+::::

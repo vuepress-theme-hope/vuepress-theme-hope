@@ -26,6 +26,8 @@ span {
 
 :::
 
+:::: details 代码
+
 ````md
 ::: demo 一个普通 Demo
 
@@ -49,6 +51,8 @@ span {
 :::
 ````
 
+::::
+
 ::: demo [react] 一个 React Demo
 
 ```js
@@ -74,6 +78,8 @@ export default class App extends React.Component {
 ```
 
 :::
+
+:::: details 代码
 
 ````md
 ::: demo [react] 一个 React Demo
@@ -103,6 +109,8 @@ export default class App extends React.Component {
 :::
 ````
 
+::::
+
 ::: demo [vue] 一个 Vue Demo
 
 ```vue
@@ -124,6 +132,8 @@ export default {
 ```
 
 :::
+
+:::: details 代码
 
 ````md
 ::: demo [vue] 一个 Vue Demo
@@ -148,6 +158,8 @@ export default {
 
 :::
 ````
+
+::::
 
 ::: demo 一个普通 Demo
 
@@ -175,6 +187,8 @@ h1 {
 
 :::
 
+:::: details 代码
+
 ````md
 ::: demo 一个普通 Demo
 
@@ -202,3 +216,5 @@ h1 {
 
 :::
 ````
+
+::::
