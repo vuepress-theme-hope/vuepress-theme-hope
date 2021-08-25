@@ -1,7 +1,14 @@
 import { initDom, select } from "./dom";
 import { getCode, getReactCode, getNormalCode, getVueCode } from "./utils";
 
+import type ReactDOM from "react-dom";
 import type { CodeDemoOptions } from "../../types";
+
+declare global {
+  interface Window {
+    ReactDOM: typeof ReactDOM;
+  }
+}
 
 const loadScript = (
   state: Record<string, Promise<void>>,
@@ -16,7 +23,6 @@ const loadScript = (
     document.getElementsByTagName("body")[0].appendChild(script);
 
     script.onload = (): void => {
-      console.log("loaded", link);
       resolve();
     };
   });
@@ -50,25 +56,16 @@ export const initDemo = (): Promise<void[]> => {
       if (type.includes("react")) {
         const code = getReactCode(codeType, config);
 
-        console.log("react detected");
-
         return Promise.all([
           loadScript(state, code.babel),
           loadScript(state, code.react),
           loadScript(state, code.reactDOM),
         ]).then(() => {
-          console.log("react lib loaded");
-          console.log(code);
-
           if (code.isLegal) {
             const element = window.React.createElement(code.getComponent());
 
-            console.log(element);
-
             window.ReactDOM.render(element, appElement);
           }
-
-          console.log("react loaded");
 
           initDom({ code, codeType, container, title });
         });

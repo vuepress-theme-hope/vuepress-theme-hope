@@ -1,3 +1,4 @@
+import type Babel from "@babel/core";
 import type { FunctionComponent } from "react";
 import type {
   CodeType,
@@ -9,6 +10,12 @@ import type {
 import type { CodeDemoOptions } from "../../types";
 
 export const options = CODE_DEMO_OPTIONS;
+
+declare global {
+  interface Window {
+    Babel: typeof Babel;
+  }
+}
 
 export const h = (
   tag: string,
@@ -164,7 +171,7 @@ export const getNormalCode = (
     isLegal: code.isLegal,
     run: (): unknown => {
       const script = codeConfig.useBabel
-        ? window.Babel.transform(js, { presets: ["es2015"] }).code
+        ? window.Babel.transform(js, { presets: ["es2015"] })?.code || ""
         : js;
 
       // eslint-disable-next-line @typescript-eslint/no-implied-eval
@@ -210,7 +217,8 @@ export const getVueCode = (
       const scriptString = `(function() {${commonScript} ; return ${componentScript}})()`;
 
       const scriptStr = config.useBabel
-        ? window.Babel?.transform(scriptString, { presets: ["es2015"] }).code
+        ? window.Babel?.transform(scriptString, { presets: ["es2015"] })
+            ?.code || ""
         : scriptString;
 
       const scriptObj = eval(scriptStr) as VueScript;
@@ -240,7 +248,7 @@ export const getReactCode = (
         `return (function(exports){var module={};module.exports=exports;${
           window.Babel?.transform(code.js[0] || "", {
             presets: ["es2015", "react"],
-          }).code
+          })?.code || ""
         };return module.exports.__esModule?module.exports.default:module.exports;})({})`
       )() as FunctionComponent,
   };

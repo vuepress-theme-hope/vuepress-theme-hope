@@ -799,18 +799,3 @@ declare module "@Presentation" {
 
   export default vue;
 }
-
-interface Window {
-  // eslint-disable-next-line
-  Babel: {
-    transform: (
-      code: string,
-      options: {
-        presets?: string[];
-      }
-    ) => { code: string };
-  };
-  ReactDOM: {
-    render: (reactElement: any, element: HTMLElement) => void;
-  };
-}

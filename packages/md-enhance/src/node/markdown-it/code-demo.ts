@@ -46,14 +46,11 @@ ${config ? `data-config="${config}"` : ""}
 `;
 };
 
-export const codeDemoDefaultSetting: CodeDemoOptions & {
-  codepenJsProcessor: "babel";
-} = {
+export const codeDemoDefaultSetting: CodeDemoOptions = {
   useBabel: false,
   jsLib: [],
   cssLib: [],
   codepenLayout: "left",
-  codepenJsProcessor: "babel",
   codepenEditors: "101",
   babel: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js",
   vue: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js",
