@@ -9,62 +9,13 @@ import type {
 } from "./typings";
 import type { CodeDemoOptions } from "../../types";
 
-export const options = CODE_DEMO_OPTIONS;
-
 declare global {
   interface Window {
     Babel: typeof Babel;
   }
 }
 
-export const h = (
-  tag: string,
-  attrs: Record<string, string>,
-  children?: HTMLElement[]
-): HTMLElement => {
-  const node = document.createElement(tag);
-  attrs &&
-    Object.keys(attrs).forEach((key) => {
-      if (!key.indexOf("data")) {
-        const k = key.replace("data", "");
-        node.dataset[k] = attrs[key];
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-      } else node[key] = attrs[key];
-    });
-
-  if (children)
-    children.forEach((child) => {
-      node.appendChild(child);
-    });
-
-  return node;
-};
-
-const handleHTML = (html: string): string =>
-  html
-    .replace(/<br \/>/g, "<br>")
-    .replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
-
-const getHtmlTemplate = (html: string): string =>
-  `<div id="app">${handleHTML(html)}</div>`;
-
-const getReactTemplate = (code: string): string =>
-  `${code
-    .replace("export default ", "")
-    .replace(
-      /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
-      ""
-    )}ReactDOM.render(React.createElement(App), document.getElementById("app"))`;
-
-const getVueJsTemplate = (js: string): string =>
-  `new Vue({ el: '#app', ${js
-    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "$1")
-    .replace(
-      /export\s+default\s*Vue\.extend\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "$1"
-    )
-    .trim()} })`;
+export const options = CODE_DEMO_OPTIONS;
 
 type PreProcessorType = "html" | "js" | "css";
 
@@ -110,6 +61,61 @@ const preProcessorConfig: Record<
     },
   },
 };
+
+export const h = (
+  tag: string,
+  attrs: Record<string, string>,
+  children?: HTMLElement[]
+): HTMLElement => {
+  const node = document.createElement(tag);
+  attrs &&
+    Object.keys(attrs).forEach((key) => {
+      if (!key.indexOf("data")) {
+        const k = key.replace("data", "");
+        node.dataset[k] = attrs[key];
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+      } else node[key] = attrs[key];
+    });
+
+  if (children)
+    children.forEach((child) => {
+      node.appendChild(child);
+    });
+
+  return node;
+};
+
+const handleHTML = (html: string): string =>
+  html
+    .replace(/<br \/>/g, "<br>")
+    .replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
+
+const getHtmlTemplate = (html: string): string =>
+  `<div id="app">${handleHTML(html)}</div>`;
+
+const getReactTemplate = (code: string): string =>
+  `${code
+    .replace("export default ", "$reactApp")
+    .replace(
+      /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
+      ""
+    )}ReactDOM.render(React.createElement($reactApp), document.getElementById("app"))`;
+
+const getVueJsTemplate = (js: string): string =>
+  `new Vue({ el: '#app', ${js
+    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "$1")
+    .replace(
+      /export\s+default\s*Vue\.extend\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
+      "$1"
+    )
+    .trim()} })`;
+
+export const run = <T>(scriptStr: string): T =>
+  // eslint-disable-next-line @typescript-eslint/no-implied-eval
+  new Function(
+    `return (function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?module.exports.default:module.exports;})({})`
+  )() as T;
 
 export const getConfig = (
   config: Partial<CodeDemoOptions>
@@ -213,18 +219,18 @@ export const getVueCode = (
     isLegal,
     jsLib: [codeConfig.vue, ...codeConfig.jsLib],
     getScript: (): VueScript => {
-      const [commonScript, componentScript] = js.split(/export\s+default/u);
-      const scriptString = `(function() {${commonScript} ; return ${componentScript}})()`;
+      const script = config.useBabel
+        ? run<VueScript>(
+            window.Babel?.transform(js, { presets: ["es2015"] })?.code || ""
+          )
+        : // eslint-disable-next-line @typescript-eslint/no-implied-eval
+          (new Function(
+            js.replace(/export\s+default/u, "return")
+          )() as VueScript);
 
-      const scriptStr = config.useBabel
-        ? window.Babel?.transform(scriptString, { presets: ["es2015"] })
-            ?.code || ""
-        : scriptString;
+      script.template = html;
 
-      const scriptObj = eval(scriptStr) as VueScript;
-      scriptObj.template = html;
-
-      return scriptObj;
+      return script;
     },
   };
 };
@@ -239,18 +245,23 @@ export const getReactCode = (
     ...codeConfig,
     html: getHtmlTemplate(""),
     js: getReactTemplate(code.js[0] || ""),
-    css: code.css[0] || "",
+    css:
+      code.css[0] ||
+      (code.js[0]
+        ? code.js[0]
+            .replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/, "$1")
+            .trim()
+        : ""),
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
-    getComponent: (): FunctionComponent =>
-      // eslint-disable-next-line @typescript-eslint/no-implied-eval
-      new Function(
-        `return (function(exports){var module={};module.exports=exports;${
-          window.Babel?.transform(code.js[0] || "", {
-            presets: ["es2015", "react"],
-          })?.code || ""
-        };return module.exports.__esModule?module.exports.default:module.exports;})({})`
-      )() as FunctionComponent,
+    getComponent: (): FunctionComponent => {
+      const scriptStr =
+        window.Babel?.transform(code.js[0] || "", {
+          presets: ["es2015", "react"],
+        })?.code || "";
+
+      return run<FunctionComponent>(scriptStr);
+    },
   };
 };
 
