@@ -175,7 +175,7 @@ export const getNormalCode = (
         : js;
 
       // eslint-disable-next-line @typescript-eslint/no-implied-eval
-      return eval(`(function(){${script}})()`) as unknown;
+      return new Function(script)();
     },
   };
 };
