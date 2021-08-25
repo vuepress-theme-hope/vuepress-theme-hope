@@ -3109,11 +3109,6 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/highlight.js@^9.7.0":
-  version "9.12.4"
-  resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.4.tgz#8c3496bd1b50cc04aeefd691140aa571d4dbfa34"
-  integrity sha512-t2szdkwmg2JJyuCM20e8kR2X59WCE5Zkl4bzm1u1Oukjm79zpbiAv+QjnwLnuuV0WHEcX2NgUItu0pAMKuOPww==
-
 "@types/html-minifier-terser@^5.0.0":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@types/html-minifier-terser/-/html-minifier-terser-5.1.2.tgz#693b316ad323ea97eed6b38ed1a3cc02b1672b57"
@@ -3205,14 +3200,14 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.172.tgz#aad774c28e7bfd7a67de25408e03ee5a8c3d028a"
   integrity sha512-/BHF5HAx3em7/KkzVKm3LrsD6HZAXuXO1AJZQ3cRRBZj4oHZDviWPYu0aEplAqDFNHZPW6d3G7KN+ONcCCC7pw==
 
-"@types/markdown-it@^12.0.3":
-  version "12.0.3"
-  resolved "https://registry.yarnpkg.com/@types/markdown-it/-/markdown-it-12.0.3.tgz#60a09363bebbd780fac815442b47d80f1a17bef1"
-  integrity sha512-MIhDl8e64vKJv3GX8irH5I/cNarX18edtdfg/+lbS92mArVl5VeaL4WKf8i06Zt2vsNuze2Vc8ELqrjoWO6hDQ==
+"@types/markdown-it@^12.0.3", "@types/markdown-it@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@types/markdown-it/-/markdown-it-12.2.0.tgz#f609929ac1e50cf0d039473fb331ebc62e313b34"
+  integrity sha512-YEpywby5S2wt64C2E3bcpLvtIV8BuCj+4AGtL7tU51V8Vr1qwm+cX9gFfWRyclgLC0UK/7w2heYmhymDi+snzw==
   dependencies:
-    "@types/highlight.js" "^9.7.0"
     "@types/linkify-it" "*"
     "@types/mdurl" "*"
+    highlight.js "^10.7.2"
 
 "@types/mdast@^3.0.0":
   version "3.0.7"
@@ -8356,7 +8351,7 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
-highlight.js@^10.7.1:
+highlight.js@^10.7.1, highlight.js@^10.7.2:
   version "10.7.3"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
   integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==
