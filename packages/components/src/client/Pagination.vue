@@ -157,6 +157,7 @@ $bgColor ?= #fff
         line-height 2
         overflow hidden
         outline none
+        cursor pointer
 
         &:hover
           color var(--white, #fff)

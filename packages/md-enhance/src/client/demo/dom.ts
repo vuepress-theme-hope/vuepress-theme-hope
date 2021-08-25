@@ -123,7 +123,7 @@ export const initDom = ({
   const footer = select(container, "code-demo-footer")[0];
 
   if (code.isLegal) {
-    const expandButton = h("button", { className: "expand arrow down" });
+    const expandButton = h("button", { className: "expand down" });
 
     footer.appendChild(expandButton);
     footer.appendChild(h("span", { className: "title", innerHTML: title }));

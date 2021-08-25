@@ -21,7 +21,10 @@
 <script src="./ScreenFull" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 .full-screen, .cancel-full-screen
+  button()
   width 1.8rem
   height 1.8rem
   padding 4px

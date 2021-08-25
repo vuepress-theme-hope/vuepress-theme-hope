@@ -8,8 +8,6 @@ import ScreenFull from "./ScreenFull.vue";
 
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
-import "@mr-hope/vuepress-shared/styles/reset.styl";
-
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   Vue.component("BackToTop", BackToTop);
   Vue.component("Badge", Badge);

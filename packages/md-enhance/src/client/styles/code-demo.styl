@@ -1,4 +1,5 @@
 @require '~@mr-hope/vuepress-shared/styles/arrow'
+@require '~@mr-hope/vuepress-shared/styles/reset'
 
 $contentClass ?= '.theme-default-content'
 
@@ -74,6 +75,7 @@ $contentClass ?= '.theme-default-content'
 
   .expand
     arrow()
+    button()
     position relative
     margin 8px
     background-color transparent
@@ -95,6 +97,7 @@ $contentClass ?= '.theme-default-content'
       opacity 1
 
   .button
+    button()
     position relative
     margin 0
     padding 0

@@ -30,6 +30,8 @@
 <script src="./CodeGroup" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 .code-group-nav
   display flex
   /* 2 * margin + border-radius of <pre> tag */
@@ -46,6 +48,7 @@
     border-radius 0
 
 .code-group-nav-tab
+  button()
   position relative
   border 0
   padding 6px 10px

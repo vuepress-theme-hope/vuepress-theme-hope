@@ -78,6 +78,8 @@
 <script src="./PWAInstallModal" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 @keyframes opened
   from
     transform scale(0.8, 0.8)
@@ -114,6 +116,7 @@
   z-index 997
 
   button
+    button()
     outline none
 
   .background

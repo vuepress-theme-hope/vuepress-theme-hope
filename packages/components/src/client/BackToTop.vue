@@ -26,7 +26,10 @@
 <script src="./BackToTop" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 .back-to-top
+  button()
   position fixed !important
   right 1rem
   bottom 4rem

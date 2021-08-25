@@ -19,7 +19,10 @@
 <script src="./PWAInstall" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset.styl'
+
 .modal-button
+  button()
   position fixed
   right 1rem
   bottom 1rem
