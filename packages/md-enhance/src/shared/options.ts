@@ -1,6 +1,6 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { CodeDemoGlobalOptions } from "./code-demo";
+import type { CodeDemoOptions } from "./code-demo";
 import type { MarkdownEnhanceI18nConfig } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
@@ -113,7 +113,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  demo: Partial<CodeDemoGlobalOptions> | boolean;
+  demo: Partial<CodeDemoOptions> | boolean;
 
   /**
    * 是否启用幻灯片支持

@@ -1,18 +1,23 @@
-export interface CodeDemoGlobalOptions {
+export interface CodeDemoOptions {
+  /**
+   * 是否使用 Babel 转义
+   *
+   * @default false
+   */
+  useBabel: boolean;
+
   /**
    * 引入的 JS 外部库链接
    *
    * JS Libray links
    */
   jsLib: string[];
-
   /**
    * 引入的 CSS 外部库链接
    *
    * CSS Libray links
    */
   cssLib: string[];
-
   /**
    * 是否显示 JSFiddle 按钮
    *
@@ -20,8 +25,7 @@ export interface CodeDemoGlobalOptions {
    *
    * @default true
    */
-  jsfiddle: boolean;
-
+  jsfiddle?: boolean;
   /**
    * 是否显示 CodePen 按钮
    *
@@ -29,17 +33,7 @@ export interface CodeDemoGlobalOptions {
    *
    * @default true
    */
-  codepen: boolean;
-
-  /**
-   * 是否水平显示代码和视图窗口
-   *
-   * Whether display code and output horizontally
-   *
-   * @default false
-   */
-  horizontal: false;
-
+  codepen?: boolean;
   /**
    * CodePen 编辑器布局
    *
@@ -48,7 +42,6 @@ export interface CodeDemoGlobalOptions {
    * @default "left"
    */
   codepenLayout: "top" | "left" | "right";
-
   /**
    * CodePen 编辑器显示情况
    *
@@ -56,37 +49,31 @@ export interface CodeDemoGlobalOptions {
    *
    * @default "101"
    */
-  editors: "101" | "100" | "110" | "111" | "011" | "001" | "010";
+  codepenEditors: "101" | "100" | "110" | "111" | "011" | "001" | "010";
 
   /**
-   * Vue 库的 CDN 链接地址
+   * Babel lib address
    *
-   * Vue lib CDN address
+   * @default "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"
+   */
+  babel: string;
+
+  /**
+   * Vue lib address
    *
-   * @default "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js"
+   * @default "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"
    */
   vue: string;
-
   /**
-   * React 库的 CDN 链接地址
-   *
-   * React lib CDN address
+   * React lib address
    *
    * @default "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
    */
   react: string;
-
   /**
-   * ReactDOM 库的 CDN 链接地址
-   *
-   * ReactDOM lib CDN address
+   * ReactDOM lib address
    *
    * @default "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
    */
   reactDOM: string;
 }
-
-export type CodeDemoOptions = Omit<
-  CodeDemoGlobalOptions,
-  "vue" | "react" | "reactDOM"
->;

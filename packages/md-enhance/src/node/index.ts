@@ -17,7 +17,6 @@ import type { Plugin } from "@vuepress/core";
 import type { MarkdownEnhanceOptions } from "../shared";
 
 export {
-  CodeDemoGlobalOptions,
   CodeDemoOptions,
   MarkdownEnhanceOptions,
   PresentationOptions,

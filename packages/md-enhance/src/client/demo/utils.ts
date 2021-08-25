@@ -1,3 +1,4 @@
+import type Babel from "@babel/core";
 import type { FunctionComponent } from "react";
 import type {
   CodeType,
@@ -6,11 +7,17 @@ import type {
   VueCode,
   VueScript,
 } from "./typings";
-import type { CodeDemoOptions, CodeDemoGlobalOptions } from "../../shared";
+import type { CodeDemoOptions } from "../../shared";
 
-declare const CODE_DEMO_OPTIONS: CodeDemoGlobalOptions;
+declare global {
+  interface Window {
+    Babel: typeof Babel;
+  }
+}
 
-export const option = CODE_DEMO_OPTIONS;
+declare const CODE_DEMO_OPTIONS: CodeDemoOptions;
+
+export const options = CODE_DEMO_OPTIONS;
 
 export const h = (
   tag: string,
@@ -61,29 +68,6 @@ const getVueJsTemplate = (js: string): string =>
     )
     .trim()} })`;
 
-const getVueScript = (html: string, js: string): VueScript => {
-  const scripts = js.split(/export\s+default/u);
-  const scriptStrOrg = `(function() {${scripts[0]} ; return ${scripts[1]}})()`;
-
-  const scriptStr = window.Babel
-    ? window.Babel.transform(scriptStrOrg, { presets: ["es2015"] }).code
-    : scriptStrOrg;
-
-  const scriptObj = [eval][0](scriptStr) as VueScript;
-  scriptObj.template = html;
-
-  return scriptObj;
-};
-
-const getNormalScript = (js: string): (() => unknown) => {
-  const script = window.Babel
-    ? window.Babel.transform(js, { presets: ["es2015"] }).code
-    : js;
-
-  // eslint-disable-next-line @typescript-eslint/no-implied-eval
-  return new Function(`return (function(){${script}})()`) as () => unknown;
-};
-
 type PreProcessorType = "html" | "js" | "css";
 
 const preProcessorConfig: Record<
@@ -129,6 +113,27 @@ const preProcessorConfig: Record<
   },
 };
 
+export const getConfig = (
+  config: Partial<CodeDemoOptions>
+): CodeDemoOptions => {
+  const result = {
+    ...options,
+    ...config,
+  };
+
+  if (config.jsLib && options.jsLib)
+    result.jsLib = Array.from(
+      new Set([...(options.jsLib || []), ...(config.jsLib || [])])
+    );
+
+  if (config.cssLib && options.cssLib)
+    result.cssLib = Array.from(
+      new Set([...(options.cssLib || []), ...(config.cssLib || [])])
+    );
+
+  return result;
+};
+
 export const getCode = (code: Record<string, string>): CodeType => {
   const languages = Object.keys(code);
   const result: CodeType = {
@@ -164,19 +169,33 @@ export const getCode = (code: Record<string, string>): CodeType => {
 export const getNormalCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
-): NormalCode => ({
-  html: handleHTML(code.html[0] || ""),
-  js: code.js[0] || "",
-  css: code.css[0] || "",
-  jsLib: config.jsLib || [],
-  cssLib: config.cssLib || [],
-  script: code.isLegal ? getNormalScript(code.js[0] || "") : undefined,
-});
+): NormalCode => {
+  const codeConfig = getConfig(config);
+  const js = code.js[0] || "";
+
+  return {
+    ...codeConfig,
+    html: handleHTML(code.html[0] || ""),
+    js,
+    css: code.css[0] || "",
+    isLegal: code.isLegal,
+    run: (): unknown => {
+      const script = codeConfig.useBabel
+        ? window.Babel.transform(js, { presets: ["es2015"] })?.code || ""
+        : js;
+
+      // eslint-disable-next-line @typescript-eslint/no-implied-eval
+      return eval(`(function(){${script}})()`) as unknown;
+    },
+  };
+};
 
 export const getVueCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
 ): VueCode => {
+  const codeConfig = getConfig(config);
+
   const vueTemplate = code.html[0] || "";
   const htmlBlock = /<template>([\s\S]+)<\/template>/u.exec(vueTemplate);
   const jsBlock = /<script(\s*lang=(['"])(.*?)\2)?>([\s\S]+)<\/script>/u.exec(
@@ -197,12 +216,26 @@ export const getVueCode = (
   const isLegal = jsLang === "" && (cssLang === "" || cssLang === "css");
 
   return {
+    ...codeConfig,
     html: getHtmlTemplate(html),
     js: getVueJsTemplate(js),
     css,
-    jsLib: [option.vue, ...(config.jsLib || [])],
-    cssLib: config.cssLib || [],
-    script: isLegal ? getVueScript(html, js) : undefined,
+    isLegal,
+    jsLib: [codeConfig.vue, ...codeConfig.jsLib],
+    getScript: (): VueScript => {
+      const [commonScript, componentScript] = js.split(/export\s+default/u);
+      const scriptString = `(function() {${commonScript} ; return ${componentScript}})()`;
+
+      const scriptStr = config.useBabel
+        ? window.Babel?.transform(scriptString, { presets: ["es2015"] })
+            ?.code || ""
+        : scriptString;
+
+      const scriptObj = eval(scriptStr) as VueScript;
+      scriptObj.template = html;
+
+      return scriptObj;
+    },
   };
 };
 
@@ -210,25 +243,24 @@ export const getReactCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
 ): ReactCode => {
-  const scriptObj =
-    code.isLegal && window.Babel
-      ? // eslint-disable-next-line
-        (new Function(
-          `return (function(exports){var module={};module.exports=exports;${
-            window.Babel.transform(code.js[0] || "", {
-              presets: ["es2015", "react"],
-            }).code
-          };return module.exports.__esModule?module.exports.default:module.exports;})({})`
-        )() as FunctionComponent)
-      : undefined;
+  const codeConfig = getConfig(config);
 
   return {
+    ...codeConfig,
     html: getHtmlTemplate(""),
     js: getReactTemplate(code.js[0] || ""),
     css: code.css[0] || "",
-    jsLib: [option.react, option.reactDOM, ...(config.jsLib || [])],
-    cssLib: config.cssLib || [],
-    script: scriptObj,
+    isLegal: code.isLegal,
+    jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
+    getComponent: (): FunctionComponent =>
+      // eslint-disable-next-line @typescript-eslint/no-implied-eval
+      new Function(
+        `return (function(exports){var module={};module.exports=exports;${
+          window.Babel?.transform(code.js[0] || "", {
+            presets: ["es2015", "react"],
+          })?.code || ""
+        };return module.exports.__esModule?module.exports.default:module.exports;})({})`
+      )() as FunctionComponent,
   };
 };
 

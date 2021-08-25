@@ -47,6 +47,8 @@ yarn add -D vuepress-plugin-md-enhance
 
 - add SlidePage layout which can be used in themes ![new](https://img.shields.io/badge/-new-brightgreen)
 
+- Auto load needed CDN for code demo ![new](https://img.shields.io/badge/-new-brightgreen)
+
 ---
 
 ## 安装
@@ -80,3 +82,5 @@ yarn add -D vuepress-plugin-md-enhance
 - 选项 `locale` 以支持国际化配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
 - 添加幻灯片布局，可在主题中引入使用 ![new](https://img.shields.io/badge/-new-brightgreen)
+
+- 自动导入代码演示的所需 CDN ![new](https://img.shields.io/badge/-new-brightgreen)

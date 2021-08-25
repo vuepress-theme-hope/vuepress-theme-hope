@@ -1,6 +1,7 @@
 import { hash } from "@vuepress/utils";
 
 import type Token from "markdown-it/lib/token";
+import type { CodeDemoOptions } from "../../shared";
 
 export const codeDemoRender = (tokens: Token[], index: number): string => {
   const { nesting, info } = tokens[index];
@@ -42,12 +43,13 @@ export const codeDemoRender = (tokens: Token[], index: number): string => {
 `;
 };
 
-export const codeDemoDefaultSetting = {
+export const codeDemoDefaultSetting: CodeDemoOptions = {
+  useBabel: false,
   jsLib: [],
   cssLib: [],
   codepenLayout: "left",
-  codepenJsProcessor: "babel",
   codepenEditors: "101",
+  babel: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js",
   vue: "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js",
   react: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
   reactDOM:

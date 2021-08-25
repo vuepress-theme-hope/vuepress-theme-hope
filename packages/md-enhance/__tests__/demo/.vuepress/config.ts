@@ -11,29 +11,8 @@ const config: UserConfig<DefaultThemeOptions> = {
       "meta",
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+        content: "width=device-width, initial-scale=1.0, viewport-fit=cover",
       },
-    ],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
-      },
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js",
-      },
-    ],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
     ],
   ],
 
