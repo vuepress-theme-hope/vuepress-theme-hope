@@ -18,6 +18,7 @@
 }
 
 .code-group-nav-tab {
+  @include reset.button;
   position: relative;
   border: 0;
   padding: 6px 10px;
