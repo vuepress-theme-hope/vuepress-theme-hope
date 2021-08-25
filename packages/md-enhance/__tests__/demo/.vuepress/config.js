@@ -21,8 +21,7 @@ module.exports = {
       "meta",
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+        content: "width=device-width, initial-scale=1.0, viewport-fit=cover",
       },
     ],
   ],
@@ -41,43 +40,35 @@ module.exports = {
       /** 设置为中文 */
       lang: "zh-CN",
     },
-    /** 英文设置 */
-    "/en/": {
-      /** 设置为英文 */
-      lang: "en-US", // 将会被设置为 <html> 的 lang 属性
-
-      /** 网站在该语言下的标题 */
-      title: "Markdown Enhance Plugin",
-
-      /** 网站在该语言下的描述 */
-      description: "Markdown Enhancement for VuePress",
-    },
   },
 
   /** 主题配置 */
   themeConfig: {
     logo: "/logo.svg",
 
-    /** 头部导航栏的配置 */
-    nav: [
-      { text: "主页", link: "/" },
-      { text: "指南", link: "/guide/" },
-      { text: "配置", link: "/api/" },
-    ],
-
     /** 侧边栏配置 */
     sidebar: {
-      "/guide/": [
+      "/": [
         "",
         "sup-sub",
         "align",
         "footnote",
+        "mark",
+        "tasklist",
         "flowchart",
+        "mermaid",
         "tex",
-        "presentation",
+        "demo",
+        {
+          title: "Presentation",
+          collapsable: false,
+          children: [
+            "presentation/",
+            "presentation/demo",
+            "presentation/themes",
+          ],
+        },
       ],
-
-      "/": ["", "guide/", "api"],
     },
 
     /** 侧边栏标题显示深度，0-2 */
@@ -91,48 +82,6 @@ module.exports = {
         selectText: "选择语言",
         lastUpdated: "上次编辑于",
         label: "简体中文",
-      },
-      /** 英文设置 */
-      "/en/": {
-        /** 设置该语言的代码 */
-        lang: "en-US", // 将会被设置为 <html> 的 lang 属性
-
-        /** 多语言下拉菜单的标题 */
-        selectText: "Language",
-
-        /** 辅助标签 */
-        ariaLabel: "Select language",
-
-        /** 该语言下的更新时间文字 */
-        lastUpdated: "Last update",
-
-        /** 该语言在下拉菜单中的标签 */
-        label: "English",
-
-        /** 编辑链接文字 */
-        editLinkText: "Edit on GitHub",
-
-        /** 该语言下头部导航栏的配置 */
-        nav: [
-          { text: "Home", link: "/en/" },
-          { text: "Guide", link: "/en/guide/" },
-          { text: "Config", link: "/en/api/" },
-        ],
-
-        /** 该语言下侧边栏的配置 */
-        sidebar: {
-          "/en/guide/": [
-            "",
-            "sup-sub",
-            "align",
-            "footnote",
-            "flowchart",
-            "tex",
-            "presentation",
-          ],
-
-          "/en/": ["", "guide/", "api"],
-        },
       },
     },
 
