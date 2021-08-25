@@ -250,9 +250,9 @@ nodeVar2->nodeVar3
 
 - **parallel**
 
-  Required path specification of `path1`, `path2`, or `path3`
+  必需指定路径方向 `path1`, `path2`, 或 `path3`
 
-  Optional direction
+  可选方向
 
   ```md
   parallelVar(path1, <direction>)->nextNode1

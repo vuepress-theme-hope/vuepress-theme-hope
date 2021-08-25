@@ -7,7 +7,7 @@ icon: check
 
 <!-- more -->
 
-## Configuration
+## 配置
 
 ```js {7}
 module.exports = {
