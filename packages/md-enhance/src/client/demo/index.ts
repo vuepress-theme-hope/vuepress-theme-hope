@@ -1,5 +1,5 @@
+import { getCode, getReactCode, getNormalCode, getVueCode } from "./code";
 import { initDom, select } from "./dom";
-import { getCode, getReactCode, getNormalCode, getVueCode } from "./utils";
 
 import type ReactDOM from "react-dom";
 import type { CodeDemoOptions } from "../../types";
