@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.20.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.3...v1.20.0) (2021-08-26)
+
+### Bug Fixes
+
+- **components:** fix a11y issue ([4bd2e4b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4bd2e4b74c348ce456bbbbdb67029c18c00147ae))
+- **components:** fix pagination ([ce8be14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce8be14ddf675be365186710618b874c101d94d5))
+- fix styles ([eeb011f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eeb011f06f4216db396fbd6a07335a8d95579cc9))
+- **pwa:** improve a11y ([c3356bd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c3356bd783879666b1d873acf66cfbd2b6b4a1aa))
+- **theme:** fix button style ([f37d5ba](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f37d5ba4592044f598b5ed14bbf8daad3ade9f15))
+
+### Features
+
+- **md-enhance:** rebuild code demo ([0eca84f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0eca84fe725c89f0f5b9d45cb570a2bb304aa6d8))
+- **md-enhance:** update code-demo script handle ([7c0bd6f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7c0bd6faa670e66175c708e8bcd5c761bef96206))
+- **md-enhance:** use shadowDom in code demo ([02d7b71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/02d7b71971d2c7f147d5c0ff63fbc0e5e4bee91d))
+
 ## [1.19.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.2...v1.19.3) (2021-08-17)
 
 ### Bug Fixes
