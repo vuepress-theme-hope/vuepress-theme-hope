@@ -42,7 +42,10 @@
 <script src="./ThemeColor" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 .color-button
+  button()
   position relative
   width 2.25rem
   height 2.25rem

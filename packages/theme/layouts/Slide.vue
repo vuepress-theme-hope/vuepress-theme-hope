@@ -31,12 +31,15 @@
 <script src="./Slide" />
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 .presentation
   .md-presentation
     min-width 100vw
     min-height 100vh
 
   .menu-button, .back-button, .home-button
+    button()
     box-sizing content-box
     position fixed
     bottom 2rem

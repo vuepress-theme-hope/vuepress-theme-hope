@@ -68,6 +68,7 @@
 
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared/styles/arrow'
+@require '~@mr-hope/vuepress-shared/styles/reset'
 
 .dropdown-wrapper
   height 1.8rem
@@ -85,6 +86,7 @@
       opacity 1
 
   .dropdown-title
+    button()
     cursor inherit
     padding inherit
     color var(--dark-grey)

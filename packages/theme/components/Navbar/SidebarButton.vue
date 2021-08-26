@@ -9,7 +9,10 @@
 </template>
 
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 .sidebar-button
+  button()
   display none
   box-sizing content-box
   position absolute

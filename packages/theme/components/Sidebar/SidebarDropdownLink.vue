@@ -66,11 +66,13 @@
 
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared/styles/arrow'
+@require '~@mr-hope/vuepress-shared/styles/reset'
 
 .mobile-dropdown-wrapper
   cursor pointer
 
   .dropdown-title
+    button()
     cursor inherit
     padding inherit
     color var(--text-color)

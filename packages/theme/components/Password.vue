@@ -75,6 +75,7 @@
       padding-right 10px
       background var(--accent-color)
       color var(--bgcolor)
+      border-width 0
       border-radius 0 22px 22px 0
       font-size 20px
       line-height 2

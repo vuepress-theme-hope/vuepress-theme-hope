@@ -16,7 +16,7 @@
   display block
   max-width $homePageWidth
   margin 0px auto
-  padding ($navbarHeight + 1rem) 2rem 0 2rem !important
+  padding ($navbarHeight + 1rem) 2rem 2rem 2rem !important
   text-align center
 
   .page-404-icon
@@ -28,6 +28,7 @@
     box-sizing border-box
     margin 0 0.25rem
     padding 0.5rem 1rem
+    border-width 0
     border-bottom 1px solid var(--accent-color-d10)
     border-radius 0.25rem
     background var(--accent-color)
