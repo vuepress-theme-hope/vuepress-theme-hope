@@ -10819,10 +10819,10 @@ mdast-util-heading-style@^2.0.0:
   dependencies:
     "@types/mdast" "^3.0.0"
 
-mdast-util-math@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mdast-util-math/-/mdast-util-math-1.1.0.tgz#b3bc09fa68cd95352191f77265353e0b6c4064a9"
-  integrity sha512-1ZpkJXMyGCnwyzax2F6DPODP7LNwXDY54KfUxYC38c19aqx6Y7h9iiDpPicdgqgPDEb65b69YukD7zgw294l4w==
+mdast-util-math@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/mdast-util-math/-/mdast-util-math-2.0.0.tgz#bd16c0b789560d448c12aa8ee1db2bdd407a9479"
+  integrity sha512-D78NdSY7aNipuibX+q8LdjVyQI+oKGO5kwpgOZZjxLPqRhQZhZoTPXIAIbLg/UIP3NyCzHuebiR0HDWksBS80w==
   dependencies:
     "@types/mdast" "^3.0.0"
     longest-streak "^3.0.0"
@@ -11087,10 +11087,10 @@ micromark-extension-gfm@^0.3.0:
     micromark-extension-gfm-tagfilter "~0.3.0"
     micromark-extension-gfm-task-list-item "~0.3.0"
 
-micromark-extension-math@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/micromark-extension-math/-/micromark-extension-math-1.0.0.tgz#596a4c036ef9cf6f8d84801d0016b18fed369d3d"
-  integrity sha512-VOuF6LpBSrXskmIsQTe2il1VdbNjm8JHcVWuHWsIm7UXpEyCRwVRnG/GuG58Ggj1T13UpAuP8sP7BBHuVCp5IA==
+micromark-extension-math@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/micromark-extension-math/-/micromark-extension-math-2.0.0.tgz#03b908fc3c709e4952d18c37ec4e0ac2ee8df8a7"
+  integrity sha512-veZi4A9YNOtV0Edw/4CWvgTrshtewClefgYLC9/oqHwKm013hyoZz2ywffK3pzZPKo0dIof+RXXJLY4va4ZZpA==
   dependencies:
     "@types/katex" "^0.11.0"
     katex "^0.13.0"
@@ -14107,14 +14107,14 @@ remark-lint@9.0.1, remark-lint@^9.0.0:
     remark-message-control "^7.0.0"
     unified "^10.1.0"
 
-remark-math@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.0.0.tgz#8a92db22f8bbaaf9eea7d0f2dc18aaaeccfeef63"
-  integrity sha512-foC+W2SScQGA0893FplapKzAjrSvUISgiMxhEpPE2lYPXlIohzzeTDj8qc34RCIYye96DVS2qLXBQJHmzzXGZw==
+remark-math@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.1.0.tgz#8b1fe071be8584e1e87c14d9353464b67f98d1b5"
+  integrity sha512-Igu6p5+Ks8NWX+CzosHHG4r+ETMQIPscoTYPhNPk+ROauJnPEWPFeIe6JdaM1Z+ctHurpIDyYaLRXzgzZAhYSQ==
   dependencies:
     "@types/mdast" "^3.0.0"
-    mdast-util-math "^1.0.0"
-    micromark-extension-math "^1.0.0"
+    mdast-util-math "^2.0.0"
+    micromark-extension-math "^2.0.0"
     unified "^10.0.0"
 
 remark-message-control@^7.0.0:
