@@ -182,16 +182,16 @@ Available CSS languages:
 
 ## Demo
 
-::: demo A normal demo
+::: demo Demo
 
 ```html
 <h1>Mr.Hope</h1>
-<p>Is <span id="very">very</span> handsome</p>
+<p>is <span id="very">very</span> handsome</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("Very handsome!");
+  alert("Very handsome");
 });
 ```
 
@@ -206,16 +206,16 @@ span {
 :::: details Code
 
 ````md
-::: demo A normal demo
+::: demo Demo
 
 ```html
 <h1>Mr.Hope</h1>
-<p>Is <span id="very">very</span> handsome</p>
+<p>is <span id="very">very</span> handsome</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("Very handsome!");
+  alert("Very handsome");
 });
 ```
 
@@ -228,29 +228,30 @@ span {
 :::
 ````
 
-::::
-
-::: demo [react] A react demo
+::: demo [react] A function-based React Demo
 
 ```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "very handsome" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope is <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
+export default () => {
+  const message = "very handsome";
+
+  const handler = () => {
+    alert(message);
+  };
+
+  return (
+    <div className="box">
+      Mr.Hope is
+      <span id="very" onClick={handler}>
+        {message}
+      </span>
+    </div>
+  );
+};
 ```
 
 ```css
-.box-react span {
-  color: red;
+.box span {
+  color: blue;
 }
 ```
 
@@ -259,7 +260,39 @@ export default class App extends React.Component {
 :::: details Code
 
 ````md
-::: demo [react] A react demo
+::: demo [react] A function-based React Demo
+
+```js
+export default () => {
+  const message = "very handsome";
+
+  const handler = () => {
+    alert(message);
+  };
+
+  return (
+    <div className="box">
+      Mr.Hope is
+      <span id="very" onClick={handler}>
+        {message}
+      </span>
+    </div>
+  );
+};
+```
+
+```css
+.box span {
+  color: blue;
+}
+```
+
+:::
+````
+
+::::
+
+::: demo [react] A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -269,17 +302,58 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className="box-react">
-        Mr.Hope is <span>{this.state.message}</span>
+      <div className="box">
+        Mr.Hope is
+        <span id="very" onClick={this.handler}>
+          {this.state.message}
+        </span>
       </div>
     );
+  }
+  handler() {
+    alert(this.state.message);
   }
 }
 ```
 
 ```css
-.box-react span {
-  color: red;
+.box span {
+  color: blue;
+}
+```
+
+:::
+
+:::: details Code
+
+````md
+::: demo [react] A class-based React Demo
+
+```js
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { message: "very handsome" };
+  }
+  render() {
+    return (
+      <div className="box">
+        Mr.Hope is
+        <span id="very" onClick={this.handler}>
+          {this.state.message}
+        </span>
+      </div>
+    );
+  }
+  handler() {
+    alert(this.state.message);
+  }
+}
+```
+
+```css
+.box span {
+  color: blue;
 }
 ```
 
@@ -288,21 +362,26 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] A vue demo
+::: demo [vue] A Vue Demo
 
 ```vue
 <template>
-  <div class="box-vue">
-    Mr.Hope is <span>{{ message }}</span>
+  <div class="box">
+    Mr.Hope is <span @click="handler">{{ message }}</span>
   </div>
 </template>
 <script>
 export default {
   data: () => ({ message: "very handsome" }),
+  methods: {
+    handler() {
+      alert(this.message);
+    },
+  },
 };
 </script>
 <style>
-.box-vue span {
+.box span {
   color: red;
 }
 </style>
@@ -313,21 +392,26 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A vue demo
+::: demo [vue] A Vue Demo
 
 ```vue
 <template>
-  <div class="box-vue">
-    Mr.Hope is <span>{{ message }}</span>
+  <div class="box">
+    Mr.Hope is <span @click="handler">{{ message }}</span>
   </div>
 </template>
 <script>
 export default {
   data: () => ({ message: "very handsome" }),
+  methods: {
+    handler() {
+      alert(this.message);
+    },
+  },
 };
 </script>
 <style>
-.box-vue span {
+.box span {
   color: red;
 }
 </style>
@@ -338,7 +422,7 @@ export default {
 
 ::::
 
-::: demo A normal demo
+::: demo A demo using language not supoprted by browsers
 
 ```md
 # Title

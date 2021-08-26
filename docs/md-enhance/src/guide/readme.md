@@ -152,7 +152,7 @@ span {
 
 :::
 
-- [View Detail](demo.md)
+- [View Detail](demo/readme.md)
 
 ### Presentation
 

@@ -128,12 +128,12 @@ export const getVueCode = (
         ? window.Babel?.transform(js, { presets: ["es2015"] })?.code || ""
         : js.replace(/export\s+default/u, "return");
 
-      return `const VueAppOptions=${wrapper(
+      return `const appOptions=${wrapper(
         scriptStr
-      )};VueAppOptions.template=\`${html.replace(
+      )};appOptions.template=\`${html.replace(
         "`",
         '\\`"'
-      )}\`;document.firstElementChild.appendChild(new (window.Vue.extend(VueAppOptions))().$mount().$el);`;
+      )}\`;document.firstElementChild.appendChild(new (window.Vue.extend(appOptions))().$mount().$el);`;
     },
   };
 };
@@ -163,9 +163,9 @@ export const getReactCode = (
           presets: ["es2015", "react"],
         })?.code || "";
 
-      return `const element = window.React.createElement(${wrapper(
+      return `window.ReactDOM.render(window.React.createElement(${wrapper(
         scriptStr
-      )});window.ReactDOM.render(element, document.firstElementChild)`;
+      )}), document.firstElementChild)`;
     },
   };
 };

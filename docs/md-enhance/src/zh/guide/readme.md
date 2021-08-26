@@ -150,7 +150,7 @@ span {
 
 :::
 
-- [查看详情](demo.md)
+- [查看详情](demo/readme.md)
 
 ### 幻灯片
 

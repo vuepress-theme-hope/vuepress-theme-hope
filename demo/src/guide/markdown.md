@@ -308,7 +308,7 @@ export default class App extends React.Component {
 
 ```vue
 <template>
-  <div class="box-vue">
+  <div class="box">
     Mr.Hope is <span>{{ message }}</span>
   </div>
 </template>
@@ -318,7 +318,7 @@ export default {
 };
 </script>
 <style>
-.box-vue span {
+.box span {
   color: red;
 }
 </style>
@@ -333,7 +333,7 @@ export default {
 
 ```vue
 <template>
-  <div class="box-vue">
+  <div class="box">
     Mr.Hope is <span>{{ message }}</span>
   </div>
 </template>
@@ -343,7 +343,7 @@ export default {
 };
 </script>
 <style>
-.box-vue span {
+.box span {
   color: red;
 }
 </style>

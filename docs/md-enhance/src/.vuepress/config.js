@@ -48,7 +48,13 @@ module.exports = config({
             "flowchart",
             "mermaid",
             "tex",
-            "demo",
+            {
+              title: "Code Demo",
+              icon: "discover",
+              prefix: "demo/",
+              collapsable: false,
+              children: ["", "normal", "vue", "react"],
+            },
             {
               title: "Presentation",
               icon: "slides",
@@ -87,7 +93,13 @@ module.exports = config({
                 "flowchart",
                 "mermaid",
                 "tex",
-                "demo",
+                {
+                  title: "代码演示",
+                  icon: "discover",
+                  prefix: "demo/",
+                  collapsable: false,
+                  children: ["", "normal", "vue", "react"],
+                },
                 {
                   title: "幻灯片",
                   icon: "slides",

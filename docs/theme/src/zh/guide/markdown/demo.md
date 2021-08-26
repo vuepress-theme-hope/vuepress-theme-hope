@@ -184,7 +184,7 @@ export default class App extends React.Component {
 
 ## 演示
 
-::: demo 一个普通 Demo
+::: demo Demo 演示
 
 ```html
 <h1>Mr.Hope</h1>
@@ -208,7 +208,7 @@ span {
 :::: details 代码
 
 ````md
-::: demo 一个普通 Demo
+::: demo Demo 演示
 
 ```html
 <h1>Mr.Hope</h1>
@@ -232,27 +232,30 @@ span {
 
 ::::
 
-::: demo [react] 一个 React Demo
+::: demo [react] 一个函数式 React Demo
 
 ```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "十分帅" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
+export default () => {
+  const message = "十分帅";
+
+  const handler = () => {
+    alert(message);
+  };
+
+  return (
+    <div className="box">
+      Mr.Hope
+      <span id="very" onClick={handler}>
+        {message}
+      </span>
+    </div>
+  );
+};
 ```
 
 ```css
-.box-react span {
-  color: red;
+.box span {
+  color: blue;
 }
 ```
 
@@ -261,7 +264,39 @@ export default class App extends React.Component {
 :::: details 代码
 
 ````md
-::: demo [react] 一个 React Demo
+::: demo [react] 一个函数式 React Demo
+
+```js
+export default () => {
+  const message = "十分帅";
+
+  const handler = () => {
+    alert(message);
+  };
+
+  return (
+    <div className="box">
+      Mr.Hope
+      <span id="very" onClick={handler}>
+        {message}
+      </span>
+    </div>
+  );
+};
+```
+
+```css
+.box span {
+  color: blue;
+}
+```
+
+:::
+````
+
+::::
+
+::: demo [react] 一个类式 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -271,10 +306,51 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
+      <div className="box">
+        Mr.Hope
+        <span id="very" onClick={this.handler}>
+          {this.state.message}
+        </span>
       </div>
     );
+  }
+  handler() {
+    alert(this.state.message);
+  }
+}
+```
+
+```css
+.box span {
+  color: blue;
+}
+```
+
+:::
+
+:::: details 代码
+
+````md
+::: demo [react] 一个类式 React Demo
+
+```js
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { message: "十分帅" };
+  }
+  render() {
+    return (
+      <div className="box">
+        Mr.Hope
+        <span id="very" onClick={this.handler}>
+          {this.state.message}
+        </span>
+      </div>
+    );
+  }
+  handler() {
+    alert(this.state.message);
   }
 }
 ```
@@ -294,17 +370,22 @@ export default class App extends React.Component {
 
 ```vue
 <template>
-  <div class="box-vue">
-    Mr.Hope <span>{{ message }}</span>
+  <div class="box">
+    Mr.Hope <span @click="handler">{{ message }}</span>
   </div>
 </template>
 <script>
 export default {
   data: () => ({ message: "十分帅" }),
+  methods: {
+    handler() {
+      alert(this.message);
+    },
+  },
 };
 </script>
 <style>
-.box-vue span {
+.box span {
   color: red;
 }
 </style>
@@ -319,17 +400,22 @@ export default {
 
 ```vue
 <template>
-  <div class="box-vue">
-    Mr.Hope <span>{{ message }}</span>
+  <div class="box">
+    Mr.Hope <span @click="handler">{{ message }}</span>
   </div>
 </template>
 <script>
 export default {
   data: () => ({ message: "十分帅" }),
+  methods: {
+    handler() {
+      alert(this.message);
+    },
+  },
 };
 </script>
 <style>
-.box-vue span {
+.box span {
   color: red;
 }
 </style>
@@ -340,7 +426,7 @@ export default {
 
 ::::
 
-::: demo 一个普通 Demo
+::: demo 一个使用浏览器不支持解析语言 Demo
 
 ```md
 # 标题
@@ -369,7 +455,7 @@ h1 {
 :::: details 代码
 
 ````md
-::: demo 一个普通 Demo
+::: demo 一个使用浏览器不支持解析语言 Demo
 
 ```md
 # 标题
