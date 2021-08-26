@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-sitemap",
-  "version": "1.19.1",
+  "version": "1.20.0",
   "description": "Sitemap plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -29,7 +29,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "1.19.1",
+    "@mr-hope/vuepress-types": "1.20.0",
     "@types/fs-extra": "^9.0.12",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
