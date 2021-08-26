@@ -1,3 +1,4 @@
+import type { Code } from "./typings";
 import type { CodeDemoOptions } from "../../types";
 
 export const options = CODE_DEMO_OPTIONS;
@@ -84,26 +85,64 @@ export const getConfig = (
   ),
 });
 
-export const injectCSS = (css: string, id: string): void => {
-  const wrapper = document.querySelector(`#${id}`);
+export const loadScript = (
+  state: Record<string, Promise<void>>,
+  link: string
+): Promise<void> => {
+  if (state[link] !== undefined) return state[link];
 
-  const reg = /([\s\S]*?)\{([\s\S]*?)\}/gu;
-  let scopeCss = "";
-  let result;
+  const loadEvent = new Promise<void>((resolve) => {
+    const script = document.createElement("script");
 
-  while ((result = reg.exec(css))) {
-    const [, selectors, definition] = result;
-    scopeCss += `${selectors
-      .replace(/\n/g, "")
-      .split(",")
-      .map((selector) => `#${id} .demo-wrapper ${selector}`)
-      .join(",")}{${definition}}`;
+    script.src = link;
+    document.getElementsByTagName("body")[0].appendChild(script);
+
+    script.onload = (): void => {
+      resolve();
+    };
+  });
+
+  state[link] = loadEvent;
+
+  return loadEvent;
+};
+
+export const injectCSS = (shadowRoot: ShadowRoot, code: Code): void => {
+  if (
+    code.css &&
+    // style not injected
+    Array.from(shadowRoot.childNodes).every(
+      (element) => element.nodeName !== "STYLE"
+    )
+  ) {
+    const style = h("style", { innerHTML: code.css });
+
+    shadowRoot.appendChild(style);
   }
+};
 
-  const style = h("style", { innerHTML: scopeCss });
+export const injectScript = (
+  id: string,
+  shadowRoot: ShadowRoot,
+  code: Code
+): void => {
+  const scriptText = code.getScript();
 
-  if (wrapper && !wrapper.hasAttribute("demo-styled")) {
-    wrapper.appendChild(style);
-    wrapper.setAttribute("demo-styled", "");
+  if (
+    scriptText &&
+    // style not injected
+    Array.from(shadowRoot.childNodes).every(
+      (element) => element.nodeName !== "SCRIPT"
+    )
+  ) {
+    const script = document.createElement("script");
+
+    script.appendChild(
+      document.createTextNode(
+        // here we are fixing `document` variable back to shadowDOM
+        `{const document=window.document.querySelector('#${id} .demo-wrapper').shadowRoot;\n${scriptText}}`
+      )
+    );
+    shadowRoot.appendChild(script);
   }
 };

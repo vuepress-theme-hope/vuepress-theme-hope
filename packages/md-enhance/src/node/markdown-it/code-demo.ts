@@ -31,16 +31,14 @@ export const codeDemoRender = (tokens: Token[], idx: number): string => {
 
   return `
           <div
-            id="code-demo-${hash(code)}"
+            id="code-demo-${hash([code, config])}"
             class="code-demo-wrapper"
   ${type ? `data-type="${encodeURIComponent(type[1])}"` : ""}
  ${title ? `data-title="${encodeURIComponent(title[1])}"` : ""}
 ${config ? `data-config="${config}"` : ""}
             data-code="${encodeURIComponent(JSON.stringify(code))}"
           >
-              <div class="demo-wrapper">
-                <div class="code-demo-app" />
-              </div>
+              <div class="demo-wrapper" />
               <div class="code-wrapper">
                 <div class="code">
 `;

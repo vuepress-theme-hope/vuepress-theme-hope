@@ -1,14 +1,7 @@
 import { getConfig, preProcessorConfig } from "./utils";
 
 import type Babel from "@babel/core";
-import type { FunctionComponent } from "react";
-import type {
-  CodeType,
-  NormalCode,
-  ReactCode,
-  VueCode,
-  VueScript,
-} from "./typings";
+import type { Code, CodeType } from "./typings";
 import type { PreProcessorType } from "./utils";
 import type { CodeDemoOptions } from "../../types";
 
@@ -56,15 +49,15 @@ const handleHTML = (html: string): string =>
     .replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
 
 const getHtmlTemplate = (html: string): string =>
-  `<div id="app">${handleHTML(html)}</div>`;
+  `<div id="app">\n${handleHTML(html)}\n</div>`;
 
 const getReactTemplate = (code: string): string =>
   `${code
-    .replace("export default ", "$reactApp")
+    .replace("export default ", "const $reactApp = ")
     .replace(
       /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
       ""
-    )}ReactDOM.render(React.createElement($reactApp), document.getElementById("app"))`;
+    )};\nReactDOM.render(React.createElement($reactApp), document.getElementById("app"))`;
 
 const getVueJsTemplate = (js: string): string =>
   `new Vue({ el: '#app', ${js
@@ -75,16 +68,13 @@ const getVueJsTemplate = (js: string): string =>
     )
     .trim()} })`;
 
-export const run = <T>(scriptStr: string): T =>
-  // eslint-disable-next-line @typescript-eslint/no-implied-eval
-  new Function(
-    `return (function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?module.exports.default:module.exports;})({})`
-  )() as T;
+export const wrapper = (scriptStr: string): string =>
+  `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?module.exports.default:module.exports;})({})`;
 
 export const getNormalCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
-): NormalCode => {
+): Code => {
   const codeConfig = getConfig(config);
   const js = code.js[0] || "";
 
@@ -94,21 +84,17 @@ export const getNormalCode = (
     js,
     css: code.css[0] || "",
     isLegal: code.isLegal,
-    run: (): unknown => {
-      const script = codeConfig.useBabel
+    getScript: (): string =>
+      codeConfig.useBabel
         ? window.Babel.transform(js, { presets: ["es2015"] })?.code || ""
-        : js;
-
-      // eslint-disable-next-line @typescript-eslint/no-implied-eval
-      return new Function(script)();
-    },
+        : js,
   };
 };
 
 export const getVueCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
-): VueCode => {
+): Code => {
   const codeConfig = getConfig(config);
 
   const vueTemplate = code.html[0] || "";
@@ -137,19 +123,17 @@ export const getVueCode = (
     css,
     isLegal,
     jsLib: [codeConfig.vue, ...codeConfig.jsLib],
-    getScript: (): VueScript => {
-      const script = config.useBabel
-        ? run<VueScript>(
-            window.Babel?.transform(js, { presets: ["es2015"] })?.code || ""
-          )
-        : // eslint-disable-next-line @typescript-eslint/no-implied-eval
-          (new Function(
-            js.replace(/export\s+default/u, "return")
-          )() as VueScript);
+    getScript: (): string => {
+      const scriptStr = config.useBabel
+        ? window.Babel?.transform(js, { presets: ["es2015"] })?.code || ""
+        : js.replace(/export\s+default/u, "return");
 
-      script.template = html;
-
-      return script;
+      return `const VueAppOptions=${wrapper(
+        scriptStr
+      )};VueAppOptions.template=\`${html.replace(
+        "`",
+        '\\`"'
+      )}\`;document.firstElementChild.appendChild(new (window.Vue.extend(VueAppOptions))().$mount().$el);`;
     },
   };
 };
@@ -157,7 +141,7 @@ export const getVueCode = (
 export const getReactCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
-): ReactCode => {
+): Code => {
   const codeConfig = getConfig(config);
 
   return {
@@ -173,13 +157,15 @@ export const getReactCode = (
         : ""),
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
-    getComponent: (): FunctionComponent => {
+    getScript: (): string => {
       const scriptStr =
         window.Babel?.transform(code.js[0] || "", {
           presets: ["es2015", "react"],
         })?.code || "";
 
-      return run<FunctionComponent>(scriptStr);
+      return `const element = window.React.createElement(${wrapper(
+        scriptStr
+      )});window.ReactDOM.render(element, document.firstElementChild)`;
     },
   };
 };

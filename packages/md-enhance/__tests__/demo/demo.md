@@ -53,7 +53,38 @@ span {
 
 ::::
 
-::: demo [react] 一个 React Demo
+::: demo [react] 一个函数式 React Demo
+
+```js
+export default () => {
+  const message = "十分帅";
+
+  const handler = () => {
+    document.querySelector("#very").addEventListener("click", () => {
+      alert("十分帅");
+    });
+  };
+
+  return (
+    <div className="box">
+      Mr.Hope
+      <span id="very" onClick={handler}>
+        {message}
+      </span>
+    </div>
+  );
+};
+```
+
+```css
+.box span {
+  color: blue;
+}
+```
+
+:::
+
+::: demo [react] 一个类式 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -63,17 +94,23 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
+      <div className="box">
+        Mr.Hope
+        <span id="very" onClick={this.handler}>
+          {this.state.message}
+        </span>
       </div>
     );
+  }
+  handler() {
+    alert("十分帅");
   }
 }
 ```
 
 ```css
-.box-react span {
-  color: red;
+.box span {
+  color: blue;
 }
 ```
 
@@ -115,7 +152,7 @@ export default class App extends React.Component {
 
 ```vue
 <template>
-  <div class="box-vue">
+  <div class="box">
     Mr.Hope <span>{{ message }}</span>
   </div>
 </template>
@@ -125,8 +162,36 @@ export default {
 };
 </script>
 <style>
-.box-vue span {
-  color: red;
+.box span {
+  color: green;
+}
+</style>
+```
+
+```json
+{
+  "useBabel": true
+}
+```
+
+:::
+
+::: demo [vue] 一个 Vue Demo
+
+```vue
+<template>
+  <div class="box">
+    Mr.Hope <span>{{ message }}</span>
+  </div>
+</template>
+<script>
+export default {
+  data: () => ({ message: "十分帅" }),
+};
+</script>
+<style>
+.box span {
+  color: green;
 }
 </style>
 ```
@@ -140,7 +205,7 @@ export default {
 
 ```vue
 <template>
-  <div class="box-vue">
+  <div class="box">
     Mr.Hope <span>{{ message }}</span>
   </div>
 </template>
@@ -150,8 +215,8 @@ export default {
 };
 </script>
 <style>
-.box-vue span {
-  color: red;
+.box span {
+  color: green;
 }
 </style>
 ```
