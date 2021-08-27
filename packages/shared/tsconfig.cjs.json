@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "importHelpers": false,
     "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./lib/cjs"
