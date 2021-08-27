@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.20.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.0...v1.20.1) (2021-08-27)
+
+### Bug Fixes
+
+- **shared:** fix missing tslib error ([bab8026](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bab8026129d2a8f1bb50930a9503e3df95798f7f))
+
 ## [1.20.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.19.3...v1.20.0) (2021-08-26)
 
 ### Bug Fixes
