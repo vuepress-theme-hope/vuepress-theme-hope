@@ -114,6 +114,8 @@
 </template>
 <script src="./BlogInfoList" />
 <style lang="stylus">
+@require '~@mr-hope/vuepress-shared/styles/reset'
+
 .blog-info-list
   margin 8px auto
   padding 8px 16px
@@ -132,6 +134,7 @@
     margin-bottom 8px
 
     .switch-button
+      button()
       width 44px
       height 44px
       margin 0 8px
