@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.20.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.1...v1.20.2) (2021-08-28)
+
+### Bug Fixes
+
+- **theme:** style fix ([9036a32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9036a32acb33f12b0c8a795aabb5ee1171934923))
+
 ## [1.20.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.0...v1.20.1) (2021-08-27)
 
 ### Bug Fixes
