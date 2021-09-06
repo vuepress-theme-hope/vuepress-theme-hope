@@ -88,7 +88,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.15.0",
+    "@babel/core": "7.15.5",
     "@babel/plugin-transform-modules-commonjs": "7.15.0",
     "@babel/preset-env": "7.15.0",
     "@commitlint/cli": "13.1.0",
