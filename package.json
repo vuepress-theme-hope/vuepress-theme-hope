@@ -106,7 +106,7 @@
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "7.0.0",
     "@vuedx/typescript-plugin-vue": "0.7.4",
-    "babel-jest": "27.0.6",
+    "babel-jest": "27.1.1",
     "concurrently": "6.2.1",
     "conventional-changelog-cli": "2.1.1",
     "cpx2": "3.0.2",
