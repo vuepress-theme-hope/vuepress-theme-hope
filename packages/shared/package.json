@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@types/webpack-dev-server": "^4.0.0",
-    "dayjs": "^1.10.6"
+    "dayjs": "^1.10.7"
   },
   "publishConfig": {
     "access": "public"
