@@ -118,7 +118,7 @@
     "eslint-plugin-vue": "7.16.0",
     "husky": "7.0.2",
     "increase-memory-limit": "1.0.7",
-    "inquirer": "8.1.2",
+    "inquirer": "8.1.5",
     "jest": "27.0.6",
     "lerna": "4.0.0",
     "lint-staged": "11.1.2",
