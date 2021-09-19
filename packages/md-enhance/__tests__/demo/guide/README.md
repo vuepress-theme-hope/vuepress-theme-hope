@@ -139,7 +139,7 @@ span {
 
 :::
 
-- [View Detail](demo.md)
+- [View Detail](demo/README.md)
 
 ### Presentation
 

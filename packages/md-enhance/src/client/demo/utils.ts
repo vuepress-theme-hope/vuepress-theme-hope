@@ -1,76 +1,13 @@
-import type Babel from "@babel/core";
-import type { FunctionComponent } from "react";
-import type {
-  CodeType,
-  NormalCode,
-  ReactCode,
-  VueCode,
-  VueScript,
-} from "./typings";
+import type { Code } from "./typings";
 import type { CodeDemoOptions } from "../../shared";
-
-declare global {
-  interface Window {
-    Babel: typeof Babel;
-  }
-}
 
 declare const CODE_DEMO_OPTIONS: CodeDemoOptions;
 
 export const options = CODE_DEMO_OPTIONS;
 
-export const h = (
-  tag: string,
-  attrs: Record<string, string>,
-  children?: HTMLElement[]
-): HTMLElement => {
-  const node = document.createElement(tag);
-  attrs &&
-    Object.keys(attrs).forEach((key) => {
-      if (!key.indexOf("data")) {
-        const k = key.replace("data", "");
-        node.dataset[k] = attrs[key];
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-      } else node[key] = attrs[key];
-    });
+export type PreProcessorType = "html" | "js" | "css";
 
-  if (children)
-    children.forEach((child) => {
-      node.appendChild(child);
-    });
-
-  return node;
-};
-
-const handleHTML = (html: string): string =>
-  html
-    .replace(/<br \/>/g, "<br>")
-    .replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
-
-const getHtmlTemplate = (html: string): string =>
-  `<div id="app">${handleHTML(html)}</div>`;
-
-const getReactTemplate = (code: string): string =>
-  `${code
-    .replace("export default ", "")
-    .replace(
-      /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
-      ""
-    )}ReactDOM.render(React.createElement(App), document.getElementById("app"))`;
-
-const getVueJsTemplate = (js: string): string =>
-  `new Vue({ el: '#app', ${js
-    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "$1")
-    .replace(
-      /export\s+default\s*Vue\.extend\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "$1"
-    )
-    .trim()} })`;
-
-type PreProcessorType = "html" | "js" | "css";
-
-const preProcessorConfig: Record<
+export const preProcessorConfig: Record<
   PreProcessorType,
   {
     types: string[];
@@ -113,177 +50,101 @@ const preProcessorConfig: Record<
   },
 };
 
+export const h = (
+  tag: string,
+  attrs: Record<string, string>,
+  children?: HTMLElement[]
+): HTMLElement => {
+  const node = document.createElement(tag);
+  attrs &&
+    Object.keys(attrs).forEach((key) => {
+      if (!key.indexOf("data")) {
+        const k = key.replace("data", "");
+        node.dataset[k] = attrs[key];
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+      } else node[key] = attrs[key];
+    });
+
+  if (children)
+    children.forEach((child) => {
+      node.appendChild(child);
+    });
+
+  return node;
+};
+
 export const getConfig = (
   config: Partial<CodeDemoOptions>
-): CodeDemoOptions => {
-  const result = {
-    ...options,
-    ...config,
-  };
+): CodeDemoOptions => ({
+  ...options,
+  ...config,
+  jsLib: Array.from(
+    new Set([...(options.jsLib || []), ...(config.jsLib || [])])
+  ),
+  cssLib: Array.from(
+    new Set([...(options.cssLib || []), ...(config.cssLib || [])])
+  ),
+});
 
-  if (config.jsLib && options.jsLib)
-    result.jsLib = Array.from(
-      new Set([...(options.jsLib || []), ...(config.jsLib || [])])
-    );
+export const loadScript = (
+  state: Record<string, Promise<void>>,
+  link: string
+): Promise<void> => {
+  if (state[link] !== undefined) return state[link];
 
-  if (config.cssLib && options.cssLib)
-    result.cssLib = Array.from(
-      new Set([...(options.cssLib || []), ...(config.cssLib || [])])
-    );
+  const loadEvent = new Promise<void>((resolve) => {
+    const script = document.createElement("script");
 
-  return result;
-};
+    script.src = link;
+    document.getElementsByTagName("body")[0].appendChild(script);
 
-export const getCode = (code: Record<string, string>): CodeType => {
-  const languages = Object.keys(code);
-  const result: CodeType = {
-    html: [],
-    js: [],
-    css: [],
-    isLegal: false,
-  };
-
-  (["html", "js", "css"] as PreProcessorType[]).forEach((type) => {
-    const match = languages.filter((language) =>
-      preProcessorConfig[type].types.includes(language)
-    );
-
-    if (match.length) {
-      const language = match[0];
-
-      result[type] = [
-        code[language].replace(/^\n|\n$/g, ""),
-        preProcessorConfig[type].map[language] || language,
-      ];
-    }
+    script.onload = (): void => {
+      resolve();
+    };
   });
 
-  result.isLegal =
-    (!result.html.length || result.html[1] === "none") &&
-    (!result.js.length || result.js[1] === "none") &&
-    (!result.css.length || result.css[1] === "none");
+  state[link] = loadEvent;
 
-  return result;
+  return loadEvent;
 };
 
-export const getNormalCode = (
-  code: CodeType,
-  config: Partial<CodeDemoOptions>
-): NormalCode => {
-  const codeConfig = getConfig(config);
-  const js = code.js[0] || "";
+export const injectCSS = (shadowRoot: ShadowRoot, code: Code): void => {
+  if (
+    code.css &&
+    // style not injected
+    Array.from(shadowRoot.childNodes).every(
+      (element) => element.nodeName !== "STYLE"
+    )
+  ) {
+    const style = h("style", { innerHTML: code.css });
 
-  return {
-    ...codeConfig,
-    html: handleHTML(code.html[0] || ""),
-    js,
-    css: code.css[0] || "",
-    isLegal: code.isLegal,
-    run: (): unknown => {
-      const script = codeConfig.useBabel
-        ? window.Babel.transform(js, { presets: ["es2015"] })?.code || ""
-        : js;
-
-      // eslint-disable-next-line @typescript-eslint/no-implied-eval
-      return eval(`(function(){${script}})()`) as unknown;
-    },
-  };
-};
-
-export const getVueCode = (
-  code: CodeType,
-  config: Partial<CodeDemoOptions>
-): VueCode => {
-  const codeConfig = getConfig(config);
-
-  const vueTemplate = code.html[0] || "";
-  const htmlBlock = /<template>([\s\S]+)<\/template>/u.exec(vueTemplate);
-  const jsBlock = /<script(\s*lang=(['"])(.*?)\2)?>([\s\S]+)<\/script>/u.exec(
-    vueTemplate
-  );
-  const cssBlock =
-    /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>/u.exec(
-      vueTemplate
-    );
-  const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
-  const [js = "", jsLang = ""] = jsBlock
-    ? [jsBlock[4].replace(/^\n|\n$/g, ""), jsBlock[3]]
-    : [];
-  const [css = "", cssLang = ""] = cssBlock
-    ? [cssBlock[4].replace(/^\n|\n$/g, ""), cssBlock[3]]
-    : [];
-
-  const isLegal = jsLang === "" && (cssLang === "" || cssLang === "css");
-
-  return {
-    ...codeConfig,
-    html: getHtmlTemplate(html),
-    js: getVueJsTemplate(js),
-    css,
-    isLegal,
-    jsLib: [codeConfig.vue, ...codeConfig.jsLib],
-    getScript: (): VueScript => {
-      const [commonScript, componentScript] = js.split(/export\s+default/u);
-      const scriptString = `(function() {${commonScript} ; return ${componentScript}})()`;
-
-      const scriptStr = config.useBabel
-        ? window.Babel?.transform(scriptString, { presets: ["es2015"] })
-            ?.code || ""
-        : scriptString;
-
-      const scriptObj = eval(scriptStr) as VueScript;
-      scriptObj.template = html;
-
-      return scriptObj;
-    },
-  };
-};
-
-export const getReactCode = (
-  code: CodeType,
-  config: Partial<CodeDemoOptions>
-): ReactCode => {
-  const codeConfig = getConfig(config);
-
-  return {
-    ...codeConfig,
-    html: getHtmlTemplate(""),
-    js: getReactTemplate(code.js[0] || ""),
-    css: code.css[0] || "",
-    isLegal: code.isLegal,
-    jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
-    getComponent: (): FunctionComponent =>
-      // eslint-disable-next-line @typescript-eslint/no-implied-eval
-      new Function(
-        `return (function(exports){var module={};module.exports=exports;${
-          window.Babel?.transform(code.js[0] || "", {
-            presets: ["es2015", "react"],
-          })?.code || ""
-        };return module.exports.__esModule?module.exports.default:module.exports;})({})`
-      )() as FunctionComponent,
-  };
-};
-
-export const injectCSS = (css: string, id: string): void => {
-  const wrapper = document.querySelector(`#${id}`);
-
-  const reg = /([\s\S]*?)\{([\s\S]*?)\}/gu;
-  let scopeCss = "";
-  let result;
-
-  while ((result = reg.exec(css))) {
-    const [, selectors, definition] = result;
-    scopeCss += `${selectors
-      .replace(/\n/g, "")
-      .split(",")
-      .map((selector) => `#${id} .demo-wrapper ${selector}`)
-      .join(",")}{${definition}}`;
+    shadowRoot.appendChild(style);
   }
+};
 
-  const style = h("style", { innerHTML: scopeCss });
+export const injectScript = (
+  id: string,
+  shadowRoot: ShadowRoot,
+  code: Code
+): void => {
+  const scriptText = code.getScript();
 
-  if (wrapper && !wrapper.hasAttribute("demo-styled")) {
-    wrapper.appendChild(style);
-    wrapper.setAttribute("demo-styled", "");
+  if (
+    scriptText &&
+    // style not injected
+    Array.from(shadowRoot.childNodes).every(
+      (element) => element.nodeName !== "SCRIPT"
+    )
+  ) {
+    const script = document.createElement("script");
+
+    script.appendChild(
+      document.createTextNode(
+        // here we are fixing `document` variable back to shadowDOM
+        `{const document=window.document.querySelector('#${id} .demo-wrapper').shadowRoot;\n${scriptText}}`
+      )
+    );
+    shadowRoot.appendChild(script);
   }
 };

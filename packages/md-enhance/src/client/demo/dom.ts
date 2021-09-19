@@ -1,6 +1,6 @@
-import { h, injectCSS } from "./utils";
+import { h, injectCSS, injectScript } from "./utils";
 
-import type { CodeType, Code, ReactCode, VueCode, NormalCode } from "./typings";
+import type { CodeType, Code } from "./typings";
 
 export const select = (
   node: Element | Document,
@@ -105,16 +105,16 @@ const getJsfiddleBtn = ({ html, js, css, jsLib, cssLib }: Code): HTMLElement =>
 
 export interface DOMInitOption {
   container: HTMLElement;
-  code: VueCode | NormalCode | ReactCode;
+  code: Code;
   codeType: CodeType;
-  title: string;
+  innerHTML?: boolean;
 }
 
 export const initDom = ({
   code,
   codeType,
   container,
-  title,
+  innerHTML = false,
 }: DOMInitOption): void => {
   const { id } = container;
   const demoWrapper = select(container, "demo-wrapper")[0];
@@ -122,7 +122,20 @@ export const initDom = ({
   const codeContainer = select(container, "code")[0];
   const footer = select(container, "code-demo-footer")[0];
 
+  const title = decodeURIComponent(container.dataset.title || "");
+
+  // attach a shadow root to demo
+  const shadowRoot = demoWrapper.attachShadow({ mode: "open" });
+  const appElement = document.createElement("div");
+
+  appElement.classList.add("code-demo-app");
+  shadowRoot.appendChild(appElement);
+
   if (code.isLegal) {
+    if (innerHTML) appElement.innerHTML = code.html;
+    injectCSS(shadowRoot, code);
+    injectScript(id, shadowRoot, code);
+
     const expandButton = h("button", { className: "expand down" });
 
     footer.appendChild(expandButton);
@@ -134,8 +147,6 @@ export const initDom = ({
     );
 
     codeWrapper.style.height = "0";
-
-    if (code.css) injectCSS(code.css, id);
 
     if (code.jsfiddle !== false) footer.appendChild(getJsfiddleBtn(code));
     if (code.codepen !== false) footer.appendChild(getCodepenButton(code));
