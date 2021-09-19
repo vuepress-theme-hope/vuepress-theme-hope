@@ -94,6 +94,7 @@
   }
 
   .expand {
+    @include reset.button();
     @include arrow.arrow();
     position: relative;
     margin: 8px;
