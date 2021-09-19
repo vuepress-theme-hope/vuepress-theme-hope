@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
+
+### Bug Fixes
+
+- **components:** allow mutiple $page ([1f9b8f7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1f9b8f731d0d47c407774cec0d586df3bcb2de20))
+- **components:** improve a11y ([cc506bc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/cc506bc9651843dddbdd49fa4db39051350a52c9))
+- style fixes ([c9430f5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c9430f59f8a384e8fd90bc68a23307950fdea56d))
+
 # [2.0.0-alpha.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
 
 ### Bug Fixes

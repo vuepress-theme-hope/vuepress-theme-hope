@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
+
+### Features
+
+- **add-this:** warn at startup ([131e6c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/131e6c1332d6525ccae6f6f98bf3c79bdd7e32a1))
+
 # [2.0.0-alpha.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
 
 **Note:** Version bump only for package vuepress-plugin-add-this

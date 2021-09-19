@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
+
+### Bug Fixes
+
+- **components:** allow mutiple $page ([1f9b8f7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f9b8f731d0d47c407774cec0d586df3bcb2de20))
+- **components:** improve a11y ([cc506bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc506bc9651843dddbdd49fa4db39051350a52c9))
+- style fixes ([c9430f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c9430f59f8a384e8fd90bc68a23307950fdea56d))
+- **theme:** fix navbar style ([92503bd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92503bd7753ace84054ae700b22ee9701ca59ba6))
+
+### Features
+
+- **add-this:** warn at startup ([131e6c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/131e6c1332d6525ccae6f6f98bf3c79bdd7e32a1))
+- **md-enhance:** rebuild code-demo ([e7abb3a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7abb3a0ac513dc8244da3a40c3fd8f8f32681b9))
+- **md-enhance:** update code demo ([4b8e598](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b8e598fc838a1814c76c8c9e7c97a0685122b6e))
+
 # [2.0.0-alpha.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
 
 ### Bug Fixes

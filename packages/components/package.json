@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "2.0.0-alpha.6",
+  "version": "2.0.0-alpha.7",
   "description": "Components plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -41,12 +41,12 @@
     "dev:rollup": "rollup -c -w"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.6",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.7",
     "@types/lodash.debounce": "^4.0.6",
     "lodash.debounce": "^4.0.8",
     "screenfull": "^5.1.0",
     "vue-router": "^4.0.11",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.6"
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.7"
   },
   "publishConfig": {
     "access": "public"
