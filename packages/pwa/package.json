@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-pwa",
-  "version": "1.20.1",
+  "version": "1.20.3",
   "description": "Powerful PWA plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "1.20.1",
-    "@mr-hope/vuepress-types": "1.20.0",
+    "@mr-hope/vuepress-types": "1.20.3",
     "@types/fs-extra": "^9.0.12",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
