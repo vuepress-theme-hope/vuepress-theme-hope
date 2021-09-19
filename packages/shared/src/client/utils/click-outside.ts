@@ -1,7 +1,7 @@
 import type { DirectiveBinding, DirectiveHook, Directive, VNode } from "vue";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __SSR__: boolean;
+declare const __VUEPRESS_SSR__: boolean;
 
 export type ClickOutSideHandler = () => void;
 
@@ -69,7 +69,7 @@ export const mounted: DirectiveHook<TargetElement, null, ClickOutSideHandler> =
     };
     const clickHandler =
       "ontouchstart" in document.documentElement ? "touchstart" : "click";
-    if (!__SSR__) document.addEventListener(clickHandler, handler);
+    if (!__VUEPRESS_SSR__) document.addEventListener(clickHandler, handler);
   };
 
 export const updated: DirectiveHook<TargetElement, VNode, ClickOutSideHandler> =
@@ -82,7 +82,7 @@ export const beforeUnmount: DirectiveHook<TargetElement> = (el) => {
   // Remove Event Listeners
   const clickHandler =
     "ontouchstart" in document.documentElement ? "touchstart" : "click";
-  if (!__SSR__ && el.$vueClickOutside)
+  if (!__VUEPRESS_SSR__ && el.$vueClickOutside)
     document.removeEventListener(clickHandler, el.$vueClickOutside.handler);
   delete el.$vueClickOutside;
 };

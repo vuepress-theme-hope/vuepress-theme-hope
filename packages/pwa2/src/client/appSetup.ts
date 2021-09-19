@@ -7,10 +7,10 @@ import { serviceWorkerPath } from "./define";
 import type { PwaEvent } from "./composables";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __SSR__: boolean;
+declare const __VUEPRESS_SSR__: boolean;
 
 export default defineClientAppSetup(() => {
-  if (__SSR__) return;
+  if (__VUEPRESS_SSR__) return;
 
   // create event emitter and provide it
   const event: PwaEvent = mitt();
