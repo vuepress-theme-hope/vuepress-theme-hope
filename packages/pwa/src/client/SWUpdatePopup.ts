@@ -31,7 +31,7 @@ export default Vue.extend({
     reload(): void {
       if (this.updateEvent)
         void this.updateEvent.skipWaiting().then(() => {
-          location.reload(true);
+          location.reload();
           this.updateEvent = null;
         });
     },

@@ -50,12 +50,12 @@
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.11.1",
     "@types/lodash.debounce": "^4.0.6",
-    "@types/markdown-it": "^12.2.0",
+    "@types/markdown-it": "^10.0.3",
     "@types/mermaid": "^8.2.7",
     "flowchart.js": "^1.15.0",
-    "katex": "^0.13.13",
+    "katex": "^0.13.18",
     "lodash.debounce": "^4.0.8",
-    "mermaid": "^8.11.5",
+    "mermaid": "^8.12.1",
     "reveal.js": "^4.1.3",
     "vuepress-plugin-container": "^2.1.5"
   }
