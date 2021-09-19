@@ -20,7 +20,7 @@ export default defineComponent({
     const reload = (): void => {
       if (registration.value) {
         useSkipWaiting(registration.value);
-        location.reload(true);
+        location.reload();
 
         registration.value = null;
       }
