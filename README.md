@@ -18,6 +18,8 @@
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
 ![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test-v2.yml/badge.svg)
 
+[![opencollective](https://opencollective.com/vuepress-theme-hope/tiers/badge.svg)](https://opencollective.com/vuepress-theme-hope)
+
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
 ## Warning
