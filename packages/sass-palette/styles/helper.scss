@@ -1,8 +1,8 @@
-@use 'sass:color';
-@use 'sass:list';
-@use 'sass:map';
-@use 'sass:meta';
-@use 'sass:string';
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
 
 @function is-upper-case($char) {
   @return string.to-lower-case($char) != $char;

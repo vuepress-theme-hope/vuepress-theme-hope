@@ -1,7 +1,7 @@
-@use '@hope/config';
-@use '@mr-hope/vuepress-shared/styles/wrapper';
+@use "@hope/config";
+@use "@mr-hope/vuepress-shared/styles/wrapper";
 
-@use 'footer';
+@use "footer";
 
 .theme-container {
   &.no-navbar {

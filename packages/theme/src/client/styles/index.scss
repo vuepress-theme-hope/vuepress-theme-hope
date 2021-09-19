@@ -1,22 +1,22 @@
-@use 'vars';
-@use 'vars-dark';
+@use "vars";
+@use "vars-dark";
 
 @use "@hope/palette";
 
-@use 'normalize';
+@use "normalize";
 
-@use 'code';
-@use 'home';
+@use "code";
+@use "home";
 
-@use 'medialinks';
-@use 'page';
-@use 'sr-only';
-@use 'toc';
-@use 'transitions';
-@use 'theme';
+@use "medialinks";
+@use "page";
+@use "sr-only";
+@use "toc";
+@use "transitions";
+@use "theme";
 
-@use 'common';
-@use 'layout';
-@use 'page404';
+@use "common";
+@use "layout";
+@use "page404";
 
 @use "@hope/style";
