@@ -56,7 +56,7 @@
     "@types/react-dom": "*",
     "@vuepress/plugin-container": "2.0.0-beta.26",
     "katex": "^0.13.18",
-    "mermaid": "^8.12.1",
+    "mermaid": "^8.13.2",
     "reveal.js": "^4.1.3",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.7"
   }
