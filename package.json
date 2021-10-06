@@ -99,7 +99,7 @@
     "@rollup/plugin-typescript": "8.2.5",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.8",
     "@types/inquirer": "8.1.1",
-    "@types/jest": "27.0.1",
+    "@types/jest": "27.0.2",
     "@types/semver": "7.3.8",
     "@typescript-eslint/eslint-plugin": "4.31.1",
     "@typescript-eslint/parser": "4.31.1",
