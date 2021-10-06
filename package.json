@@ -95,7 +95,7 @@
     "@commitlint/config-conventional": "13.1.0",
     "@rollup/plugin-commonjs": "20.0.0",
     "@rollup/plugin-json": "4.1.0",
-    "@rollup/plugin-node-resolve": "13.0.4",
+    "@rollup/plugin-node-resolve": "13.0.5",
     "@rollup/plugin-typescript": "8.2.5",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.8",
     "@types/inquirer": "8.1.1",
