@@ -19,7 +19,7 @@ features:
     link: /guide/markdown/
 
   - title: Pageviews and comments 💬
-    details: Start pageview statistics and comment support with Valine and Vssue
+    details: Start pageview statistics and comment support with Waline and Vssue
     link: /guide/feature/comment/
 
   - title: Article information display ℹ

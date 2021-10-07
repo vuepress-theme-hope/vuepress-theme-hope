@@ -19,7 +19,7 @@ features:
     link: /zh/guide/markdown/
 
   - title: 浏览量与评论 💬
-    details: 配合 Valine 与 Vssue 来开启阅读量统计与评论支持
+    details: 配合 Waline 与 Vssue 来开启阅读量统计与评论支持
     link: /zh/guide/feature/comment/
 
   - title: 文章信息展示 ℹ

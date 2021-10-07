@@ -18,9 +18,8 @@ tags:
 module.exports = {
   themeConfig: {
     comment: {
-      type: "valine", // Use Valine
-      appId: "...", // your appId
-      appKey: "...", // your appKey
+      type: "waline", // Use Waline
+      serverURL: "...", // your serverUrl
     },
   },
 };

@@ -18,11 +18,10 @@ tags:
 module.exports = {
   themeConfig: {
     comment: {
-      type: "valine", // "valine" 或 "vssue"
+      type: "waline", // "waline", "valine" 或 "vssue"
 
-      // valine 模式下
-      appId: "...", // your appId
-      appKey: "...", // your appKey
+      // waline 模式下
+      serverURL: "...", // your serverURL
     },
   },
 };
