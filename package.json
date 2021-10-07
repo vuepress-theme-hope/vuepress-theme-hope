@@ -93,7 +93,7 @@
     "@babel/preset-env": "7.15.6",
     "@commitlint/cli": "13.2.0",
     "@commitlint/config-conventional": "13.2.0",
-    "@rollup/plugin-commonjs": "20.0.0",
+    "@rollup/plugin-commonjs": "21.0.0",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-node-resolve": "13.0.5",
     "@rollup/plugin-typescript": "8.2.5",
