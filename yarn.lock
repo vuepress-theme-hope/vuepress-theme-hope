@@ -3305,10 +3305,10 @@
     tapable "^2.1.1"
     webpack "^5.38.1"
 
-"@types/webpack-dev-server@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-4.1.0.tgz#d2907eb3705919aec2e25c60b15d47af994375f4"
-  integrity sha512-7nylorFi/q2+TDro3U6q7S/AKIKs0x1hQUqgXAGNRC84owYVH/Av6ishEhgU2z9YUx2pNYU9BWz0qF4S34b6/g==
+"@types/webpack-dev-server@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-4.3.0.tgz#9e2346ffee261e6de1b09cf783be6c85be855615"
+  integrity sha512-AqLGtNwPhX1JvCBLKnLH612T2C3DiICBcU8Os2eL6YyDg/ufrZUNJACpdMmw5/JPoy5ASLq4IUjJgmT39GE+iA==
   dependencies:
     "@types/bonjour" "*"
     "@types/connect-history-api-fallback" "*"
