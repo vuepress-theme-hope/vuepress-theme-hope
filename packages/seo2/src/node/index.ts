@@ -19,7 +19,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
     name: "seo2",
 
     extendsPageData(page): Record<string, unknown> {
-      const meta = page.frontmatter.head || [];
+      const head = page.frontmatter.head || [];
       const pageSeoInfo: PageSeoInfo = {
         page: page as ExtendPage,
         app,
@@ -30,10 +30,10 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
         ...(seoOptions.seo ? seoOptions.seo(pageSeoInfo) : {}),
       };
 
-      appendSEO(meta, metaContext, seoOptions);
-      if (seoOptions.customHead) seoOptions.customHead(meta, pageSeoInfo);
+      appendSEO(head, metaContext, seoOptions);
+      if (seoOptions.customHead) seoOptions.customHead(head, pageSeoInfo);
 
-      return { frontmatter: { ...page.frontmatter, head: meta } };
+      return { frontmatter: { ...page.frontmatter, head } };
     },
 
     async onGenerated(): Promise<void> {
