@@ -13900,10 +13900,10 @@ remark-preset-lint-consistent@5.1.0:
     remark-lint-table-cell-padding "^4.0.0"
     unified "^10.0.0"
 
-remark-preset-lint-markdown-style-guide@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/remark-preset-lint-markdown-style-guide/-/remark-preset-lint-markdown-style-guide-5.1.0.tgz#d91568a7d5878685d2fc1dd0932e4740fa82f323"
-  integrity sha512-cExgd+R7v7gEYUrwa6Q8o8ouo3amW2rfY1pqPU3AbEJfQ/sTmdmrahkAPS8U5QC1MukBP9azmliRvAS191Mc5g==
+remark-preset-lint-markdown-style-guide@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/remark-preset-lint-markdown-style-guide/-/remark-preset-lint-markdown-style-guide-5.1.1.tgz#7dbc13b208b44360041ba92d9596bce289dd4835"
+  integrity sha512-QZr1Z0Ry83kF/qCa41c8JZlNR3RmI18AbQgK1kRKCdrnd4VSEIoMgeneb3B36qnJ8K5xugpf41ePL8oot6IArw==
   dependencies:
     "@types/mdast" "^3.0.0"
     remark-lint "^9.0.0"
@@ -13925,7 +13925,6 @@ remark-preset-lint-markdown-style-guide@5.1.0:
     remark-lint-list-item-spacing "^4.0.0"
     remark-lint-maximum-heading-length "^3.0.0"
     remark-lint-maximum-line-length "^3.0.0"
-    remark-lint-no-auto-link-without-protocol "^3.0.0"
     remark-lint-no-blockquote-without-marker "^5.0.0"
     remark-lint-no-consecutive-blank-lines "^4.0.0"
     remark-lint-no-duplicate-headings "^3.0.0"
