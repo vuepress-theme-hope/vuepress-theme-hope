@@ -6755,10 +6755,10 @@ domhandler@^4.0.0, domhandler@^4.2.0:
   dependencies:
     domelementtype "^2.2.0"
 
-dompurify@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.1.tgz#a47059ca21fd1212d3c8f71fdea6943b8bfbdf6a"
-  integrity sha512-xGWt+NHAQS+4tpgbOAI08yxW0Pr256Gu/FNE2frZVTbgrBUn8M7tz7/ktS/LZ2MHeGqz6topj0/xY+y8R5FBFw==
+dompurify@2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.3.tgz#c1af3eb88be47324432964d8abc75cf4b98d634c"
+  integrity sha512-dqnqRkPMAjOZE0FogZ+ceJNM2dZ3V/yNOuFB7+39qpO93hHhfRpHw3heYQC7DPK9FqbQTfBKUJhiSfz4MvXYwg==
 
 domutils@^1.7.0:
   version "1.7.0"
@@ -10709,16 +10709,16 @@ merge@^2.1.0:
   resolved "https://registry.yarnpkg.com/merge/-/merge-2.1.1.tgz#59ef4bf7e0b3e879186436e8481c06a6c162ca98"
   integrity sha512-jz+Cfrg9GWOZbQAnDQ4hlVnQky+341Yk5ru8bZSe6sIDTCIg8n9i/u7hSQGSVOF3C7lH6mGtqjkiT9G4wFLL0w==
 
-mermaid@^8.13.2:
-  version "8.13.2"
-  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-8.13.2.tgz#9f8abc66ba1c53b132fdaa0d4a80f4717b7b7655"
-  integrity sha512-qTFI7MfC2d+x0Hft5gx063EH9tZg36lERG8o7Zq0Ag+MnO8CgVaMZEU6oA8gzTtTn9upMdy4UlYSLVmavu27cQ==
+mermaid@^8.13.3:
+  version "8.13.3"
+  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-8.13.3.tgz#3e7ae41210cfbe5b252db609ef86be8435b0b75d"
+  integrity sha512-w6KmDtSzkk856WUVqlBsyLZX0q4Jr35IlxiHTPTaWwMgWHFpI8rEJzcxWoyrpxeT/Rac/vvvSFOZymDTeA0iiA==
   dependencies:
     "@braintree/sanitize-url" "^3.1.0"
     d3 "^7.0.0"
     dagre "^0.8.5"
     dagre-d3 "^0.6.4"
-    dompurify "2.3.1"
+    dompurify "2.3.3"
     graphlib "^2.1.8"
     khroma "^1.4.1"
     moment-mini "^2.24.0"
