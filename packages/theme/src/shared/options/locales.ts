@@ -81,6 +81,11 @@ export interface HopeThemeLocaleData extends LocaleData {
   home?: string;
 
   /**
+   * Back button text of current locale
+   */
+  back?: string;
+
+  /**
    * Default author
    */
   author?: string;

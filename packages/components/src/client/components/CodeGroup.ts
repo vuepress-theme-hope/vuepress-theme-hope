@@ -104,7 +104,7 @@ export default defineComponent({
                 onKeydown: (event: KeyboardEvent) =>
                   keyboardHandler(event, index),
               },
-              vnode.props.title
+              vnode.props.title as string[]
             );
           })
         ),

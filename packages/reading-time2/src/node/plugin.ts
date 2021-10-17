@@ -16,7 +16,9 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, app) => {
     extendsPageData: (page): { readingTime: ReadingTime } => ({
       readingTime: readingTime(
         page.content,
-        options.wordPerminute || app.options.themeConfig.wordPerminute || 300
+        options.wordPerminute ||
+          (app.options.themeConfig.wordPerminute as number) ||
+          300
       ),
     }),
   };

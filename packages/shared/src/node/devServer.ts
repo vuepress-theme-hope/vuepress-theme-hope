@@ -1,4 +1,4 @@
-import { mergeConfig } from "vite";
+import { mergeConfig } from "./vite";
 
 import type { App } from "@vuepress/core";
 import type {
@@ -42,7 +42,7 @@ export const useCustomDevServer = (
     };
 
     app.options.bundlerConfig.viteOptions = mergeConfig(
-      app.options.bundlerConfig.viteOptions,
+      app.options.bundlerConfig.viteOptions as Record<string, unknown>,
       { plugins: [viteMockRequestPlugin] }
     );
   }

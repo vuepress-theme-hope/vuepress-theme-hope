@@ -67,7 +67,10 @@ export const deepAssignReverse = (
       typeof originObject[property] === "object" &&
       !Array.isArray(originObject[property])
     )
-      deepAssignReverse(originObject[property], assignObject[property]);
+      deepAssignReverse(
+        originObject[property] as IAnyObject,
+        assignObject[property] as IAnyObject
+      );
   });
 
   return deepAssignReverse(...assignObjects, assignObject);

@@ -57,7 +57,8 @@ export const mounted: DirectiveHook<TargetElement, null, ClickOutSideHandler> =
 
       if (elements && elements.length > 0) elements.unshift(targetNode);
 
-      if (el.contains(targetNode) || isTarget(vNode.el, elements)) return;
+      if (el.contains(targetNode) || isTarget(vNode.el as Node, elements))
+        return;
 
       if (el.$vueClickOutside) el.$vueClickOutside.callback();
     };
