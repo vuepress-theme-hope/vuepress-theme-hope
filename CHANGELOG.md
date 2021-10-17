@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.20.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.2...v1.20.3) (2021-09-19)
+
+- Only Security fixes
+
 ## [1.20.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.1...v1.20.2) (2021-08-28)
 
 ### Bug Fixes
