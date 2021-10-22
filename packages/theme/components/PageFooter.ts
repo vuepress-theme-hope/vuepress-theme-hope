@@ -10,7 +10,7 @@ export default Vue.extend({
 
   computed: {
     footerConfig(): HopeFooterConfig {
-      return this.$themeConfig.footer || {};
+      return this.$themeLocaleConfig.footer || this.$themeConfig.footer || {};
     },
 
     enable(): boolean {

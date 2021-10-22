@@ -5,6 +5,7 @@ import {
   HopeThemeConfig,
   HopeNavBarConfig,
   HopeSideBarConfig,
+  HopeFooterConfig,
 } from "./theme";
 import { PageInfotype } from "@mr-hope/vuepress-plugin-comment";
 import { FeedFrontmatterOption } from "@mr-hope/vuepress-plugin-feed";
@@ -77,6 +78,8 @@ declare module "@mr-hope/vuepress-types" {
     sidebar?: HopeSideBarConfig;
     /** 当前语言的 algolia 设置 */
     algolia?: AlgoliaOption;
+    /** 页脚设置 */
+    footer?: HopeFooterConfig;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface

@@ -4,6 +4,7 @@ import {
   HopeThemeLocaleConfigItem,
 } from "@mr-hope/vuepress-shared";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
+import { HopeFooterConfig } from "./layout";
 
 /** vuepress-theme-hope 多语言配置 */
 export interface HopeLangLocalesConfig
@@ -18,15 +19,6 @@ export interface HopeLangLocalesConfig
   sidebar?: HopeSideBarConfig;
   /** 当前语言的 algolia 设置 */
   algolia?: AlgoliaOption;
-}
-
-/** 处理过的 vuepress-theme-hope 多语言配置 */
-export interface ResolvedHopeLangLocalesConfig
-  extends HopeThemeLocaleConfigItem {
-  /** 导航栏链接 */
-  nav: HopeNavBarConfig;
-  /** 侧边栏配置 */
-  sidebar: HopeSideBarConfig;
-  /** 当前语言的 algolia 设置 */
-  algolia?: AlgoliaOption;
+  /** 页脚设置 */
+  footer?: HopeFooterConfig;
 }
