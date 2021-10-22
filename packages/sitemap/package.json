@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-types": "1.20.3",
-    "@types/fs-extra": "^9.0.12",
+    "@types/fs-extra": "^9.0.13",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
     "sitemap": "^7.0.0"

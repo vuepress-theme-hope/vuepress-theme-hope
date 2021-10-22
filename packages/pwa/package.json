@@ -35,7 +35,7 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "1.20.1",
     "@mr-hope/vuepress-types": "1.20.3",
-    "@types/fs-extra": "^9.0.12",
+    "@types/fs-extra": "^9.0.13",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
     "register-service-worker": "^1.7.2",
