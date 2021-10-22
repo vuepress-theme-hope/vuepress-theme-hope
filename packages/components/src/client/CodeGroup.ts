@@ -1,4 +1,5 @@
 import Vue from "vue";
+import type { VNode } from "vue";
 
 interface CodeTab {
   title: string;
@@ -16,7 +17,7 @@ export default Vue.extend({
   },
 
   watch: {
-    activeTabIndex(index): void {
+    activeTabIndex(index: number): void {
       this.activateCodeTab(index);
     },
   },
@@ -27,7 +28,8 @@ export default Vue.extend({
 
   methods: {
     loadTabs(): void {
-      this.codeTabs = (this.$slots.default || [])
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.codeTabs = ((this.$slots.default as VNode[]) || [])
         .filter((slot) => Boolean(slot.componentOptions))
         .map((slot, index) => {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -63,12 +65,14 @@ export default Vue.extend({
         event.preventDefault();
         if (index + 1 < this.codeTabs.length) {
           this.activeTabIndex = index + 1;
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           (this.$refs.tab as HTMLUListElement[])[index + 1].focus();
         }
       } else if (event.key === "ArrowLeft") {
         event.preventDefault();
         if (index - 1 >= 0) {
           this.activeTabIndex = index - 1;
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           (this.$refs.tab as HTMLUListElement[])[index - 1].focus();
         }
       }

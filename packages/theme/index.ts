@@ -53,8 +53,8 @@ const themeAPI = (
         "copy vuepress-theme-hope into .vuepress/theme for customization."
       )
       .option("--debug", "eject in debug mode")
-      .action((dir = ".") => {
-        void eject(dir);
+      .action((dir: string) => {
+        void eject(dir || ".");
       });
   },
 });

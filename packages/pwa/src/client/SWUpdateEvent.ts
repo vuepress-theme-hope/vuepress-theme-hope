@@ -23,7 +23,7 @@ export default class SWUpdateEvent {
         console.log("[PWA]: Finish worker.skipWaiting().");
         if ((event.data as { error: Error | null }).error)
           reject((event.data as { error: Error | null }).error);
-        else resolve(event.data);
+        else resolve(event.data as void);
       };
 
       worker.postMessage({ type: "skip-waiting" }, [channel.port2]);

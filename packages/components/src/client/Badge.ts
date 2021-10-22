@@ -1,4 +1,5 @@
 import Vue from "vue";
+import type { VNodeChildren } from "vue";
 
 interface ElementOption {
   class: string[];
@@ -31,6 +32,6 @@ export default Vue.extend({
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    return h("span", options, props.text || slots().default);
+    return h("span", options, props.text || (slots().default as VNodeChildren));
   },
 });

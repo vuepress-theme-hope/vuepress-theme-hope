@@ -181,7 +181,7 @@ const resolveSidebarItem = (
     return Object.assign(
       resolvePageforSidebar(
         pages,
-        resolve(prefix, sidebarConfigItem.path, base)
+        resolve(prefix, sidebarConfigItem.path as string, base)
       ),
       { title: sidebarConfigItem.title }
     );
@@ -191,7 +191,7 @@ const resolveSidebarItem = (
     ...sidebarConfigItem,
     type: "group",
     path: sidebarConfigItem.path
-      ? resolve(prefix, sidebarConfigItem.path, base)
+      ? resolve(prefix, sidebarConfigItem.path as string, base)
       : "",
     children: children.map((child) =>
       resolveSidebarItem(

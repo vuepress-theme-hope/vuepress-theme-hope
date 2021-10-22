@@ -1,5 +1,6 @@
 import Vue, { PropType } from "vue";
 import Loading from "./icons/LoadingIcon.vue";
+import type { RevealOptions } from "reveal.js";
 
 type ThemeType =
   | "auto"
@@ -120,7 +121,7 @@ export default Vue.extend({
             ...REVEAL_CONFIG,
             ...(this.$frontmatter.reveal || {}),
             embedded: this.$frontmatter.layout !== "Slide",
-          })
+          } as Partial<RevealOptions>)
           .then(() => {
             this.loading = false;
           });

@@ -39,7 +39,7 @@ const seoPlugin: Plugin<SeoOptions> = (options, context) => {
 
       // In VuePress core, permalinks are built after enhancers.
       const pageClone = Object.assign(
-        Object.create(Object.getPrototypeOf(page)) as Page,
+        Object.create(Object.getPrototypeOf(page) as object) as Page,
         page
       );
       pageClone.buildPermalink();
