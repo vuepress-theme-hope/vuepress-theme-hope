@@ -92,7 +92,7 @@
 
     .theme-light &
       &.light
-        display block
+        display inline-block
 
       &.dark
         display none
@@ -102,7 +102,7 @@
         display none
 
       &.dark
-        display block
+        display inline-block
 
   .can-hide
     @media (max-width $MQMobile)
