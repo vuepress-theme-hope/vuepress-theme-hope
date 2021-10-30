@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.20.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.3...v1.20.4) (2021-10-30)
+
+### Bug Fixes
+
+- fix linter ([8a60742](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a607429f29f21094c9b8b9ae52baaac3ab15be7))
+- **theme:** fix darkLogo, fix [#1117](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1117) ([97733b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/97733b8120f397f6c519a00cde2470d1bca3dab3))
+
+### Features
+
+- **theme:** add i18n support for footer, close [#1081](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1081) ([e3c0bfc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e3c0bfc0c52059bab5056486229b068d4b495159))
+
 ## [1.20.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.2...v1.20.3) (2021-09-19)
 
 - Only Security fixes
