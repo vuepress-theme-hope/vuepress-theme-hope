@@ -26,8 +26,6 @@ overrides:
       - plugin:@typescript-eslint/recommended
       - plugin:prettier/recommended
       - "@vue/typescript/recommended"
-      - "@vue/prettier"
-      - "@vue/prettier/@typescript-eslint"
 
     plugins:
       - "@typescript-eslint"
@@ -75,6 +73,9 @@ overrides:
       "@typescript-eslint/no-explicit-any":
         - warn
         - ignoreRestArgs: true
+
+      vue/multi-word-component-names:
+        - off
 
   - files:
       - "*.ts"
@@ -144,6 +145,9 @@ overrides:
 
       "@typescript-eslint/no-unsafe-member-access":
         - warn
+
+      vue/multi-word-component-names:
+        - off
 
   - files:
       - "**/__tests__/**/*.spec.{j,t}s?(x)"
