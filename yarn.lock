@@ -3242,7 +3242,7 @@
     "@vue/compiler-dom" "3.2.20"
     "@vue/shared" "3.2.20"
 
-"@vue/devtools-api@^6.0.0-beta.14":
+"@vue/devtools-api@^6.0.0-beta.18":
   version "6.0.0-beta.19"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.19.tgz#f8e88059daa424515992426a0c7ea5cde07e99bf"
   integrity sha512-ObzQhgkoVeoyKv+e8+tB/jQBL2smtk/NmC9OmFK8UqdDpoOdv/Kf9pyDWL+IFyM7qLD2C75rszJujvGSPSpGlw==
@@ -3304,7 +3304,7 @@
     "@vue/compiler-ssr" "3.2.20"
     "@vue/shared" "3.2.20"
 
-"@vue/shared@3.2.20", "@vue/shared@^3.2.3":
+"@vue/shared@3.2.20", "@vue/shared@^3.2.20", "@vue/shared@^3.2.3":
   version "3.2.20"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.20.tgz#53746961f731a8ea666e3316271e944238dc31db"
   integrity sha512-FbpX+hD5BvXCQerEYO7jtAGHlhAkhTQ4KIV73kmLWNlawWhTiVuQxizgVb0BOkX5oG9cIRZ42EG++d/k/Efp0w==
@@ -3384,6 +3384,15 @@
     "@vuepress/shared" "2.0.0-beta.25"
     vue "^3.2.3"
     vue-router "^4.0.10"
+
+"@vuepress/client@2.0.0-beta.27":
+  version "2.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@vuepress/client/-/client-2.0.0-beta.27.tgz#1a805a6c51a1a9517b07da263752592be1e17beb"
+  integrity sha512-U34RLDsS1dX2GGpqmHR36sQHvC8sDrJ22f/NOeNbF4TnIK3m591F4Ps04+4F+j5UosNzRMKCZD3+9UMM9g/f7A==
+  dependencies:
+    "@vuepress/shared" "2.0.0-beta.27"
+    vue "^3.2.20"
+    vue-router "^4.0.12"
 
 "@vuepress/core@2.0.0-beta.26":
   version "2.0.0-beta.26"
@@ -3580,6 +3589,13 @@
   integrity sha512-LGjrC/ZHDw4WSg5Ees1OEKh62AP/VQ1WbySzdFewjd0zCBMcyy/1mrH6Srja7NLL9JplPNvc+RJryAJ1mn5ymQ==
   dependencies:
     "@vue/shared" "^3.2.3"
+
+"@vuepress/shared@2.0.0-beta.27":
+  version "2.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.27.tgz#d40ebb57c885328e80c421578155811de7bfee9d"
+  integrity sha512-WvP76yNWik9Y3J9o8flY2bWJCPwqifhl4xjYtP73O5+Yze2r/tf0gO0IJ0ccYUNLDu46ZGlnn5Jett4BABlwBg==
+  dependencies:
+    "@vue/shared" "^3.2.20"
 
 "@vuepress/theme-default@2.0.0-beta.26":
   version "2.0.0-beta.26"
@@ -15893,12 +15909,12 @@ vue-loader@^16.5.0:
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
 
-vue-router@^4.0.10, vue-router@^4.0.11:
-  version "4.0.11"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.11.tgz#cd649a0941c635281763a20965b599643ddc68ed"
-  integrity sha512-sha6I8fx9HWtvTrFZfxZkiQQBpqSeT+UCwauYjkdOQYRvwsGwimlQQE2ayqUwuuXGzquFpCPoXzYKWlzL4OuXg==
+vue-router@^4.0.10, vue-router@^4.0.11, vue-router@^4.0.12:
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
+  integrity sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==
   dependencies:
-    "@vue/devtools-api" "^6.0.0-beta.14"
+    "@vue/devtools-api" "^6.0.0-beta.18"
 
 vue@^3.2.20, vue@^3.2.3:
   version "3.2.20"
