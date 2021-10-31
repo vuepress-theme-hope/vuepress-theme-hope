@@ -37,7 +37,7 @@
           </div>
 
           <div v-if="manifest.screenshots" class="screenshot-wrapper">
-            <button :aria-label="locales.prevImage" @click="scrollToLeft">
+            <button :aria-label="locales.prevImage" @click="scrolltoLeft">
               <ArrowLeftIcon />
             </button>
             <section class="screenshot">
@@ -48,7 +48,7 @@
                 <img alt="App Screenshot" :src="screenshot.src" />
               </div>
             </section>
-            <button :aria-label="locales.nextImage" @click="scrollToRight">
+            <button :aria-label="locales.nextImage" @click="scrolltoRight">
               <ArrowRightIcon />
             </button>
           </div>
