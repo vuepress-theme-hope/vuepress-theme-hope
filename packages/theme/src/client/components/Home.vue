@@ -42,7 +42,7 @@
     <DropTransition :delay="0.16">
       <div v-if="features.length" class="features">
         <template
-          v-for="(feature, index) in $frontmatter.features"
+          v-for="(feature, index) in frontmatter.features"
           :key="feature.title"
         >
           <RouterLink
@@ -102,6 +102,7 @@ interface HomePageFrontmatter extends HopeThemeHomePageFrontmatter {
   features?: {
     title: string;
     details: string;
+    link?: string;
   }[];
 }
 
@@ -177,6 +178,7 @@ export default defineComponent({
       tagline,
       actions,
       features,
+      frontmatter,
       isPure,
     };
   },

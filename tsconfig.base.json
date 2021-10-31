@@ -17,6 +17,7 @@
     "inlineSources": false,
     "lib": ["DOM", "ES2020"],
     "listEmittedFiles": false,
+    "module": "es2015",
     "moduleResolution": "node",
     "newLine": "lf",
     "noEmitOnError": true,
@@ -34,6 +35,6 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "ESNext",
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
+    "types": ["node", "vite/client"]
   }
 }

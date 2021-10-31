@@ -45,15 +45,17 @@ export default defineComponent({
   },
 
   setup(props) {
-    const setStyle = (items: HTMLElement): void => {
-      items.style.transition = `transform ${props.duration}s ease-in-out ${props.delay}s, opacity ${props.duration}s ease-in-out ${props.delay}s`;
-      items.style.transform = "translateY(-20px)";
-      items.style.opacity = "0";
+    const setStyle = (item: Element): void => {
+      (
+        item as HTMLElement
+      ).style.transition = `transform ${props.duration}s ease-in-out ${props.delay}s, opacity ${props.duration}s ease-in-out ${props.delay}s`;
+      (item as HTMLElement).style.transform = "translateY(-20px)";
+      (item as HTMLElement).style.opacity = "0";
     };
 
-    const unsetStyle = (items: HTMLElement): void => {
-      items.style.transform = "translateY(0)";
-      items.style.opacity = "1";
+    const unsetStyle = (item: Element): void => {
+      (item as HTMLElement).style.transform = "translateY(0)";
+      (item as HTMLElement).style.opacity = "1";
     };
 
     return {
