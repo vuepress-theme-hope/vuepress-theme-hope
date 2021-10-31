@@ -53,7 +53,7 @@
     "@types/markdown-it": "^10.0.3",
     "@types/mermaid": "^8.2.7",
     "flowchart.js": "^1.17.0",
-    "katex": "^0.13.23",
+    "katex": "^0.15.0",
     "lodash.debounce": "^4.0.8",
     "mermaid": "^8.13.3",
     "reveal.js": "^4.1.3",

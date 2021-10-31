@@ -10688,10 +10688,17 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-katex@^0.13.0, katex@^0.13.23:
+katex@^0.13.0:
   version "0.13.23"
   resolved "https://registry.yarnpkg.com/katex/-/katex-0.13.23.tgz#39376f02274f0ca0f59fff77d39270bfa138dc5f"
   integrity sha512-Lxki3QN7I/jGSFPcApMYnBVsfqAsG92E/cCB8l8csUOCCEK7i4xo9bxbm0ENW2JdxgZdeA0yYl+A8+m3mdK6JQ==
+  dependencies:
+    commander "^8.0.0"
+
+katex@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.15.0.tgz#a569515eac16b34b0e7187b5ce06f27068b9ed20"
+  integrity sha512-gbJfervLbq+MtaRrO9tbPQXGeI6J5EbATNYFoRe8LUWejbUSg8CQAl7NAbbEklYAtdjW0CvoKvXN5CIEmQJ6Ww==
   dependencies:
     commander "^8.0.0"
 
