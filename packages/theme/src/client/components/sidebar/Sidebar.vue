@@ -19,7 +19,7 @@ import SidebarLinks from "./SidebarLinks";
 import "./styles/index.scss";
 
 export default defineComponent({
-  name: "Sidebar",
+  name: "SideBar",
 
   components: {
     SidebarNavLinks,

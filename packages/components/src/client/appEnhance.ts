@@ -10,6 +10,7 @@ import ScreenFull from "./components/ScreenFull";
 import "./styles/index.scss";
 
 export default defineClientAppEnhance(({ app }) => {
+  // eslint-disable-next-line vue/multi-word-component-names
   app.component("Badge", Badge);
   app.component("BreadCrumb", BreadCrumb);
   app.component("CodeGroup", CodeGroup);
@@ -18,6 +19,7 @@ export default defineClientAppEnhance(({ app }) => {
   delete app._context.components.OutboundLink;
   // override the built-in `<OutboundLink>`
   app.component("OutboundLink", OutboundLink);
+  // eslint-disable-next-line vue/multi-word-component-names
   app.component("Pagination", Pagination);
   app.component("ScreenFull", ScreenFull);
 });

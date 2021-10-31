@@ -31,7 +31,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/components/Common.ts", {
+  ...rollupVue("client/components/CommonWrapper.ts", {
     external: [
       "@Navbar",
       "@Sidebar",

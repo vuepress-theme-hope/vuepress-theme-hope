@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`block katex Shoud render 1`] = `
+"<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></span></p>
+"
+`;
+
+exports[`block katex Shoud render 2`] = `
+"<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></span></p>
+"
+`;
+
+exports[`block katex Should not render error msg when content is wrong 1`] = `
+"<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:1em;vertical-align:-0.25em;\\"></span><span class=\\"mord text\\" style=\\"color:#cc0000;\\"><span class=\\"mord\\" style=\\"color:#cc0000;\\">\\\\fra</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">a</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">b</span></span></span></span></span></span></p>
+"
+`;
+
+exports[`block katex Should not render error msg when content is wrong 2`] = `
+"<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:1em;vertical-align:-0.25em;\\"></span><span class=\\"mord text\\" style=\\"color:#cc0000;\\"><span class=\\"mord\\" style=\\"color:#cc0000;\\">\\\\fra</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">a</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">b</span></span></span></span></span></span></p>
+"
+`;
+
+exports[`block katex Should render when having spaces 1`] = `
+"<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></span></p>
+"
+`;
+
+exports[`inline katex Shoud render 1`] = `
+"<p><span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></p>
+"
+`;
+
+exports[`inline katex Should not render error msg when content is wrong 1`] = `
+"<p><span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:1em;vertical-align:-0.25em;\\"></span><span class=\\"mord text\\" style=\\"color:#cc0000;\\"><span class=\\"mord\\" style=\\"color:#cc0000;\\">\\\\fra</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">a</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">b</span></span></span></span></span></p>
+"
+`;
+
+exports[`inline katex Should render when the first one is after a charater 1`] = `
+"<p>The next<span class=\\"katex\\"><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span> won't work</p>
+"
+`;

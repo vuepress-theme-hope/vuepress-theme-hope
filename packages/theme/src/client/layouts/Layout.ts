@@ -1,14 +1,15 @@
 import { defineComponent, h } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import Common from "@Common";
+import CommonWrapper from "@CommonWrapper";
 import FadeSideY from "../components/transitions/FadeSlideY";
-import Home from "../components/Home.vue";
-import Page from "../components/Page";
+import ProjectHome from "../components/ProjectHome.vue";
+import MainContent from "../components/MainContent";
 
 import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";
 
 export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "Layout",
 
   setup() {
@@ -17,16 +18,16 @@ export default defineComponent({
 
     return (): VNode =>
       h(
-        Common,
+        CommonWrapper,
         {},
         {
           default: () =>
             frontmatter.value.home
-              ? h(Home)
+              ? h(ProjectHome)
               : h(
                   FadeSideY,
                   {},
-                  { default: () => h(Page, { key: page.value.path }) }
+                  { default: () => h(MainContent, { key: page.value.path }) }
                 ),
         }
       );

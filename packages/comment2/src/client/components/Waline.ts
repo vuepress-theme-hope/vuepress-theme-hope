@@ -23,7 +23,7 @@ import type { CommentPluginFrontmatter, WalineOptions } from "../../shared";
 import "../styles/waline.scss";
 
 export default defineComponent({
-  name: "Waline",
+  name: "WalineComment",
 
   setup() {
     const route = useRoute();
@@ -111,7 +111,7 @@ export default defineComponent({
       () => route.path,
       () =>
         // Refresh comment when navigating to a new page
-        nextTick(() => updateWaline())
+        nextTick().then(() => updateWaline())
     );
 
     return (): VNode =>

@@ -17,7 +17,7 @@ declare const MARKDOWN_DELAY: number;
 declare const MERMAID_OPTIONS: MermaidAPI.Config;
 
 export default defineComponent({
-  name: "Mermaid",
+  name: "MermaidChart",
 
   props: {
     id: { type: String, required: true },

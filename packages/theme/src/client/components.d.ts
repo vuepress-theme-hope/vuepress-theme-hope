@@ -15,6 +15,7 @@
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
+    Content: import("vue").DefineComponent;
     NavbarSearch: import("vue").DefineComponent;
     RouterLink: typeof import("vue-router")["RouterLink"];
   }

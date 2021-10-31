@@ -35,6 +35,6 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "ESNext",
-    "types": ["node", "vite/client"]
+    "types": ["jest", "node", "vite/client"]
   }
 }

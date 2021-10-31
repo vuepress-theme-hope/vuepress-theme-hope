@@ -8,9 +8,7 @@ const markdownItWithError = MarkdownIt({ linkify: true }).use(katex, {
 
 describe("inline katex", () => {
   it("Shoud render", () => {
-    expect(markdownIt.render(`$a=1$`)).toEqual(
-      `<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>\n`
-    );
+    expect(markdownIt.render(`$a=1$`)).toMatchSnapshot();
   });
 
   it("Should not render when escape", () => {
@@ -29,15 +27,11 @@ describe("inline katex", () => {
   });
 
   it("Should render when the first one is after a charater", () => {
-    expect(markdownIt.render(`The next$a = 1$ won't work`)).toEqual(
-      `<p>The next<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> won't work</p>\n`
-    );
+    expect(markdownIt.render(`The next$a = 1$ won't work`)).toMatchSnapshot();
   });
 
   it("Should not render error msg when content is wrong", () => {
-    expect(markdownIt.render("$\\fra{a}{b}$")).toEqual(
-      `<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\\fra</span></span><span class="mord"><span class="mord mathnormal">a</span></span><span class="mord"><span class="mord mathnormal">b</span></span></span></span></span></p>\n`
-    );
+    expect(markdownIt.render("$\\fra{a}{b}$")).toMatchSnapshot();
   });
 
   it("Should render error msg when content is wrong", () => {
@@ -57,9 +51,7 @@ describe("inline katex", () => {
 
 describe("block katex", () => {
   it("Shoud render", () => {
-    expect(markdownIt.render(`$$a=1$$`)).toEqual(
-      `<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>\n`
-    );
+    expect(markdownIt.render(`$$a=1$$`)).toMatchSnapshot();
 
     expect(
       markdownIt.render(`
@@ -67,9 +59,7 @@ $$
 a = 1
 $$
 `)
-    ).toEqual(
-      `<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>\n`
-    );
+    ).toMatchSnapshot();
   });
 
   it("Should not render when escape", () => {
@@ -86,9 +76,7 @@ $$</p>\n`);
   });
 
   it("Should render when having spaces", () => {
-    expect(markdownIt.render(`$$ a = 1 $$`)).toEqual(
-      `<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>\n`
-    );
+    expect(markdownIt.render(`$$ a = 1 $$`)).toMatchSnapshot();
 
     expect(markdownIt.render(`All $$ a = 1 $$ is true.`)).toEqual(
       "<p>All $$ a = 1 $$ is true.</p>\n"
@@ -96,9 +84,7 @@ $$</p>\n`);
   });
 
   it("Should not render error msg when content is wrong", () => {
-    expect(markdownIt.render("$$\\fra{a}{b}$$")).toEqual(
-      `<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\\fra</span></span><span class="mord"><span class="mord mathnormal">a</span></span><span class="mord"><span class="mord mathnormal">b</span></span></span></span></span></span></p>\n`
-    );
+    expect(markdownIt.render("$$\\fra{a}{b}$$")).toMatchSnapshot();
 
     expect(
       markdownIt.render(`
@@ -106,9 +92,7 @@ $$
 \\fra{a}{b}
 $$
 `)
-    ).toEqual(
-      `<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\\fra</span></span><span class="mord"><span class="mord mathnormal">a</span></span><span class="mord"><span class="mord mathnormal">b</span></span></span></span></span></span></p>\n`
-    );
+    ).toMatchSnapshot();
   });
 
   it("Should render error msg when content is wrong", () => {

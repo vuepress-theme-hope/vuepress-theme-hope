@@ -11,7 +11,7 @@ import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";
 
 export default defineComponent({
-  name: "Common",
+  name: "CommonWrapper",
 
   props: {
     navbar: {

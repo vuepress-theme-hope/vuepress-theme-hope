@@ -16,10 +16,10 @@ export default defineClientAppEnhance(({ app }) => {
 
   if (MARKDOWN_ENHANCE_FOOTNOTE) void import("./styles/footnote.scss");
 
-  if (MARKDOWN_ENHANCE_MERMAID) app.component("Mermaid", Mermaid);
+  if (MARKDOWN_ENHANCE_MERMAID) app.component("MermaidChart", Mermaid);
 
   if (MARKDOWN_ENHANCE_PRESENTATION) {
-    app.component("Presentation", Presentation);
+    app.component("PresentationViewer", Presentation);
     void import("./styles/slides.scss");
     void import("./styles/theme/fonts/league-gothic/league-gothic.css");
     void import("./styles/theme/fonts/source-sans-pro/source-sans-pro.css");

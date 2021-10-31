@@ -78,7 +78,7 @@ const getCssValue = (
 };
 
 export default defineComponent({
-  name: "Navbar",
+  name: "NavBar",
 
   components: {
     NavbarLinks,

@@ -6,7 +6,7 @@ import PageNav from "./PageNav";
 import type { VNode } from "vue";
 
 export default defineComponent({
-  name: "Page",
+  name: "MainContent",
 
   setup(_props, { slots }) {
     return (): VNode =>

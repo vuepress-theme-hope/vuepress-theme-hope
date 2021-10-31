@@ -69,6 +69,7 @@ import { useRoute, useRouter } from "vue-router";
 import { componentI18n } from "../define";
 
 export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "Pagination",
 
   props: {

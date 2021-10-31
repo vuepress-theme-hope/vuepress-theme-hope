@@ -107,7 +107,7 @@ interface HomePageFrontmatter extends HopeThemeHomePageFrontmatter {
 }
 
 export default defineComponent({
-  name: "Home",
+  name: "ProjectHome",
 
   components: {
     DropTransition,

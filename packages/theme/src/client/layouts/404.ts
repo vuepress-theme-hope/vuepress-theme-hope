@@ -1,13 +1,14 @@
 import { defineComponent, h } from "vue";
 import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
-import Common from "@Common";
+import CommonWrapper from "@CommonWrapper";
 import { Page404Icon } from "../components/icons";
 import { useThemeLocaleData } from "../composables";
 
 import type { VNode } from "vue";
 
 export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "Page404",
 
   setup() {
@@ -28,7 +29,7 @@ export default defineComponent({
 
     return (): VNode =>
       h(
-        Common,
+        CommonWrapper,
         { sidebar: false },
         {
           default: () =>

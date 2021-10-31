@@ -28,7 +28,7 @@ type ThemeType =
   | "moon";
 
 export default defineComponent({
-  name: "Presentation",
+  name: "PresentationViewer",
 
   props: {
     id: { type: String, required: true },

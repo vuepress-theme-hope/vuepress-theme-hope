@@ -40,7 +40,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
     layouts: path.resolve(__dirname, "../client/layouts"),
 
     alias: {
-      "@Common": path.resolve(__dirname, "../client/components/Common.js"),
+      "@CommonWrapper": path.resolve(
+        __dirname,
+        "../client/components/CommonWrapper.js"
+      ),
       "@Navbar": path.resolve(
         __dirname,
         "../client/components/navbar/Navbar.js"
