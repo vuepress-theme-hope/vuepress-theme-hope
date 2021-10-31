@@ -1,3 +1,8 @@
+declare module "*.jpg" {
+  const path: string;
+  export default path;
+}
+
 declare module "docsearch.js/dist/cdn/docsearch.min.js" {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const docsearch: any;

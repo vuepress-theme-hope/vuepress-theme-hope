@@ -11,7 +11,7 @@
         background: `url(${
           $frontmatter.bgImage
             ? $withBase($frontmatter.bgImage)
-            : require('@theme/assets/hero.jpg')
+            : defaultHeroImage
         }) center/cover no-repeat`,
       }"
     />

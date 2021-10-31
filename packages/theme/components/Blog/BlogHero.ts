@@ -1,10 +1,13 @@
 import Vue from "vue";
 import MyTransition from "@theme/components/MyTransition.vue";
+import defaultHeroImage from "@theme/assets/hero.jpg";
 
 export default Vue.extend({
   name: "BlogHero",
 
   components: { MyTransition },
+
+  data: () => ({ defaultHeroImage }),
 
   computed: {
     heroImageStyle(): Record<string, string> {
