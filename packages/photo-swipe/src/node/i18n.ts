@@ -3,7 +3,7 @@ import type { PhowoSwipeLocaleConfig } from "../shared";
 export const i18n: PhowoSwipeLocaleConfig = {
   "/zh/": {
     close: "关闭",
-    fullsreen: "切换全屏",
+    fullscreen: "切换全屏",
     share: "分享",
     zoom: "缩放",
     prev: "上一个 (左箭头)",
@@ -35,7 +35,7 @@ export const i18n: PhowoSwipeLocaleConfig = {
 
   "/en/": {
     close: "Close",
-    fullsreen: "Vollbild umschalten",
+    fullscreen: "Vollbild umschalten",
     share: "Teilen",
     zoom: "Zoom in/out",
     prev: "Prev (Arrow Left)",
@@ -67,7 +67,7 @@ export const i18n: PhowoSwipeLocaleConfig = {
 
   "/de/": {
     close: "Schließen",
-    fullsreen: "Toggle fullscreen",
+    fullscreen: "Toggle fullscreen",
     share: "Teilen",
     zoom: "Rein / rauszoomen",
     prev: "Zurück (Pfeil links)",
@@ -99,7 +99,7 @@ export const i18n: PhowoSwipeLocaleConfig = {
 
   "/vi/": {
     close: "Đóng",
-    fullsreen: "Bật chế độ toàn màn hình",
+    fullscreen: "Bật chế độ toàn màn hình",
     share: "Chia sẻ",
     zoom: "Phóng to / thu nhỏ",
     prev: "Trước (Mũi tên trái)",

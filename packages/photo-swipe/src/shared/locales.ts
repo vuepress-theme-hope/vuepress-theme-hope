@@ -14,7 +14,7 @@ export interface PhowoSwipeI18nConfig {
    *
    * Full screen button label text
    */
-  fullsreen: string;
+  fullscreen: string;
 
   /**
    * 分享按钮标签文字
