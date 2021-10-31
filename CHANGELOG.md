@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.20.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.4...v1.20.5) (2021-10-31)
+
+### Bug Fixes
+
+- **md-enhance:** fix mermaid import which should be a breaking change in mermaid, fix [#1140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1140) ([ffc589f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ffc589f12e2915478144b94ff66d240c60fdf087))
+
 ## [1.20.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.3...v1.20.4) (2021-10-30)
 
 ### Bug Fixes
