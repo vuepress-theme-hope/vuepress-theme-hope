@@ -105,7 +105,7 @@
     "@typescript-eslint/parser": "5.0.0",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "8.0.0",
-    "babel-jest": "27.2.5",
+    "babel-jest": "27.3.1",
     "concurrently": "6.3.0",
     "conventional-changelog-cli": "2.1.1",
     "cpx2": "4.0.0",
