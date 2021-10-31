@@ -3304,7 +3304,7 @@
     "@vue/compiler-ssr" "3.2.20"
     "@vue/shared" "3.2.20"
 
-"@vue/shared@3.2.20", "@vue/shared@^3.2.3":
+"@vue/shared@3.2.20", "@vue/shared@^3.2.20", "@vue/shared@^3.2.3":
   version "3.2.20"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.20.tgz#53746961f731a8ea666e3316271e944238dc31db"
   integrity sha512-FbpX+hD5BvXCQerEYO7jtAGHlhAkhTQ4KIV73kmLWNlawWhTiVuQxizgVb0BOkX5oG9cIRZ42EG++d/k/Efp0w==
@@ -3580,6 +3580,13 @@
   integrity sha512-LGjrC/ZHDw4WSg5Ees1OEKh62AP/VQ1WbySzdFewjd0zCBMcyy/1mrH6Srja7NLL9JplPNvc+RJryAJ1mn5ymQ==
   dependencies:
     "@vue/shared" "^3.2.3"
+
+"@vuepress/shared@2.0.0-beta.27":
+  version "2.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.27.tgz#d40ebb57c885328e80c421578155811de7bfee9d"
+  integrity sha512-WvP76yNWik9Y3J9o8flY2bWJCPwqifhl4xjYtP73O5+Yze2r/tf0gO0IJ0ccYUNLDu46ZGlnn5Jett4BABlwBg==
+  dependencies:
+    "@vue/shared" "^3.2.20"
 
 "@vuepress/theme-default@2.0.0-beta.26":
   version "2.0.0-beta.26"
