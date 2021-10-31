@@ -51,7 +51,7 @@
     vertical-align: top;
 
     &.light {
-      display: block;
+      display: inline-block;
     }
 
     &.dark {
@@ -64,7 +64,7 @@
       }
 
       &.dark {
-        display: block;
+      display: inline-block;
       }
     }
   }
