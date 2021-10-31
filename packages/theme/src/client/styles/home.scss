@@ -9,8 +9,6 @@
   min-height: calc(100vh - var(--navbar-height));
   padding: var(--navbar-height) 2rem 0;
   margin: 0px auto;
-  // TODO: check this
-  overflow-x: hidden;
 
   @media (max-width: config.$pad) {
     min-height: calc(100vh - var(--mobile-navbar-height));
