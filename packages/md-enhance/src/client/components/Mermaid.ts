@@ -9,7 +9,6 @@ import {
 import { LoadingIcon } from "./icons";
 import MermaidAPI from "mermaid/mermaidAPI";
 
-import type { Mermaid } from "mermaid";
 import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
@@ -39,7 +38,7 @@ export default defineComponent({
         import(/* webpackChunkName: "mermaid" */ "mermaid"),
         delay(),
       ]).then(([mermaid]) => {
-        const { initialize, render } = mermaid as unknown as Mermaid;
+        const { initialize, render } = mermaid.default;
 
         const renderMermaid = (isDarkTheme: boolean): void => {
           // generate a unvisiable container
