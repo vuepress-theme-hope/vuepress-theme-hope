@@ -55,7 +55,7 @@
     "@vuepress/utils": "2.0.0-beta.25",
     "lodash.throttle": "^4.1.1",
     "vue": "^3.2.20",
-    "vue-router": "^4.0.11",
+    "vue-router": "^4.0.12",
     "vuepress-plugin-comment2": "2.0.0-alpha.7",
     "vuepress-plugin-copy-code2": "2.0.0-alpha.7",
     "vuepress-plugin-feed2": "2.0.0-alpha.7",
