@@ -29,7 +29,7 @@
               @focusout="
                 isLastItemOfArray(child, item.children) &&
                   child.children.length === 0 &&
-                  setOpen(false)
+                  (open = false)
               "
             />
             <span v-else>{{ child.text }}</span>
@@ -46,7 +46,7 @@
                 @focusout="
                   isLastItemOfArray(grandchild, child.children) &&
                     isLastItemOfArray(child, item.children) &&
-                    setOpen(false)
+                    (open = false)
                 "
               />
             </li>
@@ -56,7 +56,7 @@
         <NavLink
           v-else
           :item="child"
-          @focusout="isLastItemOfArray(child, item.children) && setOpen(false)"
+          @focusout="isLastItemOfArray(child, item.children) && (open = false)"
         />
       </li>
     </ul>
