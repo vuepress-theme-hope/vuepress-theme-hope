@@ -100,7 +100,7 @@
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.8",
     "@types/inquirer": "8.1.3",
     "@types/jest": "27.0.2",
-    "@types/semver": "7.3.8",
+    "@types/semver": "7.3.9",
     "@typescript-eslint/eslint-plugin": "5.0.0",
     "@typescript-eslint/parser": "5.0.0",
     "@vue/eslint-config-prettier": "6.0.0",
