@@ -8,9 +8,9 @@ const mermaidRender = (tokens: Token[], index: number): string => {
   const key = `mermaid-${hash(index)}`;
   const { content } = token;
 
-  return `<Mermaid id="${key}" data-code="${encodeURIComponent(
+  return `<MermaidChart id="${key}" data-code="${encodeURIComponent(
     content
-  )}"></Mermaid>`;
+  )}"></MermaidChart>`;
 };
 
 // a hack for sequenceDiagram
@@ -19,12 +19,12 @@ const mermaidHackRender = (
   content: string,
   index: number
 ): string =>
-  `<Mermaid id="mermaid-${hash(index)}" data-code="${encodeURIComponent(
+  `<MermaidChart id="mermaid-${hash(index)}" data-code="${encodeURIComponent(
     `${name}\n${content
       .split("\n")
       .map((line) => (line ? `    ${line}` : ""))
       .join("\n")}`
-  )}"></Mermaid>`;
+  )}"></MermaidChart>`;
 
 export const mermaid = (md: MarkdownIt): void => {
   // Handle ```mermaid blocks

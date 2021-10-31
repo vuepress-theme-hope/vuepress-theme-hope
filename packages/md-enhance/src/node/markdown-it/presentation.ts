@@ -20,8 +20,8 @@ export const presentation = (md: MarkdownIt): void => {
     const key = `presentation-${hash(index)}`;
     const { content, info } = token;
 
-    return `<Presentation id="${key}" data-code="${encodeURIComponent(
+    return `<PresentationViewer id="${key}" data-code="${encodeURIComponent(
       content
-    )}" theme="${info.trim() || "auto"}"></Presentation>`;
+    )}" theme="${info.trim() || "auto"}"></PresentationViewer>`;
   };
 };
