@@ -50,5 +50,6 @@ export interface ManifestOption {
   categories?: string[];
   shortcuts?: ManifestShortCuts[];
   iarc_rating_id?: string;
+  features?: string[];
   screenshots?: ManifestImage[];
 }
