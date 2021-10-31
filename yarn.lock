@@ -9668,10 +9668,10 @@ libnpmpublish@^4.0.0:
     semver "^7.1.3"
     ssri "^8.0.1"
 
-lightgallery@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.2.1.tgz#a1e40d8db0c1a1be17596db440cee466670bedd9"
-  integrity sha512-6eDdqyQsQhxHYccMxWRNsHGkY1tITFHheR89ivlyQsDPYVt2yH/fIoJpipT1pMc8bCti/Pv7X0vU0QLMdnHehg==
+lightgallery@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.3.0.tgz#936f19d36105848fbbdbd7fbb1e43ab9b0605ebe"
+  integrity sha512-kdu+uQM2X4LUN2G2tTp72ZOLfwmGwZFjiVQBqYY2E2zL1ADibKwnxZUBEw2zI5zefDe/71IHg+6kBRTbr8CGyg==
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
