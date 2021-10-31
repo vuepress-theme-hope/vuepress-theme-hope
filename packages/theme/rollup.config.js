@@ -48,7 +48,7 @@ export default [
   }),
   ...rollupVue("client/layouts/Layout.ts", {
     external: [
-      "@Common",
+      "@CommonWrapper",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
@@ -61,7 +61,7 @@ export default [
   }),
   ...rollupVue("client/layouts/Layout.ts", {
     external: [
-      "@Common",
+      "@CommonWrapper",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
@@ -74,7 +74,7 @@ export default [
   }),
   ...rollupVue("client/layouts/404.ts", {
     external: [
-      "@Common",
+      "@CommonWrapper",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
