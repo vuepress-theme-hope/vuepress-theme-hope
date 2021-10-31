@@ -33,7 +33,7 @@ export default Vue.extend({
       import(/* webpackChunkName: "mermaid" */ "mermaid"),
       delay(),
     ]).then(([mermaid]) => {
-      const { initialize, render } = mermaid as unknown as Mermaid;
+      const { initialize, render } = mermaid.default;
 
       const renderMermaid = (isDarkTheme: boolean): void => {
         // generate a unvisiable container
