@@ -114,7 +114,7 @@
     "eslint": "8.0.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-vue": "7.19.1",
+    "eslint-plugin-vue": "7.20.0",
     "husky": "7.0.2",
     "increase-memory-limit": "1.0.7",
     "inquirer": "8.2.0",
