@@ -2786,7 +2786,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/fs-extra@^9.0.12":
+"@types/fs-extra@^9.0.12", "@types/fs-extra@^9.0.13":
   version "9.0.13"
   resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.13.tgz#7594fbae04fe7f1918ce8b3d213f74ff44ac1f45"
   integrity sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==
@@ -3304,7 +3304,7 @@
     "@vue/compiler-ssr" "3.2.20"
     "@vue/shared" "3.2.20"
 
-"@vue/shared@3.2.20", "@vue/shared@^3.2.3":
+"@vue/shared@3.2.20", "@vue/shared@^3.2.20", "@vue/shared@^3.2.3":
   version "3.2.20"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.20.tgz#53746961f731a8ea666e3316271e944238dc31db"
   integrity sha512-FbpX+hD5BvXCQerEYO7jtAGHlhAkhTQ4KIV73kmLWNlawWhTiVuQxizgVb0BOkX5oG9cIRZ42EG++d/k/Efp0w==
@@ -3581,6 +3581,13 @@
   dependencies:
     "@vue/shared" "^3.2.3"
 
+"@vuepress/shared@2.0.0-beta.27":
+  version "2.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.27.tgz#d40ebb57c885328e80c421578155811de7bfee9d"
+  integrity sha512-WvP76yNWik9Y3J9o8flY2bWJCPwqifhl4xjYtP73O5+Yze2r/tf0gO0IJ0ccYUNLDu46ZGlnn5Jett4BABlwBg==
+  dependencies:
+    "@vue/shared" "^3.2.20"
+
 "@vuepress/theme-default@2.0.0-beta.26":
   version "2.0.0-beta.26"
   resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.26.tgz#baa183d1ae029bcc223c23c49bb9951dae6637f4"
@@ -3614,6 +3621,23 @@
     "@types/fs-extra" "^9.0.12"
     "@types/hash-sum" "^1.0.0"
     "@vuepress/shared" "2.0.0-beta.25"
+    chalk "^4.1.2"
+    debug "^4.3.2"
+    fs-extra "^10.0.0"
+    globby "^11.0.4"
+    hash-sum "^2.0.0"
+    ora "^5.4.1"
+    upath "^2.0.1"
+
+"@vuepress/utils@2.0.0-beta.27":
+  version "2.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@vuepress/utils/-/utils-2.0.0-beta.27.tgz#d11268a515fbaf7818b683e651f5bccb86d9a8e0"
+  integrity sha512-Y+zfQc8YB5zl58wszDvTLBpHzXZXzl6jyUVd7HeQNTZaHjdYL01gTsQk/hEivxmaL9spH+ZcxivdP+m+VpGzjw==
+  dependencies:
+    "@types/debug" "^4.1.7"
+    "@types/fs-extra" "^9.0.13"
+    "@types/hash-sum" "^1.0.0"
+    "@vuepress/shared" "2.0.0-beta.27"
     chalk "^4.1.2"
     debug "^4.3.2"
     fs-extra "^10.0.0"
