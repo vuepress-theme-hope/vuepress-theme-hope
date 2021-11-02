@@ -3675,10 +3675,10 @@
   dependencies:
     vue-demi "*"
 
-"@waline/client@^1.3.11":
-  version "1.3.11"
-  resolved "https://registry.yarnpkg.com/@waline/client/-/client-1.3.11.tgz#ac203e66d59477443ffca44796398e91775c6da7"
-  integrity sha512-N+W4fVFpZLo32Hw40DiLU7Kxl+dy1PLQNfokTZISYIb//YJowpV84ROgpogBIUUtHD1lFpOl0e1jNOT5EB6/uA==
+"@waline/client@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@waline/client/-/client-1.5.1.tgz#fcdd00b3393f814533c3bc6dd3ce255dac2259c2"
+  integrity sha512-7mfTQTpk+YfxU37bQJMQQhX37VyJCfzLSDAlv+6Kk9uZF4vv12YKQoW6u1D0g7m0iFqHJe8YsGmXmo9XaG4GRw==
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
