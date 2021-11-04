@@ -6,6 +6,8 @@ export const lang2PathConfig = {
   "zh-TW": "/zh-tw/",
   "de-AT": "/de/",
   "vi-VN": "/vi/",
+  "ru-RU": "/ru/",
+  "uk-UA": "/uk/",
 };
 
 export const supportedLangs = Object.keys(lang2PathConfig);

@@ -171,4 +171,90 @@ export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
       encrypt: "mã hóa",
     },
   },
+
+  "ru-RU": {
+    lang: "ru-RU",
+    selectText: "Язык",
+    label: "Русский",
+    ariaLabel: "Выберите язык",
+    meta: {
+      contributor: "Авторы",
+      editLink: "Редактировать эту страницу",
+      updateTime: "Последнее обновление",
+    },
+    themeColor: {
+      themeColor: "Цвет темы",
+      themeMode: "Режим темы",
+    },
+    encrypt: {
+      title: "Пожалуйста, введите пароль",
+      errorHint: "Пожалуйста, введите правильный пароль!",
+    },
+    error404: {
+      hint: [
+        "Здесь ничего нет.",
+        "Как мы сюда попали?",
+        'Это "4-0-4".',
+        "Похоже, у нас есть несколько неработающих ссылок.",
+      ],
+      back: "Вернуться назад",
+      home: "Вернуться на главную",
+    },
+    blog: {
+      article: "Статьи",
+      articleList: "Список статей",
+      category: "Категория",
+      tag: "Тэги",
+      timeline: "Таймлайн",
+      timelineText: "Вчера еще раз!",
+      allText: "Всё",
+      intro: "Личное вступление",
+      star: "Звезда",
+      slides: "Слайды",
+      encrypt: "Зашифровано",
+    },
+  },
+
+  "uk-UA": {
+    lang: "uk-UA",
+    selectText: "Мова",
+    label: "Українська",
+    ariaLabel: "Оберіть мову",
+    meta: {
+      contributor: "Автори",
+      editLink: "Редагувати цю сторінку",
+      updateTime: "Останнє оновлення",
+    },
+    themeColor: {
+      themeColor: "Колір теми",
+      themeMode: "Тематичний режим",
+    },
+    encrypt: {
+      title: "Будь ласка, введіть пароль",
+      errorHint: "Будь ласка, введіть правильний пароль!",
+    },
+    error404: {
+      hint: [
+        "Тут немає нічого.",
+        "Як ми сюди потрапили?",
+        'Це "4-0-4".',
+        "Схоже, у нас є непрацюючі посилання.",
+      ],
+      back: "Повернутися назад",
+      home: "Повернутися на головну",
+    },
+    blog: {
+      article: "Статті",
+      articleList: "Список статей",
+      category: "Категорія",
+      tag: "Теги",
+      timeline: "Хронологія",
+      timelineText: "Вчора ще раз!",
+      allText: "Все",
+      intro: "Особистий вступ",
+      star: "Зірка",
+      slides: "Слайди",
+      encrypt: "Зашифровано",
+    },
+  },
 };
