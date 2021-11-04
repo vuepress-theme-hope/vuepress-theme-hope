@@ -58,8 +58,8 @@ export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
       themeMode: "Theme Mode",
     },
     encrypt: {
-      title: "Please enter password",
-      errorHint: "Please enter the corrent password!",
+      title: "Please enter the password",
+      errorHint: "Please enter the correct password!",
     },
     error404: {
       hint: [
