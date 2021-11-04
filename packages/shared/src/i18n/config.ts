@@ -4,7 +4,14 @@ import type {
   HopeLang,
 } from "./types";
 
-export const langs: HopeLang[] = ["zh-CN", "en-US", "vi-VN", "de-AT"];
+export const langs: HopeLang[] = [
+  "zh-CN",
+  "en-US",
+  "vi-VN",
+  "de-AT",
+  "ru-RU",
+  "uk-UA",
+];
 
 export const lang2PathConfig: Record<HopeLang, HopeLangPath> = {
   "zh-CN": "/zh/",
@@ -195,7 +202,7 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
       encrypt: "Mã hóa",
     },
   },
-  
+
   "ru-RU": {
     lang: "ru-RU",
     selectText: "Язык",
@@ -218,7 +225,7 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
       hint: [
         "Здесь ничего нет.",
         "Как мы сюда попали?",
-        "Это "4-0-4".",
+        'Это "4-0-4".',
         "Похоже, у нас есть несколько неработающих ссылок.",
       ],
       back: "Вернуться назад",
@@ -238,7 +245,7 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
       encrypt: "Зашифровано",
     },
   },
-  
+
   "uk-UA": {
     lang: "uk-UA",
     selectText: "Мова",
@@ -261,7 +268,7 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
       hint: [
         "Тут немає нічого.",
         "Як ми сюди потрапили?",
-        "Це "4-0-4".",
+        'Це "4-0-4".',
         "Схоже, у нас є непрацюючі посилання.",
       ],
       back: "Повернутися назад",
