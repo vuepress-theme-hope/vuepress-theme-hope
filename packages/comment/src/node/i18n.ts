@@ -43,6 +43,27 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Thời gian đọc⌛",
     words: "Words🔠",
   },
+  "/uk/": {
+    author: "Автор🖊",
+    time: "Дата написання📅",
+    origin: "Оригінал💡",
+    views: "Перегляди сторінки🔢",
+    category: "Категорія🌈",
+    tag: "Теги🏷",
+    readingTime: "Час читання⌛",
+    words: "Слова🔠",
+  },
+  },
+  "/ru/": {
+    author: "Автор🖊",
+    time: "Дата написания📅",
+    origin: "Оригинал💡",
+    views: "Просмотры страницы🔢",
+    category: "Категория🌈",
+    tag: "Тэги🏷",
+    readingTime: "Время чтения⌛",
+    words: "Слова🔠",
+  },
 };
 
 export const valineI18n: Record<HopeLangPath, string> = {
