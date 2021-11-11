@@ -36,8 +36,8 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
 
   "/en/": {
     close: "Close",
-    fullsreen: "Vollbild umschalten",
-    share: "Teilen",
+    fullsreen: "Switch to full screen",
+    share: "Share",
     zoom: "Zoom in/out",
     prev: "Prev (Arrow Left)",
     next: "Next (Arrow Right)",
@@ -124,6 +124,70 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
       {
         id: "download",
         label: "Download image",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+  
+    "/uk/": {
+    close: "Закрити",
+    fullsreen: "Перейти на повний екран",
+    share: "Поділіться",
+    zoom: "Збільшити/Зменшити",
+    prev: "Попередня (Стрілка вліво)",
+    next: "Далі (стрілка вправо)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Поділіться на Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "Завантажити",
+        label: "Завантажити зображення",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+  
+    "/ru/": {
+    close: "Закрыть",
+    fullsreen: "Переключиться на полный экран",
+    share: "Поделиться",
+    zoom: "Увеличить/Уменьшить",
+    prev: "Предыдущая (Стрелка влево)",
+    next: "Далее (стрелка вправо)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Поделиться на Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "Загрузить",
+        label: "Загрузить изображение",
         url: "{{raw_image_url}}",
         download: true,
       },
