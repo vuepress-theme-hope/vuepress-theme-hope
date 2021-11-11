@@ -23,4 +23,14 @@ export const i18n: Record<HopeLangPath, ReadingTimeI18nConfig> = {
     minute: "Ít hơn 1 phút",
     time: "Khoảng $time phút",
   },
+   "/uk/": {
+    word: "Про $word слова",
+    minute: "Менше 1 хвилини",
+    time: "Приблизно $time хв",
+  }, 
+    "/ru/": {
+    word: "Про $word слова",
+    minute: "Меньше 1 минуты",
+    time: "Приблизительно $time минут",
+  }, 
 };
