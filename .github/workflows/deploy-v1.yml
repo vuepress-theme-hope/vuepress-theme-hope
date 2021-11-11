@@ -14,6 +14,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
       - name: restore lerna
         uses: actions/cache@v2
         id: lerna-cache
@@ -64,7 +68,7 @@ jobs:
           yarn cpx "docs/sitemap/dist/**" dist/sitemap
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
           folder: dist
