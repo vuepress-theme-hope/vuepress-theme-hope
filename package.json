@@ -26,7 +26,7 @@
     "lint:check": "yarn lint:prettier && yarn lint:eslint",
     "lint:eslint": "eslint . --ext .js,.ts,.vue",
     "lint:md": "yarn lint:md-lint && yarn lint:md-remark && yarn lint:md-textlint",
-    "lint:md-lint": "markdownlint **/*.md --ignore **/node_modules/**",
+    "lint:md-lint": "markdownlint **/*.md",
     "lint:md-remark": "remark --quiet .",
     "lint:md-textlint": "textlint ./docs/**/*.md",
     "lint:prettier": "prettier --check .",

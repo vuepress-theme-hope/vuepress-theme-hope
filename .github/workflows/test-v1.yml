@@ -10,12 +10,23 @@ on:
 
 jobs:
   test-theme:
+    name: Test theme on node ${{ matrix.node }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - "12"
+          - "14"
+          - "16"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
 
       - name: restore lerna
         uses: actions/cache@v2
@@ -58,4 +69,4 @@ jobs:
 
       - name: Upload coverage
         if: github.ref == 'refs/heads/v1'
-        uses: codecov/codecov-action@v2.1.0
+        uses: codecov/codecov-action@v2
