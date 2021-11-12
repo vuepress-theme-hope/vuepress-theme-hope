@@ -53,7 +53,6 @@ export const i18n: Record<HopeLangPath, ComponentI18nConfig> = {
       errorText: "Будь ласка, введіть число від 1 до $page !",
     },
   },
-  },
   "/ru/": {
     backToTop: "Вернуться к началу",
     pagination: {
