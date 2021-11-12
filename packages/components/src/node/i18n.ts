@@ -61,6 +61,7 @@ export const i18n: Record<HopeLangPath, ComponentI18nConfig> = {
       navigate: "Перейти к",
       button: "Перейти",
       errorText: "Пожалуйста, введите число от 1 до $page !",
+      },
     },
   },
 };
