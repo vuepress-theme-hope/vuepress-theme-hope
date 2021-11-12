@@ -42,7 +42,6 @@ export const i18n: Record<HopeLangPath, ComponentI18nConfig> = {
       errorText: "Xin hãy nhập 1 số từ 1 đến $page !",
     },
   },
-  },
   "/uk/": {
     backToTop: "Повернутися до початку",
     pagination: {
