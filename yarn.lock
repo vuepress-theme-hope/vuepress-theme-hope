@@ -13395,10 +13395,10 @@ remark-lint@9.1.0, remark-lint@^9.0.0:
     remark-message-control "^7.0.0"
     unified "^10.1.0"
 
-remark-math@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.1.0.tgz#8b1fe071be8584e1e87c14d9353464b67f98d1b5"
-  integrity sha512-Igu6p5+Ks8NWX+CzosHHG4r+ETMQIPscoTYPhNPk+ROauJnPEWPFeIe6JdaM1Z+ctHurpIDyYaLRXzgzZAhYSQ==
+remark-math@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.1.1.tgz#459e798d978d4ca032e745af0bac81ddcdf94964"
+  integrity sha512-cE5T2R/xLVtfFI4cCePtiRn+e6jKMtFDR3P8V3qpv8wpKjwvHoBA4eJzvX+nVrnlNy0911bdGmuspCSwetfYHw==
   dependencies:
     "@types/mdast" "^3.0.0"
     mdast-util-math "^2.0.0"
