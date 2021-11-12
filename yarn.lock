@@ -14238,10 +14238,10 @@ sort-object-keys@^1.1.3:
   resolved "https://registry.yarnpkg.com/sort-object-keys/-/sort-object-keys-1.1.3.tgz#bff833fe85cab147b34742e45863453c1e190b45"
   integrity sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==
 
-sort-package-json@1.52.0:
-  version "1.52.0"
-  resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.52.0.tgz#f960fe7cfae3120a4ce1b9eed7e010ac4bec998e"
-  integrity sha512-TsKDXgH3kPsaSrjAszQgg+n2/FDYdPrBrXD4YxMxExpogsi8LCek0YzK/jZ70i5Gi53WcpV+mVzvb5CHB5LpZw==
+sort-package-json@1.53.0:
+  version "1.53.0"
+  resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.53.0.tgz#4f0c310aaf92a065c456e2ef47b2779633fe8651"
+  integrity sha512-nvWUed2LBr4CcASBvlXTi3c5ttgaj6a2BWhemBhr2PFYAqNu6DqxcNF0mWzzfaQwblFO7Qrse6AfD3KygeuZKw==
   dependencies:
     detect-indent "^6.0.0"
     detect-newline "3.1.0"
