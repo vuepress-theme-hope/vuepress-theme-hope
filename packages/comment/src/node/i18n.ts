@@ -53,7 +53,6 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Час читання⌛",
     words: "Слова🔠",
   },
-  },
   "/ru/": {
     author: "Автор🖊",
     time: "Дата написания📅",
