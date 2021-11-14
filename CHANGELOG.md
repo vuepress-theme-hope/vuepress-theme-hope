@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.21.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.5...v1.21.0) (2021-11-14)
+
+### Bug Fixes
+
+- **theme:** fix hero image ([63c9b64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/63c9b6408c555367984850ecd2ac309452dacb8d))
+
+### Features
+
+- add 2 language support ([#1177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1177)) ([e053336](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e053336500e3d190f0acf637ea2911d0f4f1fbfa))
+- **create:** update registry options ([9954c65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9954c65fa85db6e887447c2466ba1f81d732383d))
+
 ## [1.20.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.4...v1.20.5) (2021-10-31)
 
 ### Bug Fixes
