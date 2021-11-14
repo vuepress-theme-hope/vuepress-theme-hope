@@ -1,8 +1,14 @@
 /** Types for supported lang codes */
-export type HopeLang = "zh-CN" | "en-US" | "vi-VN" | "de-AT";
+export type HopeLang =
+  | "zh-CN"
+  | "en-US"
+  | "vi-VN"
+  | "de-AT"
+  | "ru-RU"
+  | "uk-UA";
 
 /** Types for supported lang paths */
-export type HopeLangPath = "/zh/" | "/en/" | "/vi/" | "/de/";
+export type HopeLangPath = "/zh/" | "/en/" | "/vi/" | "/de/" | "/ru/" | "/uk/";
 
 export interface HopeThemeLocaleConfigItem {
   /** 当前语言代码 */
