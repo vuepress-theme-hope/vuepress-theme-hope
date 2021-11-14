@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Loading from "./icons/LoadingIcon.vue";
 
-import type { Mermaid } from "mermaid";
 import type mermaidAPI from "mermaid/mermaidAPI";
 
 import "./styles/mermaid.styl";

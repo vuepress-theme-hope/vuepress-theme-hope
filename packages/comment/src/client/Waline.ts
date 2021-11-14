@@ -9,7 +9,7 @@ import type { WalineOptions } from "../types";
 let timeout: NodeJS.Timeout | null = null;
 
 export default Vue.extend({
-  name: "Valine",
+  name: "Waline",
 
   props: {
     walineConfig: {
@@ -76,7 +76,6 @@ export default Vue.extend({
               },
               meta: walineConfig.meta || ["nick", "mail"],
               requiredMeta: walineConfig.requiredMeta || ["nick"],
-              avatar: walineConfig.avatar || "retro",
               emoji: [
                 "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
                 "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
