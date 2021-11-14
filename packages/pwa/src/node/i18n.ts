@@ -55,9 +55,10 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
       "Ứng dụng này có thể được cài đặt trên PC hoặc thiết bị di động của bạn. Điều này sẽ cho phép ứng dụng web này trông và hoạt động giống như bất kỳ ứng dụng đã cài đặt nào khác. Bạn sẽ tìm thấy nó trong danh sách ứng dụng của mình và có thể ghim nó vào màn hình chính, menu bắt đầu hoặc thanh tác vụ. Ứng dụng web đã cài đặt này cũng sẽ có thể tương tác an toàn với các ứng dụng khác và hệ điều hành của bạn.",
     update: "Đã có nội dung mới",
   },
-    "/uk/": {
+  "/uk/": {
     install: "Встановити",
-    iOSInstall: "Торкніться кнопки «Поділитися», а потім «Додати на головний екран»",
+    iOSInstall:
+      "Торкніться кнопки «Поділитися», а потім «Додати на головний екран»",
     cancel: "Скасувати",
     close: "Закрити",
     prevImage: "Попереднє зображення",
@@ -68,9 +69,10 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
       "Цю програму можна встановити на ПК або мобільний пристрій. Це дозволить цій веб-програмі виглядати та вести себе як будь-яка інша встановлена програма. Ви знайдете її у списках додатків і зможете закріпити на головному екрані, в меню «Пуск» або на панелі завдань. Ця встановлена веб-програма також зможе безпечно взаємодіяти з іншими програмами та вашою операційною системою. ",
     update: "Доступний новий контент.",
   },
-    "/ru/": {
+  "/ru/": {
     install: "Установить",
-    iOSInstall: "Нажмите кнопку «Поделиться», а затем «Добавить на главный экран».",
+    iOSInstall:
+      "Нажмите кнопку «Поделиться», а затем «Добавить на главный экран».",
     cancel: "Отменить",
     close: "Закрыть",
     prevImage: "Предыдущее изображение",

@@ -129,8 +129,8 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
       },
     ],
   },
-  
-    "/uk/": {
+
+  "/uk/": {
     close: "Закрити",
     fullsreen: "Перейти на повний екран",
     share: "Поділіться",
@@ -161,8 +161,8 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
       },
     ],
   },
-  
-    "/ru/": {
+
+  "/ru/": {
     close: "Закрыть",
     fullsreen: "Переключиться на полный экран",
     share: "Поделиться",
