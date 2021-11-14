@@ -73,4 +73,8 @@ export const valineI18n: Record<HopeLangPath, string> = {
     "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
   "/vi/":
     "Để lại bình luận (Điền địa chỉ email để nhận email thông báo khi được trả lời)",
+  "/uk/":
+    "Напишіть тут коментар (введіть адресу електронної пошти, щоб отримувати сповіщення електронною поштою, коли буде відповідь)",
+  "/ru/":
+    "Напишите здесь комментарий (введите адрес электронной почты, чтобы получать уведомление по электронной почте при ответе)",
 };
