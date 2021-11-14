@@ -1,8 +1,6 @@
 import Vue from "vue";
 import * as screenfull from "screenfull";
 
-import type { Screenfull } from "screenfull";
-
 export default Vue.extend({
   name: "ScreenFull",
 
@@ -20,7 +18,7 @@ export default Vue.extend({
     click(): void {
       if (screenfull.isEnabled)
         void screenfull.toggle().then(() => {
-          this.isFullscreen = (screenfull as Screenfull).isFullscreen;
+          this.isFullscreen = screenfull.isFullscreen;
         });
     },
   },
