@@ -44,7 +44,7 @@
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.7",
-    "workbox-build": "^6.3.0"
+    "workbox-build": "^6.4.1"
   },
   "publishConfig": {
     "access": "public"
