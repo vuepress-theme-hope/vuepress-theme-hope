@@ -128,7 +128,7 @@
     "remark-cli": "10.0.0",
     "remark-footnotes": "4.0.1",
     "remark-frontmatter": "4.0.1",
-    "remark-lint": "9.1.0",
+    "remark-lint": "9.1.1",
     "remark-math": "5.1.0",
     "remark-preset-lint-consistent": "5.1.0",
     "remark-preset-lint-markdown-style-guide": "5.1.1",
