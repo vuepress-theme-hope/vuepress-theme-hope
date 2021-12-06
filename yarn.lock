@@ -13432,10 +13432,10 @@ remark-parse@^9.0.0:
   dependencies:
     mdast-util-from-markdown "^0.8.0"
 
-remark-preset-lint-consistent@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/remark-preset-lint-consistent/-/remark-preset-lint-consistent-5.1.0.tgz#c994fbea71e93c4452368657ee093080d265c4a8"
-  integrity sha512-i5xmsBtOQrymbr1y0TS6cYOXQ9nueIMMfEfSG6xmOJRnLIEQ0wAAhbUn6bOUyr2YmLLnWyScby3aCjQsOiyRBA==
+remark-preset-lint-consistent@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/remark-preset-lint-consistent/-/remark-preset-lint-consistent-5.1.1.tgz#c870a2379e109cb6d7a10cd2d3b91f34e3f89e71"
+  integrity sha512-DZQfomiVi/1x7NRByWrOiIC+olEGa1PpyykKrowvYp5qr/Seq60FqU7OjBJxtcOLzgnQcu9Y2JXdHxFi4AAPXQ==
   dependencies:
     "@types/mdast" "^3.0.0"
     remark-lint "^9.0.0"
