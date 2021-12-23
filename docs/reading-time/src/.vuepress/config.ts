@@ -1,19 +1,20 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
-  title: "Git-based info plugin",
-  description: "Info plugin based on active-hash for vuepress",
+export default hope.config({
+  title: "Reading Time Counter",
+  description: "Expect reading time and word count statistics",
 
-  base: "/active-hash/",
+  base: "/reading-time/",
   dest: "./dist",
 
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
-      title: "Hash 激活插件",
-      description: "自动激活对应 Hash",
+      title: "阅读时间生成",
+      description: "预计阅读时间与字数统计生成",
     },
   },
+
   themeConfig: {
     logo: "/logo.svg",
     hostname: "https://vuepress-theme-hope.github.io",
@@ -21,7 +22,13 @@ module.exports = config({
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
-    docsDir: "docs/active-hash/src",
+    docsDir: "docs/reading-time/src",
+
+    locales: {
+      "/zh/": {},
+    },
+
+    blog: false,
 
     footer: {
       display: true,
@@ -33,40 +40,40 @@ module.exports = config({
     },
 
     pwa: {
-      favicon: "/active-hash/favicon.ico",
+      favicon: "/reading-time/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/active-hash/assets/icon/apple-icon-152.png",
+        icon: "/reading-time/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/active-hash/assets/icon/ms-icon-144.png",
+        image: "/reading-time/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
-        name: "vuepress-plugin-active-hash",
-        short_name: "active-hash plugin",
+        name: "@mr-hope/vuepress-plugin-reading-time",
+        short_name: "reading-time plugin",
         icons: [
           {
-            src: "/active-hash/assets/icon/chrome-mask-512.png",
+            src: "/reading-time/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/active-hash/assets/icon/chrome-mask-192.png",
+            src: "/reading-time/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/active-hash/assets/icon/chrome-512.png",
+            src: "/reading-time/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/active-hash/assets/icon/chrome-192.png",
+            src: "/reading-time/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },

@@ -1,17 +1,17 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
-  title: "Quick Code Copy",
-  description: "Quick Code Copy Plugin for vuepress",
+export default hope.config({
+  title: "SEO Enhance",
+  description: "Using <meta> tags to Enhance Your site SEO",
 
-  base: "/copy-code/",
+  base: "/seo/",
   dest: "./dist",
 
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
-      title: "代码一键复制",
-      description: "VuePress 的代码一键复制插件",
+      title: "SEO 增强",
+      description: "使用 <meta> tag 为你的站点提供 SEO 增强",
     },
   },
 
@@ -22,7 +22,7 @@ module.exports = config({
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
-    docsDir: "docs/copy-code/src",
+    docsDir: "docs/seo/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -73,40 +73,40 @@ module.exports = config({
     },
 
     pwa: {
-      favicon: "/copy-code/favicon.ico",
+      favicon: "/seo/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/copy-code/assets/icon/apple-icon-152.png",
+        icon: "/seo/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/copy-code/assets/icon/ms-icon-144.png",
+        image: "/seo/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-copy-code",
-        short_name: "copy-code plugin",
+        name: "@mr-hope/vuepress-plugin-seo",
+        short_name: "seo-plugin",
         icons: [
           {
-            src: "/copy-code/assets/icon/chrome-mask-512.png",
+            src: "/seo/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/copy-code/assets/icon/chrome-mask-192.png",
+            src: "/seo/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/copy-code/assets/icon/chrome-512.png",
+            src: "/seo/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/copy-code/assets/icon/chrome-192.png",
+            src: "/seo/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -115,16 +115,16 @@ module.exports = config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/copy-code/guide/",
+            url: "/seo/guide/",
             icons: [
               {
-                src: "/copy-code/assets/icon/guide-maskable.png",
+                src: "/seo/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/copy-code/assets/icon/guide-monochrome.png",
+                src: "/seo/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -134,16 +134,16 @@ module.exports = config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/copy-code/config/",
+            url: "/seo/config/",
             icons: [
               {
-                src: "/copy-code/assets/icon/config-maskable.png",
+                src: "/seo/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/copy-code/assets/icon/config-monochrome.png",
+                src: "/seo/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

@@ -1,17 +1,17 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
-  title: "PWA Support",
-  description: "A powerful PWA plugin for vuepress",
+export default hope.config({
+  title: "Sitemap Generator",
+  description: "Generate Sitemap for your site",
 
-  base: "/pwa/",
+  base: "/sitemap/",
   dest: "./dist",
 
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
-      title: "PWA 支持",
-      description: "一个强大的 PWA 插件",
+      title: "Sitemap 生成器",
+      description: "为你的站点生成 Sitemap",
     },
   },
 
@@ -20,9 +20,9 @@ module.exports = config({
     hostname: "https://vuepress-theme-hope.github.io",
 
     author: "Mr.Hope",
-    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hopeeme-hope",
+    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
-    docsDir: "docs/pwa/src",
+    docsDir: "docs/sitemap/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -72,45 +72,41 @@ module.exports = config({
       timezone: "Asia/Shanghai",
     },
 
-    mdEnhance: {
-      footnote: true,
-    },
-
     pwa: {
-      favicon: "/pwa/favicon.ico",
+      favicon: "/sitemap/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/pwa/assets/icon/apple-icon-152.png",
+        icon: "/sitemap/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/pwa/assets/icon/ms-icon-144.png",
+        image: "/sitemap/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-pwa",
-        short_name: "pwa plugin",
+        name: "@mr-hope/vuepress-plugin-sitemap",
+        short_name: "sitemap plugin",
         icons: [
           {
-            src: "/pwa/assets/icon/chrome-mask-512.png",
+            src: "/sitemap/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/pwa/assets/icon/chrome-mask-192.png",
+            src: "/sitemap/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/pwa/assets/icon/chrome-512.png",
+            src: "/sitemap/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/pwa/assets/icon/chrome-192.png",
+            src: "/sitemap/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -119,16 +115,16 @@ module.exports = config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/pwa/guide/",
+            url: "/sitemap/guide/",
             icons: [
               {
-                src: "/pwa/assets/icon/guide-maskable.png",
+                src: "/sitemap/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/pwa/assets/icon/guide-monochrome.png",
+                src: "/sitemap/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -138,16 +134,16 @@ module.exports = config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/pwa/config/",
+            url: "/sitemap/config/",
             icons: [
               {
-                src: "/pwa/assets/icon/config-maskable.png",
+                src: "/sitemap/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/pwa/assets/icon/config-monochrome.png",
+                src: "/sitemap/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

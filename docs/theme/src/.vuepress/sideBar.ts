@@ -1,7 +1,7 @@
-const { sidebarConfig } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = {
-  en: sidebarConfig({
+export default {
+  en: hope.sidebarConfig({
     "/guide/": [
       {
         title: "Get Started",
@@ -187,7 +187,7 @@ module.exports = {
     ],
   }),
 
-  zh: sidebarConfig({
+  zh: hope.sidebarConfig({
     "/zh/guide/": [
       {
         title: "快速上手",

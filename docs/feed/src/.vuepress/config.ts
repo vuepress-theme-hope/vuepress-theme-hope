@@ -1,20 +1,20 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
-  title: "SEO Enhance",
-  description: "Using <meta> tags to Enhance Your site SEO",
+export default hope.config({
+  title: "Feed Generator",
+  description: "Feed Plugin for vuepress",
 
-  base: "/seo/",
+  base: "/feed/",
   dest: "./dist",
 
   locales: {
-    "/": { lang: "en-US" },
     "/zh/": {
-      title: "SEO 增强",
-      description: "使用 <meta> tag 为你的站点提供 SEO 增强",
+      title: "Feed 生成器",
+      description: "VuePress Feed 插件",
     },
   },
 
+  /** 主题配置 */
   themeConfig: {
     logo: "/logo.svg",
     hostname: "https://vuepress-theme-hope.github.io",
@@ -22,7 +22,7 @@ module.exports = config({
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
-    docsDir: "docs/seo/src",
+    docsDir: "docs/feed/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -37,6 +37,20 @@ module.exports = config({
         link: "/config/",
       },
     ],
+
+    sidebar: {
+      "/": [
+        "",
+        "guide",
+        {
+          title: "Config",
+          icon: "config",
+          prefix: "config/",
+          collapsable: false,
+          children: ["", "channel", "item"],
+        },
+      ],
+    },
 
     locales: {
       "/zh/": {
@@ -53,6 +67,20 @@ module.exports = config({
             link: "/zh/config/",
           },
         ],
+
+        sidebar: {
+          "/zh/": [
+            "",
+            "guide",
+            {
+              title: "配置",
+              icon: "config",
+              prefix: "config/",
+              collapsable: false,
+              children: ["", "channel", "item"],
+            },
+          ],
+        },
       },
     },
 
@@ -68,45 +96,41 @@ module.exports = config({
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
-    git: {
-      timezone: "Asia/Shanghai",
-    },
-
     pwa: {
-      favicon: "/seo/favicon.ico",
+      favicon: "/feed/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/seo/assets/icon/apple-icon-152.png",
+        icon: "/feed/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/seo/assets/icon/ms-icon-144.png",
+        image: "/feed/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-seo",
-        short_name: "seo-plugin",
+        name: "@mr-hope/vuepress-plugin-feed",
+        short_name: "feed plugin",
         icons: [
           {
-            src: "/seo/assets/icon/chrome-mask-512.png",
+            src: "/feed/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/seo/assets/icon/chrome-mask-192.png",
+            src: "/feed/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/seo/assets/icon/chrome-512.png",
+            src: "/feed/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/seo/assets/icon/chrome-192.png",
+            src: "/feed/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -115,16 +139,16 @@ module.exports = config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/seo/guide/",
+            url: "/feed/guide/",
             icons: [
               {
-                src: "/seo/assets/icon/guide-maskable.png",
+                src: "/feed/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/seo/assets/icon/guide-monochrome.png",
+                src: "/feed/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -134,16 +158,16 @@ module.exports = config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/seo/config/",
+            url: "/feed/config/",
             icons: [
               {
-                src: "/seo/assets/icon/config-maskable.png",
+                src: "/feed/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/seo/assets/icon/config-monochrome.png",
+                src: "/feed/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

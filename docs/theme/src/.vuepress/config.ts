@@ -1,8 +1,8 @@
-const { config } = require("vuepress-theme-hope");
-const navBarConfig = require("./navBar");
-const sideBarConfig = require("./sideBar");
+import hope from "vuepress-theme-hope";
+import navBarConfig from "./navBar";
+import sideBarConfig from "./sideBar";
 
-module.exports = config({
+export default hope.config({
   title: "vuepress-theme-hope",
   description: "A vuepress theme with tons of features✨",
 

@@ -1,17 +1,18 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
-  title: "Sitemap Generator",
-  description: "Generate Sitemap for your site",
+export default hope.config({
+  title: "Share Plugin",
+  description: "Share Plugin provided by AddThis",
 
-  base: "/sitemap/",
+  base: "/add-this/",
+
   dest: "./dist",
 
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
-      title: "Sitemap 生成器",
-      description: "为你的站点生成 Sitemap",
+      title: "分享插件",
+      description: "由 AddThis 提供的分享插件",
     },
   },
 
@@ -22,7 +23,7 @@ module.exports = config({
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
-    docsDir: "docs/sitemap/src",
+    docsDir: "docs/add-this/src",
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
@@ -63,6 +64,8 @@ module.exports = config({
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
+    addThis: "ra-5f829c59e6c6bc9a",
+
     comment: {
       type: "waline",
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
@@ -73,40 +76,40 @@ module.exports = config({
     },
 
     pwa: {
-      favicon: "/sitemap/favicon.ico",
+      favicon: "/add-this/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/sitemap/assets/icon/apple-icon-152.png",
+        icon: "/add-this/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/sitemap/assets/icon/ms-icon-144.png",
+        image: "/add-this/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-sitemap",
-        short_name: "sitemap plugin",
+        name: "vuepress-plugin-add-this",
+        short_name: "add-this plugin",
         icons: [
           {
-            src: "/sitemap/assets/icon/chrome-mask-512.png",
+            src: "/add-this/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/sitemap/assets/icon/chrome-mask-192.png",
+            src: "/add-this/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/sitemap/assets/icon/chrome-512.png",
+            src: "/add-this/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/sitemap/assets/icon/chrome-192.png",
+            src: "/add-this/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -115,16 +118,16 @@ module.exports = config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/sitemap/guide/",
+            url: "/add-this/guide/",
             icons: [
               {
-                src: "/sitemap/assets/icon/guide-maskable.png",
+                src: "/add-this/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/sitemap/assets/icon/guide-monochrome.png",
+                src: "/add-this/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -134,16 +137,16 @@ module.exports = config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/sitemap/config/",
+            url: "/add-this/config/",
             icons: [
               {
-                src: "/sitemap/assets/icon/config-maskable.png",
+                src: "/add-this/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/sitemap/assets/icon/config-monochrome.png",
+                src: "/add-this/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

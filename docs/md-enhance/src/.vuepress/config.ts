@@ -1,6 +1,6 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
+export default hope.config({
   title: "Markdown Enhance",
   description: "Markdown Enhancement for VuePress",
 

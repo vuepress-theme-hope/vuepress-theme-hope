@@ -1,17 +1,17 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
-  title: "Reading Time Counter",
-  description: "Expect reading time and word count statistics",
+export default hope.config({
+  title: "Git-based info plugin",
+  description: "Info plugin based on git for vuepress",
 
-  base: "/reading-time/",
+  base: "/git/",
   dest: "./dist",
 
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
-      title: "阅读时间生成",
-      description: "预计阅读时间与字数统计生成",
+      title: "基于 Git 的信息插件",
+      description: "VuePress 的 Git 信息插件",
     },
   },
 
@@ -22,13 +22,7 @@ module.exports = config({
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     docsBranch: "v1",
-    docsDir: "docs/reading-time/src",
-
-    locales: {
-      "/zh/": {},
-    },
-
-    blog: false,
+    docsDir: "docs/git/src",
 
     footer: {
       display: true,
@@ -40,40 +34,40 @@ module.exports = config({
     },
 
     pwa: {
-      favicon: "/reading-time/favicon.ico",
+      favicon: "/git/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/reading-time/assets/icon/apple-icon-152.png",
+        icon: "/git/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/reading-time/assets/icon/ms-icon-144.png",
+        image: "/git/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-reading-time",
-        short_name: "reading-time plugin",
+        name: "@mr-hope/vuepress-plugin-git",
+        short_name: "Git plugin",
         icons: [
           {
-            src: "/reading-time/assets/icon/chrome-mask-512.png",
+            src: "/git/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/reading-time/assets/icon/chrome-mask-192.png",
+            src: "/git/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/reading-time/assets/icon/chrome-512.png",
+            src: "/git/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/reading-time/assets/icon/chrome-192.png",
+            src: "/git/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
