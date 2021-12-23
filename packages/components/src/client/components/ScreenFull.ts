@@ -1,9 +1,8 @@
 import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
 import { defineComponent, h, onMounted, ref } from "vue";
-import * as screenfull from "screenfull";
+import screenfull from "screenfull";
 import { CancelFullScreenIcon, EnterFullScreenIcon } from "../icons";
 
-import type { Screenfull } from "screenfull";
 import type { VNode } from "vue";
 
 export default defineComponent({
@@ -29,9 +28,7 @@ export default defineComponent({
               onClick: () => {
                 if (screenfull.isEnabled)
                   void screenfull.toggle().then(() => {
-                    isFullscreen.value = (
-                      screenfull as Screenfull
-                    ).isFullscreen;
+                    isFullscreen.value = screenfull.isFullscreen;
                   });
               },
             },

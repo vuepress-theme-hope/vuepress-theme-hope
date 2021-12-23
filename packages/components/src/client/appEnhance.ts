@@ -3,7 +3,7 @@ import Badge from "./components/Badge";
 import BreadCrumb from "./components/BreadCrumb";
 import CodeGroup from "./components/CodeGroup";
 import CodeGroupItem from "./components/CodeGroupItem";
-import OutboundLink from "./components/OutboundLink";
+import ExternalLinkIcon from "./components/ExternalLinkIcon";
 import Pagination from "./components/Pagination.vue";
 import ScreenFull from "./components/ScreenFull";
 
@@ -15,10 +15,8 @@ export default defineClientAppEnhance(({ app }) => {
   app.component("BreadCrumb", BreadCrumb);
   app.component("CodeGroup", CodeGroup);
   app.component("CodeGroupItem", CodeGroupItem);
-  // unregister the built-in `<OutboundLink>` to avoid warning
-  delete app._context.components.OutboundLink;
-  // override the built-in `<OutboundLink>`
-  app.component("OutboundLink", OutboundLink);
+  // override the built-in `<ExternalLinkIcon>`
+  app.component("ExternalLinkIcon", ExternalLinkIcon);
   // eslint-disable-next-line vue/multi-word-component-names
   app.component("Pagination", Pagination);
   app.component("ScreenFull", ScreenFull);

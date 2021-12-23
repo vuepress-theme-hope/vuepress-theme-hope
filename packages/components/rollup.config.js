@@ -15,6 +15,7 @@ export default [
       "@mr-hope/vuepress-shared/client",
       "@mr-hope/vuepress-shared/styles/config/index.scss",
       "@vuepress/client",
+      "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "vue",
       "vue-router",

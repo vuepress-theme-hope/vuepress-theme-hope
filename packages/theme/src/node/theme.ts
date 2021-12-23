@@ -9,7 +9,7 @@ import {
   resolveGitPluginOptions,
 } from "./plugins";
 
-import type { Theme, ThemeConfig } from "@vuepress/core";
+import type { Page, Theme, ThemeConfig } from "@vuepress/core";
 import type {
   HopeThemeLocaleOptions,
   HopeThemePluginsOptions,
@@ -59,11 +59,9 @@ export const themeHope: Theme<HopeThemeOptions> = (
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
 
     // use the relative file path to generate edit link
-    extendsPageData: ({
-      filePathRelative,
-    }): { filePathRelative: string | null } => ({
-      filePathRelative,
-    }),
+    extendsPage: (page: Page<{ filePathRelative: string | null }>): void => {
+      page.data.filePathRelative = page.filePathRelative;
+    },
 
     plugins: [
       ["@mr-hope/components"],

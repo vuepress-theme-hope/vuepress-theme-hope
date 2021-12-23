@@ -15,7 +15,18 @@
     "importHelpers": true,
     "inlineSourceMap": false,
     "inlineSources": false,
-    "lib": ["DOM", "ES2020"],
+    // mininal node 12 support
+    // "lib": [
+    //   "dom",
+    //   "es2019",
+    //   "es2020.promise",
+    //   "es2020.bigint",
+    //   "es2020.string"
+    // ],
+    // mininal node 14 support
+    "lib": ["es2020"],
+    // mininal node 16 support
+    // "lib": ["es2021"],
     "listEmittedFiles": false,
     "module": "es2015",
     "moduleResolution": "node",
@@ -34,7 +45,12 @@
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "target": "ESNext",
+    // mininal node 12 support
+    "target": "es2019",
+    // mininal node 14 support
+    // "target": "es2020",
+    // mininal node 16 support
+    // "target": "es2021",
     "types": ["jest", "node", "vite/client"]
   }
 }

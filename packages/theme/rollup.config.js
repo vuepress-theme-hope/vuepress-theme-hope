@@ -10,6 +10,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
+      "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "vue",
@@ -23,6 +24,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
+      "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "vue",
@@ -51,6 +53,7 @@ export default [
       "@CommonWrapper",
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
+      "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "vue",
@@ -105,6 +108,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/client",
       "@vuepress/client",
+      "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "vue",

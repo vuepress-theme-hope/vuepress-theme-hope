@@ -1,5 +1,5 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
-import { OutboundLink } from "@vuepress/client";
+import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/lib/client";
 import { defineComponent, h } from "vue";
 
 import { componentI18n } from "../define";
@@ -7,13 +7,13 @@ import { componentI18n } from "../define";
 import type { VNode } from "vue";
 
 export default defineComponent({
-  name: "OutboundLink",
+  name: "ExternalLinkIcon",
 
   setup() {
     const componentLocale = useLocaleConfig(componentI18n);
 
     return (): VNode =>
-      h(OutboundLink, {
+      h(ExternalLinkIcon, {
         default: () =>
           h(
             "span",

@@ -1,6 +1,7 @@
 import { computed, defineComponent, h, toRef } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { OutboundLink, useSiteData } from "@vuepress/client";
+import { useSiteData } from "@vuepress/client";
+import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/lib/client";
 import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
 
@@ -143,7 +144,7 @@ export default defineComponent({
             [
               slots.before?.() || renderIcon(item.value),
               item.value.text,
-              isBlankTarget.value ? h(OutboundLink) : null,
+              isBlankTarget.value ? h(ExternalLinkIcon) : null,
               slots.after?.(),
             ]
           );
