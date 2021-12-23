@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.22.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.21.0...v1.22.0) (2021-12-23)
+
+### Bug Fixes
+
+- **theme:** fix issues when sidebarDepth set to `0`, fix [#1227](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1227) ([753f7c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/753f7c78f6e534ccf298b94554e859d8928f8cd7))
+
 ## [1.21.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.20.5...v1.21.0) (2021-11-14)
 
 ### Bug Fixes
