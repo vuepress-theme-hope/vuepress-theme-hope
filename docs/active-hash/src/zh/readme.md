@@ -23,32 +23,61 @@ copyrightText: false
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
+
 ```bash
 yarn add -D vuepress-plugin-active-hash
 ```
+
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
+
 ```bash
 npm i -D vuepress-plugin-active-hash
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
 ### 使用
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
+// .vuepress/config.js
 module.exports = {
   plugins: [
     [
       "active-hash",
       {
-        // 你的选项
+        // your 你的选项
       },
     ],
   ],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+exports default {
+  plugins: [
+    [
+      "active-hash",
+      {
+        // your 你的选项
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 此插件是官方插件的改进版本:
 

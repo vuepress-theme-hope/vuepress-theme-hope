@@ -64,6 +64,9 @@ You can fill in an absolute path or a relative path under the `.vuepress` folder
 
 ::: details example
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
@@ -77,5 +80,26 @@ module.exports = config({
   },
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    custom: {
+      navbarStart: "./components/MyLogo.vue",
+      sidebarStart: path.resolve(__dirname, "../common/Ads.vue"),
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 :::

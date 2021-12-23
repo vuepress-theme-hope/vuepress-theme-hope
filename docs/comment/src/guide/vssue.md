@@ -23,9 +23,11 @@ This plugin uses [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@v
 
 ### Use the plugin
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-
 module.exports = {
   plugins: {
     "@mr-hope/comment": {
@@ -42,6 +44,32 @@ module.exports = {
   },
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+export default {
+  plugins: {
+    "@mr-hope/comment": {
+      type: "vssue",
+      // set `platform` rather than `api`
+      platform: "github",
+
+      // all other options of Vssue are allowed
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
+    },
+  },
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 

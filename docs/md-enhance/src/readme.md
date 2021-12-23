@@ -62,19 +62,26 @@ copyrightText: false
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
+
 ```bash
 yarn add -D vuepress-plugin-md-enhance
 ```
+
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
+
 ```bash
 npm i -D vuepress-plugin-md-enhance
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
 ### Usage
+
+<CodeGroup>
+<CodeGroupItem title="js">
 
 ```js
 // .vuepress/config.js
@@ -89,3 +96,24 @@ module.exports = {
   ],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+export default {
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // your options
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>

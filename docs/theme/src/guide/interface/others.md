@@ -24,14 +24,37 @@ If the current browser does not support full screen, the full screen button is a
 
 :::
 
-```js {4}
+<CodeGroup>
+<CodeGroupItem title="js">
+
+```js {6}
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     fullscreen: false, // Enable by default
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    fullscreen: false, // Enable by default
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ## Back to top button <Badge text="Support page config" />
 

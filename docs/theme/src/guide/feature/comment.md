@@ -13,17 +13,47 @@ tags:
 
 ## Enable <Badge text="Support page config" />
 
-```js
-// .vuepress/config.js
-module.exports = {
+<CodeGroup>
+<CodeGroupItem title="js">
+
+```js {7,10}
+// .vuepress/themeConfig.js
+const { themeConfig } = require("vuepress-theme-hope");
+
+module.exports = themeConfig({
   themeConfig: {
     comment: {
-      type: "waline", // Use Waline
+      type: "waline", // "waline", "valine" 或 "vssue"
+
+      // under waline
       serverURL: "...", // your serverUrl
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {7,10}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "waline", // "waline", "valine" 或 "vssue"
+
+      // under waline
+      serverURL: "...", // your serverUrl
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 Comment feature is enabled globally by default, the configuration key is `comment`.
 
@@ -61,6 +91,9 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your themeConfig:
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
@@ -74,6 +107,27 @@ module.exports = config({
   },
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "waline",
+      serverURL: "YOUR_SERVER_URL", // your server url
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 
@@ -100,6 +154,9 @@ After this step, you will get `client id` and `client secret` of your OAuth App,
 
 ### Use the plugin
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js {7-17}
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
@@ -120,6 +177,34 @@ module.exports = config({
   },
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {7-17}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "vssue",
+      // set `platform` rather than `api`
+      platform: "github",
+
+      // all other options of Vssue are allowed
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 
@@ -150,6 +235,9 @@ You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy
 
 Create new application in Leancloud, and you will get APP ID / APP Key.
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
@@ -164,6 +252,28 @@ module.exports = config({
   },
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "valine",
+      appId: "...", // your appId
+      appKey: "...", // your appKey
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 Config will be listed on [Config](http://vuepress-theme-hope.github.io/comment/config/valine/).
 

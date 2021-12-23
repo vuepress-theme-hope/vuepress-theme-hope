@@ -24,14 +24,37 @@ tags:
 
 :::
 
-```js {4}
+<CodeGroup>
+<CodeGroupItem title="js">
+
+```js {6}
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
-    fullscreen: false, // 默认启用，设置 false 将其关闭
+    fullscreen: false, // Enable by default
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    fullscreen: false, // Enable by default
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ## 返回顶部按钮 <Badge text="支持页面配置" />
 

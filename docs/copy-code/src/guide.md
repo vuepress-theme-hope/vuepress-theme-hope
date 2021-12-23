@@ -13,6 +13,9 @@ After user press the copy button, a success hint will display on the screen. The
 
 ## Effect
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 module.exports = {
@@ -26,3 +29,24 @@ module.exports = {
   ],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+export default {
+  plugins: [
+    [
+      "@mr-hope/copy-code",
+      {
+        // your options
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>

@@ -90,6 +90,9 @@ npm init vuepress-theme-hope [dir]
 
 ## 🚀Usage
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js{2,4,6}
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
@@ -98,6 +101,22 @@ module.exports = config({
   // your config here
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts{2,4,6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  // your config here
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 

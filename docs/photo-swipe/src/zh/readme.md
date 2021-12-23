@@ -25,19 +25,26 @@ copyrightText: false
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
+
 ```bash
 yarn add -D vuepress-plugin-photo-swipe
 ```
+
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
+
 ```bash
 npm i -D vuepress-plugin-photo-swipe
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
 ### 使用
+
+<CodeGroup>
+<CodeGroupItem title="js">
 
 ```js
 // .vuepress/config.js
@@ -45,3 +52,17 @@ module.exports = {
   plugins: ["photo-swipe"],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+export default {
+  plugins: ["photo-swipe"],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>

@@ -23,6 +23,9 @@ Vssue 支持通过 GitHub, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 
 ### 使用插件
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 
@@ -42,6 +45,33 @@ module.exports = {
   },
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```js
+// .vuepress/config.ts
+
+export default {
+  plugins: {
+    "@mr-hope/comment": {
+      type: "vssue",
+      // 设置 `platform` 而不是 `api`
+      platform: "github",
+
+      // 其他的 Vssue 配置
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
+    },
+  },
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 

@@ -17,15 +17,19 @@ copyrightText: false
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
+
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-git
 ```
+
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
+
 ```bash
 npm i -D @mr-hope/vuepress-plugin-git
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
@@ -38,12 +42,33 @@ module.exports = {
     [
       "@mr-hope/git",
       {
-        // your options
+        // 你的选项
       },
     ],
   ],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+export default {
+  plugins: [
+    [
+      "@mr-hope/git",
+      {
+        // 你的选项
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ## 插件说明
 

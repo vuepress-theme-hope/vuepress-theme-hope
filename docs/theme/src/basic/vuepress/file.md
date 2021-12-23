@@ -101,7 +101,7 @@ The configuration file for the project. For specific configuration instructions,
 
 ::: tip
 
-For more details, please view[VuePress Config](https://v1.vuepress.vuejs.org/config/)
+For more details, please view [VuePress Config](https://v1.vuepress.vuejs.org/config/)
 
 :::
 

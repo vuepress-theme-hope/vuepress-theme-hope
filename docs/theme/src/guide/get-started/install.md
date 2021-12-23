@@ -12,19 +12,26 @@ Create a vuepress-theme-hope project in `[dir]` folder under the current project
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
+
 ```bash
 yarn create vuepress-theme-hope [dir]
 ```
+
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
+
 ```bash
 npm init vuepress-theme-hope [dir]
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
 ## Usage
+
+<CodeGroup>
+<CodeGroupItem title="js">
 
 ```js
 // .vuepress/config.js
@@ -34,6 +41,22 @@ module.exports = config({
   // your config here
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  // your config here
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 

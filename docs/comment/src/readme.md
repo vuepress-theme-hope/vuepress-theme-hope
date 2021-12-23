@@ -21,19 +21,26 @@ copyrightText: false
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
+
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-comment
 ```
+
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
+
 ```bash
 npm i -D @mr-hope/vuepress-plugin-comment
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
 ### Usage
+
+<CodeGroup>
+<CodeGroupItem title="js">
 
 ```js
 // .vuepress/config.js
@@ -48,3 +55,24 @@ module.exports = {
   ],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+exports default {
+  plugins: [
+    [
+      "@mr-hope/comment",
+      {
+        // your options
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>

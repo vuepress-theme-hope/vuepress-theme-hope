@@ -23,22 +23,44 @@ copyrightText: false
 
 <CodeGroup>
 <CodeGroupItem title="yarn">
+
 ```bash
 yarn add -D vuepress-plugin-add-this
 ```
+
 </CodeGroupItem>
 
 <CodeGroupItem title="npm">
+
 ```bash
 npm i -D vuepress-plugin-add-this
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
 ### 使用
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
+// .vuepress/config.js
 module.exports = {
   plugins: [["add-this", { pubid: "你的 pubid" }]],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+export default {
+  plugins: [["add-this", { pubid: "你的 pubid" }]],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>

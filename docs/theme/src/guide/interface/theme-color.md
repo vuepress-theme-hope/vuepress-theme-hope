@@ -25,9 +25,14 @@ You need to configure `themeConfig.themeColor` in the format `colorname1: colorv
 
 ::: details Example
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js {5-10}
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     themeColor: {
       blue: "#2196f3",
@@ -36,8 +41,31 @@ module.exports = {
       orange: "#fb9b5f",
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    themeColor: {
+      blue: "#2196f3",
+      red: "#f26d6d",
+      green: "#3eaf7c",
+      orange: "#fb9b5f",
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 :::
 

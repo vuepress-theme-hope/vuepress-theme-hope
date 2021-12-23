@@ -13,9 +13,14 @@ tags:
 
 ## 启用 <Badge text="支持页面配置" />
 
-```js {5,8,9}
-// .vuepress/config.js
-module.exports = {
+<CodeGroup>
+<CodeGroupItem title="js">
+
+```js {7,10}
+// .vuepress/themeConfig.js
+const { themeConfig } = require("vuepress-theme-hope");
+
+module.exports = themeConfig({
   themeConfig: {
     comment: {
       type: "waline", // "waline", "valine" 或 "vssue"
@@ -24,8 +29,31 @@ module.exports = {
       serverURL: "...", // your serverURL
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {7,10}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "waline", // "waline", "valine" 或 "vssue"
+
+      // waline 模式下
+      serverURL: "...", // your serverURL
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 评论功能默认全局启用，配置项为 `comment`。
 
@@ -63,6 +91,9 @@ module.exports = {
 
 设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
@@ -76,6 +107,27 @@ module.exports = config({
   },
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "waline",
+      serverURL: "YOUR_SERVER_URL", // your server url
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 Waline 评论的其他配置将在 [配置](http://vuepress-theme-hope.github.io/comment/zh/config/waline/) 中列出。
 
@@ -102,25 +154,57 @@ Vssue 支持通过 GitHub, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 
 ### 使用插件
 
-```js {5-15}
-// .vuepress/config.js
+<CodeGroup>
+<CodeGroupItem title="js">
 
-module.exports = {
-  plugins: {
-    "@mr-hope/comment": {
+```js {7-17}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    comment: {
       type: "vssue",
-      // 设置 `platform` 而不是 `api`
+      // set `platform` rather than `api`
       platform: "github",
 
-      // 其他的 Vssue 配置
+      // all other options of Vssue are allowed
       owner: "OWNER_OF_REPO",
       repo: "NAME_OF_REPO",
       clientId: "YOUR_CLIENT_ID",
       clientSecret: "YOUR_CLIENT_SECRET",
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {7-17}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "vssue",
+      // set `platform` rather than `api`
+      platform: "github",
+
+      // all other options of Vssue are allowed
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 
@@ -147,6 +231,9 @@ module.exports = {
 
 应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了。
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 const { config } = require("vuepress-theme-hope");
@@ -161,6 +248,28 @@ module.exports = config({
   },
 });
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    comment: {
+      type: "valine",
+      appId: "...", // your appId
+      appKey: "...", // your appKey
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 将对应的 `APP ID` 和 `APP Key` 填入， Valine 即配置完成。
 

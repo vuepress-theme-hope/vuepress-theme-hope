@@ -13,6 +13,9 @@ icon: creative
 
 ## 效果
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
 module.exports = {
@@ -20,9 +23,30 @@ module.exports = {
     [
       "@mr-hope/copy-code",
       {
-        // 你的选项
+        // your options
       },
     ],
   ],
 };
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+export default {
+  plugins: [
+    [
+      "@mr-hope/copy-code",
+      {
+        // your options
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+</CodeGroup>

@@ -24,10 +24,16 @@ tags:
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式来配置 `themeConfig.themeColor`:
 
 ::: details 例子
+:: details Example
+
+<CodeGroup>
+<CodeGroupItem title="js">
 
 ```js {5-10}
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     themeColor: {
       blue: "#2196f3",
@@ -36,8 +42,31 @@ module.exports = {
       orange: "#fb9b5f",
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    themeColor: {
+      blue: "#2196f3",
+      red: "#f26d6d",
+      green: "#3eaf7c",
+      orange: "#fb9b5f",
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 :::
 

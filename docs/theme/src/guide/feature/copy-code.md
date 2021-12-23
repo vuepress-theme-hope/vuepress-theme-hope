@@ -25,9 +25,11 @@ After user press the copy button, a success hint will display on the screen. The
 
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     copyCode: {},
   },
-};
+});
 ```

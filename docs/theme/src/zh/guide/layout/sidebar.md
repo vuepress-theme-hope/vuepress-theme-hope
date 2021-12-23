@@ -11,14 +11,37 @@ tags:
 
 对于 Sidebar 基本的配置，可以传入一个包含多个链接的数组:
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: ["/", "/page-a", "/page-b"],
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: ["/", "/page-a", "/page-b"],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 数组的每一项最终都会渲染为一个侧边栏项目。
 
@@ -30,18 +53,37 @@ module.exports = {
 
 ::: details 例子
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
-    sidebar: [
-      "/",
-      "/page-a",
-      ["/page-b", "This text will be the title of `page-b`"],
-    ],
+    sidebar: ["/", "/page-a", ["/page-b", "这将会是 page-b 的页面标题"]],
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: ["/", "/page-a", ["/page-b", "这将会是 page-b 的页面标题"]],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 :::
 
@@ -63,25 +105,73 @@ sidebarDepth: 2
 
 默认情况下，侧边栏只会显示由当前活动页面的标题 (headers) 组成的链接，你可以将 `themeConfig.displayAllHeaders` 设置为 `true` 来显示所有页面的标题链接:
 
-```js
-module.exports = {
+<CodeGroup>
+<CodeGroupItem title="js">
+
+```js {6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     displayAllHeaders: true, // 默认值: false
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    displayAllHeaders: true, // 默认值: false
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ## 活动的标题链接
 
 默认情况下，当用户通过滚动查看页面的不同部分时，嵌套的标题链接和 URL 中的 Hash 值会实时更新，这个行为可以通过以下的配置来禁用:
 
-```js
-module.exports = {
+<CodeGroup>
+<CodeGroupItem title="js">
+
+```js {6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     activeHeaderLinks: false, // 默认值: true
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    activeHeaderLinks: false, // 默认值: true
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ## 侧边栏分组
 
@@ -93,9 +183,14 @@ module.exports = {
 
 一个侧边栏的子组配置同时支持 [sidebarDepth](#嵌套的标题链接) 字段用于重写默认显示的侧边栏深度(`2`)。
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: [
       {
@@ -122,14 +217,60 @@ module.exports = {
       },
     ],
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: [
+      {
+        // 必要的，分组的标题文字
+        title: "Group 1",
+        // 可选的, 分组标题对应的图标
+        icon: "bar",
+        // 可选的, 分组标题对应的链接
+        path: "/foo/",
+        // 可选的，会添加到每个 item 链接地址之前
+        prefix: "/foo/",
+        // 可选的, 设置分组是否可以折叠，默认值是 true,
+        collapsable: false,
+        // 可选的, 嵌套渲染深度，默认值是 2
+        sidebarDepth: 2,
+        // 必要的，分组的子项目
+        children: ["/"],
+      },
+      {
+        title: "Group 2",
+        children: [
+          /* ... */
+        ],
+      },
+    ],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: details 例子
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: [
       {
@@ -157,16 +298,63 @@ module.exports = {
       },
     ],
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: [
+      {
+        title: "快速上手",
+        icon: "creative",
+        prefix: "/get-started/",
+        collapsable: false,
+        children: [
+          "intro" /* /get-started/intro.html */,
+          "install" /* /get-started/install.html */,
+          "markdown" /* /get-started/markdown.html */,
+        ],
+      },
+      {
+        title: "界面",
+        icon: "skin",
+        prefix: "/interface/",
+        collapsable: false,
+        children: [
+          "darkmode" /* /interface/darkmode.html */,
+          "theme-color" /* /interface/theme-color.html */,
+          "icon" /* /interface/icon.html */,
+          "others" /* /interface/others.html */,
+        ],
+      },
+    ],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 :::
 
 侧边栏分组也可以进行嵌套:
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: [
       {
@@ -175,25 +363,59 @@ module.exports = {
         children: [
           "baz" /* /baz.html */,
           {
-          title: "Sub Group 1",
-          children: [
-            "quz" /* /quz.html */,
-            "xyzzy" /* /xyzzy.html */,
-          ],
-          title: "Sub Group 2",
-          prefix: "corge/"
-          children: [
-            "fred" /* /corge/fred.html */,
-            "grault" /* /corge/grault.html */,
-          ],
+            title: "Sub Group 1",
+            children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
+            title: "Sub Group 2",
+            prefix: "corge/",
+            children: [
+              "fred" /* /corge/fred.html */,
+              "grault" /* /corge/grault.html */,
+            ],
           },
-           "foo" /* /foo.html */,
+          "foo" /* /foo.html */,
         ],
       },
     ],
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: [
+      {
+        title: "Group",
+        prefix: "/",
+        children: [
+          "baz" /* /baz.html */,
+          {
+            title: "Sub Group 1",
+            children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
+            title: "Sub Group 2",
+            prefix: "corge/",
+            children: [
+              "fred" /* /corge/fred.html */,
+              "grault" /* /corge/grault.html */,
+            ],
+          },
+          "foo" /* /foo.html */,
+        ],
+      },
+    ],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 通常情况下，你可能希望搭配 `prefix` 使用来快速还原文档的结构。
 
@@ -216,9 +438,14 @@ module.exports = {
 
 你就可以进行以下配置:
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: [
       "/" /* / */,
@@ -244,8 +471,48 @@ module.exports = {
       "/about" /* /about.html */,
     ],
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: [
+      "/" /* / */,
+      {
+        title: "Foo",
+        prefix: "/foo/",
+        children: [
+          "" /* /foo/ */,
+          "one" /* /foo/one.html */,
+          "two" /* /foo/two.html */,
+        ],
+      },
+      {
+        title: "Bar",
+        prefix: "/bar/",
+        children: [
+          "" /* /bar/ */,
+          "three" /* /bar/three.html */,
+          "four" /* /bar/four.html */,
+        ],
+      },
+      "/contact" /* /contact.html */,
+      "/about" /* /about.html */,
+    ],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: warning
 
@@ -286,9 +553,14 @@ module.exports = {
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: {
       "/foo/": [
@@ -311,8 +583,45 @@ module.exports = {
       ],
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: {
+      "/foo/": [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
+      ],
+
+      "/bar/": [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
+      ],
+
+      // fallback
+      "/": [
+        "" /* / */,
+        "contact" /* /contact.html */,
+        "about" /* /about.html */,
+      ],
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: warning
 
@@ -334,14 +643,37 @@ sidebar: auto
 
 你也可以通过配置来在所有页面中启用它:
 
-```js
+<CodeGroup>
+<CodeGroupItem title="js">
+
+```js {6}
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: "auto",
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: "auto",
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ## 禁用侧边栏
 
@@ -357,18 +689,49 @@ sidebar: false
 
 在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.html) 模式下, 你也可以为某一特定的语言配置侧边栏:
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
-    "/zh/": {
-      sidebar: [
-        /* your config */
-      ],
+    locales: {
+      "/zh/": {
+        sidebar: [
+          /* 你的配置 */
+        ],
+      },
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    locales: {
+      "/zh/": {
+        sidebar: [
+          /* 你的配置 */
+        ],
+      },
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ## 博主信息
 
@@ -380,12 +743,29 @@ module.exports = {
 
 我们提供了一个 `sidebarConfig` Helper 函数。你可以从 `vuepress-theme-hope` 中将其引入，并包裹你的导航栏配置来让编辑器提供自动补全并帮助你校验侧边栏配置是否正确。
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/sidebar.js
 const { sidebarConfig } = require("vuepress-theme-hope");
 
-module.exports = sidebarConfig(/* 你的导航栏配置 */);
+module.exports = sidebarConfig(/* 你的侧边栏配置 */);
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts {6}
+// .vuepress/sidebar.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.sidebarConfig(/* 你的侧边栏配置 */);
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 ::: tip
 
@@ -397,9 +777,14 @@ module.exports = sidebarConfig(/* 你的导航栏配置 */);
 
 ::: details 本文档的侧边栏配置
 
+<CodeGroup>
+<CodeGroupItem title="js">
+
 ```js
 // .vuepress/config.js
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
   themeConfig: {
     sidebar: {
       "/zh/guide/": [
@@ -541,7 +926,163 @@ module.exports = {
       "/zh/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
     },
   },
-};
+});
 ```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: {
+      "/zh/guide/": [
+        {
+          title: "快速上手",
+          icon: "creative",
+          prefix: "get-started/",
+          collapsable: false,
+          children: ["intro", "install", "markdown"],
+        },
+        {
+          title: "界面",
+          icon: "skin",
+          prefix: "interface/",
+          collapsable: false,
+          children: ["darkmode", "theme-color", "icon", "others"],
+        },
+        {
+          title: "布局",
+          icon: "layout",
+          prefix: "layout/",
+          collapsable: false,
+          children: [
+            "sidebar",
+            "sidebar",
+            {
+              title: "页面",
+              icon: "page",
+              collapsable: false,
+              children: ["page", "breadcrumb", "footer"],
+            },
+            "home",
+            "slides",
+          ],
+        },
+        {
+          title: "Markdown 增强",
+          icon: "markdown",
+          prefix: "markdown/",
+          collapsable: false,
+          children: [
+            "intro",
+            "components",
+            "align",
+            "sup-sub",
+            "footnote",
+            "mark",
+            "tex",
+            "flowchart",
+            "demo",
+            "presentation",
+            "external",
+          ],
+        },
+        {
+          title: "功能",
+          icon: "discover",
+          prefix: "feature/",
+          collapsable: false,
+          children: [
+            "page-info",
+            "comment",
+            "copy-code",
+            "photo-swipe",
+            "copyright",
+            "git",
+            "encrypt",
+            "pwa",
+            "feed",
+            "seo",
+            "sitemap",
+            "typescript",
+          ],
+        },
+        {
+          title: "博客",
+          icon: "layout",
+          prefix: "blog/",
+          collapsable: false,
+          children: ["intro", "home", "category-and-tags"],
+        },
+      ],
+
+      "/zh/config/": [
+        {
+          title: "主题配置",
+          icon: "config",
+          prefix: "theme/",
+          collapsable: false,
+          children: ["", "default", "feature", "plugin", "apperance"],
+        },
+        "page",
+        "stylus",
+        {
+          title: "插件配置",
+          icon: "plugin",
+          prefix: "plugin/",
+          collapsable: false,
+          children: ["", "container", "copyright"],
+        },
+      ],
+
+      "/zh/basic/": [
+        {
+          title: "Markdown",
+          icon: "markdown",
+          prefix: "markdown/",
+          collapsable: false,
+          children: [
+            "",
+            "demo",
+            {
+              title: "Emoji",
+              icon: "emoji",
+              path: "emoji/",
+              prefix: "emoji/",
+              collapsable: false,
+              children: ["people", "nature", "object", "place", "symbol"],
+            },
+          ],
+        },
+        {
+          title: "VuePress",
+          icon: "vue",
+          prefix: "vuepress/",
+          collapsable: false,
+          children: [
+            "",
+            "file",
+            "markdown",
+            "plugin",
+            "theme",
+            "command",
+            "case",
+          ],
+        },
+      ],
+
+      "/zh/": ["", "guide/", "config/", "basic/", "FAQ/", "demo/"],
+    },
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
 
 :::
