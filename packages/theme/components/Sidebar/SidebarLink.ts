@@ -151,11 +151,18 @@ export default Vue.extend({
           )
         : selfActive;
 
+    const pageMaxDepth = $page.frontmatter.sidebarDepth;
+    const localesMaxDepth = $themeLocaleConfig.sidebarDepth as number;
+    const themeMaxDepth = $themeConfig.sidebarDepth;
+
     const maxDepth =
-      $page.frontmatter.sidebarDepth ||
-      ($themeLocaleConfig.sidebarDepth as number) ||
-      $themeConfig.sidebarDepth ||
-      2;
+      typeof pageMaxDepth === "number"
+        ? pageMaxDepth
+        : typeof localesMaxDepth === "number"
+        ? localesMaxDepth
+        : typeof themeMaxDepth === "number"
+        ? themeMaxDepth
+        : 2;
 
     // the item is a heading
     if (item.type === "header")
