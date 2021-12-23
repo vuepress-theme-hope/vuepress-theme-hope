@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "axios": "0.24.0",
-    "vuepress": "1.8.2",
+    "vuepress": "1.9.1",
     "vuepress-theme-hope": "1.21.0"
   }
 }
