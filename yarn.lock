@@ -5394,10 +5394,10 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-cpx2@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/cpx2/-/cpx2-4.1.1.tgz#2179f567d885dc486a390b949542598399a8907c"
-  integrity sha512-eyKybDB++W8AEjI34rK7TjRrTKOBshDJsuJr6M/QyoLnslJRMBpxqUrmZuwV0A0Iu4vVuZKz7Vn9qXdSeDJTQQ==
+cpx2@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/cpx2/-/cpx2-4.1.2.tgz#7e7d17029b719030776d78126ef5a3184e788af1"
+  integrity sha512-D4E9QeZNwBJKiTblFPBqAJCXJCz5v+kBFkx+oqdx4+0ROuZlLwF/IYNcnSfawNDXv0lm4oJGhbTlu055yKuA+w==
   dependencies:
     debounce "^1.2.0"
     debug "^4.1.1"
