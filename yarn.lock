@@ -2730,6 +2730,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/bonjour@^3.5.9":
+  version "3.5.10"
+  resolved "https://registry.yarnpkg.com/@types/bonjour/-/bonjour-3.5.10.tgz#0f6aadfe00ea414edc86f5d106357cda9701e275"
+  integrity sha512-p7ienRMiS41Nu2/igbJxxLDWrSZ0WxM8UQgCeO9KhoVF7cOVFkrKsiDr1EsJIla8vV3oEEjGcz11jc5yimhzZw==
+  dependencies:
+    "@types/node" "*"
+
 "@types/concat-stream@^1.0.0":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@types/concat-stream/-/concat-stream-1.6.1.tgz#24bcfc101ecf68e886aaedce60dfd74b632a1b74"
@@ -2737,7 +2744,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/connect-history-api-fallback@*":
+"@types/connect-history-api-fallback@*", "@types/connect-history-api-fallback@^1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@types/connect-history-api-fallback/-/connect-history-api-fallback-1.3.5.tgz#d1f7a8a09d0ed5a57aee5ae9c18ab9b803205dae"
   integrity sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==
@@ -3076,7 +3083,7 @@
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.3.9.tgz#152c6c20a7688c30b967ec1841d31ace569863fc"
   integrity sha512-L/TMpyURfBkf+o/526Zb6kd/tchUP3iBDEPjqjb+U2MAJhVRxxrmr2fwpe08E7QsV7YLcpq0tUaQ9O9x97ZIxQ==
 
-"@types/serve-index@*":
+"@types/serve-index@*", "@types/serve-index@^1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@types/serve-index/-/serve-index-1.9.1.tgz#1b5e85370a192c01ec6cec4735cf2917337a6278"
   integrity sha512-d/Hs3nWDxNL2xAczmOVZNj92YZCS6RGxfBPjKzuu/XirCgXdpKEb88dYNbrYGint6IVWLNP+yonwVAuRC0T2Dg==
@@ -3089,6 +3096,13 @@
   integrity sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==
   dependencies:
     "@types/mime" "^1"
+    "@types/node" "*"
+
+"@types/sockjs@^0.3.33":
+  version "0.3.33"
+  resolved "https://registry.yarnpkg.com/@types/sockjs/-/sockjs-0.3.33.tgz#570d3a0b99ac995360e3136fd6045113b1bd236f"
+  integrity sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==
+  dependencies:
     "@types/node" "*"
 
 "@types/stack-utils@^2.0.0":
@@ -3151,6 +3165,13 @@
   version "1.16.3"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.16.3.tgz#b776327a73e561b71e7881d0cd6d34a1424db86a"
   integrity sha512-9gtOPPkfyNoEqCQgx4qJKkuNm/x0R2hKR7fdl7zvTJyHnIisuE/LfvXOsYWL0o3qq6uiBnKZNNNzi3l0y/X+xw==
+
+"@types/ws@^8.2.2":
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.2.2.tgz#7c5be4decb19500ae6b3d563043cd407bf366c21"
+  integrity sha512-NOn5eIcgWLOo6qW8AcuLZ7G8PycXu0xTxxkS6Q18VWFxgPUSOwV0pBj2a/4viNZVu25i7RIB7GttdkAIUUXOOg==
+  dependencies:
+    "@types/node" "*"
 
 "@types/yargs-parser@*":
   version "20.2.1"
@@ -3364,10 +3385,10 @@
     vue "^3.2.24"
     vue-router "^4.0.12"
 
-"@vuepress/bundler-webpack@2.0.0-beta.29":
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/@vuepress/bundler-webpack/-/bundler-webpack-2.0.0-beta.29.tgz#9c87386ae8b78cfd6e8a330ce1283db03b6fc90c"
-  integrity sha512-zgRRV1r7Ihb5OiSOjUdWIRGauJuPGF+rox59jZo6Ga5LZ2mL+uC69yZNBzaWwsbQWbNhePlnnMijgy/AYGgm7Q==
+"@vuepress/bundler-webpack@2.0.0-beta.30":
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@vuepress/bundler-webpack/-/bundler-webpack-2.0.0-beta.30.tgz#8833c7c8c3d808b635d2d4177e9988a44665c9fa"
+  integrity sha512-ooKwJQBMVnID591h/aOtdQl+FeRMqmenk92jeq4TtXzgtlUDBB4/QtvUh84AzzcyOtjVA36O2pNZazjbl+cq2A==
   dependencies:
     "@types/express" "^4.17.13"
     "@types/webpack-env" "^1.16.3"
@@ -3395,7 +3416,7 @@
     vue-router "^4.0.12"
     webpack "^5.65.0"
     webpack-chain "^6.5.1"
-    webpack-dev-server "4.6.0"
+    webpack-dev-server "4.7.0"
     webpack-merge "^5.8.0"
 
 "@vuepress/cli@2.0.0-beta.29":
@@ -16139,7 +16160,7 @@ webpack-chain@^6.5.1:
     deepmerge "^1.5.2"
     javascript-stringify "^2.0.1"
 
-webpack-dev-middleware@^5.2.1:
+webpack-dev-middleware@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-5.3.0.tgz#8fc02dba6e72e1d373eca361623d84610f27be7c"
   integrity sha512-MouJz+rXAm9B1OTOYaJnn6rtD/lWZPy2ufQCH3BPs8Rloh/Du6Jze4p7AeLYHkVi0giJnYLaSGDC7S+GM9arhg==
@@ -16150,11 +16171,16 @@ webpack-dev-middleware@^5.2.1:
     range-parser "^1.2.1"
     schema-utils "^4.0.0"
 
-webpack-dev-server@4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.6.0.tgz#e8648601c440172d9b6f248d28db98bed335315a"
-  integrity sha512-oojcBIKvx3Ya7qs1/AVWHDgmP1Xml8rGsEBnSobxU/UJSX1xP1GPM3MwsAnDzvqcVmVki8tV7lbcsjEjk0PtYg==
+webpack-dev-server@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.7.0.tgz#658aae4902dc920e90dbb8ad8b4eaf6491ac33af"
+  integrity sha512-ldR+a54iygMxUawTzMlWD/JblePhNRVGHxTHQz9EAvsbH7HZbX53OxV6Y092x+tgN5umv885i2X4wfdo/ynEQA==
   dependencies:
+    "@types/bonjour" "^3.5.9"
+    "@types/connect-history-api-fallback" "^1.3.5"
+    "@types/serve-index" "^1.9.1"
+    "@types/sockjs" "^0.3.33"
+    "@types/ws" "^8.2.2"
     ansi-html-community "^0.0.8"
     bonjour "^3.5.0"
     chokidar "^3.5.2"
@@ -16178,7 +16204,7 @@ webpack-dev-server@4.6.0:
     spdy "^4.0.2"
     strip-ansi "^7.0.0"
     url "^0.11.0"
-    webpack-dev-middleware "^5.2.1"
+    webpack-dev-middleware "^5.3.0"
     ws "^8.1.0"
 
 webpack-merge@^5.8.0:
