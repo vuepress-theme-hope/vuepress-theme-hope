@@ -3364,6 +3364,27 @@
     vue "^3.2.24"
     vue-router "^4.0.12"
 
+"@vuepress/bundler-vite@2.0.0-beta.31":
+  version "2.0.0-beta.31"
+  resolved "https://registry.yarnpkg.com/@vuepress/bundler-vite/-/bundler-vite-2.0.0-beta.31.tgz#cd980258eda473b2d44a65713058c9b181570647"
+  integrity sha512-jjNDlzOd7+iswDZhDv2Dd1o+ZwgRJUPffAcnLUudIhlIv9/UZ+Pk+ozpremckEIahzlpD/m0yEkSjuYK96OyKA==
+  dependencies:
+    "@vitejs/plugin-vue" "^1.10.2"
+    "@vue/compiler-sfc" "^3.2.24"
+    "@vue/server-renderer" "^3.2.24"
+    "@vuepress/client" "2.0.0-beta.29"
+    "@vuepress/core" "2.0.0-beta.29"
+    "@vuepress/shared" "2.0.0-beta.28"
+    "@vuepress/utils" "2.0.0-beta.28"
+    autoprefixer "^10.4.0"
+    connect-history-api-fallback "^1.6.0"
+    postcss "^8.4.4"
+    postcss-csso "^5.0.1"
+    rollup "^2.60.2"
+    vite "^2.7.1"
+    vue "^3.2.24"
+    vue-router "^4.0.12"
+
 "@vuepress/bundler-webpack@2.0.0-beta.29":
   version "2.0.0-beta.29"
   resolved "https://registry.yarnpkg.com/@vuepress/bundler-webpack/-/bundler-webpack-2.0.0-beta.29.tgz#9c87386ae8b78cfd6e8a330ce1283db03b6fc90c"
@@ -3402,6 +3423,18 @@
   version "2.0.0-beta.29"
   resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-2.0.0-beta.29.tgz#eaa01e9b8194bb84ed410afd45d5329395377b97"
   integrity sha512-n68p78KRai9t4Z/CRWhLIlt4ok0fjIz2ww0l8kVayGpdfSC//YYe4y62h218GrY+Om/CZMRHjFUGdWX4/sfV7g==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.29"
+    "@vuepress/utils" "2.0.0-beta.28"
+    cac "^6.7.12"
+    chokidar "^3.5.2"
+    envinfo "^7.8.1"
+    esbuild "^0.13.12"
+
+"@vuepress/cli@2.0.0-beta.31":
+  version "2.0.0-beta.31"
+  resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-2.0.0-beta.31.tgz#1a0048af4b8a30819f4dfe9403af94e2c3973e12"
+  integrity sha512-Kb6agjwyck40uSMR/RPtaYCDqka/SSdR8FJuwAey6DqCDIH1Ag+XHGzh+0tXrRMg5yqt21jQ+8Q//xKU4SqhSw==
   dependencies:
     "@vuepress/core" "2.0.0-beta.29"
     "@vuepress/utils" "2.0.0-beta.28"
@@ -3460,6 +3493,16 @@
   version "2.0.0-beta.29"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.29.tgz#35a06a313e1e80ee6f0fbf968ce3761ff158868c"
   integrity sha512-LQvyzbUkdxSSp7xhBRp+E6grp9nR/fMaVLOcjFmMIgZHyGRZisQq52UQmXnCUIkWdGwhtmytnrWSDBCx612XiQ==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.29"
+    "@vuepress/utils" "2.0.0-beta.28"
+    ts-debounce "^4.0.0"
+    vue "^3.2.24"
+
+"@vuepress/plugin-back-to-top@2.0.0-beta.30":
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.30.tgz#8b9e973edbcbb9e97d4cb2af45bac3a77bd9182a"
+  integrity sha512-0msFOSO9fyyLAoJd8Z55dnCuxMlTN2cRv3uiV+q2ts78YjK0kn3IqrzKmW28ca9zTPUyfBC/D6ErhvclsmCzBA==
   dependencies:
     "@vuepress/core" "2.0.0-beta.29"
     "@vuepress/utils" "2.0.0-beta.28"
@@ -3635,6 +3678,31 @@
     "@vuepress/core" "2.0.0-beta.29"
     "@vuepress/plugin-active-header-links" "2.0.0-beta.29"
     "@vuepress/plugin-back-to-top" "2.0.0-beta.29"
+    "@vuepress/plugin-container" "2.0.0-beta.29"
+    "@vuepress/plugin-external-link-icon" "2.0.0-beta.29"
+    "@vuepress/plugin-git" "2.0.0-beta.29"
+    "@vuepress/plugin-medium-zoom" "2.0.0-beta.29"
+    "@vuepress/plugin-nprogress" "2.0.0-beta.29"
+    "@vuepress/plugin-palette" "2.0.0-beta.29"
+    "@vuepress/plugin-prismjs" "2.0.0-beta.29"
+    "@vuepress/plugin-theme-data" "2.0.0-beta.29"
+    "@vuepress/shared" "2.0.0-beta.28"
+    "@vuepress/utils" "2.0.0-beta.28"
+    "@vueuse/core" "^7.1.2"
+    sass "^1.44.0"
+    sass-loader "^12.4.0"
+    vue "^3.2.24"
+    vue-router "^4.0.12"
+
+"@vuepress/theme-default@2.0.0-beta.31":
+  version "2.0.0-beta.31"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.31.tgz#e96f9e8118cf206eff513b6f238a9013199e662b"
+  integrity sha512-g+Nf7CYLe7Whg0kmrEGS33EXGGpdOIVKOwxWRIgJiZBLpcDEdsVeAAV+LhDOCbVJkPuVjLNdSzRexaxHhHjPhQ==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.29"
+    "@vuepress/core" "2.0.0-beta.29"
+    "@vuepress/plugin-active-header-links" "2.0.0-beta.29"
+    "@vuepress/plugin-back-to-top" "2.0.0-beta.30"
     "@vuepress/plugin-container" "2.0.0-beta.29"
     "@vuepress/plugin-external-link-icon" "2.0.0-beta.29"
     "@vuepress/plugin-git" "2.0.0-beta.29"
@@ -16056,12 +16124,22 @@ vuepress-vite@2.0.0-beta.29:
     "@vuepress/core" "2.0.0-beta.29"
     "@vuepress/theme-default" "2.0.0-beta.29"
 
-vuepress@2.0.0-beta.29:
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-2.0.0-beta.29.tgz#47a2c4d0d6eebb304b89032725942220d14dd9a4"
-  integrity sha512-WJSa3+FpaubpxBlB0D9UGEztTvVbtSZN5NJTzm8VnhfCEOx//buH0gRADc2Jmkj5NIC7OiVYGzlfwLBKhJVbTQ==
+vuepress-vite@2.0.0-beta.31:
+  version "2.0.0-beta.31"
+  resolved "https://registry.yarnpkg.com/vuepress-vite/-/vuepress-vite-2.0.0-beta.31.tgz#5b3a16a379eaefb6ebc8e0a53b133a12f3df6693"
+  integrity sha512-MLs4DI+JkwhJBFxpZmvBxD53N6m0B6oD3tjT3kQdP14mgCl/p1ouqUkAiqpLRGJ+oCoVYH1r0qBnUr6DGFB8bg==
   dependencies:
-    vuepress-vite "2.0.0-beta.29"
+    "@vuepress/bundler-vite" "2.0.0-beta.31"
+    "@vuepress/cli" "2.0.0-beta.31"
+    "@vuepress/core" "2.0.0-beta.29"
+    "@vuepress/theme-default" "2.0.0-beta.31"
+
+vuepress@2.0.0-beta.31:
+  version "2.0.0-beta.31"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-2.0.0-beta.31.tgz#9094892f7be84e2bf38f1490c1f8e6714900a8b4"
+  integrity sha512-yj9lWg+1aRFpDVhktM9Oaejg/lxrhHJF16GyZ89w3p8+Aj3Y31s7Xvyks5bUH4wIoGAu3PlQDKKnpym9M14+Dw==
+  dependencies:
+    vuepress-vite "2.0.0-beta.31"
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
