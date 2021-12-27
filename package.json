@@ -107,7 +107,7 @@
     "@vuepress/bundler-webpack": "2.0.0-beta.29",
     "babel-jest": "27.4.5",
     "concurrently": "6.5.1",
-    "conventional-changelog-cli": "2.1.1",
+    "conventional-changelog-cli": "2.2.2",
     "cpx2": "4.1.1",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
