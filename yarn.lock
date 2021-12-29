@@ -3626,6 +3626,13 @@
   dependencies:
     "@vue/shared" "^3.2.24"
 
+"@vuepress/shared@2.0.0-beta.32":
+  version "2.0.0-beta.32"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.32.tgz#8ac1dca241b124e083c06acbc61fe322eb4f0ee7"
+  integrity sha512-yQXzBrCyZPCAWzYB7AAIMf5TEb+WvvUXAugoC7jNXYILf/oGCq8fbc9LUH2X/YNZFNsdm+r9N7JfDZ+uddBHkA==
+  dependencies:
+    "@vue/shared" "^3.2.24"
+
 "@vuepress/theme-default@2.0.0-beta.29":
   version "2.0.0-beta.29"
   resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.29.tgz#98aef730ed71ec44d3517a9cf81dcc480c36eb09"
