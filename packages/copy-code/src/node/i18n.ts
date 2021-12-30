@@ -27,4 +27,8 @@ export const i18n: Record<HopeLangPath, CopyCodeI18nConfig> = {
     copy: "Скоопировать успешно 🎉",
     hint: "Скопируйте код",
   },
+  "/br/": {
+    copy: "Copiado com sucesso 🎉",
+    hint: "Copiar o código",
+  },
 };

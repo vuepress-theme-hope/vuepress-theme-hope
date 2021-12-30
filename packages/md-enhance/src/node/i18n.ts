@@ -10,6 +10,7 @@ export const i18n: Record<ContainerName, Record<HopeLangPath, string>> = {
     "/vi/": "Thông tin",
     "/uk/": "Інформація",
     "/ru/": "Информация",
+    "/br/": "Informativo",
   },
   tip: {
     "/zh/": "提示",
@@ -18,6 +19,7 @@ export const i18n: Record<ContainerName, Record<HopeLangPath, string>> = {
     "/vi/": "Tips",
     "/uk/": "Поради",
     "/ru/": "Подсказки",
+    "/br/": "Dicas",
   },
   warning: {
     "/zh/": "注意",
@@ -26,6 +28,7 @@ export const i18n: Record<ContainerName, Record<HopeLangPath, string>> = {
     "/vi/": "Lưu ý",
     "/uk/": "Примітка",
     "/ru/": "Примечание",
+    "/br/": "Avisos",
   },
   danger: {
     "/zh/": "警告",
@@ -34,6 +37,7 @@ export const i18n: Record<ContainerName, Record<HopeLangPath, string>> = {
     "/vi/": "Cẩn thận",
     "/uk/": "Увага",
     "/ru/": "Предупреждение",
+    "/br/": "Cuidado",
   },
   detail: {
     "/zh/": "详情",
@@ -42,5 +46,6 @@ export const i18n: Record<ContainerName, Record<HopeLangPath, string>> = {
     "/vi/": "Chi tiết",
     "/uk/": "Деталь",
     "/ru/": "Деталь",
+    "/br/": "Detalhe",
   },
 };

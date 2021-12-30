@@ -63,6 +63,16 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Время чтения⌛",
     words: "Слова🔠",
   },
+  "/br/": {
+    author: "Autor🖊",
+    time: "Escrito em📅",
+    origin: "Original💡",
+    views: "Visualizações🔢",
+    category: "Categoria🌈",
+    tag: "Tags🏷",
+    readingTime: "Tempo de Leitura⌛",
+    words: "Palavras🔠",
+  },
 };
 
 export const valineI18n: Record<HopeLangPath, string> = {
@@ -77,4 +87,6 @@ export const valineI18n: Record<HopeLangPath, string> = {
     "Напишіть тут коментар (введіть адресу електронної пошти, щоб отримувати сповіщення електронною поштою, коли буде відповідь)",
   "/ru/":
     "Напишите здесь комментарий (введите адрес электронной почты, чтобы получать уведомление по электронной почте при ответе)",
+  "/br/":
+    "Escreva um comentário aqui (preencha com o endereço de email para receber notificações quando tiver alguma resposta)",
 };
