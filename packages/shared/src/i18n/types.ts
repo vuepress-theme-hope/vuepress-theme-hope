@@ -5,10 +5,18 @@ export type HopeLang =
   | "vi-VN"
   | "de-AT"
   | "ru-RU"
-  | "uk-UA";
+  | "uk-UA"
+  | "pt-BR";
 
 /** Types for supported lang paths */
-export type HopeLangPath = "/zh/" | "/en/" | "/vi/" | "/de/" | "/ru/" | "/uk/";
+export type HopeLangPath =
+  | "/zh/"
+  | "/en/"
+  | "/vi/"
+  | "/de/"
+  | "/ru/"
+  | "/uk/"
+  | "/br/";
 
 export interface HopeThemeLocaleConfigItem {
   /** 当前语言代码 */

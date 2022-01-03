@@ -83,4 +83,17 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
       "Это приложение может быть установлено на вашем компьютере или мобильном устройстве.  Это позволит веб-приложению выглядеть и вести себя как любое другое установленное приложение.  Вы найдете его в списках приложений и сможете закрепить его на домашнем экране, в меню Пуск или на панели задач.  Установленное веб-приложение также сможет безопасно взаимодействовать с другими приложениями и операционной системой. ",
     update: "Доступен новый контент.",
   },
+  "/br/": {
+    install: "Instalar",
+    iOSInstall: "Toque no botão de compartilhar e depois 'Adicionar à Home'",
+    cancel: "Cancelar",
+    close: "Fechar",
+    prevImage: "Imagem anterior",
+    nextImage: "Próxima imagem",
+    desc: "Descrição",
+    feature: "Características Chave",
+    explain:
+      "Esta aplicação web pode ser instalada no seu PC ou dispositivo móvel. Isso fará com que ela se pareça e se comporte como qualquer outra aplicação.  Você a encontrará na lista de apps e poderá adicionar seu ícone à tela de entrada, menus ou barras de tarefa.  Uma vez instalada, esta aplicação web também poderá interagir com outras aplicações ou com o próprio sistema operacional. ",
+    update: "Novo conteúdo está disponível.",
+  },
 };

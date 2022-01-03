@@ -33,4 +33,9 @@ export const i18n: Record<HopeLangPath, ReadingTimeI18nConfig> = {
     minute: "Меньше 1 минуты",
     time: "Приблизительно $time минут",
   },
+  "/br/": {
+    word: "Por volta de $word palavras",
+    minute: "Menos de 1 minuto",
+    time: "Por volta de $time min",
+  },
 };

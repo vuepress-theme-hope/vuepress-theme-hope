@@ -62,4 +62,14 @@ export const i18n: Record<HopeLangPath, ComponentI18nConfig> = {
       errorText: "Пожалуйста, введите число от 1 до $page !",
     },
   },
+  "/br/": {
+    backToTop: "Volta ao topo",
+    pagination: {
+      prev: "Anterior",
+      next: "Próximo",
+      navigate: "Pular para",
+      button: "Ir",
+      errorText: "Por favor, digite um número entre 1 e $page !",
+    },
+  },
 };

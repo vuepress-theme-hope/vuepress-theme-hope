@@ -193,4 +193,35 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
       },
     ],
   },
+  "/br/": {
+    close: "Fechar",
+    fullsreen: "Alternar para tela cheia",
+    share: "Compartilhar",
+    zoom: "Aproximar mais/menos",
+    prev: "Anterior (Seta Esquerda)",
+    next: "Próximo (Seta Direita)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Compartilhar no Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "baixar imagem",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
 };

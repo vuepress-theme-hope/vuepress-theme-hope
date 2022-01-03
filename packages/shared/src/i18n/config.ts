@@ -11,6 +11,7 @@ export const langs: HopeLang[] = [
   "de-AT",
   "ru-RU",
   "uk-UA",
+  "pt-BR",
 ];
 
 export const lang2PathConfig: Record<HopeLang, HopeLangPath> = {
@@ -20,6 +21,7 @@ export const lang2PathConfig: Record<HopeLang, HopeLangPath> = {
   "vi-VN": "/vi/",
   "ru-RU": "/ru/",
   "uk-UA": "/uk/",
+  "pt-BR": "/br/",
 };
 
 export const path2langConfig: Record<HopeLangPath, HopeLang> = {
@@ -29,6 +31,7 @@ export const path2langConfig: Record<HopeLangPath, HopeLang> = {
   "/vi/": "vi-VN",
   "/ru/": "ru-RU",
   "/uk/": "uk-UA",
+  "/br/": "pt-BR",
 };
 
 export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
@@ -286,6 +289,49 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
       star: "Зірка",
       slides: "Слайди",
       encrypt: "Зашифровано",
+    },
+  },
+
+  "pt-BR": {
+    lang: "pt-BR",
+    selectText: "Língua",
+    label: "Português",
+    ariaLabel: "Selecione a língua",
+    meta: {
+      contributor: "Contribuidores",
+      editLink: "Editar esta página",
+      updateTime: "Última atualização",
+    },
+    themeColor: {
+      themeColor: "Cor do Tema",
+      themeMode: "Modo do Tema",
+    },
+    encrypt: {
+      title: "Por favor, entre a senha",
+      errorHint: "Por favor, entre a senha correta!",
+    },
+    error404: {
+      hint: [
+        "Não há nada aqui.",
+        "Como chegou até aqui?",
+        "Isto é um Quatro-Zero-Quatro.",
+        "Parece que temos alguns links quebrados.",
+      ],
+      back: "Voltar",
+      home: "Leve-me para casa",
+    },
+    blog: {
+      article: "Artigos",
+      articleList: "Lista de Artigos",
+      category: "Categorias",
+      tag: "Tags",
+      timeline: "Linha do Tempo",
+      timelineText: "Ontem, de novo!",
+      allText: "Todos",
+      intro: "Intro Pessoal",
+      star: "Estrela",
+      slides: "Slides",
+      encrypt: "Encriptado",
     },
   },
 };
