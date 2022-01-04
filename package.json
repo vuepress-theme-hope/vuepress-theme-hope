@@ -106,7 +106,7 @@
     "@vue/eslint-config-typescript": "10.0.0",
     "@vuepress/bundler-webpack": "2.0.0-beta.29",
     "babel-jest": "27.4.5",
-    "concurrently": "6.5.1",
+    "concurrently": "7.0.0",
     "conventional-changelog-cli": "2.1.1",
     "cpx2": "4.1.1",
     "cross-env": "7.0.3",
