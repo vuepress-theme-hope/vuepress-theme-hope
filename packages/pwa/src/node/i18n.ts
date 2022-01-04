@@ -16,6 +16,19 @@ export const i18n: Record<HopeLangPath, PWAI18NConfig> = {
       "该应用可以安装在您的 PC 或移动设备上。这将使该 Web 应用程序外观和行为与其他应用程序相同。它将在出现在应用程序列表中，并可以固定到主屏幕，开始菜单或任务栏。此 Web 应用程序还将能够与其他应用程序和您的操作系统安全地进行交互。",
     update: "发现新内容可用",
   },
+  "/tw/": {
+    install: "安裝",
+    iOSInstall: "點擊分享按鈕然後點擊“添加到主畫面”",
+    cancel: "取消",
+    close: "關閉",
+    prevImage: "上一張圖片",
+    nextImage: "下一張圖片",
+    desc: "詳情",
+    feature: "主要特色",
+    explain:
+      "該應用可以安裝在您的 PC 或行動裝置上。這將使該 Web 應用程式外觀和行為與其他應用程式相同。它將在出現在應用程式列表中，並可以固定到主畫面，開始菜單或任務欄。此 Web 應用程式還將能夠與其他應用程式和您的操作系統安全地進行交互。",
+    update: "發現新内容可用",
+  },
   "/en/": {
     install: "Install",
     iOSInstall: "Tap the share button and then 'Add to Homescreen'",

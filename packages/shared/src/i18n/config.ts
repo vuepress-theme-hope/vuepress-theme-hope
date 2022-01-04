@@ -6,6 +6,7 @@ import type {
 
 export const langs: HopeLang[] = [
   "zh-CN",
+  "zh-TW",
   "en-US",
   "vi-VN",
   "de-AT",
@@ -16,6 +17,7 @@ export const langs: HopeLang[] = [
 
 export const lang2PathConfig: Record<HopeLang, HopeLangPath> = {
   "zh-CN": "/zh/",
+  "zh-TW": "/tw/",
   "en-US": "/en/",
   "de-AT": "/de/",
   "vi-VN": "/vi/",
@@ -26,6 +28,7 @@ export const lang2PathConfig: Record<HopeLang, HopeLangPath> = {
 
 export const path2langConfig: Record<HopeLangPath, HopeLang> = {
   "/zh/": "zh-CN",
+  "/tw/": "zh-TW",
   "/en/": "en-US",
   "/de/": "de-AT",
   "/vi/": "vi-VN",
@@ -73,6 +76,48 @@ export const localesConfig: Record<HopeLang, HopeThemeLocaleConfigItem> = {
       intro: "个人介绍",
       star: "收藏",
       slides: "幻灯片",
+      encrypt: "加密",
+    },
+  },
+
+  "zh-TW": {
+    lang: "zh-TW",
+    selectText: "選擇語言",
+    label: "繁體中文",
+    meta: {
+      contributor: "貢獻者",
+      editLink: "編輯此頁",
+      updateTime: "上次編輯於",
+    },
+    themeColor: {
+      themeColor: "主題色",
+      themeMode: "主題模式",
+    },
+    encrypt: {
+      title: "請輸入密碼",
+      errorHint: "請輸入正確密碼",
+    },
+    error404: {
+      hint: [
+        "這裡什麼也沒有",
+        "我們是怎麼來到這兒的？",
+        "這 是 四 零 四 !",
+        "看起来你訪問了一個失效的鏈結",
+      ],
+      back: "返回上一頁",
+      home: "帶我回家",
+    },
+    blog: {
+      article: "文章",
+      articleList: "文章列表",
+      category: "分類",
+      tag: "標籤",
+      timeline: "時間軸",
+      timelineText: "昨日不在",
+      allText: "全部",
+      intro: "個人介紹",
+      star: "收藏",
+      slides: "幻燈片",
       encrypt: "加密",
     },
   },

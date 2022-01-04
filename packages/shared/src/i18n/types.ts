@@ -1,6 +1,7 @@
 /** Types for supported lang codes */
 export type HopeLang =
   | "zh-CN"
+  | "zh-TW"
   | "en-US"
   | "vi-VN"
   | "de-AT"
@@ -11,6 +12,7 @@ export type HopeLang =
 /** Types for supported lang paths */
 export type HopeLangPath =
   | "/zh/"
+  | "/tw/"
   | "/en/"
   | "/vi/"
   | "/de/"

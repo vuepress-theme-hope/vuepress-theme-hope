@@ -12,6 +12,16 @@ export const i18n: Record<HopeLangPath, ComponentI18nConfig> = {
       errorText: "请输入 1 到 $page 之前的页码！",
     },
   },
+  "/tw/": {
+    backToTop: "返回頂部",
+    pagination: {
+      prev: "上一頁",
+      next: "下一頁",
+      navigate: "跳轉到",
+      button: "前往",
+      errorText: "請輸入 1 到 $page 之前的頁碼！",
+    },
+  },
   "/en/": {
     backToTop: "Back to top",
     pagination: {

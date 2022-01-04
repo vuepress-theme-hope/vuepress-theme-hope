@@ -13,6 +13,16 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "阅读时间⌛",
     words: "字数🔠",
   },
+  "/tw/": {
+    author: "作者🖊",
+    time: "寫作日期📅",
+    origin: "原創💡",
+    views: "訪問量🔢",
+    category: "分類🌈",
+    tag: "標籤🏷",
+    readingTime: "閱讀時間⌛",
+    words: "字數🔠",
+  },
   "/en/": {
     author: "Author🖊",
     time: "Writing Date📅",
@@ -77,6 +87,7 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
 
 export const valineI18n: Record<HopeLangPath, string> = {
   "/zh/": "请留言。(填写邮箱可在被回复时收到邮件提醒)",
+  "/tw/": "請留言。(填寫信箱可在被回覆時收到郵件提醒)",
   "/en/":
     "Write a comment here (Fill in the email address to receive an email notification when being replied)",
   "/de/":

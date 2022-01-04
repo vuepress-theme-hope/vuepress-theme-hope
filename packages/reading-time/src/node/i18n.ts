@@ -8,6 +8,11 @@ export const i18n: Record<HopeLangPath, ReadingTimeI18nConfig> = {
     minute: "小于 1 分钟",
     time: "大约 $time 分钟",
   },
+  "/tw/": {
+    word: "約 $word 字",
+    minute: "小於 1 分鐘",
+    time: "大约 $time 分鐘",
+  },
   "/en/": {
     word: "About $word words",
     minute: "Less than 1 minute",
