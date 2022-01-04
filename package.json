@@ -101,7 +101,7 @@
     "@types/inquirer": "8.1.3",
     "@types/jest": "27.0.3",
     "@types/semver": "7.3.9",
-    "@typescript-eslint/eslint-plugin": "5.8.0",
+    "@typescript-eslint/eslint-plugin": "5.9.0",
     "@typescript-eslint/parser": "5.8.0",
     "@vue/eslint-config-typescript": "10.0.0",
     "@vuepress/bundler-webpack": "2.0.0-beta.29",
