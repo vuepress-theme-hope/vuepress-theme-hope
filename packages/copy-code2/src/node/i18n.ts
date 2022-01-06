@@ -7,8 +7,8 @@ export const i18n: CopyCodeLocaleConfig = {
     hint: "复制代码",
   },
   "/en/": {
-    copy: "Copy successfully 🎉",
-    hint: "Copy the code",
+    copy: "Copied successfully 🎉",
+    hint: "Copy code",
   },
   "/de/": {
     copy: "Kopieren erfolgreich 🎉",
