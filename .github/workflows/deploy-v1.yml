@@ -68,7 +68,7 @@ jobs:
           yarn cpx "docs/sitemap/dist/**" dist/sitemap
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.8
+        uses: JamesIves/github-pages-deploy-action@4.1.9
         with:
           branch: gh-pages
           folder: dist
