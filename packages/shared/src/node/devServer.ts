@@ -49,13 +49,14 @@ export const useCustomDevServer = (
 
   // for webpack
   if (app.env.isDev && app.options.bundler.endsWith("webpack")) {
-    const beforeDevServer = (app.options.bundlerConfig as WebpackBundlerOptions)
-      .beforeDevServer;
+    const { devServerSetupMiddlewares } = app.options
+      .bundlerConfig as WebpackBundlerOptions;
 
-    app.options.bundlerConfig.beforeDevServer = (
+    app.options.bundlerConfig.devServerSetupMiddlewares = (
+      middlewares: WebpackDevServer.Middleware[],
       server: WebpackDevServer
-    ): void => {
-      server.app.get(
+    ): WebpackDevServer.Middleware[] => {
+      server.app?.get(
         `${app.options.base.replace(/\/$/, "")}${path}`,
         (request, response) => {
           getResponse(request)
@@ -63,7 +64,10 @@ export const useCustomDevServer = (
             .catch(() => response.status(500).send(errMsg));
         }
       );
-      beforeDevServer?.(server);
+
+      return devServerSetupMiddlewares
+        ? devServerSetupMiddlewares(middlewares, server)
+        : middlewares;
     };
   }
 };
