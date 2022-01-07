@@ -6,14 +6,14 @@
   "license": "MIT",
   "author": "Mr.Hope",
   "scripts": {
-    "demo:build": "cross-env DOCS_BUNDLER=@vuepress/webpack vuepress build src",
-    "demo:clean-serve": "cross-env DOCS_BUNDLER=@vuepress/webpack vuepress dev src --clean-cache",
-    "demo:eject": "cross-env DOCS_BUNDLER=@vuepress/webpack vuepress eject-hope src",
-    "demo:serve": "cross-env DOCS_BUNDLER=@vuepress/webpack vuepress dev src",
-    "demo:vite-build": "cross-env DOCS_BUNDLER=@vuepress/vite vuepress-vite build src",
-    "demo:vite-clean-serve": "cross-env DOCS_BUNDLER=@vuepress/vite vuepress-vite dev src --clean-cache",
-    "demo:vite-eject": "cross-env DOCS_BUNDLER=@vuepress/vite vuepress-vite eject-hope src",
-    "demo:vite-serve": "cross-env DOCS_BUNDLER=@vuepress/vite vuepress-vite dev src"
+    "demo:vite-build": "vuepress-vite build src",
+    "demo:vite-clean-serve": "vuepress-vite dev src --clean-cache",
+    "demo:vite-eject": "vuepress-vite eject-hope src",
+    "demo:vite-serve": "vuepress-vite dev src",
+    "demo:webpack-build": "vuepress-webpack build src",
+    "demo:webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-eject": "vuepress-webpack eject-hope src",
+    "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
     "@vuepress/plugin-debug": "2.0.0-beta.32",

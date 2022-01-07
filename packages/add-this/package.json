@@ -32,12 +32,12 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./client ./node",
-    "demo:build": "vuepress build __tests__/demo",
-    "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
-    "demo:serve": "vuepress dev __tests__/demo",
     "demo:vite-build": "vuepress-vite build __tests__/demo",
     "demo:vite-clean-serve": "vuepress-vite dev __tests__/demo --clean-cache",
     "demo:vite-serve": "vuepress-vite dev __tests__/demo",
+    "demo:webpack-build": "vuepress-webpack build __tests__/demo",
+    "demo:webpack-clean-serve": "vuepress-webpack dev __tests__/demo --clean-cache",
+    "demo:webpack-serve": "vuepress-webpack dev __tests__/demo",
     "dev": "rollup -c -w",
     "dev:rollup": "rollup -c -w"
   }
