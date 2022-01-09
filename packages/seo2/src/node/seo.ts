@@ -31,7 +31,7 @@ export const generateSeo = (
     git = {},
   } = page;
   const { siteData } = app;
-  const locales = getLocales(siteData.locales);
+  const locales = getLocales(siteData.locales, page.lang);
 
   const type = ["article", "category", "tag", "timeline"].some(
     (folder) =>
