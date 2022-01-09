@@ -8,7 +8,7 @@ export interface FeedAuthor {
   /**
    * @description json format only
    */
-  avator?: string;
+  avatar?: string;
 }
 
 export interface FeedCategory {

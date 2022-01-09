@@ -1,4 +1,5 @@
 import type { ThemeConfig } from "@vuepress/core";
+import type { Author } from "./utils";
 
 export interface BaseThemeConfig extends ThemeConfig {
   /**
@@ -18,7 +19,7 @@ export interface BaseThemeConfig extends ThemeConfig {
   /**
    * 作者
    */
-  author?: string[] | string;
+  author?: Author;
   /**
    * Font class 图标前缀
    *

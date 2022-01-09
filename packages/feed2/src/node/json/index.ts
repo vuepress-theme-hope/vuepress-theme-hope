@@ -6,7 +6,7 @@ import type { JSONAuthor, JSONContent, JSONItem } from "./typings";
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
   name: author.name as string,
   ...(author.url ? { url: author.url } : {}),
-  ...(author.avator ? { avator: author.avator } : {}),
+  ...(author.avatar ? { avatar: author.avatar } : {}),
 });
 
 /**
@@ -33,7 +33,7 @@ export const renderJSON = (feed: Feed): string => {
     content.author = {
       name: channel.author.name,
       ...(channel.author.url ? { url: channel.author.url } : {}),
-      ...(channel.author.avator ? { avator: channel.author.avator } : {}),
+      ...(channel.author.avatar ? { avatar: channel.author.avatar } : {}),
     };
   }
 

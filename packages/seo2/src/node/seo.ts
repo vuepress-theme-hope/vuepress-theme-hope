@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Logger, getDate } from "@mr-hope/vuepress-shared";
+import { Logger, getDate, _getAuthor } from "@mr-hope/vuepress-shared";
 import { fs } from "@vuepress/utils";
 import { getLocales, getLink } from "./utils";
 
@@ -42,11 +42,13 @@ export const generateSeo = (
 
   const author =
     pageAuthor === false
-      ? ""
-      : (pageAuthor as string) ||
-        options.author ||
-        (app.options.themeConfig.author as string | undefined) ||
-        "";
+      ? []
+      : _getAuthor(
+          pageAuthor ||
+            options.author ||
+            (app.options.themeConfig.author as string | undefined) ||
+            ""
+        );
   const { updatedTime } = git;
 
   const modifiedTime = updatedTime ? new Date(updatedTime).toISOString() : "";
@@ -87,7 +89,7 @@ export const generateSeo = (
       "twitter:card": "summary_large_image",
       "twitter:image:alt": siteData.title,
 
-      "article:author": author,
+      "article:author": author[0]?.name,
       "article:tag": articleTags,
       "article:published_time": publishedTime,
       "article:modified_time": modifiedTime,
@@ -101,14 +103,7 @@ export const generateSeo = (
             image: [image],
             datePublished: publishedTime,
             dateModified: modifiedTime,
-            // TODO: Support mutiple author and author link
-            author: [
-              {
-                "@type": "Person",
-                name: author,
-                // url: "http://example.com/profile/janedoe123",
-              },
-            ],
+            author: author.map((item) => ({ "@type": "Person", ...item })),
           }
         : null,
   };

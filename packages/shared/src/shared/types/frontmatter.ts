@@ -1,10 +1,11 @@
 import type { PageFrontmatter } from "@vuepress/client";
+import { Author } from "./utils";
 
 export interface BasePageFrontMatter extends PageFrontmatter {
   /** Page icon */
   icon?: string;
   /** Page Author(s) */
-  author?: string[] | string | false;
+  author?: Author | false;
   /** Whether the content is original */
   original?: boolean;
   /**

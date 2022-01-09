@@ -3,9 +3,9 @@ import { computed } from "vue";
 import { _getAuthor } from "../../shared";
 
 import type { ComputedRef } from "vue";
-import type { BaseThemeConfig } from "../../shared";
+import type { AuthorInfo, BaseThemeConfig } from "../../shared";
 
-export const useThemeAuthor = (): ComputedRef<string[]> =>
+export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> =>
   computed(() => {
     const { author } = useThemeData<BaseThemeConfig>().value;
 

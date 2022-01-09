@@ -68,9 +68,7 @@ export class FeedPage {
 
     return this.frontmatter.author === false
       ? []
-      : getAuthor(this.frontmatter, this.themeConfig).map((item) => ({
-          name: item,
-        }));
+      : getAuthor(this.frontmatter, this.themeConfig);
   }
 
   get category(): FeedCategory[] | undefined {

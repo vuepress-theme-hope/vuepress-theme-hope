@@ -1,6 +1,7 @@
-import { deepAssign, getRootLang } from "@mr-hope/vuepress-shared";
+import { deepAssign, getRootLang, _getAuthor } from "@mr-hope/vuepress-shared";
 import { logger, resolveUrl } from "./utils";
 
+import { Author } from "@mr-hope/vuepress-shared";
 import type { App } from "@vuepress/core";
 import type {
   FeedChannelOption,
@@ -67,7 +68,8 @@ export const getFeedChannelOption = (
   const { base, themeConfig } = app.options;
   const { title, description } = app.siteData;
   const author =
-    options.channel?.author?.name || (themeConfig.author as string | undefined);
+    options.channel?.author?.name ||
+    _getAuthor(themeConfig.author as Author | undefined)[0]?.name;
 
   const copyright: string =
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

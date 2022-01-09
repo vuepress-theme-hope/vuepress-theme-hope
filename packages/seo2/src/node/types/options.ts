@@ -1,4 +1,4 @@
-import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
+import type { Author, BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { App, HeadConfig, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { SeoContent } from "./ogp";
@@ -30,7 +30,7 @@ export interface SeoOptions {
    *
    * default author
    */
-  author?: string;
+  author?: Author;
 
   /**
    * 你的 Twitter 用户名

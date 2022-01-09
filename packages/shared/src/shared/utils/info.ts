@@ -1,15 +1,23 @@
 import { capitalize } from "./capitalize";
+import type { Author, AuthorInfo } from "../types";
 
 export const _getAuthor = (
-  author: string[] | string | false | undefined,
+  author: Author | false | undefined,
   canDisable = false
-): string[] => {
+): AuthorInfo[] => {
   if (author) {
-    if (Array.isArray(author)) return author;
-    if (typeof author === "string") return [author];
+    if (Array.isArray(author)) {
+      return author.map((item) =>
+        typeof item === "string" ? { name: item } : item
+      );
+    }
+
+    if (typeof author === "string") return [{ name: author }];
+
+    if (typeof author === "object" && author.name) return [author];
 
     console.error(
-      `Expect 'author' to be \`string[] | string ${
+      `Expect 'author' to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
         canDisable ? "" : "| false"
       } | undefined\`, but got`,
       author

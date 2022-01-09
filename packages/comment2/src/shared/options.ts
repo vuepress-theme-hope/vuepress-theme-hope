@@ -1,3 +1,4 @@
+import type { Author } from "@mr-hope/vuepress-shared";
 import type { LocaleConfig } from "@vuepress/core";
 import type { WalineOptions as _WalineOptions } from "@waline/client";
 // import type { Vssue } from "vssue";
@@ -5,7 +6,7 @@ import type { PageInfoI18nConfig, PageInfoType } from "./pageInfo";
 import type { WalineI18nConfig } from "./waline";
 
 interface BaseCommentOptions {
-  // TODO: Add vussue back
+  // TODO: Add vssue back
   // type: "waline" | "vssue" | "disable";
   /**
    * 评论服务
@@ -18,7 +19,7 @@ interface BaseCommentOptions {
    *
    * Default author
    */
-  author?: string | string[];
+  author?: Author;
   /**
    * 是否启用文章信息的弹窗提示
    *

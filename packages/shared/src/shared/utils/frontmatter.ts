@@ -1,12 +1,17 @@
 import { _getAuthor } from "./info";
 
-import type { BasePageFrontMatter, BaseThemeConfig } from "../types";
+import type {
+  Author,
+  AuthorInfo,
+  BasePageFrontMatter,
+  BaseThemeConfig,
+} from "../types";
 
 export const getAuthor = (
   frontmatter: BasePageFrontMatter,
   themeConfig: BaseThemeConfig,
-  fallback?: string | string[]
-): string[] => {
+  fallback?: Author
+): AuthorInfo[] => {
   const { author } = frontmatter;
 
   if (author) return _getAuthor(author);

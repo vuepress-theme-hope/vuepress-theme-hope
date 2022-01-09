@@ -6,7 +6,7 @@ export interface JSONAuthor {
    * the URL of a site owned by the author.
    */
   url?: string;
-  avator?: string;
+  avatar?: string;
 }
 
 export interface JSONItem {

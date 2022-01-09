@@ -5,15 +5,17 @@ import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 
 import type { ComputedRef } from "vue";
 import type {
+  Author,
+  AuthorInfo,
   BaseThemeConfig,
   BasePageFrontMatter,
   DateInfo,
   DateOptions,
 } from "../../shared";
 
-export type AuthorRef = ComputedRef<string[]>;
+export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
-export const useAuthor = (fallback?: string | string[]): AuthorRef =>
+export const useAuthor = (fallback?: Author): AuthorRef =>
   computed(() =>
     getAuthor(
       usePageFrontmatter<BasePageFrontMatter>().value,

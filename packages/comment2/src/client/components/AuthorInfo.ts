@@ -1,4 +1,3 @@
-// TODO: Support author links
 import {
   useAuthor,
   useLocaleConfig,
@@ -31,10 +30,20 @@ export default defineComponent({
             },
             [
               h(AuthorIcon),
-              h("span", author.value.join(", ")),
+              h("span", [
+                author.value.map((item) =>
+                  item.url
+                    ? h(
+                        "a",
+                        { class: "author-item", href: item.url },
+                        item.name
+                      )
+                    : h("span", { class: "author-item" }, item.name)
+                ),
+              ]),
               h("span", {
                 property: "author",
-                content: author.value.join(", "),
+                content: author.value.map((item) => item.name).join(", "),
               }),
             ]
           )
