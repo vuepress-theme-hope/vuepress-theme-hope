@@ -3,15 +3,18 @@ import { fs, path } from "@vuepress/utils";
 import type { Plugin } from "@vuepress/core";
 import type { PaletteOptions } from "./options";
 
-const emptyFile = path.resolve(__dirname, "../styles/empty.scss");
+const emptyFile = path.resolve(__dirname, "../../styles/empty.scss");
 
 export const palettePlugin: Plugin<PaletteOptions> = (
   {
     id = "hope",
     config = `.vuepress/styles/${id}-config.scss`,
-    defaultConfig = path.resolve(__dirname, "../styles/default/config.scss"),
+    defaultConfig = path.resolve(__dirname, "../../styles/default/config.scss"),
     palette = `.vuepress/styles/${id}-palette.scss`,
-    defaultPalette = path.resolve(__dirname, "../styles/default/palette.scss"),
+    defaultPalette = path.resolve(
+      __dirname,
+      "../../styles/default/palette.scss"
+    ),
     style = `.vuepress/styles/${id}-style.scss`,
   },
   app
@@ -28,7 +31,7 @@ export const palettePlugin: Plugin<PaletteOptions> = (
     alias: {
       [`@${id}/palette`]: app.dir.temp(`styles/${id}-palette.scss`),
       [`@${id}/config`]: app.dir.temp(`styles/${id}-config.scss`),
-      [`@${id}/helper`]: path.resolve(__dirname, "../styles/helper.scss"),
+      [`@${id}/helper`]: path.resolve(__dirname, "../../styles/helper.scss"),
       [`@${id}/style`]: app.dir.temp(`styles/${id}-style.scss`),
     },
 
