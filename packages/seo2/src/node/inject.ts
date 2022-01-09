@@ -40,10 +40,11 @@ export const appendSEO = (
         });
         break;
       default:
-        addMeta(head, {
-          name: property,
-          content: content[property as keyof SeoContent] as string,
-        });
+        if (content[property as keyof SeoContent] as string)
+          addMeta(head, {
+            name: property,
+            content: content[property as keyof SeoContent] as string,
+          });
     }
 
   if (options.restrictions)

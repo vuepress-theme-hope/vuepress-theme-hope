@@ -1,18 +1,23 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { getDate, Logger } from "@mr-hope/vuepress-shared";
+import { Logger, getDate } from "@mr-hope/vuepress-shared";
 import { fs } from "@vuepress/utils";
-import { getLocales, resolveUrl } from "./utils";
+import { getLocales, getLink } from "./utils";
 
 import type { AppDir } from "@vuepress/core";
-import type { PageSeoInfo, SeoContent, SeoOptions } from "./types";
+import type {
+  ArticleJSONLD,
+  PageSeoInfo,
+  SeoContent,
+  SeoOptions,
+} from "./types";
 
 const logger = new Logger("Seo");
 
 export const generateSeo = (
   options: SeoOptions,
-  base: string,
   { page, app, permalink }: PageSeoInfo
-): SeoContent => {
+): { OGP: SeoContent; JSONLD: ArticleJSONLD | null } => {
+  const { base } = app.options;
   const {
     frontmatter: {
       author: pageAuthor,
@@ -51,36 +56,61 @@ export const generateSeo = (
     ? [tag]
     : [];
 
-  let publishTime = "";
+  const articleTitle = page.title;
+  const image = cover
+    ? getLink(options.hostname, base, cover)
+    : banner
+    ? getLink(options.hostname, base, banner)
+    : "";
 
-  if (date instanceof Date) publishTime = new Date(date).toISOString();
+  let publishedTime = "";
+
+  if (date instanceof Date) publishedTime = new Date(date).toISOString();
   else if (date) {
     const dateInfo = getDate(date);
-    if (dateInfo && dateInfo.value) publishTime = dateInfo.value.toISOString();
+    if (dateInfo && dateInfo.value)
+      publishedTime = dateInfo.value.toISOString();
   }
 
   return {
-    "og:url": resolveUrl(base, permalink || page.path),
-    "og:site_name": siteData.title,
-    "og:title": page.title,
-    "og:description": page.frontmatter.description || "",
-    "og:type": type,
-    "og:image": cover
-      ? resolveUrl(base, cover)
-      : banner
-      ? resolveUrl(base, banner)
-      : "",
-    "og:updated_time": modifiedTime,
-    "og:locale": page.lang,
-    "og:locale:alternate": locales,
+    OGP: {
+      "og:url": getLink(options.hostname, base, permalink || page.path),
+      "og:site_name": siteData.title,
+      "og:title": articleTitle,
+      "og:description": page.frontmatter.description || "",
+      "og:type": type,
+      "og:image": image,
+      "og:updated_time": modifiedTime,
+      "og:locale": page.lang,
+      "og:locale:alternate": locales,
 
-    "twitter:card": "summary_large_image",
-    "twitter:image:alt": siteData.title,
+      "twitter:card": "summary_large_image",
+      "twitter:image:alt": siteData.title,
 
-    "article:author": author,
-    "article:tag": articleTags,
-    "article:published_time": publishTime,
-    "article:modified_time": modifiedTime,
+      "article:author": author,
+      "article:tag": articleTags,
+      "article:published_time": publishedTime,
+      "article:modified_time": modifiedTime,
+    },
+    JSONLD:
+      type === "article"
+        ? {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            headline: articleTitle,
+            image: [image],
+            datePublished: publishedTime,
+            dateModified: modifiedTime,
+            // TODO: Support mutiple author and author link
+            author: [
+              {
+                "@type": "Person",
+                name: author,
+                // url: "http://example.com/profile/janedoe123",
+              },
+            ],
+          }
+        : null,
   };
 };
 

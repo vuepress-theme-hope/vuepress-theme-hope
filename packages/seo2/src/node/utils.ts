@@ -1,7 +1,12 @@
+import { Logger } from "@mr-hope/vuepress-shared";
 import type { SiteLocaleConfig } from "@vuepress/shared";
+export const logger = new Logger("Seo");
 
-export const resolveUrl = (base: string, url: string): string =>
-  `${base}${url.replace(/^\//u, "")}`;
+export const getLink = (hostname: string, base: string, url: string): string =>
+  `${hostname.match(/https?:\/\//) ? "" : "https://"}${hostname.replace(
+    /\/$/u,
+    ""
+  )}${base}${url.replace(/^\//u, "")}`;
 
 export const getLocales = (locales: SiteLocaleConfig = {}): string[] => {
   const langs: string[] = [];

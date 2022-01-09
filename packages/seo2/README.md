@@ -35,7 +35,7 @@ Renamed from `@mr-hope/vuepress-plugin-seo` to `vuepress-plugin-seo2`. ⚠
 
 - [ ] Alternate Language Link support ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] JSON-LD support ![new](https://img.shields.io/badge/-new-brightgreen)
+- [x] JSON-LD support ![new](https://img.shields.io/badge/-new-brightgreen)
 
 ---
 
@@ -61,4 +61,4 @@ yarn add -D vuepress-plugin-seo2
 
 - [ ] 替代语言链接 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-- [ ] JSON-LD 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+- [x] JSON-LD 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)

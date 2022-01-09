@@ -1,6 +1,7 @@
 import { resolvePagePermalink } from "@vuepress/core";
 import { generateRobotsTxt, generateSeo } from "./seo";
-import { appendSEO } from "./appendHead";
+import { appendSEO } from "./inject";
+import { logger } from "./utils";
 
 import type { Plugin } from "@vuepress/core";
 import type { ExtendPage, PageSeoInfo, SeoContent, SeoOptions } from "./types";
@@ -8,12 +9,18 @@ import type { ExtendPage, PageSeoInfo, SeoContent, SeoOptions } from "./types";
 export * from "./types";
 
 export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
-  const { base, themeConfig } = app.options;
+  const { themeConfig } = app.options;
 
   const seoOptions =
     Object.keys(options).length > 0
-      ? options
+      ? (options as SeoOptions)
       : (themeConfig.seo as SeoOptions) || {};
+
+  if (!seoOptions.hostname) {
+    logger.error('Required option "hostname" is missing');
+
+    return { name: "seo2" };
+  }
 
   return {
     name: "seo2",
@@ -25,12 +32,19 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
         app,
         permalink: resolvePagePermalink(page),
       };
+      const { OGP, JSONLD } = generateSeo(seoOptions, pageSeoInfo);
       const metaContext: SeoContent = {
-        ...generateSeo(seoOptions, base, pageSeoInfo),
-        ...(seoOptions.seo ? seoOptions.seo(pageSeoInfo) : {}),
+        ...OGP,
+        ...(seoOptions.ogp ? seoOptions.ogp(pageSeoInfo) : {}),
       };
 
       appendSEO(head, metaContext, seoOptions);
+      if (JSONLD)
+        head.push([
+          "script",
+          { type: "application/ld+json" },
+          JSON.stringify(JSONLD),
+        ]);
       if (seoOptions.customHead) seoOptions.customHead(head, pageSeoInfo);
 
       page.frontmatter.head = head;
