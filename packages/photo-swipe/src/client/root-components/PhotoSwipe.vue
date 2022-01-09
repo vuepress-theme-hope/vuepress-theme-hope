@@ -78,7 +78,7 @@
 </template>
 
 <script lang="ts">
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { delay, imageSelector, i18n, options } from "../define";

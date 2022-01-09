@@ -1,5 +1,5 @@
 import { computed, defineComponent, h } from "vue";
-import { usePure } from "@mr-hope/vuepress-shared/client";
+import { usePure } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 
 import { useThemeLocaleData } from "../../composables";

@@ -76,7 +76,7 @@
 </template>
 
 <script lang="ts">
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { withBase } from "@vuepress/client";
 import { onBeforeMount, defineComponent, onMounted, ref } from "vue";
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons";

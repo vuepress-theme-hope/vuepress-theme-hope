@@ -10,7 +10,7 @@ export default [
   }),
   ...rollupVue("client/root-components/PhotoSwipe.vue", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "photoswipe",
       "photoswipe/dist/photoswipe-ui-default",

@@ -25,24 +25,23 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "node/index.js",
-  "types": "node/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
   "files": [
-    "client",
-    "node"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",
-    "clean": "rimraf ./client ./node",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
     "demo:vite-build": "vuepress-vite build __tests__/demo",
     "demo:vite-clean-serve": "vuepress-vite dev __tests__/demo --clean-cache",
     "demo:vite-serve": "vuepress-vite dev __tests__/demo",
     "demo:webpack-build": "vuepress-webpack build __tests__/demo",
     "demo:webpack-clean-serve": "vuepress-webpack dev __tests__/demo --clean-cache",
     "demo:webpack-serve": "vuepress-webpack dev __tests__/demo",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:rollup\"",
-    "dev:copy": "cpx src/client/styles/** client/styles -w",
-    "dev:rollup": "rollup -c -w"
+    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev:copy": "cpx src/client/**/*.{vue,scss} lib/client -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.7",

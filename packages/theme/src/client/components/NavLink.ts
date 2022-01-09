@@ -2,7 +2,7 @@ import { computed, defineComponent, h, toRef } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/lib/client";
-import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
+import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
 
 import type { PropType, VNode } from "vue";

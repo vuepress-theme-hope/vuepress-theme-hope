@@ -1,4 +1,4 @@
-import { useDate, useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { useDate, useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { CalendarIcon } from "./icons";

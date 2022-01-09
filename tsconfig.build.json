@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.base.json",
+  "references": [
+    { "path": "./packages/add-this/tsconfig.build.json" },
+    { "path": "./packages/comment2/tsconfig.build.json" },
+    { "path": "./packages/components/tsconfig.build.json" },
+    { "path": "./packages/copy-code2/tsconfig.build.json" },
+    { "path": "./packages/feed2/tsconfig.build.json" },
+    { "path": "./packages/lightgallery/tsconfig.build.json" },
+    { "path": "./packages/md-enhance/tsconfig.build.json" },
+    { "path": "./packages/photo-swipe/tsconfig.build.json" },
+    { "path": "./packages/pwa2/tsconfig.build.json" },
+    { "path": "./packages/reading-time2/tsconfig.build.json" },
+    { "path": "./packages/sass-palette/tsconfig.build.json" },
+    { "path": "./packages/seo2/tsconfig.build.json" },
+    { "path": "./packages/shared/tsconfig.build.json" },
+    { "path": "./packages/sitemap2/tsconfig.build.json" },
+    { "path": "./packages/theme/tsconfig.build.json" }
+  ],
+  "files": []
+}

@@ -12,7 +12,7 @@ export default [
   }),
   ...rollupVue("client/appEnhance.ts", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@mr-hope/vuepress-shared/styles/config/index.scss",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -27,7 +27,7 @@ export default [
   }),
   ...rollupVue("client/root-components/BackToTop.ts", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "lodash.debounce",

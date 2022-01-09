@@ -1,6 +1,6 @@
 import { h } from "vue";
 import { useRoute } from "vue-router";
-import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
+import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import NavLink from "../../components/NavLink";
 import { isActiveLink } from "../../utils";
 

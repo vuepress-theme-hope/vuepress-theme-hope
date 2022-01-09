@@ -1,4 +1,4 @@
-import { useThemePluginConfig } from "@mr-hope/vuepress-shared/client";
+import { useThemePluginConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { enableWaline, walineOption } from "../define";
 
 import type { CommentPluginFrontmatter, WalineOptions } from "../../shared";

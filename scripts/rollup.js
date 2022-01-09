@@ -27,7 +27,7 @@ export const rollupTypescript = (
     input: `./src/${filePath}.ts`,
     output: [
       {
-        file: `./${filePath}.js`,
+        file: `./lib/${filePath}.js`,
         format: filePath.startsWith("node/") ? "cjs" : "esm",
         sourcemap: true,
         exports: "named",
@@ -44,8 +44,8 @@ export const rollupTypescript = (
             rollupCopy({
               targets: copy.map((item) =>
                 typeof item === "string"
-                  ? { src: `./src/${item}`, dest: item }
-                  : { src: `./src/${item[0]}`, dest: item[1] }
+                  ? { src: `./src/${item}`, dest: `./lib/${item}` }
+                  : { src: `./src/${item[0]}`, dest: `./lib/${item[1]}` }
               ),
             }),
           ]
@@ -59,7 +59,7 @@ export const rollupTypescript = (
   },
   {
     input: `./src/${filePath}.ts`,
-    output: [{ file: `./${filePath}.d.ts`, format: "esm" }],
+    output: [{ file: `./lib/${filePath}.d.ts`, format: "esm" }],
     plugins: [dts()],
     external: dtsExternal,
   },
@@ -86,7 +86,7 @@ export const rollupVue = (
       input: `./src/${filePath}`,
       output: [
         {
-          file: `./${filename}.js`,
+          file: `./lib/${filename}.js`,
           format: filePath.includes("/node/") ? "cjs" : "esm",
           sourcemap: true,
           exports: "named",
@@ -111,8 +111,8 @@ export const rollupVue = (
               rollupCopy({
                 targets: copy.map((item) =>
                   typeof item === "string"
-                    ? { src: `./src/${item}`, dest: item }
-                    : { src: `./src/${item[0]}`, dest: item[1] }
+                    ? { src: `./src/${item}`, dest: `./lib/${item}` }
+                    : { src: `./src/${item[0]}`, dest: `./lib/${item[1]}` }
                 ),
               }),
             ]
@@ -128,7 +128,7 @@ export const rollupVue = (
       ? [
           {
             input: `./src/${filePath}`,
-            output: [{ file: `./${filename}.d.ts`, format: "esm" }],
+            output: [{ file: `./lib/${filename}.d.ts`, format: "esm" }],
             plugins: [dts()],
             external: dtsExternal,
           },

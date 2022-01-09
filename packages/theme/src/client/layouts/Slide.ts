@@ -1,5 +1,5 @@
 import { defineComponent, h } from "vue";
-import SlidePage from "vuepress-plugin-md-enhance/client/SlidePage";
+import SlidePage from "vuepress-plugin-md-enhance/lib/client/SlidePage";
 import type { VNode } from "vue";
 
 export default defineComponent({

@@ -73,7 +73,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import { usePure } from "@mr-hope/vuepress-shared/client";
+import { usePure } from "@mr-hope/vuepress-shared/lib/client";
 import {
   usePageFrontmatter,
   useSiteLocaleData,

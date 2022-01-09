@@ -66,7 +66,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref, toRef, watch } from "vue";
 import { useRoute } from "vue-router";
-import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
+import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import NavLink from "../NavLink";
 
 import type { PropType } from "vue";

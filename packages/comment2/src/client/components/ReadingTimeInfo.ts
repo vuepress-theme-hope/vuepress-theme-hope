@@ -1,4 +1,4 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { TimerIcon } from "./icons";

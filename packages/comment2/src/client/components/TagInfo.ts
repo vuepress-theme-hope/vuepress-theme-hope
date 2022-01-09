@@ -1,5 +1,5 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
-import { useBlogConfig, useTag } from "@mr-hope/vuepress-shared/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
+import { useBlogConfig, useTag } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { TagIcon } from "./icons";

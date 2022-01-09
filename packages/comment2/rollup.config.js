@@ -11,7 +11,7 @@ export default [
   }),
   ...rollupTypescript("client/appEnhance", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "balloon-css/balloon.css",
       "vue",
@@ -24,7 +24,7 @@ export default [
   }),
   ...rollupTypescript("client/components/Waline", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@waline/client",
       "vue",

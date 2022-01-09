@@ -1,4 +1,4 @@
-import { clickOutside } from "@mr-hope/vuepress-shared/client";
+import { clickOutside } from "@mr-hope/vuepress-shared/lib/client";
 import { Content } from "@vuepress/client";
 import { defineComponent, h, ref, onBeforeUnmount, withDirectives } from "vue";
 import { useRouter } from "vue-router";

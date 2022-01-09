@@ -1,5 +1,8 @@
 // TODO: Support author links
-import { useAuthor, useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import {
+  useAuthor,
+  useLocaleConfig,
+} from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { AuthorIcon } from "./icons";
 import { commentOptions, pageInfoI18n } from "../define";

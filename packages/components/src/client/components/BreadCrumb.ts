@@ -1,4 +1,4 @@
-import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
+import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, usePagesData } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { computed, defineComponent, h, onMounted, watch, ref } from "vue";

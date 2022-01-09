@@ -2,7 +2,7 @@ import {
   useCategory,
   useBlogConfig,
   useLocaleConfig,
-} from "@mr-hope/vuepress-shared/client";
+} from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { CategoryIcon } from "./icons";

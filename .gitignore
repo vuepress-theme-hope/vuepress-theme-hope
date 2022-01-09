@@ -2,8 +2,7 @@
 node_modules/
 
 # Build files
-packages/*/client/
-packages/*/node/
+packages/*/lib/
 
 # Vuepress Cache
 .cache/

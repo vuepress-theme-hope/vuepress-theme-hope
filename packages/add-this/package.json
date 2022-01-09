@@ -23,22 +23,21 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "node/index.js",
-  "types": "node/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
   "files": [
-    "client",
-    "node"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",
-    "clean": "rimraf ./client ./node",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
     "demo:vite-build": "vuepress-vite build __tests__/demo",
     "demo:vite-clean-serve": "vuepress-vite dev __tests__/demo --clean-cache",
     "demo:vite-serve": "vuepress-vite dev __tests__/demo",
     "demo:webpack-build": "vuepress-webpack build __tests__/demo",
     "demo:webpack-clean-serve": "vuepress-webpack dev __tests__/demo --clean-cache",
     "demo:webpack-serve": "vuepress-webpack dev __tests__/demo",
-    "dev": "rollup -c -w",
-    "dev:rollup": "rollup -c -w"
+    "dev": "yarn dev:ts",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
   }
 }

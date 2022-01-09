@@ -11,7 +11,7 @@ export default [
   }),
   ...rollupTypescript("client/appSetup", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "balloon-css/balloon.css",
       "vue",

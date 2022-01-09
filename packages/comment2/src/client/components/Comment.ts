@@ -1,5 +1,5 @@
 // TODO: Support it when vssue support vuepress2
-// import { usePageTitle } from "@mr-hope/vuepress-shared/client";
+// import { usePageTitle } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import Waline from "@Waline";

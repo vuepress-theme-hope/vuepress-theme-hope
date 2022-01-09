@@ -63,7 +63,7 @@
 </template>
 
 <script lang="ts">
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { componentI18n } from "../define";

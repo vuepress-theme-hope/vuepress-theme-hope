@@ -1,7 +1,7 @@
 import {
   useLocaleConfig,
   useThemePluginConfig,
-} from "@mr-hope/vuepress-shared/client";
+} from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import {
   computed,

@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": false,
+    "baseUrl": "./",
+    "checkJs": false,
+    "composite": true,
+    "declaration": true,
+    "diagnostics": false,
+    "downlevelIteration": false,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    // mininal node 12 support
+    // "lib": [
+    //   "dom",
+    //   "es2019",
+    //   "es2020.promise",
+    //   "es2020.bigint",
+    //   "es2020.string"
+    // ],
+    // mininal node 14 support
+    "lib": ["es2020"],
+    // mininal node 16 support
+    // "lib": ["es2021"],
+    "listEmittedFiles": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    // mininal node 12 support
+    // "target": "es2019",
+    // mininal node 14 support
+    "target": "es2020",
+    // mininal node 16 support
+    // "target": "es2021",
+    "types": ["jest", "node", "vite/client"]
+  }
+}

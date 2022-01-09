@@ -2,7 +2,7 @@ import {
   useIconPrefix,
   useLocaleConfig,
   useThemePluginConfig,
-} from "@mr-hope/vuepress-shared/client";
+} from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, resolveComponent, h } from "vue";
 import AuthorInfo from "./AuthorInfo";

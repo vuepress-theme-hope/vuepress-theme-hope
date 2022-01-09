@@ -1,4 +1,4 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineClientAppSetup } from "@vuepress/client";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";

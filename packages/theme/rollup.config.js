@@ -8,7 +8,7 @@ export default [
   ...rollupVue("client/components/navbar/Navbar.vue", {
     copy: [["client/components/navbar/styles", "client/components/navbar"]],
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
@@ -22,7 +22,7 @@ export default [
   ...rollupVue("client/components/sidebar/Sidebar.vue", {
     copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
@@ -37,7 +37,7 @@ export default [
     external: [
       "@Navbar",
       "@Sidebar",
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
@@ -51,7 +51,7 @@ export default [
   ...rollupVue("client/layouts/Layout.ts", {
     external: [
       "@CommonWrapper",
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
@@ -65,7 +65,7 @@ export default [
   ...rollupVue("client/layouts/Layout.ts", {
     external: [
       "@CommonWrapper",
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
@@ -78,7 +78,7 @@ export default [
   ...rollupVue("client/layouts/404.ts", {
     external: [
       "@CommonWrapper",
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
@@ -94,7 +94,7 @@ export default [
   ...rollupTypescript("client/appEnhance", {
     copy: [["client/styles", "client"]],
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
@@ -106,7 +106,7 @@ export default [
   }),
   ...rollupTypescript("client/appSetup", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",

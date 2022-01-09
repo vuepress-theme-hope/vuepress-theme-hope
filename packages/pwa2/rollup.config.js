@@ -19,7 +19,7 @@ export default [
   ...rollupVue("client/global-components/PWAInstall.ts", {
     resolve: true,
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       /\.scss$/,
@@ -28,7 +28,7 @@ export default [
   }),
   ...rollupTypescript("client/global-components/SWUpdatePopup", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       /\.scss$/,

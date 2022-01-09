@@ -72,7 +72,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref, toRefs, watch } from "vue";
 import { useRoute } from "vue-router";
-import { useIconPrefix } from "@mr-hope/vuepress-shared/client";
+import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import ExpandTransition from "../transitions/ExpandTransition";
 import NavLink from "../NavLink";
 

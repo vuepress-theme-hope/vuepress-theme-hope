@@ -38,12 +38,17 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {
-    external: ["@mr-hope/vuepress-shared/client", "mermaid", "vue", /\.scss$/],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "mermaid",
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Presentation", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       /^reveal\.js/,
       "vue",
@@ -53,7 +58,7 @@ export default [
   }),
   ...rollupTypescript("client/SlidePage", {
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       "vue-router",

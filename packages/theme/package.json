@@ -24,18 +24,17 @@
     "email": "zhangbowang1998@gmail.com",
     "url": "https://mrhope.site"
   },
-  "main": "node/index.js",
-  "types": "node/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
   "files": [
-    "client",
-    "node"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",
-    "clean": "rimraf ./client ./node",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:rollup\"",
-    "dev:copy": "cpx \"src/client/**/styles/**/*.scss\" client -w",
-    "dev:rollup": "rollup -c -w"
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev:copy": "cpx src/client/**/*.{vue,scss} lib/client -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
     "@mr-hope/vuepress-plugin-components": "2.0.0-alpha.7",

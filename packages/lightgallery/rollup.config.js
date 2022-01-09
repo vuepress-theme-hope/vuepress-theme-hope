@@ -12,7 +12,7 @@ export default [
   ...rollupTypescript("client/root-components/LightGallery", {
     resolve: true,
     external: [
-      "@mr-hope/vuepress-shared/client",
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       "vue-router",

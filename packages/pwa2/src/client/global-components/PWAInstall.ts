@@ -1,4 +1,4 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import PWAInstallModal from "../components/PWAInstallModal.vue";
 import { i18n } from "../define";
