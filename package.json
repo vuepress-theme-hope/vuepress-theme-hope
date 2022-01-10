@@ -92,7 +92,7 @@
     "@babel/core": "7.16.7",
     "@babel/plugin-transform-modules-commonjs": "7.16.7",
     "@babel/preset-env": "7.16.7",
-    "@commitlint/cli": "16.0.1",
+    "@commitlint/cli": "16.0.2",
     "@commitlint/config-conventional": "16.0.0",
     "@rollup/plugin-commonjs": "21.0.1",
     "@rollup/plugin-json": "4.1.0",
