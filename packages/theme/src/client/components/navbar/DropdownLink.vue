@@ -23,7 +23,7 @@
       >
         <template v-if="child.children">
           <h4 class="dropdown-subtitle">
-            <NavLink
+            <AutoLink
               v-if="child.link"
               :item="child"
               @focusout="
@@ -41,7 +41,7 @@
               :key="grandchild.link"
               class="dropdown-subitem"
             >
-              <NavLink
+              <AutoLink
                 :item="grandchild"
                 @focusout="
                   isLastItemOfArray(grandchild, child.children) &&
@@ -53,7 +53,7 @@
           </ul>
         </template>
 
-        <NavLink
+        <AutoLink
           v-else
           :item="child"
           @focusout="isLastItemOfArray(child, item.children) && (open = false)"
@@ -67,7 +67,7 @@
 import { computed, defineComponent, ref, toRef, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
-import NavLink from "../NavLink";
+import AutoLink from "../AutoLink";
 
 import type { PropType } from "vue";
 import type { NavGroup, NavItem } from "../../../shared";
@@ -76,7 +76,7 @@ export default defineComponent({
   name: "NavbarDropdownLink",
 
   components: {
-    NavLink,
+    AutoLink,
   },
 
   props: {

@@ -1,10 +1,10 @@
-import { NavGroup, NavLink } from "./navbar";
+import { NavGroup, AutoLink } from "./navbar";
 
 /**
  * Sidebar types
  */
 // user config
-export type SidebarPageItem = NavLink;
+export type SidebarPageItem = AutoLink;
 
 export interface SidebarGroupItem
   extends NavGroup<SidebarPageItem | SidebarGroupItem | string> {

@@ -22,9 +22,9 @@
           :key="child.link || index"
           class="dropdown-item"
         >
-          <template v-if="child.children">
+          <template v-if="'children' in child">
             <h4 class="dropdown-subtitle">
-              <NavLink
+              <AutoLink
                 v-if="child.link"
                 :item="child"
                 @focusout="
@@ -43,7 +43,7 @@
                 :key="grandchild.link"
                 class="dropdown-subitem"
               >
-                <NavLink
+                <AutoLink
                   :item="grandchild"
                   @focusout="
                     isLastItemOfArray(grandchild, child.children) &&
@@ -56,7 +56,7 @@
           </template>
 
           <template v-else>
-            <NavLink
+            <AutoLink
               :item="child"
               @focusout="
                 isLastItemOfArray(child, item.children) && (open = false)
@@ -74,22 +74,22 @@ import { computed, defineComponent, ref, toRefs, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import ExpandTransition from "../transitions/ExpandTransition";
-import NavLink from "../NavLink";
+import AutoLink from "../AutoLink";
 
 import type { PropType } from "vue";
-import type { NavGroup, NavItem } from "../../../shared";
+import type { ResolvedNavbarItem, NavGroup } from "../../../shared";
 
 export default defineComponent({
   name: "SidebarDropdownLink",
 
   components: {
+    AutoLink,
     ExpandTransition,
-    NavLink,
   },
 
   props: {
     item: {
-      type: Object as PropType<NavGroup<NavItem>>,
+      type: Object as PropType<NavGroup<ResolvedNavbarItem>>,
       required: true,
     },
   },

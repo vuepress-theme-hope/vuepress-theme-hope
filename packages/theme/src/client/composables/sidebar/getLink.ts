@@ -3,7 +3,7 @@ import { isFunction, isString } from "@vuepress/shared";
 // import { hash } from "@vuepress/utils";
 
 import type { Router } from "vue-router";
-import type { NavLink } from "../../../shared";
+import type { AutoLink } from "../../../shared";
 
 /**
  * Resolve a route with redirection
@@ -32,7 +32,7 @@ export const resolveRouteWithRedirect = (
 };
 
 /**
- * Resolve NavLink props from string
+ * Resolve AutoLink props from string
  *
  * @example
  * - Input: '/README.md'
@@ -41,7 +41,7 @@ export const resolveRouteWithRedirect = (
 export const getLink = async (
   router: Router,
   item: string
-): Promise<NavLink> => {
+): Promise<AutoLink> => {
   const resolved = resolveRouteWithRedirect(router, item);
   const pages = usePagesData();
   // FIXME: Find a way to get page key

@@ -1,5 +1,5 @@
 import { defineComponent, h } from "vue";
-import NavLink from "../NavLink";
+import AutoLink from "../AutoLink";
 import RepoLink from "../RepoLink";
 import SidebarDropdownLink from "./DropdownLink.vue";
 import { useNavbarConfig, useNavbarRepo } from "../../composables";
@@ -22,7 +22,7 @@ export default defineComponent({
                 { class: "navbar-links-item" },
                 "children" in item
                   ? h(SidebarDropdownLink, { item })
-                  : h(NavLink, { item })
+                  : h(AutoLink, { item })
               )
             ),
             h(RepoLink),

@@ -27,7 +27,7 @@
         </DropTransition>
         <DropTransition :delay="0.12">
           <p v-if="actions.length" class="actions">
-            <NavLink
+            <AutoLink
               v-for="action in actions"
               :key="action.text"
               class="action-button"
@@ -81,7 +81,7 @@ import {
 } from "@vuepress/client";
 import { isArray } from "@vuepress/shared";
 import DropTransition from "./transitions/DropTransition.vue";
-import NavLink from "./NavLink";
+import AutoLink from "./AutoLink";
 
 import type { HopeThemeHomePageFrontmatter } from "../../shared";
 
@@ -111,7 +111,7 @@ export default defineComponent({
 
   components: {
     DropTransition,
-    NavLink,
+    AutoLink,
   },
 
   setup() {

@@ -1,9 +1,9 @@
 import { defineComponent, h } from "vue";
-import NavLink from "./NavLink";
+import AutoLink from "./AutoLink";
 import { EditIcon } from "./icons";
 import {
   useContributors,
-  useEditNavLink,
+  useEditLink,
   useThemeLocaleData,
   useUpdateTime,
 } from "../composables";
@@ -15,19 +15,19 @@ export default defineComponent({
 
   setup() {
     const themeLocale = useThemeLocaleData();
-    const editNavLink = useEditNavLink();
+    const editLink = useEditLink();
     const updateTime = useUpdateTime();
     const contributors = useContributors();
 
     return (): VNode =>
       h("footer", { class: "page-meta" }, [
-        editNavLink.value
+        editLink.value
           ? h(
               "div",
               { class: "meta-item edit-link" },
               h(
-                NavLink,
-                { class: "label", item: editNavLink.value },
+                AutoLink,
+                { class: "label", item: editLink.value },
                 { before: () => h(EditIcon) }
               )
             )

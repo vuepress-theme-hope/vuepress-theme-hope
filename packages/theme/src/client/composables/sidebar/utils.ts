@@ -1,7 +1,7 @@
 import { h } from "vue";
 import { useRoute } from "vue-router";
 import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
-import NavLink from "../../components/NavLink";
+import AutoLink from "../../components/AutoLink";
 import { isActiveLink } from "../../utils";
 
 import type { VNode } from "vue";
@@ -23,10 +23,10 @@ export const renderItem = (
   props: VNode["props"]
 ): VNode => {
   return item.link
-    ? // if the item has link, render it as `<NavLink>`
+    ? // if the item has link, render it as `<AutoLink>`
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      h(NavLink, {
+      h(AutoLink, {
         ...props,
         item,
       })

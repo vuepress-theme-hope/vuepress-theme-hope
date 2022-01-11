@@ -2,7 +2,7 @@ import { defineComponent, h } from "vue";
 import { useNavbarConfig } from "../../composables";
 import DropdownLink from "./DropdownLink.vue";
 import LanguageDropdown from "./LanguageDropdown";
-import NavLink from "../NavLink";
+import AutoLink from "../AutoLink";
 import RepoLink from "../RepoLink";
 
 import type { VNode } from "vue";
@@ -22,7 +22,7 @@ export default defineComponent({
                 { class: ["nav-item", "hide-in-mobile"] },
                 "children" in item
                   ? h(DropdownLink, { item })
-                  : h(NavLink, { item })
+                  : h(AutoLink, { item })
               )
             ),
             h("div", { class: ["nav-item"] }, h(LanguageDropdown)),

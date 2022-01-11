@@ -22,8 +22,8 @@ export default defineComponent({
   name: "SideBar",
 
   components: {
-    SidebarNavLinks,
     SidebarLinks,
+    SidebarNavLinks,
   },
 
   setup() {

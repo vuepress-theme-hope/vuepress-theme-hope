@@ -4,12 +4,12 @@ import { useThemeLocaleData } from "../themeData";
 import { resolveRepoType } from "../../utils";
 
 import type { ComputedRef } from "vue";
-import type { NavLink } from "../../../shared";
+import type { AutoLink } from "../../../shared";
 
 /**
  * Get navbar config of repository link
  */
-export const useNavbarRepo = (): ComputedRef<NavLink | null> => {
+export const useNavbarRepo = (): ComputedRef<AutoLink | null> => {
   const themeLocale = useThemeLocaleData();
 
   const repo = computed(() => themeLocale.value.repo);

@@ -6,16 +6,16 @@ import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
 
 import type { PropType, VNode } from "vue";
-import type { NavLink } from "../../shared";
+import type { AutoLink } from "../../shared";
 
 export default defineComponent({
-  name: "NavLink",
+  name: "AutoLink",
 
   inheritAttrs: false,
 
   props: {
     item: {
-      type: Object as PropType<NavLink>,
+      type: Object as PropType<AutoLink>,
       required: true,
     },
     exact: {
@@ -102,7 +102,7 @@ export default defineComponent({
         : route.path.startsWith(item.value.link)
     );
 
-    const renderIcon = (item: NavLink): VNode | null =>
+    const renderIcon = (item: AutoLink): VNode | null =>
       item.icon
         ? h("i", {
             class: `iconfont ${iconPrefix.value}${item.icon}`,

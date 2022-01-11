@@ -9,12 +9,12 @@ import { useThemeLocaleData } from "./themeData";
 import { resolveEditLink } from "../utils";
 
 import type {
+  AutoLink,
   HopeThemePageData,
   HopeThemeNormalPageFrontmatter,
-  NavLink as NavLinkType,
 } from "../../shared";
 
-export const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
+export const useEditLink = (): ComputedRef<null | AutoLink> => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<HopeThemePageData>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();

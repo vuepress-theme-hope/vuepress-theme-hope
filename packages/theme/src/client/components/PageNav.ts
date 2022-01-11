@@ -2,14 +2,14 @@ import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 import { usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
-import NavLink from "./NavLink";
+import AutoLink from "./AutoLink";
 import { PrevIcon, NextIcon } from "./icons";
-import { useNavLink, useSidebarItems } from "../composables";
+import { useAutoLink, useSidebarItems } from "../composables";
 
 import type { VNode } from "vue";
 import type {
   HopeThemeNormalPageFrontmatter,
-  NavLink as NavLinkType,
+  AutoLink as AutoLinkType,
   ResolvedSidebarItem,
 } from "../../shared";
 
@@ -18,12 +18,12 @@ import type {
  */
 const resolveFromFrontmatterConfig = (
   conf: unknown
-): null | false | NavLinkType => {
+): null | false | AutoLinkType => {
   if (conf === false) return null;
 
-  if (isString(conf)) return useNavLink(conf);
+  if (isString(conf)) return useAutoLink(conf);
 
-  if (isPlainObject<NavLinkType>(conf)) return conf;
+  if (isPlainObject<AutoLinkType>(conf)) return conf;
 
   return false;
 };
@@ -35,7 +35,7 @@ const resolveFromSidebarItems = (
   sidebarItems: ResolvedSidebarItem[],
   currentPath: string,
   offset: number
-): null | NavLinkType => {
+): null | AutoLinkType => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
   if (index !== -1) {
@@ -43,7 +43,7 @@ const resolveFromSidebarItems = (
 
     if (!targetItem?.link) return null;
 
-    return targetItem as NavLinkType;
+    return targetItem as AutoLinkType;
   }
 
   for (const item of sidebarItems)
@@ -64,7 +64,7 @@ export default defineComponent({
   name: "PageNav",
 
   components: {
-    NavLink,
+    AutoLink,
     NextIcon,
     PrevIcon,
   },
@@ -99,12 +99,12 @@ export default defineComponent({
               prevNavLink.value
                 ? h("span", { class: "prev" }, [
                     h(PrevIcon),
-                    h(NavLink, { item: prevNavLink.value }),
+                    h(AutoLink, { item: prevNavLink.value }),
                   ])
                 : null,
               nextNavLink.value
                 ? h("span", { class: "next" }, [
-                    h(NavLink, { item: nextNavLink.value }),
+                    h(AutoLink, { item: nextNavLink.value }),
                     h(NextIcon),
                   ])
                 : null,

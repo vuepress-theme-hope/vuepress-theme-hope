@@ -1,7 +1,7 @@
 /**
  * Base nav item, displayed as text
  */
-export interface NavItem {
+export interface LinkItem {
   text: string;
   icon?: string;
   ariaLabel?: string;
@@ -10,16 +10,16 @@ export interface NavItem {
 /**
  * Base nav group, has nav items children
  */
-export interface NavGroup<T> extends NavItem {
+export interface NavGroup<T> extends LinkItem {
   prefix?: string;
   link?: string;
   children: T[];
 }
 
 /**
- * Props for `<NavLink>`
+ * Props for `<AutoLink>`
  */
-export interface NavLink extends NavItem {
+export interface AutoLink extends LinkItem {
   link: string;
   rel?: string;
   target?: string;
@@ -30,7 +30,7 @@ export interface NavLink extends NavItem {
  * Navbar types
  */
 // user config
-export type NavbarItem = NavLink;
+export type NavbarItem = AutoLink;
 export type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
 export type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
 // resolved
