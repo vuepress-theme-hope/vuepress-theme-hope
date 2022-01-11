@@ -103,7 +103,7 @@
     "@types/jest": "27.4.0",
     "@types/semver": "7.3.9",
     "@typescript-eslint/eslint-plugin": "5.9.0",
-    "@typescript-eslint/parser": "5.9.0",
+    "@typescript-eslint/parser": "5.9.1",
     "@vue/eslint-config-typescript": "10.0.0",
     "@vuepress/bundler-webpack": "2.0.0-beta.32",
     "babel-jest": "27.4.6",
