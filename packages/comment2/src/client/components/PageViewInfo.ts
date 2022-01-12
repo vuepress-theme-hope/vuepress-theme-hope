@@ -1,5 +1,5 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageFrontmatter, useSiteData } from "@vuepress/client";
+import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 import { EyeIcon, FireIcon } from "./icons";
@@ -14,7 +14,6 @@ export default defineComponent({
 
   setup() {
     const route = useRoute();
-    const site = useSiteData();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const pageInfoLocale = useLocaleConfig(pageInfoI18n);
 
@@ -22,13 +21,6 @@ export default defineComponent({
     const enablePageViews = computed(() =>
       resolveEnablePageViews(frontmatter.value)
     );
-
-    /** visitorID, use current path */
-    const visitorID = computed(() => {
-      const { base } = site.value;
-
-      return `${base.slice(0, base.length - 1)}${route.path}`;
-    });
 
     // show fire icon depending on the views number
     const getCount = (): void => {
@@ -75,7 +67,8 @@ export default defineComponent({
                 "span",
                 {
                   class: "waline-visitor-count",
-                  id: visitorID.value,
+                  /** visitorID, use current path */
+                  id: withBase(route.path),
                 },
                 "..."
               ),
