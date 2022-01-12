@@ -1,6 +1,7 @@
 import { mergeConfig } from "./vite";
 
 import type { App } from "@vuepress/core";
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type {
   WebpackBundlerOptions,
   WebpackDevServer,
@@ -15,8 +16,11 @@ export const useCustomDevServer = (
   getResponse: (request?: IncomingMessage) => Promise<unknown>,
   errMsg = "The server encounted an error"
 ): void => {
+  const { base, bundler, bundlerConfig } = app.options;
+
   // for vite
-  if (app.env.isDev && app.options.bundler.endsWith("vite")) {
+  if (app.env.isDev && bundler.endsWith("vite")) {
+    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
     const handler: HandleFunction = (
       request: IncomingMessage,
       response: ServerResponse
@@ -34,30 +38,29 @@ export const useCustomDevServer = (
     const viteMockRequestPlugin: Plugin = {
       name: `${path}-mock`,
       configureServer: ({ middlewares }) => {
-        middlewares.use(
-          `${app.options.base.replace(/\/$/, "")}${path}`,
-          handler
-        );
+        middlewares.use(`${base.replace(/\/$/, "")}${path}`, handler);
       },
     };
 
-    app.options.bundlerConfig.viteOptions = mergeConfig(
-      app.options.bundlerConfig.viteOptions as Record<string, unknown>,
+    viteBundlerConfig.viteOptions = mergeConfig(
+      viteBundlerConfig.viteOptions as Record<string, unknown>,
       { plugins: [viteMockRequestPlugin] }
     );
   }
 
   // for webpack
-  if (app.env.isDev && app.options.bundler.endsWith("webpack")) {
-    const { devServerSetupMiddlewares } = app.options
+  if (app.env.isDev && bundler.endsWith("webpack")) {
+    const webpackBundlerConfig: WebpackBundlerOptions = app.options
       .bundlerConfig as WebpackBundlerOptions;
 
-    app.options.bundlerConfig.devServerSetupMiddlewares = (
+    const { devServerSetupMiddlewares } = webpackBundlerConfig;
+
+    webpackBundlerConfig.devServerSetupMiddlewares = (
       middlewares: WebpackDevServer.Middleware[],
       server: WebpackDevServer
     ): WebpackDevServer.Middleware[] => {
       server.app?.get(
-        `${app.options.base.replace(/\/$/, "")}${path}`,
+        `${base.replace(/\/$/, "")}${path}`,
         (request, response) => {
           getResponse(request)
             .then((data) => response.status(200).send(data))
