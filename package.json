@@ -157,7 +157,7 @@
     "ts-jest": "27.1.2",
     "ts-node": "10.4.0",
     "typescript": "4.5.4",
-    "vuepress-vite": "2.0.0-beta.32",
+    "vuepress-vite": "2.0.0-beta.33",
     "vuepress-webpack": "2.0.0-beta.32"
   },
   "textlint": {
