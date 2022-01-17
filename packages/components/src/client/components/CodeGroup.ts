@@ -1,5 +1,8 @@
-import { defineComponent, h, ref } from "vue";
+import { defineComponent, h, onBeforeUpdate, ref } from "vue";
 import type { Component, VNode } from "vue";
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+declare const __VUEPRESS_DEV__: boolean;
 
 export default defineComponent({
   name: "CodeGroup",
@@ -11,19 +14,22 @@ export default defineComponent({
     // refs of the tab buttons
     const tabRefs = ref<HTMLUListElement[]>([]);
 
+    // after removing a code-group-item, we need to clear the ref
+    // of the removed item to avoid issues caused by HMR
+    if (__VUEPRESS_DEV__)
+      onBeforeUpdate(() => {
+        tabRefs.value = [];
+      });
+
     // activate next tab
     const activateNext = (i = activeIndex.value): void => {
-      if (i < tabRefs.value.length - 1) activeIndex.value = i + 1;
-      else activeIndex.value = 0;
-
+      activeIndex.value = i < tabRefs.value.length - 1 ? i + 1 : 0;
       tabRefs.value[activeIndex.value].focus();
     };
 
     // activate previous tab
     const activatePrev = (i = activeIndex.value): void => {
-      if (i > 0) activeIndex.value = i - 1;
-      else activeIndex.value = tabRefs.value.length - 1;
-
+      activeIndex.value = i > 0 ? i - 1 : tabRefs.value.length - 1;
       tabRefs.value[activeIndex.value].focus();
     };
 
@@ -54,10 +60,6 @@ export default defineComponent({
 
           return vnode as VNode & { props: Exclude<VNode["props"], null> };
         });
-
-      // clear tabRefs for HMR
-      tabRefs.value = [];
-
       // do not render anything if there is no code-group-item
       if (items.length === 0) return null;
 
