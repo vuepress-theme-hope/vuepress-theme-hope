@@ -10,6 +10,14 @@ import type { HandleFunction } from "connect";
 import type { Plugin } from "vite";
 import type { IncomingMessage, ServerResponse } from "http";
 
+/**
+ * Handle specific path when runing VuePress DevServe
+ *
+ * @param app VuePress Node App
+ * @param path Path to be responsed
+ * @param getResponse respond function
+ * @param errMsg error msg
+ */
 export const useCustomDevServer = (
   app: App,
   path: string,

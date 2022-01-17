@@ -42,7 +42,9 @@ export default defineComponent({
               : {},
             [
               h(TagIcon),
-              h("ul", { class: "tags-wrapper" }, [
+              h(
+                "ul",
+                { class: "tags-wrapper" },
                 items.value.map((tag, index) =>
                   h(
                     "li",
@@ -60,8 +62,8 @@ export default defineComponent({
                       tag
                     )
                   )
-                ),
-              ]),
+                )
+              ),
               h("meta", {
                 property: "keywords",
                 content: items.value.join(","),

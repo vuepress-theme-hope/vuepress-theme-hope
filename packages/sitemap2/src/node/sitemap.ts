@@ -143,7 +143,7 @@ export const generateSiteMap = async (
   urls.forEach((item) => sitemap.write(item));
   sitemap.end();
 
-  logger.success();
+  logger.succeed();
   logger.update(`Sitemap generated and saved to ${chalk.cyan(outFile)}`);
 
   logger.load(`Appended sitemap path to ${chalk.cyan("robots.txt")}`);
@@ -160,5 +160,5 @@ export const generateSiteMap = async (
 
   await fs.writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
 
-  logger.success();
+  logger.succeed();
 };

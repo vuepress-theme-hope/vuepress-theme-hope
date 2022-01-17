@@ -52,7 +52,7 @@ export default defineComponent({
             [
               h(CategoryIcon),
               h("ul", { class: "categories-wrapper" }, [
-                items.value.map((category) =>
+                ...items.value.map((category) =>
                   h(
                     "li",
                     {

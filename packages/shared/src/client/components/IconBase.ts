@@ -1,6 +1,9 @@
 import { defineComponent, h } from "vue";
 import type { VNode } from "vue";
 
+/**
+ * Icon Base Component
+ */
 export const IconBase = defineComponent({
   name: "IconBase",
 

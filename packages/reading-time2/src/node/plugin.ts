@@ -5,6 +5,7 @@ import { readingTime } from "./reading-time";
 import type { Page, Plugin } from "@vuepress/core";
 import type { ReadingTime, ReadingTimeOptions } from "../shared";
 
+/** Reading time plugin */
 export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, app) => {
   return {
     name: "vuepress-plugin-reading-time2",

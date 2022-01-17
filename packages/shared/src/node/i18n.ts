@@ -6,7 +6,12 @@ import type {
   ResolvedLocaleConfig,
 } from "../shared";
 
-/** Get language of root directory */
+/**
+ * Get language of root directory
+ *
+ * @param app VuePress Node App
+ * @returns root language
+ */
 export const getRootLang = (app: App): HopeLang => {
   // infer from siteLocale
   const siteLocales = app.siteData.locales;
@@ -26,7 +31,12 @@ export const getRootLang = (app: App): HopeLang => {
   return "en-US";
 };
 
-/** Get the infer language path from root directory language */
+/**
+ * Get the infer language path from root directory language
+ *
+ * @param app VuePress Node App
+ * @returns infer language
+ */
 export const getRootLangPath = (app: App): string =>
   lang2Path(getRootLang(app));
 
@@ -40,24 +50,36 @@ export const getLocalePaths = (app: App): string[] =>
     ])
   );
 
+/**
+ * Get final locale options to passed to client
+ *
+ * @param app  VuePress Node App
+ * @param defaultI18nConfig default i18n config
+ * @param userI18nConfig user i18n config
+ * @returns final locale options
+ */
 export const getLocales = <T>(
   app: App,
-  defaultConfig: ResolvedLocaleConfig<T>,
-  i18n: LocaleConfig<T> = {}
+  defaultI18nConfig: ResolvedLocaleConfig<T>,
+  userI18nConfig: LocaleConfig<T> = {}
 ): ResolvedLocaleConfig<T> => {
   const rootPath = getRootLangPath(app);
 
   return Object.fromEntries([
     ...getLocalePaths(app).map<[string, T]>((localePath) => [
       localePath,
-      deepAssign({}, i18n[localePath] || {}, defaultConfig[localePath]),
+      deepAssign(
+        {},
+        userI18nConfig[localePath] || {},
+        defaultI18nConfig[localePath]
+      ),
     ]),
     [
       "/",
       deepAssign(
         {},
-        i18n["/"] || i18n[rootPath] || {},
-        defaultConfig[rootPath]
+        userI18nConfig["/"] || userI18nConfig[rootPath] || {},
+        defaultI18nConfig[rootPath]
       ),
     ],
   ]);

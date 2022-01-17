@@ -67,7 +67,7 @@ export const genServiceWorker = async (
     manifestTransforms: [imageFilter(destDir, options.maxPicSize)],
     ...(options.generateSWConfig || {}),
   }).then(({ count, size, warnings }) => {
-    logger.success();
+    logger.succeed();
 
     logger.info(
       `Precache ${chalk.cyan(`${count} files`)}, totaling ${chalk.cyan(

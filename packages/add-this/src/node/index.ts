@@ -5,6 +5,9 @@ import type { AddThisOptions } from "../shared";
 
 export * from "../shared";
 
+/**
+ * `vuepress-plugin-add-this` Plugin
+ */
 const addThisPlugin: Plugin<AddThisOptions> = (options) => {
   if (!options.pubid) {
     console.error("[AddThis]: Please provide a pubid to let plugin work");

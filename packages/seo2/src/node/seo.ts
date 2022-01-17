@@ -127,6 +127,6 @@ export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
       flag: "w",
     });
 
-    logger.success();
+    logger.succeed();
   }
 };

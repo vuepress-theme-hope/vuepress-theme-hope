@@ -12,10 +12,7 @@ node_modules/
 coverage/
 
 # Dist files
-packages/*/client/
-packages/*/node/
-packages/theme/layouts/
-packages/theme/styles/
+packages/*/lib/
 
 
 # Rollup cache

@@ -14,8 +14,7 @@ ignorePatterns:
   - "**/node_modules/**"
   - ".cache/**"
   - ".temp/**"
-  - "packages/*/client/**"
-  - "packages/*/node/**"
+  - "packages/*/lib/**"
 
 overrides:
   - files:

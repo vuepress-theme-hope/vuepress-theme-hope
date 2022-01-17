@@ -1,6 +1,8 @@
 import type { ReadingTimeLocaleConfig } from "../shared";
 
-/** Muti language config for reading time plugin */
+/**
+ * Default i18n config for `vuepress-plugin-reading-time2` plugin
+ */
 export const i18n: ReadingTimeLocaleConfig = {
   "/zh/": {
     word: "约 $word 字",

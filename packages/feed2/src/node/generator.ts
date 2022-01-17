@@ -38,7 +38,7 @@ export class FeedGenerator {
       }
     }
 
-    logger.success(`added ${chalk.cyan(`${count} page(s)`)} as feed item(s)`);
+    logger.succeed(`added ${chalk.cyan(`${count} page(s)`)} as feed item(s)`);
   }
 
   async generateFeed(): Promise<void> {
@@ -58,7 +58,7 @@ export class FeedGenerator {
       logger.update(
         `Atom feed file generated and saved to ${chalk.cyan(output.atom.path)}`
       );
-      logger.success();
+      logger.succeed();
       logger.load("Generating Feed");
     }
 
@@ -71,7 +71,7 @@ export class FeedGenerator {
       logger.update(
         `JSON feed file generated and saved to ${chalk.cyan(output.json.path)}`
       );
-      logger.success();
+      logger.succeed();
       logger.load("Generating Feed");
     }
 
@@ -84,7 +84,7 @@ export class FeedGenerator {
       logger.update(
         `RSS feed file generated and saved to ${chalk.cyan(output.rss.path)}`
       );
-      logger.success();
+      logger.succeed();
     }
   }
 }

@@ -9,6 +9,7 @@ import type { Plugin, PluginObject } from "@vuepress/core";
 
 export * from "../shared";
 
+/** Comment Plugin */
 const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   const { themeConfig } = app.options;
   const commentOptions: CommentOptions =
@@ -43,6 +44,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
   };
 
+  // TODO: Wait for Vssue to support `v2`
   // if (commentOptions.type === "vssue")
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   // config.plugins!.push(["@vssue/vuepress-plugin-vssue", commentOptions]);

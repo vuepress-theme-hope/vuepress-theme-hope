@@ -42,7 +42,7 @@ export default defineComponent({
     const themePluginConfig = useThemePluginConfig<CommentOptions>("comment");
     const iconPrefix = useIconPrefix();
 
-    const config = computed<PageInfoType[] | false>(() => {
+    const pageInfoItems = computed<PageInfoType[] | false>(() => {
       const themeConfig = themePluginConfig.value.pageInfo;
       const pluginConfig = commentOptions.pageInfo;
       const pageConfig = frontmatter.value.pageInfo;
@@ -63,7 +63,7 @@ export default defineComponent({
     });
 
     const isOriginal = computed(() => frontmatter.value.original);
-    const i18n = useLocaleConfig(pageInfoI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
 
     return (): VNode =>
       h("div", { class: "page-title" }, [
@@ -78,12 +78,14 @@ export default defineComponent({
             : null,
           page.value.title,
         ]),
-        config.value
+        pageInfoItems.value
           ? h("div", { class: "page-info" }, [
               isOriginal.value
-                ? h("span", { class: "origin" }, i18n.value.origin)
+                ? h("span", { class: "origin" }, pageInfoLocale.value.origin)
                 : null,
-              config.value.map((item) => h(resolveComponent(`${item}-info`))),
+              ...pageInfoItems.value.map((item) =>
+                h(resolveComponent(`${item}-info`))
+              ),
             ])
           : null,
         h("hr"),

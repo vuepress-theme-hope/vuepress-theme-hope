@@ -30,7 +30,8 @@ export default defineComponent({
             },
             [
               h(AuthorIcon),
-              h("span", [
+              h(
+                "span",
                 author.value.map((item) =>
                   item.url
                     ? h(
@@ -39,8 +40,8 @@ export default defineComponent({
                         item.name
                       )
                     : h("span", { class: "author-item" }, item.name)
-                ),
-              ]),
+                )
+              ),
               h("span", {
                 property: "author",
                 content: author.value.map((item) => item.name).join(", "),

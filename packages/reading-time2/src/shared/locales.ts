@@ -1,5 +1,10 @@
 import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
 
+/**
+ * Muti language config for `vuepress-plugin-reading-time2` plugin
+ *
+ * `vuepress-plugin-reading-time2` 插件的多语言配置
+ */
 export interface ReadingTimeI18nConfig {
   /**
    * 字数模板

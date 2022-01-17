@@ -12,6 +12,8 @@ export default defineComponent({
       const script = document.createElement("script");
 
       script.src = link;
+
+      // inject script tag
       document.getElementsByTagName("body")[0].appendChild(script);
     });
 

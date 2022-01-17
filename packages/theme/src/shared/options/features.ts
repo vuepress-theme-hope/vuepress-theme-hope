@@ -9,14 +9,14 @@ export interface HopeBlogOptions {
   /**
    * 博主名称
    *
-   * Name of the Blogger, default is author
+   * Name of the Blogger, default is `themeConfig.author`
    */
   name?: string;
 
   /**
    * 博主头像，应为绝对路径
    *
-   * Blogger avator, must be an absolute path
+   * Blogger avatar, must be an absolute path
    */
   avatar?: string;
 
