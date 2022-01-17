@@ -40,3 +40,25 @@ export interface HopeThemeNormalPageFrontmatter
   prev?: string | AutoLink;
   next?: string | AutoLink;
 }
+
+export interface ActionConfig {
+  text: string;
+  link: string;
+  type?: "primary" | "secondary";
+}
+
+export interface ProjectHomePageFrontmatter
+  extends HopeThemeHomePageFrontmatter {
+  home: true;
+  heroImage?: string;
+  darkHeroImage?: string;
+  heroAlt?: string;
+  heroText?: string;
+  tagline?: string;
+  actions?: ActionConfig[];
+  features?: {
+    title: string;
+    details: string;
+    link?: string;
+  }[];
+}

@@ -2,8 +2,8 @@ import { defineComponent, h } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import CommonWrapper from "@CommonWrapper";
 import FadeSideY from "../components/transitions/FadeSlideY";
-import ProjectHome from "../components/ProjectHome.vue";
-import MainContent from "../components/MainContent";
+import ProjectHome from "../components/home/ProjectHome";
+import NormalPage from "../components/NormalPage";
 
 import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";
@@ -27,7 +27,7 @@ export default defineComponent({
               : h(
                   FadeSideY,
                   {},
-                  { default: () => h(MainContent, { key: page.value.path }) }
+                  { default: () => h(NormalPage, { key: page.value.path }) }
                 ),
         }
       );

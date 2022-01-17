@@ -63,12 +63,6 @@ const resolveFromSidebarItems = (
 export default defineComponent({
   name: "PageNav",
 
-  components: {
-    AutoLink,
-    NextIcon,
-    PrevIcon,
-  },
-
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();

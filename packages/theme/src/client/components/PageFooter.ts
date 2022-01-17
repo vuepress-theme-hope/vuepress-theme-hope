@@ -3,7 +3,7 @@ import { usePageFrontmatter } from "@vuepress/client";
 import MediaLinks from "./medialinks";
 import { useThemeLocaleData } from "../composables";
 
-import { VNode } from "vue";
+import type { VNode } from "vue";
 import type {
   HopeFooterConfig,
   HopeThemeNormalPageFrontmatter,

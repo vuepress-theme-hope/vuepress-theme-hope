@@ -55,8 +55,8 @@ export default defineComponent({
     // if the `target` attr is '_blank'
     const isBlankTarget = computed(() => linkTarget.value === "_blank");
 
-    // is `<RouterLink>` or not
-    const isRouterLink = computed(
+    // render `<RouterLink>` or not
+    const renderRouterLink = computed(
       () =>
         !hasHttpProtocol.value &&
         !hasNonHttpProtocal.value &&
@@ -64,7 +64,7 @@ export default defineComponent({
     );
 
     // resolve the `rel` attr
-    const linkRel = computed(() =>
+    const anchorRel = computed(() =>
       hasNonHttpProtocal.value
         ? undefined
         : item.value.rel
@@ -81,18 +81,22 @@ export default defineComponent({
 
     // should be active when current route is a subpath of this link
     const shouldBeActiveInSubpath = computed(() => {
+      // should not be active in `exact` mode
       if (props.exact) return false;
 
       const localeKeys = Object.keys(site.value.locales);
-      if (localeKeys.length) {
+
+      // check all the locales
+      if (localeKeys.length)
         return !localeKeys.some((key) => key === item.value.link);
-      }
+
+      // check root
       return item.value.link !== "/";
     });
 
     // if this link is active
     const isActive = computed(() =>
-      !isRouterLink.value
+      !renderRouterLink.value
         ? false
         : item.value.activeMatch
         ? new RegExp(item.value.activeMatch).test(route.path)
@@ -110,7 +114,7 @@ export default defineComponent({
         : null;
 
     return (): VNode =>
-      isRouterLink.value
+      renderRouterLink.value
         ? h(
             RouterLink,
             {
@@ -133,7 +137,7 @@ export default defineComponent({
             "a",
             {
               href: item.value.link,
-              rel: linkRel.value,
+              rel: anchorRel.value,
               target: linkTarget.value,
               ariaLabel: linkAriaLabel.value,
               ...attrs,
