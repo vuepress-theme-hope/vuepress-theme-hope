@@ -1,8 +1,8 @@
-import Dayjs from "dayjs/esm";
-import localizedFormat from "dayjs/esm/plugin/localizedFormat";
-import objectSupport from "dayjs/esm/plugin/objectSupport";
-import timezone from "dayjs/esm/plugin/timezone";
-import utc from "dayjs/esm/plugin/utc";
+import Dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import objectSupport from "dayjs/plugin/objectSupport";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 
 Dayjs.extend(localizedFormat);
 Dayjs.extend(objectSupport);

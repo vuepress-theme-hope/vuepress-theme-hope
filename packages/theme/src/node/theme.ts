@@ -46,11 +46,11 @@ export const themeHope: Theme<HopeThemeOptions> = (
       ),
       "@Navbar": path.resolve(
         __dirname,
-        "../client/components/navbar/Navbar.js"
+        "../client/components/navbar/index.js"
       ),
       "@Sidebar": path.resolve(
         __dirname,
-        "../client/components/sidebar/Sidebar.js"
+        "../client/components/sidebar/index.js"
       ),
     },
 

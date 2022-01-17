@@ -11,10 +11,6 @@
   @include wrapper.wrapper;
 
   > {
-    *:first-child {
-      margin-top: calc(0rem - var(--navbar-height));
-    }
-
     // heading fix
     h1,
     h2,

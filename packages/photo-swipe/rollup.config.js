@@ -8,7 +8,7 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupVue("client/root-components/PhotoSwipe.vue", {
+  ...rollupVue("client/root-components/ImageViewer.ts", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",

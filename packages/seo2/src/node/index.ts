@@ -14,7 +14,10 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
   const seoOptions =
     Object.keys(options).length > 0
       ? (options as SeoOptions)
-      : (themeConfig.seo as SeoOptions) || {};
+      : {
+          hostname: themeConfig.hostname as string,
+          ...((themeConfig.seo as Partial<SeoOptions>) || {}),
+        };
 
   if (!seoOptions.hostname) {
     logger.error('Required option "hostname" is missing');

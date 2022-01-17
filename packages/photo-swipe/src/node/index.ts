@@ -29,7 +29,7 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
 
     clientAppRootComponentFiles: path.resolve(
       __dirname,
-      "../client/root-components/PhotoSwipe.js"
+      "../client/root-components/ImageViewer.js"
     ),
   };
 };

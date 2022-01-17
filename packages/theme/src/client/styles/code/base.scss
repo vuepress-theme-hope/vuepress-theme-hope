@@ -74,7 +74,7 @@ div[class*="language-"] {
     line-height: 1.4;
 
     .highlight-line {
-      background-color: var(--code-hl-bg-color);
+      background-color: var(--code-highlight-line-color);
     }
   }
 
@@ -137,7 +137,7 @@ div[class*="language-"] {
       height: 100%;
       border-radius: 6px 0 0 6px;
       background: var(--code-bg-color);
-      border-right: 1px solid var(--code-hl-bg-color);
+      border-right: 1px solid var(--code-highlight-line-color);
 
       @media (max-width: config.$mobileS) {
         border-radius: 0;

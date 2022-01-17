@@ -5,7 +5,7 @@ export default [
     external: ["@vuepress/utils", "vuepress-plugin-sass-palette"],
   }),
 
-  ...rollupVue("client/components/navbar/Navbar.vue", {
+  ...rollupVue("client/components/navbar/index.ts", {
     copy: [["client/components/navbar/styles", "client/components/navbar"]],
     external: [
       "@mr-hope/vuepress-shared/lib/client",
@@ -19,7 +19,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/components/sidebar/Sidebar.vue", {
+  ...rollupVue("client/components/sidebar/index.ts", {
     copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
     external: [
       "@mr-hope/vuepress-shared/lib/client",
