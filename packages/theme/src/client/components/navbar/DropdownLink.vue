@@ -70,7 +70,7 @@ import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import AutoLink from "../AutoLink";
 
 import type { PropType } from "vue";
-import type { NavGroup, NavItem } from "../../../shared";
+import type { AutoLink as AutoLinkType, NavGroup } from "../../../shared";
 
 export default defineComponent({
   name: "NavbarDropdownLink",
@@ -81,7 +81,7 @@ export default defineComponent({
 
   props: {
     item: {
-      type: Object as PropType<NavGroup<NavItem>>,
+      type: Object as PropType<NavGroup<AutoLinkType>>,
       required: true,
     },
   },
@@ -118,8 +118,10 @@ export default defineComponent({
       if (isTriggerByTab) open.value = !open.value;
     };
 
-    const isLastItemOfArray = (item: NavItem, arr: NavItem[]): boolean =>
-      arr[arr.length - 1] === item;
+    const isLastItemOfArray = (
+      item: AutoLinkType,
+      arr: AutoLinkType[]
+    ): boolean => arr[arr.length - 1] === item;
 
     return {
       open,
