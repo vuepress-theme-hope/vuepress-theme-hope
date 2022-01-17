@@ -1,6 +1,49 @@
 import type { HopeThemeI18nConfigItem } from "../shared";
 
 export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
+  "en-US": {
+    lang: "en-US",
+    selectText: "Language",
+    label: "English",
+    ariaLabel: "Select language",
+    meta: {
+      contributor: "Contributors",
+      editLink: "Edit this page",
+      updateTime: "Last update",
+    },
+    themeColor: {
+      themeColor: "Theme Color",
+      themeMode: "Theme Mode",
+    },
+    encrypt: {
+      title: "Please enter password",
+      errorHint: "Please enter the correct password!",
+    },
+    error404: {
+      hint: [
+        "There’s nothing here.",
+        "How did we get here?",
+        "That’s a Four-Oh-Four.",
+        "Looks like we've got some broken links.",
+      ],
+      back: "Go back",
+      home: "Take me home",
+    },
+    blog: {
+      article: "Articles",
+      articleList: "Article List",
+      category: "Category",
+      tag: "Tags",
+      timeline: "Timeline",
+      timelineText: "Yesterday Once More!",
+      allText: "All",
+      intro: "Personal Intro",
+      star: "Star",
+      slides: "Slides",
+      encrypt: "Encrypted",
+    },
+  },
+
   "zh-CN": {
     lang: "zh-CN",
     selectText: "选择语言",
@@ -43,46 +86,45 @@ export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
     },
   },
 
-  "en-US": {
-    lang: "en-US",
-    selectText: "Language",
-    label: "English",
-    ariaLabel: "Select language",
+  "zh-TW": {
+    lang: "zh-TW",
+    selectText: "選擇語言",
+    label: "繁體中文",
     meta: {
-      contributor: "Contributors",
-      editLink: "Edit this page",
-      updateTime: "Last update",
+      contributor: "貢獻者",
+      editLink: "編輯此頁",
+      updateTime: "上次編輯於",
     },
     themeColor: {
-      themeColor: "Theme Color",
-      themeMode: "Theme Mode",
+      themeColor: "主題色",
+      themeMode: "主題模式",
     },
     encrypt: {
-      title: "Please enter the password",
-      errorHint: "Please enter the correct password!",
+      title: "請輸入密碼",
+      errorHint: "請輸入正確密碼",
     },
     error404: {
       hint: [
-        "There’s nothing here.",
-        "How did we get here?",
-        "That’s a Four-Oh-Four.",
-        "Looks like we've got some broken links.",
+        "這裡什麼也沒有",
+        "我們是怎麼來到這兒的？",
+        "這 是 四 零 四 !",
+        "看起来你訪問了一個失效的鏈結",
       ],
-      back: "Go back",
-      home: "Take me home",
+      back: "返回上一頁",
+      home: "帶我回家",
     },
     blog: {
-      article: "Articles",
-      articleList: "Article List",
-      category: "Category",
-      tag: "Tags",
-      timeline: "Timeline",
-      timelineText: "Yesterday Once More!",
-      allText: "All",
-      intro: "Personal Intro",
-      star: "Star",
-      slides: "Slides",
-      encrypt: "Encrypted",
+      article: "文章",
+      articleList: "文章列表",
+      category: "分類",
+      tag: "標籤",
+      timeline: "時間軸",
+      timelineText: "昨日不在",
+      allText: "全部",
+      intro: "個人介紹",
+      star: "收藏",
+      slides: "幻燈片",
+      encrypt: "加密",
     },
   },
 
@@ -136,7 +178,7 @@ export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
     ariaLabel: "Chọn ngôn ngữ",
     meta: {
       contributor: "Người đóng góp",
-      editLink: "chỉnh sửa trang này",
+      editLink: "Chỉnh sửa trang này",
       updateTime: "Cập nhật gần nhất lúc",
     },
     themeColor: {
@@ -152,7 +194,7 @@ export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
         "Ở đây chẳng có gì cả.",
         "Sao chúng ta lại đến đây?",
         "Đây là lỗi bốn-không-bốn",
-        "Có vẻ chúng ta có vài liên kết gãy.",
+        "Có vẻ chúng ta có vài broken link.",
       ],
       back: "Quay lại",
       home: "Trang chủ",
@@ -167,8 +209,8 @@ export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
       allText: "Tất cả",
       intro: "Giới thiệu cá nhân",
       star: "Ngôi sao",
-      slides: "bài thuyết trình",
-      encrypt: "mã hóa",
+      slides: "Bài thuyết trình",
+      encrypt: "Mã hóa",
     },
   },
 
@@ -255,6 +297,49 @@ export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
       star: "Зірка",
       slides: "Слайди",
       encrypt: "Зашифровано",
+    },
+  },
+
+  "pt-BR": {
+    lang: "pt-BR",
+    selectText: "Língua",
+    label: "Português",
+    ariaLabel: "Selecione a língua",
+    meta: {
+      contributor: "Contribuidores",
+      editLink: "Editar esta página",
+      updateTime: "Última atualização",
+    },
+    themeColor: {
+      themeColor: "Cor do Tema",
+      themeMode: "Modo do Tema",
+    },
+    encrypt: {
+      title: "Por favor, entre a senha",
+      errorHint: "Por favor, entre a senha correta!",
+    },
+    error404: {
+      hint: [
+        "Não há nada aqui.",
+        "Como chegou até aqui?",
+        "Isto é um Quatro-Zero-Quatro.",
+        "Parece que temos alguns links quebrados.",
+      ],
+      back: "Voltar",
+      home: "Leve-me para casa",
+    },
+    blog: {
+      article: "Artigos",
+      articleList: "Lista de Artigos",
+      category: "Categorias",
+      tag: "Tags",
+      timeline: "Linha do Tempo",
+      timelineText: "Ontem, de novo!",
+      allText: "Todos",
+      intro: "Intro Pessoal",
+      star: "Estrela",
+      slides: "Slides",
+      encrypt: "Encriptado",
     },
   },
 };

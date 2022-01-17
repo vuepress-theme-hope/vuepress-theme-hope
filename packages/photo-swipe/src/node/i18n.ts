@@ -1,6 +1,38 @@
 import type { PhowoSwipeLocaleConfig } from "../shared";
 
 export const i18n: PhowoSwipeLocaleConfig = {
+  "/en/": {
+    close: "Close",
+    fullscreen: "Switch to full screen",
+    share: "Share",
+    zoom: "Zoom in/out",
+    prev: "Prev (Arrow Left)",
+    next: "Next (Arrow Right)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Share on Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "Download image",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
   "/zh/": {
     close: "关闭",
     fullscreen: "切换全屏",
@@ -33,17 +65,17 @@ export const i18n: PhowoSwipeLocaleConfig = {
     ],
   },
 
-  "/en/": {
-    close: "Close",
-    fullscreen: "Vollbild umschalten",
-    share: "Teilen",
-    zoom: "Zoom in/out",
-    prev: "Prev (Arrow Left)",
-    next: "Next (Arrow Right)",
+  "/tw/": {
+    close: "關閉",
+    fullscreen: "切換全屏",
+    share: "分享",
+    zoom: "縮放",
+    prev: "上一個 (左箭頭)",
+    next: "下一個 (右箭頭)",
     buttons: [
       {
         id: "facebook",
-        label: "Share on Facebook",
+        label: "分享到 Facebook",
         url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
       },
       {
@@ -58,7 +90,7 @@ export const i18n: PhowoSwipeLocaleConfig = {
       },
       {
         id: "download",
-        label: "Download image",
+        label: "下載圖片",
         url: "{{raw_image_url}}",
         download: true,
       },
@@ -123,6 +155,102 @@ export const i18n: PhowoSwipeLocaleConfig = {
       {
         id: "download",
         label: "Download image",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
+  "/uk/": {
+    close: "Закрити",
+    fullscreen: "Перейти на повний екран",
+    share: "Поділіться",
+    zoom: "Збільшити/Зменшити",
+    prev: "Попередня (Стрілка вліво)",
+    next: "Далі (стрілка вправо)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Поділіться на Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "Завантажити",
+        label: "Завантажити зображення",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
+  "/ru/": {
+    close: "Закрыть",
+    fullscreen: "Переключиться на полный экран",
+    share: "Поделиться",
+    zoom: "Увеличить/Уменьшить",
+    prev: "Предыдущая (Стрелка влево)",
+    next: "Далее (стрелка вправо)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Поделиться на Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "Загрузить",
+        label: "Загрузить изображение",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
+  "/br/": {
+    close: "Fechar",
+    fullscreen: "Alternar para tela cheia",
+    share: "Compartilhar",
+    zoom: "Aproximar mais/menos",
+    prev: "Anterior (Seta Esquerda)",
+    next: "Próximo (Seta Direita)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Compartilhar no Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "baixar imagem",
         url: "{{raw_image_url}}",
         download: true,
       },
