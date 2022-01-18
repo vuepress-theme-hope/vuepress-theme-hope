@@ -1,7 +1,7 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
-import { i18n } from "./i18n";
+import { componentLocales } from "./locales";
 
 import type { Plugin } from "@vuepress/core";
 import type { ComponentOptions } from "../shared";
@@ -14,9 +14,9 @@ const componentPlugin: Plugin<ComponentOptions> = (options, app) => {
   return {
     name: "@mr-hope/vuepress-plugin-components",
 
-    define: (): Record<string, unknown> => ({
-      COMPONENT_I18N: getLocales(app, i18n, options.locale),
-    }),
+    define: {
+      COMPONENT_LOCALES: getLocales(app, componentLocales, options.locales),
+    },
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
 

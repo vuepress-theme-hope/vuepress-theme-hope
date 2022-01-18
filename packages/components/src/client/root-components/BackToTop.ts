@@ -11,7 +11,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { componentI18n } from "../define";
+import { componentLocales } from "../define";
 import { BacktoTopIcon } from "../icons";
 
 import "../styles/back-to-top.scss";
@@ -28,7 +28,7 @@ export default defineComponent({
   setup(props) {
     const pageFrontmatter = usePageFrontmatter();
     const themeData = useThemeData();
-    const componentLocale = useLocaleConfig(componentI18n);
+    const componentLocale = useLocaleConfig(componentLocales);
 
     /** Scroll distance */
     const scrollTop = ref(0);

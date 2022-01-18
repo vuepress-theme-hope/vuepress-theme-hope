@@ -6,7 +6,7 @@ import {
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { CategoryIcon } from "./icons";
-import { commentOptions, pageInfoI18n } from "../define";
+import { commentOptions, pageInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
 
@@ -27,7 +27,7 @@ export default defineComponent({
     const items = props.categories.length
       ? toRef(props, "categories")
       : useCategory();
-    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
     const clickable = computed(() => useBlogConfig().value !== false);
 
     const navigate = (categoryName: string): void => {

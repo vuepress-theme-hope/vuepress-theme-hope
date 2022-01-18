@@ -1,6 +1,6 @@
-import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
 
-export interface MarkdownEnhanceI18nConfig {
+export interface MarkdownEnhanceLocaleData {
   /**
    * 信息块的默认标题
    *
@@ -37,7 +37,7 @@ export interface MarkdownEnhanceI18nConfig {
   details: string;
 }
 
-export type MarkdownContainerName = keyof MarkdownEnhanceI18nConfig;
+export type MarkdownContainerName = keyof MarkdownEnhanceLocaleData;
 
 export type MarkdownEnhanceLocaleConfig =
-  ResolvedLocaleConfig<MarkdownEnhanceI18nConfig>;
+  CovertLocaleConfig<MarkdownEnhanceLocaleData>;

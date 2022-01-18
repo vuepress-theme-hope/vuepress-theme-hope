@@ -1,6 +1,6 @@
-import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
 
-export interface PageInfoI18nConfig {
+export interface PageInfoLocaleData {
   /**
    * 作者文字
    *
@@ -58,7 +58,7 @@ export interface PageInfoI18nConfig {
   words: string;
 }
 
-export type PageInfoLocaleConfig = ResolvedLocaleConfig<PageInfoI18nConfig>;
+export type PageInfoLocaleConfig = CovertLocaleConfig<PageInfoLocaleData>;
 
 /**
  * 页面信息类型

@@ -1,6 +1,6 @@
 import type { ComponentLocaleConfig } from "../shared";
 
-export const i18n: ComponentLocaleConfig = {
+export const componentLocales: ComponentLocaleConfig = {
   "/en/": {
     backToTop: "Back to top",
     openInNewWindow: "Open in new window",

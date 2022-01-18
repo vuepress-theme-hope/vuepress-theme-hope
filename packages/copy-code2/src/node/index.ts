@@ -1,7 +1,7 @@
 import { path } from "@vuepress/utils";
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
-import { i18n } from "./i18n";
+import { copyCodeLocales } from "./locales";
 
 import type { Plugin } from "@vuepress/core";
 import type { CopyCodeOptions } from "../shared";
@@ -19,7 +19,7 @@ const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
         Object.keys(options).length > 0
           ? options
           : app.options.themeConfig.copyCode || {},
-      CODE_COPY_I18N: getLocales(app, i18n, options.locale),
+      CODE_COPY_LOCALES: getLocales(app, copyCodeLocales, options.locales),
     }),
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),

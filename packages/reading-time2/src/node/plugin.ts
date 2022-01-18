@@ -1,5 +1,5 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
-import { i18n } from "./i18n";
+import { readingTimeLocales } from "./locales";
 import { readingTime } from "./reading-time";
 
 import type { Page, Plugin } from "@vuepress/core";
@@ -11,7 +11,11 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, app) => {
     name: "vuepress-plugin-reading-time2",
 
     define: (): Record<string, unknown> => ({
-      READING_TIME_I18N: getLocales(app, i18n, options.locales),
+      READING_TIME_LOCALES: getLocales(
+        app,
+        readingTimeLocales,
+        options.locales
+      ),
     }),
 
     extendsPage: (page: Page<{ readingTime: ReadingTime }>): void => {

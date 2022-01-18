@@ -1,6 +1,6 @@
-import type { HopeThemeI18nConfigItem } from "../shared";
+import type { HopeThemeLocaleData } from "../shared";
 
-export const localesConfig: Record<string, HopeThemeI18nConfigItem> = {
+export const localesConfig: Record<string, HopeThemeLocaleData> = {
   "en-US": {
     lang: "en-US",
     selectText: "Language",

@@ -1,5 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { CopyCodeI18nConfig } from "./locales";
+import type { CopyCodeLocaleData } from "./locales";
 
 export interface CopyCodeOptions {
   /**
@@ -43,7 +43,7 @@ export interface CopyCodeOptions {
   delay?: number;
 
   /**
-   * I18n config for plugin
+   * Locale config
    */
-  locale?: LocaleConfig<CopyCodeI18nConfig>;
+  locales?: LocaleConfig<CopyCodeLocaleData>;
 }

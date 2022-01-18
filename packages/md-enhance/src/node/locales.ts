@@ -1,6 +1,6 @@
 import type { MarkdownEnhanceLocaleConfig } from "../shared";
 
-export const i18n: MarkdownEnhanceLocaleConfig = {
+export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
   "/en/": {
     info: "Info",
     tip: "Tips",

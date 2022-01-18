@@ -1,7 +1,7 @@
 import { path } from "@vuepress/utils";
 import { getLocales, useCustomDevServer } from "@mr-hope/vuepress-shared";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
-import { i18n } from "./i18n";
+import { pwaLocales } from "./locales";
 import { injectLinkstoHead } from "./injectHead";
 import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
@@ -31,7 +31,7 @@ const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
     name: "vuepress-plugin-pwa2",
 
     define: () => ({
-      PWA_I18N: getLocales(app, i18n, pwaOptions.locales),
+      PWA_LOCALES: getLocales(app, pwaLocales, pwaOptions.locales),
       SW_PATH: options.swPath || "service-worker.js",
     }),
 

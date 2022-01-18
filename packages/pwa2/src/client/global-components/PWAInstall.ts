@@ -1,7 +1,7 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import PWAInstallModal from "../components/PWAInstallModal.vue";
-import { i18n } from "../define";
+import { locales } from "../define";
 
 import type { VNode } from "vue";
 import type { ManifestRelatedApps } from "../../shared";
@@ -22,7 +22,7 @@ export default defineComponent({
   name: "PWAInstall",
 
   setup() {
-    const locales = useLocaleConfig(i18n);
+    const locale = useLocaleConfig(locales);
 
     const canInstall = ref(false);
     const hasRelatedApps = ref(false);
@@ -97,7 +97,7 @@ export default defineComponent({
                   isOpen.value = true;
                 },
               },
-              locales.value.install
+              locale.value.install
             )
           : null,
         h(PWAInstallModal, {

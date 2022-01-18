@@ -1,9 +1,9 @@
 import type { PageInfoLocaleConfig, WalineLocaleConfig } from "../shared";
 
 /**
- * Default i18n config for Page Info
+ * Default lcoales config for Page Info
  */
-export const pageInfoI18n: PageInfoLocaleConfig = {
+export const pageInfoLocales: PageInfoLocaleConfig = {
   "/en/": {
     author: "Author🖊",
     date: "Writing Date📅",
@@ -94,9 +94,9 @@ export const pageInfoI18n: PageInfoLocaleConfig = {
 };
 
 /**
- * Default i18n config for Waline
+ * Default locale config for Waline
  */
-export const walineI18n: WalineLocaleConfig = {
+export const walineLocales: WalineLocaleConfig = {
   "/zh/": {
     placeholder: "请留言。(填写邮箱可在被回复时收到邮件提醒)",
   },

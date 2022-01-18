@@ -3,7 +3,7 @@ import { useBlogConfig, useTag } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { TagIcon } from "./icons";
-import { commentOptions, pageInfoI18n } from "../define";
+import { commentOptions, pageInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
 
@@ -18,7 +18,7 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
 
-    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
 
     const items = props.tags.length ? toRef(props, "tags") : useTag();
 

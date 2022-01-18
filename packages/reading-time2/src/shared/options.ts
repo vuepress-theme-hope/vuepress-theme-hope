@@ -1,5 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { ReadingTimeI18nConfig } from "./locales";
+import type { ReadingTimeLocaleData } from "./locales";
 
 export interface ReadingTimeOptions {
   /**
@@ -14,12 +14,12 @@ export interface ReadingTimeOptions {
   /**
    * 多语言选项
    *
-   * @see [默认配置](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/reading-time2/src/node/i18n.ts)
+   * @see [默认配置](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/reading-time2/src/node/locales.ts)
    *
-   * I18n config
+   * Locales config
    *
-   * @see [default config](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/reading-time2/src/node/i18n.ts)
+   * @see [default config](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/reading-time2/src/node/locales.ts)
    */
 
-  locales?: LocaleConfig<ReadingTimeI18nConfig>;
+  locales?: LocaleConfig<ReadingTimeLocaleData>;
 }

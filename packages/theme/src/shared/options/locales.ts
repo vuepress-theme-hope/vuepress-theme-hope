@@ -5,7 +5,7 @@ import type { HopeFooterConfig } from "./layout";
 import type { HopeThemeNavbarConfig } from "./navbar";
 import type { SidebarConfig } from "./sidebar";
 
-export interface HopeThemeI18nConfigItem {
+export interface HopeThemeLocaleData {
   /** 当前语言代码 */
   lang?: string;
   /** 多语言下拉菜单的标题 */
@@ -233,7 +233,7 @@ export interface HopeThemeLocaleData
    */
   openInNewWindow?: string;
 
-  i18n?: HopeThemeI18nConfigItem;
+  i18n?: HopeThemeLocaleData;
 }
 
 export type HopeThemeData = ThemeData<HopeThemeLocaleData>;

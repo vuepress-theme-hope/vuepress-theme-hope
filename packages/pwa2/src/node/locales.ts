@@ -1,7 +1,7 @@
 import type { PWALocaleConfig } from "../shared";
 
 /** Muti language config for pwa popup */
-export const i18n: PWALocaleConfig = {
+export const pwaLocales: PWALocaleConfig = {
   "/en/": {
     install: "Install",
     iOSInstall: "Tap the share button and then 'Add to Homescreen'",

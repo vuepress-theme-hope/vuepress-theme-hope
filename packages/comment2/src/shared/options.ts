@@ -1,19 +1,12 @@
+// TODO: Add vssue back
 import type { Author } from "@mr-hope/vuepress-shared";
 import type { LocaleConfig } from "@vuepress/core";
 import type { WalineOptions as _WalineOptions } from "@waline/client";
 // import type { Vssue } from "vssue";
-import type { PageInfoI18nConfig, PageInfoType } from "./pageInfo";
-import type { WalineI18nConfig } from "./waline";
+import type { PageInfoLocaleData, PageInfoType } from "./pageInfo";
+import type { WalineLocaleData } from "./waline";
 
 interface BaseCommentOptions {
-  // TODO: Add vssue back
-  // type: "waline" | "vssue" | "disable";
-  /**
-   * 评论服务
-   *
-   * Comment Service
-   */
-  type: "waline" | "disable";
   /**
    * 默认作者
    *
@@ -72,14 +65,9 @@ interface BaseCommentOptions {
   delay?: number;
 
   /**
-   * I18n config for pageInfo
+   * Locale config for pageInfo
    */
-  pageInfoLocale?: LocaleConfig<PageInfoI18nConfig>;
-
-  /**
-   * I18n config for waline
-   */
-  walineLocale?: LocaleConfig<WalineI18nConfig>;
+  pageInfoLocales?: LocaleConfig<PageInfoLocaleData>;
 }
 
 export interface WalineOptions
@@ -95,6 +83,11 @@ export interface WalineOptions
    * @default true
    */
   pageviews?: boolean;
+
+  /**
+   * Locale config for waline
+   */
+  walineLocales?: LocaleConfig<WalineLocaleData>;
 }
 
 // /** Vssue 配置 */

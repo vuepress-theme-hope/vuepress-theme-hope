@@ -1,9 +1,9 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { ComponentI18nConfig } from "./locales";
+import type { ComponentLocaleData } from "./locales";
 
 export interface ComponentOptions {
   /**
-   * I18n config
+   * Locale config
    */
-  locale?: LocaleConfig<ComponentI18nConfig>;
+  locales?: LocaleConfig<ComponentLocaleData>;
 }

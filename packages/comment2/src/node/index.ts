@@ -2,7 +2,7 @@ import { addViteOptimizeDeps, getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
-import { pageInfoI18n, walineI18n } from "./i18n";
+import { pageInfoLocales, walineLocales } from "./locales";
 
 import type { CommentOptions } from "../shared";
 import type { Plugin, PluginObject } from "@vuepress/core";
@@ -16,6 +16,20 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     Object.keys(options).length > 0
       ? (options as CommentOptions)
       : (themeConfig.comment as CommentOptions) || { type: "disable" };
+
+  const userPageInfoLocales = getLocales(
+    app,
+    pageInfoLocales,
+    commentOptions.pageInfoLocales
+  );
+  const userWalineLocales =
+    commentOptions.type === "waline"
+      ? getLocales(app, walineLocales, commentOptions.walineLocales)
+      : {};
+
+  // remove locales so that they won't be injected in client twice
+  delete commentOptions.pageInfoLocales;
+  if ("walineLocales" in commentOptions) delete commentOptions.walineLocales;
 
   addViteOptimizeDeps(app, "@waline/client");
 
@@ -37,8 +51,8 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
         hint: !themeConfig.pure,
         ...commentOptions,
       },
-      PAGE_INFO_I18N: getLocales(app, pageInfoI18n, options.pageInfoLocale),
-      WALINE_I18N: getLocales(app, walineI18n, options.walineLocale),
+      PAGE_INFO_LOCALES: userPageInfoLocales,
+      WALINE_LOCALES: userWalineLocales,
     }),
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),

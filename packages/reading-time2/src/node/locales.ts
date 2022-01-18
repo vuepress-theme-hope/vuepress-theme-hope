@@ -1,9 +1,9 @@
 import type { ReadingTimeLocaleConfig } from "../shared";
 
 /**
- * Default i18n config for `vuepress-plugin-reading-time2` plugin
+ * Default locale config for `vuepress-plugin-reading-time2` plugin
  */
-export const i18n: ReadingTimeLocaleConfig = {
+export const readingTimeLocales: ReadingTimeLocaleConfig = {
   "/en/": {
     word: "About $word words",
     minute: "Less than 1 minute",

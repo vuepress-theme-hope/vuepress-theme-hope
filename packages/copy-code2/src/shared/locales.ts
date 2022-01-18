@@ -1,6 +1,6 @@
-import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
 
-export interface CopyCodeI18nConfig {
+export interface CopyCodeLocaleData {
   /**
    * 复制按钮文字
    *
@@ -16,4 +16,4 @@ export interface CopyCodeI18nConfig {
   hint: string;
 }
 
-export type CopyCodeLocaleConfig = ResolvedLocaleConfig<CopyCodeI18nConfig>;
+export type CopyCodeLocaleConfig = CovertLocaleConfig<CopyCodeLocaleData>;

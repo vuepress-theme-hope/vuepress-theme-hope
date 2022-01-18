@@ -1,7 +1,7 @@
 import { path } from "@vuepress/utils";
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
-import { i18n } from "./i18n";
+import { photoSwipeLocales } from "./locales";
 
 import type { Plugin } from "@vuepress/core";
 import type { PhotoSwipeOptions } from "../shared";
@@ -24,7 +24,11 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
         photoSwipeOptions.selector || ".theme-default-content :not(a) > img",
       PHOTOSWIPE_DELAY: photoSwipeOptions.delay || 500,
       PHOTOSWIPE_OPTIONS: photoSwipeOptions.options || {},
-      PHOTOSWIPE_I18N: getLocales(app, i18n, photoSwipeOptions.locale),
+      PHOTOSWIPE_LOCALES: getLocales(
+        app,
+        photoSwipeLocales,
+        photoSwipeOptions.locales
+      ),
     }),
 
     clientAppRootComponentFiles: path.resolve(

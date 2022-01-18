@@ -1,6 +1,6 @@
-import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
 
-export interface ComponentI18nConfig {
+export interface ComponentLocaleData {
   /**
    * 返回顶部文字
    *
@@ -18,7 +18,7 @@ export interface ComponentI18nConfig {
   /**
    * 分页多语言配置
    *
-   * I18n config for Pagination
+   * Locale config for Pagination
    */
   pagination: {
     /**
@@ -58,4 +58,4 @@ export interface ComponentI18nConfig {
   };
 }
 
-export type ComponentLocaleConfig = ResolvedLocaleConfig<ComponentI18nConfig>;
+export type ComponentLocaleConfig = CovertLocaleConfig<ComponentLocaleData>;

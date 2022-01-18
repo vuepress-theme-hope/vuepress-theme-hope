@@ -2,7 +2,7 @@ import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { TimerIcon } from "./icons";
-import { commentOptions, pageInfoI18n, readingTimeI18n } from "../define";
+import { commentOptions, pageInfoLocales, readingTimeLocales } from "../define";
 
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { VNode } from "vue";
@@ -12,8 +12,8 @@ export default defineComponent({
 
   setup() {
     const page = usePageData<{ readingTime: ReadingTime }>();
-    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
-    const readingTimeLocale = useLocaleConfig(readingTimeI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
     const readingTime = computed(() =>
       page.value.readingTime.minutes < 1

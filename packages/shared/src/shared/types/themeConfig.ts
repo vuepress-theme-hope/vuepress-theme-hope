@@ -1,5 +1,5 @@
 import type { ThemeConfig } from "@vuepress/core";
-import type { Author } from "./utils";
+import type { Author } from "./author";
 
 export interface BaseThemeConfig extends ThemeConfig {
   /**

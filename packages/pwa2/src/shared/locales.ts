@@ -1,6 +1,6 @@
-import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
 
-export interface PWAI18nConfig {
+export interface PWALocaleData {
   /**
    * 安装按钮文字
    *
@@ -72,4 +72,4 @@ export interface PWAI18nConfig {
   update: string;
 }
 
-export type PWALocaleConfig = ResolvedLocaleConfig<PWAI18nConfig>;
+export type PWALocaleConfig = CovertLocaleConfig<PWALocaleData>;

@@ -4,7 +4,7 @@ import {
 } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { AuthorIcon } from "./icons";
-import { commentOptions, pageInfoI18n } from "../define";
+import { commentOptions, pageInfoLocales } from "../define";
 
 import type { VNode } from "vue";
 
@@ -13,7 +13,7 @@ export default defineComponent({
 
   setup() {
     const author = useAuthor(commentOptions.author);
-    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
 
     return (): VNode | null =>
       author.value.length

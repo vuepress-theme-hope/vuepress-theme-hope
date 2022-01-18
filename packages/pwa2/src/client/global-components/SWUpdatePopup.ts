@@ -1,6 +1,6 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
-import { i18n } from "../define";
+import { locales } from "../define";
 import { UpdateIcon } from "../components/icons";
 import { usePwaEvent, useSkipWaiting } from "../composables";
 
@@ -12,7 +12,7 @@ export default defineComponent({
   name: "SWUpdatePopup",
 
   setup(_props, { slots }) {
-    const locales = useLocaleConfig(i18n);
+    const locale = useLocaleConfig(locales);
     const registration = ref<ServiceWorkerRegistration | null>(null);
 
     const enabled = computed(() => Boolean(registration.value));
@@ -54,7 +54,7 @@ export default defineComponent({
                   onClick: () => reload(),
                 },
                 [
-                  locales.value.update,
+                  locale.value.update,
                   h("span", { class: "update" }, h(UpdateIcon)),
                 ]
               )

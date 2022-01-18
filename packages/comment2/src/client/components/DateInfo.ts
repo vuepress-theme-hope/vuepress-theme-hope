@@ -2,7 +2,7 @@ import { useDate, useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { CalendarIcon } from "./icons";
-import { commentOptions, pageInfoI18n } from "../define";
+import { commentOptions, pageInfoLocales } from "../define";
 
 import type { GitData } from "@vuepress/plugin-git";
 import type { VNode } from "vue";
@@ -24,7 +24,7 @@ export default defineComponent({
       ).value;
     });
 
-    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
 
     return (): VNode | null =>
       date.value

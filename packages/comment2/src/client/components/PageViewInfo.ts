@@ -4,7 +4,7 @@ import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 import { EyeIcon, FireIcon } from "./icons";
 import { resolveEnablePageViews } from "../composables";
-import { commentOptions, pageInfoI18n } from "../define";
+import { commentOptions, pageInfoLocales } from "../define";
 
 import type { VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";
@@ -15,7 +15,7 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
-    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
 
     const pageViews = ref(0);
     const enablePageViews = computed(() =>

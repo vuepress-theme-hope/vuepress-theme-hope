@@ -1,6 +1,6 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { GenerateSWOptions } from "workbox-build";
-import type { PWAI18nConfig } from "./locales";
+import type { PWALocaleData } from "./locales";
 import type { ManifestOption } from "./manifest";
 
 interface ApplePWAOptions {
@@ -161,8 +161,8 @@ export interface PWAOptions {
   /**
    * 国际化配置
    *
-   * I18n locales
+   * Locales config
    */
 
-  locales?: LocaleConfig<PWAI18nConfig>;
+  locales?: LocaleConfig<PWALocaleData>;
 }

@@ -1,7 +1,7 @@
 import type { CopyCodeLocaleConfig } from "../shared";
 
 /** Muti language config for copy code */
-export const i18n: CopyCodeLocaleConfig = {
+export const copyCodeLocales: CopyCodeLocaleConfig = {
   "/en/": {
     copy: "Copied successfully 🎉",
     hint: "Copy code",

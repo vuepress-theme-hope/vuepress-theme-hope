@@ -1,6 +1,6 @@
 import type { PhowoSwipeLocaleConfig } from "../shared";
 
-export const i18n: PhowoSwipeLocaleConfig = {
+export const photoSwipeLocales: PhowoSwipeLocaleConfig = {
   "/en/": {
     close: "Close",
     fullscreen: "Switch to full screen",

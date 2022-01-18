@@ -1,5 +1,5 @@
 import { lang2PathConfig, path2langConfig, supportedLangs } from "./config";
-import type { HopeLang } from "./config";
+import type { HopeLang } from "./types";
 
 const reportStatus: Record<string, boolean> = {};
 
@@ -15,7 +15,7 @@ ${
     ? ""
     : `You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v2/packages/${
         plugin || "<YOUR PLUGIN>"
-      }/src/node/i18n.ts in this repository.
+      }/src/node/locales.ts in this repository.
 `
 }Note: This warning will be shown only once`
     );

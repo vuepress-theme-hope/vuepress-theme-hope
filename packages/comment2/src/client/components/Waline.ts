@@ -15,7 +15,7 @@ import {
 import { useRoute } from "vue-router";
 import { resolveEnablePageViews } from "../composables";
 import { enableWaline, walineOption } from "../define";
-import { walineI18n } from "../define";
+import { walineLocales } from "../define";
 
 import type { WalineInstance } from "@waline/client";
 import type { VNode } from "vue";
@@ -30,7 +30,7 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
     const themePluginConfig = useThemePluginConfig<WalineOptions>("comment");
-    const walineLocale = useLocaleConfig(walineI18n);
+    const walineLocale = useLocaleConfig(walineLocales);
 
     let id: number;
     let waline: WalineInstance | null = null;

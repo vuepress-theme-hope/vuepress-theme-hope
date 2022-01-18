@@ -6,7 +6,7 @@
       <div class="header">
         <button
           class="close-button"
-          :aria-label="locales.close"
+          :aria-label="locale.close"
           @click="$emit('toggle', false)"
         >
           <CloseIcon />
@@ -19,14 +19,14 @@
           />
           <div class="title">
             <h1>{{ manifest.short_name || manifest.name }}</h1>
-            <p class="desc">{{ locales.explain }}</p>
+            <p class="desc">{{ locale.explain }}</p>
           </div>
         </div>
       </div>
       <div class="content">
         <div class="highlight">
           <div v-if="manifest.features" class="feature-wrapper">
-            <h3>{{ locales.feature }}</h3>
+            <h3>{{ locale.feature }}</h3>
             <ul v-if="manifest.features">
               <li
                 v-for="feature in manifest.features"
@@ -37,7 +37,7 @@
           </div>
 
           <div v-if="manifest.screenshots" class="screenshot-wrapper">
-            <button :aria-label="locales.prevImage" @click="scrolltoLeft">
+            <button :aria-label="locale.prevImage" @click="scrolltoLeft">
               <ArrowLeftIcon />
             </button>
             <section class="screenshot">
@@ -48,27 +48,27 @@
                 <img alt="App Screenshot" :src="screenshot.src" />
               </div>
             </section>
-            <button :aria-label="locales.nextImage" @click="scrolltoRight">
+            <button :aria-label="locale.nextImage" @click="scrolltoRight">
               <ArrowRightIcon />
             </button>
           </div>
         </div>
         <div class="description">
-          <h3 v-text="locales.desc" />
+          <h3 v-text="locale.desc" />
           <p v-text="manifest.description" />
         </div>
       </div>
 
       <div v-if="useHint" class="ios-text" @click="hint">
-        <p>{{ locales.iOSInstall }}</p>
+        <p>{{ locale.iOSInstall }}</p>
         <button class="success">Got it!</button>
       </div>
       <div v-else class="button-wrapper">
         <button class="install-button" @click="install">
-          {{ locales.install }} <span>{{ manifest.short_name }}</span>
+          {{ locale.install }} <span>{{ manifest.short_name }}</span>
         </button>
         <button class="cancel-button" @click="$emit('toggle', false)">
-          {{ locales.cancel }}
+          {{ locale.cancel }}
         </button>
       </div>
     </div>
@@ -80,7 +80,7 @@ import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { withBase } from "@vuepress/client";
 import { onBeforeMount, defineComponent, onMounted, ref } from "vue";
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons";
-import { i18n } from "../define";
+import { locales } from "../define";
 
 import type { ManifestOption } from "../../shared";
 
@@ -112,7 +112,7 @@ export default defineComponent({
   emits: ["can-install", "hint", "toggle"],
 
   setup(_props, { emit }) {
-    const locales = useLocaleConfig(i18n);
+    const locale = useLocaleConfig(locales);
 
     const manifest = ref<ManifestOption>({});
     const isIOS = ref(false);
@@ -219,7 +219,7 @@ export default defineComponent({
     });
 
     return {
-      locales,
+      locale,
       isIOS,
       manifest,
 

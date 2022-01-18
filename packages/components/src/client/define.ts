@@ -1,5 +1,5 @@
 import type { ComponentLocaleConfig } from "../shared";
 
-declare const COMPONENT_I18N: ComponentLocaleConfig;
+declare const COMPONENT_LOCALES: ComponentLocaleConfig;
 
-export const componentI18n = COMPONENT_I18N;
+export const componentLocales = COMPONENT_LOCALES;

@@ -1,11 +1,11 @@
-import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 /**
  * Muti language config for `vuepress-plugin-reading-time2` plugin
  *
  * `vuepress-plugin-reading-time2` 插件的多语言配置
  */
-export interface ReadingTimeI18nConfig {
+export interface ReadingTimeLocaleData {
   /**
    * 字数模板
    *
@@ -26,5 +26,4 @@ export interface ReadingTimeI18nConfig {
   time: string;
 }
 
-export type ReadingTimeLocaleConfig =
-  ResolvedLocaleConfig<ReadingTimeI18nConfig>;
+export type ReadingTimeLocaleConfig = CovertLocaleConfig<ReadingTimeLocaleData>;

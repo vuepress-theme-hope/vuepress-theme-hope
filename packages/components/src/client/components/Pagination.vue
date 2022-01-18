@@ -9,7 +9,7 @@
           unselectable="on"
           @click="navigate(currentPage - 1)"
         >
-          {{ i18n.prev }}
+          {{ locale.prev }}
         </div>
         <div v-if="displayLeftEllipsis" role="navigation" @click="navigate(1)">
           1
@@ -38,11 +38,11 @@
           role="navigation"
           @click="navigate(currentPage + 1)"
         >
-          {{ i18n.next }}
+          {{ locale.next }}
         </div>
       </div>
       <div class="navigate-wrapper">
-        <label for="navigation-text">{{ i18n.navigate }}:&nbsp;</label>
+        <label for="navigation-text">{{ locale.navigate }}:&nbsp;</label>
         <input
           id="navigation-text"
           v-model="input"
@@ -52,10 +52,10 @@
         <button
           class="navigate"
           role="navigation"
-          :title="i18n.button"
+          :title="locale.button"
           @click="jumpPage(input)"
         >
-          {{ i18n.button }}
+          {{ locale.button }}
         </button>
       </div>
     </div>
@@ -66,7 +66,7 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { componentI18n } from "../define";
+import { componentLocales } from "../define";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -86,7 +86,7 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
 
-    const componentLocale = useLocaleConfig(componentI18n);
+    const componentLocale = useLocaleConfig(componentLocales);
 
     const input = ref("");
     const totalPages = computed(() => Math.ceil(props.total / props.perPage));
@@ -129,7 +129,7 @@ export default defineComponent({
       return arr;
     });
 
-    const i18n = computed(() => componentLocale.value.pagination);
+    const locale = computed(() => componentLocale.value.pagination);
 
     /** Navigate to certain page */
     const navigate = (page: number): void => {
@@ -152,7 +152,7 @@ export default defineComponent({
       if (pageNum <= totalPages.value && pageNum > 0) navigate(pageNum);
       else
         alert(
-          i18n.value.errorText.replace(/\$page/g, totalPages.value.toString())
+          locale.value.errorText.replace(/\$page/g, totalPages.value.toString())
         );
     };
 
@@ -166,7 +166,7 @@ export default defineComponent({
       displayLeftEllipsis,
       displayRightEllipsis,
       enable,
-      i18n,
+      locale,
       indexs,
       input,
       jumpPage,

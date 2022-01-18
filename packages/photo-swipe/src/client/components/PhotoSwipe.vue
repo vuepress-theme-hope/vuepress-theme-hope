@@ -24,22 +24,22 @@
 
           <button
             class="pswp__button pswp__button--close"
-            :title="locales.close"
+            :title="locale.close"
           />
 
           <button
             class="pswp__button pswp__button--share"
-            :title="locales.share"
+            :title="locale.share"
           />
 
           <button
             class="pswp__button pswp__button--fs"
-            :title="locales.fullscreen"
+            :title="locale.fullscreen"
           />
 
           <button
             class="pswp__button pswp__button--zoom"
-            :title="locales.zoom"
+            :title="locale.zoom"
           />
 
           <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
@@ -61,12 +61,12 @@
 
         <button
           class="pswp__button pswp__button--arrow--left"
-          :title="locales.prev"
+          :title="locale.prev"
         />
 
         <button
           class="pswp__button pswp__button--arrow--right"
-          :title="locales.next"
+          :title="locale.next"
         />
 
         <div class="pswp__caption">
@@ -81,7 +81,7 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { delay, imageSelector, i18n, options } from "../define";
+import { delay, imageSelector, locales, options } from "../define";
 import { getImages } from "../composables";
 
 import "photoswipe/dist/photoswipe.css";
@@ -92,7 +92,7 @@ export default defineComponent({
 
   setup() {
     const route = useRoute();
-    const locales = useLocaleConfig(i18n);
+    const locale = useLocaleConfig(locales);
 
     const initPhotoSwipe = (): void => {
       const pswp = document.querySelector(".pswp") as HTMLElement;
@@ -130,7 +130,7 @@ export default defineComponent({
 
     onMounted(() => initPhotoSwipe());
 
-    return { locales };
+    return { locale };
   },
 });
 </script>

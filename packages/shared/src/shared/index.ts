@@ -1,3 +1,3 @@
-export * from "./i18n";
+export * from "./locales";
 export * from "./utils";
 export * from "./types";

@@ -2,7 +2,7 @@ import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineClientAppSetup } from "@vuepress/client";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { i18n, options } from "./define";
+import { locales, options } from "./define";
 import Message from "./message";
 
 import "./styles/index.scss";
@@ -17,7 +17,7 @@ const isMobile = (): boolean =>
 
 export default defineClientAppSetup(() => {
   const route = useRoute();
-  const locale = useLocaleConfig(i18n);
+  const locale = useLocaleConfig(locales);
 
   let message: Message;
 

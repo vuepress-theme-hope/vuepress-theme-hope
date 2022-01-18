@@ -1,10 +1,6 @@
 import { checkLang, deepAssign, lang2Path, showLangError } from "../shared";
 import type { App, AppOptions, LocaleConfig } from "@vuepress/core";
-import type {
-  BaseThemeConfig,
-  HopeLang,
-  ResolvedLocaleConfig,
-} from "../shared";
+import type { BaseThemeConfig, HopeLang, CovertLocaleConfig } from "../shared";
 
 /**
  * Get language of root directory
@@ -51,18 +47,18 @@ export const getLocalePaths = (app: App): string[] =>
   );
 
 /**
- * Get final locale options to passed to client
+ * Get final locale config to passed to client
  *
  * @param app  VuePress Node App
- * @param defaultI18nConfig default i18n config
- * @param userI18nConfig user i18n config
- * @returns final locale options
+ * @param defaultLocalesConfig default locale config
+ * @param userLocalesConfig user locale config
+ * @returns final locale config
  */
 export const getLocales = <T>(
   app: App,
-  defaultI18nConfig: ResolvedLocaleConfig<T>,
-  userI18nConfig: LocaleConfig<T> = {}
-): ResolvedLocaleConfig<T> => {
+  defaultLocalesConfig: CovertLocaleConfig<T>,
+  userLocalesConfig: LocaleConfig<T> = {}
+): CovertLocaleConfig<T> => {
   const rootPath = getRootLangPath(app);
 
   return Object.fromEntries([
@@ -70,16 +66,16 @@ export const getLocales = <T>(
       localePath,
       deepAssign(
         {},
-        userI18nConfig[localePath] || {},
-        defaultI18nConfig[localePath]
+        userLocalesConfig[localePath] || {},
+        defaultLocalesConfig[localePath]
       ),
     ]),
     [
       "/",
       deepAssign(
         {},
-        userI18nConfig["/"] || userI18nConfig[rootPath] || {},
-        defaultI18nConfig[rootPath]
+        userLocalesConfig["/"] || userLocalesConfig[rootPath] || {},
+        defaultLocalesConfig[rootPath]
       ),
     ],
   ]);

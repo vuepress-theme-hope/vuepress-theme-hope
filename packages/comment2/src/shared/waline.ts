@@ -1,6 +1,6 @@
-import type { ResolvedLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { LocaleConfig } from "@vuepress/shared";
 import type { WalineLocale } from "@waline/client";
 
-export type WalineI18nConfig = Partial<WalineLocale>;
+export type WalineLocaleData = Partial<WalineLocale>;
 
-export type WalineLocaleConfig = ResolvedLocaleConfig<WalineI18nConfig>;
+export type WalineLocaleConfig = LocaleConfig<WalineLocaleData>;

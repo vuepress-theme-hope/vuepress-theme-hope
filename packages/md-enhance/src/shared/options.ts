@@ -1,7 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { CodeDemoOptions } from "./code-demo";
-import type { MarkdownEnhanceI18nConfig } from "./locales";
+import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
 
@@ -149,7 +149,7 @@ export type MarkdownEnhanceOptions = Partial<{
   /**
    * 国际化配置选项
    *
-   * I18n config
+   * Locale config
    */
-  locales?: LocaleConfig<MarkdownEnhanceI18nConfig>;
+  locales?: LocaleConfig<MarkdownEnhanceLocaleData>;
 }>;

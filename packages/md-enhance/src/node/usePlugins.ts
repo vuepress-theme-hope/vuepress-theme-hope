@@ -1,6 +1,6 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { codeDemoRender, getDetailsRender } from "./markdown-it";
-import { i18n } from "./i18n";
+import { markdownEnhanceLocales } from "./locales";
 
 import type { ContainerPluginOptions } from "@vuepress/plugin-container";
 import type { App } from "@vuepress/core";
@@ -11,7 +11,11 @@ export const usePlugins = (
   app: App,
   markdownOptions: MarkdownEnhanceOptions
 ): void => {
-  const locales = getLocales(app, i18n, markdownOptions.locales);
+  const locales = getLocales(
+    app,
+    markdownEnhanceLocales,
+    markdownOptions.locales
+  );
 
   const getContainterLocale = (
     key: MarkdownContainerName

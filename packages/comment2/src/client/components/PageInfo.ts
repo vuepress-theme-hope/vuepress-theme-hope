@@ -12,7 +12,7 @@ import PageViewInfo from "./PageViewInfo";
 import ReadingTimeInfo from "./ReadingTimeInfo";
 import TagInfo from "./TagInfo";
 import WordInfo from "./WordInfo";
-import { commentOptions, pageInfoI18n } from "../define";
+import { commentOptions, pageInfoLocales } from "../define";
 
 import type { VNode } from "vue";
 import type {
@@ -63,7 +63,7 @@ export default defineComponent({
     });
 
     const isOriginal = computed(() => frontmatter.value.original);
-    const pageInfoLocale = useLocaleConfig(pageInfoI18n);
+    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
 
     return (): VNode =>
       h("div", { class: "page-title" }, [
