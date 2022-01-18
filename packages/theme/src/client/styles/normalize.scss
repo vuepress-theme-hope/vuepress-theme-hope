@@ -112,6 +112,7 @@ h2 {
   font-size: 1.65rem;
   padding-bottom: 0.3rem;
   border-bottom: 1px solid var(--border-color);
+  transition: border-bottom-color 0.3s ease;
 }
 
 a.header-anchor {
@@ -141,6 +142,7 @@ ol {
 hr {
   border: 0;
   border-top: 1px solid var(--border-color);
+  transition: border-top-color 0.3s ease;
 }
 
 table {

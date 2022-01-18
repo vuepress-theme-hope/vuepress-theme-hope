@@ -38,7 +38,10 @@
 
     .label {
       font-weight: 500;
-      color: var(--text-color-lighter);
+
+      &:not(a) {
+        color: var(--text-color-lighter);
+      }
     }
 
     .info {
@@ -57,6 +60,7 @@
       bottom: -0.125em;
       width: 1em;
       height: 1em;
+      margin-right: 0.25em;
     }
 
     @media (max-width: config.$mobile) {
@@ -111,6 +115,7 @@
     top: 0.125em;
     width: 1em;
     height: 1em;
+    margin: 0 0.25em;
     color: var(--accent-color);
   }
 
