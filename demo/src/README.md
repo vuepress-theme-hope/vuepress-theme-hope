@@ -3,8 +3,8 @@ home: true
 title: Home
 heroImage: /logo.svg
 actions:
-  - text: Get Started
-    link: /guide/getting-started.html
+  - text: Project Home
+    link: /home.html
     type: primary
   - text: Introduction
     link: /guide/

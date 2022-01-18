@@ -1,8 +1,8 @@
 import type { LocaleData } from "@vuepress/shared";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
-import type { HopeBlogOptions } from "./features";
+import type { HopeThemeFeatureOptions } from "./features";
 import type { HopeFooterConfig } from "./layout";
-import type { NavbarConfig } from "./navbar";
+import type { HopeThemeNavbarConfig } from "./navbar";
 import type { SidebarConfig } from "./sidebar";
 
 export interface HopeThemeI18nConfigItem {
@@ -72,7 +72,9 @@ export interface HopeThemeI18nConfigItem {
   };
 }
 
-export interface HopeThemeLocaleData extends LocaleData {
+export interface HopeThemeLocaleData
+  extends LocaleData,
+    HopeThemeFeatureOptions {
   /**
    * Home path of current locale
    *
@@ -90,56 +92,7 @@ export interface HopeThemeLocaleData extends LocaleData {
    */
   author?: string;
 
-  /**
-   * Navbar config
-   *
-   * Set to `false` to disable navbar in current locale
-   */
-  navbar?: false | NavbarConfig;
-
-  /**
-   * Navbar logo config
-   *
-   * Logo to display in navbar
-   */
-  logo?: null | string;
-
-  /**
-   * Navbar repository config
-   *
-   * Used for the repository link of navbar
-   */
-  repo?: null | string;
-
-  /**
-   * Navbar repository config
-   *
-   * Used for the repository text of navbar
-   */
-  repoLabel?: string;
-
-  /**
-   * Navbar language selection config
-   *
-   * Text of the language selection dropdown
-   */
-  selectLanguageText?: string;
-
-  /**
-   * Navbar language selection config
-   *
-   * Aria label of of the language selection dropdown
-   */
-  selectLanguageAriaLabel?: string;
-
-  /**
-   * Navbar language selection config
-   *
-   * Language name of current locale
-   *
-   * Displayed inside the language selection dropdown
-   */
-  selectLanguageName?: string;
+  navbar?: HopeThemeNavbarConfig;
 
   /**
    * Sidebar config
@@ -239,8 +192,6 @@ export interface HopeThemeLocaleData extends LocaleData {
   contributorsText?: string;
 
   footer?: HopeFooterConfig;
-
-  blog?: HopeBlogOptions | false;
 
   /**
    * Custom block config

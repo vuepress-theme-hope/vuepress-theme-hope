@@ -1,12 +1,13 @@
 import type { HopeThemeLocaleOptions, HopeThemeLocaleData } from "../shared";
 
 const defaultLocaleOptions: HopeThemeLocaleOptions = {
-  // navbar
-  navbar: [],
-  logo: null,
-  repo: null,
-  selectLanguageText: "Languages",
-  selectLanguageAriaLabel: "Select language",
+  navbar: {
+    config: [],
+    logo: null,
+    repo: null,
+    selectLanguageText: "Languages",
+    selectLanguageAriaLabel: "Select language",
+  },
 
   // sidebar
   sidebar: "auto",

@@ -1,58 +1,19 @@
-<template>
-  <header ref="navbar" class="navbar" :class="{ 'auto-hide': autoHide }">
-    <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
-
-    <RouterLink ref="siteBrand" :to="siteBrandLink" class="home-link">
-      <img
-        v-if="siteBrandLogo"
-        class="logo"
-        :class="{ light: Boolean(siteBrandDarkLogo) }"
-        :src="withBase(siteBrandLogo)"
-        :alt="siteBrandTitle"
-      />
-      <img
-        v-if="siteBrandDarkLogo"
-        class="logo dark"
-        :src="withBase(siteBrandDarkLogo)"
-        :alt="siteBrandTitle"
-      />
-      <span
-        v-if="siteBrandTitle"
-        class="site-name"
-        :class="{ 'hide-in-mobile': siteBrandLogo }"
-      >
-        {{ siteBrandTitle }}
-      </span>
-    </RouterLink>
-
-    <div class="navbar-links-wrapper" :style="linksWrapperStyle">
-      <slot name="before" />
-
-      <NavbarLinks />
-
-      <slot name="center" />
-
-      <ToggleDarkModeButton v-if="enableDarkMode" />
-
-      <NavbarSearch />
-      <slot name="after" />
-    </div>
-  </header>
-</template>
-
-<script lang="ts">
 import {
   computed,
   defineComponent,
+  h,
   onBeforeUnmount,
   onMounted,
   ref,
+  resolveComponent,
 } from "vue";
-import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
-import { useThemeLocaleData } from "../../composables";
+import { useNavbarLocaleData, useThemeLocaleData } from "../../composables";
+import NavbarBrand from "./NavbarBrand";
 import NavbarLinks from "./NavbarLinks";
 import ToggleDarkModeButton from "./ToggleDarkModeButton.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton";
+
+import type { VNode } from "vue";
 
 import "./styles/index.scss";
 
@@ -80,34 +41,16 @@ const getCssValue = (
 export default defineComponent({
   name: "NavBar",
 
-  components: {
-    NavbarLinks,
-    ToggleDarkModeButton,
-    ToggleSidebarButton,
-  },
-
   emits: ["toggle-sidebar"],
 
-  setup() {
-    const routeLocale = useRouteLocale();
-    const siteLocale = useSiteLocaleData();
+  setup(_props, { emit, slots }) {
     const themeLocale = useThemeLocaleData();
+    const navbarLocale = useNavbarLocaleData();
 
     const isMobile = ref(false);
 
     const navbar = ref<HTMLElement | null>(null);
     const siteBrand = ref<HTMLElement | null>(null);
-
-    const siteBrandLink = computed(
-      () => themeLocale.value.home || routeLocale.value
-    );
-    const siteBrandLogo = computed(() =>
-      themeLocale.value.logo ? withBase(themeLocale.value.logo) : null
-    );
-    const siteBrandDarkLogo = computed(() =>
-      themeLocale.value.darkLogo ? withBase(themeLocale.value.darkLogo) : null
-    );
-    const siteBrandTitle = computed(() => siteLocale.value.title);
 
     const linksWrapperMaxWidth = ref(0);
     const linksWrapperStyle = computed(() => {
@@ -119,11 +62,14 @@ export default defineComponent({
     });
 
     const autoHide = computed(() => {
-      const autoHide = themeLocale.value.navAutoHide;
+      const autoHide = navbarLocale.value.autoHide;
 
       return autoHide !== "none" && (autoHide === "always" || isMobile.value);
     });
-    const enableDarkMode = computed(() => themeLocale.value.darkMode);
+
+    const enableDarkmode = computed(
+      () => themeLocale.value.darkmode !== "disable"
+    );
 
     let handleLinksWrapWidth: () => void;
 
@@ -164,21 +110,34 @@ export default defineComponent({
       );
     });
 
-    return {
-      navbar,
-      autoHide,
-      enableDarkMode,
-
-      linksWrapperStyle,
-
-      siteBrand,
-      siteBrandLink,
-      siteBrandLogo,
-      siteBrandDarkLogo,
-      siteBrandTitle,
-
-      withBase,
-    };
+    return (): VNode =>
+      h(
+        "header",
+        {
+          class: ["navbar", { "auto-hide": autoHide }],
+          ref: navbar,
+        },
+        [
+          h(ToggleSidebarButton, {
+            onToggle: () => emit("toggle-sidebar"),
+          }),
+          h(NavbarBrand, { ref: siteBrand }),
+          h(
+            "div",
+            {
+              class: "navbar-links-wrapper",
+              style: linksWrapperStyle.value,
+            },
+            [
+              slots.before?.(),
+              h(NavbarLinks),
+              slots.center?.(),
+              enableDarkmode.value ? h(ToggleDarkModeButton) : null,
+              h(resolveComponent("NavbarSearch")),
+              slots.after?.(),
+            ]
+          ),
+        ]
+      );
   },
 });
-</script>

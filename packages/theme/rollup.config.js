@@ -5,7 +5,7 @@ export default [
     external: ["@vuepress/utils", "vuepress-plugin-sass-palette"],
   }),
 
-  ...rollupVue("client/components/navbar/index.ts", {
+  ...rollupVue("client/components/navbar/Navbar.ts", {
     copy: [["client/components/navbar/styles", "client/components/navbar"]],
     external: [
       "@mr-hope/vuepress-shared/lib/client",

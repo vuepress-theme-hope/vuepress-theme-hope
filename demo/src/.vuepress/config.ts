@@ -56,7 +56,7 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "demo/src",
 
-    darkmode: true,
+    darkmode: "auto-switch",
 
     // theme-level locales config
     locales: {
@@ -68,7 +68,10 @@ export default defineUserConfig<HopeThemeOptions>({
        */
       "/": {
         // navbar
-        navbar: navbar.en,
+        navbar: {
+          config: navbar.en,
+          selectLanguageName: "English",
+        },
 
         // sidebar
         sidebar: sidebar.en,
@@ -87,10 +90,12 @@ export default defineUserConfig<HopeThemeOptions>({
        */
       "/zh/": {
         // navbar
-        navbar: navbar.zh,
-        selectLanguageName: "简体中文",
-        selectLanguageText: "选择语言",
-        selectLanguageAriaLabel: "选择语言",
+        navbar: {
+          config: navbar.zh,
+          selectLanguageName: "简体中文",
+          selectLanguageText: "选择语言",
+          selectLanguageAriaLabel: "选择语言",
+        },
 
         // sidebar
         sidebar: sidebar.zh,

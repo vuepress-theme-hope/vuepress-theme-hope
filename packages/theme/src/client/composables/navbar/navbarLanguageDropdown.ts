@@ -1,6 +1,7 @@
 import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
+import { useNavbarLocaleData } from "./navbarConfig";
 import { useThemeLocaleData } from "../themeData";
 
 import type { ComputedRef } from "vue";
@@ -14,6 +15,7 @@ export const useNavbarLanguageDropdown =
     const router = useRouter();
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
+    const navbarLocale = useNavbarLocaleData();
     const themeLocale = useThemeLocaleData();
 
     return computed<ResolvedNavbarItem | null>(() => {
@@ -25,9 +27,9 @@ export const useNavbarLanguageDropdown =
       const currentFullPath = router.currentRoute.value.fullPath;
 
       const languageDropdown: ResolvedNavbarItem = {
-        text: themeLocale.value.selectLanguageText ?? "unkown language",
+        text: navbarLocale.value.selectLanguageText ?? "language",
         ariaLabel:
-          themeLocale.value.selectLanguageAriaLabel ?? "unkown language",
+          navbarLocale.value.selectLanguageAriaLabel ?? "Select language",
         children: localePaths.map((targetLocalePath) => {
           // target locale config of this langauge link
           const targetSiteLocale =
@@ -36,28 +38,28 @@ export const useNavbarLanguageDropdown =
             themeLocale.value.locales?.[targetLocalePath] ?? {};
           const targetLang = targetSiteLocale.lang || "";
 
-          const text = targetThemeLocale.selectLanguageName ?? targetLang;
+          const text =
+            targetThemeLocale.navbar?.selectLanguageName ?? targetLang;
           let link;
 
+          // if the target language is current language
           if (targetLang === siteLocale.value.lang) {
-            // if the target language is current language
             // stay at current link
             link = currentFullPath;
-          } else {
-            // if the target language is not current language
-            // try to link to the corresponding page of current page
-            // or fallback to homepage
+          }
+          // if the target language is not current language
+          else {
             const targetLocalePage = currentPath.replace(
               routeLocale.value,
               targetLocalePath
             );
-            if (
+
+            link =
+              // try to link to the corresponding page of current page
               router.getRoutes().some((item) => item.path === targetLocalePage)
-            ) {
-              link = targetLocalePage;
-            } else {
-              link = targetThemeLocale.home ?? targetLocalePath;
-            }
+                ? targetLocalePage
+                : // or fallback to homepage
+                  targetThemeLocale.home ?? targetLocalePath;
           }
 
           return {

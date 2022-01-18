@@ -26,27 +26,39 @@ export default defineComponent({
             "div",
             { class: "features" },
             frontmatter.value.features?.map((feature, index) =>
-              h(
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-expect-error
-                feature.link ? RouterLink : "div",
-                {
-                  class: [
-                    "feature",
+              feature.link
+                ? h(
+                    RouterLink,
                     {
-                      link: feature.link,
-                      [`feature${(index % 9) + 1}`]: !isPure.value,
+                      class: [
+                        "feature link",
+                        {
+                          [`feature${(index % 9) + 1}`]: !isPure.value,
+                        },
+                      ],
+
+                      to: feature.link,
+                      role: "navigation",
                     },
-                  ],
-                  ...(feature.link
-                    ? {
-                        to: feature.link,
-                        role: "navigation",
-                      }
-                    : {}),
-                },
-                [h("h2", feature.title), h("p", feature.details)]
-              )
+                    {
+                      default: () => [
+                        h("h2", feature.title),
+                        h("p", feature.details),
+                      ],
+                    }
+                  )
+                : h(
+                    "div",
+                    {
+                      class: [
+                        "feature",
+                        {
+                          [`feature${(index % 9) + 1}`]: !isPure.value,
+                        },
+                      ],
+                    },
+                    [h("h2", feature.title), h("p", feature.details)]
+                  )
             )
           )
         : null;
