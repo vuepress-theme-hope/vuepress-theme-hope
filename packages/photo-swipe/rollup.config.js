@@ -19,6 +19,7 @@ export default [
       /\.css$/,
       /\.scss$/,
     ],
+    dts: false,
     dtsExternal: [/\.css$/, /\.scss$/],
     copy: [["client/styles", "client"]],
   }),

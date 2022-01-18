@@ -68,6 +68,7 @@ export const rollupTypescript = (
 export const rollupVue = (
   filePath,
   {
+    dts: enableDts = true,
     external = [],
     dtsExternal = [],
     useStyle = false,
@@ -124,7 +125,7 @@ export const rollupVue = (
         unknownGlobalSideEffects: false,
       },
     },
-    ...(ext === "ts"
+    ...(ext === "ts" && enableDts
       ? [
           {
             input: `./src/${filePath}`,
