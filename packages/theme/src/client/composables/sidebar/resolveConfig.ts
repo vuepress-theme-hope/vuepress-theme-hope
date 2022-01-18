@@ -1,24 +1,17 @@
-import { inject } from "vue";
-import {
-  usePageData,
-  usePageFrontmatter,
-  usePagesData,
-} from "@vuepress/client";
+import { useRoute, useRouter } from "vue-router";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import {
   isArray,
   isPlainObject,
   isString,
   resolveLocalePath,
 } from "@vuepress/shared";
-// import { hash } from "@vuepress/utils";
 import { getLink } from "./getLink";
+import { useThemeLocaleData } from "../themeData";
 
-import type { ComputedRef, InjectionKey } from "vue";
-import type { Router } from "vue-router";
 import type { PageHeader } from "@vuepress/client";
 import type {
   HopeThemeNormalPageFrontmatter,
-  SidebarConfig,
   SidebarConfigArray,
   SidebarConfigObject,
   SidebarItem,
@@ -75,23 +68,22 @@ export const resolveAutoSidebarItems = (
 /**
  * Resolve sidebar items if the config is an array
  */
-export const resolveArraySidebarItems = async (
-  router: Router,
+export const resolveArraySidebarItems = (
   sidebarConfig: SidebarConfigArray,
   sidebarDepth: number
-): Promise<ResolvedSidebarItem[]> => {
-  const pages = usePagesData();
+): ResolvedSidebarItem[] => {
+  const page = usePageData();
+  const route = useRoute();
+  const router = useRouter();
 
-  const handleChildItem = async (
+  const handleChildItem = (
     item: SidebarItem
-  ): Promise<ResolvedSidebarPageItem | ResolvedSidebarGroupItem> => {
-    const childItem = isString(item) ? await getLink(router, item) : item;
+  ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
+    const childItem = isString(item) ? getLink(router, item) : item;
 
     // resolved group item
     if ("children" in childItem) {
-      const children = await Promise.all(
-        childItem.children.map(async (item) => await handleChildItem(item))
-      );
+      const children = childItem.children.map((item) => handleChildItem(item));
 
       return {
         type: "group",
@@ -100,46 +92,39 @@ export const resolveArraySidebarItems = async (
       };
     }
 
-    // FIXME: Find a way to get page key
-    const pageKey = childItem.link;
-    // const pageKey = hash(childItem.link);
-    const pageData = pages.value[pageKey] ? await pages.value[pageKey]() : null;
-
     return {
       type: "page",
       ...childItem,
-      children: pageData
-        ? headersToSidebarItemChildren(
-            // skip h1 header
-            pageData.headers[0]?.level === 1
-              ? pageData.headers[0].children
-              : pageData.headers,
-            sidebarDepth
-          )
-        : [],
+      children:
+        // if the sidebar item is current page and children is not set
+        // use headers of current page as children
+        childItem.link === route.path
+          ? headersToSidebarItemChildren(
+              // skip h1 header
+              page.value.headers[0]?.level === 1
+                ? page.value.headers[0].children
+                : page.value.headers,
+              sidebarDepth
+            )
+          : [],
     };
   };
 
-  return await Promise.all(sidebarConfig.map((item) => handleChildItem(item)));
+  return sidebarConfig.map((item) => handleChildItem(item));
 };
 
 /**
  * Resolve sidebar items if the config is a key -> value (path-prefix -> array) object
  */
-export const resolveMultiSidebarItems = async (
-  router: Router,
-  path: string,
+export const resolveMultiSidebarItems = (
   sidebarConfig: SidebarConfigObject,
   sidebarDepth: number
-): Promise<ResolvedSidebarItem[]> => {
+): ResolvedSidebarItem[] => {
+  const path = useRoute().path;
   const sidebarPath = resolveLocalePath(sidebarConfig, path);
   const matchedSidebarConfig = sidebarConfig[sidebarPath] ?? [];
 
-  return await resolveArraySidebarItems(
-    router,
-    matchedSidebarConfig,
-    sidebarDepth
-  );
+  return resolveArraySidebarItems(matchedSidebarConfig, sidebarDepth);
 };
 
 /**
@@ -147,35 +132,25 @@ export const resolveMultiSidebarItems = async (
  *
  * It should only be resolved and provided once
  */
-export const resolveSidebarItems = async (
-  router: Router,
-  path: string,
-  sidebarConfig: SidebarConfig | false | "auto",
-  sidebarDepth: number
-): Promise<ResolvedSidebarItem[]> =>
+export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
+  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+  const themeLocale = useThemeLocaleData();
+
+  // get sidebar config from frontmatter > themeConfig
+  const sidebarConfig = frontmatter.value.home
+    ? false
+    : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "auto";
+  const sidebarDepth =
+    frontmatter.value.sidebarDepth ?? themeLocale.value.sidebarDepth ?? 2;
+
   // resolve sidebar items according to the config
-  sidebarConfig === false
+  return sidebarConfig === false
     ? []
     : sidebarConfig === "auto"
     ? resolveAutoSidebarItems(sidebarDepth)
     : isArray(sidebarConfig)
-    ? await resolveArraySidebarItems(router, sidebarConfig, sidebarDepth)
+    ? resolveArraySidebarItems(sidebarConfig, sidebarDepth)
     : isPlainObject(sidebarConfig)
-    ? await resolveMultiSidebarItems(router, path, sidebarConfig, sidebarDepth)
+    ? resolveMultiSidebarItems(sidebarConfig, sidebarDepth)
     : [];
-
-export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
-
-export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> =
-  Symbol.for("sidebarItems");
-
-/**
- * Inject sidebar items global computed
- */
-export const useSidebarItems = (): SidebarItemsRef => {
-  const sidebarItems = inject(sidebarItemsSymbol);
-  if (!sidebarItems) {
-    throw new Error("useSidebarItems() is called without provider.");
-  }
-  return sidebarItems;
 };

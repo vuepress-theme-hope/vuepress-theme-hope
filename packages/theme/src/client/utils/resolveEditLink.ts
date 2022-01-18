@@ -24,9 +24,11 @@ export const resolveEditLink = ({
   docsRepo: string;
   docsBranch: string;
   docsDir: string;
-  filePathRelative: string;
+  filePathRelative: string | null;
   editLinkPattern?: string;
 }): string | null => {
+  if (!filePathRelative) return null;
+
   const repoType = resolveRepoType(docsRepo);
 
   let pattern: string | undefined;

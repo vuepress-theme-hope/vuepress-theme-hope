@@ -27,8 +27,8 @@ export const useEditLink = (): ComputedRef<null | AutoLink> => {
     }
 
     const {
-      repo,
-      docsRepo = repo,
+      navbar,
+      docsRepo = navbar?.repo,
       docsBranch = "main",
       docsDir = "",
       editLinkText,

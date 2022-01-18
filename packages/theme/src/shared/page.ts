@@ -3,7 +3,11 @@ import type { GitPluginPageData } from "@vuepress/plugin-git";
 import type { MediaLinksConfig, AutoLink, SidebarConfig } from "./options";
 
 export interface HopeThemePageData extends GitPluginPageData {
-  filePathRelative: string;
+  filePathRelative: string | null;
+  routeMeta: {
+    title: string;
+    icon?: string;
+  };
 }
 
 export interface HopeThemePageFrontmatter extends BasePageFrontMatter {

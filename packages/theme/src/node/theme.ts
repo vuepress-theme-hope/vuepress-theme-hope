@@ -12,6 +12,7 @@ import {
 import type { Page, Theme, ThemeConfig } from "@vuepress/core";
 import type {
   HopeThemeLocaleOptions,
+  HopeThemePageData,
   HopeThemePluginsOptions,
 } from "../shared";
 
@@ -59,8 +60,18 @@ export const themeHope: Theme<HopeThemeOptions> = (
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
 
     // use the relative file path to generate edit link
-    extendsPage: (page: Page<{ filePathRelative: string | null }>): void => {
+    extendsPage: (page: Page<HopeThemePageData>): void => {
+      // save relative file path into page data to generate edit link
       page.data.filePathRelative = page.filePathRelative;
+      // save basic info to routeMeta
+      page.routeMeta = {
+        ...page.routeMeta,
+        title: page.title,
+        icon: page.frontmatter.icon,
+        // author: page.frontmatter.author,
+        // category: page.frontmatter.category || page.frontmatter.categories,
+        // tag: page.frontmatter.tags || page.frontmatter.tag,
+      };
     },
 
     plugins: [

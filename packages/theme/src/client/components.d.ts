@@ -21,4 +21,10 @@ declare module "@vue/runtime-core" {
   }
 }
 
+declare module "vue-router" {
+  interface RouteMeta {
+    icon?: string;
+  }
+}
+
 export {};
