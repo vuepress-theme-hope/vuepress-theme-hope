@@ -48,7 +48,9 @@ export default defineUserConfig<HopeThemeOptions>({
   theme: "hope",
 
   themeConfig: {
-    logo: "/logo.svg",
+    navbar: {
+      logo: "/logo.svg",
+    },
     hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
 
     author: "Mr.Hope",
