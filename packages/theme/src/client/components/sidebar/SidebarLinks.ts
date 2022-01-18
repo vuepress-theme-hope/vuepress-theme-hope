@@ -35,7 +35,7 @@ export default defineComponent({
   name: "SidebarLinks",
 
   props: {
-    items: {
+    config: {
       type: Array as PropType<ResolvedSidebarItem[]>,
       required: true,
     },
@@ -46,7 +46,7 @@ export default defineComponent({
     const openGroupIndex = ref(0);
 
     const refreshIndex = (): void => {
-      const index = resolveOpenGroupIndex(route, props.items);
+      const index = resolveOpenGroupIndex(route, props.config);
 
       if (index > -1) openGroupIndex.value = index;
     };
@@ -66,16 +66,16 @@ export default defineComponent({
       h(
         "ul",
         { class: "sidebar-links" },
-        props.items.map((item, index) =>
+        props.config.map((config, index) =>
           h(
             "li",
-            item.type === "group"
+            config.type === "group"
               ? h(SidebarGroup, {
-                  item,
+                  config,
                   open: index === openGroupIndex.value,
                   onToggle: () => toggleGroup(index),
                 })
-              : h(SidebarChild, { item })
+              : h(SidebarChild, { config })
           )
         )
       );

@@ -27,7 +27,7 @@ export default defineComponent({
               { class: "meta-item edit-link" },
               h(
                 AutoLink,
-                { class: "label", item: editLink.value },
+                { class: "label", config: editLink.value },
                 { before: () => h(EditIcon) }
               )
             )

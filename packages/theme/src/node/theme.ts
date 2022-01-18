@@ -50,7 +50,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
       ),
       "@Sidebar": path.resolve(
         __dirname,
-        "../client/components/sidebar/index.js"
+        "../client/components/sidebar/Sidebar.js"
       ),
     },
 

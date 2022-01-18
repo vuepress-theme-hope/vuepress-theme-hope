@@ -14,7 +14,7 @@ export default defineComponent({
       repo.value
         ? h(AutoLink, {
             class: "repo-link",
-            item: repo.value,
+            config: repo.value,
           })
         : null;
   },

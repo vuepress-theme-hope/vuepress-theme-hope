@@ -11,10 +11,8 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component("NavbarSearch", () => {
     const SearchComponent =
       app.component("Docsearch") || app.component("SearchBox");
-    if (SearchComponent) {
-      return h(SearchComponent);
-    }
-    return null;
+
+    return SearchComponent ? h(SearchComponent) : null;
   });
 
   // handle scrollBehavior with transition

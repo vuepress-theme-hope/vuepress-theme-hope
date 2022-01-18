@@ -19,19 +19,19 @@ export const renderIcon = (icon?: string): VNode | null =>
     : null;
 
 export const renderItem = (
-  item: ResolvedSidebarItem,
+  config: ResolvedSidebarItem,
   props: VNode["props"]
 ): VNode => {
-  return item.link
+  return config.link
     ? // if the item has link, render it as `<AutoLink>`
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       h(AutoLink, {
         ...props,
-        item,
+        config,
       })
     : // if the item only has text, render it as `<p>`
-      h("p", props, [renderIcon(item.icon), item.text]);
+      h("p", props, [renderIcon(config.icon), config.text]);
 };
 
 export const renderGroupHeader = (

@@ -93,12 +93,12 @@ export default defineComponent({
               prevNavLink.value
                 ? h("span", { class: "prev" }, [
                     h(PrevIcon),
-                    h(AutoLink, { item: prevNavLink.value }),
+                    h(AutoLink, { config: prevNavLink.value }),
                   ])
                 : null,
               nextNavLink.value
                 ? h("span", { class: "next" }, [
-                    h(AutoLink, { item: nextNavLink.value }),
+                    h(AutoLink, { config: nextNavLink.value }),
                     h(NextIcon),
                   ])
                 : null,

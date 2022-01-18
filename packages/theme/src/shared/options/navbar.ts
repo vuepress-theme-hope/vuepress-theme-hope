@@ -34,7 +34,9 @@ export type NavbarItem = AutoLink;
 export type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
 export type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
 // resolved
-export type ResolvedNavbarItem = NavbarItem | NavGroup<ResolvedNavbarItem>;
+export type ResolvedNavbarItem =
+  | NavbarItem
+  | NavGroup<AutoLink | NavGroup<AutoLink>>;
 
 export interface HopeThemeNavbarConfig {
   /**

@@ -19,7 +19,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/components/sidebar/index.ts", {
+  ...rollupVue("client/components/sidebar/Sidebar.ts", {
     copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
     external: [
       "@mr-hope/vuepress-shared/lib/client",

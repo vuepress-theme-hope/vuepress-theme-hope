@@ -123,7 +123,7 @@ export default defineComponent({
                       actions.value.map((action) =>
                         h(AutoLink, {
                           class: ["action-button", action.type],
-                          item: action,
+                          config: action,
                         })
                       )
                     ),

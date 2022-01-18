@@ -1,5 +1,5 @@
 import { defineComponent, h } from "vue";
-import DropdownLink from "./DropdownLink.vue";
+import DropdownLink from "./DropdownLink";
 import { I18nIcon } from "../icons";
 import { useNavbarLanguageDropdown } from "../../composables";
 
@@ -15,7 +15,7 @@ export default defineComponent({
       dropdown.value
         ? h(
             DropdownLink,
-            { item: dropdown.value },
+            { config: dropdown.value },
             {
               title: () =>
                 h(I18nIcon, {

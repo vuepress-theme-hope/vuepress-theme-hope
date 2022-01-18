@@ -1,4 +1,4 @@
-import { defineComponent, h } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import SidebarLinks from "./SidebarLinks";
 import { renderGroupHeader } from "../../composables";
@@ -11,7 +11,7 @@ export default defineComponent({
   name: "SidebarGroup",
 
   props: {
-    item: {
+    config: {
       type: Object as PropType<ResolvedSidebarGroupItem>,
       required: true,
     },
@@ -22,38 +22,38 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const route = useRoute();
-    const active = isActiveItem(route, props.item);
+    const active = computed(() => isActiveItem(route, props.config));
 
     return (): VNode[] => [
       h("section", { class: "sidebar-group" }, [
-        props.item.link
+        props.config.link
           ? h(
               RouterLink,
               {
-                to: props.item.link,
+                to: props.config.link,
                 class: {
                   "sidebar-heading": true,
                   clickable: true,
-                  active,
+                  active: active.value,
                 },
                 onClick: () => emit("toggle"),
               },
-              renderGroupHeader(props.item, props.open)
+              renderGroupHeader(props.config, props.open)
             )
           : h(
               "p",
               {
-                to: props.item.link,
+                to: props.config.link,
                 class: {
                   "sidebar-heading": true,
-                  clickable: props.item.collapsable,
-                  active,
+                  clickable: props.config.collapsable,
+                  active: active.value,
                 },
                 onClick: () => emit("toggle"),
               },
-              renderGroupHeader(props.item, props.open)
+              renderGroupHeader(props.config, props.open)
             ),
-        h(SidebarLinks, { items: props.item.children || [] }),
+        h(SidebarLinks, { config: props.config.children || [] }),
       ]),
     ];
   },

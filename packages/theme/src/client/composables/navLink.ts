@@ -5,6 +5,7 @@ import type {
   AutoLink,
   NavbarItem,
   NavbarGroup,
+  NavGroup,
   ResolvedNavbarItem,
 } from "../../shared";
 
@@ -28,10 +29,13 @@ export const resolveNavbarItem = (
 ): ResolvedNavbarItem => {
   if (isString(item)) return useAutoLink(item);
 
-  if ((item as NavbarGroup).children)
+  if ("children" in item)
     return {
       ...item,
-      children: (item as NavbarGroup).children.map(resolveNavbarItem),
+      children: item.children.map(resolveNavbarItem) as (
+        | NavGroup<AutoLink>
+        | AutoLink
+      )[],
     };
 
   return item as ResolvedNavbarItem;

@@ -13,7 +13,7 @@ export default defineComponent({
   name: "SidebarChild",
 
   props: {
-    item: {
+    config: {
       type: Object as PropType<
         ResolvedSidebarPageItem | ResolvedSidebarHeaderItem
       >,
@@ -25,15 +25,15 @@ export default defineComponent({
     const route = useRoute();
 
     return (): (VNode | null)[] => [
-      renderItem(props.item, {
+      renderItem(props.config, {
         class: {
           "sidebar-link": true,
-          heading: props.item.type === "heading",
-          active: isActiveLink(route, props.item.link),
+          heading: props.config.type === "heading",
+          active: isActiveLink(route, props.config.link),
         },
         exact: true,
       }),
-      renderChildren(props.item.children),
+      renderChildren(props.config.children),
     ];
   },
 });

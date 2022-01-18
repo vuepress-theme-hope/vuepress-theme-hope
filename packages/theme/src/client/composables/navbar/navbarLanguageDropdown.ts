@@ -5,20 +5,20 @@ import { useNavbarLocaleData } from "./navbarConfig";
 import { useThemeLocaleData } from "../themeData";
 
 import type { ComputedRef } from "vue";
-import type { ResolvedNavbarItem } from "../../../shared";
+import type { AutoLink, NavGroup } from "../../../shared";
 
 /**
  * Get navbar config of select language dropdown
  */
 export const useNavbarLanguageDropdown =
-  (): ComputedRef<ResolvedNavbarItem | null> => {
+  (): ComputedRef<NavGroup<AutoLink> | null> => {
     const router = useRouter();
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
     const navbarLocale = useNavbarLocaleData();
     const themeLocale = useThemeLocaleData();
 
-    return computed<ResolvedNavbarItem | null>(() => {
+    return computed<NavGroup<AutoLink> | null>(() => {
       const localePaths = Object.keys(siteLocale.value.locales);
       // do not display language selection dropdown if there is only one language
       if (localePaths.length < 2) return null;
@@ -26,7 +26,7 @@ export const useNavbarLanguageDropdown =
       const currentPath = router.currentRoute.value.path;
       const currentFullPath = router.currentRoute.value.fullPath;
 
-      const languageDropdown: ResolvedNavbarItem = {
+      const languageDropdown: NavGroup<AutoLink> = {
         text: navbarLocale.value.selectLanguageText ?? "language",
         ariaLabel:
           navbarLocale.value.selectLanguageAriaLabel ?? "Select language",

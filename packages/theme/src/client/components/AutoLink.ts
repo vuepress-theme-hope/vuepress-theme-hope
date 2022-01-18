@@ -14,7 +14,7 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
-    item: {
+    config: {
       type: Object as PropType<AutoLink>,
       required: true,
     },
@@ -31,22 +31,22 @@ export default defineComponent({
     const site = useSiteData();
     const iconPrefix = useIconPrefix();
 
-    const item = toRef(props, "item");
+    const config = toRef(props, "config");
 
     // if the link has http protocol
-    const hasHttpProtocol = computed(() => isLinkHttp(item.value.link));
+    const hasHttpProtocol = computed(() => isLinkHttp(config.value.link));
 
     // if the link has non-http protocol
     const hasNonHttpProtocal = computed(
-      () => isLinkMailto(item.value.link) || isLinkTel(item.value.link)
+      () => isLinkMailto(config.value.link) || isLinkTel(config.value.link)
     );
 
     // resolve the `target` attr
     const linkTarget = computed(() =>
       hasNonHttpProtocal.value
         ? undefined
-        : item.value.target
-        ? item.value.target
+        : config.value.target
+        ? config.value.target
         : hasHttpProtocol.value
         ? "_blank"
         : undefined
@@ -67,8 +67,8 @@ export default defineComponent({
     const anchorRel = computed(() =>
       hasNonHttpProtocal.value
         ? undefined
-        : item.value.rel
-        ? item.value.rel
+        : config.value.rel
+        ? config.value.rel
         : isBlankTarget.value
         ? "noopener noreferrer"
         : undefined
@@ -76,7 +76,7 @@ export default defineComponent({
 
     // resolve the `aria-label` attr
     const linkAriaLabel = computed(
-      () => item.value.ariaLabel || item.value.text
+      () => config.value.ariaLabel || config.value.text
     );
 
     // should be active when current route is a subpath of this link
@@ -88,22 +88,22 @@ export default defineComponent({
 
       // check all the locales
       if (localeKeys.length)
-        return !localeKeys.some((key) => key === item.value.link);
+        return !localeKeys.some((key) => key === config.value.link);
 
       // check root
-      return item.value.link !== "/";
+      return config.value.link !== "/";
     });
 
     // if this link is active
     const isActive = computed(() =>
       !renderRouterLink.value
         ? false
-        : item.value.activeMatch
-        ? new RegExp(item.value.activeMatch).test(route.path)
+        : config.value.activeMatch
+        ? new RegExp(config.value.activeMatch).test(route.path)
         : // if this link is active in subpath
         !shouldBeActiveInSubpath.value
         ? false
-        : route.path.startsWith(item.value.link)
+        : route.path.startsWith(config.value.link)
     );
 
     const renderIcon = (item: AutoLink): VNode | null =>
@@ -118,7 +118,7 @@ export default defineComponent({
         ? h(
             RouterLink,
             {
-              to: item.value.link,
+              to: config.value.link,
               ariaLabel: linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
@@ -127,8 +127,8 @@ export default defineComponent({
             },
             {
               default: () => [
-                slots.before?.() || renderIcon(item.value),
-                item.value.text,
+                slots.before?.() || renderIcon(config.value),
+                config.value.text,
                 slots.after?.(),
               ],
             }
@@ -136,7 +136,7 @@ export default defineComponent({
         : h(
             "a",
             {
-              href: item.value.link,
+              href: config.value.link,
               rel: anchorRel.value,
               target: linkTarget.value,
               ariaLabel: linkAriaLabel.value,
@@ -146,8 +146,8 @@ export default defineComponent({
               onFocusOut: () => emit("focusout"),
             },
             [
-              slots.before?.() || renderIcon(item.value),
-              item.value.text,
+              slots.before?.() || renderIcon(config.value),
+              config.value.text,
               isBlankTarget.value ? h(ExternalLinkIcon) : null,
               slots.after?.(),
             ]
