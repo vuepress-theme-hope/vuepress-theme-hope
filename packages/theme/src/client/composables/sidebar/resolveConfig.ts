@@ -139,9 +139,11 @@ export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
   // get sidebar config from frontmatter > themeConfig
   const sidebarConfig = frontmatter.value.home
     ? false
-    : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "auto";
+    : frontmatter.value.sidebar ?? themeLocale.value.sidebar?.config ?? "auto";
   const sidebarDepth =
-    frontmatter.value.sidebarDepth ?? themeLocale.value.sidebarDepth ?? 2;
+    frontmatter.value.sidebarHeadingDepth ??
+    themeLocale.value.sidebar?.headingDepth ??
+    2;
 
   // resolve sidebar items according to the config
   return sidebarConfig === false

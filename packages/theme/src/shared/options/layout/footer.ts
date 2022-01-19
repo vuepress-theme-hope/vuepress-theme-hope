@@ -1,9 +1,9 @@
 /**
- * 页脚配置
+ * 页脚选项
  *
- * Footer Settings
+ * Footer options
  */
-export interface HopeFooterConfig {
+export interface HopeThemeFooterLocaleOptions {
   /**
    * 页脚的默认内容，可输入 HTMLString
    *

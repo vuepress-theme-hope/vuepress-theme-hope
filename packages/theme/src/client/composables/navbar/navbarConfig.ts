@@ -6,16 +6,17 @@ import { useThemeLocaleData } from "../themeData";
 import type { ComputedRef } from "vue";
 import type {
   HopeThemeData,
-  HopeThemeNavbarConfig,
+  HopeThemeNavbarLocaleOptions,
   ResolvedNavbarItem,
 } from "../../../shared";
 
-export const useNavbarLocaleData = (): ComputedRef<HopeThemeNavbarConfig> =>
-  computed(() => ({
-    // these config needs to be merged manually
-    ...useThemeData<HopeThemeData>().value.navbar,
-    ...useThemeLocaleData().value.navbar,
-  }));
+export const useNavbarLocaleData =
+  (): ComputedRef<HopeThemeNavbarLocaleOptions> =>
+    computed(() => ({
+      // these config needs to be merged manually
+      ...useThemeData<HopeThemeData>().value.navbar,
+      ...useThemeLocaleData().value.navbar,
+    }));
 
 export const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> =>
   computed(() =>

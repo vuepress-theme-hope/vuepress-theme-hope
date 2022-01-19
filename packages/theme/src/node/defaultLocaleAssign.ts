@@ -1,65 +1,29 @@
-import type { HopeThemeLocaleOptions, HopeThemeLocaleData } from "../shared";
+import { getLocales } from "@mr-hope/vuepress-shared";
+import { themeLocalesData } from "./locales";
+import type { HopeThemeData } from "../shared";
+import type { App } from "@vuepress/core";
 
-const defaultLocaleOptions: HopeThemeLocaleOptions = {
-  navbar: {
-    config: [],
-    logo: null,
-    repo: null,
-    selectLanguageText: "Languages",
-    selectLanguageAriaLabel: "Select language",
-  },
-
-  // sidebar
-  sidebar: "auto",
-  sidebarDepth: 2,
-
-  // page meta
-  editLink: true,
-  editLinkText: "Edit this page",
-  lastUpdated: true,
-  lastUpdatedText: "Last Updated",
-  contributors: true,
-  contributorsText: "Contributors",
-
-  // 404 page messages
-  notFound: [
-    `There's nothing here.`,
-    `How did we get here?`,
-    `That's a Four-Oh-Four.`,
-    `Looks like we've got some broken links.`,
-  ],
-  backToHome: "Take me home",
-
-  // `<OutboundLink>` sr-only
-  openInNewWindow: "open in new window",
-};
-
-const defaultLocaleData: HopeThemeLocaleData = {
-  // navbar
-  selectLanguageName: "English",
-};
+const defaultRootOptions = {};
 
 /**
  * Assign default options to `themeConfig`
  */
 export const assignDefaultLocaleOptions = (
-  localeOptions: HopeThemeLocaleOptions
+  app: App,
+  localeOptions: HopeThemeData
 ): void => {
-  if (!localeOptions.locales) {
-    localeOptions.locales = {};
-  }
+  if (!localeOptions.locales) localeOptions.locales = {};
 
-  if (!localeOptions.locales["/"]) {
-    localeOptions.locales["/"] = {};
-  }
+  if (!localeOptions.locales["/"]) localeOptions.locales["/"] = {};
 
   Object.assign(localeOptions, {
-    ...defaultLocaleOptions,
+    ...defaultRootOptions,
     ...localeOptions,
   });
 
-  Object.assign(localeOptions.locales["/"], {
-    ...defaultLocaleData,
-    ...localeOptions.locales["/"],
-  });
+  localeOptions.locales = getLocales(
+    app,
+    themeLocalesData,
+    localeOptions.locales
+  );
 };

@@ -50,15 +50,16 @@ export default defineUserConfig<HopeThemeOptions>({
   themeConfig: {
     navbar: {
       logo: "/logo.svg",
+      repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     },
-    hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
+
+    meta: {
+      docsDir: "demo/src",
+    },
 
     author: "Mr.Hope",
-    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-
-    docsDir: "demo/src",
-
     darkmode: "auto-switch",
+    hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
 
     // theme-level locales config
     locales: {
@@ -72,19 +73,21 @@ export default defineUserConfig<HopeThemeOptions>({
         // navbar
         navbar: {
           config: navbar.en,
-          selectLanguageName: "English",
         },
 
         // sidebar
-        sidebar: sidebar.en,
+        sidebar: {
+          config: sidebar.en,
+        },
 
         footer: {
           display: true,
           content: "Default footer",
         },
 
-        // page meta
-        editLinkText: "Edit this page on GitHub",
+        metaLocales: {
+          editLink: "Edit this page on GitHub",
+        },
       },
 
       /**
@@ -94,13 +97,12 @@ export default defineUserConfig<HopeThemeOptions>({
         // navbar
         navbar: {
           config: navbar.zh,
-          selectLanguageName: "简体中文",
-          selectLanguageText: "选择语言",
-          selectLanguageAriaLabel: "选择语言",
         },
 
         // sidebar
-        sidebar: sidebar.zh,
+        sidebar: {
+          config: sidebar.zh,
+        },
 
         footer: {
           display: true,
@@ -108,26 +110,10 @@ export default defineUserConfig<HopeThemeOptions>({
         },
 
         // page meta
-        editLinkText: "在 GitHub 上编辑此页",
-        lastUpdatedText: "上次更新",
-        contributorsText: "贡献者",
 
-        // custom containers
-        tip: "提示",
-        warning: "注意",
-        danger: "警告",
-
-        // 404 page
-        notFound: [
-          "这里什么都没有",
-          "我们怎么到这来了？",
-          "这是一个 404 页面",
-          "看起来我们进入了错误的链接",
-        ],
-        backToHome: "返回首页",
-
-        // other
-        openInNewWindow: "在新窗口打开",
+        metaLocales: {
+          editLink: "在 GitHub 上编辑此页",
+        },
       },
     },
 

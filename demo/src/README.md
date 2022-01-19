@@ -1,6 +1,7 @@
 ---
 home: true
 title: Home
+icon: home
 heroImage: /logo.svg
 actions:
   - text: Project Home

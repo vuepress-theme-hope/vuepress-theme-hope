@@ -1,11 +1,12 @@
 import { computed, defineComponent, h } from "vue";
+import { useAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import MediaLinks from "./medialinks";
 import { useThemeLocaleData } from "../composables";
 
 import type { VNode } from "vue";
 import type {
-  HopeFooterConfig,
+  HopeThemeFooterLocaleOptions,
   HopeThemeNormalPageFrontmatter,
 } from "../../shared";
 
@@ -15,8 +16,9 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const themeLocaleData = useThemeLocaleData();
+    const author = useAuthor();
 
-    const config = computed<HopeFooterConfig>(
+    const config = computed<HopeThemeFooterLocaleOptions>(
       () => themeLocaleData.value.footer || {}
     );
 
@@ -46,9 +48,9 @@ export default defineComponent({
           (config.value.copyright === false
             ? false
             : config.value.copyright ||
-              (themeLocaleData.value.author
+              (author.value.length
                 ? `Copyright © ${new Date().getFullYear()} ${
-                    themeLocaleData.value.author
+                    author.value[0].name
                   }`
                 : ""))
     );

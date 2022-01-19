@@ -1,6 +1,7 @@
 import { path } from "@vuepress/utils";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 
+import { getAlisa } from "./alias";
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
 import {
   resolveActiveHeaderLinksPluginOptions,
@@ -11,12 +12,12 @@ import {
 
 import type { Page, Theme, ThemeConfig } from "@vuepress/core";
 import type {
-  HopeThemeLocaleOptions,
+  HopeThemeData,
   HopeThemePageData,
   HopeThemePluginsOptions,
 } from "../shared";
 
-export interface HopeThemeOptions extends ThemeConfig, HopeThemeLocaleOptions {
+export interface HopeThemeOptions extends ThemeConfig, HopeThemeData {
   plugins?: HopeThemePluginsOptions;
 }
 
@@ -24,7 +25,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...localeOptions },
   app
 ) => {
-  assignDefaultLocaleOptions(localeOptions);
+  assignDefaultLocaleOptions(app, localeOptions);
 
   usePalettePlugin(app, {
     id: "hope",
@@ -38,22 +39,9 @@ export const themeHope: Theme<HopeThemeOptions> = (
   return {
     name: "@vuepress/theme-default",
 
-    layouts: path.resolve(__dirname, "../client/layouts"),
+    alias: getAlisa(),
 
-    alias: {
-      "@CommonWrapper": path.resolve(
-        __dirname,
-        "../client/components/CommonWrapper.js"
-      ),
-      "@Navbar": path.resolve(
-        __dirname,
-        "../client/components/navbar/Navbar.js"
-      ),
-      "@Sidebar": path.resolve(
-        __dirname,
-        "../client/components/sidebar/Sidebar.js"
-      ),
-    },
+    layouts: path.resolve(__dirname, "../client/layouts"),
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
 

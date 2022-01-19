@@ -6,9 +6,9 @@ import type {
   ThemeDataRef,
   ThemeLocaleDataRef,
 } from "@vuepress/plugin-theme-data/lib/client";
-import type { HopeThemeData } from "../../shared";
+import type { HopeThemeData, HopeThemeLocaleData } from "../../shared";
 
 export const useThemeData = (): ThemeDataRef<HopeThemeData> =>
   _useThemeData<HopeThemeData>();
-export const useThemeLocaleData = (): ThemeLocaleDataRef<HopeThemeData> =>
-  _useThemeLocaleData<HopeThemeData>();
+export const useThemeLocaleData = (): ThemeLocaleDataRef<HopeThemeLocaleData> =>
+  _useThemeLocaleData<HopeThemeLocaleData>();

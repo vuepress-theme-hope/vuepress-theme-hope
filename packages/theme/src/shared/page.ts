@@ -1,6 +1,8 @@
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
-import type { MediaLinksConfig, AutoLink, SidebarConfig } from "./options";
+import type { MediaLinksConfig } from "./options";
+import type { AutoLink } from "./navbar";
+import type { SidebarConfig } from "./sidebar";
 
 export interface HopeThemePageData extends GitPluginPageData {
   filePathRelative: string | null;
@@ -36,13 +38,16 @@ export interface HopeThemeHomePageFrontmatter extends HopeThemePageFrontmatter {
 export interface HopeThemeNormalPageFrontmatter
   extends HopeThemePageFrontmatter {
   home?: false;
-  editLink?: boolean;
-  lastUpdated?: boolean;
-  contributors?: boolean;
   sidebar?: "auto" | false | SidebarConfig;
-  sidebarDepth?: number;
-  prev?: string | AutoLink;
-  next?: string | AutoLink;
+  sidebarHeadingDepth?: number;
+
+  meta?: {
+    lastUpdated?: boolean;
+    contributors?: boolean;
+    editLink?: boolean;
+    prev?: string | AutoLink;
+    next?: string | AutoLink;
+  };
 }
 
 export interface ActionConfig {

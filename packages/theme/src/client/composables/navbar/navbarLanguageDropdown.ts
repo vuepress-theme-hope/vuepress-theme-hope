@@ -1,8 +1,7 @@
 import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { useNavbarLocaleData } from "./navbarConfig";
-import { useThemeLocaleData } from "../themeData";
+import { useThemeData, useThemeLocaleData } from "../themeData";
 
 import type { ComputedRef } from "vue";
 import type { AutoLink, NavGroup } from "../../../shared";
@@ -15,7 +14,7 @@ export const useNavbarLanguageDropdown =
     const router = useRouter();
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
-    const navbarLocale = useNavbarLocaleData();
+    const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
 
     return computed<NavGroup<AutoLink> | null>(() => {
@@ -25,21 +24,20 @@ export const useNavbarLanguageDropdown =
 
       const currentPath = router.currentRoute.value.path;
       const currentFullPath = router.currentRoute.value.fullPath;
+      const { navbarLocales } = themeLocale.value;
 
       const languageDropdown: NavGroup<AutoLink> = {
-        text: navbarLocale.value.selectLanguageText ?? "language",
-        ariaLabel:
-          navbarLocale.value.selectLanguageAriaLabel ?? "Select language",
+        text: navbarLocales?.selectLangText,
+        ariaLabel: navbarLocales?.selectLangAriaLabel,
         children: localePaths.map((targetLocalePath) => {
           // target locale config of this langauge link
           const targetSiteLocale =
             siteLocale.value.locales?.[targetLocalePath] ?? {};
           const targetThemeLocale =
-            themeLocale.value.locales?.[targetLocalePath] ?? {};
+            themeData.value.locales?.[targetLocalePath] ?? {};
           const targetLang = targetSiteLocale.lang || "";
 
-          const text =
-            targetThemeLocale.navbar?.selectLanguageName ?? targetLang;
+          const text = targetThemeLocale.navbarLocales?.langName ?? targetLang;
           let link;
 
           // if the target language is current language

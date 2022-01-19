@@ -19,8 +19,10 @@ export default defineComponent({
     const updateTime = useUpdateTime();
     const contributors = useContributors();
 
-    return (): VNode =>
-      h("footer", { class: "page-meta" }, [
+    return (): VNode => {
+      const { metaLocales } = themeLocale.value;
+
+      return h("footer", { class: "page-meta" }, [
         editLink.value
           ? h(
               "div",
@@ -34,29 +36,18 @@ export default defineComponent({
           : null,
         updateTime.value
           ? h("div", { class: "meta-item update-time" }, [
-              h(
-                "span",
-                { class: "label" },
-                `${themeLocale.value.lastUpdatedText || "Last Update"}: `
-              ),
+              h("span", { class: "label" }, `${metaLocales.lastUpdated}: `),
               h("span", { class: "info" }, updateTime.value),
             ])
           : null,
         contributors.value && contributors.value.length
           ? h("div", { class: "meta-item contributors" }, [
-              h(
-                "span",
-                { class: "label" },
-                `${themeLocale.value.contributorsText || "Contributors"}: `
-              ),
-              contributors.value.map((contributor, index) => [
+              h("span", { class: "label" }, `${metaLocales.contributors}: `),
+              contributors.value.map(({ email, name }, index) => [
                 h(
                   "span",
-                  {
-                    class: "contributor",
-                    title: `email: ${contributor.email}`,
-                  },
-                  contributor.name
+                  { class: "contributor", title: `email: ${email}` },
+                  name
                 ),
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 index !== contributors.value!.length - 1 ? "," : "",
@@ -64,5 +55,6 @@ export default defineComponent({
             ])
           : null,
       ]);
+    };
   },
 });

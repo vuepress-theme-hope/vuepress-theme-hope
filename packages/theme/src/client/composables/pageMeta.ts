@@ -20,35 +20,34 @@ export const useEditLink = (): ComputedRef<null | AutoLink> => {
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
 
   return computed(() => {
-    const showEditLink =
-      frontmatter.value.editLink ?? themeLocale.value.editLink ?? true;
-    if (!showEditLink) {
-      return null;
-    }
-
+    const navbarRepo = themeLocale.value.navbar?.repo;
     const {
-      navbar,
-      docsRepo = navbar?.repo,
+      docsRepo = navbarRepo,
       docsBranch = "main",
       docsDir = "",
-      editLinkText,
-    } = themeLocale.value;
+      editLink,
+      editLinkPattern,
+    } = themeLocale.value.meta || {};
+
+    const showEditLink = frontmatter.value.editLink ?? editLink ?? true;
+
+    if (!showEditLink) return null;
 
     if (!docsRepo) return null;
 
-    const editLink = resolveEditLink({
+    const link = resolveEditLink({
       docsRepo,
       docsBranch,
       docsDir,
+      editLinkPattern,
       filePathRelative: page.value.filePathRelative,
-      editLinkPattern: themeLocale.value.editLinkPattern,
     });
 
-    if (!editLink) return null;
+    if (!link) return null;
 
     return {
-      text: editLinkText ?? "Edit this page",
-      link: editLink,
+      text: themeLocale.value.metaLocales.editLink,
+      link,
     };
   });
 };
@@ -61,7 +60,9 @@ export const useUpdateTime = (): ComputedRef<null | string> => {
 
   return computed(() => {
     const showLastUpdated =
-      frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true;
+      frontmatter.value.meta?.lastUpdated ??
+      themeLocale.value.meta?.lastUpdated ??
+      true;
 
     if (!showLastUpdated) return null;
 
@@ -82,7 +83,9 @@ export const useContributors = (): ComputedRef<
 
   return computed(() => {
     const showContributors =
-      frontmatter.value.contributors ?? themeLocale.value.contributors ?? true;
+      frontmatter.value.meta?.contributors ??
+      themeLocale.value.meta?.contributors ??
+      true;
 
     if (!showContributors) return null;
 

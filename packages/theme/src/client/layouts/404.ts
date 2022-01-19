@@ -15,12 +15,10 @@ export default defineComponent({
     const routeLocale = useRouteLocale();
     const themeLocale = useThemeLocaleData();
 
-    const messages = themeLocale.value.notFound ?? ["Not Found"];
-    const getMsg = (): string =>
-      messages[Math.floor(Math.random() * messages.length)];
+    const getMsg = (): string => {
+      const messages = themeLocale.value.routeLocales["404msg"];
 
-    const goBack = (): void => {
-      window.history.go(-1);
+      return messages[Math.floor(Math.random() * messages.length)];
     };
 
     const { navigate } = useLink({
@@ -36,16 +34,20 @@ export default defineComponent({
             h("main", { class: "page not-found" }, [
               h(Page404Icon),
               h("blockquote", getMsg()),
-              // TODO: Only show button when can go back
               h(
                 "button",
-                { class: "action-button", onClick: () => goBack() },
-                themeLocale.value.back ?? "Go back"
+                {
+                  class: "action-button",
+                  onClick: () => {
+                    window.history.go(-1);
+                  },
+                },
+                themeLocale.value.routeLocales.back
               ),
               h(
                 "button",
                 { class: "action-button", onClick: () => navigate() },
-                themeLocale.value.backToHome ?? "Back to home"
+                themeLocale.value.routeLocales.home
               ),
             ]),
         }
