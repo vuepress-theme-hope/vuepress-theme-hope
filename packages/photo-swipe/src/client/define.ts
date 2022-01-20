@@ -1,15 +1,15 @@
 import * as PhotoSwipe from "photoswipe";
 import type { PhowoSwipeLocaleConfig } from "../shared";
 
-declare const IMAGE_SELECTOR: string;
-declare const PHOTOSWIPE_DELAY: number;
-declare const PHOTOSWIPE_OPTIONS: PhotoSwipe.Options;
-declare const PHOTOSWIPE_LOCALES: PhowoSwipeLocaleConfig;
+declare const PHOTO_SWIPE_SELECTOR: string;
+declare const PHOTO_SWIPE_DELAY: number;
+declare const PHOTO_SWIPE_OPTIONS: PhotoSwipe.Options;
+declare const PHOTO_SWIPE_LOCALES: PhowoSwipeLocaleConfig;
 
-export const imageSelector = IMAGE_SELECTOR;
+export const imageSelector = PHOTO_SWIPE_SELECTOR;
 
-export const locales = PHOTOSWIPE_LOCALES;
+export const locales = PHOTO_SWIPE_LOCALES;
 
-export const delay = PHOTOSWIPE_DELAY;
+export const delay = PHOTO_SWIPE_DELAY;
 
-export const options = PHOTOSWIPE_OPTIONS;
+export const options = PHOTO_SWIPE_OPTIONS;

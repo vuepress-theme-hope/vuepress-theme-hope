@@ -20,15 +20,15 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
     name: "vuepress-plugin-photo-swipe",
 
     define: (): Record<string, unknown> => ({
-      IMAGE_SELECTOR:
+      PHOTO_SWIPE_SELECTOR:
         photoSwipeOptions.selector || ".theme-default-content :not(a) > img",
-      PHOTOSWIPE_DELAY: photoSwipeOptions.delay || 500,
-      PHOTOSWIPE_OPTIONS: photoSwipeOptions.options || {},
-      PHOTOSWIPE_LOCALES: getLocales(
+      PHOTO_SWIPE_DELAY: photoSwipeOptions.delay || 500,
+      PHOTO_SWIPE_LOCALES: getLocales(
         app,
         photoSwipeLocales,
         photoSwipeOptions.locales
       ),
+      PHOTO_SWIPE_OPTIONS: photoSwipeOptions.options || {},
     }),
 
     clientAppRootComponentFiles: path.resolve(
