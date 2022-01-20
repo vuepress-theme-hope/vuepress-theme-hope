@@ -1,6 +1,13 @@
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 
-import type { HopeThemeRootOptions, HopeThemeLocaleOptions } from "./options";
+import type {
+  HopeThemeLocaleOptions,
+  HopeThemePluginsOptions,
+  HopeThemeRootOptions,
+} from "./options";
 
-export type HopeThemeData = HopeThemeRootOptions &
-  ThemeData<HopeThemeLocaleOptions>;
+export interface HopeThemeData
+  extends HopeThemeRootOptions,
+    ThemeData<HopeThemeLocaleOptions> {
+  plugins?: HopeThemePluginsOptions;
+}

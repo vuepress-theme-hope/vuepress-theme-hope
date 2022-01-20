@@ -3,25 +3,12 @@ import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlisa } from "./alias";
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
-import {
-  resolveActiveHeaderLinksPluginOptions,
-  resolveContainerPluginOptionsForCodeGroup,
-  resolveContainerPluginOptionsForCodeGroupItem,
-  resolveGitPluginOptions,
-} from "./plugins";
+import { getPluginConfig } from "./plugins";
 
-import type { Page, Theme, ThemeConfig } from "@vuepress/core";
-import type {
-  HopeThemeData,
-  HopeThemePageData,
-  HopeThemePluginsOptions,
-} from "../shared";
+import type { Page, Theme } from "@vuepress/core";
+import type { HopeThemeData, HopeThemePageData } from "../shared";
 
-export interface HopeThemeOptions extends ThemeConfig, HopeThemeData {
-  plugins?: HopeThemePluginsOptions;
-}
-
-export const themeHope: Theme<HopeThemeOptions> = (
+export const themeHope: Theme<HopeThemeData> = (
   { plugins = {}, ...localeOptions },
   app
 ) => {
@@ -62,32 +49,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
       };
     },
 
-    plugins: [
-      ["@mr-hope/components"],
-      [
-        "@vuepress/active-header-links",
-        resolveActiveHeaderLinksPluginOptions(plugins),
-      ],
-      [
-        "@vuepress/container",
-        resolveContainerPluginOptionsForCodeGroup(plugins),
-      ],
-      [
-        "@vuepress/container",
-        resolveContainerPluginOptionsForCodeGroupItem(plugins),
-      ],
-      ["@vuepress/git", resolveGitPluginOptions(plugins, localeOptions)],
-      ["@vuepress/nprogress", plugins.nprogress !== false],
-      ["@vuepress/prismjs", plugins.prismjs !== false],
-      ["@vuepress/theme-data", { themeData: localeOptions }],
-      ["comment2", plugins.comment || { type: "disable" }],
-      ["copy-code2", plugins.copyCode],
-      ["feed2", plugins.feed],
-      ["md-enhance", plugins.mdEnhance || {}],
-      ["photo-swipe", plugins.photoSwipe],
-      ["pwa2", plugins.pwa],
-      ["seo2", plugins.seo],
-      ["sitemap2", plugins.sitemap],
-    ],
+    plugins: getPluginConfig(plugins, localeOptions),
   };
 };

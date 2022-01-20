@@ -6,7 +6,7 @@ import type {
   HopeThemePluginsOptions,
   HopeThemeData,
   HopeThemeLocaleOptions,
-} from "../shared";
+} from "../../shared";
 
 /**
  * Resolve options for @vuepress/plugin-container
@@ -23,6 +23,7 @@ export const resolveContainerPluginOptions = (
   const locales = Object.entries(localeOptions.locales || {}).reduce(
     (result: LocaleConfig<{ defaultInfo: string }>, [key, value]) => {
       result[key] = {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         defaultInfo: value?.[type] ?? localeOptions[type],
       };
       return result;
