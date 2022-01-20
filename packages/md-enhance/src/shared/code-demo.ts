@@ -1,51 +1,61 @@
+/**
+ * Code demo options
+ */
 export interface CodeDemoOptions {
   /**
-   * 是否使用 Babel 转义
+   * Whether to use babel to transpile to es5
+   *
+   * 是否使用 Babel 转义到 ES5
    *
    * @default false
    */
   useBabel: boolean;
 
   /**
-   * 引入的 JS 外部库链接
-   *
    * JS Libray links
+   *
+   * 引入的 JS 外部库链接
    */
   jsLib: string[];
+
   /**
-   * 引入的 CSS 外部库链接
-   *
    * CSS Libray links
+   *
+   * 引入的 CSS 外部库链接
    */
   cssLib: string[];
+
   /**
-   * 是否显示 JSFiddle 按钮
+   * Whether to display JSFiddle button
    *
-   * Whether display JSFiddle button
+   * 是否显示 JSFiddle 按钮
    *
    * @default true
    */
   jsfiddle?: boolean;
+
   /**
-   * 是否显示 CodePen 按钮
+   * Whether to display CodePen button
    *
-   * Whether display CodePen button
+   * 是否显示 CodePen 按钮
    *
    * @default true
    */
   codepen?: boolean;
+
   /**
-   * CodePen 编辑器布局
-   *
    * CodePen editor layout
+   *
+   * CodePen 编辑器布局
    *
    * @default "left"
    */
   codepenLayout: "top" | "left" | "right";
+
   /**
-   * CodePen 编辑器显示情况
-   *
    * CodePen Editor Display
+   *
+   * CodePen 编辑器显示情况
    *
    * @default "101"
    */
@@ -54,6 +64,8 @@ export interface CodeDemoOptions {
   /**
    * Babel lib address
    *
+   * Babel 库的地址
+   *
    * @default "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"
    */
   babel: string;
@@ -61,17 +73,25 @@ export interface CodeDemoOptions {
   /**
    * Vue lib address
    *
+   * Vue 库的地址
+   *
    * @default "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js"
    */
   vue: string;
+
   /**
    * React lib address
+   *
+   * React 库的地址
    *
    * @default "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
    */
   react: string;
+
   /**
    * ReactDOM lib address
+   *
+   * ReactDOM 库的地址
    *
    * @default "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
    */

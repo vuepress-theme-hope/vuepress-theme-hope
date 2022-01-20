@@ -2,37 +2,44 @@ import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 export interface MarkdownEnhanceLocaleData {
   /**
-   * 信息块的默认标题
-   *
    * Default Title text for info block
+   *
+   * 信息块的默认标题
    */
   info: string;
 
   /**
-   * 提示块的默认标题
+   * Default Title text for note block
    *
+   * 注释块的默认标题
+   */
+  note: string;
+
+  /**
    * Default Title text for tip block
+   *
+   * 提示块的默认标题
    */
   tip: string;
 
   /**
-   * 注意块的默认标题
-   *
    * Default Title text for warning block
+   *
+   * 注意块的默认标题
    */
   warning: string;
 
   /**
-   * 警告块的默认标题
-   *
    * Default Title text for danger block
+   *
+   * 警告块的默认标题
    */
   danger: string;
 
   /**
-   * 详情块的默认标题
-   *
    * Default Title text for details block
+   *
+   * 详情块的默认标题
    */
   details: string;
 }

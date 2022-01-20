@@ -28,9 +28,10 @@ export const usePlugins = (
       ])
     );
 
-  if (markdownOptions.customContainer || markdownOptions.enableAll) {
+  if (markdownOptions.container || markdownOptions.enableAll) {
     const containers: MarkdownContainerName[] = [
       "info",
+      "note",
       "tip",
       "warning",
       "danger",

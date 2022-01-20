@@ -3,6 +3,7 @@ import type { MarkdownEnhanceLocaleConfig } from "../shared";
 export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
   "/en/": {
     info: "Info",
+    note: "Note",
     tip: "Tips",
     warning: "Note",
     danger: "Warning",
@@ -11,6 +12,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
 
   "/zh/": {
     info: "相关信息",
+    note: "注",
     tip: "提示",
     warning: "注意",
     danger: "相关信息",
@@ -19,6 +21,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
 
   "/tw/": {
     info: "相關信息",
+    note: "注",
     tip: "提示",
     warning: "注意",
     danger: "相关信息",
@@ -27,6 +30,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
 
   "/de/": {
     info: "Information",
+    note: "Note",
     tip: "Tips",
     warning: "Notiz",
     danger: "Warnung",
@@ -35,6 +39,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
 
   "/vi/": {
     info: "Thông tin",
+    note: "Note",
     tip: "Tips",
     warning: "Lưu ý",
     danger: "Cẩn thận",
@@ -43,6 +48,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
 
   "/uk/": {
     info: "Інформація",
+    note: "Note",
     tip: "Поради",
     warning: "Примітка",
     danger: "Увага",
@@ -51,6 +57,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
 
   "/ru/": {
     info: "Информация",
+    note: "Note",
     tip: "Подсказки",
     warning: "Примечание",
     danger: "Предупреждение",
@@ -59,6 +66,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
 
   "/br/": {
     info: "Informativo",
+    note: "Note",
     tip: "Dicas",
     warning: "Avisos",
     danger: "Cuidado",

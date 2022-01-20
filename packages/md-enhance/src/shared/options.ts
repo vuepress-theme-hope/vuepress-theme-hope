@@ -32,7 +32,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  customContainer: boolean;
+  container: boolean;
 
   /**
    * 是否启用自定义对齐支持

@@ -13,8 +13,9 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     color ease 0.3s;
 
   .custom-container-title {
-    margin-bottom: -0.4rem;
+    position: relative;
     font-weight: 600;
+    line-height: 1.25;
   }
 
   &.info,
@@ -22,105 +23,123 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   &.warning,
   &.danger {
     margin: 1rem 0;
-    padding: 0.1rem 1.5rem;
-    border-left-width: 0.5rem;
+    padding: 0.25rem 1rem;
+    border-color: var(--hint-box-border-color);
+    border-left-width: 0.3rem;
     border-left-style: solid;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-
-    &::before {
-      content: " ";
-      position: absolute;
-      top: 14px;
-      left: -16px;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-    }
-  }
-
-  &.info,
-  &.tip,
-  &.warning,
-  &.danger {
-    a {
-      color: var(--accent-color);
-    }
+    border-radius: 0.5rem;
+    background: var(--hint-box-bgcolor);
 
     #{config.$darkSelector} & {
-      background: color.scale($darkBgColor, $lightness: 10%);
-      color: color.scale($darkTextColor, $lightness: 10%);
+      background: var(--hint-box-title-color);
 
       code {
         background: #444;
       }
     }
+
+    .custom-container-title {
+      padding-left: 1.5rem;
+      color: var(--hint-box-title-color);
+
+      #{config.$darkSelector} & {
+        color: var(--hint-box-bgcolor);
+      }
+
+      &::before {
+        content: " ";
+        position: absolute;
+        left: 0px;
+        width: 20px;
+        height: 20px;
+        background-position: left;
+        background-repeat: no-repeat;
+      }
+    }
+
+    p {
+      line-height: 1.25;
+    }
+
+    a {
+      color: var(--accent-color);
+    }
   }
 
   &.info {
-    border-color: #007bff;
-    background: #f8f8f8;
+    --hint-box-border-color: #4cb3d4;
+    --hint-box-bgcolor: #eef9fd;
+    --hint-box-title-color: #193c47;
 
     .custom-container-title {
-      color: color.scale(#007bff, $lightness: -20%);
+      &::before {
+        @include svg.background-svg(icons.$info-icon);
+
+        #{config.$darkSelector} & {
+          @include svg.background-svg(icons.$info-dark-icon);
+        }
+      }
     }
+  }
 
-    &::before {
-      @include svg.background-svg(icons.$infoIcon);
+  &.note {
+    --hint-box-border-color: #d4d5d8;
+    --hint-box-bgcolor: #fdfdfe;
+    --hint-box-title-color: #474748;
 
-      #{config.$darkSelector} & {
-        @include svg.background-svg(icons.$infoDarkIcon);
+    .custom-container-title {
+      &::before {
+        @include svg.background-svg(icons.$note-icon);
+
+        #{config.$darkSelector} & {
+          @include svg.background-svg(icons.$note-dark-icon);
+        }
       }
     }
   }
 
   &.tip {
-    border-color: #42b983;
-    background: #f8f8f8;
+    --hint-box-border-color: #009400;
+    --hint-box-bgcolor: #e6f6e6;
+    --hint-box-title-color: #003100;
 
     .custom-container-title {
-      color: color.scale(#42b983, $lightness: -20%);
-    }
+      &::before {
+        @include svg.background-svg(icons.$tip-icon);
 
-    &::before {
-      @include svg.background-svg(icons.$tipIcon);
-
-      #{config.$darkSelector} & {
-        @include svg.background-svg(icons.$tipDarkIcon);
+        #{config.$darkSelector} & {
+          @include svg.background-svg(icons.$tip-dark-icon);
+        }
       }
     }
   }
 
   &.warning {
-    border-color: #f4cd00;
-    background: #fff7d0;
+    --hint-box-border-color: #e6a700;
+    --hint-box-bgcolor: #fff8e6;
+    --hint-box-title-color: #4d3800;
 
     .custom-container-title {
-      color: color.scale(#f4cd00, $lightness: -20%);
-    }
+      &::before {
+        @include svg.background-svg(icons.$warning-icon);
 
-    &::before {
-      @include svg.background-svg(icons.$warningIcon);
-
-      #{config.$darkSelector} & {
-        @include svg.background-svg(icons.$warningDarkIcon);
+        #{config.$darkSelector} & {
+          @include svg.background-svg(icons.$warning-dark-icon);
+        }
       }
     }
   }
 
   &.danger {
-    border-color: #f55;
-    background: #ffe6e6;
+    --hint-box-border-color: #e13238;
+    --hint-box-bgcolor: #ffebec;
+    --hint-box-title-color: #4b1113;
 
     .custom-container-title {
-      color: color.scale(#f55, $lightness: -20%);
-    }
-
-    &::before {
-      @include svg.background-svg(icons.$dangerIcon);
+      @include svg.background-svg(icons.$danger-icon);
 
       #{config.$darkSelector} & {
-        @include svg.background-svg(icons.$dangerDarkIcon);
+        @include svg.background-svg(icons.$danger-dark-icon);
       }
     }
   }
