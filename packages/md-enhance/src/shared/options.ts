@@ -80,76 +80,76 @@ export type MarkdownEnhanceOptions = Partial<{
   mark: boolean;
 
   /**
-   * 是否启用任务里表支持
-   *
    * Whether to enable tastlist format support
+   *
+   * 是否启用任务列表支持
    *
    * @default false
    */
   tasklist: TaskListOptions | boolean;
 
   /**
-   * 是否启用 TeX 语法支持
-   *
    * Whether to enable TeX syntax support
+   *
+   * 是否启用 TeX 语法支持
    *
    * @default false
    */
   tex: KatexOptions | boolean;
 
   /**
-   * 是否启用 Mermaid 流程图支持
-   *
    * Whether to enable mermaid support
+   *
+   * 是否启用 Mermaid 流程图支持
    *
    * @default false
    */
   mermaid: boolean;
 
   /**
-   * 是否启用代码示例功能
-   *
    * Whether to enable code-demo support
+   *
+   * 是否启用代码示例功能
    *
    * @default false
    */
   demo: Partial<CodeDemoOptions> | boolean;
 
   /**
-   * 是否启用幻灯片支持
-   *
    * Whether to enable presentation support
+   *
+   * 是否启用幻灯片支持
    *
    * @default false
    */
   presentation: PresentationOptions | boolean;
 
   /**
-   * 是否启用全部增强
-   *
    * Whether to enable all features.
+   *
+   * 是否启用全部增强语法
    *
    * @default false
    */
   enableAll: boolean;
 
   /**
-   * 操作页面 DOM 的延时，单位 ms
-   *
-   * 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
-   *
    * The delay of operating dom, in ms
    *
    * If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`
+   *
+   * 操作页面 DOM 的延时，单位 ms
+   *
+   * 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
    *
    * @default 500
    */
   delay?: number;
 
   /**
-   * 国际化配置选项
-   *
    * Locale config
+   *
+   * 国际化配置选项
    */
   locales?: LocaleConfig<MarkdownEnhanceLocaleData>;
 }>;

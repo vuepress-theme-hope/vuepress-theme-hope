@@ -5,7 +5,7 @@ import { LoadingIcon } from "./icons";
 import type { RevealOptions } from "reveal.js";
 import type { PropType, VNode } from "vue";
 
-declare const MARKDOWN_DELAY: number;
+declare const MARKDOWN_ENHANCE_DELAY: number;
 declare const REVEAL_CONFIG: Partial<RevealOptions>;
 declare const REVEAL_PLUGIN_HIGHLIGHT: boolean;
 declare const REVEAL_PLUGIN_MATH: boolean;
@@ -52,7 +52,7 @@ export default defineComponent({
         presentationElement.value.setAttribute("data-theme", props.theme);
 
         const promises: [Promise<void>, Promise<typeof import("reveal.js")>] = [
-          new Promise((resolve) => setTimeout(resolve, MARKDOWN_DELAY)),
+          new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
           import(/* webpackChunkName: "reveal" */ "reveal.js"),
         ];
 

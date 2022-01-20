@@ -67,7 +67,7 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
     },
 
     define: (): Record<string, unknown> => ({
-      MARKDOWN_DELAY: markdownOptions.delay || 500,
+      MARKDOWN_ENHANCE_DELAY: markdownOptions.delay || 500,
       MARKDOWN_ENHANCE_ALIGN: alignEnable,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
       MARKDOWN_ENHANCE_MERMAID: mermaidEnable,

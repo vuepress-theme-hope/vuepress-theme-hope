@@ -4,7 +4,7 @@ import { loadScript } from "./utils";
 
 import type { CodeDemoOptions } from "../../shared";
 
-declare const MARKDOWN_DELAY: number;
+declare const MARKDOWN_ENHANCE_DELAY: number;
 
 export const initDemo = (): void => {
   setTimeout(() => {
@@ -58,5 +58,5 @@ export const initDemo = (): void => {
         }
       })
     );
-  }, MARKDOWN_DELAY);
+  }, MARKDOWN_ENHANCE_DELAY);
 };
