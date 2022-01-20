@@ -1,5 +1,5 @@
 import { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
-import { PageInfoType } from "./pageInfo";
+import { PageInfo } from "./options/pageInfo";
 
 export interface CommentPluginFrontmatter extends BasePageFrontMatter {
   /**
@@ -29,5 +29,5 @@ export interface CommentPluginFrontmatter extends BasePageFrontMatter {
    *
    * @default ["Author", "Visitor", "Time", "Category", "Tag", "ReadTime"]
    */
-  pageInfo?: PageInfoType[] | false;
+  pageInfo?: PageInfo[] | false;
 }
