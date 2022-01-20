@@ -54,11 +54,9 @@ export default defineComponent({
             "span",
             {
               class: "visitor-info",
+              ariaLabel: pageInfoLocale.value.views,
               ...(commentOptions.hint !== false
-                ? {
-                    ariaLabel: pageInfoLocale.value.views,
-                    "data-balloon-pos": "down",
-                  }
+                ? { "data-balloon-pos": "down" }
                 : {}),
             },
             [

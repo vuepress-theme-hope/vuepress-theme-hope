@@ -21,11 +21,9 @@ export default defineComponent({
             "span",
             {
               class: "author-info",
+              ariaLabel: pageInfoLocale.value.author,
               ...(commentOptions.hint !== false
-                ? {
-                    ariaLabel: pageInfoLocale.value.author,
-                    "data-balloon-pos": "down",
-                  }
+                ? { "data-balloon-pos": "down" }
                 : {}),
             },
             [

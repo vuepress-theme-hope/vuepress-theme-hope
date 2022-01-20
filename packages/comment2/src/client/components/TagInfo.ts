@@ -34,12 +34,12 @@ export default defineComponent({
       items.value.length
         ? h(
             "span",
-            commentOptions.hint !== false
-              ? {
-                  ariaLabel: pageInfoLocale.value.tag,
-                  "data-balloon-pos": "down",
-                }
-              : {},
+            {
+              ariaLabel: pageInfoLocale.value.tag,
+              ...(commentOptions.hint !== false
+                ? { "data-balloon-pos": "down" }
+                : {}),
+            },
             [
               h(TagIcon),
               h(

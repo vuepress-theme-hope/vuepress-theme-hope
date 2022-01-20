@@ -42,11 +42,9 @@ export default defineComponent({
             "span",
             {
               class: "category-info",
+              ariaLabel: pageInfoLocale.value.category,
               ...(commentOptions.hint !== false
-                ? {
-                    ariaLabel: pageInfoLocale.value.category,
-                    "data-balloon-pos": "down",
-                  }
+                ? { "data-balloon-pos": "down" }
                 : {}),
             },
             [

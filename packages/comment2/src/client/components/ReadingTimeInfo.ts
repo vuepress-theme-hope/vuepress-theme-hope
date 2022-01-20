@@ -32,11 +32,9 @@ export default defineComponent({
         "span",
         {
           class: "reading-time-info",
+          ariaLabel: pageInfoLocale.value.readingTime,
           ...(commentOptions.hint !== false
-            ? {
-                ariaLabel: pageInfoLocale.value.readingTime,
-                "data-balloon-pos": "down",
-              }
+            ? { "data-balloon-pos": "down" }
             : {}),
         },
         [

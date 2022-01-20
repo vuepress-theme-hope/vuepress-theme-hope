@@ -32,11 +32,9 @@ export default defineComponent({
             "span",
             {
               class: "date-info",
+              ariaLabel: pageInfoLocale.value.date,
               ...(commentOptions.hint !== false
-                ? {
-                    ariaLabel: pageInfoLocale.value.date,
-                    "data-balloon-pos": "down",
-                  }
+                ? { "data-balloon-pos": "down" }
                 : {}),
             },
             [

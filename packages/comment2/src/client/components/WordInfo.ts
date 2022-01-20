@@ -27,11 +27,9 @@ export default defineComponent({
             "span",
             {
               class: "words-info",
+              ariaLabel: pageInfoLocale.value.words,
               ...(commentOptions.hint !== false
-                ? {
-                    ariaLabel: pageInfoLocale.value.words,
-                    "data-balloon-pos": "down",
-                  }
+                ? { "data-balloon-pos": "down" }
                 : {}),
             },
             [
