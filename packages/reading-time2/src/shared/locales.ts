@@ -7,21 +7,23 @@ import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
  */
 export interface ReadingTimeLocaleData {
   /**
-   * 字数模板
+   * Word template, `$word` will be automatically replaced by actual words
    *
-   * Word template
+   * 字数模板，模板中 `$word` 会被自动替换为字数
    */
   word: string;
+
   /**
-   * 小于一分钟文字
-   *
    * Text for less than one minute
-   */
-  minute: string;
-  /**
-   * 时间模板
    *
+   * 小于一分钟文字
+   */
+  less1Minute: string;
+
+  /**
    * Time template
+   *
+   * 时间模板
    */
   time: string;
 }

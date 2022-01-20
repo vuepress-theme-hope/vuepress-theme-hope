@@ -17,7 +17,7 @@ export default defineComponent({
 
     const readingTime = computed(() =>
       page.value.readingTime.minutes < 1
-        ? [readingTimeLocale.value.minute, "PT1M"]
+        ? [readingTimeLocale.value.less1Minute, "PT1M"]
         : [
             readingTimeLocale.value.time.replace(
               "$time",
