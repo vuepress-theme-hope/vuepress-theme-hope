@@ -5,47 +5,49 @@ import type { ManifestOption } from "./manifest";
 
 interface ApplePWAOptions {
   /**
-   * 苹果上使用的图标路径
-   *
-   * 推荐 152×152 大小
-   *
    * Path of icon used on apple devices
    *
    * Recommand 152×152 size
+   *
+   * 苹果上使用的图标路径
+   *
+   * 推荐 152×152 大小
    */
   icon?: string;
 
   /**
-   * 状态栏的颜色
-   *
    * Color of status bar
+   *
+   * 状态栏的颜色
    *
    * @default 'black'
    */
   statusBarColor?: "black" | "white";
 
   /**
-   * Safari 图标
-   *
    * Safari mask icon
+   *
+   * Safari 图标
    */
   maskIcon?: string;
 }
 
 interface MicrosoftPWAOptions {
   /**
-   * 微软磁贴图片
-   *
    * Microsoft tile image
    *
    * 144×144 transperent recommanded
+   *
+   * 微软磁贴图片
+   *
+   * 推荐 144×144，透明
    */
   image?: string;
 
   /**
-   * 磁贴颜色
-   *
    * tile color
+   *
+   * 磁贴颜色
    */
   color?: string;
 }
@@ -53,100 +55,100 @@ interface MicrosoftPWAOptions {
 /** PWA 配置 */
 export interface PWAOptions {
   /**
-   * Service Worker 文件路径
-   *
    * Service Worker file path
+   *
+   * Service Worker 文件路径
    *
    * @default 'service-worker.js'
    */
   swPath?: string;
 
   /**
-   * 是否显示安装按钮
-   *
    * Whether display install button
+   *
+   * 是否显示安装按钮
    *
    * @default true
    */
   showInstall?: boolean;
 
   /**
-   * manifest 文件设置
-   *
    * manifest file Config
+   *
+   * manifest 文件设置
    */
   manifest?: ManifestOption;
 
   /**
-   * favico 地址
-   *
    * Path of favico
+   *
+   * favico 地址
    */
   favicon?: string;
 
   /**
-   * 主题色
-   *
    * Theme Color
+   *
+   * 主题色
    *
    * @default "#46bd87"
    */
   themeColor?: string;
 
   /**
-   * 允许缓存的最大大小，单位 KB
-   *
    * Max size which allows to cache, with KB unit
+   *
+   * 允许缓存的最大大小，单位 KB
    *
    * @default 2048
    */
   maxSize?: number;
 
   /**
-   * 是否缓存除主页与 404 之外的 HTML
-   *
    * Whether cache html files besides home page and 404
+   *
+   * 是否缓存除主页与 404 之外的 HTML
    *
    * @default true
    */
   cacheHTML?: boolean;
 
   /**
-   * 是否缓存站点图片
-   *
    * Whether cache pictures
+   *
+   * 是否缓存站点图片
    *
    * @default false
    */
   cachePic?: boolean;
 
   /**
-   * 图片允许缓存的最大大小，单位 KB
-   *
    * Max size which allows to cache, with KB unit
+   *
+   * 图片允许缓存的最大大小，单位 KB
    *
    * @default 1024
    */
   maxPicSize?: number;
 
   /**
-   * 苹果设置
-   *
    * settings for apple
+   *
+   * 苹果设置
    */
   apple?: ApplePWAOptions | false;
 
   /**
-   * 微软设置
-   *
    * Settings for Microsoft
+   *
+   * 微软设置
    */
   msTile?: MicrosoftPWAOptions | false;
 
   /**
-   * 用于替换默认弹出组件的自定义组件。
-   *
    * A custom component to replace the default popup component.
+   *
+   * 用于替换默认弹出组件的自定义组件。
    *
    * @default 'SWUpdatePopup'
    */
@@ -159,9 +161,9 @@ export interface PWAOptions {
   generateSWConfig?: GenerateSWOptions;
 
   /**
-   * 国际化配置
-   *
    * Locales config
+   *
+   * 国际化配置
    */
 
   locales?: LocaleConfig<PWALocaleData>;

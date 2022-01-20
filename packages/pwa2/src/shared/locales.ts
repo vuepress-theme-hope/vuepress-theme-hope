@@ -2,72 +2,72 @@ import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 export interface PWALocaleData {
   /**
-   * 安装按钮文字
-   *
    * Install button text
+   *
+   * 安装按钮文字
    */
   install: string;
 
   /**
-   * iOS 安装文字
-   *
    * iOS install hint text
+   *
+   * iOS 安装文字
    */
   iOSInstall: string;
 
   /**
-   * 取消按钮文字
-   *
    * Cancel button text
+   *
+   * 取消按钮文字
    */
   cancel: string;
 
   /**
-   * 关闭按钮文字
-   *
    * Close button text
+   *
+   * 关闭按钮文字
    */
   close: string;
 
   /**
-   * 上一张图片文字
-   *
    * Previous image text
+   *
+   * 上一张图片文字
    */
   prevImage: string;
 
   /**
-   * 下一张图片文字
-   *
    * Next image text
+   *
+   * 下一张图片文字
    */
   nextImage: string;
 
   /**
-   * 安装解释
-   *
    * Install explain text
+   *
+   * 安装解释
    */
   explain: string;
 
   /**
-   * 描述标签文字
-   *
    * Description label text
+   *
+   * 描述标签文字
    */
   desc: string;
 
   /**
-   * 特性标签文字
-   *
    * Feature label text
+   *
+   * 特性标签文字
    */
   feature: string;
 
   /**
-   * 更新内容标签文字
-   *
    * Update label text
+   *
+   * 更新内容标签文字
    */
   update: string;
 }
