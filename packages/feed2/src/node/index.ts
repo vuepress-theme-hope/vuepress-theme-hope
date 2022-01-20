@@ -1,16 +1,11 @@
-import {
-  checkOptions,
-  getFeedChannelOption,
-  getFeedLinks,
-  getOutput,
-} from "./options";
+import { checkOptions, getFeedChannelOption, getFeedLinks } from "./options";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
 
 import type { PageFrontmatter, Plugin } from "@vuepress/core";
-import type { FeedOptions, FeedPluginFrontmatter } from "./types";
+import type { FeedOptions, FeedPluginFrontmatter } from "../shared";
 
-export * from "./types";
+export * from "../shared";
 
 const isFeed = (frontmatter: PageFrontmatter<FeedPluginFrontmatter>): boolean =>
   !frontmatter.home &&
@@ -24,8 +19,6 @@ const feedPlugin: Plugin<FeedOptions> = (options, app) => {
   if (!feedOptions) return {};
 
   const channelOptions = getFeedChannelOption(feedOptions, app);
-  const output = getOutput(feedOptions.output);
-  const feedLinks = getFeedLinks(feedOptions, output, app);
 
   return {
     name: "feed2",
@@ -45,13 +38,13 @@ const feedPlugin: Plugin<FeedOptions> = (options, app) => {
                 page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>
               ))
         )
-        .sort(feedOptions.sort)
+        .sort(feedOptions.sorter)
         .slice(0, feedOptions.count);
 
       await new FeedGenerator(
         feedPages,
         feedOptions,
-        { channel: channelOptions, links: feedLinks },
+        { channel: channelOptions, links: getFeedLinks(feedOptions, app) },
         app
       ).generateFeed();
     },

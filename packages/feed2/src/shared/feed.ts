@@ -11,6 +11,8 @@ export interface FeedAuthor {
   avatar?: string;
 }
 
+export type FeedContributor = FeedAuthor;
+
 export interface FeedCategory {
   name: string;
   /**
@@ -35,51 +37,51 @@ export interface FeedEnclosure {
 
 export interface FeedChannelOption {
   /**
-   * 频道的标题
-   *
    * Channel title
+   *
+   * 频道的标题
    */
   title: string;
 
   /**
-   * 频道地址
-   *
    * The URL to the HTML website corresponding to the channel.
+   *
+   * 频道地址
    */
   link: string;
 
   /**
-   * 频道描述信息
-   *
    * Phrase or sentence describing the channel.
+   *
+   * 频道描述信息
    */
   description: string;
 
   /**
-   * 频道使用的语言
-   *
    * The language the channel is written in.
+   *
+   * 频道使用的语言
    */
   language: string;
 
   /**
-   * 频道版权信息
-   *
    * Copyright notice for content in the channel.
+   *
+   * 频道版权信息
    */
   copyright: string;
 
   /**
-   * 频道内容的发布时间
-   *
    * The publication date for the content in the channel.
+   *
+   * 频道内容的发布时间
    */
   pubDate?: Date;
 
   /**
-   * 频道内容的上次更新时间
-   *
    * The last time the content of the channel changed.
+   *
+   * 频道内容的上次更新时间
    */
   lastUpdated?: Date;
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { Feed } from "../feed";
-import type { FeedAuthor } from "../types";
+import type { FeedAuthor } from "../../shared";
 import type { JSONAuthor, JSONContent, JSONItem } from "./typings";
 
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({

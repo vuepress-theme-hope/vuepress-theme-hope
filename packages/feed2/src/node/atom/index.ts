@@ -3,7 +3,7 @@ import * as convert from "xml-js";
 import { generator } from "../utils";
 
 import type { Feed } from "../feed";
-import type { FeedAuthor, FeedCategory } from "../types";
+import type { FeedAuthor, FeedCategory } from "../../shared";
 import type {
   AtomAuthor,
   AtomCategory,

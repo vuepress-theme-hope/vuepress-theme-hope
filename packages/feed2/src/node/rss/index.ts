@@ -3,7 +3,7 @@ import * as convert from "xml-js";
 import { generator } from "../utils";
 
 import type { Feed } from "../feed";
-import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../types";
+import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../../shared";
 import type {
   RSSCategory,
   RSSContent,
