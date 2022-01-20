@@ -1,6 +1,6 @@
 import { checkLang, deepAssign, lang2Path, showLangError } from "../shared";
 import type { App, AppOptions, LocaleConfig } from "@vuepress/core";
-import type { BaseThemeConfig, HopeLang, CovertLocaleConfig } from "../shared";
+import type { BaseThemeConfig, HopeLang, ConvertLocaleConfig } from "../shared";
 
 /**
  * Get language of root directory
@@ -56,9 +56,9 @@ export const getLocalePaths = (app: App): string[] =>
  */
 export const getLocales = <T>(
   app: App,
-  defaultLocalesConfig: CovertLocaleConfig<T>,
+  defaultLocalesConfig: ConvertLocaleConfig<T>,
   userLocalesConfig: LocaleConfig<T> = {}
-): CovertLocaleConfig<T> => {
+): ConvertLocaleConfig<T> => {
   const rootPath = getRootLangPath(app);
 
   return Object.fromEntries([

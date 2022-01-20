@@ -2,7 +2,7 @@ import { useRouteLocale } from "@vuepress/client";
 import { computed } from "vue";
 
 import type { ComputedRef } from "vue";
-import type { CovertLocaleConfig } from "../../shared";
+import type { ConvertLocaleConfig } from "../../shared";
 
 /**
  * Get current locale config
@@ -11,7 +11,7 @@ import type { CovertLocaleConfig } from "../../shared";
  * @returns current locale config
  */
 export const useLocaleConfig = <T>(
-  localesConfig: CovertLocaleConfig<T>
+  localesConfig: ConvertLocaleConfig<T>
 ): ComputedRef<T> => {
   const routeLocale = useRouteLocale();
 

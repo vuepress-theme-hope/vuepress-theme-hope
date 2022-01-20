@@ -1,4 +1,4 @@
-import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 export interface ComponentLocaleData {
   /**
@@ -58,4 +58,4 @@ export interface ComponentLocaleData {
   };
 }
 
-export type ComponentLocaleConfig = CovertLocaleConfig<ComponentLocaleData>;
+export type ComponentLocaleConfig = ConvertLocaleConfig<ComponentLocaleData>;

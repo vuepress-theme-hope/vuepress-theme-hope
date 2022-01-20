@@ -1,4 +1,4 @@
-import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 export interface MarkdownEnhanceLocaleData {
   /**
@@ -47,4 +47,4 @@ export interface MarkdownEnhanceLocaleData {
 export type MarkdownContainerName = keyof MarkdownEnhanceLocaleData;
 
 export type MarkdownEnhanceLocaleConfig =
-  CovertLocaleConfig<MarkdownEnhanceLocaleData>;
+  ConvertLocaleConfig<MarkdownEnhanceLocaleData>;

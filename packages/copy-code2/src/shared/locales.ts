@@ -1,4 +1,4 @@
-import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 export interface CopyCodeLocaleData {
   /**
@@ -16,4 +16,4 @@ export interface CopyCodeLocaleData {
   hint: string;
 }
 
-export type CopyCodeLocaleConfig = CovertLocaleConfig<CopyCodeLocaleData>;
+export type CopyCodeLocaleConfig = ConvertLocaleConfig<CopyCodeLocaleData>;

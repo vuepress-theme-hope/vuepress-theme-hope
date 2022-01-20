@@ -1,4 +1,4 @@
-import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 export interface PWALocaleData {
   /**
@@ -72,4 +72,4 @@ export interface PWALocaleData {
   update: string;
 }
 
-export type PWALocaleConfig = CovertLocaleConfig<PWALocaleData>;
+export type PWALocaleConfig = ConvertLocaleConfig<PWALocaleData>;

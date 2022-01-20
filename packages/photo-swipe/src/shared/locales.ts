@@ -1,4 +1,4 @@
-import type { CovertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 import type PhotoSwipeDefaultUI from "photoswipe/dist/photoswipe-ui-default";
 
 export interface PhowoSwipeLocaleData {
@@ -52,4 +52,4 @@ export interface PhowoSwipeLocaleData {
   buttons: PhotoSwipeDefaultUI.ShareButtonData[];
 }
 
-export type PhowoSwipeLocaleConfig = CovertLocaleConfig<PhowoSwipeLocaleData>;
+export type PhowoSwipeLocaleConfig = ConvertLocaleConfig<PhowoSwipeLocaleData>;
