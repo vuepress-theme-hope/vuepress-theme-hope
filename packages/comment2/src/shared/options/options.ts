@@ -1,94 +1,7 @@
 // TODO: Add vssue back
-import type { Author } from "@mr-hope/vuepress-shared";
-import type { LocaleConfig } from "@vuepress/core";
-import type { WalineOptions as _WalineOptions } from "@waline/client";
+import type { DisableCommentOptions } from "./disable";
+import type { WalineOptions } from "./waline";
 // import type { Vssue } from "vssue";
-import type { PageInfoLocaleData, PageInfoType } from "./pageInfo";
-import type { WalineLocaleData } from "./waline";
-
-interface BaseCommentOptions {
-  /**
-   * 默认作者
-   *
-   * Default author
-   */
-  author?: Author;
-  /**
-   * 是否启用文章信息的弹窗提示
-   *
-   * Whether enable hint popup for pageinfo
-   *
-   * @default true
-   */
-  hint?: boolean;
-  /**
-   * 文章信息配置
-   *
-   * Page Info display configuration
-   *
-   * @see https://vuepress-theme-hope.github.io/comment/zh/config/#pageinfo (zh)
-   * @see https://vuepress-theme-hope.github.io/comment/config/#pageinfo (en)
-   *
-   * @default ['Author', 'PageView', 'Date', 'Category', 'Tag', 'ReadTime']
-   */
-  pageInfo?: PageInfoType[] | false;
-
-  /**
-   * 是否默认启用评论
-   *
-   * Whether enable comment by default
-   *
-   * @default true
-   */
-  comment?: boolean;
-
-  /**
-   * 每分钟阅读字数
-   *
-   * Reading speed of words per minute
-   *
-   * @default 300
-   */
-  wordPerminute?: number;
-
-  /**
-   * 进行 DOM 操作的延时，单位 ms
-   *
-   * 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
-   *
-   * The delay of dom operation, in ms
-   *
-   * If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`
-   *
-   * @default 500
-   */
-  delay?: number;
-
-  /**
-   * Locale config for pageInfo
-   */
-  pageInfoLocales?: LocaleConfig<PageInfoLocaleData>;
-}
-
-export interface WalineOptions
-  extends BaseCommentOptions,
-    Omit<_WalineOptions, "el" | "visitor"> {
-  type: "waline";
-
-  /**
-   * 是否启用访问量
-   *
-   * Whether enable page views count by default
-   *
-   * @default true
-   */
-  pageviews?: boolean;
-
-  /**
-   * Locale config for waline
-   */
-  walineLocales?: LocaleConfig<WalineLocaleData>;
-}
 
 // /** Vssue 配置 */
 // export interface VssueOptions extends BaseCommentOptions {
@@ -201,11 +114,6 @@ export interface WalineOptions
 //    */
 //   autoCreateIssue?: false;
 // }
-
-export interface DisableCommentOptions extends BaseCommentOptions {
-  type: "disable";
-  comment: never;
-}
 
 /**
  * 评论选项

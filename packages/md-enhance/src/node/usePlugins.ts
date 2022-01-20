@@ -3,8 +3,7 @@ import { codeDemoRender, getDetailsRender } from "./markdown-it";
 import { markdownEnhanceLocales } from "./locales";
 
 import type { ContainerPluginOptions } from "@vuepress/plugin-container";
-import type { App } from "@vuepress/core";
-import type { LocaleConfig } from "@vuepress/shared";
+import type { App, LocaleConfig } from "@vuepress/core";
 import type { MarkdownContainerName, MarkdownEnhanceOptions } from "../shared";
 
 export const usePlugins = (

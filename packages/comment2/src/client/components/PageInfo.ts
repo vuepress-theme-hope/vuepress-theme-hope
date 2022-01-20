@@ -18,7 +18,7 @@ import type { VNode } from "vue";
 import type {
   CommentOptions,
   CommentPluginFrontmatter,
-  PageInfoType,
+  PageInfo,
 } from "../../shared";
 
 import "balloon-css/balloon.css";
@@ -42,7 +42,7 @@ export default defineComponent({
     const themePluginConfig = useThemePluginConfig<CommentOptions>("comment");
     const iconPrefix = useIconPrefix();
 
-    const pageInfoItems = computed<PageInfoType[] | false>(() => {
+    const pageInfoItems = computed<PageInfo[] | false>(() => {
       const themeConfig = themePluginConfig.value.pageInfo;
       const pluginConfig = commentOptions.pageInfo;
       const pageConfig = frontmatter.value.pageInfo;
