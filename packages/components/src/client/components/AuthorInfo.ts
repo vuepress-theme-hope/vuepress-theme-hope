@@ -4,15 +4,28 @@ import {
 } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { AuthorIcon } from "./icons";
-import { commentOptions, pageInfoLocales } from "../define";
+import { pageInfoLocales } from "../define";
 
-import type { VNode } from "vue";
+import type { Author } from "@mr-hope/vuepress-shared";
+import type { PropType, VNode } from "vue";
 
 export default defineComponent({
   name: "AuthorInfo",
 
-  setup() {
-    const author = useAuthor(commentOptions.author);
+  props: {
+    defaultAuthor: {
+      type: Object as PropType<Author>,
+      default: () => ({}),
+    },
+
+    hint: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
+  setup(props) {
+    const author = useAuthor(props.defaultAuthor);
     const pageInfoLocale = useLocaleConfig(pageInfoLocales);
 
     return (): VNode | null =>
@@ -22,9 +35,7 @@ export default defineComponent({
             {
               class: "author-info",
               ariaLabel: pageInfoLocale.value.author,
-              ...(commentOptions.hint !== false
-                ? { "data-balloon-pos": "down" }
-                : {}),
+              ...(props.hint ? { "data-balloon-pos": "down" } : {}),
             },
             [
               h(AuthorIcon),

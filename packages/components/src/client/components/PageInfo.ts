@@ -1,8 +1,4 @@
-import {
-  useIconPrefix,
-  useLocaleConfig,
-  useThemePluginConfig,
-} from "@mr-hope/vuepress-shared/lib/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, resolveComponent, h } from "vue";
 import AuthorInfo from "./AuthorInfo";
@@ -12,14 +8,10 @@ import PageViewInfo from "./PageViewInfo";
 import ReadingTimeInfo from "./ReadingTimeInfo";
 import TagInfo from "./TagInfo";
 import WordInfo from "./WordInfo";
-import { commentOptions, pageInfoLocales } from "../define";
+import { pageInfoLocales } from "../define";
 
-import type { VNode } from "vue";
-import type {
-  CommentOptions,
-  CommentPluginFrontmatter,
-  PageInfo,
-} from "../../shared";
+import type { PropType, VNode } from "vue";
+import type { PageInfoFrontmatter, PageInfo } from "../../shared";
 
 import "balloon-css/balloon.css";
 
@@ -36,30 +28,68 @@ export default defineComponent({
     WordInfo,
   },
 
-  setup() {
+  props: {
+    titleIcon: {
+      type: Boolean,
+      default: true,
+    },
+
+    titleIconPrefix: {
+      type: String,
+      default: "",
+    },
+
+    items: {
+      type: Array as PropType<PageInfo[]>,
+      default: (): PageInfo[] => [
+        "Author",
+        "PageView",
+        "Date",
+        "Category",
+        "Tag",
+        "ReadingTime",
+      ],
+    },
+
+    defaultAuthor: {
+      type: String,
+      default: "",
+    },
+
+    categoryPath: {
+      type: String,
+      default: "",
+    },
+
+    tagPath: {
+      type: String,
+      default: "",
+    },
+
+    hint: {
+      type: Boolean,
+      default: true,
+    },
+
+    visitor: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  setup(props) {
     const page = usePageData();
-    const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
-    const themePluginConfig = useThemePluginConfig<CommentOptions>("comment");
-    const iconPrefix = useIconPrefix();
+    const frontmatter = usePageFrontmatter<PageInfoFrontmatter>();
 
     const pageInfoItems = computed<PageInfo[] | false>(() => {
-      const themeConfig = themePluginConfig.value.pageInfo;
-      const pluginConfig = commentOptions.pageInfo;
+      const pluginConfig = props.items;
       const pageConfig = frontmatter.value.pageInfo;
 
       return pageConfig === false
         ? false
         : Array.isArray(pageConfig)
         ? pageConfig
-        : pluginConfig === false
-        ? false
-        : Array.isArray(pluginConfig)
-        ? pluginConfig
-        : themeConfig === false
-        ? false
-        : Array.isArray(themeConfig)
-        ? themeConfig
-        : ["Author", "PageView", "Date", "Category", "Tag", "ReadingTime"];
+        : pluginConfig;
     });
 
     const isOriginal = computed(() => frontmatter.value.original);
@@ -68,11 +98,11 @@ export default defineComponent({
     return (): VNode =>
       h("div", { class: "page-title" }, [
         h("h1", [
-          frontmatter.value.icon
+          props.titleIcon && frontmatter.value.icon
             ? h("i", {
                 class: [
                   "iconfont",
-                  `${iconPrefix.value}${frontmatter.value.icon}`,
+                  `${props.titleIconPrefix || ""}${frontmatter.value.icon}`,
                 ],
               })
             : null,
@@ -84,7 +114,7 @@ export default defineComponent({
                 ? h("span", { class: "origin" }, pageInfoLocale.value.origin)
                 : null,
               ...pageInfoItems.value.map((item) =>
-                h(resolveComponent(`${item}-info`))
+                h(resolveComponent(`${item}-info`), props)
               ),
             ])
           : null,

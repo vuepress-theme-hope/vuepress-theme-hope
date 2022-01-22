@@ -2,7 +2,7 @@ import { useDate, useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { CalendarIcon } from "./icons";
-import { commentOptions, pageInfoLocales } from "../define";
+import { pageInfoLocales } from "../define";
 
 import type { GitData } from "@vuepress/plugin-git";
 import type { VNode } from "vue";
@@ -10,7 +10,14 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "DateInfo",
 
-  setup() {
+  props: {
+    hint: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
+  setup(props) {
     const page = usePageData<{
       git?: GitData;
     }>();
@@ -33,9 +40,7 @@ export default defineComponent({
             {
               class: "date-info",
               ariaLabel: pageInfoLocale.value.date,
-              ...(commentOptions.hint !== false
-                ? { "data-balloon-pos": "down" }
-                : {}),
+              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
             },
             [
               h(CalendarIcon),

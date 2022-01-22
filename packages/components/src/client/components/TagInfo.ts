@@ -1,9 +1,9 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { useBlogConfig, useTag } from "@mr-hope/vuepress-shared/lib/client";
-import { computed, defineComponent, h, toRef } from "vue";
+import { useTag } from "@mr-hope/vuepress-shared/lib/client";
+import { defineComponent, h, toRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { TagIcon } from "./icons";
-import { commentOptions, pageInfoLocales } from "../define";
+import { pageInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
 
@@ -11,7 +11,17 @@ export default defineComponent({
   name: "TagInfo",
 
   props: {
-    tags: { type: Array as PropType<string[]>, default: (): string[] => [] },
+    tags: {
+      type: Array as PropType<string[]>,
+      default: (): string[] => [],
+    },
+
+    tagPath: { type: String, default: "" },
+
+    hint: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   setup(props) {
@@ -22,12 +32,10 @@ export default defineComponent({
 
     const items = props.tags.length ? toRef(props, "tags") : useTag();
 
-    const clickable = computed(() => useBlogConfig().value !== false);
-
     const navigate = (tagName: string): void => {
-      const path = `/tag/${encodeURI(tagName)}/`;
+      const path = props.tagPath.replace(/\$tag/g, decodeURI(tagName));
 
-      if (clickable.value && route.path !== path) void router.push(path);
+      if (path && route.path !== path) void router.push(path);
     };
 
     return (): VNode | null =>
@@ -36,9 +44,7 @@ export default defineComponent({
             "span",
             {
               ariaLabel: pageInfoLocale.value.tag,
-              ...(commentOptions.hint !== false
-                ? { "data-balloon-pos": "down" }
-                : {}),
+              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
             },
             [
               h(TagIcon),
@@ -52,15 +58,11 @@ export default defineComponent({
                       class: {
                         tag: true,
                         [`tag${index % 9}`]: true,
-                        clickable: clickable.value,
+                        clickable: props.tagPath,
                       },
                       onClick: () => navigate(tag),
                     },
-                    h(
-                      "span",
-                      { role: clickable.value ? "navigation" : "" },
-                      tag
-                    )
+                    h("span", { role: props.tagPath ? "navigation" : "" }, tag)
                   )
                 )
               ),

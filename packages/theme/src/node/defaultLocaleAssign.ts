@@ -3,7 +3,9 @@ import { themeLocalesData } from "./locales";
 import type { HopeThemeData } from "../shared";
 import type { App } from "@vuepress/core";
 
-const defaultRootOptions = {};
+const defaultRootOptions: HopeThemeData = {
+  iconPrefix: "icon-",
+};
 
 /**
  * Assign default options to `themeConfig`

@@ -1,13 +1,11 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed } from "vue";
 import { getAuthor, getCategory, getDate, getTag } from "../../shared";
-import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 
 import type { ComputedRef } from "vue";
 import type {
   Author,
   AuthorInfo,
-  BaseThemeConfig,
   BasePageFrontMatter,
   DateInfo,
   DateOptions,
@@ -15,14 +13,15 @@ import type {
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
-export const useAuthor = (fallback?: Author): AuthorRef =>
-  computed(() =>
-    getAuthor(
-      usePageFrontmatter<BasePageFrontMatter>().value,
-      useThemeData<BaseThemeConfig>().value,
-      fallback
-    )
-  );
+export const useAuthor = (fallback: Author): AuthorRef =>
+  computed(() => {
+    const { author } = usePageFrontmatter<BasePageFrontMatter>().value;
+
+    if (author) return getAuthor(author);
+    if (author === false) return [];
+
+    return getAuthor(fallback, false);
+  });
 
 export type CategoryRef = ComputedRef<string[]>;
 

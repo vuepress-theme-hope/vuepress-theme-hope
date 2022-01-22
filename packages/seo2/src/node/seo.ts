@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Logger, getDate, _getAuthor } from "@mr-hope/vuepress-shared";
+import { Logger, getDate, getAuthor } from "@mr-hope/vuepress-shared";
 import { fs } from "@vuepress/utils";
 import { getLocales, getLink } from "./utils";
 
@@ -43,7 +43,7 @@ export const generateSeo = (
   const author =
     pageAuthor === false
       ? []
-      : _getAuthor(
+      : getAuthor(
           pageAuthor ||
             options.author ||
             (app.options.themeConfig.author as string | undefined) ||

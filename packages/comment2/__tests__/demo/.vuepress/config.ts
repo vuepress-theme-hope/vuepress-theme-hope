@@ -9,6 +9,10 @@ const config: UserConfig<DefaultThemeOptions> = {
 
   description: "Comment Plugin for VuePress",
 
+  locales: {
+    "/": { lang: "en-US" },
+  },
+
   theme: path.resolve(__dirname, "./theme"),
 
   themeConfig: {
