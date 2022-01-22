@@ -27,6 +27,7 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "Weniger als eine Minute",
     time: "Ungefähr $time min",
   },
+
   "/vi/": {
     word: "Khoảng $word từ",
     less1Minute: "Ít hơn 1 phút",

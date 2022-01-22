@@ -1,5 +1,11 @@
 @use "sass:meta";
+
+@use "@hope/palette";
+
 @use "badge";
 @use "breadcrumb";
+@use "category";
 @use "code-group";
+@use "pageinfo";
 @use "pagination";
+@use "tag";

@@ -1,7 +1,4 @@
-import {
-  useLocaleConfig,
-  useThemePluginConfig,
-} from "@mr-hope/vuepress-shared/lib/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import {
   computed,
@@ -13,13 +10,12 @@ import {
   watch,
 } from "vue";
 import { useRoute } from "vue-router";
-import { resolveEnablePageViews } from "../composables";
 import { enableWaline, walineOption } from "../define";
 import { walineLocales } from "../define";
 
 import type { WalineInstance } from "@waline/client";
 import type { VNode } from "vue";
-import type { CommentPluginFrontmatter, WalineOptions } from "../../shared";
+import type { CommentPluginFrontmatter } from "../../shared";
 import "../styles/waline.scss";
 
 export default defineComponent({
@@ -29,7 +25,6 @@ export default defineComponent({
     const route = useRoute();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
-    const themePluginConfig = useThemePluginConfig<WalineOptions>("comment");
     const walineLocale = useLocaleConfig(walineLocales);
 
     let id: number;
@@ -37,7 +32,6 @@ export default defineComponent({
 
     const enableComment = computed(() => {
       if (!enableWaline) return false;
-      const themeConfig = themePluginConfig.value.comment;
       const pluginConfig = walineOption.comment !== false;
       const pageConfig = frontmatter.value.comment;
 
@@ -47,18 +41,23 @@ export default defineComponent({
         // Enable in plugin and not disable in theme
         (Boolean(pluginConfig) && pageConfig !== false) ||
         // not disabled in anywhere
-        (themeConfig !== false &&
-          pluginConfig !== false &&
-          pageConfig !== false)
+        (pluginConfig !== false && pageConfig !== false)
       );
     });
 
-    const enablePageViews = computed(() =>
-      resolveEnablePageViews(frontmatter.value)
-    );
+    const enablePageViews = computed(() => {
+      if (!enableWaline) return false;
+      const pluginConfig = walineOption.pageviews !== false;
+      const pageConfig = frontmatter.value.pageview;
 
-    const delayPromise = new Promise<void>((resolve) => {
-      setTimeout(() => resolve(), walineOption.delay);
+      return (
+        // Enable in page
+        Boolean(pageConfig) ||
+        // Enable in plugin and not disable in page
+        (Boolean(pluginConfig) && pageConfig !== false) ||
+        // not disabled in anywhere
+        (pluginConfig !== false && pageConfig !== false)
+      );
     });
 
     const updateWaline = (): void => {
@@ -77,26 +76,29 @@ export default defineComponent({
             });
         }, walineOption.delay);
       else
-        void Promise.all([import("@waline/client"), delayPromise]).then(
-          ([{ default: Waline }]) => {
-            if (timeID === id)
-              waline = Waline({
-                lang: lang.value === "zh-CN" ? "zh-CN" : "en",
-                locale: {
-                  ...walineLocale.value,
-                  ...(walineOption.locale || {}),
-                },
-                emoji: [
-                  "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
-                  "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
-                ],
-                dark: 'body[data-theme="dark"]',
-                ...walineOption,
-                el: "#waline-comment",
-                visitor: enablePageViews.value,
-              }) as WalineInstance;
-          }
-        );
+        void Promise.all([
+          import("@waline/client"),
+          new Promise<void>((resolve) => {
+            setTimeout(() => resolve(), walineOption.delay);
+          }),
+        ]).then(([{ default: Waline }]) => {
+          if (timeID === id)
+            waline = Waline({
+              lang: lang.value === "zh-CN" ? "zh-CN" : "en",
+              locale: {
+                ...walineLocale.value,
+                ...(walineOption.locale || {}),
+              },
+              emoji: [
+                "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
+                "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
+              ],
+              dark: 'body[data-theme="dark"]',
+              ...walineOption,
+              el: "#waline-comment",
+              visitor: enablePageViews.value,
+            }) as WalineInstance;
+        });
     };
 
     onMounted(() => {

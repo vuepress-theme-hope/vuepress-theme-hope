@@ -1,4 +1,4 @@
-import { PluginConfig, PluginOptions } from "@vuepress/core";
+import { resolveCommentOptions } from "./comment";
 import {
   resolveActiveHeaderLinksPluginOptions,
   resolveContainerPluginOptionsForCodeGroup,
@@ -6,6 +6,7 @@ import {
   resolveGitPluginOptions,
 } from "./plugins";
 
+import type { PluginConfig, PluginOptions } from "@vuepress/core";
 import type { HopeThemeData, HopeThemePluginsOptions } from "../../shared";
 
 export const getPluginConfig = (
@@ -27,7 +28,7 @@ export const getPluginConfig = (
     ["@vuepress/nprogress", plugins.nprogress !== false],
     ["@vuepress/prismjs", plugins.prismjs !== false],
     ["@vuepress/theme-data", { themeData }],
-    ["comment2", plugins.comment || { type: "disable" }],
+    ["comment2", resolveCommentOptions(plugins.comment)],
     ["copy-code2", plugins.copyCode || true],
     ["feed2", plugins.feed || true],
     ["md-enhance", plugins.mdEnhance || {}],

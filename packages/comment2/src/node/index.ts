@@ -1,8 +1,7 @@
 import { addViteOptimizeDeps, getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
-import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
-import { pageInfoLocales, walineLocales } from "./locales";
+import { walineLocales } from "./locales";
 
 import type { CommentOptions } from "../shared";
 import type { Plugin, PluginObject } from "@vuepress/core";
@@ -12,28 +11,17 @@ export * from "../shared";
 /** Comment Plugin */
 const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   const { themeConfig } = app.options;
-  const commentOptions: CommentOptions =
-    Object.keys(options).length > 0
-      ? (options as CommentOptions)
-      : (themeConfig.comment as CommentOptions) || { type: "disable" };
 
-  const userPageInfoLocales = getLocales(
-    app,
-    pageInfoLocales,
-    commentOptions.pageInfoLocales
-  );
   const userWalineLocales =
-    commentOptions.type === "waline"
-      ? getLocales(app, walineLocales, commentOptions.walineLocales)
+    options.type === "waline"
+      ? getLocales(app, walineLocales, options.walineLocales)
       : {};
 
   // remove locales so that they won't be injected in client twice
-  delete commentOptions.pageInfoLocales;
-  if ("walineLocales" in commentOptions) delete commentOptions.walineLocales;
+  if ("walineLocales" in options) delete options.walineLocales;
 
   addViteOptimizeDeps(app, "@waline/client");
 
-  useReadingTimePlugin(app, { wordPerminute: options.wordPerminute });
   usePalettePlugin(app, { id: "hope" });
 
   const config: PluginObject = {
@@ -41,7 +29,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
 
     alias: {
       "@Waline":
-        commentOptions.type === "waline"
+        options.type === "waline"
           ? path.resolve(__dirname, "../client/components/Waline.js")
           : "@mr-hope/vuepress-shared/lib/client/noopModule.js",
     },
@@ -49,9 +37,8 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     define: () => ({
       COMMENT_OPTIONS: {
         hint: !themeConfig.pure,
-        ...commentOptions,
+        ...options,
       },
-      PAGE_INFO_LOCALES: userPageInfoLocales,
       WALINE_LOCALES: userWalineLocales,
     }),
 
@@ -59,9 +46,9 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   };
 
   // TODO: Wait for Vssue to support `v2`
-  // if (commentOptions.type === "vssue")
+  // if (options.type === "vssue")
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  // config.plugins!.push(["@vssue/vuepress-plugin-vssue", commentOptions]);
+  // config.plugins!.push(["@vssue/vuepress-plugin-vssue", options]);
 
   return config;
 };
