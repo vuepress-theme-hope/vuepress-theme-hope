@@ -1,6 +1,6 @@
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { computed } from "vue";
-import { _getAuthor } from "../../shared";
+import { getAuthor } from "../../shared";
 
 import type { ComputedRef } from "vue";
 import type { AuthorInfo, BaseThemeConfig } from "../../shared";
@@ -9,7 +9,7 @@ export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> =>
   computed(() => {
     const { author } = useThemeData<BaseThemeConfig>().value;
 
-    return _getAuthor(author, false);
+    return getAuthor(author, false);
   });
 
 export const useIconPrefix = (): ComputedRef<string> =>

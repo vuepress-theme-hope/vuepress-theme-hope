@@ -1,4 +1,4 @@
-import { deepAssign, getRootLang, _getAuthor } from "@mr-hope/vuepress-shared";
+import { deepAssign, getRootLang, getAuthor } from "@mr-hope/vuepress-shared";
 import { logger, resolveUrl } from "./utils";
 
 import { Author } from "@mr-hope/vuepress-shared";
@@ -32,7 +32,7 @@ export const getFeedChannelOption = (
   const { title, description } = app.siteData;
   const author =
     options.channel?.author?.name ||
-    _getAuthor(themeConfig.author as Author | undefined)[0]?.name;
+    getAuthor(themeConfig.author as Author | undefined)[0]?.name;
 
   const copyright: string =
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

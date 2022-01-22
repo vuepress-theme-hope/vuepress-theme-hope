@@ -1,12 +1,11 @@
 import {
   useCategory,
-  useBlogConfig,
   useLocaleConfig,
 } from "@mr-hope/vuepress-shared/lib/client";
-import { computed, defineComponent, h, toRef } from "vue";
+import { defineComponent, h, toRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { CategoryIcon } from "./icons";
-import { commentOptions, pageInfoLocales } from "../define";
+import { pageInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
 
@@ -18,6 +17,16 @@ export default defineComponent({
       type: Array as PropType<string[]>,
       default: (): string[] => [],
     },
+
+    categoryPath: {
+      type: String,
+      default: "",
+    },
+
+    hint: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   setup(props) {
@@ -28,12 +37,14 @@ export default defineComponent({
       ? toRef(props, "categories")
       : useCategory();
     const pageInfoLocale = useLocaleConfig(pageInfoLocales);
-    const clickable = computed(() => useBlogConfig().value !== false);
 
     const navigate = (categoryName: string): void => {
-      const path = `/category/${encodeURI(categoryName)}/`;
+      const path = props.categoryPath.replace(
+        /\$category/g,
+        decodeURI(categoryName)
+      );
 
-      if (clickable.value && route.path !== path) void router.push(path);
+      if (path && route.path !== path) void router.push(path);
     };
 
     return (): VNode | null =>
@@ -43,9 +54,7 @@ export default defineComponent({
             {
               class: "category-info",
               ariaLabel: pageInfoLocale.value.category,
-              ...(commentOptions.hint !== false
-                ? { "data-balloon-pos": "down" }
-                : {}),
+              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
             },
             [
               h(CategoryIcon),
@@ -56,13 +65,13 @@ export default defineComponent({
                     {
                       class: {
                         category: true,
-                        clickable: clickable.value,
+                        clickable: props.categoryPath,
                       },
                       onClick: () => navigate(category),
                     },
                     h(
                       "span",
-                      { role: clickable.value ? "navigation" : "" },
+                      { role: props.categoryPath ? "navigation" : "" },
                       category
                     )
                   )

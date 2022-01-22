@@ -9,8 +9,7 @@ import type { VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";
 
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Comment",
+  name: "CommentService",
 
   setup() {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();

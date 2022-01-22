@@ -1,7 +1,7 @@
 import { capitalize } from "./capitalize";
 import type { Author, AuthorInfo } from "../types";
 
-export const _getAuthor = (
+export const getAuthor = (
   author: Author | false | undefined,
   canDisable = false
 ): AuthorInfo[] => {

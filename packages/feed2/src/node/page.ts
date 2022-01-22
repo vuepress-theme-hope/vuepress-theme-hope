@@ -6,7 +6,7 @@ import {
 } from "@mr-hope/vuepress-shared";
 import { getImageMineType, resolveHTML, resolveUrl } from "./utils";
 
-import type { BaseThemeConfig } from "@mr-hope/vuepress-shared";
+import type { AuthorInfo, BaseThemeConfig } from "@mr-hope/vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Feed } from "./feed";
@@ -68,7 +68,11 @@ export class FeedPage {
 
     return this.frontmatter.author === false
       ? []
-      : getAuthor(this.frontmatter, this.themeConfig);
+      : this.frontmatter.author
+      ? getAuthor(this.frontmatter.author)
+      : this.options.channel?.author?.name
+      ? getAuthor(this.options.channel?.author as AuthorInfo)
+      : [];
   }
 
   get category(): FeedCategory[] | undefined {

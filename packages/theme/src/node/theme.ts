@@ -3,10 +3,11 @@ import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlisa } from "./alias";
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
+import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
 
-import type { Page, Theme } from "@vuepress/core";
-import type { HopeThemeData, HopeThemePageData } from "../shared";
+import type { Theme } from "@vuepress/core";
+import type { HopeThemeData } from "../shared";
 
 export const themeHope: Theme<HopeThemeData> = (
   { plugins = {}, ...localeOptions },
@@ -34,20 +35,7 @@ export const themeHope: Theme<HopeThemeData> = (
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
 
-    // use the relative file path to generate edit link
-    extendsPage: (page: Page<HopeThemePageData>): void => {
-      // save relative file path into page data to generate edit link
-      page.data.filePathRelative = page.filePathRelative;
-      // save basic info to routeMeta
-      page.routeMeta = {
-        ...page.routeMeta,
-        title: page.title,
-        icon: page.frontmatter.icon,
-        // author: page.frontmatter.author,
-        // category: page.frontmatter.category || page.frontmatter.categories,
-        // tag: page.frontmatter.tags || page.frontmatter.tag,
-      };
-    },
+    extendsPage,
 
     plugins: getPluginConfig(plugins, localeOptions),
   };

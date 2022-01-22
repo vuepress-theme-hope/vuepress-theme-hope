@@ -16,7 +16,8 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const themeLocaleData = useThemeLocaleData();
-    const author = useAuthor();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    const author = useAuthor(themeLocaleData.value.author);
 
     const config = computed<HopeThemeFooterLocaleOptions>(
       () => themeLocaleData.value.footer || {}

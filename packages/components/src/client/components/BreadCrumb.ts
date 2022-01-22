@@ -1,11 +1,8 @@
-import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, usePagesData } from "@vuepress/client";
-import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { getLinks } from "../composables";
 
-import type { BaseThemeConfig } from "@mr-hope/vuepress-shared";
 import type { VNode } from "vue";
 
 interface BreadCrumbConfig {
@@ -17,32 +14,45 @@ interface BreadCrumbConfig {
 export default defineComponent({
   name: "BreadCrumb",
 
-  setup() {
+  props: {
+    show: {
+      type: Boolean,
+      default: true,
+    },
+
+    icon: {
+      type: Boolean,
+      default: true,
+    },
+
+    iconPrefix: {
+      type: String,
+      default: "",
+    },
+  },
+
+  setup(props) {
     const pageFrontmatter = usePageFrontmatter();
-    const themeData = useThemeData<BaseThemeConfig>();
     const pagesData = usePagesData();
     const route = useRoute();
-    const iconPrefix = useIconPrefix();
 
     const config = ref<BreadCrumbConfig[]>([]);
 
     const enable = computed<boolean>(() => {
-      const globalEnable = themeData.value.breadcrumb !== false;
       const pageEnable = pageFrontmatter.value.breadcrumb;
 
       return (
-        ((globalEnable && pageEnable !== false) || pageEnable === true) &&
+        ((props.show && pageEnable !== false) || pageEnable === true) &&
         config.value.length > 1
       );
     });
 
     const iconEnable = computed<boolean>(() => {
-      const globalEnable = themeData.value.breadcrumbIcon !== false;
       const pageEnable = pageFrontmatter.value.breadcrumbIcon;
 
       return (
         enable.value &&
-        ((globalEnable && pageEnable !== false) || pageEnable === true)
+        ((props.icon && pageEnable !== false) || pageEnable === true)
       );
     });
 
@@ -103,7 +113,7 @@ export default defineComponent({
                         ? h("i", {
                             class: [
                               "iconfont",
-                              `${iconPrefix.value}${item.icon}`,
+                              `${props.iconPrefix}${item.icon}`,
                             ],
                           })
                         : null,
