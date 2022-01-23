@@ -108,11 +108,6 @@ export interface HopeThemePluginsOptions {
   git?: boolean;
 
   /**
-   * Enable @vuepress/plugin-medium-zoom or not
-   */
-  mediumZoom?: boolean;
-
-  /**
    * Enable @vuepress/plugin-nprogress or not
    */
   nprogress?: boolean;

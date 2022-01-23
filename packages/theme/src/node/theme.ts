@@ -25,7 +25,7 @@ export const themeHope: Theme<HopeThemeData> = (
   });
 
   return {
-    name: "@vuepress/theme-default",
+    name: "vuepress-theme-hope",
 
     alias: getAlisa(),
 

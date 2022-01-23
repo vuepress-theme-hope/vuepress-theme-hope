@@ -5,7 +5,6 @@ export default rollupTypescript("node/index", {
     "@mr-hope/vuepress-shared",
     "@vuepress/core",
     "@vuepress/utils",
-    "path",
     "sitemap",
   ],
 });

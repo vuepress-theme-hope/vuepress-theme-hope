@@ -12,7 +12,7 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
   if (!hostname) {
     logger.error("Required 'hostname' option is missing!");
 
-    return { name: "sitemap2" };
+    return { name: "vuepress-plugin-sitemap2" };
   }
 
   const sitemapOptions =
@@ -21,7 +21,7 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
       : { ...((themeConfig.sitemap as SitemapOptions) || {}), hostname };
 
   return {
-    name: "sitemap2",
+    name: "vuepress-plugin-sitemap2",
 
     async onGenerated(): Promise<void> {
       await generateSiteMap(sitemapOptions, app);

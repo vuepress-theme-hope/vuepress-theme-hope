@@ -15,10 +15,7 @@ const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
     name: "vuepress-plugin-copy-code2",
 
     define: (): Record<string, unknown> => ({
-      CODE_COPY_OPIONS:
-        Object.keys(options).length > 0
-          ? options
-          : app.options.themeConfig.copyCode || {},
+      CODE_COPY_OPIONS: options,
       CODE_COPY_LOCALES: getLocales(app, copyCodeLocales, options.locales),
     }),
 

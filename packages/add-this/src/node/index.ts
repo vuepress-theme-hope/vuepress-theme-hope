@@ -13,12 +13,12 @@ const addThisPlugin: Plugin<AddThisOptions> = (options) => {
     console.error("[AddThis]: Please provide a pubid to let plugin work");
 
     return {
-      name: "add-this",
+      name: "vuepress-plugin-add-this",
     };
   }
 
   return {
-    name: "add-this",
+    name: "vuepress-plugin-add-this",
 
     define: {
       PUB_ID: options.pubid,
