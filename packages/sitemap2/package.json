@@ -40,8 +40,8 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-alpha.7",
-    "@vuepress/core": "2.0.0-beta.33",
-    "@vuepress/utils": "2.0.0-beta.33",
+    "@vuepress/core": "2.0.0-beta.35",
+    "@vuepress/utils": "2.0.0-beta.35",
     "sitemap": "^7.1.0"
   },
   "publishConfig": {
