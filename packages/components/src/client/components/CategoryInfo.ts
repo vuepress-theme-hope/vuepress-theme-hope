@@ -9,6 +9,8 @@ import { pageInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
 
+import "../styles/category.scss";
+
 export default defineComponent({
   name: "CategoryInfo",
 

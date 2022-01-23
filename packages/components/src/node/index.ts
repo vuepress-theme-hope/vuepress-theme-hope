@@ -1,9 +1,9 @@
-import { getLocales, useGitPlugin } from "@mr-hope/vuepress-shared";
+import { getLocales, useGitPlugin, noopModule } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import {
-  componentLocales,
+  backToTopLocales,
   pageInfoLocales,
   paginationLocales,
 } from "./locales";
@@ -12,8 +12,6 @@ import type { Plugin } from "@vuepress/core";
 import type { ComponentOptions } from "../shared";
 
 export * from "../shared";
-
-const noopModule = "@mr-hope/vuepress-shared/lib/client/noopModule.js";
 
 const componentPlugin: Plugin<ComponentOptions> = (options, app) => {
   usePalettePlugin(app, { id: "hope" });
@@ -53,7 +51,11 @@ const componentPlugin: Plugin<ComponentOptions> = (options, app) => {
 
     define: {
       BACK_TO_TOP_THRESHOLD: options.backToTopThreshold || 300,
-      COMPONENT_LOCALES: getLocales(app, componentLocales, options.locales),
+      BACK_TO_TOP_LOCALES: getLocales(
+        app,
+        backToTopLocales,
+        options.backToTopLocales
+      ),
       PAGE_INFO_LOCALES: getLocales(
         app,
         pageInfoLocales,

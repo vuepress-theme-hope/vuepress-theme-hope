@@ -4,6 +4,8 @@ import type { Component, VNode } from "vue";
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_DEV__: boolean;
 
+import "../styles/code-group.scss";
+
 export default defineComponent({
   name: "CodeGroup",
 
@@ -67,9 +69,7 @@ export default defineComponent({
         // if `activeIndex` is invalid
 
         // find the index of the code-group-item with `active` props
-        activeIndex.value = items.findIndex(
-          (vnode) => vnode.props.active === "" || vnode.props.active === true
-        );
+        activeIndex.value = items.findIndex((vnode) => "active" in vnode.props);
 
         // if there is no `active` props on code-group-item, set the first item active
         if (activeIndex.value === -1) activeIndex.value = 0;

@@ -5,6 +5,8 @@ import { getLinks } from "../composables";
 
 import type { VNode } from "vue";
 
+import "../styles/breadcrumb.scss";
+
 interface BreadCrumbConfig {
   title: string;
   icon?: string;

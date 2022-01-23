@@ -2,7 +2,7 @@ import type { UserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 const config: UserConfig<DefaultThemeOptions> = {
-  base: process.env.VuePress_BASE || "/",
+  base: (process.env.VuePress_BASE as `/${string}/`) || "/",
 
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -45,10 +45,13 @@ const config: UserConfig<DefaultThemeOptions> = {
         sidebar: {
           "/guide/": [
             "/guide/README.md",
+            "/guide/code-group.md",
+            "/guide/container.md",
             "/guide/sup-sub.md",
             "/guide/align.md",
             "/guide/footnote.md",
             "/guide/mermaid.md",
+            "/guide/mark.md",
             "/guide/tex.md",
             "/guide/demo/README.md",
             "/guide/demo/normal.md",

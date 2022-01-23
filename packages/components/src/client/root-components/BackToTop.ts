@@ -11,12 +11,14 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { componentLocales } from "../define";
 import { BacktoTopIcon } from "../icons";
 
 import "../styles/back-to-top.scss";
 
 import type { VNode } from "vue";
+import type { BackToTopLocaleConfig } from "../../shared";
+
+declare const BACK_TO_TOP_LOCALES: BackToTopLocaleConfig;
 
 export default defineComponent({
   name: "BackToTop",
@@ -28,7 +30,7 @@ export default defineComponent({
   setup(props) {
     const pageFrontmatter = usePageFrontmatter();
     const themeData = useThemeData();
-    const componentLocale = useLocaleConfig(componentLocales);
+    const componentLocale = useLocaleConfig(BACK_TO_TOP_LOCALES);
 
     /** Scroll distance */
     const scrollTop = ref(0);

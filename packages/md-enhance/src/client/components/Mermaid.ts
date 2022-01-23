@@ -28,15 +28,12 @@ export default defineComponent({
     const mermaidElement = ref<HTMLElement | null>(null);
     let observer: MutationObserver;
 
-    const delay = (): Promise<void> =>
-      new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY));
-
     onMounted(() => {
       const code = decodeURIComponent(mermaidElement.value?.dataset.code || "");
 
       void Promise.all([
         import(/* webpackChunkName: "mermaid" */ "mermaid"),
-        delay(),
+        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([mermaid]) => {
         const { initialize, render } = mermaid.default;
 

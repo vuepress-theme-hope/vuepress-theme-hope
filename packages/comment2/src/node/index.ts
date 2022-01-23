@@ -1,4 +1,8 @@
-import { addViteOptimizeDeps, getLocales } from "@mr-hope/vuepress-shared";
+import {
+  addViteOptimizeDeps,
+  getLocales,
+  noopModule,
+} from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { usePalettePlugin } from "vuepress-plugin-sass-palette";
 import { walineLocales } from "./locales";
@@ -31,7 +35,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       "@Waline":
         options.type === "waline"
           ? path.resolve(__dirname, "../client/components/Waline.js")
-          : "@mr-hope/vuepress-shared/lib/client/noopModule.js",
+          : noopModule,
     },
 
     define: () => ({
