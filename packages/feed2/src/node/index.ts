@@ -1,6 +1,7 @@
-import { checkOptions, getFeedChannelOption, getFeedLinks } from "./options";
+import { getFeedChannelOption, getFeedLinks } from "./options";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
+import { logger } from "./utils";
 
 import type { PageFrontmatter, Plugin } from "@vuepress/core";
 import type { FeedOptions, FeedPluginFrontmatter } from "../shared";
@@ -13,15 +14,22 @@ const isFeed = (frontmatter: PageFrontmatter<FeedPluginFrontmatter>): boolean =>
   (!frontmatter.feed || frontmatter.feed.enable !== false);
 
 const feedPlugin: Plugin<FeedOptions> = (options, app) => {
-  const feedOptions = checkOptions(options, app);
+  // make sure hostname do not end with `/`
+  if (options.hostname)
+    options.hostname = options.hostname.replace(/\/?$/u, "");
+  else {
+    logger.error("Option 'hostname' is required!");
 
-  // plugin option is missing required field
-  if (!feedOptions) return {};
+    return {
+      name: "vuepress-plugin-feed2",
+    };
+  }
 
+  const feedOptions = options as FeedOptions;
   const channelOptions = getFeedChannelOption(feedOptions, app);
 
   return {
-    name: "feed2",
+    name: "vuepress-plugin-feed2",
 
     onPrepared(): void {
       injectLinkstoHead(feedOptions, app);

@@ -22,11 +22,11 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
   if (!seoOptions.hostname) {
     logger.error('Required option "hostname" is missing');
 
-    return { name: "seo2" };
+    return { name: "vuepress-plugin-seo2" };
   }
 
   return {
-    name: "seo2",
+    name: "vuepress-plugin-seo2",
 
     extendsPage(page): void {
       const head = page.frontmatter.head || [];

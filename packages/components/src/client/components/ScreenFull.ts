@@ -1,4 +1,3 @@
-import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
 import { defineComponent, h, onMounted, ref } from "vue";
 import screenfull from "screenfull";
 import { CancelFullScreenIcon, EnterFullScreenIcon } from "../icons";
@@ -8,18 +7,23 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "ScreenFull",
 
-  setup() {
+  props: {
+    enable: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
+  setup(props) {
     const canFullscreen = ref(false);
     const isFullscreen = ref(false);
-    const themeLocale = useThemeLocaleData();
 
     onMounted(() => {
-      canFullscreen.value =
-        screenfull.isEnabled && themeLocale.value.fullscreen !== false;
+      canFullscreen.value = screenfull.isEnabled;
     });
 
     return (): VNode | null =>
-      canFullscreen.value
+      canFullscreen.value && props.enable
         ? h(
             "button",
             {
