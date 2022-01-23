@@ -9,17 +9,7 @@ import type { ExtendPage, PageSeoInfo, SeoContent, SeoOptions } from "./types";
 export * from "./types";
 
 export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
-  const { themeConfig } = app.options;
-
-  const seoOptions =
-    Object.keys(options).length > 0
-      ? (options as SeoOptions)
-      : {
-          hostname: themeConfig.hostname as string,
-          ...((themeConfig.seo as Partial<SeoOptions>) || {}),
-        };
-
-  if (!seoOptions.hostname) {
+  if (!options.hostname) {
     logger.error('Required option "hostname" is missing');
 
     return { name: "vuepress-plugin-seo2" };
@@ -35,20 +25,20 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
         app,
         permalink: resolvePagePermalink(page),
       };
-      const { OGP, JSONLD } = generateSeo(seoOptions, pageSeoInfo);
+      const { OGP, JSONLD } = generateSeo(options as SeoOptions, pageSeoInfo);
       const metaContext: SeoContent = {
         ...OGP,
-        ...(seoOptions.ogp ? seoOptions.ogp(pageSeoInfo) : {}),
+        ...(options.ogp ? options.ogp(pageSeoInfo) : {}),
       };
 
-      appendSEO(head, metaContext, seoOptions);
+      appendSEO(head, metaContext, options as SeoOptions);
       if (JSONLD)
         head.push([
           "script",
           { type: "application/ld+json" },
           JSON.stringify(JSONLD),
         ]);
-      if (seoOptions.customHead) seoOptions.customHead(head, pageSeoInfo);
+      if (options.customHead) options.customHead(head, pageSeoInfo);
 
       page.frontmatter.head = head;
     },

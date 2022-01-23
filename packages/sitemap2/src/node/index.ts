@@ -6,25 +6,17 @@ import type { SitemapOptions } from "./types";
 export * from "./types";
 
 const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
-  const { themeConfig } = app.options;
-  const hostname = options.hostname || (themeConfig.hostname as string);
-
-  if (!hostname) {
+  if (!options.hostname) {
     logger.error("Required 'hostname' option is missing!");
 
     return { name: "vuepress-plugin-sitemap2" };
   }
 
-  const sitemapOptions =
-    Object.keys(options).length > 0
-      ? { ...options, hostname }
-      : { ...((themeConfig.sitemap as SitemapOptions) || {}), hostname };
-
   return {
     name: "vuepress-plugin-sitemap2",
 
     async onGenerated(): Promise<void> {
-      await generateSiteMap(sitemapOptions, app);
+      await generateSiteMap(options as SitemapOptions, app);
     },
   };
 };
