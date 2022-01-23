@@ -15,6 +15,8 @@ export default [
   }),
   ...rollupTypescript("client/appEnhance", {
     external: [
+      "@CodeGroup",
+      "@CodeGroupItem",
       "@Mermaid",
       "@Presentation",
       "@vuepress/client",

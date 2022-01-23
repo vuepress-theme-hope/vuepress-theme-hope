@@ -9,6 +9,7 @@
     { "path": "../photo-swipe/tsconfig.build.json" },
     { "path": "../pwa2/tsconfig.build.json" },
     { "path": "../seo2/tsconfig.build.json" },
+    { "path": "../shared/tsconfig.build.json" },
     { "path": "../sitemap2/tsconfig.build.json" },
     { "path": "../sass-palette/tsconfig.build.json" },
     { "path": "../shared/tsconfig.build.json" },
