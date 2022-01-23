@@ -48,7 +48,6 @@
     "@vuepress/client": "2.0.0-beta.33",
     "@vuepress/utils": "2.0.0-beta.33",
     "@waline/client": "^1.5.2",
-    "balloon-css": "^1.2.0",
     "vue": "^3.2.27",
     "vue-router": "^4.0.12",
     "vuepress-plugin-reading-time2": "2.0.0-alpha.7",

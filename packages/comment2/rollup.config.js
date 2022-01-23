@@ -13,13 +13,12 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
-      "balloon-css/balloon.css",
       "vue",
       "vue-router",
       "@Waline",
       /\.scss$/,
     ],
-    dtsExternal: ["balloon-css", /\.scss$/],
+    dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/Waline", {

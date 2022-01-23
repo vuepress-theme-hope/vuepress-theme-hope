@@ -45,6 +45,7 @@
     "@vuepress/client": "2.0.0-beta.33",
     "@vuepress/plugin-theme-data": "2.0.0-beta.33",
     "@vuepress/utils": "2.0.0-beta.33",
+    "balloon-css": "^1.2.0",
     "lodash.debounce": "^4.0.8",
     "screenfull": "^6.0.1",
     "vue": "^3.2.27",
