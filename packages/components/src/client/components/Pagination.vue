@@ -66,7 +66,12 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { componentLocales } from "../define";
+
+import type { PaginationLocaleConfig } from "../../shared";
+
+import "../styles/pagination.scss";
+
+declare const PAGINATION_LOCALES: PaginationLocaleConfig;
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -86,7 +91,7 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
 
-    const componentLocale = useLocaleConfig(componentLocales);
+    const locale = useLocaleConfig(PAGINATION_LOCALES);
 
     const input = ref("");
     const totalPages = computed(() => Math.ceil(props.total / props.perPage));
@@ -128,8 +133,6 @@ export default defineComponent({
 
       return arr;
     });
-
-    const locale = computed(() => componentLocale.value.pagination);
 
     /** Navigate to certain page */
     const navigate = (page: number): void => {

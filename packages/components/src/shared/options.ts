@@ -1,5 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { ComponentLocaleData } from "./locales";
+import type { BackToTopLocaleData } from "./locales";
 import type { PageInfoLocaleData } from "./pageInfo";
 import type { PaginationLocaleData } from "./pagination";
 
@@ -21,6 +21,13 @@ export interface ComponentOptions {
    * @default 300
    */
   backToTopThreshold?: number;
+
+  /**
+   * backToTop button Locales config
+   *
+   * 返回顶部按钮国际化配置
+   */
+  backToTopLocales?: LocaleConfig<BackToTopLocaleData>;
 
   /**
    * Whether register breadcrumb component
@@ -75,13 +82,6 @@ export interface ComponentOptions {
    * @default 300
    */
   wordPerminute?: number;
-
-  /**
-   * Locales config
-   *
-   * 国际化配置
-   */
-  locales?: LocaleConfig<ComponentLocaleData>;
 
   /**
    * Locales config for pageInfo
