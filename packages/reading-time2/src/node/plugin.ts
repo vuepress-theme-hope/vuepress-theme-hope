@@ -1,8 +1,8 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { readingTimeLocales } from "./locales";
-import { readingTime } from "./reading-time";
+import { getReadingTime } from "./reading-time";
 
-import type { Page, Plugin } from "@vuepress/core";
+import type { Page, Plugin, PluginConfig } from "@vuepress/core";
 import type { ReadingTime, ReadingTimeOptions } from "../shared";
 
 /** Reading time plugin */
@@ -19,10 +19,14 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, app) => {
     }),
 
     extendsPage: (page: Page<{ readingTime: ReadingTime }>): void => {
-      page.data.readingTime = readingTime(
+      page.data.readingTime = getReadingTime(
         page.content,
         options.wordPerminute || 300
       );
     },
   };
 };
+
+export const readingTime = (
+  options: ReadingTimeOptions | false
+): PluginConfig<ReadingTimeOptions> => [readingTimePlugin, options];

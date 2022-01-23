@@ -1,14 +1,22 @@
-.navbar-links-wrapper {
-  display: inline-block;
+.navbar {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
 
   .nav-item {
     position: relative;
-    display: inline-block;
+    margin: 0 1rem;
     line-height: 2rem;
-    margin-left: 1rem;
 
     &:first-child {
       margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
 
     > .nav-link {

@@ -1,11 +1,11 @@
 import { fs, path } from "@vuepress/utils";
 
-import type { Plugin } from "@vuepress/core";
-import type { PaletteOptions } from "./options";
+import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { SassPaletteOptions } from "../shared";
 
 const emptyFile = path.resolve(__dirname, "../../styles/empty.scss");
 
-export const palettePlugin: Plugin<PaletteOptions> = (
+export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
   {
     id = "hope",
     config = `.vuepress/styles/${id}-config.scss`,
@@ -26,7 +26,7 @@ export const palettePlugin: Plugin<PaletteOptions> = (
     fs.pathExistsSync(path) ? path : emptyFile;
 
   return {
-    name: `palette-${id}`,
+    name: `vuepress-plugin-sass-palette?${id}`,
 
     alias: {
       [`@${id}/palette`]: app.dir.temp(`styles/${id}-palette.scss`),
@@ -87,3 +87,7 @@ $variables: map.deep-merge($defaultVariables, $userVariables);
     },
   };
 };
+
+export const sassPalette = (
+  options: SassPaletteOptions | false
+): PluginConfig<SassPaletteOptions> => [sassPalettePlugin, options];

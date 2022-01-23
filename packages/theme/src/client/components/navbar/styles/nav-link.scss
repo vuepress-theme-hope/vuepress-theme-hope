@@ -1,9 +1,13 @@
-.navbar .nav-link {
-  line-height: 1.4rem;
+.navbar {
+  .nav-link {
+    color: var(--dark-grey);
 
-  color: var(--dark-grey);
+    &.active {
+      color: var(--accent-color);
+    }
 
-  &.active {
-    color: var(--accent-color);
+    .iconfont {
+      margin-right: 0.25rem;
+    }
   }
 }

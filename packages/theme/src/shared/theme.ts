@@ -6,7 +6,7 @@ import type {
   HopeThemeRootOptions,
 } from "./options";
 
-export interface HopeThemeData
+export interface HopeThemeOptions
   extends HopeThemeRootOptions,
     ThemeData<HopeThemeLocaleOptions> {
   plugins?: HopeThemePluginsOptions;

@@ -1,5 +1,5 @@
 import { path } from "@vuepress/utils";
-import { usePalettePlugin } from "vuepress-plugin-sass-palette";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlisa } from "./alias";
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
@@ -7,15 +7,15 @@ import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
 
 import type { Theme } from "@vuepress/core";
-import type { HopeThemeData } from "../shared";
+import type { HopeThemeOptions } from "../shared";
 
-export const themeHope: Theme<HopeThemeData> = (
+export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...localeOptions },
   app
 ) => {
   assignDefaultLocaleOptions(app, localeOptions);
 
-  usePalettePlugin(app, {
+  useSassPalettePlugin(app, {
     id: "hope",
     config: ".vuepress/styles/config.scss",
     defaultConfig: path.resolve(__dirname, "../client/styles/config.scss"),

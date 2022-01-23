@@ -1,4 +1,4 @@
-export interface PaletteOptions {
+export interface SassPaletteOptions {
   /**
    * 调色板的唯一 ID，用于避免重复注册
    *
