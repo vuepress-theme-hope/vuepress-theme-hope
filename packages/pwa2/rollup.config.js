@@ -6,7 +6,6 @@ export default [
       "@mr-hope/vuepress-shared",
       "@vuepress/utils",
       "workbox-build",
-      "path",
       "vuepress-plugin-sass-palette",
     ],
   }),

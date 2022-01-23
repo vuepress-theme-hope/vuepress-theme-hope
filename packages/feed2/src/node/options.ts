@@ -1,27 +1,9 @@
 import { deepAssign, getRootLang, getAuthor } from "@mr-hope/vuepress-shared";
-import { logger, resolveUrl } from "./utils";
+import { resolveUrl } from "./utils";
 
 import { Author } from "@mr-hope/vuepress-shared";
 import type { App } from "@vuepress/core";
 import type { FeedChannelOption, FeedLinks, FeedOptions } from "../shared";
-
-export const checkOptions = (
-  options: Partial<FeedOptions>,
-  app: App
-): FeedOptions | false => {
-  const { themeConfig } = app.options;
-  const hostname =
-    options.hostname || (themeConfig.hostname as string | undefined);
-
-  // make sure hostname do not end with `/`
-  if (hostname) options.hostname = hostname.replace(/\/?$/u, "");
-  else {
-    logger.error("Option 'hostname' is required!");
-    return false;
-  }
-
-  return options as FeedOptions;
-};
 
 export const getFeedChannelOption = (
   options: FeedOptions,

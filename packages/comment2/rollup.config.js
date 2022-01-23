@@ -5,8 +5,8 @@ export default [
     external: [
       "@mr-hope/vuepress-shared",
       "@vuepress/utils",
-      "vuepress-plugin-sass-palette",
       "vuepress-plugin-reading-time2",
+      "vuepress-plugin-sass-palette",
     ],
   }),
   ...rollupTypescript("client/appEnhance", {
