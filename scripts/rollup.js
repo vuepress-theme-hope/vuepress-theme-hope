@@ -37,7 +37,7 @@ export const rollupTypescript = (
     plugins: [
       typescript(tsconfig),
       ...(useStyle ? [styles()] : []),
-      ...(resolve ? [nodeResolve(), commonjs()] : []),
+      ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       ...(isProduction ? [terser()] : []),
       ...(copy.length
         ? [
@@ -105,7 +105,7 @@ export const rollupVue = (
           },
         }),
         ...(useStyle ? [styles()] : []),
-        ...(resolve ? [nodeResolve(), commonjs()] : []),
+        ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
         ...(isProduction ? [terser()] : []),
         ...(copy.length
           ? [
