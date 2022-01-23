@@ -34,7 +34,7 @@ export default {
 
 - We only support Vue2
 - You must export your component through `export default`
-- We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. If you want to access the page document, please visit `window.document`.
+- We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. To access the page document, please visit `window.document`.
 
 :::
 

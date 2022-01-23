@@ -15,25 +15,15 @@ At the same time, VuePress itself adds some Markdown syntaxes. You can [view the
 
 ## Enable all
 
-You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
-
-```js {3-5}
-module.exports = {
-  themeConfig: {
-    mdEnhance: {
-      enableAll: true,
-    },
-  },
-};
-```
+You can set `enableAll: true` in plugin options to enable all features of this plugin.
 
 ::: danger
 
 Please use this option ONLY for playing or testing.
 
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
+As time grows, `vupress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
 
-Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
+Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
 
 Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 
@@ -85,6 +75,19 @@ You can mark ==important words== .
 - [ ] Plan B
 
 - [View Detail](tasklist.md)
+
+### Flowchart
+
+```flow
+cond=>condition: Process?
+process=>operation: Process
+e=>end: End
+
+cond(yes)->process->e
+cond(no)->e
+```
+
+- [View Detail](flowchart.md)
 
 ### Mermaid
 
@@ -139,7 +142,7 @@ span {
 
 :::
 
-- [View Detail](demo/README.md)
+- [View Detail](demo/readme.md)
 
 ### Presentation
 
@@ -174,4 +177,4 @@ $$
 
 @slideend
 
-- [View Detail](presentation/README.md)
+- [View Detail](presentation/readme.md)
