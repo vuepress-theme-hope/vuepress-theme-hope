@@ -65,7 +65,8 @@ export default defineComponent({
 
       // generate breadcrumb config
       for (let index = 1; index < links.length; index++) {
-        const page = await pages[links[index]]();
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const page = await pages[links[index]]!();
 
         breadcrumbConfig.push({
           title: page.title,
