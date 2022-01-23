@@ -27,7 +27,7 @@ icon: react
 
 - Babel must be loaded when using react to parse JSX, this is done by the plugin automaticaly
 - You must export your component through `export default`
-- We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. If you want to access the page document, please visit `window.document`.
+- We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. To access the page document, please visit `window.document`.
 
 :::
 

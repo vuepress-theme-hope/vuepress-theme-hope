@@ -37,7 +37,7 @@ icon: code
 
 ::: warning Attention
 
-- We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. If you want to access the page document, please visit `window.document`.
+- We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. To access the page document, please visit `window.document`.
 
 :::
 
