@@ -60,11 +60,6 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run build
 
-      - name: Demo build
-        run: |
-          yarn run demo:vite-build
-          yarn run demo:webpack-build
-
       - name: Linter test
         run: |
           yarn run lint:check
@@ -72,6 +67,14 @@ jobs:
 
       - name: Unit test
         run: yarn run test
+
+      - name: Webpack Demo build
+        run: |
+          yarn run demo:webpack-build
+
+      - name: Vite Demo build
+        run: |
+          yarn run demo:vite-build
 
       - name: Upload coverage
         if: github.ref == 'refs/heads/main'
