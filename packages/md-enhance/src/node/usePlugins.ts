@@ -55,6 +55,26 @@ export const usePlugins = (
       app.use("@vuepress/container", { type } as ContainerPluginOptions)
     );
 
+  if (markdownOptions.codegroup || markdownOptions.enableAll) {
+    app.use("@vuepress/container", {
+      type: "code-group",
+      before: () => `<CodeGroup>\n`,
+      after: () => "</CodeGroup>\n",
+    });
+
+    app.use("@vuepress/container", {
+      type: "code-group-item",
+      before: (info: string): string => {
+        const isActive = info.split(":").pop() === "active";
+
+        return `<CodeGroupItem title="${
+          isActive ? info.replace(/:active$/, "") : info
+        }"${isActive ? " active" : ""}>\n`;
+      },
+      after: () => "</CodeGroupItem>\n",
+    });
+  }
+
   if (markdownOptions.demo || markdownOptions.enableAll)
     app.use("@vuepress/container", {
       type: "demo",

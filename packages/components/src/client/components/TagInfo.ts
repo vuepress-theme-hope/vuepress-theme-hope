@@ -7,6 +7,8 @@ import { pageInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
 
+import "../styles/tag.scss";
+
 export default defineComponent({
   name: "TagInfo",
 

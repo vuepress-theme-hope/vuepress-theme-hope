@@ -1,48 +1,48 @@
 import type {
-  ComponentLocaleConfig,
+  BackToTopLocaleConfig,
   PageInfoLocaleConfig,
   PaginationLocaleConfig,
 } from "../shared";
 
-export const componentLocales: ComponentLocaleConfig = {
+export const backToTopLocales: BackToTopLocaleConfig = {
   "/en/": {
     backToTop: "Back to top",
-    openInNewWindow: "Open in new window",
+    // openInNewWindow: "Open in new window",
   },
 
   "/zh/": {
     backToTop: "返回顶部",
-    openInNewWindow: "在新窗口中打开",
+    // openInNewWindow: "在新窗口中打开",
   },
 
   "/zh-tw/": {
     backToTop: "返回頂部",
-    openInNewWindow: "在新窗口中打開",
+    // openInNewWindow: "在新窗口中打開",
   },
 
   "/de/": {
     backToTop: "Zurück nach oben.",
-    openInNewWindow: "In einem neuen Fenster öffnen",
+    // openInNewWindow: "In einem neuen Fenster öffnen",
   },
 
   "/vi/": {
     backToTop: "Trở lại đầu trang",
-    openInNewWindow: "Mở trong cửa sổ mới",
+    // openInNewWindow: "Mở trong cửa sổ mới",
   },
 
   "/uk/": {
     backToTop: "Повернутися до початку",
-    openInNewWindow: "Open in new window",
+    // openInNewWindow: "Open in new window",
   },
 
   "/ru/": {
     backToTop: "Вернуться к началу",
-    openInNewWindow: "Open in new window",
+    // openInNewWindow: "Open in new window",
   },
 
   "/br/": {
     backToTop: "Volta ao topo",
-    openInNewWindow: "Open in new window",
+    // openInNewWindow: "Open in new window",
   },
 };
 

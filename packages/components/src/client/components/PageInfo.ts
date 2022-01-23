@@ -14,6 +14,7 @@ import type { PropType, VNode } from "vue";
 import type { PageInfoFrontmatter, PageInfo } from "../../shared";
 
 import "balloon-css/balloon.css";
+import "../styles/pageinfo.scss";
 
 export default defineComponent({
   name: "PageInfo",

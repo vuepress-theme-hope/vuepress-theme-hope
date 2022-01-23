@@ -22,7 +22,7 @@ import type {
 } from "../shared";
 
 export class FeedPage {
-  private feedOption: FeedFrontmatterOption;
+  private pageFeedOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
   private themeConfig: BaseThemeConfig;
@@ -35,13 +35,13 @@ export class FeedPage {
   ) {
     this.frontmatter =
       page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>;
-    this.feedOption = this.frontmatter.feed || {};
+    this.pageFeedOptions = this.frontmatter.feed || {};
     this.base = this.app.options.base;
     this.themeConfig = this.app.options.themeConfig as BaseThemeConfig;
   }
 
   get title(): string {
-    return this.feedOption.title || this.page.title;
+    return this.pageFeedOptions.title || this.page.title;
   }
 
   /** real url */
@@ -50,7 +50,8 @@ export class FeedPage {
   }
 
   get description(): string | undefined {
-    if (this.feedOption.description) return this.feedOption.description;
+    if (this.pageFeedOptions.description)
+      return this.pageFeedOptions.description;
 
     if (this.frontmatter.description) return this.frontmatter.description;
 
@@ -61,26 +62,27 @@ export class FeedPage {
   }
 
   get author(): FeedAuthor[] {
-    if (Array.isArray(this.feedOption.author)) return this.feedOption.author;
+    if (Array.isArray(this.pageFeedOptions.author))
+      return this.pageFeedOptions.author;
 
-    if (typeof this.feedOption.author === "object")
-      return [this.feedOption.author];
+    if (typeof this.pageFeedOptions.author === "object")
+      return [this.pageFeedOptions.author];
 
     return this.frontmatter.author === false
       ? []
       : this.frontmatter.author
       ? getAuthor(this.frontmatter.author)
-      : this.options.channel?.author?.name
+      : this.options.channel?.author
       ? getAuthor(this.options.channel?.author as AuthorInfo)
       : [];
   }
 
   get category(): FeedCategory[] | undefined {
-    if (Array.isArray(this.feedOption.category))
-      return this.feedOption.category;
+    if (Array.isArray(this.pageFeedOptions.category))
+      return this.pageFeedOptions.category;
 
-    if (typeof this.feedOption.category === "object")
-      return [this.feedOption.category];
+    if (typeof this.pageFeedOptions.category === "object")
+      return [this.pageFeedOptions.category];
 
     const { categories, category = categories } = this.frontmatter;
 
@@ -98,7 +100,7 @@ export class FeedPage {
   }
 
   get guid(): string {
-    return this.feedOption.guid || this.link;
+    return this.pageFeedOptions.guid || this.link;
   }
 
   get pubDate(): Date | undefined {
@@ -120,7 +122,7 @@ export class FeedPage {
   }
 
   get content(): string {
-    if (this.feedOption.content) return this.feedOption.content;
+    if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
     return resolveHTML(this.page.contentRendered);
   }
@@ -159,11 +161,11 @@ export class FeedPage {
   }
 
   get contributor(): FeedContributor[] {
-    if (Array.isArray(this.feedOption.contributor))
-      return this.feedOption.contributor;
+    if (Array.isArray(this.pageFeedOptions.contributor))
+      return this.pageFeedOptions.contributor;
 
-    if (typeof this.feedOption.contributor === "object")
-      return [this.feedOption.contributor];
+    if (typeof this.pageFeedOptions.contributor === "object")
+      return [this.pageFeedOptions.contributor];
 
     return this.author;
   }

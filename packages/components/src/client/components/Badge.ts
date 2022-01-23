@@ -1,6 +1,8 @@
 import { computed, defineComponent, h } from "vue";
 import type { VNode } from "vue";
 
+import "../styles/badge.scss";
+
 interface ElementOption {
   class: string[];
   style: Record<string, string>;
