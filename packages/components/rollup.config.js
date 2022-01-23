@@ -11,17 +11,34 @@ export default [
     ],
   }),
   ...rollupVue("client/appEnhance.ts", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@mr-hope/vuepress-shared/styles/config/index.scss",
-      "@vuepress/client",
-      "vue",
-      "vue-router",
-      "screenfull",
-      /\.scss$/,
-    ],
+    external: ["@vuepress/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
+  }),
+  ...rollupVue("client/components/Badge.ts", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupVue("client/components/BreadCrumb.ts", {
+    external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupVue("client/components/PageInfo.ts", {
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "@vuepress/client",
+      "balloon-css/balloon.css",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
+    dtsExternal: ["balloon-css", /\.scss$/],
+  }),
+  ...rollupVue("client/components/Pagination.vue", {
+    external: ["@mr-hope/vuepress-shared/lib/client", "vue", /\.scss$/],
+  }),
+  ...rollupVue("client/components/ScreenFull.ts", {
+    external: ["screenfull", "vue"],
   }),
   ...rollupVue("client/root-components/BackToTop.ts", {
     external: [
