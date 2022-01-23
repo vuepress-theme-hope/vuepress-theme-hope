@@ -12,7 +12,7 @@ export const getManifest = async (
   app: App
 ): Promise<ManifestOption> => {
   const { dir, siteData } = app;
-  const { base, themeConfig } = app.options;
+  const { base } = app.options;
   const userManifestPath = dir.source(".vuepress/public/manifest.webmanifest");
   const userManifestJSONPath = dir.source(".vuepress/public/manifest.json");
 
@@ -27,9 +27,8 @@ export const getManifest = async (
   ) as ManifestOption;
 
   const finalManifest: ManifestOption = {
-    name: siteData.title || (themeConfig.title as string | undefined) || "Site",
-    short_name:
-      siteData.title || (themeConfig.title as string | undefined) || "Site",
+    name: siteData.title || "Site",
+    short_name: siteData.title || "Site",
     description:
       siteData.description || "A site built with vuepress-theme-hope",
     lang: getRootLang(app),

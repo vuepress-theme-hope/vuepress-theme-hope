@@ -1,7 +1,6 @@
-import { deepAssign, getRootLang, getAuthor } from "@mr-hope/vuepress-shared";
+import { deepAssign, getRootLang } from "@mr-hope/vuepress-shared";
 import { resolveUrl } from "./utils";
 
-import { Author } from "@mr-hope/vuepress-shared";
 import type { App } from "@vuepress/core";
 import type { FeedChannelOption, FeedLinks, FeedOptions } from "../shared";
 
@@ -10,23 +9,16 @@ export const getFeedChannelOption = (
   app: App
 ): FeedChannelOption => {
   const { hostname, icon, image } = options;
-  const { base, themeConfig } = app.options;
+  const { base } = app.options;
   const { title, description } = app.siteData;
-  const author =
-    options.channel?.author?.name ||
-    getAuthor(themeConfig.author as Author | undefined)[0]?.name;
-
-  const copyright: string =
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    (themeConfig?.footer?.copyright as string | undefined) ||
-    (author ? `Copyright by ${author}` : "");
+  const author = options.channel?.author?.name;
 
   const defaultChannelOpion: FeedChannelOption = {
     title,
     link: resolveUrl(hostname, base),
     description,
     language: getRootLang(app),
-    copyright,
+    copyright: author ? `Copyright by ${author}` : "",
     pubDate: new Date(),
     lastUpdated: new Date(),
     ...(icon ? { icon } : {}),

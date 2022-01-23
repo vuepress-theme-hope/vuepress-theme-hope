@@ -9,11 +9,6 @@ import type { PhotoSwipeOptions } from "../shared";
 export type { PhotoSwipeOptions } from "../shared";
 
 const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
-  const photoSwipeOptions =
-    Object.keys(options).length > 0
-      ? options
-      : (app.options.themeConfig.photoSwipe as PhotoSwipeOptions) || {};
-
   usePalettePlugin(app, { id: "hope" });
 
   return {
@@ -21,14 +16,10 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
 
     define: (): Record<string, unknown> => ({
       PHOTO_SWIPE_SELECTOR:
-        photoSwipeOptions.selector || ".theme-default-content :not(a) > img",
-      PHOTO_SWIPE_DELAY: photoSwipeOptions.delay || 500,
-      PHOTO_SWIPE_LOCALES: getLocales(
-        app,
-        photoSwipeLocales,
-        photoSwipeOptions.locales
-      ),
-      PHOTO_SWIPE_OPTIONS: photoSwipeOptions.options || {},
+        options.selector || ".theme-default-content :not(a) > img",
+      PHOTO_SWIPE_DELAY: options.delay || 500,
+      PHOTO_SWIPE_LOCALES: getLocales(app, photoSwipeLocales, options.locales),
+      PHOTO_SWIPE_OPTIONS: options.options || {},
     }),
 
     clientAppRootComponentFiles: path.resolve(
