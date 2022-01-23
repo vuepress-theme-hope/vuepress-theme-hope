@@ -5,7 +5,6 @@ export default [
     external: [
       "@mr-hope/vuepress-shared",
       "@vuepress/utils",
-      "vuepress-plugin-reading-time2",
       "vuepress-plugin-sass-palette",
     ],
   }),

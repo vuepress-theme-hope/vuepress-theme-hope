@@ -2,7 +2,14 @@ import { rollupTypescript, rollupVue } from "../../scripts/rollup";
 
 export default [
   ...rollupTypescript("node/index", {
-    external: ["@vuepress/utils", "vuepress-plugin-sass-palette"],
+    external: [
+      "@mr-hope/vuepress-shared",
+      "@mr-hope/vuepress-plugin-components",
+      "@vuepress/utils",
+      "vuepress-plugin-comment2",
+      "vuepress-plugin-copy-code2",
+      "vuepress-plugin-sass-palette",
+    ],
   }),
 
   ...rollupVue("client/components/navbar/Navbar.ts", {
