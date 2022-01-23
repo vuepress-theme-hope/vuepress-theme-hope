@@ -41,14 +41,7 @@ export const generateSeo = (
     : "article";
 
   const author =
-    pageAuthor === false
-      ? []
-      : getAuthor(
-          pageAuthor ||
-            options.author ||
-            (app.options.themeConfig.author as string | undefined) ||
-            ""
-        );
+    pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
   const { updatedTime } = git;
 
   const modifiedTime = updatedTime ? new Date(updatedTime).toISOString() : "";

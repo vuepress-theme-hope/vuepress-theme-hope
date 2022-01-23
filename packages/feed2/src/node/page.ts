@@ -6,7 +6,7 @@ import {
 } from "@mr-hope/vuepress-shared";
 import { getImageMineType, resolveHTML, resolveUrl } from "./utils";
 
-import type { AuthorInfo, BaseThemeConfig } from "@mr-hope/vuepress-shared";
+import type { AuthorInfo } from "@mr-hope/vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Feed } from "./feed";
@@ -25,7 +25,6 @@ export class FeedPage {
   private pageFeedOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
-  private themeConfig: BaseThemeConfig;
 
   constructor(
     private page: Page & { git?: GitData },
@@ -37,7 +36,6 @@ export class FeedPage {
       page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>;
     this.pageFeedOptions = this.frontmatter.feed || {};
     this.base = this.app.options.base;
-    this.themeConfig = this.app.options.themeConfig as BaseThemeConfig;
   }
 
   get title(): string {

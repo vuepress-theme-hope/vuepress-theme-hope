@@ -14,8 +14,6 @@ export * from "../shared";
 
 /** Comment Plugin */
 const commentPlugin: Plugin<CommentOptions> = (options, app) => {
-  const { themeConfig } = app.options;
-
   const userWalineLocales =
     options.type === "waline"
       ? getLocales(app, walineLocales, options.walineLocales)
@@ -39,10 +37,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     },
 
     define: () => ({
-      COMMENT_OPTIONS: {
-        hint: !themeConfig.pure,
-        ...options,
-      },
+      COMMENT_OPTIONS: options,
       WALINE_LOCALES: userWalineLocales,
     }),
 
