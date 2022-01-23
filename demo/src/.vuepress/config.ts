@@ -135,7 +135,6 @@ export default defineUserConfig<HopeThemeOptions>({
   },
 
   plugins: [
-    ["@vuepress/plugin-debug"],
     [
       "@vuepress/plugin-register-components",
       {
