@@ -25,7 +25,7 @@ export const getWordNumber = (content: string): number =>
 /**
  * Get reading time info
  */
-export const readingTime = (
+export const getReadingTime = (
   content: string,
   wordsPerMinute = 300
 ): ReadingTime => {

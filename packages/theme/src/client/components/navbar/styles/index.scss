@@ -1,7 +1,12 @@
-// @use 'base';
-@use "dropdown-link";
+@use "base";
 @use "nav-link";
-@use "nav-links";
-@use "navbar";
+
 @use "toggle-button";
+
+@use "home-link";
+@use "nav-links";
+@use "actions";
+
+@use "dropdown-link";
+
 @use "toggle-dark-button";

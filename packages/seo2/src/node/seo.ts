@@ -9,7 +9,7 @@ import type {
   PageSeoInfo,
   SeoContent,
   SeoOptions,
-} from "./types";
+} from "../shared";
 
 const logger = new Logger("Seo");
 

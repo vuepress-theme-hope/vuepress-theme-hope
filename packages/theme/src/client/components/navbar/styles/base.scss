@@ -1,0 +1,49 @@
+@use "@hope/config";
+
+.navbar {
+  --navbar-line-height: calc(
+    var(--navbar-height) - var(--navbar-vertical-padding) * 2
+  );
+
+  display: flex;
+  justify-content: space-between;
+
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  box-sizing: border-box;
+  height: var(--navbar-height);
+  padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
+
+  background: var(--bg-color-blur);
+  box-shadow: 0 2px 8px var(--card-shadow-color);
+  backdrop-filter: saturate(150%) blur(12px);
+
+  line-height: var(--navbar-line-height);
+  transition: transform ease-in-out 0.3s, background-color ease 0.3s,
+    box-shadow ease 0.3s;
+
+  @media (max-width: config.$mobile) {
+    --navbar-line-height: calc(
+      var(--mobile-navbar-height) - var(--mobile-navbar-vertical-padding) * 2
+    );
+
+    height: var(--mobile-navbar-height);
+    padding: var(--mobile-navbar-vertical-padding)
+      var(--mobile-navbar-horizontal-padding);
+    padding-left: calc(var(--mobile-navbar-horizontal-padding) + 2.4rem);
+  }
+
+  .hide-navbar &.auto-hide {
+    transform: translateY(-100%);
+  }
+
+  a,
+  span,
+  img {
+    display: inline-block;
+  }
+}

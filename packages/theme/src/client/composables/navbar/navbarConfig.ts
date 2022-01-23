@@ -5,7 +5,7 @@ import { useThemeLocaleData } from "../themeData";
 
 import type { ComputedRef } from "vue";
 import type {
-  HopeThemeData,
+  HopeThemeOptions,
   HopeThemeNavbarLocaleOptions,
   ResolvedNavbarItem,
 } from "../../../shared";
@@ -14,7 +14,7 @@ export const useNavbarLocaleData =
   (): ComputedRef<HopeThemeNavbarLocaleOptions> =>
     computed(() => ({
       // these config needs to be merged manually
-      ...useThemeData<HopeThemeData>().value.navbar,
+      ...useThemeData<HopeThemeOptions>().value.navbar,
       ...useThemeLocaleData().value.navbar,
     }));
 

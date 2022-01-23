@@ -1,9 +1,7 @@
 import { defineComponent, h } from "vue";
 import { useNavbarConfig } from "../../composables";
 import DropdownLink from "./DropdownLink";
-import LanguageDropdown from "./LanguageDropdown";
 import AutoLink from "../AutoLink";
-import RepoLink from "../RepoLink";
 
 import type { VNode } from "vue";
 
@@ -25,8 +23,6 @@ export default defineComponent({
                   : h(AutoLink, { config })
               )
             ),
-            h("div", { class: ["nav-item"] }, h(LanguageDropdown)),
-            h("div", { class: ["nav-item", "hide-in-mobile"] }, h(RepoLink)),
           ])
         : null;
   },

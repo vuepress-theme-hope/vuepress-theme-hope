@@ -1,0 +1,19 @@
+.navbar {
+  .actions-wrapper {
+    display: flex;
+    align-items: center;
+
+    > * {
+      position: relative;
+      margin: 0 0.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

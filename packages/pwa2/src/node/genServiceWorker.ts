@@ -1,5 +1,4 @@
-import { chalk, fs } from "@vuepress/utils";
-import { relative, resolve } from "path";
+import { chalk, fs, path } from "@vuepress/utils";
 import { generateSW } from "workbox-build";
 import { logger } from "./logger";
 
@@ -23,7 +22,7 @@ const imageFilter =
 
     for (const entry of manifestEntries)
       if (imageExtensions.some((ext) => entry.url.endsWith(ext))) {
-        const stats = fs.statSync(resolve(outDir, entry.url));
+        const stats = fs.statSync(path.resolve(outDir, entry.url));
 
         if (stats.size > maxsize * 1024)
           warnings.push(
@@ -43,7 +42,7 @@ export const genServiceWorker = async (
 
   const { dest } = app.dir;
   const swDest = dest("service-worker.js");
-  const destDir = relative(process.cwd(), dest());
+  const destDir = path.relative(process.cwd(), dest());
 
   const additionalManifestEntries: ManifestEntry[] = [];
 

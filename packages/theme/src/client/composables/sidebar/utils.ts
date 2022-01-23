@@ -1,6 +1,6 @@
 import { h } from "vue";
 import { useRoute } from "vue-router";
-import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
+import { useIconPrefix } from "../themeData";
 import AutoLink from "../../components/AutoLink";
 import { isActiveLink } from "../../utils";
 

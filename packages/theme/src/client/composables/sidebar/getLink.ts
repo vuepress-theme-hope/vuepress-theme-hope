@@ -1,5 +1,4 @@
 import { isFunction, isString } from "@vuepress/shared";
-// import { hash } from "@vuepress/utils";
 
 import type { Router } from "vue-router";
 import type { AutoLink } from "../../../shared";
