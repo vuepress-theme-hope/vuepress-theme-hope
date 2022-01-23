@@ -4,7 +4,7 @@ import type { ContainerPluginOptions } from "@vuepress/plugin-container";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type {
   HopeThemePluginsOptions,
-  HopeThemeData,
+  HopeThemeOptions,
   HopeThemeLocaleOptions,
 } from "../../shared";
 
@@ -15,7 +15,7 @@ import type {
  */
 export const resolveContainerPluginOptions = (
   themePlugins: HopeThemePluginsOptions,
-  localeOptions: HopeThemeData,
+  localeOptions: HopeThemeOptions,
   type: "tip" | "warning" | "danger"
 ): ContainerPluginOptions | boolean => {
   if (themePlugins?.container?.[type] === false) return false;

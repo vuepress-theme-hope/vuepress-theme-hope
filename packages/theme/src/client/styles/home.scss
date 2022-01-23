@@ -112,12 +112,12 @@
     .action-button {
       display: inline-block;
       margin: 0.6rem 0.8rem;
-      padding: 1rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       border: 2px solid var(--accent-color);
-      border-radius: 2rem;
+      border-radius: 0.5rem;
       color: var(--accent-color);
       font-size: 1.2rem;
-      transition: background 0.1s ease;
+      transition: background-color ease 0.3s, color ease 0.3s;
       overflow: hidden;
 
       @media (max-width: config.$mobile) {
@@ -155,7 +155,7 @@
     margin: 0 -2rem;
     padding: 1.2rem 0;
     border-top: 1px solid var(--border-color);
-    transition: border-top ease 0.3s;
+    transition: border-color ease 0.3s;
 
     @media (max-width: config.$mobileS) {
       margin: 0 -1.5rem;

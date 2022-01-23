@@ -1,9 +1,9 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { themeLocalesData } from "./locales";
-import type { HopeThemeData } from "../shared";
+import type { HopeThemeOptions } from "../shared";
 import type { App } from "@vuepress/core";
 
-const defaultRootOptions: HopeThemeData = {
+const defaultRootOptions: HopeThemeOptions = {
   iconPrefix: "icon-",
 };
 
@@ -12,7 +12,7 @@ const defaultRootOptions: HopeThemeData = {
  */
 export const assignDefaultLocaleOptions = (
   app: App,
-  localeOptions: HopeThemeData
+  localeOptions: HopeThemeOptions
 ): void => {
   if (!localeOptions.locales) localeOptions.locales = {};
 

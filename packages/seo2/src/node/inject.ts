@@ -1,5 +1,5 @@
 import type { HeadConfig } from "@vuepress/core";
-import type { ArticleSeoContent, SeoContent, SeoOptions } from "./types";
+import type { ArticleSeoContent, SeoContent, SeoOptions } from "../shared";
 
 interface MetaOptions {
   name: string;

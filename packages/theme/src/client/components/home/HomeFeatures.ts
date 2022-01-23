@@ -1,8 +1,8 @@
-import { usePure } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { isArray } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
+import { usePure } from "../../composables";
 
 import type { VNode } from "vue";
 import type { ProjectHomePageFrontmatter } from "../../../shared";

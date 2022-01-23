@@ -1,0 +1,44 @@
+@use "@hope/config";
+
+.navbar {
+  .logo {
+    height: var(--navbar-line-height);
+    margin-right: 0.8rem;
+    vertical-align: top;
+
+    &.light {
+      display: inline-block;
+    }
+
+    &.dark {
+      display: none;
+    }
+
+    #{config.$darkSelector} & {
+      &.light {
+        display: none;
+      }
+
+      &.dark {
+        display: inline-block;
+      }
+    }
+  }
+
+  .site-name {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+
+    .home-link:hover & {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: config.$mobile) {
+      width: calc(100vw - 9.4rem);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

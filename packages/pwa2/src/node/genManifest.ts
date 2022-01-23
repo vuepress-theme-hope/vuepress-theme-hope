@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getRootLang } from "@mr-hope/vuepress-shared";
-import { chalk, fs } from "@vuepress/utils";
-import { relative } from "path";
+import { chalk, fs, path } from "@vuepress/utils";
 import { logger } from "./logger";
 
 import type { App } from "@vuepress/core";
@@ -65,7 +64,7 @@ export const genManifest = async (
   logger.succeed();
   logger.update(
     `Manifest generated and saved to ${chalk.cyan(
-      relative(process.cwd(), manifestPath)
+      path.relative(process.cwd(), manifestPath)
     )}!`
   );
 };

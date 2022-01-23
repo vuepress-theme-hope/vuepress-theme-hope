@@ -1,20 +1,25 @@
+import { components } from "@mr-hope/vuepress-plugin-components";
+import { comment } from "vuepress-plugin-comment2";
+import { copyCode } from "vuepress-plugin-copy-code2";
 import { resolveCommentOptions } from "./comment";
+import { resolveComponentsOptions } from "./components";
 import {
   resolveActiveHeaderLinksPluginOptions,
   resolveContainerPluginOptionsForCodeGroup,
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveGitPluginOptions,
 } from "./plugins";
+import { resolveCopyCodeOptions } from "./copy-code";
 
 import type { PluginConfig, PluginOptions } from "@vuepress/core";
-import type { HopeThemeData, HopeThemePluginsOptions } from "../../shared";
+import type { HopeThemeOptions, HopeThemePluginsOptions } from "../../shared";
 
 export const getPluginConfig = (
   plugins: HopeThemePluginsOptions,
-  themeData: Omit<HopeThemeData, "plugins">
+  themeData: Omit<HopeThemeOptions, "plugins">
 ): PluginConfig<PluginOptions>[] => {
   return [
-    ["@mr-hope/components"],
+    components(resolveComponentsOptions(themeData)),
     [
       "@vuepress/active-header-links",
       resolveActiveHeaderLinksPluginOptions(plugins),
@@ -28,8 +33,8 @@ export const getPluginConfig = (
     ["@vuepress/nprogress", plugins.nprogress !== false],
     ["@vuepress/prismjs", plugins.prismjs !== false],
     ["@vuepress/theme-data", { themeData }],
-    ["comment2", resolveCommentOptions(plugins.comment)],
-    ["copy-code2", plugins.copyCode || true],
+    comment(resolveCommentOptions(plugins.comment)),
+    copyCode(resolveCopyCodeOptions(plugins.copyCode)),
     ["feed2", plugins.feed || true],
     ["md-enhance", plugins.mdEnhance || {}],
     ["photo-swipe", plugins.photoSwipe || true],

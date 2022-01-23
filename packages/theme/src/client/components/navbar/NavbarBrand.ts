@@ -5,7 +5,8 @@ import { RouterLink } from "vue-router";
 
 export default defineComponent({
   name: "NavbarBrand",
-  setup() {
+
+  setup(_, { slots }) {
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
     const navbarLocale = useNavbarLocaleData();
@@ -52,6 +53,7 @@ export default defineComponent({
                   siteBrandTitle.value
                 )
               : null,
+            slots.default?.(),
           ],
         }
       );

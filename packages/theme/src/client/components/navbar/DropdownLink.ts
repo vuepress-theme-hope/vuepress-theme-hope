@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 import { useRoute } from "vue-router";
-import { useIconPrefix } from "@mr-hope/vuepress-shared/lib/client";
 import AutoLink from "../AutoLink";
+import { useIconPrefix } from "../../composables";
 
 import type { PropType, VNode } from "vue";
 import type { AutoLink as AutoLinkType, NavGroup } from "../../../shared";
@@ -63,15 +63,14 @@ export default defineComponent({
           },
           [
             slots.title?.() ||
-              h(
-                "span",
-                { class: "title" },
+              h("span", { class: "title" }, [
                 config.value.icon
                   ? h("i", {
                       class: `iconfont ${iconPrefix.value}${config.value.icon}`,
                     })
-                  : []
-              ),
+                  : null,
+                props.config.text,
+              ]),
             h("span", { class: "arrow" }),
           ]
         ),
