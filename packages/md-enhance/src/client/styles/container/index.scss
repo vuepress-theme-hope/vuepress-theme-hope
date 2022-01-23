@@ -136,10 +136,12 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     --hint-box-title-color: #4b1113;
 
     .custom-container-title {
-      @include svg.background-svg(icons.$danger-icon);
+      &::before {
+        @include svg.background-svg(icons.$danger-icon);
 
-      #{config.$darkSelector} & {
-        @include svg.background-svg(icons.$danger-dark-icon);
+        #{config.$darkSelector} & {
+          @include svg.background-svg(icons.$danger-dark-icon);
+        }
       }
     }
   }
