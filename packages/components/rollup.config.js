@@ -7,11 +7,20 @@ export default [
       "@vuepress/utils",
       "lodash.debounce",
       "vue",
+      "vuepress-plugin-reading-time2",
       "vuepress-plugin-sass-palette",
     ],
   }),
   ...rollupVue("client/appEnhance.ts", {
-    external: ["@vuepress/client", /\.scss$/],
+    external: [
+      "@vuepress/client",
+      "@Badge",
+      "@BreadCrumb",
+      "@PageInfo",
+      "@Pagination",
+      "@ScreenFull",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
@@ -32,13 +41,18 @@ export default [
       "vue-router",
       /\.scss$/,
     ],
-    dtsExternal: ["balloon-css", /\.scss$/],
+    dtsExternal: ["balloon-css/balloon.css", /\.scss$/],
   }),
   ...rollupVue("client/components/Pagination.vue", {
-    external: ["@mr-hope/vuepress-shared/lib/client", "vue", /\.scss$/],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
   }),
   ...rollupVue("client/components/ScreenFull.ts", {
-    external: ["screenfull", "vue"],
+    external: ["@mr-hope/vuepress-shared/lib/client", "screenfull", "vue"],
   }),
   ...rollupVue("client/root-components/BackToTop.ts", {
     external: [
