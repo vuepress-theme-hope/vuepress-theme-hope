@@ -1,18 +1,6 @@
 @use "@hope/config";
 
 #{config.$contentClass} {
-  code {
-    .token {
-      &.deleted {
-        color: #ec5975;
-      }
-
-      &.inserted {
-        color: var(--accent-color);
-      }
-    }
-  }
-
   pre,
   pre[class*="language-"] {
     line-height: 1.4;

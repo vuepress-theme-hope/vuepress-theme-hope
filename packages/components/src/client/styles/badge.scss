@@ -11,6 +11,7 @@
   transition: background-color var(--color-transition),
     color var(--color-transition);
 
+  // compatable with toc
   .table-of-contents & {
     vertical-align: middle;
   }
