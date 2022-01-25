@@ -33,6 +33,7 @@ export interface ResolvedSidebarPageItem extends SidebarPageItem {
 
 export interface ResolvedSidebarGroupItem extends SidebarGroupItem {
   type: "group";
+  collapsible?: boolean;
   children: ResolvedSidebarItem[];
 }
 

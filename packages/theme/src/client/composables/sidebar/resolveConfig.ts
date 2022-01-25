@@ -1,4 +1,4 @@
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import {
   isArray,
@@ -6,7 +6,7 @@ import {
   isString,
   resolveLocalePath,
 } from "@vuepress/shared";
-import { getLink } from "./getLink";
+import { useLink } from "./link";
 import { useThemeLocaleData } from "../themeData";
 
 import type { PageHeader } from "@vuepress/client";
@@ -74,21 +74,18 @@ export const resolveArraySidebarItems = (
 ): ResolvedSidebarItem[] => {
   const page = usePageData();
   const route = useRoute();
-  const router = useRouter();
 
   const handleChildItem = (
     item: SidebarItem
   ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
-    const childItem = isString(item) ? getLink(router, item) : item;
+    const childItem = isString(item) ? useLink(item) : item;
 
     // resolved group item
     if ("children" in childItem) {
-      const children = childItem.children.map((item) => handleChildItem(item));
-
       return {
         type: "group",
         ...childItem,
-        children,
+        children: childItem.children.map((item) => handleChildItem(item)),
       };
     }
 
@@ -119,13 +116,14 @@ export const resolveArraySidebarItems = (
 export const resolveMultiSidebarItems = (
   sidebarConfig: SidebarConfigObject,
   sidebarDepth: number
-): ResolvedSidebarItem[] => {
-  const path = useRoute().path;
-  const sidebarPath = resolveLocalePath(sidebarConfig, path);
-  const matchedSidebarConfig = sidebarConfig[sidebarPath] ?? [];
-
-  return resolveArraySidebarItems(matchedSidebarConfig, sidebarDepth);
-};
+): ResolvedSidebarItem[] =>
+  resolveArraySidebarItems(
+    sidebarConfig[
+      // sidebarPath
+      resolveLocalePath(sidebarConfig, useRoute().path)
+    ] ?? [],
+    sidebarDepth
+  );
 
 /**
  * Resolve sidebar items global computed

@@ -14,19 +14,21 @@ export const editLinkPatterns: Record<Exclude<RepoType, null>, string> = {
     ":repo/src/:branch/:path?mode=edit&spa=0&at=:branch&fileviewer=file-view-default",
 };
 
+interface EditLinkOptions {
+  docsRepo: string;
+  docsBranch: string;
+  docsDir: string;
+  filePathRelative: string | null;
+  editLinkPattern?: string;
+}
+
 export const resolveEditLink = ({
   docsRepo,
   docsBranch,
   docsDir,
   filePathRelative,
   editLinkPattern,
-}: {
-  docsRepo: string;
-  docsBranch: string;
-  docsDir: string;
-  filePathRelative: string | null;
-  editLinkPattern?: string;
-}): string | null => {
+}: EditLinkOptions): string | null => {
   if (!filePathRelative) return null;
 
   const repoType = resolveRepoType(docsRepo);

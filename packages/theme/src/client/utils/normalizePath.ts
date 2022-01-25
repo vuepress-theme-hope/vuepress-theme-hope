@@ -1,10 +1,10 @@
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import type { ResolvedSidebarItem } from "../../shared";
 
-export const hashRE = /#.*$/u;
+const HASH_REGEXP = /#.*$/u;
 
 export const getHash = (path: string): string | void => {
-  const match = hashRE.exec(path);
+  const match = HASH_REGEXP.exec(path);
   if (match) return match[0];
 
   return "";
@@ -12,7 +12,7 @@ export const getHash = (path: string): string | void => {
 
 export const normalizePath = (path: string): string =>
   decodeURI(path)
-    .replace(/#.*$/, "")
+    .replace(HASH_REGEXP, "")
     .replace(/(index)?\.(md|html)$/, "");
 
 export const isActiveLink = (
@@ -31,14 +31,14 @@ export const isActiveLink = (
   return currentPath === targetPath;
 };
 
-export const isActiveItem = (
+export const isActiveSidebarItem = (
   route: RouteLocationNormalizedLoaded,
   item: ResolvedSidebarItem
 ): boolean => {
   if (isActiveLink(route, item.link)) return true;
 
   if (item.children)
-    return item.children.some((child) => isActiveItem(route, child));
+    return item.children.some((child) => isActiveSidebarItem(route, child));
 
   return false;
 };

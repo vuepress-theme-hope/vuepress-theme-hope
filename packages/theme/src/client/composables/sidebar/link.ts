@@ -1,4 +1,5 @@
 import { isFunction, isString } from "@vuepress/shared";
+import { useRouter } from "vue-router";
 
 import type { Router } from "vue-router";
 import type { AutoLink } from "../../../shared";
@@ -6,22 +7,22 @@ import type { AutoLink } from "../../../shared";
 /**
  * Resolve a route with redirection
  */
-export const resolveRouteWithRedirect = (
-  router: Router,
+export const useResolveRouteWithRedirect = (
   ...args: Parameters<Router["resolve"]>
 ): ReturnType<Router["resolve"]> => {
+  const router = useRouter();
   const route = router.resolve(...args);
   const lastMatched = route.matched[route.matched.length - 1];
-  if (!lastMatched?.redirect) {
-    return route;
-  }
+
+  if (!lastMatched?.redirect) return route;
+
   const { redirect } = lastMatched;
   const resolvedRedirect = isFunction(redirect) ? redirect(route) : redirect;
   const resolvedRedirectObj = isString(resolvedRedirect)
     ? { path: resolvedRedirect }
     : resolvedRedirect;
 
-  return resolveRouteWithRedirect(router, {
+  return useResolveRouteWithRedirect({
     hash: route.hash,
     query: route.query,
     params: route.params,
@@ -36,8 +37,8 @@ export const resolveRouteWithRedirect = (
  * - Input: '/README.md'
  * - Output: { icon: 'home', text: 'Home', link: '/' }
  */
-export const getLink = (router: Router, item: string): AutoLink => {
-  const resolved = resolveRouteWithRedirect(router, item);
+export const useLink = (item: string): AutoLink => {
+  const resolved = useResolveRouteWithRedirect(item);
 
   return {
     icon: resolved.meta.icon,

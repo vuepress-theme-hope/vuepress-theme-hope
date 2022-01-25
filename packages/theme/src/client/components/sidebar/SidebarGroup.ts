@@ -2,7 +2,7 @@ import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import SidebarLinks from "./SidebarLinks";
 import { renderGroupHeader } from "../../composables";
-import { isActiveItem } from "../../utils";
+import { isActiveSidebarItem } from "../../utils";
 
 import type { PropType, VNode } from "vue";
 import type { ResolvedSidebarGroupItem } from "../../../shared";
@@ -22,7 +22,7 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const route = useRoute();
-    const active = computed(() => isActiveItem(route, props.config));
+    const active = computed(() => isActiveSidebarItem(route, props.config));
 
     return (): VNode[] => [
       h("section", { class: "sidebar-group" }, [

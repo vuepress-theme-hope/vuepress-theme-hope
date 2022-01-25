@@ -1,34 +1,67 @@
-import { onMounted, onUnmounted, ref, watch } from "vue";
-import type { Ref } from "vue";
+import { usePreferredDark, useStorage } from "@vueuse/core";
+import { computed, inject, onMounted, onUnmounted, provide, watch } from "vue";
+import { useThemeLocaleData } from "./themeData";
 
-export const useDarkMode = (): Ref<boolean> => {
-  const isDarkMode = ref(false);
+import type { InjectionKey, WritableComputedRef } from "vue";
 
-  const updateDarkModeClass = (value = isDarkMode.value): void => {
+export type DarkModeRef = WritableComputedRef<boolean>;
+
+export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol.for("darkMode");
+
+/**
+ * Inject dark mode global computed
+ */
+export const useDarkMode = (): DarkModeRef => {
+  const isDarkMode = inject(darkModeSymbol);
+
+  if (!isDarkMode) {
+    throw new Error("useDarkMode() is called without provider.");
+  }
+  return isDarkMode;
+};
+
+export const updateHtmlDarkClass = (isDarkMode: DarkModeRef): void => {
+  const update = (value = isDarkMode.value): void => {
     // set `class="dark"` on `<html>` element
     const htmlEl = window?.document.querySelector("html");
     htmlEl?.classList.toggle("dark", value);
   };
 
-  const mediaQuery = ref<MediaQueryList | null>(null);
-  const onMediaQueryChange = (event: MediaQueryListEvent): void => {
-    isDarkMode.value = event.matches;
-  };
-
   onMounted(() => {
-    // get `prefers-color-scheme` media query and set the initial mode
-    mediaQuery.value = window.matchMedia("(prefers-color-scheme: dark)");
-    isDarkMode.value = mediaQuery.value.matches;
-
-    // watch changes
-    mediaQuery.value.addEventListener("change", onMediaQueryChange);
-    watch(isDarkMode, updateDarkModeClass, { immediate: true });
+    watch(isDarkMode, update, { immediate: true });
   });
 
-  onUnmounted(() => {
-    mediaQuery.value?.removeEventListener("change", onMediaQueryChange);
-    updateDarkModeClass(false);
+  onUnmounted(() => update());
+};
+
+export const setupDarkMode = (): void => {
+  const themeLocale = useThemeLocaleData();
+  const isDarkPreferred = usePreferredDark();
+  const darkStorage = useStorage("vuepress-color-scheme", "auto");
+
+  const isDarkMode = computed<boolean>({
+    get() {
+      // disable dark mode
+      if (!themeLocale.value.darkMode) {
+        return false;
+      }
+      // auto detected from prefers-color-scheme
+      if (darkStorage.value === "auto") {
+        return isDarkPreferred.value;
+      }
+      // storage value
+      return darkStorage.value === "dark";
+    },
+    set(val) {
+      if (val === isDarkPreferred.value) {
+        darkStorage.value = "auto";
+      } else {
+        darkStorage.value = val ? "dark" : "light";
+      }
+    },
   });
 
-  return isDarkMode;
+  provide(darkModeSymbol, isDarkMode);
+
+  updateHtmlDarkClass(isDarkMode);
 };
