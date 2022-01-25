@@ -69,19 +69,6 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/layouts/Layout.ts", {
-    external: [
-      "@CommonWrapper",
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "vue",
-      "vue-router",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
   ...rollupVue("client/layouts/404.ts", {
     external: [
       "@CommonWrapper",
@@ -96,7 +83,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/layouts/Slide", {
-    external: ["vuepress-plugin-md-enhance/client/SlidePage", "vue"],
+    external: ["vuepress-plugin-md-enhance/lib/client/SlidePage", "vue"],
   }),
   ...rollupTypescript("client/appEnhance", {
     copy: [["client/styles", "client"]],
