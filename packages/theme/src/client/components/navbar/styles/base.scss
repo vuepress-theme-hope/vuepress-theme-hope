@@ -23,8 +23,8 @@
   backdrop-filter: saturate(150%) blur(12px);
 
   line-height: var(--navbar-line-height);
-  transition: transform ease-in-out 0.3s, background-color ease 0.3s,
-    box-shadow ease 0.3s;
+  transition: transform ease-in-out 0.3s,
+    background-color var(--color-transition), box-shadow var(--color-transition);
 
   @media (max-width: config.$mobile) {
     --navbar-line-height: calc(

@@ -14,7 +14,8 @@
   backdrop-filter: saturate(150%) blur(12px);
   font-size: 16px;
   overflow-y: auto;
-  transition: background-color ease 0.3s, box-shadow ease 0.3s;
+  transition: background-color var(--color-transition),
+    box-shadow var(--color-transition);
 
   scrollbar-width: thin;
   scrollbar-color: var(--accent-color) var(--border-color);

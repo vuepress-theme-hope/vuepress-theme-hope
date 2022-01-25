@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
   background: var(--bg-color);
-  transition: background-color ease 0.3s;
+  transition: background-color var(--color-transition);
 }
 
 #{config.$darkSelector} {
@@ -57,7 +57,8 @@ code {
   font-family: var(--font-family-code);
   font-size: 0.85em;
   overflow-wrap: break-word;
-  transition: background-color ease 0.3s, color ease 0.3s;
+  transition: background-color var(--color-transition),
+    color var(--color-transition);
 
   #{config.$darkSelector} & {
     background: var(--grey12);

@@ -117,7 +117,8 @@
       border-radius: 0.5rem;
       color: var(--accent-color);
       font-size: 1.2rem;
-      transition: background-color ease 0.3s, color ease 0.3s;
+      transition: background-color var(--color-transition),
+        color var(--color-transition);
       overflow: hidden;
 
       @media (max-width: config.$mobile) {
@@ -155,7 +156,7 @@
     margin: 0 -2rem;
     padding: 1.2rem 0;
     border-top: 1px solid var(--border-color);
-    transition: border-color ease 0.3s;
+    transition: border-color var(--color-transition);
 
     @media (max-width: config.$mobileS) {
       margin: 0 -1.5rem;
