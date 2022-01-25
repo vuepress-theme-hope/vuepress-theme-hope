@@ -8,11 +8,9 @@
   "scripts": {
     "demo:vite-build": "vuepress-vite build src",
     "demo:vite-clean-serve": "vuepress-vite dev src --clean-cache",
-    "demo:vite-eject": "vuepress-vite eject-hope src",
     "demo:vite-serve": "vuepress-vite dev src",
     "demo:webpack-build": "vuepress-webpack build src",
     "demo:webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
-    "demo:webpack-eject": "vuepress-webpack eject-hope src",
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
