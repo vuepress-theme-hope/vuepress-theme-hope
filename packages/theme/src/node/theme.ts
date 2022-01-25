@@ -1,7 +1,7 @@
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
-import { getAlisa } from "./alias";
+import { getAlias } from "./alias";
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
 import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
@@ -27,9 +27,11 @@ export const themeHope: Theme<HopeThemeOptions> = (
   return {
     name: "vuepress-theme-hope",
 
-    alias: getAlisa(),
+    alias: getAlias(),
 
     layouts: path.resolve(__dirname, "../client/layouts"),
+
+    templateBuild: path.resolve(__dirname, "../../templates/index.build.html"),
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
 
