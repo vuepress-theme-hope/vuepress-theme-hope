@@ -1,10 +1,11 @@
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { noopModule } from "@mr-hope/vuepress-shared";
-import { codeDemoDefaultSetting } from "./markdown-it/code-demo";
 import {
+  codeDemoDefaultSetting,
   footnote,
   katex,
+  lazyLoad,
   mark,
   mermaid,
   presentation,
@@ -93,6 +94,8 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
 
     extendsMarkdown: (markdownIt): void => {
+      if (options.lazyLoad || options.enableAll) markdownIt.use(lazyLoad);
+
       if (options.sup || options.enableAll) markdownIt.use(sup);
       if (options.sub || options.enableAll) markdownIt.use(sub);
       if (footnoteEnable) markdownIt.use(footnote);

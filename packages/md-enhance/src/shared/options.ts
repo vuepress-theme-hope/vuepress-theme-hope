@@ -82,6 +82,15 @@ export type MarkdownEnhanceOptions = Partial<{
   footnote: boolean;
 
   /**
+   * Whether enable native image lazy loading
+   *
+   * 是否启用原生的图片懒加载
+   *
+   * @default false
+   */
+  lazyLoad?: boolean;
+
+  /**
    * 是否启用标注支持
    *
    * Whether to enable mark format support
