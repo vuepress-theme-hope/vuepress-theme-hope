@@ -39,6 +39,14 @@ export default [
     external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/CodeGroup", {
+    external: ["@mr-hope/vuepress-shared/lib/client", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/CodeGroupItem", {
+    external: ["@mr-hope/vuepress-shared/lib/client", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/Mermaid", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
