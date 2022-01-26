@@ -1,23 +1,34 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
 import { computed, inject, onMounted, onUnmounted, provide, watch } from "vue";
-import { useThemeLocaleData } from "./themeData";
+import { useThemeData } from "./themeData";
 
-import type { InjectionKey, WritableComputedRef } from "vue";
+import type { InjectionKey, Ref, WritableComputedRef } from "vue";
+
+export type DarkmodeStatus = "light" | "dark" | "auto";
 
 export type DarkModeRef = WritableComputedRef<boolean>;
 
-export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol.for("darkMode");
+export type DarkModeStatusRef = Ref<DarkmodeStatus>;
+
+export const darkModeSymbol: InjectionKey<{
+  isDarkMode: DarkModeRef;
+  status: DarkModeStatusRef;
+}> = Symbol.for("darkMode");
 
 /**
  * Inject dark mode global computed
  */
-export const useDarkMode = (): DarkModeRef => {
-  const isDarkMode = inject(darkModeSymbol);
+export const useDarkMode = (): {
+  isDarkMode: DarkModeRef;
+  status: DarkModeStatusRef;
+} => {
+  const darkmode = inject(darkModeSymbol);
 
-  if (!isDarkMode) {
+  if (!darkmode) {
     throw new Error("useDarkMode() is called without provider.");
   }
-  return isDarkMode;
+
+  return darkmode;
 };
 
 export const updateHtmlDarkClass = (isDarkMode: DarkModeRef): void => {
@@ -35,33 +46,34 @@ export const updateHtmlDarkClass = (isDarkMode: DarkModeRef): void => {
 };
 
 export const setupDarkMode = (): void => {
-  const themeLocale = useThemeLocaleData();
+  const themeData = useThemeData();
   const isDarkPreferred = usePreferredDark();
-  const darkStorage = useStorage("vuepress-color-scheme", "auto");
+  const darkmodeStorage = useStorage<DarkmodeStatus>(
+    "vuepress-theme-hope-scheme",
+    "dark"
+  );
 
-  const isDarkMode = computed<boolean>({
-    get() {
-      // disable dark mode
-      if (!themeLocale.value.darkMode) {
-        return false;
-      }
-      // auto detected from prefers-color-scheme
-      if (darkStorage.value === "auto") {
-        return isDarkPreferred.value;
-      }
-      // storage value
-      return darkStorage.value === "dark";
-    },
-    set(val) {
-      if (val === isDarkPreferred.value) {
-        darkStorage.value = "auto";
-      } else {
-        darkStorage.value = val ? "dark" : "light";
-      }
-    },
+  const isDarkMode = computed<boolean>(() => {
+    const { darkmode } = themeData.value;
+
+    // disable dark mode
+    return darkmode === "disable"
+      ? false
+      : // force dark
+      darkmode === "force-dark"
+      ? true
+      : // auto
+      darkmode === "auto"
+      ? isDarkPreferred.value
+      : // auto switch
+      darkmode === "switch"
+      ? darkmodeStorage.value === "dark"
+      : // auto-swich
+        darkmodeStorage.value === "dark" ||
+        (darkmodeStorage.value === "auto" && isDarkPreferred.value);
   });
 
-  provide(darkModeSymbol, isDarkMode);
+  provide(darkModeSymbol, { isDarkMode, status: darkmodeStorage });
 
   updateHtmlDarkClass(isDarkMode);
 };

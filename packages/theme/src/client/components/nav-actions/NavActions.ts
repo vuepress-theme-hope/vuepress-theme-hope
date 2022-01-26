@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import LanguageDropdown from "./LanguageDropdown";
 import RepoLink from "./RepoLink";
-import ToggleDarkModeButton from "./ToggleDarkModeButton.vue";
+import ToggleDarkModeButton from "./ToggleDarkModeButton";
 import { useThemeLocaleData } from "../../composables";
 
 import type { VNode } from "vue";

@@ -14,6 +14,13 @@ export interface HopeThemeFeatureLocaleOptions {
   blog?: HopeThemeBlogLocaleOptions | false;
 }
 
+export type DarkmodeConfig =
+  | "auto-switch"
+  | "auto"
+  | "switch"
+  | "force-dark"
+  | "disable";
+
 export interface HopeThemeFeatureOptions {
   /**
    * Dark mode support options:
@@ -32,7 +39,7 @@ export interface HopeThemeFeatureOptions {
    *
    * @default 'auto-switch'
    */
-  darkmode?: "auto-switch" | "auto" | "switch" | "disable";
+  darkmode?: DarkmodeConfig;
 
   /**
    * 主题色选项配置。

@@ -36,7 +36,8 @@ export interface DefaultHopeThemeLocaleData
   };
 }
 
-export type HopeThemeLocaleData = HopeThemeFeatureLocaleData &
+export type HopeThemeLocaleData = DefaultHopeThemeLocaleData &
+  HopeThemeFeatureLocaleData &
   HopeThemeFeatureLocaleOptions &
   HopeThemeLayoutLocaleData &
   HopeThemeLayoutLocaleOptions &
