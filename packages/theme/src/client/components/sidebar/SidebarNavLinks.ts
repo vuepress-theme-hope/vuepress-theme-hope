@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 import AutoLink from "../AutoLink";
-import RepoLink from "../RepoLink";
+import RepoLink from "../nav-actions/RepoLink";
 import SidebarDropdownLink from "./SidebarDropdownLink";
 import { useNavbarConfig, useNavbarRepo } from "../../composables";
 

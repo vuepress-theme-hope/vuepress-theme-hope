@@ -1,15 +1,21 @@
 import { isLinkHttp } from "@vuepress/shared";
 import { computed } from "vue";
-import { useNavbarLocaleData } from "./navbarConfig";
-import { resolveRepoType } from "../../utils";
+import { useNavbarLocaleData } from "./navbar";
+import { resolveRepoType } from "../utils";
 
 import type { ComputedRef } from "vue";
-import type { AutoLink } from "../../../shared";
+import type { RepoType } from "../utils";
+
+export interface RepoConfig {
+  type: RepoType | "Source";
+  label: string;
+  link: string;
+}
 
 /**
  * Get navbar config of repository link
  */
-export const useNavbarRepo = (): ComputedRef<AutoLink | null> => {
+export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
   const navbarLocale = useNavbarLocaleData();
 
   const repo = computed(() => navbarLocale.value.repo);
@@ -35,7 +41,8 @@ export const useNavbarRepo = (): ComputedRef<AutoLink | null> => {
     if (!repoLink.value || !repoLabel.value) return null;
 
     return {
-      text: repoLabel.value,
+      type: repoType.value || "Source",
+      label: repoLabel.value,
       link: repoLink.value,
     };
   });

@@ -1,5 +1,5 @@
 import { defineComponent, h } from "vue";
-import DropdownLink from "./DropdownLink";
+import DropdownLink from "../navbar/DropdownLink";
 import { I18nIcon } from "../icons";
 import { useNavbarLanguageDropdown } from "../../composables";
 

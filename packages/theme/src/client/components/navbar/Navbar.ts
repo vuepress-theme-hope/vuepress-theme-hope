@@ -5,15 +5,12 @@ import {
   onBeforeUnmount,
   onMounted,
   ref,
-  resolveComponent,
 } from "vue";
-import { useNavbarLocaleData, useThemeLocaleData } from "../../composables";
-import LanguageDropdown from "./LanguageDropdown";
+import { useNavbarLocaleData } from "../../composables";
 import NavbarBrand from "./NavbarBrand";
 import NavbarLinks from "./NavbarLinks";
-import ToggleDarkModeButton from "./ToggleDarkModeButton.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton";
-import RepoLink from "../RepoLink";
+import NavActions from "../nav-actions/NavActions";
 
 import type { VNode } from "vue";
 
@@ -46,7 +43,6 @@ export default defineComponent({
   emits: ["toggle-sidebar"],
 
   setup(_props, { emit, slots }) {
-    const themeLocale = useThemeLocaleData();
     const navbarLocale = useNavbarLocaleData();
 
     const isMobile = ref(false);
@@ -68,10 +64,6 @@ export default defineComponent({
 
       return autoHide !== "none" && (autoHide === "always" || isMobile.value);
     });
-
-    const enableDarkmode = computed(
-      () => themeLocale.value.darkmode !== "disable"
-    );
 
     let handleLinksWrapWidth: () => void;
 
@@ -127,14 +119,7 @@ export default defineComponent({
           h(NavbarLinks, {
             style: linksWrapperStyle.value,
           }),
-          h("div", { class: "actions-wrapper" }, [
-            h("div", { class: ["nav-item"] }, h(LanguageDropdown)),
-            h("div", { class: ["nav-item", "hide-in-mobile"] }, h(RepoLink)),
-            slots.center?.(),
-            enableDarkmode.value ? h(ToggleDarkModeButton) : null,
-            h(resolveComponent("NavbarSearch")),
-            slots.after?.(),
-          ]),
+          h(NavActions),
         ]
       );
   },

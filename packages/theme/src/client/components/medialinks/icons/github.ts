@@ -2,7 +2,7 @@ import { IconBase } from "@mr-hope/vuepress-shared/lib/client";
 import { h } from "vue";
 import type { FunctionalComponent } from "vue";
 
-export const GithubIcon: FunctionalComponent = () =>
+export const GitHubIcon: FunctionalComponent = () =>
   h(
     IconBase,
     { name: "github" },
@@ -22,4 +22,4 @@ export const GithubIcon: FunctionalComponent = () =>
     }
   );
 
-GithubIcon.displayName = "GithubIcon";
+GitHubIcon.displayName = "GitHubIcon";

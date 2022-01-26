@@ -22,7 +22,7 @@ const medias: MediaType[] = [
   "Facebook",
   "Flipboard",
   "Gitee",
-  "Github",
+  "GitHub",
   "Gitlab",
   "Gmail",
   "Instagram",
