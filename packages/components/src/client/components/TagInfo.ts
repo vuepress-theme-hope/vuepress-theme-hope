@@ -57,11 +57,11 @@ export default defineComponent({
                   h(
                     "li",
                     {
-                      class: {
-                        tag: true,
-                        [`tag${index % 9}`]: true,
-                        clickable: props.tagPath,
-                      },
+                      class: [
+                        "tag",
+                        `tag${index % 9}`,
+                        { clickable: props.tagPath },
+                      ],
                       onClick: () => navigate(tag),
                     },
                     h("span", { role: props.tagPath ? "navigation" : "" }, tag)

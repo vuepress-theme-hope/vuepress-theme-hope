@@ -31,11 +31,7 @@ export default defineComponent({
               RouterLink,
               {
                 to: props.config.link,
-                class: {
-                  "sidebar-heading": true,
-                  clickable: true,
-                  active: active.value,
-                },
+                class: ["sidebar-heading clickable", { active: active.value }],
                 onClick: () => emit("toggle"),
               },
               renderGroupHeader(props.config, props.open)
@@ -44,11 +40,13 @@ export default defineComponent({
               "p",
               {
                 to: props.config.link,
-                class: {
-                  "sidebar-heading": true,
-                  clickable: props.config.collapsable,
-                  active: active.value,
-                },
+                class: [
+                  "sidebar-heading",
+                  {
+                    clickable: props.config.collapsable,
+                    active: active.value,
+                  },
+                ],
                 onClick: () => emit("toggle"),
               },
               renderGroupHeader(props.config, props.open)

@@ -26,11 +26,13 @@ export default defineComponent({
 
     return (): (VNode | null)[] => [
       renderItem(props.config, {
-        class: {
-          "sidebar-link": true,
-          heading: props.config.type === "heading",
-          active: isActiveLink(route, props.config.link),
-        },
+        class: [
+          "sidebar-link",
+          {
+            heading: props.config.type === "heading",
+            active: isActiveLink(route, props.config.link),
+          },
+        ],
         exact: true,
       }),
       renderChildren(props.config.children),

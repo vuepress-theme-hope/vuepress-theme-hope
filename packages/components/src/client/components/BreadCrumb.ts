@@ -87,7 +87,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "nav",
-        { class: { breadcrumb: true, disable: !enable.value } },
+        { class: ["breadcrumb", { disable: !enable.value }] },
         enable.value
           ? h(
               "ol",

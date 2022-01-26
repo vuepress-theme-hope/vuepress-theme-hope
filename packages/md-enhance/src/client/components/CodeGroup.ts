@@ -94,10 +94,7 @@ export default defineComponent({
                   if (element)
                     tabRefs.value[index] = element as HTMLUListElement;
                 },
-                class: {
-                  "code-group-nav-tab": true,
-                  active: isActive,
-                },
+                class: ["code-group-nav-tab", { active: isActive }],
                 ariaPressed: isActive,
                 ariaExpanded: isActive,
                 onClick: () => {

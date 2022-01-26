@@ -45,7 +45,7 @@ export default defineComponent({
       h("div", { class: "presentation" }, [
         h(Content),
         withDirectives(
-          h("div", { class: { menu: true, active: showMenu.value } }, [
+          h("div", { class: ["menu", { active: showMenu.value }] }, [
             h(
               "button",
               { class: "menu-button", onClick: () => toggle() },

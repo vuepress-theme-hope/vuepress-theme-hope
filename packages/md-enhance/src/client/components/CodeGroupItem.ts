@@ -21,7 +21,7 @@ export default defineComponent({
       h(
         "div",
         {
-          class: { "code-group-item": true, active: props.active },
+          class: ["code-group-item", { active: props.active }],
           ariaSelected: props.active,
         },
         slots.default?.()
