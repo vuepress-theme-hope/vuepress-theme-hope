@@ -48,6 +48,7 @@ export default defineComponent({
                     active: active.value,
                   },
                 ],
+                tabindex: "0",
                 onClick: () => emit("toggle"),
               },
               renderGroupHeader(props.config, props.open)

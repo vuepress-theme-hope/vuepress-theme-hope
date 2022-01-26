@@ -15,6 +15,13 @@ export default defineClientAppEnhance(({ app, router }) => {
     return SearchComponent ? h(SearchComponent) : null;
   });
 
+  // compat with vuepress-plugin-comment2
+  app.component("PageComment", () => {
+    const CommentService = app.component("CommentService");
+
+    return CommentService ? h(CommentService) : null;
+  });
+
   // handle scrollBehavior with transition
   const scrollBehavior = router.options.scrollBehavior as RouterScrollBehavior;
 

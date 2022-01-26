@@ -28,6 +28,13 @@ export interface HopeThemeRootOptions
    * 作者
    */
   author?: Author;
+
+  /**
+   * domain which to be deployed to
+   *
+   * 网站部署域名
+   */
+  hostname?: string;
 }
 
 // /**

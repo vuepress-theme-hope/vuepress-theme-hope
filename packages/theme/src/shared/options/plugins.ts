@@ -25,7 +25,7 @@ export interface HopeThemePluginsOptions {
    * Comment plugin options
    * @see http://vuepress-theme-hope.github.io/comment/config/
    */
-  comment?: CommentOptions;
+  comment?: CommentOptions | false;
 
   /**
    * 代码复制插件配置

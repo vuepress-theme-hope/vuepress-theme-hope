@@ -32,7 +32,7 @@ export default defineComponent({
         h(MarkdownContent),
         h(PageMeta),
         h(PageNav),
-        h(resolveComponent("CommentService")),
+        h(resolveComponent("PageComment")),
         slots.bottom?.(),
       ]);
   },

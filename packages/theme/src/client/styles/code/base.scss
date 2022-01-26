@@ -144,7 +144,7 @@ div[class*="language-"] {
 
 // narrow mobile
 @media (max-width: config.$mobileS) {
-  .theme-default-content {
+  #{config.$contentClass} {
     div[class*="language-"] {
       margin: 0.85rem -1.5rem;
       border-radius: 0;
