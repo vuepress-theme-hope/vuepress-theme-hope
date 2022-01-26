@@ -25,5 +25,5 @@ export const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
 };
 
 export const sitemap = (
-  options: SitemapOptions
+  options: SitemapOptions | false
 ): PluginConfig<SitemapOptions> => [sitemapPlugin, options];

@@ -6,6 +6,7 @@ import { mdEnhance } from "vuepress-plugin-md-enhance";
 import { photoSwipe } from "vuepress-plugin-photo-swipe";
 import { pwa } from "vuepress-plugin-pwa2";
 import { seo } from "vuepress-plugin-seo2";
+import { sitemap } from "vuepress-plugin-sitemap2";
 
 import { resolveActiveHeaderLinksOptions } from "./activeHeaderLinks";
 import { resolveCommentOptions } from "./comment";
@@ -15,6 +16,7 @@ import { resolveFeedOptions } from "./feed";
 import { resolveMdEnhanceOptions } from "./mdEnhance";
 import { resolvePhotoSwipeOptions } from "./photoSwipe";
 import { resolvePWAOptions } from "./pwa";
+import { resolveSitemapOptions } from "./sitemap";
 
 import type { PluginConfig, PluginOptions } from "@vuepress/core";
 import type { HopeThemeOptions, HopeThemePluginsOptions } from "../../shared";
@@ -39,5 +41,5 @@ export const getPluginConfig = (
   photoSwipe(resolvePhotoSwipeOptions(plugins.photoSwipe)),
   pwa(resolvePWAOptions(plugins.pwa)),
   seo(resolveSEOOptions(themeData, plugins.seo)),
-  ["sitemap2", plugins.sitemap || true],
+  sitemap(resolveSitemapOptions(themeData, plugins.sitemap)),
 ];
