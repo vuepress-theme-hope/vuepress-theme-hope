@@ -32,7 +32,7 @@ export default defineComponent({
           h(
             DropTransition,
             { delay: 0.24 },
-            { default: () => h(MarkdownContent) }
+            { default: () => h(MarkdownContent, { custom: true }) }
           ),
         ]
       );
