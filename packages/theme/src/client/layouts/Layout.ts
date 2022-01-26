@@ -17,19 +17,10 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<HopeThemePageFrontmatter>();
 
     return (): VNode =>
-      h(
-        CommonWrapper,
-        {},
-        {
-          default: () =>
-            frontmatter.value.home
-              ? h(ProjectHome)
-              : h(
-                  FadeSideY,
-                  {},
-                  { default: () => h(NormalPage, { key: page.value.path }) }
-                ),
-        }
+      h(CommonWrapper, {}, () =>
+        frontmatter.value.home
+          ? h(ProjectHome)
+          : h(FadeSideY, {}, () => h(NormalPage, { key: page.value.path }))
       );
   },
 });

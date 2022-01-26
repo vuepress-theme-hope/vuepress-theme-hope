@@ -26,15 +26,9 @@ export default defineComponent({
         },
         [
           h(ProjectHero),
-          h(
-            DropTransition,
-            { delay: 0.16 },
-            { default: () => h(HomeFeatures) }
-          ),
-          h(
-            DropTransition,
-            { delay: 0.24 },
-            { default: () => h(MarkdownContent, { custom: true }) }
+          h(DropTransition, { delay: 0.16 }, () => h(HomeFeatures)),
+          h(DropTransition, { delay: 0.24 }, () =>
+            h(MarkdownContent, { custom: true })
           ),
         ]
       );

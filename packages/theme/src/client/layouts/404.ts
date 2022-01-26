@@ -29,28 +29,27 @@ export default defineComponent({
       h(
         CommonWrapper,
         { sidebar: false },
-        {
-          default: () =>
-            h("main", { class: "page not-found" }, [
-              h(Page404Icon),
-              h("blockquote", getMsg()),
-              h(
-                "button",
-                {
-                  class: "action-button",
-                  onClick: () => {
-                    window.history.go(-1);
-                  },
+
+        () =>
+          h("main", { class: "page not-found" }, [
+            h(Page404Icon),
+            h("blockquote", getMsg()),
+            h(
+              "button",
+              {
+                class: "action-button",
+                onClick: () => {
+                  window.history.go(-1);
                 },
-                themeLocale.value.routeLocales.back
-              ),
-              h(
-                "button",
-                { class: "action-button", onClick: () => navigate() },
-                themeLocale.value.routeLocales.home
-              ),
-            ]),
-        }
+              },
+              themeLocale.value.routeLocales.back
+            ),
+            h(
+              "button",
+              { class: "action-button", onClick: () => navigate() },
+              themeLocale.value.routeLocales.home
+            ),
+          ])
       );
   },
 });

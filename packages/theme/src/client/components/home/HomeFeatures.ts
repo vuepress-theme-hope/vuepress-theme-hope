@@ -52,7 +52,7 @@ export default defineComponent({
                       to: feature.link,
                       role: "navigation",
                     },
-                    { default: () => children }
+                    () => children
                   )
                 : h("div", { class: "feature" }, children);
             })

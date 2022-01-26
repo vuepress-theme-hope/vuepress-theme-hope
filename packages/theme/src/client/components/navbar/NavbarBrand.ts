@@ -27,35 +27,29 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h(
-        RouterLink,
-        { to: siteBrandLink.value, class: "home-link" },
-        {
-          default: () => [
-            siteBrandLogo.value
-              ? h("img", {
-                  class: ["logo", { light: Boolean(siteBrandDarkLogo.value) }],
-                  src: siteBrandLogo.value,
-                  alt: siteBrandTitle.value,
-                })
-              : null,
-            siteBrandDarkLogo.value
-              ? h("img", {
-                  class: ["logo dark", { light: Boolean(siteBrandDarkLogo) }],
-                  src: siteBrandLogo.value,
-                  alt: siteBrandTitle.value,
-                })
-              : null,
-            siteBrandTitle.value
-              ? h(
-                  "span",
-                  { class: ["site-name", { "hide-in-mobile": siteBrandLogo }] },
-                  siteBrandTitle.value
-                )
-              : null,
-            slots.default?.(),
-          ],
-        }
-      );
+      h(RouterLink, { to: siteBrandLink.value, class: "home-link" }, () => [
+        siteBrandLogo.value
+          ? h("img", {
+              class: ["logo", { light: Boolean(siteBrandDarkLogo.value) }],
+              src: siteBrandLogo.value,
+              alt: siteBrandTitle.value,
+            })
+          : null,
+        siteBrandDarkLogo.value
+          ? h("img", {
+              class: ["logo dark", { light: Boolean(siteBrandDarkLogo) }],
+              src: siteBrandLogo.value,
+              alt: siteBrandTitle.value,
+            })
+          : null,
+        siteBrandTitle.value
+          ? h(
+              "span",
+              { class: ["site-name", { "hide-in-mobile": siteBrandLogo }] },
+              siteBrandTitle.value
+            )
+          : null,
+        slots.default?.(),
+      ]);
   },
 });
