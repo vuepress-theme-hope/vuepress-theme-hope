@@ -14,8 +14,8 @@ export default defineComponent({
 
   props: {
     defaultAuthor: {
-      type: Object as PropType<Author>,
-      default: () => ({}),
+      type: [Object, String, Array] as PropType<Author>,
+      default: "",
     },
 
     hint: {

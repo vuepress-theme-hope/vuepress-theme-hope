@@ -10,6 +10,7 @@ import TagInfo from "./TagInfo";
 import WordInfo from "./WordInfo";
 import { pageInfoLocales } from "../define";
 
+import type { Author } from "@mr-hope/vuepress-shared";
 import type { PropType, VNode } from "vue";
 import type { PageInfoFrontmatter, PageInfo } from "../../shared";
 
@@ -53,7 +54,7 @@ export default defineComponent({
     },
 
     defaultAuthor: {
-      type: String,
+      type: [Object, String, Array] as PropType<Author>,
       default: "",
     },
 
