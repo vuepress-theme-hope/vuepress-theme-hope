@@ -1,4 +1,4 @@
-import { rollupTypescript, rollupVue } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup";
 
 export default [
   ...rollupTypescript("node/index", {
@@ -11,7 +11,7 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupVue("client/appEnhance.ts", {
+  ...rollupTypescript("client/appEnhance", {
     external: [
       "@vuepress/client",
       "@Badge",
@@ -24,15 +24,15 @@ export default [
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
-  ...rollupVue("client/components/Badge.ts", {
+  ...rollupTypescript("client/components/Badge", {
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/components/BreadCrumb.ts", {
+  ...rollupTypescript("client/components/BreadCrumb", {
     external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/components/PageInfo.ts", {
+  ...rollupTypescript("client/components/PageInfo", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
@@ -43,18 +43,19 @@ export default [
     ],
     dtsExternal: ["balloon-css/balloon.css", /\.scss$/],
   }),
-  ...rollupVue("client/components/Pagination.vue", {
+  ...rollupTypescript("client/components/Pagination", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "vue",
       "vue-router",
       /\.scss$/,
     ],
+    dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/components/ScreenFull.ts", {
+  ...rollupTypescript("client/components/ScreenFull", {
     external: ["@mr-hope/vuepress-shared/lib/client", "screenfull", "vue"],
   }),
-  ...rollupVue("client/root-components/BackToTop.ts", {
+  ...rollupTypescript("client/root-components/BackToTop", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",

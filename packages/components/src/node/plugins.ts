@@ -37,7 +37,7 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
         ? path.resolve(__dirname, "../client/components/PageInfo.js")
         : noopModule,
       "@Pagination": options.pagination
-        ? path.resolve(__dirname, "../client/components/Pagination.vue")
+        ? path.resolve(__dirname, "../client/components/Pagination.js")
         : noopModule,
       "@ScreenFull": options.screenFull
         ? path.resolve(__dirname, "../client/components/ScreenFull.js")
