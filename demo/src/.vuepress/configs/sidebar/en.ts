@@ -9,6 +9,7 @@ export const en: SidebarConfig = {
     {
       icon: "creative",
       text: "Guide",
+      collapsable: true,
       children: [
         "/guide/README.md",
         "/guide/page.md",

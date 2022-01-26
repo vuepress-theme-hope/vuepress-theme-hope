@@ -43,9 +43,7 @@ export const renderGroupHeader = (
   // title
   h("span", { class: "title" }, text),
   // arrow
-  collapsable
-    ? h("span", { class: ["arrow", open ? "down" : "right"] }, text)
-    : null,
+  collapsable ? h("span", { class: ["arrow", open ? "down" : "right"] }) : null,
 ];
 
 export const renderChildren = (

@@ -1,6 +1,7 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import SidebarLinks from "./SidebarLinks";
+import DropdownTransition from "../transitions/DropTransition.vue";
 import { renderGroupHeader } from "../../composables";
 import { isActiveSidebarItem } from "../../utils";
 
@@ -51,7 +52,11 @@ export default defineComponent({
               },
               renderGroupHeader(props.config, props.open)
             ),
-        h(SidebarLinks, { config: props.config.children || [] }),
+        h(DropdownTransition, () =>
+          props.open || !props.config.collapsable
+            ? h(SidebarLinks, { config: props.config.children || [] })
+            : null
+        ),
       ]),
     ];
   },
