@@ -1,8 +1,8 @@
-import { usePageFrontmatter } from "@vuepress/client";
-import { isArray } from "@vuepress/shared";
+import { usePageFrontmatter, withBase } from "@vuepress/client";
+import { isArray, isLinkHttp } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
-import { usePure } from "../../composables";
+import { useIconPrefix } from "../../composables";
 
 import type { VNode } from "vue";
 import type { ProjectHomePageFrontmatter } from "../../../shared";
@@ -10,8 +10,8 @@ import type { ProjectHomePageFrontmatter } from "../../../shared";
 export default defineComponent({
   name: "HomeFeatures",
   setup() {
+    const iconPrefix = useIconPrefix();
     const frontmatter = usePageFrontmatter<ProjectHomePageFrontmatter>();
-    const isPure = usePure();
 
     const features = computed(() => {
       if (isArray(frontmatter.value.features))
@@ -20,46 +20,51 @@ export default defineComponent({
       return [];
     });
 
+    const getIcon = (icon = ""): VNode | null => {
+      return isLinkHttp(icon)
+        ? h("img", { class: "icon", src: icon })
+        : icon.startsWith("/")
+        ? h("img", { class: "icon", src: withBase(icon) })
+        : icon
+        ? h("span", {
+            class: ["icon", `${iconPrefix.value}${icon}`],
+          })
+        : null;
+    };
+
     return (): VNode | null =>
       features.value.length
         ? h(
             "div",
             { class: "features" },
-            frontmatter.value.features?.map((feature, index) =>
-              feature.link
+            frontmatter.value.features?.map((feature) => {
+              const children = [
+                getIcon(feature.icon),
+                h("h2", feature.title),
+                h("p", feature.details),
+              ];
+
+              return feature.link
                 ? h(
                     RouterLink,
                     {
-                      class: [
-                        "feature link",
-                        {
-                          [`feature${(index % 9) + 1}`]: !isPure.value,
-                        },
-                      ],
+                      class: ["feature link"],
 
                       to: feature.link,
                       role: "navigation",
                     },
                     {
-                      default: () => [
-                        h("h2", feature.title),
-                        h("p", feature.details),
-                      ],
+                      default: () => children,
                     }
                   )
                 : h(
                     "div",
                     {
-                      class: [
-                        "feature",
-                        {
-                          [`feature${(index % 9) + 1}`]: !isPure.value,
-                        },
-                      ],
+                      class: ["feature"],
                     },
-                    [h("h2", feature.title), h("p", feature.details)]
-                  )
-            )
+                    children
+                  );
+            })
           )
         : null;
   },

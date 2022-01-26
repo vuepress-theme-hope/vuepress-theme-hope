@@ -14,55 +14,63 @@ actions:
     type: secondary
 
 features:
-  - title: Markdown Enhance 🧰
+  - title: Markdown Enhance
+    icon: markdown
     details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in Markdown
     link: https://vuepress-theme-hope.github.io/guide/markdown/
 
-  - title: Pageviews and comments 💬
+  - title: Pageviews and comments
+    icon: comment
     details: Start pageview statistics and comment support with Valine and Vssue
     link: https://vuepress-theme-hope.github.io/guide/feature/comment/
 
-  - title: Article information display ℹ
+  - title: Article information display
+    icon: info
     details: Add author, writing date, reading time, word count and other information to your article
     link: https://vuepress-theme-hope.github.io/guide/feature/page-info/
 
-  - title: Blog support 📝
+  - title: Blog support
+    icon: blog
     details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
     link: https://vuepress-theme-hope.github.io/guide/blog/intro/
 
-  - title: Article Encryption 🔐
+  - title: Article Encryption
+    icon: lock
     details: Encrypt you article based on path and folders, so that only the one you want could see them
     link: https://vuepress-theme-hope.github.io/guide/feature/encrypt/
 
-  - title: Custom theme color 🎨
+  - title: Custom theme color
+    icon: skin
     details: Supports custom theme colors and allows users to switch between preset theme colors
     link: https://vuepress-theme-hope.github.io/guide/interface/theme-color/
 
-  - title: Dark Mode 🌙
+  - title: Dark Mode
+    icon: contrast
     details: Switch between light and dark modes freely
     link: https://vuepress-theme-hope.github.io/guide/interface/darkmode/
 
-  - title: SEO enhancement ⚒
+  - title: SEO enhancement
+    icon: config
     details: Optimize pages for search engines.
     link: https://vuepress-theme-hope.github.io/guide/feature/seo/
 
-  - title: Sitemap 🗺
+  - title: Sitemap
+    icon: sitemap
     details: Generate a Sitemap for your website
     link: https://vuepress-theme-hope.github.io/guide/feature/sitemap/
 
-  - title: Feed support 📡
+  - title: Feed support
+    icon: rss
     details: You can generate feed, and let users to subcribe it
     link: https://vuepress-theme-hope.github.io/guide/feature/feed/
 
-  - title: PWA support 📲
+  - title: PWA support
+    icon: mobile
     details: The built-in PWA plugin will make your website more like an APP.
     link: https://vuepress-theme-hope.github.io/guide/feature/pwa/
 
-  - title: TS support 🔧
-    details: Turn on TypeScript support for your VuePress
-    link: https://vuepress-theme-hope.github.io/guide/feature/typescript/
-
-  - title: More new features ✨
+  - title: More new features
+    icon: more
     details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
     link: https://vuepress-theme-hope.github.io/guide/feature/
 

@@ -8,6 +8,8 @@ import ProjectHero from "./ProjectHero";
 import type { VNode } from "vue";
 import type { ProjectHomePageFrontmatter } from "../../../shared";
 
+import "../../styles/home/project.scss";
+
 export default defineComponent({
   name: "ProjectHome",
 
@@ -18,7 +20,7 @@ export default defineComponent({
       h(
         "main",
         {
-          class: "home",
+          class: "home project",
           "aria-labelledby":
             frontmatter.value.heroText === null ? undefined : "main-title",
         },

@@ -66,7 +66,7 @@ export default defineComponent({
               h("span", { class: "title" }, [
                 config.value.icon
                   ? h("i", {
-                      class: `iconfont ${iconPrefix.value}${config.value.icon}`,
+                      class: `icon ${iconPrefix.value}${config.value.icon}`,
                     })
                   : null,
                 props.config.text,

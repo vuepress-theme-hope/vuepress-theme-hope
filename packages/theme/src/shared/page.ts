@@ -56,6 +56,13 @@ export interface ActionConfig {
   type?: "primary" | "secondary";
 }
 
+export interface ProjectFeatureOptions {
+  icon?: string;
+  title: string;
+  details: string;
+  link?: string;
+}
+
 export interface ProjectHomePageFrontmatter
   extends HopeThemeHomePageFrontmatter {
   home: true;
@@ -65,9 +72,5 @@ export interface ProjectHomePageFrontmatter
   heroText?: string;
   tagline?: string;
   actions?: ActionConfig[];
-  features?: {
-    title: string;
-    details: string;
-    link?: string;
-  }[];
+  features?: ProjectFeatureOptions[];
 }

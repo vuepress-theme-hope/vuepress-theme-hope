@@ -114,10 +114,7 @@ export default defineComponent({
                       // icon
                       item.icon && iconEnable.value
                         ? h("i", {
-                            class: [
-                              "iconfont",
-                              `${props.iconPrefix}${item.icon}`,
-                            ],
+                            class: ["icon", `${props.iconPrefix}${item.icon}`],
                           })
                         : null,
                       // text

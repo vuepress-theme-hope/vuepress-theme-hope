@@ -3,7 +3,7 @@
 
 @use "@hope/config";
 
-.home {
+.home.project {
   display: block;
   max-width: var(--home-page-width);
   min-height: calc(100vh - var(--navbar-height));
@@ -68,18 +68,6 @@
       }
     }
 
-    h1 {
-      font-size: 3rem;
-
-      @media (max-width: config.$mobile) {
-        font-size: 2.5rem;
-      }
-
-      @media (max-width: config.$mobileS) {
-        font-size: 2rem;
-      }
-    }
-
     h1,
     .description,
     .action {
@@ -94,7 +82,21 @@
       }
     }
 
+    h1 {
+      font-family: Georgia Pro, Crimson, Georgia, sans-serif;
+      font-size: 4rem;
+
+      @media (max-width: config.$mobile) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: config.$mobileS) {
+        font-size: 2rem;
+      }
+    }
+
     .description {
+      font-family: Georgia Pro, Crimson, Georgia, sans-serif;
       max-width: 35rem;
       color: var(--text-color-bright);
       font-size: 1.6rem;
@@ -161,70 +163,67 @@
     @media (max-width: config.$mobileS) {
       margin: 0 -1.5rem;
     }
+  }
 
-    .feature {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-basis: calc(33% - 4rem);
-      margin: 0.5rem;
-      padding: 0 1.5rem;
-      border-radius: 0.5rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-      overflow: hidden;
+  .feature {
+    flex-basis: calc(33% - 4rem);
+    margin: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
 
-      @media (max-width: config.$pad) {
-        flex-basis: calc(50% - 4rem);
-      }
+    @media (min-width: config.$wide) {
+      flex-basis: calc(25% - 4rem);
+    }
 
-      @media (max-width: config.$mobile) {
-        font-size: 0.95rem;
-      }
+    @media (max-width: config.$pad) {
+      flex-basis: calc(50% - 4rem);
+    }
+
+    @media (max-width: config.$mobile) {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: config.$mobileS) {
+      flex-basis: calc(100%);
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+      border-radius: 0;
+    }
+
+    &.link {
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 12px 0 var(--card-shadow-color);
+    }
+
+    .icon {
+      display: inline-block;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      margin: 0.25rem 0;
+      border-bottom: none;
+      color: var(--text-color-light);
+      font-size: 1.25rem;
+      font-weight: bold;
 
       @media (max-width: config.$mobileS) {
-        flex-basis: calc(100%);
-        font-size: 0.9rem;
-        margin: 0.5rem 0;
-        border-radius: 0;
-      }
-
-      &.link {
-        cursor: pointer;
-      }
-
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 2px 12px 0 var(--card-shadow-color);
-      }
-
-      h2 {
-        margin-bottom: 0.25rem;
-        border-bottom: none;
-        color: var(--text-color-light);
-        font-size: 1.25rem;
-        font-weight: 500;
-
-        @media (max-width: config.$mobileS) {
-          font-size: 1.2rem;
-        }
-      }
-
-      p {
-        margin-top: 0;
-        color: var(--text-color-lighter);
+        font-size: 1.2rem;
       }
     }
 
-    @each $color in config.$colors {
-      $index: list.index(config.$colors, $color);
-
-      .feature#{$index} {
-        background: color.scale($color, $lightness: 90%);
-
-        #{config.$darkSelector} & {
-          background: color.scale($color, $lightness: -75%);
-        }
-      }
+    p {
+      margin: 0;
+      color: var(--text-color-lighter);
+      line-height: 1.4;
     }
   }
 

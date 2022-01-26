@@ -48,6 +48,10 @@ export default defineUserConfig<HopeThemeOptions>({
   theme: "hope",
 
   themeConfig: {
+    hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
+
+    iconPrefix: "iconfont icon-",
+
     navbar: {
       logo: "/logo.svg",
       repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
@@ -59,7 +63,6 @@ export default defineUserConfig<HopeThemeOptions>({
 
     author: "Mr.Hope",
     darkmode: "auto-switch",
-    hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
 
     // theme-level locales config
     locales: {

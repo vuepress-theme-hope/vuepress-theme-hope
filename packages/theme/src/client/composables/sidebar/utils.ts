@@ -14,7 +14,7 @@ import type {
 export const renderIcon = (icon?: string): VNode | null =>
   icon
     ? h("i", {
-        class: ["iconfont", `${useIconPrefix().value}${icon}`],
+        class: ["icon", `${useIconPrefix().value}${icon}`],
       })
     : null;
 

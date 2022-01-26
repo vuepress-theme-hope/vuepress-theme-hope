@@ -26,11 +26,7 @@ export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> =>
   });
 
 export const useIconPrefix = (): ComputedRef<string> =>
-  computed(() => {
-    const { iconPrefix } = useThemeData().value;
-
-    return iconPrefix === "" ? "" : iconPrefix || "icon-";
-  });
+  computed(() => useThemeData().value.iconPrefix || "");
 
 export const useBlogConfig = (): ComputedRef<unknown> =>
   computed(() => {

@@ -102,7 +102,7 @@ export default defineComponent({
           props.titleIcon && frontmatter.value.icon
             ? h("i", {
                 class: [
-                  "iconfont",
+                  "icon",
                   `${props.titleIconPrefix || ""}${frontmatter.value.icon}`,
                 ],
               })

@@ -109,7 +109,7 @@ export default defineComponent({
     const renderIcon = (item: AutoLink): VNode | null =>
       item.icon
         ? h("i", {
-            class: `iconfont ${iconPrefix.value}${item.icon}`,
+            class: `icon ${iconPrefix.value}${item.icon}`,
           })
         : null;
 
