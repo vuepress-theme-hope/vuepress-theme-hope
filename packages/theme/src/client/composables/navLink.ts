@@ -18,6 +18,7 @@ import type {
  */
 export const useAutoLink = (item: string): AutoLink => {
   const resolved = useResolveRouteWithRedirect(item);
+
   return {
     text: resolved.meta.title || item,
     link: resolved.name === "404" ? item : resolved.fullPath,
@@ -32,11 +33,15 @@ export const resolveNavbarItem = (
   if ("children" in item)
     return {
       ...item,
+      ...(item.link ? useAutoLink(item.link) : {}),
       children: item.children.map(resolveNavbarItem) as (
         | NavGroup<AutoLink>
         | AutoLink
       )[],
     };
 
-  return item as ResolvedNavbarItem;
+  return {
+    ...item,
+    link: useAutoLink(item.link).link,
+  };
 };

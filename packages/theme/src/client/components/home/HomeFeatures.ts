@@ -48,22 +48,13 @@ export default defineComponent({
                 ? h(
                     RouterLink,
                     {
-                      class: ["feature link"],
-
+                      class: "feature link",
                       to: feature.link,
                       role: "navigation",
                     },
-                    {
-                      default: () => children,
-                    }
+                    { default: () => children }
                   )
-                : h(
-                    "div",
-                    {
-                      class: ["feature"],
-                    },
-                    children
-                  );
+                : h("div", { class: "feature" }, children);
             })
           )
         : null;

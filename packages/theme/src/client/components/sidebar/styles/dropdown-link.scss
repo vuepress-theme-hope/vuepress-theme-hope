@@ -26,8 +26,15 @@
 
   .nav-dropdown {
     margin-top: 0.25rem;
-    transition: height 0.1s ease-out;
     overflow: hidden;
+    transform-origin: top;
+    transform: scaleY(1);
+    transition: transform 0.1s ease-out;
+
+    &.hide {
+      height: 0;
+      transform: scaleY(0);
+    }
   }
 
   .dropdown-item {

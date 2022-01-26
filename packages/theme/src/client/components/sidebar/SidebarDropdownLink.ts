@@ -1,7 +1,6 @@
 import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 import { useRoute } from "vue-router";
 import AutoLink from "../AutoLink";
-import ExpandTransition from "../transitions/ExpandTransition";
 import { useIconPrefix } from "../../composables";
 
 import type { PropType, VNode } from "vue";
@@ -63,79 +62,67 @@ export default defineComponent({
             h("span", { class: ["arrow", open.value ? "down" : "right"] }),
           ]
         ),
-        h(ExpandTransition, {
-          default: () =>
+        h(
+          "ul",
+          {
+            class: ["nav-dropdown", { hide: !open.value }],
+          },
+          config.value.children.map((child) =>
             h(
-              "ul",
-              {
-                class: "nav-dropdown",
-                style: {
-                  display: open.value ? "block" : "none",
-                },
-              },
-              config.value.children.map((child) =>
-                h(
-                  "li",
-                  { class: "dropdown-item" },
-                  "children" in child
-                    ? [
+              "li",
+              { class: "dropdown-item" },
+              "children" in child
+                ? [
+                    h(
+                      "h4",
+                      { class: "dropdown-subtitle" },
+                      child.link
+                        ? h(AutoLink, {
+                            config: child as AutoLinkType,
+                            onFocusout: () => {
+                              if (
+                                isLastItemOfArray(
+                                  child,
+                                  config.value.children
+                                ) &&
+                                child.children.length === 0
+                              )
+                                open.value = false;
+                            },
+                          })
+                        : h("span", child.text)
+                    ),
+                    h(
+                      "ul",
+                      { class: "dropdown-subitem-wrapper" },
+                      child.children.map((grandchild) =>
                         h(
-                          "h4",
-                          { class: "dropdown-subtitle" },
-                          child.link
-                            ? h(AutoLink, {
-                                config: child as AutoLinkType,
-                                onFocusout: () => {
-                                  if (
-                                    isLastItemOfArray(
-                                      child,
-                                      config.value.children
-                                    ) &&
-                                    child.children.length === 0
-                                  )
-                                    open.value = false;
-                                },
-                              })
-                            : h("span", child.text)
-                        ),
-                        h(
-                          "ul",
-                          { class: "dropdown-subitem-wrapper" },
-                          child.children.map((grandchild) =>
-                            h(
-                              "li",
-                              { class: "dropdown-subitem" },
-                              h(AutoLink, {
-                                config: grandchild,
-                                onFocusout: () => {
-                                  if (
-                                    isLastItemOfArray(
-                                      grandchild,
-                                      child.children
-                                    ) &&
-                                    isLastItemOfArray(
-                                      child,
-                                      config.value.children
-                                    )
-                                  )
-                                    open.value = false;
-                                },
-                              })
-                            )
-                          )
-                        ),
-                      ]
-                    : h(AutoLink, {
-                        config: child,
-                        onFocusout: () => {
-                          if (isLastItemOfArray(child, config.value.children))
-                            open.value = false;
-                        },
-                      })
-                )
-              )
-            ),
-        }),
+                          "li",
+                          { class: "dropdown-subitem" },
+                          h(AutoLink, {
+                            config: grandchild,
+                            onFocusout: () => {
+                              if (
+                                isLastItemOfArray(grandchild, child.children) &&
+                                isLastItemOfArray(child, config.value.children)
+                              )
+                                open.value = false;
+                            },
+                          })
+                        )
+                      )
+                    ),
+                  ]
+                : h(AutoLink, {
+                    config: child,
+                    onFocusout: () => {
+                      if (isLastItemOfArray(child, config.value.children))
+                        open.value = false;
+                    },
+                  })
+            )
+          )
+        ),
       ]);
   },
 });

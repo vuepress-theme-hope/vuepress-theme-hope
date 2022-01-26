@@ -10,7 +10,7 @@ import { useNavbarLocaleData } from "../../composables";
 import NavbarBrand from "./NavbarBrand";
 import NavbarLinks from "./NavbarLinks";
 import ToggleSidebarButton from "./ToggleSidebarButton";
-import NavActions from "../nav-actions/NavActions";
+import NavActions from "./NavActions";
 
 import type { VNode } from "vue";
 

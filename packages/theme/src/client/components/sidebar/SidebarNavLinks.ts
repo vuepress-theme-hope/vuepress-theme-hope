@@ -1,6 +1,5 @@
 import { defineComponent, h } from "vue";
 import AutoLink from "../AutoLink";
-import RepoLink from "../nav-actions/RepoLink";
 import SidebarDropdownLink from "./SidebarDropdownLink";
 import { useNavbarConfig, useNavbarRepo } from "../../composables";
 
@@ -15,8 +14,10 @@ export default defineComponent({
 
     return (): VNode | null =>
       navbarConfig.value.length || navbarRepo.value
-        ? h("nav", { class: "sidebar-nav-links" }, [
-            ...navbarConfig.value.map((config) =>
+        ? h(
+            "nav",
+            { class: "sidebar-nav-links" },
+            navbarConfig.value.map((config) =>
               h(
                 "div",
                 { class: "navbar-links-item" },
@@ -24,9 +25,8 @@ export default defineComponent({
                   ? h(SidebarDropdownLink, { config })
                   : h(AutoLink, { config })
               )
-            ),
-            h(RepoLink),
-          ])
+            )
+          )
         : null;
   },
 });

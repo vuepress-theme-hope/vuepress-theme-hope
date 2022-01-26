@@ -20,7 +20,7 @@ export default defineComponent({
           onBeforeEnter,
           onBeforeLeave,
         },
-        { default: () => slots.default?.() }
+        slots.default?.()
       );
   },
 });
