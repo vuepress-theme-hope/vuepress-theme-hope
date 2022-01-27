@@ -1,5 +1,6 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { path } from "@vuepress/utils";
+import { version } from "../../../../lerna.json";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
@@ -45,6 +46,16 @@ export default defineUserConfig<HopeThemeOptions>({
           { text: "Home", icon: "home", link: "/README.md" },
           { text: "Guide", icon: "creative", link: "/guide/README.md" },
           { text: "Config", icon: "config", link: "/config.md" },
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 Docs",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+              },
+            ],
+          },
         ],
 
         sidebar: {
@@ -121,7 +132,18 @@ export default defineUserConfig<HopeThemeOptions>({
           { text: "主页", icon: "home", link: "/zh/README.md" },
           { text: "指南", icon: "creative", link: "/zh/guide/README.md" },
           { text: "配置", icon: "config", link: "/zh/config.md" },
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 文档",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
+              },
+            ],
+          },
         ],
+
         sidebar: {
           "/zh/": [
             "README.md",

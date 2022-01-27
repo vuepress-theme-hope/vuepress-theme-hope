@@ -1,4 +1,5 @@
 import { defineUserConfig } from "@vuepress/cli";
+import { version } from "../../../../lerna.json";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
@@ -39,7 +40,35 @@ export default defineUserConfig<HopeThemeOptions>({
     logo: "/logo.svg",
 
     locales: {
-      "/zh/": {},
+      "/": {
+        navbar: [
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 Docs",
+                link: "https://vuepress-theme-hope.github.io/reading-time/",
+              },
+            ],
+          },
+        ],
+      },
+
+      "/zh/": {
+        navbar: [
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 文档",
+                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
+              },
+            ],
+          },
+        ],
+      },
     },
 
     footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",

@@ -1,4 +1,5 @@
 import { defineUserConfig } from "@vuepress/cli";
+import { version } from "../../../../lerna.json";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
@@ -66,6 +67,16 @@ export default defineUserConfig<HopeThemeOptions>({
               },
             ],
           },
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 Docs",
+                link: "https://vuepress-theme-hope.github.io/comment/",
+              },
+            ],
+          },
         ],
 
         sidebar: {
@@ -107,6 +118,16 @@ export default defineUserConfig<HopeThemeOptions>({
                 text: "Waline",
                 icon: "waline",
                 link: "/zh/config/waline.md",
+              },
+            ],
+          },
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 文档",
+                link: "https://vuepress-theme-hope.github.io/comment/zh/",
               },
             ],
           },

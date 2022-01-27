@@ -1,4 +1,5 @@
 import { defineUserConfig } from "@vuepress/cli";
+import { version } from "../../../../lerna.json";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
@@ -51,6 +52,16 @@ export default defineUserConfig<HopeThemeOptions>({
             icon: "config",
             link: "/config/README.md",
           },
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 Docs",
+                link: "https://vuepress-theme-hope.github.io/components/",
+              },
+            ],
+          },
         ],
 
         sidebar: {
@@ -79,6 +90,16 @@ export default defineUserConfig<HopeThemeOptions>({
             text: "配置",
             icon: "config",
             link: "/zh/config/README.md",
+          },
+          {
+            text: version,
+            icon: "note",
+            children: [
+              {
+                text: "V1 文档",
+                link: "https://vuepress-theme-hope.github.io/components/zh/",
+              },
+            ],
           },
         ],
 
