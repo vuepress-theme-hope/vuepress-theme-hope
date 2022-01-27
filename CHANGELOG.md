@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
+
+### Bug Fixes
+
+- **comment2:** fix waline styles ([fd9b3fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd9b3fcc80992262d4bbb06a2907db933b707c11))
+- **components:** fix author link color ([eed07dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eed07dcfe912bea0ea84deafce01d98e8e3bcd24))
+- **md-enhance:** fix note container ([5b80565](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5b80565781c7e32d4980cd730f56f37cd77aacc0))
+- **pwa2:** fix update icon color ([36e640a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/36e640ad1d4f2e33185be80a141bcf57693c4096))
+- **sass-palette:** fix transition error ([a47c921](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a47c921a3398ace30d777a234eb15c2fd07f4651))
+- **theme:** fix active with locales root ([e1f98d3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e1f98d31f2de59cc84bcb58e6d7cbdabedbfa5e5))
+- **theme:** fix dropdown icon ([519c089](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/519c0892073b20defb8ca93be2565d85d42110bf))
+- **theme:** fix language dropdown active ([a220c60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a220c605900ed360e7c70f59ebef5e43e0c4310a))
+- **theme:** fix navbar resolve ([773dce6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/773dce65de665e3f497745a31f935b40ba43ea89))
+- **theme:** fix project home layout ([ba5462b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ba5462b6e985e07e2c2a241b8f33f153c427d52e))
+- **theme:** fix sidebar ([b025be0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b025be0232d6ebcddace0007dbdcac198eb78cd7))
+
+### Features
+
+- add optimizeDeps ([0f7c7a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f7c7a9e6755ec6f718790fae95223d486b2d5c5))
+- **components:** improve pageinfo title ([5407ecc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5407eccd5e8aff1172d3e132d49dc823ce7931c8))
+- **shared:** rebuild shared ([1be5b7c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1be5b7c847fd9527edd50a5cd0eda49000519ca9))
+- **theme:** improve project title ([afd888f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/afd888febe7d9d9f4d8c853a71f1b5063f637e1c))
+- **theme:** improve sidebar style ([8a7cac1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a7cac1e59d56b99359424a9b68fa2e4cfab1b8b))
+- **theme:** refine config ([3f501da](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3f501da281a0f94731f6c5b1838babecb7552f15))
+- update theme layout ([b1fe233](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1fe233ecdd0c2b6c3515fe212c57720fe520e1c))
+
 # [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
 
 ### Bug Fixes

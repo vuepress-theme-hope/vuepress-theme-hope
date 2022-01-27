@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
+
+### Bug Fixes
+
+- **md-enhance:** fix note container ([5b80565](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5b80565781c7e32d4980cd730f56f37cd77aacc0))
+
 # [2.0.0-alpha.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
 
 ### Bug Fixes

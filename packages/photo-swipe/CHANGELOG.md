@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
+
+### Features
+
+- add optimizeDeps ([0f7c7a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f7c7a9e6755ec6f718790fae95223d486b2d5c5))
+
 # [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
 
 ### Bug Fixes

@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
+
+### Bug Fixes
+
+- **components:** fix author link color ([eed07dc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/eed07dcfe912bea0ea84deafce01d98e8e3bcd24))
+- **theme:** fix active with locales root ([e1f98d3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e1f98d31f2de59cc84bcb58e6d7cbdabedbfa5e5))
+- **theme:** fix dropdown icon ([519c089](https://github.com/Mister-Hope/vuepress-theme-hope/commit/519c0892073b20defb8ca93be2565d85d42110bf))
+- **theme:** fix language dropdown active ([a220c60](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a220c605900ed360e7c70f59ebef5e43e0c4310a))
+- **theme:** fix navbar resolve ([773dce6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/773dce65de665e3f497745a31f935b40ba43ea89))
+- **theme:** fix project home layout ([ba5462b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ba5462b6e985e07e2c2a241b8f33f153c427d52e))
+- **theme:** fix sidebar ([b025be0](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b025be0232d6ebcddace0007dbdcac198eb78cd7))
+
+### Features
+
+- add optimizeDeps ([0f7c7a9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0f7c7a9e6755ec6f718790fae95223d486b2d5c5))
+- **theme:** improve project title ([afd888f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/afd888febe7d9d9f4d8c853a71f1b5063f637e1c))
+- **theme:** improve sidebar style ([8a7cac1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8a7cac1e59d56b99359424a9b68fa2e4cfab1b8b))
+- **theme:** refine config ([3f501da](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3f501da281a0f94731f6c5b1838babecb7552f15))
+- update theme layout ([b1fe233](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b1fe233ecdd0c2b6c3515fe212c57720fe520e1c))
+
 # [2.0.0-alpha.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
 
 ### Bug Fixes

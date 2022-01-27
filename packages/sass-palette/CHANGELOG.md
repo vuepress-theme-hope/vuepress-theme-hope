@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
+
+### Bug Fixes
+
+- **sass-palette:** fix transition error ([a47c921](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a47c921a3398ace30d777a234eb15c2fd07f4651))
+
+### Features
+
+- update theme layout ([b1fe233](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1fe233ecdd0c2b6c3515fe212c57720fe520e1c))
+
 # [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
 
 ### Bug Fixes
