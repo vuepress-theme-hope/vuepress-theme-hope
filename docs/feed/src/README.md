@@ -7,7 +7,7 @@ heroText: vuepress-plugin-feed2
 tagline: Feed plugin for vuepress
 actions:
   - text: Guide 💡
-    link: /guide/
+    link: /guide.html
     type: primary
 
   - text: Config 🛠

@@ -7,7 +7,7 @@ heroText: vuepress-plugin-feed2
 tagline: 为 VuePress 提供 Feed 生成
 actions:
   - text: 快速上手 💡
-    link: /zh/guide/
+    link: /zh/guide.html
     type: primary
 
   - text: 配置 🛠
