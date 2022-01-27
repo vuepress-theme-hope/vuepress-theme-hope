@@ -38,6 +38,10 @@
       border-left: 5px solid var(--accent-color);
     }
 
+    .icon {
+      margin-right: 0.25em;
+    }
+
     .arrow {
       @include arrow.arrow();
       font-size: 1.2em;
