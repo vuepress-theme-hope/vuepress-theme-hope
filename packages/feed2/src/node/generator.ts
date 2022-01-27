@@ -45,11 +45,11 @@ export class FeedGenerator {
 
     this.addPages();
 
-    logger.load("Generating Feed");
-
     // generate atom files
-    if (this.options.atom) {
+    if (this.options.atom !== false) {
       const fileName = this.options.atomOutputFilename || "atom.xml";
+
+      logger.load("Generating Atom Feed");
 
       await fs.outputFile(dest(fileName), this.feed.atom());
 
@@ -57,12 +57,13 @@ export class FeedGenerator {
         `Atom feed file generated and saved to ${chalk.cyan(fileName)}`
       );
       logger.succeed();
-      logger.load("Generating Feed");
     }
 
     // generate json files
-    if (this.options.json) {
+    if (this.options.json !== false) {
       const fileName = this.options.jsonOutputFilename || "feed.json";
+
+      logger.load("Generating JSON Feed");
 
       await fs.outputFile(dest(fileName), this.feed.json());
 
@@ -70,12 +71,13 @@ export class FeedGenerator {
         `JSON feed file generated and saved to ${chalk.cyan(fileName)}`
       );
       logger.succeed();
-      logger.load("Generating Feed");
     }
 
     // generate rss files
-    if (this.options.rss) {
+    if (this.options.rss !== false) {
       const fileName = this.options.rssOutputFilename || "rss.xml";
+
+      logger.load("Generating RSS Feed");
 
       await fs.outputFile(dest(fileName), this.feed.rss());
 

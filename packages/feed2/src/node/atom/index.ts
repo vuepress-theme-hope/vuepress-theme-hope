@@ -1,5 +1,5 @@
 import { encodeCDATA, encodeXML } from "@mr-hope/vuepress-shared";
-import * as convert from "xml-js";
+import { js2xml } from "xml-js";
 import { generator } from "../utils";
 
 import type { Feed } from "../feed";
@@ -146,7 +146,7 @@ export const renderAtom = (feed: Feed): string => {
     return entry;
   });
 
-  return convert.js2xml(content, {
+  return js2xml(content, {
     compact: true,
     ignoreComment: true,
     spaces: 2,
