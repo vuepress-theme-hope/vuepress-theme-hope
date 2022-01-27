@@ -23,7 +23,6 @@ export const useNavbarLanguageDropdown =
       if (localePaths.length < 2) return null;
 
       const currentPath = router.currentRoute.value.path;
-      const currentFullPath = router.currentRoute.value.fullPath;
       const { navbarLocales } = themeLocale.value;
 
       const languageDropdown: NavGroup<AutoLink> = {
@@ -43,7 +42,7 @@ export const useNavbarLanguageDropdown =
           // if the target language is current language
           if (targetLang === siteLocale.value.lang) {
             // stay at current link
-            link = currentFullPath;
+            link = currentPath;
           }
           // if the target language is not current language
           else {
