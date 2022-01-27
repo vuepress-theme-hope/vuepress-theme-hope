@@ -12,6 +12,7 @@ export default defineUserConfig<HopeThemeOptions>({
       title: "Share Plugin",
       description: "Share Plugin provided by AddThis",
     },
+
     "/zh/": {
       lang: "zh-CN",
       title: "分享插件",
