@@ -7,7 +7,6 @@
     --waline-accent-color: var(--accent-color);
     --waline-text-color: var(--text-color);
     --waline-active-color: var(--accent-color-light);
-    --waline-border: none;
-    --waline-box-shadow: var(--box-shadow);
+    --waline-border: 1px solid var(--dark-grey);
   }
 }
