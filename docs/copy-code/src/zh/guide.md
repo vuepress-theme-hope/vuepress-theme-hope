@@ -19,14 +19,13 @@ icon: creative
 
 ```ts
 // .vuepress/config.ts
+import { copyCode } from "vuepress-plugin-copy-code2";
+
 export default {
   plugins: [
-    [
-      "@mr-hope/copy-code",
-      {
-        // your options
-      },
-    ],
+    copyCode({
+      // 插件选项
+    }),
   ],
 };
 ```
@@ -37,14 +36,13 @@ export default {
 
 ```js
 // .vuepress/config.js
+const { copyCode } = require("vuepress-plugin-copy-code2");
+
 module.exports = {
   plugins: [
-    [
-      "@mr-hope/copy-code",
-      {
-        // your options
-      },
-    ],
+    copyCode({
+      // 插件选项
+    }),
   ],
 };
 ```

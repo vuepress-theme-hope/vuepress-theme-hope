@@ -19,14 +19,13 @@ After user press the copy button, a success hint will display on the screen. The
 
 ```ts
 // .vuepress/config.ts
+import { copyCode } from "vuepress-plugin-copy-code2";
+
 export default {
   plugins: [
-    [
-      "@mr-hope/copy-code",
-      {
-        // your options
-      },
-    ],
+    copyCode({
+      // your options
+    }),
   ],
 };
 ```
@@ -37,14 +36,13 @@ export default {
 
 ```js
 // .vuepress/config.js
+const { copyCode } = require("vuepress-plugin-copy-code2");
+
 module.exports = {
   plugins: [
-    [
-      "@mr-hope/copy-code",
-      {
-        // your options
-      },
-    ],
+    copyCode({
+      // your options
+    }),
   ],
 };
 ```
