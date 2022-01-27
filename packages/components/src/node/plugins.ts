@@ -1,4 +1,9 @@
-import { getLocales, useGitPlugin, noopModule } from "@mr-hope/vuepress-shared";
+import {
+  getLocales,
+  useGitPlugin,
+  noopModule,
+  addViteOptimizeDeps,
+} from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
@@ -12,7 +17,8 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { ComponentOptions } from "../shared";
 
 export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
-  useSassPalettePlugin(app, { id: "hope" });
+  if (options.backToTop) addViteOptimizeDeps(app, "lodash.debounce");
+  if (options.screenFull) addViteOptimizeDeps(app, "screenfull");
 
   if (options.pageinfo) {
     useGitPlugin(app, {
@@ -22,6 +28,8 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
     });
     useReadingTimePlugin(app, { wordPerminute: options.wordPerminute });
   }
+
+  useSassPalettePlugin(app, { id: "hope" });
 
   return {
     name: "@mr-hope/vuepress-plugin-components",

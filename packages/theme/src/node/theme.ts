@@ -1,4 +1,4 @@
-import { useGitPlugin } from "@mr-hope/vuepress-shared";
+import { addViteOptimizeDeps, useGitPlugin } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
@@ -14,7 +14,16 @@ export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...localeOptions },
   app
 ) => {
+  addViteOptimizeDeps(app, "@vueuse/core");
+  addViteOptimizeDeps(app, "lodash.throttle");
+
   assignDefaultLocaleOptions(app, localeOptions);
+
+  useGitPlugin(app, {
+    createdTime: true,
+    contributors: true,
+    updatedTime: true,
+  });
 
   useSassPalettePlugin(app, {
     id: "hope",
@@ -23,12 +32,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
     defaultPalette: path.resolve(__dirname, "../client/styles/palette.scss"),
     palette: ".vuepress/styles/palette.scss",
     style: ".vuepress/styles/index.scss",
-  });
-
-  useGitPlugin(app, {
-    createdTime: true,
-    contributors: true,
-    updatedTime: true,
   });
 
   return {
