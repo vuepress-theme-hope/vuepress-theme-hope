@@ -3,8 +3,8 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-comment"
-tagline: Comment and visitors plugin for vuepress
+heroText: vuepress-plugin-comment2
+tagline: Comment and pageview plugin for vuepress
 actions:
   - text: Get Started 💡
     link: /guide/
@@ -24,7 +24,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-comment
+yarn add -D vuepress-plugin-comment2@next
 ```
 
 :::
@@ -32,7 +32,7 @@ yarn add -D @mr-hope/vuepress-plugin-comment
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-comment
+npm i -D vuepress-plugin-comment2@next
 ```
 
 :::

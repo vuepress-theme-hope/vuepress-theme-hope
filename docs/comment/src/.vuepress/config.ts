@@ -167,7 +167,7 @@ export default defineUserConfig<HopeThemeOptions>({
           color: "#ffffff",
         },
         manifest: {
-          name: "@mr-hope/vuepress-plugin-comment",
+          name: "vuepress-plugin-comment2",
           short_name: "comment plugin",
           icons: [
             {

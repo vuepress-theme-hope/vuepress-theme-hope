@@ -3,9 +3,9 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-comment"
+heroText: vuepress-plugin-comment2
 tagline: 评论与阅读量插件
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide/
     type: primary
@@ -24,7 +24,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-comment
+yarn add -D vuepress-plugin-comment2@next
 ```
 
 :::
@@ -32,7 +32,7 @@ yarn add -D @mr-hope/vuepress-plugin-comment
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-comment
+npm i -D vuepress-plugin-comment2@next
 ```
 
 :::
