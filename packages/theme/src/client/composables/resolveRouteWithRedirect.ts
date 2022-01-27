@@ -11,14 +11,15 @@ export const useResolveRouteWithRedirect = (
   const router = useRouter();
   const route = router.resolve(...args);
   const lastMatched = route.matched[route.matched.length - 1];
-  if (!lastMatched?.redirect) {
-    return route;
-  }
+
+  if (!lastMatched?.redirect) return route;
+
   const { redirect } = lastMatched;
   const resolvedRedirect = isFunction(redirect) ? redirect(route) : redirect;
   const resolvedRedirectObj = isString(resolvedRedirect)
     ? { path: resolvedRedirect }
     : resolvedRedirect;
+
   return useResolveRouteWithRedirect({
     hash: route.hash,
     query: route.query,

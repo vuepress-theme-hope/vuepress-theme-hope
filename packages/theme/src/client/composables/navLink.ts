@@ -1,13 +1,6 @@
-import { isString } from "@vuepress/shared";
 import { useResolveRouteWithRedirect } from "./resolveRouteWithRedirect";
 
-import type {
-  AutoLink,
-  NavbarItem,
-  NavbarGroup,
-  NavGroup,
-  ResolvedNavbarItem,
-} from "../../shared";
+import type { AutoLink } from "../../shared";
 
 /**
  * Resolve AutoLink props from string
@@ -20,28 +13,8 @@ export const useAutoLink = (item: string): AutoLink => {
   const resolved = useResolveRouteWithRedirect(item);
 
   return {
+    icon: resolved.meta.icon,
     text: resolved.meta.title || item,
     link: resolved.name === "404" ? item : resolved.fullPath,
-  };
-};
-
-export const resolveNavbarItem = (
-  item: NavbarItem | NavbarGroup | string
-): ResolvedNavbarItem => {
-  if (isString(item)) return useAutoLink(item);
-
-  if ("children" in item)
-    return {
-      ...item,
-      ...(item.link ? useAutoLink(item.link) : {}),
-      children: item.children.map(resolveNavbarItem) as (
-        | NavGroup<AutoLink>
-        | AutoLink
-      )[],
-    };
-
-  return {
-    ...item,
-    link: useAutoLink(item.link).link,
   };
 };

@@ -1,7 +1,7 @@
 import { useRoute } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isArray, isPlainObject, isString } from "@vuepress/shared";
-import { useLink } from "./link";
+import { useAutoLink } from "../navLink";
 import { resolvePrefix } from "./utils";
 import { useThemeLocaleData } from "../themeData";
 
@@ -77,7 +77,7 @@ export const resolveArraySidebarItems = (
     pathPrefix = prefix
   ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
     const childItem = isString(item)
-      ? useLink(resolvePrefix(pathPrefix, item))
+      ? useAutoLink(resolvePrefix(pathPrefix, item))
       : item.link
       ? { ...item, link: resolvePrefix(pathPrefix, item.link) }
       : item;
