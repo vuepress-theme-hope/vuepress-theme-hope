@@ -47,7 +47,7 @@
     "@vuepress/utils": "2.0.0-beta.35",
     "balloon-css": "^1.2.0",
     "lodash.debounce": "^4.0.8",
-    "screenfull": "^6.0.1",
+    "screenfull": "^5.2.0",
     "vue": "^3.2.29",
     "vue-router": "^4.0.12",
     "vuepress-plugin-reading-time2": "2.0.0-alpha.7",
