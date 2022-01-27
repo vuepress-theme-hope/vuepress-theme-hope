@@ -2,21 +2,21 @@ import { defineUserConfig } from "@vuepress/cli";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
-  base: "/v2/copy-code/",
+  base: "/v2/feed/",
 
   dest: "./dist",
 
   locales: {
     "/": {
       lang: "en-US",
-      title: "Quick Code Copy",
-      description: "Quick Code Copy Plugin for vuepress",
+      title: "Feed Generator",
+      description: "Feed Plugin for vuepress",
     },
 
     "/zh/": {
       lang: "zh-CN",
-      title: "代码一键复制",
-      description: "VuePress 的代码一键复制插件",
+      title: "Feed 生成器",
+      description: "VuePress Feed 插件",
     },
   },
 
@@ -34,7 +34,7 @@ export default defineUserConfig<HopeThemeOptions>({
 
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
-    docsDir: "docs/copy-code/src",
+    docsDir: "docs/feed/src",
 
     navbar: {
       logo: "/logo.svg",
@@ -53,9 +53,25 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               text: "Config",
               icon: "config",
-              link: "/config.md",
+              link: "/config/README.md",
             },
           ],
+        },
+
+        sidebar: {
+          config: {
+            "/": [
+              "",
+              "guide",
+              {
+                text: "Config",
+                icon: "config",
+                prefix: "config/",
+                collapsable: false,
+                children: ["README.md", "channel.md", "item.md"],
+              },
+            ],
+          },
         },
       },
 
@@ -71,9 +87,25 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               text: "配置",
               icon: "config",
-              link: "/zh/config.md",
+              link: "/zh/config/README.md",
             },
           ],
+        },
+
+        sidebar: {
+          config: {
+            "/zh/": [
+              "README.md",
+              "guide.md",
+              {
+                text: "配置",
+                icon: "config",
+                prefix: "config/",
+                collapsable: false,
+                children: ["README.md", "channel.md", "item.md"],
+              },
+            ],
+          },
         },
       },
     },
@@ -94,40 +126,40 @@ export default defineUserConfig<HopeThemeOptions>({
       },
 
       pwa: {
-        favicon: "/v2/copy-code/favicon.ico",
+        favicon: "/v2/feed/favicon.ico",
         themeColor: "#46bd87",
         cachePic: true,
         apple: {
-          icon: "/v2/copy-code/assets/icon/apple-icon-152.png",
+          icon: "/v2/feed/assets/icon/apple-icon-152.png",
           statusBarColor: "black",
         },
         msTile: {
-          image: "/v2/copy-code/assets/icon/ms-icon-144.png",
+          image: "/v2/feed/assets/icon/ms-icon-144.png",
           color: "#ffffff",
         },
         manifest: {
-          name: "vuepress-plugin-copy-code2",
-          short_name: "copy-code plugin",
+          name: "vuepress-plugin-feed2",
+          short_name: "feed plugin",
           icons: [
             {
-              src: "/v2/copy-code/assets/icon/chrome-mask-512.png",
+              src: "/v2/feed/assets/icon/chrome-mask-512.png",
               sizes: "512x512",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/copy-code/assets/icon/chrome-mask-192.png",
+              src: "/v2/feed/assets/icon/chrome-mask-192.png",
               sizes: "192x192",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/copy-code/assets/icon/chrome-512.png",
+              src: "/v2/feed/assets/icon/chrome-512.png",
               sizes: "512x512",
               type: "image/png",
             },
             {
-              src: "/v2/copy-code/assets/icon/chrome-192.png",
+              src: "/v2/feed/assets/icon/chrome-192.png",
               sizes: "192x192",
               type: "image/png",
             },
@@ -136,16 +168,16 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               name: "Guide",
               short_name: "Guide",
-              url: "/v2/copy-code/guide.html",
+              url: "/v2/feed/guide.html",
               icons: [
                 {
-                  src: "/v2/copy-code/assets/icon/guide-maskable.png",
+                  src: "/v2/feed/assets/icon/guide-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/copy-code/assets/icon/guide-monochrome.png",
+                  src: "/v2/feed/assets/icon/guide-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -155,16 +187,16 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               name: "Config",
               short_name: "Config",
-              url: "/v2/copy-code/config.html",
+              url: "/v2/feed/config/",
               icons: [
                 {
-                  src: "/v2/copy-code/assets/icon/config-maskable.png",
+                  src: "/v2/feed/assets/icon/config-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/copy-code/assets/icon/config-monochrome.png",
+                  src: "/v2/feed/assets/icon/config-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
