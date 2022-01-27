@@ -1,12 +1,8 @@
 import { useRoute } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import {
-  isArray,
-  isPlainObject,
-  isString,
-  resolveLocalePath,
-} from "@vuepress/shared";
+import { isArray, isPlainObject, isString } from "@vuepress/shared";
 import { useLink } from "./link";
+import { resolvePrefix } from "./utils";
 import { useThemeLocaleData } from "../themeData";
 
 import type { PageHeader } from "@vuepress/client";
@@ -70,22 +66,30 @@ export const resolveAutoSidebarItems = (
  */
 export const resolveArraySidebarItems = (
   sidebarConfig: SidebarConfigArray,
-  sidebarDepth: number
+  sidebarDepth: number,
+  prefix = ""
 ): ResolvedSidebarItem[] => {
   const page = usePageData();
   const route = useRoute();
 
   const handleChildItem = (
-    item: SidebarItem
+    item: SidebarItem,
+    pathPrefix = prefix
   ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
-    const childItem = isString(item) ? useLink(item) : item;
+    const childItem = isString(item)
+      ? useLink(resolvePrefix(pathPrefix, item))
+      : item.link
+      ? { ...item, link: resolvePrefix(pathPrefix, item.link) }
+      : item;
 
     // resolved group item
     if ("children" in childItem) {
       return {
         type: "group",
         ...childItem,
-        children: childItem.children.map((item) => handleChildItem(item)),
+        children: childItem.children.map((item) =>
+          handleChildItem(item, resolvePrefix(pathPrefix, childItem.prefix))
+        ),
       };
     }
 
@@ -116,14 +120,24 @@ export const resolveArraySidebarItems = (
 export const resolveMultiSidebarItems = (
   sidebarConfig: SidebarConfigObject,
   sidebarDepth: number
-): ResolvedSidebarItem[] =>
-  resolveArraySidebarItems(
-    sidebarConfig[
-      // sidebarPath
-      resolveLocalePath(sidebarConfig, useRoute().path)
-    ] ?? [],
-    sidebarDepth
-  );
+): ResolvedSidebarItem[] => {
+  const route = useRoute();
+  const keys = Object.keys(sidebarConfig).sort((x, y) => y.length - x.length);
+
+  // find matching config
+  for (const base of keys) {
+    if (route.path.startsWith(base))
+      return resolveArraySidebarItems(
+        sidebarConfig[base] ?? [],
+        sidebarDepth,
+        base
+      );
+  }
+
+  console.warn(`${route.path} do not have valid sidebar config`);
+
+  return [];
+};
 
 /**
  * Resolve sidebar items global computed
