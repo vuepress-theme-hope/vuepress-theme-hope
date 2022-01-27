@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Features
+
+- rebuild ([c22143f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 ### Features

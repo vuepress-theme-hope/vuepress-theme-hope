@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- fix dev command ([f3ef3f4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f3ef3f4cb52588f89b47df98fb1a16e240e23d53))
+- make vite optional ([831866a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/831866a3f56ed065341c13cfb4db9bf21eb5c4e5))
+- **md-enhance:** correct component name ([2416989](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2416989d187e612bac004dbaa0d4386af102d685))
+- **md-enhance:** fix build ([c533991](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c5339911769546206c82bafcc3c44eb5db558f42))
+- **md-enhance:** fix danger container ([379e46d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/379e46d4bd9a0a67a1f7d05d548405e860bccfaa))
+- **md-enhance:** fix mermaid import ([992a320](https://github.com/Mister-Hope/vuepress-theme-hope/commit/992a320334c298a63f89ad052ce7cf857e219c29))
+
+### Features
+
+- **md-enhance:** add lazy load ([7c837f1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7c837f1f1eebeec000e01d65545aa431cdd0998a))
+- **md-enhance:** update container ([46f9d15](https://github.com/Mister-Hope/vuepress-theme-hope/commit/46f9d15edbdacb2775c842a659f11e69e0bcca30))
+- move codegroup to md-enhance ([ece3ae9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ece3ae9074e5668fdcac1352a34ee94d3718bca1))
+- rebuild ([c22143f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- **sass-palette:** add transition config ([ee75b71](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ee75b7191c4399e9deea6d7ff40dc6a4f7579555))
+- stop reading from themeConfig ([e31ff46](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e31ff46909c2b72c352a6e05dc9ca55e19e45f84))
+- update function slots ([ff4bca4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff4bca45c4207c2fa8359f8a3d0bc2333425a0e6))
+- update i18n ([8870aff](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8870aff3e6ce38d8405aca576fd59de581bedb08))
+- use ts in dev ([77cbf19](https://github.com/Mister-Hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 ### Bug Fixes

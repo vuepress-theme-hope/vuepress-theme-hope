@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- fix dev command ([f3ef3f4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f3ef3f4cb52588f89b47df98fb1a16e240e23d53))
+- **seo2:** exclude current language ([eb0eccf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb0eccfac7dadf182ab18730d5dbe348734c76ab))
+
+### Features
+
+- rebuild ([c22143f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- rebuild comment and components ([9aeb51d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9aeb51da3e777c63c808ded6d24b38f9f91cce2f))
+- **seo2:** support JSON-LD ([57eb220](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57eb220234ca17d2254ba6a4fa545243ffc35bea))
+- stop reading from themeConfig ([e31ff46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e31ff46909c2b72c352a6e05dc9ca55e19e45f84))
+- use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package vuepress-plugin-seo2

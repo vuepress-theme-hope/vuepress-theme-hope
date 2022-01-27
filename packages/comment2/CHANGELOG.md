@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- **comment2:** fix frontmatter ([34c789a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34c789a67a27e302abd04e7caa574c9d050f88c1))
+- fix build config ([25e4789](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25e4789fc5b4d44816051cc3bf2bece156a89002))
+
+### Features
+
+- **comment2:** improve a11y ([ce08642](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce0864284eb0536c4178cc0179feded6ca2bd2ee))
+- move codegroup to md-enhance ([ece3ae9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ece3ae9074e5668fdcac1352a34ee94d3718bca1))
+- rebuild ([c22143f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- rebuild comment and components ([9aeb51d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9aeb51da3e777c63c808ded6d24b38f9f91cce2f))
+- stop reading from themeConfig ([e31ff46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e31ff46909c2b72c352a6e05dc9ca55e19e45f84))
+- use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package vuepress-plugin-comment2

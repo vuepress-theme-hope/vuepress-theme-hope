@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- **copy-code2:** minor update to english code copy text ([#1354](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1354)) ([d317ccd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d317ccd709403980c5e5b42a8c4841c1da26f86b))
+
+### Features
+
+- rebuild ([c22143f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- update i18n ([8870aff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8870aff3e6ce38d8405aca576fd59de581bedb08))
+- use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package vuepress-plugin-copy-code2

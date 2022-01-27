@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- **pwa2:** add missing manifest options ([de67510](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de67510c683e757a88c2fd5496269fea380ae24f))
+- **pwa2:** fix screenshots button not working ([3fd5bfe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3fd5bfe4c47765ef2ee801a27aaf0852877862e5))
+
+### Features
+
+- rebuild ([c22143f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- stop reading from themeConfig ([e31ff46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e31ff46909c2b72c352a6e05dc9ca55e19e45f84))
+- update function slots ([ff4bca4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff4bca45c4207c2fa8359f8a3d0bc2333425a0e6))
+- update i18n ([8870aff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8870aff3e6ce38d8405aca576fd59de581bedb08))
+- use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package vuepress-plugin-pwa2

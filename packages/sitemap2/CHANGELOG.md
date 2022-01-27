@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Features
+
+- **sitemap2:** update sitemap ([6b779ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b779ad40d16c3e24a8fdfa71dcf4331433ed442))
+- stop reading from themeConfig ([e31ff46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e31ff46909c2b72c352a6e05dc9ca55e19e45f84))
+- **theme:** support sitemap ([bceb656](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bceb65692545a2296cc320e356838ee978ffae1c))
+- use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package vuepress-plugin-sitemap2

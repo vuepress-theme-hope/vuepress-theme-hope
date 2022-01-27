@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- make vite optional ([831866a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/831866a3f56ed065341c13cfb4db9bf21eb5c4e5))
+- **sass-palette:** fix style path ([7a545db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a545dbc2a44211d44c039ca320834df29d89ed9))
+
+### Features
+
+- rebuild ([c22143f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- rebuild project home ([ff88eb2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff88eb2b5ccb8169a3c845b2afc672517d15c7e8))
+- **sass-palette:** add transition config ([ee75b71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee75b7191c4399e9deea6d7ff40dc6a4f7579555))
+- use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package vuepress-plugin-sass-palette

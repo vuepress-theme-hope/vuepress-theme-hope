@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- **components:** fix build ([84e80fe](https://github.com/Mister-Hope/vuepress-theme-hope/commit/84e80fe2eab7b355ff5d35e2e181fec43174d999))
+- **components:** fix CodeGroup HMR ([f78ba46](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f78ba464c007aa9bb6076f94d98efbe4c2ac5384))
+- **components:** fix pageinfo ([4fd9a72](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4fd9a7293bfc176801b4987bc72349dda4fcb819))
+- **components:** fix prop type ([c0ec529](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c0ec529754566ecb6cd26de675ff680fa04c1e06))
+- fix build config ([25e4789](https://github.com/Mister-Hope/vuepress-theme-hope/commit/25e4789fc5b4d44816051cc3bf2bece156a89002))
+- fix components ([b11442e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b11442ee8e314f3d02276d649a579d3b3da13885))
+- make vite optional ([831866a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/831866a3f56ed065341c13cfb4db9bf21eb5c4e5))
+
+### Features
+
+- **components:** downgrade screenfull to compatble with vite ([76455a2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/76455a2e7d62e1d038fe493b654276442bf44805))
+- move codegroup to md-enhance ([ece3ae9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ece3ae9074e5668fdcac1352a34ee94d3718bca1))
+- rebuild ([c22143f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- rebuild comment and components ([9aeb51d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9aeb51da3e777c63c808ded6d24b38f9f91cce2f))
+- rebuild project home ([ff88eb2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff88eb2b5ccb8169a3c845b2afc672517d15c7e8))
+- **sass-palette:** add transition config ([ee75b71](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ee75b7191c4399e9deea6d7ff40dc6a4f7579555))
+- **theme:** update styles ([f744454](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f744454e63d5702ab93c67063c6a8a5054a30bab))
+- update function slots ([ff4bca4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff4bca45c4207c2fa8359f8a3d0bc2333425a0e6))
+- update i18n ([8870aff](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8870aff3e6ce38d8405aca576fd59de581bedb08))
+- update navbar ([0c643ed](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0c643edc9f23ccb6d6db78e255cf809a914abaa2))
+- use ts in dev ([77cbf19](https://github.com/Mister-Hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 ### Bug Fixes

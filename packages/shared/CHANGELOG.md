@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- fix build config ([25e4789](https://github.com/Mister-Hope/vuepress-theme-hope/commit/25e4789fc5b4d44816051cc3bf2bece156a89002))
+- fix dev command ([f3ef3f4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f3ef3f4cb52588f89b47df98fb1a16e240e23d53))
+- make vite optional ([831866a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/831866a3f56ed065341c13cfb4db9bf21eb5c4e5))
+- **shared:** fix BC on devServer ([b7eecf5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b7eecf5fc7e576488b15abad45f0dbe6c1a63848))
+- **shared:** not requiring client on shared ([e5116de](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e5116def84328cf5e7006b866adcfc5ea50f8d6c))
+
+### Features
+
+- move codegroup to md-enhance ([ece3ae9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ece3ae9074e5668fdcac1352a34ee94d3718bca1))
+- rebuild ([c22143f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- rebuild comment and components ([9aeb51d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9aeb51da3e777c63c808ded6d24b38f9f91cce2f))
+- rebuild project home ([ff88eb2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff88eb2b5ccb8169a3c845b2afc672517d15c7e8))
+- **shared:** improve reg speed ([7de7e9f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7de7e9f8a4eb079ef5556d0c64e14dd0475f91a9))
+- **shared:** update font-awesome version ([4138f63](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4138f63677597ffdc03f946abe1e9e75df8b805e))
+- **theme:** add 2 language support ([99ea323](https://github.com/Mister-Hope/vuepress-theme-hope/commit/99ea3237c5f72391f74d2cd108269c2a2be29669))
+- use ts in dev ([77cbf19](https://github.com/Mister-Hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared

@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- Corrects the spelling from 'corrent' -> 'correct' in the invalid password message when encrypting and adds a 'the' to the password prompt ([#1155](https://github.com/Mister-Hope/vuepress-theme-hope/issues/1155)) ([582836f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/582836f8360fa127a88a45f40601c650ebcebb0b))
+- fix dev command ([f3ef3f4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f3ef3f4cb52588f89b47df98fb1a16e240e23d53))
+- fix navbar ([09e8660](https://github.com/Mister-Hope/vuepress-theme-hope/commit/09e8660d97e41ae3fefc8da6cf5b99b8c2eafa4a))
+- fix theme build ([71ac6d2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/71ac6d2eb6b575c339ee818d2989c189fdf214ef))
+- make vite optional ([831866a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/831866a3f56ed065341c13cfb4db9bf21eb5c4e5))
+- **theme:** fix 404 layout ([d8c0ba9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d8c0ba9030232eadf491378a8741b4d24e379d70))
+- **theme:** fix code block on mobile ([390cc39](https://github.com/Mister-Hope/vuepress-theme-hope/commit/390cc3965385dbef8603df7494bc3e1508c2775a))
+- **theme:** fix collapsable sidebar ([415ba7d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/415ba7d1e724efecc4ba6a6b5ced2fb9e494fddb))
+- **theme:** fix darkLogo layout ([797f2fa](https://github.com/Mister-Hope/vuepress-theme-hope/commit/797f2fa248224cbfc711006c8ff6a0c893edcbe6))
+- **theme:** fix DropdownLink ([a19da97](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a19da977206a1822094c41ad695967b2dcc80a68))
+- **theme:** fix home layout ([423f3db](https://github.com/Mister-Hope/vuepress-theme-hope/commit/423f3db95fbbe15eecbd6f3377248d7e566ead6e))
+- **theme:** fix home style ([d4943bd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d4943bd27b34c26051f7d61ff36abe582393ffa6))
+- **theme:** fix import types ([c7602f6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c7602f6214ad903bd68144bd5b60da3a47917e0d))
+- **theme:** fix navbar config ([423c375](https://github.com/Mister-Hope/vuepress-theme-hope/commit/423c3751daed4eb51a0f6e9d4b15156008cad9ab))
+- **theme:** fix sidebar ([c571aef](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c571aef30705ee4aef9c8abf4d135b1c5f116780))
+- **theme:** fix ToggleDarkModeButton ([513c05d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/513c05d82664efc5c3b37cdc7ff189a5fe7e1f5a))
+
+### Features
+
+- rebuild ([c22143f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- rebuild comment and components ([9aeb51d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9aeb51da3e777c63c808ded6d24b38f9f91cce2f))
+- rebuild navbar actions ([274fad9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/274fad947c3a56c748789596059f95e2fb3f360d))
+- rebuild project home ([ff88eb2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff88eb2b5ccb8169a3c845b2afc672517d15c7e8))
+- rebuild theme options ([2e15e2b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2e15e2b8cf7629fcdd17347148ec0a492221910f))
+- **sass-palette:** add transition config ([ee75b71](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ee75b7191c4399e9deea6d7ff40dc6a4f7579555))
+- **theme:** add 2 language support ([99ea323](https://github.com/Mister-Hope/vuepress-theme-hope/commit/99ea3237c5f72391f74d2cd108269c2a2be29669))
+- **theme:** add template ([09053e2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/09053e2ea931c619fb882c9d8e78eba038c1ca1c))
+- **theme:** rebuild navbar ([53ef024](https://github.com/Mister-Hope/vuepress-theme-hope/commit/53ef0241ba03a14f9cdda3266d31d3532fd32352))
+- **theme:** rebuild navbar and sidebar ([094762a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/094762a3f1d9db02b8110002317ec647733adcb5))
+- **theme:** rewrite ProjectHome ([3f7f7af](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3f7f7af4fc9c815bbd4f0061e9f3fa7279c27740))
+- **theme:** support sitemap ([bceb656](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bceb65692545a2296cc320e356838ee978ffae1c))
+- **theme:** update plugins ([6c309d8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6c309d8d3d25590325a11328529c996d261a7fff))
+- **theme:** update sidebar resolve and darkmode ([8d86c8f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8d86c8f7af3345484eb1b529631a777df78062fe))
+- **theme:** update styles ([f744454](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f744454e63d5702ab93c67063c6a8a5054a30bab))
+- update function slots ([ff4bca4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff4bca45c4207c2fa8359f8a3d0bc2333425a0e6))
+- update i18n ([8870aff](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8870aff3e6ce38d8405aca576fd59de581bedb08))
+- update navbar ([0c643ed](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0c643edc9f23ccb6d6db78e255cf809a914abaa2))
+- use ts in dev ([77cbf19](https://github.com/Mister-Hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
+
 # [2.0.0-alpha.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 ### Bug Fixes

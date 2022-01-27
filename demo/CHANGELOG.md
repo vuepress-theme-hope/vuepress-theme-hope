@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+
+### Bug Fixes
+
+- **theme:** fix collapsable sidebar ([415ba7d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/415ba7d1e724efecc4ba6a6b5ced2fb9e494fddb))
+- **theme:** fix navbar config ([423c375](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/423c3751daed4eb51a0f6e9d4b15156008cad9ab))
+
+### Features
+
+- rebuild ([c22143f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c22143f614971c55112fbd1a717e6501652d10f2))
+- rebuild project home ([ff88eb2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff88eb2b5ccb8169a3c845b2afc672517d15c7e8))
+- rebuild theme options ([2e15e2b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2e15e2b8cf7629fcdd17347148ec0a492221910f))
+- **theme:** rebuild navbar ([53ef024](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/53ef0241ba03a14f9cdda3266d31d3532fd32352))
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package theme-demo
