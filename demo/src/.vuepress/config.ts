@@ -7,7 +7,7 @@ import { navbar, sidebar } from "./configs";
 const isProd = process.env.NODE_ENV === "production";
 
 export default defineUserConfig<HopeThemeOptions>({
-  base: "/",
+  base: "/v2-demo/",
 
   head: [
     [
@@ -103,8 +103,66 @@ export default defineUserConfig<HopeThemeOptions>({
 
     plugins: {
       mdEnhance: { enableAll: true },
-      // only enable git plugin in production mode
-      git: isProd,
+
+      pwa: {
+        favicon: "/v2-demo/favicon.ico",
+        cachePic: true,
+        apple: {
+          icon: "/v2-demo/assets/icon/apple-icon-152.png",
+          statusBarColor: "black",
+        },
+        msTile: {
+          image: "/v2-demo/assets/icon/ms-icon-144.png",
+          color: "#ffffff",
+        },
+        manifest: {
+          icons: [
+            {
+              src: "/v2-demo/assets/icon/chrome-mask-512.png",
+              sizes: "512x512",
+              purpose: "maskable",
+              type: "image/png",
+            },
+            {
+              src: "/v2-demo/assets/icon/chrome-mask-192.png",
+              sizes: "192x192",
+              purpose: "maskable",
+              type: "image/png",
+            },
+            {
+              src: "/v2-demo/assets/icon/chrome-512.png",
+              sizes: "512x512",
+              type: "image/png",
+            },
+            {
+              src: "/v2-demo/assets/icon/chrome-192.png",
+              sizes: "192x192",
+              type: "image/png",
+            },
+          ],
+          shortcuts: [
+            {
+              name: "Guide",
+              short_name: "Guide",
+              url: "/v2-demo/guide/",
+              icons: [
+                {
+                  src: "/v2-demo/assets/icon/guide-maskable.png",
+                  sizes: "192x192",
+                  purpose: "maskable",
+                  type: "image/png",
+                },
+                {
+                  src: "/v2-demo/assets/icon/guide-monochrome.png",
+                  sizes: "192x192",
+                  purpose: "monochrome",
+                  type: "image/png",
+                },
+              ],
+            },
+          ],
+        },
+      },
     },
   },
 
