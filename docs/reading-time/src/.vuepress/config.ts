@@ -42,11 +42,9 @@ export default defineUserConfig<HopeThemeOptions>({
       "/zh/": {},
     },
 
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
+    footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
 
+    displayFooter: true,
     plugins: {
       mdEnhance: {
         codegroup: true,

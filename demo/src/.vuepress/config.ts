@@ -50,24 +50,20 @@ export default defineUserConfig<HopeThemeOptions>({
   themeConfig: {
     hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
 
+    author: {
+      name: "Mr.Hope",
+      url: "https://mrhope.site",
+    },
+
     iconPrefix: "iconfont icon-",
 
     logo: "/logo.svg",
+
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
     docsDir: "demo/src",
 
-    author: "Mr.Hope",
-    darkmode: "auto-switch",
-
-    // theme-level locales config
     locales: {
-      /**
-       * English locale config
-       *
-       * As the default locale of @vuepress/theme-default is English,
-       * we don't need to set all of the locale fields
-       */
       "/": {
         // navbar
         navbar: navbar.en,
@@ -75,10 +71,9 @@ export default defineUserConfig<HopeThemeOptions>({
         // sidebar
         sidebar: sidebar.en,
 
-        footer: {
-          display: true,
-          content: "Default footer",
-        },
+        footer: "Default footer",
+
+        displayFooter: true,
 
         metaLocales: {
           editLink: "Edit this page on GitHub",
@@ -95,13 +90,11 @@ export default defineUserConfig<HopeThemeOptions>({
         // sidebar
         sidebar: sidebar.zh,
 
-        footer: {
-          display: true,
-          content: "默认页脚",
-        },
+        footer: "默认页脚",
+
+        displayFooter: true,
 
         // page meta
-
         metaLocales: {
           editLink: "在 GitHub 上编辑此页",
         },

@@ -194,11 +194,9 @@ export default defineUserConfig<HopeThemeOptions>({
 
     blog: false,
 
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
+    footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
 
+    displayFooter: true,
     plugins: {
       comment: {
         type: "waline",
