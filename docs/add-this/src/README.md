@@ -49,8 +49,10 @@ npm i -D vuepress-plugin-add-this@next
 
 ```ts
 // .vuepress/config.ts
+import { addThis } from "vuepress-plugin-add-this";
+
 export default {
-  plugins: [["add-this", { pubid: "your pubid" }]],
+  plugins: [addThis({ pubid: "your pubid" })],
 };
 ```
 
@@ -60,8 +62,10 @@ export default {
 
 ```js
 // .vuepress/config.js
+const { addThis } = require("vuepress-plugin-add-this");
+
 module.exports = {
-  plugins: [["add-this", { pubid: "your pubid" }]],
+  plugins: [addThis({ pubid: "your pubid" })],
 };
 ```
 
