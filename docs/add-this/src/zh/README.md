@@ -1,25 +1,25 @@
 ---
 home: true
-title: Home
+title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-add-this
-tagline: AddThis plugin for vuepress
+tagline: 为 VuePress 提供 addthis 支持
 actions:
-  - text: Guide 💡
-    link: /guide/
+  - text: 快速上手 💡
+    link: /zh/guide.html
     type: primary
 
-  - text: Config 🛠
-    link: /config/
+  - text: 配置 🛠
+    link: /zh/config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---
 
-## How to use
+## 使用插件
 
-### Install
+### 安装
 
 :::: code-group
 
@@ -41,7 +41,7 @@ npm i -D vuepress-plugin-add-this@next
 
 ::::
 
-### Usage
+### 使用
 
 :::: code-group
 
@@ -50,7 +50,7 @@ npm i -D vuepress-plugin-add-this@next
 ```ts
 // .vuepress/config.ts
 export default {
-  plugins: [["add-this", { pubid: "your pubid" }]],
+  plugins: [["add-this", { pubid: "你的 pubid" }]],
 };
 ```
 
@@ -61,7 +61,7 @@ export default {
 ```js
 // .vuepress/config.js
 module.exports = {
-  plugins: [["add-this", { pubid: "your pubid" }]],
+  plugins: [["add-this", { pubid: "你的 pubid" }]],
 };
 ```
 
