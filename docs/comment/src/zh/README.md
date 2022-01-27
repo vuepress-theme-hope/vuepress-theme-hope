@@ -47,14 +47,13 @@ npm i -D vuepress-plugin-comment2@next
 
 ```ts
 // .vuepress/config.ts
+import { comment } from "vuepress-plugin-comment2";
+
 export default {
   plugins: [
-    [
-      "@mr-hope/comment",
-      {
-        // 插件选项
-      },
-    ],
+    comment({
+      // 插件选项
+    }),
   ],
 };
 ```
@@ -65,14 +64,13 @@ export default {
 
 ```js
 // .vuepress/config.js
+const { comment } = require("vuepress-plugin-comment2");
+
 module.exports = {
   plugins: [
-    [
-      "@mr-hope/comment",
-      {
-        // 插件选项
-      },
-    ],
+    comment({
+      // 插件选项
+    }),
   ],
 };
 ```
