@@ -26,7 +26,7 @@ export default defineUserConfig<HopeThemeOptions>({
 
     author: {
       name: "Mr.Hope",
-      mail: "mistr-hope@outlook.com",
+      url: "https://mrhope.site",
     },
 
     iconPrefix: "iconfont icon-",
