@@ -20,7 +20,10 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   // remove locales so that they won't be injected in client twice
   if ("walineLocales" in options) delete options.walineLocales;
 
-  addViteOptimizeDeps(app, "@waline/client");
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+
+  addViteOptimizeDeps(app, ["@waline/client"]);
 
   useSassPalettePlugin(app, { id: "hope" });
 

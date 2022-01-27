@@ -7,8 +7,13 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { PhotoSwipeOptions } from "../shared";
 
 export const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
-  addViteOptimizeDeps(app, "photoswipe");
-  addViteOptimizeDeps(app, "photoswipe/dist/photoswipe-ui-default");
+  addViteOptimizeDeps(app, [
+    "photoswipe",
+    "photoswipe/dist/photoswipe-ui-default",
+  ]);
+
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
   useSassPalettePlugin(app, { id: "hope" });
 

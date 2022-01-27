@@ -1,5 +1,9 @@
 import { path } from "@vuepress/utils";
-import { getLocales, useCustomDevServer } from "@mr-hope/vuepress-shared";
+import {
+  addViteOptimizeDeps,
+  getLocales,
+  useCustomDevServer,
+} from "@mr-hope/vuepress-shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { pwaLocales } from "./locales";
 import { injectLinkstoHead } from "./injectHead";
@@ -11,6 +15,11 @@ import type { PWAOptions } from "../shared";
 
 export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   const { base } = app.options;
+
+  addViteOptimizeDeps(app, ["mitt", "register-service-worker"]);
+
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
   useSassPalettePlugin(app, { id: "hope" });
 

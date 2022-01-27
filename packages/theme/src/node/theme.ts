@@ -14,8 +14,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...localeOptions },
   app
 ) => {
-  addViteOptimizeDeps(app, "@vueuse/core");
-  addViteOptimizeDeps(app, "lodash.throttle");
+  addViteOptimizeDeps(app, ["@vueuse/core", "lodash.throttle"]);
+
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
   assignDefaultLocaleOptions(app, localeOptions);
 

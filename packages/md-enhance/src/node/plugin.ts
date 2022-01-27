@@ -1,6 +1,6 @@
+import { addViteOptimizeDeps, noopModule } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { noopModule } from "@mr-hope/vuepress-shared";
 import {
   codeDemoDefaultSetting,
   footnote,
@@ -38,6 +38,22 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
     Array.isArray(options.presentation.plugins)
       ? options.presentation.plugins
       : [];
+
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+
+  if (mermaidEnable) addViteOptimizeDeps(app, "mermaid");
+  if (presentationEnable)
+    addViteOptimizeDeps(app, [
+      "reveal.js",
+      "reveal.js",
+      "reveal.js/plugin/markdown/markdown.esm.js",
+      "reveal.js/plugin/highlight/highlight.esm.js",
+      "reveal.js/plugin/math/math.esm.js",
+      "reveal.js/plugin/search/search.esm.js",
+      "reveal.js/plugin/notes/notes.esm.js",
+      "reveal.js/plugin/zoom/zoom.esm.js",
+    ]);
 
   useSassPalettePlugin(app, { id: "hope" });
 

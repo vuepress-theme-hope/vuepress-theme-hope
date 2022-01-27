@@ -1,5 +1,5 @@
 import { path } from "@vuepress/utils";
-import { getLocales } from "@mr-hope/vuepress-shared";
+import { addViteOptimizeDeps, getLocales } from "@mr-hope/vuepress-shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { copyCodeLocales } from "./locales";
 
@@ -7,6 +7,9 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { CopyCodeOptions } from "../shared";
 
 export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+
   useSassPalettePlugin(app, { id: "hope" });
 
   return {

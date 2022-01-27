@@ -17,6 +17,9 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { ComponentOptions } from "../shared";
 
 export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+
   if (options.backToTop) addViteOptimizeDeps(app, "lodash.debounce");
   if (options.screenFull) addViteOptimizeDeps(app, "screenfull");
 
