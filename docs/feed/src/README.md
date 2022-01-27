@@ -49,14 +49,13 @@ npm i -D vuepress-plugin-feed2@next
 
 ```ts
 // .vuepress/config.ts
+import { feed } from "vuepress-plugin-feed2";
+
 export default {
   plugins: [
-    [
-      "@mr-hope/feed",
-      {
-        // your options
-      },
-    ],
+    feed({
+      // your options
+    }),
   ],
 };
 ```
@@ -67,14 +66,13 @@ export default {
 
 ```js
 // .vuepress/config.js
+const { feed } = require("vuepress-plugin-feed2");
+
 module.exports = {
   plugins: [
-    [
-      "@mr-hope/feed",
-      {
-        // your options
-      },
-    ],
+    feed({
+      // your options
+    }),
   ],
 };
 ```

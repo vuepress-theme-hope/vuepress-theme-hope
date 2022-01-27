@@ -43,34 +43,36 @@ npm i -D vuepress-plugin-feed2@next
 
 ### 使用
 
+:::: code-group
+
+::: code-group-item ts
+
 ```js
 // .vuepress/config.js
+import { feed } from "vuepress-plugin-feed2";
+
 module.exports = {
   plugins: [
-    [
-      "@mr-hope/feed",
-      {
-        // 你的选项
-      },
-    ],
+    feed({
+      // 插件选项
+    }),
   ],
 };
 ```
 
 :::
 
-::: code-group-item ts
+::: code-group-item js
 
 ```ts
 // .vuepress/config.ts
-export default {
+const { feed } = require("vuepress-plugin-feed2");
+
+module.exports = {
   plugins: [
-    [
-      "@mr-hope/feed",
-      {
-        // 你的选项
-      },
-    ],
+    feed({
+      // 插件选项
+    }),
   ],
 };
 ```
