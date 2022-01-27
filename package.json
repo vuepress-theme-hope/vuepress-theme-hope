@@ -18,6 +18,7 @@
     "demo:webpack-serve": "yarn workspace theme-demo webpack-serve",
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"yarn dev:copy\"",
     "dev:copy": "lerna run dev:copy --parallel",
+    "docs:vite-build": "lerna run docs:vite-build --parallel",
     "fix-memory-limit": "cross-env LIMIT=4096 increase-memory-limit",
     "postinstall": "husky install",
     "lerna:bootstrap": "lerna bootstrap",
