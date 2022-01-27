@@ -73,6 +73,21 @@ A custom danger container
 A custom details container
 :::
 
+::: info Custom info
+:::
+
+::: note Custom note
+:::
+
+::: tip Custom tip
+:::
+
+::: warning Custom warning
+:::
+
+::: danger Custom danger
+:::
+
 ```md
 ::: info
 Information container
@@ -120,5 +135,20 @@ A custom danger container
 
 ::: details custom title
 A custom details container
+:::
+
+::: info Custom info
+:::
+
+::: note Custom note
+:::
+
+::: tip Custom tip
+:::
+
+::: warning Custom warning
+:::
+
+::: danger Custom danger
 :::
 ```
