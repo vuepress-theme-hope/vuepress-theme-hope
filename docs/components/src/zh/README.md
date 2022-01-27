@@ -47,14 +47,13 @@ npm i -D @mr-hope/vuepress-plugin-components@next
 
 ```ts
 // .vuepress/config.ts
+import { components } from "@mr-hope/vuepress-plugin-components";
+
 export default {
   plugins: [
-    [
-      "@mr-hope/components",
-      {
-        // 插件选项
-      },
-    ],
+    components({
+      // 插件选项
+    }),
   ],
 };
 ```
@@ -65,14 +64,13 @@ export default {
 
 ```js
 // .vuepress/config.js
+const { components } = require("@mr-hope/vuepress-plugin-components");
+
 module.exports = {
   plugins: [
-    [
-      "@mr-hope/components",
-      {
-        // 插件选项
-      },
-    ],
+    components({
+      // 插件选项
+    }),
   ],
 };
 ```
