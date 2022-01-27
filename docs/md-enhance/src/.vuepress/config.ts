@@ -1,4 +1,5 @@
 import { defineUserConfig } from "@vuepress/cli";
+import { path } from "@vuepress/utils";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
@@ -248,4 +249,14 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     },
   },
+
+  plugins: [
+    [
+      "@vuepress/plugin-register-components",
+      {
+        componentsDir: path.resolve(__dirname, "./components"),
+        componentsPatterns: ["**/*.vue", "**/*.ts"],
+      },
+    ],
+  ],
 });

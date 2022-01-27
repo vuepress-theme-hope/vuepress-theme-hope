@@ -18,6 +18,7 @@
     "docs:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
+    "@vuepress/plugin-register-components": "2.0.0-beta.35",
     "vuepress-theme-hope": "2.0.0-alpha.8",
     "vuepress-vite": "2.0.0-beta.35",
     "vuepress-webpack": "2.0.0-beta.35"
