@@ -29,7 +29,7 @@ files.forEach((pkgName) => {
       },
       keywords: ["vuepress-plugin", "vuepress", pkgName, "mr-hope"],
       author: {
-        email: "zhangbowang1998@gmail.com",
+        email: "mister-hope@outlook.com",
         name: "Mr.Hope",
         url: "https://mrhope.site",
       },
