@@ -19,6 +19,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   }
 
   &.info,
+  &.note,
   &.tip,
   &.warning,
   &.danger {
