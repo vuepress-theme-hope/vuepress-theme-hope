@@ -26,7 +26,7 @@ export default defineComponent({
               class: "repo-link",
               href: repo.value.link,
               target: "_blank",
-              rel: "noopenner norefferer",
+              rel: "noopener noreferrer",
             },
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             h(resolveComponent(`${repo.value.type}Icon`), {

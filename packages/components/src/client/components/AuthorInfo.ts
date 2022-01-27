@@ -45,7 +45,12 @@ export default defineComponent({
                   item.url
                     ? h(
                         "a",
-                        { class: "author-item", href: item.url },
+                        {
+                          class: "author-item",
+                          href: item.url,
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        },
                         item.name
                       )
                     : h("span", { class: "author-item" }, item.name)

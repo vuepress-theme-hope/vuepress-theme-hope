@@ -72,9 +72,22 @@
     }
 
     .icon {
+      position: relative;
+      bottom: 0.125em;
+      display: inline-block;
       width: 1em;
       height: 1em;
       margin-right: 0.25em;
+      vertical-align: middle;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover,
+      &:active {
+        color: var(--accent-color);
+      }
     }
   }
 
