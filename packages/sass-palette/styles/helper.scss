@@ -35,21 +35,15 @@
 
   // it's a shortcut config
   @if (meta.type-of($value) == list and list.length($value) == 2) {
-    $isLegal: true;
-
     @each $color in $value {
       @if meta.type-of($color) != color {
-        $isLegal: false;
+        @debug "Unexpected value: getting #{$value}, while #{$color} not color";
+
+        @return false;
       }
     }
 
-    @if $isLegal {
-      @return true;
-    }
-
-    @debug "Unexpected value: getting #{$value}";
-
-    @return false;
+    @return true;
   }
 
   // it's a valid map color config
