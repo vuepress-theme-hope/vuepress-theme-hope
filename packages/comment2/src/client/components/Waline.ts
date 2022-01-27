@@ -93,7 +93,7 @@ export default defineComponent({
                 "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
                 "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
               ],
-              dark: 'body[data-theme="dark"]',
+              dark: "html.dark",
               ...walineOption,
               el: "#waline-comment",
               visitor: enablePageViews.value,

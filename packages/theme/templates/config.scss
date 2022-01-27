@@ -1,3 +1,5 @@
+@import "vuepress-plugin-sass-palette/styles/default/palette";
+
 /* responsive breakpoints */
 
 // wide screen
@@ -17,11 +19,11 @@ $codeLang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
   "styl" "ts" "toml" "vue" "yml" !default;
 
 /* Content Class */
-$contentClass: ".theme-default-content" !default;
+$contentClass: ".theme-hope-content" !default;
 
 /** dark mode selecters */
-$darkSelector: "html.dark" !default;
-$lightSelector: "html:not(.dark)" !default;
+$darkSelector: 'body[data-theme="dark"]' !default;
+$lightSelector: 'body[data-theme="light"]' !default;
 
 /* Color list */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,

@@ -56,6 +56,7 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
 @use 'sass:meta';
 
 @use '@${id}/helper';
+@use '${app.dir.temp(`styles/${id}-config.scss`)}' as config;
 @use '${getPath(defaultPalette)}' as defaultPalette;
 @use '${getPath(palette)}' as palette;
 
@@ -73,7 +74,7 @@ $variables: map.deep-merge($defaultVariables, $userVariables);
       #{$key}: #{$value};
     }
   } @else if helper.color-islegal($value) {
-    @include helper.inject-color($key, $value, $darkSelector: "html.dark");
+    @include helper.inject-color($key, $value, $darkSelector: config.$darkSelector);
   }
 }
 `

@@ -31,11 +31,11 @@ export const useDarkMode = (): {
   return darkmode;
 };
 
-export const updateHtmlDarkClass = (isDarkMode: DarkModeRef): void => {
-  const update = (value = isDarkMode.value): void => {
-    // set `class="dark"` on `<html>` element
-    const htmlEl = window?.document.querySelector("html");
-    htmlEl?.classList.toggle("dark", value);
+export const updateDarkModeAttr = (isDarkMode: DarkModeRef): void => {
+  const update = (isDark = isDarkMode.value): void => {
+    const body = window?.document.querySelector("body");
+
+    body?.setAttribute("data-theme", isDark ? "dark" : "light");
   };
 
   onMounted(() => {
@@ -75,5 +75,5 @@ export const setupDarkMode = (): void => {
 
   provide(darkModeSymbol, { isDarkMode, status: darkmodeStorage });
 
-  updateHtmlDarkClass(isDarkMode);
+  updateDarkModeAttr(isDarkMode);
 };

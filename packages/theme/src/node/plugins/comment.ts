@@ -7,5 +7,8 @@ export const resolveCommentOptions = (
     ? false
     : ({
         type: "disable",
+        ...(options?.type === "waline"
+          ? { dark: 'body[data-theme="dark"]' }
+          : {}),
         ...(options || {}),
       } as CommentOptions);
