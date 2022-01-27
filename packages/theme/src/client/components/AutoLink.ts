@@ -102,7 +102,7 @@ export default defineComponent({
         ? new RegExp(config.value.activeMatch).test(route.path)
         : // if this link is active in subpath
         !shouldBeActiveInSubpath.value
-        ? false
+        ? route.path === config.value.link
         : route.path.startsWith(config.value.link)
     );
 
