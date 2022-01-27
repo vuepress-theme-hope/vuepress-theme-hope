@@ -60,6 +60,13 @@ jobs:
         run: |
           yarn cpx "docs/add-this/dist/**" dist/add-this
           yarn cpx "docs/comment/dist/**" dist/comment
+          yarn cpx "docs/copy-code/dist/**" dist/copy-code
+          yarn cpx "docs/feed/dist/**" dist/feed
+          yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
+          yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
+          yarn cpx "docs/pwa/dist/**" dist/pwa
+          yarn cpx "docs/reading-time/dist/**" dist/reading-time
+          yarn cpx "docs/seo/dist/**" dist/seo
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -67,4 +74,4 @@ jobs:
           branch: gh-pages
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: vuepress-theme-hope/v2-docs
+          repository-name: vuepress-theme-hope/v2
