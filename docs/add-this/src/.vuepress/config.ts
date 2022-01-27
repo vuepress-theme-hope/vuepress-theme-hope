@@ -24,7 +24,10 @@ export default defineUserConfig<HopeThemeOptions>({
   themeConfig: {
     hostname: "https://vuepress-theme-hope.github.io",
 
-    author: { name: "Mr.Hope", mail: "mistr-hope@outlook.com" },
+    author: {
+      name: "Mr.Hope",
+      mail: "mistr-hope@outlook.com",
+    },
 
     iconPrefix: "iconfont icon-",
 
@@ -40,38 +43,36 @@ export default defineUserConfig<HopeThemeOptions>({
       "/": {
         navbar: {
           config: [
-            { text: "Home", icon: "home", link: "/" },
+            { text: "Home", icon: "home", link: "/README.md" },
             {
               text: "Guide",
               icon: "creative",
-              link: "/guide/",
+              link: "/guide.md",
             },
             {
               text: "Config",
               icon: "config",
-              link: "/config/",
+              link: "/config.md",
             },
           ],
         },
       },
       "/zh/": {
         nav: [
-          { text: "主页", icon: "home", link: "/zh/" },
+          { text: "主页", icon: "home", link: "/zh/README.md" },
           {
             text: "指南",
             icon: "creative",
-            link: "/zh/guide/",
+            link: "/zh/guide.md",
           },
           {
             text: "配置",
             icon: "config",
-            link: "/zh/config/",
+            link: "/zh/config.md",
           },
         ],
       },
     },
-
-    blog: false,
 
     footer: {
       display: true,
@@ -89,15 +90,15 @@ export default defineUserConfig<HopeThemeOptions>({
       },
 
       pwa: {
-        favicon: "/add-this/favicon.ico",
+        favicon: "/v2/add-this/favicon.ico",
         themeColor: "#46bd87",
         cachePic: true,
         apple: {
-          icon: "/add-this/assets/icon/apple-icon-152.png",
+          icon: "/v2/add-this/assets/icon/apple-icon-152.png",
           statusBarColor: "black",
         },
         msTile: {
-          image: "/add-this/assets/icon/ms-icon-144.png",
+          image: "/v2/add-this/assets/icon/ms-icon-144.png",
           color: "#ffffff",
         },
         manifest: {
@@ -105,24 +106,24 @@ export default defineUserConfig<HopeThemeOptions>({
           short_name: "add-this plugin",
           icons: [
             {
-              src: "/add-this/assets/icon/chrome-mask-512.png",
+              src: "/v2/add-this/assets/icon/chrome-mask-512.png",
               sizes: "512x512",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/add-this/assets/icon/chrome-mask-192.png",
+              src: "/v2/add-this/assets/icon/chrome-mask-192.png",
               sizes: "192x192",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/add-this/assets/icon/chrome-512.png",
+              src: "/v2/add-this/assets/icon/chrome-512.png",
               sizes: "512x512",
               type: "image/png",
             },
             {
-              src: "/add-this/assets/icon/chrome-192.png",
+              src: "/v2/add-this/assets/icon/chrome-192.png",
               sizes: "192x192",
               type: "image/png",
             },
@@ -131,16 +132,16 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               name: "Guide",
               short_name: "Guide",
-              url: "/add-this/guide/",
+              url: "/v2/add-this/guide/",
               icons: [
                 {
-                  src: "/add-this/assets/icon/guide-maskable.png",
+                  src: "/v2/add-this/assets/icon/guide-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/add-this/assets/icon/guide-monochrome.png",
+                  src: "/v2/add-this/assets/icon/guide-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -150,16 +151,16 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               name: "Config",
               short_name: "Config",
-              url: "/add-this/config/",
+              url: "/v2/add-this/config/",
               icons: [
                 {
-                  src: "/add-this/assets/icon/config-maskable.png",
+                  src: "/v2/add-this/assets/icon/config-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/add-this/assets/icon/config-monochrome.png",
+                  src: "/v2/add-this/assets/icon/config-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
