@@ -6,7 +6,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { useNavbarLocaleData } from "../../composables";
+import { useThemeLocaleData } from "../../composables";
 import NavbarBrand from "./NavbarBrand";
 import NavbarLinks from "./NavbarLinks";
 import ToggleSidebarButton from "./ToggleSidebarButton";
@@ -43,7 +43,7 @@ export default defineComponent({
   emits: ["toggle-sidebar"],
 
   setup(_props, { emit, slots }) {
-    const navbarLocale = useNavbarLocaleData();
+    const themeLocaleData = useThemeLocaleData();
 
     const isMobile = ref(false);
 
@@ -60,9 +60,12 @@ export default defineComponent({
     });
 
     const autoHide = computed(() => {
-      const autoHide = navbarLocale.value.autoHide;
+      const { navbarAutoHide } = themeLocaleData.value;
 
-      return autoHide !== "none" && (autoHide === "always" || isMobile.value);
+      return (
+        navbarAutoHide !== "none" &&
+        (navbarAutoHide === "always" || isMobile.value)
+      );
     });
 
     let handleLinksWrapWidth: () => void;

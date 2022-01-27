@@ -36,76 +36,66 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "docs/feed/src",
 
-    navbar: {
-      logo: "/logo.svg",
-    },
+    logo: "/logo.svg",
 
     locales: {
       "/": {
-        navbar: {
-          config: [
-            { text: "Home", icon: "home", link: "/README.md" },
-            {
-              text: "Guide",
-              icon: "creative",
-              link: "/guide.md",
-            },
+        navbar: [
+          { text: "Home", icon: "home", link: "/README.md" },
+          {
+            text: "Guide",
+            icon: "creative",
+            link: "/guide.md",
+          },
+          {
+            text: "Config",
+            icon: "config",
+            link: "/config/README.md",
+          },
+        ],
+
+        sidebar: {
+          "/": [
+            "",
+            "guide",
             {
               text: "Config",
               icon: "config",
-              link: "/config/README.md",
+              prefix: "config/",
+              collapsable: false,
+              children: ["README.md", "channel.md", "item.md"],
             },
           ],
-        },
-
-        sidebar: {
-          config: {
-            "/": [
-              "",
-              "guide",
-              {
-                text: "Config",
-                icon: "config",
-                prefix: "config/",
-                collapsable: false,
-                children: ["README.md", "channel.md", "item.md"],
-              },
-            ],
-          },
         },
       },
 
       "/zh/": {
-        navbar: {
-          config: [
-            { text: "主页", icon: "home", link: "/zh/README.md" },
-            {
-              text: "指南",
-              icon: "creative",
-              link: "/zh/guide.md",
-            },
+        navbar: [
+          { text: "主页", icon: "home", link: "/zh/README.md" },
+          {
+            text: "指南",
+            icon: "creative",
+            link: "/zh/guide.md",
+          },
+          {
+            text: "配置",
+            icon: "config",
+            link: "/zh/config/README.md",
+          },
+        ],
+
+        sidebar: {
+          "/zh/": [
+            "README.md",
+            "guide.md",
             {
               text: "配置",
               icon: "config",
-              link: "/zh/config/README.md",
+              prefix: "config/",
+              collapsable: false,
+              children: ["README.md", "channel.md", "item.md"],
             },
           ],
-        },
-
-        sidebar: {
-          config: {
-            "/zh/": [
-              "README.md",
-              "guide.md",
-              {
-                text: "配置",
-                icon: "config",
-                prefix: "config/",
-                collapsable: false,
-                children: ["README.md", "channel.md", "item.md"],
-              },
-            ],
-          },
         },
       },
     },

@@ -5,10 +5,7 @@ import MediaLinks from "./medialinks";
 import { useThemeLocaleData } from "../composables";
 
 import type { VNode } from "vue";
-import type {
-  HopeThemeFooterLocaleOptions,
-  HopeThemeNormalPageFrontmatter,
-} from "../../shared";
+import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
 export default defineComponent({
   name: "PageFooter",
@@ -19,16 +16,17 @@ export default defineComponent({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const author = useAuthor(themeLocaleData.value.author);
 
-    const config = computed<HopeThemeFooterLocaleOptions>(
-      () => themeLocaleData.value.footer || {}
-    );
-
     const enable = computed(() => {
       const { copyrightText, footer, medialinks } = frontmatter.value;
 
       return (
         footer !== false &&
-        Boolean(copyrightText || footer || medialinks || config.value.display)
+        Boolean(
+          copyrightText ||
+            footer ||
+            medialinks ||
+            themeLocaleData.value.displayFooter
+        )
       );
     });
 
@@ -39,16 +37,16 @@ export default defineComponent({
         ? false
         : typeof footer === "string"
         ? footer
-        : config.value.content || "";
+        : themeLocaleData.value.footer || "";
     });
 
     const copyright = computed(() =>
       frontmatter.value.copyrightText === false
         ? false
         : frontmatter.value.copyrightText ||
-          (config.value.copyright === false
+          (themeLocaleData.value.copyright === false
             ? false
-            : config.value.copyright ||
+            : themeLocaleData.value.copyright ||
               (author.value.length
                 ? `Copyright © ${new Date().getFullYear()} ${
                     author.value[0].name

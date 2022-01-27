@@ -41,13 +41,11 @@ export interface HopeThemeNormalPageFrontmatter
   sidebar?: "auto" | false | SidebarConfig;
   sidebarHeadingDepth?: number;
 
-  meta?: {
-    lastUpdated?: boolean;
-    contributors?: boolean;
-    editLink?: boolean;
-    prev?: string | AutoLink;
-    next?: string | AutoLink;
-  };
+  lastUpdated?: boolean;
+  contributors?: boolean;
+  editLink?: boolean;
+  prev?: string | AutoLink;
+  next?: string | AutoLink;
 }
 
 export interface ActionConfig {

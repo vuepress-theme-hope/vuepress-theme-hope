@@ -9,7 +9,7 @@ export interface HopeThemeFooterLocaleOptions {
    *
    * The default content for the footer, can accept HTMLString.
    */
-  content?: string;
+  footer?: string;
   /**
    * 默认的版权信息，设置为 `false` 来默认禁用它
    *
@@ -23,5 +23,5 @@ export interface HopeThemeFooterLocaleOptions {
    *
    * @default false
    */
-  display?: boolean;
+  displayFooter?: boolean;
 }

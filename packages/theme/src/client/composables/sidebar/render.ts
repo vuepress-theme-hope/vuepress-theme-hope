@@ -1,6 +1,6 @@
 import { h } from "vue";
 import { useRoute } from "vue-router";
-import { useIconPrefix } from "../themeData";
+import { useIconPrefix, useThemeLocaleData } from "../themeData";
 import AutoLink from "../../components/AutoLink";
 import { isActiveLink } from "../../utils";
 
@@ -12,7 +12,7 @@ import type {
 } from "../../../shared";
 
 export const renderIcon = (icon?: string): VNode | null =>
-  icon
+  icon && useThemeLocaleData().value.sidebarIcon !== false
     ? h("i", {
         class: ["icon", `${useIconPrefix().value}${icon}`],
       })

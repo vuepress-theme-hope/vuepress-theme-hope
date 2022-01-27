@@ -35,73 +35,63 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "docs/components/src",
 
-    navbar: {
-      logo: "/logo.svg",
-    },
+    logo: "/logo.svg",
 
     locales: {
       "/": {
-        navbar: {
-          config: [
-            { text: "Home", icon: "home", link: "/README.md" },
+        navbar: [
+          { text: "Home", icon: "home", link: "/README.md" },
+          {
+            text: "Guide",
+            icon: "creative",
+            link: "/guide/README.md",
+          },
+          {
+            text: "Config",
+            icon: "config",
+            link: "/config/README.md",
+          },
+        ],
+
+        sidebar: {
+          "/": [
             {
               text: "Guide",
               icon: "creative",
-              link: "/guide/README.md",
+              prefix: "guide/",
+              collapsable: false,
+              children: ["README.md", "page-info.md"],
             },
-            {
-              text: "Config",
-              icon: "config",
-              link: "/config/README.md",
-            },
+            "config/README.md",
           ],
-        },
-
-        sidebar: {
-          config: {
-            "/": [
-              {
-                text: "Guide",
-                icon: "creative",
-                prefix: "guide/",
-                collapsable: false,
-                children: ["README.md", "page-info.md"],
-              },
-              "config/README.md",
-            ],
-          },
         },
       },
 
       "/zh/": {
-        navbar: {
-          config: [
-            { text: "主页", icon: "home", link: "/zh/README.md" },
-            {
-              text: "指南",
-              icon: "creative",
-              link: "/zh/guide/README.md",
-            },
-            {
-              text: "配置",
-              icon: "config",
-              link: "/zh/config/README.md",
-            },
-          ],
-        },
+        navbar: [
+          { text: "主页", icon: "home", link: "/zh/README.md" },
+          {
+            text: "指南",
+            icon: "creative",
+            link: "/zh/guide/README.md",
+          },
+          {
+            text: "配置",
+            icon: "config",
+            link: "/zh/config/README.md",
+          },
+        ],
 
         sidebar: {
-          config: {
-            "/zh/": [
-              {
-                text: "Guide",
-                icon: "creative",
-                prefix: "guide/",
-                children: ["README.md", "page-info.md"],
-              },
-              "config/README.md",
-            ],
-          },
+          "/zh/": [
+            {
+              text: "Guide",
+              icon: "creative",
+              prefix: "guide/",
+              children: ["README.md", "page-info.md"],
+            },
+            "config/README.md",
+          ],
         },
       },
     },

@@ -52,14 +52,10 @@ export default defineUserConfig<HopeThemeOptions>({
 
     iconPrefix: "iconfont icon-",
 
-    navbar: {
-      logo: "/logo.svg",
-      repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-    },
+    logo: "/logo.svg",
+    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
-    meta: {
-      docsDir: "demo/src",
-    },
+    docsDir: "demo/src",
 
     author: "Mr.Hope",
     darkmode: "auto-switch",
@@ -74,14 +70,10 @@ export default defineUserConfig<HopeThemeOptions>({
        */
       "/": {
         // navbar
-        navbar: {
-          config: navbar.en,
-        },
+        navbar: navbar.en,
 
         // sidebar
-        sidebar: {
-          config: sidebar.en,
-        },
+        sidebar: sidebar.en,
 
         footer: {
           display: true,
@@ -98,14 +90,10 @@ export default defineUserConfig<HopeThemeOptions>({
        */
       "/zh/": {
         // navbar
-        navbar: {
-          config: navbar.zh,
-        },
+        navbar: navbar.zh,
 
         // sidebar
-        sidebar: {
-          config: sidebar.zh,
-        },
+        sidebar: sidebar.zh,
 
         footer: {
           display: true,

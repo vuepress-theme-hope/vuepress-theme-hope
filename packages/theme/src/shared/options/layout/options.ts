@@ -21,32 +21,17 @@ export interface HopeThemeLayoutLocaleData {
   routeLocales: HopeThemeRouteLocaleData;
 }
 
-export interface HopeThemeLayoutLocaleOptions {
+export interface HopeThemeLayoutLocaleOptions
+  extends HopeThemeNavbarLocaleOptions,
+    HopeThemeSidebarLocaleOptions,
+    HopeThemeMetaLocaleOptions,
+    HopeThemeFooterLocaleOptions {
   /**
    * Home path of current locale
    *
    * Used as the link of back-to-home and navbar logo
    */
   home?: string;
-  /**
-   * Navbar
-   */
-  navbar?: HopeThemeNavbarLocaleOptions;
-
-  /**
-   * Sidebar
-   */
-  sidebar?: HopeThemeSidebarLocaleOptions;
-
-  /**
-   * Page footer
-   */
-  footer?: HopeThemeFooterLocaleOptions;
-
-  /**
-   * Page meta
-   */
-  meta?: HopeThemeMetaLocaleOptions;
 }
 
 export interface HopeThemeLayoutOptions {

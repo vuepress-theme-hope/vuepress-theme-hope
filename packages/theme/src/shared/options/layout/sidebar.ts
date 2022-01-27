@@ -6,7 +6,7 @@ export interface HopeThemeSidebarLocaleOptions {
    *
    * Set to `false` to disable sidebar in current locale
    */
-  config?: SidebarConfig | "auto" | false;
+  sidebar?: SidebarConfig | "auto" | false;
 
   /**
    * Whether show icons in the sidebar
@@ -15,7 +15,7 @@ export interface HopeThemeSidebarLocaleOptions {
    *
    * @default true
    */
-  showIcon?: boolean;
+  sidebarIcon?: boolean;
 
   /**
    * Sidebar heading depth

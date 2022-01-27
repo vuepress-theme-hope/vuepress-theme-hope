@@ -36,9 +36,7 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "docs/reading-time/src",
 
-    navbar: {
-      logo: "/logo.svg",
-    },
+    logo: "/logo.svg",
 
     locales: {
       "/zh/": {},

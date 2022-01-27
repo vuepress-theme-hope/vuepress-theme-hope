@@ -1,6 +1,6 @@
 import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h, VNode } from "vue";
-import { useNavbarLocaleData, useThemeLocaleData } from "../../composables";
+import { useThemeLocaleData } from "../../composables";
 import { RouterLink } from "vue-router";
 
 export default defineComponent({
@@ -9,7 +9,6 @@ export default defineComponent({
   setup(_, { slots }) {
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
-    const navbarLocale = useNavbarLocaleData();
     const themeLocale = useThemeLocaleData();
 
     const siteBrandLink = computed(
@@ -19,11 +18,11 @@ export default defineComponent({
     const siteBrandTitle = computed(() => siteLocale.value.title);
 
     const siteBrandLogo = computed(() =>
-      navbarLocale.value.logo ? withBase(navbarLocale.value.logo) : null
+      themeLocale.value.logo ? withBase(themeLocale.value.logo) : null
     );
 
     const siteBrandDarkLogo = computed(() =>
-      navbarLocale.value.darkLogo ? withBase(navbarLocale.value.darkLogo) : null
+      themeLocale.value.darkLogo ? withBase(themeLocale.value.darkLogo) : null
     );
 
     return (): VNode =>

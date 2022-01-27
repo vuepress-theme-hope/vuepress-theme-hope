@@ -31,7 +31,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * Set to `false` to disable navbar in current locale
    */
-  config?: false | NavbarConfig;
+  navbar?: false | NavbarConfig;
 
   /**
    * Navbar logo
@@ -43,6 +43,7 @@ export interface HopeThemeNavbarLocaleOptions {
    * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
   logo?: null | string;
+
   /**
    * Navbar logo under darkmode
    *
@@ -84,7 +85,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * @default 'mobile'
    */
-  autoHide?: "always" | "mobile" | "none";
+  navbarAutoHide?: "always" | "mobile" | "none";
 
   /**
    * Whether hide site title on mobile

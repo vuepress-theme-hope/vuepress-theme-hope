@@ -36,30 +36,26 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "docs/add-this/src",
 
-    navbar: {
-      logo: "/logo.svg",
-    },
+    logo: "/logo.svg",
 
     locales: {
       "/": {
-        navbar: {
-          config: [
-            { text: "Home", icon: "home", link: "/README.md" },
-            {
-              text: "Guide",
-              icon: "creative",
-              link: "/guide.md",
-            },
-            {
-              text: "Config",
-              icon: "config",
-              link: "/config.md",
-            },
-          ],
-        },
+        navbar: [
+          { text: "Home", icon: "home", link: "/README.md" },
+          {
+            text: "Guide",
+            icon: "creative",
+            link: "/guide.md",
+          },
+          {
+            text: "Config",
+            icon: "config",
+            link: "/config.md",
+          },
+        ],
       },
       "/zh/": {
-        nav: [
+        navbar: [
           { text: "主页", icon: "home", link: "/zh/README.md" },
           {
             text: "指南",

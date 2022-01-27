@@ -20,14 +20,14 @@ export const useEditLink = (): ComputedRef<null | AutoLink> => {
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
 
   return computed(() => {
-    const navbarRepo = themeLocale.value.navbar?.repo;
     const {
-      docsRepo = navbarRepo,
+      repo,
+      docsRepo = repo,
       docsBranch = "main",
       docsDir = "",
       editLink,
       editLinkPattern,
-    } = themeLocale.value.meta || {};
+    } = themeLocale.value;
 
     const showEditLink = frontmatter.value.editLink ?? editLink ?? true;
 
@@ -60,9 +60,7 @@ export const useUpdateTime = (): ComputedRef<null | string> => {
 
   return computed(() => {
     const showLastUpdated =
-      frontmatter.value.meta?.lastUpdated ??
-      themeLocale.value.meta?.lastUpdated ??
-      true;
+      frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true;
 
     if (!showLastUpdated) return null;
 
@@ -83,9 +81,7 @@ export const useContributors = (): ComputedRef<
 
   return computed(() => {
     const showContributors =
-      frontmatter.value.meta?.contributors ??
-      themeLocale.value.meta?.contributors ??
-      true;
+      frontmatter.value.contributors ?? themeLocale.value.contributors ?? true;
 
     if (!showContributors) return null;
 

@@ -36,105 +36,95 @@ export default defineUserConfig<HopeThemeOptions>({
 
     docsDir: "docs/comment/src",
 
-    navbar: {
-      logo: "/logo.svg",
-    },
+    logo: "/logo.svg",
 
     locales: {
       "/": {
-        navbar: {
-          config: [
-            { text: "Home", icon: "home", link: "/README.md" },
+        navbar: [
+          { text: "Home", icon: "home", link: "/README.md" },
+          {
+            text: "Guide",
+            icon: "creative",
+            children: [
+              {
+                text: "Guide",
+                icon: "creative",
+                link: "/guide/README.md",
+              },
+              { text: "Waline", icon: "waline", link: "/guide/waline.md" },
+            ],
+          },
+          {
+            text: "Config",
+            icon: "config",
+            children: [
+              { text: "Config", icon: "config", link: "/config/README.md" },
+              {
+                text: "Waline",
+                icon: "waline",
+                link: "/config/waline.md",
+              },
+            ],
+          },
+        ],
+
+        sidebar: {
+          "/": [
             {
               text: "Guide",
               icon: "creative",
-              children: [
-                {
-                  text: "Guide",
-                  icon: "creative",
-                  link: "/guide/README.md",
-                },
-                { text: "Waline", icon: "waline", link: "/guide/waline.md" },
-              ],
+              children: ["guide/README.md", "guide/waline.md"],
             },
             {
               text: "Config",
               icon: "config",
-              children: [
-                { text: "Config", icon: "config", link: "/config/README.md" },
-                {
-                  text: "Waline",
-                  icon: "waline",
-                  link: "/config/waline.md",
-                },
-              ],
+              children: ["config/README.md", "config/waline.md"],
             },
           ],
         },
-
-        sidebar: {
-          config: {
-            "/": [
+      },
+      "/zh/": {
+        navbar: [
+          { text: "主页", icon: "home", link: "/zh/README.md" },
+          {
+            text: "指南",
+            icon: "creative",
+            children: [
               {
-                text: "Guide",
+                text: "指南",
                 icon: "creative",
-                children: ["guide/README.md", "guide/waline.md"],
+                link: "/zh/guide/README.md",
               },
+              { text: "Waline", icon: "waline", link: "/zh/guide/waline.md" },
+            ],
+          },
+          {
+            text: "配置",
+            icon: "config",
+            children: [
+              { text: "配置", icon: "config", link: "/zh/config/README.md" },
               {
-                text: "Config",
-                icon: "config",
-                children: ["config/README.md", "config/waline.md"],
+                text: "Waline",
+                icon: "waline",
+                link: "/zh/config/waline.md",
               },
             ],
           },
-        },
-      },
-      "/zh/": {
-        navbar: {
-          config: [
-            { text: "主页", icon: "home", link: "/zh/README.md" },
+        ],
+
+        sidebar: {
+          "/zh/": [
             {
               text: "指南",
               icon: "creative",
-              children: [
-                {
-                  text: "指南",
-                  icon: "creative",
-                  link: "/zh/guide/README.md",
-                },
-                { text: "Waline", icon: "waline", link: "/zh/guide/waline.md" },
-              ],
+              children: ["guide/README.md", "guide/waline.md"],
             },
             {
               text: "配置",
               icon: "config",
-              children: [
-                { text: "配置", icon: "config", link: "/zh/config/README.md" },
-                {
-                  text: "Waline",
-                  icon: "waline",
-                  link: "/zh/config/waline.md",
-                },
-              ],
+              children: ["config/README.md", "config/waline.md"],
             },
           ],
-        },
-
-        sidebar: {
-          config: {
-            "/zh/": [
-              {
-                text: "指南",
-                icon: "creative",
-                children: ["guide/README.md", "guide/waline.md"],
-              },
-              {
-                text: "配置",
-                icon: "config",
-                children: ["config/README.md", "config/waline.md"],
-              },
-            ],
-          },
         },
       },
     },
