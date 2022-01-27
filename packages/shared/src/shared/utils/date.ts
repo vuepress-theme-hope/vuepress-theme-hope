@@ -40,7 +40,10 @@ const getLang = (lang = "en"): string => {
   return "en";
 };
 
-export const timeTransformer = (date: Date, options: DateOptions): string => {
+export const timeTransformer = (
+  date: Date,
+  options: DateOptions = {}
+): string => {
   const { lang, timezone, type } = options;
   dayjs.locale(getLang(lang));
 
