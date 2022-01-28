@@ -73,6 +73,10 @@
 
     font-size: 14px;
 
+    &:first-child {
+      float: left;
+    }
+
     @media (max-width: config.$mobile) {
       float: none;
       font-size: 13px;
