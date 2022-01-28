@@ -30,6 +30,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     border-left-style: solid;
     border-radius: 0.5rem;
     background: var(--hint-box-bgcolor);
+    color: inherit;
 
     #{config.$darkSelector} & {
       background: var(--hint-box-title-color);
