@@ -3,6 +3,7 @@ import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   codeDemoDefaultSetting,
+  flowchart,
   footnote,
   katex,
   lazyLoad,
@@ -26,6 +27,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   const containerEnable = options.enableAll || options.container || false;
   const codegroupEnable = options.enableAll || options.codegroup || false;
   const demoEnable = options.enableAll || options.demo || false;
+  const flowchartEnable = options.enableAll || options.flowchart || false;
   const footnoteEnable = options.enableAll || options.footnote || false;
   const tasklistEnable = options.enableAll || options.tasklist || false;
   const mermaidEnable = options.enableAll || Boolean(options.mermaid) || false;
@@ -42,6 +44,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   if (app.env.isDev)
     addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
+  if (flowchartEnable) addViteOptimizeDeps(app, "flowchart.js");
   if (mermaidEnable) addViteOptimizeDeps(app, "mermaid");
   if (presentationEnable)
     addViteOptimizeDeps(app, [
@@ -68,6 +71,9 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         : noopModule,
       "@CodeGroupItem": codegroupEnable
         ? path.resolve(__dirname, "../client/components/CodeGroupItem.js")
+        : noopModule,
+      "@FlowChart": flowchartEnable
+        ? path.resolve(__dirname, "../client/components/FlowChart.js")
         : noopModule,
       "@Mermaid": mermaidEnable
         ? path.resolve(__dirname, "../client/components/Mermaid.js")
@@ -115,6 +121,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       if (options.sup || options.enableAll) markdownIt.use(sup);
       if (options.sub || options.enableAll) markdownIt.use(sub);
       if (footnoteEnable) markdownIt.use(footnote);
+      if (flowchartEnable) markdownIt.use(flowchart);
       if (options.mark || options.enableAll) markdownIt.use(mark);
       if (tasklistEnable)
         markdownIt.use(tasklist, [

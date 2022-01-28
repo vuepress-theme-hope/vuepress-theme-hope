@@ -1,6 +1,7 @@
 import { defineClientAppEnhance } from "@vuepress/client";
 import CodeGroup from "@CodeGroup";
 import CodeGroupItem from "@CodeGroupItem";
+import FlowChart from "@FlowChart";
 import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
 
@@ -19,12 +20,14 @@ export default defineClientAppEnhance(({ app }) => {
 
   if (MARKDOWN_ENHANCE_FOOTNOTE) void import("./styles/footnote.scss");
 
-  if (Mermaid.name) app.component("MermaidChart", Mermaid);
-
   if (CodeGroup.name) {
     app.component("CodeGroup", CodeGroup);
     app.component("CodeGroupItem", CodeGroupItem);
   }
+
+  if (FlowChart.name) app.component("FlowChart", FlowChart);
+
+  if (Mermaid.name) app.component("MermaidChart", Mermaid);
 
   if (Presentation.name) {
     app.component("PresentationViewer", Presentation);

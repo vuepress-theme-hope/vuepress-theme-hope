@@ -100,6 +100,15 @@ export type MarkdownEnhanceOptions = Partial<{
   mark: boolean;
 
   /**
+   * Whether to enable flowchart support
+   *
+   * 是否启用 flowchart 流程图支持
+   *
+   * @default false
+   */
+  flowchart: boolean;
+
+  /**
    * Whether to enable tastlist format support
    *
    * 是否启用任务列表支持

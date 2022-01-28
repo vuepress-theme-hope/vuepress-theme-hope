@@ -1,5 +1,6 @@
 export * from "./code-demo";
 export * from "./details";
+export * from "./flowchart";
 export * from "./footnote";
 export * from "./katex";
 export * from "./lazy-load";

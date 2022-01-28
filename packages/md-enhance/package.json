@@ -59,6 +59,7 @@
     "@vuepress/plugin-container": "2.0.0-beta.35",
     "@vuepress/shared": "2.0.0-beta.35",
     "@vuepress/utils": "2.0.0-beta.35",
+    "flowchart.js": "^1.17.0",
     "katex": "^0.15.2",
     "markdown-it": "^12.3.2",
     "mermaid": "^8.13.10",
