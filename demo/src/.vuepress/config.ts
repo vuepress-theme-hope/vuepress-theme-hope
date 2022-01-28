@@ -9,6 +9,8 @@ const isProd = process.env.NODE_ENV === "production";
 export default defineUserConfig<HopeThemeOptions>({
   base: "/v2-demo/",
 
+  dest: "./dist",
+
   head: [
     [
       "script",

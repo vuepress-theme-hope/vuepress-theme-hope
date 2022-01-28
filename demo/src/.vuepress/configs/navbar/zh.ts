@@ -1,3 +1,4 @@
+import { version } from "../../../../../lerna.json";
 import type { NavbarConfig } from "vuepress-theme-hope";
 
 export const zh: NavbarConfig = [
@@ -9,12 +10,20 @@ export const zh: NavbarConfig = [
     link: "/zh/guide/README.md",
   },
   {
-    text: "v2.x",
+    text: version,
     icon: "note",
     children: [
       {
-        text: "v1.x",
-        link: "https://vuepress-theme-hope.github.io/zh/",
+        text: "V2 Docs",
+        link: "https://vuepress-theme-hope.github.io/v2/",
+      },
+      {
+        text: "V1 Docs",
+        link: "https://vuepress-theme-hope.github.io",
+      },
+      {
+        text: "V1 Demo",
+        link: "https://vuepress-theme-hope.github.io/v1-demo/",
       },
     ],
   },
