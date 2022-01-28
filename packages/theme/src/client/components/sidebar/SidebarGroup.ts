@@ -2,7 +2,7 @@ import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import SidebarLinks from "./SidebarLinks";
 import DropdownTransition from "../transitions/DropTransition.vue";
-import { renderGroupHeader } from "../../composables";
+import { renderIcon } from "../../composables";
 import { isActiveSidebarItem } from "../../utils";
 
 import type { PropType, VNode } from "vue";
@@ -25,40 +25,53 @@ export default defineComponent({
     const route = useRoute();
     const active = computed(() => isActiveSidebarItem(route, props.config));
 
-    return (): VNode[] => [
-      h("section", { class: "sidebar-group" }, [
-        props.config.link
-          ? h(
-              RouterLink,
-              {
-                to: props.config.link,
-                class: ["sidebar-heading clickable", { active: active.value }],
-                onClick: () => emit("toggle"),
-              },
-              renderGroupHeader(props.config, props.open)
-            )
-          : h(
-              "p",
-              {
-                to: props.config.link,
-                class: [
-                  "sidebar-heading",
-                  {
-                    clickable: props.config.collapsable,
-                    active: active.value,
-                  },
-                ],
-                tabindex: "0",
-                onClick: () => emit("toggle"),
-              },
-              renderGroupHeader(props.config, props.open)
-            ),
-        h(DropdownTransition, () =>
-          props.open || !props.config.collapsable
-            ? h(SidebarLinks, { config: props.config.children || [] })
-            : null
-        ),
-      ]),
-    ];
+    return (): VNode[] => {
+      const { collapsable, children = [], icon, link, text } = props.config;
+
+      return [
+        h("section", { class: "sidebar-group" }, [
+          h(
+            "p",
+            {
+              class: [
+                "sidebar-heading",
+                {
+                  clickable: collapsable || link,
+                  active: active.value,
+                },
+              ],
+              ...(collapsable
+                ? {
+                    tabindex: "0",
+                    onClick: () => emit("toggle"),
+                    onKeydown: (event: KeyboardEvent): void => {
+                      if (event.key === "Enter") emit("toggle");
+                    },
+                  }
+                : {}),
+            },
+            [
+              // icon
+              renderIcon(icon),
+              // title
+              link
+                ? h(RouterLink, { to: link }, () =>
+                    h("span", { class: "title" }, text)
+                  )
+                : h("span", { class: "title" }, text),
+              // arrow
+              collapsable
+                ? h("span", { class: ["arrow", props.open ? "down" : "right"] })
+                : null,
+            ]
+          ),
+          h(DropdownTransition, () =>
+            props.open || !collapsable
+              ? h(SidebarLinks, { config: children })
+              : null
+          ),
+        ]),
+      ];
+    };
   },
 });

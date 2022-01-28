@@ -8,7 +8,6 @@ import type { VNode } from "vue";
 import type {
   ResolvedSidebarItem,
   ResolvedSidebarHeaderItem,
-  ResolvedSidebarGroupItem,
 } from "../../../shared";
 
 export const renderIcon = (icon?: string): VNode | null =>
@@ -33,18 +32,6 @@ export const renderItem = (
     : // if the item only has text, render it as `<p>`
       h("p", props, [renderIcon(config.icon), config.text]);
 };
-
-export const renderGroupHeader = (
-  { collapsable, icon, text }: ResolvedSidebarGroupItem,
-  open: boolean
-): (VNode | null)[] => [
-  // icon
-  renderIcon(icon),
-  // title
-  h("span", { class: "title" }, text),
-  // arrow
-  collapsable ? h("span", { class: ["arrow", open ? "down" : "right"] }) : null,
-];
 
 export const renderChildren = (
   children: ResolvedSidebarHeaderItem[]
