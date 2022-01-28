@@ -40,7 +40,7 @@
   bottom: 1rem;
   padding: 0 16px;
   border-radius: 1.2rem;
-  background: var(--accent-color);
+  background: var(--c-brand, #3eaf7c);
   color: var(--white);
   font-weight: 600;
   line-height: 2.2rem;
@@ -53,7 +53,7 @@
 
   &:hover,
   &:active {
-    background: var(--accent-color-light);
+    background: var(--c-brand-light, #4abf8a);
   }
 }
 
@@ -91,7 +91,7 @@
     z-index: 999;
     max-width: 56em;
     border-radius: 10px;
-    background: var(--bg-color);
+    background: var(--c-bg, #fff);
     font-family: sans-serif;
     animation: 0.15s pwa-opened;
 
@@ -345,19 +345,19 @@
     min-width: 80px;
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;
-    border: solid 2px var(--accent-color);
+    border: solid 2px var(--c-brand, #3eaf7c);
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
   }
 
   .install-button {
-    background: var(--accent-color);
+    background: var(--c-brand, #3eaf7c);
     color: var(--white);
 
     &:hover,
     &:focus {
-      background: var(--accent-color-light);
+      background: var(--c-brand-light, #4abf8a);
     }
 
     @media (max-width: config.$mobileS) {
@@ -369,11 +369,11 @@
 
   .cancel-button {
     background: transparent;
-    color: var(--accent-color);
+    color: var(--c-brand, #3eaf7c);
 
     &:hover,
     &:focus {
-      background: var(--accent-color-light);
+      background: var(--c-brand-light, #4abf8a);
       color: var(--white);
     }
   }
@@ -390,7 +390,7 @@
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    box-shadow: 0 2px 12px 0 var(--card-shadow-color);
+    box-shadow: 0 2px 12px 0 var(--card-shadow);
 
     &::after {
       content: " ";

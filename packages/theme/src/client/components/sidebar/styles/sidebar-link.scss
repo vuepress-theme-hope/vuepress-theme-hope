@@ -67,13 +67,13 @@ a.sidebar-link {
   }
 
   &.active {
-    border-left-color: var(--accent-color);
-    background-color: var(--accent-color-a15);
-    color: var(--accent-color);
+    border-left-color: var(--theme-color);
+    background-color: var(--theme-color-a15);
+    color: var(--theme-color);
     font-weight: 500;
 
     .icon {
-      color: var(--accent-color);
+      color: var(--theme-color);
     }
   }
 
@@ -180,8 +180,8 @@ a.sidebar-link {
     }
 
     &.active {
-      border-left-color: var(--accent-color);
-      color: var(--accent-color);
+      border-left-color: var(--theme-color);
+      color: var(--theme-color);
       font-weight: 500;
     }
   }

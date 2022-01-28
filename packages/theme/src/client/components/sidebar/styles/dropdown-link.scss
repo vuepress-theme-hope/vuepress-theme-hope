@@ -16,7 +16,7 @@
     cursor: inherit;
 
     &:hover {
-      color: var(--accent-color);
+      color: var(--theme-color);
     }
 
     .arrow {
@@ -66,11 +66,11 @@
       line-height: 1.7rem;
 
       &:hover {
-        color: var(--accent-color);
+        color: var(--theme-color);
       }
 
       &.active {
-        color: var(--accent-color);
+        color: var(--theme-color);
 
         &::before {
           content: "";
@@ -80,7 +80,7 @@
           width: 0;
           height: 0;
           border-top: 3px solid transparent;
-          border-left: 5px solid var(--accent-color);
+          border-left: 5px solid var(--theme-color);
           border-bottom: 3px solid transparent;
         }
       }

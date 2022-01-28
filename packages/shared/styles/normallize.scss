@@ -2,27 +2,27 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: var(--bg-color);
+  background: var(--c-bg, #fff);
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-  color: var(--text-color);
+  color: var(--c-text, #2c3e50);
   min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
 }
 
 a {
   font-weight: 500;
-  color: var(--accent-color);
+  color: var(--c-brand, #3eaf7c);
   text-decoration: none;
 }
 
 p a code {
   font-weight: 400;
-  color: var(--accent-color);
+  color: var(--c-brand, #3eaf7c);
 }
 
 kbd {
@@ -70,7 +70,7 @@ h1 {
 h2 {
   font-size: 1.65rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--c-border, #eaecef);
   transition: border-bottom-color 0.3s ease;
 }
 
@@ -107,7 +107,7 @@ ol {
 
 hr {
   border: 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--c-border, #eaecef);
 }
 
 table {

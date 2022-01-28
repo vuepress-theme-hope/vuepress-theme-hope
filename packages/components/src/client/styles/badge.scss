@@ -1,3 +1,9 @@
+:root {
+  --badge-tip-color: #42b983;
+  --badge-warning-color: #f4cd00;
+  --badge-danger-color: #f55;
+}
+
 .badge {
   display: inline-block;
   font-size: 14px;
@@ -6,7 +12,7 @@
   border-radius: 3px;
   padding: 0 6px;
   color: var(--white);
-  background-color: var(--accent-color);
+  background-color: var(--c-brand, #3eaf7c);
   vertical-align: top;
   transition: background-color var(--color-transition),
     color var(--color-transition);

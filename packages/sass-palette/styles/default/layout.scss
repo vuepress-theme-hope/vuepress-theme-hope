@@ -1,22 +1,23 @@
 /* layout */
 // navbar
-$navbarHeight: 4.5rem;
-$navbarHorizontalPadding: 1.5rem;
-$navbarVerticalPadding: 0.7rem;
-
-$mobileNavbarHeight: 3.25rem;
-$mobileNavbarHorizontalPadding: 1rem;
-$mobileNavbarVerticalPadding: 0.5rem;
+$navbarHeight: 3.6rem !default;
+$navbarHorizontalPadding: 1.5rem !default;
+$navbarVerticalPadding: 0.7rem !default;
 
 // sidebar
-$sidebarWidth: 18rem;
-$mobileSidebarWidth: $sidebarWidth;
+$sidebarWidth: 20rem !default;
+$mobileSidebarWidth: $sidebarWidth * 0.82 !default;
 
 // content
-$contentWidth: 740px;
-$homePageWidth: 1160px;
+$contentWidth: 740px !default;
+$homePageWidth: 960px !default;
+
+// font
+$fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' !default;
 
 // code
-$lineNumbersWrapperWidth: 2.5rem;
-$colorTransition: "0.3 ease";
-$transformTransition: "0.3 ease";
+$fontFamilyCode: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
+
+// transition
+$colorTransition: "0.3 ease" !default;
+$transformTransition: "0.3 ease" !default;

@@ -4,7 +4,7 @@
 
 .code-demo-wrapper {
   margin-top: 10px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--c-border, #eaecef);
   border-radius: 4px;
   transition: all 0.2s;
 
@@ -13,14 +13,14 @@
   }
 
   &:hover {
-    box-shadow: 0 2px 12px var(--card-shadow-color);
+    box-shadow: 0 2px 12px var(--card-shadow);
   }
 
   .demo-wrapper {
     position: relative;
     max-height: 400px;
     padding: 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--c-border, #eaecef);
     overflow: auto;
   }
 
@@ -159,7 +159,7 @@
       }
 
       svg {
-        fill: var(--accent-color);
+        fill: var(--c-brand, #3eaf7c);
       }
     }
 

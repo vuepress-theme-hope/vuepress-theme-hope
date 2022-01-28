@@ -19,8 +19,10 @@ h6 {
     padding-top: var(--navbar-height) !important;
 
     @media (max-width: config.$mobile) {
-      margin-top: calc(0.5rem - var(--navbar-mobile-height)) !important;
-      padding-top: var(--navbar-mobile-height) !important;
+      margin-top: calc(
+        0.5rem - var(--navbar-mobile-height, --navbar-height)
+      ) !important;
+      padding-top: var(--navbar-mobile-height, --navbar-height) !important;
     }
   }
 }
@@ -36,8 +38,8 @@ h6 {
   z-index: 2;
 
   @media (max-width: config.$pad) {
-    margin-top: calc(var(--navbar-mobile-height) + 0.5rem);
-    margin-bottom: calc(0.5rem - var(--navbar-mobile-height));
+    margin-top: calc(var(--navbar-mobile-height, --navbar-height) + 0.5rem);
+    margin-bottom: calc(0.5rem - var(--navbar-mobile-height, --navbar-height));
     font-size: 14px;
   }
 
@@ -90,7 +92,7 @@ h6 {
     }
 
     &:hover {
-      color: var(--accent-color-light);
+      color: var(--c-brand-light, #4abf8a);
     }
   }
 }

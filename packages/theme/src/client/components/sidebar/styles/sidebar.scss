@@ -9,8 +9,8 @@
   box-sizing: border-box;
   width: var(--sidebar-width);
   margin: 0;
-  background: var(--bg-color-blur);
-  box-shadow: 2px 0 4px var(--card-shadow-color);
+  background: var(--sidebar-bg-color);
+  box-shadow: 2px 0 4px var(--card-shadow);
   backdrop-filter: saturate(150%) blur(12px);
   font-size: 16px;
   overflow-y: auto;
@@ -18,7 +18,7 @@
     box-shadow var(--color-transition);
 
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-color) var(--border-color);
+  scrollbar-color: var(--theme-color) var(--border-color);
 
   a {
     display: inline-block;
@@ -45,7 +45,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--accent-color);
+    background-color: var(--theme-color);
 
     &:horizontal {
       width: 6px;
@@ -74,7 +74,7 @@
 
     .theme-container.sidebar-open & {
       transform: translateX(0);
-      box-shadow: 2px 0 8px var(--card-shadow-color);
+      box-shadow: 2px 0 8px var(--card-shadow);
     }
 
     .blogger-info.mobile {

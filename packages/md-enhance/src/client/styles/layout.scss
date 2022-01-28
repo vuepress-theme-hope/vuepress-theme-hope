@@ -23,7 +23,7 @@
     outline: none;
 
     &:hover {
-      background: var(--accent-color);
+      background: var(--c-brand, #3eaf7c);
     }
   }
 

@@ -5,20 +5,20 @@
   position: fixed !important;
   right: 1rem;
   bottom: 4rem;
-  z-index: 10;
+  z-index: 100;
   width: 3rem;
   height: 3rem;
   padding: 8px;
-  color: var(--accent-color);
+  color: var(--c-brand, #3eaf7c);
 
   &:hover {
-    color: var(--accent-color-light);
+    color: var(--c-brand-light, #4abf8a);
   }
 
   svg {
     width: 100%;
     border-radius: 50%;
-    background: var(--bg-color);
+    background: var(--white);
     overflow: hidden;
     fill: currentcolor;
   }

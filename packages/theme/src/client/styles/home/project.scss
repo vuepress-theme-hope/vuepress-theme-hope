@@ -118,9 +118,9 @@
       display: inline-block;
       margin: 0.6rem 0.8rem;
       padding: 0.75rem 1.5rem;
-      border: 2px solid var(--accent-color);
+      border: 2px solid var(--theme-color);
       border-radius: 0.5rem;
-      color: var(--accent-color);
+      color: var(--theme-color);
       font-size: 1.2rem;
       transition: background-color var(--color-transition),
         color var(--color-transition);
@@ -137,16 +137,16 @@
 
       &:hover {
         color: var(--white);
-        background-color: var(--accent-color);
+        background-color: var(--theme-color);
       }
 
       &.primary {
         color: var(--white);
-        background-color: var(--accent-color);
+        background-color: var(--theme-color);
 
         &:hover {
-          border-color: var(--accent-color-light);
-          background-color: var(--accent-color-light);
+          border-color: var(--theme-color-light);
+          background-color: var(--theme-color-light);
         }
       }
     }
@@ -202,7 +202,7 @@
 
     &:hover {
       transform: scale(1.05);
-      box-shadow: 0 2px 12px 0 var(--card-shadow-color);
+      box-shadow: 0 2px 12px 0 var(--card-shadow);
     }
 
     .icon {

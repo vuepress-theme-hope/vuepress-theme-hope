@@ -4,8 +4,50 @@
 @use "@mr-hope/vuepress-shared/styles/svg";
 @use "icons";
 
-$darkBgColor: helper.get-color(config.$bgColor, $isDark: true);
-$darkTextColor: helper.get-color(config.$textColor, $isDark: true);
+:root {
+  --info-title-color: #193c47;
+  --info-bg-color: #eef9fd;
+  --info-border-color: #4cb3d4;
+
+  --note-title-color: #474748;
+  --note-bg-color: #fdfdfe;
+  --note-border-color: #d4d5d8;
+
+  --tip-title-color: #003100;
+  --tip-bg-color: #e6f6e6;
+  --tip-border-color: #009400;
+
+  --warning-title-color: #4d3800;
+  --warning-bg-color: #fff8e6;
+  --warning-border-color: #e6a700;
+
+  --danger-title-color: #4b1113;
+  --danger-bg-color: #ffebec;
+  --danger-border-color: #e13238;
+
+  --detail-bg-color: #eee;
+  --detail-text-color: inherit;
+}
+
+#{config.$darkSelector} {
+  --info-title-color: #eef9fd;
+  --info-bg-color: #193c47;
+
+  --note-title-color: #fdfdfe;
+  --note-bg-color: #474748;
+
+  --tip-title-color: #e6f6e6;
+  --tip-bg-color: #003100;
+
+  --warning-title-color: #fff8e6;
+  --warning-bg-color: #4d3800;
+
+  --danger-title-color: #ffebec;
+  --danger-bg-color: #4b1113;
+
+  --detail-bg-color: #353535;
+  --detail-text-color: #a8a8a8;
+}
 
 .custom-container {
   position: relative;
@@ -18,6 +60,10 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     line-height: 1.25;
   }
 
+  code {
+    background: #444;
+  }
+
   &.info,
   &.note,
   &.tip,
@@ -25,28 +71,13 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   &.danger {
     margin: 1rem 0;
     padding: 0.25rem 1rem;
-    border-color: var(--hint-box-border-color);
     border-left-width: 0.3rem;
     border-left-style: solid;
     border-radius: 0.5rem;
-    background: var(--hint-box-bgcolor);
     color: inherit;
-
-    #{config.$darkSelector} & {
-      background: var(--hint-box-title-color);
-
-      code {
-        background: #444;
-      }
-    }
 
     .custom-container-title {
       padding-left: 1.5rem;
-      color: var(--hint-box-title-color);
-
-      #{config.$darkSelector} & {
-        color: var(--hint-box-bgcolor);
-      }
 
       &::before {
         content: " ";
@@ -64,16 +95,17 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     }
 
     a {
-      color: var(--accent-color);
+      color: var(--c-brand, #3eaf7c);
     }
   }
 
   &.info {
-    --hint-box-border-color: #4cb3d4;
-    --hint-box-bgcolor: #eef9fd;
-    --hint-box-title-color: #193c47;
+    border-color: var(--info-border-color);
+    background: var(--info-bg-color);
 
     .custom-container-title {
+      color: var(--info-title-color);
+
       &::before {
         @include svg.background-svg(icons.$info-icon);
 
@@ -85,11 +117,12 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   }
 
   &.note {
-    --hint-box-border-color: #d4d5d8;
-    --hint-box-bgcolor: #fdfdfe;
-    --hint-box-title-color: #474748;
+    border-color: var(--note-border-color);
+    background: var(--note-bg-color);
 
     .custom-container-title {
+      color: var(--note-title-color);
+
       &::before {
         @include svg.background-svg(icons.$note-icon);
 
@@ -101,11 +134,12 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   }
 
   &.tip {
-    --hint-box-border-color: #009400;
-    --hint-box-bgcolor: #e6f6e6;
-    --hint-box-title-color: #003100;
+    border-color: var(--tip-border-color);
+    background: var(--tip-bg-color);
 
     .custom-container-title {
+      color: var(--tip-title-color);
+
       &::before {
         @include svg.background-svg(icons.$tip-icon);
 
@@ -117,11 +151,12 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   }
 
   &.warning {
-    --hint-box-border-color: #e6a700;
-    --hint-box-bgcolor: #fff8e6;
-    --hint-box-title-color: #4d3800;
+    border-color: var(--warning-border-color);
+    background: var(--warning-bg-color);
 
     .custom-container-title {
+      color: var(--warning-title-color);
+
       &::before {
         @include svg.background-svg(icons.$warning-icon);
 
@@ -133,11 +168,12 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   }
 
   &.danger {
-    --hint-box-border-color: #e13238;
-    --hint-box-bgcolor: #ffebec;
-    --hint-box-title-color: #4b1113;
+    border-color: var(--danger-border-color);
+    background: var(--danger-bg-color);
 
     .custom-container-title {
+      color: var(--danger-title-color);
+
       &::before {
         @include svg.background-svg(icons.$danger-icon);
 
@@ -154,7 +190,8 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   position: relative;
   margin: 1.6em 0;
   padding: 1.6em;
-  background: #eee;
+  background: var(--detail-bg-color);
+  color: var(--detail-text-color);
   border-radius: 0.25rem;
 
   h4 {
@@ -170,7 +207,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
   }
 
   a {
-    color: var(--accent-color);
+    color: var(--c-brand, #3eaf7c);
   }
 
   summary {
@@ -180,14 +217,5 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
 
   &[open] summary {
     margin-bottom: 0.5em;
-  }
-
-  #{config.$darkSelector} & {
-    background: color.scale($darkBgColor, $lightness: 10%);
-    color: color.scale($darkTextColor, $lightness: 10%);
-
-    code {
-      background: #444;
-    }
   }
 }

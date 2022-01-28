@@ -1,0 +1,27 @@
+/* layout */
+// navbar
+$navbarHeight: 4.5rem !default;
+$navbarHorizontalPadding: 1.5rem !default;
+$navbarVerticalPadding: 0.7rem !default;
+$mobileNavbarHeight: 3.25rem !default;
+$mobileNavbarHorizontalPadding: 1rem !default;
+$mobileNavbarVerticalPadding: 0.5rem !default;
+
+// sidebar
+$sidebarWidth: 18rem !default;
+$mobileSidebarWidth: 16rem !default;
+
+// content
+$contentWidth: 740px !default;
+$homePageWidth: 1160px !default;
+
+// font
+$fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+
+// code
+$fontFamilyCode: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
+$lineNumbersWrapperWidth: 2.5rem !default;
+
+// transition
+$colorTransition: "0.3 ease" !default;
+$transformTransition: "0.3 ease" !default;

@@ -29,14 +29,14 @@
         right: 50%;
         bottom: 0px;
         height: 2px;
-        background: var(--accent-color-light);
+        background: var(--theme-color-light);
         border-radius: 1px;
         visibility: hidden;
         transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
       }
 
       &.active {
-        color: var(--accent-color);
+        color: var(--theme-color);
       }
 
       &:hover,

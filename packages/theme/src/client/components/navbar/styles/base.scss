@@ -18,8 +18,8 @@
   height: var(--navbar-height);
   padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
 
-  background: var(--bg-color-blur);
-  box-shadow: 0 2px 8px var(--card-shadow-color);
+  background: var(--navbar-bg-color);
+  box-shadow: 0 2px 8px var(--card-shadow);
   backdrop-filter: saturate(150%) blur(12px);
 
   line-height: var(--navbar-line-height);

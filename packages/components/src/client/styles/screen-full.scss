@@ -17,7 +17,7 @@ button.full-screen,
 
 .enter-fullscreen-icon:hover,
 .cancel-fullscreen-icon {
-  color: var(--accent-color);
+  color: var(--c-brand, #3eaf7c);
 }
 
 .cancel-fullscreen-icon:hover {

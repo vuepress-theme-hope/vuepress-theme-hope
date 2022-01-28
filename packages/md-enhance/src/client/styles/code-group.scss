@@ -8,7 +8,7 @@
   padding: 0 0 calc(1.7rem - 7px);
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  background-color: var(--code-border-color);
+  background-color: var(--code-group-nav-bg-color, #3a404c);
   list-style: none;
 
   @media (max-width: config.$mobileS) {
@@ -30,12 +30,12 @@
   font-family: Arial;
   font-size: 0.85em;
   line-height: 1.4;
-  color: var(--text-color);
+  color: var(--code-group-nav-text-color, #eee);
   font-weight: 600;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--code-highlight-line-color);
+    background-color: var(--code-group-nav-hover-color, #434a57);
   }
 
   &::before,

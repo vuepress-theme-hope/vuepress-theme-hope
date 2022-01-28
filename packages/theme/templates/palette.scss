@@ -1,5 +1,2 @@
-@import "vuepress-plugin-sass-palette/styles/default/palette";
-
-// font vars
-$fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
-$fontFamilyCode: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
+@forward "color";
+@forward "layout";

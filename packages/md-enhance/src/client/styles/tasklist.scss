@@ -28,13 +28,13 @@ input[type="checkbox"].task-list-item-checkbox {
   &:checked {
     &::after {
       content: "";
-      background-color: var(--accent-color);
-      border-color: var(--accent-color);
-      background-color: var(--accent-color);
+      background-color: var(--c-brand, #3eaf7c);
+      border-color: var(--c-brand, #3eaf7c);
+      background-color: var(--c-brand, #3eaf7c);
 
       #{config.$darkSelector} & {
-        border-color: var(--accent-color);
-        background-color: var(--accent-color);
+        border-color: var(--c-brand, #3eaf7c);
+        background-color: var(--c-brand, #3eaf7c);
       }
     }
 

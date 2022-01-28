@@ -17,7 +17,7 @@
 
       .icon {
         margin-right: 0.25em;
-        color: var(--accent-color);
+        color: var(--c-brand, #3eaf7c);
         font-size: 0.9em;
       }
     }
@@ -64,7 +64,7 @@
         padding: 0 0.5em;
         border: 0.5px solid var(--dark-grey);
         border-radius: 0.75em;
-        background: var(--bg-color);
+        background: var(--c-bg, #fff);
         font-size: 0.75em;
         line-height: 1.5;
         overflow: hidden;
@@ -86,7 +86,7 @@
 
       &:hover,
       &:active {
-        color: var(--accent-color);
+        color: var(--c-brand, #3eaf7c);
       }
     }
   }
