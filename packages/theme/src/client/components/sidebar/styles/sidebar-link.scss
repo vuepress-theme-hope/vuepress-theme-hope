@@ -4,9 +4,12 @@
 $headings: (3, 4, 5, 6);
 
 .sidebar-links {
+  margin: 0;
+  padding: 0;
+
   ul {
-    padding: 0;
     margin: 0;
+    padding: 0;
     list-style-type: none;
 
     &.sidebar-sub-headers {
@@ -35,7 +38,7 @@ $headings: (3, 4, 5, 6);
       }
 
       &:not(:first-child) {
-        margin-top: 0.75rem;
+        margin-top: 0.5rem;
       }
     }
   }

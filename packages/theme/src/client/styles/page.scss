@@ -14,7 +14,8 @@
 
   // change sidebar width
   @media (max-width: config.$pad) {
-    padding-left: var(--mobile-sidebar-width);
+    padding-top: var(--navbar-mobile-height);
+    padding-left: var(--sidebar-mobile-width);
   }
 
   // no space for sidebar on wide mobile

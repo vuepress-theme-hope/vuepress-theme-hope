@@ -11,8 +11,8 @@
   margin: 0px auto;
 
   @media (max-width: config.$pad) {
-    min-height: calc(100vh - var(--mobile-navbar-height));
-    padding-top: var(--mobile-navbar-height);
+    min-height: calc(100vh - var(--navbar-mobile-height));
+    padding-top: var(--navbar-mobile-height);
   }
 
   @media (max-width: config.$mobileS) {

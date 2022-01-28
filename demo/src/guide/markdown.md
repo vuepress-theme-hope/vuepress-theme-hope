@@ -462,7 +462,11 @@ $$
 
 ::: info custom title
 
-A custom information container
+A custom information container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
 
 :::
 

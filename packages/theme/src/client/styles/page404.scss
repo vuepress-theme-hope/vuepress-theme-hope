@@ -8,7 +8,7 @@
   text-align: center;
 
   @media (max-width: config.$mobile) {
-    padding-top: calc(var(--mobile-navbar-height) + 1rem);
+    padding-top: calc(var(--navbar-mobile-height) + 1rem);
   }
 
   .page-404-icon {

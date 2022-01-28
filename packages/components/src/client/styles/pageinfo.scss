@@ -4,16 +4,24 @@
 .page {
   .page-title {
     @include wrapper.wrapper;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+
     position: relative;
     z-index: 1;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 
     h1 {
-      font-size: 2.5rem;
-      margin-top: -3.1rem !important;
-      padding-top: 4.6rem !important;
+      margin-top: calc(0.5rem - var(--navbar-height)) !important;
       margin-bottom: 1rem;
+      padding-top: var(--navbar-height) !important;
+      font-size: 2.5rem;
+
+      @media (max-width: config.$mobile) {
+        margin-top: calc(
+          0.5rem - var(--navbar-mobile-height, --navbar-height)
+        ) !important;
+        padding-top: var(--navbar-mobile-height, --navbar-height) !important;
+      }
 
       .icon {
         margin-right: 0.25em;

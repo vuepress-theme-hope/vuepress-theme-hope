@@ -10,38 +10,11 @@
   pre[class*="language-"] {
     color: #ccc;
     background: none;
-    font-family: var(--font-family-code);
-    font-size: 1em;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    hyphens: none;
-  }
-
-  /* Code blocks */
-  pre[class*="language-"] {
-    overflow: auto;
   }
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     background: #2d2d2d;
-  }
-
-  /* Inline code */
-  :not(pre) > code[class*="language-"] {
-    padding: 0.1em;
-    border-radius: 0.3em;
-    white-space: normal;
   }
 
   .token.comment,

@@ -58,6 +58,11 @@ $codeBgColor: (
   dark: #282c34,
 ) !default;
 
+$codeLineColor: (
+  light: #3a5169,
+  dark: #8e8e8e,
+) !default;
+
 $codeHighlightLineColor: (
   light:
     color.scale(

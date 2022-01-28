@@ -30,13 +30,13 @@
 
   @media (max-width: config.$mobile) {
     --navbar-line-height: calc(
-      var(--mobile-navbar-height) - var(--mobile-navbar-vertical-padding) * 2
+      var(--navbar-mobile-height) - var(--navbar-mobile-vertical-padding) * 2
     );
 
-    height: var(--mobile-navbar-height);
-    padding: var(--mobile-navbar-vertical-padding)
-      var(--mobile-navbar-horizontal-padding);
-    padding-left: calc(var(--mobile-navbar-horizontal-padding) + 2.4rem);
+    height: var(--navbar-mobile-height);
+    padding: var(--navbar-mobile-vertical-padding)
+      var(--navbar-mobile-horizontal-padding);
+    padding-left: calc(var(--navbar-mobile-horizontal-padding) + 2.4rem);
   }
 
   .hide-navbar &.auto-hide {
