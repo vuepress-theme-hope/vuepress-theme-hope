@@ -5,8 +5,6 @@ import PageInfo from "@PageInfo";
 import Pagination from "@Pagination";
 import ScreenFull from "@ScreenFull";
 
-import "./styles/index.scss";
-
 export default defineClientAppEnhance(({ app }) => {
   // eslint-disable-next-line vue/multi-word-component-names
   if (Badge.name) app.component("Badge", Badge);

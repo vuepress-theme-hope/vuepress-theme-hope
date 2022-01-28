@@ -5,8 +5,6 @@ import FlowChart from "@FlowChart";
 import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
 
-import "./styles/index.scss";
-
 declare const MARKDOWN_ENHANCE_ALIGN: boolean;
 declare const MARKDOWN_ENHANCE_CONTAINER: boolean;
 declare const MARKDOWN_ENHANCE_FOOTNOTE: boolean;
