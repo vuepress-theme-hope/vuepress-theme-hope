@@ -33,28 +33,6 @@
     display: none;
   }
 
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--theme-color);
-
-    &:horizontal {
-      width: 6px;
-    }
-
-    &:vertical {
-      height: 6px;
-    }
-  }
   @media (max-width: config.$pad) {
     width: var(--sidebar-mobile-width);
     font-size: 15px;
