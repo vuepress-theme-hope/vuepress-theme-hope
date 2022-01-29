@@ -6,12 +6,12 @@ import type { SassPaletteOptions } from "../shared";
 const emptyFile = path.resolve(__dirname, "../../styles/empty.scss");
 
 const writeLoadFile = (app: App, id: string): void => {
-  const loadFilePath = app.dir.temp(`palette/load-${id}.js`);
+  const loadFilePath = app.dir.temp(`sass-palette/load-${id}.js`);
 
   if (!fs.pathExistsSync(loadFilePath)) fs.createFileSync(loadFilePath);
 
   fs.writeFileSync(
-    app.dir.temp(`palette/load-${id}.js`),
+    app.dir.temp(`sass-palette/load-${id}.js`),
     `
 export default ()=>{
   import("@${id}/palette");
@@ -49,15 +49,15 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
     multiple: true,
 
     alias: {
-      [`@${id}/palette`]: app.dir.temp(`palette/${id}-palette.scss`),
-      [`@${id}/config`]: app.dir.temp(`palette/${id}-config.scss`),
+      [`@${id}/palette`]: app.dir.temp(`sass-palette/${id}-palette.scss`),
+      [`@${id}/config`]: app.dir.temp(`sass-palette/${id}-config.scss`),
       [`@${id}/helper`]: path.resolve(__dirname, "../../styles/helper.scss"),
-      [`@${id}/style`]: app.dir.temp(`palette/${id}-style.scss`),
+      [`@${id}/style`]: app.dir.temp(`sass-palette/${id}-style.scss`),
     },
 
     async onPrepared(): Promise<void> {
       await app.writeTemp(
-        `palette/${id}-config.scss`,
+        `sass-palette/${id}-config.scss`,
         `
 @import "${getPath(defaultPalette)}";
 @import "${getPath(defaultConfig)}";
@@ -67,7 +67,7 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       );
 
       await app.writeTemp(
-        `palette/${id}-palette.scss`,
+        `sass-palette/${id}-palette.scss`,
         `
 @use 'sass:color';
 @use 'sass:list';
@@ -101,13 +101,13 @@ $variables: map.deep-merge($defaultVariables, $userVariables);
       );
 
       await app.writeTemp(
-        `palette/${id}-style.scss`,
+        `sass-palette/${id}-style.scss`,
         `@forward "${getPath(userStyle)}";
 `
       );
     },
 
-    clientAppEnhanceFiles: app.dir.temp(`palette/load-${id}.js`),
+    clientAppEnhanceFiles: app.dir.temp(`sass-palette/load-${id}.js`),
   };
 };
 
