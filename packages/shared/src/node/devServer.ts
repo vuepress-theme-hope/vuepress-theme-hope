@@ -21,7 +21,7 @@ import type { IncomingMessage, ServerResponse } from "http";
 export const useCustomDevServer = (
   app: App,
   path: string,
-  getResponse: (request?: IncomingMessage) => Promise<unknown>,
+  getResponse: (request?: IncomingMessage) => Promise<string | Buffer>,
   errMsg = "The server encounted an error"
 ): void => {
   const { base, bundler, bundlerConfig } = app.options;
@@ -44,7 +44,7 @@ export const useCustomDevServer = (
         });
 
     const viteMockRequestPlugin: Plugin = {
-      name: `${path}-mock`,
+      name: `virtual:devserver-mock/${path}`,
       configureServer: ({ middlewares }) => {
         middlewares.use(`${base.replace(/\/$/, "")}${path}`, handler);
       },

@@ -25,7 +25,7 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   useCustomDevServer(
     app,
     "/manifest.webmanifest",
-    () => manifest,
+    async () => JSON.stringify(await manifest),
     "Unexpected manifest generate error"
   );
 
