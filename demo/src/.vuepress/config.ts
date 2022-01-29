@@ -103,6 +103,10 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     },
 
+    encrypt: {
+      config: { "/guide/encrypt.html": ["1234"] },
+    },
+
     plugins: {
       mdEnhance: { enableAll: true },
 

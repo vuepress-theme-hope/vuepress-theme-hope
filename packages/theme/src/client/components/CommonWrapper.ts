@@ -4,8 +4,13 @@ import { useRouter } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import Navbar from "@Navbar";
 import Sidebar from "@Sidebar";
+import PasswordModal from "./PasswordModal";
 import PageFooter from "./PageFooter";
-import { useSidebarItems, useThemeLocaleData } from "../composables";
+import {
+  useGlobalEcrypt,
+  useSidebarItems,
+  useThemeLocaleData,
+} from "../composables";
 
 import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";
@@ -29,6 +34,7 @@ export default defineComponent({
     const page = usePageData();
     const frontmatter = usePageFrontmatter<HopeThemePageFrontmatter>();
     const themeLocale = useThemeLocaleData();
+    const { isGlobalEncrypted, validateGlobalToken } = useGlobalEcrypt();
 
     // navbar
     const hideNavbar = ref(false);
@@ -150,18 +156,20 @@ export default defineComponent({
           onTouchStart,
           onTouchEnd,
         },
-        [
-          enableNavbar.value
-            ? h(Navbar, { onToggleSidebar: () => toggleSidebar() })
-            : null,
-          h("div", {
-            class: "sidebar-mask",
-            onClick: () => toggleSidebar(false),
-          }),
-          h(Sidebar),
-          slots.default?.(),
-          h(PageFooter),
-        ]
+        isGlobalEncrypted.value
+          ? h(PasswordModal, { onVerify: validateGlobalToken })
+          : [
+              enableNavbar.value
+                ? h(Navbar, { onToggleSidebar: () => toggleSidebar() })
+                : null,
+              h("div", {
+                class: "sidebar-mask",
+                onClick: () => toggleSidebar(false),
+              }),
+              h(Sidebar),
+              slots.default?.(),
+              h(PageFooter),
+            ]
       );
   },
 });

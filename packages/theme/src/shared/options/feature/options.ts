@@ -2,6 +2,7 @@ import type {
   HopeThemeBlogLocaleData,
   HopeThemeBlogLocaleOptions,
 } from "./blog";
+import type { HopeThemeEncryptOptions } from "./encrypt";
 
 export interface HopeThemeFeatureLocaleData {
   blogLocales: HopeThemeBlogLocaleData;
@@ -42,21 +43,18 @@ export interface HopeThemeFeatureOptions {
   darkmode?: DarkmodeConfig;
 
   /**
-   * 主题色选项配置。
-   *
    * Theme color configuration.
    *
-   * E.g.:
-   * ```js
-   * {
-   *   blue: '#2196f3',
-   *   red: '#f26d6d',
-   *   green: '#3eaf7c',
-   *   orange: '#fb9b5f'
-   * }
-   * ```
+   * 主题色选项配置。
    *
    * @default { blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }
    */
   themeColor?: Record<string, string> | false;
+
+  /**
+   * Encrypt config
+   *
+   * 加密配置
+   */
+  encrypt?: HopeThemeEncryptOptions;
 }

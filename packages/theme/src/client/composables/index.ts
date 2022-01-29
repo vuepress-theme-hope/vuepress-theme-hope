@@ -1,4 +1,5 @@
 export * from "./darkmode";
+export * from "./encrypt";
 export * from "./navbar";
 export * from "./navLink";
 export * from "./pageMeta";

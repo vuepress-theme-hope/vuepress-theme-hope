@@ -4,6 +4,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlias } from "./alias";
 import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
+import { resolveEncrypt } from "./encrypt";
 import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
 
@@ -11,7 +12,7 @@ import type { Theme } from "@vuepress/core";
 import type { HopeThemeOptions } from "../shared";
 
 export const themeHope: Theme<HopeThemeOptions> = (
-  { plugins = {}, ...localeOptions },
+  { plugins = {}, ...themeOptions },
   app
 ) => {
   addViteOptimizeDeps(app, ["@vueuse/core", "lodash.throttle"]);
@@ -19,7 +20,9 @@ export const themeHope: Theme<HopeThemeOptions> = (
   if (app.env.isDev)
     addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
-  assignDefaultLocaleOptions(app, localeOptions);
+  if (themeOptions.encrypt) addViteOptimizeDeps(app, "bcryptjs");
+
+  assignDefaultLocaleOptions(app, themeOptions);
 
   useGitPlugin(app, {
     createdTime: true,
@@ -36,6 +39,8 @@ export const themeHope: Theme<HopeThemeOptions> = (
     style: ".vuepress/styles/index.scss",
   });
 
+  resolveEncrypt(themeOptions.encrypt || {});
+
   return {
     name: "vuepress-theme-hope",
 
@@ -51,6 +56,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     extendsPage,
 
-    plugins: getPluginConfig(plugins, localeOptions),
+    plugins: getPluginConfig(plugins, themeOptions),
   };
 };
