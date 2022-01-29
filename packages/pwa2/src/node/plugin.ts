@@ -15,20 +15,21 @@ import type { PWAOptions } from "../shared";
 
 export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   const { base } = app.options;
+  const manifest = getManifest(app, options);
 
   addViteOptimizeDeps(app, ["mitt", "register-service-worker"]);
 
   if (app.env.isDev)
     addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
-  useSassPalettePlugin(app, { id: "hope" });
-
   useCustomDevServer(
     app,
     "/manifest.webmanifest",
-    () => getManifest(options, app),
+    () => manifest,
     "Unexpected manifest generate error"
   );
+
+  useSassPalettePlugin(app, { id: "hope" });
 
   const config: PluginObject = {
     name: "vuepress-plugin-pwa2",
@@ -50,8 +51,8 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
     },
 
     async onGenerated(): Promise<void> {
-      await genManifest(options, app);
-      await genServiceWorker(options, app);
+      await genManifest(app, manifest);
+      await genServiceWorker(app, options);
     },
   };
 

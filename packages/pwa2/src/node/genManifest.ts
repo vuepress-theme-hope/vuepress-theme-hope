@@ -7,8 +7,8 @@ import type { App } from "@vuepress/core";
 import type { ManifestOption, PWAOptions } from "../shared";
 
 export const getManifest = async (
-  options: PWAOptions,
-  app: App
+  app: App,
+  options: PWAOptions
 ): Promise<ManifestOption> => {
   const { dir, siteData } = app;
   const { base } = app.options;
@@ -48,16 +48,15 @@ export const getManifest = async (
 };
 
 export const genManifest = async (
-  options: PWAOptions,
-  app: App
+  app: App,
+  manifest: Promise<ManifestOption>
 ): Promise<void> => {
   logger.load("Generating manifest.webmanifest");
 
   const { dir } = app;
-  const manifest = await getManifest(options, app);
   const manifestPath = dir.dest("manifest.webmanifest");
 
-  await fs.writeJSON(manifestPath, manifest, {
+  await fs.writeJSON(manifestPath, await manifest, {
     flag: "w",
   });
 

@@ -11,10 +11,10 @@ export class FeedGenerator {
   feed: Feed;
 
   constructor(
-    private pages: Page[],
+    private app: App,
     private options: FeedOptions,
-    feedOption: FeedInitOptions,
-    private app: App
+    private pages: Page[],
+    feedOption: FeedInitOptions
   ) {
     this.feed = new Feed(feedOption);
   }
@@ -25,10 +25,10 @@ export class FeedGenerator {
 
     for (const page of pages) {
       const item = new FeedPage(
-        page,
-        this.feed,
+        this.app,
         this.options,
-        this.app
+        page,
+        this.feed
       ).getFeedItem();
 
       if (item) {

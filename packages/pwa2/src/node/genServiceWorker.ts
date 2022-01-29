@@ -35,8 +35,8 @@ const imageFilter =
   };
 
 export const genServiceWorker = async (
-  options: PWAOptions,
-  app: App
+  app: App,
+  options: PWAOptions
 ): Promise<void> => {
   logger.load("Generating service worker");
 

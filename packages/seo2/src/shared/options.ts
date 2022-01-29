@@ -9,8 +9,8 @@ export type ExtendPage<ExtendObject = Record<string, unknown>> = Page & {
 } & ExtendObject;
 
 export interface PageSeoInfo<ExtendObject = Record<string, unknown>> {
-  page: ExtendPage<ExtendObject>;
   app: App;
+  page: ExtendPage<ExtendObject>;
   /**
    * Current page link, permalink is prefered.
    */

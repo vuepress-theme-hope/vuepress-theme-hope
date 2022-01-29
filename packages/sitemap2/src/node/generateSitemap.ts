@@ -38,8 +38,8 @@ const stripLocalePrefix = (
 });
 
 const generatePageMap = (
-  options: SitemapOptions,
-  app: App
+  app: App,
+  options: SitemapOptions
 ): Map<string, SitemapPageInfo> => {
   const {
     changefreq = "daily",
@@ -140,8 +140,8 @@ const generatePageMap = (
 };
 
 export const generateSiteMap = async (
-  options: SitemapOptions,
-  app: App
+  app: App,
+  options: SitemapOptions
 ): Promise<void> => {
   const { excludeUrls = [], extraUrls = [], xmlNameSpace: xmlns } = options;
   const hostname = options.hostname.replace(/\/$/u, "");
@@ -160,7 +160,7 @@ export const generateSiteMap = async (
           hostname,
           xmlns,
         });
-        const pagesMap = generatePageMap(options, app);
+        const pagesMap = generatePageMap(app, options);
         const sitemapXMLPath = dir.dest(sitemapFilename);
         const writeStream = fs.createWriteStream(sitemapXMLPath);
 

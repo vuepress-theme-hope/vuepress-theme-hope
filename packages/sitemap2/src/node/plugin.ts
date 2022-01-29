@@ -19,7 +19,7 @@ export const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
     ...plugin,
 
     async onGenerated(): Promise<void> {
-      await generateSiteMap(options as SitemapOptions, app);
+      await generateSiteMap(app, options as SitemapOptions);
     },
   };
 };

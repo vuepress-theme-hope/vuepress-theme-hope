@@ -5,8 +5,8 @@ import type { App } from "@vuepress/core";
 import type { FeedChannelOption, FeedLinks, FeedOptions } from "../shared";
 
 export const getFeedChannelOption = (
-  options: FeedOptions,
-  app: App
+  app: App,
+  options: FeedOptions
 ): FeedChannelOption => {
   const { hostname, icon, image } = options;
   const { base } = app.options;
@@ -35,7 +35,7 @@ export const getFeedChannelOption = (
   return deepAssign(defaultChannelOpion, options.channel || {});
 };
 
-export const getFeedLinks = (options: FeedOptions, app: App): FeedLinks => {
+export const getFeedLinks = (app: App, options: FeedOptions): FeedLinks => {
   const { base } = app.options;
   const { hostname } = options;
 

@@ -27,10 +27,10 @@ export class FeedPage {
   private base: string;
 
   constructor(
-    private page: Page & { git?: GitData },
-    private feed: Feed,
+    private app: App,
     private options: FeedOptions,
-    private app: App
+    private page: Page & { git?: GitData },
+    private feed: Feed
   ) {
     this.frontmatter =
       page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>;

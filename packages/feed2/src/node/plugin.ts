@@ -24,13 +24,13 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
   }
 
   const feedOptions = options as FeedOptions;
-  const channelOptions = getFeedChannelOption(feedOptions, app);
+  const channelOptions = getFeedChannelOption(app, feedOptions);
 
   return {
     name: "vuepress-plugin-feed2",
 
     onPrepared(): void {
-      injectLinkstoHead(feedOptions, app);
+      injectLinkstoHead(app, feedOptions);
     },
 
     async onGenerated(app): Promise<void> {
@@ -47,12 +47,10 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
         .sort(feedOptions.sorter)
         .slice(0, feedOptions.count);
 
-      await new FeedGenerator(
-        feedPages,
-        feedOptions,
-        { channel: channelOptions, links: getFeedLinks(feedOptions, app) },
-        app
-      ).generateFeed();
+      await new FeedGenerator(app, feedOptions, feedPages, {
+        channel: channelOptions,
+        links: getFeedLinks(app, feedOptions),
+      }).generateFeed();
     },
   };
 };

@@ -3,7 +3,7 @@ import { resolveUrl } from "./utils";
 import type { App, HeadConfig } from "@vuepress/core";
 import type { FeedOptions } from "../shared";
 
-export const injectLinkstoHead = (options: FeedOptions, app: App): void => {
+export const injectLinkstoHead = (app: App, options: FeedOptions): void => {
   const { base } = app.options;
   const { siteData } = app;
 
