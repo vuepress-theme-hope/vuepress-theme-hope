@@ -7,6 +7,8 @@ import { useThemeLocaleData } from "../composables";
 
 import type { VNode } from "vue";
 
+import "../styles/page404.scss";
+
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Page404",
