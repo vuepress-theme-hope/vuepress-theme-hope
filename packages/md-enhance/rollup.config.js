@@ -17,6 +17,7 @@ export default [
     external: [
       "@CodeGroup",
       "@CodeGroupItem",
+      "@FlowChart",
       "@Mermaid",
       "@Presentation",
       "@vuepress/client",
@@ -33,30 +34,23 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeGroup", {
-    external: ["@mr-hope/vuepress-shared/lib/client", "vue", /\.scss$/],
+    external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeGroupItem", {
-    external: ["@mr-hope/vuepress-shared/lib/client", "vue", /\.scss$/],
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/FlowChart", {
+    external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "mermaid",
-      "vue",
-      /\.scss$/,
-    ],
+    external: ["mermaid", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Presentation", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      /^reveal\.js/,
-      "vue",
-      /\.scss$/,
-    ],
+    external: ["@vuepress/client", /^reveal\.js/, "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/SlidePage", {

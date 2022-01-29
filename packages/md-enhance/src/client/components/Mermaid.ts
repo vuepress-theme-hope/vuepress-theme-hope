@@ -7,8 +7,8 @@ import {
   ref,
 } from "vue";
 import { LoadingIcon } from "./icons";
-import MermaidAPI from "mermaid/mermaidAPI";
 
+import type MermaidAPI from "mermaid/mermaidAPI";
 import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
