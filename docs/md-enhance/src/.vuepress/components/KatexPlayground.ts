@@ -39,8 +39,8 @@ export default defineComponent({
           rows: "10",
           placeholder: "Input your tex here",
           value: input.value,
-          onInput: ({ target }) => {
-            input.value = target.value;
+          onInput: ({ target }: InputEvent) => {
+            input.value = (target as HTMLInputElement).value;
           },
         }),
         h("p", {

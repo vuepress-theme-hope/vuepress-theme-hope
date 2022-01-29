@@ -186,9 +186,9 @@ export default defineComponent({
                 ),
                 h("input", {
                   id: "navigation-text",
-                  modelValue: input.value,
-                  "onUpdate:modelValue": (value: string) => {
-                    input.value = value;
+                  value: input.value,
+                  onInput: ({ target }: InputEvent) => {
+                    input.value = (target as HTMLInputElement).value;
                   },
                   onKeydown: (event: KeyboardEvent) => {
                     if (event.key === "Enter") {
