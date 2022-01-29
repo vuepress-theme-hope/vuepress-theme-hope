@@ -144,7 +144,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 | orientation                 | `'portrait-primary'`                                                                                   |
 | prefer_related_applications | `false`                                                                                                |
 
-完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/pwa/src/types/manifest.d.ts)
+完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa/src/shared/manifest.d.ts)
 
 ### 手动配置
 
