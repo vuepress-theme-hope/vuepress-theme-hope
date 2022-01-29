@@ -104,7 +104,7 @@
     "@types/jest": "27.4.0",
     "@types/semver": "7.3.9",
     "@typescript-eslint/eslint-plugin": "5.10.0",
-    "@typescript-eslint/parser": "5.10.0",
+    "@typescript-eslint/parser": "5.10.1",
     "@vue/eslint-config-typescript": "10.0.0",
     "babel-jest": "27.4.6",
     "concurrently": "7.0.0",
