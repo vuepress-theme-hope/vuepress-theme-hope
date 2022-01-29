@@ -1,11 +1,12 @@
-import { useRouter } from "vue-router";
-import type { Router } from "vue-router";
 import { isFunction, isString } from "@vuepress/shared";
+import { useRouter } from "vue-router";
+
+import type { Router } from "vue-router";
 
 /**
  * Resolve a route with redirection
  */
-export const useResolveRouteWithRedirect = (
+export const resolveRouteWithRedirect = (
   ...args: Parameters<Router["resolve"]>
 ): ReturnType<Router["resolve"]> => {
   const router = useRouter();
@@ -20,7 +21,7 @@ export const useResolveRouteWithRedirect = (
     ? { path: resolvedRedirect }
     : resolvedRedirect;
 
-  return useResolveRouteWithRedirect({
+  return resolveRouteWithRedirect({
     hash: route.hash,
     query: route.query,
     params: route.params,

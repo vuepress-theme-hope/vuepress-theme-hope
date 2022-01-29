@@ -1,4 +1,4 @@
-import { useResolveRouteWithRedirect } from "./resolveRouteWithRedirect";
+import { resolveRouteWithRedirect } from "../utils";
 
 import type { AutoLink } from "../../shared";
 
@@ -10,7 +10,7 @@ import type { AutoLink } from "../../shared";
  * - Output: { text: 'Home', link: '/' }
  */
 export const useAutoLink = (item: string): AutoLink => {
-  const resolved = useResolveRouteWithRedirect(item);
+  const resolved = resolveRouteWithRedirect(item);
 
   return {
     icon: resolved.meta.icon,
