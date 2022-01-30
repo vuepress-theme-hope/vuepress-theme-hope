@@ -6,7 +6,7 @@ import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import type { SeoOptions } from "vuepress-plugin-seo2";
-import { ReadingTimeOptions } from "packages/reading-time2/lib/shared";
+import { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
 
 export interface HopeThemePluginsOptions {
   /**
