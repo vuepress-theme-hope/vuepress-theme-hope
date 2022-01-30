@@ -7,7 +7,7 @@ import {
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, reactive } from "vue";
 import { usePure, useThemeData, useThemeLocaleData } from "./themeData";
-import { useBlogOptions } from "./blog";
+import { useBlogOptions, useEnableBlog } from "./blog";
 
 import type {
   ArticleCategory,
@@ -37,13 +37,14 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> =>
   });
 
 export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
+  const enableBlog = useEnableBlog();
   const options = useBlogOptions();
   const { category } = usePageFrontmatter<BasePageFrontMatter>().value;
 
   return computed(() =>
     getCategory(category).map((name) => ({
       name,
-      ...(options.value
+      ...(enableBlog.value
         ? {
             path: options.value.categoryPath.replace(
               /\$category/g,
@@ -56,13 +57,14 @@ export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
 };
 
 export const usePageTag = (): ComputedRef<ArticleTag[]> => {
+  const enableBlog = useEnableBlog();
   const options = useBlogOptions();
   const { tag } = usePageFrontmatter<BasePageFrontMatter>().value;
 
   return computed(() =>
     getTag(tag).map((name) => ({
       name,
-      ...(options.value
+      ...(enableBlog.value
         ? {
             path: options.value.tagPath.replace(/\$tag/g, decodeURI(name)),
           }

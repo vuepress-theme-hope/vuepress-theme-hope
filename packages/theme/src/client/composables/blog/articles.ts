@@ -2,7 +2,7 @@ import { pagesRoutes } from "@internal/pagesRoutes";
 import { useSiteData } from "@vuepress/client";
 import { resolveLocalePath } from "@vuepress/shared";
 import { inject, provide, reactive, watch } from "vue";
-import { resolveRouteWithRedirect } from "../../utils";
+import { compareDate, resolveRouteWithRedirect } from "../../utils";
 
 import type { InjectionKey } from "vue";
 import type { ArticleDetail } from "../../../shared";
@@ -60,6 +60,9 @@ export const setupArticles = (): void => {
           .filter(
             (record): record is ArticleDetail =>
               record !== null && record.type !== "page"
+          )
+          .sort((articleA, articleB) =>
+            compareDate(articleA.date, articleB.date)
           );
       }
     },

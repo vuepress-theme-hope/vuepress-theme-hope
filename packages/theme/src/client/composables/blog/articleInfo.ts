@@ -46,8 +46,7 @@ export const useArticleCategory = (
   return computed(() =>
     getCategory(article.value.category).map((name) => ({
       name,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      path: options.value!.categoryPath.replace(/\$category/g, decodeURI(name)),
+      path: options.value.categoryPath.replace(/\$category/g, decodeURI(name)),
     }))
   );
 };
@@ -60,8 +59,7 @@ export const useArticleTag = (article: Ref<ArticleDetail>): TagRef => {
   return computed(() =>
     getTag(article.value.tag).map((name) => ({
       name,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      path: options.value!.tagPath.replace(/\$tag/g, decodeURI(name)),
+      path: options.value.tagPath.replace(/\$tag/g, decodeURI(name)),
     }))
   );
 };
@@ -88,8 +86,7 @@ export const useArticleInfo = (
   const pure = usePure();
 
   return reactive<ArticleInfoProps>({
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    config: options.value!.articleInfo,
+    config: options.value.articleInfo,
     author: author.value,
     category: category.value,
     date: date.value,

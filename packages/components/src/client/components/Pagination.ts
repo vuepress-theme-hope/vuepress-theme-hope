@@ -20,7 +20,7 @@ export default defineComponent({
     currentPage: { type: Number, default: 1 },
   },
 
-  emits: ["update:currentPage"],
+  emits: ["updateCurrentPage"],
 
   setup(props, { emit }) {
     const route = useRoute();
@@ -75,7 +75,7 @@ export default defineComponent({
 
       if (query.page === page.toString() || (page === 1 && !query.page)) return;
 
-      emit("update:currentPage", page);
+      emit("updateCurrentPage", page);
 
       if (page === 1) delete query.page;
       else query.page = page.toString();
