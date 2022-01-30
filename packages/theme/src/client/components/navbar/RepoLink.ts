@@ -6,7 +6,7 @@ import {
   GitHubIcon,
   GitlabIcon,
   SourceIcon,
-} from "../icons/Repo";
+} from "../icons";
 
 import type { VNode } from "vue";
 

@@ -1,5 +1,5 @@
 import { computed, defineComponent, h } from "vue";
-import { AutoIcon, DarkIcon, LightIcon } from "../icons/Darkmode";
+import { AutoIcon, DarkIcon, LightIcon } from "../icons";
 import {
   useDarkMode,
   useThemeData,
