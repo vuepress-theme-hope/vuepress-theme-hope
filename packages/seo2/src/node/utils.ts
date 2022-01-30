@@ -1,6 +1,6 @@
 import { Logger } from "@mr-hope/vuepress-shared";
 import type { SiteLocaleConfig } from "@vuepress/shared";
-export const logger = new Logger("Seo");
+export const logger = new Logger("vuepress-plugin-seo2");
 
 export const getLink = (hostname: string, base: string, url: string): string =>
   `${hostname.match(/https?:\/\//) ? "" : "https://"}${hostname.replace(

@@ -1,6 +1,6 @@
 import { Logger } from "@mr-hope/vuepress-shared";
 
-export const logger = new Logger("Feed");
+export const logger = new Logger("vuepress-plugin-feed2");
 
 export const resolveHTML = (html: string): string =>
   html

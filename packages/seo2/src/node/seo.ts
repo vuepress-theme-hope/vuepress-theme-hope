@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Logger, getDate, getAuthor } from "@mr-hope/vuepress-shared";
+import { getDate, getAuthor } from "@mr-hope/vuepress-shared";
 import { fs } from "@vuepress/utils";
-import { getLocales, getLink } from "./utils";
+import { getLocales, getLink, logger } from "./utils";
 
 import type { AppDir } from "@vuepress/core";
 import type {
@@ -10,8 +10,6 @@ import type {
   SeoContent,
   SeoOptions,
 } from "../shared";
-
-const logger = new Logger("Seo");
 
 export const generateSeo = (
   options: SeoOptions,
