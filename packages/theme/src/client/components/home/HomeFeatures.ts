@@ -5,13 +5,14 @@ import { RouterLink } from "vue-router";
 import { useIconPrefix } from "../../composables";
 
 import type { VNode } from "vue";
-import type { ProjectHomePageFrontmatter } from "../../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";
 
 export default defineComponent({
   name: "HomeFeatures",
   setup() {
     const iconPrefix = useIconPrefix();
-    const frontmatter = usePageFrontmatter<ProjectHomePageFrontmatter>();
+    const frontmatter =
+      usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
 
     const features = computed(() => {
       if (isArray(frontmatter.value.features))

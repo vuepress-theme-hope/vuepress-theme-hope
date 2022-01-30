@@ -6,7 +6,7 @@ import MarkdownContent from "../MarkdownContent";
 import ProjectHero from "./ProjectHero";
 
 import type { VNode } from "vue";
-import type { ProjectHomePageFrontmatter } from "../../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";
 
 import "../../styles/home/project.scss";
 
@@ -14,7 +14,8 @@ export default defineComponent({
   name: "ProjectHome",
 
   setup() {
-    const frontmatter = usePageFrontmatter<ProjectHomePageFrontmatter>();
+    const frontmatter =
+      usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
 
     return (): VNode =>
       h(

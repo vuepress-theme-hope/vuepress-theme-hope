@@ -9,13 +9,14 @@ import AutoLink from "../AutoLink";
 import DropTransition from "../transitions/DropTransition.vue";
 
 import type { VNode } from "vue";
-import type { ProjectHomePageFrontmatter } from "../../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";
 
 export default defineComponent({
   name: "ProjectHero",
 
   setup() {
-    const frontmatter = usePageFrontmatter<ProjectHomePageFrontmatter>();
+    const frontmatter =
+      usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
     const siteLocale = useSiteLocaleData();
 
     const heroImage = computed(() => {
