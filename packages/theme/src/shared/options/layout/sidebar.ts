@@ -30,6 +30,8 @@ export interface HopeThemeSidebarLocaleOptions {
    *
    * The default value of `markdown.extractHeaders.level` is `[2, 3]`,
    * so the default max value of `sidebarDepth` is `2`
+   *
+   * @default 2
    */
   headingDepth?: number;
 }

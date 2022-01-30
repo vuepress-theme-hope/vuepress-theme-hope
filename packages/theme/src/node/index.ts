@@ -1,6 +1,6 @@
 import { themeHope } from "./theme";
 
-export * from "./defaultLocaleAssign";
+export * from "./handleThemeData";
 export * from "./theme";
 export * from "../shared";
 

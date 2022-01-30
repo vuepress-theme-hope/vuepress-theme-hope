@@ -1,3 +1,4 @@
+import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { MediaType } from "../medialinks";
 
 export interface HopeThemeBlogLocaleData {
@@ -30,7 +31,7 @@ export interface HopeThemeBlogLocaleData {
  *
  * Blog configuration
  */
-export interface HopeThemeBlogLocaleOptions {
+export interface HopeThemeBlogOptions {
   /**
    * Name of the Blogger
    *
@@ -90,7 +91,7 @@ export interface HopeThemeBlogLocaleOptions {
    *
    * 是否在侧边栏展示博主信息
    *
-   * @default 'none'
+   * @default 'mobile'
    */
   sidebarDisplay?: "mobile" | "none" | "always";
 
@@ -102,6 +103,7 @@ export interface HopeThemeBlogLocaleOptions {
    * @default 'Yesterday once more'
    */
   timeline?: string;
+
   /**
    * Article number per page
    *
@@ -109,7 +111,7 @@ export interface HopeThemeBlogLocaleOptions {
    *
    * @default 10
    */
-  perPage?: number;
+  articlePerPage?: number;
 
   /**
    * Path to navigate when clicking category label
@@ -119,6 +121,8 @@ export interface HopeThemeBlogLocaleOptions {
    * 点击分类标签时跳转的路径。
    *
    * 其中 `$category` 会被自动替换为当前分类名称
+   *
+   * @default '/category/$category/'
    */
   categoryPath?: string;
 
@@ -130,6 +134,29 @@ export interface HopeThemeBlogLocaleOptions {
    * 点击标签跳转的路径。
    *
    * 其中 `$tag` 会被自动替换为当前分类名称
+   *
+   * @default '/tag/$tag/'
    */
   tagPath?: string;
+
+  /**
+   * Article info displayed in article list
+   *
+   * 文章列表中展示的文章信息
+   *
+   * @default ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime']
+   */
+  articleInfo?: ArticleInfo[];
 }
+
+export type HopeThemeBlogConfig = HopeThemeBlogOptions &
+  Required<
+    Pick<
+      HopeThemeBlogOptions,
+      | "articleInfo"
+      | "articlePerPage"
+      | "sidebarDisplay"
+      | "categoryPath"
+      | "tagPath"
+    >
+  >;

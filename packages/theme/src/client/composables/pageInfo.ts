@@ -7,6 +7,7 @@ import {
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, reactive } from "vue";
 import { usePure, useThemeData, useThemeLocaleData } from "./themeData";
+import { useBlogOptions } from "./blog";
 
 import type {
   ArticleCategory,
@@ -23,9 +24,7 @@ import type { ComputedRef, UnwrapNestedRefs } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
-export type AuthorRef = ComputedRef<AuthorInfo[]>;
-
-export const usePageAuthor = (): AuthorRef =>
+export const usePageAuthor = (): ComputedRef<AuthorInfo[]> =>
   computed(() => {
     const { author } = usePageFrontmatter<BasePageFrontMatter>().value;
 
@@ -37,39 +36,42 @@ export const usePageAuthor = (): AuthorRef =>
     return getAuthor(themeAuthor, false);
   });
 
-export type CategoryRef = ComputedRef<ArticleCategory[]>;
+export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
+  const options = useBlogOptions();
+  const { category } = usePageFrontmatter<BasePageFrontMatter>().value;
 
-export const usePageCategory = (): CategoryRef =>
-  computed(() => {
-    const { category } = usePageFrontmatter<BasePageFrontMatter>().value;
-
-    // TODO: improve with Blog feature
-    const { categoryPath = "" } = useThemeData().value.blog || {};
-
-    return getCategory(category).map((name) => ({
+  return computed(() =>
+    getCategory(category).map((name) => ({
       name,
-      path: categoryPath.replace(/\$category/g, decodeURI(name)),
-    }));
-  });
+      ...(options.value
+        ? {
+            path: options.value.categoryPath.replace(
+              /\$category/g,
+              decodeURI(name)
+            ),
+          }
+        : {}),
+    }))
+  );
+};
 
-export type TagRef = ComputedRef<ArticleTag[]>;
+export const usePageTag = (): ComputedRef<ArticleTag[]> => {
+  const options = useBlogOptions();
+  const { tag } = usePageFrontmatter<BasePageFrontMatter>().value;
 
-export const usePageTag = (): TagRef =>
-  computed(() => {
-    const { tag } = usePageFrontmatter<BasePageFrontMatter>().value;
-
-    // TODO: improve with Blog feature
-    const { tagPath = "" } = useThemeData().value.blog || {};
-
-    return getTag(tag).map((name) => ({
+  return computed(() =>
+    getTag(tag).map((name) => ({
       name,
-      path: tagPath.replace(/\$tag/g, decodeURI(name)),
-    }));
-  });
+      ...(options.value
+        ? {
+            path: options.value.tagPath.replace(/\$tag/g, decodeURI(name)),
+          }
+        : {}),
+    }))
+  );
+};
 
-export type DateRef = ComputedRef<DateInfo | null>;
-
-export const usePageDate = (): DateRef =>
+export const usePageDate = (): ComputedRef<DateInfo | null> =>
   computed(() => {
     const { date } = usePageFrontmatter<BasePageFrontMatter>().value;
 

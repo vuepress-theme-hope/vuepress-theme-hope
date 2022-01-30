@@ -1,3 +1,4 @@
+export * from "./articleIcon";
 export * from "./darkmodeIcon";
 export * from "./metaIcon";
 export * from "./i18nIcon";

@@ -1,6 +1,7 @@
 import type {
+  HopeThemeBlogConfig,
   HopeThemeBlogLocaleData,
-  HopeThemeBlogLocaleOptions,
+  HopeThemeBlogOptions,
 } from "./blog";
 import type { HopeThemeEncryptOptions } from "./encrypt";
 
@@ -12,7 +13,11 @@ export interface HopeThemeFeatureLocaleOptions {
   /**
    * Blog feature
    */
-  blog?: HopeThemeBlogLocaleOptions;
+  blog?: HopeThemeBlogOptions;
+}
+
+export interface HopeThemeFeatureLocaleConfig {
+  blog: HopeThemeBlogConfig;
 }
 
 export type DarkmodeConfig =
@@ -53,27 +58,20 @@ export interface HopeThemeFeatureOptions {
   themeColor?: Record<string, string> | false;
 
   /**
-   * Encrypt config
-   *
-   * 加密配置
-   */
-  encrypt?: HopeThemeEncryptOptions;
-
-  /**
-   * Reading speed of words per minute
-   *
-   * 每分钟阅读字数
-   *
-   * @default 300
-   */
-  wordPerminute?: number;
-
-  /**
    * Whether enable blog feature
    *
    * 是否启用博客功能
    *
    * @default true
    */
-  blog?: boolean;
+  enableBlog?: boolean;
+
+  /**
+   * Encrypt config
+   *
+   * 加密配置
+   */
+  encrypt?: HopeThemeEncryptOptions;
 }
+
+export type HopeThemeFeatureConfig = Required<HopeThemeFeatureOptions>;

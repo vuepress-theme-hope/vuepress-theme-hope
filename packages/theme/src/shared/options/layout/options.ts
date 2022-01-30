@@ -1,8 +1,8 @@
 import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { HopeThemeFooterLocaleOptions } from "./footer";
 import type {
-  HopeThemeMetaLocaleOptions,
   HopeThemeMetaLocateData,
+  HopeThemeMetaLocaleOptions,
 } from "./meta";
 import type {
   HopeThemeNavbarLocaleData,

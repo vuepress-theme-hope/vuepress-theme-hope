@@ -1,31 +1,22 @@
 import type { Author } from "@mr-hope/vuepress-shared";
-import type { LocaleData } from "@vuepress/shared";
+import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { HopeThemeAppearanceOptions } from "./appearance";
 import type {
-  HopeThemeFeatureLocaleData,
-  HopeThemeFeatureLocaleOptions,
+  HopeThemeFeatureConfig,
   HopeThemeFeatureOptions,
 } from "./feature";
-import type { LocaleData2Option } from "./helpers";
-import type {
-  HopeThemeLayoutLocaleData,
-  HopeThemeLayoutLocaleOptions,
-  HopeThemeLayoutOptions,
-} from "./layout";
-
-export type HopeThemeLocaleOptions =
-  LocaleData2Option<HopeThemeFeatureLocaleData> &
-    HopeThemeFeatureLocaleOptions &
-    LocaleData2Option<HopeThemeLayoutLocaleData> &
-    HopeThemeLayoutLocaleOptions &
-    LocaleData;
+import type { HopeThemeLayoutOptions } from "./layout";
+import type { HopeThemeLocaleConfig, HopeThemeLocaleOptions } from "./locales";
+import type { HopeThemePluginsOptions } from "./plugins";
 
 export interface HopeThemeRootOptions
   extends HopeThemeAppearanceOptions,
     HopeThemeFeatureOptions,
     HopeThemeLayoutOptions {
   /**
-   * 作者
+   * Global default author
+   *
+   * 全局默认作者
    */
   author?: Author;
 
@@ -37,23 +28,30 @@ export interface HopeThemeRootOptions
   hostname?: string;
 }
 
-// /**
-//  * Custom block config
-//  *
-//  * Default title of TIP custom block
-//  */
-// tip?: string;
+export interface HopeThemeRootConfig
+  extends HopeThemeAppearanceOptions,
+    HopeThemeFeatureConfig,
+    HopeThemeLayoutOptions {
+  /**
+   * Global default author
+   *
+   * 全局默认作者
+   */
+  author?: Author;
 
-// /**
-//  * Custom block config
-//  *
-//  * Default title of WARNING custom block
-//  */
-// warning?: string;
+  /**
+   * domain which to be deployed to
+   *
+   * 网站部署域名
+   */
+  hostname?: string;
+}
 
-// /**
-//  * Custom block config
-//  *
-//  * Default title of DANGER custom block
-//  */
-// danger?: string;
+export interface HopeThemeOptions
+  extends HopeThemeRootOptions,
+    ThemeData<HopeThemeLocaleOptions> {
+  plugins?: HopeThemePluginsOptions;
+}
+
+export type HopeThemeConfig = HopeThemeRootConfig &
+  ThemeData<HopeThemeLocaleConfig>;

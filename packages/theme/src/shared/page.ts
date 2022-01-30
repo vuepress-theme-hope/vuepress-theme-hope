@@ -1,11 +1,14 @@
 import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
+import type { ReadingTimePluginPageData } from "vuepress-plugin-reading-time2";
 import type { MediaLinksConfig } from "./options";
 import type { AutoLink } from "./navbar";
 import type { SidebarConfig } from "./sidebar";
 
-export interface HopeThemePageData extends GitPluginPageData {
+export interface HopeThemePageData
+  extends GitPluginPageData,
+    ReadingTimePluginPageData {
   filePathRelative: string | null;
 }
 
@@ -73,6 +76,24 @@ export interface HopeThemeNormalPageFrontmatter
    * @default true
    */
   visitor?: boolean;
+
+  /**
+   * Whether the article be sticky in list
+   *
+   * If a number fill in, greater number will appear in front
+   *
+   * 是否置顶，如果填入数字，更大值会出现在前面
+   */
+  sticky?: boolean | number;
+
+  /**
+   * Whether the article be stared
+   *
+   * If a number fill in, greater number will appear in front
+   *
+   * 是否收藏，如果填入数字，更大值会出现在前面
+   */
+  star?: boolean | number;
 }
 
 export interface ActionConfig {

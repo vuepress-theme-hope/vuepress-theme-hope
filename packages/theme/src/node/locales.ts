@@ -1,6 +1,6 @@
-import type { DefaultHopeThemeLocaleData } from "../shared";
+import type { HopeThemeLocaleData } from "../shared";
 
-export const themeLocalesData: Record<string, DefaultHopeThemeLocaleData> = {
+export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
   "/en/": {
     lang: "en-US",
 

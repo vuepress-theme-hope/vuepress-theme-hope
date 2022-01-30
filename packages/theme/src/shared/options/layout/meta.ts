@@ -23,55 +23,65 @@ export interface HopeThemeMetaLocateData {
 
 export interface HopeThemeMetaLocaleOptions {
   /**
-   * Page meta - last updated config
-   *
    * Whether to show "Last Updated" or not
+   *
+   * 是否显示页面最后更新时间
+   *
+   * @default true
    */
   lastUpdated?: boolean;
 
   /**
-   * Page meta - contributors config
-   *
    * Whether to show "Contributors" or not
+   *
+   * 是否显示页面贡献者
+   *
+   * @default true
    */
   contributors?: boolean;
 
   /**
-   * Page meta - edit link config
-   *
    * Whether to show "Edit this page" or not
+   *
+   * 是否展示编辑此页链接
+   *
+   * @default true
    */
   editLink?: boolean;
 
   /**
-   * Page meta - edit link config
+   * Pattern of edit link, we provide built-in support for GitHub, Gitlab, Gitee, Bitbucket
    *
-   * Pattern of edit link
+   * 编辑链接的匹配，我们已经为 GitHub、Gitlab、Gitee 和 Bitbucket 提供了内置支持
    *
    * @example ':repo/edit/:branch/:path'
    */
   editLinkPattern?: string;
 
   /**
-   * Page meta - edit link config
+   * the repo of your docs
    *
-   * Use `repo` config by default
+   * 文档仓库
    *
-   * Set this config if your docs is placed in a different repo
+   * @default themeConfig.repo
    */
   docsRepo?: string;
 
   /**
-   * Page meta - edit link config
+   * the branch of your docs
    *
-   * Set this config if the branch of your docs is not 'master'
+   * 文档所在分支
+   *
+   * @default 'main'
    */
   docsBranch?: string;
 
   /**
-   * Page meta - edit link config
+   * Docs dir relative to repo
    *
-   * Set this config if your docs is placed in sub dir of your `docsRepo`
+   * 文档相对于仓库所在目录
+   *
+   * @default ''
    */
   docsDir?: string;
 }

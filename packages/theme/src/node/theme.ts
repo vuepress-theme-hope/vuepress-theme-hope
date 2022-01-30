@@ -4,7 +4,7 @@ import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlias } from "./alias";
-import { assignDefaultLocaleOptions } from "./defaultLocaleAssign";
+import { handleThemeData } from "./handleThemeData";
 import { resolveEncrypt } from "./encrypt";
 import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
@@ -23,14 +23,16 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
   if (themeOptions.encrypt) addViteOptimizeDeps(app, "bcryptjs");
 
-  assignDefaultLocaleOptions(app, themeOptions);
+  handleThemeData(app, themeOptions);
 
   useGitPlugin(app, {
     createdTime: true,
     contributors: true,
     updatedTime: true,
   });
-  useReadingTimePlugin(app, { wordPerminute: themeOptions.wordPerminute });
+  useReadingTimePlugin(app, {
+    wordPerminute: plugins.readingTime?.wordPerminute,
+  });
 
   useSassPalettePlugin(app, {
     id: "hope",

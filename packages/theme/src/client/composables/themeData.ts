@@ -11,12 +11,13 @@ import type {
 } from "@vuepress/plugin-theme-data/lib/client";
 import type { ComputedRef } from "vue";
 import type { AuthorInfo } from "@mr-hope/vuepress-shared";
-import type { HopeThemeOptions, HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeConfig, HopeThemeLocaleConfig } from "../../shared";
 
-export const useThemeData = (): ThemeDataRef<HopeThemeOptions> =>
-  _useThemeData<HopeThemeOptions>();
-export const useThemeLocaleData = (): ThemeLocaleDataRef<HopeThemeLocaleData> =>
-  _useThemeLocaleData<HopeThemeLocaleData>();
+export const useThemeData = (): ThemeDataRef<HopeThemeConfig> =>
+  _useThemeData<HopeThemeConfig>();
+export const useThemeLocaleData =
+  (): ThemeLocaleDataRef<HopeThemeLocaleConfig> =>
+    _useThemeLocaleData<HopeThemeLocaleConfig>();
 
 export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> =>
   computed(() => {
@@ -27,13 +28,6 @@ export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> =>
 
 export const useIconPrefix = (): ComputedRef<string> =>
   computed(() => useThemeData().value.iconPrefix || "");
-
-export const useBlogConfig = (): ComputedRef<unknown> =>
-  computed(() => {
-    const { blog } = useThemeData().value;
-
-    return blog === false ? false : blog || {};
-  });
 
 export const usePure = (): ComputedRef<boolean> =>
   computed(() => Boolean(useThemeData().value.pure || false));
