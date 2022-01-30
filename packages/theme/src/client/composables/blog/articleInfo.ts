@@ -41,12 +41,15 @@ export type CategoryRef = ComputedRef<ArticleCategory[]>;
 export const useArticleCategory = (
   article: Ref<ArticleDetail>
 ): CategoryRef => {
-  const options = useBlogOptions();
+  const blogOptions = useBlogOptions();
 
   return computed(() =>
     getCategory(article.value.category).map((name) => ({
       name,
-      path: options.value.categoryPath.replace(/\$category/g, decodeURI(name)),
+      path: blogOptions.value.categoryPath.replace(
+        /\$category/g,
+        decodeURI(name)
+      ),
     }))
   );
 };
@@ -54,12 +57,12 @@ export const useArticleCategory = (
 export type TagRef = ComputedRef<ArticleTag[]>;
 
 export const useArticleTag = (article: Ref<ArticleDetail>): TagRef => {
-  const options = useBlogOptions();
+  const blogOptions = useBlogOptions();
 
   return computed(() =>
     getTag(article.value.tag).map((name) => ({
       name,
-      path: options.value.tagPath.replace(/\$tag/g, decodeURI(name)),
+      path: blogOptions.value.tagPath.replace(/\$tag/g, decodeURI(name)),
     }))
   );
 };
@@ -76,7 +79,7 @@ export const useArticleDate = (article: Ref<ArticleDetail>): DateRef =>
 export const useArticleInfo = (
   article: Ref<ArticleDetail>
 ): UnwrapNestedRefs<ArticleInfoProps> => {
-  const options = useBlogOptions();
+  const blogOptions = useBlogOptions();
   const page = usePageData<{ readingTime: ReadingTime }>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const author = useArticleAuthor(article);
@@ -86,7 +89,7 @@ export const useArticleInfo = (
   const pure = usePure();
 
   return reactive<ArticleInfoProps>({
-    config: options.value.articleInfo,
+    config: blogOptions.value.articleInfo,
     author: author.value,
     category: category.value,
     date: date.value,

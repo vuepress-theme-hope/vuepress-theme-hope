@@ -38,7 +38,7 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> =>
 
 export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
   const enableBlog = useEnableBlog();
-  const options = useBlogOptions();
+  const blogOptions = useBlogOptions();
   const { category } = usePageFrontmatter<BasePageFrontMatter>().value;
 
   return computed(() =>
@@ -46,7 +46,7 @@ export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
       name,
       ...(enableBlog.value
         ? {
-            path: options.value.categoryPath.replace(
+            path: blogOptions.value.categoryPath.replace(
               /\$category/g,
               decodeURI(name)
             ),
@@ -58,7 +58,7 @@ export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
 
 export const usePageTag = (): ComputedRef<ArticleTag[]> => {
   const enableBlog = useEnableBlog();
-  const options = useBlogOptions();
+  const blogOptions = useBlogOptions();
   const { tag } = usePageFrontmatter<BasePageFrontMatter>().value;
 
   return computed(() =>
@@ -66,7 +66,7 @@ export const usePageTag = (): ComputedRef<ArticleTag[]> => {
       name,
       ...(enableBlog.value
         ? {
-            path: options.value.tagPath.replace(/\$tag/g, decodeURI(name)),
+            path: blogOptions.value.tagPath.replace(/\$tag/g, decodeURI(name)),
           }
         : {}),
     }))

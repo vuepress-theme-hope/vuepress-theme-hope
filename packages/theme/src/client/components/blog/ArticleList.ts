@@ -46,16 +46,16 @@ export default defineComponent({
   },
 
   setup(props) {
-    const currentPage = ref(1);
     const article = useArticles();
-    const routeLcoale = useRouteLocale();
+    const blogOptions = useBlogOptions();
+    const rotueLocale = useRouteLocale();
 
-    const options = useBlogOptions();
+    const currentPage = ref(1);
 
-    const articlePerPage = computed(() => options.value.articlePerPage);
+    const articlePerPage = computed(() => blogOptions.value.articlePerPage);
 
     const articleList = computed(() => {
-      return sortArticles(article[routeLcoale.value].filter(props.filter));
+      return sortArticles(article[rotueLocale.value].filter(props.filter));
     });
 
     const currentArticles = computed(() =>
