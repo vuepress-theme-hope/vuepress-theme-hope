@@ -1,4 +1,4 @@
-declare module "*.vue" {
+declare module "@ArticleInfo" {
   import type { ComponentOptions } from "vue";
 
   const component: ComponentOptions;
@@ -23,14 +23,6 @@ declare module "@Badge" {
 }
 
 declare module "@BreadCrumb" {
-  import type { ComponentOptions } from "vue";
-
-  const component: ComponentOptions;
-
-  export default component;
-}
-
-declare module "@PageInfo" {
   import type { ComponentOptions } from "vue";
 
   const component: ComponentOptions;

@@ -1,8 +1,7 @@
 import { computed, defineComponent, h } from "vue";
-import { useAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import MediaLinks from "./medialinks";
-import { useThemeLocaleData } from "../composables";
+import { usePageAuthor, useThemeLocaleData } from "../composables";
 
 import type { VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
@@ -13,8 +12,7 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const themeLocaleData = useThemeLocaleData();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    const author = useAuthor(themeLocaleData.value.author);
+    const author = usePageAuthor();
 
     const enable = computed(() => {
       const { copyrightText, footer, medialinks } = frontmatter.value;

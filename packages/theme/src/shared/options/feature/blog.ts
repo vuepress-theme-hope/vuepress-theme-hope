@@ -110,4 +110,26 @@ export interface HopeThemeBlogLocaleOptions {
    * @default 10
    */
   perPage?: number;
+
+  /**
+   * Path to navigate when clicking category label
+   *
+   * `$category` will be automatically replaced by currect category name
+   *
+   * 点击分类标签时跳转的路径。
+   *
+   * 其中 `$category` 会被自动替换为当前分类名称
+   */
+  categoryPath?: string;
+
+  /**
+   * Path to navigate when clicking tag label
+   *
+   * `$tag` will be automatically replaced by currect tag name
+   *
+   * 点击标签跳转的路径。
+   *
+   * 其中 `$tag` 会被自动替换为当前分类名称
+   */
+  tagPath?: string;
 }

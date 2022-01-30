@@ -11,7 +11,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { BacktoTopIcon } from "../icons";
+import { BacktoTopIcon } from "../components/icons";
 
 import "../styles/back-to-top.scss";
 

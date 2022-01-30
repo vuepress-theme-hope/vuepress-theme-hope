@@ -31,12 +31,12 @@ icon: config
 
 是否注册徽章
 
-## pageinfo
+## articleInfo
 
 - 类型: `boolean`
 - 默认: `false`
 
-是否注册页面信息组件
+是否注册文章信息组件
 
 ## pagination
 
@@ -77,10 +77,10 @@ interface ComponentLocaleData {
 
 组件国际化配置
 
-## pageInfoLocales
+## articleInfoLocales
 
 ```ts
-interface PageInfoLocaleData {
+interface ArticleInfoLocaleData {
   /**
    * 作者文字
    */
@@ -123,7 +123,7 @@ interface PageInfoLocaleData {
 }
 ```
 
-页面信息的国际化配置。
+文章信息的国际化配置。
 
 ## paginationLocales
 

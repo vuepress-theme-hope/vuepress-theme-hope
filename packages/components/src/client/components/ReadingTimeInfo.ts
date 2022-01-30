@@ -1,16 +1,20 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { TimerIcon } from "./icons";
-import { pageInfoLocales, readingTimeLocales } from "../define";
+import { articleInfoLocales, readingTimeLocales } from "../define";
 
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 
 export default defineComponent({
   name: "ReadingTimeInfo",
 
   props: {
+    readingTime: {
+      type: Object as PropType<ReadingTime>,
+      required: true,
+    },
+
     hint: {
       type: Boolean,
       default: true,
@@ -18,21 +22,22 @@ export default defineComponent({
   },
 
   setup(props) {
-    const page = usePageData<{ readingTime: ReadingTime }>();
-    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
     const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
-    const readingTime = computed(() =>
-      page.value.readingTime.minutes < 1
-        ? [readingTimeLocale.value.less1Minute, "PT1M"]
-        : [
-            readingTimeLocale.value.time.replace(
+    const readingTime = computed(() => {
+      const { minutes } = props.readingTime;
+
+      return minutes < 1
+        ? { text: readingTimeLocale.value.less1Minute, time: "PT1M" }
+        : {
+            text: readingTimeLocale.value.time.replace(
               "$time",
-              Math.round(page.value.readingTime.minutes).toString()
+              Math.round(minutes).toString()
             ),
-            `PT${Math.round(page.value.readingTime.minutes)}M`,
-          ]
-    );
+            time: `PT${Math.round(minutes)}M`,
+          };
+    });
 
     return (): VNode | null =>
       h(
@@ -44,10 +49,10 @@ export default defineComponent({
         },
         [
           h(TimerIcon),
-          h("span", readingTime.value[0]),
+          h("span", readingTime.value.text),
           h("meta", {
             property: "timeRequired",
-            content: readingTime.value[1],
+            content: readingTime.value.time,
           }),
         ]
       );

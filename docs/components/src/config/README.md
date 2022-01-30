@@ -31,12 +31,12 @@ Whether register breadcrumb component
 
 Whether register badge component
 
-## pageinfo
+## articleInfo
 
 - Type: `boolean`
 - Default: `false`
 
-Whether register pageinfo component
+Whether register articleInfo component
 
 ## pagination
 
@@ -77,10 +77,10 @@ interface ComponentLocaleData {
 
 Component locales config.
 
-## pageInfoLocales
+## articleInfoLocales
 
 ```ts
-interface PageInfoLocaleData {
+interface ArticleInfoLocaleData {
   /**
    * Author label text
    */

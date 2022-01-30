@@ -36,4 +36,4 @@ export const useBlogConfig = (): ComputedRef<unknown> =>
   });
 
 export const usePure = (): ComputedRef<boolean> =>
-  computed(() => Boolean(useThemeData().value.pure));
+  computed(() => Boolean(useThemeData().value.pure || false));

@@ -1,21 +1,18 @@
-import {
-  useAuthor,
-  useLocaleConfig,
-} from "@mr-hope/vuepress-shared/lib/client";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { AuthorIcon } from "./icons";
-import { pageInfoLocales } from "../define";
+import { articleInfoLocales } from "../define";
 
-import type { Author } from "@mr-hope/vuepress-shared";
+import type { AuthorInfo } from "@mr-hope/vuepress-shared";
 import type { PropType, VNode } from "vue";
 
 export default defineComponent({
   name: "AuthorInfo",
 
   props: {
-    defaultAuthor: {
-      type: [Object, String, Array] as PropType<Author>,
-      default: "",
+    author: {
+      type: Array as PropType<AuthorInfo[]>,
+      required: true,
     },
 
     hint: {
@@ -25,11 +22,10 @@ export default defineComponent({
   },
 
   setup(props) {
-    const author = useAuthor(props.defaultAuthor);
-    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
     return (): VNode | null =>
-      author.value.length
+      props.author.length
         ? h(
             "span",
             {
@@ -41,7 +37,7 @@ export default defineComponent({
               h(AuthorIcon),
               h(
                 "span",
-                author.value.map((item) =>
+                props.author.map((item) =>
                   item.url
                     ? h(
                         "a",
@@ -58,7 +54,7 @@ export default defineComponent({
               ),
               h("span", {
                 property: "author",
-                content: author.value.map((item) => item.name).join(", "),
+                content: props.author.map((item) => item.name).join(", "),
               }),
             ]
           )

@@ -1,13 +1,11 @@
-import {
-  useCategory,
-  useLocaleConfig,
-} from "@mr-hope/vuepress-shared/lib/client";
-import { defineComponent, h, toRef } from "vue";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
+import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { CategoryIcon } from "./icons";
-import { pageInfoLocales } from "../define";
+import { articleInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
+import type { ArticleCategory } from "../../shared";
 
 import "../styles/category.scss";
 
@@ -15,14 +13,9 @@ export default defineComponent({
   name: "CategoryInfo",
 
   props: {
-    categories: {
-      type: Array as PropType<string[]>,
-      default: (): string[] => [],
-    },
-
-    categoryPath: {
-      type: String,
-      default: "",
+    category: {
+      type: Array as PropType<ArticleCategory[]>,
+      required: true,
     },
 
     hint: {
@@ -35,22 +28,14 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
 
-    const items = props.categories.length
-      ? toRef(props, "categories")
-      : useCategory();
-    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
-    const navigate = (categoryName: string): void => {
-      const path = props.categoryPath.replace(
-        /\$category/g,
-        decodeURI(categoryName)
-      );
-
+    const navigate = (path = ""): void => {
       if (path && route.path !== path) void router.push(path);
     };
 
     return (): VNode | null =>
-      items.value.length
+      props.category.length
         ? h(
             "span",
             {
@@ -61,26 +46,22 @@ export default defineComponent({
             [
               h(CategoryIcon),
               h("ul", { class: "categories-wrapper" }, [
-                ...items.value.map((category) =>
+                ...props.category.map(({ name, path }) =>
                   h(
                     "li",
                     {
                       class: {
                         category: true,
-                        clickable: props.categoryPath,
+                        clickable: path,
                       },
-                      onClick: () => navigate(category),
+                      onClick: () => navigate(path),
                     },
-                    h(
-                      "span",
-                      { role: props.categoryPath ? "navigation" : "" },
-                      category
-                    )
+                    h("span", { role: path ? "navigation" : "" }, name)
                   )
                 ),
                 h("meta", {
                   property: "articleSection",
-                  content: items.value.join(","),
+                  content: props.category.map(({ name }) => name).join(","),
                 }),
               ]),
             ]

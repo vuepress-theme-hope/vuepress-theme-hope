@@ -1,6 +1,6 @@
 import { defineComponent, h, onMounted, ref } from "vue";
 import * as screenfull from "screenfull";
-import { CancelFullScreenIcon, EnterFullScreenIcon } from "../icons";
+import { CancelFullScreenIcon, EnterFullScreenIcon } from "./icons";
 
 import type { VNode } from "vue";
 

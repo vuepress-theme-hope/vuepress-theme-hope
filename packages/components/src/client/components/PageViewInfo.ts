@@ -1,12 +1,11 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageFrontmatter, withBase } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
+import { withBase } from "@vuepress/client";
+import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 import { EyeIcon, FireIcon } from "./icons";
-import { pageInfoLocales } from "../define";
+import { articleInfoLocales } from "../define";
 
 import type { VNode } from "vue";
-import type { PageInfoFrontmatter } from "../../shared";
 
 export default defineComponent({
   name: "PageViewInfo",
@@ -17,21 +16,17 @@ export default defineComponent({
       default: true,
     },
 
-    vistor: {
-      type: Boolean,
-      default: false,
+    pageview: {
+      type: [Boolean, String],
+      default: true,
     },
   },
 
   setup(props) {
     const route = useRoute();
-    const frontmatter = usePageFrontmatter<PageInfoFrontmatter>();
-    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
     const pageViews = ref(0);
-    const enablePageViews = computed(
-      () => frontmatter.value.pageview !== false && props.vistor
-    );
 
     // show fire icon depending on the views number
     const getCount = (): void => {
@@ -60,7 +55,7 @@ export default defineComponent({
     );
 
     return (): VNode | null =>
-      enablePageViews.value
+      props.pageview
         ? h(
             "span",
             {
@@ -74,8 +69,11 @@ export default defineComponent({
                 "span",
                 {
                   class: "waline-visitor-count",
-                  /** visitorID, use current path */
-                  id: withBase(route.path),
+                  /** visitorID */
+                  id:
+                    typeof props.pageview === "string"
+                      ? props.pageview
+                      : withBase(route.path),
                 },
                 "..."
               ),

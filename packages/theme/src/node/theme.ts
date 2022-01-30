@@ -1,5 +1,6 @@
 import { addViteOptimizeDeps, useGitPlugin } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
+import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlias } from "./alias";
@@ -29,6 +30,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
     contributors: true,
     updatedTime: true,
   });
+  useReadingTimePlugin(app, { wordPerminute: themeOptions.wordPerminute });
 
   useSassPalettePlugin(app, {
     id: "hope",

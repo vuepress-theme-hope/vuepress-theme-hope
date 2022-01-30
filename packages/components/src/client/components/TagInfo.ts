@@ -1,11 +1,11 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { useTag } from "@mr-hope/vuepress-shared/lib/client";
-import { defineComponent, h, toRef } from "vue";
+import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { TagIcon } from "./icons";
-import { pageInfoLocales } from "../define";
+import { articleInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
+import type { ArticleTag } from "../../shared";
 
 import "../styles/tag.scss";
 
@@ -13,12 +13,10 @@ export default defineComponent({
   name: "TagInfo",
 
   props: {
-    tags: {
-      type: Array as PropType<string[]>,
-      default: (): string[] => [],
+    tag: {
+      type: Array as PropType<ArticleTag[]>,
+      default: () => [],
     },
-
-    tagPath: { type: String, default: "" },
 
     hint: {
       type: Boolean,
@@ -30,18 +28,14 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
 
-    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
-    const items = props.tags.length ? toRef(props, "tags") : useTag();
-
-    const navigate = (tagName: string): void => {
-      const path = props.tagPath.replace(/\$tag/g, decodeURI(tagName));
-
+    const navigate = (path = ""): void => {
       if (path && route.path !== path) void router.push(path);
     };
 
     return (): VNode | null =>
-      items.value.length
+      props.tag.length
         ? h(
             "span",
             {
@@ -53,24 +47,20 @@ export default defineComponent({
               h(
                 "ul",
                 { class: "tags-wrapper" },
-                items.value.map((tag, index) =>
+                props.tag.map(({ name, path }, index) =>
                   h(
                     "li",
                     {
-                      class: [
-                        "tag",
-                        `tag${index % 9}`,
-                        { clickable: props.tagPath },
-                      ],
-                      onClick: () => navigate(tag),
+                      class: ["tag", `tag${index % 9}`, { clickable: path }],
+                      onClick: () => navigate(path),
                     },
-                    h("span", { role: props.tagPath ? "navigation" : "" }, tag)
+                    h("span", { role: path ? "navigation" : "" }, name)
                   )
                 )
               ),
               h("meta", {
                 property: "keywords",
-                content: items.value.join(","),
+                content: props.tag.map(({ name }) => name).join(","),
               }),
             ]
           )

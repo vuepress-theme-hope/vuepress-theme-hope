@@ -1,5 +1,5 @@
-export * from "./frontmatter";
+export * from "./articleInfo";
 export * from "./locales";
 export * from "./options";
-export * from "./pageInfo";
 export * from "./pagination";
+export * from "./pageTitle";

@@ -1,9 +1,18 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { BackToTopLocaleData } from "./locales";
-import type { PageInfoLocaleData } from "./pageInfo";
+import type { ArticleInfoLocaleData } from "./articleInfo";
 import type { PaginationLocaleData } from "./pagination";
 
 export interface ComponentOptions {
+  /**
+   * Whether register article info component
+   *
+   * 是否注册文章信息
+   *
+   * @default false
+   */
+  articleInfo?: boolean;
+
   /**
    * Whether enabling backToTop button
    *
@@ -48,15 +57,6 @@ export interface ComponentOptions {
   badge?: boolean;
 
   /**
-   * Whether register pageinfo component
-   *
-   * 是否注册页面信息
-   *
-   * @default false
-   */
-  pageinfo?: boolean;
-
-  /**
    * Whether register pagination component
    *
    * 是否注册分页组件
@@ -75,20 +75,11 @@ export interface ComponentOptions {
   screenFull?: boolean;
 
   /**
-   * Reading speed of words per minute
+   * Locales config for articleInfo
    *
-   * 每分钟阅读字数
-   *
-   * @default 300
+   * 文章信息的国际化配置
    */
-  wordPerminute?: number;
-
-  /**
-   * Locales config for pageInfo
-   *
-   * 页面信息的国际化配置
-   */
-  pageInfoLocales?: LocaleConfig<PageInfoLocaleData>;
+  articleInfoLocales?: LocaleConfig<ArticleInfoLocaleData>;
 
   /**
    * Locales config for pagination

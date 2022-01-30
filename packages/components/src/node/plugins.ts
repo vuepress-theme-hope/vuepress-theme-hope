@@ -1,15 +1,13 @@
 import {
-  getLocales,
-  useGitPlugin,
-  noopModule,
   addViteOptimizeDeps,
+  getLocales,
+  noopModule,
 } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import {
   backToTopLocales,
-  pageInfoLocales,
+  articleInfoLocales,
   paginationLocales,
 } from "./locales";
 
@@ -23,29 +21,20 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
   if (options.backToTop) addViteOptimizeDeps(app, "lodash.debounce");
   if (options.screenFull) addViteOptimizeDeps(app, "screenfull");
 
-  if (options.pageinfo) {
-    useGitPlugin(app, {
-      createdTime: true,
-      updatedTime: true,
-      contributors: true,
-    });
-    useReadingTimePlugin(app, { wordPerminute: options.wordPerminute });
-  }
-
   useSassPalettePlugin(app, { id: "hope" });
 
   return {
     name: "@mr-hope/vuepress-plugin-components",
 
     alias: {
+      "@ArticleInfo": options.articleInfo
+        ? path.resolve(__dirname, "../client/components/ArticleInfo.js")
+        : noopModule,
       "@BreadCrumb": options.breadcrumb
         ? path.resolve(__dirname, "../client/components/BreadCrumb.js")
         : noopModule,
       "@Badge": options.badge
         ? path.resolve(__dirname, "../client/components/Badge.js")
-        : noopModule,
-      "@PageInfo": options.pageinfo
-        ? path.resolve(__dirname, "../client/components/PageInfo.js")
         : noopModule,
       "@Pagination": options.pagination
         ? path.resolve(__dirname, "../client/components/Pagination.js")
@@ -62,10 +51,10 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
         backToTopLocales,
         options.backToTopLocales
       ),
-      PAGE_INFO_LOCALES: getLocales(
+      ARTICLE_INFO_LOCALES: getLocales(
         app,
-        pageInfoLocales,
-        options.pageInfoLocales
+        articleInfoLocales,
+        options.articleInfoLocales
       ),
       PAGINATION_LOCALES: getLocales(
         app,

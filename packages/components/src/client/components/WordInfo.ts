@@ -1,16 +1,20 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { WordIcon } from "./icons";
-import { pageInfoLocales, readingTimeLocales } from "../define";
+import { articleInfoLocales, readingTimeLocales } from "../define";
 
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 
 export default defineComponent({
   name: "ReadTimeInfo",
 
   props: {
+    readingTime: {
+      type: Object as PropType<ReadingTime>,
+      required: true,
+    },
+
     hint: {
       type: Boolean,
       default: true,
@@ -18,12 +22,10 @@ export default defineComponent({
   },
 
   setup(props) {
-    const page = usePageData<{ readingTime: ReadingTime }>();
-
-    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
     const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
-    const words = computed(() => page.value.readingTime.words.toString());
+    const words = computed(() => props.readingTime.words.toString());
     const wordText = computed(() =>
       readingTimeLocale.value.word.replace("$word", words.value)
     );

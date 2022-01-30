@@ -57,4 +57,13 @@ export interface HopeThemeFeatureOptions {
    * 加密配置
    */
   encrypt?: HopeThemeEncryptOptions;
+
+  /**
+   * Reading speed of words per minute
+   *
+   * 每分钟阅读字数
+   *
+   * @default 300
+   */
+  wordPerminute?: number;
 }

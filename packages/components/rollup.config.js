@@ -14,9 +14,9 @@ export default [
   ...rollupTypescript("client/appEnhance", {
     external: [
       "@vuepress/client",
+      "@ArticleInfo",
       "@Badge",
       "@BreadCrumb",
-      "@PageInfo",
       "@Pagination",
       "@ScreenFull",
       /\.scss$/,
@@ -24,15 +24,7 @@ export default [
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
-  ...rollupTypescript("client/components/Badge", {
-    external: ["vue", /\.scss$/],
-    dtsExternal: [/\.scss$/],
-  }),
-  ...rollupTypescript("client/components/BreadCrumb", {
-    external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
-    dtsExternal: [/\.scss$/],
-  }),
-  ...rollupTypescript("client/components/PageInfo", {
+  ...rollupTypescript("client/components/ArticleInfo", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
@@ -42,6 +34,14 @@ export default [
       /\.scss$/,
     ],
     dtsExternal: ["balloon-css/balloon.css", /\.scss$/],
+  }),
+  ...rollupTypescript("client/components/Badge", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/BreadCrumb", {
+    external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
+    dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Pagination", {
     external: [

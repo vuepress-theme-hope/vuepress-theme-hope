@@ -3,6 +3,7 @@ export * from "./encrypt";
 export * from "./navbar";
 export * from "./navLink";
 export * from "./pageMeta";
+export * from "./pageInfo";
 export * from "./repoLink";
 export * from "./scrollPromise";
 export * from "./sidebar";

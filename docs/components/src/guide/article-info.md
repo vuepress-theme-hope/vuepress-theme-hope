@@ -1,53 +1,104 @@
 ---
-title: Page information
+title: Article information
 icon: info
 ---
 
 ## Props
 
 ```ts
-interface PageInfoProps {
+export interface ArticleInfoProps {
   /**
-   * Default author
-   */
-  defaultAuthor?: string;
-
-  /**
-   * Page Info display configuration
+   * Article Info display configuration
    *
-   * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
+   * @default ["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]
    */
-  items?: PageInfo[] | false;
+  config?: ArticleInfo[] | false;
 
   /**
-   * Path to navigate when clicking category label
+   * Whether enable hint popup for articleInfo
    *
-   * `$category` will be automatically replaced by currect category name
+   * @default true
    */
-  categoryPath?: string;
+  hint?: boolean;
 
   /**
-   * Path to navigate when clicking tag label
+   * Authors of article
+   */
+  author?: AuthorInfo[];
+
+  /**
+   * Categories of article
+   */
+  category?: ArticleCategory[];
+
+  /**
+   * Tags of article
+   */
+  tag?: ArticleTag[];
+
+  /**
+   * Writing Date
+   */
+  date?: DateInfo | null;
+
+  /**
+   * Whether the aricle is orginal
+   */
+  original?: boolean | null;
+
+  /**
+   * Whether enable pageview
    *
-   * `$tag` will be automatically replaced by currect tag name
+   * If the value is a string, it will use as search id
    */
-  tagPath?: string;
+  visitor?: string | boolean;
 
   /**
-   * Whether display icon besides title
-   *
-   * @default false
+   * ReadingTime info
    */
+  readingTime?: ReadingTime;
+}
 
-  titleIcon?: boolean;
+/**
+ * Type of article infomation
+ */
+export type ArticleInfo =
+  | "Author"
+  | "Category"
+  | "Date"
+  | "Original"
+  | "PageView"
+  | "Tag"
+  | "ReadingTime"
+  | "Word";
+
+export interface ArticleCategory {
+  /**
+   * Category name
+   */
+  name: string;
 
   /**
-   * Title icon prefix
+   * Category Path
    */
-  titleIconPrefix?: string;
+  path?: string;
+}
+
+export type ArticleTag = ArticleCategory;
+
+interface ReadingTime {
+  /**
+   * expect reading time
+   */
+  minutes: number;
+  /**
+   * words of current page
+   */
+  words: number;
 }
 ```
 
+<!--
 ### items
 
 `pageInfo` accepts an array of strings, which you should fill in a group of items. The order of you fill is the order in which the items are displayed.
@@ -90,4 +141,4 @@ To keep it globally disabled, please set `pageInfo` to `false` in the plugin opt
 
 ## Original Marker
 
-You can set `original` to `true` in page frontmatter to add an original mark in page info.
+You can set `original` to `true` in page frontmatter to add an original mark in page info. -->

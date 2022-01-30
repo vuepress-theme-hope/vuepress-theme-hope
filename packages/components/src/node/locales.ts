@@ -1,6 +1,6 @@
 import type {
   BackToTopLocaleConfig,
-  PageInfoLocaleConfig,
+  ArticleInfoLocaleConfig,
   PaginationLocaleConfig,
 } from "../shared";
 
@@ -113,9 +113,9 @@ export const paginationLocales: PaginationLocaleConfig = {
 };
 
 /**
- * Default lcoales config for Page Info
+ * Default locales config for Article Info
  */
-export const pageInfoLocales: PageInfoLocaleConfig = {
+export const articleInfoLocales: ArticleInfoLocaleConfig = {
   "/en/": {
     author: "Author🖊",
     date: "Writing Date📅",

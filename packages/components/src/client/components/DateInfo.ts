@@ -1,16 +1,20 @@
-import { useDate, useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageData } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
+import { defineComponent, h } from "vue";
 import { CalendarIcon } from "./icons";
-import { pageInfoLocales } from "../define";
+import { articleInfoLocales } from "../define";
 
-import type { GitData } from "@vuepress/plugin-git";
-import type { VNode } from "vue";
+import type { DateInfo } from "@mr-hope/vuepress-shared";
+import type { PropType, VNode } from "vue";
 
 export default defineComponent({
   name: "DateInfo",
 
   props: {
+    date: {
+      type: Object as PropType<DateInfo | null>,
+      required: true,
+    },
+
     hint: {
       type: Boolean,
       default: true,
@@ -18,23 +22,10 @@ export default defineComponent({
   },
 
   setup(props) {
-    const page = usePageData<{
-      git?: GitData;
-    }>();
-
-    const date = computed(() => {
-      const { createdTime } = page.value.git || {};
-
-      return useDate(
-        { type: "date" },
-        createdTime ? new Date(createdTime) : undefined
-      ).value;
-    });
-
-    const pageInfoLocale = useLocaleConfig(pageInfoLocales);
+    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
     return (): VNode | null =>
-      date.value
+      props.date
         ? h(
             "span",
             {
@@ -44,11 +35,11 @@ export default defineComponent({
             },
             [
               h(CalendarIcon),
-              h("span", date.value?.display),
+              h("span", props.date?.display),
               h("meta", {
                 property: "datePublished",
                 // ISO Format Date string
-                content: date.value?.value?.toISOString() || "",
+                content: props.date?.value?.toISOString() || "",
               }),
             ]
           )
