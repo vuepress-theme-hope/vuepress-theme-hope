@@ -42,15 +42,26 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FlowChart", {
-    external: ["vue", /\.scss$/],
+    external: ["lodash.debounce", "flowchart.js", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {
-    external: ["mermaid", "vue", /\.scss$/],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "mermaid",
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Presentation", {
-    external: ["@vuepress/client", /^reveal\.js/, "vue", /\.scss$/],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "@vuepress/client",
+      /^reveal\.js/,
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/SlidePage", {
