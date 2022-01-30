@@ -5,6 +5,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared",
       "@mr-hope/vuepress-plugin-components",
+      "bcryptjs",
       "@vuepress/utils",
       "vuepress-plugin-comment2",
       "vuepress-plugin-copy-code2",
@@ -12,6 +13,7 @@ export default [
       "vuepress-plugin-md-enhance",
       "vuepress-plugin-photo-swipe",
       "vuepress-plugin-pwa2",
+      "vuepress-plugin-reading-time2",
       "vuepress-plugin-sass-palette",
       "vuepress-plugin-seo2",
       "vuepress-plugin-sitemap2",
@@ -21,12 +23,14 @@ export default [
   ...rollupVue("client/components/navbar/Navbar.ts", {
     copy: [["client/components/navbar/styles", "client/components/navbar"]],
     external: [
+      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "@vueuse/core",
+      "bcryptjs",
       "vue",
       "vue-router",
       /\.scss$/,
@@ -36,12 +40,14 @@ export default [
   ...rollupVue("client/components/sidebar/Sidebar.ts", {
     copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
     external: [
+      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "@vueuse/core",
+      "bcryptjs",
       "vue",
       "vue-router",
       /\.scss$/,
@@ -52,12 +58,14 @@ export default [
     external: [
       "@Navbar",
       "@Sidebar",
+      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "@vueuse/core",
+      "bcryptjs",
       "lodash.throttle",
       "vue",
       "vue-router",
@@ -68,19 +76,21 @@ export default [
   ...rollupVue("client/layouts/Layout.ts", {
     external: [
       "@CommonWrapper",
+      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "@vueuse/core",
+      "bcryptjs",
       "vue",
       "vue-router",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupVue("client/layouts/404.ts", {
+  ...rollupVue("client/layouts/Page404.ts", {
     external: [
       "@CommonWrapper",
       "@mr-hope/vuepress-shared/lib/client",
