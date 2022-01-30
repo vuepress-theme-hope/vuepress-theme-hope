@@ -18,28 +18,71 @@ export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
   medialinks?: MediaLinksConfig | false;
 }
 
-export interface HopeThemeHomePageFrontmatter extends HopeThemePageFrontmatter {
+export interface ProjectHomeActionOptions {
+  text: string;
+  link: string;
+  type?: "primary" | "secondary";
+}
+
+export interface ProjectHopeFeatureOptions {
+  icon?: string;
+  title: string;
+  details: string;
+  link?: string;
+}
+
+export interface HopeThemeProjectHomePageFrontmatter
+  extends HopeThemePageFrontmatter {
   home: true;
   heroImage?: string;
+  darkHeroImage?: string;
   heroAlt?: string;
   heroText?: string | null;
   tagline?: string | null;
-  actions?: {
-    text: string;
-    link: string;
-    type?: "primary" | "secondary";
-  }[];
-  features?: {
-    title: string;
-    details: string;
-  }[];
+
+  actions?: ProjectHomeActionOptions[];
+  features?: ProjectHopeFeatureOptions[];
+}
+
+export interface HopeThemeBlogProjectOptions {
+  name: string;
+  type: "article" | "book" | "link" | "project" | "friend";
+  desc?: string;
+  cover?: string;
+  link: string;
+}
+
+export interface HopeThemeBlogHomePageFrontmatter
+  extends HopeThemePageFrontmatter {
+  home: true;
+  layout: "BlogHome";
+  /**
+   * @default true
+   */
+  hero?: boolean;
+  /**
+   * @default false
+   */
+  heroFullScreen?: boolean;
+  heroImage?: string;
+  heroImageStyle?: Record<string, string>;
+  heroAlt?: string;
+  heroText?: string | null;
+  /**
+   * @default true
+   */
+  showTitle?: boolean;
+  bgImage?: string;
+  bgImageStyle?: Record<string, string>;
+  tagline?: string | null;
+  projects: HopeThemeBlogProjectOptions[];
 }
 
 export interface HopeThemeNormalPageFrontmatter
   extends HopeThemePageFrontmatter {
   home?: false;
   sidebar?: "auto" | false | SidebarConfig;
-  sidebarHeadingDepth?: number;
+  headingDepth?: number;
   /**
    * Whether display lastUpdated time
    *
@@ -94,29 +137,4 @@ export interface HopeThemeNormalPageFrontmatter
    * 是否收藏，如果填入数字，更大值会出现在前面
    */
   star?: boolean | number;
-}
-
-export interface ActionConfig {
-  text: string;
-  link: string;
-  type?: "primary" | "secondary";
-}
-
-export interface ProjectFeatureOptions {
-  icon?: string;
-  title: string;
-  details: string;
-  link?: string;
-}
-
-export interface ProjectHomePageFrontmatter
-  extends HopeThemeHomePageFrontmatter {
-  home: true;
-  heroImage?: string;
-  darkHeroImage?: string;
-  heroAlt?: string;
-  heroText?: string;
-  tagline?: string;
-  actions?: ActionConfig[];
-  features?: ProjectFeatureOptions[];
 }

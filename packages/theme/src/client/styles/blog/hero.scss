@@ -1,0 +1,96 @@
+@use "@hope/config";
+
+.blog-hero {
+  position: relative;
+  color: #eee;
+  margin-bottom: 16px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: config.$mobile) {
+    height: 350px;
+    margin: 0 -1.5rem 16px;
+  }
+
+  @media (max-width: config.$mobileS) {
+    margin: 0 0 16px;
+  }
+
+  &.full {
+    height: calc(100vh - var(--navbar-height)) !important;
+
+    @media (max-width: config.$mobile) {
+      height: calc(100vh - var(--navbar--mobile-height)) !important;
+    }
+
+    .mask {
+      background-position-y: top !important;
+    }
+  }
+
+  .mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:after {
+      display: block;
+      content: " ";
+      background: var(--light-grey);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      opacity: 0.2;
+    }
+  }
+
+  & > :not(.mask) {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    margin: 0.5rem auto;
+    font-size: 36px;
+
+    @media (max-width: config.$pad) {
+      font-size: 30px;
+    }
+
+    @media (max-width: config.$mobile) {
+      font-size: 36px;
+    }
+
+    @media (max-width: config.$mobileS) {
+      font-size: 30px;
+    }
+  }
+
+  .hero-logo + h1 {
+    margin: 0 auto;
+  }
+
+  .description {
+    margin: 1.2rem auto 0;
+    font-size: 20px;
+
+    @media (max-width: config.$pad) {
+      font-size: 18px;
+    }
+
+    @media (max-width: config.$mobile) {
+      font-size: 20px;
+    }
+
+    @media (max-width: config.$mobileS) {
+      font-size: 18px;
+    }
+  }
+}

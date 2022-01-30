@@ -153,9 +153,7 @@ export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
     ? false
     : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "auto";
   const sidebarDepth =
-    frontmatter.value.sidebarHeadingDepth ??
-    themeLocale.value.headingDepth ??
-    2;
+    frontmatter.value.headingDepth ?? themeLocale.value.headingDepth ?? 2;
 
   // resolve sidebar items according to the config
   return sidebarConfig === false

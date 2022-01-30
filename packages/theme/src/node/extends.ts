@@ -4,13 +4,15 @@ import { logger } from "@vuepress/utils";
 import type { App, Page } from "@vuepress/core";
 import type {
   HopeThemePageData,
-  HopeThemeHomePageFrontmatter,
+  HopeThemeBlogHomePageFrontmatter,
+  HopeThemeProjectHomePageFrontmatter,
   HopeThemeNormalPageFrontmatter,
 } from "../shared";
 
 export const extendsPage = (app: App, page: Page<HopeThemePageData>): void => {
   const frontmatter = page.frontmatter as
-    | HopeThemeHomePageFrontmatter
+    | HopeThemeProjectHomePageFrontmatter
+    | HopeThemeBlogHomePageFrontmatter
     | HopeThemeNormalPageFrontmatter;
   const { filePathRelative } = page;
   const { createdTime } = page.data.git;
