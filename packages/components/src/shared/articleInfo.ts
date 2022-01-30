@@ -98,7 +98,7 @@ export interface ArticleCategory {
 
 export type ArticleTag = ArticleCategory;
 
-interface ReadingTime {
+export interface ReadingTime {
   /**
    * expect reading time
    *
