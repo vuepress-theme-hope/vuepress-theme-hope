@@ -12,3 +12,7 @@ export interface ReadingTime {
    */
   words: number;
 }
+
+export interface ReadingTimePluginPageData {
+  readingTime: ReadingTime;
+}
