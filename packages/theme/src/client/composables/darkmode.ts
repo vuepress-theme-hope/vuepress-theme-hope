@@ -10,18 +10,17 @@ export type DarkModeRef = WritableComputedRef<boolean>;
 
 export type DarkModeStatusRef = Ref<DarkmodeStatus>;
 
-export const darkModeSymbol: InjectionKey<{
+export interface DarkMode {
   isDarkMode: DarkModeRef;
   status: DarkModeStatusRef;
-}> = Symbol.for("darkMode");
+}
+
+export const darkModeSymbol: InjectionKey<DarkMode> = Symbol.for("darkMode");
 
 /**
  * Inject dark mode global computed
  */
-export const useDarkMode = (): {
-  isDarkMode: DarkModeRef;
-  status: DarkModeStatusRef;
-} => {
+export const useDarkMode = (): DarkMode => {
   const darkmode = inject(darkModeSymbol);
 
   if (!darkmode) {

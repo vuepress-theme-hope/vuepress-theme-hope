@@ -7,10 +7,6 @@ import type { SidebarConfig } from "./sidebar";
 
 export interface HopeThemePageData extends GitPluginPageData {
   filePathRelative: string | null;
-  routeMeta: {
-    title: string;
-    icon?: string;
-  };
 }
 
 export interface HopeThemePageFrontmatter extends BasePageFrontMatter {

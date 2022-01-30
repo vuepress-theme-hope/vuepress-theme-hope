@@ -12,7 +12,7 @@ export interface HopeThemeFeatureLocaleOptions {
   /**
    * Blog feature
    */
-  blog?: HopeThemeBlogLocaleOptions | false;
+  blog?: HopeThemeBlogLocaleOptions;
 }
 
 export type DarkmodeConfig =
@@ -42,6 +42,7 @@ export interface HopeThemeFeatureOptions {
    */
   darkmode?: DarkmodeConfig;
 
+  // TODO: Support themeColor
   /**
    * Theme color configuration.
    *
@@ -66,4 +67,13 @@ export interface HopeThemeFeatureOptions {
    * @default 300
    */
   wordPerminute?: number;
+
+  /**
+   * Whether enable blog feature
+   *
+   * 是否启用博客功能
+   *
+   * @default true
+   */
+  blog?: boolean;
 }

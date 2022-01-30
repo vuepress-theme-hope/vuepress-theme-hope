@@ -15,6 +15,6 @@ export const useAutoLink = (item: string): AutoLink => {
   return {
     icon: resolved.meta.icon,
     text: resolved.meta.title || item,
-    link: resolved.name === "404" ? item : resolved.fullPath,
+    link: resolved.name === "Page404" ? item : resolved.fullPath,
   };
 };
