@@ -41,8 +41,7 @@ export type CategoryRef = ComputedRef<ArticleCategory[]>;
 
 export const usePageCategory = (): CategoryRef =>
   computed(() => {
-    const { categories, category = categories } =
-      usePageFrontmatter<BasePageFrontMatter>().value;
+    const { category } = usePageFrontmatter<BasePageFrontMatter>().value;
 
     // TODO: improve with Blog feature
     const { categoryPath = "" } = useThemeData().value.blog || {};
@@ -57,8 +56,7 @@ export type TagRef = ComputedRef<ArticleTag[]>;
 
 export const usePageTag = (): TagRef =>
   computed(() => {
-    const { tags, tag = tags } =
-      usePageFrontmatter<BasePageFrontMatter>().value;
+    const { tag } = usePageFrontmatter<BasePageFrontMatter>().value;
 
     // TODO: improve with Blog feature
     const { tagPath = "" } = useThemeData().value.blog || {};
@@ -73,8 +71,7 @@ export type DateRef = ComputedRef<DateInfo | null>;
 
 export const usePageDate = (): DateRef =>
   computed(() => {
-    const { time, date = time } =
-      usePageFrontmatter<BasePageFrontMatter>().value;
+    const { date } = usePageFrontmatter<BasePageFrontMatter>().value;
 
     if (date) return getDate(date, { type: "date" });
 

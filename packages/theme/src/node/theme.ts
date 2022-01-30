@@ -9,8 +9,8 @@ import { resolveEncrypt } from "./encrypt";
 import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
 
-import type { Theme } from "@vuepress/core";
-import type { HopeThemeOptions } from "../shared";
+import type { Page, Theme } from "@vuepress/core";
+import type { HopeThemeOptions, HopeThemePageData } from "../shared";
 
 export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...themeOptions },
@@ -56,7 +56,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
 
-    extendsPage,
+    extendsPage: (page) => extendsPage(app, page as Page<HopeThemePageData>),
 
     plugins: getPluginConfig(plugins, themeOptions),
   };
