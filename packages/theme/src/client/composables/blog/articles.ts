@@ -34,6 +34,11 @@ export const setupArticles = (): void => {
   watch(
     () => siteData.value.locales,
     (locales) => {
+      // remove unexisting locales
+      for (const routeLocale in articles)
+        if (!(routeLocale in locales)) delete articles[routeLocale];
+
+      // set articles for each locale
       for (const key in locales) {
         const routeSet = new Set();
 

@@ -25,12 +25,12 @@ export interface ArticleMeta {
   /**
    * article category
    */
-  category?: string[] | string;
+  category?: string[];
 
   /**
    * Article tag
    */
-  tag?: string[] | string;
+  tag?: string[];
 
   /**
    * Reading time info
