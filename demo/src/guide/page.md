@@ -6,7 +6,7 @@ title: page config
 # Set author
 author: Ms.Hope
 # Set writing time
-time: 2020-01-01
+date: 2020-01-01
 # A page can only have one category
 category: Guide
 # A page can have multiple tags
