@@ -14,7 +14,7 @@ files.forEach((pkgName) => {
   // generate package.json
   if (!existsSync(pkgPath)) {
     const pkgJSON = {
-      name: `@mr-hope/vuepress-plugin-${pkgName}`,
+      name: `vuepress-plugin-${pkgName}`,
       version,
       description: desc,
       main: "node/index.js",
@@ -58,13 +58,13 @@ ${desc}.
 ## Usage
 
 \`\`\`bash
-yarn add @mr-hope/vuepress-plugin-${pkgName}
+yarn add vuepress-plugin-${pkgName}
 \`\`\`
 
 Or
 
 \`\`\`bash
-npm i @mr-hope/vuepress-plugin-${pkgName}
+npm i vuepress-plugin-${pkgName}
 \`\`\`
 
 ---
@@ -74,13 +74,13 @@ VuePress 的 ${pkgName} 插件。
 ## 使用
 
 \`\`\`bash
-yarn add @mr-hope/vuepress-plugin-${pkgName}
+yarn add vuepress-plugin-${pkgName}
 \`\`\`
 
 或
 
 \`\`\`bash
-npm i @mr-hope/vuepress-plugin-${pkgName}
+npm i vuepress-plugin-${pkgName}
 \`\`\`
 `
     );
