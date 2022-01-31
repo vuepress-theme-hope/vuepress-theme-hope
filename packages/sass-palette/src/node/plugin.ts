@@ -46,8 +46,6 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
   return {
     name: `vuepress-plugin-sass-palette?${id}`,
 
-    multiple: true,
-
     alias: {
       [`@${id}/palette`]: app.dir.temp(`sass-palette/${id}-palette.scss`),
       [`@${id}/config`]: app.dir.temp(`sass-palette/${id}-config.scss`),
@@ -55,20 +53,20 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       [`@${id}/style`]: app.dir.temp(`sass-palette/${id}-style.scss`),
     },
 
-    async onPrepared(): Promise<void> {
-      await app.writeTemp(
-        `sass-palette/${id}-config.scss`,
-        `
+    onPrepared: () =>
+      Promise.all([
+        app.writeTemp(
+          `sass-palette/${id}-config.scss`,
+          `
 @import "${getPath(defaultPalette)}";
 @import "${getPath(defaultConfig)}";
 @import "${getPath(userPalette)}";
 @import "${getPath(userConfig)}";
 `
-      );
-
-      await app.writeTemp(
-        `sass-palette/${id}-palette.scss`,
-        `
+        ),
+        app.writeTemp(
+          `sass-palette/${id}-palette.scss`,
+          `
 @use 'sass:color';
 @use 'sass:list';
 @use 'sass:math';
@@ -98,14 +96,13 @@ $variables: map.deep-merge($defaultVariables, $userVariables);
   }
 }
 `
-      );
-
-      await app.writeTemp(
-        `sass-palette/${id}-style.scss`,
-        `@forward "${getPath(userStyle)}";
+        ),
+        app.writeTemp(
+          `sass-palette/${id}-style.scss`,
+          `@forward "${getPath(userStyle)}";
 `
-      );
-    },
+        ),
+      ]),
 
     clientAppEnhanceFiles: app.dir.temp(`sass-palette/load-${id}.js`),
   };
