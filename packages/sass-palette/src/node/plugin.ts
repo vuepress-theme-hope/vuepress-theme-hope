@@ -1,24 +1,9 @@
 import { fs, path } from "@vuepress/utils";
 
-import type { App, Plugin, PluginConfig } from "@vuepress/core";
+import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { SassPaletteOptions } from "../shared";
 
 const emptyFile = path.resolve(__dirname, "../../styles/empty.scss");
-
-const writeLoadFile = (app: App, id: string): void => {
-  const loadFilePath = app.dir.temp(`sass-palette/load-${id}.js`);
-
-  if (!fs.pathExistsSync(loadFilePath)) fs.createFileSync(loadFilePath);
-
-  fs.writeFileSync(
-    app.dir.temp(`sass-palette/load-${id}.js`),
-    `
-export default ()=>{
-  import("@${id}/palette");
-};
-`
-  );
-};
 
 export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
   {
@@ -40,9 +25,6 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
   const getPath = (path: string): string =>
     fs.pathExistsSync(path) ? path : emptyFile;
 
-  // we are using this file as clientAppEnhanceFile, so we must create and write it here
-  writeLoadFile(app, id);
-
   return {
     name: `vuepress-plugin-sass-palette?${id}`,
 
@@ -51,6 +33,17 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       [`@${id}/config`]: app.dir.temp(`sass-palette/${id}-config.scss`),
       [`@${id}/helper`]: path.resolve(__dirname, "../../styles/helper.scss"),
       [`@${id}/style`]: app.dir.temp(`sass-palette/${id}-style.scss`),
+    },
+
+    onInitialized: (): Promise<string> => {
+      return app.writeTemp(
+        `sass-palette/load-${id}.js`,
+        `
+export default ()=>{
+  import("@${id}/palette");
+};
+`
+      );
     },
 
     onPrepared: () =>
