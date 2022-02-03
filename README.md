@@ -28,6 +28,12 @@ Current branch is based on VuePress@v2, and still in W.I.P. For stable releasae 
 
 当前分支基于 VuePress@v2，仍处于 W.I.P. 稳定 v1 发行版请参见[v1 分支](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/)。
 
+### Attention ⚠️⚠️⚠️
+
+**The V2 theme is still _in developing_, and only plugins are availale! So please ONLY use plugins now in production**.
+
+**V2 主题仍在开发中，所以请仅在生产环境中使用目前发布的插件！**
+
 ## Details
 
 V2 will come together with _VuePress@v2_, with the power of _vite@v2_ _webpack@v5_ and _vue@v3_.
