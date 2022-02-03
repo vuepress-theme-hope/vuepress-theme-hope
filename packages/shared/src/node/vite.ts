@@ -148,7 +148,7 @@ function mergeConfigRecursively(
   return merged;
 }
 
-export function mergeConfig(
+export function mergeViteConfig(
   a: Record<string, any>,
   b: Record<string, any>,
   isRoot = true

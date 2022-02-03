@@ -1,4 +1,4 @@
-import { mergeConfig } from "./vite";
+import { mergeViteConfig } from "./vite";
 
 import type { App } from "@vuepress/core";
 
@@ -10,7 +10,7 @@ export const addViteOptimizeDeps = (
   module: string | string[]
 ): void => {
   if (app.options.bundler.endsWith("vite"))
-    app.options.bundlerConfig.viteOptions = mergeConfig(
+    app.options.bundlerConfig.viteOptions = mergeViteConfig(
       app.options.bundlerConfig.viteOptions as Record<string, unknown>,
       {
         optimizeDeps: {

@@ -1,4 +1,4 @@
-import { mergeConfig } from "./vite";
+import { mergeViteConfig } from "./vite";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -50,7 +50,7 @@ export const useCustomDevServer = (
       },
     };
 
-    viteBundlerConfig.viteOptions = mergeConfig(
+    viteBundlerConfig.viteOptions = mergeViteConfig(
       viteBundlerConfig.viteOptions as Record<string, unknown>,
       { plugins: [viteMockRequestPlugin] }
     );
@@ -58,8 +58,7 @@ export const useCustomDevServer = (
 
   // for webpack
   if (app.env.isDev && bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = app.options
-      .bundlerConfig as WebpackBundlerOptions;
+    const webpackBundlerConfig: WebpackBundlerOptions = bundlerConfig;
 
     const { devServerSetupMiddlewares } = webpackBundlerConfig;
 

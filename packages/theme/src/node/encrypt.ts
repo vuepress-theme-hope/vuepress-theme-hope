@@ -74,7 +74,10 @@ export const resolveEncrypt = (encrypt: HopeThemeEncryptOptions): void => {
     else if (Array.isArray(token))
       tokenConfig[key] = token
         .map((configToken) => {
-          if (typeof configToken === "string") return hashSync(configToken);
+          const hash = hashSync(configToken);
+          console.log(configToken, hash);
+
+          if (typeof configToken === "string") return hash;
 
           logger.error(`You config "themeConfig.encrypt.config", but your config is invalid. 
         

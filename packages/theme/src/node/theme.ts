@@ -5,7 +5,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlias } from "./alias";
 import { handleThemeData } from "./handleThemeData";
-import { resolveEncrypt } from "./encrypt";
+import { handleWebpackOptions } from "./encrypt";
 import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
 
@@ -16,6 +16,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...themeOptions },
   app
 ) => {
+  console.log("theme");
   addViteOptimizeDeps(app, ["@vueuse/core", "lodash.throttle"]);
 
   if (app.env.isDev)
@@ -24,6 +25,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
   if (themeOptions.encrypt) addViteOptimizeDeps(app, "bcryptjs");
 
   handleThemeData(app, themeOptions);
+  handleWebpackOptions(app);
 
   useGitPlugin(app, {
     createdTime: true,
@@ -42,8 +44,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
     palette: ".vuepress/styles/palette.scss",
     style: ".vuepress/styles/index.scss",
   });
-
-  resolveEncrypt(themeOptions.encrypt || {});
 
   return {
     name: "vuepress-theme-hope",

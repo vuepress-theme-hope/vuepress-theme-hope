@@ -55,9 +55,13 @@ export const usePathEncrypt = (): PathEncrypt => {
     const { config = {} } = options.value;
     const matchedKeys = getPathMatchedKeys(route.path);
 
+    console.log(inputToken);
+
     for (const hitKey of matchedKeys) {
       const hitConfig = config[hitKey];
       const hitTokens = typeof hitConfig === "string" ? [hitConfig] : hitConfig;
+
+      hitTokens.forEach((token) => console.log(checkToken(inputToken, token)));
 
       // some of the tokens matches
       if (hitTokens.filter((token) => checkToken(inputToken, token))) {
