@@ -77,6 +77,10 @@ Here is a list of changes:
 
 ## New plugins
 
+- [x] Blog2 ![new](https://img.shields.io/badge/-new-brightgreen)
+
+  Build a own blog plugin to support blog with better performance
+
 - [x] LightGallery ![new](https://img.shields.io/badge/-new-brightgreen)
 
   A image viewer plugin for VuePress using [lightGallary](https://www.lightgalleryjs.com/)
@@ -92,10 +96,6 @@ Here is a list of changes:
 - [ ] Share2 ![new](https://img.shields.io/badge/-new-brightgreen)
 
   A new share plugin providing page share.
-
-- [ ] SimpleBlog ![new](https://img.shields.io/badge/-new-brightgreen)
-
-  Build a own blog plugin to support blog with better performance
 
 ## Theme changes
 
