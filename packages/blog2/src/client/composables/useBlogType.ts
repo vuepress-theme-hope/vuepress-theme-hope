@@ -2,6 +2,7 @@ import { typeMap } from "@temp/blog/type";
 import { useRouteLocale } from "@vuepress/client";
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
+import { resolveRouteWithRedirect } from "../utils";
 
 import type { ComputedRef } from "vue";
 import type { Articles } from "./types";
@@ -28,14 +29,17 @@ export const useBlogType = <
     for (const pageKey of blogTypeMap.value[key][routeLocale.value]) {
       const route = routes.find(({ name }) => name === pageKey);
 
-      if (route)
+      if (route) {
+        const finalRoute = resolveRouteWithRedirect(route.path);
+
         result.push({
-          path: route.path,
+          path: finalRoute.path,
           meta:
             BLOG_META_SCOPE === ""
-              ? (route.meta as T)
-              : (route.meta[BLOG_META_SCOPE] as T),
+              ? (finalRoute.meta as T)
+              : (finalRoute.meta[BLOG_META_SCOPE] as T),
         });
+      }
     }
 
     return result;
