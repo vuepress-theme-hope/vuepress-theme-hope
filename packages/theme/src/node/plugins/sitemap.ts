@@ -1,8 +1,8 @@
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
-import type { HopeThemeOptions } from "../../shared";
+import type { HopeThemeConfig } from "../../shared";
 
 export const resolveSitemapOptions = (
-  themeConfig: HopeThemeOptions,
+  themeConfig: HopeThemeConfig,
   options?: SitemapOptions | false
 ): SitemapOptions | false => {
   if (options === false) return false;

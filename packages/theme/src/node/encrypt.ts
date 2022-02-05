@@ -75,7 +75,6 @@ export const resolveEncrypt = (encrypt: HopeThemeEncryptOptions): void => {
       tokenConfig[key] = token
         .map((configToken) => {
           const hash = hashSync(configToken);
-          console.log(configToken, hash);
 
           if (typeof configToken === "string") return hash;
 

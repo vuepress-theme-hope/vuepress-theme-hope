@@ -1,11 +1,12 @@
-import { useRouteLocale } from "@vuepress/client";
+import { useBlogArticles } from "vuepress-plugin-blog2/lib/client";
 import { computed, inject, provide } from "vue";
-import { useArticles } from "./articles";
+import { compareDate } from "../../utils";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { ArticleDetail } from "../../../shared";
 
 export type TimelineListRef = ComputedRef<ArticleDetail[]>;
+
 export const timelineListSymbol: InjectionKey<TimelineListRef> =
   Symbol.for("timelineList");
 
@@ -13,24 +14,25 @@ export const timelineListSymbol: InjectionKey<TimelineListRef> =
  * Inject timelineList
  */
 export const useTimelineList = (): TimelineListRef => {
-  const timeline = inject(timelineListSymbol);
+  const timelineList = inject(timelineListSymbol);
 
-  if (!timeline) {
+  if (!timelineList) {
     throw new Error("useTimelineList() is called without provider.");
   }
 
-  return timeline;
+  return timelineList;
 };
 
 /**
  * Provide timelineList
  */
 export const setupTimelineList = (): void => {
-  const articles = useArticles();
-  const routeLocale = useRouteLocale();
+  const currentArticles = useBlogArticles<ArticleDetail>();
 
   const timelineList = computed(() =>
-    articles[routeLocale.value].filter((article) => article.date)
+    currentArticles.value
+      .map(({ meta, path }) => ({ ...meta, path }))
+      .sort((articleA, articleB) => compareDate(articleA.date, articleB.date))
   );
 
   provide(timelineListSymbol, timelineList);

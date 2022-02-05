@@ -1,12 +1,12 @@
-import { useRouteLocale } from "@vuepress/client";
+import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 import { computed, inject, provide } from "vue";
-import { useArticles } from "./articles";
+import { sortArticles } from "../../utils";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { ArticleDetail } from "../../../shared";
-import { sortArticles } from "../..";
 
 export type SlideListRef = ComputedRef<ArticleDetail[]>;
+
 export const slideListSymbol: InjectionKey<SlideListRef> =
   Symbol.for("slideList");
 
@@ -14,28 +14,30 @@ export const slideListSymbol: InjectionKey<SlideListRef> =
  * Inject slideList
  */
 export const useSlideList = (): SlideListRef => {
-  const timeline = inject(slideListSymbol);
+  const slideList = inject(slideListSymbol);
 
-  if (!timeline) {
+  if (!slideList) {
     throw new Error("useSlideList() is called without provider.");
   }
 
-  return timeline;
+  return slideList;
 };
 
 /**
  * Provide slideList
  */
 export const setupSlideList = (): void => {
-  const articles = useArticles();
-  const routeLocale = useRouteLocale();
+  const currentSlides = useBlogType<ArticleDetail>("slide");
 
-  const slideList = computed(() =>
-    sortArticles(
-      articles[routeLocale.value].filter(({ type }) => type === "slide"),
+  const slideList = computed(() => {
+    return sortArticles(
+      currentSlides.value.map(({ meta, path }) => ({
+        ...meta,
+        path,
+      })),
       "sticky"
-    )
-  );
+    );
+  });
 
   provide(slideListSymbol, slideList);
 };

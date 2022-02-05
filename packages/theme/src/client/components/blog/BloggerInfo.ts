@@ -1,17 +1,19 @@
-import { getAuthor } from "@mr-hope/vuepress-shared";
+import { getAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import MediaLinks from "../medialinks";
 import {
-  useArticleList,
   useBlogOptions,
+  useArticleList,
+  useCategoryMap,
+  useTimelineList,
+  useTagMap,
   useThemeData,
   useThemeLocaleData,
 } from "../../composables";
 import { navigate } from "../../utils";
 
 import type { VNode } from "vue";
-import type {} from "../../../shared";
 
 export default defineComponent({
   name: "BloggerInfo",
@@ -22,6 +24,9 @@ export default defineComponent({
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const articleList = useArticleList();
+    const categoryList = useCategoryMap();
+    const tagList = useTagMap();
+    const timelineList = useTimelineList();
 
     const bloggerName = computed(
       () =>
@@ -89,23 +94,26 @@ export default defineComponent({
             ]
           ),
           h("div", { class: "num-wrapper" }, [
-            //     <div @click="navigate('/article/')">
-            //       <div class="num">{{ articleNumber }}</div>
-            //       <div>{{ locales.article }}</div>
-            //     </div>
-            //     <div @click="navigate('/category/')">
-            //       <div class="num">{{ $category.list.length }}</div>
-            //       <div>{{ locales.category }}</div>
-            //     </div>
-            //     <div @click="navigate('/tag/')">
-            //       <div class="num">{{ $tag.list.length }}</div>
-            //       <div>{{ locales.tag }}</div>
-            //     </div>
-            //     <div @click="navigate('/timeline/')">
-            //       <div class="num">{{ $timelineItems.length }}</div>
-            //       <div>{{ locales.timeline }}</div>
-            //     </div>
-            //   </div>
+            h("div", { onClick: () => navigate("/article/") }, [
+              h("div", { class: "number" }, articleList.value.length),
+              h("div", locale.value.article),
+            ]),
+            h("div", { onClick: () => navigate("/category/") }, [
+              h(
+                "div",
+                { class: "number" },
+                Object.keys(categoryList.value).length
+              ),
+              h("div", locale.value.category),
+            ]),
+            h("div", { onClick: () => navigate("/tag/") }, [
+              h("div", { class: "number" }, Object.keys(tagList.value).length),
+              h("div", locale.value.tag),
+            ]),
+            h("div", { onClick: () => navigate("/timeline/") }, [
+              h("div", { class: "number" }, timelineList.value.length),
+              h("div", locale.value.timeline),
+            ]),
           ]),
           h(MediaLinks),
         ]

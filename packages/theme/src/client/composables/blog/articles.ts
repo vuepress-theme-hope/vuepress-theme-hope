@@ -1,20 +1,17 @@
-import { pagesRoutes } from "@internal/pagesRoutes";
-import { useSiteData } from "@vuepress/client";
-import { resolveLocalePath } from "@vuepress/shared";
-import { inject, provide, reactive, watch } from "vue";
-import { compareDate, resolveRouteWithRedirect } from "../../utils";
+import { useBlogArticles } from "vuepress-plugin-blog2/lib/client";
+import { computed, inject, provide } from "vue";
 
-import type { InjectionKey } from "vue";
+import type { ComputedRef, InjectionKey } from "vue";
 import type { ArticleDetail } from "../../../shared";
 
-export type Articles = Record<string, ArticleDetail[]>;
+export type ArticlesRef = ComputedRef<ArticleDetail[]>;
 
-export const articlesSymbol: InjectionKey<Articles> = Symbol.for("articles");
+export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol.for("articles");
 
 /**
  * Inject articles
  */
-export const useArticles = (): Articles => {
+export const useArticles = (): ArticlesRef => {
   const articles = inject(articlesSymbol);
 
   if (!articles) {
@@ -25,52 +22,11 @@ export const useArticles = (): Articles => {
 };
 
 export const setupArticles = (): void => {
-  const siteData = useSiteData();
+  const currentArticles = useBlogArticles<ArticleDetail>();
 
-  const articles = reactive<Articles>({});
+  const articles = computed(() =>
+    currentArticles.value.map(({ meta, path }) => ({ ...meta, path }))
+  );
 
   provide(articlesSymbol, articles);
-
-  watch(
-    () => siteData.value.locales,
-    (locales) => {
-      // remove unexisting locales
-      for (const routeLocale in articles)
-        if (!(routeLocale in locales)) delete articles[routeLocale];
-
-      // set articles for each locale
-      for (const key in locales) {
-        const routeSet = new Set();
-
-        articles[key] = pagesRoutes
-          // extract routeMeta and path
-          .map((record) => {
-            const finalRoute = resolveRouteWithRedirect(record.path);
-
-            if (
-              // route are not in current locale
-              resolveLocalePath(locales, finalRoute.path) !== key ||
-              // route already exists
-              routeSet.has(finalRoute.path)
-            )
-              return null;
-
-            routeSet.add(finalRoute.path);
-
-            return {
-              path: finalRoute.path,
-              ...resolveRouteWithRedirect(finalRoute.path).meta,
-            };
-          })
-          .filter(
-            (record): record is ArticleDetail =>
-              record !== null && record.type !== "page"
-          )
-          .sort((articleA, articleB) =>
-            compareDate(articleA.date, articleB.date)
-          );
-      }
-    },
-    { immediate: true }
-  );
 };

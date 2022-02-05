@@ -1,11 +1,12 @@
-import { inject, provide, reactive, watch } from "vue";
-import { useArticles } from "./articles";
+import { computed, inject, provide } from "vue";
+import { useBlogCategory } from "vuepress-plugin-blog2/lib/client";
 import { sortArticles } from "../../utils";
 
-import type { InjectionKey } from "vue";
+import type { ComputedRef, InjectionKey } from "vue";
 import type { ArticleDetail } from "../../../shared";
 
-export type CategoryMapRef = Record<string, Record<string, ArticleDetail[]>>;
+export type CategoryMapRef = ComputedRef<Record<string, ArticleDetail[]>>;
+
 export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
   Symbol.for("categoryMap");
 
@@ -13,48 +14,36 @@ export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
  * Inject categoryMap
  */
 export const useCategoryMap = (): CategoryMapRef => {
-  const timeline = inject(categoryMapSymbol);
+  const categoryMap = inject(categoryMapSymbol);
 
-  if (!timeline) {
+  if (!categoryMap) {
     throw new Error("useCategoryMap() is called without provider.");
   }
 
-  return timeline;
+  return categoryMap;
 };
 
 /**
  * Provide categoryMap
  */
 export const setupCategoryMap = (): void => {
-  const articles = useArticles();
-  const categoryMap = reactive<CategoryMapRef>({});
+  const currentCategoryMap = useBlogCategory<ArticleDetail>("category");
+
+  const categoryMap = computed(() => {
+    const result: Record<string, ArticleDetail[]> = {};
+
+    for (const name in currentCategoryMap.value) {
+      result[name] = sortArticles(
+        currentCategoryMap.value[name].map(({ meta, path }) => ({
+          ...meta,
+          path,
+        })),
+        "sticky"
+      );
+    }
+
+    return result;
+  });
 
   provide(categoryMapSymbol, categoryMap);
-
-  watch(
-    () => articles,
-    (articles) => {
-      // remove object
-      for (const routeLocale in categoryMap) delete categoryMap[routeLocale];
-
-      for (const key in articles) {
-        categoryMap[key] = {};
-
-        articles[key].forEach((article) => {
-          const { tag } = article;
-
-          if (tag)
-            tag.forEach((item) => {
-              if (!categoryMap[key][item]) categoryMap[key][item] = [];
-
-              categoryMap[key][item].push(article);
-            });
-        });
-
-        for (const tag in categoryMap[key])
-          categoryMap[key][tag] = sortArticles(categoryMap[key][tag], "sticky");
-      }
-    },
-    { immediate: true }
-  );
 };

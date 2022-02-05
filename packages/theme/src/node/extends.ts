@@ -3,6 +3,7 @@ import { logger } from "@vuepress/utils";
 
 import type { App, Page } from "@vuepress/core";
 import type {
+  HopeThemeConfig,
   HopeThemePageData,
   HopeThemeBlogHomePageFrontmatter,
   HopeThemeProjectHomePageFrontmatter,
@@ -10,11 +11,12 @@ import type {
 } from "../shared";
 
 export const extendsPage = (app: App, page: Page<HopeThemePageData>): void => {
+  const { config = {} } = (app.options.themeConfig as HopeThemeConfig).encrypt;
   const frontmatter = page.frontmatter as
     | HopeThemeProjectHomePageFrontmatter
     | HopeThemeBlogHomePageFrontmatter
     | HopeThemeNormalPageFrontmatter;
-  const { filePathRelative } = page;
+  const { filePathRelative, path } = page;
   const { createdTime } = page.data.git;
 
   // handle deprecated
@@ -52,10 +54,28 @@ export const extendsPage = (app: App, page: Page<HopeThemePageData>): void => {
 
     delete frontmatter.date;
   }
+
+  // resolve category
+  if ("category" in frontmatter) {
+    const category = getCategory(frontmatter.category);
+
+    frontmatter.category = category;
+    page.routeMeta.category = category;
+  }
+
+  // resolve tag
+  if ("tag" in frontmatter) {
+    const tag = getTag(frontmatter.tag);
+
+    frontmatter.tag = tag;
+    page.routeMeta.tag = tag;
+  }
+
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;
 
-  if (frontmatter.home) page.routeMeta = { type: "home", title: page.title };
+  if (frontmatter.home)
+    page.routeMeta = { ...page.routeMeta, type: "home", title: page.title };
   else {
     const isArticle =
       // declaring this is an article
@@ -74,13 +94,15 @@ export const extendsPage = (app: App, page: Page<HopeThemePageData>): void => {
       author: frontmatter.author,
       date:
         frontmatter.date || (createdTime ? new Date(createdTime) : undefined),
-      category: getCategory(frontmatter.category),
-      tag: getTag(frontmatter.tag),
       readingTime: page.data.readingTime,
       excerpt: page.excerpt,
       sticky: frontmatter.sticky,
       star: frontmatter.star,
       image: frontmatter.cover,
     };
+
+    // resolve encrypted
+    if (Object.keys(config).some((key) => path.startsWith(key)))
+      page.routeMeta.isEncrypted = true;
   }
 };

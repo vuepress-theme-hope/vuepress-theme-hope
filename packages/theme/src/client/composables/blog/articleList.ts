@@ -1,12 +1,12 @@
-import { useRouteLocale } from "@vuepress/client";
 import { computed, inject, provide } from "vue";
 import { useArticles } from "./articles";
+import { sortArticles } from "../../utils";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { ArticleDetail } from "../../../shared";
-import { sortArticles } from "../..";
 
 export type ArticleListRef = ComputedRef<ArticleDetail[]>;
+
 export const articleListSymbol: InjectionKey<ArticleListRef> =
   Symbol.for("articleList");
 
@@ -28,11 +28,7 @@ export const useArticleList = (): ArticleListRef => {
  */
 export const setupArticleList = (): void => {
   const articles = useArticles();
-  const routeLocale = useRouteLocale();
-
-  const articleList = computed(() =>
-    sortArticles(articles[routeLocale.value], "sticky")
-  );
+  const articleList = computed(() => sortArticles(articles.value, "sticky"));
 
   provide(articleListSymbol, articleList);
 };

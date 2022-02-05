@@ -10,13 +10,16 @@ import { extendsPage } from "./extends";
 import { getPluginConfig } from "./plugins";
 
 import type { Page, Theme } from "@vuepress/core";
-import type { HopeThemeOptions, HopeThemePageData } from "../shared";
+import type {
+  HopeThemeConfig,
+  HopeThemeOptions,
+  HopeThemePageData,
+} from "../shared";
 
 export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...themeOptions },
   app
 ) => {
-  console.log("theme");
   addViteOptimizeDeps(app, ["@vueuse/core", "lodash.throttle"]);
 
   if (app.env.isDev)
@@ -60,6 +63,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     extendsPage: (page) => extendsPage(app, page as Page<HopeThemePageData>),
 
-    plugins: getPluginConfig(plugins, themeOptions),
+    plugins: getPluginConfig(plugins, themeOptions as HopeThemeConfig),
   };
 };

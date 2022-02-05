@@ -1,8 +1,8 @@
 import type { SeoOptions } from "vuepress-plugin-seo2";
-import type { HopeThemeOptions } from "../../shared";
+import type { HopeThemeConfig } from "../../shared";
 
 export const resolveSEOOptions = (
-  themeConfig: HopeThemeOptions,
+  themeConfig: HopeThemeConfig,
   options?: SeoOptions | false
 ): SeoOptions | false => {
   if (options === false) return false;

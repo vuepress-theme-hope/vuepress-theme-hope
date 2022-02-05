@@ -1,11 +1,21 @@
 import type { Author } from "@mr-hope/vuepress-shared";
 import { ReadingTime } from "vuepress-plugin-reading-time2";
 
-export interface ArticleMeta {
+export interface ArticleMeta extends Record<string, unknown> {
   /**
    * Type
    */
   type: "article" | "page" | "slide";
+
+  /**
+   * Whether is encrypted
+   */
+  isEncrypted?: boolean;
+
+  /**
+   * Whether is original
+   */
+  isOriginal?: boolean;
 
   /**
    * Article title

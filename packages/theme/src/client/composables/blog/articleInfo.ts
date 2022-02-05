@@ -4,7 +4,6 @@ import {
   getDate,
   getTag,
 } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, reactive, Ref } from "vue";
 import { useBlogOptions } from "./options";
 import { usePure, useThemeData } from "../themeData";
@@ -16,11 +15,7 @@ import type {
 } from "@mr-hope/vuepress-plugin-components";
 import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
 import type { ComputedRef, UnwrapNestedRefs } from "vue";
-import type { ReadingTime } from "vuepress-plugin-reading-time2";
-import type {
-  ArticleDetail,
-  HopeThemeNormalPageFrontmatter,
-} from "../../../shared";
+import type { ArticleDetail } from "../../../shared";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
@@ -80,8 +75,6 @@ export const useArticleInfo = (
   article: Ref<ArticleDetail>
 ): UnwrapNestedRefs<ArticleInfoProps> => {
   const blogOptions = useBlogOptions();
-  const page = usePageData<{ readingTime: ReadingTime }>();
-  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const author = useArticleAuthor(article);
   const category = useArticleCategory(article);
   const tag = useArticleTag(article);
@@ -94,9 +87,8 @@ export const useArticleInfo = (
     category: category.value,
     date: date.value,
     tag: tag.value,
-    original: frontmatter.value.original,
-    readingTime: page.value.readingTime,
-    visitor: frontmatter.value.visitor !== false,
+    original: article.value.isOriginal,
+    readingTime: article.value.readingTime,
     hint: !pure.value,
   });
 };

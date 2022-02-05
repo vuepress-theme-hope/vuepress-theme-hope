@@ -1,4 +1,3 @@
-import { useRouteLocale } from "@vuepress/client";
 import {
   computed,
   defineComponent,
@@ -10,8 +9,7 @@ import {
 import ArticleItem from "./ArticleItem";
 import DropTransition from "../transitions/DropTransition.vue";
 import EmptyIcon from "../icons/EmptyIcon.vue";
-import { useArticles, useBlogOptions } from "../../composables";
-import { sortArticles } from "../../utils";
+import { useBlogOptions } from "../../composables";
 
 import type { PropType, VNode } from "vue";
 import type { ArticleDetail } from "../../../shared";
@@ -39,27 +37,21 @@ export default defineComponent({
   name: "ArticleList",
 
   props: {
-    filter: {
-      type: Function as PropType<(article: ArticleDetail) => boolean>,
-      required: true,
+    articleList: {
+      type: Array as PropType<ArticleDetail[]>,
+      default: () => [],
     },
   },
 
   setup(props) {
-    const article = useArticles();
     const blogOptions = useBlogOptions();
-    const rotueLocale = useRouteLocale();
 
     const currentPage = ref(1);
 
     const articlePerPage = computed(() => blogOptions.value.articlePerPage);
 
-    const articleList = computed(() => {
-      return sortArticles(article[rotueLocale.value].filter(props.filter));
-    });
-
     const currentArticles = computed(() =>
-      articleList.value.slice(
+      props.articleList.slice(
         (currentPage.value - 1) * articlePerPage.value,
         currentPage.value * articlePerPage.value
       )
@@ -91,7 +83,7 @@ export default defineComponent({
               h(resolveComponent("Pagination"), {
                 currentPage: currentPage.value,
                 perPage: articlePerPage.value,
-                total: articleList.value.length,
+                total: props.articleList.length,
                 updateCurrentPage: (value: number) => {
                   currentPage.value = value;
                 },
