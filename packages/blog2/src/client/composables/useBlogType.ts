@@ -14,25 +14,36 @@ declare const BLOG_META_SCOPE: string;
 
 export const blogTypeMap = ref(typeMap);
 
+export interface BlogTypeData<
+  T extends Record<string, unknown> = Record<string, unknown>
+> {
+  path: string;
+  items: Articles<T>;
+}
+
 export const useBlogType = <
   T extends Record<string, unknown> = Record<string, unknown>
 >(
   key: string
-): ComputedRef<Articles<T>> => {
+): ComputedRef<BlogTypeData<T>> => {
   const router = useRouter();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
     const routes = router.getRoutes();
-    const result: Articles<T> = [];
+    const configMap = blogTypeMap.value[key][routeLocale.value];
+    const result: BlogTypeData<T> = {
+      path: configMap.path,
+      items: [],
+    };
 
-    for (const pageKey of blogTypeMap.value[key][routeLocale.value]) {
+    for (const pageKey of configMap.keys) {
       const route = routes.find(({ name }) => name === pageKey);
 
       if (route) {
         const finalRoute = resolveRouteWithRedirect(route.path);
 
-        result.push({
+        result.items.push({
           path: finalRoute.path,
           meta:
             BLOG_META_SCOPE === ""

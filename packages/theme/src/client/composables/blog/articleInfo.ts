@@ -15,11 +15,11 @@ import type {
 } from "@mr-hope/vuepress-plugin-components";
 import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
 import type { ComputedRef, UnwrapNestedRefs } from "vue";
-import type { ArticleDetail } from "../../../shared";
+import type { ArticleMeta } from "../../../shared";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
-export const useArticleAuthor = (article: Ref<ArticleDetail>): AuthorRef =>
+export const useArticleAuthor = (article: Ref<ArticleMeta>): AuthorRef =>
   computed(() => {
     const { author } = article.value;
 
@@ -33,9 +33,7 @@ export const useArticleAuthor = (article: Ref<ArticleDetail>): AuthorRef =>
 
 export type CategoryRef = ComputedRef<ArticleCategory[]>;
 
-export const useArticleCategory = (
-  article: Ref<ArticleDetail>
-): CategoryRef => {
+export const useArticleCategory = (article: Ref<ArticleMeta>): CategoryRef => {
   const blogOptions = useBlogOptions();
 
   return computed(() =>
@@ -51,7 +49,7 @@ export const useArticleCategory = (
 
 export type TagRef = ComputedRef<ArticleTag[]>;
 
-export const useArticleTag = (article: Ref<ArticleDetail>): TagRef => {
+export const useArticleTag = (article: Ref<ArticleMeta>): TagRef => {
   const blogOptions = useBlogOptions();
 
   return computed(() =>
@@ -64,7 +62,7 @@ export const useArticleTag = (article: Ref<ArticleDetail>): TagRef => {
 
 export type DateRef = ComputedRef<DateInfo | null>;
 
-export const useArticleDate = (article: Ref<ArticleDetail>): DateRef =>
+export const useArticleDate = (article: Ref<ArticleMeta>): DateRef =>
   computed(() => {
     const { date } = article.value;
 
@@ -72,7 +70,7 @@ export const useArticleDate = (article: Ref<ArticleDetail>): DateRef =>
   });
 
 export const useArticleInfo = (
-  article: Ref<ArticleDetail>
+  article: Ref<ArticleMeta>
 ): UnwrapNestedRefs<ArticleInfoProps> => {
   const blogOptions = useBlogOptions();
   const author = useArticleAuthor(article);

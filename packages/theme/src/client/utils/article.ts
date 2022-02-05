@@ -1,4 +1,4 @@
-import type { ArticleDetail } from "../../shared";
+import type { ArticleMeta } from "../../shared";
 
 export const compareDate = (
   dateA: Date | undefined,
@@ -11,9 +11,9 @@ export const compareDate = (
 };
 
 export const sortArticles = (
-  articles: ArticleDetail[],
+  articles: ArticleMeta[],
   compareKey?: "sticky" | "star"
-): ArticleDetail[] =>
+): ArticleMeta[] =>
   articles.slice(0).sort((prev, next) => {
     if (compareKey) {
       const prevKey = prev[compareKey];

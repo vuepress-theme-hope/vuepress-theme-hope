@@ -1,5 +1,5 @@
 import { createPage } from "@vuepress/core";
-import { logger } from "./utils";
+import { logger, removeLeadingSlash } from "./utils";
 
 import type { App } from "@vuepress/core";
 import type { BlogOptions, PageMap, TypeMap } from "../shared";
@@ -35,6 +35,7 @@ export const prepareType = (
       async (
         {
           key,
+          sorter = (): number => -1,
           filter = (): boolean => true,
           path = "/:key/",
           layout = "Layout",
@@ -52,7 +53,9 @@ export const prepareType = (
 
         for (const routeLocale in pageMap) {
           const page = await createPage(app, {
-            path: slugify(path.replace(/:key/g, key)),
+            path: `${routeLocale}${removeLeadingSlash(
+              slugify(path.replace(/:key/g, key))
+            )}`,
             frontmatter: {
               type: "type",
               key,
@@ -60,12 +63,16 @@ export const prepareType = (
             },
           });
 
-          typeMap[routeLocale] = pageMap[routeLocale]
-            .filter(filter)
-            .map(({ key }) => key);
-
           app.pages.push(page);
           pagePaths.push(page.path);
+
+          typeMap[routeLocale] = {
+            path: page.path,
+            keys: pageMap[routeLocale]
+              .filter(filter)
+              .sort(sorter)
+              .map(({ key }) => key),
+          };
         }
 
         return {

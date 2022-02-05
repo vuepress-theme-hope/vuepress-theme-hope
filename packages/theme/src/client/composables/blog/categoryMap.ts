@@ -1,11 +1,11 @@
-import { computed, inject, provide } from "vue";
 import { useBlogCategory } from "vuepress-plugin-blog2/lib/client";
-import { sortArticles } from "../../utils";
+import { inject, provide } from "vue";
 
+import type { BlogCategoryData } from "vuepress-plugin-blog2/lib/client";
 import type { ComputedRef, InjectionKey } from "vue";
-import type { ArticleDetail } from "../../../shared";
+import type { ArticleMeta } from "../../../shared";
 
-export type CategoryMapRef = ComputedRef<Record<string, ArticleDetail[]>>;
+export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleMeta>>;
 
 export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
   Symbol.for("categoryMap");
@@ -27,23 +27,7 @@ export const useCategoryMap = (): CategoryMapRef => {
  * Provide categoryMap
  */
 export const setupCategoryMap = (): void => {
-  const currentCategoryMap = useBlogCategory<ArticleDetail>("category");
-
-  const categoryMap = computed(() => {
-    const result: Record<string, ArticleDetail[]> = {};
-
-    for (const name in currentCategoryMap.value) {
-      result[name] = sortArticles(
-        currentCategoryMap.value[name].map(({ meta, path }) => ({
-          ...meta,
-          path,
-        })),
-        "sticky"
-      );
-    }
-
-    return result;
-  });
+  const categoryMap = useBlogCategory<ArticleMeta>("category");
 
   provide(categoryMapSymbol, categoryMap);
 };

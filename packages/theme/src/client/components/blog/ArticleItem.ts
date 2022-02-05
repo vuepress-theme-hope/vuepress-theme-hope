@@ -6,7 +6,7 @@ import { LockIcon, SlideIcon, StickyIcon } from "../icons";
 import { useArticleInfo, usePathEncrypt } from "../../composables";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleDetail } from "../../../shared";
+import type { ArticleMeta } from "../../../shared";
 
 import "../../styles/blog/article-item.scss";
 
@@ -14,22 +14,21 @@ export default defineComponent({
   name: "ArticleItem",
 
   props: {
-    article: {
-      type: Object as PropType<ArticleDetail>,
+    path: { type: String, required: true },
+    meta: {
+      type: Object as PropType<ArticleMeta>,
       required: true,
     },
   },
 
   setup(props) {
     const router = useRouter();
-    const article = toRef(props, "article");
+    const meta = toRef(props, "meta");
     const { getPathEncryptStatus } = usePathEncrypt();
 
-    const isEncrypted = computed(() =>
-      getPathEncryptStatus(article.value.path)
-    );
+    const isEncrypted = computed(() => getPathEncryptStatus(props.path));
 
-    const articleInfo = useArticleInfo(article);
+    const articleInfo = useArticleInfo(meta);
 
     return (): VNode =>
       h(
@@ -40,27 +39,27 @@ export default defineComponent({
           typeof: "Article",
         },
         [
-          article.value.sticky ? h(StickyIcon) : null,
+          meta.value.sticky ? h(StickyIcon) : null,
           h(
             "header",
             {
               class: "title",
-              onClick: () => router.push(article.value.path),
+              onClick: () => router.push(props.path),
             },
             [
               isEncrypted.value ? h(LockIcon) : null,
-              article.value.type === "slide" ? h(SlideIcon) : null,
-              h("span", { property: "headline" }, article.value.title),
-              article.value.cover
+              meta.value.type === "slide" ? h(SlideIcon) : null,
+              h("span", { property: "headline" }, meta.value.title),
+              meta.value.cover
                 ? h("meta", {
                     property: "image",
-                    content: withBase(article.value.cover),
+                    content: withBase(meta.value.cover),
                   })
                 : null,
             ]
           ),
-          article.value.excerpt
-            ? h("div", { class: "excerpt", innerHTML: article.value.excerpt })
+          meta.value.excerpt
+            ? h("div", { class: "excerpt", innerHTML: meta.value.excerpt })
             : null,
           h("hr", { class: "hr" }),
           h(resolveComponent("ArticleInfo"), articleInfo),

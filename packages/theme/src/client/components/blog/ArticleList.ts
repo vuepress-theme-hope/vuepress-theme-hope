@@ -12,7 +12,7 @@ import EmptyIcon from "../icons/EmptyIcon.vue";
 import { useBlogOptions } from "../../composables";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleDetail } from "../../../shared";
+import type { ArticleMeta } from "../../../shared";
 
 import "../../styles/blog/article-list.scss";
 
@@ -38,7 +38,7 @@ export default defineComponent({
 
   props: {
     articleList: {
-      type: Array as PropType<ArticleDetail[]>,
+      type: Array as PropType<{ path: string; meta: ArticleMeta }[]>,
       default: () => [],
     },
   },
@@ -75,9 +75,9 @@ export default defineComponent({
         { id: "article-list", class: "article-wrapper" },
         currentArticles.value.length
           ? [
-              ...currentArticles.value.map((article, index) =>
+              ...currentArticles.value.map(({ path, meta }, index) =>
                 h(DropTransition, { delay: index * 0.04 }, () =>
-                  h(ArticleItem, { article })
+                  h(ArticleItem, { meta, path })
                 )
               ),
               h(resolveComponent("Pagination"), {

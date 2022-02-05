@@ -1,7 +1,7 @@
 import { createPage } from "@vuepress/core";
-import { logger } from "./utils";
+import { logger, removeLeadingSlash } from "./utils";
 
-import type { App } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import type { BlogOptions, CategoryMap, PageMap } from "../shared";
 
 const HMR_CODE = `
@@ -36,6 +36,7 @@ export const prepareCategory = (
         {
           key,
           getter,
+          sorter = (): number => -1,
           path = "/:key/",
           layout = "Layout",
           itemPath = "/:key/:name/",
@@ -67,50 +68,63 @@ export const prepareCategory = (
                   .replace(/:key/g, slugify(key))
                   .replace(/:name/g, slugify(name));
 
-        const mainPage = await createPage(app, {
-          path: path.replace(/:key/g, slugify(key)),
-          frontmatter: {
-            type: "category",
-            key,
-            layout,
-          },
-        });
-
-        app.pages.push(mainPage);
-        pagePaths.push(mainPage.path);
-
         for (const routeLocale in pageMap) {
-          categoryMap[routeLocale] = {};
+          const mainPage = await createPage(app, {
+            path: `${routeLocale}${removeLeadingSlash(
+              path.replace(/:key/g, slugify(key))
+            )}`,
+            frontmatter: {
+              type: "category",
+              key,
+              layout,
+            },
+          });
+
+          app.pages.push(mainPage);
+          pagePaths.push(mainPage.path);
+
+          categoryMap[routeLocale] = {
+            path: mainPage.path,
+            map: {},
+          };
+
+          const { map } = categoryMap[routeLocale];
+          const pageMap: Record<string, Page[]> = {};
 
           pageMap[routeLocale].forEach((page) => {
             const categories = getter(page);
 
-            categories.forEach((category) => {
-              if (!categoryMap[routeLocale][category])
-                categoryMap[routeLocale][category] = [];
+            categories.map(async (category) => {
+              if (!map[category]) {
+                const page = await createPage(app, {
+                  path: `${routeLocale}${removeLeadingSlash(
+                    getItemPath(category)
+                  )}`,
+                  frontmatter: {
+                    type: "category",
+                    name: category,
+                    key,
+                    layout: itemLayout,
+                  },
+                });
 
-              categoryMap[routeLocale][category].push(page.key);
+                app.pages.push(page);
+                pagePaths.push(page.path);
+
+                map[category] = {
+                  path: page.path,
+                  keys: [],
+                };
+
+                pageMap[category] = [];
+              }
+
+              pageMap[category].push(page);
             });
           });
-        }
 
-        for (const routeLocale in categoryMap) {
-          const categoryRouteMap = categoryMap[routeLocale];
-
-          for (const name in categoryRouteMap) {
-            const page = await createPage(app, {
-              path: getItemPath(name),
-              frontmatter: {
-                type: "category",
-                name,
-                key,
-                layout: itemLayout,
-              },
-            });
-
-            app.pages.push(page);
-            pagePaths.push(page.path);
-          }
+          for (const name in map)
+            map[name].keys = pageMap[name].sort(sorter).map(({ key }) => key);
         }
 
         return {

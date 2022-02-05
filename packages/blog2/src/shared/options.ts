@@ -12,6 +12,11 @@ export interface BlogTypeOptions {
   filter: (page: Page) => boolean;
 
   /**
+   * A custom function to sort the pages
+   */
+  sorter?: (pageA: Page, pageB: Page) => number;
+
+  /**
    * Path to register
    *
    * @default '/:key/'
@@ -36,6 +41,11 @@ export interface BlogCategoryOptoins {
    * Function getting category
    */
   getter: (page: Page) => string[];
+
+  /**
+   * A custom function to sort the pages
+   */
+  sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
    * Path pattern or custom function

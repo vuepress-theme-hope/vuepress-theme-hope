@@ -1,3 +1,13 @@
 declare module "@temp/blog/type" {
-  export const typeMap: Record<string, Record<string, string[]>>;
+  interface TypeConfig {
+    path: string;
+    keys: string[];
+  }
+
+  type TypeMap = Record<
+    /** Locale Path */ string,
+    /** Locale Type config */ TypeConfig
+  >;
+
+  export const typeMap: Record<string, TypeMap>;
 }

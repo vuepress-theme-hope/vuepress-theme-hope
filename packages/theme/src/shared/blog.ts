@@ -67,7 +67,3 @@ export interface ArticleMeta extends Record<string, unknown> {
    */
   cover?: string;
 }
-
-export interface ArticleDetail extends ArticleMeta {
-  path: string;
-}

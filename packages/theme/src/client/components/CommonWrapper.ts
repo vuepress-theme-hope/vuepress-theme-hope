@@ -166,7 +166,14 @@ export default defineComponent({
                 class: "sidebar-mask",
                 onClick: () => toggleSidebar(false),
               }),
-              h(Sidebar),
+              h(
+                Sidebar,
+                {},
+                {
+                  top: () => slots.sidebarTop?.(),
+                  bottom: () => slots.sidebarBottom?.(),
+                }
+              ),
               slots.default?.(),
               h(PageFooter),
             ]

@@ -1,6 +1,25 @@
 declare module "@temp/blog/category" {
-  export const categoryMap: Record<
-    string,
-    Record<string, Record<string, string[]>>
+  interface CategoryConfig {
+    path: string;
+    keys: string[];
+  }
+
+  type CategoryLocaleMap = Record<
+    /** Category name */ string,
+    /** Category config */ CategoryConfig
   >;
+
+  interface CategoryLocaleConfig {
+    /** Main page of category */
+    path: string;
+    /** category map for current locale */
+    map: CategoryLocaleMap;
+  }
+
+  type CategoryMap = Record<
+    /** Locale Path */ string,
+    /** Locale category config */ CategoryLocaleConfig
+  >;
+
+  export const categoryMap: Record<string, CategoryMap>;
 }

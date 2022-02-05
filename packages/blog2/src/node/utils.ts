@@ -19,3 +19,6 @@ export const getPageMap = (
 
   return pageMap;
 };
+
+export const removeLeadingSlash = (path: string): string =>
+  path.replace(/^\//, "");

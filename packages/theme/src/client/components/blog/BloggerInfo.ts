@@ -4,10 +4,10 @@ import { computed, defineComponent, h } from "vue";
 import MediaLinks from "../medialinks";
 import {
   useBlogOptions,
-  useArticleList,
+  useArticles,
   useCategoryMap,
-  useTimelineList,
   useTagMap,
+  useTimelines,
   useThemeData,
   useThemeLocaleData,
 } from "../../composables";
@@ -23,10 +23,10 @@ export default defineComponent({
     const siteLocale = useSiteLocaleData();
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
-    const articleList = useArticleList();
+    const articles = useArticles();
     const categoryList = useCategoryMap();
     const tagList = useTagMap();
-    const timelineList = useTimelineList();
+    const timelines = useTimelines();
 
     const bloggerName = computed(
       () =>
@@ -95,23 +95,27 @@ export default defineComponent({
           ),
           h("div", { class: "num-wrapper" }, [
             h("div", { onClick: () => navigate("/article/") }, [
-              h("div", { class: "number" }, articleList.value.length),
+              h("div", { class: "number" }, articles.value.length),
               h("div", locale.value.article),
             ]),
             h("div", { onClick: () => navigate("/category/") }, [
               h(
                 "div",
                 { class: "number" },
-                Object.keys(categoryList.value).length
+                Object.keys(categoryList.value.map).length
               ),
               h("div", locale.value.category),
             ]),
             h("div", { onClick: () => navigate("/tag/") }, [
-              h("div", { class: "number" }, Object.keys(tagList.value).length),
+              h(
+                "div",
+                { class: "number" },
+                Object.keys(tagList.value.map).length
+              ),
               h("div", locale.value.tag),
             ]),
             h("div", { onClick: () => navigate("/timeline/") }, [
-              h("div", { class: "number" }, timelineList.value.length),
+              h("div", { class: "number" }, timelines.value.items.length),
               h("div", locale.value.timeline),
             ]),
           ]),

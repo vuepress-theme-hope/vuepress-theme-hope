@@ -14,33 +14,41 @@ declare const BLOG_META_SCOPE: string;
 
 export const blogCategoryMap = ref(categoryMap);
 
-export type CategoryData<
+export interface BlogCategoryData<
   T extends Record<string, unknown> = Record<string, unknown>
-> = Record<string, Articles<T>>;
+> {
+  path: string;
+  map: Record<string, { path: string; items: Articles<T> }>;
+}
 
 export const useBlogCategory = <
   T extends Record<string, unknown> = Record<string, unknown>
 >(
   key: string
-): ComputedRef<CategoryData<T>> => {
+): ComputedRef<BlogCategoryData<T>> => {
   const router = useRouter();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
     const routes = router.getRoutes();
-    const result: Record<string, Articles<T>> = {};
     const currentMap = blogCategoryMap.value[key][routeLocale.value];
+    const result: BlogCategoryData<T> = {
+      path: currentMap.path,
+      map: {},
+    };
 
     for (const category in currentMap) {
-      result[category] = [];
+      const tagMap = currentMap.map[category];
 
-      for (const pageKey of currentMap[category]) {
+      result.map[category] = { path: tagMap.path, items: [] };
+
+      for (const pageKey of tagMap.keys) {
         const route = routes.find(({ name }) => name === pageKey);
 
         if (route) {
           const finalRoute = resolveRouteWithRedirect(route.path);
 
-          result[category].push({
+          result.map[category].items.push({
             path: finalRoute.path,
             meta:
               BLOG_META_SCOPE === ""
