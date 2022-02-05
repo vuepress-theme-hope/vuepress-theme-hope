@@ -2,6 +2,8 @@
 title: Component disabled
 icon: config
 category: Guide
+tag:
+  - disable
 
 navbar: false
 sidebar: false

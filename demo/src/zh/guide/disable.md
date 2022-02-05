@@ -2,6 +2,8 @@
 title: 组件禁用
 icon: config
 category: 使用指南
+tag:
+  - 禁用
 
 navbar: false
 sidebar: false
