@@ -19,6 +19,10 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
   return {
     name: "vuepress-plugin-blog2",
 
+    define: () => ({
+      BLOG_META_SCOPE: metaScope,
+    }),
+
     onInitialized(app): Promise<void> {
       const pageMap = getPageMap(options, app);
 

@@ -9,6 +9,7 @@ import type { TypeMap } from "../../shared";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;
+declare const BLOG_META_SCOPE: string;
 
 export const blogTypeMap = ref(typeMap);
 
@@ -27,7 +28,14 @@ export const useBlogType = <
     for (const pageKey of blogTypeMap.value[key][routeLocale.value]) {
       const route = routes.find(({ name }) => name === pageKey);
 
-      if (route) result.push({ path: route.path, meta: route.meta as T });
+      if (route)
+        result.push({
+          path: route.path,
+          meta:
+            BLOG_META_SCOPE === ""
+              ? (route.meta as T)
+              : (route.meta[BLOG_META_SCOPE] as T),
+        });
     }
 
     return result;

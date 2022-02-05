@@ -9,6 +9,7 @@ import type { CategoryMap } from "../../shared";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;
+declare const BLOG_META_SCOPE: string;
 
 export const blogCategoryMap = ref(categoryMap);
 
@@ -36,7 +37,13 @@ export const useBlogCategory = <
         const route = routes.find(({ name }) => name === pageKey);
 
         if (route)
-          result[category].push({ path: route.path, meta: route.meta as T });
+          result[category].push({
+            path: route.path,
+            meta:
+              BLOG_META_SCOPE === ""
+                ? (route.meta as T)
+                : (route.meta[BLOG_META_SCOPE] as T),
+          });
       }
     }
 
