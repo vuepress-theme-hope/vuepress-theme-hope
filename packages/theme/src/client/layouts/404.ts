@@ -7,11 +7,11 @@ import { useThemeLocaleData } from "../composables";
 
 import type { VNode } from "vue";
 
-import "../styles/page404.scss";
+import "../styles/404.scss";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Page404",
+  name: "404",
 
   setup() {
     const routeLocale = useRouteLocale();
