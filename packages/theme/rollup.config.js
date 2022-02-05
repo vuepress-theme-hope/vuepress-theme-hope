@@ -7,6 +7,7 @@ export default [
       "@mr-hope/vuepress-plugin-components",
       "bcryptjs",
       "@vuepress/utils",
+      "vuepress-plugin-blog2",
       "vuepress-plugin-comment2",
       "vuepress-plugin-copy-code2",
       "vuepress-plugin-feed2",
