@@ -89,7 +89,7 @@ export const prepareCategory = (
           };
 
           const { map } = categoryMap[routeLocale];
-          const pageMap: Record<string, Page[]> = {};
+          const tempMap: Record<string, Page[]> = {};
 
           pageMap[routeLocale].forEach((page) => {
             const categories = getter(page);
@@ -116,15 +116,15 @@ export const prepareCategory = (
                   keys: [],
                 };
 
-                pageMap[category] = [];
+                tempMap[category] = [];
               }
 
-              pageMap[category].push(page);
+              tempMap[category].push(page);
             });
           });
 
           for (const name in map)
-            map[name].keys = pageMap[name].sort(sorter).map(({ key }) => key);
+            map[name].keys = tempMap[name].sort(sorter).map(({ key }) => key);
         }
 
         return {
