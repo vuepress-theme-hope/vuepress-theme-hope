@@ -44,11 +44,14 @@ export const getAlias = (app: App): Record<string, string> => {
       .filter<[string, string]>(
         (item): item is [string, string] => item !== null
       ),
+    // define modules
     ...fs
       .readdirSync(path.resolve(__dirname, "../client/module"))
       .map((folder) => `module/${folder}`)
       .map((file) => [
+        // define module components
         ...getDirAlias(`${file}/components`),
+        // define module composables and utils
         ...["composables", "utils"]
           .map((folder) => `${file}/${folder}`)
           .map(getEntryAlias)

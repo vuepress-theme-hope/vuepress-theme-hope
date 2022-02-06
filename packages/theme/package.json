@@ -31,10 +31,12 @@
     "templates"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "yarn build:ts && yarn build:copy",
+    "build:copy": "cpx src/client/**/*.{css,scss,jpg,vue} lib/client",
+    "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
-    "dev:copy": "cpx src/client/**/*.{vue,css,scss,jpg} lib/client -w",
+    "dev:copy": "yarn build:copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {

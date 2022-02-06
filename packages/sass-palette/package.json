@@ -26,7 +26,6 @@
   "types": "lib/node/index.d.ts",
   "files": [
     "lib",
-    "palette",
     "styles"
   ],
   "scripts": {

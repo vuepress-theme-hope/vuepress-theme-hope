@@ -3,7 +3,7 @@ import { computed, inject, provide } from "vue";
 import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
-import type { Articles } from "vuepress-plugin-blog2/lib/client";
+import type { Articles } from "vuepress-plugin-blog2";
 import type { ArticleMeta } from "../../../../shared";
 
 export interface TimelineItem {

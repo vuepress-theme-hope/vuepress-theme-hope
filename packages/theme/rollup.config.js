@@ -1,4 +1,32 @@
+import { fs, path } from "@vuepress/utils";
 import { rollupTypescript, rollupVue } from "../../scripts/rollup";
+
+const deepReadDir = (base, dir = "") => {
+  const dirPath = path.resolve(base, dir);
+  const files = fs.readdirSync(dirPath);
+
+  return files
+    .map((file) =>
+      fs.statSync(path.join(dirPath, file)).isDirectory()
+        ? deepReadDir(base, path.join(dir, file))
+        : [`${dir ? `${dir}/` : ""}${file}`]
+    )
+    .flat();
+};
+
+const commonExternals = [
+  /^@theme-hope\//,
+  "@mr-hope/vuepress-shared/lib/client",
+  "@vuepress/client",
+  "@vuepress/plugin-external-link-icon/lib/client",
+  "@vuepress/shared",
+  "lodash.throttle",
+  "vue",
+  "vue-router",
+  /\.jpg$/,
+  /\.scss$/,
+  /\.vue$/,
+];
 
 export default [
   ...rollupTypescript("node/index", {
@@ -21,113 +49,114 @@ export default [
     ],
   }),
 
-  ...rollupVue("client/components/navbar/Navbar.ts", {
-    copy: [["client/components/navbar/styles", "client/components/navbar"]],
+  ...deepReadDir("./src/client/components")
+    .map((components) =>
+      components.endsWith(".ts")
+        ? rollupTypescript(
+            `client/components/${components.replace(/\.ts/, "")}`,
+            {
+              external: commonExternals,
+              dtsExternal: commonExternals,
+            }
+          )
+        : rollupVue(`client/components/${components}`, {
+            external: commonExternals,
+            dtsExternal: commonExternals,
+          })
+    )
+    .flat(),
+
+  ...deepReadDir("./src/client/layouts")
+    .map((components) =>
+      components.endsWith(".ts")
+        ? rollupTypescript(`client/layouts/${components.replace(/\.ts/, "")}`, {
+            external: commonExternals,
+            dtsExternal: commonExternals,
+          })
+        : rollupVue(`client/layouts/${components}`, {
+            external: commonExternals,
+            dtsExternal: commonExternals,
+          })
+    )
+    .flat(),
+
+  ...["composables", "utils"]
+    .map((folder) =>
+      rollupTypescript(`client/${folder}/index`, {
+        external: [
+          ...commonExternals,
+          "@vueuse/core",
+          "@vuepress/plugin-external-link-icon/lib/client",
+        ],
+        dtsExternal: commonExternals,
+      })
+    )
+    .flat(),
+
+  ...["blog", "encrypt", "navbar", "sidebar"]
+    .map((module) => [
+      ...deepReadDir(`./src/client/module/${module}/components`)
+        .map((components) =>
+          components.endsWith(".ts")
+            ? rollupTypescript(
+                `client/module/${module}/components/${components.replace(
+                  /\.ts/,
+                  ""
+                )}`,
+                {
+                  external: commonExternals,
+                  dtsExternal: commonExternals,
+                }
+              )
+            : rollupVue(`client/module/${module}/components/${components}`, {
+                external: commonExternals,
+                dtsExternal: commonExternals,
+              })
+        )
+        .flat(),
+
+      ...["composables", "utils"]
+        .filter((folder) => fs.existsSync(`./src/client/${module}/${folder}`))
+        .map((folder) =>
+          rollupTypescript(`client/module/${module}/${folder}/index}`, {
+            external: commonExternals,
+            dtsExternal: commonExternals,
+          })
+        )
+        .flat(),
+    ])
+    .flat(),
+
+  ...rollupTypescript("client/composables/index", {
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "@vuepress/plugin-external-link-icon/lib/client",
+      // "@mr-hope/vuepress-shared/lib/client",
+      // "@vuepress/client",
+      // "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "@vueuse/core",
-      "bcryptjs",
-      "vue",
-      "vue-router",
-      "vuepress-plugin-blog2/lib/client",
-      /\.scss$/,
+      // "@vuepress/shared",
+      // "@vueuse/core",
+      // "bcryptjs",
+      // "vue",
+      // "vue-router",
+      // "vuepress-plugin-blog2/lib/client",
+      // /\.scss$/,
     ],
-    dtsExternal: [/\.scss$/],
   }),
 
-  ...rollupVue("client/components/sidebar/Sidebar.ts", {
-    copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
+  ...rollupTypescript("client/utils/index", {
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "@vuepress/plugin-external-link-icon/lib/client",
+      // "@mr-hope/vuepress-shared/lib/client",
+      // "@vuepress/client",
+      // "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "@vueuse/core",
-      "bcryptjs",
-      "vue",
-      "vue-router",
-      "vuepress-plugin-blog2/lib/client",
-      /\.scss$/,
+      // "@vuepress/shared",
+      // "@vueuse/core",
+      // "bcryptjs",
+      // "vue",
+      // "vue-router",
+      // "vuepress-plugin-blog2/lib/client",
+      // /\.scss$/,
     ],
-    dtsExternal: [/\.scss$/],
-  }),
-
-  ...rollupVue("client/components/CommonWrapper.ts", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "@vuepress/plugin-external-link-icon/lib/client",
-      "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "@vueuse/core",
-      "bcryptjs",
-      "lodash.throttle",
-      "vue",
-      "vue-router",
-      "vuepress-plugin-blog2/lib/client",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
-
-  ...rollupVue("client/layouts/Blog.ts", {
-    copy: [["client/assets", "client"]],
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "@vuepress/plugin-external-link-icon/lib/client",
-      "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "@vueuse/core",
-      "bcryptjs",
-      "vue",
-      "vue-router",
-      "vuepress-plugin-blog2/lib/client",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
-
-  ...rollupVue("client/layouts/Layout.ts", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "@vuepress/plugin-external-link-icon/lib/client",
-      "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "@vueuse/core",
-      "bcryptjs",
-      "vue",
-      "vue-router",
-      "vuepress-plugin-blog2/lib/client",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
-
-  ...rollupVue("client/layouts/404.ts", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "@vuepress/plugin-external-link-icon/lib/client",
-      "@vuepress/plugin-theme-data/lib/client",
-      "@vuepress/shared",
-      "@vueuse/core",
-      "vue",
-      "vue-router",
-      "vuepress-plugin-blog2/lib/client",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
-
-  ...rollupTypescript("client/layouts/Slide", {
-    external: ["vuepress-plugin-md-enhance/lib/client/SlidePage", "vue"],
   }),
 
   ...rollupTypescript("client/appEnhance", {
