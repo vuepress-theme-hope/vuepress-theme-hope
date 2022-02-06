@@ -75,7 +75,12 @@ export const extendsPage = (app: App, page: Page<HopeThemePageData>): void => {
   page.data.filePathRelative = filePathRelative;
 
   if (frontmatter.home)
-    page.routeMeta = { ...page.routeMeta, type: "home", title: page.title };
+    page.routeMeta = {
+      ...page.routeMeta,
+      type: "home",
+      icon: frontmatter.icon,
+      title: page.title,
+    };
   else {
     const isArticle =
       // declaring this is an article
