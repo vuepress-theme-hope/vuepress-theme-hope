@@ -64,4 +64,6 @@ export const handleThemeData = (
     themeLocalesData,
     themeOptions.locales
   );
+
+  if (app.env.isDebug) console.log("Theme config: ", themeOptions);
 };

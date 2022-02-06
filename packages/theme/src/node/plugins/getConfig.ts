@@ -19,30 +19,37 @@ import { resolveMdEnhanceOptions } from "./mdEnhance";
 import { resolvePhotoSwipeOptions } from "./photoSwipe";
 import { resolvePWAOptions } from "./pwa";
 import { resolveSitemapOptions } from "./sitemap";
-
-import type { PluginConfig, PluginOptions } from "@vuepress/core";
-import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 import { resolveSEOOptions } from "./seo";
 
+import type { App, PluginConfig, PluginOptions } from "@vuepress/core";
+import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
+
 export const getPluginConfig = (
+  app: App,
   plugins: HopeThemePluginsOptions,
   themeData: HopeThemeConfig
-): PluginConfig<PluginOptions>[] => [
-  components(resolveComponentsOptions(themeData)),
-  [
-    "@vuepress/active-header-links",
-    resolveActiveHeaderLinksOptions(plugins.activeHeaderLinks),
-  ],
-  ["@vuepress/nprogress", plugins.nprogress !== false],
-  ["@vuepress/prismjs", plugins.prismjs !== false],
-  ["@vuepress/theme-data", { themeData }],
-  blog(resolveBlogOptions(themeData)),
-  comment(resolveCommentOptions(plugins.comment)),
-  copyCode(resolveCopyCodeOptions(plugins.copyCode)),
-  feed(resolveFeedOptions(themeData, plugins.feed)),
-  mdEnhance(resolveMdEnhanceOptions(plugins.mdEnhance)),
-  photoSwipe(resolvePhotoSwipeOptions(plugins.photoSwipe)),
-  pwa(resolvePWAOptions(plugins.pwa)),
-  seo(resolveSEOOptions(themeData, plugins.seo)),
-  sitemap(resolveSitemapOptions(themeData, plugins.sitemap)),
-];
+): PluginConfig<PluginOptions>[] => {
+  const pluginConfig: PluginConfig<PluginOptions>[] = [
+    components(resolveComponentsOptions(themeData)),
+    [
+      "@vuepress/active-header-links",
+      resolveActiveHeaderLinksOptions(plugins.activeHeaderLinks),
+    ],
+    ["@vuepress/nprogress", plugins.nprogress !== false],
+    ["@vuepress/prismjs", plugins.prismjs !== false],
+    ["@vuepress/theme-data", { themeData }],
+    blog(resolveBlogOptions(themeData)),
+    comment(resolveCommentOptions(plugins.comment)),
+    copyCode(resolveCopyCodeOptions(plugins.copyCode)),
+    feed(resolveFeedOptions(themeData, plugins.feed)),
+    mdEnhance(resolveMdEnhanceOptions(plugins.mdEnhance)),
+    photoSwipe(resolvePhotoSwipeOptions(plugins.photoSwipe)),
+    pwa(resolvePWAOptions(plugins.pwa)),
+    seo(resolveSEOOptions(themeData, plugins.seo)),
+    sitemap(resolveSitemapOptions(themeData, plugins.sitemap)),
+  ];
+
+  if (app.env.isDebug) console.log("Theme plugin options:", pluginConfig);
+
+  return pluginConfig;
+};

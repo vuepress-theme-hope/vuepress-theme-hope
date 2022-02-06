@@ -9,7 +9,7 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition.vu
 
 import type { VNode } from "vue";
 
-import "../styles/blog/index.scss";
+import "../styles/index.scss";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

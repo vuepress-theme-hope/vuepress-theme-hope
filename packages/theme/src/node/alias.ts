@@ -60,7 +60,6 @@ export const getAlias = (app: App): Record<string, string> => {
   ]);
 
   if (app.env.isDebug) console.log("Theme alias config:", alias);
-  console.log("Theme alias config:", alias);
 
   return alias;
 };

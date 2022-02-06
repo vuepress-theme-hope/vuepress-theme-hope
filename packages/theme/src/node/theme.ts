@@ -7,6 +7,7 @@ import { getAlias } from "./alias";
 import { handleThemeData } from "./handleThemeData";
 import { handleWebpackOptions } from "./encrypt";
 import { extendsPage } from "./extends";
+import { getLayoutConfig } from "./layout";
 import { getPluginConfig } from "./plugins";
 
 import type { Page, Theme } from "@vuepress/core";
@@ -53,7 +54,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     alias: getAlias(app),
 
-    layouts: path.resolve(__dirname, "../client/layouts"),
+    layouts: getLayoutConfig(app, plugins, themeOptions as HopeThemeConfig),
 
     templateBuild: path.resolve(__dirname, "../../templates/index.build.html"),
 
@@ -63,6 +64,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     extendsPage: (page) => extendsPage(app, page as Page<HopeThemePageData>),
 
-    plugins: getPluginConfig(plugins, themeOptions as HopeThemeConfig),
+    plugins: getPluginConfig(app, plugins, themeOptions as HopeThemeConfig),
   };
 };

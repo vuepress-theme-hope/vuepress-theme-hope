@@ -8,7 +8,7 @@ import type { TaskListOptions } from "./tasklist";
 /**
  * md-enhance plugin configuration
  */
-export type MarkdownEnhanceOptions = Partial<{
+export interface MarkdownEnhanceOptions {
   /**
    * 是否启用自定义容器
    *
@@ -34,7 +34,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  container: boolean;
+  container?: boolean;
 
   /**
    * 是否启用代码组
@@ -43,7 +43,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  codegroup: boolean;
+  codegroup?: boolean;
 
   /**
    * 是否启用自定义对齐支持
@@ -52,7 +52,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  align: boolean;
+  align?: boolean;
 
   /**
    * 是否启用上角标格式支持
@@ -61,7 +61,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  sup: boolean;
+  sup?: boolean;
 
   /**
    * 是否启用下角标格式支持
@@ -70,7 +70,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  sub: boolean;
+  sub?: boolean;
 
   /**
    * 是否启用脚注格式支持
@@ -79,7 +79,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  footnote: boolean;
+  footnote?: boolean;
 
   /**
    * Whether enable native image lazy loading
@@ -97,7 +97,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  mark: boolean;
+  mark?: boolean;
 
   /**
    * Whether to enable flowchart support
@@ -106,7 +106,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  flowchart: boolean;
+  flowchart?: boolean;
 
   /**
    * Whether to enable tastlist format support
@@ -115,7 +115,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  tasklist: TaskListOptions | boolean;
+  tasklist?: TaskListOptions | boolean;
 
   /**
    * Whether to enable TeX syntax support
@@ -124,7 +124,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  tex: KatexOptions | boolean;
+  tex?: KatexOptions | boolean;
 
   /**
    * Whether to enable mermaid support
@@ -133,7 +133,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  mermaid: boolean;
+  mermaid?: boolean;
 
   /**
    * Whether to enable code-demo support
@@ -142,7 +142,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  demo: Partial<CodeDemoOptions> | boolean;
+  demo?: Partial<CodeDemoOptions> | boolean;
 
   /**
    * Whether to enable presentation support
@@ -151,7 +151,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  presentation: PresentationOptions | boolean;
+  presentation?: PresentationOptions | boolean;
 
   /**
    * Whether to enable all features.
@@ -160,7 +160,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  enableAll: boolean;
+  enableAll?: boolean;
 
   /**
    * The delay of operating dom, in ms
@@ -181,4 +181,4 @@ export type MarkdownEnhanceOptions = Partial<{
    * 国际化配置选项
    */
   locales?: LocaleConfig<MarkdownEnhanceLocaleData>;
-}>;
+}
