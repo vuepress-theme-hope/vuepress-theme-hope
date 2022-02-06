@@ -7,7 +7,7 @@
   padding: calc(var(--navbar-height) + 1rem) 2rem 0 2rem !important;
   text-align: center;
 
-  @media (max-width: config.$mobile) {
+  @media (max-width: config.$pad) {
     padding-top: calc(var(--navbar-mobile-height) + 1rem);
   }
 

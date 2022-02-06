@@ -21,7 +21,7 @@
   &.full {
     height: calc(100vh - var(--navbar-height)) !important;
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: config.$pad) {
       height: calc(100vh - var(--navbar--mobile-height)) !important;
     }
 

@@ -11,8 +11,13 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @media (max-width: config.$pad) {
+    padding-top: var(--navbar-mobile-height);
+  }
+
   @media (max-width: config.$mobile) {
-    padding: var(--navbar-mobile-height) 1.5rem 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   @media (max-width: config.$mobileS) {

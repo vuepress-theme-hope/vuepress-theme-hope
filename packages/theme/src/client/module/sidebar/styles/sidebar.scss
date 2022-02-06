@@ -20,19 +20,6 @@
   scrollbar-width: thin;
   scrollbar-color: var(--theme-color) var(--border-color);
 
-  a {
-    display: inline-block;
-    color: var(--text-color);
-  }
-
-  .blogger-info.mobile {
-    display: none;
-  }
-
-  .blogger-info.mobile + hr {
-    display: none;
-  }
-
   @media (max-width: config.$pad) {
     top: var(--navbar-mobile-height);
     width: var(--sidebar-mobile-width);
@@ -53,14 +40,27 @@
       transform: translateX(0);
       box-shadow: 2px 0 8px var(--card-shadow);
     }
+  }
 
-    .blogger-info.mobile {
+  a {
+    display: inline-block;
+    color: var(--text-color);
+  }
+
+  .blogger-info.mobile {
+    display: none;
+
+    @media (max-width: config.$mobile) {
       display: block;
     }
 
-    .blogger-info.mobile + hr {
-      display: block;
-      margin-top: 16px;
+    + hr {
+      display: none;
+
+      @media (max-width: config.$mobile) {
+        display: block;
+        margin-top: 16px;
+      }
     }
   }
 }
