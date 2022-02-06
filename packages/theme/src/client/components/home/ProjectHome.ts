@@ -9,7 +9,7 @@ import ProjectHero from "@theme-hope/components/home/ProjectHero";
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";
 
-import "../../styles/home/project.scss";
+import "../../styles/project-home.scss";
 
 export default defineComponent({
   name: "ProjectHome",

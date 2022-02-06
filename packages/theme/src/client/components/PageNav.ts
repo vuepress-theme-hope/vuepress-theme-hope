@@ -15,6 +15,8 @@ import type {
   ResolvedSidebarItem,
 } from "../../shared";
 
+import "../styles/page-nav.scss";
+
 /**
  * Resolve `prev` or `next` config from frontmatter
  */

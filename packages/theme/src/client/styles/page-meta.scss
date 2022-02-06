@@ -1,0 +1,71 @@
+@use "@hope/config";
+@use "@mr-hope/vuepress-shared/styles/wrapper";
+
+.page-meta {
+  @include wrapper.wrapper;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  overflow: auto;
+
+  .meta-item {
+    cursor: default;
+    margin-top: 0.8rem;
+
+    .label {
+      font-weight: 500;
+
+      &:not(a) {
+        color: var(--text-color-lighter);
+      }
+    }
+
+    .info {
+      font-weight: 400;
+      color: var(--dark-grey);
+    }
+  }
+
+  .edit-link {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 0.25rem;
+
+    .icon {
+      position: relative;
+      bottom: -0.125em;
+      width: 1em;
+      height: 1em;
+      margin-right: 0.25em;
+    }
+
+    @media (max-width: config.$mobile) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .update-time {
+    float: right;
+
+    font-size: 14px;
+
+    &:first-child {
+      float: left;
+    }
+
+    @media (max-width: config.$mobile) {
+      float: none;
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+
+  .contributors {
+    font-size: 14px;
+    text-align: right;
+
+    @media (max-width: config.$mobile) {
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+}

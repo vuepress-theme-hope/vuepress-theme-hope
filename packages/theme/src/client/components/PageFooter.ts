@@ -7,6 +7,8 @@ import { usePageAuthor, useThemeLocaleData } from "@theme-hope/composables";
 import type { VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
+import "../styles/footer.scss";
+
 export default defineComponent({
   name: "PageFooter",
 

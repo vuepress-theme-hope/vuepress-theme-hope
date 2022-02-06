@@ -14,6 +14,8 @@ import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";
 
+import "../styles/common.scss";
+
 export default defineComponent({
   name: "CommonWrapper",
 
@@ -156,7 +158,7 @@ export default defineComponent({
           onTouchEnd,
         },
         isGlobalEncrypted.value
-          ? h(PasswordModal, { onVerify: validateGlobalToken })
+          ? h(PasswordModal, { full: true, onVerify: validateGlobalToken })
           : [
               enableNavbar.value
                 ? h(Navbar, { onToggleSidebar: () => toggleSidebar() })

@@ -10,7 +10,8 @@
   background: var(--bg-color);
   color: var(--dark-color);
   text-align: center;
-  transition: border-top-color 0.3s ease, background 0.3s ease;
+  transition: border-top-color var(--color-transition),
+    background var(--color-transition);
 
   @media (min-width: config.$mobile) {
     padding-left: calc(var(--sidebar-width) + 2rem);

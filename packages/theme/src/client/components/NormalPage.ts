@@ -10,6 +10,8 @@ import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
 import type { VNode } from "vue";
 
+import "../styles/page.scss";
+
 export default defineComponent({
   name: "NormalPage",
 
@@ -21,7 +23,7 @@ export default defineComponent({
         "main",
         { class: "page" },
         isEncrypted.value
-          ? h(PasswordModal, { page: true, onVerify: validateToken })
+          ? h(PasswordModal, { onVerify: validateToken })
           : [
               slots.top?.(),
               h(PageTitle),

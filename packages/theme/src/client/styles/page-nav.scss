@@ -1,0 +1,35 @@
+@use "@mr-hope/vuepress-shared/styles/wrapper";
+
+.page-nav {
+  @include wrapper.wrapper;
+  padding-top: 0.75rem;
+  padding-bottom: 0;
+
+  .inner {
+    min-height: 2rem;
+    margin-top: 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    // clear float
+    overflow: auto;
+    transition: border-top var(--color-transition);
+  }
+
+  .prev-icon,
+  .next-icon {
+    position: relative;
+    top: 0.125em;
+    width: 1em;
+    height: 1em;
+    margin: 0 0.25em;
+    color: var(--theme-color);
+  }
+
+  .nav-link .icon {
+    margin-right: 0.25em;
+  }
+
+  .next {
+    float: right;
+  }
+}

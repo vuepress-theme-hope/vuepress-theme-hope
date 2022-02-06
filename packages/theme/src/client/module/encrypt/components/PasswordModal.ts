@@ -11,7 +11,7 @@ export default defineComponent({
   name: "PasswordModal",
 
   props: {
-    page: { type: Boolean, default: false },
+    full: { type: Boolean, default: false },
   },
 
   emits: ["verify"],
@@ -40,7 +40,7 @@ export default defineComponent({
         {
           class: [
             "password-modal",
-            { expand: props.page || frontmatter.value.home },
+            { expand: props.full || frontmatter.value.home },
           ],
         },
         [
