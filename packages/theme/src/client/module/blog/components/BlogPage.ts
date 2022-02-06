@@ -22,6 +22,8 @@ import type {
   BlogPluginFrontmatter,
 } from "vuepress-plugin-blog2";
 
+import "../styles/page.scss";
+
 export default defineComponent({
   name: "BlogPage",
 

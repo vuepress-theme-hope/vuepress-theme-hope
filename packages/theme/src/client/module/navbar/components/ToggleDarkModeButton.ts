@@ -10,6 +10,8 @@ import {
 import type { VNode } from "vue";
 import type { DarkmodeStatus } from "@theme-hope/composables";
 
+import "../styles/toggle-dark-button.scss";
+
 export default defineComponent({
   name: "ToggleDarkModeButton",
 

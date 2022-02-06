@@ -1,12 +1,13 @@
 @use "@hope/config";
 
 .timeline-wrapper {
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 40px 0;
   --dot-color: #fff;
   --dot-bar-color: #eaecef;
   --dot-border-color: #ddd;
+
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 40px 0;
 
   @media (max-width: config.$mobile) {
     margin: 0 1.2rem;

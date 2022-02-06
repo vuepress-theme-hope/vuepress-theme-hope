@@ -14,8 +14,8 @@
   color: var(--white);
   background-color: var(--c-brand, #3eaf7c);
   vertical-align: top;
-  transition: background-color var(--color-transition),
-    color var(--color-transition);
+  transition: background-color var(--color-transition, 0.3s),
+    color var(--color-transition, 0.3s);
 
   // compatable with toc
   .table-of-contents & {

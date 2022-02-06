@@ -9,6 +9,8 @@ import type { PropType, VNode } from "vue";
 import type { RouteLocationNormalized } from "vue-router";
 import type { ResolvedSidebarItem } from "../../../../shared";
 
+import "../styles/sidebar-links.scss";
+
 const descendantIsActive = (
   route: RouteLocationNormalized,
   item: ResolvedSidebarItem

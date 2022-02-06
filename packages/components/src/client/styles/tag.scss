@@ -8,20 +8,25 @@
   padding-left: 0;
 
   .tag {
-    display: inline-block;
     position: relative;
-    vertical-align: middle;
+
     min-width: 1.5em;
     margin: 0 0.2em;
     padding: 0 0.2em;
     border-width: 0.5px;
     border-style: solid;
     border-radius: 0.75em;
+
     background: #f8f8f8;
+
     font-size: 0.75em;
     text-align: center;
+
+    display: inline-block;
+    vertical-align: middle;
     overflow: hidden;
-    transition: all 0.2s;
+
+    transition: all var(--color-transition, 0.3s);
 
     #{config.$darkSelector} & {
       background: #222;

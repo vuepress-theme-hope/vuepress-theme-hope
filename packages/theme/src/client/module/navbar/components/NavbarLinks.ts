@@ -6,6 +6,8 @@ import { useNavbarConfig } from "@theme-hope/module/navbar/composables";
 
 import type { VNode } from "vue";
 
+import "../styles/navbar-links.scss";
+
 export default defineComponent({
   name: "NavbarLinks",
 

@@ -1,10 +1,11 @@
 @use "@hope/config";
 
 .timeline-list-wrapper {
-  padding: 8px 0;
   --dot-color: #fff;
   --dot-bar-color: #eaecef;
   --dot-border-color: #ddd;
+
+  padding: 8px 0;
 
   #{config.$darkSelector} & {
     --dot-color: #444;

@@ -1,25 +1,30 @@
 @use "sass:list";
 @use "@hope/config";
 
-.project-list {
+.project-panel {
   position: relative;
+  z-index: 2;
+
   display: flex;
   justify-content: flex-start;
   align-content: stretch;
   align-items: stretch;
   flex-wrap: wrap;
-  font-family: sans-serif;
+
   margin-bottom: 12px;
-  z-index: 2;
 
   .project {
     position: relative;
+
     width: calc(50% - 40px);
-    background-color: var(--grey14);
-    border-radius: 8px;
     margin: 6px 8px;
     padding: 12px;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 8px;
+
+    background-color: var(--grey14);
+
+    transition: background-color var(--color-transition),
+      transform var(--transform-transition);
 
     @media (min-width: config.$pad) {
       width: calc(33% - 40px);
@@ -69,25 +74,25 @@
       font-size: 13px;
     }
   }
-}
 
-@each $color in config.$colors {
-  $index: list.index(config.$colors, $color) - 1;
+  @each $color in config.$colors {
+    $index: list.index(config.$colors, $color) - 1;
 
-  .project-list .project#{$index} {
-    & {
-      background: lighten($color, 90%);
+    .project#{$index} {
+      & {
+        background: lighten($color, 90%);
 
-      &:hover {
-        background: lighten($color, 75%);
+        &:hover {
+          background: lighten($color, 75%);
+        }
       }
-    }
 
-    #{config.$darkSelector} & {
-      background: darken($color, 75%);
+      #{config.$darkSelector} & {
+        background: darken($color, 75%);
 
-      &:hover {
-        background: darken($color, 60%);
+        &:hover {
+          background: darken($color, 60%);
+        }
       }
     }
   }

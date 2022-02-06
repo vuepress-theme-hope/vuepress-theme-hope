@@ -19,6 +19,8 @@ import {
 
 import type { VNode } from "vue";
 
+import "../styles/blogger-info.scss";
+
 export default defineComponent({
   name: "BloggerInfo",
 

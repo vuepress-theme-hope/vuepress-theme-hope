@@ -7,6 +7,8 @@ import { useCategoryMap } from "@theme-hope/module/blog/composables";
 
 import type { VNode } from "vue";
 
+import "../styles/category-list.scss";
+
 export default defineComponent({
   name: "CategoryList",
 

@@ -7,6 +7,8 @@ import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 
+import "../styles/timeline-list.scss";
+
 export default defineComponent({
   name: "TimelineList",
 

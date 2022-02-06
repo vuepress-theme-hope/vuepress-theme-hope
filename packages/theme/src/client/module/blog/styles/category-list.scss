@@ -7,7 +7,6 @@
   z-index: 2;
   padding-left: 0;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
   list-style: none;
 
   .category {
@@ -34,49 +33,48 @@
       padding: 0 0.1rem;
       border-radius: 0.6rem;
       color: var(--white);
-      font-family: sans-serif;
       font-size: 0.7rem;
       line-height: 1.2rem;
       text-align: center;
     }
   }
-}
 
-@each $color in config.$colors {
-  $index: list.index(config.$colors, $color) - 1;
+  @each $color in config.$colors {
+    $index: list.index(config.$colors, $color) - 1;
 
-  .category-list-wrapper .category#{$index} {
-    background: color.scale($color, $lightness: 90%);
-
-    &:hover {
-      background: color.scale($color, $lightness: 75%);
-    }
-
-    &.active {
-      background: var(--theme-color);
-      color: var(--white);
-
-      .category-num {
-        color: var(--theme-color);
-        background: var(--bg-color-light);
-      }
-    }
-
-    #{config.$darkSelector} & {
-      background: color.scale($color, $lightness: -75%);
+    .category#{$index} {
+      background: color.scale($color, $lightness: 90%);
 
       &:hover {
-        background: color.scale($color, $lightness: -60%);
+        background: color.scale($color, $lightness: 75%);
       }
 
       &.active {
-        background: var(--theme-color-dark);
+        background: var(--theme-color);
         color: var(--white);
-      }
-    }
 
-    .category-num {
-      background: $color;
+        .category-num {
+          color: var(--theme-color);
+          background: var(--bg-color-light);
+        }
+      }
+
+      #{config.$darkSelector} & {
+        background: color.scale($color, $lightness: -75%);
+
+        &:hover {
+          background: color.scale($color, $lightness: -60%);
+        }
+
+        &.active {
+          background: var(--theme-color-dark);
+          color: var(--white);
+        }
+      }
+
+      .category-num {
+        background: $color;
+      }
     }
   }
 }

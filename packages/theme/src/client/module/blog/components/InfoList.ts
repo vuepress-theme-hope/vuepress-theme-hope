@@ -21,8 +21,10 @@ import {
 
 import type { FunctionalComponent, VNode } from "vue";
 
+import "../styles/info-list.scss";
+
 export default defineComponent({
-  name: "BlogInfo",
+  name: "InfoList",
 
   setup() {
     const themeLocale = useThemeLocaleData();

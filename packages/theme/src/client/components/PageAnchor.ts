@@ -7,6 +7,8 @@ import { isActiveLink } from "@theme-hope/utils";
 import type { PageHeader } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";
 
+import "../styles/page-anchor.scss";
+
 interface AnchorItem {
   text: string;
   level?: number;

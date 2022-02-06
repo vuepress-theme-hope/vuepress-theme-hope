@@ -11,6 +11,8 @@ import defaultHeroImagePath from "../assets/hero.jpg";
 import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
 
+import "../styles/blog-hero.scss";
+
 export default defineComponent({
   name: "BlogHero",
 

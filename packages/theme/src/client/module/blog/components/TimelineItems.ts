@@ -10,6 +10,8 @@ import {
 
 import type { VNode } from "vue";
 
+import "../styles/timeline-items.scss";
+
 export default defineComponent({
   name: "TimelineItems",
 

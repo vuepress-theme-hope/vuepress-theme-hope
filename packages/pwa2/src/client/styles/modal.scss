@@ -92,7 +92,6 @@
     max-width: 56em;
     border-radius: 10px;
     background: var(--c-bg, #fff);
-    font-family: sans-serif;
     animation: 0.15s pwa-opened;
 
     @media (max-width: config.$desktop) {

@@ -10,6 +10,8 @@ import {
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { VNode } from "vue";
 
+import "../styles/page-title.scss";
+
 export default defineComponent({
   name: "PageTitle",
 

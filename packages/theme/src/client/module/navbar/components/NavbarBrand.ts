@@ -4,6 +4,8 @@ import { RouterLink } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
 
+import "../styles/navbar-brand.scss";
+
 export default defineComponent({
   name: "NavbarBrand",
 

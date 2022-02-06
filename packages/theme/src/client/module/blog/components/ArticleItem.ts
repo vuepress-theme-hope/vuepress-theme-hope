@@ -13,6 +13,8 @@ import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 import type { PropType, VNode } from "vue";
 import type { ArticleMeta } from "../../../../shared";
 
+import "../styles/article-item.scss";
+
 export default defineComponent({
   name: "ArticleItem",
 

@@ -2,12 +2,15 @@
 
 .blog-hero {
   position: relative;
-  color: #eee;
-  margin-bottom: 16px;
   height: 450px;
+  margin-bottom: 16px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  color: #eee;
+  font-family: var(--font-family-fancy);
 
   @media (max-width: config.$mobile) {
     height: 350px;

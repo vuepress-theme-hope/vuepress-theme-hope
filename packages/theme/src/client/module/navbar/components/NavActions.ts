@@ -7,6 +7,8 @@ import { useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 
+import "../styles/navbar-actions.scss";
+
 export default defineComponent({
   name: "NavActions",
 

@@ -11,6 +11,8 @@ import {
 
 import type { VNode } from "vue";
 
+import "../styles/article-type.scss";
+
 export default defineComponent({
   name: "ArticleType",
 

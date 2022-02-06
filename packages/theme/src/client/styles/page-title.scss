@@ -29,13 +29,13 @@
         font-size: 0.9em;
       }
     }
-
-    + #{config.$contentClass}:not(.custom) {
-      padding-top: 0;
-    }
-
-    + #{config.$contentClass}:not(.custom) > h1:first-child {
-      display: none;
-    }
   }
+}
+
+#{config.$contentClass}:not(.custom) {
+  padding-top: 0;
+}
+
+#{config.$contentClass}:not(.custom) > h1:first-child {
+  display: none;
 }

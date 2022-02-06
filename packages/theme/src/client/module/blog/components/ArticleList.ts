@@ -15,6 +15,8 @@ import { useBlogOptions } from "@theme-hope/module/blog/composables";
 import type { PropType, VNode } from "vue";
 import type { ArticleMeta } from "../../../../shared";
 
+import "../styles/article-list.scss";
+
 export default defineComponent({
   name: "ArticleList",
 

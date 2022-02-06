@@ -2,6 +2,8 @@ import { defineComponent, h } from "vue";
 
 import type { VNode } from "vue";
 
+import "../styles/toggle-sidebar-button.scss";
+
 export default defineComponent({
   name: "ToggleSidebarButton",
 

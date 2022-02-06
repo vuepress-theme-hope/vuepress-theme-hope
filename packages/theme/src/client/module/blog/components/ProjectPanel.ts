@@ -12,8 +12,10 @@ import { useNavigate } from "@theme-hope/composables";
 import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
 
+import "../styles/project-panel.scss";
+
 export default defineComponent({
-  name: "BlogProjectList",
+  name: "ProjectPanel",
 
   components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon },
 
@@ -25,7 +27,7 @@ export default defineComponent({
       frontmatter.value.projects?.length
         ? h(
             "div",
-            { class: "project-list" },
+            { class: "project-panel" },
             frontmatter.value.projects.map((project, index) =>
               h(
                 "div",

@@ -86,7 +86,7 @@
     }
 
     h1 {
-      font-family: Georgia Pro, Crimson, Georgia, sans-serif;
+      font-family: var(--font-family-fancy);
       font-size: 3.6rem;
 
       @media (max-width: config.$mobile) {
@@ -99,7 +99,7 @@
     }
 
     .description {
-      font-family: Georgia Pro, Crimson, Georgia, sans-serif;
+      font-family: var(--font-family-fancy);
       max-width: 35rem;
       color: var(--text-color-bright);
       font-size: 1.6rem;

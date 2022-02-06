@@ -6,7 +6,6 @@
   position: relative;
   z-index: 2;
   padding-left: 0;
-  font-family: Arial, Helvetica, sans-serif;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -36,25 +35,25 @@
       transform: scale(1.1, 1.1);
     }
   }
-}
 
-@each $color in config.$colors {
-  $index: list.index(config.$colors, $color) - 1;
+  @each $color in config.$colors {
+    $index: list.index(config.$colors, $color) - 1;
 
-  .tag-list-wrapper .tag#{$index} {
-    background: color.scale($color, $lightness: 10%);
-
-    &:hover,
-    &.active {
-      background: color.scale($color, $lightness: -5%);
-    }
-
-    #{config.$darkSelector} & {
-      background: color.scale($color, $lightness: -5%);
+    .tag#{$index} {
+      background: color.scale($color, $lightness: 10%);
 
       &:hover,
       &.active {
-        background: color.scale($color, $lightness: 10%);
+        background: color.scale($color, $lightness: -5%);
+      }
+
+      #{config.$darkSelector} & {
+        background: color.scale($color, $lightness: -5%);
+
+        &:hover,
+        &.active {
+          background: color.scale($color, $lightness: 10%);
+        }
       }
     }
   }

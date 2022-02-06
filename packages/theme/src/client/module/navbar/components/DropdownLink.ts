@@ -7,6 +7,8 @@ import { useIconPrefix } from "@theme-hope/composables";
 import type { PropType, VNode } from "vue";
 import type { AutoLink as AutoLinkType, NavGroup } from "../../../../shared";
 
+import "../styles/dropdown-link.scss";
+
 export default defineComponent({
   name: "NavbarDropdownLink",
 

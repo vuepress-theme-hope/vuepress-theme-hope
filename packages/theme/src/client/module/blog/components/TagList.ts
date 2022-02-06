@@ -7,6 +7,8 @@ import { useNavigate } from "@theme-hope/composables";
 import type { VNode } from "vue";
 import type { BlogCategoryFrontmatterOptions } from "vuepress-plugin-blog2";
 
+import "../styles/tag-list.scss";
+
 export default defineComponent({
   name: "TagList",
 
