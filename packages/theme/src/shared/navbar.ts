@@ -1,7 +1,7 @@
 /**
  * Base nav item, displayed as text
  */
-export interface LinkItem {
+export interface HopeThemeNavLinkItem {
   text: string;
   icon?: string;
   ariaLabel?: string;
@@ -10,7 +10,7 @@ export interface LinkItem {
 /**
  * Base nav group, has nav items children
  */
-export interface NavGroup<T> extends LinkItem {
+export interface HopeThemeNavGroup<T> extends HopeThemeNavLinkItem {
   prefix?: string;
   link?: string;
   children: T[];
@@ -19,7 +19,7 @@ export interface NavGroup<T> extends LinkItem {
 /**
  * Props for `<AutoLink>`
  */
-export interface AutoLink extends LinkItem {
+export interface AutoLink extends HopeThemeNavLinkItem {
   link: string;
   rel?: string;
   target?: string;
@@ -30,10 +30,17 @@ export interface AutoLink extends LinkItem {
  * Navbar types
  */
 // user config
-export type NavbarItem = AutoLink;
-export type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
-export type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
+export type HopeThemeNavbarItem = AutoLink;
+export type HopeThemeNavbarGroup = HopeThemeNavGroup<
+  HopeThemeNavbarGroup | HopeThemeNavbarItem | string
+>;
+export type HopeThemeNavbarConfig = (
+  | HopeThemeNavbarItem
+  | HopeThemeNavbarGroup
+  | string
+)[];
+
 // resolved
-export type ResolvedNavbarItem =
-  | NavbarItem
-  | NavGroup<AutoLink | NavGroup<AutoLink>>;
+export type ResolvedHopeThemeNavbarItem =
+  | HopeThemeNavbarItem
+  | HopeThemeNavGroup<AutoLink | HopeThemeNavGroup<AutoLink>>;

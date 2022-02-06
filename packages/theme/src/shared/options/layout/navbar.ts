@@ -1,4 +1,4 @@
-import type { NavbarConfig } from "../../navbar";
+import type { HopeThemeNavbarConfig } from "../../navbar";
 
 export interface HopeThemeNavbarLocaleData {
   /**
@@ -31,7 +31,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * Set to `false` to disable navbar in current locale
    */
-  navbar?: false | NavbarConfig;
+  navbar?: false | HopeThemeNavbarConfig;
 
   /**
    * Navbar logo

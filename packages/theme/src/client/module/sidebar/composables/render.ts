@@ -8,7 +8,7 @@ import { isActiveLink } from "@theme-hope/utils";
 import type { VNode } from "vue";
 import type {
   ResolvedSidebarItem,
-  ResolvedSidebarHeaderItem,
+  ResolvedHopeThemeSidebarHeaderItem,
 } from "../../../../shared";
 
 export const renderIcon = (icon?: string): VNode | null =>
@@ -35,7 +35,7 @@ export const renderItem = (
 };
 
 export const renderChildren = (
-  children: ResolvedSidebarHeaderItem[]
+  children: ResolvedHopeThemeSidebarHeaderItem[]
 ): VNode | null => {
   const route = useRoute();
   if (!children) return null;

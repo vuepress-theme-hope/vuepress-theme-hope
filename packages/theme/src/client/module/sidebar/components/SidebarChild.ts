@@ -8,8 +8,8 @@ import { isActiveLink } from "@theme-hope/utils";
 
 import type { PropType, VNode } from "vue";
 import type {
-  ResolvedSidebarHeaderItem,
-  ResolvedSidebarPageItem,
+  ResolvedHopeThemeSidebarHeaderItem,
+  ResolvedHopeThemeSidebarPageItem,
 } from "../../../../shared";
 
 export default defineComponent({
@@ -18,7 +18,7 @@ export default defineComponent({
   props: {
     config: {
       type: Object as PropType<
-        ResolvedSidebarPageItem | ResolvedSidebarHeaderItem
+        ResolvedHopeThemeSidebarPageItem | ResolvedHopeThemeSidebarHeaderItem
       >,
       required: true,
     },

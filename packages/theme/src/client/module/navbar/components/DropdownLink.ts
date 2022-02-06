@@ -5,7 +5,10 @@ import AutoLink from "@theme-hope/components/AutoLink";
 import { useIconPrefix } from "@theme-hope/composables";
 
 import type { PropType, VNode } from "vue";
-import type { AutoLink as AutoLinkType, NavGroup } from "../../../../shared";
+import type {
+  AutoLink as AutoLinkType,
+  HopeThemeNavGroup,
+} from "../../../../shared";
 
 import "../styles/dropdown-link.scss";
 
@@ -14,7 +17,9 @@ export default defineComponent({
 
   props: {
     config: {
-      type: Object as PropType<NavGroup<AutoLinkType | NavGroup<AutoLinkType>>>,
+      type: Object as PropType<
+        HopeThemeNavGroup<AutoLinkType | HopeThemeNavGroup<AutoLinkType>>
+      >,
       required: true,
     },
   },

@@ -8,13 +8,13 @@ import { resolvePrefix } from "./utils";
 import type { PageHeader } from "@vuepress/client";
 import type {
   HopeThemeNormalPageFrontmatter,
-  SidebarConfigArray,
-  SidebarConfigObject,
-  SidebarItem,
+  HopeThemeSidebarArrayConfig,
+  HopeThemeSidebarObjectConfig,
+  HopeThemeSidebarItem,
   ResolvedSidebarItem,
-  ResolvedSidebarHeaderItem,
-  ResolvedSidebarPageItem,
-  ResolvedSidebarGroupItem,
+  ResolvedHopeThemeSidebarHeaderItem,
+  ResolvedHopeThemeSidebarPageItem,
+  ResolvedHopeThemeSidebarGroupItem,
 } from "../../../../shared";
 
 /**
@@ -23,7 +23,7 @@ import type {
 export const headerToSidebarItem = (
   header: PageHeader,
   sidebarDepth: number
-): ResolvedSidebarHeaderItem => {
+): ResolvedHopeThemeSidebarHeaderItem => {
   const page = usePageData();
 
   return {
@@ -37,7 +37,7 @@ export const headerToSidebarItem = (
 export const headersToSidebarItemChildren = (
   headers: PageHeader[],
   sidebarDepth: number
-): ResolvedSidebarHeaderItem[] =>
+): ResolvedHopeThemeSidebarHeaderItem[] =>
   sidebarDepth > 0
     ? headers.map((header) => headerToSidebarItem(header, sidebarDepth - 1))
     : [];
@@ -47,7 +47,7 @@ export const headersToSidebarItemChildren = (
  */
 export const resolveAutoSidebarItems = (
   sidebarDepth: number
-): ResolvedSidebarGroupItem[] => {
+): ResolvedHopeThemeSidebarGroupItem[] => {
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const page = usePageData();
 
@@ -65,7 +65,7 @@ export const resolveAutoSidebarItems = (
  * Resolve sidebar items if the config is an array
  */
 export const resolveArraySidebarItems = (
-  sidebarConfig: SidebarConfigArray,
+  sidebarConfig: HopeThemeSidebarArrayConfig,
   sidebarDepth: number,
   prefix = ""
 ): ResolvedSidebarItem[] => {
@@ -73,9 +73,9 @@ export const resolveArraySidebarItems = (
   const route = useRoute();
 
   const handleChildItem = (
-    item: SidebarItem,
+    item: HopeThemeSidebarItem,
     pathPrefix = prefix
-  ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
+  ): ResolvedHopeThemeSidebarPageItem | ResolvedHopeThemeSidebarGroupItem => {
     const childItem = isString(item)
       ? useAutoLink(resolvePrefix(pathPrefix, item))
       : item.link
@@ -118,7 +118,7 @@ export const resolveArraySidebarItems = (
  * Resolve sidebar items if the config is a key -> value (path-prefix -> array) object
  */
 export const resolveMultiSidebarItems = (
-  sidebarConfig: SidebarConfigObject,
+  sidebarConfig: HopeThemeSidebarObjectConfig,
   sidebarDepth: number
 ): ResolvedSidebarItem[] => {
   const route = useRoute();

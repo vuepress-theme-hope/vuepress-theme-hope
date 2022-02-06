@@ -1,12 +1,12 @@
 import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { HopeThemePageFrontmatter } from "./base";
 import type { AutoLink } from "../navbar";
-import type { SidebarConfig } from "../sidebar";
+import type { HopeThemeSidebarConfig } from "../sidebar";
 
 export interface HopeThemeNormalPageFrontmatter
   extends HopeThemePageFrontmatter {
   home?: false;
-  sidebar?: "auto" | false | SidebarConfig;
+  sidebar?: "auto" | false | HopeThemeSidebarConfig;
   headingDepth?: number;
   /**
    * Whether display lastUpdated time

@@ -6,15 +6,15 @@ import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables";
 import type { ComputedRef } from "vue";
 import type {
   AutoLink,
-  NavbarItem,
-  NavbarGroup,
-  NavGroup,
-  ResolvedNavbarItem,
+  HopeThemeNavbarItem,
+  HopeThemeNavbarGroup,
+  HopeThemeNavGroup,
+  ResolvedHopeThemeNavbarItem,
 } from "../../../../shared";
 
 export const resolveNavbarItem = (
-  item: NavbarItem | NavbarGroup | string
-): ResolvedNavbarItem => {
+  item: HopeThemeNavbarItem | HopeThemeNavbarGroup | string
+): ResolvedHopeThemeNavbarItem => {
   if (isString(item)) return useAutoLink(item);
 
   if ("children" in item)
@@ -24,7 +24,7 @@ export const resolveNavbarItem = (
         ? useAutoLink(item.link)
         : {}),
       children: item.children.map(resolveNavbarItem) as (
-        | NavGroup<AutoLink>
+        | HopeThemeNavGroup<AutoLink>
         | AutoLink
       )[],
     };
@@ -35,7 +35,7 @@ export const resolveNavbarItem = (
   };
 };
 
-export const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> =>
+export const useNavbarConfig = (): ComputedRef<ResolvedHopeThemeNavbarItem[]> =>
   computed(() =>
     (useThemeLocaleData().value.navbar || []).map(resolveNavbarItem)
   );

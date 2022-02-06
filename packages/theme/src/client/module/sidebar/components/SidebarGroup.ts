@@ -7,14 +7,14 @@ import { renderIcon } from "@theme-hope/module/sidebar/composables";
 import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
 
 import type { PropType, VNode } from "vue";
-import type { ResolvedSidebarGroupItem } from "../../../../shared";
+import type { ResolvedHopeThemeSidebarGroupItem } from "../../../../shared";
 
 export default defineComponent({
   name: "SidebarGroup",
 
   props: {
     config: {
-      type: Object as PropType<ResolvedSidebarGroupItem>,
+      type: Object as PropType<ResolvedHopeThemeSidebarGroupItem>,
       required: true,
     },
     open: { type: Boolean, required: true },

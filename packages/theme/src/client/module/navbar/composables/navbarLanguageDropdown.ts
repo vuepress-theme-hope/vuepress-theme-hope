@@ -7,20 +7,20 @@ import {
 } from "../../../composables/themeData";
 
 import type { ComputedRef } from "vue";
-import type { AutoLink, NavGroup } from "../../../../shared";
+import type { AutoLink, HopeThemeNavGroup } from "../../../../shared";
 
 /**
  * Get navbar config of select language dropdown
  */
 export const useNavbarLanguageDropdown =
-  (): ComputedRef<NavGroup<AutoLink> | null> => {
+  (): ComputedRef<HopeThemeNavGroup<AutoLink> | null> => {
     const router = useRouter();
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
 
-    return computed<NavGroup<AutoLink> | null>(() => {
+    return computed<HopeThemeNavGroup<AutoLink> | null>(() => {
       const localePaths = Object.keys(siteLocale.value.locales);
       // do not display language selection dropdown if there is only one language
       if (localePaths.length < 2) return null;
@@ -28,7 +28,7 @@ export const useNavbarLanguageDropdown =
       const currentPath = router.currentRoute.value.path;
       const { navbarLocales } = themeLocale.value;
 
-      const languageDropdown: NavGroup<AutoLink> = {
+      const languageDropdown: HopeThemeNavGroup<AutoLink> = {
         text: navbarLocales?.selectLangText,
         ariaLabel: navbarLocales?.selectLangAriaLabel,
         children: localePaths.map((targetLocalePath) => {

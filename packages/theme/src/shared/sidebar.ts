@@ -1,43 +1,56 @@
-import { NavGroup, AutoLink } from "./navbar";
+import { HopeThemeNavGroup, AutoLink } from "./navbar";
 
 /**
  * Sidebar types
  */
 // user config
-export type SidebarPageItem = AutoLink;
+export type HopeThemeSidebarPageItem = AutoLink;
 
-export interface SidebarGroupItem
-  extends NavGroup<SidebarPageItem | SidebarGroupItem | string> {
+export interface HopeThemeSidebarGroupItem
+  extends HopeThemeNavGroup<
+    HopeThemeSidebarPageItem | HopeThemeSidebarGroupItem | string
+  > {
   prefix?: string;
   collapsable?: boolean;
 }
 
-export type SidebarItem = SidebarPageItem | SidebarGroupItem | string;
+export type HopeThemeSidebarItem =
+  | HopeThemeSidebarPageItem
+  | HopeThemeSidebarGroupItem
+  | string;
 
-export type SidebarConfigArray = SidebarItem[];
+export type HopeThemeSidebarArrayConfig = HopeThemeSidebarItem[];
 
-export type SidebarConfigObject = Record<string, SidebarConfigArray>;
+export type HopeThemeSidebarObjectConfig = Record<
+  string,
+  HopeThemeSidebarArrayConfig
+>;
 
-export type SidebarConfig = SidebarConfigArray | SidebarConfigObject;
+export type HopeThemeSidebarConfig =
+  | HopeThemeSidebarArrayConfig
+  | HopeThemeSidebarObjectConfig;
 
 // resolved
-export interface ResolvedSidebarHeaderItem extends SidebarPageItem {
+export interface ResolvedHopeThemeSidebarHeaderItem
+  extends HopeThemeSidebarPageItem {
   type: "heading";
-  children: ResolvedSidebarHeaderItem[];
+  children: ResolvedHopeThemeSidebarHeaderItem[];
 }
 
-export interface ResolvedSidebarPageItem extends SidebarPageItem {
+export interface ResolvedHopeThemeSidebarPageItem
+  extends HopeThemeSidebarPageItem {
   type: "page";
-  children: ResolvedSidebarHeaderItem[];
+  children: ResolvedHopeThemeSidebarHeaderItem[];
 }
 
-export interface ResolvedSidebarGroupItem extends SidebarGroupItem {
+export interface ResolvedHopeThemeSidebarGroupItem
+  extends HopeThemeSidebarGroupItem {
   type: "group";
   collapsible?: boolean;
   children: ResolvedSidebarItem[];
 }
 
 export type ResolvedSidebarItem =
-  | ResolvedSidebarHeaderItem
-  | ResolvedSidebarPageItem
-  | ResolvedSidebarGroupItem;
+  | ResolvedHopeThemeSidebarHeaderItem
+  | ResolvedHopeThemeSidebarPageItem
+  | ResolvedHopeThemeSidebarGroupItem;

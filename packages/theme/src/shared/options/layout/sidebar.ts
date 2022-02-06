@@ -1,4 +1,4 @@
-import type { SidebarConfig } from "../../sidebar";
+import type { HopeThemeSidebarConfig } from "../../sidebar";
 
 export interface HopeThemeSidebarLocaleOptions {
   /**
@@ -6,7 +6,7 @@ export interface HopeThemeSidebarLocaleOptions {
    *
    * Set to `false` to disable sidebar in current locale
    */
-  sidebar?: SidebarConfig | "auto" | false;
+  sidebar?: HopeThemeSidebarConfig | "auto" | false;
 
   /**
    * Whether show icons in the sidebar
