@@ -21,7 +21,7 @@
     margin: 0 0 16px;
   }
 
-  &.full {
+  &.fullscreen {
     height: calc(100vh - var(--navbar-height)) !important;
 
     @media (max-width: config.$pad) {
