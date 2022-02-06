@@ -47,7 +47,7 @@
     "@mr-hope/vuepress-shared": "2.0.0-alpha.9",
     "@vuepress/client": "2.0.0-beta.35",
     "@vuepress/utils": "2.0.0-beta.35",
-    "@waline/client": "^1.5.2",
+    "@waline/client": "^1.5.4",
     "vue": "^3.2.29",
     "vue-router": "^4.0.12",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.9"
