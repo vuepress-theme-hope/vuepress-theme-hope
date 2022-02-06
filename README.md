@@ -24,15 +24,13 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Warning
 
-Current branch is based on VuePress@v2, and still in W.I.P. For stable releasae in v1, please see [v1 branch](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/).
+Current branch is based on VuePress@v2, and still in ALPHA status. This means that features and api are not solid, and there might be BREAKING CHANGES in future releases.
 
-当前分支基于 VuePress@v2，仍处于 W.I.P. 稳定 v1 发行版请参见[v1 分支](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/)。
+For stable releasae in v1, please see [v1 branch](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/).
 
-### Attention ⚠️⚠️⚠️
+当前分支基于 VuePress@v2，仍处于 Alpha。这意味着功能和 API 尚未固定，在未来的更新中仍可能出现破坏性更改。
 
-**The V2 theme is still _in developing_, and only plugins are availale! So please ONLY use plugins now in production**.
-
-**V2 主题仍在开发中，所以请仅在生产环境中使用目前发布的插件！**
+稳定 v1 发行版请参见[v1 分支](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/)。
 
 ## Details
 
@@ -79,7 +77,7 @@ Here is a list of changes:
 
 - [x] Blog2 ![new](https://img.shields.io/badge/-new-brightgreen)
 
-  Build a own blog plugin to support blog with better performance
+  Blog plugin with better performance
 
 - [x] LightGallery ![new](https://img.shields.io/badge/-new-brightgreen)
 
@@ -105,13 +103,13 @@ Here is a list of changes:
 
 - [ ] Code block theme config #189 ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
+- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
 
-- [ ] Drop fullscreen feature, or make it a optional feature (disabled by default). ![removed](https://img.shields.io/badge/-removed-red)
+- [x] Drop fullscreen feature. ![removed](https://img.shields.io/badge/-removed-red)
 
   Most visitors do not use this feature.
 
-- [ ] Drop themecolor feature, or make it a optional feature (disabled by default). ![removed](https://img.shields.io/badge/-removed-red)
+- [x] Drop themecolor feature ![removed](https://img.shields.io/badge/-removed-red)
 
   Most visitors do not use this feature.
 
