@@ -1,11 +1,12 @@
 import { defineComponent, h, resolveComponent } from "vue";
-import MarkdownContent from "./MarkdownContent";
-import PageAnchor from "./PageAnchor";
-import PageMeta from "./PageMeta";
-import PageNav from "./PageNav";
-import PageTitle from "./PageTitle";
-import PasswordModal from "./PasswordModal";
-import { usePathEncrypt } from "../composables";
+
+import MarkdownContent from "@theme-hope/components/MarkdownContent";
+import PageAnchor from "@theme-hope/components/PageAnchor";
+import PageMeta from "@theme-hope/components/PageMeta";
+import PageNav from "@theme-hope/components/PageNav";
+import PageTitle from "@theme-hope/components/PageTitle";
+import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
+import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
 import type { VNode } from "vue";
 

@@ -11,8 +11,8 @@ export default defineComponent({
 
   props: {
     readingTime: {
-      type: Object as PropType<ReadingTime>,
-      required: true,
+      type: Object as PropType<ReadingTime | null>,
+      default: () => null,
     },
 
     hint: {
@@ -26,6 +26,8 @@ export default defineComponent({
     const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
     const readingTime = computed(() => {
+      if (!props.readingTime) return null;
+
       const { minutes } = props.readingTime;
 
       return minutes < 1
@@ -40,21 +42,23 @@ export default defineComponent({
     });
 
     return (): VNode | null =>
-      h(
-        "span",
-        {
-          class: "reading-time-info",
-          ariaLabel: pageInfoLocale.value.readingTime,
-          ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
-        },
-        [
-          h(TimerIcon),
-          h("span", readingTime.value.text),
-          h("meta", {
-            property: "timeRequired",
-            content: readingTime.value.time,
-          }),
-        ]
-      );
+      readingTime.value
+        ? h(
+            "span",
+            {
+              class: "reading-time-info",
+              ariaLabel: pageInfoLocale.value.readingTime,
+              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
+            },
+            [
+              h(TimerIcon),
+              h("span", readingTime.value.text),
+              h("meta", {
+                property: "timeRequired",
+                content: readingTime.value.time,
+              }),
+            ]
+          )
+        : null;
   },
 });

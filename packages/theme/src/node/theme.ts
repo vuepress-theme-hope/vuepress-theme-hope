@@ -51,7 +51,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
   return {
     name: "vuepress-theme-hope",
 
-    alias: getAlias(),
+    alias: getAlias(app),
 
     layouts: path.resolve(__dirname, "../client/layouts"),
 

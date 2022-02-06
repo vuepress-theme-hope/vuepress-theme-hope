@@ -1,24 +1,11 @@
 import { defineClientAppSetup } from "@vuepress/client";
-import {
-  setupArticles,
-  setupCategoryMap,
-  setupDarkMode,
-  setupEncryptedArticles,
-  setupSlides,
-  setupSidebarItems,
-  setupStars,
-  setupTagMap,
-  setupTimelines,
-} from "./composables";
+
+import { setupDarkMode } from "@theme-hope/composables";
+import { setupBlog } from "@theme-hope/module/blog/composables";
+import { setupSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 export default defineClientAppSetup(() => {
-  setupArticles();
-  setupCategoryMap();
   setupDarkMode();
-  setupEncryptedArticles();
-  setupSlides();
   setupSidebarItems();
-  setupStars();
-  setupTagMap();
-  setupTimelines();
+  setupBlog();
 });

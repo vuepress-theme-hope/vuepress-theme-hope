@@ -2,15 +2,14 @@ import throttle from "lodash.throttle";
 import { computed, defineComponent, h, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import Navbar from "@Navbar";
-import Sidebar from "@Sidebar";
-import PasswordModal from "./PasswordModal";
-import PageFooter from "./PageFooter";
-import {
-  useGlobalEcrypt,
-  useSidebarItems,
-  useThemeLocaleData,
-} from "../composables";
+
+import PageFooter from "@theme-hope/components/PageFooter";
+import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
+import Navbar from "@theme-hope/module/navbar/components/Navbar";
+import Sidebar from "@theme-hope/module/sidebar/components/Sidebar";
+import { useThemeLocaleData } from "@theme-hope/composables";
+import { useGlobalEcrypt } from "@theme-hope/module/encrypt/composables";
+import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";

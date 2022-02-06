@@ -7,7 +7,11 @@ import {
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, reactive } from "vue";
 import { usePure, useThemeData, useThemeLocaleData } from "./themeData";
-import { useBlogOptions, useEnableBlog } from "./blog";
+
+import {
+  useBlogOptions,
+  useEnableBlog,
+} from "@theme-hope/module/blog/composables";
 
 import type {
   ArticleCategory,

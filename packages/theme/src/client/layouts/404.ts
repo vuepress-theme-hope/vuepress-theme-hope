@@ -1,9 +1,11 @@
 import { defineComponent, h } from "vue";
 import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
-import CommonWrapper from "@CommonWrapper";
-import { Page404Icon } from "../components/icons";
-import { useThemeLocaleData } from "../composables";
+
+import CommonWrapper from "@theme-hope/components/CommonWrapper";
+import { Page404Icon } from "@theme-hope/components/icons";
+
+import { useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 

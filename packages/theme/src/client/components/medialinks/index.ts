@@ -1,9 +1,9 @@
 import { computed, defineComponent, h } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
 
-import { useThemeLocaleData, usePure } from "../../composables";
-
 import { iconMap } from "./config";
+
+import { useThemeLocaleData, usePure } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 import type {

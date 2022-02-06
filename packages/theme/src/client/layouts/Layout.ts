@@ -1,9 +1,10 @@
 import { defineComponent, h } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import CommonWrapper from "@CommonWrapper";
-import FadeSideY from "../components/transitions/FadeSlideY";
-import ProjectHome from "../components/home/ProjectHome";
-import NormalPage from "../components/NormalPage";
+
+import CommonWrapper from "@theme-hope/components/CommonWrapper";
+import ProjectHome from "@theme-hope/components/home/ProjectHome";
+import FadeSideY from "@theme-hope/components/transitions/FadeSlideY";
+import NormalPage from "@theme-hope/components/NormalPage";
 
 import type { VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";

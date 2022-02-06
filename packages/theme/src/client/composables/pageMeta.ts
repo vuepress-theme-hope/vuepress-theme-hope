@@ -1,13 +1,13 @@
 import { computed } from "vue";
-import type { ComputedRef } from "vue";
 import {
   usePageData,
   usePageFrontmatter,
   useSiteLocaleData,
 } from "@vuepress/client";
 import { useThemeLocaleData } from "./themeData";
-import { resolveEditLink } from "../utils";
+import { resolveEditLink } from "@theme-hope/utils";
 
+import type { ComputedRef } from "vue";
 import type {
   AutoLink,
   HopeThemePageData,

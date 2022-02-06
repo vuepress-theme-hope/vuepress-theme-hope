@@ -1,7 +1,8 @@
-import { computed, defineComponent, h } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
-import MediaLinks from "./medialinks";
-import { usePageAuthor, useThemeLocaleData } from "../composables";
+import { computed, defineComponent, h } from "vue";
+
+import MediaLinks from "@theme-hope/components/medialinks";
+import { usePageAuthor, useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";

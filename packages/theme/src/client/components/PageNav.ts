@@ -1,10 +1,12 @@
-import { computed, defineComponent, h } from "vue";
-import { useRoute } from "vue-router";
 import { usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
-import AutoLink from "./AutoLink";
-import { PrevIcon, NextIcon } from "./icons";
-import { useAutoLink, useSidebarItems } from "../composables";
+import { computed, defineComponent, h } from "vue";
+import { useRoute } from "vue-router";
+
+import AutoLink from "@theme-hope/components/AutoLink";
+import { PrevIcon, NextIcon } from "@theme-hope/components/icons";
+import { useAutoLink } from "@theme-hope/composables";
+import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 import type { VNode } from "vue";
 import type {

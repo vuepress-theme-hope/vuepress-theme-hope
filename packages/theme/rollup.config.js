@@ -38,6 +38,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+
   ...rollupVue("client/components/sidebar/Sidebar.ts", {
     copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
     external: [
@@ -55,10 +56,9 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+
   ...rollupVue("client/components/CommonWrapper.ts", {
     external: [
-      "@Navbar",
-      "@Sidebar",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -74,10 +74,10 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+
   ...rollupVue("client/layouts/Blog.ts", {
     copy: [["client/assets", "client"]],
     external: [
-      "@CommonWrapper",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -92,9 +92,9 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+
   ...rollupVue("client/layouts/Layout.ts", {
     external: [
-      "@CommonWrapper",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -109,9 +109,9 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+
   ...rollupVue("client/layouts/404.ts", {
     external: [
-      "@CommonWrapper",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -125,9 +125,11 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+
   ...rollupTypescript("client/layouts/Slide", {
     external: ["vuepress-plugin-md-enhance/lib/client/SlidePage", "vue"],
   }),
+
   ...rollupTypescript("client/appEnhance", {
     copy: [["client/styles", "client"]],
     external: [
@@ -145,6 +147,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+
   ...rollupTypescript("client/appSetup", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",

@@ -2,7 +2,8 @@ import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { isArray, isLinkHttp } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
-import { useIconPrefix } from "../../composables";
+
+import { useIconPrefix } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";

@@ -1,9 +1,10 @@
 import { defineComponent, h } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
-import DropTransition from "../transitions/DropTransition.vue";
-import HomeFeatures from "./HomeFeatures";
-import MarkdownContent from "../MarkdownContent";
-import ProjectHero from "./ProjectHero";
+
+import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import HomeFeatures from "@theme-hope/components/home/HomeFeatures";
+import MarkdownContent from "@theme-hope/components/MarkdownContent";
+import ProjectHero from "@theme-hope/components/home/ProjectHero";
 
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";

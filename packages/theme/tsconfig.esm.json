@@ -1,12 +1,13 @@
 {
   "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
+    "baseUrl": "./",
     "lib": ["dom", "es2020"],
     "module": "ES2020",
     "rootDir": "./src",
     "outDir": "./lib",
     "paths": {
-      "@theme-hope/*": ["src/*"]
+      "@theme-hope/*": ["./src/client/*"]
     },
     "types": ["@vuepress/client/types"]
   },

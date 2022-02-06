@@ -11,8 +11,8 @@ export default defineComponent({
 
   props: {
     readingTime: {
-      type: Object as PropType<ReadingTime>,
-      required: true,
+      type: Object as PropType<ReadingTime | null>,
+      default: () => null,
     },
 
     hint: {
@@ -25,13 +25,13 @@ export default defineComponent({
     const pageInfoLocale = useLocaleConfig(articleInfoLocales);
     const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
-    const words = computed(() => props.readingTime.words.toString());
+    const words = computed(() => props.readingTime?.words.toString());
     const wordText = computed(() =>
-      readingTimeLocale.value.word.replace("$word", words.value)
+      readingTimeLocale.value.word.replace("$word", words.value || "")
     );
 
     return (): VNode | null =>
-      wordText.value
+      words.value
         ? h(
             "span",
             {

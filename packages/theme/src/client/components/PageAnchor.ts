@@ -1,10 +1,11 @@
+import { usePageData } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { usePageData } from "@vuepress/client";
-import { isActiveLink } from "../utils";
 
-import type { PropType, VNode } from "vue";
+import { isActiveLink } from "@theme-hope/utils";
+
 import type { PageHeader } from "@vuepress/shared";
+import type { PropType, VNode } from "vue";
 
 interface AnchorItem {
   text: string;

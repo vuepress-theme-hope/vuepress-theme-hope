@@ -1,12 +1,13 @@
 import { defineComponent, h } from "vue";
-import AutoLink from "./AutoLink";
-import { EditIcon } from "./icons";
+
+import AutoLink from "@theme-hope/components/AutoLink";
+import { EditIcon } from "@theme-hope/components/icons";
 import {
   useContributors,
   useEditLink,
   useThemeLocaleData,
   useUpdateTime,
-} from "../composables";
+} from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 

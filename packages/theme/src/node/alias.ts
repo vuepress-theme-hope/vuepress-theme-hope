@@ -1,26 +1,66 @@
-import { path } from "@vuepress/utils";
+import { fs, path } from "@vuepress/utils";
 
-export const getAlias = (): Record<string, string> => {
+import type { App } from "@vuepress/core";
+
+const deepReadDir = (base: string, dir = ""): string[] => {
+  const dirPath = path.resolve(base, dir);
+  const files = fs.readdirSync(dirPath);
+
+  return files
+    .map((file) =>
+      fs.statSync(path.join(dirPath, file)).isDirectory()
+        ? deepReadDir(base, path.join(dir, file))
+        : [`${dir ? `${dir}/` : ""}${file}`]
+    )
+    .flat();
+};
+
+const getDirAlias = (dir: string): [string, string][] =>
+  deepReadDir(path.resolve(__dirname, "../client", dir))
+    .filter((file) => file.endsWith(".js") || file.endsWith(".vue"))
+    .map<[string, string]>((file) => [
+      `@theme-hope/${dir}/${
+        file.endsWith(".js") ? file.replace(/(?:\/index)?\.js$/, "") : file
+      }`,
+      path.resolve(__dirname, "../client", dir, file),
+    ]);
+
+const getEntryAlias = (entry: string): [string, string] | null =>
+  fs.existsSync(path.resolve(__dirname, "../client", entry, "index.js"))
+    ? [
+        `@theme-hope/${entry}`,
+        path.resolve(__dirname, "../client", entry, "index.js"),
+      ]
+    : null;
+
+export const getAlias = (app: App): Record<string, string> => {
   // use alias to make all components replaceable
-  // alias: Object.fromEntries(
-  //   fs
-  //     .readdirSync(path.resolve(__dirname, "../client/components"))
-  //     .filter((file) => file.endsWith(".vue"))
-  //     .map((file) => [
-  //       `@theme/${file}`,
-  //       path.resolve(__dirname, "../client/components", file),
-  //     ])
-  // ),
+  const alias = Object.fromEntries([
+    // define components
+    ...getDirAlias("components"),
+    // define composables and utils
+    ...["composables", "utils"]
+      .map(getEntryAlias)
+      .filter<[string, string]>(
+        (item): item is [string, string] => item !== null
+      ),
+    ...fs
+      .readdirSync(path.resolve(__dirname, "../client/module"))
+      .map((folder) => `module/${folder}`)
+      .map((file) => [
+        ...getDirAlias(`${file}/components`),
+        ...["composables", "utils"]
+          .map((folder) => `${file}/${folder}`)
+          .map(getEntryAlias)
+          .filter<[string, string]>(
+            (item): item is [string, string] => item !== null
+          ),
+      ])
+      .flat(),
+  ]);
 
-  return {
-    "@CommonWrapper": path.resolve(
-      __dirname,
-      "../client/components/CommonWrapper.js"
-    ),
-    "@Navbar": path.resolve(__dirname, "../client/components/navbar/Navbar.js"),
-    "@Sidebar": path.resolve(
-      __dirname,
-      "../client/components/sidebar/Sidebar.js"
-    ),
-  };
+  if (app.env.isDebug) console.log("Theme alias config:", alias);
+  console.log("Theme alias config:", alias);
+
+  return alias;
 };

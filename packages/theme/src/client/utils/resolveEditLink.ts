@@ -4,6 +4,7 @@ import {
   removeEndingSlash,
 } from "@vuepress/shared";
 import { resolveRepoType } from "./resolveRepoType";
+
 import type { RepoType } from "./resolveRepoType";
 
 export const editLinkPatterns: Record<Exclude<RepoType, null>, string> = {

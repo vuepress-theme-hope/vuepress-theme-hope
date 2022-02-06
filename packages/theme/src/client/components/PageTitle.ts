@@ -1,6 +1,11 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h, resolveComponent } from "vue";
-import { useIconPrefix, usePageInfo, useThemeLocaleData } from "../composables";
+
+import {
+  useIconPrefix,
+  usePageInfo,
+  useThemeLocaleData,
+} from "@theme-hope/composables";
 
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { VNode } from "vue";

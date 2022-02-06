@@ -1,4 +1,4 @@
-import { resolveRouteWithRedirect } from "../utils";
+import { resolveRouteWithRedirect } from "@theme-hope/utils";
 
 import type { AutoLink } from "../../shared";
 

@@ -1,6 +1,7 @@
 import { Transition, defineComponent, h } from "vue";
+import { useScrollPromise } from "@theme-hope/composables";
+
 import type { VNode } from "vue";
-import { useScrollPromise } from "../../composables";
 
 export default defineComponent({
   name: "FadeSlideY",

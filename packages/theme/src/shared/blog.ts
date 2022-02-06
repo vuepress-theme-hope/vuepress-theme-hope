@@ -23,6 +23,11 @@ export interface ArticleMeta extends Record<string, unknown> {
   title: string;
 
   /**
+   * Page icon
+   */
+  icon?: string;
+
+  /**
    * Article author
    */
   author?: Author | false;

@@ -3,10 +3,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "rootDir": "./src",
-    "outDir": "./lib",
-    "paths": {
-      "@theme-hope/*": ["src/*"]
-    }
+    "outDir": "./lib"
   },
   "include": ["./src/node", "./src/shared"]
 }

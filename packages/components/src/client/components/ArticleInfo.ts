@@ -35,7 +35,7 @@ export default defineComponent({
 
   props: {
     config: {
-      type: Array as PropType<ArticleInfo[]>,
+      type: [Array, Boolean] as PropType<ArticleInfo[] | false>,
       default: (): ArticleInfo[] => [
         "Author",
         "Original",
@@ -83,8 +83,8 @@ export default defineComponent({
     },
 
     readingTime: {
-      type: Object as PropType<ReadingTime>,
-      required: true,
+      type: Object as PropType<ReadingTime | null>,
+      default: () => null,
     },
   },
 

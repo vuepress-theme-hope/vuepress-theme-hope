@@ -1,5 +1,4 @@
 import type { RouteLocationNormalizedLoaded } from "vue-router";
-import type { ResolvedSidebarItem } from "../../shared";
 
 const HASH_REGEXP = /#.*$/u;
 
@@ -29,16 +28,4 @@ export const isActiveLink = (
   const targetPath = normalizePath(link);
 
   return currentPath === targetPath;
-};
-
-export const isActiveSidebarItem = (
-  route: RouteLocationNormalizedLoaded,
-  item: ResolvedSidebarItem
-): boolean => {
-  if (isActiveLink(route, item.link)) return true;
-
-  if (item.children)
-    return item.children.some((child) => isActiveSidebarItem(route, child));
-
-  return false;
 };
