@@ -22,8 +22,8 @@ $codeLang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
 $contentClass: ".theme-hope-content" !default;
 
 /** dark mode selecters */
-$darkSelector: 'body[data-theme="dark"]' !default;
-$lightSelector: 'body[data-theme="light"]' !default;
+$darkSelector: 'html[data-theme="dark"]' !default;
+$lightSelector: 'html[data-theme="light"]' !default;
 
 /* Color list */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,

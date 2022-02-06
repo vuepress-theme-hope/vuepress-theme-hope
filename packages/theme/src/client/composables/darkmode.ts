@@ -32,9 +32,9 @@ export const useDarkMode = (): DarkMode => {
 
 export const updateDarkModeAttr = (isDarkMode: DarkModeRef): void => {
   const update = (isDark = isDarkMode.value): void => {
-    const body = window?.document.querySelector("body");
+    const html = window?.document.querySelector("html");
 
-    body?.setAttribute("data-theme", isDark ? "dark" : "light");
+    html?.setAttribute("data-theme", isDark ? "dark" : "light");
   };
 
   onMounted(() => {
