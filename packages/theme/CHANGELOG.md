@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.11](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2022-02-06)
+
+### Bug Fixes
+
+- **theme:** fix blog options type ([9a2d573](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9a2d573ddf7684cea5c0ccb74dbe8c7e867f6817))
+- **theme:** fix theme build ([0942ca6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0942ca659edf32205b85702eb11c432cdaad2a7c))
+
+### Features
+
+- **theme:** add helpers ([03945c3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/03945c3ae2ad596e8879442240f8bc221cbc307b))
+
 # [2.0.0-alpha.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
 
 ### Bug Fixes

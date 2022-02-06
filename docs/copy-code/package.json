@@ -1,6 +1,6 @@
 {
   "name": "copy-code-docs",
-  "version": "2.0.0-alpha.10",
+  "version": "2.0.0-alpha.11",
   "private": true,
   "description": "Docs for vuepress-plugin-copy-code2",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "docs:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "vuepress-theme-hope": "2.0.0-alpha.10",
+    "vuepress-theme-hope": "2.0.0-alpha.11",
     "vuepress-vite": "2.0.0-beta.35",
     "vuepress-webpack": "2.0.0-beta.35"
   }
