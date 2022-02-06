@@ -62,7 +62,12 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
 
-    extendsPage: (page) => extendsPage(app, page as Page<HopeThemePageData>),
+    extendsPage: (page) =>
+      extendsPage(
+        app,
+        themeOptions as HopeThemeConfig,
+        page as Page<HopeThemePageData>
+      ),
 
     plugins: getPluginConfig(app, plugins, themeOptions as HopeThemeConfig),
   };

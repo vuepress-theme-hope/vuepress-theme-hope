@@ -10,8 +10,12 @@ import type {
   HopeThemeNormalPageFrontmatter,
 } from "../shared";
 
-export const extendsPage = (app: App, page: Page<HopeThemePageData>): void => {
-  const { config = {} } = (app.options.themeConfig as HopeThemeConfig).encrypt;
+export const extendsPage = (
+  app: App,
+  themeConfig: HopeThemeConfig,
+  page: Page<HopeThemePageData>
+): void => {
+  const { config = {} } = themeConfig.encrypt;
   const frontmatter = page.frontmatter as
     | HopeThemeProjectHomePageFrontmatter
     | HopeThemeBlogHomePageFrontmatter
