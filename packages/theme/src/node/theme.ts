@@ -21,12 +21,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...themeOptions },
   app
 ) => {
-  addViteOptimizeDeps(app, ["@vueuse/core", "lodash.throttle"]);
+  addViteOptimizeDeps(app, ["@vueuse/core", "bcryptjs", "lodash.throttle"]);
 
   if (app.env.isDev)
     addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
-
-  if (themeOptions.encrypt) addViteOptimizeDeps(app, "bcryptjs");
 
   handleThemeData(app, themeOptions);
   handleWebpackOptions(app);
