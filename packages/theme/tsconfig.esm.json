@@ -5,6 +5,9 @@
     "module": "ES2020",
     "rootDir": "./src",
     "outDir": "./lib",
+    "paths": {
+      "@theme-hope/*": ["src/*"]
+    },
     "types": ["@vuepress/client/types"]
   },
   "include": ["./src/client", "./src/shared", "./src/*.d.ts"]

@@ -1,7 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs"
+    "module": "commonjs",
+    "paths": {
+      "@theme-hope/*": ["packages/theme/src/*"]
+    }
   },
   "include": ["scripts/**/*.ts"],
   "exclude": []
