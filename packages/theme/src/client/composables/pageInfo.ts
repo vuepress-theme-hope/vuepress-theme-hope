@@ -4,7 +4,12 @@ import {
   getDate,
   getTag,
 } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "@vuepress/client";
+import { removeEndingSlash } from "@vuepress/shared";
 import { computed, reactive } from "vue";
 import { usePure, useThemeData, useThemeLocaleData } from "./themeData";
 
@@ -41,6 +46,7 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> =>
   });
 
 export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
+  const routeLocale = useRouteLocale();
   const enableBlog = useEnableBlog();
   const blogOptions = useBlogOptions();
   const { category } = usePageFrontmatter<BasePageFrontMatter>().value;
@@ -50,10 +56,12 @@ export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
       name,
       ...(enableBlog.value
         ? {
-            path: blogOptions.value.categoryPath.replace(
+            path: `${removeEndingSlash(
+              routeLocale.value
+            )}${blogOptions.value.categoryPath.replace(
               /\$category/g,
               decodeURI(name)
-            ),
+            )}`,
           }
         : {}),
     }))
@@ -61,6 +69,7 @@ export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
 };
 
 export const usePageTag = (): ComputedRef<ArticleTag[]> => {
+  const routeLocale = useRouteLocale();
   const enableBlog = useEnableBlog();
   const blogOptions = useBlogOptions();
   const { tag } = usePageFrontmatter<BasePageFrontMatter>().value;
@@ -70,7 +79,9 @@ export const usePageTag = (): ComputedRef<ArticleTag[]> => {
       name,
       ...(enableBlog.value
         ? {
-            path: blogOptions.value.tagPath.replace(/\$tag/g, decodeURI(name)),
+            path: `${removeEndingSlash(
+              routeLocale.value
+            )}${blogOptions.value.tagPath.replace(/\$tag/g, decodeURI(name))}`,
           }
         : {}),
     }))
