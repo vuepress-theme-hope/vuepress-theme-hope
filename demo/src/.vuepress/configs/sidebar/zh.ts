@@ -5,7 +5,6 @@ export const zh: SidebarConfig = {
     "/zh/README.md",
     "/zh/home.md",
     "/zh/slides.md",
-    "/zh/layout.md",
     {
       text: "如何使用",
       icon: "creative",

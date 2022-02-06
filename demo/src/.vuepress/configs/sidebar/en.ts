@@ -5,7 +5,6 @@ export const en: SidebarConfig = {
     "/README.md",
     "/home.md",
     "/slides.md",
-    "/layout.md",
     {
       icon: "creative",
       text: "Guide",
