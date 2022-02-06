@@ -71,12 +71,12 @@ export default defineComponent({
       if (config) {
         const links: MediaLink[] = [];
 
-        for (const media in config)
-          if (medias.includes(media as MediaType))
-            links.push({
-              icon: media as MediaType,
-              url: config[media as MediaType],
-            });
+        for (const media in config) {
+          const url = config[media as MediaType];
+
+          if (medias.includes(media as MediaType) && url)
+            links.push({ icon: media as MediaType, url });
+        }
 
         return links;
       }
