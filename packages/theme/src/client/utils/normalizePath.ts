@@ -20,12 +20,14 @@ export const isActiveLink = (
 ): boolean => {
   if (link === undefined) return false;
 
-  const linkHash = getHash(link);
-
-  if (linkHash && route.hash !== link) return false;
-
   const currentPath = normalizePath(route.path);
   const targetPath = normalizePath(link);
+  const linkHash = getHash(link);
+
+  if (linkHash)
+    return (
+      linkHash === route.hash && (!targetPath || currentPath === targetPath)
+    );
 
   return currentPath === targetPath;
 };
