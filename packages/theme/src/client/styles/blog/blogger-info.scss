@@ -1,0 +1,53 @@
+.blogger-info {
+  .page & {
+    background: var(--bg-color);
+  }
+
+  .blogger {
+    padding: 8px 0;
+    text-align: center;
+
+    &.hasIntro {
+      cursor: pointer;
+    }
+
+    .avatar {
+      width: 128px;
+      height: 128px;
+      margin: 0 auto;
+
+      &.round {
+        border-radius: 50%;
+      }
+    }
+
+    .name {
+      margin: 16px auto;
+      font-size: 22px;
+    }
+  }
+
+  .num-wrapper {
+    display: flex;
+    margin: 0 auto 16px;
+    width: 80%;
+
+    > div {
+      width: 25%;
+      text-align: center;
+      font-size: 13px;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--theme-color);
+      }
+
+      .num {
+        position: relative;
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+  }
+}

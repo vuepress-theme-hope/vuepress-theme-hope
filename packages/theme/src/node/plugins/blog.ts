@@ -34,44 +34,61 @@ export const resolveBlogOptions = (
 
   return {
     metaScope: "",
-    filter: ({ routeMeta }) => routeMeta.type !== "page",
+    filter: ({ frontmatter, filePathRelative, routeMeta }) =>
+      filePathRelative &&
+      frontmatter.home !== true &&
+      routeMeta.type !== "page",
     category: [
       {
         key: "category",
         getter: ({ routeMeta }) => routeMeta.category || [],
         sorter,
-        layout: "Layout",
-        itemLayout: "Layout",
+        layout: "Blog",
+        itemLayout: "Blog",
       },
       {
         key: "tag",
         getter: ({ routeMeta }) => routeMeta.tag || [],
         sorter,
-        layout: "Layout",
-        itemLayout: "Layout",
+        layout: "Blog",
+        itemLayout: "Blog",
       },
     ],
     type: [
       {
-        key: "slide",
+        key: "article",
         sorter,
-        filter: ({ routeMeta }) => routeMeta.type === "slide",
+        filter: () => true,
+        layout: "Blog",
       },
       {
         key: "encrypted",
         sorter,
         filter: ({ routeMeta }) => routeMeta.isEncrypted,
+        layout: "Blog",
+      },
+      {
+        key: "slide",
+        sorter,
+        filter: ({ routeMeta }) => routeMeta.type === "slide",
+        layout: "Blog",
       },
       {
         key: "timeline",
-        sorter,
+        sorter: (pageA, pageB) =>
+          compareDate(
+            pageA.routeMeta.date as Date | undefined,
+            pageB.routeMeta.date as Date | undefined
+          ),
         filter: ({ frontmatter, routeMeta }) =>
           routeMeta.date && frontmatter.timeline !== false,
+        layout: "Blog",
       },
       {
         key: "star",
         sorter,
         filter: ({ frontmatter }) => frontmatter.star,
+        layout: "Blog",
       },
     ],
   } as BlogOptions;

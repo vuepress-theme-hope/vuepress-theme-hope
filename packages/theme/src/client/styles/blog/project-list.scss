@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "@hope/config";
 
 .project-list {
@@ -70,7 +71,9 @@
   }
 }
 
-@each $color, $index in config.$colors {
+@each $color in config.$colors {
+  $index: list.index(config.$colors, $color) - 1;
+
   .project-list .project#{$index} {
     & {
       background: lighten($color, 90%);

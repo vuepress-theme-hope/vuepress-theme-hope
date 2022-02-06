@@ -14,30 +14,11 @@ import { useBlogOptions } from "../../composables";
 import type { PropType, VNode } from "vue";
 import type { ArticleMeta } from "../../../shared";
 
-import "../../styles/blog/article-list.scss";
-
-// filter(): ((page: PageComputed) => boolean) | undefined {
-//   const { path } = this.$route;
-
-//   return path.includes("/article")
-//     ? (page: PageComputed): boolean => page.frontmatter.layout !== "Slide"
-//     : path.includes("/star")
-//     ? (page: PageComputed): boolean =>
-//         Boolean(page.frontmatter.star || page.frontmatter.sticky)
-//     : path.includes("/encrypt")
-//     ? (page: PageComputed): boolean =>
-//         getPathMatchedKeys(this.$themeConfig.encrypt, page.path).length !==
-//           0 || Boolean(page.frontmatter.password)
-//     : path.includes("/slide")
-//     ? (page: PageComputed): boolean => page.frontmatter.layout === "Slide"
-//     : undefined;
-// },
-
 export default defineComponent({
   name: "ArticleList",
 
   props: {
-    articleList: {
+    items: {
       type: Array as PropType<{ path: string; meta: ArticleMeta }[]>,
       default: () => [],
     },
@@ -51,7 +32,7 @@ export default defineComponent({
     const articlePerPage = computed(() => blogOptions.value.articlePerPage);
 
     const currentArticles = computed(() =>
-      props.articleList.slice(
+      props.items.slice(
         (currentPage.value - 1) * articlePerPage.value,
         currentPage.value * articlePerPage.value
       )
@@ -83,7 +64,7 @@ export default defineComponent({
               h(resolveComponent("Pagination"), {
                 currentPage: currentPage.value,
                 perPage: articlePerPage.value,
-                total: props.articleList.length,
+                total: props.items.length,
                 updateCurrentPage: (value: number) => {
                   currentPage.value = value;
                 },

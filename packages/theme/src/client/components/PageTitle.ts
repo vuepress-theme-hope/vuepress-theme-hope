@@ -5,8 +5,6 @@ import { useIconPrefix, usePageInfo, useThemeLocaleData } from "../composables";
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { VNode } from "vue";
 
-import "../styles/page-title.scss";
-
 export default defineComponent({
   name: "PageTitle",
 
@@ -20,7 +18,7 @@ export default defineComponent({
     return (): VNode =>
       h("div", { class: "page-title" }, [
         h("h1", [
-          themeLocale.value.titleIcon && frontmatter.value.icon
+          themeLocale.value.titleIcon !== false && frontmatter.value.icon
             ? h("i", {
                 class: ["icon", `${iconPrefix.value}${frontmatter.value.icon}`],
               })

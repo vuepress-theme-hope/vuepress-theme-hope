@@ -2,6 +2,7 @@ export * from "./blog";
 export * from "./darkmode";
 export * from "./encrypt";
 export * from "./navbar";
+export * from "./navigate";
 export * from "./navLink";
 export * from "./pageMeta";
 export * from "./pageInfo";

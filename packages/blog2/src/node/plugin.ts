@@ -3,7 +3,6 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
-import { prepareArticle } from "./article";
 import { prepareCategory } from "./category";
 import { prepareType } from "./type";
 import { getPageMap, logger } from "./utils";
@@ -27,11 +26,10 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
       const pageMap = getPageMap(options, app);
 
       return Promise.all([
-        prepareArticle(app, pageMap),
-        prepareType(app, options, pageMap).then((pageKeys) => {
+        prepareCategory(app, options, pageMap).then((pageKeys) => {
           generatePages.push(...pageKeys);
         }),
-        prepareCategory(app, options, pageMap).then((pageKeys) => {
+        prepareType(app, options, pageMap).then((pageKeys) => {
           generatePages.push(...pageKeys);
         }),
       ]).then(() => {
@@ -45,11 +43,10 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
       const pageMap = getPageMap(options, app);
 
       return Promise.all([
-        prepareArticle(app, pageMap),
-        prepareType(app, options, pageMap).then((pageKeys) => {
+        prepareCategory(app, options, pageMap).then((pageKeys) => {
           newGeneratedPages.push(...pageKeys);
         }),
-        prepareCategory(app, options, pageMap).then((pageKeys) => {
+        prepareType(app, options, pageMap).then((pageKeys) => {
           newGeneratedPages.push(...pageKeys);
         }),
       ]).then(async () => {

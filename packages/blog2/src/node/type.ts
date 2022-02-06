@@ -57,8 +57,10 @@ export const prepareType = (
               slugify(path.replace(/:key/g, key))
             )}`,
             frontmatter: {
-              type: "type",
-              key,
+              blog: {
+                type: "type",
+                key,
+              },
               layout,
             },
           });

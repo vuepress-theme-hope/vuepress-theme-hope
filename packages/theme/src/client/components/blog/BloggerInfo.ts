@@ -6,12 +6,12 @@ import {
   useBlogOptions,
   useArticles,
   useCategoryMap,
+  useNavigate,
   useTagMap,
   useTimelines,
   useThemeData,
   useThemeLocaleData,
 } from "../../composables";
-import { navigate } from "../../utils";
 
 import type { VNode } from "vue";
 
@@ -24,9 +24,10 @@ export default defineComponent({
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const articles = useArticles();
-    const categoryList = useCategoryMap();
-    const tagList = useTagMap();
+    const categoryMap = useCategoryMap();
+    const tagMap = useTagMap();
     const timelines = useTimelines();
+    const navigate = useNavigate();
 
     const bloggerName = computed(
       () =>
@@ -74,11 +75,11 @@ export default defineComponent({
                       "avatar",
                       {
                         round: blogOptions.value.roundAvatar,
-                        property: "image",
-                        src: withBase(bloggerAvatar.value),
-                        alt: "Blogger Avatar",
                       },
                     ],
+                    src: withBase(bloggerAvatar.value),
+                    property: "image",
+                    alt: "Blogger Avatar",
                   })
                 : null,
               bloggerName.value
@@ -94,27 +95,27 @@ export default defineComponent({
             ]
           ),
           h("div", { class: "num-wrapper" }, [
-            h("div", { onClick: () => navigate("/article/") }, [
-              h("div", { class: "number" }, articles.value.length),
+            h("div", { onClick: () => navigate(articles.value.path) }, [
+              h("div", { class: "number" }, articles.value.items.length),
               h("div", locale.value.article),
             ]),
-            h("div", { onClick: () => navigate("/category/") }, [
+            h("div", { onClick: () => navigate(categoryMap.value.path) }, [
               h(
                 "div",
                 { class: "number" },
-                Object.keys(categoryList.value.map).length
+                Object.keys(categoryMap.value.map).length
               ),
               h("div", locale.value.category),
             ]),
-            h("div", { onClick: () => navigate("/tag/") }, [
+            h("div", { onClick: () => navigate(tagMap.value.path) }, [
               h(
                 "div",
                 { class: "number" },
-                Object.keys(tagList.value.map).length
+                Object.keys(tagMap.value.map).length
               ),
               h("div", locale.value.tag),
             ]),
-            h("div", { onClick: () => navigate("/timeline/") }, [
+            h("div", { onClick: () => navigate(timelines.value.path) }, [
               h("div", { class: "number" }, timelines.value.items.length),
               h("div", locale.value.timeline),
             ]),

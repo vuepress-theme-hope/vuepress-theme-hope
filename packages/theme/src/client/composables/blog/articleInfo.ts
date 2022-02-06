@@ -70,13 +70,13 @@ export const useArticleDate = (article: Ref<ArticleMeta>): DateRef =>
   });
 
 export const useArticleInfo = (
-  article: Ref<ArticleMeta>
+  meta: Ref<ArticleMeta>
 ): UnwrapNestedRefs<ArticleInfoProps> => {
   const blogOptions = useBlogOptions();
-  const author = useArticleAuthor(article);
-  const category = useArticleCategory(article);
-  const tag = useArticleTag(article);
-  const date = useArticleDate(article);
+  const author = useArticleAuthor(meta);
+  const category = useArticleCategory(meta);
+  const tag = useArticleTag(meta);
+  const date = useArticleDate(meta);
   const pure = usePure();
 
   return reactive<ArticleInfoProps>({
@@ -85,8 +85,8 @@ export const useArticleInfo = (
     category: category.value,
     date: date.value,
     tag: tag.value,
-    original: article.value.isOriginal,
-    readingTime: article.value.readingTime,
+    original: meta.value.isOriginal,
+    readingTime: meta.value.readingTime,
     hint: !pure.value,
   });
 };

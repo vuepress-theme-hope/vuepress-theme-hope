@@ -8,7 +8,7 @@
   padding: 16px 20px;
   border-radius: 6px;
   background: var(--bg-color);
-  box-shadow: 0 1px 3px 0 var(--card-shadow-color);
+  box-shadow: 0 1px 3px 0 var(--card-shadow);
 
   text-align: left;
 
@@ -21,7 +21,7 @@
   }
 
   &:hover {
-    box-shadow: 0 2px 6px 0 var(--card-shadow-color);
+    box-shadow: 0 2px 6px 0 var(--card-shadow);
   }
 
   .sticky-icon {
@@ -30,10 +30,10 @@
     right: 0;
     width: 40px;
     height: 40px;
-    fill: var(--theme-color);
+    color: var(--theme-color);
 
     .sticky-text {
-      fill: var(--white);
+      color: transparent;
     }
   }
 
@@ -66,13 +66,14 @@
     }
 
     .lock-icon,
-    .presentation-icon {
+    .slides-icon {
       position: relative;
       bottom: -0.125em;
       display: inline-block;
       vertical-align: baseline;
       width: 20px;
       height: 20px;
+      margin-right: 0.25em;
       color: var(--theme-color);
     }
   }
@@ -143,6 +144,7 @@
         bottom: -0.125em;
       }
 
+      .categories-wrapper,
       .tags-wrapper {
         display: inline-block;
       }

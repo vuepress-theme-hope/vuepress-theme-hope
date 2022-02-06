@@ -74,8 +74,10 @@ export const prepareCategory = (
               path.replace(/:key/g, slugify(key))
             )}`,
             frontmatter: {
-              type: "category",
-              key,
+              blog: {
+                type: "category",
+                key,
+              },
               layout,
             },
           });
@@ -89,21 +91,23 @@ export const prepareCategory = (
           };
 
           const { map } = categoryMap[routeLocale];
-          const tempMap: Record<string, Page[]> = {};
+          const pageMapStore: Record<string, Page[]> = {};
 
-          pageMap[routeLocale].forEach((page) => {
+          for (const page of pageMap[routeLocale]) {
             const categories = getter(page);
 
-            categories.map(async (category) => {
+            for (const category of categories) {
               if (!map[category]) {
                 const page = await createPage(app, {
                   path: `${routeLocale}${removeLeadingSlash(
                     getItemPath(category)
                   )}`,
                   frontmatter: {
-                    type: "category",
-                    name: category,
-                    key,
+                    blog: {
+                      type: "category",
+                      name: category,
+                      key,
+                    },
                     layout: itemLayout,
                   },
                 });
@@ -116,15 +120,17 @@ export const prepareCategory = (
                   keys: [],
                 };
 
-                tempMap[category] = [];
+                pageMapStore[category] = [];
               }
 
-              tempMap[category].push(page);
-            });
-          });
+              pageMapStore[category].push(page);
+            }
+          }
 
-          for (const name in map)
-            map[name].keys = tempMap[name].sort(sorter).map(({ key }) => key);
+          for (const category in pageMapStore)
+            map[category].keys = pageMapStore[category]
+              .sort(sorter)
+              .map(({ key }) => key);
         }
 
         return {

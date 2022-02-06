@@ -8,8 +8,6 @@ import { useArticleInfo, usePathEncrypt } from "../../composables";
 import type { PropType, VNode } from "vue";
 import type { ArticleMeta } from "../../../shared";
 
-import "../../styles/blog/article-item.scss";
-
 export default defineComponent({
   name: "ArticleItem",
 

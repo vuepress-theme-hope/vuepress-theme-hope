@@ -94,9 +94,9 @@ export interface BlogOptions {
   injectMeta?: (page: Page) => Record<string, unknown>;
 
   /**
-   * Article filter
+   * Page filter, determine whether a page should be included
    *
-   * 文章过滤器，此函数用于鉴别文章
+   * 页面过滤器，此函数用于鉴别页面是否作为文章
    *
    * @default () => true
    */

@@ -18,7 +18,7 @@ h6 {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
     padding-top: var(--navbar-height) !important;
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: config.$pad) {
       margin-top: calc(
         0.5rem - var(--navbar-mobile-height, --navbar-height)
       ) !important;

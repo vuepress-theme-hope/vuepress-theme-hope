@@ -37,12 +37,12 @@ export const useBlogCategory = <
       map: {},
     };
 
-    for (const category in currentMap) {
-      const tagMap = currentMap.map[category];
+    for (const category in currentMap.map) {
+      const categoryMap = currentMap.map[category];
 
-      result.map[category] = { path: tagMap.path, items: [] };
+      result.map[category] = { path: categoryMap.path, items: [] };
 
-      for (const pageKey of tagMap.keys) {
+      for (const pageKey of categoryMap.keys) {
         const route = routes.find(({ name }) => name === pageKey);
 
         if (route) {

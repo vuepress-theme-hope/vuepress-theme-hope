@@ -1,5 +1,6 @@
 import { defineComponent, h, resolveComponent } from "vue";
 import MarkdownContent from "./MarkdownContent";
+import PageAnchor from "./PageAnchor";
 import PageMeta from "./PageMeta";
 import PageNav from "./PageNav";
 import PageTitle from "./PageTitle";
@@ -23,6 +24,7 @@ export default defineComponent({
           : [
               slots.top?.(),
               h(PageTitle),
+              h(PageAnchor),
               h(MarkdownContent),
               h(PageMeta),
               h(PageNav),

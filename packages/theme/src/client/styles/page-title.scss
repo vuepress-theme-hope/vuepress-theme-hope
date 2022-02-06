@@ -16,7 +16,7 @@
       padding-top: var(--navbar-height) !important;
       font-size: 2.5rem;
 
-      @media (max-width: config.$mobile) {
+      @media (max-width: config.$pad) {
         margin-top: calc(
           0.5rem - var(--navbar-mobile-height, --navbar-height)
         ) !important;

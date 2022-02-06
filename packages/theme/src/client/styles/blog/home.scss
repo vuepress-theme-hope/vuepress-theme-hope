@@ -1,0 +1,52 @@
+@use "@hope/config";
+
+.page.blog {
+  box-sizing: content-box;
+  min-height: 100vh;
+  padding-top: var(--navbar-height);
+  padding-bottom: 2rem;
+  margin: 0px auto;
+  background: var(--bg-color-light);
+
+  @media (max-width: config.$mobile) {
+    padding: var(--navbar-mobile-height) 1.5rem 2rem;
+  }
+
+  @media (max-width: config.$mobileS) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .blog-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+
+    @media (min-width: config.$mobile) {
+      padding: 0 1rem;
+    }
+
+    @media (min-width: config.$pad) {
+      padding: 0 2rem;
+    }
+
+    @media (min-width: config.$wide) {
+      padding: 0;
+    }
+
+    .blog-home {
+      max-width: 780px;
+      overflow: hidden;
+      flex: 1;
+
+      @media (min-width: config.$mobile) {
+        margin: 0 15px;
+      }
+    }
+  }
+
+  #{config.$contentClass}:empty {
+    padding: 0;
+  }
+}

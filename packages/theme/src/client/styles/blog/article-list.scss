@@ -1,12 +1,12 @@
 @use "@hope/config";
 
 .article-wrapper {
-  margin-top: calc(- 0.5rem - var(--navbar-height));
+  margin-top: calc(0rem - 0.5rem - var(--navbar-height));
   padding-top: calc(var(--navbar-height) + 0.5rem);
   text-align: center;
 
-  @media (max-width: config.$mobile) {
-    margin-top: calc(- 0.5rem - var(--navbar-mobile-height));
+  @media (max-width: config.$pad) {
+    margin-top: calc(0rem - 0.5rem - var(--navbar-mobile-height));
     padding-top: calc(var(--navbar-mobile-height) + 0.5rem);
   }
 

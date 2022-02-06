@@ -28,7 +28,7 @@
   transition: transform ease-in-out 0.3s,
     background-color var(--color-transition), box-shadow var(--color-transition);
 
-  @media (max-width: config.$mobile) {
+  @media (max-width: config.$pad) {
     --navbar-line-height: calc(
       var(--navbar-mobile-height) - var(--navbar-mobile-vertical-padding) * 2
     );
