@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+
+### Bug Fixes
+
+- **components:** fix Pagination input ([d495102](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d4951023510555f456c91da7a1ef49bba6c709e9))
+- style fixes ([da60f1d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/da60f1df60b67f47ab1d28b0f45734583f04ead1))
+
+### Features
+
+- **sass-palette:** support auto load palette ([dadf14e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dadf14ebbc090de1a966a50a6bce304257b320e7))
+- **theme:** add ArticleList ([4d9af55](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d9af5566da294f62ed84a204301030fdc87dc3f))
+- **theme:** add blog feature ([05d5c42](https://github.com/Mister-Hope/vuepress-theme-hope/commit/05d5c4249b5bf5593ad7d631c43ab7639f073f63))
+- **theme:** update alias config ([92541c9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/92541c9fd1f37fba37ae42602e3befdb96b6c17c))
+- **theme:** update styles ([f47d960](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f47d960452f81a363e21aa5c3f96d26f7acd5775))
+- update style variables ([d86f509](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d86f509353a3a1ab5bb79a754c7573c3d1c68c2f))
+
 # [2.0.0-alpha.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Bug Fixes

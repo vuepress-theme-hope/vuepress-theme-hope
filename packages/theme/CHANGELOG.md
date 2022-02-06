@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+
+### Bug Fixes
+
+- style fixes ([da60f1d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/da60f1df60b67f47ab1d28b0f45734583f04ead1))
+- **theme:** add icon for homepage ([0045c39](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0045c396677f37d43fe278c22a7c34a86a9ff639))
+- **theme:** correct component name ([27174f4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/27174f476f0e83a3c55dc09d0c0864a1d526a929))
+- **theme:** fix 404 route resolve ([22661fe](https://github.com/Mister-Hope/vuepress-theme-hope/commit/22661fefefc30830a274f0067fc0ca02f0de64e3))
+- **theme:** fix blog hero fullscreen ([11a552c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/11a552c5a8a6b6b9f53cd9bc35a5f8ad7e456260))
+- **theme:** fix build config ([40084c6](https://github.com/Mister-Hope/vuepress-theme-hope/commit/40084c6c7425aaaaa53dc947e7501c66792eac71))
+- **theme:** fix darkmode apply in template ([f52d810](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f52d81078914b230cd203945516f58f955525219))
+- **theme:** fix error import ([e02e01c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e02e01ce0556b1c94d6867bac85964678e6cc90d))
+- **theme:** fix hero image issue ([a8eb5b3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a8eb5b3942162389bf90ec87d6cb13c5655632a3))
+- **theme:** fix layout config ([dee4f51](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dee4f51145324fd33d8f9f46ddac613f5aa8fb90))
+- **theme:** fix number size ([ee410cf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ee410cf4123d21a603b05124dbb0552f4ffbc598))
+- **theme:** fix package.json ([9bafddd](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9bafddde6660655f1c37be65267b2b526a3a8dbc))
+- **theme:** fix page nav icon ([c7cc980](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c7cc980be73d689afaaade4c9d74425a0d517d18))
+- **theme:** fix PageAnchor active ([b9da973](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b9da973a8a73d547ec94f069c69f1accc661351d))
+- **theme:** fix PageAnchor active ([6d9353a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6d9353a43743ff270b78796796fb258e99483505))
+- **theme:** fix pageinfo link ([f9a0548](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f9a0548f53eeecdfb5c2e752717a3e0cfa4ad2fc))
+- **theme:** fix rollup config ([810e276](https://github.com/Mister-Hope/vuepress-theme-hope/commit/810e27601d3e51ee9c1f11cc1a84dcc912ad5901))
+- **theme:** fix rollup config ([95533d4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/95533d4226352a6acc4eaae434e4431dc91965a7))
+- **theme:** fix sticky icon text color ([6eaeb3b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6eaeb3bb7859152bdb4289f7c7aca34c6e3c6fa9))
+- **theme:** fix theme build ([321988c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/321988c7671c53be5e84ea59ab739b73012a2780))
+- **theme:** fix types ([c2726e3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c2726e35053358f3f05165295a078e5774d1a269))
+- **theme:** page nav layout when editlink is disabled ([df82190](https://github.com/Mister-Hope/vuepress-theme-hope/commit/df82190877a35e946f663d53195f645217c6db4b))
+- **theme:** style fixes ([307e0a1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/307e0a1f85a3f17001a68b7c242eb7d9b017d95b))
+- **theme:** use correct themeConfig when extending page ([f7d4e00](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f7d4e001f17942f7afc2a0d75f56ea26c6080c0d))
+
+### Features
+
+- **blog2:** update structure ([22dcd27](https://github.com/Mister-Hope/vuepress-theme-hope/commit/22dcd276b9eec50500cba22f4247a1f88dc533f3))
+- **sass-palette:** support auto load palette ([dadf14e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dadf14ebbc090de1a966a50a6bce304257b320e7))
+- **theme:** add ArticleList ([4d9af55](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d9af5566da294f62ed84a204301030fdc87dc3f))
+- **theme:** add blog composables ([459cb55](https://github.com/Mister-Hope/vuepress-theme-hope/commit/459cb55462ef84cc5d93efa21ae1fd6d26ff67f3))
+- **theme:** add blog feature ([05d5c42](https://github.com/Mister-Hope/vuepress-theme-hope/commit/05d5c4249b5bf5593ad7d631c43ab7639f073f63))
+- **theme:** add blog hero and project list ([1277a21](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1277a21d6f1d1dfea254067fb88e0fd7b1104803))
+- **theme:** add blog options ([d71c052](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d71c052383a3df7ca2a444cd6edcdedb23d71003))
+- **theme:** add encrypt feature ([2d75478](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2d75478ec6dabb684065994ab5653091793801e4))
+- **theme:** add icons ([12bcab9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/12bcab961c52d82a009747d70bcd9bfc7b2c66da))
+- **theme:** append class on html element ([a56659d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a56659d148889c9307dfb191c2409aa7a85532bc))
+- **theme:** handle deprecated key in extendsPage ([90585e1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/90585e1ed2b93e17b12a3d2f7fcff4428c0ee397))
+- **theme:** improve collapsable sidebar group with link ([fdd304a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fdd304a5cbc6cb5453901352d610e50c259202c1))
+- **theme:** improve scrollbar ([2a4a481](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2a4a48193f4e1f2f2740617c222da5b6ac1899bb))
+- **theme:** optimze encrypt on webpack ([3ca45c3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3ca45c3187490e6b6538217674de5e589d33f9ef))
+- **theme:** rebuild exisiting blog feature ([291b46c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/291b46ce494f53a2181bc0a3652d7df692bd66e9))
+- **theme:** update alias config ([92541c9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/92541c9fd1f37fba37ae42602e3befdb96b6c17c))
+- **theme:** update styles ([3376e03](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3376e03d8369ed8e1933b5f9d6c84e04ef77cd78))
+- **theme:** update styles ([f47d960](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f47d960452f81a363e21aa5c3f96d26f7acd5775))
+- **theme:** use logger ([2c204f2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2c204f2d01a22ec652660a4e7287118953cab69c))
+- update style variables ([d86f509](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d86f509353a3a1ab5bb79a754c7573c3d1c68c2f))
+
 # [2.0.0-alpha.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Bug Fixes

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+
+### Bug Fixes
+
+- style fixes ([da60f1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/da60f1df60b67f47ab1d28b0f45734583f04ead1))
+
+### Features
+
+- **theme:** add blog feature ([05d5c42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/05d5c4249b5bf5593ad7d631c43ab7639f073f63))
+- **theme:** add encrypt feature ([2d75478](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d75478ec6dabb684065994ab5653091793801e4))
+
 # [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Features

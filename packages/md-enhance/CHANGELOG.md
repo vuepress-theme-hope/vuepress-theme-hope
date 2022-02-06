@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+
+### Bug Fixes
+
+- **md-enhance:** fix container text color with default theme ([4e8c133](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4e8c133c3f995aa4d6df35ae302e5c308ae9166d))
+- style fixes ([da60f1d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/da60f1df60b67f47ab1d28b0f45734583f04ead1))
+- **theme:** fix layout config ([dee4f51](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dee4f51145324fd33d8f9f46ddac613f5aa8fb90))
+
+### Features
+
+- **md-enhance:** add flowchart back ([d870212](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d870212a402f9578066851ec754a56d112e41c75))
+- **sass-palette:** support auto load palette ([dadf14e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dadf14ebbc090de1a966a50a6bce304257b320e7))
+- **theme:** update styles ([f47d960](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f47d960452f81a363e21aa5c3f96d26f7acd5775))
+- update style variables ([d86f509](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d86f509353a3a1ab5bb79a754c7573c3d1c68c2f))
+
 # [2.0.0-alpha.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Bug Fixes

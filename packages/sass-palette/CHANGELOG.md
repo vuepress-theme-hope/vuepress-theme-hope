@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+
+### Bug Fixes
+
+- **theme:** fix theme build ([321988c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/321988c7671c53be5e84ea59ab739b73012a2780))
+
+### Features
+
+- **sass-palette:** support auto load palette ([dadf14e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dadf14ebbc090de1a966a50a6bce304257b320e7))
+- **theme:** optimze encrypt on webpack ([3ca45c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3ca45c3187490e6b6538217674de5e589d33f9ef))
+- update style variables ([d86f509](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d86f509353a3a1ab5bb79a754c7573c3d1c68c2f))
+
 # [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Bug Fixes

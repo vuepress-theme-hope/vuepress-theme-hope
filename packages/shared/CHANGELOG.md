@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+
+### Bug Fixes
+
+- **pwa2:** fix devServer issue ([ce0346e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ce0346eae3093463d7115e24e918032cee18f09e))
+
+### Features
+
+- **theme:** optimze encrypt on webpack ([3ca45c3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3ca45c3187490e6b6538217674de5e589d33f9ef))
+- update style variables ([d86f509](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d86f509353a3a1ab5bb79a754c7573c3d1c68c2f))
+
 # [2.0.0-alpha.9](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Features

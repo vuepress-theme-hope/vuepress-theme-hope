@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+
+### Bug Fixes
+
+- **pwa2:** fix devServer issue ([ce0346e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce0346eae3093463d7115e24e918032cee18f09e))
+
+### Features
+
+- **theme:** update styles ([f47d960](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f47d960452f81a363e21aa5c3f96d26f7acd5775))
+- update style variables ([d86f509](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d86f509353a3a1ab5bb79a754c7573c3d1c68c2f))
+
 # [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Bug Fixes
