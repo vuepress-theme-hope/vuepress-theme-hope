@@ -1,40 +1,24 @@
-import type { Page } from "@vuepress/core";
-
-export type PageMap = Record</** Locale Path */ string, /** Pages */ Page[]>;
-
-export type ArticleMap = Record<
-  /** Locale Path */ string,
-  /** Page Keys */ string[]
->;
-
-export interface CategoryConfig {
+export interface Article<
+  T extends Record<string, unknown> = Record<string, unknown>
+> {
   path: string;
-  keys: string[];
+  meta: T;
 }
 
-export type CategoryLocaleMap = Record<
-  /** Category name */ string,
-  /** Category config */ CategoryConfig
->;
+export type Articles<
+  T extends Record<string, unknown> = Record<string, unknown>
+> = Article<T>[];
 
-export interface CategoryLocaleConfig {
-  /** Main page of category */
+export interface BlogCategoryData<
+  T extends Record<string, unknown> = Record<string, unknown>
+> {
   path: string;
-  /** category map for current locale */
-  map: CategoryLocaleMap;
+  map: Record<string, { path: string; items: Articles<T> }>;
 }
 
-export type CategoryMap = Record<
-  /** Locale Path */ string,
-  /** Locale category config */ CategoryLocaleConfig
->;
-
-export interface TypeConfig {
+export interface BlogTypeData<
+  T extends Record<string, unknown> = Record<string, unknown>
+> {
   path: string;
-  keys: string[];
+  items: Articles<T>;
 }
-
-export type TypeMap = Record<
-  /** Locale Path */ string,
-  /** Locale Type config */ TypeConfig
->;

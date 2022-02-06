@@ -5,21 +5,13 @@ import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "../utils";
 
 import type { ComputedRef } from "vue";
-import type { Articles } from "./types";
-import type { TypeMap } from "../../shared";
+import type { BlogTypeData, TypeMap } from "../../shared";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;
 declare const BLOG_META_SCOPE: string;
 
 export const blogTypeMap = ref(typeMap);
-
-export interface BlogTypeData<
-  T extends Record<string, unknown> = Record<string, unknown>
-> {
-  path: string;
-  items: Articles<T>;
-}
 
 export const useBlogType = <
   T extends Record<string, unknown> = Record<string, unknown>

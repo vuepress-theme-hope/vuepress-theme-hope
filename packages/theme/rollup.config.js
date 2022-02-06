@@ -24,7 +24,6 @@ export default [
   ...rollupVue("client/components/navbar/Navbar.ts", {
     copy: [["client/components/navbar/styles", "client/components/navbar"]],
     external: [
-      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -42,7 +41,6 @@ export default [
   ...rollupVue("client/components/sidebar/Sidebar.ts", {
     copy: [["client/components/sidebar/styles", "client/components/sidebar"]],
     external: [
-      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -61,7 +59,6 @@ export default [
     external: [
       "@Navbar",
       "@Sidebar",
-      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -77,10 +74,26 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupVue("client/layouts/Blog.ts", {
+    external: [
+      "@CommonWrapper",
+      "@mr-hope/vuepress-shared/lib/client",
+      "@vuepress/client",
+      "@vuepress/plugin-external-link-icon/lib/client",
+      "@vuepress/plugin-theme-data/lib/client",
+      "@vuepress/shared",
+      "@vueuse/core",
+      "bcryptjs",
+      "vue",
+      "vue-router",
+      "vuepress-plugin-blog2/lib/client",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupVue("client/layouts/Layout.ts", {
     external: [
       "@CommonWrapper",
-      "@internal/pagesRoutes",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -123,6 +136,7 @@ export default [
       "@vuepress/plugin-theme-data/lib/client",
       "@vuepress/shared",
       "@vueuse/core",
+      "bcryptjs",
       "vue",
       "vue-router",
       "vuepress-plugin-blog2/lib/client",
