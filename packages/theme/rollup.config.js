@@ -75,6 +75,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupVue("client/layouts/Blog.ts", {
+    copy: [["client/assets", "client"]],
     external: [
       "@CommonWrapper",
       "@mr-hope/vuepress-shared/lib/client",

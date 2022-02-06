@@ -5,6 +5,7 @@ import {
 } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import DropTransition from "../transitions/DropTransition.vue";
+import defaultHeroImagePath from "../../assets/hero.jpg";
 
 import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../shared";
@@ -35,7 +36,7 @@ export default defineComponent({
     const bgImage = computed(() =>
       frontmatter.value.bgImage
         ? withBase(frontmatter.value.bgImage)
-        : new URL("../../assets/hero.jpg", import.meta.url).href
+        : defaultHeroImagePath
     );
 
     const bgImageStyle = computed(() => {
