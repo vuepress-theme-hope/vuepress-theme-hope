@@ -100,27 +100,23 @@ export default defineComponent({
           ),
           h("div", { class: "num-wrapper" }, [
             h("div", { onClick: () => navigate(articles.value.path) }, [
-              h("div", { class: "number" }, articles.value.items.length),
+              h("div", { class: "num" }, articles.value.items.length),
               h("div", locale.value.article),
             ]),
             h("div", { onClick: () => navigate(categoryMap.value.path) }, [
               h(
                 "div",
-                { class: "number" },
+                { class: "num" },
                 Object.keys(categoryMap.value.map).length
               ),
               h("div", locale.value.category),
             ]),
             h("div", { onClick: () => navigate(tagMap.value.path) }, [
-              h(
-                "div",
-                { class: "number" },
-                Object.keys(tagMap.value.map).length
-              ),
+              h("div", { class: "num" }, Object.keys(tagMap.value.map).length),
               h("div", locale.value.tag),
             ]),
             h("div", { onClick: () => navigate(timelines.value.path) }, [
-              h("div", { class: "number" }, timelines.value.items.length),
+              h("div", { class: "num" }, timelines.value.items.length),
               h("div", locale.value.timeline),
             ]),
           ]),

@@ -27,7 +27,7 @@ export default defineComponent({
           },
           [
             h(TimelineIcon),
-            h("span", { class: "number" }, timelines.value.items.length),
+            h("span", { class: "num" }, timelines.value.items.length),
             hint.value,
           ]
         ),

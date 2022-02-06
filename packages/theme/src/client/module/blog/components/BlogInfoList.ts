@@ -89,7 +89,7 @@ export default defineComponent({
                   },
                   [
                     h(ArticleIcon),
-                    h("span", { class: "number" }, articles.value.items.length),
+                    h("span", { class: "num" }, articles.value.items.length),
                     locale.value.article,
                   ]
                 ),
@@ -127,7 +127,7 @@ export default defineComponent({
                       },
                       [
                         h(CategoryIcon),
-                        h("span", { class: "number" }, categoryNumber.value),
+                        h("span", { class: "num" }, categoryNumber.value),
                         locale.value.category,
                       ]
                     )
@@ -151,7 +151,7 @@ export default defineComponent({
                       },
                       [
                         h(TagIcon),
-                        h("span", { class: "number" }, tagNumber.value),
+                        h("span", { class: "num" }, tagNumber.value),
                         locale.value.tag,
                       ]
                     )
