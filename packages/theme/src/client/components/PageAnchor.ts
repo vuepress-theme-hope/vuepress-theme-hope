@@ -18,8 +18,6 @@ const renderLink = ({ text, link, level }: AnchorItem): VNode =>
     RouterLink,
     {
       to: link,
-      activeClass: "",
-      exactActiveClass: "",
       class: ["anchor-link", level ? `heading${level}` : ""],
     },
     () => h("div", text)
@@ -32,12 +30,12 @@ const renderChildren = (headers: PageHeader[]): VNode => {
     "ul",
     { class: "anchor-list" },
     headers.map((header: PageHeader) => {
-      const active = isActiveLink(route, `${route.path}#${header.slug}`);
+      const active = isActiveLink(route, `#${header.slug}`);
 
       return h("li", { class: ["anchor", { active }] }, [
         renderLink({
           text: header.title,
-          link: `${route.path}#${header.slug}`,
+          link: `#${header.slug}`,
           level: header.level,
         }),
       ]);
