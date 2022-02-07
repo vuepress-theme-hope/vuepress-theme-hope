@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
+
+### Bug Fixes
+
+- **theme:** fix dark selector ([600c032](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/600c03232ecc036dddae657d5fc75ca201101a97))
+
+### Features
+
+- **md-enhance:** add v-pre support ([a416fcf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a416fcfe47327072183789a5fee7a4fd538e0963))
+
 # [2.0.0-alpha.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
 
 ### Bug Fixes
