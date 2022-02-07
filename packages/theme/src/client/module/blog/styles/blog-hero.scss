@@ -23,7 +23,7 @@
     height: calc(100vh - var(--navbar-height)) !important;
 
     @media (max-width: hope-config.$pad) {
-      height: calc(100vh - var(--navbar--mobile-height)) !important;
+      height: calc(100vh - var(--navbar-mobile-height)) !important;
     }
 
     .mask {
