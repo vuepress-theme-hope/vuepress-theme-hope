@@ -1,100 +1,127 @@
-import type { DirectiveBinding, DirectiveHook, Directive, VNode } from "vue";
+import type {
+  ComponentPublicInstance,
+  DirectiveBinding,
+  ObjectDirective,
+} from "vue";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_SSR__: boolean;
 
-export type ClickOutSideHandler = () => void;
+type DocumentHandler = <T extends MouseEvent>(mouseup: T, mousedown: T) => void;
+type FlushList = Map<
+  HTMLElement,
+  {
+    documentHandler: DocumentHandler;
+    bindingFn: (...args: unknown[]) => unknown;
+  }[]
+>;
 
-type Event = TouchEvent | MouseEvent;
+const nodeList: FlushList = new Map();
 
-interface TargetElement extends HTMLElement {
-  $vueClickOutside?: {
-    callback: () => void;
-    handler: (event: Event) => void;
-  };
+let startClick: MouseEvent;
+
+if (!__VUEPRESS_SSR__) {
+  document.addEventListener("mousedown", (event: MouseEvent) => {
+    startClick = event;
+  });
+  document.addEventListener("mouseup", (event: MouseEvent) => {
+    for (const handlers of nodeList.values()) {
+      for (const { documentHandler } of handlers) {
+        documentHandler(event, startClick);
+      }
+    }
+  });
 }
 
-const validate = (binding: DirectiveBinding): boolean => {
-  if (typeof binding.value !== "function") {
-    console.warn(
-      "[Click Outside Directive]: provided expression",
-      binding.value,
-      "is not a function."
-    );
+const createDocumentHandler = (
+  el: HTMLElement,
+  binding: DirectiveBinding
+): DocumentHandler => {
+  let excludes: HTMLElement[] = [];
 
-    return false;
+  if (Array.isArray(binding.arg)) {
+    excludes = binding.arg;
+  } else if ((binding.arg as unknown) instanceof HTMLElement) {
+    // due to current implementation on binding type is wrong the type casting is necessary here
+    excludes.push(binding.arg as unknown as HTMLElement);
   }
 
-  return true;
+  return (mouseup, mousedown) => {
+    const popperRef = (
+      binding.instance as ComponentPublicInstance<{
+        popperRef: HTMLElement | null;
+      }>
+    ).popperRef;
+    const mouseUpTarget = mouseup.target as Node;
+    const mouseDownTarget = mousedown?.target as Node;
+    const isBound = !binding || !binding.instance;
+    const isTargetExists = !mouseUpTarget || !mouseDownTarget;
+    const isContainedByEl =
+      el.contains(mouseUpTarget) || el.contains(mouseDownTarget);
+    const isSelf = el === mouseUpTarget;
+
+    const isTargetExcluded =
+      (excludes.length &&
+        excludes.some((item) => item?.contains(mouseUpTarget))) ||
+      (excludes.length && excludes.includes(mouseDownTarget as HTMLElement));
+    const isContainedByPopper =
+      popperRef &&
+      (popperRef.contains(mouseUpTarget) ||
+        popperRef.contains(mouseDownTarget));
+    if (
+      isBound ||
+      isTargetExists ||
+      isContainedByEl ||
+      isSelf ||
+      isTargetExcluded ||
+      isContainedByPopper
+    ) {
+      return;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    binding.value(mouseup, mousedown);
+  };
 };
 
-const isTarget = (target: Node, elements: Node[]): boolean => {
-  if (!target || !elements) return false;
-
-  for (let i = 0, len = elements.length; i < len; i++)
-    try {
-      if (target.contains(elements[i])) return true;
-
-      if (elements[i].contains(target)) return false;
-    } catch (err) {
-      return false;
+export const clickOutSideDirective: ObjectDirective = {
+  beforeMount(el: HTMLElement, binding: DirectiveBinding) {
+    // there could be multiple handlers on the element
+    if (!nodeList.has(el)) {
+      nodeList.set(el, []);
     }
 
-  return false;
-};
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    nodeList.get(el)!.push({
+      documentHandler: createDocumentHandler(el, binding),
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      bindingFn: binding.value,
+    });
+  },
+  updated(el: HTMLElement, binding: DirectiveBinding) {
+    if (!nodeList.has(el)) {
+      nodeList.set(el, []);
+    }
 
-export const mounted: DirectiveHook<
-  TargetElement,
-  null,
-  ClickOutSideHandler
-> = (el, binding, vNode) => {
-  if (!validate(binding)) return;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const handlers = nodeList.get(el)!;
+    const oldHandlerIndex = handlers.findIndex(
+      (item) => item.bindingFn === binding.oldValue
+    );
+    const newHandler = {
+      documentHandler: createDocumentHandler(el, binding),
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      bindingFn: binding.value,
+    };
 
-  // Define Handler and cache it on the element
-  const handler = (event: Event): void => {
-    if (!vNode.component) return;
-
-    // Some components may have related popup item, on which we shall prevent the click outside event handler.
-    const elements = event.composedPath?.() as Node[];
-    const targetNode = event.target as Node;
-
-    if (elements && elements.length > 0) elements.unshift(targetNode);
-
-    if (el.contains(targetNode) || isTarget(vNode.el as Node, elements)) return;
-
-    if (el.$vueClickOutside) el.$vueClickOutside.callback();
-  };
-
-  // Add Event Listeners
-  el.$vueClickOutside = {
-    handler,
-    callback: binding.value,
-  };
-  const clickHandler =
-    "ontouchstart" in document.documentElement ? "touchstart" : "click";
-  if (!__VUEPRESS_SSR__) document.addEventListener(clickHandler, handler);
-};
-
-export const updated: DirectiveHook<
-  TargetElement,
-  VNode,
-  ClickOutSideHandler
-> = (el, binding) => {
-  if (validate(binding) && el.$vueClickOutside)
-    el.$vueClickOutside.callback = binding.value;
-};
-
-export const beforeUnmount: DirectiveHook<TargetElement> = (el) => {
-  // Remove Event Listeners
-  const clickHandler =
-    "ontouchstart" in document.documentElement ? "touchstart" : "click";
-  if (!__VUEPRESS_SSR__ && el.$vueClickOutside)
-    document.removeEventListener(clickHandler, el.$vueClickOutside.handler);
-  delete el.$vueClickOutside;
-};
-
-export const clickOutside: Directive = {
-  mounted,
-  updated,
-  beforeUnmount,
+    if (oldHandlerIndex >= 0) {
+      // replace the old handler to the new handler
+      handlers.splice(oldHandlerIndex, 1, newHandler);
+    } else {
+      handlers.push(newHandler);
+    }
+  },
+  unmounted(el: HTMLElement) {
+    // remove all listeners when a component unmounted
+    nodeList.delete(el);
+  },
 };
