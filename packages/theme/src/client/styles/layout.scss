@@ -32,3 +32,9 @@
     display: none !important;
   }
 }
+
+.hide-in-pad {
+  @media (max-width: hope-config.$pad) {
+    display: none !important;
+  }
+}

@@ -34,6 +34,9 @@
     height: var(--navbar-mobile-height);
     padding: var(--navbar-mobile-vertical-padding)
       var(--navbar-mobile-horizontal-padding);
+  }
+
+  @media (max-width: hope-config.$mobile) {
     padding-left: calc(var(--navbar-mobile-horizontal-padding) + 2.4rem);
   }
 
