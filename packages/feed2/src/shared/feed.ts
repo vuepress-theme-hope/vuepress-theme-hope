@@ -1,3 +1,5 @@
+import type { Page } from "@vuepress/core";
+
 export interface FeedAuthor {
   name?: string;
   email?: string;
@@ -117,90 +119,92 @@ export interface FeedChannelOption {
   hub?: string;
 }
 
-export interface FeedItemOption {
+export interface FeedGetter {
   /**
-   * The title of the item.
-   */
-  title: string;
-
-  /**
-   * The URL of the item.
-   */
-  link: string;
-
-  /**
-   * The item synopsis.
-   */
-  description?: string;
-
-  /**
-   * A string that uniquely identifies the item.
-   */
-  guid?: string;
-
-  /**
-   * Email address of the author of the item.
-   */
-  author?: FeedAuthor[] | FeedAuthor;
-
-  /**
-   * Includes the item in one or more categories.
-   */
-  category?: FeedCategory[] | FeedCategory;
-
-  /**
-   * Indicates when the item was published.
-   */
-
-  pubDate?: Date;
-
-  /**
-   * Indicates when the item was updated.
-   */
-  lastUpdated: Date;
-
-  /**
-   * Item content
-   */
-  content?: string;
-
-  /**
-   * URL of a page for comments relating to the item.
+   * Item title getter
    *
-   * @description rss format only
+   * 项目标题获取器
    */
-  comments?: string;
+  title?: (page: Page) => string;
 
   /**
-   * Describes a media object that is attached to the item.
+   * Item link getter
    *
-   * @description rss format only
+   * 项目链接获取器
    */
-  enclosure?: FeedEnclosure;
+  link?: (page: Page) => string;
 
   /**
-   * @description json format only
+   * Item description getter
+   *
+   * 项目描述获取器
    */
-  image?: string;
+  description?: (page: Page) => string | undefined;
 
   /**
-   * @description atom format only
+   * Item content getter
+   *
+   * 项目内容获取器
    */
-  contributor?: FeedAuthor[];
+  content?: (page: Page) => string;
 
   /**
-   * @description atom format only
+   * Item author getter
+   *
+   * @description The getter should return an emtyp array when lacking author info
+   *
+   * 项目作者获取器
+   *
+   * @description 获取器应在作者信息缺失时返回空数组
    */
-  copyright?: string;
-}
+  author?: (page: Page) => FeedAuthor[];
 
-export interface FeedLinks {
-  atom: string;
-  json: string;
-  rss: string;
-}
+  /**
+   * Item category getter
+   *
+   * 项目分类获取器
+   */
+  category?: (page: Page) => FeedCategory[] | undefined;
 
-export interface FeedInitOptions {
-  channel: FeedChannelOption;
-  links: FeedLinks;
+  /**
+   * Item enclosure getter
+   *
+   * 项目摘要获取器
+   */
+  enclosure?: (page: Page) => FeedEnclosure | undefined;
+
+  /**
+   * Item publish date getter
+   *
+   * 项目发布日期获取器
+   */
+  publishDate?: (page: Page) => Date | undefined;
+
+  /**
+   * Item last update date getter
+   *
+   * 项目最后更新日期获取器
+   */
+  lastUpdateDate?: (page: Page) => Date;
+
+  /**
+   * Item image getter
+   *
+   * 项目图片获取器
+   */
+  image?: (page: Page) => string;
+
+  /**
+   * Item contributor getter
+   *
+   * 项目贡献者获取器
+   */
+  contributor?: (page: Page) => FeedContributor[];
+
+  /**
+   * Item copyright getter
+   *
+   * 项目版权获取器
+   */
+  copyright?: (page: Page) => string | undefined;
 }

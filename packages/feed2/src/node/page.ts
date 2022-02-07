@@ -15,6 +15,7 @@ import type {
   FeedCategory,
   FeedContributor,
   FeedEnclosure,
+  FeedGetter,
   FeedItemOption,
   FeedOptions,
   FeedFrontmatterOption,
@@ -25,6 +26,7 @@ export class FeedPage {
   private pageFeedOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
+  private getter: FeedGetter;
 
   constructor(
     private app: App,
@@ -32,22 +34,32 @@ export class FeedPage {
     private page: Page & { git?: GitData },
     private feed: Feed
   ) {
+    this.base = this.app.options.base;
     this.frontmatter =
       page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>;
+    this.getter = options.getter || {};
     this.pageFeedOptions = this.frontmatter.feed || {};
-    this.base = this.app.options.base;
   }
 
   get title(): string {
+    if (typeof this.getter.title === "function")
+      return this.getter.title(this.page);
+
     return this.pageFeedOptions.title || this.page.title;
   }
 
   /** real url */
   get link(): string {
+    if (typeof this.getter.link === "function")
+      return this.getter.link(this.page);
+
     return resolveUrl(this.options.hostname, this.base, this.page.path);
   }
 
   get description(): string | undefined {
+    if (typeof this.getter.description === "function")
+      return this.getter.description(this.page);
+
     if (this.pageFeedOptions.description)
       return this.pageFeedOptions.description;
 
@@ -60,6 +72,9 @@ export class FeedPage {
   }
 
   get author(): FeedAuthor[] {
+    if (typeof this.getter.author === "function")
+      return this.getter.author(this.page);
+
     if (Array.isArray(this.pageFeedOptions.author))
       return this.pageFeedOptions.author;
 
@@ -76,6 +91,9 @@ export class FeedPage {
   }
 
   get category(): FeedCategory[] | undefined {
+    if (typeof this.getter.category === "function")
+      return this.getter.category(this.page);
+
     if (Array.isArray(this.pageFeedOptions.category))
       return this.pageFeedOptions.category;
 
@@ -88,6 +106,9 @@ export class FeedPage {
   }
 
   get enclosure(): FeedEnclosure | undefined {
+    if (typeof this.getter.enclosure === "function")
+      return this.getter.enclosure(this.page);
+
     if (this.image)
       return {
         url: this.image,
@@ -102,6 +123,9 @@ export class FeedPage {
   }
 
   get pubDate(): Date | undefined {
+    if (typeof this.getter.publishDate === "function")
+      return this.getter.publishDate(this.page);
+
     const { time, date = time } = this.page.frontmatter;
 
     const { createdTime } = this.page.git || {};
@@ -114,18 +138,27 @@ export class FeedPage {
   }
 
   get lastUpdated(): Date {
+    if (typeof this.getter.lastUpdateDate === "function")
+      return this.getter.lastUpdateDate(this.page);
+
     const { updatedTime } = this.page.git || {};
 
     return updatedTime ? new Date(updatedTime) : new Date();
   }
 
   get content(): string {
+    if (typeof this.getter.content === "function")
+      return this.getter.content(this.page);
+
     if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
     return resolveHTML(this.page.contentRendered);
   }
 
   get image(): string | undefined {
+    if (typeof this.getter.image === "function")
+      return this.getter.image(this.page);
+
     const { banner, cover } = this.frontmatter;
 
     if (banner) {
@@ -159,6 +192,9 @@ export class FeedPage {
   }
 
   get contributor(): FeedContributor[] {
+    if (typeof this.getter.contributor === "function")
+      return this.getter.contributor(this.page);
+
     if (Array.isArray(this.pageFeedOptions.contributor))
       return this.pageFeedOptions.contributor;
 
@@ -169,7 +205,10 @@ export class FeedPage {
   }
 
   get copyright(): string | undefined {
-    if (this.frontmatter.copyrightText) return this.frontmatter.copyrightText;
+    if (typeof this.getter.copyright === "function")
+      return this.getter.copyright(this.page);
+
+    if (this.frontmatter.copyright) return this.frontmatter.copyright;
     const firstAuthor = this.author[0];
 
     if (firstAuthor && firstAuthor.name)
