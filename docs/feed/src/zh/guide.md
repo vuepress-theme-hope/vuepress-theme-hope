@@ -64,7 +64,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 - `author`: 文章的作者名称
 
-- `copyrightText`: 文章的版权信息
+- `copyright`: 文章的版权信息
 
 - `time`: 文章的发布时间
 

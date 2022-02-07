@@ -6,7 +6,7 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-reading-time2
 tagline: Expect reading time and word count statistics
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 This plugin will inject expect reading time and word count statistics into the page object.

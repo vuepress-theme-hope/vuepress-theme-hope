@@ -18,12 +18,12 @@ export default defineComponent({
     const author = usePageAuthor();
 
     const enable = computed(() => {
-      const { copyrightText, footer, medialinks } = frontmatter.value;
+      const { copyright, footer, medialinks } = frontmatter.value;
 
       return (
         footer !== false &&
         Boolean(
-          copyrightText ||
+          copyright ||
             footer ||
             medialinks ||
             themeLocaleData.value.displayFooter
@@ -42,9 +42,9 @@ export default defineComponent({
     });
 
     const copyright = computed(() =>
-      frontmatter.value.copyrightText === false
+      frontmatter.value.copyright === false
         ? false
-        : frontmatter.value.copyrightText ||
+        : frontmatter.value.copyright ||
           (themeLocaleData.value.copyright === false
             ? false
             : themeLocaleData.value.copyright ||

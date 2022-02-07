@@ -31,7 +31,7 @@ Whether this page is an article
 
 > If this option is set to `false`, the page will not be included in the final feed.
 
-### copyrightText
+### copyright
 
 - Type: `string`
 
@@ -244,5 +244,5 @@ The identifier of the feed item, used to identify the feed item.
   - Type: `string`
   - Meaning: Copyright information of the feed item
   - Value:
-    - `frontmatter.copyrightText`
+    - `frontmatter.copyright`
     - If the above is not provided, try to generate the copyright information of `Copyright by author`

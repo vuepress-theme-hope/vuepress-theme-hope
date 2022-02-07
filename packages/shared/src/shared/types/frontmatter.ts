@@ -41,7 +41,7 @@ export interface BasePageFrontMatter extends PageFrontmatter {
   /**
    * 版权文字
    */
-  copyrightText?: string | false;
+  copyright?: string | false;
 
   /**
    * 是否是主页

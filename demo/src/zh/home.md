@@ -74,7 +74,7 @@ features:
     details: 包括博客主页、图标支持、路径导航、页脚支持、全屏按钮、返回顶部按钮等
     link: https://vuepress-theme-hope.github.io/zh/guide/feature/
 
-copyrightText: false
+copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

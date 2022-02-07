@@ -14,7 +14,7 @@ actions:
     link: /config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 ## How to use

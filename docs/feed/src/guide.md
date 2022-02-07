@@ -64,7 +64,7 @@ All pages whose `frontmatter.article` is not `false` and are not the homepage wi
 
 - `author`: the name of the author of the article
 
-- `copyrightText`: the copyright information of the article
+- `copyright`: the copyright information of the article
 
 -`time`: the publication time of the article
 

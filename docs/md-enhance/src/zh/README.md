@@ -65,7 +65,7 @@ features:
     link: /zh/guide/presentation/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 ## 使用插件

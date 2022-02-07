@@ -65,7 +65,7 @@ features:
     link: /guide/presentation/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 ### Install

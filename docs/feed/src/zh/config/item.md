@@ -31,7 +31,7 @@ icon: config
 
 > 如果此项设置为 `false`，则该页不会包含在最终的 feed 中。
 
-### copyrightText
+### copyright
 
 - 类型: `string`
 
@@ -244,5 +244,5 @@ Feed 项目的标识符，用于标识 Feed 项目。
   - 类型: `string`
   - 含义: Feed 项目的版权信息
   - 值:
-    - `frontmatter.copyrightText`
+    - `frontmatter.copyright`
     - 如果上述未提供，尝试生成 `Copyright by author` 版权信息

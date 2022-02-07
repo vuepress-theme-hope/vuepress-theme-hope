@@ -14,7 +14,7 @@ actions:
     link: /config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 This plugin will turn on Progressive Web App Support.

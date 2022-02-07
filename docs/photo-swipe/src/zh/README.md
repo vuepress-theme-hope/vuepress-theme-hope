@@ -14,7 +14,7 @@ actions:
     link: /zh/config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 让页面图像支持预览，缩放，共享，滑动查看和下载。

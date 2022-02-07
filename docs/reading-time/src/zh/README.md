@@ -6,7 +6,7 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-reading-time2
 tagline: 预计阅读时间与字数统计生成
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 这个插件将会向 page 对象注入预计阅读时间与字数统计。

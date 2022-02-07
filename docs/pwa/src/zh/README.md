@@ -14,7 +14,7 @@ actions:
     link: /zh/config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 渐进式网页应用 (Progressive Web App) 支持。
