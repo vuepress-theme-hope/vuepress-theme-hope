@@ -72,3 +72,7 @@ module.exports = {
 :::
 
 ::::
+
+## Migrating from V1
+
+This plugin has not changed from V1.
