@@ -20,9 +20,10 @@ export default defineComponent({
   name: "FlowChart",
 
   props: {
+    code: { type: String, required: true },
     id: { type: String, required: true },
     preset: {
-      type: String as PropType<"ant" | "vue">,
+      type: String as PropType<"ant" | "pie" | "vue">,
       default: "vue",
     },
   },
@@ -60,7 +61,7 @@ export default defineComponent({
       ]).then(([flowchart]) => {
         const { parse } = flowchart;
 
-        svg = parse(decodeURIComponent(element.value?.dataset.code || ""));
+        svg = parse(decodeURIComponent(props.code));
 
         // update scale
         scale.value = getScale(window.innerWidth);
@@ -88,18 +89,21 @@ export default defineComponent({
       window.removeEventListener("resize", resize);
     });
 
-    return (): VNode =>
+    return (): (VNode | null)[] => [
+      loading.value
+        ? h("div", {
+            class: ["flowchart-loading-wrapper"],
+            innerHTML:
+              '<svg xmlns="http://www.w3.org/2000/svg" class="loading-icon" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" r="0" fill="none" stroke="currentColor" stroke-width="2"><animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="0s"/><animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="0s"/></circle><circle cx="50" cy="50" r="0" fill="none" stroke="currentColor" stroke-width="2"><animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.3333333333333333s"/><animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.3333333333333333s"/></circle><circle cx="50" cy="50" r="0" fill="none" stroke="currentColor" stroke-width="2"><animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.6666666666666666s"/><animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.6666666666666666s"/></circle></svg>',
+          })
+        : null,
       h("div", {
         ref: element,
-        class: [
-          "flowchart-wrapper",
-          {
-            loading: loading.value,
-            innerHTML: loading.value
-              ? '<svg xmlns="http://www.w3.org/2000/svg" class="loading-icon" style="background:0 0;display:block;shape-rendering:auto" width="200" height="200" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" r="0" fill="none" stroke="currentColor" stroke-width="2"><animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="0s"/><animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="0s"/></circle><circle cx="50" cy="50" r="0" fill="none" stroke="currentColor" stroke-width="2"><animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.3333333333333333s"/><animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.3333333333333333s"/></circle><circle cx="50" cy="50" r="0" fill="none" stroke="currentColor" stroke-width="2"><animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.6666666666666666s"/><animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.6666666666666666s"/></circle></svg>'
-              : "",
-          },
-        ],
-      });
+        class: ["flowchart-wrapper", props.preset],
+        style: {
+          display: loading.value ? "none" : "block",
+        },
+      }),
+    ];
   },
 });

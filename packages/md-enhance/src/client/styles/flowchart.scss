@@ -1,22 +1,10 @@
-.flowchart-wrapper {
-  padding: 0.6em 0.4em;
-  transition: all 1s;
-  text-align: center;
-  overflow-x: scroll;
+.flowchart-loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--grey15);
 
-  &.loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--grey15);
-  }
-
-  @media (max-width: hope-config.$mobile) {
-    margin: 0 -1.5rem;
-    padding: 0.6em 0;
-  }
-
-  svg.loading-icon {
+  .loading-icon {
     width: 4em;
     height: 4em;
     margin: 2.5em auto;
@@ -24,8 +12,24 @@
   }
 }
 
-.operation-element,
-.parallel-element {
-  rx: 5px;
-  ry: 5px;
+.flowchart-wrapper {
+  padding: 0.6em 0.4em;
+  transition: all 1s;
+  text-align: center;
+  overflow-x: scroll;
+
+  @media (max-width: hope-config.$mobile) {
+    margin: 0 -1.5rem;
+    padding: 0.6em 0;
+  }
+
+  &.vue {
+    .start-element,
+    .end-element,
+    .operation-element,
+    .parallel-element {
+      rx: 5px;
+      ry: 5px;
+    }
+  }
 }

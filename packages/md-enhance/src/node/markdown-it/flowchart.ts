@@ -9,7 +9,7 @@ const flowchartRender = (tokens: Token[], idx: number): string => {
   const key = `flowchart-${hash(idx)}`;
   const { content, info } = token;
 
-  return `<FlowChart id="${key}" data-code="${encodeURIComponent(
+  return `<FlowChart id="${key}" code="${encodeURIComponent(
     content
   )}" preset="${info.trim().split(":")[1] || "vue"}"></FlowChart>`;
 };

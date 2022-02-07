@@ -122,6 +122,34 @@ module.exports = {
 
 - [点击查看](https://vuepress-theme-hope.github.io/guide/markdown/tasklist/)
 
+### 流程图
+
+```flow
+cond=>condition: Process?
+process=>operation: Process
+e=>end: End
+
+cond(yes)->process->e
+cond(no)->e
+```
+
+::: details 代码
+
+````md
+```flow
+cond=>condition: Process?
+process=>operation: Process
+e=>end: End
+
+cond(yes)->process->e
+cond(no)->e
+```
+````
+
+:::
+
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/flowchart/)
+
 ## Mermaid
 
 ```mermaid

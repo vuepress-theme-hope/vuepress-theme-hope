@@ -122,6 +122,34 @@ You can mark ==important words== .
 
 - [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/tasklist/)
 
+### Flowchart
+
+```flow
+cond=>condition: Process?
+process=>operation: Process
+e=>end: End
+
+cond(yes)->process->e
+cond(no)->e
+```
+
+::: details Code
+
+````md
+```flow
+cond=>condition: Process?
+process=>operation: Process
+e=>end: End
+
+cond(yes)->process->e
+cond(no)->e
+```
+````
+
+:::
+
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/flowchart/)
+
 ## Mermaid
 
 ```mermaid
