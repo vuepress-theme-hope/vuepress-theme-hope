@@ -68,7 +68,7 @@ export default defineComponent({
                 currentPage: currentPage.value,
                 perPage: articlePerPage.value,
                 total: props.items.length,
-                updateCurrentPage: (value: number) => {
+                onUpdateCurrentPage: (value: number) => {
                   currentPage.value = value;
                 },
               }),

@@ -81,7 +81,7 @@
 
       input {
         width: 3.5rem;
-        margin: 6px 0;
+        margin: 6px 5px;
         border: 1px solid var(--c-border, #eaecef);
         border-radius: 0.25em;
         color: var(--c-text, #2c3e50);
@@ -92,7 +92,6 @@
       }
 
       .navigate {
-        margin-left: 5px;
         padding: 0 0.75em;
         border: 1px solid var(--c-border, #eaecef);
         border-radius: 0.25em;
@@ -103,6 +102,7 @@
         line-height: 2;
         overflow: hidden;
         outline: none;
+        cursor: pointer;
 
         &:hover {
           color: var(--white);

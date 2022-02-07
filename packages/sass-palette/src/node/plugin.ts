@@ -28,8 +28,6 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
 
   injectConfig(app, id);
 
-  // console.log(app.options.bundlerConfig?.viteOptions.css.preprocessorOptions);
-
   return {
     name: `vuepress-plugin-sass-palette?${id}`,
 
