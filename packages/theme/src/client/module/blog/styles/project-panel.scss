@@ -1,5 +1,4 @@
 @use "sass:list";
-@use "@hope/config";
 
 .project-panel {
   position: relative;
@@ -26,11 +25,11 @@
     transition: background-color var(--color-transition),
       transform var(--transform-transition);
 
-    @media (min-width: config.$pad) {
+    @media (min-width: hope-config.$pad) {
       width: calc(33% - 40px);
     }
 
-    @media (min-width: config.$wide) {
+    @media (min-width: hope-config.$wide) {
       width: calc(25% - 40px);
     }
 
@@ -75,8 +74,8 @@
     }
   }
 
-  @each $color in config.$colors {
-    $index: list.index(config.$colors, $color) - 1;
+  @each $color in hope-config.$colors {
+    $index: list.index(hope-config.$colors, $color) - 1;
 
     .project#{$index} {
       & {
@@ -87,7 +86,7 @@
         }
       }
 
-      #{config.$darkSelector} & {
+      #{hope-config.$darkSelector} & {
         background: darken($color, 75%);
 
         &:hover {

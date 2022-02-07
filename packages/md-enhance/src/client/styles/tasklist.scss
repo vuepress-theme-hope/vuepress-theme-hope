@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 input[type="checkbox"].task-list-item-checkbox {
   cursor: pointer;
   position: relative;
@@ -19,7 +17,7 @@ input[type="checkbox"].task-list-item-checkbox {
     background-color: #fff;
     text-align: center;
 
-    #{config.$darkSelector} & {
+    #{hope-config.$darkSelector} & {
       border-color: #666;
       background-color: #333;
     }
@@ -32,7 +30,7 @@ input[type="checkbox"].task-list-item-checkbox {
       border-color: var(--c-brand, #3eaf7c);
       background-color: var(--c-brand, #3eaf7c);
 
-      #{config.$darkSelector} & {
+      #{hope-config.$darkSelector} & {
         border-color: var(--c-brand, #3eaf7c);
         background-color: var(--c-brand, #3eaf7c);
       }

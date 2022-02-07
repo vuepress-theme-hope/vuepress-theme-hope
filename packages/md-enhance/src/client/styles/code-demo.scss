@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "@mr-hope/vuepress-shared/styles/arrow";
 @use "@mr-hope/vuepress-shared/styles/reset";
 
@@ -25,7 +24,7 @@
   }
 
   .code-demo-app {
-    @media (max-width: config.$pad) {
+    @media (max-width: hope-config.$pad) {
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -41,7 +40,7 @@
       margin: 0.75rem;
     }
 
-    #{config.$contentClass} & > div[class*="language-"] {
+    #{hope-config.$contentClass} & > div[class*="language-"] {
       &:first-child pre {
         margin-top: 0 !important;
       }
@@ -54,7 +53,7 @@
         border-radius: 0;
       }
 
-      @media (max-width: config.$mobileS) {
+      @media (max-width: hope-config.$mobileS) {
         margin: 0.8rem 0;
 
         &.line-numbers-mode::after {

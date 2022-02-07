@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 .page.blog {
   .blog-page-wrapper {
     display: flex;
@@ -7,15 +5,15 @@
     align-items: flex-start;
     margin: 0 auto;
 
-    @media (min-width: config.$mobile) {
+    @media (min-width: hope-config.$mobile) {
       padding: 0 1rem;
     }
 
-    @media (min-width: config.$pad) {
+    @media (min-width: hope-config.$pad) {
       padding: 0 2rem;
     }
 
-    @media (min-width: config.$wide) {
+    @media (min-width: hope-config.$wide) {
       padding: 0;
     }
 
@@ -24,13 +22,13 @@
       overflow: hidden;
       flex: 1;
 
-      @media (min-width: config.$mobile) {
+      @media (min-width: hope-config.$mobile) {
         margin: 0 15px;
       }
     }
   }
 
-  #{config.$contentClass}:empty {
+  #{hope-config.$contentClass}:empty {
     padding: 0;
   }
 }

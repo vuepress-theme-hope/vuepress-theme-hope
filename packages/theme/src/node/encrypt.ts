@@ -12,7 +12,7 @@ export const handleWebpackOptions = (app: App): void => {
   const { bundler, bundlerConfig } = app.options;
 
   // for webpack
-  if (app.env.isDev && bundler.endsWith("webpack")) {
+  if (bundler.endsWith("webpack")) {
     const webpackBundlerConfig: WebpackBundlerOptions =
       bundlerConfig as WebpackBundlerOptions;
     const { configureWebpack } = webpackBundlerConfig;

@@ -4,12 +4,10 @@
 
 @use "code";
 
-@use "medialinks";
 @use "sr-only";
 @use "toc";
-@use "transitions";
 @use "theme";
 
 @use "layout";
 
-@use "@hope/style";
+@use "@sass-palette/hope-style";

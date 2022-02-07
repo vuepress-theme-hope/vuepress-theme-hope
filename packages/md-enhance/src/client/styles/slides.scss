@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "highlight";
 @use "theme";
 
@@ -10,7 +9,7 @@
   min-height: 400px;
   transition: all 1s;
 
-  @media (max-width: config.$mobileS) {
+  @media (max-width: hope-config.$mobileS) {
     width: calc(100% + 3rem);
     min-height: 300px;
     margin: 0 -1.5rem;

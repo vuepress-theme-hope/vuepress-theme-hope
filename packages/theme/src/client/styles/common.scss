@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
 .theme-container {
@@ -10,14 +9,14 @@
     .sidebar {
       top: 0;
 
-      @media (max-width: config.$mobile) {
+      @media (max-width: hope-config.$mobile) {
         top: 0;
       }
     }
   }
 
   &.no-sidebar {
-    @media (min-width: (config.$mobile + 1px)) {
+    @media (min-width: (hope-config.$mobile + 1px)) {
       .page {
         padding-left: 0;
       }
@@ -29,7 +28,7 @@
   }
 }
 
-#{config.$contentClass} {
+#{hope-config.$contentClass} {
   &.custom {
     padding: 0;
     margin: 0;

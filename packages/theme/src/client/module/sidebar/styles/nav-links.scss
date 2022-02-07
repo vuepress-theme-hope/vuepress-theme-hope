@@ -1,12 +1,10 @@
-@use "@hope/config";
-
 .sidebar-nav-links {
   display: none;
   padding: 0.5rem 0 0.75rem 0;
   border-bottom: 1px solid var(--border-color);
   transition: border-bottom-color var(--color-transition);
 
-  @media (max-width: config.$mobile) {
+  @media (max-width: hope-config.$mobile) {
     display: block;
   }
 

@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 .page.blog {
   box-sizing: border-box;
   min-height: 100vh;
@@ -11,16 +9,16 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @media (max-width: config.$pad) {
+  @media (max-width: hope-config.$pad) {
     padding-top: var(--navbar-mobile-height);
   }
 
-  @media (max-width: config.$mobile) {
+  @media (max-width: hope-config.$mobile) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
-  @media (max-width: config.$mobileS) {
+  @media (max-width: hope-config.$mobileS) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -34,15 +32,15 @@
   justify-content: center;
   align-items: flex-start;
 
-  @media (min-width: config.$mobile) {
+  @media (min-width: hope-config.$mobile) {
     padding: 0 1rem;
   }
 
-  @media (min-width: config.$pad) {
+  @media (min-width: hope-config.$pad) {
     padding: 0 2rem;
   }
 
-  @media (min-width: config.$wide) {
+  @media (min-width: hope-config.$wide) {
     padding: 0;
   }
 }

@@ -1,8 +1,7 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
-@use "@hope/config";
 
 // Fix top boarder of heading1
-#{config.$contentClass}:not(.custom) {
+#{hope-config.$contentClass}:not(.custom) {
   > *:first-child {
     margin-top: 0;
   }
@@ -14,11 +13,11 @@ h3,
 h4,
 h5,
 h6 {
-  #{config.$contentClass}:not(.custom) &:first-child {
+  #{hope-config.$contentClass}:not(.custom) &:first-child {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
     padding-top: var(--navbar-height) !important;
 
-    @media (max-width: config.$pad) {
+    @media (max-width: hope-config.$pad) {
       margin-top: calc(
         0.5rem - var(--navbar-mobile-height, --navbar-height)
       ) !important;
@@ -37,13 +36,13 @@ h6 {
   font-size: 15px;
   z-index: 2;
 
-  @media (max-width: config.$pad) {
+  @media (max-width: hope-config.$pad) {
     margin-top: calc(var(--navbar-mobile-height, --navbar-height) + 0.5rem);
     margin-bottom: calc(0.5rem - var(--navbar-mobile-height, --navbar-height));
     font-size: 14px;
   }
 
-  @media (max-width: config.$mobileS) {
+  @media (max-width: hope-config.$mobileS) {
     font-size: 12.8px;
   }
 

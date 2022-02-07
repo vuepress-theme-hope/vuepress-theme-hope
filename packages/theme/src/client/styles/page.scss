@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 .page {
   display: block;
   padding-top: var(--navbar-height);
@@ -7,18 +5,18 @@
   padding-bottom: 2rem;
 
   // change sidebar width
-  @media (max-width: config.$pad) {
+  @media (max-width: hope-config.$pad) {
     padding-top: var(--navbar-mobile-height);
     padding-left: var(--sidebar-mobile-width);
   }
 
   // page should at least one screen length
-  @media (max-width: config.$mobile) {
+  @media (max-width: hope-config.$mobile) {
     min-height: 100vh;
   }
 
   // no space for sidebar on wide mobile
-  @media (max-width: config.$mobile) {
+  @media (max-width: hope-config.$mobile) {
     padding-left: 0;
   }
 }

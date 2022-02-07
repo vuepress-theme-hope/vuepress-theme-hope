@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 $headings: (2, 3, 4, 5, 6);
 
 .anchor-place-holder {
@@ -10,11 +8,11 @@ $headings: (2, 3, 4, 5, 6);
   padding: 0 2.5rem;
   z-index: 99;
 
-  @media (max-width: config.$pad) {
+  @media (max-width: hope-config.$pad) {
     padding: 0 1.5rem;
   }
 
-  & + #{config.$contentClass}:not(.custom) {
+  & + #{hope-config.$contentClass}:not(.custom) {
     padding-top: 0;
   }
 }
@@ -28,7 +26,7 @@ $headings: (2, 3, 4, 5, 6);
   max-height: 80vh;
   overflow-y: scroll;
 
-  @media (min-width: config.$wide) {
+  @media (min-width: hope-config.$wide) {
     .has-anchor & {
       display: block;
     }
@@ -45,7 +43,7 @@ $headings: (2, 3, 4, 5, 6);
   &::-webkit-scrollbar-thumb:vertical {
     background: #ddd;
 
-    #{config.$darkSelector} & {
+    #{hope-config.$darkSelector} & {
       background: #333;
     }
   }

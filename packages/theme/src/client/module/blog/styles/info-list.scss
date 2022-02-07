@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "@mr-hope/vuepress-shared/styles/reset";
 
 .blog-info-list {
@@ -39,7 +38,7 @@
         border-radius: 50%;
         background: rgba(127, 127, 127, 0.15);
 
-        #{config.$darkSelector} & {
+        #{hope-config.$darkSelector} & {
           background: rgba(255, 255, 255, 0.15);
         }
 
@@ -50,7 +49,7 @@
         &.active {
           background: var(--theme-color-light);
 
-          #{config.$darkSelector} & {
+          #{hope-config.$darkSelector} & {
             background: var(--theme-color-dark);
           }
         }

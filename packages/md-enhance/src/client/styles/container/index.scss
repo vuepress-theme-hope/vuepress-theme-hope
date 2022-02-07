@@ -1,5 +1,5 @@
 @use "sass:color";
-@use "@hope/config";
+
 @use "@mr-hope/vuepress-shared/styles/svg";
 @use "icons";
 
@@ -28,7 +28,7 @@
   --detail-text-color: inherit;
 }
 
-#{config.$darkSelector} {
+#{hope-config.$darkSelector} {
   --info-title-color: #eef9fd;
   --info-bg-color: #193c47;
 
@@ -104,7 +104,7 @@
       &::before {
         @include svg.background-svg(icons.$info-icon);
 
-        #{config.$darkSelector} & {
+        #{hope-config.$darkSelector} & {
           @include svg.background-svg(icons.$info-dark-icon);
         }
       }
@@ -121,7 +121,7 @@
       &::before {
         @include svg.background-svg(icons.$note-icon);
 
-        #{config.$darkSelector} & {
+        #{hope-config.$darkSelector} & {
           @include svg.background-svg(icons.$note-dark-icon);
         }
       }
@@ -138,7 +138,7 @@
       &::before {
         @include svg.background-svg(icons.$tip-icon);
 
-        #{config.$darkSelector} & {
+        #{hope-config.$darkSelector} & {
           @include svg.background-svg(icons.$tip-dark-icon);
         }
       }
@@ -155,7 +155,7 @@
       &::before {
         @include svg.background-svg(icons.$warning-icon);
 
-        #{config.$darkSelector} & {
+        #{hope-config.$darkSelector} & {
           @include svg.background-svg(icons.$warning-dark-icon);
         }
       }
@@ -172,7 +172,7 @@
       &::before {
         @include svg.background-svg(icons.$danger-icon);
 
-        #{config.$darkSelector} & {
+        #{hope-config.$darkSelector} & {
           @include svg.background-svg(icons.$danger-dark-icon);
         }
       }

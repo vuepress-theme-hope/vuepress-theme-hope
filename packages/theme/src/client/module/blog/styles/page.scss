@@ -1,10 +1,8 @@
-@use "@hope/config";
-
 .blog-page {
   max-width: 780px;
   flex: 1;
 
-  @media (min-width: config.$mobile) {
+  @media (min-width: hope-config.$mobile) {
     margin: 0 15px;
   }
 

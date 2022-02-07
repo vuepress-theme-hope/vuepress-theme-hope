@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 .blog-hero {
   position: relative;
   height: 450px;
@@ -12,19 +10,19 @@
   color: #eee;
   font-family: var(--font-family-fancy);
 
-  @media (max-width: config.$mobile) {
+  @media (max-width: hope-config.$mobile) {
     height: 350px;
     margin: 0 -1.5rem 16px;
   }
 
-  @media (max-width: config.$mobileS) {
+  @media (max-width: hope-config.$mobileS) {
     margin: 0 0 16px;
   }
 
   &.fullscreen {
     height: calc(100vh - var(--navbar-height)) !important;
 
-    @media (max-width: config.$pad) {
+    @media (max-width: hope-config.$pad) {
       height: calc(100vh - var(--navbar--mobile-height)) !important;
     }
 
@@ -63,15 +61,15 @@
     margin: 0.5rem auto;
     font-size: 36px;
 
-    @media (max-width: config.$pad) {
+    @media (max-width: hope-config.$pad) {
       font-size: 30px;
     }
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: hope-config.$mobile) {
       font-size: 36px;
     }
 
-    @media (max-width: config.$mobileS) {
+    @media (max-width: hope-config.$mobileS) {
       font-size: 30px;
     }
   }
@@ -84,15 +82,15 @@
     margin: 1.2rem auto 0;
     font-size: 20px;
 
-    @media (max-width: config.$pad) {
+    @media (max-width: hope-config.$pad) {
       font-size: 18px;
     }
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: hope-config.$mobile) {
       font-size: 20px;
     }
 
-    @media (max-width: config.$mobileS) {
+    @media (max-width: hope-config.$mobileS) {
       font-size: 18px;
     }
   }

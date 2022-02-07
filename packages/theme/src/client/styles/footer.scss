@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 .footer-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +11,7 @@
   transition: border-top-color var(--color-transition),
     background var(--color-transition);
 
-  @media (min-width: config.$mobile) {
+  @media (min-width: hope-config.$mobile) {
     padding-left: calc(var(--sidebar-width) + 2rem);
 
     .no-sidebar & {
@@ -22,7 +20,7 @@
   }
 
   & > div {
-    @media (max-width: config.$mobileS) {
+    @media (max-width: hope-config.$mobileS) {
       width: 100%;
     }
   }

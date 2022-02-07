@@ -1,4 +1,4 @@
-@use "@hope/config";
+@use "@sass-palette/hope-config";
 @use "fonts/crimson.css";
 
 html,
@@ -9,7 +9,7 @@ body {
   transition: background-color var(--color-transition);
 }
 
-#{config.$darkSelector} {
+#{hope-config.$darkSelector} {
   color-scheme: dark;
 }
 
@@ -60,7 +60,7 @@ code {
   transition: background-color var(--color-transition),
     color var(--color-transition);
 
-  #{config.$darkSelector} & {
+  #{hope-config.$darkSelector} & {
     background: var(--grey12);
   }
 }
@@ -104,7 +104,7 @@ h1 {
   font-size: 2rem;
 
   // narrow mobile
-  @media (max-width: config.$mobileS) {
+  @media (max-width: hope-config.$mobileS) {
     font-size: 1.9rem;
   }
 }
@@ -160,7 +160,7 @@ tr {
   &:nth-child(2n) {
     background: var(--bg-color-light);
 
-    #{config.$darkSelector} {
+    #{hope-config.$darkSelector} {
       background: #252322;
     }
   }
@@ -172,7 +172,7 @@ td {
   padding: 0.6em 1em;
 
   // TODO: improve color
-  #{config.$darkSelector} {
+  #{hope-config.$darkSelector} {
     border: 1px solid var(--grey12);
   }
 }

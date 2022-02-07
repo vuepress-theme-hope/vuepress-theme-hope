@@ -1,4 +1,4 @@
-@use "@hope/config";
+@use "@sass-palette/hope-config";
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -32,7 +32,7 @@ pre[class*="language-"] {
   white-space: normal;
 }
 
-#{config.$contentClass} {
+#{hope-config.$contentClass} {
   pre,
   pre[class*="language-"] {
     margin: 0.85rem 0;
@@ -169,14 +169,14 @@ div[class*="language-"] {
       border-right: 1px solid var(--code-highlight-line-color);
 
       // edited
-      @media (max-width: config.$mobileS) {
+      @media (max-width: hope-config.$mobileS) {
         border-radius: 0;
       }
     }
   }
 }
 
-@each $lang in config.$codeLang {
+@each $lang in hope-config.$codeLang {
   div[class*="language-"].ext-#{$lang} {
     &:before {
       content: "" + $lang;
@@ -185,8 +185,8 @@ div[class*="language-"] {
 }
 
 // narrow mobile
-@media (max-width: config.$mobileS) {
-  #{config.$contentClass} {
+@media (max-width: hope-config.$mobileS) {
+  #{hope-config.$contentClass} {
     div[class*="language-"] {
       margin: 0.85rem -1.5rem;
       border-radius: 0;

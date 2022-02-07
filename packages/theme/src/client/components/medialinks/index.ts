@@ -48,6 +48,8 @@ interface MediaLink {
   url: string;
 }
 
+import "../../styles/media-links.scss";
+
 export default defineComponent({
   name: "MediaLinks",
 

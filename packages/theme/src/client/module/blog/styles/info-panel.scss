@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 .blog-info-wrapper {
   .sidebar & {
     .blogger-info {
@@ -16,7 +14,7 @@
     margin-bottom: 12px;
     transition: all 0.3s;
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: hope-config.$mobile) {
       display: none;
     }
 

@@ -17,11 +17,14 @@ export const injectConfig = (app: App, id: string): void => {
   const { bundler, bundlerConfig } = app.options;
 
   // for vite
-  if (app.env.isDev && bundler.endsWith("vite")) {
+  if (bundler.endsWith("vite")) {
     const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const originalAddtionalData =
+    const originalAddtionalData:
+      | string
+      | ((source: string, file: string) => string | Promise<string>)
+      | undefined =
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       viteBundlerConfig.viteOptions?.css?.preprocessorOptions?.scss
         .additionalData;
@@ -33,11 +36,21 @@ export const injectConfig = (app: App, id: string): void => {
         css: {
           preprocessorOptions: {
             scss: {
-              addtionalData: `@use "@${id}/config";${
-                typeof originalAddtionalData === "string"
-                  ? originalAddtionalData
-                  : ""
-              }`,
+              charset: false,
+              additionalData: async (
+                source: string,
+                file: string
+              ): Promise<string> => {
+                if (typeof originalAddtionalData === "string")
+                  return `@use "@sass-palette/${id}-config";\n${originalAddtionalData}${source}`;
+                if (typeof originalAddtionalData === "function")
+                  return `@use "@sass-palette/${id}-config";\n${await originalAddtionalData(
+                    source,
+                    file
+                  )}`;
+
+                return `@use "@sass-palette/${id}-config";\n${source}`;
+              },
             },
           },
         },
@@ -46,7 +59,7 @@ export const injectConfig = (app: App, id: string): void => {
   }
 
   // for webpack
-  if (app.env.isDev && bundler.endsWith("webpack")) {
+  if (bundler.endsWith("webpack")) {
     const webpackBundlerConfig: WebpackBundlerOptions = app.options
       .bundlerConfig as WebpackBundlerOptions;
 
@@ -59,15 +72,15 @@ export const injectConfig = (app: App, id: string): void => {
       loaderContext: LoaderContext
     ): string => {
       if (typeof additionalData === "string")
-        return `@use "@${id}/config";\n${additionalData}`;
+        return `@use "@sass-palette/${id}-config";\n${additionalData}${content}`;
 
       if (typeof additionalData === "function")
-        return `@use "@${id}/config";\n${additionalData(
+        return `@use "@sass-palette/${id}-config";\n${additionalData(
           content,
           loaderContext
         )}`;
 
-      return `@use "@${id}/config\n"`;
+      return `@use "@sass-palette/${id}-config";\n${content}`;
     };
 
     webpackBundlerConfig.scss.additionalData = addtionalDataHandler;

@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
 .page {
@@ -16,7 +15,7 @@
       padding-top: var(--navbar-height) !important;
       font-size: 2.2rem;
 
-      @media (max-width: config.$pad) {
+      @media (max-width: hope-config.$pad) {
         margin-top: calc(
           0.5rem - var(--navbar-mobile-height, --navbar-height)
         ) !important;
@@ -32,10 +31,10 @@
   }
 }
 
-#{config.$contentClass}:not(.custom) {
+#{hope-config.$contentClass}:not(.custom) {
   padding-top: 0;
 }
 
-#{config.$contentClass}:not(.custom) > h1:first-child {
+#{hope-config.$contentClass}:not(.custom) > h1:first-child {
   display: none;
 }

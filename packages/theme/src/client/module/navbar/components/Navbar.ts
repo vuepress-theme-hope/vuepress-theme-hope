@@ -15,7 +15,7 @@ import NavActions from "@theme-hope/module/navbar/components/NavActions";
 
 import type { VNode } from "vue";
 
-import "../styles/index.scss";
+import "../styles/navbar.scss";
 
 const getCssValue = (
   el: Element | null,

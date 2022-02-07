@@ -1,6 +1,5 @@
 @use "sass:color";
 @use "sass:list";
-@use "@hope/config";
 
 .tags-wrapper {
   list-style: none;
@@ -28,7 +27,7 @@
 
     transition: all var(--color-transition, 0.3s);
 
-    #{config.$darkSelector} & {
+    #{hope-config.$darkSelector} & {
       background: #222;
     }
 
@@ -39,8 +38,8 @@
     }
   }
 
-  @each $color in config.$colors {
-    $index: list.index(config.$colors, $color) - 1;
+  @each $color in hope-config.$colors {
+    $index: list.index(hope-config.$colors, $color) - 1;
 
     .tag#{$index} {
       & {
@@ -53,7 +52,7 @@
         }
       }
 
-      #{config.$darkSelector} & {
+      #{hope-config.$darkSelector} & {
         color: color.scale($color, $lightness: -10%);
         border-color: color.scale($color, $lightness: - 10%);
 

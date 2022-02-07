@@ -1,4 +1,5 @@
 import { fs, path } from "@vuepress/utils";
+import { injectConfig } from "./injectConfig";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { SassPaletteOptions } from "../shared";
@@ -25,14 +26,27 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
   const getPath = (path: string): string =>
     fs.pathExistsSync(path) ? path : emptyFile;
 
+  injectConfig(app, id);
+
+  // console.log(app.options.bundlerConfig?.viteOptions.css.preprocessorOptions);
+
   return {
     name: `vuepress-plugin-sass-palette?${id}`,
 
     alias: {
-      [`@${id}/palette`]: app.dir.temp(`sass-palette/${id}-palette.scss`),
-      [`@${id}/config`]: app.dir.temp(`sass-palette/${id}-config.scss`),
-      [`@${id}/helper`]: path.resolve(__dirname, "../../styles/helper.scss"),
-      [`@${id}/style`]: app.dir.temp(`sass-palette/${id}-style.scss`),
+      [`@sass-palette/helper`]: path.resolve(
+        __dirname,
+        "../../styles/helper.scss"
+      ),
+      [`@sass-palette/${id}-config`]: app.dir.temp(
+        `sass-palette/${id}-config.scss`
+      ),
+      [`@sass-palette/${id}-palette`]: app.dir.temp(
+        `sass-palette/${id}-palette.scss`
+      ),
+      [`@sass-palette/${id}-style`]: app.dir.temp(
+        `sass-palette/${id}-style.scss`
+      ),
     },
 
     onInitialized: (): Promise<string> => {
@@ -40,7 +54,7 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
         `sass-palette/load-${id}.js`,
         `
 export default ()=>{
-  import("@${id}/palette");
+  import("@sass-palette/${id}-palette");
 };
 `
       );
@@ -66,8 +80,7 @@ export default ()=>{
 @use 'sass:map';
 @use 'sass:meta';
 
-@use '@${id}/helper';
-@use '@${id}/config' as config;
+@use '@sass-palette/helper';
 @use '${getPath(defaultPalette)}' as defaultPalette;
 @use '${getPath(palette)}' as palette;
 
@@ -85,7 +98,7 @@ $variables: map.deep-merge($defaultVariables, $userVariables);
       #{$key}: #{$value};
     }
   } @else if helper.color-islegal($value) {
-    @include helper.inject-color($key, $value, $darkSelector: config.$darkSelector);
+    @include helper.inject-color($key, $value, $darkSelector: ${id}-config.$darkSelector);
   }
 }
 `

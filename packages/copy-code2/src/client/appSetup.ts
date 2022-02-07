@@ -5,8 +5,9 @@ import { useRoute } from "vue-router";
 import { locales, options } from "./define";
 import Message from "./message";
 
-import "./styles/index.scss";
 import "balloon-css/balloon.css";
+import "./styles/button.scss";
+import "./styles/message.scss";
 
 const isMobile = (): boolean =>
   navigator

@@ -6,7 +6,7 @@ import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 import type { VNode } from "vue";
 
-import "../styles/index.scss";
+import "../styles/sidebar.scss";
 
 export default defineComponent({
   name: "SideBar",

@@ -1,4 +1,4 @@
-@use "@hope/config";
+@use "@sass-palette/hope-config";
 
 :root {
   /* complete default theme color to make 3rd-party plugins work */
@@ -31,7 +31,7 @@
   --code-group-nav-hover-color: var(--code-highlight-line-color);
 }
 
-#{config.$darkSelector} {
+#{hope-config.$darkSelector} {
   /* complete default theme color to make 3rd-party plugins work */
 
   // theme color
@@ -75,7 +75,7 @@
   --docsearch-footer-background: var(--bg-color);
 
   // plugin-docsearch
-  #{config.$darkSelector} & {
+  #{hope-config.$darkSelector} & {
     --docsearch-logo-color: var(--c-text);
     --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
     --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d,

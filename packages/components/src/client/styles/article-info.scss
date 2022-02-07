@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
 .page {
@@ -18,11 +17,11 @@
       margin-right: 0.5em;
       line-height: 2;
 
-      @media (min-width: config.$wide) {
+      @media (min-width: hope-config.$wide) {
         font-size: 1.1em;
       }
 
-      @media (max-width: config.$mobileS) {
+      @media (max-width: hope-config.$mobileS) {
         font-size: 0.875em;
       }
 

@@ -3,6 +3,8 @@ import { useScrollPromise } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 
+import "../../styles/fade-slide-y.scss";
+
 export default defineComponent({
   name: "FadeSlideY",
 

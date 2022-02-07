@@ -1,6 +1,5 @@
 @use "sass:color";
 @use "sass:list";
-@use "@hope/config";
 
 .tag-list-wrapper {
   position: relative;
@@ -36,8 +35,8 @@
     }
   }
 
-  @each $color in config.$colors {
-    $index: list.index(config.$colors, $color) - 1;
+  @each $color in hope-config.$colors {
+    $index: list.index(hope-config.$colors, $color) - 1;
 
     .tag#{$index} {
       background: color.scale($color, $lightness: 10%);
@@ -47,7 +46,7 @@
         background: color.scale($color, $lightness: -5%);
       }
 
-      #{config.$darkSelector} & {
+      #{hope-config.$darkSelector} & {
         background: color.scale($color, $lightness: -5%);
 
         &:hover,

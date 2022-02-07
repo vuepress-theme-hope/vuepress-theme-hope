@@ -441,9 +441,7 @@
   </svg>
 </template>
 
-<style lang="scss">
-@use "@hope/config";
-
+<style lang="scss" scoped>
 .empty-icon {
   .cls-17,
   .cls-19,
@@ -480,7 +478,7 @@
     fill: #232c57;
   }
 
-  #{config.$darkSelector} & {
+  #{hope-config.$darkSelector} & {
     g.people {
       opacity: 0.8;
     }

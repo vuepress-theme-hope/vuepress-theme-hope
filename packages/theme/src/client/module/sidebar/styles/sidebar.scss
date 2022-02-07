@@ -1,5 +1,3 @@
-@use "@hope/config";
-
 .sidebar {
   position: fixed;
   z-index: 150;
@@ -20,14 +18,14 @@
   scrollbar-width: thin;
   scrollbar-color: var(--theme-color) var(--border-color);
 
-  @media (max-width: config.$pad) {
+  @media (max-width: hope-config.$pad) {
     top: var(--navbar-mobile-height);
     width: var(--sidebar-mobile-width);
     font-size: 15px;
   }
 
   // wide mobile
-  @media (max-width: config.$mobile) {
+  @media (max-width: hope-config.$mobile) {
     transform: translateX(-100%);
     transition: transform 0.2s ease;
     box-shadow: none;
@@ -47,17 +45,26 @@
     color: var(--text-color);
   }
 
+  .nav-link {
+    color: var(--text-color);
+
+    &:hover,
+    &.active {
+      color: var(--theme-color);
+    }
+  }
+
   .blogger-info.mobile {
     display: none;
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: hope-config.$mobile) {
       display: block;
     }
 
     + hr {
       display: none;
 
-      @media (max-width: config.$mobile) {
+      @media (max-width: hope-config.$mobile) {
         display: block;
         margin-top: 16px;
       }

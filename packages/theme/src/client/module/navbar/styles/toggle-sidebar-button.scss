@@ -1,5 +1,4 @@
 @use "@mr-hope/vuepress-shared/styles/reset";
-@use "@hope/config";
 
 .toggle-sidebar-button {
   @include reset.button();
@@ -18,7 +17,7 @@
   font: unset;
   transition: transform 0.2s ease-in-out;
 
-  @media screen and (max-width: config.$mobile) {
+  @media screen and (max-width: hope-config.$mobile) {
     display: block;
   }
 

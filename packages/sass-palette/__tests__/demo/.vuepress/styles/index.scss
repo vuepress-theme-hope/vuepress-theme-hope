@@ -1,4 +1,2 @@
-@use "@hope/config";
-
-@debug config.$desktop;
-@debug config.$wide;
+@debug hope-config.$desktop;
+@debug hope-config.$wide;

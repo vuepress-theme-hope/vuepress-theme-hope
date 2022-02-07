@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
 .page-meta {
@@ -38,7 +37,7 @@
       margin-right: 0.25em;
     }
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: hope-config.$mobile) {
       margin-bottom: 8px;
     }
   }
@@ -52,7 +51,7 @@
       float: left;
     }
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: hope-config.$mobile) {
       float: none;
       font-size: 13px;
       text-align: left;
@@ -63,7 +62,7 @@
     font-size: 14px;
     text-align: right;
 
-    @media (max-width: config.$mobile) {
+    @media (max-width: hope-config.$mobile) {
       font-size: 13px;
       text-align: left;
     }

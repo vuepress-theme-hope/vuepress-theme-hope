@@ -1,4 +1,3 @@
-@use "@hope/config";
 @use "@mr-hope/vuepress-shared/styles/reset";
 
 .code-group-nav {
@@ -11,7 +10,7 @@
   background-color: var(--code-group-nav-bg-color, #3a404c);
   list-style: none;
 
-  @media (max-width: config.$mobileS) {
+  @media (max-width: hope-config.$mobileS) {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
     border-radius: 0;
