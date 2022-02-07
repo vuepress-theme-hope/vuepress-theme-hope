@@ -79,7 +79,7 @@ export default defineComponent({
                       class: "hero-logo",
                       style: heroImageStyle.value,
                       src: withBase(heroImage.value),
-                      alt: frontmatter.value.heroAlt || "hero iamge",
+                      alt: frontmatter.value.heroAlt || "hero image",
                     })
                   : null
               ),

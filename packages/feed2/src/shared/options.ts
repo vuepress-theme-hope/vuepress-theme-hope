@@ -1,5 +1,5 @@
 import type { Page } from "@vuepress/core";
-import type { FeedChannelOption } from "./feed";
+import type { FeedChannelOption, FeedGetter } from "./feed";
 
 export interface FeedOptions {
   /**
@@ -8,8 +8,9 @@ export interface FeedOptions {
    * 部署的域名
    */
   hostname: string;
+
   /**
-   * A large iamge/icon of the feed
+   * A large image/icon of the feed
    *
    * 一个大的图片，用作 feed 展示
    */
@@ -35,6 +36,7 @@ export interface FeedOptions {
    * Feed Chaneel 选项
    */
   channel?: Partial<FeedChannelOption>;
+
   /**
    * Whether output Atom syntax files
    *
@@ -79,6 +81,7 @@ export interface FeedOptions {
    * @default true
    */
   rss?: boolean;
+
   /**
    * RSS syntax output filename, relative to dest folder
    *
@@ -93,18 +96,23 @@ export interface FeedOptions {
    *
    * Feed 项目排序器
    */
-  sorter?: (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    pageA: Page & Record<string, any>,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    pageB: Page & Record<string, any>
-  ) => number;
+  sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
    * Filter pages to load to feed
    *
    * Feed过滤器
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  filter?: (page: Page & Record<string, any>) => boolean;
+  filter?: (page: Page) => boolean;
+
+  /**
+   * Feed generation controller
+   *
+   * @description The plugin is providing a resonable getter by default, if you want a full control, you can set this field
+   *
+   * Feed 生成控制器
+   *
+   * @description 插件已经在默认情况下提供了合理的获取器，如果你需要完全控制，你可以设置此项。
+   */
+  getter?: FeedGetter;
 }
