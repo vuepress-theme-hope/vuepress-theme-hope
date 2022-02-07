@@ -65,6 +65,16 @@ baz
     ).toMatchSnapshot();
   });
 
+  it("Nested footnotes", () => {
+    expect(
+      markdownIt.render(`
+foo[^1] bar[^2].
+
+[^1]:[^2]: baz
+`)
+    ).toMatchSnapshot();
+  });
+
   it("Should support inline note", () => {
     expect(
       markdownIt.render(`
