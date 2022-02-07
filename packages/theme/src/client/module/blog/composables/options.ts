@@ -11,7 +11,11 @@ export const useEnableBlog = (): ComputedRef<boolean> => {
 };
 
 export const useBlogOptions = (): ComputedRef<HopeThemeBlogConfig> => {
+  const themeData = useThemeData();
   const themeLocale = useThemeLocaleData();
 
-  return computed(() => themeLocale.value.blog);
+  return computed(() => ({
+    ...themeData.value.blog,
+    ...themeLocale.value.blog,
+  }));
 };
