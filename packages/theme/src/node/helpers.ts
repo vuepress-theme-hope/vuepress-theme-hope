@@ -1,7 +1,9 @@
 import {
   HopeThemeOptions,
   HopeThemeNavbarConfig,
+  HopeThemeSidebarArrayConfig,
   HopeThemeSidebarConfig,
+  HopeThemeSidebarObjectConfig,
 } from "../shared";
 
 export const themeConfig = (themeConfig: HopeThemeOptions): HopeThemeOptions =>
@@ -14,3 +16,11 @@ export const navbarConfig = (
 export const sidebarConfig = (
   sidebarConfig: HopeThemeSidebarConfig
 ): HopeThemeSidebarConfig => sidebarConfig;
+
+export const sidebarArrayConfig = (
+  sidebarConfig: HopeThemeSidebarArrayConfig
+): HopeThemeSidebarArrayConfig => sidebarConfig;
+
+export const sidebarObjectConfig = (
+  sidebarConfig: HopeThemeSidebarObjectConfig
+): HopeThemeSidebarObjectConfig => sidebarConfig;
