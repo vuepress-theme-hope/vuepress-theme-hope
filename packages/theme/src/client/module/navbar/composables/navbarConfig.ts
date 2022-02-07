@@ -13,20 +13,20 @@ import type {
 } from "../../../../shared";
 
 export const resolveNavbarItem = (
-  item: HopeThemeNavbarItem | HopeThemeNavbarGroup | string
+  item: HopeThemeNavbarItem | HopeThemeNavbarGroup | string,
+  prefix = ""
 ): ResolvedHopeThemeNavbarItem => {
-  if (isString(item)) return useAutoLink(item);
+  if (isString(item)) return useAutoLink(`${prefix}${item}`);
 
   if ("children" in item)
     return {
       ...item,
       ...(item.link && !isLinkExternal(item.link)
-        ? useAutoLink(item.link)
+        ? useAutoLink(`${prefix}${item.link}`)
         : {}),
-      children: item.children.map(resolveNavbarItem) as (
-        | HopeThemeNavGroup<AutoLink>
-        | AutoLink
-      )[],
+      children: item.children.map((child) =>
+        resolveNavbarItem(child, `${prefix}${item.prefix || ""}`)
+      ) as (HopeThemeNavGroup<AutoLink> | AutoLink)[],
     };
 
   return {
@@ -37,5 +37,7 @@ export const resolveNavbarItem = (
 
 export const useNavbarConfig = (): ComputedRef<ResolvedHopeThemeNavbarItem[]> =>
   computed(() =>
-    (useThemeLocaleData().value.navbar || []).map(resolveNavbarItem)
+    (useThemeLocaleData().value.navbar || []).map((item) =>
+      resolveNavbarItem(item)
+    )
   );

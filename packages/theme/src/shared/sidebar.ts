@@ -10,7 +10,6 @@ export interface HopeThemeSidebarGroupItem
   extends HopeThemeNavGroup<
     HopeThemeSidebarPageItem | HopeThemeSidebarGroupItem | string
   > {
-  prefix?: string;
   collapsable?: boolean;
 }
 
