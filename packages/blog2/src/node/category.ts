@@ -58,6 +58,8 @@ export const prepareCategory = (
           return null;
         }
 
+        if (app.env.isDebug) logger.info(`Generating ${key} category.\n`);
+
         const categoryMap: CategoryMap = {};
         const pagePaths: string[] = [];
         const getItemPath =
@@ -131,6 +133,15 @@ export const prepareCategory = (
             map[category].keys = pageMapStore[category]
               .sort(sorter)
               .map(({ key }) => key);
+
+          if (app.env.isDebug) {
+            let infoMessage = `Route ${routeLocale} in ${key} cateogry:\n`;
+
+            for (const category in map)
+              infoMessage += `name: ${category}; path: ${map[category].path}; items: ${map[category].keys.length}`;
+
+            logger.info(infoMessage);
+          }
         }
 
         return {
@@ -163,6 +174,8 @@ export const prepareCategory = (
       `blog/category.js`,
       `export const categoryMap = ${JSON.stringify(finalMap)}\n${HMR_CODE}`
     );
+
+    if (app.env.isDebug) logger.info("All types generated.");
 
     return paths;
   });

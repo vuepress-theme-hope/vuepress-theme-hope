@@ -51,6 +51,8 @@ export const prepareType = (
         const typeMap: TypeMap = {};
         const pagePaths: string[] = [];
 
+        if (app.env.isDebug) logger.info(`Generating ${key} type.\n`);
+
         for (const routeLocale in pageMap) {
           const page = await createPage(app, {
             path: `${routeLocale}${removeLeadingSlash(
@@ -64,17 +66,20 @@ export const prepareType = (
               layout,
             },
           });
+          const keys = pageMap[routeLocale]
+            .filter(filter)
+            .sort(sorter)
+            .map(({ key }) => key);
 
           app.pages.push(page);
           pagePaths.push(page.path);
 
-          typeMap[routeLocale] = {
-            path: page.path,
-            keys: pageMap[routeLocale]
-              .filter(filter)
-              .sort(sorter)
-              .map(({ key }) => key),
-          };
+          typeMap[routeLocale] = { path: page.path, keys };
+
+          if (app.env.isDebug)
+            logger.info(
+              `Route ${routeLocale} in ${key} type: path: ${page.path}; items: ${keys.length}`
+            );
         }
 
         return {
@@ -107,6 +112,8 @@ export const prepareType = (
       `blog/type.js`,
       `export const typeMap = ${JSON.stringify(finalMap)}\n${HMR_CODE}`
     );
+
+    if (app.env.isDebug) logger.info("All types generated.");
 
     return paths;
   });
