@@ -10,17 +10,6 @@ import type { TaskListOptions } from "./tasklist";
  */
 export interface MarkdownEnhanceOptions {
   /**
-   * 是否启用自定义容器
-   *
-   * - info
-   * - note
-   * - tip
-   * - warning
-   * - danger
-   * - details
-   *
-   * ⚠ 最后四个会和默认主题冲突，且可能会覆盖默认主题的样式与行为
-   *
    * Whether to enable custom container including
    *
    * - info
@@ -32,14 +21,34 @@ export interface MarkdownEnhanceOptions {
    *
    * ⚠ The last 4 is conflict with default theme and may overide it.
    *
+   * 是否启用自定义容器
+   *
+   * - info
+   * - note
+   * - tip
+   * - warning
+   * - danger
+   * - details
+   *
+   * ⚠ 最后四个会和默认主题冲突，且可能会覆盖默认主题的样式与行为
+   *
    * @default false
    */
   container?: boolean;
 
   /**
-   * 是否启用代码组
+   * Whether to enable vpre wrapper
    *
+   * 是否启用 v-pre 容器
+   *
+   * @default false
+   */
+  vpre?: boolean;
+
+  /**
    * Whether to enable codegroup
+   *
+   * 是否启用代码组
    *
    * @default false
    */
@@ -55,27 +64,27 @@ export interface MarkdownEnhanceOptions {
   align?: boolean;
 
   /**
-   * 是否启用上角标格式支持
-   *
    * Whether to enable superscript format support
+   *
+   * 是否启用上角标格式支持
    *
    * @default false
    */
   sup?: boolean;
 
   /**
-   * 是否启用下角标格式支持
-   *
    * Whether to enable subscript format support
+   *
+   * 是否启用下角标格式支持
    *
    * @default false
    */
   sub?: boolean;
 
   /**
-   * 是否启用脚注格式支持
-   *
    * Whether to enable footnote format support
+   *
+   * 是否启用脚注格式支持
    *
    * @default false
    */
@@ -91,9 +100,9 @@ export interface MarkdownEnhanceOptions {
   lazyLoad?: boolean;
 
   /**
-   * 是否启用标注支持
-   *
    * Whether to enable mark format support
+   *
+   * 是否启用标注支持
    *
    * @default false
    */

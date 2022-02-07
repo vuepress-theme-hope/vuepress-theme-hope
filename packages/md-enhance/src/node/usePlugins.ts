@@ -80,4 +80,11 @@ export const usePlugins = (
       type: "demo",
       render: codeDemoRender,
     });
+
+  if (markdownOptions.vpre || markdownOptions.enableAll)
+    app.use("@vuepress/container", {
+      type: "v-pre",
+      before: () => `<div v-pre>\n`,
+      after: () => "</div>\n",
+    });
 };
