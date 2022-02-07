@@ -28,7 +28,8 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
     "build": "rollup -c",

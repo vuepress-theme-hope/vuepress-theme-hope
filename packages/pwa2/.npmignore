@@ -1,8 +1,0 @@
-# Source Code
-src/
-
-# Test Files
-__tests__/
-
-# TypeScript Config files
-tsconfig.*
