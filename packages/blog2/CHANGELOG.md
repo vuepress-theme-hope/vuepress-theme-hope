@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
+
+### Features
+
+- **blog2:** improve debug logging ([b75fdbb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b75fdbbe5215d1ce8d7cb2111ebfd737b8c88c2c))
+
 # [2.0.0-alpha.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-02-06)
 
 **Note:** Version bump only for package vuepress-plugin-blog2

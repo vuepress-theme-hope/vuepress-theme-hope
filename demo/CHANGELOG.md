@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
+
+### Bug Fixes
+
+- **theme:** fix pagination ([9721583](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/97215835c610f031c7db27e77e6a098aeffc7529))
+
+### Features
+
+- **md-enhance:** update flowchart presets ([edd6599](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edd659960ee276c503998cd9ac20584386623fd1))
+- **theme:** rename copyrightText ([da21a18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/da21a1818ec8d8bbee4f5402be0966b156570c13))
+
 # [2.0.0-alpha.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-02-06)
 
 **Note:** Version bump only for package theme-demo

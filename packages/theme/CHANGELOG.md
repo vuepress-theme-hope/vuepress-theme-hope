@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.13](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
+
+### Bug Fixes
+
+- **theme:** fix navbar layout ([1762ae1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1762ae1136af548a747cc5dc6f84eea756c141c6))
+- **theme:** fix optimizeDeps ([9077130](https://github.com/Mister-Hope/vuepress-theme-hope/commit/90771308568f9f2030d37fa0144608dd0b0140bb))
+- **theme:** fix pagination ([9721583](https://github.com/Mister-Hope/vuepress-theme-hope/commit/97215835c610f031c7db27e77e6a098aeffc7529))
+- **theme:** fix typos in scss ([f7820fc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f7820fcb5b68ff63cb31b3052cfab8a9fae9619d))
+- **theme:** merge blog options ([6570983](https://github.com/Mister-Hope/vuepress-theme-hope/commit/65709837c96344b95c3fee454011961a6cd43f5b))
+
+### Features
+
+- rename some frontmatter keys ([b05b21a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b05b21af643240e9488ab0389c155efb3e2c23d1))
+- **sass-palette:** support auto-load config ([79becdf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/79becdfbbe3fe5fc9f61a0d3f819fd601efc3d6a))
+- **theme:** add 2 helpers ([ff070b7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/ff070b76611c29c3baec0fdf0a0d27c49fbc2bd6))
+- **theme:** rename copyrightText ([da21a18](https://github.com/Mister-Hope/vuepress-theme-hope/commit/da21a1818ec8d8bbee4f5402be0966b156570c13))
+- **theme:** support prefix in navbar config ([fd8f0d8](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fd8f0d844b44d5fbef8e7870f1ff970762dc1188))
+
 # [2.0.0-alpha.12](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-02-06)
 
 **Note:** Version bump only for package vuepress-theme-hope

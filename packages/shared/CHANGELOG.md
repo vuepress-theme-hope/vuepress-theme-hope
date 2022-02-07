@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.13](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
+
+### Bug Fixes
+
+- **shared:** fix clickoutside directive ([1179023](https://github.com/Mister-Hope/vuepress-theme-hope/commit/11790236cfaa74a4af87b06acf9471fbdbe9ffc8))
+
+### Features
+
+- rename some frontmatter keys ([b05b21a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b05b21af643240e9488ab0389c155efb3e2c23d1))
+- **sass-palette:** support auto-load config ([79becdf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/79becdfbbe3fe5fc9f61a0d3f819fd601efc3d6a))
+- **shared:** add misin LICENSE ([791c4df](https://github.com/Mister-Hope/vuepress-theme-hope/commit/791c4df5797697f7bc808f8be9e6cbb03f95494f))
+- **theme:** rename copyrightText ([da21a18](https://github.com/Mister-Hope/vuepress-theme-hope/commit/da21a1818ec8d8bbee4f5402be0966b156570c13))
+
 # [2.0.0-alpha.12](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-02-06)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared

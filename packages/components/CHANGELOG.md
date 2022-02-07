@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.13](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
+
+### Bug Fixes
+
+- **theme:** fix pagination ([9721583](https://github.com/Mister-Hope/vuepress-theme-hope/commit/97215835c610f031c7db27e77e6a098aeffc7529))
+
+### Features
+
+- rename some frontmatter keys ([b05b21a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/b05b21af643240e9488ab0389c155efb3e2c23d1))
+- **sass-palette:** support auto-load config ([79becdf](https://github.com/Mister-Hope/vuepress-theme-hope/commit/79becdfbbe3fe5fc9f61a0d3f819fd601efc3d6a))
+
 # [2.0.0-alpha.12](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-02-06)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components
