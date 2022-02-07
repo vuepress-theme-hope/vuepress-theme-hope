@@ -44,7 +44,7 @@ export interface ArticleInfoProps {
   /**
    * 文章是否原创
    */
-  original?: boolean | null;
+  isOriginal?: boolean | null;
 
   /**
    * 是否启用访问量
@@ -135,4 +135,4 @@ interface ReadingTime {
 
 ## 原创标识
 
-你可以在页面 frontmatter 中设置 `original` 为 `true` 来为你的文章添加原创标签。 -->
+你可以在页面 frontmatter 中设置 `isOriginal` 为 `true` 来为你的文章添加原创标签。 -->

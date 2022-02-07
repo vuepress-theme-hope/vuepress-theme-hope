@@ -120,7 +120,7 @@ export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
     category: category.value,
     date: date.value,
     tag: tag.value,
-    original: frontmatter.value.original,
+    isOriginal: frontmatter.value.isOriginal,
     readingTime: page.value.readingTime,
     visitor: frontmatter.value.visitor !== false,
     hint: !pure.value,

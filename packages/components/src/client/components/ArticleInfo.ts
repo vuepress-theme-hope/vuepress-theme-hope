@@ -72,7 +72,7 @@ export default defineComponent({
       default: null,
     },
 
-    original: {
+    isOriginal: {
       type: Boolean,
       default: false,
     },

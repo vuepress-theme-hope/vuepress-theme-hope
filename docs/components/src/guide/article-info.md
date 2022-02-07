@@ -44,7 +44,7 @@ export interface ArticleInfoProps {
   /**
    * Whether the aricle is orginal
    */
-  original?: boolean | null;
+  isOriginal?: boolean | null;
 
   /**
    * Whether enable pageview
@@ -141,4 +141,4 @@ To keep it globally disabled, please set `pageInfo` to `false` in the plugin opt
 
 ## Original Marker
 
-You can set `original` to `true` in page frontmatter to add an original mark in page info. -->
+You can set `isOriginal` to `true` in page frontmatter to add an original mark in page info. -->

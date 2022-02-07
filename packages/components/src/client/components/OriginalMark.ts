@@ -8,14 +8,14 @@ export default defineComponent({
   name: "OriginalMark",
 
   props: {
-    original: { type: Boolean, default: false },
+    isOriginal: { type: Boolean, default: false },
   },
 
   setup(props) {
     const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
     return (): VNode | null =>
-      props.original
+      props.isOriginal
         ? h("span", { class: "origin" }, pageInfoLocale.value.origin)
         : null;
   },

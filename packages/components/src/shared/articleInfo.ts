@@ -169,7 +169,7 @@ export interface ArticleInfoProps {
    *
    * 文章是否原创
    */
-  original?: boolean | null;
+  isOriginal?: boolean | null;
 
   /**
    * Whether enable pageview

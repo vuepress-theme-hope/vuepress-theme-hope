@@ -86,7 +86,7 @@ export const useArticleInfo = (
     category: category.value,
     date: date.value,
     tag: tag.value,
-    original: meta.value.isOriginal,
+    isOriginal: meta.value.isOriginal,
     readingTime: meta.value.readingTime,
     hint: !pure.value,
   });

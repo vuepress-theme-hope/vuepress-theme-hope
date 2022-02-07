@@ -108,6 +108,7 @@ export const extendsPage = (
       sticky: frontmatter.sticky,
       star: frontmatter.star,
       image: frontmatter.cover,
+      isOriginal: frontmatter.isOriginal,
     };
 
     // resolve encrypted
