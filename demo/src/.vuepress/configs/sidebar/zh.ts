@@ -1,6 +1,6 @@
-import type { SidebarConfig } from "vuepress-theme-hope";
+import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
 
-export const zh: SidebarConfig = {
+export const zh: HopeThemeSidebarConfig = {
   "/zh/": [
     "/zh/README.md",
     "/zh/home.md",

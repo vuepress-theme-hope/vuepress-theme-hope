@@ -1,6 +1,6 @@
-import type { SidebarConfig } from "vuepress-theme-hope";
+import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
 
-export const en: SidebarConfig = {
+export const en: HopeThemeSidebarConfig = {
   "/": [
     "/README.md",
     "/home.md",

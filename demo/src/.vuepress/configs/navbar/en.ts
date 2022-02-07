@@ -1,13 +1,10 @@
 import { version } from "../../../../../lerna.json";
-import type { NavbarConfig } from "vuepress-theme-hope";
-export const en: NavbarConfig = [
-  { text: "Blog Home", link: "/README.md", icon: "home" },
-  { text: "Project Home", link: "/home.md", icon: "home" },
-  {
-    text: "Guide",
-    icon: "creative",
-    link: "/guide/README.md",
-  },
+import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
+
+export const en: HopeThemeNavbarConfig = [
+  "/README.md",
+  "/home.md",
+  "/guide/README.md",
   {
     text: version,
     icon: "note",
