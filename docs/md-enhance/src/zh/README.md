@@ -4,7 +4,7 @@ title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
-tagline: 为 VuePress 提供更多 Markdown 增强功能
+tagline: 为 VuePress2 提供更多 Markdown 增强功能
 actions:
   - text: 快速上手 💡
     link: /zh/guide/

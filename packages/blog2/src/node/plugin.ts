@@ -11,7 +11,8 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { BlogOptions } from "../shared";
 
 export const blogPlugin: Plugin<BlogOptions> = (options) => {
-  const { metaScope = "_blog", injectMeta } = options;
+  const { getInfo = (): Record<string, never> => ({}), metaScope = "_blog" } =
+    options;
 
   let generatePages: string[] = [];
 
@@ -74,9 +75,7 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
 
     extendsPage(page): void {
       page.routeMeta = {
-        ...(metaScope === ""
-          ? injectMeta?.(page)
-          : { [metaScope]: injectMeta?.(page) }),
+        ...(metaScope === "" ? getInfo(page) : { [metaScope]: getInfo(page) }),
         ...page.routeMeta,
       };
     },

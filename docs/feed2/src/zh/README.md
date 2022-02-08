@@ -3,21 +3,19 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: vuepress-plugin-photo-swipe
-tagline: 为 VuePress2 提供图片预览支持
+heroText: vuepress-plugin-feed2
+tagline: 为 VuePress2 提供 Feed 生成
 actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config.html
+    link: /zh/config/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
 ---
-
-让页面图像支持预览，缩放，共享，滑动查看和下载。
 
 ## 使用插件
 
@@ -28,7 +26,7 @@ copyright: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D vuepress-plugin-photo-swipe@next
+yarn add -D vuepress-plugin-feed2@next
 ```
 
 :::
@@ -36,7 +34,7 @@ yarn add -D vuepress-plugin-photo-swipe@next
 ::: code-group-item npm
 
 ```bash
-npm i -D vuepress-plugin-photo-swipe@next
+npm i -D vuepress-plugin-feed2@next
 ```
 
 :::
@@ -49,14 +47,14 @@ npm i -D vuepress-plugin-photo-swipe@next
 
 ::: code-group-item ts
 
-```ts
-// .vuepress/config.ts
-import { photoSwipe } from "vuepress-plugin-photo-swipe";
+```js
+// .vuepress/config.js
+import { feed } from "vuepress-plugin-feed2";
 
-export default {
+module.exports = {
   plugins: [
-    photoSwipe({
-      // 你的选项
+    feed({
+      // 插件选项
     }),
   ],
 };
@@ -66,14 +64,14 @@ export default {
 
 ::: code-group-item js
 
-```js
-// .vuepress/config.js
-const { photoSwipe } = require("vuepress-plugin-photo-swipe");
+```ts
+// .vuepress/config.ts
+const { feed } = require("vuepress-plugin-feed2");
 
 module.exports = {
   plugins: [
-    photoSwipe({
-      // 你的选项
+    feed({
+      // 插件选项
     }),
   ],
 };

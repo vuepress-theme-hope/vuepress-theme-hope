@@ -1,0 +1,25 @@
+{
+  "name": "blog2-docs",
+  "version": "2.0.0-alpha.14",
+  "private": true,
+  "description": "Docs for vuepress-plugin-blog2",
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "scripts": {
+    "docs:vite-build": "vuepress-vite build src",
+    "docs:vite-clean-serve": "vuepress-vite dev src --clean-cache",
+    "docs:vite-serve": "vuepress-vite dev src",
+    "docs:webpack-build": "vuepress-webpack build src",
+    "docs:webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
+    "docs:webpack-serve": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "vuepress-theme-hope": "2.0.0-alpha.14",
+    "vuepress-vite": "2.0.0-beta.35",
+    "vuepress-webpack": "2.0.0-beta.35"
+  }
+}

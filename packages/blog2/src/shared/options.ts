@@ -82,32 +82,20 @@ export interface BlogCategoryOptoins {
 
 export interface BlogOptions {
   /**
-   * @default '_blog'
+   * Function getting article info.
+   *
+   * 获取文章信息的函数。
    */
-  metaScope?: string;
+  getInfo?: (page: Page) => Record<string, unknown>;
 
   /**
-   * Injecting meta
+   * Page filter, determine whether a page should be included.
    *
-   * 向路由中注入信息
-   */
-  injectMeta?: (page: Page) => Record<string, unknown>;
-
-  /**
-   * Page filter, determine whether a page should be included
+   * 页面过滤器，此函数用于鉴别页面是否作为文章。
    *
-   * 页面过滤器，此函数用于鉴别页面是否作为文章
-   *
-   * @default () => true
+   * @default (page) => Boolean(page.filePathRelative) && !page.frontmatter.home
    */
   filter?: (page: Page) => boolean;
-
-  /**
-   * Slugify function
-   *
-   * @default (name) => encodeURI(name.replace(/ _/g, '-')).toLowerCase()
-   */
-  slugify?: (name: string) => string;
 
   /**
    * Types
@@ -118,4 +106,20 @@ export interface BlogOptions {
    * Categories
    */
   category?: BlogCategoryOptoins[];
+
+  /**
+   * Key used when injecting info to route meta.
+   *
+   * 注入文章信息至路由元数据时使用的键名。
+   *
+   * @default '_blog'
+   */
+  metaScope?: string;
+
+  /**
+   * Slugify function
+   *
+   * @default (name) => encodeURI(name.replace(/ _/g, '-')).toLowerCase()
+   */
+  slugify?: (name: string) => string;
 }

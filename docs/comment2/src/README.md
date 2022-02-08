@@ -3,8 +3,8 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-components"
-tagline: Components lib plugin for VuePress2
+heroText: vuepress-plugin-comment2
+tagline: Comment and pageview plugin for VuePress2
 actions:
   - text: Get Started 💡
     link: /guide/
@@ -24,7 +24,7 @@ copyright: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-components@next
+yarn add -D vuepress-plugin-comment2@next
 ```
 
 :::
@@ -32,7 +32,7 @@ yarn add -D @mr-hope/vuepress-plugin-components@next
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-components@next
+npm i -D vuepress-plugin-comment2@next
 ```
 
 :::
@@ -47,11 +47,11 @@ npm i -D @mr-hope/vuepress-plugin-components@next
 
 ```ts
 // .vuepress/config.ts
-import { components } from "@mr-hope/vuepress-plugin-components";
+import { comment } from "vuepress-plugin-comment2";
 
 export default {
   plugins: [
-    components({
+    comment({
       // your options
     }),
   ],
@@ -64,11 +64,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { components } = require("@mr-hope/vuepress-plugin-components");
+const { comment } = require("vuepress-plugin-comment2");
 
 module.exports = {
   plugins: [
-    components({
+    comment({
       // your options
     }),
   ],

@@ -1,5 +1,5 @@
 ---
-title: API Config
+title: Options
 icon: config
 ---
 

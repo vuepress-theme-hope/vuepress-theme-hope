@@ -3,21 +3,21 @@ import { version } from "../../../../lerna.json";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
-  base: "/v2/add-this/",
+  base: "/v2/comment/",
 
   dest: "./dist",
 
   locales: {
     "/": {
       lang: "en-US",
-      title: "Share Plugin",
-      description: "Share Plugin provided by AddThis",
+      title: "Comment Plugin",
+      description: "Comment Plugin for VuePress",
     },
 
     "/zh/": {
       lang: "zh-CN",
-      title: "分享插件",
-      description: "由 AddThis 提供的分享插件",
+      title: "评论插件",
+      description: "VuePress 的评论插件",
     },
   },
 
@@ -35,14 +35,14 @@ export default defineUserConfig<HopeThemeOptions>({
 
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
-    docsDir: "docs/add-this/src",
+    docsDir: "docs/comment2/src",
 
     logo: "/logo.svg",
 
-    enableBlog: false,
-
     footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     displayFooter: true,
+
+    enableBlog: false,
 
     locales: {
       "/": {
@@ -51,12 +51,26 @@ export default defineUserConfig<HopeThemeOptions>({
           {
             text: "Guide",
             icon: "creative",
-            link: "/guide.md",
+            children: [
+              {
+                text: "Guide",
+                icon: "creative",
+                link: "/guide/README.md",
+              },
+              { text: "Waline", icon: "waline", link: "/guide/waline.md" },
+            ],
           },
           {
             text: "Config",
             icon: "config",
-            link: "/config.md",
+            children: [
+              { text: "Config", icon: "config", link: "/config/README.md" },
+              {
+                text: "Waline",
+                icon: "waline",
+                link: "/config/waline.md",
+              },
+            ],
           },
           {
             text: version,
@@ -64,11 +78,26 @@ export default defineUserConfig<HopeThemeOptions>({
             children: [
               {
                 text: "V1 Docs",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
+                link: "https://vuepress-theme-hope.github.io/comment/",
               },
             ],
           },
         ],
+
+        sidebar: {
+          "/": [
+            {
+              text: "Guide",
+              icon: "creative",
+              children: ["guide/README.md", "guide/waline.md"],
+            },
+            {
+              text: "Config",
+              icon: "config",
+              children: ["config/README.md", "config/waline.md"],
+            },
+          ],
+        },
       },
       "/zh/": {
         navbar: [
@@ -76,12 +105,26 @@ export default defineUserConfig<HopeThemeOptions>({
           {
             text: "指南",
             icon: "creative",
-            link: "/zh/guide.md",
+            children: [
+              {
+                text: "指南",
+                icon: "creative",
+                link: "/zh/guide/README.md",
+              },
+              { text: "Waline", icon: "waline", link: "/zh/guide/waline.md" },
+            ],
           },
           {
             text: "配置",
             icon: "config",
-            link: "/zh/config.md",
+            children: [
+              { text: "配置", icon: "config", link: "/zh/config/README.md" },
+              {
+                text: "Waline",
+                icon: "waline",
+                link: "/zh/config/waline.md",
+              },
+            ],
           },
           {
             text: version,
@@ -89,11 +132,26 @@ export default defineUserConfig<HopeThemeOptions>({
             children: [
               {
                 text: "V1 文档",
-                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
+                link: "https://vuepress-theme-hope.github.io/comment/zh/",
               },
             ],
           },
         ],
+
+        sidebar: {
+          "/zh/": [
+            {
+              text: "指南",
+              icon: "creative",
+              children: ["guide/README.md", "guide/waline.md"],
+            },
+            {
+              text: "配置",
+              icon: "config",
+              children: ["config/README.md", "config/waline.md"],
+            },
+          ],
+        },
       },
     },
 
@@ -108,40 +166,40 @@ export default defineUserConfig<HopeThemeOptions>({
       },
 
       pwa: {
-        favicon: "/v2/add-this/favicon.ico",
+        favicon: "/comment/favicon.ico",
         themeColor: "#46bd87",
         cachePic: true,
         apple: {
-          icon: "/v2/add-this/assets/icon/apple-icon-152.png",
+          icon: "/v2/comment/assets/icon/apple-icon-152.png",
           statusBarColor: "black",
         },
         msTile: {
-          image: "/v2/add-this/assets/icon/ms-icon-144.png",
+          image: "/v2/comment/assets/icon/ms-icon-144.png",
           color: "#ffffff",
         },
         manifest: {
-          name: "vuepress-plugin-add-this",
-          short_name: "add-this plugin",
+          name: "vuepress-plugin-comment2",
+          short_name: "comment plugin",
           icons: [
             {
-              src: "/v2/add-this/assets/icon/chrome-mask-512.png",
+              src: "/v2/comment/assets/icon/chrome-mask-512.png",
               sizes: "512x512",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/add-this/assets/icon/chrome-mask-192.png",
+              src: "/v2/comment/assets/icon/chrome-mask-192.png",
               sizes: "192x192",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/add-this/assets/icon/chrome-512.png",
+              src: "/v2/comment/assets/icon/chrome-512.png",
               sizes: "512x512",
               type: "image/png",
             },
             {
-              src: "/v2/add-this/assets/icon/chrome-192.png",
+              src: "/v2/comment/assets/icon/chrome-192.png",
               sizes: "192x192",
               type: "image/png",
             },
@@ -150,16 +208,16 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               name: "Guide",
               short_name: "Guide",
-              url: "/v2/add-this/guide/",
+              url: "/comment/guide/",
               icons: [
                 {
-                  src: "/v2/add-this/assets/icon/guide-maskable.png",
+                  src: "/v2/comment/assets/icon/guide-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/add-this/assets/icon/guide-monochrome.png",
+                  src: "/v2/comment/assets/icon/guide-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -169,16 +227,16 @@ export default defineUserConfig<HopeThemeOptions>({
             {
               name: "Config",
               short_name: "Config",
-              url: "/v2/add-this/config/",
+              url: "/comment/config/",
               icons: [
                 {
-                  src: "/v2/add-this/assets/icon/config-maskable.png",
+                  src: "/v2/comment/assets/icon/config-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/add-this/assets/icon/config-monochrome.png",
+                  src: "/v2/comment/assets/icon/config-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -190,6 +248,4 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     },
   },
-
-  plugins: [["add-this", { pubid: "ra-5f829c59e6c6bc9a" }]],
 });

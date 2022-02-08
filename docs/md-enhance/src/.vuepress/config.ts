@@ -12,7 +12,7 @@ export default defineUserConfig<HopeThemeOptions>({
     "/": {
       lang: "en-US",
       title: "Markdown Enhance",
-      description: "Markdown Enhancement for VuePress",
+      description: "Markdown Enhancement for VuePress2",
     },
 
     "/zh/": {
@@ -39,6 +39,11 @@ export default defineUserConfig<HopeThemeOptions>({
     docsDir: "docs/md-enhance/src",
 
     logo: "/logo.svg",
+
+    enableBlog: false,
+
+    footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    displayFooter: true,
 
     locales: {
       "/": {
@@ -212,11 +217,6 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     },
 
-    blog: false,
-
-    footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-
-    displayFooter: true,
     plugins: {
       comment: {
         type: "waline",

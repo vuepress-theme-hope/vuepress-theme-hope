@@ -9,7 +9,10 @@ export const getPageMap = (
   options: Partial<BlogOptions>,
   app: App
 ): PageMap => {
-  const { filter = (): boolean => true } = options;
+  const {
+    filter = (page): boolean =>
+      Boolean(page.filePathRelative) && !page.frontmatter.home,
+  } = options;
   const pageMap: PageMap = {};
 
   app.pages.filter(filter).forEach((page) => {

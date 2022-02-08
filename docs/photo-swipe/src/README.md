@@ -4,7 +4,7 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
-tagline: Photo swipe plugin for vuepress
+tagline: Photo swipe plugin for VuePress22
 actions:
   - text: Guide 💡
     link: /guide.html

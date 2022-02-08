@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: vuepress-plugin-add-this
+heroText: vuepress-plugin-blog2
 tagline: 为 VuePress2 提供 addthis 支持
 actions:
   - text: 快速上手 💡
@@ -26,7 +26,7 @@ copyright: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D vuepress-plugin-add-this@next
+yarn add -D vuepress-plugin-blog2@next
 ```
 
 :::
@@ -34,7 +34,7 @@ yarn add -D vuepress-plugin-add-this@next
 ::: code-group-item npm
 
 ```bash
-npm i -D vuepress-plugin-add-this@next
+npm i -D vuepress-plugin-blog2@next
 ```
 
 :::
@@ -49,10 +49,14 @@ npm i -D vuepress-plugin-add-this@next
 
 ```ts
 // .vuepress/config.ts
-import { addThis } from "vuepress-plugin-add-this";
+import { blog } from "vuepress-plugin-blog2";
 
 export default {
-  plugins: [addThis({ pubid: "你的 pubid" })],
+  plugins: [
+    blog({
+      //插件选项
+    }),
+  ],
 };
 ```
 
@@ -62,10 +66,14 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { addThis } = require("vuepress-plugin-add-this");
+const { blog } = require("vuepress-plugin-blog2");
 
 module.exports = {
-  plugins: [addThis({ pubid: "你的 pubid" })],
+  plugins: [
+    blog({
+      //插件选项
+    }),
+  ],
 };
 ```
 
@@ -75,4 +83,4 @@ module.exports = {
 
 ## 从 V1 迁移
 
-此插件与 V1 相比没有变更。
+此插件未发布 V1 版本。

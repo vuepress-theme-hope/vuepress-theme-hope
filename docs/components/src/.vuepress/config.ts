@@ -38,6 +38,11 @@ export default defineUserConfig<HopeThemeOptions>({
 
     logo: "/logo.svg",
 
+    enableBlog: false,
+
+    footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    displayFooter: true,
+
     locales: {
       "/": {
         navbar: [
@@ -117,9 +122,6 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     },
 
-    footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-
-    displayFooter: true,
     plugins: {
       comment: {
         type: "waline",
