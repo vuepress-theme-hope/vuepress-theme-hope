@@ -42,36 +42,21 @@ export default defineUserConfig<HopeThemeOptions>({
     footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     displayFooter: true,
 
-    enableBlog: false,
-
     locales: {
       "/": {
         navbar: [
-          { text: "Home", icon: "home", link: "/README.md" },
+          "/README.md",
           {
             text: "Guide",
             icon: "creative",
-            children: [
-              {
-                text: "Guide",
-                icon: "creative",
-                link: "/guide/README.md",
-              },
-              { text: "Waline", icon: "waline", link: "/guide/waline.md" },
-            ],
+            children: ["/guide/README.md", "/guide/waline.md"],
           },
           {
             text: "Config",
             icon: "config",
-            children: [
-              { text: "Config", icon: "config", link: "/config/README.md" },
-              {
-                text: "Waline",
-                icon: "waline",
-                link: "/config/waline.md",
-              },
-            ],
+            children: ["/config/README.md", "/config/waline.md"],
           },
+          "/migration.md",
           {
             text: version,
             icon: "note",
@@ -96,36 +81,24 @@ export default defineUserConfig<HopeThemeOptions>({
               icon: "config",
               children: ["config/README.md", "config/waline.md"],
             },
+            "migration.md",
           ],
         },
       },
       "/zh/": {
         navbar: [
-          { text: "主页", icon: "home", link: "/zh/README.md" },
+          "/zh/README.md",
           {
             text: "指南",
             icon: "creative",
-            children: [
-              {
-                text: "指南",
-                icon: "creative",
-                link: "/zh/guide/README.md",
-              },
-              { text: "Waline", icon: "waline", link: "/zh/guide/waline.md" },
-            ],
+            children: ["/zh/guide/README.md", "/zh/guide/waline.md"],
           },
           {
             text: "配置",
             icon: "config",
-            children: [
-              { text: "配置", icon: "config", link: "/zh/config/README.md" },
-              {
-                text: "Waline",
-                icon: "waline",
-                link: "/zh/config/waline.md",
-              },
-            ],
+            children: ["/zh/config/README.md", "/zh/config/waline.md"],
           },
+          "/migration.md",
           {
             text: version,
             icon: "note",
@@ -150,6 +123,7 @@ export default defineUserConfig<HopeThemeOptions>({
               icon: "config",
               children: ["config/README.md", "config/waline.md"],
             },
+            "migration.md",
           ],
         },
       },
