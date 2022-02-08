@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
+
+### Bug Fixes
+
+- fix styles ([a37574f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a37574fb5ab10fb3087df1d1516fadfe4d952df4))
+- **md-enhance:** fix broken style ([f01656c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f01656c8efdb9ba666fba49b27e28bd37ee95307))
+
+### Features
+
+- **md-enhance:** update slides style ([a6de08a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a6de08a796e1d7ca07f542d38fe5c4c6e9ff69bd))
+
 # [2.0.0-alpha.14](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
 
 ### Features

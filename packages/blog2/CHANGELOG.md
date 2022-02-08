@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
+
+### Features
+
+- update blog2 plugin and add docs ([8516d43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8516d43115fa49b2c9ed12417b29662e521d05a0))
+
 # [2.0.0-alpha.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
 
 **Note:** Version bump only for package vuepress-plugin-blog2

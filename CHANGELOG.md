@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
+
+### Bug Fixes
+
+- fix styles ([a37574f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a37574fb5ab10fb3087df1d1516fadfe4d952df4))
+- **md-enhance:** fix broken style ([f01656c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f01656c8efdb9ba666fba49b27e28bd37ee95307))
+- **theme:** fix blog setup ([d1f5314](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d1f5314f0af6a3f950de5311fd02aa08bc922af0))
+- **theme:** fix PageAnchor layout ([fc2b3b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fc2b3b224ab376167b81ad7043356b46b8ae96a9))
+- **theme:** fix sidebar highlight color ([7c2b1b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7c2b1b8a3a95fe2b6c1684342e97e86031f17e72))
+
+### Features
+
+- **feed2:** update options and docs ([659abcc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/659abcc90221d7d6b2f946ff0f19a4a17f4c403e))
+- **md-enhance:** update slides style ([a6de08a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6de08a796e1d7ca07f542d38fe5c4c6e9ff69bd))
+- **sass-palette:** add generator option ([89293d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/89293d94906e07ff30b1e30873baa97f1b687d8c))
+- **theme:** make blog feature configuable and tree shakable ([07d59fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07d59fc6b75e48abd660117b975ac01d3e7c55db))
+- **theme:** update template ([5d4219b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d4219b13a598a8e1a70ef1077c5b8c22d75d3ae))
+- update blog2 plugin and add docs ([8516d43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8516d43115fa49b2c9ed12417b29662e521d05a0))
+
 # [2.0.0-alpha.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
 
 ### Bug Fixes

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
+
+### Features
+
+- **feed2:** update options and docs ([659abcc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/659abcc90221d7d6b2f946ff0f19a4a17f4c403e))
+- **theme:** make blog feature configuable and tree shakable ([07d59fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07d59fc6b75e48abd660117b975ac01d3e7c55db))
+
 # [2.0.0-alpha.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
 
 **Note:** Version bump only for package photo-swipe-docs

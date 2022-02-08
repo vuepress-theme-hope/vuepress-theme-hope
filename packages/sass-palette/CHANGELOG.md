@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
+
+### Features
+
+- **sass-palette:** add generator option ([89293d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/89293d94906e07ff30b1e30873baa97f1b687d8c))
+
 # [2.0.0-alpha.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
 
 **Note:** Version bump only for package vuepress-plugin-sass-palette
