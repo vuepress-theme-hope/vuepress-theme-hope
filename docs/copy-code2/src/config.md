@@ -24,6 +24,15 @@ Hint display time, setting it to `0` will disable the hint.
 
 Whether to display copy button on the mobile device
 
+## delay
+
+- Type: `number`
+- Default: `500`
+
+The delay of registering copy code buttons, in ms.
+
+If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+
 ## locales
 
 ```ts

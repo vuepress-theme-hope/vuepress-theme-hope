@@ -80,3 +80,7 @@ module.exports = {
 :::
 
 ::::
+
+## Migrating from V1
+
+You probably don't need to change anything.
