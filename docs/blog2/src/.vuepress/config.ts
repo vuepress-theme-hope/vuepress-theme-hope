@@ -69,6 +69,7 @@ export default defineUserConfig<HopeThemeOptions>({
             ],
           },
         ],
+        sidebar: ["/guide.md", "/config.md"],
       },
       "/zh/": {
         navbar: [
@@ -94,6 +95,7 @@ export default defineUserConfig<HopeThemeOptions>({
             ],
           },
         ],
+        sidebar: ["/zh/guide.md", "/zh/config.md"],
       },
     },
 
