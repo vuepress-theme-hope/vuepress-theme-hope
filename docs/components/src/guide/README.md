@@ -5,14 +5,18 @@ icon: creative
 
 This plugin register 7 components and 1 global component:
 
+- `<ArticleInfo />`
 - `<BackToTop />` (Global Components)
 - `<Badge />`
 - `<BreadCrumb />`
 - `<CodeGroup />`
 - `<CodeGroupItem />`
 - `<Pagination />`
-- `<PageInfo />`
 - `<ScreenFull />`
+
+## ArticleInfo
+
+Article information components, see [ArticleInfo](./article-info.md) for details.
 
 ## BackToTop
 
@@ -57,10 +61,6 @@ npm i -D vuepress-theme-hope
 
 ::::
 ````
-
-## PageInfo
-
-Page information components, see [PageInfo](./page-info.md) for details.
 
 ## Pagination
 

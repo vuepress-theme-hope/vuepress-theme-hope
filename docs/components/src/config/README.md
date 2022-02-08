@@ -3,6 +3,13 @@ title: Plugin Options
 icon: config
 ---
 
+## articleInfo
+
+- Type: `boolean`
+- Default: `false`
+
+Whether register articleInfo component
+
 ## backToTop
 
 - Type: `boolean`
@@ -17,13 +24,6 @@ Whether enabling backToTop button
 
 backToTop button threshold distance (in pixels)
 
-## breadcrumb
-
-- Type: `boolean`
-- Default: `false`
-
-Whether register breadcrumb component
-
 ## badge
 
 - Type: `boolean`
@@ -31,12 +31,12 @@ Whether register breadcrumb component
 
 Whether register badge component
 
-## articleInfo
+## breadcrumb
 
 - Type: `boolean`
 - Default: `false`
 
-Whether register articleInfo component
+Whether register breadcrumb component
 
 ## pagination
 

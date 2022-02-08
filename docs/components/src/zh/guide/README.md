@@ -5,14 +5,18 @@ icon: creative
 
 此插件注册 7 个组件和一个全局组件:
 
+- `<ArticleInfo />`
 - `<BackToTop />` (全局组件)
 - `<Badge />`
 - `<BreadCrumb />`
 - `<CodeGroup />`
 - `<CodeGroupItem />`
 - `<Pagination />`
-- `<PageInfo />`
 - `<ScreenFull />`
+
+## `<Article />`
+
+文章信息组件，详见 [文章信息](./article-info.md)。
 
 ## `<BackToTop />`
 
@@ -57,10 +61,6 @@ npm i -D vuepress-theme-hope
 
 ::::
 ````
-
-## `<PageInfo />`
-
-页面信息组件，详见 [页面信息](./page-info.md)。
 
 ## `<Pagination />`
 

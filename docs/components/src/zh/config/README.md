@@ -3,6 +3,13 @@ title: 插件选项
 icon: config
 ---
 
+## articleInfo
+
+- 类型: `boolean`
+- 默认: `false`
+
+是否注册文章信息组件
+
 ## backToTop
 
 - 类型: `boolean`
@@ -17,13 +24,6 @@ icon: config
 
 返回顶部按钮触发距离 (单位：像素)
 
-## breadcrumb
-
-- 类型: `boolean`
-- 默认: `false`
-
-是否注册路径导航
-
 ## badge
 
 - 类型: `boolean`
@@ -31,12 +31,12 @@ icon: config
 
 是否注册徽章
 
-## articleInfo
+## breadcrumb
 
 - 类型: `boolean`
 - 默认: `false`
 
-是否注册文章信息组件
+是否注册路径导航
 
 ## pagination
 
