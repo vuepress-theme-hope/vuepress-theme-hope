@@ -5,7 +5,6 @@ $headings: (2, 3, 4, 5, 6);
   top: calc(var(--navbar-height) + 2rem);
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 2.5rem;
   z-index: 99;
 
   @media (max-width: hope-config.$pad) {
@@ -50,6 +49,7 @@ $headings: (2, 3, 4, 5, 6);
 
   .anchor-wrapper {
     position: relative;
+    margin: 0 0.5rem;
     padding-left: 8px;
 
     &::before {
