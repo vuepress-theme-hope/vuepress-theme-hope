@@ -43,6 +43,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
     config: ".vuepress/styles/config.scss",
     defaultConfig: path.resolve(__dirname, "../../templates/config.scss"),
     defaultPalette: path.resolve(__dirname, "../../templates/palette.scss"),
+    generator: path.resolve(__dirname, "../../templates/generator.scss"),
     palette: ".vuepress/styles/palette.scss",
     style: ".vuepress/styles/index.scss",
   });

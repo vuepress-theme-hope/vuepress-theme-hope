@@ -16,6 +16,7 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       __dirname,
       "../../styles/default/palette.scss"
     ),
+    generator = path.resolve(__dirname, "../../styles/empty.scss"),
     style = `.vuepress/styles/${id}-style.scss`,
   },
   app
@@ -39,6 +40,9 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       [`@sass-palette/${id}-config`]: app.dir.temp(
         `sass-palette/${id}-config.scss`
       ),
+      [`@sass-palette/${id}-inject`]: app.dir.temp(
+        `sass-palette/${id}-inject.scss`
+      ),
       [`@sass-palette/${id}-palette`]: app.dir.temp(
         `sass-palette/${id}-palette.scss`
       ),
@@ -52,7 +56,7 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
         `sass-palette/load-${id}.js`,
         `
 export default ()=>{
-  import("@sass-palette/${id}-palette");
+  import("@sass-palette/${id}-inject");
 };
 `
       );
@@ -67,40 +71,51 @@ export default ()=>{
 @import "${getPath(defaultConfig)}";
 @import "${getPath(userPalette)}";
 @import "${getPath(userConfig)}";
+@import "${getPath(generator)}";
 `
         ),
+
         app.writeTemp(
-          `sass-palette/${id}-palette.scss`,
+          `sass-palette/${id}-inject.scss`,
           `
-@use 'sass:color';
-@use 'sass:list';
-@use 'sass:math';
-@use 'sass:map';
-@use 'sass:meta';
+@use "sass:color";
+@use "sass:list";
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
 
-@use '@sass-palette/helper';
-@use '${getPath(defaultPalette)}' as defaultPalette;
-@use '${getPath(palette)}' as palette;
+@use "@sass-palette/helper";
+@use "@sass-palette/${id}-palette";
 
-$defaultVariables: meta.module-variables("defaultPalette");
-$userVariables: meta.module-variables("palette");
-
-$variables: map.deep-merge($defaultVariables, $userVariables);
+$variables: meta.module-variables("${id}-palette");
 
 @each $name, $value in $variables {
   $key: helper.camel-to-kebab($name);
 
-  // simple length
   @if meta.type-of($value) == number or meta.type-of($value) == string {
     :root {
       #{$key}: #{$value};
     }
   } @else if helper.color-islegal($value) {
-    @include helper.inject-color($key, $value, $darkSelector: ${id}-config.$darkSelector);
+    @if meta.global-variable-exists("darkSelector", $module: "${id}-config") {
+      @include helper.inject-color($key, $value, $darkSelector: ${id}-config.$darkSelector);
+    } @else {
+      @include helper.inject-color($key, $value);
+    }
   }
 }
 `
         ),
+
+        app.writeTemp(
+          `sass-palette/${id}-palette.scss`,
+          `
+@import "${getPath(defaultPalette)}";
+@import "${getPath(userPalette)}";
+@import "${getPath(generator)}";
+`
+        ),
+
         app.writeTemp(
           `sass-palette/${id}-style.scss`,
           `@forward "${getPath(userStyle)}";

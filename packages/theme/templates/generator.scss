@@ -1,0 +1,69 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "vuepress-plugin-sass-palette/styles/helper";
+
+$textColorLight: (
+  light:
+    color.scale(helper.get-color($textColor, $isDark: false), $lightness: 10%),
+  dark:
+    color.scale(helper.get-color($textColor, $isDark: true), $lightness: 10%),
+) !default;
+
+$textColorLighter: (
+  light:
+    color.scale(helper.get-color($textColor, $isDark: false), $lightness: 20%),
+  dark:
+    color.scale(helper.get-color($textColor, $isDark: true), $lightness: 20%),
+) !default;
+
+$textColorBright: (
+  light:
+    color.scale(helper.get-color($textColor, $isDark: false), $lightness: 40%),
+  dark:
+    color.scale(helper.get-color($textColor, $isDark: true), $lightness: 40%),
+) !default;
+
+$themeColorDark: (
+  light:
+    color.scale(helper.get-color($themeColor, $isDark: false), $lightness: -10%),
+  dark:
+    color.scale(helper.get-color($themeColor, $isDark: true), $lightness: -10%),
+) !default;
+
+$themeColorLight: (
+  light:
+    color.scale(helper.get-color($themeColor, $isDark: false), $lightness: 10%),
+  dark:
+    color.scale(helper.get-color($themeColor, $isDark: true), $lightness: 10%),
+) !default;
+
+$codeHighlightLineColor: (
+  light:
+    color.scale(
+      helper.get-color($codeBgColor, $isDark: false),
+      $saturation: 10%,
+      $lightness: -5%
+    ),
+  dark:
+    color.scale(
+      helper.get-color($codeBgColor, $isDark: true),
+      $saturation: 10%,
+      $lightness: -5%
+    ),
+) !default;
+
+$codeBorderColor: (
+  light:
+    color.scale(
+      helper.get-color($codeBgColor, $isDark: false),
+      $saturation: 20%,
+      $lightness: -10%
+    ),
+  dark:
+    color.scale(
+      helper.get-color($codeBgColor, $isDark: true),
+      $saturation: 20%,
+      $lightness: -10%
+    ),
+) !default;
