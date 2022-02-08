@@ -10,6 +10,7 @@
  *
  */
 
+@use "sass:color";
 @use "fonts/ubuntu";
 
 @import "template/mixins";
@@ -41,7 +42,7 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
 
 // Links
 $linkColor: $blood;
-$linkColorHover: lighten($linkColor, 20%);
+$linkColorHover: color.scale($linkColor, $lightness: 20%);
 
 // Text selection
 $selectionBackgroundColor: $blood;

@@ -3,6 +3,7 @@
  * Author: Achim Staebler
  */
 
+@use "sass:color";
 @use "fonts/lato";
 
 @import "template/mixins";
@@ -33,7 +34,7 @@ $headingColor: $base2;
 $headingTextShadow: none;
 $backgroundColor: $base03;
 $linkColor: $blue;
-$linkColorHover: lighten($linkColor, 20%);
+$linkColorHover: color.scale($linkColor, $lightness: 20%);
 $selectionBackgroundColor: $magenta;
 
 .reveal[data-theme="moon"] {

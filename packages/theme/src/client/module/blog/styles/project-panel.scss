@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:list";
 
 .project-panel {
@@ -79,18 +80,18 @@
 
     .project#{$index} {
       & {
-        background: lighten($color, 90%);
+        background: color.scale($color, $lightness: 90%);
 
         &:hover {
-          background: lighten($color, 75%);
+          background: color.scale($color, $lightness: 75%);
         }
       }
 
       #{hope-config.$darkSelector} & {
-        background: darken($color, 75%);
+        background: color.scale($color, $lightness: -75%);
 
         &:hover {
-          background: darken($color, 60%);
+          background: color.scale($color, $lightness: -60%);
         }
       }
     }

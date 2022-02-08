@@ -4,6 +4,7 @@
  * By Hakim El Hattab, http://hakim.se
  */
 
+@use "sass:color";
 @use "@sass-palette/hope-config";
 @import "template/mixins";
 @import "template/settings";
@@ -23,8 +24,8 @@ $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
 $linkColor: #2a76dd;
-$linkColorHover: lighten($linkColor, 15%);
-$selectionBackgroundColor: lighten($linkColor, 25%);
+$linkColorHover: color.scale($linkColor, $lightness: 15%);
+$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;

@@ -259,7 +259,7 @@
 
     .roll span:after {
       color: #fff;
-      background: darken($linkColor, 15%);
+      background: color.scale($linkColor, $lightness: -15%);
     }
 
     .r-frame {

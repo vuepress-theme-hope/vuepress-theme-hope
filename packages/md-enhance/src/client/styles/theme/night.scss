@@ -4,6 +4,7 @@
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 
+@use "sass:color";
 @use "fonts/montserrat";
 @use "fonts/open-sans";
 
@@ -15,7 +16,7 @@ $backgroundColor: #111;
 
 $mainFont: "Open Sans", sans-serif;
 $linkColor: #e7ad52;
-$linkColorHover: lighten($linkColor, 20%);
+$linkColorHover: color.scale($linkColor, $lightness: 20%);
 $headingFont: "Montserrat", Impact, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: -0.03em;

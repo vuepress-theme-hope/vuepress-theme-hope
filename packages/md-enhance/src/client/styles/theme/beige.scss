@@ -3,7 +3,7 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-
+@use "sass:color";
 @use "fonts/lato";
 
 @import "template/mixins";
@@ -15,7 +15,7 @@ $headingColor: #333;
 $headingTextShadow: none;
 $backgroundColor: #f7f3de;
 $linkColor: #8b743d;
-$linkColorHover: lighten($linkColor, 20%);
+$linkColorHover: color.scale($linkColor, $lightness: 20%);
 $selectionBackgroundColor: rgba(79, 64, 28, 0.99);
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
   0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),

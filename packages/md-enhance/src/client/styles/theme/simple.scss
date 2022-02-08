@@ -6,6 +6,7 @@
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 
+@use "sass:color";
 @use "fonts/news-cycle";
 @use "fonts/lato";
 
@@ -21,7 +22,7 @@ $headingTextShadow: none;
 $headingTextTransform: none;
 $backgroundColor: #fff;
 $linkColor: #00008b;
-$linkColorHover: lighten($linkColor, 20%);
+$linkColorHover: color.scale($linkColor, $lightness: 20%);
 $selectionBackgroundColor: rgba(0, 0, 0, 0.99);
 
 .reveal[data-theme="simple"] {
