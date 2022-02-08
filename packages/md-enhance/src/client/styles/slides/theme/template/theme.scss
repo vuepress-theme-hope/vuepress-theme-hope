@@ -4,7 +4,7 @@
  * GLOBAL STYLES
  *********************************************/
 
-// @import "./exposer";
+@use "sass:color";
 
 @mixin theme($theme) {
   .reveal-viewport#{$theme} {
