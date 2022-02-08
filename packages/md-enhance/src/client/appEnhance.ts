@@ -29,7 +29,7 @@ export default defineClientAppEnhance(({ app }) => {
 
   if (Presentation.name) {
     app.component("PresentationViewer", Presentation);
-    void import("./styles/slides.scss");
+    void import("./styles/slides/index.scss");
     void import("./styles/theme/fonts/league-gothic/league-gothic.css");
     void import("./styles/theme/fonts/source-sans-pro/source-sans-pro.css");
   }
