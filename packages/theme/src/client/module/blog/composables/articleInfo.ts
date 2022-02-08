@@ -5,7 +5,9 @@ import {
   getTag,
 } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, reactive, Ref } from "vue";
+import { useCategoryMap } from "./categoryMap";
 import { useBlogOptions } from "./options";
+import { useTagMap } from "./tagMap";
 
 import { usePure, useThemeData } from "@theme-hope/composables";
 
@@ -20,30 +22,28 @@ import type { ArticleInfo } from "../../../../shared";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
-export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef =>
-  computed(() => {
+export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
+  const themeData = useThemeData();
+
+  return computed(() => {
     const { author } = info.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
 
-    const { author: themeAuthor } = useThemeData().value;
-
-    return getAuthor(themeAuthor, false);
+    return getAuthor(themeData.value.author, false);
   });
+};
 
 export type CategoryRef = ComputedRef<ArticleCategory[]>;
 
 export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
-  const blogOptions = useBlogOptions();
+  const categoryMap = useCategoryMap();
 
   return computed(() =>
     getCategory(info.value.category).map((name) => ({
       name,
-      path: blogOptions.value.categoryPath.replace(
-        /\$category/g,
-        decodeURI(name)
-      ),
+      path: categoryMap.value.map[name].path,
     }))
   );
 };
@@ -51,12 +51,12 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
 export type TagRef = ComputedRef<ArticleTag[]>;
 
 export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
-  const blogOptions = useBlogOptions();
+  const tagMap = useTagMap();
 
   return computed(() =>
     getTag(info.value.tag).map((name) => ({
       name,
-      path: blogOptions.value.tagPath.replace(/\$tag/g, decodeURI(name)),
+      path: tagMap.value.map[name].path,
     }))
   );
 };

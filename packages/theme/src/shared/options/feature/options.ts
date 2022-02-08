@@ -58,15 +58,6 @@ export interface HopeThemeFeatureOptions {
   themeColor?: Record<string, string> | false;
 
   /**
-   * Whether enable blog feature
-   *
-   * 是否启用博客功能
-   *
-   * @default true
-   */
-  enableBlog?: boolean;
-
-  /**
    * Encrypt config
    *
    * 加密配置

@@ -19,12 +19,11 @@ export const useThemeLocaleData =
   (): ThemeLocaleDataRef<HopeThemeLocaleConfig> =>
     _useThemeLocaleData<HopeThemeLocaleConfig>();
 
-export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> =>
-  computed(() => {
-    const { author } = useThemeData().value;
+export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> => {
+  const themeData = useThemeData();
 
-    return getAuthor(author, false);
-  });
+  return computed(() => getAuthor(themeData.value.author, false));
+};
 
 export const useIconPrefix = (): ComputedRef<string> =>
   computed(() => useThemeData().value.iconPrefix || "");

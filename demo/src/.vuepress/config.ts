@@ -108,6 +108,8 @@ export default defineUserConfig<HopeThemeOptions>({
     },
 
     plugins: {
+      blog: true,
+
       mdEnhance: { enableAll: true },
 
       pwa: {

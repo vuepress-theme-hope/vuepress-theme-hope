@@ -53,7 +53,11 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     alias: getAlias(app),
 
-    layouts: getLayoutConfig(app, plugins, themeOptions as HopeThemeConfig),
+    define: () => ({
+      ENABLE_BLOG: Boolean(plugins.blog),
+    }),
+
+    layouts: getLayoutConfig(app, plugins),
 
     templateBuild: path.resolve(__dirname, "../../templates/index.build.html"),
 

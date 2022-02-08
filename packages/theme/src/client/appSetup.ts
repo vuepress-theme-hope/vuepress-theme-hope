@@ -1,11 +1,16 @@
 import { defineClientAppSetup } from "@vuepress/client";
 
 import { setupDarkMode } from "@theme-hope/composables";
-import { setupBlog } from "@theme-hope/module/blog/composables";
 import { setupSidebarItems } from "@theme-hope/module/sidebar/composables";
+
+declare const ENABLE_BLOG: boolean;
 
 export default defineClientAppSetup(() => {
   setupDarkMode();
   setupSidebarItems();
-  setupBlog();
+
+  if (ENABLE_BLOG)
+    void import("@theme-hope/module/blog/composables").then(({ setupBlog }) => {
+      setupBlog();
+    });
 });

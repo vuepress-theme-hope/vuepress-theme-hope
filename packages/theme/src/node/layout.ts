@@ -1,12 +1,11 @@
 import { path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { HopeThemePluginsOptions, HopeThemeConfig } from "../shared";
+import type { HopeThemePluginsOptions } from "../shared";
 
 export const getLayoutConfig = (
   app: App,
-  plugins: HopeThemePluginsOptions,
-  themeConfig: HopeThemeConfig
+  plugins: HopeThemePluginsOptions
 ): Record<string, string> => {
   const layoutConfig: Record<string, string> = {
     Layout: path.resolve(__dirname, "../client/layouts/Layout.js"),
@@ -19,7 +18,7 @@ export const getLayoutConfig = (
   )
     layoutConfig.Slide = "vuepress-plugin-md-enhance/lib/client/SlidePage.js";
 
-  if (themeConfig.enableBlog)
+  if (plugins.blog)
     layoutConfig.Blog = path.resolve(
       __dirname,
       "../client/module/blog/layouts/Blog.js"

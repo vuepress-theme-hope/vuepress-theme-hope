@@ -7,12 +7,7 @@ import { resolveEncrypt } from "./encrypt";
 const defaultRootOptions: HopeThemeOptions = {
   iconPrefix: "icon-",
 
-  // features
-  enableBlog: true,
   blog: {
-    categoryPath: "/category/$category/",
-    sidebarDisplay: "mobile",
-    tagPath: "/tag/$tag/",
     articleInfo: [
       "Author",
       "Original",
@@ -22,7 +17,9 @@ const defaultRootOptions: HopeThemeOptions = {
       "ReadingTime",
     ],
     articlePerPage: 10,
+    sidebarDisplay: "mobile",
   },
+
   encrypt: {
     status: "local",
   },

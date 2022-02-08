@@ -114,32 +114,6 @@ export interface HopeThemeBlogOptions {
   articlePerPage?: number;
 
   /**
-   * Path to navigate when clicking category label
-   *
-   * `$category` will be automatically replaced by currect category name
-   *
-   * 点击分类标签时跳转的路径。
-   *
-   * 其中 `$category` 会被自动替换为当前分类名称
-   *
-   * @default '/category/$category/'
-   */
-  categoryPath?: string;
-
-  /**
-   * Path to navigate when clicking tag label
-   *
-   * `$tag` will be automatically replaced by currect tag name
-   *
-   * 点击标签跳转的路径。
-   *
-   * 其中 `$tag` 会被自动替换为当前分类名称
-   *
-   * @default '/tag/$tag/'
-   */
-  tagPath?: string;
-
-  /**
    * Article info displayed in article list
    *
    * 文章列表中展示的文章信息
@@ -153,10 +127,6 @@ export type HopeThemeBlogConfig = HopeThemeBlogOptions &
   Required<
     Pick<
       HopeThemeBlogOptions,
-      | "articleInfo"
-      | "articlePerPage"
-      | "sidebarDisplay"
-      | "categoryPath"
-      | "tagPath"
+      "articleInfo" | "articlePerPage" | "sidebarDisplay"
     >
   >;

@@ -4,19 +4,9 @@ import {
   getDate,
   getTag,
 } from "@mr-hope/vuepress-shared/lib/client";
-import {
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-} from "@vuepress/client";
-import { removeEndingSlash } from "@vuepress/shared";
-import { computed, reactive } from "vue";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { computed, inject, reactive } from "vue";
 import { usePure, useThemeData, useThemeLocaleData } from "./themeData";
-
-import {
-  useBlogOptions,
-  useEnableBlog,
-} from "@theme-hope/module/blog/composables";
 
 import type {
   ArticleCategory,
@@ -31,75 +21,71 @@ import type {
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef, UnwrapNestedRefs } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
+import type { CategoryMapRef } from "@theme-hope/module/blog/composables";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
-export const usePageAuthor = (): ComputedRef<AuthorInfo[]> =>
-  computed(() => {
-    const { author } = usePageFrontmatter<BasePageFrontMatter>().value;
+declare const ENABLE_BLOG: boolean;
+
+export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
+  const themeData = useThemeData();
+  const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
+
+  return computed(() => {
+    const { author } = frontmatter.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
 
-    const { author: themeAuthor } = useThemeData().value;
-
-    return getAuthor(themeAuthor, false);
+    return getAuthor(themeData.value.author, false);
   });
+};
 
 export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
-  const routeLocale = useRouteLocale();
-  const enableBlog = useEnableBlog();
-  const blogOptions = useBlogOptions();
-  const { category } = usePageFrontmatter<BasePageFrontMatter>().value;
+  const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
 
   return computed(() =>
-    getCategory(category).map((name) => ({
+    getCategory(frontmatter.value.category).map((name) => ({
       name,
-      ...(enableBlog.value
-        ? {
-            path: `${removeEndingSlash(
-              routeLocale.value
-            )}${blogOptions.value.categoryPath.replace(
-              /\$category/g,
-              decodeURI(name)
-            )}`,
-          }
-        : {}),
+      // this is a hack
+      path: ENABLE_BLOG
+        ? inject<CategoryMapRef>(Symbol.for("categoryMap"))?.value.map[name]
+            .path || ""
+        : "",
     }))
   );
 };
 
 export const usePageTag = (): ComputedRef<ArticleTag[]> => {
-  const routeLocale = useRouteLocale();
-  const enableBlog = useEnableBlog();
-  const blogOptions = useBlogOptions();
-  const { tag } = usePageFrontmatter<BasePageFrontMatter>().value;
+  const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
 
   return computed(() =>
-    getTag(tag).map((name) => ({
+    getTag(frontmatter.value.tag).map((name) => ({
       name,
-      ...(enableBlog.value
-        ? {
-            path: `${removeEndingSlash(
-              routeLocale.value
-            )}${blogOptions.value.tagPath.replace(/\$tag/g, decodeURI(name))}`,
-          }
-        : {}),
+      // this is a hack
+      path: ENABLE_BLOG
+        ? inject<CategoryMapRef>(Symbol.for("tagMap"))?.value.map[name].path ||
+          ""
+        : "",
     }))
   );
 };
 
-export const usePageDate = (): ComputedRef<DateInfo | null> =>
-  computed(() => {
-    const { date } = usePageFrontmatter<BasePageFrontMatter>().value;
+export const usePageDate = (): ComputedRef<DateInfo | null> => {
+  const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
+  const page = usePageData<{ git?: GitData }>();
+
+  return computed(() => {
+    const { date } = frontmatter.value;
 
     if (date) return getDate(date, { type: "date" });
 
-    const { createdTime } = usePageData<{ git?: GitData }>().value.git || {};
+    const { createdTime } = page.value.git || {};
 
     if (createdTime) return getDate(new Date(createdTime), { type: "date" });
 
     return null;
   });
+};
 
 export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
   const themeLocale = useThemeLocaleData();

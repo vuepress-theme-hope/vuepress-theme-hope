@@ -38,7 +38,7 @@ export const getPluginConfig = (
     ["@vuepress/nprogress", plugins.nprogress !== false],
     ["@vuepress/prismjs", plugins.prismjs !== false],
     ["@vuepress/theme-data", { themeData }],
-    blog(resolveBlogOptions(themeData)),
+    blog(resolveBlogOptions(plugins.blog)),
     comment(resolveCommentOptions(plugins.comment)),
     copyCode(resolveCopyCodeOptions(plugins.copyCode)),
     feed(resolveFeedOptions(themeData, plugins.feed)),

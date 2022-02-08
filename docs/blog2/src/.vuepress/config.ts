@@ -42,8 +42,6 @@ export default defineUserConfig<HopeThemeOptions>({
     footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     displayFooter: true,
 
-    enableBlog: false,
-
     locales: {
       "/": {
         navbar: [
