@@ -1,11 +1,15 @@
 import { categoryMap } from "@temp/blog/category";
-import { useRouteLocale } from "@vuepress/client";
+import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import { computed, ref } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { resolveRouteWithRedirect } from "../utils";
 
 import type { ComputedRef } from "vue";
-import type { BlogCategoryData, CategoryMap } from "../../shared";
+import type {
+  BlogCategoryData,
+  BlogCategoryFrontmatterOptions,
+  CategoryMap,
+} from "../../shared";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;
@@ -16,14 +20,21 @@ export const blogCategoryMap = ref(categoryMap);
 export const useBlogCategory = <
   T extends Record<string, unknown> = Record<string, unknown>
 >(
-  key: string
+  key = ""
 ): ComputedRef<BlogCategoryData<T>> => {
   const router = useRouter();
+  const route = useRoute();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
+    const mapKey =
+      key ||
+      usePageFrontmatter<{ blog?: BlogCategoryFrontmatterOptions }>().value.blog
+        ?.key ||
+      "";
+
     const routes = router.getRoutes();
-    const currentMap = blogCategoryMap.value[key][routeLocale.value];
+    const currentMap = blogCategoryMap.value[mapKey][routeLocale.value];
     const result: BlogCategoryData<T> = {
       path: currentMap.path,
       map: {},
@@ -42,13 +53,16 @@ export const useBlogCategory = <
 
           result.map[category].items.push({
             path: finalRoute.path,
-            meta:
+            info:
               BLOG_META_SCOPE === ""
                 ? (finalRoute.meta as T)
                 : (finalRoute.meta[BLOG_META_SCOPE] as T),
           });
         }
       }
+
+      if (route.path === categoryMap.path)
+        result.currentItems = result.map[category].items;
     }
 
     return result;

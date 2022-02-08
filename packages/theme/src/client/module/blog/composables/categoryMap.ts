@@ -3,9 +3,9 @@ import { useBlogCategory } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogCategoryData } from "vuepress-plugin-blog2";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
-export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleMeta>>;
+export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleInfo>>;
 
 export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
   Symbol.for("categoryMap");
@@ -27,7 +27,7 @@ export const useCategoryMap = (): CategoryMapRef => {
  * Provide categoryMap
  */
 export const setupCategoryMap = (): void => {
-  const categoryMap = useBlogCategory<ArticleMeta>("category");
+  const categoryMap = useBlogCategory<ArticleInfo>("category");
 
   provide(categoryMapSymbol, categoryMap);
 };

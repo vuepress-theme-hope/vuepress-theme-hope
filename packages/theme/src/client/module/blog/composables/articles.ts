@@ -3,9 +3,9 @@ import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogTypeData } from "vuepress-plugin-blog2";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
-export type ArticlesRef = ComputedRef<BlogTypeData<ArticleMeta>>;
+export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
 export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol.for("articles");
 
@@ -23,7 +23,7 @@ export const useArticles = (): ArticlesRef => {
 };
 
 export const setupArticles = (): void => {
-  const articles = useBlogType<ArticleMeta>("article");
+  const articles = useBlogType<ArticleInfo>("article");
 
   provide(articlesSymbol, articles);
 };

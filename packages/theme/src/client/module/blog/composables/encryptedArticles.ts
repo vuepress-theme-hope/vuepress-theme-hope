@@ -3,9 +3,9 @@ import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogTypeData } from "vuepress-plugin-blog2";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
-export type EncryptedArticlesRef = ComputedRef<BlogTypeData<ArticleMeta>>;
+export type EncryptedArticlesRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
 export const encryptedArticlesSymbol: InjectionKey<EncryptedArticlesRef> =
   Symbol.for("encryptedArticles");
@@ -27,7 +27,7 @@ export const useEncryptedArticles = (): EncryptedArticlesRef => {
  * Provide encryptedArticles
  */
 export const setupEncryptedArticles = (): void => {
-  const encryptedArticles = useBlogType<ArticleMeta>("encrypted");
+  const encryptedArticles = useBlogType<ArticleInfo>("encrypted");
 
   provide(encryptedArticlesSymbol, encryptedArticles);
 };

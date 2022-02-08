@@ -3,9 +3,9 @@ import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogTypeData } from "vuepress-plugin-blog2";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
-export type SlidesRef = ComputedRef<BlogTypeData<ArticleMeta>>;
+export type SlidesRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
 export const slidesSymbol: InjectionKey<SlidesRef> = Symbol.for("slides");
 
@@ -26,7 +26,7 @@ export const useSlides = (): SlidesRef => {
  * Provide slides
  */
 export const setupSlides = (): void => {
-  const slides = useBlogType<ArticleMeta>("slide");
+  const slides = useBlogType<ArticleInfo>("slide");
 
   provide(slidesSymbol, slides);
 };

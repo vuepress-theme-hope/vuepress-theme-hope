@@ -1,7 +1,7 @@
 import type { Author } from "@mr-hope/vuepress-shared";
 import { ReadingTime } from "vuepress-plugin-reading-time2";
 
-export interface ArticleMeta extends Record<string, unknown> {
+export interface ArticleInfo extends Record<string, unknown> {
   /**
    * Type
    */

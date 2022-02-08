@@ -2,7 +2,7 @@ export interface Article<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
   path: string;
-  meta: T;
+  info: T;
 }
 
 export type Articles<
@@ -13,6 +13,7 @@ export interface BlogCategoryData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
   path: string;
+  currentItems?: Articles<T>;
   map: Record<string, { path: string; items: Articles<T> }>;
 }
 

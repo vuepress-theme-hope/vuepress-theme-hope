@@ -16,13 +16,13 @@ import type {
 } from "@mr-hope/vuepress-plugin-components";
 import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
 import type { ComputedRef, UnwrapNestedRefs } from "vue";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
-export const useArticleAuthor = (article: Ref<ArticleMeta>): AuthorRef =>
+export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef =>
   computed(() => {
-    const { author } = article.value;
+    const { author } = info.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
@@ -34,11 +34,11 @@ export const useArticleAuthor = (article: Ref<ArticleMeta>): AuthorRef =>
 
 export type CategoryRef = ComputedRef<ArticleCategory[]>;
 
-export const useArticleCategory = (article: Ref<ArticleMeta>): CategoryRef => {
+export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
   const blogOptions = useBlogOptions();
 
   return computed(() =>
-    getCategory(article.value.category).map((name) => ({
+    getCategory(info.value.category).map((name) => ({
       name,
       path: blogOptions.value.categoryPath.replace(
         /\$category/g,
@@ -50,11 +50,11 @@ export const useArticleCategory = (article: Ref<ArticleMeta>): CategoryRef => {
 
 export type TagRef = ComputedRef<ArticleTag[]>;
 
-export const useArticleTag = (article: Ref<ArticleMeta>): TagRef => {
+export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
   const blogOptions = useBlogOptions();
 
   return computed(() =>
-    getTag(article.value.tag).map((name) => ({
+    getTag(info.value.tag).map((name) => ({
       name,
       path: blogOptions.value.tagPath.replace(/\$tag/g, decodeURI(name)),
     }))
@@ -63,21 +63,21 @@ export const useArticleTag = (article: Ref<ArticleMeta>): TagRef => {
 
 export type DateRef = ComputedRef<DateInfo | null>;
 
-export const useArticleDate = (article: Ref<ArticleMeta>): DateRef =>
+export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
   computed(() => {
-    const { date } = article.value;
+    const { date } = info.value;
 
     return date ? getDate(date, { type: "date" }) : null;
   });
 
 export const useArticleInfo = (
-  meta: Ref<ArticleMeta>
+  info: Ref<ArticleInfo>
 ): UnwrapNestedRefs<ArticleInfoProps> => {
   const blogOptions = useBlogOptions();
-  const author = useArticleAuthor(meta);
-  const category = useArticleCategory(meta);
-  const tag = useArticleTag(meta);
-  const date = useArticleDate(meta);
+  const author = useArticleAuthor(info);
+  const category = useArticleCategory(info);
+  const tag = useArticleTag(info);
+  const date = useArticleDate(info);
   const pure = usePure();
 
   return reactive<ArticleInfoProps>({
@@ -86,8 +86,8 @@ export const useArticleInfo = (
     category: category.value,
     date: date.value,
     tag: tag.value,
-    isOriginal: meta.value.isOriginal,
-    readingTime: meta.value.readingTime,
+    isOriginal: info.value.isOriginal,
+    readingTime: info.value.readingTime,
     hint: !pure.value,
   });
 };

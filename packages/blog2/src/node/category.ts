@@ -37,9 +37,9 @@ export const prepareCategory = (
           key,
           getter,
           sorter = (): number => -1,
-          path = "/:key/",
+          path = "",
           layout = "Layout",
-          itemPath = "/:key/:name/",
+          itemPath = "",
           itemLayout = "Layout",
         },
         index
@@ -71,26 +71,33 @@ export const prepareCategory = (
                   .replace(/:name/g, slugify(name));
 
         for (const routeLocale in pageMap) {
-          const mainPage = await createPage(app, {
-            path: `${routeLocale}${removeLeadingSlash(
-              path.replace(/:key/g, slugify(key))
-            )}`,
-            frontmatter: {
-              blog: {
-                type: "category",
-                key,
+          if (path) {
+            const mainPage = await createPage(app, {
+              path: `${routeLocale}${removeLeadingSlash(
+                path.replace(/:key/g, slugify(key))
+              )}`,
+              frontmatter: {
+                blog: {
+                  type: "category",
+                  key,
+                },
+                layout,
               },
-              layout,
-            },
-          });
+            });
 
-          app.pages.push(mainPage);
-          pagePaths.push(mainPage.path);
+            app.pages.push(mainPage);
+            pagePaths.push(mainPage.path);
 
-          categoryMap[routeLocale] = {
-            path: mainPage.path,
-            map: {},
-          };
+            categoryMap[routeLocale] = {
+              path: mainPage.path,
+              map: {},
+            };
+          } else {
+            categoryMap[routeLocale] = {
+              path: "",
+              map: {},
+            };
+          }
 
           const { map } = categoryMap[routeLocale];
           const pageMapStore: Record<string, Page[]> = {};
@@ -100,27 +107,34 @@ export const prepareCategory = (
 
             for (const category of categories) {
               if (!map[category]) {
-                const page = await createPage(app, {
-                  path: `${routeLocale}${removeLeadingSlash(
-                    getItemPath(category)
-                  )}`,
-                  frontmatter: {
-                    blog: {
-                      type: "category",
-                      name: category,
-                      key,
+                const itemPath = getItemPath(category);
+
+                if (itemPath) {
+                  const page = await createPage(app, {
+                    path: `${routeLocale}${removeLeadingSlash(itemPath)}`,
+                    frontmatter: {
+                      blog: {
+                        type: "category",
+                        name: category,
+                        key,
+                      },
+                      layout: itemLayout,
                     },
-                    layout: itemLayout,
-                  },
-                });
+                  });
 
-                app.pages.push(page);
-                pagePaths.push(page.path);
+                  app.pages.push(page);
+                  pagePaths.push(page.path);
 
-                map[category] = {
-                  path: page.path,
-                  keys: [],
-                };
+                  map[category] = {
+                    path: page.path,
+                    keys: [],
+                  };
+                } else {
+                  map[category] = {
+                    path: "",
+                    keys: [],
+                  };
+                }
 
                 pageMapStore[category] = [];
               }
@@ -137,8 +151,13 @@ export const prepareCategory = (
           if (app.env.isDebug) {
             let infoMessage = `Route ${routeLocale} in ${key} cateogry:\n`;
 
-            for (const category in map)
-              infoMessage += `name: ${category}; path: ${map[category].path}; items: ${map[category].keys.length}`;
+            for (const category in map) {
+              const { path, keys } = map[category];
+
+              infoMessage += `name: ${category}; ${
+                path ? `path: ${path}; ` : ""
+              }items: ${keys.length}`;
+            }
 
             logger.info(infoMessage);
           }

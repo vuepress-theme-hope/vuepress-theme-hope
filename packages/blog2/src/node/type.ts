@@ -37,7 +37,7 @@ export const prepareType = (
           key,
           sorter = (): number => -1,
           filter = (): boolean => true,
-          path = "/:key/",
+          path = "",
           layout = "Layout",
         },
         index
@@ -54,32 +54,42 @@ export const prepareType = (
         if (app.env.isDebug) logger.info(`Generating ${key} type.\n`);
 
         for (const routeLocale in pageMap) {
-          const page = await createPage(app, {
-            path: `${routeLocale}${removeLeadingSlash(
-              slugify(path.replace(/:key/g, key))
-            )}`,
-            frontmatter: {
-              blog: {
-                type: "type",
-                key,
-              },
-              layout,
-            },
-          });
           const keys = pageMap[routeLocale]
             .filter(filter)
             .sort(sorter)
             .map(({ key }) => key);
 
-          app.pages.push(page);
-          pagePaths.push(page.path);
+          if (path) {
+            const page = await createPage(app, {
+              path: `${routeLocale}${removeLeadingSlash(
+                slugify(path.replace(/:key/g, key))
+              )}`,
+              frontmatter: {
+                blog: {
+                  type: "type",
+                  key,
+                },
+                layout,
+              },
+            });
 
-          typeMap[routeLocale] = { path: page.path, keys };
+            app.pages.push(page);
+            pagePaths.push(page.path);
 
-          if (app.env.isDebug)
-            logger.info(
-              `Route ${routeLocale} in ${key} type: path: ${page.path}; items: ${keys.length}`
-            );
+            typeMap[routeLocale] = { path: page.path, keys };
+
+            if (app.env.isDebug)
+              logger.info(
+                `Route ${routeLocale} in ${key} type: path: ${page.path}; items: ${keys.length}`
+              );
+          } else {
+            typeMap[routeLocale] = { path: "", keys };
+
+            if (app.env.isDebug)
+              logger.info(
+                `Route ${routeLocale} in ${key} type: items: ${keys.length}`
+              );
+          }
         }
 
         return {

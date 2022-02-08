@@ -4,17 +4,17 @@ import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { Articles } from "vuepress-plugin-blog2";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
 export interface TimelineItem {
   year: number;
-  items: { date: string; path: string; meta: ArticleMeta }[];
+  items: { date: string; path: string; info: ArticleInfo }[];
 }
 
 export type TimelinesRef = ComputedRef<{
   path: string;
   config: TimelineItem[];
-  items: Articles<ArticleMeta>;
+  items: Articles<ArticleInfo>;
 }>;
 
 export const timelinesSymbol: InjectionKey<TimelinesRef> =
@@ -37,15 +37,15 @@ export const useTimelines = (): TimelinesRef => {
  * Provide timelines
  */
 export const setupTimelines = (): void => {
-  const timelines = useBlogType<ArticleMeta>("timeline");
+  const timelines = useBlogType<ArticleInfo>("timeline");
 
   const timelineItems = computed(() => {
     const timelineItems: TimelineItem[] = [];
 
     // filter before sort
-    timelines.value.items.forEach(({ path, meta }) => {
+    timelines.value.items.forEach(({ info, path }) => {
       const { year, month, day } =
-        getDate(meta.date, { type: "date" })?.detail || {};
+        getDate(info.date, { type: "date" })?.detail || {};
 
       if (year && month && day) {
         if (!timelineItems[0] || timelineItems[0].year !== year)
@@ -53,7 +53,7 @@ export const setupTimelines = (): void => {
 
         timelineItems[0].items.push({
           date: `${month}/${day}`,
-          meta,
+          info,
           path,
         });
       }

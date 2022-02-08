@@ -13,7 +13,7 @@ import EmptyIcon from "@theme-hope/module/blog/components/icons/EmptyIcon.vue";
 import { useBlogOptions } from "@theme-hope/module/blog/composables";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
 import "../styles/article-list.scss";
 
@@ -22,7 +22,7 @@ export default defineComponent({
 
   props: {
     items: {
-      type: Array as PropType<{ path: string; meta: ArticleMeta }[]>,
+      type: Array as PropType<{ path: string; info: ArticleInfo }[]>,
       default: () => [],
     },
   },
@@ -59,9 +59,9 @@ export default defineComponent({
         { id: "article-list", class: "article-wrapper" },
         currentArticles.value.length
           ? [
-              ...currentArticles.value.map(({ path, meta }, index) =>
+              ...currentArticles.value.map(({ info, path }, index) =>
                 h(DropTransition, { delay: index * 0.04 }, () =>
-                  h(ArticleItem, { meta, path })
+                  h(ArticleItem, { info, path })
                 )
               ),
               h(resolveComponent("Pagination"), {

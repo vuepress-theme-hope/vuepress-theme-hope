@@ -50,7 +50,7 @@ export default defineComponent({
                 h(
                   "ul",
                   { class: "year-wrapper" },
-                  items.map(({ date, path, meta }) =>
+                  items.map(({ date, info, path }) =>
                     h("li", [
                       h("span", { class: "date" }, date),
                       h(
@@ -59,7 +59,7 @@ export default defineComponent({
                           class: "title",
                           onClick: () => navigate(path),
                         },
-                        meta.title
+                        info.title
                       ),
                     ])
                   )

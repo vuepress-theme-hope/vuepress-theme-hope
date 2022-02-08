@@ -47,7 +47,7 @@ export default defineComponent({
                   h(
                     "ul",
                     { class: "year-wrapper" },
-                    items.map(({ date, meta, path }) =>
+                    items.map(({ date, info, path }) =>
                       h("li", [
                         h("span", { class: "date" }, date),
                         h(
@@ -56,7 +56,7 @@ export default defineComponent({
                             class: "timeline-title",
                             onClick: () => navigate(path),
                           },
-                          meta.title
+                          info.title
                         ),
                       ])
                     )

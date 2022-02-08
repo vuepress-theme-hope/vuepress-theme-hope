@@ -11,7 +11,7 @@ import { useArticleInfo } from "@theme-hope/module/blog/composables";
 import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
 import "../styles/article-item.scss";
 
@@ -19,21 +19,21 @@ export default defineComponent({
   name: "ArticleItem",
 
   props: {
-    path: { type: String, required: true },
-    meta: {
-      type: Object as PropType<ArticleMeta>,
+    info: {
+      type: Object as PropType<ArticleInfo>,
       required: true,
     },
+    path: { type: String, required: true },
   },
 
   setup(props) {
     const router = useRouter();
-    const meta = toRef(props, "meta");
+    const info = toRef(props, "info");
     const { getPathEncryptStatus } = usePathEncrypt();
 
     const isEncrypted = computed(() => getPathEncryptStatus(props.path));
 
-    const articleInfo = useArticleInfo(meta);
+    const articleInfo = useArticleInfo(info);
 
     return (): VNode =>
       h(
@@ -44,7 +44,7 @@ export default defineComponent({
           typeof: "Article",
         },
         [
-          meta.value.sticky ? h(StickyIcon) : null,
+          info.value.sticky ? h(StickyIcon) : null,
           h(
             "header",
             {
@@ -53,18 +53,18 @@ export default defineComponent({
             },
             [
               isEncrypted.value ? h(LockIcon) : null,
-              meta.value.type === "slide" ? h(SlideIcon) : null,
-              h("span", { property: "headline" }, meta.value.title),
-              meta.value.cover
+              info.value.type === "slide" ? h(SlideIcon) : null,
+              h("span", { property: "headline" }, info.value.title),
+              info.value.cover
                 ? h("meta", {
                     property: "image",
-                    content: withBase(meta.value.cover),
+                    content: withBase(info.value.cover),
                   })
                 : null,
             ]
           ),
-          meta.value.excerpt
-            ? h("div", { class: "excerpt", innerHTML: meta.value.excerpt })
+          info.value.excerpt
+            ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
             : null,
           h("hr", { class: "hr" }),
           h(resolveComponent("ArticleInfo"), articleInfo),

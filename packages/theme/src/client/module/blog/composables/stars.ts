@@ -3,9 +3,9 @@ import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogTypeData } from "vuepress-plugin-blog2";
-import type { ArticleMeta } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared";
 
-export type StarsRef = ComputedRef<BlogTypeData<ArticleMeta>>;
+export type StarsRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
 export const starsSymbol: InjectionKey<StarsRef> = Symbol.for("stars");
 
@@ -23,7 +23,7 @@ export const useStars = (): StarsRef => {
 };
 
 export const setupStars = (): void => {
-  const stars = useBlogType<ArticleMeta>("star");
+  const stars = useBlogType<ArticleInfo>("star");
 
   provide(starsSymbol, stars);
 };

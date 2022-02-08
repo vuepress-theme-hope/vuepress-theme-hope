@@ -99,7 +99,7 @@ export default defineComponent({
                 h(
                   "ul",
                   { class: "sticky-article-list" },
-                  stars.value.items.map(({ meta, path }, index) =>
+                  stars.value.items.map(({ info, path }, index) =>
                     h(DropTransition, { delay: 0.08 * (index + 1) }, () =>
                       h(
                         "li",
@@ -107,7 +107,7 @@ export default defineComponent({
                           class: "sticky-article",
                           onClick: () => navigate(path),
                         },
-                        meta.title
+                        info.title
                       )
                     )
                   )
