@@ -4,7 +4,7 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-feed2
-tagline: Feed plugin for VuePress22
+tagline: Feed plugin for VuePress2
 actions:
   - text: Guide 💡
     link: /guide.html
@@ -80,3 +80,7 @@ module.exports = {
 :::
 
 ::::
+
+## Migrating from V1
+
+For details, see [Migration Guide](./migration.md).

@@ -1,13 +1,34 @@
 import type { Page } from "@vuepress/core";
 
 export interface FeedAuthor {
-  name?: string;
-  email?: string;
   /**
+   * Author name
+   *
+   * 作者名字
+   */
+  name?: string;
+
+  /**
+   * Author Email
+   *
+   * 作者邮件
+   */
+  email?: string;
+
+  /**
+   * Author website
+   *
+   * 作者网站
+   *
    * @description json format only
    */
   url?: string;
+
   /**
+   * Author avatar
+   *
+   * 作者头像
+   *
    * @description json format only
    */
   avatar?: string;
@@ -16,25 +37,57 @@ export interface FeedAuthor {
 export type FeedContributor = FeedAuthor;
 
 export interface FeedCategory {
-  name: string;
   /**
+   * Category name
+   *
+   * 分类名称
+   */
+  name: string;
+
+  /**
+   * A string that identifies a categorization taxonomy
+   *
+   * 标识分类法的字符串
+   *
    * @description rss format only
    */
   domain?: string;
+
   /**
-   * @description atom format only
-   *
    * the categorization scheme via a URI
+   *
+   * URI 标识的分类 scheme
+   *
+   * @description atom format only
    */
   scheme?: string;
 }
 
 export interface FeedEnclosure {
+  /**
+   * enclosure link
+   *
+   * Enclosure 地址
+   */
   url: string;
+
+  /**
+   * what its type is
+   *
+   * @description should be standard MIME type
+   *
+   * 类型
+   *
+   * @description 应为一个标准的 MIME 类型
+   */
   type: string;
+
+  /**
+   * Size in bytes
+   *
+   * 按照字节数计算的大小
+   */
   length?: number;
-  title?: string;
-  duration?: number;
 }
 
 export interface FeedChannelOption {
@@ -169,7 +222,7 @@ export interface FeedGetter {
   /**
    * Item enclosure getter
    *
-   * 项目摘要获取器
+   * 项目附件获取器
    */
   enclosure?: (page: Page) => FeedEnclosure | undefined;
 

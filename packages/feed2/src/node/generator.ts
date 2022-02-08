@@ -1,7 +1,7 @@
 import { chalk, fs } from "@vuepress/utils";
 import { Feed } from "./feed";
 import { FeedPage } from "./page";
-import { logger } from "./utils";
+import { getFilename, logger } from "./utils";
 
 import type { App, Page } from "@vuepress/core";
 import type { FeedOptions, FeedInitOptions } from "../shared";
@@ -21,9 +21,8 @@ export class FeedGenerator {
 
   addPages(): void {
     let count = 0;
-    const pages = this.pages.slice(0, this.options.count);
 
-    for (const page of pages) {
+    for (const page of this.pages) {
       const item = new FeedPage(
         this.app,
         this.options,
@@ -42,47 +41,47 @@ export class FeedGenerator {
 
   async generateFeed(): Promise<void> {
     const { dest } = this.app.dir;
+    const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+      getFilename(this.options);
 
     this.addPages();
 
     // generate atom files
-    if (this.options.atom !== false) {
-      const fileName = this.options.atomOutputFilename || "atom.xml";
-
+    if (this.options.atom) {
       logger.load("Generating Atom Feed");
 
-      await fs.outputFile(dest(fileName), this.feed.atom());
+      await fs.outputFile(dest(atomOutputFilename), this.feed.atom());
 
       logger.update(
-        `Atom feed file generated and saved to ${chalk.cyan(fileName)}`
+        `Atom feed file generated and saved to ${chalk.cyan(
+          atomOutputFilename
+        )}`
       );
       logger.succeed();
     }
 
     // generate json files
-    if (this.options.json !== false) {
-      const fileName = this.options.jsonOutputFilename || "feed.json";
-
+    if (this.options.json) {
       logger.load("Generating JSON Feed");
 
-      await fs.outputFile(dest(fileName), this.feed.json());
+      await fs.outputFile(dest(jsonOutputFilename), this.feed.json());
 
       logger.update(
-        `JSON feed file generated and saved to ${chalk.cyan(fileName)}`
+        `JSON feed file generated and saved to ${chalk.cyan(
+          jsonOutputFilename
+        )}`
       );
       logger.succeed();
     }
 
     // generate rss files
-    if (this.options.rss !== false) {
-      const fileName = this.options.rssOutputFilename || "rss.xml";
-
+    if (this.options.rss) {
       logger.load("Generating RSS Feed");
 
-      await fs.outputFile(dest(fileName), this.feed.rss());
+      await fs.outputFile(dest(rssOutputFilename), this.feed.rss());
 
       logger.update(
-        `RSS feed file generated and saved to ${chalk.cyan(fileName)}`
+        `RSS feed file generated and saved to ${chalk.cyan(rssOutputFilename)}`
       );
       logger.succeed();
     }

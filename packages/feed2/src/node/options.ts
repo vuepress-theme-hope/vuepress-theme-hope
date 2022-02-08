@@ -1,5 +1,5 @@
 import { deepAssign, getRootLang } from "@mr-hope/vuepress-shared";
-import { resolveUrl } from "./utils";
+import { getFilename, resolveUrl } from "./utils";
 
 import type { App } from "@vuepress/core";
 import type { FeedChannelOption, FeedLinks, FeedOptions } from "../shared";
@@ -38,10 +38,12 @@ export const getFeedChannelOption = (
 export const getFeedLinks = (app: App, options: FeedOptions): FeedLinks => {
   const { base } = app.options;
   const { hostname } = options;
+  const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+    getFilename(options);
 
   return {
-    atom: resolveUrl(hostname, base, options.atomOutputFilename || "atom.xml"),
-    json: resolveUrl(hostname, base, options.jsonOutputFilename || "feed.json"),
-    rss: resolveUrl(hostname, base, options.jsonOutputFilename || "rss.xml"),
+    atom: resolveUrl(hostname, base, atomOutputFilename),
+    json: resolveUrl(hostname, base, jsonOutputFilename),
+    rss: resolveUrl(hostname, base, rssOutputFilename),
   };
 };

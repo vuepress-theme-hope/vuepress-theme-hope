@@ -3,18 +3,44 @@ import type { FeedAuthor, FeedContributor, FeedCategory } from "./feed";
 
 export interface FeedFrontmatterOption {
   /**
-   * @default true
+   * Feed title
    */
-  enable?: boolean;
   title?: string;
+
+  /**
+   * Feed description
+   */
   description?: string;
+
+  /**
+   * Feed content
+   */
   content?: string;
+
+  /**
+   * Feed author
+   */
   author?: FeedAuthor[] | FeedAuthor;
+
+  /**
+   * Feed contributor
+   */
   contributor?: FeedContributor[] | FeedContributor;
+
+  /**
+   * Feed category
+   */
   category?: FeedCategory[] | FeedCategory;
+
+  /**
+   * @desciption guid should be unique gloably
+   */
   guid?: string;
 }
 
 export interface FeedPluginFrontmatter extends BasePageFrontMatter {
-  feed?: FeedFrontmatterOption;
+  /**
+   * Feed plugin options
+   */
+  feed?: FeedFrontmatterOption | false;
 }

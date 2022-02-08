@@ -5,7 +5,7 @@ icon: creative
 
 ## 使用
 
-`vuepress-plugin-feed2` 插件会自动为你生成以下三种格式的 feed 文件:
+`vuepress-plugin-feed2` 插件可为你生成以下三种格式的 feed 文件:
 
 - Atom 1.0
 - JSON 1.1
@@ -19,9 +19,11 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 :::
 
+请按照需要生成的格式，在插件选项中设置 `atom`, `json` 或 `rss` 为 `true`。
+
 考虑到现在 Feed 已经很小众，本插件旨在提供最小配置来尽可能自动生成详细的 Feed 文件。当然本插件也预留了充足的设置项，以让你自由定义 Feed 的输出内容。
 
-为了正确生成链接地址，你需要在插件选项或者 themeConfig 中提供 `hostname` (部署域名)。其他选项均是选填的。
+为了正确生成链接地址，你需要在插件选项中设置 `hostname` (部署域名)，
 
 ## 频道设置
 
@@ -44,108 +46,24 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 :::
 
-详细的选项及其默认值详见 [配置 → 频道设置](config/channel.md)
+详细的选项及其默认值详见 [配置 → 频道设置](./config/channel.md)
 
-## 项目设置
+## 生成控制
 
 ### 项目默认生成
 
 默认情况下，所有文章均会被添加至 feed 流。
 
-::: info 文章
+关于默认情况下读取的内容，详见 [配置 → 项目控制](./config/item.md)
 
-所有 `frontmatter.article` 不为 `false` 且不是主页的页面均会被视为文章。
+### 自定义页面
 
-:::
+你可以通过配置 frontmatter 中的 `feed` 选项，对特定文章的 feed 项目生成的内容进行控制。
 
-`vuepress-plugin-feed2` 会从 frontmatter 中读取以下内容:
+详细的选项及其默认值详见 [配置 → 项目设置](./config/item.md)
 
-- `description`: 文章的描述信息
+### 自定义 Feed 生成
 
-- `author`: 文章的作者名称
+你可以通过配置插件选项中的 `getter`，完全控制 Feed 项目的生成逻辑。
 
-- `copyright`: 文章的版权信息
-
-- `time`: 文章的发布时间
-
-- `image`: 文章的封面
-
-`vuepress-plugin-feed2` 也会使用以下内容:
-
-- `page.excerpt`: 在 `<!-- more -->` 注释前的内容，用作文章的备选描述
-- 页面渲染的网页内容: 用于描述 Feed 项目的内容
-
-### 自定义
-
-你可以通过配置 frontmatter 中的 feed 选项，对特定文章的 feed 项目生成进行控制。
-
-如果你想在 feed 中移除指定页面，你可以在该页面的 frontmatter 中将 `feed.enable` 设置为 `false`。
-
-当然你也可以通过 `frontmatter.feed` 直接向 feed 插件传入内容。支持的选项如下:
-
-- `feed.title`: 为 Feed 项目覆盖默认的文章标题
-- `feed.description`: 为 Feed 项目覆盖默认的文章描述
-- `feed.author`: 设置多个作者与详细的作者信息，格式为 `FeedAuthor[] | FeedAuthor`。
-
-  > 默认读取 `frontmatter.author`。
-
-  ::: details FeedAuthor 格式
-
-  ```ts
-  interface FeedAuthor {
-    /** 作者姓名 */
-    name: string;
-    /** 作者电子邮箱 */
-    email?: string;
-    /** 作者网站 */
-    url?: string;
-    /**
-     * 作者头像地址
-     *
-     * 正方形，最好不小于 128×128，透明背景
-     */
-    avator?: string;
-  }
-  ```
-
-  :::
-
-- `feed.contributor`: 设置多个贡献者与详细的贡献者信息，格式为 `FeedContributor[] | FeedContributor`
-
-  > `FeedContributor` 选项与 `FeedAuthor` 完全相同。
-  > 该选项默认同 `feed.author`。
-
-- `feed.category`: 设置多个详细的分类信息，格式为 `FeedCategory[] | FeedCategory`
-
-  ::: details FeedCategory 格式
-
-  ```ts
-  interface FeedCategory {
-    /** 分类名称 */
-    name: string;
-    /**
-     * 分类的域名
-     *
-     * @description rss format only
-     */
-    domain?: string;
-    /**
-     * 分类 scheme 的 URI
-     *
-     * @description atom format only
-     */
-    scheme?: string;
-  }
-  ```
-
-  :::
-
-- `feed.guid`: 覆盖默认的 Feed 项目标识符，默认为页面永久链接，若不存在回退到页面链接。
-
-详细的选项及其默认值详见 [配置 → 项目设置](config/item.md)
-
-## 输出配置
-
-你可通过配置选项中的 `output` 来决定输出哪些格式的 Feed 文件以及它们的位置。
-
-详细的选项及其默认值详见 [配置 → 输出设置](config/readme.md#output)
+详细的选项及其默认值详见 [配置 → Feed 获取器](./config/getter.md)

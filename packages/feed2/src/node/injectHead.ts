@@ -1,4 +1,4 @@
-import { resolveUrl } from "./utils";
+import { getFilename, resolveUrl } from "./utils";
 
 import type { App, HeadConfig } from "@vuepress/core";
 import type { FeedOptions } from "../shared";
@@ -6,6 +6,8 @@ import type { FeedOptions } from "../shared";
 export const injectLinkstoHead = (app: App, options: FeedOptions): void => {
   const { base } = app.options;
   const { siteData } = app;
+  const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+    getFilename(options);
 
   const getHeadItem = (
     name: string,
@@ -28,30 +30,18 @@ export const injectLinkstoHead = (app: App, options: FeedOptions): void => {
   // add atom link
   if (options.atom)
     siteData.head.push(
-      getHeadItem(
-        "Atom",
-        options.atomOutputFilename || "atom.xml",
-        "application/atom+xml"
-      )
+      getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
     );
 
   // add json link
   if (options.json)
     siteData.head.push(
-      getHeadItem(
-        "JSON",
-        options.jsonOutputFilename || "feed.json",
-        "application/json"
-      )
+      getHeadItem("JSON", jsonOutputFilename, "application/json")
     );
 
   // add rss link
   if (options.rss)
     siteData.head.push(
-      getHeadItem(
-        "RSS",
-        options.rssOutputFilename || "rss.xml",
-        "application/rss+xml"
-      )
+      getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
     );
 };

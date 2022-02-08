@@ -80,3 +80,7 @@ module.exports = {
 :::
 
 ::::
+
+## 从 V1 迁移
+
+详见 [迁移指南](./migration.md)。

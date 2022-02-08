@@ -217,7 +217,7 @@ export class FeedPage {
     return undefined;
   }
 
-  getFeedItem(): FeedItemOption | false {
+  getFeedItem(): FeedItemOption | null {
     const {
       author,
       category,
@@ -235,7 +235,7 @@ export class FeedPage {
     } = this;
 
     // we need at least title or description
-    if (!title && !description) return false;
+    if (!title && !description) return null;
 
     // add category to feed
     if (category) category.forEach((item) => this.feed.addCategory(item.name));

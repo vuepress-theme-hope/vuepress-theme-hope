@@ -10,86 +10,114 @@ icon: config
 
 The domain name of the deployment site.
 
+## atom
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to output Atom syntax files.
+
+## json
+
+- Type: `boolean`
+- Default: `false`
+
+Whether output JSON syntax files.
+
+## rss
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to output RSS syntax files.
+
+## image
+
+- Type: `string`
+
+A large image/icon of the feed, probably used as banner.
+
+## icon
+
+- Type: `string`
+
+A small icon of the feed, probably used as favicon.
+
+## count
+
+- Type: `number`
+- Default: `1000`
+
+Set the maximum number of items in the feed. After setting, after all pages are sorted, the first `count` items will be intercepted.
+
+If your site has a lot of articles, you may consider this option to reduce feed file size.
+
+## filter
+
+- Type: `(page: Page)=> boolean`
+- Default:
+
+  ```ts
+  ({ frontmatter, filePathRelative }: Page): boolean =>
+    !(
+      frontmatter.home ||
+      !filePathRelative ||
+      frontmatter.isArticle === false ||
+      frontmatter.feed === false
+    );
+  ```
+
+A custom filter funciton, used to filter feed items.
+
+## sort
+
+- Type: `(pageA: Page, pageB: Page)=> number`
+
+A custom sort function, used to sort feed items.
+
+::: warning
+
+We strongly recommend you setting this option, otherwise the order of items in the feed stream is completely determined by the order of pages output by VuePress.
+
+You can sort the pages in the site according to your needs.
+
+:::
+
 ## channel
 
 `channel` option is used to config _Feed Channels_.
 
 For available options, please see [Config → Channel](channel.md)
 
-## filter
-
-- Type: `(pageA: Page)=> boolean`
-- Default: All feed items
-
-A custom filter funciton, used to filter feed items.
-
-## sort
-
-- Type: `(pageA: Page, pageB: page)=> number`
-
-A custom sort function, used to sort feed items.
-
-The final feed items will be the same squence.
-
-::: warning
-
-We strongly recommend you to set this option, otherwise the order of items in the feed stream is completely determined by the order of pages output by VuePress.
-
-You can sort the pages in the site according to your needs.
-
-:::
-
-## count
-
-- Type: `number`
-- Default: All feed items count
-
-Set the maximum number of items in the feed. After setting, after all pages are sorted, the first `count` items will be intercepted.
-
-If your site has a lot of articles, you may want to consider setting this option to reduce the feed file size.
-
-## output
-
-Feed output configuration
-
-### output.atom.enable
-
-- Type: `boolean`
-- Default: `true`
-
-Whether enable Atom output
-
-### output.atom.path
+## atomOutputFilename
 
 - Type: `string`
 - Default: `atom.xml`
 
-Atom Feed output location
+Atom syntax output filename, relative to dest folder
 
-### output.json.enable
-
-- Type: `boolean`
-- Default: `true`
-
-Whether enable JSON output
-
-### output.json.path
+## jsonOutputFilename
 
 - Type: `string`
 - Default: `feed.json`
 
-JSON Feed output location
+JSON syntax output filename, relative to dest folder
 
-### output.rss.enable
-
-- Type: `boolean`
-- Default: `true`
-
-Whether enable RSS output
-
-### output.rss.path
+## rssOutputFilename
 
 - Type: `string`
 - Default: `rss.xml`
 
-RSS Feed output location
+RSS syntax output filename, relative to dest folder.
+
+## getter
+
+Feed generation controller.
+
+::: tip
+
+The plugin is providing a resonable getter by default, if you want full control of feed generating, you can set this field.
+
+:::
+
+For details, see [Feed Getter](./getter.md).

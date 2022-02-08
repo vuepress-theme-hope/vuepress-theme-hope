@@ -10,109 +10,111 @@ export interface FeedOptions {
   hostname: string;
 
   /**
-   * A large image/icon of the feed
+   * Whether to output Atom syntax files.
    *
-   * 一个大的图片，用作 feed 展示
-   */
-  image?: string;
-
-  /**
-   * A small icon of the feed，probably the favicon
+   * 是否启用 Atom 格式输出。
    *
-   * 一个小的图标，显示在订阅列表中
-   */
-  icon?: string;
-
-  /**
-   * Max items to be output
-   *
-   * 输出的最大条目数量
-   */
-  count?: number;
-
-  /**
-   * options to init feed channel
-   *
-   * Feed Chaneel 选项
-   */
-  channel?: Partial<FeedChannelOption>;
-
-  /**
-   * Whether output Atom syntax files
-   *
-   * 是否启用 Atom 格式输出
-   *
-   * @default true
+   * @default false
    */
   atom?: boolean;
 
   /**
-   * Atom syntax output filename, relative to dest folder
+   * Whether to output JSON syntax files.
    *
-   * Atom 格式输出路径，相对于输出路径
+   * 是否启用 JSON 格式输出。
    *
-   * @default 'atom.xml'
-   */
-  atomOutputFilename?: string;
-
-  /**
-   * Whether output JSON syntax files
-   *
-   * 是否启用 JSON 格式输出
-   *
-   * @default true
+   * @default false
    */
   json?: boolean;
 
   /**
-   * JSON syntax output filename, relative to dest folder
+   * Whether to output RSS syntax files.
    *
-   * JSON 格式输出路径，相对于输出路径
+   * 是否启用 RSS 格式输出。
    *
-   * @default 'feed.json'
-   */
-  jsonOutputFilename?: string;
-
-  /**
-   * Whether output RSS syntax files
-   *
-   * 是否启用 RSS 格式输出
-   *
-   * @default true
+   * @default false
    */
   rss?: boolean;
 
   /**
-   * RSS syntax output filename, relative to dest folder
+   * A large image/icon of the feed, probably used as banner.
    *
-   * RSS 格式输出路径，相对于输出路径
-   *
-   * @default 'rss.xml'
+   * 一个大的图片，用作 feed 展示。
    */
-  rssOutputFilename?: string;
+  image?: string;
 
   /**
-   * Feed sorter
+   * A small icon of the feed, probably used as favicon.
+   *
+   * 一个小的图标，显示在订阅列表中。
+   */
+  icon?: string;
+
+  /**
+   * Max items outputed
+   *
+   * 输出的最大条目数量
+   *
+   * @default 1000
+   */
+  count?: number;
+
+  /**
+   * A custom filter funciton, used to filter feed items.
+   *
+   * Feed 项目过滤器
+   */
+  filter?: (page: Page) => boolean;
+
+  /**
+   * A custom sort function, used to sort feed items.
    *
    * Feed 项目排序器
    */
   sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
-   * Filter pages to load to feed
+   * Options to init feed channel
    *
-   * Feed过滤器
+   * Feed 频道选项
    */
-  filter?: (page: Page) => boolean;
+  channel?: Partial<FeedChannelOption>;
+
+  /**
+   * Atom syntax output filename, relative to dest folder.
+   *
+   * Atom 格式输出路径，相对于输出路径。
+   *
+   * @default 'atom.xml'
+   */
+  atomOutputFilename?: string;
+
+  /**
+   * JSON syntax output filename, relative to dest folder.
+   *
+   * JSON 格式输出路径，相对于输出路径。
+   *
+   * @default 'feed.json'
+   */
+  jsonOutputFilename?: string;
+
+  /**
+   * RSS syntax output filename, relative to dest folder.
+   *
+   * RSS 格式输出路径，相对于输出路径。
+   *
+   * @default 'rss.xml'
+   */
+  rssOutputFilename?: string;
 
   /**
    * Feed generation controller
    *
-   * @description The plugin is providing a resonable getter by default, if you want a full control, you can set this field
+   * @description The plugin is providing a resonable getter by default, if you want full control of feed generating, you can set this field.
    *
    * Feed 生成控制器
    *
-   * @description 插件已经在默认情况下提供了合理的获取器，如果你需要完全控制，你可以设置此项。
+   * @description 插件已经在默认情况下提供了合理的获取器，如果你需要完全控制 Feed 生成，你可以设置此项。
    */
   getter?: FeedGetter;
 }
