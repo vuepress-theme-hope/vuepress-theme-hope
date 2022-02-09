@@ -1,6 +1,7 @@
 .page.not-found {
   display: block;
   max-width: var(--home-page-width);
+  min-height: 80vh;
   margin: 0px auto;
   padding: calc(var(--navbar-height) + 1rem) 2rem 0 2rem !important;
   text-align: center;
@@ -10,8 +11,8 @@
   }
 
   .page-404-icon {
-    width: 50%;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 0 20px;
 
     #{hope-config.$darkSelector} & {
       filter: invert(70%);
