@@ -4,7 +4,47 @@ import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
 export const en: HopeThemeNavbarConfig = [
   "/README.md",
   "/home.md",
-  "/guide/README.md",
+  { text: "Guide", icon: "creative", link: "/guide/README.md" },
+  {
+    text: "Posts",
+    icon: "edit",
+    prefix: "/posts/",
+    children: [
+      {
+        text: "Articles 1-4",
+        icon: "note",
+        prefix: "article/",
+        children: [
+          { text: "Article 1", icon: "note", link: "article1.md" },
+          { text: "Article 2", icon: "note", link: "article2.md" },
+          "article3.md",
+          "article4.md",
+        ],
+      },
+      {
+        text: "Articles 5-12",
+        icon: "note",
+        children: [
+          {
+            text: "Article 5",
+            icon: "note",
+            link: "article/article5.md",
+          },
+          {
+            text: "Article 6",
+            icon: "note",
+            link: "article/article6.md",
+          },
+          "article/article7.md",
+          "article/article8.md",
+        ],
+      },
+      { text: "Article 9", icon: "note", link: "article9.md" },
+      { text: "Article 10", icon: "note", link: "article10.md" },
+      "article11.md",
+      "article12.md",
+    ],
+  },
   {
     text: version,
     icon: "note",

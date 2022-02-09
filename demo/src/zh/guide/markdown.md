@@ -40,6 +40,52 @@ module.exports = {
 
 - [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/sup-sub/)
 
+### 代码组
+
+:::: code-group
+
+::: code-group-item yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+:::
+
+::: code-group-item npm:active
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+::::
+
+````md
+:::: code-group
+
+::: code-group-item yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+:::
+
+::: code-group-item npm:active
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+::::
+````
+
+- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/code-group/)
+
 ### 自定义对齐
 
 ::: center
@@ -488,6 +534,12 @@ $$
 
 ## 其他语法
 
+::: v-pre
+
+安全的在 Markdown 中使用 {{ variable }}。
+
+:::
+
 ::: info 自定义标题
 
 信息容器，包含 `代码` 与 [链接](#markdown)。
@@ -525,6 +577,12 @@ const a = 1;
 :::: details 代码
 
 ```md
+::: v-pre
+
+安全的在 Markdown 中使用 {{ variable }}。
+
+:::
+
 ::: info 自定义标题
 
 信息容器

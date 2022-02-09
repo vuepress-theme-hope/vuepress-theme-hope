@@ -40,6 +40,52 @@ module.exports = {
 
 - [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/sup-sub/)
 
+### CodeGroup
+
+:::: code-group
+
+::: code-group-item yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+:::
+
+::: code-group-item npm:active
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+::::
+
+````md
+:::: code-group
+
+::: code-group-item yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+:::
+
+::: code-group-item npm:active
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+::::
+````
+
+- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/code-group/)
+
 ### Align
 
 ::: center
@@ -488,6 +534,12 @@ $$
 
 ## Other Syntax
 
+::: v-pre
+
+Safely use {{ variable }} in markdown.
+
+:::
+
 ::: info custom title
 
 A custom information container with `code`, [link](#markdown).
@@ -525,6 +577,12 @@ A custom details container
 :::: details Code
 
 ```md
+::: v-pre
+
+Safely use {{ variable }} in markdown.
+
+:::
+
 ::: info custom title
 
 A custom information container

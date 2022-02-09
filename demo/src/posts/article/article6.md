@@ -8,6 +8,12 @@ tag:
   - tag B
 ---
 
-# Article 3
+# Article 6
+
+## Heading 2
+
+Here is the content.
+
+### Heading 3
 
 Here is the content.
