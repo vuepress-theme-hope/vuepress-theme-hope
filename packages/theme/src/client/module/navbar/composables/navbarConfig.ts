@@ -31,7 +31,9 @@ export const resolveNavbarItem = (
 
   return {
     ...item,
-    link: isLinkExternal(item.link) ? item.link : useAutoLink(item.link).link,
+    link: isLinkExternal(item.link)
+      ? item.link
+      : useAutoLink(`${prefix}${item.link}`).link,
   };
 };
 
