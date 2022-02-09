@@ -1,0 +1,29 @@
+.nav-screen-links {
+  display: none;
+  padding-bottom: 0.75rem;
+
+  @media (max-width: hope-config.$mobile) {
+    display: block;
+  }
+
+  .navbar-links-item {
+    position: relative;
+    display: block;
+    padding: 12px 4px 11px 0;
+    font-size: 16px;
+    line-height: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+
+    transition: border-bottom-color var(--color-transition);
+  }
+
+  .nav-link {
+    color: var(--text-color);
+    font-weight: normal;
+
+    &:hover,
+    &.active {
+      color: var(--theme-color);
+    }
+  }
+}

@@ -46,15 +46,6 @@
     font-weight: normal;
   }
 
-  .nav-link {
-    color: var(--text-color);
-
-    &:hover,
-    &.active {
-      color: var(--theme-color);
-    }
-  }
-
   .icon {
     margin-right: 0.25em;
   }

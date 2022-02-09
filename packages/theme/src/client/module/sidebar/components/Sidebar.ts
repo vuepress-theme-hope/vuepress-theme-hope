@@ -1,6 +1,5 @@
 import { defineComponent, h } from "vue";
 
-import SidebarNavLinks from "@theme-hope/module/sidebar/components/SidebarNavLinks";
 import SidebarLinks from "@theme-hope/module/sidebar/components/SidebarLinks";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
@@ -16,7 +15,6 @@ export default defineComponent({
 
     return (): VNode =>
       h("aside", { class: "sidebar" }, [
-        h(SidebarNavLinks),
         slots.top?.(),
         h(SidebarLinks, { config: sidebarItems.value }),
         slots.bottom?.(),

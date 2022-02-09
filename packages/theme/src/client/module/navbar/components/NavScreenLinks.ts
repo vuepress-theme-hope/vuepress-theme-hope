@@ -1,15 +1,15 @@
 import { defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import SidebarDropdownLink from "@theme-hope/module/sidebar/components/SidebarDropdownLink";
+import NavScreenDropdown from "@theme-hope/module/navbar/components/NavScreenDropdown";
 import { useNavbarConfig } from "@theme-hope/module/navbar/composables";
 
 import type { VNode } from "vue";
 
-import "../styles/nav-links.scss";
+import "../styles/nav-screen-links.scss";
 
 export default defineComponent({
-  name: "SidebarNavLinks",
+  name: "NavScreenLinks",
 
   setup() {
     const navbarConfig = useNavbarConfig();
@@ -18,13 +18,13 @@ export default defineComponent({
       navbarConfig.value.length
         ? h(
             "nav",
-            { class: "sidebar-nav-links" },
+            { class: "nav-screen-links" },
             navbarConfig.value.map((config) =>
               h(
                 "div",
                 { class: "navbar-links-item" },
                 "children" in config
-                  ? h(SidebarDropdownLink, { config })
+                  ? h(NavScreenDropdown, { config })
                   : h(AutoLink, { config })
               )
             )

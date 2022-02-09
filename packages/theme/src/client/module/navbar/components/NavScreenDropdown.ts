@@ -10,10 +10,10 @@ import type {
   HopeThemeNavGroup,
 } from "../../../../shared";
 
-import "../styles/dropdown-link.scss";
+import "../styles/nav-screen-dropdown.scss";
 
 export default defineComponent({
-  name: "SidebarDropdownLink",
+  name: "NavScreenDropdown",
 
   props: {
     config: {
@@ -49,7 +49,7 @@ export default defineComponent({
       h(
         "button",
         {
-          class: "mobile-dropdown-title",
+          class: "nav-screen-dropdown-title",
           type: "button",
           ariaLabel: dropdownAriaLabel.value,
           onClick: () => {
@@ -72,7 +72,7 @@ export default defineComponent({
       h(
         "ul",
         {
-          class: ["mobile-nav-dropdown", { hide: !open.value }],
+          class: ["nav-screen-dropdown", { hide: !open.value }],
         },
         config.value.children.map((child) =>
           h(

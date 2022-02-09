@@ -12,6 +12,7 @@ import NavbarBrand from "@theme-hope/module/navbar/components/NavbarBrand";
 import NavbarLinks from "@theme-hope/module/navbar/components/NavbarLinks";
 import ToggleSidebarButton from "@theme-hope/module/navbar/components/ToggleSidebarButton";
 import NavActions from "@theme-hope/module/navbar/components/NavActions";
+import NavScreen from "@theme-hope/module/navbar/components/NavScreen";
 
 import type { VNode } from "vue";
 
@@ -47,6 +48,7 @@ export default defineComponent({
     const themeLocaleData = useThemeLocaleData();
 
     const isMobile = ref(false);
+    const showScreen = ref(false);
 
     const navbar = ref<HTMLElement>();
     const siteBrand = ref<HTMLElement>();
@@ -110,7 +112,7 @@ export default defineComponent({
       );
     });
 
-    return (): VNode =>
+    return (): VNode[] => [
       h(
         "header",
         {
@@ -125,8 +127,15 @@ export default defineComponent({
           h(NavbarLinks, {
             style: linksWrapperStyle.value,
           }),
-          h(NavActions),
+          h(NavActions, {
+            showScreen: showScreen.value,
+            onToggleScreen: () => {
+              showScreen.value = !showScreen.value;
+            },
+          }),
         ]
-      );
+      ),
+      h(NavScreen, { active: showScreen.value }),
+    ];
   },
 });
