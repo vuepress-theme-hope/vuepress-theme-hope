@@ -200,7 +200,7 @@ cond(no)->e
 
 - [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/flowchart/)
 
-## Mermaid
+### Mermaid
 
 ```mermaid
 graph TD;
