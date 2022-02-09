@@ -4,8 +4,10 @@ import { CancelFullScreenIcon, EnterFullScreenIcon } from "./icons";
 
 import type { VNode } from "vue";
 
+import "../styles/full-screen.scss";
+
 export default defineComponent({
-  name: "ScreenFull",
+  name: "FullScreen",
 
   props: {
     enable: {
@@ -20,6 +22,7 @@ export default defineComponent({
 
     onMounted(() => {
       canFullscreen.value = screenfull.isEnabled;
+      isFullscreen.value = screenfull.isFullscreen;
     });
 
     return (): VNode | null =>
@@ -36,7 +39,9 @@ export default defineComponent({
                   });
               },
             },
-            h(isFullscreen.value ? CancelFullScreenIcon : EnterFullScreenIcon)
+            isFullscreen.value
+              ? h(CancelFullScreenIcon)
+              : h(EnterFullScreenIcon)
           )
         : null;
   },

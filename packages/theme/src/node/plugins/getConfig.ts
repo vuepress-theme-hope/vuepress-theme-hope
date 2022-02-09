@@ -30,7 +30,7 @@ export const getPluginConfig = (
   themeData: HopeThemeConfig
 ): PluginConfig<PluginOptions>[] => {
   const pluginConfig: PluginConfig<PluginOptions>[] = [
-    components(resolveComponentsOptions(themeData)),
+    components(resolveComponentsOptions(plugins, themeData)),
     [
       "@vuepress/active-header-links",
       resolveActiveHeaderLinksOptions(plugins.activeHeaderLinks),

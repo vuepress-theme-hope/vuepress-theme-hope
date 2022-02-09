@@ -47,7 +47,6 @@ export interface HopeThemeFeatureOptions {
    */
   darkmode?: DarkmodeConfig;
 
-  // TODO: Support themeColor
   /**
    * Theme color configuration.
    *
@@ -56,6 +55,13 @@ export interface HopeThemeFeatureOptions {
    * @default { blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }
    */
   themeColor?: Record<string, string> | false;
+
+  /**
+   * Full screen button
+   *
+   * 全屏按钮
+   */
+  fullScreen?: boolean;
 
   /**
    * Encrypt config

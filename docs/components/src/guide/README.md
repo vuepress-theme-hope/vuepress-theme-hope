@@ -11,8 +11,8 @@ This plugin register 7 components and 1 global component:
 - `<BreadCrumb />`
 - `<CodeGroup />`
 - `<CodeGroupItem />`
+- `<FullScreen />`
 - `<Pagination />`
-- `<ScreenFull />`
 
 ## ArticleInfo
 
@@ -62,6 +62,14 @@ npm i -D vuepress-theme-hope
 ::::
 ````
 
+## FullScreen
+
+A full-screen button
+
+### Props
+
+- enable: Whether enable this component
+
 ## Pagination
 
 Paging component.
@@ -71,11 +79,3 @@ Paging component.
 - `currentPage`: v-model variable, current page.
 - `total`: total number of items
 - `perPage`: number of items per page, default is 10
-
-## ScreenFull
-
-A full-screen button
-
-### Props
-
-- enable: Whether enable this component

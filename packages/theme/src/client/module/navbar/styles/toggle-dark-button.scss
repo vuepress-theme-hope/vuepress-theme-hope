@@ -1,10 +1,12 @@
+@use "@mr-hope/vuepress-shared/styles/reset";
+
 /**
  * toggle dark button
  */
 .toggle-dark-button {
+  @include reset.button;
+
   padding: 6px;
-  border: 0;
-  background: none;
   color: var(--dark-grey);
   cursor: pointer;
 

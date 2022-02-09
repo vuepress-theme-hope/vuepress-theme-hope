@@ -1,0 +1,25 @@
+.theme-color-label {
+  display: none;
+}
+
+#theme-color-picker {
+  display: flex;
+  justify-content: space-around;
+
+  font-size: 14px;
+
+  li {
+    span {
+      vertical-align: middle;
+      width: 15px;
+      height: 15px;
+      margin: 0 2px;
+      border-radius: 2px;
+
+      &.theme-color {
+        // original theme-color
+        background: var(--theme-color);
+      }
+    }
+  }
+}

@@ -61,6 +61,8 @@ export default defineUserConfig<HopeThemeOptions>({
 
     logo: "/logo.svg",
 
+    fullScreen: true,
+
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
     docsDir: "demo/src",

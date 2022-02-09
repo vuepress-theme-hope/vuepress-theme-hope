@@ -1,0 +1,83 @@
+@use "@mr-hope/vuepress-shared/styles/reset";
+
+.outlook-button {
+  @include reset.button;
+
+  position: relative;
+
+  padding: 6px;
+  color: var(--dark-grey);
+
+  &:hover,
+  &.active {
+    color: var(--theme-color);
+  }
+
+  &.active:hover {
+    color: var(--dark-grey);
+  }
+
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    vertical-align: middle;
+  }
+}
+
+.outlook-dropdown {
+  position: absolute;
+  top: calc(var(--navbar-height) - var(--navbar-vertical-padding));
+  left: 50%;
+  min-width: 100px;
+  margin: 0;
+  padding: 0.5em 0.75em;
+  background: var(--bg-color);
+  box-shadow: 2px 2px 10px var(--card-shadow);
+  color: var(--dark-grey);
+  border-radius: 0.25em;
+  transform: translateX(-80%);
+  z-index: 250;
+
+  @media (max-width: hope-config.$pad) {
+    top: calc(
+      var(--navbar-mobile-height) - var(--navbar-mobile-vertical-padding)
+    );
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 80%;
+    border-style: solid;
+    border-color: transparent transparent var(--bg-color);
+    border-width: 0 7px 7px;
+    transform: translateX(-50%);
+  }
+
+  &.menu-transition-enter-active,
+  &.menu-transition-leave-active {
+    transition: all 0.25s ease-in-out;
+  }
+
+  &.menu-transition-enter,
+  &.menu-transition-leave-to {
+    top: 30px;
+    opacity: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.outlook-buttons {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    padding-top: 8px;
+  }
+}

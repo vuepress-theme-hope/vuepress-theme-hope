@@ -19,7 +19,7 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
     addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
   if (options.backToTop) addViteOptimizeDeps(app, "lodash.debounce");
-  if (options.screenFull) addViteOptimizeDeps(app, "screenfull");
+  if (options.fullScreen) addViteOptimizeDeps(app, "screenfull");
 
   useSassPalettePlugin(app, { id: "hope" });
 
@@ -36,11 +36,11 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
       "@Badge": options.badge
         ? path.resolve(__dirname, "../client/components/Badge.js")
         : noopModule,
+      "@FullScreen": options.fullScreen
+        ? path.resolve(__dirname, "../client/components/FullScreen.js")
+        : noopModule,
       "@Pagination": options.pagination
         ? path.resolve(__dirname, "../client/components/Pagination.js")
-        : noopModule,
-      "@ScreenFull": options.screenFull
-        ? path.resolve(__dirname, "../client/components/ScreenFull.js")
         : noopModule,
     },
 

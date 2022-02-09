@@ -1,7 +1,8 @@
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
-import type { HopeThemeOptions } from "../../shared";
+import type { HopeThemePluginsOptions, HopeThemeOptions } from "../../shared";
 
 export const resolveComponentsOptions = (
+  plugins: HopeThemePluginsOptions,
   themeConfig: HopeThemeOptions
 ): ComponentOptions => ({
   articleInfo: true,
@@ -10,6 +11,6 @@ export const resolveComponentsOptions = (
     typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
   breadcrumb: true,
   badge: true,
-  pagination: true,
-  screenFull: true,
+  fullScreen: themeConfig.fullScreen,
+  pagination: Boolean(plugins.blog),
 });

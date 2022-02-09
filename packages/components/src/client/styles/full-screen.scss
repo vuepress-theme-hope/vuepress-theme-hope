@@ -1,17 +1,20 @@
 @use "@mr-hope/vuepress-shared/styles/reset";
 
-button.full-screen,
+.full-screen,
 .cancel-full-screen {
   @include reset.button;
-  width: 1.8rem;
-  height: 1.8rem;
-  padding: 4px;
-  color: #aaa;
 
-  & svg {
-    width: 100%;
-    height: 100%;
-    fill: currentcolor;
+  padding: 6px;
+  color: var(--dark-grey);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--theme-color);
+  }
+
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 
@@ -21,5 +24,5 @@ button.full-screen,
 }
 
 .cancel-fullscreen-icon:hover {
-  color: #aaa;
+  color: var(--dark-grey);
 }

@@ -12,7 +12,7 @@ icon: creative
 - `<CodeGroup />`
 - `<CodeGroupItem />`
 - `<Pagination />`
-- `<ScreenFull />`
+- `<FullScreen />`
 
 ## `<Article />`
 
@@ -62,6 +62,14 @@ npm i -D vuepress-theme-hope
 ::::
 ````
 
+## `<FullScreen />`
+
+全屏按钮组件
+
+### 属性
+
+- `enable`: 是否启用此组件
+
 ## `<Pagination />`
 
 分页组件。
@@ -71,11 +79,3 @@ npm i -D vuepress-theme-hope
 - `currentPage`: V-model 双向绑定，当前为第几个页面。
 - `total`: 总项数
 - `perPage`: 每页包含的项目数，默认为 10
-
-## `<ScreenFull />`
-
-全屏按钮组件
-
-### 属性
-
-- `enable`: 是否启用此组件

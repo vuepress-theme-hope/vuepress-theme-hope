@@ -30,7 +30,7 @@ declare module "@BreadCrumb" {
   export default component;
 }
 
-declare module "@Pagination" {
+declare module "@FullScreen" {
   import type { ComponentOptions } from "vue";
 
   const component: ComponentOptions;
@@ -38,7 +38,7 @@ declare module "@Pagination" {
   export default component;
 }
 
-declare module "@ScreenFull" {
+declare module "@Pagination" {
   import type { ComponentOptions } from "vue";
 
   const component: ComponentOptions;

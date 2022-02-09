@@ -72,7 +72,7 @@ export interface ComponentOptions {
    *
    * @default false
    */
-  screenFull?: boolean;
+  fullScreen?: boolean;
 
   /**
    * Locales config for articleInfo

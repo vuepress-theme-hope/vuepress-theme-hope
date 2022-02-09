@@ -17,8 +17,8 @@ export default [
       "@ArticleInfo",
       "@Badge",
       "@BreadCrumb",
+      "@FullScreen",
       "@Pagination",
-      "@ScreenFull",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -43,6 +43,9 @@ export default [
     external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/FullScreen", {
+    external: ["@mr-hope/vuepress-shared/lib/client", "screenfull", "vue"],
+  }),
   ...rollupTypescript("client/components/Pagination", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
@@ -51,9 +54,6 @@ export default [
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
-  }),
-  ...rollupTypescript("client/components/ScreenFull", {
-    external: ["@mr-hope/vuepress-shared/lib/client", "screenfull", "vue"],
   }),
   ...rollupTypescript("client/root-components/BackToTop", {
     external: [
