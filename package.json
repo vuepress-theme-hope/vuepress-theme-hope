@@ -155,7 +155,7 @@
     "textlint-rule-write-good": "2.0.0",
     "textlint-rule-zh-half-and-full-width-bracket": "1.1.0",
     "ts-jest": "27.1.3",
-    "ts-node": "10.4.0",
+    "ts-node": "10.5.0",
     "typescript": "4.5.5",
     "vuepress-vite": "2.0.0-beta.35",
     "vuepress-webpack": "2.0.0-beta.35"
