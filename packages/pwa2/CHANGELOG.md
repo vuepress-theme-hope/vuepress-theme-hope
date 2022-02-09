@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
+
+### Bug Fixes
+
+- **pwa2:** fix popup update icon ([239b216](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/239b2160ce8e4ebda2145793f7b6eb917356d354))
+
 # [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
 
 **Note:** Version bump only for package vuepress-plugin-pwa2

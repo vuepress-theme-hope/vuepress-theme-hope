@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.16](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
+
+### Features
+
+- **components:** update backToTop icon ([d82fc48](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d82fc48d558cb9eea3c43607d3479a76556be647))
+- fix fullscreen and add outlook button ([c8f6bf7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c8f6bf71e8358caa6a358b4826f9db22bc5b79cd))
+
 # [2.0.0-alpha.15](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components

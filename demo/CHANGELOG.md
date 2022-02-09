@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
+
+### Features
+
+- **demo:** update demo ([f0445cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f0445cc3b2c9fa7390450c9a4ab3d7c666857026))
+- fix fullscreen and add outlook button ([c8f6bf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c8f6bf71e8358caa6a358b4826f9db22bc5b79cd))
+
 # [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
 
 ### Features

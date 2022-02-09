@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
+
+### Bug Fixes
+
+- **md-enhance:** fix footnote position on mobile ([6d1fe4d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d1fe4d6b648a6ab41458d467abf32de3121fdb9))
+- **pwa2:** fix popup update icon ([239b216](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/239b2160ce8e4ebda2145793f7b6eb917356d354))
+- **theme:** fix 404 layout ([c80e94f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c80e94f217ccb96c4f4379889067d016b5604cfc))
+- **theme:** fix navbar dropdown style ([91aa69a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91aa69a0cc98062d7fe8404f5a4ff503b57b4caa))
+- **theme:** fix navbar item padding ([1e2debf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e2debf1e8945f0f3bdc1dc384290cfed0d8d3ce))
+- **theme:** fix navbar prefix ([72021d1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72021d1d599a82b8a7c48bda4fbe488887ab4fbf))
+- **theme:** fix PageAnchor headings ([62b4707](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/62b47079c24025ba00fb6886ac716659b5b3b2ee))
+- **theme:** fix plugin option types ([25d3494](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25d34948a08a181847a2e2fe1890fd1886f613ed))
+- **theme:** fix sidebar nav dropdown ([03a8943](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/03a894303de84a26f4c6a96d6c1976fa39159b2f))
+- **theme:** fix sidebar title font weight ([5354d14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5354d1436698623fa9e67b016440cbdf4d2dd692))
+- **theme:** fix theme color ([e93d3e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e93d3e54aa9323d4b16b9231c3459adb0c6f284d))
+- **theme:** fix toggle button ([3a57d58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3a57d58f557b475cbe5d7b92ea954a7cb1d83ebe))
+- **theme:** rebuild sidebar styles ([b9a5d72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b9a5d72b5c4fff51ee9fa723468a20fb4d9e48bf))
+
+### Features
+
+- **components:** update backToTop icon ([d82fc48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d82fc48d558cb9eea3c43607d3479a76556be647))
+- **demo:** update demo ([f0445cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f0445cc3b2c9fa7390450c9a4ab3d7c666857026))
+- fix fullscreen and add outlook button ([c8f6bf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c8f6bf71e8358caa6a358b4826f9db22bc5b79cd))
+- **theme:** add NavScreen component ([b5cf33c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b5cf33c5b718315f355fd9d93406bd56356417b8))
+- **theme:** add skip link component ([aae4e66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aae4e66f683406d3db7c7de8c1f07e777dabba39))
+- **theme:** update layout ([8c3a1d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c3a1d92f66c27138bff73c6a33e144c4579cabd))
+
 # [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
 
 ### Bug Fixes
