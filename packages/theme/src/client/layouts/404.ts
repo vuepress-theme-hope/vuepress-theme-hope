@@ -3,6 +3,7 @@ import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
+import SkipLink from "@theme-hope/components/SkipLink";
 import { Page404Icon } from "@theme-hope/components/icons";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
@@ -29,31 +30,29 @@ export default defineComponent({
       to: themeLocale.value.home ?? routeLocale.value,
     });
 
-    return (): VNode =>
-      h(
-        CommonWrapper,
-        { sidebar: false },
-
-        () =>
-          h("main", { class: "page not-found" }, [
-            h(Page404Icon),
-            h("blockquote", getMsg()),
-            h(
-              "button",
-              {
-                class: "action-button",
-                onClick: () => {
-                  window.history.go(-1);
-                },
+    return (): VNode[] => [
+      h(SkipLink),
+      h(CommonWrapper, { sidebar: false }, () =>
+        h("main", { class: "page not-found", id: "main-content" }, [
+          h(Page404Icon),
+          h("blockquote", getMsg()),
+          h(
+            "button",
+            {
+              class: "action-button",
+              onClick: () => {
+                window.history.go(-1);
               },
-              themeLocale.value.routeLocales.back
-            ),
-            h(
-              "button",
-              { class: "action-button", onClick: () => navigate() },
-              themeLocale.value.routeLocales.home
-            ),
-          ])
-      );
+            },
+            themeLocale.value.routeLocales.back
+          ),
+          h(
+            "button",
+            { class: "action-button", onClick: () => navigate() },
+            themeLocale.value.routeLocales.home
+          ),
+        ])
+      ),
+    ];
   },
 });

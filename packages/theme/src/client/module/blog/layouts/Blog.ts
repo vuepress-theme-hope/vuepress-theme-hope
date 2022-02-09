@@ -6,6 +6,7 @@ import BlogPage from "@theme-hope/module/blog/components/BlogPage";
 import InfoPanel from "@theme-hope/module/blog/components/InfoPanel";
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import SkipLink from "@theme-hope/components/SkipLink";
 
 import type { VNode } from "vue";
 
@@ -18,7 +19,8 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter();
 
-    return (): VNode =>
+    return (): VNode[] => [
+      h(SkipLink),
       h(
         CommonWrapper,
         { sidebar: false },
@@ -29,13 +31,14 @@ export default defineComponent({
               ? h(BlogHome)
               : h(
                   "main",
-                  { class: "page blog" },
+                  { class: "page blog", id: "main-content" },
                   h("div", { class: "blog-page-wrapper" }, [
                     h(BlogPage),
                     h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
                   ])
                 ),
         }
-      );
+      ),
+    ];
   },
 });

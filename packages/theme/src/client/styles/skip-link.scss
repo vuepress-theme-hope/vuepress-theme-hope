@@ -1,0 +1,24 @@
+.skip-link {
+  top: 0.25rem;
+  left: 0.25rem;
+  padding: 0.65rem 1.5rem;
+  z-index: 999;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--theme-color);
+  box-shadow: var(--card-shadow);
+  background-color: var(--bg-color);
+  border-radius: 8px;
+
+  #{hope-config.$darkSelector} & {
+    color: var(--theme-color);
+  }
+
+  .skip-link:focus {
+    height: auto;
+    width: auto;
+    clip: auto;
+    clip-path: none;
+  }
+}

@@ -22,7 +22,7 @@ export default defineComponent({
       h("div", { class: "page blog" }, [
         h(BlogHero),
         h("div", { class: "blog-page-wrapper" }, [
-          h("main", { class: "blog-home" }, [
+          h("main", { class: "blog-home", id: "main-content" }, [
             h(DropTransition, { delay: 0.16 }, () => h(ProjectPanel)),
             h(DropTransition, { delay: 0.24 }, () =>
               h(ArticleList, { items: articles.value.items })

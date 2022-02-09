@@ -21,7 +21,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "main",
-        { class: "page" },
+        { class: "page", id: "main-content" },
         isEncrypted.value
           ? h(PasswordModal, { onVerify: validateToken })
           : [
