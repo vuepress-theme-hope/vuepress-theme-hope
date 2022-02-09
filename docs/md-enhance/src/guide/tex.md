@@ -53,7 +53,11 @@ $$
 
 ## Playground
 
+<!-- markdownlint-disable -->
+
 <KatexPlayground />
+
+<!-- markdownlint-restore -->
 
 ## Tutorial
 
