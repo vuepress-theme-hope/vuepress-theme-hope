@@ -9,40 +9,43 @@ import type { PropType, VNode } from "vue";
 
 import "../styles/page-anchor.scss";
 
-interface AnchorItem {
-  text: string;
-  level?: number;
-  link: string;
-}
-
-const renderLink = ({ text, link, level }: AnchorItem): VNode =>
+const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
     RouterLink,
     {
-      to: link,
-      class: ["anchor-link", level ? `heading${level}` : ""],
+      to: `#${slug}`,
+      class: [
+        "anchor-link",
+        {
+          [`heading${level}`]: level,
+        },
+      ],
     },
-    () => h("div", text)
+    () => h("div", title)
   );
 
-const renderChildren = (headers: PageHeader[]): VNode => {
+const renderChildren = (headers: PageHeader[]): VNode | null => {
   const route = useRoute();
 
-  return h(
-    "ul",
-    { class: "anchor-list" },
-    headers.map((header: PageHeader) => {
-      const active = isActiveLink(route, `#${header.slug}`);
-
-      return h("li", { class: ["anchor", { active }] }, [
-        renderLink({
-          text: header.title,
-          link: `#${header.slug}`,
-          level: header.level,
-        }),
-      ]);
-    })
-  );
+  return headers.length
+    ? h(
+        "ul",
+        { class: "anchor-list" },
+        headers.map((header: PageHeader) => [
+          h(
+            "li",
+            {
+              class: [
+                "anchor",
+                { active: isActiveLink(route, `#${header.slug}`) },
+              ],
+            },
+            [renderHeader(header)]
+          ),
+          renderChildren(header.children),
+        ])
+      )
+    : null;
 };
 export default defineComponent({
   name: "PageAnchor",

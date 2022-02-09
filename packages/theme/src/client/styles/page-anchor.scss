@@ -62,14 +62,13 @@ $headings: (2, 3, 4, 5, 6);
       background: var(--border-color);
       z-index: -1;
     }
-
-    > .anchor-list {
-      margin: 0;
-    }
   }
 
   .anchor-list {
-    padding-left: 0;
+    // overide ul default margin
+    margin: 0;
+    // overide ul default padding
+    padding: 0;
   }
 
   .anchor {
@@ -91,13 +90,13 @@ $headings: (2, 3, 4, 5, 6);
     }
 
     &:hover {
-      .anchor-link {
+      > .anchor-link {
         color: var(--theme-color);
       }
     }
 
     &.active {
-      .anchor-link {
+      > .anchor-link {
         color: var(--theme-color);
       }
 
@@ -105,25 +104,25 @@ $headings: (2, 3, 4, 5, 6);
         background: var(--theme-color);
       }
     }
+  }
 
-    .anchor-link {
-      display: inline-block;
-      vertical-align: middle;
-      position: relative;
-      max-width: 100%;
-      color: var(--light-grey);
+  .anchor-link {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    max-width: 100%;
+    color: var(--light-grey);
 
-      > div {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
+    > div {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
 
-      @each $heading in $headings {
-        &.heading#{$heading} {
-          padding-left: ($heading * 8 - 16) px;
-          font-size: (16 - $heading) px;
-        }
+    @each $heading in $headings {
+      &.heading#{$heading} {
+        padding-left: ($heading * 8 - 16) * 1px;
+        font-size: (16 - $heading) * 1px;
       }
     }
   }
