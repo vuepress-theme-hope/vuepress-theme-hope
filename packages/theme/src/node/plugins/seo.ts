@@ -3,7 +3,7 @@ import type { HopeThemeConfig } from "../../shared";
 
 export const resolveSEOOptions = (
   themeConfig: HopeThemeConfig,
-  options?: SeoOptions | false
+  options?: Omit<SeoOptions, "hostname"> | false
 ): SeoOptions | false => {
   if (options === false) return false;
 

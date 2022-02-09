@@ -3,7 +3,7 @@ import type { HopeThemeConfig } from "../../shared";
 
 export const resolveFeedOptions = (
   themeConfig: HopeThemeConfig,
-  options?: Partial<FeedOptions> | false
+  options?: Omit<FeedOptions, "hostname"> | false
 ): FeedOptions | false => {
   if (options === false) return false;
 
@@ -12,6 +12,7 @@ export const resolveFeedOptions = (
 
   return {
     hostname: themeConfig.hostname,
+    author: themeConfig.author,
     ...(options || {}),
   } as FeedOptions;
 };

@@ -134,7 +134,7 @@ export interface HopeThemePluginsOptions {
    * Feed 插件配置
    * @see http://vuepress-theme-hope.github.io/v2/feed/zh/config/
    */
-  feed?: FeedOptions | false;
+  feed?: Omit<FeedOptions, "hostname"> | false;
 
   /**
    * Enable @vuepress/plugin-git or not
@@ -194,7 +194,7 @@ export interface HopeThemePluginsOptions {
    * SEO 插件配置
    * @see http://vuepress-theme-hope.github.io/v2/seo/zh/config/
    */
-  seo?: SeoOptions | false;
+  seo?: Omit<SeoOptions, "hostname" | "author"> | false;
 
   /**
    * Sitemap plugin options
@@ -203,5 +203,5 @@ export interface HopeThemePluginsOptions {
    * Sitemap 插件配置
    * @see http://vuepress-theme-hope.github.io/v2/sitemap/zh/config/
    */
-  sitemap?: SitemapOptions | false;
+  sitemap?: Omit<SitemapOptions, "hostname"> | false;
 }

@@ -3,7 +3,7 @@ import type { HopeThemeConfig } from "../../shared";
 
 export const resolveSitemapOptions = (
   themeConfig: HopeThemeConfig,
-  options?: SitemapOptions | false
+  options?: Omit<SitemapOptions, "hostname"> | false
 ): SitemapOptions | false => {
   if (options === false) return false;
 
