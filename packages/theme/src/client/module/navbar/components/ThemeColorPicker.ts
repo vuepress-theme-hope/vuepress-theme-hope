@@ -30,7 +30,7 @@ export default defineComponent({
 
     const setThemeColor = (theme = ""): void => {
       if (themeColor.value) {
-        const classes = document.body.classList;
+        const classes = document.documentElement.classList;
         const themes = Object.keys(themeColor.value).map(
           (color) => `theme-${color}`
         );

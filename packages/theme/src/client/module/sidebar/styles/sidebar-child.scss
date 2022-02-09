@@ -23,10 +23,7 @@
 
   &.active {
     border-left-color: var(--theme-color);
-    background-color: color.change(
-      helper.get-color(hope-config.$themeColor),
-      $alpha: 0.15
-    );
+    background-color: var(--theme-color-mask);
     color: var(--theme-color);
     font-weight: 500;
 
