@@ -1,8 +1,8 @@
+import { defineUserConfig } from "@vuepress/cli";
 import { path } from "@vuepress/utils";
-import type { UserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-const config: UserConfig<DefaultThemeOptions> = {
+export default defineUserConfig<DefaultThemeOptions>({
   base: process.env.VuePress_BASE || "/",
 
   title: "Comment Plugin",
@@ -26,6 +26,4 @@ const config: UserConfig<DefaultThemeOptions> = {
       },
     ],
   },
-};
-
-export default config;
+});

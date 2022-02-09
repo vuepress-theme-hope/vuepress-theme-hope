@@ -1,7 +1,7 @@
-import type { UserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-const config: UserConfig<DefaultThemeOptions> = {
+export default defineUserConfig<DefaultThemeOptions>({
   base: process.env.VuePress_BASE || "/",
   dest: "./dist",
 
@@ -28,6 +28,4 @@ const config: UserConfig<DefaultThemeOptions> = {
   },
 
   plugins: [["add-this", { pubid: "ra-601bf7e7c332daca" }]],
-};
-
-export default config;
+});

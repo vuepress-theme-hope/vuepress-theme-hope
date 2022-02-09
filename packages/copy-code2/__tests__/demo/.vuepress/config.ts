@@ -1,7 +1,7 @@
-import type { UserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-const config: UserConfig<DefaultThemeOptions> = {
+export default defineUserConfig<DefaultThemeOptions>({
   base: process.env.VuePress_BASE || "/",
 
   title: "Copy Code",
@@ -42,6 +42,4 @@ const config: UserConfig<DefaultThemeOptions> = {
   },
 
   plugins: ["copy-code2"],
-};
-
-export default config;
+});

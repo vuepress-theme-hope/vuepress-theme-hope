@@ -1,7 +1,7 @@
-import type { UserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-const config: UserConfig<DefaultThemeOptions> = {
+export default defineUserConfig<DefaultThemeOptions>({
   base: process.env.VuePress_BASE || "/",
   bundler: process.env.BUNDLER ?? "@vuepress/webpack",
   head: [
@@ -31,6 +31,4 @@ const config: UserConfig<DefaultThemeOptions> = {
   },
 
   plugins: [["lightgallery", { plugins: ["video"] }]],
-};
-
-export default config;
+});

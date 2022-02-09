@@ -1,7 +1,7 @@
-import type { UserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-const config: UserConfig<DefaultThemeOptions> = {
+export default defineUserConfig<DefaultThemeOptions>({
   base: process.env.VuePress_BASE || "/",
 
   title: "Feed",
@@ -43,6 +43,4 @@ const config: UserConfig<DefaultThemeOptions> = {
   },
 
   plugins: [["feed2", { hostname: "https://example.com" }]],
-};
-
-export default config;
+});
