@@ -60,14 +60,6 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run build
 
-      - name: Linter test
-        run: |
-          yarn run lint:check
-          yarn run lint:md
-
-      - name: Unit test
-        run: yarn run test
-
       - name: Webpack Demo build
         run: |
           yarn run demo:webpack-build
@@ -75,10 +67,6 @@ jobs:
       - name: Vite Demo build
         run: |
           yarn run demo:vite-build
-
-      - name: Upload coverage
-        if: github.ref == 'refs/heads/main'
-        uses: codecov/codecov-action@v2
 
   test-plugins:
     name: Test plugins on node ${{ matrix.node }}
@@ -138,3 +126,60 @@ jobs:
       - name: Vite build test
         run: |
           yarn lerna run demo:webpack-build
+
+  linter-and-unit:
+    name: Linter and Unit test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: restore lerna
+        uses: actions/cache@v2
+        id: lerna-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
+
+      - name: Get yarn cache directory path
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: yarn-cache
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Deps
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: yarn run build
+
+      - name: Linter test
+        run: |
+          yarn run lint:check
+          yarn run lint:md
+
+      - name: Unit test
+        run: yarn run test
+
+      - name: Upload coverage
+        if: github.ref == 'refs/heads/main'
+        uses: codecov/codecov-action@v2
