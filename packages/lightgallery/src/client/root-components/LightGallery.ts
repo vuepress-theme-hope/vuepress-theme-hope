@@ -38,7 +38,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const route = useRoute();
-    const container = ref<HTMLElement | null>(null);
+    const container = ref<HTMLElement>();
     const instance = ref<LightGallery | null>(null);
     let id: number;
 

@@ -25,7 +25,7 @@ export default defineComponent({
 
   setup(props) {
     const svgCode = ref("");
-    const mermaidElement = ref<HTMLElement | null>(null);
+    const mermaidElement = ref<HTMLElement>();
     let observer: MutationObserver;
 
     onMounted(() => {

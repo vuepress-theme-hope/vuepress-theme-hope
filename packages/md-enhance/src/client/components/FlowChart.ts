@@ -31,7 +31,7 @@ export default defineComponent({
   setup(props) {
     let svg: Flowchart.Instance;
     let resize: () => void;
-    const element = ref<HTMLDivElement | null>(null);
+    const element = ref<HTMLDivElement>();
 
     const loading = ref(true);
     const scale = ref(1);

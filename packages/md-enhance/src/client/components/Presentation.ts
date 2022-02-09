@@ -39,8 +39,8 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<{ reveal: RevealOptions }>();
     const code = ref("");
     const loading = ref(false);
-    const presentationContainer = ref<HTMLElement | null>(null);
-    const presentationElement = ref<HTMLElement | null>(null);
+    const presentationContainer = ref<HTMLElement>();
+    const presentationElement = ref<HTMLElement>();
 
     onMounted(() => {
       if (presentationElement.value) {

@@ -48,8 +48,8 @@ export default defineComponent({
 
     const isMobile = ref(false);
 
-    const navbar = ref<HTMLElement | null>(null);
-    const siteBrand = ref<HTMLElement | null>(null);
+    const navbar = ref<HTMLElement>();
+    const siteBrand = ref<HTMLElement>();
 
     const linksWrapperMaxWidth = ref(0);
     const linksWrapperStyle = computed(() => {
@@ -77,8 +77,10 @@ export default defineComponent({
       // refer to _variables.scss
       const MOBILE_DESKTOP_BREAKPOINT = 719;
       const navbarHorizontalPadding =
-        getCssValue(navbar.value, "paddingLeft") +
-        getCssValue(navbar.value, "paddingRight");
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        getCssValue(navbar.value!, "paddingLeft") +
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        getCssValue(navbar.value!, "paddingRight");
 
       handleLinksWrapWidth = (): void => {
         if (window.innerWidth < MOBILE_DESKTOP_BREAKPOINT) {
