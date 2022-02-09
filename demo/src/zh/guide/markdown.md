@@ -62,6 +62,8 @@ npm i -D vuepress-theme-hope
 
 ::::
 
+::::: details 代码
+
 ````md
 :::: code-group
 
@@ -83,6 +85,8 @@ npm i -D vuepress-theme-hope
 
 ::::
 ````
+
+:::::
 
 - [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/code-group/)
 

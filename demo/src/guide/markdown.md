@@ -62,6 +62,8 @@ npm i -D vuepress-theme-hope
 
 ::::
 
+::::: details Code
+
 ````md
 :::: code-group
 
@@ -83,6 +85,8 @@ npm i -D vuepress-theme-hope
 
 ::::
 ````
+
+:::::
 
 - [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/code-group/)
 
