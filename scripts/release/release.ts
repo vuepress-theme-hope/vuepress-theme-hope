@@ -11,8 +11,8 @@ import type { Answers } from "./version";
 export const release = async (): Promise<void> => {
   const buildSpinner = ora("Building project").start();
 
-  await execa("yarn", ["run", "clean"]);
-  await execa("yarn", ["run", "build"]);
+  await execa("pnpm", ["exec", "clean"]);
+  await execa("pnpm", ["exec", "build"]);
 
   buildSpinner.succeed();
 
