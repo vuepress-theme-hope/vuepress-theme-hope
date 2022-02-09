@@ -1,0 +1,95 @@
+@use "sass:color";
+@use "@mr-hope/vuepress-shared/styles/arrow";
+@use "@sass-palette/helper";
+
+.sidebar-link {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.35rem 1rem 0.35rem 1.25rem;
+  border-left: 0.2rem solid transparent;
+  color: var(--text-color);
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 400;
+
+  .icon {
+    margin-right: 0.25em;
+  }
+
+  &:hover {
+    background-color: var(--bg-color-light);
+  }
+
+  &.active {
+    border-left-color: var(--theme-color);
+    background-color: color.change(
+      helper.get-color(hope-config.$themeColor),
+      $alpha: 0.15
+    );
+    color: var(--theme-color);
+    font-weight: 500;
+
+    .icon {
+      color: var(--theme-color);
+    }
+  }
+
+  .sidebar-sub-headers & {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-left: none;
+
+    &.active {
+      background-color: transparent;
+      font-weight: 500;
+    }
+  }
+}
+
+.sidebar-heading {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0.35rem 1rem 0.35rem 1.25rem;
+  border-left: 0.25rem solid transparent;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  color: var(--text-color);
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  user-select: none;
+
+  &.open {
+    color: inherit;
+  }
+
+  &.clickable {
+    &:hover {
+      background-color: var(--bg-color-light);
+    }
+
+    &.active {
+      border-left-color: var(--theme-color);
+      color: var(--theme-color);
+      font-weight: 500;
+    }
+  }
+
+  .icon {
+    margin-right: 0.25em;
+  }
+
+  .title {
+    flex: 1;
+  }
+
+  .arrow {
+    @include arrow.arrow;
+
+    font-size: 1.5em;
+    float: right;
+  }
+}

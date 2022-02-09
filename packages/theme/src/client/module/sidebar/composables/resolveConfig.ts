@@ -47,15 +47,16 @@ export const headersToSidebarItemChildren = (
  */
 export const resolveAutoSidebarItems = (
   sidebarDepth: number
-): ResolvedHopeThemeSidebarGroupItem[] => {
+): ResolvedHopeThemeSidebarPageItem[] => {
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const page = usePageData();
 
   return [
     {
-      type: "group",
+      type: "page",
       text: page.value.title,
       icon: frontmatter.value.icon,
+      link: "",
       children: headersToSidebarItemChildren(page.value.headers, sidebarDepth),
     },
   ];

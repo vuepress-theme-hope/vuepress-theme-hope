@@ -5,11 +5,12 @@ import type { ResolvedSidebarItem } from "../../../../shared";
 
 export const isActiveSidebarItem = (
   route: RouteLocationNormalizedLoaded,
-  item: ResolvedSidebarItem
+  item: ResolvedSidebarItem,
+  exact = false
 ): boolean => {
   if (isActiveLink(route, item.link)) return true;
 
-  if (item.children)
+  if (item.children && !exact)
     return item.children.some((child) => isActiveSidebarItem(route, child));
 
   return false;

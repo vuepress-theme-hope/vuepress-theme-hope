@@ -45,7 +45,6 @@ export interface ResolvedHopeThemeSidebarPageItem
 export interface ResolvedHopeThemeSidebarGroupItem
   extends HopeThemeSidebarGroupItem {
   type: "group";
-  collapsible?: boolean;
   children: ResolvedSidebarItem[];
 }
 

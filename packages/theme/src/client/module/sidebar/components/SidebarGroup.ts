@@ -9,6 +9,8 @@ import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
 import type { PropType, VNode } from "vue";
 import type { ResolvedHopeThemeSidebarGroupItem } from "../../../../shared";
 
+import "../styles/sidebar-group.scss";
+
 export default defineComponent({
   name: "SidebarGroup",
 
@@ -24,7 +26,9 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const route = useRoute();
-    const active = computed(() => isActiveSidebarItem(route, props.config));
+    const active = computed(() =>
+      isActiveSidebarItem(route, props.config, true)
+    );
 
     return (): VNode[] => {
       const { collapsable, children = [], icon, link, text } = props.config;
@@ -56,9 +60,7 @@ export default defineComponent({
               renderIcon(icon),
               // title
               link
-                ? h(RouterLink, { to: link }, () =>
-                    h("span", { class: "title" }, text)
-                  )
+                ? h(RouterLink, { to: link, class: "title" }, () => text)
                 : h("span", { class: "title" }, text),
               // arrow
               collapsable

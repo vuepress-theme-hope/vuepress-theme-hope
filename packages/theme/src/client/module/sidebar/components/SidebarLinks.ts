@@ -3,7 +3,7 @@ import { useRoute } from "vue-router";
 
 import SidebarChild from "@theme-hope/module/sidebar/components/SidebarChild";
 import SidebarGroup from "@theme-hope/module/sidebar/components/SidebarGroup";
-import { isActiveLink } from "@theme-hope/utils";
+import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
 
 import type { PropType, VNode } from "vue";
 import type { RouteLocationNormalized } from "vue-router";
@@ -19,7 +19,7 @@ const descendantIsActive = (
     return item.children.some((child) => {
       if (child.type === "group") return descendantIsActive(route, child);
 
-      return child.type === "page" && isActiveLink(route, child.link);
+      return child.type === "page" && isActiveSidebarItem(route, child, true);
     });
 
   return false;

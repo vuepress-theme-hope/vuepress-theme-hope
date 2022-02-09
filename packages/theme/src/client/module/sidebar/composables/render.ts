@@ -3,12 +3,13 @@ import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import { useIconPrefix, useThemeLocaleData } from "@theme-hope/composables";
-import { isActiveLink } from "@theme-hope/utils";
+import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
 
 import type { VNode } from "vue";
 import type {
   ResolvedSidebarItem,
   ResolvedHopeThemeSidebarHeaderItem,
+  AutoLink as AutoLinkType,
 } from "../../../../shared";
 
 export const renderIcon = (icon?: string): VNode | null =>
@@ -21,18 +22,15 @@ export const renderIcon = (icon?: string): VNode | null =>
 export const renderItem = (
   config: ResolvedSidebarItem,
   props: VNode["props"]
-): VNode => {
-  return config.link
+): VNode =>
+  config.link
     ? // if the item has link, render it as `<AutoLink>`
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       h(AutoLink, {
         ...props,
-        config,
+        config: config as AutoLinkType,
       })
     : // if the item only has text, render it as `<p>`
       h("p", props, [renderIcon(config.icon), config.text]);
-};
 
 export const renderChildren = (
   children: ResolvedHopeThemeSidebarHeaderItem[]
@@ -44,15 +42,11 @@ export const renderChildren = (
     "ul",
     { class: "sidebar-sub-headers" },
     children.map((child) => {
-      const active = isActiveLink(route, child.link);
+      const active = isActiveSidebarItem(route, child, true);
 
       return h("li", { class: "sidebar-sub-header" }, [
         renderItem(child, {
-          class: {
-            "sidebar-link": true,
-            heading: true,
-            active,
-          },
+          class: ["sidebar-link", "heading", { active }],
         }),
         renderChildren(child.children),
       ]);

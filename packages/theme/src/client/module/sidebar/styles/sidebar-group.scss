@@ -1,0 +1,16 @@
+.sidebar-group {
+  .sidebar-group {
+    padding-left: 0.5em;
+  }
+
+  &:not(.collapsable) {
+    .sidebar-heading:not(.clickable) {
+      color: inherit;
+      cursor: auto;
+    }
+  }
+
+  .sidebar-link {
+    padding-left: 1.75rem;
+  }
+}

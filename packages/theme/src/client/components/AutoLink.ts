@@ -141,13 +141,13 @@ export default defineComponent({
               ariaLabel: linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
-              class: ["nav-link external", attrs.class],
+              class: ["nav-link", attrs.class],
               onFocusOut: () => emit("focusout"),
             },
             [
               slots.before?.() || renderIcon(config.value),
               config.value.text,
-              isBlankTarget.value ? h(ExternalLinkIcon) : null,
+              h(ExternalLinkIcon),
               slots.after?.(),
             ]
           );
