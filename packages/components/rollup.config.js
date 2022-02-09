@@ -44,7 +44,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FullScreen", {
-    external: ["@mr-hope/vuepress-shared/lib/client", "screenfull", "vue"],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "screenfull",
+      "vue",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Pagination", {
     external: [
