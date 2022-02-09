@@ -60,7 +60,7 @@
     "@vueuse/core": "^7.5.5",
     "bcryptjs": "^2.4.3",
     "lodash.throttle": "^4.1.1",
-    "vue": "^3.2.29",
+    "vue": "^3.2.30",
     "vue-router": "^4.0.12",
     "vuepress-plugin-blog2": "2.0.0-alpha.15",
     "vuepress-plugin-comment2": "2.0.0-alpha.15",
