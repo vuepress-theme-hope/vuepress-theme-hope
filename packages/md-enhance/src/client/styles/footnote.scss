@@ -3,6 +3,11 @@
   margin-top: calc(0rem - var(--navbar-height));
   padding-top: calc(var(--navbar-height) + 0.5rem);
 
+  @media (max-width: hope-config.$pad) {
+    margin-top: calc(0rem - var(--navbar-mobile-height));
+    padding-top: calc(var(--navbar-mobile-height) + 0.5rem);
+  }
+
   & > p {
     margin-bottom: 0;
   }
@@ -12,6 +17,11 @@
   position: relative;
   margin-top: calc(0rem - var(--navbar-height) - 0.5rem);
   padding-top: calc(var(--navbar-height) + 0.5rem);
+
+  @media (max-width: hope-config.$pad) {
+    margin-top: calc(0rem - var(--navbar-mobile-height) - 0.5rem);
+    padding-top: calc(var(--navbar-mobile-height) + 0.5rem);
+  }
 
   .footnote-anchor {
     position: absolute;
