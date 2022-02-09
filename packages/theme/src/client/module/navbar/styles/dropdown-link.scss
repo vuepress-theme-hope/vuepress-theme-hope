@@ -13,6 +13,7 @@
   &:hover,
   &.open {
     .nav-dropdown {
+      padding: 0.5rem;
       z-index: 2;
       transform: scale(1);
       visibility: visible;
@@ -75,9 +76,12 @@
 
     .dropdown-subtitle {
       margin: 0;
-      padding: 0.75rem 1rem 0.25rem 0.75rem;
+      padding: 0 0.25rem;
       color: var(--dark-grey);
-      font-size: 0.9rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+      line-height: 2;
+      text-transform: uppercase;
 
       .nav-link {
         padding: 0;
@@ -92,7 +96,7 @@
       display: block;
       position: relative;
       margin-bottom: 0;
-      padding: 0 1.5rem 0 1.25rem;
+      padding-left: 0.25rem;
       border-bottom: none;
       color: var(--dark-grey);
       font-weight: 400;
@@ -130,6 +134,7 @@
     }
 
     .dropdown-subitem {
+      padding-left: 0.5rem;
       font-size: 0.9em;
     }
   }
