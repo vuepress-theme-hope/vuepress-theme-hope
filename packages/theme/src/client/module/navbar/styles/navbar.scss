@@ -44,6 +44,10 @@
     transform: translateY(-100%);
   }
 
+  .no-sidebar & {
+    padding-left: var(--navbar-mobile-horizontal-padding);
+  }
+
   a,
   span,
   img {

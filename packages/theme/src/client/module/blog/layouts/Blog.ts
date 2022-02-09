@@ -3,6 +3,7 @@ import { defineComponent, h } from "vue";
 
 import BlogHome from "@theme-hope/module/blog/components/BlogHome";
 import BlogPage from "@theme-hope/module/blog/components/BlogPage";
+import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
 import InfoPanel from "@theme-hope/module/blog/components/InfoPanel";
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
@@ -25,7 +26,7 @@ export default defineComponent({
         CommonWrapper,
         { sidebar: false },
         {
-          sidebarBottom: () => h(InfoPanel),
+          navScreenBottom: () => h(BloggerInfo),
           default: () =>
             frontmatter.value.home
               ? h(BlogHome)

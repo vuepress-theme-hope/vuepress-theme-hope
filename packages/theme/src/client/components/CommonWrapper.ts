@@ -161,20 +161,32 @@ export default defineComponent({
           ? h(PasswordModal, { full: true, onVerify: validateGlobalToken })
           : [
               enableNavbar.value
-                ? h(Navbar, { onToggleSidebar: () => toggleSidebar() })
+                ? h(
+                    Navbar,
+                    { onToggleSidebar: () => toggleSidebar() },
+                    {
+                      left: () => slots.navbarLeft?.(),
+                      center: () => slots.navbarCenter?.(),
+                      right: () => slots.navbarRight?.(),
+                      screenTop: () => slots.navScreenTop?.(),
+                      screenBottom: () => slots.navScreenBottom?.(),
+                    }
+                  )
                 : null,
               h("div", {
                 class: "sidebar-mask",
                 onClick: () => toggleSidebar(false),
               }),
-              h(
-                Sidebar,
-                {},
-                {
-                  top: () => slots.sidebarTop?.(),
-                  bottom: () => slots.sidebarBottom?.(),
-                }
-              ),
+              enableSidedbar.value
+                ? h(
+                    Sidebar,
+                    {},
+                    {
+                      top: () => slots.sidebarTop?.(),
+                      bottom: () => slots.sidebarBottom?.(),
+                    }
+                  )
+                : null,
               slots.default?.(),
               h(PageFooter),
             ]

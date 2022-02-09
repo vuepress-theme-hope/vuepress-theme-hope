@@ -21,6 +21,10 @@
     display: block;
   }
 
+  .no-sidebar & {
+    display: none;
+  }
+
   &::before,
   &::after,
   .icon {

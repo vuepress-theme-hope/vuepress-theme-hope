@@ -17,7 +17,7 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const screen = ref<HTMLElement>();
 
     return (): VNode =>
@@ -35,7 +35,11 @@ export default defineComponent({
             ? h(
                 "div",
                 { class: "nav-screen", ref: screen },
-                h("div", { class: "container" }, [h(NavScreenLinks)])
+                h("div", { class: "container" }, [
+                  slots.before?.(),
+                  h(NavScreenLinks),
+                  slots.after?.(),
+                ])
               )
             : null
       );

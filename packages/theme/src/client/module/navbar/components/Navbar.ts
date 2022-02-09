@@ -123,19 +123,33 @@ export default defineComponent({
           h(ToggleSidebarButton, {
             onToggle: () => emit("toggle-sidebar"),
           }),
-          h(NavbarBrand, { ref: siteBrand }, { default: slots.before?.() }),
+          h(NavbarBrand, { ref: siteBrand }, () => slots.left?.()),
           h(NavbarLinks, {
             style: linksWrapperStyle.value,
           }),
-          h(NavActions, {
-            showScreen: showScreen.value,
-            onToggleScreen: () => {
-              showScreen.value = !showScreen.value;
+          h(
+            NavActions,
+            {
+              showScreen: showScreen.value,
+              onToggleScreen: () => {
+                showScreen.value = !showScreen.value;
+              },
             },
-          }),
+            {
+              before: () => slots.center?.(),
+              after: () => slots.right?.(),
+            }
+          ),
         ]
       ),
-      h(NavScreen, { active: showScreen.value }),
+      h(
+        NavScreen,
+        { active: showScreen.value },
+        {
+          before: () => slots.screenTop?.(),
+          after: () => slots.screenBottom?.(),
+        }
+      ),
     ];
   },
 });
