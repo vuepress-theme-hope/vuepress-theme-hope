@@ -2,16 +2,14 @@
  * toggle dark button
  */
 .toggle-dark-button {
-  display: flex;
-  margin: auto;
+  padding: 6px;
   border: 0;
   background: none;
-  color: var(--text-color);
-  opacity: 0.8;
+  color: var(--dark-grey);
   cursor: pointer;
 
   &:hover {
-    opacity: 1;
+    color: var(--theme-color);
   }
 
   .icon {
