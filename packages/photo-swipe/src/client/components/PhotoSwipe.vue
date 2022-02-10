@@ -82,7 +82,7 @@ import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { delay, imageSelector, locales, options } from "../define";
-import { getImages } from "../composables";
+import { getImages } from "../utils";
 
 import "photoswipe/dist/photoswipe.css";
 import "photoswipe/dist/default-skin/default-skin.css";
@@ -102,8 +102,9 @@ export default defineComponent({
         import(
           /* webpackChunkName: "photo-swipe" */ "photoswipe/dist/photoswipe-ui-default"
         ),
-        getImages(imageSelector),
-        new Promise<void>((resolve) => setTimeout(() => resolve(), delay)),
+        new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
+          getImages(imageSelector)
+        ),
       ]).then(([photoSwipe, photoSwipeUIDefault, images]) => {
         images.elements.forEach((image, index) => {
           image.addEventListener("click", (): void => {
@@ -112,7 +113,7 @@ export default defineComponent({
               photoSwipeUIDefault.default,
               images.infos,
               {
-                shareButtons: locales.value.buttons,
+                shareButtons: locale.value.buttons,
                 ...options,
                 index,
               }
