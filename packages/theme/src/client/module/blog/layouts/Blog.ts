@@ -4,6 +4,7 @@ import { defineComponent, h } from "vue";
 import BlogHome from "@theme-hope/module/blog/components/BlogHome";
 import BlogPage from "@theme-hope/module/blog/components/BlogPage";
 import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
+import InfoList from "@theme-hope/module/blog/components/InfoList";
 import InfoPanel from "@theme-hope/module/blog/components/InfoPanel";
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
@@ -24,8 +25,9 @@ export default defineComponent({
       h(SkipLink),
       h(
         CommonWrapper,
-        { sidebar: false },
+        {},
         {
+          sidebarTop: () => h(InfoList),
           navScreenBottom: () => h(BloggerInfo),
           default: () =>
             frontmatter.value.home

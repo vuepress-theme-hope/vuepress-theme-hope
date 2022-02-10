@@ -60,13 +60,15 @@ export default defineComponent({
     // sidebar
     const sidebarItems = useSidebarItems();
 
-    const enableSidedbar = computed(() => {
+    const enableSidebar = computed(() => {
       if (props.sidebar === false) return false;
 
       return (
-        !frontmatter.value.home &&
-        frontmatter.value.sidebar !== false &&
-        sidebarItems.value.length !== 0
+        (frontmatter.value.sidebar !== false &&
+          sidebarItems.value.length !== 0 &&
+          !frontmatter.value.home) ||
+        slots.sidebarTop ||
+        slots.sidebarBottom
       );
     });
 
@@ -106,7 +108,7 @@ export default defineComponent({
       "theme-container",
       {
         "no-navbar": !enableNavbar.value,
-        "no-sidebar": !enableSidedbar.value,
+        "no-sidebar": !enableSidebar.value,
         "has-anchor": enableAnchor.value,
         "hide-navbar": hideNavbar.value,
         "sidebar-open": isSidebarOpen.value,
@@ -177,7 +179,7 @@ export default defineComponent({
                 class: "sidebar-mask",
                 onClick: () => toggleSidebar(false),
               }),
-              enableSidedbar.value
+              enableSidebar.value
                 ? h(
                     Sidebar,
                     {},
