@@ -95,6 +95,13 @@ export default defineComponent({
                     bloggerName.value
                   )
                 : null,
+              blogOptions.value.description
+                ? h(
+                    "div",
+                    { class: "description" },
+                    blogOptions.value.description
+                  )
+                : null,
               intro.value
                 ? h("meta", { property: "url", content: withBase(intro.value) })
                 : null,

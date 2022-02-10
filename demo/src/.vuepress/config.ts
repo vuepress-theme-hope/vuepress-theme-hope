@@ -56,6 +56,10 @@ export default defineUserConfig<HopeThemeOptions>({
 
         displayFooter: true,
 
+        blog: {
+          description: "A FrontEnd programmer",
+        },
+
         metaLocales: {
           editLink: "Edit this page on GitHub",
         },
@@ -74,6 +78,10 @@ export default defineUserConfig<HopeThemeOptions>({
         footer: "默认页脚",
 
         displayFooter: true,
+
+        blog: {
+          description: "一个前端开发者",
+        },
 
         // page meta
         metaLocales: {

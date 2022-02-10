@@ -51,6 +51,13 @@ export interface HopeThemeBlogOptions {
   avatar?: string;
 
   /**
+   * Motto, slogan or a short description
+   *
+   * 口号、座右铭或介绍语
+   */
+  description?: string;
+
+  /**
    * Blogger introduction page link
    *
    * 博主的个人介绍页地址
