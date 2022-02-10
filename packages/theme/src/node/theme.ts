@@ -68,6 +68,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
       ...(plugins.blog
         ? [path.resolve(__dirname, "../client/module/blog/appSetup.js")]
         : []),
+      path.resolve(__dirname, "../client/module/sidebar/appSetup.js"),
     ],
 
     extendsPage: (page) =>
