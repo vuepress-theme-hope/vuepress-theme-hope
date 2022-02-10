@@ -1,11 +1,14 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import { PrevIcon, NextIcon } from "@theme-hope/components/icons";
-import { useAutoLink } from "@theme-hope/composables";
+import {
+  useAutoLink,
+  useIconPrefix,
+  useNavigate,
+} from "@theme-hope/composables";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 import type { VNode } from "vue";
@@ -68,9 +71,11 @@ export default defineComponent({
   name: "PageNav",
 
   setup() {
+    const iconPrefix = useIconPrefix();
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
     const route = useRoute();
+    const navigate = useNavigate();
 
     const prevNavLink = computed(() => {
       const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev);
@@ -88,26 +93,74 @@ export default defineComponent({
         : resolveFromSidebarItems(sidebarItems.value, route.path, 1);
     });
 
+    const keyboardListener = (event: KeyboardEvent): void => {
+      if (event.altKey) {
+        if (event.key === "ArrowRight") {
+          if (nextNavLink.value) {
+            navigate(nextNavLink.value.link);
+            event.preventDefault();
+          }
+        } else if (event.key === "ArrowLeft") {
+          if (prevNavLink.value) {
+            navigate(prevNavLink.value.link);
+            event.preventDefault();
+          }
+        }
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener("keydown", keyboardListener);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("keydown", keyboardListener);
+    });
+
     return (): VNode | null =>
       prevNavLink.value || nextNavLink.value
-        ? h(
-            "nav",
-            { class: "page-nav" },
-            h("p", { class: "inner" }, [
-              prevNavLink.value
-                ? h("span", { class: "prev" }, [
-                    h(PrevIcon),
-                    h(AutoLink, { config: prevNavLink.value }),
-                  ])
-                : null,
-              nextNavLink.value
-                ? h("span", { class: "next" }, [
-                    h(AutoLink, { config: nextNavLink.value }),
-                    h(NextIcon),
-                  ])
-                : null,
-            ])
-          )
+        ? h("nav", { class: "page-nav" }, [
+            prevNavLink.value
+              ? h(
+                  AutoLink,
+                  { class: "prev", config: prevNavLink.value },
+                  () => [
+                    h("div", { class: "hint" }, [
+                      h("span", { class: "arrow left" }),
+                      "Prev",
+                    ]),
+                    h("div", { class: "link" }, [
+                      prevNavLink.value?.icon
+                        ? h("i", {
+                            class: `icon ${iconPrefix.value}${prevNavLink.value.icon}`,
+                          })
+                        : null,
+                      prevNavLink.value?.text,
+                    ]),
+                  ]
+                )
+              : null,
+            nextNavLink.value
+              ? h(
+                  AutoLink,
+                  { class: "next", config: nextNavLink.value },
+                  () => [
+                    h("div", { class: "hint" }, [
+                      "Next",
+                      h("span", { class: "arrow right" }),
+                    ]),
+                    h("div", { class: "link" }, [
+                      nextNavLink.value?.text,
+                      nextNavLink.value?.icon
+                        ? h("i", {
+                            class: `icon ${iconPrefix.value}${nextNavLink.value.icon}`,
+                          })
+                        : null,
+                    ]),
+                  ]
+                )
+              : null,
+          ])
         : null;
   },
 });

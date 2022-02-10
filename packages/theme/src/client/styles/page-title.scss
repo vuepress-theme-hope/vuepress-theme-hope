@@ -2,12 +2,12 @@
 
 .page {
   .page-title {
-    @include wrapper.wrapper;
+    @include wrapper.horizontal-wrapper;
 
     position: relative;
     z-index: 1;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0 !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
 
     h1 {
       margin-top: calc(0.5rem - var(--navbar-height)) !important;

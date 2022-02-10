@@ -126,11 +126,12 @@ export default defineComponent({
               class: ["nav-link", { active: isActive.value }, attrs.class],
               onFocusOut: () => emit("focusout"),
             },
-            () => [
-              slots.before?.() || renderIcon(config.value),
-              config.value.text,
-              slots.after?.(),
-            ]
+            () =>
+              slots.default?.() || [
+                slots.before?.() || renderIcon(config.value),
+                config.value.text,
+                slots.after?.(),
+              ]
           )
         : h(
             "a",

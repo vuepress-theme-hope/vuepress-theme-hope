@@ -1,14 +1,14 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
 .page-meta {
-  @include wrapper.wrapper;
+  @include wrapper.horizontal-wrapper;
+
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   overflow: auto;
 
   .meta-item {
-    cursor: default;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
 
     .label {
       font-weight: 500;
