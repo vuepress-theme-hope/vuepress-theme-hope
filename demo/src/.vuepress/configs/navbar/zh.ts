@@ -8,7 +8,7 @@ export const zh: HopeThemeNavbarConfig = [
   {
     text: "博文",
     icon: "edit",
-    prefix: "/posts/",
+    prefix: "/zh/posts/",
     children: [
       {
         text: "文章 1-4",
