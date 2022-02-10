@@ -8,6 +8,16 @@ export default defineUserConfig<HopeThemeOptions>({
 
   dest: "./dist",
 
+  head: [
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "//at.alicdn.com/t/font_2410206_kxwb6og9m5.css",
+      },
+    ],
+  ],
+
   locales: {
     "/": {
       lang: "en-US",
