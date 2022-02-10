@@ -33,7 +33,7 @@
 
       &.theme-color {
         // original theme-color
-        background: var(--theme-color);
+        background: hope-config.$themeColor;
       }
     }
   }
