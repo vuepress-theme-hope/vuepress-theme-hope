@@ -1,3 +1,4 @@
+import { ClientOnly } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
@@ -29,19 +30,20 @@ export default defineComponent({
       () => themeLocale.value.themeColor !== false
     );
 
-    return (): (VNode | null)[] => [
-      enableThemeColor.value ? h(ThemeColorPicker) : null,
-      enableDarkmode.value ? h(AppearanceSwitch) : null,
-      FullScreen
-        ? h("div", { class: "themecolor-wrapper" }, [
-            h(
-              "label",
-              { class: "full-screen-title", for: "full-screen-switch" },
-              fullScreenLocale.value
-            ),
-            h(FullScreen, { id: "full-screen-switch" }),
-          ])
-        : null,
-    ];
+    return (): VNode =>
+      h(ClientOnly, () => [
+        enableThemeColor.value ? h(ThemeColorPicker) : null,
+        enableDarkmode.value ? h(AppearanceSwitch) : null,
+        FullScreen
+          ? h("div", { class: "themecolor-wrapper" }, [
+              h(
+                "label",
+                { class: "full-screen-title", for: "full-screen-switch" },
+                fullScreenLocale.value
+              ),
+              h(FullScreen, { id: "full-screen-switch" }),
+            ])
+          : null,
+      ]);
   },
 });
