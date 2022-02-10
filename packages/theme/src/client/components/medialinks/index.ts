@@ -55,7 +55,7 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
-    const themeLocaleData = useThemeLocaleData();
+    const themeLocale = useThemeLocaleData();
     const isPure = usePure();
 
     const mediaLinks = computed(() => {
@@ -66,8 +66,8 @@ export default defineComponent({
           ? false
           : typeof medialinks === "object"
           ? medialinks
-          : themeLocaleData.value.blog
-          ? themeLocaleData.value.blog?.links || false
+          : themeLocale.value.blog
+          ? themeLocale.value.blog?.links || false
           : false;
 
       if (config) {

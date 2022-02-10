@@ -14,7 +14,7 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
-    const themeLocaleData = useThemeLocaleData();
+    const themeLocale = useThemeLocaleData();
     const author = usePageAuthor();
 
     const enable = computed(() => {
@@ -23,10 +23,7 @@ export default defineComponent({
       return (
         footer !== false &&
         Boolean(
-          copyright ||
-            footer ||
-            medialinks ||
-            themeLocaleData.value.displayFooter
+          copyright || footer || medialinks || themeLocale.value.displayFooter
         )
       );
     });
@@ -38,16 +35,16 @@ export default defineComponent({
         ? false
         : typeof footer === "string"
         ? footer
-        : themeLocaleData.value.footer || "";
+        : themeLocale.value.footer || "";
     });
 
     const copyright = computed(() =>
       frontmatter.value.copyright === false
         ? false
         : frontmatter.value.copyright ||
-          (themeLocaleData.value.copyright === false
+          (themeLocale.value.copyright === false
             ? false
-            : themeLocaleData.value.copyright ||
+            : themeLocale.value.copyright ||
               (author.value.length
                 ? `Copyright © ${new Date().getFullYear()} ${
                     author.value[0].name

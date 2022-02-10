@@ -45,7 +45,7 @@ export default defineComponent({
   emits: ["toggle-sidebar"],
 
   setup(_props, { emit, slots }) {
-    const themeLocaleData = useThemeLocaleData();
+    const themeLocale = useThemeLocaleData();
 
     const isMobile = ref(false);
     const showScreen = ref(false);
@@ -63,7 +63,7 @@ export default defineComponent({
     });
 
     const autoHide = computed(() => {
-      const { navbarAutoHide } = themeLocaleData.value;
+      const { navbarAutoHide } = themeLocale.value;
 
       return (
         navbarAutoHide !== "none" &&
