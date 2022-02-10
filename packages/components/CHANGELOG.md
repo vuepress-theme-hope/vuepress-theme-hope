@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
+
+### Bug Fixes
+
+- **components:** fix BreadCrumb ([bc17943](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bc179434f6384685c8171152028d3a7b0213af06))
+- **components:** fix category ([48eb648](https://github.com/Mister-Hope/vuepress-theme-hope/commit/48eb6488efcd605c792eb7e998646e7a87c2f380))
+
+### Features
+
+- **theme:** add resize listener ([7aa4050](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7aa4050c339e37fb77f589b255f32be878644add))
+
 # [2.0.0-alpha.16](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
 
 ### Features

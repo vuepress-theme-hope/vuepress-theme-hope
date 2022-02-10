@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
+
+### Bug Fixes
+
+- **components:** fix BreadCrumb ([bc17943](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bc179434f6384685c8171152028d3a7b0213af06))
+- **components:** fix category ([48eb648](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48eb6488efcd605c792eb7e998646e7a87c2f380))
+- **photo-swipe:** fix delay option ([b3aee43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3aee43f53a5a0782b47879a260dc2220ef277fd))
+- **theme:** add missing optimizeDep ([1a743ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1a743ad9172050e86a5f9409a162a78f49d5241a))
+- **theme:** fix page title spacing ([9fba660](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9fba6606f665a0f8fed9468d3d3304b8f58846bc))
+- **theme:** fix sidebar ([7e1094f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7e1094fef686bdf3fdb774912baecb7ef6b546fa))
+- **theme:** fix themecolor picker style ([471f51e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/471f51e35d58f1fed608dc282e518ebafb56766f))
+- **theme:** fix zh locales ([3215673](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/321567333744fe86fae25450455c3ecd8c0d4186))
+- **theme:** wrap outlook settings with clientonly ([cec2f9f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cec2f9fcb9f8e58af60069f2ba8f44d3190baeac))
+
+### Features
+
+- **theme:** add description options ([80f8313](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/80f8313416ad4eb5a6dc7dd43cd037950e04a473))
+- **theme:** add resize listener ([7aa4050](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7aa4050c339e37fb77f589b255f32be878644add))
+- **theme:** add sidebar mask color ([f4cad33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f4cad33dce963e5550ce1f94a9ce5aed57d47f19))
+- **theme:** improve navbar outlook ([6795a88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6795a8865f9a3c39733ef6cf2c2163a137d8791e))
+- **theme:** improve navscreen styles ([7abaead](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7abaead16bdc7c5c93ada3d8b74764af4daf272c))
+- **theme:** rebuild pagenav ([dd1646a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd1646a970c9a0d0837194bdf38cdfa1096ac3f5))
+- **theme:** support locale in PageNav ([5dda0ce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5dda0ce689a79ec9ba0125333d7e15009748d74a))
+- **theme:** update navscreen links ([48fc519](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48fc519dff1fdb713058f48609450bbda9f139ae))
+- **theme:** update outlook panel ([452760d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/452760dcc24ad115a84bcaa0c57b24705ae85167))
+- update blog layout ([1a64724](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1a647247d8faab6c3b88b59a334e0abab73716d1))
+
 # [2.0.0-alpha.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
 
 ### Bug Fixes

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
+
+### Bug Fixes
+
+- **components:** fix BreadCrumb ([bc17943](https://github.com/Mister-Hope/vuepress-theme-hope/commit/bc179434f6384685c8171152028d3a7b0213af06))
+
+### Features
+
+- **theme:** rebuild pagenav ([dd1646a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/dd1646a970c9a0d0837194bdf38cdfa1096ac3f5))
+
 # [2.0.0-alpha.16](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared

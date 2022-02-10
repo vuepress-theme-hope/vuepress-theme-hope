@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
+
+### Bug Fixes
+
+- **photo-swipe:** fix delay option ([b3aee43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3aee43f53a5a0782b47879a260dc2220ef277fd))
+
 # [2.0.0-alpha.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
 
 **Note:** Version bump only for package vuepress-plugin-photo-swipe
