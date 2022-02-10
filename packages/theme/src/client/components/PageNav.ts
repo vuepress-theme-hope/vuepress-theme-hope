@@ -8,6 +8,7 @@ import {
   useAutoLink,
   useIconPrefix,
   useNavigate,
+  useThemeLocaleData,
 } from "@theme-hope/composables";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
@@ -71,6 +72,7 @@ export default defineComponent({
   name: "PageNav",
 
   setup() {
+    const themeLocale = useThemeLocaleData();
     const iconPrefix = useIconPrefix();
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
@@ -127,7 +129,7 @@ export default defineComponent({
                   () => [
                     h("div", { class: "hint" }, [
                       h("span", { class: "arrow left" }),
-                      "Prev",
+                      themeLocale.value.metaLocales.prev,
                     ]),
                     h("div", { class: "link" }, [
                       prevNavLink.value?.icon
@@ -146,7 +148,7 @@ export default defineComponent({
                   { class: "next", config: nextNavLink.value },
                   () => [
                     h("div", { class: "hint" }, [
-                      "Next",
+                      themeLocale.value.metaLocales.next,
                       h("span", { class: "arrow right" }),
                     ]),
                     h("div", { class: "link" }, [

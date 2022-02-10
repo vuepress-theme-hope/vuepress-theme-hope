@@ -1,5 +1,15 @@
 export interface HopeThemeMetaLocateData {
   /**
+   * Page nav - previous link
+   */
+  prev: string;
+
+  /**
+   * Page nav - next link
+   */
+  next: string;
+
+  /**
    * Page meta - last updated config
    *
    * The text to replace the default "Last Updated"

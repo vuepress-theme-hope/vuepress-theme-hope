@@ -11,6 +11,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "Prev",
+      next: "Next",
       lastUpdated: "Last update",
       contributors: "Contributors",
       editLink: "Edit this page",
@@ -63,6 +65,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "上一页",
+      next: "下一页",
       lastUpdated: "上次编辑于",
       contributors: "贡献者",
       editLink: "编辑此页",
@@ -115,6 +119,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "上一頁",
+      next: "下一頁",
       lastUpdated: "上次編輯於",
       contributors: "貢獻者",
       editLink: "編輯此頁",
@@ -167,6 +173,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "Prev",
+      next: "Next",
       lastUpdated: "Zuletzt geändert",
       contributors: "Mitwirkende",
       editLink: "Diese Seite barbeiten",
@@ -219,6 +227,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "Prev",
+      next: "Next",
       lastUpdated: "Cập nhật gần nhất lúc",
       contributors: "Người đóng góp",
       editLink: "Chỉnh sửa trang này",
@@ -271,6 +281,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "Prev",
+      next: "Next",
       lastUpdated: "Последнее обновление",
       contributors: "Авторы",
       editLink: "Редактировать эту страницу",
@@ -323,6 +335,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "Prev",
+      next: "Next",
       lastUpdated: "Останнє оновлення",
       contributors: "Автори",
       editLink: "Редагувати цю сторінку",
@@ -375,6 +389,8 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     metaLocales: {
+      prev: "Prev",
+      next: "Next",
       lastUpdated: "Última atualização",
       editLink: "Editar esta página",
       contributors: "Contribuidores",
