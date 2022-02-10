@@ -1,8 +1,7 @@
+import { isActiveLink } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-
-import { isActiveLink } from "@theme-hope/utils";
 
 import type { PageHeader } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";

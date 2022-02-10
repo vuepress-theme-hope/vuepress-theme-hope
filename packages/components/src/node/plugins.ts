@@ -39,6 +39,9 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
       "@FullScreen": options.fullScreen
         ? path.resolve(__dirname, "../client/components/FullScreen.js")
         : noopModule,
+      "@PageAnchor": options.pageAnchor
+        ? path.resolve(__dirname, "../client/components/PageAnchor.js")
+        : noopModule,
       "@Pagination": options.pagination
         ? path.resolve(__dirname, "../client/components/Pagination.js")
         : noopModule,

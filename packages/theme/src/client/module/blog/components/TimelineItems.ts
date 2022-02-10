@@ -1,6 +1,5 @@
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 
-import PageAnchor from "@theme-hope/components/PageAnchor";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
 import {
@@ -42,7 +41,7 @@ export default defineComponent({
         { class: "timeline-wrapper" },
         h("ul", { class: "timeline-content" }, [
           h(DropTransition, () => h("li", { class: "desc" }, hint.value)),
-          h(PageAnchor, { items: items.value }),
+          h(resolveComponent("PageAnchor"), { items: items.value }),
           ...timelines.value.config.map(({ year, items }, index) =>
             h(DropTransition, { delay: 0.08 * (index + 1) }, () =>
               h("li", [

@@ -38,6 +38,14 @@ declare module "@FullScreen" {
   export default component;
 }
 
+declare module "@PageAnchor" {
+  import type { ComponentOptions } from "vue";
+
+  const component: ComponentOptions;
+
+  export default component;
+}
+
 declare module "@Pagination" {
   import type { ComponentOptions } from "vue";
 

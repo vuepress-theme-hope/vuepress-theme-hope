@@ -1,15 +1,17 @@
-import { defineComponent, h, resolveComponent } from "vue";
+import { usePageFrontmatter } from "@vuepress/client";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import PageAnchor from "@theme-hope/components/PageAnchor";
 import PageMeta from "@theme-hope/components/PageMeta";
 import PageNav from "@theme-hope/components/PageNav";
 import PageTitle from "@theme-hope/components/PageTitle";
 import { useIconPrefix } from "@theme-hope/composables";
 import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
+import { useThemeData } from "@theme-hope/composables";
 import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
 import type { VNode } from "vue";
+import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
 import "../styles/page.scss";
 
@@ -17,8 +19,17 @@ export default defineComponent({
   name: "NormalPage",
 
   setup(_props, { slots }) {
+    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const iconPrefix = useIconPrefix();
+    const themeData = useThemeData();
     const { isEncrypted, validateToken } = usePathEncrypt();
+
+    const breadcrumbEnable = computed(
+      () =>
+        frontmatter.value.breadcrumb ||
+        (frontmatter.value.breadcrumb !== false &&
+          themeData.value.breadcrumb !== false)
+    );
 
     return (): VNode =>
       h(
@@ -29,10 +40,12 @@ export default defineComponent({
           : [
               slots.top?.(),
               h(resolveComponent("BreadCrumb"), {
+                enable: breadcrumbEnable.value,
+                icon: themeData.value.breadcrumbIcon,
                 iconPrefix: iconPrefix.value,
               }),
               h(PageTitle),
-              h(PageAnchor),
+              h(resolveComponent("PageAnchor")),
               h(MarkdownContent),
               h(PageMeta),
               h(PageNav),

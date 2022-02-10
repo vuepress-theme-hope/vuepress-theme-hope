@@ -12,5 +12,6 @@ export const resolveComponentsOptions = (
   breadcrumb: true,
   badge: true,
   fullScreen: themeConfig.fullScreen,
+  pageAnchor: true,
   pagination: Boolean(plugins.blog),
 });

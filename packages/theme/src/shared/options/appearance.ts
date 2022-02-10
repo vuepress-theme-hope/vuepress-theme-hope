@@ -107,4 +107,22 @@ export interface HopeThemeAppearanceOptions {
    * @default true
    */
   backToTop?: boolean | number;
+
+  /**
+   * Whether enable breadcrumb globally
+   *
+   * 是否全局启用路径导航
+   *
+   * @default true
+   */
+  breadcrumb?: boolean;
+
+  /**
+   * Whether display icon in breadcrumb
+   *
+   * 是否在路径导航显示图标
+   *
+   * @default true
+   */
+  breadcrumbIcon?: boolean;
 }

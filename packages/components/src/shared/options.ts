@@ -57,6 +57,15 @@ export interface ComponentOptions {
   badge?: boolean;
 
   /**
+   * Whether register page anchors
+   *
+   * 是否注册页面锚点
+   *
+   * @default false
+   */
+  pageAnchor?: boolean;
+
+  /**
    * Whether register pagination component
    *
    * 是否注册分页组件

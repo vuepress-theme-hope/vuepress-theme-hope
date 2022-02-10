@@ -5,9 +5,27 @@ import type { HopeThemeSidebarConfig } from "../sidebar";
 
 export interface HopeThemeNormalPageFrontmatter
   extends HopeThemePageFrontmatter {
+  /**
+   * Whether is homepage
+   *
+   * 是否是主页
+   */
   home?: false;
+
+  /**
+   * Sidebar configuration
+   *
+   * 侧边栏配置
+   */
   sidebar?: "auto" | false | HopeThemeSidebarConfig;
+
+  /**
+   * Page Heading depth
+   *
+   * 页面标题深度
+   */
   headingDepth?: number;
+
   /**
    * Whether display lastUpdated time
    *
@@ -15,14 +33,33 @@ export interface HopeThemeNormalPageFrontmatter
    */
 
   lastUpdated?: boolean;
+
   /**
    * Whether display contributors
    *
    * 是否显示贡献者
    */
   contributors?: boolean;
+
+  /**
+   * Whether show Edit link
+   *
+   * 是否显示编辑此页链接
+   */
   editLink?: boolean;
+
+  /**
+   * Previous page link
+   *
+   * 上一页链接
+   */
   prev?: string | AutoLink;
+
+  /**
+   * Next page link
+   *
+   * 下一页链接
+   */
   next?: string | AutoLink;
 
   /**
@@ -35,11 +72,21 @@ export interface HopeThemeNormalPageFrontmatter
   pageInfo?: ArticleInfo[] | false;
 
   /**
-   * @description Only available when using valine
+   * Whether enable breadcrumb
+   *
+   * 是否启用路径导航
+   */
+  breadcrumb?: boolean;
+
+  /**
+   *
+   * Whether enable pageviews
+   *
+   * @description Only available when using waline comment service
    *
    * 是否启用访问量
    *
-   * Whether enable pageviews
+   * @description 仅在使用 Waline 评论服务时有效
    *
    * @default true
    */
