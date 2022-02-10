@@ -17,16 +17,6 @@
         padding-top: calc(1rem + var(--navbar-height));
         margin-bottom: 0.5rem;
 
-        &:first-child {
-          margin-bottom: 1rem;
-
-          + p,
-          + pre,
-          + .custom-container {
-            margin-top: 2rem;
-          }
-        }
-
         .theme-container.no-navbar & {
           margin-top: 1.5rem;
           padding-top: 0;
