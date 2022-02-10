@@ -88,7 +88,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
 
     outlookLocales: {
       themeColor: "主题色",
-      darkmode: "主题色",
+      darkmode: "外观",
       fullscreen: "全屏",
     },
 
