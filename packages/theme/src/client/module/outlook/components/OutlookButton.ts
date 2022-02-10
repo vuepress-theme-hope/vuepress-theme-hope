@@ -1,8 +1,8 @@
 import { defineComponent, h, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
-import OutlookSettings from "@theme-hope/module/navbar/components/OutlookSettings";
-import { OutlookIcon } from "@theme-hope/module/navbar/components/icons";
+import OutlookSettings from "@theme-hope/module/outlook/components/OutlookSettings";
+import { OutlookIcon } from "@theme-hope/module/outlook/components/icons";
 
 import type { VNode } from "vue";
 

@@ -1,14 +1,15 @@
 import { computed, defineComponent, h } from "vue";
 
-import { AutoIcon, DarkIcon, LightIcon } from "@theme-hope/components/icons";
 import {
-  useDarkMode,
-  useThemeData,
-  useThemeLocaleData,
-} from "@theme-hope/composables";
+  AutoIcon,
+  DarkIcon,
+  LightIcon,
+} from "@theme-hope/module/outlook/components/icons";
+import { useThemeData, useThemeLocaleData } from "@theme-hope/composables";
+import { useDarkMode } from "@theme-hope/module/outlook/composables";
 
 import type { VNode } from "vue";
-import type { DarkmodeStatus } from "@theme-hope/composables";
+import type { DarkmodeStatus } from "@theme-hope/module/outlook/composables";
 
 import "../styles/appearance-switch.scss";
 

@@ -1,6 +1,6 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
 import { computed, inject, onMounted, onUnmounted, provide, watch } from "vue";
-import { useThemeData } from "./themeData";
+import { useThemeData } from "@theme-hope/composables";
 
 import type { InjectionKey, Ref, WritableComputedRef } from "vue";
 

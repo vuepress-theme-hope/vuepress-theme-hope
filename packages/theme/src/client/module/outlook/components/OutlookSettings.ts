@@ -2,8 +2,8 @@ import { ClientOnly } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
-import AppearanceSwitch from "@theme-hope/module/navbar/components/AppearanceSwitch";
-import ThemeColorPicker from "@theme-hope/module/navbar/components/ThemeColorPicker";
+import AppearanceSwitch from "@theme-hope/module/outlook/components/AppearanceSwitch";
+import ThemeColorPicker from "@theme-hope/module/outlook/components/ThemeColorPicker";
 
 import type { VNode } from "vue";
 
@@ -35,7 +35,7 @@ export default defineComponent({
         enableThemeColor.value ? h(ThemeColorPicker) : null,
         enableDarkmode.value ? h(AppearanceSwitch) : null,
         FullScreen
-          ? h("div", { class: "themecolor-wrapper" }, [
+          ? h("div", { class: "fullscreen-wrapper" }, [
               h(
                 "label",
                 { class: "full-screen-title", for: "full-screen-switch" },

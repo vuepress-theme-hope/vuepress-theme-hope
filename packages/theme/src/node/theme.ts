@@ -69,10 +69,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
 
     clientAppSetupFiles: [
-      path.resolve(__dirname, "../client/appSetup.js"),
       ...(plugins.blog
         ? [path.resolve(__dirname, "../client/module/blog/appSetup.js")]
         : []),
+      path.resolve(__dirname, "../client/module/outlook/appSetup.js"),
       path.resolve(__dirname, "../client/module/sidebar/appSetup.js"),
     ],
 

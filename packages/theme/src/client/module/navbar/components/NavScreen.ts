@@ -2,7 +2,7 @@ import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import { Transition, defineComponent, h, ref } from "vue";
 
 import NavScreenLinks from "@theme-hope/module/navbar/components/NavScreenLinks";
-import OutlookSettings from "@theme-hope/module/navbar/components/OutlookSettings";
+import OutlookSettings from "@theme-hope/module/outlook/components/OutlookSettings";
 
 import type { VNode } from "vue";
 

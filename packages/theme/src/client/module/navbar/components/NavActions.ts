@@ -2,7 +2,7 @@ import { defineComponent, h, resolveComponent } from "vue";
 
 import LanguageDropdown from "@theme-hope/module/navbar/components/LanguageDropdown";
 import RepoLink from "@theme-hope/module/navbar/components/RepoLink";
-import OutlookButton from "@theme-hope/module/navbar/components/OutlookButton";
+import OutlookButton from "@theme-hope/module/outlook/components/OutlookButton";
 import ToggleNavbarButton from "@theme-hope/module/navbar/components/ToggleNavbarButton";
 
 import type { VNode } from "vue";
