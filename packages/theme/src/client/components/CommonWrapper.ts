@@ -72,11 +72,9 @@ export default defineComponent({
       if (props.sidebar === false) return false;
 
       return (
-        (frontmatter.value.sidebar !== false &&
-          sidebarItems.value.length !== 0 &&
-          !frontmatter.value.home) ||
-        slots.sidebarTop ||
-        slots.sidebarBottom
+        frontmatter.value.sidebar !== false &&
+        sidebarItems.value.length !== 0 &&
+        !frontmatter.value.home
       );
     });
 
@@ -191,16 +189,14 @@ export default defineComponent({
                     })
                   : null
               ),
-              enableSidebar.value
-                ? h(
-                    Sidebar,
-                    {},
-                    {
-                      top: () => slots.sidebarTop?.(),
-                      bottom: () => slots.sidebarBottom?.(),
-                    }
-                  )
-                : null,
+              h(
+                Sidebar,
+                {},
+                {
+                  top: () => slots.sidebarTop?.(),
+                  bottom: () => slots.sidebarBottom?.(),
+                }
+              ),
               slots.default?.(),
               h(PageFooter),
             ]
