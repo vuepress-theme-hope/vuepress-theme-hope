@@ -44,7 +44,7 @@ export default defineComponent({
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const delay = new Promise<void>((resolve) =>
-      setTimeout(() => resolve(), LIGHT_GALLERY_DELAY)
+      setTimeout(resolve, LIGHT_GALLERY_DELAY)
     );
     const plugins: Promise<{
       default: new (

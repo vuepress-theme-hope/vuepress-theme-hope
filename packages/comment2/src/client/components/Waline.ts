@@ -79,7 +79,7 @@ export default defineComponent({
         void Promise.all([
           import("@waline/client"),
           new Promise<void>((resolve) => {
-            setTimeout(() => resolve(), walineOption.delay);
+            setTimeout(resolve, walineOption.delay);
           }),
         ]).then(([{ default: Waline }]) => {
           if (timeID === id)

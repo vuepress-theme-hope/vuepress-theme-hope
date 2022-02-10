@@ -36,21 +36,18 @@ export default defineComponent({
         const count = countElement.textContent;
 
         if (count && !isNaN(Number(count))) pageViews.value = Number(count);
-        else
-          setTimeout(() => {
-            getCount();
-          }, 500);
+        else setTimeout(getCount, 500);
       }
     };
 
     onMounted(() => {
-      setTimeout(() => getCount(), 1500);
+      setTimeout(getCount, 1500);
     });
 
     watch(
       () => route.path,
       (newValue: string, oldValue: string) => {
-        if (newValue !== oldValue) setTimeout(() => getCount(), 500);
+        if (newValue !== oldValue) setTimeout(getCount, 500);
       }
     );
 
