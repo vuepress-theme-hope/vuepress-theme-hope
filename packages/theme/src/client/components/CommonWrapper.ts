@@ -1,5 +1,13 @@
 import throttle from "lodash.throttle";
-import { computed, defineComponent, h, onMounted, onUnmounted, ref } from "vue";
+import {
+  Transition,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  onUnmounted,
+  ref,
+} from "vue";
 import { useRouter } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
@@ -175,10 +183,14 @@ export default defineComponent({
                     }
                   )
                 : null,
-              h("div", {
-                class: "sidebar-mask",
-                onClick: () => toggleSidebar(false),
-              }),
+              h(Transition, { name: "fade" }, () =>
+                isSidebarOpen.value
+                  ? h("div", {
+                      class: "sidebar-mask",
+                      onClick: () => toggleSidebar(false),
+                    })
+                  : null
+              ),
               enableSidebar.value
                 ? h(
                     Sidebar,

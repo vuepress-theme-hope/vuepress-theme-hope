@@ -75,9 +75,15 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: none;
+  background-color: rgba(0, 0, 0, 0.15);
 
-  .theme-container.sidebar-open & {
-    display: block;
+  &.fade-enter-active,
+  &.fade-leave-active {
+    transition: opacity 0.25s;
+  }
+
+  &.fade-enter-from,
+  &.fade-leave-to {
+    opacity: 0;
   }
 }
