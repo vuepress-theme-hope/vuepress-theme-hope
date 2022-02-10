@@ -1,8 +1,8 @@
+import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
 import { typeMap } from "@temp/blog/type";
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "../utils";
 
 import type { ComputedRef } from "vue";
 import type {

@@ -1,6 +1,7 @@
-import { usePageFrontmatter, usePagesData } from "@vuepress/client";
+import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
+import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
-import { RouterLink, useRoute } from "vue-router";
+import { RouterLink, useRoute, useRouter } from "vue-router";
 import { getLinks } from "../composables";
 
 import type { VNode } from "vue";
@@ -10,7 +11,7 @@ import "../styles/breadcrumb.scss";
 interface BreadCrumbConfig {
   title: string;
   icon?: string;
-  url: string;
+  path: string;
 }
 
 export default defineComponent({
@@ -35,7 +36,7 @@ export default defineComponent({
 
   setup(props) {
     const pageFrontmatter = usePageFrontmatter();
-    const pagesData = usePagesData();
+    const router = useRouter();
     const route = useRoute();
 
     const config = ref<BreadCrumbConfig[]>([]);
@@ -58,30 +59,35 @@ export default defineComponent({
       );
     });
 
-    const updateConfig = async (): Promise<void> => {
-      const breadcrumbConfig: BreadCrumbConfig[] = [];
-      const pages = pagesData.value;
-      const links = getLinks(route);
+    const getBreadCrumbConfig = (): void => {
+      const routes = router.getRoutes();
 
-      // generate breadcrumb config
-      for (let index = 1; index < links.length; index++) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const page = await pages[links[index]]!();
+      const breadcrumbConfig = getLinks(route)
+        .map<BreadCrumbConfig | null>((link) => {
+          const route = routes.find((route) => route.path === link);
 
-        breadcrumbConfig.push({
-          title: page.title,
-          icon: page.frontmatter.icon as string,
-          url: page.path,
-        });
-      }
+          if (route) {
+            const { meta, path } = resolveRouteWithRedirect(route.path);
+
+            if (typeof meta.title === "string")
+              return {
+                title: meta.title,
+                icon: meta.icon,
+                path,
+              } as BreadCrumbConfig;
+          }
+
+          return null;
+        })
+        .filter((item): item is BreadCrumbConfig => item !== null);
 
       if (breadcrumbConfig.length > 1) config.value = breadcrumbConfig;
     };
 
-    watch(() => route.path, updateConfig);
+    watch(() => route.path, getBreadCrumbConfig);
 
     onMounted(() => {
-      void updateConfig();
+      void getBreadCrumbConfig();
     });
 
     return (): VNode =>
@@ -106,11 +112,11 @@ export default defineComponent({
                   h(
                     RouterLink,
                     {
-                      to: item.url,
+                      to: item.path,
                       property: "item",
                       typeof: "WebPage",
                     },
-                    [
+                    () => [
                       // icon
                       item.icon && iconEnable.value
                         ? h("i", {

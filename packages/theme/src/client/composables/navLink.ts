@@ -1,4 +1,4 @@
-import { resolveRouteWithRedirect } from "@theme-hope/utils";
+import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
 
 import type { AutoLink } from "../../shared";
 

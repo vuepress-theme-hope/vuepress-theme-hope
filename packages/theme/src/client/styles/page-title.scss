@@ -31,6 +31,25 @@
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  #{hope-config.$contentClass}:not(.custom) &:first-child {
+    margin-top: calc(0.5rem - var(--navbar-height)) !important;
+    padding-top: var(--navbar-height) !important;
+
+    @media (max-width: hope-config.$pad) {
+      margin-top: calc(
+        0.5rem - var(--navbar-mobile-height, --navbar-height)
+      ) !important;
+      padding-top: var(--navbar-mobile-height, --navbar-height) !important;
+    }
+  }
+}
+
 #{hope-config.$contentClass}:not(.custom) {
   padding-top: 0;
 }

@@ -5,6 +5,7 @@ import PageAnchor from "@theme-hope/components/PageAnchor";
 import PageMeta from "@theme-hope/components/PageMeta";
 import PageNav from "@theme-hope/components/PageNav";
 import PageTitle from "@theme-hope/components/PageTitle";
+import { useIconPrefix } from "@theme-hope/composables";
 import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
 import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
@@ -16,6 +17,7 @@ export default defineComponent({
   name: "NormalPage",
 
   setup(_props, { slots }) {
+    const iconPrefix = useIconPrefix();
     const { isEncrypted, validateToken } = usePathEncrypt();
 
     return (): VNode =>
@@ -26,6 +28,9 @@ export default defineComponent({
           ? h(PasswordModal, { onVerify: validateToken })
           : [
               slots.top?.(),
+              h(resolveComponent("BreadCrumb"), {
+                iconPrefix: iconPrefix.value,
+              }),
               h(PageTitle),
               h(PageAnchor),
               h(MarkdownContent),
