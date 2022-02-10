@@ -49,7 +49,7 @@ export default defineComponent({
       h(
         "button",
         {
-          class: "nav-screen-dropdown-title",
+          class: ["nav-screen-dropdown-title", { active: open.value }],
           type: "button",
           ariaLabel: dropdownAriaLabel.value,
           onClick: () => {

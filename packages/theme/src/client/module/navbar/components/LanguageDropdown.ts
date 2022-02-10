@@ -16,7 +16,7 @@ export default defineComponent({
       dropdown.value
         ? h(
             DropdownLink,
-            { config: dropdown.value },
+            { class: "i18n-dropdown", config: dropdown.value },
             {
               title: () =>
                 h(I18nIcon, {

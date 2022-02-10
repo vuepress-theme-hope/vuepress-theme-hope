@@ -18,10 +18,13 @@
   }
 
   .nav-link {
-    color: var(--text-color);
+    color: var(--dark-grey);
     font-weight: normal;
 
-    &:hover,
+    &:hover {
+      color: var(--text-color);
+    }
+
     &.active {
       color: var(--theme-color);
     }

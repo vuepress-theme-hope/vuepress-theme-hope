@@ -80,66 +80,72 @@ export default defineComponent({
                 props.config.text,
               ]),
             h("span", { class: "arrow" }),
-          ]
-        ),
-        h(
-          "ul",
-          { class: "nav-dropdown" },
-          config.value.children.map((child) =>
             h(
-              "li",
-              { class: "dropdown-item" },
-              "children" in child
-                ? [
-                    h(
-                      "h4",
-                      { class: "dropdown-subtitle" },
-                      child.link
-                        ? h(AutoLink, {
-                            config: child as AutoLinkType,
-                            onFocusout: () => {
-                              if (
-                                isLastItemOfArray(
-                                  child,
-                                  config.value.children
-                                ) &&
-                                child.children.length === 0
-                              )
-                                open.value = false;
-                            },
-                          })
-                        : h("span", child.text)
-                    ),
-                    h(
-                      "ul",
-                      { class: "dropdown-subitem-wrapper" },
-                      child.children.map((grandchild) =>
+              "ul",
+              { class: "nav-dropdown" },
+              config.value.children.map((child) =>
+                h(
+                  "li",
+                  { class: "dropdown-item" },
+                  "children" in child
+                    ? [
                         h(
-                          "li",
-                          { class: "dropdown-subitem" },
-                          h(AutoLink, {
-                            config: grandchild,
-                            onFocusout: () => {
-                              if (
-                                isLastItemOfArray(grandchild, child.children) &&
-                                isLastItemOfArray(child, config.value.children)
-                              )
-                                open.value = false;
-                            },
-                          })
-                        )
-                      )
-                    ),
-                  ]
-                : h(AutoLink, {
-                    config: child,
-                    onFocusout: () => {
-                      if (isLastItemOfArray(child, config.value.children))
-                        open.value = false;
-                    },
-                  })
-            )
-          )
+                          "h4",
+                          { class: "dropdown-subtitle" },
+                          child.link
+                            ? h(AutoLink, {
+                                config: child as AutoLinkType,
+                                onFocusout: () => {
+                                  if (
+                                    isLastItemOfArray(
+                                      child,
+                                      config.value.children
+                                    ) &&
+                                    child.children.length === 0
+                                  )
+                                    open.value = false;
+                                },
+                              })
+                            : h("span", child.text)
+                        ),
+                        h(
+                          "ul",
+                          { class: "dropdown-subitem-wrapper" },
+                          child.children.map((grandchild) =>
+                            h(
+                              "li",
+                              { class: "dropdown-subitem" },
+                              h(AutoLink, {
+                                config: grandchild,
+                                onFocusout: () => {
+                                  if (
+                                    isLastItemOfArray(
+                                      grandchild,
+                                      child.children
+                                    ) &&
+                                    isLastItemOfArray(
+                                      child,
+                                      config.value.children
+                                    )
+                                  )
+                                    open.value = false;
+                                },
+                              })
+                            )
+                          )
+                        ),
+                      ]
+                    : h(AutoLink, {
+                        config: child,
+                        onFocusout: () => {
+                          if (isLastItemOfArray(child, config.value.children))
+                            open.value = false;
+                        },
+                      })
+                )
+              )
+            ),
+          ]
         ),
       ]);
   },
