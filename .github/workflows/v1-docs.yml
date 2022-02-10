@@ -55,6 +55,7 @@ jobs:
       - name: Combine output
         run: |
           yarn cpx "docs/theme/dist/**" dist
+          yarn cpx "docs/active-hash/dist/**" dist/active-hash
           yarn cpx "docs/add-this/dist/**" dist/add-this
           yarn cpx "docs/comment/dist/**" dist/comment
           yarn cpx "docs/copy-code/dist/**" dist/copy-code
