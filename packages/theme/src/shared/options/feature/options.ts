@@ -3,10 +3,18 @@ import type {
   HopeThemeBlogLocaleData,
   HopeThemeBlogOptions,
 } from "./blog";
-import type { HopeThemeEncryptOptions } from "./encrypt";
+import type {
+  HopeThemeEncryptLocaleData,
+  HopeThemeEncryptOptions,
+} from "./encrypt";
 
 export interface HopeThemeFeatureLocaleData {
   blogLocales: HopeThemeBlogLocaleData;
+
+  /**
+   * Encrypt
+   */
+  encryptLocales: HopeThemeEncryptLocaleData;
 }
 
 export interface HopeThemeFeatureLocaleOptions {

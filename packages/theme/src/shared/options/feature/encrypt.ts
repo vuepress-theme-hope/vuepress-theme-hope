@@ -1,3 +1,15 @@
+export interface HopeThemeEncryptLocaleData {
+  /**
+   * Encrypt title
+   */
+  title: string;
+
+  /**
+   * Passwrod error hint
+   */
+  errorHint: string;
+}
+
 /**
  * Encrypt Options
  *

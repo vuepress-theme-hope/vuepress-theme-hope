@@ -26,19 +26,6 @@ export interface HopeThemeLocaleData
    * Theme mode
    */
   darkmodeText: string;
-  /**
-   * Encrypt
-   */
-  encryptLocales: {
-    /**
-     * Encrypt title
-     */
-    title: string;
-    /**
-     * Passwrod error hint
-     */
-    errorHint: string;
-  };
 }
 
 export type HopeThemeLocaleOptions =
