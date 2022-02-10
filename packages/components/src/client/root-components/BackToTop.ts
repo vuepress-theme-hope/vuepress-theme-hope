@@ -7,9 +7,9 @@ import {
   computed,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
   ref,
+  onUnmounted,
 } from "vue";
 import { BacktoTopIcon } from "../components/icons";
 
@@ -68,7 +68,7 @@ export default defineComponent({
       window.addEventListener("scroll", scrollHandler);
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       window.removeEventListener("scroll", scrollHandler);
     });
 

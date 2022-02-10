@@ -7,7 +7,7 @@ import PageNav from "@theme-hope/components/PageNav";
 import PageTitle from "@theme-hope/components/PageTitle";
 import { useIconPrefix } from "@theme-hope/composables";
 import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
-import { useThemeData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables";
 import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
 import type { VNode } from "vue";
@@ -21,14 +21,14 @@ export default defineComponent({
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const iconPrefix = useIconPrefix();
-    const themeData = useThemeData();
+    const themeLocale = useThemeLocaleData();
     const { isEncrypted, validateToken } = usePathEncrypt();
 
     const breadcrumbEnable = computed(
       () =>
         frontmatter.value.breadcrumb ||
         (frontmatter.value.breadcrumb !== false &&
-          themeData.value.breadcrumb !== false)
+          themeLocale.value.breadcrumb !== false)
     );
 
     return (): VNode =>
@@ -41,7 +41,7 @@ export default defineComponent({
               slots.top?.(),
               h(resolveComponent("BreadCrumb"), {
                 enable: breadcrumbEnable.value,
-                icon: themeData.value.breadcrumbIcon,
+                icon: themeLocale.value.breadcrumbIcon,
                 iconPrefix: iconPrefix.value,
               }),
               h(PageTitle),

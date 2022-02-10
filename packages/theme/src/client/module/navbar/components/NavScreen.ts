@@ -1,6 +1,14 @@
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
-import { Transition, defineComponent, h, ref } from "vue";
+import {
+  Transition,
+  defineComponent,
+  h,
+  ref,
+  onBeforeUnmount,
+  onMounted,
+} from "vue";
 
+import { useThemeData } from "@theme-hope/composables";
 import NavScreenLinks from "@theme-hope/module/navbar/components/NavScreenLinks";
 import OutlookSettings from "@theme-hope/module/outlook/components/OutlookSettings";
 
@@ -18,8 +26,31 @@ export default defineComponent({
     },
   },
 
-  setup(props, { slots }) {
+  emits: ["close"],
+
+  setup(props, { emit, slots }) {
+    const themeData = useThemeData();
     const screen = ref<HTMLElement>();
+
+    const handler = (): void => {
+      if (
+        window.innerWidth > (themeData.value.mobileBreakPoint || 719) &&
+        props.active
+      ) {
+        clearAllBodyScrollLocks();
+        emit("close");
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener("orientationchange", handler, false);
+      window.addEventListener("resize", handler, false);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener("orientationchange", handler, false);
+      window.removeEventListener("resize", handler, false);
+    });
 
     return (): VNode =>
       h(

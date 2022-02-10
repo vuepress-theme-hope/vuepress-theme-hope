@@ -15,7 +15,7 @@ import PageFooter from "@theme-hope/components/PageFooter";
 import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
 import Navbar from "@theme-hope/module/navbar/components/Navbar";
 import Sidebar from "@theme-hope/module/sidebar/components/Sidebar";
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeData, useThemeLocaleData } from "@theme-hope/composables";
 import { useGlobalEcrypt } from "@theme-hope/module/encrypt/composables";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
@@ -42,6 +42,7 @@ export default defineComponent({
     const router = useRouter();
     const page = usePageData();
     const frontmatter = usePageFrontmatter<HopeThemePageFrontmatter>();
+    const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const { isGlobalEncrypted, validateGlobalToken } = useGlobalEcrypt();
 
@@ -129,6 +130,11 @@ export default defineComponent({
       document.body.scrollTop ||
       0;
 
+    const handler = (): void => {
+      if (window.innerWidth > (themeData.value.mobileBreakPoint || 719))
+        toggleSidebar(false);
+    };
+
     // close sidebar after navigation
     let unregisterRouterHook: () => void;
     let lastDistance = 0;
@@ -146,14 +152,19 @@ export default defineComponent({
     }, 300);
 
     onMounted(() => {
-      unregisterRouterHook = router.afterEach(() => {
+      unregisterRouterHook = router.afterEach((): void => {
         toggleSidebar(false);
       });
 
+      window.addEventListener("orientationchange", handler, false);
+      window.addEventListener("resize", handler, false);
       window.addEventListener("scroll", scrollHandler);
     });
+
     onUnmounted(() => {
       unregisterRouterHook();
+      window.removeEventListener("orientationchange", handler, false);
+      window.removeEventListener("resize", handler, false);
       window.removeEventListener("scroll", scrollHandler);
     });
 

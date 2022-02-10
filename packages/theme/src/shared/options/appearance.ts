@@ -94,35 +94,4 @@ export interface HopeThemeAppearanceOptions {
    * 全屏按钮
    */
   fullScreen?: boolean;
-
-  /**
-   * Wether display backto top button
-   *
-   * If it’s set with a number, then it will be the threshold
-   *
-   * 是否显示返回顶部按钮
-   *
-   * 如果设置为数字，则该数字为触发临界值 (默认临界值为 300px)
-   *
-   * @default true
-   */
-  backToTop?: boolean | number;
-
-  /**
-   * Whether enable breadcrumb globally
-   *
-   * 是否全局启用路径导航
-   *
-   * @default true
-   */
-  breadcrumb?: boolean;
-
-  /**
-   * Whether display icon in breadcrumb
-   *
-   * 是否在路径导航显示图标
-   *
-   * @default true
-   */
-  breadcrumbIcon?: boolean;
 }

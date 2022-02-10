@@ -1,11 +1,4 @@
-import {
-  computed,
-  defineComponent,
-  h,
-  onBeforeUnmount,
-  onMounted,
-  ref,
-} from "vue";
+import { computed, defineComponent, h, ref } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
 import NavbarBrand from "@theme-hope/module/navbar/components/NavbarBrand";
@@ -17,27 +10,6 @@ import NavScreen from "@theme-hope/module/navbar/components/NavScreen";
 import type { VNode } from "vue";
 
 import "../styles/navbar.scss";
-
-const getCssValue = (
-  el: Element | null,
-  property: keyof Omit<
-    CSSStyleDeclaration,
-    | "getPropertyPriority"
-    | "getPropertyValue"
-    | "item"
-    | "removeProperty"
-    | "setProperty"
-    | number
-  >
-): number => {
-  // NOTE: Known bug, will return 'auto' if style value is 'auto'
-  const value = el?.ownerDocument.defaultView?.getComputedStyle(el, null)[
-    property
-  ] as string;
-
-  const num = Number.parseInt(value, 10);
-  return Number.isNaN(num) ? 0 : num;
-};
 
 export default defineComponent({
   name: "NavBar",
@@ -68,47 +40,6 @@ export default defineComponent({
       return (
         navbarAutoHide !== "none" &&
         (navbarAutoHide === "always" || isMobile.value)
-      );
-    });
-
-    let handleLinksWrapWidth: () => void;
-
-    // avoid overlapping of long title and long navbar links
-    onMounted(() => {
-      // TODO: migrate to css var
-      // refer to _variables.scss
-      const MOBILE_DESKTOP_BREAKPOINT = 719;
-      const navbarHorizontalPadding =
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        getCssValue(navbar.value!, "paddingLeft") +
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        getCssValue(navbar.value!, "paddingRight");
-
-      handleLinksWrapWidth = (): void => {
-        if (window.innerWidth < MOBILE_DESKTOP_BREAKPOINT) {
-          isMobile.value = true;
-          linksWrapperMaxWidth.value = 0;
-        } else {
-          isMobile.value = false;
-          linksWrapperMaxWidth.value =
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            navbar.value!.offsetWidth -
-            navbarHorizontalPadding -
-            (siteBrand.value?.offsetWidth || 0);
-        }
-      };
-
-      handleLinksWrapWidth();
-      window.addEventListener("resize", handleLinksWrapWidth, false);
-      window.addEventListener("orientationchange", handleLinksWrapWidth, false);
-    });
-
-    onBeforeUnmount(() => {
-      window.removeEventListener("resize", handleLinksWrapWidth, false);
-      window.removeEventListener(
-        "orientationchange",
-        handleLinksWrapWidth,
-        false
       );
     });
 
@@ -144,7 +75,12 @@ export default defineComponent({
       ),
       h(
         NavScreen,
-        { active: showScreen.value },
+        {
+          active: showScreen.value,
+          onClose: () => {
+            showScreen.value = false;
+          },
+        },
         {
           before: () => slots.screenTop?.(),
           after: () => slots.screenBottom?.(),
