@@ -18,9 +18,9 @@ export default defineComponent({
 
   setup() {
     const themeData = useThemeData();
-    const themeLocaleData = useThemeLocaleData();
+    const themeLocale = useThemeLocaleData();
 
-    const locale = computed(() => themeLocaleData.value.themeColorText);
+    const locale = computed(() => themeLocale.value.outlookLocales.themeColor);
 
     const themeColor = computed(() => {
       const { themeColor = DEFAULT_THEME_COLOR_CONFIG } = themeData.value;
@@ -57,15 +57,15 @@ export default defineComponent({
       if (theme) setThemeColor(theme);
     });
 
-    return (): VNode[] | null =>
+    return (): VNode | null =>
       themeColor.value
-        ? [
+        ? h("div", { class: "themecolor-wrapper" }, [
             h(
               "label",
-              { class: "theme-color-label", for: "theme-color-picker" },
+              { class: "themecolor-title", for: "theme-color-picker" },
               locale.value
             ),
-            h("ul", { id: "theme-color-picker" }, [
+            h("ul", { id: "themecolor-picker" }, [
               h(
                 "li",
                 h("span", {
@@ -84,7 +84,7 @@ export default defineComponent({
                 )
               ),
             ]),
-          ]
+          ])
         : null;
   },
 });

@@ -10,15 +10,17 @@ import {
 import type { VNode } from "vue";
 import type { DarkmodeStatus } from "@theme-hope/composables";
 
-import "../styles/toggle-dark-button.scss";
+import "../styles/appearance-switch.scss";
 
 export default defineComponent({
-  name: "ToggleDarkModeButton",
+  name: "AppearanceSwitch",
 
   setup() {
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const { status } = useDarkMode();
+
+    const locale = computed(() => themeLocale.value.outlookLocales.darkmode);
 
     const darkmode = computed(() => themeData.value.darkmode || "auto-switch");
 
@@ -41,25 +43,37 @@ export default defineComponent({
 
     return (): VNode | null =>
       enable.value
-        ? h(
-            "button",
-            {
-              class: "toggle-dark-button",
-              title: themeLocale.value.darkmodeText,
-              onClick: () => toggleDarkMode(),
-            },
-            [
-              h(AutoIcon, {
-                style: { display: status.value === "auto" ? "block" : "none" },
-              }),
-              h(DarkIcon, {
-                style: { display: status.value === "dark" ? "block" : "none" },
-              }),
-              h(LightIcon, {
-                style: { display: status.value === "light" ? "block" : "none" },
-              }),
-            ]
-          )
+        ? h("div", { class: "appearance-wrapper" }, [
+            h(
+              "label",
+              { class: "appearance-title", for: "appearance-switch" },
+              locale.value
+            ),
+            h(
+              "button",
+              {
+                id: "appearance-switch",
+                onClick: () => toggleDarkMode(),
+              },
+              [
+                h(AutoIcon, {
+                  style: {
+                    display: status.value === "auto" ? "block" : "none",
+                  },
+                }),
+                h(DarkIcon, {
+                  style: {
+                    display: status.value === "dark" ? "block" : "none",
+                  },
+                }),
+                h(LightIcon, {
+                  style: {
+                    display: status.value === "light" ? "block" : "none",
+                  },
+                }),
+              ]
+            ),
+          ])
         : null;
   },
 });

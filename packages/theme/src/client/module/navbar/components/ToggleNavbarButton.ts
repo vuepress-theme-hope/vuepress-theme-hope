@@ -24,7 +24,7 @@ export default defineComponent({
           class: ["toggle-navbar-button", { "is-active": props.active }],
           "aria-label": "Toggle Navbar",
           "aria-expanded": props.active,
-          "aria-controls": "VPNavScreen",
+          "aria-controls": "nav-screen",
           onClick: () => emit("toggle"),
         },
         h("span", { class: "button-container" }, [

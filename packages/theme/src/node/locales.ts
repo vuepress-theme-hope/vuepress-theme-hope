@@ -30,8 +30,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "Encrypted",
     },
 
-    themeColorText: "Theme Color",
-    darkmodeText: "Theme Mode",
+    outlookLocales: {
+      themeColor: "Theme Color",
+      darkmode: "Theme Mode",
+      fullscreen: "Full Screen",
+    },
 
     encryptLocales: {
       title: "Please enter password",
@@ -79,8 +82,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "加密",
     },
 
-    themeColorText: "主题色",
-    darkmodeText: "主题模式",
+    outlookLocales: {
+      themeColor: "主题色",
+      darkmode: "主题色",
+      fullscreen: "全屏",
+    },
 
     encryptLocales: {
       title: "请输入密码",
@@ -128,8 +134,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "加密",
     },
 
-    themeColorText: "主題色",
-    darkmodeText: "主題模式",
+    outlookLocales: {
+      themeColor: "主題色",
+      darkmode: "主題模式",
+      fullscreen: "全屏",
+    },
 
     encryptLocales: {
       title: "請輸入密碼",
@@ -177,8 +186,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "Verschlüsselt",
     },
 
-    themeColorText: "Design-Farbe",
-    darkmodeText: "Design-Modus",
+    outlookLocales: {
+      themeColor: "Design-Farbe",
+      darkmode: "Design-Modus",
+      fullscreen: "Full Screen",
+    },
 
     encryptLocales: {
       title: "Passwort eingeben",
@@ -226,8 +238,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "Mã hóa",
     },
 
-    themeColorText: "Màu nền",
-    darkmodeText: "Theme Mode",
+    outlookLocales: {
+      themeColor: "Màu nền",
+      darkmode: "Theme Mode",
+      fullscreen: "Full Screen",
+    },
 
     encryptLocales: {
       title: "Xin vui lòng nhập mật khẩu",
@@ -275,8 +290,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "Зашифровано",
     },
 
-    themeColorText: "Цвет темы",
-    darkmodeText: "Режим темы",
+    outlookLocales: {
+      themeColor: "Цвет темы",
+      darkmode: "Режим темы",
+      fullscreen: "Full Screen",
+    },
 
     encryptLocales: {
       title: "Пожалуйста, введите пароль",
@@ -324,8 +342,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "Зашифровано",
     },
 
-    themeColorText: "Колір теми",
-    darkmodeText: "Тематичний режим",
+    outlookLocales: {
+      themeColor: "Колір теми",
+      darkmode: "Тематичний режим",
+      fullscreen: "Full Screen",
+    },
 
     encryptLocales: {
       title: "Будь ласка, введіть пароль",
@@ -373,8 +394,11 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
       encrypt: "Encriptado",
     },
 
-    themeColorText: "Cor do Tema",
-    darkmodeText: "Modo do Tema",
+    outlookLocales: {
+      themeColor: "Cor do Tema",
+      darkmode: "Modo do Tema",
+      fullscreen: "Full Screen",
+    },
 
     encryptLocales: {
       title: "Por favor, entre a senha",

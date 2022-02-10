@@ -2,6 +2,7 @@ import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import { Transition, defineComponent, h, ref } from "vue";
 
 import NavScreenLinks from "@theme-hope/module/navbar/components/NavScreenLinks";
+import OutlookSettings from "@theme-hope/module/navbar/components/OutlookSettings";
 
 import type { VNode } from "vue";
 
@@ -34,10 +35,11 @@ export default defineComponent({
           props.active
             ? h(
                 "div",
-                { class: "nav-screen", ref: screen },
+                { id: "nav-screen", ref: screen },
                 h("div", { class: "container" }, [
                   slots.before?.(),
                   h(NavScreenLinks),
+                  h("div", { class: "outlook-wrapper" }, h(OutlookSettings)),
                   slots.after?.(),
                 ])
               )

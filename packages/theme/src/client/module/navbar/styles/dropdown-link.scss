@@ -48,6 +48,12 @@
     }
   }
 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .nav-dropdown {
     box-sizing: border-box;
     position: absolute;
@@ -65,7 +71,6 @@
     text-align: left;
     white-space: nowrap;
 
-    list-style: none;
     overflow-y: auto;
     transform: scale(0.8);
     opacity: 0;
@@ -96,7 +101,6 @@
   .dropdown-subitem-wrapper {
     padding: 0 0 0.5rem 0;
     border-bottom: 1px solid var(--grey14);
-    list-style: none;
   }
 
   .nav-link {

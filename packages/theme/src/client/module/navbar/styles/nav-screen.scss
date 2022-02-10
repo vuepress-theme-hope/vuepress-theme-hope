@@ -1,4 +1,4 @@
-.nav-screen {
+#nav-screen {
   position: fixed;
   top: var(--navbar-mobile-height);
   right: 0;
@@ -36,6 +36,11 @@
     margin: 0 auto;
     padding: 2rem 0 4rem;
     max-width: 320px;
+  }
+
+  .outlook-wrapper {
+    display: flex;
+    justify-content: space-around;
   }
 
   .icon {
