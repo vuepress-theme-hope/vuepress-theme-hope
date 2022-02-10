@@ -18,6 +18,9 @@
   }
 
   .nav-link {
+    display: inline-block;
+    width: 100%;
+
     color: var(--dark-grey);
     font-weight: normal;
 
