@@ -18,6 +18,7 @@ export default [
       "@Badge",
       "@BreadCrumb",
       "@FullScreen",
+      "@PageAnchor",
       "@Pagination",
       /\.scss$/,
     ],
@@ -40,7 +41,14 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/BreadCrumb", {
-    external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "@vuepress/client",
+      "@vuepress/shared",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FullScreen", {

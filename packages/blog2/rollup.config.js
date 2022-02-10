@@ -6,6 +6,7 @@ export default [
   }),
   ...rollupTypescript("client/index", {
     external: [
+      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/shared",
       "vue",

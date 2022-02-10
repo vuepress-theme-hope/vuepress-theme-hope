@@ -14,6 +14,7 @@ export default [
       "chalk",
       "ora",
       "vue",
+      "vue-router",
     ],
   }),
   ...rollupTypescript("client/noopModule", {
