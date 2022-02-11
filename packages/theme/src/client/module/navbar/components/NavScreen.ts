@@ -6,7 +6,9 @@ import {
   ref,
   onBeforeUnmount,
   onMounted,
+  watch,
 } from "vue";
+import { useRoute } from "vue-router";
 
 import { useThemeData } from "@theme-hope/composables";
 import NavScreenLinks from "@theme-hope/module/navbar/components/NavScreenLinks";
@@ -30,6 +32,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const themeData = useThemeData();
+    const route = useRoute();
     const screen = ref<HTMLElement>();
 
     const handler = (): void => {
@@ -42,12 +45,21 @@ export default defineComponent({
       }
     };
 
+    watch(
+      () => route.path,
+      () => {
+        clearAllBodyScrollLocks();
+        emit("close");
+      }
+    );
+
     onMounted(() => {
       window.addEventListener("orientationchange", handler, false);
       window.addEventListener("resize", handler, false);
     });
 
     onBeforeUnmount(() => {
+      clearAllBodyScrollLocks();
       window.removeEventListener("orientationchange", handler, false);
       window.removeEventListener("resize", handler, false);
     });
