@@ -1,16 +1,16 @@
 import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import {
   computed,
   defineComponent,
   h,
   onMounted,
+  onUnmounted,
   watch,
   ref,
-  onUnmounted,
 } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
-import { getLinks } from "../composables";
+import { getLinks } from "../utils";
 
 import type { WatchStopHandle, VNode } from "vue";
 
@@ -46,6 +46,7 @@ export default defineComponent({
     const pageFrontmatter = usePageFrontmatter();
     const router = useRouter();
     const route = useRoute();
+    const routeLocale = useRouteLocale();
 
     const config = ref<BreadCrumbConfig[]>([]);
 
@@ -70,12 +71,12 @@ export default defineComponent({
     const getBreadCrumbConfig = (): void => {
       const routes = router.getRoutes();
 
-      const breadcrumbConfig = getLinks(route)
+      const breadcrumbConfig = getLinks(route, routeLocale.value)
         .map<BreadCrumbConfig | null>((link) => {
           const route = routes.find((route) => route.path === link);
 
           if (route) {
-            const { meta, path } = resolveRouteWithRedirect(route.path);
+            const { meta, path } = resolveRouteWithRedirect(router, route.path);
 
             if (typeof meta.title === "string")
               return {

@@ -1,12 +1,13 @@
-import { useRouteLocale } from "@vuepress/client";
 import { removeEndingSlash } from "@vuepress/shared";
 import type { RouteLocation } from "vue-router";
 
-export const getLinks = (route: RouteLocation): string[] => {
-  const routeLocale = useRouteLocale();
-  const routePaths = route.path.replace(routeLocale.value, "/").split("/");
+export const getLinks = (
+  route: RouteLocation,
+  routeLocale: string
+): string[] => {
+  const routePaths = route.path.replace(routeLocale, "/").split("/");
   const links: string[] = [];
-  let link = removeEndingSlash(routeLocale.value);
+  let link = removeEndingSlash(routeLocale);
 
   // generate links
   routePaths.forEach((element, index) => {

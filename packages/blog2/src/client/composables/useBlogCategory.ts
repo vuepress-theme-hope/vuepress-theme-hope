@@ -49,7 +49,7 @@ export const useBlogCategory = <
         const route = routes.find(({ name }) => name === pageKey);
 
         if (route) {
-          const finalRoute = resolveRouteWithRedirect(route.path);
+          const finalRoute = resolveRouteWithRedirect(router, route.path);
 
           result.map[category].items.push({
             path: finalRoute.path,

@@ -1,4 +1,5 @@
 import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
+import { useRouter } from "vue-router";
 
 import type { AutoLink } from "../../shared";
 
@@ -10,7 +11,8 @@ import type { AutoLink } from "../../shared";
  * - Output: { text: 'Home', link: '/' }
  */
 export const useAutoLink = (item: string): AutoLink => {
-  const resolved = resolveRouteWithRedirect(item);
+  const router = useRouter();
+  const resolved = resolveRouteWithRedirect(router, item);
 
   return {
     icon: resolved.meta.icon,

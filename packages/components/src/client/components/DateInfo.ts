@@ -12,7 +12,7 @@ export default defineComponent({
   props: {
     date: {
       type: Object as PropType<DateInfo | null>,
-      required: true,
+      default: null,
     },
 
     hint: {
