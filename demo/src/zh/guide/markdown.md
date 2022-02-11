@@ -12,13 +12,15 @@ tag:
 
 ## 一键启用
 
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) 插件的所有功能。
+你可以设置 `themeconfig.plugins.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) 插件的所有功能。
 
 ```js {3-5}
 module.exports = {
   themeConfig: {
-    mdEnhance: {
-      enableAll: true,
+    plugins: {
+      mdEnhance: {
+        enableAll: true,
+      },
     },
   },
 };

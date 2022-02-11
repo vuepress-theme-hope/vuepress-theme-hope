@@ -12,13 +12,15 @@ tag:
 
 ## Enable all
 
-You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
+You can set `themeconfig.plugins.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
 
 ```js {3-5}
 module.exports = {
   themeConfig: {
-    mdEnhance: {
-      enableAll: true,
+    plugins: {
+      mdEnhance: {
+        enableAll: true,
+      },
     },
   },
 };
