@@ -18,7 +18,7 @@ export default defineComponent({
 
     const enable = computed(() => {
       return (
-        commentOptions.type !== "disable" &&
+        commentOptions.type &&
         (frontmatter.value.comment ||
           (commentOptions.comment !== false &&
             (commentOptions.type === "waline" ||

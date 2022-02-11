@@ -5,12 +5,10 @@ icon: config
 
 ## type
 
-- Type: `'valine' | 'vssue' | 'disable'`
-- Required: true
+- Type: `'waline' | 'none'`
+- Default: `'none'`
 
 Comment service provider.
-
-Setting it to `'disable'` will only disable the comment feature.
 
 ## comment
 
@@ -22,11 +20,8 @@ Whether to enable comment feature by default.
 ## Waline config
 
 - [See here](waline.md)
+<!--
 
 ## Vssue config
 
-- [See here](vssue.md)
-
-## Valine config
-
-- [See here](valine.md)
+- [See here](vssue.md) -->

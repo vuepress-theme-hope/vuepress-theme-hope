@@ -33,8 +33,6 @@ Waline 的服务端地址。
 
 - **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启暗黑模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
 
-- **vuepress-theme-hope**: 它会在 `<body>` 上添加`theme-dark` class 来开启暗黑模式。那么你需要将 `dark` 选项设置为 `body.theme-dark`。
-
 :::
 
 自定义样式与暗黑模式详见 [自定义样式](../guide/client/style.md)。

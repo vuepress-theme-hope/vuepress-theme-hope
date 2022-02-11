@@ -33,8 +33,6 @@ Darkmode support
 
 - **hexo-theme-fluid**: It will enable darkmode by setting `data-user-color-scheme="dark"` on the `<html>` tag itself. So you need to set `'html[data-user-color-scheme="dark"]'` as `dark` option.
 
-- **vuepress-theme-hope**: It will enable darkmode by setting `theme-dark` class on the `<body>` tag itself. So you need to set `'body.theme-dark'` as `dark` option.
-
 :::
 
 For details of custom style and darkmode, please see [Custom Style](../guide/client/style.md).

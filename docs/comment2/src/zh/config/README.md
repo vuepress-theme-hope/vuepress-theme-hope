@@ -5,10 +5,10 @@ icon: config
 
 ## type
 
-- 类型: `'valine' | 'vssue' | 'disable'`
-- 必填: 是
+- 类型: `'waline' | 'none'`
+- 默认: `'none'`
 
-使用 Valine 还是 Vssue。设置为 `'disabled'` 仅会禁用评论功能。
+评论服务提供者。
 
 ## comment
 
@@ -20,15 +20,8 @@ icon: config
 ## Waline 选项
 
 - [点击查看](waline.md)
+<!--
 
 ## Vssue 选项
 
-- [点击查看](vssue.md)
-
-## Valine 选项
-
-- [点击查看](valine.md)
-
-## 页面选项
-
-- [点击查看](frontmatter.md)
+- [点击查看](vssue.md) -->
