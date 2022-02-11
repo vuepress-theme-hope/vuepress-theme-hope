@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.18](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-02-11)
+
+### Bug Fixes
+
+- **md-enhance:** fix container line height and code block ([7278401](https://github.com/Mister-Hope/vuepress-theme-hope/commit/7278401e8154693debc26e9be03732859231c9d3))
+
 # [2.0.0-alpha.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

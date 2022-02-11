@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-02-11)
+
+### Bug Fixes
+
+- **components:** fix BreadCrumb on devServer ([78bb24a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/78bb24a911051bc7105185e1ed6e655b2ad6960c))
+- **components:** fix components ([0f72261](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f722614ac0b49bb57a5098e3c27d95a01d1b3b3))
+- **md-enhance:** fix container line height and code block ([7278401](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7278401e8154693debc26e9be03732859231c9d3))
+- **pwa2:** fix headlink inject ([9083448](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9083448e116c28239722921f747375123d960822))
+- **theme:** fix fullscreen button ([45175e2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/45175e264eeb52ebe2d04d2c938359a378c51400))
+- **theme:** fix heading outline ([5f53ef1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f53ef172e604f578deabdd9ea27a4200607763e))
+- **theme:** fix NavScreen closes issue ([475aeb7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/475aeb713491b21badac28fc0e6bbb759b7fb1d1))
+
+### Features
+
+- **comment2:** optimize options ([5bddcda](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5bddcda68f7208fb02819a71d05c5479b860f295))
+- **components:** improve backtotop button appearance ([9c1cb48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9c1cb487984dbc5f2fb7972e2b23abb018997911))
+- **components:** improve backtotop button style ([1463451](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1463451ca28a076e21e6075a1d1aae6647193865))
+- **feed2:** add default sorter ([5e9b36f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e9b36f368fb85c89d48aeb95e26d8e2d6b16299))
+- **lightgallery:** add docs and optimizeDeps ([f43a597](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f43a59772f63660b2d02e2fab12723e84548011c))
+- **sass-palette:** update style options and improve debug log ([dfa721a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfa721a588249ca8998b8247a8872573a41dd580))
+- **theme:** fix page shrink ([636c256](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/636c2566caf3cf47a75135b0edb7aaedc74d8a81))
+
 # [2.0.0-alpha.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
 
 ### Bug Fixes

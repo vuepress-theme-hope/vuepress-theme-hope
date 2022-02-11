@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.18](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-02-11)
+
+### Bug Fixes
+
+- **components:** fix components ([0f72261](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0f722614ac0b49bb57a5098e3c27d95a01d1b3b3))
+- **theme:** fix fullscreen button ([45175e2](https://github.com/Mister-Hope/vuepress-theme-hope/commit/45175e264eeb52ebe2d04d2c938359a378c51400))
+- **theme:** fix heading outline ([5f53ef1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/5f53ef172e604f578deabdd9ea27a4200607763e))
+- **theme:** fix NavScreen closes issue ([475aeb7](https://github.com/Mister-Hope/vuepress-theme-hope/commit/475aeb713491b21badac28fc0e6bbb759b7fb1d1))
+
+### Features
+
+- **theme:** fix page shrink ([636c256](https://github.com/Mister-Hope/vuepress-theme-hope/commit/636c2566caf3cf47a75135b0edb7aaedc74d8a81))
+
 # [2.0.0-alpha.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
 
 ### Bug Fixes

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.18](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-02-11)
+
+### Bug Fixes
+
+- **components:** fix BreadCrumb on devServer ([78bb24a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/78bb24a911051bc7105185e1ed6e655b2ad6960c))
+- **components:** fix components ([0f72261](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0f722614ac0b49bb57a5098e3c27d95a01d1b3b3))
+
+### Features
+
+- **components:** improve backtotop button appearance ([9c1cb48](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9c1cb487984dbc5f2fb7972e2b23abb018997911))
+- **components:** improve backtotop button style ([1463451](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1463451ca28a076e21e6075a1d1aae6647193865))
+
 # [2.0.0-alpha.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
 
 ### Bug Fixes
