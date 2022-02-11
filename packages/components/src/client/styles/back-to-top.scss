@@ -5,18 +5,25 @@
 
   position: fixed !important;
   right: 1rem;
-  bottom: 4rem;
+  bottom: 8rem;
   z-index: 100;
   width: 3rem;
   height: 3rem;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 1rem;
-  background-color: var(--white);
+  background-color: var(--c-bg, #fff);
   box-shadow: 2px 2px 10px 0 var(--card-shadow);
   color: var(--c-brand, #3eaf7c);
 
   &:hover {
     color: var(--c-brand-light, #4abf8a);
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
   }
 
   svg {
