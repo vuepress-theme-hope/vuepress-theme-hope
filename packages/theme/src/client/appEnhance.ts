@@ -1,6 +1,8 @@
 import { defineClientAppEnhance } from "@vuepress/client";
 import { h } from "vue";
-import { useScrollPromise } from "./composables";
+
+import { useScrollPromise } from "@theme-hope/composables";
+import CommonWrapper from "@theme-hope/components/CommonWrapper";
 
 import type { RouterScrollBehavior } from "vue-router";
 
@@ -21,6 +23,9 @@ export default defineClientAppEnhance(({ app, router }) => {
 
     return CommentService ? h(CommentService) : null;
   });
+
+  // register to inject styles
+  app.component("CommonWrapper", CommonWrapper);
 
   // handle scrollBehavior with transition
   const scrollBehavior = router.options.scrollBehavior as RouterScrollBehavior;

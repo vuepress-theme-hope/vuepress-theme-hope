@@ -1,7 +1,6 @@
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
-import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import ProjectHome from "@theme-hope/components/home/ProjectHome";
 import FadeSideY from "@theme-hope/components/transitions/FadeSlideY";
 import NormalPage from "@theme-hope/components/NormalPage";
@@ -20,7 +19,7 @@ export default defineComponent({
 
     return (): VNode[] => [
       h(SkipLink),
-      h(CommonWrapper, {}, () =>
+      h(resolveComponent("CommonWrapper"), {}, () =>
         frontmatter.value.home
           ? h(ProjectHome)
           : h(FadeSideY, {}, () => h(NormalPage, { key: page.value.path }))

@@ -1,16 +1,15 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 
 import BlogHome from "@theme-hope/module/blog/components/BlogHome";
 import BlogPage from "@theme-hope/module/blog/components/BlogPage";
 import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
 import InfoList from "@theme-hope/module/blog/components/InfoList";
 import InfoPanel from "@theme-hope/module/blog/components/InfoPanel";
-import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
 import SkipLink from "@theme-hope/components/SkipLink";
 
-import type { VNode } from "vue";
+import type { ComponentOptions, VNode } from "vue";
 
 import "../styles/layout.scss";
 
@@ -24,7 +23,7 @@ export default defineComponent({
     return (): VNode[] => [
       h(SkipLink),
       h(
-        CommonWrapper,
+        resolveComponent("CommonWrapper") as ComponentOptions,
         {},
         {
           sidebarTop: () => h(InfoList),

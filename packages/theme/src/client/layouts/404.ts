@@ -1,8 +1,7 @@
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
 
-import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { Page404Icon } from "@theme-hope/components/icons";
 
@@ -32,7 +31,7 @@ export default defineComponent({
 
     return (): VNode[] => [
       h(SkipLink),
-      h(CommonWrapper, { sidebar: false }, () =>
+      h(resolveComponent("CommonWrapper"), { sidebar: false }, () =>
         h("main", { class: "page not-found", id: "main-content" }, [
           h(Page404Icon),
           h("blockquote", getMsg()),

@@ -66,7 +66,12 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     templateBuild: path.resolve(__dirname, "../../templates/index.build.html"),
 
-    clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
+    clientAppEnhanceFiles: [
+      path.resolve(__dirname, "../client/appEnhance.js"),
+      ...(plugins.blog
+        ? [path.resolve(__dirname, "../client/module/blog/appEnhance.js")]
+        : []),
+    ],
 
     clientAppSetupFiles: [
       ...(plugins.blog
