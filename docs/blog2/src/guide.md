@@ -9,9 +9,9 @@ With `vuepress-plugin-blog2`, you can easily bring blog feature into your themes
 
 To get started, the plugins will pick pages those neeeded to trict as articles. This is only the first step to drop those pages you don't want. By default, all the pages generated from Markdown files but not homepage will be included as articles.
 
-you may need to set option `filter` to fully customize pages to collect. The `filter` accepts a function with the shape `(page: Page) => boolean`.
+You may need to set option `filter` to fully customize pages to collect. The `filter` accepts a function with the shape `(page: Page) => boolean`.
 
-Then, you should set `getInfo` option with a function accepting `Page` as argument and returning a object containing the info you want. Later, you can get these info from composition apis.
+Then, you should set `getInfo` option with a function accepting `Page` as argument and returning a object containing the info you want. Later, you can get these info through composition apis.
 
 ## Customizing categories and types
 
@@ -50,7 +50,7 @@ Imagine you want to set tags for each articles, and you are setting them in `fro
 });
 ```
 
-Also, you may want to star some of your aricles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuatino like this to display them in `/star/` path with `StarList` layout:
+Also, you may want to star some of your aricles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuation like this to display them in `/star/` path with `StarList` layout:
 
 ```ts
 ({
@@ -73,6 +73,6 @@ When generating each page, the plugin will set `type` (values are `"category"` o
 
 So you can invoke `useBlogCategory()` and `useBlogType()` directly, and the result will be the category or type bind to current route.
 
-Also, you can pass a argument with `key` you want, then you will get infomation bind to that key.
+Also, you can pass `key` you want as argument, then you will get infomation bind to that key.
 
 For return types, please see [Composition Api Return Types](./config.md#composition-api).

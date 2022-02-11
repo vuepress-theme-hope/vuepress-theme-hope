@@ -33,7 +33,7 @@ icon: creative
 
 让我们从此处 2 个例子开始。
 
-假设你想为每篇文章设置标签，并且你正在通过 `frontmatter.tag` 设置它们。同时，你想要在 `/tag/` 中使用 `TagMap` 布局的标签页面，并使用 `TagList` 布局在 `/tag/标签名称` 中使用 标签名称对每个标签列表进行分组，你可能需要这样的配置:
+假设你想为每篇文章设置标签，并且你正在通过 `frontmatter.tag` 设置它们。同时，你想要在 `/tag/` 中使用 `TagMap` 布局的标签页面，并在`/tag/标签名称` 中使用 `TagList` 布局对标签按名称进行分组，你可能需要这样的配置:
 
 ```ts
 ({
@@ -65,14 +65,14 @@ icon: creative
 });
 ```
 
-看，设置这两种类型很容易。有关完整选项，请参阅 [Category Config](./config.md#博客分类配置) 和 [Type Config](./config.md#博客类型配置)。
+看，设置这两种类型很容易。有关完整选项，请参阅 [博客分类配置](./config.md#博客分类配置) 和 [博客分类配置](./config.md#博客类型配置)。
 
 ## 在客户端使用组合 API
 
-当生成生成每个页面时，插件将在 `frontmatter.blog` 中设置`type` (值为 `"category"` 或 `"type"`)、`key` 和 `name` (仅适用于类别页面)。
+当生成每个页面时，插件将在 `frontmatter.blog` 中设置`type` (值为 `"category"` 或 `"type"`)、`key` 和 `name` (仅适用于类别页面)。
 
 所以你可以直接调用 `useBlogCategory()` 和 `useBlogType()`，结果将是当前路由绑定的类别或类型。
 
-此外，你可以使用所需的 `key` 传递参数，然后你将获得绑定到该键的信息。
+此外，你可以通过传递所需的 `key` 作为参数，来将获得绑定到该 `key` 的信息。
 
-有关返回类型，请参阅 [Composition Api 返回类型](./config.md#composition-api)。
+有关返回类型，请参阅 [Composition Api 返回类型](./config.md#可组合式-API)。

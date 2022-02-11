@@ -40,7 +40,7 @@ Blog type config, see [Blog Type Config](#blog-type-config)
 - Type: `(name: string) => string`
 - Default: `(name) => name.replace(/ _/g, '-').toLowerCase()`
 
-Slugify function, used to convert key.
+Slugify function, used to convert key name which they are register in routes.
 
 ### metaScope
 
@@ -48,6 +48,12 @@ Slugify function, used to convert key.
 - Default: `'_blog'`
 
 Key used when injecting info to route meta.
+
+::: note
+
+Setting to an empty key will inject to route meta directly instead of a field.
+
+:::
 
 ## Blog Category Config
 

@@ -10,7 +10,7 @@ icon: config
 - 类型: `(page: Page) => Record<string, unknown>`
 - 必填: 否
 
-获取文章信息的函数
+获取文章信息的函数。
 
 获取到的信息会被稍后注入至路由元数据，以便你可以在客户端中通过组合式 API 获取。
 
@@ -40,7 +40,7 @@ icon: config
 - 类型: `(name: string) => string`
 - 默认: `(name) => name.replace(/ _/g, '-').toLowerCase()`
 
-Slugify 函数，用于转换 key。
+Slugify 函数，用于转换 key 在路由中注册的形式。
 
 ### metaScope
 
@@ -48,6 +48,12 @@ Slugify 函数，用于转换 key。
 - 默认: `'_blog'`
 
 注入文章信息至路由元数据时使用的键名。
+
+::: note
+
+设置为空字符串会直接注入路由元数据 (而不是一个键下)。
+
+:::
 
 ## 博客分类配置
 
