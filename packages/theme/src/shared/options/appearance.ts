@@ -92,6 +92,8 @@ export interface HopeThemeAppearanceOptions {
    * Full screen button
    *
    * 全屏按钮
+   *
+   * @default true
    */
   fullScreen?: boolean;
 }

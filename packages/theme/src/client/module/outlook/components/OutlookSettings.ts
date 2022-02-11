@@ -1,7 +1,7 @@
 import { ClientOnly } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeData, useThemeLocaleData } from "@theme-hope/composables";
 import AppearanceSwitch from "@theme-hope/module/outlook/components/AppearanceSwitch";
 import ThemeColorPicker from "@theme-hope/module/outlook/components/ThemeColorPicker";
 
@@ -13,6 +13,7 @@ export default defineComponent({
   name: "OutlookSettings",
 
   setup() {
+    const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const FullScreen = resolveComponent("FullScreen");
 
@@ -22,19 +23,23 @@ export default defineComponent({
 
     const enableDarkmode = computed(
       () =>
-        themeLocale.value.darkmode !== "disable" &&
-        themeLocale.value.darkmode !== "force-dark"
+        themeData.value.darkmode !== "disable" &&
+        themeData.value.darkmode !== "force-dark"
     );
 
     const enableThemeColor = computed(
-      () => themeLocale.value.themeColor !== false
+      () => themeData.value.themeColor !== false
+    );
+
+    const enableFullScreen = computed(
+      () => themeData.value.fullScreen !== false
     );
 
     return (): VNode =>
       h(ClientOnly, () => [
         enableThemeColor.value ? h(ThemeColorPicker) : null,
         enableDarkmode.value ? h(AppearanceSwitch) : null,
-        FullScreen
+        enableFullScreen.value
           ? h("div", { class: "fullscreen-wrapper" }, [
               h(
                 "label",
