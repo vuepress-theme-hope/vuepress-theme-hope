@@ -32,7 +32,7 @@ export default {
 
 ::: warning Attention
 
-- We only support Vue2
+- We only support Vue3
 - You must export your component through `export default`
 - We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. To access the page document, please visit `window.document`.
 

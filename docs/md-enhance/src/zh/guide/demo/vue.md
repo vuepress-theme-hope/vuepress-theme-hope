@@ -32,7 +32,7 @@ export default {
 
 ::: warning 注意事项
 
-- 由于 API 不同，且插件对应基于 Vue2 的 VuePress@v1，只能使用 Vue2。
+- 你只能使用 Vue3。
 - 必须将组件通过 `export default` 默认导出
 - 我们使用 "ShadowDOM" 进行样式隔离，并已经将 `document` 替换为了 `shadowRoot` 对象。如果需要访问页面的 document，请访问 `window.document`。
 
