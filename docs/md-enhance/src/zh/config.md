@@ -26,46 +26,39 @@ icon: config
 
 :::
 
-## lineNumbers <Badge text="改变默认值" type="error" />
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否在每个代码块的左侧显示行号。
-
-## imageFix
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否修复包含特殊字符的图片的引用。
-
-## lazyLoad <Badge text="改变默认行为" type="warn" />
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否使用原生方式懒加载页面图片。
-
-## delay
-
-- 类型: `number`
-- 默认值: `500`
-
-操作页面 DOM 的延时，单位 ms。
-
-::: tip
-
-如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
-
-:::
-
 ## container
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用自定义容器支持。
+是否启用自定义容器支持:
+
+- info
+- note
+- tip
+- warning
+- danger
+- details
+
+::: warning
+
+最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
+
+:::
+
+## vpre
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 v-pre 容器。
+
+## codegroup
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用代码组。
 
 ## align
 
@@ -94,6 +87,13 @@ icon: config
 - 默认值: `false`
 
 是否启用脚注格式支持。
+
+## lazyLoad
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否使用原生方式懒加载页面图片。
 
 ## mark
 
@@ -133,12 +133,7 @@ interface TaskListOptions {
 
 是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
 
-## mermaid
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
 
 ## flowchart
 
@@ -146,6 +141,13 @@ interface TaskListOptions {
 - 默认值: `false`
 
 是否启用流程图支持。
+
+## mermaid
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
 
 ## demo
 
@@ -263,6 +265,19 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 - 必填: No
 
 你想要传递给 Reveal.js 的配置选项
+
+## delay
+
+- 类型: `number`
+- 默认值: `500`
+
+操作页面 DOM 的延时，单位 ms。
+
+::: tip
+
+如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
+
+:::
 
 ## locales
 

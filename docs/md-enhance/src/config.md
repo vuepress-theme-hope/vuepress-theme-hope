@@ -10,7 +10,7 @@ You can pass these options to the plugin:
 - Type: `boolean`
 - Default: `false`
 
-Enable all features.
+Whether to enable all features.
 
 ::: danger
 
@@ -26,46 +26,39 @@ Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
-## lineNumbers <Badge text="Default value changed" type="error" />
-
-- Type: `boolean`
-- Default: `true`
-
-Whether to display the line number to the left of each code block.
-
-## imageFix
-
-- Type: `boolean`
-- Default: `true`
-
-Whether to fix image links containing special characters.
-
-## lazyLoad <Badge text="Default behavior changed" type="warning" />
-
-- Type: `boolean`
-- Default: `true`
-
-Whether to lazy load every images in page in native way.
-
-## delay
-
-- Type: `number`
-- Default: `500`
-
-The delay of operating dom, in ms.
-
-::: tip
-
-If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
-
-:::
-
 ## container
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable custom container support.
+Whether to enable custom container including
+
+- info
+- note
+- tip
+- warning
+- danger
+- details
+
+::: warning
+
+The last 4 items conflict with default theme and will overide it's style.
+
+:::
+
+## vpre
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable v-pre wrapper.
+
+## codegroup
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable codegroup.
 
 ## align
 
@@ -94,6 +87,13 @@ Whether to enable the lower corner format support.
 - Default: `false`
 
 Whether to enable footnote format support.
+
+## lazyLoad
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to lazy load every images in page in native way.
 
 ## mark
 
@@ -133,19 +133,21 @@ interface TaskListOptions {
 
 Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
 
-## mermaid
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
+Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
 ## flowchart
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable flowchart syntax support.
+Whether to enable flowchart support
+
+## mermaid
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
 ## demo
 
@@ -256,6 +258,19 @@ Acceptable values are:
 - Required: No
 
 Config which you want to pass to reveal.js.
+
+## delay
+
+- Type: `number`
+- Default: `500`
+
+The delay of operating dom, in ms.
+
+::: tip
+
+If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+
+:::
 
 ## locales
 

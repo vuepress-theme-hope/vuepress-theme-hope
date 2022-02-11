@@ -19,7 +19,7 @@ export interface MarkdownEnhanceOptions {
    * - danger
    * - details
    *
-   * ⚠ The last 4 is conflict with default theme and may overide it.
+   * ⚠ The last 4 items conflict with default theme and will overide it's style.
    *
    * 是否启用自定义容器
    *
@@ -30,34 +30,34 @@ export interface MarkdownEnhanceOptions {
    * - danger
    * - details
    *
-   * ⚠ 最后四个会和默认主题冲突，且可能会覆盖默认主题的样式与行为
+   * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
    *
    * @default false
    */
   container?: boolean;
 
   /**
-   * Whether to enable vpre wrapper
+   * Whether to enable v-pre wrapper.
    *
-   * 是否启用 v-pre 容器
+   * 是否启用 v-pre 容器。
    *
    * @default false
    */
   vpre?: boolean;
 
   /**
-   * Whether to enable codegroup
+   * Whether to enable codegroup.
    *
-   * 是否启用代码组
+   * 是否启用代码组。
    *
    * @default false
    */
   codegroup?: boolean;
 
   /**
-   * 是否启用自定义对齐支持
-   *
    * Whether to enable align support
+   *
+   * 是否启用自定义对齐支持。
    *
    * @default false
    */
@@ -66,7 +66,7 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether to enable superscript format support
    *
-   * 是否启用上角标格式支持
+   * 是否启用上角标格式支持。
    *
    * @default false
    */
@@ -75,7 +75,7 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether to enable subscript format support
    *
-   * 是否启用下角标格式支持
+   * 是否启用下角标格式支持。
    *
    * @default false
    */
@@ -84,7 +84,7 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether to enable footnote format support
    *
-   * 是否启用脚注格式支持
+   * 是否启用脚注格式支持。
    *
    * @default false
    */
@@ -93,7 +93,7 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether enable native image lazy loading
    *
-   * 是否启用原生的图片懒加载
+   * 是否启用原生的图片懒加载。
    *
    * @default false
    */
@@ -102,20 +102,11 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether to enable mark format support
    *
-   * 是否启用标注支持
+   * 是否启用标注支持。
    *
    * @default false
    */
   mark?: boolean;
-
-  /**
-   * Whether to enable flowchart support
-   *
-   * 是否启用 flowchart 流程图支持
-   *
-   * @default false
-   */
-  flowchart?: boolean;
 
   /**
    * Whether to enable tastlist format support
@@ -129,11 +120,24 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether to enable TeX syntax support
    *
+   * @see https://katex.org/docs/options.html
+   *
    * 是否启用 TeX 语法支持
+   *
+   * @see https://katex.org/docs/options.html
    *
    * @default false
    */
   tex?: KatexOptions | boolean;
+
+  /**
+   * Whether to enable flowchart support
+   *
+   * 是否启用 flowchart 流程图支持
+   *
+   * @default false
+   */
+  flowchart?: boolean;
 
   /**
    * Whether to enable mermaid support
