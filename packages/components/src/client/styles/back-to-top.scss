@@ -5,7 +5,7 @@
 
   position: fixed !important;
   right: 1rem;
-  bottom: 8rem;
+  bottom: 4rem;
   z-index: 100;
   width: 3rem;
   height: 3rem;
@@ -20,6 +20,7 @@
   }
 
   @media (max-width: hope-config.$mobile) {
+    bottom: 8rem;
     width: 2.25rem;
     height: 2.25rem;
     padding: 0.25rem;
