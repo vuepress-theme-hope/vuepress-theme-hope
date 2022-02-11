@@ -3,7 +3,7 @@ title: Guide
 icon: creative
 ---
 
-This plugin register 7 components and 1 global component:
+This plugin register 8 components and 1 global component:
 
 - `<ArticleInfo />`
 - `<BackToTop />` (Global Components)
@@ -12,17 +12,18 @@ This plugin register 7 components and 1 global component:
 - `<CodeGroup />`
 - `<CodeGroupItem />`
 - `<FullScreen />`
+- `<PageAnchor />`
 - `<Pagination />`
 
-## ArticleInfo
+## `<ArticleInfo />`
 
 Article information components, see [ArticleInfo](./article-info.md) for details.
 
-## BackToTop
+## `<BackToTop />`
 
 Back-to-top Button
 
-## BreadCrumb
+## `<BreadCrumb />`
 
 ### Props
 
@@ -34,7 +35,7 @@ Back-to-top Button
 
 A badge which allows you to diy it’s color.
 
-## CodeGroup, CodeGroupItem
+## `<CodeGroup />`, `<CodeGroupItem />`
 
 Code Group
 
@@ -62,7 +63,7 @@ npm i -D vuepress-theme-hope
 ::::
 ````
 
-## FullScreen
+## `<FullScreen />`
 
 A full-screen button
 
@@ -70,7 +71,15 @@ A full-screen button
 
 - enable: Whether enable this component
 
-## Pagination
+## `<PageAnchor />`
+
+TOC list
+
+### 属性
+
+- `items`: page headers
+
+## `<Pagination />`
 
 Paging component.
 

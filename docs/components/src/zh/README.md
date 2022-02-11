@@ -11,7 +11,7 @@ actions:
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config/
+    link: /zh/config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false

@@ -38,6 +38,13 @@ icon: config
 
 是否注册路径导航
 
+## pageAnchor
+
+- 类型: `boolean`
+- 默认: `false`
+
+是否注册标题列表
+
 ## pagination
 
 - 类型: `boolean`

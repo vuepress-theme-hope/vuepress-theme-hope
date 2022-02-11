@@ -33,7 +33,7 @@ Feed 项目生成中读取的 frontmatter 选项及对应含义如下:
 
 页面的发布日期
 
-## isArticle
+### isArticle
 
 - 类型: `boolean`
 
@@ -49,9 +49,9 @@ Feed 项目生成中读取的 frontmatter 选项及对应含义如下:
 
 ### image
 
-- 类型: `string` (图片的完整或绝对链接)
+- 类型: `string`
 
-页面的封面/分享图
+页面的封面/分享图，需为完整链接或绝对链接。
 
 ## FrontMatter 中的 Feed 配置
 

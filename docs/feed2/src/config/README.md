@@ -48,7 +48,7 @@ A small icon of the feed, probably used as favicon.
 - Type: `number`
 - Default: `1000`
 
-Set the maximum number of items in the feed. After setting, after all pages are sorted, the first `count` items will be intercepted.
+Set the maximum number of items in the feed. After all pages are sorted, the first `count` items will be intercepted.
 
 If your site has a lot of articles, you may consider this option to reduce feed file size.
 

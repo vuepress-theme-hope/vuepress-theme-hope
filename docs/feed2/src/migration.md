@@ -11,7 +11,7 @@ Name changed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
 
 - Now the plugin no longer generates the three formats by default, you need to manually enable it to output format you need.
 
-## new features
+## New features
 
 - Multi-category support ![New](https://img.shields.io/badge/-new-brightgreen)
 

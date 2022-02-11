@@ -3,7 +3,7 @@ title: 指南
 icon: creative
 ---
 
-此插件注册 7 个组件和一个全局组件:
+此插件注册 8 个组件和一个全局组件:
 
 - `<ArticleInfo />`
 - `<BackToTop />` (全局组件)
@@ -12,6 +12,7 @@ icon: creative
 - `<CodeGroup />`
 - `<CodeGroupItem />`
 - `<Pagination />`
+- `<PageAnchor />`
 - `<FullScreen />`
 
 ## `<Article />`
@@ -69,6 +70,14 @@ npm i -D vuepress-theme-hope
 ### 属性
 
 - `enable`: 是否启用此组件
+
+## `<PageAnchor />`
+
+标题列表
+
+### 属性
+
+- `items`: 页面的标题。
 
 ## `<Pagination />`
 

@@ -38,6 +38,13 @@ Whether register badge component
 
 Whether register breadcrumb component
 
+## pageAnchor
+
+- Type: `boolean`
+- Default: `false`
+
+Whether register page anchor component
+
 ## pagination
 
 - Type: `boolean`

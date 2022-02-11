@@ -33,7 +33,7 @@ Description of the page
 
 Date when the page was published
 
-## isArticle
+### isArticle
 
 - Type: `boolean`
 
@@ -49,9 +49,9 @@ Page copyright information
 
 ### image
 
-- Type: `string` (full or absolute link of the image)
+- Type: `string`
 
-Page cover/share image
+Page cover/share image, should be full link or absolute link.
 
 ## Feed configuration in FrontMatter
 

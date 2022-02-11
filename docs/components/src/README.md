@@ -11,7 +11,7 @@ actions:
     type: primary
 
   - text: Config 🛠
-    link: /config/
+    link: /config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
