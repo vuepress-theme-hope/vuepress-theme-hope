@@ -31,7 +31,7 @@ import {
 } from "./icons";
 
 import type { FunctionalComponent } from "vue";
-import type { MediaType } from "../../../shared";
+import type { MediaType } from "../../../../../shared";
 
 export const iconMap: Record<MediaType, FunctionalComponent> = {
   Baidu: BaiduIcon,

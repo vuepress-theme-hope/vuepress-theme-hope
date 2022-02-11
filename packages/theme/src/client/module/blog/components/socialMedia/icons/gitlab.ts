@@ -4,7 +4,7 @@ import type { FunctionalComponent } from "vue";
 
 export const GitlabIcon: FunctionalComponent = () =>
   h(IconBase, { name: "gitlab" }, () => [
-    h("circ le", {
+    h("circle", {
       cx: "512",
       cy: "512",
       r: "512",

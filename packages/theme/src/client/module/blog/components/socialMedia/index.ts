@@ -9,7 +9,7 @@ import type { VNode } from "vue";
 import type {
   HopeThemeNormalPageFrontmatter,
   MediaType,
-} from "../../../shared";
+} from "../../../../../shared";
 
 const medias: MediaType[] = [
   "Baidu",
@@ -48,10 +48,10 @@ interface MediaLink {
   url: string;
 }
 
-import "../../styles/media-links.scss";
+import "../../styles/social-media.scss";
 
 export default defineComponent({
-  name: "MediaLinks",
+  name: "SocialMedia",
 
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
@@ -59,15 +59,13 @@ export default defineComponent({
     const isPure = usePure();
 
     const mediaLinks = computed(() => {
-      const { medialinks } = frontmatter.value;
+      const { socialMedia } = frontmatter.value;
 
       const config =
-        medialinks === false
+        socialMedia === false
           ? false
-          : typeof medialinks === "object"
-          ? medialinks
           : themeLocale.value.blog
-          ? themeLocale.value.blog?.links || false
+          ? themeLocale.value.blog?.medias || false
           : false;
 
       if (config) {
@@ -90,12 +88,12 @@ export default defineComponent({
       mediaLinks.value.length
         ? h(
             "div",
-            { class: "media-links-wrapper" },
+            { class: "social-media-wrapper" },
             mediaLinks.value.map((mediaLink) =>
               h(
                 "a",
                 {
-                  class: "media-link",
+                  class: "social-media",
                   href: mediaLink.url,
                   rel: "noopener noreferrer",
                   target: "_blank",

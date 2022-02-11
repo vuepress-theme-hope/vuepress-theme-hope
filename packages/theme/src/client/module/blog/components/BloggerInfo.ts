@@ -2,7 +2,7 @@ import { getAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
-import MediaLinks from "@theme-hope/components/medialinks";
+import SocialMedia from "@theme-hope/module/blog/components/socialMedia";
 import {
   useNavigate,
   useThemeData,
@@ -129,7 +129,7 @@ export default defineComponent({
               h("div", locale.value.timeline),
             ]),
           ]),
-          h(MediaLinks),
+          h(SocialMedia),
         ]
       );
   },

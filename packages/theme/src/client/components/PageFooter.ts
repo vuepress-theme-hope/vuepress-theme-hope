@@ -1,7 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
-import MediaLinks from "@theme-hope/components/medialinks";
 import { usePageAuthor, useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
@@ -18,13 +17,11 @@ export default defineComponent({
     const author = usePageAuthor();
 
     const enable = computed(() => {
-      const { copyright, footer, medialinks } = frontmatter.value;
+      const { copyright, footer } = frontmatter.value;
 
       return (
         footer !== false &&
-        Boolean(
-          copyright || footer || medialinks || themeLocale.value.displayFooter
-        )
+        Boolean(copyright || footer || themeLocale.value.displayFooter)
       );
     });
 
@@ -55,9 +52,6 @@ export default defineComponent({
     return (): VNode | null =>
       enable.value
         ? h("footer", { class: "footer-wrapper" }, [
-            frontmatter.value.home && frontmatter.value.blog
-              ? null
-              : h(MediaLinks),
             h("div", { class: "footer", innerHTML: content.value }),
             copyright.value
               ? h("div", {
