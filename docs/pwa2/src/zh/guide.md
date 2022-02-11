@@ -130,19 +130,19 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 如果未设置下列选项，它们会按照顺序依次尝试回退到以下预设值。
 
-| 选项                        | 默认值                                                                                                 |
-| --------------------------- | ------------------------------------------------------------------------------------------------------ | --- | --------- |
-| name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress-theme-hope'` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                     | \\  | `"en-US"` |
-| start_url                   | `context.base`                                                                                         |
-| scope                       | `context.base`                                                                                         |
-| display                     | `"standalone"`                                                                                         |
-| theme_color                 | `"#46bd87"`                                                                                            |
-| background_color            | `'#ffffff'`                                                                                            |
-| orientation                 | `'portrait-primary'`                                                                                   |
-| prefer_related_applications | `false`                                                                                                |
+| 选项                        | 默认值                                                                                      |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                   |
+| short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                   |
+| description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress'` |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`          |
+| start_url                   | `context.base`                                                                              |
+| scope                       | `context.base`                                                                              |
+| display                     | `"standalone"`                                                                              |
+| theme_color                 | `"#46bd87"`                                                                                 |
+| background_color            | `'#ffffff'`                                                                                 |
+| orientation                 | `'portrait-primary'`                                                                        |
+| prefer_related_applications | `false`                                                                                     |
 
 完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa/src/shared/manifest.d.ts)
 

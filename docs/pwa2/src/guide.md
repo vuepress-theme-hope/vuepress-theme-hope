@@ -125,19 +125,19 @@ The plugin will use the information from the VuePress plugin API and set the fal
 
 If the following fields are not set, they will try to fallback to the following preset values in order.
 
-| Options                     | Default value                                                                                          |
-| --------------------------- | ------------------------------------------------------------------------------------------------------ |
-| name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress-theme-hope'` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                     |
-| start_url                   | `context.base`                                                                                         |
-| scope                       | `context.base`                                                                                         |
-| display                     | `"standalone"`                                                                                         |
-| theme_color                 | `"#46bd87"`                                                                                            |
-| background_color            | `'#ffffff'`                                                                                            |
-| orientation                 | `'portrait-primary'`                                                                                   |
-| prefer_related_applications | `false`                                                                                                |
+| Options                     | Default value                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                   |
+| short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                   |
+| description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress'` |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`          |
+| start_url                   | `context.base`                                                                              |
+| scope                       | `context.base`                                                                              |
+| display                     | `"standalone"`                                                                              |
+| theme_color                 | `"#46bd87"`                                                                                 |
+| background_color            | `'#ffffff'`                                                                                 |
+| orientation                 | `'portrait-primary'`                                                                        |
+| prefer_related_applications | `false`                                                                                     |
 
 For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa/src/shared/manifest.d.ts)
 

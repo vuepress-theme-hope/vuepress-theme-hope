@@ -28,8 +28,7 @@ export const getManifest = async (
   const finalManifest: ManifestOption = {
     name: siteData.title || "Site",
     short_name: siteData.title || "Site",
-    description:
-      siteData.description || "A site built with vuepress-theme-hope",
+    description: siteData.description || "A site built with vuepress",
     lang: getRootLang(app),
     start_url: base,
     scope: base,
