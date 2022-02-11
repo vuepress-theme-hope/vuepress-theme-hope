@@ -14,6 +14,21 @@ actions:
     link: /zh/config.html
 
 features:
+  - title: 自定义容器支持
+    icon: box
+    details: 用样式装饰 Markdown 内容
+    link: /zh/guide/container.html
+
+  - title: 代码组
+    icon: code
+    details: 使用选项卡对相似代码进行分组
+    link: /zh/guide/code-group.html
+
+  - title: 自定义对齐支持
+    icon: align
+    details: 让你在 Markdown 中对段落进行对齐
+    link: /zh/guide/align.html
+
   - title: 上下角标支持
     icon: superscript
     details: 你的 Markdown 现在将支持上下角标
@@ -23,11 +38,6 @@ features:
     icon: footnote
     details: 你的 Markdown 现在将支持脚注
     link: /zh/guide/footnote.html
-
-  - title: 自定义对齐支持
-    icon: align
-    details: 让你在 Markdown 中对段落进行对齐
-    link: /zh/guide/align.html
 
   - title: 标记支持
     icon: write
@@ -131,3 +141,7 @@ module.exports = {
 :::
 
 ::::
+
+## 从 V1 迁移
+
+详见 [迁移指南](./migration.md)。

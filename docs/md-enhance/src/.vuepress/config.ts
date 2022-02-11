@@ -56,9 +56,10 @@ export default defineUserConfig<HopeThemeOptions>({
     locales: {
       "/": {
         navbar: [
-          { text: "Home", icon: "home", link: "/README.md" },
-          { text: "Guide", icon: "creative", link: "/guide/README.md" },
-          { text: "Config", icon: "config", link: "/config.md" },
+          "/README.md",
+          "/guide/README.md",
+          "/config.md",
+          "/migration.md",
           {
             text: version,
             icon: "note",
@@ -107,6 +108,7 @@ export default defineUserConfig<HopeThemeOptions>({
               ],
             },
             "config.md",
+            "migration.md",
           ],
 
           "/guide/": [
@@ -141,9 +143,10 @@ export default defineUserConfig<HopeThemeOptions>({
 
       "/zh/": {
         navbar: [
-          { text: "主页", icon: "home", link: "/zh/README.md" },
-          { text: "指南", icon: "creative", link: "/zh/guide/README.md" },
-          { text: "配置", icon: "config", link: "/zh/config.md" },
+          "/zh/README.md",
+          "/zh/guide/README.md",
+          "/zh/config.md",
+          "/zh/migration.md",
           {
             text: version,
             icon: "note",
@@ -192,6 +195,7 @@ export default defineUserConfig<HopeThemeOptions>({
               ],
             },
             "config.md",
+            "migration.md",
           ],
 
           "/zh/guide/": [

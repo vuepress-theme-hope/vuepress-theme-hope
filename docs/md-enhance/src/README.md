@@ -14,6 +14,21 @@ actions:
     link: /config.html
 
 features:
+  - title: Custom Container
+    icon: box
+    details: Decorate markdown content with styles
+    link: /guide/container.html
+
+  - title: CodeGroup
+    icon: code
+    details: Group similar codes with tabs
+    link: /guide/code-group.html
+
+  - title: Custom Align
+    icon: align
+    details: Let you decide to align paragraphs in the way you like
+    link: /guide/align.html
+
   - title: Superscript and subscript support
     icon: superscript
     details: Your Markdown now suppport superscript and subscript
@@ -23,11 +38,6 @@ features:
     icon: footnote
     details: Your Markdown now suppport footnotes
     link: /guide/footnote.html
-
-  - title: Custom Align
-    icon: align
-    details: Let you decide to align paragraphs in the way you like
-    link: /guide/align.html
 
   - title: Mark Support
     icon: write
@@ -129,3 +139,7 @@ module.exports = {
 :::
 
 ::::
+
+## Migrating from V1
+
+For details, see [Migration Guide](./migration.md).

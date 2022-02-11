@@ -41,19 +41,53 @@ module.exports = {
 
 - `vue` (默认)
 - `ant`
+- `pie`
 
 ## 演示
 
 ```flow
-st=>start: Start|past:>http://www.google.com[blank]
-e=>end: End|future:>http://www.google.com
-op1=>operation: My Operation|past
-op2=>operation: Stuff|current
-sub1=>subroutine: My Subroutine|invalid
-cond=>condition: Yes
-or No?|approved:>http://www.google.com
-c2=>condition: Good idea|rejected
-io=>inputoutput: catch something...|future
+st=>start: 开始|past:>http://www.google.com[blank]
+e=>end: 结束|future:>http://www.google.com
+op1=>operation: 操作1|past
+op2=>operation: 操作2|current
+sub1=>subroutine: 子程序|invalid
+cond=>condition: 是/否?|approved:>http://www.google.com
+c2=>condition: 判断2|rejected
+io=>inputoutput: 进行反思...|future
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+
+```flow:ant
+st=>start: 开始|past:>http://www.google.com[blank]
+e=>end: 结束|future:>http://www.google.com
+op1=>operation: 操作1|past
+op2=>operation: 操作2|current
+sub1=>subroutine: 子程序|invalid
+cond=>condition: 是/否?|approved:>http://www.google.com
+c2=>condition: 判断2|rejected
+io=>inputoutput: 进行反思...|future
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+
+```flow:pie
+st=>start: 开始|past:>http://www.google.com[blank]
+e=>end: 结束|future:>http://www.google.com
+op1=>operation: 操作1|past
+op2=>operation: 操作2|current
+sub1=>subroutine: 子程序|invalid
+cond=>condition: 是/否?|approved:>http://www.google.com
+c2=>condition: 判断2|rejected
+io=>inputoutput: 进行反思...|future
 
 st->op1(right)->cond
 cond(yes, right)->c2
@@ -64,15 +98,14 @@ c2(no)->op2->e
 
 ````md
 ```flow
-st=>start: Start|past:>http://www.google.com[blank]
-e=>end: End|future:>http://www.google.com
-op1=>operation: My Operation|past
-op2=>operation: Stuff|current
-sub1=>subroutine: My Subroutine|invalid
-cond=>condition: Yes
-or No?|approved:>http://www.google.com
-c2=>condition: Good idea|rejected
-io=>inputoutput: catch something...|future
+st=>start: 开始|past:>http://www.google.com[blank]
+e=>end: 结束|future:>http://www.google.com
+op1=>operation: 操作1|past
+op2=>operation: 操作2|current
+sub1=>subroutine: 子程序|invalid
+cond=>condition: 是/否?|approved:>http://www.google.com
+c2=>condition: 判断2|rejected
+io=>inputoutput: 进行反思...|future
 
 st->op1(right)->cond
 cond(yes, right)->c2
@@ -102,16 +135,16 @@ c2(no)->op2->e
 
 ````md
 ```flow
-st=>start: Start
-e=>end: End
+st=>start: 开始
+e=>end: 结束
 
 st->e
 ```
 ````
 
 ```flow
-st=>start: Start
-e=>end: End
+st=>start: 开始
+e=>end: 结束
 
 st->e
 ```
@@ -122,16 +155,16 @@ st->e
 
 ````md
 ```flow
-process=>operation: Operation
-e=>end: End
+process=>operation: 操作
+e=>end: 结束
 
 process->e
 ```
 ````
 
 ```flow
-process=>operation: Operation
-e=>end: End
+process=>operation: 操作
+e=>end: 结束
 
 process->e
 ```
@@ -142,16 +175,16 @@ process->e
 
 ````md
 ```flow
-process=>inputoutput: Inputoutput
-e=>end: End
+process=>inputoutput: 输入输出
+e=>end: 结束
 
 process->e
 ```
 ````
 
 ```flow
-process=>inputoutput: Inputoutput
-e=>end: End
+process=>inputoutput: 输入输出
+e=>end: 结束
 
 process->e
 ```
@@ -162,16 +195,16 @@ process->e
 
 ````md
 ```flow
-process=>subroutine: Subroutine
-e=>end: End
+process=>subroutine: 子程序
+e=>end: 结束
 
 process->e
 ```
 ````
 
 ```flow
-process=>subroutine: Subroutine
-e=>end: End
+process=>subroutine: 子程序
+e=>end: 结束
 
 process->e
 ```
@@ -185,9 +218,9 @@ process->e
 
 ````md
 ```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
+cond=>condition: 是否执行操作?
+process=>operation: 操作
+e=>end: 结束
 
 cond(yes)->process->e
 cond(no)->e
@@ -195,9 +228,9 @@ cond(no)->e
 ````
 
 ```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
+cond=>condition: 是否执行操作?
+process=>operation: 操作
+e=>end: 结束
 
 cond(yes)->process->e
 cond(no)->e
@@ -213,9 +246,9 @@ cond(no)->e
 
 ````md
 ```flow
-para=>parallel: parallel tasks
-process=>operation: Process
-e=>end: End
+para=>parallel: 平行任务
+process=>operation: 操作
+e=>end: 结束
 
 para(path1, bottom)->process->e
 para(path2)->e
@@ -223,9 +256,9 @@ para(path2)->e
 ````
 
 ```flow
-para=>parallel: parallel tasks
-process=>operation: Process
-e=>end: End
+para=>parallel: 平行任务
+process=>operation: 操作
+e=>end: 结束
 
 para(path1, bottom)->process->e
 para(path2)->e

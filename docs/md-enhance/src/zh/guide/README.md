@@ -31,6 +31,30 @@ icon: markdown
 
 ## 新增的更多语法
 
+### 代码块
+
+:::: code-group
+
+::: code-group-item yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+:::
+
+::: code-group-item npm:active
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+::::
+
+- [查看详情](code-group.md)
+
 ### 自定义对齐
 
 ::: center
@@ -77,9 +101,9 @@ icon: markdown
 ### 流程图
 
 ```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
+cond=>condition: 是否执行操作?
+process=>operation: 操作
+e=>end: 结束
 
 cond(yes)->process->e
 cond(no)->e

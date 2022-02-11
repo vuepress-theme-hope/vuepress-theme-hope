@@ -33,6 +33,30 @@ Please use the options below and enable ONLY the feature you want to use.
 
 ## New Feature
 
+### CodeGroup
+
+:::: code-group
+
+::: code-group-item yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+:::
+
+::: code-group-item npm:active
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+::::
+
+- [View Detail](code-group.md)
+
 ### Superscript and Subscript
 
 19^th^ H~2~O
