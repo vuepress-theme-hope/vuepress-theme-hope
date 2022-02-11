@@ -1,9 +1,10 @@
 import { getFeedChannelOption, getFeedLinks } from "./options";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
-import { logger } from "./utils";
+import { compareDate, logger } from "./utils";
 
 import type { Page, Plugin, PluginConfig } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import type { FeedOptions } from "../shared";
 
 export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
@@ -37,11 +38,26 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
             frontmatter.isArticle === false ||
             frontmatter.feed === false
           ),
+        sorter = (
+          pageA: Page<Record<string, never>, { git?: GitData }>,
+          pageB: Page<Record<string, never>, { git?: GitData }>
+        ): number => {
+          return compareDate(
+            pageA.git?.createdTime
+              ? new Date(pageA.git?.createdTime)
+              : pageA.frontmatter.date,
+            pageB.git?.createdTime
+              ? new Date(pageB.git?.createdTime)
+              : pageB.frontmatter.date
+          );
+        },
       } = feedOptions;
 
       const feedPages = app.pages
         .filter(filter)
-        .sort(feedOptions.sorter)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        .sort(sorter)
         .slice(0, feedOptions.count || 1000);
 
       await new FeedGenerator(app, feedOptions, feedPages, {

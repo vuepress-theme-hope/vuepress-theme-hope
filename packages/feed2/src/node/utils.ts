@@ -4,6 +4,16 @@ import type { FeedOptions } from "../shared";
 
 export const logger = new Logger("vuepress-plugin-feed2");
 
+export const compareDate = (
+  dateA: Date | string | undefined,
+  dateB: Date | string | undefined
+): number => {
+  if (!dateA || !(dateA instanceof Date)) return 1;
+  if (!dateB || !(dateB instanceof Date)) return -1;
+
+  return dateB.getTime() - dateA.getTime();
+};
+
 export const resolveHTML = (html: string): string =>
   html
     // remove html class
