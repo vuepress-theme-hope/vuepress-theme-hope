@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:list";
 @use "sass:map";
-@use "vuepress-plugin-sass-palette/styles/helper";
+@use "@sass-palette/helper";
 
 $textColorLight: (
   light:

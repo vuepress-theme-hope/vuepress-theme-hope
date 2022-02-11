@@ -71,9 +71,9 @@ export interface SassPaletteOptions {
   generator?: string;
 
   /**
-   * user style file path, relative to source dir
+   * User style file path, relative to source dir.
    *
-   * 用户的样式文件路径，相对于源文件夹
+   * 用户的样式文件路径，相对于源文件夹。
    */
   style?: string;
 }
