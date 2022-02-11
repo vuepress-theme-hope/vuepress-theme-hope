@@ -49,11 +49,11 @@ npm i -D vuepress-plugin-lightgallery@next
 
 ```ts
 // .vuepress/config.ts
-import { copyCode } from "vuepress-plugin-lightgallery";
+import { lightgallery } from "vuepress-plugin-lightgallery";
 
 export default {
   plugins: [
-    copyCode({
+    lightgallery({
       // your options
     }),
   ],
@@ -66,11 +66,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { copyCode } = require("vuepress-plugin-lightgallery");
+const { lightgallery } = require("vuepress-plugin-lightgallery");
 
 module.exports = {
   plugins: [
-    copyCode({
+    lightgallery({
       // your options
     }),
   ],
