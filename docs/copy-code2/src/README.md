@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "vuepress-plugin-copy-code2"
+heroText: vuepress-plugin-copy-code2
 tagline: Code Copy plugin for VuePress2
 actions:
   - text: Guide 💡

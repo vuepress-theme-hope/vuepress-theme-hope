@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "vuepress-plugin-copy-code2"
+heroText: vuepress-plugin-copy-code2
 tagline: 为 VuePress2 提供代码块一键复制
 actions:
   - text: 快速上手 💡

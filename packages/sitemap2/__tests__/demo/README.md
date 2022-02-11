@@ -1,8 +1,8 @@
 ---
 home: true
-title: "vuepress-plugin-sitemap2"
+title: vuepress-plugin-sitemap2
 heroImage: /logo.svg
-heroText: "vuepress-plugin-sitemap2"
+heroText: vuepress-plugin-sitemap2
 tagline: 为 VuePress 提供 Sitemap
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---

@@ -62,6 +62,7 @@ jobs:
           yarn cpx "docs/comment2/dist/**" dist/comment
           yarn cpx "docs/copy-code2/dist/**" dist/copy-code
           yarn cpx "docs/feed2/dist/**" dist/feed
+          yarn cpx "docs/lightgallery/dist/**" dist/lightgallery
           yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
           yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
           yarn cpx "docs/pwa2/dist/**" dist/pwa

@@ -2,7 +2,7 @@
 home: true
 title: "vuepress-plugin-seo2"
 heroImage: /logo.svg
-heroText: "vuepress-plugin-seo2"
+heroText: vuepress-plugin-seo2
 tagline: 为 VuePress 提供 SEO 增强
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
