@@ -9,7 +9,7 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-hope)
+[![Version](https://img.shields.io/npm/v/vuepress-theme-hope/next.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-hope)
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
 

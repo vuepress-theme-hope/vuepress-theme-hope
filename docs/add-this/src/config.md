@@ -6,6 +6,6 @@ icon: config
 ## pubid
 
 - Type: `string`
-- Required: true
+- Required: Yes
 
 Pubid for Add this

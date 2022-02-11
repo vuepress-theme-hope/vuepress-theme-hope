@@ -94,7 +94,6 @@ See the [Avatar setting](../guide/client/avatar.md) for more details.
 
 - Type: `number | [number, number]`
 - Default: `0`
-- Required: `false`
 
 Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to `0`.
 
@@ -102,7 +101,6 @@ Comment word s limit. When a single number is filled in, it 's the maximum numbe
 
 - Type: `number`
 - Default: `10`
-- Required: No
 
 number of comments per page.
 
@@ -110,7 +108,6 @@ number of comments per page.
 
 - Type: `string`
 - Default: `https://sdn.geekzu.org/avatar/`
-- Required: No
 
 Gravatar CDN baseURL.
 
@@ -118,7 +115,6 @@ Gravatar CDN baseURL.
 
 - Type: `boolean`
 - Default: `false`
-- Required: No
 
 Whether **force** pulling the latest avatar each time.
 
@@ -133,7 +129,6 @@ Custom image upload callback to manage picture by yourself. We will pass a pictu
 
 - Type: `boolean`
 - Default: `true`
-- Required: No
 
 **Code highlighting**, it’s enabled by default, please close it selectively.
 
@@ -180,7 +175,6 @@ Waline locales config. For details, see [Waline i18n customize](https://waline.j
 
 - Type: `boolean`
 - Default: `true`
-- Required: No
 
 Whether show copyright and version in footer.
 

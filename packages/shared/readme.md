@@ -5,7 +5,7 @@
 <h1 align="center">@mr-hope/vuepress-shared</h1>
 <h4 align="center">Shared Utils for vuepress-theme-hope and its plugins / vuepress-theme-hope 及其插件的共享库</h4>
 
-[![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-shared.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-shared.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-shared?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-shared)
+[![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-shared/next.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-shared.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-shared?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-shared)
 
 <!-- markdownlint-restore -->
 
