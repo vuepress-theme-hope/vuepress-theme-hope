@@ -58,7 +58,7 @@
     }
   }
 
-  @debug "Unexpected value: getting #{$value}";
+  @warn "Unexpected value: getting #{$value}";
 
   @return false;
 }
@@ -75,7 +75,7 @@
     @return if($isDark, $darkColor, $lightColor);
   }
 
-  @debug "Unexpected color: getting #{$color}";
+  @warn "Unexpected color: getting #{$color}";
 
   @return transparent;
 }

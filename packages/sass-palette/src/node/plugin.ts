@@ -1,5 +1,6 @@
 import { fs, path } from "@vuepress/utils";
-import { injectConfig } from "./injectConfig";
+import { injectConfigModule } from "./inject";
+import { logger } from "./utils";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { SassPaletteOptions } from "../shared";
@@ -17,17 +18,16 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       "../../styles/default/palette.scss"
     ),
     generator = path.resolve(__dirname, "../../styles/empty.scss"),
-    style = `.vuepress/styles/${id}-style.scss`,
+    style,
   },
   app
 ) => {
   const userConfig = app.dir.source(config);
   const userPalette = app.dir.source(palette);
-  const userStyle = app.dir.source(style);
   const getPath = (path: string): string =>
     fs.pathExistsSync(path) ? path : emptyFile;
 
-  injectConfig(app, id);
+  injectConfigModule(app, id);
 
   return {
     name: `vuepress-plugin-sass-palette?${id}`,
@@ -46,24 +46,25 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       [`@sass-palette/${id}-palette`]: app.dir.temp(
         `sass-palette/${id}-palette.scss`
       ),
-      [`@sass-palette/${id}-style`]: app.dir.temp(
-        `sass-palette/${id}-style.scss`
-      ),
+      ...(style
+        ? {
+            [`@sass-palette/${id}-style`]: app.dir.temp(
+              `sass-palette/${id}-style.scss`
+            ),
+          }
+        : {}),
     },
 
-    onInitialized: (): Promise<string> => {
-      return app.writeTemp(
-        `sass-palette/load-${id}.js`,
-        `
+    onInitialized: (): Promise<void> => {
+      const promises = [
+        app.writeTemp(
+          `sass-palette/load-${id}.js`,
+          `
 export default ()=>{
   import("@sass-palette/${id}-inject");
 };
 `
-      );
-    },
-
-    onPrepared: () =>
-      Promise.all([
+        ),
         app.writeTemp(
           `sass-palette/${id}-config.scss`,
           `
@@ -88,6 +89,12 @@ export default ()=>{
 @use "@sass-palette/${id}-palette";
 
 $variables: meta.module-variables("${id}-palette");
+
+${
+  app.env.isDebug
+    ? `@debug "${id} palette variables:";\n@debug $variables;\n@debug "${id} config variables:";\n@debug meta.module-variables("${id}-config");`
+    : ""
+}
 
 @each $name, $value in $variables {
   $key: helper.camel-to-kebab($name);
@@ -115,13 +122,24 @@ $variables: meta.module-variables("${id}-palette");
 @import "${getPath(generator)}";
 `
         ),
+      ];
 
-        app.writeTemp(
-          `sass-palette/${id}-style.scss`,
-          `@forward "${getPath(userStyle)}";
+      if (style) {
+        const userStyle = app.dir.source(style);
+
+        promises.push(
+          app.writeTemp(
+            `sass-palette/${id}-style.scss`,
+            `@forward "${getPath(userStyle)}";
 `
-        ),
-      ]),
+          )
+        );
+      }
+
+      return Promise.all(promises).then(() => {
+        if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
+      });
+    },
 
     clientAppEnhanceFiles: app.dir.temp(`sass-palette/load-${id}.js`),
   };

@@ -6,14 +6,14 @@ import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 import type { LoaderContext } from "@vuepress/bundler-webpack/lib/types.webpack";
 
 /**
- * Handle specific path when runing VuePress DevServe
+ * Use 'addtionalData' to make `${id}-config` availe in scss
  *
  * @param app VuePress Node App
  * @param path Path to be responsed
  * @param getResponse respond function
  * @param errMsg error msg
  */
-export const injectConfig = (app: App, id: string): void => {
+export const injectConfigModule = (app: App, id: string): void => {
   const { bundler, bundlerConfig } = app.options;
 
   // for vite
