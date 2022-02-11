@@ -31,6 +31,8 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
 
   useSassPalettePlugin(app, { id: "hope" });
 
+  app.options.head = injectLinkstoHead(options, base, app.options.head);
+
   const config: PluginObject = {
     name: "vuepress-plugin-pwa2",
 
@@ -45,10 +47,6 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
     ],
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
-
-    onPrepared(): void {
-      app.siteData.head = injectLinkstoHead(options, base, app.siteData.head);
-    },
 
     async onGenerated(): Promise<void> {
       await genManifest(app, manifest);
