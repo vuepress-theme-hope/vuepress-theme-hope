@@ -48,10 +48,10 @@ npm i -D vuepress-plugin-feed2@next
 ::: code-group-item ts
 
 ```js
-// .vuepress/config.js
+// .vuepress/config.ts
 import { feed } from "vuepress-plugin-feed2";
 
-module.exports = {
+export default {
   plugins: [
     feed({
       // 插件选项
@@ -65,7 +65,7 @@ module.exports = {
 ::: code-group-item js
 
 ```ts
-// .vuepress/config.ts
+// .vuepress/config.js
 const { feed } = require("vuepress-plugin-feed2");
 
 module.exports = {
