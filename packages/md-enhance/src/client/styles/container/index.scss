@@ -86,11 +86,16 @@
     }
 
     p {
-      line-height: 1.25;
+      line-height: 1.5;
     }
 
     a {
       color: var(--c-brand, #3eaf7c);
+    }
+
+    div[class*="language-"] {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
   }
 
