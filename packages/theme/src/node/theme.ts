@@ -29,7 +29,14 @@ export const themeHope: Theme<HopeThemeOptions> = (
   ]);
 
   if (app.env.isDev)
-    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+    addViteOptimizeDeps(app, [
+      "@mr-hope/vuepress-shared/lib/client",
+      "dayjs",
+      "dayjs/plugin/localizedFormat",
+      "dayjs/plugin/objectSupport",
+      "dayjs/plugin/timezone",
+      "dayjs/plugin/utc",
+    ]);
 
   handleThemeData(app, themeOptions);
   handleWebpackOptions(app);
