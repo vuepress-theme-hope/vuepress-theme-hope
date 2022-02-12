@@ -2,43 +2,57 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: var(--c-bg, #fff);
+  background: var(#fff);
 }
 
 body {
+  min-height: 100vh;
+
+  color: #2c3e50;
+  font-display: optional;
+  font-size: 16px;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  color: var(--c-text, #2c3e50);
-  min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
 }
 
 a {
   font-weight: 500;
-  color: var(--c-brand, #3eaf7c);
+  color: #3eaf7c;
   text-decoration: none;
 }
 
 p a code {
   font-weight: 400;
-  color: var(--c-brand, #3eaf7c);
+  color: #3eaf7c;
 }
 
 kbd {
-  background: #eee;
+  padding: 0 0.15em;
   border: solid 0.15rem #ddd;
   border-bottom: solid 0.25rem #ddd;
   border-radius: 0.15rem;
-  padding: 0 0.15em;
+
+  background: #eee;
+}
+
+code {
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  background: rgba(127, 127, 127, 0.12);
+  font-size: 0.85em;
+  overflow-wrap: break-word;
 }
 
 blockquote {
-  font-size: 1rem;
-  color: var(--light-grey);
-  border-left: 0.2rem solid #dfe2e5;
   margin: 1rem 0;
   padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 0.2rem solid #ddd;
+
+  color: #666;
+  font-size: 1rem;
 
   & > p {
     margin: 0;
@@ -62,20 +76,36 @@ h5,
 h6 {
   font-weight: 500;
   line-height: 1.25;
+
+  &:hover .header-anchor {
+    opacity: 1;
+  }
 }
+
 h1 {
   font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.65rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid var(--c-border, #eaecef);
-  transition: border-bottom-color 0.3s ease;
+  border-bottom: 1px solid #eaecef;
+  font-size: 1.65rem;
 }
 
 h3 {
   font-size: 1.35rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+h5 {
+  font-size: 1.05rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 a.header-anchor {
@@ -90,13 +120,10 @@ a.header-anchor {
   &:hover {
     text-decoration: none;
   }
-}
 
-code,
-kbd,
-.line-number {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  &:focus-visible {
+    opacity: 1;
+  }
 }
 
 p,
@@ -107,14 +134,15 @@ ol {
 
 hr {
   border: 0;
-  border-top: 1px solid var(--c-border, #eaecef);
+  border-top: 1px solid #eaecef;
 }
 
 table {
-  border-collapse: collapse;
-  margin: 1rem 0;
   display: block;
   overflow-x: auto;
+
+  margin: 1rem 0;
+  border-collapse: collapse;
 }
 
 tr {
@@ -122,19 +150,11 @@ tr {
 
   &:nth-child(2n) {
     background: #f6f8fa;
-
-    & {
-      background: #252322;
-    }
   }
 }
 
 th,
 td {
-  border: 1px solid var(--grey14);
   padding: 0.6em 1em;
-
-  & {
-    border: 1px solid var(--grey12);
-  }
+  border: 1px solid #dfe2e5;
 }

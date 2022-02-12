@@ -1,10 +1,9 @@
+@use "@mr-hope/vuepress-shared/styles/normalize";
 @use "@sass-palette/hope-config";
 @use "fonts/crimson.css";
 
 html,
 body {
-  padding: 0;
-  margin: 0;
   background: var(--bg-color);
   transition: background-color var(--color-transition);
 }
@@ -14,34 +13,20 @@ body {
 }
 
 body {
-  min-height: 100vh;
-
   color: var(--text-color);
-  font-display: optional;
   font-family: var(--font-family);
-  font-size: 16px;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: transparent;
 }
 
 a {
-  font-weight: 500;
-  color: var(--theme-color);
-  text-decoration: none;
+  color: var(---theme-color);
 }
 
 p a code {
-  font-weight: 400;
-  color: var(--theme-color);
+  color: var(---theme-color);
 }
 
 kbd {
-  padding: 0 0.15em;
-  border: solid 0.15rem var(--grey14);
-  border-bottom: solid 0.25rem var(--grey14);
-  border-radius: 0.15rem;
+  border-color: var(--grey14);
 
   background: var(--bg-color-light);
 
@@ -49,14 +34,8 @@ kbd {
 }
 
 code {
-  margin: 0;
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-  background: rgba(127, 127, 127, 0.12);
   color: var(--text-lighter);
   font-family: var(--font-family-code);
-  font-size: 0.85em;
-  overflow-wrap: break-word;
   transition: background-color var(--color-transition),
     color var(--color-transition);
 
@@ -66,97 +45,30 @@ code {
 }
 
 blockquote {
-  font-size: 1rem;
   color: var(--light-grey);
-  border-left: 0.2rem solid var(--grey14);
-  margin: 1rem 0;
-  padding: 0.25rem 0 0.25rem 1rem;
-
-  & > p {
-    margin: 0;
-  }
+  border-color: var(--grey14);
 }
 
-ul,
-ol {
-  padding-left: 1.2em;
-}
-
-strong {
-  font-weight: 600;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 500;
-  line-height: 1.25;
-
-  &:hover .header-anchor {
-    opacity: 1;
-  }
-}
-
-h1 {
-  font-size: 2rem;
-
-  // narrow mobile
-  @media (max-width: hope-config.$mobileS) {
+// narrow mobile
+@media (max-width: hope-config.$mobileS) {
+  h1 {
     font-size: 1.9rem;
   }
 }
 
 h2 {
-  font-size: 1.65rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid var(--border-color);
-  transition: border-bottom-color 0.3s ease;
-}
-
-a.header-anchor {
-  font-size: 0.85em;
-  float: left;
-  margin-left: -0.87em;
-  padding-right: 0.23em;
-  margin-top: 0.125em;
-  opacity: 0;
-  transition: opacity 0.2s;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:focus-visible {
-    opacity: 1;
-  }
-}
-
-p,
-ul,
-ol {
-  line-height: 1.7;
+  border-color: (--border-color);
+  transition: border-bottom-color var(--color-transition);
 }
 
 hr {
-  border: 0;
-  border-top: 1px solid var(--border-color);
-  transition: border-top-color 0.3s ease;
-}
-
-table {
-  border-collapse: collapse;
-  margin: 1rem 0;
-  display: block;
-  overflow-x: auto;
+  border-color: var(--border-color);
+  transition: border-top-color var(--color-transition);
 }
 
 tr {
-  border-top: 1px solid var(--grey14);
+  border-color: var(--grey14);
 
-  // TODO: improve color
   &:nth-child(2n) {
     background: var(--bg-color-light);
 
@@ -168,11 +80,9 @@ tr {
 
 th,
 td {
-  border: 1px solid var(--grey14);
-  padding: 0.6em 1em;
+  border-color: var(--grey14);
 
-  // TODO: improve color
   #{hope-config.$darkSelector} {
-    border: 1px solid var(--grey12);
+    border-color: var(--grey14);
   }
 }
