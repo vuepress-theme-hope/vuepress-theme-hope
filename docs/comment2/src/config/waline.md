@@ -15,7 +15,7 @@ Waline server address url
 - Type: `(string | EmojiInfo)[]`
 - Default: `['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']`
 
-Emoji settings, for details see [Custom Emoji](../guide/client/emoji.md)
+Emoji settings, for details see [Custom Emoji](https://waline.js.org/en/guide/client/emoji.html)
 
 ## dark
 
@@ -35,7 +35,7 @@ Darkmode support
 
 :::
 
-For details of custom style and darkmode, please see [Custom Style](../guide/client/style.md).
+For details of custom style and darkmode, please see [Custom Style](https://waline.js.org/en/guide/client/style.html).
 
 ## meta
 
@@ -88,7 +88,7 @@ Optional value:
 - `'robohash'`
 - `'hide'`
 
-See the [Avatar setting](../guide/client/avatar.md) for more details.
+See the [Avatar setting](https://waline.js.org/en/guide/client/avatar.html) for more details.
 
 ## wordLimit
 

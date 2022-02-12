@@ -1,5 +1,4 @@
 import { defineUserConfig } from "@vuepress/cli";
-import { version } from "../../../../lerna.json";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
@@ -53,21 +52,7 @@ export default defineUserConfig<HopeThemeOptions>({
 
     locales: {
       "/": {
-        navbar: [
-          "/README.md",
-          "/guide/README.md",
-          "/config.md",
-          {
-            text: version,
-            icon: "note",
-            children: [
-              {
-                text: "V1 Docs",
-                link: "https://vuepress-theme-hope.github.io/components/",
-              },
-            ],
-          },
-        ],
+        navbar: ["/README.md", "/guide/README.md", "/config.md"],
 
         sidebar: {
           "/": [
@@ -84,21 +69,7 @@ export default defineUserConfig<HopeThemeOptions>({
       },
 
       "/zh/": {
-        navbar: [
-          "/zh/README.md",
-          "/zh/guide/README.md",
-          "/zh/config.md",
-          {
-            text: version,
-            icon: "note",
-            children: [
-              {
-                text: "V1 文档",
-                link: "https://vuepress-theme-hope.github.io/components/zh/",
-              },
-            ],
-          },
-        ],
+        navbar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config.md"],
 
         sidebar: {
           "/zh/": [
@@ -207,4 +178,14 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     },
   },
+
+  plugins: [
+    [
+      "@vuepress/docsearch",
+      {
+        apiKey: "595796f71b6ba14326719682c3738c0c",
+        indexName: "VXIEHELDL1",
+      },
+    ],
+  ],
 });

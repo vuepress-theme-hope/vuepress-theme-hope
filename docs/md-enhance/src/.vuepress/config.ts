@@ -328,6 +328,13 @@ export default defineUserConfig<HopeThemeOptions>({
 
   plugins: [
     [
+      "@vuepress/docsearch",
+      {
+        apiKey: "595796f71b6ba14326719682c3738c0c",
+        indexName: "VXIEHELDL1",
+      },
+    ],
+    [
       "@vuepress/plugin-register-components",
       {
         componentsDir: path.resolve(__dirname, "./components"),

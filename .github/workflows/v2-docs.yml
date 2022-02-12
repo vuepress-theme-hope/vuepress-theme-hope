@@ -60,6 +60,7 @@ jobs:
           yarn cpx "docs/add-this/dist/**" dist/add-this
           yarn cpx "docs/blog2/dist/**" dist/blog
           yarn cpx "docs/comment2/dist/**" dist/comment
+          yarn cpx "docs/components/dist/**" dist/components
           yarn cpx "docs/copy-code2/dist/**" dist/copy-code
           yarn cpx "docs/feed2/dist/**" dist/feed
           yarn cpx "docs/lightgallery/dist/**" dist/lightgallery

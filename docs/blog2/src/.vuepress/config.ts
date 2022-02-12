@@ -185,5 +185,13 @@ export default defineUserConfig<HopeThemeOptions>({
     },
   },
 
-  plugins: [["blog2", { pubid: "ra-5f829c59e6c6bc9a" }]],
+  plugins: [
+    [
+      "@vuepress/docsearch",
+      {
+        apiKey: "595796f71b6ba14326719682c3738c0c",
+        indexName: "VXIEHELDL1",
+      },
+    ],
+  ],
 });

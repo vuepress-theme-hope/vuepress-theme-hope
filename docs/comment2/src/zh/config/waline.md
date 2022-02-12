@@ -15,7 +15,7 @@ Waline 的服务端地址。
 - 类型: `(string | EmojiInfo)[]`
 - 默认值: `['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']`
 
-表情设置，详见 [自定义表情](../guide/client/emoji.md)
+表情设置，详见 [自定义表情](https://waline.js.org/guide/client/emoji.html)
 
 ## dark
 
@@ -35,7 +35,7 @@ Waline 的服务端地址。
 
 :::
 
-自定义样式与暗黑模式详见 [自定义样式](../guide/client/style.md)。
+自定义样式与暗黑模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
 
 ## meta
 
@@ -88,7 +88,7 @@ Waline 的服务端地址。
 - `'robohash'`
 - `'hide'`
 
-更多信息，请查看 [头像配置](../guide/client/avatar.md)。
+更多信息，请查看 [头像配置](https://waline.js.org/guide/client/avatar.html)。
 
 ## wordLimit
 
