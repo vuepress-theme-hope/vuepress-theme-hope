@@ -160,6 +160,7 @@
     padding: 1.2rem 0;
     border-top: 1px solid var(--border-color);
     transition: border-color var(--color-transition);
+    overflow: hidden;
 
     @media (max-width: hope-config.$mobileS) {
       margin: 0 -1.5rem;
@@ -167,6 +168,7 @@
   }
 
   .feature {
+    position: relative;
     flex-basis: calc(33% - 4rem);
     margin: 0.5rem;
     padding: 1rem 1.5rem;
