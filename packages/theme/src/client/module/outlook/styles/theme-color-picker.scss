@@ -39,8 +39,6 @@
   }
 }
 
-@debug hope-config.$colorPicker;
-
 @each $colorName, $value in hope-config.$colorPicker {
   :root.theme-#{$colorName} {
     --theme-color: #{$value};

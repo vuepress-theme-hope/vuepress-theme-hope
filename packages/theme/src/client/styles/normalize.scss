@@ -18,11 +18,11 @@ body {
 }
 
 a {
-  color: var(---theme-color);
+  color: var(--theme-color);
 }
 
 p a code {
-  color: var(---theme-color);
+  color: var(--theme-color);
 }
 
 kbd {
@@ -57,7 +57,7 @@ blockquote {
 }
 
 h2 {
-  border-color: (--border-color);
+  border-color: var(--border-color);
   transition: border-bottom-color var(--color-transition);
 }
 
