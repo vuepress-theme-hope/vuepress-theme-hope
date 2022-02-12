@@ -224,8 +224,6 @@ export default defineUserConfig<HopeThemeOptions>({
         componentsDir: path.resolve(__dirname, "./components"),
       },
     ],
-    // only enable shiki plugin in production mode
-    ["@vuepress/plugin-shiki", isProd ? { theme: "dark-plus" } : false],
   ],
 
   onWatched: (_, watchers, restart) => {
