@@ -82,8 +82,7 @@ export interface HopeThemeBlogOptions {
    * }
    * ```
    */
-  medias?: Partial<Record<MediaType, string>> &
-    Record<string, { icon: string; link: string }>;
+  medias?: Partial<Record<MediaType, string>>;
 
   /**
    * Whether cliping the avatar with round shape
