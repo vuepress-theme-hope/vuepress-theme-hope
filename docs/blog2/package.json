@@ -1,6 +1,6 @@
 {
   "name": "blog2-docs",
-  "version": "2.0.0-alpha.20",
+  "version": "2.0.0-alpha.21",
   "private": true,
   "description": "Docs for vuepress-plugin-blog2",
   "license": "MIT",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-beta.35",
-    "vuepress-theme-hope": "2.0.0-alpha.20",
+    "vuepress-theme-hope": "2.0.0-alpha.21",
     "vuepress-vite": "2.0.0-beta.35",
     "vuepress-webpack": "2.0.0-beta.35"
   }

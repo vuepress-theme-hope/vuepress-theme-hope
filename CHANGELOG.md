@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-02-12)
+
+### Bug Fixes
+
+- **theme:** fix features width ([55623c4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/55623c4e0d4788e1cf97891c04ecf13e222bc3fe))
+- **theme:** fix medialinks type ([7150689](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71506898925eed285e9059a4cf9e594a1ac16dbf))
+- **theme:** fix normalize color ([190a424](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/190a4242887ce0e4ccb0a3cb424cf4c00678261b))
+
+### Features
+
+- **theme:** add dayjs to optimize deps ([f6c87a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f6c87a2f735719b3efb1cdd2fdc603054f1df048))
+- **theme:** set `plugin.blog` default value to false ([f23b107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23b107468e4293f7afce8d29af2b385e2d6e45a))
+
 # [2.0.0-alpha.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-02-12)
 
 ### Features
