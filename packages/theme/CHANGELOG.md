@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.20](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-02-12)
+
+### Features
+
+- **theme:** add slots for NormalPage and ProjectHome ([a96f33d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a96f33d6e7687b669097074de9a29c4f224768c1))
+
 # [2.0.0-alpha.19](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.18...v2.0.0-alpha.19) (2022-02-12)
 
 ### Bug Fixes
