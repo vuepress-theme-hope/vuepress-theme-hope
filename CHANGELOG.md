@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.18...v2.0.0-alpha.19) (2022-02-12)
+
+### Bug Fixes
+
+- **sass-palette:** fix ssr render css generate ([c2f7b74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c2f7b742e06f8f11149f6d658d07fd82fd727bc2))
+- **theme:** fix algolia search button ([2af2bea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2af2bea45cbadc5eb7fedc68bd8d8239b1c78e78))
+- **theme:** fix fullscreen button ([7c755b9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7c755b92ba1b0ab3df2ebddea228979d82c07aa9))
+- **theme:** fix themecolor not active ([0e1b12f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e1b12f2fb993cfc6bf99b16e8bf5bc733093369))
+
 # [2.0.0-alpha.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-02-11)
 
 ### Bug Fixes
