@@ -14,7 +14,7 @@ import "../../styles/project-home.scss";
 export default defineComponent({
   name: "ProjectHome",
 
-  setup() {
+  setup(_props, { slots }) {
     const frontmatter =
       usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
 
@@ -28,11 +28,14 @@ export default defineComponent({
             frontmatter.value.heroText === null ? undefined : "main-title",
         },
         [
+          slots.top?.(),
           h(ProjectHero),
           h(DropTransition, { delay: 0.16 }, () => h(HomeFeatures)),
+          slots.center?.(),
           h(DropTransition, { delay: 0.24 }, () =>
             h(MarkdownContent, { custom: true })
           ),
+          slots.bottom?.(),
         ]
       );
   },
