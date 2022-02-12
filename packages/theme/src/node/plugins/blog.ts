@@ -42,7 +42,7 @@ const sorter = (pageA: Page, pageB: Page): number => {
 export const resolveBlogOptions = (
   options?: HopeThemeBlogPluginOptions | boolean
 ): BlogOptions | false => {
-  if (options === false) return false;
+  if (!options) return false;
 
   const blogOptions = {
     ...(typeof options === "object" ? options : {}),

@@ -107,6 +107,11 @@ export interface HopeThemePluginsOptions {
    */
   activeHeaderLinks?: boolean;
 
+  /**
+   * Blog plugin options
+   *
+   * @default false
+   */
   blog?: HopeThemeBlogPluginOptions | boolean;
 
   /**
