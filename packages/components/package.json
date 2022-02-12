@@ -49,7 +49,7 @@
     "balloon-css": "^1.2.0",
     "lodash.debounce": "^4.0.8",
     "screenfull": "^5.2.0",
-    "vue": "^3.2.30",
+    "vue": "^3.2.31",
     "vue-router": "^4.0.12",
     "vuepress-plugin-reading-time2": "2.0.0-alpha.20",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.20"
