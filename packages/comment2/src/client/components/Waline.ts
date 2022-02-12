@@ -16,6 +16,7 @@ import { walineLocales } from "../define";
 import type { WalineInstance } from "@waline/client";
 import type { VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";
+
 import "../styles/waline.scss";
 
 export default defineComponent({
@@ -38,8 +39,6 @@ export default defineComponent({
       return (
         // Enable in page
         Boolean(pageConfig) ||
-        // Enable in plugin and not disable in theme
-        (Boolean(pluginConfig) && pageConfig !== false) ||
         // not disabled in anywhere
         (pluginConfig !== false && pageConfig !== false)
       );
@@ -53,8 +52,6 @@ export default defineComponent({
       return (
         // Enable in page
         Boolean(pageConfig) ||
-        // Enable in plugin and not disable in page
-        (Boolean(pluginConfig) && pageConfig !== false) ||
         // not disabled in anywhere
         (pluginConfig !== false && pageConfig !== false)
       );

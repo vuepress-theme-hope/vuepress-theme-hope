@@ -1,4 +1,4 @@
-// TODO: Support it when vssue support vuepress2
+// TODO: Support vssue when it support vue3
 // import { usePageTitle } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
@@ -14,20 +14,16 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
 
-    const type = commentOptions.type;
-
     const enable = computed(() => {
       return (
-        commentOptions.type &&
-        (frontmatter.value.comment ||
-          (commentOptions.comment !== false &&
-            (commentOptions.type === "waline" ||
-              frontmatter.value.comment !== false)))
+        frontmatter.value.comment ||
+        (commentOptions.comment !== false &&
+          frontmatter.value.comment !== false)
       );
     });
 
     return (): VNode | null =>
-      type === "waline"
+      commentOptions.type === "waline"
         ? h(Waline, { style: { display: enable.value ? "block" : "none" } })
         : // : type === "vssue"
           // ? h(Vssue, {

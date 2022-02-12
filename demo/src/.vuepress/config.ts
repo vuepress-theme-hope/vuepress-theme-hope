@@ -138,6 +138,11 @@ export default defineUserConfig<HopeThemeOptions>({
     plugins: {
       blog: true,
 
+      comment: {
+        type: "waline",
+        serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      },
+
       mdEnhance: { enableAll: true },
 
       pwa: {
