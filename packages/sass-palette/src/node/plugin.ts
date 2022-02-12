@@ -59,11 +59,7 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       const promises = [
         app.writeTemp(
           `sass-palette/load-${id}.js`,
-          `
-export default ()=>{
-  import("@sass-palette/${id}-inject");
-};
-`
+          `import "@sass-palette/${id}-inject";export default ()=>{};`
         ),
         app.writeTemp(
           `sass-palette/${id}-config.scss`,
