@@ -1,7 +1,8 @@
 ---
 icon: markdown
 title: Markdown Enhance
-category: Guide
+category:
+  - Guide
 tag:
   - markdown
 ---

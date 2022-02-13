@@ -1,7 +1,8 @@
 ---
 title: Component disabled
 icon: config
-category: Guide
+category:
+  - Guide
 tag:
   - disable
 

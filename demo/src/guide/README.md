@@ -1,6 +1,7 @@
 ---
 icon: creative
-category: Guide
+category:
+  - Guide
 ---
 
 # Guides

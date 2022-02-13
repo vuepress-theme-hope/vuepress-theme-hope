@@ -1,7 +1,8 @@
 ---
 icon: edit
 date: 2022-01-01
-category: CategoryA
+category:
+  - CategoryA
 tag:
   - tag A
   - tag B

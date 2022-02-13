@@ -1,8 +1,9 @@
 ---
 title: Footnote
 icon: footnote
-category: markdown
-tags:
+category:
+  - markdown
+tag:
   - feature
   - markdown
 ---
@@ -35,7 +36,7 @@ module.exports = {
 
 - If there are muti paragraph in footnote, the paragraph show be double indented
 
-## Case
+## Demo
 
 Footnote 1 link[^first].
 

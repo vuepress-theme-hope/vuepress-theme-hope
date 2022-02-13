@@ -1,6 +1,7 @@
 ---
 icon: lock
-category: Guide
+category:
+  - Guide
 tag:
   - encryption
 ---

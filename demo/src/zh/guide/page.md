@@ -8,7 +8,8 @@ author: Ms.Hope
 # 设置写作时间
 date: 2020-01-01
 # 一个页面只能有一个分类
-category: 使用指南
+category:
+  - 使用指南
 # 一个页面可以有多个标签
 tag:
   - 页面配置

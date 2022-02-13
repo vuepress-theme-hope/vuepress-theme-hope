@@ -1,7 +1,8 @@
 ---
 icon: markdown
 title: Markdown 增强
-category: 使用指南
+category:
+  - 使用指南
 tag:
   - markdown
 ---

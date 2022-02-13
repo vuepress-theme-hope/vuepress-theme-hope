@@ -37,7 +37,7 @@ module.exports = {
 
 详见 [mermaid 官方文档](https://mermaid-js.github.io/mermaid/#/)。
 
-## 案例
+## 例子
 
 ### 流程图
 

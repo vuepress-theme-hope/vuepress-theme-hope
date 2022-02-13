@@ -41,7 +41,7 @@ icon: code
 
 :::
 
-## 案例
+## 例子
 
 ::: demo Demo 演示
 

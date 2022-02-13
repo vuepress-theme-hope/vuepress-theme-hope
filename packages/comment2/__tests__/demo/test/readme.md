@@ -1,8 +1,9 @@
 ---
-time: 2020-01-01
+date: 2020-01-01
 author: Mr.Hope
-category: Category
-tags:
+category:
+  - Category
+tag:
   - Tag1
   - Tag2
 ---

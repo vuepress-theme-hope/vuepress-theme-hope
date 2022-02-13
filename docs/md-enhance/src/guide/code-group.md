@@ -1,8 +1,9 @@
 ---
 title: CodeGroup
 icon: code
-category: markdown
-tags:
+category:
+  - markdown
+tag:
   - codegroup
   - markdown
 ---
