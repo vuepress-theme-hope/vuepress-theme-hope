@@ -22,7 +22,7 @@ import type {
  */
 export const headerToSidebarItem = (
   header: PageHeader,
-  sidebarDepth: number
+  headingDepth: number
 ): ResolvedHopeThemeSidebarHeaderItem => {
   const page = usePageData();
 
@@ -30,23 +30,23 @@ export const headerToSidebarItem = (
     type: "heading",
     text: header.title,
     link: `${page.value.path}#${header.slug}`,
-    children: headersToSidebarItemChildren(header.children, sidebarDepth),
+    children: headersToSidebarItemChildren(header.children, headingDepth),
   };
 };
 
 export const headersToSidebarItemChildren = (
   headers: PageHeader[],
-  sidebarDepth: number
+  headingDepth: number
 ): ResolvedHopeThemeSidebarHeaderItem[] =>
-  sidebarDepth > 0
-    ? headers.map((header) => headerToSidebarItem(header, sidebarDepth - 1))
+  headingDepth > 0
+    ? headers.map((header) => headerToSidebarItem(header, headingDepth - 1))
     : [];
 
 /**
  * Resolve sidebar items if the config is `auto`
  */
 export const resolveAutoSidebarItems = (
-  sidebarDepth: number
+  headingDepth: number
 ): ResolvedHopeThemeSidebarPageItem[] => {
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const page = usePageData();
@@ -57,7 +57,7 @@ export const resolveAutoSidebarItems = (
       text: page.value.title,
       icon: frontmatter.value.icon,
       link: "",
-      children: headersToSidebarItemChildren(page.value.headers, sidebarDepth),
+      children: headersToSidebarItemChildren(page.value.headers, headingDepth),
     },
   ];
 };
@@ -67,7 +67,7 @@ export const resolveAutoSidebarItems = (
  */
 export const resolveArraySidebarItems = (
   sidebarConfig: HopeThemeSidebarArrayConfig,
-  sidebarDepth: number,
+  headingDepth: number,
   prefix = ""
 ): ResolvedSidebarItem[] => {
   const page = usePageData();
@@ -106,7 +106,7 @@ export const resolveArraySidebarItems = (
               page.value.headers[0]?.level === 1
                 ? page.value.headers[0].children
                 : page.value.headers,
-              sidebarDepth
+              headingDepth
             )
           : [],
     };
@@ -120,7 +120,7 @@ export const resolveArraySidebarItems = (
  */
 export const resolveMultiSidebarItems = (
   sidebarConfig: HopeThemeSidebarObjectConfig,
-  sidebarDepth: number
+  headingDepth: number
 ): ResolvedSidebarItem[] => {
   const route = useRoute();
   const keys = Object.keys(sidebarConfig).sort((x, y) => y.length - x.length);
@@ -130,7 +130,7 @@ export const resolveMultiSidebarItems = (
     if (route.path.startsWith(base))
       return resolveArraySidebarItems(
         sidebarConfig[base] ?? [],
-        sidebarDepth,
+        headingDepth,
         base
       );
   }
@@ -153,17 +153,17 @@ export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
   const sidebarConfig = frontmatter.value.home
     ? false
     : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "auto";
-  const sidebarDepth =
+  const headingDepth =
     frontmatter.value.headingDepth ?? themeLocale.value.headingDepth ?? 2;
 
   // resolve sidebar items according to the config
   return sidebarConfig === false
     ? []
     : sidebarConfig === "auto"
-    ? resolveAutoSidebarItems(sidebarDepth)
+    ? resolveAutoSidebarItems(headingDepth)
     : isArray(sidebarConfig)
-    ? resolveArraySidebarItems(sidebarConfig, sidebarDepth)
+    ? resolveArraySidebarItems(sidebarConfig, headingDepth)
     : isPlainObject(sidebarConfig)
-    ? resolveMultiSidebarItems(sidebarConfig, sidebarDepth)
+    ? resolveMultiSidebarItems(sidebarConfig, headingDepth)
     : [];
 };
