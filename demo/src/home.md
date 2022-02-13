@@ -51,7 +51,7 @@ features:
 
   - title: SEO enhancement
     icon: config
-    details: Optimize pages for search engines.
+    details: Optimize pages for search engines
     link: https://vuepress-theme-hope.github.io/guide/feature/seo/
 
   - title: Sitemap
@@ -66,7 +66,7 @@ features:
 
   - title: PWA support
     icon: mobile
-    details: The built-in PWA plugin will make your website more like an APP.
+    details: Make your website more like an APP
     link: https://vuepress-theme-hope.github.io/guide/feature/pwa/
 
   - title: More new features
