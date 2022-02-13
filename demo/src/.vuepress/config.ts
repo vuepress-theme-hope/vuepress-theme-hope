@@ -1,10 +1,8 @@
-import * as chokidar from "chokidar";
 import { defineUserConfig } from "@vuepress/cli";
-import type { HopeThemeOptions } from "vuepress-theme-hope";
-import { chalk, logger, path } from "@vuepress/utils";
+import { path } from "@vuepress/utils";
 import { navbar, sidebar } from "./configs";
 
-const isProd = process.env.NODE_ENV === "production";
+import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default defineUserConfig<HopeThemeOptions>({
   base: "/v2-demo/",
@@ -225,16 +223,4 @@ export default defineUserConfig<HopeThemeOptions>({
       },
     ],
   ],
-
-  onWatched: (_, watchers, restart) => {
-    const watcher = chokidar.watch("configs/**/*.ts", {
-      cwd: __dirname,
-      ignoreInitial: true,
-    });
-    watcher.on("change", async (file) => {
-      logger.info(`file ${chalk.magenta(file)} is modified`);
-      await restart();
-    });
-    watchers.push(watcher);
-  },
 });
