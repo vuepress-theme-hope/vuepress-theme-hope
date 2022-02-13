@@ -10,7 +10,8 @@ interface ElementOption {
 }
 
 export default defineComponent({
-  name: "MyBadge",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Badge",
 
   props: {
     type: { type: String, default: "tip" },
