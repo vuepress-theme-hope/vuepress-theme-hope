@@ -13,7 +13,7 @@ export default defineComponent({
 = \\left(\\frac {y^{\\omega}} {\\omega}\\right) \\left\\{(\\log y)^r + \\sum_{i=1}^r \\frac {(-1)^ Ir \\cdots (r-i+1) (\\log y)^{ri}} {\\omega^i} \\right\\}`);
 
     const result = ref("");
-    const error = ref(false);
+    const inError = ref(false);
 
     const katexRender = () => {
       try {
@@ -21,10 +21,10 @@ export default defineComponent({
           displayMode: true,
           throwOnError: true,
         });
-        error.value = false;
+        inError.value = false;
       } catch (err) {
         result.value = err.toString();
-        error.value = true;
+        inError.value = true;
       }
     };
 
@@ -44,7 +44,7 @@ export default defineComponent({
           },
         }),
         h("p", {
-          class: ["katex-block", { "katex-error": error.value }],
+          class: ["katex-block", { "katex-error": inError.value }],
           innerHTML: result.value || "Here will be the render result",
         }),
       ]);
