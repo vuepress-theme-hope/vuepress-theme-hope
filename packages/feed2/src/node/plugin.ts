@@ -22,6 +22,14 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
   const feedOptions = options as FeedOptions;
   const channelOptions = getFeedChannelOption(app, feedOptions);
 
+  if (!feedOptions.atom && !feedOptions.json && !feedOptions.rss) {
+    logger.info("No requested output, the plugin won't start!");
+
+    return {
+      name: "vuepress-plugin-feed2",
+    };
+  }
+
   return {
     name: "vuepress-plugin-feed2",
 
