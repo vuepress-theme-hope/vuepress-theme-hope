@@ -45,7 +45,7 @@ npm i -D vuepress-plugin-lightgallery@next
 
 :::: code-group
 
-::: code-group-item ts
+::: code-group-item TS
 
 ```ts
 // .vuepress/config.ts
@@ -62,7 +62,7 @@ export default {
 
 :::
 
-::: code-group-item js
+::: code-group-item JS
 
 ```js
 // .vuepress/config.js

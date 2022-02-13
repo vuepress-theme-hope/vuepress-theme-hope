@@ -47,7 +47,7 @@ npm i -D vuepress-plugin-sass-palette@next
 
 :::: code-group
 
-::: code-group-item ts
+::: code-group-item TS
 
 ```ts
 // 你的插件或主题入口
@@ -69,7 +69,7 @@ export default yourPlugin;
 
 :::
 
-::: code-group-item js
+::: code-group-item JS
 
 ```js
 // 你的插件或主题入口

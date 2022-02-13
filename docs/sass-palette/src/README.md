@@ -47,7 +47,7 @@ You must invoke `useSassPalettePlugin` function during plugin initialization to 
 
 :::: code-group
 
-::: code-group-item ts
+::: code-group-item TS
 
 ```ts
 // Your plugin or theme entry
@@ -69,7 +69,7 @@ export default yourPlugin;
 
 :::
 
-::: code-group-item js
+::: code-group-item JS
 
 ```js
 // Your plugin or theme entry

@@ -45,7 +45,7 @@ npm i -D vuepress-plugin-feed2@next
 
 :::: code-group
 
-::: code-group-item ts
+::: code-group-item TS
 
 ```js
 // .vuepress/config.ts
@@ -62,7 +62,7 @@ export default {
 
 :::
 
-::: code-group-item js
+::: code-group-item JS
 
 ```ts
 // .vuepress/config.js

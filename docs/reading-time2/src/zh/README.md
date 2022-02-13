@@ -50,7 +50,7 @@ npm i -D vuepress-plugin-reading-time2
 
 :::: code-group
 
-::: code-group-item ts
+::: code-group-item TS
 
 ```ts
 // .vuepress/config.ts
@@ -68,7 +68,7 @@ export default {
 
 :::
 
-::: code-group-item js
+::: code-group-item JS
 
 ```js
 // .vuepress/config.js
