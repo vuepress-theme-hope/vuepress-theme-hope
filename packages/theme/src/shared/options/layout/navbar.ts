@@ -53,7 +53,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
-  darkLogo?: null | string;
+  logoDark?: null | string;
 
   /**
    * Navbar repository config

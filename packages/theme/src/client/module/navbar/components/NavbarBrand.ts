@@ -24,22 +24,22 @@ export default defineComponent({
       themeLocale.value.logo ? withBase(themeLocale.value.logo) : null
     );
 
-    const siteBrandDarkLogo = computed(() =>
-      themeLocale.value.darkLogo ? withBase(themeLocale.value.darkLogo) : null
+    const siteBrandLogoDark = computed(() =>
+      themeLocale.value.logoDark ? withBase(themeLocale.value.logoDark) : null
     );
 
     return (): VNode =>
       h(RouterLink, { to: siteBrandLink.value, class: "home-link" }, () => [
         siteBrandLogo.value
           ? h("img", {
-              class: ["logo", { light: Boolean(siteBrandDarkLogo.value) }],
+              class: ["logo", { light: Boolean(siteBrandLogoDark.value) }],
               src: siteBrandLogo.value,
               alt: siteBrandTitle.value,
             })
           : null,
-        siteBrandDarkLogo.value
+        siteBrandLogoDark.value
           ? h("img", {
-              class: ["logo dark", { light: Boolean(siteBrandDarkLogo) }],
+              class: ["logo dark", { light: Boolean(siteBrandLogoDark) }],
               src: siteBrandLogo.value,
               alt: siteBrandTitle.value,
             })
