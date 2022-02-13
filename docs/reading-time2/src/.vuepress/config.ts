@@ -1,8 +1,7 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { defineHopeConfig } from "vuepress-theme-hope";
 import { version } from "../../../../lerna.json";
-import type { HopeThemeOptions } from "vuepress-theme-hope";
 
-export default defineUserConfig<HopeThemeOptions>({
+export default defineHopeConfig({
   base: "/v2/reading-time/",
 
   dest: "./dist",

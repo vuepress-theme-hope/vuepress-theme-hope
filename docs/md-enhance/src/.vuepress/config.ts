@@ -1,9 +1,8 @@
-import { defineUserConfig } from "@vuepress/cli";
 import { path } from "@vuepress/utils";
+import { defineHopeConfig } from "vuepress-theme-hope";
 import { version } from "../../../../lerna.json";
-import type { HopeThemeOptions } from "vuepress-theme-hope";
 
-export default defineUserConfig<HopeThemeOptions>({
+export default defineHopeConfig({
   base: "/v2/md-enhance/",
 
   dest: "./dist",
