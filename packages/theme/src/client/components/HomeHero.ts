@@ -10,10 +10,10 @@ import AutoLink from "@theme-hope/components/AutoLink";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
 
 export default defineComponent({
-  name: "ProjectHero",
+  name: "HomeHero",
 
   setup() {
     const frontmatter =

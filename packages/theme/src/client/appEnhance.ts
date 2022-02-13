@@ -3,6 +3,8 @@ import { h } from "vue";
 
 import { useScrollPromise } from "@theme-hope/composables";
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
+import HomePage from "@theme-hope/components/HomePage";
+import NormalPage from "@theme-hope/components/NormalPage";
 
 import type { RouterScrollBehavior } from "vue-router";
 
@@ -26,6 +28,8 @@ export default defineClientAppEnhance(({ app, router }) => {
 
   // register to inject styles
   app.component("CommonWrapper", CommonWrapper);
+  app.component("HomePage", HomePage);
+  app.component("NormalPage", NormalPage);
 
   // handle scrollBehavior with transition
   const scrollBehavior = router.options.scrollBehavior as RouterScrollBehavior;

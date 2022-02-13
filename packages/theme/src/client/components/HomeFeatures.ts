@@ -6,10 +6,11 @@ import { RouterLink } from "vue-router";
 import { useIconPrefix } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
 
 export default defineComponent({
   name: "HomeFeatures",
+
   setup() {
     const iconPrefix = useIconPrefix();
     const frontmatter =

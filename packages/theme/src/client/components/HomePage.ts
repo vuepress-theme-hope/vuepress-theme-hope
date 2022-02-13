@@ -2,17 +2,17 @@ import { defineComponent, h } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
-import HomeFeatures from "@theme-hope/components/home/HomeFeatures";
+import HomeFeatures from "@theme-hope/components/HomeFeatures";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import ProjectHero from "@theme-hope/components/home/ProjectHero";
+import HomeHero from "@theme-hope/components/HomeHero";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
 
-import "../../styles/project-home.scss";
+import "../styles/home-page.scss";
 
 export default defineComponent({
-  name: "ProjectHome",
+  name: "HopePage",
 
   setup(_props, { slots }) {
     const frontmatter =
@@ -29,7 +29,7 @@ export default defineComponent({
         },
         [
           slots.top?.(),
-          h(ProjectHero),
+          h(HomeHero),
           h(DropTransition, { delay: 0.16 }, () => h(HomeFeatures)),
           slots.center?.(),
           h(DropTransition, { delay: 0.24 }, () =>
