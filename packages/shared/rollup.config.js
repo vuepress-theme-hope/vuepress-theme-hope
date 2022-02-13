@@ -15,7 +15,10 @@ export default [
       "ora",
       "vue",
       "vue-router",
+      /\.scss$/,
     ],
+    dtsExternal: [/\.scss$/],
+    copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/noopModule", {
     external: ["vue"],
