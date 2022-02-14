@@ -1,5 +1,10 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { isArray, isPlainObject, isString } from "@vuepress/shared";
+import {
+  isArray,
+  isLinkExternal,
+  isPlainObject,
+  isString,
+} from "@vuepress/shared";
 import { useRoute } from "vue-router";
 
 import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables";
@@ -80,7 +85,12 @@ export const resolveArraySidebarItems = (
     const childItem = isString(item)
       ? useAutoLink(resolvePrefix(pathPrefix, item))
       : item.link
-      ? { ...item, link: resolvePrefix(pathPrefix, item.link) }
+      ? {
+          ...item,
+          ...(item.link && !isLinkExternal(item.link)
+            ? { link: useAutoLink(resolvePrefix(pathPrefix, item.link)).link }
+            : {}),
+        }
       : item;
 
     // resolved group item
