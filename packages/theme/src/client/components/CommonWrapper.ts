@@ -119,7 +119,7 @@ export default defineComponent({
         "hide-navbar": hideNavbar.value,
         "sidebar-open": isSidebarOpen.value,
       },
-      frontmatter.value.pageClass || "",
+      frontmatter.value.containerClass || "",
     ]);
 
     /** Get scroll distance */
