@@ -25,7 +25,7 @@ By default, all the pages generated from Markdown files but not homepage will be
 
 ### category
 
-- Type: `BlogCategoryOptoins[]`
+- Type: `BlogCategoryOptions[]`
 
 Blog category config, see [Blog Category Config](#blog-category-config)
 
@@ -60,7 +60,7 @@ Setting to an empty key will inject to route meta directly instead of a field.
 Blog category config should be an array, while each item is controlling a "category" rule.
 
 ```ts
-export interface BlogCategoryOptoins {
+export interface BlogCategoryOptions {
   /**
    * Unique category name
    */

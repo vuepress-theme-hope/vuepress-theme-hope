@@ -1,6 +1,6 @@
 import type { Page } from "@vuepress/core";
 
-export interface BlogCategoryOptoins {
+export interface BlogCategoryOptions {
   /**
    * Unique category name
    *
@@ -128,7 +128,7 @@ export interface BlogOptions {
   /**
    * Categories config
    */
-  category?: BlogCategoryOptoins[];
+  category?: BlogCategoryOptions[];
 
   /**
    * Types config

@@ -39,14 +39,21 @@ const sorter = (pageA: Page, pageB: Page): number => {
   );
 };
 
+export const getBlogOptions = (
+  options?: HopeThemeBlogPluginOptions | boolean
+): HopeThemeBlogPluginOptions => ({
+  ...defaultOptions,
+  ...(typeof options === "object" ? options : {}),
+});
+
 export const resolveBlogOptions = (
   options?: HopeThemeBlogPluginOptions | boolean
 ): BlogOptions | false => {
   if (!options) return false;
 
   const blogOptions = {
-    ...(typeof options === "object" ? options : {}),
     ...defaultOptions,
+    ...(typeof options === "object" ? options : {}),
   };
 
   return {

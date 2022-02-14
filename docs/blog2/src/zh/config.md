@@ -25,7 +25,7 @@ icon: config
 
 ### category
 
-- 类型: `BlogCategoryOptoins[]`
+- 类型: `BlogCategoryOptions[]`
 
 博客分类配置，详见 [博客分类配置](#博客分类配置)。
 
@@ -60,7 +60,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 博客分类配置应为一个数组，每一项控制一个分类规则。
 
 ```ts
-export interface BlogCategoryOptoins {
+export interface BlogCategoryOptions {
   /**
    * 唯一的分类名称
    */
