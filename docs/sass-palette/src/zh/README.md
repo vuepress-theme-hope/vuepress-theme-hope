@@ -4,7 +4,7 @@ title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-sass-palette
-tagline: 为 VuePress2 提供代码块一键复制
+tagline: VuePress2 的 Sass 调色板插件
 actions:
   - text: 快速上手 💡
     link: /zh/guide.html
