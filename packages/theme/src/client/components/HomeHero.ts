@@ -26,10 +26,10 @@ export default defineComponent({
       return withBase(frontmatter.value.heroImage);
     });
 
-    const darkHeroImage = computed(() => {
-      if (!frontmatter.value.darkHeroImage) return null;
+    const heroImageDark = computed(() => {
+      if (!frontmatter.value.heroImageDark) return null;
 
-      return withBase(frontmatter.value.darkHeroImage);
+      return withBase(frontmatter.value.heroImageDark);
     });
 
     const heroText = computed(() => {
@@ -70,16 +70,16 @@ export default defineComponent({
           heroImage.value
             ? h("img", {
                 key: "light",
-                class: { light: darkHeroImage.value },
+                class: { light: heroImageDark.value },
                 src: heroImage.value,
                 alt: heroAlt,
               })
             : null,
-          darkHeroImage.value
+          heroImageDark.value
             ? h("img", {
                 key: "dark",
                 class: "dark",
-                src: darkHeroImage.value,
+                src: heroImageDark.value,
                 alt: heroAlt,
               })
             : null,

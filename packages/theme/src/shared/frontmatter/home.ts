@@ -17,7 +17,7 @@ export interface HopeThemeProjectHomePageFrontmatter
   extends HopeThemePageFrontmatter {
   home: true;
   heroImage?: string;
-  darkHeroImage?: string;
+  heroImageDark?: string;
   heroAlt?: string;
   heroText?: string | null;
   tagline?: string | null;
