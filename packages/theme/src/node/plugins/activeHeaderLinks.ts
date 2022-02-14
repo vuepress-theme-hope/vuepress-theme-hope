@@ -9,7 +9,7 @@ export const resolveActiveHeaderLinksOptions = (
   if (activeHeaderLinks === false) return false;
 
   return {
-    headerLinkSelector: ".sidebar-link",
+    headerLinkSelector: ".sidebar-link, .toc-link",
     headerAnchorSelector: ".header-anchor",
   };
 };
