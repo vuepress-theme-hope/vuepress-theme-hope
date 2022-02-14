@@ -41,7 +41,7 @@ export default defineComponent({
         { class: "timeline-wrapper" },
         h("ul", { class: "timeline-content" }, [
           h(DropTransition, () => h("li", { class: "desc" }, hint.value)),
-          h(resolveComponent("PageAnchor"), { items: items.value }),
+          h(resolveComponent("TOC"), { items: items.value }),
           ...timelines.value.config.map(({ year, items }, index) =>
             h(DropTransition, { delay: 0.08 * (index + 1) }, () =>
               h("li", [

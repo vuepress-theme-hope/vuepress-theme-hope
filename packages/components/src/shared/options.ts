@@ -57,13 +57,13 @@ export interface ComponentOptions {
   badge?: boolean;
 
   /**
-   * Whether register page anchors
+   * Whether register scrennfull button component
    *
-   * 是否注册页面锚点
+   * 是否注册全屏按钮
    *
    * @default false
    */
-  pageAnchor?: boolean;
+  fullScreen?: boolean;
 
   /**
    * Whether register pagination component
@@ -75,13 +75,13 @@ export interface ComponentOptions {
   pagination?: boolean;
 
   /**
-   * Whether register scrennfull button component
+   * Whether register toc component
    *
-   * 是否注册全屏按钮
+   * 是否注册 TOC 组件
    *
    * @default false
    */
-  fullScreen?: boolean;
+  toc?: boolean;
 
   /**
    * Locales config for articleInfo

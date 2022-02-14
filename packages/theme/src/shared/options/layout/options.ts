@@ -72,6 +72,13 @@ export interface HopeThemeLayoutLocaleOptions
    * @default true
    */
   breadcrumbIcon?: boolean;
+
+  /**
+   * Whether show toc list in desktop mode
+   *
+   * 是否在桌面模式下展示标题列表
+   */
+  toc?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface

@@ -38,7 +38,7 @@ declare module "@FullScreen" {
   export default component;
 }
 
-declare module "@PageAnchor" {
+declare module "@Pagination" {
   import type { ComponentOptions } from "vue";
 
   const component: ComponentOptions;
@@ -46,7 +46,7 @@ declare module "@PageAnchor" {
   export default component;
 }
 
-declare module "@Pagination" {
+declare module "@TOC" {
   import type { ComponentOptions } from "vue";
 
   const component: ComponentOptions;

@@ -103,11 +103,10 @@ export default defineComponent({
       }
     };
 
-    const enableAnchor = computed(
+    const enableToc = computed(
       () =>
-        frontmatter.value.anchorDisplay ||
-        (themeLocale.value.anchorDisplay !== false &&
-          frontmatter.value.anchorDisplay !== false)
+        frontmatter.value.toc ||
+        (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
     );
 
     // classes
@@ -116,11 +115,11 @@ export default defineComponent({
       {
         "no-navbar": !enableNavbar.value,
         "no-sidebar": !enableSidebar.value,
-        "has-anchor": enableAnchor.value,
+        "has-toc": enableToc.value,
         "hide-navbar": hideNavbar.value,
         "sidebar-open": isSidebarOpen.value,
       },
-      frontmatter.value.pageClass,
+      frontmatter.value.pageClass || "",
     ]);
 
     /** Get scroll distance */

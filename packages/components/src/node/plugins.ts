@@ -39,25 +39,25 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
       "@FullScreen": options.fullScreen
         ? path.resolve(__dirname, "../client/components/FullScreen.js")
         : noopModule,
-      "@PageAnchor": options.pageAnchor
-        ? path.resolve(__dirname, "../client/components/PageAnchor.js")
-        : noopModule,
       "@Pagination": options.pagination
         ? path.resolve(__dirname, "../client/components/Pagination.js")
+        : noopModule,
+      "@TOC": options.toc
+        ? path.resolve(__dirname, "../client/components/TOC.js")
         : noopModule,
     },
 
     define: {
+      ARTICLE_INFO_LOCALES: getLocales(
+        app,
+        articleInfoLocales,
+        options.articleInfoLocales
+      ),
       BACK_TO_TOP_THRESHOLD: options.backToTopThreshold || 300,
       BACK_TO_TOP_LOCALES: getLocales(
         app,
         backToTopLocales,
         options.backToTopLocales
-      ),
-      ARTICLE_INFO_LOCALES: getLocales(
-        app,
-        articleInfoLocales,
-        options.articleInfoLocales
       ),
       PAGINATION_LOCALES: getLocales(
         app,

@@ -19,4 +19,11 @@
   @media (max-width: hope-config.$mobile) {
     padding-left: 0;
   }
+
+  // add padding for anchor
+  @media (min-width: hope-config.$wide) {
+    .has-toc & {
+      padding-right: 16rem;
+    }
+  }
 }

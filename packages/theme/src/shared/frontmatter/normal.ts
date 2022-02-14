@@ -1,7 +1,6 @@
 import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { HopeThemePageFrontmatter } from "./base";
 import type { AutoLink } from "../navbar";
-import type { HopeThemeSidebarConfig } from "../sidebar";
 
 export interface HopeThemeNormalPageFrontmatter
   extends HopeThemePageFrontmatter {
@@ -11,13 +10,6 @@ export interface HopeThemeNormalPageFrontmatter
    * 是否是主页
    */
   home?: false;
-
-  /**
-   * Sidebar configuration
-   *
-   * 侧边栏配置
-   */
-  sidebar?: "auto" | false | HopeThemeSidebarConfig;
 
   /**
    * Page Heading depth
@@ -91,6 +83,13 @@ export interface HopeThemeNormalPageFrontmatter
    * @default true
    */
   visitor?: boolean;
+
+  /**
+   * Whether display socialMedia
+   *
+   * 是否展示社交媒体
+   */
+  socialMedia?: false;
 
   /**
    * Whether the article be sticky in list

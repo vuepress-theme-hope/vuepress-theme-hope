@@ -6,7 +6,7 @@ import { RouterLink, useRoute } from "vue-router";
 import type { PageHeader } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";
 
-import "../styles/page-anchor.scss";
+import "../styles/toc.scss";
 
 const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
@@ -14,13 +14,13 @@ const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
     {
       to: `#${slug}`,
       class: [
-        "anchor-link",
+        "toc-link",
         {
-          [`heading${level}`]: level,
+          [`level${level}`]: level,
         },
       ],
     },
-    () => h("div", title)
+    title
   );
 
 const renderChildren = (headers: PageHeader[]): VNode | null => {
@@ -29,13 +29,13 @@ const renderChildren = (headers: PageHeader[]): VNode | null => {
   return headers.length
     ? h(
         "ul",
-        { class: "anchor-list" },
+        { class: "toc-list" },
         headers.map((header: PageHeader) => [
           h(
             "li",
             {
               class: [
-                "anchor",
+                "toc-item",
                 { active: isActiveLink(route, `#${header.slug}`) },
               ],
             },
@@ -46,8 +46,9 @@ const renderChildren = (headers: PageHeader[]): VNode | null => {
       )
     : null;
 };
+
 export default defineComponent({
-  name: "PageAnchor",
+  name: "TOC",
 
   props: {
     items: {
@@ -60,16 +61,18 @@ export default defineComponent({
     const page = usePageData();
 
     return (): VNode =>
-      h("div", { class: "anchor-place-holder" }, [
-        h("aside", { id: "anchor" }, [
-          h("div", { class: "anchor-wrapper" }, [
+      h("div", { class: "toc-place-holder" }, [
+        h(
+          "aside",
+          { id: "toc" },
+          h("div", { class: "toc-wrapper" }, [
             props.items.length
               ? renderChildren(props.items)
               : page.value.headers
               ? renderChildren(page.value.headers)
               : null,
-          ]),
-        ]),
+          ])
+        ),
       ]);
   },
 });

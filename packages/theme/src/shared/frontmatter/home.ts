@@ -1,12 +1,12 @@
 import type { HopeThemePageFrontmatter } from "./base";
 
-export interface HopeThemeProjectHomeActionOptions {
+export interface HopeThemeHomeActionOptions {
   text: string;
   link: string;
   type?: "primary" | "secondary";
 }
 
-export interface HopeThemeProjectHopeFeatureOptions {
+export interface HopeThemeHomeFeatureOptions {
   icon?: string;
   title: string;
   details: string;
@@ -22,6 +22,6 @@ export interface HopeThemeProjectHomePageFrontmatter
   heroText?: string | null;
   tagline?: string | null;
 
-  actions?: HopeThemeProjectHomeActionOptions[];
-  features?: HopeThemeProjectHopeFeatureOptions[];
+  actions?: HopeThemeHomeActionOptions[];
+  features?: HopeThemeHomeFeatureOptions[];
 }

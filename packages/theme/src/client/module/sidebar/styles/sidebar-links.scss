@@ -15,7 +15,7 @@
       padding-left: 0.75rem;
       font-size: 0.95em;
 
-      .has-anchor & {
+      .has-toc & {
         @media (min-width: hope-config.$wide) {
           display: none;
         }
