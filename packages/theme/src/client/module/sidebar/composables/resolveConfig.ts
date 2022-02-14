@@ -87,7 +87,7 @@ export const resolveArraySidebarItems = (
       : item.link
       ? {
           ...item,
-          ...(item.link && !isLinkExternal(item.link)
+          ...(!isLinkExternal(item.link)
             ? { link: useAutoLink(resolvePrefix(pathPrefix, item.link)).link }
             : {}),
         }
