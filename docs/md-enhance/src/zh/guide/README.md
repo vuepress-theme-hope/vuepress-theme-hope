@@ -164,7 +164,7 @@ span {
 
 :::
 
-- [查看详情](demo/readme.md)
+- [查看详情](demo/README.md)
 
 ### 幻灯片
 
@@ -199,4 +199,4 @@ $$
 
 @slideend
 
-- [查看详情](presentation/readme.md)
+- [查看详情](presentation/README.md)

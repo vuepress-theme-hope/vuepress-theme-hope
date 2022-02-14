@@ -13,8 +13,6 @@ icon: guide
 
 ### 默认的 OGP 生成逻辑
 
-以下是为满足 OGP，默认注入到 `<head>` 中的 `<meta>` 标签及其值来源:
-
 |         属性名称         |                         值                          |
 | :----------------------: | :-------------------------------------------------: |
 |         `og:url`         |           `themeConfig.hostname` + `path`           |
@@ -53,9 +51,10 @@ icon: guide
 
 ```md
 ---
-meta:
-  - name: keywords
-    content: SEO plugin
+head:
+  - - meta
+    - name: keywords
+      content: SEO plugin
 ---
 ```
 

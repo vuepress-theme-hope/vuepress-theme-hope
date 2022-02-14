@@ -166,7 +166,7 @@ span {
 
 :::
 
-- [View Detail](demo/readme.md)
+- [View Detail](demo/README.md)
 
 ### Presentation
 
@@ -201,4 +201,4 @@ $$
 
 @slideend
 
-- [View Detail](presentation/readme.md)
+- [View Detail](presentation/README.md)
