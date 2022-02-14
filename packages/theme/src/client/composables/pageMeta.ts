@@ -7,6 +7,7 @@ import {
 import { useThemeLocaleData } from "./themeData";
 import { resolveEditLink } from "@theme-hope/utils";
 
+import type { GitContributor } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type {
   AutoLink,
@@ -72,9 +73,7 @@ export const useUpdateTime = (): ComputedRef<null | string> => {
   });
 };
 
-export const useContributors = (): ComputedRef<
-  null | Required<HopeThemePageData["git"]>["contributors"]
-> => {
+export const useContributors = (): ComputedRef<null | GitContributor[]> => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<HopeThemePageData>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();

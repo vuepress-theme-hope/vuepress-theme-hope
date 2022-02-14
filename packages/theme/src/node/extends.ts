@@ -21,7 +21,7 @@ export const extendsPage = (
     | HopeThemeBlogHomePageFrontmatter
     | HopeThemeNormalPageFrontmatter;
   const { filePathRelative, path } = page;
-  const { createdTime } = page.data.git;
+  const { createdTime } = page.data.git || {};
 
   // handle deprecated
   const handleDeprecated = (deprecatedKey: string, key = ""): void => {

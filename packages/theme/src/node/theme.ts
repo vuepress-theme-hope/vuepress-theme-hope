@@ -41,11 +41,14 @@ export const themeHope: Theme<HopeThemeOptions> = (
   handleThemeData(app, themeOptions);
   handleWebpackOptions(app);
 
-  useGitPlugin(app, {
-    createdTime: true,
-    contributors: true,
-    updatedTime: true,
-  });
+  // only use git plugin in production or debug mode
+  if (app.env.isDebug || app.env.isBuild)
+    useGitPlugin(app, {
+      createdTime: true,
+      contributors: true,
+      updatedTime: true,
+    });
+
   useReadingTimePlugin(app, {
     wordPerminute: plugins.readingTime?.wordPerminute,
   });
