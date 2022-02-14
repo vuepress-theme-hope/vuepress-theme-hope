@@ -29,18 +29,24 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
         permalink: resolvePagePermalink(page),
       };
       const { OGP, JSONLD } = generateSeo(options as SeoOptions, pageSeoInfo);
-      const metaContext: SeoContent = {
-        ...OGP,
-        ...(options.ogp ? options.ogp(pageSeoInfo) : {}),
-      };
 
-      appendSEO(head, metaContext, options as SeoOptions);
-      if (JSONLD)
+      const ogpContent: SeoContent = options.ogp
+        ? options.ogp(OGP, pageSeoInfo)
+        : OGP;
+
+      const jsonLDContent = options.jsonLd
+        ? options.jsonLd(JSONLD, pageSeoInfo)
+        : null;
+
+      appendSEO(head, ogpContent, options as SeoOptions);
+
+      if (jsonLDContent)
         head.push([
           "script",
           { type: "application/ld+json" },
-          JSON.stringify(JSONLD),
+          JSON.stringify(jsonLDContent),
         ]);
+
       if (options.customHead) options.customHead(head, pageSeoInfo);
 
       page.frontmatter.head = head;

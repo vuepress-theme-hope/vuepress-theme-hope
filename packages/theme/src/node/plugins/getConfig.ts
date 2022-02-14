@@ -41,11 +41,12 @@ export const getPluginConfig = (
     blog(resolveBlogOptions(plugins.blog)),
     comment(resolveCommentOptions(plugins.comment)),
     copyCode(resolveCopyCodeOptions(plugins.copyCode)),
+    // seo should work before feed
+    seo(resolveSEOOptions(themeData, plugins)),
     feed(resolveFeedOptions(themeData, plugins.feed)),
     mdEnhance(resolveMdEnhanceOptions(plugins.mdEnhance)),
     photoSwipe(resolvePhotoSwipeOptions(plugins.photoSwipe)),
     pwa(resolvePWAOptions(plugins.pwa)),
-    seo(resolveSEOOptions(themeData, plugins.seo)),
     sitemap(resolveSitemapOptions(themeData, plugins.sitemap)),
   ];
 

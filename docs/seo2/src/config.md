@@ -5,19 +5,19 @@ icon: config
 
 ## Plugin Options
 
+### hostname
+
+- Type: `string`
+- Required: No
+
+部署域名
+
 ### author
 
 - Type: `string`
 - Required: No
 
 Default author
-
-### twitterID
-
-- Type: `string`
-- Required: No
-
-Fill in your twitter username
 
 ### restrictions
 
@@ -26,17 +26,44 @@ Fill in your twitter username
 
 The age rating of the content, the format is `[int]+`, such as `'13+'`
 
-### seo
+### twitterID
 
-- Type: `(info: PageSeoInfo) => Record<string, string>`
+- Type: `string`
+- Required: No
 
-You can use this option to inject new or overwrite the default generated SEO, you need to return an object in the format of `<property>: <content>`.
+Fill in your twitter username
 
-### customMeta
+### isArticle
 
-- Type: `(meta: Meta[], info: PageSeoInfo) => void`
+- Type: `(page: Page) => boolean`
+- Required: No
 
-You can use this option to directly inject any format of `<meta>` tags into `<head>`.
+Use this option to judge whether the page is an article
+
+### ogp
+
+- Type: `<ExtendObject = Record<string, unknown>>(ogp: SeoContent, info: PageSeoInfo<ExtendObject>) => SeoContent`
+- Required: No
+
+Custom OPG Generator
+
+You can use this options to edit OGP tags.
+
+### jsonLd
+
+- Type: `<ExtendObject = Record<string, unknown>>(jsonLD: ArticleJSONLD | null, info: PageSeoInfo<ExtendObject>) => ArticleJSONLD | null`
+- Required: No
+
+Custom JSON-LD Generator
+
+You can use this options to edit JSON-LD properties.
+
+### customHead
+
+- Type: `<ExtendObject = Record<string, unknown>>(head: HeadConfig[], info: PageSeoInfo<ExtendObject>) => void`
+- Required: No
+
+You can use this options to edit tags injected to `<head>`.
 
 ## Related interface
 
@@ -56,9 +83,3 @@ You can use this option to directly inject any format of `<meta>` tags into `<he
     path: string;
   }
   ```
-
-- The interface of `Meta` is `Record<"content" | "name" | "charset" | "http-equiv", string>`
-
-  The key of the `Meta` object will be rendered as the attribute of the meta tag, and the value will be rendered as the value of the corresponding attribute.
-
-  For details, please see [Frontmatter → Meta](https://v1.vuepress.vuejs.org/guide/frontmatter.html#meta)

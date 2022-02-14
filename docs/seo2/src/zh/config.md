@@ -5,19 +5,28 @@ icon: config
 
 ## 插件选项
 
-### author
+### hostname
 
 - 类型: `string`
+- 必填: 是
+
+部署域名
+
+### author
+
+- 类型: `Author`
 - 必填: 否
 
 默认作者
 
-### twitterID
+```ts
+type AuthorInfo = {
+  name: string;
+  url?: string;
+};
 
-- 类型: `string`
-- 必填: 否
-
-填入你的 twitter 用户名
+type Author = string | string[] | AuthorInfo | AuthorInfo[];
+```
 
 ### restrictions
 
@@ -26,39 +35,56 @@ icon: config
 
 内容的年龄分级，格式为 `[int]+`，如 `'13+'`
 
-### seo
+### twitterID
 
-- 类型: `(info: PageSeoInfo) => Record<string, string>`
+- 类型: `string`
+- 必填: 否
 
-你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，你需要按照 `<property>: <content>` 的格式来返回一个对象。
+你的 twitter 用户名
 
-### customMeta
+### isArticle
 
-- 类型: `(meta: Meta[], info: PageSeoInfo) => void`
+- 类型: `(page: Page) => boolean`
+- 必填: 否
 
-你可以使用此选项来直接注入任意格式的 `<meta>` 标签到 `<head>`。
+你可以使用此选项判断一个页面是否是文章。
+
+### ogp
+
+- 类型: `<ExtendObject = Record<string, unknown>>(ogp: SeoContent, info: PageSeoInfo<ExtendObject>) => SeoContent`
+- 必填: 否
+
+自定义 OGP 生成器
+
+你可以使用此选项来注入新的或覆盖掉默认生成的 OGP 标签。
+
+### jsonLd
+
+- 类型: `<ExtendObject = Record<string, unknown>>(jsonLD: ArticleJSONLD | null, info: PageSeoInfo<ExtendObject>) => ArticleJSONLD | null`
+- 必填: 否
+
+自定义 JSON-LD 生成器
+
+你可以使用此选项来注入新的或覆盖掉默认生成的 JSON-LD 标签。
+
+### customHead
+
+- 类型: `<ExtendObject = Record<string, unknown>>(head: HeadConfig[], info: PageSeoInfo<ExtendObject>) => void`
+- 必填: 否
+
+你可以使用此选项来直接注入任意格式的标签到 `<head>`。
 
 ## 相关接口
 
-- `PageSeoInfo` 的接口类型如下:
+`PageSeoInfo` 的结构如下:
 
-  ```ts
-  interface PageSeoInfo {
-    /** 页面对象 */
-    page: Page;
-    /** 站点对象 */
-    site: SiteConfig;
-    /** 主题配置 */
-    themeConfig: ThemeConfig;
-    /** 支持的多语言 */
-    locales: string[];
-    /** 当前页面地址 */
-    path: string;
-  }
-  ```
-
-- `Meta` 的接口类型为 `Record<"content" | "name" | "charset" | "http-equiv", string>`
-
-  `Meta` 对象的键会渲染为 meta 标签的属性，值会渲染为对应属性的值。
-
-  详情请见 [Frontmatter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
+```ts
+interface PageSeoInfo {
+  /** 当前 VuePress App */
+  app: App;
+  /** 当前页面对象 */
+  page: Page;
+  /** 当前页面的永久链接 */
+  permalink: string | null;
+}
+```

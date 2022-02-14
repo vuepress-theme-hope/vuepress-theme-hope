@@ -3,37 +3,51 @@ title: 指南
 icon: guide
 ---
 
-本插件会通过注入 `<meta>` 标签，以增强网站搜索引擎优化性。
+本插件会通过向网站 `<head>` 注入标签，让你的网站完全支持 [开放内容协议 OGP](https://ogp.me/) 和 [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)，以全面增强站点的搜索引擎优化性。
 
 ## 开箱即用
 
-插件开箱即用，在不做任何配置的情况下，会尽可能通过页面内容，提取对应的信息生成 `<meta>` 标签。
+插件开箱即用，在不做任何配置的情况下，会尽可能通过页面内容，提取对应的信息补全 OGP 与 JSON-LD 所需的必要标签。
 
-默认情况下，插件会读取站点配置、主题配置与页面的 frontmatter 来尽可能自动为生成 `<meta>` 标签。诸如站点名称，页面标题，页面类型，写作日期，最后更新日期，文章标签均会自动生成。
+默认情况下，插件会读取站点配置、主题配置与页面的 frontmatter 来尽可能自动生成。诸如站点名称，页面标题，页面类型，写作日期，最后更新日期，文章标签均会自动生成。
 
-以下是会被默认注入到 `<head>` 中的 `<meta>` 标签及其值:
+### 默认的 OGP 生成逻辑
 
-|         属性名称         |                                        值                                        |
-| :----------------------: | :------------------------------------------------------------------------------: |
-|         `og:url`         |                         `themeConfig.hostname` + `path`                          |
-|      `og:site_name`      |                                  `$site.title`                                   |
-|        `og:title`        |                                   `page.title`                                   |
-|     `og:description`     |                          `page.frontmatter.description`                          |
-|        `og:type`         |                                   `'article'`                                    |
-|        `og:image`        |                `themeConfig.hostname` + `page.frontmatter.image`                 |
-|    `og:updated_time`     |                              `page.updateTimeStamp`                              |
-|       `og:locale`        |                              `page._computed.$lang`                              |
-|  `og:locale:alternate`   |                      `$themeConfig.locales` 包含的其他语言                       |
-|      `twitter:card`      |                             `'summary_large_image'`                              |
-|   `twitter:image:alt`    |                                  `$site.title`                                   |
-|     `article:author`     |               `page.frontmatter.author` \|\| `themeConfig.author`                |
-|      `article:tag`       |               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                |
-| `article:published_time` | `page.frontmatter.time` \|\| `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `article:modified_time`  |                              `page.updateTimeStamp`                              |
+以下是为满足 OGP，默认注入到 `<head>` 中的 `<meta>` 标签及其值来源:
+
+|         属性名称         |                         值                          |
+| :----------------------: | :-------------------------------------------------: |
+|         `og:url`         |           `themeConfig.hostname` + `path`           |
+|      `og:site_name`      |                 `siteConfig.title`                  |
+|        `og:title`        |                    `page.title`                     |
+|     `og:description`     |           `page.frontmatter.description`            |
+|        `og:type`         |                     `'article'`                     |
+|        `og:image`        |  `themeConfig.hostname` + `page.frontmatter.image`  |
+|    `og:updated_time`     |               `page.git.updatedTime`                |
+|       `og:locale`        |                     `page.lang`                     |
+|  `og:locale:alternate`   |        `themeConfig.locales` 包含的其他语言         |
+|      `twitter:card`      |               `'summary_large_image'`               |
+|   `twitter:image:alt`    |                 `siteConfig.title`                  |
+|     `article:author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
+|      `article:tag`       | `page.frontmatter.tags` \|\| `page.frontmatter.tag` |
+| `article:published_time` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
+| `article:modified_time`  |               `page.git.updatedTime`                |
+
+### 默认的 JSON-LD 生成逻辑
+
+|     属性名      |                         值                          |
+| :-------------: | :-------------------------------------------------: |
+|   `@context`    |               `"https://schema.org"`                |
+|     `@type`     |                   `"NewsArticle"`                   |
+|   `headline`    |                    `page.title`                     |
+|     `image`     |  `themeConfig.hostname` + `page.frontmatter.image`  |
+| `datePublished` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
+| `dateModified`  |               `page.git.updatedTime`                |
+|    `author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
 
 ## 自由定制
 
-你可以在页面的 frontmatter 中配置 `meta` 选项，自主定制特定页面用于 SEO 的 `<meta>` 标签内容。
+你可以在页面的 frontmatter 中配置 `head` 选项，自主添加特定标签到页面 `<head>` 以增强 SEO。
 
 如:
 
@@ -49,57 +63,77 @@ meta:
 
 ## 自定义生成过程
 
-本插件也支持你完全控制 `<meta>` 标签的生成逻辑。
+本插件也支持你完全控制生成逻辑。
 
-### seo
+### 页面类型
 
-你可以使用插件选项的 `seo` 传入一个函数来注入新的 `<meta>` 标签或覆盖掉 [开箱即用](#开箱即用) 部分的默认生成内容。你需要按照 `<property>: <content>` 的格式来返回一个对象。
+对于大多数页面，基本只有文章和网页两种类型，所以插件提供了 `isArticle` 选项让你提供辨别文章的逻辑。
 
-比如你返回了 `{ 'og:url': 'google.com', 'og:image': 'google.com/logo.jpg' }`，则插件会注入以下内容到 `<head>` 中:
+选项接受一个 `(page: Page) => boolean` 格式的函数，默认情况下从 Markdown 文件生成的非主页页面都会被视为文章。
 
-```html
-<meta property="og:url" content="google.com" />
-<meta property="og:image" content="google.com/logo.jpg" />
-```
+::: note
 
-### customMeta
+如果某个网页的确符合图书、音乐之类的“冷门”类型，你可以通过设置下方三个选项处理它们。
 
-当你需要注入的 `<meta>` 没有使用 `property` 和 `content`，或者你想要移除已有的 meta，你可以向插件选项 `customMeta` 传入一个自定义生成函数，完全定制 `<meta>` 标签。
+:::
 
-`customMeta` 的结构为 `(meta: Meta[], info: PageSeoInfo) => void`
+### ogp
 
-`PageSeoInfo` 的结构如下:
+你可以使用插件选项的 `ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
 
 ```ts
-interface PageSeoInfo {
-  /** 当前页面对象 */
-  page: Page;
-  /** Vuepress 配置  */
-  site: SiteConfig;
-  /** 主题配置 */
-  themeConfig: ThemeConfig | Record<string, never>;
-  /** 站点支持的语言 */
-  locale: string[];
-  /** 当前页面路径 */
-  path: string;
-}
+function ogp<ExtendObject = Record<string, unknown>>(
+  /** 插件自动推断的 OGP 对象 */
+  ogp: SeoContent,
+  /** SEO 有关信息，包含 App, 当前 Page 和页面的永久链接 */
+  info: PageSeoInfo<ExtendObject>
+): SeoContent;
 ```
 
-`Meta` 的类型为 `Record<"content" | "name" | "charset" | "http-equiv", string>`，对象的键会渲染为 `<meta>` 标签的属性，值会渲染为对应属性的值。
+详细的参数结构详见 [配置](./config.md)。
 
-比如:
+比如你在使用某个第三方主题，并按照主题要求为每篇文章在 Front Matter 中设置了 `banner`，那你可以传入这样的 `ogp`:
 
-```js
-(meta: Meta, info: PageSeoInfo) => {
-  const index = meta.findIndex((item) => item.property === "og:type");
-
-  if (index !== -1) meta.splice(index, 1);
-
-  meta.push({ a: "1", b: "2" });
-};
+```ts
+({
+  ogp: (ogp, { page }) => ({
+    ...ogp,
+    "og:image": page.frontmatter.banner || ogp["og:image"],
+  }),
+});
 ```
 
-会向当前页面的 `<head>` 注入 `<meta a="1" b="2" />`，并移除任何已存在的 `<meta property="og:type" />`。
+### JSON-LD
+
+同 OGP，你可以使用插件选项的 `jsonLd` 传入一个函数来按照你的需要修改默认 JSON-LD 对象并返回。
+
+```ts
+function jsonLd<ExtendObject = Record<string, unknown>>(
+  /** 插件自动推断的 JSON-LD 对象 */
+  jsonLD: ArticleJSONLD | null,
+  /** SEO 有关信息，包含 App, 当前 Page 和页面的永久链接 */
+  info: PageSeoInfo<ExtendObject>
+): ArticleJSONLD | null;
+```
+
+::: warning
+
+请注意插件不会对非文章页生成 JSON-LD，所以函数的首个参数可能为 null。
+
+:::
+
+### customHead
+
+有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以使用 `customHead` 选项，其类型为:
+
+```ts
+function customHead<ExtendObject = Record<string, unknown>>(
+  head: HeadConfig[],
+  info: PageSeoInfo<ExtendObject>
+): void;
+```
+
+你应该直接修改传入的 `head` 参数。
 
 ## SEO 介绍
 
@@ -113,11 +147,11 @@ interface PageSeoInfo {
 
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)
 
-  由于 VuePress 未提供插件或主题向 SSR 渲染内容的 `<head>` 标签注入 `<script>` 的能力，所以 JSON-LD 无法实现。
+  本插件会为文章类页面生成 NewsArticle 类标签。
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 
-  RDFa 主要标记 HTML 结构。这是插件无法支持的内容，[vuepress-theme-hope](https://vuepress-theme-hope.github.io/zh/) 使用了这一功能通过了谷歌的富媒体结构测试。你可以考虑搭配使用。
+  RDFa 主要标记 HTML 结构。这是插件无法支持的内容，[vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/zh/) 使用了这一功能通过了谷歌的富媒体结构测试。你可以考虑搭配使用。
 
 - [Schema.Org](https://schema.org/)
 

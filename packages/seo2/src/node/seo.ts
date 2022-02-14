@@ -15,6 +15,10 @@ export const generateSeo = (
   options: SeoOptions,
   { page, app, permalink }: PageSeoInfo
 ): { OGP: SeoContent; JSONLD: ArticleJSONLD | null } => {
+  const {
+    isArticle = (page): boolean =>
+      Boolean(page.filePathRelative && !page.frontmatter.home),
+  } = options;
   const { base } = app.options;
   const {
     frontmatter: {
@@ -30,13 +34,6 @@ export const generateSeo = (
   } = page;
   const { siteData } = app;
   const locales = getLocales(siteData.locales, page.lang);
-
-  const type = ["article", "category", "tag", "timeline"].some(
-    (folder) =>
-      page.filePathRelative && page.filePathRelative.startsWith(`/${folder}`)
-  )
-    ? "website"
-    : "article";
 
   const author =
     pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
@@ -71,7 +68,7 @@ export const generateSeo = (
       "og:site_name": siteData.title,
       "og:title": articleTitle,
       "og:description": page.frontmatter.description || "",
-      "og:type": type,
+      "og:type": isArticle(page) ? "article" : "website",
       "og:image": image,
       "og:updated_time": modifiedTime,
       "og:locale": page.lang,
@@ -85,18 +82,17 @@ export const generateSeo = (
       "article:published_time": publishedTime,
       "article:modified_time": modifiedTime,
     },
-    JSONLD:
-      type === "article"
-        ? {
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            headline: articleTitle,
-            image: [image],
-            datePublished: publishedTime,
-            dateModified: modifiedTime,
-            author: author.map((item) => ({ "@type": "Person", ...item })),
-          }
-        : null,
+    JSONLD: isArticle(page)
+      ? {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          headline: articleTitle,
+          image: [image],
+          datePublished: publishedTime,
+          dateModified: modifiedTime,
+          author: author.map((item) => ({ "@type": "Person", ...item })),
+        }
+      : null,
   };
 };
 

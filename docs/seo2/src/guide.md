@@ -3,103 +3,139 @@ title: Guide
 icon: guide
 ---
 
-This plugin will inject the `<meta>` tag to enhance the search engine optimization of the site.
+This plugin will make your website fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to fully enhance the SEO of the site.
 
 ## Out of box
 
-The plugin is used out of the box. Without any configuration, it will extract the corresponding information from the page content to generate the `<meta>` tag as much as possible.
+The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
 
-By default, the plugin will read the site configuration, theme configuration and page frontmatter to automatically generate `<meta>` tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
+By default, the plugin will read the SiteConfig, ThemeConfig and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
 
 The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
 
-|         property         |                                     content                                      |
-| :----------------------: | :------------------------------------------------------------------------------: |
-|         `og:url`         |                         `themeConfig.hostname` + `path`                          |
-|      `og:site_name`      |                                  `$site.title`                                   |
-|        `og:title`        |                                   `page.title`                                   |
-|     `og:description`     |                          `page.frontmatter.description`                          |
-|        `og:type`         |                                   `'article'`                                    |
-|        `og:image`        |                `themeConfig.hostname` + `page.frontmatter.image`                 |
-|    `og:updated_time`     |                             `page.updatedTimeStamp`                              |
-|       `og:locale`        |                              `page._computed.$lang`                              |
-|  `og:locale:alternate`   |               Other languages including in `$themeConfig.locales`                |
-|      `twitter:card`      |                             `'summary_large_image'`                              |
-|   `twitter:image:alt`    |                                  `$site.title`                                   |
-|     `article:author`     |               `page.frontmatter.author` \|\| `themeConfig.author`                |
-|      `article:tag`       |               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                |
-| `article:published_time` | `page.frontmatter.time` \|\| `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `article:modified_time`  |                             `page.updatedTimeStamp`                              |
+### Default OGP Generation
+
+The following are the `<meta>` tags and their value injected into `<head>` by default to satisfy OGP:
+
+|        Meta Name         |                        Value                        |
+| :----------------------: | :-------------------------------------------------: |
+|         `og:url`         |           `themeConfig.hostname` + `path`           |
+|      `og:site_name`      |                 `siteConfig.title`                  |
+|        `og:title`        |                    `page.title`                     |
+|     `og:description`     |           `page.frontmatter.description`            |
+|        `og:type`         |                     `'article'`                     |
+|        `og:image`        |  `themeConfig.hostname` + `page.frontmatter.image`  |
+|    `og:updated_time`     |                `page.git.updateTime`                |
+|       `og:locale`        |                     `page.lang`                     |
+|  `og:locale:alternate`   | Other languages including in `themeConfig.locales`  |
+|      `twitter:card`      |               `'summary_large_image'`               |
+|   `twitter:image:alt`    |                 `siteConfig.title`                  |
+|     `article:author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
+|      `article:tag`       | `page.frontmatter.tags` \|\| `page.frontmatter.tag` |
+| `article:published_time` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
+| `article:modified_time`  |               `page.git.updatedTime`                |
+
+### Default JSON-LD Generation
+
+|  Property Name  |                        Value                        |
+| :-------------: | :-------------------------------------------------: |
+|   `@context`    |               `"https://schema.org"`                |
+|     `@type`     |                   `"NewsArticle"`                   |
+|   `headline`    |                    `page.title`                     |
+|     `image`     |  `themeConfig.hostname` + `page.frontmatter.image`  |
+| `datePublished` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
+| `dateModified`  |               `page.git.updatedTime`                |
+|    `author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
 
 ## Free customization
 
-You can configure the `meta` option in the frontmatter of the page to customize the content of the `<meta>` tag of a specific page for SEO.
-
+You can configure the `head` option in the page's frontmatter to add specific tags to the page `<head>` to enhance SEO.
 For example:
 
 ```md
 ---
-meta:
-  - name: keywords
-    content: SEO plugin
+head:
+  - - meta
+    - name: keywords
+      content: SEO plugin
 ---
 ```
 
 Will automatically inject `<meta name="keywords" content="SEO plugin" />`.
 
-## Customize generation process
+## Customize Generation
 
-This plugin also allows you to fully control the generation logic of `<meta>` tags.
+The plugin also gives you full control over the build logic.
 
-### seo
+### Page Type
 
-You can use the `seo` of the plugin option to pass in a function to inject a new `<meta>` tag or override the default generated content in the [Out of box](#out-of-box) section. You need to return an object in the format of `<property>: <content>`.
+For most pages, there are basically only two types: articles and website, so the plugin provides the `isArticle` option to allow you to provide logic for identifying articles.
 
-For example, if you return `{'og:url':'google.com','og:image':'google.com/logo.jpg' }`, the plugin will inject the following content into `<head>`:
+The option accepts a function in the format `(page: Page) => boolean`, by default all non-home pages generated from Markdown files are treated as articles.
 
-```html
-<meta property="og:url" content="google.com" />
-<meta property="og:image" content="google.com/logo.jpg" />
-```
+::: note
 
-### customMeta
+If a page does fit into the "unpopular" genre like books, music, etc., you can handle them by setting the three options below.
 
-When the `<meta>` you need to inject does not use `property` and `content`, or you want to remove the existing meta, you can pass in a custom generation function to the plugin option `customMeta` to completely customize the `<meta>` tag .
+:::
 
-The structure of `customMeta` is `(meta: Meta[], info: PageSeoInfo) => void`
+### ogp
 
-Interface of `PageSeoInfo`:
+You can use the plugin options `ogp` to pass in a function to modify the default OGP object to your needs and return it.
 
 ```ts
-interface PageSeoInfo {
-  /** Current Page Object */
-  page: Page;
-  /** Vuepress Config  */
-  site: SiteConfig;
-  /** Current ThemeConfig */
-  themeConfig: ThemeConfig | Record<string, never>;
-  /** langs which are supported */
-  locale: string[];
-  /** Current page path */
-  path: string;
-}
+function ogp<ExtendObject = Record<string, unknown>>(
+  /** OGP Object inferred by plugin */
+  ogp: SeoContent,
+  /** SEO Infomation, including App, Current page and permalink */
+  info: PageSeoInfo<ExtendObject>
+): SeoContent;
 ```
 
-The interface of `Meta` is `Record<"content" | "name" | "charset" | "http-equiv", string>`, the key of the object will be rendered as the attribute of the `<meta>` tag, and the value will be rendered as The value of the corresponding attribute.
+For detailed parameter structure, see [Config](./config.md).
 
-For example:
+For example, if you are using a third-party theme and set a `banner` in Front Matter for each article according to the theme requirements, then you can pass in the following `ogp`:
 
-```js
-(meta: Meta, info: PageSeoInfo) => {
-  const index = meta.findIndex((item) => item.property === "og:type");
-
-  if (index !== -1) meta.splice(index, 1);
-
-  meta.push({ a: "1", b: "2" });
-};
+```ts
+({
+  ogp: (ogp, { page }) => ({
+    ...ogp,
+    "og:image": page.frontmatter.banner || ogp["og:image"],
+  }),
+});
 ```
 
-Will inject `<meta a="1" b="2" />` into the `<head>` of the current page, and remove any existing `<meta property="og:type" />`.
+### JSON-LD
+
+Like OGP, you can use the plugin options `jsonLd` to pass in a function to modify the default JSON-LD object to your needs and return it.
+
+```ts
+function jsonLd<ExtendObject = Record<string, unknown>>(
+  /** JSON-LD Object inferred by plugin */
+  jsonLD: ArticleJSONLD | null,
+  /** SEO Infomation, including App, Current page and permalink */
+  info: PageSeoInfo<ExtendObject>
+): ArticleJSONLD | null;
+```
+
+::: warning
+
+Please note that the plugin does not generate JSON-LD for non-article pages, so the first parameter of the function may be null.
+
+:::
+
+### customHead
+
+Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `customHead` option, whose type is:
+
+```ts
+function customHead<ExtendObject = Record<string, unknown>>(
+  head: HeadConfig[],
+  info: PageSeoInfo<ExtendObject>
+): void;
+```
+
+You should modify the `head` array in this function directly
 
 ## SEO Introduction
 
@@ -115,11 +151,11 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)
 
-  Since VuePress does not provide plugins or themes to inject `<script>` into the `<head>` tag of SSR rendered content, JSON-LD cannot be implemented.
+  This plugin will generate "NewsArticle" scheme for article pages.
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 
-  RDFa mainly marks HTML structure. This is what the plugin cannot support. [vuepress-theme-hope](https://vuepress-theme-hope.github.io/zh/) uses this feature to pass Google’s rich media structure test. You can consider using it.
+  RDFa mainly marks HTML structure. This is what the plugin cannot support. [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/zh/) uses this feature to pass Google’s rich media structure test. You can consider using it.
 
 - [Schema.Org](https://schema.org/)
 
