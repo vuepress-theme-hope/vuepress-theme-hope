@@ -60,19 +60,19 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/components/PageAnchor", {
+  ...rollupTypescript("client/components/Pagination", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
       "vue",
       "vue-router",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/components/Pagination", {
+  ...rollupTypescript("client/components/TOC", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
+      "@vuepress/client",
       "vue",
       "vue-router",
       /\.scss$/,
