@@ -47,9 +47,9 @@ export interface BasePageFrontMatter extends PageFrontmatter {
   /**
    * Whether the page is an article
    *
-   * 页面是否是标题
+   * 页面是否是文章
    */
-  isArticle?: boolean;
+  article?: boolean;
 
   /**
    * Page Cover

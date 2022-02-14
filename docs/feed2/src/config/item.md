@@ -33,7 +33,7 @@ Description of the page
 
 Date when the page was published
 
-### isArticle
+### article
 
 - Type: `boolean`
 

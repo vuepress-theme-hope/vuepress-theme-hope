@@ -43,7 +43,7 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
           !(
             frontmatter.home ||
             !filePathRelative ||
-            frontmatter.isArticle === false ||
+            frontmatter.article === false ||
             frontmatter.feed === false
           ),
         sorter = (

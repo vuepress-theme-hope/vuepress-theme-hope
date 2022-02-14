@@ -64,7 +64,7 @@ export default defineComponent({
       h("div", { class: "toc-place-holder" }, [
         h(
           "aside",
-          { id: "toc" },
+          { id: "toc-list" },
           h("div", { class: "toc-wrapper" }, [
             props.items.length
               ? renderChildren(props.items)

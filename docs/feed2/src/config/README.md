@@ -62,7 +62,7 @@ If your site has a lot of articles, you may consider this option to reduce feed 
     !(
       frontmatter.home ||
       !filePathRelative ||
-      frontmatter.isArticle === false ||
+      frontmatter.article === false ||
       frontmatter.feed === false
     );
   ```

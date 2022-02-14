@@ -39,7 +39,7 @@
   }
 }
 
-@each $colorName, $value in hope-config.$colorPicker {
+@each $colorName, $value in hope-config.$themeColorPicker {
   :root.theme-#{$colorName} {
     --theme-color: #{$value};
     --theme-color-light: #{color.scale($value, $lightness: 10%)};

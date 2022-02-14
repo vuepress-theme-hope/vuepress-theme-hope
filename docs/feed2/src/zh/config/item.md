@@ -33,7 +33,7 @@ Feed 项目生成中读取的 frontmatter 选项及对应含义如下:
 
 页面的发布日期
 
-### isArticle
+### article
 
 - 类型: `boolean`
 

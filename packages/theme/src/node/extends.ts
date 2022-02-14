@@ -88,9 +88,9 @@ export const extendsPage = (
   else {
     const isArticle =
       // declaring this is an article
-      frontmatter.isArticle ||
+      frontmatter.article ||
       // generated from markdown files
-      Boolean(frontmatter.isArticle !== false && filePathRelative);
+      Boolean(frontmatter.article !== false && filePathRelative);
 
     const isSlide = isArticle && frontmatter.layout === "Slide";
 

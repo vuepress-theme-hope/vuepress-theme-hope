@@ -62,7 +62,7 @@ icon: config
     !(
       frontmatter.home ||
       !filePathRelative ||
-      frontmatter.isArticle === false ||
+      frontmatter.article === false ||
       frontmatter.feed === false
     );
   ```
