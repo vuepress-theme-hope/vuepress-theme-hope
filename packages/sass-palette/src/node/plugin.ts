@@ -143,4 +143,4 @@ ${
 
 export const sassPalette = (
   options: SassPaletteOptions | false
-): PluginConfig<SassPaletteOptions> => [sassPalettePlugin, options];
+): PluginConfig<SassPaletteOptions> => ["sass-palette", options];

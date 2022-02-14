@@ -33,4 +33,4 @@ export const addThisPlugin: Plugin<AddThisOptions> = (options) => {
 
 export const addThis = (
   options: AddThisOptions | false
-): PluginConfig<AddThisOptions> => [addThisPlugin, options];
+): PluginConfig<AddThisOptions> => ["add-this", options];

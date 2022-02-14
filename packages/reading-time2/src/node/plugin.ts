@@ -29,4 +29,4 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, app) => {
 
 export const readingTime = (
   options: ReadingTimeOptions | false
-): PluginConfig<ReadingTimeOptions> => [readingTimePlugin, options];
+): PluginConfig<ReadingTimeOptions> => ["reading-time2", options];

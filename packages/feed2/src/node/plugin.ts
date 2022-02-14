@@ -78,4 +78,4 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
 
 export const feed = (
   options: FeedOptions | false
-): PluginConfig<FeedOptions> => [feedPlugin, options];
+): PluginConfig<FeedOptions> => ["feed2", options];

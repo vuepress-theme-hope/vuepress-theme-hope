@@ -55,4 +55,4 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
 
 export const comment = (
   options: CommentOptions | false
-): PluginConfig<CommentOptions> => [commentPlugin, options];
+): PluginConfig<CommentOptions> => ["comment2", options];

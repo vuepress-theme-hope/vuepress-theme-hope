@@ -76,4 +76,4 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
 
 export const components = (
   options: ComponentOptions | false
-): PluginConfig<ComponentOptions> => [componentsPlugin, options];
+): PluginConfig<ComponentOptions> => ["@mr-hope/components", options];

@@ -84,4 +84,4 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
 
 export const blog = (
   options: BlogOptions | false
-): PluginConfig<BlogOptions> => [blogPlugin, options];
+): PluginConfig<BlogOptions> => ["blog2", options];

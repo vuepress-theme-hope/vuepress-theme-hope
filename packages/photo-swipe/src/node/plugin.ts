@@ -37,4 +37,4 @@ export const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
 
 export const photoSwipe = (
   options: PhotoSwipeOptions | false
-): PluginConfig<PhotoSwipeOptions> => [photoSwipePlugin, options];
+): PluginConfig<PhotoSwipeOptions> => ["photo-swipe", options];

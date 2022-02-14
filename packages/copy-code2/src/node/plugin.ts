@@ -26,4 +26,4 @@ export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
 
 export const copyCode = (
   options: CopyCodeOptions | false
-): PluginConfig<CopyCodeOptions> => [copyCodePlugin, options];
+): PluginConfig<CopyCodeOptions> => ["copy-code2", options];

@@ -53,6 +53,6 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
 };
 
 export const seo = (options: SeoOptions | false): PluginConfig<SeoOptions> => [
-  seoPlugin,
+  "seo2",
   options,
 ];

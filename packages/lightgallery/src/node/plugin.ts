@@ -44,4 +44,4 @@ export const lightgalleryPlugin: Plugin<LightGalleryOptions> = (
 
 export const lightgallery = (
   options: LightGalleryOptions
-): PluginConfig<LightGalleryOptions> => [lightgalleryPlugin, options];
+): PluginConfig<LightGalleryOptions> => ["lightgallery", options];

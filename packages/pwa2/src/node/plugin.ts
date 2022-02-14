@@ -63,6 +63,6 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
 };
 
 export const pwa = (options: PWAOptions | false): PluginConfig<PWAOptions> => [
-  pwaPlugin,
+  "pwa2",
   options,
 ];

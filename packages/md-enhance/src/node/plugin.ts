@@ -145,4 +145,4 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
 
 export const mdEnhance = (
   options: MarkdownEnhanceOptions | false
-): PluginConfig<MarkdownEnhanceOptions> => [mdEnhancePlugin, options];
+): PluginConfig<MarkdownEnhanceOptions> => ["md-enhance", options];
