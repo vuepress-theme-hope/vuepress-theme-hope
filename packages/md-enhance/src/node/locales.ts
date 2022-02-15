@@ -15,7 +15,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     note: "注",
     tip: "提示",
     warning: "注意",
-    danger: "相关信息",
+    danger: "警告",
     details: "详情",
   },
 
@@ -24,7 +24,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     note: "注",
     tip: "提示",
     warning: "注意",
-    danger: "相关信息",
+    danger: "警告",
     details: "詳情",
   },
 
