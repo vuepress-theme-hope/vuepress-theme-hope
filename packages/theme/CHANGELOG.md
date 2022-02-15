@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.22](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
+
+### Bug Fixes
+
+- **theme:** fix active header link plugin ([23f2d22](https://github.com/Mister-Hope/vuepress-theme-hope/commit/23f2d2253b49188718bc91174b8118f9b8673375))
+- **theme:** fix blog layout ([c212ae3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c212ae37c44b8d051de24169c9b0bc2145b84112))
+- **theme:** fix darkmode button ([28cd605](https://github.com/Mister-Hope/vuepress-theme-hope/commit/28cd605f506f2cff2605dc892db1703f52689464))
+- **theme:** fix docsearch button margin ([8c655ed](https://github.com/Mister-Hope/vuepress-theme-hope/commit/8c655ed2d9f2f421d94838c81aa3945d61b48b1a))
+- **theme:** fix sidebar group link ([4d7c292](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4d7c292f7d3d9420ad76c2f45895e27c714301ba))
+
+### Features
+
+- only use git plugin in production mode ([93570dc](https://github.com/Mister-Hope/vuepress-theme-hope/commit/93570dc80cd707654b6e75c9fc84b862bda5cb0d))
+- **seo2:** refine options and update docs ([d953ef5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/d953ef5a5468073d7934cc396a982fb40779b637))
+- **theme:** add navbarIcon options ([c67f04a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c67f04a77deb0c36610b2a2485dca3037dac188a))
+- **theme:** add new helper ([99f13db](https://github.com/Mister-Hope/vuepress-theme-hope/commit/99f13db86ef2c1778de95372ac57e03c834e3a5a))
+- **theme:** improve blog a11y ([2459259](https://github.com/Mister-Hope/vuepress-theme-hope/commit/2459259a09318e5cf33ce25cffeb2decdbe696c3))
+- **theme:** optimize component register ([1d83a22](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1d83a222773d1da68c8dce7c43be1257f72ce6a4))
+- **theme:** refine encrypt options ([de07a2a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/de07a2aa044d04bccde8b0c96f80c0ca79d19a2e))
+- **theme:** remove $themeColorPicker in config.scss ([50f841e](https://github.com/Mister-Hope/vuepress-theme-hope/commit/50f841ee463313d7c9d9ca9af4fa2ea095366345))
+- **theme:** rename logoDark option to align theme-default ([a6c8e25](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a6c8e258dec6703a8435f8075d39bfefd03f2759))
+- **theme:** support `[@import](https://github.com/import) in user styles` ([0a49566](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0a495661b598f91f7596bdf554886cabcf8038a9))
+- **theme:** update feed option ([0d902b5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0d902b5d6ad93d79cfe90ca4baaea5c5ce749054))
+- **theme:** update home frontmatter options ([92ff923](https://github.com/Mister-Hope/vuepress-theme-hope/commit/92ff9237e028269bc427004e7ce194ea9ec329ef))
+- **theme:** update options ([4645187](https://github.com/Mister-Hope/vuepress-theme-hope/commit/46451875887d5cc1fc7166d10f6fce1e99c810d7))
+- **theme:** update types and anchor style ([0add43f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0add43f71e3292ee0041260fbeb8ef2be840b47e))
+
 # [2.0.0-alpha.21](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-02-12)
 
 ### Bug Fixes

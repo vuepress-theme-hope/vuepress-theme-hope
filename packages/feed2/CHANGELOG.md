@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
+
+### Features
+
+- **feed2:** detect ouput options ([90f2409](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/90f2409d00dd60ee73dd2d185e90e1f0714f12ce))
+
 # [2.0.0-alpha.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-02-12)
 
 **Note:** Version bump only for package vuepress-plugin-feed2

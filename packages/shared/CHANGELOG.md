@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.22](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
+
+### Features
+
+- **shared:** remove font-awesome ([932caf5](https://github.com/Mister-Hope/vuepress-theme-hope/commit/932caf50e8d494c087daecaabff477f0ee56efdd))
+
 # [2.0.0-alpha.21](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-02-12)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared

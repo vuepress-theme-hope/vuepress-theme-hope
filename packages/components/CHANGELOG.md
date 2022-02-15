@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.22](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
+
+### Bug Fixes
+
+- **components:** fix rollup config ([14287b3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/14287b3fbc34a694a472f2e0703d83f1d5df5307))
+
+### Features
+
+- **theme:** update types and anchor style ([0add43f](https://github.com/Mister-Hope/vuepress-theme-hope/commit/0add43f71e3292ee0041260fbeb8ef2be840b47e))
+
 # [2.0.0-alpha.21](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-02-12)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components
