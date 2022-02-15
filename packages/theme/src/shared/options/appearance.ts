@@ -97,3 +97,5 @@ export interface HopeThemeAppearanceOptions {
    */
   fullScreen?: boolean;
 }
+
+export type HopeThemeAppearanceConfig = Required<HopeThemeAppearanceOptions>;

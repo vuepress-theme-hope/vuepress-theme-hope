@@ -1,6 +1,9 @@
 import type { Author } from "@mr-hope/vuepress-shared";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
-import type { HopeThemeAppearanceOptions } from "./appearance";
+import type {
+  HopeThemeAppearanceConfig,
+  HopeThemeAppearanceOptions,
+} from "./appearance";
 import type {
   HopeThemeFeatureConfig,
   HopeThemeFeatureOptions,
@@ -29,7 +32,7 @@ export interface HopeThemeRootOptions
 }
 
 export interface HopeThemeRootConfig
-  extends HopeThemeAppearanceOptions,
+  extends HopeThemeAppearanceConfig,
     HopeThemeFeatureConfig,
     HopeThemeLayoutOptions {
   /**

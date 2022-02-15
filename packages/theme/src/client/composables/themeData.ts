@@ -26,7 +26,7 @@ export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> => {
 };
 
 export const useIconPrefix = (): ComputedRef<string> =>
-  computed(() => useThemeData().value.iconPrefix || "");
+  computed(() => useThemeData().value.iconPrefix);
 
 export const usePure = (): ComputedRef<boolean> =>
-  computed(() => Boolean(useThemeData().value.pure || false));
+  computed(() => Boolean(useThemeData().value.pure));

@@ -32,6 +32,19 @@ const defaultRootOptions: HopeThemeOptions = {
   sidebar: "auto",
   sidebarIcon: true,
   headingDepth: 2,
+
+  // appearance
+  pure: false,
+  iconPrefix: "",
+  darkmode: "auto-switch",
+  themeColor: {
+    red: "#e74c3c",
+    blue: "#3498db",
+    green: "#3eaf7c",
+    orange: "#f39c12",
+    purple: "#8e44ad",
+  },
+  fullScreen: true,
 };
 
 /**

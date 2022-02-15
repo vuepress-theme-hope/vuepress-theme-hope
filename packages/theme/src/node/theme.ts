@@ -1,14 +1,12 @@
-import { addViteOptimizeDeps, useGitPlugin } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
-import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getAlias } from "./alias";
+import { updateBundlerOptions } from "./bundler";
 import { handleThemeData } from "./handleThemeData";
-import { handleWebpackOptions } from "./encrypt";
 import { extendsPage } from "./extends";
 import { getLayoutConfig } from "./layout";
-import { getPluginConfig } from "./plugins";
+import { getPluginConfig, usePlugin } from "./plugins";
+import { writeThemeColorScss } from "./themeColor";
 
 import type { Page, Theme } from "@vuepress/core";
 import type {
@@ -21,47 +19,9 @@ export const themeHope: Theme<HopeThemeOptions> = (
   { plugins = {}, ...themeOptions },
   app
 ) => {
-  addViteOptimizeDeps(app, [
-    "@vueuse/core",
-    "bcryptjs",
-    "body-scroll-lock",
-    "lodash.throttle",
-  ]);
-
-  if (app.env.isDev)
-    addViteOptimizeDeps(app, [
-      "@mr-hope/vuepress-shared/lib/client",
-      "dayjs",
-      "dayjs/plugin/localizedFormat",
-      "dayjs/plugin/objectSupport",
-      "dayjs/plugin/timezone",
-      "dayjs/plugin/utc",
-    ]);
-
+  updateBundlerOptions(app);
   handleThemeData(app, themeOptions);
-  handleWebpackOptions(app);
-
-  // only use git plugin in production or debug mode
-  if (app.env.isDebug || app.env.isBuild)
-    useGitPlugin(app, {
-      createdTime: true,
-      contributors: true,
-      updatedTime: true,
-    });
-
-  useReadingTimePlugin(app, {
-    wordPerminute: plugins.readingTime?.wordPerminute,
-  });
-
-  useSassPalettePlugin(app, {
-    id: "hope",
-    config: ".vuepress/styles/config.scss",
-    defaultConfig: path.resolve(__dirname, "../../templates/config.scss"),
-    defaultPalette: path.resolve(__dirname, "../../templates/palette.scss"),
-    generator: path.resolve(__dirname, "../../templates/generator.scss"),
-    palette: ".vuepress/styles/palette.scss",
-    style: ".vuepress/styles/index.scss",
-  });
+  usePlugin(app, plugins);
 
   return {
     name: "vuepress-theme-hope",
@@ -71,6 +31,19 @@ export const themeHope: Theme<HopeThemeOptions> = (
     define: () => ({
       ENABLE_BLOG: Boolean(plugins.blog),
     }),
+
+    extendsPage: (page) =>
+      extendsPage(
+        app,
+        themeOptions as HopeThemeConfig,
+        page as Page<HopeThemePageData>
+      ),
+
+    async onPrepared(): Promise<void> {
+      await writeThemeColorScss(app, themeOptions as HopeThemeConfig);
+    },
+
+    plugins: getPluginConfig(app, plugins, themeOptions as HopeThemeConfig),
 
     layouts: getLayoutConfig(app, plugins),
 
@@ -90,14 +63,5 @@ export const themeHope: Theme<HopeThemeOptions> = (
       path.resolve(__dirname, "../client/module/outlook/appSetup.js"),
       path.resolve(__dirname, "../client/module/sidebar/appSetup.js"),
     ],
-
-    extendsPage: (page) =>
-      extendsPage(
-        app,
-        themeOptions as HopeThemeConfig,
-        page as Page<HopeThemePageData>
-      ),
-
-    plugins: getPluginConfig(app, plugins, themeOptions as HopeThemeConfig),
   };
 };

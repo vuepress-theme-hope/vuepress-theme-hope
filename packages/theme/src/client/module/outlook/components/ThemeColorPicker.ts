@@ -5,14 +5,6 @@ import type { VNode } from "vue";
 
 import "../styles/theme-color-picker.scss";
 
-const DEFAULT_THEME_COLOR_CONFIG: Record<string, string> = {
-  red: "#e74c3c",
-  blue: "#3498db",
-  green: "#3eaf7c",
-  orange: "#f39c12",
-  purple: "#8e44ad",
-};
-
 export default defineComponent({
   name: "ThemeColorPicker",
 
@@ -23,7 +15,7 @@ export default defineComponent({
     const locale = computed(() => themeLocale.value.outlookLocales.themeColor);
 
     const themeColor = computed(() => {
-      const { themeColor = DEFAULT_THEME_COLOR_CONFIG } = themeData.value;
+      const { themeColor } = themeData.value;
 
       return themeColor === false ? null : themeColor;
     });

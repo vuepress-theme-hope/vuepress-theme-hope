@@ -27,13 +27,11 @@ export default defineComponent({
         themeData.value.darkmode !== "force-dark"
     );
 
-    const enableThemeColor = computed(
-      () => themeData.value.themeColor !== false
+    const enableThemeColor = computed(() =>
+      Boolean(themeData.value.themeColor)
     );
 
-    const enableFullScreen = computed(
-      () => themeData.value.fullScreen !== false
-    );
+    const enableFullScreen = computed(() => themeData.value.fullScreen);
 
     return (): VNode =>
       h(ClientOnly, () => [
