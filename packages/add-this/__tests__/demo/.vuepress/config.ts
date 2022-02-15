@@ -5,16 +5,6 @@ export default defineUserConfig<DefaultThemeOptions>({
   base: process.env.VuePress_BASE || "/",
   dest: "./dist",
 
-  head: [
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_kxwb6og9m5.css",
-      },
-    ],
-  ],
-
   locales: {
     "/": {
       lang: "zh-CN",
