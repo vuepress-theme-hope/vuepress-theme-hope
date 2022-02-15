@@ -101,9 +101,9 @@ export interface HopeThemeLayoutOptions {
   backToTop?: boolean | number;
 
   /**
-   * Mobile view and desktop view switch width in pixels
+   * Window width switching mobile view and desktop view in pixels.
    *
-   * 桌面布局和移动布局的切换点，单位像素
+   * 切换桌面布局和移动布局的窗口宽度，单位像素。
    *
    * @default 719
    */
