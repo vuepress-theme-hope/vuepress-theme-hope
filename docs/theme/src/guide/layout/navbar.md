@@ -64,7 +64,7 @@ You can omit the `.md` extension, and paths ending with `/` are inferred as `/RE
 
 <!-- TODO: Add activeMatch and other info -->
 
-If you are not satisfied with the page's icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
+If you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
 - `text:`: item text
 - `link`: item link
@@ -394,7 +394,7 @@ You can set `themeConfig.logoDark` to display another logo in dark mode.
 
 ## I18n Support
 
-The theme's navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
+The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
 
 :::: code-group
 

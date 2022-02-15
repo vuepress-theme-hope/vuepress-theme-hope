@@ -7,13 +7,13 @@ tag:
   - page
 ---
 
-VuePress is markdown-centered. Each markdown file inside your project is a standalone page.
+VuePress is markdown-centered. Each Markdown file inside your project is a standalone page.
 
 ## Routing
 
-By default, the route path of a page is determined by the relative path of your markdown file.
+By default, the route path of a page is determined by the relative path of your Markdown file.
 
-Assuming this is the directory structure of your markdown files:
+Assuming this is the directory structure of your Markdown files:
 
 ```
 └─ docs
@@ -24,7 +24,7 @@ Assuming this is the directory structure of your markdown files:
    └─ README.md
 ```
 
-Take the `docs` directory as your [sourceDir](https://v2.vuepress.vuejs.org/reference/cli.md), e.g. you are running `vuepress dev docs` command. Then the route paths of your markdown files would be:
+Take the `docs` directory as your [sourceDir](https://v2.vuepress.vuejs.org/reference/cli.md), e.g. you are running `vuepress dev docs` command. Then the route paths of your Markdown files would be:
 
 | Relative Path      | Route Path           |
 | ------------------ | -------------------- |
@@ -35,7 +35,7 @@ Take the `docs` directory as your [sourceDir](https://v2.vuepress.vuejs.org/refe
 
 ## Frontmatter
 
-A markdown file could contain a [YAML](https://yaml.org/) frontmatter. The frontmatter must be at the top of the Markdown file and must be wrapped with a couple of triple-dashed lines. Here is a basic example:
+A Markdown file could contain a [YAML](https://yaml.org/) frontmatter. The frontmatter must be at the top of the Markdown file and must be wrapped with a couple of triple-dashed lines. Here is a basic example:
 
 ```md
 ---

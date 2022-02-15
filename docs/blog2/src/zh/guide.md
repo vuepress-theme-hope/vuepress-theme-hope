@@ -75,4 +75,4 @@ icon: creative
 
 此外，你可以通过传递所需的 `key` 作为参数，来将获得绑定到该 `key` 的信息。
 
-有关返回类型，请参阅 [Composition Api 返回类型](./config.md#可组合式-API)。
+有关返回类型，请参阅 [Composition API 返回类型](./config.md#可组合式-API)。

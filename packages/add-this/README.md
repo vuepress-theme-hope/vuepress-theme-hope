@@ -19,7 +19,7 @@ We are just making this plugin compatable with V2. This plugin will no longer un
 
 ### Why❔
 
-AdBlockers are blocking addThis link heavily, and in most cases this plugin won't work.
+AdBlockers are blocking addThis link heavily, and in most cases this plugin won’t work.
 
 ### Solution💡
 

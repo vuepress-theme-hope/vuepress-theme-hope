@@ -227,7 +227,7 @@ For more details, please see [Page → Footer Support](../guide/layout/footer.md
 - Type: `string | false`
 - Default value: value in themeConfig
 
-Copyright infomation
+Copyright information
 
 For more details, please see [Page → Footer Support](../guide/layout/footer.md).
 

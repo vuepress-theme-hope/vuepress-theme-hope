@@ -3,7 +3,7 @@ title: Guide
 icon: guide
 ---
 
-This plugin will make your website fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to fully enhance the SEO of the site.
+This plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to fully enhance the SEO of the site.
 
 ## Out of box
 
@@ -49,7 +49,7 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 
 ## Free customization
 
-You can configure the `head` option in the page's frontmatter to add specific tags to the page `<head>` to enhance SEO.
+You can configure the `head` option in the page’s frontmatter to add specific tags to the page `<head>` to enhance SEO.
 For example:
 
 ```md
@@ -94,7 +94,7 @@ function ogp<ExtendObject = Record<string, unknown>>(
 
 For detailed parameter structure, see [Config](./config.md).
 
-For example, if you are using a third-party theme and set a `banner` in Front Matter for each article according to the theme requirements, then you can pass in the following `ogp`:
+For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
 
 ```ts
 ({

@@ -9,7 +9,7 @@ This plugin is basically facing plugins and theme development.
 
 To get started, you should understand that this plugin is designed to take across plugins and theme (unlike the officail one only for theme).
 
-We are providing `id` option to do that, and using this plugin (by calling `useSassPalette`) with same id won't have any side effects. Also, all the alias and module names have an id prefix.
+We are providing `id` option to do that, and using this plugin (by calling `useSassPalette`) with same id won’t have any side effects. Also, all the alias and module names have an id prefix.
 
 This will allows you to:
 
@@ -23,7 +23,7 @@ This will allows you to:
 
   :::
 
-- With different id, plugins and theme won't affect others. We recommand you to set the `id` variable with your plugin name.
+- With different id, plugins and theme won’t affect others. We recommand you to set the `id` variable with your plugin name.
 
   With the default settings, users will set your plugin style under `.vuepress/styles` folder with sass files starting with your id prefix. And you can access the variables you need with `${id}-config`.
 
@@ -88,7 +88,7 @@ We are using `additionalData` options to let `${id}-config` module aviable in yo
 - `<style lang="scss">` block in component files
 - scss files imported by script files directly (e.g.: `import "./a-scss-file.scss"` in client app enhance file).
 
-If the scss file is not imported directly, but is imported through `@use` or `@import` api, the module won't be available. So that in this case, you should import the module yourself using `@use "@sass-palette/${id}-config";`.
+If the scss file is not imported directly, but is imported through `@use` or `@import` api, the module won’t be available. So that in this case, you should import the module yourself using `@use "@sass-palette/${id}-config";`.
 
 ### Preserved config name
 
@@ -195,7 +195,7 @@ Only colors (or color map), length and strings are allowed in palette. Any other
 
 :::: note Why only allow color and length besides strings
 
-In common sitations, you probably only want to make calculations with color and length. So it's quite safe to drop other type support, because any other value you want can be converted to string.
+In common sitations, you probably only want to make calculations with color and length. So it’s quite safe to drop other type support, because any other value you want can be converted to string.
 
 ::: details Example
 

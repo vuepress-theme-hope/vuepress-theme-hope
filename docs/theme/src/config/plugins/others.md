@@ -13,7 +13,7 @@ tag:
 
 Provides a code copy button.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+By default, no config is required. If you don’t need this feature, please set to `false`.
 
 ::: info
 
@@ -25,7 +25,7 @@ For the plugin config, please refer to [copy-code2 plugin config][copy-code-conf
 
 Provide picture browsing function.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+By default, no config is required. If you don’t need this feature, please set to `false`.
 
 ::: info
 
@@ -54,7 +54,7 @@ For more plugin configs, see [reading-time2 plugin config][reading-time-config].
 
 Provides search engine enhancements.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+By default, no config is required. If you don’t need this feature, please set to `false`.
 
 ::: info
 
@@ -64,9 +64,9 @@ For plugin config, see [seo2 plugin config][seo-config].
 
 ## sitemap <Badge text="enabled by default" />
 
-Automatically generate Sitemaps for websites.
+Automatically generate Sitemap.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+By default, no config is required. If you don’t need this feature, please set to `false`.
 
 ::: info
 

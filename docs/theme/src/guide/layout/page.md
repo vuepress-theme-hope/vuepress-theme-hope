@@ -90,7 +90,7 @@ The theme only provides `Layout`, `404` layout. Also:
 
 ## Custom container Class
 
-By default, each page is rendered in a `div` with class `theme-container`. If you need to apply some special styles to specific pages, you can additionally specify a class name by setting `containerClass` in frontmatter
+By default, each page is rendered in a `div` with class `theme-container`. To apply some special styles to specific pages, you can additionally specify a class name by setting `containerClass` in frontmatter
 
 ```md
 ---

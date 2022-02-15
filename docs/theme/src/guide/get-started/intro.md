@@ -21,7 +21,7 @@ This theme not only **greatly improve outlook** comparing to `@vuepress/theme-de
 
 Although [vuepress-theme-hope/vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope) itself marked as a theme repository, it also contains more than a dozen equally complete and powerful plugin. Each plugin is also powerful, can be used with the default theme or third-party themes.
 
-Based on such a dozen plugins, Mr.Hope can confidently say that `vuepress-theme-hope` is "**A powerful theme with tons of features**". It can also be seen as the most versatile and comprehensive theme among all vuepress themes.
+Based on such a dozen plugins, Mr.Hope can confidently say that `vuepress-theme-hope` is "**A powerful theme with tons of features**". It can also be seen as the most versatile and comprehensive theme among all VuePress themes.
 
 :::
 
@@ -41,7 +41,7 @@ Based on the goal V1 achieved, v2 is further carried out:
 
 - Improved outlook: The theme interface is not based on the layout and style of the default theme, but has been completely refactored.
 
-- Decoupling Features: With the help of Vue3's composition API, the theme fully achieve "Tree Shakeable" while remaining powerful.
+- Decoupling Features: With the help of Vue3’s composition API, the theme fully achieve "Tree Shakeable" while remaining powerful.
 
   The theme will only run which features you need, without being slowed down by other features or affecting the build size.
 
@@ -63,7 +63,7 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 ### Search engine enhancement
 
-- Provides [SEO Enhance](../feature/seo.md), will automatically inject website information to fully support OGP and JSON-LD protocols, and enhance search engine indexing.
+- Provides [SEO Enhance](../feature/seo.md), will automatically inject information to fully support OGP and JSON-LD protocols, and enhance search engine indexing.
 
 - Provides [Sitemap Generation](../feature/sitemap.md)
 
@@ -83,4 +83,4 @@ The theme is containing full blog support, you can use the brand new [blog homep
 
 - Provides [Comment and PageViews](../feature/comment.md) feature to let you communicate with your visitors
 
-- Provides [Feed](../feature/feed.md) generation, so that others can subscribe your website.
+- Provides [Feed](../feature/feed.md) generation, so that others can subscribe your site.

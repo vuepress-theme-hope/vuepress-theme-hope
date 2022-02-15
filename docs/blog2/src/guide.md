@@ -7,7 +7,7 @@ With `vuepress-plugin-blog2`, you can easily bring blog feature into your themes
 
 ## Collecting Articles and generating info
 
-To get started, the plugins will pick pages those neeeded to trict as articles. This is only the first step to drop those pages you don't want. By default, all the pages generated from Markdown files but not homepage will be included as articles.
+To get started, the plugins will pick pages those neeeded to trict as articles. This is only the first step to drop those pages you don’t want. By default, all the pages generated from Markdown files but not homepage will be included as articles.
 
 You may need to set option `filter` to fully customize pages to collect. The `filter` accepts a function with the shape `(page: Page) => boolean`.
 
@@ -31,7 +31,7 @@ Basiclly, you would want 2 types of collection in your blog:
 
 After understanding description of these 2 types, you can set `category` and `type` options, each of them accepts an array, and each element represents a configuation.
 
-Let's start with 2 examples here.
+Let’s start with 2 examples here.
 
 Imagine you want to set tags for each articles, and you are setting them in `frontmatter.tag`. You want a tag mapping page in `/tag/` with `TagMap` layout , and group each tag list with tagName in `/tag/tagName` with `TagList` layout, you probably need a configuation like this:
 
@@ -75,4 +75,4 @@ So you can invoke `useBlogCategory()` and `useBlogType()` directly, and the resu
 
 Also, you can pass `key` you want as argument, then you will get infomation bind to that key.
 
-For return types, please see [Composition Api Return Types](./config.md#composition-api).
+For return types, please see [Composition API Return Types](./config.md#composition-api).

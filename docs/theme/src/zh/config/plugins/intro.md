@@ -88,7 +88,7 @@ tag:
 
 - [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
 
-- [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition Api 插件
+- [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
 
 [add-this]: https://vuepress-theme-hope.github.io/v2/add-this/zh/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/

@@ -21,7 +21,7 @@ category:
 
    - 如果您不知道如何配置某些内容，请描述您想要的内容、搜索的内容或您希望看到指南的哪个部分 (以便我们改进我们的文档)
 
-   - 如果您遇到问题，请提供相关的错误日志（通过运行 `vuepress dev <docs dir> --debug`）和屏幕截图。
+   - 如果您遇到问题，请提供相关的错误日志 (通过运行 `vuepress dev <docs dir> --debug`) 和屏幕截图。
 
 如果你确定某些地方有问题，请在 GitHub 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose)，并完整指出问题的具体详情。
 

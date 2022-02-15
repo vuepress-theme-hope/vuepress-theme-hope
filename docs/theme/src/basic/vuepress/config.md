@@ -93,6 +93,6 @@ To use `vuepress-theme-hope`, you should set `theme: "hope"`.
 
 ::: warning
 
-If you don't specify the `theme` option of VuePress config, the default theme will be used.
+If you don’t specify the `theme` option of VuePress config, the default theme will be used.
 
 :::

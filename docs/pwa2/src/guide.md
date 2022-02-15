@@ -55,7 +55,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     Starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
 
-    However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the website will not pop up an installation prompt.
+    However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the site will not pop up an installation prompt.
 
     :::
 

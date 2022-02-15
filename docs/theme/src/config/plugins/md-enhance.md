@@ -17,7 +17,7 @@ The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markd
 
 ::: tip
 
-If you don't need this feature, please set to `false`.
+If you don’t need this feature, please set to `false`.
 
 :::
 

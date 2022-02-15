@@ -42,7 +42,7 @@ module.exports = {
 ::: tip
 大部分插件只能使用一次，如果同一个插件被多次使用，那么只有最后一次会生效。
 
-然而，部分插件是可以被多次使用的（例如 [@vuepress/plugin-container](../reference/plugin/container.md)），你应该查看插件本身的文档来获取详细指引。
+然而，部分插件是可以被多次使用的 (例如 [@vuepress/plugin-container](../reference/plugin/container.md)) ，你应该查看插件本身的文档来获取详细指引。
 :::
 
 ## 本地插件

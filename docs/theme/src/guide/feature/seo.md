@@ -18,15 +18,15 @@ In order to make the plugin work better, you may need to check the [page config]
 
 :::
 
-The plugin will make your website fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) by injecting tags into the website `<head>` to fully enhance the SEO of the site.
+The plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) by injecting tags into `<head>` to fully enhance the SEO of the site.
 
-If you don't need this plugin, please set `themeConfig.plugins.seo` to `false`.
+If you don’t need this plugin, please set `themeConfig.plugins.seo` to `false`.
 
 <!-- more -->
 
 The plugin works out of the box. Without any configuration, it will extract the corresponding information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
 
-By default, the plugin reads the site configuration, theme configuration and the page's frontmatter to automatically generate as much as possible. Things like site name, page title, page type, date of writing, date of last update, article tags are automatically generated.
+By default, the plugin reads the site configuration, theme configuration and the page’s frontmatter to automatically generate as much as possible. Things like site name, page title, page type, date of writing, date of last update, article tags are automatically generated.
 
 ## Out of box
 
@@ -72,7 +72,7 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 
 ## Free customization
 
-You can configure the `head` option in the page's frontmatter to add specific tags to the page `<head>` to enhance SEO.
+You can configure the `head` option in the page’s frontmatter to add specific tags to the page `<head>` to enhance SEO.
 For example:
 
 ```md

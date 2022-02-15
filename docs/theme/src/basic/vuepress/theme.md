@@ -15,7 +15,7 @@ However, you might think it is not good enough. Or, you want to build a differen
 
 ## Community Theme
 
-Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
+Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme’s own documentation for detailed guide.
 
 In general, you need to specify the name of the theme to use in [theme](https://v2.vuepress.vuejs.org/reference/config.md#theme) option:
 
@@ -35,7 +35,7 @@ You can use either theme name or its shorthand:
 
 ## Local Theme
 
-If you want to use your own custom theme but don't want to publish it, you can create a local theme.
+If you want to use your own custom theme but don’t want to publish it, you can create a local theme.
 
 First, create the local theme directory, typically `.vuepress/theme` :
 

@@ -98,7 +98,7 @@ function ogp<ExtendObject = Record<string, unknown>>(
 
 详细的参数结构详见 [配置][seo2-config]。
 
-比如你在使用某个第三方主题，并按照主题要求为每篇文章在 Front Matter 中设置了 `banner`，那你可以传入这样的 `ogp`:
+比如你在使用某个第三方主题，并按照主题要求为每篇文章在 front matter 中设置了 `banner`，那你可以传入这样的 `ogp`:
 
 ```ts
 ({

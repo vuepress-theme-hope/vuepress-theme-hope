@@ -66,7 +66,7 @@ You can omit the `.md` extension, and paths ending with `/` are inferred as `/RE
 
 <!-- TODO: Add activeMatch and other info -->
 
-Just like navbar, if you are not satisfied with the page's icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
+Just like navbar, if you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
 - `text:`: item text
 - `link`: item link
@@ -614,7 +614,7 @@ Icon support is enabled in the sidebar by default, and the icon of the page will
 
 ## I18n Support
 
-The theme's navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
+The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
 
 :::: code-group
 

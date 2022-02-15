@@ -29,7 +29,7 @@ Useful when you want to provide "A pure document site".
 
 ::: info W.I.P
 
-This feature now doesn't take much effect, and we are planning to improve it.
+This feature now doesn’t take much effect, and we are planning to improve it.
 
 :::
 

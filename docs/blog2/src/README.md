@@ -83,4 +83,4 @@ module.exports = {
 
 ## Migrating from V1
 
-This plugin wasn't released in V1.
+This plugin wasn’t released in V1.

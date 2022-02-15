@@ -107,7 +107,7 @@ Suggestion:
 Try to use relative paths instead of absolute paths for internal links.
 
 - Relative paths are a valid links to the target files, and they can navigate correctly when browsing the source files in your editor or repository.
-- Relative paths are consistent in different locales, so you don't need to change the locale path when translating your content.
+- Relative paths are consistent in different locales, so you don’t need to change the locale path when translating your content.
 - When using absolute paths, if the [base](https://v2.vuepress.vuejs.org/reference/config.md#base) of your site is not `"/"`, you will need to prepend the `base` manually or use [base helper](./assets.md#base-helper).
 
 ::: tip
@@ -140,7 +140,7 @@ Config reference: [markdown.emoji](https://v2.vuepress.vuejs.org/reference/confi
 
 ### Table of Contents
 
-If you want to put the table of contents (TOC) of your current page inside your Markdown content, you can use the `[[toc]]` syntax.
+To put the table of contents (TOC) of your current page inside your Markdown content, you can use the `[[toc]]` syntax.
 
 Input:
 
@@ -152,7 +152,7 @@ Output:
 
 [[toc]]
 
-The headers in TOC will link to the corresponding [header anchors](#header-anchors), so TOC won't work well if you disable header anchors.
+The headers in TOC will link to the corresponding [header anchors](#header-anchors), so TOC won’t work well if you disable header anchors.
 
 ::: tip
 This toc extension is supported by our built-in plugin, which is forked and modified from [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right).
@@ -162,7 +162,7 @@ Config reference: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.
 
 ### Code Blocks
 
-Following code blocks extensions are implemented during markdown parsing in Node side. That means, the code blocks won't be processed in client side.
+Following code blocks extensions are implemented during Markdown parsing in Node side. That means, the code blocks won’t be processed in client side.
 
 #### Line Highlighting
 
@@ -281,7 +281,7 @@ Input:
 ```
 
 ```js:no-v-pre
-// This won't be compiled correctly because of js syntax highlighting
+// This won’t be compiled correctly because of js syntax highlighting
 const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 ````
@@ -305,7 +305,7 @@ not actually using :no-v-pre here, just as an example of incorrect usage
 -->
 
 ```js
-// This won't be compiled correctly because of js syntax highlighting
+// This won’t be compiled correctly because of js syntax highlighting
 const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 
@@ -442,9 +442,9 @@ Check out the [Built-in Components](https://v2.vuepress.vuejs.org/reference/comp
 
 ### Deprecated HTML Tags
 
-Deprecated HTML tags such as [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) and [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) are not allowed in VuePress markdown by default.
+Deprecated HTML tags such as [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) and [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) are not allowed in VuePress Markdown by default.
 
-Those tags would not be recognized as native HTML tags by Vue template compiler. Instead, Vue will try to resolve those tags as Vue components, and obviously these components usually don't exist.
+Those tags would not be recognized as native HTML tags by Vue template compiler. Instead, Vue will try to resolve those tags as Vue components, and obviously these components usually don’t exist.
 
 You should try to avoid using deprecated HTML tags. However, if you want to use those tags anyway, try either of the following workarounds:
 

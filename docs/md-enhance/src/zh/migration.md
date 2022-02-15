@@ -11,7 +11,7 @@ icon: change
 
 - `imageFix` 被移除
 
-  Mr.Hope 已经做了一个 PR 来修复 markdown 中损坏的图片链接
+  Mr.Hope 已经做了一个 PR 来修复 Markdown 中损坏的图片链接
 
 ## 新特性
 

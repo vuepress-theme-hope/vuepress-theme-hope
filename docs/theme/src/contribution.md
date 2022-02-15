@@ -118,7 +118,7 @@ The structure of each project is as follows:
   └── shared → Shared files between node and client
 ```
 
-Since the client side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client folders cannot be cross-referenced.
+Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client folders cannot be cross-referenced.
 
 - `client` folder stores the client code, compiled in esm format
 - `node` folder stores the Node.js code, compiled in cjs format
@@ -151,7 +151,7 @@ For better performance, all plugins are packed and minified using rollup when th
 
 ::: warning
 
-Please do not mix build and dev commands as they are built in completely different ways.
+Please do not mix build and dev commands as they compile in completely different ways.
 
 You may need to execute the `yarn run clean` command to clear the last build results.
 

@@ -17,7 +17,7 @@ The `vuepress-plugin-pwa2` plugin is enabled by default and provides progressive
 
 ::: tip
 
-If you don't need this feature, please set to `false`.
+If you don’t need this feature, please set to `false`.
 
 :::
 

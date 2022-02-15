@@ -20,7 +20,7 @@ By default, the theme will enable progressive web app support [^pwa-intro] via b
 
 `vuepress-theme-hope` provides the `pwa` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-pwa2`.
 
-If you don't need this feature or want to use another pwa plugin, you can disable the plugin by setting `themeConfig.plugins.pwa` to `false`.
+If you don’t need this feature or want to use another pwa plugin, you can disable the plugin by setting `themeConfig.plugins.pwa` to `false`.
 
 :::
 
@@ -68,7 +68,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     Starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
 
-    However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the website will not pop up an installation prompt.
+    However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the site will not pop up an installation prompt.
 
     :::
 

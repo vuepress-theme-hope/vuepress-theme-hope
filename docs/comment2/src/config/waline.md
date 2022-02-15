@@ -95,7 +95,7 @@ See the [Avatar setting](https://waline.js.org/en/guide/client/avatar.html) for 
 - Type: `number | [number, number]`
 - Default: `0`
 
-Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to `0`.
+Comment word s limit. When a single number is filled in, it ’s the maximum number of comment words. No limit when set to `0`.
 
 ## pageSize
 

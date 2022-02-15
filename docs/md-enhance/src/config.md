@@ -42,7 +42,7 @@ Whether to enable custom container including
 
 ::: warning
 
-The last 4 items conflict with default theme and will overide it's style.
+The last 4 items conflict with default theme and will overide it’s style.
 
 :::
 
