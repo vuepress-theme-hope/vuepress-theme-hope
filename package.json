@@ -18,6 +18,8 @@
     "demo:webpack-serve": "yarn workspace theme-demo webpack-serve",
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"yarn dev:copy\"",
     "dev:copy": "lerna run dev:copy --parallel",
+    "docs:theme-build": "yarn workspace theme-docs docs:vite-build",
+    "docs:theme-serve": "yarn workspace theme-docs docs:vite-serve",
     "docs:vite-build": "lerna run docs:vite-build --parallel",
     "postinstall": "husky install",
     "lerna:bootstrap": "lerna bootstrap",
