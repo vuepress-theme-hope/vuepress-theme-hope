@@ -1,8 +1,9 @@
 import { deepAssignReverse, getLocales } from "@mr-hope/vuepress-shared";
-import { themeLocalesData } from "./locales";
-import type { HopeThemeConfig, HopeThemeOptions } from "../shared";
-import type { App } from "@vuepress/core";
 import { resolveEncrypt } from "./encrypt";
+import { themeLocalesData } from "./locales";
+
+import type { App } from "@vuepress/core";
+import type { HopeThemeConfig, HopeThemeOptions } from "../shared";
 
 const defaultRootOptions: HopeThemeOptions = {
   blog: {
@@ -24,6 +25,7 @@ const defaultRootOptions: HopeThemeOptions = {
 
   // layouts
   repoDisplay: true,
+  navbarIcon: true,
   navbarAutoHide: "mobile",
   hideSiteNameonMobile: true,
 

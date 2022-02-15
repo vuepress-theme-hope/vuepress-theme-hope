@@ -47,7 +47,13 @@ export default defineComponent({
       h(
         "header",
         {
-          class: ["navbar", { "auto-hide": autoHide.value }],
+          class: [
+            "navbar",
+            {
+              "auto-hide": autoHide.value,
+              "hide-icon": !themeLocale.value.navbarIcon,
+            },
+          ],
           ref: navbar,
         },
         [

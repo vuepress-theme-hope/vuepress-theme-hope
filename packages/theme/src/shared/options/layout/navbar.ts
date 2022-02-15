@@ -79,6 +79,15 @@ export interface HopeThemeNavbarLocaleOptions {
   repoLabel?: null | string;
 
   /**
+   * Whether show icon in navbar
+   *
+   * 是否在导航栏中显示图标
+   *
+   * @default true
+   */
+  navbarIcon?: boolean;
+
+  /**
    * Whether to hide navbar when scrolling down
    *
    * 是否在向下滚动时自动隐藏导航栏

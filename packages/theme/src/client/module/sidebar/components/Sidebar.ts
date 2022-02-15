@@ -1,5 +1,6 @@
 import { defineComponent, h } from "vue";
 
+import { useThemeLocaleData } from "@theme-hope/composables";
 import SidebarLinks from "@theme-hope/module/sidebar/components/SidebarLinks";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
@@ -11,13 +12,18 @@ export default defineComponent({
   name: "SideBar",
 
   setup(_props, { slots }) {
+    const themeLocale = useThemeLocaleData();
     const sidebarItems = useSidebarItems();
 
     return (): VNode =>
-      h("aside", { class: "sidebar" }, [
-        slots.top?.(),
-        h(SidebarLinks, { config: sidebarItems.value }),
-        slots.bottom?.(),
-      ]);
+      h(
+        "aside",
+        { class: ["sidebar", { "hide-icon": !themeLocale.value.sidebarIcon }] },
+        [
+          slots.top?.(),
+          h(SidebarLinks, { config: sidebarItems.value }),
+          slots.bottom?.(),
+        ]
+      );
   },
 });

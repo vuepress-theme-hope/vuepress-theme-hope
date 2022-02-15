@@ -48,6 +48,10 @@
     padding-left: var(--navbar-mobile-horizontal-padding);
   }
 
+  &.hide-icon .icon {
+    display: none !important;
+  }
+
   .nav-link {
     color: var(--dark-grey);
     padding: 0 0.25rem;

@@ -2,7 +2,7 @@ import { h } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import { useIconPrefix, useThemeLocaleData } from "@theme-hope/composables";
+import { useIconPrefix } from "@theme-hope/composables";
 import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
 
 import type { VNode } from "vue";
@@ -13,7 +13,7 @@ import type {
 } from "../../../../shared";
 
 export const renderIcon = (icon?: string): VNode | null =>
-  icon && useThemeLocaleData().value.sidebarIcon !== false
+  icon
     ? h("i", {
         class: ["icon", `${useIconPrefix().value}${icon}`],
       })
