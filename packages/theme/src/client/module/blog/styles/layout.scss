@@ -9,6 +9,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  .has-toc & {
+    padding-right: 0;
+  }
+
   @media (max-width: hope-config.$pad) {
     padding-top: var(--navbar-mobile-height);
   }
