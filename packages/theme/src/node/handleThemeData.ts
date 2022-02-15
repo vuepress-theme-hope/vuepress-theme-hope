@@ -5,8 +5,6 @@ import type { App } from "@vuepress/core";
 import { resolveEncrypt } from "./encrypt";
 
 const defaultRootOptions: HopeThemeOptions = {
-  iconPrefix: "icon-",
-
   blog: {
     articleInfo: [
       "Author",
