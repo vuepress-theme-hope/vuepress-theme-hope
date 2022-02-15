@@ -35,6 +35,7 @@ export const getPluginConfig = (
       "@vuepress/active-header-links",
       resolveActiveHeaderLinksOptions(plugins.activeHeaderLinks),
     ],
+    ["@vuepress/external-link-icon", plugins.externalLinkIcon !== false],
     ["@vuepress/nprogress", plugins.nprogress !== false],
     ["@vuepress/prismjs", plugins.prismjs !== false],
     ["@vuepress/theme-data", { themeData }],
