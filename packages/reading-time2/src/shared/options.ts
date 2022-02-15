@@ -9,7 +9,7 @@ export interface ReadingTimeOptions {
    *
    * @default 300
    */
-  wordPerminute?: number;
+  wordPerMinute?: number;
 
   /**
    * Locales config
