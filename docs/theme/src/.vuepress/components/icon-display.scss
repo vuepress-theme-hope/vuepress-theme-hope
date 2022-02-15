@@ -1,0 +1,36 @@
+.icon-display-wrapper {
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+
+  .icon {
+    box-sizing: border-box;
+    width: 20%;
+    padding: 16px 10px;
+    border-radius: 6px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      width: 25%;
+    }
+
+    @media (max-width: 412px) {
+      width: 33.333%;
+    }
+
+    &:hover {
+      background-color: var(--bgcolor-light);
+      cursor: pointer;
+    }
+
+    .iconfont {
+      color: var(--dark-grey);
+      font-size: 32px;
+    }
+
+    .text {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  }
+}

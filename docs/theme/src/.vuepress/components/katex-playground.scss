@@ -1,0 +1,10 @@
+.katex-playground {
+  textarea {
+    width: 100%;
+    background-color: var(--bgcolor-light);
+    color: var(--text-color);
+    font-size: 18px;
+    border-color: var(--border-color);
+    resize: vertical;
+  }
+}
