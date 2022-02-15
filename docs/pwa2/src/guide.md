@@ -51,7 +51,13 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     The manifest file should contain at least `name` (or `short_name`) `icons` `start_url`
 
-    And starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
+    ::: note
+
+    Starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
+
+    However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the website will not pop up an installation prompt.
+
+    :::
 
 #### Picture Cache
 
@@ -74,7 +80,7 @@ When your site is too large, you can set `cacheHTML` to `false` to cache only th
 Though VuePress generates HTML files through SSR[^ssr] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering,
-[^seo]: **SEO**: **S**earch **E**ngine **O**ptimization. For details, please see [SEO Introduction](https://mrhope.site/code/site/html/definition/seo/)
+[^seo]: **SEO**: **S**earch **E**ngine **O**ptimization.
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 
 VuePress is essentially a SPA. This means that you can enter from the homepage to access all pages normally only caching the homepage.
@@ -131,15 +137,15 @@ If the following fields are not set, they will try to fallback to the following 
 | short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                   |
 | description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress'` |
 | lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`          |
-| start_url                   | `context.base`                                                                              |
-| scope                       | `context.base`                                                                              |
+| start_url                   | `siteConfig.base`                                                                           |
+| scope                       | `siteConfig.base`                                                                           |
 | display                     | `"standalone"`                                                                              |
 | theme_color                 | `"#46bd87"`                                                                                 |
 | background_color            | `'#ffffff'`                                                                                 |
 | orientation                 | `'portrait-primary'`                                                                        |
 | prefer_related_applications | `false`                                                                                     |
 
-For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa/src/shared/manifest.d.ts)
+For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts)
 
 ### Manual configuration
 
@@ -174,5 +180,5 @@ You can set them as needed. For detailed options, please see [Configuration Page
 For more details, please see:
 
 - [Google PWA](https://web.dev/progressive-web-apps/)
-- [MDN PWA](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
+- [MDN PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 - [W3C Manifest Specification](https://w3c.github.io/manifest/)

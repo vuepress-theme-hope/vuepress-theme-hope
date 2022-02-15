@@ -51,7 +51,13 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
     另外，清单文件应至少包含 `name`(或 `short_name`) `icons` `start_url`。
 
-    从 Chrome 93 起 Service Woker 必须含有有效的控制离线请求的 fetch 事件
+    ::: note
+
+    从 Chrome 93 起 Service Woker 必须含有有效的控制离线请求的 fetch 事件，才符合可安装性标准。
+
+    但是插件目前并没有默认包含相关处理逻辑，所以在 Chrome 93 或更高版本的安卓设备上，网站不会弹出安装提示。
+
+    :::
 
 #### 图片缓存
 
@@ -76,7 +82,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering，服务端渲染
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization，搜索引擎增强，
 
-    详见 [SEO 介绍](https://mrhope.site/code/website/html/definition/seo/)
+    详见 [SEO 介绍](https://mrhope.site/code/website/html/definition/seo.html)
 
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, 单页应用
 
@@ -136,15 +142,15 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 | short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                   |
 | description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress'` |
 | lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`          |
-| start_url                   | `context.base`                                                                              |
-| scope                       | `context.base`                                                                              |
+| start_url                   | `siteConfig.base`                                                                           |
+| scope                       | `siteConfig.base`                                                                           |
 | display                     | `"standalone"`                                                                              |
 | theme_color                 | `"#46bd87"`                                                                                 |
 | background_color            | `'#ffffff'`                                                                                 |
 | orientation                 | `'portrait-primary'`                                                                        |
 | prefer_related_applications | `false`                                                                                     |
 
-完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa/src/shared/manifest.d.ts)
+完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts)
 
 ### 手动配置
 
