@@ -23,6 +23,8 @@
   .dropdown-title {
     @include reset.button;
 
+    padding: 0 0.25rem;
+
     color: var(--dark-grey);
     font-family: inherit;
     font-size: inherit;
