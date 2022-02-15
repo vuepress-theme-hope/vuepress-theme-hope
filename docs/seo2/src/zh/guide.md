@@ -117,7 +117,7 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 
 ::: warning
 
-请注意插件不会对非文章页生成 JSON-LD，所以函数的首个参数可能为 null。
+请注意插件不会对非文章页生成 JSON-LD，所以函数的首个参数可能为 `null`。
 
 :::
 
