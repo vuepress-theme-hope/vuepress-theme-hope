@@ -61,15 +61,21 @@ On the project page, you can edit the icons in the project, including adjustment
 
    ![Add to library](./assets/iconfont-generate.png)
 
-1. Import the link in `index.scss` of `.vuepress/styles`. E.g:
+1. Add the link to `head` options in siteConfig to import it. E.g:
 
-   ```scss
-   @import url("//at.alicdn.com/t/font_2410206_kxwb6og9m5.css");
+   ```js
+   [
+     "link",
+     {
+       rel: "stylesheet",
+       href: "//at.alicdn.com/t/font_2410206_kxwb6og9m5.css",
+     },
+   ];
    ```
 
 ::: tip
 
-If you add a new icon in the future, please regenerate the new CSS address and overwrite the old CSS address in `.vuepress/styles/index.scss`.
+If you add a new icon in the future, please regenerate the new CSS address and overwrite the old CSS address in head option.
 
 :::
 
@@ -91,12 +97,6 @@ You can add the following item in `head`:
 ];
 ```
 
-Or the following lines at the top of `index.scss` of `.vuepress/styles`:
-
-```scss
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/regular.min.css");
-```
-
 ::: note
 
 Font-awesome current version is 6.0.0
@@ -114,8 +114,8 @@ Please follow [fontawesome document](https://fontawesome.com/).
 
 ## Featured Icons
 
-```scss
-@import url("//at.alicdn.com/t/font_2410206_kxwb6og9m5.css");
+```html
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_kxwb6og9m5.css" />
 ```
 
 <IconDisplay link="//at.alicdn.com/t/font_2410206_kxwb6og9m5.css" />

@@ -61,15 +61,21 @@ tag:
 
    ![添加入库](./assets/iconfont-generate.png)
 
-1. 在 `.vuepress/styles/index.scss` 的顶部导入链接。例如:
+1. 在 VuePress 配置的 `head` 选项中引入 CSS:
 
-   ```scss
-   @import url("//at.alicdn.com/t/font_2410206_kxwb6og9m5.css");
+   ```js
+   [
+     "link",
+     {
+       rel: "stylesheet",
+       href: "//at.alicdn.com/t/font_2410206_kxwb6og9m5.css",
+     },
+   ];
    ```
 
 ::: tip
 
-如果你日后添加了新的图标，请重新生成新的 CSS 地址并在 `.vuepress/styles/index.scss` 中覆盖旧的 CSS 地址。
+如果你日后添加了新的图标，请重新生成新的 CSS 地址并在 `head` 选项中替换。
 
 :::
 
@@ -114,8 +120,8 @@ Font-awesome 当前版本为 6.0.0
 
 ## Iconfont 精选图标
 
-```scss
-@import url("//at.alicdn.com/t/font_2410206_kxwb6og9m5.css");
+```html
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_kxwb6og9m5.css" />
 ```
 
 <IconDisplay link="//at.alicdn.com/t/font_2410206_kxwb6og9m5.css" />
