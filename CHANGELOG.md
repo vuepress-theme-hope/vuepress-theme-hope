@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
+
+### Bug Fixes
+
+- **theme:** add external-link-icon plugin ([d270bde](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d270bde0b45e8495ffbe99c8acd4f27d5c40ad2d))
+
+### Features
+
+- **reading-time2:** update options ([e7b3a91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7b3a913802edcd20705c40c8fb5eddfd604612a))
+- **theme:** update navbarHeight ([ed7a816](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed7a8160e355e8ebf657f8062fb2e0e8e43a1477))
+
 # [2.0.0-alpha.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.23](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
+
+### Features
+
+- **reading-time2:** update options ([e7b3a91](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e7b3a913802edcd20705c40c8fb5eddfd604612a))
+
 # [2.0.0-alpha.22](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
 
 **Note:** Version bump only for package vuepress-plugin-reading-time2
