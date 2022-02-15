@@ -51,6 +51,8 @@ export default defineHopeConfig({
     footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     displayFooter: true,
 
+    pageInfo: ["PageView", "Category", "Tag", "ReadingTime"],
+
     locales: {
       "/": {
         navbar: [
