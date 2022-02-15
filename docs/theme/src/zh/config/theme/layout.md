@@ -144,28 +144,28 @@ tag:
 
 ## Meta
 
-### meta.lastUpdated
+### lastUpdated
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否显示页面最后更新时间
 
-### meta.contributors
+### contributors
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否显示页面贡献者
 
-### meta.editLink
+### editLink
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否展示编辑此页链接
 
-### meta.editLinkPattern
+### editLinkPattern
 
 - 类型: `string`
 
@@ -177,21 +177,21 @@ tag:
 
 :::
 
-### meta.docsRepo
+### docsRepo
 
 - 类型: `string`
 - 默认值: `themeConfig.repo`
 
 文档仓库
 
-### meta.docsBranch
+### docsBranch
 
 - 类型: `string`
 - 默认值: `'main'`
 
 文档所在分支
 
-### meta.docsDir
+### docsDir
 
 - 类型: `string`
 - 默认值: `''`

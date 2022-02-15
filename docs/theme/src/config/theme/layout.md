@@ -144,28 +144,28 @@ Available items in `ArticleInfo`:
 
 ## Meta
 
-### meta.lastUpdated
+### lastUpdated
 
 - Type: `boolean`
 - Default: `true`
 
 Whether to show "Last Updated" or not.
 
-### meta.contributors
+### contributors
 
 - Type: `boolean`
 - Default: `true`
 
 Whether to show "Contributors" or not.
 
-### meta.editLink
+### editLink
 
 - Type: `boolean`
 - Default: `true`
 
 Whether to show "Edit this page" or not.
 
-### meta.editLinkPattern
+### editLinkPattern
 
 - Type: `string`
 
@@ -177,21 +177,21 @@ The theme provide built-in support for GitHub, Gitlab, Gitee and Bitbucket.
 
 :::
 
-### meta.docsRepo
+### docsRepo
 
 - Type: `string`
 - Default: `themeConfig.repo`
 
 The repo of your docs
 
-### meta.docsBranch
+### docsBranch
 
 - Type: `string`
 - Default: `'main'`
 
 The branch of your docs
 
-### meta.docsDir
+### docsDir
 
 - Type: `string`
 - Default: `''`
