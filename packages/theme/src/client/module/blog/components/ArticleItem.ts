@@ -49,6 +49,13 @@ export default defineComponent({
             "header",
             {
               class: "title",
+              tabindex: "0",
+              onKeydown: (event: KeyboardEvent) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  void router.push(props.path);
+                }
+              },
               onClick: () => router.push(props.path),
             },
             [
