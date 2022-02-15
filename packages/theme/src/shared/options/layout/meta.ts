@@ -69,7 +69,7 @@ export interface HopeThemeMetaLocaleOptions {
   editLinkPattern?: string;
 
   /**
-   * the repo of your docs
+   * The repo of your docs
    *
    * 文档仓库
    *
@@ -78,7 +78,7 @@ export interface HopeThemeMetaLocaleOptions {
   docsRepo?: string;
 
   /**
-   * the branch of your docs
+   * The branch of your docs
    *
    * 文档所在分支
    *
@@ -87,9 +87,9 @@ export interface HopeThemeMetaLocaleOptions {
   docsBranch?: string;
 
   /**
-   * Docs dir relative to repo
+   * Docs dir location in repo
    *
-   * 文档相对于仓库所在目录
+   * 文档在仓库中的目录
    *
    * @default ''
    */

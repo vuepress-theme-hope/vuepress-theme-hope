@@ -29,31 +29,13 @@ export interface HopeThemeLayoutLocaleOptions
   /**
    * Home path of current locale
    *
-   * Used as the link of back-to-home and navbar logo
+   * @description Used as the link of back-to-home and navbar logo
+   *
+   * 当前语言的主页路径
+   *
+   * @description 用于导航栏图标和返回主页按钮的链接
    */
   home?: string;
-
-  /**
-   * Article Info display configuration
-   *
-   * @see https://vuepress-theme-hope.github.io/components/guide/articleInfo/
-   *
-   * 文章信息配置
-   *
-   * @see https://vuepress-theme-hope.github.io/components/zh/guide/articleInfo/
-   *
-   * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
-   */
-  pageInfo?: ArticleInfo[];
-
-  /**
-   * Whether display icon besides page title
-   *
-   * 是否在页面标题旁显示图标
-   *
-   * @default true
-   */
-  titleIcon?: boolean;
 
   /**
    * Whether enable breadcrumb globally
@@ -72,6 +54,28 @@ export interface HopeThemeLayoutLocaleOptions
    * @default true
    */
   breadcrumbIcon?: boolean;
+
+  /**
+   * Whether display icon besides page title
+   *
+   * 是否在页面标题旁显示图标
+   *
+   * @default true
+   */
+  titleIcon?: boolean;
+
+  /**
+   * Article Info display configuration
+   *
+   * @see https://vuepress-theme-hope.github.io/v2/components/guide/article-info.html
+   *
+   * 文章信息配置
+   *
+   * @see https://vuepress-theme-hope.github.io/v2/components/zh/guide/article-info.html
+   *
+   * @default ["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]
+   */
+  pageInfo?: ArticleInfo[] | false;
 
   /**
    * Whether show toc list in desktop mode

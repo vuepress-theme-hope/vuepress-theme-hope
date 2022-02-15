@@ -22,20 +22,20 @@ Waline 的服务端地址。
 - 类型: `string`
 - 必填: 否
 
-暗黑模式适配。
+深色模式适配。
 
-- 设置 `'auto'` 会根据设备暗黑模式自适应。
+- 设置 `'auto'` 会根据设备深色模式自适应。
 - 填入 CSS 选择器会在对应选择器生效时启用夜间模式。
 
 ::: tip 针对不同主题的例子
 
-- **Docusaurus**: 它会在 `<html>` 上通过设置 `data-theme="dark"` 开启暗黑模式，那么你需要将 `dark` 选项设置为 `'html[data-theme="dark"]'`。
+- **Docusaurus**: 它会在 `<html>` 上通过设置 `data-theme="dark"` 开启深色模式，那么你需要将 `dark` 选项设置为 `'html[data-theme="dark"]'`。
 
-- **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启暗黑模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
+- **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启深色模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
 
 :::
 
-自定义样式与暗黑模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
+自定义样式与深色模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
 
 ## meta
 

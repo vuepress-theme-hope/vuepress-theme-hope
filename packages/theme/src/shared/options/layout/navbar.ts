@@ -29,9 +29,15 @@ export interface HopeThemeNavbarLocaleOptions {
   /**
    * Navbar config
    *
-   * Set to `false` to disable navbar in current locale
+   * @description Set to `false` to disable navbar in current locale
+   * @see https://vuepress-theme-hope.github.io/v2/guide/layout/navbar.html
+   *
+   * 导航栏配置
+   *
+   * @description 设置 `false` 以在当前语言中禁用导航栏
+   * @see https://vuepress-theme-hope.github.io/v2/zh/guide/layout/navbar.html
    */
-  navbar?: false | HopeThemeNavbarConfig;
+  navbar?: HopeThemeNavbarConfig | false;
 
   /**
    * Navbar logo
@@ -42,7 +48,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
-  logo?: null | string;
+  logo?: string | null;
 
   /**
    * Navbar logo under darkmode
@@ -53,30 +59,30 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
-  logoDark?: null | string;
+  logoDark?: string | null;
 
   /**
-   * Navbar repository config
+   * Repository link
    *
-   * Used for the repository link of navbar
+   * 仓库链接
    */
-  repo?: null | string;
+  repo?: string | null;
 
   /**
-   * Whether display repo link in navbar
+   * Whether display repo link in navbar.
    *
-   * 是否在导航栏显示仓库链接
+   * 是否在导航栏显示仓库链接。
    *
    * @default true
    */
   repoDisplay?: boolean;
 
   /**
-   * Navbar repository config
+   * Repository aria label of navbar
    *
-   * Used for the repository text of navbar
+   * 导航栏仓库按钮的无障碍标签
    */
-  repoLabel?: null | string;
+  repoLabel?: string | null;
 
   /**
    * Whether show icon in navbar
