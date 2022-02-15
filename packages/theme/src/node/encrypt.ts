@@ -40,11 +40,11 @@ export const handleWebpackOptions = (app: App): void => {
 
 export const resolveEncrypt = (encrypt: HopeThemeEncryptOptions): void => {
   // handle global token
-  if (encrypt.global)
-    if (typeof encrypt.global === "string")
-      encrypt.global = hashSync(encrypt.global);
-    else if (Array.isArray(encrypt.global))
-      encrypt.global = encrypt.global
+  if (encrypt.admin)
+    if (typeof encrypt.admin === "string")
+      encrypt.admin = hashSync(encrypt.admin);
+    else if (Array.isArray(encrypt.admin))
+      encrypt.admin = encrypt.admin
         .map((globalToken) => {
           if (typeof globalToken === "string") return hashSync(globalToken);
 
@@ -59,10 +59,10 @@ export const resolveEncrypt = (encrypt: HopeThemeEncryptOptions): void => {
       logger.error(
         `You are asking for global encryption but you provide invalid "global" config. 
         
-        Please check "global" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.global}. Please fix it!`
+        Please check "global" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.admin}. Please fix it!`
       );
 
-      delete encrypt.global;
+      delete encrypt.admin;
     }
 
   const tokenConfig = encrypt.config || {};

@@ -21,7 +21,7 @@ const defaultRootOptions: HopeThemeOptions = {
   },
 
   encrypt: {
-    status: "local",
+    global: false,
   },
 
   // layouts

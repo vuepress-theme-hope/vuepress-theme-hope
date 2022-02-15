@@ -17,26 +17,20 @@ export interface HopeThemeEncryptLocaleData {
  */
 export interface HopeThemeEncryptOptions {
   /**
-   * Feature Status
+   * Whether encrypt gloablly
    *
-   * - `'global'` means enabled globally
-   * - `'local'` means disabled globally and can be enabled in pages
-   *
-   * 功能状态
-   *
-   * - `'global'` 意味着全局启用
-   * - `'local'` 意味着全局禁用，可在页面内启用
+   * 是否全局加密
    *
    * @default 'local'
    */
-  status?: "global" | "local";
+  global?: boolean;
 
   /**
-   * Global passwords, which has the highest authority
+   * Admin passwords, which has the highest authority
    *
    * 最高权限密码
    */
-  global?: string | string[];
+  admin?: string | string[];
   /**
    * Encrypt Configuration
    *

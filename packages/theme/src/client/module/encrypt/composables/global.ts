@@ -18,8 +18,8 @@ export const useGlobalEcrypt = (): GlobalEncrypt => {
   const globalToken = ref("");
 
   const isGlobalEncrypted = computed(() => {
-    if (options.value.status === "global" && options.value.global) {
-      const { global } = options.value;
+    if (options.value.global && options.value.admin) {
+      const { admin: global } = options.value;
       const globalTokens = typeof global === "string" ? [global] : global;
 
       // none of the token matches
@@ -32,9 +32,8 @@ export const useGlobalEcrypt = (): GlobalEncrypt => {
   });
 
   const validateGlobalToken = (inputToken: string, keep = false): void => {
-    const { global } = options.value;
-    const globalPasswords =
-      typeof global === "string" ? [global] : global || [];
+    const { admin } = options.value;
+    const globalPasswords = typeof admin === "string" ? [admin] : admin || [];
 
     if (
       // some of the token matches
