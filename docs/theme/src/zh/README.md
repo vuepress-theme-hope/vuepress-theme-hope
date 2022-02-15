@@ -22,52 +22,52 @@ features:
   - title: 浏览量与评论
     icon: comment
     details: 配合 Waline 来开启阅读量统计与评论支持
-    link: /zh/guide/feature/comment/
+    link: /zh/guide/feature/comment.html
 
   - title: 文章信息展示
     icon: info
     details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
-    link: /zh/guide/feature/page-info/
+    link: /zh/guide/feature/page-info.html
 
   - title: 博客支持
     icon: blog
     details: 为你的文章添加日期、标签和分类，即可自动生成文章、分类、标签与时间轴列表
-    link: /zh/guide/blog/intro/
+    link: /zh/guide/feature/blog/intro.html
 
   - title: 文章加密
     icon: lock
     details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
-    link: /zh/guide/feature/encrypt/
+    link: /zh/guide/feature/encrypt.html
 
   - title: 主题色切换
     icon: skin
     details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
-    link: /zh/guide/interface/theme-color/
+    link: /zh/guide/interface/theme-color.html
 
   - title: 深色模式
     icon: contrast
     details: 可以自由切换浅色模式与深色模式
-    link: /zh/guide/interface/darkmode/
+    link: /zh/guide/interface/darkmode.html
 
   - title: SEO 增强
     icon: config
     details: 将最终生成的网页针对搜索引擎进行优化。
-    link: /zh/guide/feature/seo/
+    link: /zh/guide/feature/seo.html
 
   - title: Sitemap
     icon: sitemap
     details: 自动为你的网站生成 Sitemap
-    link: /zh/guide/feature/sitemap/
+    link: /zh/guide/feature/sitemap.html
 
   - title: Feed 支持
     icon: rss
     details: 生成你的 Feed，并通知你的用户订阅它
-    link: /zh/guide/feature/feed/
+    link: /zh/guide/feature/feed.html
 
   - title: PWA 支持
     icon: mobile
     details: 让你的网站更像一个 APP
-    link: /zh/guide/feature/pwa/
+    link: /zh/guide/feature/pwa.html
 
   - title: 更多新特性
     icon: more

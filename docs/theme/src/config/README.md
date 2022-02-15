@@ -17,8 +17,6 @@ tag:
 
 ## Theme Config
 
-- [Introduction to Theme Config](theme/intro.md)
-
 - [Theme Basic Config](theme/base.md)
 
 - [Theme Feature Config](theme/feature.md)
@@ -47,4 +45,4 @@ tag:
 
 ## Style Config
 
-- [Style config](stylus.md)
+- [Style config](style.md)

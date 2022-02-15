@@ -10,8 +10,6 @@ tag:
 
 ## Content
 
-- [Introduction to Theme Config](intro.md)
-
 - [Theme Basic Config](base.md)
 
 - [Theme Feature Config](feature.md)

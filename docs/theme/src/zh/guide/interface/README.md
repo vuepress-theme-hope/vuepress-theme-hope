@@ -9,7 +9,7 @@ tag:
 
 ## 目录
 
-- [深色模式](dark-mode.md)
+- [深色模式](darkmode.md)
 
 - [主题色](theme-color.md)
 

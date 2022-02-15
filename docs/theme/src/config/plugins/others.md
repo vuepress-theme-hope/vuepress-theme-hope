@@ -46,7 +46,7 @@ Words read per minute.
 
 ::: info
 
-For more plugin configs, see [reading-time2 plugin config][reading-time-config].
+For more plugin configs, see [reading-time2 plugin docs][reading-time].
 
 :::
 
@@ -77,6 +77,6 @@ For plugin config, please refer to [sitemap2 plugin config][sitemap-config].
 [copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/config.html
 [feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
 [photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/config.html
-[reading-time-config]: https://vuepress-theme-hope.github.io/v2/reading-time/config.html
+[reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/
 [seo-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html
 [sitemap-config]: https://vuepress-theme-hope.github.io/v2/sitemap/config.html

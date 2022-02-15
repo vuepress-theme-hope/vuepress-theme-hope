@@ -1,5 +1,5 @@
 ---
-title: 主题配置
+title: 插件配置
 icon: config
 category:
   - config

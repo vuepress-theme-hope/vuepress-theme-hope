@@ -233,7 +233,7 @@ VuePress 还兼容如下跳转到主页的写法:
 
 ::: tip
 
-更多详见[emoji 列表](emoji.md)
+更多详见[emoji 列表](emoji/README.md)
 
 :::
 

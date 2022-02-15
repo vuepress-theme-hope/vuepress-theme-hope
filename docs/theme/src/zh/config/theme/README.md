@@ -10,8 +10,6 @@ tag:
 
 ## 目录
 
-- [主题配置介绍](intro.md)
-
 - [主题基本配置](base.md)
 
 - [主题功能配置](feature.md)

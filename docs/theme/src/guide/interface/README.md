@@ -9,7 +9,7 @@ tag:
 
 ## Catalog
 
-- [Dark Mode](dark-mode.md)
+- [Dark Mode](darkmode.md)
 
 - [Theme Color](theme-color.md)
 

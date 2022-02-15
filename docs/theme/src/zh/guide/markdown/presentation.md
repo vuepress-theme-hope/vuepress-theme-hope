@@ -196,5 +196,5 @@ $$
 
 更多选项，请参见[reveal.js config](https://revealjs.com/config/)，更多用法，请参阅 [reveal.js 文档](https://revealjs.com/)。
 
-[presentation-theme]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/themes/
-[presentation-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/demo/
+[presentation-theme]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/themes.html
+[presentation-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/demo.html

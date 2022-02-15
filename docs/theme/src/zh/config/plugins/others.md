@@ -46,7 +46,7 @@ tag:
 
 ::: info
 
-更多插件配置请参见 [reading-time2 插件配置][reading-time-config]。
+更多插件配置请参见 [reading-time2 插件文档][reading-time]。
 
 :::
 
@@ -77,6 +77,6 @@ tag:
 [copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/config.html
 [feed-config]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/
 [photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/config.html
-[reading-time-config]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/config.html
+[reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
 [seo-config]: https://vuepress-theme-hope.github.io/v2/seo/zh/config.html
 [sitemap-config]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/config.html

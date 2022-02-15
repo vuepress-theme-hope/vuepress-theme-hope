@@ -81,7 +81,7 @@ You should use the following syntax:
 
 ::: tip
 
-The json block is optional, for config please see [config](../config.md#demo).
+The json block is optional, for config please see [config](../../config/plugins/md-enhance.md#demo).
 
 :::
 

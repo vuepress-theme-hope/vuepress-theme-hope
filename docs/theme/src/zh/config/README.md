@@ -17,8 +17,6 @@ tag:
 
 ## 主题配置
 
-- [主题配置介绍](theme/intro.md)
-
 - [主题基本配置](theme/base.md)
 
 - [主题功能配置](theme/feature.md)
@@ -47,4 +45,4 @@ tag:
 
 ## 样式配置
 
-- [样式配置](stylus.md)
+- [样式配置](style.md)
