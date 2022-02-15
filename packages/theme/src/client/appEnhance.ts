@@ -9,7 +9,6 @@ import NormalPage from "@theme-hope/components/NormalPage";
 import type { RouterScrollBehavior } from "vue-router";
 
 import "./styles/index.scss";
-import "@sass-palette/hope-style";
 
 export default defineClientAppEnhance(({ app, router }) => {
   // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
