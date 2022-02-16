@@ -90,6 +90,6 @@ Please enable ONLY the feature you want to use.
 
 ### Enable specific syntax
 
-Specific syntax configuration items can be found in the corresponding instruction page or [Theme Plugin Config](../../config/theme/plugin.md#mdEnhance).
+Specific syntax configuration items can be found in the corresponding instruction page or [Theme Plugin Config](../../config/plugins/md-enhance.md).
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

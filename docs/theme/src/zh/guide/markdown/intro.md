@@ -56,6 +56,6 @@ module.exports = {
 
 ### 启用特定的语法
 
-特定语法的配置项可以在对应的说明页或者 [主题插件配置](../../config/theme/plugin.md#mdEnhance) 中找到。
+特定语法的配置项可以在对应的说明页或者 [主题插件配置](../../config/plugins/md-enhance.md) 中找到。
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/

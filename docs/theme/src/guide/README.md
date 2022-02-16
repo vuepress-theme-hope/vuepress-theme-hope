@@ -24,7 +24,7 @@ The theme largely inherits the config of `@vuepress/theme-default`, while adds a
 Added more syntax to Markdown, enriching documentation and blog writing
 
 - [Custom Container](markdown/container.md)
-- [CodeGroup](markdown/components.md#codegroup-codegroupitem)
+- [CodeGroup](markdown/code-group.md)
 - [Tex Support](markdown/tex.md)
 - [Custom alignment](markdown/align.md)
 - [FlowChart](markdown/flowchart.md)
@@ -34,17 +34,17 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - [Subscript and Supercript](markdown/sup-sub.md)
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
-- [Badge `<Badge />`](feature/component.md#badge-mybadge): Add color support
+- [Badge `<Badge />`](markdown/components.md#badge): Add color support
 
 ### Layout
 
 New in Page:
 
-- [Path navigation](layout/page.md#breadcrumb)
+- [Path navigation](layout/breadcrumb.md)
 
-- Add [TOC anchor](layout/page.md#anchor) on the right side under the desktop width
+- Add [TOC anchor](layout/page.md#heading-list) on the right side under the desktop width
 
-- [Custom footer](layout/page.md#footer-support)
+- [Custom footer](layout/footer.md)
 
 Layout Optimization:
 
@@ -59,7 +59,9 @@ Layout Optimization:
 
 - [Icon support](interface/icon.md)
 
-- Add `prefix` and `icon` for [Navbar](layout/navbar.md) [Sidebar](layout/sidebar.md)
+- [Navbar](layout/navbar.md)
+
+- [Sidebar](layout/sidebar.md)
 
 - [Theme colors](interface/theme-color.md): allowing you to switch dynamically during browsing
 
@@ -77,16 +79,16 @@ Layout Optimization:
 
 - [Copyright info](feature/copyright.md)
 
-- [Comment System](feature/comment.md)
+- [Comment Service](feature/comment.md)
 
-- [Article info](feature/page-info.md)
+- [Page info](feature/page-info.md)
 
   - Reading Counts
   - Author and writing date
   - Automatically generated word count and estimated reading time
   - Tags and Categorys
 
-- [Encryption of specific articles and paths](feature/encrypt.md)
+- [Encryption](feature/encrypt.md)
 
 ### Features
 
@@ -126,7 +128,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [vuepress-plugin-feed2][feed2]: Feed support
 
-- [vuepress-plugin-md-enhance][md-enhance]): Provide more Markdown syntax
+- [vuepress-plugin-md-enhance][md-enhance]: Provide more Markdown syntax
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
 

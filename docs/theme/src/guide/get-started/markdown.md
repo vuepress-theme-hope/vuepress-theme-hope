@@ -164,7 +164,7 @@ span {
 
 :::
 
-- [View Detail](../markdown/demo/README.md)
+- [View Detail](../markdown/demo.md)
 
 ### Presentation
 

@@ -32,7 +32,7 @@ features:
   - title: Blog support
     icon: blog
     details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
-    link: /guide/feature/blog/intro.html
+    link: /guide/blog/intro.html
 
   - title: Article Encryption
     icon: lock

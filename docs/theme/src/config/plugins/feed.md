@@ -151,6 +151,6 @@ The plugin is providing a resonable getter by default, if you want full control 
 
 For details, see [Feed Getter][feed-config-getter].
 
-[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/Configconfig/
-[feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/Configconfig/channel.html
-[feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/Configconfig/getter.html
+[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
+[feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/config/channel.html
+[feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/config/getter.html

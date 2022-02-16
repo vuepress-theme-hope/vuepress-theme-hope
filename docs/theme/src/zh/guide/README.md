@@ -24,7 +24,7 @@ tag:
 为 Markdown 添加了更多语法，丰富文档与博客写作
 
 - [自定义容器](markdown/container.md)
-- [代码组](markdown/components.md#codegroup-codegroupitem)
+- [代码组](markdown/code-group.md)
 - [Tex 支持](markdown/tex.md)
 - [自定义对齐](markdown/align.md)
 - [流程图](markdown/flowchart.md)
@@ -40,11 +40,11 @@ tag:
 
 页面新增:
 
-- [路径导航](layout/page.md#路径导航)
+- [路径导航](layout/breadcrumb.md)
 
 - 桌面宽度下右侧增加 [TOC 锚点](layout/page.md#标题列表)
 
-- [自定义页脚](layout/page.md#页脚支持)
+- [自定义页脚](layout/footer.md)
 
 布局优化:
 
@@ -59,7 +59,9 @@ tag:
 
 - [图标支持](interface/icon.md)
 
-- [导航栏](layout/navbar.md) 与 [侧边栏](layout/sidebar.md) 添加 `prefix` 与 `icon`
+- [导航栏](layout/navbar.md)
+
+- [侧边栏](layout/sidebar.md)
 
 - [全新主题色](interface/theme-color.md)，允许你在浏览过程中动态切换
 
@@ -75,18 +77,16 @@ tag:
 
 - [图片预览](feature/photo-swipe.md)，支持放大，拖拽，滑动浏览，分享和下载
 
-- [版权信息](feature/copyright.md)
-
 - [评论系统](feature/comment.md)
 
-- [文章信息展示](feature/page-info.md)
+- [页面信息展示](feature/page-info.md)
 
   - 阅读量统计
   - 作者与写作日期
   - 自动生成的字数与预计阅读时间
   - 标签与分类
 
-- [加密特定文章或路径](feature/encrypt.md)
+- [文章加密](feature/encrypt.md)
 
 ### 功能
 

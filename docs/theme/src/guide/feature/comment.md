@@ -1,5 +1,5 @@
 ---
-title: Comment Function
+title: Comment Service
 icon: comment
 category:
   - feature

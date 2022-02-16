@@ -32,7 +32,7 @@ features:
   - title: 博客支持
     icon: blog
     details: 为你的文章添加日期、标签和分类，即可自动生成文章、分类、标签与时间轴列表
-    link: /zh/guide/feature/blog/intro.html
+    link: /zh/guide/blog/intro.html
 
   - title: 文章加密
     icon: lock
