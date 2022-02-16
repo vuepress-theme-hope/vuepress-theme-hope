@@ -25,9 +25,8 @@ cli
     const packageJsonPath = resolve(process.cwd(), "package.json");
     const scripts = {
       "docs:build": `vuepress build ${dir}`,
-      "docs:clean-dev": `vuepress dev ${dir} --no-cache`,
+      "docs:clean-dev": `vuepress dev ${dir} --clean-cache`,
       "docs:dev": `vuepress dev ${dir}`,
-      "docs:eject-theme": `vuepress eject-hope ${dir}`,
     };
 
     console.log(message.getVersion);
@@ -72,7 +71,7 @@ cli
           name: "name",
           type: "input",
           message: message.nameMessage,
-          default: "vuepress-theme-hope-project",
+          default: "vuepress-theme-hope-template",
           validate: (input: string): true | string =>
             /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/u.exec(
               input
@@ -84,7 +83,7 @@ cli
           name: "version",
           type: "input",
           message: message.versionMessage,
-          default: "1.0.0",
+          default: "2.0.0",
           validate: (input: string): true | string =>
             /^[0-9]+\.[0-9]+\.(?:[0=9]+|[0-9]+-[a-z]+\.[0-9])$/u.exec(input)
               ? true
