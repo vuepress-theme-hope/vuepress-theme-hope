@@ -19,6 +19,13 @@ tag:
 
 导航栏配置，具体配置方式见上方详情。
 
+### navbarIcon
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在导航栏显示图标。
+
 ### logo <Badge text="建议配置" />
 
 - 类型: `string | null`

@@ -84,7 +84,7 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
       text: "主题配置",
       icon: "config",
       prefix: "theme/",
-      children: ["", "feature", "layout", "apperance"],
+      children: ["", "basic", "feature", "layout", "apperance"],
     },
     {
       text: "插件配置",
@@ -155,6 +155,12 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
       icon: "module",
       prefix: "basic/",
       children: ["tutorial", "markdown/", "vuepress/"],
+    },
+    {
+      text: "迁移",
+      icon: "change",
+      prefix: "migration",
+      children: ["config", "page", "style"],
     },
     "changelog",
     "faq",

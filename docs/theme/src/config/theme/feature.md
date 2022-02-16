@@ -12,11 +12,11 @@ These are config items of features provided by theme.
 
 ## Blog config
 
-::: warning
-
 This feature is built on [`vuepress-plugin-blog2`][blog2], and is disabled by default.
 
 To enable blog plugin and use default options, you can set `themeConfig.plugins.blog` to `true`.
+
+::: warning
 
 The following options will have NO effects unless you enable blog plugin.
 

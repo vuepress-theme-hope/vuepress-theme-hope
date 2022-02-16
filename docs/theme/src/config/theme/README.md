@@ -10,7 +10,7 @@ tag:
 
 ## Content
 
-- [Theme Basic Config](base.md)
+- [Theme Basic Config](basic.md)
 
 - [Theme Feature Config](feature.md)
 

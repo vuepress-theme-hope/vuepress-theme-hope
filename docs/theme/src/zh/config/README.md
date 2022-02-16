@@ -17,7 +17,7 @@ tag:
 
 ## 主题配置
 
-- [主题基本配置](theme/base.md)
+- [主题基本配置](theme/basic.md)
 
 - [主题功能配置](theme/feature.md)
 

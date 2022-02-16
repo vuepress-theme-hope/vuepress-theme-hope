@@ -12,11 +12,11 @@ tag:
 
 ## 博客配置
 
-::: warning
-
 此功能通过 [`vuepress-plugin-blog2`][blog2] 提供，默认禁用。
 
 要启用博客插件并使用默认选项，您可以将 `themeConfig.plugins.blog` 设置为 `true`。
+
+::: warning
 
 除非您启用博客插件，否则以下选项将不起作用。
 

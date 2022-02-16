@@ -19,6 +19,13 @@ For related guide, please see [Layout → Navbar](../../guide/layout/navbar.md).
 
 Navbar config
 
+### navbarIcon
+
+- Type: `boolean`
+- Default: `true`
+
+Whether display icons in navbar.
+
 ### logo <Badge text="Recommanded" />
 
 - Type: `string | null`

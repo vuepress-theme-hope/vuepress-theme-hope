@@ -9,6 +9,7 @@ export const zhNavbarConfig: HopeThemeNavbarConfig = [
     prefix: "/zh/basic/",
     children: ["tutorial", "markdown/", "vuepress/"],
   },
+  "migration/",
   {
     text: "项目",
     icon: "info",

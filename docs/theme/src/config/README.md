@@ -17,7 +17,7 @@ tag:
 
 ## Theme Config
 
-- [Theme Basic Config](theme/base.md)
+- [Theme Basic Config](theme/basic.md)
 
 - [Theme Feature Config](theme/feature.md)
 

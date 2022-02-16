@@ -10,6 +10,7 @@ export const enNavbarConfig: HopeThemeNavbarConfig = [
     prefix: "/basic/",
     children: ["tutorial", "markdown/", "vuepress/"],
   },
+  "migration/",
   {
     text: "Project",
     icon: "info",

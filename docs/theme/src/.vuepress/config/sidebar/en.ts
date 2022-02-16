@@ -84,7 +84,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       text: "Theme Config",
       icon: "config",
       prefix: "theme/",
-      children: ["", "feature", "layout", "apperance"],
+      children: ["", "basic", "feature", "layout", "apperance"],
     },
     {
       text: "Plugin Config",
@@ -155,6 +155,12 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       icon: "module",
       prefix: "basic/",
       children: ["tutorial", "markdown/", "vuepress/"],
+    },
+    {
+      text: "Migration",
+      icon: "change",
+      prefix: "migration",
+      children: ["config", "page", "style"],
     },
     "changelog",
     "faq",
