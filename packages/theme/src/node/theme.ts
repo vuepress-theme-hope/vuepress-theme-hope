@@ -34,9 +34,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     extendsPage: (page) =>
       extendsPage(
-        app,
         themeOptions as HopeThemeConfig,
-        page as Page<HopeThemePageData>
+        plugins,
+        page as Page<HopeThemePageData>,
+        app.env.isDev
       ),
 
     async onPrepared(): Promise<void> {
