@@ -3,7 +3,8 @@ import { usePageFrontmatter } from "@vuepress/client";
 
 import { iconMap } from "./config";
 
-import { useThemeLocaleData, usePure } from "@theme-hope/composables";
+import { usePure } from "@theme-hope/composables";
+import { useBlogOptions } from "@theme-hope/module/blog/composables";
 
 import type { VNode } from "vue";
 import type {
@@ -55,18 +56,14 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
-    const themeLocale = useThemeLocaleData();
+    const blogOptions = useBlogOptions();
     const isPure = usePure();
 
     const mediaLinks = computed(() => {
       const { socialMedia } = frontmatter.value;
 
       const config =
-        socialMedia === false
-          ? false
-          : themeLocale.value.blog
-          ? themeLocale.value.blog?.medias || false
-          : false;
+        socialMedia === false ? false : blogOptions.value.medias || false;
 
       if (config) {
         const links: MediaLink[] = [];
