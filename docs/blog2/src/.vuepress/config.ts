@@ -1,5 +1,4 @@
 import { defineHopeConfig } from "vuepress-theme-hope";
-import { version } from "../../../../lerna.json";
 
 export default defineHopeConfig({
   base: "/v2/blog/",
@@ -44,7 +43,7 @@ export default defineHopeConfig({
 
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
-    docsDir: "docs/blog2/src",
+    docsDir: "docs/blog/src",
 
     logo: "/logo.svg",
 
@@ -55,39 +54,11 @@ export default defineHopeConfig({
 
     locales: {
       "/": {
-        navbar: [
-          "/README.md",
-          "/guide.md",
-          "/config.md",
-          {
-            text: version,
-            icon: "note",
-            children: [
-              {
-                text: "V1 Docs",
-                link: "https://vuepress-theme-hope.github.io/blog2/",
-              },
-            ],
-          },
-        ],
+        navbar: ["/README.md", "/guide.md", "/config.md"],
         sidebar: ["/guide.md", "/config.md"],
       },
       "/zh/": {
-        navbar: [
-          "/zh/README.md",
-          "/zh/guide.md",
-          "/zh/config.md",
-          {
-            text: version,
-            icon: "note",
-            children: [
-              {
-                text: "V1 文档",
-                link: "https://vuepress-theme-hope.github.io/blog2/zh/",
-              },
-            ],
-          },
-        ],
+        navbar: ["/zh/README.md", "/zh/guide.md", "/zh/config.md"],
         sidebar: ["/zh/guide.md", "/zh/config.md"],
       },
     },
