@@ -10,19 +10,19 @@
   position: absolute;
   top: calc(50% - 1.075rem);
   left: 1rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  padding: 0.45rem;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.5rem;
 
   font: unset;
   transition: transform 0.2s ease-in-out;
 
   @media screen and (max-width: hope-config.$mobile) {
     display: block;
-  }
 
-  .no-sidebar & {
-    display: none;
+    .disable-sidebar & {
+      display: none;
+    }
   }
 
   &::before,
@@ -30,10 +30,10 @@
   .icon {
     display: block;
     width: 100%;
-    height: 0.2em;
+    height: 2px;
     transition: transform 0.2s ease-in-out;
     border-radius: 0.05em;
-    background: var(--text-color);
+    background: var(--dark-grey);
   }
 
   &::before {
@@ -41,7 +41,7 @@
     margin-top: 0.125em;
 
     .sidebar-open & {
-      transform: translateY(0.4em) rotate(135deg);
+      transform: translateY(0.34rem) rotate(135deg);
     }
   }
 
@@ -50,7 +50,7 @@
     margin-bottom: 0.125em;
 
     .sidebar-open & {
-      transform: translateY(-0.4em) rotate(-135deg);
+      transform: translateY(-0.34rem) rotate(-135deg);
     }
   }
 

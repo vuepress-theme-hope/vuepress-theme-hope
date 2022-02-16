@@ -36,6 +36,10 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    toggleSidebar: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   setup(props, { slots }) {
@@ -115,6 +119,7 @@ export default defineComponent({
       {
         "no-navbar": !enableNavbar.value,
         "no-sidebar": !enableSidebar.value,
+        "disable-sidebar": !enableNavbar.value && !props.toggleSidebar,
         "has-toc": enableToc.value,
         "hide-navbar": hideNavbar.value,
         "sidebar-open": isSidebarOpen.value,
@@ -203,6 +208,9 @@ export default defineComponent({
                 Sidebar,
                 {},
                 {
+                  default: slots.sidebar
+                    ? (): VNode[] | undefined => slots.sidebar?.()
+                    : undefined,
                   top: () => slots.sidebarTop?.(),
                   bottom: () => slots.sidebarBottom?.(),
                 }

@@ -22,10 +22,10 @@ export default defineComponent({
       h(SkipLink),
       h(
         resolveComponent("CommonWrapper") as ComponentOptions,
-        {},
+        { sidebar: false, sidebarLinks: false },
         {
-          sidebarTop: () => h(InfoList),
           navScreenBottom: () => h(BloggerInfo),
+          sidebar: () => h(InfoList),
           default: () =>
             frontmatter.value.home
               ? h(BlogHome)

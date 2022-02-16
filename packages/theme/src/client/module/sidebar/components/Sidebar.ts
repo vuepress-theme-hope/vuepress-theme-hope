@@ -21,7 +21,7 @@ export default defineComponent({
         { class: ["sidebar", { "hide-icon": !themeLocale.value.sidebarIcon }] },
         [
           slots.top?.(),
-          h(SidebarLinks, { config: sidebarItems.value }),
+          slots.default?.() || h(SidebarLinks, { config: sidebarItems.value }),
           slots.bottom?.(),
         ]
       );

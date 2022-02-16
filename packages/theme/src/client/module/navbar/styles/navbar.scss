@@ -38,14 +38,14 @@
 
   @media (max-width: hope-config.$mobile) {
     padding-left: calc(var(--navbar-mobile-horizontal-padding) + 2.4rem);
+
+    .disable-sidebar & {
+      padding-left: var(--navbar-mobile-horizontal-padding);
+    }
   }
 
   .hide-navbar &.auto-hide {
     transform: translateY(-100%);
-  }
-
-  .no-sidebar & {
-    padding-left: var(--navbar-mobile-horizontal-padding);
   }
 
   &.hide-icon .icon {
