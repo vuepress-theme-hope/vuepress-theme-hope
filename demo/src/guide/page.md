@@ -7,7 +7,7 @@ title: page config
 author: Ms.Hope
 # Set writing time
 date: 2020-01-01
-# A page can only have one category
+# A page can have multiple categories
 category:
   - Guide
 # A page can have multiple tags

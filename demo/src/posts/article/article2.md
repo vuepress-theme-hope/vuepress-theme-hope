@@ -1,11 +1,12 @@
 ---
 icon: edit
-date: 2022-01-01
+date: 2022-01-02
 category:
   - CategoryA
 tag:
   - tag A
   - tag B
+star: true
 ---
 
 # Article 2
