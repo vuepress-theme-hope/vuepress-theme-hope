@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-02-16)
+
+### Bug Fixes
+
+- **components:** fix article info icon ([f51fa73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f51fa73fdf0cd3cb02e02040cccac1b5bc4bd5d9))
+- **components:** use default slot in TOC ([e29ce66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e29ce669ed8676d6379f43fa3e864d5a60d13193))
+
 # [2.0.0-alpha.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components

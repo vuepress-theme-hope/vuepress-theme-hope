@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-02-16)
+
+### Bug Fixes
+
+- **theme:** fix article info icon ([777d9d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/777d9d818704f333bf911c8b5c4851ea06eb9024))
+- **theme:** fix blog excerpt ([7922bdd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7922bdd7d854e62fec5c2528581239af968b4828))
+- **theme:** fix blog layout ([7fd5e4a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7fd5e4ae2fa53182dd1ff77f9d34e24ee2e0a9fb))
+- **theme:** fix blog layout in ssr ([cc89b4c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc89b4cc8d36142a714c6d83916384931a1b1dbf))
+- **theme:** fix dropdown title margin ([ddf273d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ddf273dc2bae4a2883c582ae36f772da16c32a42))
+- **theme:** fix homepage icon color ([fdcb254](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fdcb254ba015d510510feeaf7d24907d56c1e309))
+- **theme:** fix PageTitle margin-bottom ([b292553](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b292553e98a8a9413c5124f7862514a970b67f2e))
+- **theme:** fix socialMedia ([3d7d6b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d7d6b3df0aa82c940272a35f73fe0568460de86))
+- **theme:** fix toc ([1ccfc66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1ccfc66ae1cff8fac4a7892facafa62ce52e44b2))
+- **theme:** fix toc styles ([5dd8509](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5dd85092fb01c45f27520812633e9ddad75b5804))
+
+### Features
+
+- **theme:** add margin for nav-actions ([1d226a3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d226a36505ed8308804af0185b412b52b984750))
+- **theme:** improve blog a11y ([df751a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df751a655a3b98ff2620059fcf6d83e9a9fd0256))
+- **theme:** support autoExcerpt ([04dbadb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04dbadb783a0bdef27aafa4bc558e4ecc629f987))
+- **theme:** support toc in frontmatter ([fb25719](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb257194ccc75f8a734e1fc4361e91916e4956cc))
+
 # [2.0.0-alpha.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
 
 ### Bug Fixes

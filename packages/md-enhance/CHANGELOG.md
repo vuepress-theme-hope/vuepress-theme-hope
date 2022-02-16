@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-02-16)
+
+### Bug Fixes
+
+- **md-enhance:** fix typos in zh locales ([9f0676f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f0676f9f3c95f0203c6c76ddb94faa9e006c28e))
+
 # [2.0.0-alpha.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

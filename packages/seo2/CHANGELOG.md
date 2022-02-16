@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-02-16)
+
+### Features
+
+- **seo2:** add auto summary ([085fc29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/085fc29d9f1c2b3b2e711a413b629251f8e358e6))
+
 # [2.0.0-alpha.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
 
 **Note:** Version bump only for package vuepress-plugin-seo2
