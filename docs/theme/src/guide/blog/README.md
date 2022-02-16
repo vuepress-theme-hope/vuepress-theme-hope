@@ -9,12 +9,16 @@ tag:
 
 ## Catalog
 
-- [Blog support Intro](intro.md)
+- [Blog Intro](intro.md)
+
+- [Blog Homepage](home.md)
+
+- [Blogger Intro](blogger.md)
 
 - [Article List](article.md)
 
-- [Category and Tags](category-and-tags.md)
+- [Categories and Tags](category-and-tags.md)
 
 - [Timeline](timeline.md)
 
-- [Blog homepage](home.md)
+- [Page Path](path.md)

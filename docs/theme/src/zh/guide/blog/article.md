@@ -11,13 +11,15 @@ tag:
   - star
 ---
 
-主题在 `/article/` 路径下为你提供了全部的文章列表。
+主题默认在 `/article/` 路径下为你提供了全部的文章列表。
 
 <!-- more -->
 
 ## 自动摘要
 
-主题默认情况下会为你的每篇文章生成摘要。如果你想要禁用此特性，请在 `themeConfig.blog` 中设置 `autoExcerpt: false`。
+主题默认情况下只会在文章列表中展示你指定的摘要或描述。
+
+如果你想要让主题自动提取摘要，请在 `themeConfig.plugins.blog` 中设置 `autoExcerpt: true`。
 
 ## 文章
 
