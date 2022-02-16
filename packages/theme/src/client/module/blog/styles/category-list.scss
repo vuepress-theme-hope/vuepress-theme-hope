@@ -8,6 +8,10 @@
   font-size: 14px;
   list-style: none;
 
+  a {
+    color: inherit;
+  }
+
   .category {
     display: inline-block;
     vertical-align: middle;
@@ -49,11 +53,11 @@
       }
 
       &.active {
-        background: var(--theme-color);
+        background: $color;
         color: var(--white);
 
         .category-num {
-          color: var(--theme-color);
+          color: $color;
           background: var(--bg-color-light);
         }
       }

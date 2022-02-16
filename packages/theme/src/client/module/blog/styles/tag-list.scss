@@ -10,6 +10,10 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 
+  a {
+    color: inherit;
+  }
+
   .tag {
     display: inline-block;
     position: relative;

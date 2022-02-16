@@ -109,6 +109,10 @@
         border-bottom: 1px dashed var(--border-color);
         list-style: none;
 
+        .title {
+          color: inherit;
+        }
+
         &:hover {
           cursor: pointer;
 

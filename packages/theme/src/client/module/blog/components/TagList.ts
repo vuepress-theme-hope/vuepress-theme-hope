@@ -1,8 +1,8 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
+import { RouterLink } from "vue-router";
 
 import { useTagMap } from "@theme-hope/module/blog/composables";
-import { useNavigate } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 import type { BlogCategoryFrontmatterOptions } from "vuepress-plugin-blog2";
@@ -14,7 +14,6 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<BlogCategoryFrontmatterOptions>();
-    const navigate = useNavigate();
     const tagMap = useTagMap();
 
     const tagList = computed(() =>
@@ -35,9 +34,10 @@ export default defineComponent({
             "li",
             {
               class: ["tag", `tag${index % 9}`, { active: isActive(name) }],
-              onClick: () => navigate(path),
             },
-            h("div", { class: "tag-name" }, name)
+            h(RouterLink, { to: path }, () =>
+              h("div", { class: "tag-name" }, name)
+            )
           )
         )
       );

@@ -34,15 +34,16 @@
     transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
   }
 
-  span {
+  a {
+    display: inline-block;
+    color: inherit;
     transition: all 0.3s ease-in-out;
   }
 
   &.active {
     position: relative;
 
-    span {
-      display: inline-block;
+    a {
       color: var(--theme-color);
       transform: scale(1.1, 1.1);
     }

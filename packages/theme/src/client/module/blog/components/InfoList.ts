@@ -38,7 +38,7 @@ export default defineComponent({
     const tagNumber = computed(() => Object.keys(tagMap.value.map).length);
     const navigate = useNavigate();
 
-    const active = ref("category");
+    const active = ref("article");
 
     const locale = computed(() => themeLocale.value.blogLocales);
 

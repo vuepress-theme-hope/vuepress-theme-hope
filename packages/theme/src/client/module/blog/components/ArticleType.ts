@@ -1,7 +1,7 @@
 import { computed, defineComponent, h } from "vue";
-import { useRoute } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
 
-import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables";
 import {
   useArticles,
   useEncryptedArticles,
@@ -23,7 +23,6 @@ export default defineComponent({
     const encryptedArticles = useEncryptedArticles();
     const slides = useSlides();
     const stars = useStars();
-    const navigate = useNavigate();
 
     const types = computed(() => {
       const locale = themeLocale.value.blogLocales;
@@ -48,10 +47,8 @@ export default defineComponent({
             "li",
             {
               class: ["article-type", { active: type.path === route.path }],
-              role: "navigation",
-              onClick: () => navigate(type.path),
             },
-            h("span", type.text)
+            h(RouterLink, { to: type.path }, () => type.text)
           )
         )
       );

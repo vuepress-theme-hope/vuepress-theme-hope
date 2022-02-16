@@ -1,8 +1,7 @@
 import { capitalize } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
-import { useRoute } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
 
-import { useNavigate } from "@theme-hope/composables";
 import { useCategoryMap } from "@theme-hope/module/blog/composables";
 
 import type { VNode } from "vue";
@@ -15,7 +14,6 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     const categoryMap = useCategoryMap();
-    const navigate = useNavigate();
 
     return (): VNode =>
       h(
@@ -32,12 +30,11 @@ export default defineComponent({
                 `category${index % 9}`,
                 { active: path === route.path },
               ],
-              onClick: () => navigate(path),
             },
-            [
+            h(RouterLink, { to: path }, () => [
               capitalize(category),
               h("span", { class: "category-num" }, items.length),
-            ]
+            ])
           );
         })
       );

@@ -1,4 +1,5 @@
 import { computed, defineComponent, h } from "vue";
+import { RouterLink } from "vue-router";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
 import { TimelineIcon } from "@theme-hope/module/blog/components/icons";
@@ -51,12 +52,12 @@ export default defineComponent({
                       h("li", [
                         h("span", { class: "date" }, date),
                         h(
-                          "span",
+                          RouterLink,
                           {
                             class: "timeline-title",
-                            onClick: () => navigate(path),
+                            to: path,
                           },
-                          info.title
+                          () => info.title
                         ),
                       ])
                     )

@@ -1,7 +1,8 @@
 import { computed, defineComponent, h, resolveComponent } from "vue";
+import { RouterLink } from "vue-router";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
-import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables";
 import {
   useBlogOptions,
   useTimelines,
@@ -18,7 +19,6 @@ export default defineComponent({
     const blogOptions = useBlogOptions();
     const themeLocale = useThemeLocaleData();
     const timelines = useTimelines();
-    const navigate = useNavigate();
 
     const hint = computed(
       () =>
@@ -53,12 +53,12 @@ export default defineComponent({
                     h("li", [
                       h("span", { class: "date" }, date),
                       h(
-                        "span",
+                        RouterLink,
                         {
                           class: "title",
-                          onClick: () => navigate(path),
+                          to: path,
                         },
-                        info.title
+                        () => info.title
                       ),
                     ])
                   )
