@@ -11,8 +11,6 @@ import SkipLink from "@theme-hope/components/SkipLink";
 
 import type { ComponentOptions, VNode } from "vue";
 
-import "../styles/layout.scss";
-
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Blog",
