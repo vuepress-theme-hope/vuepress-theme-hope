@@ -45,7 +45,7 @@ export default defineComponent({
                 iconPrefix: iconPrefix.value,
               }),
               h(PageTitle),
-              h(resolveComponent("TOC")),
+              frontmatter.value.toc ? h(resolveComponent("TOC")) : null,
               slots.contentBefore?.(),
               h(MarkdownContent),
               slots.contentAfter?.(),
