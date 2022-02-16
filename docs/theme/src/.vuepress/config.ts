@@ -74,6 +74,8 @@ export default defineHopeConfig({
     },
 
     plugins: {
+      blog: true,
+
       comment: {
         type: "waline",
         serverURL: "https://vuepress-theme-hope-comment.vercel.app",
