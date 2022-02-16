@@ -9,7 +9,7 @@ This tutorial is a step by step tutorial.
 
 ## Environment
 
-You need to install the latest Node.js long-term support version and Yarn.
+You need to install the latest Node.js long-term support version.
 
 Download address:
 
@@ -29,16 +29,6 @@ Download address:
 
   :::
 
-- Yarn:
-
-  After installing Node.js, open the terminal and execute:
-
-  ```sh
-  npm i -g yarn
-
-  yarn config set registry https://registry.npmmirror.com
-  ```
-
 ## Creating template
 
 Create a folder in a suitable location and open the terminal under the folder.
@@ -52,14 +42,14 @@ Please use the file explorer to open the corresponding folder, and then enter `c
 Execute in the terminal:
 
 ```sh
-yarn create vuepress-theme-hope docs
+npm create vuepress-theme-hope@next docs
 ```
 
 After a while, you can enter `localhost:8080/` in the browser address bar to access the development server.
 
 ::: tip
 
-To start the development server, please enter `yarn run docs:dev` in the terminal and press Enter.
+To start the development server, please enter `npm run docs:dev` in the terminal and press Enter.
 
 To terminate the development server, please click on the terminal and press `Ctrl + C` twice.
 
@@ -91,7 +81,7 @@ The theme docs do not provide repetitive introductions to the existing content o
 
 ## Building a site
 
-After you have initially configured the project, you can use the `yarn run docs:build` command to output the build result to the dist folder.
+After you have initially configured the project, you can use the `npm run docs:build` command to output the build result to the dist folder.
 
 You can deploy the contents of the folder to the server of your site. The easiest way is to upload to GitHub and serve with GitHub Pages.
 

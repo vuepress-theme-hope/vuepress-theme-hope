@@ -13,18 +13,18 @@ tag:
 
 :::: code-group
 
-::: code-group-item yarn
+<!-- ::: code-group-item yarn
 
 ```bash
 yarn create vuepress-theme-hope [dir]
 ```
 
-:::
+::: -->
 
 ::: code-group-item npm
 
 ```bash
-npm init vuepress-theme-hope [dir]
+npm init vuepress-theme-hope@next [dir]
 ```
 
 :::

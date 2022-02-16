@@ -9,7 +9,7 @@ category:
 
 ## 环境安装
 
-你需要安装最新的 Node.js 长期支持版 和 Yarn。
+你需要安装最新的 Node.js 长期支持版。
 
 下载地址:
 
@@ -31,16 +31,6 @@ category:
 
   :::
 
-- Yarn:
-
-  在安装 Node.js 后，打开终端，执行:
-
-  ```sh
-  npm i -g yarn
-
-  yarn config set registry https://registry.npmmirror.com
-  ```
-
 ## 创建模板
 
 在一个合适的位置创建一个文件夹，并在该文件夹下打开终端。
@@ -54,14 +44,14 @@ category:
 在终端中执行:
 
 ```sh
-yarn create vuepress-theme-hope docs
+npm create vuepress-theme-hope@next docs
 ```
 
 稍等片刻，你就可以在浏览器地址栏输入 `localhost:8080/zh/` 访问开发服务器了。
 
 ::: tip
 
-启动开发服务器，请在终端输入 `yarn run docs:dev` 并回车。
+启动开发服务器，请在终端输入 `npm run docs:dev` 并回车。
 
 如果你需要终止开发服务器，请点击终端，并连续两次按下 `Ctrl + C`。
 
@@ -93,7 +83,7 @@ Markdown 的内容会渲染为网页的内容。关于 Markdown 教程，请见 
 
 ## 构建网站
 
-在你初步配置好项目之后，你就可以使用 `yarn run docs:build` 命令将网站构建输出到 dist 文件夹下。
+在你初步配置好项目之后，你就可以使用 `npm run docs:build` 命令将网站构建输出到 dist 文件夹下。
 
 你可以将文件夹的内容部署到你网站的服务器上。最简单的做法是上传到 GitHub 并开启 GitHub Pages。
 
