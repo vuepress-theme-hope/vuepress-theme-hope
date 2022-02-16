@@ -51,7 +51,7 @@ h6 {
 }
 
 #{hope-config.$contentClass}:not(.custom) {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
 #{hope-config.$contentClass}:not(.custom) > h1:first-child {
