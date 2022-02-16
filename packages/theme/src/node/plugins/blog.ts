@@ -58,16 +58,18 @@ export const resolveBlogOptions = (
 
   return {
     metaScope: "",
+
     filter:
       blogOptions.filter ||
       (({ frontmatter, filePathRelative, routeMeta }): boolean =>
         Boolean(filePathRelative) &&
         frontmatter.home !== true &&
         routeMeta.type !== "page"),
+
     category: [
       {
         key: "category",
-        getter: ({ routeMeta }) => routeMeta.category || [],
+        getter: ({ routeMeta }) => (routeMeta.category as string[]) || [],
         sorter,
         path: blogOptions.category,
         layout: "Blog",
@@ -76,7 +78,7 @@ export const resolveBlogOptions = (
       },
       {
         key: "tag",
-        getter: ({ routeMeta }) => routeMeta.tag || [],
+        getter: ({ routeMeta }) => (routeMeta.tag as string[]) || [],
         sorter,
         path: blogOptions.tag,
         layout: "Blog",
@@ -84,6 +86,7 @@ export const resolveBlogOptions = (
         itemLayout: "Blog",
       },
     ],
+
     type: [
       {
         key: "article",
@@ -95,7 +98,7 @@ export const resolveBlogOptions = (
       {
         key: "encrypted",
         sorter,
-        filter: ({ routeMeta }) => routeMeta.isEncrypted,
+        filter: ({ routeMeta }) => Boolean(routeMeta.isEncrypted),
         path: blogOptions.encrypted,
         layout: "Blog",
       },
@@ -109,7 +112,7 @@ export const resolveBlogOptions = (
       {
         key: "star",
         sorter,
-        filter: ({ frontmatter }) => frontmatter.star,
+        filter: ({ frontmatter }) => Boolean(frontmatter.star),
         path: blogOptions.star,
         layout: "Blog",
       },
@@ -121,10 +124,10 @@ export const resolveBlogOptions = (
             pageB.routeMeta.date as Date | undefined
           ),
         filter: ({ frontmatter, routeMeta }) =>
-          routeMeta.date && frontmatter.timeline !== false,
+          "date" in routeMeta && frontmatter.timeline !== false,
         path: blogOptions.timeline,
         layout: "Blog",
       },
     ],
-  } as BlogOptions;
+  };
 };

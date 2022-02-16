@@ -17,11 +17,11 @@ export interface BasePageFrontMatter extends PageFrontmatter {
   author?: Author | false;
 
   /**
-   * Whether the content is original
+   * Writting Date
    *
-   * 是否原创
+   * 写作日期
    */
-  isOriginal?: boolean;
+  date?: Date;
 
   /**
    * Page Category(ies)
@@ -31,18 +31,25 @@ export interface BasePageFrontMatter extends PageFrontmatter {
   category?: string | string[];
 
   /**
-   * Writting Date
-   *
-   * 写作日期
-   */
-  date?: Date;
-
-  /**
    * Page Tag(s)
    *
    * 页面标签
    */
   tag?: string[] | string;
+
+  /**
+   * Whether the content is original
+   *
+   * 是否原创
+   */
+  isOriginal?: boolean;
+
+  /**
+   * Page summary
+   *
+   * 页面摘要
+   */
+  summary?: string;
 
   /**
    * Whether the page is an article

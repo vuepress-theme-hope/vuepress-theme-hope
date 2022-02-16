@@ -23,6 +23,13 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
       BLOG_META_SCOPE: metaScope,
     }),
 
+    extendsPage(page): void {
+      page.routeMeta = {
+        ...(metaScope === "" ? getInfo(page) : { [metaScope]: getInfo(page) }),
+        ...page.routeMeta,
+      };
+    },
+
     onInitialized(app): Promise<void> {
       const pageMap = getPageMap(options, app);
 
@@ -71,13 +78,6 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
 
         if (app.env.isDebug) logger.info("temp file updated");
       });
-    },
-
-    extendsPage(page): void {
-      page.routeMeta = {
-        ...(metaScope === "" ? getInfo(page) : { [metaScope]: getInfo(page) }),
-        ...page.routeMeta,
-      };
     },
   };
 };

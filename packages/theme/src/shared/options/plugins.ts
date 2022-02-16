@@ -99,6 +99,15 @@ export interface HopeThemeBlogPluginOptions
    * @default '/timeline/'
    */
   timeline?: string;
+
+  /**
+   * Whether generate a excerpt automatically
+   *
+   * 是否自动生成摘要
+   *
+   * @default false
+   */
+  autoExcerpt?: boolean;
 }
 
 export interface HopeThemePluginsOptions {
