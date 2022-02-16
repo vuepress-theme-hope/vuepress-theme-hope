@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-beta.35",
-    "axios": "0.25.0",
+    "axios": "0.26.0",
     "vuepress-theme-hope": "2.0.0-alpha.25",
     "vuepress-vite": "2.0.0-beta.35",
     "vuepress-webpack": "2.0.0-beta.35"
