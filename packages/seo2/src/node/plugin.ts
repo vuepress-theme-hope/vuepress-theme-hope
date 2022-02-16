@@ -1,7 +1,8 @@
 import { resolvePagePermalink } from "@vuepress/core";
 import { generateRobotsTxt, generateSeo } from "./seo";
 import { appendSEO } from "./inject";
-import { logger } from "./utils";
+import { stripTags } from "./stripTags";
+import { logger, md2text } from "./utils";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type {
@@ -22,12 +23,18 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
     name: "vuepress-plugin-seo2",
 
     extendsPage(page): void {
+      // generate summary
+      if (!page.frontmatter.description)
+        page.frontmatter.summary =
+          stripTags(page.excerpt) || md2text(page.content).slice(0, 180) || "";
+
       const head = page.frontmatter.head || [];
       const pageSeoInfo: PageSeoInfo = {
         page: page as ExtendPage,
         app,
         permalink: resolvePagePermalink(page),
       };
+
       const { OGP, JSONLD } = generateSeo(options as SeoOptions, pageSeoInfo);
 
       const ogpContent: SeoContent = options.ogp
