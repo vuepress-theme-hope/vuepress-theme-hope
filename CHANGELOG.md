@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.26...v2.0.0-alpha.27) (2022-02-16)
+
+### Bug Fixes
+
+- **create:** fix template folder path ([3fcc980](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3fcc980865c14a74c54bc7950e93cadab3da2d00))
+
 # [2.0.0-alpha.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.25...v2.0.0-alpha.26) (2022-02-16)
 
 **Note:** Version bump only for package vuepress-theme-hope-root

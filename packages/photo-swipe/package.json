@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "2.0.0-alpha.26",
+  "version": "2.0.0-alpha.27",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -45,14 +45,14 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.26",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.27",
     "@types/photoswipe": "^4.1.2",
     "@vuepress/client": "2.0.0-beta.35",
     "@vuepress/utils": "2.0.0-beta.35",
     "photoswipe": "^4.1.3",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.26"
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.27"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.35"
