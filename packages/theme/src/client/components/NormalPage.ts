@@ -31,6 +31,12 @@ export default defineComponent({
           themeLocale.value.breadcrumb !== false)
     );
 
+    const tocEnable = computed(
+      () =>
+        frontmatter.value.toc ||
+        (frontmatter.value.toc !== false && themeLocale.value.toc !== false)
+    );
+
     return (): VNode =>
       h(
         "main",
@@ -45,7 +51,7 @@ export default defineComponent({
                 iconPrefix: iconPrefix.value,
               }),
               h(PageTitle),
-              frontmatter.value.toc ? h(resolveComponent("TOC")) : null,
+              tocEnable.value ? h(resolveComponent("TOC")) : null,
               slots.contentBefore?.(),
               h(MarkdownContent),
               slots.contentAfter?.(),
