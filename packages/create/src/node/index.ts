@@ -115,7 +115,7 @@ cli
 
     console.log(message.template);
 
-    copy(resolve(__dirname, "../template"), resolve(process.cwd(), dir));
+    copy(resolve(__dirname, "../../template"), resolve(process.cwd(), dir));
 
     console.log(message.install);
     console.warn(message.wait);
