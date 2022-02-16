@@ -7,13 +7,13 @@
     "reading time",
     "word count"
   ],
-  "homepage": "https://vuepress-theme-hope.github.io/reading-time/",
+  "homepage": "https://vuepress-theme-hope.github.io/v2/reading-time/",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
     "directory": "packages/reading-time"
   },
   "license": "MIT",

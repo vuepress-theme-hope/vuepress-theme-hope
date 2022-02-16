@@ -7,13 +7,13 @@
     "vuepress",
     "mr-hope"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/v2/packages/shared#readme",
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v2/packages/shared#readme",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.comvuepress-theme-hope/vuepress-theme-hope/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+ssh://git@github.com/vuepress-theme-hope/vuepress-theme-hope.git",
     "directory": "packages/shared"
   },
   "license": "MIT",
