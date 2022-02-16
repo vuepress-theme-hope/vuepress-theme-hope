@@ -1,6 +1,7 @@
+#!/usr/bin/env node
 import { existsSync, mkdirSync, writeFileSync, readFileSync } from "fs";
 import { resolve } from "path";
-import { deepAssign } from "@mr-hope/vuepress-shared";
+import { deepAssign } from "./deepAssign";
 import { cac } from "cac";
 import { prompt } from "inquirer";
 import execa from "execa";

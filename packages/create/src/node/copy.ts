@@ -1,20 +1,35 @@
-import { fs, path } from "@vuepress/utils";
+import {
+  createReadStream,
+  createWriteStream,
+  mkdirSync,
+  readdirSync,
+  statSync,
+} from "fs";
+import { dirname } from "path";
+
+const ensureDirExistSync = (dirPath: string): void => {
+  try {
+    readdirSync(dirPath);
+  } catch (err) {
+    mkdirSync(dirPath);
+  }
+};
 
 const copyFile = (srcFile: string, targetFile: string): void => {
-  const targetDir = path.dirname(targetFile);
+  const targetDir = dirname(targetFile);
 
-  fs.ensureDirSync(targetDir);
+  ensureDirExistSync(targetDir);
 
-  const rs = fs.createReadStream(srcFile); // create read stream
-  const ws = fs.createWriteStream(targetFile); // create write stream
+  const rs = createReadStream(srcFile); // create read stream
+  const ws = createWriteStream(targetFile); // create write stream
 
   rs.pipe(ws);
 };
 
 const copyDir = (srcDir: string, targetDir: string): void => {
-  fs.ensureDirSync(targetDir);
+  ensureDirExistSync(targetDir);
 
-  const files = fs.readdirSync(srcDir, { withFileTypes: true });
+  const files = readdirSync(srcDir, { withFileTypes: true });
 
   files.forEach((file) => {
     if (file.isFile())
@@ -25,6 +40,6 @@ const copyDir = (srcDir: string, targetDir: string): void => {
 };
 
 export const copy = (src: string, target: string): void => {
-  if (fs.statSync(src).isDirectory()) copyDir(src, target);
-  else if (fs.statSync(src).isFile()) copyFile(src, target);
+  if (statSync(src).isDirectory()) copyDir(src, target);
+  else if (statSync(src).isFile()) copyFile(src, target);
 };
