@@ -20,7 +20,7 @@ const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
         },
       ],
     },
-    title
+    () => title
   );
 
 const renderChildren = (headers: PageHeader[]): VNode | null => {
