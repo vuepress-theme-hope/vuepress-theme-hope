@@ -1,0 +1,42 @@
+{
+  "name": "create-vuepress-theme-hope",
+  "version": "2.0.0-alpha.23",
+  "description": "Create vuepress-theme-hope demo project helper",
+  "keywords": [
+    "create",
+    "vuepress",
+    "vuepress-theme-hope"
+  ],
+  "homepage": "https://vuepress-theme-hope.github.io/v2/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/create"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "bin": {
+    "create-vuepress-theme-hope": "./lib/node/index.js"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "yarn dev:ts",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.23",
+    "@types/inquirer": "^8.2.0",
+    "@vuepress/utils": "2.0.0-beta.35",
+    "cac": "^6.7.12",
+    "execa": "^5.1.1",
+    "inquirer": "^8.2.0"
+  }
+}
