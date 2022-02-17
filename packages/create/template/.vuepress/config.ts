@@ -29,8 +29,6 @@ export default defineHopeConfig({
     },
   },
 
-  theme: "hope",
-
   themeConfig: {
     hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
 
@@ -42,8 +40,6 @@ export default defineHopeConfig({
     iconPrefix: "iconfont icon-",
 
     logo: "/logo.svg",
-
-    fullScreen: true,
 
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
