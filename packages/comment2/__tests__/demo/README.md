@@ -4,8 +4,9 @@ title: vuepress-plugin-comment-demo
 heroImage: /logo.svg
 heroText: vuepress-plugin-comment
 tagline: Comment Plugin
-actionText: Guide
-actionLink: https://vuepress-theme-hope.github.io/comment
+actions:
+  - text: Guide
+    link: https://vuepress-theme-hope.github.io/v2/comment/
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 

@@ -11,7 +11,7 @@
 
 VuePress reading time plugin⏳ / VuePress 阅读时间插件 ⏳
 
-## [Official Docs](https://vuepress-theme-hope.github.io/reading-time/) | [官方文档](https://vuepress-theme-hope.github.io/reading-time/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v2/reading-time/) | [官方文档](https://vuepress-theme-hope.github.io/v2/reading-time/zh/)
 
 ## Install
 

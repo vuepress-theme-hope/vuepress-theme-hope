@@ -11,7 +11,7 @@
 
 VuePress palette plugin 📡 / VuePress 样式配置插件 📡
 
-## [Official Docs](https://vuepress-theme-hope.github.io/palette/) | [官方文档](https://vuepress-theme-hope.github.io/palette/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v2/sass-palette/) | [官方文档](https://vuepress-theme-hope.github.io/v2/sass-palette/zh/)
 
 ## Install
 
