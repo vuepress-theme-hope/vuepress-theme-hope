@@ -9,7 +9,7 @@
   color: var(--theme-color);
   box-shadow: var(--card-shadow);
   background-color: var(--bg-color);
-  border-radius: 8px;
+  border-radius: 0.5rem;
 
   #{hope-config.$darkSelector} & {
     color: var(--theme-color);

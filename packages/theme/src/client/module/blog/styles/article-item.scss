@@ -2,9 +2,9 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  margin: 0 auto 20px;
-  padding: 16px 20px;
-  border-radius: 6px;
+  margin: 0 auto 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.4rem;
   background: var(--bg-color);
   box-shadow: 0 1px 3px 0 var(--card-shadow);
 
@@ -26,8 +26,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     color: var(--theme-color);
 
     .sticky-text {
@@ -41,7 +41,7 @@
 
     font-family: var(--font-family-fancy);
     font-size: 1.28rem;
-    line-height: 36px;
+    line-height: 2rem;
 
     &::after {
       content: "";
@@ -71,8 +71,8 @@
       bottom: -0.125em;
       display: inline-block;
       vertical-align: baseline;
-      width: 20px;
-      height: 20px;
+      width: 1.25em;
+      height: 1.25em;
       margin-right: 0.25em;
       color: var(--theme-color);
     }

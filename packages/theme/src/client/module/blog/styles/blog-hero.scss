@@ -1,7 +1,7 @@
 .blog-hero {
   position: relative;
   height: 450px;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -12,11 +12,11 @@
 
   @media (max-width: hope-config.$mobile) {
     height: 350px;
-    margin: 0 -1.5rem 16px;
+    margin: 0 -1.5rem 1rem;
   }
 
   @media (max-width: hope-config.$mobileS) {
-    margin: 0 0 16px;
+    margin: 0 0 1rem;
   }
 
   &.fullscreen {
@@ -59,18 +59,18 @@
 
   h1 {
     margin: 0.5rem auto;
-    font-size: 36px;
+    font-size: 2rem;
 
     @media (max-width: hope-config.$pad) {
-      font-size: 30px;
+      font-size: 1.875rem;
     }
 
     @media (max-width: hope-config.$mobile) {
-      font-size: 36px;
+      font-size: 2rem;
     }
 
     @media (max-width: hope-config.$mobileS) {
-      font-size: 30px;
+      font-size: 1.875rem;
     }
   }
 

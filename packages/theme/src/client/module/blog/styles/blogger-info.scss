@@ -1,4 +1,5 @@
 .blogger-info {
+  padding: 0.5rem;
   font-family: var(--font-family-fancy);
 
   .page & {
@@ -6,7 +7,7 @@
   }
 
   .blogger {
-    padding: 8px 0;
+    padding: 0.5rem 0;
     text-align: center;
 
     &.hasIntro {
@@ -14,8 +15,8 @@
     }
 
     .avatar {
-      width: 128px;
-      height: 128px;
+      width: 4rem;
+      height: 4rem;
       margin: 0 auto;
 
       &.round {
@@ -24,19 +25,19 @@
     }
 
     .name {
-      margin: 16px auto;
+      margin: 1rem auto;
       font-size: 22px;
     }
 
     .description {
       margin: 1rem auto;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
   .num-wrapper {
     display: flex;
-    margin: 0 auto 16px;
+    margin: 0 auto 1rem;
     width: 80%;
 
     > div {
@@ -51,7 +52,7 @@
 
       .num {
         position: relative;
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
         font-weight: 600;
         font-size: 20px;
       }
