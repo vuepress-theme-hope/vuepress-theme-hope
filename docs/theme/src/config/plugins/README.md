@@ -10,7 +10,7 @@ tag:
 
 ## 目录
 
-- [Introduction to Theme Plugin](intro.md)
+- [Theme Plugins Intro](intro.md)
 
 - [Blog plugin config](blog.md)
 

@@ -9,7 +9,7 @@ tag:
   - themeConfig
 ---
 
-## Introduction <Badge text="enabled by default" />
+## Intro <Badge text="enabled by default" />
 
 `vuepress-theme-hope` provides feed generation support via the `vuepress-plugin-feed2` plugin.
 

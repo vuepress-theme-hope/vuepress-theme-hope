@@ -27,7 +27,7 @@ tag:
 
 ## Plugins Config
 
-- [Introduction to Theme Plugins](plugins/intro.md)
+- [Theme Plugins Intro](plugins/intro.md)
 
 - [Blog plugin config](plugins/blog.md)
 

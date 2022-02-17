@@ -23,7 +23,7 @@ If you want the theme to automatically extract excerpts, set `autoExcerpt: true`
 
 All articles will be added to the article list by default and rendered under the path `/article/`.
 
-![Article list](./assets/article.png)
+![Article list](./assets/article-list.png)
 
 If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article.
 

@@ -8,6 +8,12 @@ tag:
   - path
 ---
 
+Themes allow you to display basic information about the blogger.
+
+<!-- more -->
+
+![Blogger info](./assets/blogger-info.png)
+
 ## Avatar and blogger name
 
 You can config blogger avatar and name displayed through `blog.avatar` and `blog.name`.

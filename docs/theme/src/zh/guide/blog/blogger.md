@@ -8,6 +8,12 @@ tag:
   - path
 ---
 
+主题允许你展示博主的基本信息。
+
+<!-- more -->
+
+![博主信息](./assets/blogger-info.png)
+
 ## 头像和博主名称
 
 你可以通过 `blog.avatar` 和 `blog.name` 自由配置博客页面中显示的的博主头像和姓名。

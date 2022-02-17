@@ -25,7 +25,7 @@ tag:
 
 所有文章都会默认被添加到文章列表中渲染在 `/article/` 路径下。
 
-![文章列表](./assets/article.png)
+![文章列表](./assets/article-list.png)
 
 如果你不希望该列表包含一些特定的文章，只需在文章的 frontmatter 中将 `article` 设置为 `false`。
 
