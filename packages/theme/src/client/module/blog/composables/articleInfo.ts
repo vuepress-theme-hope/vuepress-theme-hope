@@ -19,6 +19,7 @@ import type {
 import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
 import type { ComputedRef, UnwrapNestedRefs } from "vue";
 import type { ArticleInfo } from "../../../../shared";
+import { usePageLang } from "@vuepress/client";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
@@ -63,13 +64,15 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
 
 export type DateRef = ComputedRef<DateInfo | null>;
 
-export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
-  computed(() => {
+export const useArticleDate = (info: Ref<ArticleInfo>): DateRef => {
+  const pageLang = usePageLang();
+
+  return computed(() => {
     const { date } = info.value;
 
-    return date ? getDate(date, { type: "date" }) : null;
+    return date ? getDate(date, { lang: pageLang.value, type: "date" }) : null;
   });
-
+};
 export const useArticleInfo = (
   info: Ref<ArticleInfo>
 ): UnwrapNestedRefs<ArticleInfoProps> => {

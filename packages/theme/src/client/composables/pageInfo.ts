@@ -4,7 +4,7 @@ import {
   getDate,
   getTag,
 } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, inject, reactive } from "vue";
 import { usePure, useThemeData, useThemeLocaleData } from "./themeData";
 
@@ -17,6 +17,7 @@ import type {
   AuthorInfo,
   BasePageFrontMatter,
   DateInfo,
+  DateOptions,
 } from "@mr-hope/vuepress-shared";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef, UnwrapNestedRefs } from "vue";
@@ -73,15 +74,17 @@ export const usePageTag = (): ComputedRef<ArticleTag[]> => {
 export const usePageDate = (): ComputedRef<DateInfo | null> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
   const page = usePageData<{ git?: GitData }>();
+  const pageLang = usePageLang();
 
   return computed(() => {
     const { date } = frontmatter.value;
+    const options: DateOptions = { lang: pageLang.value, type: "date" };
 
-    if (date) return getDate(date, { type: "date" });
+    if (date) return getDate(date, options);
 
     const { createdTime } = page.value.git || {};
 
-    if (createdTime) return getDate(new Date(createdTime), { type: "date" });
+    if (createdTime) return getDate(new Date(createdTime), options);
 
     return null;
   });
