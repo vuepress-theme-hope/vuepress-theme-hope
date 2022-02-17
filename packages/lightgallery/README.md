@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-lightgallery</h1>
 <h4 align="center">VuePress 图片预览插件🔍 / VuePress photo preview plugin🔍</h4>

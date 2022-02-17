@@ -73,7 +73,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 Docs",
-                link: "https://vuepress-theme-hope.github.io/pwa/",
+                link: "https://vuepress-theme-hope.github.io/v1/pwa/",
               },
             ],
           },
@@ -98,7 +98,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 文档",
-                link: "https://vuepress-theme-hope.github.io/pwa/zh/",
+                link: "https://vuepress-theme-hope.github.io/v1/pwa/zh/",
               },
             ],
           },

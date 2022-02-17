@@ -65,7 +65,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 Docs",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
+                link: "https://vuepress-theme-hope.github.io/v1/add-this/",
               },
             ],
           },
@@ -84,7 +84,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 文档",
-                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
+                link: "https://vuepress-theme-hope.github.io/v1/add-this/zh/",
               },
             ],
           },

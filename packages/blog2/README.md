@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-blog2</h1>
 <h4 align="center">VuePress2 Blog plugin📝 / VuePress2 Blog 插件📝</h4>

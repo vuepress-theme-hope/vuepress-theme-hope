@@ -67,7 +67,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 Docs",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+                link: "https://vuepress-theme-hope.github.io/v1/md-enhance/",
               },
             ],
           },
@@ -154,7 +154,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 文档",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
+                link: "https://vuepress-theme-hope.github.io/v1/md-enhance/zh/",
               },
             ],
           },

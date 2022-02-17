@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-sitemap2t</h1>
 <h4 align="center">VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件🗺️</h4>
@@ -11,7 +11,7 @@
 
 VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件 🗺️
 
-## [Official Docs](https://vuepress-theme-hope.github.io/sitemap/) | [官方文档](https://vuepress-theme-hope.github.io/sitemap/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v2/sitemap/) | [官方文档](https://vuepress-theme-hope.github.io/v2/sitemap/zh/)
 
 ## Install
 

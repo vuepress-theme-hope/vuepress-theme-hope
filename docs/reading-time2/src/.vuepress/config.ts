@@ -62,7 +62,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 Docs",
-                link: "https://vuepress-theme-hope.github.io/reading-time/",
+                link: "https://vuepress-theme-hope.github.io/v1/reading-time/",
               },
             ],
           },
@@ -77,7 +77,7 @@ export default defineHopeConfig({
             children: [
               {
                 text: "V1 文档",
-                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
+                link: "https://vuepress-theme-hope.github.io/v1/reading-time/zh/",
               },
             ],
           },

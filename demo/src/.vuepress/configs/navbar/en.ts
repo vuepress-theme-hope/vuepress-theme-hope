@@ -55,7 +55,7 @@ export const en: HopeThemeNavbarConfig = [
       },
       {
         text: "V1 文档",
-        link: "https://vuepress-theme-hope.github.io/zh/",
+        link: "https://vuepress-theme-hope.github.io/v1/zh/",
       },
       {
         text: "V1 演示",
