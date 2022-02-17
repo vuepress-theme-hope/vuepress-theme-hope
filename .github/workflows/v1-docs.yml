@@ -69,10 +69,16 @@ jobs:
           yarn cpx "docs/seo/dist/**" dist/seo
           yarn cpx "docs/sitemap/dist/**" dist/sitemap
 
+      - name: Create README.md
+        run: |-
+          echo "# V1 Docs" >> dist/README.md
+          echo "" >> dist/README.md
+          echo "### This repo holds docs of V1 Theme and Plugins. You can [visit theme docs](https://vuepress-theme-hope.github.io/v1/) directly.:tada:" >> dist/README.md
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: vuepress-theme-hope/v2
+          repository-name: vuepress-theme-hope/v1

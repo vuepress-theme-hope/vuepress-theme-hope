@@ -72,6 +72,12 @@ jobs:
           yarn cpx "docs/seo2/dist/**" dist/seo
           yarn cpx "docs/theme/dist/**" dist
 
+      - name: Create README.md
+        run: |-
+          echo "# V2 Docs" >> dist/README.md
+          echo "" >> dist/README.md
+          echo "### This repo holds docs of V2 Theme and Plugins. You can [visit theme docs](https://vuepress-theme-hope.github.io/v2/) directly.:tada:" >> dist/README.md
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
