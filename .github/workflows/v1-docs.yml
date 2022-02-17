@@ -75,4 +75,4 @@ jobs:
           branch: gh-pages
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: vuepress-theme-hope/vuepress-theme-hope.github.io
+          repository-name: vuepress-theme-hope/v2
