@@ -22,95 +22,56 @@
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
-## Warning
+## [English Docs](https://vuepress-theme-hope.github.io/v2/) / [中文文档](https://vuepress-theme-hope.github.io/v2/zh/)
 
-Current branch is based on VuePress@v2, and still in ALPHA status. This means that features and api are not solid, and there might be BREAKING CHANGES in future releases.
+## Note
+
+Current branch is based on VuePress@v2, and it's still in alpha.
+
+This means that features and api are not solid, and there might be BREAKING CHANGES in future releases.
 
 For stable releasae in v1, please see [v1 branch](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/).
 
-当前分支基于 VuePress@v2，仍处于 Alpha。这意味着功能和 API 尚未固定，在未来的更新中仍可能出现破坏性更改。
+## 注意
+
+当前分支基于 VuePress@v2，仍处于 Alpha。
+
+这意味着功能和 API 尚未固定，在未来的更新中仍可能出现破坏性更改。
 
 稳定 v1 发行版请参见[v1 分支](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/)。
 
-## Details
-
-V2 will come together with _VuePress@v2_, with the power of _vite@v2_ _webpack@v5_ and _vue@v3_.
-
-V2 will be a totally rewrite including:
-
-- All the components will be rewrite with _composition api in vue3_
-- All the styles will be mirgate to _sass_
-
-Also we are going to make sure the rewrite one has a better performance!🚀 (no less than 25% increasement)
-
 ---
 
-Here is a list of changes:
+## Details
 
-> Note: All plugin names are in PascalCase and without `vuepress-plugin-` prefix, you should change to `kebab-case` and add the prefix yourself to get the correct plugin name.
+V2 is comming come together with _VuePress2_, with the power of _Vite2_ / _Webpack5_ and _Vue3_.
 
-## Changes in plugins
+V2 is a full rewrite including:
 
-- [@mr-hope/components](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/components/README.md)
+- All the components are rewrite with _Composition API in Vue3_
+- All the styles are mirgate to _Sass_
 
-- [vuepress-plugin-add-this](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/add-this/README.md) ![deprecated](https://img.shields.io/badge/-deprecated-yellow)
+Also V2 has a better performance:🚀
 
-- [vuepress-plugin-comment2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/comment2/README.md)
+- DevServer cold start time reduced by **50%**
+- Built memory reduced by **65%**
+- Built time reduced by **30%**
+- Output Size reduced by **25%**
+- Webpage performance up to **70%**
 
-- [vuepress-plugin-copy-code2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/copy-code2/README.md)
+## 详情
 
-- [vuepress-plugin-feed2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/feed2/README.md)
+V2 基于 _VuePress2_， 带有 _Vite2_ / _Webpack5_ 和 _Vue3_ 的强大功能。
 
-- [vuepress-plugin-md-enhance](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/README.md)
+V2 完全重写，包括：
 
-- [vuepress-plugin-photo-swipe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/photo-swipe/README.md)
+- 所有组件都用 _Vue3 中的 Composition API_ 重写
+- 所有样式都迁移到 _Sass_
 
-- [vuepress-plugin-pwa2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/README.md)
+V2 也有更好的性能：🚀
 
-- [vuepress-plugin-reading-time2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/reading-time2/README.md)
-
-- [vuepress-plugin-seo2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/seo2/README.md)
-
-- [vuepress-plugin-sitemap2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/sitemap2/README.md)
-
-## New plugins
-
-- [x] Blog2 ![new](https://img.shields.io/badge/-new-brightgreen)
-
-  Blog plugin with better performance
-
-- [x] LightGallery ![new](https://img.shields.io/badge/-new-brightgreen)
-
-  A image viewer plugin for VuePress using [lightGallary](https://www.lightgalleryjs.com/)
-
-  See [LightGallery](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/lightgallery/README.md)
-
-- [x] SassPalette ![new](https://img.shields.io/badge/-new-brightgreen)
-
-  A style system for sass across plugins and theme
-
-  See [SassPalette](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/sass-palette/README.md)
-
-- [ ] Share2 ![new](https://img.shields.io/badge/-new-brightgreen)
-
-  A new share plugin providing page share.
-
-## Theme changes
-
-- [ ] Pure Mode in theme and all plugins #438 ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [ ] Dim non focused area #168 ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [ ] Code block theme config #189 ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [x] Drop fullscreen feature. ![removed](https://img.shields.io/badge/-removed-red)
-
-  Most visitors do not use this feature.
-
-- [x] Drop themecolor feature ![removed](https://img.shields.io/badge/-removed-red)
-
-  Most visitors do not use this feature.
-
-- [x] Allow I18N Customize ![new](https://img.shields.io/badge/-new-brightgreen)
+- DevServer 冷启动时间减少 **50%**
+- 构建内存减小 **65%**
+- 构建时间减少 **30%**
+- 输出大小降低 **25%**
+- 网页性能提高 **70%**
