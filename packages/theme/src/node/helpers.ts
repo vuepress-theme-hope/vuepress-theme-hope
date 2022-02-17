@@ -12,7 +12,7 @@ import type {
 export const defineHopeConfig = <T extends BundlerConfig>(
   config: UserConfig<HopeThemeOptions, T>
 ): UserConfig<HopeThemeOptions, T> =>
-  defineUserConfig<HopeThemeOptions, T>(config);
+  defineUserConfig<HopeThemeOptions, T>({ theme: "hope", ...config });
 
 export const defineThemeConfig = (
   themeConfig: HopeThemeOptions
