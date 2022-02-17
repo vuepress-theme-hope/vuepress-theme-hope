@@ -105,6 +105,7 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
   ],
 
   "/zh/basic/": [
+    "tutorial",
     {
       text: "Markdown",
       icon: "markdown",
@@ -117,7 +118,15 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
           icon: "emoji",
           link: "emoji/",
           prefix: "emoji/",
-          children: ["people", "nature", "object", "place", "symbol"],
+          children: [
+            "",
+            "page",
+            "markdown",
+            "file",
+            "config",
+            "plugin",
+            "theme",
+          ],
         },
       ],
     },

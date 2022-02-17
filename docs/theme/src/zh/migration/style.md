@@ -26,7 +26,7 @@ icon: style
 
 移动至 `palette.scss`。
 
-- `$mobileSidebarWidth` 重命名为 `$sidebarMobileWith`
+- `$mobileSidebarWidth` 重命名为 `$sidebarMobileWidth`
 - `$lineNumbersWrapperWidth` 重命名为 `$lineNumbersWidth`
 
 ### 颜色
@@ -39,7 +39,7 @@ icon: style
 - `$bgColorLight`, `$darkBgColorLight` 合并为 `$bgColorLight`
 - `$bgColorBlur`, `$darkBgColorBlur` 合并为 `$bgColorBlur`
 - `$codeBgColor`, `$darkCodeBgColor` 合并为 `$codeBgColor`
-- `$cardShadowColor`, `$darkCardShadowColo` 合并为 `$cardShadow`
+- `$cardShadowColor`, `$darkCardShadowColor` 合并为 `$cardShadow`
 - `$boxShadowColor`, `$darkBoxShadowColor` 合并为 `$boxShadow`
 
 - `$arrowBgColor` 移除

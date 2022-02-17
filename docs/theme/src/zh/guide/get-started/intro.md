@@ -63,7 +63,7 @@ tag:
 
 ### 搜索引擎增强
 
-- 提供 [SEO 增强](../feature/seo.md)，会自动注入网站信息以完整支持 OGP 与 JSON-LD 协议，增强增强搜索引擎索引。
+- 提供 [SEO 增强](../feature/seo.md)，会自动注入网站信息以完整支持 OGP 与 JSON-LD 协议，增强搜索引擎索引。
 
 - 提供 [Sitemap 生成](../feature/sitemap.md)
 

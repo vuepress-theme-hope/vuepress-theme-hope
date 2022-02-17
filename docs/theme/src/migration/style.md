@@ -26,7 +26,7 @@ Move to `config.scss`.
 
 Move to `palette.scss`.
 
-- `$mobileSidebarWidth` renamed to `$sidebarMobileWith`
+- `$mobileSidebarWidth` renamed to `$sidebarMobileWidth`
 - `$lineNumbersWrapperWidth` renamed to `$lineNumbersWidth`
 
 ### Colors
@@ -39,7 +39,7 @@ Move to `palette.scss`.
 - `$bgColorLight`, `$darkBgColorLight` merged into `$bgColorLight`
 - `$bgColorBlur`, `$darkBgColorBlur` merged into `$bgColorBlur`
 - `$codeBgColor`, `$darkCodeBgColor` merged into `$codeBgColor`
-- `$cardShadowColor`, `$darkCardShadowColo` merged into `$cardShadow`
+- `$cardShadowColor`, `$darkCardShadowColor` merged into `$cardShadow`
 - `$boxShadowColor`, `$darkBoxShadowColor` merged into `$boxShadow`
 
 - `$arrowBgColor` removed

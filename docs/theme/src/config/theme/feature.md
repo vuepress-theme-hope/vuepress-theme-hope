@@ -115,7 +115,7 @@ Whether cliping the avatar with round shape
 
 Whether to show blogger information in the sidebar
 
-- `mobile`: Show in sidebar in mobile view
+- `'mobile'`: Show in sidebar in mobile view
 - `'always'`: Always show in the sidebar
 - `'none'`: Never show in the sidebar
 

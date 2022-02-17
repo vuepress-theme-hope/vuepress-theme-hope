@@ -105,6 +105,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
   ],
 
   "/basic/": [
+    "tutorial",
     {
       text: "Markdown",
       icon: "markdown",
@@ -125,7 +126,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       text: "VuePress",
       icon: "vue",
       prefix: "vuepress/",
-      children: ["", "file", "markdown", "config", "plugin", "theme"],
+      children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
     },
   ],
 
