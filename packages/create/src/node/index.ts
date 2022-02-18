@@ -6,7 +6,7 @@ import { cac } from "cac";
 import { prompt } from "inquirer";
 import execa from "execa";
 import { copy } from "./copy";
-import { checkForLatestVersion } from "./checkVersion";
+import { checkForNextVersion } from "./checkVersion";
 import { detectYarn } from "./hasYarn";
 import { getLanguage } from "./i18n";
 import { getRegistry } from "./registry";
@@ -31,8 +31,8 @@ cli
 
     console.log(message.getVersion);
 
-    const vuepressVersion = await checkForLatestVersion("vuepress");
-    const themeVersion = await checkForLatestVersion("vuepress-theme-hope");
+    const vuepressVersion = await checkForNextVersion("vuepress");
+    const themeVersion = await checkForNextVersion("vuepress-theme-hope");
 
     const devDependencies = {
       vuepress: `^${vuepressVersion}`,
@@ -112,9 +112,27 @@ cli
       );
     }
 
+    interface I18nAnswer {
+      i18n: "Yes" | "No";
+    }
+
+    const { i18n } = await prompt<I18nAnswer>([
+      {
+        name: "i18n",
+        type: "list",
+        message: message.licenseMessage,
+        choices: ["Yes", "No"],
+      },
+    ]);
+
     console.log(message.template);
 
-    copy(resolve(__dirname, "../../template"), resolve(process.cwd(), dir));
+    const templateFolder = i18n === "Yes" ? "i18n" : lang;
+
+    copy(
+      resolve(__dirname, "../../template", templateFolder),
+      resolve(process.cwd(), dir)
+    );
 
     console.log(message.install);
     console.warn(message.wait);

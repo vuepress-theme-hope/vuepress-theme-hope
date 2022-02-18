@@ -19,6 +19,7 @@ export interface CreateI18n {
   versionError: string;
   descriptionMessage: string;
   licenseMessage: string;
+  i18nMessage: string;
 }
 
 export const i18n: Record<Lang, CreateI18n> = {
@@ -40,6 +41,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     versionError: "此版本无效，版本号应为 'x.x.x'",
     descriptionMessage: "设置应用描述",
     licenseMessage: "设置协议",
+    i18nMessage: "项目需要用到多语言么?",
   },
   "en-US": {
     getVersion: "Getting lastest version of deps...",
@@ -61,6 +63,7 @@ export const i18n: Record<Lang, CreateI18n> = {
       "This version is not a valid one. Version should be like 'x.x.x'",
     descriptionMessage: "Your project description",
     licenseMessage: "Your project lincense",
+    i18nMessage: "Does the project need mutiple languages?",
   },
 };
 

@@ -1,6 +1,6 @@
 import { get } from "https";
 
-export const checkForLatestVersion = (packageName: string): Promise<string> =>
+export const checkForNextVersion = (packageName: string): Promise<string> =>
   new Promise((resolve, reject) => {
     get(
       `https://registry.npmjs.org/-/package/${packageName}/dist-tags`,
