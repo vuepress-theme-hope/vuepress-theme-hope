@@ -35,18 +35,26 @@ icon: config
 
 ## locales
 
-```ts
-interface CopyCodeLocaleData {
-  /**
-   * 复制按钮文字
-   */
-  copy: string;
+- 类型: `CopyCodeLocaleConfig`
 
-  /**
-   * 复制成功提示消息文字
-   */
-  hint: string;
-}
-```
+  ```ts
+  interface CopyCodeLocaleData {
+    /**
+     * 复制按钮文字
+     */
+    copy: string;
 
-国际化配置
+    /**
+     * 复制成功提示消息文字
+     */
+    hint: string;
+  }
+
+  interface CopyCodeLocaleConfig {
+    [localePath: string]: CopyCodeLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+复制按钮插件的国际化配置。

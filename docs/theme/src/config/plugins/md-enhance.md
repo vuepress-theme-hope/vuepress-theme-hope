@@ -294,40 +294,48 @@ If the theme you are using has a switching animation, it is recommended to confi
 
 ### locales
 
-```ts
-interface MarkdownEnhanceLocaleData {
-  /**
-   * Default Title text for info block
-   */
-  info: string;
+- Type: `MarkdownEnhanceLocaleConfig`
 
-  /**
-   * Default Title text for note block
-   */
-  note: string;
+  ```ts
+  interface MarkdownEnhanceLocaleData {
+    /**
+     * Default Title text for info block
+     */
+    info: string;
 
-  /**
-   * Default Title text for tip block
-   */
-  tip: string;
+    /**
+     * Default Title text for note block
+     */
+    note: string;
 
-  /**
-   * Default Title text for warning block
-   */
-  warning: string;
+    /**
+     * Default Title text for tip block
+     */
+    tip: string;
 
-  /**
-   * Default Title text for danger block
-   */
-  danger: string;
+    /**
+     * Default Title text for warning block
+     */
+    warning: string;
 
-  /**
-   * Default Title text for details block
-   */
-  details: string;
-}
-```
+    /**
+     * Default Title text for danger block
+     */
+    danger: string;
 
-Locales config.
+    /**
+     * Default Title text for details block
+     */
+    details: string;
+  }
+
+  interface MarkdownEnhanceLocaleConfig {
+    [localePath: string]: MarkdownEnhanceLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for markdown enhance plugin.
 
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/config.html

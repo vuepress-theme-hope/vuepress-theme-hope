@@ -35,18 +35,26 @@ If the theme you are using has a switching animation, it is recommended to confi
 
 ## locales
 
-```ts
-interface CopyCodeLocaleData {
-  /**
-   * Copy button label text
-   */
-  copy: string;
+- Type: `CopyCodeLocaleConfig`
 
-  /**
-   * Success message text after content is copied
-   */
-  hint: string;
-}
-```
+  ```ts
+  interface CopyCodeLocaleData {
+    /**
+     * Copy button label text
+     */
+    copy: string;
 
-Locales config.
+    /**
+     * Success message text after content is copied
+     */
+    hint: string;
+  }
+
+  interface CopyCodeLocaleConfig {
+    [localePath: string]: CopyCodeLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for copy code plugin.

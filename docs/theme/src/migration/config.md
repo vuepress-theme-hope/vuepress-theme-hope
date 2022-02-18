@@ -108,7 +108,7 @@ In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`,
 
 ### Reading speed
 
-- `wordPerminute` moved to `plugins.readingTime.wordPerMinute`
+- `wordPerMinute` moved to `plugins.readingTime.wordPerMinute`
 
 ## plugin changes
 

@@ -88,7 +88,7 @@ module.exports = {
 
 ## Plugin options
 
-### wordPerminute
+### wordPerMinute
 
 - Type: `number`
 - Default: `300`
@@ -97,23 +97,31 @@ Reading speed (words per minute)
 
 ### locales
 
-```ts
-interface ReadingTimeLocaleData {
-  /**
-   * Word template, `$word` will be automatically replaced by actual words
-   */
-  word: string;
+- Type: `ReadingTimeLocaleConfig`
 
-  /**
-   * Text for less than one minute
-   */
-  less1Minute: string;
+  ```ts
+  interface ReadingTimeLocaleData {
+    /**
+     * Word template, `$word` will be automatically replaced by actual words
+     */
+    word: string;
 
-  /**
-   * Time template
-   */
-  time: string;
-}
-```
+    /**
+     * Text for less than one minute
+     */
+    less1Minute: string;
 
-Locales config.
+    /**
+     * Time template
+     */
+    time: string;
+  }
+
+  interface ReadingTimeLocaleConfig {
+    [localePath: string]: ReadingTimeLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for reading-time plugin.

@@ -158,58 +158,66 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
 
 ## locales
 
-```ts
-interface PWALocaleData {
-  /**
-   * Install button text
-   */
-  install: string;
+- Type: `PWALocaleConfig`
 
-  /**
-   * iOS install hint text
-   */
-  iOSInstall: string;
+  ```ts
+  interface PWALocaleData {
+    /**
+     * Install button text
+     */
+    install: string;
 
-  /**
-   * Cancel button text
-   */
-  cancel: string;
+    /**
+     * iOS install hint text
+     */
+    iOSInstall: string;
 
-  /**
-   * Close button text
-   */
-  close: string;
+    /**
+     * Cancel button text
+     */
+    cancel: string;
 
-  /**
-   * Previous image text
-   */
-  prevImage: string;
+    /**
+     * Close button text
+     */
+    close: string;
 
-  /**
-   * Next image text
-   */
-  nextImage: string;
+    /**
+     * Previous image text
+     */
+    prevImage: string;
 
-  /**
-   * Install explain text
-   */
-  explain: string;
+    /**
+     * Next image text
+     */
+    nextImage: string;
 
-  /**
-   * Description label text
-   */
-  desc: string;
+    /**
+     * Install explain text
+     */
+    explain: string;
 
-  /**
-   * Feature label text
-   */
-  feature: string;
+    /**
+     * Description label text
+     */
+    desc: string;
 
-  /**
-   * Update label text
-   */
-  update: string;
-}
-```
+    /**
+     * Feature label text
+     */
+    feature: string;
 
-Locales config.
+    /**
+     * Update label text
+     */
+    update: string;
+  }
+
+  interface PWALocaleConfig {
+    [localePath: string]: PWALocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for pwa plugin.

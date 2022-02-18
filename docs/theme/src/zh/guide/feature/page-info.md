@@ -78,7 +78,7 @@ date: 2020-01-01
 
 ### 阅读时间
 
-默认的统计方式是一分钟 300 字，你可以设置 `themeConfig.wordPerminute` 来覆盖它，该选项不支持在页面单独配置。
+默认的统计方式是一分钟 300 字，你可以设置 `themeConfig.plugins.readingTime.wordPerMinute` 来覆盖它，该选项不支持在页面单独配置。
 
 ### 浏览量 <Badge text="支持页面配置" />
 

@@ -129,7 +129,7 @@ interface ReadingTime {
 
 - **reading-time**
 
-  默认的阅读速度是每分钟 300 字，你可以在插件选项中设置 `wordPerminute` 来覆盖它。
+  默认的阅读速度是每分钟 300 字，你可以在插件选项中设置 `wordPerMinute` 来覆盖它。
 
 :::
 

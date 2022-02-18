@@ -108,7 +108,7 @@ icon: config
 
 ### 阅读速度
 
-- `wordPerminute` 移至 `plugins.readingTime.wordPerMinute`
+- `wordPerMinute` 移至 `plugins.readingTime.wordPerMinute`
 
 ## 插件变更
 

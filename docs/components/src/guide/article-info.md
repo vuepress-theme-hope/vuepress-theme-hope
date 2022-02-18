@@ -129,7 +129,7 @@ By default it will display "Author, Visit Number, Writing Date, Category, Tags, 
 
 - **reading time**
 
-  By default, the reading speed is 300 words per minute. You can override it by setting `wordPerminute` in the plugin options.
+  By default, the reading speed is 300 words per minute. You can override it by setting `wordPerMinute` in the plugin options.
 
 :::
 

@@ -190,60 +190,68 @@ Safari 图标
 
 ### locales
 
-```ts
-interface PWALocaleData {
-  /**
-   * 安装按钮文字
-   */
-  install: string;
+- 类型: `PWALocaleConfig`
 
-  /**
-   * iOS 安装文字
-   */
-  iOSInstall: string;
+  ```ts
+  interface PWALocaleData {
+    /**
+     * 安装按钮文字
+     */
+    install: string;
 
-  /**
-   * 取消按钮文字
-   */
-  cancel: string;
+    /**
+     * iOS 安装文字
+     */
+    iOSInstall: string;
 
-  /**
-   * 关闭按钮文字
-   */
-  close: string;
+    /**
+     * 取消按钮文字
+     */
+    cancel: string;
 
-  /**
-   * 上一张图片文字
-   */
-  prevImage: string;
+    /**
+     * 关闭按钮文字
+     */
+    close: string;
 
-  /**
-   * 下一张图片文字
-   */
-  nextImage: string;
+    /**
+     * 上一张图片文字
+     */
+    prevImage: string;
 
-  /**
-   * 安装解释
-   */
-  explain: string;
+    /**
+     * 下一张图片文字
+     */
+    nextImage: string;
 
-  /**
-   * 描述标签文字
-   */
-  desc: string;
+    /**
+     * 安装解释
+     */
+    explain: string;
 
-  /**
-   * 特性标签文字
-   */
-  feature: string;
+    /**
+     * 描述标签文字
+     */
+    desc: string;
 
-  /**
-   * 更新内容标签文字
-   */
-  update: string;
-}
-```
+    /**
+     * 特性标签文字
+     */
+    feature: string;
 
-国际化配置。
+    /**
+     * 更新内容标签文字
+     */
+    update: string;
+  }
+
+  interface PWALocaleConfig {
+    [localePath: string]: PWALocaleData;
+  }
+  ```
+
+- 必填: 否
+
+PWA 插件的国际化配置。
 
 [pwa-config]: https://vuepress-theme-hope.github.io/v2/pwa/zh/config.html

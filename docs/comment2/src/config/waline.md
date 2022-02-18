@@ -134,40 +134,48 @@ Custom image upload callback to manage picture by yourself. We will pass a pictu
 
 ## walineLocales
 
-```ts
-interface WalineLocaleData {
-  nick: string;
-  nickError: string;
-  mail: string;
-  mailError: string;
-  link: string;
-  optional: string;
-  placeholder: string;
-  sofa: string;
-  submit: string;
-  reply: string;
-  cancelReply: string;
-  comment: string;
-  refresh: string;
-  more: string;
-  preview: string;
-  emoji: string;
-  uploadImage: string;
-  seconds: string;
-  minutes: string;
-  hours: string;
-  days: string;
-  now: string;
-  uploading: string;
-  login: string;
-  logout: string;
-  admin: string;
-  sticky: string;
-  word: string;
-  wordHint: string;
-  anonymous: string;
-}
-```
+- Type: `WalineLocaleConfig`
+
+  ```ts
+  interface WalineLocaleData {
+    nick: string;
+    nickError: string;
+    mail: string;
+    mailError: string;
+    link: string;
+    optional: string;
+    placeholder: string;
+    sofa: string;
+    submit: string;
+    reply: string;
+    cancelReply: string;
+    comment: string;
+    refresh: string;
+    more: string;
+    preview: string;
+    emoji: string;
+    uploadImage: string;
+    seconds: string;
+    minutes: string;
+    hours: string;
+    days: string;
+    now: string;
+    uploading: string;
+    login: string;
+    logout: string;
+    admin: string;
+    sticky: string;
+    word: string;
+    wordHint: string;
+    anonymous: string;
+  }
+
+  interface WalineLocaleConfig {
+    [localePath: string]: WalineLocaleData;
+  }
+  ```
+
+- Required: No
 
 Waline locales config. For details, see [Waline i18n customize](https://waline.js.org/en/guide/client/i18n.html#customize)
 

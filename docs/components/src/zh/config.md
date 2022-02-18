@@ -59,108 +59,120 @@ icon: config
 
 是否注册全屏按钮
 
-## wordPerminute
+## backToTopLocales
 
-- 类型: `number`
-- 默认: `300`
+- 类型: `BackToTopLocaleConfig`
 
-每分钟阅读的字数。
+  ```ts
+  interface BackToTopLocaleData {
+    /**
+     * 返回顶部文字
+     */
+    backToTop: string;
+  }
 
-## locales
+  interface BackToTopLocaleConfig {
+    [localePath: string]: BackToTopLocaleData;
+  }
+  ```
 
-```ts
-interface ComponentLocaleData {
-  /**
-   * 返回顶部文字
-   */
-  backToTop: string;
+- 必填: 否
 
-  /**
-   * 在新窗口中打开
-   */
-  openInNewWindow: string;
-}
-```
-
-组件国际化配置
+返回顶部按钮国际化配置。
 
 ## articleInfoLocales
 
-```ts
-interface ArticleInfoLocaleData {
-  /**
-   * 作者文字
-   */
-  author: string;
+- 类型: `ArticleInfoLocaleConfig`
 
-  /**
-   * 写作日期文字
-   */
-  date: string;
+  ```ts
+  interface ArticleInfoLocaleData {
+    /**
+     * 作者文字
+     */
+    author: string;
 
-  /**
-   * 标记原创的文字
-   */
-  origin: string;
+    /**
+     * 写作日期文字
+     */
+    date: string;
 
-  /**
-   * 访问量文字
-   */
-  views: string;
+    /**
+     * 标记原创的文字
+     */
+    origin: string;
 
-  /**
-   * 标签文字
-   */
-  tag: string;
+    /**
+     * 访问量文字
+     */
+    views: string;
 
-  /**
-   * 分类文字
-   */
-  category: string;
+    /**
+     * 标签文字
+     */
+    tag: string;
 
-  /**
-   * 期望阅读时间文字
-   */
-  readingTime: string;
+    /**
+     * 分类文字
+     */
+    category: string;
 
-  /**
-   * 文章字数
-   */
-  words: string;
-}
-```
+    /**
+     * 期望阅读时间文字
+     */
+    readingTime: string;
+
+    /**
+     * 文章字数
+     */
+    words: string;
+  }
+
+  interface ArticleInfoLocaleConfig {
+    [localePath: string]: ArticleInfoLocaleData;
+  }
+  ```
+
+- 必填: 否
 
 文章信息的国际化配置。
 
 ## paginationLocales
 
-```ts
-interface PaginationLocaleData {
-  /**
-   * 上一页文字
-   */
-  prev: string;
+- 类型: `PaginationLocaleConfig`
 
-  /**
-   * 下一页文字
-   */
-  next: string;
+  ```ts
+  interface PaginationLocaleData {
+    /**
+     * 上一页文字
+     */
+    prev: string;
 
-  /**
-   * 跳转提示文字
-   */
-  navigate: string;
+    /**
+     * 下一页文字
+     */
+    next: string;
 
-  /**
-   * 跳转按钮文字
-   */
-  button: string;
+    /**
+     * 跳转提示文字
+     */
+    navigate: string;
 
-  /**
-   * 页码错误文字，其中 `$page` 会自动替换为当前的总页数
-   */
-  errorText: string;
-}
-```
+    /**
+     * 跳转按钮文字
+     */
+    button: string;
 
-分页的国际化配置
+    /**
+     * 页码错误文字，其中 `$page` 会自动替换为当前的总页数
+     */
+    errorText: string;
+  }
+
+  interface PaginationLocaleConfig {
+    [localePath: string]: PaginationLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+分页的国际化配置。

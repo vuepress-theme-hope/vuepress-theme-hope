@@ -52,13 +52,6 @@ Whether register page anchor component
 
 Whether register pagination component
 
-## wordPerminute
-
-- Type: `number`
-- Default: `300`
-
-Reading words per minute.
-
 ## screenFull
 
 - Type: `boolean`
@@ -66,101 +59,120 @@ Reading words per minute.
 
 Whether register scrennfull button component
 
-## locales
+## backToTopLocales
 
-```ts
-interface ComponentLocaleData {
-  /**
-   * Back to top button label text
-   */
-  backToTop: string;
+- Type: `BackToTopLocaleConfig`
 
-  /**
-   * Open in new window text
-   */
-  openInNewWindow: string;
-}
-```
+  ```ts
+  interface BackToTopLocaleData {
+    /**
+     * Back to top button label text
+     */
+    backToTop: string;
+  }
 
-Component locales config.
+  interface BackToTopLocaleConfig {
+    [localePath: string]: BackToTopLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for BackToTop button.
 
 ## articleInfoLocales
 
-```ts
-interface ArticleInfoLocaleData {
-  /**
-   * Author label text
-   */
-  author: string;
+- Type: `ArticleInfoLocaleConfig`
 
-  /**
-   * Writing date label text
-   */
-  date: string;
+  ```ts
+  interface ArticleInfoLocaleData {
+    /**
+     * Author label text
+     */
+    author: string;
 
-  /**
-   * Label text marked as original
-   */
-  origin: string;
+    /**
+     * Writing date label text
+     */
+    date: string;
 
-  /**
-   * Page views label text
-   */
-  views: string;
+    /**
+     * Label text marked as original
+     */
+    origin: string;
 
-  /**
-   * Tag label text
-   */
-  tag: string;
+    /**
+     * Page views label text
+     */
+    views: string;
 
-  /**
-   * Category label text
-   */
-  category: string;
+    /**
+     * Tag label text
+     */
+    tag: string;
 
-  /**
-   * Expect reading time label text
-   */
-  readingTime: string;
+    /**
+     * Category label text
+     */
+    category: string;
 
-  /**
-   * Words label Text
-   */
-  words: string;
-}
-```
+    /**
+     * Expect reading time label text
+     */
+    readingTime: string;
 
-Locales Config for page information.
+    /**
+     * Words label Text
+     */
+    words: string;
+  }
+
+  interface ArticleInfoLocaleConfig {
+    [localePath: string]: ArticleInfoLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for article information.
 
 ## paginationLocales
 
-```ts
-interface PaginationLocaleData {
-  /**
-   * Previous page button label text
-   */
-  prev: string;
+- Type: `PaginationLocaleConfig`
 
-  /**
-   * Next page button label text
-   */
-  next: string;
+  ```ts
+  interface PaginationLocaleData {
+    /**
+     * Previous page button label text
+     */
+    prev: string;
 
-  /**
-   * Navigation hint label text
-   */
-  navigate: string;
+    /**
+     * Next page button label text
+     */
+    next: string;
 
-  /**
-   * Navigation button label text
-   */
-  button: string;
+    /**
+     * Navigation hint label text
+     */
+    navigate: string;
 
-  /**
-   * Error text when invalid page number, `$page` will be replaced by total page number automatically
-   */
-  errorText: string;
-}
-```
+    /**
+     * Navigation button label text
+     */
+    button: string;
 
-Pagination locales config.
+    /**
+     * Error text when invalid page number, `$page` will be replaced by total page number automatically
+     */
+    errorText: string;
+  }
+
+  interface PaginationLocaleConfig {
+    [localePath: string]: PaginationLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for pagination.

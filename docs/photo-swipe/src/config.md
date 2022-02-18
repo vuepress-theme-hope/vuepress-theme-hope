@@ -29,43 +29,51 @@ If the theme you are using has a switching animation, it is recommended to confi
 
 ## locales
 
-```ts
-interface PhowoSwipeLocaleData {
-  /**
-   * Close button label text
-   */
-  close: string;
+- Type: `PhotoSwipeLocaleConfig`
 
-  /**
-   * Full screen button label text
-   */
-  fullscreen: string;
+  ```ts
+  interface PhotoSwipeLocaleData {
+    /**
+     * Close button label text
+     */
+    close: string;
 
-  /**
-   * Share button label text
-   */
-  share: string;
+    /**
+     * Full screen button label text
+     */
+    fullscreen: string;
 
-  /**
-   * Zoom button label text
-   */
-  zoom: string;
+    /**
+     * Share button label text
+     */
+    share: string;
 
-  /**
-   * Previous image button label text
-   */
-  prev: string;
+    /**
+     * Zoom button label text
+     */
+    zoom: string;
 
-  /**
-   * Next image button label text
-   */
-  next: string;
+    /**
+     * Previous image button label text
+     */
+    prev: string;
 
-  /**
-   * Share button config
-   */
-  buttons: PhotoSwipeDefaultUI.ShareButtonData[];
-}
-```
+    /**
+     * Next image button label text
+     */
+    next: string;
 
-Locales config.
+    /**
+     * Share button config
+     */
+    buttons: PhotoSwipeDefaultUI.ShareButtonData[];
+  }
+
+  interface PhotoSwipeLocaleConfig {
+    [localePath: string]: PhotoSwipeLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for photo-swipe plugin.

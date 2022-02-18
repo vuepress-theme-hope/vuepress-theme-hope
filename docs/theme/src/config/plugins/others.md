@@ -37,7 +37,7 @@ For the plugin config, please refer to [photo-swipe plugin config][photo-swipe-c
 
 Take a word count for a page and generate an estimated reading time.
 
-### readingTime.wordPerminute
+### readingTime.wordPerMinute
 
 - type: `number`
 - Default: `300`

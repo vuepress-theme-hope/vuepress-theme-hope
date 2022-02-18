@@ -141,40 +141,48 @@ Waline 的服务端地址。
 
 ## walineLocales
 
-```ts
-interface WalineLocaleData {
-  nick: string;
-  nickError: string;
-  mail: string;
-  mailError: string;
-  link: string;
-  optional: string;
-  placeholder: string;
-  sofa: string;
-  submit: string;
-  reply: string;
-  cancelReply: string;
-  comment: string;
-  refresh: string;
-  more: string;
-  preview: string;
-  emoji: string;
-  uploadImage: string;
-  seconds: string;
-  minutes: string;
-  hours: string;
-  days: string;
-  now: string;
-  uploading: string;
-  login: string;
-  logout: string;
-  admin: string;
-  sticky: string;
-  word: string;
-  wordHint: string;
-  anonymous: string;
-}
-```
+- Type: `WalineLocaleConfig`
+
+  ```ts
+  interface WalineLocaleData {
+    nick: string;
+    nickError: string;
+    mail: string;
+    mailError: string;
+    link: string;
+    optional: string;
+    placeholder: string;
+    sofa: string;
+    submit: string;
+    reply: string;
+    cancelReply: string;
+    comment: string;
+    refresh: string;
+    more: string;
+    preview: string;
+    emoji: string;
+    uploadImage: string;
+    seconds: string;
+    minutes: string;
+    hours: string;
+    days: string;
+    now: string;
+    uploading: string;
+    login: string;
+    logout: string;
+    admin: string;
+    sticky: string;
+    word: string;
+    wordHint: string;
+    anonymous: string;
+  }
+
+  interface WalineLocaleConfig {
+    [localePath: string]: WalineLocaleData;
+  }
+  ```
+
+- 必填: 否
 
 Waline 国际化配置。详见 [Waline 自定义语言](https://waline.js.org/guide/client/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80)
 

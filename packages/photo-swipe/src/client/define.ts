@@ -1,10 +1,10 @@
 import * as PhotoSwipe from "photoswipe";
-import type { PhowoSwipeLocaleConfig } from "../shared";
+import type { PhotoSwipeLocaleConfig } from "../shared";
 
 declare const PHOTO_SWIPE_SELECTOR: string;
 declare const PHOTO_SWIPE_DELAY: number;
 declare const PHOTO_SWIPE_OPTIONS: PhotoSwipe.Options;
-declare const PHOTO_SWIPE_LOCALES: PhowoSwipeLocaleConfig;
+declare const PHOTO_SWIPE_LOCALES: PhotoSwipeLocaleConfig;
 
 export const imageSelector = PHOTO_SWIPE_SELECTOR;
 

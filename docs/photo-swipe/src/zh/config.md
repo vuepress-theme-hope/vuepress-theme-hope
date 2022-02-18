@@ -29,43 +29,51 @@ icon: config
 
 ## locales
 
-```ts
-interface PhowoSwipeLocaleData {
-  /**
-   * 关闭按钮标签文字
-   */
-  close: string;
+- 类型: `PhotoSwipeLocaleConfig`
 
-  /**
-   * 全屏按钮标签文字
-   */
-  fullscreen: string;
+  ```ts
+  interface PhotoSwipeLocaleData {
+    /**
+     * 关闭按钮标签文字
+     */
+    close: string;
 
-  /**
-   * 分享按钮标签文字
-   */
-  share: string;
+    /**
+     * 全屏按钮标签文字
+     */
+    fullscreen: string;
 
-  /**
-   * 缩放按钮标签文字
-   */
-  zoom: string;
+    /**
+     * 分享按钮标签文字
+     */
+    share: string;
 
-  /**
-   * 上一张图片按钮标签文字
-   */
-  prev: string;
+    /**
+     * 缩放按钮标签文字
+     */
+    zoom: string;
 
-  /**
-   * 下一张图片按钮标签文字
-   */
-  next: string;
+    /**
+     * 上一张图片按钮标签文字
+     */
+    prev: string;
 
-  /**
-   * 功能按钮配置
-   */
-  buttons: PhotoSwipeDefaultUI.ShareButtonData[];
-}
-```
+    /**
+     * 下一张图片按钮标签文字
+     */
+    next: string;
 
-国际化配置。
+    /**
+     * 功能按钮配置
+     */
+    buttons: PhotoSwipeDefaultUI.ShareButtonData[];
+  }
+
+  interface PhotoSwipeLocaleConfig {
+    [localePath: string]: PhotoSwipeLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+Photo Swipe 插件的国际化配置。

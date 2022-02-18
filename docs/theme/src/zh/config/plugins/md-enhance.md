@@ -301,40 +301,48 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 ### locales
 
-```ts
-interface MarkdownEnhanceLocaleData {
-  /**
-   * 信息块的默认标题
-   */
-  info: string;
+- 类型: `MarkdownEnhanceLocaleConfig`
 
-  /**
-   * 注释块的默认标题
-   */
-  note: string;
+  ```ts
+  interface MarkdownEnhanceLocaleData {
+    /**
+     * 信息块的默认标题
+     */
+    info: string;
 
-  /**
-   * 提示块的默认标题
-   */
-  tip: string;
+    /**
+     * 注释块的默认标题
+     */
+    note: string;
 
-  /**
-   * 注意块的默认标题
-   */
-  warning: string;
+    /**
+     * 提示块的默认标题
+     */
+    tip: string;
 
-  /**
-   * 警告块的默认标题
-   */
-  danger: string;
+    /**
+     * 注意块的默认标题
+     */
+    warning: string;
 
-  /**
-   * 详情块的默认标题
-   */
-  details: string;
-}
-```
+    /**
+     * 警告块的默认标题
+     */
+    danger: string;
 
-国际化配置。
+    /**
+     * 详情块的默认标题
+     */
+    details: string;
+  }
+
+  interface MarkdownEnhanceLocaleConfig {
+    [localePath: string]: MarkdownEnhanceLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+Markdown 增强插件的国际化配置。
 
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/config.html

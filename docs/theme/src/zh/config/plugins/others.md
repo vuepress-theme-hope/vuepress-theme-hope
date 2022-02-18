@@ -37,7 +37,7 @@ tag:
 
 为页面进行字数统计并生成预计的阅读时间。
 
-### readingTime.wordPerminute
+### readingTime.wordPerMinute
 
 - 类型: `number`
 - 默认值: `300`

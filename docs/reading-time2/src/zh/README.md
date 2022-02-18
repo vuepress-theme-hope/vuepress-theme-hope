@@ -90,7 +90,7 @@ module.exports = {
 
 ## 插件选项
 
-### wordPerminute
+### wordPerMinute
 
 - 类型: `number`
 - 默认值: `300`
@@ -99,23 +99,31 @@ module.exports = {
 
 ### locales
 
-```ts
-interface ReadingTimeLocaleData {
-  /**
-   * 字数模板，模板中 `$word` 会被自动替换为字数
-   */
-  word: string;
+- 类型: `ReadingTimeLocaleConfig`
 
-  /**
-   * 小于一分钟文字
-   */
-  less1Minute: string;
+  ```ts
+  interface ReadingTimeLocaleData {
+    /**
+     * 字数模板，模板中 `$word` 会被自动替换为字数
+     */
+    word: string;
 
-  /**
-   * 时间模板
-   */
-  time: string;
-}
-```
+    /**
+     * 小于一分钟文字
+     */
+    less1Minute: string;
 
-国际化配置。
+    /**
+     * 时间模板
+     */
+    time: string;
+  }
+
+  interface ReadingTimeLocaleConfig {
+    [localePath: string]: ReadingTimeLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+阅读时间插件的国际化配置。

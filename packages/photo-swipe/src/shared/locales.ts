@@ -1,7 +1,7 @@
 import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 import type PhotoSwipeDefaultUI from "photoswipe/dist/photoswipe-ui-default";
 
-export interface PhowoSwipeLocaleData {
+export interface PhotoSwipeLocaleData {
   /**
    * Close button label text
    *
@@ -52,4 +52,4 @@ export interface PhowoSwipeLocaleData {
   buttons: PhotoSwipeDefaultUI.ShareButtonData[];
 }
 
-export type PhowoSwipeLocaleConfig = ConvertLocaleConfig<PhowoSwipeLocaleData>;
+export type PhotoSwipeLocaleConfig = ConvertLocaleConfig<PhotoSwipeLocaleData>;
