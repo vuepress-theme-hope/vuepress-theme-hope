@@ -126,7 +126,7 @@ features:
     link: /zh/guide/feature/encrypt/
 
   - title: 主题色切换
-    icon: skin
+    icon: palette
     details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
     link: /zh/guide/interface/theme-color/
 

@@ -1,6 +1,6 @@
 ---
 title: 界面
-icon: skin
+icon: palette
 category:
   - interface
 tag:

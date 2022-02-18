@@ -1,6 +1,6 @@
 ---
 title: Theme Color
-icon: skin
+icon: palette
 category:
   - interface
 tag:

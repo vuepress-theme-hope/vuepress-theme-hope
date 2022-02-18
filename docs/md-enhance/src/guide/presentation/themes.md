@@ -1,6 +1,6 @@
 ---
 title: Themes
-icon: skin
+icon: palette
 ---
 
 <!--lint disable no-duplicate-headings-->

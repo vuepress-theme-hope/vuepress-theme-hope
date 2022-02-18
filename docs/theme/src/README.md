@@ -40,7 +40,7 @@ features:
     link: /guide/feature/encrypt.html
 
   - title: Custom theme color
-    icon: skin
+    icon: palette
     details: Supports custom theme colors and allows users to switch between preset theme colors
     link: /guide/interface/theme-color.html
 

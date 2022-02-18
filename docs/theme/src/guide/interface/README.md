@@ -1,6 +1,6 @@
 ---
 title: Interface
-icon: skin
+icon: palette
 category:
   - interface
 tag:

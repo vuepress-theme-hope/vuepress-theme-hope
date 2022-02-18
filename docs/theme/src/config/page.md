@@ -195,17 +195,31 @@ Whether to enable comments on the current page
 
 Whether to show edit link
 
-<!-- TODO: Improve it -->
-
 ### prev
 
-- Type: `string | false`
+- Type: `AutoLink | string | false`
+
+  ```ts
+  interface AutoLink {
+    text: string;
+    icon: string;
+    link: string;
+  }
+  ```
 
 Previous article link
 
 ### next
 
-- Type: `string | false`
+- Type: `AutoLink |string | false`
+
+  ```ts
+  interface AutoLink {
+    text: string;
+    icon: string;
+    link: string;
+  }
+  ```
 
 Next article link
 

@@ -741,7 +741,7 @@ export default defineSidebarConfig({
     },
     {
       text: "界面",
-      icon: "skin",
+      icon: "palette",
       prefix: "interface/",
       children: ["darkmode", "theme-color", "icon", "accessibility", "others"],
     },
@@ -913,7 +913,7 @@ module.exports = defineSidebarConfig({
     },
     {
       text: "界面",
-      icon: "skin",
+      icon: "palette",
       prefix: "interface/",
       children: ["darkmode", "theme-color", "icon", "accessibility", "others"],
     },

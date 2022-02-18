@@ -1,6 +1,6 @@
 ---
 title: Theme Config
-icon: skin
+icon: palette
 category:
   - basic
 tag:

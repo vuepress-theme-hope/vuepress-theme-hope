@@ -747,7 +747,7 @@ export default defineHopeConfig({
         },
         {
           text: "Interface",
-          icon: "skin",
+          icon: "palette",
           prefix: "interface/",
           children: [
             "darkmode",
@@ -935,7 +935,7 @@ module.exports = defineHopeConfig({
         },
         {
           text: "Interface",
-          icon: "skin",
+          icon: "palette",
           prefix: "interface/",
           children: [
             "darkmode",

@@ -68,7 +68,7 @@ On the project page, you can edit the icons in the project, including adjustment
      "link",
      {
        rel: "stylesheet",
-       href: "//at.alicdn.com/t/font_2410206_kxwb6og9m5.css",
+       href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
      },
    ];
    ```
@@ -115,7 +115,7 @@ Please follow [fontawesome document](https://fontawesome.com/).
 ## Featured Icons
 
 ```html
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_kxwb6og9m5.css" />
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
 ```
 
-<IconDisplay link="//at.alicdn.com/t/font_2410206_kxwb6og9m5.css" />
+<IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />

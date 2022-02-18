@@ -150,18 +150,6 @@ Available values for `ArticleInfo`:
 - `"ReadingTime"`
 - `"Word"`
 
-<!--
-
-TODO: Provide this
-
-### blog.autoExcerpt
-
-- Type: `boolean`
-- Default: `true`
-
-Whether generate excerpt automatically for each article.
- -->
-
 ## Encrypt Config <Badge text="Root only" type="warning" />
 
 ::: note

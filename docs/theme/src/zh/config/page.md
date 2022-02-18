@@ -198,19 +198,33 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 是否显示编辑链接
 
-<!-- TODO: Improve it -->
-
 ### prev
 
 - 类型: `string | false`
 
-上一篇文章链接
+  ```ts
+  interface AutoLink {
+    text: string;
+    icon: string;
+    link: string;
+  }
+  ```
+
+  上一篇文章链接
 
 ### next
 
 - 类型: `string | false`
 
-下一篇文章链接
+  ```ts
+  interface AutoLink {
+    text: string;
+    icon: string;
+    link: string;
+  }
+  ```
+
+  下一篇文章链接
 
 ### footer
 

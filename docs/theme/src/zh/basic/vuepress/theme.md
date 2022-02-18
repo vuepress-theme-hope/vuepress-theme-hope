@@ -1,6 +1,6 @@
 ---
 title: 主题配置
-icon: skin
+icon: palette
 category:
   - basic
 tag:

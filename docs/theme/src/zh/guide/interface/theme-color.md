@@ -1,6 +1,6 @@
 ---
 title: 主题色
-icon: skin
+icon: palette
 category:
   - interface
 tag:

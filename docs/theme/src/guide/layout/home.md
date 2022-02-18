@@ -126,7 +126,7 @@ features:
     link: /guide/feature/encrypt/
 
   - title: Custom theme color
-    icon: skin
+    icon: palette
     details: Supports custom theme colors and allows users to switch between preset theme colors
     link: /guide/interface/theme-color/
 

@@ -150,17 +150,6 @@ tag:
 - `"ReadingTime"`
 - `"Word"`
 
-<!--
-
-TODO: Provide this
-
-### blog.autoExcerpt
-
-- 类型: `boolean`
-- 默认: `true`
-
-是否自动生成摘要 -->
-
 ## 加密配置 <Badge text="仅限 Root" type="warning" />
 
 ::: note
