@@ -71,6 +71,13 @@ export interface HopeThemeNormalPageFrontmatter
   breadcrumb?: boolean;
 
   /**
+   * Whether enable breadcrumb icon
+   *
+   * 是否启用路径导航图标
+   */
+  breadcrumbIcon?: boolean;
+
+  /**
    *
    * Whether enable pageviews
    *

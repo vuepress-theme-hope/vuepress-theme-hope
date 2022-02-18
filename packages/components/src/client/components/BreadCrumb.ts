@@ -1,5 +1,5 @@
 import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
+import { useRouteLocale } from "@vuepress/client";
 import {
   computed,
   defineComponent,
@@ -26,7 +26,7 @@ export default defineComponent({
   name: "BreadCrumb",
 
   props: {
-    show: {
+    enable: {
       type: Boolean,
       default: true,
     },
@@ -43,7 +43,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const pageFrontmatter = usePageFrontmatter();
     const router = useRouter();
     const route = useRoute();
     const routeLocale = useRouteLocale();
@@ -51,21 +50,7 @@ export default defineComponent({
     const config = ref<BreadCrumbConfig[]>([]);
 
     const enable = computed<boolean>(() => {
-      const pageEnable = pageFrontmatter.value.breadcrumb;
-
-      return (
-        ((props.show && pageEnable !== false) || pageEnable === true) &&
-        config.value.length > 1
-      );
-    });
-
-    const iconEnable = computed<boolean>(() => {
-      const pageEnable = pageFrontmatter.value.breadcrumbIcon;
-
-      return (
-        enable.value &&
-        ((props.icon && pageEnable !== false) || pageEnable === true)
-      );
+      return props.enable && config.value.length > 1;
     });
 
     const getBreadCrumbConfig = (): void => {
@@ -132,7 +117,7 @@ export default defineComponent({
                     },
                     () => [
                       // icon
-                      item.icon && iconEnable.value
+                      props.icon && item.icon
                         ? h("i", {
                             class: ["icon", `${props.iconPrefix}${item.icon}`],
                           })

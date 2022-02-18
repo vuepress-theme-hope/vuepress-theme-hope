@@ -31,6 +31,13 @@ export default defineComponent({
           themeLocale.value.breadcrumb !== false)
     );
 
+    const breadcrumbIconEnable = computed(
+      () =>
+        frontmatter.value.breadcrumbIcon ||
+        (frontmatter.value.breadcrumbIcon !== false &&
+          themeLocale.value.breadcrumbIcon !== false)
+    );
+
     const tocEnable = computed(
       () =>
         frontmatter.value.toc ||
@@ -47,7 +54,7 @@ export default defineComponent({
               slots.top?.(),
               h(resolveComponent("BreadCrumb"), {
                 enable: breadcrumbEnable.value,
-                icon: themeLocale.value.breadcrumbIcon,
+                icon: breadcrumbIconEnable.value,
                 iconPrefix: iconPrefix.value,
               }),
               h(PageTitle),
