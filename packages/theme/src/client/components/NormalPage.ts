@@ -46,7 +46,7 @@ export default defineComponent({
           : [
               slots.top?.(),
               h(resolveComponent("BreadCrumb"), {
-                enable: breadcrumbEnable.value,
+                show: breadcrumbEnable.value,
                 icon: themeLocale.value.breadcrumbIcon,
                 iconPrefix: iconPrefix.value,
               }),
