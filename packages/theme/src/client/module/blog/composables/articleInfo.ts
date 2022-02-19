@@ -4,6 +4,7 @@ import {
   getDate,
   getTag,
 } from "@mr-hope/vuepress-shared/lib/client";
+import { usePageLang } from "@vuepress/client";
 import { computed, reactive, Ref } from "vue";
 import { useCategoryMap } from "./categoryMap";
 import { useBlogOptions } from "./options";
@@ -19,7 +20,6 @@ import type {
 import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
 import type { ComputedRef, UnwrapNestedRefs } from "vue";
 import type { ArticleInfo } from "../../../../shared";
-import { usePageLang } from "@vuepress/client";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
@@ -70,9 +70,12 @@ export const useArticleDate = (info: Ref<ArticleInfo>): DateRef => {
   return computed(() => {
     const { date } = info.value;
 
+    console.log(pageLang.value);
+
     return date ? getDate(date, { lang: pageLang.value, type: "date" }) : null;
   });
 };
+
 export const useArticleInfo = (
   info: Ref<ArticleInfo>
 ): UnwrapNestedRefs<ArticleInfoProps> => {

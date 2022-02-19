@@ -2,10 +2,12 @@ import {
   computed,
   defineComponent,
   h,
+  onMounted,
   ref,
   resolveComponent,
   watch,
 } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 import ArticleItem from "@theme-hope/module/blog/components/ArticleItem";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
@@ -28,6 +30,9 @@ export default defineComponent({
   },
 
   setup(props) {
+    const route = useRoute();
+    const router = useRouter();
+
     const blogOptions = useBlogOptions();
 
     const currentPage = ref(1);
@@ -41,6 +46,18 @@ export default defineComponent({
       )
     );
 
+    const updatePage = (page: number): void => {
+      currentPage.value = page;
+
+      const query = { ...route.query };
+
+      if (query.page === page.toString() || (page === 1 && !query.page)) return;
+      if (page === 1) delete query.page;
+      else query.page = page.toString();
+
+      void router.push({ path: route.path, query });
+    };
+
     watch(currentPage, () => {
       // list top border distance
       const distance =
@@ -53,6 +70,12 @@ export default defineComponent({
       }, 100);
     });
 
+    onMounted(() => {
+      const { page } = route.query;
+
+      updatePage(page ? Number(page) : 1);
+    });
+
     return (): VNode =>
       h(
         "div",
@@ -61,16 +84,14 @@ export default defineComponent({
           ? [
               ...currentArticles.value.map(({ info, path }, index) =>
                 h(DropTransition, { delay: index * 0.04 }, () =>
-                  h(ArticleItem, { info, path })
+                  h(ArticleItem, { key: path, info, path })
                 )
               ),
               h(resolveComponent("Pagination"), {
                 currentPage: currentPage.value,
                 perPage: articlePerPage.value,
                 total: props.items.length,
-                onUpdateCurrentPage: (value: number) => {
-                  currentPage.value = value;
-                },
+                onUpdateCurrentPage: updatePage,
               }),
             ]
           : h(EmptyIcon)

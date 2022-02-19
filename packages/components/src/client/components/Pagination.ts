@@ -1,6 +1,5 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { computed, defineComponent, h, onMounted, ref, VNode } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { computed, defineComponent, h, ref, VNode } from "vue";
 
 import type { PaginationLocaleConfig } from "../../shared";
 
@@ -23,9 +22,6 @@ export default defineComponent({
   emits: ["updateCurrentPage"],
 
   setup(props, { emit }) {
-    const route = useRoute();
-    const router = useRouter();
-
     const locale = useLocaleConfig(PAGINATION_LOCALES);
 
     const input = ref("");
@@ -70,18 +66,7 @@ export default defineComponent({
     });
 
     /** Navigate to certain page */
-    const navigate = (page: number): void => {
-      const query = { ...route.query };
-
-      if (query.page === page.toString() || (page === 1 && !query.page)) return;
-
-      emit("updateCurrentPage", page);
-
-      if (page === 1) delete query.page;
-      else query.page = page.toString();
-
-      void router.push({ path: route.path, query });
-    };
+    const navigate = (page: number): void => emit("updateCurrentPage", page);
 
     /** Check and navigate to certain page */
     const jumpPage = (index: string): void => {
@@ -93,12 +78,6 @@ export default defineComponent({
           locale.value.errorText.replace(/\$page/g, totalPages.value.toString())
         );
     };
-
-    onMounted(() => {
-      const { index } = route.query;
-
-      navigate(index ? Number(index) : 1);
-    });
 
     return (): VNode =>
       h(
