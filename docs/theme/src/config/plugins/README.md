@@ -8,7 +8,7 @@ tag:
   - config
 ---
 
-## 目录
+## Catalog
 
 - [Theme Plugins Intro](intro.md)
 

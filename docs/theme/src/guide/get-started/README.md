@@ -7,7 +7,7 @@ tag:
   - intro
 ---
 
-## 目录
+## Catalog
 
 - [Theme intro](intro.md)
 
