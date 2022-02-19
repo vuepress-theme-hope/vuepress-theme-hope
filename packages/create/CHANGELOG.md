@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.28...v2.0.0-alpha.29) (2022-02-19)
+
+### Bug Fixes
+
+- **create:** fix locale language ([23bcf44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/23bcf44fadd6b63c4c4696a8b6a61d11efae0d6a))
+
 # [2.0.0-alpha.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.27...v2.0.0-alpha.28) (2022-02-19)
 
 ### Bug Fixes

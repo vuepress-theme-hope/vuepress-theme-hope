@@ -1,7 +1,7 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "2.0.0-alpha.28",
+  "version": "2.0.0-alpha.29",
   "command": {
     "run": {
       "npmClient": "yarn"
