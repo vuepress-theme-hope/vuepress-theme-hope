@@ -49,7 +49,7 @@ Dangerous container
 Details container
 :::
 
-::: info custom title
+::: info Custom Title
 
 A custom information container with `code`, [link](#markdown).
 
@@ -59,7 +59,7 @@ const a = 1;
 
 :::
 
-::: note custom title
+::: note Custom Title
 
 A custom note container with `code`, [link](#markdown).
 
@@ -69,7 +69,7 @@ const a = 1;
 
 :::
 
-::: tip custom title
+::: tip Custom Title
 
 A custom tip container with `code`, [link](#markdown).
 
@@ -79,7 +79,7 @@ const a = 1;
 
 :::
 
-::: warning custom title
+::: warning Custom Title
 
 A custom warning container with `code`, [link](#markdown).
 
@@ -89,7 +89,7 @@ const a = 1;
 
 :::
 
-::: danger custom Title
+::: danger Custom Title
 
 A custom danger container with `code`, [link](#markdown).
 
@@ -99,7 +99,7 @@ const a = 1;
 
 :::
 
-::: details custom title
+::: details Custom Title
 
 A custom details container with `code`, [link](#markdown).
 
@@ -149,7 +149,7 @@ Dangerous container
 Details container
 :::
 
-::: info custom title
+::: info Custom Title
 
 A custom information container with `code`, [link](#markdown).
 
@@ -159,7 +159,7 @@ const a = 1;
 
 :::
 
-::: note custom title
+::: note Custom Title
 A custom note container with `code`, [link](#markdown).
 
 ```js
@@ -168,7 +168,7 @@ const a = 1;
 
 :::
 
-::: tip custom title
+::: tip Custom Title
 
 A custom tip container with `code`, [link](#markdown).
 
@@ -178,7 +178,7 @@ const a = 1;
 
 :::
 
-::: warning custom title
+::: warning Custom Title
 
 A custom warning container with `code`, [link](#markdown).
 
@@ -188,7 +188,7 @@ const a = 1;
 
 :::
 
-::: danger custom Title
+::: danger Custom Title
 
 A custom danger container with `code`, [link](#markdown).
 
@@ -198,7 +198,7 @@ const a = 1;
 
 :::
 
-::: details custom title
+::: details Custom Title
 
 A custom details container with `code`, [link](#markdown).
 

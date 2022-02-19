@@ -11,7 +11,7 @@ tag:
 
 `vuepress-theme-hope` 允许你启用博客风格的首页。
 
-你需要在相应的页面的 frontmatter 中，设置 `home: true` 和 `layout: Blog` 来使用播客主页。
+你需要在相应的页面的 frontmatter 中，设置 `home: true` 和 `layout: Blog` 来使用博客主页。
 
 <!-- more -->
 

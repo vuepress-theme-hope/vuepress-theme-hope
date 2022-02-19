@@ -57,7 +57,7 @@ Safely use {{ variable }} in markdown.
 
 :::
 
-::: info custom title
+::: info Custom Title
 
 A custom information container with `code`, [link](#markdown).
 
@@ -67,25 +67,25 @@ const a = 1;
 
 :::
 
-::: tip custom title
+::: tip Custom Title
 
 A custom tip container
 
 :::
 
-::: warning custom title
+::: warning Custom Title
 
 A custom warning container
 
 :::
 
-::: danger custom Title
+::: danger Custom Title
 
 A custom danger container
 
 :::
 
-::: details custom title
+::: details Custom Title
 
 A custom details container
 
@@ -100,31 +100,31 @@ Safely use {{ variable }} in markdown.
 
 :::
 
-::: info custom title
+::: info Custom Title
 
 A custom information container
 
 :::
 
-::: tip custom title
+::: tip Custom Title
 
 A custom tip container
 
 :::
 
-::: warning custom title
+::: warning Custom Title
 
 A custom warning container
 
 :::
 
-::: danger custom Title
+::: danger Custom Title
 
 A custom danger container
 
 :::
 
-::: details custom title
+::: details Custom Title
 
 A custom details container
 
