@@ -11,14 +11,6 @@ import type { RouterScrollBehavior } from "vue-router";
 import "./styles/index.scss";
 
 export default defineClientAppEnhance(({ app, router }) => {
-  // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
-  app.component("NavbarSearch", () => {
-    const SearchComponent =
-      app.component("Docsearch") || app.component("SearchBox");
-
-    return SearchComponent ? h(SearchComponent) : null;
-  });
-
   // compat with vuepress-plugin-comment2
   app.component("PageComment", () => {
     const CommentService = app.component("CommentService");

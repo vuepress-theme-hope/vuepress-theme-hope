@@ -7,19 +7,18 @@ import {
   onMounted,
   onUnmounted,
   ref,
+  resolveComponent,
 } from "vue";
 import { useRouter } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
 import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
-import Navbar from "@theme-hope/module/navbar/components/Navbar";
-import Sidebar from "@theme-hope/module/sidebar/components/Sidebar";
 import { useThemeData, useThemeLocaleData } from "@theme-hope/composables";
 import { useGlobalEcrypt } from "@theme-hope/module/encrypt/composables";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
-import type { VNode } from "vue";
+import type { ComponentOptions, VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";
 
 import "../styles/common.scss";
@@ -185,7 +184,7 @@ export default defineComponent({
           : [
               enableNavbar.value
                 ? h(
-                    Navbar,
+                    resolveComponent("Navbar") as ComponentOptions,
                     { onToggleSidebar: () => toggleSidebar() },
                     {
                       left: () => slots.navbarLeft?.(),
@@ -205,7 +204,7 @@ export default defineComponent({
                   : null
               ),
               h(
-                Sidebar,
+                resolveComponent("Sidebar") as ComponentOptions,
                 {},
                 {
                   default: slots.sidebar

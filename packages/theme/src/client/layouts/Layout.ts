@@ -17,10 +17,10 @@ export default defineComponent({
 
     return (): VNode[] => [
       h(SkipLink),
-      h(resolveComponent("CommonWrapper"), {}, () =>
+      h(resolveComponent("CommonWrapper"), () =>
         frontmatter.value.home
           ? h(resolveComponent("HomePage"))
-          : h(FadeSideY, {}, () =>
+          : h(FadeSideY, () =>
               h(resolveComponent("NormalPage"), { key: page.value.path })
             )
       ),
