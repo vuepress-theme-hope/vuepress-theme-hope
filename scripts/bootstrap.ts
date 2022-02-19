@@ -17,8 +17,8 @@ files.forEach((pkgName) => {
       name: `vuepress-plugin-${pkgName}`,
       version,
       description: desc,
-      main: "node/index.js",
-      types: "node/index.d.ts",
+      main: "lib/node/index.js",
+      types: "lib/node/index.d.ts",
       publishConfig: {
         access: "public",
       },
@@ -58,13 +58,13 @@ ${desc}.
 ## Usage
 
 \`\`\`bash
-yarn add vuepress-plugin-${pkgName}
+yarn add vuepress-plugin-${pkgName}@next
 \`\`\`
 
 Or
 
 \`\`\`bash
-npm i vuepress-plugin-${pkgName}
+npm i vuepress-plugin-${pkgName}@next
 \`\`\`
 
 ---
@@ -74,13 +74,13 @@ VuePress 的 ${pkgName} 插件。
 ## 使用
 
 \`\`\`bash
-yarn add vuepress-plugin-${pkgName}
+yarn add vuepress-plugin-${pkgName}@next
 \`\`\`
 
 或
 
 \`\`\`bash
-npm i vuepress-plugin-${pkgName}
+npm i vuepress-plugin-${pkgName}@next
 \`\`\`
 `
     );
