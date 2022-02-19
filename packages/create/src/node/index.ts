@@ -120,7 +120,7 @@ cli
       {
         name: "i18n",
         type: "list",
-        message: message.licenseMessage,
+        message: message.i18nMessage,
         choices: ["Yes", "No"],
       },
     ]);
