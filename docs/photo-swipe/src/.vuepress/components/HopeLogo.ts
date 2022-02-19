@@ -210,14 +210,10 @@ export default defineComponent({
         id: "hero-logo",
         key: "hope-logo",
         style: {
-          dislay: ready.value ? "block" : "none",
+          display: ready.value ? "block" : "none",
           opacity: ready.value ? 1 : 0,
         },
       }),
-      // h("canvas", {
-      //   id: "hero-logo",
-      //   // style: { dislay: ready.value ? "block" : "none" },
-      // }),
     ];
   },
 });
