@@ -1,3 +1,5 @@
+import { addViteOptimizeDeps } from "@mr-hope/vuepress-shared";
+import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import { version } from "../../../../lerna.json";
 
@@ -198,5 +200,22 @@ export default defineHopeConfig({
       },
     ],
     ["add-this", { pubid: "ra-5f829c59e6c6bc9a" }],
+    (_options, app) => {
+      addViteOptimizeDeps(app, [
+        "three",
+        "three/examples/jsm/controls/OrbitControls",
+        "three/examples/jsm/loaders/STLLoader",
+      ]);
+
+      return {
+        name: "theme-enhance",
+        alias: {
+          "@theme-hope/components/HomeHero": path.resolve(
+            __dirname,
+            "./components/HopeHero"
+          ),
+        },
+      };
+    },
   ],
 });

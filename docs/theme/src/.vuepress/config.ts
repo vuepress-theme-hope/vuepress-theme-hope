@@ -1,3 +1,4 @@
+import { addViteOptimizeDeps } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 
@@ -201,9 +202,31 @@ export default defineHopeConfig({
     [
       "@vuepress/plugin-register-components",
       {
-        componentsDir: path.resolve(__dirname, "./components"),
-        componentsPatterns: ["**/*.vue", "**/*.ts"],
+        components: {
+          IconDisplay: path.resolve(__dirname, "./components/IconDisplay"),
+          KatexPlayground: path.resolve(
+            __dirname,
+            "./components/KatexPlayground"
+          ),
+        },
       },
     ],
+    (_options, app) => {
+      addViteOptimizeDeps(app, [
+        "three",
+        "three/examples/jsm/controls/OrbitControls",
+        "three/examples/jsm/loaders/STLLoader",
+      ]);
+
+      return {
+        name: "theme-enhance",
+        alias: {
+          "@theme-hope/components/HomeHero": path.resolve(
+            __dirname,
+            "./components/HopeHero"
+          ),
+        },
+      };
+    },
   ],
 });
