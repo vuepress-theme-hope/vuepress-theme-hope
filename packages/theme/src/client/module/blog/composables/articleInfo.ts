@@ -70,8 +70,6 @@ export const useArticleDate = (info: Ref<ArticleInfo>): DateRef => {
   return computed(() => {
     const { date } = info.value;
 
-    console.log(pageLang.value);
-
     return date ? getDate(date, { lang: pageLang.value, type: "date" }) : null;
   });
 };
