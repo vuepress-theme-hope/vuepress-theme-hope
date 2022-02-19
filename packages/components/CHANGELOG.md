@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.27...v2.0.0-alpha.28) (2022-02-19)
+
+### Bug Fixes
+
+- fix BreadCrumb props ([0602b66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0602b6623b7009963364d36ee809ad2f77fc7297))
+- **theme:** fix ArticleList ([34604c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34604c74acd424ebc30ba2ede3ccbe990cb29851))
+
 # [2.0.0-alpha.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.26...v2.0.0-alpha.27) (2022-02-16)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components

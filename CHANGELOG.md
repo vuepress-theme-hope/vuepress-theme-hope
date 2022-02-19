@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.27...v2.0.0-alpha.28) (2022-02-19)
+
+### Bug Fixes
+
+- **create:** fix command ([ee2c91d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee2c91d9b8eeb6af627457db889dccacb03835d8))
+- fix BreadCrumb props ([0602b66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0602b6623b7009963364d36ee809ad2f77fc7297))
+- **theme:** auto apply `theme: 'hope'` ([3912801](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39128015bf1eb8d6ef763a06254d044c64fa8b7b))
+- **theme:** fix article info locales ([e5cfeb4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5cfeb43c4c16061cc52db9ef5872afcbd469377))
+- **theme:** fix ArticleList ([34604c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34604c74acd424ebc30ba2ede3ccbe990cb29851))
+
+### Features
+
+- **create:** add i18n support ([4605db5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4605db5261b442281ce1f80c7cdc3af122b22c90))
+- **theme:** style updates ([afba602](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/afba602b301fc808ba6edb1d98234bc17ab4553e))
+
 # [2.0.0-alpha.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.26...v2.0.0-alpha.27) (2022-02-16)
 
 ### Bug Fixes

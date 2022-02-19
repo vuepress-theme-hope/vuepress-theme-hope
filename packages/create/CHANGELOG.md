@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.27...v2.0.0-alpha.28) (2022-02-19)
+
+### Bug Fixes
+
+- **create:** fix command ([ee2c91d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee2c91d9b8eeb6af627457db889dccacb03835d8))
+
+### Features
+
+- **create:** add i18n support ([4605db5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4605db5261b442281ce1f80c7cdc3af122b22c90))
+
 # [2.0.0-alpha.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.26...v2.0.0-alpha.27) (2022-02-16)
 
 ### Bug Fixes
