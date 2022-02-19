@@ -7,8 +7,7 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { CopyCodeOptions } from "../shared";
 
 export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
-  if (app.env.isDev)
-    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
   useSassPalettePlugin(app, { id: "hope" });
 

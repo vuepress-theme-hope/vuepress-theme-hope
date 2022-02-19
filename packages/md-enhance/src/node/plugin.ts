@@ -41,8 +41,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       ? options.presentation.plugins
       : [];
 
-  if (app.env.isDev)
-    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
 
   if (flowchartEnable) addViteOptimizeDeps(app, "flowchart.js");
   if (mermaidEnable) addViteOptimizeDeps(app, "mermaid");

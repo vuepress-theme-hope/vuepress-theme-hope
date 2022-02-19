@@ -5,6 +5,7 @@ import { App } from "@vuepress/core";
 
 export const updateBundlerOptions = (app: App): void => {
   addViteOptimizeDeps(app, [
+    "@mr-hope/vuepress-shared/lib/client",
     "@vueuse/core",
     "bcryptjs",
     "body-scroll-lock",
@@ -13,7 +14,6 @@ export const updateBundlerOptions = (app: App): void => {
 
   if (app.env.isDev)
     addViteOptimizeDeps(app, [
-      "@mr-hope/vuepress-shared/lib/client",
       "dayjs",
       "dayjs/plugin/localizedFormat",
       "dayjs/plugin/objectSupport",

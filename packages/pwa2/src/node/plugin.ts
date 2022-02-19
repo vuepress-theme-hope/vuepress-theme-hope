@@ -17,10 +17,11 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   const { base } = app.options;
   const manifest = getManifest(app, options);
 
-  addViteOptimizeDeps(app, ["mitt", "register-service-worker"]);
-
-  if (app.env.isDev)
-    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  addViteOptimizeDeps(app, [
+    "@mr-hope/vuepress-shared/lib/client",
+    "mitt",
+    "register-service-worker",
+  ]);
 
   useCustomDevServer(
     app,
