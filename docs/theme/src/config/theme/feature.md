@@ -60,14 +60,17 @@ Visitors can click on the avatar or name in "Blogger Information" to enter the p
 
 ### blog.medias
 
-- Type: `Record<MediaType, string>`
+- Type: `Record<string, string | [string, string]>`
 - Required: No
 
 Set social links.
 
+- If the social media icon is avaiable below, you can set `MediaName: MediaLink` directly.
+- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaIconSvgString or MediaIconPath]`,
+
 ::: tip Available social media:
 
-The optional values of `MediaType` are as follows:
+The following social medias has built-in icons:
 
 - `'Baidu'`: Baidu
 - `'Bitbucket'`: Bitbucket
@@ -79,7 +82,7 @@ The optional values of `MediaType` are as follows:
 - `'Facebook'`: Facebook
 - `'Flipboard'`: Flipboard
 - `'Gitee'`: Gitee
-- `'Github'`: GitHub
+- `'GitHub'`: GitHub
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: Google mailbox
 - `'Instagram'`: Instagram

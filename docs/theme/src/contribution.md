@@ -35,7 +35,7 @@ The project is a monorepo, managed by `lerna`.
 
 ```
 .
-├── .github → Github config
+├── .github → GitHub config
 ├── .husky → husky config
 │
 ├── demo → Theme demo project

@@ -34,7 +34,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         selectText: "Language",
         ariaLabel: "Select language",
         label: "English",
-        editLinkText: "Edit on Github",
+        editLinkText: "Edit on GitHub",
 
         navbar: [
           { text: "Home", link: "/" },
@@ -69,7 +69,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
     repo: "https://github.com/mister-hope/vuepress-plugin-md-enhance",
     docsDir: "docs",
-    repoLabel: "Github",
+    repoLabel: "GitHub",
     editLinks: true,
     editLinkText: "在 GitHub 上编辑此页",
 

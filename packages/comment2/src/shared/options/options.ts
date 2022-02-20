@@ -43,7 +43,7 @@ import type { WalineOptions } from "./waline";
 //    *
 //    * Default values for supported platforms are:
 //    *
-//    * - 'https://github.com' for Github
+//    * - 'https://github.com' for GitHub
 //    * - 'https://gitlab.com' for Gitlab
 //    * - 'https://bitbucket.org' for Bitbucket
 //    * - 'https://gitee.com' for Gitee

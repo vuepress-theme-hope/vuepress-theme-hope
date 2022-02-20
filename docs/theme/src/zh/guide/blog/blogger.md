@@ -36,7 +36,10 @@ tag:
 
 你也可以通过 `blog.intro` 指定一个个人介绍页地址，点击头像与姓名时会自动进行跳转。
 
-你还可以在 `blog.medias` 这个对象中以 `社交媒体名: 社交媒体链接` 的格式配置你的社交媒体链接。
+你还可以通过 `blog.medias` 这个对象配置你的社交媒体链接。
+
+- 如果社交媒体已在下方列表中，您可以直接设置 `社交媒体名称: 社交媒体地址`。
+- 否则，你应该传入一个元组 `社交媒体名称: [社交媒体地址, 社交媒体 SVG 图标字符串或图标路径]`,
 
 ::: tip 可用的社交媒体:
 
@@ -50,7 +53,7 @@ tag:
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
 - `'Gitee'`: Gitee
-- `'Github'`: GitHub
+- `'GitHub'`: GitHub
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
 - `'Instagram'`: Instagram
@@ -72,11 +75,80 @@ tag:
 
 :::
 
-::: note
+::::: details 例子
 
-我们计划在未来的版本中重建此功能，以便：
+:::: code-group
 
-- 您可以提供自己的图标并使用您喜欢的媒体
-- 未使用的图标不会被注入。
+::: code-group-item TS
+
+```ts {2,4,6}
+// .vuepress/config.ts
+import { path } from "@vuepress/utils";
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  themeConfig: {
+    blog: {
+      media: {
+        // GitHub 已经内置了图标
+        GitHub: "https://github.com/Mister-Hope",
+        // 一个自定义媒体 MediaX (仅作示例)
+        MediaX: [
+          // 链接
+          "https://mediax.com/UserX/",
+          // 图标 SVG 字符串
+          "<svg ....</svg>",
+        ],
+        // 一个自定义媒体 MediaY (仅作示例)
+        MediaY: [
+          // 链接
+          "https://mediay.com/UserY/",
+          // 图标地址
+          path.resolve(__dirname, "icons/mediay.svg"),
+        ],
+      },
+    },
+  },
+});
+```
 
 :::
+
+::: code-group-item JS
+
+```js {2,4,6}
+// .vuepress/config.js
+const { path } = require("@vuepress/utils");
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  themeConfig: {
+    blog: {
+      media: {
+        // GitHub 已经内置了图标
+        GitHub: "https://github.com/Mister-Hope",
+        // 一个自定义媒体 MediaX (仅作示例)
+        MediaX: [
+          // 链接
+          "https://mediax.com/UserX/",
+          // 图标 SVG 字符串
+          "<svg ....</svg>",
+        ],
+        // 一个自定义媒体 MediaY (仅作示例)
+        MediaY: [
+          // 链接
+          "https://mediay.com/UserY/",
+          // 图标地址
+          path.resolve(__dirname, "icons/mediay.svg"),
+        ],
+      },
+    },
+  },
+});
+```
+
+:::
+
+::::
+
+:::::

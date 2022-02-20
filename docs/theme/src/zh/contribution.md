@@ -35,7 +35,7 @@ yarn
 
 ```
 .
-├── .github → Github 配置
+├── .github → GitHub 配置
 ├── .husky → husky 配置
 │
 ├── demo → 主题演示项目

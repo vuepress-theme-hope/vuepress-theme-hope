@@ -36,7 +36,10 @@ You can use `blog.description` to set your own introduction, motto or slogan.
 
 You can also specify a personal introduction page link through `blog.intro`, so when users click on the avatar and name, they will be direct to that page.
 
-You can also config your social media links with `blog.medias` option in the format `medianame: medialink` with an object.
+You can also config your social media links with `blog.medias` option.
+
+- If the social media icon is avaiable below, you can set `MediaName: MediaLink` directly.
+- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaIconSvgString or MediaIconPath]`,
 
 ::: tip Available social media:
 
@@ -50,7 +53,7 @@ You can also config your social media links with `blog.medias` option in the for
 - `'Facebook'`
 - `'Flipboard'`
 - `'Gitee'`
-- `'Github'`
+- `'GitHub'`
 - `'Gitlab'`
 - `'Gmail'`
 - `'Instagram'`
@@ -72,11 +75,80 @@ You can also config your social media links with `blog.medias` option in the for
 
 :::
 
-::: note
+::::: details Example
 
-We are planning to rebuild this feature in furture verions so that:
+:::: code-group
 
-- you can provide your own icons and use media you like
-- Icons not used won't be injected.
+::: code-group-item TS
+
+```ts {2,4,6}
+// .vuepress/config.ts
+import { path } from "@vuepress/utils";
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  themeConfig: {
+    blog: {
+      media: {
+        // GitHub Icon is available
+        GitHub: "https://github.com/Mister-Hope",
+        // A custom Media called "MediaX" (just an example)
+        MediaX: [
+          // link
+          "https://mediax.com/UserX/",
+          // icon string
+          "<svg ....</svg>",
+        ],
+        // A custom Media called "MediaY" (just an example)
+        MediaY: [
+          // link
+          "https://mediay.com/UserY/",
+          // icon path
+          path.resolve(__dirname, "icons/mediay.svg"),
+        ],
+      },
+    },
+  },
+});
+```
 
 :::
+
+::: code-group-item JS
+
+```js {2,4,6}
+// .vuepress/config.js
+const { path } = require("@vuepress/utils");
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  themeConfig: {
+    blog: {
+      media: {
+        // GitHub Icon is available
+        GitHub: "https://github.com/Mister-Hope",
+        // A custom Media called "MediaX" (just an example)
+        MediaX: [
+          // link
+          "https://mediax.com/UserX/",
+          // icon string
+          "<svg ....</svg>",
+        ],
+        // A custom Media called "MediaY" (just an example)
+        MediaY: [
+          // link
+          "https://mediay.com/UserY/",
+          // icon path
+          path.resolve(__dirname, "icons/mediay.svg"),
+        ],
+      },
+    },
+  },
+});
+```
+
+:::
+
+::::
+
+:::::

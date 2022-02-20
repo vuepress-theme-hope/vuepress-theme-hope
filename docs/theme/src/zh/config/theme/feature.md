@@ -65,9 +65,12 @@ tag:
 
 博主的媒体链接配置。
 
-::: tip 可用的社交媒体:
+- 如果社交媒体已在下方列表中，您可以直接设置 `社交媒体名称: 社交媒体地址`。
+- 否则，你应该传入一个元组 `社交媒体名称: [社交媒体地址, 社交媒体 SVG 图标字符串或图标路径]`,
 
-`MediaType` 的可选值如下:
+::: tip 可用的社交媒体
+
+以下社交媒体具有内置图标:
 
 - `'Baidu'`: 百度
 - `'Bitbucket'`: Bitbucket
@@ -79,7 +82,7 @@ tag:
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
 - `'Gitee'`: Gitee
-- `'Github'`: GitHub
+- `'GitHub'`: GitHub
 - `'Gitlab'`: Gitlab
 - `'Gmail'`: 谷歌邮箱
 - `'Instagram'`: Instagram
