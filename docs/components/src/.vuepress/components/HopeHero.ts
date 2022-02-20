@@ -3,11 +3,11 @@ import { isArray } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import { DropTransition } from "@theme-hope/components/transitions";
 import HopeLogo from "./HopeLogo";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 export default defineComponent({
   name: "HopeHero",

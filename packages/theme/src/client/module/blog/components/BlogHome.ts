@@ -5,7 +5,7 @@ import BlogHero from "@theme-hope/module/blog/components/BlogHero";
 import InfoPanel from "@theme-hope/module/blog/components/InfoPanel";
 import ProjectPanel from "@theme-hope/module/blog/components/ProjectPanel";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import { DropTransition } from "@theme-hope/components/transitions";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 
 import { useArticles } from "@theme-hope/module/blog/composables";

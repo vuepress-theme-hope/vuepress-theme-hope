@@ -5,7 +5,7 @@ import {
 } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import { DropTransition } from "@theme-hope/components/transitions";
 import defaultHeroImagePath from "../assets/hero.jpg";
 
 import type { VNode } from "vue";

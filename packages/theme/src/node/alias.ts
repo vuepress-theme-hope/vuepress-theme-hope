@@ -2,22 +2,13 @@ import { fs, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 
-const deepReadDir = (base: string, dir = ""): string[] => {
-  const dirPath = path.resolve(base, dir);
-  const files = fs.readdirSync(dirPath);
-
-  return files
-    .map((file) =>
-      fs.statSync(path.join(dirPath, file)).isDirectory()
-        ? deepReadDir(base, path.join(dir, file))
-        : [`${dir ? `${dir}/` : ""}${file}`]
-    )
-    .flat();
-};
-
 const getDirAlias = (dir: string): [string, string][] =>
-  deepReadDir(path.resolve(__dirname, "../client", dir))
-    .filter((file) => file.endsWith(".js") || file.endsWith(".vue"))
+  fs
+    .readdirSync(path.resolve(__dirname, "../client", dir))
+    .filter(
+      (file) =>
+        file.endsWith(".js") || file.endsWith(".vue") || !file.includes(".")
+    )
     .map<[string, string]>((file) => [
       `@theme-hope/${dir}/${
         file.endsWith(".js") ? file.replace(/(?:\/index)?\.js$/, "") : file

@@ -6,7 +6,7 @@ import ArticleType from "@theme-hope/module/blog/components/ArticleType";
 import CategoryList from "@theme-hope/module/blog/components/CategoryList";
 import TagList from "@theme-hope/module/blog/components/TagList";
 import TimelineItems from "@theme-hope/module/blog/components/TimelineItems";
-import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import { DropTransition } from "@theme-hope/components/transitions";
 import {
   useArticles,
   useCategoryMap,

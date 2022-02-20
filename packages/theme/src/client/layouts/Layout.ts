@@ -1,7 +1,7 @@
 import { defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
-import FadeSideY from "@theme-hope/components/transitions/FadeSlideY";
+import { FadeSlideY } from "@theme-hope/components/transitions";
 import SkipLink from "@theme-hope/components/SkipLink";
 
 import type { VNode } from "vue";
@@ -20,7 +20,7 @@ export default defineComponent({
       h(resolveComponent("CommonWrapper"), () =>
         frontmatter.value.home
           ? h(resolveComponent("HomePage"))
-          : h(FadeSideY, () =>
+          : h(FadeSlideY, () =>
               h(resolveComponent("NormalPage"), { key: page.value.path })
             )
       ),

@@ -1,7 +1,7 @@
 import { defineComponent, h } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import { DropTransition } from "@theme-hope/components/transitions";
 import HomeFeatures from "@theme-hope/components/HomeFeatures";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import HomeHero from "@theme-hope/components/HomeHero";

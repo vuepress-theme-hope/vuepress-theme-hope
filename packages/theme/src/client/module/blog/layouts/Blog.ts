@@ -6,7 +6,7 @@ import BlogPage from "@theme-hope/module/blog/components/BlogPage";
 import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
 import InfoList from "@theme-hope/module/blog/components/InfoList";
 import InfoPanel from "@theme-hope/module/blog/components/InfoPanel";
-import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import { DropTransition } from "@theme-hope/components/transitions";
 import SkipLink from "@theme-hope/components/SkipLink";
 
 import type { ComponentOptions, VNode } from "vue";

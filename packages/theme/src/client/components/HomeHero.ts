@@ -7,7 +7,7 @@ import { isArray } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import DropTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import { DropTransition } from "@theme-hope/components/transitions";
 
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
