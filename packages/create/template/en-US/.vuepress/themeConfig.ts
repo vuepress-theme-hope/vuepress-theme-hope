@@ -30,6 +30,7 @@ export default defineThemeConfig({
 
   blog: {
     description: "A FrontEnd programmer",
+    intro: "/intro.html",
     medias: {
       Baidu: "https://example.com",
       Bitbucket: "https://example.com",

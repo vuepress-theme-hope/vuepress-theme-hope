@@ -66,6 +66,7 @@ export default defineThemeConfig({
 
       blog: {
         description: "A FrontEnd programmer",
+        intro: "/intro.html",
       },
 
       metaLocales: {
@@ -89,6 +90,7 @@ export default defineThemeConfig({
 
       blog: {
         description: "一个前端开发者",
+        intro: "/zh/intro.html",
       },
 
       // page meta
