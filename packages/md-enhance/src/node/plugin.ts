@@ -1,4 +1,8 @@
-import { addViteOptimizeDeps, noopModule } from "@mr-hope/vuepress-shared";
+import {
+  addViteOptimizeDeps,
+  addViteSsrNoExternal,
+  noopModule,
+} from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -41,14 +45,16 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       ? options.presentation.plugins
       : [];
 
-  addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  if (app.env.isBuild)
+    addViteSsrNoExternal(app, "@mr-hope/vuepress-shared/lib/client");
 
   if (flowchartEnable) addViteOptimizeDeps(app, "flowchart.js");
   if (mermaidEnable) addViteOptimizeDeps(app, "mermaid");
   if (presentationEnable)
     addViteOptimizeDeps(app, [
-      "reveal.js",
-      "reveal.js",
+      "reveal.js/dist/reveal.esm.js",
       "reveal.js/plugin/markdown/markdown.esm.js",
       "reveal.js/plugin/highlight/highlight.esm.js",
       "reveal.js/plugin/math/math.esm.js",

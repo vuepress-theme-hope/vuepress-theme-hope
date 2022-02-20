@@ -1,11 +1,13 @@
-import { addViteOptimizeDeps } from "@mr-hope/vuepress-shared";
+import {
+  addViteOptimizeDeps,
+  addViteSsrNoExternal,
+} from "@mr-hope/vuepress-shared";
 import { handleWebpackOptions } from "./encrypt";
 
 import { App } from "@vuepress/core";
 
 export const updateBundlerOptions = (app: App): void => {
   addViteOptimizeDeps(app, [
-    "@mr-hope/vuepress-shared/lib/client",
     "@vueuse/core",
     "bcryptjs",
     "body-scroll-lock",
@@ -14,12 +16,16 @@ export const updateBundlerOptions = (app: App): void => {
 
   if (app.env.isDev)
     addViteOptimizeDeps(app, [
+      "@mr-hope/vuepress-shared/lib/client",
       "dayjs",
       "dayjs/plugin/localizedFormat",
       "dayjs/plugin/objectSupport",
       "dayjs/plugin/timezone",
       "dayjs/plugin/utc",
     ]);
+
+  if (app.env.isBuild)
+    addViteSsrNoExternal(app, "@mr-hope/vuepress-shared/lib/client");
 
   handleWebpackOptions(app);
 };

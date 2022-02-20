@@ -1,5 +1,9 @@
 import { path } from "@vuepress/utils";
-import { addViteOptimizeDeps, getLocales } from "@mr-hope/vuepress-shared";
+import {
+  addViteOptimizeDeps,
+  addViteSsrNoExternal,
+  getLocales,
+} from "@mr-hope/vuepress-shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { photoSwipeLocales } from "./locales";
 
@@ -8,10 +12,14 @@ import type { PhotoSwipeOptions } from "../shared";
 
 export const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
   addViteOptimizeDeps(app, [
-    "@mr-hope/vuepress-shared/lib/client",
     "photoswipe",
     "photoswipe/dist/photoswipe-ui-default",
   ]);
+
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  if (app.env.isBuild)
+    addViteSsrNoExternal(app, "@mr-hope/vuepress-shared/lib/client");
 
   useSassPalettePlugin(app, { id: "hope" });
 

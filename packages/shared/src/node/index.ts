@@ -1,4 +1,3 @@
-export * from "./addViteOptimize";
 export * from "./constant";
 export * from "./devServer";
 export * from "./locales";

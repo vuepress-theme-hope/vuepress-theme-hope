@@ -1,6 +1,7 @@
 import { path } from "@vuepress/utils";
 import {
   addViteOptimizeDeps,
+  addViteSsrNoExternal,
   getLocales,
   useCustomDevServer,
 } from "@mr-hope/vuepress-shared";
@@ -17,11 +18,12 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   const { base } = app.options;
   const manifest = getManifest(app, options);
 
-  addViteOptimizeDeps(app, [
-    "@mr-hope/vuepress-shared/lib/client",
-    "mitt",
-    "register-service-worker",
-  ]);
+  addViteOptimizeDeps(app, ["mitt", "register-service-worker"]);
+
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  if (app.env.isBuild)
+    addViteSsrNoExternal(app, "@mr-hope/vuepress-shared/lib/client");
 
   useCustomDevServer(
     app,

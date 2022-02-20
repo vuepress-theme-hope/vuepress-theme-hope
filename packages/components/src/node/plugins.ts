@@ -1,5 +1,6 @@
 import {
   addViteOptimizeDeps,
+  addViteSsrNoExternal,
   getLocales,
   noopModule,
 } from "@mr-hope/vuepress-shared";
@@ -15,7 +16,10 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { ComponentOptions } from "../shared";
 
 export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
-  addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  if (app.env.isBuild)
+    addViteSsrNoExternal(app, "@mr-hope/vuepress-shared/lib/client");
 
   if (options.backToTop) addViteOptimizeDeps(app, "lodash.debounce");
   if (options.fullScreen) addViteOptimizeDeps(app, "screenfull");

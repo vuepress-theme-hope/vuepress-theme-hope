@@ -1,4 +1,8 @@
 import {
+  addViteOptimizeDeps,
+  addViteSsrNoExternal,
+} from "@mr-hope/vuepress-shared";
+import {
   preparePagesComponents,
   preparePagesData,
   preparePagesRoutes,
@@ -10,9 +14,13 @@ import { getPageMap, logger } from "./utils";
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { BlogOptions } from "../shared";
 
-export const blogPlugin: Plugin<BlogOptions> = (options) => {
-  const { getInfo = (): Record<string, never> => ({}), metaScope = "_blog" } =
-    options;
+export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
+  if (app.env.isDev)
+    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+  if (app.env.isBuild)
+    addViteSsrNoExternal(app, "@mr-hope/vuepress-shared/lib/client");
+
+  const { metaScope = "_blog" } = options;
 
   let generatePages: string[] = [];
 
@@ -24,6 +32,8 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
     }),
 
     extendsPage(page): void {
+      const { getInfo = (): Record<string, never> => ({}) } = options;
+
       page.routeMeta = {
         ...(metaScope === "" ? getInfo(page) : { [metaScope]: getInfo(page) }),
         ...page.routeMeta,
