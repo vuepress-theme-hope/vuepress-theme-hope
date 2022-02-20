@@ -71,9 +71,9 @@ export const writeSocialMediaIcons = async (
         const result = checkIcon(key, value);
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        if (result) themeConfig.blog.medias![key] = result;
+        if (result) themeConfig.locales![locales].blog!.medias![key] = result;
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        else delete themeConfig.blog.medias![key];
+        else delete themeConfig.locales![locales].blog!.medias![key];
       }
     );
   }
