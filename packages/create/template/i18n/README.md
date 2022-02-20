@@ -7,7 +7,7 @@ heroImage: /logo.svg
 heroText: the name of your blog
 tagline: You can put your slogan here
 heroFullScreen: true
-project:
+projects:
   - type: project
     name: project name
     desc: project detailed description
