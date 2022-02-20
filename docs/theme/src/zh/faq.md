@@ -33,7 +33,7 @@ category:
 
 如果你确定某处有问题，请在 GitHub 上 [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) 并指出问题在完整的具体细节。
 
-## 不能用 Vite 构建
+<!-- ## 不能用 Vite 构建
 
 这是 `@vuepress/bundler-vite` 中的一个已知问题，请参阅 [Issue 585 评论](https://github.com/vuepress/vuepress-next/issues/585#issuecomment-1046064242)。
 
@@ -41,7 +41,7 @@ category:
 
 你现在可以同时安装 `vuepress-vite` 和 `vuepress-webpack` 并使用 `vuepress-vite dev` `vuepress-webpack build` 作为解决方法。
 
-:::
+::: -->
 
 ## Vite 冷启动速度慢
 

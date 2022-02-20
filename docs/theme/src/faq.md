@@ -1,5 +1,5 @@
 ---
-title: Common problems
+title: FAQ
 icon: question
 category:
   - FAQ
@@ -29,7 +29,7 @@ If the issue exists or there is somthing you don’t know how to solve, welcome 
 
 If you are sure there is an issue somewhere, please [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) on GitHub and point out the issue in full specific details.
 
-## Can not built with Vite
+<!-- ## Can not built with Vite
 
 This is a known bug in `@vuepress/bundler-vite`, see [Issue 585 Comment](https://github.com/vuepress/vuepress-next/issues/585#issuecomment-1046064242).
 
@@ -37,7 +37,7 @@ This is a known bug in `@vuepress/bundler-vite`, see [Issue 585 Comment](https:/
 
 You can install both `vuepress-vite` and `vuepress-webpack` and use `vuepress-vite dev` `vuepress-webpack build` as a workaround now.
 
-:::
+::: -->
 
 ## Slow in a cold boot with Vite
 
