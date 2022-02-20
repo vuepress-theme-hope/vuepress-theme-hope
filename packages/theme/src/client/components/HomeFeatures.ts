@@ -1,5 +1,5 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
-import { isArray, isLinkHttp } from "@vuepress/shared";
+import { isArray, isLinkExternal, isLinkHttp } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
@@ -48,15 +48,26 @@ export default defineComponent({
               ];
 
               return feature.link
-                ? h(
-                    RouterLink,
-                    {
-                      class: "feature link",
-                      to: feature.link,
-                      role: "navigation",
-                    },
-                    () => children
-                  )
+                ? isLinkExternal(feature.link)
+                  ? h(
+                      "a",
+                      {
+                        class: "feature link",
+                        href: feature.link,
+                        role: "navigation",
+                        target: "_blank",
+                      },
+                      children
+                    )
+                  : h(
+                      RouterLink,
+                      {
+                        class: "feature link",
+                        to: feature.link,
+                        role: "navigation",
+                      },
+                      () => children
+                    )
                 : h("div", { class: "feature" }, children);
             })
           )
