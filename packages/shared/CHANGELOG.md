@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.29...v2.0.0-alpha.30) (2022-02-20)
+
+### Features
+
+- add `addViteSsrNoExternal` ([5f0d58a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f0d58a310485a178e1cf601534ae18cf7f48e40))
+
 # [2.0.0-alpha.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.28...v2.0.0-alpha.29) (2022-02-19)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared

@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "2.0.0-alpha.29",
+  "version": "2.0.0-alpha.30",
   "description": "Components plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -41,7 +41,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.29",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.30",
     "@types/lodash.debounce": "^4.0.6",
     "@vuepress/client": "2.0.0-beta.35",
     "@vuepress/plugin-theme-data": "2.0.0-beta.35",
@@ -51,8 +51,8 @@
     "screenfull": "^5.2.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
-    "vuepress-plugin-reading-time2": "2.0.0-alpha.29",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.29"
+    "vuepress-plugin-reading-time2": "2.0.0-alpha.30",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.30"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.35"

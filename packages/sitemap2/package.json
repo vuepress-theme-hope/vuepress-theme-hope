@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sitemap2",
-  "version": "2.0.0-alpha.29",
+  "version": "2.0.0-alpha.30",
   "description": "Sitemap plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -40,7 +40,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.29",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.30",
     "@vuepress/core": "2.0.0-beta.35",
     "@vuepress/utils": "2.0.0-beta.35",
     "sitemap": "^7.1.1"

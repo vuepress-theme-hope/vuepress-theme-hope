@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.29...v2.0.0-alpha.30) (2022-02-20)
+
+### Bug Fixes
+
+- **md-enhance:** use esm version of reveal.js ([b6cd66b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b6cd66b6e1ad49089e684ff97fc39e97185e8ce2))
+- **theme:** fix blogger avatar size ([a3863d1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a3863d1ee4c94d295744a92595b2e5cd4eba5168))
+- **theme:** fix homepage feature external links ([389ed7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/389ed7e5cc4aece63d641782a74ddf84ca1d5eef))
+- **theme:** fix pageInfo issue when setting `article: false` ([1c10097](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1c1009793464dbcb57cf6e2fd50c40627967d012))
+- **theme:** fix typos in socialMedia ([49745fd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/49745fd436aa4bbc503c4508f710423663b0ea2b))
+- **theme:** refresh article list with keys ([5490e7f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5490e7fdd21a63f852a654dd1f8b51fa5bb5075c))
+
+### Features
+
+- add `addViteSsrNoExternal` ([5f0d58a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f0d58a310485a178e1cf601534ae18cf7f48e40))
+- **theme:** improve article item dom ([cf3b9de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf3b9de76bea41b2939abd6f26e0e447ed072447))
+- **theme:** make socialMedia treeshakable ([af42408](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/af4240808b865c309f3643d369634d46cf3ced7f))
+
 # [2.0.0-alpha.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.28...v2.0.0-alpha.29) (2022-02-19)
 
 ### Bug Fixes
