@@ -1,4 +1,8 @@
-import { addViteOptimizeDeps } from "@mr-hope/vuepress-shared";
+import {
+  includeViteOptimizeDeps,
+  addViteSsrNoExternal,
+  excludeViteOptimizeDeps,
+} from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
@@ -11,10 +15,13 @@ export const lightgalleryPlugin: Plugin<LightGalleryOptions> = (
 ) => {
   const plugins = options.plugins || ["pager", "share", "zoom"];
 
-  addViteOptimizeDeps(app, [
+  includeViteOptimizeDeps(app, [
     "lightgallery",
     ...plugins.map((name) => `lightgallery/plugins/${name}`),
   ]);
+
+  addViteSsrNoExternal(app, "vuepress-plugin-lightgallery");
+  excludeViteOptimizeDeps(app, "vuepress-plugin-lightgallery");
 
   useSassPalettePlugin(app, { id: "hope" });
 

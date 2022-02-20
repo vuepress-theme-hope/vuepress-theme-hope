@@ -1,4 +1,4 @@
-import { addViteOptimizeDeps } from "@mr-hope/vuepress-shared";
+import { includeViteOptimizeDeps } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 
@@ -175,7 +175,7 @@ export default defineHopeConfig({
     ],
     ["lightgallery", { selector: ".theme-hope-content :not(a) > img" }],
     (_options, app) => {
-      addViteOptimizeDeps(app, [
+      includeViteOptimizeDeps(app, [
         "three",
         "three/examples/jsm/controls/OrbitControls",
         "three/examples/jsm/loaders/STLLoader",

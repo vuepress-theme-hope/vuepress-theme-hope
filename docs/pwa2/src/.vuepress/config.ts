@@ -1,4 +1,4 @@
-import { addViteOptimizeDeps } from "@mr-hope/vuepress-shared";
+import { includeViteOptimizeDeps } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import { version } from "../../../../lerna.json";
@@ -214,7 +214,7 @@ export default defineHopeConfig({
       },
     ],
     (_options, app) => {
-      addViteOptimizeDeps(app, [
+      includeViteOptimizeDeps(app, [
         "three",
         "three/examples/jsm/controls/OrbitControls",
         "three/examples/jsm/loaders/STLLoader",

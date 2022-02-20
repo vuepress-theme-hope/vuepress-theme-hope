@@ -1,6 +1,7 @@
 import {
-  addViteOptimizeDeps,
   addViteSsrNoExternal,
+  includeViteOptimizeDeps,
+  excludeViteOptimizeDeps,
 } from "@mr-hope/vuepress-shared";
 import {
   preparePagesComponents,
@@ -16,9 +17,13 @@ import type { BlogOptions } from "../shared";
 
 export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
   if (app.env.isDev)
-    addViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
-  if (app.env.isBuild)
-    addViteSsrNoExternal(app, "@mr-hope/vuepress-shared/lib/client");
+    includeViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+
+  addViteSsrNoExternal(app, [
+    "@mr-hope/vuepress-shared",
+    "vuepress-plugin-blog2",
+  ]);
+  excludeViteOptimizeDeps(app, "vuepress-plugin-blog2");
 
   const { metaScope = "_blog" } = options;
 
