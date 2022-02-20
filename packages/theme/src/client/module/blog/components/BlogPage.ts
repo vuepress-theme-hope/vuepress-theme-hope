@@ -1,5 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
+import { useRoute } from "vue-router";
 
 import ArticleList from "@theme-hope/module/blog/components/ArticleList";
 import ArticleType from "@theme-hope/module/blog/components/ArticleType";
@@ -35,6 +36,7 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<BlogPluginFrontmatter>();
+    const route = useRoute();
     const articles = useArticles();
     const categoryMap = useCategoryMap();
     const encryptedArticles = useEncryptedArticles();
@@ -87,7 +89,7 @@ export default defineComponent({
         h(DropTransition, { delay: 0.24 }, () =>
           frontmatter.value.blog?.key === "timeline"
             ? h(TimelineItems)
-            : h(ArticleList, { items: items.value })
+            : h(ArticleList, { key: route.path, items: items.value })
         ),
       ]);
   },
