@@ -78,7 +78,7 @@ export default defineComponent({
             stlLoader.load(withBase("/assets/model/logo1.stl"), (geometry) => {
               const material = new THREE.MeshPhysicalMaterial({
                 color: 0x284c39,
-                metalness: 0.5,
+                metalness: 0.45,
                 roughness: 0.5,
                 roughnessMap: roughnessTexture,
                 displacementScale: 0.15,
@@ -100,7 +100,7 @@ export default defineComponent({
             stlLoader.load(withBase("/assets/model/logo2.stl"), (geometry) => {
               const material = new THREE.MeshPhysicalMaterial({
                 color: 0x35495e,
-                metalness: 0.75,
+                metalness: 0.7,
                 roughness: 0.5,
                 roughnessMap: roughnessTexture,
                 displacementScale: 0.15,
