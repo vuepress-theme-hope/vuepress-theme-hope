@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent, toRef } from "vue";
-import { useRouter } from "vue-router";
+import { RouterLink } from "vue-router";
 
 import {
   LockIcon,
@@ -27,7 +27,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const router = useRouter();
     const info = toRef(props, "info");
     const { getPathEncryptStatus } = usePathEncrypt();
 
@@ -47,28 +46,24 @@ export default defineComponent({
           info.value.sticky ? h(StickyIcon) : null,
           h(
             "header",
-            {
-              class: "title",
-              tabindex: "0",
-              onKeydown: (event: KeyboardEvent) => {
-                if (event.key === "Enter") {
-                  event.preventDefault();
-                  void router.push(props.path);
-                }
+            { class: "title" },
+            h(
+              RouterLink,
+              {
+                to: props.path,
               },
-              onClick: () => router.push(props.path),
-            },
-            [
-              isEncrypted.value ? h(LockIcon) : null,
-              info.value.type === "slide" ? h(SlideIcon) : null,
-              h("span", { property: "headline" }, info.value.title),
-              info.value.cover
-                ? h("meta", {
-                    property: "image",
-                    content: withBase(info.value.cover),
-                  })
-                : null,
-            ]
+              () => [
+                isEncrypted.value ? h(LockIcon) : null,
+                info.value.type === "slide" ? h(SlideIcon) : null,
+                h("span", { property: "headline" }, info.value.title),
+                info.value.cover
+                  ? h("meta", {
+                      property: "image",
+                      content: withBase(info.value.cover),
+                    })
+                  : null,
+              ]
+            )
           ),
           info.value.excerpt
             ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
