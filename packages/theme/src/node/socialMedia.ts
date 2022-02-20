@@ -31,7 +31,7 @@ export const writeSocialMediaIcons = async (
       return false;
     }
 
-    if (Array.isArray(key)) {
+    if (Array.isArray(value)) {
       // it's a svg string
       if (value[1].startsWith("<svg")) {
         icons[key] = value[1];
