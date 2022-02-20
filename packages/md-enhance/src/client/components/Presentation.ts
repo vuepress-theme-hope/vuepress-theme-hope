@@ -1,9 +1,10 @@
-import { defineComponent, h, onMounted, ref } from "vue";
+import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
 import { LoadingIcon } from "./icons";
 
-import type { RevealOptions } from "reveal.js";
 import type { PropType, VNode } from "vue";
+import type Reveal from "reveal.js/dist/reveal.esm.js";
+import type { RevealOptions } from "reveal.js/dist/reveal.esm.js";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 declare const REVEAL_CONFIG: Partial<RevealOptions>;
@@ -42,6 +43,8 @@ export default defineComponent({
     const presentationContainer = ref<HTMLElement>();
     const presentationElement = ref<HTMLElement>();
 
+    let reveal: Reveal;
+
     onMounted(() => {
       if (presentationElement.value) {
         code.value = decodeURIComponent(
@@ -51,9 +54,15 @@ export default defineComponent({
         presentationElement.value.setAttribute("id", props.id);
         presentationElement.value.setAttribute("data-theme", props.theme);
 
-        const promises: [Promise<void>, Promise<typeof import("reveal.js")>] = [
+        const promises: [
+          Promise<void>,
+          Promise<typeof import("reveal.js/dist/reveal.esm.js")>,
+          ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[]
+        ] = [
           new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-          import(/* webpackChunkName: "reveal" */ "reveal.js"),
+          import(
+            /* webpackChunkName: "reveal" */ "reveal.js/dist/reveal.esm.js"
+          ),
         ];
 
         promises.push(
@@ -119,13 +128,9 @@ export default defineComponent({
         //   );
 
         void Promise.all(promises).then(([, revealJS, ...plugins]) => {
-          const reveal = new revealJS.default(
+          reveal = new revealJS.default(
             presentationElement.value as HTMLElement,
-            {
-              plugins: plugins.map(
-                (plugin) => (plugin as typeof import("reveal.js")).default
-              ),
-            }
+            { plugins: plugins.map((plugin) => plugin.default) }
           );
 
           void reveal
@@ -145,6 +150,11 @@ export default defineComponent({
             });
         });
       }
+    });
+
+    onBeforeUnmount(() => {
+      reveal?.removeEventListeners();
+      reveal?.unloadSlide(presentationElement.value as HTMLElement);
     });
 
     return (): VNode =>
