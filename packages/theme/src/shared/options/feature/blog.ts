@@ -1,5 +1,4 @@
 import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
-import type { MediaType } from "../socialMedia";
 
 export interface HopeThemeBlogLocaleData {
   /** 文章文字 */
@@ -82,7 +81,7 @@ export interface HopeThemeBlogOptions {
    * }
    * ```
    */
-  medias?: Partial<Record<MediaType, string>>;
+  medias?: Record<string, [string, string] | string>;
 
   /**
    * Whether cliping the avatar with round shape

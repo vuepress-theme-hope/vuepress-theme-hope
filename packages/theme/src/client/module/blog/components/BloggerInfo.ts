@@ -2,7 +2,7 @@ import { getAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
-import SocialMedia from "@theme-hope/module/blog/components/socialMedia";
+import SocialMedia from "@theme-hope/module/blog/components/SocialMedia";
 import {
   useNavigate,
   useThemeData,
