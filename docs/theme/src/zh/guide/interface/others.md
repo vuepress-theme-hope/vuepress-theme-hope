@@ -11,7 +11,7 @@ tag:
 
 主题允许你在 `.vuepress/style` 的 `config.scss` 和 `palette.scss` 设置变量，来定制绝大部分颜色、响应式断点，页面布局尺寸等参数。
 
-详细的参数详见 [配置 → 样式自定义](../../config/style.md)
+详细的参数详见 [配置 → 样式自定义](../../config/style.md)。
 
 ## 全屏按钮
 
