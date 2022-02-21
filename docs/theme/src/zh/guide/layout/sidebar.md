@@ -737,26 +737,27 @@ export default defineSidebarConfig({
       text: "快速上手",
       icon: "creative",
       prefix: "get-started/",
+      collapsable: true,
       children: ["intro", "install", "markdown"],
     },
     {
       text: "界面",
       icon: "palette",
       prefix: "interface/",
+      collapsable: true,
       children: ["darkmode", "theme-color", "icon", "accessibility", "others"],
     },
     {
       text: "布局",
       icon: "layout",
       prefix: "layout/",
+      collapsable: true,
       children: [
         "navbar",
         "sidebar",
-        {
-          text: "Page",
-          icon: "page",
-          children: ["page", "breadcrumb", "footer"],
-        },
+        "page",
+        "breadcrumb",
+        "footer",
         "home",
         "slides",
       ],
@@ -765,6 +766,7 @@ export default defineSidebarConfig({
       text: "Markdown 增强",
       icon: "markdown",
       prefix: "markdown/",
+      collapsable: true,
       children: [
         "intro",
         "container",
@@ -787,6 +789,7 @@ export default defineSidebarConfig({
       text: "功能",
       icon: "discover",
       prefix: "feature/",
+      collapsable: true,
       children: [
         "page-info",
         "comment",
@@ -802,8 +805,9 @@ export default defineSidebarConfig({
     },
     {
       text: "博客",
-      icon: "layout",
+      icon: "blog",
       prefix: "blog/",
+      collapsable: true,
       children: ["intro", "article", "category-and-tags", "timeline", "home"],
     },
   ],
@@ -815,7 +819,7 @@ export default defineSidebarConfig({
       text: "主题配置",
       icon: "config",
       prefix: "theme/",
-      children: ["", "feature", "layout", "apperance"],
+      children: ["", "basic", "feature", "layout", "apperance"],
     },
     {
       text: "插件配置",
@@ -836,6 +840,7 @@ export default defineSidebarConfig({
   ],
 
   "/zh/basic/": [
+    "tutorial",
     {
       text: "Markdown",
       icon: "markdown",
@@ -886,6 +891,12 @@ export default defineSidebarConfig({
       icon: "module",
       prefix: "basic/",
       children: ["tutorial", "markdown/", "vuepress/"],
+    },
+    {
+      text: "迁移",
+      icon: "change",
+      prefix: "migration",
+      children: ["config", "page", "style"],
     },
     "changelog",
     "faq",
@@ -909,26 +920,27 @@ module.exports = defineSidebarConfig({
       text: "快速上手",
       icon: "creative",
       prefix: "get-started/",
+      collapsable: true,
       children: ["intro", "install", "markdown"],
     },
     {
       text: "界面",
       icon: "palette",
       prefix: "interface/",
+      collapsable: true,
       children: ["darkmode", "theme-color", "icon", "accessibility", "others"],
     },
     {
       text: "布局",
       icon: "layout",
       prefix: "layout/",
+      collapsable: true,
       children: [
         "navbar",
         "sidebar",
-        {
-          text: "Page",
-          icon: "page",
-          children: ["page", "breadcrumb", "footer"],
-        },
+        "page",
+        "breadcrumb",
+        "footer",
         "home",
         "slides",
       ],
@@ -937,6 +949,7 @@ module.exports = defineSidebarConfig({
       text: "Markdown 增强",
       icon: "markdown",
       prefix: "markdown/",
+      collapsable: true,
       children: [
         "intro",
         "container",
@@ -959,6 +972,7 @@ module.exports = defineSidebarConfig({
       text: "功能",
       icon: "discover",
       prefix: "feature/",
+      collapsable: true,
       children: [
         "page-info",
         "comment",
@@ -974,8 +988,9 @@ module.exports = defineSidebarConfig({
     },
     {
       text: "博客",
-      icon: "layout",
+      icon: "blog",
       prefix: "blog/",
+      collapsable: true,
       children: ["intro", "article", "category-and-tags", "timeline", "home"],
     },
   ],
@@ -987,7 +1002,7 @@ module.exports = defineSidebarConfig({
       text: "主题配置",
       icon: "config",
       prefix: "theme/",
-      children: ["", "feature", "layout", "apperance"],
+      children: ["", "basic", "feature", "layout", "apperance"],
     },
     {
       text: "插件配置",
@@ -1008,6 +1023,7 @@ module.exports = defineSidebarConfig({
   ],
 
   "/zh/basic/": [
+    "tutorial",
     {
       text: "Markdown",
       icon: "markdown",
@@ -1058,6 +1074,12 @@ module.exports = defineSidebarConfig({
       icon: "module",
       prefix: "basic/",
       children: ["tutorial", "markdown/", "vuepress/"],
+    },
+    {
+      text: "迁移",
+      icon: "change",
+      prefix: "migration",
+      children: ["config", "page", "style"],
     },
     "changelog",
     "faq",

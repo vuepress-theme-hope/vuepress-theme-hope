@@ -213,6 +213,7 @@ export default defineHopeConfig({
     ],
     (_options, app) => {
       includeViteOptimizeDeps(app, [
+        "axios",
         "three",
         "three/examples/jsm/controls/OrbitControls",
         "three/examples/jsm/loaders/STLLoader",

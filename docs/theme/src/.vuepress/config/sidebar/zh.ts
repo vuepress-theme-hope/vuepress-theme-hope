@@ -74,7 +74,7 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
     },
     {
       text: "博客",
-      icon: "layout",
+      icon: "blog",
       prefix: "blog/",
       collapsable: true,
       children: ["intro", "article", "category-and-tags", "timeline", "home"],

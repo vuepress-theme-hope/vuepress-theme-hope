@@ -19,25 +19,30 @@ features:
     details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in markdown
     link: /guide/markdown/
 
+  - title: Slide page
+    icon: slides
+    details: Adding slide pages to display things you like
+    link: /guide/layout/slides
+
+  - title: Layout enhancement
+    icon: layout
+    details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
+    link: /guide/layout/
+
   - title: Pageviews and comments
     icon: comment
     details: Start pageview statistics and comment support with Waline
     link: /guide/feature/comment.html
 
-  - title: Article information display
+  - title: Article information
     icon: info
     details: Add author, writing date, reading time, word count and other information to your article
     link: /guide/feature/page-info.html
 
   - title: Blog support
     icon: blog
-    details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
-    link: /guide/blog/intro.html
-
-  - title: Article Encryption
-    icon: lock
-    details: Encrypt you article based on path and folders, so that only the one you want could see them
-    link: /guide/feature/encrypt.html
+    details: Listing your articles with their dates, tags and categories with some awesome layouts
+    link: /guide/blog/
 
   - title: Custom theme color
     icon: palette
@@ -48,6 +53,26 @@ features:
     icon: contrast
     details: Switch between light and dark modes freely
     link: /guide/interface/darkmode.html
+
+  - title: Full A11y support
+    icon: support
+    details: Full support of accessibility in your site
+    link: /guide/interface/accessibility.html
+
+  - title: Article Encryption
+    icon: lock
+    details: Encrypt you article based on path and folders, so that only the one you want could see them
+    link: /guide/feature/encrypt.html
+
+  - title: Copy button
+    icon: lock
+    details: Copy codes with one click in code blocks
+    link: /guide/feature/copy-code.html
+
+  - title: Image preview
+    icon: pic
+    details: Support viewing, zooming, sharing your page images like a gallery
+    link: /guide/feature/photo-swipe.html
 
   - title: SEO enhancement
     icon: config
@@ -71,7 +96,7 @@ features:
 
   - title: More new features
     icon: more
-    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
+    details: Including icon support, fullscreen button, etc.
     link: /guide/feature/
 
 copyright: false

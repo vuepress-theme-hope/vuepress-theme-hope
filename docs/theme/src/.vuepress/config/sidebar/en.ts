@@ -74,7 +74,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
     },
     {
       text: "Blog",
-      icon: "layout",
+      icon: "blog",
       prefix: "blog/",
       collapsable: true,
       children: ["intro", "article", "category-and-tags", "timeline", "home"],
