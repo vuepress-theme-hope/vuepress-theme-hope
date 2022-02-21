@@ -17,21 +17,21 @@ tag:
 - 类型: `string`
 - 必填: 否
 
-设置当前页面内容标题，默认为 Markdown 文件中的第一个 h1 标签内容。
+当前页面内容标题，默认为 Markdown 文件中的第一个 h1 标签内容。
 
 ### description
 
 - 类型: `string`
 - 必填: 否
 
-设置当前页面内容描述。
+当前页面内容描述。
 
 ### icon
 
 - 类型: `string`
 - 必填: 否
 
-设置当前页面图标的 FontClass (建议填写)
+当前页面图标的 FontClass (建议填写)。
 
 ### author
 
@@ -44,7 +44,7 @@ type AuthorInfo = { name: string; url?: string };
 type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ```
 
-显示作者，如果不填，则会回退到默认作者。
+作者，如果不填，则会回退到默认作者。
 
 ::: tip
 
@@ -65,35 +65,35 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 - 必填: 否
 - 格式: `YYYY-MM-DD` 或 `YYYY/MM/DD hh:mm:ss`
 
-设置写作时间。
+写作时间。
 
 ### category
 
 - 类型: `string | string[]`
 - 必填: 否
 
-设置分类。
+分类。
 
 ### tags
 
 - 类型: `string | string[]`
 - 必填: 否
 
-设置标签。
+标签。
 
 ### sticky
 
 - 类型: `boolean | number`
 - 默认值: `false`
 
-设置当前文章是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
+是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
 
 ### star
 
 - 类型: `boolean | number`
 - 默认值: `false`
 
-设置当前文章是否收藏在博客主题的文章列表中。当填入数字时，数字越大，排名越靠前。
+是否收藏在博客主题的文章列表中。当填入数字时，数字越大，排名越靠前。
 
 ### article
 
@@ -136,14 +136,14 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 | `'Word'`        | 字数         | N/A(自动生成)              |
 | `'PageView'`    | 访问量       | `visitor` (仅 Valine 可用) |
 
-设置文章信息内容
+文章信息展示项目。
 
 ### visitor
 
 - 类型: `boolean`
 - 默认值: 主题配置中的值
 
-当前页面是否显示浏览量
+是否显示浏览量。
 
 ::: tip
 
@@ -156,47 +156,61 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 - 类型: `boolean`
 - 默认值: 主题配置中的值
 
-当前页面是否开启路径导航
+是否开启路径导航。
 
 ### breadcrumbIcon
 
 - 类型: `boolean`
 - 默认值: 主题配置中的值
 
-当前页面是否开启路径导航图标
+是否开启路径导航图标。
 
 ### navbar
 
 - 类型: `boolean`
 
-页面的导航栏配置，填入 `false` 会禁用导航栏
+导航栏配置，填入 `false` 会禁用导航栏
 
 ### sidebar
 
 - 类型: `false | 'auto'`
 
-页面的侧边栏配置选项。支持 `false` 或 `auto`。
+侧边栏配置选项。支持 `false` 或 `auto`。
 
 ### headingDepth
 
 - 类型: `number`
 - 默认值: `2`
 
-该页面的侧边栏渲染深度
+标题渲染深度。
 
 ### comment
 
 - 类型: `boolean`
 - 默认值: 主题配置中的值
 
-当前页面是否开启评论功能
+当前页面是否开启评论功能。
+
+### lastUpdated
+
+- 类型: `boolean`
+- 默认值: 主题配置中的值
+
+是否显示最后更新时间。
 
 ### editLink
 
 - 类型: `boolean`
 - 默认值: 主题配置中的值
 
-是否显示编辑链接
+是否显示编辑链接。
+
+### contributors
+
+- 类型: `boolean`
+- 默认值: 主题配置中的值
+
+是否显示贡献者。
 
 ### prev
 
@@ -210,7 +224,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
   }
   ```
 
-  上一篇文章链接
+上一篇文章链接。
 
 ### next
 
@@ -224,7 +238,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
   }
   ```
 
-  下一篇文章链接
+下一篇文章链接。
 
 ### footer
 

@@ -24,14 +24,14 @@ Current page’s title. Markdown’s first h1 by default.
 - Type: `string | boolean`
 - Required: No
 
-Current page’s description
+Current page’s description.
 
 ### icon
 
 - Type: `string`
 - Required: No
 
-Set the FontClass of the current page icon (recommended)
+FontClass of the current page icon (recommended).
 
 ### author
 
@@ -140,7 +140,7 @@ Set whether to show page details on the current page
 - Type: `boolean`
 - Default value: value in themeConfig
 
-Whether the current page shows page views
+Whether display page views.
 
 ::: tip
 
@@ -153,14 +153,14 @@ The pageviews feature requires you to have a valid Waline Comment Service config
 - Type: `boolean`
 - Default value: value in themeConfig
 
-Whether path navigation is enabled on the current page
+Whether path navigation is enabled on the current page.
 
 ### breadcrumbIcon
 
 - Type: `boolean`
 - Default value: value in themeConfig
 
-Whether path navigation icon is enabled on the current page
+Whether path navigation icon is enabled on the current page.
 
 ### navbar
 
@@ -179,21 +179,35 @@ Page sidebar configuration options. Supports `false` or`auto`.
 - Type: `number`
 - Default: `2`
 
-The page’s sidebar rendering depth
+The page’s sidebar heading rendering depth.
 
 ### comment
 
 - Type: `boolean`
 - Default value: value in themeConfig
 
-Whether to enable comments on the current page
+Whether to enable comments on the current page.
+
+### lastUpdated
+
+- Type: `boolean`
+- Default value: value in themeConfig
+
+Whether display lastUpdated time.
 
 ### editLink
 
 - Type: `boolean`
 - Default value: value in themeConfig
 
-Whether to show edit link
+Whether to show edit link.
+
+### contributors
+
+- Type: `boolean`
+- Default value: value in themeConfig
+
+Whether to show contributors.
 
 ### prev
 
@@ -207,7 +221,7 @@ Whether to show edit link
   }
   ```
 
-Previous article link
+Previous article link.
 
 ### next
 
@@ -221,7 +235,7 @@ Previous article link
   }
   ```
 
-Next article link
+Next article link.
 
 ### footer
 
