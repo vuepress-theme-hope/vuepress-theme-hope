@@ -11,7 +11,7 @@ sidebar: false
 
 breadcrumb: false
 pageInfo: false
-contributor: false
+contributors: false
 editLink: false
 lastUpdated: false
 prev: false
