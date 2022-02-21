@@ -25,14 +25,15 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import type MarkdownIt from "markdown-it";
+import type { PluginSimple } from "markdown-it";
+import type { RuleInline } from "markdown-it/lib/parser_inline";
 import type StateInline from "markdown-it/lib/rules_inline/state_inline";
 
 /*
  * Insert each marker as a separate text token, and add it to delimiter list
  *
  */
-const tokenize = (state: StateInline, silent: boolean): boolean => {
+const tokenize: RuleInline = (state, silent) => {
   const start = state.pos;
   const marker = state.src.charAt(start);
 
@@ -136,7 +137,7 @@ const postProcess = (
   }
 };
 
-export const mark = (md: MarkdownIt): void => {
+export const mark: PluginSimple = (md) => {
   md.inline.ruler.before("emphasis", "mark", tokenize);
   md.inline.ruler2.before("emphasis", "mark", (state) => {
     const tokensMeta = state.tokens_meta || [];

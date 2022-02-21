@@ -1,9 +1,9 @@
 import { hash } from "@vuepress/utils";
 import { generateUML } from "./utils";
 
-import type MarkdownIt from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 
-export const presentation = (md: MarkdownIt): void => {
+export const presentation: PluginSimple = (md) => {
   md.block.ruler.before(
     "fence",
     "presentation",

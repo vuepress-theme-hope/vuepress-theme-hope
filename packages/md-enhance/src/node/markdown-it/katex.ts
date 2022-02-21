@@ -27,9 +27,10 @@
 import Katex from "katex";
 import { escapeHtml } from "./utils";
 
-import type MarkdownIt from "markdown-it";
-import type StateBlock from "markdown-it/lib/rules_block/state_block";
 import type StateInline from "markdown-it/lib/rules_inline/state_inline";
+import type { PluginWithOptions } from "markdown-it";
+import type { RuleInline } from "markdown-it/lib/parser_inline";
+import type { RuleBlock } from "markdown-it/lib/parser_block";
 
 /*
  * Test if potential opening or closing delimieter
@@ -57,7 +58,7 @@ const isValidDelim = (
   };
 };
 
-const inlineTex = (state: StateInline, silent?: boolean): boolean => {
+const inlineTex: RuleInline = (state, silent) => {
   let match;
   let pos;
   let res;
@@ -132,12 +133,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
   return true;
 };
 
-const blockTex = (
-  state: StateBlock,
-  start: number,
-  end: number,
-  silent: boolean
-): boolean => {
+const blockTex: RuleBlock = (state, start, end, silent) => {
   let firstLine;
   let lastLine;
   let next;
@@ -224,11 +220,11 @@ const katexBlock = (tex: string, options: Katex.KatexOptions): string => {
   }
 };
 
-export const katex = (
-  md: MarkdownIt,
-  options: katex.KatexOptions = { throwOnError: false }
-): void => {
-  const katexOptions: katex.KatexOptions = { ...options, output: "html" };
+export const katex: PluginWithOptions<Katex.KatexOptions> = (
+  md,
+  options = { throwOnError: false }
+) => {
+  const katexOptions: Katex.KatexOptions = { ...options, output: "html" };
 
   md.inline.ruler.after("escape", "inlineTex", inlineTex);
   // It’s a workaround here because types issue

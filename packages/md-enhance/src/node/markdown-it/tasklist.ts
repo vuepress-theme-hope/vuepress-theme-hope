@@ -17,10 +17,6 @@
  */
 
 import Token from "markdown-it/lib/token";
-
-import type MarkdownIt from "markdown-it";
-import type StateCore from "markdown-it/lib/rules_core/state_core";
-
 import {
   getParentTokenIndex,
   isInlineToken,
@@ -29,6 +25,8 @@ import {
   setTokenAttr,
 } from "./utils";
 
+import type { PluginWithOptions } from "markdown-it";
+import type StateCore from "markdown-it/lib/rules_core/state_core";
 import type { TaskListOptions } from "../../shared";
 
 interface TaskListEnv {
@@ -121,10 +119,10 @@ const todoify = (
     }
 };
 
-export const tasklist = (
-  md: MarkdownIt,
-  { label = true, labelAfter = true }: TaskListOptions = {}
-): void => {
+export const tasklist: PluginWithOptions<TaskListOptions> = (
+  md,
+  { label = true, labelAfter = true } = {}
+) => {
   md.core.ruler.after(
     "inline",
     "github-task-lists",

@@ -1,8 +1,7 @@
 /* eslint-disable max-statements */
 import { hash } from "@vuepress/utils";
+import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token";
-
-import type MarkdownIt from "markdown-it";
 
 const flowchartRender = (tokens: Token[], idx: number): string => {
   const token = tokens[idx];
@@ -14,7 +13,7 @@ const flowchartRender = (tokens: Token[], idx: number): string => {
   )}" preset="${info.trim().split(":")[1] || "vue"}"></FlowChart>`;
 };
 
-export const flowchart = (md: MarkdownIt): void => {
+export const flowchart: PluginSimple = (md) => {
   // Handle ```flow and ```flowchart blocks
   const fence = md.renderer.rules.fence;
 

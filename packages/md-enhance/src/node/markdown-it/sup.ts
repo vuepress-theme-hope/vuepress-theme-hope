@@ -27,10 +27,10 @@
 
 import { UNESCAPE_RE } from "./utils";
 
-import type MarkdownIt from "markdown-it";
-import type StateInline from "markdown-it/lib/rules_inline/state_inline";
+import type { PluginSimple } from "markdown-it";
+import type { RuleInline } from "markdown-it/lib/parser_inline";
 
-const superscriptRender = (state: StateInline, silent?: boolean): boolean => {
+const superscriptRender: RuleInline = (state, silent) => {
   let found;
   let token;
   const max = state.posMax;
@@ -87,6 +87,6 @@ const superscriptRender = (state: StateInline, silent?: boolean): boolean => {
   return true;
 };
 
-export const sup = (md: MarkdownIt): void => {
+export const sup: PluginSimple = (md) => {
   md.inline.ruler.after("emphasis", "sup", superscriptRender);
 };

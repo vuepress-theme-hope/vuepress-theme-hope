@@ -1,9 +1,9 @@
 import { hash } from "@vuepress/utils";
-import Token from "markdown-it/lib/token";
 
-import type MarkdownIt from "markdown-it";
+import type { PluginSimple } from "markdown-it";
+import type Renderer from "markdown-it/lib/renderer";
 
-const mermaidRender = (tokens: Token[], index: number): string => {
+const mermaidRender: Renderer.RenderRule = (tokens, index) => {
   const token = tokens[index];
   const key = `mermaid-${hash(index)}`;
   const { content } = token;
@@ -26,7 +26,7 @@ const mermaidHackRender = (
       .join("\n")}`
   )}"></MermaidChart>`;
 
-export const mermaid = (md: MarkdownIt): void => {
+export const mermaid: PluginSimple = (md) => {
   // Handle ```mermaid blocks
   const fence = md.renderer.rules.fence;
 
@@ -34,7 +34,7 @@ export const mermaid = (md: MarkdownIt): void => {
     const [tokens, index] = args;
     const { content, info } = tokens[index];
 
-    if (info.trim() === "mermaid") return mermaidRender(tokens, index);
+    if (info.trim() === "mermaid") return mermaidRender(...args);
     if (info.trim() === "sequence")
       return mermaidHackRender("sequenceDiagram", content, index);
     if (info.trim() === "class")

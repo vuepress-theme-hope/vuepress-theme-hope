@@ -1,6 +1,6 @@
-import type MarkdownIt from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 
-export const lazyLoad = (md: MarkdownIt): void => {
+export const lazyLoad: PluginSimple = (md) => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const originalImageRender = md.renderer.rules.image!;
 
