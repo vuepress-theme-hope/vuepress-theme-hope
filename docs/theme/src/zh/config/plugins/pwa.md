@@ -9,15 +9,15 @@ tag:
   - themeConfig
 ---
 
-## 介绍 <Badge text="默认启用" />
+## 介绍
 
-`vuepress-plugin-pwa2` 插件默认启用，提供渐进式网络应用程序支持。
+`vuepress-plugin-pwa2` 插件默认禁用，提供渐进式网络应用程序支持。
 
 `vuepress-theme-hope` 将 `themeConfig.plugins.pwa` 作为插件选项传递给 `vuepress-plugin-pwa2` 插件。
 
 ::: tip
 
-如果你不需要这个功能，请设置为 `false`。
+你可以设置 `pwa: true` 来以默认设置启用插件。<Badge text="不推荐" type="warning" />
 
 :::
 

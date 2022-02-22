@@ -8,7 +8,7 @@ tag:
   - PWA
 ---
 
-By default, the theme will enable progressive web app support [^pwa-intro] via builtin [`vuepress-plugin-pwa2`][pwa2].
+The theme provides progressive web app support [^pwa-intro] via builtin [`vuepress-plugin-pwa2`][pwa2], and it's disabled by default.
 
 [^pwa-intro]: **PWA introduction**
 
@@ -20,8 +20,7 @@ By default, the theme will enable progressive web app support [^pwa-intro] via b
 
 `vuepress-theme-hope` provides the `pwa` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-pwa2`.
 
-If you don’t need this feature or want to use another pwa plugin, you can disable the plugin by setting `themeConfig.plugins.pwa` to `false`.
-
+You can set `pwa: true` to enable the plugin with default options. <Badge text="Not recommanded" type="warning" />
 :::
 
 <!-- more -->

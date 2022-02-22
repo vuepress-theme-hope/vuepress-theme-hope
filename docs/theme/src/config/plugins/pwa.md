@@ -9,15 +9,15 @@ tag:
   - themeConfig
 ---
 
-## Intro <Badge text="enabled by default" />
+## Intro
 
-The `vuepress-plugin-pwa2` plugin is enabled by default and provides progressive web app support.
+The `vuepress-plugin-pwa2` plugin provides progressive web app support.
 
 `vuepress-theme-hope` passes `themeConfig.plugins.pwa` as plugin options to the `vuepress-plugin-pwa2` plugin.
 
 ::: tip
 
-If you don’t need this feature, please set to `false`.
+If you want to simple enable this feature, you can set `pwa: true`. <Badge text="Not recommanded" type="warning" />
 
 :::
 

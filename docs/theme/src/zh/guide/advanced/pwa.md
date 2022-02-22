@@ -8,7 +8,7 @@ tag:
   - PWA
 ---
 
-默认情况下，该主题将通过内置 [`vuepress-plugin-pwa2`][pwa2] 启用渐进式 Web 应用程序支持[^pwa-intro]。
+该主题将通过内置 [`vuepress-plugin-pwa2`][pwa2] 提供渐进式 Web 应用程序支持[^pwa-intro]，该功能默认禁用。
 
 [^pwa-intro]: **PWA 介绍**
 
@@ -20,7 +20,7 @@ tag:
 
 `vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `pwa` 选项作为插件选项提供给 `vuepress-plugin-pwa2`。
 
-如果你不需要此功能或想使用其他 pwa 插件，则可以将 `themeConfig.plugins.pwa` 设置为 `false` 来禁用该插件。
+你可以将 `themeConfig.plugins.pwa` 设置为 `true` 来以默认配置启用插件。<Badge text="不推荐" type="warning" />
 
 :::
 
