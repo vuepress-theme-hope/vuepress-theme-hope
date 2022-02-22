@@ -24,7 +24,7 @@ export default defineComponent({
     },
   },
 
-  setup(props, { slots }) {
+  setup(props) {
     const route = useRoute();
     const iconPrefix = useIconPrefix();
     const config = toRef(props, "config");
@@ -57,15 +57,14 @@ export default defineComponent({
           },
         },
         [
-          slots.title?.() ||
-            h("span", { class: "title" }, [
-              config.value.icon
-                ? h("i", {
-                    class: `icon ${iconPrefix.value}${config.value.icon}`,
-                  })
-                : null,
-              props.config.text,
-            ]),
+          h("span", { class: "title" }, [
+            config.value.icon
+              ? h("i", {
+                  class: `icon ${iconPrefix.value}${config.value.icon}`,
+                })
+              : null,
+            props.config.text,
+          ]),
           h("span", { class: ["arrow", open.value ? "down" : "right"] }),
         ]
       ),
