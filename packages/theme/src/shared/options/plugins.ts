@@ -212,7 +212,7 @@ export interface HopeThemePluginsOptions {
    *
    * @see http://vuepress-theme-hope.github.io/v2/pwa/zh/config/
    */
-  pwa?: PWAOptions | false;
+  pwa?: PWAOptions | boolean;
 
   /**
    * ReadingTime options
