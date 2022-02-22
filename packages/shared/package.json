@@ -42,7 +42,7 @@
     "@vuepress/plugin-theme-data": "2.0.0-beta.35",
     "chalk": "^4.1.2",
     "dayjs": "^1.10.7",
-    "ora": "^5.4.1",
+    "ora": "^6.1.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {
