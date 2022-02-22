@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.32...v2.0.0-alpha.33) (2022-02-22)
+
+### Bug Fixes
+
+- **theme:** fix algolia search on mobile ([6e58d60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e58d60556feb1540baf1c57d6ba03ae956b1498))
+- **theme:** fix blogger info style ([92fb54a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92fb54a91230c221188110ccee09508db2314872))
+- **theme:** fix dropdown wrapper ([9863250](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/986325016507d9c1db33a259568e1a7a62f96fbd))
+- **theme:** fix timeline item ([a6dccb1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6dccb1f5f56d328d226594b35eda1039e3c99d6))
+- **theme:** fix year title ([fe1a97b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe1a97bb6e73b4c7173235d072fcafb271d52c3d))
+
+### Features
+
+- **theme:** disable pwa by default ([3f99aac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3f99aac22dee4efc2bc67633ba6d6c45e52bf1fb))
+
 # [2.0.0-alpha.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.31...v2.0.0-alpha.32) (2022-02-20)
 
 ### Bug Fixes

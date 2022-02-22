@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.32...v2.0.0-alpha.33) (2022-02-22)
+
+**Note:** Version bump only for package vuepress-plugin-sass-palette
+
 # [2.0.0-alpha.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.31...v2.0.0-alpha.32) (2022-02-20)
 
 **Note:** Version bump only for package vuepress-plugin-sass-palette
