@@ -43,27 +43,31 @@ export default defineComponent({
           h(DropTransition, () => h("li", { class: "desc" }, hint.value)),
           h(resolveComponent("TOC"), { items: items.value }),
           ...timelines.value.config.map(({ year, items }, index) =>
-            h(DropTransition, { delay: 0.08 * (index + 1) }, () =>
-              h("li", [
+            h(
+              DropTransition,
+              { delay: 0.08 * (index + 1), type: "group" },
+              () => [
                 h("h3", { id: year, class: "year" }, h("span", year)),
-                h(
-                  "ul",
-                  { class: "year-wrapper" },
-                  items.map(({ date, info, path }) =>
-                    h("li", [
-                      h("span", { class: "date" }, date),
-                      h(
-                        RouterLink,
-                        {
-                          class: "title",
-                          to: path,
-                        },
-                        () => info.title
-                      ),
-                    ])
-                  )
-                ),
-              ])
+                h("li", { class: "year-list" }, [
+                  h(
+                    "ul",
+                    { class: "year-wrapper" },
+                    items.map(({ date, info, path }) =>
+                      h("li", [
+                        h("span", { class: "date" }, date),
+                        h(
+                          RouterLink,
+                          {
+                            class: "title",
+                            to: path,
+                          },
+                          () => info.title
+                        ),
+                      ])
+                    )
+                  ),
+                ]),
+              ]
             )
           ),
         ])

@@ -17,13 +17,13 @@
     --dot-border-color: #555;
   }
 
-  #anchor {
+  #toc-list {
     left: unset;
     right: 0;
     min-width: 0;
   }
 
-  .anchor-wrapper {
+  .toc-wrapper {
     position: relative;
     z-index: 10;
   }
@@ -72,9 +72,9 @@
     }
 
     .year {
-      margin-top: calc(0.5rem - var(--navbar-height));
+      margin-top: calc(3rem - var(--navbar-height));
       margin-bottom: 0.5rem;
-      padding-top: calc(var(--navbar-height) + 3rem);
+      padding-top: var(--navbar-height);
       color: var(--text-color);
       font-size: 26px;
       font-weight: 700;
@@ -105,11 +105,15 @@
       li {
         position: relative;
         display: flex;
+        // make sure dot is aligned
         padding: 30px 0 10px;
         border-bottom: 1px dashed var(--border-color);
         list-style: none;
+        // make sure it won't be covered by year heading
+        z-index: 3;
 
         .title {
+          display: block;
           color: inherit;
         }
 
