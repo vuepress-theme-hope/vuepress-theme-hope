@@ -56,13 +56,13 @@ export default defineHopeConfig({
 
     locales: {
       "/": {
-        navbar: ["/README.md", "/guide.md", "/config.md"],
+        navbar: ["/", "/guide", "/config"],
 
         sidebar: false,
       },
 
       "/zh/": {
-        navbar: ["/zh/README.md", "/zh/guide.md", "/zh/config.md"],
+        navbar: ["/zh/", "/zh/guide", "/zh/config"],
 
         sidebar: false,
       },

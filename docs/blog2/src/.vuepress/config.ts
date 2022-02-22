@@ -56,12 +56,12 @@ export default defineHopeConfig({
 
     locales: {
       "/": {
-        navbar: ["/README.md", "/guide.md", "/config.md"],
-        sidebar: ["/guide.md", "/config.md"],
+        navbar: ["/", "/guide", "/config"],
+        sidebar: ["/guide", "/config"],
       },
       "/zh/": {
-        navbar: ["/zh/README.md", "/zh/guide.md", "/zh/config.md"],
-        sidebar: ["/zh/guide.md", "/zh/config.md"],
+        navbar: ["/zh/", "/zh/guide", "/zh/config"],
+        sidebar: ["/zh/guide", "/zh/config"],
       },
     },
 
@@ -118,7 +118,7 @@ export default defineHopeConfig({
             {
               name: "Guide",
               short_name: "Guide",
-              url: "/v2/blog/guide/",
+              url: "/v2/blog/guide.html",
               icons: [
                 {
                   src: "/v2/blog/assets/icon/guide-maskable.png",
@@ -137,7 +137,7 @@ export default defineHopeConfig({
             {
               name: "Config",
               short_name: "Config",
-              url: "/v2/blog/config/",
+              url: "/v2/blog/config.html",
               icons: [
                 {
                   src: "/v2/blog/assets/icon/config-maskable.png",

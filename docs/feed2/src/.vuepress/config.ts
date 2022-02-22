@@ -58,10 +58,10 @@ export default defineHopeConfig({
     locales: {
       "/": {
         navbar: [
-          "/README.md",
-          "/guide.md",
-          "/config/README.md",
-          "/migration.md",
+          "/",
+          "/guide",
+          "/config/",
+          "/migration",
           {
             text: version,
             icon: "note",
@@ -76,26 +76,26 @@ export default defineHopeConfig({
 
         sidebar: {
           "/": [
-            "README.md",
+            "",
             "guide",
             {
               text: "Config",
               icon: "config",
               prefix: "config/",
               collapsable: false,
-              children: ["README.md", "channel.md", "getter.md", "item.md"],
+              children: ["", "channel", "getter", "item"],
             },
-            "migration.md",
+            "migration",
           ],
         },
       },
 
       "/zh/": {
         navbar: [
-          "/zh/README.md",
-          "/zh/guide.md",
-          "/zh/config/README.md",
-          "/zh/migration.md",
+          "/zh/",
+          "/zh/guide",
+          "/zh/config/",
+          "/zh/migration",
           {
             text: version,
             icon: "note",
@@ -110,16 +110,16 @@ export default defineHopeConfig({
 
         sidebar: {
           "/zh/": [
-            "README.md",
-            "guide.md",
+            "",
+            "guide",
             {
               text: "配置",
               icon: "config",
               prefix: "config/",
               collapsable: false,
-              children: ["README.md", "channel.md", "getter.md", "item.md"],
+              children: ["", "channel", "getter", "item"],
             },
-            "migration.md",
+            "migration",
           ],
         },
       },

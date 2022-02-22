@@ -58,9 +58,9 @@ export default defineHopeConfig({
     locales: {
       "/": {
         navbar: [
-          "/README.md",
-          "/guide.md",
-          "/config.md",
+          "/",
+          "/guide",
+          "/config",
           {
             text: version,
             icon: "note",
@@ -77,9 +77,9 @@ export default defineHopeConfig({
       },
       "/zh/": {
         navbar: [
-          "/zh/README.md",
-          "/zh/guide.md",
-          "/zh/config.md",
+          "/zh/",
+          "/zh/guide",
+          "/zh/config",
           {
             text: version,
             icon: "note",
@@ -149,7 +149,7 @@ export default defineHopeConfig({
             {
               name: "Guide",
               short_name: "Guide",
-              url: "/v2/add-this/guide/",
+              url: "/v2/add-this/guide.html",
               icons: [
                 {
                   src: "/v2/add-this/assets/icon/guide-maskable.png",
@@ -168,7 +168,7 @@ export default defineHopeConfig({
             {
               name: "Config",
               short_name: "Config",
-              url: "/v2/add-this/config/",
+              url: "/v2/add-this/config.html",
               icons: [
                 {
                   src: "/v2/add-this/assets/icon/config-maskable.png",

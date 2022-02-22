@@ -55,7 +55,7 @@ export default defineHopeConfig({
 
     locales: {
       "/": {
-        navbar: ["/README.md", "/guide/README.md", "/config.md"],
+        navbar: ["/", "/guide/", "/config"],
 
         sidebar: {
           "/": [
@@ -64,15 +64,15 @@ export default defineHopeConfig({
               icon: "creative",
               prefix: "guide/",
               collapsable: false,
-              children: ["README.md", "article-info.md"],
+              children: ["", "article-info"],
             },
-            "config.md",
+            "config",
           ],
         },
       },
 
       "/zh/": {
-        navbar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config.md"],
+        navbar: ["/zh/", "/zh/guide/", "/zh/config"],
 
         sidebar: {
           "/zh/": [
@@ -80,9 +80,9 @@ export default defineHopeConfig({
               text: "Guide",
               icon: "creative",
               prefix: "guide/",
-              children: ["README.md", "article-info.md"],
+              children: ["", "article-info"],
             },
-            "config.md",
+            "config",
           ],
         },
       },
@@ -160,7 +160,7 @@ export default defineHopeConfig({
             {
               name: "Config",
               short_name: "Config",
-              url: "/v2/components/config/",
+              url: "/v2/components/config.html",
               icons: [
                 {
                   src: "/v2/components/assets/icon/config-maskable.png",
