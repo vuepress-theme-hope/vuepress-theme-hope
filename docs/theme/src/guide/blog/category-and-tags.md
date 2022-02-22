@@ -38,12 +38,6 @@ Then you can find it under the `/category/HTML` page.
 
 :::
 
-::: warning
-
-Please note that only one category can be set for an article. (V2 plan supports multiple categories of articles)
-
-:::
-
 ## Tags
 
 Just add the `tags` array to the frontmatter of the page, and set the tag to which one or more articles belong, and the article will be automatically rendered in the list of the `/tag/<tag name>/` tag page.
