@@ -85,6 +85,7 @@
     line-height: 1.7rem;
 
     &:last-child .dropdown-subitem-wrapper {
+      padding-bottom: 0;
       border-bottom-width: 0;
     }
   }
