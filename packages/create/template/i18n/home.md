@@ -19,25 +19,30 @@ features:
     details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in markdown
     link: https://vuepress-theme-hope.github.io/v2/guide/markdown/
 
+  - title: Slide page
+    icon: slides
+    details: Adding slide pages to display things you like
+    link: https://vuepress-theme-hope.github.io/v2/guide/layout/slides
+
+  - title: Layout enhancement
+    icon: layout
+    details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
+    link: https://vuepress-theme-hope.github.io/v2/guide/layout/
+
   - title: Pageviews and comments
     icon: comment
     details: Start pageview statistics and comment support with Waline
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/comment.html
 
-  - title: Article information display
+  - title: Article information
     icon: info
     details: Add author, writing date, reading time, word count and other information to your article
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/page-info.html
 
   - title: Blog support
     icon: blog
-    details: Add date, tags and category to your articles, then article, tag, category and timeline list will be auto generated
-    link: https://vuepress-theme-hope.github.io/v2/guide/blog/intro.html
-
-  - title: Article Encryption
-    icon: lock
-    details: Encrypt you article based on path and folders, so that only the one you want could see them
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/encrypt.html
+    details: Listing your articles with their dates, tags and categories with some awesome layouts
+    link: https://vuepress-theme-hope.github.io/v2/guide/blog/
 
   - title: Custom theme color
     icon: palette
@@ -49,29 +54,49 @@ features:
     details: Switch between light and dark modes freely
     link: https://vuepress-theme-hope.github.io/v2/guide/interface/darkmode.html
 
+  - title: Full A11y support
+    icon: support
+    details: Full support of accessibility in your site
+    link: https://vuepress-theme-hope.github.io/v2/guide/interface/accessibility.html
+
+  - title: Article Encryption
+    icon: lock
+    details: Encrypt you article based on path and folders, so that only the one you want could see them
+    link: https://vuepress-theme-hope.github.io/v2/guide/feature/encrypt.html
+
+  - title: Copy button
+    icon: lock
+    details: Copy codes with one click in code blocks
+    link: https://vuepress-theme-hope.github.io/v2/guide/feature/copy-code.html
+
+  - title: Image preview
+    icon: pic
+    details: Support viewing, zooming, sharing your page images like a gallery
+    link: https://vuepress-theme-hope.github.io/v2/guide/feature/photo-swipe.html
+
   - title: SEO enhancement
     icon: config
     details: Optimize pages for search engines
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/seo.html
+    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/seo.html
 
   - title: Sitemap
     icon: sitemap
     details: Generate a Sitemap for your website
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/sitemap.html
+    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/sitemap.html
 
   - title: Feed support
     icon: rss
     details: Generate feed to allow users to subcribe it
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/feed.html
+    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/feed.html
 
   - title: PWA support
     icon: mobile
     details: Make your website more like an APP
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/pwa.html
+    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/pwa.html
 
   - title: More new features
     icon: more
-    details: Including icon support, path navigation, footer support, fullscreen button, blog homepage, etc.
+    details: Including icon support, fullscreen button, etc.
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/
 
 copyright: false

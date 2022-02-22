@@ -77,8 +77,6 @@ Layout Optimization:
 
 - [Picture preview feature](feature/photo-swipe.md): supports zooming, dragging, sliding browsing, sharing and downloading
 
-- [Copyright info](feature/copyright.md)
-
 - [Comment Service](feature/comment.md)
 
 - [Page info](feature/page-info.md)
