@@ -90,16 +90,6 @@ Layout Optimization:
 
 - [Encryption](feature/encrypt.md)
 
-### Features
-
-- [PWA support](feature/pwa.md)
-
-- [Feed generation](feature/feed.md)
-
-- [SEO enhancement](feature/seo.md)
-
-- [Sitemap generation](feature/sitemap.md)
-
 ### Blog
 
 - [Social follow button and page social sharing][add-this]
@@ -114,9 +104,23 @@ Layout Optimization:
 
 - [New blog homepage layout](blog/home.md)
 
+### Advanced Features
+
+- [PWA support](advanced/pwa.md)
+
+- [Feed generation](advanced/feed.md)
+
+- [SEO enhancement](advanced/seo.md)
+
+- [Sitemap generation](advanced/sitemap.md)
+
+- [Component customize](advanced/customize.md)
+
+- [Theme extending](advanced/extend.md)
+
 ## 🧩Build-in Plugins
 
-The theme also includes the following plugins, you can use them in other themes or directly.
+The theme includes the following plugins, you can use them in other themes or directly.
 
 - [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
 

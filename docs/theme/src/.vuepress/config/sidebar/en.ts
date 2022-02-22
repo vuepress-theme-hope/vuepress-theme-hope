@@ -66,10 +66,6 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
         "photo-swipe",
         "meta",
         "encrypt",
-        "pwa",
-        "feed",
-        "seo",
-        "sitemap",
       ],
     },
     {
@@ -78,6 +74,13 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       prefix: "blog/",
       collapsable: true,
       children: ["intro", "article", "category-and-tags", "timeline", "home"],
+    },
+    {
+      text: "Advanced",
+      icon: "advance",
+      prefix: "advanced/",
+      collapsable: true,
+      children: ["pwa", "feed", "seo", "sitemap", "customize", "extend"],
     },
   ],
 
@@ -147,6 +150,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
         "markdown/",
         "feature/",
         "blog/",
+        "advanced/",
       ],
     },
     {

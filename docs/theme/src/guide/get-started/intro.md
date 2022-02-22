@@ -61,19 +61,21 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
-### Search engine enhancement
-
-- Provides [SEO Enhance](../feature/seo.md), will automatically inject information to fully support OGP and JSON-LD protocols, and enhance search engine indexing.
-
-- Provides [Sitemap Generation](../feature/sitemap.md)
-
 ### Page UI
 
-- Homepage: New outlook, features support icons and links.
+- [Icon Support](../interface/icon.md)
 
-- Page: [page icon](../interface/icon.md), [article information](../feature/page-info.md), TOC and [picture preview function](../featres/../feature/photo-swipe.md).
+- Page: [Page information](../feature/page-info.md), TOC and [picture preview function](../featres/../feature/photo-swipe.md).
 
-- Site structure: simplifie the configuration of [Navigation Bar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md), add support for icons and path prefixes. At the same time, the theme added [breadcrumb](../layout/page.md#breadcrumb) and footer support.
+- Site structure:
+
+  Rebuild mobile navbar
+
+  simplfied [Navbar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md) config, add support for icons and path prefixes.
+
+- Layout: addes [breadcrumb](../layout/breadcrumb.md) and [footer](../layout/footer.md) support.
+
+- [Homepage](../layout/home.md): New outlook, features support icons and links.
 
 ### Full Blog Support
 
@@ -83,4 +85,12 @@ The theme is containing full blog support, you can use the brand new [blog homep
 
 - Provides [Comment and PageViews](../feature/comment.md) feature to let you communicate with your visitors
 
-- Provides [Feed](../feature/feed.md) generation, so that others can subscribe your site.
+- Provides [Feed](../advanced/feed.md) generation, so that others can subscribe your site.
+
+### Search engine enhancement
+
+- Provides [SEO Enhance](../advanced/seo.md), will automatically inject information to fully support OGP and JSON-LD protocols, and enhance search engine indexing.
+
+- Provides [Sitemap Generation](../advanced/sitemap.md)
+
+- Provides [PWA](../advanced/pwa.md)

@@ -32,7 +32,11 @@ The theme will use `dayjs` to automatically localize the text of last update tim
 
 Since the last update time is `git` based, you can only enable it in a `git` based project. Also, since the timestamp used is from a git commit, it will only be displayed after the first commit on a given page, and will only be updated when subsequent commits change to that page.
 
-Also since the `git` plugin has a serious performance impact, the theme will not be enabled in devServer. If needed, please import the plugin yourself, or add the `--debug` flag to run dev command.
+:::
+
+::: danger Not available in dev
+
+Since the `git` plugin has a serious performance impact, the theme will not enable it in devServer. If you need it, please import the plugin yourself in config files, or add the `--debug` flag to run dev command.
 
 :::
 

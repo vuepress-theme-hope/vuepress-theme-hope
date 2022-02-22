@@ -2,10 +2,10 @@
 title: SEO
 icon: config
 category:
-  - feature
+  - 高级
 tag:
-  - feature
-  - seo
+  - 高级
+  - SEO
 ---
 
 `vuepress-theme-hope` 通过内置 [`vuepress-plugin-seo2`][seo2] 为提供 SEO 增强功能。

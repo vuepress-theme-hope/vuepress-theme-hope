@@ -23,6 +23,18 @@ tag:
 
 <!-- more -->
 
+## 设置图标
+
+按照下方说明导入图标并设置 `iconPrefix` 后，你可以在多个地方使用图标。
+
+- 页面: 在 frontmatter 中设置 `icon`
+
+  此图标将用于路径导航、页面标题、导航栏生成项、侧边栏生成项、页面导航等。
+
+- 导航栏: 在 NavbarItemConfig 中设置 `icon` 选项
+- 侧边栏: 在 SidebarItemConfig 中设置 `icon` 选项
+- 主页: 在功能项中设置 `icon` 选项
+
 ## Iconfont
 
 [Iconfont](https://iconfont.cn) 是阿里妈妈 MUX 倾力打造的矢量图标管理、交流平台。

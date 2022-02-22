@@ -88,16 +88,6 @@ tag:
 
 - [文章加密](feature/encrypt.md)
 
-### 功能
-
-- [PWA 支持](feature/pwa.md)
-
-- [Feed 生成](feature/feed.md)
-
-- [SEO 增强](feature/seo.md)
-
-- [Sitemap 生成](feature/sitemap.md)
-
 ### 博客
 
 - [支持置顶的文章列表](blog/intro.md)
@@ -110,9 +100,23 @@ tag:
 
 - [全新博客主页布局](blog/home.md)
 
+### 高级功能
+
+- [PWA 支持](advanced/pwa.md)
+
+- [Feed 生成](advanced/feed.md)
+
+- [SEO 增强](advanced/seo.md)
+
+- [Sitemap 生成](advanced/sitemap.md)
+
+- [自定义主题组件](advanced/customize.md)
+
+- [主题继承](advanced/extend.md)
+
 ## 🧩 内建插件
 
-本主题还包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
+本主题包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
 - [vuepress-plugin-blog2][blog2]: VuePress2 的博客插件
 

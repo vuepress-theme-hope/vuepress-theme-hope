@@ -2,9 +2,9 @@
 title: Feed Support
 icon: rss
 category:
-  - feature
+  - advanced
 tag:
-  - feature
+  - advanced
   - feed
 ---
 

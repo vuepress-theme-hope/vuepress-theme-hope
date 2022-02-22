@@ -23,6 +23,18 @@ The prefix of the icon class is an empty string by default, you probably need to
 
 <!-- more -->
 
+## Setting icons
+
+After importing icons and setting `iconPrefix` as below, you can use icon in mutiple places.
+
+- Page: set `icon` in frontmatter
+
+  This icon will be used in breadcrumb, page title, navbar generated item, sidebar generated item, page nav, etc.
+
+- Navbar: set `icon` option in NavbarItemConfig
+- Sidebar: set `icon` option in SidebarItemConfig
+- HomePage: set `icon` option in feature item
+
 ## Iconfont
 
 [Iconfont](https://iconfont.cn) is a vector icon management and communication platform created by Alimama MUX.

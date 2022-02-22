@@ -2,10 +2,10 @@
 title: Feed 支持
 icon: rss
 category:
-  - feature
+  - 高级
 tag:
+  - 高级
   - feed
-  - feature
 ---
 
 `vuepress-theme-hope` 通过内置 [`vuepress-plugin-feed2`][feed2] 插件来为你提供 feed 支持。

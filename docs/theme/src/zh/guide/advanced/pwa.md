@@ -2,10 +2,10 @@
 title: PWA
 icon: setting
 category:
-  - feature
+  - 高级
 tag:
-  - feature
-  - pwa
+  - 高级
+  - PWA
 ---
 
 默认情况下，该主题将通过内置 [`vuepress-plugin-pwa2`][pwa2] 启用渐进式 Web 应用程序支持[^pwa-intro]。

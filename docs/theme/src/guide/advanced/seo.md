@@ -2,9 +2,9 @@
 title: SEO
 icon: config
 category:
-  - feature
+  - advanced
 tag:
-  - feature
+  - advanced
   - seo
 ---
 

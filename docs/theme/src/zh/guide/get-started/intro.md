@@ -61,19 +61,19 @@ tag:
 
 总之，任何人都可以享受 Markdown 增强语法带来的便利。
 
-### 搜索引擎增强
-
-- 提供 [SEO 增强](../feature/seo.md)，会自动注入网站信息以完整支持 OGP 与 JSON-LD 协议，增强搜索引擎索引。
-
-- 提供 [Sitemap 生成](../feature/sitemap.md)
-
 ### 页面 UI
-
-- 主页: 全新外观，特性支持图标与跳转。
 
 - 页面: [**页面图标**](../interface/icon.md)、[**文章信息**](../feature/page-info.md)、**标题目录**、[图片预览功能](../feature/photo-swipe.md)。
 
-- 站点结构: 简化了 [导航栏](../layout/navbar.md) 与 [侧边栏](../layout/sidebar.md) 配置，添加了图标与路径前缀支持。同时主题添加了[**路径导航**](../layout/page.md#路径导航) 与页脚支持。
+- 站点结构:
+
+  完全重构导航栏在移动设备的布局
+
+  简化了 [导航栏](../layout/navbar.md) 与 [侧边栏](../layout/sidebar.md) 配置，添加了图标与路径前缀支持。
+
+- 布局: 新增 [**路径导航**](../layout/breadcrumb.md) 与 [页脚](../layout/breadcrumb.md) 支持。
+
+- [主页](../layout/home.md): 全新外观，特性支持图标与跳转。
 
 ### 完整的博客支持
 
@@ -83,4 +83,12 @@ tag:
 
 - 提供 [**评论**](../feature/comment.md) 功能以便你可以与你的访客交流。
 
-- 支持创建 [Feed](../feature/feed.md)，以便他人可以订阅你的网站。
+- 支持创建 [Feed](../advanced/feed.md)，以便他人可以订阅你的网站。
+
+### 搜索引擎增强
+
+- 提供 [SEO 增强](../advanced/seo.md)，会自动注入网站信息以完整支持 OGP 与 JSON-LD 协议，增强搜索引擎索引。
+
+- 提供 [Sitemap 生成](../advanced/sitemap.md)
+
+- 提供 [PWA 支持](../advanced/pwa.md)，使你的站点可被安装。

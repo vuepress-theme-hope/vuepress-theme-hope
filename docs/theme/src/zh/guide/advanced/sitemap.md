@@ -2,10 +2,10 @@
 title: Sitemap
 icon: sitemap
 category:
-  - feature
+  - 高级
 tag:
-  - feature
-  - sitemap
+  - 高级
+  - Sitemap
 ---
 
 `vuepress-theme-hope` 通过内置 [vuepress-plugin-sitemap2`][sitemap2] 为你提供 Sitemap 生成。

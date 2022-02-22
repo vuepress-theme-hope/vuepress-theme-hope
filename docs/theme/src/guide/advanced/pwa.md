@@ -2,10 +2,10 @@
 title: PWA
 icon: setting
 category:
-  - feature
+  - advanced
 tag:
-  - feature
-  - pwa
+  - advanced
+  - PWA
 ---
 
 By default, the theme will enable progressive web app support [^pwa-intro] via builtin [`vuepress-plugin-pwa2`][pwa2].

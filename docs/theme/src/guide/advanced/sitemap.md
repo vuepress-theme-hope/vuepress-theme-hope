@@ -2,9 +2,9 @@
 title: Sitemap
 icon: sitemap
 category:
-  - feature
+  - advanced
 tag:
-  - feature
+  - advanced
   - sitemap
 ---
 
