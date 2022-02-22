@@ -3,16 +3,255 @@ title: Customize Components
 icon: customize
 ---
 
-<!-- 主题通过 `alias` 来引入组件，所以你可以利用它来替换主题的任何一个组件。 -->
+The theme imports components through `alias`, so you can use it to replace any component of the theme.
 
 <!-- more -->
 
-<!-- ## 替换组件的方式 -->
+## Replace components
 
-::: warning
+You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
-BUILDING
+:::: code-group
+
+::: code-group-item TS
+
+```ts
+// .vuepress/config.ts
+import { path } from "@vuepress/utils";
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  alias: {
+    // Here you can redirect aliases to your own components
+    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
+    "@theme-hope/components/HomePage": path.resolve(
+      __dirname,
+      "./components/HomePage.vue"
+    ),
+  },
+});
+```
 
 :::
 
-<!-- 你需要在自己的 VuePress 配置文件内添加一个本地插件以利用 VuePress Plugin API -->
+::: code-group-item JS
+
+```js
+// .vuepress/config.js
+const { path } = require("@vuepress/utils");
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  alias: {
+    // Here you can redirect aliases to your own components
+    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
+    "@theme-hope/components/HomePage": path.resolve(
+      __dirname,
+      "./components/HomePage.vue"
+    ),
+  },
+});
+```
+
+:::
+
+::::
+
+Here are list of aliases.
+
+::: details Theme components alias
+
+Components:
+
+- `@theme-hope/components/AutoLink`: basic link
+- `@theme-hope/components/CommonWrapper`: basic layout integration
+- `@theme-hope/components/HomeFeatures`: homepage features
+- `@theme-hope/components/HomeHero`: homepage logo and introduction
+- `@theme-hope/components/HomePage`: home page
+- `@theme-hope/components/MarkdownContent`: Markdown content
+- `@theme-hope/components/NormalPage`: normal page
+- `@theme-hope/components/PageFooter`: page footer
+- `@theme-hope/components/PageMeta`: page meta information
+- `@theme-hope/components/PageNav`: page navigation
+- `@theme-hope/components/PageTitle`: page title
+- `@theme-hope/components/SkipLink`: skip to main content
+
+Miscellaneous:
+
+- `@theme-hope/components/icons`: theme icons
+- `@theme-hope/components/transitions`: theme transitions
+- `@theme-hope/composables`: theme Composition API
+- `@theme-hope/utils`: theme utility functions
+
+:::
+
+::: details Navbar component alias
+
+Components:
+
+- `@theme-hope/module/navbar/components/DropdownLink`: dropdown list
+- `@theme-hope/module/navbar/components/LanguageDropdown`: language dropdown
+- `@theme-hope/module/navbar/components/NavActions`: navbar functions
+- `@theme-hope/module/navbar/components/Navbar`: navbar
+- `@theme-hope/module/navbar/components/NavbarBrand`: navbar brand information
+- `@theme-hope/module/navbar/components/NavbarLinks`: navbar links
+- `@theme-hope/module/navbar/components/NavScreen`: navigation screen in mobile view
+- `@theme-hope/module/navbar/components/NavScreenDropdown`: mobile view navbar dropdown menu
+- `@theme-hope/module/navbar/components/NavScreenLinks`: mobile view navbar links
+- `@theme-hope/module/navbar/components/RepoLink`: repository link
+- `@theme-hope/module/navbar/components/ToggleNavbarButton`: navbar toggle button
+- `@theme-hope/module/navbar/components/ToggleSidebarButton`: sidebar toggle button
+
+Miscellaneous:
+
+- `@theme-hope/module/navbar/components/icons`: navbar icons
+- `@theme-hope/module/navbar/composables`: navbar Composition API
+
+:::
+
+::: details Sidebar component alias
+
+Components:
+
+- `@theme-hope/module/sidebar/components/Sidebar`: sidebar
+- `@theme-hope/module/sidebar/components/SidebarChild`: sidebar link item
+- `@theme-hope/module/sidebar/components/SidebarGroup`: sidebar grouping links
+- `@theme-hope/module/sidebar/components/SidebarLinks`: sidebar links
+
+Miscellaneous:
+
+- `@theme-hope/module/sidebar/composables`: sidebar Composition APi
+- `@theme-hope/module/sidebar/utils`: sidebar utility functions
+
+:::
+
+::: details Blog module component alias
+
+Components:
+
+- `@theme-hope/module/blog/components/ArticleItem`: article item
+- `@theme-hope/module/blog/components/ArticleList`: article list
+- `@theme-hope/module/blog/components/ArticleType`: article type
+- `@theme-hope/module/blog/components/BloggerInfo`: blogger info
+- `@theme-hope/module/blog/components/BlogHero`: blog homepage logo and introduction
+- `@theme-hope/module/blog/components/BlogHome`: blog home page
+- `@theme-hope/module/blog/components/BlogPage`: normal blog page
+- `@theme-hope/module/blog/components/CategoryList`: Category list
+- `@theme-hope/module/blog/components/InfoList`: blog info list
+- `@theme-hope/module/blog/components/InfoPanel`: blog info panel
+- `@theme-hope/module/blog/components/ProjectPanel`: blog homepage project panel
+- `@theme-hope/module/blog/components/SocialMedia`: social media links
+- `@theme-hope/module/blog/components/TagList`: tag list
+- `@theme-hope/module/blog/components/TimelineItems`: timeline items
+- `@theme-hope/module/blog/components/TimelineList`: timeline List
+
+Miscellaneous:
+
+- `@theme-hope/module/blog/components/icons`: blog icons
+- `@theme-hope/module/blog/composables`: blog Composables API
+
+:::
+
+::: details Encryption module component alias
+
+Components:
+
+- `@theme-hope/module/encrypt/components/PasswordModal`: password input box
+
+Miscellaneous:
+
+- `@theme-hope/module/encrypt/composables`: encryption Composition API
+- `@theme-hope/module/encrypt/utils`: encryption utility functions
+
+:::
+
+::: details Appearance module component alias
+
+- `@theme-hope/module/outlook/components/AppearanceSwitch`: theme appearance switch
+- `@theme-hope/module/outlook/components/OutlookButton`: appearance button
+- `@theme-hope/module/outlook/components/OutlookSettings`: appearance settings
+- `@theme-hope/module/outlook/components/ThemeColorPicker`: theme color picker
+
+Miscellaneous:
+
+- `@theme-hope/module/outlook/components/icons`: appearance icons
+- `@theme-hope/module/outlook/composables`: appearance Composition API
+
+:::
+
+## Using slots
+
+Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
+
+For example, if your website has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
+
+:::: code-group
+
+::: code-group-item config.ts
+
+```ts
+// .vuepress/config.ts
+import { path } from "@vuepress/utils";
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  alias: {
+    // Here you can direct aliases to your own components
+    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
+    "@theme-hope/components/HomePage": path.resolve(
+      __dirname,
+      "./components/HomePage.vue"
+    ),
+  },
+});
+```
+
+:::
+
+::: code-group-item HomePage.vue
+
+```vue
+<template>
+  <HopeHomePage>
+    <!-- Introduce comment component using bottom slot -->
+    <template #bottom>
+      <CommentService />
+    </template>
+  </HopeHomePage>
+</template>
+<script setup lang="ts">
+import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
+</script>
+```
+
+:::
+
+::::
+
+Components that provide slots are as follows:
+
+**theme**:
+
+- `AutoLink`: `default`, `before`, `after`
+- `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
+- `HomePage`: `top`, `center`, `bottom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
+
+**Navigation Bar**:
+
+- `DropdownLink`: `title`
+- `NavActions`: `before`, `after`
+- `Navbar`: `left`, `center`, `right`
+- `NavbarBrand`: `default`
+- `NavScreen`: `before`, `after`
+- `NavScreenDropdown`: `before`, `after`
+
+**Sidebar**:
+
+- `Sidebar`: `top`, `default`, `bottom`
+
+::: tip
+
+For the corresponding location and function of each slot, please refer to [theme source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/).
+
+:::

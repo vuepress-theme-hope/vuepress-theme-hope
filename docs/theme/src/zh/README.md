@@ -77,22 +77,22 @@ features:
   - title: SEO 增强
     icon: config
     details: 将最终生成的网页针对搜索引擎进行优化。
-    link: /zh/guide/feature/seo.html
+    link: /zh/guide/advanced/seo.html
 
   - title: Sitemap
     icon: sitemap
     details: 自动为你的网站生成 Sitemap
-    link: /zh/guide/feature/sitemap.html
+    link: /zh/guide/advanced/sitemap.html
 
   - title: Feed 支持
     icon: rss
     details: 生成你的 Feed，并通知你的用户订阅它
-    link: /zh/guide/feature/feed.html
+    link: /zh/guide/advanced/feed.html
 
   - title: PWA 支持
     icon: mobile
     details: 让你的网站更像一个 APP
-    link: /zh/guide/feature/pwa.html
+    link: /zh/guide/advanced/pwa.html
 
   - title: 更多新特性
     icon: more

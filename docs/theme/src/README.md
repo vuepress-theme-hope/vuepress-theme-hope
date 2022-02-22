@@ -77,22 +77,22 @@ features:
   - title: SEO enhancement
     icon: config
     details: Optimize pages for search engines
-    link: /guide/feature/seo.html
+    link: /guide/advanced/seo.html
 
   - title: Sitemap
     icon: sitemap
     details: Generate a Sitemap for your website
-    link: /guide/feature/sitemap.html
+    link: /guide/advanced/sitemap.html
 
   - title: Feed support
     icon: rss
     details: Generate feed to allow users to subcribe it
-    link: /guide/feature/feed.html
+    link: /guide/advanced/feed.html
 
   - title: PWA support
     icon: mobile
     details: Make your website more like an APP
-    link: /guide/feature/pwa.html
+    link: /guide/advanced/pwa.html
 
   - title: More new features
     icon: more
