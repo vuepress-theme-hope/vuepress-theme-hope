@@ -47,8 +47,12 @@ export default defineComponent({
               DropTransition,
               { delay: 0.08 * (index + 1), type: "group" },
               () => [
-                h("h3", { id: year, class: "year" }, h("span", year)),
-                h("li", { class: "year-list" }, [
+                h(
+                  "h3",
+                  { key: "title", id: year, class: "year" },
+                  h("span", year)
+                ),
+                h("li", { key: "content", class: "year-list" }, [
                   h(
                     "ul",
                     { class: "year-wrapper" },
