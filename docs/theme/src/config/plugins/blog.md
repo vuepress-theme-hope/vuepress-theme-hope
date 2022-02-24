@@ -13,6 +13,8 @@ tag:
 
 The theme provides blog feature, and it's not enabled by default.
 
+You can enable blogging by setting `themeConfig.plugins.blog` to `true`.
+
 For instructions, please see [Blog Intro](../../guide/blog/intro.md);
 
 ## Options
