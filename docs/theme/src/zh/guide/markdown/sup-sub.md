@@ -15,7 +15,7 @@ tag:
 
 ## 配置
 
-:: code-group
+:::: code-group
 
 ::: code-group-item TS
 
