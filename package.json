@@ -102,7 +102,7 @@
     "@rollup/plugin-typescript": "8.3.0",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.8",
     "@types/inquirer": "8.2.0",
-    "@types/jest": "27.4.0",
+    "@types/jest": "27.4.1",
     "@types/semver": "7.3.9",
     "@typescript-eslint/eslint-plugin": "5.12.0",
     "@typescript-eslint/parser": "5.12.0",
