@@ -120,6 +120,7 @@ export default defineComponent({
                   h(
                     "div",
                     {
+                      key: num,
                       class: { active: props.currentPage === num },
                       role: "navigation",
                       onClick: () => navigate(num),
