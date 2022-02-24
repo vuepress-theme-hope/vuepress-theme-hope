@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.33...v2.0.0-alpha.34) (2022-02-24)
+
+### Bug Fixes
+
+- **theme:** fix timelinelist item hover ([67f1dcd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67f1dcd26f87cc31b7390397079e8e2c6eae4c15))
+- **theme:** key timeline transition ([810102f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/810102f98ba19364d7bbf93f5669e8540a7a37ab))
+
 # [2.0.0-alpha.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.32...v2.0.0-alpha.33) (2022-02-22)
 
 ### Bug Fixes
