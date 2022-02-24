@@ -61,8 +61,9 @@ export default [
       /^reveal\.js/,
       "vue",
       /\.scss$/,
+      /\.css$/,
     ],
-    dtsExternal: [/\.scss$/],
+    dtsExternal: [/\.scss$/, /\.css$/],
   }),
   ...rollupTypescript("client/SlidePage", {
     external: [

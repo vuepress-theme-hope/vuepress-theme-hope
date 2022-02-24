@@ -27,14 +27,7 @@ export default defineClientAppEnhance(({ app }) => {
 
   if (Mermaid.name) app.component("MermaidChart", Mermaid);
 
-  if (Presentation.name) {
-    app.component("PresentationViewer", Presentation);
-    void import("./styles/slides/index.scss");
-    void import("./styles/slides/theme/fonts/league-gothic/league-gothic.css");
-    void import(
-      "./styles/slides/theme/fonts/source-sans-pro/source-sans-pro.css"
-    );
-  }
+  if (Presentation.name) app.component("PresentationViewer", Presentation);
 
   if (MARKDOWN_ENHANCE_TASKLIST) void import("./styles/tasklist.scss");
 

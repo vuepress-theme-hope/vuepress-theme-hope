@@ -28,6 +28,10 @@ type ThemeType =
   | "blood"
   | "moon";
 
+import "../styles/slides/index.scss";
+import "../styles/slides/theme/fonts/league-gothic/league-gothic.css";
+import "../styles/slides/theme/fonts/source-sans-pro/source-sans-pro.css";
+
 export default defineComponent({
   name: "PresentationViewer",
 
