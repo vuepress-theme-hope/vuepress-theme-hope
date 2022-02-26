@@ -146,7 +146,7 @@ interface TaskListOptions {
 }
 ```
 
-## tex
+### tex
 
 - 类型: `KatexOptions | boolean`
 - 默认值: `false`
