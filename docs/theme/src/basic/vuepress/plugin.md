@@ -2,9 +2,11 @@
 title: Plugins
 icon: plugin
 category:
-  - basic
+  - Basic
+  - VuePress
 tag:
-  - vuepress
+  - Plugin
+  - VuePress
 ---
 
 With the help of [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.md), VuePress plugin can provide different features for you.

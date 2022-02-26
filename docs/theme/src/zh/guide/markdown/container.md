@@ -2,10 +2,10 @@
 title: 自定义容器
 icon: customize
 category:
-  - markdown
+  - Markdown
 tag:
-  - container
-  - markdown
+  - Markdown
+  - 容器
 ---
 
 主题可以为你添加提示、注释、信息、注意、警告和详情自定义容器的支持。

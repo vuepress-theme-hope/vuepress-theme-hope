@@ -2,10 +2,14 @@
 title: 小白教程
 icon: creative
 category:
-  - Get Started
+  - 快速上手
+  - 基础知识
+  - 教程
 ---
 
 本教程是一个针对小白手把手教程。
+
+<!-- more -->
 
 ## 环境安装
 

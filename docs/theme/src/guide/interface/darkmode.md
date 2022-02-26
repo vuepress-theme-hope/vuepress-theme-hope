@@ -2,10 +2,10 @@
 title: Darkmode
 icon: contrast
 category:
-  - interface
+  - Interface
 tag:
-  - darkmode
-  - interface
+  - Darkmode
+  - Interface
 ---
 
 In dark mode, the page uses a dark background to make you comfortable.

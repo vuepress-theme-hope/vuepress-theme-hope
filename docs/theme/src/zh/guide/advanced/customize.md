@@ -1,6 +1,11 @@
 ---
 title: 自定义主题组件
 icon: customize
+category:
+  - 高级
+tag:
+  - 高级
+  - 自定义
 ---
 
 主题通过 `alias` 来引入组件，所以你可以利用它来替换主题的任何一个组件。

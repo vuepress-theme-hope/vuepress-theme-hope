@@ -2,9 +2,11 @@
 title: VuePress Config
 icon: config
 category:
-  - basic
+  - Basic
+  - VuePress
 tag:
-  - config
+  - Config
+  - VuePress
 ---
 
 ## Config File

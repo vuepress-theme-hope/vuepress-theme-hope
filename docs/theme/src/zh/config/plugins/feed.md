@@ -2,11 +2,11 @@
 title: Feed 插件配置
 icon: rss
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - 插件配置
+  - 主题配置
+  - Feed
 ---
 
 ## 介绍 <Badge text="默认启用" />

@@ -2,9 +2,11 @@
 title: Theme Config
 icon: palette
 category:
-  - basic
+  - Basic
+  - VuePress
 tag:
-  - vuepress
+  - Theme
+  - VuePress
 ---
 
 VuePress theme can provide layouts, styles and many other features for you, helping you to focus on writing Markdown content.

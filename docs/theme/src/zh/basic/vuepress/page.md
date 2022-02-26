@@ -2,9 +2,11 @@
 title: VuePress 页面
 icon: page
 category:
-  - basic
+  - 基础知识
+  - VuePress
 tag:
-  - page
+  - 页面
+  - VuePress
 ---
 
 VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件都是一个单独的页面。

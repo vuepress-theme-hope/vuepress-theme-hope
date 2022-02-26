@@ -2,10 +2,10 @@
 title: Enable Enhance
 icon: enable
 category:
-  - markdown
+  - Markdown
 tag:
-  - intro
-  - markdown
+  - Intro
+  - Markdown
 ---
 
 Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via [vuepress-plugin-md-enhance][md-enhance] plugin.

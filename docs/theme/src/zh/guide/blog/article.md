@@ -2,13 +2,13 @@
 title: 文章列表
 icon: article
 category:
-  - blog
+  - 博客
 tag:
-  - article
-  - blog
-  - encrypt
-  - slide
-  - star
+  - 博客
+  - 文章
+  - 加密
+  - 幻灯片
+  - 收藏
 ---
 
 主题默认在 `/article/` 路径下为你提供了全部的文章列表。

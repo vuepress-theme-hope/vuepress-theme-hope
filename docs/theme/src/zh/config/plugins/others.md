@@ -2,11 +2,10 @@
 title: 其他插件配置
 icon: more
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - 插件配置
+  - 主题配置
 ---
 
 ## copyCode <Badge text="默认启用" />

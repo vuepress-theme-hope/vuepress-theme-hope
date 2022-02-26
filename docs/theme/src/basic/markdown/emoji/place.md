@@ -1,11 +1,11 @@
 ---
-title: Place
+title: Place Emoji
 icon: emoji
 category:
-  - basic
+  - Basic
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :house: `:house:`

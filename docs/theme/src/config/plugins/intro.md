@@ -2,10 +2,11 @@
 title: Plugin Description
 icon: info
 category:
-  - config
+  - Config
 tag:
-  - plugin
-  - config
+  - Intro
+  - Plugin Config
+  - Theme Config
 ---
 
 `vuepress-theme-hope` bundles many VuePress plugins.

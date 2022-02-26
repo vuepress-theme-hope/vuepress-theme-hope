@@ -1,11 +1,7 @@
 ---
+title: Emoji List
 icon: emoji
-tag:
-  - markdown
-  - emoji
 ---
-
-# Emoji List
 
 ## People
 

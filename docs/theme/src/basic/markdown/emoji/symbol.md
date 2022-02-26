@@ -1,11 +1,11 @@
 ---
-title: Symbol
+title: Symbol Emoji
 icon: emoji
 category:
-  - basic
+  - Basic
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :one: `:one:`

@@ -2,10 +2,10 @@
 title: 页面
 icon: page
 category:
-  - layout
+  - 布局
 tag:
-  - layout
-  - page
+  - 布局
+  - 页面
 ---
 
 ## 图标支持

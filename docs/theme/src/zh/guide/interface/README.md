@@ -1,10 +1,6 @@
 ---
 title: 界面
 icon: palette
-category:
-  - interface
-tag:
-  - intro
 ---
 
 ## 目录

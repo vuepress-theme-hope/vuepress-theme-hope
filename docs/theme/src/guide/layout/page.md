@@ -2,10 +2,10 @@
 title: Page
 icon: page
 category:
-  - layout
+  - Layout
 tag:
-  - page
-  - layout
+  - Page
+  - Layout
 ---
 
 ## Icon support

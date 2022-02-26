@@ -2,10 +2,10 @@
 title: 代码块分组
 icon: code
 category:
-  - markdown
+  - Markdown
 tag:
-  - codegroup
-  - markdown
+  - Markdown
+  - 代码组
 ---
 
 主题为你带来了代码块分组支持。

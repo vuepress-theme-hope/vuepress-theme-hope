@@ -2,10 +2,10 @@
 title: 博主信息
 icon: blog
 category:
-  - blog
+  - 博客
 tag:
-  - blog
-  - path
+  - 博客
+  - 博主信息
 ---
 
 主题允许你展示博主的基本信息。

@@ -1,11 +1,11 @@
 ---
-title: Nature
+title: Nature Emoji
 icon: emoji
 category:
-  - basic
+  - Basic
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :sunny: `:sunny:`

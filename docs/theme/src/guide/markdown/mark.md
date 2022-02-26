@@ -2,10 +2,10 @@
 title: Markup
 icon: write
 category:
-  - markdown
+  - Markdown
 tag:
-  - markup
-  - markdown
+  - Markup
+  - Markdown
 ---
 
 Make Markdown files in your VuePress site support markup.

@@ -2,9 +2,9 @@
 title: Other features
 icon: others
 category:
-  - interface
+  - Interface
 tag:
-  - interface
+  - Interface
 ---
 
 ## Style customization

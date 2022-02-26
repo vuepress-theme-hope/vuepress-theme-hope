@@ -2,9 +2,9 @@
 title: Guide
 icon: creative
 category:
-  - guide
+  - Intro
 tag:
-  - intro
+  - Intro
 ---
 
 ::: tip

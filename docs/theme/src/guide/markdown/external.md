@@ -1,8 +1,10 @@
 ---
 title: External import
 icon: link
+cateogry:
+  - Markdown
 tag:
-  - markdown
+  - Markdown
 ---
 
 To using new syntax inside Markdown to enhance content, you can also use `<iframe>` or `<img>` to import external links to enhance your Markdown content.

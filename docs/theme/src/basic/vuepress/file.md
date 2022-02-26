@@ -2,9 +2,11 @@
 title: File Structure
 icon: folder
 category:
-  - basic
+  - Basic
+  - VuePress
 tag:
-  - vuepress
+  - File Structure
+  - VuePress
 ---
 
 ## File Structure

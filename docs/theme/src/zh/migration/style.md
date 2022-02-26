@@ -1,6 +1,11 @@
 ---
 title: 样式迁移指南
 icon: style
+category:
+  - 迁移
+tag:
+  - 迁移
+  - 样式
 ---
 
 ## 预处理器变更

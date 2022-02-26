@@ -2,11 +2,11 @@
 title: MdEnhance 插件配置
 icon: markdown
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - 插件配置
+  - 主题配置
+  - Markdown
 ---
 
 ## 介绍

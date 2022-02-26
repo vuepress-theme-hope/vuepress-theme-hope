@@ -2,9 +2,9 @@
 title: 配置介绍
 icon: config
 category:
-  - config
+  - 配置
 tag:
-  - config
+  - 介绍
 ---
 
 ## 配置概念

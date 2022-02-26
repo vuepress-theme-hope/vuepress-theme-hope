@@ -1,11 +1,12 @@
 ---
-title: 自然
+title: 自然 Emoji
 icon: emoji
 category:
-  - basic
+  - 基础知识
+  - Markdown
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :sunny: `:sunny:`

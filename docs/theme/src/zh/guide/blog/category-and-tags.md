@@ -2,11 +2,11 @@
 title: 分类与标签
 icon: tag
 category:
-  - blog
+  - 博客
 tag:
-  - blog
-  - category
-  - tag
+  - 博客
+  - 分类
+  - 标签
 ---
 
 你可以通过 frontmatter 来为文章配置分类与标签，使它们出现在特定的分类与标签页面中。

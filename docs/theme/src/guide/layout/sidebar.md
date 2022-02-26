@@ -2,10 +2,10 @@
 title: Sidebar
 icon: sidebar
 category:
-  - layout
+  - Layout
 tag:
-  - sidebar
-  - layout
+  - Layout
+  - Sidebar
 ---
 
 The sidebar may contain a list of related documents, document titles, and blogger information in blog mode.

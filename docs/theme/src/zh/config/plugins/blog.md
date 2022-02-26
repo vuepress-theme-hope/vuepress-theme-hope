@@ -2,11 +2,11 @@
 title: 博客配置
 icon: blog
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - 插件配置
+  - 主题配置
+  - 博客
 ---
 
 ## 介绍

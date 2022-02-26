@@ -1,6 +1,11 @@
 ---
 title: 主题继承
 icon: extend
+category:
+  - 高级
+tag:
+  - 高级
+  - 自定义
 ---
 
 `vuepress-theme-hope` 和默认主题一样，同样支持继承。

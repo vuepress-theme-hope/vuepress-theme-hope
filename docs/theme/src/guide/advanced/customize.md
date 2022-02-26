@@ -1,6 +1,11 @@
 ---
 title: Customize Components
 icon: customize
+category:
+  - Advanced
+tag:
+  - Advanced
+  - Customize
 ---
 
 The theme imports components through `alias`, so you can use it to replace any component of the theme.

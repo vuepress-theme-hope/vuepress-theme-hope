@@ -2,10 +2,10 @@
 title: Timeline
 icon: time
 category:
-  - blog
+  - Blog
 tag:
-  - blog
-  - timeline
+  - Blog
+  - Timeline
 ---
 
 You can access the time page through `/timeline/`. On the page, you can view all the articles in time reverse order.

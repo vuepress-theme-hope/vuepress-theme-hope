@@ -1,6 +1,11 @@
 ---
 title: A11y
 icon: support
+category:
+  - Interface
+tag:
+  - A11y
+  - Interface
 ---
 
 "A11y" stands for "accessibility".

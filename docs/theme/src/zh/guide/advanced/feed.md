@@ -5,7 +5,7 @@ category:
   - 高级
 tag:
   - 高级
-  - feed
+  - Feed
 ---
 
 `vuepress-theme-hope` 通过内置 [`vuepress-plugin-feed2`][feed2] 插件来为你提供 feed 支持。

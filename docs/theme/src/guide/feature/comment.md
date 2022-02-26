@@ -2,10 +2,10 @@
 title: Comment Service
 icon: comment
 category:
-  - feature
+  - Feature
 tag:
-  - comment
-  - feature
+  - Comment
+  - Feature
 ---
 
 `vuepress-theme-hope` implements the comment feature with built-in [`vuepress-plugin-comment2`][comment2].

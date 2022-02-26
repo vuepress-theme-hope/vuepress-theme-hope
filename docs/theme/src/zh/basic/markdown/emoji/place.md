@@ -1,11 +1,12 @@
 ---
-title: 地点
+title: 地点 Emoji
 icon: emoji
 category:
-  - basic
+  - 基础知识
+  - Markdown
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :house: `:house:`

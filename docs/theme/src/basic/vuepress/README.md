@@ -2,9 +2,12 @@
 title: About VuePress
 icon: vue
 category:
-  - basic
+  - Basic
+  - VuePress
 tag:
-  - vuepress
+  - Intro
+  - VuePress
+prev: ../markdown/demo.html
 ---
 
 ## As Easy as 1, 2, 3

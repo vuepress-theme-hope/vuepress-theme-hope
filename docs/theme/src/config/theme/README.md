@@ -2,10 +2,9 @@
 title: Theme Config
 icon: config
 category:
-  - config
+  - Config
 tag:
-  - themeConfig
-  - config
+  - Theme Config
 ---
 
 ## Content

@@ -1,11 +1,6 @@
 ---
 title: 插件配置
 icon: config
-category:
-  - config
-tag:
-  - themeConfig
-  - config
 ---
 
 ## 目录

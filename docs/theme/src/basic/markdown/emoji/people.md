@@ -1,11 +1,11 @@
 ---
-title: People
+title: People Emoji
 icon: emoji
 category:
-  - basic
+  - Basic
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :smile: `:smile:`

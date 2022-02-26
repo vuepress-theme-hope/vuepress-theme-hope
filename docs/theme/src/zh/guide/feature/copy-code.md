@@ -2,10 +2,10 @@
 title: 代码复制
 icon: copy
 category:
-  - feature
+  - 功能
 tag:
-  - copy code
-  - feature
+  - 功能
+  - 代码复制
 ---
 
 如果你是一个程序员，你可能希望你的用户能够一键复制你在正文中展示的代码。

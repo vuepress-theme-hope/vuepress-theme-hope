@@ -2,9 +2,11 @@
 title: 内置 Markdown 拓展
 icon: markdown
 category:
-  - basic
+  - 基础知识
+  - VuePress
 tag:
-  - markdown
+  - Markdown
+  - VuePress
 ---
 
 ## 语法扩展

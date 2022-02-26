@@ -2,11 +2,11 @@
 title: Blog Plugin Config
 icon: blog
 category:
-  - config
+  - Config
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - Blog
+  - Plugin Config
+  - Theme Config
 ---
 
 ## Intro

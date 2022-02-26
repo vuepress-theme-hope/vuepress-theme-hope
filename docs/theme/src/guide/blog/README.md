@@ -1,10 +1,6 @@
 ---
 title: Blog
 icon: blog
-category:
-  - blog
-tag:
-  - intro
 ---
 
 ## Catalog

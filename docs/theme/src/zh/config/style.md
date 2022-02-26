@@ -2,10 +2,10 @@
 title: 样式配置
 icon: style
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - style
+  - 主题配置
+  - 样式
 ---
 
 你可以在 `.vuepress/styles` 中通过在 `config.scss` 和 `palette.scss` 文件中写入变量值来更改主题的样式。

@@ -1,11 +1,6 @@
 ---
 title: 博客
 icon: blog
-category:
-  - blog
-tag:
-  - blog
-  - intro
 ---
 
 ## 目录

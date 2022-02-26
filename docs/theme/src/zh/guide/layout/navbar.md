@@ -2,10 +2,10 @@
 title: 导航栏
 icon: navbar
 category:
-  - layout
+  - 布局
 tag:
-  - layout
-  - navbar
+  - 布局
+  - 导航栏
 ---
 
 导航栏可能包含你的站点名称、[搜索框](#搜索框)、 [导航栏链接](#导航栏链接)、[多语言切换](https://v1.vuepress.vuejs.org/zh/guide/i18n.html)、[仓库链接](#git-仓库和编辑链接) 和 [外观弹窗](#外观弹窗)。它们均取决于你的配置。

@@ -2,11 +2,10 @@
 title: Other Plugin Config
 icon: more
 category:
-  - config
+  - Config
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - Plugin Config
+  - Theme Config
 ---
 
 ## copyCode <Badge text="enabled by default" />

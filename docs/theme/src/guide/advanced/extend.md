@@ -1,6 +1,11 @@
 ---
 title: Theme Extending
 icon: extend
+category:
+  - Advanced
+tag:
+  - Advanced
+  - Customize
 ---
 
 `vuepress-theme-hope` supports extending just like `@vuepress/theme-default`.

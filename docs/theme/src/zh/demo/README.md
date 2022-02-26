@@ -2,7 +2,7 @@
 title: 项目案例
 icon: discover
 category:
-  - demo
+  - 案例
 ---
 
 ## Mr.Hope 的个人博客

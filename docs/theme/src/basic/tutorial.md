@@ -2,6 +2,8 @@
 title: Step by Step Tutorial
 icon: creative
 category:
+  - Basic
+  - Tutorial
   - Get Started
 ---
 

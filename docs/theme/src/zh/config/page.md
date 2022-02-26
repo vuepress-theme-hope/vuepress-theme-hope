@@ -2,10 +2,10 @@
 title: 页面配置
 icon: config
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - frontmatter
+  - 主题配置
+  - Frontmatter
 ---
 
 页面的 frontmatter 新增如下配置选项:

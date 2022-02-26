@@ -1,6 +1,11 @@
 ---
 title: 配置迁移指南
 icon: config
+category:
+  - 迁移
+tag:
+  - 迁移
+  - 主题配置
 ---
 
 ## 主题使用

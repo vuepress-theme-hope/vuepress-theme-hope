@@ -2,9 +2,11 @@
 title: 安装/使用
 icon: install
 category:
-  - Get Started
+  - 快速上手
 tag:
-  - install
+  - 快速上手
+  - 安装
+  - 使用
 ---
 
 ## 安装

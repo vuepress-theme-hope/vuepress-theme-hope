@@ -1,10 +1,6 @@
 ---
 title: Layout
 icon: layout
-category:
-  - layout
-tag:
-  - intro
 ---
 
 ## Catalog

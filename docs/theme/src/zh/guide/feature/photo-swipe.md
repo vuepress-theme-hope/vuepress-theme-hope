@@ -2,10 +2,10 @@
 title: 图片预览
 icon: preview
 category:
-  - feature
+  - 功能
 tag:
-  - feature
-  - photo preview
+  - 功能
+  - 图片浏览
 ---
 
 通过内置 [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope 会使页面正文内的图片在点击时进入浏览模式浏览。

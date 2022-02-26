@@ -2,11 +2,11 @@
 title: Category and tags
 icon: tag
 category:
-  - blog
+  - Blog
 tag:
-  - blog
-  - category
-  - tag
+  - Blog
+  - Category
+  - Tag
 ---
 
 You can configure category and tags for articles through frontmatter to make them appear in specific categories and tags pages.

@@ -1,10 +1,6 @@
 ---
 title: Get Started
 icon: creative
-category:
-  - Get Started
-tag:
-  - intro
 ---
 
 ## Catalog

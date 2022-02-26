@@ -4,7 +4,8 @@ icon: info
 category:
   - Get Started
 tag:
-  - intro
+  - Get Started
+  - Intro
 ---
 
 ## Original intention

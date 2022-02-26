@@ -2,10 +2,10 @@
 title: Path Navigation
 icon: navigation
 category:
-  - layout
+  - Layout
 tag:
-  - breadcrumb
-  - layout
+  - Breadcrumb
+  - Layout
 ---
 
 The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.

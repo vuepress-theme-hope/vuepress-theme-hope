@@ -2,10 +2,10 @@
 title: Page information
 icon: info
 category:
-  - feature
+  - Feature
 tag:
-  - feature
-  - page info
+  - Feature
+  - Page Info
 ---
 
 By including [`@mr-hope/vuepress-plugin-components`][components], `vuepress-theme-hope` can display article information for you.

@@ -1,11 +1,11 @@
 ---
-title: Picture Preview
+title: Image Preview
 icon: preview
 category:
-  - feature
+  - Feature
 tag:
-  - feature
-  - photo preview
+  - Feature
+  - Image Preview
 ---
 
 By including [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope will make the pictures in the body of the page enter the preview mode when clicked.

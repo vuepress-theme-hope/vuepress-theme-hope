@@ -2,9 +2,11 @@
 title: VuePress 配置
 icon: config
 category:
-  - basic
+  - 基础知识
+  - VuePress
 tag:
-  - config
+  - 配置
+  - VuePress
 ---
 
 ## 配置文件

@@ -2,10 +2,10 @@
 title: 页脚支持
 icon: footer
 category:
-  - layout
+  - 布局
 tag:
-  - footer
-  - layout
+  - 布局
+  - 页脚
 ---
 
 `vuepress-theme-hope` 为所有页面提供了页脚功能 <Badge text="支持页面配置" />。

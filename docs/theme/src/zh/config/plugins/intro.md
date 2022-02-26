@@ -2,10 +2,11 @@
 title: 插件说明
 icon: info
 category:
-  - config
+  - 配置
 tag:
-  - plugin
-  - config
+  - 插件配置
+  - 主题配置
+  - 介绍
 ---
 
 `vuepress-theme-hope` 会调用很多 VuePress 插件。

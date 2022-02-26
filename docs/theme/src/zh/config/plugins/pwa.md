@@ -2,11 +2,11 @@
 title: PWA 插件配置
 icon: app
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - 插件配置
+  - 主题配置
+  - PWA
 ---
 
 ## 介绍

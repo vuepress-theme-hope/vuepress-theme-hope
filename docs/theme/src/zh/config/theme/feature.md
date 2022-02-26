@@ -2,10 +2,10 @@
 title: 主题功能配置
 icon: config
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - themeConfig
+  - 主题配置
+  - 功能
 ---
 
 这些是主题功能的配置项。

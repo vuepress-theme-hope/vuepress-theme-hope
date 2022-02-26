@@ -2,10 +2,10 @@
 title: 评论
 icon: comment
 category:
-  - feature
+  - 功能
 tag:
-  - comment
-  - feature
+  - 功能
+  - 评论
 ---
 
 通过内置 [`vuepress-plugin-comment2`][comment2]，`vuepress-theme-hope` 实现了评论功能。

@@ -2,10 +2,10 @@
 title: Theme Layout Config
 icon: config
 category:
-  - config
+  - Config
 tag:
-  - themeConfig
-  - config
+  - Theme Config
+  - Layout
 ---
 
 ## Navbar Config

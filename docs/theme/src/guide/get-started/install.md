@@ -4,7 +4,9 @@ icon: install
 category:
   - Get Started
 tag:
-  - install
+  - Get Started
+  - Install
+  - Usage
 ---
 
 ## Install

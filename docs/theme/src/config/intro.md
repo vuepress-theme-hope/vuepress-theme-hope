@@ -2,9 +2,9 @@
 title: Config Intro
 icon: config
 category:
-  - config
+  - Config
 tag:
-  - config
+  - Intro
 ---
 
 ## Config Concepts

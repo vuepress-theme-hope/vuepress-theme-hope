@@ -2,10 +2,10 @@
 title: Page Config
 icon: config
 category:
-  - config
+  - Config
 tag:
-  - config
-  - frontmatter
+  - Theme Config
+  - Frontmatter
 ---
 
 The following configuration options have been added to the page’s Front Matter:

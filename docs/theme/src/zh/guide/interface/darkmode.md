@@ -2,10 +2,10 @@
 title: 深色模式
 icon: contrast
 category:
-  - interface
+  - 界面
 tag:
-  - darkmode
-  - interface
+  - 界面
+  - 深色模式
 ---
 
 在深色模式下，页面会使用深色背景与浅色文字，以让你更加舒适。

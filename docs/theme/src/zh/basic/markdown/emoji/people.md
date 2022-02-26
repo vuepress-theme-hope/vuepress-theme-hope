@@ -1,11 +1,12 @@
 ---
-title: 人物
+title: 人物 Emoji
 icon: emoji
 category:
-  - basic
+  - 基础知识
+  - Markdown
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :smile: `:smile:`

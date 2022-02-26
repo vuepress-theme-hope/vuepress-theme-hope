@@ -2,13 +2,13 @@
 title: Article List
 icon: article
 category:
-  - blog
+  - Blog
 tag:
-  - article
-  - blog
-  - encrypt
-  - slide
-  - star
+  - Article
+  - Blog
+  - Encrypt
+  - Slide
+  - Star
 ---
 
 The topic provides you with a list of all articles under the path `/article/` by default.

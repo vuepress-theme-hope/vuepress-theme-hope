@@ -2,9 +2,11 @@
 title: 主题配置
 icon: palette
 category:
-  - basic
+  - 基础知识
+  - VuePress
 tag:
-  - vuepress
+  - 主题
+  - VuePress
 ---
 
 VuePress 主题为你提供了布局、样式和其他功能，帮助你专注于 Markdown 内容的写作。

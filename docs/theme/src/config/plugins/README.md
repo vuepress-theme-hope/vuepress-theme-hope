@@ -1,11 +1,6 @@
 ---
 title: Plugin Config
 icon: config
-category:
-  - config
-tag:
-  - themeConfig
-  - config
 ---
 
 ## Catalog

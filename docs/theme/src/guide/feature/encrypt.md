@@ -2,10 +2,10 @@
 title: Encryption
 icon: lock
 category:
-  - feature
+  - Feature
 tag:
-  - encrypt
-  - feature
+  - Encrypt
+  - Feature
 ---
 
 The theme supports encryption of specific folders or specific paths, as well as global scope encryption.

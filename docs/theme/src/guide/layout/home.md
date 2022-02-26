@@ -2,10 +2,10 @@
 title: Home Page
 icon: home
 category:
-  - layout
+  - Layout
 tag:
-  - home
-  - layout
+  - Home
+  - Layout
 ---
 
 `vuepress-theme-hope` improves the default home page.

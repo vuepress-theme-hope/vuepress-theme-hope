@@ -2,9 +2,10 @@
 title: Advanced
 icon: advance
 category:
-  - advanced
+  - Advanced
 tag:
-  - intro
+  - Advanced
+  - Intro
 ---
 
 Here are some advanced uses of `vuepress-theme-hope`.

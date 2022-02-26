@@ -2,11 +2,11 @@
 title: Blog homepage
 icon: home
 category:
-  - blog
+  - Blog
 tag:
-  - home
-  - blog
-  - layout
+  - Blog
+  - Home
+  - Layout
 ---
 
 `vuepress-theme-hope` allows you to enable a blog-style homepage.

@@ -2,10 +2,10 @@
 title: 侧边栏
 icon: sidebar
 category:
-  - layout
+  - 布局
 tag:
-  - sidebar
-  - layout
+  - 布局
+  - 侧边栏
 ---
 
 侧边栏可能会包含相关的文档列表，文档标题以及博客模式下的博主信息。

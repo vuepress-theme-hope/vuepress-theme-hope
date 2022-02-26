@@ -2,11 +2,11 @@
 title: MdEnhance Plugin Config
 icon: markdown
 category:
-  - config
+  - Config
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - Markdown
+  - Plugin Config
+  - Theme Config
 ---
 
 ## Introduction

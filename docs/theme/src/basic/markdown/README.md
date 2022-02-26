@@ -2,7 +2,11 @@
 title: Markdown Introduction
 icon: markdown
 category:
-  - basic
+  - Basic
+  - Markdown
+tag:
+  - Intro
+  - Markdown
 ---
 
 Markdown is a markup language that can be written using a plain text editor that allows plain text content to be formatted with simple markup syntax.

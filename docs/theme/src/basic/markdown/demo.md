@@ -2,7 +2,11 @@
 title: Markdown DEMO
 icon: markdown
 category:
-  - basic
+  - Basic
+  - Markdown
+tag:
+  - Demo
+  - Markdown
 ---
 
 <!-- markdownlint-disable -->

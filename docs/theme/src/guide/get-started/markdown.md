@@ -4,7 +4,8 @@ icon: markdown
 category:
   - Get Started
 tag:
-  - markdown
+  - Get Started
+  - Markdown
 ---
 
 Every document page in VuePress is rendered by Markdown.

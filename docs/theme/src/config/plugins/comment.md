@@ -2,11 +2,11 @@
 title: Comment Plugin Config
 icon: comment
 category:
-  - config
+  - Config
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - Comment
+  - Plugin Config
+  - Theme Config
 ---
 
 ## comment

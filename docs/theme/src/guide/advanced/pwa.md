@@ -2,9 +2,9 @@
 title: PWA
 icon: setting
 category:
-  - advanced
+  - Advanced
 tag:
-  - advanced
+  - Advanced
   - PWA
 ---
 

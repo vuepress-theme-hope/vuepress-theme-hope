@@ -2,10 +2,10 @@
 title: 主题外观配置
 icon: config
 category:
-  - config
+  - 配置
 tag:
-  - appearance
-  - themeConfig
+  - 主题配置
+  - 外观
 ---
 
 以下配置项控制主题的外观。

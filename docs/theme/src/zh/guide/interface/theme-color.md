@@ -2,10 +2,10 @@
 title: 主题色
 icon: palette
 category:
-  - interface
+  - 界面
 tag:
-  - interface
-  - theme color
+  - 界面
+  - 主题色
 ---
 
 这是一个开箱即用的功能，除了你的主题色之外，还提供 “红、蓝、绿、橙、紫” 五种颜色主题。你也可以定制自己的主题色选择列表。

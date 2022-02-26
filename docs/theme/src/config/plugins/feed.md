@@ -2,11 +2,11 @@
 title: Feed Plugin Config
 icon: rss
 category:
-  - config
+  - Config
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - Feed
+  - Plugin Config
+  - Theme Config
 ---
 
 ## Intro <Badge text="enabled by default" />

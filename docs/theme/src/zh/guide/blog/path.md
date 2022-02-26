@@ -2,10 +2,10 @@
 title: 博客页面路径
 icon: link
 category:
-  - blog
+  - 博客
 tag:
-  - blog
-  - path
+  - 博客
+  - 路径
 ---
 
 你可以通过 `themeConfig.plugins.blog` 控制博客中各页面路径。

@@ -1,6 +1,12 @@
 ---
 title: Page Migration Guide
 icon: page
+category:
+  - Migration
+tag:
+  - Migration
+  - Frontmatter
+  - Page
 ---
 
 ## Frontmatter

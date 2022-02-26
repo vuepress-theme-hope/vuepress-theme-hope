@@ -2,11 +2,11 @@
 title: 评论插件配置
 icon: comment
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - 插件配置
+  - 主题配置
+  - 评论
 ---
 
 ## comment

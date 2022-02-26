@@ -2,9 +2,10 @@
 title: Markdown
 icon: markdown
 category:
-  - Get Started
+  - 快速上手
 tag:
-  - markdown
+  - 快速上手
+  - Markdown
 ---
 
 VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要通过在相应路径创建编写 Markdown 建立你的文档或博客页面。

@@ -2,10 +2,10 @@
 title: Theme Feature Config
 icon: config
 category:
-  - config
+  - Config
 tag:
-  - config
-  - themeConfig
+  - Feature
+  - Theme Config
 ---
 
 These are config items of features provided by theme.

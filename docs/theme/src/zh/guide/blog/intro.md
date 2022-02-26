@@ -2,10 +2,10 @@
 title: 博客功能介绍
 icon: blog
 category:
-  - blog
+  - 博客
 tag:
-  - blog
-  - intro
+  - 博客
+  - 介绍
 ---
 
 主题通过引入 `vuepress-plugin-blog2` 提供了博客支持，该功能是**默认禁用**的。

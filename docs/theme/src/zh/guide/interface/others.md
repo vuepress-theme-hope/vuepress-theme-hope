@@ -2,9 +2,9 @@
 title: 其他界面功能
 icon: others
 category:
-  - interface
+  - 界面
 tag:
-  - interface
+  - 界面
 ---
 
 ## 样式定制

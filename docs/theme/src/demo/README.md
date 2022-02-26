@@ -2,7 +2,7 @@
 title: Demos
 icon: discover
 category:
-  - demo
+  - Demo
 ---
 
 ## Mr.Hope’s Blog

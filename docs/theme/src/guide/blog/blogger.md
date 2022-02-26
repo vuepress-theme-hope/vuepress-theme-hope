@@ -2,10 +2,10 @@
 title: Blogger Info
 icon: blog
 category:
-  - blog
+  - Blog
 tag:
-  - blog
-  - path
+  - Blog
+  - Blogger
 ---
 
 Themes allow you to display basic information about the blogger.

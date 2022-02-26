@@ -2,9 +2,11 @@
 title: VuePress Page
 icon: page
 category:
-  - basic
+  - Basic
+  - VuePress
 tag:
-  - page
+  - Page
+  - VuePress
 ---
 
 VuePress is markdown-centered. Each Markdown file inside your project is a standalone page.

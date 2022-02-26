@@ -2,9 +2,11 @@
 title: 插件
 icon: plugin
 category:
-  - basic
+  - 基础知识
+  - VuePress
 tag:
-  - vuepress
+  - VuePress
+  - 插件
 ---
 
 ## 介绍

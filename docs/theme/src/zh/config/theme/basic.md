@@ -2,10 +2,10 @@
 title: 主题基本配置
 icon: config
 category:
-  - config
+  - 配置
 tag:
-  - config
-  - themeConfig
+  - 主题配置
+  - 基础
 ---
 
 ## 基本选项

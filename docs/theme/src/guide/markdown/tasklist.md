@@ -2,10 +2,10 @@
 title: Task list
 icon: check
 category:
-  - markdown
+  - Markdown
 tag:
-  - markdown
-  - task list
+  - Markdown
+  - Task List
 ---
 
 Let the Markdown file in your VuePress site support task list.

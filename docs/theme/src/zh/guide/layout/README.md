@@ -1,10 +1,6 @@
 ---
 title: 布局
 icon: layout
-category:
-  - layout
-tag:
-  - intro
 ---
 
 ## 目录

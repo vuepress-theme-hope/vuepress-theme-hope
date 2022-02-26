@@ -2,9 +2,9 @@
 title: 指南
 icon: creative
 category:
-  - guide
+  - 介绍
 tag:
-  - intro
+  - 介绍
 ---
 
 ::: tip

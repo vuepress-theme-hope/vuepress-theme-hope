@@ -2,10 +2,10 @@
 title: SEO
 icon: config
 category:
-  - advanced
+  - Advanced
 tag:
-  - advanced
-  - seo
+  - Advanced
+  - SEO
 ---
 
 `vuepress-theme-hope` provides SEO enhancements via built-in [`vuepress-plugin-seo2`][seo2].

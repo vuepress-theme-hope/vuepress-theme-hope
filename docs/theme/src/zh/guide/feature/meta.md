@@ -2,10 +2,10 @@
 title: 页面元数据
 icon: time
 category:
-  - feature
+  - 功能
 tag:
-  - feature
-  - meta
+  - 功能
+  - 元数据
 ---
 
 主题通过 [`@vuepress/plugin-git`][git] 插件在页面底部显示页面的最后更新时间与贡献者，并提供了“编辑此页”按钮的支持。

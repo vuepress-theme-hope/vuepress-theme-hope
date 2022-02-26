@@ -2,10 +2,10 @@
 title: Style config
 icon: style
 category:
-  - config
+  - Config
 tag:
-  - config
-  - style
+  - Theme Config
+  - Style
 ---
 
 You can change the theme’s styles in `.vuepress/styles` by writing variable values in the `config.scss` and `palette.scss` files.

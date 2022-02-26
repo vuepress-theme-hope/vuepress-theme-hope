@@ -2,10 +2,10 @@
 title: 首页
 icon: home
 category:
-  - layout
+  - 布局
 tag:
-  - home
-  - layout
+  - 布局
+  - 主页
 ---
 
 `vuepress-theme-hope` 保留了默认主题的首页配置，在此基础上改进样式与配置。

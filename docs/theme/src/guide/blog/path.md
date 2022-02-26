@@ -2,10 +2,10 @@
 title: Blog Page Path
 icon: link
 category:
-  - blog
+  - Blog
 tag:
-  - blog
-  - path
+  - Blog
+  - Path
 ---
 
 You can control the path of each page in the blog through `themeConfig.plugins.blog`.

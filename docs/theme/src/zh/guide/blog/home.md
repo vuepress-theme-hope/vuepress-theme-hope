@@ -2,11 +2,11 @@
 title: 博客首页
 icon: home
 category:
-  - blog
+  - 博客
 tag:
-  - home
-  - blog
-  - layout
+  - 博客
+  - 主页
+  - 布局
 ---
 
 `vuepress-theme-hope` 允许你启用博客风格的首页。

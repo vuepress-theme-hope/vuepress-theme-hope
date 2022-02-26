@@ -2,10 +2,10 @@
 title: Sitemap
 icon: sitemap
 category:
-  - advanced
+  - Advanced
 tag:
-  - advanced
-  - sitemap
+  - Advanced
+  - Sitemap
 ---
 
 `vuepress-theme-hope` provide Sitemap generation by includeing [`vuepress-plugin-sitemap2`][sitemap2].

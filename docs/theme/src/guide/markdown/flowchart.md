@@ -2,10 +2,10 @@
 title: Flowchart
 icon: tree
 category:
-  - markdown
+  - Markdown
 tag:
-  - flowchart
-  - markdown
+  - Flowchart
+  - Markdown
 ---
 
 Let the Markdown file support flow chart in your VuePress site

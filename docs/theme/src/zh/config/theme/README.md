@@ -2,10 +2,9 @@
 title: 主题配置
 icon: config
 category:
-  - config
+  - 配置
 tag:
-  - themeConfig
-  - config
+  - 主题配置
 ---
 
 ## 目录

@@ -2,10 +2,10 @@
 title: 加密
 icon: lock
 category:
-  - feature
+  - 功能
 tag:
-  - feature
-  - encrypt
+  - 功能
+  - 加密
 ---
 
 主题支持对特定文件夹或特定的路径进行加密，也支持进行全局范围的加密。

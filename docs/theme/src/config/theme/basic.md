@@ -2,10 +2,10 @@
 title: Theme Basic Config
 icon: config
 category:
-  - config
+  - Config
 tag:
-  - config
-  - themeConfig
+  - Basic
+  - ThemeConfig
 ---
 
 ## Basic Config

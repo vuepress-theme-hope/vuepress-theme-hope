@@ -2,10 +2,10 @@
 title: 时间线
 icon: time
 category:
-  - blog
+  - 博客
 tag:
-  - blog
-  - timeline
+  - 博客
+  - 时间线
 ---
 
 你可以通过 `/timeline/` 访问时间页面，在页面中，你可以按照时间倒序查看所有的文章列表。

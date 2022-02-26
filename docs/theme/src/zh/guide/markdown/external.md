@@ -1,9 +1,10 @@
 ---
 title: 外部引入
 icon: link
-cateogry: markdown
+cateogry:
+  - Markdown
 tag:
-  - markdown
+  - Markdown
 ---
 
 除了在 Markdown 内部使用新语法来增强内容外，你也可以使用 `<iframe>` 或 `<img>` 从外部引入链接来增强你的 Markdown 内容。

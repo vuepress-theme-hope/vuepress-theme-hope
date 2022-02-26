@@ -2,9 +2,10 @@
 title: 主题介绍
 icon: info
 category:
-  - Get Started
+  - 快速上手
 tag:
-  - intro
+  - 快速上手
+  - 介绍
 ---
 
 ## 主题初衷

@@ -2,9 +2,11 @@
 title: 文件结构介绍
 icon: folder
 category:
-  - basic
+  - 基础知识
+  - VuePress
 tag:
-  - vuepress
+  - 文件结构
+  - VuePress
 ---
 
 ## 文件结构

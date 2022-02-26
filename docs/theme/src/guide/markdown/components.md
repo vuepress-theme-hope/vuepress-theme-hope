@@ -2,10 +2,10 @@
 title: Components
 icon: plugin
 category:
-  - markdown
+  - Markdown
 tag:
-  - components
-  - markdown
+  - Components
+  - Markdown
 ---
 
 ## Badge

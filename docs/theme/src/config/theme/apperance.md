@@ -2,10 +2,10 @@
 title: Theme Appearance Config
 icon: config
 category:
-  - config
+  - Config
 tag:
-  - themeConfig
-  - config
+  - Theme Config
+  - Appearance
 ---
 
 These are appearance options provided by the theme.

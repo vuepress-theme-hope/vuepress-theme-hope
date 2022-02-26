@@ -2,10 +2,10 @@
 title: 路径导航
 icon: navigation
 category:
-  - layout
+  - 布局
 tag:
-  - breadcrumb
-  - layout
+  - 布局
+  - 路径导航
 ---
 
 `vuepress-theme-hope` 添加了开箱即用的路径导航支持，你可以通过 `breadcrumb` 字段控制它 <Badge text="支持页面配置" /> [^supportpageconfig]，默认的值为 `true`。

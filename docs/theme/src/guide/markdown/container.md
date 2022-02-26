@@ -2,10 +2,10 @@
 title: Custom container
 icon: customize
 category:
-  - markdown
+  - Markdown
 tag:
-  - container
-  - markdown
+  - Container
+  - Markdown
 ---
 
 The theme adds tip, note, info, warning, danger and detail container.

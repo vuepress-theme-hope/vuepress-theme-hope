@@ -1,11 +1,12 @@
 ---
-title: 对象
+title: 对象 Emoji
 icon: emoji
 category:
-  - basic
+  - 基础知识
+  - Markdown
 tag:
-  - markdown
-  - emoji
+  - Markdown
+  - Emoji
 ---
 
 - :bamboo: `:bamboo:`

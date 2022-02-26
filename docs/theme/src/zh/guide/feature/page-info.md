@@ -2,10 +2,10 @@
 title: 页面信息
 icon: info
 category:
-  - feature
+  - 功能
 tag:
-  - feature
-  - page info
+  - 功能
+  - 页面信息
 ---
 
 通过引入 [`@mr-hope/vuepress-plugin-components`][components]，`vuepress-theme-hope` 实现了文章信息展示。

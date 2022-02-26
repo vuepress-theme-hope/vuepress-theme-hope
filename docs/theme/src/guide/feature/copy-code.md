@@ -2,10 +2,10 @@
 title: Code Copy
 icon: copy
 category:
-  - feature
+  - Feature
 tag:
-  - copy code
-  - feature
+  - Copy Code
+  - Feature
 ---
 
 If you are a programmer, you may want your users to be able to copy the code you show in the text with one click.

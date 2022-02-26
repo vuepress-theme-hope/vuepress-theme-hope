@@ -1,10 +1,12 @@
 ---
-title: Markdown示例
+title: Markdown 示例
 icon: markdown
 category:
-  - basic
+  - 基础知识
+  - Markdown
 tag:
-  - markdown
+  - 示例
+  - Markdown
 ---
 
 <!-- markdownlint-disable -->

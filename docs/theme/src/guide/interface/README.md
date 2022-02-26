@@ -1,10 +1,6 @@
 ---
 title: Interface
 icon: palette
-category:
-  - interface
-tag:
-  - intro
 ---
 
 ## Catalog

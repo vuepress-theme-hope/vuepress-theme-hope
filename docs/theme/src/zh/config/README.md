@@ -2,9 +2,9 @@
 title: 配置
 icon: config
 category:
-  - config
+  - 配置
 tag:
-  - config
+  - 配置
 ---
 
 ## 配置介绍

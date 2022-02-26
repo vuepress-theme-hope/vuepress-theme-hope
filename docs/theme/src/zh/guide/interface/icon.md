@@ -2,10 +2,10 @@
 title: 图标支持
 icon: discover
 category:
-  - interface
+  - 界面
 tag:
-  - icon
-  - interface
+  - 界面
+  - 图标
 ---
 
 整个主题在多处都添加了 FontClass 格式图标的支持。

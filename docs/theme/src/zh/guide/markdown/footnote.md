@@ -2,10 +2,10 @@
 title: 脚注
 icon: footnote
 category:
-  - markdown
+  - Markdown
 tag:
-  - footnote
-  - markdown
+  - Markdown
+  - 脚注
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持脚注。

@@ -2,10 +2,10 @@
 title: Feed Support
 icon: rss
 category:
-  - advanced
+  - Advanced
 tag:
-  - advanced
-  - feed
+  - Advanced
+  - Feed
 ---
 
 The theme adds feed suport using [`vuepress-plugin-feed2`][feed2].

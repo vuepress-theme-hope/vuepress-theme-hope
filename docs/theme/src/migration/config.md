@@ -1,6 +1,11 @@
 ---
 title: Config Migration Guide
 icon: config
+category:
+  - Migration
+tag:
+  - Migration
+  - Theme Config
 ---
 
 ## Theme usage

@@ -1,6 +1,12 @@
 ---
 title: 页面迁移指南
 icon: page
+category:
+  - 迁移
+tag:
+  - 迁移
+  - 页面
+  - Frontmatter
 ---
 
 ## Frontmatter

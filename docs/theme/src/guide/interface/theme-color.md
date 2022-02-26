@@ -2,10 +2,10 @@
 title: Theme Color
 icon: palette
 category:
-  - interface
+  - Interface
 tag:
-  - interface
-  - theme color
+  - Interface
+  - Theme Color
 ---
 
 This is an out-of-the-box feature that offers five theme color "red, blue, green, orange and purple" besides your theme color. You can also use your own theme color list.

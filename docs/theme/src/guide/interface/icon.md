@@ -2,10 +2,10 @@
 title: Icon support
 icon: discover
 category:
-  - interface
+  - Interface
 tag:
-  - icon
-  - interface
+  - Icon
+  - Interface
 ---
 
 The entire theme adds FontClass format icon support in mutiple places.

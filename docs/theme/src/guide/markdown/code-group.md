@@ -2,10 +2,10 @@
 title: CodeGroup
 icon: code
 category:
-  - markdown
+  - Markdown
 tag:
-  - codegroup
-  - markdown
+  - CodeGroup
+  - Markdown
 ---
 
 The theme provides you you code group support.

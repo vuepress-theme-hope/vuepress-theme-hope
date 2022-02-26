@@ -1,6 +1,11 @@
 ---
 title: 无障碍
 icon: support
+category:
+  - 界面
+tag:
+  - 界面
+  - 无障碍
 ---
 
 主题完全支持无障碍功能。

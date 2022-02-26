@@ -1,6 +1,11 @@
 ---
 title: Style Migration Guide
 icon: style
+category:
+  - Migration
+tag:
+  - Migration
+  - Style
 ---
 
 ## Preprocessor Changes

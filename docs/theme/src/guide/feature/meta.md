@@ -2,10 +2,10 @@
 title: Page Meta
 icon: time
 category:
-  - feature
+  - Feature
 tag:
-  - feature
-  - meta
+  - Feature
+  - Meta
 ---
 
 The theme displays last update time and contributors of the page via the [`@vuepress/plugin-git`][git] plugin, and provides support for an "edit this page" button.

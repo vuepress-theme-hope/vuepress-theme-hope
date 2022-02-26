@@ -2,11 +2,11 @@
 title: PWA Plugin Config
 icon: app
 category:
-  - config
+  - Config
 tag:
-  - config
-  - plugin
-  - themeConfig
+  - PWA
+  - Plugin Config
+  - Theme Config
 ---
 
 ## Intro

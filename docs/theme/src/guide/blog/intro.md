@@ -2,10 +2,10 @@
 title: Blog Intro
 icon: blog
 category:
-  - blog
+  - Blog
 tag:
-  - blog
-  - feature
+  - Blog
+  - Intro
 ---
 
 The theme supports blog feature with`vuepress-plugin-blog2` by default, and it's **disabled by default**.
