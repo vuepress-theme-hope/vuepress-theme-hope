@@ -26,7 +26,9 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const route = useRoute();
-    const active = computed(() =>
+    const active = computed(() => isActiveSidebarItem(route, props.config));
+
+    const exact = computed(() =>
       isActiveSidebarItem(route, props.config, true)
     );
 
@@ -42,6 +44,7 @@ export default defineComponent({
                 "sidebar-heading",
                 {
                   clickable: collapsable || link,
+                  exact: exact.value,
                   active: active.value,
                 },
               ],
