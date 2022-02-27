@@ -22,7 +22,8 @@ if (import.meta.hot) {
 export const prepareCategory = (
   app: App,
   options: Partial<BlogOptions>,
-  pageMap: PageMap
+  pageMap: PageMap,
+  init = false
 ): Promise<string[]> => {
   const {
     category = [],
@@ -61,7 +62,7 @@ export const prepareCategory = (
         if (app.env.isDebug) logger.info(`Generating ${key} category.\n`);
 
         const categoryMap: CategoryMap = {};
-        const pagePaths: string[] = [];
+        const pageKeys: string[] = [];
         const getItemPath =
           typeof itemPath === "function"
             ? itemPath
@@ -72,10 +73,12 @@ export const prepareCategory = (
 
         for (const routeLocale in pageMap) {
           if (path) {
+            const pagePath = `${routeLocale}${removeLeadingSlash(
+              path.replace(/:key/g, slugify(key))
+            )}`;
+
             const mainPage = await createPage(app, {
-              path: `${routeLocale}${removeLeadingSlash(
-                path.replace(/:key/g, slugify(key))
-              )}`,
+              path: pagePath,
               frontmatter: {
                 blog: {
                   type: "category",
@@ -85,8 +88,15 @@ export const prepareCategory = (
               },
             });
 
-            app.pages.push(mainPage);
-            pagePaths.push(mainPage.path);
+            const index = app.pages.findIndex(({ path }) => path === pagePath);
+
+            if (index === -1) app.pages.push(mainPage);
+            else if (app.pages[index].key !== mainPage.key) {
+              app.pages.splice(index, 1, mainPage);
+
+              if (init) logger.warn(`Overiding existed path ${pagePath}`);
+            }
+            pageKeys.push(mainPage.key);
 
             categoryMap[routeLocale] = {
               path: mainPage.path,
@@ -110,6 +120,10 @@ export const prepareCategory = (
                 const itemPath = getItemPath(category);
 
                 if (itemPath) {
+                  const pagePath = `${routeLocale}${removeLeadingSlash(
+                    itemPath
+                  )}`;
+
                   const page = await createPage(app, {
                     path: `${routeLocale}${removeLeadingSlash(itemPath)}`,
                     frontmatter: {
@@ -122,8 +136,18 @@ export const prepareCategory = (
                     },
                   });
 
-                  app.pages.push(page);
-                  pagePaths.push(page.path);
+                  const index = app.pages.findIndex(
+                    ({ path }) => path === pagePath
+                  );
+
+                  if (index === -1) app.pages.push(page);
+                  else if (app.pages[index].key !== page.key) {
+                    app.pages.splice(index, 1, page);
+
+                    if (init) logger.warn(`Overiding existed path ${pagePath}`);
+                  }
+
+                  pageKeys.push(page.key);
 
                   map[category] = {
                     path: page.path,
@@ -166,13 +190,13 @@ export const prepareCategory = (
         return {
           key,
           map: categoryMap,
-          pagePaths,
+          pageKeys,
         };
       }
     )
   ).then(async (result) => {
     const finalMap: Record<string, CategoryMap> = {};
-    const paths: string[] = [];
+    const keys: string[] = [];
 
     result
       .filter(
@@ -181,12 +205,12 @@ export const prepareCategory = (
         ): item is {
           key: string;
           map: CategoryMap;
-          pagePaths: string[];
+          pageKeys: string[];
         } => item !== null
       )
-      .forEach(({ key, map, pagePaths }) => {
+      .forEach(({ key, map, pageKeys }) => {
         finalMap[key] = map;
-        paths.push(...pagePaths);
+        keys.push(...pageKeys);
       });
 
     await app.writeTemp(
@@ -194,8 +218,8 @@ export const prepareCategory = (
       `export const categoryMap = ${JSON.stringify(finalMap)}\n${HMR_CODE}`
     );
 
-    if (app.env.isDebug) logger.info("All types generated.");
+    if (app.env.isDebug) logger.info("All categories generated.");
 
-    return paths;
+    return keys;
   });
 };

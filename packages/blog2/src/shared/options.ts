@@ -152,4 +152,17 @@ export interface BlogOptions {
    * @default (name) => name.replace(/ _/g, '-').toLowerCase()
    */
   slugify?: (name: string) => string;
+
+  /**
+   * Whether enable hotReload
+   *
+   * @description This may have performance impact in large sites
+   *
+   * 是否启用热更新
+   *
+   * @description 在大型站点上，这可能会有性能影响
+   *
+   * @default false
+   */
+  hotReload?: boolean;
 }

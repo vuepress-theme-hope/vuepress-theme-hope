@@ -55,6 +55,23 @@ Setting to an empty key will inject to route meta directly instead of a field.
 
 :::
 
+### hotReload
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable hotReload in devServer.
+
+::: note To theme developers
+
+It's disabled by default because it does have performance impact in sites with a lot of categories and types. And it can slow down hotReload speed when editing markdown.
+
+If users are adding or organizing your categories or tags, you may tell them to enable this, for the rest it's better to keep it disabled.
+
+Also, you can try to detect number of pages in users project and decide whether to enable it.
+
+:::
+
 ## Blog Category Config
 
 Blog category config should be an array, while each item is controlling a "category" rule.

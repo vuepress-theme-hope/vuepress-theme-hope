@@ -8,6 +8,8 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
+import chokidar from "chokidar";
+
 import { prepareCategory } from "./category";
 import { prepareType } from "./type";
 import { getPageMap, logger } from "./utils";
@@ -27,7 +29,7 @@ export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
 
   const { metaScope = "_blog" } = options;
 
-  let generatePages: string[] = [];
+  let generatePageKeys: string[] = [];
 
   return {
     name: "vuepress-plugin-blog2",
@@ -49,50 +51,88 @@ export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
       const pageMap = getPageMap(options, app);
 
       return Promise.all([
-        prepareCategory(app, options, pageMap).then((pageKeys) => {
-          generatePages.push(...pageKeys);
+        prepareCategory(app, options, pageMap, true).then((pageKeys) => {
+          generatePageKeys.push(...pageKeys);
         }),
-        prepareType(app, options, pageMap).then((pageKeys) => {
-          generatePages.push(...pageKeys);
+        prepareType(app, options, pageMap, true).then((pageKeys) => {
+          generatePageKeys.push(...pageKeys);
         }),
       ]).then(() => {
         if (app.env.isDebug) logger.info("temp file generated");
       });
     },
 
-    onWatched(app): Promise<void> {
-      const newGeneratedPages: string[] = [];
+    onWatched(app, watchers): void {
+      if (options.hotReload) {
+        const pageDataWatcher = chokidar.watch("pages/**/*.js", {
+          cwd: app.dir.temp(),
+          ignoreInitial: true,
+        });
 
-      const pageMap = getPageMap(options, app);
+        const updateBlog = (): Promise<void> => {
+          const newGeneratedPageKeys: string[] = [];
 
-      return Promise.all([
-        prepareCategory(app, options, pageMap).then((pageKeys) => {
-          newGeneratedPages.push(...pageKeys);
-        }),
-        prepareType(app, options, pageMap).then((pageKeys) => {
-          newGeneratedPages.push(...pageKeys);
-        }),
-      ]).then(async () => {
-        if (newGeneratedPages.length !== generatePages.length) {
-          // prepare pages entry
-          await preparePagesComponents(app);
-          await preparePagesData(app);
-          await preparePagesRoutes(app);
-        } else {
-          for (const path of newGeneratedPages) {
-            if (!generatePages.includes(path)) {
+          const pageMap = getPageMap(options, app);
+
+          return Promise.all([
+            prepareCategory(app, options, pageMap).then((pageKeys) => {
+              newGeneratedPageKeys.push(...pageKeys);
+            }),
+            prepareType(app, options, pageMap).then((pageKeys) => {
+              newGeneratedPageKeys.push(...pageKeys);
+            }),
+          ]).then(async () => {
+            const pagestoBeRemoved = generatePageKeys.filter(
+              (key) => !newGeneratedPageKeys.includes(key)
+            );
+
+            if (pagestoBeRemoved.length) {
+              if (app.env.isDebug)
+                logger.info(
+                  `Removing following pages: ${pagestoBeRemoved.toString()}`
+                );
+
+              // remove pages
+              pagestoBeRemoved.forEach((pageKey) => {
+                app.pages.splice(
+                  app.pages.findIndex(({ key }) => key === pageKey),
+                  1
+                );
+              });
+
+              // prepare pages entry
+              await preparePagesComponents(app);
+              await preparePagesData(app);
+              await preparePagesRoutes(app);
+            } else if (
+              newGeneratedPageKeys.length !== generatePageKeys.length
+            ) {
+              if (app.env.isDebug) logger.info("New pages detected");
+
               // prepare pages entry
               await preparePagesComponents(app);
               await preparePagesData(app);
               await preparePagesRoutes(app);
             }
-          }
-        }
 
-        generatePages = newGeneratedPages;
+            generatePageKeys = newGeneratedPageKeys;
 
-        if (app.env.isDebug) logger.info("temp file updated");
-      });
+            if (app.env.isDebug) logger.info("temp file updated");
+          });
+        };
+
+        pageDataWatcher.on("add", () => {
+          void updateBlog();
+        });
+        pageDataWatcher.on("change", () => {
+          void updateBlog();
+        });
+        pageDataWatcher.on("unlink", () => {
+          void updateBlog();
+        });
+
+        watchers.push(pageDataWatcher);
+      }
     },
   };
 };

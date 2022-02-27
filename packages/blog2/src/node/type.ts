@@ -22,7 +22,8 @@ if (import.meta.hot) {
 export const prepareType = (
   app: App,
   options: Partial<BlogOptions>,
-  pageMap: PageMap
+  pageMap: PageMap,
+  init = false
 ): Promise<string[]> => {
   const {
     type = [],
@@ -49,7 +50,7 @@ export const prepareType = (
         }
 
         const typeMap: TypeMap = {};
-        const pagePaths: string[] = [];
+        const pageKeys: string[] = [];
 
         if (app.env.isDebug) logger.info(`Generating ${key} type.\n`);
 
@@ -60,10 +61,12 @@ export const prepareType = (
             .map(({ key }) => key);
 
           if (path) {
+            const pagePath = `${routeLocale}${removeLeadingSlash(
+              slugify(path.replace(/:key/g, key))
+            )}`;
+
             const page = await createPage(app, {
-              path: `${routeLocale}${removeLeadingSlash(
-                slugify(path.replace(/:key/g, key))
-              )}`,
+              path: pagePath,
               frontmatter: {
                 blog: {
                   type: "type",
@@ -73,8 +76,16 @@ export const prepareType = (
               },
             });
 
-            app.pages.push(page);
-            pagePaths.push(page.path);
+            const index = app.pages.findIndex(({ path }) => path === pagePath);
+
+            if (index === -1) app.pages.push(page);
+            else if (app.pages[index].key !== page.key) {
+              app.pages.splice(index, 1, page);
+
+              if (init) logger.warn(`Overiding existed path ${pagePath}`);
+            }
+
+            pageKeys.push(page.key);
 
             typeMap[routeLocale] = { path: page.path, keys };
 
@@ -95,13 +106,13 @@ export const prepareType = (
         return {
           key,
           map: typeMap,
-          pagePaths,
+          pageKeys,
         };
       }
     )
   ).then(async (result) => {
     const finalMap: Record<string, TypeMap> = {};
-    const paths: string[] = [];
+    const keys: string[] = [];
 
     result
       .filter(
@@ -110,12 +121,12 @@ export const prepareType = (
         ): item is {
           key: string;
           map: TypeMap;
-          pagePaths: string[];
+          pageKeys: string[];
         } => item !== null
       )
-      .forEach(({ key, map, pagePaths }) => {
+      .forEach(({ key, map, pageKeys }) => {
         finalMap[key] = map;
-        paths.push(...pagePaths);
+        keys.push(...pageKeys);
       });
 
     await app.writeTemp(
@@ -125,6 +136,6 @@ export const prepareType = (
 
     if (app.env.isDebug) logger.info("All types generated.");
 
-    return paths;
+    return keys;
   });
 };
