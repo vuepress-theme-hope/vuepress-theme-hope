@@ -47,7 +47,7 @@ We do not intend to "describe all the concepts involved and their usage to you" 
 
 - [Theme extending](extend.md)
 
-## 🧩Build-in Plugins
+## Build-in Plugins🧩
 
 The theme includes the following plugins, you can use them directly in other themes.
 

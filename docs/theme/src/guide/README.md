@@ -13,7 +13,7 @@ If you met a bug while using, you can open an issue [here](https://github.com/vu
 
 :::
 
-## ✨Theme Features
+## Theme Features✨
 
 The theme largely inherits the config of `@vuepress/theme-default`, while adds a lot of functions and layout optimization on it.
 
@@ -116,7 +116,7 @@ Layout Optimization:
 
 - [Theme extending](advanced/extend.md)
 
-## 🧩Build-in Plugins
+## Build-in Plugins🧩
 
 The theme includes the following plugins, you can use them in other themes or directly.
 
