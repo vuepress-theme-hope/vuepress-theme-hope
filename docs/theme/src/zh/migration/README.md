@@ -9,7 +9,7 @@ icon: change
 
 ## 升级到最新版 V1
 
-升级到最新版 V1 是迁移的第一步。在升级到最新版 V1 的过程中，你可以查看 [V1 变更日志](https://vuepress-theme-hope.github.io/v1/zh/changelog/) 来适配 V1 中进行的变更。
+升级到最新版 V1 是迁移的第一步。在升级到最新版 V1 的过程中，你可以查看 [V1 变更日志](https://vuepress-theme-hope.github.io/v1/zh/changelog.html) 来适配 V1 中进行的变更。
 
 ## V2 迁移指南
 
