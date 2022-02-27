@@ -12,6 +12,7 @@ import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
 
 import "../styles/blog-hero.scss";
+import { SlideDownIcon } from "./icons";
 
 export default defineComponent({
   name: "BlogHero",
@@ -19,7 +20,12 @@ export default defineComponent({
   setup() {
     const title = usePageHeadTitle();
     const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
+
     const heroImage = computed(() => frontmatter.value.heroImage || null);
+
+    const isFullScreen = computed(
+      () => frontmatter.value.heroFullScreen || false
+    );
 
     const heroImageStyle = computed(() => {
       const defaultStyle = {
@@ -60,10 +66,7 @@ export default defineComponent({
         ? h(
             "div",
             {
-              class: [
-                "blog-hero",
-                { fullscreen: frontmatter.value.heroFullScreen },
-              ],
+              class: ["blog-hero", { fullscreen: isFullScreen.value }],
               style: bgImageStyle.value,
             },
             [
@@ -96,6 +99,17 @@ export default defineComponent({
                     })
                   : null
               ),
+              isFullScreen.value
+                ? h(
+                    "a",
+                    { class: "slide-down-wrapper", href: "#hero-bottom" },
+                    [
+                      h(SlideDownIcon),
+                      h(SlideDownIcon),
+                      h("div", { id: "hero-bottom" }),
+                    ]
+                  )
+                : null,
             ]
           )
         : null;
