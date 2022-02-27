@@ -1,13 +1,11 @@
 import { fs, path } from "@vuepress/utils";
 import { logger } from "./utils";
 
-import type { App } from "@vuepress/core";
 import type { HopeThemeConfig } from "../shared";
 
-export const writeSocialMediaIcons = async (
-  app: App,
+export const checkSocialMediaIcons = (
   themeConfig: HopeThemeConfig
-): Promise<void> => {
+): Record<string, string> => {
   const icons: Record<string, string> = {};
 
   const checkIcon = (
@@ -78,8 +76,5 @@ export const writeSocialMediaIcons = async (
     );
   }
 
-  await app.writeTemp(
-    `theme-hope/socialMedia.js`,
-    `export const icons = ${JSON.stringify(icons)}`
-  );
+  return icons;
 };

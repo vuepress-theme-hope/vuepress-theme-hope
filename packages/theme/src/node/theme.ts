@@ -6,7 +6,7 @@ import { handleThemeData } from "./handleThemeData";
 import { extendsPage } from "./extends";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
-import { writeSocialMediaIcons } from "./socialMedia";
+import { checkSocialMediaIcons } from "./socialMedia";
 import { writeThemeColorScss } from "./themeColor";
 
 import type { Page, Theme } from "@vuepress/core";
@@ -21,9 +21,19 @@ export const themeHope: Theme<HopeThemeOptions> = (
   app
 ) => {
   const enableBlog = Boolean(plugins.blog);
+
   updateBundlerOptions(app);
   handleThemeData(app, themeOptions);
   usePlugin(app, plugins);
+
+  if (enableBlog) {
+    const icons = checkSocialMediaIcons(themeOptions as HopeThemeConfig);
+
+    void app.writeTemp(
+      `theme-hope/socialMedia.js`,
+      `export const icons = ${JSON.stringify(icons)}`
+    );
+  }
 
   return {
     name: "vuepress-theme-hope",
@@ -43,8 +53,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
       ),
 
     async onPrepared(): Promise<void> {
-      if (enableBlog)
-        await writeSocialMediaIcons(app, themeOptions as HopeThemeConfig);
       await writeThemeColorScss(app, themeOptions as HopeThemeConfig);
     },
 
