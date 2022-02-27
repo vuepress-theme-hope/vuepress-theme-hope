@@ -1,14 +1,14 @@
 import {
-  includeViteOptimizeDeps,
+  addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
-  excludeViteOptimizeDeps,
+  addViteOptimizeDepsExclude,
 } from "@mr-hope/vuepress-shared";
 import { handleWebpackOptions } from "./encrypt";
 
 import { App } from "@vuepress/core";
 
 export const updateBundlerOptions = (app: App): void => {
-  includeViteOptimizeDeps(app, [
+  addViteOptimizeDepsInclude(app, [
     "@vueuse/core",
     "bcryptjs",
     "body-scroll-lock",
@@ -16,7 +16,7 @@ export const updateBundlerOptions = (app: App): void => {
   ]);
 
   if (app.env.isDev)
-    includeViteOptimizeDeps(app, [
+    addViteOptimizeDepsInclude(app, [
       "@mr-hope/vuepress-shared/lib/client",
       "dayjs",
       "dayjs/plugin/localizedFormat",
@@ -29,7 +29,7 @@ export const updateBundlerOptions = (app: App): void => {
     "@mr-hope/vuepress-shared",
     "vuepress-theme-hope",
   ]);
-  excludeViteOptimizeDeps(app, "vuepress-theme-hope");
+  addViteOptimizeDepsExclude(app, "vuepress-theme-hope");
 
   handleWebpackOptions(app);
 };

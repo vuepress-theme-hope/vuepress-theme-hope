@@ -1,6 +1,6 @@
 import {
   addViteSsrNoExternal,
-  excludeViteOptimizeDeps,
+  addViteOptimizeDepsExclude,
 } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 
@@ -20,7 +20,7 @@ export const addThisPlugin: Plugin<AddThisOptions> = (options, app) => {
   }
 
   addViteSsrNoExternal(app, "vuepress-plugin-add-this");
-  excludeViteOptimizeDeps(app, "vuepress-plugin-add-this");
+  addViteOptimizeDepsExclude(app, "vuepress-plugin-add-this");
 
   return {
     name: "vuepress-plugin-add-this",

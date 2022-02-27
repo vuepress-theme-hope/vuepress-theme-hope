@@ -1,7 +1,7 @@
 import {
   addViteSsrNoExternal,
-  excludeViteOptimizeDeps,
-  includeViteOptimizeDeps,
+  addViteOptimizeDepsExclude,
+  addViteOptimizeDepsInclude,
   getLocales,
   noopModule,
 } from "@mr-hope/vuepress-shared";
@@ -24,15 +24,15 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   if ("walineLocales" in options) delete options.walineLocales;
 
   if (app.env.isDev)
-    includeViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
 
   addViteSsrNoExternal(app, [
     "@mr-hope/vuepress-shared",
     "vuepress-plugin-comment2",
   ]);
-  excludeViteOptimizeDeps(app, "vuepress-plugin-comment2");
+  addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
 
-  if (isWaline) includeViteOptimizeDeps(app, ["@waline/client"]);
+  if (isWaline) addViteOptimizeDepsInclude(app, ["@waline/client"]);
 
   useSassPalettePlugin(app, { id: "hope" });
 

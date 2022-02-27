@@ -1,7 +1,7 @@
 import {
   addViteSsrNoExternal,
-  excludeViteOptimizeDeps,
-  includeViteOptimizeDeps,
+  addViteOptimizeDepsExclude,
+  addViteOptimizeDepsInclude,
   getLocales,
 } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
@@ -13,13 +13,13 @@ import type { CopyCodeOptions } from "../shared";
 
 export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
   if (app.env.isDev)
-    includeViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
 
   addViteSsrNoExternal(app, [
     "@mr-hope/vuepress-shared",
     "vuepress-plugin-copy-code2",
   ]);
-  excludeViteOptimizeDeps(app, "vuepress-plugin-copy-code2");
+  addViteOptimizeDepsExclude(app, "vuepress-plugin-copy-code2");
 
   useSassPalettePlugin(app, { id: "hope" });
 

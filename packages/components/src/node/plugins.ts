@@ -1,7 +1,7 @@
 import {
   addViteSsrNoExternal,
-  excludeViteOptimizeDeps,
-  includeViteOptimizeDeps,
+  addViteOptimizeDepsExclude,
+  addViteOptimizeDepsInclude,
   getLocales,
   noopModule,
 } from "@mr-hope/vuepress-shared";
@@ -18,16 +18,16 @@ import type { ComponentOptions } from "../shared";
 
 export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
   if (app.env.isDev)
-    includeViteOptimizeDeps(app, "@mr-hope/vuepress-shared/lib/client");
+    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
 
   addViteSsrNoExternal(app, [
     "@mr-hope/vuepress-shared",
     "@mr-hope/vuepress-plugin-components",
   ]);
-  excludeViteOptimizeDeps(app, "@mr-hope/vuepress-plugin-components");
+  addViteOptimizeDepsExclude(app, "@mr-hope/vuepress-plugin-components");
 
-  if (options.backToTop) includeViteOptimizeDeps(app, "lodash.debounce");
-  if (options.fullScreen) includeViteOptimizeDeps(app, "screenfull");
+  if (options.backToTop) addViteOptimizeDepsInclude(app, "lodash.debounce");
+  if (options.fullScreen) addViteOptimizeDepsInclude(app, "screenfull");
 
   useSassPalettePlugin(app, { id: "hope" });
 
