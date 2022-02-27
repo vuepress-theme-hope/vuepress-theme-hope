@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-lightgallery",
-  "version": "2.0.0-alpha.35",
+  "version": "2.0.0-alpha.36",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
     "vuepress-plugin",
@@ -43,13 +43,13 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.35",
+    "@mr-hope/vuepress-shared": "2.0.0-alpha.36",
     "@vuepress/client": "2.0.0-beta.35",
     "@vuepress/utils": "2.0.0-beta.35",
     "lightgallery": "^2.4.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.35"
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.36"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.35"

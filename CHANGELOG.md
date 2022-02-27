@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.35...v2.0.0-alpha.36) (2022-02-27)
+
+### Bug Fixes
+
+- fix vite build ([d06f54d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d06f54dd3dadefa9ea526a733d43be8cec9c00ee))
+
+### Features
+
+- **pwa2:** add appendBase option ([3a15da4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3a15da427e1b0046389440c58c02826baf3534a4))
+- **shared:** add `addViteSsrExternal` ([e1f5f33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e1f5f33c8e024dfbe47ba0714179e61be1daa80d))
+
 # [2.0.0-alpha.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.34...v2.0.0-alpha.35) (2022-02-27)
 
 ### Bug Fixes
