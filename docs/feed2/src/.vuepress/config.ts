@@ -131,6 +131,12 @@ export default defineHopeConfig({
         serverURL: "https://vuepress-theme-hope-comment.vercel.app",
       },
 
+      docsearch: {
+        appId: "VXIEHELDL1",
+        apiKey: "595796f71b6ba14326719682c3738c0c",
+        indexName: "vuepress-theme-hope-v2",
+      },
+
       mdEnhance: {
         codegroup: true,
       },
@@ -220,14 +226,6 @@ export default defineHopeConfig({
   },
 
   plugins: [
-    [
-      "@vuepress/docsearch",
-      {
-        appId: "VXIEHELDL1",
-        apiKey: "595796f71b6ba14326719682c3738c0c",
-        indexName: "vuepress-theme-hope-v2",
-      },
-    ],
     (_options, app) => {
       includeViteOptimizeDeps(app, [
         "three",
