@@ -24,13 +24,21 @@ export default defineComponent({
 
     const locale = computed(() => themeLocale.value.encryptLocales);
 
+    let hintHandler: number | null = null;
+
     const verify = (): void => {
+      // clear previous handler
+      if (hintHandler) clearTimeout(hintHandler);
       hasTried.value = false;
 
       emit("verify", password.value);
 
       void nextTick().then(() => {
         hasTried.value = true;
+
+        hintHandler = setTimeout(() => {
+          hasTried.value = false;
+        }, 1000) as unknown as number;
       });
     };
 
