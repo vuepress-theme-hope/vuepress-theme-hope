@@ -18,6 +18,7 @@ import { resolveFeedOptions } from "./feed";
 import { resolveMdEnhanceOptions } from "./mdEnhance";
 import { resolvePhotoSwipeOptions } from "./photoSwipe";
 import { resolvePWAOptions } from "./pwa";
+import { resolveSearchPlugin } from "./search";
 import { resolveSitemapOptions } from "./sitemap";
 import { resolveSEOOptions } from "./seo";
 
@@ -49,6 +50,9 @@ export const getPluginConfig = (
     photoSwipe(resolvePhotoSwipeOptions(plugins.photoSwipe)),
     pwa(resolvePWAOptions(plugins.pwa)),
     sitemap(resolveSitemapOptions(themeData, plugins.sitemap)),
+
+    // try resolving search plugin
+    resolveSearchPlugin(plugins),
   ];
 
   if (app.env.isDebug) console.log("Theme plugin options:", pluginConfig);
