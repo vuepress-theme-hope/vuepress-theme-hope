@@ -5,7 +5,7 @@ import { RouterLink } from "vue-router";
 import { useTagMap } from "@theme-hope/module/blog/composables";
 
 import type { VNode } from "vue";
-import type { BlogCategoryFrontmatterOptions } from "vuepress-plugin-blog2";
+import type { BlogPluginCategoryFrontmatter } from "vuepress-plugin-blog2";
 
 import "../styles/tag-list.scss";
 
@@ -13,7 +13,7 @@ export default defineComponent({
   name: "TagList",
 
   setup() {
-    const frontmatter = usePageFrontmatter<BlogCategoryFrontmatterOptions>();
+    const frontmatter = usePageFrontmatter<BlogPluginCategoryFrontmatter>();
     const tagMap = useTagMap();
 
     const tagList = computed(() =>
@@ -23,7 +23,9 @@ export default defineComponent({
       }))
     );
 
-    const isActive = (name: string): boolean => name === frontmatter.value.key;
+    const isActive = (name: string): boolean =>
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      name === frontmatter.value.blog!.name;
 
     return (): VNode =>
       h(

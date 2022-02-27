@@ -11,6 +11,14 @@ export interface BlogTypeFrontmatterOptions {
   key: string;
 }
 
-export interface BlogPluginFrontmatter extends BasePageFrontMatter {
-  blog: BlogCategoryFrontmatterOptions | BlogTypeFrontmatterOptions;
+export interface BlogPluginCategoryFrontmatter extends BasePageFrontMatter {
+  blog: BlogCategoryFrontmatterOptions;
 }
+
+export interface BlogPluginTypeFrontmatter extends BasePageFrontMatter {
+  blog: BlogTypeFrontmatterOptions;
+}
+
+export type BlogPluginFrontmatter =
+  | BlogPluginCategoryFrontmatter
+  | BlogPluginTypeFrontmatter;
