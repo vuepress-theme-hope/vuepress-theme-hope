@@ -25,7 +25,10 @@ $variables: meta.module-variables("${id}-palette");
 
 ${
   app.env.isDebug
-    ? `@debug "${id} palette variables:";\n@debug $variables;\n@debug "${id} config variables:";\n@debug meta.module-variables("${id}-config");`
+    ? `
+@debug "${id} palette variables: #{meta.inspect($variables)}";
+@debug "${id} config variables: #{meta.inspect(meta.module-variables("${id}-config"))}";
+`
     : ""
 }
 
