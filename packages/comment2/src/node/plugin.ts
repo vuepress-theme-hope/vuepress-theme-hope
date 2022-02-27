@@ -1,4 +1,5 @@
 import {
+  addViteSsrExternal,
   addViteSsrNoExternal,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
@@ -32,7 +33,10 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   ]);
   addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
 
-  if (isWaline) addViteOptimizeDepsInclude(app, ["@waline/client"]);
+  if (isWaline) {
+    addViteOptimizeDepsInclude(app, "@waline/client");
+    addViteSsrExternal(app, "@waline/client");
+  }
 
   useSassPalettePlugin(app, { id: "hope" });
 

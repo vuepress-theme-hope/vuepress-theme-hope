@@ -1,8 +1,9 @@
 import {
+  addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
+  addViteSsrExternal,
   addViteSsrNoExternal,
   noopModule,
-  addViteOptimizeDepsExclude,
 } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
@@ -55,9 +56,17 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   ]);
   addViteOptimizeDepsExclude(app, "vuepress-plugin-md-enhance");
 
-  if (flowchartEnable) addViteOptimizeDepsInclude(app, "flowchart.js");
-  if (mermaidEnable) addViteOptimizeDepsInclude(app, "mermaid");
-  if (presentationEnable)
+  if (flowchartEnable) {
+    addViteOptimizeDepsInclude(app, "flowchart.js");
+    addViteSsrExternal(app, "flowchart.js");
+  }
+
+  if (mermaidEnable) {
+    addViteOptimizeDepsInclude(app, "mermaid");
+    addViteSsrExternal(app, "mermaid");
+  }
+
+  if (presentationEnable) {
     addViteOptimizeDepsInclude(app, [
       "reveal.js/dist/reveal.esm.js",
       "reveal.js/plugin/markdown/markdown.esm.js",
@@ -67,6 +76,8 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       "reveal.js/plugin/notes/notes.esm.js",
       "reveal.js/plugin/zoom/zoom.esm.js",
     ]);
+    addViteSsrExternal(app, "reveal.js");
+  }
 
   useSassPalettePlugin(app, { id: "hope" });
 
