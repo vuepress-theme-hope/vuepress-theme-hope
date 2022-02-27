@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.34...v2.0.0-alpha.35) (2022-02-27)
+
+### Bug Fixes
+
+- **components:** key pagination number ([8e54ad8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e54ad879cb7cc914d30c08937a214f3b8d0893b))
+- **md-enhance:** fix footnote margin-top ([43ff953](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43ff9531a9d141c763a9bf1b8b3e3d5894510148))
+- **sass-palette:** watch user file ([f481cee](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f481ceecd373a297d52928973ec3c58b677b6dab))
+- **theme:** fix blog-info margin-top ([0241c77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0241c77de760c1136a08de73392a591919f3cb2e))
+- **theme:** fix category wrapper style ([e86dc55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e86dc5570f6fdc504e59464f2ca31523dd9e39ac))
+- **theme:** fix social-media ([6120242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6120242153fda4bda96ad998f8b647f98672e903))
+- **theme:** fix tagList ([8f600e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8f600e4c93c7848143695b61a72ea0b2f6d76b0e))
+- **theme:** improve password hint ([2c4c3b0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c4c3b0347cdc014790c1e10b1e7655c12e78d85))
+
+### Features
+
+- **blog2:** add hotReload ([8ff4a69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ff4a698f100e43d96e8241af00d3d98173229a6))
+- **theme:** add built-in support for search ([7887e3f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7887e3f92b0294fc6b8a77a216c1e77ab42376fe))
+- **theme:** add slidedown button ([7324e37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7324e3775293943fed373555a33fcd421978d006))
+- **theme:** improve sidebar state ([f31505d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f31505d4b60d05e61d5abe057985555664e14fd0))
+
 # [2.0.0-alpha.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.33...v2.0.0-alpha.34) (2022-02-24)
 
 ### Bug Fixes

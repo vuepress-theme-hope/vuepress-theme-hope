@@ -1,6 +1,6 @@
 {
   "name": "reading-time-docs",
-  "version": "2.0.0-alpha.34",
+  "version": "2.0.0-alpha.35",
   "private": true,
   "description": "Docs for vuepress-plugin-reading-time2",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "@types/three": "0.137.0",
     "@vuepress/plugin-docsearch": "2.0.0-beta.35",
     "three": "0.138.0",
-    "vuepress-theme-hope": "2.0.0-alpha.34",
+    "vuepress-theme-hope": "2.0.0-alpha.35",
     "vuepress-vite": "2.0.0-beta.35",
     "vuepress-webpack": "2.0.0-beta.35"
   }

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.34...v2.0.0-alpha.35) (2022-02-27)
+
+### Bug Fixes
+
+- **components:** key pagination number ([8e54ad8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e54ad879cb7cc914d30c08937a214f3b8d0893b))
+
 # [2.0.0-alpha.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.33...v2.0.0-alpha.34) (2022-02-24)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components

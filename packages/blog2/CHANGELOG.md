@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.34...v2.0.0-alpha.35) (2022-02-27)
+
+### Bug Fixes
+
+- **theme:** fix tagList ([8f600e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8f600e4c93c7848143695b61a72ea0b2f6d76b0e))
+
+### Features
+
+- **blog2:** add hotReload ([8ff4a69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ff4a698f100e43d96e8241af00d3d98173229a6))
+
 # [2.0.0-alpha.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.33...v2.0.0-alpha.34) (2022-02-24)
 
 **Note:** Version bump only for package vuepress-plugin-blog2
