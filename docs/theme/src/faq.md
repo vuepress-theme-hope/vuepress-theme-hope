@@ -67,6 +67,26 @@ Don't worry, due to network cache, a hot reload when editing markdown files is s
 
 :::
 
+## `Hydration completed but contains mismatches.`
+
+This error indicates that you have an SSR mismatch, and it should not be a problem with theme.
+
+Please check if you are using CloudFrame related services first, if so, make sure you turn off static resource compression.
+
+::: warning
+
+CloudFrame Pages and Auto Minify in Cloud Frame incorrectly handle HTML spaces and line breaks, which can cause Vue triggering SSR mismatches during initialization.
+
+:::
+
+Also you can check these:
+
+- If you only encounter this problem on certain pages, please check whether the page has additional components you added.
+
+  If so, these components are likely to have different rendering results between SSR and the client. You can try to make their behavior consistent, or wrap your components with the `<ClientOnly />` component provided by `@vuepress/client`.
+
+- If you have this problem in all pages, please also follow the previous step to check the components you added in the layout or global components.
+
 ## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
 
 If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.

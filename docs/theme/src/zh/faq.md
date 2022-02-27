@@ -71,6 +71,26 @@ category:
 
 :::
 
+## `Hydration completed but contains mismatches.`
+
+这个错误表明你遇到了 SSR 错配，而且这应该不是主题的问题。
+
+请首先检查你是否在使用 CloudFrame 相关服务，如果有，请确保你关闭静态资源压缩。
+
+::: warning
+
+CloudFrame Pages 以及 Cloud Frame 中的 Auto Minify 会错误的对 HTML 的空格和换行进行处理，这会导致 Vue 在初始化时产生 SSR 错配。
+
+:::
+
+另外你还可以检查:
+
+- 如果你只是在个别页面遇到了这个问题，请检查该界面是否有你额外添加的组件。
+
+  如果有，那这些组件大概率在 SSR 和客户端拥有不同的渲染结果，你可以尝试让其行为一致，或用 `@vuepress/client` 提供的 `<ClientOnly />` 组件包裹你的组件。
+
+- 如果你在所有页面都遇到了这个问题，请同样按照上一步检查你在布局或全局组件中添加的组件。
+
 ## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
 
 如果你在开发进程启动时看到 `xxx is not assign with a lang, and will return 'en-US'.`，请检查是否为每种语言设置了语言。
