@@ -86,6 +86,10 @@ tag:
 
 - 支持创建 [Feed](../advanced/feed.md)，以便他人可以订阅你的网站。
 
+### 搜索功能
+
+主题添加了 [VuePress 官方搜索插件的内置支持](../feature/search.md)。
+
 ### 搜索引擎增强
 
 - 提供 [SEO 增强](../advanced/seo.md)，会自动注入网站信息以完整支持 OGP 与 JSON-LD 协议，增强搜索引擎索引。

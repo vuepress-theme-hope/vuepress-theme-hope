@@ -65,6 +65,7 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
         "copy-code",
         "photo-swipe",
         "meta",
+        "search",
         "encrypt",
       ],
     },

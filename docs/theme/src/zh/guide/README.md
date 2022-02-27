@@ -88,6 +88,8 @@ tag:
 
 - [文章加密](feature/encrypt.md)
 
+- [搜索支持](feature/search.md)
+
 ### 博客
 
 - [支持置顶的文章列表](blog/intro.md)

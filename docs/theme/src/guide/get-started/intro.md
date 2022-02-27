@@ -78,6 +78,10 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 - [Homepage](../layout/home.md): New outlook, features support icons and links.
 
+### Search function
+
+The theme adds [built-in support for the official VuePress search plugin](../feature/search.md).
+
 ### Full Blog Support
 
 The theme is containing full blog support, you can use the brand new [blog homepage](../blog/home.md).

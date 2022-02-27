@@ -88,6 +88,8 @@ Layout Optimization:
 
 - [Encryption](feature/encrypt.md)
 
+- [Search Support](feature/search.md)
+
 ### Blog
 
 - [Social follow button and page social sharing][add-this]

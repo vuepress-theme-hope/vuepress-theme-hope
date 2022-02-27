@@ -23,4 +23,6 @@ All the plugin settings are under `themeConfig.plugins`, and the option name is 
 
 - [Meta and navigation](meta.md)
 
+- [Search](search.md)
+
 - [Encryption function](encrypt.md)

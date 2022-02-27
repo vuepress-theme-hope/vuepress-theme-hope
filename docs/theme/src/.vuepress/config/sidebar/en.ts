@@ -65,6 +65,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
         "copy-code",
         "photo-swipe",
         "meta",
+        "search",
         "encrypt",
       ],
     },

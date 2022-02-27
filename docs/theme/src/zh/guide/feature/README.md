@@ -23,4 +23,6 @@ icon: discover
 
 - [页面元信息](meta.md)
 
+- [搜索功能](search.md)
+
 - [加密功能](encrypt.md)
