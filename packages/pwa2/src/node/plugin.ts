@@ -14,9 +14,13 @@ import { genServiceWorker } from "./genServiceWorker";
 
 import type { Plugin, PluginConfig, PluginObject } from "@vuepress/core";
 import type { PWAOptions } from "../shared";
+import { appendBase } from "./helper";
 
 export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
   const { base } = app.options;
+
+  if (options.appendBase) appendBase(base, options);
+
   const manifest = getManifest(app, options);
 
   addViteOptimizeDepsInclude(app, ["mitt", "register-service-worker"]);

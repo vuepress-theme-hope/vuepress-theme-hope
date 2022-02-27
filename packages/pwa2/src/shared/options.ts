@@ -167,4 +167,13 @@ export interface PWAOptions {
    */
 
   locales?: LocaleConfig<PWALocaleData>;
+
+  /**
+   * Whether append base to all absolute links
+   *
+   * 是否为所有绝对链接添加 base
+   *
+   * @default false
+   */
+  appendBase?: boolean;
 }
