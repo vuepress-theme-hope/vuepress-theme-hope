@@ -80,14 +80,14 @@ export const prepareType = (
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${routeLocale} in ${key} type: path: ${page.path}; items: ${keys.length}`
+                `Route ${routeLocale} in ${key} type: path: ${page.path}; items: ${keys.length}\n`
               );
           } else {
             typeMap[routeLocale] = { path: "", keys };
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${routeLocale} in ${key} type: items: ${keys.length}`
+                `Route ${routeLocale} in ${key} type: items: ${keys.length}\n`
               );
           }
         }

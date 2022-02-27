@@ -156,7 +156,7 @@ export const prepareCategory = (
 
               infoMessage += `name: ${category}; ${
                 path ? `path: ${path}; ` : ""
-              }items: ${keys.length}`;
+              }items: ${keys.length}\n`;
             }
 
             logger.info(infoMessage);
