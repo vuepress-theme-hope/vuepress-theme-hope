@@ -163,11 +163,11 @@ export default defineHopeConfig({
         themeColor: "#46bd87",
         cachePic: true,
         apple: {
-          icon: "/v2/comment/assets/icon/apple-icon-152.png",
+          icon: "/assets/icon/apple-icon-152.png",
           statusBarColor: "black",
         },
         msTile: {
-          image: "/v2/comment/assets/icon/ms-icon-144.png",
+          image: "/assets/icon/ms-icon-144.png",
           color: "#ffffff",
         },
         manifest: {
@@ -175,24 +175,24 @@ export default defineHopeConfig({
           short_name: "comment plugin",
           icons: [
             {
-              src: "/v2/comment/assets/icon/chrome-mask-512.png",
+              src: "/assets/icon/chrome-mask-512.png",
               sizes: "512x512",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/comment/assets/icon/chrome-mask-192.png",
+              src: "/assets/icon/chrome-mask-192.png",
               sizes: "192x192",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/comment/assets/icon/chrome-512.png",
+              src: "/assets/icon/chrome-512.png",
               sizes: "512x512",
               type: "image/png",
             },
             {
-              src: "/v2/comment/assets/icon/chrome-192.png",
+              src: "/assets/icon/chrome-192.png",
               sizes: "192x192",
               type: "image/png",
             },
@@ -204,13 +204,13 @@ export default defineHopeConfig({
               url: "/comment/guide/",
               icons: [
                 {
-                  src: "/v2/comment/assets/icon/guide-maskable.png",
+                  src: "/assets/icon/guide-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/comment/assets/icon/guide-monochrome.png",
+                  src: "/assets/icon/guide-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -223,13 +223,13 @@ export default defineHopeConfig({
               url: "/comment/config/",
               icons: [
                 {
-                  src: "/v2/comment/assets/icon/config-maskable.png",
+                  src: "/assets/icon/config-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/comment/assets/icon/config-monochrome.png",
+                  src: "/assets/icon/config-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -238,6 +238,7 @@ export default defineHopeConfig({
             },
           ],
         },
+        appendBase: true,
       },
     },
   },

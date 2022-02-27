@@ -111,15 +111,15 @@ export default defineHopeConfig({
       },
 
       pwa: {
-        favicon: "/v2/pwa/favicon.ico",
+        favicon: "/favicon.ico",
         themeColor: "#46bd87",
         cachePic: true,
         apple: {
-          icon: "/v2/pwa/assets/icon/apple-icon-152.png",
+          icon: "/assets/icon/apple-icon-152.png",
           statusBarColor: "black",
         },
         msTile: {
-          image: "/v2/pwa/assets/icon/ms-icon-144.png",
+          image: "/assets/icon/ms-icon-144.png",
           color: "#ffffff",
         },
         manifest: {
@@ -127,24 +127,24 @@ export default defineHopeConfig({
           short_name: "pwa plugin",
           icons: [
             {
-              src: "/v2/pwa/assets/icon/chrome-mask-512.png",
+              src: "/assets/icon/chrome-mask-512.png",
               sizes: "512x512",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/pwa/assets/icon/chrome-mask-192.png",
+              src: "/assets/icon/chrome-mask-192.png",
               sizes: "192x192",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/pwa/assets/icon/chrome-512.png",
+              src: "/assets/icon/chrome-512.png",
               sizes: "512x512",
               type: "image/png",
             },
             {
-              src: "/v2/pwa/assets/icon/chrome-192.png",
+              src: "/assets/icon/chrome-192.png",
               sizes: "192x192",
               type: "image/png",
             },
@@ -153,16 +153,16 @@ export default defineHopeConfig({
             {
               name: "Guide",
               short_name: "Guide",
-              url: "/v2/pwa/guide.html",
+              url: "/guide.html",
               icons: [
                 {
-                  src: "/v2/pwa/assets/icon/guide-maskable.png",
+                  src: "/assets/icon/guide-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/pwa/assets/icon/guide-monochrome.png",
+                  src: "/assets/icon/guide-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -172,16 +172,16 @@ export default defineHopeConfig({
             {
               name: "Config",
               short_name: "Config",
-              url: "/v2/pwa/config.html",
+              url: "/config.html",
               icons: [
                 {
-                  src: "/v2/pwa/assets/icon/config-maskable.png",
+                  src: "/assets/icon/config-maskable.png",
                   sizes: "192x192",
                   purpose: "maskable",
                   type: "image/png",
                 },
                 {
-                  src: "/v2/pwa/assets/icon/config-monochrome.png",
+                  src: "/assets/icon/config-monochrome.png",
                   sizes: "192x192",
                   purpose: "monochrome",
                   type: "image/png",
@@ -190,6 +190,7 @@ export default defineHopeConfig({
             },
           ],
         },
+        appendBase: true,
       },
     },
   },

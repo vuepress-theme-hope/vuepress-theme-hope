@@ -93,15 +93,15 @@ export default defineHopeConfig({
       },
 
       pwa: {
-        favicon: "/v2/reading-time/favicon.ico",
+        favicon: "/favicon.ico",
         themeColor: "#46bd87",
         cachePic: true,
         apple: {
-          icon: "/v2/reading-time/assets/icon/apple-icon-152.png",
+          icon: "/assets/icon/apple-icon-152.png",
           statusBarColor: "black",
         },
         msTile: {
-          image: "/v2/reading-time/assets/icon/ms-icon-144.png",
+          image: "/assets/icon/ms-icon-144.png",
           color: "#ffffff",
         },
         manifest: {
@@ -109,29 +109,30 @@ export default defineHopeConfig({
           short_name: "reading-time plugin",
           icons: [
             {
-              src: "/v2/reading-time/assets/icon/chrome-mask-512.png",
+              src: "/assets/icon/chrome-mask-512.png",
               sizes: "512x512",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/reading-time/assets/icon/chrome-mask-192.png",
+              src: "/assets/icon/chrome-mask-192.png",
               sizes: "192x192",
               purpose: "maskable",
               type: "image/png",
             },
             {
-              src: "/v2/reading-time/assets/icon/chrome-512.png",
+              src: "/assets/icon/chrome-512.png",
               sizes: "512x512",
               type: "image/png",
             },
             {
-              src: "/v2/reading-time/assets/icon/chrome-192.png",
+              src: "/assets/icon/chrome-192.png",
               sizes: "192x192",
               type: "image/png",
             },
           ],
         },
+        appendBase: true,
       },
     },
   },
