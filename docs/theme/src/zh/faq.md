@@ -77,6 +77,45 @@ category:
 
 如果你只有一种语言，你仍然需要 [设置你的根目录语言](config/i18n.md#设置根目录语言)。
 
+## 导入 Iconfont 图标无效
+
+如果你在使用 IconFont 图标，并可以在开发服务器正常看到图标，而在部署环境失效，你可能需要检查图标的导入方式。
+
+在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它。
+
+```js{5,13}
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  head: [
+    [
+      "link",
+      {
+        rel: "preload",
+        as: "style",
+        onload: 'this.onload=null;this.rel="stylesheet"',
+        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+      },
+    ],
+  ],
+
+  // ...
+});
+```
+
+::: info 原因
+
+1. Sass 中通过 `@import` 导入 CSS 会被编译为标准的 CSS `@import` 语法；
+1. CSS `@import` 语法仅在 CSS 文件开始生效；
+1. 为了让用户样式具有更高优先级，我们会在主题和插件样式后导入用户样式；
+1. 在 VuePress2 的构建过程中，所有样式会被压缩为单个 CSS 文件。
+
+上述内容导致用户在 Sass 中的 CSS `@import` 导入出现在最终 CSS 文件的中间位置，进而无效。
+
+默认主题也具有同样的问题，并且这无法在主题侧修复。
+
+:::
+
 ## 部分页面设置无效
 
 你可以先查看文档以查看设置是否**不支持页面配置**。

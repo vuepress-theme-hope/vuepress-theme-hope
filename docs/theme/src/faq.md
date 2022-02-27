@@ -73,6 +73,45 @@ If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` wh
 
 If you only have one language, you still need to [set your root language](config/i18n.md#setting-root-lang).
 
+## Importing Iconfont icons does not work
+
+If you are using IconFont icons and can see the icons normally on the devServer, but not in the deploy env, you may need to check how the icons are imported.
+
+In VuePress2, importing web CSS via `@import` in `index.scss` has no effect. You may need to manually import it in the `head` option of your VuePress configuration.
+
+```js{5,13}
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  head: [
+    [
+      "link",
+      {
+        rel: "preload",
+        as: "style",
+        onload: 'this.onload=null;this.rel="stylesheet"',
+        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+      },
+    ],
+  ],
+
+  // ...
+});
+```
+
+::: info Reason
+
+1. CSS imported via `@import` in Sass will be compiled into standard CSS `@import` syntax.
+1. The CSS `@import` syntax only works at the top of css file.
+1. In order to give user styles a higher priority, we will import user styles after theme and plugin styles.
+1. During the build process of VuePress2, all styles are compressed into a single CSS file.
+
+The above results in the user's CSS `@import` imports in Sass appearing in the middle of the final CSS file and thus invalid.
+
+The default theme also has the same problem, and this cannot be fixed on the theme side.
+
+:::
+
 ## Some page settings are invalid
 
 You can first review the documentation to see if the setting **does not support page config**.
