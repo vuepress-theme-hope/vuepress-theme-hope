@@ -1,11 +1,18 @@
-import { fs, path } from "@vuepress/utils";
+import { path } from "@vuepress/utils";
+import chokidar from "chokidar";
+
 import { injectConfigModule } from "./inject";
+import {
+  prepareConfigFile,
+  prepareInjectFile,
+  prepareLoadFile,
+  preparePaletteFile,
+  prepareStyleFile,
+} from "./generate";
 import { logger } from "./utils";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { SassPaletteOptions } from "../shared";
-
-const emptyFile = path.resolve(__dirname, "../../styles/empty.scss");
 
 export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
   {
@@ -18,14 +25,13 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
       "../../styles/default/palette.scss"
     ),
     generator = path.resolve(__dirname, "../../styles/empty.scss"),
-    style,
+    style = null,
   },
   app
 ) => {
   const userConfig = app.dir.source(config);
   const userPalette = app.dir.source(palette);
-  const getPath = (path: string): string =>
-    fs.pathExistsSync(path) ? path : emptyFile;
+  const userStyle = style ? app.dir.source(style) : null;
 
   injectConfigModule(app, id);
 
@@ -56,85 +62,113 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
     },
 
     onInitialized: (): Promise<void> => {
-      const promises = [
-        app.writeTemp(
-          `sass-palette/load-${id}.js`,
-          `import "@sass-palette/${id}-inject";export default ()=>{};`
-        ),
-        app.writeTemp(
-          `sass-palette/${id}-config.scss`,
-          `
-@import "${getPath(defaultPalette)}";
-@import "${getPath(defaultConfig)}";
-@import "${getPath(userPalette)}";
-@import "${getPath(userConfig)}";
-@import "${getPath(generator)}";
-`
-        ),
+      return Promise.all([
+        prepareLoadFile(app, id),
+        prepareInjectFile(app, id),
 
-        app.writeTemp(
-          `sass-palette/${id}-inject.scss`,
-          `
-@use "sass:color";
-@use "sass:list";
-@use "sass:math";
-@use "sass:map";
-@use "sass:meta";
+        prepareConfigFile(app, {
+          id,
+          defaultConfig,
+          defaultPalette,
+          generator,
+          userConfig,
+          userPalette,
+        }),
 
-@use "@sass-palette/helper";
-@use "@sass-palette/${id}-palette";
+        preparePaletteFile(app, {
+          id,
+          defaultPalette,
+          generator,
+          userPalette,
+        }),
 
-$variables: meta.module-variables("${id}-palette");
-
-${
-  app.env.isDebug
-    ? `@debug "${id} palette variables:";\n@debug $variables;\n@debug "${id} config variables:";\n@debug meta.module-variables("${id}-config");`
-    : ""
-}
-
-@each $name, $value in $variables {
-  $key: helper.camel-to-kebab($name);
-
-  @if meta.type-of($value) == number or meta.type-of($value) == string {
-    :root {
-      #{$key}: #{$value};
-    }
-  } @else if helper.color-islegal($value) {
-    @if meta.global-variable-exists("darkSelector", $module: "${id}-config") {
-      @include helper.inject-color($key, $value, $darkSelector: ${id}-config.$darkSelector);
-    } @else {
-      @include helper.inject-color($key, $value);
-    }
-  }
-}
-`
-        ),
-
-        app.writeTemp(
-          `sass-palette/${id}-palette.scss`,
-          `
-@import "${getPath(defaultPalette)}";
-@import "${getPath(userPalette)}";
-@import "${getPath(generator)}";
-`
-        ),
-      ];
-
-      if (style) {
-        const userStyle = app.dir.source(style);
-
-        promises.push(
-          app.writeTemp(
-            `sass-palette/${id}-style.scss`,
-            `@forward "${getPath(userStyle)}";
-`
-          )
-        );
-      }
-
-      return Promise.all(promises).then(() => {
+        prepareStyleFile(app, { id, userStyle }),
+      ]).then(() => {
         if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
       });
+    },
+
+    onWatched: (app, watchers): void => {
+      const configWatcher = chokidar.watch(userConfig, {
+        cwd: app.dir.source(),
+        ignoreInitial: true,
+      });
+
+      const updateConfig = (): Promise<void> =>
+        prepareConfigFile(app, {
+          id,
+          defaultConfig,
+          defaultPalette,
+          generator,
+          userConfig,
+          userPalette,
+        }).then(() => {
+          if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
+        });
+
+      configWatcher.on("add", () => {
+        void updateConfig();
+      });
+      configWatcher.on("unlink", () => {
+        void updateConfig();
+      });
+
+      watchers.push(configWatcher);
+
+      const paletteWatcher = chokidar.watch(userPalette, {
+        cwd: app.dir.source(),
+        ignoreInitial: true,
+      });
+
+      const updatePalette = (): Promise<void> =>
+        Promise.all([
+          prepareConfigFile(app, {
+            id,
+            defaultConfig,
+            defaultPalette,
+            generator,
+            userConfig,
+            userPalette,
+          }),
+
+          preparePaletteFile(app, {
+            id,
+            defaultPalette,
+            generator,
+            userPalette,
+          }),
+        ]).then(() => {
+          if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
+        });
+
+      paletteWatcher.on("add", () => {
+        void updatePalette();
+      });
+      paletteWatcher.on("unlink", () => {
+        void updatePalette();
+      });
+
+      watchers.push(paletteWatcher);
+
+      if (userStyle) {
+        const styleWatcher = chokidar.watch(userStyle, {
+          cwd: app.dir.source(),
+          ignoreInitial: true,
+        });
+
+        const updateStyle = (): Promise<void> =>
+          prepareStyleFile(app, { id, userStyle }).then(() => {
+            if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
+          });
+
+        styleWatcher.on("add", () => {
+          void updateStyle();
+        });
+        styleWatcher.on("unlink", () => {
+          void updateStyle();
+        });
+        watchers.push(styleWatcher);
+      }
     },
 
     clientAppEnhanceFiles: app.dir.temp(`sass-palette/load-${id}.js`),
