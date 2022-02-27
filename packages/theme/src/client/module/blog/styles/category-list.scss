@@ -48,30 +48,30 @@
     .category#{$index} {
       background: color.scale($color, $lightness: 90%);
 
+      #{hope-config.$darkSelector} & {
+        background: color.scale($color, $lightness: -75%);
+      }
+
       &:hover {
         background: color.scale($color, $lightness: 75%);
+
+        #{hope-config.$darkSelector} & {
+          background: color.scale($color, $lightness: -60%);
+        }
       }
 
       &.active {
         background: $color;
-        color: var(--white);
+        color: #fff;
+
+        #{hope-config.$darkSelector} & {
+          background: color.scale($color, $lightness: -60%);
+          color: var(--dark-grey);
+        }
 
         .category-num {
           color: $color;
           background: var(--bg-color-light);
-        }
-      }
-
-      #{hope-config.$darkSelector} & {
-        background: color.scale($color, $lightness: -75%);
-
-        &:hover {
-          background: color.scale($color, $lightness: -60%);
-        }
-
-        &.active {
-          background: var(--theme-color-dark);
-          color: var(--white);
         }
       }
 
