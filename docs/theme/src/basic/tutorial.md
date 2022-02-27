@@ -71,7 +71,7 @@ After learning Markdown, you can try to edit the Markdown file yourself to modif
 
 Next, read this document [VuePress Basics](vuepress/README.md) to get a general understanding of what VuePress is and how to use it.
 
-If you feel that you have mastered it, the next step is to read [VuePress official documentation](https://v2.vuepress.vuejs.org/zh/guide/) and this theme document, so you can config this theme according to your needs.
+If you feel that you have mastered it, the next step is to read [VuePress official documentation](https://v2.vuepress.vuejs.org/guide/) and this theme document, so you can config this theme according to your needs.
 
 ::: warning
 

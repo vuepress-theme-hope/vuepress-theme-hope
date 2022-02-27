@@ -75,7 +75,7 @@ Markdown 的内容会渲染为网页的内容。关于 Markdown 教程，请见 
 
 接下来请阅读本文档 [VuePress 基础](vuepress/README.md)，大致了解 VuePress 是什么和如何使用它。
 
-如果你觉得已经掌握，接下来就是阅读 [VuePress 官方文档](https://v1.vuepress.vuejs.org/zh/guide/) 和本主题文档，根据你想要的对本主题进行配置。
+如果你觉得已经掌握，接下来就是阅读 [VuePress 官方文档](https://v2.vuepress.vuejs.org/zh/guide/) 和本主题文档，根据你想要的对本主题进行配置。
 
 ::: warning
 

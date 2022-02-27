@@ -8,7 +8,7 @@ tag:
   - Navbar
 ---
 
-The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [Languages](https://v1.vuepress.vuejs.org/guide/i18n.html), [Repository Link](#git-repo-and-edit-links) and [outlook panel](#outlook-panel). They all depend on your configuration.
+The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Repository Link](#git-repo-and-edit-links) and [outlook panel](#outlook-panel). They all depend on your configuration.
 
 <!-- more -->
 

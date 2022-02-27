@@ -9,7 +9,7 @@ By installing and enableing this plugin, you can use more syntax in your Markdow
 
 Don’t worry about the size of your site. If you don’t enable related features, the final code won’t include code for these features.
 
-At the same time, VuePress itself adds some Markdown syntaxes. You can [view the official documentation](https://v1.vuepress.vuejs.org/guide/markdown.html).
+At the same time, VuePress itself adds some Markdown syntaxes. You can [view the official documentation](https://v2.vuepress.vuejs.org/guide/markdown.html).
 
 :::
 
