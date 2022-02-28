@@ -293,6 +293,10 @@ declare module "reveal.js/dist/reveal.esm.js" {
     /** Starts up the presentation if the client is capable. */
     initialize(config?: Partial<RevealOptions>): Promise<void>;
     /**
+     * undo all changes that the framework has made to the DOM, remove all event listeners and unregister/destroy all plugins.
+     */
+    destroy(): void;
+    /**
      * Applies the configuration settings from the config
      * object. May be called multiple times.
      */

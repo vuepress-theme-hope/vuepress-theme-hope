@@ -1,6 +1,6 @@
 import { clickOutSideDirective } from "@mr-hope/vuepress-shared/lib/client";
 import { Content } from "@vuepress/client";
-import { defineComponent, h, ref, onBeforeUnmount, withDirectives } from "vue";
+import { defineComponent, h, ref, withDirectives } from "vue";
 import { useRouter } from "vue-router";
 import { BackIcon, HomeIcon } from "./components/icons";
 
@@ -32,14 +32,6 @@ export default defineComponent({
       closeMenu();
       void router.push("/");
     };
-
-    onBeforeUnmount(() => {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector("html")!.classList.remove("reveal-full-page");
-      document.body.classList.remove("reveal-viewport");
-      document.body.style.removeProperty("--slide-width");
-      document.body.style.removeProperty("--slide-height");
-    });
 
     return (): VNode =>
       h("div", { class: "presentation" }, [

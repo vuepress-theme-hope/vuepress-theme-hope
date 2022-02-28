@@ -157,8 +157,7 @@ export default defineComponent({
     });
 
     onBeforeUnmount(() => {
-      reveal?.removeEventListeners();
-      reveal?.unloadSlide(presentationElement.value as HTMLElement);
+      reveal?.destroy();
     });
 
     return (): VNode =>
