@@ -148,7 +148,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2
+          repository-name: vuepress-theme-hope/v1
           branch: netlify
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
