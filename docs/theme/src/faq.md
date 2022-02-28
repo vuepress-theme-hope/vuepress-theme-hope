@@ -71,7 +71,7 @@ Don't worry, due to network cache, a hot reload when editing markdown files is s
 
 This error indicates that you have an SSR mismatch, and it should not be a problem with theme.
 
-Please check if you are using CloudFlare related services first, if so, make sure you turn off static resource compression. Visit [dash.cloudflare.com](https://dash.cloudflare.com), go to Websites-(your domain)-Speed-Optimization, turn `JavaScript` and `HTML` off in `Auto Minify` options.
+Please check if you are using CloudFlare related services first, if so, make sure you turn off static resource compression. Visit [dash.cloudflare.com](https://dash.cloudflare.com), go to Websites → `YOUR_DOMAIN` → Speed → Optimization, turn `JavaScript` and `HTML` off in `Auto Minify` options.
 
 ::: warning
 
