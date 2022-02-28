@@ -75,11 +75,11 @@ category:
 
 这个错误表明你遇到了 SSR 错配，而且这应该不是主题的问题。
 
-请首先检查你是否在使用 CloudFrame 相关服务，如果有，请确保你关闭静态资源压缩。
+请首先检查你是否在使用 CloudFlare 相关服务，如果有，请确保你关闭静态资源压缩。方法：[dash.cloudflare.com](https://dash.cloudflare.com)-网站-（域名）-速度-优化- Auto Minify，关闭 JavaScript 和 HTML 即可。
 
 ::: warning
 
-CloudFrame Pages 以及 Cloud Frame 中的 Auto Minify 会错误的对 HTML 的空格和换行进行处理，这会导致 Vue 在初始化时产生 SSR 错配。
+CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理，这会导致 Vue 在初始化时产生 SSR 错配。
 
 :::
 
