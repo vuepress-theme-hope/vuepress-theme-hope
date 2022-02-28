@@ -71,11 +71,11 @@ Don't worry, due to network cache, a hot reload when editing markdown files is s
 
 This error indicates that you have an SSR mismatch, and it should not be a problem with theme.
 
-Please check if you are using CloudFrame related services first, if so, make sure you turn off static resource compression.
+Please check if you are using CloudFlare related services first, if so, make sure you turn off static resource compression. Visit [dash.cloudflare.com](https://dash.cloudflare.com), go to Websites-(your domain)-Speed-Optimization, turn `JavaScript` and `HTML` off in `Auto Minify` options.
 
 ::: warning
 
-CloudFrame Pages and Auto Minify in Cloud Frame incorrectly handle HTML spaces and line breaks, which can cause Vue triggering SSR mismatches during initialization.
+Auto Minify in CloudFlare incorrectly handle HTML spaces and line breaks, which can cause Vue triggering SSR mismatches during initialization.
 
 :::
 
