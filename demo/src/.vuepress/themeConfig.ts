@@ -2,8 +2,11 @@ import { defineThemeConfig } from "vuepress-theme-hope";
 import * as navbar from "./navbar";
 import * as sidebar from "./sidebar";
 
+const hostname =
+  process.env.HOSTNAME || "https://vuepress-theme-hope-v2-demo.netlify.app";
+
 export default defineThemeConfig({
-  hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
+  hostname,
 
   author: {
     name: "Mr.Hope",

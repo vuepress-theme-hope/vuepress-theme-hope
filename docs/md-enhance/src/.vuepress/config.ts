@@ -4,6 +4,8 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 import { version } from "../../../../lerna.json";
 
 const base = process.env.BASE || "/";
+const hostname =
+  process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
 
 export default defineHopeConfig({
   base: `/${base.replace(/^\//, "")}md-enhance/`,
@@ -37,7 +39,7 @@ export default defineHopeConfig({
   theme: "hope",
 
   themeConfig: {
-    hostname: "https://vuepress-theme-hope.github.io",
+    hostname,
 
     author: {
       name: "Mr.Hope",

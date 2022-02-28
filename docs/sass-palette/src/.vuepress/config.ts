@@ -3,6 +3,8 @@ import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 const base = process.env.BASE || "/";
+const hostname =
+  process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
 
 export default defineHopeConfig({
   base: `/${base.replace(/^\//, "")}sass-palette/`,
@@ -36,7 +38,7 @@ export default defineHopeConfig({
   theme: "hope",
 
   themeConfig: {
-    hostname: "https://vuepress-theme-hope.github.io",
+    hostname,
 
     author: {
       name: "Mr.Hope",

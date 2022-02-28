@@ -6,6 +6,8 @@ import { enNavbarConfig, zhNavbarConfig } from "./config/navbar";
 import { enSidebarConfig, zhSidebarConfig } from "./config/sidebar";
 
 const base = (process.env.BASE as "/" | `/${string}/`) || "/";
+const hostname =
+  process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
 
 export default defineHopeConfig({
   base,
@@ -45,7 +47,7 @@ export default defineHopeConfig({
   theme: "hope",
 
   themeConfig: {
-    hostname: "https://vuepress-theme-hope.github.io",
+    hostname,
 
     author: {
       name: "Mr.Hope",

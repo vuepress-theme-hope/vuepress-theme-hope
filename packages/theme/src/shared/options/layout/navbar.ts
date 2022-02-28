@@ -35,7 +35,7 @@ export interface HopeThemeNavbarLocaleOptions {
    * 导航栏配置
    *
    * @description 设置 `false` 以在当前语言中禁用导航栏
-   * @see https://vuepress-theme-hope.github.io/v2/zh/guide/layout/navbar.html
+   * @see https://vuepress-theme-hope.gitee.io/v2/zh/guide/layout/navbar.html
    */
   navbar?: HopeThemeNavbarConfig | false;
 

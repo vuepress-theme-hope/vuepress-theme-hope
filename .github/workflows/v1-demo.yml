@@ -47,19 +47,44 @@ jobs:
       - name: Build project
         run: yarn run build
 
-      - name: Build Theme demo
-        run: yarn run demo:build
+      - name: Build GitHub Pages Demo
+        env:
+          BASE: /v1-demo/
+          HOSTNAME: https://vuepress-theme-hope.github.io/
+        run: |
+          yarn run demo:build
 
-      - name: Create README.md
-        run: |-
-          echo "# v1 Theme Demo" >> demo/dist/README.md
-          echo "" >> demo/dist/README.md
-          echo "### This repo holds the output files of V1 Theme Demo. You can [visit the demo](https://vuepress-theme-hope.github.io/v1-demo/) to see the theme appearance.:tada:" >> demo/dist/README.md
-
-      - name: Deploy
+      - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          repository-name: vuepress-theme-hope/v1-demo
           branch: gh-pages
           folder: demo/dist
           token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Build Netlify Demo
+        run: |
+          yarn run demo:build
+
+      - name: Deploy to netlify
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
           repository-name: vuepress-theme-hope/v1-demo
+          branch: netlify
+          folder: demo/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Build Gitee Demo
+        env:
+          BASE: /v1-demo/
+          HOSTNAME: https://vuepress-theme-hope.gitee.io/
+        run: |
+          yarn run demo:build
+
+      - name: Deploy to gitee
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/v1-demo
+          branch: gitee
+          folder: demo/dist
+          token: ${{ secrets.ACCESS_TOKEN }}

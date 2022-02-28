@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  theme-demo:
+  deploy-demo:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -48,20 +48,44 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run build
 
-      - name: Build Demo
+      - name: Build GitHub Pages Demo
+        env:
+          BASE: /v2-demo/
+          HOSTNAME: https://vuepress-theme-hope.github.io/
         run: |
           yarn run demo:vite-build
 
-      - name: Create README.md
-        run: |-
-          echo "# v2 Theme Demo" >> demo/dist/README.md
-          echo "" >> demo/dist/README.md
-          echo "### This repo holds the output files of V2 Theme Demo. You can [visit the demo](https://vuepress-theme-hope.github.io/v2-demo/) to see the theme appearance.:tada:" >> demo/dist/README.md
-
-      - name: Deploy
+      - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          repository-name: vuepress-theme-hope/v2-demo
           branch: gh-pages
           folder: demo/dist
           token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Build Netlify Demo
+        run: |
+          yarn run demo:vite-build
+
+      - name: Deploy to netlify
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
           repository-name: vuepress-theme-hope/v2-demo
+          branch: netlify
+          folder: demo/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Build Gitee Demo
+        env:
+          BASE: /v2-demo/
+          HOSTNAME: https://vuepress-theme-hope.gitee.io/
+        run: |
+          yarn run demo:vite-build
+
+      - name: Deploy to gitee
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/v2-demo
+          branch: gitee
+          folder: demo/dist
+          token: ${{ secrets.ACCESS_TOKEN }}

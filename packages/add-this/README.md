@@ -11,7 +11,7 @@
 
 VuePress2 add-this plugin💌 / VuePress2 AddThis 插件 💌
 
-## [Official Docs](https://vuepress-theme-hope.github.io/v2/add-this/) / [官方文档](https://vuepress-theme-hope.github.io/v2/add-this/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v2/add-this/) / [官方文档](https://vuepress-theme-hope.gitee.io/v2/add-this/zh/)
 
 ## Deprecated Warning ![deprecated](https://img.shields.io/badge/-deprecated-yellow)
 

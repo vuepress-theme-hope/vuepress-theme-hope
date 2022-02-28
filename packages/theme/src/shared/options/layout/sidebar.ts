@@ -10,7 +10,7 @@ export interface HopeThemeSidebarLocaleOptions {
    * 侧边栏配置
    *
    * @description 设置为 `false` 以在当前语言中禁用侧边栏
-   * @see https://vuepress-theme-hope.github.io/v2/zh/guide/layout/sidebar.html
+   * @see https://vuepress-theme-hope.gitee.io/v2/zh/guide/layout/sidebar.html
    */
   sidebar?: HopeThemeSidebarConfig | "auto" | false;
 

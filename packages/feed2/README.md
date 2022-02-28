@@ -11,7 +11,7 @@
 
 VuePress2 feed plugin 📡 / VuePress2 Feed 插件 📡
 
-## [Official Docs](https://vuepress-theme-hope.github.io/v2/feed/) | [官方文档](https://vuepress-theme-hope.github.io/v2/feed/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v2/feed/) | [官方文档](https://vuepress-theme-hope.gitee.io/v2/feed/zh/)
 
 ## Install
 

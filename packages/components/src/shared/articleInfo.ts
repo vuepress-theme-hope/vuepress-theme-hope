@@ -121,7 +121,7 @@ export interface ArticleInfoProps {
    *
    * 文章信息配置
    *
-   * @see https://vuepress-theme-hope.github.io/v2/components/zh/guide/articleInfo/
+   * @see https://vuepress-theme-hope.gitee.io/v2/components/zh/guide/articleInfo/
    *
    * @default ["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]
    */
