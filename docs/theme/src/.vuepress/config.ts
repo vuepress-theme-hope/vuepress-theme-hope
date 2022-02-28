@@ -5,10 +5,10 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 import { enNavbarConfig, zhNavbarConfig } from "./config/navbar";
 import { enSidebarConfig, zhSidebarConfig } from "./config/sidebar";
 
-const base = process.env.BASE || "/";
+const base = (process.env.BASE as "/" | `/${string}/`) || "/";
 
 export default defineHopeConfig({
-  base: `/${base.replace(/^\//, "")}`,
+  base,
 
   dest: "./dist",
 
