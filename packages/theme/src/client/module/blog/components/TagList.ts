@@ -24,8 +24,7 @@ export default defineComponent({
     );
 
     const isActive = (name: string): boolean =>
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      name === frontmatter.value.blog!.name;
+      name === frontmatter.value.blog?.name;
 
     return (): VNode =>
       h(
