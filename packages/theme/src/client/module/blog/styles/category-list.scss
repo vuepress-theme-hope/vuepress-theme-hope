@@ -47,9 +47,11 @@
 
     .category#{$index} {
       background: color.scale($color, $lightness: 90%);
+      color: color.scale($color, $lightness: -10%);
 
       #{hope-config.$darkSelector} & {
         background: color.scale($color, $lightness: -75%);
+        color: color.scale($color, $lightness: 20%);
       }
 
       &:hover {
@@ -65,8 +67,8 @@
         color: #fff;
 
         #{hope-config.$darkSelector} & {
-          background: color.scale($color, $lightness: -60%);
-          color: var(--dark-grey);
+          background: color.scale($color, $lightness: -20%);
+          color: var(--bg-color-light);
         }
 
         .category-num {

@@ -9,17 +9,13 @@
   .tag {
     position: relative;
 
-    min-width: 1.5em;
-    margin: 0 0.2em;
-    padding: 0 0.2em;
-    border-width: 0.5px;
-    border-style: solid;
-    border-radius: 0.75em;
+    min-width: 1.5rem;
+    margin: 0 0.125rem;
+    padding: 0.125rem 0.375rem 0.125rem 0.625rem;
 
-    background: #f8f8f8;
-
-    font-size: 0.75em;
-    text-align: center;
+    font-size: 0.625rem;
+    font-weight: bold;
+    line-height: 1.5;
 
     display: inline-block;
     vertical-align: middle;
@@ -33,7 +29,6 @@
 
     &.clickable:hover {
       cursor: pointer;
-      background: var(--c-bg, #fff);
       box-shadow: 0 1px 6px 0 var(--card-shadow);
     }
   }
@@ -42,23 +37,76 @@
     $index: list.index(hope-config.$colors, $color) - 1;
 
     .tag#{$index} {
-      & {
-        color: color.scale($color, $lightness: 10%);
-        border-color: color.scale($color, $lightness: 10%);
+      background: color.scale($color, $lightness: 90%);
+      background: linear-gradient(
+            135deg,
+            transparent 0.75em,
+            color.scale($color, $lightness: 90%) 0
+          )
+          top,
+        linear-gradient(
+            45deg,
+            transparent 0.75em,
+            color.scale($color, $lightness: 90%) 0
+          )
+          bottom;
+      background-size: 100% 52%;
+      background-repeat: no-repeat;
 
-        &.clickable:hover {
-          color: $color;
-          border-color: $color;
-        }
-      }
+      color: color.scale($color, $lightness: 20%);
 
       #{hope-config.$darkSelector} & {
+        background: color.scale($color, $lightness: -75%);
+        background: linear-gradient(
+              135deg,
+              transparent 0.75em,
+              color.scale($color, $lightness: -75%) 0
+            )
+            top,
+          linear-gradient(
+              45deg,
+              transparent 0.75em,
+              color.scale($color, $lightness: -75%) 0
+            )
+            bottom;
+        background-size: 100% 52%;
+        background-repeat: no-repeat;
         color: color.scale($color, $lightness: -10%);
-        border-color: color.scale($color, $lightness: - 10%);
+      }
 
-        &.clickable:hover {
-          color: $color;
-          border-color: $color;
+      &.clickable:hover {
+        background: color.scale($color, $lightness: 75%);
+        background: linear-gradient(
+              135deg,
+              transparent 0.75em,
+              color.scale($color, $lightness: 75%) 0
+            )
+            top,
+          linear-gradient(
+              45deg,
+              transparent 0.75em,
+              color.scale($color, $lightness: 75%) 0
+            )
+            bottom;
+        background-size: 100% 52%;
+        background-repeat: no-repeat;
+
+        #{hope-config.$darkSelector} & {
+          background: color.scale($color, $lightness: -60%);
+          background: linear-gradient(
+                135deg,
+                transparent 0.75em,
+                color.scale($color, $lightness: -60%) 0
+              )
+              top,
+            linear-gradient(
+                45deg,
+                transparent 0.75em,
+                color.scale($color, $lightness: -60%) 0
+              )
+              bottom;
+          background-size: 100% 52%;
+          background-repeat: no-repeat;
         }
       }
     }

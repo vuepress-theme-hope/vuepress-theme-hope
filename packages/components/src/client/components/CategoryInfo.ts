@@ -46,17 +46,19 @@ export default defineComponent({
             [
               h(CategoryIcon),
               h("ul", { class: "categories-wrapper" }, [
-                ...props.category.map(({ name, path }) =>
+                ...props.category.map(({ name, path }, index) =>
                   h(
                     "li",
                     {
-                      class: {
-                        category: true,
-                        clickable: path,
-                      },
+                      class: [
+                        "category",
+                        `category${index % 9}`,
+                        { clickable: path },
+                      ],
+                      role: path ? "navigation" : "",
                       onClick: () => navigate(path),
                     },
-                    h("span", { role: path ? "navigation" : "" }, name)
+                    name
                   )
                 ),
                 h("meta", {

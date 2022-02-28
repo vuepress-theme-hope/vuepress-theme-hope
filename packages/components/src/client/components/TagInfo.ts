@@ -52,9 +52,10 @@ export default defineComponent({
                     "li",
                     {
                       class: ["tag", `tag${index % 9}`, { clickable: path }],
+                      role: path ? "navigation" : "",
                       onClick: () => navigate(path),
                     },
-                    h("span", { role: path ? "navigation" : "" }, name)
+                    name
                   )
                 )
               ),

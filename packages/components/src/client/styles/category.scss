@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:list";
+
 .categories-wrapper {
   list-style: none;
   margin: 0;
@@ -5,7 +8,13 @@
 
   .category {
     display: inline-block;
-    padding: 0 2px;
+    margin: 0 0.25em;
+    padding: 0 0.25em;
+    border-radius: 0.25em;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 2;
 
     > span {
       &:after {
@@ -21,6 +30,28 @@
       > span:hover {
         cursor: pointer;
         color: var(--c-brand, #3eaf7c);
+      }
+    }
+  }
+
+  @each $color in hope-config.$colors {
+    $index: list.index(hope-config.$colors, $color) - 1;
+
+    .category#{$index} {
+      background: color.scale($color, $lightness: 90%);
+      color: color.scale($color, $lightness: 20%);
+
+      #{hope-config.$darkSelector} & {
+        background: color.scale($color, $lightness: -75%);
+        color: color.scale($color, $lightness: -10%);
+      }
+
+      &:hover {
+        background: color.scale($color, $lightness: 75%);
+
+        #{hope-config.$darkSelector} & {
+          background: color.scale($color, $lightness: -60%);
+        }
       }
     }
   }
