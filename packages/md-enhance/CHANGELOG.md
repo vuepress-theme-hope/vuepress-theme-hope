@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.37...v2.0.0-alpha.38) (2022-02-28)
+
+### Features
+
+- **md-enhance:** destory reveal instance using Reveal.destory ([f24c854](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f24c854b524be2cd7f9f10df2cc46fadc5ed97b6))
+
 # [2.0.0-alpha.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.36...v2.0.0-alpha.37) (2022-02-28)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
