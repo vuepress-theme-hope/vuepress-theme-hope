@@ -67,7 +67,7 @@ export const setupDarkMode = (): void => {
       : // switch
       darkmode === "switch"
       ? darkmodeStorage.value === "dark"
-      : // auto-swtich
+      : // auto-switch
         darkmodeStorage.value === "dark" ||
         (darkmodeStorage.value === "auto" && isDarkPreferred.value);
   });
