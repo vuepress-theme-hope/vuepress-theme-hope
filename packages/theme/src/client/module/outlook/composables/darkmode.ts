@@ -49,7 +49,7 @@ export const setupDarkMode = (): void => {
   const isDarkPreferred = usePreferredDark();
   const darkmodeStorage = useStorage<DarkmodeStatus>(
     "vuepress-theme-hope-scheme",
-    "dark"
+    "auto"
   );
 
   const isDarkMode = computed<boolean>(() => {
@@ -64,10 +64,10 @@ export const setupDarkMode = (): void => {
       : // auto
       darkmode === "auto"
       ? isDarkPreferred.value
-      : // auto switch
+      : // switch
       darkmode === "switch"
       ? darkmodeStorage.value === "dark"
-      : // auto-swich
+      : // auto-swtich
         darkmodeStorage.value === "dark" ||
         (darkmodeStorage.value === "auto" && isDarkPreferred.value);
   });

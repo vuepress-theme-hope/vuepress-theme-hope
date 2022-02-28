@@ -23,7 +23,7 @@ export default defineComponent({
 
     const locale = computed(() => themeLocale.value.outlookLocales.darkmode);
 
-    const darkmode = computed(() => themeData.value.darkmode || "auto-switch");
+    const darkmode = computed(() => themeData.value.darkmode);
 
     const enable = computed(
       () => darkmode.value !== "disable" && darkmode.value !== "force-dark"
