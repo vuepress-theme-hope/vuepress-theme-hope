@@ -76,7 +76,7 @@ The following social medias has built-in icons:
 - `'Bitbucket'`: Bitbucket
 - `'Dingding'`: Dingding
 - `'Discord'`: Discord
-- `'Dribbble'`: Dribble
+- `'Dribbble'`: Dribbble
 - `'Email'`: Email
 - `'Evernote'`: Evernote
 - `'Facebook'`: Facebook
