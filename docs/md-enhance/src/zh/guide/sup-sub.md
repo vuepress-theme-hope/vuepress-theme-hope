@@ -9,21 +9,49 @@ icon: superscript
 
 ## 配置
 
-```js {7,9}
-module.exports = {
+:::: code-group
+
+::: code-group-item TS
+
+```ts {8,10}
+// .vuepress/config.ts
+import { mdEhance } from "vuepress-plugin-md-enhance";
+
+export default {
   plugins: [
-    [
-      "md-enhance",
-      {
-        // 启用下角标功能
-        sub: true,
-        // 启用上角标
-        sup: true,
-      },
-    ],
+    mdEhance({
+      // 启用下角标功能
+      sub: true,
+      // 启用上角标
+      sup: true,
+    }),
   ],
 };
 ```
+
+:::
+
+::: code-group-item JS
+
+```js {8,10}
+// .vuepress/config.js
+const { mdEhance } = require("vuepress-plugin-md-enhance");
+
+module.exports = {
+  plugins: [
+    mdEhance({
+      // 启用下角标功能
+      sub: true,
+      // 启用上角标
+      sup: true,
+    }),
+  ],
+};
+```
+
+:::
+
+::::
 
 ## 语法
 

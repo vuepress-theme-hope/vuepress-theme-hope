@@ -38,7 +38,7 @@ icon: markdown
 ::: code-group-item yarn
 
 ```bash
-yarn add -D vuepress-theme-hope
+yarn add -D vuepress-plugin-md-enhance@next
 ```
 
 :::
@@ -46,7 +46,7 @@ yarn add -D vuepress-theme-hope
 ::: code-group-item npm:active
 
 ```bash
-npm i -D vuepress-theme-hope
+npm i -D vuepress-plugin-md-enhance@next
 ```
 
 :::

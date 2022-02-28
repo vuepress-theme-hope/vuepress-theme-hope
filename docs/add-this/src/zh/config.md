@@ -1,5 +1,5 @@
 ---
-title: 配置
+title: 插件选项
 icon: config
 ---
 
