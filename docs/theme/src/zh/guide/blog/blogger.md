@@ -48,14 +48,14 @@ tag:
 - `'Dingding'`: 钉钉
 - `'Discord'`: Discord
 - `'Dribbble'`: Dribbble
-- `'Email'`: Email
+- `'Email'`: 邮件
 - `'Evernote'`: 印象笔记
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
-- `'Gitee'`: Gitee
+- `'Gitee'`: 码云
 - `'GitHub'`: GitHub
 - `'Gitlab'`: Gitlab
-- `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
+- `'Gmail'`: 谷歌邮箱
 - `'Instagram'`: Instagram
 - `'Line'`: Line
 - `'Linkedin'`: 领英
@@ -63,15 +63,17 @@ tag:
 - `'Pocket'`: Pocket
 - `'QQ'`: QQ
 - `'Qzone'`: QQ 空间
-- `'Reddit'`: Reddit
+- `'Reddit'`: 红迪
 - `'Rss'`: RSS 地址
-- `'Steam'`: Steam
-- `'Twitter'`: Twitter
+- `'Steam'`: 蒸汽
+- `'Twitter'`: 推特
 - `'Wechat'`: 微信
 - `'Weibo'`: 微博
-- `'Whatsapp'`: Whatsapp
-- `'Youtube'`: YouTube
+- `'Whatsapp'`:瓦次艾普
+- `'Youtube'`: 油管
 - `'Zhihu'`: 知乎
+
+(请不要好奇为什么这里一定要加上特别奇怪的中文翻译)
 
 :::
 

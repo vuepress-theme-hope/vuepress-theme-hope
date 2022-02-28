@@ -72,35 +72,35 @@ Set social links.
 
 The following social medias has built-in icons:
 
-- `'Baidu'`: Baidu
-- `'Bitbucket'`: Bitbucket
-- `'Dingding'`: Dingding
-- `'Discord'`: Discord
-- `'Dribbble'`: Dribbble
-- `'Email'`: Email
-- `'Evernote'`: Evernote
-- `'Facebook'`: Facebook
-- `'Flipboard'`: Flipboard
-- `'Gitee'`: Gitee
-- `'GitHub'`: GitHub
-- `'Gitlab'`: Gitlab
-- `'Gmail'`: Google mailbox
-- `'Instagram'`: Instagram
-- `'Line'`: Line
-- `'Linkedin'`: LinkedIn
-- `'Pinterest'`: Pinterest
-- `'Pocket'`: Pocket
-- `'QQ'`: QQ
-- `'Qzone'`: Qzone
-- `'Reddit'`: Reddit
-- `'Rss'`: RSS address
-- `'Steam'`: Steam
-- `'Twitter'`: Twitter
-- `'Wechat'`: WeChat
-- `'Weibo'`: Weibo
-- `'Whatsapp'`: Whatsapp
-- `'Youtube'`: YouTube
-- `'Zhihu'`: Zhihu
+- `'Baidu'`
+- `'Bitbucket'`
+- `'Dingding'`
+- `'Discord'`
+- `'Dribbble'`
+- `'Email'`
+- `'Evernote'`
+- `'Facebook'`
+- `'Flipboard'`
+- `'Gitee'`
+- `'GitHub'`
+- `'Gitlab'`
+- `'Gmail'`
+- `'Instagram'`
+- `'Line'`
+- `'Linkedin'`
+- `'Pinterest'`
+- `'Pocket'`
+- `'QQ'`
+- `'Qzone'`
+- `'Reddit'`
+- `'Rss'`
+- `'Steam'`
+- `'Twitter'`
+- `'Wechat'`
+- `'Weibo'`
+- `'Whatsapp'`
+- `'Youtube'`
+- `'Zhihu'`
 
 :::
 
