@@ -62,13 +62,12 @@ module.exports = defineHopeConfig({
 
 ### 对象格式
 
-<!-- TODO: Add activeMatch and other info -->
-
 如果你对页面的图标不满意或者觉得页面标题太长，你可以改为配置一个对象。可用的配置项有:
 
-- `text:` 项目文字
-- `link` 项目链接
-- `icon` 项目图标
+- `text:`: 项目文字
+- `link`: 项目链接
+- `icon`: 项目图标 (可选)
+- `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
 :::: code-group
 
@@ -81,9 +80,22 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 export default defineHopeConfig({
   themeConfig: {
     navbar: [
-      { text: "指南", link: "/zh/guide/README.md", icon: "creative" },
+      {
+        text: "指南",
+        link: "/zh/guide/README.md",
+        icon: "creative",
+        // 仅在 `/zh/guide/` 激活
+        activeMatch: "^/zh/guide/$",
+      },
       { text: "配置", link: "/zh/config/README.md", icon: "config" },
-      { text: "常见问题", link: "/zh/faq.md", icon: "question" },
+      {
+        text: "常见问题",
+        link: "/zh/faq.md",
+        icon: "question",
+        // 会在 `/zh/faq` 开头的路径激活
+        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
+        activeMatch: "^/zh/faq",
+      },
     ],
   },
 });
@@ -100,9 +112,22 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 module.exports = defineHopeConfig({
   themeConfig: {
     navbar: [
-      { text: "指南", link: "/zh/guide/README.md", icon: "creative" },
+      {
+        text: "指南",
+        link: "/zh/guide/README.md",
+        icon: "creative",
+        // 仅在 `/zh/guide/` 激活
+        activeMatch: "^/zh/guide/$",
+      },
       { text: "配置", link: "/zh/config/README.md", icon: "config" },
-      { text: "常见问题", link: "/zh/faq.md", icon: "question" },
+      {
+        text: "常见问题",
+        link: "/zh/faq.md",
+        icon: "question",
+        // 会在 `/zh/faq` 开头的路径激活
+        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
+        activeMatch: "^/zh/faq",
+      },
     ],
   },
 });
@@ -111,6 +136,18 @@ module.exports = defineHopeConfig({
 :::
 
 ::::
+
+::: tip activeMatch 的高级用法
+
+`activeMatch` 主要给予你控制路径是否激活的能力，比如你可能有如下链接:
+
+- `/path/`
+- `/path/a/`
+- `/path/b/`
+
+此时你就不希望在 `/path/a/` 以及 `/path/b/` 开头的路径下，出现两个菜单同时激活的情况，此时你就可以设置第一项的 `activeMatch` 为 `^/path/(?:(?!a/|b/).*)?$`。
+
+:::
 
 ### 下拉列表
 
@@ -471,8 +508,6 @@ module.exports = defineHopeConfig({
 或者，你也可以 [运行你自己的爬虫](https://docsearch.algolia.com/docs/run-your-own/) 来创建索引，然后使用你自己的 [appId](#appId), [apiKey](#apikey) 和 [indexName](#indexname) 来配置该插件。
 
 相关的配置及说明详见 [官方文档][plugin-docsearch]。
-
-<!-- TODO: Add clawer config -->
 
 ## Git 仓库和编辑链接
 

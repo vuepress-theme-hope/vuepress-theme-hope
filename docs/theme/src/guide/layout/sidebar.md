@@ -64,13 +64,12 @@ You can omit the `.md` extension, and paths ending with `/` are inferred as `/RE
 
 ### Object format
 
-<!-- TODO: Add activeMatch and other info -->
-
 Just like navbar, if you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
 - `text:`: item text
 - `link`: item link
-- `icon`: item icon
+- `icon`: item icon (optional)
+- `activeMatch`: item active math (optional), support regexp strings
 
 :::: code-group
 
@@ -83,9 +82,22 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 export default defineHopeConfig({
   themeConfig: {
     sidebar: [
-      { text: "Guide", link: "guide/README.md", icon: "creative" },
-      { text: "Config", link: "config/README.md", icon: "config" },
-      { text: "FAQ", link: "faq.md", icon: "question" },
+      {
+        text: "Guide",
+        link: "/guide/README.md",
+        icon: "creative",
+        // only active in `/guide/`
+        activeMatch: "^/guide/$",
+      },
+      { text: "Config", link: "/config/README.md", icon: "config" },
+      {
+        text: "FAQ",
+        link: "/faq.md",
+        icon: "question",
+        // active in path starting with `/faq`
+        // so it will active in path like `/faq/xxx.html`
+        activeMatch: "^/zh/faq/",
+      },
     ],
   },
 });
@@ -102,9 +114,22 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 module.exports = defineHopeConfig({
   themeConfig: {
     sidebar: [
-      { text: "Guide", link: "guide/README.md", icon: "creative" },
-      { text: "Config", link: "config/README.md", icon: "config" },
-      { text: "FAQ", link: "faq.md", icon: "question" },
+      {
+        text: "Guide",
+        link: "/guide/README.md",
+        icon: "creative",
+        // only active in `/guide/`
+        activeMatch: "^/guide/$",
+      },
+      { text: "Config", link: "/config/README.md", icon: "config" },
+      {
+        text: "FAQ",
+        link: "/faq.md",
+        icon: "question",
+        // active in path starting with `/faq`
+        // so it will active in path like `/faq/xxx.html`
+        activeMatch: "^/zh/faq/",
+      },
     ],
   },
 });
@@ -113,6 +138,18 @@ module.exports = defineHopeConfig({
 :::
 
 ::::
+
+::: tip Advanced usage of activeMatch
+
+`activeMatch` gives you the ability to control whether the path is active, for example you may have the following dropdown:
+
+- `/path/`
+- `/path/a/`
+- `/path/b/`
+
+At this point, you don't want two menus to be activated at the same time under the paths starting with `/path/a/` and `/path/b/`. In this case, you can set the `activeMatch` of the first item to `^/path/(?:(?!a/|b/).*)?$`.
+
+:::
 
 ### Grouping and Nesting
 
@@ -543,6 +580,12 @@ You can disable the sidebar on a specific page with `YAML front matter`:
 sidebar: false
 ---
 ```
+
+::: note
+
+Sidebar is disabled by default in home page.
+
+:::
 
 ## Nested header links
 

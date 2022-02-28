@@ -57,7 +57,7 @@ tag:
 
 `ProjectOption` 包括以下键值:
 
-- `type`: 类型，可选值为 `'link' | 'project' | 'book' | 'article'`
+- `type`: 类型，可选值为 `'link' | 'project' | 'book' | 'article' | 'friend'`
 - `name`: 项目名称，必填
 - `link`: 项目链接，必填，填入外部链接或绝对路径。
 - `desc`: 项目描述，选填

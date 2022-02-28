@@ -57,7 +57,7 @@ Whether Hero is full screen displayed
 
 `ProjectOption` including this keys:
 
-- `type`: the project type, you can choose from `'link' | 'project' | 'book' | 'article'`
+- `type`: the project type, you can choose from `'link' | 'project' | 'book' | 'article' | 'friend'`
 - `name`: required, project name
 - `link`: required, project link, fill in an external path or absolute path
 - `desc`: project description
