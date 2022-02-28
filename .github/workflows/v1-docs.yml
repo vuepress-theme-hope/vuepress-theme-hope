@@ -177,6 +177,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v1
+          repository-name: vuepress-theme-hope/v2
           branch: gitee
+          folder: "."
           token: ${{ secrets.ACCESS_TOKEN }}

@@ -189,4 +189,5 @@ jobs:
         with:
           repository-name: vuepress-theme-hope/v2
           branch: gitee
+          folder: "."
           token: ${{ secrets.ACCESS_TOKEN }}
