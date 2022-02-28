@@ -1,61 +1,60 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
-.page {
-  .article-info {
+.article-info {
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--dark-grey);
+  font-size: 14px;
+
+  & > span {
     display: flex;
-    justify-content: flex-start;
-    align-content: stretch;
     align-items: center;
-    flex-wrap: wrap;
-    color: var(--dark-grey);
-    font-size: 14px;
+    flex-shrink: 0;
+    margin-right: 0.5em;
+    line-height: 2;
 
-    & > span {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      margin-right: 0.5em;
-      line-height: 2;
-
-      @media (min-width: hope-config.$wide) {
-        font-size: 1.1em;
-      }
-
-      @media (max-width: hope-config.$mobileS) {
-        font-size: 0.875em;
-      }
-
-      &.origin {
-        display: inline-block;
-        position: relative;
-        vertical-align: middle;
-        margin: 0 0.5em;
-        padding: 0 0.5em;
-        border: 0.5px solid var(--dark-grey);
-        border-radius: 0.75em;
-        background: var(--c-bg, #fff);
-        font-size: 0.75em;
-        line-height: 1.5;
-        overflow: hidden;
-      }
+    @media (min-width: hope-config.$wide) {
+      font-size: 1.1em;
     }
 
-    .icon {
-      position: relative;
+    @media (max-width: hope-config.$mobileS) {
+      margin-right: 0.3em;
+      font-size: 0.875em;
+    }
+
+    &.origin {
       display: inline-block;
-      width: 1em;
-      height: 1em;
-      margin-right: 0.25em;
+      position: relative;
       vertical-align: middle;
+      margin: 0 0.5em;
+      padding: 0 0.5em;
+      border: 0.5px solid var(--dark-grey);
+      border-radius: 0.75em;
+      background: var(--c-bg, #fff);
+      font-size: 0.75em;
+      line-height: 1.5;
+      overflow: hidden;
     }
+  }
 
-    a {
-      color: inherit;
+  .icon {
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.25em;
+    vertical-align: middle;
+  }
 
-      &:hover,
-      &:active {
-        color: var(--c-brand, #3eaf7c);
-      }
+  a {
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: var(--c-brand, #3eaf7c);
     }
   }
 

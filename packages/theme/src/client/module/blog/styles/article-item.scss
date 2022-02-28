@@ -125,18 +125,12 @@
   }
 
   .article-info {
-    color: var(--dark-grey);
-    font-size: 14px;
-
     & > span {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
       margin-right: 0.5em;
       line-height: 1.8;
-
-      @media (max-width: hope-config.$mobileS) {
-        margin-right: 0.3em;
-        font-size: 0.86rem;
-      }
 
       &::after {
         --balloon-font-size: 8px;
@@ -147,11 +141,6 @@
       .tags-wrapper {
         display: inline-block;
       }
-    }
-
-    .icon {
-      width: 1em;
-      height: 1em;
     }
   }
 }

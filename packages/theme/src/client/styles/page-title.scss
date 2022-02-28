@@ -1,32 +1,30 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
-.page {
-  .page-title {
-    @include wrapper.horizontal-wrapper;
+.page-title {
+  @include wrapper.horizontal-wrapper;
 
-    position: relative;
-    z-index: 1;
-    padding-top: 0.5rem;
-    padding-bottom: 0;
+  position: relative;
+  z-index: 1;
+  padding-top: 0.5rem;
+  padding-bottom: 0;
 
-    h1 {
-      margin-top: calc(0.5rem - var(--navbar-height)) !important;
-      margin-bottom: 1rem;
-      padding-top: var(--navbar-height) !important;
-      font-size: 2.2rem;
+  h1 {
+    margin-top: calc(0.5rem - var(--navbar-height)) !important;
+    margin-bottom: 1rem;
+    padding-top: var(--navbar-height) !important;
+    font-size: 2.2rem;
 
-      @media (max-width: hope-config.$pad) {
-        margin-top: calc(
-          0.5rem - var(--navbar-mobile-height, --navbar-height)
-        ) !important;
-        padding-top: var(--navbar-mobile-height, --navbar-height) !important;
-      }
+    @media (max-width: hope-config.$pad) {
+      margin-top: calc(
+        0.5rem - var(--navbar-mobile-height, --navbar-height)
+      ) !important;
+      padding-top: var(--navbar-mobile-height, --navbar-height) !important;
+    }
 
-      .icon {
-        margin-right: 0.25em;
-        color: var(--c-brand, #3eaf7c);
-        font-size: 0.9em;
-      }
+    .icon {
+      margin-right: 0.25em;
+      color: var(--c-brand, #3eaf7c);
+      font-size: 0.9em;
     }
   }
 }

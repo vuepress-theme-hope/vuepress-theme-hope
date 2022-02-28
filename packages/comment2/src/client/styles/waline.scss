@@ -1,12 +1,10 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
-.page {
-  .waline-wrapper {
-    @include wrapper.wrapper;
+.page .waline-wrapper {
+  @include wrapper.wrapper;
 
-    --waline-accent-color: var(--c-brand, #3eaf7c);
-    --waline-text-color: var(--c-text, #2c3e50);
-    --waline-active-color: var(--c-brand-light, #4abf8a);
-    --waline-border: 1px solid var(--dark-grey);
-  }
+  --waline-accent-color: var(--c-brand, #3eaf7c);
+  --waline-text-color: var(--c-text, #2c3e50);
+  --waline-active-color: var(--c-brand-light, #4abf8a);
+  --waline-border: 1px solid var(--dark-grey);
 }
