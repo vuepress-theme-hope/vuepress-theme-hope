@@ -1,10 +1,10 @@
 import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
-const base = process.env.BASE || "/";
+const base = (process.env.BASE as "/" | `/${string}/`) || "/";
 
 export default defineHopeConfig({
-  base: `/${base.replace(/^\//, "")}v2-demo/`,
+  base,
 
   dest: "./dist",
 

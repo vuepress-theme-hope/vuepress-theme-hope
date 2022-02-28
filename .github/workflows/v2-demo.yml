@@ -52,8 +52,7 @@ jobs:
         env:
           BASE: /v2-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: |
-          yarn run demo:vite-build
+        run: yarn run demo:vite-build
 
       - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -64,8 +63,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Build Netlify Demo
-        run: |
-          yarn run demo:vite-build
+        run: yarn run demo:vite-build
 
       - name: Deploy to netlify
         uses: JamesIves/github-pages-deploy-action@v4
@@ -79,8 +77,7 @@ jobs:
         env:
           BASE: /v2-demo/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
-        run: |
-          yarn run demo:vite-build
+        run: yarn run demo:vite-build
 
       - name: Deploy to gitee
         uses: JamesIves/github-pages-deploy-action@v4
