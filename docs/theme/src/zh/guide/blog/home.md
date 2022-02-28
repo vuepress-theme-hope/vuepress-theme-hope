@@ -57,8 +57,9 @@ tag:
 
 `ProjectOption` 包括以下键值:
 
-- `type`: 类型，可选值为 `'link' | 'project' | 'book' | 'article' | 'friend'`
 - `name`: 项目名称，必填
 - `link`: 项目链接，必填，填入外部链接或绝对路径。
 - `desc`: 项目描述，选填
-- `cover`: 项目封面，选填，填入外部链接或绝对路径。
+- `icon`: 图标，可填入完整路径或绝对路径的图片链接、图标 FontClass 等。
+
+  同时提供了如下内置图标支持: `'link'`、`'project'`、`'book'`、`'article'`、`'friend'`

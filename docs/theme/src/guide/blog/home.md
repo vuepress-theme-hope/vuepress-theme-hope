@@ -55,10 +55,11 @@ Whether Hero is full screen displayed
 
 - Type: `ProjectOption[]`
 
-`ProjectOption` including this keys:
+`ProjectOption` includes:
 
-- `type`: the project type, you can choose from `'link' | 'project' | 'book' | 'article' | 'friend'`
 - `name`: required, project name
 - `link`: required, project link, fill in an external path or absolute path
 - `desc`: project description
-- `cover`: project cover, fill in an external path or absolute path
+- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is suppported
+
+  We provide these icons as built-in support either: `'link'`, `'project'`, `'book'`, `'article'`, `'friend'`。
