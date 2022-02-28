@@ -3,8 +3,10 @@ import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import { version } from "../../../../lerna.json";
 
+const base = process.env.BASE || "/";
+
 export default defineHopeConfig({
-  base: "/v2/pwa/",
+  base: `/${base.replace(/^\//, "")}pwa/`,
 
   dest: "./dist",
 

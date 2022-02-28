@@ -21,8 +21,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - uses: actions/setup-node@v3
         with:
@@ -79,8 +77,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - uses: actions/setup-node@v3
         with:
@@ -133,8 +129,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - uses: actions/setup-node@v3
         with:

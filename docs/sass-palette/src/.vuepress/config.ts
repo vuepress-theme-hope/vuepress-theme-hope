@@ -2,8 +2,10 @@ import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 
+const base = process.env.BASE || "/";
+
 export default defineHopeConfig({
-  base: "/v2/sass-palette/",
+  base: `/${base.replace(/^\//, "")}sass-palette/`,
 
   dest: "./dist",
 
