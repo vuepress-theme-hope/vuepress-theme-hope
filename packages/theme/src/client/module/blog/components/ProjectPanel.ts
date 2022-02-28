@@ -4,50 +4,71 @@ import { defineComponent, h, resolveComponent } from "vue";
 import {
   ArticleIcon,
   BookIcon,
+  FriendIcon,
   LinkIcon,
   ProjectIcon,
 } from "@theme-hope/module/blog/components/icons";
-import { useNavigate } from "@theme-hope/composables";
+import { useIconPrefix, useNavigate } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
 
 import "../styles/project-panel.scss";
 
+const AVAILABLE_PROJECT_TYPES = [
+  "link",
+  "article",
+  "book",
+  "project",
+  "friend",
+];
+
 export default defineComponent({
   name: "ProjectPanel",
 
-  components: { ArticleIcon, BookIcon, LinkIcon, ProjectIcon },
+  components: { ArticleIcon, BookIcon, FriendIcon, LinkIcon, ProjectIcon },
 
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
+    const iconPrefix = useIconPrefix();
     const navigate = useNavigate();
+
+    const renderIcon = (icon = ""): VNode | null => {
+      // built in icon
+      if (AVAILABLE_PROJECT_TYPES.includes(icon))
+        return h(resolveComponent(`${icon}-icon`));
+
+      // it's a full image link
+      if (icon.match(/^https?:\/\//))
+        return h("img", { src: icon, class: "image" });
+
+      // it's an absolute image link
+      if (icon.startsWith("/"))
+        return h("img", { src: withBase(icon), class: "image" });
+
+      // render as icon font
+      return h("span", { class: ["icon", `${iconPrefix.value}${icon}`] });
+    };
 
     return (): VNode | null =>
       frontmatter.value.projects?.length
         ? h(
             "div",
             { class: "project-panel" },
-            frontmatter.value.projects.map((project, index) =>
-              h(
-                "div",
-                {
-                  class: ["project", `project${index % 9}`],
-                  onClick: () => navigate(project.link),
-                },
-                [
-                  project.cover
-                    ? h("div", {
-                        style: `background: url(${withBase(
-                          project.cover
-                        )}) center/cover no-repeat;`,
-                      })
-                    : null,
-                  h(resolveComponent(`${project.type}-icon`)),
-                  h("div", { class: "name" }, project.name),
-                  h("div", { class: "desc" }, project.desc),
-                ]
-              )
+            frontmatter.value.projects.map(
+              ({ icon, link, name, desc }, index) =>
+                h(
+                  "div",
+                  {
+                    class: ["project", `project${index % 9}`],
+                    onClick: () => navigate(link),
+                  },
+                  [
+                    renderIcon(icon),
+                    h("div", { class: "name" }, name),
+                    h("div", { class: "desc" }, desc),
+                  ]
+                )
             )
           )
         : null;

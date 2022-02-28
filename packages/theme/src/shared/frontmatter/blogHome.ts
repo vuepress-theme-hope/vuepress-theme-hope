@@ -2,9 +2,8 @@ import type { HopeThemePageFrontmatter } from "./base";
 
 export interface HopeThemeBlogHomeProjectOptions {
   name: string;
-  type: "article" | "book" | "link" | "project" | "friend";
+  icon?: string;
   desc?: string;
-  cover?: string;
   link: string;
 }
 
