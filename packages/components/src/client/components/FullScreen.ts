@@ -1,5 +1,5 @@
-import { defineComponent, h, onMounted, ref } from "vue";
-import * as screenfull from "screenfull";
+import { defineComponent, h } from "vue";
+import { useFullscreen } from "@vueuse/core";
 import { CancelFullScreenIcon, EnterFullScreenIcon } from "./icons";
 
 import type { VNode } from "vue";
@@ -17,27 +17,16 @@ export default defineComponent({
   },
 
   setup(props) {
-    const canFullscreen = ref(false);
-    const isFullscreen = ref(false);
-
-    onMounted(() => {
-      canFullscreen.value = screenfull.isEnabled;
-      isFullscreen.value = screenfull.isFullscreen;
-    });
+    const { isSupported, isFullscreen, toggle } = useFullscreen();
 
     return (): VNode | null =>
-      canFullscreen.value && props.enable
+      isSupported && props.enable
         ? h(
             "button",
             {
               class: "full-screen",
               ariaPressed: isFullscreen.value,
-              onClick: () => {
-                if (screenfull.isEnabled)
-                  void screenfull.toggle().then(() => {
-                    isFullscreen.value = screenfull.isFullscreen;
-                  });
-              },
+              onClick: () => toggle(),
             },
             isFullscreen.value
               ? h(CancelFullScreenIcon)
