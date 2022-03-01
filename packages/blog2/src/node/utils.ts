@@ -9,14 +9,23 @@ export const getPageMap = (
   options: Partial<BlogOptions>,
   app: App
 ): PageMap => {
+  const pageMap: PageMap = {};
+
+  // initialize pageMap
+  Object.keys({
+    // make sure root locale exists
+    "/": {},
+    ...app.options.locales,
+  }).forEach((path) => {
+    pageMap[path] = [];
+  });
+
   const {
     filter = (page): boolean =>
       Boolean(page.filePathRelative) && !page.frontmatter.home,
   } = options;
-  const pageMap: PageMap = {};
 
   app.pages.filter(filter).forEach((page) => {
-    if (!pageMap[page.pathLocale]) pageMap[page.pathLocale] = [];
     pageMap[page.pathLocale].push(page);
   });
 
