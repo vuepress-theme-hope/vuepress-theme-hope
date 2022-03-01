@@ -23,10 +23,6 @@
 
     transition: all var(--color-transition, 0.3s);
 
-    #{hope-config.$darkSelector} & {
-      background: #222;
-    }
-
     &.clickable:hover {
       cursor: pointer;
     }
