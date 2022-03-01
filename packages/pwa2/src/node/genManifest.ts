@@ -11,6 +11,7 @@ export const getManifest = async (
   options: PWAOptions
 ): Promise<ManifestOption> => {
   const { dir, siteData } = app;
+
   const { base } = app.options;
   const userManifestPath = dir.source(".vuepress/public/manifest.webmanifest");
   const userManifestJSONPath = dir.source(".vuepress/public/manifest.json");
@@ -26,9 +27,12 @@ export const getManifest = async (
   ) as ManifestOption;
 
   const finalManifest: ManifestOption = {
-    name: siteData.title || "Site",
-    short_name: siteData.title || "Site",
-    description: siteData.description || "A site built with vuepress",
+    name: siteData.title || siteData.locales["/"]?.title || "Site",
+    short_name: siteData.title || siteData.locales["/"]?.title || "Site",
+    description:
+      siteData.description ||
+      siteData.locales["/"]?.description ||
+      "A site built with vuepress",
     lang: getRootLang(app),
     start_url: base,
     scope: base,
