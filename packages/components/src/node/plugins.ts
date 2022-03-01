@@ -27,7 +27,7 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
   addViteOptimizeDepsExclude(app, "@mr-hope/vuepress-plugin-components");
 
   if (options.backToTop) addViteOptimizeDepsInclude(app, "lodash.debounce");
-  if (options.fullScreen) addViteOptimizeDepsInclude(app, "screenfull");
+  if (options.fullScreen) addViteOptimizeDepsInclude(app, "@vueuse/core");
 
   useSassPalettePlugin(app, { id: "hope" });
 

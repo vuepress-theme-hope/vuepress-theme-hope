@@ -54,7 +54,7 @@ export default [
   ...rollupTypescript("client/components/FullScreen", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
-      "screenfull",
+      "@vueuse/core",
       "vue",
       /\.scss$/,
     ],
