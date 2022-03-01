@@ -1,5 +1,8 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { defineComponent, h } from "vue";
+import {
+  randomSortArray,
+  useLocaleConfig,
+} from "@mr-hope/vuepress-shared/lib/client";
+import { defineComponent, h, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { CategoryIcon } from "./icons";
 import { articleInfoLocales } from "../define";
@@ -25,14 +28,23 @@ export default defineComponent({
   },
 
   setup(props) {
-    const route = useRoute();
     const router = useRouter();
-
+    const route = useRoute();
     const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+
+    const colorMap = ref(
+      Array(9)
+        .fill(null)
+        .map((_, index) => index)
+    );
 
     const navigate = (path = ""): void => {
       if (path && route.path !== path) void router.push(path);
     };
+
+    onMounted(() => {
+      colorMap.value = randomSortArray(colorMap.value);
+    });
 
     return (): VNode | null =>
       props.category.length
@@ -41,7 +53,7 @@ export default defineComponent({
             {
               class: "category-info",
               ariaLabel: pageInfoLocale.value.category,
-              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
+              ...(props.hint ? { "data-balloon-pos": "down" } : {}),
             },
             [
               h(CategoryIcon),
@@ -52,8 +64,10 @@ export default defineComponent({
                     {
                       class: [
                         "category",
-                        `category${index % 9}`,
-                        { clickable: path },
+                        {
+                          [`category${colorMap.value[index % 9]}`]: props.hint,
+                          clickable: path,
+                        },
                       ],
                       role: path ? "navigation" : "",
                       onClick: () => navigate(path),
