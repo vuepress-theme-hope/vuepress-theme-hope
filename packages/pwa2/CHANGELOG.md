@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.38...v2.0.0-alpha.39) (2022-03-01)
+
+### Features
+
+- **pwa2:** use root lang as fallback in manifest ([04aa949](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04aa94900b5735b8ad43af3ab3a3e483ea5bc53d))
+
 # [2.0.0-alpha.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.37...v2.0.0-alpha.38) (2022-02-28)
 
 **Note:** Version bump only for package vuepress-plugin-pwa2

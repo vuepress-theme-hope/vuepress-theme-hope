@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.38...v2.0.0-alpha.39) (2022-03-01)
+
+### Features
+
+- **components:** render with random colors ([88c26e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88c26e589035606926d40084b7e103d8e54c9777))
+
 # [2.0.0-alpha.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.37...v2.0.0-alpha.38) (2022-02-28)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared
