@@ -1,3 +1,11 @@
+@use "sass:meta";
+@use "@sass-palette/hope-config";
 @use "base";
-@use "dark";
-@use "light";
+
+#{hope-config.$lightSelector} {
+  @include meta.load-css("theme/#{hope-config.$codeLightTheme}");
+}
+
+#{hope-config.$darkSelector} {
+  @include meta.load-css("theme/#{hope-config.$codeDarkTheme}");
+}

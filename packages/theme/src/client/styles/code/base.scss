@@ -3,6 +3,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
   background: none;
+  color: var(--code-color);
   font-family: var(--font-family-code);
   font-size: 1em;
   text-align: left;
@@ -10,10 +11,6 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
 
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -81,8 +78,11 @@ div[class*="language-"] {
   pre[class*="language-"] {
     position: relative;
     z-index: 1;
+    background: transparent;
+
+    // TODO: Add this in docs
     // force override the background color to be compatible with shiki
-    background: transparent !important;
+    // background: transparent !important;
   }
 
   .highlight-lines {
@@ -95,20 +95,32 @@ div[class*="language-"] {
 
     line-height: 1.4;
     user-select: none;
-
-    .highlight-line {
-      background-color: var(--code-highlight-line-color);
-    }
   }
 
-  &:not(.line-numbers-mode) {
-    .line-numbers {
-      display: none;
-    }
+  .highlight-line {
+    background-color: var(--code-highlight-line-color);
   }
 
   &.line-numbers-mode {
-    .highlight-lines .highlight-line {
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: var(--line-numbers-width);
+      height: 100%;
+
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid var(--code-highlight-line-color);
+
+      // edited
+      @media (max-width: hope-config.$mobileS) {
+        border-radius: 0;
+      }
+    }
+
+    .highlight-line {
       position: relative;
 
       &:before {
@@ -146,32 +158,20 @@ div[class*="language-"] {
       br {
         user-select: none;
       }
-
-      .line-number {
-        position: relative;
-        z-index: 4;
-        user-select: none;
-        font-size: 0.85em;
-        line-height: 0;
-      }
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      width: var(--line-numbers-width);
-      height: 100%;
+    .line-number {
+      position: relative;
+      z-index: 4;
+      user-select: none;
+      font-size: 0.85em;
+      line-height: 0;
+    }
+  }
 
-      border-radius: 6px 0 0 6px;
-      border-right: 1px solid var(--code-highlight-line-color);
-
-      // edited
-      @media (max-width: hope-config.$mobileS) {
-        border-radius: 0;
-      }
+  &:not(.line-numbers-mode) {
+    .line-numbers {
+      display: none;
     }
   }
 }

@@ -43,33 +43,3 @@ $themeColorMask: (
     color.change(helper.get-color($themeColor, $isDark: false), $alpha: 0.15),
   dark: color.change(helper.get-color($themeColor, $isDark: true), $alpha: 0.15),
 ) !default;
-
-$codeHighlightLineColor: (
-  light:
-    color.scale(
-      helper.get-color($codeBgColor, $isDark: false),
-      $saturation: 10%,
-      $lightness: -5%
-    ),
-  dark:
-    color.scale(
-      helper.get-color($codeBgColor, $isDark: true),
-      $saturation: 10%,
-      $lightness: -5%
-    ),
-) !default;
-
-$codeBorderColor: (
-  light:
-    color.scale(
-      helper.get-color($codeBgColor, $isDark: false),
-      $saturation: 20%,
-      $lightness: -10%
-    ),
-  dark:
-    color.scale(
-      helper.get-color($codeBgColor, $isDark: true),
-      $saturation: 20%,
-      $lightness: -10%
-    ),
-) !default;

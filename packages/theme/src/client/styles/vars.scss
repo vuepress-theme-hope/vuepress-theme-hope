@@ -24,11 +24,6 @@
   // layout
   --navbar-bg-color: var(--bg-color-blur);
   --sidebar-bg-color: var(--bg-color-blur);
-
-  // plugin md-enhance code group
-  --code-group-nav-text-color: var(--text-color);
-  --code-group-nav-bg-color: var(--code-border-color);
-  --code-group-nav-hover-color: var(--code-highlight-line-color);
 }
 
 #{hope-config.$darkSelector} {
@@ -50,11 +45,6 @@
   // layout
   --navbar-bg-color: var(--bg-color-blur);
   --sidebar-bg-color: var(--bg-color-blur);
-
-  // plugin md-enhance code group
-  --code-group-nav-text-color: var(--text-color);
-  --code-group-nav-bg-color: var(--code-border-color);
-  --code-group-nav-hover-color: var(--code-highlight-line-color);
 }
 
 // plugin-docsearch
@@ -84,6 +74,14 @@
     --docsearch-footer-shadow: inset 0 1px 0 0 rgba(73, 76, 106, 0.5),
       0 -4px 8px 0 rgba(0, 0, 0, 0.2);
   }
+}
+
+// plugin-md-enhance
+#app {
+  // plugin md-enhance code group
+  --code-group-nav-text-color: var(--text-color);
+  --code-group-nav-bg-color: var(--code-border-color);
+  --code-group-nav-hover-color: var(--code-highlight-line-color);
 }
 
 // plugin-nprogress
