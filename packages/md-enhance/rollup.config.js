@@ -67,8 +67,8 @@ export default [
   }),
   ...rollupTypescript("client/SlidePage", {
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
+      "@vueuse/core",
       "vue",
       "vue-router",
       /\.scss$/,
