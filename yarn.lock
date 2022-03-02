@@ -3482,10 +3482,35 @@
     gray-matter "^4.0.3"
     toml "^3.0.0"
 
+"@vuepress/core@2.0.0-beta.36":
+  version "2.0.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-2.0.0-beta.36.tgz#934c9b40ed2fbc622d9a652a9bda63cbd48c02d0"
+  integrity sha512-RBj2Tkgt2f7NMCfox1iKgd6V87X5qj8G/cpJm7R65IielaXkNGGKjgidOrLKRCA3X0c/COwmaBrdiFxJtOtIRw==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.35"
+    "@vuepress/markdown" "2.0.0-beta.36"
+    "@vuepress/shared" "2.0.0-beta.35"
+    "@vuepress/utils" "2.0.0-beta.35"
+    gray-matter "^4.0.3"
+    toml "^3.0.0"
+
 "@vuepress/markdown@2.0.0-beta.35":
   version "2.0.0-beta.35"
   resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.35.tgz#997eac52e2913eb23dbec280de49377b17a88086"
   integrity sha512-fVg3UlQ86eaUXVHMW3SSZwSkaQvdx1CbGmsl3nZ/FZ3FbEIhHUeaZmLcNiaI3y8P4ORH/Nhit17gtcDCc6yPNg==
+  dependencies:
+    "@types/markdown-it" "^12.2.3"
+    "@vuepress/shared" "2.0.0-beta.35"
+    "@vuepress/utils" "2.0.0-beta.35"
+    markdown-it "^12.3.2"
+    markdown-it-anchor "^8.4.1"
+    markdown-it-emoji "^2.0.0"
+    mdurl "^1.0.1"
+
+"@vuepress/markdown@2.0.0-beta.36":
+  version "2.0.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.36.tgz#cb2765c2736c5257dbefc425480d146330bd60c9"
+  integrity sha512-Amvo7YuSbMZIfj24kwXDen81RsjliXTDvhv+R14aH4NbH9rpwKzTTtbmjWH6O/upqikDYIXhlozHjr1nEf1qHw==
   dependencies:
     "@types/markdown-it" "^12.2.3"
     "@vuepress/shared" "2.0.0-beta.35"
@@ -3555,6 +3580,17 @@
     "@vuepress/client" "2.0.0-beta.35"
     "@vuepress/core" "2.0.0-beta.35"
     "@vuepress/markdown" "2.0.0-beta.35"
+    "@vuepress/utils" "2.0.0-beta.35"
+    vue "^3.2.28"
+
+"@vuepress/plugin-external-link-icon@2.0.0-beta.36":
+  version "2.0.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-external-link-icon/-/plugin-external-link-icon-2.0.0-beta.36.tgz#5d37b58fdba3268ac56bb5848aef98ee48f2501e"
+  integrity sha512-t8UHhvxT7Zwwv+bV+jKZ1fnTKxk6FHOQ9ydGnGWje7YTL097FppSrWFdMRFVTWBfqRKkrSOx5gB2LIz2pELWvA==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.35"
+    "@vuepress/core" "2.0.0-beta.36"
+    "@vuepress/markdown" "2.0.0-beta.36"
     "@vuepress/utils" "2.0.0-beta.35"
     vue "^3.2.28"
 
