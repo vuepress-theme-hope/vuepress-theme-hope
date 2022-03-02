@@ -14,7 +14,14 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       icon: "palette",
       prefix: "interface/",
       collapsable: true,
-      children: ["darkmode", "theme-color", "icon", "accessibility", "others"],
+      children: [
+        "darkmode",
+        "theme-color",
+        "icon",
+        "code-theme",
+        "accessibility",
+        "others",
+      ],
     },
     {
       text: "Layout",

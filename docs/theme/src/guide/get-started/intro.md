@@ -78,6 +78,8 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 - [Homepage](../layout/home.md): New outlook, features support icons and links.
 
+- [Code Block Theme Customize](../interface/code-theme.md): Allows you to freely customize the code block style
+
 ### Search function
 
 The theme adds [built-in support for the official VuePress search plugin](../feature/search.md).

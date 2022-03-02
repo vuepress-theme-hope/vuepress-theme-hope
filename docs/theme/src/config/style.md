@@ -45,6 +45,10 @@ $lightSelector: 'html[data-theme="light"]' !default;
 /* Color list */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,
   #eb2f96 !default;
+
+/* Code Theme */
+$codeLightTheme: "one-light" !default;
+$codeDarkTheme: "one-dark" !default;
 ```
 
 ## palette.scss
@@ -100,17 +104,6 @@ $boxShadow: (
 $cardShadow: (
   light: rgba(0, 0, 0, 0.15),
   dark: rgba(0, 0, 0, 0.3),
-) !default;
-
-// code
-$codeBgColor: (
-  light: #ecf4fa,
-  dark: #282c34,
-) !default;
-
-$codeLineColor: (
-  light: #3a5169,
-  dark: #8e8e8e,
 ) !default;
 ```
 

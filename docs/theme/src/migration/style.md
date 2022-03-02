@@ -43,7 +43,6 @@ Move to `palette.scss`.
 - `$bgColor`, `$darkBgColor` merged into `$bgColor`
 - `$bgColorLight`, `$darkBgColorLight` merged into `$bgColorLight`
 - `$bgColorBlur`, `$darkBgColorBlur` merged into `$bgColorBlur`
-- `$codeBgColor`, `$darkCodeBgColor` merged into `$codeBgColor`
 - `$cardShadowColor`, `$darkCardShadowColor` merged into `$cardShadow`
 - `$boxShadowColor`, `$darkBoxShadowColor` merged into `$boxShadow`
 
@@ -53,7 +52,7 @@ Move to `palette.scss`.
 
   Now you just need to set the theme color in `themeConfig`
 
-- Added `$codeLineColor`
+- `$codeBgColor`, `$darkCodeBgColor` removed, set `$codeLightTheme` and `$codeDarkTheme` in `config.scss` instead.
 
 ### Font
 

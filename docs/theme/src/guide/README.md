@@ -35,6 +35,7 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
 - [Badge `<Badge />`](markdown/components.md#badge): Add color support
+- [Customize Themes](interface/code-theme.md)
 
 ### Layout
 

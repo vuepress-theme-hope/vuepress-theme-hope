@@ -11,4 +11,8 @@ icon: palette
 
 - [Icon support](icon.md)
 
+- [Code Themes](code-theme.md)
+
+- [Accessibility](accessibility.md)
+
 - [Other features](others.md)

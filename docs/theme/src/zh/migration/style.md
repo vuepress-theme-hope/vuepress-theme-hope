@@ -43,7 +43,6 @@ tag:
 - `$bgColor`, `$darkBgColor` 合并为 `$bgColor`
 - `$bgColorLight`, `$darkBgColorLight` 合并为 `$bgColorLight`
 - `$bgColorBlur`, `$darkBgColorBlur` 合并为 `$bgColorBlur`
-- `$codeBgColor`, `$darkCodeBgColor` 合并为 `$codeBgColor`
 - `$cardShadowColor`, `$darkCardShadowColor` 合并为 `$cardShadow`
 - `$boxShadowColor`, `$darkBoxShadowColor` 合并为 `$boxShadow`
 
@@ -53,7 +52,7 @@ tag:
 
   现在你只需要在 `themeConfig` 中设置主题色
 
-- 新增 `$codeLineColor`
+- `$codeBgColor`, `$darkCodeBgColor` 移除，请在 `config.scss` 中配置 `$codeLightTheme` 和 `$codeDarkTheme`。
 
 ### 字体
 
