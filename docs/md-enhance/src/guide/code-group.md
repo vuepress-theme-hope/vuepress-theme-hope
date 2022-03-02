@@ -20,11 +20,11 @@ The plugin provides you code group support.
 
 ```ts {8}
 // .vuepress/config.ts
-import { mdEhance } from "vuepress-plugin-md-enhance";
+import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEhance({
+    mdEnhance({
       // adds code group support
       codegroup: true,
     }),
@@ -38,11 +38,11 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhance } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEhance({
+    mdEnhance({
       // adds code group support
       codegroup: true,
     }),

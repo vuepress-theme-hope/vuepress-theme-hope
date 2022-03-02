@@ -15,11 +15,11 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ```ts {8,10}
 // .vuepress/config.ts
-import { mdEhance } from "vuepress-plugin-md-enhance";
+import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEhance({
+    mdEnhance({
       // Enable Subscript
       sub: true,
       // Enable  Superscript
@@ -35,11 +35,11 @@ export default {
 
 ```js {8,10}
 // .vuepress/config.js
-const { mdEhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhance } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEhance({
+    mdEnhance({
       // Enable Subscript
       sub: true,
       // Enable  Superscript

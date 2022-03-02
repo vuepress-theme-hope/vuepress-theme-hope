@@ -108,11 +108,11 @@ npm i -D vuepress-plugin-md-enhance@next
 
 ```ts
 // .vuepress/config.ts
-import { mdEhance } from "vuepress-plugin-md-enhance";
+import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEhance({
+    mdEnhance({
       // your options
     }),
   ],
@@ -125,11 +125,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhance } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEhance({
+    mdEnhance({
       // your options
     }),
   ],
