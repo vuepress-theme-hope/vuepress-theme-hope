@@ -23,10 +23,13 @@ const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
     () => title
   );
 
-const renderChildren = (headers: PageHeader[]): VNode | null => {
+const renderChildren = (
+  headers: PageHeader[],
+  headingDepth: number
+): VNode | null => {
   const route = useRoute();
 
-  return headers.length
+  return headers.length && headingDepth > 0
     ? h(
         "ul",
         { class: "toc-list" },
@@ -41,7 +44,7 @@ const renderChildren = (headers: PageHeader[]): VNode | null => {
             },
             [renderHeader(header)]
           ),
-          renderChildren(header.children),
+          renderChildren(header.children, headingDepth - 1),
         ])
       )
     : null;
@@ -55,6 +58,11 @@ export default defineComponent({
       type: Array as PropType<PageHeader[]>,
       default: () => [],
     },
+
+    headingDepth: {
+      type: Number,
+      default: 2,
+    },
   },
 
   setup(props) {
@@ -67,9 +75,9 @@ export default defineComponent({
           { id: "toc-list" },
           h("div", { class: "toc-wrapper" }, [
             props.items.length
-              ? renderChildren(props.items)
+              ? renderChildren(props.items, props.headingDepth)
               : page.value.headers
-              ? renderChildren(page.value.headers)
+              ? renderChildren(page.value.headers, props.headingDepth)
               : null,
           ])
         ),

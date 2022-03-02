@@ -58,7 +58,11 @@ export default defineComponent({
                 iconPrefix: iconPrefix.value,
               }),
               h(PageTitle),
-              tocEnable.value ? h(resolveComponent("TOC")) : null,
+              tocEnable.value
+                ? h(resolveComponent("TOC"), {
+                    headingDepth: frontmatter.value.headingDepth,
+                  })
+                : null,
               slots.contentBefore?.(),
               h(MarkdownContent),
               slots.contentAfter?.(),
