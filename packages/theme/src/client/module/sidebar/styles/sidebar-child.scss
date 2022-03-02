@@ -45,19 +45,28 @@
 }
 
 .sidebar-heading {
-  display: flex;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 0.35rem 1rem 0.35rem 1.25rem;
+  border-width: 0;
   border-left: 0.25rem solid transparent;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+  background-color: transparent;
   color: var(--text-color);
   font-size: 1.1em;
-  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
   transition: color 0.15s ease;
   user-select: none;
+
+  // fix strange outline
+  overflow: hidden;
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
 
   &.open {
     color: inherit;
@@ -71,7 +80,10 @@
     &.exact {
       border-left-color: var(--theme-color);
       color: var(--theme-color);
-      font-weight: 500;
+
+      a {
+        color: inherit;
+      }
     }
   }
 
@@ -88,4 +100,13 @@
 
     font-size: 1.5em;
   }
+}
+
+button.sidebar-heading {
+  font-weight: inherit;
+  text-align: left;
+  line-height: inherit;
+  outline: none;
+
+  cursor: pointer;
 }

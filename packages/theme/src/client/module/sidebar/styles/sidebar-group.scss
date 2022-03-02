@@ -1,6 +1,10 @@
 .sidebar-group {
   .sidebar-group {
     padding-left: 0.5em;
+
+    .sidebar-heading {
+      font-size: 1em;
+    }
   }
 
   &:not(.collapsable) {

@@ -38,7 +38,7 @@ export default defineComponent({
       return [
         h("section", { class: "sidebar-group" }, [
           h(
-            "p",
+            collapsable ? "button" : "p",
             {
               class: [
                 "sidebar-heading",
@@ -50,7 +50,6 @@ export default defineComponent({
               ],
               ...(collapsable
                 ? {
-                    tabindex: "0",
                     onClick: () => emit("toggle"),
                     onKeydown: (event: KeyboardEvent): void => {
                       if (event.key === "Enter") emit("toggle");
