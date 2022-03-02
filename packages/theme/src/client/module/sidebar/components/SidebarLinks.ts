@@ -49,21 +49,18 @@ export default defineComponent({
     const route = useRoute();
     const openGroupIndex = ref(0);
 
-    const refreshIndex = (): void => {
-      const index = resolveOpenGroupIndex(route, props.config);
-
-      if (index > -1) openGroupIndex.value = index;
-    };
-
     const toggleGroup = (index: number): void => {
       openGroupIndex.value = index === openGroupIndex.value ? -1 : index;
     };
 
     watch(
       () => route.path,
-      () => {
-        refreshIndex();
-      }
+      (): void => {
+        const index = resolveOpenGroupIndex(route, props.config);
+
+        if (index > -1) openGroupIndex.value = index;
+      },
+      { immediate: true }
     );
 
     return (): VNode | null =>
