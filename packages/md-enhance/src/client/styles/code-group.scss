@@ -2,9 +2,8 @@
 
 .code-group-nav {
   display: flex;
-  /* 2 * margin + border-radius of <pre> tag */
-  margin: 0.85rem 0 calc(-1.7rem - 7px);
-  padding: 0 0 calc(1.7rem - 7px);
+  margin: 0.85rem 0 -0.85rem;
+  padding: 0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   background-color: var(--code-group-nav-bg-color, #3a404c);
