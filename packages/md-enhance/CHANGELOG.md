@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2022-03-02)
+
+### Bug Fixes
+
+- **components:** fix CodeGroup tab style ([519d023](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/519d0233792cbeb435bb81aca6f5541782aa1ce4))
+- **md-enhance:** fix code-group tab ([b8d58e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b8d58e5940773ff1edd50a704be4d7ab4b6d2d1d))
+
+### Features
+
+- refine plugin api ([22b1d93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22b1d937ae91d799e4dd954029d31667c677c5af))
+
 # [2.0.0-alpha.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.39...v2.0.0-alpha.40) (2022-03-02)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

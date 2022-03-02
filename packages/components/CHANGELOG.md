@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2022-03-02)
+
+### Bug Fixes
+
+- **components:** fix tag margin ([7aa5ae4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7aa5ae48c833a73ea456c1cb68465d666732744f))
+
+### Features
+
+- **components:** add color options for ArticleInfo ([58b41ae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/58b41aeedf035c1541835cec947d3585e82d3ccb))
+- refine plugin api ([22b1d93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22b1d937ae91d799e4dd954029d31667c677c5af))
+
 # [2.0.0-alpha.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.39...v2.0.0-alpha.40) (2022-03-02)
 
 ### Bug Fixes

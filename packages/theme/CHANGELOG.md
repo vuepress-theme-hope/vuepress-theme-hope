@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2022-03-02)
+
+### Bug Fixes
+
+- **theme:** fix scrollbar issue ([9600c47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9600c47ea0a624d99ef927d0a590923d661c6f9a))
+- **theme:** improve sidebar ([3970df5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3970df55d0c486a6c477934618cf1ea7d01d0f6e))
+
+### Features
+
+- **components:** add color options for ArticleInfo ([58b41ae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/58b41aeedf035c1541835cec947d3585e82d3ccb))
+- refine plugin api ([22b1d93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22b1d937ae91d799e4dd954029d31667c677c5af))
+- **theme:** improve sidebarlinks ssr ([16f4e8f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/16f4e8feb4063197b7e8a0979950d1d3782e1f81))
+- **theme:** optimize navbar links ([ff7f051](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff7f0511ad0b8fe32752444eb24c8aa1d271e850))
+- **theme:** update sticky icon ([f200986](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f200986f2e5309bbfe687372f1b0d0fc0774f946))
+
 # [2.0.0-alpha.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.39...v2.0.0-alpha.40) (2022-03-02)
 
 ### Features
