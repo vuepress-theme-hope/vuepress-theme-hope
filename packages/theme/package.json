@@ -46,7 +46,7 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/lodash.throttle": "^4.1.6",
-    "@vuepress/cli": "2.0.0-beta.35",
+    "@vuepress/cli": "2.0.0-beta.36",
     "@vuepress/client": "2.0.0-beta.35",
     "@vuepress/core": "2.0.0-beta.35",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.35",
