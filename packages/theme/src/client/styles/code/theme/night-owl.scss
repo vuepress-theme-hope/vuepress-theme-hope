@@ -4,7 +4,7 @@
  * Sarah Drasner's[@sdras] Night Owl
  * Ported by Sara vieria [@SaraVieira]
  * Added by Souvik Mandal [@SimpleIndian]
- * Copied by https://github.com/PrismJS/prism-themes/blob/master/themes/prism-night-owl.css
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-night-owl.css
  */
 
 @use "helper";
@@ -25,7 +25,6 @@ pre[class*="language-"] {
   ::-moz-selection,
   &::selection,
   ::selection {
-    text-shadow: none;
     background: rgba(29, 59, 83, 0.99);
   }
 }
