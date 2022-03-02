@@ -18,9 +18,10 @@
 
 .code-group-nav-tab {
   @include reset.button;
+
   position: relative;
   min-width: 3rem;
-  border: 0;
+  margin: 0;
   padding: 6px 10px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
