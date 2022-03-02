@@ -112,6 +112,7 @@ export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
     isOriginal: frontmatter.value.isOriginal,
     readingTime: page.value.readingTime,
     visitor: frontmatter.value.visitor !== false,
+    color: !pure.value,
     hint: !pure.value,
   });
 };

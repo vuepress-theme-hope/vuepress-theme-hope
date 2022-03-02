@@ -92,6 +92,7 @@ export const useArticleInfo = (
     tag: tag.value,
     isOriginal: info.value.isOriginal,
     readingTime: info.value.readingTime,
+    color: !pure.value,
     hint: !pure.value,
   });
 };

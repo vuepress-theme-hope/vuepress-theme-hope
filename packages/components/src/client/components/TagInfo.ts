@@ -25,6 +25,11 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+
+    color: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   setup(props) {
@@ -66,7 +71,7 @@ export default defineComponent({
                       class: [
                         "tag",
                         {
-                          [`tag${colorMap.value[index % 9]}`]: props.hint,
+                          [`tag${colorMap.value[index % 9]}`]: props.color,
                           clickable: path,
                         },
                       ],

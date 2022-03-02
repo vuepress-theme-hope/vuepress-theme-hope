@@ -137,6 +137,15 @@ export interface ArticleInfoProps {
   hint?: boolean;
 
   /**
+   * Whether use colorful categories and tags
+   *
+   * 是否启用多彩的分类与标签
+   *
+   * @default true
+   */
+  color?: boolean;
+
+  /**
    * Authors of article
    *
    * 文章作者

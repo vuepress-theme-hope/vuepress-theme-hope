@@ -86,6 +86,11 @@ export default defineComponent({
       type: Object as PropType<ReadingTime | null>,
       default: () => null,
     },
+
+    color: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   setup(props) {
