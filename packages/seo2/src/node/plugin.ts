@@ -12,7 +12,7 @@ import type {
   SeoOptions,
 } from "../shared";
 
-export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
+export const seoPlugin: Plugin<SeoOptions> = (options) => {
   if (!options.hostname) {
     logger.error("Option 'hostname' is required!");
 
@@ -22,7 +22,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
   return {
     name: "vuepress-plugin-seo2",
 
-    extendsPage(page): void {
+    extendsPage: (page, app): void => {
       // generate summary
       if (!page.frontmatter.description)
         page.frontmatter.summary =
@@ -59,9 +59,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, app) => {
       page.frontmatter.head = head;
     },
 
-    async onGenerated(): Promise<void> {
-      await generateRobotsTxt(app.dir);
-    },
+    onGenerated: (app): Promise<void> => generateRobotsTxt(app.dir),
   };
 };
 

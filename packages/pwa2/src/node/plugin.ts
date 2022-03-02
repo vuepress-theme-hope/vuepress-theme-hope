@@ -12,7 +12,7 @@ import { injectLinkstoHead } from "./injectHead";
 import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
 
-import type { Plugin, PluginConfig, PluginObject } from "@vuepress/core";
+import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { PWAOptions } from "../shared";
 import { appendBase } from "./helper";
 
@@ -23,29 +23,11 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
 
   const manifest = getManifest(app, options);
 
-  addViteOptimizeDepsInclude(app, ["mitt", "register-service-worker"]);
-
-  if (app.env.isDev)
-    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
-
-  addViteSsrNoExternal(app, [
-    "@mr-hope/vuepress-shared",
-    "vuepress-plugin-pwa2",
-  ]);
-  addViteOptimizeDepsExclude(app, "vuepress-plugin-pwa2");
-
-  useCustomDevServer(
-    app,
-    "/manifest.webmanifest",
-    async () => JSON.stringify(await manifest),
-    "Unexpected manifest generate error"
-  );
-
   useSassPalettePlugin(app, { id: "hope" });
 
   app.options.head = injectLinkstoHead(options, base, app.options.head);
 
-  const config: PluginObject = {
+  return {
     name: "vuepress-plugin-pwa2",
 
     define: () => ({
@@ -53,25 +35,38 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
       SW_PATH: options.swPath || "service-worker.js",
     }),
 
-    clientAppRootComponentFiles: [
-      options.popupComponent ||
-        path.resolve(__dirname, "../client/global-components/SWUpdatePopup.js"),
-    ],
+    onInitialized: (app): void => {
+      addViteOptimizeDepsInclude(app, ["mitt", "register-service-worker"]);
 
-    clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+      addViteSsrNoExternal(app, [
+        "@mr-hope/vuepress-shared",
+        "vuepress-plugin-pwa2",
+      ]);
+      addViteOptimizeDepsExclude(app, "vuepress-plugin-pwa2");
 
-    async onGenerated(): Promise<void> {
+      useCustomDevServer(
+        app,
+        "/manifest.webmanifest",
+        async () => JSON.stringify(await manifest),
+        "Unexpected manifest generate error"
+      );
+    },
+
+    onGenerated: async (app): Promise<void> => {
       await genManifest(app, manifest);
       await genServiceWorker(app, options);
     },
+
+    clientAppRootComponentFiles: [
+      options.popupComponent ||
+        path.resolve(__dirname, "../client/global-components/SWUpdatePopup.js"),
+      ...(options.showInstall !== false
+        ? [path.resolve(__dirname, "../client/global-components/PWAInstall.js")]
+        : []),
+    ],
+
+    clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
   };
-
-  if (options.showInstall !== false)
-    (config.clientAppRootComponentFiles as string[]).push(
-      path.resolve(__dirname, "../client/global-components/PWAInstall.js")
-    );
-
-  return config;
 };
 
 export const pwa = (options: PWAOptions | false): PluginConfig<PWAOptions> => [

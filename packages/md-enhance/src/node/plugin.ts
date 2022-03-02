@@ -47,38 +47,6 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       ? options.presentation.plugins
       : [];
 
-  if (app.env.isDev)
-    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
-
-  addViteSsrNoExternal(app, [
-    "@mr-hope/vuepress-shared",
-    "vuepress-plugin-md-enhance",
-  ]);
-  addViteOptimizeDepsExclude(app, "vuepress-plugin-md-enhance");
-
-  if (flowchartEnable) {
-    addViteOptimizeDepsInclude(app, "flowchart.js");
-    addViteSsrExternal(app, "flowchart.js");
-  }
-
-  if (mermaidEnable) {
-    addViteOptimizeDepsInclude(app, "mermaid");
-    addViteSsrExternal(app, "mermaid");
-  }
-
-  if (presentationEnable) {
-    addViteOptimizeDepsInclude(app, [
-      "reveal.js/dist/reveal.esm.js",
-      "reveal.js/plugin/markdown/markdown.esm.js",
-      "reveal.js/plugin/highlight/highlight.esm.js",
-      "reveal.js/plugin/math/math.esm.js",
-      "reveal.js/plugin/search/search.esm.js",
-      "reveal.js/plugin/notes/notes.esm.js",
-      "reveal.js/plugin/zoom/zoom.esm.js",
-    ]);
-    addViteSsrExternal(app, "reveal.js");
-  }
-
   useSassPalettePlugin(app, { id: "hope" });
 
   usePlugins(app, options);
@@ -129,13 +97,6 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       REVEAL_PLUGIN_ZOOM: revealPlugins.includes("zoom"),
     }),
 
-    ...(demoEnable
-      ? {
-          clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
-        }
-      : {}),
-    clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
-
     extendsMarkdown: (markdownIt): void => {
       if (options.lazyLoad || options.enableAll) markdownIt.use(lazyLoad);
 
@@ -161,6 +122,42 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         });
       if (presentationEnable) markdownIt.use(presentation);
     },
+
+    onInitialized: (app): void => {
+      addViteSsrNoExternal(app, [
+        "@mr-hope/vuepress-shared",
+        "vuepress-plugin-md-enhance",
+      ]);
+      addViteOptimizeDepsExclude(app, "vuepress-plugin-md-enhance");
+
+      if (flowchartEnable) {
+        addViteOptimizeDepsInclude(app, "flowchart.js");
+        addViteSsrExternal(app, "flowchart.js");
+      }
+
+      if (mermaidEnable) {
+        addViteOptimizeDepsInclude(app, "mermaid");
+        addViteSsrExternal(app, "mermaid");
+      }
+
+      if (presentationEnable) {
+        addViteOptimizeDepsInclude(app, [
+          "reveal.js/dist/reveal.esm.js",
+          ...revealPlugins.map(
+            (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
+          ),
+        ]);
+        addViteSsrExternal(app, "reveal.js");
+      }
+    },
+
+    clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
+
+    ...(demoEnable
+      ? {
+          clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+        }
+      : {}),
   };
 };
 

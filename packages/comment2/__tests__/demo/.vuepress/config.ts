@@ -1,10 +1,10 @@
+import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { defineUserConfig } from "@vuepress/cli";
 import { path } from "@vuepress/utils";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: process.env.VuePress_BASE || "/",
-
+  base: "/",
   title: "Comment Plugin",
 
   description: "Comment Plugin for VuePress",
@@ -26,4 +26,21 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     ],
   },
+
+  plugins: [
+    {
+      name: "enhance",
+      onInitialized: (app) => {
+        if (app.env.isDev)
+          addViteOptimizeDepsInclude(app, [
+            "@mr-hope/vuepress-shared/lib/client",
+            "dayjs",
+            "dayjs/plugin/localizedFormat",
+            "dayjs/plugin/objectSupport",
+            "dayjs/plugin/timezone",
+            "dayjs/plugin/utc",
+          ]);
+      },
+    },
+  ],
 });

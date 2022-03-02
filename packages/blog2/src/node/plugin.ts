@@ -1,6 +1,5 @@
 import {
   addViteSsrNoExternal,
-  addViteOptimizeDepsInclude,
   addViteOptimizeDepsExclude,
 } from "@mr-hope/vuepress-shared";
 import {
@@ -17,16 +16,7 @@ import { getPageMap, logger } from "./utils";
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { BlogOptions } from "../shared";
 
-export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
-  if (app.env.isDev)
-    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
-
-  addViteSsrNoExternal(app, [
-    "@mr-hope/vuepress-shared",
-    "vuepress-plugin-blog2",
-  ]);
-  addViteOptimizeDepsExclude(app, "vuepress-plugin-blog2");
-
+export const blogPlugin: Plugin<BlogOptions> = (options) => {
   const { metaScope = "_blog" } = options;
 
   let generatePageKeys: string[] = [];
@@ -38,7 +28,7 @@ export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
       BLOG_META_SCOPE: metaScope,
     }),
 
-    extendsPage(page): void {
+    extendsPage: (page): void => {
       const { getInfo = (): Record<string, never> => ({}) } = options;
 
       page.routeMeta = {
@@ -47,7 +37,13 @@ export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
       };
     },
 
-    onInitialized(app): Promise<void> {
+    onInitialized: (app): Promise<void> => {
+      addViteSsrNoExternal(app, [
+        "@mr-hope/vuepress-shared",
+        "vuepress-plugin-blog2",
+      ]);
+      addViteOptimizeDepsExclude(app, "vuepress-plugin-blog2");
+
       const pageMap = getPageMap(options, app);
 
       return Promise.all([
@@ -62,7 +58,7 @@ export const blogPlugin: Plugin<BlogOptions> = (options, app) => {
       });
     },
 
-    onWatched(app, watchers): void {
+    onWatched: (app, watchers): void => {
       if (options.hotReload) {
         const pageDataWatcher = chokidar.watch("pages/**/*.js", {
           cwd: app.dir.temp(),

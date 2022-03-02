@@ -194,22 +194,31 @@ export default defineHopeConfig({
   },
 
   plugins: [
-    (_options, app) => {
-      addViteOptimizeDepsInclude(app, [
-        "three",
-        "three/examples/jsm/controls/OrbitControls",
-        "three/examples/jsm/loaders/STLLoader",
-      ]);
+    {
+      name: "theme-enhance",
+      alias: {
+        "@theme-hope/components/HomeHero": path.resolve(
+          __dirname,
+          "./components/HopeHero"
+        ),
+      },
+      onInitialized: (app) => {
+        if (app.env.isDev)
+          addViteOptimizeDepsInclude(app, [
+            "@mr-hope/vuepress-shared/lib/client",
+            "dayjs",
+            "dayjs/plugin/localizedFormat",
+            "dayjs/plugin/objectSupport",
+            "dayjs/plugin/timezone",
+            "dayjs/plugin/utc",
+          ]);
 
-      return {
-        name: "theme-enhance",
-        alias: {
-          "@theme-hope/components/HomeHero": path.resolve(
-            __dirname,
-            "./components/HopeHero"
-          ),
-        },
-      };
+        addViteOptimizeDepsInclude(app, [
+          "three",
+          "three/examples/jsm/controls/OrbitControls",
+          "three/examples/jsm/loaders/STLLoader",
+        ]);
+      },
     },
   ],
 });

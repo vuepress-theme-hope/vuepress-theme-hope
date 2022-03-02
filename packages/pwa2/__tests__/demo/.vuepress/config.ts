@@ -1,8 +1,9 @@
+import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: process.env.VuePress_BASE || "/",
+  base: "/",
 
   locales: {
     "/": {
@@ -26,5 +27,21 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
-  plugins: [["pwa2"]],
+  plugins: [
+    "pwa2",
+    {
+      name: "enhance",
+      onInitialized: (app) => {
+        if (app.env.isDev)
+          addViteOptimizeDepsInclude(app, [
+            "@mr-hope/vuepress-shared/lib/client",
+            "dayjs",
+            "dayjs/plugin/localizedFormat",
+            "dayjs/plugin/objectSupport",
+            "dayjs/plugin/timezone",
+            "dayjs/plugin/utc",
+          ]);
+      },
+    },
+  ],
 });

@@ -11,7 +11,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { walineLocales } from "./locales";
 
 import type { CommentOptions } from "../shared";
-import type { Plugin, PluginConfig, PluginObject } from "@vuepress/core";
+import type { Plugin, PluginConfig } from "@vuepress/core";
 
 /** Comment Plugin */
 export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
@@ -24,23 +24,14 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   // remove locales so that they won't be injected in client twice
   if ("walineLocales" in options) delete options.walineLocales;
 
-  if (app.env.isDev)
-    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
-
-  addViteSsrNoExternal(app, [
-    "@mr-hope/vuepress-shared",
-    "vuepress-plugin-comment2",
-  ]);
-  addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
-
-  if (isWaline) {
-    addViteOptimizeDepsInclude(app, "@waline/client");
-    addViteSsrExternal(app, "@waline/client");
-  }
-
   useSassPalettePlugin(app, { id: "hope" });
 
-  const config: PluginObject = {
+  // TODO: Wait for Vssue to support vue3
+  // if (options.type === "vssue")
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // app.use("@vssue/vuepress-plugin-vssue", options);
+
+  return {
     name: "vuepress-plugin-comment2",
 
     alias: {
@@ -54,15 +45,21 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       WALINE_LOCALES: userWalineLocales,
     }),
 
+    onInitialized: (app): void => {
+      addViteSsrNoExternal(app, [
+        "@mr-hope/vuepress-shared",
+        "vuepress-plugin-comment2",
+      ]);
+      addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
+
+      if (isWaline) {
+        addViteOptimizeDepsInclude(app, "@waline/client");
+        addViteSsrExternal(app, "@waline/client");
+      }
+    },
+
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
   };
-
-  // TODO: Wait for Vssue to support vue3
-  // if (options.type === "vssue")
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  // config.plugins!.push(["@vssue/vuepress-plugin-vssue", options]);
-
-  return config;
 };
 
 export const comment = (

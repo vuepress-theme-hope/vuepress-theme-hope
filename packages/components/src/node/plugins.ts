@@ -17,18 +17,6 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { ComponentOptions } from "../shared";
 
 export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
-  if (app.env.isDev)
-    addViteOptimizeDepsInclude(app, "@mr-hope/vuepress-shared/lib/client");
-
-  addViteSsrNoExternal(app, [
-    "@mr-hope/vuepress-shared",
-    "@mr-hope/vuepress-plugin-components",
-  ]);
-  addViteOptimizeDepsExclude(app, "@mr-hope/vuepress-plugin-components");
-
-  if (options.backToTop) addViteOptimizeDepsInclude(app, "lodash.debounce");
-  if (options.fullScreen) addViteOptimizeDepsInclude(app, "@vueuse/core");
-
   useSassPalettePlugin(app, { id: "hope" });
 
   return {
@@ -72,6 +60,17 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
         paginationLocales,
         options.paginationLocales
       ),
+    },
+
+    onInitialized: (app): void => {
+      addViteSsrNoExternal(app, [
+        "@mr-hope/vuepress-shared",
+        "@mr-hope/vuepress-plugin-components",
+      ]);
+      addViteOptimizeDepsExclude(app, "@mr-hope/vuepress-plugin-components");
+
+      if (options.backToTop) addViteOptimizeDepsInclude(app, "lodash.debounce");
+      if (options.fullScreen) addViteOptimizeDepsInclude(app, "@vueuse/core");
     },
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),

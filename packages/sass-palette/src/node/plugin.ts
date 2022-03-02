@@ -33,8 +33,6 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
   const userPalette = app.dir.source(palette);
   const userStyle = style ? app.dir.source(style) : null;
 
-  injectConfigModule(app, id);
-
   return {
     name: `vuepress-plugin-sass-palette?${id}`,
 
@@ -62,6 +60,8 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
     },
 
     onInitialized: (): Promise<void> => {
+      injectConfigModule(app, id);
+
       return Promise.all([
         prepareLoadFile(app, id),
         prepareInjectFile(app, id),

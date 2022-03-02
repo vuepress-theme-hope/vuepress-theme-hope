@@ -15,14 +15,6 @@ export const lightgalleryPlugin: Plugin<LightGalleryOptions> = (
 ) => {
   const plugins = options.plugins || ["pager", "share", "zoom"];
 
-  addViteOptimizeDepsInclude(app, [
-    "lightgallery",
-    ...plugins.map((name) => `lightgallery/plugins/${name}`),
-  ]);
-
-  addViteSsrNoExternal(app, "vuepress-plugin-lightgallery");
-  addViteOptimizeDepsExclude(app, "vuepress-plugin-lightgallery");
-
   useSassPalettePlugin(app, { id: "hope" });
 
   return {
@@ -41,6 +33,16 @@ export const lightgalleryPlugin: Plugin<LightGalleryOptions> = (
       LIGHT_GALLERY_SHARE: plugins.includes("share"),
       LIGHT_GALLERY_ZOOM: plugins.includes("zoom"),
     }),
+
+    onInitialized: (app): void => {
+      addViteOptimizeDepsInclude(app, [
+        "lightgallery",
+        ...plugins.map((name) => `lightgallery/plugins/${name}`),
+      ]);
+
+      addViteSsrNoExternal(app, "vuepress-plugin-lightgallery");
+      addViteOptimizeDepsExclude(app, "vuepress-plugin-lightgallery");
+    },
 
     clientAppRootComponentFiles: path.resolve(
       __dirname,

@@ -1,9 +1,9 @@
+import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: process.env.VuePress_BASE || "/",
-
+  base: "/",
   title: "Copy Code",
   description: "VuePress 的复制代码插件",
 
@@ -41,5 +41,21 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
-  plugins: ["copy-code2"],
+  plugins: [
+    "copy-code2",
+    {
+      name: "enhance",
+      onInitialized: (app) => {
+        if (app.env.isDev)
+          addViteOptimizeDepsInclude(app, [
+            "@mr-hope/vuepress-shared/lib/client",
+            "dayjs",
+            "dayjs/plugin/localizedFormat",
+            "dayjs/plugin/objectSupport",
+            "dayjs/plugin/timezone",
+            "dayjs/plugin/utc",
+          ]);
+      },
+    },
+  ],
 });

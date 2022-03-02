@@ -10,8 +10,8 @@ import type { AddThisOptions } from "../shared";
 /**
  * `vuepress-plugin-add-this` Plugin
  */
-export const addThisPlugin: Plugin<AddThisOptions> = (options, app) => {
-  if (!options.pubid) {
+export const addThisPlugin: Plugin<AddThisOptions> = ({ pubid }) => {
+  if (!pubid) {
     console.error("[AddThis]: Please provide a pubid to let plugin work");
 
     return {
@@ -19,22 +19,22 @@ export const addThisPlugin: Plugin<AddThisOptions> = (options, app) => {
     };
   }
 
-  addViteSsrNoExternal(app, "vuepress-plugin-add-this");
-  addViteOptimizeDepsExclude(app, "vuepress-plugin-add-this");
-
   return {
     name: "vuepress-plugin-add-this",
 
-    define: {
-      PUB_ID: options.pubid,
-    },
+    define: () => ({ PUB_ID: pubid }),
 
-    globalUIComponents: "AddThis",
+    onInitialized: (app): void => {
+      addViteSsrNoExternal(app, "vuepress-plugin-add-this");
+      addViteOptimizeDepsExclude(app, "vuepress-plugin-add-this");
+    },
 
     clientAppRootComponentFiles: path.resolve(
       __dirname,
       "../client/root-components/AddThis.js"
     ),
+
+    globalUIComponents: "AddThis",
   };
 };
 

@@ -1,8 +1,9 @@
+import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: process.env.VuePress_BASE || "/",
+  base: "/",
   bundler: process.env.BUNDLER ?? "@vuepress/webpack",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -30,5 +31,21 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
-  plugins: [["lightgallery", { plugins: ["video"] }]],
+  plugins: [
+    ["lightgallery", { plugins: ["video"] }],
+    {
+      name: "enhance",
+      onInitialized: (app) => {
+        if (app.env.isDev)
+          addViteOptimizeDepsInclude(app, [
+            "@mr-hope/vuepress-shared/lib/client",
+            "dayjs",
+            "dayjs/plugin/localizedFormat",
+            "dayjs/plugin/objectSupport",
+            "dayjs/plugin/timezone",
+            "dayjs/plugin/utc",
+          ]);
+      },
+    },
+  ],
 });

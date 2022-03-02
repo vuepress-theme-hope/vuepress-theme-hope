@@ -6,11 +6,11 @@ import type { Page, Plugin, PluginConfig } from "@vuepress/core";
 import type { ReadingTime, ReadingTimeOptions } from "../shared";
 
 /** Reading time plugin */
-export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, app) => {
+export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options) => {
   return {
     name: "vuepress-plugin-reading-time2",
 
-    define: (): Record<string, unknown> => ({
+    define: (app): Record<string, unknown> => ({
       READING_TIME_LOCALES: getLocales(
         app,
         readingTimeLocales,

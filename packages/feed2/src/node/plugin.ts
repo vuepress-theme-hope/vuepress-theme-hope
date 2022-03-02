@@ -33,11 +33,9 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
   return {
     name: "vuepress-plugin-feed2",
 
-    onPrepared(): void {
-      injectLinkstoHead(app, feedOptions);
-    },
+    onPrepared: (app): void => injectLinkstoHead(app, feedOptions),
 
-    async onGenerated(app): Promise<void> {
+    onGenerated: async (app): Promise<void> => {
       const {
         filter = ({ frontmatter, filePathRelative }: Page): boolean =>
           !(

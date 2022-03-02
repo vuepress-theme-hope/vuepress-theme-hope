@@ -22,7 +22,6 @@ export const themeHope: Theme<HopeThemeOptions> = (
 ) => {
   const enableBlog = Boolean(plugins.blog);
 
-  updateBundlerOptions(app);
   handleThemeData(app, themeOptions);
   usePlugin(app, plugins);
 
@@ -52,9 +51,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
         app.env.isDev
       ),
 
-    async onPrepared(): Promise<void> {
-      await writeThemeColorScss(app, themeOptions as HopeThemeConfig);
-    },
+    onInitialized: (app): void => updateBundlerOptions(app),
+
+    onPrepared: (): Promise<void> =>
+      writeThemeColorScss(app, themeOptions as HopeThemeConfig),
 
     plugins: getPluginConfig(app, plugins, themeOptions as HopeThemeConfig),
 

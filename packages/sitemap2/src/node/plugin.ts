@@ -4,7 +4,7 @@ import { generateSiteMap } from "./generateSitemap";
 import type { Plugin, PluginConfig, PluginObject } from "@vuepress/core";
 import type { SitemapOptions } from "../shared";
 
-export const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
+export const sitemapPlugin: Plugin<SitemapOptions> = (options) => {
   const plugin: PluginObject = {
     name: "vuepress-plugin-sitemap2",
   };
@@ -18,9 +18,8 @@ export const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
   return {
     ...plugin,
 
-    async onGenerated(): Promise<void> {
-      await generateSiteMap(app, options as SitemapOptions);
-    },
+    onGenerated: (app): Promise<void> =>
+      generateSiteMap(app, options as SitemapOptions),
   };
 };
 
