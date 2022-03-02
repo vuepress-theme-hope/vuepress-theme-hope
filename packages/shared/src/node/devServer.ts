@@ -32,7 +32,7 @@ export const useCustomDevServer = (
     const handler: HandleFunction = (
       request: IncomingMessage,
       response: ServerResponse
-    ) =>
+    ) => {
       getResponse(request)
         .then((data) => {
           response.statusCode = 200;
@@ -42,6 +42,7 @@ export const useCustomDevServer = (
           response.statusCode = 500;
           response.end(errMsg);
         });
+    };
 
     const viteMockRequestPlugin: Plugin = {
       name: `virtual:devserver-mock/${path}`,
