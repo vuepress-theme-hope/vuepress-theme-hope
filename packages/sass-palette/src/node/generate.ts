@@ -73,11 +73,11 @@ export const prepareConfigFile = (
   app.writeTemp(
     `sass-palette/${id}-config.scss`,
     `
-@import "${getPath(defaultPalette)}";
-@import "${getPath(defaultConfig)}";
-@import "${getPath(userPalette)}";
-@import "${getPath(userConfig)}";
-@import "${getPath(generator)}";
+@import "file:///${getPath(defaultPalette)}";
+@import "file:///${getPath(defaultConfig)}";
+@import "file:///${getPath(userPalette)}";
+@import "file:///${getPath(userConfig)}";
+@import "file:///${getPath(generator)}";
 `
   );
 
@@ -95,9 +95,9 @@ export const preparePaletteFile = (
   app.writeTemp(
     `sass-palette/${id}-palette.scss`,
     `
-@import "${getPath(defaultPalette)}";
-@import "${getPath(userPalette)}";
-@import "${getPath(generator)}";
+@import "file:///${getPath(defaultPalette)}";
+@import "file:///${getPath(userPalette)}";
+@import "file:///${getPath(generator)}";
 `
   );
 
@@ -113,7 +113,7 @@ export const prepareStyleFile = (
   userStyle
     ? app.writeTemp(
         `sass-palette/${id}-style.scss`,
-        `@forward "${getPath(userStyle)}";
+        `@forward "file:///${getPath(userStyle)}";
 `
       )
     : Promise.resolve(null);
