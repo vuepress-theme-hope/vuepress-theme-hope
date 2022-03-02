@@ -48,11 +48,11 @@
     "@vuepress/utils": "2.0.0-beta.35",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.12",
+    "vue-router": "^4.0.13",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.39"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.35"
+    "@vuepress/core": "2.0.0-beta.36"
   },
   "publishConfig": {
     "access": "public"

@@ -44,18 +44,18 @@
     "@mr-hope/vuepress-shared": "2.0.0-alpha.39",
     "@types/lodash.debounce": "^4.0.6",
     "@vuepress/client": "2.0.0-beta.35",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.35",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.36",
     "@vuepress/utils": "2.0.0-beta.35",
     "@vueuse/core": "^7.7.0",
     "balloon-css": "^1.2.0",
     "lodash.debounce": "^4.0.8",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.12",
+    "vue-router": "^4.0.13",
     "vuepress-plugin-reading-time2": "2.0.0-alpha.39",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.39"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.35"
+    "@vuepress/core": "2.0.0-beta.36"
   },
   "publishConfig": {
     "access": "public"

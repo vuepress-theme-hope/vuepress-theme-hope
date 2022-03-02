@@ -57,7 +57,7 @@
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.7",
     "@vuepress/client": "2.0.0-beta.35",
-    "@vuepress/plugin-container": "2.0.0-beta.35",
+    "@vuepress/plugin-container": "2.0.0-beta.36",
     "@vuepress/shared": "2.0.0-beta.35",
     "@vuepress/utils": "2.0.0-beta.35",
     "@vueuse/core": "^7.7.0",
@@ -67,10 +67,10 @@
     "mermaid": "^8.14.0",
     "reveal.js": "^4.3.0",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.12",
+    "vue-router": "^4.0.13",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.39"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.35"
+    "@vuepress/core": "2.0.0-beta.36"
   }
 }

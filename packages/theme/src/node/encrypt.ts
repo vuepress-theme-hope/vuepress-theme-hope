@@ -21,19 +21,14 @@ export const handleWebpackOptions = (app: App): void => {
       config: WebpackConfiguration,
       isServer: boolean,
       isBuild: boolean
-    ): WebpackConfiguration => {
+    ): WebpackConfiguration | void => {
       if (!config.resolve) config.resolve = {};
 
       config.resolve.fallback = { crypto: false, ...config.resolve.fallback };
 
-      return (
-        (configureWebpack?.(
-          config,
-          isServer,
-          isBuild
-          // FIXME: Upchain type issues
-        ) as WebpackConfiguration) || {}
-      );
+      const result = configureWebpack?.(config, isServer, isBuild);
+
+      if (result) return result;
     };
   }
 };

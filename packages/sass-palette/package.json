@@ -49,7 +49,7 @@
     "sass-loader": "^12.6.0"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.35"
+    "@vuepress/core": "2.0.0-beta.36"
   },
   "publishConfig": {
     "access": "public"
