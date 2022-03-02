@@ -12,6 +12,10 @@
   backdrop-filter: saturate(150%) blur(12px);
   font-size: 16px;
   overflow-y: auto;
+  // compatable with non Chrome browsers
+  overflow-y: scroll;
+  // only works on Chrome
+  overflow-y: overlay;
   transition: background-color var(--color-transition),
     box-shadow var(--color-transition);
 
