@@ -81,9 +81,8 @@
     display: block;
     position: relative;
     padding-left: 0.5rem;
-    font-size: 14px;
     font-weight: 400;
-    line-height: 2rem;
+    line-height: 2;
 
     &:hover {
       color: var(--theme-color);
@@ -91,6 +90,10 @@
 
     &.active {
       color: var(--theme-color);
+    }
+
+    .icon {
+      font-size: 1em;
     }
   }
 }
