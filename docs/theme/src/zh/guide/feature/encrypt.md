@@ -20,7 +20,7 @@ tag:
 
 <!-- more -->
 
-## 推荐的局部加密
+## 局部加密
 
 你可以在 `themeConfig.encrypt` 通过 `config` 字段配置加密选项。
 

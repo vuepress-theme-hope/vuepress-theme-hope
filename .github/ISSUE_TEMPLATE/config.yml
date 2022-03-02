@@ -4,6 +4,10 @@ contact_links:
     url: https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new
     about: Please ask questions in Discussion.
 
+  - name: Telegram Group
+    url: https://t.me/vuepressthemehope
+    about: Get in touch with us through telegram
+
   - name: 官方 QQ 群
     url: https://jq.qq.com/?_wv=1027&k=rATJyxGK
     about: "加入主题官方 QQ 群: 1003437555"

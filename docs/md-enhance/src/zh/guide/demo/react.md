@@ -36,17 +36,19 @@ icon: react
 ::: demo [react] 一个函数式 React Demo
 
 ```js
+const { useState } = React;
+
 export default () => {
-  const message = "十分帅";
+  const [message, setMessage] = useState(" 强大");
 
   const handler = () => {
-    alert(message);
+    setMessage(`十分${message}`);
   };
 
   return (
     <div className="box">
-      Mr.Hope
-      <span id="very" onClick={handler}>
+      <code>vuepress-theme-hope</code>
+      <span id="powerful" onClick={handler}>
         {message}
       </span>
     </div>
@@ -55,7 +57,7 @@ export default () => {
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -68,17 +70,19 @@ export default () => {
 ::: demo [react] 一个函数式 React Demo
 
 ```js
+const { useState } = React;
+
 export default () => {
-  const message = "十分帅";
+  const [message, setMessage] = useState(" 强大");
 
   const handler = () => {
-    alert(message);
+    setMessage(`十分${message}`);
   };
 
   return (
     <div className="box">
-      Mr.Hope
-      <span id="very" onClick={handler}>
+      <code>vuepress-theme-hope</code>
+      <span id="powerful" onClick={handler}>
         {message}
       </span>
     </div>
@@ -87,7 +91,7 @@ export default () => {
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -103,26 +107,28 @@ export default () => {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "十分帅" };
+    this.state = { message: "强大" };
   }
   render() {
     return (
       <div className="box">
-        Mr.Hope
-        <span id="very" onClick={this.handler}>
+        <code>vuepress-theme-hope</code>
+        <span id="powerful" onClick={this.handler}>
           {this.state.message}
         </span>
       </div>
     );
   }
-  handler() {
-    alert(this.state.message);
-  }
+  handler = () => {
+    this.setState((state) => ({
+      message: `十分${state.message}`,
+    }));
+  };
 }
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -138,27 +144,29 @@ export default class App extends React.Component {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "十分帅" };
+    this.state = { message: "强大" };
   }
   render() {
     return (
       <div className="box">
-        Mr.Hope
-        <span id="very" onClick={this.handler}>
+        <code>vuepress-theme-hope</code>
+        <span id="powerful" onClick={this.handler}>
           {this.state.message}
         </span>
       </div>
     );
   }
-  handler() {
-    alert(this.state.message);
-  }
+  handler = () => {
+    this.setState((state) => ({
+      message: `十分${state.message}`,
+    }));
+  };
 }
 ```
 
 ```css
-.box-react span {
-  color: red;
+.box #powerful {
+  color: blue;
 }
 ```
 

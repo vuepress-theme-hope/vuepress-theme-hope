@@ -158,3 +158,7 @@ module.exports = defineHopeConfig({
 :::
 
 ::::
+
+## Telegram Group
+
+- [vuepressthemehope](https://t.me/vuepressthemehope)

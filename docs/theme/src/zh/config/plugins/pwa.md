@@ -47,9 +47,9 @@ tag:
 
 如果未设置某些选项，它们会回退到插件预设值。
 
-- name: `siteConfig.title` || `themeConfig.title` || `'Site'`
-- short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
-- description: `siteConfig.description` || `themeConfig.description` || `'A site built with vuepress-theme-hope'`
+- name: `siteConfig.title` || `siteConfig.locales['/'].title` || `'Site'`
+- short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `'Site'`
+- description: `siteConfig.description` || `siteConfig.locales['/'].description` || `'A site built with vuepress'`
 - lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`

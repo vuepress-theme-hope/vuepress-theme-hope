@@ -20,7 +20,7 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 <!-- more -->
 
-## Recommended Encryption
+## Local Encryption
 
 You can configure encryption options through the `config` field in `themeConfig.encrypt`.
 

@@ -21,9 +21,9 @@ You can fill with an object which will be parsed to manifest.webmanifest.
 
 Some options have their fallback if you donot set them.
 
-- name: `siteConfig.title` || `themeConfig.title` || `'Site'`
-- short_name: `siteConfig.title` || `themeConfig.title` || `'Site'`
-- description: `siteConfig.description` || `themeConfig.description` || `'A site built with vuepress'`
+- name: `siteConfig.title` || `siteConfig.locales['/'].title` || `'Site'`
+- short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `'Site'`
+- description: `siteConfig.description` || `siteConfig.locales['/'].description` || `'A site built with vuepress'`
 - lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`

@@ -55,8 +55,8 @@ module.exports = {
 
 ## 例子
 
-Mr.Hope ==十分== 帅
+VuePress Theme Hope ==非常== 强大!
 
 ```md
-Mr.Hope ==十分== 帅
+VuePress Theme Hope ==非常== 强大!
 ```

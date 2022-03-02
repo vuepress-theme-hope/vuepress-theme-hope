@@ -134,7 +134,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 | `'Tag'`         | 标签         | `tag`                      |
 | `'ReadingTime'` | 预计阅读时间 | N/A(自动生成)              |
 | `'Word'`        | 字数         | N/A(自动生成)              |
-| `'PageView'`    | 访问量       | `visitor` (仅 Valine 可用) |
+| `'PageView'`    | 访问量       | `visitor` (仅 Waline 可用) |
 
 文章信息展示项目。
 

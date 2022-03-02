@@ -32,7 +32,7 @@ export default defineHopeConfig({
   themeConfig: {
     plugins: {
       comment: {
-        type: "waline", // "waline", "valine" 或 "vssue"
+        type: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -54,7 +54,7 @@ module.exports = themeConfig({
   themeConfig: {
     plugins: {
       comment: {
-        type: "waline", // "waline", "valine" 或 "vssue"
+        type: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -80,7 +80,7 @@ module.exports = themeConfig({
 
 目前只有 Waline 服务可以选择。
 
-<!-- 有两个服务: Waline、Vssue 和 Valine。 -->
+<!-- 有两个服务: Waline 和 Vssue -->
 
 <!-- ::: tip 评论服务的比较
 

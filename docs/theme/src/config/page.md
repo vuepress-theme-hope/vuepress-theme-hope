@@ -131,7 +131,7 @@ Current page’s image，needs an absolute path.
 | `'tag'`         | Tags                  | `tag`                                  |
 | `'ReadingTime'` | Expect reading time   | N/A (automatically generated)          |
 | `'Word'`        | Word count            | N/A (automatically generated)          |
-| `'PageView'`    | Visit Number          | `visitor` (only available with Valine) |
+| `'PageView'`    | Visit Number          | `visitor` (only available with Waline) |
 
 Set whether to show page details on the current page
 

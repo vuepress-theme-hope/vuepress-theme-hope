@@ -22,23 +22,11 @@ To keep the theme simple, we will not add these two plugins as dependencies , so
 
 You can pass plugin options via `themeConfig.plugins.search`.
 
-::: note
-
-You can also call plugins via `plugins` in the [VuePress config file](../../basic/vuepress/config.md).
-
-:::
-
 See [Plugin Docs][search] for the available options for search plugin.
 
 ## use `@vuepress/docsearch`
 
 You can pass plugin options via `themeConfig.plugins.docsearch`.
-
-::: note
-
-You can also call plugins via `plugins` in the [VuePress config file](../../basic/vuepress/config.md).
-
-:::
 
 In order to use the plugin properly, you need to pass in `apiKey`, `indexName` and `appId` correctly, and set up the Algolia Crawler correctly according to the following requirements.
 
@@ -171,11 +159,23 @@ new Crawler({
 });
 ```
 
-Note that the `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `'lang'`, otherwise the plugin will not work properly.
+:::
+
+::: warning
+
+`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `'lang'`, otherwise the plugin will not work properly.
 
 :::
 
 See [Plugin Docs][docsearch] for the available options for docsearch plugin.
+
+## Additional Info
+
+::: note
+
+You can also call plugins via `plugins` in the [VuePress config file](../../basic/vuepress/config.md).
+
+:::
 
 [docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html

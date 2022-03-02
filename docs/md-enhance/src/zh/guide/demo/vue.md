@@ -40,20 +40,102 @@ export default {
 
 ## 演示
 
-::: demo [vue] 一个 Vue Demo
+::: demo [vue] 一个 Vue Composition 演示
 
 ```vue
 <template>
   <div class="box">
-    Mr.Hope <span @click="handler">{{ message }}</span>
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
+  </div>
+</template>
+<script>
+const { ref } = Vue;
+
+export default {
+  setup() {
+    const message = ref("powerful");
+
+    const handler = () => {
+      message.value = "very " + message.value;
+    };
+
+    return {
+      message,
+      handler,
+    };
+  },
+};
+</script>
+<style>
+.box span {
+  color: red;
+}
+</style>
+```
+
+:::
+
+:::: details Code
+
+````md
+::: demo [vue] 一个 Vue Composition 演示
+
+```vue
+<template>
+  <div class="box">
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
+  </div>
+</template>
+<script>
+const { ref } = Vue;
+
+export default {
+  setup() {
+    const message = ref("powerful");
+
+    const handler = () => {
+      message.value = "very " + message.value;
+    };
+
+    return {
+      message,
+      handler,
+    };
+  },
+};
+</script>
+<style>
+.box span {
+  color: red;
+}
+</style>
+```
+
+:::
+````
+
+::::
+
+::: demo [vue] 一个 Vue Option 演示
+
+```vue
+<template>
+  <div class="box">
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
   </div>
 </template>
 <script>
 export default {
-  data: () => ({ message: "十分帅" }),
+  data: () => ({ message: "powerful" }),
   methods: {
     handler() {
-      alert(this.message);
+      this.message = "very " + this.message;
     },
   },
 };
@@ -67,23 +149,25 @@ export default {
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: demo [vue] 一个 Vue Demo
+::: demo [vue] 一个 Vue Option 演示
 
 ```vue
 <template>
   <div class="box">
-    Mr.Hope <span @click="handler">{{ message }}</span>
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
   </div>
 </template>
 <script>
 export default {
-  data: () => ({ message: "十分帅" }),
+  data: () => ({ message: "powerful" }),
   methods: {
     handler() {
-      alert(this.message);
+      this.message = "very " + this.message;
     },
   },
 };

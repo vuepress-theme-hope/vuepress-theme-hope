@@ -149,19 +149,19 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 如果未设置下列选项，它们会按照顺序依次尝试回退到以下预设值。
 
-| 选项                        | 默认值                                                                                                 |
-| --------------------------- | ------------------------------------------------------------------------------------------------------ |
-| name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress-theme-hope'` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"` \|\| `"en-US"`      |
-| start_url                   | `siteConfig.base`                                                                                      |
-| scope                       | `siteConfig.base`                                                                                      |
-| display                     | `"standalone"`                                                                                         |
-| theme_color                 | `"#46bd87"`                                                                                            |
-| background_color            | `'#ffffff'`                                                                                            |
-| orientation                 | `'portrait-primary'`                                                                                   |
-| prefer_related_applications | `false`                                                                                                |
+| 选项                        | 默认值                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------- |
+| name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
+| short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
+| description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `'A site built with vuepress'` |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"` \|\| `"en-US"`       |
+| start_url                   | `siteConfig.base`                                                                                       |
+| scope                       | `siteConfig.base`                                                                                       |
+| display                     | `"standalone"`                                                                                          |
+| theme_color                 | `"#46bd87"`                                                                                             |
+| background_color            | `'#ffffff'`                                                                                             |
+| orientation                 | `'portrait-primary'`                                                                                    |
+| prefer_related_applications | `false`                                                                                                 |
 
 完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts)。
 
@@ -183,7 +183,9 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 所以如果你不在 `themeConfig.plugins.pwa` 中配置 `manifest.icons`，访问者只能享受到 Service Worker 缓存带来的离线可访问性，而并不能作为 PWA 进行安装。
 
-另外插件并不会处理 manifest 中的任何内容，而是原样输出它们。这意味着如果打算你部署到某个子目录，你则应自行添加 `base` 到 manifest 中的相应 URL。
+此外，该插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果您计划部署到子目录，则应自行将 url 前缀附加到自己的清单 Urls 中。
+
+但是，如果你需要的所有东西都在 base 文件夹下，你可以在插件选项中设置 `appendBase: true` 让插件将 `base` 自动附加到任何地址。。
 
 :::
 

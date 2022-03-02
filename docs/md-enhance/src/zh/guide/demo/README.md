@@ -126,11 +126,11 @@ JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
 ```md
 # 标题
 
-十分帅
+十分强大
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```
@@ -155,11 +155,11 @@ h1 {
 ```md
 # 标题
 
-十分帅
+十分强大
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```

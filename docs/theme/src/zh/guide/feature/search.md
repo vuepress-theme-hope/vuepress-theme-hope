@@ -22,23 +22,11 @@ tag:
 
 你可以通过 `themeConfig.plugins.search` 传递插件选项。
 
-::: note
-
-你也可以自行在 [VuePress 配置文件](../../basic/vuepress/config.md) 通过 `plugins` 调用插件。
-
-:::
-
 关于插件的可用选项，详见 [插件文档][search]。
 
 ## 使用 `@vuepress/docsearch`
 
 你可以通过 `themeConfig.plugins.docsearch` 传递插件选项。
-
-::: note
-
-你也可以自行在 [VuePress 配置文件](../../basic/vuepress/config.md) 通过 `plugins` 调用插件。
-
-:::
 
 为了正常的使用插件，你需要正确传入 `apiKey`、`indexName` 和 `appId`，并按照下列要求正确设置 Algolia Crawler。
 
@@ -169,11 +157,23 @@ new Crawler({
 });
 ```
 
-注意 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` 字段**必须**包含 `'lang'`，否则该插件将无法正常工作。
+:::
+
+::: warning
+
+Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` 字段**必须**包含 `'lang'`，否则该插件将无法正常工作。
 
 :::
 
 关于插件的可用选项，详见 [插件文档][docsearch]。
+
+## 补充说明
+
+::: note
+
+除了通过 themeConfig 传递选项外你也可以自行在 [VuePress 配置文件](../../basic/vuepress/config.md) 通过 `plugins` 调用对应插件。
+
+:::
 
 [docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html

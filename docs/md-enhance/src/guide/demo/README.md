@@ -126,11 +126,11 @@ Available CSS languages:
 ```md
 # Title
 
-is very handsome.
+is very powerful!
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```
@@ -155,11 +155,11 @@ h1 {
 ```md
 # Title
 
-is very handsome.
+is very powerful!
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```

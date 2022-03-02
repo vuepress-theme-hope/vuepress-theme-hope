@@ -5,6 +5,10 @@ category:
   - FAQ
 ---
 
+## Telegram Group
+
+- [vuepressthemehope](https://t.me/vuepressthemehope)
+
 ## Getting Help
 
 If you ran into some issues, please make sure you are in the lastest version and tried removing `node_modules` folder then a clean install.
@@ -21,23 +25,13 @@ If the issue exists or there is somthing you don’t know how to solve, welcome 
 
    - If you are running into issues, provide related error log (by running `vuepress dev <docs dir> --debug`) and screenshots.
 
-1. You are not asking question unrelated to VuePress or asking for a "tecnical support".
+1. You are not asking question unrelated to VuePress or asking for a "tecnical support". Also, for customization, we only support "how can you customize something (in which way)". "How to customize something" (what you should write in your own codes) is NOT SUPPORTED. Unless you are donating this project, please do not inisit asking help for that part.
 
-   If you have learning questions about vue, typescript, sass or you don't know how to write something you want, you probably need to ask them in places like vue forum, stackoverflow. We are not expecting to "be a doc provider" or "teach you how to write code".
+   If you have learning questions about Vue, TypeScript, Sass or you don't know how to write something you want, you probably need to ask them in places like vue forum, stackoverflow.
 
-   Also, for customization, we only support "how can you customize something (in which way)". "How to customize something" (what you should write in your own codes) is NOT SUPPORTED. Unless you are donating this project, please do not inisit asking help for that part.
+   I (Mr.Hope) am a postgraduate student majored in theoretical physics, and really busy. I am not expecting to "be a doc provider" or "teach you how to write code".
 
 If you are sure there is an issue somewhere, please [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) on GitHub and point out the issue in full specific details.
-
-<!-- ## Can not built with Vite
-
-This is a known bug in `@vuepress/bundler-vite`, see [Issue 585 Comment](https://github.com/vuepress/vuepress-next/issues/585#issuecomment-1046064242).
-
-::: tip
-
-You can install both `vuepress-vite` and `vuepress-webpack` and use `vuepress-vite dev` `vuepress-webpack build` as a workaround now.
-
-::: -->
 
 ## Slow in a cold boot with Vite
 
@@ -91,7 +85,7 @@ Also you can check these:
 
 If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
 
-If you only have one language, you still need to [set your root language](config/i18n.md#setting-root-lang).
+Even if you only have one language, you still need to [set your root language](config/i18n.md#setting-root-lang).
 
 ## Importing Iconfont icons does not work
 
@@ -99,7 +93,7 @@ If you are using IconFont icons and can see the icons normally on the devServer,
 
 In VuePress2, importing web CSS via `@import` in `index.scss` has no effect. You may need to manually import it in the `head` option of your VuePress configuration.
 
-```js{5,13}
+```js{5-13}
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
@@ -143,7 +137,3 @@ You can first review the documentation to see if the setting **does not support 
 You should be aware that some features will not be loaded during the prepare stage when the global setting is disabled, so they cannot be enabled locally.
 
 :::
-
-## Code block does not look right in light mode
-
-I guess this is your fault. Please delete the `$codeBgColor` in `.vuepress/styles/palette.scss`. The default value of `vuepress-theme-hope` is light blue, while `@vuepress/theme-default` is dark blue.

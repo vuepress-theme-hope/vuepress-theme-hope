@@ -15,7 +15,7 @@ category:
 
 如果问题仍然存在，请在 GitHub 上[新开一个讨论](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new)，并粘贴完整的运行日志 `vuepress dev [docs -dir] --debug`，如果你的问题与显示有关，请同时提供相关截图。
 
-如果有你不知道如何解决的问题，也欢迎你 [新开一个讨论](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new)。问题总是受欢迎的，无论**它们是否简单**。你只需要确保两点:
+如果有你不知道如何解决的问题，也欢迎你 [新开一个讨论](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new)。问题总是受欢迎的，无论**它们是否简单**。你只需要确保三点:
 
 1. 你已经尝试过搜索相关文档。
 
@@ -25,23 +25,13 @@ category:
 
    - 如果你遇到问题，请提供相关的错误日志 (通过运行 `vuepress dev <docs dir> --debug`) 和屏幕截图。
 
-1. 你不是在问与 VuePress 无关的问题，也不是在寻求“技术支持”。
+1. 你不是在问与 VuePress 无关的问题，也不是在寻求“技术支持”。对于自定义部分，我们仅提供关于 “怎样去自定义某些内容 (以何种方式)” 的支持，我们不提供 “如何自定义某些内容” (如何编写自己的代码) 的任何帮助。 除非你捐赠此项目，否则请不要为该部分寻求帮助。
 
-   如果你有关于 vue、typescript、sass 的学习问题，或者你不知道如何写你想要的东西，你可能需要在 vue 论坛、stackoverflow 等地方提问。 我们不期望“成为文档提供者”或“教你如何编写代码”。
+   如果你有关于 Vue、TypeScript、Sass 的学习问题，或者你不知道如何写你想要的东西，你可能需要在 Vue 论坛、Stackoverflow 等地方提问。
 
-   此外，对于自定义部分，我们仅提供关于 “怎样去自定义某些内容 (以何种方式)” 的支持，我们不提供 “如何自定义某些内容” (如何编写自己的代码) 的任何帮助。 除非你捐赠此项目，否则请不要为该部分寻求帮助。
+   Mr.Hope 目前理论物理硕士在读、很忙，不想“成为文档提供者”，也不太有时间“教你如何编写代码”。
 
 如果你确定某处有问题，请在 GitHub 上 [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) 并指出问题在完整的具体细节。
-
-<!-- ## 不能用 Vite 构建
-
-这是 `@vuepress/bundler-vite` 中的一个已知问题，请参阅 [Issue 585 评论](https://github.com/vuepress/vuepress-next/issues/585#issuecomment-1046064242)。
-
-::: tip
-
-你现在可以同时安装 `vuepress-vite` 和 `vuepress-webpack` 并使用 `vuepress-vite dev` `vuepress-webpack build` 作为解决方法。
-
-::: -->
 
 ## Vite 冷启动速度慢
 
@@ -95,7 +85,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 如果你在开发进程启动时看到 `xxx is not assign with a lang, and will return 'en-US'.`，请检查是否为每种语言设置了语言。
 
-如果你只有一种语言，你仍然需要 [设置你的根目录语言](config/i18n.md#设置根目录语言)。
+即使你只有一种语言，你仍然需要 [设置你的根目录语言](config/i18n.md#设置根目录语言)。
 
 ## 导入 Iconfont 图标无效
 
@@ -103,7 +93,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它。
 
-```js{5,13}
+```js{5-13}
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
@@ -147,7 +137,3 @@ export default defineHopeConfig({
 你应该了解，当某些功能的全局设置被禁用时，在准备阶段它们压根就不会加载，因此无法局部启用它们。
 
 :::
-
-## 代码块背景在浅色模式下看起来不正确
-
-我想这是你的问题。请删除 `.vuepress/styles/palette.scss` 中的 `$codeBgColor`。 `vuepress-theme-hope` 的默认值为浅蓝色，而 `@vuepress/theme-default` 的默认值为深蓝色。

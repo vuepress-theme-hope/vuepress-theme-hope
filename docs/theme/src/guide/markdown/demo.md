@@ -218,13 +218,13 @@ Available CSS languages:
 ::: demo Demo
 
 ```html
-<h1>Mr.Hope</h1>
-<p>is <span id="very">very</span> handsome</p>
+<h1>VuePress Theme Hope</h1>
+<p>is <span id="very">very</span> powerful!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("Very handsome");
+  alert("Very powerful");
 });
 ```
 
@@ -242,13 +242,13 @@ span {
 ::: demo Demo
 
 ```html
-<h1>Mr.Hope</h1>
-<p>is <span id="very">very</span> handsome</p>
+<h1>VuePress Theme Hope</h1>
+<p>is <span id="very">very</span> powerful!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("Very handsome");
+  alert("Very powerful");
 });
 ```
 
@@ -264,26 +264,28 @@ span {
 ::: demo [react] A function-based React Demo
 
 ```js
+const { useState } = React;
+
 export default () => {
-  const message = "very handsome";
+  const [message, setMessage] = useState(" powerful");
 
   const handler = () => {
-    alert(message);
+    setMessage(` very${message}`);
   };
 
   return (
     <div className="box">
-      Mr.Hope is
-      <span id="very" onClick={handler}>
+      <code>vuepress-theme-hope</code> is
+      <span id="powerful" onClick={handler}>
         {message}
-      </span>
+      </span>!
     </div>
   );
 };
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -296,26 +298,28 @@ export default () => {
 ::: demo [react] A function-based React Demo
 
 ```js
+const { useState } = React;
+
 export default () => {
-  const message = "very handsome";
+  const [message, setMessage] = useState(" powerful");
 
   const handler = () => {
-    alert(message);
+    setMessage(` very${message}`);
   };
 
   return (
     <div className="box">
-      Mr.Hope is
-      <span id="very" onClick={handler}>
+      <code>vuepress-theme-hope</code> is
+      <span id="powerful" onClick={handler}>
         {message}
-      </span>
+      </span>!
     </div>
   );
 };
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -331,26 +335,28 @@ export default () => {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "very handsome" };
+    this.state = { message: " powerful" };
   }
   render() {
     return (
       <div className="box">
-        Mr.Hope is
-        <span id="very" onClick={this.handler}>
-          {this.state.message}
+        <code>vuepress-theme-hope</code> is
+        <span id="powerful" onClick={this.handler}>
+          {this.state.message}!
         </span>
       </div>
     );
   }
-  handler() {
-    alert(this.state.message);
-  }
+  handler = () => {
+    this.setState((state) => ({
+      message: ` very${state.message}`,
+    }));
+  };
 }
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -366,26 +372,28 @@ export default class App extends React.Component {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "very handsome" };
+    this.state = { message: " powerful" };
   }
   render() {
     return (
       <div className="box">
-        Mr.Hope is
-        <span id="very" onClick={this.handler}>
-          {this.state.message}
+        <code>vuepress-theme-hope</code> is
+        <span id="powerful" onClick={this.handler}>
+          {this.state.message}!
         </span>
       </div>
     );
   }
-  handler() {
-    alert(this.state.message);
-  }
+  handler = () => {
+    this.setState((state) => ({
+      message: ` very${state.message}`,
+    }));
+  };
 }
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -395,20 +403,102 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] A Vue Demo
+::: demo [vue] A Vue Composition Demo
 
 ```vue
 <template>
   <div class="box">
-    Mr.Hope is <span @click="handler">{{ message }}</span>
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
+  </div>
+</template>
+<script>
+const { ref } = Vue;
+
+export default {
+  setup() {
+    const message = ref("powerful");
+
+    const handler = () => {
+      message.value = "very " + message.value;
+    };
+
+    return {
+      message,
+      handler,
+    };
+  },
+};
+</script>
+<style>
+.box span {
+  color: red;
+}
+</style>
+```
+
+:::
+
+:::: details Code
+
+````md
+::: demo [vue] A Vue Composition Demo
+
+```vue
+<template>
+  <div class="box">
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
+  </div>
+</template>
+<script>
+const { ref } = Vue;
+
+export default {
+  setup() {
+    const message = ref("powerful");
+
+    const handler = () => {
+      message.value = "very " + message.value;
+    };
+
+    return {
+      message,
+      handler,
+    };
+  },
+};
+</script>
+<style>
+.box span {
+  color: red;
+}
+</style>
+```
+
+:::
+````
+
+::::
+
+::: demo [vue] A Vue Option Demo
+
+```vue
+<template>
+  <div class="box">
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
   </div>
 </template>
 <script>
 export default {
-  data: () => ({ message: "very handsome" }),
+  data: () => ({ message: "powerful" }),
   methods: {
     handler() {
-      alert(this.message);
+      this.message = "very " + this.message;
     },
   },
 };
@@ -425,20 +515,22 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Demo
+::: demo [vue] A Vue Option Demo
 
 ```vue
 <template>
   <div class="box">
-    Mr.Hope is <span @click="handler">{{ message }}</span>
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
   </div>
 </template>
 <script>
 export default {
-  data: () => ({ message: "very handsome" }),
+  data: () => ({ message: "powerful" }),
   methods: {
     handler() {
-      alert(this.message);
+      this.message = "very " + this.message;
     },
   },
 };
@@ -460,11 +552,11 @@ export default {
 ```md
 # Title
 
-is very handsome.
+is very powerful!
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```
@@ -489,11 +581,11 @@ h1 {
 ```md
 # Title
 
-is very handsome.
+is very powerful!
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```

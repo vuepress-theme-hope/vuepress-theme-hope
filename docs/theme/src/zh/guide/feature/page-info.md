@@ -33,7 +33,7 @@ tag:
 | `'Tag'`         | 标签         | tags                    | N/A                     |
 | `'ReadingTime'` | 预计阅读时间 | N/A(自动生成)           | N/A                     |
 | `'Word'`        | 字数         | N/A(自动生成)           | N/A                     |
-| `'PageView'`    | 访问量       | visitor(仅 Valine 可用) | plugins.comment.visitor |
+| `'PageView'`    | 访问量       | visitor(仅 Waline 可用) | plugins.comment.visitor |
 
 默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
 

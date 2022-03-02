@@ -32,7 +32,7 @@ export default defineHopeConfig({
   themeConfig: {
     plugins: {
       comment: {
-        type: "waline", // "waline", "valine" 或 "vssue"
+        type: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -54,7 +54,7 @@ module.exports = themeConfig({
   themeConfig: {
     plugins: {
       comment: {
-        type: "waline", // "waline", "valine" 或 "vssue"
+        type: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL

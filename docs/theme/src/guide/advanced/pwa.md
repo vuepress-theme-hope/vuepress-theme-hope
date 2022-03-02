@@ -143,19 +143,19 @@ The plugin will use the information from the VuePress plugin API and set the fal
 
 If the following fields are not set, they will try to fallback to the following preset value in order.
 
-| Options                     | Default value                                                                                          |
-| --------------------------- | ------------------------------------------------------------------------------------------------------ |
-| name                        | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| short_name                  | `siteConfig.title` \|\| `themeConfig.title` \|\| `'Site'`                                              |
-| description                 | `siteConfig.description` \|\| `themeConfig.description` \|\| `'A site built with vuepress-theme-hope'` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                     |
-| start_url                   | `siteConfig.base`                                                                                      |
-| scope                       | `siteConfig.base`                                                                                      |
-| display                     | `"standalone"`                                                                                         |
-| theme_color                 | `"#46bd87"`                                                                                            |
-| background_color            | `'#ffffff'`                                                                                            |
-| orientation                 | `'portrait-primary'`                                                                                   |
-| prefer_related_applications | `false`                                                                                                |
+| Options                     | Default value                                                                                           |
+| --------------------------- | ------------------------------------------------------------------------------------------------------- |
+| name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
+| short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
+| description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `'A site built with vuepress'` |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
+| start_url                   | `siteConfig.base`                                                                                       |
+| scope                       | `siteConfig.base`                                                                                       |
+| display                     | `"standalone"`                                                                                          |
+| theme_color                 | `"#46bd87"`                                                                                             |
+| background_color            | `'#ffffff'`                                                                                             |
+| orientation                 | `'portrait-primary'`                                                                                    |
+| prefer_related_applications | `false`                                                                                                 |
 
 For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts).
 
@@ -177,8 +177,9 @@ The installability [^installable] specification requires at least one valid icon
 
 So if you do not configure `manifest.icons` in `themeConfig.plugins.pwa`, visitors can only enjoy the offline accessibility brought by the Service Worker cache, while cannot install your site as a PWA.
 
-Besides the plugin does not process anything in the manifest, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should add `base` to the corresponding URL in the manifest yourself.
+Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the url prefix to manifest Urls yourself.
 
+But, if everything you need is all under base folder, you can set `appendBase: true` in plugin options to let the plugin append `base` to any Urls in
 :::
 
 ## Other options
