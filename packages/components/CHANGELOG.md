@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.39...v2.0.0-alpha.40) (2022-03-02)
+
+### Bug Fixes
+
+- **components:** fix tag style ([b411a29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b411a296c368755325e1d615fc58847c21c22ee7))
+
+### Features
+
+- **components:** support headingDepth in TOC ([c6e26c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6e26c1e4791fc66011e3b4c3850805d0a68debe))
+
 # [2.0.0-alpha.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.38...v2.0.0-alpha.39) (2022-03-01)
 
 ### Features

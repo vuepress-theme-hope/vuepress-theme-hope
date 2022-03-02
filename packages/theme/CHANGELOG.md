@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.39...v2.0.0-alpha.40) (2022-03-02)
+
+### Features
+
+- **components:** support headingDepth in TOC ([c6e26c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6e26c1e4791fc66011e3b4c3850805d0a68debe))
+- **theme:** add more code theme ([7649427](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76494277ecabc375db799cd6afcee6c7c60dde9d))
+- **theme:** support code block theme ([5a644dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5a644dd4a56e8009eb06c5a01dc22493a4c4c329))
+
 # [2.0.0-alpha.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.38...v2.0.0-alpha.39) (2022-03-01)
 
 **Note:** Version bump only for package vuepress-theme-hope
