@@ -8,10 +8,6 @@
   padding: 6px;
   color: var(--dark-grey);
 
-  @media (max-width: hope-config.$mobile) {
-    display: none;
-  }
-
   &:hover,
   &.open {
     .outlook-dropdown {

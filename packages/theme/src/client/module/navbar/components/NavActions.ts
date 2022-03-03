@@ -22,8 +22,8 @@ export default defineComponent({
     return (): VNode | null =>
       h("div", { class: "nav-actions-wrapper" }, [
         slots.before?.(),
-        h("div", { class: ["nav-item"] }, h(LanguageDropdown)),
-        h("div", { class: ["nav-item"] }, h(RepoLink)),
+        h("div", { class: "nav-item" }, h(LanguageDropdown)),
+        h(RepoLink),
         h(OutlookButton),
         h(resolveComponent("NavbarSearch")),
         h(ToggleNavbarButton, {

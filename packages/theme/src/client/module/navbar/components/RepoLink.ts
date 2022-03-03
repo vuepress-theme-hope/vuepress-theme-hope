@@ -22,21 +22,25 @@ export default defineComponent({
     return (): VNode | null =>
       repo.value
         ? h(
-            "a",
-            {
-              class: "repo-link",
-              href: repo.value.link,
-              target: "_blank",
-              rel: "noopener noreferrer",
-            },
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            h(resolveComponent(`${repo.value.type}Icon`), {
-              style: {
-                width: "1.25rem",
-                height: "1.25rem",
-                verticalAlign: "middle",
+            "div",
+            { class: "nav-item" },
+            h(
+              "a",
+              {
+                class: "repo-link",
+                href: repo.value.link,
+                target: "_blank",
+                rel: "noopener noreferrer",
               },
-            })
+              // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+              h(resolveComponent(`${repo.value.type}Icon`), {
+                style: {
+                  width: "1.25rem",
+                  height: "1.25rem",
+                  verticalAlign: "middle",
+                },
+              })
+            )
           )
         : null;
   },

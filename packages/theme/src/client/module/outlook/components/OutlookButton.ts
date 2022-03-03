@@ -25,7 +25,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "div",
-        { class: "nav-item" },
+        { class: "nav-item hide-in-mobile" },
         h(
           "button",
           {
