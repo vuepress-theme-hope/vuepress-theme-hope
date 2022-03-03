@@ -40,6 +40,7 @@ export const prepareType = (
           filter = (): boolean => true,
           path = "",
           layout = "Layout",
+          title = {},
         },
         index
       ) => {
@@ -61,6 +62,10 @@ export const prepareType = (
             .map(({ key }) => key);
 
           if (path) {
+            const pageTitle =
+              typeof title === "function"
+                ? title(routeLocale)
+                : title[routeLocale]?.replace(/:key/g, slugify(key)) || "";
             const pagePath = `${routeLocale}${removeLeadingSlash(
               slugify(path.replace(/:key/g, key))
             )}`;
@@ -68,6 +73,7 @@ export const prepareType = (
             const page = await createPage(app, {
               path: pagePath,
               frontmatter: {
+                title: pageTitle,
                 blog: {
                   type: "type",
                   key,

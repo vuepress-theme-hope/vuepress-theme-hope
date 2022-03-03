@@ -45,6 +45,19 @@ export interface BlogCategoryOptions {
   layout?: string;
 
   /**
+   * @private This is an undocument option, use it based on your needs
+   *
+   * Root title based on locales
+   *
+   * @description  `:key` will be replaced by the "slugify" result of the orginal key
+   *
+   * 基于多语言的总标题
+   *
+   * @description 当填入字符串的时候, `:key` 会被自动替换为原始的 key、name 的 slugify 结果。
+   */
+  title?: Record<string, string> | ((localePath: string) => string);
+
+  /**
    * Path pattern or custom function
    *
    * @description When filling in a string, `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
@@ -65,6 +78,22 @@ export interface BlogCategoryOptions {
    * @default 'Layout'
    */
   itemLayout?: string;
+
+  /**
+   * @private This is an undocument option, use it based on your needs
+   *
+   * Item title based on locales
+   *
+   * @description  `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
+   *
+   * 基于多语言的布局组件标题
+   *
+   * @description 当填入字符串的时候, `:key` 和 `:name` 会被自动替换为原始的 key、name 的 slugify 结果。
+   *
+   */
+  itemTitle?:
+    | Record<string, string>
+    | ((localePath: string, name: string) => string);
 }
 
 export interface BlogTypeOptions {
@@ -106,6 +135,19 @@ export interface BlogTypeOptions {
    * @default 'Layout'
    */
   layout?: string;
+
+  /**
+   * @private This is an undocument option, use it based on your needs
+   *
+   * List title based on locales
+   *
+   * @description  `:key` will be replaced by the "slugify" result of the orginal key
+   *
+   * 基于多语言的列表标题
+   *
+   * @description 当填入字符串的时候, `:key` 会被自动替换为原始的 key、name 的 slugify 结果。
+   */
+  title?: Record<string, string> | ((localePath: string) => string);
 }
 
 export interface BlogOptions {

@@ -40,8 +40,10 @@ export const prepareCategory = (
           sorter = (): number => -1,
           path = "",
           layout = "Layout",
+          title = {},
           itemPath = "",
           itemLayout = "Layout",
+          itemTitle = {},
         },
         index
       ) => {
@@ -70,9 +72,18 @@ export const prepareCategory = (
                 itemPath
                   .replace(/:key/g, slugify(key))
                   .replace(/:name/g, slugify(name));
+        const getItemTitle =
+          typeof itemTitle === "function"
+            ? itemTitle
+            : (localePath: string): string =>
+                itemTitle[localePath]?.replace(/:key/g, slugify(key)) || "";
 
         for (const routeLocale in pageMap) {
           if (path) {
+            const pageTitle =
+              typeof title === "function"
+                ? title(routeLocale)
+                : title[routeLocale]?.replace(/:key/g, slugify(key)) || "";
             const pagePath = `${routeLocale}${removeLeadingSlash(
               path.replace(/:key/g, slugify(key))
             )}`;
@@ -80,6 +91,7 @@ export const prepareCategory = (
             const mainPage = await createPage(app, {
               path: pagePath,
               frontmatter: {
+                title: pageTitle,
                 blog: {
                   type: "category",
                   key,
@@ -117,6 +129,7 @@ export const prepareCategory = (
 
             for (const category of categories) {
               if (!map[category]) {
+                const itemTitle = getItemTitle(routeLocale, category);
                 const itemPath = getItemPath(category);
 
                 if (itemPath) {
@@ -127,6 +140,7 @@ export const prepareCategory = (
                   const page = await createPage(app, {
                     path: `${routeLocale}${removeLeadingSlash(itemPath)}`,
                     frontmatter: {
+                      title: itemTitle,
                       blog: {
                         type: "category",
                         name: category,
