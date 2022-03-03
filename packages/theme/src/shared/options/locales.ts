@@ -1,7 +1,6 @@
 import type { LocaleData } from "@vuepress/shared";
 import type { HopeThemeAppearanceLocaleData } from "./appearance";
 import type {
-  HopeThemeFeatureConfig,
   HopeThemeFeatureLocaleConfig,
   HopeThemeFeatureLocaleData,
   HopeThemeFeatureLocaleOptions,
@@ -32,7 +31,5 @@ export type HopeThemeLocaleOptions =
 
 export type HopeThemeLocaleConfig = HopeThemeLocaleData &
   HopeThemeFeatureLocaleConfig &
-  HopeThemeFeatureConfig &
-  HopeThemeLayoutLocaleData &
   HopeThemeLayoutLocaleOptions &
   LocaleData;

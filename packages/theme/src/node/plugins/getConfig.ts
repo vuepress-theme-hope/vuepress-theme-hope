@@ -40,7 +40,7 @@ export const getPluginConfig = (
     ["@vuepress/nprogress", plugins.nprogress !== false],
     ["@vuepress/prismjs", plugins.prismjs !== false],
     ["@vuepress/theme-data", { themeData }],
-    blog(resolveBlogOptions(plugins.blog)),
+    blog(resolveBlogOptions(themeData, plugins.blog)),
     comment(resolveCommentOptions(plugins.comment)),
     copyCode(resolveCopyCodeOptions(plugins.copyCode)),
     // seo should work before feed

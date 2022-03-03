@@ -1,6 +1,10 @@
 import type { Page } from "@vuepress/core";
 import type { BlogOptions } from "vuepress-plugin-blog2";
-import type { HopeThemeBlogPluginOptions } from "../../shared";
+import type {
+  HopeThemeBlogLocaleData,
+  HopeThemeBlogPluginOptions,
+  HopeThemeConfig,
+} from "../../shared";
 
 const defaultOptions: HopeThemeBlogPluginOptions = {
   article: "/article/",
@@ -46,7 +50,19 @@ export const getBlogOptions = (
   ...(typeof options === "object" ? options : {}),
 });
 
+export const getTitleLocales = (
+  themeData: HopeThemeConfig,
+  key: keyof HopeThemeBlogLocaleData
+): Record<string, string> =>
+  Object.fromEntries(
+    Object.entries(themeData.locales).map(([localePath, value]) => [
+      localePath,
+      value.blogLocales[key],
+    ])
+  );
+
 export const resolveBlogOptions = (
+  themeData: HopeThemeConfig,
   options?: HopeThemeBlogPluginOptions | boolean
 ): BlogOptions | false => {
   if (!options) return false;
@@ -73,7 +89,10 @@ export const resolveBlogOptions = (
         sorter,
         path: blogOptions.category,
         layout: "Blog",
+        title: getTitleLocales(themeData, "category"),
         itemPath: blogOptions.categoryItem,
+        itemTitle: (localePath, name) =>
+          `${name} ${themeData.locales[localePath].blogLocales.category}`,
         itemLayout: "Blog",
       },
       {
@@ -82,8 +101,11 @@ export const resolveBlogOptions = (
         sorter,
         path: blogOptions.tag,
         layout: "Blog",
+        title: getTitleLocales(themeData, "tag"),
         itemPath: blogOptions.tagItem,
         itemLayout: "Blog",
+        itemTitle: (localePath, name) =>
+          `${name} ${themeData.locales[localePath].blogLocales.tag}`,
       },
     ],
 
@@ -94,6 +116,7 @@ export const resolveBlogOptions = (
         filter: () => true,
         path: blogOptions.article,
         layout: "Blog",
+        title: getTitleLocales(themeData, "article"),
       },
       {
         key: "encrypted",
@@ -101,6 +124,7 @@ export const resolveBlogOptions = (
         filter: ({ routeMeta }) => Boolean(routeMeta.isEncrypted),
         path: blogOptions.encrypted,
         layout: "Blog",
+        title: getTitleLocales(themeData, "encrypt"),
       },
       {
         key: "slide",
@@ -108,6 +132,7 @@ export const resolveBlogOptions = (
         filter: ({ routeMeta }) => routeMeta.type === "slide",
         path: blogOptions.slides,
         layout: "Blog",
+        title: getTitleLocales(themeData, "slides"),
       },
       {
         key: "star",
@@ -115,6 +140,7 @@ export const resolveBlogOptions = (
         filter: ({ frontmatter }) => Boolean(frontmatter.star),
         path: blogOptions.star,
         layout: "Blog",
+        title: getTitleLocales(themeData, "star"),
       },
       {
         key: "timeline",
@@ -127,6 +153,7 @@ export const resolveBlogOptions = (
           "date" in routeMeta && frontmatter.timeline !== false,
         path: blogOptions.timeline,
         layout: "Blog",
+        title: getTitleLocales(themeData, "timeline"),
       },
     ],
   };

@@ -37,4 +37,5 @@ export interface HopeThemeFeatureOptions {
   encrypt?: HopeThemeEncryptOptions;
 }
 
-export type HopeThemeFeatureConfig = Required<HopeThemeFeatureOptions>;
+export type HopeThemeFeatureConfig = HopeThemeFeatureLocaleConfig &
+  Required<HopeThemeFeatureOptions>;

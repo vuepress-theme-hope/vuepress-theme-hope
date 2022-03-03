@@ -56,5 +56,6 @@ export interface HopeThemeOptions
   plugins?: HopeThemePluginsOptions;
 }
 
-export type HopeThemeConfig = HopeThemeRootConfig &
-  ThemeData<HopeThemeLocaleConfig>;
+export type HopeThemeConfig = HopeThemeRootConfig & {
+  locales: Record<string, HopeThemeLocaleConfig>;
+};
