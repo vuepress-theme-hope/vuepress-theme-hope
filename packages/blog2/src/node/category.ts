@@ -40,10 +40,10 @@ export const prepareCategory = (
           sorter = (): number => -1,
           path = "",
           layout = "Layout",
-          title = {},
+          frontmatter = (): Record<string, string> => ({}),
           itemPath = "",
           itemLayout = "Layout",
-          itemTitle = {},
+          itemFrontmatter = (): Record<string, string> => ({}),
         },
         index
       ) => {
@@ -72,26 +72,17 @@ export const prepareCategory = (
                 itemPath
                   .replace(/:key/g, slugify(key))
                   .replace(/:name/g, slugify(name));
-        const getItemTitle =
-          typeof itemTitle === "function"
-            ? itemTitle
-            : (localePath: string): string =>
-                itemTitle[localePath]?.replace(/:key/g, slugify(key)) || "";
 
-        for (const routeLocale in pageMap) {
+        for (const localePath in pageMap) {
           if (path) {
-            const pageTitle =
-              typeof title === "function"
-                ? title(routeLocale)
-                : title[routeLocale]?.replace(/:key/g, slugify(key)) || "";
-            const pagePath = `${routeLocale}${removeLeadingSlash(
+            const pagePath = `${localePath}${removeLeadingSlash(
               path.replace(/:key/g, slugify(key))
             )}`;
 
             const mainPage = await createPage(app, {
               path: pagePath,
               frontmatter: {
-                title: pageTitle,
+                ...frontmatter(localePath),
                 blog: {
                   type: "category",
                   key,
@@ -110,37 +101,36 @@ export const prepareCategory = (
             }
             pageKeys.push(mainPage.key);
 
-            categoryMap[routeLocale] = {
+            categoryMap[localePath] = {
               path: mainPage.path,
               map: {},
             };
           } else {
-            categoryMap[routeLocale] = {
+            categoryMap[localePath] = {
               path: "",
               map: {},
             };
           }
 
-          const { map } = categoryMap[routeLocale];
+          const { map } = categoryMap[localePath];
           const pageMapStore: Record<string, Page[]> = {};
 
-          for (const page of pageMap[routeLocale]) {
+          for (const page of pageMap[localePath]) {
             const categories = getter(page);
 
             for (const category of categories) {
               if (!map[category]) {
-                const itemTitle = getItemTitle(routeLocale, category);
                 const itemPath = getItemPath(category);
 
                 if (itemPath) {
-                  const pagePath = `${routeLocale}${removeLeadingSlash(
+                  const pagePath = `${localePath}${removeLeadingSlash(
                     itemPath
                   )}`;
 
                   const page = await createPage(app, {
-                    path: `${routeLocale}${removeLeadingSlash(itemPath)}`,
+                    path: `${localePath}${removeLeadingSlash(itemPath)}`,
                     frontmatter: {
-                      title: itemTitle,
+                      ...itemFrontmatter(category, localePath),
                       blog: {
                         type: "category",
                         name: category,
@@ -187,7 +177,7 @@ export const prepareCategory = (
               .map(({ key }) => key);
 
           if (app.env.isDebug) {
-            let infoMessage = `Route ${routeLocale} in ${key} cateogry:\n`;
+            let infoMessage = `Route ${localePath} in ${key} cateogry:\n`;
 
             for (const category in map) {
               const { path, keys } = map[category];

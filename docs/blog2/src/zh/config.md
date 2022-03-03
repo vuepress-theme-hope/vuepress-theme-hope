@@ -119,11 +119,24 @@ export interface BlogCategoryOptions {
   itemPath?: string | ((name: string) => string);
 
   /**
+   * Front Matter 配置
+   */
+  frontmatter?: (localePath: string) => Record<string, string>;
+
+  /**
    * 项目布局组件名称
    *
    * @default 'Layout'
    */
   itemLayout?: string;
+
+  /**
+   * 项目 Front Matter 配置
+   */
+  itemFrontmatter?: (
+    name: string,
+    localePath: string
+  ) => Record<string, string>;
 }
 ```
 
@@ -161,6 +174,11 @@ export interface BlogTypeOptions {
    * @default 'Layout'
    */
   layout?: string;
+
+  /**
+   * Front Matter 配置
+   */
+  frontmatter?: (localePath: string) => Record<string, string>;
 }
 ```
 

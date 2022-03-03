@@ -43,8 +43,10 @@ icon: creative
       getter: ({ frontmatter }) => frontmatter.tag || [],
       path: "/tag/",
       layout: "TagMap",
+      frontmatter: () => ({ title: "标签页" }),
       itemPath: "/tag/:name/",
       itemLayout: "TagList",
+      itemFrontmatter: (name) => ({ title: `${name}标签` }),
     },
   ],
 });
@@ -60,6 +62,7 @@ icon: creative
       filter: ({ frontmatter }) => frontmatter.star,
       path: "/star/",
       layout: "StarList",
+      frontmatter: () => ({ title: "收藏页" }),
     },
   ],
 });

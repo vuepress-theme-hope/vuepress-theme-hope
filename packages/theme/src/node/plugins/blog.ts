@@ -89,10 +89,13 @@ export const resolveBlogOptions = (
         sorter,
         path: blogOptions.category,
         layout: "Blog",
-        title: getTitleLocales(themeData, "category"),
+        frontmatter: (localePath) => ({
+          title: themeData.locales[localePath].blogLocales.category,
+        }),
         itemPath: blogOptions.categoryItem,
-        itemTitle: (localePath, name) =>
-          `${name} ${themeData.locales[localePath].blogLocales.category}`,
+        itemFrontmatter: (name, localePath) => ({
+          title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
+        }),
         itemLayout: "Blog",
       },
       {
@@ -101,11 +104,14 @@ export const resolveBlogOptions = (
         sorter,
         path: blogOptions.tag,
         layout: "Blog",
-        title: getTitleLocales(themeData, "tag"),
+        frontmatter: (localePath) => ({
+          title: themeData.locales[localePath].blogLocales.tag,
+        }),
         itemPath: blogOptions.tagItem,
         itemLayout: "Blog",
-        itemTitle: (localePath, name) =>
-          `${name} ${themeData.locales[localePath].blogLocales.tag}`,
+        itemFrontmatter: (name, localePath) => ({
+          title: `${name} ${themeData.locales[localePath].blogLocales.tag}`,
+        }),
       },
     ],
 
@@ -116,7 +122,9 @@ export const resolveBlogOptions = (
         filter: () => true,
         path: blogOptions.article,
         layout: "Blog",
-        title: getTitleLocales(themeData, "article"),
+        frontmatter: (localePath) => ({
+          title: themeData.locales[localePath].blogLocales.article,
+        }),
       },
       {
         key: "encrypted",
@@ -124,7 +132,9 @@ export const resolveBlogOptions = (
         filter: ({ routeMeta }) => Boolean(routeMeta.isEncrypted),
         path: blogOptions.encrypted,
         layout: "Blog",
-        title: getTitleLocales(themeData, "encrypt"),
+        frontmatter: (localePath) => ({
+          title: themeData.locales[localePath].blogLocales.encrypt,
+        }),
       },
       {
         key: "slide",
@@ -132,7 +142,9 @@ export const resolveBlogOptions = (
         filter: ({ routeMeta }) => routeMeta.type === "slide",
         path: blogOptions.slides,
         layout: "Blog",
-        title: getTitleLocales(themeData, "slides"),
+        frontmatter: (localePath) => ({
+          title: themeData.locales[localePath].blogLocales.slides,
+        }),
       },
       {
         key: "star",
@@ -140,7 +152,9 @@ export const resolveBlogOptions = (
         filter: ({ frontmatter }) => Boolean(frontmatter.star),
         path: blogOptions.star,
         layout: "Blog",
-        title: getTitleLocales(themeData, "star"),
+        frontmatter: (localePath) => ({
+          title: themeData.locales[localePath].blogLocales.star,
+        }),
       },
       {
         key: "timeline",
@@ -153,7 +167,9 @@ export const resolveBlogOptions = (
           "date" in routeMeta && frontmatter.timeline !== false,
         path: blogOptions.timeline,
         layout: "Blog",
-        title: getTitleLocales(themeData, "timeline"),
+        frontmatter: (localePath) => ({
+          title: themeData.locales[localePath].blogLocales.timeline,
+        }),
       },
     ],
   };

@@ -40,7 +40,7 @@ export const prepareType = (
           filter = (): boolean => true,
           path = "",
           layout = "Layout",
-          title = {},
+          frontmatter = (): Record<string, string> => ({}),
         },
         index
       ) => {
@@ -55,25 +55,21 @@ export const prepareType = (
 
         if (app.env.isDebug) logger.info(`Generating ${key} type.\n`);
 
-        for (const routeLocale in pageMap) {
-          const keys = pageMap[routeLocale]
+        for (const localePath in pageMap) {
+          const keys = pageMap[localePath]
             .filter(filter)
             .sort(sorter)
             .map(({ key }) => key);
 
           if (path) {
-            const pageTitle =
-              typeof title === "function"
-                ? title(routeLocale)
-                : title[routeLocale]?.replace(/:key/g, slugify(key)) || "";
-            const pagePath = `${routeLocale}${removeLeadingSlash(
+            const pagePath = `${localePath}${removeLeadingSlash(
               slugify(path.replace(/:key/g, key))
             )}`;
 
             const page = await createPage(app, {
               path: pagePath,
               frontmatter: {
-                title: pageTitle,
+                ...frontmatter(localePath),
                 blog: {
                   type: "type",
                   key,
@@ -93,18 +89,18 @@ export const prepareType = (
 
             pageKeys.push(page.key);
 
-            typeMap[routeLocale] = { path: page.path, keys };
+            typeMap[localePath] = { path: page.path, keys };
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${routeLocale} in ${key} type: path: ${page.path}; items: ${keys.length}\n`
+                `Route ${localePath} in ${key} type: path: ${page.path}; items: ${keys.length}\n`
               );
           } else {
-            typeMap[routeLocale] = { path: "", keys };
+            typeMap[localePath] = { path: "", keys };
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${routeLocale} in ${key} type: items: ${keys.length}\n`
+                `Route ${localePath} in ${key} type: items: ${keys.length}\n`
               );
           }
         }

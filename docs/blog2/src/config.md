@@ -110,6 +110,11 @@ export interface BlogCategoryOptions {
   layout?: string;
 
   /**
+   * Frontmatter
+   */
+  frontmatter?: (localePath: string) => Record<string, string>;
+
+  /**
    * Path pattern or custom function
    *
    * @description When filling in a string, `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
@@ -124,6 +129,14 @@ export interface BlogCategoryOptions {
    * @default 'Layout'
    */
   itemLayout?: string;
+
+  /**
+   * Items Frontmatter
+   */
+  itemFrontmatter?: (
+    name: string,
+    localePath: string
+  ) => Record<string, string>;
 }
 ```
 
@@ -161,6 +174,11 @@ export interface BlogTypeOptions {
    * @default 'Layout'
    */
   layout?: string;
+
+  /**
+   * Frontmatter
+   */
+  frontmatter?: (localePath: string) => Record<string, string>;
 }
 ```
 

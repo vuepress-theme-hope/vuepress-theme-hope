@@ -43,8 +43,10 @@ Imagine you want to set tags for each articles, and you are setting them in `fro
       getter: ({ frontmatter }) => frontmatter.tag || [],
       path: "/tag/",
       layout: "TagMap",
+      frontmatter: () => ({ title: "Tag page" }),
       itemPath: "/tag/:name/",
       itemLayout: "TagList",
+      itemFrontmatter: (name) => ({ title: `Tag ${name}` }),
     },
   ],
 });
@@ -60,6 +62,7 @@ Also, you may want to star some of your aricles, and display them to visitors. W
       filter: ({ frontmatter }) => frontmatter.star,
       path: "/star/",
       layout: "StarList",
+      frontmatter: () => ({ title: "Star page" }),
     },
   ],
 });

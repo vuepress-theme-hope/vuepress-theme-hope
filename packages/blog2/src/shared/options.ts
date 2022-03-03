@@ -45,24 +45,18 @@ export interface BlogCategoryOptions {
   layout?: string;
 
   /**
-   * @private This is an undocument option, use it based on your needs
+   * Frontmatter
    *
-   * Root title based on locales
-   *
-   * @description  `:key` will be replaced by the "slugify" result of the orginal key
-   *
-   * 基于多语言的总标题
-   *
-   * @description 当填入字符串的时候, `:key` 会被自动替换为原始的 key、name 的 slugify 结果。
+   * Front Matter 配置
    */
-  title?: Record<string, string> | ((localePath: string) => string);
+  frontmatter?: (localePath: string) => Record<string, string>;
 
   /**
-   * Path pattern or custom function
+   * Item Path pattern or custom function
    *
    * @description When filling in a string, `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
    *
-   * 路径图案或自定义函数
+   * 项目路径图案或自定义函数
    *
    * @description 当填入字符串的时候, `:key` 和 `:name` 会被自动替换为原始的 key、name 的 slugify 结果。
    *
@@ -80,20 +74,14 @@ export interface BlogCategoryOptions {
   itemLayout?: string;
 
   /**
-   * @private This is an undocument option, use it based on your needs
+   * Items Frontmatter
    *
-   * Item title based on locales
-   *
-   * @description  `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
-   *
-   * 基于多语言的布局组件标题
-   *
-   * @description 当填入字符串的时候, `:key` 和 `:name` 会被自动替换为原始的 key、name 的 slugify 结果。
-   *
+   * 项目 Front Matter 配置
    */
-  itemTitle?:
-    | Record<string, string>
-    | ((localePath: string, name: string) => string);
+  itemFrontmatter?: (
+    name: string,
+    localePath: string
+  ) => Record<string, string>;
 }
 
 export interface BlogTypeOptions {
@@ -137,17 +125,11 @@ export interface BlogTypeOptions {
   layout?: string;
 
   /**
-   * @private This is an undocument option, use it based on your needs
+   * Frontmatter
    *
-   * List title based on locales
-   *
-   * @description  `:key` will be replaced by the "slugify" result of the orginal key
-   *
-   * 基于多语言的列表标题
-   *
-   * @description 当填入字符串的时候, `:key` 会被自动替换为原始的 key、name 的 slugify 结果。
+   * Front Matter 配置
    */
-  title?: Record<string, string> | ((localePath: string) => string);
+  frontmatter?: (localePath: string) => Record<string, string>;
 }
 
 export interface BlogOptions {
