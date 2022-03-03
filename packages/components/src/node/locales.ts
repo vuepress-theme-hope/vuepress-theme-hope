@@ -1,6 +1,7 @@
 import type {
-  BackToTopLocaleConfig,
   ArticleInfoLocaleConfig,
+  BackToTopLocaleConfig,
+  TOCLocaleConfig,
   PaginationLocaleConfig,
 } from "../shared";
 
@@ -35,6 +36,39 @@ export const backToTopLocales: BackToTopLocaleConfig = {
 
   "/br/": {
     backToTop: "Volta ao topo",
+  },
+};
+export const tocLocales: TOCLocaleConfig = {
+  "/en/": {
+    header: "On This Page",
+  },
+
+  "/zh/": {
+    header: "此页内容",
+  },
+
+  "/zh-tw/": {
+    header: "此頁內容",
+  },
+
+  "/de/": {
+    header: "On This Page",
+  },
+
+  "/vi/": {
+    header: "On This Page",
+  },
+
+  "/uk/": {
+    header: "On This Page",
+  },
+
+  "/ru/": {
+    header: "On This Page",
+  },
+
+  "/br/": {
+    header: "On This Page",
   },
 };
 

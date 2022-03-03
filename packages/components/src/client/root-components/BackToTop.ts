@@ -30,7 +30,7 @@ export default defineComponent({
   setup(props) {
     const pageFrontmatter = usePageFrontmatter();
     const themeData = useThemeData();
-    const componentLocale = useLocaleConfig(BACK_TO_TOP_LOCALES);
+    const locale = useLocaleConfig(BACK_TO_TOP_LOCALES);
 
     /** Scroll distance */
     const scrollTop = ref(0);
@@ -80,7 +80,7 @@ export default defineComponent({
               {
                 class: "back-to-top",
                 // hint text
-                ariaLabel: componentLocale.value.backToTop,
+                ariaLabel: locale.value.backToTop,
                 "data-balloon-pos": "left",
                 // Scroll to top
                 onClick: () => {

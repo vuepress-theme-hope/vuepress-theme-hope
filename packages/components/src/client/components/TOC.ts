@@ -1,12 +1,18 @@
-import { isActiveLink } from "@mr-hope/vuepress-shared/lib/client";
+import {
+  isActiveLink,
+  useLocaleConfig,
+} from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
 import type { PageHeader } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";
+import type { TOCLocaleConfig } from "../../shared";
 
 import "../styles/toc.scss";
+
+declare const TOC_LOCALES: TOCLocaleConfig;
 
 const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
@@ -67,20 +73,27 @@ export default defineComponent({
 
   setup(props) {
     const page = usePageData();
+    const locale = useLocaleConfig(TOC_LOCALES);
 
-    return (): VNode =>
-      h("div", { class: "toc-place-holder" }, [
+    return (): VNode => {
+      const tocHeaders = props.items.length
+        ? renderChildren(props.items, props.headingDepth)
+        : page.value.headers
+        ? renderChildren(page.value.headers, props.headingDepth)
+        : null;
+
+      return h("div", { class: "toc-place-holder" }, [
         h(
           "aside",
           { id: "toc-list" },
-          h("div", { class: "toc-wrapper" }, [
-            props.items.length
-              ? renderChildren(props.items, props.headingDepth)
-              : page.value.headers
-              ? renderChildren(page.value.headers, props.headingDepth)
-              : null,
-          ])
+          tocHeaders
+            ? [
+                h("div", { class: "toc-header" }, locale.value.header),
+                h("div", { class: "toc-wrapper" }, [tocHeaders]),
+              ]
+            : []
         ),
       ]);
+    };
   },
 });

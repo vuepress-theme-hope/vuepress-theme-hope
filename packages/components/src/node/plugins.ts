@@ -8,8 +8,9 @@ import {
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
-  backToTopLocales,
   articleInfoLocales,
+  backToTopLocales,
+  tocLocales,
   paginationLocales,
 } from "./locales";
 
@@ -55,6 +56,7 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
         backToTopLocales,
         options.backToTopLocales
       ),
+      TOC_LOCALES: getLocales(app, tocLocales, options.tocLocales),
       PAGINATION_LOCALES: getLocales(
         app,
         paginationLocales,
