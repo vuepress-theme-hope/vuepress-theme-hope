@@ -96,11 +96,10 @@ export default defineComponent({
                   )
                 : null,
               blogOptions.value.description
-                ? h(
-                    "div",
-                    { class: "description" },
-                    blogOptions.value.description
-                  )
+                ? h("div", {
+                    class: "description",
+                    innerHTML: blogOptions.value.description,
+                  })
                 : null,
               intro.value
                 ? h("meta", { property: "url", content: withBase(intro.value) })
