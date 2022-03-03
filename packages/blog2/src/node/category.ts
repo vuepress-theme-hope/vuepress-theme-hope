@@ -76,14 +76,14 @@ export const prepareCategory = (
           typeof itemTitle === "function"
             ? itemTitle
             : (localePath: string): string =>
-                itemTitle[localePath]?.replace(/:key/g, slugify(key)) || "";
+                itemTitle[localePath]?.replace(/:key/g, key) || "";
 
         for (const routeLocale in pageMap) {
           if (path) {
             const pageTitle =
               typeof title === "function"
                 ? title(routeLocale)
-                : title[routeLocale]?.replace(/:key/g, slugify(key)) || "";
+                : title[routeLocale]?.replace(/:key/g, key) || "";
             const pagePath = `${routeLocale}${removeLeadingSlash(
               path.replace(/:key/g, slugify(key))
             )}`;

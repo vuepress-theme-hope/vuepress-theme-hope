@@ -65,7 +65,7 @@ export const prepareType = (
             const pageTitle =
               typeof title === "function"
                 ? title(routeLocale)
-                : title[routeLocale]?.replace(/:key/g, slugify(key)) || "";
+                : title[routeLocale]?.replace(/:key/g, key) || "";
             const pagePath = `${routeLocale}${removeLeadingSlash(
               slugify(path.replace(/:key/g, key))
             )}`;
