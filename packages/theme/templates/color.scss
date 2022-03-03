@@ -7,18 +7,18 @@ $textColor: (
 ) !default;
 
 $bgColor: (
-  light: #fff,
-  dark: #1e1e1e,
+  light: #f8f8f8,
+  dark: #1d2025,
 ) !default;
 
 $bgColorLight: (
-  light: #f8f8f8,
-  dark: #272727,
+  light: #fff,
+  dark: #252934,
 ) !default;
 
 $bgColorBlur: (
   light: rgba(255, 255, 255, 0.9),
-  dark: rgba(30, 30, 30, 0.9),
+  dark: rgba(29, 32, 37, 0.9),
 ) !default;
 
 $borderColor: (
@@ -29,7 +29,7 @@ $borderColor: (
 // shadow
 $boxShadow: (
   light: #f0f1f2,
-  dark: #0f0e0d,
+  dark: #282a32,
 ) !default;
 
 $cardShadow: (

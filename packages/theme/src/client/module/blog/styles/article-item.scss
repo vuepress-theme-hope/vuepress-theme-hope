@@ -5,8 +5,8 @@
   margin: 0 auto 1.25rem;
   padding: 1rem 1.25rem;
   border-radius: 0.4rem;
-  background: var(--bg-color);
-  box-shadow: 0 1px 3px 0 var(--card-shadow);
+  background: var(--bg-color-light);
+  box-shadow: 0 1px 3px 1px var(--card-shadow);
 
   text-align: left;
 
@@ -19,7 +19,7 @@
   }
 
   &:hover {
-    box-shadow: 0 2px 6px 0 var(--card-shadow);
+    box-shadow: 0 2px 6px 2px var(--card-shadow);
   }
 
   .sticky-icon {
