@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
+
+### Features
+
+- **theme:** update syle ([a834fb4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a834fb4ad55baaf2e2f013cfdc6f5934c07bcda6))
+
 # [2.0.0-alpha.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2022-03-02)
 
 ### Features

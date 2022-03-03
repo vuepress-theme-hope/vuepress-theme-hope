@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
+
+### Bug Fixes
+
+- **md-enhance:** add missing optimizeDeps ([25db006](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25db0062f74c423de6078c31ba9871afeeb13649))
+- **theme:** fix navbar actions on mobile ([339c147](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/339c14788b02d4f7fbdee3803207ee68798b9c4f))
+
+### Features
+
+- **blog2:** add title and itemTitle option ([9aa4415](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9aa4415829b83ff14051e47347b20c212277f083))
+- **components:** update TOC ([d833fa6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d833fa6c629924397c956e4b78d81fa308ae646a))
+- **theme:** add title for blog page ([050fe16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/050fe162bc6cf4038805024542e43a5ba54679e5))
+- **theme:** support HTMLString in blogger description ([66e455a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66e455a1a59b2ddd8e520449dcdcd34ee89b6cf3))
+- **theme:** support pure control in project panel ([b6c0086](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b6c00866d14ad4d86fe5df7f30f8b43fab4a6a6e))
+- **theme:** update syle ([a834fb4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a834fb4ad55baaf2e2f013cfdc6f5934c07bcda6))
+
 # [2.0.0-alpha.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2022-03-02)
 
 ### Bug Fixes

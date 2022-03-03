@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-feed2",
-  "version": "2.0.0-alpha.41",
+  "version": "2.0.0-beta.0",
   "description": "Feed plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -41,7 +41,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.41",
+    "@mr-hope/vuepress-shared": "2.0.0-beta.0",
     "@vuepress/utils": "2.0.0-beta.35",
     "xml-js": "^1.6.11"
   },
