@@ -143,6 +143,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       if (presentationEnable) {
         addViteOptimizeDepsInclude(app, [
           "reveal.js/dist/reveal.esm.js",
+          "reveal.js/plugin/markdown/markdown.esm.js",
           ...revealPlugins.map(
             (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
           ),
