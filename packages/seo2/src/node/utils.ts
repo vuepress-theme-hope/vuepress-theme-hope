@@ -8,17 +8,12 @@ export const getLink = (hostname: string, base: string, url: string): string =>
     ""
   )}${base}${url.replace(/^\//u, "")}`;
 
-export const getLocales = (
-  locales: SiteLocaleConfig = {},
-  lang: string
-): string[] => {
-  const langs: string[] = [];
-
-  for (const path in locales)
-    if (locales[path].lang) langs.push(locales[path].lang as string);
-
-  return langs.filter((item) => item !== lang);
-};
+export const getLocales = (lang: string, locales: SiteLocaleConfig): string[] =>
+  Object.entries(locales)
+    .map(([, value]) => value.lang)
+    .filter(
+      (item): item is string => typeof item === "string" && item !== lang
+    );
 
 export const stripTags = (content = ""): string =>
   content

@@ -5,14 +5,10 @@ export const writeThemeColorScss = async (
   app: App,
   themeConfig: HopeThemeConfig
 ): Promise<void> => {
-  const themeColorOptions = themeConfig.themeColor || {};
-
-  let content = "$themeColorPicker: (";
-
-  for (const color in themeColorOptions)
-    content += `"${color}": ${themeColorOptions[color]},`;
-
-  content += ");";
-
-  await app.writeTemp("theme-hope/theme-color.scss", content);
+  await app.writeTemp(
+    "theme-hope/theme-color.scss",
+    `$themeColorPicker: (${Object.entries(themeConfig.themeColor || {})
+      .map(([color, value]) => `"${color}": ${value}`)
+      .join(",")});`
+  );
 };

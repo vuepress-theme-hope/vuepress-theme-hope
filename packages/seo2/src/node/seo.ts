@@ -33,7 +33,7 @@ export const generateSeo = (
     git = {},
   } = page;
   const { siteData } = app;
-  const locales = getLocales(siteData.locales, page.lang);
+  const locales = getLocales(page.lang, siteData.locales);
 
   const author =
     pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
