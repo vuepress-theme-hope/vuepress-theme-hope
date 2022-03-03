@@ -135,7 +135,7 @@
     "remark-preset-lint-consistent": "5.1.1",
     "remark-preset-lint-markdown-style-guide": "5.1.2",
     "remark-preset-lint-recommended": "6.1.2",
-    "rollup": "2.68.0",
+    "rollup": "2.69.0",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "4.1.0",
     "rollup-plugin-preserve-shebangs": "0.2.0",
