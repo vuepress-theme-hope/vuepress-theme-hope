@@ -18,7 +18,7 @@
     "docs:webpack-serve": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@types/three": "0.137.0",
+    "@types/three": "0.138.0",
     "@vuepress/plugin-docsearch": "2.0.0-beta.36",
     "three": "0.138.2",
     "vuepress-theme-hope": "2.0.0-beta.0",
