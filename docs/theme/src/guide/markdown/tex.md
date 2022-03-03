@@ -433,3 +433,7 @@ For more symbols, pleasae check out
 
 - [$\KaTeX$ Support Features](https://katex.org/docs/supported.html)
 - [$\KaTeX$ Support List](https://katex.org/docs/support_table.html)
+
+<script setup lang="ts">
+import KatexPlayground from '@KatexPlayground';
+</script>

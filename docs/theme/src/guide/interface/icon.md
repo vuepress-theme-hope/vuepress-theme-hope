@@ -131,3 +131,7 @@ Please follow [fontawesome document](https://fontawesome.com/).
 ```
 
 <IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+
+<script setup lang="ts">
+import IconDisplay from '@IconDisplay';
+</script>

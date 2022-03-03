@@ -202,21 +202,14 @@ export default defineHopeConfig({
   },
 
   plugins: [
-    [
-      "@vuepress/plugin-register-components",
-      {
-        components: {
-          IconDisplay: path.resolve(__dirname, "./components/IconDisplay"),
-          KatexPlayground: path.resolve(
-            __dirname,
-            "./components/KatexPlayground"
-          ),
-        },
-      },
-    ],
     {
       name: "theme-enhance",
       alias: {
+        "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
+        "@KatexPlayground": path.resolve(
+          __dirname,
+          "./components/KatexPlayground"
+        ),
         "@theme-hope/components/HomeHero": path.resolve(
           __dirname,
           "./components/HopeHero"
