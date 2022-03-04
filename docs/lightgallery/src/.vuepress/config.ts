@@ -1,5 +1,6 @@
 import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
+import { lightgallery } from "vuepress-plugin-lightgallery";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
@@ -37,7 +38,7 @@ export default defineHopeConfig({
   themeConfig,
 
   plugins: [
-    ["lightgallery", { selector: ".theme-hope-content :not(a) > img" }],
+    lightgallery({ selector: ".theme-hope-content :not(a) > img" }),
     {
       name: "theme-enhance",
       alias: {

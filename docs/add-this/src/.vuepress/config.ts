@@ -1,5 +1,6 @@
 import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
+import { addThis } from "vuepress-plugin-add-this";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
@@ -37,7 +38,7 @@ export default defineHopeConfig({
   themeConfig,
 
   plugins: [
-    ["add-this", { pubid: "ra-5f829c59e6c6bc9a" }],
+    addThis({ pubid: "ra-5f829c59e6c6bc9a" }),
     {
       name: "theme-enhance",
       alias: {
