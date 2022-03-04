@@ -33,6 +33,13 @@ The delay of registering copy code buttons, in ms.
 
 If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
 
+## pure
+
+- Type: `false`
+- Default: `false`
+
+Whether generate a small simple button with pure style.
+
 ## locales
 
 - Type: `CopyCodeLocaleConfig`

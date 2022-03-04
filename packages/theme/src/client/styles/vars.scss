@@ -15,13 +15,6 @@
   --c-bg-light: var(--bg-color-light);
   --c-border: var(--border-color);
 
-  // code blocks vars
-  --code-hl-bg-color: rgba(0, 0, 0, 0.66);
-  --code-ln-color: #9e9e9e;
-  --code-ln-wrapper-width: 3.5rem;
-
-  /* others */
-
   // layout
   --navbar-bg-color: var(--bg-color-blur);
   --sidebar-bg-color: var(--bg-color-blur);
@@ -47,6 +40,14 @@
   // layout
   --navbar-bg-color: var(--bg-color-blur);
   --sidebar-bg-color: var(--bg-color-blur);
+}
+
+// code-block fix
+#app {
+  // code blocks vars
+  --code-hl-bg-color: var(--code-highlight-line-color);
+  --code-ln-color: var(--code-line-color);
+  --code-ln-wrapper-width: var(--line-numbers-width);
 }
 
 // plugin-docsearch

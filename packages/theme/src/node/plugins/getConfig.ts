@@ -42,7 +42,7 @@ export const getPluginConfig = (
     ["@vuepress/theme-data", { themeData }],
     blog(resolveBlogOptions(themeData, plugins.blog)),
     comment(resolveCommentOptions(plugins.comment)),
-    copyCode(resolveCopyCodeOptions(plugins.copyCode)),
+    copyCode(resolveCopyCodeOptions(themeData, plugins.copyCode)),
     // seo should work before feed
     seo(resolveSEOOptions(themeData, plugins)),
     feed(resolveFeedOptions(themeData, plugins.feed)),

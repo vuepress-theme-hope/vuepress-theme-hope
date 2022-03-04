@@ -33,3 +33,31 @@
     height: 100%;
   }
 }
+
+.copy-code-pure-button {
+  @include reset.button;
+  box-sizing: content-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 0.8em;
+  color: var(--code-ln-color, #9e9e9e);
+  outline: none;
+
+  &:hover {
+    cursor: pointer !important;
+    background-color: var(--code-hl-bg-color, rgba(0, 0, 0, 0.66));
+  }
+
+  div[class*="language-"] & {
+    position: absolute;
+    right: 3em;
+    top: 0;
+    z-index: 100;
+  }
+
+  .icon-copy-code {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}

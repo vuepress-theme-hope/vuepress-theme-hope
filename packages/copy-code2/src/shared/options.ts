@@ -50,4 +50,11 @@ export interface CopyCodeOptions {
    * Locale config
    */
   locales?: LocaleConfig<CopyCodeLocaleData>;
+
+  /**
+   * Whether use non-fancy styles
+   *
+   * 是否启用非华丽样式
+   */
+  pure?: boolean;
 }
