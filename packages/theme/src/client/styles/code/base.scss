@@ -1,11 +1,9 @@
 @use "@sass-palette/hope-config";
 
-code[class*="language-"],
-pre[class*="language-"] {
+pre[class*="language-"] > code {
   background: none;
   color: var(--code-color);
   font-family: var(--font-family-code);
-  font-size: 1em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
