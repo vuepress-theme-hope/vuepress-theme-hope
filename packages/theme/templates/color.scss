@@ -7,7 +7,7 @@ $textColor: (
 ) !default;
 
 $bgColor: (
-  light: #f8f8f8,
+  light: #fff,
   dark: #1d2025,
 ) !default;
 
@@ -16,9 +16,29 @@ $bgColorLight: (
   dark: #252934,
 ) !default;
 
+$bgColorActive: (
+  light: #f8f8f8,
+  dark: #252934,
+) !default;
+
+$bgColorBack: (
+  light: #f8f8f8,
+  dark: #1d2025,
+) !default;
+
+$bgColorFloat: (
+  light: #fff,
+  dark: #252934,
+) !default;
+
 $bgColorBlur: (
   light: rgba(255, 255, 255, 0.9),
   dark: rgba(29, 32, 37, 0.9),
+) !default;
+
+$bgColorFloatBlur: (
+  light: rgba(255, 255, 255, 0.9),
+  dark: rgba(37, 41, 52, 0.9),
 ) !default;
 
 $borderColor: (

@@ -68,12 +68,12 @@
 
         #{hope-config.$darkSelector} & {
           background: color.scale($color, $lightness: -20%);
-          color: var(--bg-color-light);
+          color: var(--bg-color);
         }
 
         .category-num {
           color: $color;
-          background: var(--bg-color-light);
+          background: var(--bg-color);
         }
       }
 

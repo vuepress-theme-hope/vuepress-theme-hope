@@ -126,7 +126,7 @@
             transition: font-size 0.3s ease-out;
 
             &::before {
-              background-color: var(--bg-color);
+              background-color: var(--bg-color-active);
               border-color: var(--theme-color);
             }
           }
