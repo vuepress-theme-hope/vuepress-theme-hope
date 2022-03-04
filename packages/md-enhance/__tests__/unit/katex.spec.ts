@@ -95,6 +95,19 @@ $$
     ).toMatchSnapshot();
   });
 
+  it("Should not output warnings when content has line breaks", () => {
+    expect(
+      markdownIt.render(`
+$$
+\\begin{alignedat}{2}
+    10&x+ &3&y = 2 \\\\
+    3&x+&13&y = 4
+\\end{alignedat}
+$$    
+`)
+    ).toMatchSnapshot();
+  });
+
   it("Should render error msg when content is wrong", () => {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalWarn = global.console.warn;

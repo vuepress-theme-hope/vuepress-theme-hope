@@ -193,10 +193,8 @@ const blockTex: RuleBlock = (state, start, end, silent) => {
 
 // set KaTeX as the renderer for markdown-it-simplemath
 const katexInline = (tex: string, options: Katex.KatexOptions): string => {
-  options.displayMode = false;
-
   try {
-    return Katex.renderToString(tex, options);
+    return Katex.renderToString(tex, { ...options, displayMode: false });
   } catch (error) {
     if (options.throwOnError) console.warn(error);
 
@@ -207,10 +205,13 @@ const katexInline = (tex: string, options: Katex.KatexOptions): string => {
 };
 
 const katexBlock = (tex: string, options: Katex.KatexOptions): string => {
-  options.displayMode = true;
-
   try {
-    return `<p class='katex-block'>${Katex.renderToString(tex, options)}</p>`;
+    return `<p class='katex-block'>${Katex.renderToString(tex, {
+      ...options,
+      displayMode: true,
+      strict: (errorCode: string): string =>
+        errorCode === "newLineInDisplayMode" ? "ignore" : "warn",
+    })}</p>`;
   } catch (error) {
     if (options.throwOnError) console.warn(error);
 
