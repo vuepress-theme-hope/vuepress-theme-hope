@@ -25,14 +25,6 @@ Useful when you want to provide "A pure document site".
 
 :::
 
-<!-- TODO: Improve it -->
-
-::: info W.I.P
-
-This feature now doesn’t take much effect, and we are planning to improve it.
-
-:::
-
 ## iconPrefix
 
 - Type: `string`

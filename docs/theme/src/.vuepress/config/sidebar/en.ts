@@ -20,6 +20,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
         "icon",
         "code-theme",
         "accessibility",
+        "pure",
         "others",
       ],
     },

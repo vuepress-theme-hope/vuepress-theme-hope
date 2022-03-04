@@ -1,25 +1,19 @@
 import { ClientOnly } from "@vuepress/client";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { computed, defineComponent, h } from "vue";
 
-import { useThemeData, useThemeLocaleData } from "@theme-hope/composables";
-import AppearanceSwitch from "@theme-hope/module/outlook/components/AppearanceSwitch";
-import ThemeColorPicker from "@theme-hope/module/outlook/components/ThemeColorPicker";
+import AppearanceMode from "@theme-hope/module/outlook/components/AppearanceMode";
+import ThemeColor from "@theme-hope/module/outlook/components/ThemeColor";
+import ToggleFullScreen from "@theme-hope/module/outlook/components/ToggleFullScreen";
+import { usePure, useThemeData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
-
-import "../styles/outlook-settings.scss";
 
 export default defineComponent({
   name: "OutlookSettings",
 
   setup() {
     const themeData = useThemeData();
-    const themeLocale = useThemeLocaleData();
-    const FullScreen = resolveComponent("FullScreen");
-
-    const fullScreenLocale = computed(
-      () => themeLocale.value.outlookLocales.fullscreen
-    );
+    const pure = usePure();
 
     const enableDarkmode = computed(
       () =>
@@ -27,26 +21,19 @@ export default defineComponent({
         themeData.value.darkmode !== "force-dark"
     );
 
-    const enableThemeColor = computed(() =>
-      Boolean(themeData.value.themeColor)
+    const enableThemeColor = computed(
+      () => !pure.value && Boolean(themeData.value.themeColor)
     );
 
-    const enableFullScreen = computed(() => themeData.value.fullScreen);
+    const enableFullScreen = computed(
+      () => !pure.value && themeData.value.fullScreen
+    );
 
     return (): VNode =>
       h(ClientOnly, () => [
-        enableThemeColor.value ? h(ThemeColorPicker) : null,
-        enableDarkmode.value ? h(AppearanceSwitch) : null,
-        enableFullScreen.value
-          ? h("div", { class: "fullscreen-wrapper" }, [
-              h(
-                "label",
-                { class: "full-screen-title", for: "full-screen-switch" },
-                fullScreenLocale.value
-              ),
-              h(FullScreen, { id: "full-screen-switch" }),
-            ])
-          : null,
+        enableThemeColor.value ? h(ThemeColor) : null,
+        enableDarkmode.value ? h(AppearanceMode) : null,
+        enableFullScreen.value ? h(ToggleFullScreen) : null,
       ]);
   },
 });

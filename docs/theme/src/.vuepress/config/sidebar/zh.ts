@@ -20,6 +20,7 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
         "icon",
         "code-theme",
         "accessibility",
+        "pure",
         "others",
       ],
     },

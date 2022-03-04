@@ -1,5 +1,5 @@
-import { computed, defineComponent, h, onMounted } from "vue";
-import { useThemeData, useThemeLocaleData } from "@theme-hope/composables";
+import { computed, defineComponent, h, onMounted, PropType } from "vue";
+import { useThemeData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 
@@ -8,11 +8,15 @@ import "../styles/theme-color-picker.scss";
 export default defineComponent({
   name: "ThemeColorPicker",
 
-  setup() {
-    const themeData = useThemeData();
-    const themeLocale = useThemeLocaleData();
+  props: {
+    themeColor: {
+      type: Object as PropType<Record<string, string>>,
+      default: () => ({}),
+    },
+  },
 
-    const locale = computed(() => themeLocale.value.outlookLocales.themeColor);
+  setup(props) {
+    const themeData = useThemeData();
 
     const themeColor = computed(() => {
       const { themeColor } = themeData.value;
@@ -49,34 +53,24 @@ export default defineComponent({
       if (theme) setThemeColor(theme);
     });
 
-    return (): VNode | null =>
-      themeColor.value
-        ? h("div", { class: "themecolor-wrapper" }, [
-            h(
-              "label",
-              { class: "themecolor-title", for: "theme-color-picker" },
-              locale.value
-            ),
-            h("ul", { id: "themecolor-picker" }, [
-              h(
-                "li",
-                h("span", {
-                  class: "theme-color",
-                  onClick: () => setThemeColor(),
-                })
-              ),
-              ...Object.keys(themeColor.value).map((color) =>
-                h(
-                  "li",
-                  h("span", {
-                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                    style: { background: themeColor.value![color] },
-                    onClick: () => setThemeColor(color),
-                  })
-                )
-              ),
-            ]),
-          ])
-        : null;
+    return (): VNode =>
+      h("ul", { id: "themecolor-picker" }, [
+        h(
+          "li",
+          h("span", {
+            class: "theme-color",
+            onClick: () => setThemeColor(),
+          })
+        ),
+        ...Object.entries(props.themeColor).map(([color, value]) =>
+          h(
+            "li",
+            h("span", {
+              style: { background: value },
+              onClick: () => setThemeColor(color),
+            })
+          )
+        ),
+      ]);
   },
 });
