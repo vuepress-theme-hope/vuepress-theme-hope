@@ -21,6 +21,7 @@ export default defineThemeConfig({
   logo: "/logo.svg",
 
   footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+  copyright: false,
   displayFooter: true,
 
   pageInfo: ["PageView", "Category", "Tag", "ReadingTime"],

@@ -18,6 +18,12 @@ If you need blog functionality, you can set `themeConfig.plugins.blog` to `true`
 
 After enabling the blog function, the theme allows you to configure categories, tags, whether it is an article, whether it appears in the timeline, stars, sticky and other functions through the frontmatter of the page.
 
+::: tip Demo
+
+[Here is a demo](https://mrhope.site/en/) for you to preview blog sites built with `vuepress-theme-hope`.
+
+:::
+
 ## I18n Support
 
 The theme adds support for i18n in blog system. You can set differernt blog config for each language in `themeConfig.locales`.

@@ -12,7 +12,15 @@ In dark mode, the page uses a dark background to make you comfortable.
 
 <!-- more -->
 
-![Darkmode](./assets/darkmode.png)
+## Try it
+
+Toggle the button below to see effects.
+
+<!-- markdownlint-disable-->
+
+<AppearanceSwitch />
+
+<!-- markdownlint-restore -->
 
 ## options
 
@@ -25,3 +33,7 @@ Available options:
 - `'auto'`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
 - `'force-dark'`: only dark mode
 - `'disable'`: disable dark mode
+
+<script setup lang="ts">
+import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
+</script>

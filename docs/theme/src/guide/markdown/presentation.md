@@ -184,7 +184,11 @@ $$
 @slideend
 ````
 
+::: info
+
 For detailed demo, please see [Presentation Demo][presentation-demo]
+
+:::
 
 ## Options
 

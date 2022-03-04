@@ -14,17 +14,23 @@ tag:
 
 <!-- more -->
 
-::: tip
+## 演示
+
+[这里是一个展示了所有幻灯片功能的案例](https://vuepress-theme-hope-demo.mrhope.site/zh/slides/).
+
+![幻灯片页截图](./assets/slides.png)
+
+## 注意事项
+
+::: warning 启用功能
 
 你应该通过设置 `themeConfig.plugins.mdEnhance.enableAll` 或 `themeConfig.plugins.mdEnhance.presentation` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法正确加载。
 
 :::
 
-![幻灯片页截图](./assets/slides.png)
+::: warning 不含多个幻灯片
 
-[这里](https://vuepress-theme-hope-demo.mrhope.site/zh/slides/) 有一个展示了所有幻灯片功能的案例.
-
-你应该仅在该页面包含一个单一的幻灯片语法，以避免其他问题。
+该页面只能拥有一个幻灯片语法。多个幻灯片可能会引发渲染问题。
 
 ```md
 @slidestart [your theme]
@@ -33,3 +39,5 @@ tag:
 
 @slideend
 ```
+
+:::

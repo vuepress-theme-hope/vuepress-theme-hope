@@ -38,8 +38,47 @@ tag:
 
 ## 演示
 
-![Logo1](/logo.png)
-![Logo2](/logo.png)
-![Logo3](/logo.png)
+<!-- markdownlint-disable -->
+
+<div class="image-preview">
+  <img src="/assets/image/1.jpg" />
+  <img src="/assets/image/2.jpg" />
+  <img src="/assets/image/3.jpg" />
+</div>
+
+<style>
+  .image-preview {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .image-preview > img {
+     box-sizing: border-box;
+     padding: 9px;
+     border-radius: 16px;
+   }
+
+  @media (max-width: 1440px){
+    .image-preview > img {
+      width: 33.3% !important;
+    }
+  }
+
+  @media (max-width: 719px){
+    .image-preview > img {
+      width: 50% !important;
+    }
+  }
+
+  @media (max-width: 419px){
+    .image-preview > img {
+      width: 100% !important;
+    }
+  }
+
+</style>
+
+<!-- markdownlint-restore -->
 
 [photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/

@@ -12,7 +12,15 @@ tag:
 
 <!-- more -->
 
-![深色模式](./assets/darkmode.png)
+## 尝试
+
+切换下面的按钮以查看效果。
+
+<!-- markdownlint-disable-->
+
+<AppearanceSwitch />
+
+<!-- markdownlint-restore -->
 
 ## 选项
 
@@ -24,3 +32,7 @@ tag:
 - `'switch'`: "关闭 | 打开" 的切换式开关
 - `'auto'`: 自动根据用户设备主题或当前时间决定是否应用深色模式
 - `'disable'`: 禁用深色模式
+
+<script setup lang="ts">
+import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
+</script>

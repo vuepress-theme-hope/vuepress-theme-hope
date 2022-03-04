@@ -1,13 +1,27 @@
+import { useRouteLocale } from "@vuepress/client";
 import katex from "katex";
 import { defineComponent, h, ref, watch } from "vue";
 
 import type { VNode } from "vue";
 
 import "./katex-playground.scss";
+
+const locales = {
+  "/": {
+    input: "Input",
+    output: "Output",
+  },
+  "/zh/": {
+    input: "输入",
+    output: "输出",
+  },
+};
+
 export default defineComponent({
   name: "KatexPlayground",
 
   setup() {
+    const routeLocale = useRouteLocale();
     const input =
       ref(`\\frac {\\partial^r} {\\partial \\omega^r} \\left(\\frac {y^{\\omega}} {\\omega}\\right)
 = \\left(\\frac {y^{\\omega}} {\\omega}\\right) \\left\\{(\\log y)^r + \\sum_{i=1}^r \\frac {(-1)^ Ir \\cdots (r-i+1) (\\log y)^{ri}} {\\omega^i} \\right\\}`);
@@ -32,6 +46,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "katex-playground" }, [
+        h("h3", locales[routeLocale.value].input),
         h("textarea", {
           name: "katex-playground",
           id: "katex-playground",
@@ -43,6 +58,7 @@ export default defineComponent({
             input.value = (target as HTMLInputElement).value;
           },
         }),
+        h("h3", locales[routeLocale.value].output),
         h("p", {
           class: ["katex-block", { "katex-error": inError.value }],
           innerHTML: result.value || "Here will be the render result",

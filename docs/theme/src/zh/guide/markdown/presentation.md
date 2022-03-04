@@ -188,7 +188,11 @@ $$
 @slideend
 ````
 
+::: tip
+
 详细与完整的演示详见 [幻灯片演示][presentation-demo]。
+
+:::
 
 ## 选项
 
