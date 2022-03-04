@@ -337,21 +337,21 @@ export default class App extends React.Component {
     super(props);
     this.state = { message: " powerful" };
   }
+  handler() {
+    this.setState((state) => ({
+      message: ` very${state.message}`,
+    }));
+  }
   render() {
     return (
       <div className="box">
         <code>vuepress-theme-hope</code> is
-        <span id="powerful" onClick={this.handler}>
+        <span id="powerful" onClick={this.handler.bind(this)}>
           {this.state.message}!
         </span>
       </div>
     );
   }
-  handler = () => {
-    this.setState((state) => ({
-      message: ` very${state.message}`,
-    }));
-  };
 }
 ```
 
@@ -374,21 +374,21 @@ export default class App extends React.Component {
     super(props);
     this.state = { message: " powerful" };
   }
+  handler() {
+    this.setState((state) => ({
+      message: ` very${state.message}`,
+    }));
+  }
   render() {
     return (
       <div className="box">
         <code>vuepress-theme-hope</code> is
-        <span id="powerful" onClick={this.handler}>
+        <span id="powerful" onClick={this.handler.bind(this)}>
           {this.state.message}!
         </span>
       </div>
     );
   }
-  handler = () => {
-    this.setState((state) => ({
-      message: ` very${state.message}`,
-    }));
-  };
 }
 ```
 

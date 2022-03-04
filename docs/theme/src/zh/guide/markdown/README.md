@@ -38,6 +38,8 @@ icon: markdown
 
 - [幻灯片](presentation.md)
 
+- [其他](others.md)
+
 ## 其他
 
 - [外部引入](external.md)

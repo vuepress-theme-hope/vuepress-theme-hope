@@ -1,14 +1,6 @@
 import { RevealOptions } from "./reveal";
 
-export type RevealPlugin =
-  | "highlight"
-  | "math"
-  | "search"
-  | "notes"
-  | "zoom"
-  | "anything"
-  | "audio"
-  | "chalkboard";
+export type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
 
 export interface PresentationOptions {
   /**

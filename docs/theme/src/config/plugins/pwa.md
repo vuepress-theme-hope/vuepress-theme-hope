@@ -178,6 +178,13 @@ The tile color will automatically fall back to themeColor if you don’t set it.
 
 You can fill in the custom pop-up component path.
 
+## appendBase
+
+- Type: `boolean`
+- Default: `false`
+
+Whether append base to all absolute links.
+
 ### generateSwConfig
 
 Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)

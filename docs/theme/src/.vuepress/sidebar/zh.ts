@@ -1,16 +1,16 @@
 import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
 
-export const enSidebarConfig: HopeThemeSidebarConfig = {
-  "/guide/": [
+export const zhSidebarConfig: HopeThemeSidebarConfig = {
+  "/zh/guide/": [
     {
-      text: "Get Started",
+      text: "快速上手",
       icon: "creative",
       prefix: "get-started/",
       collapsable: true,
       children: ["intro", "install", "markdown"],
     },
     {
-      text: "Interface",
+      text: "界面",
       icon: "palette",
       prefix: "interface/",
       collapsable: true,
@@ -25,7 +25,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       ],
     },
     {
-      text: "Layout",
+      text: "布局",
       icon: "layout",
       prefix: "layout/",
       collapsable: true,
@@ -40,7 +40,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       ],
     },
     {
-      text: "Markdown enhance",
+      text: "Markdown 增强",
       icon: "markdown",
       prefix: "markdown/",
       collapsable: true,
@@ -59,11 +59,12 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
         "mermaid",
         "demo",
         "presentation",
+        "others",
         "external",
       ],
     },
     {
-      text: "Features",
+      text: "功能",
       icon: "discover",
       prefix: "feature/",
       collapsable: true,
@@ -78,14 +79,14 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       ],
     },
     {
-      text: "Blog",
+      text: "博客",
       icon: "blog",
       prefix: "blog/",
       collapsable: true,
       children: ["intro", "article", "category-and-tags", "timeline", "home"],
     },
     {
-      text: "Advanced",
+      text: "高级功能",
       icon: "advance",
       prefix: "advanced/",
       collapsable: true,
@@ -93,17 +94,17 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
     },
   ],
 
-  "/config/": [
+  "/zh/config/": [
     "intro",
     "i18n",
     {
-      text: "Theme Config",
+      text: "主题配置",
       icon: "config",
       prefix: "theme/",
       children: ["", "basic", "feature", "layout", "apperance"],
     },
     {
-      text: "Plugin Config",
+      text: "插件配置",
       icon: "plugin",
       prefix: "plugins/",
       children: [
@@ -120,7 +121,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
     "style",
   ],
 
-  "/basic/": [
+  "/zh/basic/": [
     "tutorial",
     {
       text: "Markdown",
@@ -142,14 +143,14 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       text: "VuePress",
       icon: "vue",
       prefix: "vuepress/",
-      children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
+      children: ["", "file", "markdown", "config", "plugin", "theme"],
     },
   ],
 
-  "/": [
+  "/zh/": [
     "",
     {
-      text: "Guide",
+      text: "指南",
       icon: "creative",
       prefix: "guide/",
       children: [
@@ -163,19 +164,19 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       ],
     },
     {
-      text: "Config",
+      text: "配置",
       icon: "config",
       prefix: "config/",
       children: ["intro", "i18n", "theme/", "plugins/", "page", "style"],
     },
     {
-      text: "Basic",
+      text: "基础",
       icon: "module",
       prefix: "basic/",
       children: ["tutorial", "markdown/", "vuepress/"],
     },
     {
-      text: "Migration",
+      text: "迁移",
       icon: "change",
       prefix: "migration",
       children: ["config", "page", "style"],

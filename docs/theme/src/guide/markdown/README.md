@@ -41,6 +41,8 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Presentation](presentation.md)
 
+- [Others](others.md)
+
 ## Others
 
 - [External Import](external.md)

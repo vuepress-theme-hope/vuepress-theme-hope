@@ -184,6 +184,13 @@ Safari 图标
 
 可填入自定义的弹窗组件路径。
 
+## appendBase
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否为所有绝对链接添加 base。
+
 ### generateSwConfig
 
 传递给 `workbox-build` 的选项，具体详情，请见 [Workbox 文档](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)

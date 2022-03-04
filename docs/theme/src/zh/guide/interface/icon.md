@@ -137,3 +137,7 @@ Font-awesome 当前版本为 6.0.0
 ```
 
 <IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+
+<script setup lang="ts">
+import IconDisplay from '@IconDisplay';
+</script>

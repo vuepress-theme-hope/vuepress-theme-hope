@@ -140,7 +140,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       addViteOptimizeDepsExclude(app, "vuepress-plugin-md-enhance");
 
       if (flowchartEnable) {
-        addViteOptimizeDepsInclude(app, "flowchart.js");
+        addViteOptimizeDepsInclude(app, ["flowchart.js", "lodash.debounce"]);
         addViteSsrExternal(app, "flowchart.js");
       }
 

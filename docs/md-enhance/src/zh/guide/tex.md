@@ -422,3 +422,7 @@ $$
 
 - [$\KaTeX$ 支持功能](https://katex.org/docs/supported.html)
 - [$\KaTeX$ 支持列表](https://katex.org/docs/support_table.html)
+
+<script setup lang="ts">
+import KatexPlayground from '@KatexPlayground';
+</script>

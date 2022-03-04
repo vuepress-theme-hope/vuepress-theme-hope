@@ -52,6 +52,23 @@ Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
+### gfm
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to support full GFM syntax.
+
+::: note
+
+For full GFM syntax, see [GFM](https://github.github.com/gfm/).
+
+We are not 100% supporting it to be honestly, we only supply it's syntax inlucding tasklists, footnote and so on.
+
+Some of the behavior might be different, for example to allow Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
+
+:::
+
 ### container
 
 - Type: `boolean`
@@ -121,6 +138,22 @@ Whether to lazy load every images in page in native way.
 - Default: `false`
 
 Whether to enable mark support.
+
+## imageMark
+
+- Type: `ImageMarkOptions | boolean`
+- Default: `false`
+
+Whether enable image mark support.
+
+```ts
+interface ImageMarkOptions {
+  /** lightmode only ids */
+  light?: string[];
+  /** darkmode only ids */
+  dark?: string[];
+}
+```
 
 ### tasklist
 

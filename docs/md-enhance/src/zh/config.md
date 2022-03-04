@@ -127,7 +127,7 @@ icon: config
 是否启用图片标注支持
 
 ```ts
-export interface ImageMarkOptions {
+interface ImageMarkOptions {
   /** lightmode only ids */
   light?: string[];
   /** darkmode only ids */

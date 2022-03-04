@@ -127,7 +127,7 @@ Whether to enable mark support.
 Whether enable image mark support.
 
 ```ts
-export interface ImageMarkOptions {
+interface ImageMarkOptions {
   /** lightmode only ids */
   light?: string[];
   /** darkmode only ids */

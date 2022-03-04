@@ -90,16 +90,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         enableAll: true,
         presentation: {
-          plugins: [
-            "highlight",
-            "math",
-            "search",
-            "notes",
-            "zoom",
-            "anything",
-            "audio",
-            "chalkboard",
-          ],
+          plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
       },
     ],
