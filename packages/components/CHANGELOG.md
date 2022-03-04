@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-03-04)
+
+### Bug Fixes
+
+- fix some color transition ([8de9873](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8de9873c8f98da5832ffb9a267d9bd8d69dd8221))
+
 # [2.0.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-03-04)
 
 ### Features
