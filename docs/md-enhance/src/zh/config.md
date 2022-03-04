@@ -26,6 +26,23 @@ icon: config
 
 :::
 
+## gfm
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否支持完整的 GFM 语法。
+
+::: note
+
+有关完整的 GFM 语法，请参阅 [GFM](https://github.github.com/gfm/)。
+
+老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括任务列表、脚注等。
+
+某些行为可能会有所不同，例如，为了允许 Vue 语法，我们并没有禁止 `<script>` 标签。 但在大多数情况下，行为应该是相同的。
+
+:::
+
 ## container
 
 - 类型: `boolean`
@@ -101,6 +118,22 @@ icon: config
 - 默认值: `false`
 
 是否启用标记格式支持。
+
+## imageMark
+
+- 类型: `ImageMarkOptions | boolean`
+- 默认值: `false`
+
+是否启用图片标注支持
+
+```ts
+export interface ImageMarkOptions {
+  /** lightmode only ids */
+  light?: string[];
+  /** darkmode only ids */
+  dark?: string[];
+}
+```
 
 ## tasklist
 

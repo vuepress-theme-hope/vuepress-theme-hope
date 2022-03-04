@@ -10,6 +10,15 @@ import type { TaskListOptions } from "./tasklist";
  */
 export interface MarkdownEnhanceOptions {
   /**
+   * Whether enable standard GFM support
+   *
+   * 是否启用标准的 GitHub Favor Markdown 支持
+   *
+   * @default false
+   */
+  gfm?: boolean;
+
+  /**
    * Whether to enable custom container including
    *
    * - info
@@ -98,6 +107,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   lazyLoad?: boolean;
+
+  /**
+   * Whether to enable gfm image id mark support
+   *
+   * 是否启用 GFM 图片 ID 标记。
+   *
+   * @default false
+   */
+  imageMark?: boolean;
 
   /**
    * Whether to enable mark format support

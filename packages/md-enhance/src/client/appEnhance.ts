@@ -8,6 +8,7 @@ import Presentation from "@Presentation";
 declare const MARKDOWN_ENHANCE_ALIGN: boolean;
 declare const MARKDOWN_ENHANCE_CONTAINER: boolean;
 declare const MARKDOWN_ENHANCE_FOOTNOTE: boolean;
+declare const MARKDOWN_ENHANCE_IMAGE_MARK: boolean;
 declare const MARKDOWN_ENHANCE_TASKLIST: boolean;
 declare const MARKDOWN_ENHANCE_TEX: boolean;
 
@@ -17,6 +18,8 @@ export default defineClientAppEnhance(({ app }) => {
   if (MARKDOWN_ENHANCE_CONTAINER) void import("./styles/container/index.scss");
 
   if (MARKDOWN_ENHANCE_FOOTNOTE) void import("./styles/footnote.scss");
+
+  if (MARKDOWN_ENHANCE_IMAGE_MARK) void import("./styles/image.scss");
 
   if (CodeGroup.name) {
     app.component("CodeGroup", CodeGroup);

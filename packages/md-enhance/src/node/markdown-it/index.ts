@@ -2,6 +2,7 @@ export * from "./code-demo";
 export * from "./details";
 export * from "./flowchart";
 export * from "./footnote";
+export * from "./image-mark";
 export * from "./katex";
 export * from "./lazy-load";
 export * from "./mark";

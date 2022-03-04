@@ -1,0 +1,11 @@
+#{hope-config.$lightSelector} {
+  img[data-mode="darkmode-only"] {
+    display: none !important;
+  }
+}
+
+#{hope-config.$darkSelector} {
+  img[data-mode="lightmode-only"] {
+    display: none !important;
+  }
+}

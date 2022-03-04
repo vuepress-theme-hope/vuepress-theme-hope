@@ -11,6 +11,7 @@ import {
   codeDemoDefaultSetting,
   flowchart,
   footnote,
+  imageMark,
   katex,
   lazyLoad,
   mark,
@@ -29,17 +30,24 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   options,
   app
 ) => {
-  const alignEnable = options.enableAll || options.align || false;
-  const containerEnable = options.enableAll || options.container || false;
-  const codegroupEnable = options.enableAll || options.codegroup || false;
-  const demoEnable = options.enableAll || options.demo || false;
-  const flowchartEnable = options.enableAll || options.flowchart || false;
-  const footnoteEnable = options.enableAll || options.footnote || false;
-  const tasklistEnable = options.enableAll || options.tasklist || false;
-  const mermaidEnable = options.enableAll || Boolean(options.mermaid) || false;
-  const presentationEnable =
-    options.enableAll || Boolean(options.presentation) || false;
-  const texEnable = options.enableAll || Boolean(options.tex) || false;
+  const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
+    key in options
+      ? Boolean(options[key])
+      : gfm && "gfm" in options
+      ? Boolean(options.gfm)
+      : options.enableAll || false;
+
+  const alignEnable = getStatus("align");
+  const containerEnable = getStatus("container");
+  const codegroupEnable = getStatus("codegroup");
+  const demoEnable = getStatus("demo");
+  const flowchartEnable = getStatus("flowchart");
+  const footnoteEnable = getStatus("footnote", true);
+  const imageMarkEnable = getStatus("imageMark", true);
+  const tasklistEnable = getStatus("tasklist", true);
+  const mermaidEnable = getStatus("mermaid");
+  const presentationEnable = getStatus("presentation");
+  const texEnable = getStatus("tex");
 
   const revealPlugins =
     typeof options.presentation === "object" &&
@@ -77,6 +85,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       MARKDOWN_ENHANCE_CONTAINER: containerEnable,
       MARKDOWN_ENHANCE_DELAY: options.delay || 500,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
+      MARKDOWN_ENHANCE_IMAGE_MARK: imageMarkEnable,
       MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
       MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {
@@ -98,13 +107,13 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
     }),
 
     extendsMarkdown: (markdownIt): void => {
-      if (options.lazyLoad || options.enableAll) markdownIt.use(lazyLoad);
-
-      if (options.sup || options.enableAll) markdownIt.use(sup);
-      if (options.sub || options.enableAll) markdownIt.use(sub);
+      if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
+      if (imageMarkEnable) markdownIt.use(imageMark);
+      if (getStatus("sup")) markdownIt.use(sup);
+      if (getStatus("sub")) markdownIt.use(sub);
       if (footnoteEnable) markdownIt.use(footnote);
       if (flowchartEnable) markdownIt.use(flowchart);
-      if (options.mark || options.enableAll) markdownIt.use(mark);
+      if (getStatus("mark")) markdownIt.use(mark);
       if (tasklistEnable)
         markdownIt.use(tasklist, [
           typeof options.tasklist === "object" ? options.tasklist : {},
