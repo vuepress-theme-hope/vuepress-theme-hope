@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-03-04)
+
+### Features
+
+- **blog2:** add frontmatter and itemFrontmatter option ([8c3a3b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c3a3b1af49c0a2eb6b9f332f6e6163abbe4df01))
+
 # [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
 
 ### Features

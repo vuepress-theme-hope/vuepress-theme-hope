@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-03-04)
+
+### Bug Fixes
+
+- **theme:** fix algolia ([b986b4f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b986b4fa9b28325a5fe0df44321e1b7b9303777d))
+- **theme:** fix code block text color ([dfee042](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfee0426cb81eae46a595bfcc5ded868837c064f))
+
+### Features
+
+- **blog2:** add frontmatter and itemFrontmatter option ([8c3a3b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c3a3b1af49c0a2eb6b9f332f6e6163abbe4df01))
+- **copy-code2:** add pure option ([cff47f2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cff47f257bcb9b77a110ad01f50aa2ab2f190cd0))
+- **theme:** update lightmode color ([076cf2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/076cf2d5933f677a4971449a164c659e05afc721))
+- **theme:** update pure mode ([43d9774](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43d97745bea1d1f9c26938b10b2dd6d5d746f1a9))
+
 # [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-03-04)
+
+### Features
+
+- **copy-code2:** add pure option ([cff47f2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cff47f257bcb9b77a110ad01f50aa2ab2f190cd0))
+
 # [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
 
 **Note:** Version bump only for package copy-code-docs

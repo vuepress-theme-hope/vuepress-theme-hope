@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-03-04)
+
+### Features
+
+- **theme:** update pure mode ([43d9774](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43d97745bea1d1f9c26938b10b2dd6d5d746f1a9))
+
 # [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
 
 ### Features
