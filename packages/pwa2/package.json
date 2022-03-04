@@ -52,7 +52,7 @@
     "vue": "^3.2.31",
     "vue-router": "^4.0.13",
     "vuepress-plugin-sass-palette": "2.0.0-beta.0",
-    "workbox-build": "^6.5.0"
+    "workbox-build": "^6.5.1"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.36"
