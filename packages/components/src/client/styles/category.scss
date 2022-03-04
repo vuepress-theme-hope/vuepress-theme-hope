@@ -16,6 +16,9 @@
     font-weight: bold;
     line-height: 2;
 
+    transition: background-color var(--color-transition, 0.3s),
+      color var(--color-transition, 0.3s);
+
     > span {
       &:after {
         content: ", ";

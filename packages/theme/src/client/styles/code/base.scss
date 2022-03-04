@@ -13,6 +13,8 @@ pre[class*="language-"] > code {
   -webkit-hyphens: none;
   -moz-hyphens: none;
   hyphens: none;
+
+  transition: color var(--color-transition);
 }
 
 /* Code blocks */
@@ -43,7 +45,6 @@ pre[class*="language-"] {
       border-radius: 0;
 
       background: transparent !important;
-      color: var(--grey3);
 
       overflow-wrap: unset;
       -webkit-font-smoothing: auto;
@@ -62,6 +63,8 @@ div[class*="language-"] {
   border-radius: 6px;
   background: var(--code-bg-color);
 
+  transition: background-color var(--color-transition);
+
   &::before {
     position: absolute;
     z-index: 3;
@@ -70,6 +73,8 @@ div[class*="language-"] {
 
     color: var(--code-line-color);
     font-size: 0.75rem;
+
+    transition: color var(--color-transition);
   }
 
   pre,
@@ -97,6 +102,8 @@ div[class*="language-"] {
 
   .highlight-line {
     background-color: var(--code-highlight-line-color);
+
+    transition: background-color var(--color-transition);
   }
 
   &.line-numbers-mode {
@@ -111,6 +118,8 @@ div[class*="language-"] {
 
       border-radius: 6px 0 0 6px;
       border-right: 1px solid var(--code-highlight-line-color);
+
+      transition: border-color var(--color-transition);
 
       // edited
       @media (max-width: hope-config.$mobileS) {
@@ -152,6 +161,8 @@ div[class*="language-"] {
       color: var(--code-line-color);
       text-align: center;
       line-height: 1.4;
+
+      transition: color var(--color-transition);
 
       br {
         user-select: none;

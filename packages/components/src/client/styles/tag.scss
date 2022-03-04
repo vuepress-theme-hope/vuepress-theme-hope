@@ -21,7 +21,8 @@
     vertical-align: middle;
     overflow: hidden;
 
-    transition: all var(--color-transition, 0.3s);
+    transition: background-color var(--color-transition, 0.3s),
+      color var(--color-transition, 0.3s);
 
     &.clickable:hover {
       cursor: pointer;
