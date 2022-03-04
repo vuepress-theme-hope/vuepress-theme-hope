@@ -39,13 +39,9 @@ export default defineComponent({
   setup(_props, { slots }) {
     const route = useRoute();
     const container = ref<HTMLElement>();
-    const instance = ref<LightGallery | null>(null);
+    let instance: LightGallery | null = null;
     let id: number;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const delay = new Promise<void>((resolve) =>
-      setTimeout(resolve, LIGHT_GALLERY_DELAY)
-    );
     const plugins: Promise<{
       default: new (
         instance: LightGallery,
@@ -96,16 +92,18 @@ export default defineComponent({
       void Promise.all([
         Promise.all(plugins),
         Promise.all(pluginsStyles),
-        delay,
+        new Promise<void>((resolve) =>
+          setTimeout(resolve, LIGHT_GALLERY_DELAY)
+        ),
       ]).then(([plugins]) => {
         if (timeID === id) {
-          instance.value?.destroy();
+          instance?.destroy();
 
           const images = Array.from(
             document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
           );
 
-          instance.value = lightGallery(container.value as HTMLElement, {
+          instance = lightGallery(container.value as HTMLElement, {
             ...LIGHT_GALLERY_OPTIONS,
             dynamic: true,
             dynamicEl: getImages(images),
@@ -116,7 +114,7 @@ export default defineComponent({
 
           images.forEach((image, index) => {
             image.addEventListener("click", () => {
-              instance.value?.openGallery(index);
+              instance?.openGallery(index);
             });
           });
         }
@@ -124,13 +122,13 @@ export default defineComponent({
     };
 
     watch(
-      () => route,
+      () => route.path,
       () => initLightGallery()
     );
 
     onMounted(() => initLightGallery());
 
-    onUnmounted(() => instance.value?.destroy());
+    onUnmounted(() => instance?.destroy());
 
     return (): VNode =>
       h(
