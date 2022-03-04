@@ -65,13 +65,14 @@
       margin-right: 0.25em;
     }
   }
+}
 
-  .DocSearch {
+.DocSearch {
+  &.DocSearch-Button {
     margin-left: 0;
   }
 
-  // a workaround for current styles
-  .DocSearch-Container {
+  &.DocSearch-Container {
     position: fixed !important;
   }
 }
