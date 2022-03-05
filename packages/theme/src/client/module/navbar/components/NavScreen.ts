@@ -1,4 +1,4 @@
-import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
+import { useScrollLock } from "@vueuse/core";
 import {
   Transition,
   defineComponent,
@@ -34,13 +34,14 @@ export default defineComponent({
     const themeData = useThemeData();
     const route = useRoute();
     const screen = ref<HTMLElement>();
+    const body = ref<HTMLElement | null>();
+    const isLocked = useScrollLock(body);
 
     const handler = (): void => {
       if (
         window.innerWidth > (themeData.value.mobileBreakPoint || 719) &&
         props.active
       ) {
-        clearAllBodyScrollLocks();
         emit("close");
       }
     };
@@ -48,7 +49,7 @@ export default defineComponent({
     watch(
       () => route.path,
       () => {
-        clearAllBodyScrollLocks();
+        isLocked.value = false;
         emit("close");
       }
     );
@@ -56,10 +57,11 @@ export default defineComponent({
     onMounted(() => {
       window.addEventListener("orientationchange", handler, false);
       window.addEventListener("resize", handler, false);
+      body.value = document.body;
     });
 
     onBeforeUnmount(() => {
-      clearAllBodyScrollLocks();
+      isLocked.value = false;
       window.removeEventListener("orientationchange", handler, false);
       window.removeEventListener("resize", handler, false);
     });
@@ -69,10 +71,12 @@ export default defineComponent({
         Transition,
         {
           name: "fade",
-          onEnter: () =>
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            disableBodyScroll(screen.value!, { reserveScrollBarGap: true }),
-          onAfterLeave: () => clearAllBodyScrollLocks(),
+          onEnter: () => {
+            isLocked.value = true;
+          },
+          onAfterLeave: () => {
+            isLocked.value = false;
+          },
         },
         () =>
           props.active

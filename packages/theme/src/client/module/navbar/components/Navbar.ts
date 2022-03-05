@@ -58,7 +58,10 @@ export default defineComponent({
         },
         [
           h(ToggleSidebarButton, {
-            onToggle: () => emit("toggle-sidebar"),
+            onToggle: () => {
+              if (showScreen.value) showScreen.value = false;
+              emit("toggle-sidebar");
+            },
           }),
           h(NavbarBrand, { ref: siteBrand }, () => slots.left?.()),
           h(NavbarLinks, {

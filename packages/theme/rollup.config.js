@@ -197,7 +197,6 @@ export default [
       "@mr-hope/vuepress-shared/lib/client",
       "@vueuse/core",
       "@vuepress/client",
-      "body-scroll-lock",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/shared",
       "vue",
@@ -208,19 +207,7 @@ export default [
   }),
 
   rollupBundleTypescript("module/outlook/appSetup", {
-    external: [
-      "@theme-hope/composables",
-      "@theme-hope/utils",
-      // "@mr-hope/vuepress-shared/lib/client",
-      // "@vueuse/core",
-      // "@vuepress/client",
-      // "body-scroll-lock",
-      // "@vuepress/plugin-external-link-icon/lib/client",
-      // "@vuepress/shared",
-      // "vue",
-      // "vue-router",
-      /\.scss$/,
-    ],
+    external: ["@theme-hope/composables", "@theme-hope/utils", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
 

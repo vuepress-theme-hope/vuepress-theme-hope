@@ -11,7 +11,6 @@ export const updateBundlerOptions = (app: App): void => {
   addViteOptimizeDepsInclude(app, [
     "@vueuse/core",
     "bcryptjs",
-    "body-scroll-lock",
     "lodash.throttle",
   ]);
 
