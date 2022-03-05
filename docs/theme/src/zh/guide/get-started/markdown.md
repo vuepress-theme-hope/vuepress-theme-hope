@@ -14,11 +14,11 @@ VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要�
 
 ## Markdown 介绍
 
-如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](../../basic/markdown/README.md) 和 [Markdown 演示](../../basic/markdown/demo.md)。
+如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](../../cookbook/markdown/README.md) 和 [Markdown 演示](../../cookbook/markdown/demo.md)。
 
 ::: info Frontmatter
 
-Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](../../basic/vuepress/page.md#front-matter)。
+Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](../../cookbook/vuepress/page.md#front-matter)。
 
 :::
 
@@ -26,7 +26,7 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 为了丰富文档写作，VuePress 对 Markdown 语法进行了扩展。
 
-关于这些扩展，请阅读 [VuePress 中的 Markdown 扩展](../../basic/vuepress/markdown.md)。
+关于这些扩展，请阅读 [VuePress 中的 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
 ## 主题扩展
 

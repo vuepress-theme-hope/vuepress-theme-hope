@@ -1,13 +1,13 @@
-import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
+import { defineNavbarConfig } from "vuepress-theme-hope";
 
-export const enNavbarConfig: HopeThemeNavbarConfig = [
+export const enNavbarConfig = defineNavbarConfig([
   "/guide/",
   "/config/",
   "/faq/",
   {
-    text: "Basic",
-    icon: "info",
-    prefix: "/basic/",
+    text: "Cookbook",
+    icon: "guide",
+    prefix: "/cookbook/",
     children: ["tutorial", "markdown/", "vuepress/"],
   },
   "/migration/",
@@ -91,4 +91,4 @@ export const enNavbarConfig: HopeThemeNavbarConfig = [
       },
     ],
   },
-];
+]);

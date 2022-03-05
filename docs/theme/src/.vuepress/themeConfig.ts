@@ -136,9 +136,9 @@ export default defineThemeConfig({
             ],
           },
           {
-            name: "Basic",
-            short_name: "Basic",
-            url: "/basic/",
+            name: "Cookbook",
+            short_name: "Cookbook",
+            url: "/cookbook/",
             icons: [
               {
                 src: "/assets/icon/basic-maskable.png",

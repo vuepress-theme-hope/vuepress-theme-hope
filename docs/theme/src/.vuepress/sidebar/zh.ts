@@ -1,6 +1,6 @@
-import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
+import { defineSidebarConfig } from "vuepress-theme-hope";
 
-export const zhSidebarConfig: HopeThemeSidebarConfig = {
+export const zhSidebarConfig = defineSidebarConfig({
   "/zh/guide/": [
     {
       text: "快速上手",
@@ -121,12 +121,13 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
     "style",
   ],
 
-  "/zh/basic/": [
+  "/zh/cookbook/": [
     "tutorial",
     {
       text: "Markdown",
       icon: "markdown",
       prefix: "markdown/",
+      collapsable: true,
       children: [
         "",
         "demo",
@@ -135,6 +136,7 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
           icon: "emoji",
           link: "emoji/",
           prefix: "emoji/",
+          collapsable: true,
           children: ["people", "nature", "object", "place", "symbol"],
         },
       ],
@@ -143,6 +145,7 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
       text: "VuePress",
       icon: "vue",
       prefix: "vuepress/",
+      collapsable: true,
       children: ["", "file", "markdown", "config", "plugin", "theme"],
     },
   ],
@@ -170,9 +173,9 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
       children: ["intro", "i18n", "theme/", "plugins/", "page", "style"],
     },
     {
-      text: "基础",
-      icon: "module",
-      prefix: "basic/",
+      text: "教程",
+      icon: "guide",
+      prefix: "cookbook/",
       children: ["tutorial", "markdown/", "vuepress/"],
     },
     {
@@ -186,4 +189,4 @@ export const zhSidebarConfig: HopeThemeSidebarConfig = {
     "demo/",
     "contribution",
   ],
-};
+});

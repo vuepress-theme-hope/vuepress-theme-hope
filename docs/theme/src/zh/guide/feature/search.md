@@ -171,7 +171,7 @@ Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` �
 
 ::: note
 
-除了通过 themeConfig 传递选项外你也可以自行在 [VuePress 配置文件](../../basic/vuepress/config.md) 通过 `plugins` 调用对应插件。
+除了通过 themeConfig 传递选项外你也可以自行在 [VuePress 配置文件](../../cookbook/vuepress/config.md) 通过 `plugins` 调用对应插件。
 
 :::
 

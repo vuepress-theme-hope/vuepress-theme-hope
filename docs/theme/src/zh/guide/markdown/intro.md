@@ -16,7 +16,7 @@ tag:
 
 VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定行高亮等都是开箱即用的。
 
-详细语法详见 [内置 Markdown 扩展](../../basic/vuepress/markdown.md)。
+详细语法详见 [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
 ## 启用 Markdown 增强
 

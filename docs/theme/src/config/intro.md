@@ -13,7 +13,7 @@ VuePress mainly stores config and required files through the `.vuepress/` folder
 
 ::: info
 
-For the file structure of VuePress, see [VuePress Basics → File Structure](../basic/vuepress/file.md).
+For the file structure of VuePress, see [VuePress Basics → File Structure](../cookbook/vuepress/file.md).
 
 :::
 

@@ -9,7 +9,7 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 ## Built-in syntax
 
-- [Built-in Markdown extension](../../basic/vuepress/markdown.md)
+- [Built-in Markdown extension](../../cookbook/vuepress/markdown.md)
 
 ## New Components
 

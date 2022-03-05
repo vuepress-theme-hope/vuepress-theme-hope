@@ -173,7 +173,7 @@ See [Plugin Docs][docsearch] for the available options for docsearch plugin.
 
 ::: note
 
-You can also call plugins via `plugins` in the [VuePress config file](../../basic/vuepress/config.md).
+You can also call plugins via `plugins` in the [VuePress config file](../../cookbook/vuepress/config.md).
 
 :::
 

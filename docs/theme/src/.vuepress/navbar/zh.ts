@@ -1,12 +1,13 @@
-import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
-export const zhNavbarConfig: HopeThemeNavbarConfig = [
+import { defineNavbarConfig } from "vuepress-theme-hope";
+
+export const zhNavbarConfig = defineNavbarConfig([
   "/zh/guide/",
   "/zh/config/",
   "/zh/faq/",
   {
-    text: "基础",
-    icon: "info",
-    prefix: "/zh/basic/",
+    text: "教程",
+    icon: "guide",
+    prefix: "/zh/cookbook/",
     children: ["tutorial", "markdown/", "vuepress/"],
   },
   "/zh/migration/",
@@ -91,4 +92,4 @@ export const zhNavbarConfig: HopeThemeNavbarConfig = [
       },
     ],
   },
-];
+]);

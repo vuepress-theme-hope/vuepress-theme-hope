@@ -13,7 +13,7 @@ VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的
 
 ::: info
 
-关于 VuePress 的文件结构，详见 [VuePress 基础 → 文件结构](../basic/vuepress/file.md)。
+关于 VuePress 的文件结构，详见 [VuePress 基础 → 文件结构](../cookbook/vuepress/file.md)。
 
 :::
 

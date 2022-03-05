@@ -16,7 +16,7 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 VuePress comes with GitHub-style tables, Emoji, TOC, code line numbers, specific line highlighting, etc. are all available out of the box.
 
-For detailed syntax, please see [Built-in Markdown Enhance](../../basic/vuepress/markdown.md).
+For detailed syntax, please see [Built-in Markdown Enhance](../../cookbook/vuepress/markdown.md).
 
 ## Enable Markdown Enhance
 

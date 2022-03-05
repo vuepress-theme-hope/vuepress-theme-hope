@@ -1,6 +1,6 @@
-import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
+import { defineSidebarConfig } from "vuepress-theme-hope";
 
-export const enSidebarConfig: HopeThemeSidebarConfig = {
+export const enSidebarConfig = defineSidebarConfig({
   "/guide/": [
     {
       text: "Get Started",
@@ -121,12 +121,13 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
     "style",
   ],
 
-  "/basic/": [
+  "/cookbook/": [
     "tutorial",
     {
       text: "Markdown",
       icon: "markdown",
       prefix: "markdown/",
+      collapsable: true,
       children: [
         "",
         "demo",
@@ -135,6 +136,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
           icon: "emoji",
           link: "emoji/",
           prefix: "emoji/",
+          collapsable: true,
           children: ["people", "nature", "object", "place", "symbol"],
         },
       ],
@@ -143,6 +145,7 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       text: "VuePress",
       icon: "vue",
       prefix: "vuepress/",
+      collapsable: true,
       children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
     },
   ],
@@ -170,9 +173,9 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
       children: ["intro", "i18n", "theme/", "plugins/", "page", "style"],
     },
     {
-      text: "Basic",
-      icon: "module",
-      prefix: "basic/",
+      text: "Cookbook",
+      icon: "guide",
+      prefix: "cookbook/",
       children: ["tutorial", "markdown/", "vuepress/"],
     },
     {
@@ -186,4 +189,4 @@ export const enSidebarConfig: HopeThemeSidebarConfig = {
     "demo/",
     "contribution",
   ],
-};
+});

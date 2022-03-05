@@ -9,7 +9,7 @@ icon: markdown
 
 ## 内置语法
 
-- [内置 Markdown 扩展](../../basic/vuepress/markdown.md)。
+- [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
 ## 新组件
 
