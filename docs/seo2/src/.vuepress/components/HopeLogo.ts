@@ -56,8 +56,8 @@ export default defineComponent({
       ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
         // Settings
         const sizes = {
-          width: 350,
-          height: 350,
+          width: 300,
+          height: 300,
         };
         // Canvas
         const canvas =
