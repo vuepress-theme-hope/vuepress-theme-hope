@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2022-03-05)
+
+### Bug Fixes
+
+- **components:** fix visitor ([6da5e98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6da5e98ee23379f57b556d8e7a22704a92989f53))
+
 # [2.0.0-beta.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-03-04)
 
 ### Bug Fixes

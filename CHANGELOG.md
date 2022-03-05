@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2022-03-05)
+
+### Bug Fixes
+
+- **components:** fix visitor ([6da5e98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6da5e98ee23379f57b556d8e7a22704a92989f53))
+- **pwa2:** fix default slot warning ([d6d1071](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d6d10712e215b0216c63c2f2f1db92a4498c30e4))
+
+### Features
+
+- **create:** remove pwa feature in template ([5574303](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5574303cffe5750945fe5cbaa659855eb539af01))
+
 # [2.0.0-beta.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-03-04)
 
 ### Bug Fixes
