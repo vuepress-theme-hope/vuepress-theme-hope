@@ -24,6 +24,62 @@ tag:
 
 关于插件的可用选项，详见 [插件文档][search]。
 
+### `@vuepress/search` 本地化翻译
+
+如果你正在提供中文文档，你可以将其设置到 `themeConfig.plugins.search.locales[对应路径]` 中。
+
+::: details 中文多语言配置
+
+:::: code-group
+
+::: code-group-item TS
+
+```ts
+// .vuepress/config.ts
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  themeConfig: {
+    plugins: {
+      search: {
+        locales: {
+          "/zh/": {
+            placeholder: "搜索",
+          },
+        },
+      },
+    },
+  },
+});
+```
+
+:::
+
+::: code-group-item JS
+
+```js
+// .vuepress/config.js
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  themeConfig: {
+    plugins: {
+      search: {
+        locales: {
+          "/zh/": {
+            placeholder: "搜索",
+          },
+        },
+      },
+    },
+  },
+});
+```
+
+:::
+
+:::
+
 ## 使用 `@vuepress/docsearch`
 
 你可以通过 `themeConfig.plugins.docsearch` 传递插件选项。
@@ -166,6 +222,142 @@ Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` �
 :::
 
 关于插件的可用选项，详见 [插件文档][docsearch]。
+
+### `@vuepress/docsearch` 本地化翻译
+
+你可以通过 `themeConfig.plugins.docsearch.locales` 配置多语言。
+
+::: details 中文多语言配置示例
+
+:::: code-group
+
+::: code-group-item TS
+
+```ts
+// .vuepress/config.ts
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  themeConfig: {
+    plugins: {
+      docsearch: {
+        // ...
+
+        locales: {
+          "/zh/": {
+            placeholder: "搜索文档",
+            translations: {
+              button: {
+                buttonText: "搜索文档",
+                buttonAriaLabel: "搜索文档",
+              },
+              modal: {
+                searchBox: {
+                  resetButtonTitle: "清除查询条件",
+                  resetButtonAriaLabel: "清除查询条件",
+                  cancelButtonText: "取消",
+                  cancelButtonAriaLabel: "取消",
+                },
+                startScreen: {
+                  recentSearchesTitle: "搜索历史",
+                  noRecentSearchesText: "没有搜索历史",
+                  saveRecentSearchButtonTitle: "保存至搜索历史",
+                  removeRecentSearchButtonTitle: "从搜索历史中移除",
+                  favoriteSearchesTitle: "收藏",
+                  removeFavoriteSearchButtonTitle: "从收藏中移除",
+                },
+                errorScreen: {
+                  titleText: "无法获取结果",
+                  helpText: "你可能需要检查你的网络连接",
+                },
+                footer: {
+                  selectText: "选择",
+                  navigateText: "切换",
+                  closeText: "关闭",
+                  searchByText: "搜索提供者",
+                },
+                noResultsScreen: {
+                  noResultsText: "无法找到相关结果",
+                  suggestedQueryText: "你可以尝试查询",
+                  openIssueText: "你认为该查询应该有结果？",
+                  openIssueLinkText: "点击反馈",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+});
+```
+
+:::
+
+::: code-group-item JS
+
+```js
+// .vuepress/config.js
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  themeConfig: {
+    plugins: {
+      docsearch: {
+        // ...
+
+        locales: {
+          "/zh/": {
+            placeholder: "搜索文档",
+            translations: {
+              button: {
+                buttonText: "搜索文档",
+                buttonAriaLabel: "搜索文档",
+              },
+              modal: {
+                searchBox: {
+                  resetButtonTitle: "清除查询条件",
+                  resetButtonAriaLabel: "清除查询条件",
+                  cancelButtonText: "取消",
+                  cancelButtonAriaLabel: "取消",
+                },
+                startScreen: {
+                  recentSearchesTitle: "搜索历史",
+                  noRecentSearchesText: "没有搜索历史",
+                  saveRecentSearchButtonTitle: "保存至搜索历史",
+                  removeRecentSearchButtonTitle: "从搜索历史中移除",
+                  favoriteSearchesTitle: "收藏",
+                  removeFavoriteSearchButtonTitle: "从收藏中移除",
+                },
+                errorScreen: {
+                  titleText: "无法获取结果",
+                  helpText: "你可能需要检查你的网络连接",
+                },
+                footer: {
+                  selectText: "选择",
+                  navigateText: "切换",
+                  closeText: "关闭",
+                  searchByText: "搜索提供者",
+                },
+                noResultsScreen: {
+                  noResultsText: "无法找到相关结果",
+                  suggestedQueryText: "你可以尝试查询",
+                  openIssueText: "你认为该查询应该有结果？",
+                  openIssueLinkText: "点击反馈",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+});
+```
+
+:::
+
+::::
 
 ## 补充说明
 
