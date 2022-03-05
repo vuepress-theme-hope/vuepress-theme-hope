@@ -89,7 +89,7 @@ export interface HopeThemeNormalPageFrontmatter
    *
    * @default true
    */
-  visitor?: boolean;
+  pageview?: boolean;
 
   /**
    * Whether display socialMedia

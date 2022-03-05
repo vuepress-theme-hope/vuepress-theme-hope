@@ -125,20 +125,20 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 `PageInfo` 可选的值和对应内容如下:
 
-| 条目            | 对应内容     | 页面 frontmatter 值        |
-| --------------- | ------------ | -------------------------- |
-| `'Author'`      | 作者         | `author`                   |
-| `'Date'`        | 写作日期     | `date`                     |
-| `'Original'`    | 是否原创     | `isOriginal`               |
-| `'Category'`    | 分类         | `category`                 |
-| `'Tag'`         | 标签         | `tag`                      |
-| `'ReadingTime'` | 预计阅读时间 | N/A(自动生成)              |
-| `'Word'`        | 字数         | N/A(自动生成)              |
-| `'PageView'`    | 访问量       | `visitor` (仅 Waline 可用) |
+| 条目            | 对应内容     | 页面 frontmatter 值         |
+| --------------- | ------------ | --------------------------- |
+| `'Author'`      | 作者         | `author`                    |
+| `'Date'`        | 写作日期     | `date`                      |
+| `'Original'`    | 是否原创     | `isOriginal`                |
+| `'Category'`    | 分类         | `category`                  |
+| `'Tag'`         | 标签         | `tag`                       |
+| `'ReadingTime'` | 预计阅读时间 | N/A(自动生成)               |
+| `'Word'`        | 字数         | N/A(自动生成)               |
+| `'PageView'`    | 访问量       | `pageview` (仅 Waline 可用) |
 
 文章信息展示项目。
 
-### visitor
+### pageview
 
 - 类型: `boolean`
 - 默认值: 主题配置中的值

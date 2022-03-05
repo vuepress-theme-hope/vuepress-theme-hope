@@ -40,7 +40,7 @@ tag:
 
 - `pageInfo` 类型从 `PageInfo[] | false` 改为 `ArticleInfo[] | false`。
 
-  可填入的值从 `'author'`, `'time'`, `'category'`, `'tag'`, `'reading-time'`, `'word'`, `'visitor'` 改为 `'Author'`, `'Date'`, `'Original'`, `'Category'`, `'Tag'`, `'ReadingTime'`, `'Word'`, `'Visitor'`
+  可填入的值从 `'author'`, `'time'`, `'category'`, `'tag'`, `'reading-time'`, `'word'`, `'visitor'` 改为 `'Author'`, `'Date'`, `'Original'`, `'Category'`, `'Tag'`, `'ReadingTime'`, `'Word'`, `'PageView'`
 
 - `sidebarDepth` 重命名为 `headingDepth`
 
