@@ -68,7 +68,6 @@ module.exports = defineHopeConfig({
 <!-- 在代码块中放置你对应语言的代码，一个语言不能出现多个块 -->
 <!-- 你可以有多个代码块，并且 html, js, css 都是视情况可选的 -->
 ```
-````
 
 ```json
 // json block 作为插件配置存放处
@@ -78,8 +77,7 @@ module.exports = defineHopeConfig({
 ```
 
 :::
-
-`````
+````
 
 ::: tip
 
@@ -125,7 +123,7 @@ JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
 ```
 
 :::
-`````
+````
 
 ### Vue
 
