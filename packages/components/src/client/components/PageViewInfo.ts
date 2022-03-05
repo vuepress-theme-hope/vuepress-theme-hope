@@ -18,7 +18,7 @@ export default defineComponent({
 
     pageview: {
       type: [Boolean, String],
-      default: true,
+      default: false,
     },
   },
 

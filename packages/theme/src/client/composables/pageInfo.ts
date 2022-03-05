@@ -111,7 +111,7 @@ export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
     tag: tag.value,
     isOriginal: frontmatter.value.isOriginal,
     readingTime: page.value.readingTime,
-    visitor: frontmatter.value.visitor !== false,
+    pageview: "visitor" in frontmatter.value ? frontmatter.value.visitor : true,
     color: !pure.value,
     hint: !pure.value,
   });

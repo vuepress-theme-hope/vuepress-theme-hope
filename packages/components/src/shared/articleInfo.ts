@@ -124,7 +124,7 @@ export interface ArticleInfoProps {
    *
    * 如果值为字符串，会用做查询 id
    */
-  visitor?: string | boolean;
+  pageview?: string | boolean;
 
   /**
    * ReadingTime info

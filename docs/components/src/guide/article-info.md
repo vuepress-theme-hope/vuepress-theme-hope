@@ -51,7 +51,7 @@ export interface ArticleInfoProps {
    *
    * If the value is a string, it will use as search id
    */
-  visitor?: string | boolean;
+  pageview?: string | boolean;
 
   /**
    * ReadingTime info
