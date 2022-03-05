@@ -1,5 +1,6 @@
-import type { Page } from "@vuepress/core";
-import type { BlogOptions } from "vuepress-plugin-blog2";
+import { blog } from "vuepress-plugin-blog2";
+
+import type { Page, PluginConfig } from "@vuepress/core";
 import type {
   HopeThemeBlogLocaleData,
   HopeThemeBlogPluginOptions,
@@ -61,18 +62,18 @@ export const getTitleLocales = (
     ])
   );
 
-export const resolveBlogOptions = (
+export const resolveBlogPlugin = (
   themeData: HopeThemeConfig,
   options?: HopeThemeBlogPluginOptions | boolean
-): BlogOptions | false => {
-  if (!options) return false;
+): PluginConfig => {
+  if (!options) return ["", false];
 
   const blogOptions = {
     ...defaultOptions,
     ...(typeof options === "object" ? options : {}),
   };
 
-  return {
+  return blog({
     metaScope: "",
 
     filter:
@@ -172,5 +173,5 @@ export const resolveBlogOptions = (
         }),
       },
     ],
-  };
+  });
 };

@@ -1,17 +1,19 @@
+import { seo as seoPlugin } from "vuepress-plugin-seo2";
 import { getBlogOptions } from "./blog";
 
-import type { Page } from "@vuepress/core";
+import type { Page, PluginConfig } from "@vuepress/core";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 
-export const resolveSEOOptions = (
+export const resolveSEOPlugin = (
   themeConfig: HopeThemeConfig,
   { blog, seo }: HopeThemePluginsOptions
-): SeoOptions | false => {
-  if (seo === false) return false;
+): PluginConfig => {
+  if (seo === false) return ["", false];
 
-  // disable feed if `hostname` is not set and no options for feed plugin
-  if (!Object.keys(seo || {}).length && !themeConfig.hostname) return false;
+  // disable seo if `hostname` is not set and no options for seo plugin
+  if (!Object.keys(seo || {}).length && !themeConfig.hostname)
+    return ["", false];
 
   const blogOptions = getBlogOptions(blog);
 
@@ -30,9 +32,9 @@ export const resolveSEOOptions = (
     );
   };
 
-  return {
+  return seoPlugin({
     hostname: themeConfig.hostname,
     isArticle,
     ...(seo || {}),
-  } as SeoOptions;
+  } as SeoOptions);
 };
