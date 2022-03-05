@@ -20,7 +20,7 @@ export default defineComponent({
     const reload = (): void => {
       if (registration.value) {
         useSkipWaiting(registration.value);
-        location.reload();
+        window.location.reload();
 
         registration.value = null;
       }
@@ -40,16 +40,16 @@ export default defineComponent({
       h(
         Transition,
         { name: "popup" },
-        slots.default?.({
-          enabled: enabled.value,
-          reload,
-        }) ||
+        () =>
+          slots.default?.({
+            enabled: enabled.value,
+            reload,
+          }) ||
           (enabled.value
             ? h(
-                "div",
+                "button",
                 {
                   class: "sw-update-popup",
-                  role: "button",
                   tabindex: 0,
                   onClick: () => reload(),
                 },
@@ -58,7 +58,7 @@ export default defineComponent({
                   h("span", { class: "update" }, h(UpdateIcon)),
                 ]
               )
-            : "")
+            : null)
       );
   },
 });
