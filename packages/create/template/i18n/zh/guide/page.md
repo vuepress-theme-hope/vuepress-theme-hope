@@ -22,6 +22,10 @@ star: true
 footer: 这是测试显示的页脚
 ---
 
+`more` 注释之前的内容被视为文章摘要。
+
+<!-- more -->
+
 ## 页面信息
 
 你可以在 Markdown 的 Frontmatter 中设置页面信息。

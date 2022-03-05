@@ -22,6 +22,10 @@ star: true
 footer: Footer content for test
 ---
 
+Content before `more` comment is regarded as page excerpt.
+
+<!-- more -->
+
 ## Page information
 
 You can set page information in Markdown’s Frontmatter.
