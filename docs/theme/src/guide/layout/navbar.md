@@ -145,7 +145,7 @@ module.exports = defineHopeConfig({
 - `/path/a/`
 - `/path/b/`
 
-At this point, you don't want two menus to be activated at the same time under the paths starting with `/path/a/` and `/path/b/`. In this case, you can set the `activeMatch` of the first item to `^/path/(?:(?!a/|b/).*)?$`.
+But you may have multiple folders with files under `/path/`. To avoid mutiple dropown items been actived under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 

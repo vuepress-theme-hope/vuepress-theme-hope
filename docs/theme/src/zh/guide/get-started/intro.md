@@ -64,7 +64,7 @@ tag:
 
 ### 页面 UI
 
-- 页面: [**页面图标**](../interface/icon.md)、[**文章信息**](../feature/page-info.md)、**标题目录**、[图片预览功能](../feature/photo-swipe.md)。
+- 页面: [**页面图标**](../interface/icon.md)、[**文章信息**](../feature/page-info.md)、[**标题目录**](../blog/page.md#标题列表)、[**图片预览功能**](../feature/photo-swipe.md)。
 
 - 站点结构:
 
@@ -72,7 +72,7 @@ tag:
 
   简化了 [导航栏](../layout/navbar.md) 与 [侧边栏](../layout/sidebar.md) 配置，添加了图标与路径前缀支持。
 
-- 布局: 新增 [**路径导航**](../layout/breadcrumb.md) 与 [页脚](../layout/breadcrumb.md) 支持。
+- 布局: 新增 [**路径导航**](../layout/breadcrumb.md) 与 [**页脚**](../layout/footer.md) 支持。
 
 - [主页](../layout/home.md): 全新外观，特性支持图标与跳转。
 

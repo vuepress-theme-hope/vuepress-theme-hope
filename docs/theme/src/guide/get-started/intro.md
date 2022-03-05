@@ -66,7 +66,7 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 - [Icon Support](../interface/icon.md)
 
-- Page: [Page information](../feature/page-info.md), TOC and [picture preview function](../featres/../feature/photo-swipe.md).
+- Page: [Page information](../feature/page-info.md), TOC and [picture preview function](../feature/photo-swipe.md).
 
 - Site structure:
 

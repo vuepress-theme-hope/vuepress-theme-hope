@@ -147,7 +147,7 @@ module.exports = defineHopeConfig({
 - `/path/a/`
 - `/path/b/`
 
-此时你就不希望在 `/path/a/` 以及 `/path/b/` 开头的路径下，出现两个菜单同时激活的情况，此时你就可以设置第一项的 `activeMatch` 为 `^/path/(?:(?!a/|b/).*)?$`。
+此时你可能想避免在 `/path/a/` 以及 `/path/b/` 开头的路径下，出现两个菜单同时激活的情况。将第一项的 `activeMatch` 选项设置为 `^/path/(?:(?!a/|b/).*)?$` 就可以有效避免。
 
 :::
 

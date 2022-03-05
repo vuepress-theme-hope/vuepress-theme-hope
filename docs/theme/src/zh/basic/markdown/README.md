@@ -142,7 +142,7 @@ Atx (推荐)形式则是在行首插入 1 到 6 个 `#` ，对应到标题 1 到
 
 ### Blockquotes
 
-Markdown 使用 email 形式的块引言，如果你很熟悉如何在 email 信件中引言，你就知道怎麽在 Markdown 文件中建立一个块引言，那会看起来像是你强迫断行，然后在每行的最前面加上 `>` :
+Markdown 使用 email 形式的块引言，如果你很熟悉如何在 email 信件中引言，你就知道怎么在 Markdown 文件中建立一个块引言，那会看起来像是你强迫断行，然后在每行的最前面加上 `>` :
 
 ```md
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
@@ -213,7 +213,7 @@ Markdown 支持有序列表和无序列表。
 * Blue
 ```
 
-有序列表则使用数字接著一个英文句点:
+有序列表则使用数字接着一个英文句点:
 
 ```md
 1.  Bird
@@ -241,7 +241,7 @@ Markdown 支持有序列表和无序列表。
 
 你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点都写作 `1` 你可以完全不用在意数字的正确性。
 
-列表项目标记通常是放在最左边，但是其实也可以缩进，最多三个空白，项目标记后面则一定要接著至少一个空白或 tab。
+列表项目标记通常是放在最左边，但是其实也可以缩进，最多三个空白，项目标记后面则一定要接着至少一个空白或 tab。
 
 要让列表看起来更漂亮，你可以把内容用固定的缩进整理好:
 
@@ -444,7 +444,7 @@ Markdown 支持两种形式的链接语法: *行内*和*参考*两种形式。
 
 不管是哪一种，链接的文字都是用 `[方括号]` 来标记。
 
-要建立一个行内形式的链接，只要在方块括号后面马上接著括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如:
+要建立一个行内形式的链接，只要在方块括号后面马上接着括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如:
 
 ```html
 This is [an example](http://example.com/ "Title") inline link. [This
@@ -474,7 +474,7 @@ See my [About](/about/) page for details.
 This is [an example][id] reference-style link.
 ```
 
-接著，在文件的任意处，你可以把这个标签的链接内容定义出来:
+接着，在文件的任意处，你可以把这个标签的链接内容定义出来:
 
 ```md
 [id]: http://example.com/ "Optional Title Here"
@@ -537,7 +537,7 @@ This is [an example][id] reference-style link.
 Visit [Daring Fireball][] for more information.
 ```
 
-然后接著定义链接:
+然后接着定义链接:
 
 ```md
 [daring fireball]: http://daringfireball.net/
