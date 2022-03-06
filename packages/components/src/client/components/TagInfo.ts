@@ -37,8 +37,6 @@ export default defineComponent({
     const route = useRoute();
     const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
-    const tags = [...props.tag].sort()
-
     const colorMap = ref(
       Array(9)
         .fill(null)
@@ -54,7 +52,7 @@ export default defineComponent({
     });
 
     return (): VNode | null =>
-      tags
+      props.tag.length
         ? h(
             "span",
             {
@@ -66,7 +64,7 @@ export default defineComponent({
               h(
                 "ul",
                 { class: "tags-wrapper" },
-                tags.map(({ name, path }, index) =>
+                props.tag.map(({ name, path }, index) =>
                   h(
                     "li",
                     {
@@ -86,7 +84,7 @@ export default defineComponent({
               ),
               h("meta", {
                 property: "keywords",
-                content: tags.map(({ name }) => name).join(","),
+                content: props.tag.map(({ name }) => name).join(","),
               }),
             ]
           )
