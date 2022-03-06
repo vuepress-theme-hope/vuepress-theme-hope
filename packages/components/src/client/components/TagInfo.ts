@@ -3,8 +3,8 @@ import {
   useLocaleConfig,
 } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h, onMounted, ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
 import { TagIcon } from "./icons";
+import Tag from "./Tag"
 import { articleInfoLocales } from "../define";
 
 import type { PropType, VNode } from "vue";
@@ -33,8 +33,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const router = useRouter();
-    const route = useRoute();
     const pageInfoLocale = useLocaleConfig(articleInfoLocales);
 
     const colorMap = ref(
@@ -43,9 +41,6 @@ export default defineComponent({
         .map((_, index) => index)
     );
 
-    const navigate = (path = ""): void => {
-      if (path && route.path !== path) void router.push(path);
-    };
 
     onMounted(() => {
       colorMap.value = randomSortArray(colorMap.value);
@@ -65,21 +60,7 @@ export default defineComponent({
                 "ul",
                 { class: "tags-wrapper" },
                 props.tag.map(({ name, path }, index) =>
-                  h(
-                    "li",
-                    {
-                      class: [
-                        "tag",
-                        {
-                          [`tag${colorMap.value[index % 9]}`]: props.color,
-                          clickable: path,
-                        },
-                      ],
-                      role: path ? "navigation" : "",
-                      onClick: () => navigate(path),
-                    },
-                    name
-                  )
+                  h("li", {}, h(Tag, { name, path, color: props.color, colorIndex: index }))
                 )
               ),
               h("meta", {
