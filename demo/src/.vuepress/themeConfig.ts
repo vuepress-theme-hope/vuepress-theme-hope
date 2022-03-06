@@ -129,7 +129,9 @@ export default defineThemeConfig({
 
     pwa: {
       favicon: "/favicon.ico",
+      cacheHTML: true,
       cachePic: true,
+      appendBase: true,
       apple: {
         icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
@@ -185,7 +187,6 @@ export default defineThemeConfig({
           },
         ],
       },
-      appendBase: true,
     },
   },
 });

@@ -103,7 +103,7 @@ But this also has the disadvantage. If the user enters the website directly from
 
 :::
 
-#### Size control
+### Size control
 
 To prevent large files from being included in the pre-cache list, any files larger than 2MB or pictures larger than 1MB will be deleted.
 

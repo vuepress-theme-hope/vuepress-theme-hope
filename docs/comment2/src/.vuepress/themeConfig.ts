@@ -177,7 +177,6 @@ export default defineThemeConfig({
           },
         ],
       },
-      appendBase: true,
     },
   },
 });
