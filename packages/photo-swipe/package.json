@@ -41,7 +41,7 @@
     "demo:webpack-clean-serve": "vuepress-webpack dev __tests__/demo --clean-cache",
     "demo:webpack-serve": "vuepress-webpack dev __tests__/demo",
     "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
-    "dev:copy": "cpx 'src/client/**/*.{vue,scss}' lib/client -w",
+    "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {

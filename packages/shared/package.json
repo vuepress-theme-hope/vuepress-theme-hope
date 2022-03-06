@@ -33,7 +33,7 @@
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
-    "dev:copy": "cpx 'src/client/**/*.{vue,scss}' lib/client -w",
+    "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
