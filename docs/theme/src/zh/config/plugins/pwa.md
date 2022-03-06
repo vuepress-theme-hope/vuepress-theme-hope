@@ -106,7 +106,7 @@ tag:
 ### cacheHTML
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 
 是否缓存主页和 404 错误页之外的 HTML 文件
 
@@ -127,6 +127,41 @@ tag:
 ::: tip
 
 该选项不能大于 `maxSize`。
+
+:::
+
+## update
+
+- 类型: `'disabled' | 'available' | 'hint' | 'force'`
+- 默认值: `'available'`
+
+发现新内容时的控制逻辑。
+
+- `'disabled'`: 即使有新的 service worker 也不做任何事情，新的 service work 开始等待后，会在用户下次访问时接管页面，让用户获得新内容。
+
+- `'available'`: 仅当新的 service worker 可用时才显示更新弹出窗口
+
+- `'hint'`: 显示更新内容可用提示，并允许用户立即刷新。当新的 SW 成功注册后，将转为更新内容就绪弹窗。
+
+  当您希望用户立即查看新文档时，这很有帮助。
+
+  ::: note
+
+  如果用户在新 SW 就绪前选择刷新，当前的 Service Worker 将被注销，并且请求将开始向 Web 发出。新的 service worker 将开始安装并在安装后接管页面。
+
+  :::
+
+- `'force'`: 立即注销当前 Service Worker 然后刷新以获取新内容
+
+  ::: danger
+
+  虽然这可以确保用户访问的是最新内容，但这可能会影响访问体验。
+
+  :::
+
+::: warning
+
+文档的更新方式由以前的版本控制，因此当前选项仅影响此版本的下一次更新。
 
 :::
 
@@ -177,12 +212,19 @@ Safari 图标
 
 磁贴颜色，缺省会自动回退到主题色。
 
-### popupComponent
+## hintComponent
+
+- 类型: `string`
+- 默认值: `'SWHintPopup'`
+
+可填入自定义的提示弹窗组件路径。
+
+## updateComponent
 
 - 类型: `string`
 - 默认值: `'SWUpdatePopup'`
 
-可填入自定义的弹窗组件路径。
+可填入自定义的更新弹窗组件路径。
 
 ## appendBase
 
@@ -247,7 +289,12 @@ Safari 图标
     feature: string;
 
     /**
-     * 更新内容标签文字
+     * 更新内容提示文字
+     */
+    hint: string;
+
+    /**
+     * 更新内容可用文字
      */
     update: string;
   }

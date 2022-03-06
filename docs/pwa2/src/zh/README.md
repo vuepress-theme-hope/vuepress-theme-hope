@@ -4,7 +4,7 @@ title: 主页
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-pwa2
-tagline: 一个强大的 PWA 插件
+tagline: 渐进式网页应用 (Progressive Web App) 支持
 actions:
   - text: 快速上手 💡
     link: /zh/guide.html
@@ -16,8 +16,6 @@ actions:
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
 ---
-
-渐进式网页应用 (Progressive Web App) 支持。
 
 ## 使用插件
 

@@ -1,38 +1,39 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
+import { Transition, defineComponent, h, onMounted, ref } from "vue";
 import { locales } from "../define";
 import { UpdateIcon } from "../components/icons";
-import { usePWAEvent, useSkipWaiting } from "../composables";
+import { usePWAEvent, useUnregister } from "../composables";
 
 import type { VNode } from "vue";
 
 import "../styles/popup.scss";
 
 export default defineComponent({
-  name: "SWUpdatePopup",
+  name: "SWHintPopup",
 
   setup(_props, { slots }) {
     const locale = useLocaleConfig(locales);
-    const registration = ref<ServiceWorkerRegistration | null>(null);
+    const enabled = ref(false);
 
-    const enabled = computed(() => Boolean(registration.value));
+    const uninstall = (): void => {
+      if (enabled.value) {
+        void useUnregister().then((isSuccess) => {
+          if (isSuccess) window.location.reload();
+        });
 
-    const reload = (): void => {
-      if (registration.value) {
-        useSkipWaiting(registration.value);
-        window.location.reload();
-
-        registration.value = null;
+        enabled.value = false;
       }
     };
 
     onMounted(() => {
       const event = usePWAEvent();
 
-      event.on("updated", (reg) => {
-        if (reg) {
-          registration.value = reg;
-        }
+      event.on("updatefound", () => {
+        enabled.value = true;
+      });
+
+      event.on("updated", () => {
+        enabled.value = false;
       });
     });
 
@@ -43,18 +44,18 @@ export default defineComponent({
         () =>
           slots.default?.({
             enabled: enabled.value,
-            reload,
+            uninstall,
           }) ||
           (enabled.value
             ? h(
                 "button",
                 {
-                  class: "sw-update-popup",
+                  class: "sw-hint-popup",
                   tabindex: 0,
-                  onClick: () => reload(),
+                  onClick: () => uninstall(),
                 },
                 [
-                  locale.value.update,
+                  locale.value.hint,
                   h("span", { class: "icon-wrapper" }, h(UpdateIcon)),
                 ]
               )

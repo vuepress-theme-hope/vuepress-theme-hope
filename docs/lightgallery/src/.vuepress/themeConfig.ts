@@ -101,9 +101,10 @@ export default defineThemeConfig({
     photoSwipe: false,
 
     pwa: {
+      update: "hint",
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
-      cachePic: true,
+      appendBase: true,
       apple: {
         icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
@@ -180,7 +181,6 @@ export default defineThemeConfig({
           },
         ],
       },
-      appendBase: true,
     },
   },
 });

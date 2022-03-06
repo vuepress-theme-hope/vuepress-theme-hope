@@ -2,7 +2,7 @@ import { inject } from "vue";
 import type { Emitter } from "mitt";
 import type { InjectionKey } from "vue";
 
-export type PwaEvent = Emitter<{
+export type PWAEvent = Emitter<{
   ready: ServiceWorkerRegistration;
   registered: ServiceWorkerRegistration;
   cached: ServiceWorkerRegistration;
@@ -12,12 +12,12 @@ export type PwaEvent = Emitter<{
   error: Error;
 }>;
 
-export const pwaEventSymbol: InjectionKey<PwaEvent> = Symbol.for("PWAEvent");
+export const pwaEventSymbol: InjectionKey<PWAEvent> = Symbol.for("PWAEvent");
 
-export const usePwaEvent = (): PwaEvent => {
+export const usePWAEvent = (): PWAEvent => {
   const pwaEvent = inject(pwaEventSymbol);
 
-  if (!pwaEvent) throw new Error("usePwaEvent() is called without provider.");
+  if (!pwaEvent) throw new Error("usePWAEvent() is called without provider.");
 
   return pwaEvent;
 };

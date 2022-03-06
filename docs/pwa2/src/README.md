@@ -4,7 +4,7 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-pwa2
-tagline: A powerfull PWA plugin
+tagline: Turning on Progressive Web App Support
 actions:
   - text: Guide 💡
     link: /guide.html
@@ -16,8 +16,6 @@ actions:
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
 ---
-
-This plugin will turn on Progressive Web App Support.
 
 ## How to use
 

@@ -34,4 +34,13 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/global-components/SWHintPopup", {
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "@vuepress/client",
+      "vue",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
 ];

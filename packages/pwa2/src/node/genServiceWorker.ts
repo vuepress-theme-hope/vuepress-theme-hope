@@ -44,22 +44,18 @@ export const genServiceWorker = async (
   const swDest = dest("service-worker.js");
   const destDir = path.relative(process.cwd(), dest());
 
-  const additionalManifestEntries: ManifestEntry[] = [];
-
   const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
 
-  if (options.cacheHTML === false)
-    globPatterns.push("./index.html", "./404.html");
-  else globPatterns.push("**/*.html");
+  if (options.cacheHTML) globPatterns.push("**/*.html");
+  else globPatterns.push("./index.html", "./404.html");
 
   if (options.cachePic) globPatterns.push("**/*.{png,jpg,jpeg,bmp,gif,webp}");
 
   await generateSW({
     swDest,
     globDirectory: destDir,
-    cacheId: app.siteData.title || "hope",
+    cacheId: app.siteData.title || app.siteData.locales["/"]?.title || "hope",
     globPatterns,
-    additionalManifestEntries,
     cleanupOutdatedCaches: true,
     clientsClaim: true,
     maximumFileSizeToCacheInBytes: (options.maxSize || 2048) * 1024,

@@ -13,6 +13,7 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "Key Features",
     explain:
       "This app can be installed on your PC or mobile device.  This will allow this web app to look and behave like any other installed app.  You will find it in your app lists and be able to pin it to your home screen, start menus or task bars.  This installed web app will also be able to safely interact with other apps and your operating system. ",
+    hint: "New content found.",
     update: "New content is available.",
   },
 
@@ -27,7 +28,8 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "主要特色",
     explain:
       "该应用可以安装在您的 PC 或移动设备上。这将使该 Web 应用程序外观和行为与其他应用程序相同。它将在出现在应用程序列表中，并可以固定到主屏幕，开始菜单或任务栏。此 Web 应用程序还将能够与其他应用程序和您的操作系统安全地进行交互。",
-    update: "发现新内容可用",
+    hint: "发现新内容可用",
+    update: "新内容已就绪",
   },
 
   "/tw/": {
@@ -41,7 +43,8 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "主要特色",
     explain:
       "該應用可以安裝在您的 PC 或行動裝置上。這將使該 Web 應用程式外觀和行為與其他應用程式相同。它將在出現在應用程式列表中，並可以固定到主畫面，開始菜單或任務欄。此 Web 應用程式還將能夠與其他應用程式和您的操作系統安全地進行交互。",
-    update: "發現新内容可用",
+    hint: "發現新内容可用",
+    update: "新内容已就绪",
   },
 
   "/de/": {
@@ -55,6 +58,7 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "Features",
     explain:
       "Diese App kann auf Ihrem PC oder Mobilgerät installiert werden.  Dadurch sieht diese Web-App aus und verhält sich wie jede andere installierte App.  Sie finden sie in Ihren App-Listen und können sie an den Startbildschirm, die Startmenüs oder die Taskleisten anheften.  Diese installierte Web-App kann auch sicher mit anderen Apps und Ihrem Betriebssystem interagieren.",
+    hint: "Neue Inhalte sind verfügbar.",
     update: "Neue Inhalte sind verfügbar.",
   },
 
@@ -69,6 +73,7 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "Các tính năng chính",
     explain:
       "Ứng dụng này có thể được cài đặt trên PC hoặc thiết bị di động của bạn. Điều này sẽ cho phép ứng dụng web này trông và hoạt động giống như bất kỳ ứng dụng đã cài đặt nào khác. Bạn sẽ tìm thấy nó trong danh sách ứng dụng của mình và có thể ghim nó vào màn hình chính, menu bắt đầu hoặc thanh tác vụ. Ứng dụng web đã cài đặt này cũng sẽ có thể tương tác an toàn với các ứng dụng khác và hệ điều hành của bạn.",
+    hint: "Nội dung mới được tìm thấy",
     update: "Đã có nội dung mới",
   },
 
@@ -84,6 +89,7 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "Основні характеристики",
     explain:
       "Цю програму можна встановити на ПК або мобільний пристрій. Це дозволить цій веб-програмі виглядати та вести себе як будь-яка інша встановлена програма. Ви знайдете її у списках додатків і зможете закріпити на головному екрані, в меню «Пуск» або на панелі завдань. Ця встановлена веб-програма також зможе безпечно взаємодіяти з іншими програмами та вашою операційною системою. ",
+    hint: "Знайдено новий вміст",
     update: "Доступний новий контент.",
   },
 
@@ -99,6 +105,7 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "Ключевые характеристики",
     explain:
       "Это приложение может быть установлено на вашем компьютере или мобильном устройстве.  Это позволит веб-приложению выглядеть и вести себя как любое другое установленное приложение.  Вы найдете его в списках приложений и сможете закрепить его на домашнем экране, в меню Пуск или на панели задач.  Установленное веб-приложение также сможет безопасно взаимодействовать с другими приложениями и операционной системой. ",
+    hint: "Найден новый контент",
     update: "Доступен новый контент.",
   },
 
@@ -113,6 +120,7 @@ export const pwaLocales: PWALocaleConfig = {
     feature: "Características Chave",
     explain:
       "Esta aplicação web pode ser instalada no seu PC ou dispositivo móvel. Isso fará com que ela se pareça e se comporte como qualquer outra aplicação.  Você a encontrará na lista de apps e poderá adicionar seu ícone à tela de entrada, menus ou barras de tarefa.  Uma vez instalada, esta aplicação web também poderá interagir com outras aplicações ou com o próprio sistema operacional. ",
+    hint: "Novo conteúdo encontrado",
     update: "Novo conteúdo está disponível.",
   },
 };
