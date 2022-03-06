@@ -65,9 +65,16 @@ export interface PWALocaleData {
   feature: string;
 
   /**
-   * Update label text
+   * Update hint text
    *
-   * 更新内容标签文字
+   * 提示有更新文字
+   */
+  hint: string;
+
+  /**
+   * Update avaible text
+   *
+   * 更新可用文字
    */
   update: string;
 }

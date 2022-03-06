@@ -80,7 +80,7 @@ So if you generate very large HTML or JS files, please consider increasing this 
 ## cacheHTML
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
 Whether cache HTML files besides home page and 404 page.
 
@@ -97,6 +97,41 @@ Whether cache pictures
 - Default: `1024`
 
 Max picture size which allows to cache, with KB unit
+
+## update
+
+- Type: `'disabled' | 'available' | 'hint' | 'force'`
+- Default: `'available'`
+
+Controll logic when new content is found.
+
+- `'disabled'`: Do nothing even when new service worker is avaible. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+
+- `'available'`: Only display update popup when the new service worker is available
+
+- `'hint'`: Display a hint to let user choose to refresh immediately
+
+  This is helpful when you want users to see new docs immediately.
+
+  ::: note
+
+  If users choose to refresh, the current service worker will be unregister, and request will start comming to web. Later the new service worker will start installing and control current page after installed.
+
+  :::
+
+- `'force'`: unregister current service worker immediately then refresh to get new content
+
+  ::: danger
+
+  Though this ensure users are visiting newest content, but this may affect visiting experiences.
+
+  :::
+
+::: warning
+
+How docs are updated is controlled by a previous version, so the current option only effect next update from this version.
+
+:::
 
 ## apple
 
@@ -145,12 +180,19 @@ Tile icon
 
 The tile color will automatically fall back to themeColor if you don’t set it.
 
-## popupComponent
+## hintComponent
+
+- Type: `string`
+- Default: `'SWHintPopup'`
+
+You can fill in the custom hint popup component path.
+
+## updateComponent
 
 - Type: `string`
 - Default: `'SWUpdatePopup'`
 
-You can fill in the custom pop-up component path.
+You can fill in the custom update popup component path.
 
 ## appendBase
 
@@ -215,7 +257,12 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
     feature: string;
 
     /**
-     * Update label text
+     * Update hint text
+     */
+    hint: string;
+
+    /**
+     * Update avaible text
      */
     update: string;
   }

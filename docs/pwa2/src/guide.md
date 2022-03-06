@@ -13,7 +13,7 @@ The plugin brings enhanced PWA support to VuePress [^pwa-intro].
 
     It allows sites to install the site as an App on supported platform through a browser that supports this feature.
 
-## Content caching and updating
+## Intro
 
 Service Worker [^service-worker] (SW for short) is mainly used to cache and proxy site content.
 
@@ -27,19 +27,15 @@ Service Worker [^service-worker] (SW for short) is mainly used to cache and prox
 
     1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Woker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
 
-This plugin will automatically register Service Woker through `workbox-build`.
+This plugin will automatically register Service Woker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
 
-To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
+::: tip
 
-If you are an advanced user, you can also directly set `generateSwConfig` to pass options to `workbox-build`.
+If you are an advanced user, you can also set `generateSwConfig` directly to pass options to `workbox-build`.
 
-### Default cache
+:::
 
-By default, the plugin will pre-cache all files related to the site: `**/*.{html,js,css,svg}`
-
-At the same time, the plugin will cache font files: `**/*.{woff,woff2,eot,ttf,otf}`.
-
-### Cache Control
+## Cache control
 
 Based on the requirement of installable [^installable], the plugin provides related options for cache control.
 
@@ -59,7 +55,13 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     :::
 
-#### Picture Cache
+### Default cache
+
+By default, the plugin will pre-cache all the `js` `css` and `svg`.And only homepage and 404 `html` are cached.
+
+At the same time, the plugin will cache font files: `**/*.{woff,woff2,eot,ttf,otf}`.
+
+### Image Cache
 
 You can cache site pictures by setting the `cachePic` option to `true`.
 
@@ -71,11 +73,11 @@ We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.j
 
 :::
 
-#### HTML cache
+### HTML cache
 
-When your site is too large, you can set `cacheHTML` to `false` to cache only the homepage and 404 error pages.
+If you have small sites, and would like to make docusment fully offline available, you can set `cacheHTML` to `true` to cache all html files.
 
-::: tip Why can these be removed?
+::: tip Why only home and 404 page been cached by default?
 
 Though VuePress generates HTML files through SSR[^ssr] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
 
@@ -83,9 +85,9 @@ Though VuePress generates HTML files through SSR[^ssr] for all pages, these file
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization.
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 
-VuePress is essentially a SPA. This means that you can enter from the homepage to access all pages normally only caching the homepage.
+VuePress is essentially a SPA. This means that you only need to cache the home page and enter from the home page to access all pages normally. Therefore, not caching other HTML by default can effectively reduce the cache size (40% smaller in size) and speed up the SW update speed.
 
-When your site has a large number of pages or content, and the volume is too large after including HTML files, you can consider setting this option to `false`, which can reduce the volume by about 40%. The disadvantage is that users can only enter through the homepage and then navigate to the corresponding page in an offline environment. Direct access to a link will prompt a web page error.
+But this also has the disadvantage. If the user enters the website directly from a non-home page, the HTML file for the first page still needs to be loaded from the Internet. Also, in offline environment, users can only enter through the homepage and then navigate to the corresponding page by themselves. If they directly access a link, an inaccessible prompt will appear.
 
 :::
 
@@ -95,13 +97,35 @@ To prevent large files from being included in the pre-cache list, any files larg
 
 You can customize the maximum file size of the cache (unit: KB) with the `maxSize` option, or change the size limit of the picture (unit: KB) with `maxPicSize`.
 
-### Update popup
+## Update Control
 
-We provide an update popup when new content is successfully downloaded.
+We provide the `update` option to control how users receive updates.
 
-::: tip Custom popup
+The default value of the `update` option is `'available'`, which means that when new content available, the new SW will be installed silently in the background, and a pop-up window will prompt the user that the new content is ready after SW finish installing. Users can choose whether to refresh immediately to view new content.
 
-If you are not satisfied with the default popup component, you can write component and replace it by yourself. To do that, You need to register your popup component globally and pass the name of the component to the `popupComponent` option.
+Under the default behavior, users will still read old content before the SW is ready and they will not be prompted. If your project is still in building stage and you want to alert the user that he may be reading outdated content, you can set this to `'hint'`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
+
+If your docs are stable, or you're hosting a blog and don't care much about users receiving the latest version right away, you can set this to `'disabled'`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
+
+If you want to speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `'force'`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
+
+### Update prompt popup
+
+When new content is detected (new SW detected), an update prompt popup will appear in the bottom right corner and allow the user to refresh and apply.
+
+::: tip custom popup
+
+If you are not satisfied with the default popup, you can write your own component. You need to register your own popup component globally and pass the name of the component to the `hintComponent` option.
+
+:::
+
+### Update ready popup
+
+When the new content is ready (the new SW installed successfully and started waiting), the update ready popup will appear in the bottom right corner and allow the user to refresh and apply.
+
+::: tip custom popup
+
+If you are not satisfied with the default popup, you can write your own component. You need to register your popup component globally and pass the name of the component to the `updateComponent` option.
 
 :::
 
@@ -145,7 +169,7 @@ If the following fields are not set, they will try to fallback to the following 
 | orientation                 | `'portrait-primary'`                                                                                    |
 | prefer_related_applications | `false`                                                                                                 |
 
-For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts)
+For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts).
 
 ### Manual configuration
 
