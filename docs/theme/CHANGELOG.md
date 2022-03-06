@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2022-03-06)
+
+### Features
+
+- **pwa2:** rebuild update logic ([cbe295c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cbe295c50ebf1227a38613482b03045b75d3cca1))
+- unify options ([e373504](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e373504485c396ad4e2e9cf4fc7e0f8f6210a0bf))
+
 # [2.0.0-beta.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2022-03-05)
 
 **Note:** Version bump only for package theme-docs
