@@ -58,6 +58,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - **pwa2:** add appendBase option ([3a15da4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3a15da427e1b0046389440c58c02826baf3534a4))
 - **shared:** add `addViteSsrExternal` ([e1f5f33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e1f5f33c8e024dfbe47ba0714179e61be1daa80d))
 
+### BREAKING CHANGES
+
+- **pwa2:** `visitor` in frontmatter changed to `pageview` ([3a15da4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3a15da427e1b0046389440c58c02826baf3534a4))
+
 # [2.0.0-alpha.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.34...v2.0.0-alpha.35) (2022-02-27)
 
 **Note:** Version bump only for package vuepress-plugin-pwa2
