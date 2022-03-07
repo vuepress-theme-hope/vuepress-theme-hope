@@ -12,7 +12,7 @@ icon: config
 
 Function getting article info.
 
-Article info will injected in route meta so that they will be avaiable later in client composables.
+Article info will injected in route meta so that they will be available later in client composables.
 
 ### filter
 

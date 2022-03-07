@@ -65,7 +65,7 @@ Visitors can click on the avatar or name in "Blogger Information" to enter the p
 
 Set social links.
 
-- If the social media icon is avaiable below, you can set `MediaName: MediaLink` directly.
+- If the social media icon is available below, you can set `MediaName: MediaLink` directly.
 - Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaIconSvgString or MediaIconPath]`,
 
 ::: tip Available social media:

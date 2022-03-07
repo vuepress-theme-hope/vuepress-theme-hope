@@ -61,7 +61,7 @@ If the user sets:
 $colorA: red;
 ```
 
-Andyou are providing a default config file with:
+And you are providing a default config file with:
 
 ```scss
 // vuepress-plugin-abc/styles/palette.scss
@@ -217,7 +217,7 @@ $moveTransition: "width 0.3s ease";
 
 ::::
 
-### Avaiable in config module
+### Available in config module
 
 Same as config file, any variables in palette will be injected into `${id}-config` module, just in case you wanna use them in sass files.
 
