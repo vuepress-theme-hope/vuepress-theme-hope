@@ -1,4 +1,5 @@
 import { chalk, fs } from "@vuepress/utils";
+import { dirname } from "path";
 import { Feed } from "./feed";
 import { FeedPage } from "./page";
 import { getFilename, logger } from "./utils";
@@ -50,6 +51,7 @@ export class FeedGenerator {
     if (this.options.atom) {
       logger.load("Generating Atom Feed");
 
+      await fs.ensureDir(dirname(dest(atomOutputFilename)));
       await fs.outputFile(dest(atomOutputFilename), this.feed.atom());
 
       logger.update(
@@ -64,6 +66,7 @@ export class FeedGenerator {
     if (this.options.json) {
       logger.load("Generating JSON Feed");
 
+      await fs.ensureDir(dirname(dest(jsonOutputFilename)));
       await fs.outputFile(dest(jsonOutputFilename), this.feed.json());
 
       logger.update(
@@ -78,6 +81,7 @@ export class FeedGenerator {
     if (this.options.rss) {
       logger.load("Generating RSS Feed");
 
+      await fs.ensureDir(dirname(dest(rssOutputFilename)));
       await fs.outputFile(dest(rssOutputFilename), this.feed.rss());
 
       logger.update(
