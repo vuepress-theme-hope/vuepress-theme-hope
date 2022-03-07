@@ -20,12 +20,14 @@ export default defineClientAppSetup(() => {
     if (process.env.NODE_ENV === "production") {
       let refreshing = false;
 
-      navigator.serviceWorker.addEventListener("controllerchange", () => {
-        if (refreshing) return;
+      // only listen controllerchange event when a serviceWorker is actived
+      if (navigator.serviceWorker.controller)
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (refreshing) return;
 
-        refreshing = true;
-        window.location.reload();
-      });
+          refreshing = true;
+          window.location.reload();
+        });
 
       if (SW_FORCE_UPDATE) useForceUpdate(event);
 

@@ -2,7 +2,7 @@ import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { Transition, defineComponent, h, onMounted, ref } from "vue";
 import { locales } from "../define";
 import { UpdateIcon } from "../components/icons";
-import { usePWAEvent, useUnregister } from "../composables";
+import { usePWAEvent } from "../composables";
 
 import type { VNode } from "vue";
 
@@ -17,9 +17,13 @@ export default defineComponent({
 
     const uninstall = (): void => {
       if (enabled.value) {
-        void useUnregister().then((isSuccess) => {
-          if (isSuccess) window.location.reload();
-        });
+        // force refresh
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        window.location.reload(true);
+        // void useUnregister().then((isSuccess) => {
+        //   if (isSuccess) window.location.reload();
+        // });
 
         enabled.value = false;
       }
@@ -29,7 +33,10 @@ export default defineComponent({
       const event = usePWAEvent();
 
       event.on("updatefound", () => {
-        enabled.value = true;
+        void navigator.serviceWorker.getRegistration().then((registration) => {
+          // check whether a valid service worker is actived
+          if (registration && registration.active) enabled.value = true;
+        });
       });
 
       event.on("updated", () => {

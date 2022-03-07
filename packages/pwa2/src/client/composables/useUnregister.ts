@@ -2,14 +2,18 @@
  * Call `unregister()` inside current active worker
  */
 export const useUnregister = (): Promise<boolean> =>
-  navigator.serviceWorker.ready
-    .then((registration) =>
-      registration.unregister().then((found) => {
-        if (found) console.log("[PWA] Current service worker unregistered");
+  navigator.serviceWorker
+    .getRegistration()
+    .then((registration) => {
+      if (registration)
+        return registration.unregister().then((found) => {
+          if (found) console.log("[PWA] Current service worker unregistered");
 
-        return found;
-      })
-    )
+          return found;
+        });
+
+      return false;
+    })
     .catch((error) => {
       console.log(
         "[PWA] Unregister current service worker failed with error:",
