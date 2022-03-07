@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-03-07)
+
+### Bug Fixes
+
+- fix dev command on windows ([a299f8c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a299f8c4e4cd54684d86d8769406f0fbcf3eda15))
+
 # [2.0.0-beta.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2022-03-06)
 
 **Note:** Version bump only for package vuepress-plugin-copy-code2
