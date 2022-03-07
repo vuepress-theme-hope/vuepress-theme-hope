@@ -46,7 +46,7 @@ A small icon of the feed, probably used as favicon.
 ## count
 
 - Type: `number`
-- Default: `1000`
+- Default: `100`
 
 Set the maximum number of items in the feed. After all pages are sorted, the first `count` items will be intercepted.
 

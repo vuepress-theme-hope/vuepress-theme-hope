@@ -64,7 +64,7 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         .sort(sorter)
-        .slice(0, feedOptions.count || 1000);
+        .slice(0, feedOptions.count || 100);
 
       await new FeedGenerator(app, feedOptions, feedPages, {
         channel: channelOptions,

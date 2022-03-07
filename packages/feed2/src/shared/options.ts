@@ -55,7 +55,7 @@ export interface FeedOptions {
    *
    * 输出的最大条目数量
    *
-   * @default 1000
+   * @default 100
    */
   count?: number;
 
