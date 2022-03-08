@@ -1,63 +1,15 @@
 @use "sass:color";
 @use "sass:list";
 
-.tag-list-wrapper {
-  position: relative;
-  z-index: 2;
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.tag-list.tags-wrapper {
+  margin: 4vh 0;
+  line-height: 3.5rem;
 
-  a {
-    color: inherit;
-  }
 
   .tag {
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    min-width: 24px;
-    margin: 4px 6px;
-    padding: 3px 8px;
-    border-radius: 8px;
-    box-shadow: 0 1px 6px 0 var(--box-shadow);
-    color: var(--white);
-    font-size: 12px;
-    text-align: center;
-    overflow: hidden;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &.active {
-      transform: scale(1.1, 1.1);
-    }
-  }
-
-  @each $color in hope-config.$colors {
-    $index: list.index(hope-config.$colors, $color) - 1;
-
-    .tag#{$index} {
-      background: color.scale($color, $lightness: 10%);
-
-      &:hover,
-      &.active {
-        background: color.scale($color, $lightness: -5%);
-      }
-
-      #{hope-config.$darkSelector} & {
-        background: color.scale($color, $lightness: -5%);
-
-        &:hover,
-        &.active {
-          background: color.scale($color, $lightness: 10%);
-        }
-      }
-    }
+    font-size: 1.4rem;
+    padding-left: 1em;  // em, not rem, becuase it's leaving space
+                        // for the first character
   }
 }
+

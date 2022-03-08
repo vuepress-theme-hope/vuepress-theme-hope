@@ -1,3 +1,5 @@
+// Developer beware: this file is symlinked between components/ and theme/
+
 @use "sass:color";
 @use "sass:list";
 
@@ -5,101 +7,105 @@
   list-style: none;
   margin: 0;
   padding-left: 0;
-
-  .tag {
-    position: relative;
-
-    min-width: 1.5rem;
-    margin: 0 0.125rem;
-    padding: 0.125rem 0.25rem 0.125rem 0.625rem;
-
-    font-size: 0.625rem;
-    font-weight: bold;
-    line-height: 1.5;
-
+  .tag-item {
     display: inline-block;
+    margin-right: 0.5rem;
     vertical-align: middle;
     overflow: hidden;
+  }
 
-    transition: background-color var(--color-transition, 0.3s),
-      color var(--color-transition, 0.3s);
+  /*.tag-item */ .tag {
+  display: inline-block;
+
+  margin: 0 0.125rem;
+  padding: 0.125rem 0.25rem 0.125rem 0.625rem;
+
+  font-size: 0.625rem;
+  line-height: 1.5em;
+
+  transition: background-color var(--color-transition, 0.3s),
+  color var(--color-transition, 0.3s);
+
+  &.clickable:hover {
+    cursor: pointer;
+  }
+
+  &.active {
+    font-weight: bold;
+  }
+}
+
+@each $color in hope-config.$colors {
+  $index: list.index(hope-config.$colors, $color) - 1;
+
+  .tag#{$index} {
+    background: color.scale($color, $lightness: 80%);
+    background: linear-gradient(
+    135deg,
+    transparent 0.75em,
+    color.scale($color, $lightness: 80%) 0
+    )
+    top,
+    linear-gradient(
+    45deg,
+    transparent 0.75em,
+    color.scale($color, $lightness: 80%) 0
+    )
+    bottom;
+    background-size: 100% 52% !important ;
+    background-repeat: no-repeat !important;
+
+    color: color.scale($color, $lightness: 20%);
+
+    #{hope-config.$darkSelector} & {
+      background: color.scale($color, $lightness: -55%);
+      background: linear-gradient(
+      135deg,
+      transparent 0.75em,
+      color.scale($color, $lightness: -55%) 0
+      )
+      top,
+      linear-gradient(
+      45deg,
+      transparent 0.75em,
+      color.scale($color, $lightness: -55%) 0
+      )
+      bottom;
+
+      color: color.scale($color, $lightness: -0%);
+    }
 
     &.clickable:hover {
-      cursor: pointer;
-    }
-  }
-
-  @each $color in hope-config.$colors {
-    $index: list.index(hope-config.$colors, $color) - 1;
-
-    .tag#{$index} {
-      background: color.scale($color, $lightness: 90%);
+      background: color.scale($color, $lightness: 75%);
       background: linear-gradient(
-            135deg,
-            transparent 0.75em,
-            color.scale($color, $lightness: 90%) 0
-          )
-          top,
-        linear-gradient(
-            45deg,
-            transparent 0.75em,
-            color.scale($color, $lightness: 90%) 0
-          )
-          bottom;
-      background-size: 100% 52% !important ;
-      background-repeat: no-repeat !important;
-
-      color: color.scale($color, $lightness: 20%);
+      135deg,
+      transparent 0.75em,
+      color.scale($color, $lightness: 75%) 0
+      )
+      top,
+      linear-gradient(
+      45deg,
+      transparent 0.75em,
+      color.scale($color, $lightness: 75%) 0
+      )
+      bottom;
 
       #{hope-config.$darkSelector} & {
-        background: color.scale($color, $lightness: -75%);
+        background: color.scale($color, $lightness: -60%);
         background: linear-gradient(
-              135deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: -75%) 0
-            )
-            top,
-          linear-gradient(
-              45deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: -75%) 0
-            )
-            bottom;
-
-        color: color.scale($color, $lightness: -10%);
-      }
-
-      &.clickable:hover {
-        background: color.scale($color, $lightness: 75%);
-        background: linear-gradient(
-              135deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: 75%) 0
-            )
-            top,
-          linear-gradient(
-              45deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: 75%) 0
-            )
-            bottom;
-
-        #{hope-config.$darkSelector} & {
-          background: color.scale($color, $lightness: -60%);
-          background: linear-gradient(
-                135deg,
-                transparent 0.75em,
-                color.scale($color, $lightness: -60%) 0
-              )
-              top,
-            linear-gradient(
-                45deg,
-                transparent 0.75em,
-                color.scale($color, $lightness: -60%) 0
-              )
-              bottom;
-        }
+        135deg,
+        transparent 0.75em,
+        color.scale($color, $lightness: -60%) 0
+        )
+        top,
+        linear-gradient(
+        45deg,
+        transparent 0.75em,
+        color.scale($color, $lightness: -60%) 0
+        )
+        bottom;
       }
     }
   }
+}
 }

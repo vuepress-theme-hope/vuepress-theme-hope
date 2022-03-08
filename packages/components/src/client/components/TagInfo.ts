@@ -60,7 +60,11 @@ export default defineComponent({
                 "ul",
                 { class: "tags-wrapper" },
                 props.tag.map(({ name, path }, index) =>
-                  h("li", {}, h(Tag, { name, path, color: props.color, colorIndex: index }))
+                  h("li", 
+                    {
+                      class: "tag-item",
+                    }, 
+                    h(Tag, { name, path, color: props.color, colorIndex: index }))
                 )
               ),
               h("meta", {
