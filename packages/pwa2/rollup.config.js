@@ -29,6 +29,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
+      "register-service-worker",
       "vue",
       /\.scss$/,
     ],
@@ -38,6 +39,7 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
+      "register-service-worker",
       "vue",
       /\.scss$/,
     ],

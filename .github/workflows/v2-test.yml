@@ -16,15 +16,17 @@ jobs:
     strategy:
       matrix:
         node:
+          - "12"
           - "14"
           - "16"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+      # use node 16 to build project here
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16
 
       - name: restore lerna
         uses: actions/cache@v2
@@ -58,6 +60,11 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run build
 
+      # test with specific node version
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
       - name: Webpack Demo build
         run: |
           yarn run demo:webpack-build
@@ -72,15 +79,17 @@ jobs:
     strategy:
       matrix:
         node:
+          - "12"
           - "14"
           - "16"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+      # use node 16 to build project here
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16
 
       - name: restore lerna
         uses: actions/cache@v2
@@ -114,6 +123,11 @@ jobs:
         env:
           NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run build
+
+      # test with specific node version
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
 
       - name: Webpack build test
         run: |
