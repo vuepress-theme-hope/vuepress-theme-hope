@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-03-08)
+
+### Features
+
+- **feed2:** change `count` default value ([9fd41dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9fd41dc2ac3bc9ae4366f893c1671d35556bfe7b))
+
 # [2.0.0-beta.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-03-07)
 
 **Note:** Version bump only for package feed-docs
