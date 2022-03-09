@@ -137,7 +137,7 @@ export const resolveMultiSidebarItems = (
 
   // find matching config
   for (const base of keys) {
-    if (route.path.startsWith(base))
+    if (decodeURI(route.path).startsWith(base))
       return resolveArraySidebarItems(
         sidebarConfig[base] ?? [],
         headingDepth,
