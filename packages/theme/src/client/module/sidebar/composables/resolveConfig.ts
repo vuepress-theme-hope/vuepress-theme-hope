@@ -141,7 +141,7 @@ export const resolveMultiSidebarItems = (
       const matchedConfig = sidebarConfig[base];
 
       return matchedConfig
-        ? resolveArraySidebarItems(matchedConfig ?? [], headingDepth, base)
+        ? resolveArraySidebarItems(matchedConfig, headingDepth, base)
         : [];
     }
   }
