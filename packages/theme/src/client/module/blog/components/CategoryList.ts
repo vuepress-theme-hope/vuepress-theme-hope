@@ -1,4 +1,7 @@
-import { capitalize } from "@mr-hope/vuepress-shared/lib/client";
+import {
+  capitalize,
+  generateIndexfromHash,
+} from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
@@ -19,7 +22,7 @@ export default defineComponent({
       h(
         "ul",
         { class: "category-list-wrapper" },
-        Object.keys(categoryMap.value.map).map((category, index) => {
+        Object.keys(categoryMap.value.map).map((category) => {
           const { path, items } = categoryMap.value.map[category];
 
           return h(
@@ -27,7 +30,8 @@ export default defineComponent({
             {
               class: [
                 "category",
-                `category${index % 9}`,
+                // TODO: magic number 9 is tricky here
+                `category${generateIndexfromHash(category, 9)}`,
                 { active: path === route.path },
               ],
             },

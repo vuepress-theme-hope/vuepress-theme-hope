@@ -1,3 +1,4 @@
+import { generateIndexfromHash } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
@@ -30,11 +31,16 @@ export default defineComponent({
       h(
         "ul",
         { class: "tag-list-wrapper" },
-        tagList.value.map(({ name, path }, index) =>
+        tagList.value.map(({ name, path }) =>
           h(
             "li",
             {
-              class: ["tag", `tag${index % 9}`, { active: isActive(name) }],
+              class: [
+                "tag",
+                // TODO: magic number 9 is tricky here
+                `tag${generateIndexfromHash(name, 9)}`,
+                { active: isActive(name) },
+              ],
             },
             h(RouterLink, { to: path }, () =>
               h("div", { class: "tag-name" }, name)
