@@ -23,14 +23,14 @@ Text of the badge
 
 #### type
 
-- Type: `"tip" | "warn" | "error"`
+- Type: `"tip" | "warning" | "danger"`
 - Default: `"tip"`
 
 Badge types:
 
 - <Badge text="tip" type="tip" vertical="middle" />
-- <Badge text="warn" type="warn" vertical="middle" />
-- <Badge text="error" type="error" vertical="middle" />
+- <Badge text="warning" type="warning" vertical="middle" />
+- <Badge text="danger" type="danger" vertical="middle" />
 
 #### color
 
@@ -51,5 +51,5 @@ Vertical position of the badge
 You can use it in Markdown to add some status for titles or links:
 
 ```md
-### Badge <Badge text="Building" type="warn"/> <Badge text="MrHope" color="grey" />
+### Badge <Badge text="Building" type="warning"/> <Badge text="MrHope" color="grey" />
 ```

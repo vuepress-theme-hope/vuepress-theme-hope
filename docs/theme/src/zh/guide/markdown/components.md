@@ -23,14 +23,14 @@ tag:
 
 #### type
 
-- 类型: `"tip" | "warn" | "error"`
+- 类型: `"tip" | "warning" | "danger"`
 - 默认值: `"tip"`
 
 徽章的类型
 
 - <Badge text="tip" type="tip" vertical="middle" />
-- <Badge text="warn" type="warn" vertical="middle" />
-- <Badge text="error" type="error" vertical="middle" />
+- <Badge text="warning" type="warning" vertical="middle" />
+- <Badge text="danger" type="danger" vertical="middle" />
 
 #### color
 
@@ -51,5 +51,5 @@ tag:
 你可以在 Markdown 中使用这个组件来为标题或链接添加一些状态:
 
 ```md
-### Badge <Badge text="Building" type="warn"/> <Badge text="MrHope" color="grey" />
+### Badge <Badge text="Building" type="warning"/> <Badge text="MrHope" color="grey" />
 ```
