@@ -35,6 +35,6 @@
     "@types/inquirer": "^8.2.0",
     "cac": "^6.7.12",
     "execa": "^5.1.1",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.1"
   }
 }
