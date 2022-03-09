@@ -137,12 +137,13 @@ export const resolveMultiSidebarItems = (
 
   // find matching config
   for (const base of keys) {
-    if (decodeURI(route.path).startsWith(base))
-      return resolveArraySidebarItems(
-        sidebarConfig[base] ?? [],
-        headingDepth,
-        base
-      );
+    if (decodeURI(route.path).startsWith(base)) {
+      const matchedConfig = sidebarConfig[base];
+
+      return matchedConfig
+        ? resolveArraySidebarItems(matchedConfig ?? [], headingDepth, base)
+        : [];
+    }
   }
 
   console.warn(`${route.path} do not have valid sidebar config`);

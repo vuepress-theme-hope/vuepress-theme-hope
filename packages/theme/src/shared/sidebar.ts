@@ -22,7 +22,7 @@ export type HopeThemeSidebarArrayConfig = HopeThemeSidebarItem[];
 
 export type HopeThemeSidebarObjectConfig = Record<
   string,
-  HopeThemeSidebarArrayConfig
+  HopeThemeSidebarArrayConfig | false
 >;
 
 export type HopeThemeSidebarConfig =
