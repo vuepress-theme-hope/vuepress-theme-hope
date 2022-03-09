@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
+
+### Bug Fixes
+
+- **theme:** fix sidebar group matching when containing none URI standard characters ([4302b76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4302b76a4d7757a75c8f4748dad5afd0a3601b07))
+
+### Features
+
+- **components:** add info and note type ([ed3ab71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed3ab7141e6db77389481ad4841d210746bb9308))
+- generate color from hash ([6abcbf8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6abcbf8469dd2afecad36b4db3934ff66db110a0))
+- **theme:** allow false in SidebarGroupConfig ([e5572f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5572f0c808f808fa5dee10f63c052cb8070a033))
+
 # [2.0.0-beta.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-03-08)
 
 ### Bug Fixes

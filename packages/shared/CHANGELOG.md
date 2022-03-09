@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
+
+### Features
+
+- generate color from hash ([6abcbf8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6abcbf8469dd2afecad36b4db3934ff66db110a0))
+
 # [2.0.0-beta.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-03-08)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared
