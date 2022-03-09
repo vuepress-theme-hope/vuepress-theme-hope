@@ -2,6 +2,8 @@
   --badge-tip-color: #42b983;
   --badge-warning-color: #f4cd00;
   --badge-danger-color: #f55;
+  --badge-info-color: #0295ff;
+  --badge-note-color: #666;
 }
 
 .badge {
@@ -32,6 +34,14 @@
 
   &.danger {
     background-color: var(--badge-danger-color);
+  }
+
+  &.info {
+    background-color: var(--badge-info-color);
+  }
+
+  &.note {
+    background-color: var(--badge-note-color);
   }
 
   & + & {
