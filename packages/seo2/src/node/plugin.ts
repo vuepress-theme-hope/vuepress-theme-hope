@@ -1,7 +1,7 @@
+import { stripTags } from "@mr-hope/vuepress-shared";
 import { resolvePagePermalink } from "@vuepress/core";
 import { generateRobotsTxt, generateSeo } from "./seo";
 import { appendSEO } from "./inject";
-import { stripTags } from "./stripTags";
 import { logger, md2text } from "./utils";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
