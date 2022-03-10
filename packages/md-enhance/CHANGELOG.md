@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-03-10)
+
+### Features
+
+- **md-enhance:** add mathml tags for better a11y ([62ebf67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/62ebf6782db0dc449226baa81a0d05e32e90f088))
+
 # [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

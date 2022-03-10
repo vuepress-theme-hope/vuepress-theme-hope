@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-03-10)
+
+### Bug Fixes
+
+- **seo2:** use locale title if possible ([194c6cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/194c6cb900a24c1c4124b4cf7ebc8f2460555622))
+
 # [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
 
 **Note:** Version bump only for package vuepress-plugin-seo2

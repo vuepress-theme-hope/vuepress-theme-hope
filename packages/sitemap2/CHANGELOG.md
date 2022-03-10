@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-03-10)
+
+### Features
+
+- **theme:** add tag check ([731b32d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/731b32d9f547a0bd6698c8cbb0ee92d28bf573ba))
+
 # [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
 
 **Note:** Version bump only for package vuepress-plugin-sitemap2

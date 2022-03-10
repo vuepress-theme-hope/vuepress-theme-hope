@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-03-10)
+
+### Features
+
+- **feed2:** support i18n ([47471bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47471bbcfe516f04e35c46c4c8ec4a626f38ce00))
+
 # [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
 
 **Note:** Version bump only for package vuepress-plugin-feed2
