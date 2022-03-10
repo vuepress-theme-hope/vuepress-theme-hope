@@ -1,4 +1,5 @@
 export * from "./constant";
+export * from "./customElement";
 export * from "./devServer";
 export * from "./locales";
 export * from "./logger";

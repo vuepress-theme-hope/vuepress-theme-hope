@@ -225,8 +225,6 @@ export const katex: PluginWithOptions<Katex.KatexOptions> = (
   md,
   options = { throwOnError: false }
 ) => {
-  const katexOptions: Katex.KatexOptions = { ...options, output: "html" };
-
   md.inline.ruler.after("escape", "inlineTex", inlineTex);
   // It’s a workaround here because types issue
   md.block.ruler.after("blockquote", "blockTex", blockTex, {
@@ -234,7 +232,7 @@ export const katex: PluginWithOptions<Katex.KatexOptions> = (
   });
 
   md.renderer.rules.inlineTex = (tokens, index): string =>
-    katexInline(tokens[index].content, katexOptions);
+    katexInline(tokens[index].content, options);
   md.renderer.rules.blockTex = (tokens, index): string =>
-    `${katexBlock(tokens[index].content, katexOptions)}\n`;
+    `${katexBlock(tokens[index].content, options)}\n`;
 };

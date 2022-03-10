@@ -1,4 +1,5 @@
 import {
+  addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
@@ -22,8 +23,10 @@ import {
   tasklist,
 } from "./markdown-it";
 import { usePlugins } from "./usePlugins";
+import { MATHML_TAGS } from "./utils";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared";
 
 export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
@@ -48,6 +51,16 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   const mermaidEnable = getStatus("mermaid");
   const presentationEnable = getStatus("presentation");
   const texEnable = getStatus("tex");
+
+  const katexOptions: KatexOptions = {
+    macros: {
+      // support more symbols
+      "\\liiiint": "\\int\\!\\!\\!\\iiint",
+      "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
+      "\\idotsint": "\\int\\!\\cdots\\!\\int",
+    },
+    ...(typeof options.tex === "object" ? options.tex : {}),
+  };
 
   const revealPlugins =
     typeof options.presentation === "object" &&
@@ -119,20 +132,13 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
           typeof options.tasklist === "object" ? options.tasklist : {},
         ]);
       if (mermaidEnable) markdownIt.use(mermaid);
-      if (texEnable)
-        markdownIt.use(katex, {
-          macros: {
-            // support more symbols
-            "\\liiiint": "\\int\\!\\!\\!\\iiint",
-            "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
-            "\\idotsint": "\\int\\!\\cdots\\!\\int",
-          },
-          ...(typeof options.tex === "object" ? options.tex : {}),
-        });
+      if (texEnable) markdownIt.use(katex, katexOptions);
       if (presentationEnable) markdownIt.use(presentation);
     },
 
     onInitialized: (app): void => {
+      if (katexOptions.output !== "html") addCustomElement(app, MATHML_TAGS);
+
       addViteSsrNoExternal(app, [
         "@mr-hope/vuepress-shared",
         "vuepress-plugin-md-enhance",
