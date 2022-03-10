@@ -20,11 +20,13 @@ tag:
 
 `vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `pwa` 选项作为插件选项提供给 `vuepress-plugin-pwa2`。
 
-你可以将 `themeConfig.plugins.pwa` 设置为 `true` 来以默认配置启用插件。<Badge text="不推荐" type="warning" />
-
 :::
 
 <!-- more -->
+
+## 快速启用 <Badge text="不推荐" type="warning" />
+
+你可以将 `themeConfig.plugins.pwa` 设置为 `true` 来让主题自动生成必要配置并快速启用插件。但我们推荐你按照下方说明对部分选项进行手动配置。
 
 ## 介绍
 
@@ -78,7 +80,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
 你可以在 `themeConfig.plugins.pwa` 中通过设置 `cachePic` 选项为 `true` 来缓存站点图片。
 
-如果您的站点体积不大，且配图大多为关键性说明，希望可以在离线模式下显示，建议将此项设置为 `true`。
+如果你的站点体积不大，且配图大多为关键性说明，希望可以在离线模式下显示，建议将此项设置为 `true`。
 
 ::: info 图片识别
 
@@ -207,7 +209,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 所以如果你不在 `themeConfig.plugins.pwa` 中配置 `manifest.icons`，访问者只能享受到 Service Worker 缓存带来的离线可访问性，而并不能作为 PWA 进行安装。
 
-此外，该插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果您计划部署到子目录，则应自行将 url 前缀附加到自己的清单 Urls 中。
+此外，该插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果你计划部署到子目录，则应自行将 url 前缀附加到自己的清单 Urls 中。
 
 但是，如果你需要的所有东西都在 base 文件夹下，你可以在 `themeConfig.plugins.pwa` 中设置 `appendBase: true` 让插件将 `base` 自动附加到任何地址。
 

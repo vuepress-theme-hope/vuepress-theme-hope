@@ -33,6 +33,16 @@ category:
 
 如果你确定某处有问题，请在 GitHub 上 [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) 并指出问题在完整的具体细节。
 
+## `TypeError: Invalid value used as weak map key`
+
+如果你遇到这样的错误，你可能在项目中使用了非标准标签。
+
+有像 `<center>` 或 `<font>` 这样的标签，它们在 HTML1.0 规范中，但自 1999 年发布的 HTML4.0 以来被标记为不推荐，然后在 2008 年的 HTML5 版本中被删除。所以 Vue 在默认设置下不允许你使用它们。 你应当移除它们并使用标准的 HTML5 标签。
+
+如果要删除它们，请使用 `--debug` Flag 运行主题，你将收到警告日志，告诉你可能无法识别的标签。
+
+如果你仍然想使用它们，请查看 [此处](https://v2.vuepress.vuejs.org/zh/guide/markdown.html#%E9%9D%9E%E6%A0%87%E5%87%86%E7%9A%84-html-%E6%A0%87%E7%AD%BE) 以获得解决方法。
+
 ## Vite 冷启动速度慢
 
 这是预期的行为。我们正在添加更多功能，这意味着根据你使用的功能，与 `@vuepress/theme-default` 相比，我们代码行数约为 2 倍到 8 倍。因此，将主题和插件代码转译并发送到浏览器预计将从 `@vuepress/theme-default` 中的 `0.8s - 2s` 增加到 `3s - 8s` (范围取决于机器性能) 。

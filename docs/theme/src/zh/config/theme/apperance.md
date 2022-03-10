@@ -23,7 +23,7 @@ tag:
 
 启用此功能将禁用一些花哨的样式。
 
-当您想提供“纯文档站点”时很有用。
+当你想提供“纯文档站点”时很有用。
 
 :::
 
@@ -93,7 +93,7 @@ Whether show the "full screen" button.
 
 ::: note
 
-您只能在 `themeConfig` 下直接设置此选项。
+你只能在 `themeConfig` 下直接设置此选项。
 
 :::
 
@@ -106,6 +106,6 @@ Whether show the "full screen" button.
 
 ::: note
 
-您只能在 `themeConfig` 下直接设置此选项。
+你只能在 `themeConfig` 下直接设置此选项。
 
 :::

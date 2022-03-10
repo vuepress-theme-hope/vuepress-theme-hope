@@ -33,6 +33,16 @@ If the issue exists or there is somthing you don’t know how to solve, welcome 
 
 If you are sure there is an issue somewhere, please [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) on GitHub and point out the issue in full specific details.
 
+## `TypeError: Invalid value used as weak map key`
+
+If you are facing error like this, you are probably using non-standard tags in your project.
+
+There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked as unrecommanded since HTML4.0 released in 1999, then removed in HTML5 release in 2008. So Vue is not allowing you to use them by default. You should probably remove them and use standard HTML5 tag.
+
+If you want to remove them, run theme with `--debug` flag, and you will get warning logs telling you tags that probably not be recognized.
+
+If you want to use them anyway, check [here](https://v2.vuepress.vuejs.org/guide/markdown.html#non-standard-html-tags) to get a workaround.
+
 ## Slow in a cold boot with Vite
 
 This is the expect behaviour. We are adding more features, which means we have 2× to 8× lines of code comparing with `@vuepress/theme-default` according to the functions you are using. So transpiling and sending the theme and plugins code to broswer is expected to increase from `0.8s - 2s` in `@vuepress/theme-default` to `3s - 8s` (range due to machine performance).

@@ -123,3 +123,12 @@ Feed 生成控制器
 :::
 
 详见 [Feed 生成器](./getter.md).
+
+## locales
+
+- 类型: `Record<string, BaseFeedOptions>`
+- 必填: 否
+
+你可以将它用于每个语言环境的特定选项。
+
+除 `hostname` 外，上述任何选项均受支持。

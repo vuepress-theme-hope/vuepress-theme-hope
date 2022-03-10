@@ -25,6 +25,10 @@ You can set `pwa: true` to enable the plugin with default options. <Badge text="
 
 <!-- more -->
 
+## Direct Enable <Badge text="Not recommended" type="warning" />
+
+You can set `themeConfig.plugins.pwa` to `true` to let theme automatically generate the necessary config and enable plugins quickly. However, we recommend you to manually set some options by following the instructions below.
+
 ## Intro
 
 Service Worker [^service-worker] (SW for short) is mainly used to cache and proxy site content.

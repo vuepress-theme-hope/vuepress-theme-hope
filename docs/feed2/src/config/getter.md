@@ -9,31 +9,37 @@ You can take full control of feed items generation by setting `getter` in the pl
 
 - Type: `(page: Page) => string`
 
-Project title getter
+Item title getter
 
 ## getter.link
 
 - Type: `(page: Page) => string`
 
-project link getter
+Item link getter
 
 ## getter.description
 
 - Type: `(page: Page) => string | undefined`
 
-item description getter
+Item description getter
+
+::: note
+
+Due to Atom support html in summary, so you can return html content here if possible, but the content must start with mark `html:`.
+
+:::
 
 ## getter.content
 
 - Type: `(page: Page) => string`
 
-Project content getter
+Item content getter
 
 ## getter.author
 
 - Type: `(page: Page) => FeedAuthor[]`
 
-Project author getter.
+Item author getter.
 
 ::: note
 
@@ -77,7 +83,7 @@ interface FeedAuthor {
 
 - Type: `(page: Page) => FeedCategory[] | undefined`
 
-Item classification getter.
+Item category getter.
 
 ::: details FeedCategory format
 
@@ -110,7 +116,7 @@ interface FeedCategory {
 
 - Type: `(page: Page) => FeedEnclosure | undefined`
 
-Item attachment getter.
+Item enclosure getter.
 
 ::: details FeedEnclosure format
 
@@ -143,19 +149,19 @@ interface FeedEnclosure {
 
 - Type: `(page: Page) => Date | undefined`
 
-Project release date getter
+Item release date getter
 
 ## getter.lastUpdateDate
 
 - Type: `(page: Page) => Date`
 
-Project last update date getter
+Item last update date getter
 
 ## getter.image
 
 - Type: `(page: Page) => string`
 
-Project Image Getter
+Item Image Getter
 
 ::: note
 
@@ -167,7 +173,7 @@ Make sure you are returning a full URL.
 
 - Type: `(page: Page) => FeedContributor[]`
 
-Project Contributor Getter
+Item Contributor Getter
 
 ::: note
 
@@ -211,4 +217,4 @@ interface FeedContributor {
 
 - Type: `(page: Page) => string | undefined`
 
-Project copyright getter
+Item copyright getter

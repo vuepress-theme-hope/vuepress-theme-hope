@@ -43,7 +43,7 @@ npm i -D vuepress-plugin-sass-palette@next
 
 ### 使用
 
-您必须在插件初始化期间调用 `useSassPalettePlugin` 函数来使用此插件。。
+你必须在插件初始化期间调用 `useSassPalettePlugin` 函数来使用此插件。。
 
 :::: code-group
 

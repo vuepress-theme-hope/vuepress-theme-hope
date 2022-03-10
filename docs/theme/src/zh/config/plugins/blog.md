@@ -15,74 +15,74 @@ tag:
 
 你可以将 `themeConfig.plugins.blog` 设置为 `true` 来启用博客功能。
 
-有关说明，请参阅[博客介绍](../../guide/blog/intro.md)；
+有关说明，请参阅[博客介绍](../../guide/blog/intro.md)。
 
 ## 选项
 
-## autoExcerpt
+### autoExcerpt
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否为每个页面生成摘录。
 
-## article
+### article
 
 - 类型: `string`
 - 默认值: `/article/`
 
 文章列表路由路径。
 
-## category
+### category
 
 - 类型: `string`
 - 默认值: `/category/`
 
 分类地图路由路径。
 
-## categoryItem
+### categoryItem
 
 - 类型: `string`
 - 默认值: `/category/:name/`
 
 分类列表路由路径。
 
-## tag
+### tag
 
 - 类型: `string`
 - 默认值: `/tag/`
 
 标签地图路由路径。
 
-## tagItem
+### tagItem
 
 - 类型: `string`
 - 默认值: `/tag/:name/`
 
 标签列表路由路径。
 
-## encrypted
+### encrypted
 
 - 类型: `string`
 - 默认值: `/加密/`
 
 加密文章列表路由路径。
 
-## slides
+### slides
 
 - 类型: `string`
 - 默认值: `/slides/`
 
 幻灯片列表路由路径。
 
-## star
+### star
 
 - 类型: `string`
 - 默认值: `/star/`
 
 收藏文章列表路由路径。
 
-## timeline
+### timeline
 
 - 类型: `string`
 - 默认值: `/timeline/`

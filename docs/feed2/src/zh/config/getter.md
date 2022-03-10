@@ -23,6 +23,11 @@ icon: customize
 
 项目描述获取器
 
+::: note
+由于为 Atom 在摘要中支持 html，所以如果可能的话，你可以在这里返回 html 内容，但内容必须以标记 `html:` 开头。
+
+:::
+
 ## getter.content
 
 - 类型: `(page: Page) => string`

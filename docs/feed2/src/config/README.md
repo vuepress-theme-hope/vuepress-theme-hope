@@ -121,3 +121,12 @@ The plugin is providing a resonable getter by default, if you want full control 
 :::
 
 For details, see [Feed Getter](./getter.md).
+
+## locales
+
+- Type: `Record<string, BaseFeedOptions>`
+- Required: No
+
+You can use it to specific options for each locale.
+
+Any options above are supported except `hostname`.

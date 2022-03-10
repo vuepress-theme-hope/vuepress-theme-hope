@@ -28,7 +28,7 @@ tag:
 
 如果你正在提供中文文档，你可以将其设置到 `themeConfig.plugins.search.locales[对应路径]` 中。
 
-::: details 中文多语言配置
+::::: details 中文多语言配置
 
 :::: code-group
 
@@ -78,7 +78,7 @@ module.exports = defineHopeConfig({
 
 :::
 
-:::
+:::::
 
 ## 使用 `@vuepress/docsearch`
 
@@ -227,7 +227,7 @@ Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` �
 
 你可以通过 `themeConfig.plugins.docsearch.locales` 配置多语言。
 
-::: details 中文多语言配置示例
+::::: details 中文多语言配置示例
 
 :::: code-group
 
@@ -358,6 +358,8 @@ module.exports = defineHopeConfig({
 :::
 
 ::::
+
+:::::
 
 ## 补充说明
 

@@ -7,7 +7,7 @@ icon: change
 
 - Valine 服务被移除 ![移除](https://img.shields.io/badge/-removed-red)
 
-  Valine 缺乏维护，并且它可能会泄露您的隐私。您应该改用 [Waline](https://waline.js.org)。
+  Valine 缺乏维护，并且它可能会泄露你的隐私。你应该改用 [Waline](https://waline.js.org)。
 
 - Vssue 目前缺失 ![警告](https://img.shields.io/badge/-warning-yellow)
 

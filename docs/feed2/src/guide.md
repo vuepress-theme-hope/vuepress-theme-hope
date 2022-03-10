@@ -71,3 +71,9 @@ For detailed options and their default values, see [Configuration → Project Se
 You can take full control of feed items generation by configuring the `getter` in the plugin options.
 
 For detailed options and their default values, see [Configuration → Feed Getter](./config/getter.md).
+
+### I18n Config
+
+The plugin generates separate feeds for each language.
+
+You can provide different settings for different languages via `locales` in the plugin options.

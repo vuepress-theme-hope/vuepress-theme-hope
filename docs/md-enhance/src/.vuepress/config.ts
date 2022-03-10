@@ -34,40 +34,31 @@ export default defineHopeConfig({
     },
   },
 
-  theme: "hope",
-
   themeConfig,
 
-  plugins: [
-    {
-      name: "theme-enhance",
-      alias: {
-        "@KatexPlayground": path.resolve(
-          __dirname,
-          "./components/KatexPlayground"
-        ),
-        "@theme-hope/components/HomeHero": path.resolve(
-          __dirname,
-          "./components/HopeHero"
-        ),
-      },
-      onInitialized: (app) => {
-        if (app.env.isDev)
-          addViteOptimizeDepsInclude(app, [
-            "@mr-hope/vuepress-shared/lib/client",
-            "dayjs",
-            "dayjs/plugin/localizedFormat",
-            "dayjs/plugin/objectSupport",
-            "dayjs/plugin/timezone",
-            "dayjs/plugin/utc",
-          ]);
+  alias: {
+    "@KatexPlayground": path.resolve(__dirname, "./components/KatexPlayground"),
+    "@theme-hope/components/HomeHero": path.resolve(
+      __dirname,
+      "./components/HopeHero"
+    ),
+  },
 
-        addViteOptimizeDepsInclude(app, [
-          "three",
-          "three/examples/jsm/controls/OrbitControls",
-          "three/examples/jsm/loaders/STLLoader",
-        ]);
-      },
-    },
-  ],
+  onInitialized: (app) => {
+    if (app.env.isDev)
+      addViteOptimizeDepsInclude(app, [
+        "@mr-hope/vuepress-shared/lib/client",
+        "dayjs",
+        "dayjs/plugin/localizedFormat",
+        "dayjs/plugin/objectSupport",
+        "dayjs/plugin/timezone",
+        "dayjs/plugin/utc",
+      ]);
+
+    addViteOptimizeDepsInclude(app, [
+      "three",
+      "three/examples/jsm/controls/OrbitControls",
+      "three/examples/jsm/loaders/STLLoader",
+    ]);
+  },
 });

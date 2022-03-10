@@ -151,6 +151,15 @@ The plugin is providing a resonable getter by default, if you want full control 
 
 For details, see [Feed Getter][feed-config-getter].
 
+## locales
+
+- Type: `Record<string, BaseFeedOptions>`
+- Required: No
+
+You can use it to specific options for each locale.
+
+Any options above are supported except `hostname`.
+
 [feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
 [feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/config/channel.html
 [feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/config/getter.html

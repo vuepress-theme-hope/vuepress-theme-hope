@@ -21,7 +21,7 @@ features:
 
   - title: 幻灯片页面
     icon: slides
-    details: 添加幻灯片页面以显示您喜欢的内容
+    details: 添加幻灯片页面以显示你喜欢的内容
     link: https://vuepress-theme-hope.github.io/v2/zh/guide/layout/slides
 
   - title: 布局增强
