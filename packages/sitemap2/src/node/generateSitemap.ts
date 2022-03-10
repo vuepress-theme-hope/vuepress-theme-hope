@@ -101,7 +101,7 @@ const generatePageMap = (
             !reportedLocales.includes(localePrefix)
           ) {
             logger.warn(
-              `[@vuepress/plugin-sitemap] 'lang' option for ${localePrefix} is missing`
+              `[sitemap2] 'lang' option for ${localePrefix} is missing`
             );
             reportedLocales.push(localePrefix);
           }
@@ -125,10 +125,7 @@ const generatePageMap = (
 
     // log sitemap info in debug mode
     if (app.env.isDebug) {
-      logger.info(
-        `[@vuepress/plugin-sitemap] sitemap option for ${page.path}`,
-        sitemapInfo
-      );
+      logger.info(`[sitemap2] sitemap option for ${page.path}`, sitemapInfo);
     }
 
     pagesMap.set(page.path, sitemapInfo);

@@ -28,7 +28,7 @@ const SVG_TAGS =
   "polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol," +
   "text,textPath,title,tspan,unknown,use,view";
 
-const tagHint = (tag: string, isDebug = false): void => {
+export const tagHint = (tag: string, isDebug = false): void => {
   if (
     isDebug &&
     !HTML_TAGS.split(",").includes(tag) &&

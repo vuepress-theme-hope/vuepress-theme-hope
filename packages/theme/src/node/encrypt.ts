@@ -8,7 +8,7 @@ import type {
 import type { App } from "@vuepress/core";
 import type { HopeThemeEncryptOptions } from "../shared";
 
-export const handleWebpackOptions = (app: App): void => {
+export const handleCrytoForWebpack = (app: App): void => {
   const { bundler, bundlerConfig } = app.options;
 
   // for webpack
