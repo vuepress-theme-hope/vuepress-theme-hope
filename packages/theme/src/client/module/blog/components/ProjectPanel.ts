@@ -34,18 +34,18 @@ export default defineComponent({
     const pure = usePure();
     const navigate = useNavigate();
 
-    const renderIcon = (icon = ""): VNode | null => {
+    const renderIcon = (icon = "", alt = "icon"): VNode | null => {
       // built in icon
       if (AVAILABLE_PROJECT_TYPES.includes(icon))
         return h(resolveComponent(`${icon}-icon`));
 
       // it's a full image link
       if (icon.match(/^https?:\/\//))
-        return h("img", { src: icon, class: "image" });
+        return h("img", { src: icon, alt, class: "image" });
 
       // it's an absolute image link
       if (icon.startsWith("/"))
-        return h("img", { src: withBase(icon), class: "image" });
+        return h("img", { src: withBase(icon), alt, class: "image" });
 
       // render as icon font
       return h("span", { class: ["icon", `${iconPrefix.value}${icon}`] });
@@ -69,7 +69,7 @@ export default defineComponent({
                     onClick: () => navigate(link),
                   },
                   [
-                    renderIcon(icon),
+                    renderIcon(icon, name),
                     h("div", { class: "name" }, name),
                     h("div", { class: "desc" }, desc),
                   ]
