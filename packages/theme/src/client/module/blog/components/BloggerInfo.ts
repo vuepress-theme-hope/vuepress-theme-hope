@@ -27,7 +27,6 @@ export default defineComponent({
   setup() {
     const blogOptions = useBlogOptions();
     const siteLocale = useSiteLocaleData();
-    const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const articles = useArticles();
     const categoryMap = useCategoryMap();
@@ -38,7 +37,7 @@ export default defineComponent({
     const bloggerName = computed(
       () =>
         blogOptions.value.name ||
-        getAuthor(themeData.value.author)[0]?.name ||
+        getAuthor(themeLocale.value.author)[0]?.name ||
         siteLocale.value.title
     );
 

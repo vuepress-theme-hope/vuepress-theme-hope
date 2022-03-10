@@ -6,7 +6,7 @@ import {
 } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, inject, reactive } from "vue";
-import { usePure, useThemeData, useThemeLocaleData } from "./themeData";
+import { usePure, useThemeLocaleData } from "./themeData";
 
 import type {
   ArticleCategory,
@@ -28,7 +28,7 @@ import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 declare const ENABLE_BLOG: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
-  const themeData = useThemeData();
+  const themeLocale = useThemeLocaleData();
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
 
   return computed(() => {
@@ -37,7 +37,7 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
     if (author) return getAuthor(author);
     if (author === false) return [];
 
-    return getAuthor(themeData.value.author, false);
+    return getAuthor(themeLocale.value.author, false);
   });
 };
 

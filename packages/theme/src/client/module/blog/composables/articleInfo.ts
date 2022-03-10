@@ -10,7 +10,7 @@ import { useCategoryMap } from "./categoryMap";
 import { useBlogOptions } from "./options";
 import { useTagMap } from "./tagMap";
 
-import { usePure, useThemeData } from "@theme-hope/composables";
+import { usePure, useThemeLocaleData } from "@theme-hope/composables";
 
 import type {
   ArticleCategory,
@@ -24,7 +24,7 @@ import type { ArticleInfo } from "../../../../shared";
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
 export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
-  const themeData = useThemeData();
+  const themeLocale = useThemeLocaleData();
 
   return computed(() => {
     const { author } = info.value;
@@ -32,7 +32,7 @@ export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
     if (author) return getAuthor(author);
     if (author === false) return [];
 
-    return getAuthor(themeData.value.author, false);
+    return getAuthor(themeLocale.value.author, false);
   });
 };
 

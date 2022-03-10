@@ -20,9 +20,9 @@ export const useThemeLocaleData =
     _useThemeLocaleData<HopeThemeLocaleConfig>();
 
 export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> => {
-  const themeData = useThemeData();
+  const themeLocale = useThemeLocaleData();
 
-  return computed(() => getAuthor(themeData.value.author, false));
+  return computed(() => getAuthor(themeLocale.value.author, false));
 };
 
 export const useIconPrefix = (): ComputedRef<string> =>

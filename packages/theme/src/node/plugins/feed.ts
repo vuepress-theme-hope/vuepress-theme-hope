@@ -1,3 +1,4 @@
+import { deepAssign } from "@mr-hope/vuepress-shared";
 import { feed } from "vuepress-plugin-feed2";
 
 import type { PluginConfig } from "@vuepress/core";
@@ -15,9 +16,21 @@ export const resolveFeedPlugin = (
   )
     return ["", false];
 
-  return feed({
-    hostname: themeConfig.hostname,
-    author: themeConfig.author,
-    ...(options || {}),
-  } as FeedOptions);
+  return feed(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    deepAssign(
+      {
+        hostname: themeConfig.hostname,
+        author: themeConfig.author,
+        locales: Object.entries(themeConfig.locales).map(
+          ([localePath, { author, copyright }]) => [
+            localePath,
+            { author, channel: { copyright } },
+          ]
+        ),
+      },
+      options || {}
+    )
+  );
 };

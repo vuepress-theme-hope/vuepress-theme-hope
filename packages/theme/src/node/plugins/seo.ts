@@ -34,6 +34,7 @@ export const resolveSEOPlugin = (
 
   return seoPlugin({
     hostname: themeConfig.hostname,
+    author: themeConfig.author,
     isArticle,
     ...(seo || {}),
   } as SeoOptions);
