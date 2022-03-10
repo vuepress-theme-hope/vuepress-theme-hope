@@ -175,7 +175,7 @@ export class FeedPage {
       if (isUrl(cover)) return cover;
     }
 
-    const result = /!\[.*?\]\(.*?\)/iu.exec(this.page.content);
+    const result = /!\[.*?\]\((.*?)\)/iu.exec(this.page.content);
 
     if (result) {
       if (isAbsoluteUrl(result[1]))
