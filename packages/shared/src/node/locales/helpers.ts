@@ -17,7 +17,7 @@ export const showLangError = (lang: string, plugin = ""): void => {
 ${
   lang === "root"
     ? ""
-    : `You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v2/packages/${
+    : `You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/${
         plugin || "<YOUR PLUGIN>"
       }/src/node/locales.ts in this repository.
 `
@@ -53,21 +53,19 @@ export const lang2Path = (lang = ""): string => {
  * @param app VuePress Node App
  * @returns root language
  */
-export const getRootLang = (app: App): HopeLang => {
+export const getRootLang = (app: App): string => {
   // infer from siteLocale
   const siteLocales = app.siteData.locales;
 
-  if (siteLocales?.["/"] && checkLang(siteLocales["/"]?.lang))
-    return siteLocales["/"].lang as HopeLang;
+  if (siteLocales?.["/"] && siteLocales["/"]?.lang)
+    return siteLocales["/"].lang;
 
   // infer from themeLocale
   const options = app.options as AppOptions<BaseThemeConfig>;
   const themeLocales = options.themeConfig.locales;
 
-  if (themeLocales?.["/"] && checkLang(themeLocales["/"]?.lang))
-    return themeLocales["/"].lang as HopeLang;
-
-  showLangError("root");
+  if (themeLocales?.["/"] && themeLocales["/"]?.lang)
+    return themeLocales["/"].lang;
 
   return "en-US";
 };
