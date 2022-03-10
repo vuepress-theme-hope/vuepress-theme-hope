@@ -3,11 +3,7 @@ import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
 import SocialMedia from "@theme-hope/module/blog/components/SocialMedia";
-import {
-  useNavigate,
-  useThemeData,
-  useThemeLocaleData,
-} from "@theme-hope/composables";
+import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
 
 import {
   useArticles,
