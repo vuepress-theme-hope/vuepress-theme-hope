@@ -66,7 +66,7 @@ export class FeedPage {
     if (this.frontmatter.description) return this.frontmatter.description;
 
     if (this.page.excerpt)
-      return resolveHTML(this.app.markdown.render(this.page.excerpt));
+      return `html:${resolveHTML(this.app.markdown.render(this.page.excerpt))}`;
 
     return undefined;
   }
@@ -175,7 +175,7 @@ export class FeedPage {
       if (isUrl(cover)) return cover;
     }
 
-    const result = /!\[.*?\]\((.*?)\)/iu.exec(this.page.content);
+    const result = /!\[.*?\]\(.*?\)/iu.exec(this.page.content);
 
     if (result) {
       if (isAbsoluteUrl(result[1]))

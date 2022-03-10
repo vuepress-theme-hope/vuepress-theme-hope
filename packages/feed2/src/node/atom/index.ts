@@ -1,6 +1,6 @@
 import { encodeCDATA, encodeXML } from "@mr-hope/vuepress-shared";
 import { js2xml } from "xml-js";
-import { generator } from "../utils";
+import { FEED_GENERATOR } from "../utils";
 
 import type { Feed } from "../feed";
 import type { FeedAuthor, FeedCategory } from "../../shared";
@@ -64,7 +64,7 @@ export const renderAtom = (feed: Feed): string => {
       updated: channel.lastUpdated
         ? channel.lastUpdated.toISOString()
         : new Date().toISOString(),
-      generator: generator,
+      generator: FEED_GENERATOR,
       link: [{ _attributes: { rel: "self", href: encodeXML(links.atom) } }],
     },
   };
@@ -106,11 +106,17 @@ export const renderAtom = (feed: Feed): string => {
     };
 
     // entry: recommended elements
-    if (item.description)
-      entry.summary = {
-        _attributes: { type: "html" },
-        _cdata: encodeCDATA(item.description),
-      };
+    if (item.description) {
+      entry.summary = item.description.startsWith("html:")
+        ? {
+            _attributes: { type: "html" },
+            _cdata: encodeCDATA(item.description.substring(5)),
+          }
+        : {
+            _attributes: { type: "html" },
+            _text: item.description,
+          };
+    }
 
     if (item.content)
       entry.content = {

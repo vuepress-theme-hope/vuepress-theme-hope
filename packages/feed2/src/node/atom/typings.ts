@@ -81,7 +81,7 @@ export interface AtomEntry {
   /**
    * 	Conveys a short summary, abstract, or excerpt of the entry.
    */
-  summary?: AtomCDATA;
+  summary?: AtomText | AtomCDATA;
   /**
    * Specifies a category that the entry belongs to.
    *

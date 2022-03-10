@@ -1,7 +1,5 @@
 import { Logger } from "@mr-hope/vuepress-shared";
 
-import type { FeedOptions } from "../shared";
-
 export const logger = new Logger("vuepress-plugin-feed2");
 
 export const compareDate = (
@@ -65,17 +63,4 @@ export const getImageMineType = (ext = ""): string =>
       : ""
   }`;
 
-export const getFilename = (
-  options: FeedOptions
-): {
-  atomOutputFilename: string;
-
-  jsonOutputFilename: string;
-  rssOutputFilename: string;
-} => ({
-  atomOutputFilename: options.atomOutputFilename || "atom.xml",
-  jsonOutputFilename: options.jsonOutputFilename || "feed.json",
-  rssOutputFilename: options.rssOutputFilename || "rss.xml",
-});
-
-export const generator = "vuepress-plugin-feed2";
+export const FEED_GENERATOR = "vuepress-plugin-feed2";

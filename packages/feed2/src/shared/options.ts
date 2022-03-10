@@ -1,14 +1,7 @@
 import type { Page } from "@vuepress/core";
 import type { FeedChannelOption, FeedGetter } from "./feed";
 
-export interface FeedOptions {
-  /**
-   * Deploy hostname
-   *
-   * 部署的域名
-   */
-  hostname: string;
-
+export interface BaseFeedOptions {
   /**
    * Whether to output Atom syntax files.
    *
@@ -117,4 +110,16 @@ export interface FeedOptions {
    * @description 插件已经在默认情况下提供了合理的获取器，如果你需要完全控制 Feed 生成，你可以设置此项。
    */
   getter?: FeedGetter;
+}
+
+export interface FeedOptions extends BaseFeedOptions {
+  /**
+   * Deploy hostname
+   *
+   * 部署的域名
+   */
+  hostname: string;
+
+  /** Locales for feed */
+  locales?: Record<string, BaseFeedOptions>;
 }

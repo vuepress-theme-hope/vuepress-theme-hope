@@ -1,32 +1,20 @@
 ---
 home: true
-title: vuepress-plugin-feed2
+title: Home
+icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-feed2
-tagline: 为 VuePress 提供流支持
+tagline: Feed plugin for VuePress2
+actions:
+  - text: Guide 💡
+    link: /guide.html
+    type: primary
+
+  - text: Config 🛠
+    link: /config/
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyright: false
 ---
 
-## 使用插件
-
-### 安装
-
-```bash
-npm i -D vuepress-plugin-feed2
-```
-
-### 使用
-
-```js
-// .vuepress/config.js
-module.exports = {
-  plugins: [
-    [
-      "feed2",
-      {
-        // 你的配置选项
-      },
-    ],
-  ],
-};
-```
+## How to use

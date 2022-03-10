@@ -1,6 +1,7 @@
+import { stripTags } from "@mr-hope/vuepress-shared";
 import { encodeCDATA, encodeXML, isUrl } from "@mr-hope/vuepress-shared";
 import * as convert from "xml-js";
-import { generator } from "../utils";
+import { FEED_GENERATOR } from "../utils";
 
 import type { Feed } from "../feed";
 import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../../shared";
@@ -91,7 +92,7 @@ export const renderRSS = (feed: Feed): string => {
             ? channel.lastUpdated.toUTCString()
             : new Date().toUTCString(),
         },
-        generator: { _text: generator },
+        generator: { _text: FEED_GENERATOR },
         docs: {
           _text: "https://validator.w3.org/feed/docs/rss2.html",
         },
@@ -137,7 +138,11 @@ export const renderRSS = (feed: Feed): string => {
     };
 
     if (entry.description)
-      item.description = { _text: encodeXML(entry.description) };
+      item.description = {
+        _text: entry.description.startsWith("html:")
+          ? stripTags(entry.description.substring(5))
+          : entry.description,
+      };
 
     /**
      * Item Author

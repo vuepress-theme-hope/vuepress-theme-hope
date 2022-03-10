@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { stripTags } from "@mr-hope/vuepress-shared";
+
 import type { Feed } from "../feed";
 import type { FeedAuthor } from "../../shared";
 import type { JSONAuthor, JSONContent, JSONItem } from "./typings";
@@ -42,7 +44,13 @@ export const renderJSON = (feed: Feed): string => {
       title: item.title,
       url: item.link,
       id: item.guid || item.link,
-      ...(item.description ? { summary: item.description } : {}),
+      ...(item.description
+        ? {
+            summary: item.description.startsWith("html:")
+              ? stripTags(item.description.substring(5))
+              : item.description,
+          }
+        : {}),
 
       // json_feed distinguishes between html and text content
       // but since we only take a single type, we'll assume HTML

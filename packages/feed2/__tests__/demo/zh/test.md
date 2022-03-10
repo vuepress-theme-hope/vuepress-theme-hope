@@ -1,14 +1,14 @@
 ---
-title: Test Page
+title: 测试页面
 author: Mr.Hope
 date: 2021-01-01
 category:
-  - Test
+  - 测试
 tag:
   - test
 ---
 
-Here is article excerpt.
+这里是**详情**。
 
 ```js
 const a = 1;
@@ -16,9 +16,9 @@ const a = 1;
 
 <!-- more -->
 
-## Content
+## 内容
 
-Article main **content**:
+文章的主要**内容**:
 
 1. A
 1. B

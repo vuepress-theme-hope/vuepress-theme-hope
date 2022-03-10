@@ -4,10 +4,6 @@ import type { DefaultThemeOptions } from "@vuepress/theme-default";
 export default defineUserConfig<DefaultThemeOptions>({
   base: process.env.VuePress_BASE || "/",
 
-  title: "Feed",
-
-  description: "VuePress Feed",
-
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "author", content: "Mr.Hope" }],
@@ -23,17 +19,21 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   locales: {
     "/": {
-      lang: "zh-CN",
+      title: "Feed",
+      description: "VuePress Feed",
+      lang: "en-US",
     },
+    "/zh/": { title: "流", description: "VuePress 流", lang: "zh-CN" },
   },
 
   themeConfig: {
     logo: "/logo.svg",
 
-    navbar: [{ text: "主页", link: "/" }],
+    navbar: [{ text: "Home", link: "/" }],
 
     locales: {
-      "/": {
+      "/zh/": {
+        navbar: [{ text: "主页", link: "/zh/" }],
         lang: "zh-CN",
         selectText: "选择语言",
         lastUpdatedText: "上次编辑于",
@@ -42,5 +42,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
-  plugins: [["feed2", { hostname: "https://example.com" }]],
+  plugins: [
+    [
+      "feed2",
+      { hostname: "https://example.com", atom: true, rss: true, json: true },
+    ],
+  ],
 });
