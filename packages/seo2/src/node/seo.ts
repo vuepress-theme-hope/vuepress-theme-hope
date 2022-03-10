@@ -33,8 +33,12 @@ export const generateSeo = (
     git = {},
   } = page;
   const { siteData } = app;
-  const locales = getLocales(page.lang, siteData.locales);
 
+  const title =
+    siteData.locales[page.pathLocale].title ||
+    siteData.title ||
+    siteData.locales["/"].title ||
+    "";
   const author =
     pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
   const { updatedTime } = git;
@@ -53,6 +57,8 @@ export const generateSeo = (
     ? getLink(options.hostname, base, banner)
     : "";
 
+  const locales = getLocales(page.lang, siteData.locales);
+
   let publishedTime = "";
 
   if (date instanceof Date) publishedTime = new Date(date).toISOString();
@@ -65,7 +71,7 @@ export const generateSeo = (
   return {
     OGP: {
       "og:url": getLink(options.hostname, base, permalink || page.path),
-      "og:site_name": siteData.title,
+      "og:site_name": title,
       "og:title": articleTitle,
       "og:description": page.frontmatter.description || "",
       "og:type": isArticle(page) ? "article" : "website",
@@ -75,7 +81,7 @@ export const generateSeo = (
       "og:locale:alternate": locales,
 
       "twitter:card": "summary_large_image",
-      "twitter:image:alt": siteData.title,
+      "twitter:image:alt": title,
 
       "article:author": author[0]?.name,
       "article:tag": articleTags,
