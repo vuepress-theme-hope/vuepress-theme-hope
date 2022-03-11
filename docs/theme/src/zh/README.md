@@ -65,7 +65,7 @@ features:
     link: /zh/guide/feature/encrypt.html
 
   - title: 复制按钮
-    icon: lock
+    icon: copy
     details: 一键复制代码块中的代码
     link: /zh/guide/feature/copy-code.html
 
