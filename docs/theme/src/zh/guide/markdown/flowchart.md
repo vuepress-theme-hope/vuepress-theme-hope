@@ -382,6 +382,6 @@ e=>end: End:>http://www.yahoo.com
 
 如果要在流程图中强调特定路径，则可以另外定义它，如下所示:
 
-```
+```md
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
 ```
