@@ -9,6 +9,7 @@ export const getLayoutConfig = (
 ): Record<string, string> => {
   const layoutConfig: Record<string, string> = {
     Layout: path.resolve(__dirname, "../client/layouts/Layout.js"),
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     404: path.resolve(__dirname, "../client/layouts/404.js"),
   };
 

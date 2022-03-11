@@ -65,12 +65,14 @@ export const renderRSS = (feed: Feed): string => {
     rss: {
       _attributes: {
         version: "2.0",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "xmlns:atom": "http://www.w3.org/2005/Atom",
       },
       channel: {
         /**
          * @see http://validator.w3.org/feed/docs/warning/MissingAtomSelfLink.html
          */
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "atom:link": {
           _attributes: {
             href: links.rss,

@@ -50,6 +50,7 @@ export const renderAtom = (feed: Feed): string => {
     feed: {
       _attributes: {
         xmlns: "http://www.w3.org/2005/Atom",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         ...(channel.language ? { "xml:lang": channel.language } : {}),
       },
       id: channel.link,

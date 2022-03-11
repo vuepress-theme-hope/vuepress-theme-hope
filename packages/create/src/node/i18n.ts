@@ -23,6 +23,7 @@ export interface CreateI18n {
 }
 
 export const i18n: Record<Lang, CreateI18n> = {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   "zh-CN": {
     getVersion: "获取依赖的最新版本...",
     createPackage: "生成 package.json...",
@@ -43,6 +44,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     licenseMessage: "设置协议",
     i18nMessage: "项目需要用到多语言么?",
   },
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   "en-US": {
     getVersion: "Getting lastest version of deps...",
     createPackage: "Generating package.json...",

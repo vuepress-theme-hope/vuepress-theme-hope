@@ -125,6 +125,17 @@ overrides:
 
         - selector:
             - property
+          format: null
+          custom:
+            regex: (^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)
+            match: true
+          # allow locales path like `/zh/`, alias starting with `@` and css property like `line-width`
+          filter: (^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector:
+            - property
           format:
             - camelCase
             - PascalCase

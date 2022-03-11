@@ -44,6 +44,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "There’s nothing here.",
         "How did we get here?",
@@ -98,6 +99,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "这里什么也没有",
         "我们是怎么来到这儿的？",
@@ -152,6 +154,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "這裡什麼也沒有",
         "我們是怎麼來到這兒的？",
@@ -206,6 +209,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "Hier gibt es nichts.",
         "Wie sind wir hier hergekommen?",
@@ -260,6 +264,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "Ở đây chẳng có gì cả.",
         "Sao chúng ta lại đến đây?",
@@ -314,6 +319,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "Здесь ничего нет.",
         "Как мы сюда попали?",
@@ -368,6 +374,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "Тут немає нічого.",
         "Як ми сюди потрапили?",
@@ -422,6 +429,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
     },
 
     routeLocales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "404msg": [
         "Não há nada aqui.",
         "Como chegou até aqui?",

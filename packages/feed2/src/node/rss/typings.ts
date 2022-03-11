@@ -95,6 +95,7 @@ export interface RSSItem {
    */
   source: RSSSource;
 
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   "content:encoded"?: RSSCDATA;
 }
 
@@ -108,15 +109,18 @@ export interface RSSContent {
   rss: {
     _attributes: {
       version: string;
-
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "xmlns:atom"?: string;
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "xmlns:content"?: string;
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "xmlns:dc"?: string;
     };
     channel: {
       /**
        * atom link
        */
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "atom:link": {
         _attributes: {
           href: string;

@@ -55,8 +55,11 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   const katexOptions: KatexOptions = {
     macros: {
       // support more symbols
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "\\liiiint": "\\int\\!\\!\\!\\iiint",
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "\\idotsint": "\\int\\!\\cdots\\!\\int",
     },
     ...(typeof options.tex === "object" ? options.tex : {}),

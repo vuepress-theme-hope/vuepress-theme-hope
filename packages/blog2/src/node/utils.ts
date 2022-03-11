@@ -14,6 +14,7 @@ export const getPageMap = (
   // initialize pageMap
   Object.keys({
     // make sure root locale exists
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "/": {},
     ...app.options.locales,
   }).forEach((path) => {

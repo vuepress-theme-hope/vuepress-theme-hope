@@ -41,6 +41,7 @@ export const getFeedOptions = (
   Object.fromEntries(
     Object.keys({
       // root locale must exists
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": {},
       ...app.siteData.locales,
     }).map((localePath) => {

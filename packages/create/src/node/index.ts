@@ -24,8 +24,11 @@ cli
     const targetFolder = resolve(process.cwd(), dir);
     const packageJsonPath = resolve(process.cwd(), "package.json");
     const scripts = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "docs:build": `vuepress build ${dir}`,
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "docs:clean-dev": `vuepress dev ${dir} --clean-cache`,
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "docs:dev": `vuepress dev ${dir}`,
     };
 
