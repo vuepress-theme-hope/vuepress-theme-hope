@@ -1,6 +1,6 @@
 {
   "name": "add-this-docs",
-  "version": "2.0.0-beta.9",
+  "version": "2.0.0-beta.10",
   "private": true,
   "description": "Docs for vuepress-plugin-add-this",
   "license": "MIT",
@@ -21,8 +21,8 @@
     "@types/three": "0.138.0",
     "@vuepress/plugin-docsearch": "2.0.0-beta.36",
     "three": "0.138.3",
-    "vuepress-plugin-add-this": "2.0.0-beta.9",
-    "vuepress-theme-hope": "2.0.0-beta.9",
+    "vuepress-plugin-add-this": "2.0.0-beta.10",
+    "vuepress-theme-hope": "2.0.0-beta.10",
     "vuepress-vite": "2.0.0-beta.36",
     "vuepress-webpack": "2.0.0-beta.36"
   }
