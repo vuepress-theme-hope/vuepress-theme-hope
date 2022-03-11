@@ -8,7 +8,6 @@ export const en = defineSidebarConfig({
     {
       icon: "creative",
       text: "Guide",
-      collapsable: true,
       prefix: "guide/",
       link: "guide/",
       children: "structure",

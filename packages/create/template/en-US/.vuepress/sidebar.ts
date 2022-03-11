@@ -7,10 +7,9 @@ export default defineSidebarConfig([
   {
     icon: "creative",
     text: "Guide",
-    collapsable: true,
     prefix: "guide/",
     link: "guide/",
-    children: ["page", "markdown", "disable", "encrypt"],
+    children: "structure",
   },
   {
     text: "Articles",

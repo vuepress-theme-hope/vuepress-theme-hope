@@ -1,4 +1,5 @@
 ---
+index: 3
 title: 组件禁用
 icon: config
 category:

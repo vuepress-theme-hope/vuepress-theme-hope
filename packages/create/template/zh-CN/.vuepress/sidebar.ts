@@ -8,7 +8,8 @@ export default defineSidebarConfig([
     text: "如何使用",
     icon: "creative",
     prefix: "guide/",
-    children: ["", "page", "markdown", "disable", "encrypt"],
+    link: "guide/",
+    children: "structure",
   },
   {
     text: "文章",

@@ -9,6 +9,7 @@ export const zh = defineSidebarConfig({
       text: "如何使用",
       icon: "creative",
       prefix: "guide/",
+      link: "guide/",
       children: "structure",
     },
     {
