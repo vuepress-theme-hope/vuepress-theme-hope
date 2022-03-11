@@ -1,28 +1,38 @@
-import { HopeThemeNavGroup, AutoLink } from "./navbar";
+import type {} from "./navbar";
+import type { AutoLink, TextItem } from "./utils";
 
-/**
- * Sidebar types
- */
-// user config
 export type HopeThemeSidebarPageItem = AutoLink;
 
-export interface HopeThemeSidebarGroupItem
-  extends HopeThemeNavGroup<
-    HopeThemeSidebarPageItem | HopeThemeSidebarGroupItem | string
-  > {
+export interface HopeThemeSidebarGroupItem extends TextItem {
+  prefix?: string;
+  link?: string;
   collapsable?: boolean;
+  children: (
+    | HopeThemeSidebarPageItem
+    | HopeThemeSidebarGroupItem
+    | HopeThemeSidebarStructureItem
+    | string
+  )[];
+}
+
+export interface HopeThemeSidebarStructureItem extends TextItem {
+  prefix: string;
+  link?: string;
+  collapsable?: boolean;
+  children: "structure";
 }
 
 export type HopeThemeSidebarItem =
   | HopeThemeSidebarPageItem
   | HopeThemeSidebarGroupItem
+  | HopeThemeSidebarStructureItem
   | string;
 
 export type HopeThemeSidebarArrayConfig = HopeThemeSidebarItem[];
 
 export type HopeThemeSidebarObjectConfig = Record<
   string,
-  HopeThemeSidebarArrayConfig | false
+  HopeThemeSidebarArrayConfig | "structure" | false
 >;
 
 export type HopeThemeSidebarConfig =

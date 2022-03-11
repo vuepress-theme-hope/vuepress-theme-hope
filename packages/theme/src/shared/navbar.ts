@@ -1,29 +1,12 @@
-/**
- * Base nav item, displayed as text
- */
-export interface HopeThemeNavLinkItem {
-  text: string;
-  icon?: string;
-  ariaLabel?: string;
-}
+import type { AutoLink, TextItem } from "./utils";
 
 /**
  * Base nav group, has nav items children
  */
-export interface HopeThemeNavGroup<T> extends HopeThemeNavLinkItem {
+export interface HopeThemeNavGroup<T> extends TextItem {
   prefix?: string;
   link?: string;
   children: T[];
-}
-
-/**
- * Props for `<AutoLink>`
- */
-export interface AutoLink extends HopeThemeNavLinkItem {
-  link: string;
-  rel?: string;
-  target?: string;
-  activeMatch?: string;
 }
 
 /**

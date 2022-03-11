@@ -7,7 +7,8 @@ import { extendsPage } from "./extends";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
 import { checkSocialMediaIcons } from "./socialMedia";
-import { writeThemeColorScss } from "./themeColor";
+import { prepareSidebarData } from "./sidebar";
+import { prepareThemeColorScss } from "./themeColor";
 
 import type { Page, Theme } from "@vuepress/core";
 import type {
@@ -54,7 +55,10 @@ export const themeHope: Theme<HopeThemeOptions> = (
     onInitialized: (app): void => updateBundlerOptions(app),
 
     onPrepared: (): Promise<void> =>
-      writeThemeColorScss(app, themeOptions as HopeThemeConfig),
+      Promise.all([
+        prepareSidebarData(app, themeOptions as HopeThemeConfig),
+        prepareThemeColorScss(app, themeOptions as HopeThemeConfig),
+      ]).then(() => void 0),
 
     plugins: getPluginConfig(app, plugins, themeOptions as HopeThemeConfig),
 

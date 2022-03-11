@@ -525,7 +525,9 @@ In this case, the fallback sidebar must be defined last for this reason.
 
 :::
 
-### Auto Sidebar for Single Pages
+### Auto Sidebar
+
+### Automatically Generate with Titles
 
 To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
 
@@ -570,6 +572,146 @@ module.exports = defineHopeConfig({
 :::
 
 ::::
+
+### Automatically Generate from file structure <Badge text="New" />
+
+You can replace the original "sidebarConfig array" with `"structure"` keyword in any of the above sidebar config. This will allow the theme to automatically read local files, then generate sidebar from file structure for you, to reduce your config workload.
+
+For example, for the following example mentioned earlier in [multiple sidebars](#multiple-sidebars):
+
+```
+.
+├─ README.md
+├─ contact.md
+├─ about.md
+├─ foo/
+│ ├─ README.md
+│ ├─ one.md
+│ └─ two.md
+└─ bar/
+    ├─ README.md
+    ├─ three.md
+    └─ four.md
+```
+
+You can change the original config to:
+
+:::: code-group
+
+::: code-group-item TS
+
+```ts {7,9}
+// .vuepress/config.ts
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  themeConfig: {
+    sidebar: {
+      "/foo/": "structure",
+
+      "/bar/": "structure",
+
+      // fallback
+      "/": [
+        "" /* / */,
+        "contact" /* /contact.html */,
+        "about" /* /about.html */,
+      ],
+    },
+  },
+});
+```
+
+:::
+
+::: code-group-item JS
+
+```js {7,9}
+// .vuepress/config.js
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  themeConfig: {
+    sidebar: {
+      "/foo/": "structure",
+
+      "/bar/": "structure",
+
+      // fallback
+      "/": [
+        "" /* / */,
+        "contact" /* /contact.html */,
+        "about" /* /about.html */,
+      ],
+    },
+  },
+});
+```
+
+:::
+
+::::
+
+In the above modification, since the original sidebar array is all files under the relevant path, you can easily replace it with the `"structure"` keyword.
+
+If you use the structure to generate a folder with other folders nested under it and **the folder contains a `README.md` file**, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
+
+#### Advanced Control
+
+During the automatic generation from the structure, you can control whether files in the same folder are included and how they are sorted through the `index` option in the page Frontmatter.
+
+`index` option supports boolean values ​​and numbers, when set to `false` it means you don't want the page to be indexed by the sidebar. When set to a positive integer, item with smaller value will appear first.
+
+::: tip
+
+`README.md` is an exception, as long as you don't disable it from the sidebar via `index: false` or make it as group link, it will allways be the first item in the sort.
+
+:::
+
+For nested folders, the grouping information is controlled by `README.md` under that folder. You can control the behavior of folder grouping through the `dir` option in Frontmatter. The relevant optional items are as follows:
+
+```ts
+interface SidebarDirInfo {
+  /**
+   * Directory title
+   *
+   * @default README.md title
+   */
+  text?: string;
+
+  /**
+   * Directory icon
+   *
+   * @default README.md icon
+   */
+  icon?: string;
+
+  /**
+   * Whether the directory is collapsible
+   *
+   * @default true
+   */
+
+  collapsable?: boolean;
+
+  /**
+   * Whether the directory is clickable
+   *
+   * @description will set the link of the directory grouping to the link corresponding to README.md
+   *
+   * @default false
+   */
+
+  link?: boolean;
+
+  /**
+   * Dir index
+   *
+   * @default true
+   */
+  index?: number | boolean;
+}
+```
 
 ### Disabling the Sidebar
 

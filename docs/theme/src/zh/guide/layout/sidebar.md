@@ -521,6 +521,8 @@ module.exports = defineHopeConfig({
 
 ## 自动生成侧栏
 
+### 自动生成标题
+
 如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 frontmatter 来实现:
 
 ```md
@@ -564,6 +566,146 @@ module.exports = defineHopeConfig({
 :::
 
 ::::
+
+### 自动按文件结构生成侧栏 <Badge text="新增" />
+
+你可以在上述任意侧边栏配置中，将原来的“侧边栏数组”替换为 `"structure"` 关键词。这会让主题自动读取本地文件，为你生成对应的侧边栏结构，以大大减少你的配置工作量。
+
+比如对于之前在 [多个侧边栏](#多个侧边栏) 提到的如下例子:
+
+```
+.
+├─ README.md
+├─ contact.md
+├─ about.md
+├─ foo/
+│   ├─ README.md
+│   ├─ one.md
+│   └─ two.md
+└─ bar/
+    ├─ README.md
+    ├─ three.md
+    └─ four.md
+```
+
+你可以将原来的配置改为:
+
+:::: code-group
+
+::: code-group-item TS
+
+```ts {7,9}
+// .vuepress/config.ts
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  themeConfig: {
+    sidebar: {
+      "/foo/": "structure",
+
+      "/bar/": "structure",
+
+      // fallback
+      "/": [
+        "" /* / */,
+        "contact" /* /contact.html */,
+        "about" /* /about.html */,
+      ],
+    },
+  },
+});
+```
+
+:::
+
+::: code-group-item JS
+
+```js {7,9}
+// .vuepress/config.js
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  themeConfig: {
+    sidebar: {
+      "/foo/": "structure",
+
+      "/bar/": "structure",
+
+      // fallback
+      "/": [
+        "" /* / */,
+        "contact" /* /contact.html */,
+        "about" /* /about.html */,
+      ],
+    },
+  },
+});
+```
+
+:::
+
+::::
+
+在上述的修改中，由于原侧边栏数组即为相关路径下的全部文件，你可以轻松将其替换为 `"structure"` 关键词。
+
+如果你使用结构生成的文件夹下嵌套了其他文件夹且**文件夹包含 `README.md` 文件**，则对应的文件夹会被渲染成一个分组。所以你甚至可以更加激进，比如直接设置 `sidebar: "structure"` 让你的侧边栏全部从文件结构中自动生成。
+
+#### 进阶控制
+
+在从结构自动生成的过程中，你可以通过页面 Frontmatter 中的 `index` 选项控制同一文件夹下的文件是否被包含、以及它们的排序方式。
+
+`index` 选项支持布尔值和数字，当设置为 `false` 时，这意味着你不希望该页面被侧边栏收录。当设置为一个正数标号时，标号越小的项目会出现在最前面。
+
+::: tip
+
+`README.md` 是一个例外，只要你不通过 `index: false` 或使其成为分组链接禁止其出现在侧边栏中，它总会在排序中成为第一项。
+
+:::
+
+对于嵌套文件夹，其分组信息由对应文件夹下的 `README.md` 控制，你可以通过 Frontmatter 中的 `dir` 选项控制文件夹分组的行为，相关可选项目如下:
+
+```ts
+interface SidebarDirInfo {
+  /**
+   * 目录标题
+   *
+   * @default README.md 标题
+   */
+  text?: string;
+
+  /**
+   * 目录图标
+   *
+   * @default README.md 图标
+   */
+  icon?: string;
+
+  /**
+   * 目录是否可折叠
+   *
+   * @default true
+   */
+
+  collapsable?: boolean;
+
+  /**
+   * 目录是否可点击
+   *
+   * @description 将会将目录分组的链接设置为 README.md 对应的链接
+   *
+   * @default false
+   */
+
+  link?: boolean;
+
+  /**
+   * 目录序号
+   *
+   * @default true
+   */
+  index?: number | boolean;
+}
+```
 
 ## 禁用侧边栏
 

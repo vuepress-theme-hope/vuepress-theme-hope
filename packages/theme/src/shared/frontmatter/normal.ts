@@ -1,6 +1,6 @@
 import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { HopeThemePageFrontmatter } from "./base";
-import type { AutoLink } from "../navbar";
+import type { AutoLink } from "../utils";
 
 export interface HopeThemeNormalPageFrontmatter
   extends HopeThemePageFrontmatter {
@@ -10,6 +10,81 @@ export interface HopeThemeNormalPageFrontmatter
    * 是否是主页
    */
   home?: false;
+
+  /**
+   * Page index
+   *
+   * 页面序号
+   *
+   * @default true
+   */
+  index?: number | boolean;
+
+  /**
+   * Dir config
+   *
+   * @description Only available at README.md
+   *
+   * 目录配置
+   *
+   * @description 仅在 README.md 中可用
+   */
+  dir?: {
+    /**
+     * Dir title
+     *
+     * @default title of README.md
+     *
+     * 目录标题
+     *
+     * @default README.md 标题
+     */
+    text?: string;
+
+    /**
+     * Dir icon
+     *
+     * @default icon of README.md
+     *
+     * 目录图标
+     *
+     * @default README.md 图标
+     */
+    icon?: string;
+
+    /**
+     * Whether Dir is collapsable
+     *
+     * 目录是否可折叠
+     *
+     * @default true
+     */
+
+    collapsable?: boolean;
+
+    /**
+     * Whether Dir is clickable
+     *
+     * @description Will set group link to link of README.md
+     *
+     * 目录是否可点击
+     *
+     * @description 将会将目录分组的链接设置为 README.md 对应的链接
+     *
+     * @default false
+     */
+
+    link?: boolean;
+
+    /**
+     * Dir index
+     *
+     * 目录序号
+     *
+     * @default true
+     */
+    index?: number | boolean;
+  };
 
   /**
    * Page Heading depth

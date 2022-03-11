@@ -1,3 +1,4 @@
+import { sidebarData } from "@temp/theme-hope/sidebar";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import {
   isArray,
@@ -95,12 +96,15 @@ export const resolveArraySidebarItems = (
 
     // resolved group item
     if ("children" in childItem) {
+      const prefix = resolvePrefix(pathPrefix, childItem.prefix);
+
       return {
         type: "group",
         ...childItem,
-        children: childItem.children.map((item) =>
-          handleChildItem(item, resolvePrefix(pathPrefix, childItem.prefix))
-        ),
+        children:
+          childItem.children === "structure"
+            ? sidebarData[prefix].map((item) => handleChildItem(item, prefix))
+            : childItem.children.map((item) => handleChildItem(item, prefix)),
       };
     }
 
@@ -141,7 +145,11 @@ export const resolveMultiSidebarItems = (
       const matchedConfig = sidebarConfig[base];
 
       return matchedConfig
-        ? resolveArraySidebarItems(matchedConfig, headingDepth, base)
+        ? resolveArraySidebarItems(
+            matchedConfig === "structure" ? sidebarData[base] : matchedConfig,
+            headingDepth,
+            base
+          )
         : [];
     }
   }
