@@ -65,7 +65,7 @@ features:
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/encrypt.html
 
   - title: Copy button
-    icon: lock
+    icon: copy
     details: Copy codes with one click in code blocks
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/copy-code.html
 

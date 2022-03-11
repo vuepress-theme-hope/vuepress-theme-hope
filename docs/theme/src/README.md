@@ -65,7 +65,7 @@ features:
     link: /guide/feature/encrypt.html
 
   - title: Copy button
-    icon: lock
+    icon: copy
     details: Copy codes with one click in code blocks
     link: /guide/feature/copy-code.html
 
