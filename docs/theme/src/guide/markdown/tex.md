@@ -327,12 +327,6 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   $$
   ```
 
-  ::: tip
-
-  Note that because $\KaTeX$ supports auto word wrapping, if you specify a line feed manually, a warning is output in the console.
-
-  :::
-
 - **Alignment**
 
   You can use the `aligned` environment to achieve alignment, and`&`to identify fixed anchor points
