@@ -13,9 +13,15 @@ const commentTheme: Theme<DefaultThemeOptions> = {
     [
       "comment2",
       {
-        type: "waline",
-        author: "Mr.Hope",
-        serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+        type: "giscus",
+        repo: "vuepress-theme-hope/giscus-discussions",
+        repoId: "R_kgDOG_Pt2A",
+        category: "Announcements",
+        categoryId: "DIC_kwDOG_Pt2M4COD69",
+
+        // type: "waline",
+        // author: "Mr.Hope",
+        // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
       },
     ],
   ],

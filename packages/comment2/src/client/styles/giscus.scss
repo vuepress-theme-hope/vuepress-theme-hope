@@ -1,0 +1,5 @@
+@use "@mr-hope/vuepress-shared/styles/wrapper";
+
+.page .giscus-wrapper {
+  @include wrapper.wrapper;
+}

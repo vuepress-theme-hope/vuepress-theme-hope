@@ -17,11 +17,10 @@ icon: config
 
 是否默认启用评论功能。
 
+## Giscus 选项
+
+- [点击查看](giscus.md)
+
 ## Waline 选项
 
 - [点击查看](waline.md)
-<!--
-
-## Vssue 选项
-
-- [点击查看](vssue.md) -->

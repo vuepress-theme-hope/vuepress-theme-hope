@@ -5,12 +5,14 @@ export const enSidebarConfig = defineSidebarConfig({
     {
       text: "Guide",
       icon: "creative",
-      children: ["guide/", "guide/waline"],
+      prefix: "guide/",
+      children: ["", "giscus", "waline"],
     },
     {
       text: "Config",
       icon: "config",
-      children: ["config/", "config/waline"],
+      prefix: "config/",
+      children: ["", "giscus", "waline"],
     },
     "migration",
   ],
@@ -21,12 +23,14 @@ export const zhSidebarConfig = defineSidebarConfig({
     {
       text: "指南",
       icon: "creative",
-      children: ["guide/", "guide/waline"],
+      prefix: "guide/",
+      children: ["", "giscus", "waline"],
     },
     {
       text: "配置",
       icon: "config",
-      children: ["config/", "config/waline"],
+      prefix: "config/",
+      children: ["", "giscus", "waline"],
     },
     "migration",
   ],

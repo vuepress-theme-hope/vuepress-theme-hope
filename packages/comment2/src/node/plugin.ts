@@ -15,6 +15,7 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 
 /** Comment Plugin */
 export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
+  const isGiscus = options.type === "giscus";
   const isWaline = options.type === "waline";
 
   const userWalineLocales = isWaline
@@ -35,6 +36,9 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     name: "vuepress-plugin-comment2",
 
     alias: {
+      "@Giscus": isGiscus
+        ? path.resolve(__dirname, "../client/components/Giscus.js")
+        : noopModule,
       "@Waline": isWaline
         ? path.resolve(__dirname, "../client/components/Waline.js")
         : noopModule,
@@ -51,6 +55,11 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
         "vuepress-plugin-comment2",
       ]);
       addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
+
+      if (isGiscus) {
+        addViteOptimizeDepsInclude(app, "@giscus/vue");
+        addViteSsrExternal(app, "@giscus/vue");
+      }
 
       if (isWaline) {
         addViteOptimizeDepsInclude(app, "@waline/client");

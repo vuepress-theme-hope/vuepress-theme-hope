@@ -1,5 +1,6 @@
 // TODO: Add vssue back
 import type { DisableCommentOptions } from "./disable";
+import type { GiscusOptions } from "./giscus";
 import type { WalineOptions } from "./waline";
 // import type { Vssue } from "vssue";
 
@@ -121,6 +122,7 @@ import type { WalineOptions } from "./waline";
  * Comment options
  */
 export type CommentOptions =
+  | GiscusOptions
   | WalineOptions
   // | VssueOptions
   | DisableCommentOptions;

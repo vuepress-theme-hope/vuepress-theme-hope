@@ -20,6 +20,16 @@ export default [
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
+  ...rollupTypescript("client/components/Giscus", {
+    external: [
+      "@giscus/vue",
+      "@vuepress/client",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/Waline", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",

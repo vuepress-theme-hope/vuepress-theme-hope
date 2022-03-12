@@ -11,7 +11,18 @@ By default, `<CommentService />` component is enabled globally. You can disable 
 
 To keep it globally disabled, please set `comment` to `false` in the plugin options. Then you can set `comment: true` in page frontmatter to enable it locally.
 
-Currently, only Waline is supported.
+Currently you can choose from Giscus and Waline.
+
+::: tip Comment service selection
+
+- Giscus is recommended if your blog or documentation is primarily geared towards programmers.
+- If your blog or documentation is for the general public, Waline is recommended.
+
+:::
+
+### Giscus
+
+See [Giscus Config Guide](giscus.md)
 
 ### Waline
 

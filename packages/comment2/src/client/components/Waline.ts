@@ -10,8 +10,7 @@ import {
   watch,
 } from "vue";
 import { useRoute } from "vue-router";
-import { enableWaline, walineOption } from "../define";
-import { walineLocales } from "../define";
+import { enableWaline, walineLocales, walineOption } from "../define";
 
 import type { WalineInstance } from "@waline/client";
 import type { VNode } from "vue";

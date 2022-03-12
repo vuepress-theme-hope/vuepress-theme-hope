@@ -11,7 +11,18 @@ icon: creative
 
 如果你需要保持全局禁用，请在插件选项中设置 `comment` 为 `false`。这样你可以在特定页面的 frontmatter 中设置 `comment: true` 来局部启用它。
 
-目前只能选择 Waline。
+目前可以从 Giscus 和 Waline 中选择。
+
+::: tip 评论服务选择
+
+- 如果你的博客或文档主要面向程序员，建议使用 Giscus。
+- 如果你的博客或文档面向大众，建议使用 Waline。
+
+:::
+
+### Giscus
+
+[详见 Giscus 指南](giscus.md)
 
 ### Waline
 

@@ -2,6 +2,7 @@
 // import { usePageTitle } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
+import Giscus from "@Giscus";
 import Waline from "@Waline";
 import { commentOptions } from "../define";
 
@@ -11,7 +12,14 @@ import type { CommentPluginFrontmatter } from "../../shared";
 export default defineComponent({
   name: "CommentService",
 
-  setup() {
+  props: {
+    darkmode: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  setup(props) {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
 
     const enable = computed(() => {
@@ -25,6 +33,11 @@ export default defineComponent({
     return (): VNode | null =>
       commentOptions.type === "waline"
         ? h(Waline, { style: { display: enable.value ? "block" : "none" } })
+        : commentOptions.type === "giscus"
+        ? h(Giscus, {
+            darkmode: props.darkmode,
+            style: { display: enable.value ? "block" : "none" },
+          })
         : // : type === "vssue"
           // ? h(Vssue, {
           //     title: usePageTitle().value,

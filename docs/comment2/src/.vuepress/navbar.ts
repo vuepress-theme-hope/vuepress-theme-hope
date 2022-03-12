@@ -6,12 +6,23 @@ export const enNavbarConfig = defineNavbarConfig([
   {
     text: "Guide",
     icon: "creative",
-    children: ["/guide/", "/guide/waline"],
+    prefix: "/guide/",
+    children: [
+      {
+        text: "Guide",
+        icon: "creative",
+        activeMatch: "^/guide/$",
+        link: "",
+      },
+      "giscus",
+      "waline",
+    ],
   },
   {
     text: "Config",
     icon: "config",
-    children: ["/config/", "/config/waline"],
+    prefix: "/config/",
+    children: ["", "giscus", "waline"],
   },
   "/migration",
   {
@@ -30,12 +41,23 @@ export const zhNavbarConfig = defineNavbarConfig([
   {
     text: "指南",
     icon: "creative",
-    children: ["/zh/guide/", "/zh/guide/waline"],
+    prefix: "/zh/guide/",
+    children: [
+      {
+        text: "指南",
+        icon: "creative",
+        activeMatch: "^/zh/guide/$",
+        link: "",
+      },
+      "giscus",
+      "waline",
+    ],
   },
   {
     text: "配置",
     icon: "config",
-    children: ["/zh/config/", "/zh/config/waline"],
+    prefix: "/zh/config/",
+    children: ["", "giscus", "waline"],
   },
   "/migration",
   {
