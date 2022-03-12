@@ -1,5 +1,5 @@
 import { Giscus } from "@giscus/vue";
-import { usePageFrontmatter, usePageLang } from "@vuepress/client";
+import { ClientOnly, usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { enableGiscus, giscusOption } from "../define";
 
@@ -72,18 +72,21 @@ export default defineComponent({
           class: "giscus-wrapper",
           style: { display: enableComment.value ? "block" : "none" },
         },
-        h(Giscus, {
-          repo: giscusOption.repo as `${string}/${string}`,
-          repoId: giscusOption.repoId,
-          category: giscusOption.category,
-          categoryId: giscusOption.categoryId,
-          lang: giscusLang.value,
-          theme: props.darkmode ? "dark" : "light",
-          mapping: giscusOption.mapping || "pathname",
-          inputPosition: giscusOption.inputPosition || "top",
-          reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
-          emitMetadata: "0",
-        } as GiscusProps)
+        h(ClientOnly, () =>
+          h(Giscus, {
+            repo: giscusOption.repo as `${string}/${string}`,
+            repoId: giscusOption.repoId,
+            category: giscusOption.category,
+            categoryId: giscusOption.categoryId,
+            lang: giscusLang.value,
+            theme: props.darkmode ? "dark" : "light",
+            mapping: giscusOption.mapping || "pathname",
+            inputPosition: giscusOption.inputPosition || "top",
+            reactionsEnabled:
+              giscusOption.reactionsEnabled !== false ? "1" : "0",
+            emitMetadata: "0",
+          } as GiscusProps)
+        )
       );
   },
 });
