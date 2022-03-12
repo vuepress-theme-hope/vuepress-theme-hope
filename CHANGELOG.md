@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2022-03-12)
+
+### Bug Fixes
+
+- **comment2:** wrap giscus with ClientOnly ([b380222](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3802221f96bcb8d700b92387606b0d262547eef))
+- **theme:** fix blog hero slidedown button ([ebc5259](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ebc5259f1df70e5f0b48483f9218227075c8a9a9))
+
 # [2.0.0-beta.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2022-03-12)
 
 ### Features
