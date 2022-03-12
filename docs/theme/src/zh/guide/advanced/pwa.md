@@ -121,13 +121,13 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 我们在 `themeConfig.plugins.pwa` 中提供 `update` 选项控制用户如何接收更新。
 
-`update` 选项的默认值是 `'available'`，这意味着当网站内容更新后，新的 SW 会在后台静默安装，并在安装结束后弹窗提示用户新内容就绪。用户可以自主选择是否立即刷新查看新内容。
+`update` 选项的默认值是 `"available"`，这意味着当网站内容更新后，新的 SW 会在后台静默安装，并在安装结束后弹窗提示用户新内容就绪。用户可以自主选择是否立即刷新查看新内容。
 
-由于默认行为下，用户访问途中在 SW 就绪前都会阅读旧版本文档并且得不到相关提示。如果你的文档仍在建设期，希望尽早提示用户他可能在阅读已过时的内容，你可以将其设置为 `'hint'`。这样用户在进入文档后数秒内就可以收到新内容已发布的提示。但这样做的负面效果是如果用户在新 SW 就绪前选择更新，那么他将在新 SW 安装并接管页面前，需要从互联网获取页面的全部资源。
+由于默认行为下，用户访问途中在 SW 就绪前都会阅读旧版本文档并且得不到相关提示。如果你的文档仍在建设期，希望尽早提示用户他可能在阅读已过时的内容，你可以将其设置为 `"hint"`。这样用户在进入文档后数秒内就可以收到新内容已发布的提示。但这样做的负面效果是如果用户在新 SW 就绪前选择更新，那么他将在新 SW 安装并接管页面前，需要从互联网获取页面的全部资源。
 
-如果你的文档很稳定，或者你在托管博客，不太关心用户立即接收到最新版本，你可以将其设置为 `'disabled'`，这意味着新的 SW 将在后台完全静默安装并在安装后等待，当旧版本 SW 控制的页面全部关闭后，用户下一次访问时，新 SW 将开始接管并提供用户新内容。此设置可以避免用户在访问途中被右下角的弹窗所打扰。
+如果你的文档很稳定，或者你在托管博客，不太关心用户立即接收到最新版本，你可以将其设置为 `"disabled"`，这意味着新的 SW 将在后台完全静默安装并在安装后等待，当旧版本 SW 控制的页面全部关闭后，用户下一次访问时，新 SW 将开始接管并提供用户新内容。此设置可以避免用户在访问途中被右下角的弹窗所打扰。
 
-如果你希望通过 SW 来加速用户在弱网或无网条件下的访问，但同时希望用户时刻访问新内容，你可以将此选项设置为 `'force'`。此选项的行为是在检测到新 SW 后立即注销旧 SW 并刷新页面以确保用户浏览最新内容。但我们强烈推荐除非必要不适用此选项，因为这会导致新 SW 发布后，用户在进入网站后的几秒内会遇到预期之外的突然刷新，并且他们将必须通过互联网访问文档并完全重新安装最新的 SW。
+如果你希望通过 SW 来加速用户在弱网或无网条件下的访问，但同时希望用户时刻访问新内容，你可以将此选项设置为 `"force"`。此选项的行为是在检测到新 SW 后立即注销旧 SW 并刷新页面以确保用户浏览最新内容。但我们强烈推荐除非必要不适用此选项，因为这会导致新 SW 发布后，用户在进入网站后的几秒内会遇到预期之外的突然刷新，并且他们将必须通过互联网访问文档并完全重新安装最新的 SW。
 
 ### 更新提示弹窗
 
@@ -177,16 +177,16 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 | 选项                        | 默认值                                                                                                  |
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |
-| name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
-| short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
-| description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `'A site built with vuepress'` |
+| name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
+| short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
+| description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `"A site built with vuepress"` |
 | lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
 | start_url                   | `siteConfig.base`                                                                                       |
 | scope                       | `siteConfig.base`                                                                                       |
 | display                     | `"standalone"`                                                                                          |
 | theme_color                 | `"#46bd87"`                                                                                             |
-| background_color            | `'#ffffff'`                                                                                             |
-| orientation                 | `'portrait-primary'`                                                                                    |
+| background_color            | `"#ffffff"`                                                                                             |
+| orientation                 | `"portrait-primary"`                                                                                    |
 | prefer_related_applications | `false`                                                                                                 |
 
 完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts)。

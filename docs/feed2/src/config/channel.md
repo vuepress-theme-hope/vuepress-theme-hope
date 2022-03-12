@@ -33,7 +33,7 @@ Channel description
 - Default:
   - `siteConfig.locales['/'].lang`
   - If the above is not provided, fall back to `themeConfig.locales['/'].lang`
-  - If the above is not provided, fall back to `'en-US'`
+  - If the above is not provided, fall back to `"en-US"`
 
 The language of the channel
 

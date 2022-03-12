@@ -194,14 +194,14 @@ tag:
 ### docsBranch
 
 - 类型: `string`
-- 默认值: `'main'`
+- 默认值: `"main"`
 
 文档所在分支
 
 ### docsDir
 
 - 类型: `string`
-- 默认值: `''`
+- 默认值: `""`
 
 文档在仓库中的目录
 
@@ -217,7 +217,7 @@ tag:
 ### copyright
 
 - 类型: `string | boolean`
-- 默认值: `'Copyright © <作者>'`
+- 默认值: `"Copyright © <作者>"`
 
 默认的版权信息，设置为 `false` 来默认禁用它。
 

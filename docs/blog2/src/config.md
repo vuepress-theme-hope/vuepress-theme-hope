@@ -45,7 +45,7 @@ Slugify function, used to convert key name which they are register in routes.
 ### metaScope
 
 - Type: `string`
-- Default: `'_blog'`
+- Default: `"_blog"`
 
 Key used when injecting info to route meta.
 

@@ -24,7 +24,7 @@ Default author.
 - Type: `string`
 - Required: No
 
-The age rating of the content, the format is `[int]+`, such as `'13+'`.
+The age rating of the content, the format is `[int]+`, such as `"13+"`.
 
 ### twitterID
 

@@ -140,14 +140,14 @@ Article information. The order of the items decides the display order. Fill in `
 
 Available items in `ArticleInfo`:
 
-- `'Author'`: author
-- `'Date'`: writing date
-- `'Original'`: is original
-- `'Category'`: category
-- `'Tag'`: tags
-- `'ReadingTime'`: expect reading time
-- `'Word'`: word number for the article
-- `'PageView'`: pageviews
+- `"Author"`: author
+- `"Date"`: writing date
+- `"Original"`: is original
+- `"Category"`: category
+- `"Tag"`: tags
+- `"ReadingTime"`: expect reading time
+- `"Word"`: word number for the article
+- `"PageView"`: pageviews
 
 ## Meta
 
@@ -194,14 +194,14 @@ The repo of your docs
 ### docsBranch
 
 - Type: `string`
-- Default: `'main'`
+- Default: `"main"`
 
 The branch of your docs
 
 ### docsDir
 
 - Type: `string`
-- Default: `''`
+- Default: `""`
 
 Docs dir location in repo
 
@@ -217,7 +217,7 @@ The default content for the footer, can accept HTMLString.
 ### copyright
 
 - Type: `string | boolean`
-- Default: `'Copyright © <author>'`
+- Default: `"Copyright © <author>"`
 
 The default copyright info, set it to `false` to disable it by default.
 

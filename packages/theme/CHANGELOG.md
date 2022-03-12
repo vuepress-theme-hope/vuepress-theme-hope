@@ -24,7 +24,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- support `'structure'` in sidebar ([7aa4c81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7aa4c813c361920b4d1467e0b7381a674d5f33de))
+- support `"structure"` in sidebar ([7aa4c81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7aa4c813c361920b4d1467e0b7381a674d5f33de))
 
 # [2.0.0-beta.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2022-03-10)
 
@@ -229,7 +229,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - fix BreadCrumb props ([0602b66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0602b6623b7009963364d36ee809ad2f77fc7297))
-- **theme:** auto apply `theme: 'hope'` ([3912801](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39128015bf1eb8d6ef763a06254d044c64fa8b7b))
+- **theme:** auto apply `theme: "hope"` ([3912801](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39128015bf1eb8d6ef763a06254d044c64fa8b7b))
 - **theme:** fix article info locales ([e5cfeb4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5cfeb43c4c16061cc52db9ef5872afcbd469377))
 - **theme:** fix ArticleList ([34604c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34604c74acd424ebc30ba2ede3ccbe990cb29851))
 

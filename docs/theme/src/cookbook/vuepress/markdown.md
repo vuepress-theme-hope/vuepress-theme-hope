@@ -351,9 +351,9 @@ In fact, the second part inside the `[]` will be treated as the mark of the code
 
 Here is a complex example:
 
-- import line 3 to line 10 of the `'../foo.js'` file
-- specify the language as `'js'`
-- highlight line 3 of the imported code, i.e. line 5 of the `'../foo.js'` file
+- import line 3 to line 10 of the `"../foo.js"` file
+- specify the language as `"js"`
+- highlight line 3 of the imported code, i.e. line 5 of the `"../foo.js"` file
 - disable line numbers
 
 ```md

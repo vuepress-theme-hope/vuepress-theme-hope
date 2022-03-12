@@ -76,7 +76,7 @@ module.exports = defineHopeConfig({
 
 Note that you can only use passwords in string format.
 
-The salted hash value of the number `1234` and the string `'1234'` is different! While user can only enter the content in the string format through the input box.
+The salted hash value of the number `1234` and the string `"1234"` is different! While user can only enter the content in the string format through the input box.
 
 :::
 

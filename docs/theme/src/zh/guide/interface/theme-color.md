@@ -12,6 +12,14 @@ tag:
 
 <!-- more -->
 
+## 尝试
+
+<!-- markdownlint-disable-->
+
+<ThemeColorPicker :themeColor="themeColor" />
+
+<!-- markdownlint-restore -->
+
 ## 禁用功能
 
 你可以将 `themeConfig` 的 `themeColor` 设置为 `false` 来禁用它。
@@ -67,3 +75,17 @@ module.exports = defineHopeConfig({
 ::::
 
 :::::
+
+<script setup lang="ts">
+import { computed } from 'vue';
+import { useThemeData } from '@theme-hope/composables';
+import ThemeColorPicker from '@theme-hope/module/outlook/components/ThemeColorPicker';
+
+const themeData = useThemeData();
+
+const themeColor = computed(() => {
+  const { themeColor } = themeData.value;
+
+  return themeColor === false ? null : themeColor;
+});
+</script>

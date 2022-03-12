@@ -46,7 +46,7 @@ You can automatically generate edit this page links for each page by setting the
 
 - `docsRepo`: docs repository link, same as `themeConfig.repo` by default
 - `docsDir`: the directory of docs in the repository, defaults to root directory
-- `docsBranch`: docs branch, defaults to `'main'`
+- `docsBranch`: docs branch, defaults to `"main"`
 
 ## Display Control
 

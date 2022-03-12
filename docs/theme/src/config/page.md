@@ -125,13 +125,13 @@ Current page’s image，needs an absolute path.
 
 | Item            | Corresponding Content | Page frontmatter Value                  |
 | --------------- | --------------------- | --------------------------------------- |
-| `'Author'`      | Author                | `author`                                |
-| `'Date'`        | Writing Date          | `date`                                  |
-| `'category'`    | Category              | `category`                              |
-| `'tag'`         | Tags                  | `tag`                                   |
-| `'ReadingTime'` | Expect reading time   | N/A (automatically generated)           |
-| `'Word'`        | Word count            | N/A (automatically generated)           |
-| `'PageView'`    | Visit Number          | `pageview` (only available with Waline) |
+| `"Author"`      | Author                | `author`                                |
+| `"Date"`        | Writing Date          | `date`                                  |
+| `"category"`    | Category              | `category`                              |
+| `"tag"`         | Tags                  | `tag`                                   |
+| `"ReadingTime"` | Expect reading time   | N/A (automatically generated)           |
+| `"Word"`        | Word count            | N/A (automatically generated)           |
+| `"PageView"`    | Visit Number          | `pageview` (only available with Waline) |
 
 Set whether to show page details on the current page
 
@@ -283,6 +283,6 @@ Extra container class.
 ### layout
 
 - Type: `string`
-- Default: `'Layout'`
+- Default: `"Layout"`
 
 Page custom layout name.

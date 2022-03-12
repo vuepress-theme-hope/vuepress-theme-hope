@@ -127,14 +127,14 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 | 条目            | 对应内容     | 页面 frontmatter 值         |
 | --------------- | ------------ | --------------------------- |
-| `'Author'`      | 作者         | `author`                    |
-| `'Date'`        | 写作日期     | `date`                      |
-| `'Original'`    | 是否原创     | `isOriginal`                |
-| `'Category'`    | 分类         | `category`                  |
-| `'Tag'`         | 标签         | `tag`                       |
-| `'ReadingTime'` | 预计阅读时间 | N/A(自动生成)               |
-| `'Word'`        | 字数         | N/A(自动生成)               |
-| `'PageView'`    | 访问量       | `pageview` (仅 Waline 可用) |
+| `"Author"`      | 作者         | `author`                    |
+| `"Date"`        | 写作日期     | `date`                      |
+| `"Original"`    | 是否原创     | `isOriginal`                |
+| `"Category"`    | 分类         | `category`                  |
+| `"Tag"`         | 标签         | `tag`                       |
+| `"ReadingTime"` | 预计阅读时间 | N/A(自动生成)               |
+| `"Word"`        | 字数         | N/A(自动生成)               |
+| `"PageView"`    | 访问量       | `pageview` (仅 Waline 可用) |
 
 文章信息展示项目。
 
@@ -247,7 +247,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 设置页脚内容。
 
 - 设置为 `false` 以禁用页脚
-- 设置为 `''` 以移除默认的页脚内容，
+- 设置为 `""` 以移除默认的页脚内容，
 - 设置为 `true` 以使用默认页脚。
 
 更多详情请看 [页面 → 页脚支持](../guide/layout/footer.md)
@@ -283,6 +283,6 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ### layout
 
 - 类型: `string`
-- 默认: `'Layout'`
+- 默认: `"Layout"`
 
 页面的自定义布局名称。

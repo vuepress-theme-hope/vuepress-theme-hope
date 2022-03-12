@@ -30,7 +30,7 @@ tag:
 ## iconPrefix
 
 - 类型: `string`
-- 默认值: `'icon-'`
+- 默认值: `"icon-"`
 - 详情: [界面 → 图标](../../guide/interface/icon.md)
 
 设置图标的 FontClass 前缀。
@@ -42,17 +42,17 @@ tag:
 
 ## darkmode <Badge text="默认启用" />
 
-- 类型: `'auto-switch' | 'switch' | 'auto' | 'force-dark' | 'disable'`
-- 默认值: `'auto-switch'`
+- 类型: `"auto-switch" | "switch" | "auto" | "force-dark" | "disable"`
+- 默认值: `"auto-switch"`
 - 详情: [界面 → 深色模式](../../guide/interface/darkmode.md)
 
 深色模式支持选项:
 
-- `'auto-switch'`: "关闭 | 自动 | 打开" 的三段式开关
-- `'switch'`: "关闭 | 打开" 的切换式开关
-- `'auto'`: 自动根据用户设备主题或当前时间决定是否应用深色模式
-- `'force-dark'`: 强制深色模式
-- `'disable'`: 禁用深色模式
+- `"auto-switch"`: "关闭 | 自动 | 打开" 的三段式开关
+- `"switch"`: "关闭 | 打开" 的切换式开关
+- `"auto"`: 自动根据用户设备主题或当前时间决定是否应用深色模式
+- `"force-dark"`: 强制深色模式
+- `"disable"`: 禁用深色模式
 
 ::: note
 

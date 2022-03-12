@@ -36,11 +36,11 @@ export interface SeoOptions {
   /**
    * Content restrictions
    *
-   * The age rating of the content, the format is `[int]+`, such as `'13+'`
+   * The age rating of the content, the format is `[int]+`, such as `"13+"`
    *
    * 内容分级情况
    *
-   * 内容的年龄分级，格式为`[int]+`，如`'13+'`
+   * 内容的年龄分级，格式为`[int]+`，如`"13+"`
    */
   restrictions?: string;
 

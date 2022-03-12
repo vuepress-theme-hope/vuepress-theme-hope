@@ -20,7 +20,7 @@ tag:
 
 ## 设置方式
 
-请在 `.vuepress/styles/config.scss` 中通过 `$codeLightTheme` 和 `$codeDarkTheme` 配置两种模式下使用的主题，其默认值是 `'one-light'` 和 `'one-dark'`。
+请在 `.vuepress/styles/config.scss` 中通过 `$codeLightTheme` 和 `$codeDarkTheme` 配置两种模式下使用的主题，其默认值是 `"one-light"` 和 `"one-dark"`。
 
 ## 可用的主题
 

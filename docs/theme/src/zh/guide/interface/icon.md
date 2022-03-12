@@ -121,7 +121,7 @@ Font-awesome 当前版本为 6.0.0
 
 :::
 
-同时你需要将 `themeConfig.iconPrefix` 设置为 `'fas fa-'`。
+同时你需要将 `themeConfig.iconPrefix` 设置为 `"fas fa-"`。
 
 ### 使用
 

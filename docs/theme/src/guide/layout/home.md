@@ -29,7 +29,7 @@ Enable homepage style when set to `true`
 ### title
 
 - Type: `string | false`
-- Default: `'Hello'`
+- Default: `"Hello"`
 
 Title, won’t display when set to `false`
 
@@ -54,7 +54,7 @@ Home icon alt text
 ### tagline
 
 - Type: `string`
-- Default: `'Welcome to your VuePress site'`
+- Default: `"Welcome to your VuePress site"`
 
 Append text
 
@@ -66,7 +66,7 @@ Append text
 
 - `text`: Button text
 - `link`: Button link
-- `type`: Button type (Only support `'primary'` and `'default'` (default))
+- `type`: Button type (Only support `"primary"` and `"default"` (default))
 
 ### features
 

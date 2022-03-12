@@ -33,7 +33,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 - 类型: `string`
 - 必填: 否
 
-内容的年龄分级，格式为 `[int]+`，如 `'13+'`
+内容的年龄分级，格式为 `[int]+`，如 `"13+"`
 
 ### twitterID
 

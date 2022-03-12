@@ -14,7 +14,7 @@ You can create your own theme based on `vuepress-theme-hope` and use it locally 
 
 ## Theme extending
 
-You need to create an entry file for your theme and set `extends: 'vuepress-theme-hope'` to extend the `vuepress-theme-hope` theme.
+You need to create an entry file for your theme and set `extends: "vuepress-theme-hope"` to extend the `vuepress-theme-hope` theme.
 
 The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` and add or override layout provided by `vuepress-theme-hope` via `layouts`.
 

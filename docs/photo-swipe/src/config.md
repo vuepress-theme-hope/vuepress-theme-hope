@@ -6,7 +6,7 @@ icon: config
 ## selector
 
 - Type: `string`
-- Default: `'.theme-default-content :not(a) > img'`
+- Default: `".theme-default-content :not(a) > img"`
 
 Image selector
 

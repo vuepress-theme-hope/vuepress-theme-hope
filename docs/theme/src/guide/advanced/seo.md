@@ -46,12 +46,12 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 |      `og:site_name`      |                 `siteConfig.title`                  |
 |        `og:title`        |                    `page.title`                     |
 |     `og:description`     |           `page.frontmatter.description`            |
-|        `og:type`         |                     `'article'`                     |
+|        `og:type`         |                     `"article"`                     |
 |        `og:image`        |  `themeConfig.hostname` + `page.frontmatter.image`  |
 |    `og:updated_time`     |                `page.git.updateTime`                |
 |       `og:locale`        |                     `page.lang`                     |
 |  `og:locale:alternate`   | Other languages including in `themeConfig.locales`  |
-|      `twitter:card`      |               `'summary_large_image'`               |
+|      `twitter:card`      |               `"summary_large_image"`               |
 |   `twitter:image:alt`    |                 `siteConfig.title`                  |
 |     `article:author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
 |      `article:tag`       | `page.frontmatter.tags` \|\| `page.frontmatter.tag` |

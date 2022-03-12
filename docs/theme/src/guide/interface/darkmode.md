@@ -28,11 +28,11 @@ You can config darkmode through `themeConfig.darkmode`。
 
 Available options:
 
-- `'auto-switch'`: "off | automatic | on" switch (default)
-- `'switch'`: "Close | Open" toggle switch
-- `'auto'`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
-- `'force-dark'`: only dark mode
-- `'disable'`: disable dark mode
+- `"auto-switch"`: "off | automatic | on" switch (default)
+- `"switch"`: "Close | Open" toggle switch
+- `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
+- `"force-dark"`: only dark mode
+- `"disable"`: disable dark mode
 
 <script setup lang="ts">
 import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'

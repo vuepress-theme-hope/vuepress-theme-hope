@@ -24,14 +24,14 @@ Waline 的服务端地址。
 
 深色模式适配。
 
-- 设置 `'auto'` 会根据设备深色模式自适应。
+- 设置 `"auto"` 会根据设备深色模式自适应。
 - 填入 CSS 选择器会在对应选择器生效时启用夜间模式。
 
 ::: tip 针对不同主题的例子
 
-- **Docusaurus**: 它会在 `<html>` 上通过设置 `data-theme="dark"` 开启深色模式，那么你需要将 `dark` 选项设置为 `'html[data-theme="dark"]'`。
+- **Docusaurus**: 它会在 `<html>` 上通过设置 `data-theme="dark"` 开启深色模式，那么你需要将 `dark` 选项设置为 `"html[data-theme="dark"]"`。
 
-- **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启深色模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
+- **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启深色模式。那么你需要将 `dark` 选项设置为 `"html[data-user-color-scheme="dark"]"`。
 
 :::
 
@@ -43,7 +43,7 @@ Waline 的服务端地址。
 - 默认值: `['nick', 'mail', 'link']`
 - 必填: 否
 
-评论者相关属性。可选值: `'nick'`, `'mail'`, `'link'`
+评论者相关属性。可选值: `"nick"`, `"mail"`, `"link"`
 
 ## requiredMeta
 
@@ -60,14 +60,14 @@ Waline 的服务端地址。
 ## login
 
 - 类型: `string`
-- 默认值: `'enable'`
+- 默认值: `"enable"`
 - 必填: 否
 
 登录模式状态，可选值:
 
-- `'enable'`: 启用登录 (默认)
-- `'disable'`: 禁用登录，用户只能填写信息评论
-- `'force'`: 强制登录，用户必须注册并登录才可发布评论
+- `"enable"`: 启用登录 (默认)
+- `"disable"`: 禁用登录，用户只能填写信息评论
+- `"force"`: 强制登录，用户必须注册并登录才可发布评论
 
 ## avatar
 
@@ -79,14 +79,14 @@ Waline 的服务端地址。
 
 可选值:
 
-- `''`
-- `'mp'`
-- `'identicon'`
-- `'monsterid'`
-- `'wavatar'`
-- `'retro'`
-- `'robohash'`
-- `'hide'`
+- `""`
+- `"mp"`
+- `"identicon"`
+- `"monsterid"`
+- `"wavatar"`
+- `"retro"`
+- `"robohash"`
+- `"hide"`
 
 更多信息，请查看 [头像配置](https://waline.js.org/guide/client/avatar.html)。
 

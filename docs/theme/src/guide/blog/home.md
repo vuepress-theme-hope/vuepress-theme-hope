@@ -62,4 +62,4 @@ Whether Hero is full screen displayed
 - `desc`: project description
 - `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is suppported
 
-  We provide these icons as built-in support either: `'link'`, `'project'`, `'book'`, `'article'`, `'friend'`。
+  We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。

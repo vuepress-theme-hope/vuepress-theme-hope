@@ -21,7 +21,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- support `'structure'` in sidebar ([7aa4c81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7aa4c813c361920b4d1467e0b7381a674d5f33de))
+- support `"structure"` in sidebar ([7aa4c81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7aa4c813c361920b4d1467e0b7381a674d5f33de))
 
 # [2.0.0-beta.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2022-03-10)
 

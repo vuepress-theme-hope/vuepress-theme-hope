@@ -117,13 +117,13 @@ You can customize the maximum file size of the cache (unit: KB) with the `maxSiz
 
 We provide the `update` option in `themeConfig.plugins.pwa` to control how users receive updates.
 
-The default value of the `update` option is `'available'`, which means that when new content available, the new SW will be installed silently in the background, and a pop-up window will prompt the user that the new content is ready after SW finish installing. Users can choose whether to refresh immediately to view new content.
+The default value of the `update` option is `"available"`, which means that when new content available, the new SW will be installed silently in the background, and a pop-up window will prompt the user that the new content is ready after SW finish installing. Users can choose whether to refresh immediately to view new content.
 
-Under the default behavior, users will still read old content before the SW is ready and they will not be prompted. If your project is still in building stage and you want to alert the user that he may be reading outdated content, you can set this to `'hint'`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
+Under the default behavior, users will still read old content before the SW is ready and they will not be prompted. If your project is still in building stage and you want to alert the user that he may be reading outdated content, you can set this to `"hint"`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
 
-If your docs are stable, or you're hosting a blog and don't care much about users receiving the latest version right away, you can set this to `'disabled'`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
+If your docs are stable, or you're hosting a blog and don't care much about users receiving the latest version right away, you can set this to `"disabled"`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
 
-If you want to speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `'force'`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
+If you want to speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `"force"`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
 
 ### Update prompt popup
 
@@ -173,16 +173,16 @@ If the following fields are not set, they will try to fallback to the following 
 
 | Options                     | Default value                                                                                           |
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |
-| name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
-| short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `'Site'`                                   |
-| description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `'A site built with vuepress'` |
+| name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
+| short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
+| description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `"A site built with vuepress"` |
 | lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
 | start_url                   | `siteConfig.base`                                                                                       |
 | scope                       | `siteConfig.base`                                                                                       |
 | display                     | `"standalone"`                                                                                          |
 | theme_color                 | `"#46bd87"`                                                                                             |
-| background_color            | `'#ffffff'`                                                                                             |
-| orientation                 | `'portrait-primary'`                                                                                    |
+| background_color            | `"#ffffff"`                                                                                             |
+| orientation                 | `"portrait-primary"`                                                                                    |
 | prefer_related_applications | `false`                                                                                                 |
 
 For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts).

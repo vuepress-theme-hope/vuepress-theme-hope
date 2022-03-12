@@ -43,35 +43,35 @@ tag:
 
 ::: tip 可用的社交媒体:
 
-- `'Baidu'`: 百度
-- `'Bitbucket'`: Bitbucket
-- `'Dingding'`: 钉钉
-- `'Discord'`: Discord
-- `'Dribbble'`: Dribbble
-- `'Email'`: 邮件
-- `'Evernote'`: 印象笔记
-- `'Facebook'`: 脸书
-- `'Flipboard'`: 红板报
-- `'Gitee'`: 码云
-- `'GitHub'`: GitHub
-- `'Gitlab'`: Gitlab
-- `'Gmail'`: 谷歌邮箱
-- `'Instagram'`: Instagram
-- `'Line'`: Line
-- `'Linkedin'`: 领英
-- `'Pinterest'`: 拼趣
-- `'Pocket'`: Pocket
-- `'QQ'`: QQ
-- `'Qzone'`: QQ 空间
-- `'Reddit'`: 红迪
-- `'Rss'`: RSS 地址
-- `'Steam'`: 蒸汽
-- `'Twitter'`: 推特
-- `'Wechat'`: 微信
-- `'Weibo'`: 微博
-- `'Whatsapp'`:瓦次艾普
-- `'Youtube'`: 油管
-- `'Zhihu'`: 知乎
+- `"Baidu"`: 百度
+- `"Bitbucket"`: Bitbucket
+- `"Dingding"`: 钉钉
+- `"Discord"`: Discord
+- `"Dribbble"`: Dribbble
+- `"Email"`: 邮件
+- `"Evernote"`: 印象笔记
+- `"Facebook"`: 脸书
+- `"Flipboard"`: 红板报
+- `"Gitee"`: 码云
+- `"GitHub"`: GitHub
+- `"Gitlab"`: Gitlab
+- `"Gmail"`: 谷歌邮箱
+- `"Instagram"`: Instagram
+- `"Line"`: Line
+- `"Linkedin"`: 领英
+- `"Pinterest"`: 拼趣
+- `"Pocket"`: Pocket
+- `"QQ"`: QQ
+- `"Qzone"`: QQ 空间
+- `"Reddit"`: 红迪
+- `"Rss"`: RSS 地址
+- `"Steam"`: 蒸汽
+- `"Twitter"`: 推特
+- `"Wechat"`: 微信
+- `"Weibo"`: 微博
+- `"Whatsapp"`:瓦次艾普
+- `"Youtube"`: 油管
+- `"Zhihu"`: 知乎
 
 (请不要好奇为什么这里一定要加上特别奇怪的中文翻译)
 

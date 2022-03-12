@@ -115,7 +115,7 @@ Font-awesome current version is 6.0.0
 
 :::
 
-And you need set `themeConfig.iconPrefix` to `'fas fa-'`.
+And you need set `themeConfig.iconPrefix` to `"fas fa-"`.
 
 ### Use
 

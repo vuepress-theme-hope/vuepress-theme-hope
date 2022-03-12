@@ -47,17 +47,17 @@ tag:
 
 如果未设置某些选项，它们会回退到插件预设值。
 
-- name: `siteConfig.title` || `siteConfig.locales['/'].title` || `'Site'`
-- short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `'Site'`
-- description: `siteConfig.description` || `siteConfig.locales['/'].description` || `'A site built with vuepress'`
+- name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
+- short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
+- description: `siteConfig.description` || `siteConfig.locales['/'].description` || `"A site built with vuepress"`
 - lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
 
 - display: `"standalone"`
 - theme_color: `"#46bd87"`
-- background_color: `'#ffffff'`
-- orientation: `'portrait-primary'`
+- background_color: `"#ffffff"`
+- orientation: `"portrait-primary"`
 - prefer_related_applications: `false`
 
 :::
@@ -132,16 +132,16 @@ tag:
 
 ## update
 
-- 类型: `'disabled' | 'available' | 'hint' | 'force'`
-- 默认值: `'available'`
+- 类型: `"disabled" | "available" | "hint" | "force"`
+- 默认值: `"available"`
 
 发现新内容时的控制逻辑。
 
-- `'disabled'`: 即使有新的 service worker 也不做任何事情，新的 service work 开始等待后，会在用户下次访问时接管页面，让用户获得新内容。
+- `"disabled"`: 即使有新的 service worker 也不做任何事情，新的 service work 开始等待后，会在用户下次访问时接管页面，让用户获得新内容。
 
-- `'available'`: 仅当新的 service worker 可用时才显示更新弹出窗口
+- `"available"`: 仅当新的 service worker 可用时才显示更新弹出窗口
 
-- `'hint'`: 显示更新内容可用提示，并允许用户立即刷新。当新的 SW 成功注册后，将转为更新内容就绪弹窗。
+- `"hint"`: 显示更新内容可用提示，并允许用户立即刷新。当新的 SW 成功注册后，将转为更新内容就绪弹窗。
 
   当你希望用户立即查看新文档时，这很有帮助。
 
@@ -151,7 +151,7 @@ tag:
 
   :::
 
-- `'force'`: 立即注销当前 Service Worker 然后刷新以获取新内容
+- `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容
 
   ::: danger
 
@@ -215,14 +215,14 @@ Safari 图标
 ## hintComponent
 
 - 类型: `string`
-- 默认值: `'SWHintPopup'`
+- 默认值: `"SWHintPopup"`
 
 可填入自定义的提示弹窗组件路径。
 
 ## updateComponent
 
 - 类型: `string`
-- 默认值: `'SWUpdatePopup'`
+- 默认值: `"SWUpdatePopup"`
 
 可填入自定义的更新弹窗组件路径。
 

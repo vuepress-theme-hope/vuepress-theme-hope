@@ -163,7 +163,7 @@ new Crawler({
 
 ::: warning
 
-`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `'lang'`, otherwise the plugin will not work properly.
+`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `"lang"`, otherwise the plugin will not work properly.
 
 :::
 

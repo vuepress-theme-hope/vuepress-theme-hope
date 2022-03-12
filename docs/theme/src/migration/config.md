@@ -81,7 +81,7 @@ In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`,
   - If you use IconFont, you may need to set it to `iconfont icon-`
   - If you use FontAwesome, you may need to set it to `fa fa-`
 
-- `darkmode` added `'force-dark'` to force dark mode
+- `darkmode` added `"force-dark"` to force dark mode
 
 ### Blog Config
 
@@ -99,7 +99,7 @@ In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`,
 
 ### Encryption Config
 
-- `encrypt.status: 'global' | 'local'` (default `'local'`) changed to `encrypt.global: boolean` (default `false`)
+- `encrypt.status: "global" | "local"` (default `"local"`) changed to `encrypt.global: boolean` (default `false`)
 
 - `encrypt.global` renamed to `encrypt.admin`
 

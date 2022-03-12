@@ -5,8 +5,8 @@ icon: config
 
 ## type
 
-- Type: `'waline' | 'none'`
-- Default: `'none'`
+- Type: `"giscus" | "twikoo" | "waline" | "none"`
+- Default: `"none"`
 
 Comment service provider.
 

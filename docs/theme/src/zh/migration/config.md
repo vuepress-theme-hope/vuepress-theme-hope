@@ -81,7 +81,7 @@ tag:
   - 如果你使用 IconFont，你可能需要将其设置为 `iconfont icon-`
   - 如果你使用 FontAwesome，你可能需要将其设置为 `fa fa-`
 
-- `darkmode` 新增 `'force-dark'`，强制暗黑模式
+- `darkmode` 新增 `"force-dark"`，强制暗黑模式
 
 ### 博客配置
 
@@ -99,7 +99,7 @@ tag:
 
 ### 加密配置
 
-- `encrypt.status: 'global' | 'local'` (默认 `'local'`) 改为 `encrypt.global: boolean` (默认 `false`)
+- `encrypt.status: "global" | "local"` (默认 `"local"`) 改为 `encrypt.global: boolean` (默认 `false`)
 
 - `encrypt.global` 重命名为 `encrypt.admin`
 

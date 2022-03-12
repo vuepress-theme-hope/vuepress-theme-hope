@@ -72,35 +72,35 @@ Set social links.
 
 The following social medias has built-in icons:
 
-- `'Baidu'`
-- `'Bitbucket'`
-- `'Dingding'`
-- `'Discord'`
-- `'Dribbble'`
-- `'Email'`
-- `'Evernote'`
-- `'Facebook'`
-- `'Flipboard'`
-- `'Gitee'`
-- `'GitHub'`
-- `'Gitlab'`
-- `'Gmail'`
-- `'Instagram'`
-- `'Line'`
-- `'Linkedin'`
-- `'Pinterest'`
-- `'Pocket'`
-- `'QQ'`
-- `'Qzone'`
-- `'Reddit'`
-- `'Rss'`
-- `'Steam'`
-- `'Twitter'`
-- `'Wechat'`
-- `'Weibo'`
-- `'Whatsapp'`
-- `'Youtube'`
-- `'Zhihu'`
+- `"Baidu"`
+- `"Bitbucket"`
+- `"Dingding"`
+- `"Discord"`
+- `"Dribbble"`
+- `"Email"`
+- `"Evernote"`
+- `"Facebook"`
+- `"Flipboard"`
+- `"Gitee"`
+- `"GitHub"`
+- `"Gitlab"`
+- `"Gmail"`
+- `"Instagram"`
+- `"Line"`
+- `"Linkedin"`
+- `"Pinterest"`
+- `"Pocket"`
+- `"QQ"`
+- `"Qzone"`
+- `"Reddit"`
+- `"Rss"`
+- `"Steam"`
+- `"Twitter"`
+- `"Wechat"`
+- `"Weibo"`
+- `"Whatsapp"`
+- `"Youtube"`
+- `"Zhihu"`
 
 :::
 
@@ -113,19 +113,19 @@ Whether cliping the avatar with round shape
 
 ### blog.sidebarDisplay
 
-- Type: `'mobile' | 'none' | 'always'`
-- Default: `'mobile'`
+- Type: `"mobile" | "none" | "always"`
+- Default: `"mobile"`
 
 Whether to show blogger information in the sidebar
 
-- `'mobile'`: Show in sidebar in mobile view
-- `'always'`: Always show in the sidebar
-- `'none'`: Never show in the sidebar
+- `"mobile"`: Show in sidebar in mobile view
+- `"always"`: Always show in the sidebar
+- `"none"`: Never show in the sidebar
 
 ### blog.timeline
 
 - Type: `string`
-- Default: `'Yesterday once more'`
+- Default: `"Yesterday once more"`
 
 Text on the top of timeline page.
 

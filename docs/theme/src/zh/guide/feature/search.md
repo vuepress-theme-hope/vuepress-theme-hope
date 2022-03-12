@@ -217,7 +217,7 @@ new Crawler({
 
 ::: warning
 
-Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` 字段**必须**包含 `'lang'`，否则该插件将无法正常工作。
+Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` 字段**必须**包含 `"lang"`，否则该插件将无法正常工作。
 
 :::
 

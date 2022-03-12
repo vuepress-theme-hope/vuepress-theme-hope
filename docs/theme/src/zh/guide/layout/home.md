@@ -29,7 +29,7 @@ tag:
 ### title
 
 - 类型: `string | false`
-- 默认值: `'Hello'`
+- 默认值: `"Hello"`
 
 标题，填入 `false` 会取消显示。
 
@@ -54,7 +54,7 @@ tag:
 ### tagline
 
 - 类型: `string`
-- 默认值: `'Welcome to your VuePress site'`
+- 默认值: `"Welcome to your VuePress site"`
 
 附加文字描述
 
@@ -66,7 +66,7 @@ tag:
 
 - `text`: 按钮文字
 - `link`: 按钮链接
-- `type`: 按钮类型 (仅支持 `'primary'` 与 `'default'` (默认))
+- `type`: 按钮类型 (仅支持 `"primary"` 与 `"default"` (默认))
 
 ### features
 

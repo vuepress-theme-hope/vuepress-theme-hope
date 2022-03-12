@@ -650,7 +650,7 @@ Alternatively, you can [run your own crawler](https://docsearch.algolia.com/docs
 
 ::: warning
 
-`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `'lang'`, otherwise the plugin will not work properly.
+`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `"lang"`, otherwise the plugin will not work properly.
 
 :::
 

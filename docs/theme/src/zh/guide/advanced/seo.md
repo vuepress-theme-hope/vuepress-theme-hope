@@ -38,12 +38,12 @@ tag:
 |      `og:site_name`      |                 `siteConfig.title`                  |
 |        `og:title`        |                    `page.title`                     |
 |     `og:description`     |           `page.frontmatter.description`            |
-|        `og:type`         |                     `'article'`                     |
+|        `og:type`         |                     `"article"`                     |
 |        `og:image`        |  `themeConfig.hostname` + `page.frontmatter.image`  |
 |    `og:updated_time`     |               `page.git.updatedTime`                |
 |       `og:locale`        |                     `page.lang`                     |
 |  `og:locale:alternate`   |        `themeConfig.locales` 包含的其他语言         |
-|      `twitter:card`      |               `'summary_large_image'`               |
+|      `twitter:card`      |               `"summary_large_image"`               |
 |   `twitter:image:alt`    |                 `siteConfig.title`                  |
 |     `article:author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
 |      `article:tag`       | `page.frontmatter.tags` \|\| `page.frontmatter.tag` |

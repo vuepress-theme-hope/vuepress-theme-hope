@@ -89,7 +89,7 @@ import type { WalineOptions } from "./waline";
 //    *
 //    * The locale language.
 //    *
-//    * @description If not set, Vssue will use one of `window.navigator.languages`, or fallback to `'en'`.
+//    * @description If not set, Vssue will use one of `window.navigator.languages`, or fallback to `"en"`.
 //    */
 //   locale?: string;
 //   /**

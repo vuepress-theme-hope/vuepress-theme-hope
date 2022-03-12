@@ -24,14 +24,14 @@ Emoji settings, for details see [Custom Emoji](https://waline.js.org/en/guide/cl
 
 Darkmode support
 
-- Set it to `'auto'` will display darkmode due to device settings.
+- Set it to `"auto"` will display darkmode due to device settings.
 - Filling in a CSS selector will enable darkmode only when the selector match waline ancestor nodes.
 
 ::: tip Examples
 
-- **Docusaurus**: It will enable darkmode by setting `data-theme="dark"` on the `<html>` tag itself. So you need to set `'html[data-theme="dark"]'` as `dark` option.
+- **Docusaurus**: It will enable darkmode by setting `data-theme="dark"` on the `<html>` tag itself. So you need to set `"html[data-theme="dark"]"` as `dark` option.
 
-- **hexo-theme-fluid**: It will enable darkmode by setting `data-user-color-scheme="dark"` on the `<html>` tag itself. So you need to set `'html[data-user-color-scheme="dark"]'` as `dark` option.
+- **hexo-theme-fluid**: It will enable darkmode by setting `data-user-color-scheme="dark"` on the `<html>` tag itself. So you need to set `"html[data-user-color-scheme="dark"]"` as `dark` option.
 
 :::
 
@@ -43,7 +43,7 @@ For details of custom style and darkmode, please see [Custom Style](https://wali
 - Default: `['nick','mail','link']`
 - Required: No
 
-Reviewer attributes. Optional values: `'nick'`, `'mail'`, `'link'`
+Reviewer attributes. Optional values: `"nick"`, `"mail"`, `"link"`
 
 ## requiredMeta
 
@@ -60,33 +60,33 @@ Set required fields, default anonymous, optional values:
 ## login
 
 - Type: `string`
-- Default value: `'enable'`
+- Default value: `"enable"`
 - Required: No
 
 Login mode status, optional values:
 
-- `'enable'`: enable login (default)
-- `'disable'`: Login is disabled, users should fill in information to comment
-- `'force'`: Forced login, users must login to comment
+- `"enable"`: enable login (default)
+- `"disable"`: Login is disabled, users should fill in information to comment
+- `"force"`: Forced login, users must login to comment
 
 ## avatar
 
 - Type: `string`
-- Default: `'mp'`
+- Default: `"mp"`
 - Required: No
 
 [Gravatar](http://gravatar.com/) type.
 
 Optional value:
 
-- `''` (Empty string)
-- `'mp'`
-- `'identicon'`
-- `'monsterid'`
-- `'wavatar'`
-- `'retro'`
-- `'robohash'`
-- `'hide'`
+- `""` (Empty string)
+- `"mp"`
+- `"identicon"`
+- `"monsterid"`
+- `"wavatar"`
+- `"retro"`
+- `"robohash"`
+- `"hide"`
 
 See the [Avatar setting](https://waline.js.org/en/guide/client/avatar.html) for more details.
 

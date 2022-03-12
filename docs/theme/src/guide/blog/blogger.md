@@ -43,35 +43,35 @@ You can also config your social media links with `blog.medias` option.
 
 ::: tip Available social media:
 
-- `'Baidu'`
-- `'Bitbucket'`
-- `'Dingding'`
-- `'Discord'`
-- `'Dribbble'`
-- `'Email'`
-- `'Evernote'`
-- `'Facebook'`
-- `'Flipboard'`
-- `'Gitee'`
-- `'GitHub'`
-- `'Gitlab'`
-- `'Gmail'`
-- `'Instagram'`
-- `'Line'`
-- `'Linkedin'`
-- `'Pinterest'`
-- `'Pocket'`
-- `'QQ'`
-- `'Qzone'`
-- `'Reddit'`
-- `'Rss'`
-- `'Steam'`
-- `'Twitter'`
-- `'Wechat'`
-- `'Weibo'`
-- `'Whatsapp'`
-- `'Youtube'`
-- `'Zhihu'`
+- `"Baidu"`
+- `"Bitbucket"`
+- `"Dingding"`
+- `"Discord"`
+- `"Dribbble"`
+- `"Email"`
+- `"Evernote"`
+- `"Facebook"`
+- `"Flipboard"`
+- `"Gitee"`
+- `"GitHub"`
+- `"Gitlab"`
+- `"Gmail"`
+- `"Instagram"`
+- `"Line"`
+- `"Linkedin"`
+- `"Pinterest"`
+- `"Pocket"`
+- `"QQ"`
+- `"Qzone"`
+- `"Reddit"`
+- `"Rss"`
+- `"Steam"`
+- `"Twitter"`
+- `"Wechat"`
+- `"Weibo"`
+- `"Whatsapp"`
+- `"Youtube"`
+- `"Zhihu"`
 
 :::
 

@@ -40,7 +40,7 @@ tag:
 
 - `pageInfo` type changed from `PageInfo[] | false` to `ArticleInfo[] | false`.
 
-  Available values ​​changed from `'author'`, `'time'`, `'category'`, `'tag'`, `'reading-time'`, `'word'`, `'visitor'` to `'Author'`, `'Date'`, `'Original'`, `'Category'`, `'Tag'`, `'ReadingTime'`, `'Word'`, `'Visitor'`
+  Available values ​​changed from `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` to `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"Visitor"`
 
 - `sidebarDepth` renamed to `headingDepth`
 

@@ -77,7 +77,7 @@ icon: waline
 
 ### 使用插件
 
-在插件选项中设置 `type: 'waline'`，同时设置服务端地址 `serverURL` 为上一步获取到的值。
+在插件选项中设置 `type: "waline"`，同时设置服务端地址 `serverURL` 为上一步获取到的值。
 
 此时，将 `<Comment>` 组件放置在你网站中合适的位置 (通常是页面的底部)，即可使用 Waline 评论功能。
 

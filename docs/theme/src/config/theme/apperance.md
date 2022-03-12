@@ -40,17 +40,17 @@ You probably need to set this option:
 
 ## darkmode <Badge text="Enabled by default" />
 
-- Type: `'auto-switch' | 'switch' | 'auto' | 'force-dark' | 'disable'`
-- Default: `'auto-switch'`
+- Type: `"auto-switch" | "switch" | "auto" | "force-dark" | "disable"`
+- Default: `"auto-switch"`
 - Details: [Interface → Darkmode](../../guide/interface/darkmode.md)
 
 Dark mode support options:
 
-- `'auto-switch'`: "off | automatic | on" three-stage switch
-- `'switch'`: "Close | Open" toggle switch
-- `'auto'`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
-- `'force-dark'`: only dark mode
-- `'disable'`: disable dark mode
+- `"auto-switch"`: "off | automatic | on" three-stage switch
+- `"switch"`: "Close | Open" toggle switch
+- `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
+- `"force-dark"`: only dark mode
+- `"disable"`: disable dark mode
 
 ::: note
 

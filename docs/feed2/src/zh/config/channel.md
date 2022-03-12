@@ -32,7 +32,7 @@ icon: config
 - 默认值:
   - `siteConfig.lcoales['/'].locales`
   - 如果上述未提供，回退到 `themeConfig.lcoales['/'].locales`
-  - 如果上述未提供，回退到 `'en-US'`
+  - 如果上述未提供，回退到 `"en-US"`
 
 频道使用的语言
 
