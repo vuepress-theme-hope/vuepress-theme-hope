@@ -1,3 +1,5 @@
+@use "@mr-hope/vuepress-shared/styles/reset";
+
 .blog-hero {
   position: relative;
   height: 450px;
@@ -30,7 +32,7 @@
       background-position-y: top !important;
     }
 
-    .slide-down-wrapper {
+    .slide-down-button {
       display: block;
     }
   }
@@ -99,21 +101,23 @@
     }
   }
 
-  .slide-down-wrapper {
+  .slide-down-button {
+    @include reset.button;
+
     display: none;
     position: absolute;
-    left: calc(50vw - 50px);
+    left: calc(50vw - 40px);
     bottom: 0;
 
     width: 60px;
-    height: 50px;
-    padding: 20px;
+    height: 60px;
+    padding: 10px;
 
     .icon {
-      width: 40px;
+      width: 25px;
       margin: -10px 10px;
       animation-name: bounce-down;
-      animation-duration: 0.75s;
+      animation-duration: 1.5s;
       animation-timing-function: linear;
       animation-direction: alternate;
       animation-iteration-count: infinite;
@@ -124,19 +128,6 @@
 
       &:nth-child(2) {
         color: rgba(255, 255, 255, 0.5);
-      }
-    }
-
-    #hero-bottom {
-      position: absolute;
-      bottom: 0;
-
-      margin-top: calc(0rem - var(--navbar-height));
-      padding-top: calc(var(--navbar-height));
-
-      @media (max-width: hope-config.$pad) {
-        margin-top: calc(0rem - var(--navbar-mobile-height));
-        padding-top: calc(var(--navbar-mobile-height));
       }
     }
   }

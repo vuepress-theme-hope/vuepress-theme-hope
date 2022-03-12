@@ -101,13 +101,20 @@ export default defineComponent({
               ),
               isFullScreen.value
                 ? h(
-                    "a",
-                    { class: "slide-down-wrapper", href: "#hero-bottom" },
-                    [
-                      h(SlideDownIcon),
-                      h(SlideDownIcon),
-                      h("div", { id: "hero-bottom" }),
-                    ]
+                    "button",
+                    {
+                      class: "slide-down-button",
+                      onClick: () => {
+                        window.scrollTo({
+                          top:
+                            window.innerHeight -
+                            (document.querySelector(".navbar")?.clientHeight ||
+                              0),
+                          behavior: "smooth",
+                        });
+                      },
+                    },
+                    [h(SlideDownIcon), h(SlideDownIcon)]
                   )
                 : null,
             ]
