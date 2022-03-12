@@ -50,7 +50,7 @@
     "balloon-css": "^1.2.0",
     "lodash.debounce": "^4.0.8",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.13",
+    "vue-router": "^4.0.14",
     "vuepress-plugin-reading-time2": "2.0.0-beta.11",
     "vuepress-plugin-sass-palette": "2.0.0-beta.11"
   },

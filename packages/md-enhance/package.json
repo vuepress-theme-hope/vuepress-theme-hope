@@ -67,7 +67,7 @@
     "mermaid": "^8.14.0",
     "reveal.js": "^4.3.0",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.13",
+    "vue-router": "^4.0.14",
     "vuepress-plugin-sass-palette": "2.0.0-beta.11"
   },
   "devDependencies": {
