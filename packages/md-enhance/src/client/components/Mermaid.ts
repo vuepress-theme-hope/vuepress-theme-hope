@@ -16,6 +16,60 @@ import "../styles/mermaid.scss";
 declare const MARKDOWN_ENHANCE_DELAY: number;
 declare const MERMAID_OPTIONS: MermaidAPI.Config;
 
+const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
+  return {
+    dark: isDarkMode,
+    background: isDarkMode ? "#1e1e1e" : "#fff",
+
+    primaryColor: isDarkMode ? "#389d70" : "#4abf8a",
+    primaryBorderColor: isDarkMode ? "#389d70" : "#4abf8a",
+    primaryTextColor: "#fff",
+
+    secondaryColor: "#f39c12",
+    secondaryBorderColor: isDarkMode ? "#fff" : "#000",
+    secondaryTextColor: isDarkMode ? "#ddd" : "#333",
+
+    tertiaryColor: isDarkMode ? "#22182d" : "#eeeaf3",
+    tertiaryBorderColor: isDarkMode ? "#fff" : "#000",
+    tertiaryTextColor: isDarkMode ? "#ddd" : "#333",
+
+    // note
+    noteBkgColor: isDarkMode ? "#f6d365" : "#fff5ad",
+    noteTextColor: "#242424",
+    noteBorderColor: isDarkMode ? "#f6d365" : "#333",
+
+    lineColor: isDarkMode ? "#d3d3d3" : "#333",
+    textColor: isDarkMode ? "#fff" : "#242424",
+
+    mainBkg: isDarkMode ? "#389d70" : "#4abf8a",
+    errorBkgColor: "#eb4d5d",
+    errorTextColor: "#fff",
+
+    // flowchart
+    nodeBorder: isDarkMode ? "#389d70" : "#4abf8a",
+    nodeTextColor: isDarkMode ? "#fff" : "#242424",
+
+    // sequence
+    signalTextColor: isDarkMode ? "#9e9e9e" : "#242424",
+
+    // class
+    classText: "#fff",
+
+    // state
+    labelColor: "#fff",
+
+    // colors
+    fillType0: isDarkMode ? "#cf1322" : "#f1636e",
+    fillType1: "#f39c12",
+    fillType2: "#2ecc71",
+    fillType3: "#fa541c",
+    fillType4: "#25a55b",
+    fillType5: "#13c2c2",
+    fillType6: "#096dd9",
+    fillType7: "#aa6fe9",
+  };
+};
+
 export default defineComponent({
   name: "MermaidChart",
 
@@ -37,7 +91,7 @@ export default defineComponent({
       ]).then(([mermaid]) => {
         const { initialize, render } = mermaid.default;
 
-        const renderMermaid = (isDarkTheme: boolean): void => {
+        const renderMermaid = (isDarkMode: boolean): void => {
           // generate a unvisiable container
           const container = document.createElement("div");
 
@@ -53,59 +107,7 @@ export default defineComponent({
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             theme: "base",
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            themeVariables: {
-              dark: isDarkTheme,
-              background: isDarkTheme ? "#1e1e1e" : "#fff",
-
-              primaryColor: isDarkTheme ? "#389d70" : "#4abf8a",
-              primaryBorderColor: isDarkTheme ? "#389d70" : "#4abf8a",
-              primaryTextColor: "#fff",
-
-              secondaryColor: "#f39c12",
-              secondaryBorderColor: isDarkTheme ? "#fff" : "#000",
-              secondaryTextColor: isDarkTheme ? "#ddd" : "#333",
-
-              tertiaryColor: isDarkTheme ? "#22182d" : "#eeeaf3",
-              tertiaryBorderColor: isDarkTheme ? "#fff" : "#000",
-              tertiaryTextColor: isDarkTheme ? "#ddd" : "#333",
-
-              // note
-              noteBkgColor: isDarkTheme ? "#f6d365" : "#fff5ad",
-              noteTextColor: "#242424",
-              noteBorderColor: isDarkTheme ? "#f6d365" : "#333",
-
-              lineColor: isDarkTheme ? "#d3d3d3" : "#333",
-              textColor: isDarkTheme ? "#fff" : "#242424",
-
-              mainBkg: isDarkTheme ? "#389d70" : "#4abf8a",
-              errorBkgColor: "#eb4d5d",
-              errorTextColor: "#fff",
-
-              // flowchart
-              nodeBorder: isDarkTheme ? "#389d70" : "#4abf8a",
-              nodeTextColor: isDarkTheme ? "#fff" : "#242424",
-
-              // sequence
-              signalTextColor: isDarkTheme ? "#9e9e9e" : "#242424",
-
-              // class
-              classText: "#fff",
-
-              // state
-              labelColor: "#fff",
-
-              // colors
-              fillType0: isDarkTheme ? "#cf1322" : "#f1636e",
-              fillType1: "#f39c12",
-              fillType2: "#2ecc71",
-              fillType3: "#fa541c",
-              fillType4: "#25a55b",
-              fillType5: "#13c2c2",
-              fillType6: "#096dd9",
-              fillType7: "#aa6fe9",
-            },
+            themeVariables: getThemeVariables(isDarkMode),
             ...MERMAID_OPTIONS,
             startOnLoad: false,
           });
@@ -123,6 +125,7 @@ export default defineComponent({
 
         const body = document.querySelector("body") as HTMLBodyElement;
 
+        // FIXME: Should correct handle dark selector
         renderMermaid(body.classList.contains("theme-dark"));
 
         // watch theme change
@@ -146,10 +149,7 @@ export default defineComponent({
         "div",
         {
           ref: mermaidElement,
-          class: {
-            "md-enhance-mermaid": true,
-            loading: !svgCode.value,
-          },
+          class: ["md-enhance-mermaid", { loading: !svgCode.value }],
         },
         svgCode.value
           ? // mermaid
