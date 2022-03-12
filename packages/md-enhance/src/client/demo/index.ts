@@ -16,7 +16,10 @@ export const initDemo = (): void => {
       containers.map((container) => {
         if (container.hasAttribute("demo-inited")) return Promise.resolve();
 
-        const type = decodeURIComponent(container.dataset.type || "normal");
+        const type = decodeURIComponent(container.dataset.type || "normal") as
+          | "vue"
+          | "react"
+          | "normal";
         const config = JSON.parse(
           decodeURIComponent(container.dataset.config || "{}")
         ) as Partial<CodeDemoOptions>;

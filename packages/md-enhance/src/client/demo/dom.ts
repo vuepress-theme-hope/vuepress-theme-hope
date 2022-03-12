@@ -30,7 +30,7 @@ const expandHandler = (
 };
 
 const getCodepenButton = (
-  { html, js, css, jsLib, cssLib, codepenEditors, codepenLayout }: Code,
+  { html, js, css, jsLib, jsx, cssLib, codepenEditors, codepenLayout }: Code,
   codeType?: CodeType
 ): HTMLElement =>
   h(
@@ -57,7 +57,7 @@ const getCodepenButton = (
           // eslint-disable-next-line @typescript-eslint/naming-convention
           html_pre_processor: codeType ? codeType.html[1] : "none",
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          js_pre_processor: codeType ? codeType.js[1] : "none",
+          js_pre_processor: codeType ? codeType.js[1] : jsx ? "babel" : "none",
           // eslint-disable-next-line @typescript-eslint/naming-convention
           css_pre_processor: codeType ? codeType.css[1] : "none",
           editors: codepenEditors,
@@ -153,6 +153,7 @@ export const initDom = ({
   } else {
     demoWrapper.style.display = "none";
     codeWrapper.style.height = "auto";
+    footer.appendChild(h("span", { className: "title", innerHTML: title }));
     footer.appendChild(getCodepenButton(code, codeType));
     footer.style.height = "40px";
   }

@@ -108,6 +108,10 @@
     display: inline-block;
     vertical-align: top;
     line-height: 40px;
+
+    &:first-child {
+      margin-left: 16px;
+    }
   }
 
   .code-demo-jsfiddle,
