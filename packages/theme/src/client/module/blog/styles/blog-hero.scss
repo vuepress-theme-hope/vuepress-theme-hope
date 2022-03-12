@@ -106,7 +106,7 @@
 
     display: none;
     position: absolute;
-    left: calc(50vw - 40px);
+    left: calc(50vw - 30px);
     bottom: 0;
 
     width: 60px;
@@ -114,8 +114,8 @@
     padding: 10px;
 
     .icon {
-      width: 25px;
-      margin: -10px 10px;
+      width: 30px;
+      margin: -15px 0px;
       animation-name: bounce-down;
       animation-duration: 1.5s;
       animation-timing-function: linear;
