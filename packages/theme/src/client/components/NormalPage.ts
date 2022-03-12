@@ -9,6 +9,7 @@ import { useIconPrefix } from "@theme-hope/composables";
 import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
 import { useThemeLocaleData } from "@theme-hope/composables";
 import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
+import { useDarkMode } from "@theme-hope/module/outlook/composables";
 
 import type { VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
@@ -20,6 +21,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+    const { isDarkMode } = useDarkMode();
     const iconPrefix = useIconPrefix();
     const themeLocale = useThemeLocaleData();
     const { isEncrypted, validateToken } = usePathEncrypt();
@@ -68,7 +70,9 @@ export default defineComponent({
               slots.contentAfter?.(),
               h(PageMeta),
               h(PageNav),
-              h(resolveComponent("PageComment")),
+              h(resolveComponent("PageComment"), {
+                darkmode: isDarkMode.value,
+              }),
               slots.bottom?.(),
             ]
       );

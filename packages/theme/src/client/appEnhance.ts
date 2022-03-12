@@ -12,10 +12,12 @@ import "./styles/index.scss";
 
 export default defineClientAppEnhance(({ app, router }) => {
   // compat with vuepress-plugin-comment2
-  app.component("PageComment", () => {
+  app.component("PageComment", ({ darkmode }: { darkmode?: boolean }) => {
     const CommentService = app.component("CommentService");
 
-    return CommentService ? h(CommentService) : null;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return CommentService ? h(CommentService, { darkmode }) : null;
   });
 
   // register to inject styles
