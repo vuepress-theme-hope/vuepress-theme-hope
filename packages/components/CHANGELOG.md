@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2022-03-12)
+
+### Bug Fixes
+
+- **components:** align tag text ([9994cf6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9994cf6ef8c2d6146119c0c1c108902962bc1a02))
+
 # [2.0.0-beta.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2022-03-11)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components

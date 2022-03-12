@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2022-03-12)
+
+### Bug Fixes
+
+- **md-enhance:** fix code demo button ([7bfdbd1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7bfdbd1f4f021d99e81c6e47ae436c728369826b))
+
 # [2.0.0-beta.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2022-03-11)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

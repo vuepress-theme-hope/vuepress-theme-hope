@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2022-03-12)
+
+### Features
+
+- **comment2:** add giscus support ([4dec72b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4dec72baa959f192aeaf7a2830f2468605e0374d))
+
 # [2.0.0-beta.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2022-03-11)
 
 **Note:** Version bump only for package vuepress-plugin-comment2

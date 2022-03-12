@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sass-palette",
-  "version": "2.0.0-beta.10",
+  "version": "2.0.0-beta.11",
   "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
     "vuepress-plugin",
@@ -42,7 +42,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.10",
+    "@mr-hope/vuepress-shared": "2.0.0-beta.11",
     "@vuepress/utils": "2.0.0-beta.35",
     "chokidar": "^3.5.3",
     "sass": "^1.49.9",

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2022-03-12)
+
+### Features
+
+- **theme:** improve blog hero scrolldown ([bd12131](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd12131895035a8cb2c01dd2966e123217522d10))
+- **theme:** support giscus ([9ef288c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9ef288c0d512b9cccf969aac7da4dc0d5fceb871))
+
 # [2.0.0-beta.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2022-03-11)
 
 ### Features
