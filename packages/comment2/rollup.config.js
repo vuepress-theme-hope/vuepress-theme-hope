@@ -10,11 +10,12 @@ export default [
   }),
   ...rollupTypescript("client/appEnhance", {
     external: [
+      "@Giscus",
+      "@Waline",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       "vue-router",
-      "@Waline",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],

@@ -15,6 +15,7 @@ export default [
   }),
   ...rollupTypescript("client/appEnhance", {
     external: [
+      "@ChartJS",
       "@CodeGroup",
       "@CodeGroupItem",
       "@FlowChart",
@@ -34,7 +35,12 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/ChartJS", {
-    external: ["chart.js/auto", "vue", /\.scss$/],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "chart.js/auto",
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeGroup", {
@@ -46,7 +52,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FlowChart", {
-    external: ["lodash.debounce", "flowchart.js", "vue", /\.scss$/],
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "lodash.debounce",
+      "flowchart.js",
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {

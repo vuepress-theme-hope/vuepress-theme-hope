@@ -6,8 +6,6 @@ import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import HomePage from "@theme-hope/components/HomePage";
 import NormalPage from "@theme-hope/components/NormalPage";
 
-import type { RouterScrollBehavior } from "vue-router";
-
 import "./styles/index.scss";
 
 export default defineClientAppEnhance(({ app, router }) => {
@@ -26,7 +24,8 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component("NormalPage", NormalPage);
 
   // handle scrollBehavior with transition
-  const scrollBehavior = router.options.scrollBehavior as RouterScrollBehavior;
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const scrollBehavior = router.options.scrollBehavior!;
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   router.options.scrollBehavior = async (...args) => {
