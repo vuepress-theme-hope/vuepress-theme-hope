@@ -25,7 +25,7 @@ export default defineThemeConfig({
   copyright: false,
   displayFooter: true,
 
-  pageInfo: ["Category", "Tag", "PageView", "ReadingTime"],
+  pageInfo: ["Category", "Tag", "ReadingTime"],
 
   locales: {
     "/": {
@@ -40,8 +40,11 @@ export default defineThemeConfig({
 
   plugins: {
     comment: {
-      type: "waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      type: "giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
     docsearch: {

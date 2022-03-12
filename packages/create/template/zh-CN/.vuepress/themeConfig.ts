@@ -28,10 +28,7 @@ export default defineThemeConfig({
 
   displayFooter: true,
 
-  // page meta
-  metaLocales: {
-    editLink: "在 GitHub 上编辑此页",
-  },
+  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
 
   blog: {
     description: "一个前端开发者",
@@ -80,9 +77,13 @@ export default defineThemeConfig({
       autoExcerpt: true,
     },
 
+    // 你也可以使用 Waline
     comment: {
-      type: "waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      type: "giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
     mdEnhance: {

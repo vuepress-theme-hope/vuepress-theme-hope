@@ -28,6 +28,8 @@ export default defineThemeConfig({
 
   displayFooter: true,
 
+  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+
   blog: {
     description: "A FrontEnd programmer",
     intro: "/intro.html",
@@ -75,9 +77,13 @@ export default defineThemeConfig({
       autoExcerpt: true,
     },
 
+    // you can also use Waline
     comment: {
-      type: "waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      type: "giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
     mdEnhance: {

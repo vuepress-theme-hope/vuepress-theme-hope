@@ -24,7 +24,7 @@ export default defineThemeConfig({
   copyright: false,
   displayFooter: true,
 
-  pageInfo: ["Category", "Tag", "PageView", "ReadingTime"],
+  pageInfo: ["Category", "Tag", "ReadingTime"],
 
   locales: {
     "/": {

@@ -18,6 +18,8 @@ export default defineThemeConfig({
 
   docsDir: "demo/src",
 
+  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+
   blog: {
     medias: {
       Baidu: "https://example.com",
@@ -68,10 +70,6 @@ export default defineThemeConfig({
         description: "A FrontEnd programmer",
         intro: "/intro.html",
       },
-
-      metaLocales: {
-        editLink: "Edit this page on GitHub",
-      },
     },
 
     /**
@@ -92,11 +90,6 @@ export default defineThemeConfig({
         description: "一个前端开发者",
         intro: "/zh/intro.html",
       },
-
-      // page meta
-      metaLocales: {
-        editLink: "在 GitHub 上编辑此页",
-      },
     },
   },
 
@@ -112,9 +105,13 @@ export default defineThemeConfig({
       autoExcerpt: true,
     },
 
+    // you can also use Waline
     comment: {
-      type: "waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      type: "giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
     mdEnhance: {
