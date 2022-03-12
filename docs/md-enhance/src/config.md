@@ -168,6 +168,13 @@ Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTe
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
+## chart
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable chart support
+
 ## flowchart
 
 - Type: `boolean`

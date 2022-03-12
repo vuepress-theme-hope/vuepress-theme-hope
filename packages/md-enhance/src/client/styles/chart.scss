@@ -1,0 +1,32 @@
+.chart-title {
+  margin: 0.5rem auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chart-loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--grey15);
+
+  .loading-icon {
+    width: 4em;
+    height: 4em;
+    margin: 2.5em auto;
+    color: var(--c-brand);
+  }
+}
+
+.chart-wrapper {
+  padding: 0.6em 0.4em;
+  transition: all 1s;
+  text-align: center;
+  overflow-x: scroll;
+
+  @media (max-width: hope-config.$mobile) {
+    margin: 0 -1rem;
+    padding: 0.6em 0;
+  }
+}

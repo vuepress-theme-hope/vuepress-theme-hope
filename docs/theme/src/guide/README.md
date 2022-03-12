@@ -27,6 +27,7 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - [CodeGroup](markdown/code-group.md)
 - [Tex Support](markdown/tex.md)
 - [Custom alignment](markdown/align.md)
+- [Chart](markdown/chart.md)
 - [FlowChart](markdown/flowchart.md)
 - [Mermaid Diagram](markdown/mermaid.md)
 - [Mark](markdown/mark.md)

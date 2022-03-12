@@ -31,6 +31,8 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Task list](tasklist.md)
 
+- [Chart](chart.md)
+
 - [Flowchart](flowchart.md)
 
 - [Mermaid Diagram](mermaid.md)

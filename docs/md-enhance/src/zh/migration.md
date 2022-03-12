@@ -26,3 +26,19 @@ icon: change
 
   :::
   ```
+
+- `chart` 支持
+
+  V2 版本通过 `chart` 选项添加了 [chart.js](https://www.chartjs.org/docs/latest/) 支持。
+
+  ````md
+  ::: chart 标题
+
+  ```json
+  {
+    // chart.js 配置
+  }
+  ```
+
+  :::
+  ````

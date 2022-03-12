@@ -26,3 +26,19 @@ icon: change
 
   :::
   ```
+
+- `chart` support
+
+  V2 adds [chart.js](https://www.chartjs.org/docs/latest/) support via `chart` option
+
+  ````md
+  ::: chart Title
+
+  ```json
+  {
+    // chart.js config
+  }
+  ```
+
+  :::
+  ````

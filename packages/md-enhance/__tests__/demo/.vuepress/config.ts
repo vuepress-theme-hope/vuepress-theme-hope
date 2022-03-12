@@ -50,6 +50,8 @@ export default defineUserConfig<DefaultThemeOptions>({
             "/guide/container.md",
             "/guide/sup-sub.md",
             "/guide/align.md",
+            "/guide/chart.md",
+            "/guide/flowchart.md",
             "/guide/footnote.md",
             "/guide/mermaid.md",
             "/guide/mark.md",

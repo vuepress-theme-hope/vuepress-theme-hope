@@ -1,5 +1,5 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
-import { codeDemoRender, getDetailsRender } from "./markdown-it";
+import { chartRender, codeDemoRender, getDetailsRender } from "./markdown-it";
 import { markdownEnhanceLocales } from "./locales";
 
 import type { ContainerPluginOptions } from "@vuepress/plugin-container";
@@ -74,6 +74,12 @@ export const usePlugins = (
       after: () => "</CodeGroupItem>\n",
     });
   }
+
+  if (markdownOptions.chart || markdownOptions.enableAll)
+    app.use("@vuepress/container", {
+      type: "chart",
+      render: chartRender,
+    });
 
   if (markdownOptions.demo || markdownOptions.enableAll)
     app.use("@vuepress/container", {

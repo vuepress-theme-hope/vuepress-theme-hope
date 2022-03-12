@@ -33,6 +33,10 @@ export default [
     external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/ChartJS", {
+    external: ["chart.js/auto", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/CodeGroup", {
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],

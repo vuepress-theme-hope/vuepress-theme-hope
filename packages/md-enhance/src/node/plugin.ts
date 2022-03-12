@@ -41,6 +41,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       : options.enableAll || false;
 
   const alignEnable = getStatus("align");
+  const chartEnable = getStatus("chart");
   const containerEnable = getStatus("container");
   const codegroupEnable = getStatus("codegroup");
   const demoEnable = getStatus("demo");
@@ -79,6 +80,9 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
     name: "vuepress-plugin-md-enhance",
 
     alias: {
+      "@ChartJS": chartEnable
+        ? path.resolve(__dirname, "../client/components/ChartJS.js")
+        : noopModule,
       "@CodeGroup": codegroupEnable
         ? path.resolve(__dirname, "../client/components/CodeGroup.js")
         : noopModule,
@@ -147,6 +151,11 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         "vuepress-plugin-md-enhance",
       ]);
       addViteOptimizeDepsExclude(app, "vuepress-plugin-md-enhance");
+
+      if (chartEnable) {
+        addViteOptimizeDepsInclude(app, ["chart.js/auto"]);
+        addViteSsrExternal(app, "chart.js");
+      }
 
       if (flowchartEnable) {
         addViteOptimizeDepsInclude(app, ["flowchart.js", "lodash.debounce"]);

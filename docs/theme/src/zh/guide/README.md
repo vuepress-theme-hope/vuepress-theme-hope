@@ -27,6 +27,7 @@ tag:
 - [代码组](markdown/code-group.md)
 - [Tex 支持](markdown/tex.md)
 - [自定义对齐](markdown/align.md)
+- [图表](markdown/chart.md)
 - [流程图](markdown/flowchart.md)
 - [Mermaid 图表](markdown/mermaid.md)
 - [标记](markdown/mark.md)

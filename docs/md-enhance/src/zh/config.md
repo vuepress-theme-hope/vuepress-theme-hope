@@ -168,6 +168,13 @@ interface TaskListOptions {
 
 可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
 
+## chart
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图表支持。
+
 ## flowchart
 
 - 类型: `boolean`

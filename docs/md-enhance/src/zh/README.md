@@ -49,6 +49,11 @@ features:
     details: 在 Markdown 中使用任务列表
     link: /zh/guide/tasklist.html
 
+  - title: 图表支持
+    icon: rank
+    details: 在 Markdown 中展示图表
+    link: /zh/guide/chart.html
+
   - title: 流程图支持
     icon: tree
     details: 可以在 Markdown 中直接写出流程图

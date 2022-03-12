@@ -1,3 +1,4 @@
+export * from "./chart";
 export * from "./code-demo";
 export * from "./details";
 export * from "./flowchart";

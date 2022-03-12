@@ -1,6 +1,7 @@
 import { defineClientAppEnhance } from "@vuepress/client";
 import CodeGroup from "@CodeGroup";
 import CodeGroupItem from "@CodeGroupItem";
+import ChartJS from "@ChartJS";
 import FlowChart from "@FlowChart";
 import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
@@ -20,6 +21,8 @@ export default defineClientAppEnhance(({ app }) => {
   if (MARKDOWN_ENHANCE_FOOTNOTE) void import("./styles/footnote.scss");
 
   if (MARKDOWN_ENHANCE_IMAGE_MARK) void import("./styles/image.scss");
+
+  if (ChartJS.name) app.component("ChartJS", ChartJS);
 
   if (CodeGroup.name) {
     app.component("CodeGroup", CodeGroup);

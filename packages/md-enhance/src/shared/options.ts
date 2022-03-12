@@ -149,6 +149,15 @@ export interface MarkdownEnhanceOptions {
   tex?: KatexOptions | boolean;
 
   /**
+   * Whether to enable chart support
+   *
+   * 是否启用 chart 图表支持
+   *
+   * @default false
+   */
+  chart?: boolean;
+
+  /**
    * Whether to enable flowchart support
    *
    * 是否启用 flowchart 流程图支持

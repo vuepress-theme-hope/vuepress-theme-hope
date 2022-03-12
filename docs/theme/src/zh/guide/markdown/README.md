@@ -28,9 +28,11 @@ icon: markdown
 
 - [任务列表](tasklist.md)
 
+- [图表](chart.md)
+
 - [流程图](flowchart.md)
 
-- [Mermaid 图标](mermaid.md)
+- [Mermaid 图表](mermaid.md)
 
 - [Tex 语法](tex.md)
 

@@ -49,6 +49,11 @@ features:
     details: Use tasklist in Markdown
     link: /guide/tasklist.html
 
+  - title: Chart Support
+    icon: rank
+    details: Display charts in Markdown
+    link: /guide/chart.html
+
   - title: Flowchart Support
     icon: tree
     details: Create your flowchart in Markdown
