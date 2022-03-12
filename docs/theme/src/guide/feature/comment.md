@@ -78,11 +78,12 @@ For the complete config item of the plugin ,please see [plugin documentation][co
 
 ## Comment Provider
 
-You can only choose Waline now.
+Currently you can choose from Giscus and Waline.
 
-::: tip
+::: tip Comment service selection
 
-More options are on the way. Please be patient.
+- Giscus is recommended if your blog or documentation is primarily geared towards programmers.
+- If your blog or documentation is for the general public, Waline is recommended.
 
 :::
 
@@ -96,6 +97,29 @@ More options are on the way. Please be patient.
 If your site is for the general public rather than programmers, Waline is recommended.
 
 ::: -->
+
+## Giscus
+
+Giscus is a Github Dicussion based commenting system that is easy to start.
+
+### Preparation
+
+1. You need to create a public repository and open dicussion as a place to store comments
+1. You need to install the [Giscus App](https://github.com/apps/giscus) to have permission to access the corresponding repository.
+
+After completing the above steps, please go to the [Giscus page](https://giscus.app) to get your settings. You just need to fill in the repository and Discussion categories, then scroll to the "Enable giscus" section at the bottom of the page and copy the `data-repo`, `data-repo-id`, `data-category` and `data-category-id` four items as they are required.
+
+### Config
+
+Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
+
+::: info Darkmode
+
+To let Giscus use the correct theme, you need to pass a boolean value to `<CommentService />` via the `darkmode` property, indicating whether darkmode is currently enabled.
+
+:::
+
+For other options, see [Giscus Config][comment2-giscus-config].
 
 ## Waline
 
@@ -164,4 +188,5 @@ For more details, please see [Waline Docs](https://waline.js.org/en/)。
 :::
 
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
+[comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/config/giscus.html
 [comment2-waline-config]: https://vuepress-theme-hope.github.io/v2/comment/config/waline.html

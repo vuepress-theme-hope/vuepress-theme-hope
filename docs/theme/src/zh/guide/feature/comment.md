@@ -78,7 +78,14 @@ module.exports = themeConfig({
 
 ## 评论服务
 
-目前只有 Waline 服务可以选择。
+目前可以从 Giscus 和 Waline 中选择。
+
+::: tip 评论服务选择
+
+- 如果你的博客或文档主要面向程序员，建议使用 Giscus。
+- 如果你的博客或文档面向大众，建议使用 Waline。
+
+:::
 
 <!-- 有两个服务: Waline 和 Vssue -->
 
@@ -90,6 +97,31 @@ module.exports = themeConfig({
 如果你的站点面向大众而非程序员，推荐使用 Waline。
 
 ::: -->
+
+## Giscus
+
+Giscus 是一个基于 Github Dicussion 的评论系统，启用简便。
+
+<!-- more -->
+
+### 准备工作
+
+1. 你需要创建一个公开仓库，并开启评论区，以作为评论存放的地点
+1. 你需要安装 [Giscus App](https://github.com/apps/giscus)，使其有权限访问对应仓库。
+
+在完成以上步骤后，请前往 [Giscus 页面](https://giscus.app/zh-CN) 获得你的设置。你只需要填写仓库和 Dicussion 分类，之后滚动到页面下部的 “启用 giscus” 部分，复制 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 四项，因为它们是必须的。
+
+### 配置
+
+请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
+
+::: info 夜间模式
+
+为了能使 Giscus 使用正确的主题，你需要为 `<CommentService />` 通过 `darkmode` 属性传入一个布尔值，代表当前是否开启夜间模式。
+
+:::
+
+其他的配置项详见 [Giscus 配置][comment2-giscus-config]。
 
 ## Waline
 
@@ -158,4 +190,5 @@ Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中�
 :::
 
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
+[comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/giscus.html
 [comment2-waline-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/waline.html

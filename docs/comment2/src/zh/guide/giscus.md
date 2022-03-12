@@ -5,6 +5,8 @@ icon: github
 
 Giscus 是一个基于 Github Dicussion 的评论系统，启用简便。
 
+<!-- more -->
+
 ## 准备工作
 
 1. 你需要创建一个公开仓库，并开启评论区，以作为评论存放的地点
