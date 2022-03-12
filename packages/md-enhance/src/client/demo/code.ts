@@ -60,13 +60,16 @@ const getReactTemplate = (code: string): string =>
     )};\nReactDOM.render(React.createElement($reactApp), document.getElementById("app"))`;
 
 const getVueJsTemplate = (js: string): string =>
-  `new Vue({ el: '#app', ${js
-    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "$1")
+  js
     .replace(
-      /export\s+default\s*Vue\.extend\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "$1"
+      /export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u,
+      "Vue.createApp({$1}).mount('#app')"
     )
-    .trim()} })`;
+    .replace(
+      /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
+      "Vue.createApp({$1}).mount('#app')"
+    )
+    .trim();
 
 export const wrapper = (scriptStr: string): string =>
   `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?module.exports.default:module.exports;})({})`;
@@ -157,6 +160,7 @@ export const getReactCode = (
         : ""),
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
+    jsx: true,
     getScript: (): string => {
       const scriptStr =
         window.Babel?.transform(code.js[0] || "", {

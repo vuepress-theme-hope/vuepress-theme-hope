@@ -12,5 +12,6 @@ export interface Code extends CodeDemoOptions {
   js: string;
   css: string;
   isLegal: boolean;
+  jsx?: boolean;
   getScript: () => string;
 }
