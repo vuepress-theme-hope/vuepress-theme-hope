@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-03-13)
+
+### Features
+
+- **comment2:** add twikoo support ([8125bab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8125babcd69ec40a4819d366a2c552b9a066f422))
+- **theme:** improve sidebar ([babc9b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/babc9b2f59f641b7dfb31f87b55d86a09beec80b))
+
 # [2.0.0-beta.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2022-03-12)
 
 ### Bug Fixes
