@@ -87,8 +87,8 @@ For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
 
 ### sidebar <Badge text="Recommanded" />
 
-- Type: `HopeThemeSidebarConfig | "auto" | false`
-- Default: `'auto'`
+- Type: `HopeThemeSidebarConfig | "structure" | "heading" | false`
+- Default: `"structure"`
 
 Sidebar Config.
 

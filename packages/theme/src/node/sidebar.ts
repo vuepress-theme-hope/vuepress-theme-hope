@@ -37,6 +37,18 @@ const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
     fs
       // reading dirPath
       .readdirSync(dirFullPath)
+      .filter((item) => {
+        // scanning root dir, so we should filter the following
+        if (rootDir === "" && base === "")
+          return (
+            // .vuepress folder
+            item !== ".vuepress" &&
+            // other locales folder
+            !Object.keys(app.siteData.locales).includes(`/${item}/`)
+          );
+
+        return true;
+      })
       .map((filename) => {
         const fileRelativePath = path.join(base, filename);
         const fileFullPath = path.join(dirFullPath, filename);
@@ -94,33 +106,42 @@ const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
             },
             index:
               "index" in dirInfo ? (dirInfo.index as number | boolean) : null,
-            children: dirInfo.link
+            children: (dirInfo.link
               ? // filter README.md
                 result.filter(
                   (item) => item.type !== "file" || item.path !== "README.md"
                 )
-              : result,
+              : result
+            )
+              // items with `index: false` should be dropped here
+              .filter((item) => item.index !== false),
           };
         }
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const page = pages.find(
-          (page) =>
-            page.filePathRelative === path.join(rootDir, fileRelativePath)
-        )!;
+        // it's a markdown
+        if (filename.endsWith(".md")) {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const page = pages.find(
+            (page) =>
+              page.filePathRelative === path.join(rootDir, fileRelativePath)
+          )!;
 
-        return {
-          type: "file",
-          path: filename,
-          title: page.title,
-          index:
-            "index" in page.frontmatter
-              ? (page.frontmatter.index as boolean | number)
-              : null,
-        };
+          return {
+            type: "file",
+            path: filename,
+            title: page.title,
+            index:
+              "index" in page.frontmatter
+                ? (page.frontmatter.index as boolean | number)
+                : null,
+          };
+        }
+
+        // it's probably an unrelated file
+        return null;
       })
-      // dir without README.md and items with `index: false` should be dropped here
-      .filter((item) => item !== null && item.index !== false) as Info[]
+      // dir without README.md should be dropped here
+      .filter((item) => item !== null) as Info[]
   )
     // sort items
     .sort((itemA: Info, itemB: Info) => {
@@ -183,7 +204,7 @@ export const prepareSidebarData = async (
   const generatePaths: string[] = [];
 
   // exact generate sidebar paths
-  Object.entries(themeConfig.locales).forEach(([, { sidebar }]) => {
+  Object.entries(themeConfig.locales).forEach(([localePath, { sidebar }]) => {
     if (Array.isArray(sidebar))
       generatePaths.push(...getGeneratePaths(sidebar));
     else if (typeof sidebar === "object")
@@ -194,6 +215,7 @@ export const prepareSidebarData = async (
             ...getGeneratePaths(config).map((item) => `${prefix}${item}`)
           );
       });
+    else if (sidebar === "structure") generatePaths.push(localePath);
   });
 
   const sidebarData: Record<string, (HopeThemeSidebarGroupItem | string)[]> =

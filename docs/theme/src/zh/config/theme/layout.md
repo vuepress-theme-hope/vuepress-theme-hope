@@ -87,8 +87,8 @@ tag:
 
 ### sidebar <Badge text="建议配置" />
 
-- 类型: `HopeThemeSidebarConfig | "auto" | false`
-- 默认值: `'auto'`
+- 类型: `HopeThemeSidebarConfig | "structure" | "heading" | false`
+- 默认值: `"structure"`
 
 侧边栏配置。
 

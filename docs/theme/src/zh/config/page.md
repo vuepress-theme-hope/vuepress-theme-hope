@@ -173,9 +173,9 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 ### sidebar
 
-- 类型: `false | 'auto'`
+- 类型: `"heading" | false`
 
-侧边栏配置选项。支持 `false` 或 `auto`。
+侧边栏配置选项。支持 `"heading"` 或 `false`。
 
 ### headingDepth
 

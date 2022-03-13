@@ -29,7 +29,7 @@ const defaultRootOptions: HopeThemeOptions = {
   navbarAutoHide: "mobile",
   hideSiteNameonMobile: true,
 
-  sidebar: "auto",
+  sidebar: "structure",
   sidebarIcon: true,
   headingDepth: 2,
 

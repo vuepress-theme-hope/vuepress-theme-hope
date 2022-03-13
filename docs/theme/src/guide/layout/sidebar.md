@@ -533,7 +533,7 @@ To automatically generate a sidebar that contains only the header links for the 
 
 ```md
 ---
-sidebar: auto
+sidebar: heading
 ---
 ```
 
@@ -549,7 +549,7 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
   themeConfig: {
-    sidebar: "auto",
+    sidebar: "heading",
   },
 });
 ```
@@ -564,7 +564,7 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
   themeConfig: {
-    sidebar: "auto",
+    sidebar: "heading",
   },
 });
 ```

@@ -170,9 +170,9 @@ The navigation bar configuration of the page, filling in `false` will disable th
 
 ### sidebar
 
-- Type: `false | 'auto'`
+- Type: `"heading" | false`
 
-Page sidebar configuration options. Supports `false` or`auto`.
+Page sidebar configuration options. Supports `"heading"` or `false`.
 
 ### headingDepth
 

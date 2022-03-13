@@ -1,5 +1,4 @@
 import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
-import type { HopeThemeSidebarConfig } from "../sidebar";
 
 export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
   /**
@@ -14,7 +13,7 @@ export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
    *
    * 侧边栏配置
    */
-  sidebar?: "auto" | false | HopeThemeSidebarConfig;
+  sidebar?: "heading" | false;
 
   /**
    * Addtional Class for Page container

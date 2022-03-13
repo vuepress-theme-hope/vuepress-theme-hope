@@ -1,5 +1,9 @@
 import { sidebarData } from "@temp/theme-hope/sidebar";
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "@vuepress/client";
 import {
   isArray,
   isLinkExternal,
@@ -49,23 +53,14 @@ export const headersToSidebarItemChildren = (
     : [];
 
 /**
- * Resolve sidebar items if the config is `auto`
+ * Resolve sidebar items if the config is `heading`
  */
-export const resolveAutoSidebarItems = (
+export const resolveHeadingSidebarItems = (
   headingDepth: number
-): ResolvedHopeThemeSidebarPageItem[] => {
-  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+): ResolvedHopeThemeSidebarHeaderItem[] => {
   const page = usePageData();
 
-  return [
-    {
-      type: "page",
-      text: page.value.title,
-      icon: frontmatter.value.icon,
-      link: "",
-      children: headersToSidebarItemChildren(page.value.headers, headingDepth),
-    },
-  ];
+  return headersToSidebarItemChildren(page.value.headers, headingDepth);
 };
 
 /**
@@ -165,21 +160,28 @@ export const resolveMultiSidebarItems = (
  * It should only be resolved and provided once
  */
 export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
+  const routeLocale = useRouteLocale();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const themeLocale = useThemeLocaleData();
 
   // get sidebar config from frontmatter > themeConfig
   const sidebarConfig = frontmatter.value.home
     ? false
-    : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "auto";
+    : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure";
   const headingDepth =
     frontmatter.value.headingDepth ?? themeLocale.value.headingDepth ?? 2;
 
   // resolve sidebar items according to the config
   return sidebarConfig === false
     ? []
-    : sidebarConfig === "auto"
-    ? resolveAutoSidebarItems(headingDepth)
+    : sidebarConfig === "heading"
+    ? resolveHeadingSidebarItems(headingDepth)
+    : sidebarConfig === "structure"
+    ? resolveArraySidebarItems(
+        sidebarData[routeLocale.value],
+        headingDepth,
+        routeLocale.value
+      )
     : isArray(sidebarConfig)
     ? resolveArraySidebarItems(sidebarConfig, headingDepth)
     : isPlainObject(sidebarConfig)
