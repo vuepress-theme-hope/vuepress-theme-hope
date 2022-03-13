@@ -24,3 +24,7 @@ icon: config
 ## Waline 选项
 
 - [点击查看](waline.md)
+
+## Twikoo 选项
+
+- [点击查看](twikoo.md)

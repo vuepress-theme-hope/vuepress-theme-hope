@@ -17,11 +17,14 @@ Comment service provider.
 
 Whether to enable comment feature by default.
 
+## Giscus config
+
+- [See here](gicus.md)
+
 ## Waline config
 
 - [See here](waline.md)
-<!--
 
-## Vssue config
+## Twikoo config
 
-- [See here](vssue.md) -->
+- [See here](twikoo.md)

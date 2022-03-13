@@ -78,7 +78,7 @@ module.exports = themeConfig({
 
 ## 评论服务
 
-目前可以从 Giscus 和 Waline 中选择。
+目前可以从 Giscus、Waline 和 Twikoo 中选择。
 
 ::: tip 评论服务选择
 
@@ -188,6 +188,24 @@ Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中�
 更多配置与使用，请见 [Waline 官方文档](https://waline.js.org)。
 
 :::
+
+## Twikoo
+
+### Vercel 部署
+
+[查看视频教程](https://www.bilibili.com/video/BV1Fh411e7ZH)
+
+1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号
+1. 创建免费 MongoDB 数据库，区域推荐选择 `AWS / N. Virginia (us-east-1)`
+1. 在 Clusters 页面点击 CONNECT，按步骤设置允许所有 IP 地址的连接（[为什么？](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)），创建数据库用户，并记录数据库连接字符串，请将连接字符串中的 `<password>` 修改为数据库密码
+1. 申请 [Vercel](https://vercel.com/signup) 账号
+1. 点击以下按钮将 Twikoo 一键部署到 Vercel
+
+   [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imaegoo/twikoo/tree/dev/src/vercel-min)
+
+1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
+1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
+1. Vercel Domains（包含 `https://` 前缀，例如 `https://xxx.vercel.app`）即为您的环境 id
 
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
 [comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/giscus.html

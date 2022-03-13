@@ -16,13 +16,14 @@ export const enNavbarConfig = defineNavbarConfig([
       },
       "giscus",
       "waline",
+      "twikoo",
     ],
   },
   {
     text: "Config",
     icon: "config",
     prefix: "/config/",
-    children: ["", "giscus", "waline"],
+    children: ["", "giscus", "waline", "twikoo"],
   },
   "/migration",
   {
@@ -51,13 +52,14 @@ export const zhNavbarConfig = defineNavbarConfig([
       },
       "giscus",
       "waline",
+      "twikoo",
     ],
   },
   {
     text: "配置",
     icon: "config",
     prefix: "/zh/config/",
-    children: ["", "giscus", "waline"],
+    children: ["", "giscus", "waline", "twikoo"],
   },
   "/migration",
   {
