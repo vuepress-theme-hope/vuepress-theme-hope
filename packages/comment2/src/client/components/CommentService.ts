@@ -3,6 +3,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import Giscus from "@Giscus";
+import Twikoo from "@Twikoo";
 import Waline from "@Waline";
 import { commentOptions } from "../define";
 
@@ -36,6 +37,10 @@ export default defineComponent({
         : commentOptions.type === "giscus"
         ? h(Giscus, {
             darkmode: props.darkmode,
+            style: { display: enable.value ? "block" : "none" },
+          })
+        : commentOptions.type === "twikoo"
+        ? h(Twikoo, {
             style: { display: enable.value ? "block" : "none" },
           })
         : // : type === "vssue"

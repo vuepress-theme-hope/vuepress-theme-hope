@@ -1,6 +1,7 @@
 import type {
   CommentOptions,
   GiscusOptions,
+  TwikooOptions,
   WalineOptions,
   WalineLocaleConfig,
 } from "../shared";
@@ -21,6 +22,13 @@ export const enableGiscus = Boolean(
     giscusOption.category &&
     giscusOption.categoryId
 );
+
+export const twikooOption = commentOptions as TwikooOptions;
+
+export const enableTwikoo = Boolean(
+  twikooOption && twikooOption.type === "twikoo" && twikooOption.envId
+);
+
 export const walineOption = commentOptions as WalineOptions;
 
 export const enableWaline = Boolean(

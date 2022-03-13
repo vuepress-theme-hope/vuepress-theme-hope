@@ -50,6 +50,7 @@
     "@vuepress/client": "2.0.0-beta.35",
     "@vuepress/utils": "2.0.0-beta.35",
     "@waline/client": "^1.6.0",
+    "twikoo": "^1.5.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14",
     "vuepress-plugin-sass-palette": "2.0.0-beta.13"

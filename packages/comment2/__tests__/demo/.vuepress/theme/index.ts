@@ -13,11 +13,13 @@ const commentTheme: Theme<DefaultThemeOptions> = {
     [
       "comment2",
       {
-        type: "giscus",
-        repo: "vuepress-theme-hope/giscus-discussions",
-        repoId: "R_kgDOG_Pt2A",
-        category: "Announcements",
-        categoryId: "DIC_kwDOG_Pt2M4COD69",
+        type: "twikoo",
+        envId: "https://twikoo.ccknbc.vercel.app",
+        // type: "giscus",
+        // repo: "vuepress-theme-hope/giscus-discussions",
+        // repoId: "R_kgDOG_Pt2A",
+        // category: "Announcements",
+        // categoryId: "DIC_kwDOG_Pt2M4COD69",
 
         // type: "waline",
         // author: "Mr.Hope",

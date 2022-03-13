@@ -11,6 +11,7 @@ export default [
   ...rollupTypescript("client/appEnhance", {
     external: [
       "@Giscus",
+      "@Twikoo",
       "@Waline",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
@@ -29,6 +30,10 @@ export default [
       "vue-router",
       /\.scss$/,
     ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/Twikoo", {
+    external: ["@vuepress/client", "twikoo", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Waline", {
