@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-03-14)
+
+### Features
+
+- **components:** remove PageView from default ([e2478d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e2478d2b7e44aeac9905e729fef266c34d1a7251))
+- **theme:** add lightselector by default ([37f4afc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37f4afc65ce3c7a50474b176de10093b9e0809f2))
+- **theme:** improve sidebar and try not throw errors with invalid config ([69b1c1b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69b1c1bb23379cc57ea29517dee5d881875f5078))
+- unify fullScreen to fullscreen ([1aa014c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1aa014cf762e41ef9cc13e885dc103074fd3c0e0))
+
+### BREAKING CHANGES
+
+- unify `fullScreen` to `fullscreen`
+
 # [2.0.0-beta.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-03-13)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-03-14)
+
+### Bug Fixes
+
+- **theme:** wrap a tag when necessary ([018c26e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/018c26ec93d18cbda806fe56b22be1773738055d))
+
 # [2.0.0-beta.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-03-13)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared
