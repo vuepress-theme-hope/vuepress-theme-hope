@@ -15,9 +15,9 @@ tag:
 
 `vuepress-theme-hope` 将 `themeConfig.plugins.pwa` 作为插件选项传递给 `vuepress-plugin-pwa2` 插件。
 
-::: tip
+::: tip 快速启用
 
-你可以设置 `pwa: true` 来以默认设置启用插件。<Badge text="不推荐" type="warning" />
+你可以设置 `pwa: true` 来以默认设置启用插件。<Badge text="不推荐使用默认设置" type="warning" />
 
 :::
 

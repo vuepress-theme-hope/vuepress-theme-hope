@@ -73,7 +73,7 @@ Significant changes.
 If you meet a bug during usage, you can
 
 ::: right
-[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
 ::::
 
@@ -88,7 +88,7 @@ Significant changes.
 If you meet a bug during usage, you can
 
 ::: right
-[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
 ::::
 ```

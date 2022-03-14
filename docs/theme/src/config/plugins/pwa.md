@@ -15,7 +15,7 @@ The `vuepress-plugin-pwa2` plugin provides progressive web app support.
 
 `vuepress-theme-hope` passes `themeConfig.plugins.pwa` as plugin options to the `vuepress-plugin-pwa2` plugin.
 
-::: Quick Enable
+::: tip Quick Enable
 
 If you want to simply enable this feature, you can set `pwa: true`. <Badge text="Quick Enable Not recommanded" type="warning" />
 
