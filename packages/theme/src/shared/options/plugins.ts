@@ -171,10 +171,10 @@ export interface SearchPluginOptions {
   locales?: LocaleConfig<{
     placeholder: string;
   }>;
-  hotKeys: string[];
-  maxSuggestions: number;
-  isSearchable: (page: Page) => boolean;
-  getExtraFields: (page: Page) => string[];
+  hotKeys?: string[];
+  maxSuggestions?: number;
+  isSearchable?: (page: Page) => boolean;
+  getExtraFields?: (page: Page) => string[];
 }
 
 export interface HopeThemePluginsOptions {
