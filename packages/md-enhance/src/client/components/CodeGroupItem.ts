@@ -11,7 +11,6 @@ export default defineComponent({
     },
     active: {
       type: Boolean,
-      required: false,
       default: false,
     },
   },

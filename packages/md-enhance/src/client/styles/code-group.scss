@@ -60,13 +60,13 @@
   }
 
   &.active {
-    background-color: var(--code-bg-color);
+    background-color: var(--code-bg-color, #282c34);
 
     &:before {
       background: radial-gradient(
         12px at left top,
         transparent 50%,
-        var(--code-bg-color) 50%
+        var(--code-bg-color, #282c34) 50%
       );
     }
 
@@ -74,7 +74,7 @@
       background: radial-gradient(
         12px at right top,
         transparent 50%,
-        var(--code-bg-color) 50%
+        var(--code-bg-color, #282c34) 50%
       );
     }
   }

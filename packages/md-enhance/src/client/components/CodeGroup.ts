@@ -62,12 +62,12 @@ export default defineComponent({
 
           return vnode as VNode & { props: Exclude<VNode["props"], null> };
         });
+
       // do not render anything if there is no code-group-item
       if (items.length === 0) return null;
 
+      // if `activeIndex` is invalid
       if (activeIndex.value < 0 || activeIndex.value > items.length - 1) {
-        // if `activeIndex` is invalid
-
         // find the index of the code-group-item with `active` props
         activeIndex.value = items.findIndex((vnode) => "active" in vnode.props);
 
