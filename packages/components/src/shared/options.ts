@@ -59,7 +59,7 @@ export interface ComponentOptions {
    *
    * @default false
    */
-  fullScreen?: boolean;
+  fullscreen?: boolean;
 
   /**
    * Whether register pagination component

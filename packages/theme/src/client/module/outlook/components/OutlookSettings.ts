@@ -26,7 +26,7 @@ export default defineComponent({
     );
 
     const enableFullScreen = computed(
-      () => !pure.value && themeData.value.fullScreen
+      () => !pure.value && themeData.value.fullscreen
     );
 
     return (): VNode =>

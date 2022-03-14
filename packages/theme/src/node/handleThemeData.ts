@@ -44,7 +44,7 @@ const defaultRootOptions: HopeThemeOptions = {
     orange: "#f39c12",
     purple: "#8e44ad",
   },
-  fullScreen: true,
+  fullscreen: true,
 };
 
 /**

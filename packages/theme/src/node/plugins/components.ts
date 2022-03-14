@@ -14,7 +14,7 @@ export const resolveComponentsPlugin = (
       typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
     breadcrumb: true,
     badge: true,
-    fullScreen: themeConfig.fullScreen !== false,
+    fullscreen: themeConfig.fullscreen !== false,
     pagination: Boolean(plugins.blog),
     toc: true,
   });

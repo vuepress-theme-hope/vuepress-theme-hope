@@ -13,7 +13,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
     const FullScreen = resolveComponent("FullScreen");
 
-    const fullScreenLocale = computed(
+    const fullscreenLocale = computed(
       () => themeLocale.value.outlookLocales.fullscreen
     );
 
@@ -22,7 +22,7 @@ export default defineComponent({
         h(
           "label",
           { class: "full-screen-title", for: "full-screen-switch" },
-          fullScreenLocale.value
+          fullscreenLocale.value
         ),
         h(FullScreen, { id: "full-screen-switch" }),
       ]);

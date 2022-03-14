@@ -11,7 +11,7 @@
     "build": "cross-env mode=production lerna run build --stream",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "clean": "lerna run clean --stream",
-    "commit": "yarn dlx git-cz",
+    "commit": "yarn git-cz",
     "demo:vite-build": "yarn workspace theme-demo vite-build",
     "demo:vite-serve": "yarn workspace theme-demo vite-serve",
     "demo:webpack-build": "yarn workspace theme-demo webpack-build",

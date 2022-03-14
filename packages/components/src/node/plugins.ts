@@ -33,7 +33,7 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
       "@Badge": options.badge
         ? path.resolve(__dirname, "../client/components/Badge.js")
         : noopModule,
-      "@FullScreen": options.fullScreen
+      "@FullScreen": options.fullscreen
         ? path.resolve(__dirname, "../client/components/FullScreen.js")
         : noopModule,
       "@Pagination": options.pagination
@@ -72,7 +72,7 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
       addViteOptimizeDepsExclude(app, "@mr-hope/vuepress-plugin-components");
 
       if (options.backToTop) addViteOptimizeDepsInclude(app, "lodash.debounce");
-      if (options.fullScreen) addViteOptimizeDepsInclude(app, "@vueuse/core");
+      if (options.fullscreen) addViteOptimizeDepsInclude(app, "@vueuse/core");
     },
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
