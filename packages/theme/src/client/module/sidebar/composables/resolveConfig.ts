@@ -74,6 +74,17 @@ export const resolveArraySidebarItems = (
   const page = usePageData();
   const route = useRoute();
 
+  if (!Array.isArray(sidebarConfig)) {
+    console.warn(
+      `Expecting array, but getting invalid sidebar config${
+        prefix ? ` under ${prefix}` : ""
+      } with:`,
+      sidebarConfig
+    );
+
+    return [];
+  }
+
   const handleChildItem = (
     item: HopeThemeSidebarItem,
     pathPrefix = prefix
@@ -93,13 +104,30 @@ export const resolveArraySidebarItems = (
     if ("children" in childItem) {
       const prefix = resolvePrefix(pathPrefix, childItem.prefix);
 
+      const children =
+        childItem.children === "structure"
+          ? sidebarData[prefix]
+          : childItem.children;
+
+      if (!Array.isArray(children)) {
+        console.warn(
+          `Expecting array, but getting invalid sidebar config${
+            prefix ? ` under ${prefix}` : ""
+          } with:`,
+          children
+        );
+
+        return {
+          type: "group",
+          ...childItem,
+          children: [],
+        };
+      }
+
       return {
         type: "group",
         ...childItem,
-        children:
-          childItem.children === "structure"
-            ? sidebarData[prefix].map((item) => handleChildItem(item, prefix))
-            : childItem.children.map((item) => handleChildItem(item, prefix)),
+        children: children.map((item) => handleChildItem(item, prefix)),
       };
     }
 
