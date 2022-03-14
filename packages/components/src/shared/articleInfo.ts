@@ -58,7 +58,7 @@ export interface ArticleInfoProps {
    *
    * @see https://vuepress-theme-hope.gitee.io/v2/components/zh/guide/articleInfo/
    *
-   * @default ["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]
+   * @default ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]
    */
   config?: ArticleInfo[] | false;
 

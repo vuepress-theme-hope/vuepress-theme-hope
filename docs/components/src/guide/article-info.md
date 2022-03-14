@@ -10,7 +10,7 @@ export interface ArticleInfoProps {
   /**
    * Article Info display configuration
    *
-   * @default ["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]
+   * @default ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]
    */
   config?: ArticleInfo[] | false;
 

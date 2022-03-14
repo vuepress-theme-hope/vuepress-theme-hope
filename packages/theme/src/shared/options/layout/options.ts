@@ -73,7 +73,7 @@ export interface HopeThemeLayoutLocaleOptions
    *
    * @see https://vuepress-theme-hope.gitee.io/v2/components/zh/guide/article-info.html
    *
-   * @default ["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]
+   * @default ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]
    */
   pageInfo?: ArticleInfo[] | false;
 

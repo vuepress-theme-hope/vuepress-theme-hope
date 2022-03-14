@@ -134,7 +134,7 @@ Whether display icon besides page title
 ## pageInfo
 
 - Type: `ArticleInfo[] | false`
-- Default: `["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]`
+- Default: `["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]`
 
 Article information. The order of the items decides the display order. Fill in `false` to disable it.
 

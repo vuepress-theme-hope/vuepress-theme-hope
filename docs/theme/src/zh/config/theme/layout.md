@@ -134,7 +134,7 @@ tag:
 ### pageInfo
 
 - 类型: `ArticleInfo[] | false`
-- 默认值: `["Author", "Original", "PageView", "Date", "Category", "Tag", "ReadingTime"]`
+- 默认值: `["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]`
 
 文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
 

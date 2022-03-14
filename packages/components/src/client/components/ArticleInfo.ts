@@ -39,7 +39,6 @@ export default defineComponent({
       default: (): ArticleInfo[] => [
         "Author",
         "Original",
-        "PageView",
         "Date",
         "Category",
         "Tag",
