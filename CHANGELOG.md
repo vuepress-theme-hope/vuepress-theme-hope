@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-03-15)
+
+### Bug Fixes
+
+- **theme:** fix search plugin options types ([1e0d5de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e0d5de517a226e06f251ceebc6212bce49addb2))
+
+### Features
+
+- **theme:** add sidebar structure data output in debug ([2d2771f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d2771fafda8dbcb51c9707fb6bcee2a54a25dfd))
+
 # [2.0.0-beta.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-03-14)
 
 ### Bug Fixes
