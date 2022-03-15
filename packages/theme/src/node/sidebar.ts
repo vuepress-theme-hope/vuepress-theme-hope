@@ -270,6 +270,11 @@ export const prepareSidebarData = async (
     })
   );
 
+  if (app.env.isDebug)
+    logger.info(
+      `Structure SidebarData:${JSON.stringify(sidebarData, null, 2)}`
+    );
+
   await app.writeTemp(
     "theme-hope/sidebar.js",
     `export const sidebarData = ${JSON.stringify(sidebarData)}`
