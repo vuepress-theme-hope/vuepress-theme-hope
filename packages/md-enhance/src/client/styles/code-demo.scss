@@ -11,19 +11,26 @@
     box-shadow: 0 2px 12px var(--card-shadow);
   }
 
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--grey15);
+  }
+
+  .loading-icon {
+    width: 4em;
+    height: 4em;
+    margin: 2.5em auto;
+    color: var(--c-brand);
+  }
+
   .demo-wrapper {
     position: relative;
     max-height: 400px;
     padding: 20px;
     border-bottom: 1px solid var(--c-border, #eaecef);
     overflow: auto;
-  }
-
-  .code-demo-app {
-    @media (max-width: hope-config.$pad) {
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
   }
 }
 
