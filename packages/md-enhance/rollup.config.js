@@ -16,6 +16,7 @@ export default [
   ...rollupTypescript("client/appEnhance", {
     external: [
       "@ChartJS",
+      "@CodeDemo",
       "@CodeGroup",
       "@CodeGroupItem",
       "@FlowChart",
@@ -30,10 +31,6 @@ export default [
     dtsExternal: [/\.scss$/, /\.css$/],
     copy: [["client/styles", "client"]],
   }),
-  ...rollupTypescript("client/appSetup", {
-    external: ["@vuepress/client", "vue", "vue-router", /\.scss$/],
-    dtsExternal: [/\.scss$/],
-  }),
   ...rollupTypescript("client/components/ChartJS", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
@@ -41,6 +38,10 @@ export default [
       "vue",
       /\.scss$/,
     ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/CodeDemo", {
+    external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeGroup", {

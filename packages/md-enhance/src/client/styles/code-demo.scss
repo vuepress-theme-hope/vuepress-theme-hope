@@ -7,10 +7,6 @@
   border-radius: 4px;
   transition: all 0.2s;
 
-  &:not([demo-inited]) {
-    display: none;
-  }
-
   &:hover {
     box-shadow: 0 2px 12px var(--card-shadow);
   }
@@ -35,12 +31,14 @@
   overflow: hidden;
   transition: height 0.5s;
 
-  .code {
+  .code-container {
     & > p {
       margin: 0.75rem;
     }
 
     #{hope-config.$contentClass} & > div[class*="language-"] {
+      border-radius: 0;
+
       &:first-child pre {
         margin-top: 0 !important;
       }
@@ -85,14 +83,7 @@
   position: relative;
   text-align: left;
 
-  &.show-link {
-    .code-demo-jsfiddle,
-    .code-demo-codepen {
-      opacity: 1;
-    }
-  }
-
-  .expand {
+  .toggle-button {
     @include reset.button();
     @include arrow.arrow();
     position: relative;

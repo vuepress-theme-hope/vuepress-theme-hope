@@ -8,13 +8,7 @@ export const codeDemoRender = (tokens: Token[], index: number): string => {
   const type = /\[(.*)\]/u.exec(info);
   const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
 
-  if (nesting === -1)
-    return `
-    </div>
-  </div>
-  <div class="code-demo-footer"></div>
-</div>
-`;
+  if (nesting === -1) return `</CodeDemo>`;
 
   let config = "";
   const code: Record<string, string> = {};
@@ -30,16 +24,11 @@ export const codeDemoRender = (tokens: Token[], index: number): string => {
   }
 
   return `
-<div id="code-demo-${hash(code)}" class="code-demo-wrapper" ${
-    type ? `data-type="${encodeURIComponent(type[1])}"` : ""
-  } ${title ? `data-title="${encodeURIComponent(title[1])}"` : ""} ${
-    config ? `data-config="${config}"` : ""
-  } data-code="${encodeURIComponent(JSON.stringify(code))}">
-  <div class="demo-wrapper">
-    <div class="code-demo-app"></div>
-  </div>
-  <div class="code-wrapper">
-    <div class="code">
+<CodeDemo id="code-demo-${hash(code)}"${
+    type ? ` type="${encodeURIComponent(type[1])}"` : ""
+  }${title ? ` title="${encodeURIComponent(title[1])}"` : ""}${
+    config ? ` config="${config}"` : ""
+  } code="${encodeURIComponent(JSON.stringify(code))}">
 `;
 };
 

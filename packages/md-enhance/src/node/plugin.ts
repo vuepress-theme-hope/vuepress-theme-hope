@@ -83,6 +83,9 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       "@ChartJS": chartEnable
         ? path.resolve(__dirname, "../client/components/ChartJS.js")
         : noopModule,
+      "@CodeDemo": demoEnable
+        ? path.resolve(__dirname, "../client/components/CodeDemo.js")
+        : noopModule,
       "@CodeGroup": codegroupEnable
         ? path.resolve(__dirname, "../client/components/CodeGroup.js")
         : noopModule,
@@ -103,6 +106,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
     define: (): Record<string, unknown> => ({
       MARKDOWN_ENHANCE_ALIGN: alignEnable,
       MARKDOWN_ENHANCE_CONTAINER: containerEnable,
+      MARKDOWN_ENHANCE_DEMO: demoEnable,
       MARKDOWN_ENHANCE_DELAY: options.delay || 500,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
       MARKDOWN_ENHANCE_IMAGE_MARK: imageMarkEnable,
@@ -181,11 +185,11 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
 
-    ...(demoEnable
-      ? {
-          clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
-        }
-      : {}),
+    // ...(demoEnable
+    //   ? {
+    //       clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+    //     }
+    //   : {}),
   };
 };
 
