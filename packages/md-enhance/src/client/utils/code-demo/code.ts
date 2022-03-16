@@ -3,7 +3,7 @@ import { getConfig, preProcessorConfig } from "./utils";
 import type Babel from "@babel/core";
 import type { Code, CodeType } from "./typings";
 import type { PreProcessorType } from "./utils";
-import type { CodeDemoOptions } from "../../shared";
+import type { CodeDemoOptions } from "../../../shared";
 
 declare global {
   interface Window {

@@ -1,5 +1,5 @@
 import type { Code } from "./typings";
-import type { CodeDemoOptions } from "../../shared";
+import type { CodeDemoOptions } from "../../../shared";
 
 declare const CODE_DEMO_OPTIONS: CodeDemoOptions;
 
@@ -97,7 +97,7 @@ export const loadScript = (
     const script = document.createElement("script");
 
     script.src = link;
-    document.getElementsByTagName("body")[0].appendChild(script);
+    document.querySelector("body")?.appendChild(script);
 
     script.onload = (): void => {
       resolve();
@@ -148,3 +148,9 @@ export const injectScript = (
     shadowRoot.appendChild(script);
   }
 };
+
+export const select = (
+  node: Element | Document,
+  selector: string
+): HTMLElement[] =>
+  Array.from<HTMLElement>(node.querySelectorAll(`.${selector}`));

@@ -171,7 +171,12 @@ export interface HopeThemeNormalPageFrontmatter
    *
    * 是否展示社交媒体
    */
-  socialMedia?: false;
+  socialMedia?: boolean;
+
+  /**
+   * Whether this page is an article
+   */
+  article?: boolean;
 
   /**
    * Whether the article be sticky in list
