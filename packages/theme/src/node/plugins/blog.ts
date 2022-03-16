@@ -120,7 +120,7 @@ export const resolveBlogPlugin = (
       {
         key: "article",
         sorter,
-        filter: () => true,
+        filter: ({ frontmatter }) => frontmatter.article !== false,
         path: blogOptions.article,
         layout: "Blog",
         frontmatter: (localePath) => ({
