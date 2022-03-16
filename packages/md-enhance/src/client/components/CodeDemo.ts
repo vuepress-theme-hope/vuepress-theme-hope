@@ -1,4 +1,5 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { loadingSvgString } from "./icons";
 import { loadNormal, loadReact, loadVue } from "../composables";
 import {
   injectCSS,
@@ -51,6 +52,7 @@ export default defineComponent({
     const demoWrapper = ref<HTMLDivElement | null>(null);
     const codeContainer = ref<HTMLDivElement | null>(null);
     const height = ref("0px");
+    const loaded = ref(false);
 
     const config = computed(
       () =>
@@ -94,6 +96,8 @@ export default defineComponent({
 
         height.value = "0";
       } else height.value = "auto";
+
+      loaded.value = true;
     };
 
     const loadDemo = (): Promise<void> => {
@@ -119,17 +123,19 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "code-demo-wrapper", id: props.id }, [
-        h(
-          "div",
-          {
-            ref: demoWrapper,
-            class: "demo-wrapper",
-            style: {
-              display: isLegal.value ? "block" : "none",
-            },
+        loaded.value
+          ? null
+          : h("div", {
+              class: ["loading"],
+              innerHTML: loadingSvgString,
+            }),
+        h("div", {
+          ref: demoWrapper,
+          class: "demo-wrapper",
+          style: {
+            display: isLegal.value && loaded.value ? "block" : "none",
           },
-          h("div", { class: "code-demo-app" })
-        ),
+        }),
         h(
           "div",
           { class: "code-wrapper", style: { height: height.value } },
