@@ -126,7 +126,7 @@
     "npm-check-updates": "12.5.3",
     "postcss": "8.4.11",
     "postcss-loader": "6.2.1",
-    "prettier": "2.5.1",
+    "prettier": "2.6.0",
     "remark-cli": "10.0.1",
     "remark-footnotes": "4.0.1",
     "remark-frontmatter": "4.0.1",
