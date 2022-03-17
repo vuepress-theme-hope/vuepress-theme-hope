@@ -55,7 +55,7 @@ features:
     link: https://vuepress-theme-hope.github.io/v2/zh/guide/interface/darkmode.html
 
   - title: 完整的无障碍支持
-    icon: contrast
+    icon: support
     details: 为你的网站带来完整的无障碍支持
     link: https://vuepress-theme-hope.github.io/v2/zh/guide/interface/accessibility.html
 
