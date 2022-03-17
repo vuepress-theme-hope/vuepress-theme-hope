@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-03-17)
+
+### Features
+
+- **md-enhance:** add `mdImport` support ([1d0f98a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d0f98ace81942f6699027af4a1c3cdc3c99b548))
+
 # [2.0.0-beta.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-03-15)
 
 **Note:** Version bump only for package md-enhance-docs

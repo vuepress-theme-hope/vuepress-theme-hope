@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-03-17)
+
+### Bug Fixes
+
+- **theme:** support `article` in frontmatter, close [#1579](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1579) ([df9c8f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df9c8f5a7e74becca3c1f97cd41243f6a4fea119))
+
+### Features
+
+- **md-enhance:** add `mdImport` support ([1d0f98a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d0f98ace81942f6699027af4a1c3cdc3c99b548))
+- **md-enhance:** add loading icon ([94bfe88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/94bfe8883978da4fa9f404d6b97293c249ef05e1))
+- **md-enhance:** rebuild code demo ([5eede6b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5eede6b4e8a9a71196bbfc201b3e5fa64c2f3ce0))
+
 # [2.0.0-beta.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-03-15)
 
 ### Bug Fixes

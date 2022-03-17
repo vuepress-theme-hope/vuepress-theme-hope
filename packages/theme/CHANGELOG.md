@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-03-17)
+
+### Bug Fixes
+
+- **theme:** support `article` in frontmatter, close [#1579](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1579) ([df9c8f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df9c8f5a7e74becca3c1f97cd41243f6a4fea119))
+
 # [2.0.0-beta.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-03-15)
 
 ### Bug Fixes
