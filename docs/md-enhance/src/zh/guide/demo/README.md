@@ -65,7 +65,7 @@ module.exports = {
 ```json
 // json block 作为插件配置存放处
 {
-  // 放置你的配置 (optional)
+  // 放置你的配置 (可选的)
 }
 ```
 

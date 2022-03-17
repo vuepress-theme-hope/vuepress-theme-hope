@@ -128,9 +128,9 @@ icon: config
 
 ```ts
 interface ImageMarkOptions {
-  /** lightmode only ids */
+  /** 日间模式的 ID */
   light?: string[];
-  /** darkmode only ids */
+  /** 夜间模式的 ID */
   dark?: string[];
 }
 ```
@@ -158,6 +158,13 @@ interface TaskListOptions {
   labelAfter?: boolean;
 }
 ```
+
+## mdImport
+
+- 类型: `(path: string) => string | boolean`
+- 默认值: `false`
+
+是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。
 
 ## tex
 

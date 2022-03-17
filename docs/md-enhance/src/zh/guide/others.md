@@ -41,6 +41,19 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 :::
 
+### 高级用法
+
+您可以将对象传递给 `imageMark` 以配置 id 标记，可用选项有：
+
+```ts
+interface ImageMarkOptions {
+  /** 仅限日间模式的 ID */
+  light?: string[];
+  /** 仅限夜间模式的 ID */
+  dark?: string[];
+}
+```
+
 ## GFM
 
 如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们提供了一个 `gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。

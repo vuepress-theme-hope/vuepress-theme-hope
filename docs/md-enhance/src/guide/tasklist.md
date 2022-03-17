@@ -63,3 +63,24 @@ module.exports = {
 - [ ] Plan A
 - [x] Plan B
 ```
+
+## Advanced
+
+Besides setting `tasklist: true` in the plugin options, you can also pass objects to it as options. The available options are as follows:
+
+```ts
+interface TaskListOptions {
+  /**
+   * Whether use `<label>` to wrap text
+   *
+   * @default true
+   */
+  label?: boolean;
+  /**
+   * Whether place `<label>` after `<input>` or wrap `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean;
+}
+```

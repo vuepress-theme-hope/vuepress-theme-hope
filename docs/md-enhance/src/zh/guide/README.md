@@ -177,6 +177,12 @@ $$
 
 - [查看详情](tex.md)
 
+### Markdown 导入
+
+@[md{5,9}](./demo.snippet.md)
+
+- [查看详情](md-import.md)
+
 ### 代码演示
 
 ::: demo 一个普通 Demo

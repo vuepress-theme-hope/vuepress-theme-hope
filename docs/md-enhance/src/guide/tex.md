@@ -85,6 +85,10 @@ $$
 
 <!-- markdownlint-restore -->
 
+## Advanced
+
+Besides setting `tex: true` in plugin options, you can also pass an object to it as `KatexOptions`. It will be passed to katex. Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+
 ## Tutorial
 
 ### Operator

@@ -85,6 +85,10 @@ $$
 
 <!-- markdownlint-restore -->
 
+## 高级
+
+除了在插件选项中设置 `tex: true` 之外，您还可以将对象作为 `KatexOptions` 传递给它。 它将被传递给 katex。 有关可用选项，请参阅 [Katex 文档](https://katex.org/docs/options.html)。
+
 ## 教程
 
 ### 运算符

@@ -5,12 +5,7 @@
 import type MarkdownIt = require("markdown-it");
 import type { PluginWithOptions } from "markdown-it";
 
-export interface ImageMarkOptions {
-  /** lightmode only ids */
-  light?: string[];
-  /** darkmode only ids */
-  dark?: string[];
-}
+import type { ImageMarkOptions } from "../../shared";
 
 export const imageMark: PluginWithOptions<ImageMarkOptions> = (
   md: MarkdownIt,

@@ -69,6 +69,11 @@ features:
     details: Markdown now have Tex Support so you can write your formula
     link: /guide/tex.html
 
+  - title: Markdown snippet Support
+    icon: markdown
+    details: split your docs with different parts and improt them in markdown
+    link: /guide/md-import.html
+
   - title: Code Demo Support
     icon: discover
     details: You can insert code demo easily

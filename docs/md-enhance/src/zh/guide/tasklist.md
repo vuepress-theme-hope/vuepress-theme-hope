@@ -63,3 +63,24 @@ module.exports = {
 - [ ] Plan A
 - [x] Plan B
 ```
+
+## 高级
+
+除了在插件选项中设置 `tasklist: true` 之外，您还可以将对象作为选项传递给它。可用选项如下:
+
+```ts
+interface TaskListOptions {
+  /**
+   * 是否使用 `<label>` 来包裹文字
+   *
+   * @default true
+   */
+  label?: boolean;
+  /**
+   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean;
+}
+```

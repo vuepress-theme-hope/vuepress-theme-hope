@@ -41,6 +41,19 @@ The above demo will render the following result
 
 :::
 
+### Advanced
+
+You can pass an object to `imageMark` to config id marks, available options are:
+
+```ts
+interface ImageMarkOptions {
+  /** lightmode only ids */
+  light?: string[];
+  /** darkmode only ids */
+  dark?: string[];
+}
+```
+
 ## GFM
 
 If your docs both serve on documentation site and directly on GitHub, we provide a `gfm` option to align your Markdown behavior with GitHub.

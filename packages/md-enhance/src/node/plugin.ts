@@ -13,6 +13,7 @@ import {
   flowchart,
   footnote,
   imageMark,
+  mdImport,
   katex,
   lazyLoad,
   mark,
@@ -141,6 +142,10 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       if (tasklistEnable)
         markdownIt.use(tasklist, [
           typeof options.tasklist === "object" ? options.tasklist : {},
+        ]);
+      if (getStatus("mdImport"))
+        markdownIt.use(mdImport, [
+          typeof options.mdImport === "function" ? options.mdImport : undefined,
         ]);
       if (mermaidEnable) markdownIt.use(mermaid);
       if (texEnable) markdownIt.use(katex, katexOptions);

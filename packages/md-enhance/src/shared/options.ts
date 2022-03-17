@@ -136,6 +136,15 @@ export interface MarkdownEnhanceOptions {
   tasklist?: TaskListOptions | boolean;
 
   /**
+   * Whether to enable markdown import syntax support\
+   *
+   * 是否启用 Markdown 导入语法支持
+   *
+   * @default false
+   */
+  mdImport?: (path: string) => string | boolean;
+
+  /**
    * Whether to enable TeX syntax support
    *
    * @see https://katex.org/docs/options.html

@@ -7,6 +7,7 @@ export * from "./image-mark";
 export * from "./katex";
 export * from "./lazy-load";
 export * from "./mark";
+export * from "./md-import";
 export * from "./mermaid";
 export * from "./presentation";
 export * from "./sub";

@@ -179,6 +179,12 @@ $$
 
 - [View Detail](tex.md)
 
+### Markdown Import
+
+@[md{5,9}](./demo.snippet.md)
+
+- [View Detail](md-import.md)
+
 ### Code Demo
 
 ::: demo A normal demo
