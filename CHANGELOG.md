@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2022-03-18)
+
+### Bug Fixes
+
+- **theme:** fix build issue when blog is not enabled ([0b7c6cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b7c6cdcdea1f7b49b1d52575b7e9ffa5d1050b8))
+
 # [2.0.0-beta.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2022-03-18)
 
 ### Bug Fixes
