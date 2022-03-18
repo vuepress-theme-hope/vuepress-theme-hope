@@ -20,14 +20,14 @@ Currently you can choose from Giscus, Waline and Twikoo.
 
 :::
 
-### Giscus
+## Giscus
 
 See [Giscus Config Guide](giscus.md)
 
-### Waline
+## Waline
 
 See [Waline Config Guide](waline.md)
 
-### Twikoo
+## Twikoo
 
 See [Twikoo Config Guide](twikoo.md)

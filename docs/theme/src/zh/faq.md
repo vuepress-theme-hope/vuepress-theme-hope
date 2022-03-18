@@ -103,7 +103,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它。
 
-```js{5-13}
+<!-- ```js 5-13}
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
@@ -114,6 +114,24 @@ export default defineHopeConfig({
         rel: "preload",
         as: "style",
         onload: 'this.onload=null;this.rel="stylesheet"',
+        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+      },
+    ],
+  ],
+
+  // ...
+});
+``` -->
+
+```js {5-11}
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
+  head: [
+    [
+      "link",
+      {
+        rel: "stylesheet",
         href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
       },
     ],
