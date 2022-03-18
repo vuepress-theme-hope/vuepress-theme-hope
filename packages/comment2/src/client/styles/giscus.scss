@@ -2,4 +2,8 @@
 
 .page .giscus-wrapper {
   @include wrapper.wrapper;
+
+  &.input-top .giscus {
+    margin-bottom: -3rem;
+  }
 }

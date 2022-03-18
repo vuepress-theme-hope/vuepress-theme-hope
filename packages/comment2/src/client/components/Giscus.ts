@@ -3,7 +3,7 @@ import { ClientOnly, usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { enableGiscus, giscusOption } from "../define";
 
-import type { GiscusProps } from "@giscus/vue";
+import type { GiscusProps, Mapping } from "@giscus/vue";
 import type { VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";
 
@@ -65,28 +65,32 @@ export default defineComponent({
       );
     });
 
+    const config: GiscusProps = {
+      repo: giscusOption.repo as `${string}/${string}`,
+      repoId: giscusOption.repoId,
+      category: giscusOption.category,
+      categoryId: giscusOption.categoryId,
+      lang: giscusLang.value,
+      theme: props.darkmode ? "dark" : "light",
+      mapping: (giscusOption.mapping || "pathname") as Mapping,
+      inputPosition: giscusOption.inputPosition || "top",
+      reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
+      emitMetadata: "0",
+    };
+
     return (): VNode =>
       h(
         "div",
         {
-          class: "giscus-wrapper",
-          style: { display: enableComment.value ? "block" : "none" },
+          class: [
+            "giscus-wrapper",
+            { "input-top": giscusOption.inputPosition !== "bottom" },
+          ],
+          style: {
+            display: enableComment.value ? "block" : "none",
+          },
         },
-        h(ClientOnly, () =>
-          h(Giscus, {
-            repo: giscusOption.repo as `${string}/${string}`,
-            repoId: giscusOption.repoId,
-            category: giscusOption.category,
-            categoryId: giscusOption.categoryId,
-            lang: giscusLang.value,
-            theme: props.darkmode ? "dark" : "light",
-            mapping: giscusOption.mapping || "pathname",
-            inputPosition: giscusOption.inputPosition || "top",
-            reactionsEnabled:
-              giscusOption.reactionsEnabled !== false ? "1" : "0",
-            emitMetadata: "0",
-          } as GiscusProps)
-        )
+        h(ClientOnly, () => h(Giscus, config))
       );
   },
 });
