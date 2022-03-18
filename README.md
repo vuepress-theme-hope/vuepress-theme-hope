@@ -45,7 +45,7 @@ Though the project has stable release of v1, and are held in [v1 branch](https:/
 
 ## 注意
 
-当前分支基于 VuePress@v2，仍处于 Alpha。
+当前分支基于 VuePress@v2，仍处于 Beta。
 
 这意味着功能和 API 尚未固定，在未来的更新中仍有概率出现破坏性更改。
 
