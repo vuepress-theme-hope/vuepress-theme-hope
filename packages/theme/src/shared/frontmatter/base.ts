@@ -2,6 +2,14 @@ import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 
 export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
   /**
+   * Whether is home page
+   *
+   * 是否是主页
+   */
+
+  home?: boolean;
+
+  /**
    * Whether enable navbar
    *
    * 是否启用导航栏
