@@ -151,7 +151,7 @@ export default defineComponent({
         h("div", { class: "code-demo-footer" }, [
           code.value.isLegal
             ? h("button", {
-                class: ["toggle-button", { down: isExpanded.value }],
+                class: ["toggle-button", { down: !isExpanded.value }],
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
