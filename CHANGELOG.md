@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2022-03-18)
+
+### Bug Fixes
+
+- **comment2:** fix giscus bottom space ([f4ba79e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f4ba79ea3f8e753c200349001ca874eea7bef357))
+- **md-enhance:** fix code demo arrow direction ([0b0cafa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b0cafa80436a495ad72dbb5f58d80964b592104))
+
+### Features
+
+- **seo2:** improve generate logic, fix [#1591](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1591) ([aaec0ca](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aaec0ca8a6cd296c89d24ce3a99d461462d0caa7))
+- **theme:** add sidebar toggle button ([81dd0ec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81dd0ec5e788d7451fe10e431ab4abbf2ea2ea9c))
+
 # [2.0.0-beta.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-03-17)
 
 ### Bug Fixes

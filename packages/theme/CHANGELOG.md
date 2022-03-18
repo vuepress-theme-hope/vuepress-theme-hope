@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2022-03-18)
+
+### Features
+
+- **theme:** add sidebar toggle button ([81dd0ec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81dd0ec5e788d7451fe10e431ab4abbf2ea2ea9c))
+
 # [2.0.0-beta.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-03-17)
 
 ### Bug Fixes
