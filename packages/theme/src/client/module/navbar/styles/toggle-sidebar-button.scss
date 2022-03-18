@@ -4,12 +4,10 @@
   @include reset.button();
 
   display: none;
+
   box-sizing: content-box;
   vertical-align: middle;
 
-  position: absolute;
-  top: calc(50% - 1.075rem);
-  left: 1rem;
   width: 1rem;
   height: 1rem;
   padding: 0.5rem;
@@ -19,10 +17,7 @@
 
   @media screen and (max-width: hope-config.$mobile) {
     display: block;
-
-    .disable-sidebar & {
-      display: none;
-    }
+    padding-right: var(--navbar-mobile-horizontal-padding);
   }
 
   &::before,

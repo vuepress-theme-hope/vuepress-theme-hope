@@ -1,5 +1,6 @@
 .blog-info-wrapper {
   .sidebar & {
+    // hide blogger info in sidebar
     .blogger-info {
       display: none;
     }

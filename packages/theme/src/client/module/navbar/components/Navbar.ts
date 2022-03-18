@@ -1,6 +1,6 @@
 import { computed, defineComponent, h, ref } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useMobile, useThemeLocaleData } from "@theme-hope/composables";
 import NavbarBrand from "@theme-hope/module/navbar/components/NavbarBrand";
 import NavbarLinks from "@theme-hope/module/navbar/components/NavbarLinks";
 import ToggleSidebarButton from "@theme-hope/module/navbar/components/ToggleSidebarButton";
@@ -19,7 +19,7 @@ export default defineComponent({
   setup(_props, { emit, slots }) {
     const themeLocale = useThemeLocaleData();
 
-    const isMobile = ref(false);
+    const isMobile = useMobile();
     const showScreen = ref(false);
 
     const navbar = ref<HTMLElement>();

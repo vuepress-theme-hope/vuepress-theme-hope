@@ -8,6 +8,7 @@ import InfoList from "@theme-hope/module/blog/components/InfoList";
 import InfoPanel from "@theme-hope/module/blog/components/InfoPanel";
 import { DropTransition } from "@theme-hope/components/transitions";
 import SkipLink from "@theme-hope/components/SkipLink";
+import { useMobile } from "@theme-hope/composables";
 
 import type { ComponentOptions, VNode } from "vue";
 
@@ -17,15 +18,14 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter();
+    const isMobile = useMobile();
 
     return (): VNode[] => [
       h(SkipLink),
       h(
         resolveComponent("CommonWrapper") as ComponentOptions,
-        { sidebar: false, sidebarLinks: false },
+        { sidebar: false },
         {
-          navScreenBottom: () => h(BloggerInfo),
-          sidebar: () => h(InfoList),
           default: () =>
             frontmatter.value.home
               ? h(BlogHome)
@@ -37,6 +37,8 @@ export default defineComponent({
                     h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
                   ])
                 ),
+          navScreenBottom: () => h(BloggerInfo),
+          ...(isMobile.value ? { sidebar: () => h(InfoList) } : {}),
         }
       ),
     ];

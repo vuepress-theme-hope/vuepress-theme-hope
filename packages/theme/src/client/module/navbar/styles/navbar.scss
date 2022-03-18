@@ -5,6 +5,7 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   position: fixed;
   z-index: 200;
@@ -36,14 +37,6 @@
       var(--navbar-mobile-horizontal-padding);
   }
 
-  @media (max-width: hope-config.$mobile) {
-    padding-left: calc(var(--navbar-mobile-horizontal-padding) + 2.4rem);
-
-    .disable-sidebar & {
-      padding-left: var(--navbar-mobile-horizontal-padding);
-    }
-  }
-
   .hide-navbar &.auto-hide {
     transform: translateY(-100%);
   }
@@ -67,6 +60,7 @@
   }
 }
 
+// docsearch fix
 .DocSearch {
   &.DocSearch-Button {
     margin-left: 0;

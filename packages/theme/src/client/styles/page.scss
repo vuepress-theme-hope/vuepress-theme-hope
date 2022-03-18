@@ -1,29 +1,12 @@
 .page {
   display: block;
-  padding-top: var(--navbar-height);
-  padding-left: var(--sidebar-width);
+
   padding-bottom: 2rem;
 
-  // change sidebar width
-  @media (max-width: hope-config.$pad) {
-    padding-top: var(--navbar-mobile-height);
-    padding-left: var(--sidebar-mobile-width);
-  }
+  transition: padding var(--transform-transition);
 
   // page should at least one screen length
   @media (max-width: hope-config.$mobile) {
     min-height: 100vh;
-  }
-
-  // no space for sidebar on wide mobile
-  @media (max-width: hope-config.$mobile) {
-    padding-left: 0;
-  }
-
-  // add padding for anchor
-  @media (min-width: hope-config.$wide) {
-    .has-toc & {
-      padding-right: 16rem;
-    }
   }
 }

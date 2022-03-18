@@ -1,3 +1,4 @@
+export * from "./mobile";
 export * from "./navigate";
 export * from "./navLink";
 export * from "./pageMeta";
