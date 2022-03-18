@@ -19,6 +19,20 @@ Deploy hostname.
 
 Default author.
 
+## autoDescription
+
+- Type: `boolean`
+- Default: `true`
+
+Whether generate description automatically
+
+### fallBackImage
+
+- Type: `string`
+- Required: No
+
+Fallback Image link when no image are found
+
 ### restrictions
 
 - Type: `string`
@@ -42,7 +56,16 @@ Use this option to judge whether the page is an article.
 
 ### ogp
 
-- Type: `<ExtendObject = Record<string, unknown>>(ogp: SeoContent, info: PageSeoInfo<ExtendObject>) => SeoContent`
+- Type:
+
+  ```ts
+  function ogp<ExtendObject = Record<string, unknown>>(
+    ogp: SeoContent,
+    page: ExtendPage<ExtendObject>,
+    app: App
+  ) => SeoContent;
+  ```
+
 - Required: No
 
 Custom OPG Generator.
@@ -51,7 +74,16 @@ You can use this options to edit OGP tags.
 
 ### jsonLd
 
-- Type: `<ExtendObject = Record<string, unknown>>(jsonLD: ArticleJSONLD | null, info: PageSeoInfo<ExtendObject>) => ArticleJSONLD | null`
+- Type:
+
+  ```ts
+  function jsonLd: <ExtendObject = Record<string, unknown>>(
+    jsonLD: ArticleJSONLD | null,
+    page: ExtendPage<ExtendObject>,
+    app: App
+  ) => ArticleJSONLD | null;
+  ```
+
 - Required: No
 
 Custom JSON-LD Generator.
@@ -60,26 +92,16 @@ You can use this options to edit JSON-LD properties.
 
 ### customHead
 
-- Type: `<ExtendObject = Record<string, unknown>>(head: HeadConfig[], info: PageSeoInfo<ExtendObject>) => void`
+- Type:
+
+  ```ts
+  function customHead<ExtendObject = Record<string, unknown>>(
+    head: HeadConfig[],
+    page: ExtendPage<ExtendObject>,
+    app: App
+  ) => void
+  ```
+
 - Required: No
 
 You can use this options to edit tags injected to `<head>`.
-
-## Related interface
-
-- Interface of `PageSeoInfo`:
-
-  ```ts
-  interface PageSeoInfo {
-    /** Current Page Object */
-    page: Page;
-    /** Vuepress Config  */
-    site: SiteConfig;
-    /** Current ThemeConfig */
-    themeConfig: ThemeConfig | Record<string, never>;
-    /** langs which are supported */
-    locale: string[];
-    /** Current page path */
-    path: string;
-  }
-  ```

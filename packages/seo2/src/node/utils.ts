@@ -1,12 +1,9 @@
-import { Logger } from "@mr-hope/vuepress-shared";
+import { Logger, isAbsoluteUrl, isUrl } from "@mr-hope/vuepress-shared";
+import type { App } from "@vuepress/core";
 import type { SiteLocaleConfig } from "@vuepress/shared";
-export const logger = new Logger("vuepress-plugin-seo2");
+import type { ExtendPage, SeoOptions } from "../shared";
 
-export const getLink = (hostname: string, base: string, url: string): string =>
-  `${hostname.match(/https?:\/\//) ? "" : "https://"}${hostname.replace(
-    /\/$/u,
-    ""
-  )}${base}${url.replace(/^\//u, "")}`;
+export const logger = new Logger("vuepress-plugin-seo2");
 
 export const getLocales = (lang: string, locales: SiteLocaleConfig): string[] =>
   Object.entries(locales)
@@ -14,6 +11,63 @@ export const getLocales = (lang: string, locales: SiteLocaleConfig): string[] =>
     .filter(
       (item): item is string => typeof item === "string" && item !== lang
     );
+
+export const getCover = (
+  page: ExtendPage,
+  options: SeoOptions,
+  app: App
+): string | null => {
+  const { banner, cover } = page.frontmatter;
+
+  if (banner) {
+    if (isAbsoluteUrl(banner))
+      return resolveUrl(options.hostname, app.options.base, banner);
+
+    if (isUrl(banner)) return banner;
+  }
+
+  if (cover) {
+    if (isAbsoluteUrl(cover))
+      return resolveUrl(options.hostname, app.options.base, cover);
+
+    if (isUrl(cover)) return cover;
+  }
+
+  return null;
+};
+
+export const getImages = (
+  page: ExtendPage,
+  options: SeoOptions,
+  app: App
+): string[] => {
+  const result = /!\[.*?\]\((.*?)\)/giu.exec(page.content);
+
+  if (result) {
+    return result
+      .map(([, link]) => {
+        if (isAbsoluteUrl(link))
+          return resolveUrl(options.hostname, app.options.base, link);
+
+        if (isUrl(link)) return link;
+
+        return null;
+      })
+      .filter((item): item is string => item !== null);
+  }
+
+  return [];
+};
+
+export const resolveUrl = (
+  hostname: string,
+  base: string,
+  url: string
+): string =>
+  `${hostname.match(/https?:\/\//) ? "" : "https://"}${hostname.replace(
+    /\/$/u,
+    ""
+  )}${base}${url.replace(/^\//u, "")}`;
 
 export const stripTags = (content = ""): string =>
   content

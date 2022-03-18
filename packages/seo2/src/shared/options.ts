@@ -9,15 +9,6 @@ export type ExtendPage<ExtendObject = Record<string, unknown>> = Page & {
   git?: GitData;
 } & ExtendObject;
 
-export interface PageSeoInfo<ExtendObject = Record<string, unknown>> {
-  app: App;
-  page: ExtendPage<ExtendObject>;
-  /**
-   * Current page link, permalink is prefered.
-   */
-  permalink: string | null;
-}
-
 export interface SeoOptions {
   /**
    * Delopy hostname
@@ -45,6 +36,26 @@ export interface SeoOptions {
   restrictions?: string;
 
   /**
+   * Whether generate description automatically
+   *
+   * 是否自动生成描述
+   *
+   * @default true
+   */
+  autoDescription?: boolean;
+
+  /**
+   * Fallback Image link when no image are found
+   *
+   * @description should be full or absolute links, probably your site favicon
+   *
+   * 当找不到图片时的回退图片链接
+   *
+   * @description 应为完整或绝对链接，你可以设置为战点图标
+   */
+  fallBackImage?: string;
+
+  /**
    * Twitter username
    *
    * Twitter 用户名
@@ -65,7 +76,8 @@ export interface SeoOptions {
    */
   ogp?: <ExtendObject = Record<string, unknown>>(
     ogp: SeoContent,
-    info: PageSeoInfo<ExtendObject>
+    page: ExtendPage<ExtendObject>,
+    app: App
   ) => SeoContent;
 
   /**
@@ -75,7 +87,8 @@ export interface SeoOptions {
    */
   jsonLd?: <ExtendObject = Record<string, unknown>>(
     jsonLD: ArticleJSONLD | null,
-    info: PageSeoInfo<ExtendObject>
+    page: ExtendPage<ExtendObject>,
+    app: App
   ) => ArticleJSONLD | null;
 
   /**
@@ -85,6 +98,7 @@ export interface SeoOptions {
    */
   customHead?: <ExtendObject = Record<string, unknown>>(
     head: HeadConfig[],
-    info: PageSeoInfo<ExtendObject>
+    page: ExtendPage<ExtendObject>,
+    app: App
   ) => void;
 }

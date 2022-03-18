@@ -1,16 +1,10 @@
 import { stripTags } from "@mr-hope/vuepress-shared";
-import { resolvePagePermalink } from "@vuepress/core";
 import { generateRobotsTxt, generateSeo } from "./seo";
 import { appendSEO } from "./inject";
 import { logger, md2text } from "./utils";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
-import type {
-  ExtendPage,
-  PageSeoInfo,
-  SeoContent,
-  SeoOptions,
-} from "../shared";
+import type { ExtendPage, SeoContent, SeoOptions } from "../shared";
 
 export const seoPlugin: Plugin<SeoOptions> = (options) => {
   if (!options.hostname) {
@@ -22,27 +16,21 @@ export const seoPlugin: Plugin<SeoOptions> = (options) => {
   return {
     name: "vuepress-plugin-seo2",
 
-    extendsPage: (page, app): void => {
+    extendsPage: (page: ExtendPage, app): void => {
       // generate summary
       if (!page.frontmatter.description)
         page.frontmatter.summary =
           stripTags(page.excerpt) || md2text(page.content).slice(0, 180) || "";
 
       const head = page.frontmatter.head || [];
-      const pageSeoInfo: PageSeoInfo = {
-        page: page as ExtendPage,
-        app,
-        permalink: resolvePagePermalink(page),
-      };
-
-      const { OGP, JSONLD } = generateSeo(options as SeoOptions, pageSeoInfo);
+      const { OGP, JSONLD } = generateSeo(page, options as SeoOptions, app);
 
       const ogpContent: SeoContent = options.ogp
-        ? options.ogp(OGP, pageSeoInfo)
+        ? options.ogp(OGP, page, app)
         : OGP;
 
       const jsonLDContent = options.jsonLd
-        ? options.jsonLd(JSONLD, pageSeoInfo)
+        ? options.jsonLd(JSONLD, page, app)
         : null;
 
       appendSEO(head, ogpContent, options as SeoOptions);
@@ -54,7 +42,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options) => {
           JSON.stringify(jsonLDContent),
         ]);
 
-      if (options.customHead) options.customHead(head, pageSeoInfo);
+      if (options.customHead) options.customHead(head, page, app);
 
       page.frontmatter.head = head;
     },

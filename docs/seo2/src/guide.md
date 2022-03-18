@@ -17,35 +17,35 @@ The following are the `<meta>` tags and their values that will be injected into 
 
 The following are the `<meta>` tags and their value injected into `<head>` by default to satisfy OGP:
 
-|        Meta Name         |                        Value                        |
-| :----------------------: | :-------------------------------------------------: |
-|         `og:url`         |           `themeConfig.hostname` + `path`           |
-|      `og:site_name`      |                 `siteConfig.title`                  |
-|        `og:title`        |                    `page.title`                     |
-|     `og:description`     |           `page.frontmatter.description`            |
-|        `og:type`         |                     `"article"`                     |
-|        `og:image`        |  `themeConfig.hostname` + `page.frontmatter.image`  |
-|    `og:updated_time`     |                `page.git.updateTime`                |
-|       `og:locale`        |                     `page.lang`                     |
-|  `og:locale:alternate`   | Other languages including in `themeConfig.locales`  |
-|      `twitter:card`      |               `"summary_large_image"`               |
-|   `twitter:image:alt`    |                 `siteConfig.title`                  |
-|     `article:author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
-|      `article:tag`       | `page.frontmatter.tags` \|\| `page.frontmatter.tag` |
-| `article:published_time` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `article:modified_time`  |               `page.git.updatedTime`                |
+|        Meta Name         |                                                      Value                                                       |
+| :----------------------: | :--------------------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                         `themeConfig.hostname` + `path`                                          |
+|      `og:site_name`      |                                                `siteConfig.title`                                                |
+|        `og:title`        |                                                   `page.title`                                                   |
+|     `og:description`     |     `page.frontmatter.description` \|\| auto generated (when `autoDescription` is `true` in plugin options)      |
+|        `og:type`         |                                                   `"article"`                                                    |
+|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
+|    `og:updated_time`     |                                              `page.git.updateTime`                                               |
+|       `og:locale`        |                                                   `page.lang`                                                    |
+|  `og:locale:alternate`   |                                Other languages including in `themeConfig.locales`                                |
+|      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
+|   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
+|     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
+|      `article:tag`       |                               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                                |
+| `article:published_time` |                               `page.frontmatter.date` \|\| `page.createTimeStamp`                                |
+| `article:modified_time`  |                                              `page.git.updatedTime`                                              |
 
 ### Default JSON-LD Generation
 
-|  Property Name  |                        Value                        |
-| :-------------: | :-------------------------------------------------: |
-|   `@context`    |               `"https://schema.org"`                |
-|     `@type`     |                   `"NewsArticle"`                   |
-|   `headline`    |                    `page.title`                     |
-|     `image`     |  `themeConfig.hostname` + `page.frontmatter.image`  |
-| `datePublished` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `dateModified`  |               `page.git.updatedTime`                |
-|    `author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
+|  Property Name  |                                                   Value                                                   |
+| :-------------: | :-------------------------------------------------------------------------------------------------------: |
+|   `@context`    |                                          `"https://schema.org"`                                           |
+|     `@type`     |                                              `"NewsArticle"`                                              |
+|   `headline`    |                                               `page.title`                                                |
+|     `image`     | image in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` in plugin options |
+| `datePublished` |                            `page.frontmatter.date` \|\| `page.createTimeStamp`                            |
+| `dateModified`  |                                          `page.git.updatedTime`                                           |
+|    `author`     |                            `page.frontmatter.author` \|\| `themeConfig.author`                            |
 
 ## Free customization
 
@@ -85,11 +85,13 @@ You can use the plugin options `ogp` to pass in a function to modify the default
 
 ```ts
 function ogp<ExtendObject = Record<string, unknown>>(
-  /** OGP Object inferred by plugin */
-  ogp: SeoContent,
-  /** SEO Infomation, including App, Current page and permalink */
-  info: PageSeoInfo<ExtendObject>
-): SeoContent;
+   /** OGP Object inferred by plugin */
+ ogp: SeoContent,
+  /** Page Objext */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
+) => SeoContent;
 ```
 
 For detailed parameter structure, see [Config](./config.md).
@@ -98,7 +100,7 @@ For example, if you are using a third-party theme and set a `banner` in frontmat
 
 ```ts
 ({
-  ogp: (ogp, { page }) => ({
+  ogp: (ogp, page) => ({
     ...ogp,
     "og:image": page.frontmatter.banner || ogp["og:image"],
   }),
@@ -113,8 +115,10 @@ Like OGP, you can use the plugin options `jsonLd` to pass in a function to modif
 function jsonLd<ExtendObject = Record<string, unknown>>(
   /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleJSONLD | null,
-  /** SEO Infomation, including App, Current page and permalink */
-  info: PageSeoInfo<ExtendObject>
+  /** Page Objext */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): ArticleJSONLD | null;
 ```
 
@@ -131,7 +135,10 @@ Sometimes you may need to fit other protocols or provide the corresponding SEO t
 ```ts
 function customHead<ExtendObject = Record<string, unknown>>(
   head: HeadConfig[],
-  info: PageSeoInfo<ExtendObject>
+  /** Page Objext */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): void;
 ```
 

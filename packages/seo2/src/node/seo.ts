@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getDate, getAuthor } from "@mr-hope/vuepress-shared";
 import { fs } from "@vuepress/utils";
-import { getLocales, getLink, logger } from "./utils";
+import { getCover, getImages, getLocales, logger, resolveUrl } from "./utils";
 
-import type { AppDir } from "@vuepress/core";
+import type { App, AppDir } from "@vuepress/core";
 import type {
   ArticleJSONLD,
-  PageSeoInfo,
+  ExtendPage,
   SeoContent,
   SeoOptions,
 } from "../shared";
 
 export const generateSeo = (
+  page: ExtendPage,
   options: SeoOptions,
-  { page, app, permalink }: PageSeoInfo
+  app: App
 ): { OGP: SeoContent; JSONLD: ArticleJSONLD | null } => {
   const {
     isArticle = (page): boolean =>
@@ -25,8 +26,6 @@ export const generateSeo = (
       author: pageAuthor,
       time,
       date = time,
-      banner,
-      cover,
       tag,
       tags = tag as string[],
     },
@@ -51,12 +50,8 @@ export const generateSeo = (
     : [];
 
   const articleTitle = page.title;
-  const image = cover
-    ? getLink(options.hostname, base, cover)
-    : banner
-    ? getLink(options.hostname, base, banner)
-    : "";
-
+  const cover = getCover(page, options, app);
+  const images = getImages(page, options, app);
   const locales = getLocales(page.lang, siteData.locales);
 
   let publishedTime = "";
@@ -68,20 +63,28 @@ export const generateSeo = (
       publishedTime = dateInfo.value.toISOString();
   }
 
+  const ogImage = cover || images[0] || options.fallBackImage || "";
+
   return {
     OGP: {
-      "og:url": getLink(options.hostname, base, permalink || page.path),
+      "og:url": resolveUrl(options.hostname, base, page.path),
       "og:site_name": title,
       "og:title": articleTitle,
-      "og:description": page.frontmatter.description || "",
+      "og:description":
+        page.frontmatter.description ||
+        (options.autoDescription ? page.frontmatter.summary || "" : ""),
       "og:type": isArticle(page) ? "article" : "website",
-      "og:image": image,
+      "og:image": ogImage,
       "og:updated_time": modifiedTime,
       "og:locale": page.lang,
       "og:locale:alternate": locales,
 
-      "twitter:card": "summary_large_image",
-      "twitter:image:alt": title,
+      ...(ogImage
+        ? {
+            "twitter:card": "summary_large_image",
+            "twitter:image:alt": articleTitle,
+          }
+        : {}),
 
       "article:author": author[0]?.name,
       "article:tag": articleTags,
@@ -93,7 +96,9 @@ export const generateSeo = (
           "@context": "https://schema.org",
           "@type": "NewsArticle",
           headline: articleTitle,
-          image: [image],
+          image: images.length
+            ? images
+            : [cover || options.fallBackImage || ""],
           datePublished: publishedTime,
           dateModified: modifiedTime,
           author: author.map((item) => ({ "@type": "Person", ...item })),

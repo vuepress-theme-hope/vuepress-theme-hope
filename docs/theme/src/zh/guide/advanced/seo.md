@@ -32,35 +32,35 @@ tag:
 
 ### 默认的 OGP 生成逻辑
 
-|         属性名称         |                         值                          |
-| :----------------------: | :-------------------------------------------------: |
-|         `og:url`         |           `themeConfig.hostname` + `path`           |
-|      `og:site_name`      |                 `siteConfig.title`                  |
-|        `og:title`        |                    `page.title`                     |
-|     `og:description`     |           `page.frontmatter.description`            |
-|        `og:type`         |                     `"article"`                     |
-|        `og:image`        |  `themeConfig.hostname` + `page.frontmatter.image`  |
-|    `og:updated_time`     |               `page.git.updatedTime`                |
-|       `og:locale`        |                     `page.lang`                     |
-|  `og:locale:alternate`   |        `themeConfig.locales` 包含的其他语言         |
-|      `twitter:card`      |               `"summary_large_image"`               |
-|   `twitter:image:alt`    |                 `siteConfig.title`                  |
-|     `article:author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
-|      `article:tag`       | `page.frontmatter.tags` \|\| `page.frontmatter.tag` |
-| `article:published_time` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `article:modified_time`  |               `page.git.updatedTime`                |
+|         属性名称         |                                                   值                                                   |
+| :----------------------: | :----------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                    `themeConfig.hostname` + `path`                                     |
+|      `og:site_name`      |                                           `siteConfig.title`                                           |
+|        `og:title`        |                                              `page.title`                                              |
+|     `og:description`     |      `page.frontmatter.description` \|\| 自动生成 (当插件选项中的 `autoDescription` 为 `true` 时)      |
+|        `og:type`         |                                              `"article"`                                               |
+|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\| 页面的第一张图片\|\| 插件选项的 `fallbackImage` |
+|    `og:updated_time`     |                                         `page.git.updatedTime`                                         |
+|       `og:locale`        |                                              `page.lang`                                               |
+|  `og:locale:alternate`   |                                  `themeConfig.locales` 包含的其他语言                                  |
+|      `twitter:card`      |                                `"summary_large_image"` (仅在找到图片时)                                |
+|   `twitter:image:alt`    |                                     `page.title` (仅在找到图片时)                                      |
+|     `article:author`     |                          `page.frontmatter.author` \|\| `themeConfig.author`                           |
+|      `article:tag`       |                          `page.frontmatter.tags` \|\| `page.frontmatter.tag`                           |
+| `article:published_time` |                          `page.frontmatter.date` \|\| `page.createTimeStamp`                           |
+| `article:modified_time`  |                                         `page.git.updatedTime`                                         |
 
 ### 默认的 JSON-LD 生成逻辑
 
-|     属性名      |                         值                          |
-| :-------------: | :-------------------------------------------------: |
-|   `@context`    |               `"https://schema.org"`                |
-|     `@type`     |                   `"NewsArticle"`                   |
-|   `headline`    |                    `page.title`                     |
-|     `image`     |  `themeConfig.hostname` + `page.frontmatter.image`  |
-| `datePublished` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `dateModified`  |               `page.git.updatedTime`                |
-|    `author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
+|     属性名      |                                 值                                 |
+| :-------------: | :----------------------------------------------------------------: |
+|   `@context`    |                       `"https://schema.org"`                       |
+|     `@type`     |                          `"NewsArticle"`                           |
+|   `headline`    |                            `page.title`                            |
+|     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` |
+| `datePublished` |        `page.frontmatter.date` \|\| `page.createTimeStamp`         |
+| `dateModified`  |                       `page.git.updatedTime`                       |
+|    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
 
 ## 自由定制
 
@@ -83,6 +83,18 @@ head:
 
 插件支持让你完全控制生成逻辑。
 
+### 页面类型
+
+对于大多数页面，基本只有文章和网页两种类型，所以插件提供了 `isArticle` 选项让你提供辨别文章的逻辑。
+
+选项接受一个 `(page: Page) => boolean` 格式的函数，默认情况下从 Markdown 文件生成的非主页页面都会被视为文章。
+
+::: note
+
+如果某个网页的确符合图书、音乐之类的“冷门”类型，你可以通过设置下方三个选项处理它们。
+
+:::
+
 ### ogp
 
 你可以在 `themeConfig.plugins.seo` 中通过 `ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
@@ -91,8 +103,10 @@ head:
 function ogp<ExtendObject = Record<string, unknown>>(
   /** 插件自动推断的 OGP 对象 */
   ogp: SeoContent,
-  /** SEO 有关信息，包含 App, 当前 Page 和页面的永久链接 */
-  info: PageSeoInfo<ExtendObject>
+  /** 页面对象 */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): SeoContent;
 ```
 
@@ -102,7 +116,7 @@ function ogp<ExtendObject = Record<string, unknown>>(
 
 ```ts
 ({
-  ogp: (ogp, { page }) => ({
+  ogp: (ogp, page) => ({
     ...ogp,
     "og:image": page.frontmatter.banner || ogp["og:image"],
   }),
@@ -117,8 +131,10 @@ function ogp<ExtendObject = Record<string, unknown>>(
 function jsonLd<ExtendObject = Record<string, unknown>>(
   /** 插件自动推断的 JSON-LD 对象 */
   jsonLD: ArticleJSONLD | null,
-  /** SEO 有关信息，包含 App, 当前 Page 和页面的永久链接 */
-  info: PageSeoInfo<ExtendObject>
+  /** 页面对象 */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): ArticleJSONLD | null;
 ```
 
@@ -135,7 +151,10 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 ```ts
 function customHead<ExtendObject = Record<string, unknown>>(
   head: HeadConfig[],
-  info: PageSeoInfo<ExtendObject>
+  /** 页面对象 */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): void;
 ```
 
@@ -159,11 +178,20 @@ function customHead<ExtendObject = Record<string, unknown>>(
 
 - [开放内容协议 OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
 
+  本插件完美支持该协议，会自动生成符合该协议的 `<meta>` 标签。
+
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)
+
+  本插件会为文章类页面生成 NewsArticle 类标签。
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 
+  主题结构完美支持
+
 - [Schema.Org](https://schema.org/)
 
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
-[seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/zh/config.html
+  结构标记的 Schema 定义站点
+
+## 相关工具
+
+- [Google 富媒体结构测试工具](https://search.google.com/test/rich-results)

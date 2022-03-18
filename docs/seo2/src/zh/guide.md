@@ -13,35 +13,35 @@ icon: guide
 
 ### 默认的 OGP 生成逻辑
 
-|         属性名称         |                         值                          |
-| :----------------------: | :-------------------------------------------------: |
-|         `og:url`         |           `themeConfig.hostname` + `path`           |
-|      `og:site_name`      |                 `siteConfig.title`                  |
-|        `og:title`        |                    `page.title`                     |
-|     `og:description`     |           `page.frontmatter.description`            |
-|        `og:type`         |                     `"article"`                     |
-|        `og:image`        |  `themeConfig.hostname` + `page.frontmatter.image`  |
-|    `og:updated_time`     |               `page.git.updatedTime`                |
-|       `og:locale`        |                     `page.lang`                     |
-|  `og:locale:alternate`   |        `themeConfig.locales` 包含的其他语言         |
-|      `twitter:card`      |               `"summary_large_image"`               |
-|   `twitter:image:alt`    |                 `siteConfig.title`                  |
-|     `article:author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
-|      `article:tag`       | `page.frontmatter.tags` \|\| `page.frontmatter.tag` |
-| `article:published_time` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `article:modified_time`  |               `page.git.updatedTime`                |
+|         属性名称         |                                                   值                                                   |
+| :----------------------: | :----------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                    `themeConfig.hostname` + `path`                                     |
+|      `og:site_name`      |                                           `siteConfig.title`                                           |
+|        `og:title`        |                                              `page.title`                                              |
+|     `og:description`     |      `page.frontmatter.description` \|\| 自动生成 (当插件选项中的 `autoDescription` 为 `true` 时)      |
+|        `og:type`         |                                              `"article"`                                               |
+|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\| 页面的第一张图片\|\| 插件选项的 `fallbackImage` |
+|    `og:updated_time`     |                                         `page.git.updatedTime`                                         |
+|       `og:locale`        |                                              `page.lang`                                               |
+|  `og:locale:alternate`   |                                  `themeConfig.locales` 包含的其他语言                                  |
+|      `twitter:card`      |                                `"summary_large_image"` (仅在找到图片时)                                |
+|   `twitter:image:alt`    |                                     `page.title` (仅在找到图片时)                                      |
+|     `article:author`     |                          `page.frontmatter.author` \|\| `themeConfig.author`                           |
+|      `article:tag`       |                          `page.frontmatter.tags` \|\| `page.frontmatter.tag`                           |
+| `article:published_time` |                          `page.frontmatter.date` \|\| `page.createTimeStamp`                           |
+| `article:modified_time`  |                                         `page.git.updatedTime`                                         |
 
 ### 默认的 JSON-LD 生成逻辑
 
-|     属性名      |                         值                          |
-| :-------------: | :-------------------------------------------------: |
-|   `@context`    |               `"https://schema.org"`                |
-|     `@type`     |                   `"NewsArticle"`                   |
-|   `headline`    |                    `page.title`                     |
-|     `image`     |  `themeConfig.hostname` + `page.frontmatter.image`  |
-| `datePublished` | `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `dateModified`  |               `page.git.updatedTime`                |
-|    `author`     | `page.frontmatter.author` \|\| `themeConfig.author` |
+|     属性名      |                                 值                                 |
+| :-------------: | :----------------------------------------------------------------: |
+|   `@context`    |                       `"https://schema.org"`                       |
+|     `@type`     |                          `"NewsArticle"`                           |
+|   `headline`    |                            `page.title`                            |
+|     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` |
+| `datePublished` |        `page.frontmatter.date` \|\| `page.createTimeStamp`         |
+| `dateModified`  |                       `page.git.updatedTime`                       |
+|    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
 
 ## 自由定制
 
@@ -84,8 +84,10 @@ head:
 function ogp<ExtendObject = Record<string, unknown>>(
   /** 插件自动推断的 OGP 对象 */
   ogp: SeoContent,
-  /** SEO 有关信息，包含 App, 当前 Page 和页面的永久链接 */
-  info: PageSeoInfo<ExtendObject>
+  /** 页面对象 */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): SeoContent;
 ```
 
@@ -95,7 +97,7 @@ function ogp<ExtendObject = Record<string, unknown>>(
 
 ```ts
 ({
-  ogp: (ogp, { page }) => ({
+  ogp: (ogp, page) => ({
     ...ogp,
     "og:image": page.frontmatter.banner || ogp["og:image"],
   }),
@@ -110,8 +112,10 @@ function ogp<ExtendObject = Record<string, unknown>>(
 function jsonLd<ExtendObject = Record<string, unknown>>(
   /** 插件自动推断的 JSON-LD 对象 */
   jsonLD: ArticleJSONLD | null,
-  /** SEO 有关信息，包含 App, 当前 Page 和页面的永久链接 */
-  info: PageSeoInfo<ExtendObject>
+  /** 页面对象 */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): ArticleJSONLD | null;
 ```
 
@@ -128,7 +132,10 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 ```ts
 function customHead<ExtendObject = Record<string, unknown>>(
   head: HeadConfig[],
-  info: PageSeoInfo<ExtendObject>
+  /** 页面对象 */
+  page: ExtendPage<ExtendObject>,
+  /** VuePress App */
+  app: App
 ): void;
 ```
 

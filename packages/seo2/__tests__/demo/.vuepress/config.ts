@@ -43,5 +43,5 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
-  plugins: [["seo2"]],
+  plugins: [["seo2", { hostname: "https://example.com" }]],
 });
