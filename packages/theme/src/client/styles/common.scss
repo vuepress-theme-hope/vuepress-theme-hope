@@ -18,13 +18,6 @@
     @media (max-width: hope-config.$mobile) {
       padding-left: 0;
     }
-
-    // add padding for anchor
-    @media (min-width: hope-config.$wide) {
-      .has-toc & {
-        padding-right: 16rem;
-      }
-    }
   }
 
   .sidebar {
@@ -53,13 +46,15 @@
   }
 
   &.hide-navbar {
-    .sidebar {
-      // clear space for navbar
-      top: 0;
-
-      @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$pad) {
+      .sidebar {
         // clear space for navbar
         top: 0;
+
+        @media (max-width: hope-config.$mobile) {
+          // clear space for navbar
+          top: 0;
+        }
       }
     }
   }
@@ -106,6 +101,15 @@
 
       .sidebar {
         transform: translateX(-100%);
+      }
+    }
+  }
+
+  &.has-toc {
+    .page {
+      // add padding for anchor
+      @media (min-width: hope-config.$wide) {
+        padding-right: 16rem;
       }
     }
   }

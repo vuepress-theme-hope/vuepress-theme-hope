@@ -132,8 +132,9 @@ export default defineComponent({
       // scroll down
       if (lastDistance < distance && distance > 58) {
         if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-        // scroll up
-      } else hideNavbar.value = false;
+      }
+      // scroll up
+      else hideNavbar.value = false;
 
       lastDistance = distance;
     }, 300);
