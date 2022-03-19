@@ -46,15 +46,10 @@
   }
 
   &.hide-navbar {
-    @media (max-width: hope-config.$pad) {
-      .sidebar {
+    .sidebar {
+      @media (max-width: hope-config.$mobile) {
         // clear space for navbar
         top: 0;
-
-        @media (max-width: hope-config.$mobile) {
-          // clear space for navbar
-          top: 0;
-        }
       }
     }
   }
