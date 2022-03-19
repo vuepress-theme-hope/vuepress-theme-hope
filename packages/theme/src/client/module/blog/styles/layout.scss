@@ -10,13 +10,6 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media (min-width: hope-config.$wide) {
-      // fix toc padding
-      .has-toc & {
-        padding-right: 0;
-      }
-    }
-
     @media (max-width: hope-config.$pad) {
       padding-top: var(--navbar-mobile-height);
     }
@@ -28,6 +21,13 @@
 
     @media (max-width: hope-config.$mobileS) {
       padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.has-toc .page.blog {
+    @media (min-width: hope-config.$wide) {
+      // fix toc padding
       padding-right: 0;
     }
   }
