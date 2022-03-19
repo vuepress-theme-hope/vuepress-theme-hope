@@ -26,6 +26,7 @@ import type { CategoryMapRef } from "@theme-hope/module/blog/composables";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
 declare const ENABLE_BLOG: boolean;
+declare const ENABLE_VISITOR: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   const themeLocale = useThemeLocaleData();
@@ -112,7 +113,9 @@ export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
     isOriginal: frontmatter.value.isOriginal,
     readingTime: page.value.readingTime,
     pageview:
-      "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
+      "pageview" in frontmatter.value
+        ? frontmatter.value.pageview
+        : ENABLE_VISITOR,
     color: !pure.value,
     hint: !pure.value,
   });
