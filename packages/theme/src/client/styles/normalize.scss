@@ -8,7 +8,7 @@ body {
   transition: background-color var(--color-transition);
 }
 
-#{hope-config.$darkSelector} {
+#{hope-config.$dark-selector} {
   color-scheme: dark;
 }
 
@@ -36,7 +36,7 @@ code {
   transition: background-color var(--color-transition),
     color var(--color-transition);
 
-  #{hope-config.$darkSelector} & {
+  #{hope-config.$dark-selector} & {
     background: var(--grey12);
   }
 }
@@ -69,7 +69,7 @@ tr {
   &:nth-child(2n) {
     background: var(--bg-color-light);
 
-    #{hope-config.$darkSelector} {
+    #{hope-config.$dark-selector} {
       background: #252322;
     }
   }
@@ -79,7 +79,7 @@ th,
 td {
   border-color: var(--grey14);
 
-  #{hope-config.$darkSelector} {
+  #{hope-config.$dark-selector} {
     border-color: var(--grey14);
   }
 }

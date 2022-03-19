@@ -12,7 +12,7 @@ $headings: (2, 3, 4, 5, 6);
     padding: 0 1.5rem;
   }
 
-  + #{hope-config.$contentClass}:not(.custom) {
+  + #{hope-config.$content-class}:not(.custom) {
     padding-top: 0;
   }
 }
@@ -46,7 +46,7 @@ $headings: (2, 3, 4, 5, 6);
   &::-webkit-scrollbar-thumb:vertical {
     background: #ddd;
 
-    #{hope-config.$darkSelector} & {
+    #{hope-config.$dark-selector} & {
       background: #333;
     }
   }

@@ -11,7 +11,7 @@
     margin: 0 1.2rem;
   }
 
-  #{hope-config.$darkSelector} & {
+  #{hope-config.$dark-selector} & {
     --dot-color: #444;
     --dot-bar-color: #333;
     --dot-border-color: #555;

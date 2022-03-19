@@ -20,7 +20,7 @@ Considering the size of the output style, we will not introduce all styles globa
 
 ## Setting method
 
-Please configure the themes used in the two modes through `$codeLightTheme` and `$codeDarkTheme` in `.vuepress/styles/config.scss`, the default values ​​are `"one-light"` and `"one-dark"`.
+Please configure the themes used in the two modes through `$code-light-theme` and `$code-dark-theme` in `.vuepress/styles/config.scss`, the default values ​​are `"one-light"` and `"one-dark"`.
 
 ## Available themes
 

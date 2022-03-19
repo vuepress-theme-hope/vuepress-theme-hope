@@ -92,15 +92,15 @@ If the scss file is not imported directly, but is imported through `@use` or `@i
 
 ### Preserved config name
 
-`$darkSelector` is preserved for darkmode selector. You are expected to set this variable if you want your plugin or theme support darkmode. This variable will be used later in palette files.
+`$dark-selector` is preserved for darkmode selector. You are expected to set this variable if you want your plugin or theme support darkmode. This variable will be used later in palette files.
 
 ::: tip
 
-- If you are developing a plugin, you may set `$darkSelector: html.dark !default;` in default config files, as `@vuepress/theme-default` is doing that.
+- If you are developing a plugin, you may set `$dark-selector: html.dark !default;` in default config files, as `@vuepress/theme-default` is doing that.
 
   Your plugin will work with default theme, and users are allowed to change this selector in config file if they are using a third-party theme with different dark selector.
 
-- If you are developing a theme, you may set `$darkSelector` in default config files with your darkmode selector without `!default`, so that users cannot overide it.
+- If you are developing a theme, you may set `$dark-selector` in default config files with your darkmode selector without `!default`, so that users cannot overide it.
 
 :::
 
@@ -151,19 +151,19 @@ Then the below css variables will be availe under root selector:
 
 Since the default theme is providing darkmode, so you probably want different colors under lightmode and darkmode.
 
-To achieve that, you should set color variables with a map containing `light` and `dark` keys. Later, the plugin will read `$darkSelector` in your config and generate different colors for you.
+To achieve that, you should set color variables with a map containing `light` and `dark` keys. Later, the plugin will read `$dark-selector` in your config and generate different colors for you.
 
 ::: details An example
 
 ```scss
 // User palette
-$textColor: (
+$text-color: (
   light: #222,
   dark: #999,
 );
 
 // Default palette
-$textColor: (
+$text-color: (
   light: #2c3e50,
   dark: #9e9e9e,
 ) !default;
@@ -173,7 +173,7 @@ $bgColor: (
 ) !default;
 ```
 
-Then if `$darkSelector` has a value `"html.dark"` in config files, you will get:
+Then if `$dark-selector` has a value `"html.dark"` in config files, you will get:
 
 ```scss
 :root {
@@ -235,7 +235,7 @@ Generator variables will be also injected as css variables like palette, and als
 
 ::: details Example
 
-You may want a `$textColorLight` based on `$textColor`. So you can write a generator like this:
+You may want a `$theme-color-light` based on `$theme-color`. So you can write a generator like this:
 
 ```scss
 @use "sass:color";
@@ -243,10 +243,11 @@ You may want a `$textColorLight` based on `$textColor`. So you can write a gener
 @use "sass:map";
 @use "@sass-palette/helper";
 
-$textColorLight: (
-  light: color.scale(helper.get-color($textColor, $isDark: false), $lightness:
+$theme-color-light: (
+  light: color.scale(helper.get-color($theme-color, $isDark: false), $lightness:
         10%),
-  dark: color.scale(helper.get-color($textColor, $isDark: true), $lightness: 10%),
+  dark: color.scale(helper.get-color($theme-color, $isDark: true), $lightness:
+        10%),
 ) !default;
 ```
 

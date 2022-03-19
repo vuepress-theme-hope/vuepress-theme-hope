@@ -1,7 +1,7 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 @use "@sass-palette/hope-config";
 
-#{hope-config.$contentClass} {
+#{hope-config.$content-class} {
   &:not(.custom) {
     @include wrapper.wrapper;
 

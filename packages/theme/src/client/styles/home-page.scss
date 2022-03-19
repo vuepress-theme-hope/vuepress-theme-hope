@@ -52,7 +52,7 @@
       &.light {
         display: block;
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           display: none;
         }
       }
@@ -60,7 +60,7 @@
       &.dark {
         display: none;
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           display: block;
         }
       }
@@ -251,7 +251,7 @@
     }
   }
 
-  #{hope-config.$contentClass} {
+  #{hope-config.$content-class} {
     padding-bottom: 1.5rem;
   }
 }

@@ -12,15 +12,15 @@
 @import "template/settings";
 @import "template/theme";
 
-$backgroundColor: #111;
-$mainFont: "Open Sans", sans-serif;
-$linkColor: #e7ad52;
-$linkColorHover: color.scale($linkColor, $lightness: 20%);
-$headingFont: "Montserrat", impact, sans-serif;
-$headingTextShadow: none;
-$headingLetterSpacing: -0.03em;
-$headingTextTransform: none;
-$selectionBackgroundColor: #e7ad52;
+$background-color: #111;
+$main-font: "Open Sans", sans-serif;
+$link-color: #e7ad52;
+$link-color-hover: color.scale($link-color, $lightness: 20%);
+$heading-font: "Montserrat", impact, sans-serif;
+$heading-text-shadow: none;
+$heading-letter-spacing: -0.03em;
+$heading-text-transform: none;
+$selection-background-color: #e7ad52;
 
 .reveal[data-theme="night"] {
   @include light-bg-text-color(#222);

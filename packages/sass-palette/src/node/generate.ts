@@ -40,8 +40,8 @@ ${
       #{$key}: #{$value};
     }
   } @else if helper.color-islegal($value) {
-    @if meta.global-variable-exists("darkSelector", $module: "${id}-config") {
-      @include helper.inject-color($key, $value, $darkSelector: ${id}-config.$darkSelector);
+    @if meta.global-variable-exists("dark-selector", $module: "${id}-config") {
+      @include helper.inject-color($key, $value, $dark-selector: ${id}-config.$dark-selector);
     } @else {
       @include helper.inject-color($key, $value);
     }

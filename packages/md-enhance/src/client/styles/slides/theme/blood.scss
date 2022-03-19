@@ -6,7 +6,7 @@
  * "monokai_sublime.css" available from
  * https://github.com/isagalaev/highlight.js/
  *
- * For other themes, change $codeBackground accordingly.
+ * For other themes, change $code-background accordingly.
  *
  */
 
@@ -20,32 +20,32 @@
 // Colors used in the theme
 $blood: #a23;
 $coal: #222;
-$codeBackground: #23241f;
-$backgroundColor: $coal;
+$code-background: #23241f;
+$background-color: $coal;
 
 // Main text
-$mainFont: ubuntu, "sans-serif";
-$mainColor: #eee;
+$main-font: ubuntu, "sans-serif";
+$main-color: #eee;
 
 // Headings
-$headingFont: ubuntu, "sans-serif";
-$headingTextShadow: 2px 2px 2px $coal;
+$heading-font: ubuntu, "sans-serif";
+$heading-text-shadow: 2px 2px 2px $coal;
 
 // h1 shadow, borrowed humbly from
 // (c) Default theme by Hakim El Hattab
-$heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+$heading1-text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
   0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgb(0 0 0 / 10%),
   0 0 5px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 30%),
   0 3px 5px rgb(0 0 0 / 20%), 0 5px 10px rgb(0 0 0 / 25%),
   0 20px 20px rgb(0 0 0 / 15%);
 
 // Links
-$linkColor: $blood;
-$linkColorHover: color.scale($linkColor, $lightness: 20%);
+$link-color: $blood;
+$link-color-hover: color.scale($link-color, $lightness: 20%);
 
 // Text selection
-$selectionBackgroundColor: $blood;
-$selectionColor: #fff;
+$selection-background-color: $blood;
+$selection-color: #fff;
 
 .reveal[data-theme="blood"] {
   @include light-bg-text-color(#222);
@@ -82,7 +82,7 @@ $selectionColor: #fff;
   p code {
     display: inline-block;
     border-radius: 7px;
-    background: $codeBackground;
+    background: $code-background;
   }
 
   small code {

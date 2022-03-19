@@ -62,7 +62,7 @@ export interface SassPaletteOptions {
   /**
    * Custom generator, used to generate derivative values with palette config
    *
-   * e.g: You may want to provide a `$themeColorLight` based on `$themeColor`.
+   * e.g: You may want to provide a `$theme-color-light` based on `$themeColor`.
    *
    * 自定义的生成器，用于生成调色板配置的衍生值。
    *

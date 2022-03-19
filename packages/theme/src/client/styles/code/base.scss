@@ -29,7 +29,7 @@ pre[class*="language-"] {
   white-space: normal;
 }
 
-#{hope-config.$contentClass} {
+#{hope-config.$content-class} {
   pre,
   pre[class*="language-"] {
     overflow: auto;
@@ -192,7 +192,7 @@ div[class*="language-"] {
   }
 }
 
-@each $lang in hope-config.$codeLang {
+@each $lang in hope-config.$code-lang {
   div[class*="language-"].ext-#{$lang} {
     &::before {
       content: "" + $lang;
@@ -202,7 +202,7 @@ div[class*="language-"] {
 
 // narrow mobile
 @media (max-width: hope-config.$mobileS) {
-  #{hope-config.$contentClass} {
+  #{hope-config.$content-class} {
     div[class*="language-"] {
       margin: 0.85rem -1.5rem;
       border-radius: 0;

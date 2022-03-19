@@ -73,7 +73,7 @@ This is the file you should use to provide default css variables with `!default`
 
 Custom generator, used to generate derivative values with the above config.
 
-E.g.: You may want to provide a `$themeColorLight` based on `$themeColor`.
+E.g.: You may want to provide a `$theme-color-light` based on `$theme-color`.
 
 ## style
 

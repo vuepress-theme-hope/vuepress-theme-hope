@@ -52,7 +52,7 @@
       background-repeat: no-repeat !important;
       color: color.scale($color, $lightness: 20%);
 
-      #{hope-config.$darkSelector} & {
+      #{hope-config.$dark-selector} & {
         background: color.scale($color, $lightness: -75%);
         background: linear-gradient(
               135deg,
@@ -84,7 +84,7 @@
             )
             bottom;
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           background: color.scale($color, $lightness: -60%);
           background: linear-gradient(
                 135deg,

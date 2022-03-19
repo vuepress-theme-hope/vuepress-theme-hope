@@ -7,7 +7,7 @@ export const prepareThemeColorScss = async (
 ): Promise<void> => {
   await app.writeTemp(
     "theme-hope/theme-color.scss",
-    `$themeColorPicker: (${Object.entries(themeConfig.themeColor || {})
+    `$picker: (${Object.entries(themeConfig.themeColor || {})
       .map(([color, value]) => `"${color}": ${value}`)
       .join(",")});`
   );

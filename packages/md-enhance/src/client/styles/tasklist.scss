@@ -24,7 +24,7 @@ input[type="checkbox"].task-list-item-checkbox {
 
     visibility: visible;
 
-    #{hope-config.$darkSelector} & {
+    #{hope-config.$dark-selector} & {
       border-color: #666;
       background-color: #333;
     }
@@ -36,7 +36,7 @@ input[type="checkbox"].task-list-item-checkbox {
       border-color: var(--c-brand, #3eaf7c);
       background-color: var(--c-brand, #3eaf7c);
 
-      #{hope-config.$darkSelector} & {
+      #{hope-config.$dark-selector} & {
         border-color: var(--c-brand, #3eaf7c);
         background-color: var(--c-brand, #3eaf7c);
       }

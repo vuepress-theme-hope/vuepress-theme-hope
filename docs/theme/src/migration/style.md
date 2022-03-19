@@ -31,20 +31,20 @@ Move to `config.scss`.
 
 Move to `palette.scss`.
 
-- `$mobileSidebarWidth` renamed to `$sidebarMobileWidth`
-- `$lineNumbersWrapperWidth` renamed to `$lineNumbersWidth`
+- `$mobileSidebarWidth` renamed to `$sidebar-mobile-width`
+- `$lineNumbersWrapperWidth` renamed to `$line-numbers-width`
 
 ### Colors
 
 Move to `palette.scss`.
 
-- `$accentColor` renamed to `$themeColor`
-- `$textColor`, `$darkTextColor` merged into `$textColor`
-- `$bgColor`, `$darkBgColor` merged into `$bgColor`
-- `$bgColorLight`, `$darkBgColorLight` merged into `$bgColorLight`
-- `$bgColorBlur`, `$darkBgColorBlur` merged into `$bgColorBlur`
-- `$cardShadowColor`, `$darkCardShadowColor` merged into `$cardShadow`
-- `$boxShadowColor`, `$darkBoxShadowColor` merged into `$boxShadow`
+- `$accentColor` renamed to `$theme-color`
+- `$textColor`, `$darkTextColor` merged into `$text-color`
+- `$bgColor`, `$darkBgColor` merged into `$bg-color`
+- `$bgColorLight`, `$darkBgColorLight` merged into `$bg-color-light`
+- `$bgColorBlur`, `darkBgColorBlur` merged into `$bg-color-blur`
+- `$cardShadowColor`, `$darkCardShadowColor` merged into `$card-shadow`
+- `$boxShadowColor`, `$darkBoxShadowColor` merged into `$box-shadow`
 
 - `$arrowBgColor` removed
 
@@ -52,12 +52,12 @@ Move to `palette.scss`.
 
   Now you just need to set the theme color in `themeConfig`
 
-- `$codeBgColor`, `$darkCodeBgColor` removed, set `$codeLightTheme` and `$codeDarkTheme` in `config.scss` instead.
+- `$codeBgColor`, `$darkCodeBgColor` removed, set `$code-light-theme` and `$code-dark-theme` in `config.scss` instead.
 
 ### Font
 
-- Added `$fontFamily`, `$fontFamilyFancy` and `$fontFamilyCode`
+- Added `$font-family`, `$font-family-fancy` and `$font-family-code`
 
 ### Transition
 
-- Added `$colorTransition` and `$transformTransition`
+- Added `$color-transition` and `$transform-transition`

@@ -38,13 +38,13 @@
 
       &.theme-color {
         // original theme-color
-        background: hope-config.$themeColor;
+        background: hope-config.$theme-color;
       }
     }
   }
 }
 
-@each $colorName, $value in theme-color.$themeColorPicker {
+@each $colorName, $value in theme-color.$picker {
   :root.theme-#{$colorName} {
     --theme-color: #{$value};
     --theme-color-light: #{color.scale($value, $lightness: 10%)};

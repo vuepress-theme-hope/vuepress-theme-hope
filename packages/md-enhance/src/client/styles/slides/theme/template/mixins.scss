@@ -49,5 +49,5 @@
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
 @mixin body-background() {
-  background: $backgroundColor;
+  background: $background-color;
 }

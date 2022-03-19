@@ -3,43 +3,47 @@
 @use "sass:map";
 @use "@sass-palette/helper";
 
-$textColorLight: (
+$text-color-light: (
   light:
-    color.scale(helper.get-color($textColor, $isDark: false), $lightness: 10%),
+    color.scale(helper.get-color($text-color, $isDark: false), $lightness: 10%),
   dark:
-    color.scale(helper.get-color($textColor, $isDark: true), $lightness: 10%),
+    color.scale(helper.get-color($text-color, $isDark: true), $lightness: 10%),
 ) !default;
 
-$textColorLighter: (
+$text-color-lighter: (
   light:
-    color.scale(helper.get-color($textColor, $isDark: false), $lightness: 20%),
+    color.scale(helper.get-color($text-color, $isDark: false), $lightness: 20%),
   dark:
-    color.scale(helper.get-color($textColor, $isDark: true), $lightness: 20%),
+    color.scale(helper.get-color($text-color, $isDark: true), $lightness: 20%),
 ) !default;
 
-$textColorBright: (
+$text-color-bright: (
   light:
-    color.scale(helper.get-color($textColor, $isDark: false), $lightness: 40%),
+    color.scale(helper.get-color($text-color, $isDark: false), $lightness: 40%),
   dark:
-    color.scale(helper.get-color($textColor, $isDark: true), $lightness: 40%),
+    color.scale(helper.get-color($text-color, $isDark: true), $lightness: 40%),
 ) !default;
 
-$themeColorDark: (
+$theme-color-dark: (
   light:
-    color.scale(helper.get-color($themeColor, $isDark: false), $lightness: -10%),
+    color.scale(
+      helper.get-color($theme-color, $isDark: false),
+      $lightness: -10%
+    ),
   dark:
-    color.scale(helper.get-color($themeColor, $isDark: true), $lightness: -10%),
+    color.scale(helper.get-color($theme-color, $isDark: true), $lightness: -10%),
 ) !default;
 
-$themeColorLight: (
+$theme-color-light: (
   light:
-    color.scale(helper.get-color($themeColor, $isDark: false), $lightness: 10%),
+    color.scale(helper.get-color($theme-color, $isDark: false), $lightness: 10%),
   dark:
-    color.scale(helper.get-color($themeColor, $isDark: true), $lightness: 10%),
+    color.scale(helper.get-color($theme-color, $isDark: true), $lightness: 10%),
 ) !default;
 
-$themeColorMask: (
+$theme-color-mask: (
   light:
-    color.change(helper.get-color($themeColor, $isDark: false), $alpha: 0.15),
-  dark: color.change(helper.get-color($themeColor, $isDark: true), $alpha: 0.15),
+    color.change(helper.get-color($theme-color, $isDark: false), $alpha: 0.15),
+  dark:
+    color.change(helper.get-color($theme-color, $isDark: true), $alpha: 0.15),
 ) !default;

@@ -1,7 +1,7 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
 // Fix top boarder of heading1
-#{hope-config.$contentClass}:not(.custom) {
+#{hope-config.$content-class}:not(.custom) {
   > *:first-child {
     margin-top: 0;
   }

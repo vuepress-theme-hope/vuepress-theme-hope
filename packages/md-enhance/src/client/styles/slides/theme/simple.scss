@@ -14,16 +14,16 @@
 @import "template/settings";
 @import "template/theme";
 
-$mainFont: "Lato", sans-serif;
-$mainColor: #000;
-$headingFont: "News Cycle", impact, sans-serif;
-$headingColor: #000;
-$headingTextShadow: none;
-$headingTextTransform: none;
-$backgroundColor: #fff;
-$linkColor: #00008b;
-$linkColorHover: color.scale($linkColor, $lightness: 20%);
-$selectionBackgroundColor: rgb(0 0 0 / 99%);
+$main-font: "Lato", sans-serif;
+$main-color: #000;
+$heading-font: "News Cycle", impact, sans-serif;
+$heading-color: #000;
+$heading-text-shadow: none;
+$heading-text-transform: none;
+$background-color: #fff;
+$link-color: #00008b;
+$link-color-hover: color.scale($link-color, $lightness: 20%);
+$selection-background-color: rgb(0 0 0 / 99%);
 
 .reveal[data-theme="simple"] {
   @include dark-bg-text-color(#fff);

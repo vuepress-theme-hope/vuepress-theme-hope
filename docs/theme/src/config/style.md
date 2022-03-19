@@ -31,24 +31,20 @@ $mobile: 719px !default;
 $mobileS: 419px !default;
 
 // code languages
-$codeLang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
+$code-lang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
   "json" "kt" "less" "makefile" "md" "php" "py" "rb" "rs" "sass" "scss" "sh"
   "styl" "ts" "toml" "vue" "yml" !default;
 
 /* Content Class */
-$contentClass: ".theme-hope-content" !default;
-
-/** dark mode selecters */
-$darkSelector: 'html[data-theme="dark"]' !default;
-$lightSelector: 'html[data-theme="light"]' !default;
+$content-class: ".theme-hope-content" !default;
 
 /* Color list */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,
   #eb2f96 !default;
 
 /* Code Theme */
-$codeLightTheme: "one-light" !default;
-$codeDarkTheme: "one-dark" !default;
+$code-light-theme: "one-light" !default;
+$code-dark-theme: "one-dark" !default;
 ```
 
 ## palette.scss
@@ -59,7 +55,7 @@ $codeDarkTheme: "one-dark" !default;
 
 All variables here (including your newly added variables) will be converted to kebab-case format and injected as CSS variables.
 
-For example `$themeColor` will be injected as `--theme-color`.
+For example `$theme-color` will be injected as `--theme-color`, and `$backgroundColor` will be injected as `--$background-color`.
 
 :::
 
@@ -68,9 +64,9 @@ For example `$themeColor` will be injected as `--theme-color`.
 For all colors, if they are the same in light mode and dark mode, you can set them directly; otherwise, please set a Sass variable of type Map to give the color values in light and dark modes respectively.
 
 ```scss
-$themeColor: #3eaf7c !default;
+$theme-color: #3eaf7c !default;
 
-$textColor: (
+$text-color: (
   light: #2c3e50,
   dark: #9e9e9e,
 ) !default;
@@ -80,28 +76,28 @@ $bgColor: (
   dark: #1e1e1e,
 ) !default;
 
-$bgColorLight: (
+$bg-color-light: (
   light: #f8f8f8,
   dark: #272727,
 ) !default;
 
-$bgColorBlur: (
+$bg-color-blur: (
   light: rgba(255, 255, 255, 0.9),
   dark: rgba(30, 30, 30, 0.9),
 ) !default;
 
-$borderColor: (
+$border-color: (
   light: #eaecef,
   dark: #302d28,
 ) !default;
 
 // shadow
-$boxShadow: (
+$box-shadow: (
   light: #f0f1f2,
   dark: #0f0e0d,
 ) !default;
 
-$cardShadow: (
+$card-shadow: (
   light: rgba(0, 0, 0, 0.15),
   dark: rgba(0, 0, 0, 0.3),
 ) !default;
@@ -111,30 +107,30 @@ $cardShadow: (
 
 ```scss
 // navbar
-$navbarHeight: 4.5rem !default;
-$navbarHorizontalPadding: 1.5rem !default;
-$navbarVerticalPadding: 0.7rem !default;
-$navbarMobileHeight: 3.25rem !default;
-$navbarMobileHorizontalPadding: 1rem !default;
-$navbarMobileVerticalPadding: 0.5rem !default;
+$navbar-height: 4.5rem !default;
+$navbar-horizontal-padding: 1.5rem !default;
+$navbar-vertical-padding: 0.7rem !default;
+$navbar-mobile-height: 3.25rem !default;
+$navbar-mobile-horizontal-padding: 1rem !default;
+$navbar-mobile-vertical-padding: 0.5rem !default;
 
 // sidebar
-$sidebarWidth: 18rem !default;
-$sidebarMobileWidth: 16rem !default;
+$sidebar-width: 18rem !default;
+$sidebar-mobile-width: 16rem !default;
 
 // content
-$contentWidth: 740px !default;
-$homePageWidth: 1160px !default;
+$content-width: 740px !default;
+$home-page-width: 1160px !default;
 
 // font
-$fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
-$fontFamilyFancy: 'Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+$font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+$font-family-fancy: 'Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
 
 // code
-$fontFamilyCode: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
-$lineNumbersWidth: 2.5rem !default;
+$font-family-code: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
+$line-numbers-width: 2.5rem !default;
 
 // transition
-$colorTransition: "0.3s ease" !default;
-$transformTransition: "0.3s ease" !default;
+$color-transition: "0.3s ease" !default;
+$transform-transition: "0.3s ease" !default;
 ```

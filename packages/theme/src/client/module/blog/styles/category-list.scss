@@ -60,7 +60,7 @@
       background: color.scale($color, $lightness: 90%);
       color: color.scale($color, $lightness: -10%);
 
-      #{hope-config.$darkSelector} & {
+      #{hope-config.$dark-selector} & {
         background: color.scale($color, $lightness: -75%);
         color: color.scale($color, $lightness: 20%);
       }
@@ -68,7 +68,7 @@
       &:hover {
         background: color.scale($color, $lightness: 75%);
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           background: color.scale($color, $lightness: -60%);
         }
       }
@@ -77,7 +77,7 @@
         background: $color;
         color: #fff;
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           background: color.scale($color, $lightness: -20%);
           color: var(--bg-color);
         }

@@ -12,7 +12,7 @@
       display: none;
     }
 
-    #{hope-config.$darkSelector} & {
+    #{hope-config.$dark-selector} & {
       &.light {
         display: none;
       }

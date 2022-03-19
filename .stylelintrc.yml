@@ -444,9 +444,6 @@ rules:
 
   scss/dollar-variable-colon-space-before: never
 
-  # FIXME:
-  scss/dollar-variable-pattern: null
-
   scss/percent-placeholder-pattern: ^[a-z]+([a-z0-9-]+)?$
 
   scss/selector-no-redundant-nesting-selector: true

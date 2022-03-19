@@ -9,24 +9,24 @@
 @mixin theme($theme) {
   .reveal-viewport#{$theme} {
     @include body-background;
-    background-color: $backgroundColor;
+    background-color: $background-color;
   }
 
   .reveal#{$theme} {
-    color: $mainColor;
+    color: $main-color;
     font-weight: normal;
-    font-size: $mainFontSize;
-    font-family: $mainFont;
+    font-size: $main-font-size;
+    font-family: $main-font;
 
     @media print {
       .backgrounds {
-        background-color: $backgroundColor;
+        background-color: $background-color;
       }
     }
 
     ::selection {
-      background: $selectionBackgroundColor;
-      color: $selectionColor;
+      background: $selection-background-color;
+      color: $selection-color;
       text-shadow: none;
     }
 
@@ -44,16 +44,16 @@
     h4,
     h5,
     h6 {
-      margin: $headingMargin;
+      margin: $heading-margin;
 
-      color: $headingColor;
+      color: $heading-color;
 
-      font-weight: $headingFontWeight;
-      font-family: $headingFont;
-      line-height: $headingLineHeight;
-      letter-spacing: $headingLetterSpacing;
-      text-transform: $headingTextTransform;
-      text-shadow: $headingTextShadow;
+      font-weight: $heading-font-weight;
+      font-family: $heading-font;
+      line-height: $heading-line-height;
+      letter-spacing: $heading-letter-spacing;
+      text-transform: $heading-text-transform;
+      text-shadow: $heading-text-shadow;
       word-wrap: break-word;
 
       &:last-child {
@@ -62,20 +62,20 @@
     }
 
     h1 {
-      font-size: $heading1Size;
-      text-shadow: $heading1TextShadow;
+      font-size: $heading1-size;
+      text-shadow: $heading1-text-shadow;
     }
 
     h2 {
-      font-size: $heading2Size;
+      font-size: $heading2-size;
     }
 
     h3 {
-      font-size: $heading3Size;
+      font-size: $heading3-size;
     }
 
     h4 {
-      font-size: $heading4Size;
+      font-size: $heading4-size;
     }
 
     /*********************************************
@@ -83,7 +83,7 @@
      *********************************************/
 
     p {
-      margin: $blockMargin 0;
+      margin: $block-margin 0;
       line-height: 1.3;
     }
 
@@ -152,7 +152,7 @@
       display: block;
 
       width: 70%;
-      margin: $blockMargin auto;
+      margin: $block-margin auto;
       padding: 5px;
 
       background: rgb(255 255 255 / 5%);
@@ -178,20 +178,20 @@
       display: block;
 
       width: 90%;
-      margin: $blockMargin auto;
+      margin: $block-margin auto;
       padding: 0;
 
       box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
 
       font-size: 0.55em;
-      font-family: $codeFont;
+      font-family: $code-font;
       line-height: 1.2em;
       text-align: left;
       word-wrap: break-word;
     }
 
     code {
-      font-family: $codeFont;
+      font-family: $code-font;
       text-transform: none;
     }
 
@@ -262,28 +262,28 @@
     }
 
     img {
-      margin: $blockMargin 0;
+      margin: $block-margin 0;
     }
 
     a {
-      color: $linkColor;
+      color: $link-color;
       text-decoration: none;
       transition: color 0.15s ease;
 
       &:hover {
         border: none;
-        color: $linkColorHover;
+        color: $link-color-hover;
         text-shadow: none;
       }
     }
 
     .roll span::after {
-      background: color.scale($linkColor, $lightness: -15%);
+      background: color.scale($link-color, $lightness: -15%);
       color: #fff;
     }
 
     .r-frame {
-      border: 4px solid $mainColor;
+      border: 4px solid $main-color;
       box-shadow: 0 0 10px rgb(0 0 0 / 15%);
     }
 
@@ -292,17 +292,17 @@
     }
 
     a:hover .r-frame {
-      border-color: $linkColor;
+      border-color: $link-color;
       box-shadow: 0 0 20px rgb(0 0 0 / 55%);
     }
 
     .controls {
-      color: $linkColor;
+      color: $link-color;
     }
 
     .progress {
       background: rgb(0 0 0 / 20%);
-      color: $linkColor;
+      color: $link-color;
     }
 
     table.hljs-ln {

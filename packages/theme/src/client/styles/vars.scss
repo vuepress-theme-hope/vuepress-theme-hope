@@ -20,7 +20,7 @@
   --sidebar-bg-color: var(--bg-color-blur);
 }
 
-#{hope-config.$darkSelector} {
+#{hope-config.$dark-selector} {
   /* complete default theme color to make 3rd-party plugins work */
 
   // theme color
@@ -72,7 +72,7 @@
   --docsearch-hit-shadow: 0 1px 3px 0 var(--border-color);
   --docsearch-footer-background: var(--bg-color);
 
-  #{hope-config.$darkSelector} & {
+  #{hope-config.$dark-selector} & {
     --docsearch-logo-color: var(--c-text);
     --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
     --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d,

@@ -1,28 +1,28 @@
 /* layout */
 // navbar
-$navbarHeight: 3.75rem !default;
-$navbarHorizontalPadding: 1.5rem !default;
-$navbarVerticalPadding: 0.7rem !default;
-$navbarMobileHeight: 3.25rem !default;
-$navbarMobileHorizontalPadding: 1rem !default;
-$navbarMobileVerticalPadding: 0.5rem !default;
+$navbar-height: 3.75rem !default;
+$navbar-horizontal-padding: 1.5rem !default;
+$navbar-vertical-padding: 0.7rem !default;
+$navbar-mobile-height: 3.25rem !default;
+$navbar-mobile-horizontal-padding: 1rem !default;
+$navbar-mobile-vertical-padding: 0.5rem !default;
 
 // sidebar
-$sidebarWidth: 18rem !default;
-$sidebarMobileWidth: 16rem !default;
+$sidebar-width: 18rem !default;
+$sidebar-mobile-width: 16rem !default;
 
 // content
-$contentWidth: 740px !default;
-$homePageWidth: 1160px !default;
+$content-width: 740px !default;
+$home-page-width: 1160px !default;
 
 // font
-$fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
-$fontFamilyFancy: 'Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+$font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+$font-family-fancy: 'Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
 
 // code
-$fontFamilyCode: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
-$lineNumbersWidth: 2.5rem !default;
+$font-family-code: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
+$line-numbers-width: 2.5rem !default;
 
 // transition
-$colorTransition: "0.3s ease" !default;
-$transformTransition: "0.3s ease" !default;
+$color-transition: "0.3s ease" !default;
+$transform-transition: "0.3s ease" !default;

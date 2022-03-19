@@ -11,23 +11,23 @@
 @import "template/theme";
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #fff;
-$mainColor: #222;
-$headingColor: #222;
-$mainFontSize: 42px;
-$mainFont: "Source Sans Pro", helvetica, sans-serif;
-$headingFont: "Source Sans Pro", helvetica, sans-serif;
-$headingTextShadow: none;
-$headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
-$headingFontWeight: 600;
-$linkColor: #2a76dd;
-$linkColorHover: color.scale($linkColor, $lightness: 15%);
-$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
-$heading1Size: 2.5em;
-$heading2Size: 1.6em;
-$heading3Size: 1.3em;
-$heading4Size: 1em;
+$background-color: #fff;
+$main-color: #222;
+$heading-color: #222;
+$main-font-size: 42px;
+$main-font: "Source Sans Pro", helvetica, sans-serif;
+$heading-font: "Source Sans Pro", helvetica, sans-serif;
+$heading-text-shadow: none;
+$heading-letter-spacing: normal;
+$heading-text-transform: uppercase;
+$heading-font-weight: 600;
+$link-color: #2a76dd;
+$link-color-hover: color.scale($link-color, $lightness: 15%);
+$selection-background-color: color.scale($link-color, $lightness: 25%);
+$heading1-size: 2.5em;
+$heading2-size: 1.6em;
+$heading3-size: 1.3em;
+$heading4-size: 1em;
 
 .reveal[theme="white"] {
   @include dark-bg-text-color(#fff);
@@ -35,6 +35,6 @@ $heading4Size: 1em;
 
 @include theme("[data-theme='white']");
 
-#{hope-config.$lightSelector} {
+#{hope-config.$light-selector} {
   @include theme("[data-theme='auto']");
 }

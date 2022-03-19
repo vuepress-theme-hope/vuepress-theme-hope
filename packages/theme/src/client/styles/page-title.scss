@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  #{hope-config.$contentClass}:not(.custom) &:first-child {
+  #{hope-config.$content-class}:not(.custom) &:first-child {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
     padding-top: var(--navbar-height) !important;
 
@@ -48,10 +48,10 @@ h6 {
   }
 }
 
-#{hope-config.$contentClass}:not(.custom) {
+#{hope-config.$content-class}:not(.custom) {
   padding-top: 0 !important;
 }
 
-#{hope-config.$contentClass}:not(.custom) > h1:first-child {
+#{hope-config.$content-class}:not(.custom) > h1:first-child {
   display: none;
 }

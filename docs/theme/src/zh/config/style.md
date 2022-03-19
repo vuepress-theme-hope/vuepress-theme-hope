@@ -25,24 +25,20 @@ $mobile: 719px !default; // 移动设备
 $mobileS: 419px !default; // 小型移动设备
 
 // 代码语言
-$codeLang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
+$code-lang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
   "json" "kt" "less" "makefile" "md" "php" "py" "rb" "rs" "sass" "scss" "sh"
   "styl" "ts" "toml" "vue" "yml" !default;
 
 /* 内容 Class */
-$contentClass: ".theme-hope-content" !default;
-
-/** 深色模式选择器 */
-$darkSelector: 'html[data-theme="dark"]' !default;
-$lightSelector: 'html[data-theme="light"]' !default;
+$content-class: ".theme-hope-content" !default;
 
 /* 颜色列表 */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,
   #eb2f96 !default;
 
 /* 代码主题 */
-$codeLightTheme: "one-light" !default;
-$codeDarkTheme: "one-dark" !default;
+$code-light-theme: "one-light" !default;
+$code-dark-theme: "one-dark" !default;
 ```
 
 ## palette.scss
@@ -53,7 +49,7 @@ $codeDarkTheme: "one-dark" !default;
 
 此处的所有变量 (包括你新添加的变量) 都会被转换为 kebab-case 的格式注入为 CSS 变量。
 
-如 `$themeColor` 会被注入为 `--theme-color`。
+如 `$theme-color` 会被注入为 `--theme-color`，`$backgroundColor` 会被注入为 `--background-color`。
 
 :::
 
@@ -62,9 +58,9 @@ $codeDarkTheme: "one-dark" !default;
 对于所有颜色，如果其在浅色模式和深色模式颜色相同，可直接设置；否则，请设置一个 Map 类型的 Sass 变量分别给出浅色和深色模式下的颜色值。
 
 ```scss
-$themeColor: #3eaf7c !default;
+$theme-color: #3eaf7c !default;
 
-$textColor: (
+$text-color: (
   light: #2c3e50,
   dark: #9e9e9e,
 ) !default;
@@ -74,28 +70,28 @@ $bgColor: (
   dark: #1e1e1e,
 ) !default;
 
-$bgColorLight: (
+$bg-color-light: (
   light: #f8f8f8,
   dark: #272727,
 ) !default;
 
-$bgColorBlur: (
+$bg-color-blur: (
   light: rgba(255, 255, 255, 0.9),
   dark: rgba(30, 30, 30, 0.9),
 ) !default;
 
-$borderColor: (
+$border-color: (
   light: #eaecef,
   dark: #302d28,
 ) !default;
 
 // shadow
-$boxShadow: (
+$box-shadow: (
   light: #f0f1f2,
   dark: #0f0e0d,
 ) !default;
 
-$cardShadow: (
+$card-shadow: (
   light: rgba(0, 0, 0, 0.15),
   dark: rgba(0, 0, 0, 0.3),
 ) !default;
@@ -105,30 +101,30 @@ $cardShadow: (
 
 ```scss
 // navbar
-$navbarHeight: 4.5rem !default;
-$navbarHorizontalPadding: 1.5rem !default;
-$navbarVerticalPadding: 0.7rem !default;
-$navbarMobileHeight: 3.25rem !default;
-$navbarMobileHorizontalPadding: 1rem !default;
-$navbarMobileVerticalPadding: 0.5rem !default;
+$navbar-height: 4.5rem !default;
+$navbar-horizontal-padding: 1.5rem !default;
+$navbar-vertical-padding: 0.7rem !default;
+$navbar-mobile-height: 3.25rem !default;
+$navbar-mobile-horizontal-padding: 1rem !default;
+$navbar-mobile-vertical-padding: 0.5rem !default;
 
 // sidebar
-$sidebarWidth: 18rem !default;
-$sidebarMobileWidth: 16rem !default;
+$sidebar-width: 18rem !default;
+$sidebar-mobile-width: 16rem !default;
 
 // content
-$contentWidth: 740px !default;
-$homePageWidth: 1160px !default;
+$content-width: 740px !default;
+$home-page-width: 1160px !default;
 
 // font
-$fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
-$fontFamilyFancy: 'Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+$font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+$font-family-fancy: 'Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
 
 // code
-$fontFamilyCode: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
-$lineNumbersWidth: 2.5rem !default;
+$font-family-code: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
+$line-numbers-width: 2.5rem !default;
 
 // transition
-$colorTransition: "0.3s ease" !default;
-$transformTransition: "0.3s ease" !default;
+$color-transition: "0.3s ease" !default;
+$transform-transition: "0.3s ease" !default;
 ```

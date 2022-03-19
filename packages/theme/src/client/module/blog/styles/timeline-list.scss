@@ -5,7 +5,7 @@
 
   padding: 8px 0;
 
-  #{hope-config.$darkSelector} & {
+  #{hope-config.$dark-selector} & {
     --dot-color: #444;
     --dot-bar-color: #333;
     --dot-border-color: #555;

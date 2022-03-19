@@ -29,12 +29,12 @@ $cyan: #2aa198;
 $green: #859900;
 
 // Override theme settings (see ../template/settings.scss)
-$mainColor: $base00;
-$headingColor: $base01;
-$headingTextShadow: none;
-$backgroundColor: $base3;
-$linkColor: $blue;
-$linkColorHover: color.scale($linkColor, $lightness: 20%);
-$selectionBackgroundColor: $magenta;
+$main-color: $base00;
+$heading-color: $base01;
+$heading-text-shadow: none;
+$background-color: $base3;
+$link-color: $blue;
+$link-color-hover: color.scale($link-color, $lightness: 20%);
+$selection-background-color: $magenta;
 
 @include theme("[data-theme='solarized']");

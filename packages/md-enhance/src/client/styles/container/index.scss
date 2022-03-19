@@ -34,7 +34,7 @@
   --detail-text-color: inherit;
 }
 
-#{hope-config.$darkSelector} {
+#{hope-config.$dark-selector} {
   // info
   --info-title-color: #eef9fd;
   --info-bg-color: #193c47;
@@ -125,7 +125,7 @@
       &::before {
         @include svg.background-svg(icons.$info-icon);
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           @include svg.background-svg(icons.$info-dark-icon);
         }
       }
@@ -142,7 +142,7 @@
       &::before {
         @include svg.background-svg(icons.$note-icon);
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           @include svg.background-svg(icons.$note-dark-icon);
         }
       }
@@ -159,7 +159,7 @@
       &::before {
         @include svg.background-svg(icons.$tip-icon);
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           @include svg.background-svg(icons.$tip-dark-icon);
         }
       }
@@ -176,7 +176,7 @@
       &::before {
         @include svg.background-svg(icons.$warning-icon);
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           @include svg.background-svg(icons.$warning-dark-icon);
         }
       }
@@ -193,7 +193,7 @@
       &::before {
         @include svg.background-svg(icons.$danger-icon);
 
-        #{hope-config.$darkSelector} & {
+        #{hope-config.$dark-selector} & {
           @include svg.background-svg(icons.$danger-dark-icon);
         }
       }

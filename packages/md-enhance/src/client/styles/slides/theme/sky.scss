@@ -12,16 +12,16 @@
 @import "template/settings";
 @import "template/theme";
 
-$mainFont: "Open Sans", sans-serif;
-$mainColor: #333;
-$headingFont: "Quicksand", sans-serif;
-$headingColor: #333;
-$headingLetterSpacing: -0.08em;
-$headingTextShadow: none;
-$backgroundColor: #f7fbfc;
-$linkColor: #3b759e;
-$linkColorHover: color.scale($linkColor, $lightness: 20%);
-$selectionBackgroundColor: #134674;
+$main-font: "Open Sans", sans-serif;
+$main-color: #333;
+$heading-font: "Quicksand", sans-serif;
+$heading-color: #333;
+$heading-letter-spacing: -0.08em;
+$heading-text-shadow: none;
+$background-colorr: #f7fbfc;
+$link-color: #3b759e;
+$link-color-hover: color.scale($link-color, $lightness: 20%);
+$selection-background-color: #134674;
 
 @mixin body-background() {
   @include radial-gradient(#add9e4, #f7fbfc);

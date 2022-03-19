@@ -92,15 +92,15 @@ $colorB: green !default;
 
 ### 保留的配置名称
 
-`$darkSelector` 保留用于深色模式选择器。如果你希望你的插件或主题支持深色模式，则需要设置此变量。此变量稍后将在调色板文件中使用。
+`$dark-selector` 保留用于深色模式选择器。如果你希望你的插件或主题支持深色模式，则需要设置此变量。此变量稍后将在调色板文件中使用。
 
 ::: tip
 
-- 如果你正在开发插件，你可以在默认配置文件中设置 `$darkSelector: html.dark !default;`，因为 `@vuepress/theme-default` 正在这样做。
+- 如果你正在开发插件，你可以在默认配置文件中设置 `$dark-selector: html.dark !default;`，因为 `@vuepress/theme-default` 正在这样做。
 
   你的插件将在默认主题正常工作，如果用户使用具有不同深色模式选择器的第三方主题，则用户可以在配置文件中更改此选择器。
 
-- 如果你在开发主题，你可以在默认配置文件中设置 `$darkSelector` 为你的深色模式选择器同时不包含 `!default`，这样用户就不能覆盖它。
+- 如果你在开发主题，你可以在默认配置文件中设置 `$dark-selector` 为你的深色模式选择器同时不包含 `!default`，这样用户就不能覆盖它。
 
 :::
 
@@ -151,19 +151,19 @@ $colorB: green !default;
 
 由于默认主题支持深色模式，因此你可能希望在浅色模式和深色模式下使用不同的颜色。
 
-为此，你应该使用包含 `light` 和 `dark` 键的映射设置颜色变量。 稍后，该插件将在你的配置中读取 `$darkSelector` 并为你生成不同的颜色。
+为此，你应该使用包含 `light` 和 `dark` 键的映射设置颜色变量。 稍后，该插件将在你的配置中读取 `$dark-selector` 并为你生成不同的颜色。
 
 ::: details 一个例子
 
 ```scss
 // User palette
-$textColor: (
+$text-color: (
   light: #222,
   dark: #999,
 );
 
 // Default palette
-$textColor: (
+$text-color: (
   light: #2c3e50,
   dark: #9e9e9e,
 ) !default;
@@ -173,7 +173,7 @@ $bgColor: (
 ) !default;
 ```
 
-然后，如果在配置文件中 `$darkSelector` 的值为 `"html.dark"`，你会得到:
+然后，如果在配置文件中 `$dark-selector` 的值为 `"html.dark"`，你会得到:
 
 ```scss
 :root {
@@ -235,7 +235,7 @@ $moveTransition: "width 0.3s ease";
 
 ::: details 示例
 
-你可能想要一个基于 `$textColor` 的 `$textColorLight`。所以你可以这样写一个生成器:
+你可能想要一个基于 `$theme-color` 的 `$theme-color-light`。所以你可以这样写一个生成器:
 
 ```scss
 @use "sass:color";
@@ -243,10 +243,11 @@ $moveTransition: "width 0.3s ease";
 @use "sass:map";
 @use "@sass-palette/helper";
 
-$textColorLight: (
-  light: color.scale(helper.get-color($textColor, $isDark: false), $lightness:
+$theme-color-light: (
+  light: color.scale(helper.get-color($theme-color, $isDark: false), $lightness:
         10%),
-  dark: color.scale(helper.get-color($textColor, $isDark: true), $lightness: 10%),
+  dark: color.scale(helper.get-color($theme-color, $isDark: true), $lightness:
+        10%),
 ) !default;
 ```
 
