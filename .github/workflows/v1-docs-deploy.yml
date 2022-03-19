@@ -1,13 +1,13 @@
-name: Deploy V2 Docs on other places
+name: Deploy V1 Docs on other places
 
 on:
   push:
     tags:
-      - v2.**
+      - v1.**
 
 jobs:
   deploy-netlify:
-    name: Deploy V2 docs to Netlify
+    name: Deploy V1 docs to Netlify
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -52,7 +52,7 @@ jobs:
         run: yarn run build
 
       - name: Docs build
-        run: yarn run docs:vite-build
+        run: yarn run docs:build
 
       - name: Combine output
         run: |
@@ -74,13 +74,13 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2
+          repository-name: vuepress-theme-hope/v1
           branch: netlify
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
 
   deploy-gitee:
-    name: Deploy V2 docs to Gitee
+    name: Deploy V1 docs to Gitee
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -112,45 +112,44 @@ jobs:
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run build
 
-      - name: Docs build
+      - name: Build Docs
         env:
-          BASE: /v2/
+          BASE: /v1/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
-        run: yarn run docs:vite-build
+        run: yarn run docs:build
 
       - name: Combine output
         run: |
+          yarn cpx "docs/theme/dist/**" dist
+          yarn cpx "docs/active-hash/dist/**" dist/active-hash
           yarn cpx "docs/add-this/dist/**" dist/add-this
-          yarn cpx "docs/blog2/dist/**" dist/blog
-          yarn cpx "docs/comment2/dist/**" dist/comment
+          yarn cpx "docs/comment/dist/**" dist/comment
           yarn cpx "docs/components/dist/**" dist/components
-          yarn cpx "docs/copy-code2/dist/**" dist/copy-code
-          yarn cpx "docs/feed2/dist/**" dist/feed
-          yarn cpx "docs/lightgallery/dist/**" dist/lightgallery
+          yarn cpx "docs/copy-code/dist/**" dist/copy-code
+          yarn cpx "docs/feed/dist/**" dist/feed
+          yarn cpx "docs/git/dist/**" dist/git
           yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
           yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
-          yarn cpx "docs/pwa2/dist/**" dist/pwa
-          yarn cpx "docs/reading-time2/dist/**" dist/reading-time
-          yarn cpx "docs/sass-palette/dist/**" dist/sass-palette
-          yarn cpx "docs/seo2/dist/**" dist/seo
-          yarn cpx "docs/theme/dist/**" dist
+          yarn cpx "docs/pwa/dist/**" dist/pwa
+          yarn cpx "docs/reading-time/dist/**" dist/reading-time
+          yarn cpx "docs/seo/dist/**" dist/seo
+          yarn cpx "docs/sitemap/dist/**" dist/sitemap
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2
+          repository-name: vuepress-theme-hope/v1
           branch: gitee
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
