@@ -139,7 +139,7 @@ Article number per page
 ### blog.articleInfo
 
 - Type: `ArticleInfo[]`
-- Default: `['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime']`
+- Default: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
 
 Article info displayed in article list
 

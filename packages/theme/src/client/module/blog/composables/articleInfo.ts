@@ -85,7 +85,15 @@ export const useArticleInfo = (
   const pure = usePure();
 
   return reactive<ArticleInfoProps>({
-    config: blogOptions.value.articleInfo,
+    config: blogOptions.value.articleInfo || [
+      "Author",
+      "Original",
+      "Date",
+      "PageView",
+      "Category",
+      "Tag",
+      "ReadingTime",
+    ],
     author: author.value,
     category: category.value,
     date: date.value,

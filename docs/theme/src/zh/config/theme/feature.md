@@ -141,7 +141,7 @@ tag:
 ### blog.articleInfo
 
 - 类型: `ArticleInfo[]`
-- 默认: `['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime']`
+- 默认: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
 
 文章列表中展示的文章信息
 

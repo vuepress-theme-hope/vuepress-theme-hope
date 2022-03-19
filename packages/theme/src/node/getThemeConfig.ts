@@ -25,22 +25,8 @@ const rootAllowConfig = [
 
 const defaultRootOptions: HopeThemeRootConfig = {
   // features
-  blog: {
-    articleInfo: [
-      "Author",
-      "Original",
-      "Date",
-      "Category",
-      "Tag",
-      "ReadingTime",
-    ],
-    articlePerPage: 10,
-    sidebarDisplay: "mobile",
-  },
-
-  encrypt: {
-    global: false,
-  },
+  blog: {},
+  encrypt: {},
 
   // appearance
   pure: false,
@@ -57,6 +43,8 @@ const defaultRootOptions: HopeThemeRootConfig = {
 };
 
 const defaultLocaleOptions: HopeThemeLocaleOptions = {
+  // features
+  blog: {},
   // layouts
   repoDisplay: true,
   navbarIcon: true,

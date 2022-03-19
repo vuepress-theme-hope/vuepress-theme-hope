@@ -124,15 +124,9 @@ export interface HopeThemeBlogOptions {
    *
    * 文章列表中展示的文章信息
    *
-   * @default ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime']
+   * @default ["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]
    */
   articleInfo?: ArticleInfo[];
 }
 
-export type HopeThemeBlogConfig = HopeThemeBlogOptions &
-  Required<
-    Pick<
-      HopeThemeBlogOptions,
-      "articleInfo" | "articlePerPage" | "sidebarDisplay"
-    >
-  >;
+export type HopeThemeBlogConfig = HopeThemeBlogOptions;

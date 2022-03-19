@@ -25,7 +25,8 @@ export default defineComponent({
     const sidebarDisplay = computed(
       () =>
         themeLocale.value.blog.sidebarDisplay ||
-        themeData.value.blog.sidebarDisplay
+        themeData.value.blog.sidebarDisplay ||
+        "mobile"
     );
 
     return (): VNode[] => [
