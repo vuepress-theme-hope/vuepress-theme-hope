@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2022-03-19)
+
+### Bug Fixes
+
+- **theme:** fix blog page padding ([b441ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b441ce087ca92006c5ce2c997038642972d10fa8))
+- **theme:** handle themeData correctly ([6e033ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e033ed2af38a2302ac813ecb4134f7e0a1f80b8))
+
 # [2.0.0-beta.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2022-03-19)
 
 ### Bug Fixes
