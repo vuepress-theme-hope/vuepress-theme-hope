@@ -8,11 +8,14 @@
 
   .navbar-links-item {
     position: relative;
+
     display: block;
+
     padding: 12px 4px 11px 0;
+    border-bottom: 1px solid var(--border-color);
+
     font-size: 16px;
     line-height: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
 
     transition: border-bottom-color var(--color-transition);
   }
@@ -20,7 +23,6 @@
   .nav-link {
     display: inline-block;
     width: 100%;
-
     color: var(--dark-grey);
     font-weight: normal;
 

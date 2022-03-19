@@ -2,18 +2,20 @@
 
 .code-group-nav {
   display: flex;
+
   margin: 0.85rem 0 -0.85rem;
   padding: 0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+
   background-color: var(--code-group-nav-bg-color, #3a404c);
   list-style: none;
 
   transition: background-color var(--color-transition, 0.3s);
 
   @media (max-width: hope-config.$mobileS) {
-    margin-left: -1.5rem;
     margin-right: -1.5rem;
+    margin-left: -1.5rem;
     border-radius: 0;
   }
 }
@@ -22,16 +24,20 @@
   @include reset.button;
 
   position: relative;
+
   min-width: 3rem;
   margin: 0;
   padding: 6px 10px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+
   background-color: transparent;
+  color: var(--code-group-nav-text-color, #eee);
+
+  font-weight: 600;
   font-size: 0.85em;
   line-height: 1.4;
-  color: var(--code-group-nav-text-color, #eee);
-  font-weight: 600;
+
   cursor: pointer;
 
   transition: background-color var(--color-transition, 0.3s),
@@ -43,10 +49,12 @@
 
   &::before,
   &::after {
-    position: absolute;
-    z-index: 1;
     content: " ";
+
+    position: absolute;
     bottom: 0;
+    z-index: 1;
+
     width: 6px;
     height: 6px;
   }
@@ -62,7 +70,7 @@
   &.active {
     background-color: var(--code-bg-color, #282c34);
 
-    &:before {
+    &::before {
       background: radial-gradient(
         12px at left top,
         transparent 50%,
@@ -70,7 +78,7 @@
       );
     }
 
-    &:after {
+    &::after {
       background: radial-gradient(
         12px at right top,
         transparent 50%,
@@ -80,7 +88,7 @@
   }
 
   &:first-child {
-    &:before {
+    &::before {
       display: none;
     }
   }

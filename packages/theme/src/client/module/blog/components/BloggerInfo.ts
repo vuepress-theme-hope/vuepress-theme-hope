@@ -73,7 +73,7 @@ export default defineComponent({
               bloggerAvatar.value
                 ? h("img", {
                     class: [
-                      "avatar",
+                      "blogger-avatar",
                       {
                         round: blogOptions.value.roundAvatar,
                       },
@@ -86,13 +86,13 @@ export default defineComponent({
               bloggerName.value
                 ? h(
                     "div",
-                    { class: "name", property: "name" },
+                    { class: "blogger-name", property: "name" },
                     bloggerName.value
                   )
                 : null,
               blogOptions.value.description
                 ? h("div", {
-                    class: "description",
+                    class: "blogger-description",
                     innerHTML: blogOptions.value.description,
                   })
                 : null,

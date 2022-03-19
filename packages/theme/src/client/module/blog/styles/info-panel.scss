@@ -8,12 +8,16 @@
 
   .page & {
     position: sticky;
-    box-sizing: border-box;
     top: var(--navbar-height);
+
     flex: 0 0 300px;
+
+    box-sizing: border-box;
+
     height: auto;
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+
     transition: all 0.3s;
 
     @media (max-width: hope-config.$pad) {

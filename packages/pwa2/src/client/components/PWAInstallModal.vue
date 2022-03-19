@@ -150,6 +150,7 @@ export default defineComponent({
 
     const scrolltoRight = (): void => {
       const screenshotsDiv = document.querySelector(".screenshot");
+
       if (screenshotsDiv)
         screenshotsDiv.scrollBy({
           left: screenshotsDiv.clientWidth,

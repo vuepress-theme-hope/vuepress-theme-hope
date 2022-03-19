@@ -15,7 +15,7 @@ $blockMargin: 20px !default;
 
 // Headings
 $headingMargin: 0 0 $blockMargin 0 !default;
-$headingFont: "League Gothic", Impact, sans-serif !default;
+$headingFont: "League Gothic", impact, sans-serif !default;
 $headingColor: #eee !default;
 $headingLineHeight: 1.2 !default;
 $headingLetterSpacing: normal !default;
@@ -23,12 +23,10 @@ $headingTextTransform: uppercase !default;
 $headingTextShadow: none !default;
 $headingFontWeight: normal !default;
 $heading1TextShadow: $headingTextShadow !default;
-
 $heading1Size: 3.77em !default;
 $heading2Size: 2.11em !default;
 $heading3Size: 1.55em !default;
 $heading4Size: 1em !default;
-
 $codeFont: monospace !default;
 
 // Links and actions

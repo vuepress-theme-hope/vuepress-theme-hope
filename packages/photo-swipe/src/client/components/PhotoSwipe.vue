@@ -118,6 +118,7 @@ export default defineComponent({
                 index,
               }
             );
+
             gallery.init();
           });
         });

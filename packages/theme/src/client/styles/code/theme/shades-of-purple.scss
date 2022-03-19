@@ -24,12 +24,10 @@ pre[class*="language-"] {
   tab-size: 4;
 
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
-    color: inherit;
     background: #a599e9;
+    color: inherit;
   }
 }
 
@@ -49,22 +47,22 @@ pre[class*="language-"] {
 
 .token.operator,
 .token.attr-name {
-  color: rgb(255, 180, 84);
+  color: rgb(255 180 84);
 }
 
 .token.punctuation {
-  color: #ffffff;
+  color: #fff;
 }
 
 .token.boolean {
-  color: rgb(255, 98, 140);
+  color: rgb(255 98 140);
 }
 
 .token.tag,
 .token.tag .punctuation,
 .token.doctype,
 .token.builtin {
-  color: rgb(255, 157, 0);
+  color: rgb(255 157 0);
 }
 
 .token.entity,
@@ -102,7 +100,7 @@ pre[class*="language-"] {
 }
 
 .token.function {
-  color: rgb(250, 208, 0);
+  color: rgb(250 208 0);
 }
 
 .token.regex {
@@ -118,7 +116,7 @@ pre[class*="language-"] {
 }
 
 .token.inserted {
-  background: #00ff00;
+  background: #0f0;
 }
 
 .token.deleted {

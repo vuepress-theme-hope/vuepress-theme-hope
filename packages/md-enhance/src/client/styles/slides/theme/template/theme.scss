@@ -8,33 +8,35 @@
 
 @mixin theme($theme) {
   .reveal-viewport#{$theme} {
-    @include bodyBackground();
+    @include body-background;
     background-color: $backgroundColor;
   }
 
   .reveal#{$theme} {
-    font-family: $mainFont;
-    font-size: $mainFontSize;
-    font-weight: normal;
     color: $mainColor;
+    font-weight: normal;
+    font-size: $mainFontSize;
+    font-family: $mainFont;
+
+    @media print {
+      .backgrounds {
+        background-color: $backgroundColor;
+      }
+    }
 
     ::selection {
-      color: $selectionColor;
       background: $selectionBackgroundColor;
+      color: $selectionColor;
       text-shadow: none;
     }
 
-    ::-moz-selection {
-      color: $selectionColor;
-      background: $selectionBackgroundColor;
-      text-shadow: none;
-    }
-
+    // stylelint-disable selector-max-compound-selectors
     .slides section,
     .slides section > section {
-      line-height: 1.3;
       font-weight: inherit;
+      line-height: 1.3;
     }
+    // stylelint-enable selector-max-compound-selectors
 
     h1,
     h2,
@@ -43,9 +45,11 @@
     h5,
     h6 {
       margin: $headingMargin;
+
       color: $headingColor;
-      font-family: $headingFont;
+
       font-weight: $headingFontWeight;
+      font-family: $headingFont;
       line-height: $headingLineHeight;
       letter-spacing: $headingLetterSpacing;
       text-transform: $headingTextTransform;
@@ -104,22 +108,25 @@
     dl,
     ul {
       display: inline-block;
-      text-align: left;
       margin: 0 0 0 1em;
+      text-align: left;
     }
 
     ol {
       list-style-type: decimal;
     }
+
     ul {
       list-style-type: disc;
 
-      & ul {
+      ul {
         list-style-type: square;
 
-        & ul {
+        // stylelint-disable selector-max-compound-selectors
+        ul {
           list-style-type: circle;
         }
+        // stylelint-enable selector-max-compound-selectors
       }
     }
 
@@ -140,16 +147,20 @@
     }
 
     blockquote {
-      display: block;
       position: relative;
+
+      display: block;
+
       width: 70%;
       margin: $blockMargin auto;
       padding: 5px;
-      font-style: italic;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 
-      & p {
+      background: rgb(255 255 255 / 5%);
+      box-shadow: 0 0 2px rgb(0 0 0 / 20%);
+
+      font-style: italic;
+
+      p {
         &:first-child,
         &:last-child {
           display: inline-block;
@@ -162,17 +173,21 @@
     }
 
     pre {
-      display: block;
       position: relative;
+
+      display: block;
+
       width: 90%;
       margin: $blockMargin auto;
       padding: 0;
-      text-align: left;
+
+      box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+
       font-size: 0.55em;
       font-family: $codeFont;
       line-height: 1.2em;
+      text-align: left;
       word-wrap: break-word;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     }
 
     code {
@@ -182,43 +197,48 @@
 
     pre code {
       display: block;
-      padding: 5px;
+
       overflow: auto;
+
       max-height: 400px;
+      padding: 5px;
+
       word-wrap: normal;
     }
 
     table {
       margin: auto;
-      border-collapse: collapse;
       border-spacing: 0;
+      border-collapse: collapse;
+    }
 
-      & th {
-        font-weight: bold;
+    th {
+      font-weight: bold;
+    }
+
+    th,
+    td {
+      padding: 0.2em 0.5em;
+      border-bottom: 1px solid;
+      text-align: left;
+
+      &[align="center"] {
+        text-align: center;
       }
 
-      & th,
-      & td {
-        text-align: left;
-        padding: 0.2em 0.5em 0.2em 0.5em;
-        border-bottom: 1px solid;
-
-        &[align="center"] {
-          text-align: center;
-        }
-
-        &[align="right"] {
-          text-align: right;
-        }
-      }
-
-      tbody tr:last-child {
-        th,
-        td {
-          border-bottom: none;
-        }
+      &[align="right"] {
+        text-align: right;
       }
     }
+
+    // stylelint-disable selector-max-compound-selectors
+    tbody tr:last-child {
+      th,
+      td {
+        border-bottom: none;
+      }
+    }
+    // stylelint-enable selector-max-compound-selectors
 
     sup {
       vertical-align: super;
@@ -232,11 +252,11 @@
 
     small {
       display: inline-block;
+      vertical-align: top;
       font-size: 0.6em;
       line-height: 1.2em;
-      vertical-align: top;
 
-      & * {
+      * {
         vertical-align: top;
       }
     }
@@ -251,20 +271,20 @@
       transition: color 0.15s ease;
 
       &:hover {
+        border: none;
         color: $linkColorHover;
         text-shadow: none;
-        border: none;
       }
     }
 
-    .roll span:after {
-      color: #fff;
+    .roll span::after {
       background: color.scale($linkColor, $lightness: -15%);
+      color: #fff;
     }
 
     .r-frame {
       border: 4px solid $mainColor;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 10px rgb(0 0 0 / 15%);
     }
 
     a .r-frame {
@@ -273,7 +293,7 @@
 
     a:hover .r-frame {
       border-color: $linkColor;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 0 20px rgb(0 0 0 / 55%);
     }
 
     .controls {
@@ -281,7 +301,7 @@
     }
 
     .progress {
-      background: rgba(0, 0, 0, 0.2);
+      background: rgb(0 0 0 / 20%);
       color: $linkColor;
     }
 
@@ -299,12 +319,6 @@
 
       td {
         border: none;
-      }
-    }
-
-    @media print {
-      .backgrounds {
-        background-color: $backgroundColor;
       }
     }
   }

@@ -34,6 +34,7 @@ export const useRegister = async (event: PWAEvent): Promise<void> => {
 
       const key = "service-worker-version";
       const version = Number(localStorage.getItem(key) || 0);
+
       localStorage.setItem(key, (version + 1).toString());
       localStorage.removeItem("manifest");
 

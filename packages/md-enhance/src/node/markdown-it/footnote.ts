@@ -213,6 +213,7 @@ const footnoteDef: RuleBlock = (
   if (!state.env.footnotes) state.env.footnotes = {};
   if (!state.env.footnotes.refs) state.env.footnotes.refs = {};
   const label = state.src.slice(start + 2, pos - 2);
+
   state.env.footnotes.refs[`:${label}`] = -1;
 
   token = new Token("footnoteReferenceOpen", "", 1);
@@ -394,15 +395,18 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
       insideRef = true;
       current = [];
       currentLabel = stateToken.meta.label;
+
       return false;
     }
     if (stateToken.type === "footnoteReferenceClose") {
       insideRef = false;
       // prepend ':' to avoid conflict with Object.prototype members
       refTokens[`:${currentLabel}`] = current;
+
       return false;
     }
     if (insideRef) current.push(stateToken);
+
     return !insideRef;
   });
 

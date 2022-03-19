@@ -1,18 +1,19 @@
 @use "@mr-hope/vuepress-shared/styles/reset";
 
 .toggle-sidebar-button {
-  @include reset.button();
+  @include reset.button;
 
   display: none;
+  vertical-align: middle;
 
   box-sizing: content-box;
-  vertical-align: middle;
 
   width: 1rem;
   height: 1rem;
   padding: 0.5rem;
 
   font: unset;
+
   transition: transform 0.2s ease-in-out;
 
   @media screen and (max-width: hope-config.$mobile) {
@@ -24,11 +25,14 @@
   &::after,
   .icon {
     display: block;
+
     width: 100%;
     height: 2px;
-    transition: transform 0.2s ease-in-out;
     border-radius: 0.05em;
+
     background: var(--dark-grey);
+
+    transition: transform 0.2s ease-in-out;
   }
 
   &::before {

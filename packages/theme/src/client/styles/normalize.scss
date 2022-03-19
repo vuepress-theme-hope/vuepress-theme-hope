@@ -27,9 +27,7 @@ p a code {
 
 kbd {
   border-color: var(--grey14);
-
   background: var(--bg-color-light);
-
   font-family: var(--font-family-code);
 }
 
@@ -44,8 +42,8 @@ code {
 }
 
 blockquote {
-  color: var(--light-grey);
   border-color: var(--grey14);
+  color: var(--light-grey);
 }
 
 // narrow mobile

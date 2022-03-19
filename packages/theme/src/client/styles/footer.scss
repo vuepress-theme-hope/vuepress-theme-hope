@@ -1,13 +1,17 @@
 .footer-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
+
   padding: 0.75rem 2rem;
   border-top: 1px solid var(--border-color);
+
   background: var(--bg-color);
   color: var(--dark-color);
+
   text-align: center;
+
   transition: border-top-color var(--color-transition),
     background var(--color-transition);
 
@@ -19,7 +23,7 @@
     }
   }
 
-  & > div {
+  > div {
     @media (max-width: hope-config.$mobileS) {
       width: 100%;
     }

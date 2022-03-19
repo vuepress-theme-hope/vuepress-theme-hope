@@ -83,6 +83,7 @@ function normalizeSingleAlias({ find, replacement }: Alias): Alias {
     find = find.slice(0, find.length - 1);
     replacement = replacement.slice(0, replacement.length - 1);
   }
+
   return { find, replacement };
 }
 
@@ -108,13 +109,16 @@ function mergeConfigRecursively(
   rootPath: string
 ): Record<string, any> {
   const merged: Record<string, any> = { ...a };
+
   for (const key in b) {
     const value = b[key];
+
     if (value == null) {
       continue;
     }
 
     const existing = merged[key];
+
     if (Array.isArray(existing) && Array.isArray(value)) {
       merged[key] = [...existing, ...value];
       continue;
@@ -145,6 +149,7 @@ function mergeConfigRecursively(
 
     merged[key] = value;
   }
+
   return merged;
 }
 

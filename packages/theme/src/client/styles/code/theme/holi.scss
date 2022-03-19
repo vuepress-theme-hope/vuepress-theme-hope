@@ -20,12 +20,10 @@ pre[class*="language-"] {
   tab-size: 4;
 
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
-    color: inherit;
     background: #1d3b54;
+    color: inherit;
     text-shadow: none;
   }
 }
@@ -68,8 +66,8 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #ec8e01;
   background: transparent;
+  color: #ec8e01;
 }
 
 .token.atrule,

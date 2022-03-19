@@ -12,25 +12,23 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px rgb(0 0 0 / 30%);
 
   // tab size
   -moz-tab-size: 2;
   -o-tab-size: 2;
   tab-size: 2;
 
+  /* Print */
+  @media print {
+    text-shadow: none;
+  }
+
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
     background: #3e4451;
     color: inherit;
-    text-shadow: none;
-  }
-
-  /* Print */
-  @media print {
     text-shadow: none;
   }
 }
@@ -123,12 +121,15 @@ pre[class*="language-"] {
   color: #c678dd;
 }
 
+// stylelint-disable selector-max-compound-selectors
 .language-javascript
   .token.template-string
   > .token.interpolation
   > .token.interpolation-punctuation.punctuation {
   color: #be5046;
 }
+
+// stylelint-enable selector-max-compound-selectors
 
 /* JSON overrides */
 .language-json .token.operator {

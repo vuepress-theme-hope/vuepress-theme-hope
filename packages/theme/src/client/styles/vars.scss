@@ -42,21 +42,26 @@
   --sidebar-bg-color: var(--bg-color-blur);
 }
 
-// code-block fix
 #app {
-  // code blocks vars
+  // code-block fix
   --code-hl-bg-color: var(--code-highlight-line-color);
   --code-ln-color: var(--code-line-color);
   --code-ln-wrapper-width: var(--line-numbers-width);
+
+  // plugin md-enhance code group
+  --code-group-nav-text-color: var(--text-color);
+  --code-group-nav-bg-color: var(--code-border-color);
+  --code-group-nav-hover-color: var(--code-highlight-line-color);
 }
 
 // plugin-docsearch
+// stylelint-disable selector-class-pattern
 .DocSearch {
   --docsearch-primary-color: var(--c-theme-color);
   --docsearch-text-color: var(--text-color);
   --docsearch-highlight-color: var(--theme-color);
   --docsearch-muted-color: var(--light-gery);
-  --docsearch-container-background: rgba(9, 10, 17, 0.8);
+  --docsearch-container-background: rgb(9 10 17 / 80%);
   --docsearch-modal-background: var(--bg-color-light);
   --docsearch-searchbox-background: var(--bg-color-lighter);
   --docsearch-searchbox-focus-background: var(--bg-color);
@@ -67,25 +72,17 @@
   --docsearch-hit-shadow: 0 1px 3px 0 var(--border-color);
   --docsearch-footer-background: var(--bg-color);
 
-  // plugin-docsearch
   #{hope-config.$darkSelector} & {
     --docsearch-logo-color: var(--c-text);
     --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
     --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d,
-      0 2px 2px 0 rgba(3, 4, 9, 0.3);
+      0 2px 2px 0 rgb(3 4 9 / 30%);
     --docsearch-key-gradient: linear-gradient(-225deg, #444950, #1c1e21);
-    --docsearch-footer-shadow: inset 0 1px 0 0 rgba(73, 76, 106, 0.5),
-      0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+    --docsearch-footer-shadow: inset 0 1px 0 0 rgb(73 76 106 / 50%),
+      0 -4px 8px 0 rgb(0 0 0 / 20%);
   }
 }
-
-// plugin-md-enhance
-#app {
-  // plugin md-enhance code group
-  --code-group-nav-text-color: var(--text-color);
-  --code-group-nav-bg-color: var(--code-border-color);
-  --code-group-nav-hover-color: var(--code-highlight-line-color);
-}
+// stylelint-enable selector-class-pattern
 
 // plugin-nprogress
 #nprogress {
@@ -98,7 +95,6 @@
   --search-accent-color: var(--theme-color);
   --search-text-color: var(--text-color);
   --search-border-color: var(--border-color);
-
   --search-item-text-color: var(--text-color-lighter);
   --search-item-focus-bg-color: var(--bg-color-light);
 }

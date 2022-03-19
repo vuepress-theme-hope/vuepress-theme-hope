@@ -2,37 +2,38 @@
 @use "sass:list";
 
 .categories-wrapper {
-  list-style: none;
   margin: 0;
   padding-left: 0;
+  list-style: none;
 
   .category {
     display: inline-block;
+
     margin: 0 0.25em;
     padding: 0 0.25em;
     border-radius: 0.25em;
 
-    font-size: 0.75rem;
     font-weight: bold;
+    font-size: 0.75rem;
     line-height: 2;
 
     transition: background-color var(--color-transition, 0.3s),
       color var(--color-transition, 0.3s);
 
     > span {
-      &:after {
+      &::after {
         content: ", ";
       }
 
-      &:last-child:after {
+      &:last-child::after {
         content: "";
       }
     }
 
     &.clickable {
       > span:hover {
-        cursor: pointer;
         color: var(--c-brand, #3eaf7c);
+        cursor: pointer;
       }
     }
   }

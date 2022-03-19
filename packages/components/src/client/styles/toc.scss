@@ -3,27 +3,31 @@ $headings: (2, 3, 4, 5, 6);
 .toc-place-holder {
   position: sticky;
   top: calc(var(--navbar-height) + 2rem);
+  z-index: 99;
+
   max-width: var(--content-width);
   margin: 0 auto;
-  z-index: 99;
 
   @media (max-width: hope-config.$pad) {
     padding: 0 1.5rem;
   }
 
-  & + #{hope-config.$contentClass}:not(.custom) {
+  + #{hope-config.$contentClass}:not(.custom) {
     padding-top: 0;
   }
 }
 
 #toc-list {
-  display: none;
   position: absolute;
   left: calc(100% + 0.5rem);
+
+  display: none;
+
+  overflow-y: scroll;
+
   min-width: 10rem;
   max-width: 15rem;
   max-height: 80vh;
-  overflow-y: scroll;
 
   @media (min-width: hope-config.$wide) {
     .has-toc & {
@@ -55,47 +59,61 @@ $headings: (2, 3, 4, 5, 6);
 
   .toc-wrapper {
     position: relative;
+
+    overflow: hidden;
+
     margin: 0 0.5rem;
     padding-left: 8px;
+
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
 
     &::before {
       content: " ";
+
       position: absolute;
       top: 0;
-      left: 0px;
       bottom: 0;
-      width: 2px;
-      background: var(--border-color);
+      left: 0;
       z-index: -1;
+
+      width: 2px;
+
+      background: var(--border-color);
     }
   }
 
   .toc-list {
     // overide ul default margin
     margin: 0;
+
     // overide ul default padding
     padding: 0;
   }
 
   .toc-item {
     position: relative;
+
     box-sizing: border-box;
+
     height: 1.7rem;
     padding: 0 0.5rem;
+
     list-style: none;
+
     line-height: 1.7rem;
 
     &::before {
       content: " ";
+
       position: absolute;
-      z-index: 2;
       top: 0;
       bottom: 0;
       left: -8px;
+      z-index: 2;
+
       width: 2px;
+
       background: transparent;
     }
 
@@ -118,14 +136,19 @@ $headings: (2, 3, 4, 5, 6);
   }
 
   .toc-link {
-    display: block;
     position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
     max-width: 100%;
+
     color: var(--light-grey);
+
     line-height: inherit;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
 
     @each $heading in $headings {
       &.level#{$heading} {

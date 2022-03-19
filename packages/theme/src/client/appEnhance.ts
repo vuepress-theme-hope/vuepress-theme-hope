@@ -30,6 +30,7 @@ export default defineClientAppEnhance(({ app, router }) => {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   router.options.scrollBehavior = async (...args) => {
     await useScrollPromise().wait();
+
     return scrollBehavior(...args);
   };
 });

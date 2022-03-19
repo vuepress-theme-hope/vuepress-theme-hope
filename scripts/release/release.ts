@@ -70,6 +70,7 @@ export const release = async (): Promise<void> => {
 
   if (confirm === "N") {
     ora(red("Release canceled.")).fail();
+
     return;
   }
 

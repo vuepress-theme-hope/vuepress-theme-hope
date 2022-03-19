@@ -28,12 +28,12 @@
 
 @mixin vertical-gradient($top, $bottom) {
   background: $top;
-  background: linear-gradient(top, $top 0%, $bottom 100%);
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%);
 }
 
-@mixin horizontal-gradient($top, $bottom) {
-  background: $top;
-  background: linear-gradient(left, $top 0%, $bottom 100%);
+@mixin horizontal-gradient($left, $right) {
+  background: $left;
+  background: linear-gradient(to right, $left 0%, $right 100%);
 }
 
 @mixin radial-gradient($outer, $inner, $type: circle) {
@@ -48,6 +48,6 @@
 
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
-@mixin bodyBackground() {
+@mixin body-background() {
   background: $backgroundColor;
 }

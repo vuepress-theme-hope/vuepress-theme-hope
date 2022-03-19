@@ -4,7 +4,6 @@
   @include reset.button;
 
   position: relative;
-
   padding: 6px;
   color: var(--dark-grey);
 
@@ -12,40 +11,44 @@
   &.open {
     .outlook-dropdown {
       z-index: 2;
-      transform: scale(1);
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
+      transform: scale(1);
     }
   }
 
   .icon {
+    vertical-align: middle;
     width: 1.25rem;
     height: 1.25rem;
-    vertical-align: middle;
   }
 }
 
 .outlook-dropdown {
-  box-sizing: border-box;
   position: absolute;
   top: 100%;
   right: 0;
+
+  overflow-y: auto;
+  box-sizing: border-box;
+
   min-width: 100px;
   margin: 0;
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--grey14);
   border-radius: 0.25rem;
+
   background: var(--bg-color);
   box-shadow: 2px 2px 10px var(--card-shadow);
 
   text-align: left;
   white-space: nowrap;
 
-  overflow-y: auto;
-  transform: scale(0.8);
   opacity: 0;
   visibility: hidden;
+
   transition: all 0.18s ease-out;
+  transform: scale(0.8);
 
   > *:not(:last-child) {
     padding-bottom: 0.5rem;

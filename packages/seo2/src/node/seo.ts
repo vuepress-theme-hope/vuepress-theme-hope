@@ -59,6 +59,7 @@ export const generateSeo = (
   if (date instanceof Date) publishedTime = new Date(date).toISOString();
   else if (date) {
     const dateInfo = getDate(date);
+
     if (dateInfo && dateInfo.value)
       publishedTime = dateInfo.value.toISOString();
   }

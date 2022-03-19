@@ -3,29 +3,31 @@
     var(--navbar-height) - var(--navbar-vertical-padding) * 2
   );
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   position: fixed;
-  z-index: 200;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   box-sizing: border-box;
+
   height: var(--navbar-height);
   padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
 
   background: var(--navbar-bg-color);
   box-shadow: 0 2px 8px var(--card-shadow);
-  backdrop-filter: saturate(150%) blur(12px);
 
   line-height: var(--navbar-line-height);
   white-space: nowrap;
 
   transition: transform ease-in-out 0.3s,
     background-color var(--color-transition), box-shadow var(--color-transition);
+
+  backdrop-filter: saturate(150%) blur(12px);
 
   @media (max-width: hope-config.$pad) {
     --navbar-line-height: calc(
@@ -46,21 +48,22 @@
   }
 
   .nav-link {
-    color: var(--dark-grey);
     padding: 0 0.25rem;
+    color: var(--dark-grey);
 
     &.active {
       color: var(--theme-color);
     }
 
     .icon {
-      font-size: 1em;
       margin-right: 0.25em;
+      font-size: 1em;
     }
   }
 }
 
 // docsearch fix
+// stylelint-disable selector-class-pattern
 .DocSearch {
   &.DocSearch-Button {
     margin-left: 0;

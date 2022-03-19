@@ -17,8 +17,8 @@
 
   &.loading {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background: var(--grey15);
 
     svg {

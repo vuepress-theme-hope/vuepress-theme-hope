@@ -15,16 +15,14 @@ code[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
 
-  // Selection
-  &::-moz-selection,
-  ::-moz-selection,
-  &::selection,
-  ::selection {
+  @media print {
     text-shadow: none;
-    background: #264f78;
   }
 
-  @media print {
+  // Selection
+  &::selection,
+  ::selection {
+    background: #264f78;
     text-shadow: none;
   }
 }
@@ -207,6 +205,7 @@ code[class*="language-"] {
 .token.namespace {
   color: #4ec9b0;
 }
+
 /*********************************************************
 * Language Specific
 */

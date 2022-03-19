@@ -16,14 +16,14 @@
 
 $mainFont: "Lato", sans-serif;
 $mainColor: #000;
-$headingFont: "News Cycle", Impact, sans-serif;
+$headingFont: "News Cycle", impact, sans-serif;
 $headingColor: #000;
 $headingTextShadow: none;
 $headingTextTransform: none;
 $backgroundColor: #fff;
 $linkColor: #00008b;
 $linkColorHover: color.scale($linkColor, $lightness: 20%);
-$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+$selectionBackgroundColor: rgb(0 0 0 / 99%);
 
 .reveal[data-theme="simple"] {
   @include dark-bg-text-color(#fff);

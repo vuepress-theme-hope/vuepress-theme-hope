@@ -40,7 +40,7 @@ export default defineComponent({
         "div",
         { class: "timeline-wrapper" },
         h("ul", { class: "timeline-content" }, [
-          h(DropTransition, () => h("li", { class: "desc" }, hint.value)),
+          h(DropTransition, () => h("li", { class: "motto" }, hint.value)),
           h(resolveComponent("TOC"), { items: items.value }),
           ...timelines.value.config.map(({ year, items }, index) =>
             h(
@@ -49,20 +49,20 @@ export default defineComponent({
               () => [
                 h(
                   "h3",
-                  { key: "title", id: year, class: "year" },
+                  { key: "title", id: year, class: "timeline-year-title" },
                   h("span", year)
                 ),
-                h("li", { key: "content", class: "year-list" }, [
+                h("li", { key: "content", class: "timeline-year-list" }, [
                   h(
                     "ul",
-                    { class: "year-wrapper" },
+                    { class: "timeline-year-wrapper" },
                     items.map(({ date, info, path }) =>
-                      h("li", [
-                        h("span", { class: "date" }, date),
+                      h("li", { class: "timeline-item" }, [
+                        h("span", { class: "timeline-date" }, date),
                         h(
                           RouterLink,
                           {
-                            class: "title",
+                            class: "timeline-title",
                             to: path,
                           },
                           () => info.title

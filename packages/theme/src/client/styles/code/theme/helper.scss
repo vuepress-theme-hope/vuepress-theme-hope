@@ -3,18 +3,15 @@
 @mixin color($codeColor, $codeBgColor) {
   --code-color: #{$codeColor};
   --code-line-color: #{color.scale($codeColor, $alpha: -33%)};
-
   --code-bg-color: #{$codeBgColor};
-
   --code-border-color: #{color.scale(
       $codeBgColor,
       $saturation: 20%,
-      $lightness: -10%
+      $lightness: - 10%
     )};
-
   --code-highlight-line-color: #{color.scale(
       $codeBgColor,
       $saturation: 10%,
-      $lightness: -5%
+      $lightness: - 5%
     )};
 }

@@ -20,6 +20,7 @@ export const useNavbarLanguageDropdown =
 
     return computed<HopeThemeNavGroup<AutoLink> | null>(() => {
       const localePaths = Object.keys(siteLocale.value.locales);
+
       // do not display language selection dropdown if there is only one language
       if (localePaths.length < 2) return null;
 

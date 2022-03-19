@@ -4,17 +4,14 @@
 .page-nav {
   @include wrapper.horizontal-wrapper;
 
-  margin-top: 0;
+  // clear float
+  overflow: auto;
+
   min-height: 2rem;
+  margin-top: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-top: 1px solid var(--border-color);
-
-  // clear float
-  overflow: auto;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: space-between;
 
   transition: border-top var(--color-transition);
 

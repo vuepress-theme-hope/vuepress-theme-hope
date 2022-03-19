@@ -25,19 +25,24 @@
 #message-container {
   position: fixed;
   top: calc(var(--navbar-height) + 1rem);
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 100;
+
   text-align: center;
 
   .message {
     display: inline-block;
+
     padding: 8px 10px;
     border-radius: 3px;
-    box-shadow: 0 0 10px 0 var(--box-shadow, #f0f1f2);
+
     background: var(--c-bg, #fff);
     color: var(--c-text, #2c3e50);
+    box-shadow: 0 0 10px 0 var(--box-shadow, #f0f1f2);
+
     font-size: 14px;
+
     transition: height 0.2s ease-in-out, margin 0.2s ease-in-out;
 
     &.move-in {

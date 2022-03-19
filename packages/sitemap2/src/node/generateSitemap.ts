@@ -59,6 +59,7 @@ const generatePageMap = (
     (map, page) => {
       const { defaultPath, pathLocale } = stripLocalePrefix(page);
       const pathLocales = map.get(defaultPath) || [];
+
       pathLocales.push(pathLocale);
 
       return map.set(defaultPath, pathLocales);

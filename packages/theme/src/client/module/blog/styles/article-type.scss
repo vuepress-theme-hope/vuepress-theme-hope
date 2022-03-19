@@ -1,13 +1,17 @@
 .article-type-wrapper {
   position: relative;
-  padding-left: 0;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
   z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 0;
+
+  list-style: none;
+
+  font-weight: 600;
+  font-size: 18px;
 
   @media (max-width: hope-config.$mobileS) {
     font-size: 16px;
@@ -16,21 +20,30 @@
 
 .article-type {
   position: relative;
+
   vertical-align: middle;
+
   margin: 0.3em 0.8em;
+
   line-height: 1.2;
+
   cursor: pointer;
 
   &::after {
-    position: absolute;
     content: " ";
-    left: 50%;
+
+    position: absolute;
     right: 50%;
     bottom: -6px;
+    left: 50%;
+
     height: 2px;
-    background: var(--theme-color);
     border-radius: 1px;
+
+    background: var(--theme-color);
+
     visibility: hidden;
+
     transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
   }
 
@@ -52,8 +65,8 @@
   &:hover,
   &.active {
     &::after {
-      left: calc(50% - 8px);
       right: calc(50% - 8px);
+      left: calc(50% - 8px);
       visibility: visible;
     }
   }

@@ -1,7 +1,7 @@
 html,
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
   background: var(#fff);
 }
 
@@ -9,8 +9,10 @@ body {
   min-height: 100vh;
 
   color: #2c3e50;
-  font-display: optional;
+
   font-size: 16px;
+
+  font-display: optional;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,15 +20,15 @@ body {
 }
 
 a {
-  font-weight: 500;
   color: #3eaf7c;
+  font-weight: 500;
   text-decoration: none;
   overflow-wrap: break-word;
 }
 
 p a code {
-  font-weight: 400;
   color: #3eaf7c;
+  font-weight: 400;
 }
 
 kbd {
@@ -42,7 +44,9 @@ code {
   margin: 0;
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
-  background: rgba(127, 127, 127, 0.12);
+
+  background: rgb(127 127 127 / 12%);
+
   font-size: 0.85em;
   overflow-wrap: break-word;
 }
@@ -53,6 +57,7 @@ blockquote {
   border-left: 0.2rem solid #ddd;
 
   color: #666;
+
   font-size: 1rem;
 
   & > p {
@@ -110,12 +115,16 @@ h6 {
 }
 
 a.header-anchor {
-  font-size: 0.85em;
   float: left;
+
+  margin-top: 0.125em;
   margin-left: -0.87em;
   padding-right: 0.23em;
-  margin-top: 0.125em;
+
+  font-size: 0.85em;
+
   opacity: 0;
+
   transition: opacity 0.2s;
 
   &:hover {
@@ -141,7 +150,6 @@ hr {
 table {
   display: block;
   overflow-x: auto;
-
   margin: 1rem 0;
   border-collapse: collapse;
 }

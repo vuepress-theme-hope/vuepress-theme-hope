@@ -9,15 +9,18 @@
   .menu-button,
   .back-button,
   .home-button {
-    @include reset.button();
-    box-sizing: content-box;
+    @include reset.button;
     position: fixed;
     bottom: 2rem;
+
+    box-sizing: content-box;
+
     width: 1rem;
     height: 1rem;
     padding: 0.5rem;
     border-radius: 50%;
-    background: rgba(127, 127, 127, 0.35);
+
+    background: rgb(127 127 127 / 35%);
     color: var(--white);
     outline: none;
 
@@ -28,9 +31,9 @@
 
   .menu-button {
     left: 2rem;
-    transition: transform 0.2s ease-in-out;
-    vertical-align: middle;
     z-index: 50;
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
 
     &::before {
       content: " ";
@@ -50,14 +53,18 @@
     &::after,
     .icon {
       display: block;
+
       width: 100%;
       height: 0.2em;
-      transition: transform 0.2s ease-in-out;
       border-radius: 0.05em;
+
       background: var(--white);
+
+      transition: transform 0.2s ease-in-out;
     }
   }
 
+  // stylelint-disable selector-max-compound-selectors
   .active .menu-button {
     &::before {
       transform: translateY(0.4em) rotate(135deg);
@@ -71,13 +78,16 @@
       transform: translateY(-0.4em) rotate(-135deg);
     }
   }
+  // stylelint-enable selector-max-compound-selectors
 
   .back-button {
     left: 2rem;
-    opacity: 0;
-    transition: left 0.2s ease-out, opacity 0.2s ease-out;
     z-index: 49;
+
+    opacity: 0;
     fill: var(--white);
+
+    transition: left 0.2s ease-out, opacity 0.2s ease-out;
   }
 
   .active .back-button {
@@ -87,10 +97,12 @@
 
   .home-button {
     left: 2rem;
-    opacity: 0;
-    transition: left 0.2s ease-out, opacity 0.2s ease-out;
     z-index: 48;
+
+    opacity: 0;
     fill: var(--white);
+
+    transition: left 0.2s ease-out, opacity 0.2s ease-out;
   }
 
   .active .home-button {

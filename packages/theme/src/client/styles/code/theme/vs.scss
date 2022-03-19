@@ -18,8 +18,6 @@ pre[class*="language-"] {
   tab-size: 4;
 
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
     background: #c1def1;
@@ -64,7 +62,7 @@ pre[class*="language-"] {
 .language-json .token.boolean,
 .language-json .token.number,
 code[class*="language-css"] {
-  color: #0000ff;
+  color: #00f;
 }
 
 .token.function {
@@ -108,10 +106,10 @@ code[class*="language-css"] {
 .token.property,
 .token.regex,
 .token.entity {
-  color: #ff0000;
+  color: #f00;
 }
 
 .token.directive.tag .tag {
-  background: #ffff00;
+  background: #ff0;
   color: #393a34;
 }

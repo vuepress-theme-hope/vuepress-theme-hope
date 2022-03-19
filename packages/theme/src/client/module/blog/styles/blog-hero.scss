@@ -2,14 +2,16 @@
 
 .blog-hero {
   position: relative;
-  height: 450px;
-  margin-bottom: 1rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
+  height: 450px;
+  margin-bottom: 1rem;
+
   color: #eee;
+
   font-family: var(--font-family-fancy);
 
   @media (max-width: hope-config.$mobile) {
@@ -40,25 +42,29 @@
   .mask {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
 
-    &:after {
-      display: block;
+    &::after {
       content: " ";
-      background: var(--light-grey);
+
       position: absolute;
       top: 0;
+      right: 0;
       bottom: 0;
       left: 0;
-      right: 0;
       z-index: 1;
+
+      display: block;
+
+      background: var(--light-grey);
+
       opacity: 0.2;
     }
   }
 
-  & > :not(.mask) {
+  > :not(.mask) {
     position: relative;
     z-index: 2;
   }
@@ -103,11 +109,11 @@
 
   .slide-down-button {
     @include reset.button;
+    position: absolute;
+    bottom: 0;
+    left: calc(50vw - 30px);
 
     display: none;
-    position: absolute;
-    left: calc(50vw - 30px);
-    bottom: 0;
 
     width: 60px;
     height: 60px;
@@ -115,19 +121,20 @@
 
     .icon {
       width: 30px;
-      margin: -15px 0px;
+      margin: -15px 0;
+
       animation-name: bounce-down;
       animation-duration: 1.5s;
       animation-timing-function: linear;
-      animation-direction: alternate;
       animation-iteration-count: infinite;
+      animation-direction: alternate;
 
       &:first-child {
-        color: rgba(255, 255, 255, 0.15);
+        color: rgb(255 255 255 / 15%);
       }
 
       &:nth-child(2) {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgb(255 255 255 / 50%);
       }
     }
   }

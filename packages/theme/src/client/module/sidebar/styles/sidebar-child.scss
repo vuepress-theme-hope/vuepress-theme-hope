@@ -4,14 +4,18 @@
 
 .sidebar-link {
   display: inline-block;
+
   box-sizing: border-box;
+
   width: 100%;
   padding: 0.35rem 1rem 0.35rem 1.25rem;
   border-left: 0.2rem solid transparent;
+
   color: var(--text-color);
+
+  font-weight: 400;
   font-size: 1em;
   line-height: 1.5;
-  font-weight: 400;
 
   .icon {
     margin-right: 0.25em;
@@ -45,7 +49,13 @@
 }
 
 .sidebar-heading {
+  display: flex;
+  align-items: center;
+
+  // fix strange outline
+  overflow: hidden;
   box-sizing: border-box;
+
   width: 100%;
   margin: 0;
   padding: 0.35rem 1rem 0.35rem 1.25rem;
@@ -53,19 +63,15 @@
   border-left: 0.25rem solid transparent;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+
   background-color: transparent;
   color: var(--text-color);
+
   font-size: 1.1em;
 
-  display: flex;
-  align-items: center;
-
-  transition: color 0.15s ease;
   user-select: none;
 
-  // fix strange outline
-  overflow: hidden;
-  -webkit-transform: rotate(0);
+  transition: color 0.15s ease;
   transform: rotate(0);
 
   &.open {
@@ -103,10 +109,11 @@
 }
 
 button.sidebar-heading {
-  font-weight: inherit;
-  text-align: left;
-  line-height: inherit;
   outline: none;
+
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: left;
 
   cursor: pointer;
 }

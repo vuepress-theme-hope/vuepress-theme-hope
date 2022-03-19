@@ -11,11 +11,9 @@
   @include wrapper.horizontal-wrapper;
 
   position: relative;
-
-  padding-top: 0.5rem;
-
-  font-size: 15px;
   z-index: 2;
+  padding-top: 0.5rem;
+  font-size: 15px;
 
   @media (max-width: hope-config.$pad) {
     font-size: 14px;
@@ -31,7 +29,7 @@
 
   ol {
     margin: 0;
-    padding-left: 0px;
+    padding-left: 0;
     list-style: none;
   }
 
@@ -54,8 +52,8 @@
   }
 
   li + li::before {
-    color: var(--light-grey);
     content: "/";
+    color: var(--light-grey);
   }
 
   a {
@@ -63,7 +61,7 @@
     padding: 0 0.5em;
     line-height: 2;
 
-    &:before {
+    &::before {
       position: relative;
       bottom: 0.125rem;
       margin-right: 0.25em;

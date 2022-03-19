@@ -24,6 +24,7 @@
         color: #eb3c54;
       }
 
+      // stylelint-disable selector-class-pattern
       .hljs-built_in,
       .hljs-builtin-name,
       .hljs-link,
@@ -34,6 +35,7 @@
       .hljs-type {
         color: #e7ce56;
       }
+      // stylelint-enable selector-class-pattern
 
       .hljs-attribute {
         color: #ee7c2b;
@@ -58,10 +60,13 @@
 
       .hljs {
         display: block;
+
         overflow-x: auto;
+
+        padding: 0.5em;
+
         background: #1c1d21;
         color: #c0c5ce;
-        padding: 0.5em;
       }
 
       .hljs-emphasis {

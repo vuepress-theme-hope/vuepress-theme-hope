@@ -23,12 +23,10 @@ pre[class*="language-"] {
   tab-size: 4;
 
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
-    color: #282828;
     background: #a89984;
+    color: #282828;
   }
 }
 

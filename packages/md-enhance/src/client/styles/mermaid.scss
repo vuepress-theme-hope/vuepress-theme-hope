@@ -8,8 +8,8 @@
 
   &.loading {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background: var(--grey15);
 
     svg {
@@ -21,8 +21,8 @@
   }
 
   .content {
-    width: 100%;
     overflow-x: scroll;
+    width: 100%;
     padding: 0.6em 0.4em;
 
     @media (max-width: hope-config.$mobileS) {

@@ -3,10 +3,11 @@
 
 .home.project {
   display: block;
+
   max-width: var(--home-page-width);
   min-height: calc(100vh - var(--navbar-height));
+  margin: 0 auto;
   padding: var(--navbar-height) 2rem 0;
-  margin: 0px auto;
 
   @media (max-width: hope-config.$pad) {
     min-height: calc(100vh - var(--navbar-mobile-height));
@@ -14,8 +15,8 @@
   }
 
   @media (max-width: hope-config.$mobileS) {
-    padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   .hero {
@@ -23,8 +24,8 @@
 
     @media (min-width: hope-config.$pad) {
       display: flex;
-      justify-content: space-evenly;
       align-items: center;
+      justify-content: space-evenly;
       text-align: left;
     }
 
@@ -84,8 +85,8 @@
     }
 
     h1 {
-      font-family: var(--font-family-fancy);
       font-size: 3.6rem;
+      font-family: var(--font-family-fancy);
 
       @media (max-width: hope-config.$mobile) {
         font-size: 2.5rem;
@@ -97,10 +98,12 @@
     }
 
     .description {
-      font-family: var(--font-family-fancy);
       max-width: 35rem;
+
       color: var(--text-color-bright);
+
       font-size: 1.6rem;
+      font-family: var(--font-family-fancy);
       line-height: 1.3;
 
       @media (max-width: hope-config.$mobile) {
@@ -114,15 +117,20 @@
 
     .action-button {
       display: inline-block;
+
+      overflow: hidden;
+
       margin: 0.6rem 0.8rem;
       padding: 0.75rem 1.5rem;
       border: 2px solid var(--theme-color);
       border-radius: 0.5rem;
+
       color: var(--theme-color);
+
       font-size: 1.2rem;
+
       transition: background-color var(--color-transition),
         color var(--color-transition);
-      overflow: hidden;
 
       @media (max-width: hope-config.$mobile) {
         padding: 0.8rem 1.2rem;
@@ -134,18 +142,20 @@
       }
 
       &:hover {
-        color: var(--white);
         background-color: var(--theme-color);
+        color: var(--white);
       }
 
       &.primary {
-        color: var(--white);
         background-color: var(--theme-color);
+        color: var(--white);
 
+        // stylelint-disable max-nesting-depth
         &:hover {
           border-color: var(--theme-color-light);
           background-color: var(--theme-color-light);
         }
+        // stylelint-enable max-nesting-depth
       }
     }
   }
@@ -153,14 +163,17 @@
   .features {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
     align-content: stretch;
+    align-items: stretch;
+    justify-content: center;
+
+    overflow: hidden;
+
     margin: 0 -2rem;
     padding: 1.2rem 0;
     border-top: 1px solid var(--border-color);
+
     transition: border-color var(--color-transition);
-    overflow: hidden;
 
     @media (max-width: hope-config.$mobileS) {
       margin: 0 -1.5rem;
@@ -169,13 +182,18 @@
 
   .feature {
     position: relative;
+
     flex-basis: calc(33% - 4rem);
+
+    overflow: hidden;
+
     margin: 0.5rem;
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
+
     text-align: center;
+
     transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
 
     @media (min-width: hope-config.$wide) {
       flex-basis: calc(25% - 4rem);
@@ -191,9 +209,9 @@
 
     @media (max-width: hope-config.$mobileS) {
       flex-basis: calc(100%);
-      font-size: 0.9rem;
       margin: 0.5rem 0;
       border-radius: 0;
+      font-size: 0.9rem;
     }
 
     &.link {
@@ -201,8 +219,8 @@
     }
 
     &:hover {
-      transform: scale(1.05);
       box-shadow: 0 2px 12px 0 var(--card-shadow);
+      transform: scale(1.05);
     }
 
     .icon {
@@ -215,9 +233,11 @@
     h2 {
       margin: 0.25rem 0;
       border-bottom: none;
+
       color: var(--text-color-light);
-      font-size: 1.25rem;
+
       font-weight: bold;
+      font-size: 1.25rem;
 
       @media (max-width: hope-config.$mobileS) {
         font-size: 1.2rem;

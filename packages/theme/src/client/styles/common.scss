@@ -5,6 +5,7 @@
   .page {
     // leave space for navbar
     padding-top: var(--navbar-height);
+
     // leave space for sidebar
     padding-left: calc(var(--sidebar-width) + 2rem);
 
@@ -74,20 +75,12 @@
 
   &.sidebar-open {
     .sidebar {
-      transform: translateX(0);
       box-shadow: 2px 0 8px var(--card-shadow);
+      transform: translateX(0);
     }
   }
 
   &:not(.sidebar-open) {
-    .sidebar {
-      box-shadow: none;
-    }
-
-    .toggle-sidebar-wrapper {
-      left: 0;
-    }
-
     @media (min-width: (hope-config.$mobile + 1px)) {
       .page {
         // spaces for toggle button
@@ -97,6 +90,14 @@
       .sidebar {
         transform: translateX(-100%);
       }
+    }
+
+    .sidebar {
+      box-shadow: none;
+    }
+
+    .toggle-sidebar-wrapper {
+      left: 0;
     }
   }
 
@@ -112,14 +113,14 @@
 
 .toggle-sidebar-wrapper {
   position: fixed;
-  z-index: 100;
   top: calc(var(--navbar-height));
-  left: calc(var(--sidebar-width));
   bottom: 0;
+  left: calc(var(--sidebar-width));
+  z-index: 100;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   font-size: 2rem;
 
@@ -131,19 +132,19 @@
   }
 
   &:hover {
-    background-color: rgba(127, 127, 127, 0.05);
+    background-color: rgb(127 127 127 / 5%);
     cursor: pointer;
   }
 
   .arrow {
-    @include arrow.arrow();
+    @include arrow.arrow;
   }
 }
 
 #{hope-config.$contentClass} {
   &.custom {
-    padding: 0;
     margin: 0;
+    padding: 0;
 
     img {
       max-width: 100%;

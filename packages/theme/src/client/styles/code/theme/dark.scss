@@ -13,23 +13,21 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  text-shadow: 0 -0.1em 0.2em black;
+  text-shadow: 0 -0.1em 0.2em #000;
 
   // tab size
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
 
-  // Selection
-  &::-moz-selection,
-  ::-moz-selection,
-  &::selection,
-  ::selection {
-    background: rgba(29, 59, 83, 0.99);
+  @media print {
     text-shadow: none;
   }
 
-  @media print {
+  // Selection
+  &::selection,
+  ::selection {
+    background: rgb(29 59 83 / 99%);
     text-shadow: none;
   }
 }
@@ -38,7 +36,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: hsl(30, 20%, 50%);
+  color: hsl(30deg 20% 50%);
 }
 
 .token.punctuation {
@@ -55,7 +53,7 @@ pre[class*="language-"] {
 .token.number,
 .token.constant,
 .token.symbol {
-  color: hsl(350, 40%, 70%);
+  color: hsl(350deg 40% 70%);
 }
 
 .token.selector,
@@ -64,7 +62,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: hsl(75, 70%, 60%);
+  color: hsl(75deg 70% 60%);
 }
 
 .token.operator,
@@ -73,13 +71,13 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: hsl(40, 90%, 60%);
+  color: hsl(40deg 90% 60%);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: hsl(350, 40%, 70%);
+  color: hsl(350deg 40% 70%);
 }
 
 .token.regex,
@@ -91,6 +89,7 @@ pre[class*="language-"] {
 .token.bold {
   font-weight: bold;
 }
+
 .token.italic {
   font-style: italic;
 }
@@ -100,5 +99,5 @@ pre[class*="language-"] {
 }
 
 .token.deleted {
-  color: red;
+  color: #f00;
 }

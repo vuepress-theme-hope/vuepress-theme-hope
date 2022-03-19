@@ -16,13 +16,13 @@
 
 @mixin horizontal-wrapper($pad: hope-config.$pad) {
   max-width: var(--content-width);
-  margin-left: auto;
   margin-right: auto;
-  padding-left: 2.5rem;
+  margin-left: auto;
   padding-right: 2.5rem;
+  padding-left: 2.5rem;
 
   @media (max-width: $pad) {
-    padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
 }

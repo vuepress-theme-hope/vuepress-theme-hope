@@ -12,13 +12,11 @@
 
 // variable edit
 $backgroundColor: #191919;
-
 $mainColor: #fff;
 $headingColor: #fff;
-
 $mainFontSize: 42px;
-$mainFont: "Source Sans Pro", Helvetica, sans-serif;
-$headingFont: "Source Sans Pro", Helvetica, sans-serif;
+$mainFont: "Source Sans Pro", helvetica, sans-serif;
+$headingFont: "Source Sans Pro", helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
@@ -26,7 +24,6 @@ $headingFontWeight: 600;
 $linkColor: #42affa;
 $linkColorHover: color.scale($linkColor, $lightness: 15%);
 $selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
-
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
 $heading3Size: 1.3em;

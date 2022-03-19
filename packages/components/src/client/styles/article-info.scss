@@ -2,18 +2,22 @@
 
 .article-info {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   align-content: stretch;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+
   color: var(--dark-grey);
+
   font-size: 14px;
 
-  & > span {
+  > span {
     display: flex;
-    align-items: center;
     flex-shrink: 0;
+    align-items: center;
+
     margin-right: 0.5em;
+
     line-height: 2;
 
     @media (min-width: hope-config.$wide) {
@@ -24,29 +28,36 @@
       margin-right: 0.3em;
       font-size: 0.875em;
     }
+  }
 
-    &.origin {
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-      margin: 0 0.5em;
-      padding: 0 0.5em;
-      border: 0.5px solid var(--dark-grey);
-      border-radius: 0.75em;
-      background: var(--c-bg, #fff);
-      font-size: 0.75em;
-      line-height: 1.5;
-      overflow: hidden;
-    }
+  .origin {
+    position: relative;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    overflow: hidden;
+
+    margin: 0 0.5em;
+    padding: 0 0.5em;
+    border: 0.5px solid var(--dark-grey);
+    border-radius: 0.75em;
+
+    background: var(--c-bg, #fff);
+
+    font-size: 0.75em;
+    line-height: 1.5;
   }
 
   .icon {
     position: relative;
+
     display: inline-block;
+    vertical-align: middle;
+
     width: 1em;
     height: 1em;
     margin-right: 0.25em;
-    vertical-align: middle;
   }
 
   a {

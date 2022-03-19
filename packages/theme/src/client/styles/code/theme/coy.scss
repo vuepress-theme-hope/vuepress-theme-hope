@@ -16,8 +16,7 @@ pre[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
 
-  &::-moz-selection,
-  ::-moz-selection,
+  // Selection
   &::selection,
   ::selection {
     background: #b3d4fc;
@@ -61,8 +60,8 @@ pre[class*="language-"] {
 .token.entity,
 .token.url,
 .token.variable {
+  background: rgb(255 255 255 / 50%);
   color: #a67f59;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .token.atrule,
@@ -79,8 +78,8 @@ pre[class*="language-"] {
 
 .language-css .token.string,
 .style .token.string {
+  background: rgb(255 255 255 / 50%);
   color: #a67f59;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .token.important {

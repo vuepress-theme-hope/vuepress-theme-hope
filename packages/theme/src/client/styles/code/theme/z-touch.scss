@@ -13,24 +13,22 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px rgb(0 0 0 / 30%);
 
   // tab size
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
 
-  // Selection
-  &::-moz-selection,
-  ::-moz-selection,
-  &::selection,
-  ::selection {
-    text-shadow: none;
-    background: rgba(29, 59, 83, 0.99);
-  }
-
   /* Print */
   @media print {
+    text-shadow: none;
+  }
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: rgb(29 59 83 / 99%);
     text-shadow: none;
   }
 }
@@ -51,7 +49,7 @@ pre[class*="language-"] {
 }
 
 .token.deleted {
-  color: rgba(239, 83, 80, 0.56);
+  color: rgb(239 83 80 / 56%);
   font-style: italic;
 }
 

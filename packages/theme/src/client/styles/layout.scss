@@ -10,21 +10,13 @@
 }
 
 ::-webkit-scrollbar-track-piece {
-  background: rgba(0, 0, 0, 0.1);
   -webkit-border-radius: 6px;
   border-radius: 6px;
+  background: rgb(0 0 0 / 10%);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--theme-color);
-
-  &:horizontal {
-    width: 6px;
-  }
-
-  &:vertical {
-    height: 6px;
-  }
 }
 
 .hide-in-mobile {

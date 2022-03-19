@@ -94,6 +94,7 @@ const createDocumentHandler = (
       popperRef &&
       (popperRef.contains(mouseUpTarget) ||
         popperRef.contains(mouseDownTarget));
+
     if (
       isBound ||
       isTargetExists ||

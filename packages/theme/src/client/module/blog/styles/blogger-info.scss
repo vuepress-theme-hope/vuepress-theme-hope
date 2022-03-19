@@ -9,53 +9,51 @@
   .blogger {
     padding: 0.5rem;
     text-align: center;
+  }
 
-    &.hasIntro {
-      cursor: pointer;
+  .blogger-avatar {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+
+    &.round {
+      border-radius: 50%;
     }
+  }
 
-    .avatar {
-      width: 8rem;
-      height: 8rem;
-      margin: 0 auto;
+  .blogger-name {
+    margin: 1rem auto;
+    font-size: 22px;
+  }
 
-      &.round {
-        border-radius: 50%;
-      }
-    }
-
-    .name {
-      margin: 1rem auto;
-      font-size: 22px;
-    }
-
-    .description {
-      margin: 1rem auto;
-      font-size: 14px;
-    }
+  .blogger-description {
+    margin: 1rem auto;
+    font-size: 14px;
   }
 
   .num-wrapper {
     display: flex;
-    margin: 0 auto 1rem;
     width: 80%;
+    margin: 0 auto 1rem;
 
     > div {
       width: 25%;
-      text-align: center;
       font-size: 13px;
+      text-align: center;
       cursor: pointer;
 
       &:hover {
         color: var(--theme-color);
       }
 
+      // stylelint-disable selector-max-compound-selectors
       .num {
         position: relative;
         margin-bottom: 0.5rem;
         font-weight: 600;
         font-size: 20px;
       }
+      // stylelint-enable selector-max-compound-selectors
     }
   }
 }

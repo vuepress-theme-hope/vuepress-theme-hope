@@ -56,12 +56,12 @@ export default defineComponent({
       h("div", { class: "blog-info-list" }, [
         h(
           "div",
-          { class: "switch-wrapper" },
+          { class: "blog-type-wrapper" },
           buttons.map(([key, icon]) =>
             h(
               "button",
               {
-                class: "switch-button",
+                class: "blog-type-button",
                 onClick: () => {
                   active.value = key;
                 },

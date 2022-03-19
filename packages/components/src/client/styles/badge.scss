@@ -8,14 +8,18 @@
 
 .badge {
   display: inline-block;
-  font-size: 14px;
-  height: 18px;
-  line-height: 18px;
-  border-radius: 3px;
-  padding: 0 6px;
-  color: var(--white);
-  background-color: var(--c-brand, #3eaf7c);
   vertical-align: top;
+
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
+
+  background-color: var(--c-brand, #3eaf7c);
+  color: var(--white);
+
+  font-size: 14px;
+  line-height: 18px;
+
   transition: background-color var(--color-transition, 0.3s),
     color var(--color-transition, 0.3s);
 

@@ -71,6 +71,7 @@ const inlineTex: RuleInline = (state, silent) => {
     if (!silent) state.pending += "$";
 
     state.pos += 1;
+
     return true;
   }
 
@@ -81,6 +82,7 @@ const inlineTex: RuleInline = (state, silent) => {
    * we have found an opening delimieter already.
    */
   const start = state.pos + 1;
+
   match = start;
   while ((match = state.src.indexOf("$", match)) !== -1) {
     /*
@@ -101,6 +103,7 @@ const inlineTex: RuleInline = (state, silent) => {
     if (!silent) state.pending += "$";
 
     state.pos = start;
+
     return true;
   }
 
@@ -109,6 +112,7 @@ const inlineTex: RuleInline = (state, silent) => {
     if (!silent) state.pending += "$$";
 
     state.pos = start + 1;
+
     return true;
   }
 
@@ -119,6 +123,7 @@ const inlineTex: RuleInline = (state, silent) => {
     if (!silent) state.pending += "$";
 
     state.pos = start;
+
     return true;
   }
 

@@ -1,14 +1,14 @@
 .chart-title {
   margin: 0.5rem auto;
-  text-align: center;
-  font-size: 18px;
   font-weight: 600;
+  font-size: 18px;
+  text-align: center;
 }
 
 .chart-loading-wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background: var(--grey15);
 
   .loading-icon {
@@ -20,10 +20,10 @@
 }
 
 .chart-wrapper {
-  padding: 0.6em 0.4em;
-  transition: all 1s;
-  text-align: center;
   overflow-x: scroll;
+  padding: 0.6em 0.4em;
+  text-align: center;
+  transition: all 1s;
 
   @media (max-width: hope-config.$mobile) {
     margin: 0 -1rem;

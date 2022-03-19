@@ -66,6 +66,7 @@ const generateCheckbox = (token: Token): Token => {
 // true block-level token with .tag=='label'
 const beginLabel = (): Token => {
   const token = new Token("html_inline", "", 0);
+
   token.content = "<label>";
 
   return token;
@@ -73,7 +74,9 @@ const beginLabel = (): Token => {
 
 const endLabel = (): Token => {
   const token = new Token("html_inline", "", 0);
+
   token.content = "</label>";
+
   return token;
 };
 
@@ -110,6 +113,7 @@ const todoify = (
       token.children.pop();
 
       const id = `task-item-${state.env.tasklists++}`;
+
       token.children[0].content =
         token.children[0].content.slice(0, -1) + ' id="' + id + '">';
       token.children.push(afterLabel(token.content, id));

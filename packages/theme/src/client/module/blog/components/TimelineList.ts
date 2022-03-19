@@ -25,7 +25,7 @@ export default defineComponent({
         h(
           "div",
           {
-            class: "title",
+            class: "timeline-list-title",
             onClick: () => navigate(timelines.value.path),
           },
           [
@@ -37,20 +37,20 @@ export default defineComponent({
         h("hr"),
         h(
           "div",
-          { class: "content" },
+          { class: "timeline-content" },
           h(
             "ul",
             { class: "timeline-list" },
             timelines.value.config.map(({ year, items }, index) =>
               h(DropTransition, { delay: 0.08 * (index + 1) }, () =>
                 h("li", [
-                  h("h3", { class: "year" }, year),
+                  h("h3", { class: "timeline-year" }, year),
                   h(
                     "ul",
-                    { class: "year-wrapper" },
+                    { class: "timeline-year-wrapper" },
                     items.map(({ date, info, path }) =>
-                      h("li", [
-                        h("span", { class: "date" }, date),
+                      h("li", { class: "timeline-item" }, [
+                        h("span", { class: "timeline-date" }, date),
                         h(
                           RouterLink,
                           {

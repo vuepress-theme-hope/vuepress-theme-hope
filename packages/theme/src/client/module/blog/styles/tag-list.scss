@@ -4,30 +4,40 @@
 .tag-list-wrapper {
   position: relative;
   z-index: 2;
-  padding-left: 0;
-  list-style: none;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+
+  padding-left: 0;
+
+  list-style: none;
 
   a {
     color: inherit;
   }
 
   .tag {
-    display: inline-block;
     position: relative;
+
+    display: inline-block;
     vertical-align: middle;
+
+    overflow: hidden;
+
     min-width: 24px;
     margin: 4px 6px;
     padding: 3px 8px;
     border-radius: 8px;
-    box-shadow: 0 1px 6px 0 var(--box-shadow);
+
     color: var(--white);
+    box-shadow: 0 1px 6px 0 var(--box-shadow);
+
     font-size: 12px;
     text-align: center;
-    overflow: hidden;
+
     cursor: pointer;
+
     transition: background-color 0.3s, transform 0.3s;
 
     &:hover {

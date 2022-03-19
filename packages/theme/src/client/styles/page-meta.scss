@@ -2,10 +2,9 @@
 
 .page-meta {
   @include wrapper.horizontal-wrapper;
-
+  overflow: auto;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  overflow: auto;
 
   .meta-item {
     margin-top: 0.5rem;
@@ -19,42 +18,42 @@
     }
 
     .info {
-      font-weight: 400;
       color: var(--dark-grey);
+      font-weight: 400;
     }
   }
 
   .edit-link {
     display: inline-block;
-    font-size: 14px;
     margin-right: 0.25rem;
+    font-size: 14px;
+
+    @media (max-width: hope-config.$mobile) {
+      margin-bottom: 8px;
+    }
 
     .icon {
       position: relative;
       bottom: -0.125em;
+
       width: 1em;
       height: 1em;
       margin-right: 0.25em;
-    }
-
-    @media (max-width: hope-config.$mobile) {
-      margin-bottom: 8px;
     }
   }
 
   .update-time {
     float: right;
-
     font-size: 14px;
-
-    &:first-child {
-      float: left;
-    }
 
     @media (max-width: hope-config.$mobile) {
       float: none;
       font-size: 13px;
       text-align: left;
+    }
+
+    &:first-child {
+      float: left;
     }
   }
 

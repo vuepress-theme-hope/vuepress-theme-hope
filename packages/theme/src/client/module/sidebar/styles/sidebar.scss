@@ -1,27 +1,35 @@
 .sidebar {
   position: fixed;
-  z-index: 150;
   top: 0;
-  left: 0;
   bottom: 0;
-  box-sizing: border-box;
-  width: var(--sidebar-width);
-  margin: 0;
-  background: var(--sidebar-bg-color);
-  box-shadow: 2px 0 4px var(--card-shadow);
-  backdrop-filter: saturate(150%) blur(12px);
-  font-size: 16px;
+  left: 0;
+  z-index: 150;
+
   overflow-y: auto;
+
   // compatable with non Chrome browsers
   overflow-y: scroll;
+
   // only works on Chrome
   overflow-y: overlay;
-  transform: translateX(-100%);
+  box-sizing: border-box;
+
+  width: var(--sidebar-width);
+  margin: 0;
+
+  background: var(--sidebar-bg-color);
+  box-shadow: 2px 0 4px var(--card-shadow);
+
+  font-size: 16px;
+
   transition: background-color var(--color-transition),
     box-shadow var(--color-transition), transform var(--transform-transition);
+  transform: translateX(-100%);
+
+  backdrop-filter: saturate(150%) blur(12px);
+  scrollbar-color: var(--theme-color) var(--border-color);
 
   scrollbar-width: thin;
-  scrollbar-color: var(--theme-color) var(--border-color);
 
   @media (max-width: hope-config.$pad) {
     width: var(--sidebar-mobile-width);
@@ -62,12 +70,14 @@
 
 .sidebar-mask {
   position: fixed;
-  z-index: 9;
   top: 0;
   left: 0;
+  z-index: 9;
+
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.15);
+
+  background-color: rgb(0 0 0 / 15%);
 
   &.fade-enter-active,
   &.fade-leave-active {

@@ -14,14 +14,16 @@
       h5,
       h6 {
         margin-top: calc(0.5rem - var(--navbar-height));
-        padding-top: calc(1rem + var(--navbar-height));
         margin-bottom: 0.5rem;
+        padding-top: calc(1rem + var(--navbar-height));
         outline: none;
 
+        // stylelint-disable max-nesting-depth
         .theme-container.no-navbar & {
           margin-top: 1.5rem;
           padding-top: 0;
         }
+        // stylelint-enable max-nesting-depth
       }
 
       // paragraph fix
@@ -30,8 +32,8 @@
       ol p {
         text-align: justify;
         word-break: break-word;
-        hyphens: auto;
         overflow-wrap: break-word;
+        hyphens: auto;
 
         @media (max-width: hope-config.$mobileS) {
           text-align: left;
@@ -56,8 +58,8 @@
   }
 
   &.custom {
-    padding: 0;
     margin: 0;
+    padding: 0;
 
     img {
       max-width: 100%;

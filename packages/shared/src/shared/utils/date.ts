@@ -45,6 +45,7 @@ export const timeTransformer = (
   options: DateOptions = {}
 ): string => {
   const { lang, timezone, type } = options;
+
   dayjs.locale(getLang(lang));
 
   const dateText = timezone

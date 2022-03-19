@@ -138,6 +138,7 @@ export const generateUML = (
       .join("\n");
 
     const token = state.push(options.name, "fence", 0);
+
     token.block = true;
     token.info = params;
     token.content = contents;

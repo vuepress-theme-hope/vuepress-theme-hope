@@ -20,8 +20,6 @@ pre[class*="language-"] {
   tab-size: 4;
 
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
     background: #6a51e6;
@@ -82,12 +80,12 @@ pre[class*="language-"] {
 .token.statement,
 .token.regex,
 .token.atrule {
-  color: #ffcc99;
+  color: #fc9;
 }
 
 .token.placeholder,
 .token.variable {
-  color: #ffcc99;
+  color: #fc9;
 }
 
 .token.deleted {

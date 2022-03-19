@@ -4,46 +4,58 @@
 @use "icons";
 
 :root {
+  // info
   --info-title-color: #193c47;
   --info-bg-color: #eef9fd;
   --info-border-color: #4cb3d4;
 
+  // note
   --note-title-color: #474748;
   --note-bg-color: #fdfdfe;
   --note-border-color: #d4d5d8;
 
+  // tip
   --tip-title-color: #003100;
   --tip-bg-color: #e6f6e6;
   --tip-border-color: #009400;
 
+  // warning
   --warning-title-color: #4d3800;
   --warning-bg-color: #fff8e6;
   --warning-border-color: #e6a700;
 
+  // danger
   --danger-title-color: #4b1113;
   --danger-bg-color: #ffebec;
   --danger-border-color: #e13238;
 
+  // detail
   --detail-bg-color: #eee;
   --detail-text-color: inherit;
 }
 
 #{hope-config.$darkSelector} {
+  // info
   --info-title-color: #eef9fd;
   --info-bg-color: #193c47;
 
+  // note
   --note-title-color: #fdfdfe;
   --note-bg-color: #474748;
 
+  // tip
   --tip-title-color: #e6f6e6;
   --tip-bg-color: #003100;
 
+  // warning
   --warning-title-color: #fff8e6;
   --warning-bg-color: #4d3800;
 
+  // danger
   --danger-title-color: #ffebec;
   --danger-bg-color: #4b1113;
 
+  // detail
   --detail-bg-color: #353535;
   --detail-text-color: #a8a8a8;
 }
@@ -69,6 +81,7 @@
     border-left-width: 0.3rem;
     border-left-style: solid;
     border-radius: 0.5rem;
+
     color: inherit;
 
     .custom-container-title {
@@ -76,10 +89,13 @@
 
       &::before {
         content: " ";
+
         position: absolute;
-        left: 0px;
+        left: 0;
+
         width: 20px;
         height: 20px;
+
         background-position: left;
         background-repeat: no-repeat;
       }
@@ -94,8 +110,8 @@
     }
 
     div[class*="language-"] {
-      margin-left: 0 !important;
       margin-right: 0 !important;
+      margin-left: 0 !important;
     }
   }
 
@@ -186,13 +202,16 @@
 }
 
 .custom-block.details {
-  display: block;
   position: relative;
+
+  display: block;
+
   margin: 1.6em 0;
   padding: 1.6em;
+  border-radius: 0.25rem;
+
   background: var(--detail-bg-color);
   color: var(--detail-text-color);
-  border-radius: 0.25rem;
 
   h4 {
     margin-top: 0;

@@ -2,25 +2,26 @@
 @use "sass:list";
 
 .tags-wrapper {
-  list-style: none;
   margin: 0;
   padding-left: 0;
+  list-style: none;
 
   .tag {
     position: relative;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    overflow: hidden;
 
     min-width: 1.5rem;
     margin: 0 0.125rem;
     padding: 0.125rem 0.25rem 0.125rem 0.625rem;
 
-    font-size: 0.625rem;
     font-weight: bold;
+    font-size: 0.625rem;
     line-height: 1.5;
     text-align: center;
-
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden;
 
     transition: background-color var(--color-transition, 0.3s),
       color var(--color-transition, 0.3s);
@@ -47,9 +48,8 @@
             color.scale($color, $lightness: 90%) 0
           )
           bottom;
-      background-size: 100% 52% !important ;
+      background-size: 100% 52% !important;
       background-repeat: no-repeat !important;
-
       color: color.scale($color, $lightness: 20%);
 
       #{hope-config.$darkSelector} & {
@@ -66,7 +66,6 @@
               color.scale($color, $lightness: -75%) 0
             )
             bottom;
-
         color: color.scale($color, $lightness: -10%);
       }
 

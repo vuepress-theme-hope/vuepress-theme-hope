@@ -30,8 +30,9 @@
       padding: 1rem 0;
     }
 
-    & > li {
-      & > .sidebar-link {
+    > li {
+      // stylelint-disable selector-max-compound-selectors
+      > .sidebar-link {
         font-size: 1.1em;
         line-height: 1.7;
       }
@@ -39,6 +40,7 @@
       &:not(:first-child) {
         margin-top: 0.5rem;
       }
+      // stylelint-enable selector-max-compound-selectors
     }
   }
 }

@@ -15,6 +15,7 @@ export const codeDemoRender = (tokens: Token[], index: number): string => {
 
   for (let i = index; i < tokens.length; i++) {
     const { type, content, info } = tokens[i];
+
     if (type === "container_demo_close") break;
     if (!content) continue;
     if (type === "fence") {

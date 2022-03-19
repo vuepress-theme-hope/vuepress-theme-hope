@@ -13,11 +13,10 @@
 @import "template/theme";
 
 $backgroundColor: #111;
-
 $mainFont: "Open Sans", sans-serif;
 $linkColor: #e7ad52;
 $linkColorHover: color.scale($linkColor, $lightness: 20%);
-$headingFont: "Montserrat", Impact, sans-serif;
+$headingFont: "Montserrat", impact, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: -0.03em;
 $headingTextTransform: none;

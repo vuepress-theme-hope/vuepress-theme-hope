@@ -37,6 +37,7 @@ describe("inline katex", () => {
   it("Should render error msg when content is wrong", () => {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalWarn = global.console.warn;
+
     global.console.warn = jest.fn();
 
     expect(markdownItWithError.render("$\\fra{a}{b}$")).toEqual(
@@ -111,6 +112,7 @@ $$
   it("Should render error msg when content is wrong", () => {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalWarn = global.console.warn;
+
     global.console.warn = jest.fn();
     expect(markdownItWithError.render("$$\\fra{a}{b}$$")).toMatch(
       /<p class='katex-block katex-error' title='[\s\S]*?'>[\s\S]*?<\/p>/

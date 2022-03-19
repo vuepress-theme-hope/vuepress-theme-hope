@@ -36,6 +36,7 @@ export const renderChildren = (
   children: ResolvedHopeThemeSidebarHeaderItem[]
 ): VNode | null => {
   const route = useRoute();
+
   if (!children) return null;
 
   return h(

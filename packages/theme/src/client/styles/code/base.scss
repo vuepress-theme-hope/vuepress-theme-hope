@@ -3,13 +3,13 @@
 pre[class*="language-"] > code {
   background: none;
   color: var(--code-color);
+
   font-family: var(--font-family-code);
   text-align: left;
   white-space: pre;
   word-spacing: normal;
-  word-break: normal;
   word-wrap: normal;
-
+  word-break: normal;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   hyphens: none;
@@ -32,13 +32,13 @@ pre[class*="language-"] {
 #{hope-config.$contentClass} {
   pre,
   pre[class*="language-"] {
+    overflow: auto;
+
     margin: 0.85rem 0;
     padding: 1rem;
     border-radius: 6px;
 
     line-height: 1.4;
-
-    overflow: auto;
 
     code {
       padding: 0;
@@ -47,6 +47,7 @@ pre[class*="language-"] {
       background: transparent !important;
 
       overflow-wrap: unset;
+
       -webkit-font-smoothing: auto;
       -moz-osx-font-smoothing: auto;
     }
@@ -59,19 +60,18 @@ pre[class*="language-"] {
 
 div[class*="language-"] {
   position: relative;
-
   border-radius: 6px;
   background: var(--code-bg-color);
-
   transition: background-color var(--color-transition);
 
   &::before {
     position: absolute;
-    z-index: 3;
     top: 0.8em;
     right: 1em;
+    z-index: 3;
 
     color: var(--code-line-color);
+
     font-size: 0.75rem;
 
     transition: color var(--color-transition);
@@ -92,32 +92,33 @@ div[class*="language-"] {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
 
+    width: 100%;
     padding-top: 1rem;
 
     line-height: 1.4;
+
     user-select: none;
   }
 
   .highlight-line {
     background-color: var(--code-highlight-line-color);
-
     transition: background-color var(--color-transition);
   }
 
   &.line-numbers-mode {
     &::after {
       content: "";
+
       position: absolute;
-      z-index: 2;
       top: 0;
       left: 0;
+      z-index: 2;
+
       width: var(--line-numbers-width);
       height: 100%;
-
-      border-radius: 6px 0 0 6px;
       border-right: 1px solid var(--code-highlight-line-color);
+      border-radius: 6px 0 0 6px;
 
       transition: border-color var(--color-transition);
 
@@ -130,13 +131,16 @@ div[class*="language-"] {
     .highlight-line {
       position: relative;
 
-      &:before {
+      &::before {
         content: " ";
+
         position: absolute;
-        z-index: 3;
         top: 0;
         left: 0;
+        z-index: 3;
+
         display: block;
+
         width: var(--line-numbers-width);
         height: 100%;
       }
@@ -159,8 +163,9 @@ div[class*="language-"] {
       padding: 1rem 0;
 
       color: var(--code-line-color);
-      text-align: center;
+
       line-height: 1.4;
+      text-align: center;
 
       transition: color var(--color-transition);
 
@@ -172,9 +177,11 @@ div[class*="language-"] {
     .line-number {
       position: relative;
       z-index: 4;
-      user-select: none;
+
       font-size: 0.85em;
       line-height: 0;
+
+      user-select: none;
     }
   }
 
@@ -187,7 +194,7 @@ div[class*="language-"] {
 
 @each $lang in hope-config.$codeLang {
   div[class*="language-"].ext-#{$lang} {
-    &:before {
+    &::before {
       content: "" + $lang;
     }
   }

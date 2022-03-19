@@ -2,13 +2,13 @@
 
 @keyframes pwa-opened {
   from {
-    transform: scale(0.8, 0.8);
     opacity: 0.4;
+    transform: scale(0.8, 0.8);
   }
 
   to {
-    transform: scale(1, 1);
     opacity: 1;
+    transform: scale(1, 1);
   }
 }
 
@@ -37,18 +37,23 @@
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  padding: 0 16px;
-  border-radius: 1.2rem;
-  background: var(--c-brand, #3eaf7c);
-  color: var(--white);
-  font-weight: 600;
-  line-height: 2.2rem;
-  outline: none;
   z-index: 10;
 
+  padding: 0 16px;
+  border-radius: 1.2rem;
+
+  background: var(--c-brand, #3eaf7c);
+  color: var(--white);
+  outline: none;
+
+  font-weight: 600;
+  line-height: 2.2rem;
+
+  // stylelint-disable media-feature-name-no-unknown
   @media (display-mode: standalone) {
     display: none;
   }
+  // stylelint-enable media-feature-name-no-unknown
 
   &:hover,
   &:active {
@@ -57,16 +62,19 @@
 }
 
 #install-modal-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  overflow: auto;
   z-index: 997;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: auto;
+
+  width: 100vw;
+  height: 100vh;
 
   button {
     @include reset.button;
@@ -75,22 +83,28 @@
   .background {
     position: fixed;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    backdrop-filter: blur(10px);
     z-index: 998;
+
     animation: 0.25s pwa-fadein;
+
+    backdrop-filter: blur(10px);
   }
 
   .install-modal {
-    display: flex;
-    flex-direction: column;
     position: absolute;
     z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+
     max-width: 56em;
     border-radius: 10px;
+
     background: var(--c-bg, #fff);
+
     animation: 0.15s pwa-opened;
 
     @media (max-width: hope-config.$desktop) {
@@ -99,8 +113,8 @@
     }
 
     @media (max-width: hope-config.$mobileS) {
-      max-height: 80%;
       overflow-y: scroll;
+      max-height: 80%;
 
       &::-webkit-scrollbar {
         display: none;
@@ -155,11 +169,8 @@
       margin-right: 24px;
       padding: 12px;
       border-radius: 24px;
-      background: #eee;
 
-      #{hope-config.$darkSelector} & {
-        background: #444;
-      }
+      background: #eee;
 
       @media (max-width: hope-config.$pad) {
         width: 60px;
@@ -176,15 +187,22 @@
         height: 40px;
         padding: 6px;
       }
+
+      #{hope-config.$darkSelector} & {
+        background: #444;
+      }
     }
 
     .desc {
+      overflow: hidden;
+
       max-width: 40em;
+
       color: var(--grey);
+
       font-size: 14px;
       text-overflow: ellipsis;
       white-space: pre-wrap;
-      overflow: hidden;
 
       @media (max-width: hope-config.$pad) {
         display: none;
@@ -193,17 +211,17 @@
   }
 
   .content {
+    flex: 1;
     margin: 0 40px;
     color: var(--grey3);
-    flex: 1;
 
     @media (max-width: hope-config.$mobile) {
       margin: 0 20px;
     }
 
     h3 {
-      font-size: 22px;
       margin-bottom: 12px;
+      font-size: 22px;
     }
 
     p {
@@ -213,54 +231,54 @@
 
   .highlight {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
     margin-right: 20px;
 
     @media (max-width: hope-config.$mobile) {
       flex-direction: column;
       align-items: flex-start;
-      margin-right: 0px;
+      margin-right: 0;
     }
 
     h3 {
-      margin-top: 0px;
-      font-size: 22px;
+      margin-top: 0;
       font-weight: 600;
+      font-size: 22px;
       line-height: 225%;
 
       @media (max-width: hope-config.$mobileS) {
-        margin-bottom: 0px;
+        margin-bottom: 0;
         font-size: 18px;
       }
     }
   }
 
   .feature-wrapper {
-    padding-right: 2em;
     overflow: hidden;
+    padding-right: 2em;
 
     ul {
-      padding-inline-start: 22px;
       margin-block-start: 12px;
+      padding-inline-start: 22px;
 
       @media (max-width: hope-config.$mobileS) {
-        margin-top: 0px;
+        margin-top: 0;
       }
     }
 
     li {
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 29px;
       color: var(--dark-grey);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 29px;
     }
   }
 
   .screenshot-wrapper {
+    display: flex;
     max-width: 30em;
     max-height: 220px;
-    display: flex;
 
     @media (max-width: hope-config.$mobile) {
       width: 100%;
@@ -276,21 +294,25 @@
         background: #bbb;
       }
 
+      // stylelint-disable selector-max-compound-selectors
       svg {
         width: 28px;
         fill: #6b6969;
       }
+      // stylelint-enable selector-max-compound-selectors
     }
   }
 
   .screenshot {
-    width: 22em;
-    max-height: 220px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
+
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+
+    width: 22em;
+    max-height: 220px;
+
     scroll-snap-type: x mandatory;
 
     @media (max-width: hope-config.$desktop) {
@@ -303,17 +325,20 @@
 
     div {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+
       width: 100%;
       height: 14em;
+
       background: #efefef;
+
       scroll-snap-align: start;
     }
 
     img {
-      height: 100%;
       object-fit: contain;
+      height: 100%;
 
       @media (max-width: hope-config.$mobile) {
         height: 180px;
@@ -327,8 +352,8 @@
 
   .button-wrapper {
     width: 100%;
-    text-align: right;
     padding: 1rem 0;
+    text-align: right;
 
     @media (max-width: hope-config.$mobile) {
       text-align: center;
@@ -340,28 +365,30 @@
     @include reset.button;
     display: inline-block;
     flex: 0 0 auto;
+
     min-width: 80px;
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;
     border: solid 2px var(--c-brand, #3eaf7c);
     border-radius: 20px;
-    font-size: 14px;
+
     font-weight: 600;
+    font-size: 14px;
   }
 
   .install-button {
     background: var(--c-brand, #3eaf7c);
     color: var(--white);
 
-    &:hover,
-    &:focus {
-      background: var(--c-brand-light, #4abf8a);
-    }
-
     @media (max-width: hope-config.$mobileS) {
       span {
         display: none;
       }
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--c-brand-light, #4abf8a);
     }
   }
 
@@ -379,27 +406,33 @@
   .ios-text {
     position: fixed;
     bottom: 0;
+
     box-sizing: border-box;
+
     width: 92%;
     margin: 2em auto;
     padding: 0.5em 2em;
     border-radius: 8px;
+
     background: var(--white);
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
     box-shadow: 0 2px 12px 0 var(--card-shadow);
+
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
 
     &::after {
       content: " ";
+
       position: absolute;
-      left: calc(50% - 0.8em);
       bottom: -1em;
+      left: calc(50% - 0.8em);
+
       width: 0;
       height: 0;
       border-top: 1em solid var(--white);
-      border-left: 0.8em solid transparent;
       border-right: 0.8em solid transparent;
+      border-left: 0.8em solid transparent;
     }
 
     p {
@@ -408,12 +441,13 @@
 
     .success {
       @include reset.button;
-      padding: 0.5em 1em;
       margin-bottom: 0.5em;
-      background: #07c160;
-      color: var(--white);
+      padding: 0.5em 1em;
       border: none;
       border-radius: 1em;
+
+      background: #07c160;
+      color: var(--white);
     }
   }
 }

@@ -1,14 +1,15 @@
 @use "@mr-hope/vuepress-shared/styles/reset";
 
 .toggle-navbar-button {
-  @include reset.button();
+  @include reset.button;
 
   position: relative;
-  padding: 6px;
 
   display: none;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  padding: 6px;
 
   @media screen and (max-width: hope-config.$mobile) {
     display: flex;
@@ -16,18 +17,21 @@
 
   .button-container {
     position: relative;
+    overflow: hidden;
     width: 16px;
     height: 14px;
-    overflow: hidden;
   }
 
   .button-top,
   .button-middle,
   .button-bottom {
     position: absolute;
+
     width: 16px;
     height: 2px;
+
     background-color: var(--dark-grey);
+
     transition: top 0.25s, background-color 0.5s, transform 0.25s;
   }
 
@@ -36,11 +40,13 @@
     left: 0;
     transform: translateX(0);
   }
+
   .button-middle {
     top: 6px;
     left: 0;
     transform: translateX(8px);
   }
+
   .button-bottom {
     top: 12px;
     left: 0;

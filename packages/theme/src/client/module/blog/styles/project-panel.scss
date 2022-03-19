@@ -6,10 +6,10 @@
   z-index: 2;
 
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   align-content: stretch;
   align-items: stretch;
-  flex-wrap: wrap;
+  justify-content: flex-start;
 
   margin-bottom: 12px;
 
@@ -42,23 +42,30 @@
     .name {
       position: relative;
       z-index: 2;
+
       color: var(--grey3);
-      font-size: 16px;
+
       font-weight: 500;
+      font-size: 16px;
     }
 
     .desc {
       position: relative;
       z-index: 2;
+
       margin: 6px 0;
+
       color: var(--dark-grey);
+
       font-size: 13px;
     }
 
     .image {
       position: relative;
       z-index: 2;
+
       float: right;
+
       width: 40px;
       height: 40px;
     }
@@ -66,7 +73,9 @@
     .icon {
       position: relative;
       z-index: 2;
+
       float: right;
+
       width: 20px;
       height: 20px;
     }
@@ -76,12 +85,10 @@
     $index: list.index(hope-config.$colors, $color) - 1;
 
     .project#{$index} {
-      & {
-        background: color.scale($color, $lightness: 90%);
+      background: color.scale($color, $lightness: 90%);
 
-        &:hover {
-          background: color.scale($color, $lightness: 75%);
-        }
+      &:hover {
+        background: color.scale($color, $lightness: 75%);
       }
 
       #{hope-config.$darkSelector} & {

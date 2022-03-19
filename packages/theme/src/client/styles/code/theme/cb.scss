@@ -7,6 +7,7 @@
  * Author URI: http://bavotasan.comhttp://wp.tutsplus.com/tutorials/plugins/adding-a-syntax-highlighter-shortcode-using-prism-js/
  * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-night-owl.css
  */
+
 /* http://cbavota.bitbucket.org/syntax-highlighter/  */
 
 @use "helper";
@@ -23,11 +24,9 @@ pre[class*="language-"] {
   tab-size: 4;
 
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
-    background: rgba(29, 59, 83, 0.99);
+    background: rgb(29 59 83 / 99%);
   }
 }
 

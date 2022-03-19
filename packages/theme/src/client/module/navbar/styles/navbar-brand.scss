@@ -1,8 +1,8 @@
 .navbar {
   .logo {
+    vertical-align: top;
     height: var(--navbar-line-height);
     margin-right: 0.8rem;
-    vertical-align: top;
 
     &.light {
       display: inline-block;
@@ -24,19 +24,19 @@
   }
 
   .site-name {
-    font-size: 1.25rem;
-    color: var(--text-color);
     position: relative;
+    color: var(--text-color);
+    font-size: 1.25rem;
+
+    @media (max-width: hope-config.$mobile) {
+      overflow: hidden;
+      width: calc(100vw - 9.4rem);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     .home-link:hover & {
       color: var(--theme-color);
-    }
-
-    @media (max-width: hope-config.$mobile) {
-      width: calc(100vw - 9.4rem);
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
   }
 }

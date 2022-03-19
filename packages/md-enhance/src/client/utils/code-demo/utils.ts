@@ -56,10 +56,12 @@ export const h = (
   children?: HTMLElement[]
 ): HTMLElement => {
   const node = document.createElement(tag);
+
   attrs &&
     Object.keys(attrs).forEach((key) => {
       if (!key.indexOf("data")) {
         const k = key.replace("data", "");
+
         node.dataset[k] = attrs[key];
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore

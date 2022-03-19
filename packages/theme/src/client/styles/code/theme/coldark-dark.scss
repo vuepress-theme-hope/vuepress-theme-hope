@@ -22,8 +22,6 @@ pre[class*="language-"] {
   tab-size: 4;
 
   // Selection
-  &::-moz-selection,
-  ::-moz-selection,
   &::selection,
   ::selection {
     background: #3c526d;
@@ -45,7 +43,7 @@ pre[class*="language-"] {
 .token.selector .parent,
 .token.tag,
 .token.tag .token.punctuation {
-  color: #66cccc;
+  color: #6cc;
 }
 
 .token.attr-name,
@@ -139,7 +137,7 @@ pre[class*="language-"] {
 }
 
 .language-markdown .token.code {
-  color: #66cccc;
+  color: #6cc;
 }
 
 .language-markdown .token.hr.punctuation {
@@ -167,5 +165,5 @@ pre[class*="language-"] {
 }
 
 .language-scss .token.variable {
-  color: #66cccc;
+  color: #6cc;
 }

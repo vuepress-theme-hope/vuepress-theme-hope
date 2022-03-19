@@ -85,7 +85,7 @@ export default defineComponent({
         { class: "pagination-wrapper" },
         enable.value
           ? h("div", { class: "pagination-list" }, [
-              h("div", { class: "btn-group" }, [
+              h("div", { class: "page-number" }, [
                 // prev button
                 props.currentPage > 1
                   ? h(
