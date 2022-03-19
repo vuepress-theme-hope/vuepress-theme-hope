@@ -52,7 +52,7 @@ tag:
 
 :::
 
-## gfm
+### gfm
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -139,7 +139,7 @@ tag:
 
 是否启用标记格式支持。
 
-## imageMark
+### imageMark
 
 - 类型: `ImageMarkOptions | boolean`
 - 默认值: `false`

@@ -139,7 +139,7 @@ Whether to lazy load every images in page in native way.
 
 Whether to enable mark support.
 
-## imageMark
+### imageMark
 
 - Type: `ImageMarkOptions | boolean`
 - Default: `false`

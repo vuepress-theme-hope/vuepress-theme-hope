@@ -124,14 +124,14 @@ Whether show icons in route navigation
 
 ## Title
 
-## titleIcon
+### titleIcon
 
 - Type: `boolean`
 - Default: `true`
 
 Whether display icon besides page title
 
-## pageInfo
+### pageInfo
 
 - Type: `ArticleInfo[] | false`
 - Default: `["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]`
