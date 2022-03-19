@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2022-03-19)
+
+**Note:** Version bump only for package copy-code-docs
+
 # [2.0.0-beta.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2022-03-18)
 
 **Note:** Version bump only for package copy-code-docs

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2022-03-19)
+
+### Bug Fixes
+
+- **theme:** fix layout shift caused by navbar hide ([bbb8e6b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bbb8e6b3f5140f4d84e12361e4882c737ea45204))
+- **theme:** fix sidebar top ([4512eb1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4512eb197a6edf3347b19d412a026acd511eb584))
+
+### Features
+
+- **theme:** disable pageview when not available ([50829bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/50829bcbc4b4907acface98ce8895bba3c15e323))
+
 # [2.0.0-beta.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2022-03-18)
 
 ### Bug Fixes
