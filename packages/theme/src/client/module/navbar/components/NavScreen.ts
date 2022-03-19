@@ -10,7 +10,7 @@ import {
 } from "vue";
 import { useRoute } from "vue-router";
 
-import { useThemeData } from "@theme-hope/composables";
+import { useMobile } from "@theme-hope/composables";
 import NavScreenLinks from "@theme-hope/module/navbar/components/NavScreenLinks";
 import OutlookSettings from "@theme-hope/module/outlook/components/OutlookSettings";
 
@@ -31,20 +31,15 @@ export default defineComponent({
   emits: ["close"],
 
   setup(props, { emit, slots }) {
-    const themeData = useThemeData();
     const route = useRoute();
-    const screen = ref<HTMLElement>();
+    const isMobile = useMobile();
+
     const body = ref<HTMLElement | null>();
     const isLocked = useScrollLock(body);
 
-    const handler = (): void => {
-      if (
-        window.innerWidth > (themeData.value.mobileBreakPoint || 719) &&
-        props.active
-      ) {
-        emit("close");
-      }
-    };
+    watch(isMobile, (value) => {
+      if (!value && props.active) emit("close");
+    });
 
     watch(
       () => route.path,
@@ -55,15 +50,11 @@ export default defineComponent({
     );
 
     onMounted(() => {
-      window.addEventListener("orientationchange", handler, false);
-      window.addEventListener("resize", handler, false);
       body.value = document.body;
     });
 
     onBeforeUnmount(() => {
       isLocked.value = false;
-      window.removeEventListener("orientationchange", handler, false);
-      window.removeEventListener("resize", handler, false);
     });
 
     return (): VNode =>
@@ -82,7 +73,7 @@ export default defineComponent({
           props.active
             ? h(
                 "div",
-                { id: "nav-screen", ref: screen },
+                { id: "nav-screen" },
                 h("div", { class: "container" }, [
                   slots.before?.(),
                   h(NavScreenLinks),

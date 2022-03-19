@@ -2,7 +2,7 @@ import { path } from "@vuepress/utils";
 
 import { getAlias } from "./alias";
 import { updateBundlerOptions } from "./bundler";
-import { handleThemeData } from "./handleThemeData";
+import { getThemeConfig } from "./getThemeConfig";
 import { extendsPage } from "./extends";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
@@ -11,23 +11,19 @@ import { prepareSidebarData } from "./sidebar";
 import { prepareThemeColorScss } from "./themeColor";
 
 import type { Page, Theme } from "@vuepress/core";
-import type {
-  HopeThemeConfig,
-  HopeThemeOptions,
-  HopeThemePageData,
-} from "../shared";
+import type { HopeThemeOptions, HopeThemePageData } from "../shared";
 
 export const themeHope: Theme<HopeThemeOptions> = (
-  { plugins = {}, ...themeOptions },
+  { plugins = {}, hostname = "", ...themeOptions },
   app
 ) => {
   const enableBlog = Boolean(plugins.blog);
+  const themeConfig = getThemeConfig(app, themeOptions);
 
-  handleThemeData(app, themeOptions);
   usePlugin(app, plugins);
 
   if (enableBlog) {
-    const icons = checkSocialMediaIcons(themeOptions as HopeThemeConfig);
+    const icons = checkSocialMediaIcons(themeConfig);
 
     void app.writeTemp(
       `theme-hope/socialMedia.js`,
@@ -47,7 +43,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     extendsPage: (page) =>
       extendsPage(
-        themeOptions as HopeThemeConfig,
+        themeConfig,
         plugins,
         page as Page<HopeThemePageData>,
         app.env.isDev
@@ -57,11 +53,11 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     onPrepared: (): Promise<void> =>
       Promise.all([
-        prepareSidebarData(app, themeOptions as HopeThemeConfig),
-        prepareThemeColorScss(app, themeOptions as HopeThemeConfig),
+        prepareSidebarData(app, themeConfig),
+        prepareThemeColorScss(app, themeConfig),
       ]).then(() => void 0),
 
-    plugins: getPluginConfig(app, plugins, themeOptions as HopeThemeConfig),
+    plugins: getPluginConfig(app, plugins, themeConfig, hostname),
 
     layouts: getLayoutConfig(app, plugins),
 

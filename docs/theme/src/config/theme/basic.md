@@ -16,7 +16,7 @@ These options are important and require you to configure them correctly.
 
 :::
 
-### hostname
+### hostname <Badge text="Root only" type="warning" />
 
 - Type: `string`
 - Required: Yes

@@ -8,9 +8,11 @@ tag:
   - Appearance
 ---
 
-These are appearance options provided by the theme.
+The following options control the appearance of the theme, they are only valid when setting directly under the themeConfig, so setting them in each language as no effect.
 
-## pure
+In general, you don't need to pay attention to them, they are only provided for a small amount of users with needs.
+
+## pure <Badge text="Root only" type="warning" />
 
 - Type: `boolean`
 - Default: `false`
@@ -25,7 +27,7 @@ Useful when you want to provide "A pure document site".
 
 :::
 
-## iconPrefix
+## iconPrefix <Badge text="Root only" type="warning" />
 
 - Type: `string`
 - Default: ``
@@ -38,7 +40,7 @@ You probably need to set this option:
 - Using [iconfont](../../guide/interface/icon.md#iconfont): `iconfont icon-`
 - Using [fontawesome](../../guide/interface/icon.md#fontawesome): `fa fa-`
 
-## darkmode <Badge text="Enabled by default" />
+## darkmode <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
 
 - Type: `"auto-switch" | "switch" | "auto" | "force-dark" | "disable"`
 - Default: `"auto-switch"`
@@ -58,7 +60,7 @@ If you don’t need this feature, set `darkmode: "disable"` to disable it.
 
 :::
 
-## themeColor <Badge text="Enabled by default" />
+## themeColor <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
 
 - Type: `Record<string, string>`
 - Default: `{ blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }`
@@ -72,7 +74,7 @@ If you don’t need this feature, set `themeColor: false` to disable it.
 
 :::
 
-## fullscreen
+## fullscreen <Badge text="Root only" type="warning" />
 
 - Type: `boolean`
 - Default: `true`
@@ -90,12 +92,6 @@ Whether show back to top button.
 
 The default trigger distance is 300px, which can be changed when you fill in the number. Filling in `false` disables the back to top button.
 
-::: note
-
-You can only set this option in root of `themeConfig`.
-
-:::
-
 ## mobileBreakPoint <Badge text="Root only" type="warning" />
 
 - Type: `number`
@@ -103,8 +99,8 @@ You can only set this option in root of `themeConfig`.
 
 Window width switching mobile view and desktop view in pixels
 
-::: note
+::: warning
 
-You can only set this option in root of `themeConfig`.
+You should keep this option same value with `$mobile` in `.vuepress/config.scss`
 
 :::

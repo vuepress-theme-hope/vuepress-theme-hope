@@ -16,7 +16,7 @@ tag:
 
 :::
 
-### hostname
+### hostname <Badge text="仅限 Root" type="warning" />
 
 - 类型: `string`
 - 必填: 是

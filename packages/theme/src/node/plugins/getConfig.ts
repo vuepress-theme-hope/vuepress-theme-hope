@@ -19,7 +19,8 @@ import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 export const getPluginConfig = (
   app: App,
   plugins: HopeThemePluginsOptions,
-  themeData: HopeThemeConfig
+  themeData: HopeThemeConfig,
+  hostname: string
 ): PluginConfig<PluginOptions>[] => {
   const pluginConfig = [
     resolveComponentsPlugin(plugins, themeData),
@@ -32,12 +33,12 @@ export const getPluginConfig = (
     resolveCommentPlugin(plugins.comment),
     resolveCopyCodePlugin(themeData, plugins.copyCode),
     // seo should work before feed
-    resolveSEOPlugin(themeData, plugins),
-    resolveFeedPlugin(themeData, plugins.feed),
+    resolveSEOPlugin(hostname, themeData, plugins),
+    resolveFeedPlugin(hostname, themeData, plugins.feed),
     resolveMdEnhancePlugin(plugins.mdEnhance),
     resolvePhotoSwipePlugin(plugins.photoSwipe),
     resolvePWAPlugin(plugins.pwa),
-    sitemap(resolveSitemapOptions(themeData, plugins.sitemap)),
+    sitemap(resolveSitemapOptions(hostname, plugins.sitemap)),
 
     // try resolving search plugin
     resolveSearchPlugin(plugins),

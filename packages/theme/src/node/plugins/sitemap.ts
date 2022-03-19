@@ -1,17 +1,16 @@
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
-import type { HopeThemeConfig } from "../../shared";
 
 export const resolveSitemapOptions = (
-  themeConfig: HopeThemeConfig,
+  hostname: string,
   options?: Omit<SitemapOptions, "hostname"> | false
 ): SitemapOptions | false => {
   if (options === false) return false;
 
   // disable feed if `hostname` is not set and no options for feed plugin
-  if (!Object.keys(options || {}).length && !themeConfig.hostname) return false;
+  if (!Object.keys(options || {}).length && !hostname) return false;
 
   return {
-    hostname: themeConfig.hostname,
+    hostname,
     ...(options || {}),
   } as SitemapOptions;
 };

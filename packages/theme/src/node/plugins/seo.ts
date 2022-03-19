@@ -6,14 +6,14 @@ import type { SeoOptions } from "vuepress-plugin-seo2";
 import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 
 export const resolveSEOPlugin = (
+  hostname: string,
   themeConfig: HopeThemeConfig,
   { blog, seo }: HopeThemePluginsOptions
 ): PluginConfig => {
   if (seo === false) return ["", false];
 
   // disable seo if `hostname` is not set and no options for seo plugin
-  if (!Object.keys(seo || {}).length && !themeConfig.hostname)
-    return ["", false];
+  if (!Object.keys(seo || {}).length && !hostname) return ["", false];
 
   const blogOptions = getBlogOptions(blog);
 
@@ -33,7 +33,7 @@ export const resolveSEOPlugin = (
   };
 
   return seoPlugin({
-    hostname: themeConfig.hostname,
+    hostname,
     author: themeConfig.author,
     isArticle,
     ...(seo || {}),

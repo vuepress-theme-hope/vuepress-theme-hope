@@ -157,7 +157,7 @@ Available values for `ArticleInfo`:
 
 ::: note
 
-You can only set this option in root of `themeConfig`.
+You can only set this option directly under `themeConfig`, setting it in each loclae **has NO effect**.
 
 :::
 

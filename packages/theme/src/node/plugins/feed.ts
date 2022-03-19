@@ -6,6 +6,7 @@ import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { HopeThemeConfig } from "../../shared";
 
 export const resolveFeedPlugin = (
+  hostname: string,
   themeConfig: HopeThemeConfig,
   options?: Omit<FeedOptions, "hostname"> | false
 ): PluginConfig => {
@@ -21,7 +22,7 @@ export const resolveFeedPlugin = (
     // @ts-ignore
     deepAssign(
       {
-        hostname: themeConfig.hostname,
+        hostname,
         author: themeConfig.author,
         locales: Object.entries(themeConfig.locales).map(
           ([localePath, { author, copyright }]) => [
