@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-03-19)
+
+### Features
+
+- use kebab-case variables in sass ([e8e52f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8e52f087f5d3dd8ca9b4f9bd1b33acdbe13638d))
+
+### BREAKING CHANGES
+
+- use kabab-case variables in sass instead of camelCase
+
 # [2.0.0-beta.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2022-03-19)
 
 **Note:** Version bump only for package vuepress-plugin-feed2
