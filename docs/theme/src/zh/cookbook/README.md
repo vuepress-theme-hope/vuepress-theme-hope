@@ -16,3 +16,7 @@ icon: guide
 ## VuePress 介绍
 
 - [VuePress 介绍](vuepress/README.md)
+
+## 实用教程
+
+- [自定义样式](style.md)

@@ -167,7 +167,7 @@ $text-color: (
   light: #2c3e50,
   dark: #9e9e9e,
 ) !default;
-$bgColor: (
+$bg-color: (
   light: #fff,
   dark: #1e1e1e,
 ) !default;

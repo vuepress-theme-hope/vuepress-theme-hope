@@ -148,6 +148,7 @@ export const enSidebarConfig = defineSidebarConfig({
       collapsable: true,
       children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
     },
+    "style",
   ],
 
   "/": [
@@ -176,7 +177,7 @@ export const enSidebarConfig = defineSidebarConfig({
       text: "Cookbook",
       icon: "guide",
       prefix: "cookbook/",
-      children: ["tutorial", "markdown/", "vuepress/"],
+      children: ["tutorial", "markdown/", "vuepress/", "style"],
     },
     {
       text: "Migration",

@@ -10,6 +10,8 @@ tag:
 
 你可以在 `.vuepress/styles` 中通过在 `config.scss` 和 `palette.scss` 文件中写入变量值来更改主题的样式。
 
+你也可以在 `.vuepress/styles/index.scss` 中添加你自己的样式。
+
 <!-- more -->
 
 ## config.scss
@@ -41,6 +43,15 @@ $code-light-theme: "one-light" !default;
 $code-dark-theme: "one-dark" !default;
 ```
 
+::: details 例子
+
+```scss
+// 修改日间模式代码主题
+$code-light-theme: "coy";
+```
+
+:::
+
 ## palette.scss
 
 `palette.scss` 用于 CSS 变量写入，以下是支持的配置与默认值。
@@ -65,7 +76,7 @@ $text-color: (
   dark: #9e9e9e,
 ) !default;
 
-$bgColor: (
+$bg-color: (
   light: #fff,
   dark: #1e1e1e,
 ) !default;
@@ -75,9 +86,29 @@ $bg-color-light: (
   dark: #272727,
 ) !default;
 
+$bg-color-active: (
+  light: #f8f8f8,
+  dark: #252934,
+) !default;
+
+$bg-color-back: (
+  light: #f8f8f8,
+  dark: #1d2025,
+) !default;
+
+$bg-color-float: (
+  light: #fff,
+  dark: #252934,
+) !default;
+
 $bg-color-blur: (
   light: rgba(255, 255, 255, 0.9),
   dark: rgba(30, 30, 30, 0.9),
+) !default;
+
+$bg-color-float-blur: (
+  light: rgba(255, 255, 255, 0.9),
+  dark: rgba(37, 41, 52, 0.9),
 ) !default;
 
 $border-color: (
@@ -96,6 +127,15 @@ $card-shadow: (
   dark: rgba(0, 0, 0, 0.3),
 ) !default;
 ```
+
+::: details 例子
+
+```scss
+// 将主题颜色设置为红色
+$theme-color: red;
+```
+
+:::
 
 ### 布局设置
 
@@ -128,3 +168,29 @@ $line-numbers-width: 2.5rem !default;
 $color-transition: "0.3s ease" !default;
 $transform-transition: "0.3s ease" !default;
 ```
+
+::: details 例子
+
+```scss
+// 将 Windows 网页字体设置为思源宋体 (当然你也要记得导入这个字体)
+$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "ST Heiti", sans-serif';
+```
+
+:::
+
+## index.scss
+
+填入此文件所有内容都将解析为标准 CSS，然后在主题和插件样式之后注入。
+
+因此，您可以在此处添加新样式或覆盖样式：
+
+::: details 例子
+
+```scss
+// 在导航栏中将站点名称改为斜体
+.site-name {
+  font-style: italic;
+}
+```
+
+:::

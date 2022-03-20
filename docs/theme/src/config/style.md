@@ -8,7 +8,9 @@ tag:
   - Style
 ---
 
-You can change the theme’s styles in `.vuepress/styles` by writing variable values in the `config.scss` and `palette.scss` files.
+You can change the theme’s styles in `.vuepress/styles` by setting variable values in the `config.scss` and `palette.scss` files.
+
+Also you can add your own styles in `.vuepress/styles/index.scss`.
 
 <!-- more -->
 
@@ -47,6 +49,15 @@ $code-light-theme: "one-light" !default;
 $code-dark-theme: "one-dark" !default;
 ```
 
+::: details Demo
+
+```scss
+// modify code theme in lightmode
+$code-light-theme: "coy";
+```
+
+:::
+
 ## palette.scss
 
 `palette.scss` is used for CSS variable injecting, the following are supported configurations and default values.
@@ -71,7 +82,7 @@ $text-color: (
   dark: #9e9e9e,
 ) !default;
 
-$bgColor: (
+$bg-color: (
   light: #fff,
   dark: #1e1e1e,
 ) !default;
@@ -81,9 +92,29 @@ $bg-color-light: (
   dark: #272727,
 ) !default;
 
+$bg-color-active: (
+  light: #f8f8f8,
+  dark: #252934,
+) !default;
+
+$bg-color-back: (
+  light: #f8f8f8,
+  dark: #1d2025,
+) !default;
+
+$bg-color-float: (
+  light: #fff,
+  dark: #252934,
+) !default;
+
 $bg-color-blur: (
   light: rgba(255, 255, 255, 0.9),
   dark: rgba(30, 30, 30, 0.9),
+) !default;
+
+$bg-color-float-blur: (
+  light: rgba(255, 255, 255, 0.9),
+  dark: rgba(37, 41, 52, 0.9),
 ) !default;
 
 $border-color: (
@@ -102,6 +133,15 @@ $card-shadow: (
   dark: rgba(0, 0, 0, 0.3),
 ) !default;
 ```
+
+::: details Demo
+
+```scss
+// set theme color to red
+$theme-color: red;
+```
+
+:::
 
 ### Layout Config
 
@@ -134,3 +174,29 @@ $line-numbers-width: 2.5rem !default;
 $color-transition: "0.3s ease" !default;
 $transform-transition: "0.3s ease" !default;
 ```
+
+::: details Demo
+
+```scss
+// Overide default font
+$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", sans-serif';
+```
+
+:::
+
+## index.scss
+
+Everything filling in this will be parsed to standard CSS and then injected after theme and plugins styles.
+
+So you can add new styles or overide styles here:
+
+::: details Demo
+
+```scss
+// make site name in navbar italic
+.site-name {
+  font-style: italic;
+}
+```
+
+:::

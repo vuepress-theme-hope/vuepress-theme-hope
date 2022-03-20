@@ -8,7 +8,7 @@ export const zhNavbarConfig = defineNavbarConfig([
     text: "教程",
     icon: "guide",
     prefix: "/zh/cookbook/",
-    children: ["tutorial", "markdown/", "vuepress/"],
+    children: ["tutorial", "markdown/", "vuepress/", "style"],
   },
   "/zh/migration/",
   {
