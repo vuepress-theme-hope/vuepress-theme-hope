@@ -41,7 +41,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeDemo", {
-    external: ["vue", /\.scss$/],
+    external: ["@mr-hope/vuepress-shared/lib/client", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeGroup", {
