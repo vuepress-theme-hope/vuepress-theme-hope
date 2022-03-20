@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
+
+### Bug Fixes
+
+- **md-enhance:** fix footnote anchor cover ([300fab9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/300fab9f89066c648550faf26e3626dad00b2e90))
+
 # [2.0.0-beta.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-03-19)
 
 ### Features

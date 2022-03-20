@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
+
+### Features
+
+- **components:** update component options ([92c11b0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92c11b01eabceebc93e714b8666e8f73a788129b))
+
+### BREAKING CHANGES
+
+- **components:** add `component` option and remove component name
+
 # [2.0.0-beta.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-03-19)
 
 **Note:** Version bump only for package components-docs
