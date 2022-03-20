@@ -6,15 +6,23 @@ import type {
   TOCLocaleData,
 } from "./locales";
 
+export type AvailableComponent =
+  | "ArticleInfo"
+  | "BreadCrumb"
+  | "Badge"
+  | "FullScreen"
+  | "Pagination"
+  | "TOC";
+
 export interface ComponentOptions {
   /**
-   * Whether register article info component
+   * Components to be registered
    *
-   * 是否注册文章信息
+   * 需要被注册的组件
    *
-   * @default false
+   * @default []
    */
-  articleInfo?: boolean;
+  components: AvailableComponent[];
 
   /**
    * Whether enabling backToTop button
@@ -33,51 +41,6 @@ export interface ComponentOptions {
    * @default 300
    */
   backToTopThreshold?: number;
-
-  /**
-   * Whether register breadcrumb component
-   *
-   * 是否注册路径导航
-   *
-   * @default false
-   */
-  breadcrumb?: boolean;
-
-  /**
-   * Whether register badge component
-   *
-   * 是否注册徽章组件
-   *
-   * @default false
-   */
-  badge?: boolean;
-
-  /**
-   * Whether register scrennfull button component
-   *
-   * 是否注册全屏按钮
-   *
-   * @default false
-   */
-  fullscreen?: boolean;
-
-  /**
-   * Whether register pagination component
-   *
-   * 是否注册分页组件
-   *
-   * @default false
-   */
-  pagination?: boolean;
-
-  /**
-   * Whether register toc component
-   *
-   * 是否注册 TOC 组件
-   *
-   * @default false
-   */
-  toc?: boolean;
 
   /**
    * Locales config for articleInfo

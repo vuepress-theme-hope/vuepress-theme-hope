@@ -15,7 +15,16 @@ import {
 } from "./locales";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
-import type { ComponentOptions } from "../shared";
+import type { AvailableComponent, ComponentOptions } from "../shared";
+
+const availableComponents: AvailableComponent[] = [
+  "ArticleInfo",
+  "BreadCrumb",
+  "Badge",
+  "FullScreen",
+  "Pagination",
+  "TOC",
+];
 
 export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
   useSassPalettePlugin(app, { id: "hope" });
@@ -23,26 +32,14 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
   return {
     name: "@mr-hope/vuepress-plugin-components",
 
-    alias: {
-      "@ArticleInfo": options.articleInfo
-        ? path.resolve(__dirname, "../client/components/ArticleInfo.js")
-        : noopModule,
-      "@BreadCrumb": options.breadcrumb
-        ? path.resolve(__dirname, "../client/components/BreadCrumb.js")
-        : noopModule,
-      "@Badge": options.badge
-        ? path.resolve(__dirname, "../client/components/Badge.js")
-        : noopModule,
-      "@FullScreen": options.fullscreen
-        ? path.resolve(__dirname, "../client/components/FullScreen.js")
-        : noopModule,
-      "@Pagination": options.pagination
-        ? path.resolve(__dirname, "../client/components/Pagination.js")
-        : noopModule,
-      "@TOC": options.toc
-        ? path.resolve(__dirname, "../client/components/TOC.js")
-        : noopModule,
-    },
+    alias: Object.fromEntries(
+      availableComponents.map((item) => [
+        `@${item}`,
+        options.components?.includes(item)
+          ? path.resolve(__dirname, `../client/components/${item}.js`)
+          : noopModule,
+      ])
+    ),
 
     define: {
       ARTICLE_INFO_LOCALES: getLocales(
@@ -72,7 +69,8 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
       addViteOptimizeDepsExclude(app, "@mr-hope/vuepress-plugin-components");
 
       if (options.backToTop) addViteOptimizeDepsInclude(app, "lodash.debounce");
-      if (options.fullscreen) addViteOptimizeDepsInclude(app, "@vueuse/core");
+      if (options.components?.includes("FullScreen"))
+        addViteOptimizeDepsInclude(app, "@vueuse/core");
     },
 
     clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),

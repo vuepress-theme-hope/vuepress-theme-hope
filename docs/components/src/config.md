@@ -3,12 +3,22 @@ title: Plugin Options
 icon: config
 ---
 
-## articleInfo
+## components
 
-- Type: `boolean`
-- Default: `false`
+- Type: `AvailableComponent[]`
+- Default: `[]`
 
 Whether register articleInfo component
+
+```ts
+type AvailableComponent =
+  | "ArticleInfo"
+  | "BreadCrumb"
+  | "Badge"
+  | "FullScreen"
+  | "Pagination"
+  | "TOC";
+```
 
 ## backToTop
 
@@ -23,62 +33,6 @@ Whether enabling backToTop button
 - Default: `300`
 
 backToTop button threshold distance (in pixels)
-
-## badge
-
-- Type: `boolean`
-- Default: `false`
-
-Whether register badge component
-
-## breadcrumb
-
-- Type: `boolean`
-- Default: `false`
-
-Whether register breadcrumb component
-
-## pageAnchor
-
-- Type: `boolean`
-- Default: `false`
-
-Whether register page anchor component
-
-## pagination
-
-- Type: `boolean`
-- Default: `false`
-
-Whether register pagination component
-
-## screenFull
-
-- Type: `boolean`
-- Default: `false`
-
-Whether register scrennfull button component
-
-## backToTopLocales
-
-- Type: `BackToTopLocaleConfig`
-
-  ```ts
-  interface BackToTopLocaleData {
-    /**
-     * Back to top button label text
-     */
-    backToTop: string;
-  }
-
-  interface BackToTopLocaleConfig {
-    [localePath: string]: BackToTopLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for BackToTop button.
 
 ## articleInfoLocales
 
@@ -135,6 +89,27 @@ Locales config for BackToTop button.
 - Required: No
 
 Locales config for article information.
+
+## backToTopLocales
+
+- Type: `BackToTopLocaleConfig`
+
+  ```ts
+  interface BackToTopLocaleData {
+    /**
+     * Back to top button label text
+     */
+    backToTop: string;
+  }
+
+  interface BackToTopLocaleConfig {
+    [localePath: string]: BackToTopLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for BackToTop button.
 
 ## paginationLocales
 

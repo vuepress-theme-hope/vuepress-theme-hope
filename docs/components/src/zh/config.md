@@ -3,12 +3,22 @@ title: 插件选项
 icon: config
 ---
 
-## articleInfo
+## components
 
-- 类型: `boolean`
-- 默认: `false`
+- 类型: `AvailableComponent[]`
+- 默认: `[]`
 
-是否注册文章信息组件
+需要被注册的组件
+
+```ts
+type AvailableComponent =
+  | "ArticleInfo"
+  | "BreadCrumb"
+  | "Badge"
+  | "FullScreen"
+  | "Pagination"
+  | "TOC";
+```
 
 ## backToTop
 
@@ -23,62 +33,6 @@ icon: config
 - 默认: `300`
 
 返回顶部按钮触发距离 (单位：像素)
-
-## badge
-
-- 类型: `boolean`
-- 默认: `false`
-
-是否注册徽章
-
-## breadcrumb
-
-- 类型: `boolean`
-- 默认: `false`
-
-是否注册路径导航
-
-## pageAnchor
-
-- 类型: `boolean`
-- 默认: `false`
-
-是否注册标题列表
-
-## pagination
-
-- 类型: `boolean`
-- 默认: `false`
-
-是否注册分页组件
-
-## screenFull
-
-- 类型: `boolean`
-- 默认: `false`
-
-是否注册全屏按钮
-
-## backToTopLocales
-
-- 类型: `BackToTopLocaleConfig`
-
-  ```ts
-  interface BackToTopLocaleData {
-    /**
-     * 返回顶部文字
-     */
-    backToTop: string;
-  }
-
-  interface BackToTopLocaleConfig {
-    [localePath: string]: BackToTopLocaleData;
-  }
-  ```
-
-- 必填: 否
-
-返回顶部按钮国际化配置。
 
 ## articleInfoLocales
 
@@ -135,6 +89,27 @@ icon: config
 - 必填: 否
 
 文章信息的国际化配置。
+
+## backToTopLocales
+
+- 类型: `BackToTopLocaleConfig`
+
+  ```ts
+  interface BackToTopLocaleData {
+    /**
+     * 返回顶部文字
+     */
+    backToTop: string;
+  }
+
+  interface BackToTopLocaleConfig {
+    [localePath: string]: BackToTopLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+返回顶部按钮国际化配置。
 
 ## paginationLocales
 
