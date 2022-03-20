@@ -40,8 +40,5 @@ export default defineClientAppEnhance(({ app }) => {
 
   if (MARKDOWN_ENHANCE_TASKLIST) void import("./styles/tasklist.scss");
 
-  if (MARKDOWN_ENHANCE_TEX) {
-    void import("./styles/tex.scss");
-    void import("katex/dist/katex.min.css");
-  }
+  if (MARKDOWN_ENHANCE_TEX) void import("./styles/tex.scss");
 });
