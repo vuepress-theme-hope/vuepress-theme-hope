@@ -38,7 +38,9 @@ export const themeHope: Theme<HopeThemeOptions> = (
 
     define: () => ({
       ENABLE_BLOG: enableBlog,
-      ENABLE_VISITOR: plugins.comment && plugins.comment.type === "waline",
+      ENABLE_VISITOR: Boolean(
+        plugins.comment && plugins.comment.type === "waline"
+      ),
     }),
 
     extendsPage: (page) =>
