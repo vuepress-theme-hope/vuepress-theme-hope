@@ -1,6 +1,6 @@
 @use "@sass-palette/hope-config";
 
-:root:focus-within {
+:root {
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
