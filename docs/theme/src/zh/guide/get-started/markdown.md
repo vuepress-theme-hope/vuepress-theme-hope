@@ -146,7 +146,7 @@ cond(no)->e
 
 - [查看详情](../markdown/flowchart.md)
 
-## Mermaid
+### Mermaid
 
 ```mermaid
 flowchart TB
