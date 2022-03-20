@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2022-03-20)
+
+### Bug Fixes
+
+- **theme:** fix smooth scroll ([8175017](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8175017cfda91bb512a9859ce2ae93217d169c87))
+
 # [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
 
 ### Bug Fixes
