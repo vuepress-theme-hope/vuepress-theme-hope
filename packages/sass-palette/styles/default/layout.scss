@@ -1,22 +1,9 @@
 /* layout */
 // navbar
 $navbar-height: 3.6rem !default;
-$navbar-horizontal-padding: 1.5rem !default;
-$navbar-vertical-padding: 0.7rem !default;
-
-// sidebar
-$sidebar-width: 20rem !default;
-$mobileSidebarWidth: $sidebar-width * 0.82 !default;
 
 // content
 $content-width: 740px !default;
-$home-page-width: 960px !default;
-
-// font
-$font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' !default;
-
-// code
-$font-family-code: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
 
 // transition
 $color-transition: "0.3 ease" !default;
