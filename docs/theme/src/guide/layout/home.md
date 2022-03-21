@@ -16,7 +16,7 @@ To use it, set `home: true` in page frontmatter. Any extra content after the `YA
 
 <!-- more -->
 
-## Item style
+## Setting homepage
 
 The frontmatter parameters that can be configured are as follows:
 
@@ -24,43 +24,54 @@ The frontmatter parameters that can be configured are as follows:
 
 - Type: `boolean`
 
-Enable homepage style when set to `true`
+Enable homepage style when setting to `true`
 
 ### title
 
-- Type: `string | false`
+- Type: `string`
+- Required: No
+
+Page title, will be used in breadcrumb, seo, etc.
+
+### heroText
+
+- Type: `string | null`
 - Default: `"Hello"`
 
-Title, won’t display when set to `false`
+Hero Title
+
+### tagline
+
+- Type: `string | null`
+- Default: `"Welcome to your VuePress site"`
+
+Short description in hero
 
 ### heroImage
 
 - Type: `string`
+- Required: No
 
 Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
 
 ### heroImageDark
 
 - Type: `string`
+- Required: No
 
 Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
 
-### heroText
+### heroAlt
 
 - Type: `string`
+- Required: No
 
 Home icon alt text
-
-### tagline
-
-- Type: `string`
-- Default: `"Welcome to your VuePress site"`
-
-Append text
 
 ### actions
 
 - Type: `ActionConfig | ActionConfig[]`
+- Required: No
 
 `ActionConfig` structure:
 
@@ -71,6 +82,7 @@ Append text
 ### features
 
 - Type: `Feature[]`
+- Required: No
 
 Structure of `Feature`:
 

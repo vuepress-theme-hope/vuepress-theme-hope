@@ -20,6 +20,22 @@ export default defineComponent({
       usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
     const siteLocale = useSiteLocaleData();
 
+    const heroText = computed(() => {
+      if (frontmatter.value.heroText === null) return null;
+
+      return frontmatter.value.heroText || siteLocale.value.title || "Hello";
+    });
+
+    const tagline = computed(() => {
+      if (frontmatter.value.tagline === null) return null;
+
+      return (
+        frontmatter.value.tagline ||
+        siteLocale.value.description ||
+        "Welcome to your VuePress site"
+      );
+    });
+
     const heroImage = computed(() => {
       if (!frontmatter.value.heroImage) return null;
 
@@ -32,25 +48,9 @@ export default defineComponent({
       return withBase(frontmatter.value.heroImageDark);
     });
 
-    const heroText = computed(() => {
-      if (frontmatter.value.heroText === null) return null;
-
-      return frontmatter.value.heroText || siteLocale.value.title || "Hello";
-    });
-
     const heroAlt = computed(
       () => frontmatter.value.heroAlt || heroText.value || "hero"
     );
-
-    const tagline = computed(() => {
-      if (frontmatter.value.tagline === null) return null;
-
-      return (
-        frontmatter.value.tagline ||
-        siteLocale.value.description ||
-        "Welcome to your VuePress site"
-      );
-    });
 
     const actions = computed(() => {
       if (!isArray(frontmatter.value.actions)) return [];

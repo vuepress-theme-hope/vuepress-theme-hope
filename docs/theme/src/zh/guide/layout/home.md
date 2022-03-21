@@ -28,39 +28,50 @@ tag:
 
 ### title
 
-- 类型: `string | false`
+- 类型: `string`
+- 必填: 否
+
+设置页面标题，会用于路径导航、页面增强等。
+
+### heroText
+
+- 类型: `string | null`
 - 默认值: `"Hello"`
 
-标题，填入 `false` 会取消显示。
+主页标题
+
+### tagline
+
+- 类型: `string | null`
+- 默认值: `"Welcome to your VuePress site"`
+
+附加文字描述
 
 ### heroImage
 
-- 类型: `string`
+- 类型: `string | null`
+- 必填: 否
 
 主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)
 
 ### heroImageDark
 
-- 类型: `string`
+- 类型: `string | null`
+- 必填: 否
 
 深色模式下主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)，默认同 `heroImage`。
 
-### heroText
+### heroAlt
 
-- 类型: `string`
+- 类型: `string | null`
+- 必填: 否
 
-主页图标替代文字。
-
-### tagline
-
-- 类型: `string`
-- 默认值: `"Welcome to your VuePress site"`
-
-附加文字描述
+主页图标的替代文字
 
 ### actions
 
 - 类型: `ActionConfig | ActionConfig[]`
+- 必填: 否
 
 `ActionConfig` 结构:
 
@@ -71,6 +82,7 @@ tag:
 ### features
 
 - 类型: `Feature[]`
+- 必填: 否
 
 `Feature` 结构:
 
