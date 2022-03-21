@@ -39,9 +39,8 @@ export const codeDemoDefaultSetting: CodeDemoOptions = {
   cssLib: [],
   codepenLayout: "left",
   codepenEditors: "101",
-  babel: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js",
-  vue: "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js",
-  react: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
-  reactDOM:
-    "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+  babel: "https://unpkg.com/@babel/standalone/babel.min.js",
+  vue: "https://unpkg.com/vue/dist/vue.global.prod.js",
+  react: "https://unpkg.com/react/umd/react.production.min.js",
+  reactDOM: "https://unpkg.com/react-dom/umd/react-dom.production.min.js",
 };

@@ -66,7 +66,7 @@ export interface CodeDemoOptions {
    *
    * Babel 库的地址
    *
-   * @default "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"
+   * @default "https://unpkg.com/@babel/standalone/babel.min.js"
    */
   babel: string;
 
@@ -75,7 +75,7 @@ export interface CodeDemoOptions {
    *
    * Vue 库的地址
    *
-   * @default "https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js"
+   * @default "https://unpkg.com/vue/dist/vue.global.prod.js"
    */
   vue: string;
 
@@ -84,7 +84,7 @@ export interface CodeDemoOptions {
    *
    * React 库的地址
    *
-   * @default "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
+   * @default "https://unpkg.com/react/umd/react.production.min.js"
    */
   react: string;
 
@@ -93,7 +93,7 @@ export interface CodeDemoOptions {
    *
    * ReactDOM 库的地址
    *
-   * @default "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
+   * @default "https://unpkg.com/react-dom/umd/react-dom.production.min.js"
    */
   reactDOM: string;
 }

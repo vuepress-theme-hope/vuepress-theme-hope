@@ -264,19 +264,19 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 #### demo.babel
 
-默认值: `"https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"`
+默认值: `"https://unpkg.com/@babel/standalone/babel.min.js"`
 
 #### demo.vue
 
-默认值: `"https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"`
+默认值: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
 
 #### demo.react
 
-默认值: `"https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"`
+默认值: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 #### demo.reactDOM
 
-默认值: `"https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"`
+默认值: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 ## presentation
 
