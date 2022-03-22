@@ -55,4 +55,4 @@ module.exports = themeConfig({
 
 ::::
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/themeConfig.ts

@@ -153,7 +153,7 @@ Feed 生成控制器
 
 详见 [Feed 生成器][feed-config-getter].
 
-## locales
+### locales
 
 - 类型: `Record<string, BaseFeedOptions>`
 - 必填: 否

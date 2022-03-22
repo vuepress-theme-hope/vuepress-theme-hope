@@ -39,40 +39,40 @@ See the [feed2 plugin documentation][feed-config] for more details.
 
 ## Plugin options
 
-## atom
+### atom
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to output Atom syntax files.
 
-## json
+### json
 
 - Type: `boolean`
 - Default: `false`
 
 Whether output JSON syntax files.
 
-## rss
+### rss
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to output RSS syntax files.
 
-## image
+### image
 
 - Type: `string`
 
 A large image/icon of the feed, probably used as banner.
 
-## icon
+### icon
 
 - Type: `string`
 
 A small icon of the feed, probably used as favicon.
 
-## count
+### count
 
 - Type: `number`
 - Default: `1000`
@@ -81,7 +81,7 @@ Set the maximum number of items in the feed. After all pages are sorted, the fir
 
 If your site has a lot of articles, you may consider this option to reduce feed file size.
 
-## filter
+### filter
 
 - Type: `(page: Page)=> boolean`
 - Default:
@@ -98,7 +98,7 @@ If your site has a lot of articles, you may consider this option to reduce feed 
 
 A custom filter funciton, used to filter feed items.
 
-## sort
+### sort
 
 - Type: `(pageA: Page, pageB: Page)=> number`
 
@@ -112,34 +112,34 @@ You can sort the pages in the site according to your needs.
 
 :::
 
-## channel
+### channel
 
 `channel` option is used to config _Feed Channels_.
 
 For available options, please see [Config → Channel][feed-config-channel]
 
-## atomOutputFilename
+### atomOutputFilename
 
 - Type: `string`
 - Default: `atom.xml`
 
 Atom syntax output filename, relative to dest folder
 
-## jsonOutputFilename
+### jsonOutputFilename
 
 - Type: `string`
 - Default: `feed.json`
 
 JSON syntax output filename, relative to dest folder
 
-## rssOutputFilename
+### rssOutputFilename
 
 - Type: `string`
 - Default: `rss.xml`
 
 RSS syntax output filename, relative to dest folder.
 
-## getter
+### getter
 
 Feed generation controller.
 
@@ -151,7 +151,7 @@ The plugin is providing a resonable getter by default, if you want full control 
 
 For details, see [Feed Getter][feed-config-getter].
 
-## locales
+### locales
 
 - Type: `Record<string, BaseFeedOptions>`
 - Required: No

@@ -12,7 +12,7 @@ tag:
 
 For related guide, please see [Layout → Navbar](../../guide/layout/navbar.md).
 
-## navbar <Badge text="Recommanded" />
+### navbar <Badge text="Recommanded" />
 
 - Type: `HopeThemeNavbarConfig | false`
 - Default: `false`

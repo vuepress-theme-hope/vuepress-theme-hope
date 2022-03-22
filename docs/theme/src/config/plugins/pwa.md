@@ -36,7 +36,7 @@ See the [pwa2 plugin documentation][pwa-config] for more details.
 
 Whether display install button when Service Worker is first registered successfully.
 
-## manifest
+### manifest
 
 - Type: `ManifestOption`
 - Required: No
@@ -124,7 +124,7 @@ Whether cache pictures
 
 Max picture size which allows to cache, with KB unit
 
-## update
+### update
 
 - Type: `"disabled" | "available" | "hint" | "force"`
 - Default: `"available"`
@@ -206,21 +206,21 @@ Tile icon
 
 The tile color will automatically fall back to themeColor if you don’t set it.
 
-## hintComponent
+### hintComponent
 
 - Type: `string`
 - Default: `"SWHintPopup"`
 
 You can fill in the custom hint popup component path.
 
-## updateComponent
+### updateComponent
 
 - Type: `string`
 - Default: `"SWUpdatePopup"`
 
 You can fill in the custom update popup component path.
 
-## appendBase
+### appendBase
 
 - Type: `boolean`
 - Default: `false`

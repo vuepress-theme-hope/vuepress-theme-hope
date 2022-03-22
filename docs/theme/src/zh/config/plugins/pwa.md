@@ -130,7 +130,7 @@ tag:
 
 :::
 
-## update
+### update
 
 - 类型: `"disabled" | "available" | "hint" | "force"`
 - 默认值: `"available"`
@@ -212,21 +212,21 @@ Safari 图标
 
 磁贴颜色，缺省会自动回退到主题色。
 
-## hintComponent
+### hintComponent
 
 - 类型: `string`
 - 默认值: `"SWHintPopup"`
 
 可填入自定义的提示弹窗组件路径。
 
-## updateComponent
+### updateComponent
 
 - 类型: `string`
 - 默认值: `"SWUpdatePopup"`
 
 可填入自定义的更新弹窗组件路径。
 
-## appendBase
+### appendBase
 
 - 类型: `boolean`
 - 默认值: `false`
