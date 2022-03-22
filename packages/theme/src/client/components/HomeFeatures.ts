@@ -43,8 +43,8 @@ export default defineComponent({
             frontmatter.value.features?.map((feature) => {
               const children = [
                 getIcon(feature.icon),
-                h("h2", feature.title),
-                h("p", feature.details),
+                h("h2", { innerHTML: feature.title }),
+                h("p", { innerHTML: feature.details }),
               ];
 
               return feature.link
