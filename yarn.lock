@@ -13893,10 +13893,10 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
-reveal.js@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-4.3.0.tgz#6fe91cc84de2e286f039545cb596dbc4d0d52294"
-  integrity sha512-KzZxJjj1gmxVNyplY6g9MiGwtDvZJiYkMvG1Qmaita7vWT/8eoTEK+RuIPLvxDeyxOtTz56u2wrOETVO79qL4A==
+reveal.js@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-4.3.1.tgz#24a63300cff92cf5cbdd40a46f5d3699614d49ca"
+  integrity sha512-1kyEnWeUkaCdBdX//XXq9dtBK95ppvIlSwlHelrP8/wrX6LcsYp4HT9WTFoFEOUBfVqkm8C2aHQ367o+UKfcxw==
 
 rfdc@^1.3.0:
   version "1.3.0"
