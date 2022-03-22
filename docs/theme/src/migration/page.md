@@ -73,3 +73,13 @@ tag:
 - remove `mediaLink`
 
   Footer no longer displays media links.
+
+## Layout
+
+### Project HomePage
+
+Project HomePage frontmatter options are changed.
+
+- `title` renamed to `heroText`
+- `darkHeroImage` renamed to `heroImageDark`
+- `action` renamed to `actions`

@@ -73,3 +73,13 @@ tag:
 - 移除 `mediaLink`
 
   页脚不再展示媒体链接。
+
+## 布局
+
+### 项目主页
+
+项目主页 frontmatter 选项已更改。
+
+- `title` 重命名为 `heroText`
+- `darkHeroImage` 重命名为 `heroImageDark`
+- `action` 重命名为 `actions`
