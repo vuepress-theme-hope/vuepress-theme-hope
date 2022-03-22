@@ -92,7 +92,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.17.7",
+    "@babel/core": "7.17.8",
     "@babel/plugin-transform-modules-commonjs": "7.17.7",
     "@babel/preset-env": "7.16.11",
     "@commitlint/cli": "16.2.3",
@@ -105,8 +105,8 @@
     "@types/inquirer": "8.2.0",
     "@types/jest": "27.4.1",
     "@types/semver": "7.3.9",
-    "@typescript-eslint/eslint-plugin": "5.15.0",
-    "@typescript-eslint/parser": "5.15.0",
+    "@typescript-eslint/eslint-plugin": "5.16.0",
+    "@typescript-eslint/parser": "5.16.0",
     "@vue/eslint-config-typescript": "10.0.0",
     "babel-jest": "27.5.1",
     "concurrently": "7.0.0",
@@ -145,7 +145,7 @@
     "rollup-plugin-typescript2": "0.31.2",
     "rollup-plugin-vue": "6.0.0",
     "semver": "7.3.5",
-    "sort-package-json": "1.54.0",
+    "sort-package-json": "1.55.0",
     "stylelint": "14.6.0",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-standard": "25.0.0",
