@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.24...v2.0.0-beta.25) (2022-03-23)
+
+### Bug Fixes
+
+- **theme:** fix blog hero scroll down position ([fb16df6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb16df60f0cf5d39f0c24209897daeb216873194))
+
+### Features
+
+- **theme:** support html in home hero features ([c6b4f24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6b4f2485dbebc79e5acd55653e0d82ddcbd128a))
+
 # [2.0.0-beta.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2022-03-20)
 
 ### Bug Fixes
