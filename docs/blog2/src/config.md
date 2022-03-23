@@ -218,29 +218,42 @@ Returning values are:
 export interface Article<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
+  /** Article path */
   path: string;
+  /** Article info */
   info: T;
 }
-
-export type Articles<
-  T extends Record<string, unknown> = Record<string, unknown>
-> = Article<T>[];
 
 export interface BlogCategoryData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
+  /** Category path */
   path: string;
+
   /**
-   * Available only when current route match an item path
+   * Only available when current route matches an item path
    */
-  currentItems?: Articles<T>;
-  map: Record<string, { path: string; items: Articles<T> }>;
+  currentItems?: Article<T>[];
+
+  /** Category map */
+  map: {
+    /** Unique key under current category */
+    [key: string]: {
+      /** Category path of the key */
+      path: string;
+      /** Category items of the key */
+      items: Article<T>[];
+    };
+  };
 }
 
 export interface BlogTypeData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
+  /** Type path */
   path: string;
-  items: Articles<T>;
+
+  /** Items under current type */
+  items: Article<T>[];
 }
 ```

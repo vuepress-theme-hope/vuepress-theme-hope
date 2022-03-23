@@ -214,29 +214,42 @@ export interface BlogTypeOptions {
 export interface Article<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
+  /** 文章路径 */
   path: string;
+  /** 文章信息 */
   info: T;
 }
-
-export type Articles<
-  T extends Record<string, unknown> = Record<string, unknown>
-> = Article<T>[];
 
 export interface BlogCategoryData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
+  /** 分类路径 */
   path: string;
+
   /**
-   * 仅当当前路径与当前分类的某个项目路径一致时可用
+   * 仅当当前路径和某个子项目匹配时可用
    */
-  currentItems?: Articles<T>;
-  map: Record<string, { path: string; items: Articles<T> }>;
+  currentItems?: Article<T>[];
+
+  /** 分类映射 */
+  map: {
+    /** 当前分类下全局唯一的 key */
+    [key: string]: {
+      /** 对应键值的分类路径 */
+      path: string;
+      /** 对应键值的项目 */
+      items: Article<T>[];
+    };
+  };
 }
 
 export interface BlogTypeData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
+  /** 类别路径 */
   path: string;
-  items: Articles<T>;
+
+  /** 当前类别下的项目 */
+  items: Article<T>[];
 }
 ```
