@@ -107,7 +107,7 @@ export default defineComponent({
                       onClick: () => {
                         window.scrollTo({
                           top:
-                            window.innerHeight -
+                            document.body.clientHeight -
                             (document.querySelector(".navbar")?.clientHeight ||
                               0),
                           behavior: "smooth",
