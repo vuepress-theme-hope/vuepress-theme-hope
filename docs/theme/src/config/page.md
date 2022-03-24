@@ -174,7 +174,7 @@ The navigation bar configuration of the page, filling in `false` will disable th
 
 Page sidebar configuration options. Supports `"heading"` or `false`.
 
-### headingDepth
+### headerDepth
 
 - Type: `number`
 - Default: `2`

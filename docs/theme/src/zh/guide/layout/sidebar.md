@@ -725,13 +725,13 @@ sidebar: false
 
 ## 嵌套的标题链接
 
-默认情况下，侧边栏会自动地显示由当前页面的标题(headers)组成的链接，并按照页面本身的结构进行嵌套，你可以通过 `themeConfig.headingDepth` 来修改它的行为。默认的深度(也是最大的深度)是 `2`，它将提取到 `h2` 和 `h3` 的标题，设置成 `0` 将会禁用标题(headers)链接。
+默认情况下，侧边栏会自动地显示由当前页面的标题(headers)组成的链接，并按照页面本身的结构进行嵌套，你可以通过 `themeConfig.headerDepth` 来修改它的行为。默认的深度(也是最大的深度)是 `2`，它将提取到 `h2` 和 `h3` 的标题，设置成 `0` 将会禁用标题(headers)链接。
 
 也可以使用 frontmatter 来为某个页面重写此值:
 
 ```md
 ---
-headingDepth: 2
+headerDepth: 2
 ---
 ```
 
@@ -739,7 +739,7 @@ headingDepth: 2
 
 有效最大值取决于你通过 [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-extractheaders) 提取了哪些级别的标题。
 
-由于 [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-extractheaders) 的默认值是 `[2, 3]` ，因此 `headingDepth` 的默认最大值是 `2` 。
+由于 [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-extractheaders) 的默认值是 `[2, 3]` ，因此 `headerDepth` 的默认最大值是 `2` 。
 
 :::
 

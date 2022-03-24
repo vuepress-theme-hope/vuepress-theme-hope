@@ -42,7 +42,7 @@ tag:
 
   可填入的值从 `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` 改为 `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"PageView"`
 
-- `sidebarDepth` 重命名为 `headingDepth`
+- `sidebarDepth` 重命名为 `headerDepth`
 
 - `copyrightText` 重命名为 `copyright`
 

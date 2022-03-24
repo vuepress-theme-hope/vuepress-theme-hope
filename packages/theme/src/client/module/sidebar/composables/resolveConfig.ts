@@ -32,7 +32,7 @@ import type {
  */
 export const headerToSidebarItem = (
   header: PageHeader,
-  headingDepth: number
+  headerDepth: number
 ): ResolvedHopeThemeSidebarHeaderItem => {
   const page = usePageData();
 
@@ -40,27 +40,27 @@ export const headerToSidebarItem = (
     type: "heading",
     text: header.title,
     link: `${page.value.path}#${header.slug}`,
-    children: headersToSidebarItemChildren(header.children, headingDepth),
+    children: headersToSidebarItemChildren(header.children, headerDepth),
   };
 };
 
 export const headersToSidebarItemChildren = (
   headers: PageHeader[],
-  headingDepth: number
+  headerDepth: number
 ): ResolvedHopeThemeSidebarHeaderItem[] =>
-  headingDepth > 0
-    ? headers.map((header) => headerToSidebarItem(header, headingDepth - 1))
+  headerDepth > 0
+    ? headers.map((header) => headerToSidebarItem(header, headerDepth - 1))
     : [];
 
 /**
  * Resolve sidebar items if the config is `heading`
  */
 export const resolveHeadingSidebarItems = (
-  headingDepth: number
+  headerDepth: number
 ): ResolvedHopeThemeSidebarHeaderItem[] => {
   const page = usePageData();
 
-  return headersToSidebarItemChildren(page.value.headers, headingDepth);
+  return headersToSidebarItemChildren(page.value.headers, headerDepth);
 };
 
 /**
@@ -68,7 +68,7 @@ export const resolveHeadingSidebarItems = (
  */
 export const resolveArraySidebarItems = (
   sidebarConfig: HopeThemeSidebarArrayConfig,
-  headingDepth: number,
+  headerDepth: number,
   prefix = ""
 ): ResolvedSidebarItem[] => {
   const page = usePageData();
@@ -143,7 +143,7 @@ export const resolveArraySidebarItems = (
               page.value.headers[0]?.level === 1
                 ? page.value.headers[0].children
                 : page.value.headers,
-              headingDepth
+              headerDepth
             )
           : [],
     };
@@ -157,7 +157,7 @@ export const resolveArraySidebarItems = (
  */
 export const resolveMultiSidebarItems = (
   sidebarConfig: HopeThemeSidebarObjectConfig,
-  headingDepth: number
+  headerDepth: number
 ): ResolvedSidebarItem[] => {
   const route = useRoute();
   const keys = Object.keys(sidebarConfig).sort((x, y) => y.length - x.length);
@@ -170,7 +170,7 @@ export const resolveMultiSidebarItems = (
       return matchedConfig
         ? resolveArraySidebarItems(
             matchedConfig === "structure" ? sidebarData[base] : matchedConfig,
-            headingDepth,
+            headerDepth,
             base
           )
         : [];
@@ -196,23 +196,23 @@ export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
   const sidebarConfig = frontmatter.value.home
     ? false
     : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure";
-  const headingDepth =
-    frontmatter.value.headingDepth ?? themeLocale.value.headingDepth ?? 2;
+  const headerDepth =
+    frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2;
 
   // resolve sidebar items according to the config
   return sidebarConfig === false
     ? []
     : sidebarConfig === "heading"
-    ? resolveHeadingSidebarItems(headingDepth)
+    ? resolveHeadingSidebarItems(headerDepth)
     : sidebarConfig === "structure"
     ? resolveArraySidebarItems(
         sidebarData[routeLocale.value],
-        headingDepth,
+        headerDepth,
         routeLocale.value
       )
     : isArray(sidebarConfig)
-    ? resolveArraySidebarItems(sidebarConfig, headingDepth)
+    ? resolveArraySidebarItems(sidebarConfig, headerDepth)
     : isPlainObject(sidebarConfig)
-    ? resolveMultiSidebarItems(sidebarConfig, headingDepth)
+    ? resolveMultiSidebarItems(sidebarConfig, headerDepth)
     : [];
 };

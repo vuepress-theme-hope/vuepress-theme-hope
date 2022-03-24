@@ -177,7 +177,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 侧边栏配置选项。支持 `"heading"` 或 `false`。
 
-### headingDepth
+### headerDepth
 
 - 类型: `number`
 - 默认值: `2`

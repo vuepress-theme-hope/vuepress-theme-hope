@@ -42,7 +42,7 @@ tag:
 
   Available values ​​changed from `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` to `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"Visitor"`
 
-- `sidebarDepth` renamed to `headingDepth`
+- `sidebarDepth` renamed to `headerDepth`
 
 - `copyrightText` renamed to `copyright`
 

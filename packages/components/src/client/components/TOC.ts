@@ -31,11 +31,11 @@ const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
 
 const renderChildren = (
   headers: PageHeader[],
-  headingDepth: number
+  headerDepth: number
 ): VNode | null => {
   const route = useRoute();
 
-  return headers.length && headingDepth > 0
+  return headers.length && headerDepth > 0
     ? h(
         "ul",
         { class: "toc-list" },
@@ -50,7 +50,7 @@ const renderChildren = (
             },
             [renderHeader(header)]
           ),
-          renderChildren(header.children, headingDepth - 1),
+          renderChildren(header.children, headerDepth - 1),
         ])
       )
     : null;
@@ -65,7 +65,7 @@ export default defineComponent({
       default: () => [],
     },
 
-    headingDepth: {
+    headerDepth: {
       type: Number,
       default: 2,
     },
@@ -77,9 +77,9 @@ export default defineComponent({
 
     return (): VNode => {
       const tocHeaders = props.items.length
-        ? renderChildren(props.items, props.headingDepth)
+        ? renderChildren(props.items, props.headerDepth)
         : page.value.headers
-        ? renderChildren(page.value.headers, props.headingDepth)
+        ? renderChildren(page.value.headers, props.headerDepth)
         : null;
 
       return h("div", { class: "toc-place-holder" }, [

@@ -52,7 +52,7 @@ const defaultLocaleOptions: HopeThemeLocaleOptions = {
   hideSiteNameonMobile: true,
   sidebar: "structure",
   sidebarIcon: true,
-  headingDepth: 2,
+  headerDepth: 2,
 };
 
 /**

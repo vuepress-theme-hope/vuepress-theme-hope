@@ -91,7 +91,7 @@ export interface HopeThemeNormalPageFrontmatter
    *
    * 页面标题深度
    */
-  headingDepth?: number;
+  headerDepth?: number;
 
   /**
    * Whether display lastUpdated time

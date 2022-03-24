@@ -48,7 +48,7 @@ Since the theme no longer has a built-in search:
 
 ### Sidebar
 
-- `sidebarDepth` renamed to `headingDepth`
+- `sidebarDepth` renamed to `headerDepth`
 
 - remove `displayAllHeaders`
 

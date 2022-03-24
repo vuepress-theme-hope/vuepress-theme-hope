@@ -48,7 +48,7 @@ tag:
 
 ### 侧边栏
 
-- `sidebarDepth` 重命名为 `headingDepth`
+- `sidebarDepth` 重命名为 `headerDepth`
 
 - 移除 `displayAllHeaders`
 

@@ -99,7 +99,7 @@ tag:
 
 是否在侧边栏显示图标。
 
-### headingDepth
+### headerDepth
 
 - 类型: `number`
 - 默认值: `2`

@@ -99,7 +99,7 @@ Sidebar Config.
 
 Whether show icons in the sidebar
 
-### headingDepth
+### headerDepth
 
 - Type: `number`
 - Default: `2`

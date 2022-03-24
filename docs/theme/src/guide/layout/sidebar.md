@@ -527,7 +527,7 @@ In this case, the fallback sidebar must be defined last for this reason.
 
 ### Auto Sidebar
 
-### Automatically Generate with Titles
+#### Generate from Headers
 
 To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
 
@@ -573,7 +573,7 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### Automatically Generate from file structure <Badge text="New" />
+### Generate from File Structure <Badge text="New" />
 
 You can replace the original "sidebarConfig array" with `"structure"` keyword in any of the above sidebar config. This will allow the theme to automatically read local files, then generate sidebar from file structure for you, to reduce your config workload.
 
@@ -585,9 +585,9 @@ For example, for the following example mentioned earlier in [multiple sidebars](
 ├─ contact.md
 ├─ about.md
 ├─ foo/
-│ ├─ README.md
-│ ├─ one.md
-│ └─ two.md
+│   ├─ README.md
+│   ├─ one.md
+│   └─ two.md
 └─ bar/
     ├─ README.md
     ├─ three.md
@@ -664,7 +664,7 @@ During the automatic generation from the structure, you can control whether file
 
 ::: tip
 
-`README.md` is an exception, as long as you don't disable it from the sidebar via `index: false` or make it as group link, it will allways be the first item in the sort.
+`README.md` is an exception, as long as you don't disable it from the sidebar via `index: false` or make it as group link, it will allways be the first item after sorting.
 
 :::
 
@@ -713,7 +713,7 @@ interface SidebarDirInfo {
 }
 ```
 
-### Disabling the Sidebar
+### Disabling Sidebar
 
 You can disable the sidebar on a specific page with `YAML front matter`:
 
@@ -729,15 +729,15 @@ Sidebar is disabled by default in home page.
 
 :::
 
-## Nested header links
+## Header Links Depths
 
-The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `themeConfig.headingDepth`. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
+The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `themeConfig.headerDepth`. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
 
 A page can also override this value via frontmatter:
 
 ```md
 ---
-headingDepth: 2
+headerDepth: 2
 ---
 ```
 
@@ -745,7 +745,7 @@ headingDepth: 2
 
 The valid maximum value depends on which levels of headers you have extracted via [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders).
 
-Since the default value of [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders) is `[2, 3]`, so The default maximum value for `headingDepth` is `2`.
+Since the default value of [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
 
 :::
 
