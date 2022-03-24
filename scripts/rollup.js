@@ -14,6 +14,7 @@ const isProduction = process.env.mode === "production";
 export const rollupTypescript = (
   filePath,
   {
+    dts: enableDts = true,
     external = [],
     dtsExternal = [],
     useStyle = false,
@@ -60,12 +61,16 @@ export const rollupTypescript = (
       unknownGlobalSideEffects: false,
     },
   },
-  {
-    input: `./src/${filePath}.ts`,
-    output: [{ file: `./lib/${filePath}.d.ts`, format: "esm" }],
-    plugins: [dts()],
-    external: dtsExternal,
-  },
+  ...(enableDts
+    ? [
+        {
+          input: `./src/${filePath}.ts`,
+          output: [{ file: `./lib/${filePath}.d.ts`, format: "esm" }],
+          plugins: [dts()],
+          external: dtsExternal,
+        },
+      ]
+    : []),
 ];
 
 export const rollupVue = (
