@@ -6,7 +6,7 @@ import themeConfig from "./themeConfig";
 const base = process.env.BASE || "/";
 
 export default defineHopeConfig({
-  base: `/${base.replace(/^\//, "")}sitemap/`,
+  base: `/${base.replace(/^\//, "")}seo/`,
 
   dest: "./dist",
 
@@ -23,14 +23,13 @@ export default defineHopeConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "SEO Enhance",
-      description: "Using <meta> tags to Enhance Your site SEO",
+      title: "Sitemap Generator",
+      description: "Generate Sitemap for your site",
     },
-
     "/zh/": {
       lang: "zh-CN",
-      title: "SEO 增强",
-      description: "使用 <meta> tag 为你的站点提供 SEO 增强",
+      title: "Sitemap 生成器",
+      description: "为你的站点生成 Sitemap",
     },
   },
 

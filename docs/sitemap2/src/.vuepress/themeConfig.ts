@@ -16,7 +16,7 @@ export default defineThemeConfig({
 
   repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
 
-  docsDir: "docs/seo2/src",
+  docsDir: "docs/sitemap2/src",
 
   logo: "/logo.svg",
 
@@ -38,13 +38,12 @@ export default defineThemeConfig({
           children: [
             {
               text: "V1 Docs",
-              link: "https://vuepress-theme-hope.github.io/v1/seo/",
+              link: "https://vuepress-theme-hope.github.io/v1/sitemap/",
             },
           ],
         },
       ],
     },
-
     "/zh/": {
       navbar: [
         "/zh/",
@@ -55,8 +54,8 @@ export default defineThemeConfig({
           icon: "note",
           children: [
             {
-              text: "V1 文档",
-              link: "https://vuepress-theme-hope.github.io/v1/seo/zh/",
+              text: "V1 Docs",
+              link: "https://vuepress-theme-hope.github.io/v1/sitemap/zh/",
             },
           ],
         },
@@ -130,7 +129,7 @@ export default defineThemeConfig({
       update: "hint",
       favicon: "/favicon.ico",
       themeColor: "#46bd87",
-      appendBase: true,
+      cachePic: true,
       apple: {
         icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
@@ -140,8 +139,8 @@ export default defineThemeConfig({
         color: "#ffffff",
       },
       manifest: {
-        name: "vuepress-plugin-seo2",
-        short_name: "SEO Plugin",
+        name: "vuepress-plugin-sitemap2",
+        short_name: "Sitemap Plugin",
         icons: [
           {
             src: "/assets/icon/chrome-mask-512.png",
@@ -207,6 +206,7 @@ export default defineThemeConfig({
           },
         ],
       },
+      appendBase: true,
     },
   },
 });

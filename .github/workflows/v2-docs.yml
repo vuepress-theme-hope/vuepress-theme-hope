@@ -72,6 +72,7 @@ jobs:
           yarn cpx "docs/reading-time2/dist/**" dist/reading-time
           yarn cpx "docs/sass-palette/dist/**" dist/sass-palette
           yarn cpx "docs/seo2/dist/**" dist/seo
+          yarn cpx "docs/sitemap2/dist/**" dist/sitemap
           yarn cpx "docs/theme/dist/**" dist
 
       - name: Deploy
