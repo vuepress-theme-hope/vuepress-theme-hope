@@ -44,40 +44,38 @@ export const getFeedOptions = (
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": {},
       ...app.siteData.locales,
-    }).map((localePath) => {
-      return [
-        localePath,
-        {
-          // default values
-          filter: ({ frontmatter, filePathRelative }: Page): boolean =>
-            !(
-              frontmatter.home ||
-              !filePathRelative ||
-              frontmatter.article === false ||
-              frontmatter.feed === false
-            ),
-          sorter: (
-            pageA: Page<Record<string, never>, { git?: GitData }>,
-            pageB: Page<Record<string, never>, { git?: GitData }>
-          ): number => {
-            return compareDate(
-              pageA.git?.createdTime
-                ? new Date(pageA.git?.createdTime)
-                : pageA.frontmatter.date,
-              pageB.git?.createdTime
-                ? new Date(pageB.git?.createdTime)
-                : pageB.frontmatter.date
-            );
-          },
+    }).map((localePath) => [
+      localePath,
+      {
+        // default values
+        filter: ({ frontmatter, filePathRelative }: Page): boolean =>
+          !(
+            frontmatter.home ||
+            !filePathRelative ||
+            frontmatter.article === false ||
+            frontmatter.feed === false
+          ),
+        sorter: (
+          pageA: Page<Record<string, never>, { git?: GitData }>,
+          pageB: Page<Record<string, never>, { git?: GitData }>
+        ): number => {
+          return compareDate(
+            pageA.git?.createdTime
+              ? new Date(pageA.git?.createdTime)
+              : pageA.frontmatter.date,
+            pageB.git?.createdTime
+              ? new Date(pageB.git?.createdTime)
+              : pageB.frontmatter.date
+          );
+        },
 
-          ...options,
-          ...options.locales?.[localePath],
+        ...options,
+        ...options.locales?.[localePath],
 
-          // make sure hostname is not been overided
-          hostname: options.hostname,
-        } as ResolvedFeedOptions,
-      ];
-    })
+        // make sure hostname is not been overided
+        hostname: options.hostname,
+      } as ResolvedFeedOptions,
+    ])
   );
 
 export const getFeedChannelOption = (

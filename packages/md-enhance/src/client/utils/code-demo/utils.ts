@@ -150,9 +150,3 @@ export const injectScript = (
     shadowRoot.appendChild(script);
   }
 };
-
-export const select = (
-  node: Element | Document,
-  selector: string
-): HTMLElement[] =>
-  Array.from<HTMLElement>(node.querySelectorAll(`.${selector}`));

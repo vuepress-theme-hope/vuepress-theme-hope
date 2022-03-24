@@ -62,9 +62,7 @@ export const resolveEncrypt = (encrypt: HopeThemeEncryptOptions): void => {
 
   const tokenConfig = encrypt.config || {};
 
-  Object.keys(tokenConfig).forEach((key) => {
-    const token = tokenConfig[key];
-
+  Object.entries(tokenConfig).forEach(([key, token]) => {
     if (typeof token === "string") tokenConfig[key] = hashSync(token);
     else if (Array.isArray(token))
       tokenConfig[key] = token

@@ -18,9 +18,9 @@ export default defineComponent({
     const tagMap = useTagMap();
 
     const tagList = computed(() =>
-      Object.keys(tagMap.value.map).map((tag) => ({
-        name: tag,
-        path: tagMap.value.map[tag].path,
+      Object.entries(tagMap.value.map).map(([name, { path }]) => ({
+        name,
+        path,
       }))
     );
 
