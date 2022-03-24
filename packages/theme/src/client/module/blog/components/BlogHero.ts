@@ -3,7 +3,7 @@ import {
   usePageHeadTitle,
   withBase,
 } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
 
 import { DropTransition } from "@theme-hope/components/transitions";
 import defaultHeroImagePath from "../assets/hero.jpg";
@@ -21,6 +21,7 @@ export default defineComponent({
     const title = usePageHeadTitle();
     const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
 
+    const hero = ref<HTMLElement | null>(null);
     const heroImage = computed(() => frontmatter.value.heroImage || null);
 
     const isFullScreen = computed(
@@ -66,6 +67,7 @@ export default defineComponent({
         ? h(
             "div",
             {
+              ref: hero,
               class: ["blog-hero", { fullscreen: isFullScreen.value }],
               style: bgImageStyle.value,
             },
@@ -107,7 +109,7 @@ export default defineComponent({
                       onClick: () => {
                         window.scrollTo({
                           top:
-                            document.body.clientHeight -
+                            (hero.value?.clientHeight || window.innerHeight) -
                             (document.querySelector(".navbar")?.clientHeight ||
                               0),
                           behavior: "smooth",
