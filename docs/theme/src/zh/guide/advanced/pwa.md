@@ -209,7 +209,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 所以如果你不在 `themeConfig.plugins.pwa` 中配置 `manifest.icons`，访问者只能享受到 Service Worker 缓存带来的离线可访问性，而并不能作为 PWA 进行安装。
 
-此外，该插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果你计划部署到子目录，则应自行将 url 前缀附加到自己的清单 Urls 中。
+此外，该插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果你计划部署到子目录，则应自行将 URL 前缀附加到自己的清单 Urls 中。
 
 但是，如果你需要的所有东西都在 base 文件夹下，你可以在 `themeConfig.plugins.pwa` 中设置 `appendBase: true` 让插件将 `base` 自动附加到任何地址。
 

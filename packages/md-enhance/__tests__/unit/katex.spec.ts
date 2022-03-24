@@ -27,7 +27,7 @@ describe("inline katex", () => {
   });
 
   it("Should render when the first one is after a charater", () => {
-    expect(markdownIt.render(`The next$a = 1$ won't work`)).toMatchSnapshot();
+    expect(markdownIt.render(`The next$a = 1$ won’t work`)).toMatchSnapshot();
   });
 
   it("Should not render error msg when content is wrong", () => {

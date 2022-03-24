@@ -1,9 +1,9 @@
 ---
-title: Import markdown
+title: Import Markdown
 icon: markdown
 ---
 
-Let the Markdown file in your VuePress site support importing other markdown files.
+Let the Markdown file in your VuePress site support importing other Markdown files.
 
 <!-- more -->
 
@@ -20,7 +20,7 @@ import { mdEnhance } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhance({
-      // Enable import markdown
+      // Enable import Markdown
       mdImport: true,
     }),
   ],
@@ -38,7 +38,7 @@ const { mdEnhance } = require("vuepress-plugin-md-enhance");
 module.exports = {
   plugins: [
     mdEnhance({
-      // Enable import markdown
+      // Enable import Markdown
       mdImport: true,
     }),
   ],
@@ -57,7 +57,7 @@ module.exports = {
 @[md](../foo.md)
 ```
 
-If you want to partially import the file:
+To partially import the file:
 
 ```md
 <!-- partial import, from line 1 to line 10 -->
@@ -133,7 +133,7 @@ module.exports = {
 
 ::::
 
-Also, if you would like to place your markdown files directly besides your actual files, but don't want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
+Also, to place your Markdown files directly besides your actual files, but don’t want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
 
 :::: code-group
 
@@ -175,7 +175,7 @@ module.exports = {
 
   plugins: [
     mdEnhance({
-      // Enable import markdown
+      // Enable import Markdown
       mdImport: (file) => {
         if (file.startsWith("@src"))
           return file.replace("@src", path.resolve(__dirname, ".."));

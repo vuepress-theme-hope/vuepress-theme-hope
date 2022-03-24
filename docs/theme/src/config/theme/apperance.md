@@ -10,7 +10,7 @@ tag:
 
 The following options control the appearance of the theme, they are only valid when setting directly under the themeConfig, so setting them in each language as no effect.
 
-In general, you don't need to pay attention to them, they are only provided for a small amount of users with needs.
+In general, you don’t need to pay attention to them, they are only provided for a small amount of users with needs.
 
 ## pure <Badge text="Root only" type="warning" />
 

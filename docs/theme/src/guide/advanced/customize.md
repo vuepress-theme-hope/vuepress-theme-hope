@@ -28,7 +28,7 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 export default defineHopeConfig({
   alias: {
     // Here you can redirect aliases to your own components
-    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
+    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -49,7 +49,7 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 module.exports = defineHopeConfig({
   alias: {
     // Here you can redirect aliases to your own components
-    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
+    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -125,7 +125,7 @@ Components:
 
 Miscellaneous:
 
-- `@theme-hope/module/sidebar/composables`: sidebar Composition APi
+- `@theme-hope/module/sidebar/composables`: sidebar Composition API
 - `@theme-hope/module/sidebar/utils`: sidebar utility functions
 
 :::
@@ -188,7 +188,7 @@ Miscellaneous:
 
 Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
 
-For example, if your website has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
+For example, if your site has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
 
 :::: code-group
 
@@ -202,7 +202,7 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 export default defineHopeConfig({
   alias: {
     // Here you can direct aliases to your own components
-    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
+    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"

@@ -33,7 +33,7 @@
     @return true;
   }
 
-  // it's a valid map color config
+  // it’s a valid map color config
   @if (meta.type-of($value) == map) {
     @if (meta.type-of(map.get($value, "light")) == color) and
       (meta.type-of(map.get($value, "dark")) == color)

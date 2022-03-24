@@ -39,11 +39,11 @@ export default defineComponent({
       if (AVAILABLE_PROJECT_TYPES.includes(icon))
         return h(resolveComponent(`${icon}-icon`));
 
-      // it's a full image link
+      // it’s a full image link
       if (icon.match(/^https?:\/\//))
         return h("img", { src: icon, alt, class: "image" });
 
-      // it's an absolute image link
+      // it’s an absolute image link
       if (icon.startsWith("/"))
         return h("img", { src: withBase(icon), alt, class: "image" });
 

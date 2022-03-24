@@ -51,7 +51,7 @@ export default defineComponent({
 
     return (): VNode | null => {
       // NOTICE: here we put the `slots.default()` inside the render function to make
-      // the slots reactive, otherwise the slot content won't be changed once the
+      // the slots reactive, otherwise the slot content won’t be changed once the
       // `setup()` function of current component is called
 
       // get children code-group-item

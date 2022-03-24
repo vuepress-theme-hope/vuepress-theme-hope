@@ -30,14 +30,14 @@ export const checkSocialMediaIcons = (
     }
 
     if (Array.isArray(value)) {
-      // it's a svg string
+      // it’s a svg string
       if (value[1].startsWith("<svg")) {
         icons[key] = value[1];
 
         return value[0];
       }
 
-      // it's probably a path
+      // it’s probably a path
       if (fs.existsSync(value[1])) {
         icons[key] = fs.readFileSync(value[1], { encoding: "utf-8" });
 

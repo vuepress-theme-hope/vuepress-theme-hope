@@ -162,7 +162,7 @@ Config reference: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.
 
 ### Code Blocks
 
-Following code blocks extensions are implemented during Markdown parsing in Node side. That means, the code blocks won’t be processed in client side.
+Following code blocks extensions are implemented during Markdown parsing in Node side. That means, the code blocks won’t be processed in client-side.
 
 #### Line Highlighting
 
@@ -263,7 +263,7 @@ You can add `:v-pre` / `:no-v-pre` mark in your fenced code blocks to override t
 ::: warning
 The template syntax characters, for example, the "Mustache" syntax (double curly braces) might be parsed by the syntax highlighter. Thus, as the following example, `:no-v-pre` might not work well in some languages.
 
-If you want to make Vue syntax work in those languages anyway, try to disable the default syntax highlighting and implement your own syntax highlighting in client side.
+To make Vue syntax work in those languages anyway, try to disable the default syntax highlighting and implement your own syntax highlighting in client-side.
 :::
 
 Input:
@@ -325,7 +325,7 @@ You can import code blocks from files with following syntax:
 @[code](../foo.js)
 ```
 
-If you want to partially import the file:
+To partially import the file:
 
 ```md
 <!-- partial import, from line 1 to line 10 -->
@@ -446,7 +446,7 @@ Deprecated HTML tags such as [\<center>](https://developer.mozilla.org/en-US/doc
 
 Those tags would not be recognized as native HTML tags by Vue template compiler. Instead, Vue will try to resolve those tags as Vue components, and obviously these components usually don’t exist.
 
-You should try to avoid using deprecated HTML tags. However, if you want to use those tags anyway, try either of the following workarounds:
+You should try to avoid using deprecated HTML tags. However, to use those tags anyway, try either of the following workarounds:
 
 - Adding a [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) directive to skip the compilation of the element and its children. Notice that the template syntax would also be invalid.
 - Using [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) to tell Vue template compiler not try to resolve them as components.

@@ -6,7 +6,7 @@ import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 import type { LoaderContext } from "@vuepress/bundler-webpack/lib/types.webpack";
 
 /**
- * Use 'addtionalData' to make `${id}-config` availe in scss
+ * Use 'additionalData' to make `${id}-config` availe in scss
  *
  * @param app VuePress Node App
  * @param path Path to be responsed
@@ -21,7 +21,7 @@ export const injectConfigModule = (app: App, id: string): void => {
     const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const originalAddtionalData:
+    const originalAdditionalData:
       | string
       | ((source: string, file: string) => string | Promise<string>)
       | undefined =
@@ -41,10 +41,10 @@ export const injectConfigModule = (app: App, id: string): void => {
                 source: string,
                 file: string
               ): Promise<string> => {
-                if (typeof originalAddtionalData === "string")
-                  return `@use "@sass-palette/${id}-config";\n${originalAddtionalData}${source}`;
-                if (typeof originalAddtionalData === "function")
-                  return `@use "@sass-palette/${id}-config";\n${await originalAddtionalData(
+                if (typeof originalAdditionalData === "string")
+                  return `@use "@sass-palette/${id}-config";\n${originalAdditionalData}${source}`;
+                if (typeof originalAdditionalData === "function")
+                  return `@use "@sass-palette/${id}-config";\n${await originalAdditionalData(
                     source,
                     file
                   )}`;
@@ -67,7 +67,7 @@ export const injectConfigModule = (app: App, id: string): void => {
 
     const { additionalData } = webpackBundlerConfig.scss;
 
-    const addtionalDataHandler = (
+    const additionalDataHandler = (
       content: string,
       loaderContext: LoaderContext
     ): string => {
@@ -83,6 +83,6 @@ export const injectConfigModule = (app: App, id: string): void => {
       return `@use "@sass-palette/${id}-config";\n${content}`;
     };
 
-    webpackBundlerConfig.scss.additionalData = addtionalDataHandler;
+    webpackBundlerConfig.scss.additionalData = additionalDataHandler;
   }
 };

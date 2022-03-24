@@ -3,7 +3,7 @@ title: Giscus
 icon: github
 ---
 
-Giscus 是一个基于 Github Dicussion 的评论系统，启用简便。
+Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
 
 <!-- more -->
 

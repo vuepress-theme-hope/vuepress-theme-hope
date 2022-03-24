@@ -28,7 +28,7 @@ export interface MarkdownEnhanceOptions {
    * - danger
    * - details
    *
-   * ⚠ The last 4 items conflict with default theme and will overide it's style.
+   * ⚠ The last 4 items conflict with default theme and will overide it’s style.
    *
    * 是否启用自定义容器
    *

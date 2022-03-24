@@ -296,7 +296,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- compatable with vite ([67d1ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67d1ce0fb081199d473b2b71e8e3a9e17946cbf2))
+- compatible with vite ([67d1ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67d1ce0fb081199d473b2b71e8e3a9e17946cbf2))
 - rebuild locales ([885ab30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/885ab30af568537adfbc8e873795548865535fb5))
 
 # [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)

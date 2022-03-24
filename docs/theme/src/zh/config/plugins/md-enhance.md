@@ -148,9 +148,9 @@ tag:
 
 ```ts
 interface ImageMarkOptions {
-  /** lightmode only ids */
+  /** lightmode only IDs */
   light?: string[];
-  /** darkmode only ids */
+  /** darkmode only IDs */
   dark?: string[];
 }
 ```

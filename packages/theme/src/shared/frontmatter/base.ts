@@ -24,7 +24,7 @@ export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
   sidebar?: "heading" | false;
 
   /**
-   * Addtional Class for Page container
+   * Additional Class for Page container
    *
    * 页面容器的额外类名
    */

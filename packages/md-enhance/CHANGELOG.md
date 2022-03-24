@@ -11,7 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **md-enhance:** compatable with webpack ([abe8618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe8618fb8153ff51752bcd04a20aa5886007de2))
+- **md-enhance:** compatible with webpack ([abe8618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe8618fb8153ff51752bcd04a20aa5886007de2))
 
 # [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
 

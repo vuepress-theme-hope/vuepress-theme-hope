@@ -27,7 +27,7 @@ If the issue exists or there is somthing you don’t know how to solve, welcome 
 
 1. You are not asking question unrelated to VuePress or asking for a "tecnical support". Also, for customization, we only support "how can you customize something (in which way)". "How to customize something" (what you should write in your own codes) is NOT SUPPORTED. Unless you are donating this project, please do not inisit asking help for that part.
 
-   If you have learning questions about Vue, TypeScript, Sass or you don't know how to write something you want, you probably need to ask them in places like vue forum, stackoverflow.
+   If you have learning questions about Vue, TypeScript, Sass or you don’t know how to write something you want, you probably need to ask them in places like vue forum, Stack Overflow.
 
    I (Mr.Hope) am a postgraduate student majored in theoretical physics, and really busy. I am not expecting to "be a doc provider" or "teach you how to write code".
 
@@ -39,9 +39,9 @@ If you are facing error like this, you are probably using non-standard tags in y
 
 There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked as unrecommanded since HTML4.0 released in 1999, then removed in HTML5 release in 2008. So Vue is not allowing you to use them by default. You should probably remove them and use standard HTML5 tag.
 
-If you want to remove them, run theme with `--debug` flag, and you will get warning logs telling you tags that probably not be recognized.
+To remove them, run theme with `--debug` flag, and you will get warning logs telling you tags that probably not be recognized.
 
-If you want to use them anyway, check [here](https://v2.vuepress.vuejs.org/guide/markdown.html#non-standard-html-tags) to get a workaround.
+To use them anyway, check [here](https://v2.vuepress.vuejs.org/guide/markdown.html#non-standard-html-tags) to get a workaround.
 
 ## Slow in a cold boot with Vite
 
@@ -55,19 +55,19 @@ You can not depend on fast speed and strong functions at the same time, bro.
 
 Also, the style system is greatly slowing down the speed.
 
-- `@vuepress/theme-default` is placing all the styles together at `styles` folder and importing them entirly, so that `sass` will only need to compile once and vite only need to send 1 extra web request. That's why it's fast.
+- `@vuepress/theme-default` is placing all the styles together at `styles` folder and importing them entirly, so that `sass` will only need to compile once and vite only need to send 1 extra web request. That’s why it’s fast.
 
   But this will let style unbinded with components, and they will be injected anyway. So that when you overide a component or a layout, you have to overide old styles to build styles you want.
 
 - `vuepress-theme-hope` is binding styles with components, but that means `sass` has to compile styles for each component, and vite need to send an extra request for each components. Due to `vuepress-theme-hope` has 2× to 6× components (depending on whether you enable blog featues or not) comparing with `@vupress/theme-default`, it will take extra time of `2.4s - 4s` for that.
 
-  But, you can easily overide a component together with it's styles in this way.
+  But, you can easily overide a component together with it’s styles in this way.
 
 So, due to the above reasons, `vuepress-theme-hope` will have an average of 4× code and 10× requests comparing with `@vuepress/theme-default`, so the time increasing from `2s` to `10s` is reasonable and expected.
 
 ::: tip
 
-Don't worry, due to network cache, a hot reload when editing markdown files is still fast.
+Don’t worry, due to network cache, a hot reload when editing Markdown files is still fast.
 
 :::
 
@@ -145,10 +145,10 @@ export default defineHopeConfig({
 
 1. CSS imported via `@import` in Sass will be compiled into standard CSS `@import` syntax.
 1. The CSS `@import` syntax only works at the top of css file.
-1. In order to give user styles a higher priority, we will import user styles after theme and plugin styles.
+1. To give user styles a higher priority, we will import user styles after theme and plugin styles.
 1. During the build process of VuePress2, all styles are compressed into a single CSS file.
 
-The above results in the user's CSS `@import` imports in Sass appearing in the middle of the final CSS file and thus invalid.
+The above results in the user’s CSS `@import` imports in Sass appearing in the middle of the final CSS file and thus invalid.
 
 The default theme also has the same problem, and this cannot be fixed on the theme side.
 

@@ -1,6 +1,6 @@
 ## Heading 2
 
-Contents containing **bolded text** and some markdown enhance features:
+Contents containing **bolded text** and some Markdown Enhance features:
 
 ::: tip
 

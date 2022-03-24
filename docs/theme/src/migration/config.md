@@ -189,7 +189,7 @@ All plugin related options have been moved under `plugins`.
 
 - remove `copyright`
 
-  Related plugin ism't compatible with V2 yet.
+  Related plugin isn’t compatible with V2 yet.
 
 - remove `git`
 

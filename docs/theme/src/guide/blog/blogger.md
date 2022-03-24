@@ -20,7 +20,7 @@ You can config blogger avatar and name displayed through `blog.avatar` and `blog
 
 ::: note
 
-If you don't set those options, they automatically fall back to the site logo (`themeConfig.logo`) and site name (`themeConfig.name`).
+If you don’t set those options, they automatically fall back to the site logo (`themeConfig.logo`) and site name (`themeConfig.name`).
 
 :::
 

@@ -100,7 +100,7 @@ interface FeedAuthor {
   name: string;
   /** Author’s email */
   email?: string;
-  /** Author’s website */
+  /** Author’s site */
   url?: string;
   /**
    * Author’s avatar address

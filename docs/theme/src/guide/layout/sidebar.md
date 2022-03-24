@@ -660,11 +660,11 @@ If you use the structure to generate a folder with other folders nested under it
 
 During the automatic generation from the structure, you can control whether files in the same folder are included and how they are sorted through the `index` option in the page Frontmatter.
 
-`index` option supports boolean values ​​and numbers, when set to `false` it means you don't want the page to be indexed by the sidebar. When set to a positive integer, item with smaller value will appear first.
+`index` option supports boolean values ​​and numbers, when set to `false` it means you don’t want the page to be indexed by the sidebar. When set to a positive integer, item with smaller value will appear first.
 
 ::: tip
 
-`README.md` is an exception, as long as you don't disable it from the sidebar via `index: false` or make it as group link, it will allways be the first item after sorting.
+`README.md` is an exception, as long as you don’t disable it from the sidebar via `index: false` or make it as group link, it will allways be the first item after sorting.
 
 :::
 
@@ -863,7 +863,7 @@ module.exports = defineHopeConfig({
 
 ::: tip
 
-In order to deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `defineSidebarArrayConfig` and `defineSidebarObjectConfig` Helper function.
+To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `defineSidebarArrayConfig` and `defineSidebarObjectConfig` Helper function.
 
 :::
 

@@ -32,7 +32,7 @@ Whether enabling backToTop button
 - Type: `number`
 - Default: `300`
 
-backToTop button threshold distance (in pixels)
+BackToTop button threshold distance (in pixels)
 
 ## articleInfoLocales
 

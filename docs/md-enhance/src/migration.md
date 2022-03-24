@@ -11,7 +11,7 @@ icon: change
 
 - `imageFix` removed
 
-  Mr.Hope already made a PR to fix broken image links in markdown, so it’s no longer needed
+  Mr.Hope already made a PR to fix broken image links in Markdown, so it’s no longer needed
 
 ## New features
 

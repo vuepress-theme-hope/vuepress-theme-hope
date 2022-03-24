@@ -56,7 +56,7 @@ When `themeConfig.displayFooter` is `true`, you can also fill in `false` to hide
 
   ```md
   ---
-  footer: This website is served by GitHub Pages
+  footer: This site is served by GitHub Pages
   copyright: false
   medialink: false
   ---

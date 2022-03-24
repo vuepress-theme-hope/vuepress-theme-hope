@@ -3,7 +3,7 @@ title: Waline
 icon: waline
 ---
 
-Welcome to Waline. In just a few steps, you can enable Waline to provide comments and pageviews on your website.
+Welcome to Waline. In just a few steps, you can enable Waline to provide comments and pageviews on your site.
 
 <!-- more -->
 
@@ -61,7 +61,7 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
 Set `type: "waline"` in the plugin options, and set `serverURL` as the link obtained in the previous step.
 
-Then, place the `<Comment>` component at a suitable location in your website (usually at the bottom of the page), you will be able to see the comment box.
+Then, place the `<Comment>` component at a suitable location in your site (usually at the bottom of the page), you will be able to see the comment box.
 
 ::: tip
 

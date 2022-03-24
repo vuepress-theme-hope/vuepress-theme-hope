@@ -36,7 +36,7 @@ The ID of the discussion category. Generate through [Giscus Page](https://giscus
 - Type: `string`
 - Default: `"pathname"`
 
-Page - discussion mapping. for details see [Giscus Page](https://giscus.app/)
+Page - Discussion mapping. For details see [Giscus Page](https://giscus.app/)
 
 ## reactionsEnabled
 

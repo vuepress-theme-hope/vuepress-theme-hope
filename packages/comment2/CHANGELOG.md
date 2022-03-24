@@ -318,7 +318,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- compatable with vite ([67d1ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67d1ce0fb081199d473b2b71e8e3a9e17946cbf2))
+- compatible with vite ([67d1ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67d1ce0fb081199d473b2b71e8e3a9e17946cbf2))
 - **comment2:** prebundle @waline/client ([c4d06c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4d06c61f0b0097fa2204efaf02ddaa375426385))
 - rebuild locales ([885ab30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/885ab30af568537adfbc8e873795548865535fb5))
 

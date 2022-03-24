@@ -3,7 +3,7 @@
   "private": true,
   "description": "A vuepress theme with tons of features",
   "workspaces": [
-    "demo/",
+    "demo/*",
     "docs/*",
     "packages/*"
   ],
@@ -69,6 +69,7 @@
           "inlineNotes": true
         }
       ],
+      "gfm",
       "math",
       "preset-lint-consistent",
       "preset-lint-recommended",
@@ -131,6 +132,7 @@
     "remark-cli": "10.0.1",
     "remark-footnotes": "4.0.1",
     "remark-frontmatter": "4.0.1",
+    "remark-gfm": "3.0.1",
     "remark-lint": "9.1.1",
     "remark-math": "5.1.1",
     "remark-preset-lint-consistent": "5.1.1",

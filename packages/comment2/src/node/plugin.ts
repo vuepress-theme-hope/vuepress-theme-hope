@@ -23,7 +23,7 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     ? getLocales(app, walineLocales, options.walineLocales)
     : {};
 
-  // remove locales so that they won't be injected in client twice
+  // remove locales so that they won’t be injected in client twice
   if ("walineLocales" in options) delete options.walineLocales;
 
   useSassPalettePlugin(app, { id: "hope" });

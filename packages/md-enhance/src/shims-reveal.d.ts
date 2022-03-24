@@ -128,7 +128,7 @@ declare module "reveal.js/dist/reveal.esm.js" {
      * 1.2    2.2
      * 1.3    2.3
      *
-     * If you're on slide 1.3 and navigate right, you will normally move
+     * If you’re on slide 1.3 and navigate right, you will normally move
      * from 1.3 -> 2.1. If "grid" is used, the same navigation takes you
      * from 1.3 -> 2.3.
      */

@@ -125,7 +125,7 @@ module.exports = defineHopeConfig({
 
 杂项:
 
-- `@theme-hope/module/sidebar/composables`: 侧边栏可组合 APi
+- `@theme-hope/module/sidebar/composables`: 侧边栏可组合 API
 - `@theme-hope/module/sidebar/utils`: 侧边栏通用函数
 
 :::

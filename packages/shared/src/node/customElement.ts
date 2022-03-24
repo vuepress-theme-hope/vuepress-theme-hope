@@ -37,7 +37,7 @@ export const tagHint = (tag: string, isDebug = false): void => {
     !tag.includes("-")
   ) {
     logger.warn(
-      `${tag} is used and it's not a standard tag or standard custom element name`
+      `${tag} is used and it’s not a standard tag or standard custom element name`
     );
   }
 };

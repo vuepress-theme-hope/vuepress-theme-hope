@@ -59,30 +59,5 @@ jobs:
         with:
           repository-name: vuepress-theme-hope/v2-demo
           branch: gh-pages
-          folder: demo/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build Netlify Demo
-        run: yarn run demo:vite-build
-
-      - name: Deploy to netlify
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/v2-demo
-          branch: netlify
-          folder: demo/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build Gitee Demo
-        env:
-          BASE: /v2-demo/
-          HOSTNAME: https://vuepress-theme-hope.gitee.io/
-        run: yarn run demo:vite-build
-
-      - name: Deploy to gitee
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/v2-demo
-          branch: gitee
-          folder: demo/dist
+          folder: demo/theme/dist
           token: ${{ secrets.ACCESS_TOKEN }}

@@ -290,7 +290,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **feed2:** compatable with beta.20 ([062cd10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/062cd10255a1700f1c47aade31bb63539e9496cf))
+- **feed2:** compatible with beta.20 ([062cd10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/062cd10255a1700f1c47aade31bb63539e9496cf))
 - **feed2:** fix build issue ([0e15de3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e15de3cf53c81ed8f8e580ab541128a781cfb02))
 - **feed2:** update comment remove regexp ([357481e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/357481e9465a1d76daa3bb9ecb3f4ce5c51fef32))
 

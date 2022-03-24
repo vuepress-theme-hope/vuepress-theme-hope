@@ -36,7 +36,7 @@ module.exports = {
 @[md](../foo.md)
 ```
 
-If you want to partially import the file:
+To partially import the file:
 
 ```md
 <!-- partial import, from line 1 to line 10 -->

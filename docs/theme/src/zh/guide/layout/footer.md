@@ -56,7 +56,7 @@ tag:
 
   ```md
   ---
-  footer: This website is served by GitHub Pages
+  footer: This site is served by GitHub Pages
   copyright: false
   ---
   ```

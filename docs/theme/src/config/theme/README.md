@@ -19,7 +19,7 @@ tag:
 
 ## Demo
 
-You can check [theme docs' config][docs-config].
+You can check [theme docs’ config][docs-config].
 
 ## Helper Function
 

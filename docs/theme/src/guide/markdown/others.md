@@ -9,7 +9,7 @@ tag:
 
 ## v-pre
 
-Since VuePress2 has removed V1's v-pre container in core, the plugin provides an option to support it. That is, you can use any Mustacle syntax in the container below.
+Since VuePress2 has removed V1’s v-pre container in core, the plugin provides an option to support it. That is, you can use any Mustacle syntax in the container below.
 
 ```md
 ::: v-pre
@@ -21,7 +21,7 @@ Since VuePress2 has removed V1's v-pre container in core, the plugin provides an
 
 ## Image Mark
 
-GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub's markup and the easy markup `#light` and `#dark`.
+GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub’s markup and the easy markup `#light` and `#dark`.
 
 You can enable it using `imageMark` option.
 

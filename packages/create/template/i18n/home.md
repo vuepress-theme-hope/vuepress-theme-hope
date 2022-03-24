@@ -81,7 +81,7 @@ features:
 
   - title: Sitemap
     icon: sitemap
-    details: Generate a Sitemap for your website
+    details: Generate a Sitemap for your site
     link: https://vuepress-theme-hope.github.io/v2/guide/advanced/sitemap.html
 
   - title: Feed support
@@ -91,7 +91,7 @@ features:
 
   - title: PWA support
     icon: mobile
-    details: Make your website more like an APP
+    details: Make your site more like an APP
     link: https://vuepress-theme-hope.github.io/v2/guide/advanced/pwa.html
 
   - title: More new features

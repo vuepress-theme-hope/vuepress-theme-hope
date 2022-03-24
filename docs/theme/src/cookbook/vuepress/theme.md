@@ -37,7 +37,7 @@ You can use either theme name or its shorthand:
 
 ## Local Theme
 
-If you want to use your own custom theme but don’t want to publish it, you can create a local theme.
+To use your own custom theme but don’t want to publish it, you can create a local theme.
 
 First, create the local theme directory, typically `.vuepress/theme` :
 

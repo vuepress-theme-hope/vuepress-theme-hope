@@ -16,7 +16,7 @@ actions:
 features:
   - title: Markdown Enhance
     icon: markdown
-    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in markdown
+    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in Markdown
     link: /guide/markdown/
 
   - title: Slide page
@@ -81,7 +81,7 @@ features:
 
   - title: Sitemap
     icon: sitemap
-    details: Generate a Sitemap for your website
+    details: Generate a Sitemap for your site
     link: /guide/advanced/sitemap.html
 
   - title: Feed support
@@ -91,7 +91,7 @@ features:
 
   - title: PWA support
     icon: mobile
-    details: Make your website more like an APP
+    details: Make your site more like an APP
     link: /guide/advanced/pwa.html
 
   - title: More new features

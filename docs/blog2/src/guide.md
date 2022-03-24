@@ -17,7 +17,7 @@ By default, all the pages generated from Markdown files but not homepage will be
 
 You may need to set option `filter` to fully customize pages to collect. The `filter` accepts a function with the shape `(page: Page) => boolean`.
 
-Then, you should set `getInfo` option with a function accepting `Page` as argument and returning a object containing the info you want. So later, you can get these info through composition apis.
+Then, you should set `getInfo` option with a function accepting `Page` as argument and returning a object containing the info you want. So later, you can get these info through Composition API.
 
 ::: details Demo
 
@@ -63,7 +63,7 @@ export default {
 
 :::
 
-## Customizing categories and types
+## Customizing Categories and Types
 
 Basiclly, you would want 2 types of collection in your blog:
 
@@ -77,7 +77,7 @@ Basiclly, you would want 2 types of collection in your blog:
 
   "Type" is filtering aricles with different conditions.
 
-  For example, you may have diary, notes in your posts. And when a post has a writing date infomation with it, it can be called as a "timeline item".
+  For example, you may have diary, notes in your posts. And when a post has a writing date information with it, it can be called as a "timeline item".
 
 After understanding description of these 2 types, you can set `category` and `type` options, each of them accepts an array, and each element represents a configuation.
 
@@ -142,9 +142,9 @@ export default {
 
 See, setting these 2 types is easy. For full options, please see [Category Config](./config.md#blog-category-config) and [Type Config](./config.md#blog-type-config).
 
-## Using composition api in client side
+## Using Composition API in Client-side
 
-When generating each page, the plugin will set following infomation under `frontmatter.blog`:
+When generating each page, the plugin will set following information under `frontmatter.blog`:
 
 ```ts
 interface BlogFrontmatterOptions {
@@ -164,7 +164,7 @@ interface BlogFrontmatterOptions {
 
 So you can invoke `useBlogCategory()` and `useBlogType()` directly, and the result will be the category or type bind to current route.
 
-Also, you can pass `key` you want as argument, then you will get infomation bind to that key.
+Also, you can pass `key` you want as argument, then you will get information bind to that key.
 
 For return types, please see [Composition API Return Types](./config.md#composition-api).
 

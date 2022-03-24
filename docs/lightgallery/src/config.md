@@ -38,10 +38,10 @@ Optional values:
 
 The delay of lightgallery fetching page images, in ms.
 
-If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+If the theme you are using has a switching animation, we recommend you setting this option to `Switch animation duration + 200`.
 
 ## options
 
 - Type: `LightGallerySettings`
 
-Addtional options which will pass to [`lightgallery`](https://www.lightgalleryjs.com/docs/settings/).
+Additional options which will pass to [`lightgallery`](https://www.lightgalleryjs.com/docs/settings/).

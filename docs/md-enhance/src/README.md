@@ -16,7 +16,7 @@ actions:
 features:
   - title: Custom Container
     icon: box
-    details: Decorate markdown content with styles
+    details: Decorate Markdown content with styles
     link: /guide/container.html
 
   - title: CodeGroup
@@ -71,7 +71,7 @@ features:
 
   - title: Markdown snippet Support
     icon: markdown
-    details: split your docs with different parts and improt them in markdown
+    details: split your docs with different parts and improt them in Markdown
     link: /guide/md-import.html
 
   - title: Code Demo Support

@@ -93,7 +93,7 @@ const getInfo = async (
                       path.join(rootDir, fileRelativePath, "README.md")
                   )!;
 
-                  // get dir infomation
+                  // get dir information
                   const dirInfo = (page.frontmatter.dir || {}) as {
                     text?: string;
                     icon?: string;
@@ -104,7 +104,7 @@ const getInfo = async (
 
                   return {
                     type: "dir",
-                    // generate infomation
+                    // generate information
                     info: {
                       text: dirInfo.text || page.title,
                       icon:
@@ -132,7 +132,7 @@ const getInfo = async (
                   };
                 }
 
-                // it's a markdown
+                // it’s a markdown
                 if (filename.endsWith(".md")) {
                   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                   const page = pages.find(
@@ -152,7 +152,7 @@ const getInfo = async (
                   };
                 }
 
-                // it's probably an unrelated file
+                // it’s probably an unrelated file
                 return null;
               });
             })
@@ -225,7 +225,7 @@ const getGeneratePaths = (
   const result: string[] = [];
 
   sidebarConfig.forEach((item) => {
-    // it's a sidebar group config
+    // it’s a sidebar group config
     if (typeof item === "object" && "children" in item) {
       const childPrefix = `${prefix}${item.prefix || ""}`;
 

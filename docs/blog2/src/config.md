@@ -64,9 +64,9 @@ Whether enable hotReload in devServer.
 
 ::: note To theme developers
 
-It's disabled by default because it does have performance impact in sites with a lot of categories and types. And it can slow down hotReload speed when editing markdown.
+It’s disabled by default because it does have performance impact in sites with a lot of categories and types. And it can slow down hotReload speed when editing Markdown.
 
-If users are adding or organizing your categories or tags, you may tell them to enable this, for the rest it's better to keep it disabled.
+If users are adding or organizing your categories or tags, you may tell them to enable this, for the rest it’s better to keep it disabled.
 
 Also, you can try to detect number of pages in users project and decide whether to enable it.
 

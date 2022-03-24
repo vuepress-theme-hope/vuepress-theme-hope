@@ -16,7 +16,7 @@ export const feedPlugin: Plugin<FeedOptions> = (options, app) => {
   }
 
   if (!checkOutput(options)) {
-    logger.info("No requested output, the plugin won't start!");
+    logger.info("No requested output, the plugin won’t start!");
 
     return {
       name: "vuepress-plugin-feed2",

@@ -28,7 +28,7 @@ export interface SitemapOptions {
   excludeUrls?: string[];
 
   /**
-   * Output file name, relative to dest folder
+   * Output filename, relative to dest folder
    *
    * 输出的文件名，相对于输出目录
    *

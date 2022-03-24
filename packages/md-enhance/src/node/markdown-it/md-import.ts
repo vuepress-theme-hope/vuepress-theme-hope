@@ -22,7 +22,7 @@ const SYNTAX_RE = /^@\[md(?:{(?:(\d+)?-(\d+)?)})?\]\(([^)]*)\.md\)/;
 export const createImportMarkdownBlockRule =
   (handleImportPath: (path: string) => string): RuleBlock =>
   (state, startLine, _endLine, silent): boolean => {
-    // if it's indented more than 3 spaces, it should be a code block
+    // if it’s indented more than 3 spaces, it should be a code block
     /* istanbul ignore if */
     if (state.sCount[startLine] - state.blkIndent >= 4) {
       return false;
@@ -34,11 +34,11 @@ export const createImportMarkdownBlockRule =
     // return false if the length is shorter than min length
     if (pos + MIN_LENGTH > max) return false;
 
-    // check if it's matched the start
+    // check if it’s matched the start
     for (let i = 0; i < START_CODES.length; i += 1)
       if (state.src.charCodeAt(pos + i) !== START_CODES[i]) return false;
 
-    // check if it's matched the syntax
+    // check if it’s matched the syntax
     const match = state.src.slice(pos, max).match(SYNTAX_RE);
 
     if (!match) return false;

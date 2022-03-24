@@ -17,7 +17,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **md-enhance:** compatable with webpack ([abe8618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe8618fb8153ff51752bcd04a20aa5886007de2))
+- **md-enhance:** compatible with webpack ([abe8618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe8618fb8153ff51752bcd04a20aa5886007de2))
 - **theme:** fix smooth scroll ([8175017](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8175017cfda91bb512a9859ce2ae93217d169c87))
 
 # [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
@@ -877,7 +877,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - **components:** fix breadCrumb title ([897aca1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/897aca18c10857411c0e94c4ae567a59d9a5a616))
 - **demo:** fix demo logo ([8d96c8d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8d96c8d8aadbc502cccc5e8d71cd7749ee4fb468))
-- **feed2:** compatable with beta.20 ([062cd10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/062cd10255a1700f1c47aade31bb63539e9496cf))
+- **feed2:** compatible with beta.20 ([062cd10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/062cd10255a1700f1c47aade31bb63539e9496cf))
 - **feed2:** fix build issue ([0e15de3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e15de3cf53c81ed8f8e580ab541128a781cfb02))
 - **feed2:** update comment remove regexp ([357481e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/357481e9465a1d76daa3bb9ecb3f4ce5c51fef32))
 - **reading-time2:** update chinese reg ([39252c9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39252c9dda348b3850ad61708a5c40431454f613))
@@ -933,7 +933,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- compatable with vite ([67d1ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67d1ce0fb081199d473b2b71e8e3a9e17946cbf2))
+- compatible with vite ([67d1ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67d1ce0fb081199d473b2b71e8e3a9e17946cbf2))
 - **comment2:** prebundle @waline/client ([c4d06c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4d06c61f0b0097fa2204efaf02ddaa375426385))
 - **md-enhance:** add layout ([dd66598](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd6659890e20093e811e5871d2922810610d5c06))
 - **md-enhance:** support i18n in details block ([72488b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72488b372f2f585c345639dc8d8d9f6582378098))

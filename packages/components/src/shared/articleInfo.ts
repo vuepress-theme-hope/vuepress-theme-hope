@@ -1,7 +1,7 @@
 import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
 
 /**
- * Type of article infomation
+ * Type of article information
  *
  * 文章信息类型
  */

@@ -28,7 +28,7 @@ See [Plugin Docs][search] for the available options for search plugin.
 
 You can pass plugin options via `themeConfig.plugins.docsearch`.
 
-In order to use the plugin properly, you need to pass in `apiKey`, `indexName` and `appId` correctly, and set up the Algolia Crawler correctly according to the following requirements.
+To use the plugin properly, you need to pass in `apiKey`, `indexName` and `appId` correctly, and set up the Algolia Crawler correctly according to the following requirements.
 
 ::: details Crawler Config Example
 

@@ -7,9 +7,9 @@ You can have individual control over each feed item generation by configuring Fr
 
 ## Add and remove
 
-By default, all articles are added to the feed stream. If you want to remove specific pages from the feed, you can set `feed: false` in frontmatter.
+By default, all articles are added to the feed stream.To remove specific pages from the feed, you can set `feed: false` in frontmatter.
 
-## Infomation read by default
+## Information read by default
 
 `page.except` and the original content of the page are read during feed item generation.
 
@@ -94,7 +94,7 @@ interface FeedAuthor {
   email?: string;
 
   /**
-   * Author website
+   * Author site
    *
    * @description json format only
    */
@@ -132,7 +132,7 @@ interface FeedContributor {
   email?: string;
 
   /**
-   * Author website
+   * Author site
    *
    * @description json format only
    */

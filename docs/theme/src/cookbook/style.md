@@ -33,7 +33,7 @@ If you prefer **serif**[^serif] to **sans-serif**[^sans-serif], you can modify t
 
 ::: tip Best Practice
 
-To let your website display well on different operating systems and devices with different fonts installed, you should set a fallback font [^fallback-font].
+To let your site display well on different operating systems and devices with different fonts installed, you should set a fallback font [^fallback-font].
 
 So we recommend using the following font set as your preferred serif style:
 
@@ -49,22 +49,22 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", sans-serif';
 
 ### Modifying theme layout
 
-The theme allows you to freely config navbar, sidebar and footer, and you can also disable them if you don't like them. Please see [Guide → Layout → Navbar](../guide/layout/navbar.md), [Guide → Layout → Sidebar](../guide/layout/sidebar.md) and [Guide → Layout→ Footer](../guide/layout/footer.md) for full configuration instructions.
+The theme allows you to freely config navbar, sidebar and footer, and you can also disable them if you don’t like them. Please see [Guide → Layout → Navbar](../guide/layout/navbar.md), [Guide → Layout → Sidebar](../guide/layout/sidebar.md) and [Guide → Layout→ Footer](../guide/layout/footer.md) for full configuration instructions.
 
-The theme's content layout also supports customization, if you don't like some features that are enabled by default, you are free to disable them. For details, please search through the search function of the document.
+The theme’s content layout also supports customization, if you don’t like some features that are enabled by default, you are free to disable them. For details, please search through the search function of the document.
 
 ### Modify animation speed
 
-If you don't like the animation speed of the theme and think they are too fast or too slow, you can set `$transform-transition` in `palette.scss` to change the animation duration and animation speed curve, the default value is `"0.3 ease"`.
+If you don’t like the animation speed of the theme and think they are too fast or too slow, you can set `$transform-transition` in `palette.scss` to change the animation duration and animation speed curve, the default value is `"0.3 ease"`.
 
 ### Modify component styles
 
-If you are not satisfied with the styling of some components and want to make some tweaks on them, you can override the theme's default styles by adding CSS with `!important` in `index.scss`.
+If you are not satisfied with the styling of some components and want to make some tweaks on them, you can override the theme’s default styles by adding CSS with `!important` in `index.scss`.
 
 If your changes involve modifying the component DOM (document structure), you may need to refer to the [Advanced → Customize Components](../guide/advanced/customize.md) section to customize the override of the component.
 
 ### Add a new layout or re-create on the theme
 
-If you wish to do some revamping of the whole theme , or want to add a new layout, you can extend the theme. The new theme can be stored locally in the project, or it can be republished as a new theme on npm.
+To do some revamping of the whole theme , or want to add a new layout, you can extend the theme. The new theme can be stored locally in the project, or it can be republished as a new theme on npm.
 
 For related content, see [Advanced → Extending Theme](../guide/advanced/extend.md).

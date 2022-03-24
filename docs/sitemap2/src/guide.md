@@ -55,19 +55,19 @@ The following is an example based on the last modification time of a file.
 
 Sitemaps provide SEO (Search Engine Optimization):
 
-- Provide search engine spiders with links of the entire website;
+- Provide search engine spiders with links of the entire site;
 - Provide some links for search engine spiders to dynamic pages or pages that are difficult to reach by other methods;
-- If a visitor attempts to access a URL that does not exist within the site's domain, the visitor will be directed to a "file not found" error page, and the sitemap can be used as a navigation page.
+- If a visitor attempts to access a URL that does not exist within the site’s domain, the visitor will be directed to a "file not found" error page, and the sitemap can be used as a navigation page.
 
 A sitemap enhances SEO by making all pages findable.
 
 Most search engines only follow a limited number of links within a page, so when the site is very large, a sitemap becomes essential to make everything on the site accessible to search engines and visitors.
 
-Sitemaps is a protocol for site administrators to publish pages that can be crawled on a site to search engine spiders. The content of sitemap files must follow the definition in XML format. Each URL can contain the update period and last update time, the priority of the URL across the site. This allows search engines to crawl website content better and more efficiently.
+Sitemaps is a protocol for site administrators to publish pages that can be crawled on a site to search engine spiders. The content of sitemap files must follow the definition in XML format. Each URL can contain the update period and last update time, the priority of the URL across the site. This allows search engines to crawl site content better and more efficiently.
 
 ::: warning Together with robots.txt
 
-Sitemap is basicly used by search engines, when using this plugin, you'd better ensure that you have a valid `rotbot.txt` in the `.vuepress/public` folder to allow search engines spiders to visit your site. A simplest robots.txt is as follows (allow all search engines to access all paths)
+Sitemap is basically used by search engines, when using this plugin, you’d better ensure that you have a valid `rotbot.txt` in the `.vuepress/public` folder to allow search engines spiders to visit your site. A simplest robots.txt is as follows (allow all search engines to access all paths)
 
 ```txt
 User-agent: *

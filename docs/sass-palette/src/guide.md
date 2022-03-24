@@ -9,27 +9,27 @@ This plugin is basically facing plugins and theme development.
 
 To get started, you should understand that this plugin is designed to take across plugins and theme (unlike the officail one only for theme).
 
-We are providing `id` option to do that, and using this plugin (by calling `useSassPalette`) with same id won’t have any side effects. Also, all the alias and module names have an id prefix.
+We are providing `id` option to do that, and using this plugin (by calling `useSassPalette`) with same ID won’t have any side effects. Also, all the alias and module names have an ID prefix.
 
 This will allows you to:
 
-- Share same style system accoss your plugins (or themes) using same id without any side effects.
+- Share same style system accoss your plugins (or themes) using same ID without any side effects.
 
   This means you can use same style variables across your plugins (or themes) to get your style unify.
 
   ::: tip Example
 
-  `vuepress-theme-hope` and all its plugins are invoking this plugin with same id `hope`, so that all the color variables, breakpoints and other style configuation can be done at same file and be unified across theme and plugins.
+  `vuepress-theme-hope` and all its plugins are invoking this plugin with same ID `hope`, so that all the color variables, breakpoints and other style configuation can be done at same file and be unified across theme and plugins.
 
   :::
 
-- With different id, plugins and theme won’t affect others. We recommand you to set the `id` variable with your plugin name.
+- With different ID, plugins and theme won’t affect others. We recommand you to set the `id` variable with your plugin name.
 
-  With the default settings, users will set your plugin style under `.vuepress/styles` folder with sass files starting with your id prefix. And you can access the variables you need with `${id}-config`.
+  With the default settings, users will set your plugin style under `.vuepress/styles` folder with Sass files starting with your ID prefix. And you can access the variables you need with `${id}-config`.
 
   ::: tip Example
 
-  `vuepress-theme-hope` is using id 'hope', and just imagine a `vuepress-plugin-abc` is using 'abc'. They can get their own variables with module name `hope-config` and `abc-config`.
+  `vuepress-theme-hope` is using ID `'hope'`, and just imagine a `vuepress-plugin-abc` is using `'abc'`. They can get their own variables with module name `hope-config` and `abc-config`.
 
   :::
 
@@ -39,9 +39,9 @@ We have three style concept here: config, palette and generator.
 
 ## Config
 
-Config file is used for sass variable only. It holds sass variables which can be used in other files later.
+Config file is used for Sass variable only. It holds Sass variables which can be used in other files later.
 
-You can specific a file (probably in `.vuepress/styles/` folder) as user config file. So you can get the module containing every variables later in sass files. Also, you are able to provide a default config files where you can place fallback values for variables with `!default`.
+You can specific a file (probably in `.vuepress/styles/` folder) as user config file. So you can get the module containing every variables later in Sass files. Also, you are able to provide a default config files where you can place fallback values for variables with `!default`.
 
 ::: details An example
 
@@ -83,12 +83,12 @@ You can get the following variables in the plugin Sass files:
 
 We are using `additionalData` options to let `${id}-config` module aviable in your styles, but this has some limitations.
 
-`addtionalData` only works on scss entry, so `${id}-config` is available only in :
+`additionalData` only works on Scss entry, so `${id}-config` is available only in :
 
 - `<style lang="scss">` block in component files
-- scss files imported by script files directly (e.g.: `import "./a-scss-file.scss"` in client app enhance file).
+- Scss files imported by script files directly (e.g.: `import "./a-scss-file.scss"` in client app enhance file).
 
-If the scss file is not imported directly, but is imported through `@use` or `@import` api, the module won’t be available. So that in this case, you should import the module yourself using `@use "@sass-palette/${id}-config";`.
+If the Scss file is not imported directly, but is imported through `@use` or `@import` api, the module won’t be available. So that in this case, you should import the module yourself using `@use "@sass-palette/${id}-config";`.
 
 ### Preserved config name
 
@@ -106,9 +106,9 @@ If the scss file is not imported directly, but is imported through `@use` or `@i
 
 ## Palette
 
-Palette files are used for css varaible injection, where each variable will be injected in to root with kebab-name of variable name.
+Palette files are used for CSS varaible injection, where each variable will be injected in to root with kebab-name of variable name.
 
-You can specific a file (probably in `.vuepress/styles/` folder) as user palette file, and the default file name is `${id}-palette.scss`. Also, you are able to provide a default palette files where you can place fallback values for variables with `!default`.
+You can specific a file (probably in `.vuepress/styles/` folder) as user palette file, and the default filename is `${id}-palette.scss`. Also, you are able to provide a default palette files where you can place fallback values for variables with `!default`.
 
 ::: details An example
 
@@ -136,7 +136,7 @@ $colorA: blue !default;
 $colorB: green !default;
 ```
 
-Then the below css variables will be availe under root selector:
+Then the below CSS variables will be availe under root selector:
 
 ```scss
 :root {
@@ -202,7 +202,7 @@ In common sitations, you probably only want to make calculations with color and 
 If you want a `--move-transition` with `width 0.3s ease`, you can use strings:
 
 ```scss
-// this will be regarded as a list with (length, time, function) by sass
+// this will be regarded as a list with (length, time, function) by Sass
 // and will trigger a warning and be dropped by plugin
 $moveTransition: width 0.3s ease;
 
@@ -219,7 +219,7 @@ $moveTransition: "width 0.3s ease";
 
 ### Available in config module
 
-Same as config file, any variables in palette will be injected into `${id}-config` module, just in case you wanna use them in sass files.
+Same as config file, any variables in palette will be injected into `${id}-config` module, just in case you wanna use them in Sass files.
 
 ## Helper
 
@@ -231,7 +231,7 @@ You can use this helper with `@sass-palette/helper` alia and call its function t
 
 Generator file is facing developers to generate derivative values with config or palette file variables.
 
-Generator variables will be also injected as css variables like palette, and also they are availe in config module.
+Generator variables will be also injected as CSS variables like palette, and also they are availe in config module.
 
 ::: details Example
 

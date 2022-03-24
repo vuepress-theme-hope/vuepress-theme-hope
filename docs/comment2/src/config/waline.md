@@ -8,7 +8,7 @@ icon: waline
 - Type: `string`
 - Required: Yes
 
-Waline server address url
+Waline server address URL
 
 ## emoji
 
@@ -24,7 +24,7 @@ Emoji settings, for details see [Custom Emoji](https://waline.js.org/en/guide/cl
 
 Darkmode support
 
-- Set it to `"auto"` will display darkmode due to device settings.
+- Set it to `"auto"` will enable darkmode according to device preference.
 - Filling in a CSS selector will enable darkmode only when the selector match waline ancestor nodes.
 
 ::: tip Examples
@@ -102,7 +102,7 @@ Comment word s limit. When a single number is filled in, it ’s the maximum num
 - Type: `number`
 - Default: `10`
 
-number of comments per page.
+Number of comments per page.
 
 ## avatarCDN
 

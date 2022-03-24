@@ -53,7 +53,7 @@ icon: comment
    exports.main = require("twikoo-func").main;
    ```
 
-1. 创建完成后，点击“twikoo"进入云函数详情页，进入“函数代码”标签，点击“文件 - 新建文件”，输入 `package.json`，回车
+1. 创建完成后，点击“twikoo”进入云函数详情页，进入“函数代码”标签，点击“文件 - 新建文件”，输入 `package.json`，回车
 1. 复制以下代码、粘贴到代码框中，点击“保存并安装依赖”
 
    ```json
@@ -65,7 +65,7 @@ icon: comment
 ::: warning 注意
 
 - 请确保您已经安装了 [Node.js](https://nodejs.org/en/download/)
-- 请将命令、代码中“您的环境 id”替换为您自己的环境 id
+- 请将命令、代码中“您的环境 ID”替换为您自己的环境 ID
 - 第 7 步会弹出浏览器要求授权，需在有图形界面的系统下进行
 - 请勿在 Termux 下操作。虽然可以部署成功，但是使用时会报错 `[FUNCTIONS_EXECUTE_FAIL] Error: EACCES: permission denied, open '/var/user/index.js'`
 
@@ -73,7 +73,7 @@ icon: comment
 
 如果您打算部署到一个现有的云开发环境，请直接从第 3 步开始。
 
-1. 进入[云开发 CloudBase](https://curl.qcloud.com/KnnJtUom)活动页面，滚动到“新用户专享”部分，选择适合的套餐（一般 0 元套餐即可），点击“立即购买”，按提示创建好环境。
+1. 进入[云开发 CloudBase](https://curl.qcloud.com/KnnJtUom)活动页面，滚动到“新用户专享”部分，选择适合的套餐 (一般 0 元套餐即可) ，点击“立即购买”，按提示创建好环境。
 1. 进入[云开发控制台](https://console.cloud.tencent.com/tcb/)
 1. 进入[环境 - 登录授权](https://console.cloud.tencent.com/tcb/env/login)，启用“匿名登录”
 1. 进入[环境 - 安全配置](https://console.cloud.tencent.com/tcb/env/safety)，将网站域名添加到“WEB 安全域名”
@@ -86,7 +86,7 @@ icon: comment
 
    > 如果您没有安装 Git，也可以从 [Release](https://github.com/imaegoo/twikoo/releases) 页面下载最新的 Source code
    >
-   > 如果您所在的地区访问 Github 速度慢，也可以尝试另一个仓库地址：[https://imaegoo.coding.net/public/twikoo/twikoo/git](https://imaegoo.coding.net/public/twikoo/twikoo/git)
+   > 如果您所在的地区访问 GitHub 速度慢，也可以尝试另一个仓库地址：[https://imaegoo.coding.net/public/twikoo/twikoo/git](https://imaegoo.coding.net/public/twikoo/twikoo/git)
 
 1. 安装依赖项
 
@@ -95,7 +95,7 @@ icon: comment
    yarn install
    ```
 
-1. 授权云开发环境（此命令会弹出浏览器要求授权，需在有图形界面的系统下进行）
+1. 授权云开发环境 (此命令会弹出浏览器要求授权，需在有图形界面的系统下进行)
 
    ```sh
    yarn run login
@@ -113,7 +113,7 @@ icon: comment
 
 1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号
 1. 创建免费 MongoDB 数据库，区域推荐选择 `AWS / N. Virginia (us-east-1)`
-1. 在 Clusters 页面点击 CONNECT，按步骤设置允许所有 IP 地址的连接（[为什么？](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)），创建数据库用户，并记录数据库连接字符串，请将连接字符串中的 `<password>` 修改为数据库密码
+1. 在 Clusters 页面点击 CONNECT，按步骤设置允许所有 IP 地址的连接 ([为什么？](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)) ，创建数据库用户，并记录数据库连接字符串，请将连接字符串中的 `<password>` 修改为数据库密码
 1. 申请 [Vercel](https://vercel.com/signup) 账号
 1. 点击以下按钮将 Twikoo 一键部署到 Vercel
 
@@ -121,4 +121,4 @@ icon: comment
 
 1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
-1. Vercel Domains（包含 `https://` 前缀，例如 `https://xxx.vercel.app`）即为您的环境 id
+1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为您的环境 ID

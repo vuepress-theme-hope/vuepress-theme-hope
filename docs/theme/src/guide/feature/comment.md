@@ -100,7 +100,7 @@ If your site is for the general public rather than programmers, Waline is recomm
 
 ## Giscus
 
-Giscus is a Github Dicussion based commenting system that is easy to start.
+Giscus is a GitHub Dicussion based commenting system that is easy to start.
 
 ### Preparation
 
@@ -201,7 +201,7 @@ For more details, please see [Waline Docs](https://waline.js.org/en/)。
 
 1. Go to Settings - Environment Variables, add the environment variable `MONGODB_URI`, the value is the database connection string in step 3
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
-1. Vercel Domains (with `https://` prefix, eg `https://xxx.vercel.app`) is your environment id
+1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
 
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/config/giscus.html

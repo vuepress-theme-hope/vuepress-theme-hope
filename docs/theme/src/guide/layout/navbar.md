@@ -151,7 +151,7 @@ But you may have multiple folders with files under `/path/`. To avoid mutiple dr
 
 ### Dropdown list
 
-If you need to display more links, you can group similar links into a dropdown list.
+To display more links, you can group similar links into a dropdown list.
 
 You need use object format and provide the additional `children` option to nest links:
 

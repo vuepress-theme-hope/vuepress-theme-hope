@@ -23,7 +23,7 @@
   transition: background-color var(--color-transition, 0.3s),
     color var(--color-transition, 0.3s);
 
-  // compatable with toc
+  // compatible with toc
   .table-of-contents & {
     vertical-align: middle;
   }

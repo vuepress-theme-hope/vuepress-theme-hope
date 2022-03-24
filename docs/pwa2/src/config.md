@@ -103,7 +103,7 @@ Max picture size which allows to cache, with KB unit
 - Type: `"disabled" | "available" | "hint" | "force"`
 - Default: `"available"`
 
-Controll logic when new content is found.
+Control logic when new content is found.
 
 - `"disabled"`: Do nothing even when new service worker is avaible. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
 
@@ -115,7 +115,7 @@ Controll logic when new content is found.
 
   ::: note
 
-  If users choose to refresh, the current service worker will be unregister, and request will start comming to web. Later the new service worker will start installing and control current page after installed.
+  If users choose to refresh, the current service worker will be unregister, and request will start coming to web. Later the new service worker will start installing and control current page after installed.
 
   :::
 
@@ -137,7 +137,7 @@ How docs are updated is controlled by a previous version, so the current option 
 
 Special settings for Apple
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatable with safari on apple, please set it to `false`.
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatible with safari on apple, please set it to `false`.
 
 ### apple.icon
 
@@ -164,7 +164,7 @@ Safari mask icon
 
 Special settings for Microsoft tiles
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatable with windows, please set it to `false`.
+> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatible with windows, please set it to `false`.
 
 ### msTile.image
 

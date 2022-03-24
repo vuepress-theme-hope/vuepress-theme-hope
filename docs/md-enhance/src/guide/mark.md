@@ -55,8 +55,8 @@ Use `== ==` to mark.
 
 ## Demo
 
-VuePress Theme Hope is ==powerfull==.
+VuePress Theme Hope is ==powerful==.
 
 ```md
-VuePress Theme Hope is ==powerfull==.
+VuePress Theme Hope is ==powerful==.
 ```

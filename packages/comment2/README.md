@@ -38,7 +38,7 @@ Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. â
 
   Valine is lack of maintainence and can leak your privacy. You should use [Waline](https://waline.js.org) instead.
 
-- vssue is not compatable with V2 yet ![warning](https://img.shields.io/badge/-warning-yellow)
+- vssue is not compatible with V2 yet ![warning](https://img.shields.io/badge/-warning-yellow)
 
 - muti-categories support ![new](https://img.shields.io/badge/-new-brightgreen)
 

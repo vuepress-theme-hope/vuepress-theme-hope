@@ -1,5 +1,5 @@
 ---
-title: Import markdown
+title: Import Markdown
 icon: markdown
 ---
 
@@ -133,7 +133,7 @@ module.exports = {
 
 ::::
 
-此外，如果您想将 markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，您可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://v2.vuepress.vuejs.org/zh/reference/config.html#pagepatterns)。
+此外，如果您想将 Markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，您可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://v2.vuepress.vuejs.org/zh/reference/config.html#pagepatterns)。
 
 :::: code-group
 
@@ -175,7 +175,7 @@ module.exports = {
 
   plugins: [
     mdEnhance({
-      // Enable import markdown
+      // Enable import Markdown
       mdImport: (file) => {
         if (file.startsWith("@src"))
           return file.replace("@src", path.resolve(__dirname, ".."));

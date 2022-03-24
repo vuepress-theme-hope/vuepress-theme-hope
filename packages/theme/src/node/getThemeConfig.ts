@@ -56,7 +56,7 @@ const defaultLocaleOptions: HopeThemeLocaleOptions = {
 };
 
 /**
- * Get client side `themeConfig`
+ * Get client-side `themeConfig`
  */
 export const getThemeConfig = (
   app: App,

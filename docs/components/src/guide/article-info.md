@@ -60,7 +60,7 @@ export interface ArticleInfoProps {
 }
 
 /**
- * Type of article infomation
+ * Type of article information
  */
 export type ArticleInfo =
   | "Author"

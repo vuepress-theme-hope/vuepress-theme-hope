@@ -3,7 +3,7 @@ title: Giscus
 icon: github
 ---
 
-Giscus is a Github Dicussion based commenting system that is easy to start.
+Giscus is a GitHub Dicussion based commenting system that is easy to start.
 
 <!-- more -->
 

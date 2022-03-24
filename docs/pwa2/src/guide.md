@@ -75,7 +75,7 @@ We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.j
 
 ### HTML cache
 
-If you have small sites, and would like to make docusment fully offline available, you can set `cacheHTML` to `true` to cache all html files.
+If you have small sites, and would like to make docusment fully offline available, you can set `cacheHTML` to `true` to cache all HTML files.
 
 ::: tip Why only home and 404 page been cached by default?
 
@@ -87,7 +87,7 @@ Though VuePress generates HTML files through SSR[^ssr] for all pages, these file
 
 VuePress is essentially a SPA. This means that you only need to cache the home page and enter from the home page to access all pages normally. Therefore, not caching other HTML by default can effectively reduce the cache size (40% smaller in size) and speed up the SW update speed.
 
-But this also has the disadvantage. If the user enters the website directly from a non-home page, the HTML file for the first page still needs to be loaded from the Internet. Also, in offline environment, users can only enter through the homepage and then navigate to the corresponding page by themselves. If they directly access a link, an inaccessible prompt will appear.
+But this also has the disadvantage. If the user enters the site directly from a non-home page, the HTML file for the first page still needs to be loaded from the internet. Also, in offline environment, users can only enter through the homepage and then navigate to the corresponding page by themselves. If they directly access a link, an inaccessible prompt will appear.
 
 :::
 
@@ -105,9 +105,9 @@ The default value of the `update` option is `"available"`, which means that when
 
 Under the default behavior, users will still read old content before the SW is ready and they will not be prompted. If your project is still in building stage and you want to alert the user that he may be reading outdated content, you can set this to `"hint"`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
 
-If your docs are stable, or you're hosting a blog and don't care much about users receiving the latest version right away, you can set this to `"disabled"`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
+If your docs are stable, or you’re hosting a blog and don’t care much about users receiving the latest version right away, you can set this to `"disabled"`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
 
-If you want to speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `"force"`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
+To speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `"force"`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
 
 ### Update prompt popup
 
@@ -189,7 +189,7 @@ The installability [^installable] specification requires at least one valid icon
 
 So if you do not configure `manifest.icons`, visitors can only enjoy the offline accessibility brought by the Service Worker cache, while cannot install your site as a PWA.
 
-Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the url prefix to manifest Urls yourself.
+Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the URL prefix to manifest Urls yourself.
 
 But, if everything you need is all under base folder, you can set `appendBase: true` in plugin options to let the plugin append `base` to any Urls in
 

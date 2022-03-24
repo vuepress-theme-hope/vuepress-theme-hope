@@ -25,7 +25,7 @@ Item description getter
 
 ::: note
 
-Due to Atom support html in summary, so you can return html content here if possible, but the content must start with mark `html:`.
+Due to Atom support HTML in summary, so you can return HTML content here if possible, but the content must start with mark `html:`.
 
 :::
 
@@ -62,7 +62,7 @@ interface FeedAuthor {
   email?: string;
 
   /**
-   * Author website
+   * Author site
    *
    * @description json format only
    */
@@ -196,7 +196,7 @@ interface FeedContributor {
   email?: string;
 
   /**
-   * Author website
+   * Author site
    *
    * @description json format only
    */

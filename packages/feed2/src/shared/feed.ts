@@ -16,7 +16,7 @@ export interface FeedAuthor {
   email?: string;
 
   /**
-   * Author website
+   * Author site
    *
    * 作者网站
    *
@@ -99,7 +99,7 @@ export interface FeedChannelOption {
   title: string;
 
   /**
-   * The URL to the HTML website corresponding to the channel.
+   * The URL to the HTML site corresponding to the channel.
    *
    * 频道地址
    */

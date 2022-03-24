@@ -21,7 +21,7 @@ User config file path, relative to source dir.
 
 This is the file where user set style variables.
 
-The default filename is starting with id above.
+The default filename is starting with ID above.
 
 :::
 
@@ -47,9 +47,9 @@ User palette file path, relative to source dir.
 
 ::: tip
 
-This is the file where user control injected css varbiale. All the variable will be converted in to kebab-case and injected.
+This is the file where user control injected CSS varbiale. All the variable will be converted in to kebab-case and injected.
 
-The default filename is starting with id above.
+The default filename is starting with ID above.
 
 :::
 
@@ -62,7 +62,7 @@ Default palette file path, should be absolute path.
 
 ::: tip
 
-This is the file you should use to provide default css variables with `!default`. All the variable will be converted in to kebab-case and injected.
+This is the file you should use to provide default CSS variables with `!default`. All the variable will be converted in to kebab-case and injected.
 
 :::
 

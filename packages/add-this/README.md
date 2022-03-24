@@ -15,7 +15,7 @@ VuePress2 add-this plugin💌 / VuePress2 AddThis 插件 💌
 
 ## Deprecated Warning ![deprecated](https://img.shields.io/badge/-deprecated-yellow)
 
-We are just making this plugin compatable with V2. This plugin will no longer under maintainment.
+We are just making this plugin compatible with V2. This plugin will no longer under maintainment.
 
 ### Why❔
 
