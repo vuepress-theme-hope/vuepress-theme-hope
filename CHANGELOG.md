@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.25...v2.0.0-beta.26) (2022-03-24)
+
+### Bug Fixes
+
+- **theme:** fix blog hero scroll ([ee6277c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee6277c2538512826bb6169779fe3f1cfa3f0ff6))
+
+### Features
+
+- **theme:** rename `headingDepth` to `headerDepth` ([de367cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de367ccd2fed642ded6dbf629ace08db2f133761))
+
+### BREAKING CHANGES
+
+- **theme:** rename `headingDepth` to `headerDepth`
+
 # [2.0.0-beta.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.24...v2.0.0-beta.25) (2022-03-23)
 
 ### Bug Fixes
