@@ -7,7 +7,7 @@ tag:
   - Interface
 ---
 
-## Style customization
+## Style Customization
 
 The theme allows you to set variables in the `config.scss` and `palette.scss` of `.vuepress/style` to customize most of the colors, responsive breakpoints, page layout size and other parameters.
 

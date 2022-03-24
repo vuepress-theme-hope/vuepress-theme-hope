@@ -17,7 +17,7 @@ tag:
 
 ![首页截图](./assets/blog.png)
 
-## Frontmatter 可用参数
+## Frontmatter 选项
 
 ### hero
 

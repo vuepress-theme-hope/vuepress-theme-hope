@@ -9,7 +9,7 @@ Let the Markdown file support chart in your VuePress site
 
 This plugin is using [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {

@@ -32,7 +32,7 @@ In preview mode, you can:
 
 :::
 
-## Customize config
+## Customize Config
 
 `themeConfig.plugin.photoSwipe` is passed as plugin options to [`vuepress-plugin-photo-swipe][photo-swipe]. You can check the [plugin documentation][photo-swipe] for advanced configuration.
 

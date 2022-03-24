@@ -43,7 +43,7 @@ icon: guide
 | `dateModified`  |                       `page.git.updatedTime`                       |
 |    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
 
-## 自由定制
+## 直接添加 head 标签
 
 你可以在页面的 frontmatter 中配置 `head` 选项，自主添加特定标签到页面 `<head>` 以增强 SEO。
 
@@ -76,7 +76,7 @@ head:
 
 :::
 
-### ogp
+### OGP
 
 你可以使用插件选项的 `ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
 
@@ -125,7 +125,7 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 
 :::
 
-### customHead
+### 自定义 head 标签
 
 有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以使用 `customHead` 选项，其类型为:
 

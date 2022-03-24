@@ -16,9 +16,7 @@ To use it, set `home: true` in page frontmatter. Any extra content after the `YA
 
 <!-- more -->
 
-## Setting homepage
-
-The frontmatter parameters that can be configured are as follows:
+## Frontmatter Options
 
 ### home
 

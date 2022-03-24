@@ -9,7 +9,7 @@ We always welcome everyone to contribute! Here is a guide for you.
 
 <!-- more -->
 
-## Clone and Install project
+## Clone and Install Project
 
 Use Git to clone the project to the local, and use `yarn` to install dependencies.
 
@@ -25,7 +25,7 @@ If you have not installed yarn, please install it using `npm i -g yarn`.
 
 :::
 
-## Project File structure
+## Project File Structure
 
 The project is a monorepo, managed by `lerna`.
 
@@ -89,7 +89,7 @@ The project is a monorepo, managed by `lerna`.
 └── yarn.lock → yarn version lock file
 ```
 
-## Document modification
+## Document Modification
 
 You can find the corresponding project in the docs folder so you can modify the corresponding Markdown directly.
 
@@ -97,7 +97,7 @@ After ensuring that the `yarn run lint` and `yarn run lint:md` commands emit no 
 
 To preview the project locally, since the docs are using local themes and plugins, you need to build the local project through `yarn run build`, and then start it with the corresponding command `yarn run docs/<project abbreviation>:serve` in the root directory to start devServer.
 
-## Project modification
+## Project Modification
 
 The structure of each project is as follows:
 
@@ -126,7 +126,7 @@ Since the client-side uses ES Module (import/export) and the Node.js side uses c
 
 For better performance, all plugins are packed and minified using rollup when they are published.
 
-## Project operation and development
+## Project Development
 
 ### How to build
 

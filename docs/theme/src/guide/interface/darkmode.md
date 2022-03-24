@@ -22,7 +22,7 @@ Toggle the button below to see effects.
 
 <!-- markdownlint-restore -->
 
-## options
+## Options
 
 You can config darkmode through `themeConfig.darkmode`。
 

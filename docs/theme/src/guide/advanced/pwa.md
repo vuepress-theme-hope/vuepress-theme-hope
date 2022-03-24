@@ -51,7 +51,7 @@ If you are an advanced user, you can also set `generateSwConfig` in `themeConfig
 
 :::
 
-## Cache control
+## Cache Control
 
 Based on the requirement of installable [^installable], the plugin provides related options for cache control.
 
@@ -71,7 +71,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     :::
 
-### Default cache
+### Default Cache
 
 By default, the plugin will pre-cache all the `js` `css` and `svg`.And only homepage and 404 `html` are cached.
 
@@ -89,7 +89,7 @@ We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.j
 
 :::
 
-### HTML cache
+### HTML Cache
 
 If you have small sites, and would like to make docusment fully offline available, you can set `cacheHTML` to `true` in `themeConfig.plugins.pwa` to cache all HTML files.
 
@@ -107,7 +107,7 @@ But this also has the disadvantage. If the user enters the site directly from a 
 
 :::
 
-### Size control
+### Size Control
 
 To prevent large files from being included in the pre-cache list, any files larger than 2MB or pictures larger than 1MB will be deleted.
 
@@ -125,7 +125,7 @@ If your docs are stable, or you’re hosting a blog and don’t care much about 
 
 To speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `"force"`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
 
-### Update prompt popup
+### Update Prompt Popup
 
 When new content is detected (new SW detected), an update prompt popup will appear in the bottom right corner and allow the user to refresh and apply.
 
@@ -135,7 +135,7 @@ If you are not satisfied with the default popup, you can write your own componen
 
 :::
 
-### Update ready popup
+### Update Ready Popup
 
 When the new content is ready (the new SW installed successfully and started waiting), the update ready popup will appear in the bottom right corner and allow the user to refresh and apply.
 
@@ -145,7 +145,7 @@ If you are not satisfied with the default popup, you can write your own componen
 
 :::
 
-## Manifest file generation
+## Manifest Generation
 
 To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `link`.
 
@@ -165,7 +165,7 @@ The plugin will automatically generate the Manifest file `manifest.webmanifest` 
 
 If you already have a `manifest.webmanifest` or `manifest.json` in `.vuepress/public`, the plugin will read and merge it into the final manifest.
 
-### Automatic generation
+### Automatic Generation
 
 The plugin will use the information from the VuePress plugin API and set the fallback for fields in manifest as much as possible. So you don’t need to set most of the manifest fields.
 
@@ -187,7 +187,7 @@ If the following fields are not set, they will try to fallback to the following 
 
 For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts).
 
-### Manual configuration
+### Manual Config
 
 You can manually specify the contents of the manifest in the `manifest` option in `themeConfig.plugins.pwa`.
 
@@ -211,7 +211,7 @@ But, if everything you need is all under base folder, you can set `appendBase: t
 
 :::
 
-## Other options
+## Other Options
 
 The plugin also provides other PWA-related options, such as Microsoft tile icon and color settings, Apple icon and so on.
 

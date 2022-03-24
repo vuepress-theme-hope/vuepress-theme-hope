@@ -5,7 +5,7 @@ icon: creative
 
 With `vuepress-plugin-blog2`, you can easily bring blog feature into your themes.
 
-## Collecting Articles and generating info
+## Collecting Articles and Generating Info
 
 To get started, the plugins will pick those pages which neeeds to be tricted as articles. This is only the first step to drop those pages you don’t want.
 
@@ -168,7 +168,7 @@ Also, you can pass `key` you want as argument, then you will get information bin
 
 For return types, please see [Composition API Return Types](./config.md#composition-api).
 
-## I18n support
+## I18n Support
 
 This plugin adds native i18n support, so your settings will be automatically apply to each language.
 

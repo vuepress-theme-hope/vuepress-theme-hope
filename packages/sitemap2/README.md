@@ -25,7 +25,7 @@ Or
 yarn add -D vuepress-plugin-sitemap2
 ```
 
-## Migration from V1
+## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-plugin-sitemap` to `vuepress-plugin-sitemap2`. ⚠
 

@@ -23,7 +23,7 @@ Or
 yarn add -D vuepress-plugin-photo-swipe
 ```
 
-## Migration from V1
+## Migrating from V1
 
 - option `delay`, which means the delay finding images when page loaded or navigated ![new](https://img.shields.io/badge/-new-brightgreen)
 

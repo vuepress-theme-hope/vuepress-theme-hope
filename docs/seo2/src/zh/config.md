@@ -28,7 +28,7 @@ type AuthorInfo = {
 type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ```
 
-## autoDescription
+### autoDescription
 
 - 类型: `boolean`
 - 默认值: `true`

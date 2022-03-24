@@ -19,7 +19,7 @@ Deploy hostname.
 
 Default author.
 
-## autoDescription
+### autoDescription
 
 - Type: `boolean`
 - Default: `true`

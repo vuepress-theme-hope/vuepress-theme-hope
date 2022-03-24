@@ -7,7 +7,7 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 :::: code-group
 
@@ -51,7 +51,7 @@ module.exports = {
 
 ## Grammar
 
-### Inline syntax
+### Inline Syntax
 
 Use `$codes$`.
 
@@ -61,7 +61,7 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
-### Block syntax
+### Block Syntax
 
 Use `$$codes$$`.
 
@@ -196,7 +196,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
   $\log_{a}{b} \quad \partial x$
   ```
 
-### Superscript and subscript
+### Superscript and Subscript
 
 - Superscript, use `^` to achieve
 - Subscript, use `_` to achieve
@@ -296,7 +296,7 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 ```
 
-### Multi-line formula
+### Multi-line Formula
 
 - **newline**
 
@@ -358,7 +358,7 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   $$
   ```
 
-### Formula group
+### Formula Group
 
 Formula groups that do not require alignment can use the `gather` environment.
 
@@ -394,7 +394,7 @@ $\tag{1} x+y^{2x}$
 $\tag*{1} x+y^{2x}$
 ```
 
-### Segmented functions
+### Segmented Functions
 
 Use `case` environment
 

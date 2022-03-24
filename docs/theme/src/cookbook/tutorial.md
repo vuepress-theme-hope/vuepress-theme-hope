@@ -31,7 +31,7 @@ Download address:
 
   :::
 
-## Creating template
+## Create Template
 
 Create a folder in a suitable location and open the terminal under the folder.
 
@@ -57,7 +57,7 @@ To terminate the development server, please click on the terminal and press `Ctr
 
 :::
 
-## Add or modify pages
+## Add or Modify Pages
 
 Except for the `.vuepress` folder under the docs folder, all the files are rendered as web pages, and the generated links correspond to the folder structure and filename one-to-one. Only `README.md` is a special case, it will be displayed as the default web page (default homepage) under the folder. This should be easy to understand.
 
@@ -81,7 +81,7 @@ The theme docs do not provide repetitive introductions to the existing content o
 
 :::
 
-## Building a site
+## Build Site
 
 After you have initially configured the project, you can use the `npm run docs:build` command to output the build result to the dist folder.
 

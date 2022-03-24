@@ -60,7 +60,7 @@ interface AuthorInfo {
 }
 ```
 
-### Writing time
+### Writing Date
 
 We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
@@ -76,7 +76,7 @@ date: 2020-01-01
 
 See [blog section](../blog/category-and-tags.md) for details
 
-### Reading time
+### Reading Time
 
 The default statistic method is 300 words per minute. You can override it by setting `themeConfig.plugins.readingTime.wordPerMinute`. This option does not support individual configuration on the page.
 

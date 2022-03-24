@@ -12,7 +12,7 @@ Let you insert code demos in your Markdown file.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 :::: code-group
 
@@ -178,7 +178,7 @@ export default class App extends React.Component {
 :::
 ````
 
-### Available languages
+### Available Languages
 
 You can use different language in your demo block.
 

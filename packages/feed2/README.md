@@ -25,7 +25,7 @@ or
 yarn add -D vuepress-plugin-feed2@next
 ```
 
-## Migrate from V1
+## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
 

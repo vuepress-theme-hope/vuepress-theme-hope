@@ -23,7 +23,7 @@ The prefix of the icon class is an empty string by default, you probably need to
 
 <!-- more -->
 
-## Setting icons
+## Setting Icons
 
 After importing icons and setting `iconPrefix` as below, you can use icon in mutiple places.
 
@@ -53,7 +53,7 @@ First, you need to create a new project to set and manage your website’s icons
 
 ![New Project](./assets/iconfont-new.png)
 
-### Import icon
+### Import Icon
 
 1. Search freely through iconfont to find the icon you want to use, and click the "Add to Library" button on the icon
 
@@ -61,13 +61,13 @@ First, you need to create a new project to set and manage your website’s icons
 
 1. After searching for all the icons, click the "Add to Library" icon in the upper right corner, click "Add to Project" below and select the project you created then confirm.
 
-### Edit icon
+### Edit Icon
 
 On the project page, you can edit the icons in the project, including adjustments with position, size, rotate, color, Unicode number and Font Class / Symbol.
 
 ![Edit icon](./assets/iconfont-edit.png)
 
-### Generate icon files
+### Generate Icon Files
 
 1. Please click the "Font Class" button above the project and click Generate.
 
@@ -117,7 +117,7 @@ Font-awesome current version is 6.0.0
 
 And you need set `themeConfig.iconPrefix` to `"fas fa-"`.
 
-### Use
+### Usage
 
 Please follow [fontawesome document](https://fontawesome.com/).
 

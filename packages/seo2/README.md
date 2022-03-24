@@ -25,7 +25,7 @@ Or
 yarn add -D vuepress-plugin-seo2
 ```
 
-## Migration from V1
+## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-plugin-seo` to `vuepress-plugin-seo2`. ⚠
 

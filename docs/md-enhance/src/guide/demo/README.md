@@ -7,7 +7,7 @@ Let you insert code demos in your Markdown file.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 :::: code-group
 
@@ -84,7 +84,7 @@ The plugin support three types:
 - vue
 - react
 
-## Available languages
+## Available Languages
 
 You can use different language in your demo block.
 
@@ -119,7 +119,7 @@ Available CSS languages:
 
 > You can also use `styl` in code block.
 
-### Not supported language demo
+### Not Supported Language Demo
 
 ::: demo A demo using language not supoprted by browsers
 

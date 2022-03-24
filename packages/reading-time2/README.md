@@ -25,7 +25,7 @@ or
 yarn add -D vuepress-plugin-reading-time2
 ```
 
-## Migration from V1
+## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-plugin-reading-time` to `vuepress-plugin-reading-time2`. ⚠
 

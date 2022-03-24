@@ -25,7 +25,7 @@ Or
 yarn add -D vuepress-plugin-copy-code2
 ```
 
-## Migrate from V1
+## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-copy-code` to `vuepress-plugin-copy-code2`. ⚠
 

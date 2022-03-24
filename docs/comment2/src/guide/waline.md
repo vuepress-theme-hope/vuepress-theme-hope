@@ -7,7 +7,7 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
 <!-- more -->
 
-## LeanCloud settings (Database)
+## LeanCloud Settings (Database)
 
 1. [sign in](https://console.leancloud.app/login) or [sign up](https://console.leancloud.app/register) LeanCloud and enter [Console](https://console.leancloud.app/apps).
 
@@ -71,7 +71,7 @@ For details, see [Waline Config](../config/waline.md)
 
 :::
 
-## Comment management (Management)
+## Comment Management
 
 1. After the deployment is complete, please visit `<serverURL>/ui/register` to register. The first person to register will be set as an administrator.
 1. After you log in as administrator, you can see the comment management interface. You can edit, mark or delete comments here.

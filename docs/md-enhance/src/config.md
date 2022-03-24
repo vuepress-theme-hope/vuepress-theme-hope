@@ -5,7 +5,7 @@ icon: config
 
 You can pass these options to the plugin:
 
-## Enable all
+## enableAll
 
 - Type: `boolean`
 - Default: `false`

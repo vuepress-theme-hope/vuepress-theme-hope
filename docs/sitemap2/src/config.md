@@ -3,7 +3,7 @@ title: Options
 icon: config
 ---
 
-## Plugin options
+## Plugin Options
 
 ### hostname
 

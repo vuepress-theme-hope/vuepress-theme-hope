@@ -14,7 +14,7 @@ You need to build your document or blog page by creating and writing Markdown in
 
 <!-- more -->
 
-## Markdown introduction
+## Markdown Introduction
 
 If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](https://vuepress-theme-hope.github.io/v2/basic/markdown/README.html) and [Markdown Demo](https://vuepress-theme-hope.github.io/v2/basic/markdown/demo.html).
 
@@ -24,13 +24,13 @@ Frontmatter is a important concept in VuePress. If you don’t know it, you need
 
 :::
 
-## VuePress enhance
+## VuePress Enhancement
 
 To enrich document writing, VuePress has extended Markdown syntax.
 
 For these extensions, please read [Markdown extensions in VuePress](https://vuepress-theme-hope.github.io/v2/basic/vuepress/markdown.html).
 
-## Theme enhance
+## Theme Enhancement
 
 ### Enable all
 

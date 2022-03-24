@@ -3,7 +3,7 @@ title: Migration Guide
 icon: change
 ---
 
-## Option removed
+## Removed Options
 
 - `lineNumbers` removed
 
@@ -13,7 +13,7 @@ icon: change
 
   Mr.Hope already made a PR to fix broken image links in Markdown, so it’s no longer needed
 
-## New features
+## New Features
 
 - `v-pre` support
 

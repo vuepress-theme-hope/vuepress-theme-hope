@@ -12,7 +12,7 @@ Let the Markdown file support flow chart in your VuePress site
 
 <!-- more -->
 
-## Configuration
+## Config
 
 :::: code-group
 
@@ -156,7 +156,7 @@ c2(no)->op2->e
 
 Defines the shape that the node will take.
 
-### start & end
+### Start & End
 
 Used as the first node where flows start from.
 Default text is `Start`.
@@ -184,7 +184,7 @@ e=>end: End
 st->e
 ```
 
-### operation
+### Operation
 
 Indicates that an operation needs to happen in the flow.
 
@@ -206,7 +206,7 @@ e=>end: End
 process->e
 ```
 
-### inputoutput
+### Input / Output
 
 Indicates that IO happens in a flow.
 
@@ -228,7 +228,7 @@ e=>end: End
 process->e
 ```
 
-### subroutine
+### Subroutine
 
 Indicates that a subroutine happens in the flow and that there should be another flowchart that documents this subroutine.
 
@@ -250,7 +250,7 @@ e=>end: End
 process->e
 ```
 
-### condition
+### Condition
 
 Allows for a conditional or logical statement to direct the flow into one of two or more paths.
 
@@ -279,7 +279,7 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-### parallel
+### Parallel
 
 Allows for multiple flows to happen simultaneously.
 

@@ -7,7 +7,7 @@ Let the Markdown file in your VuePress site support task list.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 :::: code-group
 

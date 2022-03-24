@@ -17,7 +17,7 @@ You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
 
 ![Homepage screenshot](./assets/blog.png)
 
-## Available parameters in frontmatter
+## Frontmatter Options
 
 ### hero
 

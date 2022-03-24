@@ -5,7 +5,7 @@ icon: config
 
 You can have individual control over each feed item generation by configuring Frontmatter for each page.
 
-## Add and remove
+## Addition and Removement
 
 By default, all articles are added to the feed stream.To remove specific pages from the feed, you can set `feed: false` in frontmatter.
 
@@ -53,7 +53,7 @@ Page copyright information
 
 Page cover/share image, should be full link or absolute link.
 
-## Feed configuration in FrontMatter
+## FrontMatter Options
 
 ### feed.title
 

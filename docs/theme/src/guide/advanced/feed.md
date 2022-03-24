@@ -44,7 +44,7 @@ Of course you can enable them all. This is not a choose 1 from 3 situation.
 
 Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files. Also it allows you to freely define the output content of the feed.
 
-## Channel settings
+## Channel Settings
 
 You can customize the feed channel information by setting the `channel` option in `themeConfig.plugins.feed`.
 
@@ -65,21 +65,21 @@ We recommend the following settings:
 
 For detailed options and their default values, see [Feed Channel Config][feed2-channel]
 
-## Generation control
+## Generation Control
 
-### Default generation logic
+### Default Generation
 
 By default, all articles are added to the feed stream.
 
 For the content read by default, see [Configuration → Item Control][feed2-item]
 
-### Custom feed item
+### Customize Feed item
 
 You can control how feed item is generated in specific article by configuring the `feed` option in frontmatter.
 
 For detailed options and their default values, see [Configuration → Project Settings][feed2-item].
 
-### Custom Feed Generation
+### Customize Feed Generation
 
 You can take full control of feed items generation by configuring the `getter` in the plugin options.
 

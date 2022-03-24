@@ -25,7 +25,7 @@ Or
 yarn add -D vuepress-plugin-pwa2
 ```
 
-## Migration from V1
+## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-plugin-pwa` to `vuepress-plugin-pwa2`. ⚠
 

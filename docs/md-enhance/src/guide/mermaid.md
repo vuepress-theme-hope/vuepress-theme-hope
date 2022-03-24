@@ -7,7 +7,7 @@ Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/)
 
 <!-- more -->
 
-## Configuration
+## Config
 
 :::: code-group
 
@@ -283,7 +283,7 @@ section Go home
 
 :::
 
-### Gantt diagrams
+### Gantt Diagrams
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -353,7 +353,7 @@ Add another diagram to demo page    :48h
 
 :::
 
-### Pie chart diagrams
+### Pie Chart Diagrams
 
 ```pie
 title What Voldemort doesn’t have?
@@ -375,7 +375,7 @@ title What Voldemort doesn’t have?
 
 :::
 
-### A complex example
+### A Complex Example
 
 ```mermaid
 graph TB

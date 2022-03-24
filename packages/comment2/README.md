@@ -30,7 +30,7 @@ yarn add -D vuepress-plugin-comment2@next
 - PageInfo components
 - Support Waline.
 
-## Migration from V1
+## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. ⚠
 

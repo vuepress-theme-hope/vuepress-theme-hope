@@ -27,7 +27,7 @@ Or
 yarn add -D vuepress-plugin-md-enhance
 ```
 
-## Migration from V1
+## Migrating from V1
 
 - drop flowchart support ![removed](https://img.shields.io/badge/-removed-red)
 

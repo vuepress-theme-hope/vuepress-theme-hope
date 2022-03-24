@@ -17,6 +17,6 @@ Here is a step by step tutorial for newcomers:
 
 - [VuePress Intro](vuepress/README.md)
 
-## Practical tutorial
+## Practical Tutorial
 
 - [Style Customization](style.md)

@@ -5,7 +5,7 @@ icon: slides
 
 Let the Markdown file in your VuePress site support presentation.
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {

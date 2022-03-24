@@ -12,13 +12,13 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 <!-- more -->
 
-## Built-in enhancements
+## Built-in Enhancements
 
 VuePress comes with GitHub-style tables, Emoji, TOC, code line numbers, specific line highlighting, etc. are all available out of the box.
 
 For detailed syntax, please see [Built-in Markdown Enhance](../../cookbook/vuepress/markdown.md).
 
-## Enable Markdown Enhance
+## Enable Markdown Enhancement
 
 `themeconfig.plugin.mdEnhance` in `.vuepress/config.js` will be passed to the plugin as a plugin option. Visit [plugin documentation][md-enhance] to see the usage.
 
@@ -28,7 +28,7 @@ Don’t worry about the size of your site. If you don’t enable related feature
 
 :::
 
-## Enable all
+## Enable All
 
 You can set `themeconfig.plugins.mdEnhance.enableAll` to enable all features of the [md-enhance][md-enhance] plugin.
 
@@ -88,7 +88,7 @@ Please enable ONLY the feature you want to use.
 
 :::
 
-### Enable specific syntax
+### Enable Specific Syntax
 
 Specific syntax configuration items can be found in the corresponding instruction page or [Theme Plugin Config](../../config/plugins/md-enhance.md).
 

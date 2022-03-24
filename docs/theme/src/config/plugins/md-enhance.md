@@ -31,7 +31,7 @@ See the [md-enhance documentation][md-enhance-config] for more details.
 
 ## Plugin Options
 
-### Enable all
+### enableAll
 
 - Type: `boolean`
 - Default: `false`

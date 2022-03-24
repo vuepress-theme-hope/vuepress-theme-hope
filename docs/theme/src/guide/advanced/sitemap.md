@@ -30,7 +30,7 @@ If you don’t want certain pages to appear in the sitemap, you can turn them in
 
 You can also control the output link through the `sitemapFilename`. The default output directory is `sitemap.xml`.
 
-## Change frequency
+## Change Frequency
 
 The default update cycle of the page is `daily` (every day). To modify the entire page cycle, please set `changefreq`. You can also set `sitemap.changefreq` in the frontmatter of the page. Note that page has a higher priority.
 

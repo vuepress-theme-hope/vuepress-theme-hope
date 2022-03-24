@@ -15,7 +15,7 @@ icon: more
 :::
 ```
 
-## Image Mark
+## 图片 ID 标记
 
 GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我们同时支持 GitHub 的标记与简易标记 `#light` 和 `#dark`。
 

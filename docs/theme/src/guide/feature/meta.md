@@ -40,9 +40,9 @@ Since the `git` plugin has a serious performance impact, the theme will not enab
 
 :::
 
-## Edit this page link
+## Edit Link
 
-You can automatically generate edit this page links for each page by setting the following items in `themeConfig`:
+You can automatically generate edit links for each page by setting the following items in `themeConfig`:
 
 - `docsRepo`: docs repository link, same as `themeConfig.repo` by default
 - `docsDir`: the directory of docs in the repository, defaults to root directory

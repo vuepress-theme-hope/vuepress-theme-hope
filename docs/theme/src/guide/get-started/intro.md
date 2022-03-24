@@ -26,7 +26,7 @@ Based on such a dozen plugins, Mr.Hope can confidently say that `vuepress-theme-
 
 :::
 
-## Design goals
+## Design Goals
 
 ::: info v1 Goal
 
@@ -46,9 +46,9 @@ Based on the goal V1 achieved, v2 is further carried out:
 
   The theme will only run which features you need, without being slowed down by other features or affecting the build size.
 
-## Why powerful
+## Why Powerful
 
-### Content richness
+### Content Richness
 
 The theme provides a lot of extended syntax support for Markdown, allowing you to insert more content in the body.
 
@@ -80,7 +80,7 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 - [Code Block Theme Customize](../interface/code-theme.md): Allows you to freely customize the code block style
 
-### Search function
+### Search Function
 
 The theme adds [built-in support for the official VuePress search plugin](../feature/search.md).
 
@@ -94,7 +94,7 @@ The theme is containing full blog support, you can use the brand new [blog homep
 
 - Provides [Feed](../advanced/feed.md) generation, so that others can subscribe your site.
 
-### Search engine enhancement
+### Search Engine Optimization
 
 - Provides [SEO Enhance](../advanced/seo.md), will automatically inject information to fully support OGP and JSON-LD protocols, and enhance search engine indexing.
 

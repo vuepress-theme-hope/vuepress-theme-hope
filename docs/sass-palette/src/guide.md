@@ -90,7 +90,7 @@ We are using `additionalData` options to let `${id}-config` module aviable in yo
 
 If the Scss file is not imported directly, but is imported through `@use` or `@import` api, the module won’t be available. So that in this case, you should import the module yourself using `@use "@sass-palette/${id}-config";`.
 
-### Preserved config name
+### Preserved Variables
 
 `$dark-selector` is preserved for darkmode selector. You are expected to set this variable if you want your plugin or theme support darkmode. This variable will be used later in palette files.
 
@@ -147,7 +147,7 @@ Then the below CSS variables will be availe under root selector:
 
 :::
 
-### Color settings
+### Color Settings
 
 Since the default theme is providing darkmode, so you probably want different colors under lightmode and darkmode.
 
@@ -189,7 +189,7 @@ html.dark {
 
 :::
 
-### Allowed variable types
+### Allowed Variable Types
 
 Only colors (or color map), length and strings are allowed in palette. Any other type will be dropped.
 
@@ -217,9 +217,11 @@ $moveTransition: "width 0.3s ease";
 
 ::::
 
-### Available in config module
+::: tip Available in config module
 
 Same as config file, any variables in palette will be injected into `${id}-config` module, just in case you wanna use them in Sass files.
+
+:::
 
 ## Helper
 

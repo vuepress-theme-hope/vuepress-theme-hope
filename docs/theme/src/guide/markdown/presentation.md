@@ -14,7 +14,7 @@ Let the Markdown file in your VuePress site support presentation.
 
 <!--lint disable no-duplicate-headings-->
 
-## Configuration
+## Config
 
 :::: code-group
 

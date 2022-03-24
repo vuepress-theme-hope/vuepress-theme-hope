@@ -3,7 +3,7 @@ title: 迁移指南
 icon: change
 ---
 
-## 选项被移除
+## 移除的选项
 
 - `lineNumbers` 被移除
 
@@ -13,7 +13,7 @@ icon: change
 
   Mr.Hope 已经做了一个 PR 来修复 Markdown 中损坏的图片链接
 
-## 新特性
+## 新功能
 
 - `v-pre` 支持
 

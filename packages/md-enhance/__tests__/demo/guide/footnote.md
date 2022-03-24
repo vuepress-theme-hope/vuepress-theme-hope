@@ -12,7 +12,7 @@ Let the Markdown file in your VuePress site support footnotes.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {

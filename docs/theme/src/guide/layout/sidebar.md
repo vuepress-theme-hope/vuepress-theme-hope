@@ -12,11 +12,11 @@ The sidebar may contain a list of related documents, document titles, and blogge
 
 <!-- more -->
 
-## Sidebar links
+## Sidebar Links
 
 You should use `themeConfig.sidebar` to control sidebar.
 
-### String format
+### String Format
 
 Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
 
@@ -62,7 +62,7 @@ You can omit the `.md` extension, and paths ending with `/` are inferred as `/RE
 
 :::
 
-### Object format
+### Object Format
 
 Just like navbar, if you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 

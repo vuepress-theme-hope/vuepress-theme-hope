@@ -37,7 +37,7 @@ See the [feed2 plugin documentation][feed-config] for more details.
 
 :::
 
-## Plugin options
+## Plugin Options
 
 ### atom
 

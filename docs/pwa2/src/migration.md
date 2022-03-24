@@ -3,7 +3,7 @@ title: V2 Migration
 icon: change
 ---
 
-## Option changes
+## Changed Options
 
 - `cacheHTML` default value changed from `true` to `false`
 
@@ -13,7 +13,7 @@ icon: change
 
   This is because we added a new prompt popup window, so we need to avoid name confusion
 
-## new options
+## New Options
 
 - `update`: control the update logic of SW
 

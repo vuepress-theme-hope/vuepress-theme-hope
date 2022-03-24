@@ -13,7 +13,7 @@ At the same time, VuePress itself adds some Markdown syntaxes. You can [view the
 
 :::
 
-## Enable all
+## Enable a\All
 
 You can set `enableAll: true` in plugin options to enable all features of this plugin.
 

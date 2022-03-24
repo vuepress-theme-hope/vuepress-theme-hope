@@ -16,7 +16,7 @@ The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links
 
 You can add links to the navbar via `themeConfig.navbar`, it accepts an array.
 
-### String format
+### String Format
 
 The easiest way to configure the navigation bar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
 
@@ -60,7 +60,7 @@ You can omit the `.md` extension, and paths ending with `/` are inferred as `/RE
 
 :::
 
-### Object format
+### Object Format
 
 If you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
@@ -149,7 +149,7 @@ But you may have multiple folders with files under `/path/`. To avoid mutiple dr
 
 :::
 
-### Dropdown list
+### Dropdown List
 
 To display more links, you can group similar links into a dropdown list.
 
@@ -331,7 +331,7 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## Disable navbar
+## Disable Navbar
 
 To disable the navbar globally, set `navbar: false` in `themeConfig`:
 
@@ -377,7 +377,7 @@ navbar: false
 ---
 ```
 
-## Site logo
+## Site Logo
 
 You can use `themeConfig.logo` to configure the logo displayed in navigation bar.
 

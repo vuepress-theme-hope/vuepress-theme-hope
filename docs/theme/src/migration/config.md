@@ -8,7 +8,7 @@ tag:
   - Theme Config
 ---
 
-## Theme usage
+## Theme Usage
 
 - `config` renamed to `defineHopeConfig`
 - `themeConfig` renamed to `defineThemeConfig`
@@ -111,11 +111,11 @@ In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`,
 
 - `anchorDisplay` renamed to `toc`
 
-### Reading speed
+### Reading Speed
 
 - `wordPerMinute` moved to `plugins.readingTime.wordPerMinute`
 
-## plugin changes
+## Plugin Changes
 
 ### Changes
 

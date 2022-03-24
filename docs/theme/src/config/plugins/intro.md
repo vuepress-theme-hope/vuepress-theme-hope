@@ -39,7 +39,7 @@ For example: `vuepress-plugin-copy-code2` has a configuration key named `copyCod
 
 :::
 
-## plugin list
+## Plugin List
 
 ### Plugins provided by Mr.Hope
 

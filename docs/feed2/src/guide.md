@@ -52,21 +52,21 @@ We recommend the following settings:
 
 For detailed options and their default values, see [Configuration → Channel Settings](./config/channel.md)
 
-## Generation control
+## Generation Control
 
-### Default generation logic
+### Default Generation
 
 By default, all articles are added to the feed stream.
 
 For the content read by default, see [Configuration → Item Control](./config/item.md)
 
-### Custom feed item
+### Customize Feed Item
 
 You can control how feed item is generated in specific article by configuring the `feed` option in frontmatter.
 
 For detailed options and their default values, see [Configuration → Project Settings](./config/item.md).
 
-### Custom Feed Generation
+### Customize Feed Generation
 
 You can take full control of feed items generation by configuring the `getter` in the plugin options.
 

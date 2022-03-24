@@ -24,13 +24,13 @@ Frontmatter is a important concept in VuePress. If you don’t know it, you need
 
 :::
 
-## VuePress enhance
+## VuePress Enhancement
 
 To enrich document writing, VuePress has extended Markdown syntax.
 
 For these extensions, please read [Markdown extensions in VuePress](https://vuepress-theme-hope.github.io/v2/basic/vuepress/markdown.html).
 
-## Theme enhance
+## Theme Enhancement
 
 ### Enable all
 

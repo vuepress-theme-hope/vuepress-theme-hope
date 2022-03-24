@@ -7,7 +7,7 @@ Make Markdown files in your VuePress site support markup.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 :::: code-group
 

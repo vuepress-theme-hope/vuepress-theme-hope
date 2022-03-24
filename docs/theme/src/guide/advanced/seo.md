@@ -24,7 +24,7 @@ If you don’t need this plugin, please set `themeConfig.plugins.seo` to `false`
 
 <!-- more -->
 
-## Out of box
+## Out of Box
 
 The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
 
@@ -66,7 +66,7 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 | `dateModified`  |                                          `page.git.updatedTime`                                           |
 |    `author`     |                            `page.frontmatter.author` \|\| `themeConfig.author`                            |
 
-## Free customization
+## Setting Tags Directly
 
 You can configure the `head` option in the page’s frontmatter to add specific tags to the page `<head>` to enhance SEO.
 For example:
@@ -98,7 +98,7 @@ If a page does fit into the "unpopular" genre like books, music, etc., you can h
 
 :::
 
-### ogp
+### OGP
 
 You can use options `ogp` in `themeConfig.plugins.seo to pass in a function to modify the default OGP object to your needs and return it.
 
@@ -147,7 +147,7 @@ Please note that the plugin does not generate JSON-LD for non-article pages, so 
 
 :::
 
-### customHead
+### Customize head Tags
 
 Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `customHead` option in `themeConfig.plugins.seo`, whose type is:
 
@@ -179,7 +179,7 @@ You can use [Google Rich Media Structure Test Tool](https://search.google.com/te
 
 As an internet marketing strategy, SEO considers how search engines work, the computer-programmed algorithms that dictate search engine behavior, what people search for, the actual search terms or keywords typed into search engines, and which search engines are preferred by their targeted audience. SEO is performed because a site will receive more visitors from a search engine when sites rank higher on the search engine results page (SERP). These visitors can then potentially be converted into customers.
 
-## Related documents
+## Related Documents
 
 - [Open Content Protocol OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
 
@@ -197,7 +197,7 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 
   Schema definition site for structural markup
 
-## Related tools
+## Related Tools
 
 - [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
 

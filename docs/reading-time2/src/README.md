@@ -86,7 +86,7 @@ module.exports = {
 
 ::::
 
-## Plugin options
+## Plugin Options
 
 ### wordPerMinute
 

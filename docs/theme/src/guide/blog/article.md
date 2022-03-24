@@ -35,7 +35,7 @@ For sticky articles, you can set `sticky` with a number to set their order. Arti
 
 :::
 
-## Star articles
+## Star Articles
 
 You can star an article by setting `star` to `true` in frontmatter. After staring, users can view these articles on the `/star/` page.
 
@@ -53,7 +53,7 @@ Similar to sticky articles, you can also set `star` to number to set their order
 
 :::
 
-## Encryption and Slideshow
+## Encryption and Slides
 
 The theme provides separate lists for the two special pages: encrypted article page and slide page. You can view them on the `/encrypt/` and `/slide/` pages.
 
