@@ -1,6 +1,6 @@
 ---
 title: Get Started
-icon: markdown
+icon: creative
 ---
 
 By installing and enableing this plugin, you can use more syntax in your Markdown files.

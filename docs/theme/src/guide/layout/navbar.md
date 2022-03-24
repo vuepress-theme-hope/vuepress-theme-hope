@@ -18,7 +18,7 @@ You can add links to the navbar via `themeConfig.navbar`, it accepts an array.
 
 ### String Format
 
-The easiest way to configure the navigation bar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
+The easiest way to configure the navbar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
 
 :::: code-group
 
@@ -201,7 +201,7 @@ module.exports = defineHopeConfig({
 
 ::::
 
-In most cases, the grouped items in the navigation bar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix.
+In most cases, the grouped items in the navbar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix.
 
 To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
@@ -379,7 +379,7 @@ navbar: false
 
 ## Site Logo
 
-You can use `themeConfig.logo` to configure the logo displayed in navigation bar.
+You can use `themeConfig.logo` to configure the logo displayed in navbar.
 
 ::: note
 
@@ -387,7 +387,7 @@ Please fill in the absolute path and place the logo in `.vuepress/public` folder
 
 :::
 
-After logo is set, the logo will be displayed on the navigation bar instead of the previous site name on mobile.
+After logo is set, the logo will be displayed on the navbar instead of the previous site name on mobile.
 
 :::: code-group
 
@@ -495,166 +495,9 @@ module.exports = defineHopeConfig({
 
 ## Search Box
 
-Like the default theme, `vuepress-theme-hope` brings built-in support for search plugins. You can enable the following plugins according to your own needs. The corresponding search box will automatically appear in the navigation bar.
+Like the default theme, `vuepress-theme-hope` brings built-in support for search plugins. You can enable the following plugins according to your own needs. The corresponding search box will automatically appear in the navbar.
 
-### Local Search
-
-You can implement local search via the `@vuepress/plugin-search` plugin. index. You need to install it manually, passing plugin options via `themeConfig.plugins.search`. (You can also call it yourself)
-
-::: info
-
-By default, the plugin will only extract page headings to generate search
-
-For related configuration and instructions, see [official documentation][plugin-search].
-
-:::
-
-### Algolia DocSearch
-
-You can implement Algolia-based search via the `@vuepress/plugin-docsearch` plugin. You need to install it manually, passing plugin options via `themeConfig.plugins.docsearch`. (You can also call it yourself)
-
-You need to [submit the URL of your site](https://docsearch.algolia.com/apply/) to join the DocSearch program. The DocSearch team will send appId and apiKey to your email. Next, you can configure the Algolia clawer and the plugin to enable DocSearch in VuePress.
-
-::: details Crawler Config Example
-
-```js {35-51,60}
-new Crawler({
-  appId: "YOUR_APP_ID",
-  apiKey: "YOUR_API_KEY",
-  rateLimit: 8,
-  startUrls: [
-    // These are urls which algolia start to craw
-    // If your site is divided in to mutiple parts,
-    // you may want to set mutiple entry links
-    "https://YOUR_WEBSITE_URL/",
-  ],
-  sitemaps: [
-    // if you are using sitemap plugins (e.g.: vuepress-plugin-sitemap2), you may provide one
-    "https://YOUR_WEBSITE_URL/sitemap.xml",
-  ],
-  ignoreCanonicalTo: false,
-  exclusionPatterns: [
-    // You can use this to stop algolia crawing some paths
-  ],
-  discoveryPatterns: [
-    // These are urls which algolia looking for,
-    "https://YOUR_WEBSITE_URL/**",
-  ],
-  // Crawler schedule, set it according to your docs update frequency
-  schedule: "at 02:00 every 1 day",
-  actions: [
-    // you may have mutiple actions, especially when you are deploying mutiple docs under one domain
-    {
-      // name the index with name you like
-      indexName: "YOUR_INDEX_NAME",
-      // paths where the index take effect
-      pathsToMatch: ["https://YOUR_WEBSITE_URL/**"],
-      // controls how algolia extracts records from your site
-      recordExtractor: ({ $, helpers }) => {
-        // The following are the default options for vuepress-theme-hope
-        // vuepress-theme-hope default container class name is theme-hope-content
-        return helpers.docsearch({
-          recordProps: {
-            lvl0: {
-              selectors: ".sidebar-heading.active",
-              defaultValue: "Documentation",
-            },
-            lvl1: ".theme-hope-content h1",
-            lvl2: ".theme-hope-content h2",
-            lvl3: ".theme-hope-content h3",
-            lvl4: ".theme-hope-content h4",
-            lvl5: ".theme-hope-content h5",
-            lvl6: ".theme-hope-content h6",
-            content: ".theme-hope-content p, .theme-hope-content li",
-          },
-          indexHeadings: true,
-        });
-      },
-    },
-  ],
-  initialIndexSettings: {
-    // controls how index are initialized
-    // only has effects before index are initialize
-    // you may need to delete your index and recraw after modification
-    YOUR_INDEX_NAME: {
-      attributesForFaceting: ["type", "lang"],
-      attributesToRetrieve: ["hierarchy", "content", "anchor", "url"],
-      attributesToHighlight: ["hierarchy", "hierarchy_camel", "content"],
-      attributesToSnippet: ["content:10"],
-      camelCaseAttributes: ["hierarchy", "hierarchy_radio", "content"],
-      searchableAttributes: [
-        "unordered(hierarchy_radio_camel.lvl0)",
-        "unordered(hierarchy_radio.lvl0)",
-        "unordered(hierarchy_radio_camel.lvl1)",
-        "unordered(hierarchy_radio.lvl1)",
-        "unordered(hierarchy_radio_camel.lvl2)",
-        "unordered(hierarchy_radio.lvl2)",
-        "unordered(hierarchy_radio_camel.lvl3)",
-        "unordered(hierarchy_radio.lvl3)",
-        "unordered(hierarchy_radio_camel.lvl4)",
-        "unordered(hierarchy_radio.lvl4)",
-        "unordered(hierarchy_radio_camel.lvl5)",
-        "unordered(hierarchy_radio.lvl5)",
-        "unordered(hierarchy_radio_camel.lvl6)",
-        "unordered(hierarchy_radio.lvl6)",
-        "unordered(hierarchy_camel.lvl0)",
-        "unordered(hierarchy.lvl0)",
-        "unordered(hierarchy_camel.lvl1)",
-        "unordered(hierarchy.lvl1)",
-        "unordered(hierarchy_camel.lvl2)",
-        "unordered(hierarchy.lvl2)",
-        "unordered(hierarchy_camel.lvl3)",
-        "unordered(hierarchy.lvl3)",
-        "unordered(hierarchy_camel.lvl4)",
-        "unordered(hierarchy.lvl4)",
-        "unordered(hierarchy_camel.lvl5)",
-        "unordered(hierarchy.lvl5)",
-        "unordered(hierarchy_camel.lvl6)",
-        "unordered(hierarchy.lvl6)",
-        "content",
-      ],
-      distinct: true,
-      attributeForDistinct: "url",
-      customRanking: [
-        "desc(weight.pageRank)",
-        "desc(weight.level)",
-        "asc(weight.position)",
-      ],
-      ranking: [
-        "words",
-        "filters",
-        "typo",
-        "attribute",
-        "proximity",
-        "exact",
-        "custom",
-      ],
-      highlightPreTag: '<span class="algolia-docsearch-suggestion--highlight">',
-      highlightPostTag: "</span>",
-      minWordSizefor1Typo: 3,
-      minWordSizefor2Typos: 7,
-      allowTyposOnNumericTokens: false,
-      minProximity: 1,
-      ignorePlurals: true,
-      advancedSyntax: true,
-      attributeCriteriaComputedByMinProximity: true,
-      removeWordsIfNoResults: "allOptional",
-    },
-  },
-});
-```
-
-:::
-
-Alternatively, you can [run your own crawler](https://docsearch.algolia.com/docs/run-your-own/) to generate the index, and then use your own [appId](#appId), [apiKey](#apikey) and [indexName](#indexname) to configure this plugin.
-
-::: warning
-
-`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `"lang"`, otherwise the plugin will not work properly.
-
-:::
-
-For related configuration and instructions, see [Official Documentation][plugin-docsearch].
+For details, please see [Feature → Search](../feature/search.md).
 
 ## Git repository and Edit Links
 
@@ -718,7 +561,7 @@ The following three functions are provided:
 
 ## Types and Helpers
 
-`vuepress-theme-hope` exports the type of navigation bar as `HopeThemeNavbarConfig`, and provides a `defineNavbarConfig` helper function. They can provide validation and autocompletion of navbar configuration in TS and JS.
+`vuepress-theme-hope` exports the type of navbar as `HopeThemeNavbarConfig`, and provides a `defineNavbarConfig` helper function. They can provide validation and autocompletion of navbar configuration in TS and JS.
 
 ::: tip
 

@@ -1,6 +1,6 @@
 ---
 title: 快速上手
-icon: markdown
+icon: creative
 ---
 
 通过安装并启用此插件，你可以在 Markdown 中使用更多的语法。

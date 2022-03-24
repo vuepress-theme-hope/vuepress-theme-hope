@@ -58,7 +58,7 @@ Since the theme no longer has a built-in search:
 
 - Changed `title` to `text` and `path` to `link` in sidebar configuration.
 
-- The V2 navigation bar supports setting the Markdown file path directly like the sidebar to automatically generate text, icons and links
+- The V2 navbar supports setting the Markdown file path directly like the sidebar to automatically generate text, icons and links
 
 In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`, `children`.
 

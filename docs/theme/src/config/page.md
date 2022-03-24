@@ -166,7 +166,7 @@ Whether path navigation icon is enabled on the current page.
 
 - Type: `boolean`
 
-The navigation bar configuration of the page, filling in `false` will disable the navigation bar
+The navbar configuration of the page, filling in `false` will disable the navbar
 
 ### sidebar
 
