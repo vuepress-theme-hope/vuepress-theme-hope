@@ -8,27 +8,27 @@ tag:
   - Markdown
 ---
 
-Every document page in VuePress is rendered by Markdown.
+VuePress basically generate pages from Markdown files. So you can use it to generate documentation or blog sites easily.
 
-You need to build your document or blog page by creating and writing Markdown in the corresponding path.
+You should create and write Markdown files, so that VuePress can convert them to different pages according to file structure.
 
 <!-- more -->
 
 ## Markdown Introduction
 
-If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
+If you are a new comer and don’t know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
 
 ::: info Frontmatter
 
-Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#front-matter).
+Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#frontmatter).
 
 :::
 
 ## VuePress Enhancement
 
-To enrich document writing, VuePress has extended Markdown syntax.
+To enrich document content, VuePress extends standard Markdown syntax.
 
-For these extensions, please read [Markdown extensions in VuePress](../../cookbook/vuepress/markdown.md).
+For these extended syntax, please see [Built-in Markdown Features](../../cookbook/vuepress/markdown.md).
 
 ## Theme Enhancement
 

@@ -1,5 +1,5 @@
 ---
-title: Theme Appearance Config
+title: Theme Appearance Options
 icon: config
 category:
   - Config
@@ -8,9 +8,15 @@ tag:
   - Appearance
 ---
 
-The following options control the appearance of the theme, they are only valid when setting directly under the themeConfig, so setting them in each language as no effect.
+The following options control the appearance of the theme. You don’t need to pay attention to them in most cases, they are only provided for a small amount of users with needs.
 
-In general, you don’t need to pay attention to them, they are only provided for a small amount of users with needs.
+<!-- more -->
+
+::: warning
+
+These options are only valid when setting directly under the themeConfig, setting them in each language as no effect.
+
+:::
 
 ## pure <Badge text="Root only" type="warning" />
 

@@ -42,14 +42,15 @@ When using Markdown [link syntax](https://spec.commonmark.org/0.29/#link-referen
 
 Take our documentation source files as an example:
 
-```bash
-└─ docs
+```
+└─ src
+   ├─ cookbook
+   │  └─ vuepress
+   │     ├─ markdown.md <- Here we are
+   │     └─ README.md
    ├─ guide
-   │  ├─ getting-started.md
-   │  ├─ markdown.md    # <- Here we are
    │  └─ README.md
-   ├─ reference
-   │  └─ config.md
+   ├─ contribution.md
    └─ README.md
 ```
 
@@ -64,8 +65,8 @@ Raw Markdown:
 
 <!-- absolute path -->
 
-[Guide](/guide/README.md)  
-[Config > I18n](/config/i18n.md)
+[Guide](/v2/guide/README.md)  
+[Config > I18n](/v2/config/i18n.md)
 
 <!-- URL -->
 
@@ -76,11 +77,13 @@ Converted to:
 
 ```vue
 <template>
-  <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/contribution.html">Contribution Guide</RouterLink>
-  <RouterLink to="/cookbook/vuepress/config.html">VuePress Config</RouterLink>
-  <RouterLink to="/guide/">Guide</RouterLink>
-  <RouterLink to="/config/i18n.html">Config &gt; I18n</RouterLink>
+  <RouterLink to="/v2/">Home</RouterLink>
+  <RouterLink to="/v2/contribution.html">Contribution Guide</RouterLink>
+  <RouterLink to="/v2/cookbook/vuepress/config.html"
+    >VuePress Config</RouterLink
+  >
+  <RouterLink to="/v2/guide/">Guide</RouterLink>
+  <RouterLink to="/v2/config/i18n.html">Config &gt; I18n</RouterLink>
   <a href="https://github.com" target="_blank" rel="noopener noreferrer"
     >GitHub</a
   >
@@ -92,8 +95,8 @@ Rendered as:
 [Home](../../README.md)  
 [Contribution Guide](../../contribution.md)  
 [VuePress Config](./config.md)
-[Guide](/guide/README.md)  
-[Config > I18n](/config/i18n.md)  
+[Guide](/v2/guide/README.md)  
+[Config > I18n](/v2/config/i18n.md)  
 [GitHub](https://github.com)
 
 Explanation:

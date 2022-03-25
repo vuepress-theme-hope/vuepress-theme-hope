@@ -205,7 +205,7 @@ Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中�
 
 1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
-1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为您的环境 ID
+1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
 
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
 [comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/giscus.html

@@ -1,5 +1,5 @@
 ---
-title: Theme Basic Config
+title: Theme Basic Options
 icon: config
 category:
   - Config
@@ -8,22 +8,28 @@ tag:
   - ThemeConfig
 ---
 
-## Basic Config
-
 ::: danger
 
 These options are important and require you to configure them correctly.
 
 :::
 
-### hostname <Badge text="Root only" type="warning" />
+<!-- more -->
+
+## hostname <Badge text="Root only" type="warning" />
 
 - Type: `string`
 - Required: Yes
 
-Domain which to be deployed to.
+Domain which the site will be deployed to.
 
-### author
+::: tip
+
+It should contain full protocol (eg: `https://exmaple.com`).
+
+:::
+
+## author
 
 - Type: `Author`
 - Required: No
@@ -36,19 +42,19 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 Global default author.
 
-### navbar
+## navbar
 
 Navbar config
 
 For details, see [Layout → Navbar](../../guide/layout/navbar.md)
 
-### sidebar
+## sidebar
 
 Sidebar config
 
 For details, see [Layout → Sidebar](../../guide/layout/sidebar.md)
 
-### locales
+## locales
 
 - Type: `Record<string, HopeThemeLocaleOptions>`
 

@@ -1,5 +1,5 @@
 ---
-title: Theme Layout Config
+title: Theme Layout Options
 icon: config
 category:
   - Config
@@ -7,6 +7,10 @@ tag:
   - Theme Config
   - Layout
 ---
+
+The following options control theme layout.
+
+<!-- more  -->
 
 ## Navbar Config
 

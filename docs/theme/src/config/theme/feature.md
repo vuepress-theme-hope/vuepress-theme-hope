@@ -1,5 +1,5 @@
 ---
-title: Theme Feature Config
+title: Theme Feature Options
 icon: config
 category:
   - Config
@@ -8,11 +8,13 @@ tag:
   - Theme Config
 ---
 
-These are config items of features provided by theme.
+The following options control features provided by theme.
 
-## Blog config
+<!-- more -->
 
-This feature is built on [`vuepress-plugin-blog2`][blog2], and is disabled by default.
+## Blog Options
+
+The theme adds blog feature using [`vuepress-plugin-blog2`][blog2], and the feature is **disabled** by default.
 
 To enable blog plugin and use default options, you can set `themeConfig.plugins.blog` to `true`.
 
@@ -27,16 +29,16 @@ For details, see [Blog Feature Intro](../../guide/blog/intro.md).
 ### blog.name
 
 - Type: `string`
-- Required: No
+- Default: `themeConfig.author`
 
-Blogger name, default is name in `themeConfig.author`
+Blogger name.
 
 ### blog.avatar
 
 - Type: `string`
-- Required: No
+- Default: `themeConfig.logo`
 
-Blogger avatar, default is `themeConfig.logo`
+Blogger avatar.
 
 ### blog.description
 
@@ -68,7 +70,7 @@ Set social links.
 - If the social media icon is available below, you can set `MediaName: MediaLink` directly.
 - Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaIconSvgString or MediaIconPath]`,
 
-::: tip Available social media:
+::: info Available Social Media
 
 The following social medias has built-in icons:
 

@@ -525,9 +525,9 @@ In this case, the fallback sidebar must be defined last for this reason.
 
 :::
 
-### Auto Sidebar
+## Auto Sidebar
 
-#### Generate from Headers
+### Generate from Headers
 
 To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
 

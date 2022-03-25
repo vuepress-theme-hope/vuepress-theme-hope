@@ -8,7 +8,9 @@ tag:
   - Markdown
 ---
 
-VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要通过在相应路径创建编写 Markdown 建立你的文档或博客页面。
+VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻松生成文档或博客站点。
+
+你应该创建和编写 Markdown 文件，以便 VuePress 可以根据文件结构将它们转换为不同的页面。
 
 <!-- more -->
 
@@ -18,7 +20,7 @@ VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要�
 
 ::: info Frontmatter
 
-Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](../../cookbook/vuepress/page.md#front-matter)。
+Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](../../cookbook/vuepress/page.md#frontmatter)。
 
 :::
 
@@ -26,7 +28,7 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 为了丰富文档写作，VuePress 对 Markdown 语法进行了扩展。
 
-关于这些扩展，请阅读 [VuePress 中的 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
+关于这些扩展，请阅读 [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
 ## 主题扩展
 
@@ -64,7 +66,7 @@ npm i -D vuepress-theme-hope
 
 ::: right
 
-我在右对齐
+我是右对齐
 
 :::
 

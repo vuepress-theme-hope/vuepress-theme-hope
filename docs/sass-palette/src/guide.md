@@ -29,7 +29,7 @@ This will allows you to:
 
   ::: tip Example
 
-  `vuepress-theme-hope` is using ID `'hope'`, and just imagine a `vuepress-plugin-abc` is using `'abc'`. They can get their own variables with module name `hope-config` and `abc-config`.
+  `vuepress-theme-hope` is using ID `"hope"`, and just imagine a `vuepress-plugin-abc` is using `"abc"`. They can get their own variables with module name `hope-config` and `abc-config`.
 
   :::
 

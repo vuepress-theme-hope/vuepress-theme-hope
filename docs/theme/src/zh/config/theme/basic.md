@@ -1,5 +1,5 @@
 ---
-title: 主题基本配置
+title: 主题基本选项
 icon: config
 category:
   - 配置
@@ -8,22 +8,26 @@ tag:
   - 基础
 ---
 
-## 基本选项
-
 ::: danger
 
 这些选项很重要，需要你正确配置。
 
 :::
 
-### hostname <Badge text="仅限 Root" type="warning" />
+## hostname <Badge text="仅限 Root" type="warning" />
 
 - 类型: `string`
 - 必填: 是
 
 当前网站部署到的域名。
 
-### author
+::: tip
+
+它应该包含完整协议 (如: `https://exmaple.com`)。
+
+:::
+
+## author
 
 - 类型: `Author`
 - 必填: 否
@@ -36,19 +40,19 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 文章显示的默认作者
 
-### navbar
+## navbar
 
 导航栏配置
 
 具体配置，请见 [布局 → 导航栏](../../guide/layout/navbar.md)
 
-### sidebar
+## sidebar
 
 侧边栏
 
 具体配置，请见 [布局 → 侧边栏](../../guide/layout/sidebar.md)
 
-### locales
+## locales
 
 - 类型: `Record<string, HopeThemeLocaleOptions>`
 

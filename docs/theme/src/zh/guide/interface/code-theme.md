@@ -14,13 +14,15 @@ tag:
 
 ::: tip
 
-处于对输出样式大小的考量，我们不会全局引入所有样式，并支持在代码块单独配置主题。
+处于对输出样式大小的考量，我们不会全局引入所有样式。所以我们不支持在代码块单独配置主题。
 
 :::
 
 ## 设置方式
 
-请在 `.vuepress/styles/config.scss` 中通过 `$code-light-theme` 和 `$code-dark-theme` 配置两种模式下使用的主题，其默认值是 `"one-light"` 和 `"one-dark"`。
+请在 `.vuepress/styles/config.scss` 中通过设置 `$code-light-theme` 和 `$code-dark-theme` 变量，来分别配置浅色和深色模式下使用的代码主题。
+
+它们的默认值分别为 `"one-light"` 和 `"one-dark"`。
 
 ## 可用的主题
 

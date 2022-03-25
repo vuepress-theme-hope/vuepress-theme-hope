@@ -1,5 +1,5 @@
 ---
-title: 主题功能配置
+title: 主题功能选项
 icon: config
 category:
   - 配置
@@ -8,11 +8,13 @@ tag:
   - 功能
 ---
 
-这些是主题功能的配置项。
+以下选项控制主题功能。
 
-## 博客配置
+<!-- more -->
 
-此功能通过 [`vuepress-plugin-blog2`][blog2] 提供，默认禁用。
+## 博客选项
+
+主题通过使用 [`vuepress-plugin-blog2`][blog2] 提供博客功能，且该功能默认**禁用**。
 
 要启用博客插件并使用默认选项，你可以将 `themeConfig.plugins.blog` 设置为 `true`。
 
@@ -27,16 +29,16 @@ tag:
 ### blog.name
 
 - 类型: `string`
-- 必填: 否
+- 默认值: `themeConfig.author`
 
-博主姓名，默认为 `themeConfig.author` 的名称
+博主姓名。
 
 ### blog.avatar
 
 - 类型: `string`
-- 必填: 否
+- 默认值: `themeConfig.logo`
 
-博主头像，默认为 `themeConfig.logo`
+博主头像。
 
 ### blog.description
 
@@ -68,7 +70,7 @@ tag:
 - 如果社交媒体已在下方列表中，你可以直接设置 `社交媒体名称: 社交媒体地址`。
 - 否则，你应该传入一个元组 `社交媒体名称: [社交媒体地址, 社交媒体 SVG 图标字符串或图标路径]`,
 
-::: tip 可用的社交媒体
+::: info 可用的社交媒体
 
 以下社交媒体具有内置图标:
 

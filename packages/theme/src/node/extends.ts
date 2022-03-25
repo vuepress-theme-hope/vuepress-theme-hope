@@ -28,7 +28,7 @@ export const checkFrontmatter = (
       // show logger in dev mode
       if (isDev)
         logger.warn(
-          `'${deprecatedKey}' property in Page FrontMatter is deprecated${
+          `"${deprecatedKey}" property in Page FrontMatter is deprecated${
             key ? `, please use ${key} instead` : ""
           }.${filePathRelative ? `\nFound in ${filePathRelative}` : ""}`
         );
@@ -50,7 +50,7 @@ export const checkFrontmatter = (
   if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
     if (isDev)
       logger.error(
-        `'date' roperty in Page FrontMatter should be a valid Date.${
+        `"date" roperty in Page FrontMatter should be a valid Date.${
           filePathRelative ? `\nFound in ${filePathRelative}` : ""
         }`
       );

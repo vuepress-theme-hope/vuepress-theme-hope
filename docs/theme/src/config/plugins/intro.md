@@ -1,5 +1,5 @@
 ---
-title: Plugin Description
+title: Plugin Intro
 icon: info
 category:
   - Config
@@ -27,15 +27,18 @@ All plugins called by `vuepress-theme-hope` are official plugins or plugins deve
 
 <!-- more -->
 
-## Plugin Config
+## Plugin Options
 
 The theme provides `plugins` option to pass options to plugins.
 
-::: info Config Key Name
+::: info Plugin Options Name
 
-All keys in `plugins` option are the camelcase version of the plugin name, with the number `2` ending in the name removed.
+All key names in `plugins` option are the camelcase version of the plugin name, with the optional number `2` suffix removed.
 
-For example: `vuepress-plugin-copy-code2` has a configuration key named `copyCode`.
+For example:
+
+- `vuepress-plugin-copy-code2` is controled by key name `copyCode`.
+- `vuepress-plugin-md-enhance2` is controled by key name `mdEnhance`.
 
 :::
 

@@ -40,16 +40,17 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 以我们文档的源文件为例：
 
-```bash
-└─ docs
-   └─ zh
-      ├─ guide
-      │  ├─ getting-started.md
-      │  ├─ markdown.md    # <- 我们在这里
-      │  └─ README.md
-      ├─ reference
-      │  └─ config.md
-      └─ README.md
+```
+└─ src
+    └─ zh
+       ├─ cookbook
+       │  └─ vuepress
+       │     ├─ markdown.md <- 我们在这里
+       │     └─ README.md
+       ├─ guide
+       │  └─ README.md
+       ├─ contribution.md
+       └─ README.md
 ```
 
 原始 Markdown:
@@ -63,8 +64,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 <!-- 绝对路径 -->
 
-[指南](/zh/guide/README.md)  
-[配置参考 > 多语言](/zh/config/i18n.md)
+[指南](/v2/zh/guide/README.md)  
+[配置参考 > 多语言](/v2/zh/config/i18n.md)
 
 <!-- URL -->
 
@@ -75,11 +76,13 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ```vue
 <template>
-  <RouterLink to="/zh/">首页</RouterLink>
-  <RouterLink to="/zh/contribution.html">贡献指南</RouterLink>
-  <RouterLink to="/zh/cookbook/vuepress/config.html">VuePress 配置</RouterLink>
-  <RouterLink to="/zh/guide/">指南</RouterLink>
-  <RouterLink to="/zh/reference/config.html#links"
+  <RouterLink to="/v2/zh/">首页</RouterLink>
+  <RouterLink to="/v2/zh/contribution.html">贡献指南</RouterLink>
+  <RouterLink to="/v2/zh/cookbook/vuepress/config.html"
+    >VuePress 配置</RouterLink
+  >
+  <RouterLink to="/v2/zh/guide/">指南</RouterLink>
+  <RouterLink to="/v2/zh/reference/config.html#links"
     >配置参考 &gt; 多语言</RouterLink
   >
   <a href="https://github.com" target="_blank" rel="noopener noreferrer"
@@ -93,8 +96,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 [首页](../../README.md)  
 [贡献指南](../../contribution.md)  
 [VuePress 配置](./config.md)
-[指南](/zh/guide/README.md)  
-[配置参考 > 多语言](/zh/config/i18n.md)
+[指南](/v2/zh/guide/README.md)  
+[配置参考 > 多语言](/v2/zh/config/i18n.md)
 [GitHub](https://github.com)
 
 解释:

@@ -19,7 +19,7 @@ Whether to enable comment feature by default.
 
 ## Giscus config
 
-- [See here](gicus.md)
+- [See here](giscus.md)
 
 ## Waline config
 

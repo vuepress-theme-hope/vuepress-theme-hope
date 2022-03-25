@@ -172,10 +172,13 @@ Miscellaneous:
 
 ::: details Appearance module component alias
 
+- `@theme-hope/module/outlook/components/AppearanceMode`: theme mode
 - `@theme-hope/module/outlook/components/AppearanceSwitch`: theme appearance switch
 - `@theme-hope/module/outlook/components/OutlookButton`: appearance button
 - `@theme-hope/module/outlook/components/OutlookSettings`: appearance settings
+- `@theme-hope/module/outlook/components/ThemeColor`: theme color
 - `@theme-hope/module/outlook/components/ThemeColorPicker`: theme color picker
+- `@theme-hope/module/outlook/components/ToggleFullScreen`: fullscreen toggle button
 
 Miscellaneous:
 

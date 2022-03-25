@@ -33,7 +33,15 @@ npm init vuepress-theme-hope@next [dir]
 
 ::::
 
+::: note
+
+这里的 `[dir]` 是一个参数，你需要使用真实的文件夹名称替换它，例如 `docs`、`src` 或其他你喜欢的名称。
+
+:::
+
 ## 使用
+
+请在配置文件中导入并使用 `defineHopeConfig` 以使用 `vuepress-theme-hope`。
 
 :::: code-group
 

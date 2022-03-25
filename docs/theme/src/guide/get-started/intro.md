@@ -28,9 +28,9 @@ Based on such a dozen plugins, Mr.Hope can confidently say that `vuepress-theme-
 
 ## Design Goals
 
-::: info v1 Goal
+::: info V1 Goal
 
-- Direction: All the functions of the theme are to enhance the document **content richness** and **shareable**.
+- Direction: All the functions are to enhance the document **content richness** and **shareable**.
 
 - Powerful and independent functions: The theme provides comprehensive details on functions and decompose them into independent plugins so users can use them in other themes.
 

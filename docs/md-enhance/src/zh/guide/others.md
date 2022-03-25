@@ -43,7 +43,7 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 ### 高级用法
 
-您可以将对象传递给 `imageMark` 以配置 ID 标记，可用选项有：
+你可以将对象传递给 `imageMark` 以配置 ID 标记，可用选项有：
 
 ```ts
 interface ImageMarkOptions {

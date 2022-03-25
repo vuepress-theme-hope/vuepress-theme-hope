@@ -29,7 +29,7 @@ icon: comment
 
 ### 手动部署
 
-如果您打算部署到一个现有的云开发环境，请直接从第 3 步开始。
+如果你打算部署到一个现有的云开发环境，请直接从第 3 步开始。
 
 1. 进入[云开发 CloudBase](https://curl.qcloud.com/KnnJtUom)活动页面，滚动到“新用户专享”部分，选择适合的套餐，点击“立即购买”，按提示创建好环境。
 
@@ -64,14 +64,14 @@ icon: comment
 
 ::: warning 注意
 
-- 请确保您已经安装了 [Node.js](https://nodejs.org/en/download/)
-- 请将命令、代码中“您的环境 ID”替换为您自己的环境 ID
+- 请确保你已经安装了 [Node.js](https://nodejs.org/en/download/)
+- 请将命令、代码中“你的环境 ID”替换为你自己的环境 ID
 - 第 7 步会弹出浏览器要求授权，需在有图形界面的系统下进行
 - 请勿在 Termux 下操作。虽然可以部署成功，但是使用时会报错 `[FUNCTIONS_EXECUTE_FAIL] Error: EACCES: permission denied, open '/var/user/index.js'`
 
 :::
 
-如果您打算部署到一个现有的云开发环境，请直接从第 3 步开始。
+如果你打算部署到一个现有的云开发环境，请直接从第 3 步开始。
 
 1. 进入[云开发 CloudBase](https://curl.qcloud.com/KnnJtUom)活动页面，滚动到“新用户专享”部分，选择适合的套餐 (一般 0 元套餐即可) ，点击“立即购买”，按提示创建好环境。
 1. 进入[云开发控制台](https://console.cloud.tencent.com/tcb/)
@@ -84,9 +84,9 @@ icon: comment
    cd twikoo
    ```
 
-   > 如果您没有安装 Git，也可以从 [Release](https://github.com/imaegoo/twikoo/releases) 页面下载最新的 Source code
+   > 如果你没有安装 Git，也可以从 [Release](https://github.com/imaegoo/twikoo/releases) 页面下载最新的 Source code
    >
-   > 如果您所在的地区访问 GitHub 速度慢，也可以尝试另一个仓库地址：[https://imaegoo.coding.net/public/twikoo/twikoo/git](https://imaegoo.coding.net/public/twikoo/twikoo/git)
+   > 如果你所在的地区访问 GitHub 速度慢，也可以尝试另一个仓库地址：[https://imaegoo.coding.net/public/twikoo/twikoo/git](https://imaegoo.coding.net/public/twikoo/twikoo/git)
 
 1. 安装依赖项
 
@@ -104,7 +104,7 @@ icon: comment
 1. 自动部署
 
    ```sh
-   yarn deploy -e 您的环境id
+   yarn deploy -e 你的环境id
    ```
 
 ### Vercel 部署
@@ -121,4 +121,4 @@ icon: comment
 
 1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
-1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为您的环境 ID
+1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID

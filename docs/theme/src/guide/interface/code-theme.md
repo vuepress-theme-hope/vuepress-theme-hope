@@ -14,13 +14,15 @@ tag:
 
 ::: tip
 
-Considering the size of the output style, we will not introduce all styles globally to support separate theme configuration in code blocks.
+Due to output size consideration, we will not import all styles globally to support code theme config per code block.
 
 :::
 
 ## How to Customize
 
-Please configure the themes used in the two modes through `$code-light-theme` and `$code-dark-theme` in `.vuepress/styles/config.scss`, the default values ​​are `"one-light"` and `"one-dark"`.
+Set `$code-light-theme` and `$code-dark-theme` variables in `.vuepress/styles/config.scss` to config code themes used under lightmode and darkmode.
+
+Their default values ​​are `"one-light"` and `"one-dark"`.
 
 ## Available Themes
 

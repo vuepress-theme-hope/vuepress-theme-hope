@@ -8,7 +8,7 @@ tag:
   - Layout
 ---
 
-The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.
+The theme adds Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.
 
 Without any config, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 

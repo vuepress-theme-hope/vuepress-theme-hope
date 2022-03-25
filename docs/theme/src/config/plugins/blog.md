@@ -11,7 +11,7 @@ tag:
 
 ## Intro
 
-The theme provides blog feature, and it’s not enabled by default.
+The theme provides blog feature, and it’s **not** enabled by default.
 
 You can enable blogging by setting `themeConfig.plugins.blog` to `true`.
 
@@ -45,7 +45,7 @@ Category map route path.
 - Type: `string`
 - Default: `/category/:name/`
 
-Category list route path.
+Category list route path. `:name` will be replaced by category name.
 
 ### tag
 
@@ -59,7 +59,7 @@ Tag map route path.
 - Type: `string`
 - Default: `/tag/:name/`
 
-Tag list route path.
+Tag list route path. `:name` will be replaced by tag name.
 
 ### encrypted
 

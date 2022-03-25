@@ -84,7 +84,7 @@ module.exports = defineHopeConfig({
 杂项:
 
 - `@theme-hope/components/icons`: 主题图标
-- `@theme-hope/components/transitions`: 主题渐变冬华
+- `@theme-hope/components/transitions`: 主题渐变动画
 - `@theme-hope/composables`: 主题可组合 API
 - `@theme-hope/utils`: 主题通用函数
 
@@ -172,10 +172,13 @@ module.exports = defineHopeConfig({
 
 ::: details 外观模块组件别名
 
+- `@theme-hope/module/outlook/components/AppearanceMode`: 主题外观模式
 - `@theme-hope/module/outlook/components/AppearanceSwitch`: 主题外观开关
 - `@theme-hope/module/outlook/components/OutlookButton`: 外观按钮
 - `@theme-hope/module/outlook/components/OutlookSettings`: 外观设置
+- `@theme-hope/module/outlook/components/ThemeColor`: 主题色
 - `@theme-hope/module/outlook/components/ThemeColorPicker`: 主题色选择器
+- `@theme-hope/module/outlook/components/ToggleFullScreen`: 全屏切换
 
 杂项:
 

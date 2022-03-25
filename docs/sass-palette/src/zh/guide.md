@@ -29,7 +29,7 @@ icon: creative
 
   ::: tip 示例
 
-  `vuepress-theme-hope` 正在使用 ID `'hope'`，而假设 `vuepress-plugin-abc` 正在使用 `'abc'`。他们可以分别使用 `hope-config` 和 `abc-config` 模块名称获取自己的变量。
+  `vuepress-theme-hope` 正在使用 ID `"hope"`，而假设 `vuepress-plugin-abc` 正在使用 `"abc"`。他们可以分别使用 `hope-config` 和 `abc-config` 模块名称获取自己的变量。
 
   :::
 

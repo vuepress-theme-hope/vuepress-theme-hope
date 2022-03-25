@@ -27,15 +27,18 @@ tag:
 
 <!-- more -->
 
-## 配置插件
+## 插件选项
 
 主题提供 `plugins` 选项向对应的插件传递所需选项。
 
-::: info 配置键名
+::: info 插件选项名称
 
 所有的配置键名均为插件名称的驼峰式 (camelcase) 版本，并去除名称中可能存在的数字 2 结尾。
 
-例如: `vuepress-plugin-copy-code2` 的配置键名为 `copyCode`。
+例如:
+
+- `vuepress-plugin-copy-code2` 的配置键名为 `copyCode`。
+- `vuepress-plugin-md-enhance` 的配置键名为 `mdEnhance`
 
 :::
 

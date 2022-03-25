@@ -182,7 +182,7 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 
 填入此文件所有内容都将解析为标准 CSS，然后在主题和插件样式之后注入。
 
-因此，您可以在此处添加新样式或覆盖样式：
+因此，你可以在此处添加新样式或覆盖样式：
 
 ::: details 例子
 
