@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.26...v2.0.0-beta.27) (2022-03-25)
+
+### Bug Fixes
+
+- **theme:** fix `darkmode: 'auto'` ([d426e12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d426e126df0958e024902afa9d6725ac64750e2b))
+- **theme:** fix blog hero scrolldown ([5649612](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5649612ace36467c7000aafbd20379c0049177b8))
+
 # [2.0.0-beta.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.25...v2.0.0-beta.26) (2022-03-24)
 
 ### Bug Fixes
