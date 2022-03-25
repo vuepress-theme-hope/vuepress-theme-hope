@@ -108,10 +108,8 @@ export default defineComponent({
                       class: "slide-down-button",
                       onClick: () => {
                         window.scrollTo({
-                          top:
-                            (hero.value?.clientHeight || window.innerHeight) -
-                            (document.querySelector(".navbar")?.clientHeight ||
-                              0),
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                          top: hero.value!.clientHeight,
                           behavior: "smooth",
                         });
                       },
