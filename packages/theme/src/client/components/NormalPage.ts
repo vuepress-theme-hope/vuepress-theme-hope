@@ -62,7 +62,9 @@ export default defineComponent({
               h(PageTitle),
               tocEnable.value
                 ? h(resolveComponent("TOC"), {
-                    headerDepth: frontmatter.value.headerDepth,
+                    headerDepth:
+                      frontmatter.value.headerDepth ??
+                      themeLocale.value.headerDepth,
                   })
                 : null,
               slots.contentBefore?.(),
