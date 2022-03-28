@@ -65,7 +65,7 @@ export default defineComponent({
       );
     });
 
-    const config: GiscusProps = {
+    const config = computed<GiscusProps>(() => ({
       repo: giscusOption.repo as `${string}/${string}`,
       repoId: giscusOption.repoId,
       category: giscusOption.category,
@@ -76,7 +76,7 @@ export default defineComponent({
       inputPosition: giscusOption.inputPosition || "top",
       reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
       emitMetadata: "0",
-    };
+    }));
 
     return (): VNode =>
       h(
@@ -90,7 +90,7 @@ export default defineComponent({
             display: enableComment.value ? "block" : "none",
           },
         },
-        h(ClientOnly, () => h(Giscus, config))
+        h(ClientOnly, () => h(Giscus, config.value))
       );
   },
 });
