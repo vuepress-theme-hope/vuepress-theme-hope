@@ -6,12 +6,6 @@
   z-index: 150;
 
   overflow-y: auto;
-
-  // compatible with non Chrome browsers
-  overflow-y: scroll;
-
-  // only works on Chrome
-  overflow-y: overlay;
   box-sizing: border-box;
 
   width: var(--sidebar-width);
