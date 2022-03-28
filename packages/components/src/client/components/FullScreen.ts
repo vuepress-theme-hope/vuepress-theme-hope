@@ -1,5 +1,5 @@
-import { defineComponent, h } from "vue";
 import { useFullscreen } from "@vueuse/core";
+import { defineComponent, h } from "vue";
 import { CancelFullScreenIcon, EnterFullScreenIcon } from "./icons";
 
 import type { VNode } from "vue";
