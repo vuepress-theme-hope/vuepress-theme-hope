@@ -11,13 +11,13 @@ import type { ResolvedSidebarItem } from "../../../../shared";
 
 import "../styles/sidebar-links.scss";
 
-const descendantIsActive = (
+const isDescendantActive = (
   route: RouteLocationNormalized,
   item: ResolvedSidebarItem
 ): boolean => {
   if (item.type === "group")
     return item.children.some((child) => {
-      if (child.type === "group") return descendantIsActive(route, child);
+      if (child.type === "group") return isDescendantActive(route, child);
 
       return child.type === "page" && isActiveSidebarItem(route, child, true);
     });
@@ -30,7 +30,7 @@ const resolveOpenGroupIndex = (
   items: ResolvedSidebarItem[]
 ): number => {
   for (let i = 0; i < items.length; i++)
-    if (descendantIsActive(route, items[i])) return i;
+    if (isDescendantActive(route, items[i])) return i;
 
   return -1;
 };
@@ -47,18 +47,18 @@ export default defineComponent({
 
   setup(props) {
     const route = useRoute();
-    const openGroupIndex = ref(0);
+    const openGroupIndex = ref(-1);
 
     const toggleGroup = (index: number): void => {
       openGroupIndex.value = index === openGroupIndex.value ? -1 : index;
     };
 
     watch(
-      () => route.path,
+      () => [route.path, props.config],
       (): void => {
         const index = resolveOpenGroupIndex(route, props.config);
 
-        if (index > -1) openGroupIndex.value = index;
+        openGroupIndex.value = index;
       },
       { immediate: true }
     );
