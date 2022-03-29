@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.27...v2.0.0-beta.28) (2022-03-29)
+
+### Bug Fixes
+
+- **theme:** fix fullscreen button ([81af64a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81af64a19c17d7cbf733f9ba57015e529a6aab00))
+- **theme:** fix sidebar on firefox ([c049333](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c04933319551529b03c636e39002b5b9f0921eda))
+- **theme:** fix SidebarLinks collapse, fix [#1608](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1608) ([955a6e1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/955a6e17ce4b814265fb8684a4c6a86f35025f4b))
+- **theme:** fix TOC headerDepth ([fe4e079](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe4e0798ee73a3d8cb32aa0f4aa544b6c72b0321))
+
 # [2.0.0-beta.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.26...v2.0.0-beta.27) (2022-03-25)
 
 ### Bug Fixes

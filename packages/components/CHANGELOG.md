@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.27...v2.0.0-beta.28) (2022-03-29)
+
+### Bug Fixes
+
+- **components:** fix TOC scrollbar ([3ca7892](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3ca78927f4dab7001958c431a49e11645943bf09))
+- **theme:** fix fullscreen button ([81af64a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81af64a19c17d7cbf733f9ba57015e529a6aab00))
+
 # [2.0.0-beta.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.26...v2.0.0-beta.27) (2022-03-25)
 
 **Note:** Version bump only for package @mr-hope/vuepress-plugin-components
