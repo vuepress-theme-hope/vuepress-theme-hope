@@ -115,7 +115,7 @@
     "cpx2": "4.2.0",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.11.0",
+    "eslint": "8.12.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-vue": "8.5.0",
