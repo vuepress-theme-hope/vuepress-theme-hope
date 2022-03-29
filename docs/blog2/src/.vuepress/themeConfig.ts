@@ -13,9 +13,9 @@ export default defineThemeConfig({
 
   iconPrefix: "iconfont icon-",
 
-  repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-
-  docsDir: "docs/blog/src",
+  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/blog2/",
+  docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
+  docsDir: "docs/blog2/src",
 
   logo: "/logo.svg",
 

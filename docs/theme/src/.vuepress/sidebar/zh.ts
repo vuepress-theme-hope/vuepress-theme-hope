@@ -187,7 +187,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     },
     "changelog",
     "faq",
-    "demo/",
+    "demo",
     "contribution",
   ],
 });

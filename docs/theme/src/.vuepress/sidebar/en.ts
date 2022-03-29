@@ -187,7 +187,7 @@ export const enSidebarConfig = defineSidebarConfig({
     },
     "changelog",
     "faq",
-    "demo/",
+    "demo",
     "contribution",
   ],
 });

@@ -16,7 +16,7 @@ export const enNavbarConfig = defineNavbarConfig([
     icon: "info",
     children: [
       "/changelog",
-      "/demo/",
+      "/demo",
       "/contribution",
       {
         text: "Plugins",

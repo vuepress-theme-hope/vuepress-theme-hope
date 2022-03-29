@@ -17,7 +17,7 @@ export default defineThemeConfig({
 
   logo: "/logo.svg",
 
-  repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+  repo: "vuepress-theme-hope/vuepress-theme-hope",
 
   docsDir: "demo/src",
 

@@ -1095,7 +1095,7 @@ module.exports = defineSidebarConfig({
     },
     "changelog",
     "faq",
-    "demo/",
+    "demo",
     "contribution",
   ],
 });

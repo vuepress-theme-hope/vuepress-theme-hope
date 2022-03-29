@@ -15,8 +15,8 @@ export default defineThemeConfig({
 
   iconPrefix: "iconfont icon-",
 
-  repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-
+  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/",
+  docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
   docsDir: "docs/md-enhance/src",
 
   logo: "/logo.svg",
