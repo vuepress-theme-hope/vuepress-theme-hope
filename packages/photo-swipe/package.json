@@ -34,12 +34,6 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "demo:vite-build": "vuepress-vite build __tests__/demo",
-    "demo:vite-clean-serve": "vuepress-vite dev __tests__/demo --clean-cache",
-    "demo:vite-serve": "vuepress-vite dev __tests__/demo",
-    "demo:webpack-build": "vuepress-webpack build __tests__/demo",
-    "demo:webpack-clean-serve": "vuepress-webpack dev __tests__/demo --clean-cache",
-    "demo:webpack-serve": "vuepress-webpack dev __tests__/demo",
     "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
     "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"

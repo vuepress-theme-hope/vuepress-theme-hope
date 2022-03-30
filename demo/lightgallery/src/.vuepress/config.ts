@@ -6,12 +6,21 @@ const VuePress_BASE = process.env.VuePress_BASE as "/" | `/${string}/`;
 export default defineUserConfig<DefaultThemeOptions>({
   base: VuePress_BASE || "/",
 
-  title: "Copy Code",
-  description: "Copy code button for VuePress2",
+  title: "Lightgallery",
+  description: "Image preview plugin for VuePress2",
 
   themeConfig: {
     logo: "/logo.svg",
+
+    navbar: [
+      { text: "Home", link: "/" },
+      { text: "Test", link: "/test" },
+    ],
+
+    themePlugins: {
+      mediumZoom: false,
+    },
   },
 
-  plugins: ["copy-code2"],
+  plugins: ["lightgallery"],
 });
