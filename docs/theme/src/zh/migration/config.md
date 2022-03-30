@@ -14,8 +14,7 @@ tag:
 - `themeConfig` 重命名为 `defineThemeConfig`
 - `navbarConfig` 重命名为 `defineNavbarConfig`
 - `sidebarConfig` 重命名为 `defineSidebarConfig`
-
-  同时新提供 `defineSidebarArrayConfig`, `defineSidebarObjectConfig`
+- 新增 `defineSidebarArrayConfig`, `defineSidebarObjectConfig`
 
 ## 主题配置
 
@@ -136,6 +135,10 @@ tag:
   - `plugins.mdEnhance.codegroup` 的主题默认值由 `true` 改为 `false`
 
   - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false`
+
+  - 新增 `plugins.mdEnhance.gfm`
+
+    一键支持 GFM
 
   - 新增 `plugins.mdEnhance.vpre`
 

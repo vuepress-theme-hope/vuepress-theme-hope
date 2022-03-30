@@ -13,15 +13,15 @@ tag:
 
 ### Obsolete
 
-- `time` is marked as deprecated, use `date` instead
+- mark `time` as deprecated, use `date` instead
 
-- `categories` marked as deprecated, use `category` instead
+- mark `categories` as deprecated, use `category` instead
 
-- `tags` marked as deprecated, use `tag` instead
+- mark `tags` as deprecated, use `tag` instead
 
-### Change
+### Changes
 
-- `author` type changed from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
+- change `author` type from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
 
   ```ts
   interface AuthorInfo {
@@ -32,25 +32,25 @@ tag:
 
   This change allows you to add multiple authors and set up sites for them.
 
-- `date` now only supports standard DateString marked with `-`
+- `date` only supports standard DateString mark with `-`
 
-- `category` type change from `string | undefined` to `string[] | string | undefined`
+- change `category` type from `string | undefined` to `string[] | string | undefined`
 
-  The theme now supports multiple categories.
+  The theme supports multiple categories.
 
-- `pageInfo` type changed from `PageInfo[] | false` to `ArticleInfo[] | false`.
+- change `pageInfo` type from `PageInfo[] | false` to `ArticleInfo[] | false`.
 
-  Available values ​​changed from `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` to `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"Visitor"`
+  Available values ​​change from `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` to `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"Visitor"`
 
-- `sidebarDepth` renamed to `headerDepth`
+- rename `sidebarDepth` to `headerDepth`
 
-- `copyrightText` renamed to `copyright`
+- rename `copyrightText` to `copyright`
 
-- `anchorDisplay` renamed to `toc`
+- rename `anchorDisplay` to `toc`
 
-- `updateTime` renamed to `lastUpdated`
+- rename `updateTime` to `lastUpdated`
 
-- `prev` and `next` types changed from `string | false` to `AutoLink | string | false`
+- change `prev` and `next` types from `string | false` to `AutoLink | string | false`
 
   ```ts
   interface AutoLink {
@@ -60,13 +60,13 @@ tag:
   }
   ```
 
-### remove
+### Deletion
 
 - remove `password`
 
   For security reasons, V2 removes this method of encrypting the original text of the cipher.
 
-- remove original `copyright`
+- remove `copyright`
 
   Related plugin is not yet compatible with V2.
 
@@ -78,8 +78,8 @@ tag:
 
 ### Project HomePage
 
-Project HomePage frontmatter options are changed.
+Project HomePage frontmatter options are change.
 
-- `title` renamed to `heroText`
-- `darkHeroImage` renamed to `heroImageDark`
-- `action` renamed to `actions`
+- rename `title` to `heroText`
+- rename `darkHeroImage` to `heroImageDark`
+- rename `action` to `actions`
