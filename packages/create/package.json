@@ -23,8 +23,14 @@
     "url": "https://mrhope.site"
   },
   "bin": {
-    "create-vuepress-theme-hope": "./lib/node/index.js"
+    "create-vuepress-theme-hope": "./lib/index.js"
   },
+  "files": [
+    "lib",
+    "src",
+    "template",
+    "workflows"
+  ],
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",

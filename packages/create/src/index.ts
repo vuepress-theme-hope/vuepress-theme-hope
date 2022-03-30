@@ -34,8 +34,8 @@ cli
 
     console.log(message.getVersion);
 
-    const vuepressVersion = await checkForNextVersion("vuepress");
-    const themeVersion = await checkForNextVersion("vuepress-theme-hope");
+    const vuepressVersion = await checkForNextVersion("vuepress", bin);
+    const themeVersion = await checkForNextVersion("vuepress-theme-hope", bin);
 
     const devDependencies = {
       vuepress: `^${vuepressVersion}`,
@@ -133,9 +133,28 @@ cli
     const templateFolder = i18n === "Yes" ? "i18n" : lang;
 
     copy(
-      resolve(__dirname, "../../template", templateFolder),
+      resolve(__dirname, "../template", templateFolder),
       resolve(process.cwd(), dir)
     );
+
+    interface WorkflowAction {
+      workflow: "Yes" | "No";
+    }
+
+    const { workflow } = await prompt<WorkflowAction>([
+      {
+        name: "workflow",
+        type: "list",
+        message: message.workflowMessage,
+        choices: ["Yes", "No"],
+      },
+    ]);
+
+    if (workflow === "Yes")
+      copy(
+        resolve(__dirname, "../workflows", lang),
+        resolve(process.cwd(), ".github/workflows")
+      );
 
     console.log(message.install);
     console.warn(message.wait);

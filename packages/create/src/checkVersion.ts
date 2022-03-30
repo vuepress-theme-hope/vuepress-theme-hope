@@ -1,9 +1,16 @@
 import { get } from "https";
 
-export const checkForNextVersion = (packageName: string): Promise<string> =>
+export const checkForNextVersion = (
+  packageName: string,
+  bin: "npm" | "yarn"
+): Promise<string> =>
   new Promise((resolve, reject) => {
     get(
-      `https://registry.npmjs.org/-/package/${packageName}/dist-tags`,
+      `${
+        bin === "npm"
+          ? "https://registry.npmjs.org"
+          : "https://registry.yarnpkg.com"
+      }/-/package/${packageName}/dist-tags`,
       (res) => {
         if (res.statusCode === 200) {
           let body = "";
