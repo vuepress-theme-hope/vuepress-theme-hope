@@ -31,7 +31,7 @@ export const rollupTypescript = (
     output: [
       {
         file: `./lib/${filePath}.js`,
-        format: filePath.startsWith("node/") ? "cjs" : "esm",
+        format: filePath.startsWith("client/") ? "esm" : "cjs",
         sourcemap: true,
         exports: "named",
         ...output,

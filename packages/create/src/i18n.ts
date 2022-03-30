@@ -20,6 +20,7 @@ export interface CreateI18n {
   descriptionMessage: string;
   licenseMessage: string;
   i18nMessage: string;
+  workflowMessage: string;
 }
 
 export const i18n: Record<Lang, CreateI18n> = {
@@ -43,6 +44,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     descriptionMessage: "设置应用描述",
     licenseMessage: "设置协议",
     i18nMessage: "项目需要用到多语言么?",
+    workflowMessage: "是否需要一个自动部署文档到 GitHub Pages 的工作流？",
   },
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "en-US": {
@@ -66,6 +68,8 @@ export const i18n: Record<Lang, CreateI18n> = {
     descriptionMessage: "Your project description",
     licenseMessage: "Your project lincense",
     i18nMessage: "Does the project need mutiple languages?",
+    workflowMessage:
+      "Do you need a GitHub workflow to deploy docs on GitHub pages?",
   },
 };
 
