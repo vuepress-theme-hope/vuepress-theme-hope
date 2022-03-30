@@ -115,42 +115,33 @@ cli
       );
     }
 
-    interface I18nAnswer {
-      i18n: "Yes" | "No";
-    }
-
-    const { i18n } = await prompt<I18nAnswer>([
+    const { i18n, workflow } = await prompt<{
+      i18n: boolean;
+      workflow: boolean;
+    }>([
       {
         name: "i18n",
-        type: "list",
+        type: "confirm",
         message: message.i18nMessage,
-        choices: ["Yes", "No"],
+      },
+      {
+        name: "workflow",
+        type: "confirm",
+        message: message.workflowMessage,
+        default: true,
       },
     ]);
 
     console.log(message.template);
 
-    const templateFolder = i18n === "Yes" ? "i18n" : lang;
+    const templateFolder = i18n ? "i18n" : lang;
 
     copy(
       resolve(__dirname, "../template", templateFolder),
       resolve(process.cwd(), dir)
     );
 
-    interface WorkflowAction {
-      workflow: "Yes" | "No";
-    }
-
-    const { workflow } = await prompt<WorkflowAction>([
-      {
-        name: "workflow",
-        type: "list",
-        message: message.workflowMessage,
-        choices: ["Yes", "No"],
-      },
-    ]);
-
-    if (workflow === "Yes")
+    if (workflow)
       copy(
         resolve(__dirname, "../workflows", lang),
         resolve(process.cwd(), ".github/workflows")
@@ -167,16 +158,16 @@ cli
 
     console.log(message.success);
 
-    const { choise } = await prompt<{ choise: "Yes" | "No" }>([
+    const { choise } = await prompt<{ choise: boolean }>([
       {
         name: "choise",
-        type: "list",
+        type: "confirm",
         message: message.devServerAsk,
-        choices: ["Yes", "No"],
+        default: true,
       },
     ]);
 
-    if (choise === "Yes") {
+    if (choise) {
       console.log(message.devServer);
 
       await execa(bin, ["run", "docs:dev"], {
