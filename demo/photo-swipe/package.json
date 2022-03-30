@@ -1,0 +1,21 @@
+{
+  "name": "photo-swipe-demo",
+  "version": "2.0.0-beta.28",
+  "private": true,
+  "description": "Demo for vuepress-plugin-photo-swipe",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "vite-build": "vuepress-vite build src",
+    "vite-clean-serve": "vuepress-vite dev src --clean-cache",
+    "vite-serve": "vuepress-vite dev src",
+    "webpack-build": "vuepress-webpack build src",
+    "webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
+    "webpack-serve": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "vuepress-plugin-photo-swipe": "2.0.0-beta.28",
+    "vuepress-vite": "2.0.0-beta.36",
+    "vuepress-webpack": "2.0.0-beta.36"
+  }
+}
