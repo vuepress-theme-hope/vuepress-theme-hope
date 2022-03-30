@@ -86,7 +86,11 @@ module.exports = defineHopeConfig({
 
 为了正常的使用插件，你需要正确传入 `apiKey`、`indexName` 和 `appId`，并按照下列要求正确设置 Algolia Crawler。
 
-::: details 爬虫配置示例
+::: details 配置爬虫
+
+你应该去 [Algolia Crawler](https://crawler.algolia.com/admin/crawlers/) 来更新你的爬虫配置。
+
+以下是配置选项和说明:
 
 ```js {36-50,58}
 new Crawler({

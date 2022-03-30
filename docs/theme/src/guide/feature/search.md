@@ -30,7 +30,11 @@ You can pass plugin options via `themeConfig.plugins.docsearch`.
 
 To use the plugin properly, you need to pass in `apiKey`, `indexName` and `appId` correctly, and set up the Algolia Crawler correctly according to the following requirements.
 
-::: details Crawler Config Example
+::: details Setting Crawler Config
+
+You should go to [Algolia Crawler](https://crawler.algolia.com/admin/crawlers/) to update your crawler config.
+
+Here are config options and descriptions:
 
 ```js {35-51,60}
 new Crawler({

@@ -10,16 +10,15 @@ tag:
 
 ## Theme Usage
 
-- `config` renamed to `defineHopeConfig`
-- `themeConfig` renamed to `defineThemeConfig`
-- `navbarConfig` renamed to `defineNavbarConfig`
-- `sidebarConfig` renamed to `defineSidebarConfig`
-
-  At the same time, `defineSidebarArrayConfig`, `defineSidebarObjectConfig` are newly provided
+- rename `config` to `defineHopeConfig`
+- rename `themeConfig` to `defineThemeConfig`
+- rename `navbarConfig` to `defineNavbarConfig`
+- rename `sidebarConfig` to `defineSidebarConfig`
+- added `defineSidebarArrayConfig` and `defineSidebarObjectConfig` helpers
 
 ## ThemeConfig
 
-- `author` type changed from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
+- changed `author` type from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
 
   ```ts
   interface AuthorInfo {
@@ -32,76 +31,78 @@ tag:
 
 ### Navigation Bar
 
-- `nav`, `navbar` unified to `navbar`
+- unified `nav`, `navbar` to `navbar`
 
-- `darkLogo` renamed to `logoDark`
+- rename `darkLogo` to `logoDark`
 
-- `navAutoHide` renamed to `navbarAutoHide`
+- rename `navAutoHide`to `navbarAutoHide`
 
-- Added `navbarIcon` option
-
-Since the theme no longer has a built-in search:
-
-- Removed `search`, `searchPlaceholder`, `searchMaxSuggestions`
-
-- remove `algolia`, `algoliaType`
+- added `navbarIcon` option
 
 ### Sidebar
 
-- `sidebarDepth` renamed to `headerDepth`
+- rename `sidebarDepth` to `headerDepth`
 
 - remove `displayAllHeaders`
 
 ### Navbar Sidebar Config Unified
 
-- `items` in navbar config changed to `children`
+- change `items` in navbar config to `children`
 
-- Changed `title` to `text` and `path` to `link` in sidebar configuration.
+- change `title` to `text` and `path` to `link` in sidebar configuration.
 
-- The V2 navbar supports setting the Markdown file path directly like the sidebar to automatically generate text, icons and links
+- V2 navbar supports setting the Markdown file path directly like the sidebar to automatically generate text, icons and links
 
-In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`, `children`.
+- add `activeMatch` to control route activation
 
-- Added `activeMatch` to control activation in both configurations
+So both configs are unified as `text`, `icon`, `prefix`, `link`, `children`, `activeMatch`.
+
+### Search
+
+Since the theme no longer has a built-in search:
+
+- remove `search`, `searchPlaceholder`, `searchMaxSuggestions`
+
+- remove `algolia`, `algoliaType`
 
 ### Page Link
 
 - remove `prevLinks` and `nextLinks`
 
-- `editLinks` renamed to `editLink`
+- rename `editLinks` to `editLink`
 
-- `updateTime` renamed to `lastUpdated`
+- rename `updateTime` to `lastUpdated`
 
 ### Outlook
 
-- `iconPrefix` default value is cleared from `icon-`.
+- clear `iconPrefix` default value from `icon-`.
 
-  You now need to configure it yourself according to the Font Class that uses the icon
+  You now need to set this option according to icons you are using
 
   - If you use IconFont, you may need to set it to `iconfont icon-`
   - If you use FontAwesome, you may need to set it to `fa fa-`
 
-- `darkmode` added `"force-dark"` to force dark mode
+- add `"force-dark"` in `darkmode` option
 
 ### Blog Config
 
-- Blog config now supports separate config in each language
+- supports separate config in each language
 
-- Added `blog.description` to set blogger description or motto
+- add `blog.description` to set blogger description or motto
 
-- `blog.links` renamed to `blog.medias`
+- rename `blog.links` to `blog.medias`
 
-- `blog.roundAvatar` default value changed from `true` to `false`
+- change default value of `blog.roundAvatar` from `true` to `false`
 
-- `blog.perPage` renamed to `blog.articlePerPage`
+- rename `blog.perPage` to `blog.articlePerPage`
 
-- `blog.autoExcerpt` moved to `plugins.blog.autoExcerpt`, and default value changed from `true` to `false`
+- move `blog.autoExcerpt` to `plugins.blog.autoExcerpt`, and change default value from `true` to `false`
 
 ### Encryption Config
 
-- `encrypt.status: "global" | "local"` (default `"local"`) changed to `encrypt.global: boolean` (default `false`)
+- change `encrypt.status: "global" | "local"` (default `"local"`) to `encrypt.global: boolean` (default `false`)
 
-- `encrypt.global` renamed to `encrypt.admin`
+- rename `encrypt.global` to `encrypt.admin`
 
 ### custom layout
 
@@ -109,35 +110,43 @@ In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`,
 
 ### Page Layout
 
-- `anchorDisplay` renamed to `toc`
+- rename `anchorDisplay` to `toc`
 
 ### Reading Speed
 
-- `wordPerMinute` moved to `plugins.readingTime.wordPerMinute`
+- move `wordPerMinute` to `plugins.readingTime.wordPerMinute`
 
 ## Plugin Changes
 
+### Addition
+
+- Added `plugins.blog` to control blog links
+
 ### Changes
 
-All plugin related options have been moved under `plugins`.
+Move all plugin related options under `plugins`.
 
-- `activeHeaderLinks` moved to `plugins.activeHeaderLinks`
+- move `activeHeaderLinks` to `plugins.activeHeaderLinks`
 
-- `comment` moved to `plugins.comment`
+- move `comment` moved to `plugins.comment`
 
-- `copyCode` moved to `plugins.copyCode`
+- move `copyCode` to `plugins.copyCode`
 
-- `feed` moved to `plugins.feed`
+- move `feed` to `plugins.feed`
 
   The theme no longer outputs feed files in three formats by default. If necessary, please set options to output formats needed.
 
-- `mdEnhance` moved to `plugins.mdEnhance`
+- move `mdEnhance` to `plugins.mdEnhance`
 
-  - Theme default value for `plugins.mdEnhance.codegroup` changed from `true` to `false`
+  - change default value of `plugins.mdEnhance.codegroup` from `true` to `false`
 
-  - `plugins.mdEnhance.lazyLoad` default value changed from `true` to `false`
+  - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false`
 
-  - Added `plugins.mdEnhance.vpre`
+  - add `plugins.mdEnhance.gfm`
+
+    Control supporting gfm
+
+  - add `plugins.mdEnhance.vpre`
 
     The following syntax is no longer built into VuePress2.
 
@@ -147,7 +156,7 @@ All plugin related options have been moved under `plugins`.
     :::
     ```
 
-  - Removed `plugins.mdEnhance.lineNumbers`
+  - remove `plugins.mdEnhance.lineNumbers`
 
     VuePress2 supports line numbers config for code blocks individually
 
@@ -155,21 +164,17 @@ All plugin related options have been moved under `plugins`.
 
     Image related issues have been fixed in V2
 
-- `photoSwipe` moved to `plugins.photoSwipe`
+- move `photoSwipe` to `plugins.photoSwipe`
 
-- `pwa` moved to `plugins.pwa`
+- move `pwa` to `plugins.pwa`
 
-- `readingTime` moved to `plugins.readingTime`
+- move `readingTime` to `plugins.readingTime`
 
-- `seo` moved to `plugins.seo`
+- move `seo` to `plugins.seo`
 
-- `sitemap` moved to `plugins.sitemap`
+- move `sitemap` to `plugins.sitemap`
 
-### Add
-
-- Added `plugins.blog` to control blog address
-
-### Remove
+### Deletion
 
 - remove `activeHash`
 
