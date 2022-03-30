@@ -34,7 +34,6 @@ const commentTheme: Theme<DefaultThemeOptions> = {
          * Using Waline
          */
         type: "waline",
-        author: "Mr.Hope",
         serverURL: "https://vuepress-theme-hope-comment.vercel.app",
       },
     ],
