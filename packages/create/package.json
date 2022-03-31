@@ -38,7 +38,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/inquirer": "^8.2.0",
+    "@types/inquirer": "^8.2.1",
     "cac": "^6.7.12",
     "execa": "^5.1.1",
     "inquirer": "^8.2.2"
