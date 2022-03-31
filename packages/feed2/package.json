@@ -42,11 +42,11 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-beta.28",
-    "@vuepress/utils": "2.0.0-beta.35",
+    "@vuepress/utils": "2.0.0-beta.37",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.36"
+    "@vuepress/core": "2.0.0-beta.37"
   },
   "publishConfig": {
     "access": "public"

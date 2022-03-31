@@ -47,8 +47,8 @@
   "dependencies": {
     "@giscus/vue": "^1.1.1",
     "@mr-hope/vuepress-shared": "2.0.0-beta.28",
-    "@vuepress/client": "2.0.0-beta.35",
-    "@vuepress/utils": "2.0.0-beta.35",
+    "@vuepress/client": "2.0.0-beta.37",
+    "@vuepress/utils": "2.0.0-beta.37",
     "@waline/client": "^1.6.0",
     "twikoo": "^1.5.0",
     "vue": "^3.2.31",
@@ -56,7 +56,7 @@
     "vuepress-plugin-sass-palette": "2.0.0-beta.28"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.36"
+    "@vuepress/core": "2.0.0-beta.37"
   },
   "publishConfig": {
     "access": "public"

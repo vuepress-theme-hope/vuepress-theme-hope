@@ -31,6 +31,7 @@ import type StateInline from "markdown-it/lib/rules_inline/state_inline";
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleInline } from "markdown-it/lib/parser_inline";
 import type { RuleBlock } from "markdown-it/lib/parser_block";
+import type { KatexOptions } from "katex";
 
 /*
  * Test if potential opening or closing delimieter
@@ -197,7 +198,7 @@ const blockTex: RuleBlock = (state, start, end, silent) => {
 };
 
 // set KaTeX as the renderer for markdown-it-simplemath
-const katexInline = (tex: string, options: Katex.KatexOptions): string => {
+const katexInline = (tex: string, options: KatexOptions): string => {
   try {
     return Katex.renderToString(tex, { ...options, displayMode: false });
   } catch (error) {
@@ -209,7 +210,7 @@ const katexInline = (tex: string, options: Katex.KatexOptions): string => {
   }
 };
 
-const katexBlock = (tex: string, options: Katex.KatexOptions): string => {
+const katexBlock = (tex: string, options: KatexOptions): string => {
   try {
     return `<p class='katex-block'>${Katex.renderToString(tex, {
       ...options,
@@ -226,7 +227,7 @@ const katexBlock = (tex: string, options: Katex.KatexOptions): string => {
   }
 };
 
-export const katex: PluginWithOptions<Katex.KatexOptions> = (
+export const katex: PluginWithOptions<KatexOptions> = (
   md,
   options = { throwOnError: false }
 ) => {
