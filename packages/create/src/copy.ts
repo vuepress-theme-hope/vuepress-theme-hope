@@ -11,7 +11,7 @@ const ensureDirExistSync = (dirPath: string): void => {
   try {
     readdirSync(dirPath);
   } catch (err) {
-    mkdirSync(dirPath);
+    mkdirSync(dirPath, { recursive: true });
   }
 };
 

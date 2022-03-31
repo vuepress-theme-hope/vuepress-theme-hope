@@ -147,10 +147,10 @@ cli
         resolve(process.cwd(), ".github/workflows")
       );
 
+    const registry = await getRegistry(lang, bin);
+
     console.log(message.install);
     console.warn(message.wait);
-
-    const registry = await getRegistry(lang, bin);
 
     execa.sync(bin, ["install", "--registry", registry], {
       stdout: "inherit",
