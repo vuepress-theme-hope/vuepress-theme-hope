@@ -1,6 +1,12 @@
 ---
 title: 如何自定义样式
-icon: guide
+icon: style
+category:
+  - 教程知识
+  - 自定义
+tag:
+  - 自定义
+  - 样式
 ---
 
 本文简要介绍定制主题样式的方式。

@@ -47,7 +47,7 @@ description: 页面的描述
 ---
 ```
 
-你肯定注意到 Frontmatter 中的字段和[配置文件](./config.md#config-file)中的[站点配置](./config.md#站点配置)十分类似。你可以通过 Frontmatter 来覆盖当前页面的 `lang`, `title`, `description` 等属性。因此，你可以把 Frontmatter 当作页面级作用域的配置。
+你肯定注意到 Frontmatter 中的字段和 VuePress 配置文件中的站点配置十分类似。你可以通过 Frontmatter 来覆盖当前页面的 `lang`, `title`, `description` 等属性。因此，你可以把 Frontmatter 当作页面级作用域的配置。
 
 同样的，VuePress 有一些内置支持的 Frontmatter 字段，而你使用的主题也可能有它自己的特殊 Frontmatter 。
 

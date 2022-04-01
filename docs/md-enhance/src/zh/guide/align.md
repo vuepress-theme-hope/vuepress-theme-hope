@@ -64,7 +64,7 @@ module.exports = {
 ## 演示
 
 :::: danger W.I.P
-vuepress-theme-hope v2 仍在制作中，API 可能会有
+VuePress Theme Hope V2 版本仍在制作中，API 可能会有
 
 ::: center
 重大的变动。
@@ -80,7 +80,7 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ```md
 :::: danger W.I.P
-vuepress-theme-hope v2 仍在制作中，API 可能会有
+VuePress Theme Hope V2 版本仍在制作中，API 可能会有
 
 ::: center
 重大的变动。

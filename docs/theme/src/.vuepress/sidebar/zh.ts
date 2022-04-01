@@ -122,7 +122,20 @@ export const zhSidebarConfig = defineSidebarConfig({
   ],
 
   "/zh/cookbook/": [
-    "tutorial",
+    {
+      text: "教程",
+      icon: "guide",
+      prefix: "tutorial/",
+      children: [
+        "env",
+        "create",
+        "command",
+        "content",
+        "config",
+        "structure",
+        "deploy",
+      ],
+    },
     {
       text: "Markdown",
       icon: "markdown",
@@ -148,7 +161,13 @@ export const zhSidebarConfig = defineSidebarConfig({
       collapsable: true,
       children: ["", "file", "markdown", "config", "plugin", "theme"],
     },
-    "style",
+    {
+      text: "自定义",
+      icon: "customize",
+      prefix: "customize/",
+      collapsable: true,
+      children: ["style"],
+    },
   ],
 
   "/zh/": [
@@ -177,7 +196,7 @@ export const zhSidebarConfig = defineSidebarConfig({
       text: "教程",
       icon: "guide",
       prefix: "cookbook/",
-      children: ["tutorial", "markdown/", "vuepress/", "style"],
+      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
     },
     {
       text: "迁移",

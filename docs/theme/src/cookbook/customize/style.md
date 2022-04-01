@@ -1,6 +1,12 @@
 ---
 title: Style Customization
-icon: guide
+icon: style
+category:
+  - Cookbook
+  - Customize
+tag:
+  - Customize
+  - Style
 ---
 
 This article briefly describes how to customize theme styles.

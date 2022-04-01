@@ -64,7 +64,7 @@ module.exports = {
 ## Demo
 
 :::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+VuePress Theme Hope V2 version is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
@@ -79,7 +79,7 @@ If you meet a bug during usage, you can
 
 ```md
 :::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+VuePress Theme Hope V2 version is still in W.I.P, the API may have
 
 ::: center
 Significant changes.

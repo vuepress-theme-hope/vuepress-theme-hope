@@ -159,6 +159,10 @@ module.exports = defineHopeConfig({
 
 ::::
 
+## Step by Step Tutorial
+
+- [Tutorial](cookbook/tutorial/README.md)
+
 ## Telegram Group
 
 - [vuepressthemehope](https://t.me/vuepressthemehope)

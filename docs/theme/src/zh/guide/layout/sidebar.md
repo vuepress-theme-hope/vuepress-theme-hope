@@ -1031,7 +1031,20 @@ module.exports = defineSidebarConfig({
   ],
 
   "/zh/cookbook/": [
-    "tutorial",
+    {
+      text: "教程",
+      icon: "guide",
+      prefix: "tutorial/",
+      children: [
+        "env",
+        "create",
+        "command",
+        "content",
+        "config",
+        "structure",
+        "deploy",
+      ],
+    },
     {
       text: "Markdown",
       icon: "markdown",
@@ -1053,6 +1066,13 @@ module.exports = defineSidebarConfig({
       icon: "vue",
       prefix: "vuepress/",
       children: ["", "file", "markdown", "config", "plugin", "theme"],
+    },
+    {
+      text: "自定义",
+      icon: "customize",
+      prefix: "customize/",
+      collapsable: true,
+      children: ["style"],
     },
   ],
 
@@ -1081,7 +1101,7 @@ module.exports = defineSidebarConfig({
       text: "教程",
       icon: "guide",
       prefix: "cookbook/",
-      children: ["tutorial", "markdown/", "vuepress/"],
+      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
     },
     {
       text: "迁移",

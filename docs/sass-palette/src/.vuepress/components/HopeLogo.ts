@@ -83,7 +83,7 @@ export default defineComponent({
                 roughnessMap: roughnessTexture,
                 displacementScale: 0.15,
                 emissiveIntensity: 0.4,
-                refractionRatio: 1,
+                reflectivity: 1,
               });
               logo1 = new THREE.Mesh(geometry, material);
               logo1.castShadow = true;
@@ -105,7 +105,7 @@ export default defineComponent({
                 roughnessMap: roughnessTexture,
                 displacementScale: 0.15,
                 emissiveIntensity: 0.4,
-                refractionRatio: 1,
+                reflectivity: 1,
               });
               logo2 = new THREE.Mesh(geometry, material);
               logo2.castShadow = true;

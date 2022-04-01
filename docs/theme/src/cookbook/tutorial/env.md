@@ -1,0 +1,92 @@
+---
+title: Setting Environment
+icon: leaf
+category:
+  - Cookbook
+  - Tutorial
+  - Get Started
+tag:
+  - Setting Environment
+---
+
+This tutorial will guide you on how to set up a VuePress runtime environment.
+
+## Node.js
+
+[Node.js®](https://nodejs.org/en/) is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
+
+You need to download and install the latest long-term maintenance release on your computer.
+
+### Download Node.js LTS
+
+[Download link](https://nodejs.org/en/).
+
+::: note
+
+In the opened page, click the green button on the left to complete the download.
+
+:::
+
+### Install Node.js LTS
+
+During the installation process, keep all the default settings and go all the way to the next step.
+
+::: warning
+
+If you are a real novice, please do not change the default installation directory.
+
+Node.js itself will only take up a few dozen megabytes of space!
+
+:::
+
+## Editor
+
+You need an editor to edit your project, and we recommend using VSCode to write and run your VuePress projects.
+
+### Download VSCode
+
+[Download link](https://code.visualstudio.com/)
+
+::: tip
+
+Please click the blue button on the left to complete the download.
+
+:::
+
+### Install VSCode
+
+1. Double-click the installation package to open
+
+1. Agree to the User Agreement.
+
+1. In the installation options, be sure to **select all** the following options:
+
+   Check **Add to directory context menu**, **Add to file context menu**, **Register code as a supported file editor**, **Add to path**.
+
+1. After the initial startup of VS Code, if Git is not installed in advance, it may prompt that the Git software is not found, just ignore it.
+
+## Yarn
+
+After you install Node.js, please install Yarn V1 version.
+
+::: tip
+
+We recommend that you use Yarn to manage your project, because VuePress and VuePress Theme Hope both use Yarn to manage dependencies.
+
+Some features of Yarn ensure that you have the correct dependencies.
+
+:::
+
+### Install Yarn
+
+Install Yarn by entering the following command in the terminal:
+
+```sh
+npm i -g yarn
+```
+
+::: tip Open Terminal on Windows
+
+Please use the file manager to open the corresponding folder, then enter `cmd` in the address bar above and press Enter.
+
+:::

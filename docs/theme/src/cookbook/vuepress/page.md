@@ -47,14 +47,16 @@ description: Description of this page
 ---
 ```
 
-You must have noticed that those fields are similar with the [Site Config](./config.md#site-config) in the [Config File](./config.md#config-file). You can override `lang`, `title`, `description`, etc., of current page via frontmatter. So you can take frontmatter as page scope config.
+You must have noticed that those fields are similar with the Site Config in Config File. You can override `lang`, `title`, `description`, etc., of current page via frontmatter. So you can take frontmatter as page scope config.
 
 Also, VuePress has built-in support for some frontmatter fields, and your theme may have its own special frontmatter, too.
 
 ::: tip
+
 Check out the [Frontmatter Reference](https://v2.vuepress.vuejs.org/reference/frontmatter.md) for a full list of VuePress built-in frontmatter.
 
 Check out the [Default Theme > Frontmatter Reference](https://v2.vuepress.vuejs.org/reference/default-theme/frontmatter.md) for the frontmatter of default theme.
+
 :::
 
 ## Content

@@ -159,6 +159,10 @@ module.exports = defineHopeConfig({
 
 ::::
 
+## 使用教程
+
+- [详细小白教程](cookbook/tutorial/README.md)
+
 ## 官方 QQ 群
 
 - [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
