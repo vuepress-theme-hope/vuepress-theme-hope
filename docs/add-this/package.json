@@ -20,7 +20,7 @@
   "dependencies": {
     "@types/three": "0.139.0",
     "@vuepress/plugin-docsearch": "2.0.0-beta.37",
-    "three": "0.139.1",
+    "three": "0.139.2",
     "vuepress-plugin-add-this": "2.0.0-beta.29",
     "vuepress-theme-hope": "2.0.0-beta.29",
     "vuepress-vite": "2.0.0-beta.37",
