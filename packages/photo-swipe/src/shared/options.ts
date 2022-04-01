@@ -1,4 +1,6 @@
+import type { LocaleConfig } from "@vuepress/core";
 import type { PhotoSwipeInitOptions } from "./photoswipe";
+import type { PhotoSwipeLocaleData } from "./locales";
 
 export interface PhotoSwipeOptions {
   /**
@@ -29,4 +31,11 @@ export interface PhotoSwipeOptions {
    * 传递给 photo-swipe 的额外选项
    */
   options?: PhotoSwipeInitOptions;
+
+  /**
+   * Locale config
+   *
+   * 国际化配置
+   */
+  locales?: LocaleConfig<PhotoSwipeLocaleData>;
 }

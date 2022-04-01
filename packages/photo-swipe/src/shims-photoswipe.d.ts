@@ -115,6 +115,74 @@ declare module "photoswipe" {
      * String with name of class that will be added to root element of PhotoSwipe (.pswp). Can contain multiple classes separated by space.
      */
     mainClass?: string;
+
+    /**
+     * Whether display arrowPrev button
+     *
+     * @default true
+     */
+    arrowPrev?: boolean;
+
+    /**
+     * Whether display arrowNext button
+     *
+     * @default true
+     */
+    arrowNext?: boolean;
+
+    /**
+     * Whether display close button
+     *
+     * @default true
+     */
+    close?: boolean;
+
+    /**
+     * Whether display zoom button
+     *
+     * @default true
+     */
+    zoom?: boolean;
+
+    /**
+     * arrowPrev button svg
+     */
+    arrowPrevSVG?: string;
+
+    /**
+     * arrowNext button svg
+     */
+    arrowNextSVG?: string;
+
+    /**
+     * close button svg
+     */
+    closeSVG?: string;
+
+    /**
+     * zoom button svg
+     */
+    zoomSVG?: string;
+
+    /**
+     * arrowPrev button title
+     */
+    arrowPrevTitle?: string;
+
+    /**
+     * arrowNext button title
+     */
+    arrowNextTitle?: string;
+
+    /**
+     * close button title
+     */
+    closeTitle?: string;
+
+    /**
+     * zoom button title
+     */
+    zoomTitle?: string;
   }
 
   export interface PhotoSwipePoint {

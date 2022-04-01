@@ -1,14 +1,16 @@
+import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineClientAppSetup } from "@vuepress/client";
 import { useFullscreen } from "@vueuse/core";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { delay, imageSelector, options } from "./define";
+import { delay, imageSelector, locales, options } from "./define";
 import { getImages } from "./utils";
 
 import "photoswipe/dist/photoswipe.css";
 
 export default defineClientAppSetup(() => {
   const { isSupported, toggle } = useFullscreen();
+  const locale = useLocaleConfig(locales);
   const route = useRoute();
 
   const initPhotoSwipe = (): void => {
@@ -22,6 +24,7 @@ export default defineClientAppSetup(() => {
         image.addEventListener("click", (): void => {
           const gallery = new photoSwipe.default({
             dataSource: images.infos,
+            ...locale.value,
             ...options,
             index,
           });
@@ -30,7 +33,7 @@ export default defineClientAppSetup(() => {
             if (isSupported)
               // add fullscreen button
               gallery.ui.registerElement({
-                name: "fullscreen-button",
+                name: "fullscreen",
                 order: 7,
                 isButton: true,
 
@@ -43,7 +46,7 @@ export default defineClientAppSetup(() => {
 
             // add download button
             gallery.ui.registerElement({
-              name: "download-button",
+              name: "download",
               order: 8,
               isButton: true,
               tagName: "a",

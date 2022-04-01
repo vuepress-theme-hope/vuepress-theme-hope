@@ -10,6 +10,7 @@ export default [
   }),
   ...rollupTypescript("client/appSetup", {
     external: [
+      "@mr-hope/vuepress-shared",
       "@vuepress/client",
       "@vueuse/core",
       "photoswipe",
