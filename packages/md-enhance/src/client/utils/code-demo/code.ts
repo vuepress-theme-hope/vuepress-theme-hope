@@ -57,7 +57,7 @@ const getReactTemplate = (code: string): string =>
     .replace(
       /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
       ""
-    )};\nReactDOM.render(React.createElement($reactApp), document.getElementById("app"))`;
+    )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`;
 
 const getVueJsTemplate = (js: string): string =>
   js
