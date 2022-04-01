@@ -2416,10 +2416,10 @@
     "@babel/helper-module-imports" "^7.10.4"
     "@rollup/pluginutils" "^3.1.0"
 
-"@rollup/plugin-commonjs@21.0.3":
-  version "21.0.3"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-21.0.3.tgz#287896c64926ef3d7f0013708dcdcc1223576ef0"
-  integrity sha512-ThGfwyvcLc6cfP/MWxA5ACF+LZCvsuhUq7V5134Az1oQWsiC7lNpLT4mJI86WQunK7BYmpUiHmMk2Op6OAHs0g==
+"@rollup/plugin-commonjs@^22.0.0-13":
+  version "22.0.0-13"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-22.0.0-13.tgz#5fa99bc9a9b9a7629e8b2857b40e8ccf5d5fc6b0"
+  integrity sha512-KkDaDbqUD4kIhlIQ5z1cqiBu+MA8ebXAESoVxid/UXz47aghQvtajCzlRxXEB97aD9QJju8Hc6tkaCPaNqpt7g==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     commondir "^1.0.1"

@@ -2,14 +2,10 @@ import { rollupTypescript } from "../../scripts/rollup";
 
 export default rollupTypescript("index", {
   dts: false,
-  external: [
-    "@mr-hope/vuepress-shared",
-    "cac",
-    "execa",
-    "fs",
-    "https",
-    "inquirer",
-    "path",
-  ],
+  resolve: true,
+  external: ["fs", "https", "path"],
+  output: {
+    sourcemap: false,
+  },
   preserveShebang: true,
 });

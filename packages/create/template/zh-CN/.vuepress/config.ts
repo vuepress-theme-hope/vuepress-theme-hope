@@ -2,9 +2,11 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
 export default defineHopeConfig({
-  base: "/",
+  lang: "zh-CN",
+  title: "主题演示",
+  description: "vuepress-theme-hope 的演示",
 
-  dest: "./dist",
+  base: "/",
 
   head: [
     [
@@ -15,14 +17,6 @@ export default defineHopeConfig({
       },
     ],
   ],
-
-  locales: {
-    "/": {
-      lang: "zh-CN",
-      title: "主题演示",
-      description: "vuepress-theme-hope 的演示",
-    },
-  },
 
   themeConfig,
 });

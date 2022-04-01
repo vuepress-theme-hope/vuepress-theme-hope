@@ -2,9 +2,11 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
 export default defineHopeConfig({
-  base: "/",
+  lang: "en-US",
+  title: "Theme Demo",
+  description: "A demo for vuepress-theme-hope",
 
-  dest: "./dist",
+  base: "/",
 
   head: [
     [
@@ -15,14 +17,6 @@ export default defineHopeConfig({
       },
     ],
   ],
-
-  locales: {
-    "/": {
-      lang: "en-US",
-      title: "Theme Demo",
-      description: "A demo for vuepress-theme-hope",
-    },
-  },
 
   themeConfig,
 });

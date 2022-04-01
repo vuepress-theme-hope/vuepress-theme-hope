@@ -15,17 +15,18 @@ const getUserRegistry = (bin: string): string =>
 export const getRegistry = async (lang: Lang, bin: string): Promise<string> => {
   const userRegistry = getUserRegistry(bin);
 
-  if (lang === "en-US" || userRegistry === npmmirrorRegistry)
-    return userRegistry;
+  if (lang === "简体中文") {
+    const { registry } = await prompt<RegistryAnswer>([
+      {
+        name: "registry",
+        type: "list",
+        message: "选择你想使用的源",
+        choices: ["国内镜像源", "当前源"],
+      },
+    ]);
 
-  const { registry } = await prompt<RegistryAnswer>([
-    {
-      name: "registry",
-      type: "list",
-      message: "选择你想使用的源",
-      choices: ["国内镜像源", "当前源"],
-    },
-  ]);
+    return registry === "国内镜像源" ? npmmirrorRegistry : userRegistry;
+  }
 
-  return registry === "国内镜像源" ? npmmirrorRegistry : userRegistry;
+  return userRegistry;
 };

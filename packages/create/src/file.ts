@@ -7,7 +7,7 @@ import {
 } from "fs";
 import { dirname } from "path";
 
-const ensureDirExistSync = (dirPath: string): void => {
+export const ensureDirExistSync = (dirPath: string): void => {
   try {
     readdirSync(dirPath);
   } catch (err) {
@@ -15,7 +15,7 @@ const ensureDirExistSync = (dirPath: string): void => {
   }
 };
 
-const copyFile = (srcFile: string, targetFile: string): void => {
+export const copyFile = (srcFile: string, targetFile: string): void => {
   const targetDir = dirname(targetFile);
 
   ensureDirExistSync(targetDir);
@@ -26,7 +26,7 @@ const copyFile = (srcFile: string, targetFile: string): void => {
   rs.pipe(ws);
 };
 
-const copyDir = (srcDir: string, targetDir: string): void => {
+export const copyDir = (srcDir: string, targetDir: string): void => {
   ensureDirExistSync(targetDir);
 
   const files = readdirSync(srcDir, { withFileTypes: true });

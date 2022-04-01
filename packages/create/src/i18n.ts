@@ -1,6 +1,6 @@
 import { prompt } from "inquirer";
 
-export type Lang = "zh-CN" | "en-US";
+export type Lang = "english (US)" | "简体中文";
 
 export interface CreateI18n {
   getVersion: string;
@@ -25,8 +25,7 @@ export interface CreateI18n {
 }
 
 export const i18n: Record<Lang, CreateI18n> = {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  "zh-CN": {
+  简体中文: {
     getVersion: "获取依赖的最新版本...",
     createPackage: "生成 package.json...",
     updatePackage: "更新 package.json...",
@@ -50,7 +49,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     workflowMessage: "是否需要一个自动部署文档到 GitHub Pages 的工作流？",
   },
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  "en-US": {
+  "english (US)": {
     getVersion: "Getting lastest version of deps...",
     createPackage: "Generating package.json...",
     updatePackage: "Updating package.json...",
@@ -69,7 +68,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     versionError:
       "This version is not a valid one. Version should be like 'x.x.x'",
     dirError:
-      "[dir] is an arguement, you should replace it with folder name you want to use! E.g.: 'src', 'docs'",
+      "[dir] is an argument, you should replace it with folder name you want to use! E.g.: 'src', 'docs'",
     descriptionMessage: "Your project description",
     licenseMessage: "Your project lincense",
     i18nMessage: "Does the project need mutiple languages?",
@@ -88,8 +87,8 @@ export const getLanguage = async (): Promise<LanguageResult> => {
     {
       name: "language",
       type: "list",
-      message: "Select a language to display",
-      choices: ["en-US", "zh-CN"],
+      message: "Select a language to display / 选择显示语言",
+      choices: ["english (US)", "简体中文"],
     },
   ]);
 

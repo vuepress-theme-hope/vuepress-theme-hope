@@ -1,4 +1,5 @@
 import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import typescript2 from "rollup-plugin-typescript2";
@@ -40,6 +41,7 @@ export const rollupTypescript = (
     plugins: [
       ...(preserveShebang ? [preserveShebangs()] : []),
       typescript(tsconfig),
+      json(),
       ...(useStyle ? [styles()] : []),
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       ...(isProduction ? [terser()] : []),

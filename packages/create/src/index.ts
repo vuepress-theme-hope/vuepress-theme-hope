@@ -1,50 +1,44 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, writeFileSync, readFileSync } from "fs";
-import { resolve } from "path";
-import { deepAssign } from "./deepAssign";
 import { cac } from "cac";
-import { prompt } from "inquirer";
+import { existsSync, writeFileSync, readFileSync } from "fs";
 import execa from "execa";
-import { copy } from "./copy";
-import { checkForNextVersion } from "./checkVersion";
-import { detectYarn } from "./hasYarn";
+import { prompt } from "inquirer";
+import { resolve } from "path";
+
+import {
+  bin,
+  getDevDependencies,
+  getGitIgnorePath,
+  getScript,
+  getWorkflowContent,
+} from "./content";
+import { deepAssign } from "./deepAssign";
+import { copy, ensureDirExistSync } from "./file";
 import { getLanguage } from "./i18n";
 import { getRegistry } from "./registry";
-const cli = cac("vuepress-theme-hope");
 
-const bin = detectYarn() ? "yarn" : "npm";
+const cli = cac("vuepress-theme-hope");
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
   .action(async (dir: string) => {
     if (!dir) return cli.outputHelp();
 
+    // get language
     const { lang, message } = await getLanguage();
 
+    // check if the user is a noob and warn him 🤪
     if (dir === "[dir]") return console.log(message.dirError);
-
-    const targetFolder = resolve(process.cwd(), dir);
-    const packageJsonPath = resolve(process.cwd(), "package.json");
-    const scripts = {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      "docs:build": `vuepress build ${dir}`,
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      "docs:clean-dev": `vuepress dev ${dir} --clean-cache`,
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      "docs:dev": `vuepress dev ${dir}`,
-    };
 
     console.log(message.getVersion);
 
-    const vuepressVersion = await checkForNextVersion("vuepress", bin);
-    const themeVersion = await checkForNextVersion("vuepress-theme-hope", bin);
+    /**
+     * generate package.json
+     */
 
-    const devDependencies = {
-      vuepress: `^${vuepressVersion}`,
-      "vuepress-theme-hope": `^${themeVersion}`,
-    };
-
-    if (!existsSync(targetFolder)) mkdirSync(targetFolder);
+    const packageJsonPath = resolve(process.cwd(), "package.json");
+    const scripts = getScript(dir);
+    const devDependencies = await getDevDependencies();
 
     if (existsSync(packageJsonPath)) {
       console.log(message.updatePackage);
@@ -117,6 +111,10 @@ cli
       );
     }
 
+    /**
+     * generate template and workflow
+     */
+
     const { i18n, workflow } = await prompt<{
       i18n: boolean;
       workflow: boolean;
@@ -125,6 +123,7 @@ cli
         name: "i18n",
         type: "confirm",
         message: message.i18nMessage,
+        default: false,
       },
       {
         name: "workflow",
@@ -136,18 +135,47 @@ cli
 
     console.log(message.template);
 
-    const templateFolder = i18n ? "i18n" : lang;
+    const templateFolder = i18n
+      ? "i18n"
+      : lang === "简体中文"
+      ? "zh-CN"
+      : "en-US";
 
     copy(
       resolve(__dirname, "../template", templateFolder),
       resolve(process.cwd(), dir)
     );
 
-    if (workflow)
-      copy(
-        resolve(__dirname, "../workflows", lang),
-        resolve(process.cwd(), ".github/workflows")
+    if (workflow) {
+      const workflowDir = resolve(process.cwd(), ".github/workflows");
+
+      ensureDirExistSync(workflowDir);
+
+      writeFileSync(
+        resolve(workflowDir, "deploy-docs.yml"),
+        getWorkflowContent(dir, lang),
+        { encoding: "utf-8" }
       );
+    }
+
+    // update .gitignore
+    const gitignorePath = resolve(process.cwd(), ".gitignore");
+
+    const gitignoreContent = existsSync(gitignorePath)
+      ? readFileSync(gitignorePath, {
+          encoding: "utf-8",
+        })
+      : "";
+
+    writeFileSync(
+      gitignorePath,
+      `${gitignoreContent}${getGitIgnorePath(dir)}`,
+      { encoding: "utf-8" }
+    );
+
+    /**
+     * Install deps
+     */
 
     const registry = await getRegistry(lang, bin);
 
@@ -159,6 +187,10 @@ cli
     });
 
     console.log(message.success);
+
+    /**
+     * Open dev server
+     */
 
     const { choise } = await prompt<{ choise: boolean }>([
       {
@@ -181,8 +213,8 @@ cli
 cli.help(() => [
   {
     title:
-      "yarn create vuepress-theme-hope <dir> / npm init vuepress-theme-hope <dir>",
-    body: "Create a vuepress-theme-hope template in <dir>",
+      "yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]",
+    body: "Create a vuepress-theme-hope template in [dir]",
   },
 ]);
 

@@ -4,8 +4,6 @@ import themeConfig from "./themeConfig";
 export default defineHopeConfig({
   base: "/",
 
-  dest: "./dist",
-
   head: [
     [
       "link",

@@ -27,9 +27,7 @@
   },
   "files": [
     "lib",
-    "src",
-    "template",
-    "workflows"
+    "template"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -37,7 +35,7 @@
     "dev": "yarn dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/inquirer": "^8.2.1",
     "cac": "^6.7.12",
     "execa": "^5.1.1",
