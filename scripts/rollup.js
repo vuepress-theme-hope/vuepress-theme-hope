@@ -5,10 +5,10 @@ import typescript from "@rollup/plugin-typescript";
 import typescript2 from "rollup-plugin-typescript2";
 import rollupCopy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
-import { preserveShebangs } from "rollup-plugin-preserve-shebangs";
 import vue from "rollup-plugin-vue";
 import { terser } from "rollup-plugin-terser";
 import styles from "rollup-plugin-styles";
+import shebang from "./shebang";
 
 const isProduction = process.env.mode === "production";
 
@@ -39,7 +39,7 @@ export const rollupTypescript = (
       },
     ],
     plugins: [
-      ...(preserveShebang ? [preserveShebangs()] : []),
+      ...(preserveShebang ? [shebang()] : []),
       typescript(tsconfig),
       json(),
       ...(useStyle ? [styles()] : []),
