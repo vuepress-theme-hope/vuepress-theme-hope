@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.31...v2.0.0-beta.32) (2022-04-01)
+
+### Features
+
+- **md-enhance:** compatable with react18 ([3a8124d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3a8124da41082928cdf0c60e394da5dc6c008505))
+
 # [2.0.0-beta.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.30...v2.0.0-beta.31) (2022-04-01)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

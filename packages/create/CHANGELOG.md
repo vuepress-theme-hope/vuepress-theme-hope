@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.31...v2.0.0-beta.32) (2022-04-01)
+
+### Bug Fixes
+
+- **create:** fix create package shebang ([5f9af95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f9af95e5a07ad5a07ebccec2162f842bb09d9a0))
+
+### Features
+
+- **create:** update dir hint message ([4371886](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43718869e7c461bf4242066e07b82c0ae86fe0d9))
+
 # [2.0.0-beta.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.30...v2.0.0-beta.31) (2022-04-01)
 
 ### Features
