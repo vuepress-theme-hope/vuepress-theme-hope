@@ -17,6 +17,7 @@ export interface CreateI18n {
   nameError: string;
   versionMessage: string;
   versionError: string;
+  dirError: string;
   descriptionMessage: string;
   licenseMessage: string;
   i18nMessage: string;
@@ -41,6 +42,8 @@ export const i18n: Record<Lang, CreateI18n> = {
     nameError: "应用名称应只包含小写字母、数字和连接线 (-)",
     versionMessage: "设置应用版本号",
     versionError: "此版本无效，版本号应为 'x.x.x'",
+    dirError:
+      "[dir] 是一个参数，你应该替换为自己想使用的文件夹名称，如 'src', 'docs' 等!",
     descriptionMessage: "设置应用描述",
     licenseMessage: "设置协议",
     i18nMessage: "项目需要用到多语言么?",
@@ -65,6 +68,8 @@ export const i18n: Record<Lang, CreateI18n> = {
     versionMessage: "Your project version",
     versionError:
       "This version is not a valid one. Version should be like 'x.x.x'",
+    dirError:
+      "[dir] is an arguement, you should replace it with folder name you want to use! E.g.: 'src', 'docs'",
     descriptionMessage: "Your project description",
     licenseMessage: "Your project lincense",
     i18nMessage: "Does the project need mutiple languages?",

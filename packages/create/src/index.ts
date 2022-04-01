@@ -21,6 +21,8 @@ cli
 
     const { lang, message } = await getLanguage();
 
+    if (dir === "[dir]") return console.log(message.dirError);
+
     const targetFolder = resolve(process.cwd(), dir);
     const packageJsonPath = resolve(process.cwd(), "package.json");
     const scripts = {
