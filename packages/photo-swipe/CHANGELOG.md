@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.29...v2.0.0-beta.30) (2022-04-01)
+
+### Features
+
+- **photo-swipe:** use photo-swipe v5 ([ece5e32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ece5e322a5e264e17638f67df347e995da603acc))
+
 # [2.0.0-beta.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.28...v2.0.0-beta.29) (2022-03-31)
 
 **Note:** Version bump only for package vuepress-plugin-photo-swipe

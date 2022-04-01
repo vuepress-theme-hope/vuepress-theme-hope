@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.29...v2.0.0-beta.30) (2022-04-01)
+
+### Bug Fixes
+
+- **create:** recursively create dir ([8ecb866](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ecb8669dc9e496a7a3869a622e038ae2d05eb81))
+
+### Features
+
+- **create:** add dir argument check and hint ([516d38e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/516d38e34bc3bad9adb17bccc6c6e354176c1e03))
+- **create:** retry 3 times when getting version ([4779436](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47794365fd6efc44a531dba346ad9cd27ae151a4))
+
 # [2.0.0-beta.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.28...v2.0.0-beta.29) (2022-03-31)
 
 ### Features
