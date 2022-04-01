@@ -28,7 +28,8 @@ cli
     const { lang, message } = await getLanguage();
 
     // check if the user is a noob and warn him 🤪
-    if (dir === "[dir]") return console.log(message.dirError);
+    if (dir.startsWith("[") && dir.endsWith("]"))
+      return console.log(message.dirError);
 
     console.log(message.getVersion);
 
