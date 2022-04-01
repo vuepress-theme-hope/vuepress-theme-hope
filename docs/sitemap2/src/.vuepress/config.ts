@@ -6,7 +6,7 @@ import themeConfig from "./themeConfig";
 const base = process.env.BASE || "/";
 
 export default defineHopeConfig({
-  base: `/${base.replace(/^\//, "")}seo/`,
+  base: `/${base.replace(/^\//, "")}sitemap/`,
 
   dest: "./dist",
 
