@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.30...v2.0.0-beta.31) (2022-04-01)
+
+### Bug Fixes
+
+- improve root lang detection ([ff65e00](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff65e00ea103938c797027d132c5a56e78df1eb6))
+
 # [2.0.0-beta.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.29...v2.0.0-beta.30) (2022-04-01)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared

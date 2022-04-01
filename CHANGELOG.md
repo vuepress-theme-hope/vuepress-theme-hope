@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.30...v2.0.0-beta.31) (2022-04-01)
+
+### Bug Fixes
+
+- improve root lang detection ([ff65e00](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff65e00ea103938c797027d132c5a56e78df1eb6))
+
+### Features
+
+- **create:** improve flow ([d9d83b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d9d83b5fb4223832dbbb154eca1c0b861bd4c7a5))
+- **photo-swipe:** add a11y for photoswipe ([3775b1e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3775b1e97590ad7c862a4780c38858a43670445a))
+
 # [2.0.0-beta.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.29...v2.0.0-beta.30) (2022-04-01)
 
 ### Bug Fixes
