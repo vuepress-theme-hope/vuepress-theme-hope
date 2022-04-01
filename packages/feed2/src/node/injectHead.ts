@@ -29,7 +29,7 @@ export const injectLinkstoHead = (
           type,
           href: resolveUrl(options["/"].hostname, base, fileName),
           title: `${
-            siteData.title || siteData.locales["/"].title || ""
+            siteData.title || siteData.locales["/"]?.title || ""
           } ${name} Feed`,
         },
       ];
@@ -78,9 +78,9 @@ export const injectLinkstoHead = (
               type,
               href: resolveUrl(localeOptions.hostname, base, fileName),
               title: `${
-                siteData.locales[pathLocale].title ||
+                siteData.locales[pathLocale]?.title ||
                 siteData.title ||
-                siteData.locales["/"].title ||
+                siteData.locales["/"]?.title ||
                 ""
               } ${name} Feed`,
             },

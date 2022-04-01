@@ -60,14 +60,7 @@ export const getRootLang = (app: App): string => {
   if (siteLocales?.["/"] && siteLocales["/"]?.lang)
     return siteLocales["/"].lang;
 
-  // infer from themeLocale
-  const options = app.options as AppOptions<BaseThemeConfig>;
-  const themeLocales = options.themeConfig.locales;
-
-  if (themeLocales?.["/"] && themeLocales["/"]?.lang)
-    return themeLocales["/"].lang;
-
-  return "en-US";
+  return app.siteData.lang;
 };
 
 /**

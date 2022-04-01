@@ -34,9 +34,9 @@ export const generateSeo = (
   const { siteData } = app;
 
   const title =
-    siteData.locales[page.pathLocale].title ||
+    siteData.locales[page.pathLocale]?.title ||
     siteData.title ||
-    siteData.locales["/"].title ||
+    siteData.locales["/"]?.title ||
     "";
   const author =
     pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
