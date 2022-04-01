@@ -1,4 +1,4 @@
-import { rollupTypescript, rollupVue } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup";
 
 export default [
   ...rollupTypescript("node/index", {
@@ -8,19 +8,15 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupVue("client/root-components/ImageViewer.ts", {
+  ...rollupTypescript("client/appSetup", {
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
+      "@vueuse/core",
       "photoswipe",
-      "photoswipe/dist/photoswipe-ui-default",
       "vue",
       "vue-router",
       /\.css$/,
-      /\.scss$/,
     ],
-    dts: false,
-    dtsExternal: [/\.css$/, /\.scss$/],
-    copy: [["client/styles", "client"]],
+    dtsExternal: [/\.css$/],
   }),
 ];

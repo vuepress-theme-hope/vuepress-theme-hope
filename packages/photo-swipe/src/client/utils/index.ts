@@ -1,38 +1,32 @@
-import * as PhotoSwipe from "photoswipe";
+import type { DataSourceItem } from "photoswipe";
 
-export interface PhotoSwipeImageInfo extends PhotoSwipe.Item {
-  title: string;
-}
-
-export const getImageInfo = (image: HTMLImageElement): PhotoSwipeImageInfo => {
-  return {
-    src: image.src,
-    w: image.naturalWidth,
-    h: image.naturalHeight,
-    title: image.alt,
-  };
-};
+export const getImageInfo = (image: HTMLImageElement): DataSourceItem => ({
+  src: image.src,
+  width: image.naturalWidth,
+  height: image.naturalHeight,
+  alt: image.alt,
+});
 
 export interface PhotoSwipeImages {
   elements: HTMLImageElement[];
-  infos: PhotoSwipeImageInfo[];
+  infos: DataSourceItem[];
 }
 
 export const getImages = (selector: string): Promise<PhotoSwipeImages> => {
-  const promises: Promise<PhotoSwipeImageInfo>[] = [];
   const images = Array.from(
     document.querySelectorAll<HTMLImageElement>(selector)
   );
 
-  images.forEach((image, index) => {
-    promises[index] = new Promise((resolve, reject) => {
-      if (image.complete) resolve(getImageInfo(image));
-      else {
-        image.onload = (): void => resolve(getImageInfo(image));
-        image.onerror = (err): void => reject(err);
-      }
-    });
-  });
-
-  return Promise.all(promises).then((infos) => ({ elements: images, infos }));
+  return Promise.all(
+    images.map(
+      (image) =>
+        new Promise<DataSourceItem>((resolve, reject) => {
+          if (image.complete) resolve(getImageInfo(image));
+          else {
+            image.onload = (): void => resolve(getImageInfo(image));
+            image.onerror = (err): void => reject(err);
+          }
+        })
+    )
+  ).then((infos) => ({ elements: images, infos }));
 };
