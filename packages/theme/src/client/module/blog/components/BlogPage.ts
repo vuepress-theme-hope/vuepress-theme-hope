@@ -76,8 +76,6 @@ export default defineComponent({
         ? name
           ? tagMap.value.map[name].items
           : []
-        : key === "timeline"
-        ? []
         : articles.value.items;
     });
 
