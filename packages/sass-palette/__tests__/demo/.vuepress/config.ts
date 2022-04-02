@@ -2,7 +2,7 @@ import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: process.env.VuePress_BASE || "/",
+  base: process.env.BASE || "/",
 
   locales: {
     "/": {

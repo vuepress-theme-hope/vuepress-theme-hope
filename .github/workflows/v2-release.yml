@@ -1,4 +1,4 @@
-name: Deploy V2 Docs on other places
+name: Deploy V2 Docs and demos
 
 on:
   push:
@@ -222,4 +222,116 @@ jobs:
           repository-name: vuepress-theme-hope/v2-demo
           branch: gitee
           folder: demo/theme/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+  deploy-blog2-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: restore lerna
+        uses: actions/cache@v3
+        id: lerna-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
+
+      - name: Get yarn cache directory path
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: yarn-cache
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Deps
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: yarn run build
+
+      - name: Docs build
+        env:
+          BASE: /blog2-demo/
+          HOSTNAME: https://vuepress-theme-hope.github.io/
+        run: yarn run workspace blog2-demo vite-build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/blog2-demo
+          branch: gh-pages
+          folder: demo/blog/src/.vuepress/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+  deploy-comment2-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: restore lerna
+        uses: actions/cache@v3
+        id: lerna-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
+
+      - name: Get yarn cache directory path
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: yarn-cache
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Deps
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: yarn run build
+
+      - name: Docs build
+        env:
+          BASE: /comment2-demo/
+          HOSTNAME: https://vuepress-theme-hope.github.io/
+        run: yarn run workspace comment2-demo vite-build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/comment2-demo
+          branch: gh-pages
+          folder: demo/blog/src/.vuepress/dist
           token: ${{ secrets.ACCESS_TOKEN }}

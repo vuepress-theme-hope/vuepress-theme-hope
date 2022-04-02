@@ -3,7 +3,7 @@ import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: (process.env.VuePress_BASE as `/${string}/`) || "/",
+  base: (process.env.BASE as `/${string}/`) || "/",
 
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],

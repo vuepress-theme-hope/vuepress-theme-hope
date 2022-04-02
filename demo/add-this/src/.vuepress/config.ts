@@ -1,10 +1,10 @@
 import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-const VuePress_BASE = process.env.VuePress_BASE as "/" | `/${string}/`;
+const BASE = process.env.BASE as "/" | `/${string}/`;
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: VuePress_BASE || "/",
+  base: BASE || "/",
   title: "Add this",
   description: "Add this plugin for VuePress2",
 
