@@ -8,8 +8,10 @@ const commentTheme: Theme<DefaultThemeOptions> = {
   // we are extending @vuepress/theme-default
   extends: "@vuepress/theme-default",
 
-  // we overide the default layout to provide comment service
-  layouts: path.resolve(__dirname, "./layouts"),
+  layouts: {
+    // we overide the default layout to provide comment service
+    Layout: path.resolve(__dirname, "layouts", "Layout.vue"),
+  },
 
   plugins: [
     [

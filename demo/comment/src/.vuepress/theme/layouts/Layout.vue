@@ -1,3 +1,10 @@
+<template>
+  <ParentLayout>
+    <template #page-bottom>
+      <CommentService :darkmode="isDarkmode" />
+    </template>
+  </ParentLayout>
+</template>
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
@@ -26,11 +33,3 @@ onBeforeUnmount(() => {
   observer.disconnect();
 });
 </script>
-
-<template>
-  <ParentLayout>
-    <template #page-bottom>
-      <CommentService :darkmode="isDarkmode" />
-    </template>
-  </ParentLayout>
-</template>
