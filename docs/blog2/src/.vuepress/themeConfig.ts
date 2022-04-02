@@ -27,10 +27,10 @@ export default defineThemeConfig({
 
   locales: {
     "/": {
-      navbar: ["/", "/guide", "/config"],
+      navbar: ["/", "/guide", "/config", "/demo"],
     },
     "/zh/": {
-      navbar: ["/zh/", "/zh/guide", "/zh/config"],
+      navbar: ["/zh/", "/zh/guide", "/zh/config", "/zh/demo"],
     },
   },
 
