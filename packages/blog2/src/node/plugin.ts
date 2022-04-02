@@ -3,6 +3,8 @@ import {
   addViteOptimizeDepsExclude,
 } from "@mr-hope/vuepress-shared";
 import {
+  preparePageComponent,
+  preparePageData,
   preparePagesComponents,
   preparePagesData,
   preparePagesRoutes,
@@ -87,31 +89,48 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
             const pagestoBeRemoved = generatePageKeys.filter(
               (key) => !newGeneratedPageKeys.includes(key)
             );
+            const pagestoBeAdded = newGeneratedPageKeys.filter(
+              (key) => !generatePageKeys.includes(key)
+            );
 
+            if (pagestoBeAdded.length) {
+              if (app.env.isDebug)
+                logger.info(`New pages detected: ${pagestoBeAdded.toString()}`);
+
+              // prepare page files
+              await Promise.all(
+                pagestoBeAdded.map(async (pageKey) => {
+                  await preparePageComponent(
+                    app,
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                    app.pages.find(({ key }) => key === pageKey)!
+                  );
+                  await preparePageData(
+                    app,
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                    app.pages.find(({ key }) => key === pageKey)!
+                  );
+                })
+              );
+            }
+
+            // remove pages
             if (pagestoBeRemoved.length) {
               if (app.env.isDebug)
                 logger.info(
                   `Removing following pages: ${pagestoBeRemoved.toString()}`
                 );
 
-              // remove pages
               pagestoBeRemoved.forEach((pageKey) => {
                 app.pages.splice(
                   app.pages.findIndex(({ key }) => key === pageKey),
                   1
                 );
               });
+            }
 
-              // prepare pages entry
-              await preparePagesComponents(app);
-              await preparePagesData(app);
-              await preparePagesRoutes(app);
-            } else if (
-              newGeneratedPageKeys.length !== generatePageKeys.length
-            ) {
-              if (app.env.isDebug) logger.info("New pages detected");
-
-              // prepare pages entry
+            // prepare pages entry
+            if (pagestoBeRemoved.length || pagestoBeAdded.length) {
               await preparePagesComponents(app);
               await preparePagesData(app);
               await preparePagesRoutes(app);
