@@ -5,6 +5,7 @@ import {
   onBeforeUnmount,
   onMounted,
   ref,
+  watch,
 } from "vue";
 import { LoadingIcon } from "./icons";
 
@@ -80,10 +81,19 @@ export default defineComponent({
   setup(props) {
     const svgCode = ref("");
     const mermaidElement = ref<HTMLElement>();
+    const isDarkmode = ref(false);
     let observer: MutationObserver;
 
     onMounted(() => {
+      const html = document.querySelector("html") as HTMLElement;
       const code = decodeURIComponent(mermaidElement.value?.dataset.code || "");
+
+      const getDarkmodeStatus = (): boolean =>
+        html.classList.contains("dark") ||
+        html.getAttribute("data-theme") === "dark";
+
+      // FIXME: Should correct handle dark selector
+      isDarkmode.value = getDarkmodeStatus();
 
       void Promise.all([
         import(/* webpackChunkName: "mermaid" */ "mermaid"),
@@ -91,7 +101,7 @@ export default defineComponent({
       ]).then(([mermaid]) => {
         const { initialize, render } = mermaid.default;
 
-        const renderMermaid = (isDarkMode: boolean): void => {
+        const renderMermaid = (): void => {
           // generate a unvisiable container
           const container = document.createElement("div");
 
@@ -107,7 +117,16 @@ export default defineComponent({
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             theme: "base",
-            themeVariables: getThemeVariables(isDarkMode),
+            themeVariables: getThemeVariables(isDarkmode.value),
+            flowchart: { useMaxWidth: false },
+            sequence: { useMaxWidth: false },
+            journey: { useMaxWidth: false },
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            gantt: { useMaxWidth: false },
+            er: { useMaxWidth: false },
+            pie: { useMaxWidth: false },
+
             ...MERMAID_OPTIONS,
             startOnLoad: false,
           });
@@ -123,20 +142,20 @@ export default defineComponent({
           });
         };
 
-        const body = document.querySelector("body") as HTMLBodyElement;
+        renderMermaid();
 
-        // FIXME: Should correct handle dark selector
-        renderMermaid(body.classList.contains("theme-dark"));
-
-        // watch theme change
+        // watch darkmode change
         observer = new MutationObserver(() => {
-          renderMermaid(body.classList.contains("theme-dark"));
+          console.log("update");
+          isDarkmode.value = getDarkmodeStatus();
         });
 
-        observer.observe(body, {
-          attributeFilter: ["class"],
+        observer.observe(html, {
+          attributeFilter: ["class", "data-theme"],
           attributes: true,
         });
+
+        watch(isDarkmode, renderMermaid);
       });
     });
 

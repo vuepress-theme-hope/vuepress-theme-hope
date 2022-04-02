@@ -1,9 +1,12 @@
 .md-enhance-mermaid {
   text-align: center;
   transition: all 1s;
+  overflow-x: scroll;
+  padding: 0.6em 0.4em;
 
   @media (max-width: hope-config.$mobileS) {
     margin: 0 -1.5rem;
+    padding: 0.6em 0;
   }
 
   &.loading {
@@ -17,16 +20,6 @@
       height: 4em;
       margin: 2.5em auto;
       color: var(--c-brand, #3eaf7c);
-    }
-  }
-
-  .content {
-    overflow-x: scroll;
-    width: 100%;
-    padding: 0.6em 0.4em;
-
-    @media (max-width: hope-config.$mobileS) {
-      padding: 0.6em 0;
     }
   }
 }
