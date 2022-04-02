@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-beta.32",
+  "version": "2.0.0-beta.33",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@babel/core": "*",
-    "@mr-hope/vuepress-shared": "2.0.0-beta.32",
+    "@mr-hope/vuepress-shared": "2.0.0-beta.33",
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.9",
@@ -69,7 +69,7 @@
     "reveal.js": "^4.3.1",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.32"
+    "vuepress-plugin-sass-palette": "2.0.0-beta.33"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.37"

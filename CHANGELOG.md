@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.32...v2.0.0-beta.33) (2022-04-02)
+
+### Bug Fixes
+
+- **blog2:** fix hotreload ([b76c69c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b76c69c262f09c96673b3a59ebba4b3025fb6971))
+- **theme:** remove dumplicate condition ([b14602b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b14602b54328e7270da0640d56e12b3e07207a4b))
+
+### Features
+
+- **blog2:** improve logic and docs ([d39eb65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d39eb656696ac854ab1e1a5084912661bb8e493f))
+- **create:** improve package manager detect ([e8d4859](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8d4859d1ed83567447c90f4d0c650473bfd577a))
+
 # [2.0.0-beta.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.31...v2.0.0-beta.32) (2022-04-01)
 
 ### Bug Fixes

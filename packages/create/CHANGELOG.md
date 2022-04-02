@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.32...v2.0.0-beta.33) (2022-04-02)
+
+### Features
+
+- **create:** improve package manager detect ([e8d4859](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8d4859d1ed83567447c90f4d0c650473bfd577a))
+
 # [2.0.0-beta.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.31...v2.0.0-beta.32) (2022-04-01)
 
 ### Bug Fixes
