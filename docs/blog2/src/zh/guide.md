@@ -9,64 +9,70 @@ icon: creative
 
 ```mermaid
 flowchart TB
-    subgraph user [用户侧]
+  subgraph user [用户侧]
     config[配置选项]
-    end
-```
+  end
 
-```mermaid
-flowchart TB
-    subgraph node [Node 侧]
-    readconfig[读取你的配置]-->
+  subgraph node [Node 侧]
+    direction TB
+    readConfig[读取你的配置]-->
     node2[通过 filter 选项确定文章页面]-->
     node3[通过 getInfo 选项从这些页面中按照你的要求提取文章信息]-->
     node4[将提取的信息注入 routeMeta 中]
-    readconfig --->
-    node5[依次处理你配置的分类与类别]
-    end
-```
+    readConfig-->
+    resolve[依次处理你配置的分类与类别]
+    generatePage["生成页面，并注入相应 frontmatter 与应用布局"]
+    writeTemp["将信息写入临时文件"]
 
-```mermaid
-flowchart TB
     subgraph category [分类]
-    loopCategory[遍历每个分类配置] --->
-    getCategoryPage["读取 path, layout, frontmatter, itemPath, itemLayout, itemFrontmatter 选项"] -->
-    registerCategory["生成总页面和项目页面，并注入相应 frontmatter 与应用布局"]
-    loopCategory -->
-    getCategory["根据 getter 选项获取每个页面的对应分类"] -->
-    mapCategory["建立 '分类名称 → 对应页面' 的映射"]-->
-    sortCategory["根据 sort 选项对每个分类的页面进行排序"]-->
-    writeCategory["将信息写入临时文件"]
+      direction TB
+      loopCategory[遍历每个分类配置] --->
+      getCategory["根据 getter 选项获取每个页面的对应分类"] -->
+      mapCategory["建立 '分类名称 → 对应页面' 的映射"]-->
+      sortCategory["根据 sort 选项对每个分类的页面进行排序"]
+      loopCategory -->
+      getCategoryPage["读取 path, layout, frontmatter, itemPath, itemLayout, itemFrontmatter 选项"]
     end
-```
 
-```mermaid
-flowchart TB
+    resolve--->loopCategory
+    getCategoryPage --> generatePage
+    sortCategory --> writeTemp
+
     subgraph type [类别]
-    loopType[遍历每个类别配置] --->
-    getTypePage["读取 path, layout, frontmatter 选项"] -->
-    registerType["生成总页面和项目页面，并注入相应 frontmatter 与应用布局"]
-    loopType -->
-    filterType["根据 filter 选项对页面进行过滤获得所需类别"]-->
-    sortType["根据 sort 选项对页面进行排序"]-->
-    writeType["将信息写入临时文件"]
+      direction TB
+      loopType[遍历每个类别配置] --->
+      getTypePage["读取 path, layout, frontmatter 选项"]
+      loopType -->
+      filterType["根据 filter 选项对页面进行过滤获得所需类别"]-->
+      sortType["根据 sort 选项对页面进行排序"]
     end
-```
 
-```mermaid
-flowchart TB
-    subgraph client [客户端]
+    resolve-->loopType
+    getTypePage --> generatePage
+    sortType --> writeTemp
+    end
+
+  subgraph client [客户端]
+    direction TB
+    readTemp[读取临时文件] --> callCategory
+    readTemp --> callType
     callCategory["调用 useBlogCategory API"] -->
-    readCategory[读取分类临时文件] --> getPage
+    getPage
     callType["调用 useBlogType API"]-->
-    readType[读取类别临时文件] --> getPage
+    getPage
     getPage["通过临时文件中的 key 信息找到页面"] -->
     getInfo["使用页面路径从 routeMeta 中获取页面信息"] -->
     return["整理信息后返回"]
     visit["访问博客对应页面"]-->
     layout["对应页面使用相应布局，并在 frontmatter 中获取相关信息"]
-    end
+  end
+
+  config-->readConfig
+  writeTemp-->readTemp
+  generatePage-->visit
 ```
+
+上方的流程图可以帮助您了解插件的工作原理及其设计目标。
 
 ## 收集文章并生成信息
 
