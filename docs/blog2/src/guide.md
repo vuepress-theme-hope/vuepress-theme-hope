@@ -5,6 +5,69 @@ icon: creative
 
 With `vuepress-plugin-blog2`, you can easily bring blog feature into your themes.
 
+## How it works
+
+```mermaid
+flowchart TB
+    subgraph user ["User Side"]
+    config["Set plugin options"]
+    end
+```
+
+```mermaid
+flowchart TB
+    subgraph node ["Node Side"]
+    readconfig["Read Config"]-->
+    node2["Get article using 'filter' option"]-->
+    node3["Get article info using 'getInfo' option"]-->
+    node4["Write info to routeMeta"]
+    readconfig --->
+    node5["Resolve 'category' and 'tag' options"]
+    end
+```
+
+```mermaid
+flowchart TB
+    subgraph category
+    loopCategory["Loop each config"] --->
+    getCategoryPage["Get path, layout, frontmatter, itemPath, itemLayout, itemFrontmatter options"] -->
+    registerCategory["Generate page and item page with frontamtter and layout"]
+    loopCategory -->
+    getCategory["Get category using 'getter' option"] -->
+    mapCategory["Build 'CategoryName → Pages' Map"]-->
+    sortCategory["Sort pages using 'sort' option"]-->
+    writeCategory["Write info to temp file"]
+    end
+```
+
+```mermaid
+flowchart TB
+    subgraph type
+    loopType[Loop each config]-->
+    getTypePage["Get path, layout, frontmatter options"] -->
+    registerType["生成总页面和项目页面，并注入相应 frontmatter 与应用布局"]
+    loopType -->
+    filterType["Get pages fitting the type using 'filter' option"]-->
+    sortType["Sort pages using 'sort' option"]-->
+    writeType["Write info to temp file"]
+    end
+```
+
+```mermaid
+flowchart TB
+    subgraph client ["Client Side"]
+    callCategory["Call useBlogCategory API"] -->
+    readCategory[Read category temp file] --> getPage
+    callType["Call useBlogType API"]-->
+    readType[Read type temp file] --> getPage
+    getPage["Get page through key"] -->
+    getInfo["Get article info in router with page path"] -->
+    return["Return info"]
+    visit["Visit blog page"]-->
+    layout["Use layout and get info from frontmatter"]
+    end
+```
+
 ## Collecting Articles and Generating Info
 
 To get started, the plugins will pick those pages which neeeds to be tricted as articles. This is only the first step to drop those pages you don’t want.

@@ -38,7 +38,7 @@ export const prepareType = (
           key,
           sorter = (): number => -1,
           filter = (): boolean => true,
-          path = "",
+          path = "/:key/",
           layout = "Layout",
           frontmatter = (): Record<string, string> => ({}),
         },

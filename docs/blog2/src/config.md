@@ -94,7 +94,7 @@ export interface BlogCategoryOptions {
   sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
-   * Path pattern
+   * Path pattern of page to be registered
    *
    * @description `:key` will be replaced by the "slugify" result of the orginal key
    *
@@ -103,7 +103,7 @@ export interface BlogCategoryOptions {
   path?: string;
 
   /**
-   * Layout name
+   * Page layout name
    *
    * @default 'Layout'
    */
@@ -115,7 +115,7 @@ export interface BlogCategoryOptions {
   frontmatter?: (localePath: string) => Record<string, string>;
 
   /**
-   * Path pattern or custom function
+   * Item page path pattern or custom function to be registered
    *
    * @description When filling in a string, `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
    *
@@ -124,7 +124,7 @@ export interface BlogCategoryOptions {
   itemPath?: string | ((name: string) => string);
 
   /**
-   * Item layout name
+   * Item page layout name
    *
    * @default 'Layout'
    */
@@ -162,7 +162,7 @@ export interface BlogTypeOptions {
   sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
-   * Path to register
+   * Page path to be registered
    *
    * @default '/:key/'
    */

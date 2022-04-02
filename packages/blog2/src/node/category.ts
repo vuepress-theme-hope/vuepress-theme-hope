@@ -38,10 +38,10 @@ export const prepareCategory = (
           key,
           getter,
           sorter = (): number => -1,
-          path = "",
+          path = "/:key/",
           layout = "Layout",
           frontmatter = (): Record<string, string> => ({}),
-          itemPath = "",
+          itemPath = "/:key/:name/",
           itemLayout = "Layout",
           itemFrontmatter = (): Record<string, string> => ({}),
         },
@@ -69,7 +69,7 @@ export const prepareCategory = (
           typeof itemPath === "function"
             ? itemPath
             : (name: string): string =>
-                itemPath
+                (itemPath || "")
                   .replace(/:key/g, slugify(key))
                   .replace(/:name/g, slugify(name));
 

@@ -94,29 +94,20 @@ export interface BlogCategoryOptions {
   sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
-   * 路径图案
+   * 待注册的页面路径图案
    *
    * @description `:key` 将会被替换为原 key 的 slugify 结果
    *
    * @default `/:key/`
    */
-  path?: string;
+  path?: string | false;
 
   /**
-   * 布局组件名称
+   * 页面布局组件名称
    *
    * @default 'Layout'
    */
   layout?: string;
-
-  /**
-   * 路径图案或自定义函数
-   *
-   * @description 当填入字符串的时候, `:key` 和 `:name` 会被自动替换为原始的 key、name 的 slugify 结果。
-   *
-   * @default `/:key/:name/`
-   */
-  itemPath?: string | ((name: string) => string);
 
   /**
    * Front Matter 配置
@@ -124,7 +115,16 @@ export interface BlogCategoryOptions {
   frontmatter?: (localePath: string) => Record<string, string>;
 
   /**
-   * 项目布局组件名称
+   * 待注册的项目页面路径图案或自定义函数
+   *
+   * @description 当填入字符串的时候, `:key` 和 `:name` 会被自动替换为原始的 key、name 的 slugify 结果。
+   *
+   * @default `/:key/:name/`
+   */
+  itemPath?: string | ((name: string) => string) | false;
+
+  /**
+   * 项目页面布局组件名称
    *
    * @default 'Layout'
    */
@@ -162,14 +162,14 @@ export interface BlogTypeOptions {
   sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
-   * 需要注册的页面路径
+   * 待注册的页面路径
    *
    * @default '/:key/'
    */
-  path?: string;
+  path?: string | false;
 
   /**
-   * 布局组件名称
+   * 页面布局组件名称
    *
    * @default 'Layout'
    */

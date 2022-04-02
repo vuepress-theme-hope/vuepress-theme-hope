@@ -94,6 +94,7 @@ export default defineThemeConfig({
 
     mdEnhance: {
       codegroup: true,
+      mermaid: true,
     },
 
     pwa: {

@@ -23,22 +23,22 @@ export interface BlogCategoryOptions {
   sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
-   * Path pattern
+   * Path pattern of page to be registered
    *
    * @description `:key` will be replaced by the "slugify" result of the orginal key
    *
-   * 路径图案
+   * 待注册的页面路径图案
    *
    * @description `:key` 将会被替换为原 key 的 slugify 结果
    *
    * @default `/:key/`
    */
-  path?: string;
+  path?: string | false;
 
   /**
-   * Layout name
+   * Page layout name
    *
-   * 布局组件名称
+   * 页面布局组件名称
    *
    * @default 'Layout'
    */
@@ -52,22 +52,22 @@ export interface BlogCategoryOptions {
   frontmatter?: (localePath: string) => Record<string, string>;
 
   /**
-   * Item Path pattern or custom function
+   * Item page path pattern or custom function to be registered
    *
    * @description When filling in a string, `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
    *
-   * 项目路径图案或自定义函数
+   * 待注册的项目页面路径图案或自定义函数
    *
    * @description 当填入字符串的时候, `:key` 和 `:name` 会被自动替换为原始的 key、name 的 slugify 结果。
    *
    * @default `/:key/:name/`
    */
-  itemPath?: string | ((name: string) => string);
+  itemPath?: string | ((name: string) => string) | false;
 
   /**
-   * Item layout name
+   * Item page layout name
    *
-   * 项目布局组件名称
+   * 项目页面布局组件名称
    *
    * @default 'Layout'
    */
@@ -107,18 +107,18 @@ export interface BlogTypeOptions {
   sorter?: (pageA: Page, pageB: Page) => number;
 
   /**
-   * Path to register
+   * Page path to be registered
    *
-   * 需要注册的页面路径
+   * 待注册的页面路径
    *
    * @default '/:key/'
    */
-  path?: string;
+  path?: string | false;
 
   /**
-   * Layout name
+   * Page layout name
    *
-   * 布局组件名称
+   * 页面布局组件名称
    *
    * @default 'Layout'
    */

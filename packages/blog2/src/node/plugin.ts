@@ -17,7 +17,12 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { BlogOptions } from "../shared";
 
 export const blogPlugin: Plugin<BlogOptions> = (options) => {
-  const { metaScope = "_blog" } = options;
+  const {
+    getInfo = (): Record<string, never> => ({}),
+    filter = (page): boolean =>
+      Boolean(page.filePathRelative) && !page.frontmatter.home,
+    metaScope = "_blog",
+  } = options;
 
   let generatePageKeys: string[] = [];
 
@@ -29,12 +34,13 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
     }),
 
     extendsPage: (page): void => {
-      const { getInfo = (): Record<string, never> => ({}) } = options;
-
-      page.routeMeta = {
-        ...(metaScope === "" ? getInfo(page) : { [metaScope]: getInfo(page) }),
-        ...page.routeMeta,
-      };
+      if (filter(page))
+        page.routeMeta = {
+          ...(metaScope === ""
+            ? getInfo(page)
+            : { [metaScope]: getInfo(page) }),
+          ...page.routeMeta,
+        };
     },
 
     onInitialized: (app): Promise<void> => {
@@ -44,7 +50,7 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
       ]);
       addViteOptimizeDepsExclude(app, "vuepress-plugin-blog2");
 
-      const pageMap = getPageMap(options, app);
+      const pageMap = getPageMap(filter, app);
 
       return Promise.all([
         prepareCategory(app, options, pageMap, true).then((pageKeys) => {
@@ -68,7 +74,7 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
         const updateBlog = (): Promise<void> => {
           const newGeneratedPageKeys: string[] = [];
 
-          const pageMap = getPageMap(options, app);
+          const pageMap = getPageMap(filter, app);
 
           return Promise.all([
             prepareCategory(app, options, pageMap).then((pageKeys) => {
