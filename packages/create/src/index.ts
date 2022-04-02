@@ -5,8 +5,8 @@ import execa from "execa";
 import { prompt } from "inquirer";
 import { resolve } from "path";
 
+import { bin } from "./bin";
 import {
-  bin,
   getDevDependencies,
   getGitIgnorePath,
   getScript,
@@ -178,7 +178,7 @@ cli
      * Install deps
      */
 
-    const registry = await getRegistry(lang, bin);
+    const registry = await getRegistry(lang);
 
     console.log(message.install);
     console.warn(message.wait);

@@ -1,103 +1,9 @@
 import { join } from "path";
 
+import { bin } from "./bin";
 import { checkForNextVersion } from "./checkVersion";
-import { detectYarn } from "./hasYarn";
 
 import type { Lang } from "./i18n";
-
-const EN_WORKFLOW = `
-name: Deploy Docs
-
-on:
-  push:
-    branches:
-      # make sure this is the branch you are using
-      - main
-
-jobs:
-  deploy-gh-pages:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          # if your docs needs submodules, uncomment the following line
-          # submodules: true
-
-      - uses: actions/cache@v3
-        id: node-modules
-        with:
-          path: node_modules/
-          key: \${{ runner.os }}-node-modules-\${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            \${{ runner.os }}-node-modules-
-
-      - name: Install Deps
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
-
-      - name: Build Docs
-        env:
-          NODE_OPTIONS: --max_old_space_size=4096
-        run: yarn run docs:build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          # This is the branch where the docs are deployed to
-          branch: gh-pages
-          folder: VUEPRESS_DIST_FOLDER
-
-`;
-
-const ZH_WORKFLOW = `
-name: 部署文档
-
-on:
-  push:
-    branches:
-      # 确保这是你正在使用的分支名称
-      - main
-
-jobs:
-  deploy-gh-pages:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          # 如果你文档需要 Git 子模块，取消注释下一行
-          # submodules: true
-
-      - uses: actions/cache@v3
-        id: node-modules
-        with:
-          path: node_modules/
-          key: \${{ runner.os }}-node-modules-\${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            \${{ runner.os }}-node-modules-
-
-      - name: Install Deps
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
-
-      - name: Build Docs
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run build:webpack
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          # 这是文档部署到的分支名称
-          branch: gh-pages
-          folder: VUEPRESS_DIST_FOLDER
-
-`;
-
-export const bin = detectYarn() ? "yarn" : "npm";
 
 export const getScript = (dir: string): Record<string, string> => ({
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -109,14 +15,71 @@ export const getScript = (dir: string): Record<string, string> => ({
 });
 
 export const getWorkflowContent = (dir: string, lang: Lang): string =>
-  (lang === "简体中文" ? ZH_WORKFLOW : EN_WORKFLOW).replace(
-    "VUEPRESS_DIST_FOLDER",
-    join(dir, ".vuepress/dist").replace(/\\/g, "/")
-  );
+  `
+name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
+
+on:
+  push:
+    branches:
+      # ${
+        lang === "简体中文"
+          ? "确保这是你正在使用的分支名称"
+          : "make sure this is the branch you are using"
+      }
+      - main
+
+jobs:
+  deploy-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          # ${
+            lang === "简体中文"
+              ? "如果你文档需要 Git 子模块，取消注释下一行"
+              : "if your docs needs submodules, uncomment the following line"
+          }
+          # submodules: true
+
+      - uses: actions/cache@v3
+        id: node-modules
+        with:
+          path: node_modules/
+          key: \${{ runner.os }}-node-modules-\${{ hashFiles('${
+            bin === "yarn" ? "yarn.lock" : "package-lock.json"
+          }') }}
+          restore-keys: |
+            \${{ runner.os }}-node-modules-
+
+      - name: ${lang === "简体中文" ? "安装依赖" : "Install Deps"}
+        if: steps.node-modules.outputs.cache-hit != 'true'
+        run: ${
+          bin === "yarn" ? "yarn install --frozen-lockfile" : "npm install"
+        }
+
+      - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: ${bin} run docs:build
+
+      - name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # ${
+            lang === "简体中文"
+              ? "这是文档部署到的分支名称"
+              : "This is the branch where the docs are deployed to"
+          }
+          branch: gh-pages
+          folder: ${join(dir, ".vuepress/dist").replace(/\\/g, "/")}
+
+`;
 
 export const getDevDependencies = async (): Promise<Record<string, string>> => {
-  const vuepressVersion = await checkForNextVersion("vuepress", bin);
-  const themeVersion = await checkForNextVersion("vuepress-theme-hope", bin);
+  const vuepressVersion = await checkForNextVersion("vuepress");
+  const themeVersion = await checkForNextVersion("vuepress-theme-hope");
 
   return {
     vuepress: `^${vuepressVersion}`,

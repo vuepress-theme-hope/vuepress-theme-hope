@@ -1,8 +1,9 @@
 import { get } from "https";
 
+import { bin } from "./bin";
+
 export const checkForNextVersion = async (
-  packageName: string,
-  bin: "npm" | "yarn"
+  packageName: string
 ): Promise<string> => {
   const getVersionInfo = (): Promise<string> =>
     new Promise((resolve, reject) => {

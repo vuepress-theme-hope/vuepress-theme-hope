@@ -1,6 +1,8 @@
 import { sync } from "execa";
 import { prompt } from "inquirer";
 
+import { bin } from "./bin";
+
 import type { Lang } from "./i18n";
 
 export interface RegistryAnswer {
@@ -9,11 +11,11 @@ export interface RegistryAnswer {
 
 const npmmirrorRegistry = "https://registry.npmmirror.com/";
 
-const getUserRegistry = (bin: string): string =>
-  sync(bin ? "yarn" : "npm", ["config", "get", "registry"]).stdout;
+const getUserRegistry = (): string =>
+  sync(bin, ["config", "get", "registry"]).stdout;
 
-export const getRegistry = async (lang: Lang, bin: string): Promise<string> => {
-  const userRegistry = getUserRegistry(bin);
+export const getRegistry = async (lang: Lang): Promise<string> => {
+  const userRegistry = getUserRegistry();
 
   if (lang === "简体中文") {
     const { registry } = await prompt<RegistryAnswer>([

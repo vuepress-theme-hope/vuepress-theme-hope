@@ -1,5 +1,7 @@
 import { prompt } from "inquirer";
 
+import { bin } from "./bin";
+
 export type Lang = "english (US)" | "简体中文";
 
 export interface CreateI18n {
@@ -36,13 +38,13 @@ export const i18n: Record<Lang, CreateI18n> = {
     devServerAsk: "是否想要现在启动 Demo 查看?",
     devServer:
       "启动开发服务器...\n启动成功后，请在浏览器输入给出的开发服务器地址(默认为 'localhost:8080')",
-    hint: '提示: 请使用 "yarn run docs:dev" 命令启动开发服务器',
+    hint: `提示: 请使用 "${bin} run docs:dev" 命令启动开发服务器`,
     nameMessage: "设置应用名称",
     nameError: "应用名称应只包含小写字母、数字和连接线 (-)",
     versionMessage: "设置应用版本号",
     versionError: "此版本无效，版本号应为 'x.x.x'",
     dirError:
-      '"[dir]" 的方括号表示此处为一个参数，你应该替换为自己想使用的文件夹名称，如 "src", "docs" 等!',
+      '"[dir]" 的方括号表示此处为一个参数，你应该替换为自己想使用的文件夹名称，如 "src", "docs" 等!\n例如: "npm init vuepress-theme-hope@next docs"',
     descriptionMessage: "设置应用描述",
     licenseMessage: "设置协议",
     i18nMessage: "项目需要用到多语言么?",
@@ -60,7 +62,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     devServerAsk: "Would you like to preview template now?",
     devServer:
       "Staring dev server...\nAfter the dev server starts running, please visit the given server link ('localhost:8080' by default)",
-    hint: 'Hint: You should execute "yarn run docs:dev" to start dev server.',
+    hint: `Hint: You should execute "${bin} run docs:dev" to start dev server.`,
     nameMessage: "Your project name",
     nameError:
       "package name should only contain lowercase characters, numbers and dash",
@@ -68,7 +70,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     versionError:
       "This version is not a valid one. Version should be like 'x.x.x'",
     dirError:
-      'The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "src", "docs"',
+      'The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "src", "docs"\nFor example: "npm init vuepress-theme-hope@next docs"',
     descriptionMessage: "Your project description",
     licenseMessage: "Your project lincense",
     i18nMessage: "Does the project need mutiple languages?",
