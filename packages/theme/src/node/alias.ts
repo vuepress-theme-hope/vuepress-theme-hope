@@ -1,7 +1,5 @@
 import { fs, path } from "@vuepress/utils";
 
-import type { App } from "@vuepress/core";
-
 const getDirAlias = (dir: string): [string, string][] =>
   fs
     .readdirSync(path.resolve(__dirname, "../client", dir))
@@ -24,7 +22,7 @@ const getEntryAlias = (entry: string): [string, string] | null =>
       ]
     : null;
 
-export const getAlias = (app: App): Record<string, string> => {
+export const resolveAlias = (isDebug = false): Record<string, string> => {
   // use alias to make all components replaceable
   const alias = Object.fromEntries([
     // define components
@@ -53,7 +51,7 @@ export const getAlias = (app: App): Record<string, string> => {
       .flat(),
   ]);
 
-  if (app.env.isDebug) console.log("Theme alias config:", alias);
+  if (isDebug) console.log("Theme alias config:", alias);
 
   return alias;
 };

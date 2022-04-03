@@ -4,6 +4,7 @@ import type {
   HopeThemeBlogOptions,
 } from "./blog";
 import type {
+  HopeThemeEncryptConfig,
   HopeThemeEncryptLocaleData,
   HopeThemeEncryptOptions,
 } from "./encrypt";
@@ -37,5 +38,11 @@ export interface HopeThemeFeatureOptions {
   encrypt?: HopeThemeEncryptOptions;
 }
 
-export type HopeThemeFeatureConfig = HopeThemeFeatureLocaleConfig &
-  Required<HopeThemeFeatureOptions>;
+export interface HopeThemeFeatureConfig extends HopeThemeFeatureLocaleConfig {
+  /**
+   * Encrypt config
+   *
+   * 加密配置
+   */
+  encrypt: HopeThemeEncryptConfig;
+}

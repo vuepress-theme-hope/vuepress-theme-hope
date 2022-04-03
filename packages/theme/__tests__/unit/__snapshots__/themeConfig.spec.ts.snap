@@ -1,0 +1,402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should generate themeConfig correcly Should contain basic properties 1`] = `
+Object {
+  "blog": Object {},
+  "darkmode": "auto-switch",
+  "encrypt": Object {
+    "global": false,
+  },
+  "fullscreen": true,
+  "iconPrefix": "",
+  "locales": Object {
+    "/": Object {
+      "blog": Object {},
+      "blogLocales": Object {
+        "all": "All",
+        "article": "Articles",
+        "articleList": "Article List",
+        "category": "Category",
+        "encrypt": "Encrypted",
+        "intro": "Personal Intro",
+        "slides": "Slides",
+        "star": "Star",
+        "tag": "Tags",
+        "timeline": "Timeline",
+        "timelineTitle": "Yesterday Once More!",
+      },
+      "encryptLocales": Object {
+        "errorHint": "Please enter the correct password!",
+        "title": "Please enter password",
+      },
+      "headerDepth": 2,
+      "hideSiteNameonMobile": true,
+      "lang": "en-US",
+      "metaLocales": Object {
+        "contributors": "Contributors",
+        "editLink": "Edit this page",
+        "lastUpdated": "Last update",
+        "next": "Next",
+        "prev": "Prev",
+      },
+      "navbarAutoHide": "mobile",
+      "navbarIcon": true,
+      "navbarLocales": Object {
+        "langName": "English",
+        "selectLangAriaLabel": "Select language",
+        "selectLangText": "Language",
+      },
+      "outlookLocales": Object {
+        "darkmode": "Theme Mode",
+        "fullscreen": "Full Screen",
+        "themeColor": "Theme Color",
+      },
+      "repoDisplay": true,
+      "routeLocales": Object {
+        "404msg": Array [
+          "There’s nothing here.",
+          "How did we get here?",
+          "That’s a Four-Oh-Four.",
+          "Looks like we've got some broken links.",
+        ],
+        "back": "Go back",
+        "home": "Take me home",
+      },
+      "sidebar": "structure",
+      "sidebarIcon": true,
+    },
+  },
+  "pure": false,
+  "themeColor": Object {
+    "blue": "#3498db",
+    "green": "#3eaf7c",
+    "orange": "#f39c12",
+    "purple": "#8e44ad",
+    "red": "#e74c3c",
+  },
+}
+`;
+
+exports[`should generate themeConfig correcly Should handle single language 1`] = `
+Object {
+  "blog": Object {},
+  "darkmode": "auto-switch",
+  "encrypt": Object {
+    "global": false,
+  },
+  "fullscreen": true,
+  "iconPrefix": "",
+  "locales": Object {
+    "/": Object {
+      "blog": Object {},
+      "blogLocales": Object {
+        "all": "All",
+        "article": "Articles",
+        "articleList": "Article List",
+        "category": "Category",
+        "encrypt": "Encrypted",
+        "intro": "Personal Intro",
+        "slides": "Slides",
+        "star": "Star",
+        "tag": "Tags",
+        "timeline": "Timeline",
+        "timelineTitle": "Yesterday Once More!",
+      },
+      "encryptLocales": Object {
+        "errorHint": "Please enter the correct password!",
+        "title": "Please enter password",
+      },
+      "headerDepth": 2,
+      "hideSiteNameonMobile": true,
+      "lang": "en-US",
+      "metaLocales": Object {
+        "contributors": "Contributors",
+        "editLink": "Edit this page",
+        "lastUpdated": "Last update",
+        "next": "Next",
+        "prev": "Prev",
+      },
+      "navbar": Array [
+        "/",
+        "/about",
+      ],
+      "navbarAutoHide": "mobile",
+      "navbarIcon": true,
+      "navbarLocales": Object {
+        "langName": "English",
+        "selectLangAriaLabel": "Select language",
+        "selectLangText": "Language",
+      },
+      "outlookLocales": Object {
+        "darkmode": "Theme Mode",
+        "fullscreen": "Full Screen",
+        "themeColor": "Theme Color",
+      },
+      "repoDisplay": true,
+      "routeLocales": Object {
+        "404msg": Array [
+          "There’s nothing here.",
+          "How did we get here?",
+          "That’s a Four-Oh-Four.",
+          "Looks like we've got some broken links.",
+        ],
+        "back": "Go back",
+        "home": "Take me home",
+      },
+      "sidebar": Array [
+        "/",
+        "/about",
+      ],
+      "sidebarIcon": true,
+    },
+  },
+  "pure": false,
+  "themeColor": Object {
+    "blue": "#3498db",
+    "green": "#3eaf7c",
+    "orange": "#f39c12",
+    "purple": "#8e44ad",
+    "red": "#e74c3c",
+  },
+}
+`;
+
+exports[`should generate themeConfig correcly locale should have higher property 1`] = `
+Object {
+  "blog": Object {},
+  "darkmode": "auto-switch",
+  "encrypt": Object {
+    "global": false,
+  },
+  "fullscreen": true,
+  "iconPrefix": "",
+  "locales": Object {
+    "/": Object {
+      "blog": Object {},
+      "blogLocales": Object {
+        "all": "All",
+        "article": "Articles",
+        "articleList": "Article List",
+        "category": "Category",
+        "encrypt": "Encrypted",
+        "intro": "Personal Intro",
+        "slides": "Slides",
+        "star": "Star",
+        "tag": "Tags",
+        "timeline": "Timeline",
+        "timelineTitle": "Yesterday Once More!",
+      },
+      "encryptLocales": Object {
+        "errorHint": "Please enter the correct password!",
+        "title": "Please enter password",
+      },
+      "headerDepth": 2,
+      "hideSiteNameonMobile": true,
+      "lang": "en-US",
+      "metaLocales": Object {
+        "contributors": "Contributors",
+        "editLink": "Edit this page",
+        "lastUpdated": "Last update",
+        "next": "Next",
+        "prev": "Prev",
+      },
+      "navbar": Array [
+        "/",
+        "/guide",
+        "/about",
+      ],
+      "navbarAutoHide": "mobile",
+      "navbarIcon": true,
+      "navbarLocales": Object {
+        "langName": "English",
+        "selectLangAriaLabel": "Select language",
+        "selectLangText": "Language",
+      },
+      "outlookLocales": Object {
+        "darkmode": "Theme Mode",
+        "fullscreen": "Full Screen",
+        "themeColor": "Theme Color",
+      },
+      "repoDisplay": true,
+      "routeLocales": Object {
+        "404msg": Array [
+          "There’s nothing here.",
+          "How did we get here?",
+          "That’s a Four-Oh-Four.",
+          "Looks like we've got some broken links.",
+        ],
+        "back": "Go back",
+        "home": "Take me home",
+      },
+      "sidebar": "structure",
+      "sidebarIcon": true,
+    },
+  },
+  "pure": false,
+  "themeColor": Object {
+    "blue": "#3498db",
+    "green": "#3eaf7c",
+    "orange": "#f39c12",
+    "purple": "#8e44ad",
+    "red": "#e74c3c",
+  },
+}
+`;
+
+exports[`should generate themeConfig correcly root only option should not appear in locales 1`] = `
+Object {
+  "blog": Object {},
+  "darkmode": "disable",
+  "encrypt": Object {
+    "global": false,
+  },
+  "fullscreen": true,
+  "iconPrefix": "",
+  "locales": Object {
+    "/": Object {
+      "blog": Object {},
+      "blogLocales": Object {
+        "all": "All",
+        "article": "Articles",
+        "articleList": "Article List",
+        "category": "Category",
+        "encrypt": "Encrypted",
+        "intro": "Personal Intro",
+        "slides": "Slides",
+        "star": "Star",
+        "tag": "Tags",
+        "timeline": "Timeline",
+        "timelineTitle": "Yesterday Once More!",
+      },
+      "encryptLocales": Object {
+        "errorHint": "Please enter the correct password!",
+        "title": "Please enter password",
+      },
+      "headerDepth": 2,
+      "hideSiteNameonMobile": true,
+      "lang": "en-US",
+      "metaLocales": Object {
+        "contributors": "Contributors",
+        "editLink": "Edit this page",
+        "lastUpdated": "Last update",
+        "next": "Next",
+        "prev": "Prev",
+      },
+      "navbarAutoHide": "mobile",
+      "navbarIcon": true,
+      "navbarLocales": Object {
+        "langName": "English",
+        "selectLangAriaLabel": "Select language",
+        "selectLangText": "Language",
+      },
+      "outlookLocales": Object {
+        "darkmode": "Theme Mode",
+        "fullscreen": "Full Screen",
+        "themeColor": "Theme Color",
+      },
+      "repoDisplay": true,
+      "routeLocales": Object {
+        "404msg": Array [
+          "There’s nothing here.",
+          "How did we get here?",
+          "That’s a Four-Oh-Four.",
+          "Looks like we've got some broken links.",
+        ],
+        "back": "Go back",
+        "home": "Take me home",
+      },
+      "sidebar": "structure",
+      "sidebarIcon": true,
+    },
+  },
+  "pure": true,
+  "themeColor": Object {
+    "blue": "#3498db",
+    "green": "#3eaf7c",
+    "orange": "#f39c12",
+    "purple": "#8e44ad",
+    "red": "#e74c3c",
+  },
+}
+`;
+
+exports[`should generate themeConfig correcly should fallback to root if locale config is missing 1`] = `
+Object {
+  "blog": Object {},
+  "darkmode": "auto-switch",
+  "encrypt": Object {
+    "global": false,
+  },
+  "fullscreen": true,
+  "iconPrefix": "",
+  "locales": Object {
+    "/": Object {
+      "blog": Object {},
+      "blogLocales": Object {
+        "all": "All",
+        "article": "Articles",
+        "articleList": "Article List",
+        "category": "Category",
+        "encrypt": "Encrypted",
+        "intro": "Personal Intro",
+        "slides": "Slides",
+        "star": "Star",
+        "tag": "Tags",
+        "timeline": "Timeline",
+        "timelineTitle": "Yesterday Once More!",
+      },
+      "encryptLocales": Object {
+        "errorHint": "Please enter the correct password!",
+        "title": "Please enter password",
+      },
+      "headerDepth": 2,
+      "hideSiteNameonMobile": true,
+      "lang": "en-US",
+      "metaLocales": Object {
+        "contributors": "Contributors",
+        "editLink": "Edit this page",
+        "lastUpdated": "Last update",
+        "next": "Next",
+        "prev": "Prev",
+      },
+      "navbar": Array [
+        "/",
+        "/about",
+      ],
+      "navbarAutoHide": "mobile",
+      "navbarIcon": true,
+      "navbarLocales": Object {
+        "langName": "English",
+        "selectLangAriaLabel": "Select language",
+        "selectLangText": "Language",
+      },
+      "outlookLocales": Object {
+        "darkmode": "Theme Mode",
+        "fullscreen": "Full Screen",
+        "themeColor": "Theme Color",
+      },
+      "repoDisplay": true,
+      "routeLocales": Object {
+        "404msg": Array [
+          "There’s nothing here.",
+          "How did we get here?",
+          "That’s a Four-Oh-Four.",
+          "Looks like we've got some broken links.",
+        ],
+        "back": "Go back",
+        "home": "Take me home",
+      },
+      "sidebar": "structure",
+      "sidebarIcon": true,
+    },
+  },
+  "pure": false,
+  "themeColor": Object {
+    "blue": "#3498db",
+    "green": "#3eaf7c",
+    "orange": "#f39c12",
+    "purple": "#8e44ad",
+    "red": "#e74c3c",
+  },
+}
+`;

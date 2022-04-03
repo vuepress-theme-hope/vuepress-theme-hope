@@ -1,7 +1,7 @@
 import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
-import { useEncryptOptions } from "./utils";
+import { useEncryptData } from "./utils";
 import { checkToken } from "@theme-hope/module/encrypt/utils";
 
 import type { ComputedRef } from "vue";
@@ -19,7 +19,7 @@ const sessionConfig = ref<Record<string, string>>({});
 
 export const usePathEncrypt = (): PathEncrypt => {
   const route = useRoute();
-  const options = useEncryptOptions();
+  const options = useEncryptData();
 
   const getPathMatchedKeys = (path: string): string[] =>
     typeof options.value.config === "object"
@@ -34,17 +34,13 @@ export const usePathEncrypt = (): PathEncrypt => {
     if (matchedKeys.length !== 0) {
       const { config = {} } = options.value;
 
-      return !matchedKeys.some((key) => {
-        const keyConfig = config[key];
-        const hitTokens =
-          typeof keyConfig === "string" ? [keyConfig] : keyConfig;
-
-        return hitTokens.some(
+      return !matchedKeys.some((key) =>
+        config[key].some(
           (token) =>
             checkToken(localConfig.value[key], token) ||
             checkToken(sessionConfig.value[key], token)
-        );
-      });
+        )
+      );
     }
 
     return false;
@@ -57,11 +53,8 @@ export const usePathEncrypt = (): PathEncrypt => {
     const matchedKeys = getPathMatchedKeys(route.path);
 
     for (const hitKey of matchedKeys) {
-      const hitConfig = config[hitKey];
-      const hitTokens = typeof hitConfig === "string" ? [hitConfig] : hitConfig;
-
       // some of the tokens matches
-      if (hitTokens.filter((token) => checkToken(inputToken, token))) {
+      if (config[hitKey].filter((token) => checkToken(inputToken, token))) {
         (keep ? localConfig : sessionConfig).value[hitKey] = inputToken;
 
         if (keep)

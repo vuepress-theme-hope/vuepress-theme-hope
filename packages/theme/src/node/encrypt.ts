@@ -6,7 +6,10 @@ import type {
   WebpackConfiguration,
 } from "@vuepress/bundler-webpack";
 import type { App } from "@vuepress/core";
-import type { HopeThemeEncryptOptions } from "../shared";
+import type {
+  HopeThemeEncryptConfig,
+  HopeThemeEncryptOptions,
+} from "../shared";
 
 export const handleCrytoForWebpack = (app: App): void => {
   const { bundler, bundlerConfig } = app.options;
@@ -33,59 +36,70 @@ export const handleCrytoForWebpack = (app: App): void => {
   }
 };
 
-export const resolveEncrypt = (encrypt: HopeThemeEncryptOptions): void => {
+export const resolveEncrypt = (
+  encrypt: HopeThemeEncryptOptions
+): HopeThemeEncryptConfig => {
+  const result: HopeThemeEncryptConfig = {
+    global: Boolean(encrypt.global),
+  };
+
   // handle global token
   if (encrypt.admin)
     if (typeof encrypt.admin === "string")
-      encrypt.admin = hashSync(encrypt.admin);
+      result.admin = [hashSync(encrypt.admin)];
     else if (Array.isArray(encrypt.admin))
-      encrypt.admin = encrypt.admin
+      result.admin = encrypt.admin
         .map((globalToken) => {
           if (typeof globalToken === "string") return hashSync(globalToken);
 
-          logger.error(`You config "themeConfig.encrypt.global", but your config is invalid. 
+          logger.error(`You config "themeConfig.encrypt.admin", but your config is invalid. 
 
           All password MUST be string. But we found one’s type is ${typeof globalToken}. Please fix it!`);
 
           return null;
         })
         .filter((item): item is string => item !== null);
-    else {
+    else
       logger.error(
-        `You are asking for global encryption but you provide invalid "global" config. 
+        `You are asking for global encryption but you provide invalid "admin" config. 
         
-        Please check "global" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.admin}. Please fix it!`
+        Please check "admin" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.admin}. Please fix it!`
       );
 
-      delete encrypt.admin;
-    }
+  if (encrypt.config)
+    result.config = Object.fromEntries(
+      Object.entries(encrypt.config)
+        .map<[string, string[]] | null>(([key, tokens]) => {
+          if (typeof tokens === "string") return [key, [hashSync(tokens)]];
 
-  const tokenConfig = encrypt.config || {};
+          if (Array.isArray(tokens)) {
+            const encryptedTokens = tokens
+              .map((token) => {
+                if (typeof token === "string") return hashSync(token);
 
-  Object.entries(tokenConfig).forEach(([key, token]) => {
-    if (typeof token === "string") tokenConfig[key] = hashSync(token);
-    else if (Array.isArray(token))
-      tokenConfig[key] = token
-        .map((configToken) => {
-          const hash = hashSync(configToken);
-
-          if (typeof configToken === "string") return hash;
-
-          logger.error(`You config "themeConfig.encrypt.config", but your config is invalid. 
+                logger.error(`You config "themeConfig.encrypt.config", but your config is invalid. 
         
-Key ${key}’s value MUST be string or string[]. But it’s type is ${typeof configToken}. Please fix it!`);
+Key ${key}’s value MUST be string or string[]. But it’s type is ${typeof token}. Please fix it!`);
+
+                return null;
+              })
+              .filter((item): item is string => item !== null);
+
+            if (encryptedTokens.length) return [key, encryptedTokens];
+
+            return null;
+          }
+
+          logger.error(
+            `[You config "themeConfig.encrypt.config", but your config is invalid. 
+        
+        The value of key ${key} MUST be string or string[]. But not it’s ${typeof tokens}. Please fix it!`
+          );
 
           return null;
         })
-        .filter((item): item is string => item !== null);
-    else {
-      logger.error(
-        `[You config "themeConfig.encrypt.config", but your config is invalid. 
-        
-        The value of key ${key} MUST be string or string[]. But not it’s ${typeof token}. Please fix it!`
-      );
+        .filter((item): item is [string, string[]] => item !== null)
+    );
 
-      delete tokenConfig[key];
-    }
-  });
+  return result;
 };
