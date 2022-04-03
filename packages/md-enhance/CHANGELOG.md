@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.33...v2.0.0-beta.34) (2022-04-03)
+
+### Bug Fixes
+
+- **md-enhance:** improve mermaid rendering ([388db26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/388db265d4136ea287b5bbaff51201a42a80e9b5))
+
 # [2.0.0-beta.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.32...v2.0.0-beta.33) (2022-04-02)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
