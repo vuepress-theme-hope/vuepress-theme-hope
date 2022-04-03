@@ -37,7 +37,7 @@
     "packages:bootstrap": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/bootstrap.ts",
     "packages:check-update": "ncu --deep --timeout 600000",
     "packages:update": "ncu -u --deep --timeout 600000 && yarn install && yarn upgrade",
-    "test": "jest -i"
+    "test": "node --no-compilation-cache --expose-gc node_modules/jest/bin/jest -i"
   },
   "lint-staged": {
     "*.vue": [
