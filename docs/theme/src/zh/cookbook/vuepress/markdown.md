@@ -112,12 +112,12 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 - 相对路径是指向目标文件的有效链接，在你的编辑器或者代码仓库中浏览源文件时也可以正确跳转。
 - 相对路径在不同 locales 下都是一致的，这样在翻译你的内容时就不需要修改 locale 路径了。
-- 在使用绝对路径时，如果你站点的 [base](https://v2.vuepress.vuejs.org/zh/reference/config.md#base) 不是 `"/"`，你需要手动添加 `base` 或者使用 [base helper](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper) 。
+- 在使用绝对路径时，如果你站点的 [base](https://v2.vuepress.vuejs.org/zh/reference/config.html#base) 不是 `"/"`，你需要手动添加 `base` 或者使用 [base helper](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper) 。
 
 ::: tip
 链接扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.links](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-links)
+配置参考： [markdown.links](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-links)
 :::
 
 ### Emoji
@@ -139,7 +139,7 @@ VuePress 2 已经发布 :tada: ！
 ::: tip
 Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) 支持。
 
-配置参考： [markdown.emoji](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-emoji)
+配置参考： [markdown.emoji](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-emoji)
 :::
 
 ### 目录
@@ -161,7 +161,7 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 ::: tip
 目录扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right)。
 
-配置参考： [markdown.toc](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-toc)
+配置参考： [markdown.toc](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-toc)
 :::
 
 ### 代码块
@@ -211,7 +211,7 @@ export const config: UserConfig = {
 ::: tip
 行高亮扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines)。
 
-配置参考： [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-code-highlightlines)
+配置参考： [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-code-highlightlines)
 :::
 
 #### 行号
@@ -253,7 +253,7 @@ const line3 = 'This is line 3'
 ::: tip
 行号扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-code-linenumbers)
+配置参考： [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-code-linenumbers)
 :::
 
 #### 添加 v-pre
@@ -316,7 +316,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 v-pre 扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.code.vPre](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-vpre)
+配置参考： [markdown.code.vPre](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-vpre)
 :::
 
 ### 导入代码块
@@ -386,14 +386,14 @@ module.exports = {
 ::: tip
 导入代码扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.importCode](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-importcode)
+配置参考： [markdown.importCode](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-importcode)
 :::
 
 ## 在 Markdown 中使用 Vue
 
 这一章节会介绍 Vue 在 Markdown 中一些基本用法。
 
-可以前往 [Cookbook > Markdown 和 Vue SFC](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/markdown-and-vue-sfc.md) 来了解更多内容。
+可以前往 [Cookbook > Markdown 和 Vue SFC](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/markdown-and-vue-sfc.html) 来了解更多内容。
 
 ### 模板语法
 
@@ -438,9 +438,9 @@ module.exports = {
 
 ::: tip
 
-前往 [内置组件](https://v2.vuepress.vuejs.org/zh/reference/components.md) 查看所有内置组件。
+前往 [内置组件](https://v2.vuepress.vuejs.org/zh/reference/components.html) 查看所有内置组件。
 
-前往 [默认主题 > 内置组件](https://v2.vuepress.vuejs.org/zh/reference/default-theme/components.md) 查看默认主题中的所有内置组件。
+前往 [默认主题 > 内置组件](https://v2.vuepress.vuejs.org/zh/reference/default-theme/components.html) 查看默认主题中的所有内置组件。
 
 :::
 
@@ -456,5 +456,5 @@ module.exports = {
 
 - 添加一个 [v-pre](https://v3.cn.vuejs.org/api/directives.html#v-pre) 指令来跳过这个元素和它的子元素的编译过程。注意所有的模板语法也都会失效。
 - 设置 [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) 来告诉 Vue 模板编译器不要尝试作为组件来解析它们。
-  - 对于 `@bundler-webpack` ，设置 [vue.compilerOptions](https://v2.vuepress.vuejs.org/zh/reference/bundler/webpack.md#vue)
-  - 对于 `@bundler-vite` ，设置 [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/zh/reference/bundler/vite.md#vuepluginoptions)
+  - 对于 `@bundler-webpack` ，设置 [vue.compilerOptions](https://v2.vuepress.vuejs.org/zh/reference/bundler/webpack.html#vue)
+  - 对于 `@bundler-vite` ，设置 [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/zh/reference/bundler/vite.html#vuepluginoptions)

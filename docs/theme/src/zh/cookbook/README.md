@@ -30,6 +30,12 @@ article: false
 
 - [VuePress 介绍](vuepress/README.md)
 
-## 实用教程
+## 高级教程
 
-- [自定义主题样式](customize/style.md)
+- [使用组件](advanced/component.md)
+
+- [自定义主题样式](advanced/style.md)
+
+- [替换主题组件](advanced/replace.md)
+
+- [主题继承](advanced/extend.md)

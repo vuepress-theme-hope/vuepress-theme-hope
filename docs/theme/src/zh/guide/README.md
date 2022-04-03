@@ -114,10 +114,6 @@ tag:
 
 - [Sitemap 生成](advanced/sitemap.md)
 
-- [自定义主题组件](advanced/customize.md)
-
-- [主题继承](advanced/extend.md)
-
 ## 内建插件 🧩
 
 本主题包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。

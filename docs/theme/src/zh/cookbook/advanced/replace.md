@@ -1,5 +1,5 @@
 ---
-title: 自定义主题组件
+title: 替换主题组件
 icon: customize
 category:
   - 高级

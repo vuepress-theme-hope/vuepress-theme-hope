@@ -116,10 +116,6 @@ Layout Optimization:
 
 - [Sitemap generation](advanced/sitemap.md)
 
-- [Component customize](advanced/customize.md)
-
-- [Theme extending](advanced/extend.md)
-
 ## Build-in Plugins🧩
 
 The theme includes the following plugins, you can use them in other themes or directly.

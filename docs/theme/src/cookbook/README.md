@@ -30,6 +30,12 @@ Here is a step by step tutorial for newcomers:
 
 - [VuePress Intro](vuepress/README.md)
 
-## Practical Tutorial
+## Advanced Tutorial
 
-- [Style Customization](customize/style.md)
+- [Using Components](advanced/component.md)
+
+- [Customize Style](advanced/style.md)
+
+- [Replacing Component](advanced/customize.md)
+
+- [Theme Extending](advanced/extend.md)

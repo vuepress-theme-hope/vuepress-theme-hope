@@ -90,7 +90,7 @@ export const enSidebarConfig = defineSidebarConfig({
       icon: "advance",
       prefix: "advanced/",
       collapsable: true,
-      children: ["pwa", "feed", "seo", "sitemap", "customize", "extend"],
+      children: ["pwa", "feed", "seo", "sitemap"],
     },
   ],
 
@@ -162,11 +162,11 @@ export const enSidebarConfig = defineSidebarConfig({
       children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
     },
     {
-      text: "Customize",
-      icon: "customize",
-      prefix: "customize/",
+      text: "Advanced",
+      icon: "advance",
+      prefix: "advanced/",
       collapsable: true,
-      children: ["style"],
+      children: ["component", "style", "replace", "extend"],
     },
   ],
 
@@ -196,7 +196,7 @@ export const enSidebarConfig = defineSidebarConfig({
       text: "Cookbook",
       icon: "guide",
       prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
+      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
     },
     {
       text: "Migration",

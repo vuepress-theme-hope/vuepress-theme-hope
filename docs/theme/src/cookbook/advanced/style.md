@@ -67,10 +67,10 @@ If you don’t like the animation speed of the theme and think they are too fast
 
 If you are not satisfied with the styling of some components and want to make some tweaks on them, you can override the theme’s default styles by adding CSS with `!important` in `index.scss`.
 
-If your changes involve modifying the component DOM (document structure), you may need to refer to the [Advanced → Customize Components](../guide/advanced/customize.md) section to customize the override of the component.
+If your changes involve modifying the component DOM (document structure), you may need to refer to the [Replace Theme Components](replace.md) section to customize the override of the component.
 
 ### Add New Layout or Edit theme
 
 To do some revamping of the whole theme, or want to add a new layout, you can extend the theme. The new theme can be stored locally in the project, or it can be republished as a new theme on npm.
 
-For related content, see [Advanced → Extending Theme](../guide/advanced/extend.md).
+For related content, see [Extending Theme](extend.md).
