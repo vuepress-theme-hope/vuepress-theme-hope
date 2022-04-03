@@ -133,7 +133,7 @@ jobs:
 
       - name: Unit test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=4096 --no-compilation-cache --expose-gc
         run: yarn run test
 
       - name: Upload coverage
