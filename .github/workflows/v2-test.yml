@@ -132,6 +132,8 @@ jobs:
           yarn run lint:md
 
       - name: Unit test
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run test
 
       - name: Upload coverage
