@@ -21,7 +21,7 @@ export interface HopeThemeEncryptOptions {
    *
    * 是否全局加密
    *
-   * @default 'local'
+   * @default false
    */
   global?: boolean;
 
@@ -57,4 +57,33 @@ export interface HopeThemeEncryptOptions {
    * ```
    */
   config?: Record<string, string | string[]>;
+}
+
+/**
+ * Encrypt Options
+ *
+ * 加密选项
+ */
+export interface HopeThemeEncryptConfig {
+  /**
+   * Whether encrypt gloablly
+   *
+   * 是否全局加密
+   *
+   * @default false
+   */
+  global?: boolean;
+
+  /**
+   * Admin passwords, which has the highest authority
+   *
+   * 最高权限密码
+   */
+  admin?: string[];
+  /**
+   * Encrypt Configuration
+   *
+   * 加密配置
+   */
+  config?: Record<string, string[]>;
 }

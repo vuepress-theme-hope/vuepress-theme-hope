@@ -1,7 +1,7 @@
 import { compareSync } from "bcryptjs";
 import { computed, onMounted, ref } from "vue";
 
-import { useEncryptOptions } from "./utils";
+import { useEncryptData } from "./utils";
 
 import type { ComputedRef } from "vue";
 
@@ -13,18 +13,16 @@ export interface GlobalEncrypt {
 }
 
 export const useGlobalEcrypt = (): GlobalEncrypt => {
-  const options = useEncryptOptions();
+  const options = useEncryptData();
 
   const globalToken = ref("");
 
   const isGlobalEncrypted = computed(() => {
     if (options.value.global && options.value.admin) {
-      const { admin: global } = options.value;
-      const globalTokens = typeof global === "string" ? [global] : global;
-
       // none of the token matches
-      return !globalTokens.some((globalPassword) =>
-        compareSync(globalToken.value, globalPassword)
+      return (
+        !options.value.admin ||
+        [].some((hash) => compareSync(globalToken.value, hash))
       );
     }
 
@@ -32,12 +30,9 @@ export const useGlobalEcrypt = (): GlobalEncrypt => {
   });
 
   const validateGlobalToken = (inputToken: string, keep = false): void => {
-    const { admin } = options.value;
-    const globalPasswords = typeof admin === "string" ? [admin] : admin || [];
-
     if (
       // some of the token matches
-      globalPasswords.some((token) => compareSync(inputToken, token))
+      (options.value.admin || []).some((hash) => compareSync(inputToken, hash))
     ) {
       globalToken.value = inputToken;
       (keep ? localStorage : sessionStorage).setItem(STORAGE_KEY, inputToken);

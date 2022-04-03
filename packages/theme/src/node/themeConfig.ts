@@ -103,7 +103,7 @@ export const getThemeConfig = (
   };
 
   // handle encrypt options
-  resolveEncrypt(themeData.encrypt);
+  themeData.encrypt = resolveEncrypt(themeData.encrypt);
 
   if (app.env.isDebug) console.log("Theme config: ", themeData);
 

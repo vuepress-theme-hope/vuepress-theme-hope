@@ -75,7 +75,7 @@ export const checkTag = (app: App): void => {
   }
 };
 
-export const updateBundlerOptions = (app: App): void => {
+export const updateBundlerConfig = (app: App): void => {
   addViteOptimizeDepsInclude(app, [
     "@vueuse/core",
     "bcryptjs",

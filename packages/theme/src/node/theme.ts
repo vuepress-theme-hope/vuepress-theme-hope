@@ -1,14 +1,14 @@
 import { path } from "@vuepress/utils";
 
-import { getAlias } from "./alias";
-import { updateBundlerOptions } from "./bundler";
-import { getThemeConfig } from "./getThemeConfig";
-import { extendsPage } from "./extends";
+import { updateBundlerConfig } from "./bundler";
+import { extendsPage } from "./extendsPage";
+import { getThemeConfig } from "./themeConfig";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
 import { checkSocialMediaIcons } from "./socialMedia";
 import { prepareSidebarData } from "./sidebar";
 import { prepareThemeColorScss } from "./themeColor";
+import { resolveAlias } from "./alias";
 
 import type { Page, Theme } from "@vuepress/core";
 import type { HopeThemeOptions, HopeThemePageData } from "../shared";
@@ -34,7 +34,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
   return {
     name: "vuepress-theme-hope",
 
-    alias: getAlias(app),
+    alias: resolveAlias(app.env.isDebug),
 
     define: () => ({
       ENABLE_BLOG: enableBlog,
@@ -51,7 +51,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
         app.env.isDev
       ),
 
-    onInitialized: (app): void => updateBundlerOptions(app),
+    onInitialized: (app): void => updateBundlerConfig(app),
 
     onPrepared: (): Promise<void> =>
       Promise.all([
