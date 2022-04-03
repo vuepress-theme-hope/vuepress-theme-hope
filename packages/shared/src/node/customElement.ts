@@ -1,4 +1,4 @@
-import { logger } from "@vuepress/utils";
+import chalk from "chalk";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -36,7 +36,8 @@ export const tagHint = (tag: string, isDebug = false): void => {
     tag === tag.toLowerCase() &&
     !tag.includes("-")
   ) {
-    logger.warn(
+    console.warn(
+      chalk.yellow("warning: "),
       `${tag} is used and it’s not a standard tag or standard custom element name`
     );
   }
