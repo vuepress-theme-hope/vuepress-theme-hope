@@ -270,7 +270,7 @@ jobs:
         env:
           BASE: /blog2-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn run workspace blog2-demo vite-build
+        run: yarn workspace blog2-demo vite-build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -326,7 +326,7 @@ jobs:
         env:
           BASE: /comment2-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn run workspace comment2-demo vite-build
+        run: yarn workspace comment2-demo vite-build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
