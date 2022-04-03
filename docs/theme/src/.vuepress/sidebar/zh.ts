@@ -83,14 +83,21 @@ export const zhSidebarConfig = defineSidebarConfig({
       icon: "blog",
       prefix: "blog/",
       collapsable: true,
-      children: ["intro", "article", "category-and-tags", "timeline", "home"],
+      children: [
+        "intro",
+        "blogger",
+        "article",
+        "category-and-tags",
+        "timeline",
+        "home",
+      ],
     },
     {
       text: "高级功能",
       icon: "advance",
       prefix: "advanced/",
       collapsable: true,
-      children: ["pwa", "feed", "seo", "sitemap", "customize", "extend"],
+      children: ["pwa", "feed", "seo", "sitemap"],
     },
   ],
 
@@ -162,11 +169,11 @@ export const zhSidebarConfig = defineSidebarConfig({
       children: ["", "file", "markdown", "config", "plugin", "theme"],
     },
     {
-      text: "自定义",
-      icon: "customize",
-      prefix: "customize/",
+      text: "高级",
+      icon: "advance",
+      prefix: "advanced/",
       collapsable: true,
-      children: ["style"],
+      children: ["component", "style", "replace", "extend"],
     },
   ],
 
@@ -196,7 +203,7 @@ export const zhSidebarConfig = defineSidebarConfig({
       text: "教程",
       icon: "guide",
       prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
+      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
     },
     {
       text: "迁移",

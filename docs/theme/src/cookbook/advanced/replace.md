@@ -1,5 +1,5 @@
 ---
-title: Customize Components
+title: Replacing Theme Components
 icon: customize
 category:
   - Advanced
@@ -12,7 +12,7 @@ The theme imports components through `alias`, so you can use it to replace any c
 
 <!-- more -->
 
-## Replace components
+## Replace Components
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
@@ -187,7 +187,7 @@ Miscellaneous:
 
 :::
 
-## Using slots
+## Using Slots
 
 Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
 

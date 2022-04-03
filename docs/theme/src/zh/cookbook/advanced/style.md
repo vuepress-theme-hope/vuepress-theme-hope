@@ -77,10 +77,10 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 
 如果你对某些组件的样式不满意，想在其上做一些微调，你可以在 `index.scss` 中通过添加带有 `!important` 的 CSS 来覆盖主题的默认样式。
 
-如果你的改动涉及到修改组件 DOM (文档结构)，你可能需要参阅 [高级功能 → 自定义主题组件](../guide/advanced/customize.md) 章节来覆盖组件。
+如果你的改动涉及到修改组件 DOM (文档结构)，你可能需要参阅 [替换主题组件](replace.md) 章节来覆盖组件。
 
 ### 新增布局或在主题上二次创作
 
 如果你希望在主题整体上进行一些改造，或者想要添加新的布局，你可以继承主题。继承后的主题可以存放在项目本地，也可以二次在 npm 上发布为新主题。
 
-相关内容请参阅 [高级功能 → 继承主题](../guide/advanced/extend.md)。
+相关内容请参阅 [继承主题](extend.md)。
