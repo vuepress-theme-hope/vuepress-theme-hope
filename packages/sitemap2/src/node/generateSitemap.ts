@@ -42,7 +42,7 @@ const generatePageMap = (
   options: SitemapOptions
 ): Map<string, SitemapPageInfo> => {
   const {
-    changefreq = "daily",
+    changefreq,
     excludeUrls = ["/404.html"],
     modifyTimeGetter = ((page: Page<{ git: GitData }>): string =>
       page.data.git?.updatedTime
@@ -85,7 +85,7 @@ const generatePageMap = (
           .includes("noindex")
       : frontmatterOptions.exclude;
 
-    if (excludePage) excludeUrls.push(page.path);
+    if (excludePage || excludeUrls.includes(page.path)) return;
 
     const lastmodifyTime = modifyTimeGetter(page);
     const { defaultPath } = stripLocalePrefix(page);
@@ -118,7 +118,7 @@ const generatePageMap = (
     }
 
     const sitemapInfo: SitemapPageInfo = {
-      changefreq,
+      ...(changefreq ? { changefreq } : {}),
       links,
       ...(lastmodifyTime ? { lastmod: lastmodifyTime } : {}),
       ...frontmatterOptions,
@@ -132,8 +132,6 @@ const generatePageMap = (
     pagesMap.set(page.path, sitemapInfo);
   });
 
-  options.excludeUrls = excludeUrls;
-
   return pagesMap;
 };
 
@@ -141,7 +139,7 @@ export const generateSiteMap = async (
   app: App,
   options: SitemapOptions
 ): Promise<void> => {
-  const { excludeUrls = [], extraUrls = [], xmlNameSpace: xmlns } = options;
+  const { extraUrls = [], xmlNameSpace: xmlns } = options;
   const hostname = options.hostname.replace(/\/$/u, "");
   const sitemapFilename = options.sitemapFilename
     ? options.sitemapFilename.replace(/^\//u, "")
@@ -164,13 +162,12 @@ export const generateSiteMap = async (
 
         sitemap.pipe(writeStream);
 
-        pagesMap.forEach((page, path) => {
-          if (!excludeUrls.includes(path))
-            sitemap.write({
-              url: `${base}${path.replace(/^\//u, "")}`,
-              ...page,
-            });
-        });
+        pagesMap.forEach((page, path) =>
+          sitemap.write({
+            url: `${base}${path.replace(/^\//u, "")}`,
+            ...page,
+          })
+        );
 
         extraUrls.forEach((item) =>
           sitemap.write({ url: `${base}${item.replace(/^\//u, "")}` })
