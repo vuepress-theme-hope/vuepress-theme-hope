@@ -81,7 +81,7 @@ To get started, the plugins will pick those pages which need to be treated as ar
 
 ::: note
 
-By default, all the pages generated from Markdown filesa apart from homepage be included as articles.
+By default, all the pages generated from Markdown files apart from homepage are included as articles.
 
 :::
 
