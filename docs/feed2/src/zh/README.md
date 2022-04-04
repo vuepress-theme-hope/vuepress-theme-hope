@@ -47,7 +47,7 @@ npm i -D vuepress-plugin-feed2@next
 
 ::: code-group-item TS
 
-```js
+```ts
 // .vuepress/config.ts
 import { feed } from "vuepress-plugin-feed2";
 
@@ -64,7 +64,7 @@ export default {
 
 ::: code-group-item JS
 
-```ts
+```js
 // .vuepress/config.js
 const { feed } = require("vuepress-plugin-feed2");
 

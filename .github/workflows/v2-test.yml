@@ -71,17 +71,9 @@ jobs:
         run: |
           yarn lerna run demo:webpack-build
 
-      - name: Webpack build test2
-        run: |
-          yarn lerna run webpack-build
-
       - name: Vite build test
         run: |
           yarn lerna run demo:vite-build
-
-      - name: Vite build test2
-        run: |
-          yarn lerna run vite-build
 
   linter-and-unit:
     name: Linter and Unit test

@@ -7,7 +7,7 @@ You can have individual control over each feed item generation by configuring Fr
 
 ## Addition and Removement
 
-By default, all articles are added to the feed stream.To remove specific pages from the feed, you can set `feed: false` in frontmatter.
+By default, all articles are added to the feed stream. To remove specific pages from the feed, you can set `feed: false` in frontmatter.
 
 ## Information read by default
 

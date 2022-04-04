@@ -1,0 +1,21 @@
+{
+  "name": "blog2-demo",
+  "version": "2.0.0-beta.34",
+  "private": true,
+  "description": "Demo for vuepress-plugin-blog2",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "demo:vite-build": "vuepress-vite build src",
+    "demo:vite-clean-serve": "vuepress-vite dev src --clean-cache",
+    "demo:vite-serve": "vuepress-vite dev src",
+    "demo:webpack-build": "vuepress-webpack build src",
+    "demo:webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-serve": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "vuepress-plugin-blog2": "2.0.0-beta.34",
+    "vuepress-vite": "2.0.0-beta.37",
+    "vuepress-webpack": "2.0.0-beta.37"
+  }
+}

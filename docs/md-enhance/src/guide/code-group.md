@@ -1,11 +1,6 @@
 ---
 title: CodeGroup
 icon: code
-category:
-  - markdown
-tag:
-  - codegroup
-  - markdown
 ---
 
 The plugin provides you code group support.

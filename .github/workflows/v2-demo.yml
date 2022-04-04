@@ -52,7 +52,7 @@ jobs:
         env:
           BASE: /v2-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace theme-demo vite-build
+        run: yarn workspace theme-demo demo:vite-build
 
       - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4

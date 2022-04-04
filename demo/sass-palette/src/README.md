@@ -4,6 +4,10 @@ title: Home
 heroImage: /logo.svg
 heroText: vuepress-plugin-sass-palette
 tagline: Sass palette plugin for VuePress2
+actions:
+  - text: Docs
+    link: https://vuepress-theme-hope.github.io/v2/sass-palette/
+
 footer: MIT Licensed | Copyright © 2021-present Mr.Hope
 ---
 
