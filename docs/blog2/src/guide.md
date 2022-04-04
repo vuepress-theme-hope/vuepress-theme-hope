@@ -77,11 +77,11 @@ The flowchart above may help you understand how the plugin works and it's design
 
 ## Collecting Articles and Generating Info
 
-To get started, the plugins will pick those pages which neeeds to be tricted as articles. This is only the first step to drop those pages you don’t want.
+To get started, the plugins will pick those pages which need to be treated as articles. This is only the first step to drop those pages you don’t want.
 
 ::: note
 
-By default, all the pages generated from Markdown files but not homepage will be included as articles.
+By default, all the pages generated from Markdown files apart from homepage are included as articles.
 
 :::
 
@@ -135,7 +135,7 @@ export default {
 
 ## Customizing Categories and Types
 
-Basiclly, you would want 2 types of collection in your blog:
+Basically, you would want 2 types of collection in your blog:
 
 - Category:
 
@@ -149,7 +149,7 @@ Basiclly, you would want 2 types of collection in your blog:
 
   For example, you may have diary, notes in your posts. And when a post has a writing date information with it, it can be called as a "timeline item".
 
-After understanding description of these 2 types, you can set `category` and `type` options, each of them accepts an array, and each element represents a configuation.
+After understanding description of these 2 types, you can set `category` and `type` options, each accepts an array, and each element represents a configuation.
 
 Let’s start with 2 examples here.
 
