@@ -49,7 +49,12 @@ export const tagHint = (tag: string, isDebug = false): void => {
  * @param app VuePress Node App
  * @param customElements tags recognized as custom element
  */
-export const addCustomElement = (app: App, customElements: string[]): void => {
+export const addCustomElement = (
+  app: App,
+  customElement: string[] | string
+): void => {
+  const customElements =
+    typeof customElement === "string" ? [customElement] : customElement;
   const { bundler, bundlerConfig } = app.options;
 
   // for vite
