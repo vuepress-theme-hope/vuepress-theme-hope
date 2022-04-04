@@ -1,6 +1,6 @@
 {
   "name": "sitemap2-demo",
-  "version": "2.0.0-beta.34",
+  "version": "2.0.0-beta.35",
   "private": true,
   "description": "Demo for vuepress-plugin-sitemap2",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "vuepress-plugin-sitemap2": "2.0.0-beta.34",
+    "vuepress-plugin-sitemap2": "2.0.0-beta.35",
     "vuepress-vite": "2.0.0-beta.37",
     "vuepress-webpack": "2.0.0-beta.37"
   }

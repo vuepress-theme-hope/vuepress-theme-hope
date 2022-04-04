@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.34...v2.0.0-beta.35) (2022-04-04)
+
+### Bug Fixes
+
+- **theme:** fix incorrect blog config merge, fix [#1631](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1631) ([6243004](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/62430044e8e010f83012c0466f33b88249a8c4ae))
+
+### Features
+
+- **comment2:** use giscus v1 ([65c2eef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65c2eef9c59ad2b7d3f8adf10f9e1ac9eb29b798))
+
 # [2.0.0-beta.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.33...v2.0.0-beta.34) (2022-04-03)
 
 **Note:** Version bump only for package vuepress-theme-hope
