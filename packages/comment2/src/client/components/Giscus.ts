@@ -1,15 +1,14 @@
-import { Giscus } from "@giscus/vue";
-import { ClientOnly, usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { usePageFrontmatter, usePageLang } from "@vuepress/client";
+import { computed, defineComponent, h, onMounted } from "vue";
 import { enableGiscus, giscusOption } from "../define";
 
-import type { GiscusProps, Mapping } from "@giscus/vue";
 import type { VNode } from "vue";
+import type { GiscusLang, GiscusMapping, GiscusProps } from "../utils";
 import type { CommentPluginFrontmatter } from "../../shared";
 
 import "../styles/giscus.scss";
 
-const SUPPORTED_LANGUAGES = [
+const SUPPORTED_LANGUAGES: GiscusLang[] = [
   "de",
   "gsw",
   "en",
@@ -41,11 +40,11 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
 
     const giscusLang = computed(() => {
-      const lang = usePageLang().value;
+      const lang = usePageLang().value as GiscusLang;
 
       if (SUPPORTED_LANGUAGES.includes(lang)) return lang;
 
-      const shortCode = lang.split("-")[0];
+      const shortCode = lang.split("-")[0] as GiscusLang;
 
       if (SUPPORTED_LANGUAGES.includes(shortCode)) return shortCode;
 
@@ -72,11 +71,15 @@ export default defineComponent({
       categoryId: giscusOption.categoryId,
       lang: giscusLang.value,
       theme: props.darkmode ? "dark" : "light",
-      mapping: (giscusOption.mapping || "pathname") as Mapping,
+      mapping: (giscusOption.mapping || "pathname") as GiscusMapping,
       inputPosition: giscusOption.inputPosition || "top",
       reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
       emitMetadata: "0",
     }));
+
+    onMounted(() => {
+      import("giscus");
+    });
 
     return (): VNode =>
       h(
@@ -90,7 +93,7 @@ export default defineComponent({
             display: enableComment.value ? "block" : "none",
           },
         },
-        h(ClientOnly, () => h(Giscus, config.value))
+        h("giscus-widget", config.value)
       );
   },
 });

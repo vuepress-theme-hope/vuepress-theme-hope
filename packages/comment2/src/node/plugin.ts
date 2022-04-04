@@ -1,4 +1,5 @@
 import {
+  addCustomElement,
   addViteSsrExternal,
   addViteSsrNoExternal,
   addViteOptimizeDepsExclude,
@@ -54,6 +55,8 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     }),
 
     onInitialized: (app): void => {
+      if (isGiscus) addCustomElement(app, ["GiscusWidget"]);
+
       addViteSsrNoExternal(app, [
         "@mr-hope/vuepress-shared",
         "vuepress-plugin-comment2",
@@ -61,8 +64,8 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
 
       if (isGiscus) {
-        addViteOptimizeDepsInclude(app, "@giscus/vue");
-        addViteSsrExternal(app, "@giscus/vue");
+        addViteOptimizeDepsInclude(app, "giscus");
+        addViteSsrExternal(app, "giscus");
       }
 
       if (isTwikoo) {

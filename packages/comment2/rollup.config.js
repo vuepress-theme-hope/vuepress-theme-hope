@@ -23,13 +23,7 @@ export default [
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/Giscus", {
-    external: [
-      "@giscus/vue",
-      "@vuepress/client",
-      "vue",
-      "vue-router",
-      /\.scss$/,
-    ],
+    external: ["@vuepress/client", "giscus", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Twikoo", {
