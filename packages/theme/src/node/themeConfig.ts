@@ -89,8 +89,7 @@ export const getThemeConfig = (
                 ...Object.fromEntries(
                   Object.entries(themeOptions).filter(
                     ([key]) =>
-                      key === "blog" ||
-                      (key !== "locales" && !rootAllowConfig.includes(key))
+                      key !== "locales" && !rootAllowConfig.includes(key)
                   )
                 ),
                 // locale options
