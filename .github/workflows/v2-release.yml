@@ -44,6 +44,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build project
@@ -79,6 +80,7 @@ jobs:
           branch: netlify
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
   deploy-gitee-docs:
     name: Deploy V2 docs to Gitee
@@ -118,6 +120,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build project
@@ -156,6 +159,7 @@ jobs:
           branch: gitee
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
   deploy-theme-demo:
     runs-on: ubuntu-latest
@@ -192,6 +196,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build project
@@ -209,6 +214,7 @@ jobs:
           branch: netlify
           folder: demo/theme/dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
       - name: Build Gitee Demo
         env:
@@ -223,9 +229,26 @@ jobs:
           branch: gitee
           folder: demo/theme/dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
-  deploy-demo:
+  deploy-plugin-demo:
+    name: Deploy ${{ matrix.plugin-name }} demo
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        plugin-name:
+          - add-this
+          - blog2
+          - comment2
+          - feed2
+          - lightgallery
+          - md-enhance
+          - photo-swipe
+          - pwa2
+          - seo2
+          - sitemap2
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -259,6 +282,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build project
@@ -266,170 +290,17 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run build
 
-      - name: Build add-this demo
+      - name: Build ${{ matrix.plugin-name }} demo
         env:
-          BASE: /add-this-demo/
+          BASE: /${{ matrix.plugin-name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace add-this-demo demo:vite-build
+        run: yarn workspace ${{ matrix.plugin-name }}-demo demo:vite-build
 
-      - name: Deploy add-this demo
+      - name: Deploy ${{ matrix.plugin-name }} demo
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/add-this-demo
+          repository-name: vuepress-theme-hope/${{ matrix.plugin-name }}-demo
           branch: gh-pages
-          folder: demo/add-this/src/.vuepress/dist
+          folder: demo/${{ matrix.plugin-name }}/src/.vuepress/dist
           token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build blog2 demo
-        env:
-          BASE: /blog2-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace blog2-demo demo:vite-build
-
-      - name: Deploy blog2 demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/blog2-demo
-          branch: gh-pages
-          folder: demo/blog2/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build comment2 demo
-        env:
-          BASE: /comment2-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace comment2-demo demo:vite-build
-
-      - name: Deploy comment2 demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/comment2-demo
-          branch: gh-pages
-          folder: demo/comment2/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build copy-code2 demo
-        env:
-          BASE: /copy-code2-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace copy-code2-demo demo:vite-build
-
-      - name: Deploy copy-code2 demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/copy-code2-demo
-          branch: gh-pages
-          folder: demo/copy-code2/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build feed2 demo
-        env:
-          BASE: /feed2-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace feed2-demo demo:vite-build
-
-      - name: Deploy feed2 demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/feed2-demo
-          branch: gh-pages
-          folder: demo/feed2/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build lightgallery demo
-        env:
-          BASE: /lightgallery-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace lightgallery-demo demo:vite-build
-
-      - name: Deploy lightgallery demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/lightgallery-demo
-          branch: gh-pages
-          folder: demo/lightgallery/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build md-enhance demo
-        env:
-          BASE: /md-enhance-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace md-enhance-demo demo:vite-build
-
-      - name: Deploy md-enhance demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/md-enhance-demo
-          branch: gh-pages
-          folder: demo/md-enhance/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build photo-swipe demo
-        env:
-          BASE: /photo-swipe-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace photo-swipe-demo demo:vite-build
-
-      - name: Deploy photo-swipe demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/photo-swipe-demo
-          branch: gh-pages
-          folder: demo/photo-swipe/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build pwa2 demo
-        env:
-          BASE: /pwa2-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace pwa2-demo demo:vite-build
-
-      - name: Deploy pwa2 demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/pwa2-demo
-          branch: gh-pages
-          folder: demo/pwa2/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build sass-palette demo
-        env:
-          BASE: /sass-palette-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace sass-palette-demo demo:vite-build
-
-      - name: Deploy sass-palette demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/sass-palette-demo
-          branch: gh-pages
-          folder: demo/sass-palette/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build seo2 demo
-        env:
-          BASE: /seo2-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace seo2-demo demo:vite-build
-
-      - name: Deploy seo2 demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/seo2-demo
-          branch: gh-pages
-          folder: demo/seo2/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Build sitemap2 demo
-        env:
-          BASE: /sitemap2-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn workspace sitemap2-demo demo:vite-build
-
-      - name: Deploy sitemap2 demo
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/sitemap2-demo
-          branch: gh-pages
-          folder: demo/sitemap2/src/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true

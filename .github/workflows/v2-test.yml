@@ -111,6 +111,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build project

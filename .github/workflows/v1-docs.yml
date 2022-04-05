@@ -79,3 +79,4 @@ jobs:
           branch: gh-pages
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true

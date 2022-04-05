@@ -78,6 +78,7 @@ jobs:
           branch: netlify
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
   deploy-gitee:
     name: Deploy V1 docs to Gitee
@@ -153,3 +154,4 @@ jobs:
           branch: gitee
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true

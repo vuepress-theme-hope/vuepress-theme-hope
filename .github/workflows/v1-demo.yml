@@ -61,6 +61,7 @@ jobs:
           branch: gh-pages
           folder: demo/dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
       - name: Build Netlify Demo
         run: |
@@ -73,6 +74,7 @@ jobs:
           branch: netlify
           folder: demo/dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
       - name: Build Gitee Demo
         env:
@@ -88,3 +90,4 @@ jobs:
           branch: gitee
           folder: demo/dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true

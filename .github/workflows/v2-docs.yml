@@ -44,6 +44,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Deps
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build project
@@ -82,3 +83,4 @@ jobs:
           branch: gh-pages
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
