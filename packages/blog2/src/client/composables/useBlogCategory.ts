@@ -34,6 +34,16 @@ export const useBlogCategory = <
       "";
 
     const routes = router.getRoutes();
+
+    if (!blogCategoryMap.value[mapKey])
+      throw new Error(
+        `useBlogCategory: ${
+          key
+            ? `key ${key} is invalid`
+            : "can not bind to an exisiting key on non blog pages"
+        }`
+      );
+
     const currentMap = blogCategoryMap.value[mapKey][routeLocale.value];
     const result: BlogCategoryData<T> = {
       path: currentMap.path,
