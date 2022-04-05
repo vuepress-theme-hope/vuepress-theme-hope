@@ -1,4 +1,3 @@
-import { capitalize } from "./capitalize";
 import type { Author, AuthorInfo } from "../types";
 
 export const getAuthor = (
@@ -33,8 +32,8 @@ export const getCategory = (
   category: string[] | string | undefined
 ): string[] => {
   if (category) {
-    if (Array.isArray(category)) return category.map(capitalize);
-    if (typeof category === "string") return [capitalize(category)];
+    if (Array.isArray(category)) return category;
+    if (typeof category === "string") return [category];
 
     console.error(
       `Expect 'category' to be \`string[] | string | undefined\`, but got`,

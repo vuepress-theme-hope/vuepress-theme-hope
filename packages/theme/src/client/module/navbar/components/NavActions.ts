@@ -1,3 +1,4 @@
+import { isComponentRegistered } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h, resolveComponent } from "vue";
 
 import LanguageDropdown from "@theme-hope/module/navbar/components/LanguageDropdown";
@@ -25,7 +26,11 @@ export default defineComponent({
         h("div", { class: "nav-item" }, h(LanguageDropdown)),
         h(RepoLink),
         h(OutlookButton),
-        h(resolveComponent("NavbarSearch")),
+        isComponentRegistered("Docsearch")
+          ? h(resolveComponent("Docsearch"))
+          : isComponentRegistered("SearchBox")
+          ? h(resolveComponent("SearchBox"))
+          : null,
         h(ToggleNavbarButton, {
           active: props.showScreen,
           onToggle: () => emit("toggleScreen"),

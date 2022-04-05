@@ -1,7 +1,4 @@
-import {
-  capitalize,
-  generateIndexfromHash,
-} from "@mr-hope/vuepress-shared/lib/client";
+import { generateIndexfromHash } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
@@ -35,7 +32,7 @@ export default defineComponent({
                 ],
               },
               h(RouterLink, { to: path }, () => [
-                capitalize(category),
+                category,
                 h("span", { class: "category-num" }, items.length),
               ])
             )

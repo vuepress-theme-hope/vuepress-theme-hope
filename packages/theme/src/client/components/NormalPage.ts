@@ -1,3 +1,4 @@
+import { isComponentRegistered } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 
@@ -72,9 +73,11 @@ export default defineComponent({
               slots.contentAfter?.(),
               h(PageMeta),
               h(PageNav),
-              h(resolveComponent("PageComment"), {
-                darkmode: isDarkMode.value,
-              }),
+              isComponentRegistered("CommentService")
+                ? h(resolveComponent("CommentService"), {
+                    darkmode: isDarkMode.value,
+                  })
+                : null,
               slots.bottom?.(),
             ]
       );
