@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.35...v2.0.0-beta.36) (2022-04-05)
+
+### Bug Fixes
+
+- **copyright2:** fix typos ([882b138](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/882b138b92570b15ada8a052f57ea0c9f1fad36d))
+
+### Features
+
+- add copyright2 plugin ([3ba3be8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3ba3be81383a29f5121cd7317d1fc8a105e51a7a))
+- **blog2:** improve thrown error ([7be774a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7be774a71bfdbbe6b73b41cba68076cb50e29d59))
+- **theme:** add copyright plugin ([e4f78d7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e4f78d7db3063288883059795adde3db6c3c945f))
+
 # [2.0.0-beta.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.34...v2.0.0-beta.35) (2022-04-04)
 
 ### Bug Fixes

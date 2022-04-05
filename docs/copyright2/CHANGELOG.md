@@ -5,8 +5,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-beta.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.35...v2.0.0-beta.36) (2022-04-05)
 
-**Note:** Version bump only for package sitemap2-demo
+### Features
 
-# [2.0.0-beta.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.34...v2.0.0-beta.35) (2022-04-04)
-
-**Note:** Version bump only for package sitemap2-demo
+- add copyright2 plugin ([3ba3be8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3ba3be81383a29f5121cd7317d1fc8a105e51a7a))
