@@ -56,20 +56,20 @@ jobs:
 
       - name: Combine output
         run: |
+          yarn cpx "docs/theme/dist/**" dist
+          yarn cpx "docs/active-hash/dist/**" dist/active-hash
           yarn cpx "docs/add-this/dist/**" dist/add-this
-          yarn cpx "docs/blog2/dist/**" dist/blog
-          yarn cpx "docs/comment2/dist/**" dist/comment
+          yarn cpx "docs/comment/dist/**" dist/comment
           yarn cpx "docs/components/dist/**" dist/components
-          yarn cpx "docs/copy-code2/dist/**" dist/copy-code
-          yarn cpx "docs/feed2/dist/**" dist/feed
-          yarn cpx "docs/lightgallery/dist/**" dist/lightgallery
+          yarn cpx "docs/copy-code/dist/**" dist/copy-code
+          yarn cpx "docs/feed/dist/**" dist/feed
+          yarn cpx "docs/git/dist/**" dist/git
           yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
           yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
-          yarn cpx "docs/pwa2/dist/**" dist/pwa
-          yarn cpx "docs/reading-time2/dist/**" dist/reading-time
-          yarn cpx "docs/sass-palette/dist/**" dist/sass-palette
-          yarn cpx "docs/seo2/dist/**" dist/seo
-          yarn cpx "docs/theme/dist/**" dist
+          yarn cpx "docs/pwa/dist/**" dist/pwa
+          yarn cpx "docs/reading-time/dist/**" dist/reading-time
+          yarn cpx "docs/seo/dist/**" dist/seo
+          yarn cpx "docs/sitemap/dist/**" dist/sitemap
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

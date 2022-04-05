@@ -1,0 +1,45 @@
+{
+  "name": "vuepress-plugin-copyright2",
+  "version": "2.0.0-beta.35",
+  "description": "Copyright plugin for VuePress",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "copyright",
+    "mr-hope"
+  ],
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/copyright#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/copyright2"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@mr-hope/vuepress-shared": "2.0.0-beta.35"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
