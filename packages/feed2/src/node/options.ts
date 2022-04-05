@@ -56,19 +56,17 @@ export const getFeedOptions = (
             frontmatter.feed === false
           ),
         sorter: (
-          pageA: Page<Record<string, never>, { git?: GitData }>,
-          pageB: Page<Record<string, never>, { git?: GitData }>
-        ): number => {
-          return compareDate(
-            pageA.git?.createdTime
-              ? new Date(pageA.git?.createdTime)
+          pageA: Page<{ git?: GitData }, Record<string, never>>,
+          pageB: Page<{ git?: GitData }, Record<string, never>>
+        ): number =>
+          compareDate(
+            pageA.data.git?.createdTime
+              ? new Date(pageA.data.git?.createdTime)
               : pageA.frontmatter.date,
-            pageB.git?.createdTime
-              ? new Date(pageB.git?.createdTime)
+            pageB.data.git?.createdTime
+              ? new Date(pageB.data.git?.createdTime)
               : pageB.frontmatter.date
-          );
-        },
-
+          ),
         ...options,
         ...options.locales?.[localePath],
 

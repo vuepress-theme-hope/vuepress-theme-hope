@@ -4,10 +4,18 @@ import type { GitData } from "@vuepress/plugin-git";
 import type { ArticleJSONLD } from "./json-ld";
 import type { SeoContent } from "./ogp";
 
-export type ExtendPage<ExtendObject = Record<string, unknown>> = Page & {
-  frontmatter: PageFrontmatter<BasePageFrontMatter>;
-  git?: GitData;
-} & ExtendObject;
+export type ExtendPage<
+  ExtraPageData extends Record<string | number | symbol, unknown> & {
+    git?: GitData;
+  } = { git?: GitData },
+  ExtraPageFrontmatter extends PageFrontmatter<
+    BasePageFrontMatter & { banner: string; cover: string }
+  > = PageFrontmatter<BasePageFrontMatter & { banner: string; cover: string }>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+> = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
 
 export interface SeoOptions {
   /**
@@ -67,16 +75,44 @@ export interface SeoOptions {
    *
    * 页面是否是文章
    */
-  isArticle?: (page: Page) => boolean;
+  isArticle?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => boolean;
 
   /**
    * Custom OGP Generator
    *
    * 自定义 OGP 生成器
    */
-  ogp?: <ExtendObject = Record<string, unknown>>(
+  ogp?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> & {
+      git?: GitData;
+    } = { git?: GitData },
+    ExtraPageFrontmatter extends PageFrontmatter<
+      BasePageFrontMatter & { banner: string; cover: string }
+    > = PageFrontmatter<
+      BasePageFrontMatter & { banner: string; cover: string }
+    >,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
     ogp: SeoContent,
-    page: ExtendPage<ExtendObject>,
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     app: App
   ) => SeoContent;
 
@@ -85,9 +121,22 @@ export interface SeoOptions {
    *
    * 自定义 JSON-LD 生成器
    */
-  jsonLd?: <ExtendObject = Record<string, unknown>>(
+  jsonLd?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> & {
+      git?: GitData;
+    } = { git?: GitData },
+    ExtraPageFrontmatter extends PageFrontmatter<
+      BasePageFrontMatter & { banner: string; cover: string }
+    > = PageFrontmatter<
+      BasePageFrontMatter & { banner: string; cover: string }
+    >,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
     jsonLD: ArticleJSONLD | null,
-    page: ExtendPage<ExtendObject>,
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     app: App
   ) => ArticleJSONLD | null;
 
@@ -96,9 +145,22 @@ export interface SeoOptions {
    *
    * 自定义 Head 标签
    */
-  customHead?: <ExtendObject = Record<string, unknown>>(
+  customHead?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> & {
+      git?: GitData;
+    } = { git?: GitData },
+    ExtraPageFrontmatter extends PageFrontmatter<
+      BasePageFrontMatter & { banner: string; cover: string }
+    > = PageFrontmatter<
+      BasePageFrontMatter & { banner: string; cover: string }
+    >,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
     head: HeadConfig[],
-    page: ExtendPage<ExtendObject>,
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     app: App
   ) => void;
 }

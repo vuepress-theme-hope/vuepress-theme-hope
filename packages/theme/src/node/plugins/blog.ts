@@ -1,7 +1,11 @@
 import { blog } from "vuepress-plugin-blog2";
 
 import type { Page, PluginConfig } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
+import type { BlogOptions } from "vuepress-plugin-blog2";
 import type {
+  ArticleInfo,
+  HopeThemeNormalPageFrontmatter,
   HopeThemeBlogLocaleData,
   HopeThemeBlogPluginOptions,
   HopeThemeConfig,
@@ -29,7 +33,18 @@ const compareDate = (
   return dateB.getTime() - dateA.getTime();
 };
 
-const sorter = (pageA: Page, pageB: Page): number => {
+const sorter = (
+  pageA: Page<
+    { git: GitData },
+    HopeThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfo }
+  >,
+  pageB: Page<
+    { git: GitData },
+    HopeThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfo }
+  >
+): number => {
   const prevKey = pageA.frontmatter.sticky;
   const nextKey = pageB.frontmatter.sticky;
 
@@ -38,10 +53,7 @@ const sorter = (pageA: Page, pageB: Page): number => {
   if (prevKey && !nextKey) return -1;
   if (!prevKey && nextKey) return 1;
 
-  return compareDate(
-    pageA.routeMeta.date as Date | undefined,
-    pageB.routeMeta.date as Date | undefined
-  );
+  return compareDate(pageA.routeMeta.date, pageB.routeMeta.date);
 };
 
 export const getBlogOptions = (
@@ -86,7 +98,13 @@ export const resolveBlogPlugin = (
     category: [
       {
         key: "category",
-        getter: ({ routeMeta }) => (routeMeta.category as string[]) || [],
+        getter: ({
+          routeMeta,
+        }: Page<
+          { git: GitData },
+          HopeThemeNormalPageFrontmatter,
+          { routeMeta: ArticleInfo }
+        >) => routeMeta.category || [],
         sorter,
         path: blogOptions.category,
         layout: "Blog",
@@ -101,7 +119,13 @@ export const resolveBlogPlugin = (
       },
       {
         key: "tag",
-        getter: ({ routeMeta }) => (routeMeta.tag as string[]) || [],
+        getter: ({
+          routeMeta,
+        }: Page<
+          { git: GitData },
+          HopeThemeNormalPageFrontmatter,
+          { routeMeta: ArticleInfo }
+        >) => routeMeta.tag || [],
         sorter,
         path: blogOptions.tag,
         layout: "Blog",
@@ -120,7 +144,13 @@ export const resolveBlogPlugin = (
       {
         key: "article",
         sorter,
-        filter: ({ frontmatter }) => frontmatter.article !== false,
+        filter: ({
+          frontmatter,
+        }: Page<
+          { git: GitData },
+          HopeThemeNormalPageFrontmatter,
+          { routeMeta: ArticleInfo }
+        >) => frontmatter.article !== false,
         path: blogOptions.article,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -130,7 +160,13 @@ export const resolveBlogPlugin = (
       {
         key: "encrypted",
         sorter,
-        filter: ({ routeMeta }) => Boolean(routeMeta.isEncrypted),
+        filter: ({
+          routeMeta,
+        }: Page<
+          { git: GitData },
+          HopeThemeNormalPageFrontmatter,
+          { routeMeta: ArticleInfo }
+        >) => Boolean(routeMeta.isEncrypted),
         path: blogOptions.encrypted,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -140,7 +176,13 @@ export const resolveBlogPlugin = (
       {
         key: "slide",
         sorter,
-        filter: ({ routeMeta }) => routeMeta.type === "slide",
+        filter: ({
+          routeMeta,
+        }: Page<
+          { git: GitData },
+          HopeThemeNormalPageFrontmatter,
+          { routeMeta: ArticleInfo }
+        >) => routeMeta.type === "slide",
         path: blogOptions.slides,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -150,7 +192,13 @@ export const resolveBlogPlugin = (
       {
         key: "star",
         sorter,
-        filter: ({ frontmatter }) => Boolean(frontmatter.star),
+        filter: ({
+          frontmatter,
+        }: Page<
+          { git: GitData },
+          HopeThemeNormalPageFrontmatter,
+          { routeMeta: ArticleInfo }
+        >) => Boolean(frontmatter.star),
         path: blogOptions.star,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -159,13 +207,26 @@ export const resolveBlogPlugin = (
       },
       {
         key: "timeline",
-        sorter: (pageA, pageB) =>
-          compareDate(
-            pageA.routeMeta.date as Date | undefined,
-            pageB.routeMeta.date as Date | undefined
-          ),
-        filter: ({ frontmatter, routeMeta }) =>
-          "date" in routeMeta && frontmatter.timeline !== false,
+        sorter: (
+          pageA: Page<
+            { git: GitData },
+            HopeThemeNormalPageFrontmatter,
+            { routeMeta: ArticleInfo }
+          >,
+          pageB: Page<
+            { git: GitData },
+            HopeThemeNormalPageFrontmatter,
+            { routeMeta: ArticleInfo }
+          >
+        ) => compareDate(pageA.routeMeta.date, pageB.routeMeta.date),
+        filter: ({
+          frontmatter,
+          routeMeta,
+        }: Page<
+          { git: GitData },
+          HopeThemeNormalPageFrontmatter,
+          { routeMeta: ArticleInfo }
+        >) => "date" in routeMeta && frontmatter.timeline !== false,
         path: blogOptions.timeline,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -173,5 +234,5 @@ export const resolveBlogPlugin = (
         }),
       },
     ],
-  });
+  } as BlogOptions);
 };

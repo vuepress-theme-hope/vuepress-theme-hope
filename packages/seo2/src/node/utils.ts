@@ -1,4 +1,5 @@
 import { Logger, isAbsoluteUrl, isUrl } from "@mr-hope/vuepress-shared";
+
 import type { App } from "@vuepress/core";
 import type { SiteLocaleConfig } from "@vuepress/shared";
 import type { ExtendPage, SeoOptions } from "../shared";

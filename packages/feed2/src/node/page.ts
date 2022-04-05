@@ -31,12 +31,11 @@ export class FeedPage {
   constructor(
     private app: App,
     private options: FeedOptions,
-    private page: Page & { git?: GitData },
+    private page: Page<{ git?: GitData }, FeedPluginFrontmatter>,
     private feed: Feed
   ) {
     this.base = this.app.options.base;
-    this.frontmatter =
-      page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>;
+    this.frontmatter = page.frontmatter;
     this.getter = options.getter || {};
     this.pageFeedOptions = this.frontmatter.feed || {};
   }
@@ -128,7 +127,7 @@ export class FeedPage {
 
     const { time, date = time } = this.page.frontmatter;
 
-    const { createdTime } = this.page.git || {};
+    const { createdTime } = this.page.data.git || {};
 
     return date && date instanceof Date
       ? date
@@ -141,7 +140,7 @@ export class FeedPage {
     if (typeof this.getter.lastUpdateDate === "function")
       return this.getter.lastUpdateDate(this.page);
 
-    const { updatedTime } = this.page.git || {};
+    const { updatedTime } = this.page.data.git || {};
 
     return updatedTime ? new Date(updatedTime) : new Date();
   }

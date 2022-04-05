@@ -28,7 +28,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const pageFrontmatter = usePageFrontmatter();
+    const pageFrontmatter = usePageFrontmatter<{ backToTop?: boolean }>();
     const themeData = useThemeData();
     const locale = useLocaleConfig(BACK_TO_TOP_LOCALES);
 
@@ -44,7 +44,7 @@ export default defineComponent({
     /** Whether to display button */
     const show = computed<boolean>(() => {
       const globalEnable = themeData.value.backToTop !== false;
-      const pageEnable = pageFrontmatter.value.backToTop as boolean;
+      const pageEnable = pageFrontmatter.value.backToTop;
 
       return (
         (pageEnable || (globalEnable && pageEnable !== false)) &&

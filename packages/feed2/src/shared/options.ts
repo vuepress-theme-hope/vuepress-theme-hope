@@ -57,14 +57,45 @@ export interface BaseFeedOptions {
    *
    * Feed 项目过滤器
    */
-  filter?: (page: Page) => boolean;
+  filter?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => boolean;
 
   /**
    * A custom sort function, used to sort feed items.
    *
    * Feed 项目排序器
    */
-  sorter?: (pageA: Page, pageB: Page) => number;
+  sorter?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => number;
 
   /**
    * Options to init feed channel

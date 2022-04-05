@@ -6,7 +6,7 @@ import {
 } from "@mr-hope/vuepress-shared";
 import { handleCrytoForWebpack } from "./encrypt";
 
-import { App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 

@@ -14,14 +14,48 @@ export interface CopyrightOptions {
    *
    * 作者信息
    */
-  author?: string | ((page: Page) => string);
+  author?:
+    | string
+    | (<
+        ExtraPageData extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>,
+        ExtraPageFrontmatter extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<string, unknown>,
+        ExtraPageFields extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>
+      >(
+        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+      ) => string);
 
   /**
    * License Infomation
    *
    * 协议信息
    */
-  license?: string | ((page: Page) => string);
+  license?:
+    | string
+    | (<
+        ExtraPageData extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>,
+        ExtraPageFrontmatter extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<string, unknown>,
+        ExtraPageFields extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>
+      >(
+        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+      ) => string);
 
   /**
    * Min words triggering copyright append

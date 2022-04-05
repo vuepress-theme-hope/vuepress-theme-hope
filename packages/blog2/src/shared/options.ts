@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Page } from "@vuepress/core";
 
 export interface BlogCategoryOptions {
@@ -13,14 +14,45 @@ export interface BlogCategoryOptions {
    *
    * 从页面中获取分类的函数
    */
-  getter: (page: Page) => string[];
+  getter: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => string[];
 
   /**
    * A custom function to sort the pages
    *
    * 页面排序器
    */
-  sorter?: (pageA: Page, pageB: Page) => number;
+  sorter?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => number;
 
   /**
    * Path pattern of page to be registered
@@ -97,14 +129,45 @@ export interface BlogTypeOptions {
    *
    * 一个过滤函数来决定页面是否满足此类型
    */
-  filter: (page: Page) => boolean;
+  filter: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => boolean;
 
   /**
    * A custom function to sort the pages
    *
    * 页面排序器
    */
-  sorter?: (pageA: Page, pageB: Page) => number;
+  sorter?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => number;
 
   /**
    * Page path to be registered
@@ -138,7 +201,22 @@ export interface BlogOptions {
    *
    * 获取文章信息的函数。
    */
-  getInfo?: (page: Page) => Record<string, unknown>;
+  getInfo?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => Record<string, unknown>;
 
   /**
    * Page filter, determine whether a page should be included.
@@ -147,7 +225,22 @@ export interface BlogOptions {
    *
    * @default (page) => Boolean(page.filePathRelative) && !page.frontmatter.home
    */
-  filter?: (page: Page) => boolean;
+  filter?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => boolean;
 
   /**
    * Categories config

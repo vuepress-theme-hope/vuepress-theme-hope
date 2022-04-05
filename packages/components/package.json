@@ -37,9 +37,9 @@
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-beta.35",
     "@types/lodash.debounce": "^4.0.6",
-    "@vuepress/client": "2.0.0-beta.37",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.37",
-    "@vuepress/utils": "2.0.0-beta.37",
+    "@vuepress/client": "2.0.0-beta.38",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.38",
+    "@vuepress/utils": "2.0.0-beta.38",
     "@vueuse/core": "^8.2.4",
     "balloon-css": "^1.2.0",
     "lodash.debounce": "^4.0.8",
@@ -49,7 +49,7 @@
     "vuepress-plugin-sass-palette": "2.0.0-beta.35"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.37"
+    "@vuepress/core": "2.0.0-beta.38"
   },
   "publishConfig": {
     "access": "public"

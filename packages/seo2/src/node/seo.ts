@@ -29,7 +29,7 @@ export const generateSeo = (
       tag,
       tags = tag as string[],
     },
-    git = {},
+    data: { git = {} },
   } = page;
   const { siteData } = app;
 

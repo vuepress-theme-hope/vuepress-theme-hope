@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "vuepress-plugin-feed2": "2.0.0-beta.35",
-    "vuepress-vite": "2.0.0-beta.37",
-    "vuepress-webpack": "2.0.0-beta.37"
+    "vuepress-vite": "2.0.0-beta.38",
+    "vuepress-webpack": "2.0.0-beta.38"
   }
 }
