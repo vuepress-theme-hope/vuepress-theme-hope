@@ -12,6 +12,12 @@ tag:
 
 如果你不需要此功能，请在 `themeConfig.plugins` 中设置 `photoSwipe` 为 `false`。
 
+::: info
+
+`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `photoSwipe` 选项作为插件选项提供给 `vuepress-plugin-photo-swipe`。
+
+:::
+
 <!-- more -->
 
 ## 浏览模式

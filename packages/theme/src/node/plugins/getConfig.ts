@@ -5,6 +5,7 @@ import { resolveBlogPlugin } from "./blog";
 import { resolveCommentPlugin } from "./comment";
 import { resolveComponentsPlugin } from "./components";
 import { resolveCopyCodePlugin } from "./copyCode";
+import { resolveCopyrightPlugin } from "./copyright";
 import { resolveFeedPlugin } from "./feed";
 import { resolveMdEnhancePlugin } from "./mdEnhance";
 import { resolvePhotoSwipePlugin } from "./photoSwipe";
@@ -32,6 +33,7 @@ export const getPluginConfig = (
     resolveBlogPlugin(themeData, plugins.blog),
     resolveCommentPlugin(plugins.comment),
     resolveCopyCodePlugin(themeData, plugins.copyCode),
+    resolveCopyrightPlugin(hostname, themeData, plugins.copyright),
     // seo should work before feed
     resolveSEOPlugin(hostname, themeData, plugins),
     resolveFeedPlugin(hostname, themeData, plugins.feed),

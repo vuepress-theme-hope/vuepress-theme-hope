@@ -88,6 +88,8 @@ Layout Optimization:
   - Automatically generated word count and estimated reading time
   - Tags and Categorys
 
+- [Copyright](feature/copyright.md)
+
 - [Encryption](feature/encrypt.md)
 
 - [Search Support](feature/search.md)

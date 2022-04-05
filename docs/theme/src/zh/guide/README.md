@@ -88,6 +88,8 @@ tag:
   - 自动生成的字数与预计阅读时间
   - 标签与分类
 
+- [版权信息](feature/copyright.md)
+
 - [文章加密](feature/encrypt.md)
 
 - [搜索支持](feature/search.md)

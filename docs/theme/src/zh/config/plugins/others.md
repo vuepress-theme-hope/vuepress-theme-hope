@@ -1,10 +1,10 @@
 ---
-title: 其他插件配置
+title: 其他插件选项
 icon: more
 category:
   - 配置
 tag:
-  - 插件配置
+  - 插件选项
   - 主题配置
 ---
 
@@ -16,7 +16,19 @@ tag:
 
 ::: info
 
-插件配置请参见 [copy-code2 插件配置][copy-code-config]。
+插件选项请参见 [copy-code2 插件选项][copy-code-config]。
+
+:::
+
+## copyright <Badge text="默认禁用" />
+
+在用户复制内容时附加版权信息，或禁用页面复制和选择。
+
+由于大多数人都在使用该主题构建文档，因此此插件默认不启用。
+
+::: info
+
+插件选项请参见 [copyright2 插件选项][copyright2-config].
 
 :::
 
@@ -28,7 +40,7 @@ tag:
 
 ::: info
 
-插件配置请参见 [photo-swipe 插件配置][photo-swipe-config]。
+插件选项请参见 [photo-swipe 插件选项][photo-swipe-config]。
 
 :::
 
@@ -45,7 +57,7 @@ tag:
 
 ::: info
 
-更多插件配置请参见 [reading-time2 插件文档][reading-time]。
+更多插件选项请参见 [reading-time2 插件文档][reading-time]。
 
 :::
 
@@ -57,7 +69,7 @@ tag:
 
 ::: info
 
-插件配置请参见 [seo2 插件配置][seo-config]。
+插件选项请参见 [seo2 插件选项][seo-config]。
 
 :::
 
@@ -69,11 +81,12 @@ tag:
 
 ::: info
 
-插件配置请参见 [sitemap2 插件配置][sitemap-config]。
+插件选项请参见 [sitemap2 插件选项][sitemap-config]。
 
 :::
 
 [copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/config.html
+[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/config.html
 [feed-config]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/
 [photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/config.html
 [reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/

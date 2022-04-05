@@ -126,6 +126,10 @@ tag:
 
 - `copyCode` 移动至 `plugins.copyCode`
 
+- `copyright` 移动至 `plugins.copyright`
+
+  插件默认禁用
+
 - `feed` 移动至 `plugins.feed`
 
   主题不再默认输出三种格式的 Feed 文件，如果有需要，请自行配置插件请求需要格式。
@@ -189,10 +193,6 @@ tag:
 - 移除 `cleanUrl`
 
   主题不再提供此功能。
-
-- 移除 `copyright`
-
-  相关插件暂未适配 V2。
 
 - 移除 `git`
 

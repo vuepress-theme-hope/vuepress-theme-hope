@@ -75,6 +75,7 @@ export const zhSidebarConfig = defineSidebarConfig({
         "photo-swipe",
         "meta",
         "search",
+        "copyright",
         "encrypt",
       ],
     },

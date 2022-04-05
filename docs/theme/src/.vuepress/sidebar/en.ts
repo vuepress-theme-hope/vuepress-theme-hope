@@ -75,6 +75,7 @@ export const enSidebarConfig = defineSidebarConfig({
         "photo-swipe",
         "meta",
         "search",
+        "copyright",
         "encrypt",
       ],
     },

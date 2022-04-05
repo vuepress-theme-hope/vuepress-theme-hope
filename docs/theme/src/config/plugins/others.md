@@ -16,7 +16,19 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For the plugin config, please refer to [copy-code2 plugin config][copy-code-config].
+For plugin options, please refer to [copy-code2 plugin options][copy-code-config].
+
+:::
+
+## copyright <Badge text="disabled by default" />
+
+Append copyright infomation when user copy content, or disable page copy and selection.
+
+Since most people are building docs with the theme, this plugin is not enabled by default.
+
+::: info
+
+For plugin options, please refer to [copyright2 plugin options][copyright2-config].
 
 :::
 
@@ -28,7 +40,7 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For the plugin config, please refer to [photo-swipe plugin config][photo-swipe-config].
+For plugin options, please refer to [photo-swipe plugin options][photo-swipe-config].
 
 :::
 
@@ -57,7 +69,7 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For plugin config, see [seo2 plugin config][seo-config].
+For plugin config, see [seo2 plugin options][seo-config].
 
 :::
 
@@ -69,11 +81,12 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For plugin config, please refer to [sitemap2 plugin config][sitemap-config].
+For plugin config, please refer to [sitemap2 plugin options][sitemap-config].
 
 :::
 
 [copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/config.html
+[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/config.html
 [feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
 [photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/config.html
 [reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/

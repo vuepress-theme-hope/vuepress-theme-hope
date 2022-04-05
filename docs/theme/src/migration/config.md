@@ -132,6 +132,10 @@ Move all plugin related options under `plugins`.
 
 - move `copyCode` to `plugins.copyCode`
 
+- move `copyright` to `plugins.copyright`
+
+  The plugin is disabled by default now.
+
 - move `feed` to `plugins.feed`
 
   The theme no longer outputs feed files in three formats by default. If necessary, please set options to output formats needed.
@@ -191,10 +195,6 @@ Move all plugin related options under `plugins`.
 - remove `cleanUrl`
 
   The theme no longer provides this functionality.
-
-- remove `copyright`
-
-  Related plugin isn’t compatible with V2 yet.
 
 - remove `git`
 

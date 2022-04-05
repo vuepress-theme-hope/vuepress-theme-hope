@@ -3,6 +3,7 @@ import type { LocaleConfig } from "@vuepress/shared";
 import type { BlogOptions } from "vuepress-plugin-blog2";
 import type { CommentOptions } from "vuepress-plugin-comment2";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
+import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
@@ -215,6 +216,11 @@ export interface HopeThemePluginsOptions {
    * @see http://vuepress-theme-hope.github.io/v2/copy-code/zh/config/
    */
   copyCode?: CopyCodeOptions | false;
+
+  /**
+   * Copyright Plugin options
+   */
+  copyright?: CopyrightOptions | true;
 
   /**
    * DocSearch Plugin Options

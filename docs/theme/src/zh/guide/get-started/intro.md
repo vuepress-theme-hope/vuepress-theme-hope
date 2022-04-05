@@ -99,3 +99,8 @@ tag:
 - 提供 [Sitemap 生成](../advanced/sitemap.md)
 
 - 提供 [PWA 支持](../advanced/pwa.md)，使你的站点可被安装。
+
+### 其他
+
+- 提供 [版权信息添加](../feature/copyright.md) 功能，可在用户复制时追加版权信息，也可禁用页面复制和选择。
+- 提供 [文章加密](../feature/encrypt.md) 功能，保护隐私信息。

@@ -25,4 +25,6 @@ icon: discover
 
 - [搜索功能](search.md)
 
-- [加密功能](encrypt.md)
+- [版权信息](copyright.md)
+
+- [文章加密](encrypt.md)

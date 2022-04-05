@@ -25,4 +25,6 @@ All the plugin settings are under `themeConfig.plugins`, and the option name is 
 
 - [Search](search.md)
 
-- [Encryption function](encrypt.md)
+- [Copyright Infomation](copyright.md)
+
+- [Article Encryption](encrypt.md)

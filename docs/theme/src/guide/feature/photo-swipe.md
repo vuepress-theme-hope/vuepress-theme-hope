@@ -12,6 +12,12 @@ By including [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope wil
 
 If you don’t need this feature, you can set `photoSwipe` in `themeConfig.plugins` to `false` to disable it.
 
+::: info
+
+`vuepress-theme-hope` provides `photoSwipe` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-photo-swipe`.
+
+:::
+
 <!-- more -->
 
 ## Browse Mode
