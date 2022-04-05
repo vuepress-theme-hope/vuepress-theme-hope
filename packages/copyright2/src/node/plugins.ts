@@ -69,4 +69,4 @@ export const copyrightPlugin: Plugin<CopyrightOptions> = (
 
 export const copyright = (
   options: CopyrightOptions | false
-): PluginConfig<CopyrightOptions> => ["copyright", options];
+): PluginConfig<CopyrightOptions> => ["copyright2", options];
