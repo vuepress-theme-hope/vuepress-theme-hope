@@ -218,7 +218,7 @@ export default {
 ```ts
 interface BlogFrontmatterOptions {
   /** 当前页面的类型 */
-  type: "category" | "tag";
+  type: "category" | "type";
   /** 在当前分类或类别下全局唯一的 key */
   key: string;
   /**
@@ -245,15 +245,15 @@ interface BlogFrontmatterOptions {
 
 ```ts
 // .vuepress/config.ts
-导出默认 {
-   语言环境：{
-     “/”：{
-       lang: "en-US",
-     },
-     "/zh/": {
-       lang: "zh-CN",
-     },
-   },
+export default {
+  locales: {
+    "/": {
+      lang: "en-US",
+    },
+    "/zh/": {
+      lang: "zh-CN",
+    },
+  },
 };
 ```
 

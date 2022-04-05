@@ -15,6 +15,7 @@ export const enSidebarConfig = defineSidebarConfig({
       children: ["", "giscus", "waline", "twikoo"],
     },
     "migration",
+    "demo",
   ],
 });
 
@@ -33,5 +34,6 @@ export const zhSidebarConfig = defineSidebarConfig({
       children: ["", "giscus", "waline", "twikoo"],
     },
     "migration",
+    "demo",
   ],
 });

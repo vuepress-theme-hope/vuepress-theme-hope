@@ -11,6 +11,8 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: "/logo.svg",
+
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/sass-palette/",
   },
 
   plugins: [["sass-palette", { id: "test" }]],

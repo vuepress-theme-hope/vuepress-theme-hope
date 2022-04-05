@@ -219,7 +219,7 @@ When generating each page, the plugin will set following information under `fron
 ```ts
 interface BlogFrontmatterOptions {
   /** Current type of the page */
-  type: "category" | "tag";
+  type: "category" | "type";
   /** Unique key under current category or tag */
   key: string;
   /**

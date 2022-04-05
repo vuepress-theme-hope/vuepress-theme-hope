@@ -33,6 +33,7 @@ export default defineThemeConfig({
         "/guide",
         "/config",
         "/migration",
+        "/demo",
         {
           text: version,
           icon: "note",
@@ -51,6 +52,7 @@ export default defineThemeConfig({
         "/zh/guide",
         "/zh/config",
         "/zh/migration",
+        "/zh/dmeo",
         {
           text: version,
           icon: "note",

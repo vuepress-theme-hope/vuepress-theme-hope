@@ -28,9 +28,11 @@ export default defineThemeConfig({
   locales: {
     "/": {
       navbar: ["/", "/guide", "/config", "/demo"],
+      sidebar: false,
     },
     "/zh/": {
       navbar: ["/zh/", "/zh/guide", "/zh/config", "/zh/demo"],
+      sidebar: false,
     },
   },
 

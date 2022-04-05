@@ -33,6 +33,7 @@ export default defineThemeConfig({
         "/guide",
         "/config/",
         "/migration",
+        "/demo",
         {
           text: version,
           icon: "note",
@@ -57,6 +58,7 @@ export default defineThemeConfig({
             children: ["", "channel", "getter", "item"],
           },
           "migration",
+          "demo",
         ],
       },
     },
@@ -67,6 +69,7 @@ export default defineThemeConfig({
         "/zh/guide",
         "/zh/config/",
         "/zh/migration",
+        "/zh/demo",
         {
           text: version,
           icon: "note",
@@ -91,6 +94,7 @@ export default defineThemeConfig({
             children: ["", "channel", "getter", "item"],
           },
           "migration",
+          "demo",
         ],
       },
     },

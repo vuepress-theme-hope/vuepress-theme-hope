@@ -10,6 +10,8 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: "/logo.svg",
+
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/pwa2/",
   },
 
   plugins: ["pwa2"],

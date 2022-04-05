@@ -32,6 +32,7 @@ export default defineThemeConfig({
         "/",
         "/guide",
         "/config",
+        "/demo",
         {
           text: version,
           icon: "note",
@@ -43,12 +44,15 @@ export default defineThemeConfig({
           ],
         },
       ],
+
+      sidebar: false,
     },
     "/zh/": {
       navbar: [
         "/zh/",
         "/zh/guide",
         "/zh/config",
+        "/zh/demo",
         {
           text: version,
           icon: "note",
@@ -60,6 +64,8 @@ export default defineThemeConfig({
           ],
         },
       ],
+
+      sidebar: false,
     },
   },
 

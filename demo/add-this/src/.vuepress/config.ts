@@ -10,6 +10,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: "/logo.svg",
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/add-this/",
   },
 
   plugins: [["add-this", { pubid: "ra-601bf7e7c332daca" }]],

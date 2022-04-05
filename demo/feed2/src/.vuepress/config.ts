@@ -22,6 +22,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: "/logo.svg",
 
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/feed2/",
+
     locales: {
       "/": {
         navbar: ["/", "/demo", "/custom", "/exclude"],

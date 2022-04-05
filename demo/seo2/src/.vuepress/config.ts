@@ -11,8 +11,11 @@ export default defineUserConfig<DefaultThemeOptions>({
   description: "VuePress Seo",
 
   themeConfig: {
-    navbar: ["/", "/demo"],
     logo: "/logo.svg",
+
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/seo2/",
+
+    navbar: ["/", "/demo"],
   },
 
   plugins: [["seo2", { hostname: "https://example.com" }]],

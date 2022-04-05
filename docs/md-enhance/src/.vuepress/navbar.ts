@@ -6,6 +6,7 @@ export const enNavbarConfig = defineNavbarConfig([
   "/guide/",
   "/config",
   "/migration",
+  "/demo",
   {
     text: version,
     icon: "note",
@@ -23,6 +24,7 @@ export const zhNavbarConfig = defineNavbarConfig([
   "/zh/guide/",
   "/zh/config",
   "/zh/migration",
+  "/zh/demo",
   {
     text: version,
     icon: "note",

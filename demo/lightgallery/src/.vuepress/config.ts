@@ -12,6 +12,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: "/logo.svg",
 
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/lightgallery/",
+
     navbar: [
       { text: "Home", link: "/" },
       { text: "Test", link: "/test" },

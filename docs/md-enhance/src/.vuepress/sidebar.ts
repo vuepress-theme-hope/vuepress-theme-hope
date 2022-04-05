@@ -40,6 +40,7 @@ export const enSidebarConfig = defineSidebarConfig({
     },
     "config",
     "migration",
+    "demo",
   ],
 
   "/guide/": [
@@ -112,6 +113,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     },
     "config",
     "migration",
+    "demo",
   ],
 
   "/zh/guide/": [

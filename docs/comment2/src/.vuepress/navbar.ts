@@ -26,6 +26,7 @@ export const enNavbarConfig = defineNavbarConfig([
     children: ["", "giscus", "waline", "twikoo"],
   },
   "/migration",
+  "/demo",
   {
     text: version,
     icon: "note",
@@ -61,7 +62,8 @@ export const zhNavbarConfig = defineNavbarConfig([
     prefix: "/zh/config/",
     children: ["", "giscus", "waline", "twikoo"],
   },
-  "/migration",
+  "/zh/migration",
+  "/zh/demo",
   {
     text: version,
     icon: "note",

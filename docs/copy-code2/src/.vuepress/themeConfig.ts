@@ -29,9 +29,10 @@ export default defineThemeConfig({
   locales: {
     "/": {
       navbar: [
-        "/README.md",
-        "/guide.md",
-        "/config.md",
+        "/",
+        "/guide",
+        "/config",
+        "/demo",
         {
           text: version,
           icon: "note",
@@ -49,9 +50,10 @@ export default defineThemeConfig({
 
     "/zh/": {
       navbar: [
-        "/zh/README.md",
-        "/zh/guide.md",
-        "/zh/config.md",
+        "/zh/",
+        "/zh/guide",
+        "/zh/config",
+        "/zh/demo",
         {
           text: version,
           icon: "note",
