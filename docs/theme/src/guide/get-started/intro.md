@@ -42,7 +42,7 @@ Based on the goal V1 achieved, v2 is further carried out:
 
 - Improved outlook: The theme interface is not based on the layout and style of the default theme, but has been completely refactored.
 
-- Decoupling Features: With the help of Vue3’s composition API, the theme fully achieve "Tree Shakeable" while remaining powerful.
+- Decoupling Features: With the help of Vue3’s composition API, the theme fully achieve "Tree-shaking" while remaining powerful.
 
   The theme will only run which features you need, without being slowed down by other features or affecting the build size.
 

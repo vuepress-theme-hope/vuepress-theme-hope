@@ -54,6 +54,8 @@ For example:
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provides one-click copy code block function.
 
+- [vuepress-plugin-copyright2][copyright2]: Append copyright infomation when copying or diable copy and selection.
+
 - [vuepress-plugin-feed2][feed2]: Feed support
 
 - [vuepress-plugin-md-enhance][md-enhance]: Provides more Markdown syntax
@@ -99,6 +101,7 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/
 [copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/
+[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/
 [feed2]: https://vuepress-theme-hope.github.io/v2/feed/
 [lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

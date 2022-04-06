@@ -128,6 +128,8 @@ tag:
 
 - [vuepress-plugin-copy-code2][copy-code2]: 提供一键复制代码块功能。
 
+- [vuepress-plugin-copyright2][copyright2]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
+
 - [vuepress-plugin-feed2][feed2]: Feed 支持
 
 - [vuepress-plugin-md-enhance][md-enhance]: 提供更多 Markdown 语法
@@ -157,6 +159,7 @@ tag:
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
 [components]: https://vuepress-theme-hope.github.io/v2/components/zh/
 [copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/
+[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/
 [feed2]: https://vuepress-theme-hope.github.io/v2/feed/zh/
 [lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/zh/
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/

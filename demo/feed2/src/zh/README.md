@@ -6,12 +6,8 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-feed2
 tagline: 为 VuePress2 提供 Feed 生成
 actions:
-  - text: 快速上手 💡
-    link: /zh/guide.html
-    type: primary
-
-  - text: 配置 🛠
-    link: /zh/config/
+  - text: 文档
+    link: https://vuepress-theme-hope.github.io/v2/feed/zh/
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---

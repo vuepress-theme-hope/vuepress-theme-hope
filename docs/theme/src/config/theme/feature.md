@@ -68,7 +68,9 @@ Visitors can click on the avatar or name in "Blogger Information" to enter the p
 Set social links.
 
 - If the social media icon is available below, you can set `MediaName: MediaLink` directly.
-- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaIconSvgString or MediaIconPath]`,
+- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
+
+  The second element in the tuple must be a valid SVG string or a full path of a existing SVG file.
 
 ::: info Available Social Media
 

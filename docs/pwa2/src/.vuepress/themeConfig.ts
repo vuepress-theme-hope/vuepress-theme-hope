@@ -52,7 +52,7 @@ export default defineThemeConfig({
         "/zh/guide",
         "/zh/config",
         "/zh/migration",
-        "/zh/dmeo",
+        "/zh/demo",
         {
           text: version,
           icon: "note",

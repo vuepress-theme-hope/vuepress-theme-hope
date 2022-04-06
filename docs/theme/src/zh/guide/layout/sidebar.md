@@ -923,6 +923,58 @@ module.exports = defineSidebarConfig(/* 你的侧边栏配置 */);
 const { defineSidebarConfig } = require("vuepress-theme-hope");
 
 module.exports = defineSidebarConfig({
+  "/zh/": [
+    "",
+    {
+      text: "指南",
+      icon: "creative",
+      prefix: "guide/",
+      children: [
+        "get-started/",
+        "interface/",
+        "layout/",
+        "markdown/",
+        "feature/",
+        "blog/",
+        "advanced/",
+      ],
+    },
+    {
+      text: "配置",
+      icon: "config",
+      prefix: "config/",
+      children: [
+        "intro",
+        "i18n",
+        "theme/",
+        "plugins/",
+        "frontmatter/",
+        "style",
+      ],
+    },
+    {
+      text: "教程",
+      icon: "guide",
+      prefix: "cookbook/",
+      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
+    },
+    {
+      text: "迁移",
+      icon: "change",
+      prefix: "migration/",
+      children: ["config", "page", "style"],
+    },
+    {
+      text: "常见问题",
+      icon: "question",
+      prefix: "faq/",
+      children: ["", "troubleshooting", "common-error", "vite"],
+    },
+    "demo",
+    "changelog",
+    "contribution",
+  ],
+
   "/zh/guide/": [
     {
       text: "快速上手",
@@ -1047,7 +1099,12 @@ module.exports = defineSidebarConfig({
         "others",
       ],
     },
-    "page",
+    {
+      text: "Frontmatter 配置",
+      icon: "page",
+      prefix: "frontmatter/",
+      children: ["info", "layout", "plugins"],
+    },
     "style",
   ],
 
@@ -1098,46 +1155,6 @@ module.exports = defineSidebarConfig({
       collapsable: true,
       children: ["component", "style", "replace", "extend"],
     },
-  ],
-
-  "/zh/": [
-    "",
-    {
-      text: "指南",
-      icon: "creative",
-      prefix: "guide/",
-      children: [
-        "get-started/",
-        "interface/",
-        "layout/",
-        "markdown/",
-        "feature/",
-        "blog/",
-        "advanced/",
-      ],
-    },
-    {
-      text: "配置",
-      icon: "config",
-      prefix: "config/",
-      children: ["intro", "i18n", "theme/", "plugins/", "page", "style"],
-    },
-    {
-      text: "教程",
-      icon: "guide",
-      prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
-    },
-    {
-      text: "迁移",
-      icon: "change",
-      prefix: "migration",
-      children: ["config", "page", "style"],
-    },
-    "changelog",
-    "faq",
-    "demo",
-    "contribution",
   ],
 });
 ```

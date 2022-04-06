@@ -25,13 +25,13 @@ tag:
 
 - `palette.scss`: 你可以在这里设置一些颜色和布局的相关变量，比如主题色、背景色、导航栏高度等。
 
-上述文件支持的完整配置列表详见 [配置 → 样式](../config/style.md)。
+上述文件支持的完整配置列表详见 [配置 → 样式](../../config/style.md)。
 
 ## 常见样式定制以及对应修改方法
 
 ### 修改背景颜色
 
-请在 `config.scss` 中配置 `$bg-color` 开头的变量，详见 [配置 → 样式](../config/style.md#颜色设置)
+请在 `config.scss` 中配置 `$bg-color` 开头的变量，详见 [配置 → 样式](../../config/style.md#颜色设置)
 
 ### 修改主题字体
 
@@ -65,7 +65,7 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 
 ### 修改主题布局
 
-主题允许你自由配置导航栏、侧边栏和页脚，如果你不喜欢它们，你也可以禁用它们。请查看 [指南 → 布局 → 导航栏](../guide/layout/navbar.md)、[指南 → 布局 → 侧边栏](../guide/layout/sidebar.md) 和 [指南 → 布局 → 页脚](../guide/layout/footer.md) 获取完整的配置说明。
+主题允许你自由配置导航栏、侧边栏和页脚，如果你不喜欢它们，你也可以禁用它们。请查看 [指南 → 布局 → 导航栏](../../guide/layout/navbar.md)、[指南 → 布局 → 侧边栏](../../guide/layout/sidebar.md) 和 [指南 → 布局 → 页脚](../../guide/layout/footer.md) 获取完整的配置说明。
 
 主题的内容布局也支持定制，如果你不喜欢默认启用的某些功能，你可以自由禁用它们。具体的配置请通过文档的搜索功能进行检索。
 

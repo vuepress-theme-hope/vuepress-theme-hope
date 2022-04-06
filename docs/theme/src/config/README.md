@@ -39,9 +39,13 @@ tag:
 
 - [Other Plugins](plugins/others.md)
 
-## Page Config
+## Frontmatter Config
 
-- [Frontmatter config](page.md)
+- [Infomation Frontmatter Config](frontmatter/info.md)
+
+- [Layout Frontmatter Config](frontmatter/layout.md)
+
+- [Plugin Frontmatter Config](frontmatter/plugins.md)
 
 ## Style Config
 

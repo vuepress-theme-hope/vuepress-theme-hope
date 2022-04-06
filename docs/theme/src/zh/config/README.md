@@ -39,9 +39,13 @@ tag:
 
 - [其他插件](plugins/others.md)
 
-## 页面配置
+## Frontmatter 配置
 
-- [Frontmatter 配置](page.md)
+- [信息 Frontmatter 配置](frontmatter/info.md)
+
+- [布局 Frontmatter 配置](frontmatter/layout.md)
+
+- [插件 Frontmatter 配置](frontmatter/plugins.md)
 
 ## 样式配置
 

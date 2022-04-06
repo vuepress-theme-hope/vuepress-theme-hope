@@ -39,7 +39,9 @@ You can also specify a personal introduction page link through `blog.intro`, so 
 You can also config your social media links with `blog.medias` option.
 
 - If the social media icon is available below, you can set `MediaName: MediaLink` directly.
-- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaIconSvgString or MediaIconPath]`,
+- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
+
+  The second element in the tuple must be a valid SVG string or a full path of a existing SVG file.
 
 ::: tip Available social media:
 

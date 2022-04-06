@@ -5,9 +5,11 @@ icon: config
 
 ## Catalog
 
-- [Theme Plugins Intro](intro.md)
+- [Theme plugins Intro](intro.md)
 
 - [Blog plugin config](blog.md)
+
+- [Copyright plugin config](copyright.md)
 
 - [Feed plugin config](feed.md)
 
@@ -15,4 +17,4 @@ icon: config
 
 - [PWA plugin config](pwa.md)
 
-- [Other Plugins](others.md)
+- [Other plugins](others.md)

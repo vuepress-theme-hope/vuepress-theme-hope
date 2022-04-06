@@ -9,6 +9,8 @@ icon: config
 
 - [博客插件配置](blog.md)
 
+- [版权信息插件配置](copyright.md)
+
 - [Feed 插件配置](feed.md)
 
 - [Markdown 增强插件配置](md-enhance.md)

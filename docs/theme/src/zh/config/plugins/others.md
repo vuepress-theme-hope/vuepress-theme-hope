@@ -20,18 +20,6 @@ tag:
 
 :::
 
-## copyright <Badge text="默认禁用" />
-
-在用户复制内容时附加版权信息，或禁用页面复制和选择。
-
-由于大多数人都在使用该主题构建文档，因此此插件默认不启用。
-
-::: info
-
-插件选项请参见 [copyright2 插件选项][copyright2-config].
-
-:::
-
 ## photoSwipe <Badge text="默认启用" />
 
 提供图片浏览功能。
@@ -86,7 +74,6 @@ tag:
 :::
 
 [copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/config.html
-[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/config.html
 [feed-config]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/
 [photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/config.html
 [reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/

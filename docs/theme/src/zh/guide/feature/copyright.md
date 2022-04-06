@@ -3,7 +3,7 @@ title: 版权信息
 icon: copyright
 category:
   - 功能
-tags:
+tag:
   - 功能
   - 版权信息
 copy:
@@ -47,10 +47,6 @@ copy:
 ## 版权信息获取
 
 你可以通过插件的 `author` 和 `license` 选项设置作者和协议信息。如果文档的不同部分拥有不同的作者和协议，你可以传入一个使用当前页面对象作为参数的函数 `(page: Page) => string` 返回相应信息。
-
-## 自定义文字
-
-你可以通过插件的 `locales` 选项配置插件在不同语言下的版权信息文字，详见 [配置 → locales](config.md#locales)。
 
 ## 演示
 

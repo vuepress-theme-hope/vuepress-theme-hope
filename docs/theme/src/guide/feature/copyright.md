@@ -3,7 +3,7 @@ title: Copyright
 icon: copyright
 category:
   - Feature
-tags:
+tag:
   - Copyright
   - Feature
 copy:

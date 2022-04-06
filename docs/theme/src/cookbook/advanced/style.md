@@ -25,7 +25,7 @@ You can create three files under `.vuepress/styles` folder in your own document 
 
 - `palette.scss`: You can set some color and layout related variables here, such as theme color, background color, navbar height, etc.
 
-For the complete config list supported by the above files, see [COnfig → Style](../config/style.md).
+For the complete config list supported by the above files, see [COnfig → Style](../../config/style.md).
 
 ## Common style Customization
 
@@ -55,7 +55,7 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", sans-serif';
 
 ### Modify Theme Layout
 
-The theme allows you to freely config navbar, sidebar and footer, and you can also disable them if you don’t like them. Please see [Guide → Layout → Navbar](../guide/layout/navbar.md), [Guide → Layout → Sidebar](../guide/layout/sidebar.md) and [Guide → Layout→ Footer](../guide/layout/footer.md) for full configuration instructions.
+The theme allows you to freely config navbar, sidebar and footer, and you can also disable them if you don’t like them. Please see [Guide → Layout → Navbar](../../guide/layout/navbar.md), [Guide → Layout → Sidebar](../../guide/layout/sidebar.md) and [Guide → Layout→ Footer](../../guide/layout/footer.md) for full configuration instructions.
 
 The theme’s content layout also supports customization, if you don’t like some features that are enabled by default, you are free to disable them. For details, please search through the search function of the document.
 

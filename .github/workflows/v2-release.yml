@@ -250,6 +250,7 @@ jobs:
           - md-enhance
           - photo-swipe
           - pwa2
+          - sass-palette
           - seo2
           - sitemap2
 

@@ -49,6 +49,11 @@ export const zhNavbarConfig = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/copy-code/zh/",
           },
           {
+            text: "版权信息插件",
+            icon: "copyright",
+            link: "https://vuepress-theme-hope.github.io/v2/copyright/zh/",
+          },
+          {
             text: "Feed 插件",
             icon: "rss",
             link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",

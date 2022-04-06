@@ -48,6 +48,11 @@ export const enNavbarConfig = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/copy-code/",
           },
           {
+            text: "Copyright Plugin",
+            icon: "copyright",
+            link: "https://vuepress-theme-hope.github.io/v2/copyright/",
+          },
+          {
             text: "Feed Plugin",
             icon: "rss",
             link: "https://vuepress-theme-hope.github.io/v2/feed/",

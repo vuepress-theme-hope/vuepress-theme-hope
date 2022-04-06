@@ -1,6 +1,58 @@
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
 export const enSidebarConfig = defineSidebarConfig({
+  "/": [
+    "",
+    {
+      text: "Guide",
+      icon: "creative",
+      prefix: "guide/",
+      children: [
+        "get-started/",
+        "interface/",
+        "layout/",
+        "markdown/",
+        "feature/",
+        "blog/",
+        "advanced/",
+      ],
+    },
+    {
+      text: "Config",
+      icon: "config",
+      prefix: "config/",
+      children: [
+        "intro",
+        "i18n",
+        "theme/",
+        "plugins/",
+        "frontmatter/",
+        "style",
+      ],
+    },
+    {
+      text: "Cookbook",
+      icon: "guide",
+      prefix: "cookbook/",
+      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
+    },
+    {
+      text: "Migration",
+      icon: "change",
+      prefix: "migration/",
+      children: ["config", "page", "style"],
+    },
+    {
+      text: "FAQ",
+      icon: "question",
+      prefix: "faq/",
+      children: ["", "troubleshooting", "common-error", "vite"],
+    },
+    "demo",
+    "changelog",
+    "contribution",
+  ],
+
   "/guide/": [
     {
       text: "Get Started",
@@ -125,7 +177,12 @@ export const enSidebarConfig = defineSidebarConfig({
         "others",
       ],
     },
-    "page",
+    {
+      text: "Frontmatter Config",
+      icon: "page",
+      prefix: "frontmatter/",
+      children: ["info", "layout", "plugins"],
+    },
     "style",
   ],
 
@@ -176,45 +233,5 @@ export const enSidebarConfig = defineSidebarConfig({
       collapsable: true,
       children: ["component", "style", "replace", "extend"],
     },
-  ],
-
-  "/": [
-    "",
-    {
-      text: "Guide",
-      icon: "creative",
-      prefix: "guide/",
-      children: [
-        "get-started/",
-        "interface/",
-        "layout/",
-        "markdown/",
-        "feature/",
-        "blog/",
-        "advanced/",
-      ],
-    },
-    {
-      text: "Config",
-      icon: "config",
-      prefix: "config/",
-      children: ["intro", "i18n", "theme/", "plugins/", "page", "style"],
-    },
-    {
-      text: "Cookbook",
-      icon: "guide",
-      prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
-    },
-    {
-      text: "Migration",
-      icon: "change",
-      prefix: "migration",
-      children: ["config", "page", "style"],
-    },
-    "changelog",
-    "faq",
-    "demo",
-    "contribution",
   ],
 });
