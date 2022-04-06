@@ -131,4 +131,4 @@ jobs:
 
       - name: Upload coverage
         if: github.ref == 'refs/heads/main'
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
