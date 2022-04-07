@@ -146,7 +146,6 @@ export default defineComponent({
 
         // watch darkmode change
         observer = new MutationObserver(() => {
-          console.log("update");
           isDarkmode.value = getDarkmodeStatus();
         });
 
