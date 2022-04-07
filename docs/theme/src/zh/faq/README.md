@@ -15,6 +15,8 @@ category:
 
 - [Vite 相关问题](vite.md)
 
+- [Safari 相关问题](safari.md)
+
 ## 联系我们
 
 在联系我们之前，请确定按照 [故障排查](troubleshooting.md) 部分进行了检查。

@@ -15,6 +15,8 @@ Frequency asked questions and corresponding solutions using the theme are includ
 
 - [Vite Problems](vite.md)
 
+- [Safari Problems](safari.md)
+
 ## Contact Us
 
 Before contacting us, please make sure to check your project according to [Troubleshooting](troubleshooting.md).

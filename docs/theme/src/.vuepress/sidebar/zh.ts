@@ -46,7 +46,7 @@ export const zhSidebarConfig = defineSidebarConfig({
       text: "常见问题",
       icon: "question",
       prefix: "faq/",
-      children: ["", "troubleshooting", "common-error", "vite"],
+      children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
     "demo",
     "changelog",

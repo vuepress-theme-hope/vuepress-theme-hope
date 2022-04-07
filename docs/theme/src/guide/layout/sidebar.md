@@ -972,7 +972,7 @@ module.exports = defineSidebarConfig({
       text: "FAQ",
       icon: "question",
       prefix: "faq/",
-      children: ["", "troubleshooting", "common-error", "vite"],
+      children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
     "demo",
     "changelog",
