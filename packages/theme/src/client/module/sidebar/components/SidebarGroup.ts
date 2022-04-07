@@ -1,7 +1,7 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import DropdownTransition from "@theme-hope/components/transitions/DropTransition.vue";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import SidebarLinks from "@theme-hope/module/sidebar/components/SidebarLinks";
 import { renderIcon } from "@theme-hope/module/sidebar/composables";
 import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
@@ -70,7 +70,7 @@ export default defineComponent({
                 : null,
             ]
           ),
-          h(DropdownTransition, () =>
+          h(DropTransition, () =>
             props.open || !collapsable
               ? h(SidebarLinks, { config: children })
               : null

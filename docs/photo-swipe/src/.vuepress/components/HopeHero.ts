@@ -3,7 +3,7 @@ import { isArray } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import { DropTransition } from "@theme-hope/components/transitions";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import HopeLogo from "./HopeLogo";
 
 import type { VNode } from "vue";

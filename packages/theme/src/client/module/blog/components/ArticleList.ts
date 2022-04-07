@@ -10,7 +10,7 @@ import {
 import { useRoute, useRouter } from "vue-router";
 
 import ArticleItem from "@theme-hope/module/blog/components/ArticleItem";
-import { DropTransition } from "@theme-hope/components/transitions";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { EmptyIcon } from "@theme-hope/module/blog/components/icons";
 import { useBlogOptions } from "@theme-hope/module/blog/composables";
 

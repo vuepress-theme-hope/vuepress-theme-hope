@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { RouterLink } from "vue-router";
 
-import { DropTransition } from "@theme-hope/components/transitions";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useThemeLocaleData } from "@theme-hope/composables";
 import {
   useBlogOptions,

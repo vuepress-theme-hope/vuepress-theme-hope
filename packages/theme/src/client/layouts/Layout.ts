@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
-import { FadeSlideY } from "@theme-hope/components/transitions";
+import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { useMobile } from "@theme-hope/composables";
 import { useThemeData, useThemeLocaleData } from "@theme-hope/composables";

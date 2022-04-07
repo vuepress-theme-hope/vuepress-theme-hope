@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, ref } from "vue";
 
 import CategoryList from "@theme-hope/module/blog/components/CategoryList";
-import { DropTransition } from "@theme-hope/components/transitions";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import TagList from "@theme-hope/module/blog/components/TagList";
 import TimelineList from "@theme-hope/module/blog/components/TimelineList";
 import {

@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 
-import { DropTransition } from "@theme-hope/components/transitions";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
 import InfoList from "@theme-hope/module/blog/components/InfoList";
 
