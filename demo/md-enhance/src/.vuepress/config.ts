@@ -55,6 +55,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       "md-enhance",
       {
         enableAll: true,
+        codegroup: false,
         presentation: {
           plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
