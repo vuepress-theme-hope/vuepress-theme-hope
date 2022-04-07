@@ -24,9 +24,9 @@
     //   "es2020.string"
     // ],
     // mininal node 14 support
-    "lib": ["dom", "es2020"],
+    // "lib": ["dom", "es2020"],
     // mininal node 16 support
-    // "lib": ["es2021"],
+    "lib": ["es2021"],
     "listEmittedFiles": false,
     "module": "es2015",
     "moduleResolution": "node",
