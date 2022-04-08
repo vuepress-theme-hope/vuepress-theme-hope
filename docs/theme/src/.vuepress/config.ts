@@ -40,6 +40,10 @@ export default defineHopeConfig({
     },
   },
 
+  define: {
+    IS_NETLIFY: Boolean(process.env.NETLIFY),
+  },
+
   themeConfig,
 
   alias: {

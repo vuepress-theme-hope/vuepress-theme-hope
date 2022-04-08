@@ -53,6 +53,8 @@ jobs:
         run: yarn run build
 
       - name: Docs build
+        env:
+          NETLIFY: true
         run: yarn run docs:vite-build
 
       - name: Combine output

@@ -166,3 +166,16 @@ module.exports = defineHopeConfig({
 ## Telegram Group
 
 - [vuepressthemehope](https://t.me/vuepressthemehope)
+
+<!-- markdownlint-disable -->
+
+<a v-if="isNetlify === false" href="https://www.netlify.com" target="_blank">
+
+![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
+![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
+
+</a>
+
+<script setup lang="ts">
+const isNetlify = IS_NETLIFY;
+</script>

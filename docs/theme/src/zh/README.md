@@ -166,3 +166,16 @@ module.exports = defineHopeConfig({
 ## 官方 QQ 群
 
 - [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
+
+<!-- markdownlint-disable -->
+
+<a v-if="isNetlify === false" href="https://www.netlify.com" target="_blank">
+
+![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
+![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
+
+</a>
+
+<script setup lang="ts">
+const isNetlify = IS_NETLIFY;
+</script>
