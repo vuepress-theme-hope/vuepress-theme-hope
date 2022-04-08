@@ -106,6 +106,7 @@ export default defineComponent({
                     h(AutoLink, {
                       class: ["action-button", action.type],
                       config: action,
+                      externalLinkIcon: false,
                     })
                   )
                 )

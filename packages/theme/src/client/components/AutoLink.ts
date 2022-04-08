@@ -23,6 +23,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    externalLinkIcon: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   emits: ["focusout"],
@@ -148,7 +152,7 @@ export default defineComponent({
             [
               slots.before?.() || renderIcon(config.value),
               config.value.text,
-              h(ExternalLinkIcon),
+              props.externalLinkIcon ? h(ExternalLinkIcon) : null,
               slots.after?.(),
             ]
           );
