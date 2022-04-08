@@ -2,19 +2,19 @@ import MarkdownIt = require("markdown-it");
 import { mermaid } from "../../src/node/markdown-it/mermaid";
 
 const demo = `flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
-    one --> two
-    three --> two
-    two --> c2`;
+  c1-->a2
+  subgraph one
+  a1-->a2
+  end
+  subgraph two
+  b1-->b2
+  end
+  subgraph three
+  c1-->c2
+  end
+  one --> two
+  three --> two
+  two --> c2`;
 
 describe("mermaid", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(mermaid);
@@ -72,10 +72,10 @@ Alice->John: Yes... John, how are you?
     const renderResult = markdownIt.render(`
 \`\`\`class
 class Square~Shape~{
-    int id
-    List~int~ position
-    setPoints(List~int~ points)
-    getPoints() List~int~
+  int id
+  List~int~ position
+  setPoints(List~int~ points)
+  getPoints() List~int~
 }
 
 Square : -List~string~ messages
@@ -96,17 +96,17 @@ Square : +getMessages() List~string~
 [*] --> Active
 
 state Active {
-    [*] --> NumLockOff
-    NumLockOff --> NumLockOn : EvNumLockPressed
-    NumLockOn --> NumLockOff : EvNumLockPressed
-    --
-    [*] --> CapsLockOff
-    CapsLockOff --> CapsLockOn : EvCapsLockPressed
-    CapsLockOn --> CapsLockOff : EvCapsLockPressed
-    --
-    [*] --> ScrollLockOff
-    ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
-    ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
+  [*] --> NumLockOff
+  NumLockOff --> NumLockOn : EvNumLockPressed
+  NumLockOn --> NumLockOff : EvNumLockPressed
+  --
+  [*] --> CapsLockOff
+  CapsLockOff --> CapsLockOn : EvCapsLockPressed
+  CapsLockOn --> CapsLockOff : EvCapsLockPressed
+  --
+  [*] --> ScrollLockOff
+  ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
+  ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
 }
 \`\`\`
 `);
@@ -122,15 +122,15 @@ state Active {
 \`\`\`er
 CAR ||--o{ NAMED-DRIVER : allows
 CAR {
-    string registrationNumber
-    string make
-    string model
+  string registrationNumber
+  string make
+  string model
 }
 PERSON ||--o{ NAMED-DRIVER : is
 PERSON {
-    string firstName
-    string lastName
-    int age
+  string firstName
+  string lastName
+  int age
 }
 \`\`\`
 `);
@@ -213,6 +213,24 @@ title What Voldemort doesn't have?
 
     expect(renderResult).toMatch(
       /<MermaidChart id="mermaid.*?" data-code="pie.*?"><\/MermaidChart>/
+    );
+    expect(renderResult).toMatchSnapshot();
+  });
+
+  it("Should render ```git-graph", () => {
+    const renderResult = markdownIt.render(`
+\`\`\`git-graph
+commit id: "Normal"
+commit
+commit id: "Reverse" type: REVERSE
+commit
+commit id: "Highlight" type: HIGHLIGHT
+commit
+\`\`\`
+`);
+
+    expect(renderResult).toMatch(
+      /<MermaidChart id="mermaid.*?" data-code="git-graph.*?"><\/MermaidChart>/
     );
     expect(renderResult).toMatchSnapshot();
   });

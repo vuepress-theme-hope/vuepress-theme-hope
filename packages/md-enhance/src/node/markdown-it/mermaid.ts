@@ -22,7 +22,7 @@ const mermaidHackRender = (
   `<MermaidChart id="mermaid-${hash(index)}" data-code="${encodeURIComponent(
     `${name}\n${content
       .split("\n")
-      .map((line) => (line ? `    ${line}` : ""))
+      .map((line) => (line ? `  ${line}` : ""))
       .join("\n")}`
   )}"></MermaidChart>`;
 
@@ -48,6 +48,8 @@ export const mermaid: PluginSimple = (md) => {
     if (info.trim() === "gantt")
       return mermaidHackRender("gantt", content, index);
     if (info.trim() === "pie") return mermaidHackRender("pie", content, index);
+    if (info.trim() === "git-graph")
+      return mermaidHackRender("git-graph", content, index);
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
