@@ -1,9 +1,5 @@
-import {
-  usePageFrontmatter,
-  useSiteLocaleData,
-  withBase,
-} from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { usePageFrontmatter, withBase } from "@vuepress/client";
+import { defineComponent, h, onMounted, ref } from "vue";
 
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
@@ -18,29 +14,6 @@ export default defineComponent({
 
     const frontmatter =
       usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
-    const siteLocale = useSiteLocaleData();
-
-    const heroImage = computed(() => {
-      if (!frontmatter.value.heroImage) return null;
-
-      return withBase(frontmatter.value.heroImage);
-    });
-
-    const heroImageDark = computed(() => {
-      if (!frontmatter.value.heroImageDark) return null;
-
-      return withBase(frontmatter.value.heroImageDark);
-    });
-
-    const heroText = computed(() => {
-      if (frontmatter.value.heroText === null) return null;
-
-      return frontmatter.value.heroText || siteLocale.value.title || "Hello";
-    });
-
-    const heroAlt = computed(
-      () => frontmatter.value.heroAlt || heroText.value || "hero"
-    );
 
     onMounted(() =>
       Promise.all([
@@ -189,26 +162,15 @@ export default defineComponent({
     );
 
     return (): VNode[] => [
-      !ready.value && heroImage.value
+      !ready.value
         ? h("img", {
-            key: "light",
-            class: { light: heroImageDark.value },
-            src: heroImage.value,
-            alt: heroAlt,
-          })
-        : null,
-      !ready.value && heroImageDark.value
-        ? h("img", {
-            key: "dark",
-            class: "dark",
-            src: heroImageDark.value,
-            alt: heroAlt,
+            src: withBase(frontmatter.value.heroImage),
+            alt: "vuepress-theme-hope",
           })
         : null,
 
       h("canvas", {
         id: "hero-logo",
-        key: "hope-logo",
         style: {
           display: ready.value ? "block" : "none",
           opacity: ready.value ? 1 : 0,

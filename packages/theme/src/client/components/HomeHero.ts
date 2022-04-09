@@ -66,29 +66,25 @@ export default defineComponent({
 
     return (): VNode =>
       h("header", { class: "hero" }, [
-        h(
-          DropTransition,
-          { type: "group" },
-          () =>
-            slots.heroImage?.() || [
-              heroImage.value
-                ? h("img", {
-                    key: "light",
-                    class: { light: heroImageDark.value },
-                    src: heroImage.value,
-                    alt: heroAlt,
-                  })
-                : null,
-              heroImageDark.value
-                ? h("img", {
-                    key: "dark",
-                    class: "dark",
-                    src: heroImageDark.value,
-                    alt: heroAlt,
-                  })
-                : null,
-            ]
-        ),
+        slots.heroImage?.() ||
+          h(DropTransition, { type: "group" }, () => [
+            heroImage.value
+              ? h("img", {
+                  key: "light",
+                  class: { light: heroImageDark.value },
+                  src: heroImage.value,
+                  alt: heroAlt,
+                })
+              : null,
+            heroImageDark.value
+              ? h("img", {
+                  key: "dark",
+                  class: "dark",
+                  src: heroImageDark.value,
+                  alt: heroAlt,
+                })
+              : null,
+          ]),
         slots.heroInfo?.() ||
           h("div", { class: "hero-info" }, [
             heroText.value
