@@ -85,7 +85,7 @@ export default defineComponent({
         currentArticles.value.length
           ? [
               ...currentArticles.value.map(({ info, path }, index) =>
-                h(DropTransition, { delay: index * 0.04 }, () =>
+                h(DropTransition, { appear: true, delay: index * 0.04 }, () =>
                   h(ArticleItem, { key: path, info, path })
                 )
               ),

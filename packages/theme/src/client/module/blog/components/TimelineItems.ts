@@ -45,7 +45,7 @@ export default defineComponent({
           ...timelines.value.config.map(({ year, items }, index) =>
             h(
               DropTransition,
-              { delay: 0.08 * (index + 1), type: "group" },
+              { appear: true, delay: 0.08 * (index + 1), type: "group" },
               () => [
                 h(
                   "h3",
