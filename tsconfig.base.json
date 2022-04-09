@@ -15,17 +15,6 @@
     "importHelpers": true,
     "inlineSourceMap": false,
     "inlineSources": false,
-    // mininal node 12 support
-    // "lib": [
-    //   "dom",
-    //   "es2019",
-    //   "es2020.promise",
-    //   "es2020.bigint",
-    //   "es2020.string"
-    // ],
-    // mininal node 14 support
-    // "lib": ["dom", "es2020"],
-    // mininal node 16 support
     "lib": ["es2021"],
     "listEmittedFiles": false,
     "module": "es2015",
