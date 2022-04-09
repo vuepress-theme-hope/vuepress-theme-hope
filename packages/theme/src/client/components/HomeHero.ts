@@ -15,7 +15,7 @@ import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
 export default defineComponent({
   name: "HomeHero",
 
-  setup() {
+  setup(_props, { slots }) {
     const frontmatter =
       usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
     const siteLocale = useSiteLocaleData();
@@ -66,53 +66,59 @@ export default defineComponent({
 
     return (): VNode =>
       h("header", { class: "hero" }, [
-        h(DropTransition, { type: "group" }, () => [
-          heroImage.value
-            ? h("img", {
-                key: "light",
-                class: { light: heroImageDark.value },
-                src: heroImage.value,
-                alt: heroAlt,
-              })
-            : null,
-          heroImageDark.value
-            ? h("img", {
-                key: "dark",
-                class: "dark",
-                src: heroImageDark.value,
-                alt: heroAlt,
-              })
-            : null,
-        ]),
-        h("div", { class: "hero-info" }, [
-          heroText.value
-            ? h(DropTransition, { delay: 0.04 }, () =>
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                h("h1", { id: "main-title" }, heroText.value!)
-              )
-            : null,
-          tagline.value
-            ? h(DropTransition, { delay: 0.08 }, () =>
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                h("p", { class: "description" }, tagline.value!)
-              )
-            : null,
-          actions.value.length
-            ? h(DropTransition, { delay: 0.12 }, () =>
-                h(
-                  "p",
-                  { class: "actions" },
-                  actions.value.map((action) =>
-                    h(AutoLink, {
-                      class: ["action-button", action.type],
-                      config: action,
-                      externalLinkIcon: false,
-                    })
+        h(
+          DropTransition,
+          { type: "group" },
+          () =>
+            slots.heroImage?.() || [
+              heroImage.value
+                ? h("img", {
+                    key: "light",
+                    class: { light: heroImageDark.value },
+                    src: heroImage.value,
+                    alt: heroAlt,
+                  })
+                : null,
+              heroImageDark.value
+                ? h("img", {
+                    key: "dark",
+                    class: "dark",
+                    src: heroImageDark.value,
+                    alt: heroAlt,
+                  })
+                : null,
+            ]
+        ),
+        slots.heroInfo?.() ||
+          h("div", { class: "hero-info" }, [
+            heroText.value
+              ? h(DropTransition, { delay: 0.04 }, () =>
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  h("h1", { id: "main-title" }, heroText.value!)
+                )
+              : null,
+            tagline.value
+              ? h(DropTransition, { delay: 0.08 }, () =>
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  h("p", { class: "description" }, tagline.value!)
+                )
+              : null,
+            actions.value.length
+              ? h(DropTransition, { delay: 0.12 }, () =>
+                  h(
+                    "p",
+                    { class: "actions" },
+                    actions.value.map((action) =>
+                      h(AutoLink, {
+                        class: ["action-button", action.type],
+                        config: action,
+                        externalLinkIcon: false,
+                      })
+                    )
                   )
                 )
-              )
-            : null,
-        ]),
+              : null,
+          ]),
       ]);
   },
 });

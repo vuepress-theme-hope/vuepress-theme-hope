@@ -242,6 +242,7 @@ Components that provide slots are as follows:
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
+- `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
 
@@ -257,6 +258,10 @@ Components that provide slots are as follows:
 **Sidebar**:
 
 - `Sidebar`: `top`, `default`, `bottom`
+
+**Blog**:
+
+- `BlogHero`: `heroImage`, `heroInfo`
 
 ::: tip
 

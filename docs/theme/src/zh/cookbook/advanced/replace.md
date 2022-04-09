@@ -242,6 +242,7 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
+- `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
 
@@ -257,6 +258,10 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 **侧边栏**:
 
 - `Sidebar`: `top`, `default`, `bottom`
+
+**博客**:
+
+- `BlogHero`: `heroImage`, `heroInfo`
 
 ::: tip
 

@@ -17,7 +17,7 @@ import { SlideDownIcon } from "./icons";
 export default defineComponent({
   name: "BlogHero",
 
-  setup() {
+  setup(_props, { slots }) {
     const title = usePageHeadTitle();
     const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
 
@@ -78,16 +78,18 @@ export default defineComponent({
                   background: `url(${bgImage.value}) center/cover no-repeat`,
                 },
               }),
-              h(DropTransition, { delay: 0.04 }, () =>
-                heroImage.value
-                  ? h("img", {
-                      class: "hero-logo",
-                      style: heroImageStyle.value,
-                      src: withBase(heroImage.value),
-                      alt: frontmatter.value.heroAlt || "hero image",
-                    })
-                  : null
-              ),
+              slots.heroImage?.() ||
+                h(DropTransition, { delay: 0.04 }, () =>
+                  heroImage.value
+                    ? h("img", {
+                        class: "hero-image",
+                        style: heroImageStyle.value,
+                        src: withBase(heroImage.value),
+                        alt: frontmatter.value.heroAlt || "hero image",
+                      })
+                    : null
+                ),
+              slots.heroImage?.(),
               h(DropTransition, { delay: 0.08 }, () =>
                 frontmatter.value.showTitle !== false
                   ? h("h1", frontmatter.value.heroText || title.value)
