@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getDate, getAuthor } from "@mr-hope/vuepress-shared";
+import { removeEndingSlash } from "@vuepress/shared";
 import { getCover, getImages, getLocales, resolveUrl } from "./utils";
 
 import type { App } from "@vuepress/core";
@@ -146,4 +147,16 @@ export const getJSONLD = (
         author: author.map((item) => ({ "@type": "Person", ...item })),
       }
     : null;
+};
+
+export const getCanonicalLink = (
+  page: ExtendPage,
+  options: SeoOptions
+): string | null => {
+  if (typeof options.canonical === "function") return options.canonical(page);
+
+  if (typeof options.canonical === "string")
+    return removeEndingSlash(options.canonical) + options.canonical;
+
+  return null;
 };

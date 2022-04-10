@@ -128,6 +128,23 @@ Please note that the plugin does not generate JSON-LD for non-article pages, so 
 
 :::
 
+## Canonical Link
+
+If you are deploying your content to different sites, or same content under different URLs, you may need to set `canonical` option to provide a "Canonical Link" for your page. You can either set a string which will be append before page route link, or adding a custom function `(page: Page) => string | null` to return a canonical link if necessary.
+
+::: tip Example
+
+If your sites are deploy under docs folder in `example.com`, but available in:
+
+- `http://example.com/docs/xxx`
+- `https://example.com/docs/xxx`
+- `http://www.example.com/docs/xxx`
+- `https://www.example.com/docs/xxx` (primary)
+
+To let search engine results always be the primary choise, you may need to set `canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
+
+:::
+
 ### Customize head Tags
 
 Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `customHead` option, whose type is:

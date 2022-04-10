@@ -89,7 +89,7 @@ export interface SeoOptions {
       never
     >
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
   ) => boolean;
 
   /**
@@ -98,21 +98,21 @@ export interface SeoOptions {
    * 自定义 OGP 生成器
    */
   ogp?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> & {
-      git?: GitData;
-    } = { git?: GitData },
-    ExtraPageFrontmatter extends PageFrontmatter<
-      BasePageFrontMatter & { banner: string; cover: string }
-    > = PageFrontmatter<
-      BasePageFrontMatter & { banner: string; cover: string }
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
     >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
     >
   >(
     ogp: SeoContent,
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     app: App
   ) => SeoContent;
 
@@ -122,21 +122,21 @@ export interface SeoOptions {
    * 自定义 JSON-LD 生成器
    */
   jsonLd?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> & {
-      git?: GitData;
-    } = { git?: GitData },
-    ExtraPageFrontmatter extends PageFrontmatter<
-      BasePageFrontMatter & { banner: string; cover: string }
-    > = PageFrontmatter<
-      BasePageFrontMatter & { banner: string; cover: string }
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
     >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
     >
   >(
     jsonLD: ArticleJSONLD | null,
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     app: App
   ) => ArticleJSONLD | null;
 
@@ -146,14 +146,14 @@ export interface SeoOptions {
    * 自定义 Head 标签
    */
   customHead?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> & {
-      git?: GitData;
-    } = { git?: GitData },
-    ExtraPageFrontmatter extends PageFrontmatter<
-      BasePageFrontMatter & { banner: string; cover: string }
-    > = PageFrontmatter<
-      BasePageFrontMatter & { banner: string; cover: string }
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
     >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
@@ -163,4 +163,28 @@ export interface SeoOptions {
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     app: App
   ) => void;
+
+  /**
+   * Add canonical URL
+   *
+   * 添加首选地址
+   */
+  canonical?:
+    | string
+    | (<
+        ExtraPageData extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>,
+        ExtraPageFrontmatter extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<string, unknown>,
+        ExtraPageFields extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>
+      >(
+        page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+      ) => string | null);
 }

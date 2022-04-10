@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { fs } from "@vuepress/utils";
-import { addOGP, appendJSONLD } from "./inject";
+import { addOGP, appendCanonical, appendJSONLD } from "./inject";
 import { logger } from "./utils";
 
 import type { App, AppDir } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared";
-import { getJSONLD, getOGP } from "./info";
+import { getCanonicalLink, getJSONLD, getOGP } from "./info";
 
 export const appendSEO = (
   page: ExtendPage,
   options: SeoOptions,
   app: App
 ): void => {
+  const head = page.frontmatter.head || [];
+
   const defaultOGP = getOGP(page, options, app);
   const defaultJSONLD = getJSONLD(page, options, app);
 
@@ -23,10 +25,11 @@ export const appendSEO = (
     ? options.jsonLd(defaultJSONLD, page, app)
     : null;
 
-  const head = page.frontmatter.head || [];
+  const canonicalLink = getCanonicalLink(page, options);
 
   addOGP(head, ogpContent);
   appendJSONLD(head, jsonLDContent);
+  appendCanonical(head, canonicalLink);
 
   if (options.customHead) options.customHead(head, page, app);
 

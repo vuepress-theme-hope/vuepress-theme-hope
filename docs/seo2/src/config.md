@@ -26,6 +26,13 @@ Default author.
 
 Whether generate description automatically
 
+## canonical
+
+- Type: `string | ((page: Page) => string | null)`
+- Required: No
+
+Canonical link
+
 ### fallBackImage
 
 - Type: `string`

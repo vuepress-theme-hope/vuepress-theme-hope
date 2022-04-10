@@ -59,6 +59,9 @@ export const appendJSONLD = (
     ]);
 };
 
-export const appendCanonical = (head: HeadConfig[], url: string): void => {
-  head.push(["link", { rel: "canonical", href: url }]);
+export const appendCanonical = (
+  head: HeadConfig[],
+  url?: string | null
+): void => {
+  if (url) head.push(["link", { rel: "canonical", href: url }]);
 };
