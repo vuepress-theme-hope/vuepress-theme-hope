@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.36...v2.0.0-beta.37) (2022-04-10)
+
+### Features
+
+- **theme:** add slots for HomeHero ([da2ed1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/da2ed1d7e9a69792adc184d48c652a42bcc9a913))
+- **theme:** remove external icon in home button ([fd344fd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd344fdb75ff5fc7a3d5cdf2b3d0801a6562c56b))
+
 # [2.0.0-beta.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.35...v2.0.0-beta.36) (2022-04-05)
 
 ### Features
