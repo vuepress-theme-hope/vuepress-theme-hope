@@ -1,5 +1,5 @@
 import type { HeadConfig } from "@vuepress/core";
-import type { ArticleSeoContent, SeoContent, SeoOptions } from "../shared";
+import type { ArticleJSONLD, ArticleSeoContent, SeoContent } from "../shared";
 
 interface MetaOptions {
   name: string;
@@ -7,8 +7,8 @@ interface MetaOptions {
   attribute?: string;
 }
 
-const addMeta = (
-  meta: HeadConfig[],
+const appendMetatoHead = (
+  head: HeadConfig[],
   {
     name,
     content,
@@ -17,42 +17,48 @@ const addMeta = (
       : "name",
   }: MetaOptions
 ): void => {
-  if (content) meta.push(["meta", { [attribute]: name, content }]);
+  if (content) head.push(["meta", { [attribute]: name, content }]);
 };
 
-export const appendSEO = (
-  head: HeadConfig[],
-  content: SeoContent,
-  options: SeoOptions
-): void => {
+export const addOGP = (head: HeadConfig[], content: SeoContent): void => {
   for (const property in content)
     switch (property) {
       case "article:tag":
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         (content as ArticleSeoContent)["article:tag"]!.forEach((tag: string) =>
-          addMeta(head, { name: "article:tag", content: tag })
+          appendMetatoHead(head, { name: "article:tag", content: tag })
         );
         break;
       case "og:locale:alternate":
         content["og:locale:alternate"].forEach((locale: string) => {
           if (locale !== content["og:locale"])
-            addMeta(head, { name: "og:locale:alternate", content: locale });
+            appendMetatoHead(head, {
+              name: "og:locale:alternate",
+              content: locale,
+            });
         });
         break;
       default:
         if (content[property as keyof SeoContent] as string)
-          addMeta(head, {
+          appendMetatoHead(head, {
             name: property,
             content: content[property as keyof SeoContent] as string,
           });
     }
+};
 
-  if (options.restrictions)
-    addMeta(head, {
-      name: "og:restrictions:age",
-      content: options.restrictions,
-    });
+export const appendJSONLD = (
+  head: HeadConfig[],
+  content: ArticleJSONLD | null
+): void => {
+  if (content)
+    head.push([
+      "script",
+      { type: "application/ld+json" },
+      JSON.stringify(content),
+    ]);
+};
 
-  if (options.twitterID)
-    addMeta(head, { name: "twitter:creator", content: options.twitterID });
+export const appendCanonical = (head: HeadConfig[], url: string): void => {
+  head.push(["link", { rel: "canonical", href: url }]);
 };

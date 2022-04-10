@@ -1,10 +1,9 @@
 import { stripTags } from "@mr-hope/vuepress-shared";
-import { generateRobotsTxt, generateSeo } from "./seo";
-import { appendSEO } from "./inject";
+import { generateRobotsTxt, appendSEO } from "./seo";
 import { logger, md2text } from "./utils";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
-import type { ExtendPage, SeoContent, SeoOptions } from "../shared";
+import type { ExtendPage, SeoOptions } from "../shared";
 
 export const seoPlugin: Plugin<SeoOptions> = (options) => {
   if (!options.hostname) {
@@ -22,29 +21,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options) => {
         page.frontmatter.summary =
           stripTags(page.excerpt) || md2text(page.content).slice(0, 180) || "";
 
-      const head = page.frontmatter.head || [];
-      const { OGP, JSONLD } = generateSeo(page, options as SeoOptions, app);
-
-      const ogpContent: SeoContent = options.ogp
-        ? options.ogp(OGP, page, app)
-        : OGP;
-
-      const jsonLDContent = options.jsonLd
-        ? options.jsonLd(JSONLD, page, app)
-        : null;
-
-      appendSEO(head, ogpContent, options as SeoOptions);
-
-      if (jsonLDContent)
-        head.push([
-          "script",
-          { type: "application/ld+json" },
-          JSON.stringify(jsonLDContent),
-        ]);
-
-      if (options.customHead) options.customHead(head, page, app);
-
-      page.frontmatter.head = head;
+      appendSEO(page, options as SeoOptions, app);
     },
 
     onGenerated: (app): Promise<void> => generateRobotsTxt(app.dir),
