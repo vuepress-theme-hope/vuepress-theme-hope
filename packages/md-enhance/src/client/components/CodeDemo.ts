@@ -164,7 +164,7 @@ export default defineComponent({
           props.title
             ? h("span", { class: "title" }, decodeURIComponent(props.title))
             : null,
-          code.value.isLegal && config.value.jsfiddle !== false
+          code.value.isLegal && code.value.jsfiddle !== false
             ? h(
                 "form",
                 {
@@ -210,7 +210,7 @@ export default defineComponent({
               )
             : null,
 
-          !code.value.isLegal || config.value.codepen !== false
+          !code.value.isLegal || code.value.codepen !== false
             ? h(
                 "form",
                 {
