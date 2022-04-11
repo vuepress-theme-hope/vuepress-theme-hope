@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.37...v2.0.0-beta.38) (2022-04-11)
+
+**Note:** Version bump only for package copyright-docs
+
 # [2.0.0-beta.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.36...v2.0.0-beta.37) (2022-04-10)
 
 **Note:** Version bump only for package copyright-docs

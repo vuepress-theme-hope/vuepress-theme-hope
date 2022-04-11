@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.37...v2.0.0-beta.38) (2022-04-11)
+
+### Bug Fixes
+
+- **seo2:** add missing deps ([5e10c43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e10c43c50fecd4da1f3c9a5ea248a1d52769cb1))
+- **seo2:** fix typos in canonical ([8d4951d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8d4951dfeda6d193abe0d4acb69cd106bdf77a54))
+
 # [2.0.0-beta.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.36...v2.0.0-beta.37) (2022-04-10)
 
 ### Features

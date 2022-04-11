@@ -1,6 +1,6 @@
 {
   "name": "lightgallery-demo",
-  "version": "2.0.0-beta.37",
+  "version": "2.0.0-beta.38",
   "private": true,
   "description": "Demo for vuepress-plugin-lightgallery",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "vuepress-plugin-lightgallery": "2.0.0-beta.37",
+    "vuepress-plugin-lightgallery": "2.0.0-beta.38",
     "vuepress-vite": "2.0.0-beta.39",
     "vuepress-webpack": "2.0.0-beta.38"
   }
