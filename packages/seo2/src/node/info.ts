@@ -156,7 +156,7 @@ export const getCanonicalLink = (
   if (typeof options.canonical === "function") return options.canonical(page);
 
   if (typeof options.canonical === "string")
-    return removeEndingSlash(options.canonical) + options.canonical;
+    return `${removeEndingSlash(options.canonical)}${page.path}`;
 
   return null;
 };
