@@ -43,7 +43,7 @@
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/utils": "2.0.0-beta.38",
     "@waline/client": "^1.6.0",
-    "giscus": "^1.0.1",
+    "giscus": "^1.0.2",
     "twikoo": "^1.5.3",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14",
