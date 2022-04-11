@@ -244,5 +244,12 @@ export default defineThemeConfig({
         ],
       },
     },
+
+    seo: {
+      canonical:
+        hostname === "https://vuepress-theme-hope.github.io"
+          ? null
+          : "https://vuepress-theme-hope.github.io/v2/feed/",
+    },
   },
 });
