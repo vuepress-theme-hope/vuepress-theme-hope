@@ -8,20 +8,20 @@
 
   .page & {
     position: sticky;
-    top: var(--navbar-height);
+    top: calc(var(--navbar-height) + 0.75rem);
 
     flex: 0 0 300px;
 
     box-sizing: border-box;
 
     height: auto;
-    margin-top: 0.75rem;
+    margin-top: 0;
     margin-bottom: 0.75rem;
 
     transition: all 0.3s;
 
     @media (max-width: hope-config.$pad) {
-      top: var(--navbar-mobile-height);
+      top: calc(var(--navbar-mobile-height) + 0.75rem);
     }
 
     @media (max-width: hope-config.$mobile) {
