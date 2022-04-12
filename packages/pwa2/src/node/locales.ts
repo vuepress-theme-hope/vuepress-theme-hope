@@ -123,4 +123,19 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Novo conteúdo encontrado",
     update: "Novo conteúdo está disponível.",
   },
+
+  "/pl/": {
+    install: "Zainstaluj",
+    iOSInstall: "Stuknij przycisk udostępniania, a następnie „Dodaj do ekranu głównego”",
+    cancel: "Anuluj",
+    close: "Zamknij",
+    prevImage: "Poprzedni obrazek",
+    nextImage: "Następny obrazek",
+    desc: "Opis",
+    feature: "Kluczowe cechy",
+    explain:
+        "Tę aplikację można zainstalować na komputerze lub urządzeniu mobilnym. Dzięki temu ta aplikacja internetowa będzie wyglądać i zachowywać się jak każda inna zainstalowana aplikacja. Znajdziesz ją na listach aplikacji i będziesz mógł przypiąć go do ekranu głównego, menu startowego lub pasków zadań. Ta zainstalowana aplikacja internetowa będzie również mogła bezpiecznie komunikować się z innymi aplikacjami i systemem operacyjnym.",
+    hint: "Znaleziono nową zawartość.",
+    update: "Nowa zawartość jest dostępna.",
+  },
 };

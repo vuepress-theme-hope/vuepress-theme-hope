@@ -37,6 +37,10 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/br/": {
     backToTop: "Volta ao topo",
   },
+
+  "/pl/": {
+    backToTop: "Wróć na górę",
+  },
 };
 export const tocLocales: TOCLocaleConfig = {
   "/en/": {
@@ -69,6 +73,9 @@ export const tocLocales: TOCLocaleConfig = {
 
   "/br/": {
     header: "On This Page",
+  },
+  "/pl/": {
+    header: "Na tej stronie",
   },
 };
 
@@ -135,6 +142,14 @@ export const paginationLocales: PaginationLocaleConfig = {
     navigate: "Pular para",
     button: "Ir",
     errorText: "Por favor, digite um número entre 1 e $page !",
+  },
+
+  "/pl/": {
+    prev: "Poprzedni",
+    next: "Następmy",
+    navigate: "Skocz do",
+    button: "Idź",
+    errorText: "Wpisz numer między 1 a $page !",
   },
 };
 
@@ -228,5 +243,16 @@ export const articleInfoLocales: ArticleInfoLocaleConfig = {
     tag: "Tags🏷",
     readingTime: "Tempo de Leitura⌛",
     words: "Palavras🔠",
+  },
+
+  "/pl/": {
+    author: "Autor🖊",
+    date: "Data pisania📅",
+    origin: "Oryginał💡",
+    views: "Wyświetlenia strony🔢",
+    category: "Kategoria🌈",
+    tag: "Tagi🏷",
+    readingTime: "Czas czytania⌛",
+    words: "Słowa🔠",
   },
 };
