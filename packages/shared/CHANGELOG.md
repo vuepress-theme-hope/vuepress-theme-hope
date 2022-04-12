@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.38...v2.0.0-beta.39) (2022-04-12)
+
+### Features
+
+- **theme:** support git options ([32712de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/32712de08263094043459f7d1931f19d4ee368db))
+- **theme:** update breakpoint variable name ([2761a5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2761a5d6d45ed87cddf5285bef43808c8b8a0ffc))
+
+### BREAKING CHANGES
+
+- **theme:** update breakpoint variable name
+
 # [2.0.0-beta.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.37...v2.0.0-beta.38) (2022-04-11)
 
 **Note:** Version bump only for package @mr-hope/vuepress-shared
