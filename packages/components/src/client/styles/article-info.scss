@@ -20,11 +20,11 @@
 
     line-height: 2;
 
-    @media (min-width: hope-config.$wide) {
+    @media (min-width: hope-config.$pc) {
       font-size: 1.1em;
     }
 
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       margin-right: 0.3em;
       font-size: 0.875em;
     }

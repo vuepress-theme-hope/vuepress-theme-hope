@@ -68,7 +68,7 @@ module.exports = themeConfig({
 
 ::::
 
-Comment feature is enabled globally by default, the configuration key is `comment` in `themeConfig.plugins.comment`.
+Comment feature is enabled globally by default, the configuration key is `comment` in `themeConfig.plugins`.
 
 ::: tip
 

@@ -16,7 +16,7 @@
     }
 
     // do not leave space for sidebar on wide mobile
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       padding-left: 0;
     }
   }
@@ -39,7 +39,7 @@
       // clear space for navbar
       top: 0;
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         // clear space for navbar
         top: 0;
       }
@@ -48,7 +48,7 @@
 
   &.hide-navbar {
     .sidebar {
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         // clear space for navbar
         top: 0;
       }
@@ -81,7 +81,7 @@
   }
 
   &:not(.sidebar-open) {
-    @media (min-width: (hope-config.$mobile + 1px)) {
+    @media (min-width: (hope-config.$tablet + 1px)) {
       .page {
         // spaces for toggle button
         padding-left: 2rem;
@@ -104,7 +104,7 @@
   &.has-toc {
     .page {
       // add padding for anchor
-      @media (min-width: hope-config.$wide) {
+      @media (min-width: hope-config.$pc) {
         padding-right: 16rem;
       }
     }

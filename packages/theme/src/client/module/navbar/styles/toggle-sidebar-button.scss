@@ -16,7 +16,7 @@
 
   transition: transform 0.2s ease-in-out;
 
-  @media screen and (max-width: hope-config.$mobile) {
+  @media screen and (max-width: hope-config.$tablet) {
     display: block;
     padding-right: var(--navbar-mobile-horizontal-padding);
   }

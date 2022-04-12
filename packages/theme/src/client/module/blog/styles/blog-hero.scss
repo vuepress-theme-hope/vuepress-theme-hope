@@ -14,12 +14,12 @@
 
   font-family: var(--font-family-fancy);
 
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: hope-config.$tablet) {
     height: 350px;
     margin: 0 -1.5rem 1rem;
   }
 
-  @media (max-width: hope-config.$mobileS) {
+  @media (max-width: hope-config.$mobile) {
     margin: 0 0 1rem;
   }
 
@@ -77,11 +77,11 @@
       font-size: 1.875rem;
     }
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       font-size: 2rem;
     }
 
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       font-size: 1.875rem;
     }
   }
@@ -98,11 +98,11 @@
       font-size: 18px;
     }
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       font-size: 20px;
     }
 
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       font-size: 18px;
     }
   }

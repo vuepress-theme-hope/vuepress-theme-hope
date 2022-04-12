@@ -107,6 +107,6 @@ Window width switching mobile view and desktop view in pixels
 
 ::: warning
 
-You should keep this option same value with `$mobile` in `.vuepress/config.scss`
+You should keep this option same value with `$tablet` in `.vuepress/config.scss`
 
 :::

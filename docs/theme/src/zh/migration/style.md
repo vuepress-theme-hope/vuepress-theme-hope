@@ -21,17 +21,17 @@ tag:
 
 移动至 `config.scss`。
 
-- `$MQWide` 重命名为 `$wide`
-- `$MQNormal` 重命名为 `$desktop`
+- `$MQWide` 重命名为 `$pc`
+- `$MQNormal` 重命名为 `$laptop`
 - `$MQNarrow` 重命名为 `$pad`
-- `$MQMobile` 重命名为 `$mobile`
-- `$MQMobileNarrow` 重命名为 `$mobileS`
+- `$MQMobile` 重命名为 `$tablet`
+- `$MQMobileNarrow` 重命名为 `$mobile`
 
 ### 布局
 
 移动至 `palette.scss`。
 
-- `$mobileSidebarWidth` 重命名为 `$sidebar-mobile-width`
+- `$mobileidebarWidth` 重命名为 `$sidebar-mobile-width`
 - `$lineNumbersWrapperWidth` 重命名为 `$line-numbers-width`
 
 ### 颜色

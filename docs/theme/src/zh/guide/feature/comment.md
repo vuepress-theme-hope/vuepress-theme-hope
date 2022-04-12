@@ -68,7 +68,7 @@ module.exports = themeConfig({
 
 ::::
 
-评论功能默认全局启用，配置项为 `themeConfig.plugins.comment` 中的 `comment`。
+评论功能默认全局启用，配置项为 `themeConfig.plugins` 中的 `comment`。
 
 ::: info
 

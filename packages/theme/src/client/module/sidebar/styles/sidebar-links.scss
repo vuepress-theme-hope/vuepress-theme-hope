@@ -16,7 +16,7 @@
       font-size: 0.95em;
 
       .has-toc & {
-        @media (min-width: hope-config.$wide) {
+        @media (min-width: hope-config.$pc) {
           display: none;
         }
       }
@@ -26,7 +26,7 @@
   .sidebar > & {
     padding: 1.5rem 0;
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       padding: 1rem 0;
     }
 

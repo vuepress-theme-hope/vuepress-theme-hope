@@ -14,7 +14,7 @@
 
   transition: background-color 0.5s;
 
-  @media (min-width: hope-config.$mobile) {
+  @media (min-width: hope-config.$tablet) {
     display: none;
   }
 

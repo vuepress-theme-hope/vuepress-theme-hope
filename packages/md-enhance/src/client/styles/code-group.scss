@@ -13,7 +13,7 @@
 
   transition: background-color var(--color-transition, 0.3s);
 
-  @media (max-width: hope-config.$mobileS) {
+  @media (max-width: hope-config.$mobile) {
     margin-right: -1.5rem;
     margin-left: -1.5rem;
     border-radius: 0;

@@ -123,7 +123,7 @@ div[class*="language-"] {
       transition: border-color var(--color-transition);
 
       // edited
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         border-radius: 0;
       }
     }
@@ -201,7 +201,7 @@ div[class*="language-"] {
 }
 
 // narrow mobile
-@media (max-width: hope-config.$mobileS) {
+@media (max-width: hope-config.$mobile) {
   #{hope-config.$content-class} {
     div[class*="language-"] {
       margin: 0.85rem -1.5rem;

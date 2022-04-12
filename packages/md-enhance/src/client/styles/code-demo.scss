@@ -49,7 +49,7 @@
     > div[class*="language-"] {
       border-radius: 0;
 
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         margin: 0.8rem 0;
 
         &.line-numbers-mode::after {

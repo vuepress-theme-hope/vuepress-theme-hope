@@ -7,7 +7,7 @@
   margin: 0 auto;
   padding: 40px 0;
 
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: hope-config.$tablet) {
     margin: 0 1.2rem;
   }
 
@@ -55,7 +55,7 @@
     color: var(--text-color);
     font-size: 18px;
 
-    @media (min-width: hope-config.$desktop) {
+    @media (min-width: hope-config.$laptop) {
       font-size: 20px;
     }
 

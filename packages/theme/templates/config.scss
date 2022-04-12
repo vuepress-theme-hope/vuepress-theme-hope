@@ -1,34 +1,34 @@
 @import "vuepress-plugin-sass-palette/styles/default/palette";
 
+/** dark mode selecters */
+$light-selector: 'html[data-theme="light"]';
+$dark-selector: 'html[data-theme="dark"]';
+
 /* responsive breakpoints */
 
 // wide screen
-$wide: 1440px !default;
+$pc: 1440px !default;
 // desktop
-$desktop: 1280px !default;
+$laptop: 1280px !default;
 // narrow desktop / iPad
 $pad: 959px !default;
 // wide mobile
-$mobile: 719px !default;
+$tablet: 719px !default;
 // narrow mobile
-$mobileS: 419px !default;
-
-// code languages
-$code-lang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
-  "json" "kt" "less" "makefile" "md" "php" "py" "rb" "rs" "sass" "scss" "sh"
-  "styl" "ts" "toml" "vue" "yml" !default;
+$mobile: 419px !default;
 
 /* Content Class */
 $content-class: ".theme-hope-content" !default;
-
-/** dark mode selecters */
-$dark-selector: 'html[data-theme="dark"]';
-$light-selector: 'html[data-theme="light"]';
 
 /* Color list */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #10a5a5, #096dd9, #aa6fe9,
   #eb2f96 !default;
 
-/* Code Theme */
+/* Code Block */
+// theme
 $code-light-theme: "one-light" !default;
 $code-dark-theme: "one-dark" !default;
+// code languages
+$code-lang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
+  "json" "kt" "less" "makefile" "md" "php" "py" "rb" "rs" "sass" "scss" "sh"
+  "ts" "vue" "yml" !default;

@@ -17,19 +17,19 @@
       padding-top: var(--navbar-mobile-height);
     }
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       padding-right: 1.5rem;
       padding-left: 1.5rem;
     }
 
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       padding-right: 0;
       padding-left: 0;
     }
   }
 
   &.has-toc .page.blog {
-    @media (min-width: hope-config.$wide) {
+    @media (min-width: hope-config.$pc) {
       // fix toc padding
       padding-right: 0;
     }
@@ -46,7 +46,7 @@
   width: 100%;
   margin: 0 auto;
 
-  @media (min-width: hope-config.$mobile) {
+  @media (min-width: hope-config.$tablet) {
     padding: 0 1rem;
   }
 
@@ -54,7 +54,7 @@
     padding: 0 2rem;
   }
 
-  @media (min-width: hope-config.$wide) {
+  @media (min-width: hope-config.$pc) {
     padding: 0;
   }
 }

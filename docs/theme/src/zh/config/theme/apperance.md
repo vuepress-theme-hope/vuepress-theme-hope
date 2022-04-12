@@ -106,6 +106,6 @@ Whether show the "full screen" button.
 
 ::: warning
 
-你需要将此选项和 `.vuepress/config.scss` 中的 `$mobile` 保持一致。
+你需要将此选项和 `.vuepress/config.scss` 中的 `$tablet` 保持一致。
 
 :::

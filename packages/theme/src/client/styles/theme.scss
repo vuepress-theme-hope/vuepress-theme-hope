@@ -35,7 +35,7 @@
         overflow-wrap: break-word;
         hyphens: auto;
 
-        @media (max-width: hope-config.$mobileS) {
+        @media (max-width: hope-config.$mobile) {
           text-align: left;
         }
       }

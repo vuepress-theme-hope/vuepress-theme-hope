@@ -18,43 +18,39 @@ Also you can add your own styles in `.vuepress/styles/index.scss`.
 
 `config.scss` is used for pure variable config, the following are supported variables and default values.
 
-```scss
-/* responsive breakpoints */
+Responsive breakpoints:
 
-// wide screen
-$wide: 1440px !default;
-// desktop
-$desktop: 1280px !default;
-// narrow desktop / iPad
-$pad: 959px !default;
-// wide mobile
-$mobile: 719px !default;
-// narrow mobile
-$mobileS: 419px !default;
+- `$pc`:
+- `$laptop`
+- `$pad`
+- `$tablet`
+- `$mobile`
 
-// code languages
-$code-lang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
-  "json" "kt" "less" "makefile" "md" "php" "py" "rb" "rs" "sass" "scss" "sh"
-  "styl" "ts" "toml" "vue" "yml" !default;
+Code block:
 
-/* Content Class */
-$content-class: ".theme-hope-content" !default;
+- `$code-light-theme`: code block theme in lightmode
+- `$code-dark-theme`: code block theme in darkmode
+- `$code-lang`: code block languages
 
-/* Color list */
-$colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,
-  #eb2f96 !default;
+Content class: `$content-class`
 
-/* Code Theme */
-$code-light-theme: "one-light" !default;
-$code-dark-theme: "one-dark" !default;
-```
+Color list: `$colors`
 
 ::: details Demo
 
 ```scss
 // modify code theme in lightmode
 $code-light-theme: "coy";
+
+// update pc breakpoint
+$pc: 1920px;
 ```
+
+:::
+
+::: details Default value
+
+@[code{7-}](../../../../packages/theme/templates/config.scss)
 
 :::
 
@@ -74,113 +70,95 @@ For example `$theme-color` will be injected as `--theme-color`, and `$background
 
 For all colors, if they are the same in light mode and dark mode, you can set them directly; otherwise, please set a Sass variable of type Map to give the color values in light and dark modes respectively.
 
-```scss
-$theme-color: #3eaf7c !default;
+Available color variables:
 
-$text-color: (
-  light: #2c3e50,
-  dark: #9e9e9e,
-) !default;
-
-$bg-color: (
-  light: #fff,
-  dark: #1e1e1e,
-) !default;
-
-$bg-color-light: (
-  light: #f8f8f8,
-  dark: #272727,
-) !default;
-
-$bg-color-active: (
-  light: #f8f8f8,
-  dark: #252934,
-) !default;
-
-$bg-color-back: (
-  light: #f8f8f8,
-  dark: #1d2025,
-) !default;
-
-$bg-color-float: (
-  light: #fff,
-  dark: #252934,
-) !default;
-
-$bg-color-blur: (
-  light: rgba(255, 255, 255, 0.9),
-  dark: rgba(30, 30, 30, 0.9),
-) !default;
-
-$bg-color-float-blur: (
-  light: rgba(255, 255, 255, 0.9),
-  dark: rgba(37, 41, 52, 0.9),
-) !default;
-
-$border-color: (
-  light: #eaecef,
-  dark: #302d28,
-) !default;
-
-// shadow
-$box-shadow: (
-  light: #f0f1f2,
-  dark: #0f0e0d,
-) !default;
-
-$card-shadow: (
-  light: rgba(0, 0, 0, 0.15),
-  dark: rgba(0, 0, 0, 0.3),
-) !default;
-```
+- `$theme-color`: theme color
+- `$text-color`: text color
+- `$bg-color`: background color
+- `$bg-color-light`: lighter background color
+- `$bg-color-active`: background color using on active elements
+- `$bg-color-back`: background color using on mask or background elements
+- `$bg-color-float`: float background color using on floating elements
+- `$bg-color-blur`: background color using on blur elements
+- `$bg-color-float-blur`: background color using on floating blur elements
+- `$border-color`: border color
+- `$box-shadow`: shadow color using on elements
+- `$card-shadow`: shadow color using on cards
 
 ::: details Demo
 
 ```scss
 // set theme color to red
 $theme-color: red;
+
+// setting border color with a darker value
+$border-color: (
+  light: #ddd,
+  dark: #444,
+);
 ```
+
+:::
+
+::: details Default value
+
+@[code{4-60}](../../../../packages/theme/templates/color.scss)
 
 :::
 
 ### Layout Config
 
-```scss
-// navbar
-$navbar-height: 4.5rem !default;
-$navbar-horizontal-padding: 1.5rem !default;
-$navbar-vertical-padding: 0.7rem !default;
-$navbar-mobile-height: 3.25rem !default;
-$navbar-mobile-horizontal-padding: 1rem !default;
-$navbar-mobile-vertical-padding: 0.5rem !default;
+Available layout variables:
 
-// sidebar
-$sidebar-width: 18rem !default;
-$sidebar-mobile-width: 16rem !default;
+Navbar:
 
-// content
-$content-width: 740px !default;
-$home-page-width: 1160px !default;
+- `$navbar-height`: navbar height
+- `$navbar-horizontal-padding`: navbar horizontal padding
+- `$navbar-vertical-padding`: navbar vertical padding
+- `$navbar-mobile-height`: navbar height on mobile devices
+- `$navbar-mobile-horizontal-padding`: navbar horizontal padding on mobile
+- `$navbar-mobile-vertical-padding`: navbar vertical padding on mobile
 
-// font
-$font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
-$font-family-fancy: 'Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif' !default;
+Sidebar:
 
-// code
-$font-family-code: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
-$line-numbers-width: 2.5rem !default;
+- `$sidebar-width`: sidebar width
+- `$sidebar-mobile-width`: sidebar width on mobile
 
-// transition
-$color-transition: "0.3s ease" !default;
-$transform-transition: "0.3s ease" !default;
-```
+Content:
+
+- `$content-width`: width of main content
+- `$home-page-width`: width of homepage content
+
+Fonts:
+
+- `$font-family`: font family used on normal text
+- `$font-family-fancy:` font family used on fancy elements
+
+Code:
+
+- `$font-family-code`: font family used on code
+- `$line-numbers-width`: width of line number in code blocks
+
+Transition:
+
+- `$color-transition`: transition used on colors
+- `$transform-transition`: transition used on transform animation
 
 ::: details Demo
 
 ```scss
+// update navbar height on mobile
+$navbar-mobile-height: 3.5rem;
+
 // Overide default font
 $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", sans-serif';
 ```
+
+:::
+
+::: details Default value
+
+@[code](../../../../packages/theme/templates/layout.scss)
 
 :::
 

@@ -1,15 +1,15 @@
 /* responsive breakpoints */
 
 // wide screen
-$wide: 1440px !default;
+$pc: 1440px !default;
 // desktop
-$desktop: 1280px !default;
+$laptop: 1280px !default;
 // narrow desktop / iPad
 $pad: 959px !default;
 // wide mobile
-$mobile: 719px !default;
+$tablet: 719px !default;
 // narrow mobile
-$mobileS: 419px !default;
+$mobile: 419px !default;
 
 /* Content Class */
 $content-class: ".theme-default-content" !default;

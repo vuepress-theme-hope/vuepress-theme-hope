@@ -21,17 +21,17 @@ The entire style system was migrated from Stylus to Scss, which brought the foll
 
 Move to `config.scss`.
 
-- `$MQWide` renamed to `$wide`
-- `$MQNormal` renamed to `$desktop`
+- `$MQWide` renamed to `$pc`
+- `$MQNormal` renamed to `$laptop`
 - `$MQNarrow` renamed to `$pad`
-- `$MQMobile` renamed to `$mobile`
-- `$MQMobileNarrow` renamed to `$mobileS`
+- `$MQMobile` renamed to `$tablet`
+- `$MQMobileNarrow` renamed to `$mobile`
 
 ### Layout
 
 Move to `palette.scss`.
 
-- `$mobileSidebarWidth` renamed to `$sidebar-mobile-width`
+- `$mobileidebarWidth` renamed to `$sidebar-mobile-width`
 - `$lineNumbersWrapperWidth` renamed to `$line-numbers-width`
 
 ### Colors

@@ -4,7 +4,7 @@
   overflow-x: scroll;
   padding: 0.6em 0.4em;
 
-  @media (max-width: hope-config.$mobileS) {
+  @media (max-width: hope-config.$mobile) {
     margin: 0 -1.5rem;
     padding: 0.6em 0;
   }

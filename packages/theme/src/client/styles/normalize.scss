@@ -47,7 +47,7 @@ blockquote {
 }
 
 // narrow mobile
-@media (max-width: hope-config.$mobileS) {
+@media (max-width: hope-config.$mobile) {
   h1 {
     font-size: 1.9rem;
   }

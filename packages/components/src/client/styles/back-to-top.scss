@@ -17,7 +17,7 @@
   color: var(--c-brand, #3eaf7c);
   box-shadow: 2px 2px 10px 0 var(--card-shadow);
 
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: hope-config.$tablet) {
     width: 2.25rem;
     height: 2.25rem;
     padding: 0.25rem;
