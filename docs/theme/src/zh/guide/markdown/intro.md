@@ -32,15 +32,45 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 你可以设置 `themeconfig.plugins.mdEnhance.enableAll` 启用 [md-enhance][md-enhance] 插件的所有功能。
 
-```js {3-5}
-module.exports = {
+:::: code-group
+
+::: code-group TS
+
+```js {7-9}
+// .vuepress/config.ts
+import { defineHopeConfig } from "vuepress-theme-hope";
+
+export default defineHopeConfig({
   themeConfig: {
-    mdEnhance: {
-      enableAll: true,
+    plugins: {
+      mdEnhance: {
+        enableAll: true,
+      },
     },
   },
 };
 ```
+
+::: code-group-item JS
+
+```js {7-9}
+// .vuepress/config.js
+const { defineHopeConfig } = require("vuepress-theme-hope");
+
+module.exports = defineHopeConfig({
+  themeConfig: {
+    plugins: {
+      mdEnhance: {
+        mermaid: true,
+      },
+    },
+  },
+});
+```
+
+:::
+
+::::
 
 ::: danger
 

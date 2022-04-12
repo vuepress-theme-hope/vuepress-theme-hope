@@ -15,7 +15,7 @@ tag:
 
 ## 分类设置
 
-只需要添加分类名称至在页面的 frontmatter 中的 `category`，该文章会自动渲染在 `/category/<分类名>/` 分类页面的列表中。
+只需要在页面 frontmatter 中设置 `category` 数组，并设置一个或多个文章所属的分类，该文章会自动渲染在 `/category/<分类名>/` 分类页面的列表中。
 
 比如在某个页面设置:
 
@@ -23,24 +23,25 @@ tag:
 ---
 category:
   - HTML
+  - Web
 ---
 
 页面内容...
 ```
 
-你就可以在 `/category/HTML` 页面下找到它。
+你就可以在 `/category/html` 和 `/category/web` 页面下找到它。
 
 ::: info 例子
 
 ![Category](./assets/category.png)
 
-- [地址](https://mrhope.site/category/JavaScript/)
+- [地址](https://mrhope.site/category/javascript/)
 
 :::
 
 ## 标签
 
-只需要在页面的 frontmatter 中添加 `tags` 数组，并设置一个或多个文章所属的标签 ，该文章会自动渲染在 `/tag/<标签名>/` 标签页面的列表中。
+只需要在页面的 frontmatter 中添加 `tags` 数组，并设置一个或多个文章所属的标签，该文章会自动渲染在 `/tag/<标签名>/` 标签页面的列表中。
 
 比如在某个页面设置:
 
@@ -54,13 +55,13 @@ tag:
 页面内容...
 ```
 
-你就可以在 `/tag/HTML` 和 `/tag/Web` 页面下找到它。
+你就可以在 `/tag/html` 和 `/tag/web` 页面下找到它。
 
 ::: info 例子
 
 ![Tag](./assets/tag.png)
 
-- [地址](https://mrhope.site/tag/Vuex/)
+- [地址](https://mrhope.site/tag/git/)
 
 :::
 

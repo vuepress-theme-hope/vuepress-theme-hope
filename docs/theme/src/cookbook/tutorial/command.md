@@ -45,3 +45,27 @@ This means you can use:
 To terminate the development server, please click on the terminal and press `Ctrl + C` twice.
 
 :::
+
+## Update Verion
+
+If you need to upgrade your theme and VuePress version, execute the following command:
+
+:::: code-group
+
+::: code-group-item yarn
+
+```bash
+yarn add vuepress@next vuepress-theme-hope@next && yarn install && yarn upgrade
+```
+
+:::
+
+::: code-group-item npm
+
+```bash
+npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
+```
+
+:::
+
+::::
