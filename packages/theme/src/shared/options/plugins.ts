@@ -1,4 +1,5 @@
 import type { Page } from "@vuepress/core";
+import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { LocaleConfig } from "@vuepress/shared";
 import type { BlogOptions } from "vuepress-plugin-blog2";
 import type { CommentOptions } from "vuepress-plugin-comment2";
@@ -244,6 +245,17 @@ export interface HopeThemePluginsOptions {
    * @see http://vuepress-theme-hope.github.io/v2/feed/zh/config/
    */
   feed?: Omit<FeedOptions, "hostname"> | false;
+
+  /**
+   * Git plugin options
+   *
+   * @see https://v2.vuepress.vuejs.org/reference/plugin/git.html#install
+   *
+   * Git 插件配置
+   *
+   * @see https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html#install
+   */
+  git?: GitPluginOptions | false;
 
   /**
    * md-enhance plugin options
