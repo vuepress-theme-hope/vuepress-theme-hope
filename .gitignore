@@ -12,7 +12,7 @@ packages/*/lib/
 dist/
 
 # VS Code Config file
-.vscode/
+# .vscode/
 
 # Rollup Cache
 .rollup.cache/
