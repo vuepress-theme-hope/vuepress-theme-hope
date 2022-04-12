@@ -12,7 +12,7 @@ import type { AutoLink } from "../../shared";
  */
 export const useAutoLink = (item: string): AutoLink => {
   const router = useRouter();
-  const resolved = resolveRouteWithRedirect(router, item);
+  const resolved = resolveRouteWithRedirect(router, encodeURI(item));
 
   return {
     icon: resolved.meta.icon,
