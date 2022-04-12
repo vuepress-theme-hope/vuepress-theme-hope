@@ -43,7 +43,7 @@
     "chalk": "^4.1.2",
     "dayjs": "^1.11.0",
     "ora": "^5.4.1",
-    "vue": "^3.2.31"
+    "vue": "^3.2.32"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.38"
