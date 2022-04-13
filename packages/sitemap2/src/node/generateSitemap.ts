@@ -1,5 +1,6 @@
-import { chalk, fs, logger, withSpinner } from "@vuepress/utils";
+import { chalk, fs, withSpinner } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
+import { logger } from "./utils";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -101,9 +102,7 @@ const generatePageMap = (
             !locales[localePrefix].lang &&
             !reportedLocales.includes(localePrefix)
           ) {
-            logger.warn(
-              `[sitemap2] 'lang' option for ${localePrefix} is missing`
-            );
+            logger.warn(`'lang' option for ${localePrefix} is missing`);
             reportedLocales.push(localePrefix);
           }
         });
@@ -126,7 +125,13 @@ const generatePageMap = (
 
     // log sitemap info in debug mode
     if (app.env.isDebug) {
-      logger.info(`[sitemap2] sitemap option for ${page.path}`, sitemapInfo);
+      logger.info(
+        `sitemap option for ${page.path}: ${JSON.stringify(
+          sitemapInfo,
+          null,
+          2
+        )}`
+      );
     }
 
     pagesMap.set(page.path, sitemapInfo);

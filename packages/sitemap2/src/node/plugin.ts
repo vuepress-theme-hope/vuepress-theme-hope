@@ -1,5 +1,5 @@
-import { logger } from "@vuepress/utils";
 import { generateSiteMap } from "./generateSitemap";
+import { logger } from "./utils";
 
 import type { Plugin, PluginConfig, PluginObject } from "@vuepress/core";
 import type { SitemapOptions } from "../shared";
@@ -10,7 +10,7 @@ export const sitemapPlugin: Plugin<SitemapOptions> = (options) => {
   };
 
   if (!options.hostname) {
-    logger.warn(`[${plugin.name}] 'hostname' is required`);
+    logger.warn('"hostname" is required');
 
     return plugin;
   }
