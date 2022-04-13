@@ -53,6 +53,15 @@ export interface BaseFeedOptions {
   count?: number;
 
   /**
+   * Custom component or element which needs to be removed
+   *
+   * 需要移除的自定义组件或元素
+   *
+   * @default ['ExternalLinkIcon']
+   */
+  customElements?: string[];
+
+  /**
    * A custom filter funciton, used to filter feed items.
    *
    * Feed 项目过滤器

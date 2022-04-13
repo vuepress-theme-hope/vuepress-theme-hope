@@ -65,7 +65,10 @@ export class FeedPage {
     if (this.frontmatter.description) return this.frontmatter.description;
 
     if (this.page.excerpt)
-      return `html:${resolveHTML(this.app.markdown.render(this.page.excerpt))}`;
+      return `html:${resolveHTML(
+        this.app.markdown.render(this.page.excerpt),
+        this.options.customElements
+      )}`;
 
     return undefined;
   }
@@ -151,7 +154,7 @@ export class FeedPage {
 
     if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
-    return resolveHTML(this.page.contentRendered);
+    return resolveHTML(this.page.contentRendered, this.options.customElements);
   }
 
   get image(): string | undefined {

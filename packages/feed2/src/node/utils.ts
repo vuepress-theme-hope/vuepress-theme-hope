@@ -12,7 +12,10 @@ export const compareDate = (
   return dateB.getTime() - dateA.getTime();
 };
 
-export const resolveHTML = (html: string): string =>
+export const resolveHTML = (
+  html: string,
+  customElements: string[] = []
+): string =>
   html
     // remove html class
     .replace(/ class=".*?"/gu, "")
@@ -22,8 +25,8 @@ export const resolveHTML = (html: string): string =>
     .replace(/<a href="#.*?">.*?<\/a>/gu, "")
     // remove html comment
     .replace(/(<!--.*?--!?>)|(<!--[\S\s]+?--!?>)|(<!--[\S\s]*?$)/gu, "")
-    // remove OutboundLink
-    .replace(/<OutboundLink ?\/>/gu, "")
+    // remove ExternalLinkIcon
+    .replace(/<ExternalLinkIcon ?\/>/gu, "")
     // resolve RouterLink
     .replace(
       /<RouterLink to="(.*?)">(.*?)<\/RouterLink>/gu,
@@ -33,7 +36,10 @@ export const resolveHTML = (html: string): string =>
     .replace(/<(?:a|div|span)[^>]*?\/>/gu, "")
     // remove other related tags
     .replace(
-      /<(Badge|FlowChart|Presentation).*?(?:>.*?<\/\1>|\/>)/gu,
+      new RegExp(
+        `<(${customElements.join("|")})[^>]*?(?:>*?<\\/\\1>|\\/>)`,
+        "gu"
+      ),
       "<i>Content not supported</i>"
     )
     // remove tex

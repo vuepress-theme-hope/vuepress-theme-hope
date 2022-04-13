@@ -52,6 +52,13 @@ icon: config
 
 如果你的站点文章很多，你应该考虑设置这个选项以减少 feed 文件大小。
 
+## customElements
+
+- 类型: `string[]`
+- 默认值: `["ExternalLinkIcon"]`
+
+应在 Feed 中删除的自定义元素或组件。
+
 ## filter
 
 - 类型: `(page: Page)=> boolean`
