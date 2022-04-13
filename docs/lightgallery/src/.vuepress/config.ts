@@ -4,10 +4,10 @@ import { lightgallery } from "vuepress-plugin-lightgallery";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
-const base = process.env.BASE || "/";
+const base = (process.env.BASE || "/") as "/" | `/${string}/`;
 
 export default defineHopeConfig({
-  base: `/${base.replace(/^\//, "")}lightgallery/`,
+  base: `${base}lightgallery/`,
 
   dest: "./dist",
 

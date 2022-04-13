@@ -4,10 +4,10 @@ import { addThis } from "vuepress-plugin-add-this";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
-const base = process.env.BASE || "/";
+const base = (process.env.BASE || "/") as "/" | `/${string}/`;
 
 export default defineHopeConfig({
-  base: `/${base.replace(/^\//, "")}add-this/`,
+  base: `${base}add-this/`,
 
   dest: "./dist",
 

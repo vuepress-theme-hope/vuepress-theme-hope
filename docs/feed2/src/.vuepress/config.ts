@@ -3,10 +3,10 @@ import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
 
-const base = process.env.BASE || "/";
+const base = (process.env.BASE || "/") as "/" | `/${string}/`;
 
 export default defineHopeConfig({
-  base: `/${base.replace(/^\//, "")}feed/`,
+  base: `${base}feed/`,
 
   dest: "./dist",
 
