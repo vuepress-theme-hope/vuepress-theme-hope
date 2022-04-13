@@ -11,11 +11,13 @@ export const usePlugin = (app: App, plugins: HopeThemePluginsOptions): void => {
   if (app.env.isDebug || app.env.isBuild)
     useGitPlugin(
       app,
-      plugins.git || {
-        createdTime: true,
-        contributors: true,
-        updatedTime: true,
-      }
+      "git" in plugins
+        ? plugins.git || false
+        : {
+            createdTime: true,
+            contributors: true,
+            updatedTime: true,
+          }
     );
 
   useReadingTimePlugin(app, {
