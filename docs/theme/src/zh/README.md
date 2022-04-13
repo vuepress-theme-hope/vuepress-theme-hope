@@ -169,7 +169,7 @@ module.exports = defineHopeConfig({
 
 <!-- markdownlint-disable -->
 
-<a v-if="isNetlify === false" href="https://www.netlify.com" target="_blank">
+<a v-if="isNetlify" href="https://www.netlify.com" target="_blank">
 
 ![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
 ![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
