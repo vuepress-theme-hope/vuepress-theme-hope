@@ -92,6 +92,11 @@ export const enNavbarConfig = defineNavbarConfig([
             icon: "strong",
             link: "https://vuepress-theme-hope.github.io/v2/seo/",
           },
+          {
+            text: "Sitemap Plugin",
+            icon: "sitemap",
+            link: "https://vuepress-theme-hope.github.io/v2/sitemap/",
+          },
         ],
       },
     ],

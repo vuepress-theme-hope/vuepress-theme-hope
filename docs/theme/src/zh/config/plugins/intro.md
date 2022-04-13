@@ -70,6 +70,8 @@ tag:
 
 - [vuepress-plugin-seo2][seo2]: SEO 增强插件
 
+- [vuepress-plugin-sitemap2][sitemap2]: Sitemap 插件
+
 ::: tip
 
 这里还有一些其他没有被主题默认启用的插件，你可以根据自己的需求自行启用。
@@ -110,6 +112,7 @@ tag:
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/zh/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
+[sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/
 [active-header-links]: https://v2.vuepress.vuejs.org/zh/reference/plugin/active-header-links.html
 [container]: https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html
 [external-link-icon]: https://v2.vuepress.vuejs.org/zh/reference/plugin/external-link-icon.html

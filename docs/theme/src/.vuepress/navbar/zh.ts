@@ -93,6 +93,11 @@ export const zhNavbarConfig = defineNavbarConfig([
             icon: "strong",
             link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
           },
+          {
+            text: "Sitemap 插件",
+            icon: "sitemap",
+            link: "https://vuepress-theme-hope.github.io/v2/sitemap/zh/",
+          },
         ],
       },
     ],

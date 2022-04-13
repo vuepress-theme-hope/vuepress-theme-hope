@@ -146,6 +146,8 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - [vuepress-plugin-seo2][seo2]: SEO Enhancement Plugin
 
+- [vuepress-plugin-sitemap2][sitemap2]: Sitemap plugin
+
 ::: tip
 
 Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
@@ -170,3 +172,4 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/
+[sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/
