@@ -30,6 +30,15 @@ export const resolveFeedPlugin = (
             { author, channel: { copyright } },
           ]
         ),
+        customElements: [
+          "ExternalLinkIcon",
+          "Badge",
+          "CodeGroup",
+          "CodeGroupItem",
+          "CodeDemo",
+          "Mermaid",
+          "Presentation",
+        ],
       },
       options || {}
     )
