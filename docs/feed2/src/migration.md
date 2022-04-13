@@ -18,3 +18,5 @@ Name changed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
 - Fully customizable feed generation via `getter` option ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
 - Prettier log output ![improved](https://img.shields.io/badge/-improved-blue)
+
+- Supports removing custom components and elements through `customElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
