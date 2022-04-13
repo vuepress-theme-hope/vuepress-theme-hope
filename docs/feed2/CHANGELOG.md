@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.39...v2.0.0-beta.40) (2022-04-13)
+
+### Features
+
+- **feed2:** add `customElements` option ([fa4f173](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa4f17371658591992fc5f1700f00529ea279486))
+
 # [2.0.0-beta.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.38...v2.0.0-beta.39) (2022-04-12)
 
 **Note:** Version bump only for package feed-docs

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-reading-time2",
-  "version": "2.0.0-beta.39",
+  "version": "2.0.0-beta.40",
   "description": "Reading time plugin for VuePress",
   "keywords": [
     "vuepress-plugin",
@@ -35,7 +35,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.39"
+    "@mr-hope/vuepress-shared": "2.0.0-beta.40"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.38"

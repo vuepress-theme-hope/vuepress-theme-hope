@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.39...v2.0.0-beta.40) (2022-04-13)
+
+### Bug Fixes
+
+- **theme:** fix git plugin options ([b16f618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b16f6182e9210548381783a056fdb30615404d26))
+
+### Features
+
+- add redirect2 plugin, close [#1664](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1664) ([2eaa7ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2eaa7ed2714f0eb856463d903e9c30b8edecb3c9))
+- **feed2:** add `customElements` option ([fa4f173](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa4f17371658591992fc5f1700f00529ea279486))
+- **theme:** add customElements for feed2 ([1cb1c5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cb1c5d801ab2609e8ecf54535f1bfcbe0e9edf3))
+
 # [2.0.0-beta.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.38...v2.0.0-beta.39) (2022-04-12)
 
 ### Bug Fixes

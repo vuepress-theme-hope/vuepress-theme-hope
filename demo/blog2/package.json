@@ -1,6 +1,6 @@
 {
   "name": "blog2-demo",
-  "version": "2.0.0-beta.39",
+  "version": "2.0.0-beta.40",
   "private": true,
   "description": "Demo for vuepress-plugin-blog2",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "vuepress-plugin-blog2": "2.0.0-beta.39",
+    "vuepress-plugin-blog2": "2.0.0-beta.40",
     "vuepress-vite": "2.0.0-beta.39",
     "vuepress-webpack": "2.0.0-beta.38"
   }
