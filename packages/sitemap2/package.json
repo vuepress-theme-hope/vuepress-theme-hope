@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-beta.39",
+    "@vuepress/shared": "2.0.0-beta.38",
     "@vuepress/utils": "2.0.0-beta.38",
     "sitemap": "^7.1.1"
   },

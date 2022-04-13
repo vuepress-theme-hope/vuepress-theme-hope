@@ -1,4 +1,5 @@
 import { deepAssign } from "@mr-hope/vuepress-shared";
+import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { compareDate, resolveUrl } from "./utils";
 
 import type { App, Page } from "@vuepress/core";
@@ -17,7 +18,7 @@ export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
   // make sure hostname do not end with `/`
   if (options.hostname) {
-    options.hostname = options.hostname.replace(/\/?$/u, "");
+    options.hostname = removeEndingSlash(options.hostname);
 
     return true;
   }
@@ -117,13 +118,13 @@ export const getFilename = (
   jsonOutputFilename: string;
   rssOutputFilename: string;
 } => ({
-  atomOutputFilename: `${prefix.replace(/^\//, "")}${
+  atomOutputFilename: `${removeLeadingSlash(prefix)}${
     options.atomOutputFilename || "atom.xml"
   }`,
-  jsonOutputFilename: `${prefix.replace(/^\//, "")}${
+  jsonOutputFilename: `${removeLeadingSlash(prefix)}${
     options.jsonOutputFilename || "feed.json"
   }`,
-  rssOutputFilename: `${prefix.replace(/^\//, "")}${
+  rssOutputFilename: `${removeLeadingSlash(prefix)}${
     options.rssOutputFilename || "rss.xml"
   }`,
 });

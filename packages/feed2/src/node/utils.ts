@@ -1,4 +1,5 @@
 import { Logger } from "@mr-hope/vuepress-shared";
+import { removeLeadingSlash } from "@vuepress/shared";
 
 export const logger = new Logger("vuepress-plugin-feed2");
 
@@ -46,13 +47,7 @@ export const resolveHTML = (
     .replace(/<math[\s\S]*?\/math>/gu, "<i>Content not supported</i>");
 
 export const resolveUrl = (hostname: string, base = "", path = ""): string =>
-  `${hostname}${
-    // make sure base starts and ends with '/'
-    base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")
-  }${
-    // make sure path does not start with '/'
-    path.replace(/^\//u, "")
-  }`;
+  `${hostname}${base}${removeLeadingSlash(path)}`;
 
 export const getImageMineType = (ext = ""): string =>
   `image/${

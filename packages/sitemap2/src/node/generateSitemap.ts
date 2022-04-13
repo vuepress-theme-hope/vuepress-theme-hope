@@ -1,3 +1,4 @@
+import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { chalk, fs, withSpinner } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
 import { logger } from "./utils";
@@ -109,9 +110,8 @@ const generatePageMap = (
 
       links = relatedLocales.map((localePrefix) => ({
         lang: locales[localePrefix].lang || "en",
-        url: `${base.replace(/\/$/, "")}${defaultPath.replace(
-          /^\//u,
-          localePrefix
+        url: `${base}${removeLeadingSlash(
+          defaultPath.replace(/^\//u, localePrefix)
         )}`,
       }));
     }
@@ -145,9 +145,9 @@ export const generateSiteMap = async (
   options: SitemapOptions
 ): Promise<void> => {
   const { extraUrls = [], xmlNameSpace: xmlns } = options;
-  const hostname = options.hostname.replace(/\/$/u, "");
+  const hostname = removeEndingSlash(options.hostname);
   const sitemapFilename = options.sitemapFilename
-    ? options.sitemapFilename.replace(/^\//u, "")
+    ? removeLeadingSlash(options.sitemapFilename)
     : "sitemap.xml";
   const {
     dir,
@@ -169,13 +169,13 @@ export const generateSiteMap = async (
 
         pagesMap.forEach((page, path) =>
           sitemap.write({
-            url: `${base}${path.replace(/^\//u, "")}`,
+            url: `${base}${removeLeadingSlash(path)}`,
             ...page,
           })
         );
 
         extraUrls.forEach((item) =>
-          sitemap.write({ url: `${base}${item.replace(/^\//u, "")}` })
+          sitemap.write({ url: `${base}${removeLeadingSlash(item)}` })
         );
         sitemap.end(() => {
           resolve();

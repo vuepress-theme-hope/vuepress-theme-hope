@@ -1,9 +1,7 @@
 import type { ManifestOption, PWAOptions } from "../shared";
 
 const appendBaseHelper = (base: string, link: string): string =>
-  link.startsWith("/")
-    ? link.replace(/^\//, base.replace(/^\/?/, "/").replace(/\/?$/, "/"))
-    : link;
+  link.startsWith("/") ? link.replace(/^\//, base) : link;
 
 export const appendBasetoManifest = (
   base: string,

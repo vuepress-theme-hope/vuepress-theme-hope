@@ -1,7 +1,7 @@
 import { Logger, isAbsoluteUrl, isUrl } from "@mr-hope/vuepress-shared";
+import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 
-import type { App } from "@vuepress/core";
-import type { SiteLocaleConfig } from "@vuepress/shared";
+import type { App, SiteLocaleConfig } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared";
 
 export const logger = new Logger("vuepress-plugin-seo2");
@@ -65,10 +65,9 @@ export const resolveUrl = (
   base: string,
   url: string
 ): string =>
-  `${hostname.match(/https?:\/\//) ? "" : "https://"}${hostname.replace(
-    /\/$/u,
-    ""
-  )}${base}${url.replace(/^\//u, "")}`;
+  `${hostname.match(/https?:\/\//) ? "" : "https://"}${removeEndingSlash(
+    hostname
+  )}${base}${removeLeadingSlash(url)}`;
 
 export const stripTags = (content = ""): string =>
   content

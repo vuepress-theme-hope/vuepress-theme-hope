@@ -1,3 +1,4 @@
+import { removeLeadingSlash } from "@vuepress/shared";
 import { fs, path } from "@vuepress/utils";
 import { logger } from "./utils";
 
@@ -265,7 +266,7 @@ export const prepareSidebarData = async (
   await Promise.all(
     generatePaths.map(async (path) => {
       sidebarData[path] = getSidebarItems(
-        await getInfo(app, path.replace(/^\//, ""))
+        await getInfo(app, removeLeadingSlash(path))
       );
     })
   );
