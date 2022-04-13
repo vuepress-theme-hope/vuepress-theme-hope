@@ -72,6 +72,8 @@ jobs:
           yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
           yarn cpx "docs/pwa2/dist/**" dist/pwa
           yarn cpx "docs/reading-time2/dist/**" dist/reading-time
+          yarn cpx "docs/redirect2/dist/**" dist/redirect
+          yarn cpx "docs/redirect2/dist/**" dist/redirect
           yarn cpx "docs/sass-palette/dist/**" dist/sass-palette
           yarn cpx "docs/seo2/dist/**" dist/seo
           yarn cpx "docs/sitemap2/dist/**" dist/sitemap
@@ -153,6 +155,7 @@ jobs:
           yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
           yarn cpx "docs/pwa2/dist/**" dist/pwa
           yarn cpx "docs/reading-time2/dist/**" dist/reading-time
+          yarn cpx "docs/redirect2/dist/**" dist/redirect
           yarn cpx "docs/sass-palette/dist/**" dist/sass-palette
           yarn cpx "docs/seo2/dist/**" dist/seo
           yarn cpx "docs/sitemap2/dist/**" dist/sitemap
@@ -254,6 +257,7 @@ jobs:
           - md-enhance
           - photo-swipe
           - pwa2
+          - redirect2
           - sass-palette
           - seo2
           - sitemap2
