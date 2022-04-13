@@ -140,6 +140,8 @@ tag:
 
 - [vuepress-plugin-reading-time2][reading-time2]: 阅读时间与字数统计
 
+- [vuepress-plugin-redirect2][redirect2]: 重定向插件
+
 - [vuepress-plugin-sass-palette][sass-palette]: 面向全部插件和主题的 Sass 配置插件
 
 - [vuepress-plugin-seo2][seo2]: SEO 增强插件
@@ -168,6 +170,7 @@ tag:
 [photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/
 [pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/zh/
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
+[redirect2]: https://vuepress-theme-hope.github.io/v2/redirect/zh/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/zh/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
 [sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/

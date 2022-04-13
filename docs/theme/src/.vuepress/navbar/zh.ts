@@ -84,6 +84,11 @@ export const zhNavbarConfig = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
           },
           {
+            text: "重定向插件",
+            icon: "navigation",
+            link: "https://vuepress-theme-hope.github.io/v2/redirect/zh/",
+          },
+          {
             text: "Sass 调色板插件",
             icon: "palette",
             link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
