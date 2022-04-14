@@ -12,23 +12,6 @@ export default [
       "katex",
       "vuepress-plugin-sass-palette",
     ],
-  }),
-  ...rollupTypescript("client/appEnhance", {
-    external: [
-      "@ChartJS",
-      "@CodeDemo",
-      "@CodeGroup",
-      "@CodeGroupItem",
-      "@FlowChart",
-      "@Mermaid",
-      "@Presentation",
-      "@vuepress/client",
-      "katex/dist/katex.min.css",
-      "vue",
-      /\.scss$/,
-      /\.css$/,
-    ],
-    dtsExternal: [/\.scss$/, /\.css$/],
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/ChartJS", {
@@ -74,6 +57,7 @@ export default [
   ...rollupTypescript("client/components/Presentation", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
+      "@temp/md-enhance/reveal-plugins",
       "@vuepress/client",
       /^reveal\.js/,
       "vue",

@@ -72,7 +72,8 @@ const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
 };
 
 export default defineComponent({
-  name: "MermaidChart",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Mermaid",
 
   props: {
     id: { type: String, required: true },

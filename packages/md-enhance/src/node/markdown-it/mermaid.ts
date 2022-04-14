@@ -8,9 +8,9 @@ const mermaidRender: Renderer.RenderRule = (tokens, index) => {
   const key = `mermaid-${hash(index)}`;
   const { content } = token;
 
-  return `<MermaidChart id="${key}" data-code="${encodeURIComponent(
+  return `<Mermaid id="${key}" data-code="${encodeURIComponent(
     content
-  )}"></MermaidChart>`;
+  )}"></Mermaid>`;
 };
 
 // a hack for sequenceDiagram
@@ -19,12 +19,12 @@ const mermaidHackRender = (
   content: string,
   index: number
 ): string =>
-  `<MermaidChart id="mermaid-${hash(index)}" data-code="${encodeURIComponent(
+  `<Mermaid id="mermaid-${hash(index)}" data-code="${encodeURIComponent(
     `${name}\n${content
       .split("\n")
       .map((line) => (line ? `  ${line}` : ""))
       .join("\n")}`
-  )}"></MermaidChart>`;
+  )}"></Mermaid>`;
 
 export const mermaid: PluginSimple = (md) => {
   // Handle ```mermaid blocks

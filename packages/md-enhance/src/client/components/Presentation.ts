@@ -1,3 +1,4 @@
+import { usePlugins } from "@temp/md-enhance/reveal-plugins";
 import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
 import { LoadingIcon } from "./icons";
@@ -8,11 +9,6 @@ import type { RevealOptions } from "reveal.js/dist/reveal.esm.js";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 declare const REVEAL_CONFIG: Partial<RevealOptions>;
-declare const REVEAL_PLUGIN_HIGHLIGHT: boolean;
-declare const REVEAL_PLUGIN_MATH: boolean;
-declare const REVEAL_PLUGIN_NOTES: boolean;
-declare const REVEAL_PLUGIN_SEARCH: boolean;
-declare const REVEAL_PLUGIN_ZOOM: boolean;
 
 type ThemeType =
   | "auto"
@@ -33,7 +29,8 @@ import "../styles/slides/theme/fonts/league-gothic/league-gothic.css";
 import "../styles/slides/theme/fonts/source-sans-pro/source-sans-pro.css";
 
 export default defineComponent({
-  name: "PresentationViewer",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Presentation",
 
   props: {
     id: { type: String, required: true },
@@ -67,69 +64,8 @@ export default defineComponent({
           import(
             /* webpackChunkName: "reveal" */ "reveal.js/dist/reveal.esm.js"
           ),
+          ...usePlugins(),
         ];
-
-        promises.push(
-          import(
-            /* webpackChunkName: "reveal" */ "reveal.js/plugin/markdown/markdown.esm.js"
-          )
-        );
-
-        if (REVEAL_PLUGIN_HIGHLIGHT)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ "reveal.js/plugin/highlight/highlight.esm.js"
-            )
-          );
-
-        if (REVEAL_PLUGIN_MATH)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ "reveal.js/plugin/math/math.esm.js"
-            )
-          );
-
-        if (REVEAL_PLUGIN_SEARCH)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ "reveal.js/plugin/search/search.esm.js"
-            )
-          );
-
-        if (REVEAL_PLUGIN_NOTES)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ "reveal.js/plugin/notes/notes.esm.js"
-            )
-          );
-
-        if (REVEAL_PLUGIN_ZOOM)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ "reveal.js/plugin/zoom/zoom.esm.js"
-            )
-          );
-
-        // if (REVEAL_PLUGINS.includes("anything"))
-        //   promises.push(
-        //     import(
-        //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/anything/anything.js"
-        //     )
-        //   );
-
-        // if (REVEAL_PLUGINS.includes("audio"))
-        //   promises.push(
-        //     import(
-        //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/audio-slideshow/audio-slideshow.js"
-        //     )
-        //   );
-
-        // if (REVEAL_PLUGINS.includes("chalkboard"))
-        //   promises.push(
-        //     import(
-        //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/chalkboard/chalkboard.js"
-        //     )
-        //   );
 
         void Promise.all(promises).then(([, revealJS, ...plugins]) => {
           reveal = new revealJS.default(
