@@ -1,20 +1,20 @@
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
 export default defineSidebarConfig([
-  "",
-  "home",
-  "slide",
+  "/",
+  "/home",
+  "/slide",
   {
     icon: "creative",
     text: "Guide",
-    prefix: "guide/",
-    link: "guide/",
+    prefix: "/guide/",
+    link: "/guide/",
     children: "structure",
   },
   {
     text: "Articles",
     icon: "note",
-    prefix: "posts/",
+    prefix: "/posts/",
     children: [
       {
         text: "Articles 1-4",
