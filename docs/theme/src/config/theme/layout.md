@@ -51,6 +51,13 @@ Navbar logo in darkmode, should be absolute path relative to `.vuepress/public` 
 
 Repository link
 
+### repoType
+
+- Type: `"Github" | "Gitlab" | "Bitbucket" | "Gitee" | null;`
+- Required: No
+
+Repository type, decides the icon of the repository link. It's automatically recognizes based on links by default.
+
 ### repoDisplay
 
 - Type: `boolean`
