@@ -1,15 +1,8 @@
-import {
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  resolveComponent,
-  watch,
-} from "vue";
+import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import ArticleItem from "@theme-hope/module/blog/components/ArticleItem";
+import Pagination from "@theme-hope/module/blog/components/Pagination";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { EmptyIcon } from "@theme-hope/module/blog/components/icons";
 import { useBlogOptions } from "@theme-hope/module/blog/composables";
@@ -89,7 +82,7 @@ export default defineComponent({
                   h(ArticleItem, { key: path, info, path })
                 )
               ),
-              h(resolveComponent("Pagination"), {
+              h(Pagination, {
                 currentPage: currentPage.value,
                 perPage: articlePerPage.value,
                 total: props.items.length,

@@ -87,6 +87,13 @@ export interface HopeThemeNormalPageFrontmatter
   };
 
   /**
+   * A short title used in navbar, sidebar and breadcrumb
+   *
+   * 用于导航栏，侧边栏和路径导航的短标题
+   */
+  shortTitle?: string;
+
+  /**
    * Page Heading depth
    *
    * 页面标题深度

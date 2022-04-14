@@ -12,19 +12,6 @@ Object {
   "locales": Object {
     "/": Object {
       "blog": Object {},
-      "blogLocales": Object {
-        "all": "All",
-        "article": "Articles",
-        "articleList": "Article List",
-        "category": "Category",
-        "encrypt": "Encrypted",
-        "intro": "Personal Intro",
-        "slides": "Slides",
-        "star": "Star",
-        "tag": "Tags",
-        "timeline": "Timeline",
-        "timelineTitle": "Yesterday Once More!",
-      },
       "encryptLocales": Object {
         "errorHint": "Please enter the correct password!",
         "title": "Please enter password",
@@ -64,6 +51,7 @@ Object {
       },
       "sidebar": "structure",
       "sidebarIcon": true,
+      "tocLocales": "On This Page",
     },
   },
   "pure": false,
@@ -89,19 +77,6 @@ Object {
   "locales": Object {
     "/": Object {
       "blog": Object {},
-      "blogLocales": Object {
-        "all": "All",
-        "article": "Articles",
-        "articleList": "Article List",
-        "category": "Category",
-        "encrypt": "Encrypted",
-        "intro": "Personal Intro",
-        "slides": "Slides",
-        "star": "Star",
-        "tag": "Tags",
-        "timeline": "Timeline",
-        "timelineTitle": "Yesterday Once More!",
-      },
       "encryptLocales": Object {
         "errorHint": "Please enter the correct password!",
         "title": "Please enter password",
@@ -148,6 +123,7 @@ Object {
         "/about",
       ],
       "sidebarIcon": true,
+      "tocLocales": "On This Page",
     },
   },
   "pure": false,
@@ -173,19 +149,6 @@ Object {
   "locales": Object {
     "/": Object {
       "blog": Object {},
-      "blogLocales": Object {
-        "all": "All",
-        "article": "Articles",
-        "articleList": "Article List",
-        "category": "Category",
-        "encrypt": "Encrypted",
-        "intro": "Personal Intro",
-        "slides": "Slides",
-        "star": "Star",
-        "tag": "Tags",
-        "timeline": "Timeline",
-        "timelineTitle": "Yesterday Once More!",
-      },
       "encryptLocales": Object {
         "errorHint": "Please enter the correct password!",
         "title": "Please enter password",
@@ -230,6 +193,7 @@ Object {
       },
       "sidebar": "structure",
       "sidebarIcon": true,
+      "tocLocales": "On This Page",
     },
   },
   "pure": false,
@@ -255,19 +219,6 @@ Object {
   "locales": Object {
     "/": Object {
       "blog": Object {},
-      "blogLocales": Object {
-        "all": "All",
-        "article": "Articles",
-        "articleList": "Article List",
-        "category": "Category",
-        "encrypt": "Encrypted",
-        "intro": "Personal Intro",
-        "slides": "Slides",
-        "star": "Star",
-        "tag": "Tags",
-        "timeline": "Timeline",
-        "timelineTitle": "Yesterday Once More!",
-      },
       "encryptLocales": Object {
         "errorHint": "Please enter the correct password!",
         "title": "Please enter password",
@@ -307,6 +258,7 @@ Object {
       },
       "sidebar": "structure",
       "sidebarIcon": true,
+      "tocLocales": "On This Page",
     },
   },
   "pure": true,
@@ -332,19 +284,6 @@ Object {
   "locales": Object {
     "/": Object {
       "blog": Object {},
-      "blogLocales": Object {
-        "all": "All",
-        "article": "Articles",
-        "articleList": "Article List",
-        "category": "Category",
-        "encrypt": "Encrypted",
-        "intro": "Personal Intro",
-        "slides": "Slides",
-        "star": "Star",
-        "tag": "Tags",
-        "timeline": "Timeline",
-        "timelineTitle": "Yesterday Once More!",
-      },
       "encryptLocales": Object {
         "errorHint": "Please enter the correct password!",
         "title": "Please enter password",
@@ -388,6 +327,7 @@ Object {
       },
       "sidebar": "structure",
       "sidebarIcon": true,
+      "tocLocales": "On This Page",
     },
   },
   "pure": false,

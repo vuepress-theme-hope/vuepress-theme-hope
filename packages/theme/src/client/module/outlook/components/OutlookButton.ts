@@ -1,8 +1,9 @@
+import { useFullscreen } from "@vueuse/core";
 import { computed, defineComponent, h, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import AppearanceSwitch from "@theme-hope/module/outlook/components/AppearanceSwitch";
-import ToggleFullScreen from "@theme-hope/module/outlook/components/ToggleFullScreen";
+import ToggleFullScreenButton from "@theme-hope/module/outlook/components/ToggleFullScreenButton";
 import OutlookSettings from "@theme-hope/module/outlook/components/OutlookSettings";
 import { OutlookIcon } from "@theme-hope/module/outlook/components/icons";
 import { usePure, useThemeData } from "@theme-hope/composables";
@@ -15,6 +16,7 @@ export default defineComponent({
   name: "OutlookButton",
 
   setup() {
+    const { isSupported } = useFullscreen();
     const themeData = useThemeData();
     const pure = usePure();
     const route = useRoute();
@@ -31,7 +33,7 @@ export default defineComponent({
     );
 
     const enableFullScreen = computed(
-      () => !pure.value && themeData.value.fullscreen
+      () => !pure.value && themeData.value.fullscreen && isSupported
     );
 
     watch(
@@ -55,7 +57,7 @@ export default defineComponent({
               enableFullScreen.value &&
                 !enableDarkmode.value &&
                 !enableThemeColor.value
-              ? h(ToggleFullScreen)
+              ? h(ToggleFullScreenButton)
               : h(
                   "button",
                   {

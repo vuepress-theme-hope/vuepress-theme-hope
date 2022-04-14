@@ -23,6 +23,11 @@ export interface ArticleInfo extends Record<string, unknown> {
   title: string;
 
   /**
+   * Article short title
+   */
+  shortTitle: string;
+
+  /**
    * Page icon
    */
   icon?: string;

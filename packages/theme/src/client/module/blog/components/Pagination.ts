@@ -1,11 +1,8 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, ref, VNode } from "vue";
 
-import type { PaginationLocaleConfig } from "../../shared";
+import { useThemeLocaleData } from "@theme-hope/composables";
 
 import "../styles/pagination.scss";
-
-declare const PAGINATION_LOCALES: PaginationLocaleConfig;
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -22,13 +19,18 @@ export default defineComponent({
   emits: ["updateCurrentPage"],
 
   setup(props, { emit }) {
-    const locale = useLocaleConfig(PAGINATION_LOCALES);
+    const themeLocale = useThemeLocaleData();
 
     const input = ref("");
+
+    const locale = computed(() => themeLocale.value.paginationLocales);
+
     const totalPages = computed(() => Math.ceil(props.total / props.perPage));
+
     const enable = computed(
       () => Boolean(totalPages.value) && totalPages.value !== 1
     );
+
     const displayLeftEllipsis = computed(() => {
       if (totalPages.value < 7) return false;
 
@@ -182,10 +184,10 @@ export default defineComponent({
                   {
                     class: "navigate",
                     role: "navigation",
-                    title: locale.value.button,
+                    title: locale.value.action,
                     onClick: () => jumpPage(input.value),
                   },
-                  locale.value.button
+                  locale.value.action
                 ),
               ]),
             ])

@@ -24,11 +24,19 @@ export const ukLocale: HopeThemeLocaleData = {
     tag: "Теги",
     timeline: "Хронологія",
     timelineTitle: "Вчора ще раз!",
-    all: "Все",
+    all: "Bce",
     intro: "Особистий вступ",
     star: "Зірка",
     slides: "Слайди",
     encrypt: "Зашифровано",
+  },
+
+  paginationLocales: {
+    prev: "Попередня",
+    next: "Далі",
+    navigate: "Перейти до",
+    action: "Перейти",
+    errorText: "Будь ласка, введіть число від 1 до $page !",
   },
 
   outlookLocales: {
@@ -53,4 +61,6 @@ export const ukLocale: HopeThemeLocaleData = {
     back: "Повернутися назад",
     home: "Повернутися на головну",
   },
+
+  tocLocales: "On This Page",
 };

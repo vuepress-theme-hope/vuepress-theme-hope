@@ -1,142 +1,4 @@
-import type {
-  ArticleInfoLocaleConfig,
-  BackToTopLocaleConfig,
-  TOCLocaleConfig,
-  PaginationLocaleConfig,
-} from "../shared";
-
-export const backToTopLocales: BackToTopLocaleConfig = {
-  "/en/": {
-    backToTop: "Back to top",
-  },
-
-  "/zh/": {
-    backToTop: "返回顶部",
-  },
-
-  "/zh-tw/": {
-    backToTop: "返回頂部",
-  },
-
-  "/de/": {
-    backToTop: "Zurück nach oben.",
-  },
-
-  "/vi/": {
-    backToTop: "Trở lại đầu trang",
-  },
-
-  "/uk/": {
-    backToTop: "Повернутися до початку",
-  },
-
-  "/ru/": {
-    backToTop: "Вернуться к началу",
-  },
-
-  "/br/": {
-    backToTop: "Volta ao topo",
-  },
-};
-export const tocLocales: TOCLocaleConfig = {
-  "/en/": {
-    header: "On This Page",
-  },
-
-  "/zh/": {
-    header: "此页内容",
-  },
-
-  "/zh-tw/": {
-    header: "此頁內容",
-  },
-
-  "/de/": {
-    header: "On This Page",
-  },
-
-  "/vi/": {
-    header: "On This Page",
-  },
-
-  "/uk/": {
-    header: "On This Page",
-  },
-
-  "/ru/": {
-    header: "On This Page",
-  },
-
-  "/br/": {
-    header: "On This Page",
-  },
-};
-
-export const paginationLocales: PaginationLocaleConfig = {
-  "/en/": {
-    prev: "Prev",
-    next: "Next",
-    navigate: "Jump to",
-    button: "Go",
-    errorText: "Please enter a number between 1 and $page !",
-  },
-
-  "/zh/": {
-    prev: "上一页",
-    next: "下一页",
-    navigate: "跳转到",
-    button: "前往",
-    errorText: "请输入 1 到 $page 之前的页码！",
-  },
-
-  "/zh-tw/": {
-    prev: "上一頁",
-    next: "下一頁",
-    navigate: "跳轉到",
-    button: "前往",
-    errorText: "請輸入 1 到 $page 之前的頁碼！",
-  },
-
-  "/de/": {
-    prev: "Vorheriges",
-    next: "Nächstes",
-    navigate: "Springe zu",
-    button: "Los",
-    errorText: "Bitte gib eine Nummer zwischen 1 und $page ein!",
-  },
-
-  "/vi/": {
-    prev: "Bài kế",
-    next: "Bài trước",
-    navigate: "Đi đến",
-    button: "Đi",
-    errorText: "Xin hãy nhập 1 số từ 1 đến $page !",
-  },
-
-  "/uk/": {
-    prev: "Попередня",
-    next: "Далі",
-    navigate: "Перейти до",
-    button: "Перейти",
-    errorText: "Будь ласка, введіть число від 1 до $page !",
-  },
-
-  "/ru/": {
-    prev: "Предыдущая",
-    next: "Далее",
-    navigate: "Перейти к",
-    button: "Перейти",
-    errorText: "Пожалуйста, введите число от 1 до $page !",
-  },
-
-  "/br/": {
-    prev: "Anterior",
-    next: "Próximo",
-    navigate: "Pular para",
-    button: "Ir",
-    errorText: "Por favor, digite um número entre 1 e $page !",
-  },
-};
+import type { ArticleInfoLocaleConfig, BackToTopLocaleConfig } from "../shared";
 
 /**
  * Default locales config for Article Info
@@ -228,5 +90,39 @@ export const articleInfoLocales: ArticleInfoLocaleConfig = {
     tag: "Tags🏷",
     readingTime: "Tempo de Leitura⌛",
     words: "Palavras🔠",
+  },
+};
+
+export const backToTopLocales: BackToTopLocaleConfig = {
+  "/en/": {
+    backToTop: "Back to top",
+  },
+
+  "/zh/": {
+    backToTop: "返回顶部",
+  },
+
+  "/zh-tw/": {
+    backToTop: "返回頂部",
+  },
+
+  "/de/": {
+    backToTop: "Zurück nach oben.",
+  },
+
+  "/vi/": {
+    backToTop: "Trở lại đầu trang",
+  },
+
+  "/uk/": {
+    backToTop: "Повернутися до початку",
+  },
+
+  "/ru/": {
+    backToTop: "Вернуться к началу",
+  },
+
+  "/br/": {
+    backToTop: "Volta ao topo",
   },
 };

@@ -31,6 +31,14 @@ export const zhLocale: HopeThemeLocaleData = {
     encrypt: "加密",
   },
 
+  paginationLocales: {
+    prev: "上一页",
+    next: "下一页",
+    navigate: "跳转到",
+    action: "前往",
+    errorText: "请输入 1 到 $page 之前的页码！",
+  },
+
   outlookLocales: {
     themeColor: "主题色",
     darkmode: "外观",
@@ -53,4 +61,6 @@ export const zhLocale: HopeThemeLocaleData = {
     back: "返回上一页",
     home: "带我回家",
   },
+
+  tocLocales: "此页内容",
 };

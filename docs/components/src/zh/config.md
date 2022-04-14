@@ -11,13 +11,7 @@ icon: config
 需要被注册的组件
 
 ```ts
-type AvailableComponent =
-  | "ArticleInfo"
-  | "BreadCrumb"
-  | "Badge"
-  | "FullScreen"
-  | "Pagination"
-  | "TOC";
+type AvailableComponent = "ArticleInfo" | "Badge";
 ```
 
 ## backToTop
@@ -110,44 +104,3 @@ type AvailableComponent =
 - 必填: 否
 
 返回顶部按钮国际化配置。
-
-## paginationLocales
-
-- 类型: `PaginationLocaleConfig`
-
-  ```ts
-  interface PaginationLocaleData {
-    /**
-     * 上一页文字
-     */
-    prev: string;
-
-    /**
-     * 下一页文字
-     */
-    next: string;
-
-    /**
-     * 跳转提示文字
-     */
-    navigate: string;
-
-    /**
-     * 跳转按钮文字
-     */
-    button: string;
-
-    /**
-     * 页码错误文字，其中 `$page` 会自动替换为当前的总页数
-     */
-    errorText: string;
-  }
-
-  interface PaginationLocaleConfig {
-    [localePath: string]: PaginationLocaleData;
-  }
-  ```
-
-- 必填: 否
-
-分页的国际化配置。

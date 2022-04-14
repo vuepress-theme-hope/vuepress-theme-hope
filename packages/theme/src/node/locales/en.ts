@@ -31,6 +31,14 @@ export const enLocale: HopeThemeLocaleData = {
     encrypt: "Encrypted",
   },
 
+  paginationLocales: {
+    prev: "Prev",
+    next: "Next",
+    navigate: "Jump to",
+    action: "Go",
+    errorText: "Please enter a number between 1 and $page !",
+  },
+
   outlookLocales: {
     themeColor: "Theme Color",
     darkmode: "Theme Mode",
@@ -53,4 +61,6 @@ export const enLocale: HopeThemeLocaleData = {
     back: "Go back",
     home: "Take me home",
   },
+
+  tocLocales: "On This Page",
 };

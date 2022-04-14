@@ -1,7 +1,7 @@
 import { removeEndingSlash } from "@vuepress/shared";
 import type { RouteLocation } from "vue-router";
 
-export const getLinks = (
+export const getAncestorLinks = (
   route: RouteLocation,
   routeLocale: string
 ): string[] => {

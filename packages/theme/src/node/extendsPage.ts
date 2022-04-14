@@ -99,6 +99,10 @@ export const extendsPage = (
     icon: frontmatter.icon,
   };
 
+  // resolve shortTitle
+  if ("shortTitle" in frontmatter)
+    page.routeMeta.shortTitle = frontmatter.shortTitle;
+
   if (plugins.blog) {
     const isArticle =
       // declaring this is an article

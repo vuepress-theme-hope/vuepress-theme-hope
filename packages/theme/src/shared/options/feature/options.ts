@@ -2,6 +2,7 @@ import type {
   HopeThemeBlogConfig,
   HopeThemeBlogLocaleData,
   HopeThemeBlogOptions,
+  HopeThemePaginationLocaleData,
 } from "./blog";
 import type {
   HopeThemeEncryptConfig,
@@ -11,6 +12,8 @@ import type {
 
 export interface HopeThemeFeatureLocaleData {
   blogLocales: HopeThemeBlogLocaleData;
+
+  paginationLocales: HopeThemePaginationLocaleData;
 
   /**
    * Encrypt

@@ -19,6 +19,8 @@ export interface HopeThemeLayoutLocaleData {
   metaLocales: HopeThemeMetaLocateData;
 
   routeLocales: HopeThemeRouteLocaleData;
+
+  tocLocales: string;
 }
 
 export interface HopeThemeLayoutLocaleOptions

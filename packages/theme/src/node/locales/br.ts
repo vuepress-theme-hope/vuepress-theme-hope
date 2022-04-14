@@ -31,6 +31,14 @@ export const brLocale: HopeThemeLocaleData = {
     encrypt: "Encriptado",
   },
 
+  paginationLocales: {
+    prev: "Anterior",
+    next: "Próximo",
+    navigate: "Pular para",
+    action: "Ir",
+    errorText: "Por favor, digite um número entre 1 e $page !",
+  },
+
   outlookLocales: {
     themeColor: "Cor do Tema",
     darkmode: "Modo do Tema",
@@ -53,4 +61,6 @@ export const brLocale: HopeThemeLocaleData = {
     back: "Voltar",
     home: "Leve-me para casa",
   },
+
+  tocLocales: "On This Page",
 };

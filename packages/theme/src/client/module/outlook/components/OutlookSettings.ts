@@ -1,10 +1,9 @@
 import { ClientOnly } from "@vuepress/client";
-import { useFullscreen } from "@vueuse/core";
 import { computed, defineComponent, h } from "vue";
 
 import AppearanceMode from "@theme-hope/module/outlook/components/AppearanceMode";
 import ThemeColor from "@theme-hope/module/outlook/components/ThemeColor";
-import ToggleFullScreen from "@theme-hope/module/outlook/components/ToggleFullScreen";
+import ToggleFullScreenButton from "@theme-hope/module/outlook/components/ToggleFullScreenButton";
 import { usePure, useThemeData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
@@ -15,7 +14,6 @@ export default defineComponent({
   setup() {
     const themeData = useThemeData();
     const pure = usePure();
-    const { isSupported } = useFullscreen();
 
     const enableDarkmode = computed(
       () =>
@@ -35,7 +33,7 @@ export default defineComponent({
       h(ClientOnly, () => [
         enableThemeColor.value ? h(ThemeColor) : null,
         enableDarkmode.value ? h(AppearanceMode) : null,
-        isSupported && enableFullScreen.value ? h(ToggleFullScreen) : null,
+        enableFullScreen.value ? h(ToggleFullScreenButton) : null,
       ]);
   },
 });

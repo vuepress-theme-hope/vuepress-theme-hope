@@ -60,7 +60,8 @@ const defaultLocaleOptions: HopeThemeLocaleOptions = {
  */
 export const getThemeConfig = (
   app: App,
-  themeOptions: HopeThemeOptions
+  themeOptions: HopeThemeOptions,
+  enableBlog = false
 ): HopeThemeConfig => {
   const themeData: HopeThemeConfig = {
     ...defaultRootOptions,
@@ -73,7 +74,20 @@ export const getThemeConfig = (
       // assign locale data to `themeConfig`
       getLocales(
         app,
-        themeLocalesData,
+        Object.fromEntries(
+          Object.entries(themeLocalesData).map(([locale, config]) => {
+            if (!enableBlog) {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              delete config.blogLocales;
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              delete config.paginationLocales;
+            }
+
+            return [locale, config];
+          })
+        ),
         // extract localeConfig
         Object.fromEntries(
           [

@@ -31,6 +31,14 @@ export const ruLocale: HopeThemeLocaleData = {
     encrypt: "Зашифровано",
   },
 
+  paginationLocales: {
+    prev: "Предыдущая",
+    next: "Далее",
+    navigate: "Перейти к",
+    action: "Перейти",
+    errorText: "Пожалуйста, введите число от 1 до $page !",
+  },
+
   outlookLocales: {
     themeColor: "Цвет темы",
     darkmode: "Режим темы",
@@ -53,4 +61,6 @@ export const ruLocale: HopeThemeLocaleData = {
     back: "Вернуться назад",
     home: "Вернуться на главную",
   },
+
+  tocLocales: "On This Page",
 };

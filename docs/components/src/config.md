@@ -11,13 +11,7 @@ icon: config
 Whether register articleInfo component
 
 ```ts
-type AvailableComponent =
-  | "ArticleInfo"
-  | "BreadCrumb"
-  | "Badge"
-  | "FullScreen"
-  | "Pagination"
-  | "TOC";
+type AvailableComponent = "ArticleInfo" | "Badge";
 ```
 
 ## backToTop
@@ -110,44 +104,3 @@ Locales config for article information.
 - Required: No
 
 Locales config for BackToTop button.
-
-## paginationLocales
-
-- Type: `PaginationLocaleConfig`
-
-  ```ts
-  interface PaginationLocaleData {
-    /**
-     * Previous page button label text
-     */
-    prev: string;
-
-    /**
-     * Next page button label text
-     */
-    next: string;
-
-    /**
-     * Navigation hint label text
-     */
-    navigate: string;
-
-    /**
-     * Navigation button label text
-     */
-    button: string;
-
-    /**
-     * Error text when invalid page number, `$page` will be replaced by total page number automatically
-     */
-    errorText: string;
-  }
-
-  interface PaginationLocaleConfig {
-    [localePath: string]: PaginationLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for pagination.

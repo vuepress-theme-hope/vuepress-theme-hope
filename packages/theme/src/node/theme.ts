@@ -18,7 +18,7 @@ export const themeHope: Theme<HopeThemeOptions> = (
   app
 ) => {
   const enableBlog = Boolean(plugins.blog);
-  const themeConfig = getThemeConfig(app, themeOptions);
+  const themeConfig = getThemeConfig(app, themeOptions, enableBlog);
 
   usePlugin(app, plugins);
 

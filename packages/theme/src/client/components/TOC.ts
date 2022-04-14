@@ -1,18 +1,14 @@
-import {
-  isActiveLink,
-  useLocaleConfig,
-} from "@mr-hope/vuepress-shared/lib/client";
+import { isActiveLink } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
+import { useThemeLocaleData } from "@theme-hope/composables";
+
 import type { PageHeader } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";
-import type { TOCLocaleConfig } from "../../shared";
 
 import "../styles/toc.scss";
-
-declare const TOC_LOCALES: TOCLocaleConfig;
 
 const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
@@ -72,8 +68,8 @@ export default defineComponent({
   },
 
   setup(props) {
+    const themeLocale = useThemeLocaleData();
     const page = usePageData();
-    const locale = useLocaleConfig(TOC_LOCALES);
 
     return (): VNode => {
       const tocHeaders = props.items.length
@@ -88,7 +84,7 @@ export default defineComponent({
           { id: "toc-list" },
           tocHeaders
             ? [
-                h("div", { class: "toc-header" }, locale.value.header),
+                h("div", { class: "toc-header" }, themeLocale.value.tocLocales),
                 h("div", { class: "toc-wrapper" }, [tocHeaders]),
               ]
             : []

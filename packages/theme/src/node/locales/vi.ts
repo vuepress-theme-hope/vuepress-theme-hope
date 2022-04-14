@@ -31,6 +31,14 @@ export const viLocale: HopeThemeLocaleData = {
     encrypt: "Mã hóa",
   },
 
+  paginationLocales: {
+    prev: "Bài kế",
+    next: "Bài trước",
+    navigate: "Đi đến",
+    action: "Đi",
+    errorText: "Xin hãy nhập 1 số từ 1 đến $page !",
+  },
+
   outlookLocales: {
     themeColor: "Màu nền",
     darkmode: "Theme Mode",
@@ -53,4 +61,6 @@ export const viLocale: HopeThemeLocaleData = {
     back: "Quay lại",
     home: "Trang chủ",
   },
+
+  tocLocales: "On This Page",
 };

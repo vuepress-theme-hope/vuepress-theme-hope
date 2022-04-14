@@ -1,5 +1,20 @@
 @use "@mr-hope/vuepress-shared/styles/reset";
 
+.full-screen-title {
+  display: block;
+
+  margin: 0;
+  padding: 0 0.25rem;
+
+  color: var(--light-grey);
+
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 2;
+
+  transition: color var(--color-transition);
+}
+
 .full-screen,
 .cancel-full-screen {
   @include reset.button;
@@ -21,7 +36,7 @@
 
 .enter-fullscreen-icon:hover,
 .cancel-fullscreen-icon {
-  color: var(--c-brand, #3eaf7c);
+  color: var(--theme-color);
 }
 
 .cancel-fullscreen-icon:hover {

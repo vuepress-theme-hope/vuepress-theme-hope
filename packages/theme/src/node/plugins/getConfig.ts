@@ -24,7 +24,7 @@ export const getPluginConfig = (
   hostname: string
 ): PluginConfig<PluginOptions>[] => {
   const pluginConfig = [
-    resolveComponentsPlugin(plugins, themeData),
+    resolveComponentsPlugin(themeData),
     resolveActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     ["@vuepress/external-link-icon", plugins.externalLinkIcon !== false],
     ["@vuepress/nprogress", plugins.nprogress !== false],

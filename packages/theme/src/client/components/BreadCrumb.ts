@@ -1,5 +1,5 @@
 import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
-import { useRouteLocale } from "@vuepress/client";
+import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import {
   computed,
   defineComponent,
@@ -10,9 +10,11 @@ import {
   ref,
 } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
-import { getLinks } from "../utils";
+import { useIconPrefix, useThemeLocaleData } from "@theme-hope/composables";
+import { getAncestorLinks } from "@theme-hope/utils";
 
 import type { WatchStopHandle, VNode } from "vue";
+import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
 import "../styles/breadcrumb.scss";
 
@@ -25,47 +27,45 @@ interface BreadCrumbConfig {
 export default defineComponent({
   name: "BreadCrumb",
 
-  props: {
-    enable: {
-      type: Boolean,
-      default: true,
-    },
-
-    icon: {
-      type: Boolean,
-      default: true,
-    },
-
-    iconPrefix: {
-      type: String,
-      default: "",
-    },
-  },
-
-  setup(props) {
+  setup() {
     const router = useRouter();
     const route = useRoute();
     const routeLocale = useRouteLocale();
+    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+    const iconPrefix = useIconPrefix();
+    const themeLocale = useThemeLocaleData();
 
     const config = ref<BreadCrumbConfig[]>([]);
 
     const enable = computed<boolean>(() => {
-      return props.enable && config.value.length > 1;
+      return (
+        (frontmatter.value.breadcrumb ||
+          (frontmatter.value.breadcrumb !== false &&
+            themeLocale.value.breadcrumb !== false)) &&
+        config.value.length > 1
+      );
     });
+
+    const iconEnable = computed(
+      () =>
+        frontmatter.value.breadcrumbIcon ||
+        (frontmatter.value.breadcrumbIcon !== false &&
+          themeLocale.value.breadcrumbIcon !== false)
+    );
 
     const getBreadCrumbConfig = (): void => {
       const routes = router.getRoutes();
 
-      const breadcrumbConfig = getLinks(route, routeLocale.value)
+      const breadcrumbConfig = getAncestorLinks(route, routeLocale.value)
         .map<BreadCrumbConfig | null>((link) => {
           const route = routes.find((route) => route.path === link);
 
           if (route) {
             const { meta, path } = resolveRouteWithRedirect(router, route.path);
 
-            if (typeof meta.title === "string")
+            if (meta.shortTitle || meta.title)
               return {
-                title: meta.title,
+                title: meta.shortTitle || meta.title,
                 icon: meta.icon,
                 path,
               } as BreadCrumbConfig;
@@ -117,9 +117,9 @@ export default defineComponent({
                     },
                     () => [
                       // icon
-                      props.icon && item.icon
+                      iconEnable.value && item.icon
                         ? h("i", {
-                            class: ["icon", `${props.iconPrefix}${item.icon}`],
+                            class: ["icon", `${iconPrefix.value}${item.icon}`],
                           })
                         : null,
                       // text
