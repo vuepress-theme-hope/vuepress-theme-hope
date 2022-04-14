@@ -1,10 +1,23 @@
 import { rollupTypescript } from "../../scripts/rollup";
 
-export default rollupTypescript("node/index", {
-  external: [
-    "@mr-hope/vuepress-shared",
-    "@vuepress/core",
-    "@vuepress/shared",
-    "@vuepress/utils",
-  ],
-});
+export default [
+  ...rollupTypescript("cli/index", {
+    dts: false,
+    external: [
+      "@vuepress/cli",
+      "@vuepress/core",
+      "@vuepress/shared",
+      "@vuepress/utils",
+      "cac",
+    ],
+    preserveShebang: true,
+  }),
+  ...rollupTypescript("node/index", {
+    external: [
+      "@mr-hope/vuepress-shared",
+      "@vuepress/core",
+      "@vuepress/shared",
+      "@vuepress/utils",
+    ],
+  }),
+];

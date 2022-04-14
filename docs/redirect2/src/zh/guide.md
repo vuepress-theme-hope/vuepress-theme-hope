@@ -58,3 +58,30 @@ redirect({
 ```
 
 :::
+
+## 重定向站点
+
+有时您可能会更改 `base` 或为您的站点使用新域名，因此您可能希望原始站点自动重定向到新站点。
+
+为了解决这个问题，插件提供了 `vp-redirect` 脚手架。
+
+```shell
+vp-redirect/2.0.0-beta.40
+
+使用:
+  $ vp-redirect generate [源文件夹]
+
+Options:
+  --hostname <hostname>  重定向到的域名 (例如: https://new.example.com/) (必填)
+  -c, --config <config>  设置配置文件路径
+  -o, --output <output>  设置输出目录 (默认: .vuepress/redirect)
+  --cache <cache>        设置缓存文件的目录
+  -t, --temp <temp>      设置临时文件的目录
+  --clean-cache          生成前清理缓存文件
+  --clean-temp           生成前清理临时文件
+  -h, --help             显示此消息
+```
+
+您需要传入 VuePress 项目源目录并设置 `hostname` 选项。重定向助手脚手架将初始化您的 VuePress 项目以获取页面，然后生成重定向 html 文件并将其输出到“输出”目录。
+
+默认情况下，插件将输出到源文件夹下的 .vuepress/redirect 目录。您应该将其上传到您的原始站点以提供重定向。

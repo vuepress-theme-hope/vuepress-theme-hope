@@ -58,3 +58,30 @@ redirect({
 ```
 
 :::
+
+## Redirecting Sites
+
+Sometimes you may change `base` or use new domain for your site, so you may want the original site automatically redirects to the new one.
+
+To solve this, the plugin provide `vp-redirect` cli.
+
+```shell
+vp-redirect/2.0.0-beta.40
+
+Usage:
+  $ vp-redirect generate [sourceDir]
+
+Options:
+  --hostname <hostname>  Hostname to redirect to (E.g.: https://new.example.com/) (Required)
+  -c, --config <config>  Set path to config file
+  -o, --output <output>  Set the output directory (default: .vuepress/redirect)
+  --cache <cache>        Set the directory of the cache files
+  -t, --temp <temp>      Set the directory of the temporary files
+  --clean-cache          Clean the cache files before generation
+  --clean-temp           Clean the temporary files before generation
+  -h, --help             Display this message
+```
+
+You need to pass in VuePress project source dir and also set the `hostname` option. The redirect helper cli will initialize your VuePress project to get pages, then generate and output the redirect html files to the `output` directory.
+
+By default the plugin will output to `.vuepress/redirect` directory under source folder. And you should upload it to your original site to provide redirection.

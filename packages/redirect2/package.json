@@ -23,6 +23,9 @@
   },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
+  "bin": {
+    "vp-redirect": "./lib/cli/index.js"
+  },
   "files": [
     "lib",
     "src"
@@ -35,11 +38,11 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-beta.40",
+    "@vuepress/cli": "2.0.0-beta.38",
+    "@vuepress/core": "2.0.0-beta.38",
     "@vuepress/shared": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38"
-  },
-  "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/utils": "2.0.0-beta.38",
+    "cac": "^6.7.12"
   },
   "publishConfig": {
     "access": "public"
