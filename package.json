@@ -96,7 +96,7 @@
     "@rollup/plugin-commonjs": "^22.0.0-14",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-node-resolve": "13.2.0",
-    "@rollup/plugin-typescript": "8.3.1",
+    "@rollup/plugin-typescript": "8.3.2",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.8",
     "@types/inquirer": "8.2.1",
     "@types/jest": "27.4.1",
