@@ -35,7 +35,7 @@ export default defineComponent({
               // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
               h(resolveComponent(`${repo.value.type}Icon`), {
                 style: {
-                  width: "1.25rem",
+                  width: "2rem",
                   height: "1.25rem",
                   verticalAlign: "middle",
                 },

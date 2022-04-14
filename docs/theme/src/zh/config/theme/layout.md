@@ -51,6 +51,13 @@ tag:
 
 仓库配置，用于在导航栏中显示仓库链接。
 
+### repoType
+
+- 类型: `"Github" | "Gitlab" | "Bitbucket" | "Gitee" | null;`
+- 必填: 否
+
+仓库类型配置，对应不同的仓库链接图标。默认根据repo链接自动识别。
+
 ### repoDisplay
 
 - 类型: `boolean`

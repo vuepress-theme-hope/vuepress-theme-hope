@@ -21,7 +21,11 @@ export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
 
   const repo = computed(() => themeLocale.value.repo);
   const repoType = computed(() =>
-    repo.value ? resolveRepoType(repo.value) : null
+    themeLocale.value.repoType
+      ? (themeLocale.value.repoType as RepoType)
+      : repo.value
+      ? resolveRepoType(repo.value)
+      : null
   );
 
   const repoLink = computed(() => {
