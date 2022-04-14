@@ -67,7 +67,7 @@ export default defineComponent({
     return (): VNode =>
       h("header", { class: "hero" }, [
         slots.heroImage?.() ||
-          h(DropTransition, { type: "group" }, () => [
+          h(DropTransition, { appear: true, type: "group" }, () => [
             heroImage.value
               ? h("img", {
                   key: "light",
@@ -88,19 +88,19 @@ export default defineComponent({
         slots.heroInfo?.() ||
           h("div", { class: "hero-info" }, [
             heroText.value
-              ? h(DropTransition, { delay: 0.04 }, () =>
+              ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
                   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                   h("h1", { id: "main-title" }, heroText.value!)
                 )
               : null,
             tagline.value
-              ? h(DropTransition, { delay: 0.08 }, () =>
+              ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
                   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                   h("p", { class: "description" }, tagline.value!)
                 )
               : null,
             actions.value.length
-              ? h(DropTransition, { delay: 0.12 }, () =>
+              ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   h(
                     "p",
                     { class: "actions" },

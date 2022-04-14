@@ -79,7 +79,7 @@ export default defineComponent({
                 },
               }),
               slots.heroImage?.() ||
-                h(DropTransition, { delay: 0.04 }, () =>
+                h(DropTransition, { appear: true, delay: 0.04 }, () =>
                   heroImage.value
                     ? h("img", {
                         class: "hero-image",
@@ -89,13 +89,12 @@ export default defineComponent({
                       })
                     : null
                 ),
-              slots.heroImage?.(),
-              h(DropTransition, { delay: 0.08 }, () =>
+              h(DropTransition, { appear: true, delay: 0.08 }, () =>
                 frontmatter.value.showTitle !== false
                   ? h("h1", frontmatter.value.heroText || title.value)
                   : null
               ),
-              h(DropTransition, { delay: 0.12 }, () =>
+              h(DropTransition, { appear: true, delay: 0.12 }, () =>
                 frontmatter.value.tagline
                   ? h("p", {
                       class: "description",
