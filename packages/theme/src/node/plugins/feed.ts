@@ -33,9 +33,11 @@ export const resolveFeedPlugin = (
         customElements: [
           "ExternalLinkIcon",
           "Badge",
+          "ChartJS",
+          "CodeDemo",
           "CodeGroup",
           "CodeGroupItem",
-          "CodeDemo",
+          "FlowChart",
           "Mermaid",
           "Presentation",
         ],
