@@ -18,9 +18,15 @@ import { getLanguage } from "./i18n";
 import { getRegistry } from "./registry";
 
 const cli = cac("vuepress-theme-hope");
+// eslint-disable-next-line
+const version = require("../..//package.json").version as string;
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
+  .usage(
+    "yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]"
+  )
+  .example("docs")
   .action(async (dir: string) => {
     if (!dir) return cli.outputHelp();
 
@@ -218,5 +224,7 @@ cli.help(() => [
     body: "Create a vuepress-theme-hope template in [dir]",
   },
 ]);
+
+cli.version(version);
 
 cli.parse();
