@@ -5,7 +5,7 @@ import {
   GiteeIcon,
   GitHubIcon,
   GitlabIcon,
-  ForkIcon,
+  SourceIcon,
 } from "@theme-hope/module/navbar/components/icons";
 import { useNavbarRepo } from "@theme-hope/module/navbar/composables";
 
@@ -14,7 +14,7 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "RepoLink",
 
-  components: { BitbucketIcon, GiteeIcon, GitHubIcon, GitlabIcon, ForkIcon },
+  components: { BitbucketIcon, GiteeIcon, GitHubIcon, GitlabIcon, SourceIcon },
 
   setup() {
     const repo = useNavbarRepo();
