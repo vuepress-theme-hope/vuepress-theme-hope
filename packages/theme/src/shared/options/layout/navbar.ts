@@ -67,6 +67,12 @@ export interface HopeThemeNavbarLocaleOptions {
    * 仓库链接
    */
   repo?: string | null;
+  /**
+   * Repository Type
+   *
+   * 仓库类型
+   */
+  repoType?: "Github" | "Gitlab" | "Bitbucket" | "Gitee" | null;
 
   /**
    * Whether display repo link in navbar.
