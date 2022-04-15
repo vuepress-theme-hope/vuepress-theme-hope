@@ -51,4 +51,10 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "Menos de 1 minuto",
     time: "Por volta de $time min",
   },
+
+  "/pl/": {
+    word: "Około $word słów",
+    less1Minute: "Mniej niż 1 minuta",
+    time: "Około $time minut",
+  },
 };

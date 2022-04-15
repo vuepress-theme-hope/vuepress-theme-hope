@@ -13,4 +13,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "基于:license协议",
     link: "原文链接：:link",
   },
+
+  "/pl/": {
+    author: "Prawa autorskie :author",
+    license: "Licencja :license",
+    link: ":link",
+  },
 };
