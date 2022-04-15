@@ -16,5 +16,12 @@ export default defineUserConfig<DefaultThemeOptions>({
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/sitemap2/",
   },
 
-  plugins: [["sitemap2", { hostname: "https://exapmle.com" }]],
+  plugins: [
+    [
+      "sitemap2",
+      {
+        hostname: "https://vuepress-theme-hope.github.io",
+      },
+    ],
+  ],
 });

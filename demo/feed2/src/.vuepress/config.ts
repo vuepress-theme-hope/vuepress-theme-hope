@@ -41,7 +41,12 @@ export default defineUserConfig<DefaultThemeOptions>({
   plugins: [
     [
       "feed2",
-      { hostname: "https://example.com", atom: true, rss: true, json: true },
+      {
+        hostname: "https://vuepress-theme-hope.github.io",
+        atom: true,
+        rss: true,
+        json: true,
+      },
     ],
   ],
 });

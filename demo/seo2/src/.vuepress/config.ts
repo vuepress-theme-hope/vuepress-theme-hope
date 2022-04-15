@@ -18,5 +18,12 @@ export default defineUserConfig<DefaultThemeOptions>({
     navbar: ["/", "/demo"],
   },
 
-  plugins: [["seo2", { hostname: "https://example.com" }]],
+  plugins: [
+    [
+      "seo2",
+      {
+        hostname: "https://vuepress-theme-hope.github.io",
+      },
+    ],
+  ],
 });
