@@ -1,5 +1,5 @@
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
-import { fs, withSpinner } from "@vuepress/utils";
+import { fs, path, withSpinner } from "@vuepress/utils";
 import { getRedirectHTML } from "../shared";
 
 import type { App } from "@vuepress/core";
@@ -24,14 +24,14 @@ export const generateHTML = async (
   await withSpinner("Generating redirect files")(() =>
     Promise.all(
       Object.entries(config).map(([from, to]) => {
+        const filePath = dir.dest(removeLeadingSlash(from));
         const redirectUrl = to.startsWith("/")
           ? `${hostname}${base}${removeLeadingSlash(to)}`
           : to;
 
-        return fs.writeFile(
-          dir.dest(removeLeadingSlash(from)),
-          getRedirectHTML(redirectUrl)
-        );
+        return fs
+          .ensureDir(path.dirname(filePath))
+          .then(() => fs.writeFile(filePath, getRedirectHTML(redirectUrl)));
       })
     )
   );

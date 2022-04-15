@@ -108,7 +108,7 @@ cli
       logger.info("Generating redirect pages...");
 
       await Promise.all(
-        app.pages.map(async (page) => {
+        app.pages.map((page) => {
           const redirectUrl = `${removeEndingSlash(commandOptions.hostname)}${
             app.options.base
           }${removeLeadingSlash(page.path)}`;
@@ -117,9 +117,11 @@ cli
             removeLeadingSlash(page.path.replace(/\/$/, "/index.html"))
           );
 
-          await fs.ensureDir(path.dirname(destLocation));
-
-          return fs.writeFile(destLocation, getRedirectHTML(redirectUrl));
+          return fs
+            .ensureDir(path.dirname(destLocation))
+            .then(() =>
+              fs.writeFile(destLocation, getRedirectHTML(redirectUrl))
+            );
         })
       );
     }
