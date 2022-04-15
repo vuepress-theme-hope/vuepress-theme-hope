@@ -77,11 +77,9 @@ module.exports = defineHopeConfig({
 - `@theme-hope/components/MarkdownContent`: Markdown 内容
 - `@theme-hope/components/NormalPage`: 常规页面
 - `@theme-hope/components/PageFooter`: 页脚
-- `@theme-hope/components/PageMeta`: 页面元信息
 - `@theme-hope/components/PageNav`: 页面导航
 - `@theme-hope/components/PageTitle`: 页面标题
 - `@theme-hope/components/SkipLink`: 跳转到主内容
-- `@theme-hope/components/TOC`: 内容目录
 
 杂项:
 
@@ -129,6 +127,30 @@ module.exports = defineHopeConfig({
 
 - `@theme-hope/module/sidebar/composables`: 侧边栏可组合 API
 - `@theme-hope/module/sidebar/utils`: 侧边栏通用函数
+
+:::
+
+::: details 信息组件别名
+
+Components:
+
+- `@theme-hope/module/info/components/AuthorInfo`: 作者信息
+- `@theme-hope/module/info/components/CategoryInfo`: 分类信息
+- `@theme-hope/module/info/components/DateInfo`: 写作日期信息
+- `@theme-hope/module/info/components/OriginalMark`: 原创标识
+- `@theme-hope/module/info/components/PageInfo`: 页面信息
+- `@theme-hope/module/info/components/PageMeta`: 页面元数据 information
+- `@theme-hope/module/info/components/PageViewInfo`: 浏览量信息 information
+- `@theme-hope/module/info/components/ReadingTimeInfo`: 阅读时间信息 time information
+- `@theme-hope/module/info/components/TagInfo`: 标签信息
+- `@theme-hope/module/info/components/TOC`: 内容列表
+- `@theme-hope/module/info/components/WordInfo`: 字数信息
+
+杂项:
+
+- `@theme-hope/module/blog/components/icons`: 信息图标
+- `@theme-hope/module/blog/composables`: 信息可组合 API
+- `@theme-hope/module/blog/utils`: 信息通用函数
 
 :::
 

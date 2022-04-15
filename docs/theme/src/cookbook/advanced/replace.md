@@ -77,11 +77,9 @@ Components:
 - `@theme-hope/components/MarkdownContent`: Markdown content
 - `@theme-hope/components/NormalPage`: normal page
 - `@theme-hope/components/PageFooter`: page footer
-- `@theme-hope/components/PageMeta`: page meta information
 - `@theme-hope/components/PageNav`: page navigation
 - `@theme-hope/components/PageTitle`: page title
 - `@theme-hope/components/SkipLink`: skip to main content
-- `@theme-hope/components/TOC`: table of contents
 
 Miscellaneous:
 
@@ -129,6 +127,30 @@ Miscellaneous:
 
 - `@theme-hope/module/sidebar/composables`: sidebar Composition API
 - `@theme-hope/module/sidebar/utils`: sidebar utility functions
+
+:::
+
+::: details Info module component alias
+
+Components:
+
+- `@theme-hope/module/info/components/AuthorInfo`: author information
+- `@theme-hope/module/info/components/CategoryInfo`: category information
+- `@theme-hope/module/info/components/DateInfo`: date information
+- `@theme-hope/module/info/components/OriginalMark`: original mark
+- `@theme-hope/module/info/components/PageInfo`: page information
+- `@theme-hope/module/info/components/PageMeta`: page meta information
+- `@theme-hope/module/info/components/PageViewInfo`: page views information
+- `@theme-hope/module/info/components/ReadingTimeInfo`: reading time information
+- `@theme-hope/module/info/components/TagInfo`: tag information
+- `@theme-hope/module/info/components/TOC`: table of contents
+- `@theme-hope/module/info/components/WordInfo`: word information
+
+Miscellaneous:
+
+- `@theme-hope/module/blog/components/icons`: info icons
+- `@theme-hope/module/blog/composables`: info Composables API
+- `@theme-hope/module/blog/utils`: info utility functions
 
 :::
 

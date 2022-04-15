@@ -7,7 +7,7 @@ heroText: "@mr-hope/vuepress-plugin-components"
 tagline: Components lib plugin for VuePress2
 actions:
   - text: Get Started 💡
-    link: /guide/
+    link: /guide.html
     type: primary
 
   - text: Config 🛠

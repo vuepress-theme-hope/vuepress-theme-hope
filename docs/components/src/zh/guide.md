@@ -5,13 +5,8 @@ icon: creative
 
 此插件注册 2 个组件和一个全局组件:
 
-- `<ArticleInfo />`
 - `<BackToTop />` (全局组件)
 - `<Badge />`
-
-## `<Article />`
-
-文章信息组件，详见 [文章信息](./article-info.md)。
 
 ## `<BackToTop />`
 

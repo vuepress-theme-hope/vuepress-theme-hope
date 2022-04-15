@@ -30,7 +30,7 @@ export default defineThemeConfig({
     "/": {
       navbar: [
         "/",
-        "/guide/",
+        "/guide",
         "/config",
         {
           text: version,
@@ -44,24 +44,13 @@ export default defineThemeConfig({
         },
       ],
 
-      sidebar: {
-        "/": [
-          {
-            text: "Guide",
-            icon: "creative",
-            prefix: "guide/",
-            collapsable: false,
-            children: ["", "article-info"],
-          },
-          "config",
-        ],
-      },
+      sidebar: false,
     },
 
     "/zh/": {
       navbar: [
         "/zh/",
-        "/zh/guide/",
+        "/zh/guide",
         "/zh/config",
         {
           text: version,
@@ -75,17 +64,7 @@ export default defineThemeConfig({
         },
       ],
 
-      sidebar: {
-        "/zh/": [
-          {
-            text: "Guide",
-            icon: "creative",
-            prefix: "guide/",
-            children: ["", "article-info"],
-          },
-          "config",
-        ],
-      },
+      sidebar: false,
     },
   },
 

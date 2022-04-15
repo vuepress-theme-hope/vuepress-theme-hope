@@ -11,7 +11,7 @@ icon: config
 Whether register articleInfo component
 
 ```ts
-type AvailableComponent = "ArticleInfo" | "Badge";
+type AvailableComponent = "Badge";
 ```
 
 ## backToTop
@@ -27,62 +27,6 @@ Whether enabling backToTop button
 - Default: `300`
 
 BackToTop button threshold distance (in pixels)
-
-## articleInfoLocales
-
-- Type: `ArticleInfoLocaleConfig`
-
-  ```ts
-  interface ArticleInfoLocaleData {
-    /**
-     * Author label text
-     */
-    author: string;
-
-    /**
-     * Writing date label text
-     */
-    date: string;
-
-    /**
-     * Label text marked as original
-     */
-    origin: string;
-
-    /**
-     * Page views label text
-     */
-    views: string;
-
-    /**
-     * Tag label text
-     */
-    tag: string;
-
-    /**
-     * Category label text
-     */
-    category: string;
-
-    /**
-     * Expect reading time label text
-     */
-    readingTime: string;
-
-    /**
-     * Words label Text
-     */
-    words: string;
-  }
-
-  interface ArticleInfoLocaleConfig {
-    [localePath: string]: ArticleInfoLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for article information.
 
 ## backToTopLocales
 
