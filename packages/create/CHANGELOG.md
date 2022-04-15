@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
+
+### Bug Fixes
+
+- **create:** fix single language template ([c4c0fb6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4c0fb6c5e4aa079f352558b758f384fa2c41c74))
+
 # [2.0.0-beta.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.39...v2.0.0-beta.40) (2022-04-13)
 
 **Note:** Version bump only for package create-vuepress-theme-hope

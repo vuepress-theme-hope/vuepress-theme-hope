@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
+
+### Features
+
+- **redirect2:** add helper cli ([5ac15ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ac15edb39a2803c4a07a00d88298ed79b48262a))
+
 # [2.0.0-beta.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.39...v2.0.0-beta.40) (2022-04-13)
 
 ### Features

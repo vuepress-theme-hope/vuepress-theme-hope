@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
+
+### Bug Fixes
+
+- **theme:** change source icon ([#1681](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1681)) ([4683dd3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4683dd3f99e3874d655ef03db8132a8933dbf709))
+
+### Features
+
+- **theme:** add animation back ([bf8fedc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bf8fedc850c236269c1d3eee10739f50860cec71))
+- **theme:** improve feed default options ([09c7769](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/09c7769315109103a7600ba5c3adf805cb248a03))
+
 # [2.0.0-beta.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.39...v2.0.0-beta.40) (2022-04-13)
 
 ### Bug Fixes

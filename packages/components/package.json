@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "2.0.0-beta.40",
+  "version": "2.0.0-beta.41",
   "description": "Components plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",
@@ -35,7 +35,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.40",
+    "@mr-hope/vuepress-shared": "2.0.0-beta.41",
     "@types/lodash.debounce": "^4.0.6",
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/plugin-theme-data": "2.0.0-beta.38",
@@ -44,8 +44,8 @@
     "lodash.debounce": "^4.0.8",
     "vue": "^3.2.32",
     "vue-router": "^4.0.14",
-    "vuepress-plugin-reading-time2": "2.0.0-beta.40",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.40"
+    "vuepress-plugin-reading-time2": "2.0.0-beta.41",
+    "vuepress-plugin-sass-palette": "2.0.0-beta.41"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.38"
