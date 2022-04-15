@@ -69,6 +69,7 @@ Here are list of aliases.
 Components:
 
 - `@theme-hope/components/AutoLink`: basic link
+- `@theme-hope/components/BreadCrumb`: breacrumb
 - `@theme-hope/components/CommonWrapper`: basic layout integration
 - `@theme-hope/components/HomeFeatures`: homepage features
 - `@theme-hope/components/HomeHero`: homepage logo and introduction
@@ -80,6 +81,7 @@ Components:
 - `@theme-hope/components/PageNav`: page navigation
 - `@theme-hope/components/PageTitle`: page title
 - `@theme-hope/components/SkipLink`: skip to main content
+- `@theme-hope/components/TOC`: table of contents
 
 Miscellaneous:
 
@@ -144,6 +146,7 @@ Components:
 - `@theme-hope/module/blog/components/CategoryList`: Category list
 - `@theme-hope/module/blog/components/InfoList`: blog info list
 - `@theme-hope/module/blog/components/InfoPanel`: blog info panel
+- `@theme-hope/module/blog/components/Pagination`: pagination
 - `@theme-hope/module/blog/components/ProjectPanel`: blog homepage project panel
 - `@theme-hope/module/blog/components/SocialMedia`: social media links
 - `@theme-hope/module/blog/components/TagList`: tag list
@@ -178,7 +181,7 @@ Miscellaneous:
 - `@theme-hope/module/outlook/components/OutlookSettings`: appearance settings
 - `@theme-hope/module/outlook/components/ThemeColor`: theme color
 - `@theme-hope/module/outlook/components/ThemeColorPicker`: theme color picker
-- `@theme-hope/module/outlook/components/ToggleFullScreen`: fullscreen toggle button
+- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
 
 Miscellaneous:
 

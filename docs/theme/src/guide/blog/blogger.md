@@ -83,7 +83,7 @@ You can also config your social media links with `blog.medias` option.
 
 ::: code-group-item TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
 import { defineHopeConfig } from "vuepress-theme-hope";
@@ -118,7 +118,7 @@ export default defineHopeConfig({
 
 ::: code-group-item JS
 
-```js {2,4,6}
+```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
 const { defineHopeConfig } = require("vuepress-theme-hope");

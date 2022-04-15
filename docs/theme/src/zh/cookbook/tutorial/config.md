@@ -39,7 +39,7 @@ VuePress 使用项目文件夹下的 `.vuepress` 文件夹存放配置，所有 
 
 ::: code-group-item TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
 import { defineHopeConfig } from "vuepress-theme-hope";
 
@@ -52,7 +52,7 @@ export default defineHopeConfig({
 
 ::: code-group-item JS
 
-```js {2,4,6}
+```js
 // .vuepress/config.js
 const { defineHopeConfig } = require("vuepress-theme-hope");
 

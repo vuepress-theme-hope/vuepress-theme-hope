@@ -26,16 +26,22 @@ export interface HopeThemeAppearanceLocaleData {
   outlookLocales: {
     /**
      * Theme Color
+     *
+     * 主题色
      */
     themeColor: string;
 
     /**
      * Theme mode
+     *
+     * 夜间模式
      */
     darkmode: string;
 
     /**
-     * Theme mode
+     * Fullscreen text
+     *
+     * 全屏文字
      */
     fullscreen: string;
   };
@@ -52,9 +58,9 @@ export interface HopeThemeAppearanceOptions {
   pure?: boolean;
 
   /**
-   * Font class 图标前缀
-   *
    * Font class Icon prefix
+   *
+   * Font class 图标前缀
    *
    * @default ''
    */
@@ -82,9 +88,9 @@ export interface HopeThemeAppearanceOptions {
   darkmode?: DarkmodeConfig;
 
   /**
-   * Theme color configuration.
+   * Theme color configuration
    *
-   * 主题色选项配置。
+   * 主题色选项配置
    *
    * @default { blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }
    */

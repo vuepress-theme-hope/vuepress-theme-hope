@@ -17,6 +17,8 @@ tag:
 
 - [Theme Appearance Config](apperance.md)
 
+- [Theme I18n Config](i18n.md)
+
 ## Demo
 
 You can check [theme docs’ config][docs-config].
@@ -29,7 +31,7 @@ We provide a `themeConfig` helper function that you can import to provide autoco
 
 ::: code-group-item TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
 import { themeConfig } from "vuepress-theme-hope";
 
@@ -42,7 +44,7 @@ export default themeConfig({
 
 ::: code-group-item JS
 
-```js {2,4,6}
+```js
 // .vuepress/config.js
 const { themeConfig } = require("vuepress-theme-hope");
 

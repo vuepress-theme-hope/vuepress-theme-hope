@@ -17,6 +17,8 @@ tag:
 
 - [主题外观配置](apperance.md)
 
+- [主题多语言配置](i18n.md)
+
 ## 案例
 
 你可以查看 [本文档的配置][docs-config] 作为案例。
@@ -29,7 +31,7 @@ tag:
 
 ::: code-group-item TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
 import { themeConfig } from "vuepress-theme-hope";
 
@@ -42,7 +44,7 @@ export default themeConfig({
 
 ::: code-group-item JS
 
-```js {2,4,6}
+```js
 // .vuepress/config.js
 const { themeConfig } = require("vuepress-theme-hope");
 

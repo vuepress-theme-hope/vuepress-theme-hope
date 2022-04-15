@@ -161,7 +161,7 @@ export const zhSidebarConfig = defineSidebarConfig({
       text: "主题配置",
       icon: "config",
       prefix: "theme/",
-      children: ["", "basic", "feature", "layout", "apperance"],
+      children: ["", "basic", "feature", "layout", "apperance", "i18n"],
     },
     {
       text: "插件配置",

@@ -69,6 +69,7 @@ module.exports = defineHopeConfig({
 组件:
 
 - `@theme-hope/components/AutoLink`: 基础链接
+- `@theme-hope/components/BreadCrumb`: 路径导航
 - `@theme-hope/components/CommonWrapper`: 基本布局整合
 - `@theme-hope/components/HomeFeatures`: 主页特性
 - `@theme-hope/components/HomeHero`: 主页 Logo 及介绍
@@ -80,6 +81,7 @@ module.exports = defineHopeConfig({
 - `@theme-hope/components/PageNav`: 页面导航
 - `@theme-hope/components/PageTitle`: 页面标题
 - `@theme-hope/components/SkipLink`: 跳转到主内容
+- `@theme-hope/components/TOC`: 内容目录
 
 杂项:
 
@@ -144,6 +146,7 @@ module.exports = defineHopeConfig({
 - `@theme-hope/module/blog/components/CategoryList`: 分类列表
 - `@theme-hope/module/blog/components/InfoList`: 博客信息列表
 - `@theme-hope/module/blog/components/InfoPanel`: 博客信息面板
+- `@theme-hope/module/blog/components/Pagination`: 分页组件
 - `@theme-hope/module/blog/components/ProjectPanel`: 博客主页项目面板
 - `@theme-hope/module/blog/components/SocialMedia`: 社交媒体链接
 - `@theme-hope/module/blog/components/TagList`: 标签列表
@@ -178,7 +181,7 @@ module.exports = defineHopeConfig({
 - `@theme-hope/module/outlook/components/OutlookSettings`: 外观设置
 - `@theme-hope/module/outlook/components/ThemeColor`: 主题色
 - `@theme-hope/module/outlook/components/ThemeColorPicker`: 主题色选择器
-- `@theme-hope/module/outlook/components/ToggleFullScreen`: 全屏切换
+- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: 全屏切换按钮
 
 杂项:
 

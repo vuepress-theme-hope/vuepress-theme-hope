@@ -1087,7 +1087,7 @@ module.exports = defineSidebarConfig({
       text: "Theme Config",
       icon: "config",
       prefix: "theme/",
-      children: ["", "basic", "feature", "layout", "apperance"],
+      children: ["", "basic", "feature", "layout", "apperance", "i18n"],
     },
     {
       text: "Plugin Config",

@@ -133,7 +133,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ::: code-group-item TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
 import { defineHopeConfig } from "vuepress-theme-hope";
 
@@ -146,7 +146,7 @@ export default defineHopeConfig({
 
 ::: code-group-item JS
 
-```js {2,4,6}
+```js
 // .vuepress/config.js
 const { defineHopeConfig } = require("vuepress-theme-hope");
 
