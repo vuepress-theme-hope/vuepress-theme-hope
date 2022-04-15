@@ -1,4 +1,3 @@
-import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { HopeThemeFooterLocaleOptions } from "./footer";
 import type {
   HopeThemeMetaLocateData,
@@ -10,6 +9,7 @@ import type {
 } from "./navbar";
 import type { HopeThemeSidebarLocaleOptions } from "./sidebar";
 import type { HopeThemeRouteLocaleData } from "./route";
+import type { PageInfo } from "../../info";
 
 export interface HopeThemeLayoutLocaleData {
   navbarLocales: HopeThemeNavbarLocaleData;
@@ -19,8 +19,6 @@ export interface HopeThemeLayoutLocaleData {
   metaLocales: HopeThemeMetaLocateData;
 
   routeLocales: HopeThemeRouteLocaleData;
-
-  tocLocales: string;
 }
 
 export interface HopeThemeLayoutLocaleOptions
@@ -77,7 +75,7 @@ export interface HopeThemeLayoutLocaleOptions
    *
    * @default ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]
    */
-  pageInfo?: ArticleInfo[] | false;
+  pageInfo?: PageInfo[] | false;
 
   /**
    * Whether show toc list in desktop mode

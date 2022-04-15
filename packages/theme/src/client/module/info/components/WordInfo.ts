@@ -1,7 +1,9 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h } from "vue";
-import { WordIcon } from "./icons";
-import { articleInfoLocales, readingTimeLocales } from "../define";
+
+import { WordIcon } from "@theme-hope/module/info/components/icons";
+import { useMetaLocale } from "@theme-hope/module/info/composables";
+import { readingTimeLocales } from "@theme-hope/module/info/utils";
 
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { PropType, VNode } from "vue";
@@ -15,17 +17,18 @@ export default defineComponent({
       default: () => null,
     },
 
-    hint: {
+    pure: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
   setup(props) {
-    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+    const metaLocale = useMetaLocale();
     const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
     const words = computed(() => props.readingTime?.words.toString());
+
     const wordText = computed(() =>
       readingTimeLocale.value.word.replace("$word", words.value || "")
     );
@@ -36,8 +39,8 @@ export default defineComponent({
             "span",
             {
               class: "words-info",
-              ariaLabel: pageInfoLocale.value.words,
-              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
+              ariaLabel: `${metaLocale.value.words}${props.pure ? "" : "🔠"}`,
+              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [
               h(WordIcon),

@@ -10,6 +10,15 @@ export const zhTWLocale: HopeThemeLocaleData = {
   },
 
   metaLocales: {
+    author: "作者",
+    date: "寫作日期",
+    origin: "原創",
+    views: "訪問量",
+    category: "分類",
+    tag: "標籤",
+    readingTime: "閱讀時間",
+    words: "字數",
+    toc: "此頁內容",
     prev: "上一頁",
     next: "下一頁",
     lastUpdated: "上次編輯於",
@@ -60,7 +69,6 @@ export const zhTWLocale: HopeThemeLocaleData = {
     ],
     back: "返回上一頁",
     home: "帶我回家",
+    openInNewWindow: "Open in new window",
   },
-
-  tocLocales: "此頁內容",
 };

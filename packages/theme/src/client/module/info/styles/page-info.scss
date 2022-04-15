@@ -1,6 +1,6 @@
 @use "@mr-hope/vuepress-shared/styles/wrapper";
 
-.article-info {
+.page-info {
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
@@ -43,7 +43,7 @@
     border: 0.5px solid var(--dark-grey);
     border-radius: 0.75em;
 
-    background: var(--c-bg, #fff);
+    background: var(--bg-color);
 
     font-size: 0.75em;
     line-height: 1.5;
@@ -65,7 +65,7 @@
 
     &:hover,
     &:active {
-      color: var(--c-brand, #3eaf7c);
+      color: var(--theme-color);
     }
   }
 

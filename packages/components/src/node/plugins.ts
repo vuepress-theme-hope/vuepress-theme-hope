@@ -7,12 +7,12 @@ import {
 } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { articleInfoLocales, backToTopLocales } from "./locales";
+import { backToTopLocales } from "./locales";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { AvailableComponent, ComponentOptions } from "../shared";
 
-const availableComponents: AvailableComponent[] = ["ArticleInfo", "Badge"];
+const availableComponents: AvailableComponent[] = ["Badge"];
 
 export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
   useSassPalettePlugin(app, { id: "hope" });
@@ -30,11 +30,6 @@ export const componentsPlugin: Plugin<ComponentOptions> = (options, app) => {
     ),
 
     define: {
-      ARTICLE_INFO_LOCALES: getLocales(
-        app,
-        articleInfoLocales,
-        options.articleInfoLocales
-      ),
       BACK_TO_TOP_THRESHOLD: options.backToTopThreshold || 300,
       BACK_TO_TOP_LOCALES: getLocales(
         app,

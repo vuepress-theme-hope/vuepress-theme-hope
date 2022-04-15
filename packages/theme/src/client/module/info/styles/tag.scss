@@ -23,8 +23,8 @@
     line-height: 1.5;
     text-align: center;
 
-    transition: background-color var(--color-transition, 0.3s),
-      color var(--color-transition, 0.3s);
+    transition: background-color var(--color-transition),
+      color var(--color-transition);
 
     &.clickable:hover {
       cursor: pointer;

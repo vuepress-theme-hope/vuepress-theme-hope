@@ -1,9 +1,9 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { withBase } from "@vuepress/client";
 import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
-import { EyeIcon, FireIcon } from "./icons";
-import { articleInfoLocales } from "../define";
+
+import { EyeIcon, FireIcon } from "@theme-hope/module/info/components/icons";
+import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { VNode } from "vue";
 
@@ -11,20 +11,20 @@ export default defineComponent({
   name: "PageViewInfo",
 
   props: {
-    hint: {
-      type: Boolean,
-      default: true,
-    },
-
     pageview: {
       type: [Boolean, String],
+      default: false,
+    },
+
+    pure: {
+      type: Boolean,
       default: false,
     },
   },
 
   setup(props) {
     const route = useRoute();
-    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+    const metaLocale = useMetaLocale();
 
     const pageViews = ref(0);
 
@@ -57,8 +57,8 @@ export default defineComponent({
             "span",
             {
               class: "visitor-info",
-              ariaLabel: pageInfoLocale.value.views,
-              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
+              ariaLabel: `${metaLocale.value.views}${props.pure ? "" : "🔢"}`,
+              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [
               h(pageViews.value < 1000 ? EyeIcon : FireIcon),

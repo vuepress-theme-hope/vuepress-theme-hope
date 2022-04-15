@@ -1,7 +1,7 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
-import { CalendarIcon } from "./icons";
-import { articleInfoLocales } from "../define";
+
+import { CalendarIcon } from "@theme-hope/module/info/components/icons";
+import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { DateInfo } from "@mr-hope/vuepress-shared";
 import type { PropType, VNode } from "vue";
@@ -15,14 +15,14 @@ export default defineComponent({
       default: null,
     },
 
-    hint: {
+    pure: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
   setup(props) {
-    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+    const metaLocale = useMetaLocale();
 
     return (): VNode | null =>
       props.date
@@ -30,8 +30,8 @@ export default defineComponent({
             "span",
             {
               class: "date-info",
-              ariaLabel: pageInfoLocale.value.date,
-              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
+              ariaLabel: `${metaLocale.value.date}${props.pure ? "" : "📅"}`,
+              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [
               h(CalendarIcon),

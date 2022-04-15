@@ -3,7 +3,7 @@ import { usePageData } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { PageHeader } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";
@@ -68,8 +68,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const themeLocale = useThemeLocaleData();
     const page = usePageData();
+    const metaLocale = useMetaLocale();
 
     return (): VNode => {
       const tocHeaders = props.items.length
@@ -84,7 +84,7 @@ export default defineComponent({
           { id: "toc-list" },
           tocHeaders
             ? [
-                h("div", { class: "toc-header" }, themeLocale.value.tocLocales),
+                h("div", { class: "toc-header" }, metaLocale.value.toc),
                 h("div", { class: "toc-wrapper" }, [tocHeaders]),
               ]
             : []

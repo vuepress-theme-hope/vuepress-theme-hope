@@ -1,4 +1,4 @@
-import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
+import type { PageInfo } from "../../info";
 
 export interface HopeThemeBlogLocaleData {
   /** 文章文字 */
@@ -163,7 +163,7 @@ export interface HopeThemeBlogOptions {
    *
    * @default ["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]
    */
-  articleInfo?: ArticleInfo[];
+  articleInfo?: PageInfo[];
 }
 
 export type HopeThemeBlogConfig = HopeThemeBlogOptions;

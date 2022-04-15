@@ -10,6 +10,15 @@ export const viLocale: HopeThemeLocaleData = {
   },
 
   metaLocales: {
+    author: "Người viết",
+    date: "Ngày viết",
+    origin: "Nguồn",
+    views: "Views của trang",
+    category: "Category",
+    tag: "Tags",
+    readingTime: "Thời gian đọc",
+    words: "Words",
+    toc: "On This Page",
     prev: "Prev",
     next: "Next",
     lastUpdated: "Cập nhật gần nhất lúc",
@@ -60,7 +69,6 @@ export const viLocale: HopeThemeLocaleData = {
     ],
     back: "Quay lại",
     home: "Trang chủ",
+    openInNewWindow: "Open in new window",
   },
-
-  tocLocales: "On This Page",
 };

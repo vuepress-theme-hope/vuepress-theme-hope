@@ -17,8 +17,8 @@
     font-size: 0.75rem;
     line-height: 2;
 
-    transition: background-color var(--color-transition, 0.3s),
-      color var(--color-transition, 0.3s);
+    transition: background-color var(--color-transition),
+      color var(--color-transition);
 
     > span {
       &::after {
@@ -32,7 +32,7 @@
 
     &.clickable {
       > span:hover {
-        color: var(--c-brand, #3eaf7c);
+        color: var(--theme-color);
         cursor: pointer;
       }
     }

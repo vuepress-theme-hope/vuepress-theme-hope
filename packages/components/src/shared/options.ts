@@ -1,7 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { ArticleInfoLocaleData, BackToTopLocaleData } from "./locales";
+import type { BackToTopLocaleData } from "./locales";
 
-export type AvailableComponent = "ArticleInfo" | "Badge";
+export type AvailableComponent = "Badge";
 
 export interface ComponentOptions {
   /**
@@ -30,13 +30,6 @@ export interface ComponentOptions {
    * @default 300
    */
   backToTopThreshold?: number;
-
-  /**
-   * Locales config for articleInfo
-   *
-   * 文章信息的国际化配置
-   */
-  articleInfoLocales?: LocaleConfig<ArticleInfoLocaleData>;
 
   /**
    * backToTop button Locales config

@@ -10,6 +10,15 @@ export const zhLocale: HopeThemeLocaleData = {
   },
 
   metaLocales: {
+    author: "作者",
+    date: "写作日期",
+    origin: "原创",
+    views: "访问量",
+    category: "分类",
+    tag: "标签",
+    readingTime: "阅读时间",
+    words: "字数",
+    toc: "此页内容",
     prev: "上一页",
     next: "下一页",
     lastUpdated: "上次编辑于",
@@ -60,7 +69,6 @@ export const zhLocale: HopeThemeLocaleData = {
     ],
     back: "返回上一页",
     home: "带我回家",
+    openInNewWindow: "Open in new window",
   },
-
-  tocLocales: "此页内容",
 };

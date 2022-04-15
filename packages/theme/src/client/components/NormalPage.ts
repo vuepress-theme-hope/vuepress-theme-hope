@@ -4,12 +4,15 @@ import { computed, defineComponent, h, resolveComponent } from "vue";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import PageMeta from "@theme-hope/components/PageMeta";
 import PageNav from "@theme-hope/components/PageNav";
 import PageTitle from "@theme-hope/components/PageTitle";
-import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
-import TOC from "@theme-hope/components/TOC";
+
 import { useThemeLocaleData } from "@theme-hope/composables";
+
+import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
+import PageMeta from "@theme-hope/module/info/components/PageMeta";
+import TOC from "@theme-hope/module/info/components/TOC";
+
 import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 import { useDarkMode } from "@theme-hope/module/outlook/composables";
 

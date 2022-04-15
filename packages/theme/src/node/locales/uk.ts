@@ -10,6 +10,15 @@ export const ukLocale: HopeThemeLocaleData = {
   },
 
   metaLocales: {
+    author: "Автор",
+    date: "Дата написання",
+    origin: "Оригінал",
+    views: "Перегляди сторінки",
+    category: "Категорія",
+    tag: "Теги",
+    readingTime: "Час читання",
+    words: "Слова",
+    toc: "On This Page",
     prev: "Prev",
     next: "Next",
     lastUpdated: "Останнє оновлення",
@@ -60,7 +69,6 @@ export const ukLocale: HopeThemeLocaleData = {
     ],
     back: "Повернутися назад",
     home: "Повернутися на головну",
+    openInNewWindow: "Open in new window",
   },
-
-  tocLocales: "On This Page",
 };

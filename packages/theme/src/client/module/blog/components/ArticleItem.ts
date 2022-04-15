@@ -1,5 +1,5 @@
 import { withBase } from "@vuepress/client";
-import { computed, defineComponent, h, resolveComponent, toRef } from "vue";
+import { computed, defineComponent, h, toRef, unref } from "vue";
 import { RouterLink } from "vue-router";
 
 import {
@@ -14,6 +14,7 @@ import type { PropType, VNode } from "vue";
 import type { ArticleInfo } from "../../../../shared";
 
 import "../styles/article-item.scss";
+import PageInfo from "@theme-hope/module/info/components/PageInfo";
 
 export default defineComponent({
   name: "ArticleItem",
@@ -32,7 +33,7 @@ export default defineComponent({
 
     const isEncrypted = computed(() => getPathEncryptStatus(props.path));
 
-    const articleInfo = useArticleInfo(info);
+    const { config, items } = useArticleInfo(info);
 
     return (): VNode =>
       h(
@@ -69,7 +70,7 @@ export default defineComponent({
             ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
             : null,
           h("hr", { class: "hr" }),
-          h(resolveComponent("ArticleInfo"), articleInfo),
+          h(PageInfo, { config: unref(config), items: items.value }),
         ]
       );
   },

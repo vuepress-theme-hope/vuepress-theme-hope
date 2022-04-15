@@ -1,5 +1,5 @@
-import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { HopeThemePageFrontmatter } from "./base";
+import type { PageInfo } from "../info";
 import type { AutoLink } from "../utils";
 
 export interface HopeThemeNormalPageFrontmatter
@@ -143,7 +143,7 @@ export interface HopeThemeNormalPageFrontmatter
    *
    * @default ["Author", "Visitor", "Time", "Category", "Tag", "ReadTime"]
    */
-  pageInfo?: ArticleInfo[] | false;
+  pageInfo?: PageInfo[] | false;
 
   /**
    * Whether enable breadcrumb

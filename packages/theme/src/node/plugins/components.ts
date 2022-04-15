@@ -7,7 +7,7 @@ import type { HopeThemeOptions } from "../../shared";
 export const resolveComponentsPlugin = (
   themeConfig: HopeThemeOptions
 ): PluginConfig => {
-  const enabledComponents: AvailableComponent[] = ["ArticleInfo", "Badge"];
+  const enabledComponents: AvailableComponent[] = ["Badge"];
 
   return components({
     components: enabledComponents,

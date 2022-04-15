@@ -3,9 +3,9 @@ import {
   removeLeadingSlash,
   removeEndingSlash,
 } from "@vuepress/shared";
-import { resolveRepoType } from "./resolveRepoType";
+import { resolveRepoType } from "@theme-hope/utils";
 
-import type { RepoType } from "./resolveRepoType";
+import type { RepoType } from "@theme-hope/utils";
 
 export const editLinkPatterns: Record<Exclude<RepoType, null>, string> = {
   GitHub: ":repo/edit/:branch/:path",

@@ -1,7 +1,9 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h } from "vue";
-import { TimerIcon } from "./icons";
-import { articleInfoLocales, readingTimeLocales } from "../define";
+
+import { TimerIcon } from "@theme-hope/module/info/components/icons";
+import { useMetaLocale } from "@theme-hope/module/info/composables";
+import { readingTimeLocales } from "@theme-hope/module/info/utils";
 
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { PropType, VNode } from "vue";
@@ -15,14 +17,14 @@ export default defineComponent({
       default: () => null,
     },
 
-    hint: {
+    pure: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
   setup(props) {
-    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+    const metaLocale = useMetaLocale();
     const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
     const readingTime = computed(() => {
@@ -47,8 +49,10 @@ export default defineComponent({
             "span",
             {
               class: "reading-time-info",
-              ariaLabel: pageInfoLocale.value.readingTime,
-              ...(props.hint !== false ? { "data-balloon-pos": "down" } : {}),
+              ariaLabel: `${metaLocale.value.readingTime}${
+                props.pure ? "" : "⌛"
+              }`,
+              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [
               h(TimerIcon),

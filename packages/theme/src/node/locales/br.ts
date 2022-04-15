@@ -10,6 +10,15 @@ export const brLocale: HopeThemeLocaleData = {
   },
 
   metaLocales: {
+    author: "Autor",
+    date: "Escrito em",
+    origin: "Original",
+    views: "Visualizações",
+    category: "Categoria",
+    tag: "Tags",
+    readingTime: "Tempo de Leitura",
+    words: "Palavras",
+    toc: "On This Page",
     prev: "Prev",
     next: "Next",
     lastUpdated: "Última atualização",
@@ -60,7 +69,6 @@ export const brLocale: HopeThemeLocaleData = {
     ],
     back: "Voltar",
     home: "Leve-me para casa",
+    openInNewWindow: "Open in new window",
   },
-
-  tocLocales: "On This Page",
 };

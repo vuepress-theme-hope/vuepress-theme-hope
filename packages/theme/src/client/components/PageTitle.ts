@@ -1,14 +1,13 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { defineComponent, h, resolveComponent } from "vue";
+import { defineComponent, h, unref } from "vue";
 
-import {
-  useIconPrefix,
-  usePageInfo,
-  useThemeLocaleData,
-} from "@theme-hope/composables";
+import { useIconPrefix, useThemeLocaleData } from "@theme-hope/composables";
 
-import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
+import PageInfo from "@theme-hope/module/info/components/PageInfo";
+import { usePageInfo } from "@theme-hope/composables";
+
 import type { VNode } from "vue";
+import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
 import "../styles/page-title.scss";
 
@@ -17,10 +16,10 @@ export default defineComponent({
 
   setup() {
     const page = usePageData();
-    const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
-    const pageInfoProps = usePageInfo();
+    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
     const iconPrefix = useIconPrefix();
+    const { config, items } = usePageInfo();
 
     return (): VNode =>
       h("div", { class: "page-title" }, [
@@ -32,7 +31,7 @@ export default defineComponent({
             : null,
           page.value.title,
         ]),
-        h(resolveComponent("ArticleInfo"), { ...pageInfoProps }),
+        h(PageInfo, { config: unref(config), items: items.value }),
         h("hr"),
       ]);
   },

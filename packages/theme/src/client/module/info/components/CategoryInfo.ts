@@ -1,14 +1,12 @@
-import {
-  generateIndexfromHash,
-  useLocaleConfig,
-} from "@mr-hope/vuepress-shared/lib/client";
+import { generateIndexfromHash } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { CategoryIcon } from "./icons";
-import { articleInfoLocales } from "../define";
+
+import { CategoryIcon } from "@theme-hope/module/info/components/icons";
+import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleCategory } from "../../shared";
+import type { PageCategory } from "../../../../shared";
 
 import "../styles/category.scss";
 
@@ -17,25 +15,20 @@ export default defineComponent({
 
   props: {
     category: {
-      type: Array as PropType<ArticleCategory[]>,
+      type: Array as PropType<PageCategory[]>,
       required: true,
     },
 
-    hint: {
+    pure: {
       type: Boolean,
-      default: true,
-    },
-
-    color: {
-      type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
   setup(props) {
     const router = useRouter();
     const route = useRoute();
-    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+    const metaLocale = useMetaLocale();
 
     const navigate = (path = ""): void => {
       if (path && route.path !== path) void router.push(path);
@@ -47,8 +40,10 @@ export default defineComponent({
             "span",
             {
               class: "category-info",
-              ariaLabel: pageInfoLocale.value.category,
-              ...(props.hint ? { "data-balloon-pos": "down" } : {}),
+              ariaLabel: `${metaLocale.value.category}${
+                props.pure ? "" : "🌈"
+              }`,
+              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [
               h(CategoryIcon),
@@ -62,7 +57,7 @@ export default defineComponent({
                         {
                           // TODO: magic number 9 is tricky here
                           [`category${generateIndexfromHash(name, 9)}`]:
-                            props.color,
+                            !props.pure,
                           clickable: path,
                         },
                       ],

@@ -25,17 +25,6 @@ export default [
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
-  ...rollupTypescript("client/components/ArticleInfo", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "@vuepress/client",
-      "balloon-css/balloon.css",
-      "vue",
-      "vue-router",
-      /\.scss$/,
-    ],
-    dtsExternal: ["balloon-css/balloon.css", /\.scss$/],
-  }),
   ...rollupTypescript("client/components/Badge", {
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],

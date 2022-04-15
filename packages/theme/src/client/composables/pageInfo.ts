@@ -6,13 +6,8 @@ import {
 } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, inject, reactive } from "vue";
-import { usePure, useThemeLocaleData } from "./themeData";
+import { useThemeLocaleData } from "./themeData";
 
-import type {
-  ArticleCategory,
-  ArticleTag,
-  PageTitleProps,
-} from "@mr-hope/vuepress-plugin-components";
 import type {
   AuthorInfo,
   BasePageFrontMatter,
@@ -20,10 +15,16 @@ import type {
   DateOptions,
 } from "@mr-hope/vuepress-shared";
 import type { GitData } from "@vuepress/plugin-git";
-import type { ComputedRef, UnwrapNestedRefs } from "vue";
+import type { ComputedRef } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { CategoryMapRef } from "@theme-hope/module/blog/composables";
-import type { HopeThemeNormalPageFrontmatter } from "../../shared";
+import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
+import type {
+  HopeThemeNormalPageFrontmatter,
+  PageCategory,
+  PageInfo,
+  PageTag,
+} from "../../shared";
 
 declare const ENABLE_BLOG: boolean;
 declare const ENABLE_VISITOR: boolean;
@@ -42,7 +43,7 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   });
 };
 
-export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
+export const usePageCategory = (): ComputedRef<PageCategory[]> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
 
   return computed(() =>
@@ -57,7 +58,7 @@ export const usePageCategory = (): ComputedRef<ArticleCategory[]> => {
   );
 };
 
-export const usePageTag = (): ComputedRef<ArticleTag[]> => {
+export const usePageTag = (): ComputedRef<PageTag[]> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
 
   return computed(() =>
@@ -91,7 +92,10 @@ export const usePageDate = (): ComputedRef<DateInfo | null> => {
   });
 };
 
-export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
+export const usePageInfo = (): {
+  config: PageInfoProps;
+  items: ComputedRef<PageInfo[] | false | undefined>;
+} => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<{ readingTime: ReadingTime }>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
@@ -99,13 +103,8 @@ export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
   const category = usePageCategory();
   const tag = usePageTag();
   const date = usePageDate();
-  const pure = usePure();
 
-  return reactive<PageTitleProps>({
-    config:
-      frontmatter.value.pageInfo === false
-        ? false
-        : frontmatter.value.pageInfo || themeLocale.value.pageInfo,
+  const config = reactive<PageInfoProps>({
     author: author.value,
     category: category.value,
     date: date.value,
@@ -116,7 +115,13 @@ export const usePageInfo = (): UnwrapNestedRefs<PageTitleProps> => {
       "pageview" in frontmatter.value
         ? frontmatter.value.pageview
         : ENABLE_VISITOR,
-    color: !pure.value,
-    hint: !pure.value,
   });
+
+  const items = computed(() =>
+    frontmatter.value.pageInfo === false
+      ? false
+      : frontmatter.value.pageInfo || themeLocale.value.pageInfo
+  );
+
+  return { config, items };
 };

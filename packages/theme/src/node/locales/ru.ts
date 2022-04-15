@@ -10,6 +10,15 @@ export const ruLocale: HopeThemeLocaleData = {
   },
 
   metaLocales: {
+    author: "Автор",
+    date: "Дата написания",
+    origin: "Оригинал",
+    views: "Просмотры страницы",
+    category: "Категория",
+    tag: "Тэги🏷",
+    readingTime: "Время чтения",
+    words: "Слова",
+    toc: "On This Page",
     prev: "Prev",
     next: "Next",
     lastUpdated: "Последнее обновление",
@@ -60,7 +69,6 @@ export const ruLocale: HopeThemeLocaleData = {
     ],
     back: "Вернуться назад",
     home: "Вернуться на главную",
+    openInNewWindow: "Open in new window",
   },
-
-  tocLocales: "On This Page",
 };

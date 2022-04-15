@@ -1,14 +1,12 @@
-import {
-  generateIndexfromHash,
-  useLocaleConfig,
-} from "@mr-hope/vuepress-shared/lib/client";
+import { generateIndexfromHash } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { TagIcon } from "./icons";
-import { articleInfoLocales } from "../define";
+
+import { TagIcon } from "@theme-hope/module/info/components/icons";
+import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleTag } from "../../shared";
+import type { PageTag } from "../../../../shared";
 
 import "../styles/tag.scss";
 
@@ -17,25 +15,20 @@ export default defineComponent({
 
   props: {
     tag: {
-      type: Array as PropType<ArticleTag[]>,
+      type: Array as PropType<PageTag[]>,
       default: () => [],
     },
 
-    hint: {
+    pure: {
       type: Boolean,
-      default: true,
-    },
-
-    color: {
-      type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
   setup(props) {
     const router = useRouter();
     const route = useRoute();
-    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+    const metaLocale = useMetaLocale();
 
     const navigate = (path = ""): void => {
       if (path && route.path !== path) void router.push(path);
@@ -46,8 +39,8 @@ export default defineComponent({
         ? h(
             "span",
             {
-              ariaLabel: pageInfoLocale.value.tag,
-              ...(props.hint ? { "data-balloon-pos": "down" } : {}),
+              ariaLabel: `${metaLocale.value.tag}${props.pure ? "" : "🏷"}`,
+              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [
               h(TagIcon),
@@ -62,7 +55,7 @@ export default defineComponent({
                         "tag",
                         {
                           // TODO: magic number 9 is tricky here
-                          [`tag${generateIndexfromHash(name, 9)}`]: props.color,
+                          [`tag${generateIndexfromHash(name, 9)}`]: !props.pure,
                           clickable: path,
                         },
                       ],

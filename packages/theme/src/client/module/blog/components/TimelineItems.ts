@@ -2,12 +2,12 @@ import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import TOC from "@theme-hope/components/TOC";
 import { useThemeLocaleData } from "@theme-hope/composables";
 import {
   useBlogOptions,
   useTimelines,
 } from "@theme-hope/module/blog/composables";
+import TOC from "@theme-hope/module/info/components/TOC";
 
 import type { VNode } from "vue";
 

@@ -1,6 +1,6 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h } from "vue";
-import { articleInfoLocales } from "../define";
+
+import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { VNode } from "vue";
 
@@ -12,11 +12,11 @@ export default defineComponent({
   },
 
   setup(props) {
-    const pageInfoLocale = useLocaleConfig(articleInfoLocales);
+    const metaLocale = useMetaLocale();
 
     return (): VNode | null =>
       props.isOriginal
-        ? h("span", { class: "origin" }, pageInfoLocale.value.origin)
+        ? h("span", { class: "origin" }, metaLocale.value.origin)
         : null;
   },
 });
