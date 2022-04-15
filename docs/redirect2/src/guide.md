@@ -66,13 +66,11 @@ Sometimes you may change `base` or use new domain for your site, so you may want
 To solve this, the plugin provide `vp-redirect` cli.
 
 ```shell
-vp-redirect/2.0.0-beta.40
-
 Usage:
   $ vp-redirect generate [sourceDir]
 
 Options:
-  --hostname <hostname>  Hostname to redirect to (E.g.: https://new.example.com/) (Required)
+  --hostname <hostname>  Hostname to redirect to (E.g.: https://new.example.com/) (default: /)
   -c, --config <config>  Set path to config file
   -o, --output <output>  Set the output directory (default: .vuepress/redirect)
   --cache <cache>        Set the directory of the cache files

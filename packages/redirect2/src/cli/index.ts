@@ -24,7 +24,10 @@ cli
   )
   .option(
     "--hostname <hostname>",
-    "Hostname to redirect to (E.g.: https://new.example.com/)"
+    "Hostname to redirect to (E.g.: https://new.example.com/)",
+    {
+      default: "/",
+    }
   )
   .option("-c, --config <config>", "Set path to config file")
   .option(
@@ -49,11 +52,6 @@ cli
       }
     ) => {
       if (!sourceDir) return cli.outputHelp();
-
-      if (!commandOptions.hostname)
-        return console.error(
-          "Missing hostname option.\nRun `vp-redirect --help` for more information."
-        );
 
       if (process.env.NODE_ENV === undefined) {
         process.env.NODE_ENV = "production";
