@@ -109,7 +109,7 @@ const generatePageMap = (
         });
 
       links = relatedLocales.map((localePrefix) => ({
-        lang: locales[localePrefix].lang || "en",
+        lang: locales[localePrefix]?.lang || "en",
         url: `${base}${removeLeadingSlash(
           defaultPath.replace(/^\//u, localePrefix)
         )}`,
