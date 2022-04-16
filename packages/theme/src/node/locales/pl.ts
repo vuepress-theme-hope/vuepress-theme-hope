@@ -11,7 +11,7 @@ export const plLocale: HopeThemeLocaleData = {
 
   metaLocales: {
     author: "Autor",
-    date: "Data pisania",
+    date: "Utworzono",
     origin: "Oryginał💡",
     views: "Wyświetlenia strony",
     category: "Kategoria",
