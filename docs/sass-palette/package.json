@@ -1,6 +1,6 @@
 {
   "name": "sass-palette-docs",
-  "version": "2.0.0-beta.42",
+  "version": "2.0.0-beta.43",
   "private": true,
   "description": "Docs for vuepress-plugin-sass-palette",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "@types/three": "0.139.0",
     "@vuepress/plugin-docsearch": "2.0.0-beta.38",
     "three": "0.139.2",
-    "vuepress-theme-hope": "2.0.0-beta.42",
+    "vuepress-theme-hope": "2.0.0-beta.43",
     "vuepress-vite": "2.0.0-beta.39",
     "vuepress-webpack": "2.0.0-beta.38"
   }

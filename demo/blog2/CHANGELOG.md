@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.42...v2.0.0-beta.43) (2022-04-16)
+
+**Note:** Version bump only for package blog2-demo
+
 # [2.0.0-beta.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.41...v2.0.0-beta.42) (2022-04-16)
 
 **Note:** Version bump only for package blog2-demo
