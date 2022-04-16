@@ -146,18 +146,18 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 
 ## 规范链接
 
-如果您将内容部署到不同的站点，或不同 URL 下的相同内容，您可能需要在 `themeConfig.plugins.seo` 中设置 `canonical` 选项为您的页面提供 “规范链接”。 您可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | 如有必要，null` 返回规范链接。
+如果你将内容部署到不同的站点，或不同 URL 下的相同内容，你可能需要在 `themeConfig.plugins.seo` 中设置 `canonical` 选项为你的页面提供 “规范链接”。 你可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | 如有必要，null` 返回规范链接。
 
 ::: tip 例子
 
-如果您的站点部署在 `example.com` 的 docs 文件夹下，但同时在下列网址中可用:
+如果你的站点部署在 `example.com` 的 docs 文件夹下，但同时在下列网址中可用:
 
 - `http://example.com/docs/xxx`
 - `https://example.com/docs/xxx`
 - `http://www.example.com/docs/xxx`
 - `https://www.example.com/docs/xxx` (首选)
 
-要让搜索引擎结果始终是首选，您可能需要将 `canonical` 设置为 `https://www.example.com/docs/`，以便搜索引擎知道首选第四个 URL 作为索引结果。
+要让搜索引擎结果始终是首选，你可能需要将 `canonical` 设置为 `https://www.example.com/docs/`，以便搜索引擎知道首选第四个 URL 作为索引结果。
 
 :::
 

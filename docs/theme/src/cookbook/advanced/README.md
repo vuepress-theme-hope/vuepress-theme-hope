@@ -40,6 +40,6 @@ We do not want to "describe all the concepts involved and their usage to you" an
 
 - [Customize Style](style.md)
 
-- [Replacing Component](customize.md)
+- [Replacing Component](replace.md)
 
 - [Theme Extending](extend.md)

@@ -13,6 +13,8 @@ icon: change
 
 ## 新增功能
 
+- 添加 `customElements` 选项以控制应在 Feed 中删除哪些元素
+
 - 多分类支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
 - 通过 `getter` 选项完全自定义 Feed 生成 ![新增](https://img.shields.io/badge/-新增-brightgreen)

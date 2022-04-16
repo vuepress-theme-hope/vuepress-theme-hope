@@ -140,7 +140,7 @@ Footer content.
 - Set it to `false` to disable the footer
 - Set it to `true` to display the default footer
 
-For more details, please see [Page → Footer Support](../guide/layout/footer.md).
+For more details, please see [Page → Footer Support](../../guide/layout/footer.md).
 
 ## copyright
 
@@ -149,7 +149,7 @@ For more details, please see [Page → Footer Support](../guide/layout/footer.md
 
 Copyright information
 
-For more details, please see [Page → Footer Support](../guide/layout/footer.md).
+For more details, please see [Page → Footer Support](../../guide/layout/footer.md).
 
 ## backToTop
 

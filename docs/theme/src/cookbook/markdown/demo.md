@@ -161,22 +161,14 @@ In codes above, two spaces are behind `at`.
 
 ## Link
 
-[Home page using absolute path](/v2/)
+[Home page using absolute path](/)
 
 [Home page using relative path](../../README.md)
-
-[FAQ page using absolute path](/v2/faq)
-
-[FAQ page using relative path](../../faq.md)
 
 ```md
-[Home page using absolute path](/v2/)
+[Home page using absolute path](/)
 
 [Home page using relative path](../../README.md)
-
-[FAQ page using absolute path](/v2/faq)
-
-[FAQ page using relative path](../../faq.md)
 ```
 
 ::: tip
