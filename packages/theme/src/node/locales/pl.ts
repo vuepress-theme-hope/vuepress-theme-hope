@@ -12,7 +12,7 @@ export const plLocale: HopeThemeLocaleData = {
   metaLocales: {
     author: "Autor",
     date: "Utworzono",
-    origin: "Oryginał💡",
+    origin: "Oryginał",
     views: "Wyświetlenia strony",
     category: "Kategoria",
     tag: "Tagi",
@@ -69,6 +69,6 @@ export const plLocale: HopeThemeLocaleData = {
     ],
     back: "Wróć",
     home: "Strona główna",
-    openInNewWindow: "Open in new window",
+    openInNewWindow: "Otwórz w nowym oknie",
   },
 };
