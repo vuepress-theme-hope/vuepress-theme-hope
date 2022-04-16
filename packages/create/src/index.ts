@@ -19,7 +19,7 @@ import { getRegistry } from "./registry";
 
 const cli = cac("vuepress-theme-hope");
 // eslint-disable-next-line
-const version = require("../..//package.json").version as string;
+const version = require("../../package.json").version as string;
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
