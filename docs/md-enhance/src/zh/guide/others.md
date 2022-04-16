@@ -3,6 +3,12 @@ title: 其他
 icon: more
 ---
 
+## 链接检查
+
+`vuepress-plugin-md-enhance` 默认在开发模式下检查你的 Markdown 链接。
+
+你可以通过插件选项中的 `linkCheck` 自定义此功能，你可以选择 `'always'`、`'never'`、`'dev'` 和 `'build'`。
+
 ## v-pre
 
 由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项支持它。也就是你可以在下面的容器中使用任何 Mustacle 语法。

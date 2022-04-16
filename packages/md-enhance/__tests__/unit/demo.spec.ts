@@ -1,6 +1,6 @@
 import MarkdownIt = require("markdown-it");
 import MarkdownContainer = require("markdown-it-container");
-import { codeDemoRender } from "../../src/node/markdown-it/code-demo";
+import { codeDemoRender } from "../../src/node/markdown-it/codeDemo";
 
 describe("demo", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(

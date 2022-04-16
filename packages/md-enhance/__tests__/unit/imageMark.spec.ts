@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { imageMark } from "../../src/node/markdown-it/image-mark";
+import { imageMark } from "../../src/node/markdown-it/imageMark";
 
 describe("Image Mark", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(imageMark);

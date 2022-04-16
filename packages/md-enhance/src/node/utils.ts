@@ -1,3 +1,5 @@
+import { Logger } from "@mr-hope/vuepress-shared";
+
 export const MATHML_TAGS = [
   "math",
   "maction",
@@ -42,3 +44,5 @@ export const MATHML_TAGS = [
   "annotation",
   "annotation-xml",
 ];
+
+export const logger = new Logger("vuepress-plugin-md-enhance");

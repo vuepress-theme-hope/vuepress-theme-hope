@@ -15,6 +15,12 @@ icon: change
 
 ## New Features
 
+- markdown link check
+
+  The plugin now check your markdown links and warn you when broken links are detected.
+
+  You can control this behavior with `linkCheck` option
+
 - `v-pre` support
 
   The following container support is removed from `@vuepress/core`, so this option is added

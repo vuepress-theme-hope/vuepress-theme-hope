@@ -83,6 +83,20 @@ Whether to enable custom container including
 - danger
 - details
 
+### linkCheck
+
+- Type: `"always" | "dev" | "build" | "never" | boolean`
+- Default: `"dev"`
+
+Whether to enable link check.
+
+::: note
+
+- `true` equals to `'always'`
+- `false` equals to `'never'`
+
+:::
+
 ### vpre
 
 - Type: `boolean`

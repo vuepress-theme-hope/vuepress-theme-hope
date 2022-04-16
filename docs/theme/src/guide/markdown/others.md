@@ -7,6 +7,12 @@ tag:
   - Markdown
 ---
 
+## Link check
+
+The theme will check your markdown links in dev mode by default.
+
+You can customize this feature through `linkCheck` options in `themeConfig.plugins.mdEnhance`, and you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
+
 ## v-pre
 
 Since VuePress2 has removed V1’s v-pre container in core, the plugin provides an option to support it. That is, you can use any Mustacle syntax in the container below.
@@ -23,7 +29,7 @@ Since VuePress2 has removed V1’s v-pre container in core, the plugin provides 
 
 GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub’s markup and the easy markup `#light` and `#dark`.
 
-You can enable it using `imageMark` option.
+You can enable it using `imageMark` option in `themeConfig.plugins.mdEnhance`.
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
@@ -47,7 +53,7 @@ The above demo will render the following result
 
 ## GFM
 
-If your docs both serve on documentation site and directly on GitHub, we provide a `gfm` option to align your Markdown behavior with GitHub.
+If your docs both serve on documentation site and directly on GitHub, we provide a `gfm` option in `themeConfig.plugins.mdEnhance` to align your Markdown behavior with GitHub.
 
 ::: note
 

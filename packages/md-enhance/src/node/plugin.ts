@@ -6,6 +6,8 @@ import {
   addViteSsrNoExternal,
 } from "@mr-hope/vuepress-shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+
+import { checkLinks, getCheckLinksStatus } from "./checkLink";
 import {
   codeDemoDefaultSetting,
   flowchart,
@@ -48,6 +50,8 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   const mermaidEnable = getStatus("mermaid");
   const presentationEnable = getStatus("presentation");
   const texEnable = getStatus("tex");
+
+  const shouldCheckLinks = getCheckLinksStatus(app, options);
 
   const katexOptions: KatexOptions = {
     macros: {
@@ -111,11 +115,15 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       if (presentationEnable) markdownIt.use(presentation);
     },
 
+    extendsPage: (page, app): void => {
+      // app already initailzed
+      if (shouldCheckLinks && app.pages) {
+        checkLinks(page, app);
+      }
+    },
+
     onInitialized: async (app): Promise<void> => {
-      await Promise.all([
-        prepareAppEnhanceFile(app, options),
-        prepareRevealPluginFile(app, revealPlugins),
-      ]);
+      if (shouldCheckLinks) app.pages.forEach((page) => checkLinks(page, app));
 
       if (katexOptions.output !== "html") addCustomElement(app, MATHML_TAGS);
 
@@ -150,6 +158,11 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         ]);
         addViteSsrExternal(app, "reveal.js");
       }
+
+      await Promise.all([
+        prepareAppEnhanceFile(app, options),
+        prepareRevealPluginFile(app, revealPlugins),
+      ]);
     },
 
     clientAppEnhanceFiles: app.dir.temp(`md-enhance/appEnhance.js`),

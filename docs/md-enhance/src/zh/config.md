@@ -63,6 +63,20 @@ icon: config
 
 :::
 
+## linkCheck
+
+- 类型: `"always" | "dev" | "build" | "never" | boolean`
+- 默认值: `"dev"`
+
+是否启用链接检查。
+
+::: note
+
+- `true` 等同于 `'always'`
+- `false` 等同于 `'never'`
+
+:::
+
 ## vpre
 
 - 类型: `boolean`

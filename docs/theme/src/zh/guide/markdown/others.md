@@ -7,6 +7,12 @@ tag:
   - Markdown
 ---
 
+## 链接检查
+
+主题默认在开发模式下检查你的 Markdown 链接。
+
+你可以通过 `themeConfig.plugins.mdEnhance` 中的 `linkCheck` 自定义此功能，你可以选择 `'always'`、`'never'`、`'dev'` 和 `'build'`。
+
 ## v-pre
 
 由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项支持它。也就是你可以在下面的容器中使用任何 Mustacle 语法。
@@ -23,7 +29,7 @@ tag:
 
 GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我们同时支持 GitHub 的标记与简易标记 `#light` 和 `#dark`。
 
-你可以通过 `imageMark` 选项控制它。
+你可以通过 `themeConfig.plugins.mdEnhance` 中的 `imageMark` 选项控制它。
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
@@ -47,7 +53,7 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 ## GFM
 
-如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们提供了一个 `gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。
+如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们在 `themeConfig.plugins.mdEnhance` 中提供了一个 `gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。
 
 ::: note
 

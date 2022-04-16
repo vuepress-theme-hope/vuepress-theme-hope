@@ -63,6 +63,20 @@ The last 4 items conflict with default theme and will overide it’s style.
 
 :::
 
+## linkCheck
+
+- Type: `"always" | "dev" | "build" | "never" | boolean`
+- Default: `"dev"`
+
+Whether to enable link check.
+
+::: note
+
+- `true` equals to `'always'`
+- `false` equals to `'never'`
+
+:::
+
 ## vpre
 
 - Type: `boolean`

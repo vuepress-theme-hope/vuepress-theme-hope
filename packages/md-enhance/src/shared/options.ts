@@ -10,6 +10,15 @@ import type { TaskListOptions } from "./tasklist";
  */
 export interface MarkdownEnhanceOptions {
   /**
+   * Whether check dead links in markdown
+   *
+   * @description `true` equals to `'always'`, `false` equals to `'never'`
+   *
+   * @default 'dev'
+   */
+  linkCheck?: "always" | "dev" | "build" | "never" | boolean;
+
+  /**
    * Whether enable standard GFM support
    *
    * 是否启用标准的 GitHub Favor Markdown 支持

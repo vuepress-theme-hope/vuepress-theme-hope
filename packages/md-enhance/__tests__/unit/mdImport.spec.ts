@@ -1,7 +1,7 @@
 import { path } from "@vuepress/utils";
 import MarkdownIt = require("markdown-it");
 import MarkdownContainer = require("markdown-it-container");
-import { mdImport } from "../../src/node/markdown-it/md-import";
+import { mdImport } from "../../src/node/markdown-it/mdImport";
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 
