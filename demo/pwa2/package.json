@@ -1,6 +1,6 @@
 {
   "name": "pwa2-demo",
-  "version": "2.0.0-beta.43",
+  "version": "2.0.0-beta.44",
   "private": true,
   "description": "Demo for vuepress-plugin-pwa2",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "vuepress-plugin-pwa2": "2.0.0-beta.43",
+    "vuepress-plugin-pwa2": "2.0.0-beta.44",
     "vuepress-vite": "2.0.0-beta.39",
     "vuepress-webpack": "2.0.0-beta.38"
   }

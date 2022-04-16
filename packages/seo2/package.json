@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-seo2",
-  "version": "2.0.0-beta.43",
+  "version": "2.0.0-beta.44",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -36,7 +36,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.43",
+    "@mr-hope/vuepress-shared": "2.0.0-beta.44",
     "@vuepress/shared": "2.0.0-beta.38",
     "@vuepress/utils": "2.0.0-beta.38"
   },
