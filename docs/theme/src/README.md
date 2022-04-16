@@ -61,7 +61,7 @@ features:
 
   - title: Article Encryption
     icon: lock
-    details: Encrypt you article based on path and folders, so that only the one you want could see them
+    details: Encrypt you articles based on page links, so that only the one you want could see them
     link: /guide/feature/encrypt.html
 
   - title: Copy button
@@ -105,7 +105,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 ## 🛠Install
 
-Create a vuepress-theme-hope project in `[dir]` folder under the current project:
+Create a vuepress-theme-hope project in `[dir]` directory under the current project:
 
 :::: code-group
 

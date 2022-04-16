@@ -29,9 +29,9 @@ If you have not installed yarn, please install it using `npm i -g yarn`.
 
 The project is a monorepo, managed by `lerna`.
 
-- `docs`: place the documentation of each plugin and theme, each subfolder is a project
+- `docs`: place the documentation of each plugin and theme, each subdirectory is a project
 - `demo`: theme demo project
-- `packages`: place the code of each plugin and theme, each subfolder is a project
+- `packages`: place the code of each plugin and theme, each subdirectory is a project
 
 ```
 .
@@ -91,7 +91,7 @@ The project is a monorepo, managed by `lerna`.
 
 ## Document Modification
 
-You can find the corresponding project in the docs folder so you can modify the corresponding Markdown directly.
+You can find the corresponding project in the docs directory so you can modify the corresponding Markdown directly.
 
 After ensuring that the `yarn run lint` and `yarn run lint:md` commands emit no errors, you can commit to GitHub to open a PR.
 
@@ -118,11 +118,11 @@ The structure of each project is as follows:
   └── shared → Shared files between node and client
 ```
 
-Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client folders cannot be cross-referenced.
+Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client directorys cannot be cross-referenced.
 
-- `client` folder stores the client code, compiled in esm format
-- `node` folder stores the Node.js code, compiled in cjs format
-- `shared` folder basically stores TypeScript types, and is compiled in cjs format. It can be referenced by the client and node folders.
+- `client` directory stores the client code, compiled in esm format
+- `node` directory stores the Node.js code, compiled in cjs format
+- `shared` directory basically stores TypeScript types, and is compiled in cjs format. It can be referenced by the client and node directorys.
 
 For better performance, all plugins are packed and minified using rollup when they are published.
 

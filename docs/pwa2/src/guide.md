@@ -177,7 +177,7 @@ You can manually specify the contents of the manifest in the `manifest` option.
 
 ::: tip Priority
 
-`manifest` option has the highest priority, followed by manifest files that may exist in the `public` folder.
+`manifest` option has the highest priority, followed by manifest files that may exist in the `public` directory.
 
 :::
 
@@ -191,7 +191,7 @@ So if you do not configure `manifest.icons`, visitors can only enjoy the offline
 
 Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the URL prefix to manifest Urls yourself.
 
-But, if everything you need is all under base folder, you can set `appendBase: true` in plugin options to let the plugin append `base` to any Urls in
+If everything you need is all under `base` directory, you can set `appendBase: true` in plugin options to let the plugin append `base` to any links in manifest.
 
 :::
 

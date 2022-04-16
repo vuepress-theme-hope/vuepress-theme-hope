@@ -8,4 +8,4 @@ You can use this demo directly via:
 npm init vuepress-theme-hope@next [dir]
 ```
 
-where `[dir]` is the folder you want to put the demo in.
+where `[dir]` is the directory you want to put the demo in.

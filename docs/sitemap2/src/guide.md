@@ -17,7 +17,7 @@ If you don’t want certain pages to appear in the sitemap, you can turn them in
 
 ## Output Location
 
-You can also control the output link through the `sitemapFilename` option of the plugin, the link is relative to dest folder. Default value is `sitemap.xml`.
+You can also control the output link through the `sitemapFilename` option of the plugin, the link is relative to doutput directory. By default the plugin will use `sitemap.xml`.
 
 ## Change Frequency
 
@@ -67,7 +67,7 @@ Sitemaps is a protocol for site administrators to publish pages that can be craw
 
 ::: warning Together with robots.txt
 
-Sitemap is basically used by search engines, when using this plugin, you’d better ensure that you have a valid `rotbot.txt` in the `.vuepress/public` folder to allow search engines spiders to visit your site. A simplest robots.txt is as follows (allow all search engines to access all paths)
+Sitemap is basically used by search engines, when using this plugin, you’d better ensure that you have a valid `rotbot.txt` in the `.vuepress/public` directory to allow search engines spiders to visit your site. A simplest robots.txt is as follows (allow all search engines to access all paths)
 
 ```txt
 User-agent: *

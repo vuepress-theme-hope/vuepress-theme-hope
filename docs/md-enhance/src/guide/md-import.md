@@ -79,7 +79,7 @@ To partially import the file:
 
 ## Advanced
 
-You can also pass a function to handle your file path. E.g.: you can use `@src` as an alias for your source folder.
+You can also pass a function to handle your file path. E.g.: you can use `@src` as an alias for your source directory.
 
 :::: code-group
 

@@ -130,21 +130,21 @@ For available options, please see [Config → Channel][feed-config-channel]
 - Type: `string`
 - Default: `atom.xml`
 
-Atom syntax output filename, relative to dest folder
+Atom syntax output filename, relative to output directory.
 
 ### jsonOutputFilename
 
 - Type: `string`
 - Default: `feed.json`
 
-JSON syntax output filename, relative to dest folder
+JSON syntax output filename, relative to output directory.
 
 ### rssOutputFilename
 
 - Type: `string`
 - Default: `rss.xml`
 
-RSS syntax output filename, relative to dest folder.
+RSS syntax output filename, relative to output directory.
 
 ### getter
 

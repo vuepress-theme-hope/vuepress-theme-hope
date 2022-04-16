@@ -43,7 +43,7 @@ The `config` option also accepts a function whose argument is `App`, the return 
 
 ::: tip Example
 
-Suppose we already have some articles under the `post` folder, and in an update, we rename `post` to `posts`, then we can define a redirect map like this:
+Suppose we already have some articles under the `post` directory, and in an update, we rename `post` to `posts`, then we can define a redirect map like this:
 
 ```js
 redirect({
@@ -80,6 +80,6 @@ Options:
   -h, --help             Display this message
 ```
 
-You need to pass in VuePress project source dir and also set the `hostname` option. The redirect helper cli will initialize your VuePress project to get pages, then generate and output the redirect html files to the `output` directory.
+You need to pass in VuePress project source dir and also set the `hostname` option. The redirect helper cli will initialize your VuePress project to get pages, then generate and output the redirect html files to the output directory.
 
-By default the plugin will output to `.vuepress/redirect` directory under source folder. And you should upload it to your original site to provide redirection.
+By default the plugin will output to `.vuepress/redirect` directory under source directory. And you should upload it to your original site to provide redirection.

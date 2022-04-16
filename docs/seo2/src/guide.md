@@ -134,7 +134,7 @@ If you are deploying your content to different sites, or same content under diff
 
 ::: tip Example
 
-If your sites are deploy under docs folder in `example.com`, but available in:
+If your sites are deploy under docs directory in `example.com`, but available in:
 
 - `http://example.com/docs/xxx`
 - `https://example.com/docs/xxx`

@@ -25,7 +25,7 @@ This will allows you to:
 
 - With different ID, plugins and theme won’t affect others. We recommand you to set the `id` variable with your plugin name.
 
-  With the default settings, users will set your plugin style under `.vuepress/styles` folder with Sass files starting with your ID prefix. And you can access the variables you need with `${id}-config`.
+  With the default settings, users will set your plugin style under `.vuepress/styles` directory with Sass files starting with your ID prefix. And you can access the variables you need with `${id}-config`.
 
   ::: tip Example
 
@@ -41,7 +41,7 @@ We have three style concept here: config, palette and generator.
 
 Config file is used for Sass variable only. It holds Sass variables which can be used in other files later.
 
-You can specific a file (probably in `.vuepress/styles/` folder) as user config file. So you can get the module containing every variables later in Sass files. Also, you are able to provide a default config files where you can place fallback values for variables with `!default`.
+You can specific a file (probably in `.vuepress/styles/` directory) as user config file. So you can get the module containing every variables later in Sass files. Also, you are able to provide a default config files where you can place fallback values for variables with `!default`.
 
 ::: details An example
 
@@ -108,7 +108,7 @@ If the Scss file is not imported directly, but is imported through `@use` or `@i
 
 Palette files are used for CSS varaible injection, where each variable will be injected in to root with kebab-name of variable name.
 
-You can specific a file (probably in `.vuepress/styles/` folder) as user palette file, and the default filename is `${id}-palette.scss`. Also, you are able to provide a default palette files where you can place fallback values for variables with `!default`.
+You can specific a file (probably in `.vuepress/styles/` directory) as user palette file, and the default filename is `${id}-palette.scss`. Also, you are able to provide a default palette files where you can place fallback values for variables with `!default`.
 
 ::: details An example
 
