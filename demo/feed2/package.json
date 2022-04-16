@@ -1,6 +1,6 @@
 {
   "name": "feed2-demo",
-  "version": "2.0.0-beta.41",
+  "version": "2.0.0-beta.42",
   "private": true,
   "description": "Demo for vuepress-plugin-feed2",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "vuepress-plugin-feed2": "2.0.0-beta.41",
+    "vuepress-plugin-feed2": "2.0.0-beta.42",
     "vuepress-vite": "2.0.0-beta.39",
     "vuepress-webpack": "2.0.0-beta.38"
   }

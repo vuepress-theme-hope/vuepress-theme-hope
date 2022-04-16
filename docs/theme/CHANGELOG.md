@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.41...v2.0.0-beta.42) (2022-04-16)
+
+### Features
+
+- **md-enhance:** add `linkCheck` option ([904c047](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/904c0471cc81bd90b32b34c015b4902eafa2777b))
+
 # [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
 
 **Note:** Version bump only for package theme-docs

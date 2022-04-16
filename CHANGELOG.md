@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.41...v2.0.0-beta.42) (2022-04-16)
+
+### Bug Fixes
+
+- **create:** fix package.json path ([df25e7a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df25e7a6a2d253e10bf10a51ab3b9a53fbaa15da))
+- **redirect2:** ensure parent folder, (fix [#1683](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1683)) ([8664537](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8664537d3c74e6abccae5a5ed3a5e9b0aae1aec6))
+
+### Features
+
+- **md-enhance:** add `linkCheck` option ([904c047](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/904c0471cc81bd90b32b34c015b4902eafa2777b))
+- **redirect2:** make hostname optional ([2f7543d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f7543d646a5ed96add969488f0b905f70c9b064))
+- **sitemap2:** improve lang infer ([4306758](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4306758d8ab942c041b937ee528789cad7e2bb3e))
+
 # [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
 
 ### Bug Fixes

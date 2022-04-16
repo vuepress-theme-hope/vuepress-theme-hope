@@ -1,6 +1,6 @@
 {
   "name": "copyright2-demo",
-  "version": "2.0.0-beta.41",
+  "version": "2.0.0-beta.42",
   "private": true,
   "description": "Demo for vuepress-plugin-copyright2",
   "license": "MIT",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@vuepress/utils": "2.0.0-beta.38",
-    "vuepress-plugin-copyright2": "2.0.0-beta.41",
+    "vuepress-plugin-copyright2": "2.0.0-beta.42",
     "vuepress-vite": "2.0.0-beta.39",
     "vuepress-webpack": "2.0.0-beta.38"
   }
