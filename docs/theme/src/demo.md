@@ -5,6 +5,10 @@ category:
   - Demo
 ---
 
+## Living Demo
+
+- [stackblitz](https://stackblitz.com/edit/vuepress-theme-hope)
+
 ## Docs
 
 ### Waline
