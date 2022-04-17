@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.44...v2.0.0-beta.45) (2022-04-17)
+
+### Bug Fixes
+
+- **md-enhance:** fix page permalink broken with link check ([9e3482a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e3482a0f4ce03f4cee43871ed36c426fb9a990e))
+
+### Features
+
+- add pl locale ([#1686](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1686)) ([f62f319](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f62f319d2d9af19b5760bb1210e7b6f40d8d1702))
+
 # [2.0.0-beta.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.43...v2.0.0-beta.44) (2022-04-16)
 
 ### Bug Fixes

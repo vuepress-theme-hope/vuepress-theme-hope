@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.44...v2.0.0-beta.45) (2022-04-17)
+
+### Features
+
+- add pl locale ([#1686](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1686)) ([f62f319](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f62f319d2d9af19b5760bb1210e7b6f40d8d1702))
+
 # [2.0.0-beta.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.43...v2.0.0-beta.44) (2022-04-16)
 
 **Note:** Version bump only for package vuepress-plugin-copy-code2

@@ -1,6 +1,6 @@
 {
   "name": "sass-palette-demo",
-  "version": "2.0.0-beta.44",
+  "version": "2.0.0-beta.45",
   "private": true,
   "description": "Demo for vuepress-plugin-sass-palette",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "vuepress-plugin-sass-palette": "2.0.0-beta.44",
+    "vuepress-plugin-sass-palette": "2.0.0-beta.45",
     "vuepress-vite": "2.0.0-beta.39",
     "vuepress-webpack": "2.0.0-beta.38"
   }
