@@ -72,4 +72,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Cuidado",
     details: "Detalhe",
   },
+
+  "/pl/": {
+    info: "Info",
+    note: "Notatka",
+    tip: "Porady",
+    warning: "Notatka",
+    danger: "Ostrzeżenie",
+    details: "Dane",
+  },
 };

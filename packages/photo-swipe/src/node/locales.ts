@@ -72,4 +72,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Anterior (Seta Esquerda)",
     arrowNext: "Próximo (Seta Direita)",
   },
+
+  "/pl/": {
+    close: "Zamknij",
+    download: "Pobierz obraz",
+    fullscreen: "Przełącz na pełny ekran",
+    zoom: "Powiększ/pomniejsz",
+    arrowPrev: "Poprzedni (strzałka w lewo)",
+    arrowNext: "Następny (strzałka w prawo)",
+  },
 };
