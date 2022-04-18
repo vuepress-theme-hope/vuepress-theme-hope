@@ -7805,12 +7805,12 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-giscus@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/giscus/-/giscus-1.0.2.tgz#ecf09cc9dc426406e1a445bee742098c0698680c"
-  integrity sha512-KJv8ZP3TB6C2zEXQsjfGMsVgJIqJgYgr8QuhvtbZ22v5X7Ic+XxstZuTvfO++08otutzT2JiYfv+yw4ADgjjRQ==
+giscus@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/giscus/-/giscus-1.0.3.tgz#7f6895325c197f9f1a8ff469f09729a2786564ba"
+  integrity sha512-SaytuVitbLN3f8VaVeClhRvZ8XEIvjy5H4sHfaQne0yb5oKy990F12cNQtgGcTjgC8NZcJdv2bDunqQGY6sr8g==
   dependencies:
-    lit "^2.2.1"
+    lit "^2.2.2"
 
 git-hooks-list@1.0.3:
   version "1.0.3"
@@ -9924,7 +9924,7 @@ lit-html@^2.2.0:
   dependencies:
     "@types/trusted-types" "^2.0.2"
 
-lit@^2.2.1:
+lit@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/lit/-/lit-2.2.2.tgz#b7f729d6ca7e17efbf2bf589df2d5eb04d9620ba"
   integrity sha512-eN3+2QRHn/erxYB88AXiiRgQA6RltE9MhzySCwX+ACOxA/MLWN3VdXvcbZD9PN09zmUwlgzDvW3T84YWj2Sa0A==
