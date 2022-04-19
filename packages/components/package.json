@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-beta.45",
-    "@types/lodash.debounce": "^4.0.6",
+    "@types/lodash.debounce": "^4.0.7",
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/plugin-theme-data": "2.0.0-beta.38",
     "@vuepress/utils": "2.0.0-beta.38",
