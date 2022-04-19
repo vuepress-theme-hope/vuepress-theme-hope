@@ -57,7 +57,9 @@ export default defineComponent({
             "span",
             {
               class: "visitor-info",
-              ariaLabel: `${metaLocale.value.views}${props.pure ? "" : "🔢"}`,
+              "aria-label": `${metaLocale.value.views}${
+                props.pure ? "" : "🔢"
+              }`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [

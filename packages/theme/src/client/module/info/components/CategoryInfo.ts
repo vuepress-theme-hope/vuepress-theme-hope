@@ -40,7 +40,7 @@ export default defineComponent({
             "span",
             {
               class: "category-info",
-              ariaLabel: `${metaLocale.value.category}${
+              "aria-label": `${metaLocale.value.category}${
                 props.pure ? "" : "🌈"
               }`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),

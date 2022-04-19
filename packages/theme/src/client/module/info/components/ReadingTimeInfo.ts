@@ -49,7 +49,7 @@ export default defineComponent({
             "span",
             {
               class: "reading-time-info",
-              ariaLabel: `${metaLocale.value.readingTime}${
+              "aria-label": `${metaLocale.value.readingTime}${
                 props.pure ? "" : "⌛"
               }`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),

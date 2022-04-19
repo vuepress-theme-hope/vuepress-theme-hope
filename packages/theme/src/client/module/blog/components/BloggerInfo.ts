@@ -61,7 +61,7 @@ export default defineComponent({
               ...(intro.value
                 ? {
                     style: { cursor: "pointer" },
-                    ariaLabel: locale.value.intro,
+                    "aria-label": locale.value.intro,
                     "data-balloon-pos": "down",
                     role: "navigation",
                     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

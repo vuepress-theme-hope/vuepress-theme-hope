@@ -124,7 +124,7 @@ export default defineComponent({
             RouterLink,
             {
               to: config.value.link,
-              ariaLabel: linkAriaLabel.value,
+              "aria-label": linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
               class: ["nav-link", { active: isActive.value }, attrs.class],
@@ -143,7 +143,7 @@ export default defineComponent({
               href: config.value.link,
               rel: anchorRel.value,
               target: linkTarget.value,
-              ariaLabel: linkAriaLabel.value,
+              "aria-label": linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
               class: ["nav-link", attrs.class],

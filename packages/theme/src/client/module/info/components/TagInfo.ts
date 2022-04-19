@@ -39,7 +39,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              ariaLabel: `${metaLocale.value.tag}${props.pure ? "" : "🏷"}`,
+              "aria-label": `${metaLocale.value.tag}${props.pure ? "" : "🏷"}`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [

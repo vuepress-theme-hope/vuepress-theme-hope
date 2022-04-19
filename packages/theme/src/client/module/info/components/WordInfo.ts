@@ -39,7 +39,9 @@ export default defineComponent({
             "span",
             {
               class: "words-info",
-              ariaLabel: `${metaLocale.value.words}${props.pure ? "" : "🔠"}`,
+              "aria-label": `${metaLocale.value.words}${
+                props.pure ? "" : "🔠"
+              }`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [

@@ -51,7 +51,7 @@ export default defineComponent({
         {
           class: ["nav-screen-dropdown-title", { active: open.value }],
           type: "button",
-          ariaLabel: dropdownAriaLabel.value,
+          "aria-label": dropdownAriaLabel.value,
           onClick: () => {
             open.value = !open.value;
           },

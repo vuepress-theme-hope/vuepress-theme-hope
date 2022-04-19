@@ -80,7 +80,7 @@ export default defineComponent({
               {
                 class: "back-to-top",
                 // hint text
-                ariaLabel: locale.value.backToTop,
+                "aria-label": locale.value.backToTop,
                 "data-balloon-pos": "left",
                 // Scroll to top
                 onClick: () => {

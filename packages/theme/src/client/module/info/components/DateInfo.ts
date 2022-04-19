@@ -30,7 +30,7 @@ export default defineComponent({
             "span",
             {
               class: "date-info",
-              ariaLabel: `${metaLocale.value.date}${props.pure ? "" : "📅"}`,
+              "aria-label": `${metaLocale.value.date}${props.pure ? "" : "📅"}`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
             [

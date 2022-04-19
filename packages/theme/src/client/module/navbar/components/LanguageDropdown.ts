@@ -20,7 +20,7 @@ export default defineComponent({
             {
               title: () =>
                 h(I18nIcon, {
-                  ariaLabel: dropdown.value?.ariaLabel,
+                  "aria-label": dropdown.value?.ariaLabel,
                   style: {
                     width: "1rem",
                     height: "1rem",
