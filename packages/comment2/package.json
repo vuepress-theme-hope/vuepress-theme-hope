@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-comment2",
-  "version": "2.0.0-beta.45",
+  "version": "2.0.0-beta.46",
   "description": "A comment plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -39,7 +39,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.45",
+    "@mr-hope/vuepress-shared": "2.0.0-beta.46",
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/utils": "2.0.0-beta.38",
     "@waline/client": "^2.0.0-alpha.2",
@@ -47,7 +47,7 @@
     "twikoo": "^1.5.4",
     "vue": "^3.2.32",
     "vue-router": "^4.0.14",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.45"
+    "vuepress-plugin-sass-palette": "2.0.0-beta.46"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.38"
