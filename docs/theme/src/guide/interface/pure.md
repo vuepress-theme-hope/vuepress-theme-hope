@@ -1,6 +1,7 @@
 ---
 title: Pure Mode
 icon: leaf
+index: 7
 ---
 
 If your site is a documentation-only site and you prefer a clean style, you can enable pure mode by setting `themeConfig.pure` to `true`.

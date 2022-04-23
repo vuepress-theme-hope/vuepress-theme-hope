@@ -1,32 +1,34 @@
 ---
 title: Markdown 增强
 icon: markdown
+index: false
+dir:
+  index: 3
 ---
 
 除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance][md-enhance]，在 Markdown 中启用了更多的语法与新功能。
 
 <!-- more -->
 
-## 内置语法
+## 介绍
+
+- [Markdown 增强介绍](intro.md)
 
 - [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
-## 新组件
-
-- [`<Badge />`](components.md#badge)
-- [`<CodeGroup />` 与 `<CodeGroupItem />`](components.md#codegroup-codegroupitem)
-
 ## 新语法
 
-- [自定义对齐](align.md)
+- [自定义容器](container.md)
 
-- [上下角标](sup-sub.md)
+- [代码块分组](code-group.md)
 
 - [脚注](footnote.md)
 
-- [标记](mark.md)
-
 - [任务列表](tasklist.md)
+
+- [上下角标](sup-sub.md)
+
+- [标记](mark.md)
 
 - [图表](chart.md)
 
@@ -39,6 +41,8 @@ icon: markdown
 - [代码演示](demo.md)
 
 - [幻灯片](presentation.md)
+
+- [组件](components.md)
 
 - [其他](others.md)
 

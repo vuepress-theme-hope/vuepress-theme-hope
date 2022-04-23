@@ -1,6 +1,7 @@
 ---
 title: 首页
 icon: home
+index: 6
 category:
   - 布局
 tag:

@@ -1,6 +1,7 @@
 ---
 title: 博客页面路径
 icon: link
+index: 7
 category:
   - 博客
 tag:

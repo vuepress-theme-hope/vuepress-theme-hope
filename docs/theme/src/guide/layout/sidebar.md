@@ -1,6 +1,7 @@
 ---
 title: Sidebar
 icon: sidebar
+index: 2
 category:
   - Layout
 tag:

@@ -1,6 +1,7 @@
 ---
 title: Blog Intro
 icon: blog
+index: 1
 category:
   - Blog
 tag:

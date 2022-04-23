@@ -1,6 +1,7 @@
 ---
 title: Components
 icon: plugin
+index: 14
 category:
   - Markdown
 tag:

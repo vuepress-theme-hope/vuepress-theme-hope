@@ -1,6 +1,9 @@
 ---
 title: Theme Config
 icon: config
+index: 1
+dir:
+  index: 3
 category:
   - Config
 tag:

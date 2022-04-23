@@ -1,6 +1,12 @@
 ---
 title: Chart
 icon: rank
+index: 9
+category:
+  - Markdown
+tag:
+  - 图表
+  - Markdown
 ---
 
 让你 VuePress 站点中的 Markdown 文件支持图表。

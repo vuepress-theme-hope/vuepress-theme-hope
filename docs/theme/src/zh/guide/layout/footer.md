@@ -3,6 +3,7 @@ title: 页脚支持
 icon: footer
 category:
   - 布局
+index: 4
 tag:
   - 布局
   - 页脚

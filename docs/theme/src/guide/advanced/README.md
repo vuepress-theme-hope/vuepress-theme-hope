@@ -1,6 +1,9 @@
 ---
 title: Advanced
 icon: advance
+index: false
+dir:
+  index: 7
 category:
   - Advanced
 tag:

@@ -1,6 +1,7 @@
 ---
 title: PWA Plugin Config
 icon: app
+index: 7
 category:
   - Config
 tag:

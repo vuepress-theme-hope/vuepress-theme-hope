@@ -1,6 +1,7 @@
 ---
 title: Code Demo
 icon: discover
+index: 12
 category:
   - Markdown
 tag:

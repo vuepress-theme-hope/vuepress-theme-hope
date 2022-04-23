@@ -1,6 +1,7 @@
 ---
 title: Style config
 icon: style
+index: 6
 category:
   - Config
 tag:

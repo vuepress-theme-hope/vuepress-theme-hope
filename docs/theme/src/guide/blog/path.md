@@ -1,6 +1,7 @@
 ---
 title: Blog Page Path
 icon: link
+index: 7
 category:
   - Blog
 tag:

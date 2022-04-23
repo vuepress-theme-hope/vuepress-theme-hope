@@ -1,6 +1,7 @@
 ---
 title: Blog homepage
 icon: home
+index: 6
 category:
   - Blog
 tag:

@@ -1,6 +1,7 @@
 ---
 title: 主题色
 icon: palette
+index: 2
 category:
   - 界面
 tag:

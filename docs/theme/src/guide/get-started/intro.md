@@ -1,6 +1,7 @@
 ---
 title: Theme intro
 icon: info
+index: 1
 category:
   - Get Started
 tag:

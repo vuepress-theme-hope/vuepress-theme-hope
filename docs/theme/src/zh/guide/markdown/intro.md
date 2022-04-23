@@ -1,6 +1,7 @@
 ---
 title: 启用 Markdown 增强
 icon: enable
+index: 1
 category:
   - Markdown
 tag:
@@ -20,7 +21,7 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 ## 启用 Markdown 增强
 
-`.vuepress/config.js` 中的 `themeconfig.plugin.mdEnhance` 会传递给插件作为插件选项。所以你也可以直接阅读 [插件文档][md-enhance] 查看用法。
+`.vuepress/config.js` 中的 `themeconfig.plugin.mdEnhance` 会传递给 `vuepress-plugin-md-enhance` 作为插件选项。所以你也可以直接阅读 [插件文档][md-enhance] 查看用法。
 
 ::: tip
 

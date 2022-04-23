@@ -1,6 +1,7 @@
 ---
 title: 版权信息插件配置
 icon: copyright
+index: 4
 category:
   - 配置
 tag:

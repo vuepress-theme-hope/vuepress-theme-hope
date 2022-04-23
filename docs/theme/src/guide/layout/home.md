@@ -1,6 +1,7 @@
 ---
 title: Home Page
 icon: home
+index: 6
 category:
   - Layout
 tag:

@@ -1,6 +1,7 @@
 ---
 title: 插件说明
 icon: info
+index: 1
 category:
   - 配置
 tag:

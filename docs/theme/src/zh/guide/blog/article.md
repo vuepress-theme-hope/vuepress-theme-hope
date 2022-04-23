@@ -1,6 +1,7 @@
 ---
 title: 文章列表
 icon: article
+index: 3
 category:
   - 博客
 tag:

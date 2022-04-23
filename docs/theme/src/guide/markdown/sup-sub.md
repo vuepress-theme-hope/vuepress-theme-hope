@@ -1,6 +1,7 @@
 ---
 title: Superscript and Subscript
 icon: superscript
+index: 6
 category:
   - Markdown
 tag:

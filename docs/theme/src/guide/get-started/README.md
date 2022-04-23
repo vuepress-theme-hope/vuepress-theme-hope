@@ -1,6 +1,9 @@
 ---
 title: Get Started
 icon: creative
+index: false
+dir:
+  index: 1
 ---
 
 ## Catalog

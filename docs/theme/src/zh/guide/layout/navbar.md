@@ -1,6 +1,7 @@
 ---
 title: 导航栏
 icon: navbar
+index: 1
 category:
   - 布局
 tag:

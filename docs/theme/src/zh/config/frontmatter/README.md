@@ -1,6 +1,9 @@
 ---
 title: Frontmatter 配置
 icon: config
+index: false
+dir:
+  index: 5
 category:
   - 配置
 tag:

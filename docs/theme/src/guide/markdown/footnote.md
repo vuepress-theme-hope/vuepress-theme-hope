@@ -1,6 +1,7 @@
 ---
 title: Footnote
 icon: footnote
+index: 4
 category:
   - Markdown
 tag:

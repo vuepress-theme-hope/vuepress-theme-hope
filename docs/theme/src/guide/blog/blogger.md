@@ -1,6 +1,7 @@
 ---
 title: Blogger Info
 icon: blog
+index: 2
 category:
   - Blog
 tag:

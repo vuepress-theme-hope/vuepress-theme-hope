@@ -1,6 +1,7 @@
 ---
 title: 其他界面功能
 icon: others
+index: 5
 category:
   - 界面
 tag:

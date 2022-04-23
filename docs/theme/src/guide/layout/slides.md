@@ -1,6 +1,7 @@
 ---
 title: Slide
 icon: slides
+index: 7
 category:
   - Layout
 tag:

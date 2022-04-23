@@ -1,6 +1,7 @@
 ---
 title: Config
 icon: config
+index: false
 category:
   - Config
 tag:

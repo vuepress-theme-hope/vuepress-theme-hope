@@ -1,6 +1,7 @@
 ---
 title: 博客配置
 icon: blog
+index: 2
 category:
   - 配置
 tag:

@@ -1,6 +1,7 @@
 ---
 title: MdEnhance Plugin Config
 icon: markdown
+index: 6
 category:
   - Config
 tag:

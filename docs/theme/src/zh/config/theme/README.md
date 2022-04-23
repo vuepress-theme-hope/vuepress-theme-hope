@@ -1,6 +1,9 @@
 ---
 title: 主题配置
 icon: config
+index: false
+dir:
+  index: 3
 category:
   - 配置
 tag:

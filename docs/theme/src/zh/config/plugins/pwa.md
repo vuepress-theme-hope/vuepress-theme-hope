@@ -1,6 +1,7 @@
 ---
 title: PWA 插件配置
 icon: app
+index: 7
 category:
   - 配置
 tag:

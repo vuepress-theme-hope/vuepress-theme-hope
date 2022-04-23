@@ -1,6 +1,9 @@
 ---
 title: Markdown Enhance
 icon: markdown
+index: false
+dir:
+  index: 3
 ---
 
 Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via [vuepress-plugin-md-enhance][md-enhance] plugin.

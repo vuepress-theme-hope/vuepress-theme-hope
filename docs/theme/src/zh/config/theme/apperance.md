@@ -1,6 +1,7 @@
 ---
 title: 主题外观选项
 icon: config
+index: 4
 category:
   - 配置
 tag:

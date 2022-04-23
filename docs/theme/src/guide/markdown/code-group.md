@@ -1,6 +1,7 @@
 ---
 title: CodeGroup
 icon: code
+index: 3
 category:
   - Markdown
 tag:

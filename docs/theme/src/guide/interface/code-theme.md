@@ -1,6 +1,7 @@
 ---
 title: Code Themes
 icon: style
+index: 4
 category:
   - interface
 tag:

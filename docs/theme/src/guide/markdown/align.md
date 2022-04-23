@@ -1,6 +1,7 @@
 ---
 title: Custom alignment
 icon: align
+index: 6
 category:
   - Markdown
 tag:

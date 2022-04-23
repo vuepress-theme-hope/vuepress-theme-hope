@@ -1,6 +1,7 @@
 ---
 title: Other features
 icon: others
+index: 5
 category:
   - Interface
 tag:

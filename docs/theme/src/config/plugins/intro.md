@@ -1,6 +1,7 @@
 ---
 title: Plugin Intro
 icon: info
+index: 1
 category:
   - Config
 tag:

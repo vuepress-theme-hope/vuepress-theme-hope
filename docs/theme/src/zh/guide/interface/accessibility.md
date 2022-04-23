@@ -1,6 +1,7 @@
 ---
 title: 无障碍
 icon: support
+index: 6
 category:
   - 界面
 tag:

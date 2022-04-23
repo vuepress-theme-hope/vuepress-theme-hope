@@ -1,6 +1,7 @@
 ---
 title: Icon support
 icon: discover
+index: 3
 category:
   - Interface
 tag:

@@ -1,6 +1,7 @@
 ---
 title: Chart
 icon: rank
+index: 9
 category:
   - Markdown
 tag:

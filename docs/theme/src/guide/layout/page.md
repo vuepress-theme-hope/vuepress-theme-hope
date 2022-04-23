@@ -1,6 +1,7 @@
 ---
 title: Page
 icon: page
+index: 5
 category:
   - Layout
 tag:

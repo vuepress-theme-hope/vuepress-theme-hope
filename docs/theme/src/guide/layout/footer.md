@@ -1,6 +1,7 @@
 ---
 title: Footer
 icon: footer
+index: 4
 category:
   - Layout
 tag:

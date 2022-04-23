@@ -1,6 +1,7 @@
 ---
 title: 幻灯片
 icon: slides
+index: 7
 category:
   - 布局
 tag:

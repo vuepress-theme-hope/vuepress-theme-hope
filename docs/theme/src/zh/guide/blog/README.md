@@ -1,6 +1,9 @@
 ---
 title: 博客
 icon: blog
+index: false
+dir:
+  index: 6
 ---
 
 ## 目录

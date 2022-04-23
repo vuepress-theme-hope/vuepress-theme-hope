@@ -1,6 +1,9 @@
 ---
 title: Plugin Config
 icon: config
+index: false
+dir:
+  index: 4
 ---
 
 ## Catalog

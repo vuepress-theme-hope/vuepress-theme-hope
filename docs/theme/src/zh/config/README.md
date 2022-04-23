@@ -1,6 +1,7 @@
 ---
 title: 配置
 icon: config
+index: false
 category:
   - 配置
 tag:

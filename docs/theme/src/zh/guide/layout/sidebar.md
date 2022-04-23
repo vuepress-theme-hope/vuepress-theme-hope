@@ -1,6 +1,7 @@
 ---
 title: 侧边栏
 icon: sidebar
+index: 2
 category:
   - 布局
 tag:

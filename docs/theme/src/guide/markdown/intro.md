@@ -1,6 +1,7 @@
 ---
 title: Enable Enhance
 icon: enable
+index: 1
 category:
   - Markdown
 tag:

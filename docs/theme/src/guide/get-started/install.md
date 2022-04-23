@@ -1,6 +1,7 @@
 ---
 title: Install / Usage
 icon: install
+index: 2
 category:
   - Get Started
 tag:

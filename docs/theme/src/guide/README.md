@@ -1,6 +1,7 @@
 ---
 title: Guide
 icon: creative
+index: false
 category:
   - Intro
 tag:

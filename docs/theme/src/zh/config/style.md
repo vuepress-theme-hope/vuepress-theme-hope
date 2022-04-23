@@ -1,6 +1,7 @@
 ---
 title: 样式配置
 icon: style
+index: 6
 category:
   - 配置
 tag:
