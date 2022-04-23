@@ -42,9 +42,9 @@
     "@mr-hope/vuepress-shared": "2.0.0-beta.45",
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/utils": "2.0.0-beta.38",
-    "@waline/client": "^2.0.0-alpha.1",
+    "@waline/client": "^2.0.0-alpha.2",
     "giscus": "^1.0.3",
-    "twikoo": "^1.5.3",
+    "twikoo": "^1.5.4",
     "vue": "^3.2.32",
     "vue-router": "^4.0.14",
     "vuepress-plugin-sass-palette": "2.0.0-beta.45"
