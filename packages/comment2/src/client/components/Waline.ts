@@ -6,7 +6,7 @@ import {
   h,
   onBeforeUnmount,
   onMounted,
-  ref,
+  shallowRef,
   watch,
 } from "vue";
 import { useRoute } from "vue-router";
@@ -31,7 +31,7 @@ export default defineComponent({
     let abort: () => void;
     let stopHandler: () => void;
 
-    const WalineComment = ref<ComponentOptions | null>(null);
+    const WalineComment = shallowRef<ComponentOptions | null>(null);
 
     const enableComment = computed(() => {
       if (!enableWaline) return false;
