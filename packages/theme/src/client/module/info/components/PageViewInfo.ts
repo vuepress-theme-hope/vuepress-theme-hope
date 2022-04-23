@@ -30,7 +30,7 @@ export default defineComponent({
 
     // show fire icon depending on the views number
     const getCount = (): void => {
-      const countElement = document.querySelector(".waline-visitor-count");
+      const countElement = document.querySelector(".waline-pageview-count");
 
       if (countElement) {
         const count = countElement.textContent;
@@ -67,9 +67,9 @@ export default defineComponent({
               h(
                 "span",
                 {
-                  class: "waline-visitor-count",
+                  class: "waline-pageview-count",
                   /** visitorID */
-                  id:
+                  "data-path":
                     typeof props.pageview === "string"
                       ? props.pageview
                       : withBase(route.path),

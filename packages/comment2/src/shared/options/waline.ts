@@ -1,8 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type {
-  WalineLocale,
-  WalineOptions as _WalineOptions,
-} from "@waline/client";
+import type { WalineInitOptions, WalineLocale } from "@waline/client";
 import type { BaseCommentOptions } from "./base";
 
 export type WalineLocaleData = Partial<WalineLocale>;
@@ -11,7 +8,7 @@ export type WalineLocaleConfig = LocaleConfig<WalineLocaleData>;
 
 export interface WalineOptions
   extends BaseCommentOptions,
-    Omit<_WalineOptions, "el" | "visitor"> {
+    Omit<WalineInitOptions, "el" | "comment"> {
   type: "waline";
 
   /**
@@ -21,7 +18,7 @@ export interface WalineOptions
    *
    * @default true
    */
-  pageviews?: boolean;
+  pageview?: boolean;
 
   /**
    * Locale config for waline

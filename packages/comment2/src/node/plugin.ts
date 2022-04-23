@@ -74,7 +74,12 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       }
 
       if (isWaline) {
-        addViteOptimizeDepsInclude(app, "@waline/client");
+        addViteOptimizeDepsInclude(app, [
+          "@waline/client",
+          "autosize",
+          "marked",
+          "hanabi",
+        ]);
         addViteSsrExternal(app, "@waline/client");
       }
     },
