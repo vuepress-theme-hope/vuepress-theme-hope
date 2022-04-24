@@ -95,7 +95,13 @@ yarn
 
 确保 `yarn run lint` 与 `yarn run lint:md` 命令没有错误后，即可提交到 GitHub 发起 PR。
 
-如果你想要本地预览项目，由于文档使用本地的主题与插件，你需要通过 `yarn run build` 构建本地项目，才能通过根目录下的对应命令 `yarn run docs/<项目简写>:serve` 启动开发服务器。
+::: tip 预览文档
+
+由于文档使用的是本地主题和插件，因此您需要先通过 `yarn run build` 构建本地项目。
+
+之后在 `docs` 目录下的正确文档项目文件夹打开终端，运行 `yarn docs:vite-serve` (使用 vite) 或 `yarn docs:webpack-serve` (使用 webpack)。
+
+:::
 
 ## 项目修改
 
