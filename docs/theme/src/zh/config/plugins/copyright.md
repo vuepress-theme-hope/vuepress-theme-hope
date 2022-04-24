@@ -69,7 +69,7 @@ tag:
 
 ### locales
 
-- 类型: `CopyrightLocaleData`
+- 类型: `CopyrightLocaleConfig`
 
   ```ts
   interface CopyrightLocaleData {
@@ -93,6 +93,10 @@ tag:
      * @description `:url` 会替换为当前页面链接
      */
     link: string;
+  }
+
+  interface CopyrightLocaleConfig {
+    [localePath: string]: CopyrightLocaleData;
   }
   ```
 

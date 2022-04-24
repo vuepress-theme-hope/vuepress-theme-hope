@@ -71,7 +71,7 @@ Disable selection
 
 ### locales
 
-- Type: `CopyrightLocaleData`
+- Type: `CopyrightLocaleConfig`
 
   ```ts
   interface CopyrightLocaleData {
@@ -95,6 +95,10 @@ Disable selection
      * @description `:url` will be replaced by current page link
      */
     link: string;
+  }
+
+  interface CopyrightLocaleConfig {
+    [localePath: string]: CopyrightLocaleData;
   }
   ```
 

@@ -524,7 +524,7 @@ export default defineHopeConfig({
     // Whether to display repo link, default is `true`
     repoDisplay: true,
     // If your docs are placed in a different repo, default is `repo`
-    docsRepo: 'vuepress-theme-hope/docs',
+    docsRepo: "vuepress-theme-hope/docs",
     // Branch where docs are located, default is `"main`
     docsBranch: "main",
     // Dir whre docs are located, default is `""`
@@ -551,7 +551,7 @@ module.exports = defineHopeConfig({
     // Whether to display repo link, default is `true`
     repoDisplay: true,
     // If your docs are placed in a different repo, default is `repo`
-    docsRepo: 'vuepress-theme-hope/docs',
+    docsRepo: "vuepress-theme-hope/docs",
     // Branch where docs are located, default is `"main`
     docsBranch: "main",
     // Dir whre docs are located, default is `""`
