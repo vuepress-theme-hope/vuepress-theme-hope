@@ -527,7 +527,7 @@ export default defineHopeConfig({
     docsRepo: 'vuepress-theme-hope/docs',
     // branch where docs are located, default is `"main`
     docsBranch: "main",
-    // dir whre docs are located, default is `""`
+    // Dir whre docs are located, default is `""`
     docsDir: "docs",
   },
 });
