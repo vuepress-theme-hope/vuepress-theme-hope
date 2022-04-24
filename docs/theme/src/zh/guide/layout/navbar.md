@@ -519,10 +519,12 @@ export default defineHopeConfig({
     repoLabel: "GitHub",
     // 是否在导航栏内显示仓库链接，默认为 `true`
     repoDisplay: true,
-    // 分支
+    // 文档所在仓库，默认同 `repo`
+    docsRepo: "vuepress-theme-hope/docs",
+    // 文档所在分支，默认为 `"main"`
     docsBranch: "main",
-    // 文档路径
-    docsDir: "",
+    // 文档路径，默认为 `""`
+    docsDir: "docs",
   },
 });
 ```
@@ -537,13 +539,19 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
   themeConfig: {
-    // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
-    repo: "vuejs/vuepress",
+    // 默认为 GitHub. 同时也可以是一个完整的 URL
+    repo: "vuepress-theme-hope/vuepress-theme-hope",
     // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
-    // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: "查看源码",
-    // 是否在导航栏右侧显示仓库链接，默认为 `true`
+    // "GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
+    repoLabel: "GitHub",
+    // 是否在导航栏内显示仓库链接，默认为 `true`
     repoDisplay: true,
+    // 文档所在仓库，默认同 `repo`
+    docsRepo: "vuepress-theme-hope/docs",
+    // 文档所在分支，默认为 `"main"`
+    docsBranch: "main",
+    // 文档路径，默认为 `""`
+    docsDir: "docs",
   },
 });
 ```
