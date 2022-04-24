@@ -528,7 +528,7 @@ export default defineHopeConfig({
     // branch where docs are located, default is `"main`
     docsBranch: "main",
     // dir whre docs are located, default is `""`
-    docsDir: "",
+    docsDir: "docs",
   },
 });
 ```
