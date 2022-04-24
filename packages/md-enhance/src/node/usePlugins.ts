@@ -10,11 +10,12 @@ export const usePlugins = (
   app: App,
   markdownOptions: MarkdownEnhanceOptions
 ): void => {
-  const locales = getLocales(
+  const locales = getLocales({
     app,
-    markdownEnhanceLocales,
-    markdownOptions.locales
-  );
+    name: "md-enhance",
+    default: markdownEnhanceLocales,
+    config: markdownOptions.locales,
+  });
 
   const getContainterLocale = (
     key: MarkdownContainerName

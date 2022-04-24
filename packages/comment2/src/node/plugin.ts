@@ -21,7 +21,12 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   const isWaline = options.type === "waline";
 
   const userWalineLocales = isWaline
-    ? getLocales(app, walineLocales, options.walineLocales)
+    ? getLocales({
+        app,
+        name: "waline",
+        default: walineLocales,
+        config: options.walineLocales,
+      })
     : {};
 
   // remove locales so that they won’t be injected in client twice

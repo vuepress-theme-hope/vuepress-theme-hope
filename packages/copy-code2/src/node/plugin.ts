@@ -18,7 +18,12 @@ export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, app) => {
 
     define: (): Record<string, unknown> => ({
       CODE_COPY_OPIONS: options,
-      CODE_COPY_LOCALES: getLocales(app, copyCodeLocales, options.locales),
+      CODE_COPY_LOCALES: getLocales({
+        app,
+        name: "copy-code",
+        default: copyCodeLocales,
+        config: options.locales,
+      }),
     }),
 
     onInitialized: (app): void => {

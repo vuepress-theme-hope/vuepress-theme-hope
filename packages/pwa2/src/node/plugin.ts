@@ -31,7 +31,12 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, app) => {
     name: "vuepress-plugin-pwa2",
 
     define: () => ({
-      PWA_LOCALES: getLocales(app, pwaLocales, options.locales),
+      PWA_LOCALES: getLocales({
+        app,
+        name: "pwa",
+        default: pwaLocales,
+        config: options.locales,
+      }),
       SW_FORCE_UPDATE: options.update === "force",
       SW_PATH: options.swPath || "service-worker.js",
     }),

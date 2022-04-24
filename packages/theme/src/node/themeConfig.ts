@@ -72,9 +72,10 @@ export const getThemeConfig = (
     ),
     locales:
       // assign locale data to `themeConfig`
-      getLocales(
+      getLocales({
         app,
-        Object.fromEntries(
+        name: "vuepress-theme-hope",
+        default: Object.fromEntries(
           Object.entries(themeLocalesData).map(([locale, config]) => {
             if (!enableBlog) {
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -89,7 +90,7 @@ export const getThemeConfig = (
           })
         ),
         // extract localeConfig
-        Object.fromEntries(
+        config: Object.fromEntries(
           [
             ["/", {}] as [string, HopeThemeLocaleOptions],
             ...Object.entries(themeOptions.locales || {}),
@@ -111,8 +112,8 @@ export const getThemeConfig = (
               } as HopeThemeLocaleConfig,
             ]
           )
-        )
-      ) as HopeThemeLocaleConfig,
+        ),
+      }) as HopeThemeLocaleConfig,
   };
 
   // handle encrypt options

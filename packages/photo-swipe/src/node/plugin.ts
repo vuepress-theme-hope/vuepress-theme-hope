@@ -22,17 +22,22 @@ export const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, app) => {
         options.selector || ".theme-default-content :not(a) > img",
       PHOTO_SWIPE_DELAY: options.delay || 500,
       PHOTO_SWIPE_LOCALES: Object.fromEntries(
-        Object.entries(getLocales(app, photoSwipeLocales, options.locales)).map(
-          ([localePath, localeOptions]) => [
-            localePath,
-            Object.fromEntries(
-              Object.entries(localeOptions).map(([key, value]) => [
-                `${key}Title`,
-                value,
-              ])
-            ),
-          ]
-        )
+        Object.entries(
+          getLocales({
+            app,
+            name: "photo-swipe",
+            default: photoSwipeLocales,
+            config: options.locales,
+          })
+        ).map(([localePath, localeOptions]) => [
+          localePath,
+          Object.fromEntries(
+            Object.entries(localeOptions).map(([key, value]) => [
+              `${key}Title`,
+              value,
+            ])
+          ),
+        ])
       ),
       PHOTO_SWIPE_OPTIONS: options.options || {},
     }),

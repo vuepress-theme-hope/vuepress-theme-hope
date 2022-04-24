@@ -19,8 +19,12 @@ export const copyrightPlugin: Plugin<CopyrightOptions> = (
   },
   app
 ) => {
-  const currentlocales = getLocales(app, copyrightLocales, locales);
-  const { base } = app.options;
+  const currentlocales = getLocales({
+    app,
+    name: "copyright",
+    default: copyrightLocales,
+    config: locales,
+  });
 
   return {
     name: "vuepress-plugin-copyright2",
@@ -32,7 +36,8 @@ export const copyrightPlugin: Plugin<CopyrightOptions> = (
       COPYRIGHT_TRIGGER_WORDS: triggerWords,
     }),
 
-    extendsPage: (page: Page<{ copyright: string }>): void => {
+    extendsPage: (page: Page<{ copyright: string }>, app): void => {
+      const { base } = app.options;
       const locale = currentlocales[page.pathLocale];
 
       const authorText = author

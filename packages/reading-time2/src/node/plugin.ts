@@ -11,11 +11,12 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (options) => {
     name: "vuepress-plugin-reading-time2",
 
     define: (app): Record<string, unknown> => ({
-      READING_TIME_LOCALES: getLocales(
+      READING_TIME_LOCALES: getLocales({
         app,
-        readingTimeLocales,
-        options.locales
-      ),
+        name: "reading-time",
+        default: readingTimeLocales,
+        config: options.locales,
+      }),
     }),
 
     extendsPage: (page: Page<{ readingTime: ReadingTime }>): void => {
