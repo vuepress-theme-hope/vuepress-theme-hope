@@ -11,7 +11,7 @@ import {
 } from "vue";
 import { useRoute } from "vue-router";
 import { enableWaline, walineLocales, walineOption } from "../define";
-import { pageviewCount } from "@waline/client";
+import { pageviewCount } from "@waline/client/dist/pageview";
 
 import type { ComponentOptions, VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";

@@ -34,7 +34,8 @@ export default [
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
-      "@waline/client",
+      "@waline/client/dist/component",
+      "@waline/client/dist/pageview",
       "autosize",
       "hanabi",
       "marked",
