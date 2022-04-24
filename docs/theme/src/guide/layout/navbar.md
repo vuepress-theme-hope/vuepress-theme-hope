@@ -523,6 +523,10 @@ export default defineHopeConfig({
     repoLabel: "GitHub",
     // Whether to display repo link, default is `true`
     repoDisplay: true,
+    // which branch, default is main
+    docsBranch: "main",
+    // docs dir, default is "", usually is "/docs/"
+    docsDir: "",
   },
 });
 ```
