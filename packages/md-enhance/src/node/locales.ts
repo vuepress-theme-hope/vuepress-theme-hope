@@ -56,12 +56,12 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
   },
 
   "/ru/": {
-    info: "Информация",
-    note: "Note",
-    tip: "Подсказки",
+    info: "Инфо",
+    note: "Заметка",
+    tip: "Совет",
     warning: "Примечание",
     danger: "Предупреждение",
-    details: "Деталь",
+    details: "Подробности",
   },
 
   "/br/": {
