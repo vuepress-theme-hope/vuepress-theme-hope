@@ -517,15 +517,17 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 export default defineHopeConfig({
   themeConfig: {
     // Assumes GitHub. Can also be a full GitLab url.
-    repo: "vuejs/vuepress",
+    repo: "vuepress-theme-hope/vuepress-theme-hope",
     // Customising the header label
     // Defaults to "GitHub" / "GitLab" / "Gitee" / "Bitbucket" or "Source" depending on `themeConfig.repo`
     repoLabel: "GitHub",
     // Whether to display repo link, default is `true`
     repoDisplay: true,
-    // which branch, default is main
+    // If your docs are placed in a different repo, default is `repo`
+    docsRepo: 'vuepress-theme-hope/docs',
+    // branch where docs are located, default is `"main`
     docsBranch: "main",
-    // docs dir, default is "", usually is "/docs/"
+    // dir whre docs are located, default is `""`
     docsDir: "",
   },
 });
@@ -542,12 +544,18 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 module.exports = defineHopeConfig({
   themeConfig: {
     // Assumes GitHub. Can also be a full GitLab url.
-    repo: "vuejs/vuepress",
+    repo: "vuepress-theme-hope/vuepress-theme-hope",
     // Customising the header label
     // Defaults to "GitHub" / "GitLab" / "Gitee" / "Bitbucket" or "Source" depending on `themeConfig.repo`
     repoLabel: "GitHub",
     // Whether to display repo link, default is `true`
     repoDisplay: true,
+    // If your docs are placed in a different repo, default is `repo`
+    docsRepo: 'vuepress-theme-hope/docs',
+    // branch where docs are located, default is `"main`
+    docsBranch: "main",
+    // dir whre docs are located, default is `""`
+    docsDir: "",
   },
 });
 ```
