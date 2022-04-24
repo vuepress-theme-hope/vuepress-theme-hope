@@ -9,8 +9,8 @@ $headings: (2, 3, 4, 5, 6);
   margin: 0 auto;
 
   @media (max-width: hope-config.$pad) {
-    padding: 0 1.5rem;
     top: calc(var(--navbar-mobile-height, --navbar-height) + 2rem);
+    padding: 0 1.5rem;
   }
 
   + #{hope-config.$content-class}:not(.custom) {
