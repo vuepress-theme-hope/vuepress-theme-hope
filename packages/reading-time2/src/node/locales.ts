@@ -41,9 +41,9 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
   },
 
   "/ru/": {
-    word: "Про $word слова",
+    word: "Около $word слов",
     less1Minute: "Меньше 1 минуты",
-    time: "Приблизительно $time минут",
+    time: "Около $time мин",
   },
 
   "/br/": {

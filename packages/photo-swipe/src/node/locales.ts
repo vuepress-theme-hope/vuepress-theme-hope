@@ -61,7 +61,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     fullscreen: "Переключиться на полный экран",
     zoom: "Увеличить/Уменьшить",
     arrowPrev: "Предыдущая (Стрелка влево)",
-    arrowNext: "Далее (стрелка вправо)",
+    arrowNext: "Следующая (Стрелка вправо)",
   },
 
   "/br/": {

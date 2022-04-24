@@ -15,14 +15,14 @@ export const ruLocale: HopeThemeLocaleData = {
     origin: "Оригинал",
     views: "Просмотры страницы",
     category: "Категория",
-    tag: "Тэги🏷",
+    tag: "Тэги",
     readingTime: "Время чтения",
     words: "Слова",
-    toc: "On This Page",
-    prev: "Prev",
-    next: "Next",
+    toc: "На этой странице",
+    prev: "Предыдущая",
+    next: "Следующая",
     lastUpdated: "Последнее обновление",
-    contributors: "Авторы",
+    contributors: "Контрибьюторы",
     editLink: "Редактировать эту страницу",
   },
 
@@ -32,8 +32,8 @@ export const ruLocale: HopeThemeLocaleData = {
     category: "Категория",
     tag: "Тэги",
     timeline: "Таймлайн",
-    timelineTitle: "Вчера еще раз!",
-    all: "Всё",
+    timelineTitle: "Еще раз о недавнем!",
+    all: "Все",
     intro: "Личное вступление",
     star: "Звезда",
     slides: "Слайды",
@@ -42,7 +42,7 @@ export const ruLocale: HopeThemeLocaleData = {
 
   paginationLocales: {
     prev: "Предыдущая",
-    next: "Далее",
+    next: "Следующая",
     navigate: "Перейти к",
     action: "Перейти",
     errorText: "Пожалуйста, введите число от 1 до $page !",
@@ -51,7 +51,7 @@ export const ruLocale: HopeThemeLocaleData = {
   outlookLocales: {
     themeColor: "Цвет темы",
     darkmode: "Режим темы",
-    fullscreen: "Full Screen",
+    fullscreen: "Полный экран",
   },
 
   encryptLocales: {
@@ -64,11 +64,11 @@ export const ruLocale: HopeThemeLocaleData = {
     "404msg": [
       "Здесь ничего нет.",
       "Как мы сюда попали?",
-      'Это "4-0-4".',
+      "Это четыре-о-четыре.",
       "Похоже, у нас есть несколько неработающих ссылок.",
     ],
     back: "Вернуться назад",
     home: "Вернуться на главную",
-    openInNewWindow: "Open in new window",
+    openInNewWindow: "Открыть в новом окне",
   },
 };
