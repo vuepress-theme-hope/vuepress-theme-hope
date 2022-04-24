@@ -519,6 +519,10 @@ export default defineHopeConfig({
     repoLabel: "GitHub",
     // 是否在导航栏内显示仓库链接，默认为 `true`
     repoDisplay: true,
+    // 分支
+    docsBranch: "main",
+    // 文档路径
+    docsDir: "",
   },
 });
 ```
