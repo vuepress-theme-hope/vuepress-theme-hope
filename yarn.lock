@@ -9865,10 +9865,10 @@ libnpmpublish@^4.0.0:
     semver "^7.1.3"
     ssri "^8.0.1"
 
-lightgallery@^2.5.0-beta.2:
-  version "2.5.0-beta.2"
-  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.5.0-beta.2.tgz#8b5be3e117e704a07cbd1e4c04358c084852490b"
-  integrity sha512-9evZtosCEb+loNgYuEJntPcgY3Tgzn+XDcYGe/0yL59xsEdq2FXuUcgBnn2J8EtZFPj7aLEqUbAmnGnwX6Jg/A==
+lightgallery@^2.5.0-beta.3:
+  version "2.5.0-beta.3"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.5.0-beta.3.tgz#caaf953230385c1354acdef5d5e60b98131a6de7"
+  integrity sha512-52YpYYZ5lYn/d5OSvBd1+pUqfrbhSEqHlAdeh56GxdPzlKkmYas2VzPAbZutUcggNogqNwG/SK5/1a/mgBdqHQ==
 
 lilconfig@2.0.4:
   version "2.0.4"
