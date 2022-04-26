@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "vuepress-plugin-sass-palette": "2.0.0-beta.47",
-    "vuepress-vite": "2.0.0-beta.39",
+    "vuepress-vite": "2.0.0-beta.41",
     "vuepress-webpack": "2.0.0-beta.38"
   }
 }
