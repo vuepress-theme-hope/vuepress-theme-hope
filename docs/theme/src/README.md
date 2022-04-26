@@ -143,9 +143,10 @@ npm init vuepress-theme-hope@next [dir]
 
 ```ts
 // .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
   theme: hopeTheme({
     // your theme config here
   }),

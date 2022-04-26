@@ -14,7 +14,7 @@ tag:
 
 The `vuepress-plugin-pwa2` plugin provides progressive web app support.
 
-`vuepress-theme-hope` passes `themeConfig.plugins.pwa` as plugin options to the `vuepress-plugin-pwa2` plugin.
+`vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2` plugin.
 
 ::: tip Quick Enable
 
@@ -51,7 +51,7 @@ Some options have their fallback if you donot set them.
 - name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - description: `siteConfig.description` || `siteConfig.locales['/'].description` || `"A site built with vuepress"`
-- lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
+- lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
 

@@ -12,11 +12,11 @@ tag:
 
 主题默认在开发模式下检查你的 Markdown 链接。
 
-你可以通过 `themeConfig.plugins.mdEnhance` 中的 `linkCheck` 自定义此功能，你可以选择 `'always'`、`'never'`、`'dev'` 和 `'build'`。
+你可以在主题选项中通过 `plugins.mdEnhance.linkCheck` 自定义此功能，你可以选择 `'always'`、`'never'`、`'dev'` 和 `'build'`。
 
 ## GFM
 
-如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们在 `themeConfig.plugins.mdEnhance` 中提供了一个 `gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。
+如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们在主题选项中提供了 `plugins.mdEnhance.gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。
 
 ::: note
 
@@ -42,7 +42,7 @@ tag:
 
 GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我们同时支持 GitHub 的标记与简易标记 `#light` 和 `#dark`。
 
-你可以通过 `themeConfig.plugins.mdEnhance` 中的 `imageMark` 选项控制它。
+你可以在主题选项中通过 `plugins.mdEnhance.imageMark` 选项控制它。
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)

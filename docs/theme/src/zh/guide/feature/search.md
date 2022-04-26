@@ -36,10 +36,11 @@ tag:
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       search: {
         locales: {
@@ -49,7 +50,7 @@ export default defineHopeConfig({
         },
       },
     },
-  },
+  }),
 });
 ```
 
@@ -59,10 +60,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       search: {
         locales: {
@@ -72,8 +73,8 @@ module.exports = defineHopeConfig({
         },
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -239,10 +240,11 @@ Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` �
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       docsearch: {
         // ...
@@ -292,7 +294,7 @@ export default defineHopeConfig({
         },
       },
     },
-  },
+  }),
 });
 ```
 
@@ -302,10 +304,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       docsearch: {
         // ...
@@ -355,8 +357,8 @@ module.exports = defineHopeConfig({
         },
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

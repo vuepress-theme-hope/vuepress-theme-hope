@@ -15,7 +15,7 @@ tag:
 
 ## 侧边栏链接
 
-站点侧边栏的配置由 `themeConfig.sidebar` 控制。
+站点侧边栏的配置由主题选项中的 `sidebar` 控制。
 
 ### 字符串格式
 
@@ -27,12 +27,13 @@ tag:
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config/README.md"],
-  },
+  }),
 });
 ```
 
@@ -42,13 +43,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config/README.md"],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -78,10 +79,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       {
         text: "指南",
@@ -100,7 +102,7 @@ export default defineHopeConfig({
         activeMatch: "^/zh/faq",
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -110,10 +112,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       {
         text: "指南",
@@ -132,8 +134,8 @@ module.exports = defineHopeConfig({
         activeMatch: "^/zh/faq",
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -164,10 +166,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       {
         // 必要的，分组的标题文字
@@ -197,7 +200,7 @@ export default defineHopeConfig({
         ],
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -206,11 +209,10 @@ export default defineHopeConfig({
 ::: code-group-item JS
 
 ```js
-// .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       {
         // 必要的，分组的标题文字
@@ -240,8 +242,8 @@ module.exports = defineHopeConfig({
         ],
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -256,10 +258,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       {
         text: "Group",
@@ -282,7 +285,7 @@ export default defineHopeConfig({
         ],
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -292,10 +295,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       {
         text: "Group",
@@ -318,8 +321,8 @@ module.exports = defineHopeConfig({
         ],
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -353,10 +356,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       "/" /* / */,
       {
@@ -380,7 +384,7 @@ export default defineHopeConfig({
       "/contact" /* /contact.html */,
       "/about" /* /about.html */,
     ],
-  },
+  }),
 });
 ```
 
@@ -390,10 +394,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       "/" /* / */,
       {
@@ -417,8 +421,8 @@ module.exports = defineHopeConfig({
       "/contact" /* /contact.html */,
       "/about" /* /about.html */,
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -454,10 +458,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: {
       "/foo/": [
         "" /* /foo/ */,
@@ -478,7 +483,7 @@ export default defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
+  }),
 });
 ```
 
@@ -488,10 +493,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: {
       "/foo/": [
         "" /* /foo/ */,
@@ -512,8 +517,8 @@ module.exports = defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -538,14 +543,15 @@ sidebar: heading
 
 ::: code-group-item TS
 
-```ts {6}
+```ts {67
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: "heading",
-  },
+  }),
 });
 ```
 
@@ -555,13 +561,13 @@ export default defineHopeConfig({
 
 ```js {6}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: "heading",
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -595,12 +601,13 @@ module.exports = defineHopeConfig({
 
 ::: code-group-item TS
 
-```ts {7,9}
+```ts {8,10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: {
       "/foo/": "structure",
 
@@ -613,7 +620,7 @@ export default defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
+  }),
 });
 ```
 
@@ -623,10 +630,10 @@ export default defineHopeConfig({
 
 ```js {7,9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: {
       "/foo/": "structure",
 
@@ -639,8 +646,8 @@ module.exports = defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -726,7 +733,7 @@ sidebar: false
 
 ## 嵌套的标题链接
 
-默认情况下，侧边栏会自动地显示由当前页面的标题(headers)组成的链接，并按照页面本身的结构进行嵌套，你可以通过 `themeConfig.headerDepth` 来修改它的行为。默认的深度(也是最大的深度)是 `2`，它将提取到 `h2` 和 `h3` 的标题，设置成 `0` 将会禁用标题(headers)链接。
+默认情况下，侧边栏会自动地显示由当前页面的标题(headers)组成的链接，并按照页面本身的结构进行嵌套，你可以在主题选项中通过 `headerDepth` 来修改它的行为。默认的深度(也是最大的深度)是 `2`，它将提取到 `h2` 和 `h3` 的标题，设置成 `0` 将会禁用标题(headers)链接。
 
 也可以使用 frontmatter 来为某个页面重写此值:
 
@@ -754,17 +761,18 @@ headerDepth: 2
 
 ::: code-group-item TS
 
-```ts {8}
+```ts {9}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       // 默认值: true
       activeHeaderLinks: false,
     },
-  },
+  }),
 });
 ```
 
@@ -774,16 +782,16 @@ export default defineHopeConfig({
 
 ```js {8}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       // 默认值: true
       activeHeaderLinks: false,
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -792,7 +800,7 @@ module.exports = defineHopeConfig({
 
 ## 图标支持
 
-侧边栏默认启用图标支持，将在侧边栏的链接前显示页面的图标。你可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
+侧边栏默认启用图标支持，将在侧边栏的链接前显示页面的图标。你可以在主题选项中将 `sidebarIcon` 设置为 `false` 来禁用它。
 
 ## 多语言
 
@@ -804,10 +812,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     locales: {
       "/": {
         sidebar: [
@@ -820,7 +829,7 @@ export default defineHopeConfig({
         ],
       },
     },
-  },
+  }),
 });
 ```
 
@@ -830,10 +839,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     locales: {
       "/": {
         sidebar: [
@@ -846,8 +855,8 @@ module.exports = defineHopeConfig({
         ],
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

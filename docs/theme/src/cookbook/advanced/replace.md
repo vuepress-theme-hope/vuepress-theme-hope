@@ -23,9 +23,14 @@ You need to replace the component alias used in the theme with `alias` option in
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // your theme config here
+  }),
+
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
@@ -44,9 +49,13 @@ export default defineHopeConfig({
 ```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
+module.exports = {
+  theme: hopeTheme({
+    // your theme config here
+  }),
+
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
@@ -55,7 +64,7 @@ module.exports = defineHopeConfig({
       "./components/HomePage.vue"
     ),
   },
-});
+};
 ```
 
 :::
@@ -225,9 +234,14 @@ For example, if your site has strong social attributes, and you want to display 
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // your theme config here
+  }),
+
   alias: {
     // Here you can direct aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components

@@ -33,7 +33,7 @@ If you are not familiar with TypeScript, you can also use a JavaScript config fi
 
 You need to set up a config object in the config file `.vuepress/config.ts` (or `.vuepress/config.js`) and export it.
 
-To get correct hints, importing `defineHopeConfig` from `vuepress-theme-hope` and wrapping the config object is recommanded:
+To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommanded:
 
 :::: code-group
 
@@ -41,10 +41,10 @@ To get correct hints, importing `defineHopeConfig` from `vuepress-theme-hope` an
 
 ```ts{2,4,6}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
 
-export default defineHopeConfig({
-   // put configuration here
+export default defineUserConfig({
+   // put your config here
 });
 ```
 
@@ -54,10 +54,10 @@ export default defineHopeConfig({
 
 ```js{2,4,6}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { defineUserConfig } = require("vuepress");
 
-module.exports = defineHopeConfig({
-   // put configuration here
+module.exports = defineUserConfig({
+   // put your config here
 });
 ```
 

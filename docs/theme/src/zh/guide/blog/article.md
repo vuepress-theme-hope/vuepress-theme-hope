@@ -20,7 +20,7 @@ tag:
 
 主题默认情况下只会在文章列表中展示你指定的摘要或描述。
 
-如果你想要让主题自动提取摘要，请在 `themeConfig.plugins.blog` 中设置 `autoExcerpt: true`。
+如果你想要让主题自动提取摘要，请在主题选项中设置 `plugins.blog.autoExcerpt: true`。
 
 ## 文章
 

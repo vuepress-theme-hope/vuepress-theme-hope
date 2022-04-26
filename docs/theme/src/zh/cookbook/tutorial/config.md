@@ -33,7 +33,7 @@ VuePress 使用项目文件夹下的 `.vuepress` 文件夹存放配置，所有 
 
 你需要在配置文件`.vuepress/config.ts` (或 `.vuepress/config.js`) 中，设置一个配置对象并将其导出。
 
-为了能够得到正确的提示，我们建议从 `vuepress-theme-hope` 导入 `defineHopeConfig` 并包裹配置对象:
+为了能够得到正确的提示，我们建议从 `vuepress` 导入 `defineUserConfig` 并包裹配置对象:
 
 :::: code-group
 
@@ -41,9 +41,9 @@ VuePress 使用项目文件夹下的 `.vuepress` 文件夹存放配置，所有 
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
 
-export default defineHopeConfig({
+export default defineUserConfig({
   // 此处放置配置
 });
 ```
@@ -54,9 +54,9 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { defineUserConfig } = require("vuepress");
 
-module.exports = defineHopeConfig({
+module.exports = defineUserConfig({
   // 此处放置配置
 });
 ```

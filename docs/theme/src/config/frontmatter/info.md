@@ -47,7 +47,7 @@ Show the author of the current page. If you don’t fill it, you will fall back 
 
 ::: tip
 
-When setting default author in themeConfig, you can set `false` to prevent showing the default author.
+When setting default author in theme options, you can set `false` to prevent showing the default author.
 
 :::
 

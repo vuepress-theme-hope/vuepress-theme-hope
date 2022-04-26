@@ -10,13 +10,13 @@ tag:
 
 ## Theme Usage
 
-- rename `config` to `defineHopeConfig`
-- rename `themeConfig` to `defineThemeConfig`
+- rename `themeConfig` to `hopeTheme`
 - rename `navbarConfig` to `defineNavbarConfig`
 - rename `sidebarConfig` to `defineSidebarConfig`
 - added `defineSidebarArrayConfig` and `defineSidebarObjectConfig` helpers
+- remove `config`
 
-## ThemeConfig
+## Theme Options
 
 - changed `author` type from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
 

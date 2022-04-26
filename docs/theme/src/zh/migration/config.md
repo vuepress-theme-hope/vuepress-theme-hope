@@ -10,8 +10,8 @@ tag:
 
 ## 主题使用
 
-- `config` 重命名为 `defineHopeConfig`
-- `themeConfig` 重命名为 `defineThemeConfig`
+- 移除 `config`
+- `themeConfig` 重命名为 `hopeTheme`
 - `navbarConfig` 重命名为 `defineNavbarConfig`
 - `sidebarConfig` 重命名为 `defineSidebarConfig`
 - 新增 `defineSidebarArrayConfig`, `defineSidebarObjectConfig`

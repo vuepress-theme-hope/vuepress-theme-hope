@@ -143,11 +143,16 @@ npm init vuepress-theme-hope@next [dir]
 
 ```ts
 // .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  // 站点选项
+  // ...
+
   theme: hopeTheme({
-    // 在此放置主题选项
+    // 主题选项
+    // ...
   }),
 });
 ```
@@ -160,11 +165,15 @@ export default defineHopeConfig({
 // .vuepress/config.js
 const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
+module.exports = {
+  // 站点选项
+  // ...
+
   theme: hopeTheme({
-    // 在此放置主题选项
+    // 主题选项
+    // ...
   }),
-});
+};
 ```
 
 :::

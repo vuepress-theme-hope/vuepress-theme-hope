@@ -34,17 +34,19 @@ For these extensions, please read [Markdown extensions in VuePress](https://vuep
 
 ### Enable all
 
-You can set `themeconfig.plugins.htmlEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
+You can set `plugins.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
 
-```js {3-5}
+```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
 module.exports = {
-  themeConfig: {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         enableAll: true,
       },
     },
-  },
+  }),
 };
 ```
 
