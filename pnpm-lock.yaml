@@ -163,51 +163,79 @@ importers:
 
   demo/add-this:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-add-this: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-add-this: link:../../packages/add-this
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/blog2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/core': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
+      '@vuepress/utils': 2.0.0-beta.41
       vuepress-plugin-blog2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/core': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
+      '@vuepress/utils': 2.0.0-beta.41
       vuepress-plugin-blog2: link:../../packages/blog2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/comment2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/core': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
+      '@vuepress/utils': 2.0.0-beta.41
       vuepress-plugin-comment2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/core': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
+      '@vuepress/utils': 2.0.0-beta.41
       vuepress-plugin-comment2: link:../../packages/comment2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/copy-code2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-copy-code2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-copy-code2: link:../../packages/copy-code2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/copyright2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       vuepress-plugin-copyright2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       vuepress-plugin-copyright2: link:../../packages/copyright2
       vuepress-vite: 2.0.0-beta.41
@@ -215,90 +243,126 @@ importers:
 
   demo/feed2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-feed2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-feed2: link:../../packages/feed2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/lightgallery:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-lightgallery: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-lightgallery: link:../../packages/lightgallery
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/md-enhance:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-md-enhance: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-md-enhance: link:../../packages/md-enhance
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/photo-swipe:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-photo-swipe: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-photo-swipe: link:../../packages/photo-swipe
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/pwa2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-pwa2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-pwa2: link:../../packages/pwa2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/redirect2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-redirect2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-redirect2: link:../../packages/redirect2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/sass-palette:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-sass-palette: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-sass-palette: link:../../packages/sass-palette
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/seo2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-seo2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-seo2: link:../../packages/seo2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
 
   demo/sitemap2:
     specifiers:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-sitemap2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
+      '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/theme-default': 2.0.0-beta.41
       vuepress-plugin-sitemap2: link:../../packages/sitemap2
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -4031,7 +4095,7 @@ packages:
       - supports-color
 
   /@vuepress/plugin-back-to-top/2.0.0-beta.41:
-    resolution: {integrity: sha512-DJ7zgnINa0HenaY3wHT64IzRzDXiUyce/PLE18DU4Nin83IDSbsLbcbYyer4mDDXIRNxpGnBzAjQodXrM571kA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.41.tgz}
+    resolution: {integrity: sha512-DJ7zgnINa0HenaY3wHT64IzRzDXiUyce/PLE18DU4Nin83IDSbsLbcbYyer4mDDXIRNxpGnBzAjQodXrM571kA==}
     dependencies:
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
@@ -4094,7 +4158,7 @@ packages:
       - supports-color
 
   /@vuepress/plugin-medium-zoom/2.0.0-beta.41:
-    resolution: {integrity: sha512-RWjclUzOWSl1SGPORzJVbiwdZnljq2hEqUveGm3vXiD0gbwAgWJXGoH/JF1DJi/FSo1OyKm3qy36CLBvcBJqDQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-2.0.0-beta.41.tgz}
+    resolution: {integrity: sha512-RWjclUzOWSl1SGPORzJVbiwdZnljq2hEqUveGm3vXiD0gbwAgWJXGoH/JF1DJi/FSo1OyKm3qy36CLBvcBJqDQ==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.41
       '@vuepress/core': 2.0.0-beta.41
@@ -4188,7 +4252,7 @@ packages:
       '@vue/shared': 3.2.33
 
   /@vuepress/theme-default/2.0.0-beta.41:
-    resolution: {integrity: sha512-9qjtDOy0hwKzqdpnMDm5HXvPQI1m1AR35f30P2muduCg6RBEg7RalIevVtNAMNZfs1s1Z8spX51WDIqEbmAyoQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.41.tgz}
+    resolution: {integrity: sha512-9qjtDOy0hwKzqdpnMDm5HXvPQI1m1AR35f30P2muduCg6RBEg7RalIevVtNAMNZfs1s1Z8spX51WDIqEbmAyoQ==}
     peerDependencies:
       sass-loader: ^12.6.0
     peerDependenciesMeta:
@@ -4654,7 +4718,7 @@ packages:
     dev: false
 
   /argparse/1.0.10:
-    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz}
+    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
     dependencies:
       sprintf-js: 1.0.3
 
@@ -7381,7 +7445,7 @@ packages:
     dev: true
 
   /esprima/4.0.1:
-    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz}
+    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
     engines: {node: '>=4'}
     hasBin: true
 
@@ -9616,7 +9680,7 @@ packages:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz}
 
   /js-yaml/3.14.1:
-    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz}
+    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
     hasBin: true
     dependencies:
       argparse: 1.0.10
@@ -10511,7 +10575,7 @@ packages:
     engines: {node: '>= 0.6'}
 
   /medium-zoom/1.0.6:
-    resolution: {integrity: sha512-UdiUWfvz9fZMg1pzf4dcuqA0W079o0mpqbTnOz5ip4VGYX96QjmbM+OgOU/0uOzAytxC0Ny4z+VcYQnhdifimg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/medium-zoom/-/medium-zoom-1.0.6.tgz}
+    resolution: {integrity: sha512-UdiUWfvz9fZMg1pzf4dcuqA0W079o0mpqbTnOz5ip4VGYX96QjmbM+OgOU/0uOzAytxC0Ny4z+VcYQnhdifimg==}
 
   /memfs/3.4.1:
     resolution: {integrity: sha512-1c9VPVvW5P7I85c35zAdEr1TD5+F11IToIHIlrVIcflfnzPkJa0ZoYEoEdYDP8KgPFoSZ/opDrUsAoZWym3mtw==}
@@ -14326,7 +14390,7 @@ packages:
     dev: true
 
   /sprintf-js/1.0.3:
-    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz}
+    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
 
   /ssim.js/3.5.0:
     resolution: {integrity: sha512-Aj6Jl2z6oDmgYFFbQqK7fght19bXdOxY7Tj03nF+03M9gCBAjeIiO8/PlEGMfKDwYpw4q6iBqVq2YuREorGg/g==}

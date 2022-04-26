@@ -1,12 +1,15 @@
+import { defaultTheme } from "@vuepress/theme-default";
 import { path } from "@vuepress/utils";
+import { commentPlugin } from "vuepress-plugin-comment2";
+
 import type { Theme } from "@vuepress/core";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-const commentTheme: Theme<DefaultThemeOptions> = {
+export const commentTheme = (options: DefaultThemeOptions): Theme => ({
   name: "comment-theme",
 
   // we are extending @vuepress/theme-default
-  extends: "@vuepress/theme-default",
+  extends: defaultTheme(options),
 
   layouts: {
     // we overide the default layout to provide comment service
@@ -14,32 +17,27 @@ const commentTheme: Theme<DefaultThemeOptions> = {
   },
 
   plugins: [
-    [
-      "comment2",
-      {
-        /**
-         * Using giscus
-         */
-        // type: "giscus",
-        // repo: "vuepress-theme-hope/giscus-discussions",
-        // repoId: "R_kgDOG_Pt2A",
-        // category: "Announcements",
-        // categoryId: "DIC_kwDOG_Pt2M4COD69",
+    commentPlugin({
+      /**
+       * Using giscus
+       */
+      // type: "giscus",
+      // repo: "vuepress-theme-hope/giscus-discussions",
+      // repoId: "R_kgDOG_Pt2A",
+      // category: "Announcements",
+      // categoryId: "DIC_kwDOG_Pt2M4COD69",
 
-        /**
-         * Using twikoo
-         */
-        // type: "twikoo",
-        // envId: "https://twikoo.ccknbc.vercel.app",
+      /**
+       * Using twikoo
+       */
+      // type: "twikoo",
+      // envId: "https://twikoo.ccknbc.vercel.app",
 
-        /**
-         * Using Waline
-         */
-        type: "waline",
-        serverURL: "https://vuepress-theme-hope-comment.vercel.app",
-      },
-    ],
+      /**
+       * Using Waline
+       */
+      type: "waline",
+      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+    }),
   ],
-};
-
-export default commentTheme;
+});

@@ -14,6 +14,8 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
+    "@vuepress/cli": "2.0.0-beta.41",
+    "@vuepress/theme-default": "2.0.0-beta.41",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-vite": "2.0.0-beta.41",
     "vuepress-webpack": "2.0.0-beta.41"
