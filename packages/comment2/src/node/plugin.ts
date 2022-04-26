@@ -60,7 +60,7 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
     }),
 
     onInitialized: (app): void => {
-      if (isGiscus) addCustomElement(app, ["GiscusWidget"]);
+      if (isGiscus) addCustomElement(app, "GiscusWidget");
 
       addViteSsrNoExternal(app, [
         "@mr-hope/vuepress-shared",
@@ -79,13 +79,12 @@ export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
       }
 
       if (isWaline) {
-        addViteOptimizeDepsInclude(app, [
-          "@waline/client",
-          "autosize",
-          "marked",
-          "hanabi",
+        addViteOptimizeDepsExclude(app, [
+          "@waline/client/dist/component",
+          "@waline/client/dist/pageview",
         ]);
-        addViteSsrExternal(app, "@waline/client");
+        addViteOptimizeDepsInclude(app, ["autosize", "marked", "hanabi"]);
+        addViteSsrNoExternal(app, "@waline/client");
       }
     },
 

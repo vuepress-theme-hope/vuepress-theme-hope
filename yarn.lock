@@ -3747,15 +3747,16 @@
   dependencies:
     vue-demi "*"
 
-"@waline/client@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@waline/client/-/client-2.0.1.tgz#dd9c1b08be14120d4508b34bfaf56b54e9772d5a"
-  integrity sha512-uZqlDV2QOLo9XEzgdIJxbASm7uM5f7ddmmZpye8kd3ibs+9zRHVi82mdtEPX0+MCRvfQxUmfrbiKGd8mv7AsyQ==
+"@waline/client@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@waline/client/-/client-2.0.3.tgz#fba58a3ca62195c97e8723b783ba7dab82e840dd"
+  integrity sha512-4l2jZhiGNk3HHfKKIJwnwQxOWCtl24wXusp6oZ0ad07R+Sgbu2le4M2Uep0y8tirSvyZRUt7N0YzTkdFNVJXaw==
   dependencies:
-    autosize "5.0.1"
-    hanabi "0.4.0"
-    marked "4.0.14"
-    vue "3.2.33"
+    "@vueuse/core" "^8.3.1"
+    autosize "^5.0.1"
+    hanabi "^0.4.0"
+    marked "^4.0.14"
+    vue "^3.2.33"
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
@@ -4296,7 +4297,7 @@ autoprefixer@^10.4.4:
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
 
-autosize@5.0.1:
+autosize@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/autosize/-/autosize-5.0.1.tgz#ed269b0fa9b7eb47627048a1bb3299e99e003a0f"
   integrity sha512-UIWUlE4TOVPNNj2jjrU39wI4hEYbneUypEqcyRmRFIx5CC2gNdg3rQr+Zh7/3h6egbBvm33TDQjNQKtj9Tk1HA==
@@ -8108,7 +8109,7 @@ gray-matter@^4.0.3:
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
 
-hanabi@0.4.0:
+hanabi@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/hanabi/-/hanabi-0.4.0.tgz#ebbb251358c1337db1eabda686c43ff777d30d82"
   integrity sha1-67slE1jBM32x6r2mhsQ/93fTDYI=
@@ -10374,7 +10375,7 @@ markdownlint@~0.25.1:
   dependencies:
     markdown-it "12.3.2"
 
-marked@4.0.14:
+marked@^4.0.14:
   version "4.0.14"
   resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.14.tgz#7a3a5fa5c80580bac78c1ed2e3b84d7bd6fc3870"
   integrity sha512-HL5sSPE/LP6U9qKgngIIPTthuxC0jrfxpYMZ3LdGDD3vTnLs59m2Z7r6+LNDR3ToqEQdkKd6YaaEfJhodJmijQ==
@@ -16556,7 +16557,7 @@ vue-router@^4.0.14:
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
-vue@3.2.33, vue@^3.2.31, vue@^3.2.32:
+vue@^3.2.31, vue@^3.2.32, vue@^3.2.33:
   version "3.2.33"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.33.tgz#7867eb16a3293a28c4d190a837bc447878bd64c2"
   integrity sha512-si1ExAlDUrLSIg/V7D/GgA4twJwfsfgG+t9w10z38HhL/HA07132pUQ2KuwAo8qbCyMJ9e6OqrmWrOCr+jW7ZQ==

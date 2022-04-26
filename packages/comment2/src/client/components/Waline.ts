@@ -6,14 +6,14 @@ import {
   h,
   onBeforeUnmount,
   onMounted,
-  shallowRef,
   watch,
 } from "vue";
 import { useRoute } from "vue-router";
 import { enableWaline, walineLocales, walineOption } from "../define";
+import { Waline } from "@waline/client/dist/component";
 import { pageviewCount } from "@waline/client/dist/pageview";
 
-import type { ComponentOptions, VNode } from "vue";
+import type { VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";
 
 import "@waline/client/dist/waline.css";
@@ -30,8 +30,6 @@ export default defineComponent({
 
     let abort: () => void;
     let stopHandler: () => void;
-
-    const WalineComment = shallowRef<ComponentOptions | null>(null);
 
     const enableComment = computed(() => {
       if (!enableWaline) return false;
@@ -75,10 +73,6 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      void import("@waline/client/dist/component").then(({ Waline }) => {
-        WalineComment.value = Waline;
-      });
-
       stopHandler = watch(
         () => route.path,
         () => {
@@ -107,7 +101,7 @@ export default defineComponent({
           class: "waline-wrapper",
           style: { display: enableComment.value ? "block" : "none" },
         },
-        enableWaline ? h(WalineComment.value || "div", walineProps.value) : []
+        enableWaline ? h(Waline, walineProps.value) : []
       );
   },
 });
