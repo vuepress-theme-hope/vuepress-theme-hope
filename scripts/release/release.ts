@@ -3,7 +3,7 @@ import ora = require("ora");
 import { green, red } from "chalk";
 import { prompt } from "inquirer";
 import { ReleaseType, inc } from "semver";
-import { version as currentVersion } from "../../lerna.json";
+import { version as currentVersion } from "../../package.json";
 import { getNpmTags, getVersion, versions } from "./version";
 import { sync } from "./sync";
 import type { Answers } from "./version";
@@ -11,8 +11,8 @@ import type { Answers } from "./version";
 export const release = async (): Promise<void> => {
   const buildSpinner = ora("Building project").start();
 
-  await execa("yarn", ["run", "clean"]);
-  await execa("yarn", ["run", "build"]);
+  await execa("pnpm", ["run", "clean"]);
+  await execa("pnpm", ["run", "build"]);
 
   buildSpinner.succeed();
 

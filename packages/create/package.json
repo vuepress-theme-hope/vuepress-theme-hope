@@ -32,7 +32,7 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "yarn dev:ts",
+    "dev": "pnpm run dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "devDependencies": {

@@ -19,11 +19,11 @@
   },
   "dependencies": {
     "@types/three": "0.139.0",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.38",
-    "axios": "0.26.1",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.41",
+    "axios": "0.27.1",
     "three": "0.139.2",
-    "vuepress-theme-hope": "2.0.0-beta.47",
-    "vuepress-vite": "2.0.0-beta.39",
-    "vuepress-webpack": "2.0.0-beta.38"
+    "vuepress-theme-hope": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.41",
+    "vuepress-webpack": "2.0.0-beta.41"
   }
 }

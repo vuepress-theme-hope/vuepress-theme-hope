@@ -29,38 +29,13 @@ jobs:
         with:
           node-version: 16
 
-      - name: restore lerna
-        uses: actions/cache@v3
-        id: lerna-cache
-        with:
-          path: |
-            node_modules
-            **/node_modules
-          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
-
-      - name: Get yarn cache directory path
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: yarn-cache
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install Deps
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-        run: yarn run build
+        run: pnpm run build
 
       # test with specific node version
       - uses: actions/setup-node@v3
@@ -69,11 +44,11 @@ jobs:
 
       - name: Webpack build test
         run: |
-          yarn lerna run demo:webpack-build
+          pnpm run -r demo:webpack-build
 
       - name: Vite build test
         run: |
-          yarn lerna run demo:vite-build
+          pnpm run -r run demo:vite-build
 
   linter-and-unit:
     name: Linter and Unit test
@@ -86,48 +61,23 @@ jobs:
         with:
           node-version: 16
 
-      - name: restore lerna
-        uses: actions/cache@v3
-        id: lerna-cache
-        with:
-          path: |
-            node_modules
-            **/node_modules
-          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
-
-      - name: Get yarn cache directory path
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: yarn-cache
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install Deps
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-        run: yarn run build
+        run: pnpm run build
 
       - name: Linter test
         run: |
-          yarn run lint:check
-          yarn run lint:md
+          pnpm run lint:check
+          pnpm run lint:md
 
       - name: Unit test
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-        run: yarn run test
+        run: pnpm run test
 
       - name: Upload coverage
         if: github.ref == 'refs/heads/main'

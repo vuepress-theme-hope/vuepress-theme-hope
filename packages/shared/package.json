@@ -32,22 +32,23 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev": "concurrently \"pnpm run dev:copy\" \"pnpm run dev:ts\"",
     "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.38",
-    "@vuepress/plugin-git": "2.0.0-beta.38",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.38",
-    "@vuepress/shared": "2.0.0-beta.38",
+    "@vuepress/client": "2.0.0-beta.41",
+    "@vuepress/plugin-git": "2.0.0-beta.41",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.41",
+    "@vuepress/shared": "2.0.0-beta.41",
     "chalk": "^4.1.2",
     "dayjs": "^1.11.1",
     "ora": "^5.4.1",
-    "vue": "^3.2.32"
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/core": "2.0.0-beta.41"
   },
   "publishConfig": {
     "access": "public"
