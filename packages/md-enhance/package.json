@@ -50,7 +50,7 @@
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.9",
-    "@vuepress/client": "2.0.0-beta.38",
+    "@vuepress/client": "2.0.0-beta.41",
     "@vuepress/plugin-container": "2.0.0-beta.38",
     "@vuepress/shared": "2.0.0-beta.38",
     "@vuepress/utils": "2.0.0-beta.38",

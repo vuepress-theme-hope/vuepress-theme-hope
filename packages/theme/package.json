@@ -46,7 +46,7 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/lodash.throttle": "^4.1.7",
     "@vuepress/cli": "2.0.0-beta.38",
-    "@vuepress/client": "2.0.0-beta.38",
+    "@vuepress/client": "2.0.0-beta.41",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.38",
     "@vuepress/plugin-container": "2.0.0-beta.38",
     "@vuepress/plugin-external-link-icon": "2.0.0-beta.38",

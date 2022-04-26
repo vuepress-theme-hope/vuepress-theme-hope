@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "2.0.0-beta.47",
-    "@vuepress/client": "2.0.0-beta.38",
+    "@vuepress/client": "2.0.0-beta.41",
     "@vuepress/utils": "2.0.0-beta.38",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.32",
