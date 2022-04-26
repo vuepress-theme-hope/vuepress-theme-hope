@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import { chalk } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -55,11 +55,11 @@ export const addCustomElement = (
 ): void => {
   const customElements =
     typeof customElement === "string" ? [customElement] : customElement;
-  const { bundler, bundlerConfig } = app.options;
+  const { bundler } = app.options;
 
   // for vite
-  if (bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (bundler.name === "vite") {
+    const viteBundlerConfig: ViteBundlerOptions = (bundler as any).config;
 
     if (!viteBundlerConfig.vuePluginOptions)
       viteBundlerConfig.vuePluginOptions = {};
@@ -83,8 +83,8 @@ export const addCustomElement = (
   }
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = bundlerConfig;
+  if (bundler.name === "webpack") {
+    const webpackBundlerConfig: WebpackBundlerOptions = (bundler as any).config;
 
     if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};
     if (!webpackBundlerConfig.vue.compilerOptions)

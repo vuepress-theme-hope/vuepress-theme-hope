@@ -1,20 +1,17 @@
-import { sitemap } from "vuepress-plugin-sitemap2";
+import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks";
+import { getBlogPlugin } from "./blog";
+import { getCommentPlugin } from "./comment";
+import { getComponentsPlugin } from "./components";
+import { getCopyCodePlugin } from "./copyCode";
+import { getCopyrightPlugin } from "./copyright";
+import { getFeedPlugin } from "./feed";
+import { getMdEnhancePlugin } from "./mdEnhance";
+import { getPhotoSwipePlugin } from "./photoSwipe";
+import { getPWAPlugin } from "./pwa";
+import { getSitemapPlugin } from "./sitemap";
+import { getSEOPlugin } from "./seo";
 
-import { resolveActiveHeaderLinksPlugin } from "./activeHeaderLinks";
-import { resolveBlogPlugin } from "./blog";
-import { resolveCommentPlugin } from "./comment";
-import { resolveComponentsPlugin } from "./components";
-import { resolveCopyCodePlugin } from "./copyCode";
-import { resolveCopyrightPlugin } from "./copyright";
-import { resolveFeedPlugin } from "./feed";
-import { resolveMdEnhancePlugin } from "./mdEnhance";
-import { resolvePhotoSwipePlugin } from "./photoSwipe";
-import { resolvePWAPlugin } from "./pwa";
-import { resolveSearchPlugin } from "./search";
-import { resolveSitemapOptions } from "./sitemap";
-import { resolveSEOPlugin } from "./seo";
-
-import type { App, PluginConfig, PluginOptions } from "@vuepress/core";
+import type { App, PluginConfig } from "@vuepress/core";
 import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 
 export const getPluginConfig = (
@@ -22,31 +19,26 @@ export const getPluginConfig = (
   plugins: HopeThemePluginsOptions,
   themeData: HopeThemeConfig,
   hostname: string
-): PluginConfig<PluginOptions>[] => {
+): PluginConfig => {
   const pluginConfig = [
-    resolveComponentsPlugin(themeData),
-    resolveActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
+    getComponentsPlugin(themeData),
+    getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     ["@vuepress/external-link-icon", plugins.externalLinkIcon !== false],
     ["@vuepress/nprogress", plugins.nprogress !== false],
     ["@vuepress/prismjs", plugins.prismjs !== false],
     ["@vuepress/theme-data", { themeData }],
-    resolveBlogPlugin(themeData, plugins.blog),
-    resolveCommentPlugin(plugins.comment),
-    resolveCopyCodePlugin(themeData, plugins.copyCode),
-    resolveCopyrightPlugin(hostname, themeData, plugins.copyright),
+    getBlogPlugin(themeData, plugins.blog),
+    getCommentPlugin(plugins.comment),
+    getCopyCodePlugin(themeData, plugins.copyCode),
+    getCopyrightPlugin(hostname, themeData, plugins.copyright),
     // seo should work before feed
-    resolveSEOPlugin(hostname, themeData, plugins),
-    resolveFeedPlugin(hostname, themeData, plugins.feed),
-    resolveMdEnhancePlugin(plugins.mdEnhance),
-    resolvePhotoSwipePlugin(plugins.photoSwipe),
-    resolvePWAPlugin(plugins.pwa),
-    sitemap(resolveSitemapOptions(hostname, plugins.sitemap)),
-
-    // try resolving search plugin
-    resolveSearchPlugin(plugins),
-  ].filter(
-    (item) => (item as unknown[])[1] !== false
-  ) as PluginConfig<PluginOptions>[];
+    getSEOPlugin(hostname, themeData, plugins),
+    getFeedPlugin(hostname, themeData, plugins.feed),
+    getMdEnhancePlugin(plugins.mdEnhance),
+    getPhotoSwipePlugin(plugins.photoSwipe),
+    getPWAPlugin(plugins.pwa),
+    getSitemapPlugin(hostname, plugins.sitemap),
+  ].filter((item) => item !== null) as PluginConfig;
 
   if (app.env.isDebug) console.log("Theme plugin options:", pluginConfig);
 

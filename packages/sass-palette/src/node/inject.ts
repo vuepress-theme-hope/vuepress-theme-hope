@@ -14,11 +14,11 @@ import type { LoaderContext } from "@vuepress/bundler-webpack/lib/types.webpack"
  * @param errMsg error msg
  */
 export const injectConfigModule = (app: App, id: string): void => {
-  const { bundler, bundlerConfig } = app.options;
+  const { bundler } = app.options;
 
   // for vite
-  if (bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (bundler.name === "vite") {
+    const viteBundlerConfig: ViteBundlerOptions = (bundler as any).config;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const originalAdditionalData:
@@ -59,9 +59,8 @@ export const injectConfigModule = (app: App, id: string): void => {
   }
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = app.options
-      .bundlerConfig as WebpackBundlerOptions;
+  if (bundler.name === "webpack") {
+    const webpackBundlerConfig: WebpackBundlerOptions = (bundler as any).config;
 
     if (!webpackBundlerConfig.scss) webpackBundlerConfig.scss = {};
 

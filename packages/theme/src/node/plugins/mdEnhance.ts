@@ -1,14 +1,14 @@
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-import type { PluginConfig } from "@vuepress/core";
+import type { Plugin } from "@vuepress/core";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 
-export const resolveMdEnhancePlugin = (
+export const getMdEnhancePlugin = (
   options?: Partial<MarkdownEnhanceOptions> | false
-): PluginConfig => {
-  if (options === false) return ["", false];
+): Plugin | null => {
+  if (options === false) return null;
 
-  return mdEnhance({
+  return mdEnhancePlugin({
     container: true,
     ...(options || {}),
   });

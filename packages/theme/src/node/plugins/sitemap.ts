@@ -1,16 +1,19 @@
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
+
+import type { Plugin } from "@vuepress/core";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
-export const resolveSitemapOptions = (
+export const getSitemapPlugin = (
   hostname: string,
   options?: Omit<SitemapOptions, "hostname"> | false
-): SitemapOptions | false => {
-  if (options === false) return false;
+): Plugin | null => {
+  if (options === false) return null;
 
-  // disable feed if `hostname` is not set and no options for feed plugin
-  if (!Object.keys(options || {}).length && !hostname) return false;
+  // disable sitemap if `hostname` is not set and no options for sitemap plugin
+  if (!Object.keys(options || {}).length && !hostname) return null;
 
-  return {
+  return sitemapPlugin({
     hostname,
     ...(options || {}),
-  } as SitemapOptions;
+  } as SitemapOptions);
 };

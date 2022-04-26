@@ -14,7 +14,7 @@ export const useSassPalettePlugin = (
       (plugin) => plugin.name !== `vuepress-plugin-sass-palette?${options.id}`
     )
   )
-    app.use(sassPalettePlugin, options);
+    app.use(sassPalettePlugin(options));
 };
 
 export const removePalettePlugin = (app: App, id: string): void => {

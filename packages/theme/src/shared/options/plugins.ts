@@ -1,6 +1,4 @@
-import type { Page } from "@vuepress/core";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
-import type { LocaleConfig } from "@vuepress/shared";
 import type { BlogOptions } from "vuepress-plugin-blog2";
 import type { CommentOptions } from "vuepress-plugin-comment2";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
@@ -114,71 +112,6 @@ export interface HopeThemeBlogPluginOptions
   autoExcerpt?: boolean;
 }
 
-export interface DocSearchTranslations {
-  button?: {
-    buttonText?: string;
-    buttonAriaLabel?: string;
-  };
-  modal?: {
-    searchBox?: {
-      resetButtonTitle?: string;
-      resetButtonAriaLabel?: string;
-      cancelButtonText?: string;
-      cancelButtonAriaLabel?: string;
-    };
-    footer?: {
-      selectText?: string;
-      selectKeyAriaLabel?: string;
-      navigateText?: string;
-      navigateUpKeyAriaLabel?: string;
-      navigateDownKeyAriaLabel?: string;
-      closeText?: string;
-      closeKeyAriaLabel?: string;
-      searchByText?: string;
-    };
-    errorScreen?: {
-      titleText?: string;
-      helpText?: string;
-    };
-    startScreen?: {
-      recentSearchesTitle?: string;
-      noRecentSearchesText?: string;
-      saveRecentSearchButtonTitle?: string;
-      removeRecentSearchButtonTitle?: string;
-      favoriteSearchesTitle?: string;
-      removeFavoriteSearchButtonTitle?: string;
-    };
-    noResultsScreen?: {
-      noResultsText?: string;
-      suggestedQueryText?: string;
-      reportMissingResultsText?: string;
-      reportMissingResultsLinkText?: string;
-    };
-  };
-}
-
-export interface DocSearchPluginOptions extends Record<string, unknown> {
-  appId: string;
-  apiKey: string;
-  indexName: string;
-  placeholder?: string;
-  searchParameters?: Record<string, unknown>;
-  disableUserPersonalization?: boolean;
-  initialQuery?: string;
-
-  translations?: DocSearchTranslations;
-}
-
-export interface SearchPluginOptions {
-  locales?: LocaleConfig<{
-    placeholder: string;
-  }>;
-  hotKeys?: string[];
-  maxSuggestions?: number;
-  isSearchable?: (page: Page) => boolean;
-  getExtraFields?: (page: Page) => string[];
-}
-
 export interface HopeThemePluginsOptions {
   /**
    * Enable @vuepress/active-header-links or not
@@ -222,11 +155,6 @@ export interface HopeThemePluginsOptions {
    * Copyright Plugin options
    */
   copyright?: CopyrightOptions | true;
-
-  /**
-   * DocSearch Plugin Options
-   */
-  docsearch?: DocSearchPluginOptions;
 
   /**
    * Enable @vuepress/external-link-icon or not
@@ -314,11 +242,6 @@ export interface HopeThemePluginsOptions {
    * @see http://vuepress-theme-hope.github.io/v2/reading-time/zh/
    */
   readingTime?: ReadingTimeOptions;
-
-  /**
-   * Search Plugin Options
-   */
-  search?: SearchPluginOptions;
 
   /**
    * SEO plugin options

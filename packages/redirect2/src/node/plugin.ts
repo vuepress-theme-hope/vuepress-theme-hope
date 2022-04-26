@@ -2,13 +2,13 @@ import { handleRedirect } from "./extends";
 import { generateHTML } from "./generate";
 import { logger } from "./utils";
 
-import type { Page, Plugin, PluginConfig, PluginObject } from "@vuepress/core";
+import type { Page, PluginObject } from "@vuepress/core";
 import type {
   RedirectOptions,
   RedirectPluginFrontmatterOption,
 } from "../shared";
 
-export const redirectPlugin: Plugin<RedirectOptions> = (options) => {
+export const redirectPlugin = (options: RedirectOptions): PluginObject => {
   const plugin: PluginObject = {
     name: "vuepress-plugin-redirect2",
   };
@@ -19,20 +19,16 @@ export const redirectPlugin: Plugin<RedirectOptions> = (options) => {
     return plugin;
   }
 
-  const redirectOptions = options as RedirectOptions;
-
   return {
     ...plugin,
 
-    extendsPage: (
-      page: Page<Record<string, never>, RedirectPluginFrontmatterOption>,
-      app
-    ) => handleRedirect(page, app, redirectOptions),
+    extendsPage: (page, app) =>
+      handleRedirect(
+        page as Page<Record<string, never>, RedirectPluginFrontmatterOption>,
+        app,
+        options
+      ),
 
-    onGenerated: (app): Promise<void> => generateHTML(app, redirectOptions),
+    onGenerated: (app): Promise<void> => generateHTML(app, options),
   };
 };
-
-export const redirect = (
-  options: RedirectOptions | false
-): PluginConfig<RedirectOptions> => ["redirect2", options];
