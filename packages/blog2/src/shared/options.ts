@@ -81,7 +81,7 @@ export interface BlogCategoryOptions {
    *
    * Front Matter 配置
    */
-  frontmatter?: (localePath: string) => Record<string, string>;
+  frontmatter?: (localePath: string) => Record<string, unknown>;
 
   /**
    * Item page path pattern or custom function to be registered
@@ -113,7 +113,7 @@ export interface BlogCategoryOptions {
   itemFrontmatter?: (
     name: string,
     localePath: string
-  ) => Record<string, string>;
+  ) => Record<string, unknown>;
 }
 
 export interface BlogTypeOptions {
@@ -192,7 +192,7 @@ export interface BlogTypeOptions {
    *
    * Front Matter 配置
    */
-  frontmatter?: (localePath: string) => Record<string, string>;
+  frontmatter?: (localePath: string) => Record<string, unknown>;
 }
 
 export interface BlogOptions {
