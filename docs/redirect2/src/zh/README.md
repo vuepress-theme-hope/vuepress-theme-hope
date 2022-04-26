@@ -23,6 +23,14 @@ copyrightText: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-redirect2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-redirect2@next
 
 ```ts
 // .vuepress/config.ts
-import { redirect } from "vuepress-plugin-redirect2";
+import { redirectPlugin } from "vuepress-plugin-redirect2";
 
 export default {
   plugins: [
-    redirect({
+    redirectPlugin({
       // 配置选项
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { redirect } = require("vuepress-plugin-redirect2");
+const { redirectPlugin } = require("vuepress-plugin-redirect2");
 
 module.exports = {
   plugins: [
-    redirect({
+    redirectPlugin({
       // 配置选项
     }),
   ],

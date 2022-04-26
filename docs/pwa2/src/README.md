@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-pwa2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-pwa2@next
 
 ```ts
 // .vuepress/config.ts
-import { pwa } from "vuepress-plugin-pwa2";
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {
   plugins: [
-    pwa({
+    pwaPlugin({
       // your options
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { pwa } = require("vuepress-plugin-pwa2");
+const { pwaPlugin } = require("vuepress-plugin-pwa2");
 
 module.exports = {
   plugins: [
-    pwa({
+    pwaPlugin({
       // your options
     }),
   ],

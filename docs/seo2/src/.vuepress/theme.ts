@@ -1,10 +1,10 @@
-import { defineThemeConfig } from "vuepress-theme-hope";
-import { version } from "../../../../lerna.json";
+import { hopeTheme } from "vuepress-theme-hope";
+import { version } from "vuepress-plugin-seo2/package.json";
 
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
 
-export default defineThemeConfig({
+export default hopeTheme({
   hostname,
 
   author: {
@@ -14,9 +14,9 @@ export default defineThemeConfig({
 
   iconPrefix: "iconfont icon-",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/add-this/",
+  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/seo2/",
   docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
-  docsDir: "docs/add-this/src",
+  docsDir: "docs/seo2/src",
 
   logo: "/logo.svg",
 
@@ -39,7 +39,7 @@ export default defineThemeConfig({
           children: [
             {
               text: "V1 Docs",
-              link: "https://vuepress-theme-hope.github.io/v1/add-this/",
+              link: "https://vuepress-theme-hope.github.io/v1/seo/",
             },
           ],
         },
@@ -47,6 +47,7 @@ export default defineThemeConfig({
 
       sidebar: false,
     },
+
     "/zh/": {
       navbar: [
         "/zh/",
@@ -59,7 +60,7 @@ export default defineThemeConfig({
           children: [
             {
               text: "V1 文档",
-              link: "https://vuepress-theme-hope.github.io/v1/add-this/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/seo/zh/",
             },
           ],
         },
@@ -76,55 +77,6 @@ export default defineThemeConfig({
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
-    },
-
-    docsearch: {
-      appId: "VXIEHELDL1",
-      apiKey: "595796f71b6ba14326719682c3738c0c",
-      indexName: "vuepress-theme-hope-v2",
-      locales: {
-        "/zh/": {
-          placeholder: "搜索文档",
-          translations: {
-            button: {
-              buttonText: "搜索文档",
-              buttonAriaLabel: "搜索文档",
-            },
-            modal: {
-              searchBox: {
-                resetButtonTitle: "清除查询条件",
-                resetButtonAriaLabel: "清除查询条件",
-                cancelButtonText: "取消",
-                cancelButtonAriaLabel: "取消",
-              },
-              startScreen: {
-                recentSearchesTitle: "搜索历史",
-                noRecentSearchesText: "没有搜索历史",
-                saveRecentSearchButtonTitle: "保存至搜索历史",
-                removeRecentSearchButtonTitle: "从搜索历史中移除",
-                favoriteSearchesTitle: "收藏",
-                removeFavoriteSearchButtonTitle: "从收藏中移除",
-              },
-              errorScreen: {
-                titleText: "无法获取结果",
-                helpText: "你可能需要检查你的网络连接",
-              },
-              footer: {
-                selectText: "选择",
-                navigateText: "切换",
-                closeText: "关闭",
-                searchByText: "搜索提供者",
-              },
-              noResultsScreen: {
-                noResultsText: "无法找到相关结果",
-                suggestedQueryText: "你可以尝试查询",
-                openIssueText: "你认为该查询应该有结果？",
-                openIssueLinkText: "点击反馈",
-              },
-            },
-          },
-        },
-      },
     },
 
     mdEnhance: {
@@ -145,8 +97,8 @@ export default defineThemeConfig({
         color: "#ffffff",
       },
       manifest: {
-        name: "vuepress-plugin-add-this",
-        short_name: "add-this plugin",
+        name: "vuepress-plugin-seo2",
+        short_name: "SEO Plugin",
         icons: [
           {
             src: "/assets/icon/chrome-mask-512.png",
@@ -218,7 +170,7 @@ export default defineThemeConfig({
       canonical:
         hostname === "https://vuepress-theme-hope.github.io"
           ? null
-          : "https://vuepress-theme-hope.github.io/v2/add-this/",
+          : "https://vuepress-theme-hope.github.io/v2/seo/",
     },
   },
 });

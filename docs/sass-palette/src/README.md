@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-sass-palette@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash

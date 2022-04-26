@@ -109,6 +109,14 @@ Create a vuepress-theme-hope project in `[dir]` directory under the current proj
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm create vuepress-theme-hope@next [dir]
+```
+
+:::
+
 <!-- ::: code-group-item yarn
 
 ```bash
@@ -135,10 +143,12 @@ npm init vuepress-theme-hope@next [dir]
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
-  // your config here
+  theme: hopeTheme({
+    // your theme config here
+  }),
 });
 ```
 
@@ -148,11 +158,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  // your config here
-});
+module.exports = {
+  theme: hopeTheme({
+    // your theme config here
+  }),
+};
 ```
 
 :::

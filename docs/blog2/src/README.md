@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-blog2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-blog2@next
 
 ```ts
 // .vuepress/config.ts
-import { blog } from "vuepress-plugin-blog2";
+import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
   plugins: [
-    blog({
+    blogPlugin({
       // your options
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { blog } = require("vuepress-plugin-blog2");
+const { blogPlugin } = require("vuepress-plugin-blog2");
 
 module.exports = {
   plugins: [
-    blog({
+    blogPlugin({
       // your options
     }),
   ],

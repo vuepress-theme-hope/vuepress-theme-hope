@@ -107,8 +107,8 @@
     "@typescript-eslint/parser": "5.21.0",
     "@vue/eslint-config-typescript": "10.0.0",
     "babel-jest": "27.5.1",
-    "concurrently": "7.1.0",
     "commitizen": "4.2.4",
+    "concurrently": "7.1.0",
     "conventional-changelog-cli": "2.2.2",
     "cpx2": "4.2.0",
     "cross-env": "7.0.3",
@@ -159,12 +159,30 @@
     "textlint-rule-terminology": "2.1.5",
     "textlint-rule-write-good": "2.0.0",
     "textlint-rule-zh-half-and-full-width-bracket": "1.1.0",
-    "tslib": "2.4.0",
     "ts-jest": "27.1.4",
     "ts-node": "10.7.0",
+    "tslib": "2.4.0",
     "typescript": "4.6.3",
     "vuepress-vite": "2.0.0-beta.41",
     "vuepress-webpack": "2.0.0-beta.41"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=6"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "eslint-plugin-import",
+        "eslint-plugin-n",
+        "eslint-plugin-promise",
+        "postcss",
+        "react",
+        "react-dom",
+        "webpack"
+      ]
+    }
   },
   "textlint": {
     "rules": {
@@ -216,23 +234,6 @@
         ]
       },
       "comments": true
-    }
-  },
-  "engines": {
-    "node": ">=14",
-    "pnpm": ">=6"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "eslint-plugin-import",
-        "eslint-plugin-n",
-        "eslint-plugin-promise",
-        "react",
-        "react-dom",
-        "webpack"
-      ]
     }
   }
 }

@@ -1,11 +1,13 @@
 import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
+import { defineUserConfig } from "@vuepress/cli";
+import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { path } from "@vuepress/utils";
 import { addThisPlugin } from "vuepress-plugin-add-this";
 import theme from "./theme";
 
 const base = (process.env.BASE || "/") as "/" | `/${string}/`;
 
-export default {
+export default defineUserConfig({
   base: `${base}add-this/`,
 
   dest: "./dist",
@@ -112,6 +114,4 @@ export default {
       "three/examples/jsm/loaders/STLLoader",
     ]);
   },
-
-  plugins: [addThis({ pubid: "ra-5f829c59e6c6bc9a" })],
-};
+});

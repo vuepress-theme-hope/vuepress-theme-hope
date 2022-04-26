@@ -18,8 +18,11 @@
     "docs:webpack-serve": "vuepress-webpack dev src"
   },
   "dependencies": {
+    "@mr-hope/vuepress-shared": "workspace:*",
     "@types/three": "0.139.0",
+    "@vuepress/cli": "2.0.0-beta.41",
     "@vuepress/plugin-docsearch": "2.0.0-beta.41",
+    "@vuepress/utils": "2.0.0-beta.41",
     "axios": "0.27.1",
     "three": "0.139.2",
     "vuepress-theme-hope": "workspace:*",

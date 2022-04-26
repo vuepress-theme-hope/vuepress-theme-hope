@@ -14,6 +14,7 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
+    "@vuepress/cli": "2.0.0-beta.41",
     "@vuepress/plugin-docsearch": "2.0.0-beta.41",
     "@vuepress/plugin-pwa": "2.0.0-beta.41",
     "@vuepress/plugin-pwa-popup": "2.0.0-beta.41",
