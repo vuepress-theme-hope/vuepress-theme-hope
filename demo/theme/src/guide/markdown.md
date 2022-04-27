@@ -140,6 +140,14 @@ A custom details container
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash

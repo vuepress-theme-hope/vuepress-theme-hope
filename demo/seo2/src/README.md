@@ -17,18 +17,18 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### Install
 
 ```bash
-yarn add -D vuepress-plugin-seo2@next
+pnpm add -D vuepress-plugin-seo2@next
 ```
 
 ### Usage
 
 ```ts
 // .vuepress/config.ts
-import { seo } from "vuepress-plugin-seo2";
+import { seoPlugin } from "vuepress-plugin-seo2";
 
 export default {
   plugins: [
-    seo({
+    seoPlugin({
       // your options
     }),
   ],
