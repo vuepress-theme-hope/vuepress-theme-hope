@@ -24,6 +24,7 @@
     "@vuepress/client": "2.0.0-beta.41",
     "@vuepress/plugin-docsearch": "2.0.0-beta.41",
     "@vuepress/utils": "2.0.0-beta.41",
+    "sass-loader": "^12.6.0",
     "three": "0.139.2",
     "vue": "3.2.33",
     "vuepress-theme-hope": "workspace:*",

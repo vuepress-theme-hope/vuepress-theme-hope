@@ -80,6 +80,14 @@
     "@vuepress/bundler-webpack": "2.0.0-beta.41",
     "@vuepress/core": "2.0.0-beta.41"
   },
+  "peerDependencies": {
+    "sass-loader": "^12.6.0"
+  },
+  "peerDependenciesMeta": {
+    "sass-loader": {
+      "optional": true
+    }
+  },
   "publishConfig": {
     "access": "public"
   }
