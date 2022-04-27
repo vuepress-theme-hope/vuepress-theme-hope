@@ -29,7 +29,10 @@
     "packages:bootstrap": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/bootstrap.ts",
     "packages:check-update": "ncu --deep --timeout 600000",
     "packages:update": "pnpm update",
-    "release": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/release",
+    "release": "pnpm release:check && pnpm release:version && pnpm release:publish",
+    "release:check": "pnpm lint && pnpm clean && pnpm build && pnpm test",
+    "release:publish": "pnpm -r publish --tag next",
+    "release:version": "bumpp package.json packages/*/package.json --execute=\"pnpm changelog\" --commit \"build: publish v%s\" --all --tag --push",
     "test": "node --no-compilation-cache --expose-gc node_modules/jest/bin/jest -i"
   },
   "lint-staged": {
@@ -107,6 +110,7 @@
     "@typescript-eslint/parser": "5.21.0",
     "@vue/eslint-config-typescript": "10.0.0",
     "babel-jest": "27.5.1",
+    "bumpp": "^7.1.1",
     "commitizen": "4.2.4",
     "concurrently": "7.1.0",
     "conventional-changelog-cli": "2.2.2",

@@ -1,6 +1,5 @@
 {
   "name": "theme-demo",
-  "version": "2.0.0-beta.47",
   "private": true,
   "description": "Demo for vuepress-theme-hope",
   "license": "MIT",
