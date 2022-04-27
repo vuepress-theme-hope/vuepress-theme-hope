@@ -15,7 +15,7 @@ This tutorial guides you on how to deploy a VuePress project.
 
 ## Build Project
 
-Once you completed the starter stage development of the project locally, you can build the website using the `yarn docs:build` command.
+Once you completed the starter stage development of the project locally, you can build the website using the `pnpm docs:build` command.
 
 If you are using theme template, the website content will be output to the `.vuepress/dist` under VuePress project folder These files are the final output of VuePress.
 

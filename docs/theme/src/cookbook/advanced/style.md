@@ -25,7 +25,7 @@ You can create three files under `.vuepress/styles` folder in your own document 
 
 - `palette.scss`: You can set some color and layout related variables here, such as theme color, background color, navbar height, etc.
 
-For the complete config list supported by the above files, see [COnfig → Style](../../config/style.md).
+For the complete config list supported by the above files, see [Config → Style](../../config/style.md).
 
 ## Common style Customization
 

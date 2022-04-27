@@ -67,10 +67,6 @@ module.exports = defineUserConfig({
 
 ## Config Scope
 
-You may have noticed that there is a `themeConfig` config item in the VuePress config.
-
-Config items outside `themeConfig` belong to **Site Config** , while config items inside `themeConfig` belong to **Theme Config**.
-
 ### Site Config
 
 Config items in the Site Config are directly read by VuePress, have nothing to do with the theme and can take effect in all themes.
@@ -85,7 +81,9 @@ You can go to [VuePress2 → Reference → Configuration](https://v2.vuepress.vu
 
 ### Theme Config
 
-Theme Config will be handled by VuePress Theme Hope. You can find all the theme config in [Config → Theme Config](../../config/README.md).
+Theme config is the object you pass to `hopeTheme` function, which will be handled by VuePress Theme Hope.
+
+You can find all the theme config in [Config → Theme Config](../../config/README.md).
 
 ::: tip Hints and Checks
 
@@ -112,7 +110,7 @@ If you are using an editor that supports TS/JS language features (such as VSCode
 
 ::: info Plugin Config
 
-VuePress Theme Hope bundles some plugins, you can pass plugin options through `themeConfig.plugins.PLUGIN_NAME`, see [Config → Theme Plugin](../../config/plugins/README.md) for more details.
+VuePress Theme Hope bundles some plugins, you can pass plugin options through `plugins.PLUGIN_NAME` in theme options, see [Config → Theme Plugin](../../config/plugins/README.md) for more details.
 
 If you want to use additional plugins, please import the plugin yourself and pass plugin options, see [VuePress → plugins](../vuepress/plugin.md) for details.
 
@@ -132,7 +130,7 @@ For more details, see [Config → Style](../../config/style.md).
 
 :::
 
-::: info Page COnfig
+::: info Page Config
 
 VuePress supports page scope config of specific page through YAML Frontmatter in Markdown files. For details, see [Project Content → Frontmatter](./content.md#frontmatter) in the previous chapter.
 

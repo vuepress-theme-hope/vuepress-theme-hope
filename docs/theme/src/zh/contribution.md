@@ -21,7 +21,12 @@ pnpm i
 
 ::: tip
 
-如果你并未安装 yarn，请使用 `npm i -g pnpm` 安装它。
+如果你并未安装 yarn，请使用下列命令安装它:
+
+```sh
+corepack enable
+corepack prepare pnpm@6.32.10 --activate
+```
 
 :::
 

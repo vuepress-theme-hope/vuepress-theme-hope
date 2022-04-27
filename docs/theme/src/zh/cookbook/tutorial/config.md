@@ -67,10 +67,6 @@ module.exports = defineUserConfig({
 
 ## 配置作用域
 
-你可能已经注意到了，在 VuePress 配置中有一项 `themeConfig` 配置项。
-
-在 `themeConfig` 外部的配置项属于 **站点配置** ，而在 `themeConfig` 内部的配置项则属于 **主题配置**。
-
 ### 站点配置
 
 站点配置中的配置项被 VuePress 直接读取，和主题无关且在所有主题均可生效。
@@ -85,7 +81,9 @@ module.exports = defineUserConfig({
 
 ### 主题配置
 
-主题配置将会被 VuePress 主题来处理。你可以在 [配置 → 主题配置](../../config/README.md) 中找到全部的主题配置。
+主题配置是您传递给 `hopeTheme` 函数的对象，它将由 VuePress Theme Hope 处理。
+
+你可以在 [配置 → 主题配置](../../config/README.md) 中找到全部的主题配置。
 
 ::: tip 提示与检查
 
@@ -112,7 +110,7 @@ module.exports = defineUserConfig({
 
 ::: info 插件配置
 
-VuePress Theme Hope 主题捆绑了一些插件，你可以通过 `themeConfig.plugins.插件名称` 来传递插件选项，详见 [配置 → 主题插件配置](../../config/plugins/README.md)。
+VuePress Theme Hope 主题捆绑了一些插件，你可以在主题选项中通过 `plugins.插件名称` 来传递插件选项，详见 [配置 → 主题插件配置](../../config/plugins/README.md)。
 
 如果你想要额外使用插件，请自行调用插件并传递插件选项，详见 [VuePress → 插件](../vuepress/plugin.md)。
 

@@ -21,7 +21,12 @@ pnpm i
 
 ::: tip
 
-If you have not installed pnpm, please install it using `npm i -g pnpm`.
+If you have not installed pnpm, please install it using the following command.
+
+```sh
+corepack enable
+corepack prepare pnpm@6.32.10 --activate
+```
 
 :::
 

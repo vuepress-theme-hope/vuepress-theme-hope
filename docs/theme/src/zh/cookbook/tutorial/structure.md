@@ -30,7 +30,6 @@ VuePress 只控制 VuePress 项目文件夹中的文件，也就是上一章中�
 ├── .github (可选的) → GitHub 配置文件存放路径
 │    └── workflow → GitHub 工作流配置
 │         └── docs-deploy.yml → 自动部署文档的工作流
-│
 |
 ├── docs → 由你指定的项目文件夹
 │    │
