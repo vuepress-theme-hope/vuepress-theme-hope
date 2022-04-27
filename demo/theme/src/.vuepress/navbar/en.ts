@@ -1,7 +1,7 @@
-import { defineNavbarConfig } from "vuepress-theme-hope";
+import { navbar } from "vuepress-theme-hope";
 import { version } from "../../../../../lerna.json";
 
-export const en = defineNavbarConfig([
+export const en = navbar([
   "/",
   "/home",
   { text: "Guide", icon: "creative", link: "/guide/" },

@@ -63,9 +63,9 @@ tag:
 ## Theme Usage
 
 - rename `themeConfig` to `hopeTheme`
-- rename `navbarConfig` to `defineNavbarConfig`
-- rename `sidebarConfig` to `defineSidebarConfig`
-- added `defineSidebarArrayConfig` and `defineSidebarObjectConfig` helpers
+- rename `navbarConfig` to `navbar`
+- rename `sidebarConfig` to `sidebar`
+- added `arraySidebar` and `objectSidebar` helpers
 - remove `config`
 
 ## Theme Options

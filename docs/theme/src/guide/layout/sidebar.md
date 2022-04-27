@@ -870,11 +870,11 @@ module.exports = {
 
 ## Types and Helpers
 
-`vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `defineSidebarConfig` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
+`vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `sidebar` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
 
 ::: tip
 
-To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `defineSidebarArrayConfig` and `defineSidebarObjectConfig` Helper function.
+To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `arraySidebar` and `objectSidebar` Helper function.
 
 :::
 
@@ -884,9 +884,9 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 
 ```ts {6}
 // .vuepress/sidebar.ts
-import { defineSidebarConfig } from "vuepress-theme-hope";
+import { sidebar } from "vuepress-theme-hope";
 
-export default defineSidebarConfig(/* Your sidebar configuration */);
+export default sidebar(/* Your sidebar configuration */);
 ```
 
 :::
@@ -910,9 +910,9 @@ export default sidebarConfig;
 
 ```js
 // .vuepress/sidebar.js
-const { defineSidebarConfig } = require("vuepress-theme-hope");
+const { sidebar } = require("vuepress-theme-hope");
 
-module.exports = defineSidebarConfig(/* Your sidebar configuration */);
+module.exports = sidebar(/* Your sidebar configuration */);
 ```
 
 :::
@@ -935,9 +935,9 @@ module.exports = defineSidebarConfig(/* Your sidebar configuration */);
 
 ```js
 // .vuepress/config.js
-const { defineSidebarConfig } = require("vuepress-theme-hope");
+const { sidebar } = require("vuepress-theme-hope");
 
-module.exports = defineSidebarConfig({
+module.exports = sidebar({
   "/": [
     "",
     {

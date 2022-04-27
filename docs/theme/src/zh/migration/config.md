@@ -64,9 +64,9 @@ tag:
 
 - 移除 `config`
 - `themeConfig` 重命名为 `hopeTheme`
-- `navbarConfig` 重命名为 `defineNavbarConfig`
-- `sidebarConfig` 重命名为 `defineSidebarConfig`
-- 新增 `defineSidebarArrayConfig`, `defineSidebarObjectConfig`
+- `navbarConfig` 重命名为 `navbar`
+- `sidebarConfig` 重命名为 `sidebar`
+- 新增 `arraySidebar`, `objectSidebar`
 
 ## 主题配置
 

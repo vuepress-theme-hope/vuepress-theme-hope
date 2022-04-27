@@ -5,18 +5,18 @@ import type {
   HopeThemeSidebarObjectConfig,
 } from "../shared";
 
-export const defineNavbarConfig = (
+export const navbar = (
   navbarConfig: HopeThemeNavbarConfig
 ): HopeThemeNavbarConfig => navbarConfig;
 
-export const defineSidebarConfig = (
+export const sidebar = (
   sidebarConfig: HopeThemeSidebarConfig
 ): HopeThemeSidebarConfig => sidebarConfig;
 
-export const defineSidebarArrayConfig = (
+export const arraySidebar = (
   sidebarConfig: HopeThemeSidebarArrayConfig
 ): HopeThemeSidebarArrayConfig => sidebarConfig;
 
-export const defineSidebarObjectConfig = (
+export const objectSidebar = (
   sidebarConfig: HopeThemeSidebarObjectConfig
 ): HopeThemeSidebarObjectConfig => sidebarConfig;
