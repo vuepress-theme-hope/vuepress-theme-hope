@@ -16,13 +16,12 @@ VuePress Redirect plugin🗺️ / VuePress 重定向插件 🗺️
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-redirect2
-```
-
-Or
-
-```bash
-yarn add -D vuepress-plugin-redirect2
+# pnpm
+pnpm add -D vuepress-plugin-redirect2@next
+# npm
+npm i -D vuepress-plugin-redirect2@next
+# yarn
+yarn add -D vuepress-plugin-redirect2@next
 ```
 
 ---
@@ -30,11 +29,10 @@ yarn add -D vuepress-plugin-redirect2
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-redirect2
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-redirect2
+# pnpm
+pnpm add -D vuepress-plugin-redirect2@next
+# npm
+npm i -D vuepress-plugin-redirect2@next
+# yarn
+yarn add -D vuepress-plugin-redirect2@next
 ```
