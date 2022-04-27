@@ -8,6 +8,58 @@ tag:
   - Theme Config
 ---
 
+:::: code-group
+
+::: code-group-item TS
+
+```diff
+  // .vuepress/config.ts
+- import theme from "vuepress-theme-hope";
++ import { defineUserConfig } from "vuepress";
++ import { hopeTheme } from "vuepress-theme-hope";
+
+- export default theme.config({
++ export default defineUserConfig({
+    // your site config here
+    // ...
+
+-   themeConfig:{
++   theme: hopeTheme({
+      // your theme config here
+      // ...
+-   },
++   }),
+  });
+```
+
+:::
+
+::: code-group-item JS
+
+```diff
+// .vuepress/config.js
+- const { config } = require("vuepress-theme-hope");
++ const { hopeTheme } = require("vuepress-theme-hope");
+
+- module.exports = theme.config({
++ module.exports = {
+    // your site config here
+    // ...
+
+-   themeConfig:{
++   theme: hopeTheme({
+      // your theme config here
+      // ...
+-   },
++   }),
+- });
++ };
+```
+
+:::
+
+::::
+
 ## Theme Usage
 
 - rename `themeConfig` to `hopeTheme`
