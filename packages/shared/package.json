@@ -32,7 +32,7 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "concurrently \"pnpm run dev:copy\" \"pnpm run dev:ts\"",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpmdev:ts\"",
     "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
@@ -49,10 +49,10 @@
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
+    "@types/connect": "^3.4.35",
     "@vuepress/bundler-vite": "2.0.0-beta.41",
     "@vuepress/bundler-webpack": "2.0.0-beta.41",
     "@vuepress/core": "2.0.0-beta.41",
-    "@types/connect": "^3.4.35",
     "vite": "~2.9.5"
   },
   "publishConfig": {

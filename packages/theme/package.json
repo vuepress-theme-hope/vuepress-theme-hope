@@ -32,12 +32,12 @@
     "templates"
   ],
   "scripts": {
-    "build": "pnpm run build:ts && pnpm run build:copy",
+    "build": "pnpm build:ts && pnpm build:copy",
     "build:copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "concurrently \"pnpm run dev:copy\" \"pnpm run dev:ts\"",
-    "dev:copy": "pnpm run build:copy -w",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpmdev:ts\"",
+    "dev:copy": "pnpm build:copy -- -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
