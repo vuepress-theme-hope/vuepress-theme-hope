@@ -21,7 +21,7 @@ pnpm i
 
 ::: tip
 
-如果你并未安装 yarn，请使用下列命令安装它:
+如果你并未安装 pnpm，请使用下列命令安装它:
 
 ```sh
 corepack enable
@@ -102,7 +102,7 @@ corepack prepare pnpm@6.32.10 --activate
 
 由于文档使用的是本地主题和插件，因此您需要先通过 `pnpm build` 构建本地项目。
 
-之后在 `docs` 目录下的正确文档项目文件夹打开终端，运行 `yarn docs:vite-serve` (使用 vite) 或 `yarn docs:webpack-serve` (使用 webpack)。
+之后在 `docs` 目录下的正确文档项目文件夹打开终端，运行 `pnpm docs:vite-serve` (使用 vite) 或 `pnpm docs:webpack-serve` (使用 webpack)。
 
 :::
 

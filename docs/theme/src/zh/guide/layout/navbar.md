@@ -645,7 +645,7 @@ module.exports = defineNavbarConfig([
     text: "教程",
     icon: "guide",
     prefix: "/zh/cookbook/",
-    children: ["tutorial/", "markdown/", "vuepress/"],
+    children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
   },
   "/zh/migration/",
   {
@@ -686,6 +686,11 @@ module.exports = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/copy-code/zh/",
           },
           {
+            text: "版权信息插件",
+            icon: "copyright",
+            link: "https://vuepress-theme-hope.github.io/v2/copyright/zh/",
+          },
+          {
             text: "Feed 插件",
             icon: "rss",
             link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",
@@ -716,6 +721,11 @@ module.exports = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
           },
           {
+            text: "重定向插件",
+            icon: "navigation",
+            link: "https://vuepress-theme-hope.github.io/v2/redirect/zh/",
+          },
+          {
             text: "Sass 调色板插件",
             icon: "palette",
             link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
@@ -724,6 +734,11 @@ module.exports = defineNavbarConfig([
             text: "Seo 插件",
             icon: "strong",
             link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
+          },
+          {
+            text: "Sitemap 插件",
+            icon: "sitemap",
+            link: "https://vuepress-theme-hope.github.io/v2/sitemap/zh/",
           },
         ],
       },
