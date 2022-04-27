@@ -164,13 +164,17 @@ importers:
   demo/add-this:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-add-this: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-add-this: link:../../packages/add-this
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -178,17 +182,21 @@ importers:
   demo/blog2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-blog2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-blog2: link:../../packages/blog2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -196,17 +204,21 @@ importers:
   demo/comment2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-comment2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-comment2: link:../../packages/comment2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -214,13 +226,17 @@ importers:
   demo/copy-code2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-copy-code2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-copy-code2: link:../../packages/copy-code2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -228,15 +244,19 @@ importers:
   demo/copyright2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-copyright2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-copyright2: link:../../packages/copyright2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -244,13 +264,17 @@ importers:
   demo/feed2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-feed2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-feed2: link:../../packages/feed2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -258,13 +282,17 @@ importers:
   demo/lightgallery:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-lightgallery: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-lightgallery: link:../../packages/lightgallery
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -272,13 +300,17 @@ importers:
   demo/md-enhance:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-md-enhance: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-md-enhance: link:../../packages/md-enhance
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -286,13 +318,17 @@ importers:
   demo/photo-swipe:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-photo-swipe: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-photo-swipe: link:../../packages/photo-swipe
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -300,13 +336,17 @@ importers:
   demo/pwa2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-pwa2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-pwa2: link:../../packages/pwa2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -314,13 +354,17 @@ importers:
   demo/redirect2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-redirect2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-redirect2: link:../../packages/redirect2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -328,13 +372,17 @@ importers:
   demo/sass-palette:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-sass-palette: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-sass-palette: link:../../packages/sass-palette
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -342,13 +390,17 @@ importers:
   demo/seo2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-seo2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-seo2: link:../../packages/seo2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -356,13 +408,17 @@ importers:
   demo/sitemap2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-sitemap2: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/theme-default': 2.0.0-beta.41
+      vue: 3.2.33
       vuepress-plugin-sitemap2: link:../../packages/sitemap2
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -370,21 +426,25 @@ importers:
   demo/theme:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/plugin-pwa': 2.0.0-beta.41
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.41
       '@vuepress/plugin-shiki': 2.0.0-beta.41
       cross-env: 7.0.3
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/plugin-pwa': 2.0.0-beta.41
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.41
       '@vuepress/plugin-shiki': 2.0.0-beta.41
       cross-env: 7.0.3
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -394,9 +454,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-plugin-add-this: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
@@ -405,9 +467,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-plugin-add-this: link:../../packages/add-this
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
@@ -418,9 +482,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -428,9 +494,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -440,10 +508,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-comment2: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -451,10 +520,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-comment2: link:../../packages/comment2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -465,9 +535,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -476,9 +548,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -488,10 +562,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-copy-code2: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -499,10 +574,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-copy-code2: link:../../packages/copy-code2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -512,9 +588,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -522,9 +600,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -534,10 +614,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-feed2: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -545,10 +626,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-feed2: link:../../packages/feed2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -558,9 +640,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-plugin-lightgallery: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
@@ -569,9 +653,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-plugin-lightgallery: link:../../packages/lightgallery
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
@@ -582,10 +668,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-md-enhance: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -593,10 +680,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-md-enhance: link:../../packages/md-enhance
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -606,10 +694,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-photo-swipe: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -617,10 +706,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-photo-swipe: link:../../packages/photo-swipe
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -630,10 +720,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-pwa2: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -641,10 +732,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-pwa2: link:../../packages/pwa2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -654,10 +746,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-reading-time2: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -665,10 +758,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-reading-time2: link:../../packages/reading-time2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -678,9 +772,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -688,9 +784,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -700,9 +798,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -710,9 +810,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -722,10 +824,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-seo2: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -733,10 +836,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-seo2: link:../../packages/seo2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -746,10 +850,11 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-sitemap2: workspace:*
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -757,10 +862,11 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       three: 0.139.2
-      vuepress-plugin-sitemap2: link:../../packages/sitemap2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
@@ -770,10 +876,12 @@ importers:
       '@mr-hope/vuepress-shared': workspace:*
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       axios: 0.27.1
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -781,10 +889,12 @@ importers:
       '@mr-hope/vuepress-shared': link:../../packages/shared
       '@types/three': 0.139.0
       '@vuepress/cli': 2.0.0-beta.41
+      '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-docsearch': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       axios: 0.27.1
       three: 0.139.2
+      vue: 3.2.33
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_postcss@8.4.12
       vuepress-webpack: 2.0.0-beta.41
