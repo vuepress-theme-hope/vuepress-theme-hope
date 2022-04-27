@@ -5,7 +5,7 @@ title: Markdown Enhance
 category:
   - Guide
 tag:
-  - markdown
+  - Markdown
 ---
 
 Every document page in VuePress is rendered by Markdown.
@@ -14,7 +14,7 @@ You need to build your document or blog page by creating and writing Markdown in
 
 <!-- more -->
 
-## Markdown introduction
+## Markdown Introduction
 
 If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](https://vuepress-theme-hope.github.io/v2/basic/markdown/README.html) and [Markdown Demo](https://vuepress-theme-hope.github.io/v2/basic/markdown/demo.html).
 
@@ -34,7 +34,7 @@ For these extensions, please read [Markdown extensions in VuePress](https://vuep
 
 ### Enable all
 
-You can set `themeconfig.plugins.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
+You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
 
 ```js
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -56,7 +56,7 @@ module.exports = {
 
 ::: v-pre
 
-Safely use {{ variable }} in markdown.
+Safely use {{ variable }} in Markdown.
 
 :::
 
@@ -99,7 +99,7 @@ A custom details container
 ```md
 ::: v-pre
 
-Safely use {{ variable }} in markdown.
+Safely use {{ variable }} in Markdown.
 
 :::
 
@@ -139,6 +139,14 @@ A custom details container
 ### CodeGroup
 
 :::: code-group
+
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+:::
 
 ::: code-group-item yarn
 
