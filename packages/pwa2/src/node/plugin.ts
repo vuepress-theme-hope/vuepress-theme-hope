@@ -9,8 +9,8 @@ import {
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { pwaLocales } from "./locales";
 import { injectLinkstoHead } from "./injectHead";
-import { getManifest, genManifest } from "./genManifest";
-import { genServiceWorker } from "./genServiceWorker";
+import { getManifest, generateManifest } from "./generateManifest";
+import { generateServiceWorker } from "./generateServiceWorker";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { PWAOptions } from "../shared";
@@ -62,8 +62,8 @@ export const pwaPlugin =
       },
 
       onGenerated: async (app): Promise<void> => {
-        await genManifest(app, manifest);
-        await genServiceWorker(app, options);
+        await generateManifest(app, manifest);
+        await generateServiceWorker(app, options);
       },
 
       clientAppRootComponentFiles: [

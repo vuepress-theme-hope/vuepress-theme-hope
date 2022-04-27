@@ -1,6 +1,6 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import PWAInstallModal from "../components/PWAInstallModal.vue";
+import PWAInstallModal from "../components/PWAInstallModal";
 import { locales } from "../define";
 
 import type { VNode } from "vue";

@@ -34,7 +34,7 @@ const imageFilter =
     return { warnings, manifest };
   };
 
-export const genServiceWorker = async (
+export const generateServiceWorker = async (
   app: App,
   options: PWAOptions
 ): Promise<void> => {

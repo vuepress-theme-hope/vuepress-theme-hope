@@ -1,87 +1,10 @@
-<template>
-  <div id="install-modal-wrapper">
-    <div class="background" @click="$emit('toggle', false)" />
-
-    <div class="install-modal">
-      <div class="header">
-        <button
-          class="close-button"
-          :aria-label="locale.close"
-          @click="$emit('toggle', false)"
-        >
-          <CloseIcon />
-        </button>
-        <div class="logo">
-          <img
-            v-if="manifest.icons"
-            :src="manifest.icons[0].src"
-            alt="App Logo"
-          />
-          <div class="title">
-            <h1>{{ manifest.short_name || manifest.name }}</h1>
-            <p class="desc">{{ locale.explain }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="content">
-        <div class="highlight">
-          <div v-if="manifest.features" class="feature-wrapper">
-            <h3>{{ locale.feature }}</h3>
-            <ul v-if="manifest.features">
-              <li
-                v-for="feature in manifest.features"
-                :key="feature"
-                v-text="feature"
-              />
-            </ul>
-          </div>
-
-          <div v-if="manifest.screenshots" class="screenshot-wrapper">
-            <button :aria-label="locale.prevImage" @click="scrolltoLeft">
-              <ArrowLeftIcon />
-            </button>
-            <section class="screenshot">
-              <div
-                v-for="screenshot in manifest.screenshots"
-                :key="screenshot.src"
-              >
-                <img alt="App Screenshot" :src="screenshot.src" />
-              </div>
-            </section>
-            <button :aria-label="locale.nextImage" @click="scrolltoRight">
-              <ArrowRightIcon />
-            </button>
-          </div>
-        </div>
-        <div class="description">
-          <h3 v-text="locale.desc" />
-          <p v-text="manifest.description" />
-        </div>
-      </div>
-
-      <div v-if="useHint" class="ios-text" @click="hint">
-        <p>{{ locale.iOSInstall }}</p>
-        <button class="success">Got it!</button>
-      </div>
-      <div v-else class="button-wrapper">
-        <button class="install-button" @click="install">
-          {{ locale.install }} <span>{{ manifest.short_name }}</span>
-        </button>
-        <button class="cancel-button" @click="$emit('toggle', false)">
-          {{ locale.cancel }}
-        </button>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script lang="ts">
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { withBase } from "@vuepress/client";
-import { onBeforeMount, defineComponent, onMounted, ref } from "vue";
+import { onBeforeMount, defineComponent, h, onMounted, ref } from "vue";
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons";
 import { locales } from "../define";
 
+import type { VNode } from "vue";
 import type { ManifestOption } from "../../shared";
 
 interface InstallPromptEvent extends Event {
@@ -111,11 +34,10 @@ export default defineComponent({
 
   emits: ["can-install", "hint", "toggle"],
 
-  setup(_props, { emit }) {
+  setup(props, { emit }) {
     const locale = useLocaleConfig(locales);
 
     const manifest = ref<ManifestOption>({});
-    const isIOS = ref(false);
     const deferredprompt = ref<InstallPromptEvent | null>(null);
 
     const getManifest = async (): Promise<void> => {
@@ -219,17 +141,108 @@ export default defineComponent({
       document.removeEventListener("keyup", escapeHandler);
     });
 
-    return {
-      locale,
-      isIOS,
-      manifest,
+    return (): VNode =>
+      h("div", { id: "install-modal-wrapper" }, [
+        h("div", { class: "background", onClick: () => emit("toggle", false) }),
 
-      getManifest,
-      scrolltoLeft,
-      scrolltoRight,
-      install,
-      hint,
-    };
+        h("div", { class: "install-modal" }, [
+          h("div", { class: "header" }, [
+            // close button
+            h(
+              "button",
+              {
+                class: "close-button",
+                "aria-label": locale.value.close,
+                onClick: () => emit("toggle", false),
+              },
+              h(CloseIcon)
+            ),
+
+            h("div", { class: "logo" }, [
+              manifest.value.icons
+                ? h("img", {
+                    src: manifest.value.icons[0].src,
+                    alt: "App Logo",
+                  })
+                : null,
+              h("div", { class: "title" }, [
+                h("h1", manifest.value.short_name || manifest.value.name),
+                h("p", { class: "desc" }, locale.value.explain),
+              ]),
+            ]),
+          ]),
+
+          h("div", { class: "content" }, [
+            h("div", { class: "highlight" }, [
+              manifest.value.features
+                ? h("div", { class: "feature-wrapper" }, [
+                    h("h3", locale.value.feature),
+                    h(
+                      "ul",
+                      manifest.value.features.map((feature) => h("li", feature))
+                    ),
+                  ])
+                : null,
+
+              manifest.value.screenshots
+                ? h("div", { class: "screenshot-wrapper" }, [
+                    h(
+                      "button",
+                      {
+                        "aria-label": locale.value.prevImage,
+                        onClick: scrolltoLeft,
+                      },
+                      h(ArrowLeftIcon)
+                    ),
+                    h("section", { class: "screenshot" }, [
+                      manifest.value.screenshots.map((screenshot) =>
+                        h(
+                          "div",
+                          h("img", {
+                            src: screenshot.src,
+                            alt: "App Screenshot",
+                          })
+                        )
+                      ),
+                    ]),
+                    h(
+                      "button",
+                      {
+                        "aria-label": locale.value.nextImage,
+                        onClick: scrolltoRight,
+                      },
+                      h(ArrowRightIcon)
+                    ),
+                  ])
+                : null,
+            ]),
+
+            h("div", { class: "description" }, [
+              h("h3", locale.value.desc),
+              h("p", manifest.value.description),
+            ]),
+          ]),
+
+          props.useHint
+            ? h("div", { class: "ios-text", onClick: hint }, [
+                h("p", locale.value.iOSInstall),
+                h("button", { class: "success" }, "Got it!"),
+              ])
+            : h("div", { class: "button-wrapper" }, [
+                h("button", { class: "install-button", onClick: install }, [
+                  locale.value.install,
+                  h("span", manifest.value.short_name),
+                ]),
+                h(
+                  "button",
+                  {
+                    class: "cancel-button",
+                    onClick: () => emit("toggle", false),
+                  },
+                  locale.value.cancel
+                ),
+              ]),
+        ]),
+      ]);
   },
 });
-</script>
