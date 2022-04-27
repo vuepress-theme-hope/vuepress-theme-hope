@@ -68,7 +68,13 @@ export const rollupTypescript = (
         {
           input: `./src/${filePath}.ts`,
           output: [{ file: `./lib/${filePath}.d.ts`, format: "esm" }],
-          plugins: [dts()],
+          plugins: [
+            dts({
+              compilerOptions: {
+                preserveSymlinks: false,
+              },
+            }),
+          ],
           external: dtsExternal,
         },
       ]
@@ -140,7 +146,13 @@ export const rollupVue = (
           {
             input: `./src/${filePath}`,
             output: [{ file: `./lib/${filename}.d.ts`, format: "esm" }],
-            plugins: [dts()],
+            plugins: [
+              dts({
+                compilerOptions: {
+                  preserveSymlinks: false,
+                },
+              }),
+            ],
             external: dtsExternal,
           },
         ]

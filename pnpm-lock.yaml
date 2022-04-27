@@ -848,25 +848,23 @@ importers:
   packages/components:
     specifiers:
       '@mr-hope/vuepress-shared': workspace:*
-      '@types/lodash.debounce': ^4.0.7
       '@vuepress/client': 2.0.0-beta.41
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/plugin-theme-data': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       balloon-css: ^1.2.0
-      lodash.debounce: ^4.0.8
+      ts-debounce: ^4.0.0
       vue: ^3.2.33
       vue-router: ^4.0.14
       vuepress-plugin-reading-time2: workspace:*
       vuepress-plugin-sass-palette: workspace:*
     dependencies:
       '@mr-hope/vuepress-shared': link:../shared
-      '@types/lodash.debounce': 4.0.7
       '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-theme-data': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
       balloon-css: 1.2.0
-      lodash.debounce: 4.0.8
+      ts-debounce: 4.0.0
       vue: 3.2.33
       vue-router: 4.0.14_vue@3.2.33
       vuepress-plugin-reading-time2: link:../reading-time2
@@ -3372,12 +3370,12 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/bonjour/3.5.10:
     resolution: {integrity: sha512-p7ienRMiS41Nu2/igbJxxLDWrSZ0WxM8UQgCeO9KhoVF7cOVFkrKsiDr1EsJIla8vV3oEEjGcz11jc5yimhzZw==}
     dependencies:
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/concat-stream/2.0.0:
     resolution: {integrity: sha512-t3YCerNM7NTVjLuICZo5gYAXYoDvpuuTceCcFQWcDQz26kxUR5uIWolxbIR5jRNIXpMqhOpW/b8imCR1LEmuJw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/concat-stream/-/concat-stream-2.0.0.tgz}
@@ -3389,12 +3387,12 @@ packages:
     resolution: {integrity: sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==}
     dependencies:
       '@types/express-serve-static-core': 4.17.28
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/cssnano/5.1.0_postcss@8.4.12:
     resolution: {integrity: sha512-ikR+18UpFGgvaWSur4og6SJYF/6QEYHXvrIt36dp81p1MG3cAPTYDMBJGeyWa3LCnqEbgNMHKRb+FP0NrXtoWQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/cssnano/-/cssnano-5.1.0.tgz}
@@ -3437,7 +3435,7 @@ packages:
   /@types/express-serve-static-core/4.17.28:
     resolution: {integrity: sha512-P1BJAEAW3E2DJUlkgq4tOL3RyMunoWXqbSCygWo5ZIWTjUgN1YnaXWW4VWl/oc8vs/XoYibEGBKP0uZyF4AHig==}
     dependencies:
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
 
@@ -3458,7 +3456,7 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/glob/-/glob-7.2.0.tgz}
@@ -3485,7 +3483,7 @@ packages:
   /@types/http-proxy/1.17.8:
     resolution: {integrity: sha512-5kPLG5BKpWYkw/LVOGWpiq3nEVqxiN32rTgI53Sk12/xHFQ2rG3ehI9IO+O3W2QoKeyB92dJkoka8SUm6BX1pA==}
     dependencies:
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/inquirer/8.2.1:
     resolution: {integrity: sha512-wKW3SKIUMmltbykg4I5JzCVzUhkuD9trD6efAmYgN2MrSntY0SMRQzEnD3mkyJ/rv9NLbTC7g3hKKE86YwEDLw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/inquirer/-/inquirer-8.2.1.tgz}
@@ -3539,12 +3537,6 @@ packages:
   /@types/linkify-it/3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
 
-  /@types/lodash.debounce/4.0.7:
-    resolution: {integrity: sha512-X1T4wMZ+gT000M2/91SYj0d/7JfeNZ9PeeOldSNoE/lunLeQXKvkmIumI29IaKMotU/ln/McOIvgzZcQ/3TrSA==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: false
-
   /@types/lodash.throttle/4.1.7:
     resolution: {integrity: sha512-znwGDpjCHQ4FpLLx19w4OXDqq8+OvREa05H89obtSyXyOFKL3dDjCslsmfBz0T2FU8dmf5Wx1QvogbINiGIu9g==}
     dependencies:
@@ -3590,6 +3582,9 @@ packages:
 
   /@types/node/17.0.27:
     resolution: {integrity: sha512-4/Ke7bbWOasuT3kceBZFGakP1dYN2XFd8v2l9bqF2LNWrmeU07JLpp56aEeG6+Q3olqO5TvXpW0yaiYnZJ5CXg==}
+
+  /@types/node/17.0.29:
+    resolution: {integrity: sha512-tx5jMmMFwx7wBwq/V7OohKDVb/JwJU5qCVkeLMh1//xycAJ/ESuw9aJ9SEtlCZDYi2pBfe4JkisSoAtbOsBNAA==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz}
@@ -3648,12 +3643,12 @@ packages:
     resolution: {integrity: sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==}
     dependencies:
       '@types/mime': 1.3.2
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/sockjs/0.3.33:
     resolution: {integrity: sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==}
     dependencies:
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz}
@@ -3690,7 +3685,7 @@ packages:
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
     dependencies:
-      '@types/node': 17.0.27
+      '@types/node': 17.0.29
 
   /@types/yargs-parser/21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-21.0.0.tgz}

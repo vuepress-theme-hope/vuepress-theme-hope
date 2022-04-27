@@ -38,8 +38,8 @@ export default [
   ...rollupTypescript("client/components/FlowChart", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
-      "lodash.debounce",
       "flowchart.js",
+      "ts-debounce",
       "vue",
       /\.scss$/,
     ],
