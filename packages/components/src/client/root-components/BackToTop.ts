@@ -59,7 +59,7 @@ export default defineComponent({
       document.body.scrollTop ||
       0;
 
-    const scrollHandler = () => {
+    const scrollHandler = (): void => {
       void debounce(() => {
         scrollTop.value = getScrollTop();
       }, 100);
