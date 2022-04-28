@@ -39,8 +39,8 @@ export default defineComponent({
           : null,
         siteBrandLogoDark.value
           ? h("img", {
-              class: ["logo dark", { light: Boolean(siteBrandLogoDark) }],
-              src: siteBrandLogo.value,
+              class: ["logo dark"],
+              src: siteBrandLogoDark.value,
               alt: siteBrandTitle.value,
             })
           : null,
