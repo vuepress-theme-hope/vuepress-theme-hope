@@ -52,7 +52,7 @@
     "@types/mermaid": "^8.2.9",
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/plugin-container": "2.0.0-beta.38",
-    "@vuepress/shared": "2.0.0-beta.38",
+    "@vuepress/shared": "2.0.0-beta.41",
     "@vuepress/utils": "2.0.0-beta.38",
     "@vueuse/core": "^8.3.1",
     "chart.js": "^3.7.1",
