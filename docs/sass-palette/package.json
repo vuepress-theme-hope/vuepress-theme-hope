@@ -1,6 +1,5 @@
 {
   "name": "sass-palette-docs",
-  "version": "2.0.0-beta.47",
   "private": true,
   "description": "Docs for vuepress-plugin-sass-palette",
   "license": "MIT",
@@ -18,11 +17,17 @@
     "docs:webpack-serve": "vuepress-webpack dev src"
   },
   "dependencies": {
+    "@mr-hope/vuepress-shared": "workspace:*",
     "@types/three": "0.139.0",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.38",
+    "@vuepress/cli": "2.0.0-beta.41",
+    "@vuepress/client": "2.0.0-beta.41",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.41",
+    "@vuepress/utils": "2.0.0-beta.41",
+    "sass-loader": "^12.6.0",
     "three": "0.139.2",
-    "vuepress-theme-hope": "2.0.0-beta.47",
-    "vuepress-vite": "2.0.0-beta.39",
-    "vuepress-webpack": "2.0.0-beta.38"
+    "vue": "3.2.33",
+    "vuepress-theme-hope": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.41",
+    "vuepress-webpack": "2.0.0-beta.41"
   }
 }

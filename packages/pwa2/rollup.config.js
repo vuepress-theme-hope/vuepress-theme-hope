@@ -1,4 +1,4 @@
-import { rollupTypescript, rollupVue } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup";
 
 export default [
   ...rollupTypescript("node/index", {
@@ -16,7 +16,7 @@ export default [
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
-  ...rollupVue("client/global-components/PWAInstall.ts", {
+  ...rollupTypescript("client/global-components/PWAInstall", {
     resolve: true,
     external: [
       "@mr-hope/vuepress-shared/lib/client",

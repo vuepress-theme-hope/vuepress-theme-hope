@@ -32,15 +32,15 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "yarn dev:ts",
+    "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.47",
-    "@vuepress/utils": "2.0.0-beta.38",
-    "vue": "^3.2.32"
+    "@mr-hope/vuepress-shared": "workspace:*",
+    "@vuepress/utils": "2.0.0-beta.41",
+    "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/core": "2.0.0-beta.41"
   }
 }

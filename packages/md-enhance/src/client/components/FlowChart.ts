@@ -6,7 +6,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import debounce from "lodash.debounce";
+import { debounce } from "ts-debounce";
 import { loadingSvgString } from "./icons";
 import presets from "../flowchart-preset";
 
@@ -70,15 +70,17 @@ export default defineComponent({
         // draw svg to #id
         svg.drawSVG(props.id, { ...preset.value, scale: scale.value });
 
-        resize = debounce(() => {
-          const newScale = getScale(window.innerWidth);
+        resize = (): void => {
+          void debounce(() => {
+            const newScale = getScale(window.innerWidth);
 
-          if (scale.value !== newScale) {
-            scale.value = newScale;
+            if (scale.value !== newScale) {
+              scale.value = newScale;
 
-            svg.drawSVG(props.id, { ...preset.value, scale: newScale });
-          }
-        }, 100);
+              svg.drawSVG(props.id, { ...preset.value, scale: newScale });
+            }
+          }, 100);
+        };
 
         window.addEventListener("resize", resize);
       });

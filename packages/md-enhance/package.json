@@ -40,32 +40,44 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpmdev:ts\"",
     "dev:copy": "cpx \"src/client/**/*.{vue,css,scss,eot,woff,ttf}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
     "@babel/core": "*",
-    "@mr-hope/vuepress-shared": "2.0.0-beta.47",
+    "@mr-hope/vuepress-shared": "workspace:*",
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.9",
-    "@vuepress/client": "2.0.0-beta.38",
-    "@vuepress/plugin-container": "2.0.0-beta.38",
-    "@vuepress/shared": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38",
+    "@vuepress/client": "2.0.0-beta.41",
+    "@vuepress/plugin-container": "2.0.0-beta.41",
+    "@vuepress/shared": "2.0.0-beta.41",
+    "@vuepress/utils": "2.0.0-beta.41",
     "@vueuse/core": "^8.3.1",
     "chart.js": "^3.7.1",
     "flowchart.js": "^1.17.1",
     "katex": "^0.15.3",
-    "markdown-it": "^12.3.2",
+    "markdown-it": "^13.0.0",
     "mermaid": "^9.0.1",
     "reveal.js": "^4.3.1",
-    "vue": "^3.2.32",
+    "ts-debounce": "^4.0.0",
+    "vue": "^3.2.33",
     "vue-router": "^4.0.14",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.47"
+    "vuepress-plugin-sass-palette": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@babel/core": "^7.17.9",
+    "@types/babel__core": "7.1.19",
+    "@vuepress/core": "2.0.0-beta.41",
+    "@vuepress/markdown": "2.0.0-beta.41"
+  },
+  "peerDependencies": {
+    "sass-loader": "^12.6.0"
+  },
+  "peerDependenciesMeta": {
+    "sass-loader": {
+      "optional": true
+    }
   }
 }

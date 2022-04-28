@@ -32,13 +32,13 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "yarn dev:ts",
+    "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "devDependencies": {
     "@types/inquirer": "^8.2.1",
     "cac": "^6.7.12",
     "execa": "^5.1.1",
-    "inquirer": "^8.2.2"
+    "inquirer": "^8.2.4"
   }
 }

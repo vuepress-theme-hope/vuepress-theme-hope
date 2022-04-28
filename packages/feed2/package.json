@@ -31,17 +31,18 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "yarn dev:ts",
+    "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.47",
-    "@vuepress/shared": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38",
+    "@mr-hope/vuepress-shared": "workspace:*",
+    "@vuepress/shared": "2.0.0-beta.41",
+    "@vuepress/utils": "2.0.0-beta.41",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/core": "2.0.0-beta.41",
+    "@vuepress/plugin-git": "2.0.0-beta.41"
   },
   "publishConfig": {
     "access": "public"

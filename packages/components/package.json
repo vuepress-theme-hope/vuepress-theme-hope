@@ -30,25 +30,32 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.47",
-    "@types/lodash.debounce": "^4.0.7",
-    "@vuepress/client": "2.0.0-beta.38",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38",
+    "@mr-hope/vuepress-shared": "workspace:*",
+    "@vuepress/client": "2.0.0-beta.41",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.41",
+    "@vuepress/utils": "2.0.0-beta.41",
     "balloon-css": "^1.2.0",
-    "lodash.debounce": "^4.0.8",
-    "vue": "^3.2.32",
+    "ts-debounce": "^4.0.0",
+    "vue": "^3.2.33",
     "vue-router": "^4.0.14",
-    "vuepress-plugin-reading-time2": "2.0.0-beta.47",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.47"
+    "vuepress-plugin-reading-time2": "workspace:*",
+    "vuepress-plugin-sass-palette": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/core": "2.0.0-beta.41"
+  },
+  "peerDependencies": {
+    "sass-loader": "^12.6.0"
+  },
+  "peerDependenciesMeta": {
+    "sass-loader": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"

@@ -1,7 +1,7 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
-import debounce from "lodash.debounce";
+import { debounce } from "ts-debounce";
 import {
   Transition,
   computed,
@@ -59,9 +59,11 @@ export default defineComponent({
       document.body.scrollTop ||
       0;
 
-    const scrollHandler = debounce(() => {
-      scrollTop.value = getScrollTop();
-    }, 100);
+    const scrollHandler = (): void => {
+      void debounce(() => {
+        scrollTop.value = getScrollTop();
+      }, 100);
+    };
 
     onMounted(() => {
       scrollTop.value = getScrollTop();
