@@ -43,20 +43,26 @@ jobs:
           }
           # submodules: true
 
-      - uses: actions/cache@v3
-        id: node-modules
+${
+  bin === "pnpm"
+    ? `
+      - name: ${lang === "简体中文" ? "安装 pnpm" : "Install pnpm"}
+        uses: pnpm/action-setup@v2
         with:
-          path: node_modules/
-          key: \${{ runner.os }}-node-modules-\${{ hashFiles('${
-            bin === "yarn" ? "yarn.lock" : "package-lock.json"
-          }') }}
-          restore-keys: |
-            \${{ runner.os }}-node-modules-
+          version: 6
+  `
+    : ""
+}
+
+      - name: ${lang === "简体中文" ? "设置 Node.js" : "Setup Node.js"}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: ${bin}
 
       - name: ${lang === "简体中文" ? "安装依赖" : "Install Deps"}
-        if: steps.node-modules.outputs.cache-hit != 'true'
         run: ${
-          bin === "yarn" ? "yarn install --frozen-lockfile" : "npm install"
+          bin === "npm" ? "npm install" : `${bin} install --frozen-lockfile`
         }
 
       - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
@@ -78,10 +84,17 @@ jobs:
 `;
 
 export const getDevDependencies = async (): Promise<Record<string, string>> => {
-  const vuepressVersion = await checkForNextVersion("vuepress");
-  const themeVersion = await checkForNextVersion("vuepress-theme-hope");
+  const [vuepressClientVersion, vueVersion, vuepressVersion, themeVersion] =
+    await Promise.all([
+      checkForNextVersion("@vuepress/client"),
+      checkForNextVersion("vue"),
+      checkForNextVersion("vuepress"),
+      checkForNextVersion("vuepress-theme-hope"),
+    ]);
 
   return {
+    "@vuepress/client": `^${vuepressClientVersion}`,
+    vue: `^${vueVersion}`,
     vuepress: `^${vuepressVersion}`,
     "vuepress-theme-hope": `^${themeVersion}`,
   };
