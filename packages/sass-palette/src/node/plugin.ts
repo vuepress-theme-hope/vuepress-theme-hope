@@ -33,7 +33,11 @@ export const sassPalettePlugin =
     const userStyle = style ? app.dir.source(style) : null;
 
     return {
-      name: `vuepress-plugin-sass-palette?${id}`,
+      name: `vuepress-plugin-sass-palette`,
+
+      mutiple: true,
+
+      id,
 
       alias: {
         [`@sass-palette/helper`]: path.resolve(
