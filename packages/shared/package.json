@@ -53,7 +53,7 @@
     "@vuepress/bundler-vite": "2.0.0-beta.41",
     "@vuepress/bundler-webpack": "2.0.0-beta.41",
     "@vuepress/core": "2.0.0-beta.41",
-    "vite": "~2.9.5"
+    "vite": "~2.9.6"
   },
   "publishConfig": {
     "access": "public"

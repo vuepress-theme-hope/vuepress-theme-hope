@@ -29,7 +29,7 @@
     "lint:style": "stylelint packages/*/src/**/*.scss",
     "packages:bootstrap": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/bootstrap.ts",
     "packages:check-update": "ncu --deep --timeout 600000",
-    "packages:update": "pnpm update",
+    "packages:update": "pnpm up -r",
     "release": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" ts-node-esm  -O {\\\"module\\\":\\\"ESNext\\\"} scripts/release",
     "test": "node --no-compilation-cache --expose-gc node_modules/jest/bin/jest -i"
   },
