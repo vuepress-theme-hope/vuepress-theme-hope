@@ -17,18 +17,18 @@ footer: MIT Licensed | Copyright © 2022-present Mr.Hope
 ### Install
 
 ```bash
-yarn add -D vuepress-plugin-redirect2@next
+pnpm add -D vuepress-plugin-redirect2@next
 ```
 
 ### Usage
 
 ```ts
 // .vuepress/config.ts
-import { redirect } from "vuepress-plugin-redirect2";
+import { redirectPlugin } from "vuepress-plugin-redirect2";
 
 export default {
   plugins: [
-    redirect({
+    redirectPlugin({
       // your options
     }),
   ],

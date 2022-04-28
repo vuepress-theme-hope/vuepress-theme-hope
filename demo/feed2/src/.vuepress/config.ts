@@ -1,9 +1,10 @@
 import { defineUserConfig } from "@vuepress/cli";
-import type { DefaultThemeOptions } from "@vuepress/theme-default";
+import { defaultTheme } from "@vuepress/theme-default";
+import { feedPlugin } from "vuepress-plugin-feed2";
 
 const BASE = process.env.BASE as "/" | `/${string}/`;
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   base: BASE || "/",
 
   locales: {
@@ -19,7 +20,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/feed2/",
@@ -36,17 +37,14 @@ export default defineUserConfig<DefaultThemeOptions>({
         label: "简体中文",
       },
     },
-  },
+  }),
 
   plugins: [
-    [
-      "feed2",
-      {
-        hostname: "https://vuepress-theme-hope.github.io",
-        atom: true,
-        rss: true,
-        json: true,
-      },
-    ],
+    feedPlugin({
+      hostname: "https://vuepress-theme-hope.github.io",
+      atom: true,
+      rss: true,
+      json: true,
+    }),
   ],
 });

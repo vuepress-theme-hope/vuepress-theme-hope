@@ -32,17 +32,19 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 ### 一键启用
 
-你可以设置 `themeconfig.plugins.htmlEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance) 插件的所有功能。
+你可以设置在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance) 插件的所有功能。
 
-```js {3-5}
+```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
 module.exports = {
-  themeConfig: {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         enableAll: true,
       },
     },
-  },
+  }),
 };
 ```
 
@@ -135,6 +137,14 @@ const a = 1;
 ### 代码块
 
 :::: code-group
+
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+:::
 
 ::: code-group-item yarn
 
